@@ -1,18 +1,20 @@
 name: 뉴스 스토리보드 → HyperFrames 쇼츠 → 유튜브 업로드 (v2)
 
-# 트리거: main 에 push/merge 될 때, output/news/ 의 스토리보드가 추가/변경되면 실행.
-#   (루틴이 스토리보드를 main 에 커밋 → 그 push 가 이 워크플로를 트리거)
+# 트리거: 루틴이 storyboard 를 routine/* 브랜치에 push 하면 실행.
+#   (루틴은 main 직접 push 불필요 → Claude Code '상승 권한' 토글 없이 일반 브랜치 push 만으로 동작)
+#   브랜치는 main 에서 분기되므로 이 워크플로 파일을 그대로 포함 → 그 브랜치에서 실행됨.
+#   처리 대상 = 그 시점(KST) 오늘 날짜의 output/news/<DATE>_*_storyboard.json (ledger 로 중복 스킵).
 #
 # ⚠️ 자기 재트리거 루프 가드:
-#   - 이 워크플로는 레포에 아무것도 커밋/푸시하지 않는다 (산출물은 artifacts 로만).
+#   - permissions: contents: read — 레포에 아무것도 커밋/푸시하지 않는다(산출물은 artifacts 로만).
 #   - 산출물(mp4/assets/renders)은 .gitignore 처리 → 애초에 커밋 대상 아님.
-#   - 따라서 파이프라인 실행이 새 push 를 만들지 않아 루프가 발생하지 않는다.
-#
-# 최초엔 push 트리거를 끄고 workflow_dispatch 로 수동 검증할 것(아래 on.push 주석 참고).
+#   - 트리거가 routine/* 인데 워크플로는 push 를 안 하므로 루프 없음. (main 직접 push 도 안 일어남)
 
 on:
   push:
-    branches: [main]
+    branches:
+      - "routine/**"      # 루틴 전용 브랜치(예: routine/2026-06-26_politics)
+      - main              # (선택) main 에 storyboard 가 올라오면도 처리
     paths:
       - "output/news/**_storyboard.json"
   workflow_dispatch:
@@ -111,32 +113,23 @@ jobs:
             printf '%s' "$YT_TOKEN_JSON" > pipeline/secrets/token.json
           fi
 
-      # 4) 이번 push 에서 추가/변경된 스토리보드 탐지(또는 dispatch 입력)
+      # 4) 처리 대상 스토리보드 결정
+      #    - dispatch + storyboard 입력 → 그 파일
+      #    - 그 외(routine/* push, dispatch 빈입력) → 오늘(KST) output/news/<DATE>_*_storyboard.json
+      #      (브랜치엔 보통 해당 토픽 파일 1개만 있음. 중복 처리는 ledger 로 스킵)
       - name: 처리 대상 스토리보드 결정
         id: pick
         run: |
           set -e
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            SB="${{ github.event.inputs.storyboard }}"
-            if [ -n "$SB" ]; then
-              echo "files=$SB" >> "$GITHUB_OUTPUT"
-            else
-              # 입력 없으면 오늘(KST) output/news 자동 탐색
-              DATE=$(date +%Y-%m-%d)
-              FILES=$(ls output/news/${DATE}_*_storyboard.json 2>/dev/null | tr '\n' ' ')
-              echo "files=$FILES" >> "$GITHUB_OUTPUT"
-            fi
+          SB="${{ github.event.inputs.storyboard }}"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "$SB" ]; then
+            echo "files=$SB" >> "$GITHUB_OUTPUT"
           else
-            # push: 직전 커밋 대비 추가/변경된 storyboard 만 (before=0000/신규브랜치 가드)
-            BEFORE="${{ github.event.before }}"
-            if [ -z "$BEFORE" ] || ! git cat-file -e "${BEFORE}^{commit}" 2>/dev/null; then
-              BEFORE=$(git rev-parse "${{ github.sha }}~1" 2>/dev/null || git hash-object -t tree /dev/null)
-            fi
-            FILES=$(git diff --name-only --diff-filter=AM "$BEFORE" "${{ github.sha }}" \
-              -- 'output/news/**_storyboard.json' | tr '\n' ' ')
+            DATE=$(date +%Y-%m-%d)   # TZ=Asia/Seoul → KST
+            FILES=$(ls output/news/${DATE}_*_storyboard.json 2>/dev/null | tr '\n' ' ')
             echo "files=$FILES" >> "$GITHUB_OUTPUT"
           fi
-          echo "선정된 파일: '$(cat "$GITHUB_OUTPUT" | grep ^files= | cut -d= -f2-)'"
+          echo "선정된 파일: '$(grep ^files= "$GITHUB_OUTPUT" | cut -d= -f2-)'"
 
       # 5) 파이프라인 실행 (영상화 → 업로드, privacy 준수)
       - name: 영상화 + 업로드
