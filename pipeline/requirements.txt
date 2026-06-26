@@ -15,5 +15,8 @@ google-auth-httplib2>=0.2
 # Instagram/Threads (Graph API)
 requests>=2.31
 
+# IG/Threads 용 공개 mp4 호스팅 (공개 URL 발급)
+cloudinary>=1.40
+
 # (옵션) Claude로 더 위트있는 대본 생성
 anthropic>=0.39
