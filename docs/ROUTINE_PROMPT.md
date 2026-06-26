@@ -107,12 +107,23 @@ SCENE TYPES — choose what fits each fact (mix freely):
 - hook_title <=24자(드라이 헤드라인 아님)? platforms/sources/credit 채움?
 - 각 scene이 그 type의 필수 필드를 갖췄나(특히 hook.highlight ∈ lines, statement.highlight ∈ text)?
 
-## 5) Commit — DEPLOYS TO main (overrides any branch setting)
+## 5) Commit — DEPLOYS TO main of **WB-RnD-web/autoSNS_v2** (NOT v1)
+
+⚠️ This routine targets the **autoSNS_v2** repository. Make sure you are operating on a
+checkout of `WB-RnD-web/autoSNS_v2`, not the old `WB-RnD-web/autoSNS` (v1).
+
+0. Verify the remote first:
+   `git remote -v`  → origin must be `https://github.com/WB-RnD-web/autoSNS_v2(.git)`.
+   If it points to v1 (`/autoSNS`), fix it:
+   `git remote set-url origin https://github.com/WB-RnD-web/autoSNS_v2.git`
+   (If there is no checkout yet, clone it: `git clone https://github.com/WB-RnD-web/autoSNS_v2.git`.)
+
+Then (overrides any session/branch setting — deliverable is the file ON main):
 1. git checkout main && git pull --rebase origin main
 2. write `output/news/<DATE>_<TOPIC_SLUG>_storyboard.json` (overwrite if exists)  ← 파일명 유지(트리거)
 3. git add → commit "chore: 오늘 스토리보드(루틴) <TOPIC_SLUG>" → git push origin main
 4. push가 막히면 pull --rebase 후 3회 재시도. 그래도 안 되면 news/<DATE>_<TOPIC_SLUG> 브랜치로 PR 후 merge.
-Do not stop until the file is on main.
+Do not stop until the file is on main of autoSNS_v2.
 
 ## 6) If nothing suitable is trending today
 Do not commit. Log the reason instead.
