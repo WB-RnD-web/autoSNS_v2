@@ -150,8 +150,11 @@ jobs:
             $([ "${{ github.event.inputs.no_upload }}" = "true" ] && echo --no-upload)
 
       # 6) 산출물 업로드(artifacts — 레포에 커밋하지 않음 = 루프 방지)
+      #    저장소 용량 초과 등 부수 문제로 런이 실패하지 않도록 비치명적 처리.
+      #    (운영의 본 산출물은 유튜브 업로드이며 아티팩트는 검수 편의용)
       - name: 산출물 아티팩트 업로드
         if: always()
+        continue-on-error: true
         uses: actions/upload-artifact@v4
         with:
           name: shorts-${{ github.run_id }}
