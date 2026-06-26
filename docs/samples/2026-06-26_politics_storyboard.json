@@ -1,0 +1,202 @@
+{
+  "date": "2026-06-26",
+  "topic": "politics",
+  "privacy": "unlisted",
+  "topic_keyword": "한성숙 총리 청문회 다주택",
+  "headline": "한성숙 총리 청문회 다주택·증인0명 공방",
+  "hook_title": "이틀 전에 집 3채 팔았다고?",
+  "total_sec": 51,
+  "shots": [
+    {
+      "n": 1,
+      "type": "anchor",
+      "asset": "twoshot",
+      "start": 0,
+      "duration": 4,
+      "speaker": "별하",
+      "line": "야, 너 오늘 청문회 봤어? 나 아침에 보고 좀 황당했잖아.",
+      "caption": "별하: 야, 너 오늘 청문회 봤어? 나 아침에 보고 좀 황당했잖아.",
+      "visual": "앵커 투샷·별하 강조"
+    },
+    {
+      "n": 2,
+      "type": "anchor",
+      "asset": "twoshot",
+      "start": 4,
+      "duration": 3,
+      "speaker": "별이",
+      "line": "한성숙 총리 후보 거지? 무슨 일 있었는데?",
+      "caption": "별이: 한성숙 총리 후보 거지? 무슨 일 있었는데?",
+      "visual": "앵커 투샷·별이 강조"
+    },
+    {
+      "n": 3,
+      "type": "anchor",
+      "asset": "twoshot",
+      "start": 7,
+      "duration": 2,
+      "speaker": "별하",
+      "line": "집이 몇 채인지 알아, 걔?",
+      "caption": "별하: 집이 몇 채인지 알아, 걔?",
+      "visual": "앵커 투샷·별하 강조"
+    },
+    {
+      "n": 4,
+      "type": "anchor",
+      "asset": "twoshot",
+      "start": 9,
+      "duration": 2,
+      "speaker": "별이",
+      "line": "에이, 설마... 몇 채인데?",
+      "caption": "별이: 에이, 설마... 몇 채인데?",
+      "visual": "앵커 투샷·별이 강조"
+    },
+    {
+      "n": 5,
+      "type": "anchor",
+      "asset": "twoshot",
+      "start": 11,
+      "duration": 3,
+      "speaker": "별하",
+      "line": "4채야. 서울에 3채에 경기도까지.",
+      "caption": "별하: 4채야. 서울에 3채에 경기도까지.",
+      "visual": "앵커 투샷·별하 강조"
+    },
+    {
+      "n": 6,
+      "type": "anchor",
+      "asset": "twoshot",
+      "start": 14,
+      "duration": 3,
+      "speaker": "별이",
+      "line": "잠깐, 그게 다야? 청문회에서 엄청 깨졌겠다.",
+      "caption": "별이: 잠깐, 그게 다야? 청문회에서 엄청 깨졌겠다.",
+      "visual": "앵커 투샷·별이 강조"
+    },
+    {
+      "n": 7,
+      "type": "anchor",
+      "asset": "twoshot",
+      "start": 17,
+      "duration": 4,
+      "speaker": "별하",
+      "line": "더 있어. 청문회 이틀 전에 갑자기 3채를 팔았대.",
+      "caption": "별하: 더 있어. 청문회 이틀 전에 갑자기 3채를 팔았대.",
+      "visual": "앵커 투샷·별하 강조"
+    },
+    {
+      "n": 8,
+      "type": "anchor",
+      "asset": "twoshot",
+      "start": 21,
+      "duration": 2,
+      "speaker": "별이",
+      "line": "말도 안 돼. 이틀 전에?",
+      "caption": "별이: 말도 안 돼. 이틀 전에?",
+      "visual": "앵커 투샷·별이 강조"
+    },
+    {
+      "n": 9,
+      "type": "anchor",
+      "asset": "twoshot",
+      "start": 23,
+      "duration": 4,
+      "speaker": "별하",
+      "line": "그래서 야당에서 다주택 마귀 소리까지 나왔어.",
+      "caption": "별하: 그래서 야당에서 다주택 마귀 소리까지 나왔어.",
+      "visual": "앵커 투샷·별하 강조"
+    },
+    {
+      "n": 10,
+      "type": "anchor",
+      "asset": "twoshot",
+      "start": 27,
+      "duration": 3,
+      "speaker": "별이",
+      "line": "우리 같은 사람은 집 1채도 어려운데.",
+      "caption": "별이: 우리 같은 사람은 집 1채도 어려운데.",
+      "visual": "앵커 투샷·별이 강조"
+    },
+    {
+      "n": 11,
+      "type": "anchor",
+      "asset": "twoshot",
+      "start": 30,
+      "duration": 4,
+      "speaker": "별하",
+      "line": "근데 더 황당한 건, 오늘 청문회에 증인이 한 명도 없어.",
+      "caption": "별하: 근데 더 황당한 건, 오늘 청문회에 증인이 한 명도 없어.",
+      "visual": "앵커 투샷·별하 강조"
+    },
+    {
+      "n": 12,
+      "type": "anchor",
+      "asset": "twoshot",
+      "start": 34,
+      "duration": 4,
+      "speaker": "별이",
+      "line": "진짜? 증인 0명이면 검증은 어떻게 하는 거야?",
+      "caption": "별이: 진짜? 증인 0명이면 검증은 어떻게 하는 거야?",
+      "visual": "앵커 투샷·별이 강조"
+    },
+    {
+      "n": 13,
+      "type": "anchor",
+      "asset": "twoshot",
+      "start": 38,
+      "duration": 4,
+      "speaker": "별하",
+      "line": "야당이 11명 신청했는데 여당이 다 막았대. 그러니까 맹탕이지.",
+      "caption": "별하: 야당이 11명 신청했는데 여당이 다 막았대. 그러니까 맹탕이지.",
+      "visual": "앵커 투샷·별하 강조"
+    },
+    {
+      "n": 14,
+      "type": "anchor",
+      "asset": "twoshot",
+      "start": 42,
+      "duration": 4,
+      "speaker": "별이",
+      "line": "근데 이 후보가 20년 만의 여성 총리 후보라고 하잖아. 씁쓸하다.",
+      "caption": "별이: 근데 이 후보가 20년 만의 여성 총리 후보라고 하잖아. 씁쓸하다.",
+      "visual": "앵커 투샷·별이 강조"
+    },
+    {
+      "n": 15,
+      "type": "anchor",
+      "asset": "twoshot",
+      "start": 46,
+      "duration": 5,
+      "speaker": "별하",
+      "line": "여러분은 어떻게 생각해요? 다주택 논란 있어도 총리로 괜찮을까요?",
+      "caption": "별하: 여러분은 어떻게 생각해요? 다주택 논란 있어도 총리로 괜찮을까요?",
+      "visual": "앵커 투샷·별하 강조"
+    }
+  ],
+  "assets_needed": [
+    {
+      "id": "twoshot",
+      "kind": "image",
+      "reuse": true,
+      "model": "nano_banana_2",
+      "aspect": "9:16",
+      "prompt": "Two chibi 3D cartoon news anchors at a desk: <<<e620f11b-a271-490d-8757-e3d38fb1b8c4>>> (male, left) and <<<da4c9c89-2b48-495f-acf2-29fef92e4d4d>>> (female, right), bright news studio, 9:16. Keep both consistent with reference elements."
+    }
+  ],
+  "captions_srt": "1\n00:00:00,000 --> 00:00:04,000\n별하: 야, 너 오늘 청문회 봤어? 나 아침에 보고 좀 황당했잖아.\n\n2\n00:00:04,000 --> 00:00:07,000\n별이: 한성숙 총리 후보 거지? 무슨 일 있었는데?\n\n3\n00:00:07,000 --> 00:00:09,000\n별하: 집이 몇 채인지 알아, 걔?\n\n4\n00:00:09,000 --> 00:00:11,000\n별이: 에이, 설마... 몇 채인데?\n\n5\n00:00:11,000 --> 00:00:14,000\n별하: 4채야. 서울에 3채에 경기도까지.\n\n6\n00:00:14,000 --> 00:00:17,000\n별이: 잠깐, 그게 다야? 청문회에서 엄청 깨졌겠다.\n\n7\n00:00:17,000 --> 00:00:21,000\n별하: 더 있어. 청문회 이틀 전에 갑자기 3채를 팔았대.\n\n8\n00:00:21,000 --> 00:00:23,000\n별이: 말도 안 돼. 이틀 전에?\n\n9\n00:00:23,000 --> 00:00:27,000\n별하: 그래서 야당에서 다주택 마귀 소리까지 나왔어.\n\n10\n00:00:27,000 --> 00:00:30,000\n별이: 우리 같은 사람은 집 1채도 어려운데.\n\n11\n00:00:30,000 --> 00:00:34,000\n별하: 근데 더 황당한 건, 오늘 청문회에 증인이 한 명도 없어.\n\n12\n00:00:34,000 --> 00:00:38,000\n별이: 진짜? 증인 0명이면 검증은 어떻게 하는 거야?\n\n13\n00:00:38,000 --> 00:00:42,000\n별하: 야당이 11명 신청했는데 여당이 다 막았대. 그러니까 맹탕이지.\n\n14\n00:00:42,000 --> 00:00:46,000\n별이: 근데 이 후보가 20년 만의 여성 총리 후보라고 하잖아. 씁쓸하다.\n\n15\n00:00:46,000 --> 00:00:51,000\n별하: 여러분은 어떻게 생각해요? 다주택 논란 있어도 총리로 괜찮을까요?",
+  "sources": ["파이낸셜뉴스", "MBC뉴스", "경향신문"],
+  "credit": "출처 파이낸셜뉴스·MBC뉴스·경향신문",
+  "platforms": {
+    "youtube": {
+      "title": "이틀 전에 집 3채 팔았다고? #shorts",
+      "description": "한성숙 총리 청문회 다주택·증인0명 공방\n출처 파이낸셜뉴스·MBC뉴스·경향신문\n\n#한성숙청문회 #다주택논란 #정치뉴스 #쇼츠 #shorts"
+    },
+    "instagram": {
+      "caption": "이틀 전에 집 3채 팔았다고?\n출처 파이낸셜뉴스·MBC뉴스·경향신문\n\n#한성숙청문회 #다주택논란 #정치뉴스 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "이틀 전에 집 3채 팔았다고?\n출처 파이낸셜뉴스·MBC뉴스·경향신문"
+    }
+  },
+  "notes": "티키타카 51초. 앵커 투샷 1장 재사용. 배경음 없음·자막 번인."
+}

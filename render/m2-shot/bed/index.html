@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        margin: 0; width: 1080px; height: 1920px;
+        overflow: hidden; background: #0A0808;
+      }
+
+      /* 레이어 분리: #frame(진입 opacity) > #sway(회전) > #kb(켄번즈 scale/translate) */
+      #frame, #sway { position: absolute; inset: 0; }
+      #kb {
+        position: absolute; inset: 0;
+        background-image: url("assets/twoshot.png");
+        background-size: cover;
+        background-position: center top;
+        transform-origin: 68% 12%;   /* 위쪽(얼굴) 기준 줌 → 하단 배너 프레임 밖으로 크롭 + 우측(별하) 강조 */
+        will-change: transform;
+      }
+      #sway { transform-origin: 50% 60%; }
+
+      /* 화자 스포트라이트(별하=우측) — 호흡 */
+      #spotlight {
+        position: absolute; right: 40px; top: 620px;
+        width: 560px; height: 760px; border-radius: 50%;
+        background: radial-gradient(circle, rgba(217,119,87,0.40) 0%, rgba(217,119,87,0) 62%);
+        filter: blur(22px); mix-blend-mode: screen;
+      }
+
+      /* 코랄 엠버 마감 + 비네트 */
+      #grade {
+        position: absolute; inset: 0; pointer-events: none;
+        background:
+          radial-gradient(70% 50% at 70% 50%, rgba(217,119,87,0.10) 0%, rgba(217,119,87,0) 60%),
+          radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0) 52%, rgba(0,0,0,0.55) 100%);
+      }
+      /* 필름 그레인 */
+      #grain {
+        position: absolute; inset: -50%; width: 200%; height: 200%;
+        opacity: 0.07; pointer-events: none;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="5.78"
+      data-width="1080"
+      data-height="1920"
+    >
+      <div id="frame" class="clip" data-start="0" data-duration="5.78" data-track-index="0">
+        <div id="sway"><div id="kb"></div></div>
+      </div>
+      <div id="spotlight" class="clip" data-start="0" data-duration="5.78" data-track-index="1"></div>
+      <div id="grade" class="clip" data-start="0" data-duration="5.78" data-track-index="2"></div>
+      <div id="grain" class="clip" data-start="0" data-duration="5.78" data-track-index="3"></div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const D = 5.78;
+
+      // 강한 켄번즈: 줌인 + 화자 쪽으로 드리프트 (#kb, scale/translate만 — 전 구간 연속)
+      // base scale을 키워 하단 배너를 프레임 밖으로 크롭(transform-origin 상단 기준)
+      tl.fromTo("#kb",
+        { scale: 1.34, xPercent: 1.5, yPercent: 0 },
+        { scale: 1.48, xPercent: -2.5, yPercent: 1.2, duration: D, ease: "none" }, 0);
+
+      // 미세 스웨이(살아있는 느낌) — #sway에 회전만, 유한 yoyo
+      const swayCycle = 2.3;
+      tl.fromTo("#sway", { rotation: -0.4 },
+        { rotation: 0.4, duration: swayCycle/2, ease: "sine.inOut",
+          yoyo: true, repeat: Math.floor(D / swayCycle) - 1 }, 0);
+
+      // 진입: #frame opacity 페이드 인만 (0.5s, 속성 충돌 없음)
+      tl.from("#frame", { opacity: 0, duration: 0.5, ease: "power2.out" }, 0);
+
+      // 화자 스포트라이트 호흡 (별하 강조, 연속)
+      tl.fromTo("#spotlight", { opacity: 0 }, { opacity: 0.85, duration: 0.6, ease: "power2.out" }, 0.3);
+      const spotCycle = 1.5;
+      tl.to("#spotlight", { opacity: 0.45, scale: 1.06, duration: spotCycle/2, ease: "sine.inOut",
+                            yoyo: true, repeat: Math.floor((D - 0.9) / spotCycle) - 1,
+                            transformOrigin: "75% 55%" }, 0.9);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+name: 뉴스 스토리보드 → HyperFrames 쇼츠 → 유튜브 업로드 (v2)
+
+# 트리거: main 에 push/merge 될 때, output/news/ 의 스토리보드가 추가/변경되면 실행.
+#   (루틴이 스토리보드를 main 에 커밋 → 그 push 가 이 워크플로를 트리거)
+#
+# ⚠️ 자기 재트리거 루프 가드:
+#   - 이 워크플로는 레포에 아무것도 커밋/푸시하지 않는다 (산출물은 artifacts 로만).
+#   - 산출물(mp4/assets/renders)은 .gitignore 처리 → 애초에 커밋 대상 아님.
+#   - 따라서 파이프라인 실행이 새 push 를 만들지 않아 루프가 발생하지 않는다.
+#
+# 최초엔 push 트리거를 끄고 workflow_dispatch 로 수동 검증할 것(아래 on.push 주석 참고).
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "output/news/**_storyboard.json"
+  workflow_dispatch:
+    inputs:
+      storyboard:
+        description: "처리할 스토리보드 경로(비우면 오늘 날짜 자동 탐색). 예: docs/samples/2026-06-26_economy_storyboard.json"
+        default: ""
+      force_private:
+        description: "privacy 강제 private (테스트 안전장치)"
+        type: boolean
+        default: true
+      no_upload:
+        description: "업로드 없이 영상만 생성(렌더 검증용)"
+        type: boolean
+        default: false
+
+# 동시 실행 1개로 제한(중복 푸시 안전)
+concurrency:
+  group: shorts-v2
+  cancel-in-progress: false
+
+permissions:
+  contents: read          # ⚠️ write 아님 — 레포에 커밋하지 않는다(루프 방지)
+
+jobs:
+  build-and-upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      TZ: Asia/Seoul
+      DEFAULT_PRIVACY: ${{ vars.DEFAULT_PRIVACY || 'private' }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      # 자막팝(동적 fontsize)은 Linux ffmpeg 에서 정상 → 활성화
+      CAPTION_POP: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2          # git diff(이전 커밋 대비)용
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # 1) 시스템 의존성: ffmpeg + 헤드리스 Chrome 시스템 라이브러리 + 폰트
+      - name: 시스템 의존성 설치
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg \
+            libnss3 libatk-bridge2.0-0 libatk1.0-0 libcups2 libdrm2 libxkbcommon0 \
+            libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm1 libasound2t64 \
+            libpango-1.0-0 libcairo2 fonts-nanum
+          python -m pip install --upgrade pip
+          python -m pip install -r pipeline/requirements.txt
+
+      # 2) HyperFrames + 헤드리스 Chrome 준비(캐시는 M6에서 추가)
+      - name: HyperFrames/Chrome 준비
+        run: |
+          npx --yes hyperframes@0.7.9 doctor || true
+          npx --yes puppeteer browsers install chrome-headless-shell || true
+
+      # 3) YouTube 자격증명 파일 생성(시크릿 → 파일)
+      - name: YouTube 자격증명
+        env:
+          YT_CLIENT_SECRET_JSON: ${{ secrets.YT_CLIENT_SECRET_JSON }}
+          YT_TOKEN_JSON: ${{ secrets.YT_TOKEN_JSON }}
+        run: |
+          mkdir -p pipeline/secrets
+          if [ -n "$YT_CLIENT_SECRET_JSON" ]; then
+            printf '%s' "$YT_CLIENT_SECRET_JSON" > pipeline/secrets/client_secret.json
+          fi
+          if [ -n "$YT_TOKEN_JSON" ]; then
+            printf '%s' "$YT_TOKEN_JSON" > pipeline/secrets/token.json
+          fi
+
+      # 4) 이번 push 에서 추가/변경된 스토리보드 탐지(또는 dispatch 입력)
+      - name: 처리 대상 스토리보드 결정
+        id: pick
+        run: |
+          set -e
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            SB="${{ github.event.inputs.storyboard }}"
+            if [ -n "$SB" ]; then
+              echo "files=$SB" >> "$GITHUB_OUTPUT"
+            else
+              # 입력 없으면 오늘(KST) output/news 자동 탐색
+              DATE=$(date +%Y-%m-%d)
+              FILES=$(ls output/news/${DATE}_*_storyboard.json 2>/dev/null | tr '\n' ' ')
+              echo "files=$FILES" >> "$GITHUB_OUTPUT"
+            fi
+          else
+            # push: 직전 커밋 대비 추가/변경된 storyboard 만
+            FILES=$(git diff --name-only --diff-filter=AM ${{ github.event.before }} ${{ github.sha }} \
+              -- 'output/news/**_storyboard.json' | tr '\n' ' ')
+            echo "files=$FILES" >> "$GITHUB_OUTPUT"
+          fi
+          echo "선정된 파일: '$(cat "$GITHUB_OUTPUT" | grep ^files= | cut -d= -f2-)'"
+
+      # 5) 파이프라인 실행 (영상화 → 업로드, privacy 준수)
+      - name: 영상화 + 업로드
+        run: |
+          FILES="${{ steps.pick.outputs.files }}"
+          if [ -z "$(echo $FILES | tr -d ' ')" ]; then
+            echo "처리할 신규 스토리보드 없음 — 종료."
+            exit 0
+          fi
+          cd pipeline
+          python run_pipeline.py $(for f in $FILES; do echo "../$f"; done) \
+            $([ "${{ github.event.inputs.force_private }}" != "false" ] && echo --force-private) \
+            $([ "${{ github.event.inputs.no_upload }}" = "true" ] && echo --no-upload)
+
+      # 6) 산출물 업로드(artifacts — 레포에 커밋하지 않음 = 루프 방지)
+      - name: 산출물 아티팩트 업로드
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: shorts-${{ github.run_id }}
+          path: |
+            output/renders/*.mp4
+          if-no-files-found: ignore
+          retention-days: 7
