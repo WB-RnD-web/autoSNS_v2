@@ -1,0 +1,19 @@
+# collect_news / storyboard(템플릿) / assemble(dry-run) 은 표준 라이브러리만 필요.
+# 아래는 업로드·스마트대본 등 확장 단계에서 설치.
+
+# (선택·결제 시) 이미지 생성 Google Gemini 2.5 Flash Image
+google-genai>=0.3
+
+# 무료 음성 TTS (별이=남/별하=여, 키 불필요)
+edge-tts>=6.1
+
+# YouTube 업로드
+google-api-python-client>=2.0
+google-auth-oauthlib>=1.0
+google-auth-httplib2>=0.2
+
+# Instagram/Threads (Graph API)
+requests>=2.31
+
+# (옵션) Claude로 더 위트있는 대본 생성
+anthropic>=0.39
