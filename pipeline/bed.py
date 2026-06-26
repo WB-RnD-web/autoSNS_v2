@@ -11,6 +11,7 @@ from __future__ import annotations
 import os
 import shutil
 import subprocess
+import sys
 
 # 화자/길이 파라미터 베드 템플릿 (토큰 치환)
 BED_TEMPLATE = r"""<!doctype html>
@@ -98,17 +99,22 @@ def bed_html(dur: float, speaker: str) -> str:
     return html
 
 
-def render_bed(html: str, bedproj: str, out_mp4: str, quality: str = "standard") -> None:
-    """베드 HTML을 bedproj/index.html로 쓰고 hyperframes render로 mp4 생성."""
+def render_bed(html: str, bedproj: str, out_mp4: str, quality: str = "standard",
+               retries: int = 2) -> None:
+    """베드 HTML을 bedproj/index.html로 쓰고 hyperframes render로 mp4 생성. 전환적 실패 재시도."""
     with open(os.path.join(bedproj, "index.html"), "w", encoding="utf-8") as f:
         f.write(html)
     os.makedirs(os.path.dirname(out_mp4) or ".", exist_ok=True)
     # npx는 shell 경유(Windows npx.cmd 해석). PATH는 호출측에서 ffmpeg 포함 보장.
     cmd = f'npx --yes hyperframes@0.7.9 render --quality {quality} --output "{out_mp4}"'
-    r = subprocess.run(cmd, cwd=bedproj, shell=True, capture_output=True, text=True)
-    if r.returncode != 0:
-        raise RuntimeError(f"bed render 실패 (rc={r.returncode})\n"
-                           f"{(r.stdout or '')[-1500:]}\n{(r.stderr or '')[-1500:]}")
+    last = ""
+    for attempt in range(1, retries + 2):
+        r = subprocess.run(cmd, cwd=bedproj, shell=True, capture_output=True, text=True)
+        if r.returncode == 0 and os.path.exists(out_mp4) and os.path.getsize(out_mp4) > 0:
+            return
+        last = f"rc={r.returncode}\n{(r.stdout or '')[-1200:]}\n{(r.stderr or '')[-1200:]}"
+        sys.stderr.write(f"[bed render 재시도 {attempt}/{retries + 1}] {os.path.basename(out_mp4)}\n")
+    raise RuntimeError(f"bed render 실패(재시도 {retries}회 후)\n{last}")
 
 
 def ensure_twoshot(bedproj: str, twoshot_src: str) -> None:
