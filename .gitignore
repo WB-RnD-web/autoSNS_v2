@@ -1,0 +1,43 @@
+# ── 비밀/자격증명 ──
+pipeline/.env
+pipeline/secrets/
+*.token.json
+
+# ── 생성 산출물(용량 큼 — 레포에 안 담음 = 자기 재트리거 루프 방지에도 중요) ──
+output/assets/
+output/renders/
+*.mp4
+*.mov
+
+# 베드 렌더 시 생성되는 임시물(템플릿만 커밋, 생성물은 제외)
+pipeline/bedproj/index.html
+pipeline/bedproj/assets/twoshot.png
+pipeline/bedproj/renders/
+
+# ── 마일스톤 증명용 스크래치(render/) — 무거운 생성물·노드 캐시 제외 ──
+render/**/node_modules/
+render/**/.agents/
+render/**/renders/
+render/**/beds/
+render/**/shots/
+render/**/voices/
+render/**/out/
+render/**/tmp/
+render/**/assets/*.png
+render/**/assets/*.mp4
+render/**/assets/fonts/
+render/**/fonts/
+render/**/*.otf
+render/**/*.woff2
+render/**/*.mp3
+render/m3-short/bedproj/index.html
+
+# ── Node / Python ──
+node_modules/
+.agents/
+__pycache__/
+*.pyc
+
+# ── OS ──
+.DS_Store
+Thumbs.db
