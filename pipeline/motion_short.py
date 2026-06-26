@@ -83,6 +83,13 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#0A0808;font-fam
 .fill{position:absolute;left:80px;bottom:560px;width:230px;height:40px;border-radius:20px;background:#D97757;transform-origin:left center;}
 .trend svg{position:absolute;left:80px;bottom:500px;width:920px;height:360px;}
 .closer{position:absolute;left:80px;bottom:300px;width:920px;color:#EDD9BC;font-weight:800;font-size:72px;line-height:1.1;opacity:0;}
+.quote-mark{font-family:Georgia,serif;font-size:300px;color:#D97757;line-height:0.55;font-weight:800;}
+.quote-text{color:#EDD9BC;font-weight:800;font-size:90px;line-height:1.25;margin-top:-20px;}
+.quote-attr{color:rgba(237,217,188,.6);font-weight:600;font-size:44px;margin-top:34px;}
+.kp{color:#EDD9BC;font-weight:700;font-size:68px;line-height:1.25;display:flex;align-items:flex-start;gap:26px;margin-top:30px;}
+.kp .b{color:#D97757;font-weight:800;min-width:58px;}
+.statement{color:#EDD9BC;font-weight:800;font-size:116px;line-height:1.12;letter-spacing:-2px;}
+.statement .big{color:#D97757;}
 #fade{position:absolute;inset:0;background:#0A0808;opacity:0;z-index:50;pointer-events:none;}
 """
 
@@ -140,6 +147,23 @@ def scene_html(i, sc):
                 + f'<div class="sub" id="{gid}-sub">{_allow_b(sc.get("sub",""))}</div></div>'
                 + f'<svg viewBox="0 0 920 360" preserveAspectRatio="none"><path id="{gid}-line" d="{path}" fill="none" stroke="{col}" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></svg>'
                 + closer)
+    elif t == "quote":
+        body = ('<div class="wrap" style="top:520px">'
+                + f'<div class="quote-mark" id="{gid}-qm">&ldquo;</div>'
+                + f'<div class="quote-text" id="{gid}-qt">{_allow_b(sc.get("text",""))}</div>'
+                + f'<div class="quote-attr" id="{gid}-qa">{esc(sc.get("attr",""))}</div></div>')
+    elif t == "keypoint":
+        pts = "".join(f'<div class="kp" id="{gid}-kp{j}"><span class="b">{j+1}</span><span>{_allow_b(p)}</span></div>'
+                      for j, p in enumerate(sc.get("points", [])))
+        body = ('<div class="wrap" style="top:480px">'
+                + f'<div class="label" id="{gid}-label">{esc(sc.get("label",""))}</div>'
+                + pts + "</div>")
+    elif t == "statement":
+        txt = esc(sc.get("text", ""))
+        hl = sc.get("highlight", "")
+        if hl and hl in sc.get("text", ""):
+            txt = txt.replace(esc(hl), f'<span class="big" id="{gid}-hl">{esc(hl)}</span>')
+        body = (f'<div class="wrap" style="top:560px"><div class="statement" id="{gid}-st">{txt}</div></div>')
     cls = "scene clip trend" if t == "trend" else "scene clip"
     return (f'<div id="{gid}" class="{cls}" data-start="{sc["start"]:.2f}" '
             f'data-duration="{sc["clip"]:.2f}" data-track-index="{i}" style="z-index:{i+1}">'
@@ -172,7 +196,19 @@ def scene_js(i, sc):
             out.append(f'tl.from("#{gid}-l{j}",{{y:60,opacity:0,duration:0.5,ease:"power3.out"}},{S+0.5+j*0.22:.2f});')
         if sc.get("highlight"):
             out.append(f'tl.fromTo("#{gid}-hl",{{scale:0.4,color:"{BRAND["cream"]}"}},{{scale:1,color:"{BRAND["coral"]}",duration:0.6,ease:"back.out(2)"}},{S+1.1:.2f});')
-    else:
+    elif t == "quote":
+        out.append(f'tl.from("#{gid}-qm",{{scale:0.5,opacity:0,duration:0.6,ease:"back.out(1.6)"}},{S+0.4:.2f});')
+        out.append(f'tl.from("#{gid}-qt",{{y:40,opacity:0,duration:0.6,ease:"power3.out"}},{S+0.6:.2f});')
+        out.append(f'tl.from("#{gid}-qa",{{opacity:0,duration:0.5,ease:"power2.out"}},{S+1.1:.2f});')
+    elif t == "keypoint":
+        out.append(f'tl.from("#{gid}-label",{{x:-40,opacity:0,duration:0.5,ease:"power2.out"}},{S+0.4:.2f});')
+        for j in range(len(sc.get("points", []))):
+            out.append(f'tl.from("#{gid}-kp{j}",{{x:-30,opacity:0,duration:0.45,ease:"power2.out"}},{S+0.7+j*0.45:.2f});')
+    elif t == "statement":
+        out.append(f'tl.from("#{gid}-st",{{y:50,opacity:0,duration:0.6,ease:"power3.out"}},{S+0.4:.2f});')
+        if sc.get("highlight"):
+            out.append(f'tl.fromTo("#{gid}-hl",{{scale:0.5,color:"{BRAND["cream"]}"}},{{scale:1,color:"{BRAND["coral"]}",duration:0.6,ease:"back.out(2)"}},{S+0.9:.2f});')
+    elif t in ("stat", "gauge", "trend"):
         out.append(f'tl.from("#{gid}-label",{{x:-40,opacity:0,duration:0.5,ease:"power2.out"}},{S+0.5:.2f});')
         out.append(f'tl.from("#{gid}-num",{{scale:0.6,opacity:0,duration:0.5,ease:"back.out(1.6)"}},{S+0.65:.2f});')
         cu = f'{S+0.75:.2f}'

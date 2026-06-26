@@ -58,7 +58,10 @@ def upload_with_retry(video, meta, retries=2):
 
 
 def resolve_spec(sb_path, sb, args):
-    """장면 스펙 확보: --spec > 사전생성 파일 > LLM 추출."""
+    """장면 스펙 확보: 직접 스펙 > --spec > 사전생성 파일 > LLM 추출."""
+    # 루틴이 스펙을 직접 커밋한 경우(scenes 키 보유) → 그대로 사용(CI LLM 불필요)
+    if isinstance(sb.get("scenes"), list) and sb["scenes"]:
+        return sb
     if args.spec:
         with open(args.spec, encoding="utf-8") as f:
             return json.load(f)

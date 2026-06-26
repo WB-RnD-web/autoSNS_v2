@@ -127,8 +127,12 @@ jobs:
               echo "files=$FILES" >> "$GITHUB_OUTPUT"
             fi
           else
-            # push: 직전 커밋 대비 추가/변경된 storyboard 만
-            FILES=$(git diff --name-only --diff-filter=AM ${{ github.event.before }} ${{ github.sha }} \
+            # push: 직전 커밋 대비 추가/변경된 storyboard 만 (before=0000/신규브랜치 가드)
+            BEFORE="${{ github.event.before }}"
+            if [ -z "$BEFORE" ] || ! git cat-file -e "${BEFORE}^{commit}" 2>/dev/null; then
+              BEFORE=$(git rev-parse "${{ github.sha }}~1" 2>/dev/null || git hash-object -t tree /dev/null)
+            fi
+            FILES=$(git diff --name-only --diff-filter=AM "$BEFORE" "${{ github.sha }}" \
               -- 'output/news/**_storyboard.json' | tr '\n' ' ')
             echo "files=$FILES" >> "$GITHUB_OUTPUT"
           fi
