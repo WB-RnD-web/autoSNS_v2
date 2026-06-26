@@ -44,10 +44,9 @@ jobs:
     env:
       TZ: Asia/Seoul
       DEFAULT_PRIVACY: ${{ vars.DEFAULT_PRIVACY || 'private' }}
-      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      # 장면 스펙 자동 추출에 사용(없으면 output/specs/ 사전 스펙 필요)
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-      # 자막팝(동적 fontsize)은 Linux ffmpeg 에서 정상 → 활성화
-      CAPTION_POP: "1"
+      CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL || 'claude-sonnet-4-6' }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -128,8 +127,12 @@ jobs:
               echo "files=$FILES" >> "$GITHUB_OUTPUT"
             fi
           else
-            # push: 직전 커밋 대비 추가/변경된 storyboard 만
-            FILES=$(git diff --name-only --diff-filter=AM ${{ github.event.before }} ${{ github.sha }} \
+            # push: 직전 커밋 대비 추가/변경된 storyboard 만 (before=0000/신규브랜치 가드)
+            BEFORE="${{ github.event.before }}"
+            if [ -z "$BEFORE" ] || ! git cat-file -e "${BEFORE}^{commit}" 2>/dev/null; then
+              BEFORE=$(git rev-parse "${{ github.sha }}~1" 2>/dev/null || git hash-object -t tree /dev/null)
+            fi
+            FILES=$(git diff --name-only --diff-filter=AM "$BEFORE" "${{ github.sha }}" \
               -- 'output/news/**_storyboard.json' | tr '\n' ' ')
             echo "files=$FILES" >> "$GITHUB_OUTPUT"
           fi
@@ -150,8 +153,11 @@ jobs:
             $([ "${{ github.event.inputs.no_upload }}" = "true" ] && echo --no-upload)
 
       # 6) 산출물 업로드(artifacts — 레포에 커밋하지 않음 = 루프 방지)
+      #    저장소 용량 초과 등 부수 문제로 런이 실패하지 않도록 비치명적 처리.
+      #    (운영의 본 산출물은 유튜브 업로드이며 아티팩트는 검수 편의용)
       - name: 산출물 아티팩트 업로드
         if: always()
+        continue-on-error: true
         uses: actions/upload-artifact@v4
         with:
           name: shorts-${{ github.run_id }}

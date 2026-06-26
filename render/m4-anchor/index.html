@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { margin:0; width:1080px; height:1920px; overflow:hidden;
+  background:#0A0808; font-family: system-ui, sans-serif; }
+
+/* ── 스튜디오 배경 ── */
+#studio { position:absolute; inset:0;
+  background:
+    radial-gradient(130% 70% at 50% 8%, #2b3f55 0%, #16222f 55%, #0c1620 100%); }
+.screen { position:absolute; border-radius:18px;
+  background:linear-gradient(160deg, rgba(120,170,220,0.30), rgba(60,90,130,0.10));
+  border:2px solid rgba(150,190,230,0.25); box-shadow:0 0 40px rgba(80,140,200,0.15) inset; }
+#scr1 { left:60px; top:230px; width:360px; height:230px; transform:rotate(-2deg); }
+#scr2 { right:60px; top:200px; width:380px; height:250px; transform:rotate(2deg); }
+#scr3 { left:50%; top:150px; width:320px; height:200px; transform:translateX(-50%); opacity:.7; }
+.globe { position:absolute; right:120px; top:250px; width:150px; height:150px; border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, #7fc4ff, #2b6fae 70%, #1a3f66);
+  box-shadow:0 0 50px rgba(90,170,255,0.4); opacity:.85; }
+
+/* ── 앵커 배치 (상반신이 보이도록 위로) ── */
+.anchor { position:absolute; top:560px; width:520px; transform-origin:50% 96%; }
+#byeoi  { left:5px; }
+#byeolha{ right:5px; }
+.anchor { z-index:2; }
+.anchor svg { width:100%; height:auto; display:block; filter:drop-shadow(0 14px 30px rgba(0,0,0,.45)); }
+
+/* ── 데스크 (앵커 허리 아래를 가림) ── */
+#desk { position:absolute; left:-40px; right:-40px; bottom:0; height:560px; z-index:5;
+  background:linear-gradient(180deg, #1b2a3a 0%, #0e1722 100%);
+  border-top:5px solid #D97757; border-radius:70px 70px 0 0;
+  box-shadow:0 -25px 70px rgba(217,119,87,0.20); }
+#deskface { position:absolute; left:50%; top:34px; transform:translateX(-50%);
+  width:560px; height:96px; border-radius:14px;
+  background:linear-gradient(180deg,#24384c,#16242f); border:2px solid rgba(217,119,87,0.4);
+  display:flex; align-items:center; justify-content:center; }
+#deskface .logo { color:#EDD9BC; font-weight:800; font-size:46px; letter-spacing:3px; opacity:.92; }
+
+/* 화자 스포트라이트 */
+#spot { position:absolute; top:520px; width:560px; height:720px; border-radius:50%;
+  right:-30px; background:radial-gradient(circle, rgba(217,119,87,.40) 0%, rgba(217,119,87,0) 62%);
+  filter:blur(20px); mix-blend-mode:screen; z-index:1; }
+
+/* ── 방송 그래픽 (데스크 z-index:5 위로) ── */
+#live, #topic, #headline, #ticker { z-index:11; }
+#lower { z-index:8; } #vign { z-index:20; }
+#live { position:absolute; top:90px; left:60px; display:flex; align-items:center; gap:14px;
+  background:#D97757; color:#0A0808; font-weight:800; font-size:40px; letter-spacing:2px;
+  padding:12px 28px; border-radius:10px; }
+#live .dot { width:20px; height:20px; border-radius:50%; background:#0A0808; }
+#topic { position:absolute; top:96px; right:60px; color:#EDD9BC; font-weight:700; font-size:38px;
+  background:rgba(10,8,8,.45); padding:12px 24px; border-radius:10px; }
+
+/* 하단 lower-third + 티커 */
+#lower { position:absolute; left:0; right:0; bottom:120px; height:300px; pointer-events:none;
+  background:linear-gradient(180deg, rgba(10,8,8,0) 0%, rgba(10,8,8,.55) 45%, rgba(10,8,8,.92) 100%); }
+#headline { position:absolute; left:60px; bottom:230px; max-width:840px;
+  color:#fff; font-weight:800; font-size:60px; line-height:1.15;
+  text-shadow:0 4px 14px rgba(0,0,0,.6); }
+#ticker { position:absolute; left:0; right:0; bottom:50px; height:62px;
+  background:#0A0808; border-top:3px solid #D97757; display:flex; align-items:center; overflow:hidden; }
+#ticker .tag { background:#D97757; color:#0A0808; font-weight:800; font-size:34px;
+  height:100%; display:flex; align-items:center; padding:0 22px; }
+#ticker .run { white-space:nowrap; color:#EDD9BC; font-weight:600; font-size:34px; padding-left:24px; }
+
+#vign { position:absolute; inset:0; pointer-events:none;
+  background:radial-gradient(120% 90% at 50% 42%, rgba(0,0,0,0) 58%, rgba(0,0,0,.5) 100%); }
+</style></head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="5.78" data-width="1080" data-height="1920">
+  <div id="stage" class="clip" data-start="0" data-duration="5.78" data-track-index="0">
+    <div id="studio">
+      <div class="screen" id="scr1"></div>
+      <div class="screen" id="scr2"></div>
+      <div class="screen" id="scr3"></div>
+      <div class="globe"></div>
+    </div>
+    <div id="spot"></div>
+
+    <!-- 별이 (남, 좌) -->
+    <div id="byeoi" class="anchor">
+      <svg viewBox="0 0 300 460" xmlns="http://www.w3.org/2000/svg">
+        <!-- 몸/정장 -->
+        <path d="M40 460 Q40 320 150 320 Q260 320 260 460 Z" fill="#E9E2D2"/>
+        <path d="M150 322 L120 400 L150 430 L180 400 Z" fill="#2b3a8c"/>
+        <rect x="138" y="322" width="24" height="70" fill="#cfd8e6"/>
+        <!-- 목 -->
+        <rect x="128" y="250" width="44" height="60" rx="18" fill="#f1c9a5"/>
+        <!-- 머리 -->
+        <ellipse cx="150" cy="180" rx="110" ry="115" fill="#f7d3ad"/>
+        <!-- 머리카락 -->
+        <path d="M44 175 Q40 70 150 60 Q260 70 256 175 Q250 120 150 110 Q50 120 44 175Z" fill="#2a2f45"/>
+        <path d="M150 60 Q120 64 110 96 Q150 84 195 98 Q188 66 150 60Z" fill="#3a4060"/>
+        <!-- 눈썹 -->
+        <rect id="bi-browL" x="92" y="150" width="44" height="11" rx="5" fill="#3a3320"/>
+        <rect id="bi-browR" x="164" y="150" width="44" height="11" rx="5" fill="#3a3320"/>
+        <!-- 눈(깜빡임 그룹) -->
+        <g id="bi-eyes">
+          <ellipse cx="114" cy="180" rx="22" ry="26" fill="#fff"/>
+          <ellipse cx="186" cy="180" rx="22" ry="26" fill="#fff"/>
+          <circle cx="118" cy="184" r="11" fill="#3b2b1a"/>
+          <circle cx="190" cy="184" r="11" fill="#3b2b1a"/>
+        </g>
+        <!-- 볼터치 -->
+        <circle cx="92" cy="212" r="14" fill="#f2a98a" opacity=".5"/>
+        <circle cx="208" cy="212" r="14" fill="#f2a98a" opacity=".5"/>
+        <!-- 입(립싱크 타깃) -->
+        <g id="bi-mouth" transform="translate(150 228)">
+          <ellipse cx="0" cy="0" rx="26" ry="6" fill="#7a3b34"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- 별하 (여, 우) -->
+    <div id="byeolha" class="anchor">
+      <svg viewBox="0 0 300 460" xmlns="http://www.w3.org/2000/svg">
+        <path d="M40 460 Q40 320 150 320 Q260 320 260 460 Z" fill="#c75b46"/>
+        <path d="M150 322 L126 392 L150 416 L174 392 Z" fill="#f3ece0"/>
+        <rect x="128" y="250" width="44" height="60" rx="18" fill="#f6d3b2"/>
+        <!-- 뒷머리 -->
+        <ellipse cx="150" cy="190" rx="122" ry="128" fill="#6b4a2f"/>
+        <!-- 포니테일 -->
+        <ellipse cx="250" cy="150" rx="34" ry="52" fill="#6b4a2f"/>
+        <circle cx="222" cy="120" r="16" fill="#f7c948"/>
+        <!-- 얼굴 -->
+        <ellipse cx="150" cy="185" rx="108" ry="113" fill="#fbdcbf"/>
+        <!-- 앞머리 -->
+        <path d="M44 180 Q42 78 150 66 Q258 78 256 180 Q252 118 150 112 Q48 118 44 180Z" fill="#6b4a2f"/>
+        <path d="M150 66 Q110 72 104 120 Q150 96 196 120 Q190 72 150 66Z" fill="#7d5839"/>
+        <rect id="bh-browL" x="94" y="156" width="42" height="10" rx="5" fill="#5a3f28"/>
+        <rect id="bh-browR" x="166" y="156" width="42" height="10" rx="5" fill="#5a3f28"/>
+        <g id="bh-eyes">
+          <ellipse cx="116" cy="186" rx="23" ry="28" fill="#fff"/>
+          <ellipse cx="188" cy="186" rx="23" ry="28" fill="#fff"/>
+          <circle cx="120" cy="190" r="12" fill="#4a3322"/>
+          <circle cx="192" cy="190" r="12" fill="#4a3322"/>
+        </g>
+        <circle cx="92" cy="220" r="15" fill="#f2998a" opacity=".55"/>
+        <circle cx="208" cy="220" r="15" fill="#f2998a" opacity=".55"/>
+        <g id="bh-mouth" transform="translate(150 236)">
+          <ellipse cx="0" cy="0" rx="24" ry="6" fill="#a83f43"/>
+        </g>
+      </svg>
+    </div>
+
+    <div id="desk"><div id="deskface"><span class="logo">일상공감뉴스</span></div></div>
+
+    <!-- 그래픽 -->
+    <div id="live"><span class="dot"></span>LIVE</div>
+    <div id="topic">경제</div>
+    <div id="lower"></div>
+    <div id="headline">AI메모리 대란에<br/>애플 가격 인상</div>
+    <div id="ticker"><div class="tag">속보</div><div class="run">애플, 맥북·아이패드 가격 인상 — 40년 만의 메모리 대란 · 삼성 반사이익 전망 ·</div></div>
+    <div id="vign"></div>
+  </div>
+</div>
+
+<script>
+window.__timelines = window.__timelines || {};
+const tl = gsap.timeline({ paused:true });
+const D = 5.78;
+
+// 진입
+tl.from("#byeoi",  { y:60, opacity:0, duration:.6, ease:"power3.out" }, 0.1);
+tl.from("#byeolha",{ y:60, opacity:0, duration:.6, ease:"back.out(1.3)" }, 0.2);
+tl.from("#live",   { x:-40, opacity:0, duration:.5, ease:"power2.out" }, 0.2);
+tl.from("#headline",{ y:30, opacity:0, duration:.6, ease:"power3.out" }, 0.4);
+
+// 화자(별하) 강조 살짝 키움 + 스포트라이트 (transform-origin은 CSS)
+tl.fromTo("#byeolha", { scale:1 }, { scale:1.05, duration:.5, ease:"power2.out" }, 0.3);
+tl.fromTo("#spot", { opacity:0 }, { opacity:.9, duration:.6 }, 0.3);
+
+// 고개 까딱(idle) — #byeoi는 rotation, #byeolha는 별도 래퍼 없이 y-bob로(속성 충돌 회피)
+tl.to("#byeoi",  { rotation:1.4, duration:1.4, ease:"sine.inOut", yoyo:true, repeat:Math.floor(D/1.4)-1 }, 0);
+tl.to("#byeolha",{ y:-6, duration:1.7, ease:"sine.inOut", yoyo:true, repeat:Math.floor((D-0.8)/1.7)-1 }, 0.8);
+
+// 눈 깜빡임 — 주기적(유한)
+function blink(sel, start, every){
+  let t=start, n=0;
+  while(t < D-0.1 && n<20){ tl.to(sel,{scaleY:0.1,duration:0.06,transformOrigin:"50% 50%",yoyo:true,repeat:1},t); t+=every; n++; }
+}
+blink("#bi-eyes", 0.8, 2.3);
+blink("#bh-eyes", 1.4, 2.0);
+
+// 티커 스크롤
+tl.fromTo("#ticker .run", { x:0 }, { x:-700, duration:D, ease:"none" }, 0);
+
+// ── 임시 립싱크(플랩) — 별하가 말하는 중. 실제 오디오 엔벨로프로 교체 예정 ──
+let t=0.3, n=0;
+while(t < D-0.1 && n<200){
+  const open = 0.5 + ((n*37)%100)/100*1.6;  // 의사난수 대신 결정적 패턴
+  tl.to("#bh-mouth",{scaleY:open,duration:0.08,ease:"sine.inOut",transformOrigin:"50% 50%"},t);
+  t+=0.11; n++;
+}
+// 별이는 다물고 가끔 미세
+tl.to("#bi-mouth",{scaleY:1.0,duration:0.1},0);
+
+window.__timelines["main"] = tl;
+</script>
+</body></html>
