@@ -2,8 +2,9 @@
 
 > 토픽별 루틴 1개당 이 프롬프트를 쓰고 상단 3줄(TOPIC)만 바꾼다.
 > 출력은 **모션그래픽 장면 스펙 JSON**이며, v2 파이프라인이 그대로 렌더한다(CI LLM 호출 불필요).
-> 커밋: `output/news/<DATE>_<TOPIC_SLUG>_storyboard.json` 를 **`routine/<DATE>_<TOPIC_SLUG>` 브랜치**에 push
-> (main 직접 push 없음 → Claude Code 상승 권한 토글 불필요). 그 브랜치 push 가 워크플로를 트리거한다.
+> 커밋: `output/news/<DATE>_<TOPIC_SLUG>_storyboard.json` 를 **토픽별 고정 브랜치 `routine/<TOPIC_SLUG>`**
+> 에 매일 덮어쓰기 push (main 직접 push 없음 → Claude Code 상승 권한 토글 불필요).
+> 브랜치는 토픽당 1개로 고정(누적 없음). 그 브랜치 push 가 워크플로를 트리거한다.
 
 ---
 
@@ -118,12 +119,12 @@ SCENE TYPES — choose what fits each fact (mix freely):
    v1(`/autoSNS`)이면: `git remote set-url origin https://github.com/WB-RnD-web/autoSNS_v2.git`
    (체크아웃이 없으면: `git clone https://github.com/WB-RnD-web/autoSNS_v2.git`)
 1. `git fetch origin main`
-2. `git checkout -B routine/<DATE>_<TOPIC_SLUG> origin/main`   # main 기준으로 새(또는 리셋) 브랜치
-3. write `output/news/<DATE>_<TOPIC_SLUG>_storyboard.json` (overwrite if exists)
+2. `git checkout -B routine/<TOPIC_SLUG> origin/main`   # 토픽 고정 브랜치를 매일 main 기준으로 리셋
+3. write `output/news/<DATE>_<TOPIC_SLUG>_storyboard.json` (이전 날짜 파일은 리셋으로 자동 제거됨)
 4. `git add -A` → commit `"chore: 오늘 스토리보드(루틴) <TOPIC_SLUG>"`
-   → `git push -u origin routine/<DATE>_<TOPIC_SLUG>` (브랜치가 이미 있으면 `git push -f`)
-   ⚠️ main 에는 절대 push 하지 않는다.
-Do not stop until the storyboard is pushed to its `routine/<DATE>_<TOPIC_SLUG>` branch.
+   → `git push -f origin routine/<TOPIC_SLUG>`   (덮어쓰기 push — 토픽당 브랜치 1개 유지)
+   ⚠️ main 에는 절대 push 하지 않는다. 브랜치명에 날짜를 넣지 않는다(누적 방지).
+Do not stop until the storyboard is pushed to its `routine/<TOPIC_SLUG>` branch.
 
 ## 6) If nothing suitable is trending today
 Do not commit. Log the reason instead.
