@@ -140,9 +140,11 @@ jobs:
             exit 0
           fi
           cd pipeline
+          # privacy: push(운영)는 JSON privacy 준수(politics=unlisted, 그 외=public).
+          #          강제 private 은 수동 테스트(workflow_dispatch)에서 force_private=true 일 때만.
           python run_pipeline.py $(for f in $FILES; do echo "../$f"; done) \
             --use-ledger --log ../output/run_log.json \
-            $([ "${{ github.event.inputs.force_private }}" != "false" ] && echo --force-private) \
+            $([ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.force_private }}" = "true" ] && echo --force-private) \
             $([ "${{ github.event.inputs.no_upload }}" = "true" ] && echo --no-upload)
 
       # 6) 로그 아티팩트(작은 파일만 — mp4 제외로 저장소 용량 절약).
