@@ -1,19 +1,20 @@
 #!/usr/bin/env python3
-"""v2 오케스트레이터: 스토리보드 1개 이상 → 완성 쇼츠 → 업로드.
+"""v2 오케스트레이터(모션그래픽): 스토리보드 → 장면스펙 → 모션그래픽 쇼츠 → 업로드.
 
-v1 run_daily 의 v2판. 차이:
-  - 영상화 = make_short(HyperFrames 베드 기반)
-  - 입력 = 인자로 받은 스토리보드 경로들 (Actions가 git diff로 신규 파일을 넘김)
-    또는 --today 로 오늘(KST) output/news/*_storyboard.json 자동 탐색(로컬 테스트).
+각 스토리보드마다:
+  ① 장면 스펙 확보:
+     - --spec 로 직접 지정(단일) 또는
+     - 미리 만든 output/specs/<date>_<topic>_spec.json 있으면 사용 또는
+     - ANTHROPIC_API_KEY 있으면 extract_scenes 로 생성(→ specs 저장)
+  ② motion_short.build_motion → output/renders/<date>_<topic>_final.mp4
+  ③ 업로드(privacy 준수, ledger dedupe, 로그) — v1 재사용
 
-업로드 안전장치(v1 동일):
-  - privacy: JSON 존중(politics=unlisted). --force-private 로 테스트 강제 private.
-  - 자격증명(YT_TOKEN_JSON/token.json) 없으면 업로드 건너뜀(영상은 생성).
+루프 가드: main에 커밋하지 않음(산출물·ledger·spec 전부 .gitignore).
 
 사용:
-  python run_pipeline.py path/to/sb.json [more.json ...] --force-private
+  python run_pipeline.py <sb.json> [...] --force-private
+  python run_pipeline.py <sb.json> --spec <spec.json> --no-upload
   python run_pipeline.py --today
-  python run_pipeline.py sb.json --no-upload          # 영상만
 """
 from __future__ import annotations
 import argparse
@@ -26,15 +27,25 @@ import time
 
 import config
 import ledger as ledgermod
-import make_short
+import motion_short
 import upload_youtube
 from upload_from_storyboard import build_meta
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+SPECS_DIR = config.OUTPUT / "specs"
 
 
-def upload_with_retry(video, meta, retries: int = 2):
-    """업로드 전환적 실패 재시도. 성공 시 video_id 반환."""
+def today_storyboards():
+    today = dt.datetime.now().strftime("%Y-%m-%d")
+    return sorted(glob.glob(str(config.NEWS_DIR / f"{today}_*_storyboard.json")))
+
+
+def has_credentials():
+    token = config.env("YT_TOKEN", str(config.ROOT / "pipeline/secrets/token.json"))
+    return bool(config.env("YT_TOKEN_JSON")) or os.path.exists(token)
+
+
+def upload_with_retry(video, meta, retries=2):
     last = None
     for attempt in range(1, retries + 2):
         try:
@@ -46,48 +57,57 @@ def upload_with_retry(video, meta, retries: int = 2):
     raise last
 
 
-def today_storyboards() -> list:
-    today = dt.datetime.now().strftime("%Y-%m-%d")
-    return sorted(glob.glob(str(config.NEWS_DIR / f"{today}_*_storyboard.json")))
+def resolve_spec(sb_path, sb, args):
+    """장면 스펙 확보: --spec > 사전생성 파일 > LLM 추출."""
+    if args.spec:
+        with open(args.spec, encoding="utf-8") as f:
+            return json.load(f)
+    date, topic = sb.get("date", ""), sb.get("topic", "")
+    pre = SPECS_DIR / f"{date}_{topic}_spec.json"
+    if pre.exists():
+        with open(pre, encoding="utf-8") as f:
+            return json.load(f)
+    if config.env("ANTHROPIC_API_KEY"):
+        import extract_scenes
+        spec = extract_scenes.extract_scenes(sb)
+        SPECS_DIR.mkdir(parents=True, exist_ok=True)
+        with open(pre, "w", encoding="utf-8") as f:
+            json.dump(spec, f, ensure_ascii=False, indent=2)
+        return spec
+    raise RuntimeError("장면 스펙 없음 — --spec 지정, output/specs/ 사전생성, 또는 ANTHROPIC_API_KEY 필요")
 
 
-def has_credentials() -> bool:
-    token = config.env("YT_TOKEN", str(config.ROOT / "pipeline/secrets/token.json"))
-    return bool(config.env("YT_TOKEN_JSON")) or os.path.exists(token)
-
-
-def process(sb_path: str, args, led: dict | None) -> dict:
+def process(sb_path, args, led):
     res = {"storyboard": os.path.basename(sb_path), "video": None,
            "uploaded": None, "skipped": False, "error": None}
     with open(sb_path, encoding="utf-8") as f:
         sb = json.load(f)
-
-    # dedupe: 이미 업로드한 스토리보드면 건너뜀
     if led is not None and ledgermod.is_done(led, sb):
         res["skipped"] = True
-        print(f"   ⏭️  ledger에 이미 처리됨({ledgermod.key_for(sb)}) — 건너뜀")
+        print(f"   ⏭️  ledger 처리됨({ledgermod.key_for(sb)}) — 건너뜀")
         return res
-
     try:
-        video = make_short.make_short(sb_path, max_shots=args.shots,
-                                      skip_bed=args.skip_bed, quality=args.quality)
-        res["video"] = video
+        spec = resolve_spec(sb_path, sb, args)
+        spec.setdefault("topic", sb.get("topic", ""))
+        suffix = f"_{sb.get('topic','')}" if sb.get("topic") else ""
+        out_mp4 = str(config.RENDERS_DIR / f"{sb.get('date','out')}{suffix}_final.mp4")
+        wd = str(config.OUTPUT / "_work" / f"{sb.get('date','')}{suffix}")
+        config.ensure_dirs()
+        res["video"] = motion_short.build_motion(spec, out_mp4, wd, quality=args.quality)
     except Exception as e:  # noqa: BLE001
         res["error"] = f"render: {e}"
         return res
 
     if args.no_upload:
         return res
-
     meta = build_meta(sb, args.force_private)
     print(f"   업로드 메타: title='{meta['title']}' privacy={meta['privacy']}")
-
     if args.dry_run_upload:
         res["uploaded"] = f"[dry-run] privacy={meta['privacy']}"
         return res
     if not has_credentials():
         res["uploaded"] = "[skip] 자격증명 없음"
-        print("   ⏭️  업로드 건너뜀(자격증명 없음). --no-upload 또는 자격증명 연결 필요.")
+        print("   ⏭️  업로드 건너뜀(자격증명 없음).")
         return res
     try:
         vid = upload_with_retry(res["video"], meta)
@@ -99,19 +119,18 @@ def process(sb_path: str, args, led: dict | None) -> dict:
     return res
 
 
-def main() -> int:
-    ap = argparse.ArgumentParser(description="v2 파이프라인: 스토리보드 → 쇼츠 → 업로드")
-    ap.add_argument("storyboards", nargs="*", help="스토리보드 JSON 경로(들)")
-    ap.add_argument("--today", action="store_true", help="오늘(KST) output/news 자동 탐색")
-    ap.add_argument("--no-upload", action="store_true", help="영상만 생성")
-    ap.add_argument("--force-private", action="store_true", help="privacy 강제 private(테스트)")
-    ap.add_argument("--dry-run-upload", action="store_true", help="업로드 매핑만(실업로드 X)")
-    ap.add_argument("--shots", type=int, default=0)
-    ap.add_argument("--skip-bed", action="store_true")
+def main():
+    ap = argparse.ArgumentParser(description="v2 모션그래픽 파이프라인")
+    ap.add_argument("storyboards", nargs="*")
+    ap.add_argument("--today", action="store_true")
+    ap.add_argument("--spec", help="장면 스펙 직접 지정(단일 스토리보드)")
+    ap.add_argument("--no-upload", action="store_true")
+    ap.add_argument("--force-private", action="store_true")
+    ap.add_argument("--dry-run-upload", action="store_true")
     ap.add_argument("--quality", default="standard", choices=["draft", "standard", "high"])
-    ap.add_argument("--use-ledger", action="store_true", help="dedupe ledger 사용(이미 업로드면 skip)")
+    ap.add_argument("--use-ledger", action="store_true")
     ap.add_argument("--ledger-path", default=ledgermod.DEFAULT_PATH)
-    ap.add_argument("--log", default="", help="실행 결과 JSON 로그 경로(비우면 미기록)")
+    ap.add_argument("--log", default="")
     args = ap.parse_args()
     config.load_dotenv()
 
@@ -120,12 +139,11 @@ def main() -> int:
         boards += today_storyboards()
     boards = [b for b in dict.fromkeys(boards) if b.endswith("_storyboard.json")]
     if not boards:
-        print("[stop] 처리할 스토리보드가 없습니다. 경로를 넘기거나 --today 사용.", file=sys.stderr)
+        print("[stop] 처리할 스토리보드 없음. 경로 지정 또는 --today.", file=sys.stderr)
         return 1
 
     led = ledgermod.load(args.ledger_path) if args.use_ledger else None
-
-    print(f"# 처리 대상 {len(boards)}개: {', '.join(os.path.basename(b) for b in boards)}")
+    print(f"# 처리 {len(boards)}개: {', '.join(os.path.basename(b) for b in boards)}")
     results = []
     for b in boards:
         print(f"\n──── {os.path.basename(b)} ────")
@@ -141,7 +159,6 @@ def main() -> int:
         if r["error"]:
             line += f"  ⚠️ {r['error']}"; rc = 1
         print(line)
-
     if args.log:
         os.makedirs(os.path.dirname(args.log) or ".", exist_ok=True)
         with open(args.log, "w", encoding="utf-8") as f:

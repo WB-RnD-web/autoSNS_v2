@@ -44,10 +44,9 @@ jobs:
     env:
       TZ: Asia/Seoul
       DEFAULT_PRIVACY: ${{ vars.DEFAULT_PRIVACY || 'private' }}
-      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      # 장면 스펙 자동 추출에 사용(없으면 output/specs/ 사전 스펙 필요)
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-      # 자막팝(동적 fontsize)은 Linux ffmpeg 에서 정상 → 활성화
-      CAPTION_POP: "1"
+      CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL || 'claude-sonnet-4-6' }}
     steps:
       - uses: actions/checkout@v4
         with:

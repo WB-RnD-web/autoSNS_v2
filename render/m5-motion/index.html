@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<style>
+@font-face{font-family:"Pretendard";font-weight:400;src:url("assets/fonts/Pretendard-Regular.woff2") format("woff2");}
+@font-face{font-family:"Pretendard";font-weight:700;src:url("assets/fonts/Pretendard-Bold.woff2") format("woff2");}
+@font-face{font-family:"Pretendard";font-weight:800;src:url("assets/fonts/Pretendard-ExtraBold.woff2") format("woff2");}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#0A0808;font-family:"Pretendard",sans-serif;}
+.scene{position:absolute;inset:0;overflow:hidden;background:#0A0808;}
+#s1{z-index:1;} #s2{z-index:2;} #s3{z-index:3;} #s4{z-index:4;}
+
+/* 공통 데코 */
+.glow{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;}
+.grain{position:absolute;inset:-50%;width:200%;height:200%;opacity:.06;pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");}
+.ghost{position:absolute;font-weight:800;color:rgba(217,119,87,.07);font-size:520px;letter-spacing:-10px;white-space:nowrap;pointer-events:none;}
+.pill{display:inline-flex;align-items:center;gap:16px;background:#D97757;color:#0A0808;font-weight:800;
+  font-size:42px;letter-spacing:2px;padding:14px 34px;border-radius:999px;}
+.pill .dot{width:18px;height:18px;border-radius:50%;background:#0A0808;}
+.brand{position:absolute;bottom:70px;left:60px;color:rgba(237,217,188,.5);font-weight:700;font-size:36px;letter-spacing:3px;}
+.label{color:#D97757;font-weight:800;font-size:48px;letter-spacing:1px;}
+.sub{color:rgba(237,217,188,.7);font-weight:500;font-size:48px;}
+
+/* S1 */
+#s1 .wrap{position:absolute;left:80px;top:560px;width:920px;}
+#s1 .pillrow{position:absolute;left:80px;top:430px;}
+.h1{color:#EDD9BC;font-weight:800;font-size:130px;line-height:1.05;letter-spacing:-3px;}
+.big{color:#D97757;font-size:230px;display:inline-block;}
+
+/* S2 */
+#s2 .wrap{position:absolute;left:80px;top:430px;width:920px;}
+#s2 .num{color:#D97757;font-weight:800;font-size:300px;line-height:1;letter-spacing:-8px;}
+#s2 .bar{position:absolute;right:120px;bottom:430px;width:120px;height:0;border-radius:18px;
+  background:linear-gradient(180deg,#D97757,#b85a3e);}
+#s2 .barbase{position:absolute;right:120px;bottom:430px;width:120px;height:700px;border-radius:18px;
+  background:rgba(237,217,188,.08);}
+
+/* S3 */
+#s3 .wrap{position:absolute;left:80px;top:470px;width:920px;}
+#s3 .num{color:#D97757;font-weight:800;font-size:320px;line-height:1;}
+#s3 .track{position:absolute;left:80px;bottom:560px;width:920px;height:40px;border-radius:20px;background:rgba(237,217,188,.08);}
+#s3 .fill{position:absolute;left:80px;bottom:560px;width:230px;height:40px;border-radius:20px;background:#D97757;transform-origin:left center;}
+
+/* S4 */
+#s4 .wrap{position:absolute;left:80px;top:430px;width:920px;}
+#s4 .num{color:#E5484D;font-weight:800;font-size:300px;line-height:1;letter-spacing:-6px;}
+#s4 svg{position:absolute;left:80px;bottom:520px;width:920px;height:360px;}
+#s4 .closer{position:absolute;left:80px;bottom:300px;width:920px;color:#EDD9BC;font-weight:800;font-size:72px;line-height:1.1;opacity:0;}
+#fade{position:absolute;inset:0;background:#0A0808;opacity:0;z-index:50;pointer-events:none;}
+</style></head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="25" data-width="1080" data-height="1920">
+
+  <!-- S1 HOOK -->
+  <div id="s1" class="scene clip" data-start="0" data-duration="5.0" data-track-index="0">
+    <div class="glow" id="g1" style="width:760px;height:760px;left:-160px;top:300px;background:radial-gradient(circle,#D97757,rgba(217,119,87,0));opacity:.5;"></div>
+    <div class="ghost" id="gh1" style="left:-60px;top:1050px;">ECONOMY</div>
+    <div class="grain"></div>
+    <div class="pillrow"><span class="pill"><span class="dot"></span>BREAKING</span></div>
+    <div class="wrap">
+      <div class="h1" id="s1a">이게</div>
+      <div class="h1" id="s1b"><span class="big" id="s1num">40</span>년 만에</div>
+      <div class="h1" id="s1c">처음이라고?</div>
+    </div>
+    <div class="brand">일상공감뉴스 · 경제</div>
+  </div>
+
+  <!-- S2 PRICE -->
+  <div id="s2" class="scene clip" data-start="4.5" data-duration="6.1" data-track-index="1">
+    <div class="glow" style="width:700px;height:700px;right:-140px;top:240px;background:radial-gradient(circle,#D97757,rgba(217,119,87,0));opacity:.4;"></div>
+    <div class="grain"></div>
+    <div class="barbase"></div><div class="bar" id="s2bar"></div>
+    <div class="wrap">
+      <div class="label" id="s2l">맥북 · 아이패드 가격</div>
+      <div class="num" id="s2num" style="margin-top:20px;">+$0</div>
+      <div class="sub" id="s2s" style="margin-top:10px;">한 번에 <b style="color:#EDD9BC;">30만 원</b> 넘게 올랐다</div>
+    </div>
+    <div class="brand">일상공감뉴스 · 경제</div>
+  </div>
+
+  <!-- S3 WHY -->
+  <div id="s3" class="scene clip" data-start="10.1" data-duration="6.1" data-track-index="2">
+    <div class="glow" style="width:760px;height:760px;left:50%;top:200px;transform:translateX(-50%);background:radial-gradient(circle,#D97757,rgba(217,119,87,0));opacity:.35;"></div>
+    <div class="grain"></div>
+    <div class="wrap">
+      <div class="label" id="s3l">원인 — AI 메모리 가격</div>
+      <div style="margin-top:10px;"><span class="num" id="s3num">1</span><span class="num" style="font-size:200px;">배</span></div>
+      <div class="sub" id="s3s">단 <b style="color:#EDD9BC;">3분기</b> 만에 폭등</div>
+    </div>
+    <div class="track"></div><div class="fill" id="s3fill"></div>
+    <div class="brand">일상공감뉴스 · 경제</div>
+  </div>
+
+  <!-- S4 STOCK -->
+  <div id="s4" class="scene clip" data-start="15.7" data-duration="9.3" data-track-index="3">
+    <div class="glow" id="g4" style="width:820px;height:820px;left:50%;top:520px;transform:translateX(-50%);background:radial-gradient(circle,#E5484D,rgba(229,72,77,0));opacity:.0;"></div>
+    <div class="grain"></div>
+    <div class="wrap">
+      <div class="label" style="color:#E5484D;" id="s4l">애플 주가</div>
+      <div class="num" id="s4num" style="margin-top:10px;">0%</div>
+      <div class="sub" id="s4s">하루 만에 — <b style="color:#EDD9BC;">1년 최대 낙폭</b></div>
+    </div>
+    <svg viewBox="0 0 920 360" preserveAspectRatio="none">
+      <path id="s4line" d="M0,40 L230,70 L460,55 L690,150 L920,320" fill="none" stroke="#E5484D" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="closer" id="s4c">메모리 파는 삼성은,<br/>오히려 웃었다.</div>
+    <div class="brand">일상공감뉴스 · 경제</div>
+  </div>
+
+  <div id="fade"></div>
+</div>
+
+<script>
+window.__timelines = window.__timelines || {};
+const tl = gsap.timeline({ paused:true });
+
+function countup(sel, from, to, t, dur, fmt){
+  const o={v:from}, el=document.querySelector(sel);
+  tl.to(o,{v:to,duration:dur,ease:"power2.out",onUpdate:()=>{el.textContent=fmt(o.v);}},t);
+}
+
+/* 장면 시작(내레이션 길이에 맞춤) */
+const S1=0, S2=4.5, S3=10.1, S4=15.7;
+
+/* ── S1 HOOK ── */
+tl.fromTo("#s1",{opacity:0,scale:1.08},{opacity:1,scale:1,duration:0.5,ease:"power2.out"},S1);
+tl.from("#s1 .pill",{y:-40,opacity:0,duration:0.5,ease:"power3.out"},S1+0.2);
+tl.from("#s1a",{y:60,opacity:0,duration:0.5,ease:"power3.out"},S1+0.5);
+tl.from("#s1b",{y:60,opacity:0,duration:0.5,ease:"power3.out"},S1+0.7);
+tl.from("#s1c",{y:60,opacity:0,duration:0.5,ease:"back.out(1.2)"},S1+0.95);
+tl.fromTo("#s1num",{scale:0.4,color:"#EDD9BC"},{scale:1,color:"#D97757",duration:0.6,ease:"back.out(2)"},S1+1.1);
+tl.to("#gh1",{x:-60,duration:5.0,ease:"none"},S1);
+tl.to("#g1",{scale:1.15,duration:2.3,ease:"sine.inOut",yoyo:true,repeat:1},S1);
+
+/* ── S2 PRICE — push up ── */
+tl.fromTo("#s2",{yPercent:100},{yPercent:0,duration:0.45,ease:"power3.out"},S2);
+tl.from("#s2l",{x:-40,opacity:0,duration:0.5,ease:"power2.out"},S2+0.5);
+tl.from("#s2num",{scale:0.6,opacity:0,duration:0.5,ease:"back.out(1.6)"},S2+0.65);
+countup("#s2num",0,200,S2+0.75,1.4,v=>"+$"+Math.round(v));
+tl.fromTo("#s2bar",{height:0},{height:560,duration:1.4,ease:"power2.out"},S2+0.75);
+tl.from("#s2s",{y:30,opacity:0,duration:0.5,ease:"power2.out"},S2+1.6);
+
+/* ── S3 WHY — slide left ── */
+tl.fromTo("#s3",{xPercent:100},{xPercent:0,duration:0.45,ease:"power3.out"},S3);
+tl.from("#s3l",{x:-40,opacity:0,duration:0.5,ease:"power2.out"},S3+0.5);
+tl.from("#s3num",{scale:0.6,opacity:0,duration:0.5,ease:"back.out(1.6)"},S3+0.65);
+countup("#s3num",1,4,S3+0.75,1.3,v=>Math.round(v));
+tl.fromTo("#s3fill",{scaleX:1},{scaleX:4,duration:1.3,ease:"power2.out"},S3+0.75);
+tl.from("#s3s",{y:30,opacity:0,duration:0.5,ease:"power2.out"},S3+1.5);
+
+/* ── S4 STOCK — zoom through + red ── */
+tl.fromTo("#s4",{scale:1.25,opacity:0},{scale:1,opacity:1,duration:0.45,ease:"power3.out"},S4);
+tl.from("#s4l",{x:-40,opacity:0,duration:0.5,ease:"power2.out"},S4+0.5);
+tl.from("#s4num",{scale:0.6,opacity:0,duration:0.5,ease:"back.out(1.6)"},S4+0.65);
+countup("#s4num",0,-6,S4+0.75,1.2,v=>(Math.round(v))+"%");
+tl.to("#g4",{opacity:0.5,duration:0.6,ease:"power2.out"},S4+0.75);
+tl.fromTo("#s4line",{strokeDashoffset:1200,strokeDasharray:1200},{strokeDashoffset:0,duration:1.4,ease:"power2.inOut"},S4+0.7);
+tl.from("#s4s",{y:30,opacity:0,duration:0.5,ease:"power2.out"},S4+1.6);
+tl.to("#s4c",{opacity:1,y:-10,duration:0.6,ease:"power3.out"},S4+4.3);
+/* 최종 페이드만 허용 */
+tl.to("#fade",{opacity:1,duration:0.7,ease:"power2.in"},24.3);
+
+window.__timelines["main"] = tl;
+</script>
+</body></html>
