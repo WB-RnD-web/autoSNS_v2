@@ -104,10 +104,10 @@ def _allow_b(s):
 
 
 # ── 장면 HTML ─────────────────────────────────────────────
-def scene_html(i, sc):
+def scene_html(i, sc, acc):
     t = sc["type"]
     gid = f"s{i}"
-    glow = f'<div class="glow" id="{gid}-glow" style="width:760px;height:760px;left:-160px;top:280px;background:radial-gradient(circle,{BRAND["coral"]},rgba(217,119,87,0));opacity:.45;"></div>'
+    glow = f'<div class="glow" id="{gid}-glow" style="width:760px;height:760px;left:-160px;top:280px;background:radial-gradient(circle,{acc},{acc}00);opacity:.45;"></div>'
     grain = '<div class="grain"></div>'
     brand = f'<div class="brand">{esc(sc.get("brand","일상공감뉴스"))}</div>'
     body = ""
@@ -140,7 +140,7 @@ def scene_html(i, sc):
         col = BRAND["red"] if down else "#3FB950"
         path = "M0,40 L230,70 L460,55 L690,150 L920,320" if down else "M0,320 L230,250 L460,270 L690,120 L920,40"
         closer = f'<div class="closer" id="{gid}-closer">{_allow_b(sc.get("closer",""))}</div>' if sc.get("closer") else ""
-        glow = glow.replace(BRAND["coral"], col).replace('opacity:.45', 'opacity:0').replace(f'id="{gid}-glow"', f'id="{gid}-glow" data-col="{col}"')
+        glow = glow.replace(acc, col).replace('opacity:.45', 'opacity:0').replace(f'id="{gid}-glow"', f'id="{gid}-glow" data-col="{col}"')
         body = ('<div class="wrap">'
                 + f'<div class="label" id="{gid}-label" style="color:{col}">{esc(sc.get("label",""))}</div>'
                 + f'<div class="num" id="{gid}-num" style="color:{col};margin-top:10px;">0{esc(sc.get("suffix","%"))}</div>'
@@ -174,7 +174,7 @@ def scene_html(i, sc):
 TRANSITIONS = ["fade", "pushup", "slideleft", "zoom"]
 
 
-def scene_js(i, sc):
+def scene_js(i, sc, acc):
     gid, S = f"s{i}", sc["start"]
     out = []
     tr = "fade" if i == 0 else TRANSITIONS[1 + (i - 1) % 3]
@@ -195,7 +195,7 @@ def scene_js(i, sc):
         for j in range(len(sc.get("lines", []))):
             out.append(f'tl.from("#{gid}-l{j}",{{y:60,opacity:0,duration:0.5,ease:"power3.out"}},{S+0.5+j*0.22:.2f});')
         if sc.get("highlight"):
-            out.append(f'tl.fromTo("#{gid}-hl",{{scale:0.4,color:"{BRAND["cream"]}"}},{{scale:1,color:"{BRAND["coral"]}",duration:0.6,ease:"back.out(2)"}},{S+1.1:.2f});')
+            out.append(f'tl.fromTo("#{gid}-hl",{{scale:0.4,color:"{BRAND["cream"]}"}},{{scale:1,color:"{acc}",duration:0.6,ease:"back.out(2)"}},{S+1.1:.2f});')
     elif t == "quote":
         out.append(f'tl.from("#{gid}-qm",{{scale:0.5,opacity:0,duration:0.6,ease:"back.out(1.6)"}},{S+0.4:.2f});')
         out.append(f'tl.from("#{gid}-qt",{{y:40,opacity:0,duration:0.6,ease:"power3.out"}},{S+0.6:.2f});')
@@ -207,7 +207,7 @@ def scene_js(i, sc):
     elif t == "statement":
         out.append(f'tl.from("#{gid}-st",{{y:50,opacity:0,duration:0.6,ease:"power3.out"}},{S+0.4:.2f});')
         if sc.get("highlight"):
-            out.append(f'tl.fromTo("#{gid}-hl",{{scale:0.5,color:"{BRAND["cream"]}"}},{{scale:1,color:"{BRAND["coral"]}",duration:0.6,ease:"back.out(2)"}},{S+0.9:.2f});')
+            out.append(f'tl.fromTo("#{gid}-hl",{{scale:0.5,color:"{BRAND["cream"]}"}},{{scale:1,color:"{acc}",duration:0.6,ease:"back.out(2)"}},{S+0.9:.2f});')
     elif t in ("stat", "gauge", "trend"):
         out.append(f'tl.from("#{gid}-label",{{x:-40,opacity:0,duration:0.5,ease:"power2.out"}},{S+0.5:.2f});')
         out.append(f'tl.from("#{gid}-num",{{scale:0.6,opacity:0,duration:0.5,ease:"back.out(1.6)"}},{S+0.65:.2f});')
@@ -232,14 +232,15 @@ def scene_js(i, sc):
     return "\n".join(out)
 
 
-def build_html(scenes, total):
-    parts = [scene_html(i, sc) for i, sc in enumerate(scenes)]
-    js = "\n".join(scene_js(i, sc) for i, sc in enumerate(scenes))
+def build_html(scenes, total, acc="#D97757"):
+    css = f":root{{--acc:{acc};}}\n" + CSS.replace("#D97757", "var(--acc,#D97757)")
+    parts = [scene_html(i, sc, acc) for i, sc in enumerate(scenes)]
+    js = "\n".join(scene_js(i, sc, acc) for i, sc in enumerate(scenes))
     return f"""<!doctype html>
 <html lang="ko"><head><meta charset="UTF-8" />
 <meta name="viewport" content="width=1080, height=1920" />
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
-<style>{CSS}</style></head>
+<style>{css}</style></head>
 <body>
 <div id="root" data-composition-id="main" data-start="0" data-duration="{total:.2f}" data-width="1080" data-height="1920">
 {''.join(parts)}
@@ -279,7 +280,7 @@ def build_motion(spec, out_mp4, workdir, quality="standard"):
     total = round(scenes[-1]["start"] + (probe_dur(scenes[-1]["_vo"]) + PAD), 2)
     # ③ HTML
     with open(os.path.join(PROJ, "index.html"), "w", encoding="utf-8") as f:
-        f.write(build_html(scenes, total))
+        f.write(build_html(scenes, total, spec.get("accent") or "#D97757"))
     # ④ render
     silent = os.path.join(workdir, "silent.mp4")
     r = subprocess.run(f'npx --yes hyperframes@0.7.9 render --quality {quality} --output "{silent}"',

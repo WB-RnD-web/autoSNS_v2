@@ -1,11 +1,16 @@
 {
   "topic": "love",
+  "accent": "#E0788F",
   "scenes": [
     {
       "type": "hook",
       "pill": "ISSUE",
       "ghost": "LOVE",
-      "lines": ["두 남자한테", "동시에", "고백받았다?"],
+      "lines": [
+        "두 남자한테",
+        "동시에",
+        "고백받았다?"
+      ],
       "highlight": "동시에",
       "brand": "일상공감뉴스 · 연애",
       "narration": "하트시그널5에서, 좀처럼 보기 힘든 장면이 나왔습니다."
