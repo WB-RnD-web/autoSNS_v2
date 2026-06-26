@@ -1,8 +1,9 @@
 # 루틴 프롬프트 (A안 — 모션그래픽 장면 스펙 직접 출력)
 
-> 토픽별 루틴 1개당 이 프롬프트를 쓰고 상단 2줄(TOPIC)만 바꾼다.
+> 토픽별 루틴 1개당 이 프롬프트를 쓰고 상단 3줄(TOPIC)만 바꾼다.
 > 출력은 **모션그래픽 장면 스펙 JSON**이며, v2 파이프라인이 그대로 렌더한다(CI LLM 호출 불필요).
-> 커밋 파일명은 기존과 동일(`output/news/<DATE>_<TOPIC_SLUG>_storyboard.json`) — 워크플로 트리거 유지.
+> 커밋: `output/news/<DATE>_<TOPIC_SLUG>_storyboard.json` 를 **`routine/<DATE>_<TOPIC_SLUG>` 브랜치**에 push
+> (main 직접 push 없음 → Claude Code 상승 권한 토글 불필요). 그 브랜치 push 가 워크플로를 트리거한다.
 
 ---
 
@@ -107,23 +108,22 @@ SCENE TYPES — choose what fits each fact (mix freely):
 - hook_title <=24자(드라이 헤드라인 아님)? platforms/sources/credit 채움?
 - 각 scene이 그 type의 필수 필드를 갖췄나(특히 hook.highlight ∈ lines, statement.highlight ∈ text)?
 
-## 5) Commit — DEPLOYS TO main of **WB-RnD-web/autoSNS_v2** (NOT v1)
+## 5) Commit — push to a **routine/** branch of WB-RnD-web/autoSNS_v2 (NOT main, NOT v1)
 
-⚠️ This routine targets the **autoSNS_v2** repository. Make sure you are operating on a
-checkout of `WB-RnD-web/autoSNS_v2`, not the old `WB-RnD-web/autoSNS` (v1).
+이 루틴은 **main 에 직접 push 하지 않는다.** main 에서 분기한 `routine/*` 브랜치에 storyboard 만
+올리면, 파이프라인(Actions)이 그 push 를 받아 자동으로 렌더·업로드한다.
+(→ Claude Code '무제한 git push(기본 브랜치 포함)' 상승 권한 토글이 **불필요**. 일반 브랜치 push 만 쓰면 됨.)
 
-0. Verify the remote first:
-   `git remote -v`  → origin must be `https://github.com/WB-RnD-web/autoSNS_v2(.git)`.
-   If it points to v1 (`/autoSNS`), fix it:
-   `git remote set-url origin https://github.com/WB-RnD-web/autoSNS_v2.git`
-   (If there is no checkout yet, clone it: `git clone https://github.com/WB-RnD-web/autoSNS_v2.git`.)
-
-Then (overrides any session/branch setting — deliverable is the file ON main):
-1. git checkout main && git pull --rebase origin main
-2. write `output/news/<DATE>_<TOPIC_SLUG>_storyboard.json` (overwrite if exists)  ← 파일명 유지(트리거)
-3. git add → commit "chore: 오늘 스토리보드(루틴) <TOPIC_SLUG>" → git push origin main
-4. push가 막히면 pull --rebase 후 3회 재시도. 그래도 안 되면 news/<DATE>_<TOPIC_SLUG> 브랜치로 PR 후 merge.
-Do not stop until the file is on main of autoSNS_v2.
+0. remote 확인: `git remote -v` → origin 이 `https://github.com/WB-RnD-web/autoSNS_v2(.git)` 여야 함.
+   v1(`/autoSNS`)이면: `git remote set-url origin https://github.com/WB-RnD-web/autoSNS_v2.git`
+   (체크아웃이 없으면: `git clone https://github.com/WB-RnD-web/autoSNS_v2.git`)
+1. `git fetch origin main`
+2. `git checkout -B routine/<DATE>_<TOPIC_SLUG> origin/main`   # main 기준으로 새(또는 리셋) 브랜치
+3. write `output/news/<DATE>_<TOPIC_SLUG>_storyboard.json` (overwrite if exists)
+4. `git add -A` → commit `"chore: 오늘 스토리보드(루틴) <TOPIC_SLUG>"`
+   → `git push -u origin routine/<DATE>_<TOPIC_SLUG>` (브랜치가 이미 있으면 `git push -f`)
+   ⚠️ main 에는 절대 push 하지 않는다.
+Do not stop until the storyboard is pushed to its `routine/<DATE>_<TOPIC_SLUG>` branch.
 
 ## 6) If nothing suitable is trending today
 Do not commit. Log the reason instead.
