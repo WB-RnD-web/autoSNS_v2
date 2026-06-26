@@ -44,15 +44,33 @@ python upload_from_storyboard.py --storyboard <sb.json> --video <final.mp4> --fo
 ## GitHub Actions 시크릿/변수
 | 종류 | 이름 | 필수 | 용도 |
 |---|---|---|---|
-| Secret | `YT_CLIENT_SECRET_JSON` | ✅(업로드) | OAuth client_secret.json 내용 |
-| Secret | `YT_TOKEN_JSON` | ✅(업로드) | OAuth token.json(refresh token) 내용 |
-| Secret | `GEMINI_API_KEY` | ⬜ | 투샷 이미지 생성(gemini 백엔드) |
-| Secret | `ANTHROPIC_API_KEY` | ⬜ | (옵션) 스마트 대본 |
-| Variable | `DEFAULT_PRIVACY` | ⬜ | JSON에 privacy 없을 때 폴백(기본 private) |
+| Secret | `YT_CLIENT_SECRET_JSON` | YouTube | OAuth client_secret.json 내용 |
+| Secret | `YT_TOKEN_JSON` | YouTube | OAuth token.json(refresh token) 내용 |
+| Secret | `ANTHROPIC_API_KEY` | ⬜ | 장면 스펙 자동 추출(루틴이 직접 스펙 출력하면 불필요) |
+| Variable | `DEFAULT_PRIVACY` | ⬜ | JSON에 privacy 없을 때 폴백 |
+| Secret | `CLOUDINARY_CLOUD_NAME` / `CLOUDINARY_API_KEY` / `CLOUDINARY_API_SECRET` | IG·Threads | 공개 mp4 호스팅 |
+| Secret | `IG_USER_ID` / `IG_ACCESS_TOKEN` | Instagram | IG Reels 게시 |
+| Secret | `THREADS_USER_ID` / `THREADS_ACCESS_TOKEN` | Threads | Threads 게시 |
 
-## 투샷 이미지 백엔드
-- 기본 `static`: `characters/refs/`의 고정 투샷 이미지를 사용(무료, 항상 동작). 현재 `왕별이 뉴스데스크.png` 번들됨.
-- `gemini`: `IMAGE_BACKEND=gemini` + `GEMINI_API_KEY` → 텍스트 없는 깨끗한 투샷 생성 가능(배너 충돌 근본 해결안).
+> 각 플랫폼은 **자격증명 있을 때만** 동작(없으면 자동 스킵). YouTube만 쓰려면 YT 2개만 넣으면 됨.
+
+## Instagram Reels + Threads 셋업
+IG/Threads 는 **공개 mp4 URL**을 가져가므로(파일 직접 업로드 불가) Cloudinary 로 호스팅 후 게시한다.
+
+1. **Cloudinary** (무료): cloudinary.com 가입 → Dashboard 에서 `Cloud name` / `API Key` / `API Secret`
+   → GitHub Secret `CLOUDINARY_CLOUD_NAME` / `CLOUDINARY_API_KEY` / `CLOUDINARY_API_SECRET`
+2. **Instagram**: 프로(비즈니스/크리에이터) 계정 + Facebook 페이지 연결 + Meta 개발자 앱
+   → `instagram_content_publish` 권한, 장기 토큰 발급 → `IG_ACCESS_TOKEN`, IG 비즈니스 계정 ID → `IG_USER_ID`
+3. **Threads**: Threads 프로 계정 + Meta 앱(Threads API) → `THREADS_ACCESS_TOKEN`, `THREADS_USER_ID`
+4. 토큰은 **~60일마다 갱신** 필요. 본인 계정 자가게시는 보통 앱 개발모드로 가능.
+
+로컬 테스트:
+```bash
+cd pipeline
+python host_video.py --video ../output/renders/<...>_final.mp4 --public-id test   # 공개 URL 확인
+python upload_instagram.py --video-url <URL> --caption "..."
+python upload_threads.py --video-url <URL> --text "..."
+```
 
 ## 주의
 - 시크릿/`.env`/`secrets/`는 커밋 금지(`.gitignore` 처리됨).
