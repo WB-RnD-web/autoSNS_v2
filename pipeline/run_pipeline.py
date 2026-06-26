@@ -80,9 +80,42 @@ def resolve_spec(sb_path, sb, args):
     raise RuntimeError("장면 스펙 없음 — --spec 지정, output/specs/ 사전생성, 또는 ANTHROPIC_API_KEY 필요")
 
 
+def do_social(video, sb, res):
+    """IG Reels + Threads 업로드(자격증명 있을 때만). 공개 URL 은 Cloudinary 경유."""
+    ig = config.env("IG_USER_ID") and config.env("IG_ACCESS_TOKEN")
+    th = config.env("THREADS_USER_ID") and config.env("THREADS_ACCESS_TOKEN")
+    if not ig and not th:
+        return  # 자격증명 없음 → 조용히 스킵
+    import host_video
+    public_id = os.path.splitext(os.path.basename(video))[0]
+    url = host_video.host(video, public_id)
+    if not url:
+        res["social"] = "[skip] Cloudinary 자격증명 없음(공개 URL 불가)"
+        print("   ⏭️  IG/Threads 스킵 — Cloudinary 자격증명 없음")
+        return
+    print(f"   공개 URL: {url}")
+    plat = sb.get("platforms", {})
+    out = []
+    if ig:
+        try:
+            import upload_instagram
+            mid = upload_instagram.publish_reel(url, plat.get("instagram", {}).get("caption", ""))
+            out.append(f"IG:{mid}")
+        except Exception as e:  # noqa: BLE001
+            out.append(f"IG실패:{e}")
+    if th:
+        try:
+            import upload_threads
+            tid = upload_threads.publish_thread(url, plat.get("threads", {}).get("text", ""))
+            out.append(f"Threads:{tid}")
+        except Exception as e:  # noqa: BLE001
+            out.append(f"Threads실패:{e}")
+    res["social"] = " · ".join(out)
+
+
 def process(sb_path, args, led):
     res = {"storyboard": os.path.basename(sb_path), "video": None,
-           "uploaded": None, "skipped": False, "error": None}
+           "uploaded": None, "social": None, "skipped": False, "error": None}
     with open(sb_path, encoding="utf-8") as f:
         sb = json.load(f)
     if led is not None and ledgermod.is_done(led, sb):
@@ -108,17 +141,26 @@ def process(sb_path, args, led):
     if args.dry_run_upload:
         res["uploaded"] = f"[dry-run] privacy={meta['privacy']}"
         return res
-    if not has_credentials():
-        res["uploaded"] = "[skip] 자격증명 없음"
-        print("   ⏭️  업로드 건너뜀(자격증명 없음).")
-        return res
-    try:
-        vid = upload_with_retry(res["video"], meta)
-        res["uploaded"] = f"https://youtu.be/{vid} ({meta['privacy']})"
-        if led is not None:
-            ledgermod.mark(led, sb, vid, meta["privacy"], time.time(), args.ledger_path)
-    except Exception as e:  # noqa: BLE001
-        res["error"] = f"upload: {e}"
+
+    # ── YouTube (자격증명 있을 때) ──
+    if has_credentials():
+        try:
+            vid = upload_with_retry(res["video"], meta)
+            res["uploaded"] = f"https://youtu.be/{vid} ({meta['privacy']})"
+            if led is not None:
+                ledgermod.mark(led, sb, vid, meta["privacy"], time.time(), args.ledger_path)
+        except Exception as e:  # noqa: BLE001
+            res["error"] = f"upload: {e}"
+    else:
+        res["uploaded"] = "[skip] YT 자격증명 없음"
+        print("   ⏭️  YouTube 스킵(자격증명 없음).")
+
+    # ── Instagram Reels + Threads (자격증명 있을 때, 독립) ──
+    if not args.no_social:
+        try:
+            do_social(res["video"], sb, res)
+        except Exception as e:  # noqa: BLE001
+            res["social"] = f"social실패:{e}"
     return res
 
 
@@ -127,7 +169,8 @@ def main():
     ap.add_argument("storyboards", nargs="*")
     ap.add_argument("--today", action="store_true")
     ap.add_argument("--spec", help="장면 스펙 직접 지정(단일 스토리보드)")
-    ap.add_argument("--no-upload", action="store_true")
+    ap.add_argument("--no-upload", action="store_true", help="유튜브 업로드 안 함")
+    ap.add_argument("--no-social", action="store_true", help="IG/Threads 업로드 안 함")
     ap.add_argument("--force-private", action="store_true")
     ap.add_argument("--dry-run-upload", action="store_true")
     ap.add_argument("--quality", default="standard", choices=["draft", "standard", "high"])
@@ -158,7 +201,9 @@ def main():
         line = f"  {r['storyboard']}: "
         line += "SKIP(ledger)" if r["skipped"] else f"video={'OK' if r['video'] else 'FAIL'}"
         if r["uploaded"]:
-            line += f", upload={r['uploaded']}"
+            line += f", yt={r['uploaded']}"
+        if r.get("social"):
+            line += f", social={r['social']}"
         if r["error"]:
             line += f"  ⚠️ {r['error']}"; rc = 1
         print(line)
