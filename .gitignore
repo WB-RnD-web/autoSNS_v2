@@ -6,8 +6,12 @@ pipeline/secrets/
 # ── 생성 산출물(용량 큼 — 레포에 안 담음 = 자기 재트리거 루프 방지에도 중요) ──
 output/assets/
 output/renders/
+/output/ledger.json
+/output/run_log.json
+/output/*.log
 *.mp4
 *.mov
+# 단, output/news/ (루틴이 커밋하는 스토리보드)는 커밋 대상 — 위 패턴은 그걸 건드리지 않음
 
 # 베드 렌더 시 생성되는 임시물(템플릿만 커밋, 생성물은 제외)
 pipeline/bedproj/index.html
