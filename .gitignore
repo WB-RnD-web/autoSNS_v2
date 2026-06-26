@@ -13,10 +13,12 @@ output/renders/
 *.mov
 # 단, output/news/ (루틴이 커밋하는 스토리보드)는 커밋 대상 — 위 패턴은 그걸 건드리지 않음
 
-# 베드 렌더 시 생성되는 임시물(템플릿만 커밋, 생성물은 제외)
-pipeline/bedproj/index.html
-pipeline/bedproj/assets/twoshot.png
-pipeline/bedproj/renders/
+# 모션그래픽 렌더 생성물(템플릿/폰트만 커밋, 생성물 제외)
+pipeline/motion/index.html
+pipeline/motion/renders/
+pipeline/motion/_work/
+/output/specs/
+/output/_work/
 
 # ── 마일스톤 증명용 스크래치(render/) — 무거운 생성물·노드 캐시 제외 ──
 render/**/node_modules/
@@ -34,6 +36,7 @@ render/**/fonts/
 render/**/*.otf
 render/**/*.woff2
 render/**/*.mp3
+render/**/*.m4a
 render/m3-short/bedproj/index.html
 
 # ── Node / Python ──
