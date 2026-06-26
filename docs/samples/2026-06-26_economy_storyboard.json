@@ -1,0 +1,52 @@
+{
+  "date": "2026-06-26",
+  "topic": "economy",
+  "privacy": "public",
+  "topic_keyword": "애플 가격 인상",
+  "headline": "AI메모리 대란에 애플 맥북·아이패드 가격↑",
+  "hook_title": "이게 40년 만에 처음이라고?",
+  "total_sec": 50,
+  "shots": [
+    {"n":1,"type":"anchor","asset":"twoshot","start":0,"duration":4,"speaker":"별하","line":"야, 나 오늘 아침에 애플 뉴스 보고 진짜 손 떨렸잖아.","caption":"별하: 야, 나 오늘 아침에 애플 뉴스 보고 진짜 손 떨렸잖아.","visual":"앵커 투샷·별하 강조"},
+    {"n":2,"type":"anchor","asset":"twoshot","start":4,"duration":2,"speaker":"별이","line":"뭔데? 무슨 일 났어?","caption":"별이: 뭔데? 무슨 일 났어?","visual":"앵커 투샷·별이 강조"},
+    {"n":3,"type":"anchor","asset":"twoshot","start":6,"duration":3,"speaker":"별하","line":"애플이 맥북이랑 아이패드 가격 올렸어. 갑자기.","caption":"별하: 애플이 맥북이랑 아이패드 가격 올렸어. 갑자기.","visual":"앵커 투샷·별하 강조"},
+    {"n":4,"type":"anchor","asset":"twoshot","start":9,"duration":2,"speaker":"별이","line":"얼마나? 1~2만 원 정도야?","caption":"별이: 얼마나? 1~2만 원 정도야?","visual":"앵커 투샷·별이 강조"},
+    {"n":5,"type":"anchor","asset":"twoshot","start":11,"duration":4,"speaker":"별하","line":"아니, 맥북 에어가 2백 달러 넘게 올랐어. 아이패드도.","caption":"별하: 아니, 맥북 에어가 2백 달러 넘게 올랐어. 아이패드도.","visual":"앵커 투샷·별하 강조"},
+    {"n":6,"type":"anchor","asset":"twoshot","start":15,"duration":3,"speaker":"별이","line":"잠깐, 2백 달러면 30만 원이 넘는 거잖아?","caption":"별이: 잠깐, 2백 달러면 30만 원이 넘는 거잖아?","visual":"앵커 투샷·별이 강조"},
+    {"n":7,"type":"anchor","asset":"twoshot","start":18,"duration":4,"speaker":"별하","line":"맞아. 팀 쿡이 40년 동안 이런 상황 처음 봤다고 했거든.","caption":"별하: 맞아. 팀 쿡이 40년 동안 이런 상황 처음 봤다고 했거든.","visual":"앵커 투샷·별하 강조"},
+    {"n":8,"type":"anchor","asset":"twoshot","start":22,"duration":2,"speaker":"별이","line":"40년? 이유가 뭔데?","caption":"별이: 40년? 이유가 뭔데?","visual":"앵커 투샷·별이 강조"},
+    {"n":9,"type":"anchor","asset":"twoshot","start":24,"duration":4,"speaker":"별하","line":"AI 때문에 메모리 가격이 3분기 만에 4배가 올랐대.","caption":"별하: AI 때문에 메모리 가격이 3분기 만에 4배가 올랐대.","visual":"앵커 투샷·별하 강조"},
+    {"n":10,"type":"anchor","asset":"twoshot","start":28,"duration":3,"speaker":"별이","line":"4배가? 그래서 결국 우리한테 전가하는 거네.","caption":"별이: 4배가? 그래서 결국 우리한테 전가하는 거네.","visual":"앵커 투샷·별이 강조"},
+    {"n":11,"type":"anchor","asset":"twoshot","start":31,"duration":3,"speaker":"별하","line":"그러게. 아이폰 18도 비싸질 거라는 얘기까지 나와.","caption":"별하: 그러게. 아이폰 18도 비싸질 거라는 얘기까지 나와.","visual":"앵커 투샷·별하 강조"},
+    {"n":12,"type":"anchor","asset":"twoshot","start":34,"duration":4,"speaker":"별이","line":"그 소식에 애플 주가도 하루에 6% 넘게 빠졌잖아.","caption":"별이: 그 소식에 애플 주가도 하루에 6% 넘게 빠졌잖아.","visual":"앵커 투샷·별이 강조"},
+    {"n":13,"type":"anchor","asset":"twoshot","start":38,"duration":3,"speaker":"별하","line":"1년 만에 최대 낙폭이래. 삼성은 이거 반사이익 아냐?","caption":"별하: 1년 만에 최대 낙폭이래. 삼성은 이거 반사이익 아냐?","visual":"앵커 투샷·별하 강조"},
+    {"n":14,"type":"anchor","asset":"twoshot","start":41,"duration":4,"speaker":"별이","line":"메모리 파는 삼성은 웃고, 사는 소비자는 우는 거지.","caption":"별이: 메모리 파는 삼성은 웃고, 사는 소비자는 우는 거지.","visual":"앵커 투샷·별이 강조"},
+    {"n":15,"type":"anchor","asset":"twoshot","start":45,"duration":5,"speaker":"별하","line":"그러면 너 폰 바꿀 생각 있어? 아이폰 살래, 다른 거 살래?","caption":"별하: 그러면 너 폰 바꿀 생각 있어? 아이폰 살래, 다른 거 살래?","visual":"앵커 투샷·별하 강조"}
+  ],
+  "assets_needed": [
+    {
+      "id": "twoshot",
+      "kind": "image",
+      "reuse": true,
+      "model": "nano_banana_2",
+      "aspect": "9:16",
+      "prompt": "Two chibi 3D cartoon news anchors at a desk: <<<e620f11b-a271-490d-8757-e3d38fb1b8c4>>> (male, left) and <<<da4c9c89-2b48-495f-acf2-29fef92e4d4d>>> (female, right), bright news studio, 9:16. Keep both consistent with reference elements."
+    }
+  ],
+  "captions_srt": "1\n00:00:00,000 --> 00:00:04,000\n별하: 야, 나 오늘 아침에 애플 뉴스 보고 진짜 손 떨렸잖아.\n\n2\n00:00:04,000 --> 00:00:06,000\n별이: 뭔데? 무슨 일 났어?\n\n3\n00:00:06,000 --> 00:00:09,000\n별하: 애플이 맥북이랑 아이패드 가격 올렸어. 갑자기.\n\n4\n00:00:09,000 --> 00:00:11,000\n별이: 얼마나? 1~2만 원 정도야?\n\n5\n00:00:11,000 --> 00:00:15,000\n별하: 아니, 맥북 에어가 2백 달러 넘게 올랐어. 아이패드도.\n\n6\n00:00:15,000 --> 00:00:18,000\n별이: 잠깐, 2백 달러면 30만 원이 넘는 거잖아?\n\n7\n00:00:18,000 --> 00:00:22,000\n별하: 맞아. 팀 쿡이 40년 동안 이런 상황 처음 봤다고 했거든.\n\n8\n00:00:22,000 --> 00:00:24,000\n별이: 40년? 이유가 뭔데?\n\n9\n00:00:24,000 --> 00:00:28,000\n별하: AI 때문에 메모리 가격이 3분기 만에 4배가 올랐대.\n\n10\n00:00:28,000 --> 00:00:31,000\n별이: 4배가? 그래서 결국 우리한테 전가하는 거네.\n\n11\n00:00:31,000 --> 00:00:34,000\n별하: 그러게. 아이폰 18도 비싸질 거라는 얘기까지 나와.\n\n12\n00:00:34,000 --> 00:00:38,000\n별이: 그 소식에 애플 주가도 하루에 6% 넘게 빠졌잖아.\n\n13\n00:00:38,000 --> 00:00:41,000\n별하: 1년 만에 최대 낙폭이래. 삼성은 이거 반사이익 아냐?\n\n14\n00:00:41,000 --> 00:00:45,000\n별이: 메모리 파는 삼성은 웃고, 사는 소비자는 우는 거지.\n\n15\n00:00:45,000 --> 00:00:50,000\n별하: 그러면 너 폰 바꿀 생각 있어? 아이폰 살래, 다른 거 살래?",
+  "sources": ["뉴스핌", "이투데이", "헤럴드경제", "9to5Mac", "CNBC"],
+  "credit": "출처 뉴스핌·이투데이·9to5Mac 등",
+  "platforms": {
+    "youtube": {
+      "title": "이게 40년 만에 처음이라고? #shorts",
+      "description": "AI메모리 대란에 애플 맥북·아이패드 가격↑\n출처 뉴스핌·이투데이·9to5Mac 등\n\n#애플 #가격인상 #AI #메모리대란 #경제뉴스 #쇼츠 #shorts"
+    },
+    "instagram": {
+      "caption": "이게 40년 만에 처음이라고?\n출처 뉴스핌·이투데이·9to5Mac 등\n\n#애플 #가격인상 #AI #메모리대란 #아이폰 #경제뉴스 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "이게 40년 만에 처음이라고?\n출처 뉴스핌·이투데이·9to5Mac 등"
+    }
+  },
+  "notes": "티키타카 50초. 앵커 투샷 1장 재사용. 배경음 없음·자막 번인."
+}
