@@ -7,7 +7,7 @@
 검증 원칙(가드레일 일부를 렌더/업로드 전에 한 번 더 강제 — 과제 13):
   - 16:9 고정(background.aspect != "16:9" 여도 렌더러가 1920x1080 으로 정규화하므로 경고만).
   - segments 가 narration_full 을 사실상 덮는지(글자수 기준) 점검 — 누락 시 경고.
-  - content_rating == "mature" 인데 privacy == "public" 이면 ★unlisted 로 강등(초기 안전).
+  - privacy 는 ★루틴 값 그대로 존중(오버라이드 없음). 미지정/비표준만 안전하게 private 폴백 + 경고.
   - 제목에 '#shorts' 가 있으면 제거(소설은 일반 동영상).
 
 사용:
@@ -116,14 +116,20 @@ def normalize(spec: dict) -> tuple[dict, list[str]]:
         rating = "all"
     s["content_rating"] = rating
 
-    # ── privacy (가드레일: mature → 최소 unlisted) ──
-    privacy = (s.get("privacy") or "public").lower()
-    if privacy not in PRIVACIES:
-        _warn(warns, f"privacy={privacy!r} 비표준 → public")
-        privacy = "public"
+    # ── privacy: ★루틴이 정한 값을 그대로 존중(파이프라인은 오버라이드하지 않음) ──
+    #    공개/부분공개/비공개는 '루틴'이 결정한다. 파이프라인은 강등/강요하지 않는다.
+    #    미지정·비표준 값일 때만 사고 방지로 private 폴백 + 경고(이건 '결정'이 아니라 안전 폴백).
+    raw = s.get("privacy")
+    privacy = (raw or "").lower()
+    if not raw:
+        _warn(warns, "privacy 미지정 → 안전하게 private 폴백(루틴 JSON 에 명시 권장)")
+        privacy = "private"
+    elif privacy not in PRIVACIES:
+        _warn(warns, f"privacy={raw!r} 비표준(허용: public|unlisted|private) → 안전하게 private 폴백")
+        privacy = "private"
+    # mature 회차는 보통 unlisted 가 안전하지만, 공개도는 ★루틴이 결정한다 → 강등 없이 경고만.
     if rating == "mature" and privacy == "public":
-        _warn(warns, "★ content_rating=mature 인데 privacy=public → unlisted 로 강등(초기 안전)")
-        privacy = "unlisted"
+        _warn(warns, "content_rating=mature 인데 privacy=public — 루틴 의도면 그대로 진행(파이프라인 강등 없음)")
     s["privacy"] = privacy
 
     # ── platforms.youtube ──
