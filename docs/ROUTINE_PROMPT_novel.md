@@ -54,7 +54,7 @@ All content is ORIGINAL. There are no real people and no existing/copyrighted wo
 
 ## 3) Output VALID JSON ONLY (펜스 없이 JSON 단독)
 {
-  "date":"<DATE>","topic":"novel","privacy":"<public 또는 mature 회차는 unlisted>",
+  "date":"<DATE>","topic":"novel","privacy":"public",
   "series_id":"...","series_title":"...","genre":"<로맨스|잔혹동화|판타지|추리|공포>",
   "episode_no":1,"total_episodes":4,"is_finale":false,
   "logline":"<작품 한 줄 소개>",
@@ -93,7 +93,7 @@ All content is ORIGINAL. There are no real people and no existing/copyrighted wo
 ## GUARDRAILS (★매 회차 적용)
 - 오리지널만. 실존 인물·기존 작품·캐릭터·세계관(저작권/상표) 사용 금지.
 - 모든 등장인물 성인(19+). 미성년 관련 성적·선정적 묘사 절대 금지.
-- 로맨스(관능): 노골적 성행위 묘사 금지 — 끌림·긴장·페이드아웃(드라마 등급)까지만. (노골적이면 유튜브 약관 위반 → 채널 정지·수익화 박탈.) 이 장르 회차는 content_rating:"mature" + 처음엔 privacy:"unlisted"로 올려 반응/심사 확인 후 전환.
+- 로맨스(관능): 노골적 성행위 묘사 금지 — 끌림·긴장·페이드아웃(드라마 등급)까지만. (노골적이면 유튜브 약관 위반 → 채널 정지·수익화 박탈.) 이 장르 회차는 content_rating:"mature" 로 표기하되, privacy:"public" 로 공개한다.
 - 공포·잔혹동화: 심리적 공포·다크 분위기 중심. 과도한 고어·사실적 폭력 묘사 자제(유튜브 폭력 정책). 미성년 대상 폭력 금지.
 - 자해·자살·실제 위험행동 미화/구체묘사 금지.
 
@@ -104,4 +104,6 @@ All content is ORIGINAL. There are no real people and no existing/copyrighted wo
 - 그 push 가 `novel.yml` 을 트리거 → 파이프라인이 **그 커밋에서 새로 추가된 `ep*.json` 만** git diff 로 골라 렌더·업로드한다.
 - ⚠️ 파이프라인은 레포에 **아무것도 커밋/푸시하지 않는다**(`permissions: contents: read`). 상태 파일(library/canon)은 **오직 루틴**이 쓴다 → 자기 재트리거 루프 없음.
 - 배경은 `background.prompt`(=canon.bg_image_prompt)로 series당 1회 생성·캐싱(Actions 캐시, key=series_id), 회차마다 켄번즈 크롭만 다르게.
-- 업로드: 16:9 일반 동영상(#shorts 금지). `platforms.youtube.title/description` 사용, `playlist`(=series_title) 재생목록 생성/추가. `content_rating:"mature"`(또는 privacy:"unlisted")는 unlisted 로 올린다.
+- 업로드: 16:9 일반 동영상(#shorts 금지). `platforms.youtube.title/description` 사용, `playlist`(=series_title) 재생목록 생성/추가.
+- privacy 는 ★루틴이 정한 값을 파이프라인이 그대로 따른다(강등 없음). 현재 운영 기본값은 전 장르 `public`.
+- 토큰: 소설 전용(확장 스코프)이 없으면 쇼츠 토큰으로 폴백 — 일반 동영상 업로드는 동작, 재생목록만 자동 스킵. 확장 토큰 등록 시 재생목록도 동작.
