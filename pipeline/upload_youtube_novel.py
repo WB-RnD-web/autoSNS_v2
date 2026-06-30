@@ -59,7 +59,10 @@ def get_service():
     secret, token = _paths()
     creds = None
     if os.path.exists(token):
-        creds = Credentials.from_authorized_user_file(token, SCOPES)
+        # ★토큰이 '실제 보유한 스코프'로 로드한다(SCOPES 강제 X).
+        #   쇼츠 토큰(youtube.upload 전용)으로 폴백해도 토큰 갱신 시 invalid_scope 없이 업로드된다.
+        #   전용 토큰(upload+youtube)이면 그 스코프 그대로 → 재생목록까지 동작.
+        creds = Credentials.from_authorized_user_file(token)
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
