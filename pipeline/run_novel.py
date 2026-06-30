@@ -52,9 +52,11 @@ def build_meta(spec: dict, force_private: bool) -> dict:
 
 
 def has_credentials() -> bool:
-    token = (config.env("YT_TOKEN_NOVEL")
-             or str(config.ROOT / "pipeline/secrets/token_novel.json"))
-    return bool(config.env("YT_TOKEN_JSON_NOVEL")) or os.path.exists(token)
+    # 소설 전용 토큰 또는 쇼츠 토큰(폴백) 중 하나라도 있으면 업로드 시도
+    novel_tok = config.env("YT_TOKEN_NOVEL") or str(config.ROOT / "pipeline/secrets/token_novel.json")
+    shorts_tok = config.env("YT_TOKEN") or str(config.ROOT / "pipeline/secrets/token.json")
+    return (bool(config.env("YT_TOKEN_JSON_NOVEL")) or bool(config.env("YT_TOKEN_JSON"))
+            or os.path.exists(novel_tok) or os.path.exists(shorts_tok))
 
 
 def process(ep_path: str, args, led) -> dict:
