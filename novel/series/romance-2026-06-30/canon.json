@@ -1,0 +1,21 @@
+{
+  "series_id": "romance-2026-06-30",
+  "genre": "로맨스",
+  "title": "달빛 아래 두 사람",
+  "total_episodes": 3,
+  "episodes_done": 1,
+  "characters": [
+    {"name": "서연", "age": 28, "role": "도예가", "note": "사흘째 비 내리는 항구도시 작업실에서 혼자 도자기를 빚는다. 좀처럼 잠들지 못한다."},
+    {"name": "준호", "age": 31, "role": "심야 라디오 PD 겸 진행자", "note": "새벽 방송에서 사연 대신 빗소리를 오래 틀어두곤 한다. 누군가 듣고 있다고 느낀다."}
+  ],
+  "setting": "사흘째 비가 내리는 항구도시. 자정의 심야 라디오 주파수와 낡은 도자기 공방.",
+  "plot_summary_so_far": "EP1: 서연은 자정 라디오에서 흘러나온 준호의 목소리에 마음이 멈춘다. 다음 날 발신인 없는 엽서가 공방에 도착하는데, 거기엔 라디오 주파수와 시간만 적혀 있다. 둘은 매일 밤 같은 시간, 목소리와 침묵으로 가까워진다. 비가 그친 첫날, 준호는 방송 말미에 서연이 한 번도 말한 적 없는 그녀의 이름을 부른다.",
+  "foreshadowing": [
+    {"item": "발신인 없는 엽서", "status": "미회수 — 누가 보냈는가"},
+    {"item": "준호가 서연의 이름을 알고 있음", "status": "미회수 — 어떻게 알았는가(EP2 핵심)"},
+    {"item": "깨진 도자기 조각", "status": "심음 — 과거의 상실 암시"}
+  ],
+  "tone": "차분하고 관능적인 분위기, 직접 묘사 대신 긴장과 여백. 드라마 등급(노골적 묘사 없음).",
+  "bg_image_prompt": "rainy harbor city at midnight, neon signs reflected on wet asphalt, a dim warm window of a pottery studio, cinematic moody romance, soft bokeh, no people, no text, 16:9",
+  "next_episode_hook": "그가 어떻게 그 이름을 알았는지, 서연은 알지 못했다."
+}
