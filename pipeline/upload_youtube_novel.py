@@ -7,10 +7,11 @@
   - series_title 재생목록을 찾거나 생성하고, 업로드한 영상을 그 재생목록에 추가.
   - privacy 준수(mature/teen 회차는 보통 unlisted — spec/force 로 제어).
 
-★ 토큰 분리(쇼츠 무영향):
+★ 토큰(쇼츠 무영향 + 폴백):
   - OAuth '앱'(client_secret.json)은 공유 가능. 바뀌는 건 '토큰'의 스코프뿐.
-  - 소설은 별도 토큰을 쓴다: 파일 secrets/token_novel.json, CI 시크릿 YT_TOKEN_JSON_NOVEL.
-  - 쇼츠의 upload 전용 token.json 은 그대로 둔다.
+  - 소설 전용 토큰(secrets/token_novel.json / 시크릿 YT_TOKEN_JSON_NOVEL)이 있으면 그걸 쓴다(재생목록 가능).
+  - 없으면 ★쇼츠 토큰(secrets/token.json / YT_TOKEN_JSON)으로 폴백 — 일반 동영상 업로드는 정상,
+    재생목록만 스코프 부족으로 자동 스킵(publish 에서 graceful). 쇼츠 token.json 은 읽기만, 변경 안 함.
 
 최초 1회(로컬, 브라우저 인증 → 확장 스코프 토큰 발급):
   python pipeline/upload_youtube_novel.py --auth-only
@@ -37,8 +38,12 @@ def _paths() -> tuple[str, str]:
     secret = (config.env("YT_CLIENT_SECRET_NOVEL")
               or config.env("YT_CLIENT_SECRET")
               or str(config.ROOT / "pipeline/secrets/client_secret.json"))
-    token = (config.env("YT_TOKEN_NOVEL")
-             or str(config.ROOT / "pipeline/secrets/token_novel.json"))
+    # 토큰: 소설 전용(확장 스코프) 우선 → 없으면 쇼츠 토큰으로 폴백.
+    #   쇼츠 토큰(youtube.upload 전용)으로도 일반 동영상 업로드는 동작하고,
+    #   재생목록만 스코프 부족으로 자동 스킵된다(publish 에서 graceful).
+    novel_tok = config.env("YT_TOKEN_NOVEL") or str(config.ROOT / "pipeline/secrets/token_novel.json")
+    shorts_tok = config.env("YT_TOKEN") or str(config.ROOT / "pipeline/secrets/token.json")
+    token = novel_tok if os.path.exists(novel_tok) else (shorts_tok if os.path.exists(shorts_tok) else novel_tok)
     return secret, token
 
 
