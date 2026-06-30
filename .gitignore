@@ -12,6 +12,9 @@ output/renders/
 *.mp4
 *.mov
 # 단, output/news/ (루틴이 커밋하는 스토리보드)는 커밋 대상 — 위 패턴은 그걸 건드리지 않음
+# 소설 파이프라인: ledger/log 는 미커밋(루프 가드). 단, output/novel/**/ep*.json(루틴이 커밋)은 유지.
+/output/novel_ledger.json
+/output/novel_log.json
 
 # 모션그래픽 렌더 생성물(템플릿/폰트만 커밋, 생성물 제외)
 pipeline/motion/index.html

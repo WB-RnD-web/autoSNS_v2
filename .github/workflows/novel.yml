@@ -1,0 +1,142 @@
+name: 소설(novel) render-spec → 16:9 오디오소설 → 유튜브(일반영상+재생목록)
+
+# 트리거: 루틴이 새 에피소드를 routine/novel(★영구 누적 브랜치)에 push 하면 실행.
+#   처리 대상 = 이 push 에서 ★새로 추가된 output/novel/<series_id>/ep<N>_<DATE>.json 만(git diff).
+#
+# ⚠️ 자기 재트리거 루프 가드(쇼츠와 동일 사상):
+#   - permissions: contents: read — 레포에 ★아무것도 커밋/푸시하지 않는다(산출물은 유튜브로만).
+#   - 상태 파일(novel/library.json·canon.json)은 '루틴'이 쓰는 것이지 파이프라인이 쓰지 않는다.
+#   - ★브랜치 리셋 금지: actions/checkout 은 push 된 ref(routine/novel)를 그대로 체크아웃한다.
+#     쇼츠의 `git checkout -B routine/<slug> origin/main` 패턴을 ★절대 쓰지 않는다(canon 보존).
+
+on:
+  push:
+    branches:
+      - "routine/novel"          # ★소설 전용 영구 누적 브랜치
+    paths:
+      - "output/novel/**"        # 에피소드 JSON(누적)
+  workflow_dispatch:
+    inputs:
+      episode:
+        description: "처리할 에피소드 JSON 경로(비우면 신규/전체 자동 탐색). 예: output/novel/horror-2026-06-30/ep1_2026-06-30.json"
+        default: ""
+      force_private:
+        description: "privacy 강제 private (테스트 안전장치)"
+        type: boolean
+        default: true
+      no_upload:
+        description: "업로드 없이 영상만 생성(렌더 검증용)"
+        type: boolean
+        default: false
+
+concurrency:
+  group: novel-pipeline
+  cancel-in-progress: false
+
+permissions:
+  contents: read               # ⚠️ write 아님 — 레포에 커밋하지 않는다(루프 방지)
+
+jobs:
+  build-and-upload:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      TZ: Asia/Seoul
+      # 배경 백엔드(auto=GEMINI 키 있으면 생성, 없으면 절차적 무료 배경)
+      NOVEL_BG_BACKEND: ${{ vars.NOVEL_BG_BACKEND || 'auto' }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # ★리셋 금지: push 된 routine/novel 을 그대로 체크아웃. fetch-depth:0 = git diff 범위 확보용.
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: pipeline/requirements.txt
+
+      # 1) 시스템 의존성: ffmpeg(libass 포함) + 한국어 폰트(자막 번인)
+      - name: 시스템 의존성 설치
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg fonts-nanum
+          python -m pip install --upgrade pip
+          python -m pip install -r pipeline/requirements.txt
+
+      # 1b) 배경 캐시(series_id 별 1회 생성 재사용) — 런 간 영속, main 에 쓰지 않음(루프 방지)
+      - name: 배경 캐시 복원/저장
+        uses: actions/cache@v4
+        with:
+          path: output/_work/novel_bg
+          key: novel-bg-${{ github.run_id }}
+          restore-keys: novel-bg-
+
+      # 1c) dedupe ledger 복원/저장(런 간 영속 — 레포에 쓰지 않음)
+      - name: ledger 캐시 복원/저장
+        uses: actions/cache@v4
+        with:
+          path: output/novel_ledger.json
+          key: novel-ledger-${{ github.run_id }}
+          restore-keys: novel-ledger-
+
+      # 2) 소설 YouTube 자격증명(시크릿 → 파일). ★쇼츠 토큰과 분리(YT_TOKEN_JSON_NOVEL).
+      - name: YouTube 자격증명(소설)
+        env:
+          YT_CLIENT_SECRET_JSON: ${{ secrets.YT_CLIENT_SECRET_JSON }}
+          YT_TOKEN_JSON_NOVEL: ${{ secrets.YT_TOKEN_JSON_NOVEL }}
+        run: |
+          mkdir -p pipeline/secrets
+          if [ -n "$YT_CLIENT_SECRET_JSON" ]; then
+            printf '%s' "$YT_CLIENT_SECRET_JSON" > pipeline/secrets/client_secret.json
+          fi
+          if [ -n "$YT_TOKEN_JSON_NOVEL" ]; then
+            printf '%s' "$YT_TOKEN_JSON_NOVEL" > pipeline/secrets/token_novel.json
+          fi
+
+      # 3) 처리 대상 에피소드 결정
+      #    - dispatch + episode 입력 → 그 파일
+      #    - push → 이 push 에서 새로 추가/수정된 output/novel/**/ep*.json 만(git diff)
+      #    - dispatch 빈입력 → output/novel 하위 ep*.json 전부(ledger 가 중복 스킵)
+      - name: 처리 대상 결정
+        id: pick
+        run: |
+          set -e
+          EP="${{ github.event.inputs.episode }}"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "$EP" ]; then
+            FILES="$EP"
+          elif [ "${{ github.event_name }}" = "push" ]; then
+            BEFORE="${{ github.event.before }}"
+            AFTER="${{ github.event.after }}"
+            if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+              RANGE="HEAD~1 HEAD"
+            else
+              RANGE="$BEFORE $AFTER"
+            fi
+            FILES=$(git diff --name-only --diff-filter=AM $RANGE -- output/novel/ 2>/dev/null \
+                    | grep -E '/ep[0-9].*\.json$' | tr '\n' ' ' || true)
+          else
+            FILES=$(find output/novel -type f -name 'ep*.json' 2>/dev/null | tr '\n' ' ' || true)
+          fi
+          echo "files=$FILES" >> "$GITHUB_OUTPUT"
+          echo "선정된 파일: '$FILES'"
+
+      # 4) 렌더 + 업로드(재생목록·privacy 준수)
+      - name: 렌더 + 업로드
+        run: |
+          FILES="${{ steps.pick.outputs.files }}"
+          if [ -z "$(echo $FILES | tr -d ' ')" ]; then
+            echo "처리할 신규 에피소드 없음 — 종료."
+            exit 0
+          fi
+          cd pipeline
+          # privacy: push(운영)=JSON privacy 준수(mature/teen 회차는 보통 unlisted).
+          #          강제 private 은 수동 테스트(workflow_dispatch, force_private=true)에서만.
+          python run_novel.py $(for f in $FILES; do echo "../$f"; done) \
+            --use-ledger --ledger-path ../output/novel_ledger.json --log ../output/novel_log.json \
+            $([ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.force_private }}" = "true" ] && echo --force-private) \
+            $([ "${{ github.event.inputs.no_upload }}" = "true" ] && echo --no-upload)
+
+      # 산출물(mp4)은 유튜브로만 업로드. GitHub 아티팩트/레포 커밋 안 함(쿼터·루프 회피).
+      # ledger/배경은 위 actions/cache 로 런 간 보존. 상태 파일은 루틴이 routine/novel 에 커밋.

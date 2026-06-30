@@ -1,0 +1,18 @@
+{
+  "works": [
+    {
+      "series_id": "romance-2026-06-30",
+      "genre": "로맨스",
+      "title": "달빛 아래 두 사람",
+      "logline": "심야 라디오의 목소리와 빗소리만으로 서로를 알아가던 두 사람이, 한 번도 말한 적 없는 이름 앞에서 비밀과 마주한다.",
+      "key_elements": ["심야 라디오", "익명의 엽서", "빗소리", "만난 적 없는 끌림", "발신인 없는 주파수"],
+      "status": "ongoing",
+      "episodes_done": 1,
+      "total_episodes": 3
+    }
+  ],
+  "rotation_pointer": "로맨스",
+  "used_premises": [
+    "심야 라디오 DJ와 익명 청취자가 목소리·엽서로만 교감하다 이름의 비밀과 마주하는 로맨스(달빛 아래 두 사람)"
+  ]
+}
