@@ -1,0 +1,38 @@
+{
+  "series_id": "romance-20260630",
+  "genre": "로맨스",
+  "title": "마지막 손님",
+  "total_episodes": 4,
+  "episodes_done": 1,
+  "characters": [
+    {
+      "name": "박유진",
+      "age": 34,
+      "role": "주인공 · 민박 '돌담' 주인",
+      "desc": "5년 전 남편 동현을 사고로 잃고 제주에 남아 민박을 운영한다. 감정을 닫은 것이 아니라, 감정과 함께 사는 법을 익혔다. 손때 묻은 귤나무를 매일 바라본다."
+    },
+    {
+      "name": "최진혁",
+      "age": 38,
+      "role": "손님 · 건축가",
+      "desc": "3년 전 대형 건축 프로젝트 수주에 실패한 후 자책과 무기력 속에 살아왔다. 도피하듯 제주 민박을 예약했다. 잠을 잘 못 자고, 말수가 적으며, 속을 쉽게 드러내지 않는다."
+    },
+    {
+      "name": "박동현",
+      "age_at_death": 36,
+      "role": "故人 · 유진의 남편 · 건축가",
+      "desc": "5년 전 사고로 사망. 생전 유능한 건축가였으며, 죽기 직전까지 들고 다니던 스케치북이 민박 2호 방 서랍에서 발견된다. 그의 설계가 최진혁의 실패한 프로젝트와 같은 건물임이 드러난다."
+    }
+  ],
+  "setting": "제주도 어느 한적한 해변 마을, 한겨울. 현무암 돌담으로 둘러싸인 소박한 민박 '돌담'. 귤나무 한 그루가 마당에 있다.",
+  "plot_summary_so_far": "EP1 — 동절기 운영 중단 상태의 민박에 예상치 못한 예약 전화가 걸려 온다. 목소리의 피로감에 뭔가 공명한 유진은 거절하지 못하고 최진혁을 받아들인다. 그는 빗속에 도착하고, 두 사람은 조심스러운 거리를 유지한다. 다음 날 아침, 진혁이 2호 방 서랍에서 발견한 낡은 스케치북이 유진의 눈을 멈추게 한다 — 5년 동안 찾지 못한 남편 동현의 마지막 스케치북이다. 그리고 그 안의 건물 설계가 진혁이 3년 전 실패한 프로젝트와 동일하다는 사실이 밝혀지며 EP1 마감.",
+  "foreshadowing": [
+    "동현의 스케치북이 왜 민박 서랍에 남아 있었는가 — 동현이 죽기 직전 마지막으로 묵은 곳이 여기였을 가능성",
+    "최진혁의 실패한 프로젝트와 동현의 설계가 같은 건물 — 두 사람이 이미 간접적으로 연결되어 있었음",
+    "귤나무: 동현이 심은 것, 유진이 매일 바라보는 것 — 기억의 앵커",
+    "진혁이 건축 도면 통을 들고 왔다는 것 — 아직 완전히 포기하지 못했음"
+  ],
+  "tone": "잔잔하고 감성적, 감정을 억누른 두 사람 사이에 흐르는 온도 차이. 직접적 감정 표출보다 사물과 행동으로 내면을 보여주는 문학적 산문 스타일. 관능적 긴장은 EP2~3에서 서서히 고조됨.",
+  "bg_image_prompt": "Cinematic 16:9 still frame, a traditional Jeju stone-walled folk house (돌담 민박) at deep winter dusk, warm amber candlelight glowing softly through latticed paper windows, dark volcanic basalt stone walls weathered and aged, a bare tangerine tree in the stone courtyard with wet branches catching last low light, heavy overcast winter sky in deep grey-blue, coastal mist drifting across the yard, narrow wooden veranda with dried tangerine leaves on the floor, melancholic and intimate atmosphere, film photography grain, muted color palette with warm amber accent, no people, painterly realism",
+  "next_episode_hook": "동현의 스케치북 속 건물 설계를 '내 실패작'이라 말하는 남자. 두 사람은 어떻게 이미 이어져 있는 것일까. 그리고 유진은 왜, 그에게 진실을 말하지 못했는가."
+}
