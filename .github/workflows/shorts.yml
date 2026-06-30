@@ -123,8 +123,9 @@ jobs:
 
       # 4) 처리 대상 스토리보드 결정
       #    - dispatch + storyboard 입력 → 그 파일
-      #    - 그 외(routine/* push, dispatch 빈입력) → 오늘(KST) output/news/<DATE>_*_storyboard.json
-      #      (브랜치엔 보통 해당 토픽 파일 1개만 있음. 중복 처리는 ledger 로 스킵)
+      #    - 그 외(routine/* push, dispatch 빈입력) → output/news 의 storyboard 전부
+      #      routine/<TOPIC> 브랜치는 main 리셋 + 오늘 파일 1개라 날짜 무관하게 처리해도 안전.
+      #      (날짜 글롭은 루틴↔러너 KST 불일치로 0개 선택되는 버그가 있어 제거함. 중복은 ledger 가 스킵)
       - name: 처리 대상 스토리보드 결정
         id: pick
         run: |
@@ -133,8 +134,7 @@ jobs:
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "$SB" ]; then
             echo "files=$SB" >> "$GITHUB_OUTPUT"
           else
-            DATE=$(date +%Y-%m-%d)   # TZ=Asia/Seoul → KST
-            FILES=$(ls output/news/${DATE}_*_storyboard.json 2>/dev/null | tr '\n' ' ')
+            FILES=$(ls output/news/*_storyboard.json 2>/dev/null | tr '\n' ' ')
             echo "files=$FILES" >> "$GITHUB_OUTPUT"
           fi
           echo "선정된 파일: '$(grep ^files= "$GITHUB_OUTPUT" | cut -d= -f2-)'"

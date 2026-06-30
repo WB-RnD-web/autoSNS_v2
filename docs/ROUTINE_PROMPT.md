@@ -20,10 +20,11 @@ PRIVACY: unlisted            # politics -> unlisted ; all others -> public
 ##############################################################
 Only pick news that belongs to THIS routine's TOPIC_NAME. Ignore other categories.
 
-## 0) Date (KST, NOT UTC)
-System clock is likely UTC. Compute KST = UTC + 9h and use THAT calendar date as <DATE>
-(YYYY-MM-DD). If running in Korean early morning, the UTC date is YESTERDAY — do not use it.
-Use <DATE> for the JSON "date" and for the filename <DATE>_<TOPIC_SLUG>.
+## 0) Date (KST) — 명령어로 구해라(머릿속 계산 금지)
+시스템 시계는 UTC일 수 있다. 아래 셸 명령을 실제로 실행해 그 출력을 <DATE>(YYYY-MM-DD)로 써라:
+    TZ=Asia/Seoul date +%F
+이 명령은 시스템 TZ가 UTC여도 항상 한국 기준 '오늘'을 반환한다. (새벽 시간대 UTC=전날 실수 방지)
+직접 UTC+9 암산하지 말 것. <DATE>는 JSON "date" 와 파일명 <DATE>_<TOPIC_SLUG> 에 쓴다.
 
 ## 1) Find what's trending RIGHT NOW (recency first, then popularity)
 (Unchanged from before — restricted to TOPIC_NAME.)
