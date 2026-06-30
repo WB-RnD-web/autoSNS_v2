@@ -155,17 +155,5 @@ jobs:
             $([ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.force_private }}" = "true" ] && echo --force-private) \
             $([ "${{ github.event.inputs.no_upload }}" = "true" ] && echo --no-upload)
 
-      # 6) 로그 아티팩트(작은 파일만 — mp4 제외로 저장소 용량 절약).
-      #    본 산출물은 유튜브 업로드. mp4 검수는 유튜브(비공개)에서.
-      #    저장소 용량 초과 등 부수 문제로 런이 실패하지 않도록 비치명적.
-      - name: 로그 아티팩트 업로드
-        if: always()
-        continue-on-error: true
-        uses: actions/upload-artifact@v4
-        with:
-          name: logs-${{ github.run_id }}
-          path: |
-            output/run_log.json
-            output/ledger.json
-          if-no-files-found: ignore
-          retention-days: 7
+      # 산출물은 유튜브/IG/Threads 업로드(API) — GitHub 아티팩트는 쓰지 않는다(저장소 쿼터 회피).
+      # 실행 로그는 Actions 콘솔에서 확인, ledger 는 위 actions/cache 로 런 간 보존.
