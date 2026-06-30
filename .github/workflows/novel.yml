@@ -81,11 +81,15 @@ jobs:
           key: novel-ledger-${{ github.run_id }}
           restore-keys: novel-ledger-
 
-      # 2) 소설 YouTube 자격증명(시크릿 → 파일). ★쇼츠 토큰과 분리(YT_TOKEN_JSON_NOVEL).
+      # 2) 소설 YouTube 자격증명(시크릿 → 파일).
+      #    토큰 우선순위: 소설 전용(확장 스코프) YT_TOKEN_JSON_NOVEL → 없으면 쇼츠 토큰 YT_TOKEN_JSON 폴백.
+      #    쇼츠 토큰은 youtube.upload 전용이라 ★일반 동영상 업로드는 정상 동작하고,
+      #    재생목록(playlists)만 스코프 부족으로 자동 스킵(업로드는 성공). 확장 토큰 등록 시 재생목록도 동작.
       - name: YouTube 자격증명(소설)
         env:
           YT_CLIENT_SECRET_JSON: ${{ secrets.YT_CLIENT_SECRET_JSON }}
           YT_TOKEN_JSON_NOVEL: ${{ secrets.YT_TOKEN_JSON_NOVEL }}
+          YT_TOKEN_JSON: ${{ secrets.YT_TOKEN_JSON }}
         run: |
           mkdir -p pipeline/secrets
           if [ -n "$YT_CLIENT_SECRET_JSON" ]; then
@@ -93,6 +97,12 @@ jobs:
           fi
           if [ -n "$YT_TOKEN_JSON_NOVEL" ]; then
             printf '%s' "$YT_TOKEN_JSON_NOVEL" > pipeline/secrets/token_novel.json
+            echo "소설 전용 토큰 사용(재생목록 가능)"
+          elif [ -n "$YT_TOKEN_JSON" ]; then
+            printf '%s' "$YT_TOKEN_JSON" > pipeline/secrets/token_novel.json
+            echo "소설 토큰 없음 → 쇼츠 토큰으로 일반영상 업로드(재생목록은 자동 스킵)"
+          else
+            echo "⚠️ 업로드 토큰 없음 — 렌더만 진행"
           fi
 
       # 3) 처리 대상 에피소드 결정
