@@ -4,7 +4,7 @@
 쇼츠 run_pipeline.py 와 ★별개. 모션그래픽/IG/Threads 안 씀.
 
 각 에피소드 JSON 마다:
-  ① novel_spec.normalize 로 검증/정규화(가드레일: mature→unlisted, #shorts 제거)
+  ① novel_spec.normalize 로 검증/정규화(privacy 는 ★루틴 값 존중, #shorts 제거)
   ② novel_render.render → output/renders/<series_id>_ep<N>.mp4 (16:9 정적배경+자막번인+낭독)
   ③ upload_youtube_novel.publish → 업로드 + series_title 재생목록 생성/추가
   ④ ledger 로 dedupe(키=<series_id>_ep<N>), 로그 기록

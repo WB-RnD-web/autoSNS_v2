@@ -21,9 +21,9 @@ on:
         description: "처리할 에피소드 JSON 경로(비우면 신규/전체 자동 탐색). 예: output/novel/horror-2026-06-30/ep1_2026-06-30.json"
         default: ""
       force_private:
-        description: "privacy 강제 private (테스트 안전장치)"
+        description: "privacy 강제 private (수동 테스트용 옵트인 — 기본 off, 켜면 루틴 privacy 무시하고 private)"
         type: boolean
-        default: true
+        default: false
       no_upload:
         description: "업로드 없이 영상만 생성(렌더 검증용)"
         type: boolean
@@ -131,8 +131,8 @@ jobs:
             exit 0
           fi
           cd pipeline
-          # privacy: push(운영)=JSON privacy 준수(mature/teen 회차는 보통 unlisted).
-          #          강제 private 은 수동 테스트(workflow_dispatch, force_private=true)에서만.
+          # privacy: ★언제나 루틴 JSON 의 privacy 를 그대로 따른다(파이프라인 강등 없음).
+          #          force_private 는 수동 테스트에서 옵트인할 때만(기본 off) 강제 private.
           python run_novel.py $(for f in $FILES; do echo "../$f"; done) \
             --use-ledger --ledger-path ../output/novel_ledger.json --log ../output/novel_log.json \
             $([ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.force_private }}" = "true" ] && echo --force-private) \
