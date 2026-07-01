@@ -3,7 +3,7 @@
   "genre": "로맨스",
   "title": "마지막 손님",
   "total_episodes": 4,
-  "episodes_done": 1,
+  "episodes_done": 2,
   "characters": [
     {
       "name": "박유진",
@@ -25,14 +25,17 @@
     }
   ],
   "setting": "제주도 어느 한적한 해변 마을, 한겨울. 현무암 돌담으로 둘러싸인 소박한 민박 '돌담'. 귤나무 한 그루가 마당에 있다.",
-  "plot_summary_so_far": "EP1 — 동절기 운영 중단 상태의 민박에 예상치 못한 예약 전화가 걸려 온다. 목소리의 피로감에 뭔가 공명한 유진은 거절하지 못하고 최진혁을 받아들인다. 그는 빗속에 도착하고, 두 사람은 조심스러운 거리를 유지한다. 다음 날 아침, 진혁이 2호 방 서랍에서 발견한 낡은 스케치북이 유진의 눈을 멈추게 한다 — 5년 동안 찾지 못한 남편 동현의 마지막 스케치북이다. 그리고 그 안의 건물 설계가 진혁이 3년 전 실패한 프로젝트와 동일하다는 사실이 밝혀지며 EP1 마감.",
+  "plot_summary_so_far": "EP1 — 동절기 운영 중단 상태의 민박에 예상치 못한 예약 전화가 걸려 온다. 목소리의 피로감에 뭔가 공명한 유진은 거절하지 못하고 최진혁을 받아들인다. 그는 빗속에 도착하고, 두 사람은 조심스러운 거리를 유지한다. 다음 날 아침, 진혁이 2호 방 서랍에서 발견한 낡은 스케치북이 유진의 눈을 멈추게 한다 — 5년 동안 찾지 못한 남편 동현의 마지막 스케치북이다. 그리고 그 안의 건물 설계가 진혁이 3년 전 실패한 프로젝트와 동일하다는 사실이 밝혀지며 EP1 마감.\nEP2 — 진혁이 스케치북 속 이름을 아느냐고 묻자, 유진은 처음으로 남편의 이름 앞에서 거짓말을 한다. 진혁은 3년 전 '안식관(기념관)' 프로젝트가 착공 사흘 전 이유 없이 파기되며 자신의 커리어가 무너졌다고 털어놓는다. 그 부지가 마을 뒤편 언덕 — 동현이 사고로 죽은 바로 그 장소 — 이었고, 발주처는 '해솔재단', 동현의 마지막 계약처였다. 유진은 두 번째 거짓말로 이 사실을 숨긴다. 그날 밤 두 사람은 함께 저녁을 먹으며 서서히 가까워지지만, 자정 무렵 도착한 해솔재단 명의의 등기우편(돌담 부지에 안식관 재추진 협의 요청, 수신인 박유진)을 진혁이 목격하며 그녀가 무언가를 숨기고 있음을 눈치채는 데서 EP2가 끝난다.",
   "foreshadowing": [
     "동현의 스케치북이 왜 민박 서랍에 남아 있었는가 — 동현이 죽기 직전 마지막으로 묵은 곳이 여기였을 가능성",
     "최진혁의 실패한 프로젝트와 동현의 설계가 같은 건물 — 두 사람이 이미 간접적으로 연결되어 있었음",
     "귤나무: 동현이 심은 것, 유진이 매일 바라보는 것 — 기억의 앵커",
-    "진혁이 건축 도면 통을 들고 왔다는 것 — 아직 완전히 포기하지 못했음"
+    "진혁이 건축 도면 통을 들고 왔다는 것 — 아직 완전히 포기하지 못했음",
+    "해솔재단: 동현의 마지막 클라이언트이자 진혁의 프로젝트 발주처 — 왜 착공 사흘 전 계약을 파기했는가(동현의 죽음과 관련 있는가)",
+    "돌담 민박의 부지가 안식관 재추진 대상지로 지목됨 — 유진이 땅과 집을 잃을 위기, 진실을 밝혀야만 지킬 수 있는 딜레마",
+    "유진의 거짓말(두 번) — 진혁이 이미 발신인 이름에 반응을 보였고, 관계의 신뢰가 다음 화에서 시험대에 오름"
   ],
   "tone": "잔잔하고 감성적, 감정을 억누른 두 사람 사이에 흐르는 온도 차이. 직접적 감정 표출보다 사물과 행동으로 내면을 보여주는 문학적 산문 스타일. 관능적 긴장은 EP2~3에서 서서히 고조됨.",
   "bg_image_prompt": "Cinematic 16:9 still frame, a traditional Jeju stone-walled folk house (돌담 민박) at deep winter dusk, warm amber candlelight glowing softly through latticed paper windows, dark volcanic basalt stone walls weathered and aged, a bare tangerine tree in the stone courtyard with wet branches catching last low light, heavy overcast winter sky in deep grey-blue, coastal mist drifting across the yard, narrow wooden veranda with dried tangerine leaves on the floor, melancholic and intimate atmosphere, film photography grain, muted color palette with warm amber accent, no people, painterly realism",
-  "next_episode_hook": "동현의 스케치북 속 건물 설계를 '내 실패작'이라 말하는 남자. 두 사람은 어떻게 이미 이어져 있는 것일까. 그리고 유진은 왜, 그에게 진실을 말하지 못했는가."
+  "next_episode_hook": "해솔재단이라는 이름 하나로 무너지기 시작한 두 사람의 저녁. 진혁은 유진이 무엇을 숨기고 있는지 알게 될까. 그리고 유진은, 이 땅을 지키기 위해 결국 그에게 진실을 말해야 할까."
 }
