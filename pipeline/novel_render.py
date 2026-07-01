@@ -210,6 +210,54 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
         f.write("\n".join(lines) + "\n")
 
 
+# ── 썸네일(무료 ffmpeg 텍스트 합성) — thumbnail_text 큰 글자, 크레딧 0 ──
+THUMB_W, THUMB_H = 1280, 720
+
+
+def _thumb_ass(text: str, font_family: str, path: str) -> None:
+    head = f"""[Script Info]
+ScriptType: v4.00+
+PlayResX: {THUMB_W}
+PlayResY: {THUMB_H}
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Thumb,{font_family},108,&H00FFFFFF,&H000000FF,&H00101018,&H00000000,1,0,0,0,100,100,2,0,1,8,4,5,120,120,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:10.00,Thumb,,0,0,0,,{_ass_text(text)}
+"""
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(head)
+
+
+def build_thumbnail(spec: dict, bg_png: str, workdir: str, out_thumb: str,
+                    fontsdir: str | None, font_family: str) -> str | None:
+    """1280x720 썸네일(배경 어둡게 + thumbnail_text 큰 글자). 텍스트 없으면 None.
+    호출부에서 예외를 무시하므로, 실패해도 업로드 파이프라인은 진행된다."""
+    yt = (spec.get("platforms") or {}).get("youtube") or {}
+    text = (yt.get("thumbnail_text") or spec.get("hook_line")
+            or spec.get("series_title") or "").strip()
+    if not text:
+        return None
+    _thumb_ass(text, font_family, os.path.join(workdir, "thumb.ass"))
+    sub = "subtitles=thumb.ass" + (f":fontsdir={fontsdir}" if fontsdir else "")
+    vf = (f"scale={THUMB_W}:{THUMB_H}:force_original_aspect_ratio=increase,"
+          f"crop={THUMB_W}:{THUMB_H},setsar=1,eq=brightness=-0.15:saturation=1.12,"
+          f"vignette=PI/4,{sub}")
+    sh([FFMPEG, "-y", "-i", os.path.abspath(bg_png), "-vf", vf,
+        "-frames:v", "1", "-q:v", "2", "thumb.jpg"], cwd=workdir)
+    made = os.path.join(workdir, "thumb.jpg")
+    out_abs = os.path.abspath(out_thumb)
+    if out_abs != os.path.abspath(made):
+        shutil.copyfile(made, out_abs)
+    print(f"  · 썸네일 생성: {os.path.basename(out_abs)}  ({text[:20]}…)")
+    return out_abs
+
+
 # ── ④ 배경(series 캐싱 + 정규화) ──
 def _normalize_to_169(src: str, out_png: str) -> None:
     sh([FFMPEG, "-y", "-i", src, "-vf",
@@ -343,10 +391,20 @@ def render(spec_path: str, out_mp4: str, workdir: str, cache_dir: str) -> dict:
     bg = ensure_background(spec, cache_dir, workdir)
     build_video(bg, narration, "ep.ass", total, spec["episode_no"], fontsdir, out_mp4, workdir)
 
+    # ⑤ 썸네일(무료 · thumbnail_text 큰 글자) — ★실패해도 렌더/업로드는 계속(폴백)
+    thumb_out = os.path.splitext(out_mp4)[0] + "_thumb.jpg"
+    try:
+        thumbnail = build_thumbnail(spec, bg, workdir, thumb_out, fontsdir, font_family)
+    except Exception as e:  # noqa: BLE001
+        sys.stderr.write(f"[warn] 썸네일 생성 실패(무시하고 진행): {e}\n")
+        thumbnail = None
+
     info = {"out": out_mp4, "duration_sec": round(total, 1),
             "audio_sec": round(audio_dur, 1), "segments": len(segments),
+            "thumbnail": thumbnail,
             "narration_chars": len(spec["narration_full"]) or sum(len(s["text"]) for s in segments)}
-    print(f"✅ {out_mp4}  ({total:.1f}s, 낭독 {audio_dur:.1f}s, {len(segments)} segments)")
+    print(f"✅ {out_mp4}  ({total:.1f}s, 낭독 {audio_dur:.1f}s, {len(segments)} segments)"
+          + (f"  + 썸네일" if thumbnail else ""))
     return info
 
 

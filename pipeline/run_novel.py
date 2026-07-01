@@ -84,6 +84,7 @@ def process(ep_path: str, args, led) -> dict:
         info = novel_render.render(ep_path, out_mp4, wd, cache)
         res["video"] = info["out"]
         res["duration_sec"] = info["duration_sec"]
+        res["thumb"] = info.get("thumbnail")
     except Exception as e:  # noqa: BLE001
         res["error"] = f"render: {e}"
         return res
@@ -108,9 +109,10 @@ def process(ep_path: str, args, led) -> dict:
             pub = upload_youtube_novel.publish(
                 res["video"], meta["title"], meta["description"], meta["privacy"],
                 playlist_title=meta["playlist"], tags=meta["tags"],
-                category_id=meta["category_id"])
+                category_id=meta["category_id"], thumbnail=res.get("thumb"))
             res["uploaded"] = f"{pub['url']} ({meta['privacy']})"
             res["playlist"] = pub.get("playlist_id")
+            res["thumbnail"] = pub.get("thumbnail") or pub.get("thumbnail_error")
             if led is not None:
                 ledgermod.mark(led, _led_sb(spec), pub["video_id"], meta["privacy"],
                                time.time(), args.ledger_path)

@@ -146,13 +146,29 @@ def add_to_playlist(yt, playlist_id: str, video_id: str) -> None:
     print(f"   ＋ 재생목록에 추가: {video_id} → {playlist_id}")
 
 
+# ── 커스텀 썸네일(youtube.upload 스코프로 가능 · 채널 커스텀썸네일 인증 필요) ──
+def set_thumbnail(yt, video_id: str, thumb_path: str) -> None:
+    from googleapiclient.http import MediaFileUpload
+    yt.thumbnails().set(videoId=video_id,
+                        media_body=MediaFileUpload(thumb_path)).execute()
+    print(f"   ＋ 썸네일 설정: {os.path.basename(thumb_path)} → {video_id}")
+
+
 # ── 고수준 퍼블리시(업로드 → 재생목록 보장 → 추가) ──
 def publish(video: str, title: str, description: str, privacy: str,
             playlist_title: str = "", tags: list[str] | None = None,
-            category_id: str | None = None) -> dict:
+            category_id: str | None = None, thumbnail: str | None = None) -> dict:
     yt = get_service()
     vid = upload_video(yt, video, title, description, privacy, tags, category_id)
     res = {"video_id": vid, "url": f"https://youtu.be/{vid}", "privacy": privacy, "playlist_id": None}
+    # 커스텀 썸네일(있으면) — ★실패해도 업로드는 성공 처리(graceful)
+    if thumbnail and os.path.exists(thumbnail):
+        try:
+            set_thumbnail(yt, vid, thumbnail)
+            res["thumbnail"] = True
+        except Exception as e:  # noqa: BLE001
+            res["thumbnail_error"] = str(e)
+            print(f"   ⚠️ 썸네일 설정 실패(업로드는 성공): {e}")
     if playlist_title.strip():
         try:
             # 재생목록 공개도(영상이 unlisted 라도 재생목록은 public 으로 노출 가능 — 운영 선택)
