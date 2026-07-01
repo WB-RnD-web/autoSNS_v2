@@ -247,9 +247,9 @@ def flux_image(prompt: str, out_png: str, w: int = 1024, h: int = 1024) -> str |
     import urllib.request  # 지연 임포트(로컬 무키 경로엔 불필요)
     import base64 as _b64
     url = "https://ai.api.nvidia.com/v1/genai/black-forest-labs/flux.1-schnell"
+    # ★공식 샘플과 동일한 최소 payload만 보낸다(cfg_scale/mode/samples 넣으면 서버가 hung).
     body = json.dumps({"prompt": prompt[:9000], "width": w, "height": h,
-                       "steps": 4, "seed": int(os.environ.get("NOVEL_FLUX_SEED", "0")),
-                       "cfg_scale": 0, "mode": "base"}).encode()
+                       "seed": int(os.environ.get("NOVEL_FLUX_SEED", "0")), "steps": 4}).encode()
     req = urllib.request.Request(url, data=body, method="POST", headers={
         "Authorization": f"Bearer {key}", "Content-Type": "application/json",
         "Accept": "application/json", "User-Agent": "curl/8.4.0"})
