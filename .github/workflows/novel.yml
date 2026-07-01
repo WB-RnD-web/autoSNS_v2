@@ -45,6 +45,10 @@ jobs:
       # 배경 백엔드(auto=GEMINI 키 있으면 생성, 없으면 절차적 무료 배경)
       NOVEL_BG_BACKEND: ${{ vars.NOVEL_BG_BACKEND || 'auto' }}
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      # 썸네일 장면 이미지(NVIDIA FLUX.1-schnell, 상업 Apache-2.0) — 키 있으면 시도, 실패 시 무료 폴백.
+      # 끄려면 repo Variable NOVEL_THUMB_FLUX=0.
+      NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+      NOVEL_THUMB_FLUX: ${{ vars.NOVEL_THUMB_FLUX || '1' }}
     steps:
       - uses: actions/checkout@v4
         with:

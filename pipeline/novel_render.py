@@ -234,6 +234,56 @@ Dialogue: 0,0:00:00.00,0:00:10.00,Thumb,,0,0,0,,{_ass_text(text)}
         f.write(head)
 
 
+# ── (선택) NVIDIA FLUX.1-schnell 장면 이미지 — 있으면 썸네일 베이스로 ──
+def flux_image(prompt: str, out_png: str, w: int = 1024, h: int = 1024) -> str | None:
+    """NVIDIA_API_KEY 있으면 FLUX.1-schnell(상업 Apache-2.0)로 장면 이미지 생성.
+    ★무키/오프/타임아웃/에러/형식불일치면 None → 호출부가 무료 폴백. 크레딧은 성공 시에만 소모.
+    NOVEL_THUMB_FLUX=0 으로 끌 수 있음. 응답 키를 로그로 남겨 형식 진단."""
+    if os.environ.get("NOVEL_THUMB_FLUX", "1") != "1":
+        return None
+    key = os.environ.get("NVIDIA_API_KEY")
+    if not key or not (prompt or "").strip():
+        return None
+    import urllib.request  # 지연 임포트(로컬 무키 경로엔 불필요)
+    import base64 as _b64
+    url = "https://ai.api.nvidia.com/v1/genai/black-forest-labs/flux.1-schnell"
+    body = json.dumps({"prompt": prompt[:9000], "width": w, "height": h,
+                       "steps": 4, "seed": int(os.environ.get("NOVEL_FLUX_SEED", "0")),
+                       "cfg_scale": 0, "mode": "base"}).encode()
+    req = urllib.request.Request(url, data=body, method="POST", headers={
+        "Authorization": f"Bearer {key}", "Content-Type": "application/json",
+        "Accept": "application/json", "User-Agent": "curl/8.4.0"})
+    timeout = int(os.environ.get("NOVEL_FLUX_TIMEOUT", "120"))
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            data = json.loads(r.read().decode())
+    except Exception as e:  # noqa: BLE001
+        sys.stderr.write(f"[warn] FLUX 생성 실패 → 무료 폴백: {e}\n")
+        return None
+    print(f"  · FLUX 응답 키: {list(data.keys())}")  # 형식 진단용 로그
+    b64 = None
+    arts = data.get("artifacts")
+    if isinstance(arts, list) and arts:
+        b64 = arts[0].get("base64") or arts[0].get("b64_json")
+    b64 = b64 or data.get("image") or data.get("b64_json")
+    dd = data.get("data")
+    if isinstance(dd, list) and dd and not b64:
+        b64 = dd[0].get("b64_json") or dd[0].get("base64")
+    if isinstance(b64, str) and b64.startswith("data:"):
+        b64 = b64.split(",", 1)[1]
+    if not b64:
+        sys.stderr.write(f"[warn] FLUX 응답에 base64 없음 → 폴백. keys={list(data.keys())}\n")
+        return None
+    try:
+        with open(out_png, "wb") as f:
+            f.write(_b64.b64decode(b64))
+    except Exception as e:  # noqa: BLE001
+        sys.stderr.write(f"[warn] FLUX 디코드 실패 → 폴백: {e}\n")
+        return None
+    print(f"  · FLUX 장면 이미지 생성 OK: {os.path.basename(out_png)}")
+    return out_png
+
+
 def build_thumbnail(spec: dict, bg_png: str, workdir: str, out_thumb: str,
                     fontsdir: str | None, font_family: str) -> str | None:
     """1280x720 썸네일(배경 어둡게 + thumbnail_text 큰 글자). 텍스트 없으면 None.
@@ -243,12 +293,23 @@ def build_thumbnail(spec: dict, bg_png: str, workdir: str, out_thumb: str,
             or spec.get("series_title") or "").strip()
     if not text:
         return None
+    # 썸네일 베이스: FLUX 장면 생성 시도(thumbnail_prompt > background.prompt) → 실패 시 series 배경
+    scene = (yt.get("thumbnail_prompt")
+             or (spec.get("background") or {}).get("prompt") or "").strip()
+    base = None
+    if scene:
+        scene_full = scene + (", cinematic movie-poster illustration, dramatic lighting, "
+                              "atmospheric, highly detailed, no text, no watermark")
+        base = flux_image(scene_full, os.path.join(workdir, "thumb_flux.png"), 1024, 1024)
+    base = base or bg_png       # ★FLUX 실패/무키 → series 배경으로 폴백
     _thumb_ass(text, font_family, os.path.join(workdir, "thumb.ass"))
     sub = "subtitles=thumb.ass" + (f":fontsdir={fontsdir}" if fontsdir else "")
+    # FLUX 장면이면 덜 어둡게(장면 살리기), 절차적 배경이면 더 어둡게(글자 대비)
+    dark = "-0.10" if base != bg_png else "-0.15"
     vf = (f"scale={THUMB_W}:{THUMB_H}:force_original_aspect_ratio=increase,"
-          f"crop={THUMB_W}:{THUMB_H},setsar=1,eq=brightness=-0.15:saturation=1.12,"
+          f"crop={THUMB_W}:{THUMB_H},setsar=1,eq=brightness={dark}:saturation=1.12,"
           f"vignette=PI/4,{sub}")
-    sh([FFMPEG, "-y", "-i", os.path.abspath(bg_png), "-vf", vf,
+    sh([FFMPEG, "-y", "-i", os.path.abspath(base), "-vf", vf,
         "-frames:v", "1", "-q:v", "2", "thumb.jpg"], cwd=workdir)
     made = os.path.join(workdir, "thumb.jpg")
     out_abs = os.path.abspath(out_thumb)
