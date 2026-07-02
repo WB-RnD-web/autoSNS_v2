@@ -398,22 +398,57 @@ def _gemini_bg(prompt: str, out_png: str, workdir: str) -> bool:
     return False
 
 
+def _flux_bg(prompt: str, out_png: str, workdir: str) -> bool:
+    """FLUX.2 klein-4b(무료 호스팅)로 시리즈 배경 생성 → 1920x1080 정규화.
+    자막 가독성을 위해 살짝 어둡게 + 비네팅(10분 내내 깔리는 배경이라 차분하게)."""
+    raw = flux_image(prompt + ", cinematic wide establishing shot, atmospheric, "
+                              "highly detailed, no text, no watermark",
+                     os.path.join(workdir, "bg_flux_raw.png"), 1344, 768)
+    if not raw:
+        return False
+    try:
+        sh([FFMPEG, "-y", "-i", raw, "-vf",
+            f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},setsar=1,"
+            f"eq=brightness=-0.08:saturation=1.05,vignette=PI/5",
+            "-frames:v", "1", out_png])
+        return os.path.exists(out_png) and os.path.getsize(out_png) > 0
+    except subprocess.CalledProcessError:
+        return False
+
+
 def ensure_background(spec: dict, cache_dir: str, workdir: str) -> str:
-    """series_id 로 캐싱된 1920x1080 기본 배경 경로 반환(없으면 생성)."""
+    """series_id 로 캐싱된 1920x1080 기본 배경 경로 반환(없으면 생성).
+    우선순위: ★FLUX(klein-4b·무료) → Gemini(유료·키 있으면) → 절차적(무료 최후 폴백).
+    절차적 폴백으로 만들어진 시리즈는 marker 를 남겨, 다음 회차에서 FLUX 업그레이드를 재시도한다."""
     os.makedirs(cache_dir, exist_ok=True)
     sid = spec["series_id"]
     cache = os.path.join(cache_dir, f"{sid}.png")
+    marker = cache + ".procedural"      # '절차적 폴백이었음' 표시(업그레이드 재시도용)
+    prompt = (spec.get("background") or {}).get("prompt", "")
+    backend = os.environ.get("NOVEL_BG_BACKEND", "auto").lower()  # auto|flux|gemini|procedural
+
     if os.path.exists(cache) and os.path.getsize(cache) > 0:
+        if os.path.exists(marker) and backend in ("auto", "flux") and prompt:
+            # 지난 회차에 절차적으로 폴백했던 시리즈 → FLUX 업그레이드 재시도
+            if _flux_bg(prompt, cache, workdir):
+                os.remove(marker)
+                print("  · 배경 업그레이드: 절차적 → FLUX 장면(시리즈 캐시 교체)")
+                return cache
         print(f"  · 배경 캐시 재사용: {cache}")
         return cache
-    prompt = (spec.get("background") or {}).get("prompt", "")
-    backend = os.environ.get("NOVEL_BG_BACKEND", "auto").lower()  # auto|gemini|procedural
+
     made = False
-    if backend in ("auto", "gemini") and prompt:
+    if backend in ("auto", "flux") and prompt:
+        made = _flux_bg(prompt, cache, workdir)
+        if made:
+            print("  · FLUX(klein-4b) 시리즈 배경 생성 ✅")
+    if not made and backend in ("auto", "gemini") and prompt:
         made = _gemini_bg(prompt, cache, workdir)
     if not made:
-        print(f"  · 절차적 배경 생성(장르={spec.get('genre','?')})")
+        print(f"  · 절차적 배경 생성(장르={spec.get('genre','?')}) — 다음 회차에 FLUX 재시도")
         _gen_procedural(spec.get("genre", ""), cache)
+        with open(marker, "w") as f:
+            f.write("procedural")
     return cache
 
 

@@ -70,12 +70,13 @@ jobs:
           python -m pip install -r pipeline/requirements.txt
 
       # 1b) 배경 캐시(series_id 별 1회 생성 재사용) — 런 간 영속, main 에 쓰지 않음(루프 방지)
+      #     v2: FLUX 배경 도입으로 키 버전 업 — 구(절차적) 캐시를 버리고 FLUX 로 재생성
       - name: 배경 캐시 복원/저장
         uses: actions/cache@v4
         with:
           path: output/_work/novel_bg
-          key: novel-bg-${{ github.run_id }}
-          restore-keys: novel-bg-
+          key: novel-bg-v2-${{ github.run_id }}
+          restore-keys: novel-bg-v2-
 
       # 1c) dedupe ledger 복원/저장(런 간 영속 — 레포에 쓰지 않음)
       - name: ledger 캐시 복원/저장
