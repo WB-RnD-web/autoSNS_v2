@@ -14,28 +14,56 @@ import sys
 
 import config
 
+FOLDER = "autosns_v2"
 
-def host(video_path: str, public_id: str) -> str | None:
+
+def _configure() -> bool:
+    """Cloudinary SDK 설정. 자격증명/미설치 시 False."""
     cloud = config.env("CLOUDINARY_CLOUD_NAME")
     key = config.env("CLOUDINARY_API_KEY")
     secret = config.env("CLOUDINARY_API_SECRET")
     url_env = config.env("CLOUDINARY_URL")
     if not url_env and not (cloud and key and secret):
-        return None
+        return False
     try:
         import cloudinary
-        import cloudinary.uploader
     except ImportError:
         sys.stderr.write("[warn] cloudinary 미설치 — pip install cloudinary\n")
-        return None
+        return False
     if not url_env:
         cloudinary.config(cloud_name=cloud, api_key=key, api_secret=secret, secure=True)
     else:
         cloudinary.config(secure=True)  # CLOUDINARY_URL 자동 인식
+    return True
+
+
+def host(video_path: str, public_id: str) -> str | None:
+    if not _configure():
+        return None
+    import cloudinary.uploader
     res = cloudinary.uploader.upload_large(
         video_path, resource_type="video", public_id=public_id,
-        overwrite=True, folder="autosns_v2")
+        overwrite=True, folder=FOLDER)
     return res.get("secure_url")
+
+
+def cleanup(public_id: str) -> bool:
+    """게시 완료 후 Cloudinary 원본 삭제(저장공간 회수). 성공 시 True.
+
+    IG/Threads 는 게시 시점에 영상을 자기 서버로 복사하므로, 게시 이후
+    Cloudinary 원본은 불필요 → 삭제해서 무료 플랜 저장 한도 누수를 막는다.
+    삭제 실패는 치명적이지 않음(다음 실행에 overwrite 됨) → 경고만 남기고 False.
+    """
+    if not _configure():
+        return False
+    try:
+        import cloudinary.uploader
+        res = cloudinary.uploader.destroy(
+            f"{FOLDER}/{public_id}", resource_type="video", invalidate=True)
+        return res.get("result") == "ok"
+    except Exception as e:  # noqa: BLE001
+        sys.stderr.write(f"[warn] Cloudinary 정리 실패({public_id}): {e}\n")
+        return False
 
 
 def main() -> int:
