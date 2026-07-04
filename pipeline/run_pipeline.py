@@ -96,20 +96,26 @@ def do_social(video, sb, res):
     print(f"   공개 URL: {url}")
     plat = sb.get("platforms", {})
     out = []
+    ok = False  # 하나라도 게시 성공하면 True
     if ig:
         try:
             import upload_instagram
             mid = upload_instagram.publish_reel(url, plat.get("instagram", {}).get("caption", ""))
-            out.append(f"IG:{mid}")
+            out.append(f"IG:{mid}"); ok = True
         except Exception as e:  # noqa: BLE001
             out.append(f"IG실패:{e}")
     if th:
         try:
             import upload_threads
             tid = upload_threads.publish_thread(url, plat.get("threads", {}).get("text", ""))
-            out.append(f"Threads:{tid}")
+            out.append(f"Threads:{tid}"); ok = True
         except Exception as e:  # noqa: BLE001
             out.append(f"Threads실패:{e}")
+    # 게시 성공 시 Cloudinary 원본 삭제(저장공간 회수). 전부 실패면 재시도 위해 보존.
+    if ok:
+        out.append("cloud정리✓" if host_video.cleanup(public_id) else "cloud정리실패(수동확인)")
+    else:
+        out.append("cloud보존(게시 전부 실패)")
     res["social"] = " · ".join(out)
 
 
