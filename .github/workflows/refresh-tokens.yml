@@ -1,0 +1,45 @@
+name: IG/Threads 장기토큰 자동 갱신
+
+# Meta 장기토큰(60일)을 주 1회 갱신해 사실상 무기한 유지한다.
+#   - 토큰이 ≥24h 됐고 만료 전이면 갱신 시점부터 다시 60일 연장.
+#   - 갱신된 새 토큰은 gh CLI 로 같은 이름의 Secret 에 덮어씀(다음 파이프라인이 즉시 사용).
+#
+# 필요한 추가 Secret:
+#   GH_PAT — fine-grained PAT, 이 리포에 "Secrets: Read and write" 권한.
+#            (GITHUB_TOKEN 은 Actions Secret 을 쓸 수 없어 별도 PAT 필요)
+#   ⚠️ fine-grained PAT 자체도 최대 1년 만료 → 만료 전 재발급 필요(연 1회 수동).
+
+on:
+  schedule:
+    - cron: "0 3 * * 1"        # 매주 월요일 03:00 UTC(=12:00 KST). 60일 대비 넉넉.
+  workflow_dispatch:            # 수동 실행(최초 검증용)
+
+concurrency:
+  group: refresh-tokens
+  cancel-in-progress: false
+
+permissions:
+  contents: read                # 코드만 읽음. Secret 쓰기는 GH_PAT 로 함(GITHUB_TOKEN 아님)
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: requests 설치
+        run: python -m pip install "requests>=2.31"
+
+      - name: 토큰 갱신 + Secret 재기록
+        env:
+          # 갱신 대상(현재 토큰)
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          # gh secret set 용 PAT (Secrets write). GITHUB_REPOSITORY 는 러너 기본 제공.
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: python pipeline/refresh_tokens.py
