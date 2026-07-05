@@ -324,8 +324,12 @@ def build_thumbnail(spec: dict, bg_png: str, workdir: str, out_thumb: str,
             or spec.get("series_title") or "").strip()
     if not text:
         return None
-    # 썸네일 베이스: FLUX 장면 생성 시도(thumbnail_prompt > background.prompt) → 실패 시 series 배경
+    # 썸네일 베이스: FLUX 장면 생성 시도 → 실패 시 series 배경.
+    #   ★회차별 장면 우선: thumbnail_prompt/thumbnail_hook(루틴이 회차마다 써주는 필드)이 있으면 그걸 쓴다.
+    #   없을 때만 series 공통 background.prompt 로 폴백(그렇지 않으면 회차 썸네일이 다 똑같아짐).
     scene = (yt.get("thumbnail_prompt")
+             or yt.get("thumbnail_hook")
+             or spec.get("thumbnail_hook")
              or (spec.get("background") or {}).get("prompt") or "").strip()
     base = None
     if scene:
