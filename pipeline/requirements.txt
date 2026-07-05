@@ -18,5 +18,8 @@ requests>=2.31
 # IG/Threads 용 공개 mp4 호스팅 (공개 URL 발급)
 cloudinary>=1.40
 
+# 소설 썸네일 제목 오버레이(qwen-image 배경 + 폰트 텍스트 합성)
+pillow>=10.0
+
 # (옵션) Claude로 더 위트있는 대본 생성
 anthropic>=0.39

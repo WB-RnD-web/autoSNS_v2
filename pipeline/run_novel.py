@@ -101,6 +101,16 @@ def process(ep_path: str, args, led) -> dict:
         print("   ⏭️  업로드 스킵 — 소설 토큰 없음.")
         return res
 
+    # 썸네일(선택): thumbnail_hook 있으면 qwen-image 로 회차별 커스텀 썸네일 생성(best-effort)
+    thumb = None
+    try:
+        import thumbnail as thumbmod
+        thumb_path = str(config.RENDERS_DIR / f"{spec['series_id']}_ep{spec['episode_no']}_thumb.jpg")
+        thumb = thumbmod.build_thumbnail(spec, thumb_path, wd)
+    except Exception as e:  # noqa: BLE001
+        sys.stderr.write(f"[warn] 썸네일 단계 예외 → 스킵: {e}\n")
+    res["thumbnail"] = thumb
+
     import upload_youtube_novel
     last = None
     for attempt in range(1, args.retries + 2):
@@ -108,7 +118,7 @@ def process(ep_path: str, args, led) -> dict:
             pub = upload_youtube_novel.publish(
                 res["video"], meta["title"], meta["description"], meta["privacy"],
                 playlist_title=meta["playlist"], tags=meta["tags"],
-                category_id=meta["category_id"])
+                category_id=meta["category_id"], thumbnail=thumb)
             res["uploaded"] = f"{pub['url']} ({meta['privacy']})"
             res["playlist"] = pub.get("playlist_id")
             if led is not None:

@@ -45,6 +45,9 @@ jobs:
       # 배경 백엔드(auto=GEMINI 키 있으면 생성, 없으면 절차적 무료 배경)
       NOVEL_BG_BACKEND: ${{ vars.NOVEL_BG_BACKEND || 'auto' }}
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      # 회차별 커스텀 썸네일용 qwen-image 게이트웨이(외부 공개). TOKEN 은 게이트웨이 인증 걸면 사용.
+      WBSPARK_BASE: ${{ vars.WBSPARK_BASE || 'https://wangbyul.com/wbSpark' }}
+      WBSPARK_TOKEN: ${{ secrets.WBSPARK_TOKEN }}
     steps:
       - uses: actions/checkout@v4
         with:
