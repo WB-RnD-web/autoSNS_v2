@@ -100,6 +100,22 @@ def upload_video(yt, video: str, title: str, description: str,
     return vid
 
 
+def set_thumbnail(yt, video_id: str, thumbnail: str) -> bool:
+    """커스텀 썸네일 지정. ★채널 전화인증 필수(미인증이면 API 거부).
+
+    실패해도 업로드 자체엔 영향 없음 → 경고만 남기고 False."""
+    from googleapiclient.http import MediaFileUpload
+    try:
+        yt.thumbnails().set(
+            videoId=video_id,
+            media_body=MediaFileUpload(thumbnail)).execute()
+        print(f"   🖼️  커스텀 썸네일 지정 완료: {os.path.basename(thumbnail)}")
+        return True
+    except Exception as e:  # noqa: BLE001
+        print(f"   ⚠️ 썸네일 지정 실패(업로드는 성공): {e}")
+        return False
+
+
 # ── 재생목록(시리즈 정주행) ──
 def find_playlist(yt, title: str) -> str | None:
     """내 채널에서 같은 제목의 재생목록 검색(있으면 id)."""
@@ -146,10 +162,12 @@ def add_to_playlist(yt, playlist_id: str, video_id: str) -> None:
 # ── 고수준 퍼블리시(업로드 → 재생목록 보장 → 추가) ──
 def publish(video: str, title: str, description: str, privacy: str,
             playlist_title: str = "", tags: list[str] | None = None,
-            category_id: str | None = None) -> dict:
+            category_id: str | None = None, thumbnail: str | None = None) -> dict:
     yt = get_service()
     vid = upload_video(yt, video, title, description, privacy, tags, category_id)
     res = {"video_id": vid, "url": f"https://youtu.be/{vid}", "privacy": privacy, "playlist_id": None}
+    if thumbnail and os.path.exists(thumbnail):
+        res["thumbnail_set"] = set_thumbnail(yt, vid, thumbnail)
     if playlist_title.strip():
         try:
             # 재생목록 공개도(영상이 unlisted 라도 재생목록은 public 으로 노출 가능 — 운영 선택)

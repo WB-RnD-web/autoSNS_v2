@@ -63,6 +63,7 @@ All content is ORIGINAL. There are no real people and no existing/copyrighted wo
   "narration_full":"<전체 낭독 본문 ~3,000-3,800자>",
   "segments":[ {"text":"<화면 자막 단위 한 단락/문장>","est_sec":6} ],
   "background":{"id":"<series_id>_bg","kind":"image","reuse":true,"aspect":"16:9","prompt":"<canon.bg_image_prompt 그대로>"},
+  "thumbnail_hook":"<이번 회차 대본을 시각화한 한 줄 장면(영어 권장) — 핵심 인물·소재·분위기가 드러나게, 글자/텍스트 묘사는 넣지 말 것. 예: 'a lone woman untangling glowing red thread in a dark hanok at night'>",
   "next_episode_hook":"<다음 편 예고 한 줄, 완결이면 \"\">",
   "platforms":{
     "youtube":{
@@ -82,6 +83,7 @@ All content is ORIGINAL. There are no real people and no existing/copyrighted wo
 - 오리지널만? 실존 인물/기존 작품/저작권 캐릭터·세계관 0?
 - 가드레일 준수(아래)? 제목에 EP번호 + 재생목록 지정?
 - segments가 narration_full을 빠짐없이 덮나? title/description/credit 채움?
+- thumbnail_hook에 이번 회차 핵심 장면을 시각적으로(글자 묘사 없이) 담았나? (썸네일 = 회차별 자동 생성)
 
 ## 5) 상태 갱신 + 커밋 (★영구 브랜치, force 금지)
 1. canon.json 갱신: plot_summary_so_far 이어붙이기, foreshadowing 갱신, next_episode_hook, episodes_done++, (마지막 편이면 작품 상태 done).
