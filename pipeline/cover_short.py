@@ -68,7 +68,14 @@ def _style_prompt(style: str) -> str:
         return NEWS_PRESET
 
 
-def _overlay(bg_path: str, text: str, out_path: str) -> str:
+def _accent(sb: dict) -> str:
+    """스토리보드 accent(#RRGGBB) → 커버 액센트 바 색. 잘못된 값이면 코랄."""
+    import re
+    a = (sb.get("accent") or "").strip()
+    return a if re.fullmatch(r"#[0-9A-Fa-f]{6}", a) else CORAL
+
+
+def _overlay(bg_path: str, text: str, out_path: str, accent: str = CORAL) -> str:
     """9:16 배경에 후킹 문구를 또렷하게 오버레이(하단 스크림 + 자동 폰트축소)."""
     from PIL import Image, ImageDraw, ImageOps
     from thumbnail import _load_font, _wrap  # 폰트/줄바꿈 로직 재사용
@@ -100,11 +107,11 @@ def _overlay(bg_path: str, text: str, out_path: str) -> str:
         line_h = int(size * 1.16)
         total_h = line_h * len(lines)
         y = int(H * 0.86) - total_h
-        # 코랄 액센트 바(브랜드 식별)
+        # 액센트 바(토픽 accent 색 — 뉴스 코랄, 별자리 인디고 등)
         bar_w, bar_h = 132, 12
         draw.rounded_rectangle(
             [(W - bar_w) // 2, y - 44, (W + bar_w) // 2, y - 44 + bar_h],
-            radius=6, fill=CORAL)
+            radius=6, fill=accent)
         stroke = max(5, size // 12)
         for ln in lines:
             w = draw.textlength(ln, font=font)
@@ -138,7 +145,7 @@ def build_cover(sb: dict, out_path: str, workdir: str, timeout_sec: int = 300) -
         print("   ⏭️  커버 배경 생성 실패/타임아웃(영상 프레임 폴백)")
         return None
     try:
-        p = _overlay(raw, text, out_path)
+        p = _overlay(raw, text, out_path, accent=_accent(sb))
         print(f"   🖼️  쇼츠 커버 완성: {os.path.basename(p)}")
         return p
     except Exception as e:  # noqa: BLE001
