@@ -50,7 +50,8 @@ def _check(r, ctx: str):
         raise RuntimeError(f"{ctx} {r.status_code}: {detail}")
 
 
-def publish_reel(video_url: str, caption: str, share_to_feed: bool = True) -> str:
+def publish_reel(video_url: str, caption: str, share_to_feed: bool = True,
+                 cover_url: str | None = None) -> str:
     requests = _requests()
     user_id = config.env("IG_USER_ID")
     token = config.env("IG_ACCESS_TOKEN")
@@ -58,10 +59,15 @@ def publish_reel(video_url: str, caption: str, share_to_feed: bool = True) -> st
         raise SystemExit("[error] IG_USER_ID / IG_ACCESS_TOKEN 환경변수 필요(.env)")
 
     # 1) 컨테이너 생성
-    r = requests.post(f"{GRAPH}/{user_id}/media", data={
+    #    cover_url(공개 이미지 URL)을 주면 릴스 커버로 사용 → 검은 첫프레임 미리보기 방지.
+    #    (안 주면 IG 는 thumb_offset 기본값 0 = 첫 프레임을 커버로 씀.)
+    data = {
         "media_type": "REELS", "video_url": video_url, "caption": caption,
         "share_to_feed": str(share_to_feed).lower(), "access_token": token,
-    }, timeout=60)
+    }
+    if cover_url:
+        data["cover_url"] = cover_url
+    r = requests.post(f"{GRAPH}/{user_id}/media", data=data, timeout=60)
     _check(r, "컨테이너 생성")
     cid = r.json()["id"]
     print(f"   컨테이너 생성: {cid} — 처리 대기…")

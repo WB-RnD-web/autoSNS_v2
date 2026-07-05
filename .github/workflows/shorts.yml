@@ -57,6 +57,14 @@ jobs:
       IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
       THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
       THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+      # IG/Threads 미리보기 커버(9:16) 생성용 qwen-image 게이트웨이(소설과 동일).
+      #   TOKEN 은 게이트웨이 인증 걸면 사용. 느리면 영상 프레임 폴백(검은 미리보기 방지).
+      WBSPARK_BASE: ${{ vars.WBSPARK_BASE || 'https://wangbyul.com/wbSpark' }}
+      WBSPARK_TOKEN: ${{ secrets.WBSPARK_TOKEN }}
+      # 커버 생성 노브(선택): 끄기=SHORTS_COVER=0, qwen 대기 상한(초), 첫프레임 홀드(초)
+      SHORTS_COVER: ${{ vars.SHORTS_COVER || '1' }}
+      SHORTS_COVER_TIMEOUT: ${{ vars.SHORTS_COVER_TIMEOUT || '300' }}
+      SHORTS_COVER_HOLD: ${{ vars.SHORTS_COVER_HOLD || '0.7' }}
     steps:
       - uses: actions/checkout@v4
         with:
