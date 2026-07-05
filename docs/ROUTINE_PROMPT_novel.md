@@ -67,6 +67,8 @@ All content is ORIGINAL. There are no real people and no existing/copyrighted wo
   - 로맨스: `two students sharing one umbrella under first snow beside a warm cafe window, soft evening glow`
   - 판타지: `a young mage standing before a ruined floating academy, glowing runes drifting, vast dawn sky`
 - **(선택) thumbnail_style**: `darkfantasy|lightnovel|webtoon|ghibli|epicfantasy` 중 하나를 강제하고 싶을 때만. 보통은 **비워서** 장르 자동 선택에 맡긴다.
+- **thumbnail_text**: 썸네일에 **크게 얹을 초강력 후킹 문구(8~16자)**. 궁금증·긴장·금기 자극(예: `그 방엔 누가 있었나`, `삼 년 전 그 이름`). 비우면 제목이 대신 얹힌다. ← 이미지가 아니라 **폰트로 오버레이**되므로 안 깨짐.
+- 위 세 필드(thumbnail_hook/style/text)는 top-level 또는 `platforms.youtube` 아래 어디에 둬도 파이프라인이 인식한다.
 
 ## 3) Output VALID JSON ONLY (펜스 없이 JSON 단독)
 {
