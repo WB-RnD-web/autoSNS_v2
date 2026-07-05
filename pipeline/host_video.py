@@ -47,11 +47,31 @@ def host(video_path: str, public_id: str) -> str | None:
     return res.get("secure_url")
 
 
-def cleanup(public_id: str) -> bool:
+def host_image(image_path: str, public_id: str) -> str | None:
+    """커버 이미지(JPEG)를 공개 URL 로 호스팅 → IG Reels 의 cover_url 로 사용.
+
+    IG 는 cover_url 도 '공개 URL의 이미지'를 컨테이너 생성 시점에 서버가 가져간다.
+    자격증명/미설치 시 None → 호출측은 cover_url 없이(첫 프레임 커버로) 진행.
+    """
+    if not _configure():
+        return None
+    try:
+        import cloudinary.uploader
+        res = cloudinary.uploader.upload(
+            image_path, resource_type="image", public_id=public_id,
+            overwrite=True, folder=FOLDER)
+        return res.get("secure_url")
+    except Exception as e:  # noqa: BLE001
+        sys.stderr.write(f"[warn] Cloudinary 이미지 호스팅 실패({public_id}): {e}\n")
+        return None
+
+
+def cleanup(public_id: str, resource_type: str = "video") -> bool:
     """게시 완료 후 Cloudinary 원본 삭제(저장공간 회수). 성공 시 True.
 
-    IG/Threads 는 게시 시점에 영상을 자기 서버로 복사하므로, 게시 이후
+    IG/Threads 는 게시 시점에 영상/커버를 자기 서버로 복사하므로, 게시 이후
     Cloudinary 원본은 불필요 → 삭제해서 무료 플랜 저장 한도 누수를 막는다.
+    커버 이미지 정리는 resource_type="image" 로 호출.
     삭제 실패는 치명적이지 않음(다음 실행에 overwrite 됨) → 경고만 남기고 False.
     """
     if not _configure():
@@ -59,7 +79,7 @@ def cleanup(public_id: str) -> bool:
     try:
         import cloudinary.uploader
         res = cloudinary.uploader.destroy(
-            f"{FOLDER}/{public_id}", resource_type="video", invalidate=True)
+            f"{FOLDER}/{public_id}", resource_type=resource_type, invalidate=True)
         return res.get("result") == "ok"
     except Exception as e:  # noqa: BLE001
         sys.stderr.write(f"[warn] Cloudinary 정리 실패({public_id}): {e}\n")
