@@ -109,14 +109,6 @@ def normalize(spec: dict) -> tuple[dict, list[str]]:
     bg.setdefault("reuse", True)
     s["background"] = bg
 
-    # ── thumbnail (선택): 루틴이 대본 한줄요약을 thumbnail_hook 으로 제공 ──
-    #    있으면 CI 가 qwen-image 로 회차별 썸네일 생성(장르맞춤 스타일)+제목 오버레이+YT 지정.
-    #    없으면 썸네일 스킵(YouTube 자동 프레임) — 파이프라인은 정상 진행.
-    s["thumbnail_hook"] = (s.get("thumbnail_hook") or "").strip()
-    s["thumbnail_style"] = (s.get("thumbnail_style") or "").strip().lower()
-    if not s["thumbnail_hook"]:
-        _warn(warns, "thumbnail_hook 없음 — 커스텀 썸네일 스킵(YT 자동 프레임)")
-
     # ── content_rating ──
     rating = (s.get("content_rating") or "all").lower()
     if rating not in RATINGS:
@@ -157,6 +149,17 @@ def normalize(spec: dict) -> tuple[dict, list[str]]:
         _warn(warns, "설명의 #shorts 제거")
     yt.setdefault("playlist", s.get("series_title", ""))
     s["platforms"] = {**s.get("platforms", {}), "youtube": yt}
+
+    # ── thumbnail (선택): 회차별 커스텀 썸네일 자동 생성용 ──
+    #    루틴이 top-level 또는 platforms.youtube 아래 어디에 둬도 인식(둘 다 허용).
+    #    thumbnail_hook = 그릴 장면(영어), thumbnail_style = 강제 스타일(비우면 장르 자동),
+    #    thumbnail_text = 썸네일에 크게 얹을 후킹 문구(없으면 제목 사용).
+    #    hook 없으면 썸네일 스킵(YT 자동 프레임) — 파이프라인은 정상 진행.
+    s["thumbnail_hook"] = (s.get("thumbnail_hook") or yt.get("thumbnail_hook") or "").strip()
+    s["thumbnail_style"] = (s.get("thumbnail_style") or yt.get("thumbnail_style") or "").strip().lower()
+    s["thumbnail_text"] = (s.get("thumbnail_text") or yt.get("thumbnail_text") or "").strip()
+    if not s["thumbnail_hook"]:
+        _warn(warns, "thumbnail_hook 없음 — 커스텀 썸네일 스킵(YT 자동 프레임)")
 
     return s, warns
 

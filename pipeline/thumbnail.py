@@ -152,10 +152,12 @@ def build_thumbnail(spec: dict, out_path: str, workdir: str) -> str | None:
         print("   ⏭️  썸네일 스킵 — 배경 생성 실패")
         return None
 
-    title = (spec.get("platforms", {}).get("youtube", {}).get("title")
-             or spec.get("series_title", "")).strip()
+    # 썸네일에 얹을 문구: thumbnail_text(초강력 후킹 문구) 우선, 없으면 제목.
+    overlay_text = (spec.get("thumbnail_text")
+                    or spec.get("platforms", {}).get("youtube", {}).get("title")
+                    or spec.get("series_title", "")).strip()
     try:
-        path = _overlay_title(raw, title, out_path)
+        path = _overlay_title(raw, overlay_text, out_path)
         print(f"   🖼️  썸네일 완성: {path}")
         return path
     except Exception as e:  # noqa: BLE001
