@@ -69,6 +69,18 @@ SCENE TYPES — choose what fits each fact (mix freely):
 모든 scene에 `brand` 넣기: `"일상공감뉴스 · <TOPIC_NAME>"`.
 선택: 따뜻한 토픽(연애)은 최상위에 `"accent": "#E0788F"` 처럼 액센트 컬러를 줄 수 있다(기본은 코랄 #D97757).
 
+## 2.5) COVER — 인스타/쓰레드 미리보기 썸네일 (필수)
+
+모션그래픽 쇼츠는 첫 프레임이 검정이라, 커버를 안 주면 인스타/쓰레드 미리보기가 '검은 화면'이 된다
+(유튜브 쇼츠는 자체 프레임 선택이라 무관). 그래서 최상위에 커버 2필드를 **반드시** 넣는다.
+파이프라인이 이 hook 으로 qwen-image 9:16 커버를 만들어 IG `cover_url`/쓰레드 첫 프레임에 쓴다.
+(누락 시엔 영상 프레임으로 자동 폴백해 검은 화면은 막지만, 품질·일관성 위해 항상 명시하라.)
+
+- `thumbnail_hook` = 커버 배경으로 그릴 장면의 **영어** 프롬프트. 뉴스 키비주얼을 시각적으로 묘사
+  (사람/사물/분위기). 이미지 안에 글자를 넣지 말 것(문구는 파이프라인이 오버레이함).
+- `thumbnail_text` = 커버에 크게 얹을 **한글** 후킹 문구(<=16자). 비우면 `hook_title` 재사용.
+- (선택) `thumbnail_style` = `news`(기본). 특수 톤이 필요하면만 지정.
+
 ## 3) Output VALID JSON ONLY (no markdown fence), exactly this structure:
 {
   "date": "<DATE>",
@@ -78,6 +90,8 @@ SCENE TYPES — choose what fits each fact (mix freely):
   "headline": "<one-line factual headline, <=40 chars>",
   "hook_title": "<curiosity/emotion hook, <=24 chars — this is what gets posted>",
   "accent": "#D97757",
+  "thumbnail_hook": "<English image prompt for the 9:16 COVER background (qwen-image). Describe the story as a news key visual — subject/objects/mood. NO text/letters in the image. e.g. 'a towering stack of MacBook boxes with glowing red upward price arrows, dramatic studio lighting'>",
+  "thumbnail_text": "<short Korean hook overlaid BIG on the cover, <=16 chars — omit to reuse hook_title>",
   "scenes": [
     {"type":"hook","pill":"BREAKING","ghost":"POLITICS","lines":["이틀 전에","집 3채를","팔았다고?"],
      "highlight":"3","brand":"일상공감뉴스 · 정치","narration":"총리 후보 청문회가, 시작 전부터 논란입니다."},
@@ -108,6 +122,7 @@ SCENE TYPES — choose what fits each fact (mix freely):
 - 모든 숫자가 검색 근거? highlight/통계 수치가 실제와 일치?
 - narration: 단일 내레이터 1문장씩, jamo filler/이모지 없음, 총 ~45-60초?
 - hook_title <=24자(드라이 헤드라인 아님)? platforms/sources/credit 채움?
+- thumbnail_hook(영어, 이미지에 글자 없음) + thumbnail_text(<=16자) 채웠나? (인스타/쓰레드 커버)
 - 각 scene이 그 type의 필수 필드를 갖췄나(특히 hook.highlight ∈ lines, statement.highlight ∈ text)?
 
 ## 5) Commit — push to a **routine/** branch of WB-RnD-web/autoSNS_v2 (NOT main, NOT v1)

@@ -80,27 +80,89 @@ def resolve_spec(sb_path, sb, args):
     raise RuntimeError("장면 스펙 없음 — --spec 지정, output/specs/ 사전생성, 또는 ANTHROPIC_API_KEY 필요")
 
 
+def _prepare_cover(video, sb, base):
+    """소셜 미리보기 커버 준비(best-effort). (커버이미지경로, 소셜영상경로, 소스태그) 반환.
+
+    커버이미지: 루틴 thumbnail_hook 있으면 qwen-image 9:16 커버 → 없거나 실패하면 영상 프레임 폴백.
+    소셜영상: 커버가 있으면 그 커버를 '첫 프레임'으로 구운 mp4(쓰레드용) → 실패/미커버면 원본.
+    검은 미리보기를 절대 안 내보내는 게 목표라 실패는 전부 조용히 폴백한다.
+    """
+    if config.env("SHORTS_COVER", "1") in ("0", "false", "False", ""):
+        return None, video, "off"
+    try:
+        import cover_short
+    except Exception as e:  # noqa: BLE001
+        sys.stderr.write(f"[warn] cover_short 임포트 실패 → 커버 없이 진행: {e}\n")
+        return None, video, "none"
+
+    wd = str(config.OUTPUT / "_work" / "social" / base)
+    timeout = int(config.env("SHORTS_COVER_TIMEOUT", "300") or "300")
+    hold = float(config.env("SHORTS_COVER_HOLD", "0.7") or "0.7")
+    grab_at = float(config.env("SHORTS_COVER_GRAB_SEC", "2.0") or "2.0")
+
+    cover_img, src = None, "none"
+    try:
+        c = cover_short.build_cover(sb, os.path.join(wd, "cover.jpg"), wd, timeout_sec=timeout)
+        if c:
+            cover_img, src = c, "qwen"
+        else:
+            f = cover_short.grab_frame(video, os.path.join(wd, "framecover.jpg"), at_sec=grab_at)
+            if f:
+                cover_img, src = f, "frame"
+    except Exception as e:  # noqa: BLE001
+        sys.stderr.write(f"[warn] 커버 생성 예외 → 폴백 시도: {e}\n")
+
+    social_video = video
+    if cover_img:
+        try:
+            baked = cover_short.prepend_cover(video, cover_img, os.path.join(wd, "social.mp4"), hold_sec=hold)
+            if baked:
+                social_video = baked
+        except Exception as e:  # noqa: BLE001
+            sys.stderr.write(f"[warn] 첫프레임 굽기 예외 → 원본 사용: {e}\n")
+    return cover_img, social_video, src
+
+
 def do_social(video, sb, res):
-    """IG Reels + Threads 업로드(자격증명 있을 때만). 공개 URL 은 Cloudinary 경유."""
+    """IG Reels + Threads 업로드(자격증명 있을 때만). 공개 URL 은 Cloudinary 경유.
+
+    미리보기(검은 화면) 대응:
+      - 커버 확보(qwen-image 커버 → 실패 시 영상 프레임 폴백)
+      - IG: cover_url 로 커버 지정 / Threads: 커버 API 없어 커버를 영상 첫 프레임으로 굽는다
+      - YouTube 쇼츠는 이 함수와 무관(원본 res["video"] 그대로 업로드)
+    """
     ig = config.env("IG_USER_ID") and config.env("IG_ACCESS_TOKEN")
     th = config.env("THREADS_USER_ID") and config.env("THREADS_ACCESS_TOKEN")
     if not ig and not th:
         return  # 자격증명 없음 → 조용히 스킵
     import host_video
-    public_id = os.path.splitext(os.path.basename(video))[0]
-    url = host_video.host(video, public_id)
+    base = os.path.splitext(os.path.basename(video))[0]
+
+    cover_img, social_video, cover_src = _prepare_cover(video, sb, base)
+
+    # 소셜용 영상 호스팅(커버 구운 버전 우선). 커버를 못 구웠으면 원본 public_id 유지.
+    video_pid = f"{base}_social" if social_video != video else base
+    url = host_video.host(social_video, video_pid)
     if not url:
         res["social"] = "[skip] Cloudinary 자격증명 없음(공개 URL 불가)"
         print("   ⏭️  IG/Threads 스킵 — Cloudinary 자격증명 없음")
         return
     print(f"   공개 URL: {url}")
+
+    # IG cover_url 용 커버 이미지 호스팅(있을 때만)
+    cover_url, cover_pid = None, None
+    if cover_img:
+        cover_pid = f"{base}_cover"
+        cover_url = host_video.host_image(cover_img, cover_pid)
+
     plat = sb.get("platforms", {})
     out = []
     ok = False  # 하나라도 게시 성공하면 True
     if ig:
         try:
             import upload_instagram
-            mid = upload_instagram.publish_reel(url, plat.get("instagram", {}).get("caption", ""))
+            mid = upload_instagram.publish_reel(
+                url, plat.get("instagram", {}).get("caption", ""), cover_url=cover_url)
             out.append(f"IG:{mid}"); ok = True
         except Exception as e:  # noqa: BLE001
             out.append(f"IG실패:{e}")
@@ -111,9 +173,13 @@ def do_social(video, sb, res):
             out.append(f"Threads:{tid}"); ok = True
         except Exception as e:  # noqa: BLE001
             out.append(f"Threads실패:{e}")
-    # 게시 성공 시 Cloudinary 원본 삭제(저장공간 회수). 전부 실패면 재시도 위해 보존.
+    out.append(f"커버:{cover_src}")
+    # 게시 성공 시 Cloudinary 원본 삭제(영상+커버). 전부 실패면 재시도 위해 보존.
     if ok:
-        out.append("cloud정리✓" if host_video.cleanup(public_id) else "cloud정리실패(수동확인)")
+        cleaned = host_video.cleanup(video_pid)
+        if cover_pid:
+            host_video.cleanup(cover_pid, resource_type="image")
+        out.append("cloud정리✓" if cleaned else "cloud정리실패(수동확인)")
     else:
         out.append("cloud보존(게시 전부 실패)")
     res["social"] = " · ".join(out)
