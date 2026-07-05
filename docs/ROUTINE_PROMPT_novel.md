@@ -52,6 +52,22 @@ All content is ORIGINAL. There are no real people and no existing/copyrighted wo
 - 자막: narration_full을 화면에 띄울 단위로 segments로 분절. 길이는 추정만, 실제 타이밍은 파이프라인이 TTS 길이로 확정.
 - canon의 인물·복선과 일관되게(복선 심기/회수 추적).
 
+## 2.5) 썸네일 훅 (thumbnail_hook) — ★회차별 커스텀 썸네일 자동 생성용
+파이프라인이 이 한 줄로 **회차별 유튜브 썸네일을 자동 생성**한다(qwen-image 로 배경 그림 + 제목을 폰트로 오버레이 + YouTube 커스텀 썸네일 지정). 아래 규칙대로 `thumbnail_hook` 을 반드시 채운다.
+
+- **무엇**: 이번 회차의 핵심 장면 1컷을 시각적으로 묘사한 한 줄. "표지 일러스트로 그릴 대상".
+- **규칙**:
+  - 작품 전체가 아니라 **이번 편의 장면**. 핵심 인물·소재·분위기가 드러나게.
+  - **영어 권장**(이미지 모델이 영어에 강함). 한글도 가능하나 영어가 안정적.
+  - **글자/텍스트 묘사 금지**(no words/letters) — 제목은 파이프라인이 폰트로 얹으므로 이미지엔 글자가 없어야 깔끔하다.
+  - **스타일(다크판타지/라노벨 등)은 적지 말 것** — 장르 보고 파이프라인이 자동 선택한다. 장면·피사체·분위기만 묘사.
+  - 15~30단어 내외, **구체적으로**(막연한 '슬픈 장면' ✗ → '빗속 골목에서 우산을 든 채 돌아보는 여자' ✓).
+- **예시**:
+  - 공포: `a lone woman untangling glowing red thread in a dark abandoned hanok at night, eerie pale moonlight`
+  - 로맨스: `two students sharing one umbrella under first snow beside a warm cafe window, soft evening glow`
+  - 판타지: `a young mage standing before a ruined floating academy, glowing runes drifting, vast dawn sky`
+- **(선택) thumbnail_style**: `darkfantasy|lightnovel|webtoon|ghibli|epicfantasy` 중 하나를 강제하고 싶을 때만. 보통은 **비워서** 장르 자동 선택에 맡긴다.
+
 ## 3) Output VALID JSON ONLY (펜스 없이 JSON 단독)
 {
   "date":"<DATE>","topic":"novel","privacy":"public",
@@ -63,7 +79,8 @@ All content is ORIGINAL. There are no real people and no existing/copyrighted wo
   "narration_full":"<전체 낭독 본문 ~3,000-3,800자>",
   "segments":[ {"text":"<화면 자막 단위 한 단락/문장>","est_sec":6} ],
   "background":{"id":"<series_id>_bg","kind":"image","reuse":true,"aspect":"16:9","prompt":"<canon.bg_image_prompt 그대로>"},
-  "thumbnail_hook":"<이번 회차 대본을 시각화한 한 줄 장면(영어 권장) — 핵심 인물·소재·분위기가 드러나게, 글자/텍스트 묘사는 넣지 말 것. 예: 'a lone woman untangling glowing red thread in a dark hanok at night'>",
+  "thumbnail_hook":"<§2.5 규칙대로: 이번 회차 핵심 장면 1컷 시각 묘사(영어 권장, 글자 묘사 금지, 스타일 언급 금지)>",
+  "thumbnail_style":"<선택: 비우면 장르 자동. 강제 시 darkfantasy|lightnovel|webtoon|ghibli|epicfantasy>",
   "next_episode_hook":"<다음 편 예고 한 줄, 완결이면 \"\">",
   "platforms":{
     "youtube":{
