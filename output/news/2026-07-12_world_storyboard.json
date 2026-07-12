@@ -1,0 +1,85 @@
+{
+  "date": "2026-07-12",
+  "topic": "world",
+  "privacy": "public",
+  "topic_keyword": "호르무즈 해협 위기",
+  "headline": "이란, 미군 공습에 카타르·바레인·UAE 보복 공격",
+  "hook_title": "이 새벽, 걸프에 무슨 일이",
+  "accent": "#D97757",
+  "thumbnail_hook": "Symbolic editorial illustration, a burning oil tanker silhouette in a narrow strait at dawn, dramatic red-orange sky, Middle East gulf coastline and map outline in background, cinematic dramatic lighting, no text, no realistic human figures",
+  "thumbnail_text": "호르무즈, 불타는 새벽",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "BREAKING",
+      "ghost": "HORMUZ",
+      "lines": ["새벽 바다 한복판에서", "화물선이", "불타올랐다"],
+      "highlight": "불타올랐다",
+      "brand": "일상공감뉴스 · 해외",
+      "narration": "호르무즈 해협 한복판에서, 화물선이 불길에 휩싸였습니다."
+    },
+    {
+      "type": "stat",
+      "label": "미군, 이란 타격",
+      "prefix": "",
+      "suffix": "곳",
+      "from": 0,
+      "to": 140,
+      "bar": true,
+      "sub": "선박 피격 하루 만에 <b>3차 공습</b> 감행",
+      "brand": "일상공감뉴스 · 해외",
+      "narration": "미군은 이란 내 140여 곳을 타격하며 세 번째 공습을 감행했습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "이란의 즉각 반격",
+      "points": [
+        "카타르·바레인·UAE <b>동시</b> 미사일·드론 공격",
+        "카타르서 어린이 포함 <b>3명</b> 부상"
+      ],
+      "brand": "일상공감뉴스 · 해외",
+      "narration": "이란은 카타르와 바레인, UAE를 동시에 타격했고, 카타르에서는 어린이를 포함해 세 명이 다쳤습니다."
+    },
+    {
+      "type": "quote",
+      "text": "휴전은 지금 연명치료 중이다",
+      "attr": "— 트럼프 미국 대통령",
+      "brand": "일상공감뉴스 · 해외",
+      "narration": "트럼프 대통령은 휴전 협상이 연명치료 중이라며, 이란의 수정 제안을 거부했습니다."
+    },
+    {
+      "type": "stat",
+      "label": "국제유가",
+      "prefix": "+",
+      "suffix": "%",
+      "from": 0,
+      "to": 5,
+      "bar": true,
+      "sub": "한국 수입 원유 <b>대부분</b>이 호르무즈를 지난다",
+      "brand": "일상공감뉴스 · 해외",
+      "narration": "국제유가는 급등했고, 우리가 채우는 기름값에도 영향이 미칠 수 있습니다."
+    },
+    {
+      "type": "statement",
+      "text": "이 전쟁, 얼마나 더 커질까요?",
+      "highlight": "전쟁",
+      "brand": "일상공감뉴스 · 해외",
+      "narration": "걸프 전역으로 번진 이 전쟁, 어디까지 커질지 여러분은 어떻게 보십니까?"
+    }
+  ],
+  "sources": ["NPR", "Al Jazeera", "Arab News", "CNBC"],
+  "credit": "출처 NPR·Al Jazeera·CNBC 등",
+  "platforms": {
+    "youtube": {
+      "title": "이 새벽, 걸프에 무슨 일이 #shorts",
+      "description": "이란, 미군 공습에 카타르·바레인·UAE 보복 공격\n출처 NPR·Al Jazeera·CNBC 등\n\n#호르무즈해협 #이란 #중동전쟁 #국제유가 #세계뉴스 #쇼츠 #shorts"
+    },
+    "instagram": {
+      "caption": "이 새벽, 걸프에 무슨 일이\n출처 NPR·Al Jazeera·CNBC 등\n\n#호르무즈해협 #이란 #중동전쟁 #국제유가 #세계뉴스 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "이 새벽, 걸프에 무슨 일이\n출처 NPR·Al Jazeera·CNBC 등"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음."
+}
