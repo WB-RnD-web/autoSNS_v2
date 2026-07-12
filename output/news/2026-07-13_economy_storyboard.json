@@ -1,0 +1,90 @@
+{
+  "date": "2026-07-13",
+  "topic": "economy",
+  "privacy": "public",
+  "topic_keyword": "한은 기준금리 인상",
+  "headline": "이번 주 기준금리 인상 유력…대출이자 비상",
+  "hook_title": "이번 주, 이자 폭탄 온다?",
+  "accent": "#D97757",
+  "thumbnail_hook": "Editorial illustration of Korean won banknotes and coins stacked beside a bold red upward arrow chart, a calculator and a small house-shaped keychain on a dark navy background, symbolic finance concept, dramatic cinematic lighting, no text in image, no realistic human faces, vertical composition",
+  "thumbnail_text": "이자 폭탄 온다?",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "ISSUE",
+      "ghost": "RATE",
+      "lines": ["이번 주,", "내 이자가", "오른다고?"],
+      "highlight": "이자",
+      "brand": "일상공감뉴스 · 경제",
+      "narration": "이번 주 한국은행이 기준금리를 올릴 수 있다는 소식이 나왔습니다."
+    },
+    {
+      "type": "stat",
+      "label": "한국은행 기준금리",
+      "prefix": "",
+      "suffix": "%",
+      "from": 2.5,
+      "to": 2.75,
+      "bar": true,
+      "sub": "16일 결정, <b>0.25%p</b> 인상 유력",
+      "brand": "일상공감뉴스 · 경제",
+      "narration": "전문가 열 명 중 아홉 명이 기준금리를 2.75%로 올릴 거라 내다봤습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "물가가 밀어올린 금리",
+      "points": [
+        "6월 소비자물가 <b>3.2%</b>, 30개월 만에 최고",
+        "중동發 유가 충격에 석유류 <b>24.7%</b> 급등"
+      ],
+      "brand": "일상공감뉴스 · 경제",
+      "narration": "기름값이 24.7퍼센트나 뛰면서, 지난달 물가가 30개월 만에 가장 크게 올랐습니다."
+    },
+    {
+      "type": "stat",
+      "label": "그래서 우리한테는…자영업자 이자 부담",
+      "prefix": "+",
+      "suffix": "만원",
+      "from": 0,
+      "to": 56,
+      "bar": true,
+      "sub": "0.25%p 인상 시 <b>1인당 연 56만원</b> 추가 부담",
+      "brand": "일상공감뉴스 · 경제",
+      "narration": "대출 있는 자영업자라면 한 사람당 한 해 56만 원을 더 물어야 합니다."
+    },
+    {
+      "type": "stat",
+      "label": "주택담보대출 금리 상단",
+      "prefix": "",
+      "suffix": "%",
+      "from": 0,
+      "to": 8,
+      "bar": true,
+      "sub": "변동형 주담대 '영끌족' <b>직격</b> 우려",
+      "brand": "일상공감뉴스 · 경제",
+      "narration": "변동금리로 집을 산 사람들의 주담대 금리는 8퍼센트에 육박할 수 있습니다."
+    },
+    {
+      "type": "statement",
+      "text": "당신의 이자, 이번 주 결정됩니다",
+      "highlight": "이자",
+      "brand": "일상공감뉴스 · 경제",
+      "narration": "여러분의 이자 부담, 이번 주 목요일에 결정됩니다."
+    }
+  ],
+  "sources": ["파이낸셜뉴스", "머니투데이", "이투데이"],
+  "credit": "출처 파이낸셜뉴스·머니투데이·이투데이 등",
+  "platforms": {
+    "youtube": {
+      "title": "이번 주, 이자 폭탄 온다? #shorts",
+      "description": "이번 주 기준금리 인상 유력…대출이자 비상\n출처 파이낸셜뉴스·머니투데이·이투데이 등\n\n#기준금리 #금리인상 #한국은행 #물가 #경제 #뉴스 #쇼츠 #shorts"
+    },
+    "instagram": {
+      "caption": "이번 주, 이자 폭탄 온다?\n출처 파이낸셜뉴스·머니투데이·이투데이 등\n\n#기준금리 #금리인상 #한국은행 #물가 #경제 #뉴스 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "이번 주, 이자 폭탄 온다?\n출처 파이낸셜뉴스·머니투데이·이투데이 등"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음."
+}
