@@ -1,0 +1,70 @@
+{
+  "date": "2026-07-12",
+  "topic": "love",
+  "privacy": "public",
+  "topic_keyword": "나는솔로 광수 결혼",
+  "headline": "나는 솔로 27기 '광수', 어제 결혼식 올렸다",
+  "hook_title": "나솔 그 남자, 어제 결혼했다",
+  "accent": "#E0788F",
+  "thumbnail_hook": "Soft golden-hour silhouette of two hands almost touching over a wedding ring resting on a wooden table, warm bokeh lights in the background, romantic pastel tones, cinematic shallow depth of field, no text, no visible faces, editorial mood photography",
+  "thumbnail_text": "그 남자, 또 결혼했다",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "ISSUE",
+      "ghost": "LOVE",
+      "lines": ["어제", "'광수'가", "또 결혼했다"],
+      "highlight": "결혼했다",
+      "brand": "일상공감뉴스 · 연애",
+      "narration": "나는 솔로에 나왔던 그 남자, 광수가 어제 또 결혼식을 올렸습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "근데, 광수가 누구야?",
+      "points": ["'광수'는 매 기수 <b>새 인물</b>에게 붙는 가명", "15기·20기 광수도 이미 결혼", "이번엔 27기 차례"],
+      "brand": "일상공감뉴스 · 연애",
+      "narration": "사실 광수는 매 시즌 다른 사람에게 붙는 이름으로, 15기와 20기 광수도 이미 결혼했습니다."
+    },
+    {
+      "type": "quote",
+      "text": "저 내일 결혼합니다, 평생을 함께하기로 약속했어요",
+      "attr": "— 나는 솔로 27기 광수, SNS",
+      "brand": "일상공감뉴스 · 연애",
+      "narration": "27기 광수는 결혼 전날, SNS에 직접 이 소식을 전했습니다."
+    },
+    {
+      "type": "stat",
+      "label": "나는 솔로 결혼 커플",
+      "prefix": "",
+      "suffix": "쌍",
+      "from": 0,
+      "to": 16,
+      "bar": true,
+      "sub": "10년 동안 쌓인 진짜 <b>해피엔딩</b>",
+      "brand": "일상공감뉴스 · 연애",
+      "narration": "나는 솔로에서 진짜 결혼까지 이어진 커플은 열여섯 쌍이 넘습니다."
+    },
+    {
+      "type": "statement",
+      "text": "화면 밖에서도, 연애는 계속된다",
+      "highlight": "연애는 계속된다",
+      "brand": "일상공감뉴스 · 연애",
+      "narration": "여러분의 연애는, 지금 어디쯤 와 있나요?"
+    }
+  ],
+  "sources": ["스타뉴스", "일간스포츠"],
+  "credit": "출처 스타뉴스·일간스포츠 등",
+  "platforms": {
+    "youtube": {
+      "title": "나솔 그 남자, 어제 결혼했다 #shorts",
+      "description": "나는 솔로 27기 '광수', 어제 결혼식 올렸다\n출처 스타뉴스·일간스포츠 등\n\n#나는솔로 #광수 #결혼 #연애 #뉴스 #쇼츠 #shorts"
+    },
+    "instagram": {
+      "caption": "나솔 그 남자, 어제 결혼했다\n출처 스타뉴스·일간스포츠 등\n\n#나는솔로 #광수 #결혼 #연애 #뉴스 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "나솔 그 남자, 어제 결혼했다\n출처 스타뉴스·일간스포츠 등"
+    }
+  },
+  "notes": "모션그래픽 5장면 · 단일 내레이터 · 배경음 없음."
+}
