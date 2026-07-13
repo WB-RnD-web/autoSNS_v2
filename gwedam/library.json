@@ -1,0 +1,22 @@
+{
+  "stories":[
+    {
+      "story_id":"gwedam-2026-07-13",
+      "theme":"시골·마을 전설",
+      "title":"상엿집 방울이 저 혼자 울던 밤",
+      "logline":"초상 전날 밤이면 저 혼자 울리던 상엿집 방울, 그 소리를 본 대가를 아버지가 평생 대신 짊어지고 계셨습니다.",
+      "twist_summary":"상엿집 방울이 저 혼자 울리는 건 마을에 이른 죽음의 조짐이 있다는 뜻이며, 그 소리를 눈으로 본 사람은 죽음의 무게 일부를 나눠 짊어지게 된다는 규칙. 화자가 여덟 살에 규칙을 어겼지만 무사했던 건, 상두꾼인 아버지가 평생 그 소리를 대신 마주 보며 화자의 몫까지 짊어져 왔기 때문이었다는 반전.",
+      "date":"2026-07-13"
+    }
+  ],
+  "rotation_pointer":"병원·요양원",
+  "used_premises":[
+    "상엿집 방울이 저 혼자 울리는 건 마을에 이른 죽음의 조짐이 있다는 뜻이며, 그 소리를 본 사람은 죽음의 무게 일부를 나눠 짊어짐. 반전: 상두꾼 아버지가 평생 그 소리를 대신 마주 보며 화자의 몫까지 짊어져 왔음을 방울 안쪽의 흠집(짊어진 횟수)과 화자 이름 첫 글자로 뒤늦게 확인."
+  ],
+  "used_thumbnail_hooks":[
+    "extreme close-up of three small tarnished brass bells hanging from a wooden bier handle inside a dark thatched-roof storage hut, a sliver of pale moonlight through a half-open door, bamboo grove shadows outside, no people"
+  ],
+  "used_titles":[
+    "상엿집 방울이, 초상도 없는 밤에 울렸습니다 | 괴담라디오"
+  ]
+}
