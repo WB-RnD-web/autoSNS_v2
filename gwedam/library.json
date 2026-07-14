@@ -7,16 +7,27 @@
       "logline":"초상 전날 밤이면 저 혼자 울리던 상엿집 방울, 그 소리를 본 대가를 아버지가 평생 대신 짊어지고 계셨습니다.",
       "twist_summary":"상엿집 방울이 저 혼자 울리는 건 마을에 이른 죽음의 조짐이 있다는 뜻이며, 그 소리를 눈으로 본 사람은 죽음의 무게 일부를 나눠 짊어지게 된다는 규칙. 화자가 여덟 살에 규칙을 어겼지만 무사했던 건, 상두꾼인 아버지가 평생 그 소리를 대신 마주 보며 화자의 몫까지 짊어져 왔기 때문이었다는 반전.",
       "date":"2026-07-13"
+    },
+    {
+      "story_id":"gwedam-2026-07-14",
+      "theme":"병원·요양원",
+      "title":"명부에는, 정원보다 이름이 항상 하나 더 있었습니다",
+      "logline":"요양병원 명부엔 늘 정원보다 이름이 하나 더 찍혀 나왔고, 그 자리는 죽음이 아니라 곁을 지킬 사람의 이름이었습니다.",
+      "twist_summary":"낡은 요양병원 명부에는 정원보다 이름이 하나 더 찍혀 나오는데, 화자는 그 초과 이름의 주인이 새로 입원해 얼마 못 가 임종하는 걸 반복해서 목격하고 '죽음을 예고하는 명단'이라 오해한다. 반전: 그 자리는 죽는 사람이 아니라 '누군가의 마지막 곁을 지킬 사람'의 이름이며, 지금까지 그 이름의 주인들이 뒤이어 죽었던 건 곁을 지킬 만큼 이미 삶과 죽음의 경계에 가까웠기 때문. 화자의 어머니가 입원한 밤 명부에 화자 자신의 이름이 찍히고, 화자는 밤새 어머니 곁을 지켜 임종을 함께한다. 몇 달 뒤, 병원 근처에도 온 적 없는 화자의 딸 이름이 그 자리에 찍히며 잔여 공포로 끝맺음.",
+      "date":"2026-07-14"
     }
   ],
-  "rotation_pointer":"병원·요양원",
+  "rotation_pointer":"군대",
   "used_premises":[
-    "상엿집 방울이 저 혼자 울리는 건 마을에 이른 죽음의 조짐이 있다는 뜻이며, 그 소리를 본 사람은 죽음의 무게 일부를 나눠 짊어짐. 반전: 상두꾼 아버지가 평생 그 소리를 대신 마주 보며 화자의 몫까지 짊어져 왔음을 방울 안쪽의 흠집(짊어진 횟수)과 화자 이름 첫 글자로 뒤늦게 확인."
+    "상엿집 방울이 저 혼자 울리는 건 마을에 이른 죽음의 조짐이 있다는 뜻이며, 그 소리를 본 사람은 죽음의 무게 일부를 나눠 짊어짐. 반전: 상두꾼 아버지가 평생 그 소리를 대신 마주 보며 화자의 몫까지 짊어져 왔음을 방울 안쪽의 흠집(짊어진 횟수)과 화자 이름 첫 글자로 뒤늦게 확인.",
+    "요양병원 입원 명부는 정원보다 항상 한 줄이 더 찍혀 나오며, 화자는 그 초과 이름의 주인이 곧 입원해 얼마 못 가 임종하는 걸 반복 목격하고 죽음의 예고 명단이라 오해함. 반전: 그 이름은 죽는 사람이 아니라 '누군가의 임종을 곁에서 지킬 사람'의 이름이며, 어머니가 입원한 밤 명부에 화자 자신의 이름이 찍히고 어머니의 임종을 곁에서 지킴. 몇 달 뒤 병원에 온 적 없는 딸의 이름이 그 자리에 찍히며 끝남."
   ],
   "used_thumbnail_hooks":[
-    "extreme close-up of three small tarnished brass bells hanging from a wooden bier handle inside a dark thatched-roof storage hut, a sliver of pale moonlight through a half-open door, bamboo grove shadows outside, no people"
+    "extreme close-up of three small tarnished brass bells hanging from a wooden bier handle inside a dark thatched-roof storage hut, a sliver of pale moonlight through a half-open door, bamboo grove shadows outside, no people",
+    "A dot-matrix printed patient roster taped to a dim nurses station corkboard at night, one extra blank line at the bottom under flickering fluorescent light, faded green walls, no people"
   ],
   "used_titles":[
-    "상엿집 방울이, 초상도 없는 밤에 울렸습니다 | 괴담라디오"
+    "상엿집 방울이, 초상도 없는 밤에 울렸습니다 | 괴담라디오",
+    "요양병원 명부엔 정원보다 이름이 하나 더 있었습니다 | 괴담라디오"
   ]
 }
