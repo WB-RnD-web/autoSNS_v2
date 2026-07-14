@@ -1,0 +1,33 @@
+{
+  "date": "2026-07-14",
+  "topic": "asmr",
+  "privacy": "public",
+  "theme_id": "cricket-night",
+  "theme_name": "여름밤 풀벌레",
+  "duration_min": 60,
+  "narration_voice": "male",
+  "narration_text": "오늘은 여름밤 풀벌레 소리예요. 창밖의 선선한 바람을 느끼며 편안히 눈을 감아보세요. 좋은 밤 되세요, 잘 자요.",
+  "background": {
+    "prompt": "a cozy dim bedroom with an open window looking out into a warm summer night garden, soft lamp glow inside, gentle moonlight outside, calm sleepy mood, no people, no text"
+  },
+  "freesound": {
+    "queries": [
+      "summer night crickets ambience",
+      "cricket sounds night loop nature",
+      "insects chirping summer evening",
+      "night ambience crickets frogs",
+      "quiet countryside night crickets"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "title": "🦗 여름밤 풀벌레 소리 ASMR 1시간 | 잘 때 듣는 백색소음·수면",
+      "thumbnail_text": "여름밤 풀벌레 1시간",
+      "thumbnail_hook": "a warm summer night garden view from an open window, soft moonlight, warm lamp glow, cozy sleepy mood, no people, no text",
+      "description": "선선한 여름밤 풀벌레 소리로 편안한 밤을 보내보세요.\n\n잘 때·집중·휴식용 ASMR 백색소음입니다.\n#ASMR #백색소음 #수면 #여름밤 #풀벌레소리 #잠들기전 #힐링",
+      "playlist": "일상공감 ASMR"
+    }
+  },
+  "credit": "음원 Freesound(CC0) · 이미지 생성",
+  "notes": "ASMR 60분 · 16:9 · 정적 배경 + 앰비언트 루프 + 낮은 나레이션 · 자막 없음."
+}
