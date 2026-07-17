@@ -31,25 +31,36 @@
       "logline": "오래된 5층 계단식 아파트, 센서등은 언제나 제가 오르기 전에 한 층 먼저 켜졌습니다. 그 불빛이 밤마다 향하던 곳은, 지금 제 방 벽장 속에 갇혀 있었습니다.",
       "twist_summary": "5층짜리 계단식 아파트의 센서등이 매일 밤 화자보다 정확히 한 층 먼저 켜지며 계단을 오르는 것처럼 보임. 옆집 할머니를 통해, 재건축 전 이 자리에 있던 4층 연립 꼭대기 층에서 홀로 살다 돌아가신 할아버지가 여전히 자기 집으로 걸어 올라오는 것이라는 사연을 들음. 반전: 건물이 한 층 늘어 층수가 어긋났다고 생각했지만, 실제로는 옛 건물의 4층 현관문이 철거되지 않은 채 재건축된 새 건물 벽 속(정확히는 화자의 집 붙박이장 안)에 그대로 갇혀 있었고, 할아버지는 층을 착각한 게 아니라 정확히 그 문 앞으로 매일 밤 돌아오고 있었던 것. 이사 온 지 일 년째 되는 밤, 벽장 안쪽에서 문 두드리는 소리가 한 번 들리는 잔여 공포로 끝맺음.",
       "date": "2026-07-16"
+    },
+    {
+      "story_id": "gwedam-2026-07-17",
+      "theme": "무속·제사·조상",
+      "title": "이름 없는 위패가, 해마다 한 칸씩 앞으로 옮겨왔습니다",
+      "logline": "저희 집 사당 맨 끝줄엔 이름 없는 위패가 하나 있었고, 그것은 해마다 한 칸씩 앞으로 옮겨오고 있었습니다. 그 위패가 조상들 자리에 다다르면, 살아있는 장손의 자리를 대신 차지한다고 했습니다.",
+      "twist_summary": "종가 사당 뒷줄 끝에 놓인 이름 없는 위패가 해마다 정확히 한 칸씩 앞으로 옮겨오는 걸 화자가 옛 시제 사진들을 대조해 발견함. 사당지기 재종조부를 통해, 그 위패는 수백 년 전 정식으로 호적에 오르기 전 죽어 족보에 오르지 못한 양자 예정 아이의 것이며, 맨 앞줄 조상들 자리에 다다르면 그 대가로 그 순간 살아있는 장손의 자리(목숨)를 대신 차지한다는 규칙이 있었음을 알게 됨. 반전: 사당지기 할아버지가 예순두 해 동안 해마다 자신의 명을 조금씩 나눠주며 위패의 걸음을 늦춰왔고, 그가 세상을 떠난 직후 위패가 한 칸 뒤로 물러나며 장손인 화자의 아버지를 구함. 몇 해 뒤 화자가 위패 뒷면에서 자기 아이의 이름을 발견하는 잔여 공포로 끝맺음.",
+      "date": "2026-07-17"
     }
   ],
-  "rotation_pointer": "무속·제사·조상",
+  "rotation_pointer": "야간 근무·직업 괴담",
   "used_premises": [
     "상엿집 방울이 저 혼자 울리는 건 마을에 이른 죽음의 조짐이 있다는 뜻이며, 그 소리를 본 사람은 죽음의 무게 일부를 나눠 짊어짐. 반전: 상두꾼 아버지가 평생 그 소리를 대신 마주 보며 화자의 몫까지 짊어져 왔음을 방울 안쪽의 흠집(짊어진 횟수)과 화자 이름 첫 글자로 뒤늦게 확인.",
     "요양병원 입원 명부는 정원보다 항상 한 줄이 더 찍혀 나오며, 화자는 그 초과 이름의 주인이 곧 입원해 얼마 못 가 임종하는 걸 반복 목격하고 죽음의 예고 명단이라 오해함. 반전: 그 이름은 죽는 사람이 아니라 '누군가의 임종을 곁에서 지킬 사람'의 이름이며, 어머니가 입원한 밤 명부에 화자 자신의 이름이 찍히고 어머니의 임종을 곁에서 지킴. 몇 달 뒤 병원에 온 적 없는 딸의 이름이 그 자리에 찍히며 끝남.",
     "철책선 소초 무전기에는 공식 채널이 두 개뿐인데 자정마다 화자의 보고를 누군가 먼저 읊는 소리가 들리고, 되물으면 그 목소리의 주인이 그날 밤 실제 위험을 대신 막아섬. 반전: 목소리의 정체는 과거 순직한 선임 '한정우'이며, 그가 예전에 화자의 아버지를 구했던 은인이자 이제 아들까지 지켜온 것. 최근엔 그 목소리가 두 사람 몫으로 겹쳐 들린다는 잔여 공포로 끝남.",
-    "5층짜리 계단식 아파트의 센서등이 매일 밤 화자보다 정확히 한 층 먼저 켜지며 계단을 오르는 것처럼 보임. 옆집 할머니를 통해, 재건축 전 이 자리에 있던 4층 연립 꼭대기 층에서 홀로 살다 돌아가신 할아버지가 여전히 자기 집으로 걸어 올라오는 것이라는 사연을 들음. 반전: 건물이 한 층 늘어 층수가 어긋났다고 생각했지만, 실제로는 옛 건물의 4층 현관문이 철거되지 않은 채 재건축된 새 건물 벽 속(정확히는 화자의 집 붙박이장 안)에 그대로 갇혀 있었고, 할아버지는 층을 착각한 게 아니라 정확히 그 문 앞으로 매일 밤 돌아오고 있었던 것. 이사 온 지 일 년째 되는 밤, 벽장 안쪽에서 문 두드리는 소리가 한 번 들리는 잔여 공포로 끝맺음."
+    "5층짜리 계단식 아파트의 센서등이 매일 밤 화자보다 정확히 한 층 먼저 켜지며 계단을 오르는 것처럼 보임. 옆집 할머니를 통해, 재건축 전 이 자리에 있던 4층 연립 꼭대기 층에서 홀로 살다 돌아가신 할아버지가 여전히 자기 집으로 걸어 올라오는 것이라는 사연을 들음. 반전: 건물이 한 층 늘어 층수가 어긋났다고 생각했지만, 실제로는 옛 건물의 4층 현관문이 철거되지 않은 채 재건축된 새 건물 벽 속(정확히는 화자의 집 붙박이장 안)에 그대로 갇혀 있었고, 할아버지는 층을 착각한 게 아니라 정확히 그 문 앞으로 매일 밤 돌아오고 있었던 것. 이사 온 지 일 년째 되는 밤, 벽장 안쪽에서 문 두드리는 소리가 한 번 들리는 잔여 공포로 끝맺음.",
+    "종가 사당 뒷줄 끝의 이름 없는 위패가 해마다 정확히 한 칸씩 앞으로 옮겨오며, 맨 앞줄 조상 자리에 다다르면 그 대가로 살아있는 장손의 자리(목숨)를 대신 차지한다는 규칙. 그 위패는 수백 년 전 호적에 오르기 전 죽어 족보에 오르지 못한 양자 예정 아이의 것. 반전: 사당지기 재종조부가 예순두 해 동안 해마다 자신의 명을 나눠주며 위패의 걸음을 늦춰왔고, 그의 죽음 직후 위패가 한 칸 물러나며 장손을 구함. 몇 해 뒤 화자가 위패 뒷면에서 자기 아이의 이름을 발견하는 잔여 공포로 끝맺음."
   ],
   "used_thumbnail_hooks": [
     "extreme close-up of three small tarnished brass bells hanging from a wooden bier handle inside a dark thatched-roof storage hut, a sliver of pale moonlight through a half-open door, bamboo grove shadows outside, no people",
     "A dot-matrix printed patient roster taped to a dim nurses station corkboard at night, one extra blank line at the bottom under flickering fluorescent light, faded green walls, no people",
     "An old military field radio on a guard post windowsill at night, a faint green light glowing on an unmarked third channel dial, frost on the glass, no people",
-    "a dim old walk-up apartment stairwell at night, one motion-sensor light glowing on the floor above while the stairs below stay dark, worn concrete steps, no people"
+    "a dim old walk-up apartment stairwell at night, one motion-sensor light glowing on the floor above while the stairs below stay dark, worn concrete steps, no people",
+    "the dim interior of a small Korean ancestral shrine at night, a row of wooden spirit tablets on a dark altar, one tablet blank and unmarked positioned closer to the front than the others, a single candle flame, thin incense smoke drifting, no people"
   ],
   "used_titles": [
     "상엿집 방울이, 초상도 없는 밤에 울렸습니다 | 괴담라디오",
     "요양병원 명부엔 정원보다 이름이 하나 더 있었습니다 | 괴담라디오",
     "그 초소 무전기엔, 없는 채널이 하나 있었습니다 | 괴담라디오",
-    "계단 센서등이, 저보다 한 층 먼저 켜졌습니다 | 괴담라디오"
+    "계단 센서등이, 저보다 한 층 먼저 켜졌습니다 | 괴담라디오",
+    "이름 없는 위패가, 해마다 한 칸씩 다가왔습니다 | 괴담라디오"
   ]
 }
