@@ -1,0 +1,33 @@
+{
+  "date": "2026-07-17",
+  "topic": "asmr",
+  "privacy": "public",
+  "theme_id": "keyboard-typing",
+  "theme_name": "키보드 타건 소리",
+  "duration_min": 60,
+  "narration_voice": "female",
+  "narration_text": "오늘은 조용한 밤, 나긋한 키보드 타건 소리예요. 편안하게 눈을 감고, 천천히 숨을 쉬어 보세요. 좋은 밤 되세요, 잘 자요.",
+  "background": {
+    "prompt": "a cozy dim desk at night with a mechanical keyboard under a warm lamp glow, soft shadows, calm and sleepy mood, no people, no text"
+  },
+  "freesound": {
+    "queries": [
+      "mechanical keyboard typing asmr",
+      "soft keyboard typing loop",
+      "quiet typing sounds no music",
+      "keyboard clicks ambience night",
+      "gentle typing loop asmr"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "title": "⌨️ 키보드 타건 소리 ASMR 1시간 | 잘 때 듣는 백색소음·수면",
+      "thumbnail_text": "키보드 타건 소리 1시간",
+      "thumbnail_hook": "a cozy dim desk at night with a mechanical keyboard under warm lamp glow, calm sleepy mood, no text, no people",
+      "description": "나긋한 키보드 타건 소리로 편안한 휴식을 즐겨보세요.\n\n잘 때·집중·휴식용 ASMR 백색소음입니다.\n#ASMR #백색소음 #수면 #키보드타건 #잠들기전 #힐링",
+      "playlist": "일상공감 ASMR"
+    }
+  },
+  "credit": "음원 Freesound(CC0) · 이미지 생성",
+  "notes": "ASMR 60분 · 16:9 · 정적 배경 + 앰비언트 루프 + 낮은 나레이션 · 자막 없음."
+}
