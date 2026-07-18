@@ -6,12 +6,6 @@ name: wbSpark 외부 접근성 프로브
 
 on:
   workflow_dispatch:
-  push:
-    # 임시: 조사 브랜치 push 로도 실행(디스패치 권한 없는 환경에서 프로브용). main 머지 전 제거.
-    branches:
-      - "claude/github-actions-usage-thumbnails-dlvcj6"
-    paths:
-      - ".github/workflows/wbspark-probe.yml"
 
 jobs:
   probe:
@@ -21,13 +15,6 @@ jobs:
       - name: DNS + 접근성 + job 제출 확인
         run: |
           set +e
-          # 임시 진단(최종 — 13분 경과): 04:34:30Z 제출한 프로브 잡이 결국 완료됐는지 확인(느림 vs 멈춤 판별)
-          if [ -n "0bbe65da5e08" ]; then
-            echo "=== 0) 이전 프로브 잡 0bbe65da5e08 상태(제출 04:34:30Z) ==="
-            curl -s --max-time 15 "https://wangbyul.com/wbSpark/jobs/0bbe65da5e08"; echo ""
-            echo "현재 시각: $(date -u +%H:%M:%S)Z"
-            exit 0
-          fi
           echo "=== 1) 외부에서 wangbyul.com DNS 해석 ==="
           getent hosts wangbyul.com || nslookup wangbyul.com || true
           echo ""
