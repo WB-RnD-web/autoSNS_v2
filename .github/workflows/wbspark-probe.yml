@@ -6,6 +6,12 @@ name: wbSpark 외부 접근성 프로브
 
 on:
   workflow_dispatch:
+  push:
+    # 임시: 조사 브랜치 push 로도 실행(디스패치 권한 없는 환경에서 프로브용). main 머지 전 제거.
+    branches:
+      - "claude/github-actions-usage-thumbnails-dlvcj6"
+    paths:
+      - ".github/workflows/wbspark-probe.yml"
 
 jobs:
   probe:
