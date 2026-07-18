@@ -10,6 +10,7 @@ name: wbSpark 외부 접근성 프로브
 #   A) no_llm:true  → ComfyUI(Qwen-Image)만 검사 (gpt-oss 우회)
 #   B) 기본(LLM 보정) → 전체 경로 검사
 #   A만 성공하면 gpt-oss(route_prompt) 행이 원인, 둘 다 실패면 ComfyUI/GPU 쪽.
+#   (2026-07-18: 서버 큐의 행 잡 13건 해소 후 복구 검증 재실행)
 
 on:
   workflow_dispatch:
