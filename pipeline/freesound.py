@@ -93,26 +93,45 @@ def fetch_theme(queries: list[str], out_dir: str, want_sec: int = 1800,
     os.makedirs(out_dir, exist_ok=True)
     files, attrs, seen = [], [], set()
     total = 0.0
-    for q in queries:
-        if total >= want_sec or len(files) >= max_clips:
-            break
-        for it in search(q, key):
+
+    def _collect(qs: list[str]):
+        nonlocal total
+        for q in qs:
             if total >= want_sec or len(files) >= max_clips:
                 break
-            fid = it.get("id")
-            if fid in seen:
-                continue
-            dur = float(it.get("duration") or 0)
-            if dur <= 0:
-                continue
-            dst = os.path.join(out_dir, f"fs_{fid}.mp3")
-            if _download_preview(it, dst):
-                seen.add(fid)
-                files.append(dst)
-                total += dur
-                attrs.append({"name": it.get("name"), "username": it.get("username"),
-                              "url": it.get("url"), "license": it.get("license")})
-                print(f"   · Freesound 다운로드: {it.get('name','?')[:36]} ({dur:.0f}s, by {it.get('username')})")
+            for it in search(q, key):
+                if total >= want_sec or len(files) >= max_clips:
+                    break
+                fid = it.get("id")
+                if fid in seen:
+                    continue
+                dur = float(it.get("duration") or 0)
+                if dur <= 0:
+                    continue
+                dst = os.path.join(out_dir, f"fs_{fid}.mp3")
+                if _download_preview(it, dst):
+                    seen.add(fid)
+                    files.append(dst)
+                    total += dur
+                    attrs.append({"name": it.get("name"), "username": it.get("username"),
+                                  "url": it.get("url"), "license": it.get("license")})
+                    print(f"   · Freesound 다운로드: {it.get('name','?')[:36]} ({dur:.0f}s, by {it.get('username')})")
+
+    _collect(queries)
+    # 0건 폴백: 루틴이 주는 자연어 쿼리(단어 5~6개)는 전부 AND 매칭이라
+    # CC0+duration 필터와 겹치면 결과 0이 되기 쉽다(2026-07-18 quiet-cafe 관측).
+    # 앞 2단어 → 앞 1단어로 점진 완화해 재시도한다(라이선스 정책은 그대로).
+    for n in (2, 1):
+        if files:
+            break
+        relaxed = []
+        for q in queries:
+            rq = " ".join((q or "").split()[:n])
+            if rq and rq not in relaxed:
+                relaxed.append(rq)
+        if relaxed:
+            print(f"   ↺ 검색 0건 → 쿼리 완화(앞 {n}단어) 재시도: {relaxed}")
+            _collect(relaxed)
     print(f"   → Freesound 클립 {len(files)}개, 합계 {total:.0f}s (목표 {want_sec}s)")
     return files, attrs
 
