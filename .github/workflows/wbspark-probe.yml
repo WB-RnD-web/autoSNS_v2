@@ -21,7 +21,7 @@ jobs:
       - name: DNS + 접근성 + job 제출 확인
         run: |
           set +e
-          # 임시 진단: 04:34:30Z 제출한 프로브 잡이 결국 완료됐는지 확인(느림 vs 멈춤 판별)
+          # 임시 진단(최종 — 13분 경과): 04:34:30Z 제출한 프로브 잡이 결국 완료됐는지 확인(느림 vs 멈춤 판별)
           if [ -n "0bbe65da5e08" ]; then
             echo "=== 0) 이전 프로브 잡 0bbe65da5e08 상태(제출 04:34:30Z) ==="
             curl -s --max-time 15 "https://wangbyul.com/wbSpark/jobs/0bbe65da5e08"; echo ""
