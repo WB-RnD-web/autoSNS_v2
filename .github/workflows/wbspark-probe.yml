@@ -1,52 +1,82 @@
 name: wbSpark 외부 접근성 프로브
 
 # GitHub Actions 러너(=클라우드, 외부망)에서 사내 qwen-image 게이트웨이가
-# 실제로 닿는지 확인용. job_id 를 받으면 CI 자동 파이프라인에 연결 가능하다는 뜻.
-# (이미지 생성 완료까지 기다리지 않고 '제출 성공' 여부만 빠르게 확인)
+# 실제로 닿는지 + 워커가 실제로 생성을 완료하는지 확인용.
+#
+# 서버 스펙(정상 기준): 프롬프트 보정(gpt-oss:120b) 8초 + Qwen-Image 생성 ~78초 = ~86초.
+#   콜드 시 gpt-oss 66GB 재로드 +16~44초. 전역 직렬 큐(1워커).
+#
+# A/B 진단:
+#   A) no_llm:true  → ComfyUI(Qwen-Image)만 검사 (gpt-oss 우회)
+#   B) 기본(LLM 보정) → 전체 경로 검사
+#   A만 성공하면 gpt-oss(route_prompt) 행이 원인, 둘 다 실패면 ComfyUI/GPU 쪽.
 
 on:
   workflow_dispatch:
+  push:
+    # 임시: 조사 브랜치 push 로도 실행(디스패치 권한 없는 환경에서 프로브용). main 머지 전 제거.
+    branches:
+      - "claude/github-actions-usage-thumbnails-dlvcj6"
+    paths:
+      - ".github/workflows/wbspark-probe.yml"
 
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 6
+    timeout-minutes: 10
     steps:
-      - name: DNS + 접근성 + job 제출 확인
+      - name: DNS + 접근성 + A/B 생성 진단
         run: |
           set +e
-          echo "=== 1) 외부에서 wangbyul.com DNS 해석 ==="
-          getent hosts wangbyul.com || nslookup wangbyul.com || true
-          echo ""
-          echo "=== 2) 루트 접근 ==="
+          BASE="https://wangbyul.com/wbSpark"
+
+          submit() {  # $1=JSON body → stdout job_id (실패 시 빈값)
+            R=$(curl -s --max-time 40 -X POST "$BASE/jobs" \
+              -H "Content-Type: application/json; charset=utf-8" -d "$1")
+            echo "  제출 응답: $R" >&2
+            echo "$R" | sed -n 's/.*"job_id" *: *"\([^"]*\)".*/\1/p'
+          }
+
+          poll() {  # $1=job_id $2=최대초 → 종료코드 0=done 1=error 2=타임아웃
+            T0=$(date +%s); LAST=""
+            while [ $(( $(date +%s) - T0 )) -lt "$2" ]; do
+              S=$(curl -s --max-time 15 "$BASE/jobs/$1")
+              ST=$(echo "$S" | sed -n 's/.*"status" *: *"\([^"]*\)".*/\1/p')
+              if [ "$ST" != "$LAST" ]; then
+                echo "  [+$(( $(date +%s) - T0 ))s] status=$ST"; LAST="$ST"
+              fi
+              case "$ST" in
+                done) echo "  ✅ 완료 (+$(( $(date +%s) - T0 ))s)"; return 0 ;;
+                error|failed) echo "  ❌ 실패 (+$(( $(date +%s) - T0 ))s): $S"; return 1 ;;
+              esac
+              sleep 5
+            done
+            echo "  ⚠️ ${2}s 내 완료 안 됨(마지막 status=$ST)"; return 2
+          }
+
+          echo "=== 1) DNS + 루트 접근 ==="
+          getent hosts wangbyul.com || true
           curl -s -o /dev/null -w "root HTTP %{http_code} (time %{time_total}s)\n" --max-time 20 https://wangbyul.com
           echo ""
-          echo "=== 3) POST /wbSpark/jobs (job 제출) ==="
-          RESP=$(curl -s --max-time 40 -X POST https://wangbyul.com/wbSpark/jobs \
-            -H "Content-Type: application/json; charset=utf-8" \
-            -d '{"type":"image","prompt":"CI connectivity probe"}')
-          echo "응답 본문: $RESP"
+          echo "=== 2) 테스트 A: no_llm:true — ComfyUI(Qwen-Image) 단독 검사 ==="
+          echo "  (정상 기준 ~78초. 180초 내 완료 기대)"
+          A_ID=$(submit '{"type":"image","prompt":"a red apple on a white table, studio lighting","no_llm":true}')
+          if [ -z "$A_ID" ]; then echo "❌ A 제출 실패 — 게이트웨이 접근 문제"; exit 0; fi
+          echo "  job_id=$A_ID"
+          poll "$A_ID" 200; A_RC=$?
           echo ""
-          if echo "$RESP" | grep -q 'job_id'; then
-            echo "✅ 외부(CI)에서 wbSpark 호출 성공 — 게이트웨이 이미 공개됨 → 자동 파이프라인 연결 가능"
+          echo "=== 3) 테스트 B: 기본 경로(gpt-oss 보정 포함) — 전체 경로 검사 ==="
+          echo "  (정상 기준 ~86초, 콜드 +16~44초. 240초 내 완료 기대)"
+          B_ID=$(submit '{"type":"image","prompt":"CI 프로브: 노을 지는 바닷가"}')
+          if [ -z "$B_ID" ]; then echo "❌ B 제출 실패"; exit 0; fi
+          echo "  job_id=$B_ID"
+          poll "$B_ID" 260; B_RC=$?
+          echo ""
+          echo "=== 판정 ==="
+          if [ $A_RC -eq 0 ] && [ $B_RC -eq 0 ]; then
+            echo "✅ 둘 다 정상 완료 — 워커 복구됨. 파이프라인 커버/썸네일 정상화 기대."
+          elif [ $A_RC -eq 0 ]; then
+            echo "🔎 A(no_llm)만 성공 — route_prompt 의 gpt-oss:120b 호출이 행. gpt-oss(ollama) 재시작/타임아웃 필요."
           else
-            echo "❌ CI에서 job_id 못 받음 — 외부 미개방/인증/경로 문제. 서버측 변경 필요."
-            exit 0
+            echo "🔎 A 부터 실패 — ComfyUI/Qwen-Image/GPU 쪽 문제. 서버에서 ComfyUI(:8188)와 nvidia-smi 확인 필요."
           fi
-          echo ""
-          echo "=== 4) 잡 진행 확인(워커 생존 진단 — 최대 3분 폴링) ==="
-          # 제출만 성공하고 running 에서 멈추는 장애(2026-07-17 관측)를 구분하기 위해
-          # 상태 전이를 관찰한다: queued→running→done 이면 워커 정상.
-          JOB_ID=$(echo "$RESP" | sed -n 's/.*"job_id" *: *"\([^"]*\)".*/\1/p')
-          echo "job_id=$JOB_ID"
-          for i in $(seq 1 36); do
-            S=$(curl -s --max-time 15 "https://wangbyul.com/wbSpark/jobs/$JOB_ID")
-            ST=$(echo "$S" | sed -n 's/.*"status" *: *"\([^"]*\)".*/\1/p')
-            echo "[$(date -u +%H:%M:%S)] status=$ST"
-            case "$ST" in
-              done)  echo "✅ 워커 정상 — 생성 완료까지 확인"; exit 0 ;;
-              error|failed) echo "❌ 워커가 잡을 실패 처리: $S"; exit 0 ;;
-            esac
-            sleep 5
-          done
-          echo "⚠️ 3분 내 완료 안 됨(마지막 status=$ST) — 워커 멈춤/큐 적체 의심. 서버에서 qwen-image 워커 확인 필요."
