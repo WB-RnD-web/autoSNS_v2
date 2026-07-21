@@ -1,0 +1,33 @@
+{
+  "date": "2026-07-21",
+  "topic": "asmr",
+  "privacy": "public",
+  "theme_id": "hair-salon",
+  "theme_name": "미용실",
+  "duration_min": 60,
+  "narration_voice": "female",
+  "narration_text": "오늘은 사각사각 가위질과 부드러운 샴푸 소리가 있는 미용실 ASMR이에요. 편안하게 눈을 감고, 천천히 숨을 쉬어 보세요. 좋은 밤 되세요, 잘 자요.",
+  "background": {
+    "prompt": "a cozy dim empty hair salon interior at night, soft warm lighting, salon chairs and mirrors, calm and sleepy mood, no people, no text"
+  },
+  "freesound": {
+    "queries": [
+      "hair scissors cutting asmr",
+      "electric razor shaving hair",
+      "shampoo hair washing sounds",
+      "hair salon spray bottle sound",
+      "comb through hair sound"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "title": "✂️ 미용실 ASMR 1시간 | 가위질·샴푸 소리로 잠들기·수면",
+      "thumbnail_text": "미용실 가위질 소리",
+      "thumbnail_hook": "a cozy dim empty hair salon interior at night, soft warm lighting, salon chairs and mirrors, calm sleepy mood, no people, no text",
+      "description": "가위질과 샴푸 소리로 편안한 밤을 보내보세요.\n\n잘 때·집중·휴식용 ASMR 백색소음입니다.\n#ASMR #백색소음 #수면 #미용실사운드 #잠들기전 #힐링",
+      "playlist": "일상공감 ASMR"
+    }
+  },
+  "credit": "음원 Freesound(CC0) · 이미지 생성",
+  "notes": "ASMR 60분 · 16:9 · 정적 배경 + 앰비언트 루프 + 낮은 나레이션 · 자막 없음."
+}
