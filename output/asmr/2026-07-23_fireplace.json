@@ -1,0 +1,33 @@
+{
+  "date": "2026-07-23",
+  "topic": "asmr",
+  "privacy": "public",
+  "theme_id": "fireplace",
+  "theme_name": "벽난로 장작",
+  "duration_min": 60,
+  "narration_voice": "female",
+  "narration_text": "오늘은 벽난로에서 장작이 타닥타닥 타는 소리예요. 편안하게 눈을 감고, 천천히 숨을 쉬어 보세요. 좋은 밤 되세요, 잘 자요.",
+  "background": {
+    "prompt": "a cozy dim living room at night with a crackling fireplace, warm orange firelight glow on wooden furniture, soft shadows, calm and sleepy mood, no people, no text"
+  },
+  "freesound": {
+    "queries": [
+      "crackling fireplace fire loop",
+      "wood fire crackling ambience",
+      "cozy fireplace burning logs",
+      "fire crackle no music",
+      "indoor hearth fire ambience relaxing"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "title": "🔥 벽난로 장작 타는 소리 ASMR 1시간 | 잘 때 듣는 백색소음·수면",
+      "thumbnail_text": "벽난로 소리 1시간",
+      "thumbnail_hook": "a cozy dim living room at night with a crackling fireplace, warm orange firelight glow, calm sleepy mood, no people, no text",
+      "description": "타닥타닥 장작 타는 소리로 따뜻하고 아늑한 밤을 보내세요.\n\n잘 때·집중·휴식용 ASMR 백색소음입니다.\n#ASMR #백색소음 #수면 #벽난로 #잠들기전 #힐링",
+      "playlist": "일상공감 ASMR"
+    }
+  },
+  "credit": "음원 Freesound(CC0) · 이미지 생성",
+  "notes": "ASMR 60분 · 16:9 · 정적 배경 + 앰비언트 루프 + 낮은 나레이션 · 자막 없음."
+}
