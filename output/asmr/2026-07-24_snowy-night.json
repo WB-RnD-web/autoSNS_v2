@@ -1,0 +1,33 @@
+{
+  "date": "2026-07-24",
+  "topic": "asmr",
+  "privacy": "public",
+  "theme_id": "snowy-night",
+  "theme_name": "눈 오는 밤",
+  "duration_min": 60,
+  "narration_voice": "male",
+  "narration_text": "오늘은 창밖에 눈이 소복소복 쌓이는 고요한 밤이에요. 이불 속에서 편안하게 눈을 감고, 천천히 숨을 쉬어 보세요. 좋은 밤 되세요, 잘 자요.",
+  "background": {
+    "prompt": "a cozy dim bedroom window at night with soft snow gently falling outside, warm lamp glow inside, quiet snowy winter scene, calm and sleepy mood, no people, no text"
+  },
+  "freesound": {
+    "queries": [
+      "quiet snowy night wind ambience",
+      "soft winter night ambience no music",
+      "gentle wind loop snow",
+      "snowfall calm ambience loop",
+      "cozy winter night atmosphere"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "title": "❄️ 눈 오는 밤 ASMR 1시간 | 잘 때 듣는 백색소음·수면",
+      "thumbnail_text": "눈 오는 밤 1시간",
+      "thumbnail_hook": "a cozy dim bedroom window at night with soft snow gently falling outside, warm lamp glow inside, calm sleepy winter mood, no people, no text",
+      "description": "소복소복 눈이 내리는 고요한 겨울밤 소리로 편안한 잠을 청해보세요.\n\n잘 때·집중·휴식용 ASMR 백색소음입니다.\n#ASMR #백색소음 #수면 #눈오는밤 #잠들기전 #힐링",
+      "playlist": "일상공감 ASMR"
+    }
+  },
+  "credit": "음원 Freesound(CC0) · 이미지 생성",
+  "notes": "ASMR 60분 · 16:9 · 정적 배경 + 앰비언트 루프 + 낮은 나레이션 · 자막 없음."
+}
