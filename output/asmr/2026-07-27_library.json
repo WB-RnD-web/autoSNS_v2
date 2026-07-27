@@ -1,0 +1,33 @@
+{
+  "date": "2026-07-27",
+  "topic": "asmr",
+  "privacy": "public",
+  "theme_id": "library",
+  "theme_name": "도서관",
+  "duration_min": 60,
+  "narration_voice": "female",
+  "narration_text": "오늘은 고요한 도서관에서 책장 넘기는 소리를 들려드릴게요. 편안하게 눈을 감고, 천천히 숨을 쉬어보세요. 좋은 꿈 꾸시고, 잘 자요.",
+  "background": {
+    "prompt": "a cozy quiet library at night, warm dim lamp light on wooden reading desk, soft armchair by tall bookshelves, calm sleepy atmosphere, no people, no text"
+  },
+  "freesound": {
+    "queries": [
+      "quiet library ambience room tone",
+      "turning book pages sound loop",
+      "soft library room tone no speech",
+      "gentle paper rustling pages ambience",
+      "calm indoor room ambience quiet"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "title": "📚 도서관 백색소음 ASMR 1시간 | 잘 때 듣는 책장 넘기는 소리·수면",
+      "thumbnail_text": "도서관 백색소음",
+      "thumbnail_hook": "a cozy quiet library at night with warm lamp light on a reading desk and tall bookshelves, calm sleepy atmosphere, no people, no text",
+      "description": "고요한 도서관에서 책장 넘기는 소리로 편안한 밤 되세요.\n\n잘 때·집중·휴식용 ASMR 백색소음입니다.\n#ASMR #백색소음 #수면 #도서관 #잠들기전 #힐링",
+      "playlist": "일상공감 ASMR"
+    }
+  },
+  "credit": "음원 Freesound(CC0) · 이미지 생성",
+  "notes": "ASMR 60분 · 16:9 · 정적 배경 + 앰비언트 루프 + 낮은 나레이션 · 자막 없음."
+}
