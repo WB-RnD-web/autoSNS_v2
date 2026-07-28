@@ -1,0 +1,33 @@
+{
+  "date": "2026-07-28",
+  "topic": "asmr",
+  "privacy": "public",
+  "theme_id": "stream",
+  "theme_name": "시냇물",
+  "duration_min": 60,
+  "narration_voice": "male",
+  "narration_text": "오늘은 숲속을 흐르는 잔잔한 시냇물 소리예요. 편안하게 눈을 감고, 천천히 숨을 쉬어 보세요. 좋은 밤 되세요, 잘 자요.",
+  "background": {
+    "prompt": "a cozy dim forest scene at night with a small gentle stream flowing over smooth stones, moonlight glow through trees, calm and sleepy mood, no people, no text"
+  },
+  "freesound": {
+    "queries": [
+      "gentle stream flowing water loop",
+      "small creek water ambience nature",
+      "babbling brook soft water sounds",
+      "forest stream water no birds",
+      "calm flowing water nature ambience"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "title": "🏞️ 시냇물 소리 ASMR 1시간 | 잘 때 듣는 백색소음·수면",
+      "thumbnail_text": "시냇물 소리 1시간",
+      "thumbnail_hook": "a cozy dim forest scene at night with a small gentle stream flowing over smooth stones, moonlight glow, calm sleepy mood, no text",
+      "description": "숲속을 흐르는 잔잔한 시냇물 소리로 편안한 밤 되세요.\n\n잘 때·집중·휴식용 ASMR 백색소음입니다.\n#ASMR #백색소음 #수면 #시냇물 #잠들기전 #힐링",
+      "playlist": "일상공감 ASMR"
+    }
+  },
+  "credit": "음원 Freesound(CC0) · 이미지 생성",
+  "notes": "ASMR 60분 · 16:9 · 정적 배경 + 앰비언트 루프 + 낮은 나레이션 · 자막 없음."
+}
