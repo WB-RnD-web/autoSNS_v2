@@ -1,0 +1,33 @@
+{
+  "date": "2026-08-01",
+  "topic": "asmr",
+  "privacy": "public",
+  "theme_id": "campfire-night",
+  "theme_name": "캠프파이어 밤",
+  "duration_min": 60,
+  "narration_voice": "female",
+  "narration_text": "오늘은 밤하늘 아래 타닥이는 모닥불 소리예요. 편안하게 눈을 감고, 천천히 숨을 쉬어 보세요. 좋은 꿈 꾸시고, 잘 자요.",
+  "background": {
+    "prompt": "a cozy campfire glowing softly at night in a quiet forest clearing, warm orange embers, dark starry sky, calm and sleepy mood, no people, no text"
+  },
+  "freesound": {
+    "queries": [
+      "campfire crackling loop night",
+      "wood fire crackling ambience",
+      "night forest campfire ambience no talking",
+      "crackling fire embers loop",
+      "quiet night crickets and campfire"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "title": "🔥 캠프파이어 밤 ASMR 1시간 | 잘 때 듣는 백색소음·수면",
+      "thumbnail_text": "캠프파이어 밤 1시간",
+      "thumbnail_hook": "a cozy campfire glowing softly at night in a quiet forest clearing, warm orange embers, dark starry sky, calm sleepy mood, no people, no text",
+      "description": "고요한 밤, 타닥타닥 타오르는 모닥불 소리로 편안한 휴식을 즐겨보세요.\n\n잘 때·집중·휴식용 ASMR 백색소음입니다.\n#ASMR #백색소음 #수면 #캠프파이어 #잠들기전 #힐링",
+      "playlist": "일상공감 ASMR"
+    }
+  },
+  "credit": "음원 Freesound(CC0) · 이미지 생성",
+  "notes": "ASMR 60분 · 16:9 · 정적 배경 + 앰비언트 루프 + 낮은 나레이션 · 자막 없음."
+}
