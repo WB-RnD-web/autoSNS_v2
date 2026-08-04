@@ -1,0 +1,33 @@
+{
+  "date": "2026-08-04",
+  "topic": "asmr",
+  "privacy": "public",
+  "theme_id": "forest-rain",
+  "theme_name": "숲속 빗소리",
+  "duration_min": 60,
+  "narration_voice": "male",
+  "narration_text": "오늘은 숲속에 촉촉하게 내리는 빗소리예요. 편안하게 눈을 감고, 천천히 숨을 쉬어 보세요. 좋은 밤 되세요, 잘 자요.",
+  "background": {
+    "prompt": "a cozy dim wooden cabin window looking out into a rainy night forest, soft warm lamp glow inside, raindrops on glass, misty pine trees outside, calm and sleepy mood, no people, no text"
+  },
+  "freesound": {
+    "queries": [
+      "gentle rain on leaves forest",
+      "soft rain ambience no thunder",
+      "light rain loop nature",
+      "forest rain night ambience",
+      "rain dripping on trees"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "title": "🌲🌧️ 숲속 빗소리 ASMR 1시간 | 잘 때 듣는 백색소음·수면",
+      "thumbnail_text": "숲속 빗소리 1시간",
+      "thumbnail_hook": "a cozy dim wooden cabin window looking out into a rainy night forest, soft warm lamp glow inside, raindrops on glass, misty pine trees outside, calm sleepy mood, no people, no text",
+      "description": "숲속에 촉촉하게 내리는 빗소리로 편안한 밤을 보내보세요.\n\n잘 때·집중·휴식용 ASMR 백색소음입니다.\n#ASMR #백색소음 #수면 #숲속빗소리 #잠들기전 #힐링",
+      "playlist": "일상공감 ASMR"
+    }
+  },
+  "credit": "음원 Freesound(CC0) · 이미지 생성",
+  "notes": "ASMR 60분 · 16:9 · 정적 배경 + 앰비언트 루프 + 낮은 나레이션 · 자막 없음."
+}
