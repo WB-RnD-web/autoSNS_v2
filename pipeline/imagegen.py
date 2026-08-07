@@ -23,9 +23,27 @@ def _env(*names: str, default: str | None = None) -> str | None:
 
 
 def _extract_img_b64(body) -> str | None:
-    """응답에서 base64 이미지 추출(모델별 응답 키 편차 대비 방어적)."""
+    """응답에서 base64 이미지 추출(모델별 응답 키 편차 대비 방어적).
+
+    알려진 키(artifacts/data/image/b64_json)를 먼저 보고, 못 찾으면 응답 전체를
+    재귀 탐색해 '디코드하면 PNG/JPEG/WebP 매직이 나오는 긴 문자열'을 찾는다.
+    (2026-07 관측: 동일 엔드포인트가 간헐적으로 다른 중첩 구조를 반환해
+    keys=['artifacts'] 인데도 기존 고정 키 탐색이 실패 → 매 런 불필요한 폴백 유발)
+    """
     def clean(s):
         return s.split(",", 1)[1] if isinstance(s, str) and s.startswith("data:") else s
+
+    def is_img_b64(s) -> bool:
+        if not isinstance(s, str) or len(s) < 500:
+            return False
+        import base64 as _b
+        try:
+            head = _b.b64decode(clean(s)[:64] + "==", validate=False)
+        except Exception:  # noqa: BLE001
+            return False
+        return head[:4] in (b"\x89PNG", b"\xff\xd8\xff\xe0", b"\xff\xd8\xff\xe1",
+                            b"\xff\xd8\xff\xdb", b"RIFF")
+
     cands = []
     try:
         art = body["artifacts"][0]
@@ -42,7 +60,33 @@ def _extract_img_b64(body) -> str | None:
     for c in cands:
         if isinstance(c, str) and len(c) > 100:
             return clean(c)
+
+    # 고정 키 실패 → 재귀 탐색(깊이 제한, 이미지 매직 검증)
+    stack, depth = [(body, 0)], 6
+    while stack:
+        node, d = stack.pop()
+        if d > depth:
+            continue
+        if isinstance(node, dict):
+            stack += [(v, d + 1) for v in node.values()]
+        elif isinstance(node, list):
+            stack += [(v, d + 1) for v in node[:8]]
+        elif is_img_b64(node):
+            return clean(node)
     return None
+
+
+def _shape(body, depth: int = 3):
+    """응답 구조 요약(값 내용 제외 — 키/타입/길이만). 파싱 실패 진단용."""
+    if depth < 0:
+        return "…"
+    if isinstance(body, dict):
+        return {k: _shape(v, depth - 1) for k, v in list(body.items())[:12]}
+    if isinstance(body, list):
+        return [_shape(v, depth - 1) for v in body[:3]] + (["…"] if len(body) > 3 else [])
+    if isinstance(body, str):
+        return f"str({len(body)})"
+    return type(body).__name__
 
 
 def flux_image(prompt: str, out_png: str, w: int = 1344, h: int = 768, seed: int = 0) -> str | None:
@@ -84,8 +128,7 @@ def flux_image(prompt: str, out_png: str, w: int = 1344, h: int = 768, seed: int
             _time.sleep(min(2 ** attempt, 20)); continue
         b64 = _extract_img_b64(data)
         if not b64:
-            keys = list(data.keys()) if isinstance(data, dict) else type(data)
-            sys.stderr.write(f"[warn] FLUX 200인데 이미지 필드 못 찾음 → 폴백. keys={keys}\n")
+            sys.stderr.write(f"[warn] FLUX 200인데 이미지 필드 못 찾음 → 폴백. shape={_shape(data)}\n")
             return None
         try:
             os.makedirs(os.path.dirname(os.path.abspath(out_png)) or ".", exist_ok=True)

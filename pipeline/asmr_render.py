@@ -21,7 +21,11 @@ import shutil
 import subprocess
 import sys
 
-W, H, FPS = 1920, 1080, 10  # 16:9. 정지영상이라 fps 낮아도 됨(파일 최소화)
+W, H = 1920, 1080  # 16:9
+# 정지영상이라 fps 는 최소로(프레임 수 = 인코딩 시간). 2fps → 10fps 대비 프레임 1/5.
+FPS = int(os.environ.get("ASMR_FPS", "2"))
+# 유튜브가 재인코딩하므로 프리셋 품질 차이는 최종 화질에 사실상 무의미 → 최속 프리셋.
+PRESET = os.environ.get("ASMR_PRESET", "ultrafast")
 XFADE = float(os.environ.get("ASMR_XFADE", "2.5"))  # 크로스페이드 길이(초)
 
 
@@ -150,7 +154,7 @@ def render_video(image: str, audio_m4a: str, out_mp4: str) -> str:
     os.makedirs(os.path.dirname(os.path.abspath(out_mp4)) or ".", exist_ok=True)
     adur = probe_dur(audio_m4a)          # 오디오 길이에 정확히 맞춰 자른다(-t)
     sh([FFMPEG, "-y", "-loop", "1", "-framerate", str(FPS), "-i", image, "-i", audio_m4a,
-        "-c:v", "libx264", "-tune", "stillimage", "-preset", "veryfast", "-pix_fmt", "yuv420p",
+        "-c:v", "libx264", "-tune", "stillimage", "-preset", PRESET, "-pix_fmt", "yuv420p",
         "-vf", f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},setsar=1",
         "-r", str(FPS), "-c:a", "copy", "-t", f"{adur:.2f}", "-movflags", "+faststart", out_mp4])
     return out_mp4
@@ -176,6 +180,14 @@ def build_thumbnail(hook: str, text: str, out_jpg: str, workdir: str) -> str | N
 
 # ── 고수준 렌더 ──
 def render(spec: dict, clips: list[str], out_mp4: str, workdir: str) -> dict:
+    import time as _time
+    t0 = _time.monotonic()
+
+    def _lap(label: str):
+        # 단계별 소요시간 — Actions 로그가 스텝 단위로 버퍼링돼 타임스탬프로는
+        # 내부 병목을 알 수 없어(2026-07 관측) 직접 찍는다.
+        print(f"  ⏱ {label}: 누적 {_time.monotonic() - t0:.0f}s", flush=True)
+
     os.makedirs(workdir, exist_ok=True)
     if not clips:
         raise RuntimeError("오디오 클립 없음(Freesound 실패) — ASMR 렌더 중단")
@@ -183,6 +195,7 @@ def render(spec: dict, clips: list[str], out_mp4: str, workdir: str) -> dict:
     want_bed = max(target * 0.9, 60)  # 소스가 target 에 못 미치면 루프로 채움
 
     bed = build_bed(clips, os.path.join(workdir, "bed.wav"), target, workdir)
+    _lap("앰비언트 베드(정규화+루프+loudnorm)")
     yt = (spec.get("platforms") or {}).get("youtube") or {}
 
     # 나레이션(선택): 여/남 보이스는 spec.narration_voice 로 결정
@@ -193,10 +206,13 @@ def render(spec: dict, clips: list[str], out_mp4: str, workdir: str) -> dict:
                           os.path.join(workdir, "nar.wav"), workdir)
     gain = float(os.environ.get("ASMR_NARRATION_GAIN", "0.35"))
     audio = mix_audio(bed, nar, os.path.join(workdir, "mix.m4a"), gain=gain)
+    _lap("나레이션+믹스(AAC)")
 
     bg = ensure_background((spec.get("background") or {}).get("prompt", ""),
                            os.path.join(workdir, "bg.png"), workdir)
+    _lap("배경 이미지(FLUX)")
     render_video(bg, audio, out_mp4)
+    _lap(f"영상 인코딩({FPS}fps/{PRESET})")
     dur = probe_dur(out_mp4)
     size_mb = os.path.getsize(out_mp4) / 1e6
     print(f"✅ {out_mp4}  ({dur:.0f}s, {size_mb:.1f}MB, voice={'남' if voice==voice_m else '여'}, "
