@@ -42,7 +42,7 @@ permissions:
 jobs:
   build-and-upload:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 25   # 실측 최대 14분(커버 타임아웃 180s 포함 최악 ~20분)
     env:
       TZ: Asia/Seoul
       DEFAULT_PRIVACY: ${{ vars.DEFAULT_PRIVACY || 'private' }}
@@ -102,12 +102,29 @@ jobs:
       # 1) 시스템 의존성: ffmpeg + 헤드리스 Chrome 시스템 라이브러리 + 폰트
       - name: 시스템 의존성 설치
         run: |
-          sudo apt-get update
-          sudo apt-get install -y ffmpeg \
-            libnss3 libatk-bridge2.0-0 libatk1.0-0 libcups2 libdrm2 libxkbcommon0 \
-            libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm1 libasound2t64 \
-            libpango-1.0-0 libcairo2 fonts-nanum
-          python -m pip install --upgrade pip
+          set -e
+          # 이미 있는 건 설치하지 않는다 — apt-get update 가 미러 상태에 따라
+          # 수 분씩 걸리는 사고가 있었다(2026-08-06 asmr: 이 스텝에만 9분 28초).
+          NEED=""
+          command -v ffmpeg >/dev/null 2>&1 || NEED="$NEED ffmpeg"
+          fc-list 2>/dev/null | grep -qi nanum || NEED="$NEED fonts-nanum"
+          # 헤드리스 Chrome 공유 라이브러리: 러너 이미지에 Chrome/Chromium 이
+          # 사전 설치돼 있으면(현재 ubuntu-24.04 = Chrome 150) 이미 충족된 상태다.
+          # 이미지가 바뀌어 Chrome 이 사라지면 아래 폴백이 자동으로 설치한다.
+          if ! command -v google-chrome >/dev/null 2>&1 \
+             && ! command -v chromium >/dev/null 2>&1 \
+             && ! command -v chromium-browser >/dev/null 2>&1; then
+            NEED="$NEED libnss3 libatk-bridge2.0-0 libatk1.0-0 libcups2 libdrm2 libxkbcommon0"
+            NEED="$NEED libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm1 libasound2t64"
+            NEED="$NEED libpango-1.0-0 libcairo2"
+          fi
+          if [ -n "$NEED" ]; then
+            echo "apt 설치 대상:$NEED"
+            sudo apt-get update
+            sudo apt-get install -y $NEED
+          else
+            echo "시스템 의존성 이미 충족 — apt 스킵"
+          fi
           python -m pip install -r pipeline/requirements.txt
 
       # 2) HyperFrames + 헤드리스 Chrome 준비(캐시는 M6에서 추가)
