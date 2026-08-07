@@ -36,7 +36,7 @@ permissions:
 jobs:
   build-and-upload:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 35   # 실측 최대 29분, 인코딩 최적화 후 단축 예상
     env:
       TZ: Asia/Seoul
       # 배경/썸네일 이미지(FLUX klein-4b, 소설과 동일 엔드포인트)
@@ -64,9 +64,19 @@ jobs:
       # 1) 시스템 의존성: ffmpeg + 한국어 폰트(썸네일 문구)
       - name: 시스템 의존성 설치
         run: |
-          sudo apt-get update
-          sudo apt-get install -y ffmpeg fonts-nanum
-          python -m pip install --upgrade pip
+          set -e
+          # 이미 있는 건 설치하지 않는다 — apt-get update 가 미러 상태에 따라
+          # 수 분씩 걸리는 사고가 있었다(2026-08-06 asmr: 이 스텝에만 9분 28초).
+          NEED=""
+          command -v ffmpeg >/dev/null 2>&1 || NEED="$NEED ffmpeg"
+          fc-list 2>/dev/null | grep -qi nanum || NEED="$NEED fonts-nanum"
+          if [ -n "$NEED" ]; then
+            echo "apt 설치 대상:$NEED"
+            sudo apt-get update
+            sudo apt-get install -y $NEED
+          else
+            echo "시스템 의존성 이미 충족 — apt 스킵"
+          fi
           python -m pip install -r pipeline/requirements.txt
 
       # 1b) dedupe ledger 복원/저장(런 간 영속 — 레포에 쓰지 않음)
