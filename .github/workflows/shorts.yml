@@ -63,7 +63,8 @@ jobs:
       WBSPARK_TOKEN: ${{ secrets.WBSPARK_TOKEN }}
       # 커버 생성 노브(선택): 끄기=SHORTS_COVER=0, qwen 대기 상한(초), 첫프레임 홀드(초)
       SHORTS_COVER: ${{ vars.SHORTS_COVER || '1' }}
-      SHORTS_COVER_TIMEOUT: ${{ vars.SHORTS_COVER_TIMEOUT || '300' }}
+      # 정상 생성 ~86초(콜드 +44초). 300은 서버 행 때 런당 5분 낭비라 180으로 하향(2026-07-18).
+      SHORTS_COVER_TIMEOUT: ${{ vars.SHORTS_COVER_TIMEOUT || '180' }}
       SHORTS_COVER_HOLD: ${{ vars.SHORTS_COVER_HOLD || '0.7' }}
     steps:
       - uses: actions/checkout@v4
