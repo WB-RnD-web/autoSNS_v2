@@ -35,17 +35,63 @@ def _license_filter() -> str:
     return 'license:"Creative Commons 0"'
 
 
-def search(query: str, key: str, min_sec: int = 20, max_sec: int = 600,
-           page_size: int = 15):
-    """텍스트 검색 → 결과 리스트(dict: id,name,duration,previews,license,username,url).
+# 쿼리에서 '무엇의 소리인지'를 특정하지 못하는 수식어 — 관련성 판정에서 제외한다.
+_STOPWORDS = {
+    "asmr", "loop", "loops", "ambience", "ambient", "sound", "sounds", "noise",
+    "white", "background", "soft", "gentle", "quiet", "calm", "relaxing", "cozy",
+    "close", "mic", "night", "room", "tone", "no", "music", "talking", "speech",
+    "and", "the", "with", "for", "long", "hour", "sleep", "sleeping",
+}
+# ASMR/백색소음에 음악 트랙이 섞이는 것을 막는다("keyboard"=건반악기 같은 동음이의어 방어).
+_MUSICAL = {
+    "music", "musical", "song", "melody", "chord", "chords", "harmony", "instrument",
+    "synth", "synthesizer", "piano", "guitar", "drum", "drums", "bass", "beat", "beats",
+    "reggae", "jazz", "techno", "edm", "house", "remix", "vocal", "vocals", "singing",
+    "toolkit", "sample pack", "riff", "bpm", "melodic",
+}
 
-    duration 필터 + 라이선스 필터 + 다운로드/평점 순 정렬(품질 우선). 실패 시 []."""
+
+def _words(text: str) -> set:
+    import re
+    return {w for w in re.findall(r"[a-z]+", (text or "").lower()) if len(w) > 2}
+
+
+def core_terms(query: str) -> set:
+    """쿼리에서 핵심 명사만 남긴다. 예: 'mechanical keyboard typing asmr' → {mechanical,keyboard,typing}"""
+    return _words(query) - _STOPWORDS
+
+
+def _haystack(item: dict) -> set:
+    tags = item.get("tags") or []
+    return _words(item.get("name", "")) | {str(t).lower() for t in tags}
+
+
+def relevance(item: dict, terms: set) -> int:
+    """테마 핵심어가 음원 이름/태그에 몇 개나 걸리는지. 0이면 무관한 음원."""
+    return len(terms & _haystack(item)) if terms else 1
+
+
+def is_musical(item: dict) -> bool:
+    """음악 트랙으로 보이면 True(ASMR 소스로 부적합)."""
+    return bool(_haystack(item) & _MUSICAL)
+
+
+def search(query: str, key: str, min_sec: int = 20, max_sec: int = 600,
+           page_size: int = 30):
+    """텍스트 검색 → 결과 리스트(dict: id,name,duration,previews,license,username,url,tags).
+
+    duration 필터 + 라이선스 필터 + ★관련도(score) 정렬. 실패 시 [].
+
+    ⚠️ 과거 downloads_desc(인기순)를 쓰다가 관련도가 통째로 버려져,
+       'mechanical keyboard typing asmr' 검색에 'Crashing Starship' 같은 무관한
+       인기 음원이 담기는 사고가 있었다(2026-07-17 keyboard-typing). 관련도 정렬 유지할 것.
+    """
     requests = _requests()
     filt = f"{_license_filter()} duration:[{min_sec} TO {max_sec}]"
     params = {
         "query": query, "filter": filt,
-        "fields": "id,name,duration,previews,license,username,url",
-        "sort": "downloads_desc", "page_size": page_size,
+        "fields": "id,name,duration,previews,license,username,url,tags",
+        "sort": "score", "page_size": page_size,
     }
     try:
         r = requests.get(f"{BASE}/search/text/", params=params,
@@ -91,38 +137,56 @@ def fetch_theme(queries: list[str], out_dir: str, want_sec: int = 1800,
         sys.stderr.write("[error] FREESOUND_API_KEY 없음 — ASMR 오디오 소스 불가\n")
         return [], []
     os.makedirs(out_dir, exist_ok=True)
-    files, attrs, seen = [], [], set()
-    total = 0.0
+    terms = set()
+    for q in queries:
+        terms |= core_terms(q)
 
-    def _collect(qs: list[str]):
-        nonlocal total
+    def _candidates(qs: list[str], min_rel: int) -> list[dict]:
+        """검색만 수행해 후보를 모으고, 관련도 min_rel 이상 + 비음악 만 남겨 정렬."""
+        pool = {}
         for q in qs:
-            if total >= want_sec or len(files) >= max_clips:
-                break
             for it in search(q, key):
-                if total >= want_sec or len(files) >= max_clips:
-                    break
                 fid = it.get("id")
-                if fid in seen:
+                # taken: 이전 라운드에서 이미 받은 음원(라운드 간 중복 방지)
+                if not fid or fid in pool or fid in taken or float(it.get("duration") or 0) <= 0:
                     continue
-                dur = float(it.get("duration") or 0)
-                if dur <= 0:
+                if is_musical(it):
                     continue
-                dst = os.path.join(out_dir, f"fs_{fid}.mp3")
-                if _download_preview(it, dst):
-                    seen.add(fid)
-                    files.append(dst)
-                    total += dur
-                    attrs.append({"name": it.get("name"), "username": it.get("username"),
-                                  "url": it.get("url"), "license": it.get("license")})
-                    print(f"   · Freesound 다운로드: {it.get('name','?')[:36]} ({dur:.0f}s, by {it.get('username')})")
+                rel = relevance(it, terms)
+                if rel < min_rel:
+                    continue
+                it["_rel"] = rel
+                pool[fid] = it
+        # 관련도 높은 순 → 같으면 긴 클립 우선(루프 이음새가 적어 자연스럽다)
+        return sorted(pool.values(), key=lambda x: (-x["_rel"], -float(x.get("duration") or 0)))
 
-    _collect(queries)
-    # 0건 폴백: 루틴이 주는 자연어 쿼리(단어 5~6개)는 전부 AND 매칭이라
-    # CC0+duration 필터와 겹치면 결과 0이 되기 쉽다(2026-07-18 quiet-cafe 관측).
-    # 앞 2단어 → 앞 1단어로 점진 완화해 재시도한다(라이선스 정책은 그대로).
+    def _download(cands: list[dict]):
+        for it in cands:
+            if total[0] >= want_sec or len(files) >= max_clips:
+                break
+            dur = float(it.get("duration") or 0)
+            dst = os.path.join(out_dir, f"fs_{it['id']}.mp3")
+            if _download_preview(it, dst):
+                taken.add(it["id"])
+                files.append(dst)
+                total[0] += dur
+                attrs.append({"name": it.get("name"), "username": it.get("username"),
+                              "url": it.get("url"), "license": it.get("license")})
+                print(f"   · Freesound 다운로드: {it.get('name','?')[:36]} "
+                      f"({dur:.0f}s, 관련도 {it['_rel']}, by {it.get('username')})")
+
+    files, attrs, total, taken = [], [], [0.0], set()
+
+    # 1차: 원본 쿼리 + 관련도 1 이상(테마 핵심어가 이름/태그에 최소 1개)
+    _download(_candidates(queries, min_rel=1))
+
+    # 2차: 소스가 부족하면 쿼리를 점진 완화해 ★온-토픽 소재를 더 모은다.
+    #   - 0건 사례(2026-07-18 quiet-cafe, 2026-08-06 library): 자연어 쿼리가
+    #     CC0+duration 필터와 겹쳐 아무것도 안 걸리는 경우
+    #   - 부족 사례: 엄격 필터 통과분이 짧아 1시간을 짧은 루프로 때우게 되는 경우
+    #   어느 쪽이든 관련도 기준(1 이상)은 유지한다 — 무관한 음원을 채우느니 반복이 낫다.
     for n in (2, 1):
-        if files:
+        if total[0] >= want_sec or len(files) >= max_clips:
             break
         relaxed = []
         for q in queries:
@@ -130,9 +194,16 @@ def fetch_theme(queries: list[str], out_dir: str, want_sec: int = 1800,
             if rq and rq not in relaxed:
                 relaxed.append(rq)
         if relaxed:
-            print(f"   ↺ 검색 0건 → 쿼리 완화(앞 {n}단어) 재시도: {relaxed}")
-            _collect(relaxed)
-    print(f"   → Freesound 클립 {len(files)}개, 합계 {total:.0f}s (목표 {want_sec}s)")
+            print(f"   ↺ 소스 부족({total[0]:.0f}/{want_sec}s) → 쿼리 완화(앞 {n}단어): {relaxed}")
+            _download(_candidates(relaxed, min_rel=1))
+
+    # 3차 폴백: 그래도 0건이면 관련도 조건을 풀어 최소한의 소스라도 확보한다
+    # (무음 실패보다는 낫다. 단 음악 트랙 제외는 유지).
+    if not files:
+        print("   ↺ 여전히 0건 → 관련도 조건 해제(음악 제외는 유지)")
+        _download(_candidates(queries, min_rel=0))
+
+    print(f"   → Freesound 클립 {len(files)}개, 합계 {total[0]:.0f}s (목표 {want_sec}s)")
     return files, attrs
 
 
