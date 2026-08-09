@@ -1,0 +1,33 @@
+{
+  "date": "2026-08-09",
+  "topic": "asmr",
+  "privacy": "public",
+  "theme_id": "campfire-night",
+  "theme_name": "캠프파이어 밤",
+  "duration_min": 60,
+  "narration_voice": "female",
+  "narration_text": "오늘은 호숫가 캠프장에서 장작불이 은은하게 타오르는 소리예요. 물결이 잔잔히 밀려오고, 불씨는 천천히 잦아들어요. 마음 편히 내려놓고, 좋은 꿈 꾸세요.",
+  "background": {
+    "prompt": "a small campfire glowing beside a wooden lakeside dock at night, folded camp chair and enamel mug next to the fire, calm dark lake reflecting faint firelight, distant tree silhouettes, low warm light, sleepy peaceful mood, no people, no text"
+  },
+  "freesound": {
+    "queries": [
+      "campfire crackle lakeside ambience",
+      "wood fire popping loop night",
+      "lake water lapping shore quiet",
+      "night forest ambience distant owl",
+      "ember fire hiss loop no talking"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "title": "🏕️ 캠프파이어 밤 1시간 ASMR | 불면증·집중용 백색소음",
+      "thumbnail_text": "호숫가 모닥불 1시간",
+      "thumbnail_hook": "a small campfire glowing beside a wooden lakeside dock at night, calm dark lake reflecting firelight, distant tree silhouettes, sleepy peaceful mood, no people, no text",
+      "description": "호숫가에 앉아 듣는 잔잔한 모닥불 소리, 오늘 밤 편안한 휴식을 함께해요.\n\n잘 때·집중·휴식용 ASMR 백색소음입니다.\n#ASMR #백색소음 #수면 #캠프파이어 #잠들기전 #힐링",
+      "playlist": "일상공감 ASMR"
+    }
+  },
+  "credit": "음원 Freesound(CC0) · 이미지 생성",
+  "notes": "ASMR 60분 · 16:9 · 정적 배경 + 앰비언트 루프 + 낮은 나레이션 · 자막 없음."
+}
