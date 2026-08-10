@@ -1,0 +1,33 @@
+{
+  "date": "2026-08-10",
+  "topic": "asmr",
+  "privacy": "public",
+  "theme_id": "summer-night-bugs",
+  "theme_name": "여름밤 풀벌레",
+  "duration_min": 60,
+  "narration_voice": "male",
+  "narration_text": "오늘은 여름밤 풀벌레 소리로 하루를 마무리해요. 마당엔 선선한 바람이 불고, 저 멀리 풀벌레 울음이 잔잔히 이어져요. 편안하게 눈 감고, 좋은 꿈 꾸세요.",
+  "background": {
+    "prompt": "a rustic wooden porch at a countryside house late at night, a woven straw mat and low table with a half-eaten watermelon slice and a citronella coil, paper lantern hanging from the eave casting warm dim light, dark garden and tall grass fading into night mist beyond the railing, faint fireflies, deep navy sky, calm sleepy summer night mood, no people, no text"
+  },
+  "freesound": {
+    "queries": [
+      "summer night crickets ambience",
+      "cicada night field loop",
+      "countryside night insects ambience",
+      "distant frogs pond night",
+      "gentle night breeze grass rustle"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "title": "🦗🌙 깊게 잠드는 여름밤 풀벌레 ASMR | 1시간 수면 사운드",
+      "thumbnail_text": "여름밤 풀벌레 소리",
+      "thumbnail_hook": "a rustic countryside porch at night with a paper lantern glow, tall grass and fireflies in the dark garden beyond, calm sleepy summer night mood, no people, no text",
+      "description": "여름밤, 마당 가득 울리는 풀벌레 소리로 마음을 편안하게 내려놓아요.\n\n잘 때·집중·휴식용 ASMR 백색소음입니다.\n#ASMR #백색소음 #수면 #여름밤풀벌레 #잠들기전 #힐링",
+      "playlist": "일상공감 ASMR"
+    }
+  },
+  "credit": "음원 Freesound(CC0) · 이미지 생성",
+  "notes": "ASMR 60분 · 16:9 · 정적 배경 + 앰비언트 루프 + 낮은 나레이션 · 자막 없음."
+}
