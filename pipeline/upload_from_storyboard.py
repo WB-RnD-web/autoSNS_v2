@@ -84,8 +84,10 @@ def main() -> int:
               "업로드하려면 자격증명을 연결하거나 --dry-run 사용.", file=sys.stderr)
         return 1
     import upload_youtube
+    import yt_i18n
     vid = upload_youtube.upload(args.video, meta["title"], meta["description"],
-                                meta["privacy"], tags=meta["tags"])
+                                meta["privacy"], tags=meta["tags"],
+                                localizations=yt_i18n.from_spec(sb))
     print(f"✅ 업로드 완료: https://youtu.be/{vid}")
     return 0
 

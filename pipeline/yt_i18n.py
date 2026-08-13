@@ -5,9 +5,18 @@
   번인 자막(libass)은 어떤 플랫폼도 번역하지 못한다. 그래서 '번역'은 영상 밖에서 붙인다.
     ① localizations : videos.update, ★50 units. 유튜브가 해당 국가 사용자에게 그 나라 말
                       제목/설명을 노출한다 → 노출수 자체가 늘어난다. 가성비 압도적 = 전 토픽.
-    ② captions      : captions.insert, ★400 units/언어. 비싸서 SCP(주 2편)에만 건다.
-  루틴 프롬프트는 손대지 않는다 — 번역은 기계적인 작업이라 여기서 Claude 로 돌리는 게
-  스펙을 비대하게 만드는 것보다 낫다(실패 지점도 한 곳으로 모인다).
+    ② captions      : captions.insert, ★400 units/언어.
+
+★번역은 '루틴이' 한다 — 이 모듈은 받아 올리기만 한다.
+  루틴(Claude Code)은 이미 구독으로 돌고 있으므로 거기서 번역하면 ★API 비용이 0원이다.
+  파이프라인에서 API 를 호출하면 없던 종량 과금이 새로 생긴다. 품질도 루틴 쪽이 낫다 —
+  루틴은 이야기 전체를 알고 번역하지만, API 호출은 제목·설명만 뚝 떼어 보게 된다.
+
+  · 제목/설명 : spec["platforms"]["youtube"]["localizations"] = {"en":{title,description}, …}
+  · 자막      : spec["segments"][i]["text_en"] … → 렌더러가 한국어와 ★같은 타이밍으로 SRT 생성
+
+  ANTHROPIC_API_KEY 가 있으면 스펙에 번역이 없을 때만 API 로 폴백한다(선택). 키가 없으면
+  그냥 스킵 — 루틴이 안 써준 언어는 조용히 건너뛴다.
 
 ★스코프 주의(둘이 다르다):
   localizations → `youtube` 스코프면 된다. token_novel.json 이 이미 갖고 있다.
@@ -201,16 +210,57 @@ def translate_srt(srt_text: str, lang: str) -> str | None:
 
 
 # ── ① 현지화 ───────────────────────────────────────────
-def localize(video_id: str, langs: list[str] | None = None, retries: int = 3) -> list[str]:
-    """제목·설명 현지화. 성공한 언어 목록 반환. 실패는 경고만(업로드는 이미 끝났다)."""
+def from_spec(spec: dict, langs: list[str] | None = None) -> dict:
+    """스펙(스토리보드/렌더스펙)에서 루틴이 써준 번역 블록을 꺼낸다.
+
+    찾는 위치(먼저 걸리는 쪽):
+      ① spec["platforms"]["youtube"]["localizations"]   ← 권장(제목/설명 옆)
+      ② spec["localizations"]                            ← top-level 폴백
+    """
+    if not isinstance(spec, dict):
+        return {}
+    yt = (spec.get("platforms") or {}).get("youtube") or {}
+    raw = yt.get("localizations") or spec.get("localizations")
+    return normalize_localizations(raw, langs)
+
+
+def normalize_localizations(raw, langs: list[str] | None = None) -> dict:
+    """루틴이 써준 번역 블록을 검증·정규화한다.
+
+    받는 형태: {"en": {"title": ..., "description": ...}, "ja": {...}, ...}
+    title 이 비었거나 언어 코드가 요청 목록에 없으면 그 언어는 버린다.
+    """
+    langs = langs or LANGS
+    if not isinstance(raw, dict):
+        return {}
+    out = {}
+    for lang in langs:
+        v = raw.get(lang)
+        if isinstance(v, dict) and (v.get("title") or "").strip():
+            out[lang] = {"title": str(v["title"]).strip()[:100],
+                         "description": str(v.get("description") or "").strip()[:5000]}
+    return out
+
+
+def localize(video_id: str, langs: list[str] | None = None,
+             localizations: dict | None = None, retries: int = 3) -> list[str]:
+    """제목·설명 현지화. 성공한 언어 목록 반환. 실패는 경고만(업로드는 이미 끝났다).
+
+    localizations 를 주면 그걸 쓴다(★루틴이 써준 번역 — API 비용 0).
+    없을 때만 ANTHROPIC_API_KEY 로 폴백하고, 키도 없으면 스킵한다.
+    """
     if not DO_LOCALIZE:
         return []
     langs = langs or LANGS
     if not langs:
         return []
-    if not config.env("ANTHROPIC_API_KEY"):
+    loc_given = normalize_localizations(localizations, langs)
+    if loc_given:
+        print(f"   🌐 루틴이 써준 번역 사용: {', '.join(loc_given)} (번역 API 호출 없음)")
+    elif not config.env("ANTHROPIC_API_KEY"):
         # 번역을 못 하는데 videos.list(1 unit)를 먼저 쏘면 쿼터만 낭비된다.
-        sys.stderr.write("[warn] 현지화 스킵 — ANTHROPIC_API_KEY 없음\n")
+        sys.stderr.write("[warn] 현지화 스킵 — 스펙에 localizations 없고 "
+                         "ANTHROPIC_API_KEY 도 없음(루틴 프롬프트에 번역 블록을 넣을 것)\n")
         return []
     yt = _service(["forcessl", "novel", "shorts"], [SCOPE_FORCE, SCOPE_MANAGE, SCOPE_UPLOAD])
     if yt is None:
@@ -229,7 +279,7 @@ def localize(video_id: str, langs: list[str] | None = None, retries: int = 3) ->
         sys.stderr.write(f"[warn] 현지화 스킵 — snippet 조회 실패: {e}\n")
         return []
 
-    loc = translate_meta(sn.get("title", ""), sn.get("description", ""), langs)
+    loc = loc_given or translate_meta(sn.get("title", ""), sn.get("description", ""), langs)
     if not loc:
         return []
     body = {
@@ -260,12 +310,24 @@ def localize(video_id: str, langs: list[str] | None = None, retries: int = 3) ->
 
 
 # ── ② 자막 트랙 ────────────────────────────────────────
-def add_caption_tracks(video_id: str, srt_path: str, langs: list[str] | None = None) -> list[str]:
-    """번역 자막 트랙 업로드. ★400 units/언어 — 호출측이 토픽을 골라서 부른다."""
-    if not (DO_CAPTIONS and srt_path and os.path.exists(srt_path)):
+def add_caption_tracks(video_id: str, srt_path: str = "", langs: list[str] | None = None,
+                       srts: dict | None = None) -> list[str]:
+    """자막 트랙 업로드. ★400 units/언어 — 호출측이 토픽을 골라서 부른다.
+
+    srts = {"en": "<경로>", "ja": ...} 를 주면 그대로 올린다(★루틴이 번역한 자막 —
+    한국어와 타이밍이 동일하게 생성되므로 싱크가 어긋날 수 없고 번역 API 비용도 0).
+    srts 가 없고 srt_path(한국어 원본)만 있으면 ANTHROPIC_API_KEY 로 번역해 폴백한다.
+    """
+    if not DO_CAPTIONS:
         return []
     langs = langs or LANGS
-    if not langs:
+    ready = {k: v for k, v in (srts or {}).items()
+             if k in langs and v and os.path.exists(v)}
+    if not ready and not (srt_path and os.path.exists(srt_path)):
+        return []
+    if not ready and not config.env("ANTHROPIC_API_KEY"):
+        sys.stderr.write("[warn] 자막 트랙 스킵 — 루틴이 번역 자막을 안 줬고 "
+                         "ANTHROPIC_API_KEY 도 없음(segments 에 text_en 등을 추가할 것)\n")
         return []
     # forcessl 전용 토큰이 정석이지만, force-ssl 을 포함해 재발급한 token_novel 로도 통한다
     # (force-ssl 은 youtube/upload 를 포함하는 상위 스코프). 스코프가 모자라면 _service 가
@@ -281,24 +343,33 @@ def add_caption_tracks(video_id: str, srt_path: str, langs: list[str] | None = N
         from googleapiclient.http import MediaFileUpload
     except ImportError:
         return []
-    with open(srt_path, encoding="utf-8") as f:
-        src = f.read()
+
+    if ready:
+        print(f"   💬 루틴이 번역한 자막 사용: {', '.join(ready)} (번역 API 호출 없음)")
+        files = ready
+    else:
+        # 폴백: 한국어 SRT 를 API 로 번역(루틴이 안 써준 경우에만)
+        with open(srt_path, encoding="utf-8") as f:
+            src = f.read()
+        workdir = os.path.dirname(os.path.abspath(srt_path))
+        files = {}
+        for lang in langs:
+            tr = translate_srt(src, lang)
+            if not tr:
+                continue
+            p = os.path.join(workdir, f"captions_{lang.replace('-', '_')}.srt")
+            with open(p, "w", encoding="utf-8") as f:
+                f.write(tr)
+            files[lang] = p
 
     done = []
-    workdir = os.path.dirname(os.path.abspath(srt_path))
-    for lang in langs:
-        tr = translate_srt(src, lang)
-        if not tr:
-            continue
-        p = os.path.join(workdir, f"captions_{lang.replace('-', '_')}.srt")
-        with open(p, "w", encoding="utf-8") as f:
-            f.write(tr)
+    for lang, path in files.items():
         try:
             yt.captions().insert(
                 part="snippet",
                 body={"snippet": {"videoId": video_id, "language": lang,
                                   "name": _name(lang)[0], "isDraft": False}},
-                media_body=MediaFileUpload(p, mimetype="application/octet-stream")).execute()
+                media_body=MediaFileUpload(path, mimetype="application/octet-stream")).execute()
             done.append(lang)
             print(f"   💬 자막 트랙 업로드: {lang} ({_name(lang)[0]}) — 400 units")
         except Exception as e:  # noqa: BLE001
@@ -307,15 +378,101 @@ def add_caption_tracks(video_id: str, srt_path: str, langs: list[str] | None = N
 
 
 # ── 고수준: 업로드 직후 한 방에 ────────────────────────
-def apply(video_id: str, srt_path: str | None = None, langs: list[str] | None = None) -> dict:
-    """현지화(항상) + 자막 트랙(srt_path 를 준 파이프라인만)."""
-    return {"localized": localize(video_id, langs),
-            "captions": add_caption_tracks(video_id, srt_path or "", langs)}
+def apply(video_id: str, srt_path: str | None = None, langs: list[str] | None = None,
+          localizations: dict | None = None, srts: dict | None = None) -> dict:
+    """현지화(항상) + 자막 트랙(자막 소스를 준 파이프라인만).
+
+    localizations / srts 는 ★루틴이 써준 번역. 없으면 API 폴백(키가 있을 때만).
+    """
+    return {"localized": localize(video_id, langs, localizations=localizations),
+            "captions": add_caption_tracks(video_id, srt_path or "", langs, srts=srts)}
+
+
+def check() -> int:
+    """가진 토큰들을 점검한다 — ★같은 채널인가 · 같은 OAuth 클라이언트인가 · 스코프가 맞는가.
+
+    Cloud 프로젝트/앱 이름이 레포 이름과 달라도 아무 상관 없다. 실제로 문제가 되는 건
+      ① 채널   : 토큰이 ★영상이 올라가는 그 채널의 것이어야 한다(다르면 자막이 404).
+      ② client_id : 같으면 같은 Cloud 프로젝트 = ★쿼터 10,000/일을 공유한다.
+                    다르면 쿼터가 따로 잡히고, 새 프로젝트는 동의 화면이 보통 '테스트'라
+                    ★리프레시 토큰이 7일 만에 죽는다.
+      ③ 스코프 : captions 는 force-ssl, localizations 는 youtube 가 필요하다.
+    """
+    try:
+        from google.auth.transport.requests import Request
+        from google.oauth2.credentials import Credentials
+        from googleapiclient.discovery import build
+    except ImportError:
+        print("[error] pip install google-auth-oauthlib google-api-python-client google-auth-httplib2")
+        return 1
+
+    rows, clients, channels = [], set(), set()
+    for kind, p in _token_paths().items():
+        if not p or not os.path.exists(p):
+            rows.append((kind, os.path.basename(p or "-"), "(파일 없음)", "-", "-"))
+            continue
+        try:
+            with open(p, encoding="utf-8") as f:
+                raw = json.load(f)
+        except (OSError, json.JSONDecodeError) as e:
+            rows.append((kind, os.path.basename(p), f"(읽기 실패: {e})", "-", "-"))
+            continue
+        cid = raw.get("client_id", "")
+        scopes = raw.get("scopes") or []
+        clients.add(cid)
+        short = [s.rsplit("/", 1)[-1] for s in scopes]
+        ch = "-"
+        try:
+            creds = Credentials.from_authorized_user_file(p, scopes or None)
+            if creds and creds.expired and creds.refresh_token:
+                creds.refresh(Request())
+            r = build("youtube", "v3", credentials=creds).channels().list(
+                part="snippet", mine=True).execute()
+            it = (r.get("items") or [{}])[0]
+            ch = f"{(it.get('snippet') or {}).get('title', '?')} ({it.get('id', '?')})"
+            channels.add(it.get("id", "?"))
+        except Exception as e:  # noqa: BLE001
+            # youtube.upload 단독 토큰은 채널 조회 권한이 없다 — 정상이다.
+            ch = ("(조회 불가 — upload 전용 스코프)" if SCOPE_MANAGE not in scopes
+                  and SCOPE_FORCE not in scopes else f"(조회 실패: {str(e)[:60]})")
+        rows.append((kind, os.path.basename(p), cid[:28] + "…" if cid else "-",
+                     ",".join(short) or "-", ch))
+
+    print("\n──── 토큰 점검 ────")
+    for kind, fn, cid, sc, ch in rows:
+        print(f"  [{kind:8}] {fn}\n      client_id : {cid}\n      scopes    : {sc}\n"
+              f"      channel   : {ch}")
+
+    print("\n──── 판정 ────")
+    clients.discard("")
+    if len(clients) <= 1:
+        print("  ✅ OAuth 클라이언트 동일 — 같은 Cloud 프로젝트(쿼터 10,000/일 공유)")
+    else:
+        print(f"  ⚠️ OAuth 클라이언트가 {len(clients)}종류 — Cloud 프로젝트가 다르다.\n"
+              "     쿼터가 따로 잡히고, 새 프로젝트는 동의 화면이 '테스트'면\n"
+              "     ★리프레시 토큰이 7일 만에 만료된다(동의 화면을 '프로덕션'으로 게시할 것).")
+    channels.discard("?")
+    if not channels:
+        print("  ⚠️ 채널을 하나도 확인하지 못했다 — 토큰 만료/스코프 부족일 수 있다"
+              "(위 channel 줄 확인).")
+    elif len(channels) == 1:
+        print(f"  ✅ 채널 동일 ({next(iter(channels))})")
+    else:
+        print(f"  ❌ 채널이 {len(channels)}개로 갈린다 — 자막/현지화가 엉뚱한 영상에 붙거나 404.")
+    fs = any("youtube.force-ssl" in r[3] for r in rows)
+    mg = any(("youtube" in r[3].split(",")) or "youtube.force-ssl" in r[3] for r in rows)
+    print(f"  {'✅' if mg else '❌'} 현지화(videos.update) 가능 — `youtube` 스코프 "
+          f"{'있음' if mg else '없음'}")
+    print(f"  {'✅' if fs else '⏭️ '} 자막 트랙(captions) 가능 — `youtube.force-ssl` 스코프 "
+          f"{'있음' if fs else '없음(자막만 스킵됨, 나머지는 정상)'}")
+    return 0
 
 
 def main() -> int:
     import argparse
     ap = argparse.ArgumentParser(description="유튜브 다국어(현지화/자막 트랙)")
+    ap.add_argument("--check", action="store_true",
+                    help="가진 토큰 점검(채널/클라이언트/스코프가 서로 맞는지)")
     ap.add_argument("--auth-only", action="store_true",
                     help="force-ssl 스코프 토큰 발급(자막 트랙용). 기존 토큰은 건드리지 않는다")
     ap.add_argument("--video-id", help="이 영상에 현지화/자막 적용")
@@ -323,6 +480,9 @@ def main() -> int:
     ap.add_argument("--langs", default="", help="쉼표 구분(비우면 I18N_LANGS)")
     args = ap.parse_args()
     config.load_dotenv()
+
+    if args.check:
+        return check()
 
     if args.auth_only:
         try:

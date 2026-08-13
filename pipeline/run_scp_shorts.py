@@ -160,6 +160,7 @@ def process(spec_path: str, args, led) -> dict:
         return res
 
     import upload_youtube_novel
+    import yt_i18n
     last = None
     for attempt in range(1, args.retries + 2):
         try:
@@ -167,7 +168,10 @@ def process(spec_path: str, args, led) -> dict:
                 res["video"], meta["title"], meta["description"], meta["privacy"],
                 playlist_title=meta["playlist"], tags=meta["tags"],
                 category_id=meta["category_id"], thumbnail=info.get("thumbnail"),
-                srt=info.get("srt"))
+                localizations=yt_i18n.from_spec(spec),
+                # 쇼츠는 번인 자막이 이미 있고 45초짜리라 자막 트랙(400 units/언어)은 안 건다.
+                # 루틴이 shorts 세그먼트 번역을 주면 그때만 올라간다.
+                srts=info.get("srts") or {})
             res["uploaded"] = f"{pub['url']} ({meta['privacy']})"
             res["playlist"] = pub.get("playlist_id")
             res["i18n"] = {"localized": pub.get("localized", []), "captions": pub.get("captions", [])}
