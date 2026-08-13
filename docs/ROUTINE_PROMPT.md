@@ -16,7 +16,7 @@ numbers, charts, transitions) with a single-narrator voiceover. There are NO cha
 ### THIS ROUTINE'S TOPIC (edit these two lines per routine) ###
 TOPIC_NAME: 정치            # one of: 연애 / 정치 / 주식 / 경제 / 해외
 TOPIC_SLUG: politics         # one of: love / politics / stock / economy / world
-PRIVACY: unlisted            # politics -> unlisted ; all others -> public
+PRIVACY: public              # ★전 토픽 public (정치 포함)
 ##############################################################
 Only pick news that belongs to THIS routine's TOPIC_NAME. Ignore other categories.
 
