@@ -267,7 +267,10 @@ def add_caption_tracks(video_id: str, srt_path: str, langs: list[str] | None = N
     langs = langs or LANGS
     if not langs:
         return []
-    yt = _service(["forcessl"], [SCOPE_FORCE])
+    # forcessl 전용 토큰이 정석이지만, force-ssl 을 포함해 재발급한 token_novel 로도 통한다
+    # (force-ssl 은 youtube/upload 를 포함하는 상위 스코프). 스코프가 모자라면 _service 가
+    # 리프레시에서 걸러내거나 아래 insert 가 403 → 그 언어만 경고 남기고 넘어간다.
+    yt = _service(["forcessl", "novel"], [SCOPE_FORCE])
     if yt is None:
         sys.stderr.write(
             "[warn] 자막 트랙 스킵 — force-ssl 토큰 없음(captions API 는 이 스코프가 필수).\n"
@@ -322,9 +325,23 @@ def main() -> int:
     config.load_dotenv()
 
     if args.auth_only:
-        from google_auth_oauthlib.flow import InstalledAppFlow
+        try:
+            from google_auth_oauthlib.flow import InstalledAppFlow
+        except ImportError:
+            print("[error] 의존성 없음 — 먼저:  pip install google-auth-oauthlib "
+                  "google-api-python-client google-auth-httplib2")
+            return 1
         secret = (config.env("YT_CLIENT_SECRET_NOVEL") or config.env("YT_CLIENT_SECRET")
                   or str(config.ROOT / "pipeline/secrets/client_secret.json"))
+        if not os.path.exists(secret):
+            print(f"[error] OAuth 클라이언트 파일이 없습니다: {secret}\n"
+                  "  Google Cloud Console → API 및 서비스 → 사용자 인증 정보 →\n"
+                  "  OAuth 2.0 클라이언트 ID(데스크톱 앱) → JSON 다운로드 →\n"
+                  f"  {secret} 로 저장한 뒤 다시 실행하세요.\n"
+                  "  ⚠️ 기존 파이프라인이 쓰는 것과 ★같은 클라이언트여야 합니다.")
+            return 1
+        print("브라우저가 열립니다. ⚠️ 기존 업로드와 ★같은 구글 계정/같은 채널을 고르세요.\n"
+              "   (Google 미검증 앱 경고가 뜨면 '고급 → 안전하지 않음(계속)')")
         # force-ssl 은 상위 스코프라 업로드/재생목록도 포함해 발급해둔다(이 토큰만 따로 쓴다).
         creds = InstalledAppFlow.from_client_secrets_file(
             secret, [SCOPE_FORCE, SCOPE_MANAGE, SCOPE_UPLOAD]).run_local_server(port=0)
