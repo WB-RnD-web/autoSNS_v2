@@ -186,10 +186,12 @@ def add_to_playlist(yt, playlist_id: str, video_id: str, retries: int = 4) -> No
 def publish(video: str, title: str, description: str, privacy: str,
             playlist_title: str = "", tags: list[str] | None = None,
             category_id: str | None = None, thumbnail: str | None = None,
-            srt: str | None = None) -> dict:
+            srt: str | None = None, localizations: dict | None = None,
+            srts: dict | None = None) -> dict:
     """업로드 → 썸네일 → 재생목록 → ★다국어(현지화 + 선택적 자막 트랙).
 
-    srt 를 주면 그 언어들로 자막 트랙까지 올린다(400 units/언어라 SCP 처럼 편수가
+    localizations/srts 는 ★루틴이 스펙에 써준 번역 — 번역 API 비용이 들지 않는다.
+    srts 를 주면 그 언어들로 자막 트랙까지 올린다(400 units/언어라 SCP 처럼 편수가
     적은 파이프라인만 준다). 현지화(50 units)는 전 토픽 기본 적용.
     """
     yt = get_service()
@@ -212,7 +214,7 @@ def publish(video: str, title: str, description: str, privacy: str,
     # 다국어는 전부 best-effort — 여기서 뭐가 터져도 업로드는 이미 끝났다.
     try:
         import yt_i18n
-        res.update(yt_i18n.apply(vid, srt))
+        res.update(yt_i18n.apply(vid, srt, localizations=localizations, srts=srts))
     except Exception as e:  # noqa: BLE001
         print(f"   ⚠️ 다국어 처리 실패(업로드는 성공): {e}")
     return res

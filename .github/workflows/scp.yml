@@ -41,8 +41,8 @@ jobs:
     timeout-minutes: 45
     env:
       TZ: Asia/Seoul
-      # ★다국어: 제목·설명 현지화(50 units) + 번역 자막 트랙(400 units/언어).
-      #   자막 트랙은 편수가 적은 SCP 에만 건다(금 1편 + 토 1편). 끄려면 vars 로 0.
+      # ★다국어: 번역은 '루틴이' 스펙에 써준다 → 번역 API 비용 0원.
+      #   ANTHROPIC_API_KEY 는 루틴이 번역을 빠뜨렸을 때만 쓰는 ★선택적 폴백이다(없어도 정상).
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL || 'claude-sonnet-4-6' }}
       I18N_LOCALIZE: ${{ vars.I18N_LOCALIZE || '1' }}

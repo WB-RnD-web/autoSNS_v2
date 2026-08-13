@@ -157,17 +157,25 @@ def _srt_time(t):
     return f"{h:02d}:{m:02d}:{s:02d},{ms:03d}"
 
 
-def build_srt(segments, durs, path) -> str:
-    """번인 자막과 ★같은 타이밍의 SRT — 유튜브 번역 자막 트랙(yt_i18n)의 원본이 된다.
+def build_srt(segments, durs, path, key="text") -> str | None:
+    """번인 자막과 ★같은 타이밍의 SRT — 유튜브 자막 트랙의 원본이 된다.
 
-    ffmpeg 로 ASS→SRT 변환하면 `<font face=… size=…>` 태그가 딸려 나와 번역이 더러워진다.
+    ffmpeg 로 ASS→SRT 변환하면 `<font face=… size=…>` 태그가 딸려 나와 지저분해진다.
     타이밍 계산은 build_ass 와 동일하므로 여기서 바로 만든다.
+
+    ★key 로 번역 자막도 같은 함수로 만든다: 루틴이 segments[i]["text_en"] 을 써주면
+    key="text_en" 으로 부르면 된다. 타이밍은 한국어와 ★완전히 동일하므로 싱크가 어긋날
+    수 없다(번역 API 로 SRT 를 통째로 옮길 때 생기던 개수 불일치 문제가 원천적으로 없다).
+    해당 key 가 하나도 없으면 None — 호출측이 그 언어를 스킵한다.
     """
+    if not any((seg.get(key) or "").strip() for seg in segments):
+        return None
     lines, t = [], LEAD_IN
     for i, seg in enumerate(segments):
         d = durs[i]
-        lines.append(f"{i + 1}\n{_srt_time(t)} --> {_srt_time(t + d)}\n"
-                     f"{(seg.get('text') or '').strip()}\n")
+        # 특정 세그먼트만 번역이 비면 한국어로 메운다(자막이 통째로 사라지는 것보다 낫다)
+        text = (seg.get(key) or seg.get("text") or "").strip()
+        lines.append(f"{i + 1}\n{_srt_time(t)} --> {_srt_time(t + d)}\n{text}\n")
         t += d + (SEG_GAP if i < len(segments) - 1 else 0)
     with open(path, "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
