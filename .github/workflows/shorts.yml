@@ -174,7 +174,7 @@ jobs:
             exit 0
           fi
           cd pipeline
-          # privacy: push(운영)는 JSON privacy 준수(politics=unlisted, 그 외=public).
+          # privacy: push(운영)는 JSON privacy 준수(★현재 전 토픽 public — 정치도 포함).
           #          강제 private 은 수동 테스트(workflow_dispatch)에서 force_private=true 일 때만.
           python run_pipeline.py $(for f in $FILES; do echo "../$f"; done) \
             --use-ledger --log ../output/run_log.json \
