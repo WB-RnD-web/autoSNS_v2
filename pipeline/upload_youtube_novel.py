@@ -151,12 +151,35 @@ def ensure_playlist(yt, title: str, description: str = "", privacy: str = "publi
     return create_playlist(yt, title, description, privacy)
 
 
-def add_to_playlist(yt, playlist_id: str, video_id: str) -> None:
-    yt.playlistItems().insert(
-        part="snippet",
-        body={"snippet": {"playlistId": playlist_id,
-                          "resourceId": {"kind": "youtube#video", "videoId": video_id}}}).execute()
-    print(f"   ＋ 재생목록에 추가: {video_id} → {playlist_id}")
+def add_to_playlist(yt, playlist_id: str, video_id: str, retries: int = 4) -> None:
+    """영상을 재생목록에 추가. ★일시 오류(409/503/500)는 백오프 재시도.
+
+    ★막 생성한 재생목록에 곧바로 추가하면 유튜브가 아직 준비되지 않아
+      409 "The operation was aborted." (reason=SERVICE_UNAVAILABLE) 을 돌려주는 레이스가 있다.
+      (실측: ASMR 2026-07-10, SCP 2026-08-13 — 둘 다 '재생목록 생성 직후' 첫 추가에서 발생)
+      재시도하면 대부분 통과하므로, 여기서 조용히 삼키지 말고 몇 번 다시 시도한다.
+    """
+    import time as _t
+    last = None
+    for attempt in range(1, retries + 1):
+        try:
+            yt.playlistItems().insert(
+                part="snippet",
+                body={"snippet": {"playlistId": playlist_id,
+                                  "resourceId": {"kind": "youtube#video", "videoId": video_id}}}).execute()
+            print(f"   ＋ 재생목록에 추가: {video_id} → {playlist_id}"
+                  + (f" (재시도 {attempt}회째 성공)" if attempt > 1 else ""))
+            return
+        except Exception as e:  # noqa: BLE001
+            last = e
+            code = getattr(getattr(e, "resp", None), "status", None)
+            if code not in (409, 500, 503) or attempt == retries:
+                raise
+            wait = min(2 ** attempt, 15)
+            print(f"   … 재생목록 추가 {code} 일시오류 — {wait}s 후 재시도({attempt}/{retries - 1})")
+            _t.sleep(wait)
+    if last:
+        raise last
 
 
 # ── 고수준 퍼블리시(업로드 → 재생목록 보장 → 추가) ──

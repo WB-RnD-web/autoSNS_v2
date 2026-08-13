@@ -22,6 +22,36 @@ def _env(*names: str, default: str | None = None) -> str | None:
     return default
 
 
+# FLUX 엔드포인트 프롬프트 상한(초과 시 422 string_too_long 로 거부된다).
+MAX_PROMPT = int(os.environ.get("FLUX_MAX_PROMPT", "800"))
+
+
+def _fit_prompt(prompt: str, limit: int = MAX_PROMPT) -> str:
+    """상한 초과 프롬프트를 ★머리+꼬리 보존 방식으로 줄인다.
+
+    루틴이 쓰는 프롬프트는 '피사체·구도(앞) … 스타일 접미사(뒤)' 구조라
+    앞에서만 자르면 스타일 접미사가 통째로 날아가 장면끼리 톤이 깨진다
+    (실측: SCP background.prompt 990자, 스타일 접미사가 75% 지점에서 시작).
+    그래서 앞부분(피사체)과 뒷부분(스타일)을 모두 남기고 가운데(부가 묘사)를 버린다.
+    경계는 쉼표에서 끊어 문구가 중간에 잘리지 않게 한다.
+    """
+    p = (prompt or "").strip()
+    if len(p) <= limit:
+        return p
+    tail_want = min(int(limit * 0.35), 260)          # 스타일 접미사 보존 몫
+    tail = p[-tail_want:]
+    cut = tail.find(", ")                            # 쉼표 경계부터 시작
+    tail = tail[cut + 2:] if cut != -1 else tail
+    head_want = limit - len(tail) - 2
+    head = p[:head_want]
+    cut = head.rfind(", ")
+    if cut > head_want * 0.5:                        # 너무 많이 깎이지 않을 때만
+        head = head[:cut]
+    out = f"{head}, {tail}"
+    sys.stderr.write(f"[info] FLUX 프롬프트 {len(p)}자 → {len(out)}자로 축약(머리+스타일 접미사 보존)\n")
+    return out[:limit]
+
+
 def _extract_img_b64(body) -> str | None:
     """응답에서 base64 이미지 추출(모델별 응답 키 편차 대비 방어적).
 
@@ -101,7 +131,7 @@ def flux_image(prompt: str, out_png: str, w: int = 1344, h: int = 768, seed: int
     import base64 as _b64
     import time as _time
     url = _env("FLUX_URL", "NOVEL_FLUX_URL", default=DEFAULT_URL)
-    payload = json.dumps({"prompt": prompt[:9000], "width": w, "height": h,
+    payload = json.dumps({"prompt": _fit_prompt(prompt), "width": w, "height": h,
                           "seed": int(seed), "steps": 4}).encode()
     timeout = int(_env("FLUX_TIMEOUT", "NOVEL_FLUX_TIMEOUT", default="150"))
     retries = int(_env("FLUX_RETRIES", "NOVEL_FLUX_RETRIES", default="2"))
