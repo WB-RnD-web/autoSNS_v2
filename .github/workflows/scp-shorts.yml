@@ -45,6 +45,13 @@ jobs:
     timeout-minutes: 30
     env:
       TZ: Asia/Seoul
+      # ★다국어: 제목·설명 현지화(50 units) + 번역 자막 트랙(400 units/언어).
+      #   자막 트랙은 편수가 적은 SCP 에만 건다(금 1편 + 토 1편). 끄려면 vars 로 0.
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL || 'claude-sonnet-4-6' }}
+      I18N_LOCALIZE: ${{ vars.I18N_LOCALIZE || '1' }}
+      I18N_CAPTIONS: ${{ vars.I18N_CAPTIONS || '1' }}
+      I18N_LANGS: ${{ vars.I18N_LANGS || 'en,ja,zh-Hant' }}
       # 이미지: 자체 qwen-image(wbSpark) 우선 → 실패 시 FLUX 폴백.
       #   쇼츠는 '개체를 정면에 크게' 라 이미지 품질이 곧 조회수다. 뒤집으려면 vars 로 flux.
       SCP_SHORTS_IMG: ${{ vars.SCP_SHORTS_IMG || 'qwen' }}
@@ -111,6 +118,7 @@ jobs:
           YT_CLIENT_SECRET_JSON: ${{ secrets.YT_CLIENT_SECRET_JSON }}
           YT_TOKEN_JSON_NOVEL: ${{ secrets.YT_TOKEN_JSON_NOVEL }}
           YT_TOKEN_JSON: ${{ secrets.YT_TOKEN_JSON }}
+          YT_TOKEN_JSON_FORCESSL: ${{ secrets.YT_TOKEN_JSON_FORCESSL }}
         run: |
           mkdir -p pipeline/secrets
           if [ -n "$YT_CLIENT_SECRET_JSON" ]; then
@@ -124,6 +132,11 @@ jobs:
             echo "쇼츠 토큰 폴백(재생목록·전편 조회는 스코프 부족 시 자동 스킵)"
           else
             echo "⚠️ 업로드 토큰 없음 — 렌더만 진행"
+          fi
+          # ★자막 트랙(captions API)은 youtube.force-ssl 스코프가 필수다. 없으면 자동 스킵.
+          if [ -n "$YT_TOKEN_JSON_FORCESSL" ]; then
+            printf '%s' "$YT_TOKEN_JSON_FORCESSL" > pipeline/secrets/token_forcessl.json
+            echo "force-ssl 토큰 준비됨 — 번역 자막 트랙 업로드 가능"
           fi
 
       - name: 렌더 + 업로드

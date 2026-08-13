@@ -185,7 +185,13 @@ def add_to_playlist(yt, playlist_id: str, video_id: str, retries: int = 4) -> No
 # ── 고수준 퍼블리시(업로드 → 재생목록 보장 → 추가) ──
 def publish(video: str, title: str, description: str, privacy: str,
             playlist_title: str = "", tags: list[str] | None = None,
-            category_id: str | None = None, thumbnail: str | None = None) -> dict:
+            category_id: str | None = None, thumbnail: str | None = None,
+            srt: str | None = None) -> dict:
+    """업로드 → 썸네일 → 재생목록 → ★다국어(현지화 + 선택적 자막 트랙).
+
+    srt 를 주면 그 언어들로 자막 트랙까지 올린다(400 units/언어라 SCP 처럼 편수가
+    적은 파이프라인만 준다). 현지화(50 units)는 전 토픽 기본 적용.
+    """
     yt = get_service()
     vid = upload_video(yt, video, title, description, privacy, tags, category_id)
     res = {"video_id": vid, "url": f"https://youtu.be/{vid}", "privacy": privacy, "playlist_id": None}
@@ -203,6 +209,12 @@ def publish(video: str, title: str, description: str, privacy: str,
         except Exception as e:  # noqa: BLE001
             res["playlist_error"] = str(e)
             print(f"   ⚠️ 재생목록 처리 실패(업로드는 성공): {e}")
+    # 다국어는 전부 best-effort — 여기서 뭐가 터져도 업로드는 이미 끝났다.
+    try:
+        import yt_i18n
+        res.update(yt_i18n.apply(vid, srt))
+    except Exception as e:  # noqa: BLE001
+        print(f"   ⚠️ 다국어 처리 실패(업로드는 성공): {e}")
     return res
 
 

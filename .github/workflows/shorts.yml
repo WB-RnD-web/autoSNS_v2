@@ -46,9 +46,14 @@ jobs:
     env:
       TZ: Asia/Seoul
       DEFAULT_PRIVACY: ${{ vars.DEFAULT_PRIVACY || 'private' }}
-      # 장면 스펙 자동 추출에 사용(없으면 output/specs/ 사전 스펙 필요)
+      # 장면 스펙 자동 추출 + 다국어 제목/설명 번역에 사용
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL || 'claude-sonnet-4-6' }}
+      # ★다국어: 제목·설명 현지화만(50 units). 자막 트랙(400/언어)은 뉴스 쇼츠엔 안 건다.
+      #   끄려면 repo variable I18N_LOCALIZE=0.
+      I18N_LOCALIZE: ${{ vars.I18N_LOCALIZE || '1' }}
+      I18N_CAPTIONS: "0"
+      I18N_LANGS: ${{ vars.I18N_LANGS || 'en,ja,zh-Hant' }}
       # IG Reels + Threads (자격증명 있을 때만 동작 — 없으면 자동 스킵)
       CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
       CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
@@ -138,6 +143,10 @@ jobs:
         env:
           YT_CLIENT_SECRET_JSON: ${{ secrets.YT_CLIENT_SECRET_JSON }}
           YT_TOKEN_JSON: ${{ secrets.YT_TOKEN_JSON }}
+          # ★현지화(videos.update)는 `youtube` 스코프가 필요한데 쇼츠 토큰엔 없다.
+          #   같은 채널의 소설 토큰이 그 스코프를 갖고 있어 그걸 빌려 쓴다(업로드는 여전히
+          #   token.json 으로 한다 — 이 파일은 yt_i18n 만 읽는다). 없으면 현지화만 스킵.
+          YT_TOKEN_JSON_NOVEL: ${{ secrets.YT_TOKEN_JSON_NOVEL }}
         run: |
           mkdir -p pipeline/secrets
           if [ -n "$YT_CLIENT_SECRET_JSON" ]; then
@@ -145,6 +154,12 @@ jobs:
           fi
           if [ -n "$YT_TOKEN_JSON" ]; then
             printf '%s' "$YT_TOKEN_JSON" > pipeline/secrets/token.json
+          fi
+          if [ -n "$YT_TOKEN_JSON_NOVEL" ]; then
+            printf '%s' "$YT_TOKEN_JSON_NOVEL" > pipeline/secrets/token_novel.json
+            echo "현지화용 확장 스코프 토큰 준비됨"
+          else
+            echo "⚠️ YT_TOKEN_JSON_NOVEL 없음 — 제목·설명 현지화는 스킵된다(업로드는 정상)"
           fi
 
       # 4) 처리 대상 스토리보드 결정

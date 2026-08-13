@@ -166,9 +166,11 @@ def process(spec_path: str, args, led) -> dict:
             pub = upload_youtube_novel.publish(
                 res["video"], meta["title"], meta["description"], meta["privacy"],
                 playlist_title=meta["playlist"], tags=meta["tags"],
-                category_id=meta["category_id"], thumbnail=info.get("thumbnail"))
+                category_id=meta["category_id"], thumbnail=info.get("thumbnail"),
+                srt=info.get("srt"))
             res["uploaded"] = f"{pub['url']} ({meta['privacy']})"
             res["playlist"] = pub.get("playlist_id")
+            res["i18n"] = {"localized": pub.get("localized", []), "captions": pub.get("captions", [])}
             if led is not None:
                 ledgermod.mark(led, _led_key(spec), pub["video_id"], meta["privacy"],
                                time.time(), args.ledger_path)
@@ -225,6 +227,9 @@ def main() -> int:
             line += f", yt={r['uploaded']}"
         if r.get("playlist"):
             line += f", playlist={r['playlist']}"
+        if r.get("i18n"):
+            line += (f", 현지화={','.join(r['i18n']['localized']) or '없음'}"
+                     f", 자막={','.join(r['i18n']['captions']) or '없음'}")
         if r["error"]:
             line += f"  ⚠️ {r['error']}"; rc = 1
         print(line)
