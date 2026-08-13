@@ -104,6 +104,21 @@ def gen_scene_images(scenes: list[dict], workdir: str) -> list[str]:
     return out
 
 
+def xfade_chain(images: list[str], total: float, fps: int, xfade: float) -> tuple[list[str], float, float]:
+    """xfade 체인용 (입력 인자, 장면길이 d, 전환길이 x) 계산.
+
+    최종 길이 = Σd - (n-1)*x  →  d = (total + (n-1)*x)/n.
+    쇼츠 렌더러(scp_shorts_render)도 이 식을 그대로 쓴다 — 한 곳에서만 유지한다.
+    """
+    n = len(images)
+    x = min(xfade, max(0.4, total / n / 4))
+    d = (total + (n - 1) * x) / n
+    ins: list[str] = []
+    for img in images:
+        ins += ["-loop", "1", "-t", f"{d:.3f}", "-framerate", str(fps), "-i", os.path.abspath(img)]
+    return ins, d, x
+
+
 # ── 챕터 타임스탬프 재계산 ─────────────────────────────
 def recompute_chapters(spec: dict, seg_durs: list[float]) -> list[str]:
     """루틴 챕터(est_sec 기준) → 실제 TTS 길이 기준으로 재매핑.
@@ -168,12 +183,7 @@ def render_video(images: list[str], narration_m4a: str, ass_path: str,
         SR.sh(cmd, cwd=wd)
         return out_mp4
 
-    # xfade 체인: 최종 길이 = Σd - (n-1)*x  →  d = (total + (n-1)*x)/n
-    x = min(XFADE, max(0.4, total / n / 4))
-    d = (total + (n - 1) * x) / n
-    ins = []
-    for img in images:
-        ins += ["-loop", "1", "-t", f"{d:.3f}", "-framerate", str(FPS), "-i", os.path.abspath(img)]
+    ins, d, x = xfade_chain(images, total, FPS, XFADE)
     ins += ["-i", os.path.abspath(narration_m4a)]
 
     fc, cur = [], None
