@@ -244,6 +244,17 @@ def render(spec: dict, out_mp4: str, workdir: str) -> dict:
     ass_path = os.path.join(workdir, "captions.ass")
     SR.build_ass(segments, durs, font_family, ass_path)
     srt_path = SR.build_srt(segments, durs, os.path.join(workdir, "captions.srt"))
+    # ★루틴이 segments[i]["text_en"] 등을 써줬다면 같은 타이밍으로 번역 자막도 만든다.
+    #   번역 API 를 쓰지 않으므로 비용 0이고, 타이밍이 한국어와 동일해 싱크가 어긋날 수 없다.
+    srts = {}
+    for _lang in [l.strip() for l in os.environ.get("I18N_LANGS", "en,ja,zh-Hant").split(",") if l.strip()]:
+        _p = SR.build_srt(segments, durs,
+                          os.path.join(workdir, f"captions_{_lang.replace('-', '_')}.srt"),
+                          key=f"text_{_lang.replace('-', '_')}")
+        if _p:
+            srts[_lang] = _p
+    if srts:
+        print(f"  · 루틴 번역 자막 {len(srts)}개 언어: {', '.join(srts)}")
     _lap(t0, "내레이션+자막")
 
     images = gen_scene_images(resolve_scenes(spec), workdir)
@@ -257,7 +268,7 @@ def render(spec: dict, out_mp4: str, workdir: str) -> dict:
     chapters = recompute_chapters(spec, durs)
     print(f"✅ {out_mp4}  ({dur:.0f}s, {size_mb:.1f}MB, 장면 {len(images)}개, {len(segments)} segments)")
     return {"out": out_mp4, "duration_sec": round(dur, 1), "size_mb": round(size_mb, 1),
-            "scenes": len(images), "chapters": chapters, "srt": srt_path}
+            "scenes": len(images), "chapters": chapters, "srt": srt_path, "srts": srts}
 
 
 def main() -> int:

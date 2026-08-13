@@ -49,8 +49,8 @@ jobs:
       # 장면 스펙 자동 추출 + 다국어 제목/설명 번역에 사용
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL || 'claude-sonnet-4-6' }}
-      # ★다국어: 제목·설명 현지화만(50 units). 자막 트랙(400/언어)은 뉴스 쇼츠엔 안 건다.
-      #   끄려면 repo variable I18N_LOCALIZE=0.
+      # ★다국어: 번역은 '루틴이' 스펙에 써준다 → 번역 API 비용 0원.
+      #   ANTHROPIC_API_KEY 는 루틴이 번역을 빠뜨렸을 때만 쓰는 ★선택적 폴백이다(없어도 정상).
       I18N_LOCALIZE: ${{ vars.I18N_LOCALIZE || '1' }}
       I18N_CAPTIONS: "0"
       I18N_LANGS: ${{ vars.I18N_LANGS || 'en,ja,zh-Hant' }}
