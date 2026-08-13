@@ -39,6 +39,12 @@ jobs:
     timeout-minutes: 35   # 실측 최대 29분, 인코딩 최적화 후 단축 예상
     env:
       TZ: Asia/Seoul
+      # ★다국어: 제목·설명 현지화만(50 units). 자막 트랙은 안 건다(낭독이 거의 없음).
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL || 'claude-sonnet-4-6' }}
+      I18N_LOCALIZE: ${{ vars.I18N_LOCALIZE || '1' }}
+      I18N_CAPTIONS: "0"
+      I18N_LANGS: ${{ vars.I18N_LANGS || 'en,ja,zh-Hant' }}
       # 배경/썸네일 이미지(FLUX klein-4b, 소설과 동일 엔드포인트)
       NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
       # ASMR 소스 음원(Freesound, CC0)

@@ -400,6 +400,7 @@ def render(spec: dict, out_mp4: str, workdir: str) -> dict:
     SR.build_narration(len(segments), durs, workdir, narration)
     ass_path = os.path.join(workdir, "captions.ass")
     build_ass(segments, durs, font_family, ass_path)
+    srt_path = SR.build_srt(segments, durs, os.path.join(workdir, "captions.srt"))
     _lap(t0, "내레이션+자막")
 
     want = max(1, min(MAX_SCENES, int(total // MIN_SCENE_SEC) or 1))
@@ -426,7 +427,8 @@ def render(spec: dict, out_mp4: str, workdir: str) -> dict:
         thumb = None
     print(f"✅ {out_mp4}  ({dur:.0f}s, {size_mb:.1f}MB, 장면 {len(images)}개, 자막 {len(segments)}장)")
     return {"out": out_mp4, "duration_sec": round(dur, 1), "size_mb": round(size_mb, 1),
-            "scenes": len(images), "captions": len(segments), "thumbnail": thumb, "shorts": sh}
+            "scenes": len(images), "captions": len(segments), "thumbnail": thumb,
+            "srt": srt_path, "shorts": sh}
 
 
 def main() -> int:
