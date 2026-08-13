@@ -47,7 +47,7 @@ def get_service():
 
 
 def upload(video: str, title: str, description: str, privacy: str = "private",
-           tags: list[str] | None = None) -> str:
+           tags: list[str] | None = None, localizations: dict | None = None) -> str:
     from googleapiclient.http import MediaFileUpload
     yt = get_service()
     body = {
@@ -70,7 +70,7 @@ def upload(video: str, title: str, description: str, privacy: str = "private",
     #   token_novel.json(youtube 스코프)을 찾아 쓴다. 없으면 조용히 스킵.
     try:
         import yt_i18n
-        yt_i18n.localize(vid)
+        yt_i18n.localize(vid, localizations=localizations)
     except Exception as e:  # noqa: BLE001
         print(f"   ⚠️ 현지화 실패(업로드는 성공): {e}")
     return vid
