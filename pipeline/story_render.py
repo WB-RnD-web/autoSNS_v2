@@ -150,6 +150,30 @@ def _ass_text(s):
     return (s or "").replace("\\", "\\\\").replace("{", "(").replace("}", ")").replace("\n", "\\N").strip()
 
 
+def _srt_time(t):
+    if t < 0:
+        t = 0
+    ms = int(round(t * 1000)); h, ms = divmod(ms, 3600000); m, ms = divmod(ms, 60000); s, ms = divmod(ms, 1000)
+    return f"{h:02d}:{m:02d}:{s:02d},{ms:03d}"
+
+
+def build_srt(segments, durs, path) -> str:
+    """번인 자막과 ★같은 타이밍의 SRT — 유튜브 번역 자막 트랙(yt_i18n)의 원본이 된다.
+
+    ffmpeg 로 ASS→SRT 변환하면 `<font face=… size=…>` 태그가 딸려 나와 번역이 더러워진다.
+    타이밍 계산은 build_ass 와 동일하므로 여기서 바로 만든다.
+    """
+    lines, t = [], LEAD_IN
+    for i, seg in enumerate(segments):
+        d = durs[i]
+        lines.append(f"{i + 1}\n{_srt_time(t)} --> {_srt_time(t + d)}\n"
+                     f"{(seg.get('text') or '').strip()}\n")
+        t += d + (SEG_GAP if i < len(segments) - 1 else 0)
+    with open(path, "w", encoding="utf-8") as f:
+        f.write("\n".join(lines))
+    return path
+
+
 def build_ass(segments, durs, font_family, path):
     head = f"""[Script Info]
 ScriptType: v4.00+

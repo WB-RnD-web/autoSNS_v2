@@ -86,6 +86,7 @@ def process(spec_path: str, args, led) -> dict:
         res.update({"video": info["out"], "duration_sec": info["duration_sec"],
                     "size_mb": info["size_mb"], "scenes": info["scenes"]})
         chapters = info.get("chapters") or []
+        srt = info.get("srt")   # ★번역 자막 트랙 원본(전 토픽 중 SCP 만 자막까지 건다)
     except Exception as e:  # noqa: BLE001
         res["error"] = f"render: {e}"
         return res
@@ -116,9 +117,10 @@ def process(spec_path: str, args, led) -> dict:
             pub = upload_youtube_novel.publish(
                 res["video"], meta["title"], meta["description"], meta["privacy"],
                 playlist_title=meta["playlist"], tags=meta["tags"],
-                category_id=meta["category_id"], thumbnail=thumb)
+                category_id=meta["category_id"], thumbnail=thumb, srt=srt)
             res["uploaded"] = f"{pub['url']} ({meta['privacy']})"
             res["playlist"] = pub.get("playlist_id")
+            res["i18n"] = {"localized": pub.get("localized", []), "captions": pub.get("captions", [])}
             if led is not None:
                 ledgermod.mark(led, _led_key(spec), pub["video_id"], meta["privacy"],
                                time.time(), args.ledger_path)
@@ -171,6 +173,9 @@ def main() -> int:
             line += f", yt={r['uploaded']}"
         if r.get("playlist"):
             line += f", playlist={r['playlist']}"
+        if r.get("i18n"):
+            line += (f", 현지화={','.join(r['i18n']['localized']) or '없음'}"
+                     f", 자막={','.join(r['i18n']['captions']) or '없음'}")
         if r["error"]:
             line += f"  ⚠️ {r['error']}"; rc = 1
         print(line)
