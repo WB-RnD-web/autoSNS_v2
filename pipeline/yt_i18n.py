@@ -313,9 +313,91 @@ def apply(video_id: str, srt_path: str | None = None, langs: list[str] | None = 
             "captions": add_caption_tracks(video_id, srt_path or "", langs)}
 
 
+def check() -> int:
+    """가진 토큰들을 점검한다 — ★같은 채널인가 · 같은 OAuth 클라이언트인가 · 스코프가 맞는가.
+
+    Cloud 프로젝트/앱 이름이 레포 이름과 달라도 아무 상관 없다. 실제로 문제가 되는 건
+      ① 채널   : 토큰이 ★영상이 올라가는 그 채널의 것이어야 한다(다르면 자막이 404).
+      ② client_id : 같으면 같은 Cloud 프로젝트 = ★쿼터 10,000/일을 공유한다.
+                    다르면 쿼터가 따로 잡히고, 새 프로젝트는 동의 화면이 보통 '테스트'라
+                    ★리프레시 토큰이 7일 만에 죽는다.
+      ③ 스코프 : captions 는 force-ssl, localizations 는 youtube 가 필요하다.
+    """
+    try:
+        from google.auth.transport.requests import Request
+        from google.oauth2.credentials import Credentials
+        from googleapiclient.discovery import build
+    except ImportError:
+        print("[error] pip install google-auth-oauthlib google-api-python-client google-auth-httplib2")
+        return 1
+
+    rows, clients, channels = [], set(), set()
+    for kind, p in _token_paths().items():
+        if not p or not os.path.exists(p):
+            rows.append((kind, os.path.basename(p or "-"), "(파일 없음)", "-", "-"))
+            continue
+        try:
+            with open(p, encoding="utf-8") as f:
+                raw = json.load(f)
+        except (OSError, json.JSONDecodeError) as e:
+            rows.append((kind, os.path.basename(p), f"(읽기 실패: {e})", "-", "-"))
+            continue
+        cid = raw.get("client_id", "")
+        scopes = raw.get("scopes") or []
+        clients.add(cid)
+        short = [s.rsplit("/", 1)[-1] for s in scopes]
+        ch = "-"
+        try:
+            creds = Credentials.from_authorized_user_file(p, scopes or None)
+            if creds and creds.expired and creds.refresh_token:
+                creds.refresh(Request())
+            r = build("youtube", "v3", credentials=creds).channels().list(
+                part="snippet", mine=True).execute()
+            it = (r.get("items") or [{}])[0]
+            ch = f"{(it.get('snippet') or {}).get('title', '?')} ({it.get('id', '?')})"
+            channels.add(it.get("id", "?"))
+        except Exception as e:  # noqa: BLE001
+            # youtube.upload 단독 토큰은 채널 조회 권한이 없다 — 정상이다.
+            ch = ("(조회 불가 — upload 전용 스코프)" if SCOPE_MANAGE not in scopes
+                  and SCOPE_FORCE not in scopes else f"(조회 실패: {str(e)[:60]})")
+        rows.append((kind, os.path.basename(p), cid[:28] + "…" if cid else "-",
+                     ",".join(short) or "-", ch))
+
+    print("\n──── 토큰 점검 ────")
+    for kind, fn, cid, sc, ch in rows:
+        print(f"  [{kind:8}] {fn}\n      client_id : {cid}\n      scopes    : {sc}\n"
+              f"      channel   : {ch}")
+
+    print("\n──── 판정 ────")
+    clients.discard("")
+    if len(clients) <= 1:
+        print("  ✅ OAuth 클라이언트 동일 — 같은 Cloud 프로젝트(쿼터 10,000/일 공유)")
+    else:
+        print(f"  ⚠️ OAuth 클라이언트가 {len(clients)}종류 — Cloud 프로젝트가 다르다.\n"
+              "     쿼터가 따로 잡히고, 새 프로젝트는 동의 화면이 '테스트'면\n"
+              "     ★리프레시 토큰이 7일 만에 만료된다(동의 화면을 '프로덕션'으로 게시할 것).")
+    channels.discard("?")
+    if not channels:
+        print("  ⚠️ 채널을 하나도 확인하지 못했다 — 토큰 만료/스코프 부족일 수 있다"
+              "(위 channel 줄 확인).")
+    elif len(channels) == 1:
+        print(f"  ✅ 채널 동일 ({next(iter(channels))})")
+    else:
+        print(f"  ❌ 채널이 {len(channels)}개로 갈린다 — 자막/현지화가 엉뚱한 영상에 붙거나 404.")
+    fs = any("youtube.force-ssl" in r[3] for r in rows)
+    mg = any(("youtube" in r[3].split(",")) or "youtube.force-ssl" in r[3] for r in rows)
+    print(f"  {'✅' if mg else '❌'} 현지화(videos.update) 가능 — `youtube` 스코프 "
+          f"{'있음' if mg else '없음'}")
+    print(f"  {'✅' if fs else '⏭️ '} 자막 트랙(captions) 가능 — `youtube.force-ssl` 스코프 "
+          f"{'있음' if fs else '없음(자막만 스킵됨, 나머지는 정상)'}")
+    return 0
+
+
 def main() -> int:
     import argparse
     ap = argparse.ArgumentParser(description="유튜브 다국어(현지화/자막 트랙)")
+    ap.add_argument("--check", action="store_true",
+                    help="가진 토큰 점검(채널/클라이언트/스코프가 서로 맞는지)")
     ap.add_argument("--auth-only", action="store_true",
                     help="force-ssl 스코프 토큰 발급(자막 트랙용). 기존 토큰은 건드리지 않는다")
     ap.add_argument("--video-id", help="이 영상에 현지화/자막 적용")
@@ -323,6 +405,9 @@ def main() -> int:
     ap.add_argument("--langs", default="", help="쉼표 구분(비우면 I18N_LANGS)")
     args = ap.parse_args()
     config.load_dotenv()
+
+    if args.check:
+        return check()
 
     if args.auth_only:
         try:
