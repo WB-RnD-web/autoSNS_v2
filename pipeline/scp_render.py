@@ -243,6 +243,7 @@ def render(spec: dict, out_mp4: str, workdir: str) -> dict:
     SR.build_narration(len(segments), durs, workdir, narration)
     ass_path = os.path.join(workdir, "captions.ass")
     SR.build_ass(segments, durs, font_family, ass_path)
+    srt_path = SR.build_srt(segments, durs, os.path.join(workdir, "captions.srt"))
     _lap(t0, "내레이션+자막")
 
     images = gen_scene_images(resolve_scenes(spec), workdir)
@@ -256,7 +257,7 @@ def render(spec: dict, out_mp4: str, workdir: str) -> dict:
     chapters = recompute_chapters(spec, durs)
     print(f"✅ {out_mp4}  ({dur:.0f}s, {size_mb:.1f}MB, 장면 {len(images)}개, {len(segments)} segments)")
     return {"out": out_mp4, "duration_sec": round(dur, 1), "size_mb": round(size_mb, 1),
-            "scenes": len(images), "chapters": chapters}
+            "scenes": len(images), "chapters": chapters, "srt": srt_path}
 
 
 def main() -> int:
