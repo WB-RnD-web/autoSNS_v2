@@ -4,7 +4,8 @@
 v1 `run_daily.process_topic`의 upload 단계 로직을 그대로 옮긴다:
   - 제목 우선순위: hook_title > platforms.youtube.title > headline, 그리고 '#shorts' 자동 부착
   - 설명: platforms.youtube.description
-  - privacy: JSON "privacy" > 환경변수 DEFAULT_PRIVACY (politics=unlisted 등 JSON 존중)
+  - privacy: JSON "privacy" > 환경변수 DEFAULT_PRIVACY (★강등 없이 JSON 값을 그대로 존중.
+    현재 운영은 전 토픽 public — 정치 포함. 테스트 강제 private 은 --force-private 로만)
 실제 업로드는 v1 upload_youtube.upload() 재사용.
 
 안전장치:
@@ -83,8 +84,10 @@ def main() -> int:
               "업로드하려면 자격증명을 연결하거나 --dry-run 사용.", file=sys.stderr)
         return 1
     import upload_youtube
+    import yt_i18n
     vid = upload_youtube.upload(args.video, meta["title"], meta["description"],
-                                meta["privacy"], tags=meta["tags"])
+                                meta["privacy"], tags=meta["tags"],
+                                localizations=yt_i18n.from_spec(sb))
     print(f"✅ 업로드 완료: https://youtu.be/{vid}")
     return 0
 
