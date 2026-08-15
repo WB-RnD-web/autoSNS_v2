@@ -1,7 +1,7 @@
 # ASMR — 루틴 프롬프트 v2 (테마 순환 + ★3가지 모드)
 
 소설(novel) 루틴과 **같은 렌더러 사상(정적 배경 + 오디오) / 같은 git 플로우**.
-차이: 낭독 대신 **테마 사운드(Freesound CC0)를 1시간 트랙**으로 만든다.
+차이: 낭독 대신 **테마 사운드(Freesound CC0)를 ★3~4시간 트랙**으로 만든다.
 상태파일로 최근 테마·보이스·모드를 기억해 겹침을 피한다.
 
 **★v2 변경 — 수면용에만 갇히지 않는다.** `mode` 필드로 세 가지를 오간다:
@@ -22,7 +22,10 @@ one static cozy background image + seamless looped ambience (from Freesound, CC0
 a very quiet short narration. Audience: people who listen while falling asleep.
 
 ## 상수
-- TOPIC_SLUG: asmr · FORMAT: 16:9, 60분, 정적 배경 1장 + 오디오 1시간, 자막 없음
+- TOPIC_SLUG: asmr · FORMAT: 16:9, 정적 배경 1장 + 오디오, 자막 없음
+- ★길이: **매 회 3~4시간 사이에서 파이프라인이 랜덤으로 뽑는다**(3시간 23분 34초처럼).
+  루틴은 길이를 정하지 않는다 — `duration_min`/`duration_sec` 를 ★쓰지 마라.
+  (굳이 고정하고 싶은 회차에만 `duration_sec` 를 넣으면 그게 우선한다)
 - ★모드 로테이션: `sleep` → `trigger` → `sleep` → `mixed` 순으로 돌린다(state.json `last_mode`).
   수면용만 계속 내면 채널이 한 종류로 굳는다. 트리거는 시청 지속시간이 길고 반응(댓글)이 많다.
 - BRANCH: routine/asmr (★영구 누적 브랜치 — main 리셋 금지)
@@ -61,6 +64,27 @@ a very quiet short narration. Audience: people who listen while falling asleep.
    예: "a cozy dim bedroom window with soft rain streaks at night, warm lamp glow, calm and sleepy mood, no text"
 4. freesound.queries(영어 3~5개) = ★**바탕**. 20초 이상 이어지는 소리여야 한다(파이프라인이
    `duration:[20 TO 600]` 으로 거른다 — 짧은 건 여기서 아예 안 잡힌다).
+
+   ### ★★ must — 주제 이탈 방지 (제일 중요)
+   `must` 에 적은 말이 음원 이름/태그에 **하나도 없으면 그 음원은 버려진다.**
+   주제가 빗소리면 처음부터 끝까지 빗소리여야 하고, 모자라면 **반복하지 다른 소리로 채우지 않는다.**
+
+   - **가장 짧은 어근으로 적어라.** 파이프라인이 ★접두 일치(4글자 이상)로 본다.
+     `rain` → `rainy`·`rainfall`·`raindrops` 다 잡힌다. `train`·`brain`·`drain` 은 안 잡힌다.
+   - **접두가 안 통하는 변형은 따로 적어라.** `fire` 는 `fireplace`·`firewood` 를 잡지만
+     **`campfire` 는 못 잡는다**(뒤에 붙어서). 그런 건 `["fire","campfire"]` 로 둘 다 적는다.
+   - ★**넓은 말 금지.** `nature`·`forest`·`ambient`·`night` 를 앵커로 쓰면 새소리·바람소리·
+     발소리가 전부 통과한다. 그 테마가 **아니면 성립하지 않는 단어**를 골라라.
+
+   | 테마 | 좋은 must | 이러면 엉뚱한 게 들어온다 |
+   |---|---|---|
+   | 숲속 빗소리 | `["rain"]` | `["forest","nature"]` → 새소리·발소리 |
+   | 벽난로 | `["fire","campfire"]` | `["wood"]` → 나무 자르는 소리 |
+   | 파도 | `["wave","ocean"]` | `["water"]` → 수도꼭지·설거지 |
+   | 키보드 | `["keyboard","typing"]` | `["click"]` → 온갖 딸깍 소리 |
+
+   비우면 쿼리들의 교집합에서 자동 추출하지만(빗소리 3쿼리 → `rain`) **직접 적는 게 안전하다.**
+   런 로그의 `· 주제 앵커: [...]` 와 `주제 이탈로 버린 후보 N개` 로 확인할 수 있다.
    예(숲속 빗소리): ["gentle rain on leaves forest", "soft rain ambience no thunder", "light rain loop nature"]
    예(미용실): ["hair scissors cutting asmr", "electric razor shaving hair", "shampoo hair washing sounds"]
    예(trigger 모드의 바탕): ["quiet room tone", "soft room ambience indoor", "very quiet background hum"]
@@ -97,37 +121,43 @@ a very quiet short narration. Audience: people who listen while falling asleep.
   "date":"<DATE>","topic":"asmr","privacy":"public",
   "theme_id":"<영문 슬러그>","theme_name":"<한글 테마명>",
   "mode":"<sleep|trigger|mixed — last_mode 다음 차례>",
-  "duration_min":60,
   "narration_voice":"<female|male — last_voice 반대>",
   "narration_text":"<오늘 소리 소개 + 잘자 멘트, 2~3문장. ★mode=trigger 면 반드시 \"\">",
   "background":{"prompt":"<영어, 테마의 정적 장면, 사람 얼굴·글자 없음>"},
   "freesound":{
     "queries":["<★바탕용 영어 검색어 3~5개 — 20초 이상 이어지는 소리>"],
-    "trigger_queries":["<★단발음 영어 검색어 3~6개 — mode=trigger|mixed 일 때만>"]
+    "must":["<★주제 앵커 1~2개. 예: rain / fire / scissors. 비우면 쿼리 교집합에서 자동 추출>"],
+    "trigger_queries":["<★단발음 영어 검색어 3~6개 — mode=trigger|mixed 일 때만>"],
+    "music_queries":["<★배경 음악 영어 검색어 1~3개. 없으면 생략 — 예: calm solo piano>"]
   },
   "platforms":{
     "youtube":{
-      "title":"<이모지 + 테마 + '1시간' + 용도. 예: '🌧️ 창가 빗소리 ASMR 1시간 | 잘 때 듣는 백색소음·수면'>",
-      "thumbnail_text":"<썸네일에 크게 얹을 한글, 6~12자. 예: '창가 빗소리 1시간'>",
+      "title":"<이모지 + 테마 + ★'3시간' + 용도. 예: '🌧️ 창가 빗소리 ASMR 3시간 | 잘 때 듣는 백색소음·수면'>",
+      "thumbnail_text":"<썸네일에 크게 얹을 한글, 6~12자. 예: '창가 빗소리 3시간'>",
       "thumbnail_hook":"<이번 테마 커버 장면, 영어, 글자 없음, 아늑한 밤 무드>",
       "description":"<한 줄 소개\n\n잘 때·집중·휴식용 ASMR 백색소음입니다.\n#ASMR #백색소음 #수면 #<테마> #잠들기전 #힐링>",
       "playlist":"<채널의 ASMR 재생목록 정확한 이름 — 레포 변수 ASMR_PLAYLIST 로 고정 권장>"
     }
   },
   "credit":"음원 Freesound(CC0) · 이미지 생성",
-  "notes":"ASMR 60분 · 16:9 · 정적 배경 + 앰비언트 루프 + 낮은 나레이션 · 자막 없음."
+  "notes":"ASMR 3~4시간 · 16:9 · 정적 배경 + 루프 오디오 · 자막 없음."
 }
 
 ## 4) Self-check (커밋 전)
 - <DATE> 오늘(KST)? theme_id 가 recent_themes 와 안 겹침? narration_voice 가 last_voice 반대?
 - ★`mode` 가 last_mode 다음 차례인가? `trigger` 인데 narration_text 가 비어 있는가?
+- ★`duration_min`/`duration_sec` 를 넣지 않았는가?(길이는 파이프라인이 3~4시간에서 뽑는다)
+- ★`must` 가 그 테마의 **알맹이 한 단어**인가?(빗소리면 `rain` — `nature`·`forest` 같은
+  넓은 말을 넣으면 새소리·바람소리가 딸려 들어온다)
 - freesound.queries 가 영어·**지속음** 중심(음악/말소리 아님)? 3~5개?
 - ★`mode` 가 trigger/mixed 인데 `trigger_queries` 를 빠뜨리지 않았는가?
-  (빠지면 파이프라인이 경고만 내고 ★바탕 소리만으로 1시간을 채운다 — 맹탕이 된다)
+  (빠지면 파이프라인이 경고만 내고 ★바탕 소리만으로 몇 시간을 채운다 — 맹탕이 된다)
 - ★trigger_queries 가 **유행어·상품명이 아니라 물리 현상**인가?
   (`wax breaking ball` ✗ → `thin shell crack` `brittle crack` `clay squish` ○)
 - background.prompt 사람 얼굴·글자 없음? thumbnail_hook/thumbnail_text 채움?
-- title 에 '1시간'·용도 키워드? description 해시태그? playlist 이름 정확?
+- ★title/thumbnail_text 에 **'3시간'** 이라고 쓰는가?(실제 길이는 3~4시간 랜덤이라
+  '3시간'이면 항상 사실이다. '4시간'이라 쓰면 3시간대일 때 거짓이 된다)
+- description 해시태그? playlist 이름 정확?
 - narration_text 2~3문장(또는 "")? 따뜻하고 낮은 톤 문구?
 
 ## 5) 상태 갱신 + 커밋 (★영구 브랜치, force 금지)

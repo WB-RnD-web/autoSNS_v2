@@ -5,7 +5,7 @@
 (같은 채널 → YT_TOKEN_JSON_NOVEL 확장 스코프 토큰 그대로 사용).
 
 각 스펙 JSON 마다:
-  ① Freesound 로 테마 클립 수집(CC0) → asmr_render.render(정적 이미지 + 심리스 1h 오디오 + 낮은 나레이션)
+  ① Freesound 로 테마 클립 수집(CC0) → asmr_render.render(정적 이미지 + ★3~4시간 루프 오디오)
   ② FLUX 썸네일 생성 → upload_youtube_novel.publish(업로드 + 커스텀 썸네일 + 재생목록 추가)
   ③ ledger dedupe(키=<date>_<theme_id>), 로그 기록
 
@@ -80,9 +80,11 @@ def process(spec_path: str, args, led) -> dict:
     import freesound
     target_sec = float(spec.get("duration_min", 60)) * 60.0
     want = min(int(config.env("ASMR_SOURCE_SEC", "1200")), int(target_sec))
-    queries = ((spec.get("freesound") or {}).get("queries")) or [spec.get("theme_name", "ambience")]
+    fs = spec.get("freesound") or {}
+    queries = fs.get("queries") or [spec.get("theme_name", "ambience")]
     try:
-        clips, attrs = freesound.fetch_theme(queries, os.path.join(wd, "src"), want_sec=want)
+        clips, attrs = freesound.fetch_theme(queries, os.path.join(wd, "src"), want_sec=want,
+                                             must=fs.get("must"))
     except Exception as e:  # noqa: BLE001
         res["error"] = f"freesound: {e}"
         return res
@@ -93,7 +95,7 @@ def process(spec_path: str, args, led) -> dict:
     # ★트리거 소재(귀르가즘 모드) — 짧은 클립이라 별도 경로로 긁는다. 없어도 렌더는 계속.
     trig_clips = []
     if str(spec.get("mode") or "sleep").lower() in ("trigger", "mixed"):
-        tq = (spec.get("freesound") or {}).get("trigger_queries") or []
+        tq = fs.get("trigger_queries") or []
         if tq:
             try:
                 trig_clips, tattrs = freesound.fetch_triggers(tq, os.path.join(wd, "trg"))
@@ -102,12 +104,22 @@ def process(spec_path: str, args, led) -> dict:
                 sys.stderr.write(f"[warn] 트리거 수집 실패(베드만 진행): {e}\n")
         else:
             sys.stderr.write("[warn] mode 가 trigger/mixed 인데 trigger_queries 가 비었다\n")
+
+    # ★배경 음악(피아노 등) — 있으면 아주 낮게 깐다. 없으면 그냥 없이 간다.
+    music_clips = []
+    if fs.get("music_queries"):
+        try:
+            music_clips, mattrs = freesound.fetch_music(fs["music_queries"], os.path.join(wd, "mus"))
+            attrs += mattrs
+        except Exception as e:  # noqa: BLE001
+            sys.stderr.write(f"[warn] 배경음악 수집 실패(음악 없이 진행): {e}\n")
     attrs_block = freesound.attribution_block(attrs)
 
     # ② 렌더
     import asmr_render
     try:
-        info = asmr_render.render(spec, clips, out_mp4, wd, trigger_clips=trig_clips)
+        info = asmr_render.render(spec, clips, out_mp4, wd, trigger_clips=trig_clips,
+                                  music_clips=music_clips)
         res["video"] = info["out"]
         res["duration_sec"] = info["duration_sec"]
         res["size_mb"] = info["size_mb"]
