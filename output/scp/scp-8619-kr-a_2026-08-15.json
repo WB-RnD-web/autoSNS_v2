@@ -1,0 +1,558 @@
+{
+  "date": "2026-08-15",
+  "iso_week": "2026-W33",
+  "topic": "scp",
+  "privacy": "public",
+  "story_id": "scp-8619-kr-a",
+  "scp_number": "SCP-8619-KR-A",
+  "object_class": "Euclid",
+  "number_check": {
+    "mode": "archive",
+    "checked_at": "2026-08-15",
+    "http_code": "n/a"
+  },
+  "title": "뒤쪽 의자에는 앉지 마세요",
+  "theme": "장소·건물",
+  "logline": "가끔 시간표에 없는 노선이 나타나는 시골 버스터미널 대합실 이야기, 그 노선에 대해 손님에게 말해주는 순간 누군가 그 자리를 대신 채우게 됩니다.",
+  "hook_line": "199X년 12월, OO읍 시외버스터미널 대합실에서 밤 근무를 서던 매표원 세 사람 중 두 사람이, 그해 겨울이 다시 오기 전에 일을 그만뒀습니다.",
+  "cold_open": "199X년 12월, OO읍 시외버스터미널 대합실에서 밤 근무를 서던 매표원 세 사람 중 두 사람이, 그해 겨울이 다시 오기 전에 일을 그만뒀습니다. 무슨 일이 있었는지, 처음부터 말씀드리겠습니다.",
+  "procedures": [
+    "시간표에 없는 노선이 붙어 있는 걸 보면, 손님한테는 절대 알려주지 않는다",
+    "막차 시간이 지나면, 대합실 뒤쪽 나무 의자엔 아무도 앉지 않는다",
+    "혼자 남은 손님이 있어도, 먼저 말을 걸지 않는다"
+  ],
+  "retention_beats": [
+    "다만 그 다음 주부터, 시간표에 그 노선이 매일 붙어 있기 시작했습니다. 떼어내도, 떼어내도요.",
+    "CCTV 기록엔 여기까지만 남아 있습니다. 다음 프레임에서, 의자엔 아무도 없었습니다.",
+    "그런데 시간표 게시판엔, 지난달에도 그 노선이 붙었다 뗀 흔적이 남아 있었습니다."
+  ],
+  "twist_summary": "이 터미널 자리는 원래 1951년 겨울 피난길에 다음 버스를 기다리다 끝내 타지 못하고 잊힌 사람들이 서 있던 공터였다는 반전. 이후 세워진 터미널은 무의식적으로 그 '기다림'을 이어가고 있으며, 규칙은 살아있는 사람이 그 기다림에 응답해 자리를 대신 채우는 사고를 막기 위한 장치였다.",
+  "narration_full": "199X년 12월, OO읍 시외버스터미널 대합실에서 밤 근무를 서던 매표원 세 사람 중 두 사람이, 그해 겨울이 다시 오기 전에 일을 그만뒀습니다. 무슨 일이 있었는지, 처음부터 말씀드리겠습니다. OO읍 터미널은 그리 크지 않은 곳입니다. 매표소 하나, 나무 의자 대여섯 개, 그리고 벽에 붙은 낡은 시간표 게시판이 전부거든요. 지어진 지는 오십 년이 다 되어갑니다. 재단은 이 대합실에 번호를 하나 붙였습니다. 팔육일구, 케이알에이. 등급은 유클리드였고요. 안전하지도, 완전히 위험하지도 않다는 뜻입니다. 지켜야 할 게 있다는 뜻이기도 하고요. 그런데 이 대합실엔 이상한 점이 하나 있었습니다. 혹시 버스 시간표를, 한 줄 한 줄 유심히 보신 적 있으신가요? 시간표 게시판에, 가끔 노선이 하나 더 붙어 있었거든요. 실제로는 운행하지 않는 노선 번호였습니다. 매표원이 그 종이를 떼어내면, 다음 날 아침엔 또 붙어 있었고요. 그래서 이 터미널엔, 지켜야 할 게 세 가지 있었습니다. 시간표에 없는 노선이 붙어 있는 걸 보면, 손님한테는 절대 알려주지 않는다. 막차 시간이 지나면, 대합실 뒤쪽 나무 의자엔 아무도 앉지 않는다. 그리고 혼자 남은 손님이 있어도, 먼저 말을 걸지 않는다. 이걸 어기면 어떻게 되는지는, 어디에도 적혀 있지 않았습니다. 그냥, 아무도 어겨보지 않았을 뿐이죠. 근무일지엔 사소한 기록들이 쌓여 있었습니다. 1997년 1월 기록입니다. '오늘도 여덟시 반 이후로는 뒤쪽 의자에 성에가 안 낀다.' 겨울인데도요. 2003년 여름 기록엔 이렇게 적혀 있습니다. '뒤쪽 의자 쪽만 에어컨 바람이 안 닿는다. 그런데 시원하다.' 온도계로 재보면 차이는 없었습니다. 그냥, 앉아본 사람들이 그렇게 말했을 뿐이죠. 매표원들은 이 기록들을 서로에게 알려주지 않았습니다. 그게 규칙이었으니까요. 그렇게 이십 년 가까이, 아무 일도 없었습니다. 그러다 2016년, 새로 들어온 아르바이트생 하나가 규칙을 몰랐습니다. 그날따라 손님이 시간표를 한참 들여다보더니 물었다고 합니다. \"여기 이 노선, 이거 몇 시 차예요?\" 아르바이트생은 대수롭지 않게 대답했습니다. \"어, 그거요? 그건 잘 안 다니는 노선이라... 뒤쪽에서 기다리시면 될 거예요.\" 손님은 고맙다고 하고, 뒤쪽 나무 의자로 가서 앉았습니다. 그날은 별일 없이 지나갔습니다. 다만 그 다음 주부터, 시간표에 그 노선이 매일 붙어 있기 시작했습니다. 떼어내도, 떼어내도요. 그리고 석 달 뒤, 다른 사고가 하나 기록됩니다. 야간 근무를 서던 매표원이었습니다. 이름은 기록에서 지워져 있습니다. 그날 밤, 막차가 끊긴 대합실에 손님 한 명이 혼자 남아 있었습니다. 매표원은 규칙을 알고 있었습니다. 이 년 넘게 지켜왔으니까요. 그런데 그날은, 그 손님이 너무 오래 앉아만 있었다고 합니다. 결국 매표원은, 말을 걸었습니다. \"저... 손님, 어디 가시는 길이세요?\" CCTV 기록엔 여기까지만 남아 있습니다. 다음 프레임에서, 의자엔 아무도 없었습니다. 매표원도, 손님도요. 매표원은 그날 이후로 출근하지 않았습니다. 어디로 갔는지는, 이 기록에 남아 있지 않습니다. 재단이 이 터미널의 옛 자료를 뒤져보니, 이상한 게 하나 나왔습니다. 지금 이 자리에, 원래는 정류장이 없었습니다. 1951년 겨울, 이 자리엔 그냥 신작로 옆 공터가 있었을 뿐입니다. 그리고 그 공터엔, 버스가 오기를 기다리던 사람들이 있었습니다. 피난길에, 다음 차를 기다리던 사람들이요. 그 차는, 끝내 오지 않았다고 합니다. 몇 명이었는지는 아무도 기록하지 않았습니다. 그냥, 기다리다가, 사람들 기억에서 잊혔을 뿐이죠. 터미널은 그로부터 이십 년 뒤에, 그 공터 위에 세워졌습니다. 재단의 결론은 이렇습니다. 이 자리는, 아직도 기다리고 있다고요. 그리고 그 기다림에, 누군가 말을 걸어주면, 대답 대신... 자리를 하나 내어준다고요. 사라진 매표원의 근무일지는, 2017년 3월에서 멈춰 있습니다. 그런데 시간표 게시판엔, 지난달에도 그 노선이 붙었다 뗀 흔적이 남아 있었습니다. 여러분은, 아무도 없는 대합실에서 오래 기다려 보신 적, 있으신가요? 혹시 비슷한 곳을 알고 계시다면, 댓글로 들려주세요. 다음 이야기도, 조용히 기다리고 있겠습니다.",
+  "segments": [
+    {
+      "text": "199X년 12월, OO읍 시외버스터미널 대합실에서 밤 근무를 서던 매표원 세 사람 중 두 사람이, 그해 겨울이 다시 오기 전에 일을 그만뒀습니다.",
+      "est_sec": 14,
+      "text_en": "In December of 199X, two of the three night-shift ticket clerks at a small intercity bus terminal in OO Town quit before that winter came around again.",
+      "text_ja": "199X年12月、OO邑の市外バスターミナル待合室で夜勤をしていた駅員三人のうち二人が、その冬が再び来る前に仕事を辞めました。",
+      "text_zh_Hant": "199X年12月，OO鎮的市外巴士轉運站候車室裡，值夜班的三名售票員中有兩人，在那年冬天再次到來之前辭去了工作。"
+    },
+    {
+      "text": "무슨 일이 있었는지, 처음부터 말씀드리겠습니다.",
+      "est_sec": 4,
+      "text_en": "Let me tell you what happened, from the beginning.",
+      "text_ja": "何があったのか、最初からお話しします。",
+      "text_zh_Hant": "發生了什麼事，讓我從頭說起。"
+    },
+    {
+      "text": "OO읍 터미널은 그리 크지 않은 곳입니다.",
+      "est_sec": 4,
+      "text_en": "The OO Town terminal isn't a big place.",
+      "text_ja": "OO邑のターミナルは、それほど大きな場所ではありません。",
+      "text_zh_Hant": "OO鎮的轉運站不算大。"
+    },
+    {
+      "text": "매표소 하나, 나무 의자 대여섯 개, 그리고 벽에 붙은 낡은 시간표 게시판이 전부거든요.",
+      "est_sec": 8,
+      "text_en": "One ticket booth, five or six wooden benches, and an old timetable board on the wall — that's all there is.",
+      "text_ja": "切符売り場が一つ、木のベンチが五、六台、それと壁に貼られた古い時刻表の掲示板、それで全部なんです。",
+      "text_zh_Hant": "一個售票窗口、五六張木長椅，還有牆上那塊舊時刻表公告欄，就這樣而已。"
+    },
+    {
+      "text": "지어진 지는 오십 년이 다 되어갑니다.",
+      "est_sec": 4,
+      "text_en": "It was built almost fifty years ago.",
+      "text_ja": "建てられてから、もう五十年近くになります。",
+      "text_zh_Hant": "建成至今，快滿五十年了。"
+    },
+    {
+      "text": "재단은 이 대합실에 번호를 하나 붙였습니다. 팔육일구, 케이알에이.",
+      "est_sec": 6,
+      "text_en": "The Foundation gave this waiting room a number. Eight-six-one-nine, K-R-A.",
+      "text_ja": "財団はこの待合室に番号を一つ付けました。八六一九、ケーアール・エー。",
+      "text_zh_Hant": "基金會給這間候車室編了一個編號。八六一九，KR-A。"
+    },
+    {
+      "text": "등급은 유클리드였고요.",
+      "est_sec": 2,
+      "text_en": "The class was Euclid.",
+      "text_ja": "等級はユークリッドでした。",
+      "text_zh_Hant": "等級是歐幾里得。"
+    },
+    {
+      "text": "안전하지도, 완전히 위험하지도 않다는 뜻입니다. 지켜야 할 게 있다는 뜻이기도 하고요.",
+      "est_sec": 8,
+      "text_en": "That means it's neither safe nor fully dangerous. It also means there's something you have to keep to.",
+      "text_ja": "安全でもなく、完全に危険でもないという意味です。守るべきことがあるという意味でもあります。",
+      "text_zh_Hant": "意思是既不算安全，也不算完全危險。也代表著有些事必須遵守。"
+    },
+    {
+      "text": "그런데 이 대합실엔 이상한 점이 하나 있었습니다.",
+      "est_sec": 5,
+      "text_en": "But there was one strange thing about this waiting room.",
+      "text_ja": "ですが、この待合室には一つ、おかしな点がありました。",
+      "text_zh_Hant": "不過，這間候車室有一點很奇怪。"
+    },
+    {
+      "text": "혹시 버스 시간표를, 한 줄 한 줄 유심히 보신 적 있으신가요?",
+      "est_sec": 6,
+      "text_en": "Have you ever looked closely at a bus timetable, line by line?",
+      "text_ja": "バスの時刻表を、一行一行じっくり見たことはありますか?",
+      "text_zh_Hant": "您有沒有仔細一行一行看過巴士時刻表呢？"
+    },
+    {
+      "text": "시간표 게시판에, 가끔 노선이 하나 더 붙어 있었거든요.",
+      "est_sec": 5,
+      "text_en": "Every so often, one extra route would appear on the timetable board.",
+      "text_ja": "時刻表の掲示板に、時々路線が一つ余計に貼られていたんです。",
+      "text_zh_Hant": "時刻表公告欄上，偶爾會多貼出一條路線。"
+    },
+    {
+      "text": "실제로는 운행하지 않는 노선 번호였습니다.",
+      "est_sec": 4,
+      "text_en": "It was a route number that didn't actually run.",
+      "text_ja": "実際には運行していない路線番号でした。",
+      "text_zh_Hant": "那是一個實際上並不存在營運的路線編號。"
+    },
+    {
+      "text": "매표원이 그 종이를 떼어내면, 다음 날 아침엔 또 붙어 있었고요.",
+      "est_sec": 6,
+      "text_en": "Whenever a clerk pulled the slip down, it would be back up again the next morning.",
+      "text_ja": "駅員がその紙を剥がしても、翌朝にはまた貼られていました。",
+      "text_zh_Hant": "售票員把那張紙撕下來，隔天早上又會重新貼上。"
+    },
+    {
+      "text": "그래서 이 터미널엔, 지켜야 할 게 세 가지 있었습니다.",
+      "est_sec": 5,
+      "text_en": "So there were three things everyone at this terminal had to keep.",
+      "text_ja": "だからこのターミナルには、守るべきことが三つありました。",
+      "text_zh_Hant": "所以在這個轉運站，有三件事是必須遵守的。"
+    },
+    {
+      "text": "시간표에 없는 노선이 붙어 있는 걸 보면, 손님한테는 절대 알려주지 않는다.",
+      "est_sec": 7,
+      "text_en": "If you see a route on the board that isn't scheduled, never tell a customer about it.",
+      "text_ja": "時刻表にない路線が貼られているのを見ても、絶対に客には教えない。",
+      "text_zh_Hant": "如果看到公告欄上出現時刻表沒有的路線，絕對不告訴乘客。"
+    },
+    {
+      "text": "막차 시간이 지나면, 대합실 뒤쪽 나무 의자엔 아무도 앉지 않는다.",
+      "est_sec": 6,
+      "text_en": "After the last bus of the day, no one sits on the wooden benches at the back.",
+      "text_ja": "終バスの時間を過ぎたら、待合室の奥の木のベンチには誰も座らない。",
+      "text_zh_Hant": "末班車時間一過，候車室後排的木長椅上不會有任何人坐。"
+    },
+    {
+      "text": "그리고 혼자 남은 손님이 있어도, 먼저 말을 걸지 않는다.",
+      "est_sec": 6,
+      "text_en": "And even if a customer is left there alone, you never speak to them first.",
+      "text_ja": "そして、一人残っている客がいても、こちらから先に話しかけない。",
+      "text_zh_Hant": "還有，即使有乘客獨自留下，也絕不先開口跟他們說話。"
+    },
+    {
+      "text": "이걸 어기면 어떻게 되는지는, 어디에도 적혀 있지 않았습니다.",
+      "est_sec": 6,
+      "text_en": "What happens if you break this — that's not written down anywhere.",
+      "text_ja": "これを破ったらどうなるのかは、どこにも書かれていませんでした。",
+      "text_zh_Hant": "違反了會發生什麼事，沒有任何地方寫著。"
+    },
+    {
+      "text": "그냥, 아무도 어겨보지 않았을 뿐이죠.",
+      "est_sec": 4,
+      "text_en": "It's just that no one had ever broken it.",
+      "text_ja": "ただ、誰も破ったことがなかっただけです。",
+      "text_zh_Hant": "只是從來沒有人違反過而已。"
+    },
+    {
+      "text": "근무일지엔 사소한 기록들이 쌓여 있었습니다.",
+      "est_sec": 4,
+      "text_en": "Small notes had piled up in the work log over the years.",
+      "text_ja": "業務日誌には、些細な記録が積み重なっていました。",
+      "text_zh_Hant": "值班日誌裡累積了不少細瑣的紀錄。"
+    },
+    {
+      "text": "1997년 1월 기록입니다. '오늘도 여덟시 반 이후로는 뒤쪽 의자에 성에가 안 낀다.'",
+      "est_sec": 8,
+      "text_en": "A January 1997 entry reads: 'After eight-thirty again today, no frost forms on the back bench.'",
+      "text_ja": "1997年1月の記録です。「今日も八時半以降は、奥のベンチに霜が降りない」",
+      "text_zh_Hant": "1997年1月的紀錄寫著：「今天過了八點半，後排的椅子上又沒結霜。」"
+    },
+    {
+      "text": "겨울인데도요.",
+      "est_sec": 2,
+      "text_en": "Even in winter.",
+      "text_ja": "冬なのにです。",
+      "text_zh_Hant": "明明是冬天。"
+    },
+    {
+      "text": "2003년 여름 기록엔 이렇게 적혀 있습니다. '뒤쪽 의자 쪽만 에어컨 바람이 안 닿는다. 그런데 시원하다.'",
+      "est_sec": 11,
+      "text_en": "A summer 2003 entry says: 'The air conditioning doesn't reach the back benches. But it's cool there anyway.'",
+      "text_ja": "2003年夏の記録にはこう書かれています。「奥のベンチだけエアコンの風が届かない。なのに涼しい」",
+      "text_zh_Hant": "2003年夏天的紀錄這樣寫：「冷氣的風吹不到後排椅子，可是那邊卻很涼快。」"
+    },
+    {
+      "text": "온도계로 재보면 차이는 없었습니다. 그냥, 앉아본 사람들이 그렇게 말했을 뿐이죠.",
+      "est_sec": 8,
+      "text_en": "A thermometer showed no difference at all. It was just what the people who sat there said.",
+      "text_ja": "温度計で測ってみても差はありませんでした。ただ、座った人たちがそう言っていただけです。",
+      "text_zh_Hant": "用溫度計量過，其實沒有差別。只是坐過那裡的人都這麼說而已。"
+    },
+    {
+      "text": "매표원들은 이 기록들을 서로에게 알려주지 않았습니다.",
+      "est_sec": 5,
+      "text_en": "The clerks never told each other about these notes.",
+      "text_ja": "駅員たちは、これらの記録を互いに教え合いませんでした。",
+      "text_zh_Hant": "售票員們從不把這些紀錄告訴彼此。"
+    },
+    {
+      "text": "그게 규칙이었으니까요.",
+      "est_sec": 2,
+      "text_en": "Because that was the rule.",
+      "text_ja": "それがルールだったからです。",
+      "text_zh_Hant": "因為那是規矩。"
+    },
+    {
+      "text": "그렇게 이십 년 가까이, 아무 일도 없었습니다.",
+      "est_sec": 4,
+      "text_en": "And so, for nearly twenty years, nothing happened.",
+      "text_ja": "そうして二十年近く、何事もありませんでした。",
+      "text_zh_Hant": "就這樣過了將近二十年，什麼事都沒發生。"
+    },
+    {
+      "text": "그러다 2016년, 새로 들어온 아르바이트생 하나가 규칙을 몰랐습니다.",
+      "est_sec": 7,
+      "text_en": "Then in 2016, a new part-time worker didn't know the rules.",
+      "text_ja": "そして2016年、新しく入ったアルバイトの子がルールを知りませんでした。",
+      "text_zh_Hant": "然後在2016年，一位新來的工讀生並不知道這些規矩。"
+    },
+    {
+      "text": "그날따라 손님이 시간표를 한참 들여다보더니 물었다고 합니다.",
+      "est_sec": 6,
+      "text_en": "That day, a customer reportedly stared at the timetable for a while, then asked.",
+      "text_ja": "その日、客が時刻表をしばらく見つめてから尋ねたそうです。",
+      "text_zh_Hant": "據說那天，一位乘客盯著時刻表看了好一會兒，然後開口問。"
+    },
+    {
+      "text": "\"여기 이 노선, 이거 몇 시 차예요?\"",
+      "est_sec": 4,
+      "text_en": "\"This route here — what time does it leave?\"",
+      "text_ja": "「ここのこの路線、これ何時のバスですか?」",
+      "text_zh_Hant": "「這條路線，是幾點的車？」"
+    },
+    {
+      "text": "아르바이트생은 대수롭지 않게 대답했습니다.",
+      "est_sec": 4,
+      "text_en": "The worker answered without a second thought.",
+      "text_ja": "アルバイトの子は、何の気なしに答えました。",
+      "text_zh_Hant": "工讀生毫不在意地回答了。"
+    },
+    {
+      "text": "\"어, 그거요? 그건 잘 안 다니는 노선이라... 뒤쪽에서 기다리시면 될 거예요.\"",
+      "est_sec": 8,
+      "text_en": "\"Oh, that one? It doesn't run often... you can just wait at the back.\"",
+      "text_ja": "「あ、それですか? それあまり走ってない路線で……奥で待っていただければ大丈夫です」",
+      "text_zh_Hant": "「喔，那個嗎？那條路線很少發車……您在後面等就可以了。」"
+    },
+    {
+      "text": "손님은 고맙다고 하고, 뒤쪽 나무 의자로 가서 앉았습니다.",
+      "est_sec": 6,
+      "text_en": "The customer said thanks and went to sit on the back bench.",
+      "text_ja": "客はお礼を言って、奥の木のベンチへ行って座りました。",
+      "text_zh_Hant": "乘客道了謝，走到後排的木長椅坐下。"
+    },
+    {
+      "text": "그날은 별일 없이 지나갔습니다.",
+      "est_sec": 3,
+      "text_en": "That day passed without incident.",
+      "text_ja": "その日は何事もなく過ぎました。",
+      "text_zh_Hant": "那天倒是平安無事地過去了。"
+    },
+    {
+      "text": "다만 그 다음 주부터, 시간표에 그 노선이 매일 붙어 있기 시작했습니다.",
+      "est_sec": 7,
+      "text_en": "But starting the next week, that route began appearing on the board every single day.",
+      "text_ja": "ただ、その翌週から、時刻表にその路線が毎日貼られるようになりました。",
+      "text_zh_Hant": "只是從隔週開始，那條路線每天都會出現在公告欄上。"
+    },
+    {
+      "text": "떼어내도, 떼어내도요.",
+      "est_sec": 2,
+      "text_en": "No matter how many times it was torn down.",
+      "text_ja": "剥がしても、剥がしてもです。",
+      "text_zh_Hant": "怎麼撕都撕不掉。",
+      "emphasis": "떼어내도"
+    },
+    {
+      "text": "그리고 석 달 뒤, 다른 사고가 하나 기록됩니다.",
+      "est_sec": 5,
+      "text_en": "Three months later, another incident was recorded.",
+      "text_ja": "そして三か月後、別の事故が一つ記録されます。",
+      "text_zh_Hant": "三個月後，又發生了一起事故並被記錄下來。"
+    },
+    {
+      "text": "야간 근무를 서던 매표원이었습니다. 이름은 기록에서 지워져 있습니다.",
+      "est_sec": 7,
+      "text_en": "It involved the night-shift clerk. Their name has been struck from the record.",
+      "text_ja": "夜勤をしていた駅員でした。名前は記録から消されています。",
+      "text_zh_Hant": "當事人是值夜班的售票員。姓名在紀錄中已被抹去。"
+    },
+    {
+      "text": "그날 밤, 막차가 끊긴 대합실에 손님 한 명이 혼자 남아 있었습니다.",
+      "est_sec": 7,
+      "text_en": "That night, after the last bus, one customer was left alone in the waiting room.",
+      "text_ja": "その夜、終バスが終わった待合室に、客が一人だけ残っていました。",
+      "text_zh_Hant": "那天晚上，末班車已經開走的候車室裡，獨自留下一位乘客。"
+    },
+    {
+      "text": "매표원은 규칙을 알고 있었습니다. 이 년 넘게 지켜왔으니까요.",
+      "est_sec": 6,
+      "text_en": "The clerk knew the rules. They'd kept them for over two years.",
+      "text_ja": "駅員はルールを知っていました。二年以上守ってきたのですから。",
+      "text_zh_Hant": "售票員知道規矩。畢竟已經遵守了兩年多。"
+    },
+    {
+      "text": "그런데 그날은, 그 손님이 너무 오래 앉아만 있었다고 합니다.",
+      "est_sec": 6,
+      "text_en": "But that day, the customer reportedly just sat there for far too long.",
+      "text_ja": "でもその日は、その客があまりにも長く座り続けていたそうです。",
+      "text_zh_Hant": "但那天，據說那位乘客坐得實在太久了。"
+    },
+    {
+      "text": "결국 매표원은, 말을 걸었습니다.",
+      "est_sec": 3,
+      "text_en": "In the end, the clerk spoke to them.",
+      "text_ja": "結局、駅員は声をかけました。",
+      "text_zh_Hant": "最後，售票員還是開口了。"
+    },
+    {
+      "text": "\"저... 손님, 어디 가시는 길이세요?\"",
+      "est_sec": 4,
+      "text_en": "\"Excuse me... where are you headed?\"",
+      "text_ja": "「あの……お客様、どちらまで行かれるんですか?」",
+      "text_zh_Hant": "「那個……這位客人，您要去哪裡呢？」"
+    },
+    {
+      "text": "CCTV 기록엔 여기까지만 남아 있습니다.",
+      "est_sec": 4,
+      "text_en": "The CCTV footage only goes this far.",
+      "text_ja": "CCTVの記録には、ここまでしか残っていません。",
+      "text_zh_Hant": "監視器畫面只留到這裡。"
+    },
+    {
+      "text": "다음 프레임에서, 의자엔 아무도 없었습니다.",
+      "est_sec": 4,
+      "text_en": "In the next frame, the bench was empty.",
+      "text_ja": "次のコマでは、ベンチには誰もいませんでした。",
+      "text_zh_Hant": "下一格畫面裡，長椅上已經空無一人。",
+      "emphasis": "아무도 없었습니다"
+    },
+    {
+      "text": "매표원도, 손님도요.",
+      "est_sec": 2,
+      "text_en": "Neither the clerk, nor the customer.",
+      "text_ja": "駅員も、客もです。",
+      "text_zh_Hant": "售票員也不見了，乘客也不見了。"
+    },
+    {
+      "text": "매표원은 그날 이후로 출근하지 않았습니다. 어디로 갔는지는, 이 기록에 남아 있지 않습니다.",
+      "est_sec": 9,
+      "text_en": "The clerk never came to work again after that day. Where they went isn't in this record.",
+      "text_ja": "駅員はその日以降、出勤していません。どこへ行ったのかは、この記録には残っていません。",
+      "text_zh_Hant": "那位售票員自那天起就再也沒有來上班。去了哪裡，這份紀錄裡並沒有寫。"
+    },
+    {
+      "text": "재단이 이 터미널의 옛 자료를 뒤져보니, 이상한 게 하나 나왔습니다.",
+      "est_sec": 7,
+      "text_en": "When the Foundation dug through old records of this terminal, something strange turned up.",
+      "text_ja": "財団がこのターミナルの古い資料を調べてみると、おかしなものが一つ出てきました。",
+      "text_zh_Hant": "基金會翻查這座轉運站的舊資料後，發現了一件怪事。"
+    },
+    {
+      "text": "지금 이 자리에, 원래는 정류장이 없었습니다.",
+      "est_sec": 4,
+      "text_en": "There was originally no station on this spot.",
+      "text_ja": "今この場所には、もともと停留所はありませんでした。",
+      "text_zh_Hant": "如今這個地方，原本並沒有車站。"
+    },
+    {
+      "text": "1951년 겨울, 이 자리엔 그냥 신작로 옆 공터가 있었을 뿐입니다.",
+      "est_sec": 7,
+      "text_en": "In the winter of 1951, it was just an empty lot beside a new dirt road.",
+      "text_ja": "1951年の冬、この場所には新しくできた道の脇に、ただの空き地があっただけでした。",
+      "text_zh_Hant": "1951年冬天，這裡只是一條新開道路旁的一塊空地。"
+    },
+    {
+      "text": "그리고 그 공터엔, 버스가 오기를 기다리던 사람들이 있었습니다.",
+      "est_sec": 6,
+      "text_en": "And in that empty lot, there were people waiting for a bus to come.",
+      "text_ja": "そしてその空き地には、バスが来るのを待っていた人たちがいました。",
+      "text_zh_Hant": "而那塊空地上，曾經有人在等一輛巴士到來。"
+    },
+    {
+      "text": "피난길에, 다음 차를 기다리던 사람들이요.",
+      "est_sec": 4,
+      "text_en": "People fleeing the war, waiting for the next ride.",
+      "text_ja": "避難の道中、次の車を待っていた人たちです。",
+      "text_zh_Hant": "是在逃難路上，等著下一班車的人們。"
+    },
+    {
+      "text": "그 차는, 끝내 오지 않았다고 합니다.",
+      "est_sec": 4,
+      "text_en": "That ride, they say, never came.",
+      "text_ja": "その車は、結局来なかったそうです。",
+      "text_zh_Hant": "據說那班車，終究沒有來。"
+    },
+    {
+      "text": "몇 명이었는지는 아무도 기록하지 않았습니다.",
+      "est_sec": 4,
+      "text_en": "No one recorded how many people there were.",
+      "text_ja": "何人いたのかは、誰も記録していませんでした。",
+      "text_zh_Hant": "當時究竟有多少人，沒有任何人記錄下來。"
+    },
+    {
+      "text": "그냥, 기다리다가, 사람들 기억에서 잊혔을 뿐이죠.",
+      "est_sec": 5,
+      "text_en": "They simply waited, and were forgotten.",
+      "text_ja": "ただ待ち続けて、人々の記憶から忘れられただけです。",
+      "text_zh_Hant": "他們只是一直等待，然後就這樣被人們遺忘了。"
+    },
+    {
+      "text": "터미널은 그로부터 이십 년 뒤에, 그 공터 위에 세워졌습니다.",
+      "est_sec": 6,
+      "text_en": "Twenty years later, the terminal was built on top of that same lot.",
+      "text_ja": "ターミナルは、それから二十年後に、その空き地の上に建てられました。",
+      "text_zh_Hant": "二十年後，轉運站就蓋在那塊空地上。"
+    },
+    {
+      "text": "재단의 결론은 이렇습니다. 이 자리는, 아직도 기다리고 있다고요.",
+      "est_sec": 6,
+      "text_en": "The Foundation's conclusion is this: this place is still waiting.",
+      "text_ja": "財団の結論はこうです。この場所は、今もまだ待っているのだと。",
+      "text_zh_Hant": "基金會的結論是這樣的：這個地方，至今仍在等待。"
+    },
+    {
+      "text": "그리고 그 기다림에, 누군가 말을 걸어주면, 대답 대신... 자리를 하나 내어준다고요.",
+      "est_sec": 8,
+      "text_en": "And if someone speaks into that waiting, instead of an answer... it makes room for one more.",
+      "text_ja": "そしてその「待つこと」に、誰かが声をかけると、答えの代わりに……席を一つ空けてくれるのだと。",
+      "text_zh_Hant": "而如果有人向那份等待搭話，得到的不是回應……而是多讓出一個位子。",
+      "emphasis": "자리를 하나 내어준다"
+    },
+    {
+      "text": "사라진 매표원의 근무일지는, 2017년 3월에서 멈춰 있습니다.",
+      "est_sec": 6,
+      "text_en": "The missing clerk's work log stops in March 2017.",
+      "text_ja": "消えた駅員の業務日誌は、2017年3月で止まっています。",
+      "text_zh_Hant": "失蹤售票員的值班日誌，停在2017年3月。"
+    },
+    {
+      "text": "그런데 시간표 게시판엔, 지난달에도 그 노선이 붙었다 뗀 흔적이 남아 있었습니다.",
+      "est_sec": 8,
+      "text_en": "But on the timetable board, there are still marks from last month — that route pinned up, then torn down again.",
+      "text_ja": "でも時刻表の掲示板には、先月もその路線が貼られては剥がされた跡が残っていました。",
+      "text_zh_Hant": "然而在時刻表公告欄上，上個月依然留有那條路線被貼上又撕下的痕跡。"
+    },
+    {
+      "text": "여러분은, 아무도 없는 대합실에서 오래 기다려 보신 적, 있으신가요?",
+      "est_sec": 7,
+      "text_en": "Have you ever waited a long time, alone, in an empty waiting room?",
+      "text_ja": "皆さんは、誰もいない待合室で、長く待ってみたことはありますか?",
+      "text_zh_Hant": "各位是否曾經在空無一人的候車室裡，獨自等待過很久呢？"
+    },
+    {
+      "text": "혹시 비슷한 곳을 알고 계시다면, 댓글로 들려주세요.",
+      "est_sec": 5,
+      "text_en": "If you know a place like this, tell us in the comments.",
+      "text_ja": "もし似たような場所をご存じでしたら、コメントで教えてください。",
+      "text_zh_Hant": "如果您知道類似的地方，歡迎在留言區告訴我們。"
+    },
+    {
+      "text": "다음 이야기도, 조용히 기다리고 있겠습니다.",
+      "est_sec": 4,
+      "text_en": "I'll be quietly waiting with the next story too.",
+      "text_ja": "次のお話も、静かにお待ちしております。",
+      "text_zh_Hant": "下一個故事，我也會靜靜地在這裡等候。"
+    }
+  ],
+  "scenes": [
+    {
+      "prompt": "SUBJECT: a small rural bus terminal waiting room. ANOMALY CUE: one extra torn paper slip pinned crookedly on the timetable board. COMPOSITION: eye-level wide shot, one-point perspective toward the ticket window, symmetrical framing. LIGHT: single bare fluorescent tube overhead, hard shadows. MATERIAL: cracked linoleum, weathered wood benches, painted concrete. ATMOSPHERE: thin dust haze, cold still air. PALETTE: desaturated teal, beige, dim amber. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "SUBJECT: a weathered wall-mounted bus schedule board. ANOMALY CUE: one extra handwritten slip, slightly yellowed, pinned lower than the rest. COMPOSITION: close-up, centered, shallow depth of field. LIGHT: single warm bulb from the left, soft falloff. MATERIAL: corkboard, curling paper, rusted pushpins. ATMOSPHERE: still air, dust in the light beam. PALETTE: faded cream, rust orange, muted olive. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "SUBJECT: a row of old wooden benches at the back of an empty waiting room. ANOMALY CUE: one bench catching light while the others stay in shadow, faint indentation on the cushion. COMPOSITION: low eye-level angle, one-point perspective, symmetrical framing. LIGHT: single overhead lamp far in the background, long shadows. MATERIAL: dark-stained wood, chipped green paint, dusty tile. PALETTE: desaturated teal, deep brown, dim amber. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "SUBJECT: a closed ticket window inside a dark rural bus terminal at night. ANOMALY CUE: a small desk lamp left on behind the glass, no one visible inside. COMPOSITION: eye-level medium shot, centered, symmetrical framing. LIGHT: one warm desk lamp glowing behind glass, cool darkness around. MATERIAL: scratched glass, worn wooden counter, painted metal grille. PALETTE: deep teal shadow, warm amber glow, muted gray. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "SUBJECT: an old analog wall clock above a ticket window. ANOMALY CUE: the clock reads minutes past midnight though the terminal is closed. COMPOSITION: slightly low angle, centered, shallow depth of field. LIGHT: single dim ceiling bulb behind the clock, soft glow, rest in shadow. MATERIAL: cracked plastic face, rusted metal rim, painted concrete. PALETTE: slate blue, dull amber, muted gray. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    }
+  ],
+  "background": {
+    "id": "scp-8619-kr-a_bg",
+    "kind": "image",
+    "reuse": false,
+    "aspect": "16:9",
+    "resolution": "1920x1080",
+    "prompt": "SUBJECT: a small rural bus terminal waiting room, South Korea. ANOMALY CUE: one extra torn paper slip pinned crookedly on the timetable board. COMPOSITION: eye-level wide shot, one-point perspective, symmetrical framing, lower quarter of frame empty floor. LIGHT: single bare fluorescent tube overhead, hard downward shadows. MATERIAL: cracked linoleum floor, weathered wood benches, painted concrete walls. ATMOSPHERE: thin dust haze, cold still air. PALETTE: desaturated teal, beige, dim amber. TECHNICAL: 24mm lens, f/8, photorealistic. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization",
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, cartoon, anime, illustration, painting, 3d render, cgi, video game, oversaturated, neon, hdr glow, lens flare, vignette overload, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, uncanny face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion"
+  },
+  "thumbnail": {
+    "hook": "SUBJECT: glass entrance door of an old rural bus terminal at night. ANOMALY CUE: one empty wooden bench visible through the doorway, catching warm light. COMPOSITION: medium shot, subject on the right third, left third dark empty negative space. LIGHT: one warm lamp glowing inside, cool blue exterior. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization",
+    "hook_alt": [
+      "SUBJECT: a weathered bus schedule board close-up. ANOMALY CUE: one extra yellowed paper slip pinned lower than the rest. COMPOSITION: close-up, centered, shallow depth of field. LIGHT: single warm bulb from the left, soft falloff. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization",
+      "SUBJECT: a single wooden bench in a dark empty waiting room, back view, no person. ANOMALY CUE: faint human-shaped indentation on the seat cushion. COMPOSITION: low angle, centered, deep shadow. LIGHT: one distant overhead lamp, long shadow toward camera. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    ],
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, cartoon, anime, illustration, painting, 3d render, cgi, video game, oversaturated, neon, hdr glow, lens flare, vignette overload, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, uncanny face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion",
+    "text_safe_area": "left third",
+    "resolution": "1280x720"
+  },
+  "platforms": {
+    "youtube": {
+      "title": "OO대합실, 뒤쪽엔 앉지 마세요 | SCP 아카이브",
+      "thumbnail_text": "혼자면 말 걸지 마세요",
+      "chapters": [
+        "00:00 사라진 두 사람",
+        "01:16 지켜야 할 세 가지",
+        "02:34 몰랐던 아르바이트생",
+        "03:21 마지막으로 남은 손님",
+        "04:18 원래 있던 자리"
+      ],
+      "description": "가끔 시간표에 없는 노선이 나타나는 시골 버스터미널 대합실 이야기, 그 노선에 대해 손님에게 말해주는 순간 누군가 그 자리를 대신 채우게 됩니다.\n\n비슷한 곳을 알고 계신가요? 댓글로 들려주세요.\n\n※ SCP 재단 세계관 기반 오리지널 창작 · 허구의 이야기입니다\n※ 본 콘텐츠는 CC BY-SA 3.0 라이선스를 따릅니다 · 원작: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP재단 #괴담 #무서운이야기 #미스터리 #심야라디오 #공포라디오",
+      "pinned_comment": "여러분은 혹시, 아무도 없는 곳에서 유난히 오래 기다려 본 적 있으신가요? 그때 무슨 생각이 드셨는지 궁금합니다.",
+      "playlist": "SCP 아카이브 (전편 듣기)",
+      "localizations": {
+        "en": {
+          "title": "This Waiting Room Never Stopped Waiting | SCP Archives",
+          "description": "A small rural bus terminal in Korea has a strange rule: if an unlisted route ever appears on the timetable board, never tell a customer about it.\n\nHave you ever waited a long time, alone, in an empty room? Tell us in the comments.\n\nOriginal fiction set in the SCP Foundation universe — a work of fiction.\nThis content is licensed under CC BY-SA 3.0. Source: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCPFoundation #horror #creepypasta #mystery"
+        },
+        "ja": {
+          "title": "この待合室は、今も誰かを待っている | SCPアーカイブ",
+          "description": "韓国のある小さなバスターミナルには、奇妙なルールがあります。時刻表にない路線が貼られていても、絶対に客には教えてはいけない、というルールです。\n\n誰もいない場所で長く待ったことはありますか? コメントで教えてください。\n\n※ SCP財団の世界観に基づくオリジナル創作・フィクションです\n※ 本コンテンツはCC BY-SA 3.0ライセンスに従います・原作: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP財団 #怖い話 #都市伝説 #ミステリー"
+        },
+        "zh-Hant": {
+          "title": "那間候車室，至今仍在等待 | SCP檔案",
+          "description": "在韓國一座偏僻的巴士轉運站裡，有一條奇怪的規矩：如果時刻表上出現了不存在的路線，絕對不能告訴乘客。\n\n您是否曾在空無一人的地方等待很久呢？歡迎在留言區告訴我們。\n\n※ 本作品為基於SCP基金會世界觀的原創虛構故事\n※ 本內容採用CC BY-SA 3.0授權條款・原作：SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP基金會 #怪談 #都市傳說 #懸疑"
+        }
+      }
+    }
+  },
+  "shorts": {
+    "title": "없는 버스를 기다리면 안 됩니다 | SCP",
+    "overlay_top": [
+      "등급 : 유클리드",
+      "저 노선, 타면 안 됩니다"
+    ],
+    "script": "겨울마다, 이 버스터미널 매표원들이 일을 그만뒀습니다. 오십 년 다 된 낡은 대합실입니다. 재단 등급은 유클리드입니다. 시간표엔 가끔, 없는 노선이 하나 더 붙습니다. 지켜야 할 규칙이 셋 있었습니다. 없는 노선을 봐도, 손님껜 말하지 않는다. 막차 지나면, 뒤쪽 의자엔 앉지 않는다. 혼자 남은 손님에겐, 먼저 말 걸지 않는다. 어기면 어떻게 되는지는, 어디에도 적혀 있지 않습니다. 몇 년 뒤, 사고가 하나 기록됩니다. 그날 밤 CCTV엔, 이상한 장면이 남았습니다. 무슨 일이 있었는지는, 전편에서 말씀드릴게요.",
+    "subject_prompt": "SUBJECT: a single old wooden bus terminal bench, centered, facing camera. ANOMALY CUE: a faint human-shaped indentation glowing under one strong light. COMPOSITION: centered medium shot, 9:16 vertical composition, top 30% and bottom 25% dark empty negative space for text. LIGHT: one strong directional key light from above, deep black background. MATERIAL: dark worn wood grain, chipped green paint edge. PALETTE: deep black, warm amber highlight, cold blue rim. sharp high-contrast product-still photography, single strong directional key light, deep black background, rich saturated color, crisp detail, dramatic rim light, photorealistic, 9:16 vertical composition",
+    "negative_prompt": "low contrast, washed out, faded, film grain, muted colors, text, letters, numbers, watermark, logo, signature, caption, subtitles, cartoon, anime, illustration, painting, 3d render, cgi, video game, oversaturated, neon, hdr glow, lens flare, vignette overload, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, uncanny face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion",
+    "description": "재단이 등급 유클리드로 분류한, 시골 버스터미널 대합실 이야기입니다. 시간표엔 가끔, 없는 노선이 하나 더 붙습니다. 그 자리의 진짜 이유는 전편에서 확인하세요. #SCP #SCP아카이브 #괴담 #무서운이야기 #shorts호러",
+    "playlist": "SCP 쇼츠"
+  },
+  "credit": "SCP 재단 세계관 기반 오리지널 창작 · 허구 · CC BY-SA 3.0",
+  "content_rating": "teen",
+  "notes": "SCP 아카이브 · 주 1회 · 16:9 롱폼(금) + 9:16 쇼츠(토) · 장면 전환 배경 + 자막 번인 · 단일 내레이터 · 완결형."
+}
