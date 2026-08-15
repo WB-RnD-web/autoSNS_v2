@@ -16,6 +16,7 @@
 from __future__ import annotations
 import math
 import os
+import random
 import re
 import shutil
 import subprocess
@@ -105,6 +106,76 @@ def build_bed(clips: list[str], out_wav: str, target_sec: float, workdir: str) -
     return out_wav
 
 
+# ── ②-b ★트리거 트랙(귀르가즘용 단발음 흩뿌리기) ──
+# 왜 별도 트랙인가:
+#   왁뿌볼(왁스 깨짐)·뽁뽁이·크런치 같은 트리거음은 ★1~3초짜리다. 앰비언트 베드에 섞으면
+#   크로스페이드 루프가 뭉개지고, 그렇다고 20초 필터로 거르면 애초에 안 잡힌다.
+#   그래서 '짧은 클립 + 무음 간격'을 번갈아 이어붙인 트랙을 따로 만들어 베드 위에 얹는다.
+#   이게 실제로 잘 되는 트리거 ASMR 의 구조다 — 바탕은 조용하고, 소리는 띄엄띄엄 온다.
+TRIG_GAP_MIN = float(os.environ.get("ASMR_TRIGGER_GAP_MIN", "3"))
+TRIG_GAP_MAX = float(os.environ.get("ASMR_TRIGGER_GAP_MAX", "11"))
+
+
+def build_triggers(clips: list[str], out_wav: str, target_sec: float, workdir: str,
+                   seed: str = "", gap_min: float = TRIG_GAP_MIN,
+                   gap_max: float = TRIG_GAP_MAX) -> str | None:
+    """짧은 트리거 클립을 target_sec 동안 불규칙 간격으로 흩뿌린 트랙.
+
+    seed 를 테마 이름으로 고정해 같은 테마면 같은 배치가 나오게 한다(재렌더 재현성).
+    """
+    clips = [c for c in clips if c and os.path.exists(c)]
+    if not clips or target_sec <= 0:
+        return None
+    rnd = random.Random(seed or "asmr")
+
+    norm, durs = [], []
+    for i, c in enumerate(clips):
+        p = _norm_clip(c, os.path.join(workdir, f"t{i:02d}.wav"))
+        d = probe_dur(p)
+        if d > 0.15:                       # 못 쓸 만큼 짧은 건 버린다
+            norm.append(p)
+            durs.append(d)
+    if not norm:
+        return None
+
+    # 무음은 0.5초 단위로 반올림해 파일 수를 줄인다(같은 길이는 재사용)
+    sil: dict[float, str] = {}
+
+    def _silence(sec: float) -> str:
+        key = max(0.5, round(sec * 2) / 2)
+        if key not in sil:
+            p = os.path.join(workdir, f"sil_{int(key * 10):04d}.wav")
+            sh([FFMPEG, "-y", "-f", "lavfi", "-i",
+                "anullsrc=channel_layout=stereo:sample_rate=48000",
+                "-t", f"{key:.2f}", p])
+            sil[key] = p
+        return sil[key]
+
+    order, t, n = [], 0.0, 0
+    while t < target_sec and n < 4000:     # 폭주 가드
+        g = rnd.uniform(gap_min, gap_max)
+        order.append(_silence(g))
+        t += max(0.5, round(g * 2) / 2)
+        k = rnd.randrange(len(norm))
+        order.append(norm[k])
+        t += durs[k]
+        n += 1
+
+    lst = os.path.join(workdir, "trig_concat.txt")
+    with open(lst, "w", encoding="utf-8") as f:
+        for p in order:
+            f.write(f"file '{os.path.abspath(p)}'\n")
+    raw = os.path.join(workdir, "trig_raw.wav")
+    sh([FFMPEG, "-y", "-f", "concat", "-safe", "0", "-i", lst, "-ar", "48000", "-ac", "2", raw])
+    st = max(0.0, target_sec - 6)
+    sh([FFMPEG, "-y", "-i", raw, "-af",
+        f"atrim=0:{target_sec:.2f},afade=t=in:d=2,afade=t=out:st={st:.2f}:d=6,"
+        f"loudnorm=I=-18:TP=-2:LRA=11", "-ar", "48000", "-ac", "2", out_wav])
+    print(f"  · 트리거 트랙: 소재 {len(norm)}종 × {n}회 배치 "
+          f"(간격 {gap_min:.0f}~{gap_max:.0f}s) → {probe_dur(out_wav):.0f}s")
+    return out_wav
+
+
 # ── ③ 나레이션(edge-tts) + 낮은 믹스 ──
 def synth_narration(text: str, voice: str, out_wav: str, workdir: str) -> str | None:
     if not (text or "").strip():
@@ -120,15 +191,29 @@ def synth_narration(text: str, voice: str, out_wav: str, workdir: str) -> str | 
 
 
 def mix_audio(bed_wav: str, nar_wav: str | None, out_m4a: str,
-              gain: float = 0.35, delay: float = 3.0) -> str:
+              gain: float = 0.35, delay: float = 3.0,
+              trig_wav: str | None = None, bed_gain: float = 1.0,
+              trig_gain: float = 0.9) -> str:
+    """베드(+트리거 트랙)(+나레이션) → AAC. duration=first 라 길이는 베드가 정한다."""
+    ins = ["-i", bed_wav]
+    fc = [f"[0:a]volume={bed_gain}[bed]"]
+    mixed = "[bed]"
+    if trig_wav:
+        ins += ["-i", trig_wav]
+        fc.append(f"[{len(ins) // 2 - 1}:a]volume={trig_gain}[trg]")
+        fc.append(f"{mixed}[trg]amix=inputs=2:duration=first:normalize=0[bt]")
+        mixed = "[bt]"
     if nar_wav:
+        ins += ["-i", nar_wav]
         ms = int(delay * 1000)
-        fc = (f"[1:a]adelay={ms}|{ms},volume={gain}[nar];"
-              f"[0:a][nar]amix=inputs=2:duration=first:normalize=0[a]")
-        sh([FFMPEG, "-y", "-i", bed_wav, "-i", nar_wav, "-filter_complex", fc,
-            "-map", "[a]", "-c:a", "aac", "-b:a", "192k", out_m4a])
-    else:
+        fc.append(f"[{len(ins) // 2 - 1}:a]adelay={ms}|{ms},volume={gain}[nar]")
+        fc.append(f"{mixed}[nar]amix=inputs=2:duration=first:normalize=0[na]")
+        mixed = "[na]"
+    if len(fc) == 1 and mixed == "[bed]" and bed_gain == 1.0:
         sh([FFMPEG, "-y", "-i", bed_wav, "-c:a", "aac", "-b:a", "192k", out_m4a])
+        return out_m4a
+    sh([FFMPEG, "-y", *ins, "-filter_complex", ";".join(fc),
+        "-map", mixed, "-c:a", "aac", "-b:a", "192k", out_m4a])
     return out_m4a
 
 
@@ -179,7 +264,16 @@ def build_thumbnail(hook: str, text: str, out_jpg: str, workdir: str) -> str | N
 
 
 # ── 고수준 렌더 ──
-def render(spec: dict, clips: list[str], out_mp4: str, workdir: str) -> dict:
+# 모드별 믹스 밸런스 — 수면용은 베드가 주인공, 트리거용은 트리거가 주인공.
+MODE_GAINS = {
+    "sleep":   {"bed": 1.00, "trig": 0.00, "nar": 0.35},
+    "mixed":   {"bed": 0.85, "trig": 0.60, "nar": 0.30},
+    "trigger": {"bed": 0.35, "trig": 1.00, "nar": 0.00},
+}
+
+
+def render(spec: dict, clips: list[str], out_mp4: str, workdir: str,
+           trigger_clips: list[str] | None = None) -> dict:
     import time as _time
     t0 = _time.monotonic()
 
@@ -194,19 +288,33 @@ def render(spec: dict, clips: list[str], out_mp4: str, workdir: str) -> dict:
     target = float(spec.get("duration_min", 60)) * 60.0
     want_bed = max(target * 0.9, 60)  # 소스가 target 에 못 미치면 루프로 채움
 
+    mode = str(spec.get("mode") or "sleep").strip().lower()
+    g = MODE_GAINS.get(mode) or MODE_GAINS["sleep"]
+    print(f"  · 모드: {mode} (베드 {g['bed']} / 트리거 {g['trig']} / 나레이션 {g['nar']})")
+
     bed = build_bed(clips, os.path.join(workdir, "bed.wav"), target, workdir)
     _lap("앰비언트 베드(정규화+루프+loudnorm)")
+
+    trig = None
+    if g["trig"] > 0 and trigger_clips:
+        trig = build_triggers(trigger_clips, os.path.join(workdir, "trig.wav"), target, workdir,
+                              seed=str(spec.get("theme_id") or spec.get("date") or ""))
+        _lap("트리거 트랙")
+    elif g["trig"] > 0:
+        print("  ⚠️ 트리거 모드인데 트리거 소재가 없다 — 베드만으로 진행")
     yt = (spec.get("platforms") or {}).get("youtube") or {}
 
     # 나레이션(선택): 여/남 보이스는 spec.narration_voice 로 결정
     voice_f = os.environ.get("ASMR_VOICE_FEMALE", "ko-KR-SunHiNeural")
     voice_m = os.environ.get("ASMR_VOICE_MALE", "ko-KR-InJoonNeural")
     voice = voice_m if (spec.get("narration_voice") == "male") else voice_f
-    nar = synth_narration(spec.get("narration_text", ""), voice,
-                          os.path.join(workdir, "nar.wav"), workdir)
-    gain = float(os.environ.get("ASMR_NARRATION_GAIN", "0.35"))
-    audio = mix_audio(bed, nar, os.path.join(workdir, "mix.m4a"), gain=gain)
-    _lap("나레이션+믹스(AAC)")
+    nar = (synth_narration(spec.get("narration_text", ""), voice,
+                           os.path.join(workdir, "nar.wav"), workdir)
+           if g["nar"] > 0 else None)
+    gain = float(os.environ.get("ASMR_NARRATION_GAIN", str(g["nar"])))
+    audio = mix_audio(bed, nar, os.path.join(workdir, "mix.m4a"), gain=gain,
+                      trig_wav=trig, bed_gain=g["bed"], trig_gain=g["trig"])
+    _lap("나레이션+트리거+믹스(AAC)")
 
     bg = ensure_background((spec.get("background") or {}).get("prompt", ""),
                            os.path.join(workdir, "bg.png"), workdir)
