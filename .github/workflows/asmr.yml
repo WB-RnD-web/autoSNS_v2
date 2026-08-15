@@ -58,9 +58,20 @@ jobs:
       # 재생목록: 채널의 ASMR 재생목록 정확한 이름(오타 방지용으로 여기서 고정 권장)
       ASMR_PLAYLIST: ${{ vars.ASMR_PLAYLIST }}
     steps:
+      # ★코드는 항상 main 에서 — routine/asmr 도 '영구 누적' 브랜치라 코드가 낡는다.
+      #   (2026-08-15 확인: yt_i18n.py 없음 → 현지화가 애초에 돌지 않고 있었다)
       - uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 0
+
+      # 데이터(스펙 JSON)만 routine/asmr 에서. push diff 계산 때문에 얕게 받지 않는다.
+      - name: routine/asmr 스펙 가져오기(데이터만)
+        run: |
+          set -e
+          git fetch origin routine/asmr
+          git checkout FETCH_HEAD -- output/asmr/ || echo "⚠️ routine/asmr 에 output/asmr 없음"
+          ls output/asmr/*.json 2>/dev/null | tail -5 || echo "(스펙 없음)"
 
       - uses: actions/setup-python@v5
         with:

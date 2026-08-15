@@ -120,7 +120,7 @@ def xfade_chain(images: list[str], total: float, fps: int, xfade: float) -> tupl
 
 
 # ── 챕터 타임스탬프 재계산 ─────────────────────────────
-def recompute_chapters(spec: dict, seg_durs: list[float]) -> list[str]:
+def recompute_chapters(spec: dict, spans: list[tuple[float, float]]) -> list[str]:
     """루틴 챕터(est_sec 기준) → 실제 TTS 길이 기준으로 재매핑.
 
     루틴의 est_sec 합계와 실제 낭독 길이가 크게 다를 수 있어(관측: 310s vs ~480s),
@@ -130,18 +130,15 @@ def recompute_chapters(spec: dict, seg_durs: list[float]) -> list[str]:
     yt = (spec.get("platforms") or {}).get("youtube") or {}
     chapters = yt.get("chapters") or []
     segs = spec.get("segments") or []
-    if not chapters or not segs or len(seg_durs) != len(segs):
+    if not chapters or not segs or len(spans) != len(segs):
         return list(chapters)
 
-    # est 누적 / 실제 누적
+    # est 누적 / 실제 시작 시각
     est_cum, t = [], 0.0
     for s in segs:
         t += float(s.get("est_sec", 0) or 0)
         est_cum.append(t)
-    act_start, t = [], SR.LEAD_IN
-    for d in seg_durs:
-        act_start.append(t)
-        t += d + SR.SEG_GAP
+    act_start = [s for s, _ in spans]
 
     out = []
     for idx, c in enumerate(chapters):
@@ -235,20 +232,19 @@ def render(spec: dict, out_mp4: str, workdir: str) -> dict:
         raise RuntimeError("segments 없음")
 
     fontsdir, font_family = SR.resolve_font(workdir)
-    durs = SR.synth_all(segments, workdir)
+    narration = os.path.join(workdir, "narration.m4a")
+    spans = SR.synth_narration(segments, workdir, narration)
     _lap(t0, f"TTS {len(segments)}세그먼트")
 
-    total = SR.LEAD_IN + sum(durs) + SR.SEG_GAP * (len(segments) - 1) + SR.TAIL
-    narration = os.path.join(workdir, "narration.m4a")
-    SR.build_narration(len(segments), durs, workdir, narration)
+    total = SR.total_from_spans(spans)
     ass_path = os.path.join(workdir, "captions.ass")
-    SR.build_ass(segments, durs, font_family, ass_path)
-    srt_path = SR.build_srt(segments, durs, os.path.join(workdir, "captions.srt"))
+    SR.build_ass(segments, spans, font_family, ass_path)
+    srt_path = SR.build_srt(segments, spans, os.path.join(workdir, "captions.srt"))
     # ★루틴이 segments[i]["text_en"] 등을 써줬다면 같은 타이밍으로 번역 자막도 만든다.
     #   번역 API 를 쓰지 않으므로 비용 0이고, 타이밍이 한국어와 동일해 싱크가 어긋날 수 없다.
     srts = {}
     for _lang in [l.strip() for l in os.environ.get("I18N_LANGS", "en,ja,zh-Hant").split(",") if l.strip()]:
-        _p = SR.build_srt(segments, durs,
+        _p = SR.build_srt(segments, spans,
                           os.path.join(workdir, f"captions_{_lang.replace('-', '_')}.srt"),
                           key=f"text_{_lang.replace('-', '_')}")
         if _p:
@@ -265,7 +261,7 @@ def render(spec: dict, out_mp4: str, workdir: str) -> dict:
 
     dur = SR.probe_dur(out_mp4)
     size_mb = os.path.getsize(out_mp4) / 1e6
-    chapters = recompute_chapters(spec, durs)
+    chapters = recompute_chapters(spec, spans)
     print(f"✅ {out_mp4}  ({dur:.0f}s, {size_mb:.1f}MB, 장면 {len(images)}개, {len(segments)} segments)")
     return {"out": out_mp4, "duration_sec": round(dur, 1), "size_mb": round(size_mb, 1),
             "scenes": len(images), "chapters": chapters, "srt": srt_path, "srts": srts}
