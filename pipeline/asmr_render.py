@@ -2,19 +2,18 @@
 """ASMR 렌더러 — 정적 배경 1장 + Freesound 앰비언트(심리스 루프) + 낮은 나레이션 → 16:9 mp4.
 
 소설(novel_render)과 사상 동일: 정적 이미지 + 오디오. 차이는 오디오가 낭독이 아니라
-'테마 앰비언트(가위질/빗소리/…)를 1시간으로 이음새 없이 루프'한다는 점.
+'테마 사운드를 ★3~4시간 이음새 없이 루프'한다는 점.
 
 흐름:
   ① 클립들(mp3) → 48k 스테레오 wav 정규화
-  ② 크로스페이드로 이어 'base' 생성 → base 를 크로스페이드 루프해 목표 길이 채움 → loudnorm + 페이드
-  ③ (선택) 나레이션(edge-tts) 을 앰비언트보다 낮게 시작부에 믹스
+  ② 레이어별 '루프 단위' 생성(베드 12분 / 트리거 9분 / 배경음악 7분) — 전체 길이를 만들지 않는다
+  ③ 최종 믹스에서 각 단위를 `-stream_loop -1` 로 무한 반복 + 겹쳐서 목표 길이에서 끊는다
   ④ 정적 이미지 + 오디오 → H.264/yuv420p/AAC/+faststart (정지영상이라 파일 아주 작음)
   ⑤ 썸네일: FLUX 배경 + 문구 오버레이(소설 thumbnail 재사용)
 
 배경음/자막 없음(앰비언트 자체가 콘텐츠). 잘 때 듣는 용도 → 차분한 라우드니스(-20 LUFS).
 """
 from __future__ import annotations
-import math
 import os
 import random
 import re
@@ -87,22 +86,49 @@ def _xfade_concat(inputs: list[str], out_wav: str, d: float = XFADE) -> str:
 
 
 # ── ② 앰비언트 베드(심리스 루프) ──
-def build_bed(clips: list[str], out_wav: str, target_sec: float, workdir: str) -> str:
-    """클립들 → 크로스페이드 base → 루프해 target_sec 채움 → loudnorm + 페이드인/아웃."""
-    norm = [_norm_clip(c, os.path.join(workdir, f"n{i:02d}.wav")) for i, c in enumerate(clips)]
-    base = _xfade_concat(norm, os.path.join(workdir, "base.wav"))
-    base_dur = probe_dur(base)
+def build_unit(clips: list[str], out_wav: str, unit_sec: float, workdir: str,
+               tag: str = "bed", loudness: int = -20) -> str:
+    """클립들 → 크로스페이드 → ★배수로 늘려 unit_sec 짜리 '루프 단위'를 만든다.
+
+    ★왜 전체 길이를 안 만드는가:
+      3~4시간을 통째로 wav 로 만들면 한 레이어만 2.4GB 다(48k 스테레오 16bit).
+      대신 12분짜리 단위 하나만 만들고, 최종 믹스에서 `-stream_loop -1` 로 무한 반복시킨다.
+      디스크도 아끼고, 예전 `reps=min(...,60)` 상한 때문에 긴 영상이 조용해지던 버그도 사라진다.
+
+    ★왜 배수(doubling)인가:
+      예전엔 `_xfade_concat([base]*reps)` 로 ffmpeg 입력을 reps 개 넘겼다. 60개면 필터 그래프가
+      60입력이라 무겁다. 2배씩 늘리면 입력 2개짜리 호출 log2(n)번이면 끝난다.
+    """
+    norm = [_norm_clip(c, os.path.join(workdir, f"{tag}_n{i:02d}.wav")) for i, c in enumerate(clips)]
+    cur = _xfade_concat(norm, os.path.join(workdir, f"{tag}_base.wav"))
+    base_dur = probe_dur(cur)
     if base_dur <= 0:
-        raise RuntimeError("base 길이 측정 실패")
-    reps = max(1, math.ceil(target_sec / max(1.0, base_dur - XFADE)))
-    reps = min(reps, 60)  # 폭주 가드
-    long_ = base if reps == 1 else _xfade_concat([base] * reps, os.path.join(workdir, "long.wav"))
-    st = max(0.0, target_sec - 6)
-    sh([FFMPEG, "-y", "-i", long_, "-af",
-        f"atrim=0:{target_sec:.2f},afade=t=in:d=2,afade=t=out:st={st:.2f}:d=6,"
-        f"loudnorm=I=-20:TP=-2:LRA=11",
+        raise RuntimeError(f"{tag} base 길이 측정 실패")
+    step = 0
+    while probe_dur(cur) < unit_sec - XFADE and step < 12:
+        step += 1
+        nxt = os.path.join(workdir, f"{tag}_x{step}.wav")
+        _xfade_concat([cur, cur], nxt)
+        if cur != os.path.join(workdir, f"{tag}_base.wav"):
+            try:
+                os.remove(cur)                    # 배수마다 2배씩 커진다 — 직전 것은 지운다
+            except OSError:
+                pass
+        cur = nxt
+    have = probe_dur(cur)
+    unit = min(unit_sec, have)
+    # 루프 이음새(단위 끝 → 단위 처음)의 클릭 방지용 아주 짧은 페이드. 앰비언트라 안 들린다.
+    sh([FFMPEG, "-y", "-i", cur, "-af",
+        f"atrim=0:{unit:.2f},afade=t=in:d=0.4,afade=t=out:st={max(0.0, unit - 0.4):.2f}:d=0.4,"
+        f"loudnorm=I={loudness}:TP=-2:LRA=11",
         "-ar", "48000", "-ac", "2", out_wav])
-    print(f"  · 앰비언트 베드: base {base_dur:.0f}s ×{reps} → {probe_dur(out_wav):.0f}s")
+    for p in [cur, os.path.join(workdir, f"{tag}_base.wav"), *norm]:
+        if p != out_wav:
+            try:
+                os.remove(p)                      # 단위만 남기고 중간 wav 는 버린다
+            except OSError:
+                pass
+    print(f"  · {tag} 루프 단위: 소스 {base_dur:.0f}s → 배수 {step}회 → {probe_dur(out_wav):.0f}s")
     return out_wav
 
 
@@ -167,10 +193,17 @@ def build_triggers(clips: list[str], out_wav: str, target_sec: float, workdir: s
             f.write(f"file '{os.path.abspath(p)}'\n")
     raw = os.path.join(workdir, "trig_raw.wav")
     sh([FFMPEG, "-y", "-f", "concat", "-safe", "0", "-i", lst, "-ar", "48000", "-ac", "2", raw])
-    st = max(0.0, target_sec - 6)
+    # 이것도 '루프 단위'다(최종 믹스에서 무한 반복된다) → 이음새용 짧은 페이드만.
     sh([FFMPEG, "-y", "-i", raw, "-af",
-        f"atrim=0:{target_sec:.2f},afade=t=in:d=2,afade=t=out:st={st:.2f}:d=6,"
+        f"atrim=0:{target_sec:.2f},afade=t=in:d=0.4,"
+        f"afade=t=out:st={max(0.0, target_sec - 0.4):.2f}:d=0.4,"
         f"loudnorm=I=-18:TP=-2:LRA=11", "-ar", "48000", "-ac", "2", out_wav])
+    # 중간 산출물 정리 — raw 는 결과와 같은 크기고, 무음 조각도 쌓이면 100MB 단위가 된다.
+    for p in [raw, *sil.values()]:
+        try:
+            os.remove(p)
+        except OSError:
+            pass
     print(f"  · 트리거 트랙: 소재 {len(norm)}종 × {n}회 배치 "
           f"(간격 {gap_min:.0f}~{gap_max:.0f}s) → {probe_dur(out_wav):.0f}s")
     return out_wav
@@ -190,30 +223,37 @@ def synth_narration(text: str, voice: str, out_wav: str, workdir: str) -> str | 
         return None
 
 
-def mix_audio(bed_wav: str, nar_wav: str | None, out_m4a: str,
-              gain: float = 0.35, delay: float = 3.0,
-              trig_wav: str | None = None, bed_gain: float = 1.0,
-              trig_gain: float = 0.9) -> str:
-    """베드(+트리거 트랙)(+나레이션) → AAC. duration=first 라 길이는 베드가 정한다."""
-    ins = ["-i", bed_wav]
-    fc = [f"[0:a]volume={bed_gain}[bed]"]
-    mixed = "[bed]"
-    if trig_wav:
-        ins += ["-i", trig_wav]
-        fc.append(f"[{len(ins) // 2 - 1}:a]volume={trig_gain}[trg]")
-        fc.append(f"{mixed}[trg]amix=inputs=2:duration=first:normalize=0[bt]")
-        mixed = "[bt]"
-    if nar_wav:
-        ins += ["-i", nar_wav]
-        ms = int(delay * 1000)
-        fc.append(f"[{len(ins) // 2 - 1}:a]adelay={ms}|{ms},volume={gain}[nar]")
-        fc.append(f"{mixed}[nar]amix=inputs=2:duration=first:normalize=0[na]")
-        mixed = "[na]"
-    if len(fc) == 1 and mixed == "[bed]" and bed_gain == 1.0:
-        sh([FFMPEG, "-y", "-i", bed_wav, "-c:a", "aac", "-b:a", "192k", out_m4a])
-        return out_m4a
-    sh([FFMPEG, "-y", *ins, "-filter_complex", ";".join(fc),
-        "-map", mixed, "-c:a", "aac", "-b:a", "192k", out_m4a])
+def mix_audio(layers: list[dict], out_m4a: str, total_sec: float,
+              nar_wav: str | None = None, nar_gain: float = 0.35,
+              nar_delay: float = 3.0) -> str:
+    """루프 단위들을 ★무한 반복시켜 겹치고 total_sec 에서 끊는다 → AAC.
+
+    layers: [{"path": wav, "gain": float}] — 각각 `-stream_loop -1` 로 무한 반복된다.
+    단위 길이를 레이어마다 다르게 두면(베드 12분 / 트리거 9분 / 음악 7분) 조합 주기가
+    아주 길어져서, 3~4시간을 들어도 "아까 그 패턴"이 잘 안 느껴진다.
+    """
+    use = [l for l in layers if l.get("path") and l.get("gain", 0) > 0]
+    if not use:
+        raise RuntimeError("믹스할 오디오 레이어가 없음")
+    ins, fc, labels = [], [], []
+    for i, l in enumerate(use):
+        ins += ["-stream_loop", "-1", "-i", l["path"]]
+        fc.append(f"[{i}:a]volume={l['gain']}[l{i}]")
+        labels.append(f"[l{i}]")
+    if nar_wav and nar_gain > 0:
+        i = len(use)
+        ins += ["-i", nar_wav]                      # ★나레이션은 반복하지 않는다(도입부 1회)
+        fc.append(f"[{i}:a]adelay={int(nar_delay * 1000)}|{int(nar_delay * 1000)},"
+                  f"volume={nar_gain}[l{i}]")
+        labels.append(f"[l{i}]")
+    st = max(0.0, total_sec - 8)
+    if len(labels) == 1:
+        fc.append(f"{labels[0]}afade=t=in:d=3,afade=t=out:st={st:.2f}:d=8[a]")
+    else:
+        fc.append(f"{''.join(labels)}amix=inputs={len(labels)}:duration=longest:normalize=0,"
+                  f"afade=t=in:d=3,afade=t=out:st={st:.2f}:d=8[a]")
+    sh([FFMPEG, "-y", *ins, "-filter_complex", ";".join(fc), "-map", "[a]",
+        "-t", f"{total_sec:.2f}", "-c:a", "aac", "-b:a", "192k", out_m4a])
     return out_m4a
 
 
@@ -265,15 +305,41 @@ def build_thumbnail(hook: str, text: str, out_jpg: str, workdir: str) -> str | N
 
 # ── 고수준 렌더 ──
 # 모드별 믹스 밸런스 — 수면용은 베드가 주인공, 트리거용은 트리거가 주인공.
+#   music = 배경 피아노(선택). 소리를 가리면 안 되므로 어느 모드에서도 아주 낮게 깐다.
 MODE_GAINS = {
-    "sleep":   {"bed": 1.00, "trig": 0.00, "nar": 0.35},
-    "mixed":   {"bed": 0.85, "trig": 0.60, "nar": 0.30},
-    "trigger": {"bed": 0.35, "trig": 1.00, "nar": 0.00},
+    "sleep":   {"bed": 1.00, "trig": 0.00, "music": 0.22, "nar": 0.35},
+    "mixed":   {"bed": 0.85, "trig": 0.60, "music": 0.20, "nar": 0.30},
+    "trigger": {"bed": 0.35, "trig": 1.00, "music": 0.14, "nar": 0.00},
 }
+
+# ★길이 — 매 회 3~4시간 사이에서 랜덤. 유튜브 '장시간 ASMR' 은 길수록 잘 붙잡는다.
+#   theme_id+date 를 seed 로 써서 같은 스펙을 다시 렌더해도 같은 길이가 나온다.
+DUR_MIN_SEC = float(os.environ.get("ASMR_DUR_MIN_SEC", "10800"))   # 3시간
+DUR_MAX_SEC = float(os.environ.get("ASMR_DUR_MAX_SEC", "14400"))   # 4시간
+# 루프 단위 길이(초). 레이어마다 어긋나게 둬서 조합 주기를 길게 만든다.
+UNIT_BED = float(os.environ.get("ASMR_UNIT_BED", "720"))     # 12분
+UNIT_TRIG = float(os.environ.get("ASMR_UNIT_TRIG", "540"))   # 9분
+UNIT_MUSIC = float(os.environ.get("ASMR_UNIT_MUSIC", "420"))  # 7분
+
+
+def _hms(sec: float) -> str:
+    s = int(round(sec))
+    return f"{s // 3600}시간 {s % 3600 // 60}분 {s % 60}초"
+
+
+def pick_duration(spec: dict) -> float:
+    """스펙이 정한 길이 > 레거시 duration_min > ★3~4시간 랜덤."""
+    if spec.get("duration_sec"):
+        return float(spec["duration_sec"])
+    if spec.get("duration_min"):
+        return float(spec["duration_min"]) * 60.0
+    seed = f"{spec.get('theme_id', '')}|{spec.get('date', '')}"
+    return round(random.Random(seed).uniform(DUR_MIN_SEC, DUR_MAX_SEC))
 
 
 def render(spec: dict, clips: list[str], out_mp4: str, workdir: str,
-           trigger_clips: list[str] | None = None) -> dict:
+           trigger_clips: list[str] | None = None,
+           music_clips: list[str] | None = None) -> dict:
     import time as _time
     t0 = _time.monotonic()
 
@@ -285,23 +351,30 @@ def render(spec: dict, clips: list[str], out_mp4: str, workdir: str,
     os.makedirs(workdir, exist_ok=True)
     if not clips:
         raise RuntimeError("오디오 클립 없음(Freesound 실패) — ASMR 렌더 중단")
-    target = float(spec.get("duration_min", 60)) * 60.0
-    want_bed = max(target * 0.9, 60)  # 소스가 target 에 못 미치면 루프로 채움
-
+    target = pick_duration(spec)
     mode = str(spec.get("mode") or "sleep").strip().lower()
     g = MODE_GAINS.get(mode) or MODE_GAINS["sleep"]
-    print(f"  · 모드: {mode} (베드 {g['bed']} / 트리거 {g['trig']} / 나레이션 {g['nar']})")
+    print(f"  · 모드 {mode} · ★길이 {_hms(target)} ({target:.0f}s)")
+    print(f"    믹스 베드 {g['bed']} / 트리거 {g['trig']} / 음악 {g['music']} / 나레이션 {g['nar']}")
 
-    bed = build_bed(clips, os.path.join(workdir, "bed.wav"), target, workdir)
-    _lap("앰비언트 베드(정규화+루프+loudnorm)")
+    layers = [{"path": build_unit(clips, os.path.join(workdir, "bed.wav"),
+                                  UNIT_BED, workdir, "bed"), "gain": g["bed"]}]
+    _lap("앰비언트 루프 단위")
 
-    trig = None
     if g["trig"] > 0 and trigger_clips:
-        trig = build_triggers(trigger_clips, os.path.join(workdir, "trig.wav"), target, workdir,
-                              seed=str(spec.get("theme_id") or spec.get("date") or ""))
-        _lap("트리거 트랙")
+        layers.append({"path": build_triggers(trigger_clips, os.path.join(workdir, "trig.wav"),
+                                              UNIT_TRIG, workdir,
+                                              seed=str(spec.get("theme_id") or spec.get("date") or "")),
+                       "gain": g["trig"]})
+        _lap("트리거 루프 단위")
     elif g["trig"] > 0:
         print("  ⚠️ 트리거 모드인데 트리거 소재가 없다 — 베드만으로 진행")
+
+    if g["music"] > 0 and music_clips:
+        layers.append({"path": build_unit(music_clips, os.path.join(workdir, "music.wav"),
+                                          UNIT_MUSIC, workdir, "music", loudness=-26),
+                       "gain": g["music"]})
+        _lap("배경 음악 루프 단위")
     yt = (spec.get("platforms") or {}).get("youtube") or {}
 
     # 나레이션(선택): 여/남 보이스는 spec.narration_voice 로 결정
@@ -312,9 +385,9 @@ def render(spec: dict, clips: list[str], out_mp4: str, workdir: str,
                            os.path.join(workdir, "nar.wav"), workdir)
            if g["nar"] > 0 else None)
     gain = float(os.environ.get("ASMR_NARRATION_GAIN", str(g["nar"])))
-    audio = mix_audio(bed, nar, os.path.join(workdir, "mix.m4a"), gain=gain,
-                      trig_wav=trig, bed_gain=g["bed"], trig_gain=g["trig"])
-    _lap("나레이션+트리거+믹스(AAC)")
+    audio = mix_audio(layers, os.path.join(workdir, "mix.m4a"), target,
+                      nar_wav=nar, nar_gain=gain)
+    _lap(f"믹스({len(layers)}레이어 무한루프 → {_hms(target)})")
 
     bg = ensure_background((spec.get("background") or {}).get("prompt", ""),
                            os.path.join(workdir, "bg.png"), workdir)
