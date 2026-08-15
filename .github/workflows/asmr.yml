@@ -1,4 +1,4 @@
-name: ASMR(백색소음) 테마 스펙 → 정적배경 + Freesound 1시간 → 유튜브(+재생목록)
+name: ASMR 테마 스펙 → 정적배경 + Freesound 3~4시간 루프 → 유튜브(+재생목록)
 
 # 트리거: 루틴이 새 테마 스펙을 routine/asmr(★영구 누적 브랜치)에 push 하면 실행.
 #   처리 대상 = 이 push 에서 ★새로 추가된 output/asmr/<DATE>_<theme>.json (git diff).
@@ -36,7 +36,8 @@ permissions:
 jobs:
   build-and-upload:
     runs-on: ubuntu-latest
-    timeout-minutes: 35   # 실측 최대 29분, 인코딩 최적화 후 단축 예상
+    # 3~4시간 트랙으로 늘리면서 상향(실측: 믹스 5.5분 + 인코딩 수 분 추가).
+    timeout-minutes: 70
     env:
       TZ: Asia/Seoul
       # ★다국어: 번역은 '루틴이' 스펙에 써준다 → 번역 API 비용 0원.
