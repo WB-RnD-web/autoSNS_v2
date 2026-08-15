@@ -38,7 +38,8 @@ SCP의 공포는 괴물이 아니라 **절차**에서 나온다.
 ## 상수
 - TOPIC_SLUG: scp · FORMAT: 16:9 가로, 분량 자유, 배경 장면 여러 장 + 자막 번인 + 단일 내레이터, 배경음 없음(또는 아주 낮은 앰비언스)
 - BRANCH: routine/scp (★영구 누적 브랜치 — main 리셋 패턴 쓰지 말 것)
-- ★주기: **주 1회(weekly)**. 같은 ISO 주차에 두 번 실행되면 중단한다(0-B 참조).
+- ★주기: **주 1회(weekly)가 기본**. 단 ★같은 주에 또 실행되면 **막지 말고 새 이야기를 만든다**(0-B).
+  수동 추가 발행을 위한 것이다 — 2부작이 아니라 **완전히 다른 개체**여야 한다.
 - ★파생 발행: 같은 JSON의 `shorts` 블록으로 **다음날(토) 세로 쇼츠 1편**이 자동 발행된다(§2.6).
   → 루틴은 **주 1회만 돌면 된다.** 토요일에 따로 실행하지 않는다.
 - ★타깃 시청자: 45~65세+ 한국인. **SCP를 모르는 사람도 3분 안에 이해**해야 한다.
@@ -233,7 +234,18 @@ CODE=$(curl -s -o /dev/null -w "%{http_code}" -A "Mozilla/5.0" \
 - 영구 브랜치 체크아웃(★리셋 금지):
   `git fetch origin` → `git checkout routine/scp` (없으면 최초 1회만 `git checkout -b routine/scp origin/main`) → `git pull --ff-only origin routine/scp || true`
 - `scp/library.json` 읽기(없으면 초기화).
-- ★**주간 가드**: `last_iso_week == <ISO_WEEK>` 이면 **"이번 주 분은 이미 생성됨" 출력하고 즉시 종료.**
+- ★**주간 가드 없음 — 같은 주에 또 돌리면 ★새 이야기를 만든다.**
+  예전에는 `last_iso_week == <ISO_WEEK>` 이면 종료했다. 그러면 수동으로 한 편 더 만들고
+  싶을 때 막혀서, **가드를 없앴다.** 같은 주 재실행은 "중복"이 아니라 **추가 발행**이다.
+  - `last_iso_week` 는 계속 기록하되 **차단에 쓰지 않는다**(마지막 실행 주차 참고용).
+  - ★**절대 이어지는 이야기(2부)를 만들지 마라.** §F 그대로 — 완전히 **다른 개체, 다른 사건**이다.
+  - 같은 주 2편째는 아래가 **전부 달라야** 한다:
+    `scp_number` · `codename` · `theme`(로테이션 한 칸 더 전진) · `object_class` ·
+    변칙의 원리 · 규칙 · 장소 · 시대
+  - ★`story_id` 가 이전 편과 **반드시 달라야 한다.** 파이프라인 ledger 가
+    `(iso_week, story_id)` 로 중복을 판단하기 때문에, 번호가 다르면 story_id 도 달라져서
+    자동으로 처리된다. 같은 번호를 재사용하면 **파이프라인이 조용히 스킵한다.**
+  - 토요일 쇼츠는 **그 주의 가장 최근 스펙 1개**로 만들어진다(여러 편이면 마지막 것).
 
 ## 1) 소재 결정
 1) `rotation_pointer` 테마 + `class_pointer` 등급 채택.
@@ -436,6 +448,9 @@ blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion
    **"어기면 어떻게 되는지는, 어디에도 적혀 있지 않습니다."**
 4. **닫기 1~2문장** — ★반전 대신 **미끼**로 닫는다.
    예: `"그런데 그해 겨울, 사고가 하나 기록됩니다. 무슨 일이 있었는지는 전편에서 말씀드릴게요."`
+   → ★**"전편"이라는 말을 반드시 넣어라.** 영상 끝에 파이프라인이 「전편 링크는 댓글에 있습니다」
+     엔드카드를 2.5초 띄우고, 업로드 직후 전편 링크 댓글을 자동으로 단다. 낭독이 그 카드를
+     받아주는 구조라 **말과 화면이 같은 곳을 가리켜야** 클릭이 난다.
 
 - 낭독 톤 규칙(§2-0 ~ §2-2)은 **그대로 적용**된다. `~한다` 문어체 금지, 어미 굴리기, 숨 쉴 곳.
 - 자막은 파이프라인이 문장 단위로 자동 분절한다. **한 문장을 40자 넘기지 마라**(자막이 3줄로 터진다).
@@ -465,7 +480,9 @@ SHORTS_LOOK: sharp high-contrast product-still photography, single strong
 (롱폼용 빛바랜 필름룩이 새어 들어오는 걸 막는다.)
 
 ### 2.6.6 나머지 필드
-- `description`: 2~3문장 + 전편 유도 1문장 + 해시태그. 파이프라인이 CC BY-SA 고지와
+- `description`: 2~3문장 + 전편 유도 1문장 + 해시태그.
+  ★**전편 링크는 파이프라인이 설명 ★맨 첫 줄에 자동으로 붙인다** — 여기에 직접 쓰지 마라.
+  파이프라인이 CC BY-SA 고지와
   전편 링크(찾을 수 있으면)를 자동으로 덧붙이므로 **여기엔 넣지 않는다.**
 - `playlist`: `"SCP 쇼츠"` 고정(롱폼 재생목록과 섞지 않는다).
 
@@ -595,7 +612,7 @@ SHORTS_LOOK: sharp high-contrast product-still photography, single strong
 
 ## 5) 상태 갱신 + 커밋 (★영구 브랜치, force 금지)
 1. `library.json` 갱신: `files` 추가, `rotation_pointer`·`class_pointer` 전진,
-   **`last_iso_week` = `<ISO_WEEK>`**, `used_numbers`·`used_premises`·`used_procedures`·
+   **`last_iso_week` = `<ISO_WEEK>`**(기록만 — 차단에 쓰지 않는다), `used_numbers`·`used_premises`·`used_procedures`·
    `used_titles`·`used_openers`·`used_thumbnail_hooks` 갱신.
 2. `output/scp/<story_id>_<DATE>.json` 작성(★누적 — 덮어쓰지 않음).
 3. `git add -A` → `git commit -m "scp: <scp_number> <title>"` → `git push origin routine/scp`
