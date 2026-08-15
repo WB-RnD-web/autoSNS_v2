@@ -71,6 +71,52 @@ def relevance(item: dict, terms: set) -> int:
     return len(terms & _haystack(item)) if terms else 1
 
 
+def anchor_terms(queries: list[str], explicit: list[str] | None = None) -> set:
+    """★그 테마가 '무엇의 소리인지' — 이게 없는 음원은 무조건 버린다.
+
+    기존엔 쿼리 핵심어를 ★전부 합집합으로 모아 '하나라도 걸리면 통과'였다. 그래서
+    빗소리 테마(`rain on leaves forest` / `rain no thunder` / `light rain nature`)에
+    "forest birds chirping"(forest 걸림)이나 "nature walk"(nature 걸림)가 들어왔다.
+    주제가 빗소리인데 새소리가 섞이는 사고가 여기서 났다.
+
+    쿼리들을 ★교집합으로 보면 그 테마의 알맹이만 남는다:
+      {rain,leaves,forest} ∩ {rain,thunder} ∩ {rain,light,nature} = {rain}
+    교집합이 비면(쿼리들이 서로 너무 다르면) 첫 쿼리의 핵심어를 쓴다.
+    `explicit`(spec 의 freesound.must)이 있으면 그게 최우선이다.
+    """
+    if explicit:
+        got = set()
+        for w in explicit:
+            got |= _words(w)
+        if got:
+            return got
+    per = [core_terms(q) for q in (queries or []) if core_terms(q)]
+    if not per:
+        return set()
+    inter = set.intersection(*per) if len(per) > 1 else set(per[0])
+    return inter or set(per[0])
+
+
+def _akin(a: str, b: str) -> bool:
+    """같은 말인가 — 완전 일치 또는 ★접두 일치(4글자 이상).
+
+    접두만 보는 이유: `fire` 로 `fireplace`·`campfire`… 아니, campfire 는 접두가 아니다.
+    그래도 `rain` → `rainy`/`rainfall`/`raindrops` 는 잡고 `train`·`brain`·`drain` 은
+    안 잡힌다. 부분 문자열로 열면 빗소리 테마에 기차 소리가 들어온다.
+    """
+    if a == b:
+        return True
+    return len(a) >= 4 and len(b) >= 4 and (a.startswith(b) or b.startswith(a))
+
+
+def on_topic(item: dict, anchors: set) -> bool:
+    """앵커가 이름/태그에 하나도 없으면 그 음원은 이 테마의 소리가 아니다."""
+    if not anchors:
+        return True
+    hay = _haystack(item)
+    return any(_akin(a, w) for a in anchors for w in hay)
+
+
 def is_musical(item: dict) -> bool:
     """음악 트랙으로 보이면 True(ASMR 소스로 부적합)."""
     return bool(_haystack(item) & _MUSICAL)
@@ -167,9 +213,50 @@ def fetch_triggers(queries: list[str], out_dir: str, want_n: int = 14,
     return files, attrs
 
 
+def fetch_music(queries: list[str], out_dir: str, want_sec: int = 480,
+                max_clips: int = 6, key: str | None = None):
+    """★배경 음악(피아노 등) 수집 — 여기서만 is_musical 을 ★허용한다.
+
+    fetch_theme/fetch_triggers 는 음악 트랙을 일부러 배제한다(ASMR 소스에 노래가 섞이면
+    백색소음이 아니게 된다). 하지만 장작·숲처럼 아주 낮게 깔린 피아노가 얹히면 확실히
+    더 좋다는 피드백이 있어, 음악만 따로 받는 경로를 둔다. 최종 믹스에서 gain 0.14~0.22 로
+    깔리므로 '음악을 듣는' 게 아니라 '소리 밑에 깔린 공기'가 된다.
+
+    라이선스는 다른 경로와 동일(기본 CC0). 저작권 있는 음악이 섞이면 Content ID 에 걸리므로
+    ★CC0 필터는 절대 풀지 않는다.
+    """
+    key = key or os.environ.get("FREESOUND_API_KEY")
+    if not key or not queries:
+        return [], []
+    os.makedirs(out_dir, exist_ok=True)
+    anchors = anchor_terms(queries)
+    files, attrs, seen, total = [], [], set(), 0.0
+    for q in queries:
+        if total >= want_sec or len(files) >= max_clips:
+            break
+        for it in search(q, key, min_sec=30, max_sec=600, page_size=30):
+            if total >= want_sec or len(files) >= max_clips:
+                break
+            if it["id"] in seen or not on_topic(it, anchors):
+                continue
+            dst = os.path.join(out_dir, f"mus_{it['id']}.mp3")
+            if not _download_preview(it, dst):
+                continue
+            seen.add(it["id"])
+            files.append(dst)
+            total += float(it.get("duration") or 0)
+            attrs.append({"name": it.get("name"), "username": it.get("username"),
+                          "url": it.get("url"), "license": it.get("license")})
+    print(f"   → 배경음악 클립 {len(files)}개, 합계 {total:.0f}s (목표 {want_sec}s)")
+    return files, attrs
+
+
 def fetch_theme(queries: list[str], out_dir: str, want_sec: int = 1800,
-                max_clips: int = 12, key: str | None = None):
+                max_clips: int = 12, key: str | None = None, must: list[str] | None = None):
     """테마 쿼리들로 CC0 클립을 want_sec(합계 길이) 이상 모을 때까지 다운로드.
+
+    ★must(=앵커)에 걸리지 않는 음원은 어느 단계에서도 받지 않는다. 주제가 빗소리면
+    처음부터 끝까지 빗소리여야 한다 — 모자라면 반복하지, 다른 소리로 채우지 않는다.
 
     반환: (files[str], attributions[dict:name,username,url,license]).
     files 가 비면 호출측이 렌더를 중단해야 한다(오디오 없이는 ASMR 불가)."""
@@ -181,9 +268,12 @@ def fetch_theme(queries: list[str], out_dir: str, want_sec: int = 1800,
     terms = set()
     for q in queries:
         terms |= core_terms(q)
+    anchors = anchor_terms(queries, must)
+    print(f"   · 주제 앵커: {sorted(anchors) or '(없음 — 필터 불가)'}")
+    off = [0]
 
     def _candidates(qs: list[str], min_rel: int) -> list[dict]:
-        """검색만 수행해 후보를 모으고, 관련도 min_rel 이상 + 비음악 만 남겨 정렬."""
+        """검색만 수행해 후보를 모으고, ★앵커 + 관련도 min_rel + 비음악 만 남겨 정렬."""
         pool = {}
         for q in qs:
             for it in search(q, key):
@@ -192,6 +282,9 @@ def fetch_theme(queries: list[str], out_dir: str, want_sec: int = 1800,
                 if not fid or fid in pool or fid in taken or float(it.get("duration") or 0) <= 0:
                     continue
                 if is_musical(it):
+                    continue
+                if not on_topic(it, anchors):     # ★주제 이탈은 여기서 전부 잘린다
+                    off[0] += 1
                     continue
                 rel = relevance(it, terms)
                 if rel < min_rel:
@@ -238,13 +331,19 @@ def fetch_theme(queries: list[str], out_dir: str, want_sec: int = 1800,
             print(f"   ↺ 소스 부족({total[0]:.0f}/{want_sec}s) → 쿼리 완화(앞 {n}단어): {relaxed}")
             _download(_candidates(relaxed, min_rel=1))
 
-    # 3차 폴백: 그래도 0건이면 관련도 조건을 풀어 최소한의 소스라도 확보한다
-    # (무음 실패보다는 낫다. 단 음악 트랙 제외는 유지).
+    # 3차 폴백: 그래도 0건이면 '합집합 관련도' 조건만 푼다.
+    #   ★앵커(=주제)는 절대 풀지 않는다. 예전엔 여기서 관련도를 통째로 해제해
+    #   무관한 음원이 들어왔다 — 빗소리 영상에 엉뚱한 소리가 섞이는 통로였다.
+    #   앵커까지 풀 바에는 0건으로 실패하는 게 낫다(호출측이 렌더를 중단한다).
     if not files:
-        print("   ↺ 여전히 0건 → 관련도 조건 해제(음악 제외는 유지)")
+        print("   ↺ 여전히 0건 → 합집합 관련도만 해제(★주제 앵커·음악 제외는 유지)")
         _download(_candidates(queries, min_rel=0))
 
-    print(f"   → Freesound 클립 {len(files)}개, 합계 {total[0]:.0f}s (목표 {want_sec}s)")
+    print(f"   → Freesound 클립 {len(files)}개, 합계 {total[0]:.0f}s (목표 {want_sec}s)"
+          f"{f' · 주제 이탈로 버린 후보 {off[0]}개' if off[0] else ''}")
+    if not files:
+        sys.stderr.write(f"[error] 주제 '{sorted(anchors)}' 에 맞는 CC0 음원 0개 — "
+                         f"다른 소리로 채우지 않고 실패시킨다(검색어를 바꿔라).\n")
     return files, attrs
 
 
