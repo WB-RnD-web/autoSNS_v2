@@ -44,6 +44,14 @@ IMG_BACKEND = os.environ.get("SCP_SHORTS_IMG", "qwen").strip().lower()
 # 유튜브 쇼츠 상한 3분. 넘으면 일반 영상으로 취급돼 피드에 안 뜬다.
 HARD_MAX_SEC = float(os.environ.get("SCP_SHORTS_MAX_SEC", "175"))
 
+# ★엔드카드 — 쇼츠→롱폼 유도의 ★거의 유일하게 확실한 수단.
+#   쇼츠 시청자는 설명란을 열지 않는다(제목을 탭해야 나온다). 반면 45초짜리는 끝까지 본다.
+#   그래서 마지막 몇 초를 화면으로 잡는다. 낭독 뒤 무음 구간(TAIL)에 겹쳐 얹으므로
+#   영상이 길어지는 건 CTA_SEC 뿐이고, 자막과 위치가 달라 서로 가리지 않는다.
+CTA_SEC = float(os.environ.get("SCP_SHORTS_CTA_SEC", "2.5"))
+CTA_TEXT = os.environ.get("SCP_SHORTS_CTA", "전편 링크는\\N댓글에 있습니다")
+CTA_FONT_SIZE = int(os.environ.get("SCP_SHORTS_CTA_FONT", "76"))
+
 SHORTS_LOOK = ("sharp high-contrast product-still photography, single strong directional "
                "key light, deep black background, rich saturated color, crisp detail, "
                "dramatic rim light, photorealistic, 9:16 vertical composition")
@@ -311,8 +319,13 @@ def burn_top(img_path: str, lines: list[str], out_path: str, accent: str) -> str
 
 
 # ── 자막(ASS) — 9:16 + 쇼츠 UI 회피 ─────────────────────
-def build_ass(segments: list[dict], spans: list[tuple[float, float]], font_family: str, path: str) -> None:
-    """쇼츠 자막. 하단 UI(제목/채널 ~290px)와 우측 버튼 열(~x>940)을 피해 배치한다."""
+def build_ass(segments: list[dict], spans: list[tuple[float, float]], font_family: str, path: str,
+              total: float = 0.0) -> None:
+    """쇼츠 자막. 하단 UI(제목/채널 ~290px)와 우측 버튼 열(~x>940)을 피해 배치한다.
+
+    ★total 을 주면 마지막 자막이 끝난 뒤부터 끝까지 엔드카드(전편 유도)를 띄운다.
+    Cta 스타일은 정렬 5(화면 정중앙) + 불투명 박스(BorderStyle 3)라 하단 자막과 겹치지 않는다.
+    """
     head = f"""[Script Info]
 ScriptType: v4.00+
 PlayResX: {W}
@@ -323,6 +336,8 @@ ScaledBorderAndShadow: yes
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: Sh,{font_family},{FONT_SIZE},&H00FFFFFF,&H000000FF,&H00000000,&H96000000,-1,0,0,0,100,100,0,0,1,4,2,2,45,150,330,1
+Style: Band,{font_family},1,&H28000000,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+Style: Cta,{font_family},{CTA_FONT_SIZE},&H00FFFFFF,&H000000FF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,5,2,5,60,60,0,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -332,6 +347,19 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
         start, end = spans[i]
         lines.append(f"Dialogue: 0,{SR._ass_time(start)},{SR._ass_time(end)},Sh,,0,0,0,,"
                      f"{SR._ass_text(seg['text'])}")
+    if total > 0 and spans:
+        cta_from = spans[-1][1]
+        if total - cta_from >= 1.0:      # 1초도 안 남으면 깜빡이기만 하니 생략
+            t0, t1 = SR._ass_time(cta_from), SR._ass_time(total)
+            # 밴드를 따로 깐다 — BorderStyle=3(줄별 박스)은 두 줄 길이가 다르면 계단처럼 보인다.
+            n_line = CTA_TEXT.count("\\N") + 1
+            band_h = int(CTA_FONT_SIZE * 1.45 * n_line) + 64
+            band_y = H // 2 - band_h // 2
+            lines.append(f"Dialogue: 0,{t0},{t1},Band,,0,0,0,,"
+                         f"{{\\an7\\pos(0,{band_y})\\p1}}m 0 0 l {W} 0 {W} {band_h} 0 {band_h}{{\\p0}}")
+            lines.append(f"Dialogue: 1,{t0},{t1},Cta,,0,0,0,,{CTA_TEXT}")
+            print(f"  · 엔드카드 {total - cta_from:.1f}s: "
+                  f"{CTA_TEXT.replace(chr(92) + 'N', ' / ')!r}")
     with open(path, "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
 
@@ -390,13 +418,14 @@ def render(spec: dict, out_mp4: str, workdir: str) -> dict:
     spans = SR.synth_narration(segments, workdir, narration)
     _lap(t0, f"TTS {len(segments)}세그먼트")
 
-    total = SR.total_from_spans(spans)
+    # 낭독 뒤 무음(TAIL) + 엔드카드 유지 시간까지가 영상 길이다.
+    total = SR.total_from_spans(spans) + CTA_SEC
     if total > HARD_MAX_SEC:
         sys.stderr.write(f"[warn] 쇼츠 길이 {total:.0f}s > {HARD_MAX_SEC:.0f}s — 유튜브가 "
                          f"쇼츠로 취급하지 않을 수 있다(대본을 줄여라).\n")
 
     ass_path = os.path.join(workdir, "captions.ass")
-    build_ass(segments, spans, font_family, ass_path)
+    build_ass(segments, spans, font_family, ass_path, total)
     srt_path = SR.build_srt(segments, spans, os.path.join(workdir, "captions.srt"))
     # ★루틴이 segments[i]["text_en"] 등을 써줬다면 같은 타이밍으로 번역 자막도 만든다.
     #   번역 API 를 쓰지 않으므로 비용 0이고, 타이밍이 한국어와 동일해 싱크가 어긋날 수 없다.

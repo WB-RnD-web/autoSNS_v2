@@ -92,10 +92,12 @@ def build_meta(spec: dict, sh: dict, longform_url: str, force_private: bool) -> 
     if "#shorts" not in title.lower():
         title = f"{title} #shorts"
 
+    # ★전편 링크는 ★맨 첫 줄에. 쇼츠 설명은 접힌 상태로 뜨고 첫 줄만 미리보기로 보인다 —
+    #   본문 뒤에 두면 사실상 아무도 못 본다.
     desc = (sh.get("description") or "").strip()
-    link = (f"▶ 전편(풀버전): {longform_url}" if longform_url
+    link = (f"▶ 전편(풀버전) 보러가기: {longform_url}" if longform_url
             else "▶ 전편(풀버전)은 채널의 'SCP 아카이브' 재생목록에 있습니다.")
-    desc = "\n\n".join(x for x in (desc, link, CC_NOTE, HASHTAGS) if x)
+    desc = "\n\n".join(x for x in (link, desc, CC_NOTE, HASHTAGS) if x)
 
     tags = list(TAGS)
     for k in ("object_class", "scp_number", "theme"):
@@ -147,8 +149,8 @@ def process(spec_path: str, args, led) -> dict:
 
     if args.no_upload:
         return res
-    meta = build_meta(spec, info["shorts"], "" if args.dry_run_upload else find_longform_url(spec),
-                      args.force_private)
+    longform_url = "" if args.dry_run_upload else find_longform_url(spec)
+    meta = build_meta(spec, info["shorts"], longform_url, args.force_private)
     print(f"   업로드 메타: title={meta['title']!r} privacy={meta['privacy']} "
           f"playlist={meta['playlist']!r}")
     if args.dry_run_upload:
@@ -175,6 +177,14 @@ def process(spec_path: str, args, led) -> dict:
             res["uploaded"] = f"{pub['url']} ({meta['privacy']})"
             res["playlist"] = pub.get("playlist_id")
             res["i18n"] = {"localized": pub.get("localized", []), "captions": pub.get("captions", [])}
+            # ★전편 유도 댓글 — 쇼츠 시청자는 설명란을 안 열고 댓글창은 연다.
+            #   영상 끝 엔드카드가 "댓글에 있습니다"라고 가리키는 그 댓글이 이거다.
+            #   실패해도 업로드는 이미 끝난 뒤라 런을 깨뜨리지 않는다.
+            if not args.force_private:      # 비공개 테스트에는 달지 않는다
+                import yt_comment
+                res["comment"] = yt_comment.post(
+                    pub["video_id"],
+                    yt_comment.longform_comment(longform_url, spec.get("codename", "")))
             if led is not None:
                 ledgermod.mark(led, _led_key(spec), pub["video_id"], meta["privacy"],
                                time.time(), args.ledger_path)
