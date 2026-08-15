@@ -126,6 +126,47 @@ def _download_preview(item: dict, out_path: str) -> bool:
         return False
 
 
+def fetch_triggers(queries: list[str], out_dir: str, want_n: int = 14,
+                   min_sec: float = 0.3, max_sec: float = 8.0, key: str | None = None):
+    """★단발 트리거음 수집 — fetch_theme 과 달리 ★짧은 클립을 노린다.
+
+    앰비언트 수집은 duration:[20 TO 600] 로 거른다. 루프를 만들려면 그래야 하지만,
+    왁뿌볼(왁스 깨짐)·뽁뽁이·크런치 같은 트리거음은 ★1~3초짜리라 그 필터에서 통째로
+    사라진다. 그래서 짧은 쪽만 따로 긁는 경로를 둔다.
+
+    반환: (files[str], attributions[dict]) — fetch_theme 과 같은 모양.
+    비어도 렌더는 계속된다(트리거 없이 베드만).
+    """
+    key = key or os.environ.get("FREESOUND_API_KEY")
+    if not key or not queries:
+        return [], []
+    os.makedirs(out_dir, exist_ok=True)
+    files, attrs, seen = [], [], set()
+    for q in queries:
+        if len(files) >= want_n:
+            break
+        terms = core_terms(q)
+        for it in search(q, key, min_sec=int(min_sec), max_sec=int(max_sec), page_size=30):
+            if len(files) >= want_n:
+                break
+            if it["id"] in seen or is_musical(it):
+                continue
+            d = float(it.get("duration") or 0)
+            if not (min_sec <= d <= max_sec):     # API 는 초 단위 반올림이라 한 번 더 본다
+                continue
+            if relevance(it, terms) < 1:
+                continue
+            dst = os.path.join(out_dir, f"trg_{it['id']}.mp3")
+            if not _download_preview(it, dst):
+                continue
+            seen.add(it["id"])
+            files.append(dst)
+            attrs.append({"name": it.get("name"), "username": it.get("username"),
+                          "url": it.get("url"), "license": it.get("license")})
+    print(f"   → 트리거 클립 {len(files)}개 (목표 {want_n}개, {min_sec:.0f}~{max_sec:.0f}s)")
+    return files, attrs
+
+
 def fetch_theme(queries: list[str], out_dir: str, want_sec: int = 1800,
                 max_clips: int = 12, key: str | None = None):
     """테마 쿼리들로 CC0 클립을 want_sec(합계 길이) 이상 모을 때까지 다운로드.
