@@ -89,12 +89,25 @@ def process(spec_path: str, args, led) -> dict:
     if not clips:
         res["error"] = "freesound: 소스 음원 0개(키/쿼리/네트워크 확인)"
         return res
+
+    # ★트리거 소재(귀르가즘 모드) — 짧은 클립이라 별도 경로로 긁는다. 없어도 렌더는 계속.
+    trig_clips = []
+    if str(spec.get("mode") or "sleep").lower() in ("trigger", "mixed"):
+        tq = (spec.get("freesound") or {}).get("trigger_queries") or []
+        if tq:
+            try:
+                trig_clips, tattrs = freesound.fetch_triggers(tq, os.path.join(wd, "trg"))
+                attrs += tattrs
+            except Exception as e:  # noqa: BLE001
+                sys.stderr.write(f"[warn] 트리거 수집 실패(베드만 진행): {e}\n")
+        else:
+            sys.stderr.write("[warn] mode 가 trigger/mixed 인데 trigger_queries 가 비었다\n")
     attrs_block = freesound.attribution_block(attrs)
 
     # ② 렌더
     import asmr_render
     try:
-        info = asmr_render.render(spec, clips, out_mp4, wd)
+        info = asmr_render.render(spec, clips, out_mp4, wd, trigger_clips=trig_clips)
         res["video"] = info["out"]
         res["duration_sec"] = info["duration_sec"]
         res["size_mb"] = info["size_mb"]
