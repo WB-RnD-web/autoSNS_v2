@@ -311,7 +311,7 @@ def burn_top(img_path: str, lines: list[str], out_path: str, accent: str) -> str
 
 
 # ── 자막(ASS) — 9:16 + 쇼츠 UI 회피 ─────────────────────
-def build_ass(segments: list[dict], durs: list[float], font_family: str, path: str) -> None:
+def build_ass(segments: list[dict], spans: list[tuple[float, float]], font_family: str, path: str) -> None:
     """쇼츠 자막. 하단 UI(제목/채널 ~290px)와 우측 버튼 열(~x>940)을 피해 배치한다."""
     head = f"""[Script Info]
 ScriptType: v4.00+
@@ -328,12 +328,10 @@ Style: Sh,{font_family},{FONT_SIZE},&H00FFFFFF,&H000000FF,&H00000000,&H96000000,
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 """
     lines = [head]
-    t = SR.LEAD_IN
     for i, seg in enumerate(segments):
-        d = durs[i]
-        lines.append(f"Dialogue: 0,{SR._ass_time(t)},{SR._ass_time(t + d)},Sh,,0,0,0,,"
+        start, end = spans[i]
+        lines.append(f"Dialogue: 0,{SR._ass_time(start)},{SR._ass_time(end)},Sh,,0,0,0,,"
                      f"{SR._ass_text(seg['text'])}")
-        t += d + (SR.SEG_GAP if i < len(segments) - 1 else 0)
     with open(path, "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
 
@@ -388,24 +386,23 @@ def render(spec: dict, out_mp4: str, workdir: str) -> dict:
     print(f"  · 대본 {len(sh['script'])}자 → 자막 {len(segments)}장")
 
     fontsdir, font_family = SR.resolve_font(workdir)
-    durs = SR.synth_all(segments, workdir)
+    narration = os.path.join(workdir, "narration.m4a")
+    spans = SR.synth_narration(segments, workdir, narration)
     _lap(t0, f"TTS {len(segments)}세그먼트")
 
-    total = SR.LEAD_IN + sum(durs) + SR.SEG_GAP * (len(segments) - 1) + SR.TAIL
+    total = SR.total_from_spans(spans)
     if total > HARD_MAX_SEC:
         sys.stderr.write(f"[warn] 쇼츠 길이 {total:.0f}s > {HARD_MAX_SEC:.0f}s — 유튜브가 "
                          f"쇼츠로 취급하지 않을 수 있다(대본을 줄여라).\n")
 
-    narration = os.path.join(workdir, "narration.m4a")
-    SR.build_narration(len(segments), durs, workdir, narration)
     ass_path = os.path.join(workdir, "captions.ass")
-    build_ass(segments, durs, font_family, ass_path)
-    srt_path = SR.build_srt(segments, durs, os.path.join(workdir, "captions.srt"))
+    build_ass(segments, spans, font_family, ass_path)
+    srt_path = SR.build_srt(segments, spans, os.path.join(workdir, "captions.srt"))
     # ★루틴이 segments[i]["text_en"] 등을 써줬다면 같은 타이밍으로 번역 자막도 만든다.
     #   번역 API 를 쓰지 않으므로 비용 0이고, 타이밍이 한국어와 동일해 싱크가 어긋날 수 없다.
     srts = {}
     for _lang in [l.strip() for l in os.environ.get("I18N_LANGS", "en,ja,zh-Hant").split(",") if l.strip()]:
-        _p = SR.build_srt(segments, durs,
+        _p = SR.build_srt(segments, spans,
                           os.path.join(workdir, f"captions_{_lang.replace('-', '_')}.srt"),
                           key=f"text_{_lang.replace('-', '_')}")
         if _p:

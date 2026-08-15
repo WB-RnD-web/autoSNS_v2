@@ -28,10 +28,15 @@ VOICE = os.environ.get("STORY_VOICE", "ko-KR-InJoonNeural")            # 차분�
 VOICE_FALLBACK = os.environ.get("STORY_VOICE_FALLBACK", "ko-KR-HyunsuMultilingualNeural")
 VO_RATE = os.environ.get("STORY_RATE", "-4%")                          # 사연/괴담은 살짝 느리게
 VO_PITCH = os.environ.get("STORY_PITCH", "+0Hz")
-SEG_GAP = float(os.environ.get("STORY_SEG_GAP", "0.32"))
+SEG_GAP = float(os.environ.get("STORY_SEG_GAP", "0.32"))   # ★폴백 경로에서만 쓰인다
 LEAD_IN = float(os.environ.get("STORY_LEAD_IN", "0.6"))
 TAIL = float(os.environ.get("STORY_TAIL", "1.8"))
 FONT_SIZE = int(os.environ.get("STORY_FONT_SIZE", "56"))
+
+# ★통합 TTS — 세그먼트를 묶어 한 번에 합성한다(끊김 제거). 자세한 이유는 아래 ① 참고.
+JOIN = os.environ.get("STORY_TTS_JOIN", "1") != "0"        # 0 = 옛 방식(세그먼트별)
+JOIN_MAX_CHARS = int(os.environ.get("STORY_TTS_JOIN_CHARS", "700"))
+GROUP_GAP = float(os.environ.get("STORY_GROUP_GAP", "0.35"))  # 그룹(문단) 사이 숨
 
 
 def _bin(name):
@@ -88,9 +93,141 @@ def resolve_font(workdir: str) -> tuple[str | None, str]:
 
 
 # ── ① TTS ──
+# ★세그먼트마다 TTS 를 따로 돌리면 낭독이 매 문장 끊긴다.
+#   edge-tts 는 한 번의 호출을 '완결된 발화' 로 읽기 때문에
+#     ⓐ 끝 억양이 종결형으로 뚝 떨어지고
+#     ⓑ mp3 앞뒤에 무음을 붙인다(합쳐서 0.4~0.7s 관측)
+#   여기에 SEG_GAP 까지 더해져 경계마다 1초 가까이 비었다. 이어지는 이야기가 아니라
+#   낱개 문장을 하나씩 읽어주는 소리로 들려서 2026-08-15 SCP 롱폼/쇼츠를 폐기했다.
+#   → 세그먼트를 문단 크기로 묶어 ★한 번에 합성하고(연결 억양이 살아난다),
+#     자막 타이밍은 WordBoundary 이벤트로 실제 오디오에서 되찾는다.
+#     경계 무음이 아예 없어지고, 문장 사이 호흡은 TTS 가 스스로 넣는 자연스러운 양만 남는다.
 async def _synth(text, voice, out_mp3):
     import edge_tts  # type: ignore
     await edge_tts.Communicate(text, voice, rate=VO_RATE, pitch=VO_PITCH).save(out_mp3)
+
+
+async def _synth_marks(text, voice, out_mp3):
+    """한 번의 호출로 합성하면서 단어 경계(초 단위)를 같이 받아온다."""
+    import edge_tts  # type: ignore
+    try:
+        comm = edge_tts.Communicate(text, voice, rate=VO_RATE, pitch=VO_PITCH,
+                                    boundary="WordBoundary")
+    except TypeError:                      # 구버전 edge-tts: 문장 경계만 나온다(그래도 쓸 만함)
+        comm = edge_tts.Communicate(text, voice, rate=VO_RATE, pitch=VO_PITCH)
+    marks = []
+    with open(out_mp3, "wb") as f:
+        async for ch in comm.stream():
+            if ch["type"] == "audio":
+                f.write(ch["data"])
+            elif ch["type"] in ("WordBoundary", "SentenceBoundary"):
+                marks.append((ch["offset"] / 1e7, ch["duration"] / 1e7, ch["text"]))
+    return marks
+
+
+def synth_group(text: str, out_mp3: str) -> list[tuple[float, float, str]]:
+    """묶음 하나를 합성. 실패하면 대체 보이스로, 그래도 안 되면 예외."""
+    voices = [VOICE] + ([VOICE_FALLBACK] if VOICE_FALLBACK != VOICE else [])
+    last = None
+    for v in voices:
+        for _ in range(2):                 # 네트워크 흔들림 1회 재시도
+            try:
+                marks = asyncio.run(_synth_marks(text, v, out_mp3))
+                if os.path.exists(out_mp3) and os.path.getsize(out_mp3) > 0:
+                    return marks
+            except Exception as e:         # noqa: BLE001
+                last = e
+    raise last or RuntimeError("TTS 합성 실패")
+
+
+def group_segments(segments, max_chars: int | None = None) -> list[list[int]]:
+    """세그먼트를 문단 크기(JOIN_MAX_CHARS)로 묶는다 — 문장 중간은 절대 자르지 않는다.
+
+    통째로 한 번에 합성하지 않는 이유: 15분짜리 롱폼을 웹소켓 하나로 받다 끊기면
+    전부 날아간다. 묶음 단위면 재시도 비용이 문단 하나로 끝나고, 묶음 사이의
+    GROUP_GAP(0.35s)은 문단 전환의 '숨'이라 오히려 있어야 자연스럽다.
+    """
+    max_chars = JOIN_MAX_CHARS if max_chars is None else max_chars
+    groups: list[list[int]] = []
+    cur: list[int] = []
+    n = 0
+    for i, seg in enumerate(segments):
+        t = (seg.get("text") or "").strip()
+        if cur and n + len(t) > max_chars:
+            groups.append(cur)
+            cur, n = [], 0
+        cur.append(i)
+        n += len(t) + 1
+    if cur:
+        groups.append(cur)
+    return groups
+
+
+def _spans_proportional(texts, dur) -> list[tuple[float, float]]:
+    """단어 경계를 못 믿을 때 — 문자 수 비례로 나눈다.
+
+    싱크 정밀도만 떨어질 뿐 ★낭독은 여전히 끊기지 않는다(오디오는 이미 한 덩어리).
+    """
+    w = [max(1, len(t)) for t in texts]
+    tot = sum(w)
+    out, t = [], 0.0
+    for x in w:
+        d = dur * x / tot
+        out.append((t, t + d))
+        t += d
+    return out
+
+
+def _spans_from_marks(texts, marks, dur) -> list[tuple[float, float]] | None:
+    """단어 경계 → 세그먼트별 [start,end] (묶음 오디오 기준 초). 못 믿겠으면 None."""
+    n = len(texts)
+    joined = " ".join(texts)
+    ranges, p = [], 0
+    for t in texts:
+        ranges.append((p, p + len(t)))
+        p += len(t) + 1
+
+    hits, cur = [], 0                      # 경계는 순서대로 오므로 커서를 전진만 시킨다
+    for st, d, w in marks:
+        w = (w or "").strip()
+        if not w:
+            continue
+        pos = joined.find(w, cur)
+        if pos < 0:
+            continue                       # 구두점 등으로 못 찾으면 그 단어만 버린다
+        cur = pos + len(w)
+        hits.append((pos, st, st + d))
+
+    starts: list[float | None] = [None] * n
+    for i, (cs, ce) in enumerate(ranges):
+        sel = [h for h in hits if cs <= h[0] < ce]
+        if sel:
+            starts[i] = sel[0][1]
+    if sum(s is not None for s in starts) < max(1, int(n * 0.6)):
+        return None
+
+    # 첫 세그먼트는 오디오 시작에 고정 — 이후 빈 칸은 문자 수 비례로 보간
+    starts[0] = 0.0
+    cw = [0.0]
+    for t in texts:
+        cw.append(cw[-1] + max(1, len(t)))
+    i = 1
+    while i < n:
+        if starts[i] is not None:
+            i += 1
+            continue
+        a, b = i - 1, i
+        while b < n and starts[b] is None:
+            b += 1
+        t0, t1 = starts[a], (starts[b] if b < n else dur)
+        c0, c1 = cw[a], (cw[b] if b < n else cw[n])
+        for k in range(a + 1, b):
+            r = (cw[k] - c0) / (c1 - c0) if c1 > c0 else 0.0
+            starts[k] = t0 + (t1 - t0) * r
+        i = b
+
+    # 끝 시각 = 다음 세그먼트 시작(마지막은 오디오 끝) — 자막이 깜빡이지 않고 이어진다
+    return [(starts[i], starts[i + 1] if i + 1 < n else dur) for i in range(n)]
 
 
 def synth_segment(text: str, out_mp3: str) -> None:
@@ -138,6 +275,86 @@ def build_narration(n, durs, workdir, out_m4a) -> None:
         shutil.copyfile(os.path.join(workdir, "narration.m4a"), out_m4a)
 
 
+def _concat_to_m4a(names: list[str], gap: float, workdir: str, out_m4a: str) -> None:
+    lines = []
+    if gap > 0 and len(names) > 1:
+        sh([FFMPEG, "-y", "-f", "lavfi", "-i", "anullsrc=channel_layout=stereo:sample_rate=44100",
+            "-t", f"{gap:.3f}", os.path.join(workdir, "gap.wav")])
+    for i, nm in enumerate(names):
+        lines.append(f"file '{nm}'")
+        if gap > 0 and i < len(names) - 1:
+            lines.append("file 'gap.wav'")
+    with open(os.path.join(workdir, "concat.txt"), "w", encoding="utf-8") as f:
+        f.write("\n".join(lines) + "\n")
+    sh([FFMPEG, "-y", "-f", "concat", "-safe", "0", "-i", "concat.txt",
+        "-c:a", "aac", "-b:a", "192k", "narration.m4a"], cwd=workdir)
+    if out_m4a != os.path.join(workdir, "narration.m4a"):
+        shutil.copyfile(os.path.join(workdir, "narration.m4a"), out_m4a)
+
+
+def spans_from_durs(durs) -> list[tuple[float, float]]:
+    """옛 방식(세그먼트별 합성)의 타이밍 — 폴백 경로 전용."""
+    out, t = [], LEAD_IN
+    for i, d in enumerate(durs):
+        out.append((t, t + d))
+        t += d + (SEG_GAP if i < len(durs) - 1 else 0)
+    return out
+
+
+def total_from_spans(spans) -> float:
+    return (spans[-1][1] if spans else LEAD_IN) + TAIL
+
+
+def _synth_joined(segments, workdir, out_m4a) -> list[tuple[float, float]]:
+    groups = group_segments(segments)
+    spans: list[tuple[float, float] | None] = [None] * len(segments)
+    names, base, guessed = [], LEAD_IN, 0
+    for gi, idxs in enumerate(groups):
+        texts = [(segments[i].get("text") or "").strip() for i in idxs]
+        mp3 = os.path.join(workdir, f"grp_{gi:03d}.mp3")
+        wav = os.path.join(workdir, f"grp_{gi:03d}.wav")
+        marks = synth_group(" ".join(texts), mp3)
+        sh([FFMPEG, "-y", "-i", mp3, "-ar", "44100", "-ac", "2", wav])
+        d = probe_dur(wav)
+        local = _spans_from_marks(texts, marks, d)
+        if local is None:
+            local = _spans_proportional(texts, d)
+            guessed += 1
+        for k, i in enumerate(idxs):
+            spans[i] = (base + local[k][0], base + local[k][1])
+        names.append(os.path.basename(wav))
+        base += d + GROUP_GAP
+    _concat_to_m4a(names, GROUP_GAP, workdir, out_m4a)
+    # 묶음 경계의 GROUP_GAP 동안 자막이 사라져 깜빡이지 않도록, 각 자막을 다음 자막
+    # 시작까지 늘인다(마지막은 오디오 끝 그대로).
+    if any(s is None for s in spans):     # 있을 수 없지만, 어긋난 채 내보내면 자막이 밀린다
+        raise RuntimeError("세그먼트 타이밍 누락")
+    out = [(spans[i][0], spans[i + 1][0] if i + 1 < len(spans) else spans[i][1])
+           for i in range(len(spans))]
+    audio = base - GROUP_GAP - LEAD_IN
+    note = f", {guessed}묶음은 문자수 비례 추정" if guessed else ""
+    print(f"  · TTS {len(segments)} segments → ★{len(groups)}묶음 통합 합성"
+          f"(총 {audio:.0f}s 낭독{note}) — 끊김 지점 {len(groups) - 1}곳"
+          f"(옛 방식 {len(segments) - 1}곳)")
+    return out
+
+
+def synth_narration(segments, workdir, out_m4a) -> list[tuple[float, float]]:
+    """낭독 오디오를 만들고 세그먼트별 (start, end) 를 돌려준다.
+
+    통합 합성이 어떤 이유로든 실패하면 ★옛 방식(세그먼트별)으로 조용히 내려간다.
+    최악의 경우가 '예전 품질'이지 '실패한 런'이 아니게 하려는 것.
+    """
+    if JOIN:
+        try:
+            return _synth_joined(segments, workdir, out_m4a)
+        except Exception as e:  # noqa: BLE001
+            sys.stderr.write(f"[warn] 통합 TTS 실패 → 세그먼트별 합성으로 폴백: {e}\n")
+    durs = synth_all(segments, workdir)
+    build_narration(len(segments), durs, workdir, out_m4a)
+    return spans_from_durs(durs)
+
+
 # ── ③ 자막(ASS) ──
 def _ass_time(t):
     if t < 0:
@@ -157,7 +374,7 @@ def _srt_time(t):
     return f"{h:02d}:{m:02d}:{s:02d},{ms:03d}"
 
 
-def build_srt(segments, durs, path, key="text") -> str | None:
+def build_srt(segments, spans, path, key="text") -> str | None:
     """번인 자막과 ★같은 타이밍의 SRT — 유튜브 자막 트랙의 원본이 된다.
 
     ffmpeg 로 ASS→SRT 변환하면 `<font face=… size=…>` 태그가 딸려 나와 지저분해진다.
@@ -170,19 +387,18 @@ def build_srt(segments, durs, path, key="text") -> str | None:
     """
     if not any((seg.get(key) or "").strip() for seg in segments):
         return None
-    lines, t = [], LEAD_IN
+    lines = []
     for i, seg in enumerate(segments):
-        d = durs[i]
+        start, end = spans[i]
         # 특정 세그먼트만 번역이 비면 한국어로 메운다(자막이 통째로 사라지는 것보다 낫다)
         text = (seg.get(key) or seg.get("text") or "").strip()
-        lines.append(f"{i + 1}\n{_srt_time(t)} --> {_srt_time(t + d)}\n{text}\n")
-        t += d + (SEG_GAP if i < len(segments) - 1 else 0)
+        lines.append(f"{i + 1}\n{_srt_time(start)} --> {_srt_time(end)}\n{text}\n")
     with open(path, "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
     return path
 
 
-def build_ass(segments, durs, font_family, path):
+def build_ass(segments, spans, font_family, path):
     head = f"""[Script Info]
 ScriptType: v4.00+
 PlayResX: {W}
@@ -198,12 +414,9 @@ Style: Story,{font_family},{FONT_SIZE},&H00FFFFFF,&H000000FF,&H00000000,&H780000
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 """
     lines = [head]
-    t = LEAD_IN
     for i, seg in enumerate(segments):
-        d = durs[i]
-        start, end = t, t + d
+        start, end = spans[i]
         lines.append(f"Dialogue: 0,{_ass_time(start)},{_ass_time(end)},Story,,0,0,0,,{_ass_text(seg['text'])}")
-        t = end + (SEG_GAP if i < len(segments) - 1 else 0)
     with open(path, "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
 
@@ -264,12 +477,11 @@ def render(spec: dict, out_mp4: str, workdir: str) -> dict:
     if not segments:
         raise RuntimeError("segments 없음")
     fontsdir, font_family = resolve_font(workdir)
-    durs = synth_all(segments, workdir)
-    total = LEAD_IN + sum(durs) + SEG_GAP * (len(segments) - 1) + TAIL
     narration = os.path.join(workdir, "narration.m4a")
-    build_narration(len(segments), durs, workdir, narration)
+    spans = synth_narration(segments, workdir, narration)
+    total = total_from_spans(spans)
     ass_path = os.path.join(workdir, "captions.ass")
-    build_ass(segments, durs, font_family, ass_path)
+    build_ass(segments, spans, font_family, ass_path)
     bg = ensure_background((spec.get("background") or {}).get("prompt", ""),
                            os.path.join(workdir, "bg.png"), workdir)
     render_video(bg, narration, ass_path, fontsdir, out_mp4, total)
