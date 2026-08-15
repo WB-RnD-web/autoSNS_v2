@@ -86,6 +86,8 @@ def process(spec_path: str, args, led) -> dict:
         res.update({"video": info["out"], "duration_sec": info["duration_sec"],
                     "size_mb": info["size_mb"], "scenes": info["scenes"]})
         chapters = info.get("chapters") or []
+        srt = info.get("srt")     # 한국어 원본(API 폴백용)
+        srts = info.get("srts") or {}   # ★루틴이 번역한 자막(번역 API 비용 0)
     except Exception as e:  # noqa: BLE001
         res["error"] = f"render: {e}"
         return res
@@ -110,15 +112,18 @@ def process(spec_path: str, args, led) -> dict:
     res["thumbnail"] = thumb
 
     import upload_youtube_novel
+    import yt_i18n
     last = None
     for attempt in range(1, args.retries + 2):
         try:
             pub = upload_youtube_novel.publish(
                 res["video"], meta["title"], meta["description"], meta["privacy"],
                 playlist_title=meta["playlist"], tags=meta["tags"],
-                category_id=meta["category_id"], thumbnail=thumb)
+                category_id=meta["category_id"], thumbnail=thumb, srt=srt,
+                localizations=yt_i18n.from_spec(spec), srts=srts)
             res["uploaded"] = f"{pub['url']} ({meta['privacy']})"
             res["playlist"] = pub.get("playlist_id")
+            res["i18n"] = {"localized": pub.get("localized", []), "captions": pub.get("captions", [])}
             if led is not None:
                 ledgermod.mark(led, _led_key(spec), pub["video_id"], meta["privacy"],
                                time.time(), args.ledger_path)
@@ -171,6 +176,9 @@ def main() -> int:
             line += f", yt={r['uploaded']}"
         if r.get("playlist"):
             line += f", playlist={r['playlist']}"
+        if r.get("i18n"):
+            line += (f", 현지화={','.join(r['i18n']['localized']) or '없음'}"
+                     f", 자막={','.join(r['i18n']['captions']) or '없음'}")
         if r["error"]:
             line += f"  ⚠️ {r['error']}"; rc = 1
         print(line)

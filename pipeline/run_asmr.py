@@ -127,13 +127,15 @@ def process(spec_path: str, args, led) -> dict:
     res["thumbnail"] = thumb
 
     import upload_youtube_novel
+    import yt_i18n
     last = None
     for attempt in range(1, args.retries + 2):
         try:
             pub = upload_youtube_novel.publish(
                 res["video"], meta["title"], meta["description"], meta["privacy"],
                 playlist_title=meta["playlist"], tags=meta["tags"],
-                category_id=meta["category_id"], thumbnail=thumb)
+                category_id=meta["category_id"], thumbnail=thumb,
+                localizations=yt_i18n.from_spec(spec))
             res["uploaded"] = f"{pub['url']} ({meta['privacy']})"
             res["playlist"] = pub.get("playlist_id")
             if led is not None:

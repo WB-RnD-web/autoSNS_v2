@@ -47,7 +47,7 @@ def get_service():
 
 
 def upload(video: str, title: str, description: str, privacy: str = "private",
-           tags: list[str] | None = None) -> str:
+           tags: list[str] | None = None, localizations: dict | None = None) -> str:
     from googleapiclient.http import MediaFileUpload
     yt = get_service()
     body = {
@@ -65,6 +65,14 @@ def upload(video: str, title: str, description: str, privacy: str = "private",
             print(f"   업로드 {int(status.progress() * 100)}%")
     vid = resp["id"]
     print(f"✅ YouTube 업로드 완료: https://youtu.be/{vid} (privacy={privacy})")
+    # ★제목·설명 현지화(50 units) — best-effort. 자막 트랙(400/언어)은 뉴스 쇼츠엔 안 건다.
+    #   이 토큰(youtube.upload)은 videos.update 권한이 없어서, yt_i18n 이 같은 채널의
+    #   token_novel.json(youtube 스코프)을 찾아 쓴다. 없으면 조용히 스킵.
+    try:
+        import yt_i18n
+        yt_i18n.localize(vid, localizations=localizations)
+    except Exception as e:  # noqa: BLE001
+        print(f"   ⚠️ 현지화 실패(업로드는 성공): {e}")
     return vid
 
 

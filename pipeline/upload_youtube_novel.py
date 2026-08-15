@@ -151,18 +151,49 @@ def ensure_playlist(yt, title: str, description: str = "", privacy: str = "publi
     return create_playlist(yt, title, description, privacy)
 
 
-def add_to_playlist(yt, playlist_id: str, video_id: str) -> None:
-    yt.playlistItems().insert(
-        part="snippet",
-        body={"snippet": {"playlistId": playlist_id,
-                          "resourceId": {"kind": "youtube#video", "videoId": video_id}}}).execute()
-    print(f"   ＋ 재생목록에 추가: {video_id} → {playlist_id}")
+def add_to_playlist(yt, playlist_id: str, video_id: str, retries: int = 4) -> None:
+    """영상을 재생목록에 추가. ★일시 오류(409/503/500)는 백오프 재시도.
+
+    ★막 생성한 재생목록에 곧바로 추가하면 유튜브가 아직 준비되지 않아
+      409 "The operation was aborted." (reason=SERVICE_UNAVAILABLE) 을 돌려주는 레이스가 있다.
+      (실측: ASMR 2026-07-10, SCP 2026-08-13 — 둘 다 '재생목록 생성 직후' 첫 추가에서 발생)
+      재시도하면 대부분 통과하므로, 여기서 조용히 삼키지 말고 몇 번 다시 시도한다.
+    """
+    import time as _t
+    last = None
+    for attempt in range(1, retries + 1):
+        try:
+            yt.playlistItems().insert(
+                part="snippet",
+                body={"snippet": {"playlistId": playlist_id,
+                                  "resourceId": {"kind": "youtube#video", "videoId": video_id}}}).execute()
+            print(f"   ＋ 재생목록에 추가: {video_id} → {playlist_id}"
+                  + (f" (재시도 {attempt}회째 성공)" if attempt > 1 else ""))
+            return
+        except Exception as e:  # noqa: BLE001
+            last = e
+            code = getattr(getattr(e, "resp", None), "status", None)
+            if code not in (409, 500, 503) or attempt == retries:
+                raise
+            wait = min(2 ** attempt, 15)
+            print(f"   … 재생목록 추가 {code} 일시오류 — {wait}s 후 재시도({attempt}/{retries - 1})")
+            _t.sleep(wait)
+    if last:
+        raise last
 
 
 # ── 고수준 퍼블리시(업로드 → 재생목록 보장 → 추가) ──
 def publish(video: str, title: str, description: str, privacy: str,
             playlist_title: str = "", tags: list[str] | None = None,
-            category_id: str | None = None, thumbnail: str | None = None) -> dict:
+            category_id: str | None = None, thumbnail: str | None = None,
+            srt: str | None = None, localizations: dict | None = None,
+            srts: dict | None = None) -> dict:
+    """업로드 → 썸네일 → 재생목록 → ★다국어(현지화 + 선택적 자막 트랙).
+
+    localizations/srts 는 ★루틴이 스펙에 써준 번역 — 번역 API 비용이 들지 않는다.
+    srts 를 주면 그 언어들로 자막 트랙까지 올린다(400 units/언어라 SCP 처럼 편수가
+    적은 파이프라인만 준다). 현지화(50 units)는 전 토픽 기본 적용.
+    """
     yt = get_service()
     vid = upload_video(yt, video, title, description, privacy, tags, category_id)
     res = {"video_id": vid, "url": f"https://youtu.be/{vid}", "privacy": privacy, "playlist_id": None}
@@ -180,6 +211,12 @@ def publish(video: str, title: str, description: str, privacy: str,
         except Exception as e:  # noqa: BLE001
             res["playlist_error"] = str(e)
             print(f"   ⚠️ 재생목록 처리 실패(업로드는 성공): {e}")
+    # 다국어는 전부 best-effort — 여기서 뭐가 터져도 업로드는 이미 끝났다.
+    try:
+        import yt_i18n
+        res.update(yt_i18n.apply(vid, srt, localizations=localizations, srts=srts))
+    except Exception as e:  # noqa: BLE001
+        print(f"   ⚠️ 다국어 처리 실패(업로드는 성공): {e}")
     return res
 
 

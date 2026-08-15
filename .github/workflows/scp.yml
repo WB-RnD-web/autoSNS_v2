@@ -41,6 +41,13 @@ jobs:
     timeout-minutes: 45
     env:
       TZ: Asia/Seoul
+      # ★다국어: 번역은 '루틴이' 스펙에 써준다 → 번역 API 비용 0원.
+      #   ANTHROPIC_API_KEY 는 루틴이 번역을 빠뜨렸을 때만 쓰는 ★선택적 폴백이다(없어도 정상).
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL || 'claude-sonnet-4-6' }}
+      I18N_LOCALIZE: ${{ vars.I18N_LOCALIZE || '1' }}
+      I18N_CAPTIONS: ${{ vars.I18N_CAPTIONS || '1' }}
+      I18N_LANGS: ${{ vars.I18N_LANGS || 'en,ja,zh-Hant' }}
       # 장면/썸네일 이미지(FLUX klein-4b, 소설·ASMR 과 동일 엔드포인트)
       NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
       # 낭독 보이스(차분한 아카이브 톤)
@@ -53,9 +60,24 @@ jobs:
       # 재생목록 이름 고정(비우면 스펙의 playlist 사용)
       SCP_PLAYLIST: ${{ vars.SCP_PLAYLIST }}
     steps:
+      # ★코드는 항상 main 에서 가져온다.
+      #   routine/scp 는 '영구 누적' 브랜치라 리셋을 하지 않는다 → 파이프라인 코드가
+      #   그 브랜치에 갇힌 채 낡는다. 2026-08-15 확인 결과 routine/scp 에는
+      #   yt_i18n.py 가 통째로 없었고 story_render.py 도 옛 버전이었다.
+      #   즉 main 에 머지한 기능이 금요일 런에 반영되지 않고 있었다.
+      #   (쇼츠 워크플로는 처음부터 이 방식 — 여기도 맞춘다)
       - uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 0
+
+      # 데이터(스펙 JSON)만 routine/scp 에서. push diff 를 계산해야 하므로 얕게 받지 않는다.
+      - name: routine/scp 스펙 가져오기(데이터만)
+        run: |
+          set -e
+          git fetch origin routine/scp
+          git checkout FETCH_HEAD -- output/scp/ || echo "⚠️ routine/scp 에 output/scp 없음"
+          ls output/scp/*.json 2>/dev/null | tail -5 || echo "(스펙 없음)"
 
       - uses: actions/setup-python@v5
         with:
@@ -93,6 +115,7 @@ jobs:
           YT_CLIENT_SECRET_JSON: ${{ secrets.YT_CLIENT_SECRET_JSON }}
           YT_TOKEN_JSON_NOVEL: ${{ secrets.YT_TOKEN_JSON_NOVEL }}
           YT_TOKEN_JSON: ${{ secrets.YT_TOKEN_JSON }}
+          YT_TOKEN_JSON_FORCESSL: ${{ secrets.YT_TOKEN_JSON_FORCESSL }}
         run: |
           mkdir -p pipeline/secrets
           if [ -n "$YT_CLIENT_SECRET_JSON" ]; then
@@ -106,6 +129,11 @@ jobs:
             echo "쇼츠 토큰 폴백(재생목록은 스코프 부족 시 자동 스킵)"
           else
             echo "⚠️ 업로드 토큰 없음 — 렌더만 진행"
+          fi
+          # ★자막 트랙(captions API)은 youtube.force-ssl 스코프가 필수다. 없으면 자동 스킵.
+          if [ -n "$YT_TOKEN_JSON_FORCESSL" ]; then
+            printf '%s' "$YT_TOKEN_JSON_FORCESSL" > pipeline/secrets/token_forcessl.json
+            echo "force-ssl 토큰 준비됨 — 번역 자막 트랙 업로드 가능"
           fi
 
       - name: 처리 대상 결정

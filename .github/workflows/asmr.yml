@@ -39,6 +39,13 @@ jobs:
     timeout-minutes: 35   # 실측 최대 29분, 인코딩 최적화 후 단축 예상
     env:
       TZ: Asia/Seoul
+      # ★다국어: 번역은 '루틴이' 스펙에 써준다 → 번역 API 비용 0원.
+      #   ANTHROPIC_API_KEY 는 루틴이 번역을 빠뜨렸을 때만 쓰는 ★선택적 폴백이다(없어도 정상).
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL || 'claude-sonnet-4-6' }}
+      I18N_LOCALIZE: ${{ vars.I18N_LOCALIZE || '1' }}
+      I18N_CAPTIONS: "0"
+      I18N_LANGS: ${{ vars.I18N_LANGS || 'en,ja,zh-Hant' }}
       # 배경/썸네일 이미지(FLUX klein-4b, 소설과 동일 엔드포인트)
       NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
       # ASMR 소스 음원(Freesound, CC0)
@@ -51,9 +58,20 @@ jobs:
       # 재생목록: 채널의 ASMR 재생목록 정확한 이름(오타 방지용으로 여기서 고정 권장)
       ASMR_PLAYLIST: ${{ vars.ASMR_PLAYLIST }}
     steps:
+      # ★코드는 항상 main 에서 — routine/asmr 도 '영구 누적' 브랜치라 코드가 낡는다.
+      #   (2026-08-15 확인: yt_i18n.py 없음 → 현지화가 애초에 돌지 않고 있었다)
       - uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 0
+
+      # 데이터(스펙 JSON)만 routine/asmr 에서. push diff 계산 때문에 얕게 받지 않는다.
+      - name: routine/asmr 스펙 가져오기(데이터만)
+        run: |
+          set -e
+          git fetch origin routine/asmr
+          git checkout FETCH_HEAD -- output/asmr/ || echo "⚠️ routine/asmr 에 output/asmr 없음"
+          ls output/asmr/*.json 2>/dev/null | tail -5 || echo "(스펙 없음)"
 
       - uses: actions/setup-python@v5
         with:
