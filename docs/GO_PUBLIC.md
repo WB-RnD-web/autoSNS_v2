@@ -42,6 +42,39 @@ pip install git-filter-repo
 ./tools/strip_prompts_from_history.sh run     # 백업 + 재작성 + 검증 (★로컬만)
 ```
 
+### ⚠️ Windows 에서
+
+**cmd.exe / PowerShell 은 `.sh` 를 실행하지 못한다.** 둘 중 하나로 한다.
+
+**① Git Bash (권장)** — 레포 폴더에서 우클릭 → **Git Bash Here**
+```bash
+./tools/strip_prompts_from_history.sh check
+```
+
+**② cmd 래퍼** — 그냥 cmd 에서 쓰고 싶으면
+```
+tools\strip_prompts_from_history.cmd check
+```
+(Git for Windows 의 bash 를 찾아 넘겨준다)
+
+> ★**줄바꿈 주의.** Git for Windows 는 `core.autocrlf=true` 가 기본이라 `.sh` 가 CRLF 로
+> 체크아웃되면 shebang 이 깨져 이렇게 죽는다:
+> ```
+> bash: ./strip_prompts_from_history.sh: /usr/bin/env: bad interpreter: No such file or directory
+> ```
+> 레포에 `.gitattributes` 로 `*.sh text eol=lf` 를 박아뒀으니 **새로 클론하면 문제없다.**
+> 이미 클론해둔 폴더에서 이 에러가 나면:
+> ```bash
+> git rm --cached -r . && git reset --hard      # .gitattributes 기준으로 다시 체크아웃
+> ```
+
+> `git-filter-repo` 가 안 잡히면(`git: 'filter-repo' is not a git command`),
+> pip 의 Scripts 경로가 PATH 에 없는 것이다. Git Bash 에서:
+> ```bash
+> python -m pip show -f git-filter-repo | grep Location   # 설치 위치 확인
+> export PATH="$PATH:/c/Users/<계정>/AppData/Local/Programs/Python/Python3xx/Scripts"
+> ```
+
 `run` 이 하는 일:
 1. **미러 백업** `../autoSNS_backup-<시각>.git` — 되돌릴 유일한 수단
 2. **프롬프트 원본 보관** `../autoSNS_backup-<시각>/prompts/` — 사내 위키로 옮길 것
