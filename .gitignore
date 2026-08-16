@@ -51,3 +51,7 @@ __pycache__/
 # ── OS ──
 .DS_Store
 Thumbs.db
+
+# ★루틴 프롬프트는 이 레포에 두지 않는다(공개 전환 — docs/GO_PUBLIC.md).
+#   파이프라인도 워크플로도 이 문서를 읽지 않는다. 사내 위키에서 관리할 것.
+docs/ROUTINE_PROMPT*.md
