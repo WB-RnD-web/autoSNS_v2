@@ -1,0 +1,33 @@
+{
+  "date": "2026-08-17",
+  "topic": "asmr",
+  "privacy": "public",
+  "theme_id": "ocean-waves",
+  "theme_name": "파도 소리",
+  "mode": "sleep",
+  "narration_voice": "female",
+  "narration_text": "오늘은 잔잔한 파도가 밀려오는 바닷가 소리예요. 편안하게 눈을 감고, 파도 소리에 맞춰 천천히 숨을 쉬어 보세요. 좋은 밤 되세요, 잘 자요.",
+  "background": {
+    "prompt": "a cozy dim bedroom with a large window overlooking a dark calm ocean at night, soft moonlight reflecting on the water, warm lamp glow inside the room, gentle waves visible in the distance, calm and sleepy mood, low light, no people, no text"
+  },
+  "freesound": {
+    "queries": [
+      "gentle ocean waves shore night",
+      "calm sea waves ambience loop",
+      "ocean waves rolling beach",
+      "soft waves lapping shore"
+    ],
+    "must": ["wave", "ocean"]
+  },
+  "platforms": {
+    "youtube": {
+      "title": "🌊 잔잔한 파도 소리 ASMR 3시간 | 잘 때 듣는 백색소음·수면",
+      "thumbnail_text": "파도 소리 3시간",
+      "thumbnail_hook": "a dim bedroom window overlooking a dark calm ocean at night, soft moonlight on the water, warm lamp glow, calm and sleepy mood, no people, no text",
+      "description": "잔잔하게 밀려오는 파도 소리로 편안한 밤을 만들어 드려요.\n\n잘 때·집중·휴식용 ASMR 백색소음입니다.\n#ASMR #백색소음 #수면 #파도소리 #잠들기전 #힐링",
+      "playlist": "일상공감 ASMR"
+    }
+  },
+  "credit": "음원 Freesound(CC0) · 이미지 생성",
+  "notes": "ASMR 3~4시간 · 16:9 · 정적 배경 + 루프 오디오 · 아주 낮은 나레이션 도입부 · 자막 없음."
+}

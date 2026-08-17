@@ -1,4 +1,6 @@
 {
-  "recent_themes": ["fireplace", "forest-rain", "hair-salon", "window-rain", "campfire-night", "quiet-cafe", "keyboard-typing"],
-  "last_voice": "female"
+  "recent_themes": ["ocean-waves", "summer-night-bugs", "campfire-night", "stream", "snowy-night", "library", "fireplace"],
+  "last_voice": "female",
+  "last_mode": "sleep",
+  "mode_cycle_pos": 0
 }
