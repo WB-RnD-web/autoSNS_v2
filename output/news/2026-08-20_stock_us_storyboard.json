@@ -1,0 +1,97 @@
+{
+  "date": "2026-08-20",
+  "topic": "stock_us",
+  "privacy": "public",
+  "topic_keyword": "나스닥 반등·엔비디아 나홀로 하락",
+  "headline": "나스닥 사흘 만에 반등, 엔비디아는 홀로 하락",
+  "hook_title": "겨우 웃었는데, 또 흔들렸다",
+  "accent": "#D97757",
+  "loop_line": "오늘 밤도 흔들렸다면, 내일 아침 여덟 시에 결과를 다시 짚어드립니다.",
+  "thumbnail_hook": "extreme close-up of a red and green candlestick stock chart glowing on a dark trading terminal screen at night, cinematic blue and amber lighting reflected on glass, New York skyline blurred in the background, no text, no people, photorealistic",
+  "thumbnail_text": "선물 벌써 -0.5%",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "미국장 개장",
+      "ghost": "NASDAQ",
+      "lines": ["뉴욕이", "숨 돌리자마자", "또 흔들렸습니다"],
+      "highlight": "또 흔들렸습니다",
+      "fx": {"in": "slam", "emphasis": "shake", "sfx": "impact", "hold": 3.5},
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "뉴욕이 겨우 숨을 돌리자마자 반도체가 다시 흔들렸습니다."
+    },
+    {
+      "type": "trend",
+      "label": "나스닥",
+      "from": 0,
+      "to": 0.16,
+      "suffix": "%",
+      "dir": "up",
+      "sub": "다우는 <b>+0.22%</b>, 사흘 만의 반등",
+      "fx": {"in": "chart_draw", "emphasis": "pulse", "sfx": "tick", "hold": 8},
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "나스닥이 사흘 만에 오르며 하락세를 멈춰 세웠습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "근데 속은 갈렸다",
+      "points": ["<b>엔비디아 -2.3%</b>, 반도체만 약세", "30년물 국채금리 부담이 여전했다"],
+      "fx": {"in": "wipe_up", "emphasis": "pulse", "sfx": "none", "hold": 9},
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "그런데 반도체 대장주 엔비디아만 이 점 삼 퍼센트 빠졌습니다."
+    },
+    {
+      "type": "statement",
+      "text": "어젯밤엔 반등, 선물은 벌써 -0.5%",
+      "highlight": "-0.5%",
+      "fx": {"in": "zoom_punch", "emphasis": "glow", "sfx": "riser", "hold": 7},
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "장기 금리가 다시 뛰면 어젯밤 반등은 하루로 끝날 수 있습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 지켜볼 것",
+      "points": ["<b>로스스토어스·인튜이트</b>, 마감 후 실적 발표", "반도체 흔들리면 <b>서학개미 계좌</b>도 함께 흔들린다"],
+      "fx": {"in": "wipe_up", "emphasis": "glow", "sfx": "none", "hold": 9},
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "오늘 밤 실적과 함께 서학개미 계좌도 지켜봐야 합니다."
+    },
+    {
+      "type": "statement",
+      "text": "지금 산다 vs 실적까지 기다린다, 당신은?",
+      "highlight": "기다린다",
+      "fx": {"in": "blur_in", "emphasis": "pulse", "sfx": "none", "hold": 5},
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "지금 살지 실적까지 기다릴지, 판단은 여러분 몫입니다."
+    }
+  ],
+  "sources": ["Yahoo Finance", "TheStreet", "CNBC", "Investing.com"],
+  "credit": "출처 Yahoo Finance·TheStreet·CNBC·Investing.com 등 · 투자 조언이 아닙니다",
+  "platforms": {
+    "youtube": {
+      "title": "겨우 웃었는데, 또 흔들렸다 #shorts",
+      "description": "나스닥이 사흘 만에 반등했지만 엔비디아는 홀로 하락했습니다.\n출처 Yahoo Finance·TheStreet·CNBC·Investing.com\n※ 투자 조언이 아닙니다\n\n#미국주식 #나스닥 #뉴욕증시 #서학개미 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "Nasdaq Rebounds — Then Chip Stocks Wobble Again #shorts",
+          "description": "Nasdaq snapped a 3-day losing streak, but Nvidia slid on its own overnight. Here's what to watch before tonight's close.\nSource: Yahoo Finance, TheStreet, CNBC, Investing.com\n※ Not investment advice\n\n#USstocks #Nasdaq #WallStreet #shorts"
+        },
+        "ja": {
+          "title": "ナスダック反発、でも半導体はまた下落です #shorts",
+          "description": "ナスダックは3日ぶりに反発しましたが、エヌビディアだけ下落しました。今夜の見どころをお伝えします。\n出典 Yahoo Finance・TheStreet・CNBC・Investing.com\n※投資助言ではありません\n\n#米国株 #ナスダック #ウォール街 #shorts"
+        },
+        "zh-Hant": {
+          "title": "納斯達克止跌反彈,但晶片股又跌了 #shorts",
+          "description": "納斯達克止住連跌三天的頹勢,但輝達卻獨自下跌。一起看今晚該關注什麼。\n出處 Yahoo Finance、TheStreet、CNBC、Investing.com\n※非投資建議\n\n#美股 #那斯達克 #華爾街 #shorts"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "겨우 웃었는데, 또 흔들렸다\n출처 Yahoo Finance·TheStreet·CNBC·Investing.com\n※ 투자 조언이 아닙니다\n\n#미국주식 #나스닥 #뉴욕증시 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "겨우 웃었는데, 또 흔들렸다\n출처 Yahoo Finance·TheStreet·CNBC·Investing.com"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음 · SESSION=US_PM(미국장 개장 전후 프리뷰, EDT 기준 개장 직후 톤)."
+}
