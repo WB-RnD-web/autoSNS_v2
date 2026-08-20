@@ -1,0 +1,101 @@
+{
+  "date": "2026-08-21",
+  "topic": "stock",
+  "privacy": "public",
+  "topic_keyword": "국채금리",
+  "headline": "코스피 하루 만에 5.89%↑, 밤사이 다우는 다시 하락",
+  "hook_title": "어제 웃던 코스피, 오늘은?",
+  "accent": "#D97757",
+  "loop_line": "장 시작 전, 오늘은 또 어떤 표정일까요.",
+  "thumbnail_hook": "empty Korean stock trading floor just before dawn, rows of dark monitors about to light up, a single warm desk lamp glowing, a coffee cup beside a keyboard, moody blue pre-dawn light through tall windows, cinematic wide shot, photorealistic, no text, no people",
+  "thumbnail_text": "코스피 5.89% 반등",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "장 시작 전",
+      "ghost": "SEOUL",
+      "lines": ["어제는", "겨우 웃었는데", "다시 흔들렸다"],
+      "highlight": "다시 흔들렸다",
+      "fx": {"in": "slam", "emphasis": "shake", "sfx": "impact", "hold": 4},
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "어제 겨우 웃었던 시장이, 밤사이 다시 흔들렸습니다."
+    },
+    {
+      "type": "trend",
+      "label": "코스피 어제 마감",
+      "from": 0,
+      "to": 5.89,
+      "suffix": "%",
+      "dir": "up",
+      "sub": "이틀 만에 <b>6,852</b>선 회복",
+      "fx": {"in": "chart_draw", "emphasis": "pulse", "sfx": "tick", "hold": 8},
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "코스피가 어제 하루 만에 거의 6퍼센트 뛰어올랐습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "왜 반등했나",
+      "points": ["미 국채금리가 잠시 <b>진정</b>됐다", "SK하이닉스 <b>역대급 주주환원</b> 발표"],
+      "fx": {"in": "wipe_up", "emphasis": "pulse", "sfx": "none", "hold": 9},
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "미국 금리가 잠깐 진정된 데다 SK하이닉스 호재도 겹쳤습니다."
+    },
+    {
+      "type": "trend",
+      "label": "다우 밤사이",
+      "from": 0,
+      "to": -0.71,
+      "suffix": "%",
+      "dir": "down",
+      "sub": "코스피는 웃었지만 뉴욕은 <b>다시 하락</b>",
+      "fx": {"in": "wipe_up", "emphasis": "pulse", "sfx": "whoosh", "hold": 8},
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "그런데 밤사이 뉴욕은 국채금리가 다시 튀며 흔들렸습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 지켜볼 것",
+      "points": ["환율 <b>1,388원</b>, 다시 오르면 기름값 부담", "반도체 수급, 외국인 매수 이어지나"],
+      "fx": {"in": "wipe_up", "emphasis": "glow", "sfx": "none", "hold": 9},
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "환율이 오르면 기름값 부담, 반도체 수급도 변수입니다."
+    },
+    {
+      "type": "statement",
+      "text": "오늘도 웃을까, 다시 흔들릴까 — 판단은 여러분 몫",
+      "highlight": "다시 흔들릴까",
+      "fx": {"in": "blur_in", "emphasis": "pulse", "sfx": "none", "hold": 6},
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "오늘도 웃을지 다시 흔들릴지, 판단은 여러분 몫입니다."
+    }
+  ],
+  "sources": ["한국경제", "비즈니스코리아", "전자신문", "뉴스핌", "파이낸셜뉴스", "CNBC"],
+  "credit": "출처 한국경제·CNBC 등 · 투자 조언이 아닙니다",
+  "platforms": {
+    "youtube": {
+      "title": "어제 웃던 코스피, 오늘은? #shorts",
+      "description": "코스피 하루 만에 5.89% 반등, 밤사이 다우는 다시 하락\n출처 한국경제·CNBC 등\n※ 투자 조언이 아닙니다\n오늘 밤 미국장은 밤 10시 반에 다시 짚어드립니다.\n\n#코스피 #주식 #증시 #개장전 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "Korea's Market Just Whiplashed — What's Next?",
+          "description": "KOSPI rebounded nearly 6% in a single day, but Wall Street slipped again overnight as Treasury yields spiked. Here's what to watch when Korea's market opens.\n※ Not investment advice.\n\n#shorts #KOSPI #StockMarket"
+        },
+        "ja": {
+          "title": "昨日は反発したコスピ、今日はどうなる？",
+          "description": "コスピが一日で約6%反発しましたが、夜間のニューヨーク市場は国債金利の再上昇で下落しました。今日の韓国市場で注目すべきポイントをお伝えします。\n※投資助言ではありません。\n\n#shorts #コスピ #株式"
+        },
+        "zh-Hant": {
+          "title": "昨天大反彈的韓股，今天會如何？",
+          "description": "韓國綜合指數（KOSPI）單日反彈近6%，但隔夜紐約股市因公債殖利率再度上揚而下跌。以下是今天開盤前該關注的重點。\n※非投資建議。\n\n#shorts #KOSPI #股市"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "어제 웃던 코스피, 오늘은?\n출처 한국경제·CNBC 등\n※ 투자 조언이 아닙니다\n\n#코스피 #주식 #증시 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "어제 웃던 코스피, 오늘은?\n출처 한국경제·CNBC 등"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음 · SESSION=KR_AM(개장 전 프리뷰)."
+}
