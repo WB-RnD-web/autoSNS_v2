@@ -1,0 +1,109 @@
+{
+  "date": "2026-08-22",
+  "topic": "fortune",
+  "privacy": "public",
+  "topic_keyword": "오늘 급상승 띠 TOP3",
+  "headline": "오늘 급상승 1위 범띠 94점, 개띠는 충전의 날",
+  "hook_title": "오늘 갑자기 뜬 그 띠",
+  "accent": "#8E5BB5",
+  "loop_line": "오늘, 평소엔 조용하던 그 띠 하나가 갑자기 순위를 뒤집는 하루입니다.",
+  "thumbnail_hook": "extreme close-up of a golden tiger zodiac emblem's eye and fur pattern, glowing amethyst starlit night sky background, drifting golden auspicious clouds, traditional Korean lucky ornament motifs faintly visible, warm gold rim lighting, no human face, no text in image, cinematic amethyst and gold palette",
+  "thumbnail_text": "오늘 갑자기 뜬 범띠",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "오늘의 운세",
+      "ghost": "FORTUNE",
+      "lines": ["오늘", "평소엔 조용했던", "그 띠가 떴어요"],
+      "highlight": "그 띠가 떴어요",
+      "fx": {"in": "slam", "emphasis": "shake", "sfx": "impact", "hold": 3.2},
+      "brand": "일상공감뉴스 · 운세",
+      "narration": "오늘, 평소엔 조용하던 그 띠 하나가 갑자기 순위를 뒤집습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 급상승 순위 · 3위부터",
+      "points": ["3위 <b>토끼띠</b> — 대화가 술술 풀리는 하루", "2위 <b>양띠</b> — 생각지 못한 도움을 받는 하루"],
+      "fx": {"in": "rank_flip", "emphasis": "pulse", "sfx": "riser", "hold": 7.5},
+      "brand": "일상공감뉴스 · 운세",
+      "narration": "3위는 토끼띠, 2위는 양띠인데, 1위는 잠시 뒤에 공개할게요."
+    },
+    {
+      "type": "stat",
+      "label": "오늘 급상승 1위 · 범띠",
+      "prefix": "",
+      "suffix": "점",
+      "from": 0,
+      "to": 94,
+      "bar": true,
+      "sub": "1998 · 2010 · 2022년생 — 오늘 <b>인기 지수</b> 1위",
+      "fx": {"in": "zoom_punch", "emphasis": "glow", "sfx": "ding", "hold": 8.1},
+      "brand": "일상공감뉴스 · 운세",
+      "narration": "1위는 범띠, 1998년생과 2010년생이면 오늘 지수가 94점입니다."
+    },
+    {
+      "type": "gauge",
+      "label": "범띠 인기 지수",
+      "from": 1,
+      "to": 3,
+      "unit": "배",
+      "sub": "오늘 일진과 <b>삼합</b>을 이루며 평소보다 크게 뜁니다",
+      "fx": {"in": "rank_flip", "emphasis": "glow", "sfx": "riser", "hold": 7.0},
+      "brand": "일상공감뉴스 · 운세",
+      "narration": "평소엔 조용하던 범띠가 오늘 일진과 삼합을 이루어 세 배 뛰었습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘의 행운 팁",
+      "points": ["행운의 색 <b>주황</b> · 숫자 <b>3</b>", "중요한 만남은 <b>오전</b>에 · 개띠는 오늘 <b>충전 지수</b> 최고"],
+      "fx": {"in": "wipe_up", "emphasis": "pulse", "sfx": "tick", "hold": 8.0},
+      "brand": "일상공감뉴스 · 운세",
+      "narration": "그래서 오늘은 중요한 약속을 오전 시간으로 잡아 보시면 좋겠습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "이번 주 행운의 로또 번호",
+      "points": ["<b>14 · 15 · 26 · 30 · 31 · 38</b>", "재미로 뽑아 본 번호예요 · 캡처해 두세요"],
+      "fx": {"in": "flash", "emphasis": "pulse", "sfx": "coin", "hold": 8.0},
+      "brand": "일상공감뉴스 · 운세",
+      "narration": "이번 주 행운의 로또 번호는, 14, 15, 26, 30, 31, 38입니다."
+    },
+    {
+      "type": "statement",
+      "text": "당신 띠는 오늘 몇 위였나요? 댓글에 띠만 적어 주세요",
+      "highlight": "몇 위",
+      "fx": {"in": "blur_in", "emphasis": "pulse", "sfx": "none", "hold": 4.5},
+      "brand": "일상공감뉴스 · 운세",
+      "narration": "당신의 띠는 오늘 몇 위였는지, 댓글에 띠만 적어 주세요."
+    }
+  ],
+  "sources": ["전통 띠 운세(명리) 기반", "오늘의 일진 참고"],
+  "credit": "재미로 보는 오늘의 운세 · 명리 일진 참고",
+  "platforms": {
+    "youtube": {
+      "title": "오늘 갑자기 뜬 그 띠 #shorts",
+      "description": "오늘 급상승 1위 범띠 94점, 개띠는 충전의 날\n※ 재미로 보는 운세입니다\n\n#오늘의운세 #띠별운세 #급상승 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "This Zodiac Sign Just Skyrocketed Today",
+          "description": "Today's biggest riser is the Tiger zodiac at a 94 score, while the Dog zodiac gets a well-earned recharge day instead.\n※ Just for fun — not a real prediction\n\n#DailyHoroscope #ZodiacRanking #Shorts #shorts"
+        },
+        "ja": {
+          "title": "今日、急上昇した干支がいます",
+          "description": "今日いちばん急上昇したのは寅年生まれで指数94点、戌年生まれは今日は充電の日です。\n※ 楽しみのための運勢です\n\n#今日の運勢 #干支ランキング #ショート #shorts"
+        },
+        "zh-Hant": {
+          "title": "今天突然爆紅的生肖",
+          "description": "今天排名暴漲的第一名是虎年出生者，指數94分；狗年出生者則是充電日。\n※ 僅供娛樂參考\n\n#今日運勢 #生肖排行 #Shorts #shorts"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "오늘 갑자기 뜬 그 띠\n※ 재미로 보는 운세\n\n#오늘의운세 #띠별운세 #급상승 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "오늘 갑자기 뜬 그 띠\n※ 재미로 보는 운세"
+    }
+  },
+  "notes": "모션그래픽 7장면(로또 포함) · 단일 내레이터 · 배경음 없음 · 엔터테인먼트(재미) 운세 · MODE=daily."
+}
