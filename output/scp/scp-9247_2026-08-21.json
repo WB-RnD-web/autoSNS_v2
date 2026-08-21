@@ -1,0 +1,915 @@
+{
+  "date": "2026-08-21",
+  "iso_week": "2026-W34",
+  "topic": "scp",
+  "privacy": "public",
+  "story_id": "scp-9247",
+  "scp_number": "SCP-9247",
+  "object_class": "Keter",
+  "codename": "말 삼키는 새",
+  "number_check": {
+    "checked_at": "2026-08-21",
+    "http_code": "unverified"
+  },
+  "title": "이발소 새한테 말 걸지 마세요",
+  "theme": "생물·개체",
+  "logline": "삼십 년 된 골목 이발소, 창가 새장 속 구관조 이야기입니다. 손님이 무심코 흘린 말 한마디를 따라 하기 시작하면, 그 말은 얼마 뒤 다른 사람의 마지막 말이 됩니다.",
+  "hook_line": "199X년 여름, OO동 골목 안에서 삼십 년 넘게 가위를 잡아온 이발사가, 어느 날 아침 셔터를 내린 채 다시 열지 않았습니다.",
+  "cold_open": "199X년 여름, OO동 골목 안에서 삼십 년 넘게 가위를 잡아온 이발사가, 어느 날 아침 셔터를 내린 채 다시 열지 않았습니다. 무슨 일이 있었는지, 처음부터 말씀드리겠습니다.",
+  "procedures": [
+    "새가 어떤 손님의 말을 따라 하기 시작하면, 그 손님한테는 절대 알려주지 않는다",
+    "영업을 마칠 땐, 새장에 반드시 두꺼운 천을 덮는다",
+    "새가 낮에 갑자기 크게 울어도, 그 손님을 일부러 다시 부르지 않는다"
+  ],
+  "character": {
+    "name": "심 연구원",
+    "role": "현장 담당 연구원",
+    "flaw": "현상이 왜 일어나는지 자기 손으로 밝히고 싶어 한다 — 그 고집 때문에 마지막 규칙을 직접 깬다"
+  },
+  "log_days": [
+    {
+      "day": "사흘째",
+      "event": "오전 손님이 흘린 말을 새가 정확히 세 번 따라 했다"
+    },
+    {
+      "day": "나흘째",
+      "event": "같은 손님이 다시 왔지만 새는 말이 없었고, 규칙대로 아무도 알리지 않았다"
+    },
+    {
+      "day": "열닷새째",
+      "event": "이발사가 사과하다 무심코 손님에게 새가 따라 한 말을 언급 — 첫 번째 규칙이 깨졌다"
+    },
+    {
+      "day": "열아흐레째",
+      "event": "새가 하루 종일 같은 말만 반복, 새장 쪽 찬 기운이 일지에 기록됐다"
+    },
+    {
+      "day": "스무엿새째",
+      "event": "천을 덮지 않은 밤이 있었고, 다음 날 새가 다른 손님의 목소리로 바뀌었다 — 두 번째 규칙이 깨졌다"
+    },
+    {
+      "day": "스무아흐레째",
+      "event": "두 달에 한 번 오던 손님이 열흘 만에 다시 이발소를 찾아왔다"
+    },
+    {
+      "day": "서른하루째",
+      "event": "심 연구원이 돌아서는 손님을 불러 세웠다 — 마지막 규칙이 깨졌고, 새가 한 번 울고 조용해졌다"
+    }
+  ],
+  "retention_beats": [
+    "다음 날 아침, 새는 전혀 다른 손님의 목소리로 다른 말을 하고 있었습니다. 하룻밤 사이에, 대상이 바뀐 겁니다.",
+    "원래 두 달에 한 번 오던 사람이, 열흘 만에요.",
+    "그 순간, 새장 속 새가 딱 한 번 크게 울었습니다. 그리고, 조용해졌습니다."
+  ],
+  "twist_summary": "이 이발소 자리는 원래 1961년 화재로 세 명이 목숨을 잃은 사진관이었다는 반전. 새는 그저 매개체일 뿐, 진짜 남아있는 건 그날 못다 한 말을 반복하는 존재이며, 새를 옮기거나 죽여도 그 자리에 남은 다음 매개체(새 또는 사람)가 역할을 이어받기 때문에 재단이 이 개체를 케테르로 규정하고 있다.",
+  "narration_full": "199X년 여름, OO동 골목 안에서 삼십 년 넘게 가위를 잡아온 이발사가, 어느 날 아침 셔터를 내린 채 다시 열지 않았습니다. 문에는 종이 한 장, '개인 사정으로 쉽니다'라는 말만 붙어 있었습니다. 무슨 일이 있었는지, 처음부터 말씀드리겠습니다. OO동 이 골목 이발소, 아실 만한 분은 아실 겁니다. 의자 두 개, 낡은 거울 하나, 그리고 창가에 걸린 새장 하나가 전부인 작은 가게거든요. 늘 스킨로션 냄새가 옅게 배어 있었습니다. 문을 연 지는 삼십이 년째였고요. 그 새장은 가로 마흔 센티짜리, 작은 편이었습니다. 안에는 구관조 한 마리가 살고 있었습니다. 스물여섯 해째, 같은 새장에서요. 재단은 이 새장에 번호를 하나 붙였습니다. 구이사칠. 등급은 케테르였고요. 흔히 아시는 것과 달리, 케테르라고 해서 크고 사나운 게 아닙니다. 그냥, 아직 격리할 방법을 못 찾았다는 뜻입니다. 그런데 이 새한테는, 이상한 점이 하나 있었습니다. 혹시 구관조를 키워보신 적 있으신가요? 사람 말을 잘 따라 하는 새죠. 그런데 이 녀석은, 아무 말이나 따라 하지 않았습니다. 손님이 의자에 앉아 무심코 흘린 말 중에서, 딱 한마디만 골라 따라 했거든요. 그리고 그 한마디는, 이상하게 오래 남았습니다. 이발소 손님들은 이 녀석을 그냥 구관조라고 부르지 않았습니다. 언제부턴가, '말 삼키는 새'라고 불렀습니다. 한번 삼킨 말은, 절대 그냥 뱉어내지 않았거든요. 1979년, 이 새를 처음 데려온 손님이 있었습니다. 시장에서 사 왔다고 했고요. 그런데 그 손님이 다녀간 지 여섯 달 만에, 이발소 단골 한 명이 사고로 세상을 떠났습니다. 사고 며칠 전, 그 손님이 이발소에서 이런 말을 흘렸다고 합니다. '아이고, 나 이러다 큰일 나겠네.' 새는 그 말을, 며칠 동안 따라 했습니다. 여러분이라면, 이런 일을 몇 번이나 봐야 우연이 아니라고 생각하시겠어요? 재단이 이 자리를 주목한 것도, 비슷한 일이 몇 번 더 반복된 뒤였습니다. 그래서 이 이발소엔, 지켜야 할 게 세 가지 있었습니다. 새가 어떤 손님의 말을 따라 하기 시작하면, 그 손님한테는 절대 알려주지 않는다. 영업을 마칠 땐, 새장에 반드시 두꺼운 천을 덮는다. 그리고 새가 낮에 갑자기 크게 울어도, 그 손님을 일부러 다시 부르지 않는다. 이걸 어기면 어떻게 되는지는, 어디에도 적혀 있지 않았습니다. 그냥, 이십 년 가까이 아무도 어겨보지 않았을 뿐이죠. 담당은 심 연구원이었습니다. 이 자리를 오 년째 지켜보고 있었죠. 조용하고 꼼꼼한 사람이었습니다. 다만 고집이 하나 있었는데, 이 현상이 왜 일어나는지 자기 손으로 꼭 밝히고 싶어 했습니다. 관찰 기록은 이렇게 시작됩니다. 사흘째 기록입니다. 오전 손님 하나가 앉아서 혼잣말처럼 이런 말을 흘렸습니다. '요즘 자꾸 깜빡깜빡하네.' 새는 그 말을, 정확히 세 번 따라 했습니다. 딱 세 번, 그 이상도 이하도 아니었습니다. 나흘째, 같은 손님이 다시 와서 머리를 다듬었습니다. 새는 이번엔 아무 말도 하지 않았고요. 이발사는 규칙대로, 그 손님한테 아무것도 알리지 않았습니다. 열닷새째, 여기서 처음으로 규칙이 깨집니다. 그날 손님 하나가 자기 아내 얘기를 하다가, '요즘 너무 예민해서 큰소리 한번 낼까 봐 겁난다'는 말을 흘렸습니다. 새가 그 말을 따라 하기 시작했고요. 그런데 그날따라, 이발사 손이 미끄러져 손님 목덜미를 살짝 베고 말았습니다. 당황한 이발사는, 사과하다 무심코 이렇게 말해버렸습니다. '아유 죄송합니다, 저 새가 자꾸 이상한 소리를 해서요. 큰소리 한번 낼까 봐 겁난다고… 신경이 쓰였나 봅니다.' 손님은 웃으며 넘겼습니다. 열아흐레째, 새의 행동이 달라졌습니다. 하루 종일, 그 말만 반복했습니다. 목소리도 평소보다 컸고요. 온도계로는 차이가 없었는데, 이발사는 그날따라 새장 쪽에서 찬 기운이 느껴졌다고 일지에 적었습니다. 스무엿새째, 두 번째 규칙이 깨집니다. 이발사가 급한 일로 서둘러 문을 닫으면서, 새장에 천 덮는 걸 깜빡했습니다. 다음 날 아침, 새는 전혀 다른 손님의 목소리로 다른 말을 하고 있었습니다. 하룻밤 사이에, 대상이 바뀐 겁니다. 스무아흐레째, 정황이 더 나빠졌습니다. 큰소리 얘기를 흘렸던 그 손님이, 예고도 없이 다시 이발소를 찾아왔습니다. 원래 두 달에 한 번 오던 사람이, 열흘 만에요. 심 연구원은 그 모습을, 옆에서 지켜보고 있었습니다. 그리고 서른하루째, 마지막 규칙이 깨졌습니다. 이발사가 아니라, 심 연구원이 깼습니다. 그 손님이 가게 문을 열고 들어오려다, 잠깐 망설이더니 그냥 돌아서 가려 했습니다. 심 연구원은 순간, 지금이 확인할 기회라고 생각했습니다. 새가 왜 저 사람 목소리로만 반응하는지, 알아낼 수 있을 것 같았거든요. 그래서 자기도 모르게, 손님을 향해 말했습니다. '저기요, 잠깐만요.' 그게 다였습니다. 손님은 뒤돌아, 몇 걸음 다시 걸어왔고요. 그 순간, 새장 속 새가 딱 한 번 크게 울었습니다. 그리고, 조용해졌습니다. CCTV 기록은 여기까지만 남아 있습니다. 손님은 그날 이후로, 이 골목에 다시 나타나지 않았습니다. 심 연구원도, 마지막 보고서를 쓴 뒤로는 현장에 나오지 않았습니다. 인사 기록엔 '재배치'라고만 적혀 있습니다. 어디로 갔는지는, 이 기록에 남아 있지 않습니다. 재단이 이 골목의 옛 자료를 다시 뒤져보니, 이상한 게 하나 나왔습니다. 지금 이발소 자리에, 원래는 사진관이 있었습니다. 1961년 겨울, 그 사진관에서 불이 났습니다. 세 사람이, 미처 빠져나오지 못했다고 기록돼 있습니다. 그런데 그 사고 이후 이 자리를 거쳐 간 가게들, 하나같이 안에 새를 한 마리씩 두고 있었습니다. 앵무새, 카나리아, 그리고 지금의 구관조까지요. 새가 죽거나 다른 곳으로 옮겨져도, 몇 달 안에 다음 새가 그 자리에 들어왔고요. 얼마 지나지 않아, 똑같은 일이 다시 시작됐습니다. 카나리아 때도, 구관조 때도, 사람들은 그 새를 계속 '말 삼키는 새'라고 불렀습니다. 재단의 결론은 이렇습니다. 진짜 이 자리에 남은 건, 새가 아니라는 겁니다. 마지막까지 빠져나오지 못한 누군가가, 그날 못다 한 말을 아직도 하고 있는 거라고요. 새는 그 말을, 그저 대신 전할 뿐이고요. 그래서 이 새장을, 몇 번이나 다른 곳으로 옮겨봤지만 소용없었습니다. 새를 옮기면, 그 자리에 남은 사람 중 누군가가 대신 그 역할을 이어받았거든요. 그게, 이 개체가 여전히 케테르로 남아 있는 이유입니다. 이발소 문에 붙었던 종이는, 얼마 전 떼어졌다고 합니다. 새 주인이, 다시 그 자리에서 장사를 시작했다고요. 그리고 창가엔, 새장이 다시 하나 걸렸습니다. 그 안엔 '말 삼키는 새'가, 다시 살고 있다고 합니다. 여러분은 혹시, 누군가 무심코 흘린 말을 오래 마음에 담아두신 적 있으신가요? 비슷한 얘기를 알고 계시다면, 댓글로 들려주세요. 다음 이야기도, 조용히 기다리고 있겠습니다.",
+  "segments": [
+    {
+      "text": "199X년 여름, OO동 골목 안에서 삼십 년 넘게 가위를 잡아온 이발사가, 어느 날 아침 셔터를 내린 채 다시 열지 않았습니다.",
+      "est_sec": 14,
+      "text_en": "In the summer of 199X, a barber who'd held his scissors for over thirty years in an alley in OO-dong pulled his shutter down one morning and never opened it again.",
+      "text_ja": "199X年の夏、OO洞の路地で三十年以上ハサミを握ってきた理容師が、ある朝シャッターを下ろしたまま、二度と開けませんでした。",
+      "text_zh_Hant": "199X年夏天，在OO洞巷子裡拿了三十多年剪刀的理髮師，某天早上拉下鐵捲門後，再也沒有打開過。"
+    },
+    {
+      "text": "문에는 종이 한 장, '개인 사정으로 쉽니다'라는 말만 붙어 있었습니다.",
+      "est_sec": 8,
+      "text_en": "On the door hung a single sheet of paper that just said, 'Closed for personal reasons.'",
+      "text_ja": "ドアには紙が一枚、「個人的な事情によりお休みします」とだけ貼られていました。",
+      "text_zh_Hant": "門上只貼了一張紙，寫著「因個人因素公休」。"
+    },
+    {
+      "text": "무슨 일이 있었는지, 처음부터 말씀드리겠습니다.",
+      "est_sec": 5,
+      "text_en": "Let me tell you what happened, from the beginning.",
+      "text_ja": "何があったのか、最初からお話しします。",
+      "text_zh_Hant": "發生了什麼事，讓我從頭說起。"
+    },
+    {
+      "text": "OO동 이 골목 이발소, 아실 만한 분은 아실 겁니다.",
+      "est_sec": 6,
+      "text_en": "This barbershop in the OO-dong alley — some of you might already know it.",
+      "text_ja": "OO洞のこの路地の理容室、ご存じの方はご存じかもしれません。",
+      "text_zh_Hant": "OO洞這條巷子裡的理髮店，知道的人可能都知道。"
+    },
+    {
+      "text": "의자 두 개, 낡은 거울 하나, 그리고 창가에 걸린 새장 하나가 전부인 작은 가게거든요.",
+      "est_sec": 9,
+      "text_en": "It's a small place — two chairs, one old mirror, and a birdcage hanging by the window, that's all there is.",
+      "text_ja": "椅子が二つ、古い鏡が一つ、それと窓際に吊るされた鳥かごが一つ、それで全部の小さな店なんです。",
+      "text_zh_Hant": "只有兩張椅子、一面舊鏡子，還有窗邊掛著的一個鳥籠，就這樣的一間小店。"
+    },
+    {
+      "text": "늘 스킨로션 냄새가 옅게 배어 있었습니다.",
+      "est_sec": 4,
+      "text_en": "The faint smell of aftershave lotion always hung in the air.",
+      "text_ja": "いつもスキンローションの匂いがうっすらと染み付いていました。",
+      "text_zh_Hant": "店裡總是淡淡地飄著爽膚水的味道。"
+    },
+    {
+      "text": "문을 연 지는 삼십이 년째였고요.",
+      "est_sec": 3,
+      "text_en": "It had been open for thirty-two years.",
+      "text_ja": "開業してから三十二年目でした。",
+      "text_zh_Hant": "開業已經第三十二年了。"
+    },
+    {
+      "text": "그 새장은 가로 마흔 센티짜리, 작은 편이었습니다.",
+      "est_sec": 5,
+      "text_en": "The cage was forty centimeters wide — on the small side.",
+      "text_ja": "その鳥かごは横幅四十センチほどの、小さめのものでした。",
+      "text_zh_Hant": "那個鳥籠寬約四十公分，算是偏小的。"
+    },
+    {
+      "text": "안에는 구관조 한 마리가 살고 있었습니다.",
+      "est_sec": 4,
+      "text_en": "Inside lived a single hill myna.",
+      "text_ja": "中には九官鳥が一羽、住んでいました。",
+      "text_zh_Hant": "裡面住著一隻九官鳥。"
+    },
+    {
+      "text": "스물여섯 해째, 같은 새장에서요.",
+      "est_sec": 3,
+      "text_en": "Twenty-six years now, in that same cage.",
+      "text_ja": "二十六年目です、同じ鳥かごで。",
+      "text_zh_Hant": "已經第二十六年了，都待在同一個鳥籠裡。"
+    },
+    {
+      "text": "재단은 이 새장에 번호를 하나 붙였습니다.",
+      "est_sec": 4,
+      "text_en": "The Foundation gave this cage a number.",
+      "text_ja": "財団はこの鳥かごに番号を一つ付けました。",
+      "text_zh_Hant": "基金會給這個鳥籠編了一個編號。"
+    },
+    {
+      "text": "구이사칠.",
+      "est_sec": 2,
+      "text_en": "Nine-two-four-seven.",
+      "text_ja": "九二四七。",
+      "text_zh_Hant": "九二四七。"
+    },
+    {
+      "text": "등급은 케테르였고요.",
+      "est_sec": 2,
+      "text_en": "The class was Keter.",
+      "text_ja": "等級はケテルでした。",
+      "text_zh_Hant": "等級是Keter。"
+    },
+    {
+      "text": "흔히 아시는 것과 달리, 케테르라고 해서 크고 사나운 게 아닙니다.",
+      "est_sec": 7,
+      "text_en": "Contrary to what people usually think, Keter doesn't mean big or vicious.",
+      "text_ja": "よく思われているのとは違い、ケテルだからといって大きくて凶暴なわけではありません。",
+      "text_zh_Hant": "和一般想像不同，Keter並不代表體型巨大或凶猛。"
+    },
+    {
+      "text": "그냥, 아직 격리할 방법을 못 찾았다는 뜻입니다.",
+      "est_sec": 5,
+      "text_en": "It just means no one has found a way to contain it yet.",
+      "text_ja": "ただ、まだ隔離する方法が見つかっていないという意味です。",
+      "text_zh_Hant": "只是代表目前還沒找到收容它的方法而已。"
+    },
+    {
+      "text": "그런데 이 새한테는, 이상한 점이 하나 있었습니다.",
+      "est_sec": 5,
+      "text_en": "But there was one strange thing about this bird.",
+      "text_ja": "ですが、この鳥には一つ、おかしな点がありました。",
+      "text_zh_Hant": "不過，這隻鳥有一點很奇怪。"
+    },
+    {
+      "text": "혹시 구관조를 키워보신 적 있으신가요?",
+      "est_sec": 4,
+      "text_en": "Have you ever kept a hill myna?",
+      "text_ja": "九官鳥を飼ったことはありますか?",
+      "text_zh_Hant": "您有養過九官鳥嗎？"
+    },
+    {
+      "text": "사람 말을 잘 따라 하는 새죠.",
+      "est_sec": 3,
+      "text_en": "They're known for mimicking human speech well.",
+      "text_ja": "人の言葉をよく真似する鳥ですよね。",
+      "text_zh_Hant": "牠們是很擅長模仿人說話的鳥。"
+    },
+    {
+      "text": "그런데 이 녀석은, 아무 말이나 따라 하지 않았습니다.",
+      "est_sec": 6,
+      "text_en": "But this one didn't just repeat anything.",
+      "text_ja": "でもこの子は、何でもかんでも真似するわけではありませんでした。",
+      "text_zh_Hant": "但這隻鳥並不是什麼話都學。"
+    },
+    {
+      "text": "손님이 의자에 앉아 무심코 흘린 말 중에서, 딱 한마디만 골라 따라 했거든요.",
+      "est_sec": 8,
+      "text_en": "Out of everything a customer said absent-mindedly in the chair, it picked out exactly one phrase to repeat.",
+      "text_ja": "客が椅子に座って何気なくこぼした言葉の中から、たった一言だけを選んで真似したんです。",
+      "text_zh_Hant": "牠會從客人坐在椅子上無意間說出的話裡，只挑一句話來學。"
+    },
+    {
+      "text": "그리고 그 한마디는, 이상하게 오래 남았습니다.",
+      "est_sec": 5,
+      "text_en": "And that one phrase, strangely, stuck around for a long time.",
+      "text_ja": "そしてその一言は、不思議と長く残りました。",
+      "text_zh_Hant": "而那句話，奇怪地會留存很久。"
+    },
+    {
+      "text": "이발소 손님들은 이 녀석을 그냥 구관조라고 부르지 않았습니다.",
+      "est_sec": 7,
+      "text_en": "The shop's regulars didn't just call it a hill myna.",
+      "text_ja": "理容室の客たちは、この子をただの九官鳥とは呼びませんでした。",
+      "text_zh_Hant": "理髮店的客人不會單純叫牠九官鳥。"
+    },
+    {
+      "text": "언제부턴가, '말 삼키는 새'라고 불렀습니다.",
+      "est_sec": 5,
+      "text_en": "At some point, they started calling it 'the bird that swallows words.'",
+      "text_ja": "いつからか、「言葉を飲み込む鳥」と呼んでいました。",
+      "text_zh_Hant": "不知從何時起，大家開始叫牠「吞話的鳥」。",
+      "emphasis": "말 삼키는 새"
+    },
+    {
+      "text": "한번 삼킨 말은, 절대 그냥 뱉어내지 않았거든요.",
+      "est_sec": 5,
+      "text_en": "Because once it swallowed a word, it never just spat it back out.",
+      "text_ja": "一度飲み込んだ言葉は、決してそのまま吐き出さなかったからです。",
+      "text_zh_Hant": "因為一旦牠吞下一句話，就絕不會輕易吐出來。"
+    },
+    {
+      "text": "1979년, 이 새를 처음 데려온 손님이 있었습니다.",
+      "est_sec": 6,
+      "text_en": "In 1979, a customer first brought this bird in.",
+      "text_ja": "1979年、この鳥を最初に連れてきた客がいました。",
+      "text_zh_Hant": "1979年，有位客人最先把這隻鳥帶來。"
+    },
+    {
+      "text": "시장에서 사 왔다고 했고요.",
+      "est_sec": 3,
+      "text_en": "Said he'd bought it at the market.",
+      "text_ja": "市場で買ってきたと言っていました。",
+      "text_zh_Hant": "他說是從市場買來的。"
+    },
+    {
+      "text": "그런데 그 손님이 다녀간 지 여섯 달 만에, 이발소 단골 한 명이 사고로 세상을 떠났습니다.",
+      "est_sec": 10,
+      "text_en": "But six months after that customer's visit, one of the shop's regulars died in an accident.",
+      "text_ja": "でもその客が来てから六か月後、理容室の常連が一人、事故で亡くなりました。",
+      "text_zh_Hant": "但那位客人來過後六個月，理髮店的一位常客因意外過世了。"
+    },
+    {
+      "text": "사고 며칠 전, 그 손님이 이발소에서 이런 말을 흘렸다고 합니다.",
+      "est_sec": 7,
+      "text_en": "A few days before the accident, he'd apparently let slip something in the shop.",
+      "text_ja": "事故の数日前、その客は理容室でこんな言葉をこぼしていたそうです。",
+      "text_zh_Hant": "據說在意外發生前幾天，那位客人在理髮店裡曾不經意說過這句話。"
+    },
+    {
+      "text": "'아이고, 나 이러다 큰일 나겠네.'",
+      "est_sec": 4,
+      "text_en": "'Ugh, at this rate something bad's gonna happen to me.'",
+      "text_ja": "「あーあ、これじゃ大変なことになりそうだ」",
+      "text_zh_Hant": "「唉呀，我這樣下去要出大事了。」"
+    },
+    {
+      "text": "새는 그 말을, 며칠 동안 따라 했습니다.",
+      "est_sec": 4,
+      "text_en": "The bird repeated that line for several days.",
+      "text_ja": "鳥はその言葉を、数日間真似し続けました。",
+      "text_zh_Hant": "那隻鳥把這句話學了好幾天。"
+    },
+    {
+      "text": "여러분이라면, 이런 일을 몇 번이나 봐야 우연이 아니라고 생각하시겠어요?",
+      "est_sec": 8,
+      "text_en": "How many times would you have to see this happen before you stopped calling it a coincidence?",
+      "text_ja": "皆さんなら、こんなことを何回見たら偶然じゃないと思いますか?",
+      "text_zh_Hant": "如果是您，這種事要看過幾次，才會覺得不是巧合呢？"
+    },
+    {
+      "text": "재단이 이 자리를 주목한 것도, 비슷한 일이 몇 번 더 반복된 뒤였습니다.",
+      "est_sec": 8,
+      "text_en": "The Foundation only took notice of this place after similar incidents repeated a few more times.",
+      "text_ja": "財団がこの場所に注目したのも、似たようなことが何度か繰り返された後でした。",
+      "text_zh_Hant": "基金會開始注意到這裡，也是在類似的事又發生了幾次之後。"
+    },
+    {
+      "text": "그래서 이 이발소엔, 지켜야 할 게 세 가지 있었습니다.",
+      "est_sec": 6,
+      "text_en": "So there were three things everyone at this barbershop had to keep.",
+      "text_ja": "だからこの理容室には、守るべきことが三つありました。",
+      "text_zh_Hant": "所以在這間理髮店，有三件事必須遵守。"
+    },
+    {
+      "text": "새가 어떤 손님의 말을 따라 하기 시작하면, 그 손님한테는 절대 알려주지 않는다.",
+      "est_sec": 9,
+      "text_en": "If the bird starts repeating a customer's words, never tell that customer.",
+      "text_ja": "鳥がある客の言葉を真似し始めても、その客には絶対に教えない。",
+      "text_zh_Hant": "如果鳥開始學某位客人的話，絕對不告訴那位客人。"
+    },
+    {
+      "text": "영업을 마칠 땐, 새장에 반드시 두꺼운 천을 덮는다.",
+      "est_sec": 6,
+      "text_en": "At closing time, always cover the cage with a thick cloth.",
+      "text_ja": "営業を終えたら、鳥かごに必ず厚い布をかける。",
+      "text_zh_Hant": "打烊時，一定要用厚布蓋住鳥籠。"
+    },
+    {
+      "text": "그리고 새가 낮에 갑자기 크게 울어도, 그 손님을 일부러 다시 부르지 않는다.",
+      "est_sec": 8,
+      "text_en": "And even if the bird suddenly cries out loud during the day, never deliberately call that customer back.",
+      "text_ja": "そして鳥が昼間に突然大きく鳴いても、その客をわざわざ呼び戻さない。",
+      "text_zh_Hant": "還有，即使鳥在白天突然大聲叫，也絕不刻意把那位客人叫回來。"
+    },
+    {
+      "text": "이걸 어기면 어떻게 되는지는, 어디에도 적혀 있지 않았습니다.",
+      "est_sec": 7,
+      "text_en": "What happens if you break this — that's not written down anywhere.",
+      "text_ja": "これを破ったらどうなるのかは、どこにも書かれていませんでした。",
+      "text_zh_Hant": "違反了會發生什麼事，沒有任何地方寫著。"
+    },
+    {
+      "text": "그냥, 이십 년 가까이 아무도 어겨보지 않았을 뿐이죠.",
+      "est_sec": 6,
+      "text_en": "It's just that no one had broken it in nearly twenty years.",
+      "text_ja": "ただ、二十年近く誰も破ったことがなかっただけです。",
+      "text_zh_Hant": "只是將近二十年來，從來沒有人違反過而已。"
+    },
+    {
+      "text": "담당은 심 연구원이었습니다.",
+      "est_sec": 3,
+      "text_en": "The researcher in charge was named Shim.",
+      "text_ja": "担当はシム研究員でした。",
+      "text_zh_Hant": "負責的是沈研究員。"
+    },
+    {
+      "text": "이 자리를 오 년째 지켜보고 있었죠.",
+      "est_sec": 4,
+      "text_en": "They'd been watching over this site for five years.",
+      "text_ja": "この場所を五年目、見守っていました。",
+      "text_zh_Hant": "已經在這裡觀察了第五年。"
+    },
+    {
+      "text": "조용하고 꼼꼼한 사람이었습니다.",
+      "est_sec": 3,
+      "text_en": "A quiet, meticulous person.",
+      "text_ja": "物静かで几帳面な人でした。",
+      "text_zh_Hant": "是個安靜又謹慎的人。"
+    },
+    {
+      "text": "다만 고집이 하나 있었는데, 이 현상이 왜 일어나는지 자기 손으로 꼭 밝히고 싶어 했습니다.",
+      "est_sec": 10,
+      "text_en": "But they had one stubborn streak — a need to personally uncover why this phenomenon happened.",
+      "text_ja": "ただ一つ譲れない性分があって、この現象がなぜ起きるのか自分の手で必ず解き明かしたいと思っていました。",
+      "text_zh_Hant": "但有一個執念——非要親手查明這個現象發生的原因不可。"
+    },
+    {
+      "text": "관찰 기록은 이렇게 시작됩니다.",
+      "est_sec": 3,
+      "text_en": "The observation log begins like this.",
+      "text_ja": "観察記録はこうして始まります。",
+      "text_zh_Hant": "觀察紀錄是這樣開始的。"
+    },
+    {
+      "text": "사흘째 기록입니다.",
+      "est_sec": 2,
+      "text_en": "This is the entry for day three.",
+      "text_ja": "三日目の記録です。",
+      "text_zh_Hant": "這是第三天的紀錄。"
+    },
+    {
+      "text": "오전 손님 하나가 앉아서 혼잣말처럼 이런 말을 흘렸습니다.",
+      "est_sec": 6,
+      "text_en": "A morning customer sat down and muttered this to himself.",
+      "text_ja": "午前中の客が一人、座って独り言のようにこう言いました。",
+      "text_zh_Hant": "上午一位客人坐下後，像自言自語一樣說了這句話。"
+    },
+    {
+      "text": "'요즘 자꾸 깜빡깜빡하네.'",
+      "est_sec": 3,
+      "text_en": "'I keep forgetting things lately.'",
+      "text_ja": "「最近やたら忘れっぽいな」",
+      "text_zh_Hant": "「最近怎麼老是忘東忘西的。」"
+    },
+    {
+      "text": "새는 그 말을, 정확히 세 번 따라 했습니다.",
+      "est_sec": 5,
+      "text_en": "The bird repeated that line exactly three times.",
+      "text_ja": "鳥はその言葉を、正確に三回真似しました。",
+      "text_zh_Hant": "那隻鳥把這句話正好學了三次。"
+    },
+    {
+      "text": "딱 세 번, 그 이상도 이하도 아니었습니다.",
+      "est_sec": 5,
+      "text_en": "Exactly three — no more, no less.",
+      "text_ja": "ちょうど三回、それ以上でもそれ以下でもありませんでした。",
+      "text_zh_Hant": "剛好三次，不多也不少。"
+    },
+    {
+      "text": "나흘째, 같은 손님이 다시 와서 머리를 다듬었습니다.",
+      "est_sec": 6,
+      "text_en": "On day four, the same customer came back for a haircut.",
+      "text_ja": "四日目、同じ客が再び来て髪を整えました。",
+      "text_zh_Hant": "第四天，同一位客人又來剪頭髮。"
+    },
+    {
+      "text": "새는 이번엔 아무 말도 하지 않았고요.",
+      "est_sec": 4,
+      "text_en": "This time the bird said nothing.",
+      "text_ja": "鳥は今回、何も言いませんでした。",
+      "text_zh_Hant": "這次鳥什麼也沒說。"
+    },
+    {
+      "text": "이발사는 규칙대로, 그 손님한테 아무것도 알리지 않았습니다.",
+      "est_sec": 6,
+      "text_en": "As the rule required, the barber told the customer nothing.",
+      "text_ja": "理容師はルール通り、その客には何も知らせませんでした。",
+      "text_zh_Hant": "理髮師按照規矩，什麼都沒告訴那位客人。"
+    },
+    {
+      "text": "열닷새째, 여기서 처음으로 규칙이 깨집니다.",
+      "est_sec": 5,
+      "text_en": "On day fifteen, the rule was broken for the first time.",
+      "text_ja": "十五日目、ここで初めてルールが破られます。",
+      "text_zh_Hant": "第十五天，規矩在這裡第一次被打破。"
+    },
+    {
+      "text": "그날 손님 하나가 자기 아내 얘기를 하다가, '요즘 너무 예민해서 큰소리 한번 낼까 봐 겁난다'는 말을 흘렸습니다.",
+      "est_sec": 12,
+      "text_en": "That day, a customer talking about his wife let slip, 'She's so on edge lately, I'm scared I might raise my voice at her.'",
+      "text_ja": "その日、ある客が妻の話をしていて、「最近すごく神経質になってて、一度大声を出しちゃいそうで怖い」と言葉をこぼしました。",
+      "text_zh_Hant": "那天，一位客人聊到自己的妻子時，不小心說出「她最近太敏感了，我怕自己會忍不住對她大吼」這句話。"
+    },
+    {
+      "text": "새가 그 말을 따라 하기 시작했고요.",
+      "est_sec": 4,
+      "text_en": "The bird began repeating it.",
+      "text_ja": "鳥はその言葉を真似し始めました。",
+      "text_zh_Hant": "鳥開始學那句話。"
+    },
+    {
+      "text": "그런데 그날따라, 이발사 손이 미끄러져 손님 목덜미를 살짝 베고 말았습니다.",
+      "est_sec": 8,
+      "text_en": "But that day, of all days, the barber's hand slipped and nicked the customer's neck.",
+      "text_ja": "でもその日に限って、理容師の手が滑って客の首筋を少し切ってしまいました。",
+      "text_zh_Hant": "偏偏就在那天，理髮師的手一滑，輕輕劃傷了客人的後頸。"
+    },
+    {
+      "text": "당황한 이발사는, 사과하다 무심코 이렇게 말해버렸습니다.",
+      "est_sec": 6,
+      "text_en": "Flustered, the barber blurted this out while apologizing.",
+      "text_ja": "動揺した理容師は、謝りながらつい、こう言ってしまいました。",
+      "text_zh_Hant": "慌張的理髮師一邊道歉，一邊不小心說出了這句話。"
+    },
+    {
+      "text": "'아유 죄송합니다, 저 새가 자꾸 이상한 소리를 해서요. 큰소리 한번 낼까 봐 겁난다고… 신경이 쓰였나 봅니다.'",
+      "est_sec": 12,
+      "text_en": "'Oh, I'm so sorry — that bird keeps saying strange things. \"Scared I might raise my voice\"... I guess it got to me.'",
+      "text_ja": "「あぁ、すみません。あの鳥がしきりに変なことを言うもので。大声出しそうで怖いって……気になってしまったみたいです」",
+      "text_zh_Hant": "「哎呀，真是不好意思，那隻鳥一直說些奇怪的話。什麼怕自己會大吼……大概是被影響到了。」"
+    },
+    {
+      "text": "손님은 웃으며 넘겼습니다.",
+      "est_sec": 3,
+      "text_en": "The customer just laughed it off.",
+      "text_ja": "客は笑って受け流しました。",
+      "text_zh_Hant": "客人只是笑笑帶過。"
+    },
+    {
+      "text": "열아흐레째, 새의 행동이 달라졌습니다.",
+      "est_sec": 4,
+      "text_en": "On day nineteen, the bird's behavior changed.",
+      "text_ja": "十九日目、鳥の行動が変わりました。",
+      "text_zh_Hant": "第十九天，那隻鳥的行為變了。"
+    },
+    {
+      "text": "하루 종일, 그 말만 반복했습니다.",
+      "est_sec": 4,
+      "text_en": "It repeated that same line all day long.",
+      "text_ja": "一日中、その言葉だけを繰り返しました。",
+      "text_zh_Hant": "牠一整天都只重複那句話。"
+    },
+    {
+      "text": "목소리도 평소보다 컸고요.",
+      "est_sec": 3,
+      "text_en": "Its voice was louder than usual, too.",
+      "text_ja": "声もいつもより大きかったです。",
+      "text_zh_Hant": "聲音也比平時更大。"
+    },
+    {
+      "text": "온도계로는 차이가 없었는데, 이발사는 그날따라 새장 쪽에서 찬 기운이 느껴졌다고 일지에 적었습니다.",
+      "est_sec": 11,
+      "text_en": "A thermometer showed no difference, but the barber wrote in the log that he'd felt a cold draft near the cage that day.",
+      "text_ja": "温度計では差はなかったのに、理容師はその日に限って鳥かごのあたりから冷気を感じたと日誌に書きました。",
+      "text_zh_Hant": "溫度計測不出差別，但理髮師在日誌上寫下那天特別感覺到鳥籠那邊有股冷氣。"
+    },
+    {
+      "text": "스무엿새째, 두 번째 규칙이 깨집니다.",
+      "est_sec": 4,
+      "text_en": "On day twenty-six, the second rule was broken.",
+      "text_ja": "二十六日目、二つ目のルールが破られます。",
+      "text_zh_Hant": "第二十六天，第二條規矩被打破。"
+    },
+    {
+      "text": "이발사가 급한 일로 서둘러 문을 닫으면서, 새장에 천 덮는 걸 깜빡했습니다.",
+      "est_sec": 8,
+      "text_en": "Rushing to close for an urgent matter, the barber forgot to cover the cage.",
+      "text_ja": "理容師は急用で慌てて店を閉めた際、鳥かごに布をかけるのを忘れました。",
+      "text_zh_Hant": "理髮師因為急事匆忙關店，忘了把布蓋在鳥籠上。"
+    },
+    {
+      "text": "다음 날 아침, 새는 전혀 다른 손님의 목소리로 다른 말을 하고 있었습니다.",
+      "est_sec": 8,
+      "text_en": "The next morning, the bird was speaking a different line in an entirely different customer's voice.",
+      "text_ja": "翌朝、鳥はまったく別の客の声で、別の言葉を話していました。",
+      "text_zh_Hant": "隔天早上，那隻鳥用完全不同的客人的聲音，說著不同的話。"
+    },
+    {
+      "text": "하룻밤 사이에, 대상이 바뀐 겁니다.",
+      "est_sec": 4,
+      "text_en": "Overnight, the target had changed.",
+      "text_ja": "一晩のうちに、対象が変わったのです。",
+      "text_zh_Hant": "一夜之間，對象換人了。"
+    },
+    {
+      "text": "스무아흐레째, 정황이 더 나빠졌습니다.",
+      "est_sec": 4,
+      "text_en": "On day twenty-nine, things got worse.",
+      "text_ja": "二十九日目、状況はさらに悪化しました。",
+      "text_zh_Hant": "第二十九天，情況變得更糟。"
+    },
+    {
+      "text": "큰소리 얘기를 흘렸던 그 손님이, 예고도 없이 다시 이발소를 찾아왔습니다.",
+      "est_sec": 8,
+      "text_en": "The customer who'd let slip the line about raising his voice showed up again, without warning.",
+      "text_ja": "大声の話をこぼしたあの客が、前触れもなく再び理容室を訪れました。",
+      "text_zh_Hant": "那位曾說過大吼那句話的客人，毫無預警地又來到了理髮店。"
+    },
+    {
+      "text": "원래 두 달에 한 번 오던 사람이, 열흘 만에요.",
+      "est_sec": 5,
+      "text_en": "A man who usually came once every two months, back after just ten days.",
+      "text_ja": "普段は二か月に一度来る人が、十日ぶりにです。",
+      "text_zh_Hant": "本來兩個月才來一次的人，這次隔了十天就又來了。"
+    },
+    {
+      "text": "심 연구원은 그 모습을, 옆에서 지켜보고 있었습니다.",
+      "est_sec": 6,
+      "text_en": "Researcher Shim watched it all unfold from nearby.",
+      "text_ja": "シム研究員はその様子を、そばで見守っていました。",
+      "text_zh_Hant": "沈研究員就在旁邊看著這一切發生。"
+    },
+    {
+      "text": "그리고 서른하루째, 마지막 규칙이 깨졌습니다.",
+      "est_sec": 5,
+      "text_en": "And on day thirty-one, the last rule was broken.",
+      "text_ja": "そして三十一日目、最後のルールが破られました。",
+      "text_zh_Hant": "然後在第三十一天，最後一條規矩被打破了。"
+    },
+    {
+      "text": "이발사가 아니라, 심 연구원이 깼습니다.",
+      "est_sec": 4,
+      "text_en": "Not by the barber — by Researcher Shim.",
+      "text_ja": "理容師ではなく、シム研究員が破ったのです。",
+      "text_zh_Hant": "打破的不是理髮師，而是沈研究員。"
+    },
+    {
+      "text": "그 손님이 가게 문을 열고 들어오려다, 잠깐 망설이더니 그냥 돌아서 가려 했습니다.",
+      "est_sec": 9,
+      "text_en": "The customer opened the shop door, hesitated for a moment, then started to turn and leave.",
+      "text_ja": "その客は店のドアを開けて入ろうとして、少しためらってから、そのまま立ち去ろうとしました。",
+      "text_zh_Hant": "那位客人推開店門正要進來，猶豫了一下，卻轉身想要離開。"
+    },
+    {
+      "text": "심 연구원은 순간, 지금이 확인할 기회라고 생각했습니다.",
+      "est_sec": 6,
+      "text_en": "In that instant, Shim thought this was the chance to find out.",
+      "text_ja": "シム研究員は瞬間、今が確かめるチャンスだと思いました。",
+      "text_zh_Hant": "沈研究員在那一瞬間，覺得這是確認真相的機會。"
+    },
+    {
+      "text": "새가 왜 저 사람 목소리로만 반응하는지, 알아낼 수 있을 것 같았거든요.",
+      "est_sec": 8,
+      "text_en": "It felt like they could finally learn why the bird only reacted to that person's voice.",
+      "text_ja": "鳥がなぜあの人の声にだけ反応するのか、突き止められそうな気がしたんです。",
+      "text_zh_Hant": "感覺終於能查出，那隻鳥為什麼只對那個人的聲音有反應了。"
+    },
+    {
+      "text": "그래서 자기도 모르게, 손님을 향해 말했습니다.",
+      "est_sec": 5,
+      "text_en": "So, without meaning to, they called out to the customer.",
+      "text_ja": "だから思わず、客に向かって言いました。",
+      "text_zh_Hant": "於是不自覺地，朝那位客人開口了。"
+    },
+    {
+      "text": "'저기요, 잠깐만요.'",
+      "est_sec": 2,
+      "text_en": "'Excuse me — just a moment.'",
+      "text_ja": "「あの、ちょっと待ってください」",
+      "text_zh_Hant": "「那個，請等一下。」"
+    },
+    {
+      "text": "그게 다였습니다.",
+      "est_sec": 2,
+      "text_en": "That was all it took.",
+      "text_ja": "それだけでした。",
+      "text_zh_Hant": "就這樣而已。",
+      "emphasis": "그게 다였습니다"
+    },
+    {
+      "text": "손님은 뒤돌아, 몇 걸음 다시 걸어왔고요.",
+      "est_sec": 4,
+      "text_en": "The customer turned back and walked a few steps toward them.",
+      "text_ja": "客は振り返り、数歩また歩いてきました。",
+      "text_zh_Hant": "客人回過頭，又走了幾步過來。"
+    },
+    {
+      "text": "그 순간, 새장 속 새가 딱 한 번 크게 울었습니다.",
+      "est_sec": 6,
+      "text_en": "At that moment, the bird in the cage cried out loudly, just once.",
+      "text_ja": "その瞬間、鳥かごの中の鳥が、一度だけ大きく鳴きました。",
+      "text_zh_Hant": "就在那一刻，鳥籠裡的鳥大聲叫了一聲。"
+    },
+    {
+      "text": "그리고, 조용해졌습니다.",
+      "est_sec": 2,
+      "text_en": "And then, it went silent.",
+      "text_ja": "そして、静かになりました。",
+      "text_zh_Hant": "然後，就安靜了下來。"
+    },
+    {
+      "text": "CCTV 기록은 여기까지만 남아 있습니다.",
+      "est_sec": 4,
+      "text_en": "The CCTV footage only goes this far.",
+      "text_ja": "CCTVの記録には、ここまでしか残っていません。",
+      "text_zh_Hant": "監視器畫面只留到這裡。"
+    },
+    {
+      "text": "손님은 그날 이후로, 이 골목에 다시 나타나지 않았습니다.",
+      "est_sec": 6,
+      "text_en": "The customer never appeared in this alley again after that day.",
+      "text_ja": "客はその日以降、この路地に二度と姿を見せませんでした。",
+      "text_zh_Hant": "那位客人自那天起，再也沒有出現在這條巷子裡。"
+    },
+    {
+      "text": "심 연구원도, 마지막 보고서를 쓴 뒤로는 현장에 나오지 않았습니다.",
+      "est_sec": 7,
+      "text_en": "Researcher Shim, too, never came to the site again after filing that final report.",
+      "text_ja": "シム研究員も、最後の報告書を書いた後は現場に出てきませんでした。",
+      "text_zh_Hant": "沈研究員也是，寫完最後那份報告之後就再也沒出現在現場。"
+    },
+    {
+      "text": "인사 기록엔 '재배치'라고만 적혀 있습니다.",
+      "est_sec": 5,
+      "text_en": "The personnel record just says 'reassigned.'",
+      "text_ja": "人事記録には「配置転換」とだけ書かれています。",
+      "text_zh_Hant": "人事紀錄上只寫著「調職」兩個字。"
+    },
+    {
+      "text": "어디로 갔는지는, 이 기록에 남아 있지 않습니다.",
+      "est_sec": 5,
+      "text_en": "Where they went isn't in this record.",
+      "text_ja": "どこへ行ったのかは、この記録には残っていません。",
+      "text_zh_Hant": "去了哪裡，這份紀錄裡並沒有寫。"
+    },
+    {
+      "text": "재단이 이 골목의 옛 자료를 다시 뒤져보니, 이상한 게 하나 나왔습니다.",
+      "est_sec": 8,
+      "text_en": "When the Foundation dug back through old records of this alley, something strange turned up.",
+      "text_ja": "財団がこの路地の古い資料を再び調べてみると、おかしなものが一つ出てきました。",
+      "text_zh_Hant": "基金會再次翻查這條巷子的舊資料，發現了一件怪事。"
+    },
+    {
+      "text": "지금 이발소 자리에, 원래는 사진관이 있었습니다.",
+      "est_sec": 5,
+      "text_en": "Where the barbershop stands now, there used to be a photo studio.",
+      "text_ja": "今の理容室の場所には、もともと写真館がありました。",
+      "text_zh_Hant": "如今理髮店的位置，原本是一間照相館。"
+    },
+    {
+      "text": "1961년 겨울, 그 사진관에서 불이 났습니다.",
+      "est_sec": 5,
+      "text_en": "In the winter of 1961, a fire broke out in that photo studio.",
+      "text_ja": "1961年の冬、その写真館で火事が起きました。",
+      "text_zh_Hant": "1961年冬天，那間照相館發生了火災。"
+    },
+    {
+      "text": "세 사람이, 미처 빠져나오지 못했다고 기록돼 있습니다.",
+      "est_sec": 6,
+      "text_en": "Records say three people didn't make it out in time.",
+      "text_ja": "三人が、逃げ出せなかったと記録されています。",
+      "text_zh_Hant": "紀錄上寫著，有三個人來不及逃出來。"
+    },
+    {
+      "text": "그런데 그 사고 이후 이 자리를 거쳐 간 가게들, 하나같이 안에 새를 한 마리씩 두고 있었습니다.",
+      "est_sec": 10,
+      "text_en": "But every shop that occupied this spot since that fire, without exception, kept a single bird inside.",
+      "text_ja": "でもその事故以降、この場所に入った店は、どこも決まって鳥を一羽ずつ飼っていました。",
+      "text_zh_Hant": "但自那場火災之後，凡是在這個位置開過店的商家，無一例外都養了一隻鳥。"
+    },
+    {
+      "text": "앵무새, 카나리아, 그리고 지금의 구관조까지요.",
+      "est_sec": 5,
+      "text_en": "A parrot, a canary, and now this hill myna.",
+      "text_ja": "オウム、カナリア、そして今の九官鳥まで。",
+      "text_zh_Hant": "鸚鵡、金絲雀，一直到現在的九官鳥。"
+    },
+    {
+      "text": "새가 죽거나 다른 곳으로 옮겨져도, 몇 달 안에 다음 새가 그 자리에 들어왔고요.",
+      "est_sec": 9,
+      "text_en": "Whenever a bird died or was moved elsewhere, a new one took its place within months.",
+      "text_ja": "鳥が死んだり別の場所に移されたりしても、数か月のうちに次の鳥がその場所に入ってきました。",
+      "text_zh_Hant": "即使鳥死了或被送到別的地方，幾個月內就會有新的鳥補上那個位置。"
+    },
+    {
+      "text": "얼마 지나지 않아, 똑같은 일이 다시 시작됐습니다.",
+      "est_sec": 5,
+      "text_en": "And before long, the same thing would start all over again.",
+      "text_ja": "そしてほどなく、まったく同じことがまた始まりました。",
+      "text_zh_Hant": "沒過多久，同樣的事情又會重新開始。"
+    },
+    {
+      "text": "카나리아 때도, 구관조 때도, 사람들은 그 새를 계속 '말 삼키는 새'라고 불렀습니다.",
+      "est_sec": 9,
+      "text_en": "Whether it was the canary or the myna, people kept calling it 'the bird that swallows words.'",
+      "text_ja": "カナリアのときも、九官鳥のときも、人々はその鳥をずっと「言葉を飲み込む鳥」と呼び続けました。",
+      "text_zh_Hant": "無論是金絲雀還是九官鳥，人們始終稱呼牠為「吞話的鳥」。"
+    },
+    {
+      "text": "재단의 결론은 이렇습니다.",
+      "est_sec": 3,
+      "text_en": "The Foundation's conclusion is this.",
+      "text_ja": "財団の結論はこうです。",
+      "text_zh_Hant": "基金會的結論是這樣的。"
+    },
+    {
+      "text": "진짜 이 자리에 남은 건, 새가 아니라는 겁니다.",
+      "est_sec": 5,
+      "text_en": "What actually remains in this spot isn't the bird.",
+      "text_ja": "本当にこの場所に残っているのは、鳥ではないということです。",
+      "text_zh_Hant": "真正留在這個地方的，並不是鳥。",
+      "emphasis": "새가 아니라는 겁니다"
+    },
+    {
+      "text": "마지막까지 빠져나오지 못한 누군가가, 그날 못다 한 말을 아직도 하고 있는 거라고요.",
+      "est_sec": 9,
+      "text_en": "It's someone who never made it out, still saying the words they couldn't finish that day.",
+      "text_ja": "最後まで逃げ出せなかった誰かが、あの日言い切れなかった言葉を、今もまだ言い続けているのだと。",
+      "text_zh_Hant": "是那個沒能逃出來的人，至今仍在說著那天沒能說完的話。"
+    },
+    {
+      "text": "새는 그 말을, 그저 대신 전할 뿐이고요.",
+      "est_sec": 4,
+      "text_en": "The bird just relays it, that's all.",
+      "text_ja": "鳥はその言葉を、ただ代わりに伝えているだけです。",
+      "text_zh_Hant": "鳥只是代替傳達那句話而已。"
+    },
+    {
+      "text": "그래서 이 새장을, 몇 번이나 다른 곳으로 옮겨봤지만 소용없었습니다.",
+      "est_sec": 7,
+      "text_en": "So they tried moving this cage elsewhere several times — it made no difference.",
+      "text_ja": "だからこの鳥かごを何度も別の場所に移してみましたが、無駄でした。",
+      "text_zh_Hant": "所以他們試過好幾次把這個鳥籠搬到別處，卻毫無用處。"
+    },
+    {
+      "text": "새를 옮기면, 그 자리에 남은 사람 중 누군가가 대신 그 역할을 이어받았거든요.",
+      "est_sec": 8,
+      "text_en": "Whenever the bird was moved, someone left behind at the site simply took over its role.",
+      "text_ja": "鳥を移すと、その場所に残った誰かが代わりにその役割を引き継いだんです。",
+      "text_zh_Hant": "只要把鳥搬走，留在原地的某個人就會接手牠的角色。"
+    },
+    {
+      "text": "그게, 이 개체가 여전히 케테르로 남아 있는 이유입니다.",
+      "est_sec": 6,
+      "text_en": "That's why this entity remains classified Keter to this day.",
+      "text_ja": "それが、この個体がいまだにケテルのままである理由です。",
+      "text_zh_Hant": "這就是這個個體至今仍被列為Keter等級的原因。"
+    },
+    {
+      "text": "이발소 문에 붙었던 종이는, 얼마 전 떼어졌다고 합니다.",
+      "est_sec": 6,
+      "text_en": "That sheet of paper on the shop door was apparently taken down not long ago.",
+      "text_ja": "理容室のドアに貼られていた紙は、少し前に剥がされたそうです。",
+      "text_zh_Hant": "據說貼在理髮店門上的那張紙，前陣子已經被撕掉了。"
+    },
+    {
+      "text": "새 주인이, 다시 그 자리에서 장사를 시작했다고요.",
+      "est_sec": 5,
+      "text_en": "A new owner has apparently started business there again.",
+      "text_ja": "新しいオーナーが、再びその場所で商売を始めたのだそうです。",
+      "text_zh_Hant": "聽說新的老闆，又在那個地方重新開業了。"
+    },
+    {
+      "text": "그리고 창가엔, 새장이 다시 하나 걸렸습니다.",
+      "est_sec": 5,
+      "text_en": "And by the window, a birdcage was hung up once more.",
+      "text_ja": "そして窓際には、鳥かごが再び一つ吊るされました。",
+      "text_zh_Hant": "而窗邊，又掛上了一個鳥籠。"
+    },
+    {
+      "text": "그 안엔 '말 삼키는 새'가, 다시 살고 있다고 합니다.",
+      "est_sec": 6,
+      "text_en": "Inside, they say, 'the bird that swallows words' lives once again.",
+      "text_ja": "その中には「言葉を飲み込む鳥」が、また住んでいるそうです。",
+      "text_zh_Hant": "聽說裡面，又住著那隻「吞話的鳥」。"
+    },
+    {
+      "text": "여러분은 혹시, 누군가 무심코 흘린 말을 오래 마음에 담아두신 적 있으신가요?",
+      "est_sec": 8,
+      "text_en": "Have you ever held onto something someone said carelessly, for far longer than you meant to?",
+      "text_ja": "皆さんは、誰かが何気なくこぼした言葉を、長く心に留めていたことはありますか?",
+      "text_zh_Hant": "各位是否曾經把別人不經意說出的話，一直放在心上很久呢？"
+    },
+    {
+      "text": "비슷한 얘기를 알고 계시다면, 댓글로 들려주세요.",
+      "est_sec": 5,
+      "text_en": "If you know a similar story, tell us in the comments.",
+      "text_ja": "似たような話をご存じでしたら、コメントで教えてください。",
+      "text_zh_Hant": "如果您知道類似的故事，歡迎在留言區告訴我們。"
+    },
+    {
+      "text": "다음 이야기도, 조용히 기다리고 있겠습니다.",
+      "est_sec": 5,
+      "text_en": "I'll be quietly waiting with the next story too.",
+      "text_ja": "次のお話も、静かにお待ちしております。",
+      "text_zh_Hant": "下一個故事，我也會靜靜地在這裡等候。"
+    }
+  ],
+  "scenes": [
+    {
+      "prompt": "SUBJECT: a small old-fashioned Korean barbershop interior. ANOMALY CUE: one birdcage hanging by the window catching a shaft of light. COMPOSITION: eye-level wide shot, one-point perspective toward the mirror, symmetrical framing, lower quarter of frame empty floor. LIGHT: single bare bulb overhead, hard shadows. MATERIAL: cracked linoleum floor, faded barber chairs with worn vinyl, chipped mirror frame. ATMOSPHERE: thin dust haze, still air. PALETTE: desaturated teal, warm amber, faded cream. TECHNICAL: 24mm lens, f/8, photorealistic. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "SUBJECT: an old birdcage hanging by a window. ANOMALY CUE: a single hill myna perched silent, head slightly turned toward camera. COMPOSITION: close-up, centered, shallow depth of field. LIGHT: single warm window light from the side. MATERIAL: rusted wire mesh, worn wooden perch, dusty glass pane. ATMOSPHERE: dust motes drifting in the light beam. PALETTE: warm amber, dull gray, muted teal. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "SUBJECT: an empty vintage barber chair facing a cracked mirror. ANOMALY CUE: a faint reflection of the birdcage visible in the mirror's corner. COMPOSITION: eye-level medium shot, centered, symmetrical framing. LIGHT: single fluorescent tube overhead, cool cast. MATERIAL: cracked mirror glass, worn leather chair, chipped tile wall. ATMOSPHERE: still cold air, faint dust. PALETTE: cold gray-blue, dim amber highlight. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "SUBJECT: the barbershop's glass front door at night. ANOMALY CUE: a single interior light left on, a birdcage silhouette visible through the glass. COMPOSITION: medium shot, subject centered, dark negative space around. LIGHT: one warm interior lamp glowing, cool blue exterior. MATERIAL: scratched glass door, painted metal frame, worn concrete step. ATMOSPHERE: quiet night air, faint mist. PALETTE: deep teal shadow, warm amber glow. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "SUBJECT: a birdcage fully covered with a thick cloth on a dark counter. ANOMALY CUE: one small gap in the cloth, faint glow visible within. COMPOSITION: close-up, low angle, shallow depth of field. LIGHT: single dim bulb far in the background. MATERIAL: coarse woven cloth, worn wooden counter, scattered scissors. ATMOSPHERE: still, heavy silence. PALETTE: deep brown, muted amber, cold shadow. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    }
+  ],
+  "background": {
+    "id": "scp-9247_bg",
+    "kind": "image",
+    "reuse": false,
+    "aspect": "16:9",
+    "resolution": "1920x1080",
+    "prompt": "SUBJECT: a small old-fashioned Korean barbershop interior. ANOMALY CUE: one birdcage hanging by the window catching a shaft of light. COMPOSITION: eye-level wide shot, one-point perspective, symmetrical framing, lower quarter of frame empty floor. LIGHT: single bare bulb overhead, hard shadows. MATERIAL: cracked linoleum floor, faded barber chairs, chipped mirror frame, painted concrete walls. ATMOSPHERE: thin dust haze, still air. PALETTE: desaturated teal, warm amber, faded cream. TECHNICAL: 24mm lens, f/8, photorealistic. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization",
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, cartoon, anime, illustration, painting, 3d render, cgi, video game, oversaturated, neon, hdr glow, lens flare, vignette overload, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, uncanny face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion"
+  },
+  "thumbnail": {
+    "hook": "SUBJECT: an old birdcage hanging in a dim barbershop window. ANOMALY CUE: a single hill myna's eye catching the only light in the frame. COMPOSITION: close-up, subject positioned on the right third, left third dark empty negative space. LIGHT: one warm bulb from above, hard shadow below. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization",
+    "hook_alt": [
+      "SUBJECT: an empty vintage barber chair facing a cracked mirror. ANOMALY CUE: a faint reflection of a birdcage visible in the mirror's corner. COMPOSITION: medium shot, subject on the left third, right third dark empty negative space. LIGHT: single fluorescent tube overhead, cool cast. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization",
+      "SUBJECT: a small barbershop's glass front door at night. ANOMALY CUE: one interior light left on, a birdcage silhouette faint through the glass. COMPOSITION: medium shot, subject on the right third, left third dark empty negative space. LIGHT: one warm interior lamp glowing, cool blue exterior. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    ],
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, cartoon, anime, illustration, painting, 3d render, cgi, video game, oversaturated, neon, hdr glow, lens flare, vignette overload, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, uncanny face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion",
+    "text_safe_area": "left third",
+    "resolution": "1280x720"
+  },
+  "platforms": {
+    "youtube": {
+      "title": "이발소 새한테 말 걸지 마세요 | SCP 아카이브",
+      "thumbnail_text": "그 말, 따라하지 마세요",
+      "chapters": [
+        "00:00 사라진 이발사",
+        "01:59 말 삼키는 새",
+        "02:59 지켜야 할 세 가지",
+        "04:41 첫 번째로 깨진 규칙",
+        "06:40 서른하루째"
+      ],
+      "description": "삼십 년 된 골목 이발소, 창가 새장 속 구관조 이야기입니다. 손님이 무심코 흘린 말 한마디를 따라 하기 시작하면, 그 말은 얼마 뒤 다른 사람의 마지막 말이 됩니다.\n\n비슷한 얘기를 알고 계신가요? 댓글로 들려주세요.\n\n※ SCP 재단 세계관 기반 오리지널 창작 · 허구의 이야기입니다\n※ 본 콘텐츠는 CC BY-SA 3.0 라이선스를 따릅니다 · 원작: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP재단 #괴담 #무서운이야기 #미스터리 #심야라디오 #공포라디오",
+      "pinned_comment": "여러분은 혹시, 누군가 무심코 흘린 말을 오래 마음에 담아두신 적 있으신가요? 궁금합니다.",
+      "playlist": "SCP 아카이브 (전편 듣기)",
+      "localizations": {
+        "en": {
+          "title": "Don't Talk to the Bird in This Barbershop | SCP Archives",
+          "description": "A thirty-year-old neighborhood barbershop keeps a hill myna in a cage by the window. If it starts repeating something a customer said, that phrase becomes their last words before long.\n\nDo you know a similar story? Tell us in the comments.\n\nOriginal fiction set in the SCP Foundation universe — a work of fiction.\nThis content is licensed under CC BY-SA 3.0. Source: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCPFoundation #horror #creepypasta #mystery"
+        },
+        "ja": {
+          "title": "この理容室の鳥に話しかけないでください | SCPアーカイブ",
+          "description": "三十年続く路地の理容室には、窓際の鳥かごに九官鳥が一羽います。客の言葉を真似し始めたら、その言葉はやがて誰かの最後の言葉になります。\n\n似たような話をご存じですか? コメントで教えてください。\n\n※ SCP財団の世界観に基づくオリジナル創作・フィクションです\n※ 本コンテンツはCC BY-SA 3.0ライセンスに従います・原作: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP財団 #怖い話 #都市伝説 #ミステリー"
+        },
+        "zh-Hant": {
+          "title": "請不要跟這間理髮店的鳥說話 | SCP檔案",
+          "description": "在一間開業三十年的巷弄理髮店裡，窗邊鳥籠養著一隻九官鳥。牠一旦開始學客人說過的話，那句話不久後就會成為某個人的遺言。\n\n您知道類似的故事嗎？歡迎在留言區告訴我們。\n\n※ 本作品為基於SCP基金會世界觀的原創虛構故事\n※ 本內容採用CC BY-SA 3.0授權條款・原作：SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP基金會 #怪談 #都市傳說 #懸疑"
+        }
+      }
+    }
+  },
+  "shorts": {
+    "title": "말 삼키는 새, 조심하세요 | SCP",
+    "overlay_top": [
+      "등급 : 케테르",
+      "저 새한테 말 걸지 마세요"
+    ],
+    "script": "삼십 년 된 골목 이발소, 어느 날 이발사가 사라졌습니다. 창가엔 구관조 한 마리가 살았고, 재단 등급은 케테르입니다. 지켜야 할 규칙이 셋 있었습니다. 새가 손님 말을 따라 해도, 그 손님껜 알리지 않습니다. 문 닫을 땐 새장에 천을 덮습니다. 새가 갑자기 울어도, 손님을 다시 부르지 않습니다. 어기면 어떻게 되는지는, 어디에도 적혀 있지 않습니다. 그리고 서른한 번째 날, 규칙 하나가 깨졌습니다. 무슨 일이 있었는지는, 전편에서 말씀드릴게요.",
+    "subject_prompt": "SUBJECT: a single hill myna perched inside an open birdcage, facing camera directly. ANOMALY CUE: its head tilted unnaturally still, one eye catching a sharp highlight. COMPOSITION: centered medium shot, 9:16 vertical composition, top 30% and bottom 25% of the frame are dark empty negative space for text. LIGHT: one strong directional key light from above, deep black background. MATERIAL: dark rusted wire cage, glossy black feathers. PALETTE: deep black, warm amber highlight, cold blue rim. sharp high-contrast product-still photography, single strong directional key light, deep black background, rich saturated color, crisp detail, dramatic rim light, photorealistic, 9:16 vertical composition",
+    "negative_prompt": "low contrast, washed out, faded, film grain, muted colors, text, letters, numbers, watermark, logo, signature, caption, subtitles, cartoon, anime, illustration, painting, 3d render, cgi, video game, oversaturated, neon, hdr glow, lens flare, vignette overload, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, uncanny face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion",
+    "description": "재단이 케테르로 분류한, 골목 이발소 새장 속 구관조 이야기입니다. 손님이 흘린 말을 따라 하기 시작하면, 며칠 안에 무슨 일이 벌어집니다. 진짜 이유는 전편에서 확인하세요. #SCP #SCP아카이브 #괴담 #무서운이야기 #shorts호러",
+    "playlist": "SCP 쇼츠"
+  },
+  "credit": "SCP 재단 세계관 기반 오리지널 창작 · 허구 · CC BY-SA 3.0",
+  "content_rating": "teen",
+  "notes": "SCP 아카이브 · 주 1회 · 16:9 롱폼(금) + 9:16 쇼츠(토) · 장면 전환 배경 + 자막 번인 · 단일 내레이터 · 완결형."
+}
