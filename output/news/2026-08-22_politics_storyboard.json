@@ -1,0 +1,99 @@
+{
+  "date": "2026-08-22",
+  "topic": "politics",
+  "privacy": "public",
+  "topic_keyword": "용산공원 주택공급 갈등",
+  "headline": "용산공원 주택공급 놓고 국토부·서울시 평행선",
+  "hook_title": "서울 마지막 노른자 땅의 운명은",
+  "accent": "#8FB0C9",
+  "thumbnail_hook": "Wide aerial view of a green urban park bordering a dense city skyline, half the park lawn transitioning into empty construction-ready land marked with survey stakes, dramatic overcast lighting, no people, no text, cinematic documentary photography style.",
+  "thumbnail_text": "이 공원에 아파트가?",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "ISSUE",
+      "ghost": "YONGSAN",
+      "lines": ["서울 한복판", "마지막 노른자 땅", "누구 것일까"],
+      "highlight": "노른자 땅",
+      "brand": "일상공감뉴스 · 정치",
+      "narration": "서울에 남은 마지막 노른자 땅을 두고, 국가와 서울시가 정면으로 부딪혔습니다."
+    },
+    {
+      "type": "stat",
+      "label": "용산공원 훼손 부지(어린이정원)",
+      "prefix": "",
+      "suffix": "만㎡",
+      "from": 0,
+      "to": 30,
+      "bar": true,
+      "sub": "공원 전체의 <b>10분의 1</b> 규모",
+      "brand": "일상공감뉴스 · 정치",
+      "narration": "정부가 주택 부지로 검토 중인 어린이정원은, 공원 전체의 10분의 1인 30만 제곱미터입니다."
+    },
+    {
+      "type": "stat",
+      "label": "이 곳에 지을 수 있는 집",
+      "prefix": "최대 ",
+      "suffix": "가구",
+      "from": 0,
+      "to": 20000,
+      "bar": true,
+      "sub": "용적률에 따라 <b>5천~2만 가구</b> 시나리오",
+      "brand": "일상공감뉴스 · 정치",
+      "narration": "용적률에 따라서는, 이 곳에만 최대 2만 가구까지 지을 수 있다는 계산이 나옵니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "엇갈린 두 입장",
+      "points": [
+        "국토부(김윤덕 장관) — <b>훼손된 곳만</b> 청년·신혼부부 주택으로",
+        "서울시(오세훈 시장) — <b>본체 부지는 타협 불가</b>, 주변 땅이 대안"
+      ],
+      "brand": "일상공감뉴스 · 정치",
+      "narration": "국토교통부는 이미 훼손된 곳에 한해 청년과 신혼부부에게 공급하겠다는 입장이고, 서울시는 공원 본체 부지는 어떤 경우에도 받아들일 수 없다며 맞섰습니다."
+    },
+    {
+      "type": "quote",
+      "text": "동의하는 건 시장으로서 역사의 죄인으로 남는 결과를 초래할 것",
+      "attr": "— 오세훈 서울시장",
+      "brand": "일상공감뉴스 · 정치",
+      "narration": "오세훈 시장은 주택 공급에 동의하면, 역사의 죄인으로 남을 것이라고까지 말했습니다."
+    },
+    {
+      "type": "statement",
+      "text": "내 집 마련일까, 공원 보존일까",
+      "highlight": "내 집 마련",
+      "brand": "일상공감뉴스 · 정치",
+      "narration": "청년들의 내 집 마련 기회가 될지, 도심 속 공원을 지키는 일이 우선일지 — 여러분은 어떻게 생각하십니까?"
+    }
+  ],
+  "sources": ["헤럴드경제", "서울경제", "한국경제", "뉴스핌"],
+  "credit": "출처 헤럴드경제·서울경제·한국경제·뉴스핌 등",
+  "platforms": {
+    "youtube": {
+      "title": "서울 마지막 노른자 땅의 운명은 #shorts",
+      "description": "용산공원 주택공급 놓고 국토부·서울시 평행선\n출처 헤럴드경제·서울경제·한국경제·뉴스핌 등\n\n※ 사실관계는 보도 시점 기준이며, 정책 협의는 계속 진행 중입니다.\n\n#용산공원 #주택공급 #국토부 #서울시 #뉴스 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "Seoul's Last Prime Land: Who Gets Yongsan Park?",
+          "description": "The government and Seoul City are at odds over building housing on land inside Yongsan Park. Officials floated up to 20,000 units, but the mayor says he won't budge on the park's core site.\nSources: Herald Corp, Sedaily, Hankyung, Newspim, and others.\n\n※ Facts are current as of publication; the policy talks are still ongoing.\n\n#YongsanPark #HousingPolicy #Seoul #News #Shorts #shorts"
+        },
+        "ja": {
+          "title": "ソウル最後の一等地 龍山公園はどうなる?",
+          "description": "政府とソウル市が、龍山公園の敷地内での住宅供給をめぐって対立しています。最大2万戸という試算も出ていますが、市長は公園の本体敷地には一切譲歩しない構えです。\n出典:ヘラルド経済・ソウル経済・韓国経済・ニュースピムほか\n\n※事実関係は報道時点のものであり、政策協議は現在も続いています。\n\n#龍山公園 #住宅供給 #ソウル市 #ニュース #Shorts #shorts"
+        },
+        "zh-Hant": {
+          "title": "首爾最後的黃金地皮 龍山公園何去何從?",
+          "description": "南韓政府與首爾市，正為是否在龍山公園用地內興建住宅而僵持不下。官方一度提出最多兩萬戶的方案，但市長強調公園本體用地絕不讓步。\n消息來源:Herald經濟、首爾經濟、韓國經濟、Newspim等\n\n※事實內容以報導當時為準，政策協商仍在進行中。\n\n#龍山公園 #住宅供給 #首爾市 #新聞 #Shorts #shorts"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "서울 마지막 노른자 땅의 운명은\n출처 헤럴드경제·서울경제·한국경제·뉴스핌 등\n\n#용산공원 #주택공급 #국토부 #서울시 #뉴스 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "서울 마지막 노른자 땅의 운명은\n출처 헤럴드경제·서울경제·한국경제·뉴스핌 등"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음."
+}
