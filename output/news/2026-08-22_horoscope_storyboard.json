@@ -1,0 +1,101 @@
+{
+  "date": "2026-08-22",
+  "topic": "horoscope",
+  "privacy": "public",
+  "topic_keyword": "전갈자리 1위 오늘의종합운 집중력지수",
+  "headline": "오늘 전갈자리 종합운 97점, 10월23일~11월21일생 주목",
+  "hook_title": "오늘 급상승 별자리",
+  "accent": "#5C6BC0",
+  "loop_line": "내일은 또 어떤 별자리가 조용히 뒤집힐지, 그때 다시 확인해 보세요.",
+  "thumbnail_hook": "mystical scorpio constellation shimmering, reflected in a still dark lake beneath a deep indigo starry night sky, cosmic nebula clouds on the horizon; no human face, no text in image",
+  "thumbnail_text": "오늘 97점 전갈자리",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "오늘의 별자리",
+      "ghost": "RISE",
+      "lines": ["오늘,", "딱 한 별자리만", "크게 뒤집힙니다"],
+      "highlight": "딱 한 별자리만",
+      "fx": {"in": "slam", "emphasis": "shake", "sfx": "impact", "hold": 3.3},
+      "brand": "일상공감뉴스 · 별자리",
+      "narration": "오늘, 유독 한 별자리의 흐름만 크게 뒤집어집니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘의 별자리 랭킹 · 3위부터",
+      "points": ["3위 <b>물병자리</b> — 아이디어가 주목받는 하루", "2위 <b>양자리</b> — 추진력이 결과를 만드는 날"],
+      "fx": {"in": "rank_flip", "emphasis": "pulse", "sfx": "riser", "hold": 7.8},
+      "brand": "일상공감뉴스 · 별자리",
+      "narration": "3위는 물병자리, 2위는 양자리인데 1위는 잠시 뒤 공개합니다."
+    },
+    {
+      "type": "stat",
+      "label": "종합운 지수 1위 · 전갈자리",
+      "prefix": "",
+      "suffix": "점",
+      "from": 0,
+      "to": 97,
+      "bar": true,
+      "sub": "10월 23일~11월 21일생 · 화성이 강하게 지나며 <b>집중력</b>이 승부를 가르는 날",
+      "fx": {"in": "zoom_punch", "emphasis": "glow", "sfx": "chime", "hold": 8.6},
+      "brand": "일상공감뉴스 · 별자리",
+      "narration": "1위는 전갈자리, 10월 23일에서 11월 21일생은 오늘 97점입니다."
+    },
+    {
+      "type": "gauge",
+      "label": "오늘 급상승 지수 · 황소자리",
+      "from": 1,
+      "to": 2,
+      "unit": "배",
+      "sub": "평소엔 조용한 흐름인데 오늘만큼은 존재감이 확 커지는 날",
+      "fx": {"in": "flash", "emphasis": "pulse", "sfx": "riser", "hold": 7.8},
+      "brand": "일상공감뉴스 · 별자리",
+      "narration": "평소 조용하던 황소자리가 오늘은 두 배로 존재감이 커집니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘의 행운",
+      "points": ["행운의 색 <b>버건디</b> · 숫자 <b>8</b>", "운이 열리는 시간 <b>오후 7시</b> · 캡처해 두세요"],
+      "fx": {"in": "wipe_up", "emphasis": "pulse", "sfx": "tick", "hold": 8.3},
+      "brand": "일상공감뉴스 · 별자리",
+      "narration": "그래서 오늘은 오후 일곱 시쯤 중요한 결정을 내려 보세요."
+    },
+    {
+      "type": "statement",
+      "text": "당신의 별자리, 오늘 몇 위였는지 댓글에 이름만 남겨 주세요",
+      "highlight": "몇 위였는지",
+      "fx": {"in": "blur_in", "emphasis": "pulse", "sfx": "none", "hold": 4.4},
+      "brand": "일상공감뉴스 · 별자리",
+      "narration": "당신의 별자리는 몇 위였는지, 댓글에 이름만 남겨 주세요."
+    }
+  ],
+  "sources": ["서양 점성 12별자리 기반", "오늘의 화성 흐름 참고"],
+  "credit": "재미로 보는 오늘의 별자리 운세",
+  "platforms": {
+    "youtube": {
+      "title": "오늘 급상승 별자리 #shorts",
+      "description": "오늘 전갈자리 종합운 97점, 10월23일~11월21일생 주목\n※ 재미로 보는 운세입니다\n\n#오늘의별자리 #별자리운세 #운세 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "This Zodiac Sign Just Took Over Today #shorts",
+          "description": "One zodiac sign quietly surges to the top today — find out which.\n※ Just for fun — today's horoscope\n\n#TodaysHoroscope #Zodiac #Shorts #shorts"
+        },
+        "ja": {
+          "title": "今日、静かに大逆転する星座はこれです #shorts",
+          "description": "今日、ある星座が静かに大逆転を見せます。あなたの星座は何位でしょうか。\n※ 楽しみとしてご覧ください\n\n#今日の星座 #星座占い #逆転 #ショート #shorts"
+        },
+        "zh-Hant": {
+          "title": "今天悄悄逆襲的是這個星座 #shorts",
+          "description": "今天有一個星座悄悄逆襲登上第一,你的星座排第幾呢?\n※ 僅供娛樂參考的星座運勢\n\n#今日星座 #星座運勢 #逆襲 #Shorts #shorts"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "오늘 급상승 별자리\n※ 재미로 보는 운세\n\n#오늘의별자리 #별자리운세 #운세 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "오늘 급상승 별자리\n※ 재미로 보는 운세"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음."
+}
