@@ -1,0 +1,97 @@
+{
+  "date": "2026-08-21",
+  "topic": "stock_us",
+  "privacy": "public",
+  "topic_keyword": "뉴욕증시 국채금리",
+  "headline": "다우 1.3% 하락 마감, 선물은 반등 시도",
+  "hook_title": "뉴욕, 오늘 밤 또 흔들리나",
+  "accent": "#D97757",
+  "loop_line": "흔들리던 뉴욕이 버텼는지, 내일 아침에 확인합니다.",
+  "thumbnail_hook": "A dramatic nighttime view of a glowing digital stock ticker board with red and green numbers, New York City skyline and Wall Street silhouette in the background, cinematic blue and amber lighting, photorealistic, no text or logos in the image",
+  "thumbnail_text": "선물 벌써 +0.7%",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "개장 직후",
+      "ghost": "OPEN",
+      "lines": ["이틀째", "흔들리던", "뉴욕이"],
+      "highlight": "뉴욕이",
+      "fx": {"in": "slam", "emphasis": "shake", "sfx": "impact", "hold": 3.5},
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "이틀째 휘청이던 뉴욕이 방금 다시 문을 열었습니다."
+    },
+    {
+      "type": "trend",
+      "label": "다우존스",
+      "from": 0,
+      "to": -1.3,
+      "suffix": "%",
+      "dir": "down",
+      "sub": "선물은 벌써 <b>+0.7%</b>",
+      "fx": {"in": "chart_draw", "emphasis": "pulse", "sfx": "tick", "hold": 8.5},
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "다우는 1.3% 빠졌지만 선물은 벌써 올랐습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "왜 이렇게 흔들렸나",
+      "points": ["국채금리가 <b>4.70%</b>까지 다시 뛰었다", "월마트 실적 부진에 유가까지 올랐다"],
+      "fx": {"in": "wipe_up", "emphasis": "pulse", "sfx": "none", "hold": 8.5},
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "국채금리가 다시 뛰고 월마트 실적까지 부진했습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "그래서 오늘 밤은",
+      "points": ["금리 <b>4.7%</b> 선을 다시 넘는지가 관건이다", "넘으면 환율도 흔들려 <b>서학개미 계좌</b>가 더 아프다"],
+      "fx": {"in": "zoom_punch", "emphasis": "glow", "sfx": "riser", "hold": 8.5},
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "금리가 4.7%를 다시 넘으면 환율도 흔들려 계좌가 더 아픕니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 밤 지켜볼 것",
+      "points": ["오늘은 <b>월간 옵션 만기일</b>이라 변동성이 커질 수 있다", "다음주 화요일 <b>엔비디아 실적</b> 발표를 앞두고 있다"],
+      "fx": {"in": "wipe_up", "emphasis": "glow", "sfx": "none", "hold": 8.5},
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "오늘은 옵션 만기일이고 다음주엔 엔비디아 실적이 있습니다."
+    },
+    {
+      "type": "statement",
+      "text": "오늘 밤 버틴다 vs 더 흔들린다, 당신 생각은?",
+      "highlight": "버틴다",
+      "fx": {"in": "blur_in", "emphasis": "pulse", "sfx": "none", "hold": 5.0},
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "오늘 밤 버틸지 더 흔들릴지, 판단은 여러분 몫입니다."
+    }
+  ],
+  "sources": ["아주경제", "파이낸셜뉴스", "신아일보"],
+  "credit": "출처 아주경제·파이낸셜뉴스·신아일보 등 · 투자 조언이 아닙니다",
+  "platforms": {
+    "youtube": {
+      "title": "뉴욕, 오늘 밤 또 흔들리나 #shorts",
+      "description": "다우 1.3% 하락 마감, 선물은 반등 시도\n출처 아주경제·파이낸셜뉴스·신아일보 등\n※ 투자 조언이 아닙니다\n\n#미국주식 #나스닥 #뉴욕증시 #서학개미 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "Wall Street's Second Wobble — What Tonight Decides #shorts",
+          "description": "Dow closed down 1.3% as Treasury yields jumped again, but futures are already bouncing 0.7%.\n※ This is not investment advice.\n\n#shorts #StockMarket #NASDAQ #WallStreet"
+        },
+        "ja": {
+          "title": "２日連続で揺れたNY市場、今夜の分かれ道 #shorts",
+          "description": "ダウは1.3%下落して引けましたが、先物はすでに0.7%反発しています。\n※投資助言ではありません。\n\n#shorts #米国株 #ナスダック #ウォール街"
+        },
+        "zh-Hant": {
+          "title": "連兩日震盪的紐約股市，今晚的分水嶺 #shorts",
+          "description": "道瓊收跌1.3%，公債殖利率再度走高，但期貨已經反彈0.7%。\n※ 這不是投資建議。\n\n#shorts #美股 #那斯達克 #華爾街"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "뉴욕, 오늘 밤 또 흔들리나\n출처 아주경제·파이낸셜뉴스·신아일보 등\n※ 투자 조언이 아닙니다\n\n#미국주식 #나스닥 #뉴욕증시 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "뉴욕, 오늘 밤 또 흔들리나\n출처 아주경제·파이낸셜뉴스·신아일보 등"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음 · SESSION=US_PM(미국장 개장 전후 프리뷰) · 서머타임(EDT) 적용, 22:30 KST 개장 직후."
+}
