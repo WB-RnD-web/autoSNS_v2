@@ -1,6 +1,6 @@
 {
-  "recent_themes": ["ocean-waves", "summer-night-bugs", "campfire-night", "stream", "snowy-night", "library", "fireplace"],
-  "last_voice": "female",
-  "last_mode": "sleep",
-  "mode_cycle_pos": 0
+  "recent_themes": ["ice-cracking", "ocean-waves", "summer-night-bugs", "campfire-night", "stream", "snowy-night", "library"],
+  "last_voice": "male",
+  "last_mode": "trigger",
+  "mode_cycle_pos": 1
 }

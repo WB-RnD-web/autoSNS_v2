@@ -1,0 +1,39 @@
+{
+  "date": "2026-08-24",
+  "topic": "asmr",
+  "privacy": "public",
+  "theme_id": "ice-cracking",
+  "theme_name": "얼음 깨기",
+  "mode": "trigger",
+  "narration_voice": "male",
+  "narration_text": "",
+  "background": {
+    "prompt": "close-up of a frosty glass filled with ice cubes on a dark wooden table at night, soft warm lamp glow in the background, calm and quiet mood, low light, no people, no text"
+  },
+  "freesound": {
+    "queries": [
+      "quiet room tone ambience",
+      "soft indoor room ambience",
+      "empty room background hum"
+    ],
+    "must": ["room"],
+    "trigger_queries": [
+      "ice cracking",
+      "ice cubes glass clink",
+      "crushing ice cubes",
+      "ice cube tray crack",
+      "ice breaking cold"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "title": "🧊 얼음 깨지는 소리 ASMR 3시간 | 귀르가즘 트리거 사운드",
+      "thumbnail_text": "얼음 깨는 소리 3시간",
+      "thumbnail_hook": "close-up of ice cubes and a frosty glass on a dark wooden table at night, soft warm lamp light in the background, cozy calm mood, no people, no text",
+      "description": "얼음이 쨍하고 갈라지는 청량한 소리를 담았어요.\n\n잘 때·집중·휴식용 ASMR 백색소음입니다.\n#ASMR #백색소음 #수면 #얼음소리 #귀르가즘 #힐링",
+      "playlist": "일상공감 ASMR"
+    }
+  },
+  "credit": "음원 Freesound(CC0) · 이미지 생성",
+  "notes": "ASMR 3~4시간 · 16:9 · 정적 배경 + 단발 트리거 사운드 · 나레이션 없음 · 자막 없음."
+}
