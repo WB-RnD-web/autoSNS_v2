@@ -1,6 +1,8 @@
-name: SCP 아카이브(주 1회) → 다장면 롱폼(16:9) → 유튜브(+재생목록)
+name: SCP 아카이브 → 다장면 롱폼(16:9) → 유튜브(+재생목록)
 
 # 트리거: 루틴이 새 SCP 스펙을 routine/scp(★영구 누적 브랜치)에 push 하면 실행.
+#   발행 주기(주 1회/평일/매일)는 ★루틴이 정한다 — 이 워크플로는 push 될 때마다 돈다.
+#   이 워크플로가 끝나면 scp-shorts.yml 이 workflow_run 으로 이어 돌아 쇼츠를 만든다.
 #   처리 대상 = 이 push 에서 ★새로 추가된 output/scp/*.json (git diff). library.json 은 제외.
 #
 # ⚠️ 루프 가드(다른 파이프라인과 동일): permissions read — 레포에 산출물 커밋 안 함.
