@@ -54,6 +54,11 @@ jobs:
       NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
       # 낭독 보이스(차분한 아카이브 톤)
       STORY_VOICE: ${{ vars.SCP_VOICE || 'ko-KR-InJoonNeural' }}
+      # 낭독 속도. 기본 -4% 는 story_render.py 의 기본값이자 '사연·괴담' 톤에 맞춘 값이다.
+      #   ★타깃 시청자를 10~30대로 옮기면 이 값이 곧 '지루하다'가 된다.
+      #   vars.SCP_RATE 로 0% ~ +5% 를 시도해 볼 것(변수를 안 만들면 지금과 완전히 동일).
+      #   쇼츠는 이미 vars.SCP_SHORTS_RATE(기본 +6%)로 따로 잡혀 있다 — 롱폼만 노브가 없었다.
+      STORY_RATE: ${{ vars.SCP_RATE || '-4%' }}
       # 렌더 노브: 프레임수=인코딩시간. 정지 장면이라 10fps 로 충분(전환 1.2s=12프레임).
       SCP_FPS: ${{ vars.SCP_FPS || '10' }}
       SCP_XFADE: ${{ vars.SCP_XFADE || '1.2' }}
