@@ -197,21 +197,36 @@ def augment_ass(ass_path: str, spec: dict, segments: list, spans: list, font: st
                       f"{{\\fad(0,320)}}{txt}")
 
     # ② 강조 대형 텍스트
-    picked, used_seg, last_t = [], set(), -99.0
-    for raw in (spec.get("emphasis") or [])[:PUNCH_MAX * 3]:
+    #   두 가지 표기를 다 받는다.
+    #     ㉠ segments[i]["emphasis"]  ← 스펙 스키마에 원래 있던 자리. ★정확하다(매칭 불필요)
+    #     ㉡ spec["emphasis"] = [문자열]  ← 본문에서 그 문자열이 든 세그먼트를 찾는다
+    #   ㉠을 먼저 채우고 ㉡으로 보충한다. 같은 세그먼트를 두 번 쓰지 않는다.
+    cand: list[tuple[int, str]] = []
+    for i, sg in enumerate(segments):
+        key = str(sg.get("emphasis") or "").strip()
+        if key:
+            cand.append((i, key))
+    seen_idx = {i for i, _ in cand}
+    for raw in (spec.get("emphasis") or [])[:PUNCH_MAX * 4]:
         key = str(raw or "").strip()
-        if not key or len(picked) >= PUNCH_MAX:
+        if not key:
             continue
         idx = next((i for i, sg in enumerate(segments)
-                    if i not in used_seg and key in str(sg.get("text") or "")), None)
-        if idx is None or idx >= len(spans):
+                    if i not in seen_idx and key in str(sg.get("text") or "")), None)
+        if idx is None:
             sys.stderr.write(f"[warn] emphasis 매칭 실패(본문에 없음): {key!r}\n")
+            continue
+        cand.append((idx, key))
+        seen_idx.add(idx)
+
+    picked, last_t = [], -99.0
+    for idx, key in sorted(cand):
+        if len(picked) >= PUNCH_MAX or idx >= len(spans):
             continue
         st = spans[idx][0] + 0.25
         if st - last_t < 20.0:       # 너무 몰리면 산만하다 — 최소 20초 간격
             continue
         picked.append((st, key))
-        used_seg.add(idx)
         last_t = st
     for st, key in picked:
         en = min(st + PUNCH_SEC, total) if total else st + PUNCH_SEC

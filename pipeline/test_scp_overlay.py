@@ -85,6 +85,28 @@ with tempfile.TemporaryDirectory() as td:
     ck("강조가 해당 세그먼트 시각에", "0:00:30.25" in body and "0:01:30.25" in body)
     ck("본문에 없는 강조는 버린다", "본문에없는말" not in body)
 
+    # ㉠ segments[i]["emphasis"] 표기도 받는다(스펙 스키마에 원래 있던 자리)
+    segs_b = [dict(x) for x in segs]
+    segs_b[5]["emphasis"] = "세그먼트 지정 강조"
+    ass_b = os.path.join(td, "cb.ass")
+    SR.build_ass(segs_b, spans, font, ass_b)
+    R.augment_ass(ass_b, {"scp_number": "SCP-1", "object_class": "Safe"}, segs_b, spans, font)
+    bb = open(ass_b, encoding="utf-8").read()
+    ck("segments[i].emphasis 인식", "세그먼트 지정 강조" in bb and "0:00:50.25" in bb)
+
+    # 둘을 같이 써도 같은 세그먼트를 두 번 쓰지 않는다
+    segs_c = [dict(x) for x in segs]
+    segs_c[3]["emphasis"] = "직접지정"
+    ass_c = os.path.join(td, "cc.ass")
+    SR.build_ass(segs_c, spans, font, ass_c)
+    R.augment_ass(ass_c, {"scp_number": "SCP-1", "object_class": "Safe",
+                          "emphasis": ["0.2나노미터"]}, segs_c, spans, font)
+    bc = open(ass_c, encoding="utf-8").read()
+    punches = [ln for ln in bc.splitlines() if ",Punch," in ln]
+    ck("세그먼트 중복 배제(3번은 직접지정만)",
+       len(punches) == 1 and "직접지정" in punches[0],
+       f"{punches}")   # ★자막(Story) 줄에는 본문이 그대로 있으니 Punch 줄만 본다
+
     # 강조가 몰리면 걸러낸다 — 채택된 것들은 ★항상 20초 이상 떨어져 있어야 한다
     spec2 = dict(spec, emphasis=[f"{i}번째" for i in range(12)])
     ass2 = os.path.join(td, "c2.ass")
