@@ -1,11 +1,11 @@
 name: SCP 쇼츠 → 롱폼 완료 시 자동 → 9:16 쇼츠 → 유튜브
 
-# ★롱폼(scp.yml)이 끝나면 자동으로 이어 돈다(workflow_run). 스케줄이 없다.
+# ★롱폼(scp.yml)이 ★같은 런에서 이 워크플로를 직접 호출한다(workflow_call). 스케줄이 없다.
 #   루틴을 주 1회로 돌리든 매일로 돌리든 ★쇼츠가 알아서 따라온다 — cron 을 다시 맞출 필요가 없다.
 #   같은 스펙 JSON 을 읽으므로 쇼츠 전용 루틴도 없다.
 #   쇼츠는 롱폼의 예고편 — 반전은 안 말하고 '전편 보러가기'로 닫는다(루틴 프롬프트 §2.6).
 #
-# ⚠️ 왜 cron 이 아니라 workflow_run 인가:
+# ⚠️ 왜 cron 이 아닌가(이유는 workflow_call 로 바꾼 지금도 그대로다):
 #   ① 발행 주기를 바꿀 때마다 cron 을 고칠 필요가 없다(루틴만 바꾸면 따라온다).
 #   ② 롱폼이 ★성공했을 때만 돈다 — 롱폼이 깨진 날 쇼츠만 헛도는 일이 없다.
 #   ③ 롱폼 업로드 직후라 run_scp_shorts 의 find_longform_url 이 '전편'을 바로 찾는다.
@@ -23,27 +23,34 @@ name: SCP 쇼츠 → 롱폼 완료 시 자동 → 9:16 쇼츠 → 유튜브
 # ⚠️ 루프 가드: permissions read — 레포에 아무것도 커밋하지 않는다.
 
 on:
-  # ★롱폼 워크플로가 끝나면 실행.
+  # ★롱폼(scp.yml)이 ★같은 런 안에서 이 워크플로를 직접 호출한다(workflow_call).
   #
-  # ⚠️⚠️ 2026-08-28 사고 — 쇼츠가 6일간 통째로 안 돌았다. 원인을 반드시 남겨둔다.
-  #   `push` 이벤트는 ★push 된 브랜치의 워크플로 파일로 실행된다.
-  #   scp.yml 의 트리거가 `push: branches: [routine/scp]` 이므로, 실제로 도는 건
-  #   ★routine/scp 브랜치의 scp.yml 이다 — main 것이 아니다.
-  #   (scp.yml 안의 `ref: main` 체크아웃은 ★파이프라인 코드만 main 에서 가져온다.
-  #    워크플로 파일 자체는 여전히 브랜치 것이다. 이 둘은 다르다.)
+  # ⚠️⚠️ 왜 workflow_run 을 버렸나 (2026-08-28)
+  #   #46 에서 워크플로 이름을 맞추고, 그 뒤 routine/scp 의 워크플로 파일도 main 과
+  #   동기화했다. 그런데도 ★쇼츠는 한 번도 안 걸렸다.
+  #     08-28 08:26 롱폼 run #8 성공 · name 도 정확히 일치 · 그래도 쇼츠 0건
+  #   이름을 배제하고 나면 남는 변수는 ★브랜치다 — 롱폼은 routine/scp(비-기본 브랜치)에서
+  #   돌기 때문에 workflow_run 이 발동하지 않는 것으로 보인다.
+  #   (문서로 확정하지는 못했다. 다만 어느 쪽이든 workflow_run 은 우리 구조에 안 맞는다.)
   #
-  #   그래서 main 에서 scp.yml 의 `name:` 을 바꿨을 때 routine/scp 는 옛 이름을 유지했고,
-  #   workflow_run 은 이름이 정확히 일치해야 걸리므로 ★에러 없이 조용히 안 걸렸다.
-  #     routine/scp : "SCP 아카이브(주 1회) → 다장면 롱폼(16:9) → 유튜브(+재생목록)"
-  #     main        : "SCP 아카이브 → 다장면 롱폼(16:9) → 유튜브(+재생목록)"
-  #
-  # → ★지금까지 쓴 이름을 ★전부 등록한다. 브랜치가 언제 동기화되든 어느 쪽이든 걸린다.
-  #   ★워크플로 이름을 또 바꾸려면 여기에 새 이름을 ★추가해라(기존 것을 지우지 말 것).
-  workflow_run:
-    workflows:
-      - "SCP 아카이브 → 다장면 롱폼(16:9) → 유튜브(+재생목록)"
-      - "SCP 아카이브(주 1회) → 다장면 롱폼(16:9) → 유튜브(+재생목록)"
-    types: [completed]
+  #   → 이름 문자열 계약도, 브랜치 조건도 없는 ★workflow_call 로 바꾼다.
+  #     호출부는 scp.yml 의 `shorts` job 이며 `@main` 으로 고정돼 있어
+  #     routine/scp 가 또 낡아도 ★항상 main 의 이 파일이 실행된다.
+  #     그리고 롱폼과 ★같은 런에 표시되므로 실패가 조용히 묻히지 않는다.
+  workflow_call:
+    inputs:
+      spec:
+        description: "처리할 스펙 JSON 경로(비우면 output/scp 에서 최신 1개 자동 선택)"
+        type: string
+        default: ""
+      force_private:
+        description: "privacy 강제 private"
+        type: boolean
+        default: false
+      no_upload:
+        description: "업로드 없이 렌더만(검증)"
+        type: boolean
+        default: false
   workflow_dispatch:
     inputs:
       spec:
@@ -67,10 +74,7 @@ permissions:
 
 jobs:
   build-and-upload:
-    # 롱폼이 실패·취소된 런에는 따라 돌지 않는다. 수동 실행(workflow_dispatch)은 항상 통과.
-    if: >-
-      github.event_name != 'workflow_run' ||
-      github.event.workflow_run.conclusion == 'success'
+    # 롱폼 성공 여부는 ★호출부(scp.yml 의 needs:)가 판단한다 — 여기선 조건이 필요 없다.
     runs-on: ubuntu-latest
     # 대본 40~50초 · 이미지 2~3장 · 30fps 1080x1920 veryfast → 넉넉히 30분.
     # (qwen-image 가 콜드일 때 장당 최대 7분까지 기다린다)
@@ -104,7 +108,11 @@ jobs:
       SCP_SHORTS_PLAYLIST: ${{ vars.SCP_SHORTS_PLAYLIST }}
     steps:
       # 1) 코드는 main(기본 브랜치)에서
+      #   ★ref 를 명시해야 한다. workflow_call 로 불리면 github.ref 가 ★호출한 런의
+      #   브랜치(routine/scp)라서, 생략하면 그 브랜치의 낡은 파이프라인 코드를 쓴다.
       - uses: actions/checkout@v4
+        with:
+          ref: main
 
       # 2) 데이터(스펙 JSON)만 routine/scp 에서 가져온다
       - name: routine/scp 스펙 가져오기
@@ -175,7 +183,7 @@ jobs:
         run: |
           set -e
           cd pipeline
-          SP="${{ github.event.inputs.spec }}"
+          SP="${{ inputs.spec }}"
           if [ -n "$SP" ]; then
             TARGET="../$SP"
           else
@@ -185,5 +193,5 @@ jobs:
             $([ -z "$TARGET" ] && echo "--latest-in ../output/scp") \
             --use-ledger --ledger-path ../output/scp_shorts_ledger.json \
             --log ../output/scp_shorts_log.json \
-            $([ "${{ github.event.inputs.force_private }}" = "true" ] && echo --force-private) \
-            $([ "${{ github.event.inputs.no_upload }}" = "true" ] && echo --no-upload)
+            $([ "${{ inputs.force_private }}" = "true" ] && echo --force-private) \
+            $([ "${{ inputs.no_upload }}" = "true" ] && echo --no-upload)
