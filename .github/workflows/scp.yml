@@ -71,8 +71,18 @@ jobs:
       # 렌더 노브: 프레임수=인코딩시간. 정지 장면이라 10fps 로 충분(전환 1.2s=12프레임).
       SCP_FPS: ${{ vars.SCP_FPS || '10' }}
       SCP_XFADE: ${{ vars.SCP_XFADE || '1.2' }}
-      SCP_MAX_SCENES: ${{ vars.SCP_MAX_SCENES || '8' }}
-      SCP_MIN_SCENE_SEC: ${{ vars.SCP_MIN_SCENE_SEC || '25' }}
+      # 8장 × 8분이면 장면당 60초다. 참고 채널이 4분 45초에 30컷 이상 쓰는 것과 비교하면
+      # 이 정적임이 제일 크게 체감되는 차이였다 → 12장으로 올려 장면당 40초대로 줄인다.
+      SCP_MAX_SCENES: ${{ vars.SCP_MAX_SCENES || '12' }}
+      SCP_MIN_SCENE_SEC: ${{ vars.SCP_MIN_SCENE_SEC || '20' }}
+      # 켄번즈(느린 줌·팬) — 정지 이미지에 움직임을 준다. 0 이면 예전과 완전히 동일.
+      #   켜져 있으면 프리셋이 ultrafast → veryfast 로 바뀐다(비트레이트 폭증 방지).
+      SCP_KENBURNS: ${{ vars.SCP_KENBURNS || '1' }}
+      SCP_KB_AMP: ${{ vars.SCP_KB_AMP || '0.06' }}
+      # 상단 번호·등급 라벨: intro(첫 10초) | always | off
+      SCP_TAG_MODE: ${{ vars.SCP_TAG_MODE || 'intro' }}
+      # 강조 대형 텍스트 상한(스펙의 emphasis[] 에서 고른다)
+      SCP_PUNCH_MAX: ${{ vars.SCP_PUNCH_MAX || '3' }}
       # 재생목록 이름 고정(비우면 스펙의 playlist 사용)
       SCP_PLAYLIST: ${{ vars.SCP_PLAYLIST }}
     steps:
