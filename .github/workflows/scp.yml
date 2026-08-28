@@ -188,6 +188,9 @@ jobs:
         run: |
           FILES="${{ steps.pick.outputs.files }}"
           if [ -z "$(echo $FILES | tr -d ' ')" ]; then
+            # ★이 경로도 조용했다 — 아무것도 안 만들고 초록불로 끝난다.
+            #   평일 발행이면 "루틴이 오늘 스펙을 push 안 했다"는 뜻이라 알아야 한다.
+            echo "::warning title=처리 대상 없음::이 push 에서 새로 추가된 output/scp/*.json 이 없다 — 영상이 만들어지지 않았다."
             echo "처리할 신규 SCP 스펙 없음 — 종료."
             exit 0
           fi

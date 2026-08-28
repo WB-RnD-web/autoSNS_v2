@@ -140,6 +140,32 @@ def process(spec_path: str, args, led) -> dict:
     return res
 
 
+def warn_all_skipped(results: list[dict], what: str) -> None:
+    """처리 대상이 ★전부 ledger 로 스킵되면 크게 알린다.
+
+    이 경로는 지금까지 ★조용했다 — 스킵도 성공(rc=0)이라 Actions 는 초록불이고,
+    로그를 열어야만 "건너뜀" 한 줄이 보인다. 즉 ★영상이 안 만들어졌는데 아무도 모른다.
+
+    평일·매일 발행에서 이게 실제로 터지는 경로:
+      루틴이 story_id 를 재사용하면 ledger 키 (iso_week, story_id) 가 겹쳐서
+      그날 회차가 통째로 스킵된다. 에러가 아니므로 알림도 없다.
+
+    그래서 ① 눈에 띄는 배너 ② GitHub Actions 주석(::warning::) 을 남긴다.
+    ★기본 종료코드는 바꾸지 않는다 — 이미 만든 걸 다시 돌리는 정상적인 재실행도
+    같은 경로를 타기 때문이다. 빨간불이 필요하면 SCP_FAIL_ON_SKIP=1 을 켠다.
+    """
+    if not results or not all(r.get("skipped") for r in results):
+        return
+    keys = ", ".join(str(r.get("spec", "?")) for r in results)
+    msg = (f"{what} {len(results)}건이 ★전부 ledger 로 스킵됐다 — 영상이 하나도 안 만들어졌다. "
+           f"story_id 가 이전 회차와 겹치지 않는지 확인할 것. 대상: {keys}")
+    print("\n" + "=" * 72)
+    print(f"⚠️  {msg}")
+    print("=" * 72)
+    if os.environ.get("GITHUB_ACTIONS"):
+        print(f"::warning title=전량 스킵::{msg}")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="SCP 아카이브 파이프라인(주 1회)")
     ap.add_argument("specs", nargs="*")
@@ -182,6 +208,10 @@ def main() -> int:
         if r["error"]:
             line += f"  ⚠️ {r['error']}"; rc = 1
         print(line)
+    warn_all_skipped(results, "SCP 롱폼")
+    if os.environ.get("SCP_FAIL_ON_SKIP", "") not in ("", "0", "false") \
+            and results and all(r.get("skipped") for r in results):
+        rc = 1
     if args.log:
         os.makedirs(os.path.dirname(args.log) or ".", exist_ok=True)
         with open(args.log, "w", encoding="utf-8") as f:
