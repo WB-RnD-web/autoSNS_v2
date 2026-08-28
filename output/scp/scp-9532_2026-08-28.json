@@ -1,0 +1,729 @@
+{
+  "date": "2026-08-28",
+  "iso_week": "2026-W35",
+  "topic": "scp",
+  "privacy": "public",
+  "story_id": "scp-9532",
+  "scp_number": "SCP-9532",
+  "object_class": "Euclid",
+  "codename": "가라앉은 심장",
+  "number_check": {
+    "checked_at": "2026-08-28",
+    "http_code": "unverified"
+  },
+  "title": "안 보고 있으면, 자랍니다",
+  "theme": "심해",
+  "logline": "마리아나 해구 인근 열수구 옆에서 발견된 이상현상 암반 이야기입니다. 관측 장비가 향해 있는 동안엔 질량이 잡히지 않고, 눈을 떼는 순간 조금씩 자라 있습니다.",
+  "hook_line": "SCP-9532는 마리아나 해구 근처, 열수구 옆 암반입니다.",
+  "cold_open": "SCP-9532는 마리아나 해구 근처, 열수구 옆 암반입니다. 이레 전 계측에서, 질량이 영 킬로그램으로 나왔습니다.",
+  "procedures": [
+    "관측 장비는 대상에게서 구십 초 이상 시선을 떼지 않는다",
+    "잠수정이 대상 앞을 지날 때, 선체 조명은 절대 끄지 않는다",
+    "질량 측정치가 정수로 딱 떨어지는 날엔, 그날 잠수 일정을 전부 취소한다"
+  ],
+  "character": {
+    "name": "크라머 박사",
+    "role": "심해 지질음향팀 수석 연구원",
+    "flaw": "철수 권고가 내려와도 측정을 한 번 더 받으려 한다 — 마지막 규칙을 이 사람이 깬다"
+  },
+  "log_days": [
+    {
+      "day": "이틀째",
+      "event": "첫 정밀 계측. 크라머 박사가 이날 처음으로 '가라앉은 심장'이라는 이름을 입 밖에 낸다."
+    },
+    {
+      "day": "엿새째",
+      "event": "소나에 SCP-████와 유사한 저주파 신호가 잡힌다. 수온이 평소보다 삼 도 낮게 측정된다."
+    },
+    {
+      "day": "열하루째",
+      "event": "처음으로 질량이 정수(천 킬로그램)로 나온다. 절차대로 잠수 일정이 전부 취소된다."
+    },
+    {
+      "day": "열이레째",
+      "event": "태풍으로 통신·소나가 두 시간 정지. 구십 초 규칙이 처음 깨진다. 재측정이 불가능할 만큼 커져 있다."
+    },
+    {
+      "day": "스물사흘째",
+      "event": "잠수정 조명이 잠깐 꺼진다. 조종사 도밍게스가 표면 안쪽을 목격했다고 보고한다."
+    },
+    {
+      "day": "스물이레째",
+      "event": "스크랜턴 현실 안정 장치 투입. 세 시간 뒤 장치 두 대의 작동 기록이 통째로 사라진다. GOC가 파괴 안에 거부권을 행사한다."
+    },
+    {
+      "day": "서른사흘째",
+      "event": "질량이 다시 정수(천이백 킬로그램)로 나온 날, 크라머 박사가 철수를 보고하지 않고 측정 장비를 다시 켠다."
+    },
+    {
+      "day": "마흔날째",
+      "event": "사고 보고서. 성장이 완전히 멈춘다. 크라머 박사의 이름이 인사 기록에서 지워진다."
+    }
+  ],
+  "retention_beats": [
+    "안 보고 있을 때만 질량이 늘어나 있었습니다. 이상하죠?",
+    "정확히 얼마나 커졌는지는, 아무도 다시 재지 못했습니다.",
+    "작동을 멈춘 게 아니라, 작동했다는 기록만 지워진 거였죠."
+  ],
+  "twist_summary": "재단이 이 암반의 성장을 억제하려 한 게 아니라, 이 암반이 벌어졌다 닫히는 느린 성장 주기 자체가 해구 더 깊은 곳에 있는 무언가를 계속 눌러 담는 압력이었다는 반전. 크라머 박사가 정수 규칙을 어기고 마지막 측정을 강행한 뒤 성장이 완전히 멈추고, 그는 인사 기록에서 지워진 채 출입 카드만 '내부'로 표시된 채 남는다.",
+  "narration_full": "SCP-9532는 마리아나 해구 근처, 열수구 옆 암반입니다. 이레 전 계측에서, 질량이 영 킬로그램으로 나왔습니다. 이 이야기를 시작하기 전에 하나만 짚고 갈게요. 확보. 격리. 보호. 오늘은 그중에서도 '보호'에 관한 이야기입니다. 정확히는, 누가 누구를 보호하고 있었는지에 관한 이야기고요. 장소는 남태평양 어느 해구, 수심 육천 미터 부근입니다. 재단은 이곳에 사이트 하나를 두고 있습니다. 사이트-119, 심해분소예요. 상주 인원은 열둘, 전부 다른 나라 사람들입니다. 지질음향학자, 잠수정 조종사, 통신 담당까지요. 발견은 우연이었습니다. 무인 탐사 드론이 열수구 주변을 훑던 중, 지도에 없는 암반 하나를 잡아냈거든요. 겉보기엔 평범했습니다. 검붉은 표면, 주름진 결. 열수구 근처 광물 침전물이랑 크게 다르지 않아 보였고요. 재단은 여기에 번호를 하나 붙였습니다. 구오삼이. 객체 등급, 유클리드. 격리 방법이 아직 확실치 않다는 뜻이죠. 이유는 곧 나옵니다. 보고서에는 그냥 '암반 개체'라고만 적혀 있습니다. 그런데 거기 있던 사람들은, 그걸 '가라앉은 심장'이라고 불렀습니다. 표면이 부풀었다 가라앉는 주기가, 꼭 숨 쉬는 것 같았다면서요. 이상한 점은 하나였습니다. 관측 장비를 대고 있을 땐, 이 암반의 질량이 잡히지 않는다는 것. 소나로도, 라이다로도, 저울로도요. 그런데 장비를 잠깐이라도 떼면, 그사이 질량이 늘어나 있었습니다. 안 보고 있을 때만 존재하는 것처럼요. 이상하죠? 그래서 특수 격리 절차입니다. 지켜야 할 건 세 가지였습니다. 관측 장비는 대상에게서 구십 초 이상 시선을 떼지 않는다. 잠수정이 대상 앞을 지날 때, 선체 조명은 절대 끄지 않는다. 그리고 질량 측정치가 정수로 딱 떨어지는 날엔, 그날 잠수 일정을 전부 취소한다. 이걸 어기면 어떻게 되는지는, 어디에도 적혀 있지 않습니다. 이 사이트를 이끈 건 크라머 박사였습니다. 독일 출신 지질음향학자였고요. 그에게는 고집이 하나 있었습니다. 철수 권고가 내려와도, 측정을 한 번 더 받으려 했다는 것. 이틀째 기록입니다. 첫 정밀 계측이 이뤄졌습니다. 크라머 박사는 이날 처음으로 그 이름을 입 밖에 냈습니다. '가라앉은 심장'이라고요. 그날부터 팀 전체가 그 이름으로 불렀고요. 엿새째, 소나 기록에 이상한 신호가 잡혔습니다. SCP-████와 유사한 저주파 반응이었죠. 그게 뭔지는, 아직 아무도 모릅니다. 그 근처 수온도 평소보다 삼 도 낮게 나왔고요. 열하루째, 처음으로 정수가 나왔습니다. 정확히 천 킬로그램. 절차대로 그날 잠수 일정은 전부 취소됐고요. 대신 크라머 박사는 그 숫자를 종이에 적어, 서랍 깊숙이 넣어뒀습니다. 아무한테도 말하지 않았죠. 열이레째엔 태풍이 지나갔습니다. 해수면 통신이 두 시간 끊기면서, 소나도 같이 정지했습니다. 구십 초를 훌쩍 넘긴 공백이었고요. 통신이 돌아왔을 때, 암반은 이미 그 전보다 커져 있었습니다. 정확히 얼마나 커졌는지는, 아무도 다시 재지 못했습니다. 측정 장비 자체가 그 크기를 담지 못했거든요. 이 정도면 그냥 태풍 탓이라고 하시겠죠? 스물사흘째, 잠수정 한 대가 정비를 이유로 조명을 잠깐 껐습니다. 절차 위반이었지만, 다들 별일 아니라고 생각했죠. 그런데 그 순간, 조종사 도밍게스는 뭔가를 봤다고 했습니다. \"불이 꺼진 그 몇 초 동안요. 표면이 아니라, 안쪽이 보였어요. 뭔가 겹겹이 접힌 것처럼요. 그리고 그 안에서, 종이 넘기듯 소리가 났어요.\" 저도 이 기록을 처음 읽었을 때, 오타인 줄 알았습니다. 그런데 뒤에 나오는 다른 보고서에도, 똑같은 표현이 나오더군요. 여기서 딱 한 번, 제대로 보여드릴게요. 사람 키의 두 배쯤 되는 검붉은 덩어리인데요, 표면은 근육처럼 결이 나 있고, 그 결 사이사이가 아주 느리게 벌어졌다 닫힙니다. 벌어질 때마다, 안쪽에서 낮은 소리가 흘러나옵니다. 말소리 같기도 하고, 아닌 것 같기도 하고요. 잠수정 안에서는 쇠 비린내가 났다고 통신 담당 파텔은 적었습니다. 이후 관측 기록은 다시 흔적과 수치로만 남고요. 스물이레째, 재단은 스크랜턴 현실 안정 장치를 투입했습니다. 두 대를 나란히 돌렸고요. 처음 세 시간은 수치가 안정적이었습니다. 그런데 세 시간이 지난 시점부터, 안정 장치 두 대의 기록 자체가 통째로 사라져 있었습니다. 작동을 멈춘 게 아니라, 작동했다는 기록만 지워진 거였죠. 세계 오컬트 연합 쪽에서도 이 소식을 들었던 모양입니다. 재단이 폭발물로 주변 암반을 통째로 무너뜨리는 안을 검토하자, 그쪽에서 거부권을 행사했습니다. 이유는 끝내 공개되지 않았죠. 다만 내부 문건엔 이렇게만 적혀 있습니다. \"지금 무너뜨리면, 덮인 게 아니라 열립니다.\" 저도 이 이유가 뭔지 궁금했는데, 문건엔 그 이상 안 나와 있더라고요. 서른사흘째, 크라머 박사는 상부에 철수를 보고하지 않았습니다. 대신 마지막으로 한 번 더 측정을 받겠다고 했죠. 그날 아침 수치는, 이미 정수로 딱 떨어져 있었습니다. 정확히 천이백 킬로그램이었죠. \"여기까지 왔는데, 숫자 하나 더 본다고 뭐가 달라지겠습니까.\" 왜 하필 이 사람이, 하필 이 숫자 앞에서 고집을 부렸을까요. 크라머 박사는 그렇게 말하고, 절차를 어기고 측정 장비를 다시 켰습니다. 마흔날째, 사고 보고서입니다. 그날 이후 '가라앉은 심장'의 질량 변화는 완전히 멈췄습니다. 늘지도, 줄지도 않았습니다. 숨 쉬듯 벌어졌다 닫히던 결도, 더는 움직이지 않았고요. 표면만 보면, 그냥 죽은 돌덩어리였습니다. 크라머 박사는 그날 이후 인사 기록에서 이름이 지워졌어요. 사이트-119 근무자 명단 어디에도, 그가 있었다는 흔적이 없습니다. 그런데 사이트 출입 일지에는, 지금도 그의 출입 카드가 '내부'로 표시돼 있죠. 절차가 진짜로 지키려 했던 건, 암반이 자라는 걸 막는 게 아니었습니다. 오히려 그 반대였고요. 이 결이 벌어졌다 닫히는 주기, 그 느린 성장이야말로, 해구 더 깊은 곳에 있는 무언가를 계속 눌러 담고 있는 압력이었던 겁니다. 성장이 멈췄다는 건, 그 압력이 사라졌다는 뜻이었습니다. 지금 사이트-119에서는, 아무것도 관측되지 않고 있습니다. 소나도, 라이다도, 저울도 전부 정상 작동 중입니다. 다만 화면에, 아무 신호가 잡히지 않을 뿐이고요. 이 문서의 마지막 수정일은 지난달입니다. 그런데 사이트-119의 통신 기록은, 오늘 새벽까지도 계속 들어오고 있습니다. 혹시 여러분도, 안 보고 있을 때만 이상하게 자라 있는 걸 본 적 있으신가요. 댓글로 한번 들려주세요. 다음 이야기에서 뵙겠습니다.",
+  "segments": [
+    {
+      "text": "SCP-9532는 마리아나 해구 근처,",
+      "est_sec": 4
+    },
+    {
+      "text": "열수구 옆 암반입니다.",
+      "est_sec": 2
+    },
+    {
+      "text": "이레 전 계측에서, 질량이 영 킬로그램으로 나왔습니다.",
+      "est_sec": 6
+    },
+    {
+      "text": "이 이야기를 시작하기 전에 하나만 짚고 갈게요.",
+      "est_sec": 5
+    },
+    {
+      "text": "확보. 격리. 보호.",
+      "est_sec": 2,
+      "emphasis": "확보. 격리. 보호."
+    },
+    {
+      "text": "오늘은 그중에서도 '보호'에 관한 이야기입니다. 정확히는,",
+      "est_sec": 6
+    },
+    {
+      "text": "누가 누구를 보호하고 있었는지에 관한 이야기고요.",
+      "est_sec": 5
+    },
+    {
+      "text": "장소는 남태평양 어느 해구, 수심 육천 미터 부근입니다.",
+      "est_sec": 6
+    },
+    {
+      "text": "재단은 이곳에 사이트 하나를 두고 있습니다.",
+      "est_sec": 4
+    },
+    {
+      "text": "사이트-119, 심해분소예요.",
+      "est_sec": 3
+    },
+    {
+      "text": "상주 인원은 열둘, 전부 다른 나라 사람들입니다.",
+      "est_sec": 5
+    },
+    {
+      "text": "지질음향학자, 잠수정 조종사, 통신 담당까지요.",
+      "est_sec": 5
+    },
+    {
+      "text": "발견은 우연이었습니다.",
+      "est_sec": 3
+    },
+    {
+      "text": "무인 탐사 드론이 열수구 주변을 훑던 중,",
+      "est_sec": 4
+    },
+    {
+      "text": "지도에 없는 암반 하나를 잡아냈거든요.",
+      "est_sec": 4
+    },
+    {
+      "text": "겉보기엔 평범했습니다.",
+      "est_sec": 3
+    },
+    {
+      "text": "검붉은 표면, 주름진 결.",
+      "est_sec": 3
+    },
+    {
+      "text": "열수구 근처 광물 침전물이랑 크게 다르지 않아 보였고요.",
+      "est_sec": 6
+    },
+    {
+      "text": "재단은 여기에 번호를 하나 붙였습니다. 구오삼이.",
+      "est_sec": 5
+    },
+    {
+      "text": "객체 등급, 유클리드.",
+      "est_sec": 2
+    },
+    {
+      "text": "격리 방법이 아직 확실치 않다는 뜻이죠.",
+      "est_sec": 4
+    },
+    {
+      "text": "이유는 곧 나옵니다.",
+      "est_sec": 2
+    },
+    {
+      "text": "보고서에는 그냥 '암반 개체'라고만 적혀 있습니다.",
+      "est_sec": 5
+    },
+    {
+      "text": "그런데 거기 있던 사람들은,",
+      "est_sec": 3
+    },
+    {
+      "text": "그걸 '가라앉은 심장'이라고 불렀습니다.",
+      "est_sec": 4
+    },
+    {
+      "text": "표면이 부풀었다 가라앉는 주기가,",
+      "est_sec": 3
+    },
+    {
+      "text": "꼭 숨 쉬는 것 같았다면서요.",
+      "est_sec": 3
+    },
+    {
+      "text": "이상한 점은 하나였습니다.",
+      "est_sec": 3
+    },
+    {
+      "text": "관측 장비를 대고 있을 땐,",
+      "est_sec": 3
+    },
+    {
+      "text": "이 암반의 질량이 잡히지 않는다는 것.",
+      "est_sec": 4
+    },
+    {
+      "text": "소나로도, 라이다로도, 저울로도요.",
+      "est_sec": 4
+    },
+    {
+      "text": "그런데 장비를 잠깐이라도 떼면,",
+      "est_sec": 3
+    },
+    {
+      "text": "그사이 질량이 늘어나 있었습니다.",
+      "est_sec": 3
+    },
+    {
+      "text": "안 보고 있을 때만 존재하는 것처럼요. 이상하죠?",
+      "est_sec": 5
+    },
+    {
+      "text": "그래서 특수 격리 절차입니다.",
+      "est_sec": 3
+    },
+    {
+      "text": "지켜야 할 건 세 가지였습니다.",
+      "est_sec": 3
+    },
+    {
+      "text": "관측 장비는 대상에게서 구십 초 이상 시선을 떼지 않는다.",
+      "est_sec": 6
+    },
+    {
+      "text": "잠수정이 대상 앞을 지날 때, 선체 조명은 절대 끄지 않는다.",
+      "est_sec": 6
+    },
+    {
+      "text": "그리고 질량 측정치가 정수로 딱 떨어지는 날엔,",
+      "est_sec": 5
+    },
+    {
+      "text": "그날 잠수 일정을 전부 취소한다.",
+      "est_sec": 3
+    },
+    {
+      "text": "이걸 어기면 어떻게 되는지는,",
+      "est_sec": 3
+    },
+    {
+      "text": "어디에도 적혀 있지 않습니다.",
+      "est_sec": 3
+    },
+    {
+      "text": "이 사이트를 이끈 건 크라머 박사였습니다.",
+      "est_sec": 4
+    },
+    {
+      "text": "독일 출신 지질음향학자였고요.",
+      "est_sec": 3
+    },
+    {
+      "text": "그에게는 고집이 하나 있었습니다.",
+      "est_sec": 3
+    },
+    {
+      "text": "철수 권고가 내려와도, 측정을 한 번 더 받으려 했다는 것.",
+      "est_sec": 6
+    },
+    {
+      "text": "이틀째 기록입니다.",
+      "est_sec": 2
+    },
+    {
+      "text": "첫 정밀 계측이 이뤄졌습니다.",
+      "est_sec": 3
+    },
+    {
+      "text": "크라머 박사는 이날 처음으로 그 이름을 입 밖에 냈습니다.",
+      "est_sec": 6
+    },
+    {
+      "text": "'가라앉은 심장'이라고요.",
+      "est_sec": 3
+    },
+    {
+      "text": "그날부터 팀 전체가 그 이름으로 불렀고요.",
+      "est_sec": 4
+    },
+    {
+      "text": "엿새째, 소나 기록에 이상한 신호가 잡혔습니다.",
+      "est_sec": 5
+    },
+    {
+      "text": "SCP-████와 유사한 저주파 반응이었죠.",
+      "est_sec": 5
+    },
+    {
+      "text": "그게 뭔지는, 아직 아무도 모릅니다.",
+      "est_sec": 4
+    },
+    {
+      "text": "그 근처 수온도 평소보다 삼 도 낮게 나왔고요.",
+      "est_sec": 4
+    },
+    {
+      "text": "열하루째, 처음으로 정수가 나왔습니다.",
+      "est_sec": 4
+    },
+    {
+      "text": "정확히 천 킬로그램.",
+      "est_sec": 2,
+      "emphasis": "천 킬로그램"
+    },
+    {
+      "text": "절차대로 그날 잠수 일정은 전부 취소됐고요.",
+      "est_sec": 4
+    },
+    {
+      "text": "대신 크라머 박사는 그 숫자를 종이에 적어,",
+      "est_sec": 4
+    },
+    {
+      "text": "서랍 깊숙이 넣어뒀습니다.",
+      "est_sec": 3
+    },
+    {
+      "text": "아무한테도 말하지 않았죠.",
+      "est_sec": 3
+    },
+    {
+      "text": "열이레째엔 태풍이 지나갔습니다.",
+      "est_sec": 3
+    },
+    {
+      "text": "해수면 통신이 두 시간 끊기면서,",
+      "est_sec": 3
+    },
+    {
+      "text": "소나도 같이 정지했습니다.",
+      "est_sec": 3
+    },
+    {
+      "text": "구십 초를 훌쩍 넘긴 공백이었고요.",
+      "est_sec": 3
+    },
+    {
+      "text": "통신이 돌아왔을 때,",
+      "est_sec": 2
+    },
+    {
+      "text": "암반은 이미 그 전보다 커져 있었습니다.",
+      "est_sec": 4
+    },
+    {
+      "text": "정확히 얼마나 커졌는지는, 아무도 다시 재지 못했습니다.",
+      "est_sec": 6
+    },
+    {
+      "text": "측정 장비 자체가 그 크기를 담지 못했거든요.",
+      "est_sec": 4
+    },
+    {
+      "text": "이 정도면 그냥 태풍 탓이라고 하시겠죠? 스물사흘째,",
+      "est_sec": 5
+    },
+    {
+      "text": "잠수정 한 대가 정비를 이유로 조명을 잠깐 껐습니다.",
+      "est_sec": 5
+    },
+    {
+      "text": "절차 위반이었지만, 다들 별일 아니라고 생각했죠.",
+      "est_sec": 5
+    },
+    {
+      "text": "그런데 그 순간,",
+      "est_sec": 2
+    },
+    {
+      "text": "조종사 도밍게스는 뭔가를 봤다고 했습니다.",
+      "est_sec": 4
+    },
+    {
+      "text": "\"불이 꺼진 그 몇 초 동안요. 표면이 아니라,",
+      "est_sec": 4
+    },
+    {
+      "text": "안쪽이 보였어요.",
+      "est_sec": 2
+    },
+    {
+      "text": "뭔가 겹겹이 접힌 것처럼요.",
+      "est_sec": 3
+    },
+    {
+      "text": "그리고 그 안에서,",
+      "est_sec": 2
+    },
+    {
+      "text": "종이 넘기듯 소리가 났어요.\" 저도 이 기록을 처음 읽었을 때,",
+      "est_sec": 6
+    },
+    {
+      "text": "오타인 줄 알았습니다.",
+      "est_sec": 2
+    },
+    {
+      "text": "그런데 뒤에 나오는 다른 보고서에도,",
+      "est_sec": 4
+    },
+    {
+      "text": "똑같은 표현이 나오더군요.",
+      "est_sec": 3
+    },
+    {
+      "text": "여기서 딱 한 번, 제대로 보여드릴게요.",
+      "est_sec": 4
+    },
+    {
+      "text": "사람 키의 두 배쯤 되는 검붉은 덩어리인데요,",
+      "est_sec": 4
+    },
+    {
+      "text": "표면은 근육처럼 결이 나 있고,",
+      "est_sec": 3
+    },
+    {
+      "text": "그 결 사이사이가 아주 느리게 벌어졌다 닫힙니다.",
+      "est_sec": 5
+    },
+    {
+      "text": "벌어질 때마다, 안쪽에서 낮은 소리가 흘러나옵니다.",
+      "est_sec": 5
+    },
+    {
+      "text": "말소리 같기도 하고, 아닌 것 같기도 하고요.",
+      "est_sec": 4
+    },
+    {
+      "text": "잠수정 안에서는 쇠 비린내가 났다고,",
+      "est_sec": 4
+    },
+    {
+      "text": "통신 담당 파텔은 적었습니다.",
+      "est_sec": 3
+    },
+    {
+      "text": "이후 관측 기록은 다시 흔적과 수치로만 남고요. 스물이레째,",
+      "est_sec": 6
+    },
+    {
+      "text": "재단은 스크랜턴 현실 안정 장치를 투입했습니다.",
+      "est_sec": 5
+    },
+    {
+      "text": "두 대를 나란히 돌렸고요.",
+      "est_sec": 3
+    },
+    {
+      "text": "처음 세 시간은 수치가 안정적이었습니다.",
+      "est_sec": 4
+    },
+    {
+      "text": "그런데 세 시간이 지난 시점부터,",
+      "est_sec": 3
+    },
+    {
+      "text": "안정 장치 두 대의 기록 자체가 통째로 사라져 있었습니다.",
+      "est_sec": 6
+    },
+    {
+      "text": "작동을 멈춘 게 아니라, 작동했다는 기록만 지워진 거였죠.",
+      "est_sec": 6
+    },
+    {
+      "text": "세계 오컬트 연합 쪽에서도 이 소식을 들었던 모양입니다.",
+      "est_sec": 6
+    },
+    {
+      "text": "재단이 폭발물로 주변 암반을 통째로 무너뜨리는 안을 검토하자,",
+      "est_sec": 6
+    },
+    {
+      "text": "그쪽에서 거부권을 행사했습니다.",
+      "est_sec": 3
+    },
+    {
+      "text": "이유는 끝내 공개되지 않았죠.",
+      "est_sec": 3
+    },
+    {
+      "text": "다만 내부 문건엔 이렇게만 적혀 있습니다.",
+      "est_sec": 4
+    },
+    {
+      "text": "\"지금 무너뜨리면,",
+      "est_sec": 2
+    },
+    {
+      "text": "덮인 게 아니라 열립니다.\" 저도 이 이유가 뭔지 궁금했는데,",
+      "est_sec": 6
+    },
+    {
+      "text": "문건엔 그 이상 안 나와 있더라고요. 서른사흘째,",
+      "est_sec": 5
+    },
+    {
+      "text": "크라머 박사는 상부에 철수를 보고하지 않았습니다.",
+      "est_sec": 5
+    },
+    {
+      "text": "대신 마지막으로 한 번 더 측정을 받겠다고 했죠.",
+      "est_sec": 5
+    },
+    {
+      "text": "그날 아침 수치는, 이미 정수로 딱 떨어져 있었습니다.",
+      "est_sec": 5
+    },
+    {
+      "text": "정확히 천이백 킬로그램이었죠.",
+      "est_sec": 3,
+      "emphasis": "천이백 킬로그램"
+    },
+    {
+      "text": "\"여기까지 왔는데,",
+      "est_sec": 2
+    },
+    {
+      "text": "숫자 하나 더 본다고 뭐가 달라지겠습니까.\" 왜 하필 이 사람이,",
+      "est_sec": 6
+    },
+    {
+      "text": "하필 이 숫자 앞에서 고집을 부렸을까요.",
+      "est_sec": 4
+    },
+    {
+      "text": "크라머 박사는 그렇게 말하고,",
+      "est_sec": 3
+    },
+    {
+      "text": "절차를 어기고 측정 장비를 다시 켰습니다.",
+      "est_sec": 4
+    },
+    {
+      "text": "마흔날째, 사고 보고서입니다.",
+      "est_sec": 3
+    },
+    {
+      "text": "그날 이후 '가라앉은 심장'의 질량 변화는 완전히 멈췄습니다.",
+      "est_sec": 6
+    },
+    {
+      "text": "늘지도, 줄지도 않았습니다.",
+      "est_sec": 3
+    },
+    {
+      "text": "숨 쉬듯 벌어졌다 닫히던 결도, 더는 움직이지 않았고요.",
+      "est_sec": 6
+    },
+    {
+      "text": "표면만 보면, 그냥 죽은 돌덩어리였습니다.",
+      "est_sec": 4
+    },
+    {
+      "text": "크라머 박사는 그날 이후 인사 기록에서 이름이 지워졌어요.",
+      "est_sec": 6
+    },
+    {
+      "text": "사이트-119 근무자 명단 어디에도,",
+      "est_sec": 4
+    },
+    {
+      "text": "그가 있었다는 흔적이 없습니다.",
+      "est_sec": 3
+    },
+    {
+      "text": "그런데 사이트 출입 일지에는,",
+      "est_sec": 3
+    },
+    {
+      "text": "지금도 그의 출입 카드가 '내부'로 표시돼 있죠.",
+      "est_sec": 5
+    },
+    {
+      "text": "절차가 진짜로 지키려 했던 건,",
+      "est_sec": 3
+    },
+    {
+      "text": "암반이 자라는 걸 막는 게 아니었습니다.",
+      "est_sec": 4
+    },
+    {
+      "text": "오히려 그 반대였고요.",
+      "est_sec": 2
+    },
+    {
+      "text": "이 결이 벌어졌다 닫히는 주기, 그 느린 성장이야말로,",
+      "est_sec": 5
+    },
+    {
+      "text": "해구 더 깊은 곳에 있는 무언가를,",
+      "est_sec": 3
+    },
+    {
+      "text": "계속 눌러 담고 있는 압력이었던 겁니다.",
+      "est_sec": 4
+    },
+    {
+      "text": "성장이 멈췄다는 건, 그 압력이 사라졌다는 뜻이었습니다.",
+      "est_sec": 6
+    },
+    {
+      "text": "지금 사이트-119에서는,",
+      "est_sec": 3
+    },
+    {
+      "text": "아무것도 관측되지 않고 있습니다.",
+      "est_sec": 3
+    },
+    {
+      "text": "소나도, 라이다도, 저울도 전부 정상 작동 중입니다.",
+      "est_sec": 5
+    },
+    {
+      "text": "다만 화면에, 아무 신호가 잡히지 않을 뿐이고요.",
+      "est_sec": 5
+    },
+    {
+      "text": "이 문서의 마지막 수정일은 지난달입니다.",
+      "est_sec": 4
+    },
+    {
+      "text": "그런데 사이트-119의 통신 기록은,",
+      "est_sec": 4
+    },
+    {
+      "text": "오늘 새벽까지도 계속 들어오고 있습니다. 혹시 여러분도,",
+      "est_sec": 6
+    },
+    {
+      "text": "안 보고 있을 때만 이상하게 자라 있는 걸 본 적 있으신가요.",
+      "est_sec": 6
+    },
+    {
+      "text": "댓글로 한번 들려주세요.",
+      "est_sec": 3
+    },
+    {
+      "text": "다음 이야기에서 뵙겠습니다.",
+      "est_sec": 3
+    }
+  ],
+  "scenes": [
+    {
+      "prompt": "exterior of a small deep-sea research module dock at night, thick round viewports glowing faint yellow against black water, wide static shot, one-point perspective, symmetrical framing, deep focus, single exterior floodlight, cool white 4000K, hard downward shadows, riveted steel hull, corroded railing, thick cable bundles, thin sediment haze, cold pressure-heavy stillness, desaturated navy and gray palette with warm amber porthole glow, 24mm lens, f/8, sharp detail, photorealistic, lower quarter empty dark water. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "wide shot of a hydrothermal vent field on the seafloor, dark mineral plumes rising from vent chimneys, one small irregular dark red mass resting among rocks far in the background under ten percent of frame, eye-level wide shot, one-point perspective, deep focus, single floodlight from above, cool blue-white tone, hard shadows on rock, mineral crust, basalt, fine silt, drifting particulate haze, near-freezing stillness, desaturated deep blue and rust palette, 24mm lens, f/8, sharp detail, photorealistic, lower quarter empty seafloor sediment. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "interior sonar control room, a bank of analog dial gauges and a single glowing round display screen showing a flat empty waveform, medium wide shot, centered composition, single overhead fluorescent tube, cool white 4000K, hard downward shadows, brushed steel console, worn rubber knobs, scuffed linoleum floor, faint dust haze, cold recycled air, desaturated teal and gray palette with one warm amber indicator light, 35mm lens, f/5.6, sharp detail, photorealistic, lower quarter of frame is empty floor. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "interior of a cramped submersible cockpit, a pair of thick gloved hands resting on twin control levers, small round viewport showing pitch black water ahead, medium shot, centered composition, single dim console light from below, cool blue-green tone, hard shadow across the gloves, worn vinyl seat, scratched acrylic viewport, bundled wiring, faint condensation haze, cold damp air, desaturated cyan and gray palette with one warm dial glow, 35mm lens, f/4, sharp detail, photorealistic, lower quarter of frame is empty cockpit floor. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "extreme close-up of a digital scale readout displaying 0.000 KG in dim green digits, resting on a steel lab bench, macro shot, shallow depth of field, single small desk lamp light from the side, warm dim tone against cold gray steel, hard shadow, scratched steel surface, coiled data cable, faint dust film, still air, desaturated palette with one warm amber highlight on the display, 50mm lens, f/2.8, sharp detail, photorealistic, lower quarter of frame is empty bench surface. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "close shot of an open handwritten logbook on a metal desk, rows of numbers with one circled in red ink, a pen resting across the open page, medium close shot, centered composition, single desk lamp from the side, warm dim tone against cool background shadow, hard shadow, water-stained paper, worn leather cover, faint dust motes in the lamp beam, still cold air, desaturated palette with one warm amber pool of light, 50mm lens, f/4, sharp detail, photorealistic, lower quarter of frame is empty desk. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "exterior surface buoy and antenna mast in rough dark ocean water under a storm sky, waves breaking against the metal frame, wide shot, one-point perspective, deep focus, single flashing warning beacon light, cool gray-blue tone, hard contrast against black clouds, rusted steel mast, salt-crusted railing, wind-driven spray haze, cold wet air, desaturated slate and teal palette with one warm red beacon flash, 24mm lens, f/8, sharp detail, photorealistic, lower quarter of frame is empty churning water. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "narrow steel corridor inside the underwater site, a single red emergency light glowing at the far end, pipes running along the low ceiling, wide shot, one-point perspective, symmetrical framing, deep focus, single red emergency light source, cold dim tone, hard shadow along the walls, riveted steel plating, condensation streaks, exposed conduit, thin haze, cold still pressurized air, desaturated gray palette with one deep red glow, 24mm lens, f/8, sharp detail, photorealistic, lower quarter of frame is empty corridor floor. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "extreme close-up of a dark reddish mineral surface with deep muscle-like ridges, one narrow seam caught mid-motion as if slowly opening, macro shot, shallow depth of field, single hard directional light, cool tone with warm highlight on the seam edge, hard shadow inside the ridge, wet organic mineral texture, fine particulate residue, faint haze, cold damp air, desaturated maroon and gray palette with warm amber rim light, 100mm macro lens, f/4, sharp detail, photorealistic, lower quarter dark out-of-focus rock. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "empty crew bunk room, a single made bed, a laminated ID badge left on the folded pillow, personal locker door slightly ajar and empty, medium wide shot, centered composition, single overhead fluorescent tube, cool white tone, hard downward shadow, worn gray blanket, scuffed steel locker, faint dust haze, still cold air, desaturated blue-gray palette with one warm amber badge highlight, 28mm lens, f/5.6, sharp detail, photorealistic, lower quarter of frame is empty floor. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "wide shot of a bank of monitor screens in the control room all showing identical gray static with no signal, control panel below dark and untouched, symmetrical framing, one-point perspective, deep focus, single cool light from the screens themselves, hard shadow beneath the console, brushed steel panel, worn keyboard, faint dust settled undisturbed, cold still air, desaturated gray and pale blue palette, 24mm lens, f/8, sharp detail, photorealistic, lower quarter of frame is empty floor. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "final wide static shot of the empty main corridor of the underwater site at low light, all doors closed, a single flickering fluorescent tube at the far end, one-point perspective, symmetrical framing, deep focus, single distant flickering light source, cool white tone fading to shadow, hard shadow gradient down the corridor, riveted steel walls, faint condensation, thin settled dust, cold heavy stillness, desaturated blue-gray palette, 24mm lens, f/8, sharp detail, photorealistic, lower quarter of frame is empty corridor floor. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    }
+  ],
+  "background": {
+    "id": "scp-9532_bg",
+    "kind": "image",
+    "reuse": false,
+    "aspect": "16:9",
+    "resolution": "1920x1080",
+    "prompt": "wide shot of a hydrothermal vent field on the seafloor, dark mineral plumes rising from vent chimneys, one small irregular dark red mass resting among rocks far in the background under ten percent of frame, eye-level wide shot, one-point perspective, deep focus, single floodlight from above, cool blue-white tone, hard shadows on rock, mineral crust, basalt, fine silt, drifting particulate haze, near-freezing stillness, desaturated deep blue and rust palette, 24mm lens, f/8, sharp detail, photorealistic, lower quarter empty seafloor sediment. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization",
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, cartoon, anime, illustration, painting, 3d render, cgi, video game, oversaturated, neon, hdr glow, lens flare, vignette overload, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, uncanny face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion"
+  },
+  "thumbnail": {
+    "hook": "extreme close-up of a dark reddish mineral surface with deep muscle-like ridges, one narrow wet seam catching a single hard sidelight, subject positioned on the left third, right third is dark empty negative space, shallow depth of field, desaturated maroon and gray palette with one warm amber rim light along the seam, 100mm macro lens, f/2.8, sharp detail, photorealistic. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization",
+    "hook_alt": [
+      "extreme close-up of a digital scale readout glowing 0.000 KG in dim green digits on a dark steel bench, subject positioned on the right third, left third is dark empty negative space, single small warm desk lamp light, shallow depth of field, desaturated cold palette with one warm amber highlight on the display, 50mm lens, f/2.8, sharp detail, photorealistic. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization",
+      "close shot of a pair of thick gloved hands resting on submersible control levers in a dark cockpit, small round viewport showing black water behind them, subject positioned on the left third, right third is dark empty negative space, single dim console light from below, shallow depth of field, desaturated cyan and gray palette with one warm dial glow, 35mm lens, f/2.8, sharp detail, photorealistic. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    ],
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, cartoon, anime, illustration, painting, 3d render, cgi, video game, oversaturated, neon, hdr glow, lens flare, vignette overload, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, uncanny face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion",
+    "text_safe_area": "right third",
+    "resolution": "1280x720"
+  },
+  "platforms": {
+    "youtube": {
+      "title": "안 보고 있으면, 자랍니다 | SCP 아카이브",
+      "thumbnail_text": "안 보면, 자랍니다",
+      "chapters": [
+        "00:00 콜드 오픈 — 질량 영 킬로그램",
+        "02:09 지켜야 할 세 가지 규칙",
+        "02:57 이틀째, '가라앉은 심장'이라는 이름",
+        "03:33 열하루째, 처음 나온 정수",
+        "04:26 스물사흘째, 조명이 꺼진 순간",
+        "05:47 스물이레째, 실패한 안정화 시도",
+        "07:28 마흔날째, 사고 보고서"
+      ],
+      "description": "마리아나 해구 인근 열수구 옆에서 발견된 이상현상 암반 이야기입니다. 관측 장비가 향해 있는 동안엔 질량이 잡히지 않고, 눈을 떼는 순간 조금씩 자라 있습니다.\n\n비슷한 일을 겪어보신 적 있나요? 댓글로 들려주세요.\n\n※ SCP 재단 세계관 기반 오리지널 창작 · 허구의 이야기입니다\n※ 본 콘텐츠는 CC BY-SA 3.0 라이선스를 따릅니다 · 원작: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP재단 #괴담 #무서운이야기 #미스터리 #심해 #공포라디오",
+      "pinned_comment": "혹시 여러분도, 안 보고 있을 때만 이상하게 자라 있는 걸 본 적 있으신가요? 댓글로 들려주세요.",
+      "playlist": "SCP 아카이브 (전편 듣기)"
+    }
+  },
+  "shorts": {
+    "title": "이 암반은, 안 보면 자랍니다 | SCP",
+    "overlay_top": [
+      "등급 : Euclid",
+      "가라앉은 심장이 자랍니다"
+    ],
+    "script": "마리아나 해구 옆, 검붉은 암반 하나가 발견됩니다. 재단은 이걸 유클리드로 분류했어요. 관측 장비를 대고 있으면 질량이 영이거든요. 그런데 장비를 떼면, 그사이 자라 있고요. 규칙은 셋이었습니다. 장비는 구십 초 넘게 시선을 떼지 않아요. 잠수정 조명은 절대 끄지 않고요. 질량이 정수로 딱 떨어지면, 그날 잠수는 전부 쉬고요. 어기면 어떻게 되는지는, 어디에도 적혀 있지 않습니다. 그런데 서른사흘째, 사고가 하나 기록됩니다. 무슨 일이 있었는지는 전편에서 말씀드릴게요.",
+    "subject_prompt": "extreme close-up of a dark reddish mineral surface with deep muscle-like ridges filling the center of frame, one narrow wet seam glowing faint amber as if slowly opening, dead-center composition, single strong directional key light from one side, deep black background, dramatic rim light along the ridge edges, 9:16 vertical composition, top 30% and bottom 25% of the frame are dark empty negative space for text, sharp crisp detail. sharp high-contrast product-still photography, single strong directional key light, deep black background, rich saturated color, crisp detail, dramatic rim light, photorealistic, 9:16 vertical composition",
+    "negative_prompt": "low contrast, washed out, faded, film grain, muted colors, text, letters, numbers, watermark, logo, signature, caption, subtitles, cartoon, anime, illustration, painting, 3d render, cgi, video game, oversaturated, neon, hdr glow, lens flare, vignette overload, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, uncanny face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion",
+    "description": "마리아나 해구 인근에서 발견된 암반 하나. 안 보고 있을 때만 조금씩 자랍니다. 규칙을 어기면 어떻게 되는지는 기록에 없습니다. 전편에서 전체 이야기를 들려드립니다.\n\n#SCP #SCP아카이브 #괴담 #무서운이야기 #미스터리 #심해",
+    "playlist": "SCP 쇼츠"
+  },
+  "credit": "SCP 재단 세계관 기반 오리지널 창작 · 허구 · CC BY-SA 3.0",
+  "content_rating": "teen",
+  "notes": "SCP 아카이브 · 16:9 롱폼 + 9:16 쇼츠(롱폼 발행 직후 자동) · 장면 전환 배경 + 자막 번인 · 단일 내레이터 · 완결형."
+}
