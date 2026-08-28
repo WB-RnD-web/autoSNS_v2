@@ -96,8 +96,40 @@ def upload_video(yt, video: str, title: str, description: str,
         if status:
             print(f"   업로드 {int(status.progress() * 100)}%")
     vid = resp["id"]
-    print(f"✅ YouTube 업로드: https://youtu.be/{vid} (privacy={privacy}, 16:9 일반영상)")
+    # ⚠️ "16:9 일반영상" 을 하드코딩해 두었더니 ★쇼츠 로그에도 그대로 찍혔다.
+    #   이 업로더는 롱폼(16:9)과 SCP 쇼츠(9:16)가 ★같이 쓴다 — 실제 비율을 재서 적는다.
+    #   (2026-08-28: 이 문구 때문에 쇼츠가 가로로 올라간 줄 알고 한참 헤맸다)
+    print(f"✅ YouTube 업로드: https://youtu.be/{vid} (privacy={privacy}, {_shape(video)})")
     return vid
+
+
+def _shape(path: str) -> str:
+    """영상 비율을 ★실제로 재서 표기. 못 재면 '비율 미상'.
+
+    story_render.probe_dur 과 같은 2단 구성이다 — ffprobe 가 있으면 쓰고,
+    없으면 `ffmpeg -i` 의 stderr 를 읽는다. (story_render 를 임포트하지 않는 이유:
+    그쪽은 edge_tts 를 모듈 수준에서 당겨오는데 업로드 경로엔 불필요한 의존이다)
+    """
+    import re
+    import shutil
+    import subprocess
+    try:
+        if shutil.which("ffprobe"):
+            out = subprocess.run(
+                [shutil.which("ffprobe"), "-v", "error", "-select_streams", "v:0",
+                 "-show_entries", "stream=width,height", "-of", "csv=p=0:s=x", path],
+                capture_output=True, text=True, timeout=20).stdout.strip()
+            w, h = (int(x) for x in out.split("x")[:2])
+        else:
+            r = subprocess.run([shutil.which("ffmpeg") or "ffmpeg", "-i", path],
+                               capture_output=True, text=True, timeout=20)
+            m = re.search(r"Video:.*?[\s,](\d{2,5})x(\d{2,5})[\s,]", r.stderr)
+            if not m:
+                return "비율 미상"
+            w, h = int(m.group(1)), int(m.group(2))
+    except Exception:  # noqa: BLE001
+        return "비율 미상"
+    return f"{w}x{h} " + ("세로(쇼츠)" if h > w else "가로" if w > h else "정사각")
 
 
 def set_thumbnail(yt, video_id: str, thumbnail: str) -> bool:
