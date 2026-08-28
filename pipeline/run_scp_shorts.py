@@ -24,6 +24,7 @@ import sys
 import time
 
 import config
+import title_rules
 import ledger as ledgermod
 
 TAGS = ["SCP", "SCP재단", "괴담", "무서운이야기", "미스터리", "쇼츠", "shorts"]
@@ -88,7 +89,10 @@ def find_longform_url(spec: dict) -> str:
 
 
 def build_meta(spec: dict, sh: dict, longform_url: str, force_private: bool) -> dict:
-    title = (sh.get("title") or spec.get("title") or "SCP").strip()
+    # ★쇼츠 제목 계약은 롱폼과 다르다(§2.6.1: 번호를 앞세우지 않는다) — profile="shorts".
+    #   `#shorts` 를 붙이기 ★전에 본다. 붙인 뒤면 "직접 쓰지 마라" 를 우리가 어긴 게 된다.
+    title = title_rules.report(sh.get("title") or spec.get("title") or "SCP",
+                               profile="shorts")
     if "#shorts" not in title.lower():
         title = f"{title} #shorts"
 
