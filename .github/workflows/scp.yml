@@ -1,13 +1,11 @@
 name: SCP 아카이브 → 다장면 롱폼(16:9) → 유튜브(+재생목록)
-# ⚠️ 이 `name:` 은 scp-shorts.yml 의 `workflow_run.workflows` 와 맺은 ★계약이다.
-#   바꾸면 쇼츠가 ★에러 없이 조용히 안 돌아간다(2026-08-22~28 실제로 6일간 끊겼다).
-#   ★바꿔야 한다면 scp-shorts.yml 의 목록에 새 이름을 ★추가해라(기존 것을 지우지 말 것).
-#   그리고 이 파일은 push 이벤트라 ★routine/scp 브랜치의 사본이 실행된다는 점을 기억할 것 —
-#   main 만 고치면 반영되지 않는다.
+# ⚠️ 이 파일은 push 이벤트라 ★routine/scp 브랜치의 사본이 실행된다.
+#   main 만 고치면 반영되지 않는다 — 브랜치도 같이 맞춰야 한다.
+#   (`name:` 은 이제 어떤 계약도 아니다. 쇼츠는 아래 `shorts` job 이 workflow_call 로 부른다.)
 
 # 트리거: 루틴이 새 SCP 스펙을 routine/scp(★영구 누적 브랜치)에 push 하면 실행.
 #   발행 주기(주 1회/평일/매일)는 ★루틴이 정한다 — 이 워크플로는 push 될 때마다 돈다.
-#   이 워크플로가 끝나면 scp-shorts.yml 이 workflow_run 으로 이어 돌아 쇼츠를 만든다.
+#   렌더가 끝나면 ★같은 런의 `shorts` job 이 scp-shorts.yml 을 호출해 쇼츠를 만든다.
 #   처리 대상 = 이 push 에서 ★새로 추가된 output/scp/*.json (git diff). library.json 은 제외.
 #
 # ⚠️ 루프 가드(다른 파이프라인과 동일): permissions read — 레포에 산출물 커밋 안 함.
@@ -188,6 +186,9 @@ jobs:
         run: |
           FILES="${{ steps.pick.outputs.files }}"
           if [ -z "$(echo $FILES | tr -d ' ')" ]; then
+            # ★이 경로도 조용했다 — 아무것도 안 만들고 초록불로 끝난다.
+            #   평일 발행이면 "루틴이 오늘 스펙을 push 안 했다"는 뜻이라 알아야 한다.
+            echo "::warning title=처리 대상 없음::이 push 에서 새로 추가된 output/scp/*.json 이 없다 — 영상이 만들어지지 않았다."
             echo "처리할 신규 SCP 스펙 없음 — 종료."
             exit 0
           fi
@@ -196,3 +197,18 @@ jobs:
             --use-ledger --ledger-path ../output/scp_ledger.json --log ../output/scp_log.json \
             $([ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.force_private }}" = "true" ] && echo --force-private) \
             $([ "${{ github.event.inputs.no_upload }}" = "true" ] && echo --no-upload)
+
+  # ── 쇼츠: ★같은 런에서 이어 돈다 ─────────────────────────
+  #   workflow_run 을 쓰지 않는다. 이름 문자열 계약도, 브랜치 조건도 없다.
+  #   `@main` 고정이라 routine/scp 가 또 낡아도 항상 main 의 쇼츠 워크플로가 돈다.
+  #   실패하면 ★이 런에 빨간불로 보인다 — 예전처럼 조용히 안 도는 일이 없다.
+  shorts:
+    needs: build-and-upload
+    # 렌더 검증(no_upload)일 땐 쇼츠까지 만들 이유가 없다.
+    if: >-
+      github.event_name != 'workflow_dispatch' ||
+      github.event.inputs.no_upload != 'true'
+    uses: WB-RnD-web/autoSNS_v2/.github/workflows/scp-shorts.yml@main
+    secrets: inherit
+    with:
+      force_private: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.force_private == 'true' }}
