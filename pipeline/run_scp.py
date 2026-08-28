@@ -23,6 +23,7 @@ import time
 
 import config
 import ledger as ledgermod
+import title_rules
 
 TAGS = ["SCP", "SCP재단", "괴담", "무서운이야기", "미스터리", "심야라디오", "공포라디오", "오디오북"]
 
@@ -45,8 +46,14 @@ def build_meta(spec: dict, chapters: list[str], force_private: bool) -> dict:
         if spec.get(k):
             tags.append(str(spec[k]))
     playlist = config.env("SCP_PLAYLIST") or yt.get("playlist", "")
+    # ★제목 계약(§2-H2) — 어긋나면 경고, 번호 꼬리만 기계적으로 보충한다.
+    title = title_rules.report(
+        yt.get("title", spec.get("title", "SCP")),
+        number=str(spec.get("scp_number") or ""),
+        form=str(yt.get("title_form") or ""),
+        thumbnail_text=str(yt.get("thumbnail_text") or ""))
     return {
-        "title": yt.get("title", spec.get("title", "SCP")),
+        "title": title,
         "description": desc,
         "privacy": privacy,
         "playlist": playlist,
