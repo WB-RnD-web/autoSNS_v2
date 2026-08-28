@@ -11,6 +11,7 @@ best-effort: 어떤 단계든 실패하면 None 반환, 파이프라인은 계�
 """
 from __future__ import annotations
 import os
+import re
 import sys
 
 import wbspark
@@ -92,38 +93,205 @@ def _wrap(draw, text: str, font, max_w: int) -> list[str]:
     return lines
 
 
-def _overlay_title(bg_path: str, title: str, out_path: str) -> str:
+# ── 썸네일 문구 노브 ──────────────────────────────────────
+# ★2026-08-28 실측: ASMR 노출 5,600 · CTR 2.1%(95%CI 1.8~2.5%) · SCP 도 2.1%.
+#   두 토픽이 ★같은 이 함수를 쓴다 — 채널 전체 썸네일의 공통 병목이었다.
+#   원인: 폰트 상한이 88px 인데 썸네일이 1280x720 이라 ★높이의 12% 밖에 안 됐다.
+#   유튜브 썸네일 문구 관행은 높이의 20~30%(=144~216px). 절반도 안 쓰고 있었다.
+THUMB_MAX_FONT = int(os.environ.get("THUMB_MAX_FONT", "200"))   # 높이의 28%
+THUMB_MIN_FONT = int(os.environ.get("THUMB_MIN_FONT", "72"))
+THUMB_MAX_LINES = int(os.environ.get("THUMB_MAX_LINES", "2"))   # 3줄이면 글자가 작아진다
+THUMB_ACCENT = os.environ.get("THUMB_ACCENT", "#FF5A57")
+# 문구 배치 스타일 — 장르마다 관행이 ★정반대다(2026-08-28 경쟁 채널 실측).
+#   scp    : 번호를 ★상단에 초대형 + 제목. 조회수 상위 SCP 채널의 공통 형식
+#   bottom : 하단 중앙 한 덩어리(기존 동작)
+#   none   : ★문구를 아예 넣지 않는다. ASMR 상위 썸네일 6개 중 5개가 무텍스트였다
+THUMB_STYLE = os.environ.get("THUMB_STYLE", "bottom")
+THUMB_NUM_COLOR = os.environ.get("THUMB_NUM_COLOR", "#FFD54A")
+
+
+def _hex_rgb(c: str, fallback=(255, 90, 87)) -> tuple:
+    c = (c or "").strip().lstrip("#")
+    if len(c) != 6:
+        return fallback
+    try:
+        return tuple(int(c[k:k + 2], 16) for k in (0, 2, 4))
+    except ValueError:
+        return fallback
+
+
+def _wrap_words(draw, text: str, font, max_w: int, max_lines: int) -> list[str]:
+    """★어절 단위 줄바꿈. 폭은 PIL 로 ★실측한다.
+
+    기존 `_wrap` 은 글자 단위 폴백이라 한글이 ★음절 중간에서 잘렸다
+    ("직결된 / 다"). 쇼츠 자막에서 같은 문제를 textfit.py 로 고쳤으므로
+    어절 분해만 그쪽을 재사용하고, 측정은 여기서 실제 폰트로 한다.
+    """
+    try:
+        import textfit
+        toks = [t for t, _ in textfit.tokens(text)]
+    except Exception:  # noqa: BLE001
+        toks = [w for w in (text or "").split() if w]
+    if not toks:
+        return []
+    lines, cur = [], ""
+    for tok in toks:
+        cand = tok if not cur else cur + " " + tok
+        if cur and draw.textlength(cand, font=font) > max_w:
+            lines.append(cur)
+            cur = tok
+        else:
+            cur = cand
+    if cur:
+        lines.append(cur)
+    return lines
+
+
+def _fit_line(draw, text: str, max_w: int, hi: int, lo: int):
+    """한 줄이 max_w 안에 들어가는 가장 큰 폰트를 찾는다."""
+    step = max(4, (hi - lo) // 20)
+    for size in range(hi, lo - 1, -step):
+        f = _load_font(size)
+        if draw.textlength(text, font=f) <= max_w:
+            return size, f
+    return lo, _load_font(lo)
+
+
+def _stroked(draw, xy, text, font, fill, stroke_w, stroke_fill=(0, 0, 0)):
+    draw.text(xy, text, font=font, fill=fill,
+              stroke_width=stroke_w, stroke_fill=stroke_fill)
+
+
+def _overlay_scp(img, title: str, number: str, accent, out_path: str) -> str:
+    """★조회수 상위 SCP 채널의 공통 형식 — 번호를 상단에 초대형, 그 아래 제목.
+
+    검색으로 들어오는 장르라 ★번호가 곧 검색어다. 번호가 작으면
+    "내가 찾던 그거"라는 신호가 안 간다.
+    """
+    from PIL import Image, ImageDraw
+    draw = ImageDraw.Draw(img)
+    max_w = int(W * 0.92)
+    num = (number or "").strip()
+    body = (title or "").strip()
+
+    # 상단 어둡게 — 글자가 앉을 자리만
+    scrim = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    sd = ImageDraw.Draw(scrim)
+    band = int(H * 0.56)
+    for y in range(band):
+        sd.line([(0, y), (W, y)], fill=(0, 0, 0, int(190 * (1 - y / band) ** 0.6)))
+    img = Image.alpha_composite(img.convert("RGBA"), scrim).convert("RGB")
+    draw = ImageDraw.Draw(img)
+
+    y = int(H * 0.045)
+    if num:
+        ns, nf = _fit_line(draw, num, max_w, int(H * 0.24), int(H * 0.11))
+        nw = draw.textlength(num, font=nf)
+        _stroked(draw, ((W - nw) / 2, y), num, nf, _hex_rgb(THUMB_NUM_COLOR, (255, 213, 74)),
+                 max(6, ns // 9))
+        y += int(ns * 1.02)
+
+    lines = None
+    for size in range(int(H * 0.22), int(H * 0.09), -6):
+        f = _load_font(size)
+        cand = _wrap_words(draw, body, f, max_w, 2)
+        if len(cand) <= 2 and cand and max(draw.textlength(x, font=f) for x in cand) <= max_w:
+            lines, tf, ts = cand, f, size
+            break
+    if lines is None:
+        ts = int(H * 0.09); tf = _load_font(ts)
+        lines = _wrap_words(draw, body, tf, max_w, 2) or [body]
+    for ln in lines:
+        w = draw.textlength(ln, font=tf)
+        _stroked(draw, ((W - w) / 2, y), ln, tf, (255, 255, 255), max(6, ts // 10))
+        y += int(ts * 1.06)
+
+    os.makedirs(os.path.dirname(os.path.abspath(out_path)) or ".", exist_ok=True)
+    img.save(out_path, "JPEG", quality=88)
+    return out_path
+
+
+def _overlay_title(bg_path: str, title: str, out_path: str,
+                   accent: str | None = None, style: str | None = None,
+                   number: str = "") -> str:
+    """배경 + 문구. `*강조*` 로 감싼 부분은 accent 색으로 칠한다.
+
+    style:
+      "bottom" 하단 중앙 한 덩어리(기존 동작 · 기본값)
+      "scp"    ★번호를 상단에 초대형으로 올리고 그 아래 제목. `number` 를 함께 넘긴다
+      "none"   ★문구 없음. 배경 그대로 저장(ASMR 처럼 무텍스트가 관행인 장르)
+
+    ★하위호환: 인자 3개 호출부(story_render·asmr_render·scp_render)는 그대로 동작한다.
+    """
     from PIL import Image, ImageDraw, ImageOps
 
     img = Image.open(bg_path).convert("RGB")
     img = ImageOps.fit(img, (W, H), Image.LANCZOS)  # cover-crop 중앙
 
-    # 하단 스크림(가독성): 아래로 갈수록 어둡게
-    scrim = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    sd = ImageDraw.Draw(scrim)
-    top = int(H * 0.42)
-    for y in range(top, H):
-        a = int(215 * (y - top) / (H - top))
-        sd.line([(0, y), (W, y)], fill=(0, 0, 0, min(215, a)))
-    img = Image.alpha_composite(img.convert("RGBA"), scrim).convert("RGB")
+    st = (style or THUMB_STYLE or "bottom").strip().lower()
+    if st == "none" or not (title or "").strip():
+        os.makedirs(os.path.dirname(os.path.abspath(out_path)) or ".", exist_ok=True)
+        img.save(out_path, "JPEG", quality=88)
+        return out_path
+    if st == "scp":
+        return _overlay_scp(img, title, number, accent, out_path)
+
+    raw = (title or "").strip()
+    acc = _hex_rgb(accent or THUMB_ACCENT)
+    # *강조* 마커 → 위치만 기억하고 본문에서는 제거
+    hl = ""
+    m = re.search(r"\*([^*]{1,20})\*", raw)
+    if m:
+        hl = m.group(1)
+        raw = raw[:m.start()] + hl + raw[m.end():]
 
     draw = ImageDraw.Draw(img)
-    max_w = int(W * 0.88)
-    # 3줄 이내에 들어오도록 폰트 크기 자동 축소
-    for size in (88, 80, 72, 64, 56, 48):
+    max_w = int(W * 0.90)
+    size, lines = THUMB_MIN_FONT, []
+    # ★큰 것부터 내려온다 — 예전엔 88 이 상한이라 항상 작았다
+    step = max(4, (THUMB_MAX_FONT - THUMB_MIN_FONT) // 16)
+    for size in range(THUMB_MAX_FONT, THUMB_MIN_FONT - 1, -step):
         font = _load_font(size)
-        lines = _wrap(draw, title, font, max_w)
-        if len(lines) <= 3:
+        lines = _wrap_words(draw, raw, font, max_w, THUMB_MAX_LINES)
+        if len(lines) <= THUMB_MAX_LINES and lines and \
+                max(draw.textlength(x, font=font) for x in lines) <= max_w:
             break
-    line_h = int(size * 1.18)
+    font = _load_font(size)
+    if not lines:
+        lines = _wrap_words(draw, raw, font, max_w, THUMB_MAX_LINES) or [raw]
+
+    line_h = int(size * 1.14)
     total_h = line_h * len(lines)
-    y = H - 64 - total_h
-    stroke = max(4, size // 14)
+    y0 = H - int(H * 0.07) - total_h
+
+    # 스크림: ★텍스트 블록 위쪽부터만 어둡게 한다.
+    #   예전엔 높이 42% 지점부터 215/255 까지 깔아 이미지 절반이 죽었다.
+    scrim = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    sd = ImageDraw.Draw(scrim)
+    top = max(0, y0 - int(size * 0.7))
+    for y in range(top, H):
+        a = int(200 * (y - top) / max(1, H - top))
+        sd.line([(0, y), (W, y)], fill=(0, 0, 0, min(200, a)))
+    img = Image.alpha_composite(img.convert("RGBA"), scrim).convert("RGB")
+    draw = ImageDraw.Draw(img)
+
+    stroke = max(5, size // 12)
+    y = y0
     for ln in lines:
         w = draw.textlength(ln, font=font)
         x = (W - w) / 2
-        draw.text((x, y), ln, font=font, fill=(255, 255, 255),
-                  stroke_width=stroke, stroke_fill=(0, 0, 0))
+        if hl and hl in ln:
+            # 강조 부분만 색을 바꿔 세 조각으로 그린다
+            a, _, b = ln.partition(hl)
+            for piece, col in ((a, (255, 255, 255)), (hl, acc), (b, (255, 255, 255))):
+                if not piece:
+                    continue
+                draw.text((x, y), piece, font=font, fill=col,
+                          stroke_width=stroke, stroke_fill=(0, 0, 0))
+                x += draw.textlength(piece, font=font)
+        else:
+            draw.text((x, y), ln, font=font, fill=(255, 255, 255),
+                      stroke_width=stroke, stroke_fill=(0, 0, 0))
         y += line_h
 
     os.makedirs(os.path.dirname(os.path.abspath(out_path)) or ".", exist_ok=True)

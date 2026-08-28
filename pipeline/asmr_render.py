@@ -297,7 +297,11 @@ def build_thumbnail(hook: str, text: str, out_jpg: str, workdir: str) -> str | N
         return None
     try:
         from thumbnail import _overlay_title  # 16:9 제목 오버레이 재사용
-        return _overlay_title(raw, (text or "").strip(), out_jpg)
+        # ★ASMR 은 무텍스트가 관행이다 — 2026-08-28 상위 썸네일 6개 중 5개가 문구 없이
+        #   '만지는 손·물건 클로즈업'만 있었다. 제목이 이미 다 설명하는 장르다.
+        #   되돌리려면 ASMR_THUMB_STYLE=bottom.
+        return _overlay_title(raw, (text or "").strip(), out_jpg,
+                              style=os.environ.get("ASMR_THUMB_STYLE", "none"))
     except Exception as e:  # noqa: BLE001
         sys.stderr.write(f"[warn] 썸네일 오버레이 실패 → 스킵: {e}\n")
         return None
