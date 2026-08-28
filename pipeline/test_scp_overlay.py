@@ -174,6 +174,27 @@ else:
         except ImportError:
             print("  · 픽셀 비교 스킵 — PIL/numpy 없음")
 
+print("\n── 6. 전량 스킵 경고(조용한 실패 방지) ──")
+import contextlib  # noqa: E402
+import io  # noqa: E402
+os.environ["GITHUB_ACTIONS"] = "true"
+try:
+    import run_scp, run_scp_shorts  # noqa: E402
+except Exception as e:  # noqa: BLE001
+    print(f"  · 스킵 — 러너 임포트 실패: {e}")
+else:
+    for mod, label in ((run_scp, "롱폼"), (run_scp_shorts, "쇼츠")):
+        for case, results, want in (
+            ("전부 스킵", [{"spec": "a", "skipped": True}, {"spec": "b", "skipped": True}], True),
+            ("일부 스킵", [{"spec": "a", "skipped": True}, {"spec": "b", "skipped": False}], False),
+            ("빈 목록", [], False),
+        ):
+            buf = io.StringIO()
+            with contextlib.redirect_stdout(buf):
+                mod.warn_all_skipped(results, "테스트")
+            got = "::warning" in buf.getvalue()
+            ck(f"{label} · {case} → 경고 {'O' if want else 'X'}", got == want)
+
 print()
 if FAIL:
     print(f"❌ 실패 {FAIL}건")
