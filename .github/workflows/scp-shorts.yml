@@ -105,6 +105,11 @@ jobs:
       SCP_SHORTS_XFADE: ${{ vars.SCP_SHORTS_XFADE || '0.6' }}
       SCP_SHORTS_MAX_SCENES: ${{ vars.SCP_SHORTS_MAX_SCENES || '3' }}
       # 재생목록: 롱폼('SCP 아카이브 …')과 분리. 비우면 스펙의 shorts.playlist 사용.
+      # ★제목 계약(§2-H2) — 어긋나면 경고만 뜨고 계속 간다.
+      #   빨간불로 세우려면 SCP_FAIL_ON_TITLE=1. 반응 요구 단어 목록은 쉼표로 갈아끼운다
+      #   (빈 문자열이면 그 검사만 끈다).
+      SCP_FAIL_ON_TITLE: ${{ vars.SCP_FAIL_ON_TITLE || '' }}
+      SCP_TITLE_BANLIST: ${{ vars.SCP_TITLE_BANLIST }}
       SCP_SHORTS_PLAYLIST: ${{ vars.SCP_SHORTS_PLAYLIST }}
     steps:
       # 1) 코드는 main(기본 브랜치)에서
