@@ -381,7 +381,11 @@ def build_thumbnail(spec: dict, out_jpg: str, workdir: str) -> str | None:
         return None
     try:
         from thumbnail import _overlay_title
-        return _overlay_title(raw, text, out_jpg)
+        # ★번호를 상단에 초대형으로 — 검색으로 들어오는 장르라 번호가 곧 검색어다.
+        #   (2026-08-28: 조회수 상위 SCP 채널이 전부 이 형식이었다)
+        return _overlay_title(raw, text, out_jpg,
+                              style=os.environ.get("SCP_THUMB_STYLE", "scp"),
+                              number=str(spec.get("scp_number") or "").strip())
     except Exception as e:  # noqa: BLE001
         sys.stderr.write(f"[warn] 썸네일 오버레이 실패 → 스킵: {e}\n")
         return None
