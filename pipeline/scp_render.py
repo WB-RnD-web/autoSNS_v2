@@ -385,7 +385,9 @@ def build_thumbnail(spec: dict, out_jpg: str, workdir: str) -> str | None:
         #   (2026-08-28: 조회수 상위 SCP 채널이 전부 이 형식이었다)
         return _overlay_title(raw, text, out_jpg,
                               style=os.environ.get("SCP_THUMB_STYLE", "scp"),
-                              number=str(spec.get("scp_number") or "").strip())
+                              number=str(spec.get("scp_number") or "").strip(),
+                              quote=str(yt.get("thumbnail_quote")
+                                        or th.get("quote") or "").strip())
     except Exception as e:  # noqa: BLE001
         sys.stderr.write(f"[warn] 썸네일 오버레이 실패 → 스킵: {e}\n")
         return None

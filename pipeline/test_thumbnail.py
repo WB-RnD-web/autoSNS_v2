@@ -103,6 +103,29 @@ with tempfile.TemporaryDirectory() as td:
     ck("강조가 있으면 결과가 달라진다", os.path.getsize(a) != os.path.getsize(b))
     ck("별표가 화면에 남지 않는다(본문에서 제거됨)", True)  # 로직상 제거 — 렌더 결과로는 못 재므로 표기만
 
+print("\n── 6. thumbnail_quote 증언 말풍선 ──")
+with tempfile.TemporaryDirectory() as td:
+    bg = make_bg(os.path.join(td, "bg.png"))
+    a = os.path.join(td, "q_on.jpg")
+    b = os.path.join(td, "q_off.jpg")
+    TH._overlay_title(bg, "가라앉은 심장", a, style="scp", number="SCP-9532",
+                      quote="- 어제보다... 커졌습니다.")
+    TH._overlay_title(bg, "가라앉은 심장", b, style="scp", number="SCP-9532")
+    ck("quote 가 있으면 결과가 달라진다", os.path.getsize(a) != os.path.getsize(b))
+    for q in ["", "   ", "- 짧게", "- 아주 긴 증언을 넣어도 말풍선이 화면을 넘지 않아야 합니다 정말로요"]:
+        p2 = os.path.join(td, "q.jpg")
+        try:
+            TH._overlay_title(bg, "가라앉은 심장", p2, style="scp", number="SCP-1", quote=q)
+            ck(f"quote={q[:18]!r} 안 터짐", os.path.exists(p2))
+        except Exception as e:  # noqa: BLE001
+            ck(f"quote={q[:18]!r} 안 터짐", False, f"{type(e).__name__}: {e}")
+    # 말풍선이 화면 밖으로 안 나가는지 — 폰트 축소가 걸리는지 확인
+    from PIL import Image, ImageDraw
+    d = ImageDraw.Draw(Image.new("RGB", (TH.W, TH.H)))
+    long_q = "- 아주 긴 증언을 넣어도 말풍선이 화면을 넘지 않아야 합니다 정말로요"
+    size, font = TH._fit_line(d, long_q, int(TH.W * 0.82), int(TH.H * 0.075), int(TH.H * 0.042))
+    ck(f"긴 증언은 폰트가 줄어든다({size}px)", d.textlength(long_q, font=font) <= int(TH.W * 0.82))
+
 print()
 if FAIL:
     print(f"❌ 실패 {FAIL}건")

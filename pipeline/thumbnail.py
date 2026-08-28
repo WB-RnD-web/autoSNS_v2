@@ -162,7 +162,29 @@ def _stroked(draw, xy, text, font, fill, stroke_w, stroke_fill=(0, 0, 0)):
               stroke_width=stroke_w, stroke_fill=stroke_fill)
 
 
-def _overlay_scp(img, title: str, number: str, accent, out_path: str) -> str:
+def _quote_bar(img, quote: str):
+    """★증언 한 줄을 하단에 작은 말풍선으로. 감정은 서술이 아니라 사람의 말에서 온다.
+
+    조회수 상위 SCP 채널이 전부 쓰는 장치다("- 왜.. 왜 이러세요!!!").
+    스펙의 `thumbnail_quote` 를 받는다. 없으면 아무것도 안 그린다.
+    """
+    from PIL import ImageDraw
+    q = (quote or "").strip()
+    if not q:
+        return img
+    draw = ImageDraw.Draw(img)
+    size, font = _fit_line(draw, q, int(W * 0.82), int(H * 0.075), int(H * 0.042))
+    w = draw.textlength(q, font=font)
+    pad_x, pad_y = int(size * 0.55), int(size * 0.34)
+    x0, y1 = (W - w) / 2 - pad_x, H - int(H * 0.055)
+    y0 = y1 - size - pad_y * 2
+    draw.rounded_rectangle([x0, y0, (W + w) / 2 + pad_x, y1],
+                           radius=int(size * 0.34), fill=(8, 10, 14))
+    draw.text(((W - w) / 2, y0 + pad_y), q, font=font, fill=(240, 225, 200))
+    return img
+
+
+def _overlay_scp(img, title: str, number: str, accent, out_path: str, quote: str = "") -> str:
     """★조회수 상위 SCP 채널의 공통 형식 — 번호를 상단에 초대형, 그 아래 제목.
 
     검색으로 들어오는 장르라 ★번호가 곧 검색어다. 번호가 작으면
@@ -206,6 +228,7 @@ def _overlay_scp(img, title: str, number: str, accent, out_path: str) -> str:
         _stroked(draw, ((W - w) / 2, y), ln, tf, (255, 255, 255), max(6, ts // 10))
         y += int(ts * 1.06)
 
+    img = _quote_bar(img, quote)
     os.makedirs(os.path.dirname(os.path.abspath(out_path)) or ".", exist_ok=True)
     img.save(out_path, "JPEG", quality=88)
     return out_path
@@ -213,7 +236,7 @@ def _overlay_scp(img, title: str, number: str, accent, out_path: str) -> str:
 
 def _overlay_title(bg_path: str, title: str, out_path: str,
                    accent: str | None = None, style: str | None = None,
-                   number: str = "") -> str:
+                   number: str = "", quote: str = "") -> str:
     """배경 + 문구. `*강조*` 로 감싼 부분은 accent 색으로 칠한다.
 
     style:
@@ -234,7 +257,7 @@ def _overlay_title(bg_path: str, title: str, out_path: str,
         img.save(out_path, "JPEG", quality=88)
         return out_path
     if st == "scp":
-        return _overlay_scp(img, title, number, accent, out_path)
+        return _overlay_scp(img, title, number, accent, out_path, quote)
 
     raw = (title or "").strip()
     acc = _hex_rgb(accent or THUMB_ACCENT)
