@@ -56,7 +56,11 @@ jobs:
       # 장면/썸네일 이미지(FLUX klein-4b, 소설·ASMR 과 동일 엔드포인트)
       NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
       # 낭독 보이스(차분한 아카이브 톤)
-      STORY_VOICE: ${{ vars.SCP_VOICE || 'ko-KR-InJoonNeural' }}
+      # ★2026-08-31: 구형 InJoon → 신형 Hyunsu 로 교체.
+      #   레포의 pipeline/voice.py 는 진작 Hyunsu 를 '신형(자연스러움)' 으로 쓰고 있었는데
+      #   SCP 만 구형을 기본값으로 달고 있었다. InJoon 은 폴백으로 남긴다.
+      STORY_VOICE: ${{ vars.SCP_VOICE || 'ko-KR-HyunsuMultilingualNeural' }}
+      STORY_VOICE_FALLBACK: ${{ vars.SCP_VOICE_FALLBACK || 'ko-KR-InJoonNeural' }}
       # 낭독 속도. 기본 -4% 는 story_render.py 의 기본값이자 '사연·괴담' 톤에 맞춘 값이다.
       #   ★타깃 시청자를 10~30대로 옮기면 이 값이 곧 '지루하다'가 된다.
       #   vars.SCP_RATE 로 0% ~ +5% 를 시도해 볼 것(변수를 안 만들면 지금과 완전히 동일).
@@ -66,6 +70,11 @@ jobs:
       #   -2Hz~-4Hz 는 조금 낮고 편안하게, +2Hz 는 조금 젊게 들린다.
       #   ★목소리(SCP_VOICE)·속도(SCP_RATE)를 먼저 바꿔 보고, 그래도 아쉬울 때 손대라.
       STORY_PITCH: ${{ vars.SCP_PITCH || '+0Hz' }}
+      # ★낭독 억양 변주 — 진행률에 따라 속도·높낮이가 움직인다(0 이면 예전처럼 고정).
+      #   초반은 조금 빠르고 높게, 조여올수록 느리고 낮게, 끝에서 아주 조금 되돌아온다.
+      STORY_PROSODY: ${{ vars.STORY_PROSODY || '1' }}
+      STORY_PROSODY_RATE: ${{ vars.STORY_PROSODY_RATE || '5' }}
+      STORY_PROSODY_PITCH: ${{ vars.STORY_PROSODY_PITCH || '3' }}
       # 렌더 노브: 프레임수=인코딩시간. 정지 장면이라 10fps 로 충분(전환 1.2s=12프레임).
       SCP_FPS: ${{ vars.SCP_FPS || '10' }}
       SCP_XFADE: ${{ vars.SCP_XFADE || '1.2' }}
@@ -86,6 +95,9 @@ jobs:
       #   (빈 문자열이면 그 검사만 끈다).
       SCP_FAIL_ON_TITLE: ${{ vars.SCP_FAIL_ON_TITLE || '' }}
       SCP_TITLE_BANLIST: ${{ vars.SCP_TITLE_BANLIST }}
+      # ★낭독 문체 점검 — 프롬프트 예문 복붙·리듬 없음을 잡는다. 기본은 경고만.
+      SCP_FAIL_ON_NARRATION: ${{ vars.SCP_FAIL_ON_NARRATION || '' }}
+      SCP_RITUAL_BANLIST: ${{ vars.SCP_RITUAL_BANLIST }}
       # 재생목록 이름 고정(비우면 스펙의 playlist 사용)
       SCP_PLAYLIST: ${{ vars.SCP_PLAYLIST }}
     steps:
