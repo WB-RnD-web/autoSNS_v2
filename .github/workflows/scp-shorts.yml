@@ -95,8 +95,14 @@ jobs:
       WBSPARK_TOKEN: ${{ secrets.WBSPARK_TOKEN }}
       NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
       # 낭독: 롱폼과 같은 목소리, 다만 쇼츠라 조금 빠르고 간격을 좁힌다.
-      STORY_VOICE: ${{ vars.SCP_VOICE || 'ko-KR-InJoonNeural' }}
+      # ★2026-08-31: 구형 InJoon → 신형 Hyunsu 로 교체.
+      #   레포의 pipeline/voice.py 는 진작 Hyunsu 를 '신형(자연스러움)' 으로 쓰고 있었는데
+      #   SCP 만 구형을 기본값으로 달고 있었다. InJoon 은 폴백으로 남긴다.
+      STORY_VOICE: ${{ vars.SCP_VOICE || 'ko-KR-HyunsuMultilingualNeural' }}
+      STORY_VOICE_FALLBACK: ${{ vars.SCP_VOICE_FALLBACK || 'ko-KR-InJoonNeural' }}
       STORY_RATE: ${{ vars.SCP_SHORTS_RATE || '+6%' }}
+      # 쇼츠는 45초짜리라 진행률 곡선이 의미가 없다 → 끈다.
+      STORY_PROSODY: ${{ vars.SCP_SHORTS_PROSODY || '0' }}
       STORY_SEG_GAP: "0.18"
       STORY_LEAD_IN: "0.25"
       STORY_TAIL: "0.9"

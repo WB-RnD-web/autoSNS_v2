@@ -14,6 +14,7 @@
 """
 from __future__ import annotations
 import asyncio
+import math
 import os
 import re
 import shutil
@@ -37,6 +38,20 @@ FONT_SIZE = int(os.environ.get("STORY_FONT_SIZE", "56"))
 JOIN = os.environ.get("STORY_TTS_JOIN", "1") != "0"        # 0 = 옛 방식(세그먼트별)
 JOIN_MAX_CHARS = int(os.environ.get("STORY_TTS_JOIN_CHARS", "700"))
 GROUP_GAP = float(os.environ.get("STORY_GROUP_GAP", "0.35"))  # 그룹(문단) 사이 숨
+
+# ── ★낭독 억양 변주 ──────────────────────────────────
+# 2026-08-31. "목소리 톤·속도·높낮이가 전부 똑같아서 기계가 읽는 것 같다"는 지적.
+# 실제로 그랬다 — rate/pitch 가 영상 전체에 ★단 하나의 값으로 걸려 있었다.
+# 사람은 설명할 땐 조금 빠르고, 조여올수록 느려지고 낮아진다. 그 곡선을 흉내낸다.
+#
+# ★소재를 보지 않는다. 오직 ★이야기 진행률(묶음 위치)만 본다 — 어떤 이야기가 와도
+#   같은 방식으로 동작하고, 키워드에 걸려 꼬일 여지가 없다.
+# edge-tts 는 SSML 을 열어주지 않지만 rate/pitch 는 ★호출 단위로 줄 수 있다.
+# 묶음(문단)마다 따로 합성하고 있으므로 거기에 얹으면 된다.
+PROSODY = os.environ.get("STORY_PROSODY", "1") != "0"
+PROSODY_RATE = float(os.environ.get("STORY_PROSODY_RATE", "5"))    # ±%p
+PROSODY_PITCH = float(os.environ.get("STORY_PROSODY_PITCH", "3"))  # ±Hz
+PROSODY_PEAK = float(os.environ.get("STORY_PROSODY_PEAK", "0.82")) # 가장 느려지는 지점(진행률)
 
 
 def _bin(name):
@@ -102,19 +117,49 @@ def resolve_font(workdir: str) -> tuple[str | None, str]:
 #   → 세그먼트를 문단 크기로 묶어 ★한 번에 합성하고(연결 억양이 살아난다),
 #     자막 타이밍은 WordBoundary 이벤트로 실제 오디오에서 되찾는다.
 #     경계 무음이 아예 없어지고, 문장 사이 호흡은 TTS 가 스스로 넣는 자연스러운 양만 남는다.
-async def _synth(text, voice, out_mp3):
+def _num(s: str, unit: str) -> float:
+    """`-4%` → -4.0 · `+0Hz` → 0.0. 못 읽으면 0."""
+    try:
+        return float(str(s).strip().rstrip(unit).rstrip("z").rstrip("H") or 0)
+    except ValueError:
+        return 0.0
+
+
+def prosody_at(p: float) -> tuple[str, str]:
+    """이야기 진행률 p(0~1) → 그 대목에서 쓸 (rate, pitch) 문자열.
+
+    곡선은 하나다. 시작은 기준보다 조금 빠르고 높게(설명하는 톤),
+    PROSODY_PEAK 까지 단조롭게 느려지고 낮아지고(조여드는 톤),
+    그 뒤로는 ★조금만 되돌아온다 — 회복이 아니라 여운이다.
+    """
+    if not PROSODY:
+        return VO_RATE, VO_PITCH
+    p = 0.0 if p < 0 else (1.0 if p > 1 else p)
+    peak = min(max(PROSODY_PEAK, 0.05), 0.999)
+    if p <= peak:
+        k = math.cos(math.pi * (p / peak))          # +1 → -1
+    else:
+        k = -1.0 + 0.45 * ((p - peak) / (1 - peak))  # -1 → -0.55
+    rate = _num(VO_RATE, "%") + k * PROSODY_RATE
+    pitch = _num(VO_PITCH, "Hz") + k * PROSODY_PITCH
+    return f"{rate:+.0f}%", f"{pitch:+.0f}Hz"
+
+
+async def _synth(text, voice, out_mp3, rate=None, pitch=None):
     import edge_tts  # type: ignore
-    await edge_tts.Communicate(text, voice, rate=VO_RATE, pitch=VO_PITCH).save(out_mp3)
+    await edge_tts.Communicate(text, voice, rate=rate or VO_RATE,
+                               pitch=pitch or VO_PITCH).save(out_mp3)
 
 
-async def _synth_marks(text, voice, out_mp3):
+async def _synth_marks(text, voice, out_mp3, rate=None, pitch=None):
     """한 번의 호출로 합성하면서 단어 경계(초 단위)를 같이 받아온다."""
     import edge_tts  # type: ignore
+    rate, pitch = rate or VO_RATE, pitch or VO_PITCH
     try:
-        comm = edge_tts.Communicate(text, voice, rate=VO_RATE, pitch=VO_PITCH,
+        comm = edge_tts.Communicate(text, voice, rate=rate, pitch=pitch,
                                     boundary="WordBoundary")
     except TypeError:                      # 구버전 edge-tts: 문장 경계만 나온다(그래도 쓸 만함)
-        comm = edge_tts.Communicate(text, voice, rate=VO_RATE, pitch=VO_PITCH)
+        comm = edge_tts.Communicate(text, voice, rate=rate, pitch=pitch)
     marks = []
     with open(out_mp3, "wb") as f:
         async for ch in comm.stream():
@@ -125,14 +170,14 @@ async def _synth_marks(text, voice, out_mp3):
     return marks
 
 
-def synth_group(text: str, out_mp3: str) -> list[tuple[float, float, str]]:
+def synth_group(text: str, out_mp3: str, rate=None, pitch=None) -> list[tuple[float, float, str]]:
     """묶음 하나를 합성. 실패하면 대체 보이스로, 그래도 안 되면 예외."""
     voices = [VOICE] + ([VOICE_FALLBACK] if VOICE_FALLBACK != VOICE else [])
     last = None
     for v in voices:
         for _ in range(2):                 # 네트워크 흔들림 1회 재시도
             try:
-                marks = asyncio.run(_synth_marks(text, v, out_mp3))
+                marks = asyncio.run(_synth_marks(text, v, out_mp3, rate, pitch))
                 if os.path.exists(out_mp3) and os.path.getsize(out_mp3) > 0:
                     return marks
             except Exception as e:         # noqa: BLE001
@@ -313,7 +358,10 @@ def _synth_joined(segments, workdir, out_m4a) -> list[tuple[float, float]]:
         texts = [(segments[i].get("text") or "").strip() for i in idxs]
         mp3 = os.path.join(workdir, f"grp_{gi:03d}.mp3")
         wav = os.path.join(workdir, f"grp_{gi:03d}.wav")
-        marks = synth_group(" ".join(texts), mp3)
+        # 묶음이 하나뿐이면 진행률이 0 으로 고정돼 곡선이 의미가 없다 → 기준값 그대로.
+        p = (gi / (len(groups) - 1)) if len(groups) > 1 else None
+        rate, pitch = prosody_at(p) if p is not None else (VO_RATE, VO_PITCH)
+        marks = synth_group(" ".join(texts), mp3, rate, pitch)
         sh([FFMPEG, "-y", "-i", mp3, "-ar", "44100", "-ac", "2", wav])
         d = probe_dur(wav)
         local = _spans_from_marks(texts, marks, d)

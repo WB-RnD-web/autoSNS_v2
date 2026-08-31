@@ -23,6 +23,7 @@ import time
 
 import config
 import ledger as ledgermod
+import narration_check
 import title_rules
 
 TAGS = ["SCP", "SCP재단", "괴담", "무서운이야기", "미스터리", "심야라디오", "공포라디오", "오디오북"]
@@ -80,6 +81,9 @@ def process(spec_path: str, args, led) -> dict:
         res["skipped"] = True
         print(f"   ⏭️  ledger 처리됨({_led_key(spec)}) — 건너뜀")
         return res
+
+    # ★낭독 문체 점검 — 렌더 전에 본다. 로그 맨 위에 남아야 나중에 찾기 쉽다.
+    narration_check.report(spec.get("narration_full", ""), spec.get("segments"))
 
     story_id = spec.get("story_id", f"scp-{spec.get('date','out')}")
     out_mp4 = str(config.RENDERS_DIR / f"{story_id}.mp4")
