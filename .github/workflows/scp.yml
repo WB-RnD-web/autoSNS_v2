@@ -98,6 +98,8 @@ jobs:
       # ★낭독 문체 점검 — 프롬프트 예문 복붙·리듬 없음을 잡는다. 기본은 경고만.
       SCP_FAIL_ON_NARRATION: ${{ vars.SCP_FAIL_ON_NARRATION || '' }}
       SCP_RITUAL_BANLIST: ${{ vars.SCP_RITUAL_BANLIST }}
+      # ★이야기 뼈대 점검 — 번호에서 나온 배정과 사슬 상태. 기본은 경고만.
+      SCP_FAIL_ON_STRUCTURE: ${{ vars.SCP_FAIL_ON_STRUCTURE || '' }}
       # 재생목록 이름 고정(비우면 스펙의 playlist 사용)
       SCP_PLAYLIST: ${{ vars.SCP_PLAYLIST }}
     steps:
