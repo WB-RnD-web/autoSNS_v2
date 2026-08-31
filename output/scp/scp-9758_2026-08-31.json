@@ -1,0 +1,1323 @@
+{
+  "date": "2026-08-31",
+  "iso_week": "2026-W36",
+  "topic": "scp",
+  "privacy": "public",
+  "origin": "original",
+  "source_url": "",
+  "story_id": "scp-9758",
+  "scp_number": "SCP-9758",
+  "object_class": "Safe",
+  "codename": "미리 채운 통",
+  "number_check": {
+    "checked_at": "2026-08-31",
+    "http_code": "unverified"
+  },
+  "title": "북유럽 지하 처분장에서 발견된 미래 날짜 캐니스터의 정체 [SCP-9758]",
+  "theme": "지하 시설",
+  "logline": "북유럽 화강암 지대 지하 핵폐기물 처분장, 도면에 없는 열세 번째 층에서 이미 봉인된 통 여섯 개가 발견됩니다. 라벨에 찍힌 날짜는, 아직 오지 않은 날짜였습니다.",
+  "hook_line": "SCP-9758은 북유럽 지하, 핵폐기물을 파묻는 처분장의 통로 하나입니다.",
+  "cold_open": "SCP-9758은 북유럽 지하, 핵폐기물을 파묻는 처분장의 통로 하나입니다. 도면에 없는 열세 번째 층에서, 이미 봉인이 끝난 통 여섯 개가 나왔습니다.",
+  "procedures": [
+    "한 근무조 안에서, 시설 전체 층을 한 번에 다 세지 않는다",
+    "새로 나타난 최심층의 통은, 절대 열어보지 않는다",
+    "새 층이 나타나면, 사흘 동안은 그 층까지 엘리베이터를 내리지 않는다"
+  ],
+  "character": {
+    "name": "라르손 감독관",
+    "role": "처분장 시설 감독관 · 지질공학자",
+    "flaw": "부분 조사로는 예산 심사를 통과할 수 없다는 확신 — 절차를 어기고 전체 재고 조사를 강행해 마지막 규칙을 깬다"
+  },
+  "log_days": [
+    {
+      "day": "사흘째",
+      "event": "신입 인수인계 절차가 실수로 전체 층 재고 조사로 끝나버린다."
+    },
+    {
+      "day": "이레째",
+      "event": "도면에 없는 열세 번째 층이 실제로 나타난다. 이미 봉인된 통 여섯 개, 라벨엔 2071년."
+    },
+    {
+      "day": "보름째",
+      "event": "전체 재고와 새 층 생성의 상관관계가 공식 확인되고, 세 가지 절차가 확정된다."
+    },
+    {
+      "day": "스무이틀째",
+      "event": "교대 실수로 다시 전체 재고가 이뤄지며 열넷째 층이 등장한다. 라벨엔 2074년."
+    },
+    {
+      "day": "서른하루째",
+      "event": "마셜, 카터 & 다크가 라벨 날짜 정보를 사겠다고 접촉해 온다. 재단이 거부한다."
+    },
+    {
+      "day": "마흔닷새째",
+      "event": "스크랜턴 현실 안정 장치를 투입한다. 사흘 만에 가동 기록 자체가 사라진다."
+    },
+    {
+      "day": "쉰나흘째",
+      "event": "예산 삭감이 통보되고, 라르손 감독관이 절차를 어기고 전체 재고 조사를 지시한다."
+    },
+    {
+      "day": "여든이레째",
+      "event": "사고 보고서. 여섯 시간 만에 열다섯째 층이 등장하고, 라르손 감독관은 인사 기록에서 지워진다."
+    }
+  ],
+  "retention_beats": [
+    "아직 오지도 않은 재고가, 벌써 자리를 잡고 있었다면서요.",
+    "부분적으로만 세면, 아무 일도 일어나지 않았고요.",
+    "격리가 원인이었고, 통은 결과였던 거죠."
+  ],
+  "twist_summary": "재단이 막으려 한 건 층이 늘어나는 현상 자체가 아니라, 전체 재고 조사라는 절차 자체가 아직 오지 않은 미래 날짜의 핵폐기물 재고를 미리 만들어내고 있었다는 반전. 라르손 감독관이 예산 압박에 못 이겨 절차를 어기고 전체 재고를 강행한 뒤, 여섯 시간 만에 새 층이 나타나며 그는 인사 기록에서 지워진다.",
+  "narration_full": "SCP-9758은 북유럽 지하, 핵폐기물을 파묻는 처분장의 통로 하나입니다. 도면에 없는 열세 번째 층에서, 이미 봉인이 끝난 통 여섯 개가 나왔습니다. 이 이야기를 시작하기 전에 하나만 짚고 갈게요. 확보. 격리. 보호. 오늘은 그중에서도 '확보'에 관한 이야기입니다. 정확히는, 뭘 확보하고 있다고 믿었는지에 관한 이야기고요. 장소는 북유럽 어느 반도, 화강암 지대 지하 사백팔십칠 미터입니다. 재단은 여기 사이트를 하나 두고 있습니다. 사이트-77, 처분장 관리소예요. 상주 인원은 스물넷, 이번에도 국적이 다 다릅니다. 지질공학자, 방사선 안전 담당, 재고 관리 인력까지요. 처분장은 원래 민간 컨소시엄이 지은 시설이었습니다. 사용후핵연료를 담은 구리 통을, 화강암 속에 영구히 묻는 곳이고요. 설계 도면엔 층이 열둘까지밖에 없습니다. 그 아래는 원래 기반암이어야 하고요. 재단이 시설을 인수하면서, 이상한 걸 하나 발견했습니다. 엘리베이터 조작반에 버튼이 하나 더 있었거든요. 열셋. 도면엔 없는 층이었습니다. 버튼을 누르자 정말 문이 열렸습니다. 그 안엔 이미 봉인이 끝난 구리 통, 여섯 개가 놓여 있었고요. 문제는 통에 찍힌 날짜였습니다. 아직 오지 않은 날짜였거든요. 재단은 여기에 번호를 하나 붙였습니다. 구칠오팔. 객체 등급, 세이프. 격리 방법은 이미 나와 있다는 뜻이죠. 문제는 그 방법을 지킬 사람이 있느냐였고요. 보고서엔 그냥 '추가 격납 구역'이라고만 적혀 있습니다. 그런데 거기 있던 사람들은, 그걸 '미리 채운 통'이라고 불렀습니다. 아직 오지도 않은 재고가, 벌써 자리를 잡고 있었다면서요. 이상한 점은 하나였습니다. 시설 전체 층을 한 번에 다 세면, 사흘 안에 그 아래로 층이 하나 더 생긴다는 것. 부분적으로만 세면, 아무 일도 일어나지 않았고요. 이상하죠? 그래서 특수 격리 절차입니다. 지켜야 할 건 세 가지였습니다. 한 근무조 안에서, 시설 전체 층을 한 번에 다 세지 않는다. 새로 나타난 최심층의 통은, 절대 열어보지 않는다. 그리고 새 층이 나타나면, 사흘 동안은 그 층까지 엘리베이터를 내리지 않는다. 이걸 어기면 어떻게 되는지는, 어디에도 적혀 있지 않습니다. 이 사이트를 이끈 건 라르손 감독관이었습니다. 스웨덴 출신 지질공학자였고요. 그에게는 고집이 하나 있었습니다. 부분 조사만으로는, 예산 심사에서 시설 전체 용량을 증명할 수 없다는 것. 사흘째 기록입니다. 처음으로 전체 층 재고 조사가 있었습니다. 원래는 신입 인수인계 절차였는데, 실수로 하루 만에 다 끝나버렸습니다. 「사이트-77, 재고 이상 없음. 재확인 요청.」 그날 오후 무전에, 그렇게 찍혀 있었습니다. 이레째, 정말로 아래에 층이 하나 더 생겼습니다. 열셋. 그 안에서 이미 봉인된 통, 여섯 개가 또 나왔죠. 라벨에 찍힌 날짜는, 이천칠십일 년이었습니다. 저도 이 보고서를 처음 읽었을 때, 오타인 줄 알았습니다. 여기서 딱 한 번, 제대로 보여드릴게요. 통로는 위층과 똑같이 생겼습니다. 다만 조명이 하나도 켜져 있지 않은데도, 구리 통 표면이 옅은 청록빛으로 스스로 빛났습니다. 통 여섯 개가 나란히 놓여 있고, 라벨 글씨는 손으로 찍은 것처럼 살짝 번져 있었죠. 다가가면 낮은 웅웅거림이 들렸는데, 냉각 팬 소리와는 결이 달랐죠. 그 앞은 통로 다른 곳보다 확실히 더 차가웠고요, 쇠 냄새 대신 종이 타는 냄새가 났다고, 방사선 담당은 적었습니다. 이날 현장에 있던 인원 대부분에게, C등급 기억소거가 들어갔고요. 그런데 몇몇은 며칠 뒤, 날짜 부분만 다시 기억해냈습니다. 보름째, 재단은 이 상관관계를 공식 확인했습니다. 전체 재고를 하면 층이 생기고, 부분 재고면 아무 변화가 없다는 것. 방금 말씀드린 세 가지 규칙이, 바로 이날 확정됐습니다. 스무이틀째, 교대 인수인계 중 실수가 있었습니다. 야간조가 주간조 기록을 몰라서, 남은 구역까지 마저 세버렸거든요. 사흘도 안 돼 열넷째 층이 생겼습니다. 그 안 통에 찍힌 날짜는, 이천칠십사 년이었고요. 「이거… 날짜가 잘못 찍힌 게 아니에요. 확인 요청.」 현장 인부가 보고서 여백에 남긴 손글씨였습니다. 서른하루째, 소문을 들은 마셜, 카터 & 다크 쪽에서 접촉이 왔습니다. 「그 날짜만 알아도, 값은 부르는 대로 드리죠.」 라벨 정보만 사겠다는 제안이었고요. 재단은 거부했습니다. 이유는 간단했습니다. 그 날짜들이 뭘 의미하는지, 재단도 아직 몰랐거든요. 참고로 이 반응은, SCP-████가 있는 지역들에서 보고된 것과 비슷하다고, 내부 문건엔 적혀 있습니다. 마흔닷새째, 재단은 스크랜턴 현실 안정 장치를, 열셋째 층 통로에 설치했습니다. 이틀은 수치가 잠잠했죠. 그런데 사흘째 되던 날, 장치 두 대의 가동 기록이 통째로 사라져 있었습니다. 작동을 멈춘 게 아니라, 작동했다는 기록만 지워진 거였죠. 쉰나흘째, 예산 심사 결과가 나왔습니다. 부분 조사 자료만으로는, 시설 전체 용량을 증명할 수 없으니, 내년 예산을 절반으로 줄이겠다는 통보였습니다. 「이번엔 제대로 끝냅니다. 부분 조사로는 아무것도 증명 못 해요.」 라르손 감독관은 그렇게 말하고, 절차를 어기고 전체 재고 조사를 지시했습니다. 「전부 셉니다. 오늘 끝냅니다.」 그는 스물네 명 전원에게 그렇게 무전을 보냈습니다. 왜 하필 이 사람이, 하필 이 순간에 고집을 부렸을까요. 여든이레째, 사고 보고서입니다. 전체 재고는 그날 저녁에 끝났습니다. 몇 시간 지나지 않아, 열다섯째 층이 나타났습니다. 이번엔 사흘이 아니라 여섯 시간이었죠. 통 안 라벨의 날짜는, 다음 달이었습니다. 라르손 감독관은 그 층을 직접 확인하러 내려갔습니다. 절차상 사흘을 기다려야 했지만, 그는 기다리지 않았고요. 그날 이후 그는 인사 기록에서 이름이 지워졌습니다. 사이트-77 근무자 명단 어디에도, 그가 있었다는 흔적이 없습니다. 그런데 출입 일지엔, 지금도 그의 출입 카드가 '내부'로 표시돼 있죠. 절차가 진짜로 막으려 했던 건, 층이 늘어나는 게 아니었습니다. 오히려 그 반대였고요. 이 시설을 전부 세는 행위 자체가, 아직 오지 않은 재고를 미리 만들어내고 있었던 겁니다. 격리가 원인이었고, 통은 결과였던 거죠. '미리 채운 통'이 계속 쌓이는 진짜 이유가, 바로 그거였습니다. 지금 사이트-77에서는, 부분 조사만 이어가고 있습니다. 그런데 열다섯째 층 아래, 열여섯 번째 버튼이 조작반에 벌써 나타나 있죠. 아직 아무도, 그 버튼을 누르지 않았습니다. 이 문서의 마지막 수정일은 지난달입니다. 그런데 처분장 재고 기록은, 오늘 아침까지도 계속 들어오고 있습니다. 혹시 여러분도, '미리 채운 통'처럼, 아직 오지 않은 날짜가 찍힌 걸 본 적 있으신가요. 댓글로 한번 들려주세요. 다음 이야기에서 뵙겠습니다.",
+  "segments": [
+    {
+      "text": "SCP-9758은 북유럽 지하,",
+      "est_sec": 4,
+      "text_en": "SCP-9758 lies beneath Northern Europe,",
+      "text_ja": "SCP-9758は北欧の地下、",
+      "text_zh_Hant": "SCP-9758位於北歐地下,"
+    },
+    {
+      "text": "핵폐기물을 파묻는 처분장의 통로 하나입니다.",
+      "est_sec": 6,
+      "text_en": "a corridor in a nuclear waste repository.",
+      "text_ja": "核廃棄物を埋設する処分場の通路のひとつです。",
+      "text_zh_Hant": "是一座核廢料處置場的通道。"
+    },
+    {
+      "text": "도면에 없는 열세 번째 층에서,",
+      "est_sec": 4,
+      "text_en": "On a thirteenth level absent from the blueprints,",
+      "text_ja": "図面にない十三番目の階で、",
+      "text_zh_Hant": "在圖紙上不存在的第十三層,"
+    },
+    {
+      "text": "이미 봉인이 끝난 통 여섯 개가 나왔습니다.",
+      "est_sec": 6,
+      "text_en": "six already-sealed canisters were found.",
+      "text_ja": "すでに封印済みの容器が六個見つかりました。",
+      "text_zh_Hant": "發現了六個已經封存完畢的容器。"
+    },
+    {
+      "text": "이 이야기를 시작하기 전에 하나만 짚고 갈게요.",
+      "est_sec": 6,
+      "text_en": "Before we start, let me mention one thing.",
+      "text_ja": "この話を始める前に、ひとつだけ触れておきます。",
+      "text_zh_Hant": "在開始這個故事之前,先說一件事。"
+    },
+    {
+      "text": "확보. 격리. 보호.",
+      "est_sec": 3,
+      "text_en": "Secure. Contain. Protect.",
+      "text_ja": "確保。収容。保護。",
+      "text_zh_Hant": "確保。收容。保護。",
+      "emphasis": "확보. 격리. 보호."
+    },
+    {
+      "text": "오늘은 그중에서도 '확보'에 관한 이야기입니다.",
+      "est_sec": 6,
+      "text_en": "Today's story is about 'Secure,' specifically.",
+      "text_ja": "今日はその中でも「確保」についての話です。",
+      "text_zh_Hant": "今天要說的,正是關於「確保」的故事。"
+    },
+    {
+      "text": "정확히는,",
+      "est_sec": 2,
+      "text_en": "More precisely,",
+      "text_ja": "正確には、",
+      "text_zh_Hant": "更準確地說,"
+    },
+    {
+      "text": "뭘 확보하고 있다고 믿었는지에 관한 이야기고요.",
+      "est_sec": 6,
+      "text_en": "about what they believed they had secured.",
+      "text_ja": "何を確保していると信じていたか、という話です。",
+      "text_zh_Hant": "是關於他們以為自己確保了什麼的故事。"
+    },
+    {
+      "text": "장소는 북유럽 어느 반도,",
+      "est_sec": 3,
+      "text_en": "The location is a peninsula in Northern Europe,",
+      "text_ja": "場所は北欧のとある半島、",
+      "text_zh_Hant": "地點在北歐某個半島,"
+    },
+    {
+      "text": "화강암 지대 지하 사백팔십칠 미터입니다.",
+      "est_sec": 5,
+      "text_en": "487 meters beneath a granite bedrock zone.",
+      "text_ja": "花崗岩地帯の地下四百八十七メートルです。",
+      "text_zh_Hant": "花崗岩地層地下四百八十七公尺處。"
+    },
+    {
+      "text": "재단은 여기 사이트를 하나 두고 있습니다.",
+      "est_sec": 5,
+      "text_en": "The Foundation maintains a site here.",
+      "text_ja": "財団はここにサイトをひとつ置いています。",
+      "text_zh_Hant": "基金會在這裡設有一個站點。"
+    },
+    {
+      "text": "사이트-77, 처분장 관리소예요.",
+      "est_sec": 4,
+      "text_en": "Site-77, the repository's control office.",
+      "text_ja": "サイト-77、処分場管理所です。",
+      "text_zh_Hant": "77號站點,處置場管理所。"
+    },
+    {
+      "text": "상주 인원은 스물넷, 이번에도 국적이 다 다릅니다.",
+      "est_sec": 7,
+      "text_en": "Twenty-four staff, again from different countries.",
+      "text_ja": "常駐人員は二十四名、今回も国籍はばらばらです。",
+      "text_zh_Hant": "常駐人員二十四名,這次國籍同樣各不相同。"
+    },
+    {
+      "text": "지질공학자, 방사선 안전 담당, 재고 관리 인력까지요.",
+      "est_sec": 7,
+      "text_en": "Geoengineers, radiation safety officers, inventory staff.",
+      "text_ja": "地質工学者、放射線安全担当、在庫管理要員まで。",
+      "text_zh_Hant": "地質工程師、輻射安全人員,還有庫存管理人員。"
+    },
+    {
+      "text": "처분장은 원래 민간 컨소시엄이 지은 시설이었습니다.",
+      "est_sec": 7,
+      "text_en": "The repository was originally built by a private consortium.",
+      "text_ja": "処分場はもともと民間コンソーシアムが建てた施設でした。",
+      "text_zh_Hant": "處置場原本是民間財團興建的設施。"
+    },
+    {
+      "text": "사용후핵연료를 담은 구리 통을,",
+      "est_sec": 4,
+      "text_en": "Copper canisters holding spent nuclear fuel,",
+      "text_ja": "使用済み核燃料を収めた銅製容器を、",
+      "text_zh_Hant": "用來存放用過核燃料的銅製容器,"
+    },
+    {
+      "text": "화강암 속에 영구히 묻는 곳이고요.",
+      "est_sec": 5,
+      "text_en": "meant to be buried permanently in granite.",
+      "text_ja": "花崗岩の中に永久に埋める場所です。",
+      "text_zh_Hant": "永久埋入花崗岩之中。"
+    },
+    {
+      "text": "설계 도면엔 층이 열둘까지밖에 없습니다.",
+      "est_sec": 5,
+      "text_en": "The design only shows up to twelve levels.",
+      "text_ja": "設計図面には十二階までしかありません。",
+      "text_zh_Hant": "設計圖上最多只到十二層。"
+    },
+    {
+      "text": "그 아래는 원래 기반암이어야 하고요.",
+      "est_sec": 5,
+      "text_en": "Below that should just be bedrock.",
+      "text_ja": "その下は本来、基盤岩のはずです。",
+      "text_zh_Hant": "再往下,理應就是基岩了。"
+    },
+    {
+      "text": "재단이 시설을 인수하면서,",
+      "est_sec": 3,
+      "text_en": "When the Foundation took the site over,",
+      "text_ja": "財団が施設を引き継いだ際、",
+      "text_zh_Hant": "基金會接管這座設施時,"
+    },
+    {
+      "text": "이상한 걸 하나 발견했습니다.",
+      "est_sec": 4,
+      "text_en": "they found something strange.",
+      "text_ja": "奇妙なものをひとつ発見しました。",
+      "text_zh_Hant": "發現了一件怪事。"
+    },
+    {
+      "text": "엘리베이터 조작반에 버튼이 하나 더 있었거든요.",
+      "est_sec": 6,
+      "text_en": "The elevator panel had one extra button.",
+      "text_ja": "エレベーターの操作盤に、ボタンがひとつ多かったのです。",
+      "text_zh_Hant": "電梯操作面板上,多了一個按鈕。"
+    },
+    {
+      "text": "열셋. 도면엔 없는 층이었습니다.",
+      "est_sec": 4,
+      "text_en": "Thirteen. A level absent from the plans.",
+      "text_ja": "十三。図面にない階でした。",
+      "text_zh_Hant": "十三。圖紙上沒有的樓層。"
+    },
+    {
+      "text": "버튼을 누르자 정말 문이 열렸습니다.",
+      "est_sec": 5,
+      "text_en": "Pressing it, the door actually opened.",
+      "text_ja": "ボタンを押すと、本当に扉が開きました。",
+      "text_zh_Hant": "按下按鈕,門真的打開了。"
+    },
+    {
+      "text": "그 안엔 이미 봉인이 끝난 구리 통,",
+      "est_sec": 5,
+      "text_en": "Inside were copper canisters, already sealed,",
+      "text_ja": "中にはすでに封印された銅製容器が、",
+      "text_zh_Hant": "裡面放著已經封存完畢的銅製容器,"
+    },
+    {
+      "text": "여섯 개가 놓여 있었고요.",
+      "est_sec": 3,
+      "text_en": "six of them, sitting in a row.",
+      "text_ja": "六個並んでいました。",
+      "text_zh_Hant": "整整六個,排成一列。"
+    },
+    {
+      "text": "문제는 통에 찍힌 날짜였습니다.",
+      "est_sec": 4,
+      "text_en": "The problem was the date stamped on them.",
+      "text_ja": "問題は容器に刻まれた日付でした。",
+      "text_zh_Hant": "問題出在容器上標示的日期。"
+    },
+    {
+      "text": "아직 오지 않은 날짜였거든요.",
+      "est_sec": 4,
+      "text_en": "A date that hadn't happened yet.",
+      "text_ja": "まだ訪れていない日付だったのです。",
+      "text_zh_Hant": "那是一個還沒到來的日期。"
+    },
+    {
+      "text": "재단은 여기에 번호를 하나 붙였습니다. 구칠오팔.",
+      "est_sec": 6,
+      "text_en": "The Foundation assigned it a number. Nine-seven-five-eight.",
+      "text_ja": "財団はここに番号をひとつ付けました。九七五八。",
+      "text_zh_Hant": "基金會給它編了號。九七五八。"
+    },
+    {
+      "text": "객체 등급, 세이프.",
+      "est_sec": 3,
+      "text_en": "Object class, Safe.",
+      "text_ja": "オブジェクトクラス、セーフ。",
+      "text_zh_Hant": "物件等級,安全。"
+    },
+    {
+      "text": "격리 방법은 이미 나와 있다는 뜻이죠.",
+      "est_sec": 5,
+      "text_en": "Meaning containment procedures already existed.",
+      "text_ja": "収容方法はすでに確立されているという意味です。",
+      "text_zh_Hant": "意思是收容方法早已確立。"
+    },
+    {
+      "text": "문제는 그 방법을 지킬 사람이 있느냐였고요.",
+      "est_sec": 6,
+      "text_en": "The question was whether anyone would follow them.",
+      "text_ja": "問題は、それを守る人がいるかどうかでした。",
+      "text_zh_Hant": "問題在於,有沒有人會遵守。"
+    },
+    {
+      "text": "보고서엔 그냥 '추가 격납 구역'이라고만 적혀 있습니다.",
+      "est_sec": 7,
+      "text_en": "The report just calls it 'additional containment area.'",
+      "text_ja": "報告書にはただ「追加格納区画」とだけ記されています。",
+      "text_zh_Hant": "報告書上只寫著「附加收容區」。"
+    },
+    {
+      "text": "그런데 거기 있던 사람들은,",
+      "est_sec": 4,
+      "text_en": "But the people who worked there",
+      "text_ja": "ですが、そこにいた人々は、",
+      "text_zh_Hant": "但當時在場的人,"
+    },
+    {
+      "text": "그걸 '미리 채운 통'이라고 불렀습니다.",
+      "est_sec": 5,
+      "text_en": "called it 'the drums filled ahead of time.'",
+      "text_ja": "それを「先に詰められた容器」と呼んでいました。",
+      "text_zh_Hant": "都叫它「提前裝好的桶」。"
+    },
+    {
+      "text": "아직 오지도 않은 재고가,",
+      "est_sec": 3,
+      "text_en": "Inventory that hadn't arrived yet,",
+      "text_ja": "まだ届いてもいない在庫が、",
+      "text_zh_Hant": "還沒到貨的庫存,"
+    },
+    {
+      "text": "벌써 자리를 잡고 있었다면서요.",
+      "est_sec": 4,
+      "text_en": "already sitting in place, they said.",
+      "text_ja": "すでに場所を占めていたというのです。",
+      "text_zh_Hant": "居然已經先佔好了位置。"
+    },
+    {
+      "text": "이상한 점은 하나였습니다.",
+      "est_sec": 3,
+      "text_en": "There was one strange detail.",
+      "text_ja": "奇妙な点はひとつでした。",
+      "text_zh_Hant": "奇怪的地方只有一個。"
+    },
+    {
+      "text": "시설 전체 층을 한 번에 다 세면,",
+      "est_sec": 5,
+      "text_en": "If every level in the facility was counted at once,",
+      "text_ja": "施設全体の階を一度に数えると、",
+      "text_zh_Hant": "如果一次把整座設施的樓層全部清點完,"
+    },
+    {
+      "text": "사흘 안에 그 아래로 층이 하나 더 생긴다는 것.",
+      "est_sec": 6,
+      "text_en": "a new level would appear below within three days.",
+      "text_ja": "三日以内にその下へ、新たな階がひとつ現れるということ。",
+      "text_zh_Hant": "三天之內,下面就會多出一層。"
+    },
+    {
+      "text": "부분적으로만 세면, 아무 일도 일어나지 않았고요.",
+      "est_sec": 6,
+      "text_en": "Partial counts caused nothing at all.",
+      "text_ja": "部分的に数えるだけなら、何も起きませんでした。",
+      "text_zh_Hant": "只清點部分樓層,則什麼都不會發生。"
+    },
+    {
+      "text": "이상하죠?",
+      "est_sec": 2,
+      "text_en": "Strange, isn't it?",
+      "text_ja": "変ですよね?",
+      "text_zh_Hant": "奇怪吧?"
+    },
+    {
+      "text": "그래서 특수 격리 절차입니다.",
+      "est_sec": 4,
+      "text_en": "So, the special containment procedures.",
+      "text_ja": "そこで、特殊収容プロトコルです。",
+      "text_zh_Hant": "所以,特殊收容措施來了。"
+    },
+    {
+      "text": "지켜야 할 건 세 가지였습니다.",
+      "est_sec": 4,
+      "text_en": "There were three rules to keep.",
+      "text_ja": "守るべきことは三つでした。",
+      "text_zh_Hant": "必須遵守的規定有三條。"
+    },
+    {
+      "text": "한 근무조 안에서,",
+      "est_sec": 2,
+      "text_en": "Within a single shift,",
+      "text_ja": "ひとつの勤務班の中で、",
+      "text_zh_Hant": "同一班次內,"
+    },
+    {
+      "text": "시설 전체 층을 한 번에 다 세지 않는다.",
+      "est_sec": 5,
+      "text_en": "never count every level in the facility at once.",
+      "text_ja": "施設全体の階を一度に数えない。",
+      "text_zh_Hant": "不得一次清點設施的全部樓層。"
+    },
+    {
+      "text": "새로 나타난 최심층의 통은, 절대 열어보지 않는다.",
+      "est_sec": 7,
+      "text_en": "Never open the canisters on a newly appeared lowest level.",
+      "text_ja": "新たに現れた最深階の容器は、絶対に開けない。",
+      "text_zh_Hant": "新出現的最底層容器,絕對不能打開。"
+    },
+    {
+      "text": "그리고 새 층이 나타나면,",
+      "est_sec": 3,
+      "text_en": "And once a new level appears,",
+      "text_ja": "そして新しい階が現れたら、",
+      "text_zh_Hant": "而新樓層一旦出現,"
+    },
+    {
+      "text": "사흘 동안은 그 층까지 엘리베이터를 내리지 않는다.",
+      "est_sec": 7,
+      "text_en": "the elevator must not go down to it for three days.",
+      "text_ja": "三日間はその階までエレベーターを下ろさない。",
+      "text_zh_Hant": "三天之內電梯不得下降到那一層。"
+    },
+    {
+      "text": "이걸 어기면 어떻게 되는지는,",
+      "est_sec": 4,
+      "text_en": "What happens if you break this",
+      "text_ja": "これを破るとどうなるかは、",
+      "text_zh_Hant": "違反規定會發生什麼事,"
+    },
+    {
+      "text": "어디에도 적혀 있지 않습니다.",
+      "est_sec": 4,
+      "text_en": "is written nowhere.",
+      "text_ja": "どこにも記されていません。",
+      "text_zh_Hant": "沒有任何地方寫明。"
+    },
+    {
+      "text": "이 사이트를 이끈 건 라르손 감독관이었습니다.",
+      "est_sec": 6,
+      "text_en": "The one who led this site was Supervisor Larsson.",
+      "text_ja": "このサイトを率いていたのはラーソン監督官でした。",
+      "text_zh_Hant": "帶領這個站點的,是拉爾森督導官。"
+    },
+    {
+      "text": "스웨덴 출신 지질공학자였고요.",
+      "est_sec": 4,
+      "text_en": "A geoengineer from Sweden.",
+      "text_ja": "スウェーデン出身の地質工学者です。",
+      "text_zh_Hant": "瑞典籍的地質工程師。"
+    },
+    {
+      "text": "그에게는 고집이 하나 있었습니다.",
+      "est_sec": 4,
+      "text_en": "He had one stubborn conviction.",
+      "text_ja": "彼にはひとつ、こだわりがありました。",
+      "text_zh_Hant": "他有一個堅持。"
+    },
+    {
+      "text": "부분 조사만으로는,",
+      "est_sec": 2,
+      "text_en": "That partial surveys alone",
+      "text_ja": "部分調査だけでは、",
+      "text_zh_Hant": "他認為只靠部分調查,"
+    },
+    {
+      "text": "예산 심사에서 시설 전체 용량을 증명할 수 없다는 것.",
+      "est_sec": 7,
+      "text_en": "couldn't prove full capacity for the budget review.",
+      "text_ja": "予算審査で施設全体の容量を証明できないということ。",
+      "text_zh_Hant": "無法在預算審查中證明設施的完整容量。"
+    },
+    {
+      "text": "사흘째 기록입니다.",
+      "est_sec": 2,
+      "text_en": "Day three, the log reads.",
+      "text_ja": "三日目の記録です。",
+      "text_zh_Hant": "第三天的紀錄。"
+    },
+    {
+      "text": "처음으로 전체 층 재고 조사가 있었습니다.",
+      "est_sec": 5,
+      "text_en": "The first full-level inventory took place.",
+      "text_ja": "初めて全階在庫調査が行われました。",
+      "text_zh_Hant": "第一次進行了全樓層庫存清點。"
+    },
+    {
+      "text": "원래는 신입 인수인계 절차였는데,",
+      "est_sec": 4,
+      "text_en": "It was meant as routine onboarding,",
+      "text_ja": "本来は新人の引き継ぎ手続きでしたが、",
+      "text_zh_Hant": "原本只是新人交接的例行程序,"
+    },
+    {
+      "text": "실수로 하루 만에 다 끝나버렸습니다.",
+      "est_sec": 5,
+      "text_en": "but by mistake, it finished in a single day.",
+      "text_ja": "手違いで一日で終わってしまいました。",
+      "text_zh_Hant": "卻因為疏忽,一天之內就全部清點完了。"
+    },
+    {
+      "text": "「사이트-77, 재고 이상 없음.",
+      "est_sec": 4,
+      "text_en": "\"Site-77, inventory nominal.",
+      "text_ja": "「サイト-77、在庫異常なし。",
+      "text_zh_Hant": "「77號站點,庫存無異常。"
+    },
+    {
+      "text": "재확인 요청.」 그날 오후 무전에,",
+      "est_sec": 5,
+      "text_en": "Requesting re-check.\" That's what the radio log said,",
+      "text_ja": "再確認要請。」その日の午後、無線に、",
+      "text_zh_Hant": "請求再確認。」那天下午的無線電紀錄,"
+    },
+    {
+      "text": "그렇게 찍혀 있었습니다.",
+      "est_sec": 3,
+      "text_en": "that afternoon.",
+      "text_ja": "そう記録されていました。",
+      "text_zh_Hant": "就是這樣寫的。"
+    },
+    {
+      "text": "이레째, 정말로 아래에 층이 하나 더 생겼습니다.",
+      "est_sec": 6,
+      "text_en": "Day seven. A new level really did appear below.",
+      "text_ja": "七日目、本当にその下へ階がひとつ現れました。",
+      "text_zh_Hant": "第七天,下面真的多出了一層。"
+    },
+    {
+      "text": "열셋. 그 안에서 이미 봉인된 통,",
+      "est_sec": 5,
+      "text_en": "Thirteen. Inside, already-sealed canisters,",
+      "text_ja": "十三。その中にはすでに封印された容器が、",
+      "text_zh_Hant": "十三層。裡面又出現了已封存的容器,"
+    },
+    {
+      "text": "여섯 개가 또 나왔죠.",
+      "est_sec": 3,
+      "text_en": "six of them, again.",
+      "text_ja": "六個、また出てきました。",
+      "text_zh_Hant": "同樣是六個。"
+    },
+    {
+      "text": "라벨에 찍힌 날짜는, 이천칠십일 년이었습니다.",
+      "est_sec": 6,
+      "text_en": "The date on the label read the year 2071.",
+      "text_ja": "ラベルに刻まれた日付は、二〇七一年でした。",
+      "text_zh_Hant": "標籤上的日期,是二〇七一年。",
+      "emphasis": "이천칠십일 년"
+    },
+    {
+      "text": "저도 이 보고서를 처음 읽었을 때,",
+      "est_sec": 5,
+      "text_en": "When I first read this report,",
+      "text_ja": "私もこの報告書を初めて読んだとき、",
+      "text_zh_Hant": "我第一次看到這份報告時,"
+    },
+    {
+      "text": "오타인 줄 알았습니다.",
+      "est_sec": 3,
+      "text_en": "I thought it was a typo.",
+      "text_ja": "誤植だと思いました。",
+      "text_zh_Hant": "還以為是打字打錯了。"
+    },
+    {
+      "text": "여기서 딱 한 번, 제대로 보여드릴게요.",
+      "est_sec": 5,
+      "text_en": "Just this once, let me show you properly.",
+      "text_ja": "ここで一度だけ、きちんとお見せします。",
+      "text_zh_Hant": "接下來,只在這裡完整描述一次。"
+    },
+    {
+      "text": "통로는 위층과 똑같이 생겼습니다.",
+      "est_sec": 4,
+      "text_en": "The corridor looked identical to the one above.",
+      "text_ja": "通路は上の階とまったく同じ見た目でした。",
+      "text_zh_Hant": "這條通道和上面那層長得一模一樣。"
+    },
+    {
+      "text": "다만 조명이 하나도 켜져 있지 않은데도,",
+      "est_sec": 5,
+      "text_en": "Except that with no lights on at all,",
+      "text_ja": "ただ、照明がひとつも点いていないのに、",
+      "text_zh_Hant": "只是明明沒有開任何燈,"
+    },
+    {
+      "text": "구리 통 표면이 옅은 청록빛으로 스스로 빛났습니다.",
+      "est_sec": 7,
+      "text_en": "the canister surfaces glowed faint teal on their own.",
+      "text_ja": "銅製容器の表面が淡い青緑色に、自ら光っていました。",
+      "text_zh_Hant": "銅製容器的表面卻自己發出淡淡的青綠色光。"
+    },
+    {
+      "text": "통 여섯 개가 나란히 놓여 있고,",
+      "est_sec": 4,
+      "text_en": "Six canisters sat in a row,",
+      "text_ja": "容器六個が並んで置かれ、",
+      "text_zh_Hant": "六個容器並排放著,"
+    },
+    {
+      "text": "라벨 글씨는 손으로 찍은 것처럼 살짝 번져 있었죠.",
+      "est_sec": 7,
+      "text_en": "the label text slightly smudged, as if stamped by hand.",
+      "text_ja": "ラベルの文字は手で押したように、少しにじんでいました。",
+      "text_zh_Hant": "標籤上的字跡有點暈開,像是用手蓋上去的。"
+    },
+    {
+      "text": "다가가면 낮은 웅웅거림이 들렸는데,",
+      "est_sec": 5,
+      "text_en": "Getting closer, a low hum could be heard,",
+      "text_ja": "近づくと低い唸り音が聞こえましたが、",
+      "text_zh_Hant": "靠近時能聽到低沉的嗡嗡聲,"
+    },
+    {
+      "text": "냉각 팬 소리와는 결이 달랐죠.",
+      "est_sec": 4,
+      "text_en": "different in texture from the cooling fans.",
+      "text_ja": "冷却ファンの音とは質が違いました。",
+      "text_zh_Hant": "和冷卻風扇的聲音明顯不同。"
+    },
+    {
+      "text": "그 앞은 통로 다른 곳보다 확실히 더 차가웠고요,",
+      "est_sec": 6,
+      "text_en": "The air there was noticeably colder than the rest of the corridor,",
+      "text_ja": "その前は通路の他の場所より明らかに冷たく、",
+      "text_zh_Hant": "那裡的空氣比通道其他地方明顯更冷,"
+    },
+    {
+      "text": "쇠 냄새 대신 종이 타는 냄새가 났다고,",
+      "est_sec": 5,
+      "text_en": "and instead of metal, it smelled of burning paper,",
+      "text_ja": "金属臭の代わりに紙が焦げるような匂いがしたと、",
+      "text_zh_Hant": "而且聞到的不是金屬味,是紙張燒焦的氣味,"
+    },
+    {
+      "text": "방사선 담당은 적었습니다.",
+      "est_sec": 3,
+      "text_en": "the radiation officer wrote.",
+      "text_ja": "放射線担当は記していました。",
+      "text_zh_Hant": "輻射安全人員在報告裡這樣寫。"
+    },
+    {
+      "text": "이날 현장에 있던 인원 대부분에게,",
+      "est_sec": 5,
+      "text_en": "Most of the staff on site that day",
+      "text_ja": "その日、現場にいた人員の大半に、",
+      "text_zh_Hant": "當天在場的大多數人員,"
+    },
+    {
+      "text": "C등급 기억소거가 들어갔고요.",
+      "est_sec": 4,
+      "text_en": "were given Class-C amnestics.",
+      "text_ja": "C等級の記憶処理が施されました。",
+      "text_zh_Hant": "都被施以C級記憶消除。"
+    },
+    {
+      "text": "그런데 몇몇은 며칠 뒤,",
+      "est_sec": 3,
+      "text_en": "But a few, days later,",
+      "text_ja": "ですが数名は数日後、",
+      "text_zh_Hant": "但有幾個人在幾天後,"
+    },
+    {
+      "text": "날짜 부분만 다시 기억해냈습니다.",
+      "est_sec": 4,
+      "text_en": "recalled only the date again.",
+      "text_ja": "日付の部分だけを思い出しました。",
+      "text_zh_Hant": "又想起了日期的部分。"
+    },
+    {
+      "text": "보름째, 재단은 이 상관관계를 공식 확인했습니다.",
+      "est_sec": 6,
+      "text_en": "Day fifteen, the Foundation confirmed the correlation officially.",
+      "text_ja": "十五日目、財団はこの相関関係を正式に確認しました。",
+      "text_zh_Hant": "第十五天,基金會正式確認了這個關聯性。"
+    },
+    {
+      "text": "전체 재고를 하면 층이 생기고,",
+      "est_sec": 4,
+      "text_en": "A full count produces a level;",
+      "text_ja": "全階を数えると階が生まれ、",
+      "text_zh_Hant": "只要全面清點,就會出現新樓層;"
+    },
+    {
+      "text": "부분 재고면 아무 변화가 없다는 것.",
+      "est_sec": 5,
+      "text_en": "a partial one produces nothing.",
+      "text_ja": "部分的な在庫では何も変わらないということ。",
+      "text_zh_Hant": "只做部分清點,則毫無變化。"
+    },
+    {
+      "text": "방금 말씀드린 세 가지 규칙이,",
+      "est_sec": 4,
+      "text_en": "The three rules I just mentioned",
+      "text_ja": "先ほどお話しした三つの規則が、",
+      "text_zh_Hant": "剛才提到的三條規定,"
+    },
+    {
+      "text": "바로 이날 확정됐습니다.",
+      "est_sec": 3,
+      "text_en": "were finalized on this very day.",
+      "text_ja": "まさにこの日に確定しました。",
+      "text_zh_Hant": "就是在這一天正式確立的。"
+    },
+    {
+      "text": "스무이틀째, 교대 인수인계 중 실수가 있었습니다.",
+      "est_sec": 6,
+      "text_en": "Day twenty-two, a mistake happened during shift handover.",
+      "text_ja": "二十二日目、交代の引き継ぎ中にミスがありました。",
+      "text_zh_Hant": "第二十二天,交接班時出了差錯。"
+    },
+    {
+      "text": "야간조가 주간조 기록을 몰라서,",
+      "est_sec": 4,
+      "text_en": "The night shift, unaware of the day shift's log,",
+      "text_ja": "夜勤班が日勤班の記録を知らず、",
+      "text_zh_Hant": "夜班人員不知道日班的紀錄,"
+    },
+    {
+      "text": "남은 구역까지 마저 세버렸거든요.",
+      "est_sec": 4,
+      "text_en": "ended up counting the remaining sections too.",
+      "text_ja": "残った区画まで数えてしまったのです。",
+      "text_zh_Hant": "把剩下的區域也一併清點完了。"
+    },
+    {
+      "text": "사흘도 안 돼 열넷째 층이 생겼습니다.",
+      "est_sec": 5,
+      "text_en": "In under three days, a fourteenth level appeared.",
+      "text_ja": "三日も経たずに十四番目の階が現れました。",
+      "text_zh_Hant": "不到三天,第十四層就出現了。"
+    },
+    {
+      "text": "그 안 통에 찍힌 날짜는, 이천칠십사 년이었고요.",
+      "est_sec": 6,
+      "text_en": "The date on its canisters read 2074.",
+      "text_ja": "その中の容器の日付は、二〇七四年でした。",
+      "text_zh_Hant": "裡面容器上的日期,是二〇七四年。"
+    },
+    {
+      "text": "「이거… 날짜가 잘못 찍힌 게 아니에요.",
+      "est_sec": 5,
+      "text_en": "\"This... the date isn't a mistake.",
+      "text_ja": "「これは……日付の刻み間違いではありません。",
+      "text_zh_Hant": "「這個……日期並沒有標錯。"
+    },
+    {
+      "text": "확인 요청.」",
+      "est_sec": 2,
+      "text_en": "Please confirm.\"",
+      "text_ja": "確認要請。」",
+      "text_zh_Hant": "請求確認。」"
+    },
+    {
+      "text": "현장 인부가 보고서 여백에 남긴 손글씨였습니다.",
+      "est_sec": 6,
+      "text_en": "A worker had scrawled it in the report's margin.",
+      "text_ja": "現場作業員が報告書の余白に残した走り書きでした。",
+      "text_zh_Hant": "這是現場工人在報告邊緣留下的手寫字。"
+    },
+    {
+      "text": "서른하루째, 소문을 들은 마셜,",
+      "est_sec": 4,
+      "text_en": "Day thirty-one. Word had gotten out, and Marshall,",
+      "text_ja": "三十一日目、噂を聞いたマーシャル、",
+      "text_zh_Hant": "第三十一天,聽到風聲的馬歇爾、"
+    },
+    {
+      "text": "카터 & 다크 쪽에서 접촉이 왔습니다.",
+      "est_sec": 5,
+      "text_en": "Carter & Dark reached out.",
+      "text_ja": "カーター&ダークから接触がありました。",
+      "text_zh_Hant": "卡特和達克主動接觸了基金會。"
+    },
+    {
+      "text": "「그 날짜만 알아도,",
+      "est_sec": 3,
+      "text_en": "\"Just for those dates,",
+      "text_ja": "「その日付さえ分かれば、",
+      "text_zh_Hant": "「只要知道那些日期,"
+    },
+    {
+      "text": "값은 부르는 대로 드리죠.」",
+      "est_sec": 4,
+      "text_en": "name your price.\"",
+      "text_ja": "言い値でお支払いしましょう。」",
+      "text_zh_Hant": "開多少價我們都付。」"
+    },
+    {
+      "text": "라벨 정보만 사겠다는 제안이었고요.",
+      "est_sec": 5,
+      "text_en": "They only wanted to buy the label data.",
+      "text_ja": "ラベル情報だけを買いたいという申し出でした。",
+      "text_zh_Hant": "他們只想買下標籤上的資訊。"
+    },
+    {
+      "text": "재단은 거부했습니다.",
+      "est_sec": 3,
+      "text_en": "The Foundation refused.",
+      "text_ja": "財団は拒否しました。",
+      "text_zh_Hant": "基金會拒絕了。"
+    },
+    {
+      "text": "이유는 간단했습니다.",
+      "est_sec": 3,
+      "text_en": "The reason was simple.",
+      "text_ja": "理由は単純でした。",
+      "text_zh_Hant": "理由很簡單。"
+    },
+    {
+      "text": "그 날짜들이 뭘 의미하는지, 재단도 아직 몰랐거든요.",
+      "est_sec": 7,
+      "text_en": "Even the Foundation didn't yet know what the dates meant.",
+      "text_ja": "その日付が何を意味するのか、財団もまだ分からなかったのです。",
+      "text_zh_Hant": "連基金會自己,都還不知道那些日期代表什麼。"
+    },
+    {
+      "text": "참고로 이 반응은,",
+      "est_sec": 2,
+      "text_en": "For reference, this reaction",
+      "text_ja": "ちなみにこの反応は、",
+      "text_zh_Hant": "順帶一提,這種反應,"
+    },
+    {
+      "text": "SCP-████가 있는 지역들에서 보고된 것과 비슷하다고,",
+      "est_sec": 8,
+      "text_en": "resembled cases reported near SCP-████ sites,",
+      "text_ja": "SCP-████がある地域で報告されたものと似ていると、",
+      "text_zh_Hant": "和SCP-████所在地區回報的情況類似,"
+    },
+    {
+      "text": "내부 문건엔 적혀 있습니다.",
+      "est_sec": 4,
+      "text_en": "internal documents note.",
+      "text_ja": "内部文書には記されています。",
+      "text_zh_Hant": "內部文件是這麼記載的。"
+    },
+    {
+      "text": "마흔닷새째,",
+      "est_sec": 2,
+      "text_en": "Day forty-five,",
+      "text_ja": "四十五日目、",
+      "text_zh_Hant": "第四十五天,"
+    },
+    {
+      "text": "재단은 스크랜턴 현실 안정 장치를,",
+      "est_sec": 5,
+      "text_en": "the Foundation installed a Scranton Reality Anchor",
+      "text_ja": "財団はスクラントン現実錨を、",
+      "text_zh_Hant": "基金會在十三層通道,"
+    },
+    {
+      "text": "열셋째 층 통로에 설치했습니다.",
+      "est_sec": 4,
+      "text_en": "in the level-thirteen corridor.",
+      "text_ja": "十三階の通路に設置しました。",
+      "text_zh_Hant": "設置了史蘭頓現實錨定裝置。"
+    },
+    {
+      "text": "이틀은 수치가 잠잠했죠.",
+      "est_sec": 3,
+      "text_en": "For two days, the readings stayed quiet.",
+      "text_ja": "二日間は数値が落ち着いていました。",
+      "text_zh_Hant": "頭兩天,數值都很平穩。"
+    },
+    {
+      "text": "그런데 사흘째 되던 날,",
+      "est_sec": 3,
+      "text_en": "But on the third day,",
+      "text_ja": "ですが三日目になった日、",
+      "text_zh_Hant": "但到了第三天,"
+    },
+    {
+      "text": "장치 두 대의 가동 기록이 통째로 사라져 있었습니다.",
+      "est_sec": 7,
+      "text_en": "the logs of both units had vanished entirely.",
+      "text_ja": "二台の装置の稼働記録がまるごと消えていました。",
+      "text_zh_Hant": "兩台裝置的運作紀錄竟然整個消失了。"
+    },
+    {
+      "text": "작동을 멈춘 게 아니라,",
+      "est_sec": 3,
+      "text_en": "Not that they'd stopped running —",
+      "text_ja": "作動を止めたのではなく、",
+      "text_zh_Hant": "不是停止運作,"
+    },
+    {
+      "text": "작동했다는 기록만 지워진 거였죠.",
+      "est_sec": 4,
+      "text_en": "only the record that they'd run at all was erased.",
+      "text_ja": "作動していたという記録だけが消されていたのです。",
+      "text_zh_Hant": "而是連曾經運作過的紀錄都被抹去了。"
+    },
+    {
+      "text": "쉰나흘째, 예산 심사 결과가 나왔습니다.",
+      "est_sec": 5,
+      "text_en": "Day fifty-four, the budget review result came in.",
+      "text_ja": "五十四日目、予算審査の結果が出ました。",
+      "text_zh_Hant": "第五十四天,預算審查結果出爐。"
+    },
+    {
+      "text": "부분 조사 자료만으로는,",
+      "est_sec": 3,
+      "text_en": "With only partial survey data,",
+      "text_ja": "部分調査のデータだけでは、",
+      "text_zh_Hant": "由於只有部分調查資料,"
+    },
+    {
+      "text": "시설 전체 용량을 증명할 수 없으니,",
+      "est_sec": 5,
+      "text_en": "full facility capacity couldn't be proven,",
+      "text_ja": "施設全体の容量を証明できないため、",
+      "text_zh_Hant": "無法證明設施的完整容量,"
+    },
+    {
+      "text": "내년 예산을 절반으로 줄이겠다는 통보였습니다.",
+      "est_sec": 6,
+      "text_en": "so next year's budget would be cut in half.",
+      "text_ja": "来年度の予算を半分に減らすという通告でした。",
+      "text_zh_Hant": "因此明年的預算將被砍半。"
+    },
+    {
+      "text": "「이번엔 제대로 끝냅니다.",
+      "est_sec": 3,
+      "text_en": "\"This time, we finish it properly.",
+      "text_ja": "「今回はきちんと終わらせます。",
+      "text_zh_Hant": "「這次一定要徹底做完。"
+    },
+    {
+      "text": "부분 조사로는 아무것도 증명 못 해요.」",
+      "est_sec": 5,
+      "text_en": "Partial surveys prove nothing.\"",
+      "text_ja": "部分調査では何も証明できません。」",
+      "text_zh_Hant": "部分調查什麼都證明不了。」"
+    },
+    {
+      "text": "라르손 감독관은 그렇게 말하고,",
+      "est_sec": 4,
+      "text_en": "Supervisor Larsson said this,",
+      "text_ja": "ラーソン監督官はそう言って、",
+      "text_zh_Hant": "拉爾森督導官這麼說完,"
+    },
+    {
+      "text": "절차를 어기고 전체 재고 조사를 지시했습니다.",
+      "est_sec": 6,
+      "text_en": "and ordered a full inventory, breaking protocol.",
+      "text_ja": "手続きを破り、全階在庫調査を指示しました。",
+      "text_zh_Hant": "便違反規定,下令進行全樓層清點。"
+    },
+    {
+      "text": "「전부 셉니다. 오늘 끝냅니다.」",
+      "est_sec": 4,
+      "text_en": "\"We count everything. We finish today.\"",
+      "text_ja": "「全部数えます。今日中に終わらせます。」",
+      "text_zh_Hant": "「全部清點。今天之內結束。」"
+    },
+    {
+      "text": "그는 스물네 명 전원에게 그렇게 무전을 보냈습니다.",
+      "est_sec": 7,
+      "text_en": "He radioed that to all twenty-four staff.",
+      "text_ja": "彼は二十四名全員にそう無線を送りました。",
+      "text_zh_Hant": "他用無線電向全部二十四名人員這樣下令。"
+    },
+    {
+      "text": "왜 하필 이 사람이,",
+      "est_sec": 3,
+      "text_en": "Why him, of all people,",
+      "text_ja": "なぜよりによってこの人が、",
+      "text_zh_Hant": "為什麼偏偏是這個人,"
+    },
+    {
+      "text": "하필 이 순간에 고집을 부렸을까요.",
+      "est_sec": 5,
+      "text_en": "and why did he dig in his heels at this exact moment?",
+      "text_ja": "よりによってこの瞬間に意地を張ったのでしょうか。",
+      "text_zh_Hant": "偏偏在這個時刻堅持己見呢?"
+    },
+    {
+      "text": "여든이레째, 사고 보고서입니다.",
+      "est_sec": 4,
+      "text_en": "Day eighty-seven. The incident report.",
+      "text_ja": "八十七日目、事故報告書です。",
+      "text_zh_Hant": "第八十七天,事故報告書。"
+    },
+    {
+      "text": "전체 재고는 그날 저녁에 끝났습니다.",
+      "est_sec": 5,
+      "text_en": "The full inventory finished that evening.",
+      "text_ja": "全階在庫はその日の夕方に終わりました。",
+      "text_zh_Hant": "全樓層清點在當天傍晚完成。"
+    },
+    {
+      "text": "몇 시간 지나지 않아, 열다섯째 층이 나타났습니다.",
+      "est_sec": 7,
+      "text_en": "Within hours, a fifteenth level appeared.",
+      "text_ja": "数時間も経たないうちに、十五番目の階が現れました。",
+      "text_zh_Hant": "才過幾個小時,第十五層就出現了。"
+    },
+    {
+      "text": "이번엔 사흘이 아니라 여섯 시간이었죠.",
+      "est_sec": 5,
+      "text_en": "This time, not three days — six hours.",
+      "text_ja": "今回は三日ではなく、六時間でした。",
+      "text_zh_Hant": "這次不是三天,而是六個小時。"
+    },
+    {
+      "text": "통 안 라벨의 날짜는, 다음 달이었습니다.",
+      "est_sec": 5,
+      "text_en": "The date on the canister label was next month.",
+      "text_ja": "容器のラベルの日付は、来月でした。",
+      "text_zh_Hant": "容器標籤上的日期,是下個月。"
+    },
+    {
+      "text": "라르손 감독관은 그 층을 직접 확인하러 내려갔습니다.",
+      "est_sec": 7,
+      "text_en": "Supervisor Larsson went down to check the level himself.",
+      "text_ja": "ラーソン監督官はその階を直接確認しに降りていきました。",
+      "text_zh_Hant": "拉爾森督導官親自下去查看那一層。"
+    },
+    {
+      "text": "절차상 사흘을 기다려야 했지만,",
+      "est_sec": 4,
+      "text_en": "Protocol required waiting three days,",
+      "text_ja": "手続き上、三日待つべきでしたが、",
+      "text_zh_Hant": "按規定應該等三天,"
+    },
+    {
+      "text": "그는 기다리지 않았고요.",
+      "est_sec": 3,
+      "text_en": "but he didn't wait.",
+      "text_ja": "彼は待ちませんでした。",
+      "text_zh_Hant": "但他沒有等。"
+    },
+    {
+      "text": "그날 이후 그는 인사 기록에서 이름이 지워졌습니다.",
+      "est_sec": 7,
+      "text_en": "From that day on, his name was erased from personnel records.",
+      "text_ja": "その日以降、彼は人事記録から名前が消されました。",
+      "text_zh_Hant": "從那天起,他的名字就從人事紀錄裡消失了。"
+    },
+    {
+      "text": "사이트-77 근무자 명단 어디에도,",
+      "est_sec": 5,
+      "text_en": "Nowhere on Site-77's staff roster",
+      "text_ja": "サイト-77の職員名簿のどこにも、",
+      "text_zh_Hant": "77號站點的員工名冊上,"
+    },
+    {
+      "text": "그가 있었다는 흔적이 없습니다.",
+      "est_sec": 4,
+      "text_en": "is there any trace he existed.",
+      "text_ja": "彼がいた痕跡はありません。",
+      "text_zh_Hant": "找不到他曾經存在過的痕跡。"
+    },
+    {
+      "text": "그런데 출입 일지엔,",
+      "est_sec": 3,
+      "text_en": "And yet, in the access log,",
+      "text_ja": "ですが入退室記録には、",
+      "text_zh_Hant": "但出入紀錄裡,"
+    },
+    {
+      "text": "지금도 그의 출입 카드가 '내부'로 표시돼 있죠.",
+      "est_sec": 6,
+      "text_en": "his badge still reads 'inside,' even now.",
+      "text_ja": "今も彼の入館証が「内部」と表示されています。",
+      "text_zh_Hant": "他的通行證至今仍顯示「內部」。"
+    },
+    {
+      "text": "절차가 진짜로 막으려 했던 건,",
+      "est_sec": 4,
+      "text_en": "What the procedures were really meant to stop",
+      "text_ja": "手続きが本当に防ごうとしていたのは、",
+      "text_zh_Hant": "這套程序真正想阻止的,"
+    },
+    {
+      "text": "층이 늘어나는 게 아니었습니다.",
+      "est_sec": 4,
+      "text_en": "wasn't the levels multiplying.",
+      "text_ja": "階が増えることではありませんでした。",
+      "text_zh_Hant": "並不是樓層不斷增加這件事。"
+    },
+    {
+      "text": "오히려 그 반대였고요.",
+      "est_sec": 3,
+      "text_en": "It was the exact opposite.",
+      "text_ja": "むしろその逆でした。",
+      "text_zh_Hant": "恰恰相反。"
+    },
+    {
+      "text": "이 시설을 전부 세는 행위 자체가,",
+      "est_sec": 5,
+      "text_en": "The act of counting the whole facility itself",
+      "text_ja": "この施設全体を数えるという行為自体が、",
+      "text_zh_Hant": "清點整座設施這個行為本身,"
+    },
+    {
+      "text": "아직 오지 않은 재고를 미리 만들어내고 있었던 겁니다.",
+      "est_sec": 7,
+      "text_en": "was what generated inventory that hadn't arrived yet.",
+      "text_ja": "まだ届いていない在庫を、あらかじめ作り出していたのです。",
+      "text_zh_Hant": "就是在提前製造出還沒到貨的庫存。"
+    },
+    {
+      "text": "격리가 원인이었고, 통은 결과였던 거죠.",
+      "est_sec": 5,
+      "text_en": "Containment was the cause. The drums were the result.",
+      "text_ja": "収容が原因で、容器はその結果だったのです。",
+      "text_zh_Hant": "收容是因,容器才是果。"
+    },
+    {
+      "text": "'미리 채운 통'이 계속 쌓이는 진짜 이유가,",
+      "est_sec": 6,
+      "text_en": "The real reason 'the drums filled ahead of time' kept piling up",
+      "text_ja": "「先に詰められた容器」が積み上がり続ける本当の理由が、",
+      "text_zh_Hant": "「提前裝好的桶」不斷堆積的真正原因,"
+    },
+    {
+      "text": "바로 그거였습니다.",
+      "est_sec": 2,
+      "text_en": "was exactly that.",
+      "text_ja": "まさにそれでした。",
+      "text_zh_Hant": "就在於此。"
+    },
+    {
+      "text": "지금 사이트-77에서는,",
+      "est_sec": 3,
+      "text_en": "At Site-77 right now,",
+      "text_ja": "現在サイト-77では、",
+      "text_zh_Hant": "現在的77號站點,"
+    },
+    {
+      "text": "부분 조사만 이어가고 있습니다.",
+      "est_sec": 4,
+      "text_en": "only partial surveys continue.",
+      "text_ja": "部分調査だけが続けられています。",
+      "text_zh_Hant": "仍然只進行部分清點。"
+    },
+    {
+      "text": "그런데 열다섯째 층 아래,",
+      "est_sec": 3,
+      "text_en": "But below the fifteenth level,",
+      "text_ja": "ですが十五階の下に、",
+      "text_zh_Hant": "但在第十五層之下,"
+    },
+    {
+      "text": "열여섯 번째 버튼이 조작반에 벌써 나타나 있죠.",
+      "est_sec": 6,
+      "text_en": "a sixteenth button has already appeared on the panel.",
+      "text_ja": "十六番目のボタンが、すでに操作盤に現れています。",
+      "text_zh_Hant": "操作面板上已經出現了第十六個按鈕。",
+      "emphasis": "열여섯 번째 버튼"
+    },
+    {
+      "text": "아직 아무도, 그 버튼을 누르지 않았습니다.",
+      "est_sec": 6,
+      "text_en": "No one has pressed it yet.",
+      "text_ja": "まだ誰も、そのボタンを押していません。",
+      "text_zh_Hant": "至今還沒有人,按下那個按鈕。"
+    },
+    {
+      "text": "이 문서의 마지막 수정일은 지난달입니다.",
+      "est_sec": 5,
+      "text_en": "This document was last revised last month.",
+      "text_ja": "この文書の最終更新日は先月です。",
+      "text_zh_Hant": "這份文件的最後修改日期是上個月。"
+    },
+    {
+      "text": "그런데 처분장 재고 기록은,",
+      "est_sec": 4,
+      "text_en": "Yet the repository's inventory log",
+      "text_ja": "ですが処分場の在庫記録は、",
+      "text_zh_Hant": "但處置場的庫存紀錄,"
+    },
+    {
+      "text": "오늘 아침까지도 계속 들어오고 있습니다.",
+      "est_sec": 5,
+      "text_en": "kept coming in as recently as this morning.",
+      "text_ja": "今朝までずっと届き続けています。",
+      "text_zh_Hant": "直到今天早上都還在持續傳來。"
+    },
+    {
+      "text": "혹시 여러분도,",
+      "est_sec": 2,
+      "text_en": "Have you, too,",
+      "text_ja": "もしかして皆さんも、",
+      "text_zh_Hant": "不知道各位是否也曾,"
+    },
+    {
+      "text": "'미리 채운 통'처럼,",
+      "est_sec": 3,
+      "text_en": "ever seen something like 'drums filled ahead of time' —",
+      "text_ja": "「先に詰められた容器」のように、",
+      "text_zh_Hant": "像「提前裝好的桶」一樣,"
+    },
+    {
+      "text": "아직 오지 않은 날짜가 찍힌 걸 본 적 있으신가요.",
+      "est_sec": 7,
+      "text_en": "something stamped with a date that hadn't come yet?",
+      "text_ja": "まだ来ていない日付が刻まれたものを見たことがありますか。",
+      "text_zh_Hant": "看過標示著還沒到來的日期的東西呢?"
+    },
+    {
+      "text": "댓글로 한번 들려주세요.",
+      "est_sec": 3,
+      "text_en": "Tell us in the comments.",
+      "text_ja": "コメントで聞かせてください。",
+      "text_zh_Hant": "歡迎在留言區告訴我們。"
+    },
+    {
+      "text": "다음 이야기에서 뵙겠습니다.",
+      "est_sec": 4,
+      "text_en": "See you in the next story.",
+      "text_ja": "また次のお話でお会いしましょう。",
+      "text_zh_Hant": "我們下個故事再見。"
+    }
+  ],
+  "scenes": [
+    {
+      "prompt": "exterior of a squat concrete access building on a windswept granite outcrop in northern Europe, low grey overcast sky, a single fenced shaft housing at center, wide static shot, one-point perspective, deep focus, single overcast daylight source, cool flat gray tone, soft even shadow, weathered concrete, rusted chain-link fence, lichen-stained rock, thin mist haze, cold damp air, desaturated slate and moss palette with one dim warm window light, 24mm lens, f/8, sharp detail, photorealistic, lower quarter empty gravel ground. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "interior of a cramped elevator car, close view of a worn steel control panel with round illuminated buttons numbered one through twelve, one extra unmarked button below them glowing faintly, medium close shot, centered composition, single overhead panel light, cool white 4000K, hard downward shadow, brushed steel plate, scratched button caps, faint dust film, still recycled air, desaturated gray palette with one warm amber button glow, 35mm lens, f/4, sharp detail, photorealistic, lower quarter of frame is empty elevator floor. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "long underground concrete corridor at level twelve, rows of identical steel doors receding into the distance, wide shot, one-point perspective, symmetrical framing, deep focus, single row of overhead fluorescent tubes, cool white 4000K, hard downward shadows, bare concrete walls, exposed conduit, worn epoxy floor, thin dust haze, cold still air, desaturated gray-blue palette with one flickering warm light near the end, 24mm lens, f/8, sharp detail, photorealistic, lower quarter of frame is empty corridor floor. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "a single steel elevator door standing slightly ajar at the end of a dim corridor, darkness visible through the gap, wide shot, one-point perspective, deep focus, single dim ceiling light source, cool gray tone fading into black beyond the gap, hard shadow along the door edge, riveted steel frame, faint condensation streak, thin dust haze, cold still air, desaturated gray palette with one narrow band of darker void, 28mm lens, f/8, sharp detail, photorealistic, lower quarter of frame is empty floor. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "six identical copper canisters standing in a row inside a bare concrete chamber, each with a printed label, wide shot, one-point perspective, symmetrical framing, deep focus, single overhead work light, cool white tone, hard downward shadow, oxidized copper surface, raw concrete floor, faint dust film, cold still air, desaturated copper and gray palette with one warm highlight along the canister rims, 24mm lens, f/8, sharp detail, photorealistic, lower quarter of frame is empty concrete floor. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "the same chamber in near total darkness, six copper canisters faintly self-luminous with a pale teal glow along their seams, wide shot, one-point perspective, deep focus, no visible fixture, the canisters themselves as the only light source, near-black surrounding shadow, oxidized copper texture, raw concrete floor barely visible, faint drifting dust motes lit by the glow, cold still air, desaturated near-black palette with pale teal canister glow, 24mm lens, f/2.8, sharp detail, photorealistic, lower quarter of frame is dark empty floor. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "extreme close-up of a printed label on a copper canister, a date stamped in slightly smudged ink, macro shot, shallow depth of field, single hard side light, cool tone with warm highlight along the raised print, hard shadow in the letter grooves, oxidized copper texture, fine dust residue, faint haze, cold still air, desaturated copper and gray palette with one warm rim light on the label edge, 100mm macro lens, f/2.8, sharp detail, photorealistic, lower quarter dark out-of-focus canister body. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "close shot of an open logbook on a metal desk, a hurried handwritten note in the margin next to a printed inventory table, medium close shot, centered composition, single desk lamp from the side, warm dim tone against cool background shadow, hard shadow, water-stained paper, worn binder cover, faint dust motes in the lamp beam, still cold air, desaturated palette with one warm amber pool of light, 50mm lens, f/4, sharp detail, photorealistic, lower quarter of frame is empty desk surface. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "interior of a small radio and monitoring room, a bank of analog dial gauges beside a single handset resting on its cradle, medium wide shot, centered composition, single overhead fluorescent tube, cool white 4000K, hard downward shadow, brushed steel console, worn rubber knobs, scuffed linoleum floor, faint dust haze, cold recycled air, desaturated teal and gray palette with one warm amber indicator light, 35mm lens, f/5.6, sharp detail, photorealistic, lower quarter of frame is empty floor. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "a tall cylindrical device mounted against a corridor wall, thick cables running from its base, a small display showing a flat steady waveform, medium wide shot, centered composition, single dim device indicator light, cool blue-gray tone, hard shadow behind the unit, brushed steel casing, bundled wiring, faint dust film, cold still air, desaturated slate palette with one pale blue indicator glow, 35mm lens, f/5.6, sharp detail, photorealistic, lower quarter of frame is empty corridor floor. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "an empty conference room, a single closed folder marked with a red stamp resting at the center of a long table, chairs pushed in on both sides, wide shot, one-point perspective, symmetrical framing, deep focus, single overhead fluorescent panel, cool white tone, hard downward shadow, worn laminate table, scuffed carpet, faint dust haze, cold still air, desaturated gray-beige palette with one warm red stamp highlight, 28mm lens, f/8, sharp detail, photorealistic, lower quarter of frame is empty floor. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "final wide static shot of the empty level-twelve corridor at low light, all doors closed, a single distant fluorescent tube flickering at the far end, one-point perspective, symmetrical framing, deep focus, single distant flickering light source, cool white tone fading to shadow, hard shadow gradient down the corridor, bare concrete walls, faint dust settled undisturbed, cold heavy stillness, desaturated gray-blue palette, 24mm lens, f/8, sharp detail, photorealistic, lower quarter of frame is empty corridor floor. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    }
+  ],
+  "background": {
+    "id": "scp-9758_bg",
+    "kind": "image",
+    "reuse": false,
+    "aspect": "16:9",
+    "resolution": "1920x1080",
+    "prompt": "the same chamber in near total darkness, six copper canisters faintly self-luminous with a pale teal glow along their seams, wide shot, one-point perspective, deep focus, no visible fixture, the canisters themselves as the only light source, near-black surrounding shadow, oxidized copper texture, raw concrete floor barely visible, faint drifting dust motes lit by the glow, cold still air, desaturated near-black palette with pale teal canister glow, 24mm lens, f/2.8, sharp detail, photorealistic, lower quarter of frame is dark empty floor. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization",
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, cartoon, anime, illustration, painting, 3d render, cgi, video game, oversaturated, neon, hdr glow, lens flare, vignette overload, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, uncanny face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion"
+  },
+  "thumbnail": {
+    "hook": "extreme close-up of a printed label on a copper canister glowing faint teal along one seam, a date stamped in slightly smudged ink, subject positioned on the right third, left third is dark empty negative space, shallow depth of field, desaturated copper and near-black palette with one pale teal rim light, 100mm macro lens, f/2.8, sharp detail, photorealistic. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization",
+    "hook_alt": [
+      "close-up of a worn elevator control panel with round buttons numbered one through twelve and one extra unmarked button glowing faintly below them, subject positioned on the left third, right third is dark empty negative space, single overhead panel light, shallow depth of field, desaturated gray palette with one warm amber button glow, 35mm lens, f/2.8, sharp detail, photorealistic. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization",
+      "wide shot of a long dark underground corridor with a single faint teal glow seeping from a doorway far in the background, subject positioned on the right third, left third is dark empty negative space, deep focus, single distant glow source, desaturated near-black and teal palette, 24mm lens, f/4, sharp detail, photorealistic. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    ],
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, cartoon, anime, illustration, painting, 3d render, cgi, video game, oversaturated, neon, hdr glow, lens flare, vignette overload, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, uncanny face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion",
+    "text_safe_area": "left third",
+    "resolution": "1280x720"
+  },
+  "platforms": {
+    "youtube": {
+      "title": "북유럽 지하 처분장에서 발견된 미래 날짜 캐니스터의 정체 [SCP-9758]",
+      "title_form": "A",
+      "thumbnail_text": "미리 채운 통",
+      "thumbnail_quote": "- 날짜가 잘못 찍힌 게 아니에요.",
+      "chapters": [
+        "00:00 콜드 오픈 — 열세 번째 층",
+        "03:23 지켜야 할 세 가지 규칙",
+        "04:54 이레째, 2071년이 찍힌 통",
+        "07:34 서른하루째, 마셜 카터 & 다크의 접촉",
+        "08:54 쉰나흘째, 강행된 전체 재고",
+        "09:50 여든이레째, 사고 보고서"
+      ],
+      "description": "북유럽 화강암 지대 지하, 핵폐기물 처분장 이야기입니다. 도면에 없는 열세 번째 층에서, 이미 봉인된 통 여섯 개가 발견됩니다. 라벨에 찍힌 날짜는, 아직 오지 않은 날짜였습니다.\n\n비슷한 일을 겪어보신 적 있나요? 댓글로 들려주세요.\n\n※ SCP 재단 세계관 기반 오리지널 창작 · 허구의 이야기입니다\n※ 본 콘텐츠는 CC BY-SA 3.0 라이선스를 따릅니다 · 원작: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP재단 #괴담 #무서운이야기 #미스터리 #심야라디오 #공포라디오",
+      "pinned_comment": "혹시 여러분도, 아직 오지 않은 날짜가 찍힌 걸 본 적 있으신가요? 댓글로 들려주세요.",
+      "playlist": "SCP 아카이브 (전편 듣기)",
+      "localizations": {
+        "en": {
+          "title": "Nuclear Vault in Northern Europe Hides Canisters Dated Decades Ahead [SCP-9758]",
+          "description": "Beneath a granite peninsula in Northern Europe, a nuclear waste repository hides a thirteenth level absent from its blueprints. Inside sit six already-sealed canisters — stamped with a date that hasn't happened yet.\n\nHave you ever seen something dated for a future that hasn't arrived? Tell us in the comments.\n\n* This is an original work of fiction set in the SCP Foundation shared universe.\n* Licensed under CC BY-SA 3.0 - Original: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCPFoundation #horror #creepypasta #mystery"
+        },
+        "ja": {
+          "title": "北欧の核廃棄物処分場に、まだ来ていない日付の容器が眠っていた [SCP-9758]",
+          "description": "北欧の花崗岩半島の地下、核廃棄物処分場には図面にない十三番目の階があります。中には既に封印済みの容器が六個。そのラベルには、まだ訪れていない日付が刻まれていました。\n\n皆さんも、まだ来ていない日付が刻まれたものを見たことがありますか。コメントで教えてください。\n\n※ SCP財団の世界観に基づくオリジナル創作・フィクションです\n※ 本コンテンツはCC BY-SA 3.0ライセンスに従います・原作:SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP財団 #怖い話 #ホラー #ミステリー"
+        },
+        "zh-Hant": {
+          "title": "北歐地下核廢料處置場,發現標示著未來日期的容器 [SCP-9758]",
+          "description": "北歐某花崗岩半島地下的核廢料處置場,存在著圖紙上沒有的第十三層。裡面放著六個已經封存完畢的容器,標籤上卻印著一個還沒到來的日期。\n\n你是否也曾看過標示著還沒到來的日期的東西?歡迎在留言區告訴我們。\n\n※ 本作品為基於SCP基金會世界觀的原創虛構故事\n※ 本內容採用CC BY-SA 3.0授權・原作:SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP基金會 #怪談 #恐怖故事 #懸疑"
+        }
+      }
+    }
+  },
+  "shorts": {
+    "title": "미래 날짜가 찍힌 핵폐기물 통이 발견됐다 | SCP",
+    "overlay_top": [
+      "등급 : Safe",
+      "벌써 채워진 통이 있다"
+    ],
+    "script": "북유럽 지하 핵폐기물 처분장, 도면에 없는 열세 번째 층에서 통 여섯 개가 나옵니다. 재단은 이걸 세이프로 분류했어요. 이미 봉인된 통인데, 라벨엔 아직 오지 않은 날짜가 찍혀 있었거든요. 규칙은 셋이었습니다. 전체 층을 한 번에 다 세지 않고요. 새로 나온 층의 통은 절대 열지 않고요. 새 층이 나오면 사흘은 내려가지 않습니다. 어기면 어떻게 되는지는, 어디에도 적혀 있지 않습니다. 그런데 여든이레째, 사고가 하나 기록됩니다. 무슨 일이 있었는지는 전편에서 말씀드릴게요.",
+    "subject_prompt": "extreme close-up of a copper canister label glowing faint teal along one seam, filling the center of frame, dead-center composition, single strong directional key light from one side, deep black background, dramatic rim light along the label edge, 9:16 vertical composition, top 30% and bottom 25% of the frame are dark empty negative space for text, sharp crisp detail. SHORTS_LOOK: sharp high-contrast product-still photography, single strong directional key light, deep black background, rich saturated color, crisp detail, dramatic rim light, photorealistic, 9:16 vertical composition",
+    "negative_prompt": "low contrast, washed out, faded, film grain, muted colors, text, letters, numbers, watermark, logo, signature, caption, subtitles, cartoon, anime, illustration, painting, 3d render, cgi, video game, oversaturated, neon, hdr glow, lens flare, vignette overload, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, uncanny face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion",
+    "description": "북유럽 지하 핵폐기물 처분장에서 도면에 없는 층이 발견됩니다. 그 안 통엔 아직 오지 않은 날짜가 찍혀 있고요. 규칙을 어기면 어떻게 되는지는 기록에 없습니다. 전편에서 전체 이야기를 들려드립니다.\n\n#SCP #SCP아카이브 #괴담 #무서운이야기 #미스터리",
+    "playlist": "SCP 쇼츠"
+  },
+  "credit": "SCP 재단 세계관 기반 오리지널 창작 · 허구 · CC BY-SA 3.0",
+  "content_rating": "teen",
+  "notes": "SCP 아카이브 · 16:9 롱폼 + 9:16 쇼츠(롱폼 완료 시 자동) · 장면 전환 배경 + 자막 번인 · 단일 내레이터 · 완결형."
+}
