@@ -1,0 +1,91 @@
+{
+  "date": "2026-09-02",
+  "topic": "stock",
+  "privacy": "public",
+  "topic_keyword": "중동 리스크",
+  "headline": "미국 증시, 중동 리스크에 하락…유가·금리 동반 상승",
+  "hook_title": "유가 2%대 급등, 오늘 코스피는",
+  "accent": "#D97757",
+  "loop_line": "중동에서 튄 불똥이, 결국 우리 장까지 왔습니다.",
+  "thumbnail_hook": "Pre-dawn Seoul trading floor, a large stock ticker board just lighting up with red and green candlestick charts on multiple monitors, faint reflection of an offshore oil rig silhouette in the glass, moody blue-orange sunrise light through the window, cinematic wide shot, no text, no people close-up",
+  "thumbnail_text": "유가 2%대 급등",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "중동 리스크",
+      "ghost": "OIL",
+      "lines": ["저 멀리서", "불이 났고", "기름값이 튀었다"],
+      "highlight": "기름값",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "밤사이 중동에서 불거진 긴장이 국제유가와 금리를 흔들었습니다."
+    },
+    {
+      "type": "trend",
+      "label": "나스닥",
+      "from": 0,
+      "to": -1.03,
+      "suffix": "%",
+      "dir": "down",
+      "sub": "美 국채금리 <b>4.79%</b>",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "나스닥이 중동발 악재에 하루 만에 일 점 공삼 퍼센트 내렸습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "왜 엇갈렸나",
+      "points": ["코스피는 <b>0.23%</b> 올랐는데", "나스닥은 <b>1.03%</b> 내렸다", "국제유가는 <b>2%대</b> 급등"],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "코스피는 어제 올랐지만 나스닥은 중동발 유가 급등에 흔들렸습니다."
+    },
+    {
+      "type": "statement",
+      "text": "국제유가가 오르면 기름값도 들썩입니다",
+      "highlight": "기름값",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "국제유가가 계속 오르면 우리 동네 기름값도 오를 수 있습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘의 관전포인트",
+      "points": ["<b>SK하이닉스</b> — 美 반도체 약세 연동될까", "환율 <b>1,370원</b>대 — 유가 상승 변수"],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "반도체가 간밤 미국 약세를 따라갈지, 환율이 다시 오를지가 관건입니다."
+    },
+    {
+      "type": "statement",
+      "text": "코스피, 오늘은 버틸까요 밀릴까요?",
+      "highlight": "버틸까요",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "코스피가 오늘도 버틸지 아니면 밀릴지, 판단은 여러분 몫입니다."
+    }
+  ],
+  "sources": ["머니투데이", "뉴시스", "뉴스핌"],
+  "credit": "출처 머니투데이·뉴시스·뉴스핌 등 · 투자 조언이 아닙니다",
+  "platforms": {
+    "youtube": {
+      "title": "유가 2%대 급등, 오늘 코스피는 #shorts",
+      "description": "미국 증시, 중동 리스크에 하락…유가·금리 동반 상승\n출처 머니투데이·뉴시스·뉴스핌 등\n※ 투자 조언이 아닙니다\n\n#코스피 #주식 #증시 #개장전 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "Oil Jumps 2%, What About Kospi Today?",
+          "description": "US stocks fell overnight as Middle East tensions pushed oil prices and Treasury yields higher. Kospi held up yesterday on chip strength — here's what to watch today.\nSources: MoneyToday, Newsis, Newspim\nThis is not investment advice.\n\n#shorts"
+        },
+        "ja": {
+          "title": "原油2%急騰、今日のコスピは",
+          "description": "中東情勢の緊張で原油価格と金利が上昇し、米国株が下落しました。コスピは半導体株の底力で前日は上昇。今日の注目ポイントをお伝えします。\n出典:マネートゥデイ、ニューシス、ニュースピムなど\n投資助言ではありません。\n\n#shorts"
+        },
+        "zh-Hant": {
+          "title": "油價暴漲2%,今天的KOSPI呢",
+          "description": "中東局勢緊張推升油價與利率,美股應聲下跌。KOSPI昨日靠半導體撐住漲勢,今天該關注什麼?\n資料來源:MoneyToday、Newsis、Newspim等\n本內容不構成投資建議。\n\n#shorts"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "유가 2%대 급등, 오늘 코스피는\n출처 머니투데이·뉴시스·뉴스핌 등\n※ 투자 조언이 아닙니다\n\n#코스피 #주식 #증시 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "유가 2%대 급등, 오늘 코스피는\n출처 머니투데이·뉴시스·뉴스핌 등"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음 · SESSION=KR_AM(개장 전 프리뷰)."
+}
