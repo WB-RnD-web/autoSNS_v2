@@ -1,0 +1,91 @@
+{
+  "date": "2026-09-01",
+  "topic": "stock_us",
+  "privacy": "public",
+  "topic_keyword": "美·이란 재충돌, 유조선 피격",
+  "headline": "美·이란 충돌 재개…유조선 피격, 다우 0.7% 하락",
+  "hook_title": "유조선 피격에 다우 374P↓",
+  "accent": "#E5484D",
+  "loop_line": "흔들린 유조선처럼, 결과는 내일 아침 여덟 시에 짚어드립니다.",
+  "thumbnail_hook": "Night skyline over Wall Street, a glowing digital stock ticker board reflecting red numbers in the dark, an oil tanker silhouette faintly visible on a distant sea horizon, moody cinematic lighting, no text, no human faces",
+  "thumbnail_text": "다우 374P 하락",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "호르무즈 비상",
+      "ghost": "HORMUZ",
+      "lines": ["밤사이 또", "유조선이", "공격당했습니다"],
+      "highlight": "공격",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "밤사이 호르무즈 해협에서 유조선이 또 공격당했습니다."
+    },
+    {
+      "type": "trend",
+      "label": "다우존스",
+      "from": 0,
+      "to": -0.7,
+      "suffix": "%",
+      "dir": "down",
+      "sub": "유가는 <b>90달러</b> 돌파",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "다우존스가 밤사이 영 점 칠 퍼센트 내리며 마감했습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "왜 흔들렸나",
+      "points": ["美, 이란 <b>라라크섬</b> 공습에 재충돌", "반도체는 약세, 에너지주는 강세"],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "미국이 이란을 다시 공격하면서 반도체·에너지주가 갈렸습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 밤 갈림길",
+      "points": ["물가 지표 부진하면 하락 부담", "환율 <b>1,370원</b>대엔 계좌 더 아파"],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "지표가 부진하면 부담 커지고, 환율 오르면 계좌는 더 아픕니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 밤 체크포인트",
+      "points": ["ISM 제조업 지수 밤 <b>11시</b> 발표", "고용지표 <b>JOLTS</b>도 동시 공개"],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "오늘 밤 열한 시엔 제조업과 고용 지표가 함께 나옵니다."
+    },
+    {
+      "type": "statement",
+      "text": "오늘 밤엔 지켜본다 vs 담는다, 당신은?",
+      "highlight": "담는다",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "오늘 밤엔 지켜볼지 담을지, 판단은 여러분 몫입니다."
+    }
+  ],
+  "sources": ["Bloomberg", "Korea Herald", "아시아경제", "이투데이"],
+  "credit": "출처 Bloomberg·Korea Herald·아시아경제 등 · 투자 조언이 아닙니다",
+  "platforms": {
+    "youtube": {
+      "title": "유조선 피격에 다우 374P↓ #shorts",
+      "description": "美·이란 충돌 재개…유조선 피격, 다우 0.7% 하락\n출처 Bloomberg·Korea Herald·아시아경제 등\n※ 투자 조언이 아닙니다\n\n#미국주식 #나스닥 #뉴욕증시 #서학개미 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "Tankers Attacked, Dow Sinks 374 Points",
+          "description": "Oil tankers were struck in the Strait of Hormuz as US-Iran tensions flared again, sending the Dow down 374 points and oil above $90.\nSource: Bloomberg, Korea Herald, etc.\n※ Not investment advice\n\n#USstocks #Nasdaq #WallStreet #shorts"
+        },
+        "ja": {
+          "title": "タンカー被弾、ダウ374ドル安です",
+          "description": "ホルムズ海峡でタンカーが攻撃を受け、米イランの緊張が再燃しました。ダウは374ポイント下落、原油は90ドルを突破しました。\n出典: Bloomberg, Korea Herald ほか\n※投資助言ではありません\n\n#米国株 #ナスダック #ウォール街 #shorts"
+        },
+        "zh-Hant": {
+          "title": "油輪遇襲,道瓊重挫374點",
+          "description": "荷姆茲海峽油輪遭到攻擊,美伊緊張局勢再度升溫,道瓊指數下跌374點,油價突破90美元。\n出處: Bloomberg, Korea Herald 等\n※本內容非投資建議\n\n#美股 #那斯達克 #華爾街 #shorts"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "유조선 피격에 다우 374P↓\n출처 Bloomberg·Korea Herald·아시아경제 등\n※ 투자 조언이 아닙니다\n\n#미국주식 #나스닥 #뉴욕증시 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "유조선 피격에 다우 374P↓\n출처 Bloomberg·Korea Herald·아시아경제 등"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음 · SESSION=US_PM(미국장 개장 전후 프리뷰). 재료: 8/31(월) 美 뉴욕증시 마감(다우 -0.70%/-374.09P·53,185.90, S&P500 -0.33%·7,686.14, 나스닥 -0.12%·26,370.89) 및 美-이란 호르무즈 해협 무력충돌 재개(유조선 2척 피격: 사우디 Bahri 소속 Sidr호, 한국 시노코해운 소속 Senegal Prosperity호), 유가 급등(WTI +2.83%·$85.76, 이후 프리마켓 $86.57대), 원/달러 환율 1,370원대. 오늘 밤(9/1) ISM 제조업 PMI·JOLTS 구인건수 동시 발표(23:00 KST, 예상치 각각 55.2/733.0만건)."
+}
