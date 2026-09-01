@@ -1,0 +1,1185 @@
+{
+  "date": "2026-09-01",
+  "iso_week": "2026-W36",
+  "topic": "scp",
+  "privacy": "public",
+  "origin": "original",
+  "source_url": "",
+  "story_id": "scp-9613",
+  "scp_number": "SCP-9613",
+  "object_class": "Keter",
+  "codename": "셈하는 접시",
+  "number_check": {
+    "checked_at": "2026-09-01",
+    "http_code": "unverified"
+  },
+  "title": "고원 전파관측소에서 사람 수를 세기 시작한 신호의 정체 [SCP-9613]",
+  "theme": "과학 시설",
+  "logline": "고원 지대 전파관측소에서 매일 밤 스스로 각도를 되돌리는 접시 하나, 그 접시가 받는 반복 신호는 사실 그날 그 자리에 있는 사람 수를 세는 숫자였습니다.",
+  "hook_line": "접시 하나가, 밤새 같은 각도로 멈춰 있습니다.",
+  "cold_open": "접시 하나가, 밤새 같은 각도로 멈춰 있습니다. 바람도 없는 고원인데, 그 접시만 새벽 세 시마다 스스로 이 도씩 방향을 틀었다가 되돌아옵니다. 관제실 야간 로그에는 그냥 \"정기 보정\"이라고 적혀 있었죠. 그런데 그 보정을 — 아무도 걸어둔 적이 없었거든요.",
+  "structure": "연대기형",
+  "opening_move": "장면 하나",
+  "opening_note": "",
+  "closing_move": "숫자 하나",
+  "number_reveal": "뒤",
+  "ending_mode": "질문+구독",
+  "fault": "재단",
+  "procedures": [],
+  "character": {
+    "name": "오두야 연구원",
+    "role": "신호분석팀 담당 연구원",
+    "flaw": "동료에게 부담을 넘기지 않으려는 책임감 — 그 고집이 마지막 규칙(한 주기만 듣고 반드시 교대한다)을 스스로 깨게 만든다"
+  },
+  "chain": [
+    {
+      "when": "",
+      "event": "고원 전파관측소가 규칙적인 펄스 신호를 포착했고, 재단이 조사에 착수했다.",
+      "because": ""
+    },
+    {
+      "when": "몇 주 뒤",
+      "event": "해독팀이 신호를 숫자로 해독했고, 그 숫자가 그날 근무 인원 수와 정확히 일치한다는 걸 알아냈다.",
+      "because": "신호가 자연 현상치고는 너무 규칙적이라 정밀 해독에 매달렸기 때문."
+    },
+    {
+      "when": "그 사실이 보고서에 오른 다음 날",
+      "event": "재단이 사람 대신 자동 기록 장치로 감시를 전환했다.",
+      "because": "숫자가 인원수와 겹친다는 사실이 사람을 그 신호와 엮는 것 같아 불안했기 때문."
+    },
+    {
+      "when": "자동화 이후 얼마 안 가",
+      "event": "로그를 검토한 사람이 숫자를 소리 내어 확인한 바로 다음 수신에서, 숫자가 하나 늘었다.",
+      "because": "자동화로 사람을 뺐다고 생각했지만, 로그를 읽는 사람은 여전히 남아 있었기 때문."
+    },
+    {
+      "when": "",
+      "event": "재단이 아예 해독 자체를 중단시키고, 파형 그래프로만 보게 하는 인지위해 필터를 걸었다.",
+      "because": "숫자를 안다는 것 자체가 문제라고 판단했기 때문."
+    },
+    {
+      "when": "그런데 그 뒤로",
+      "event": "신호 주기가 열하루에서 아흐레로, 다시 엿새로 짧아졌다.",
+      "because": "해독을 막자 오히려 저쪽에서 확인을 재촉하는 것처럼 반응했기 때문."
+    },
+    {
+      "when": "주기가 빨라져 장비 점검이 급해지자",
+      "event": "D계급 기술자가 접시 접점을 만졌고, 다음 수신부터 숫자가 그 자리에 있던 민간인까지 포함해 늘었다.",
+      "because": "신호가 재단 인원만이 아니라 그 자리에 있던 모두를 세고 있었다는 게 그제야 드러났기 때문."
+    },
+    {
+      "when": "범위가 넓어지자",
+      "event": "기동특무부대가 투입돼 접시 하나를 통째로 해체했지만, 신호는 근처 보청기와 이어폰, 벽시계 스피커로 옮겨붙었다.",
+      "because": "안테나를 없애면 수신을 막을 수 있다고 판단했지만, 신호가 애초에 '듣는 존재' 자체를 매개로 삼고 있었기 때문."
+    },
+    {
+      "when": "해체 시도 다음 날 아침",
+      "event": "혼자 야간을 지키던 인원 한 명이 사라졌고, 헤드셋에서는 여전히 숫자가 흘러나왔다.",
+      "because": "재수용 시도가 실패하고, 청취자 하나가 스스로 발신원이 되어버렸기 때문."
+    },
+    {
+      "when": "이 사고 이후",
+      "event": "재단이 완전 차단 대신, 정확히 한 사람만 상시로 배치해 로그를 받는 방식으로 격리 절차를 바꿨다.",
+      "because": "아무도 듣지 않으면 저쪽에서 스스로 청취자를 찾아 나선다는 걸 깨달았기 때문."
+    },
+    {
+      "when": "그로부터 여러 순번이 지난 뒤",
+      "event": "오두야 연구원이 신참에게 순번을 넘기지 않고, 두 번째 주기까지 홀로 듣겠다고 고집했다.",
+      "because": "순번이 넘어갈 때마다 누군가 자리를 비웠고, 그 부담을 신참에게 넘기고 싶지 않았기 때문."
+    },
+    {
+      "when": "두 번째 주기가 끝나기 직전",
+      "event": "숫자가 늘지 않고 줄어들기 시작했고, 오두야는 마지막 로그에 '마흔하나'라고만 남긴 채 사라졌다.",
+      "because": "그녀가 규칙을 어기고 두 번째 응답자로 셈해졌기 때문."
+    }
+  ],
+  "retention_beats": [
+    "숫자가 왜 하필 그 자리 인원수와 정확히 겹치는지, 아직 아무도 설명하지 못한다는 것.",
+    "안다는 것 자체를 막았는데도, 신호 주기가 오히려 더 빨라졌다는 사실.",
+    "재단이 안전하다고 믿었던 절차가, 사실은 저쪽에 확실한 응답을 보장해 준 셈이었다는 것."
+  ],
+  "twist_summary": "관측자의 반전 — 재단이 격리를 위해 도입한 '정확히 한 사람 상시 로거' 절차가, 사실은 신호를 보낸 쪽에 매 주기 확실한 응답을 보장해 신호를 유지시켜온 원인이었다는 반전. 신호를 처음 만든 쪽도 오래전 자기네 인원을 세다가 하나씩 잃었다는 사실이 드러나며, 이 셈이 구조 요청이자 동시에 초대장이었음이 암시된다. 오두야 연구원이 교대 규칙을 어기고 두 번째 주기를 홀로 들은 뒤 사라진다.",
+  "narration_full": "접시 하나가, 밤새 같은 각도로 멈춰 있습니다.\n\n바람도 없는 고원인데, 그 접시만 새벽 세 시마다 스스로 이 도씩 방향을 틀었다가 되돌아옵니다. 관제실 야간 로그에는 그냥 \"정기 보정\"이라고 적혀 있었죠. 그런데 그 보정을 — 아무도 걸어둔 적이 없었거든요.\n\n저도 이 기록을 처음 봤을 땐… 그냥 통신 잡음 보고서인 줄 알았습니다. 이 관측소, 해발 사천구백 미터 고원에 있습니다. 다국적 인원 스물넷이 교대로 지키는 곳이고요. 원래 하던 일은 단순했죠. 먼 우주에서 오는 배경 잡음을 받아서, 자연 현상인지 아닌지 걸러내는 일이었죠.\n\n그런데 십일 년 전 겨울, 규칙적인 펄스 하나가 잡혔습니다. 열하루에 한 번, 정확히 같은 시각에요. 자연 현상치고는 너무 반듯했고, 그래서 재단이 들어왔죠.\n\n해독팀이 몇 주를 매달린 끝에 알아낸 건 이랬죠. 그건 언어가 아니라 숫자였고요. 그날 밤 그 관측소에 있던 사람 수와, 정확히 열둘로 일치했습니다. 우연이라고 하기엔… 너무 정확했죠.\n\n여백에 손으로 적힌 메모가 하나 남아 있었습니다. 「이 숫자, 내가 잘못 옮겨 적은 게 아니다.」 해독을 맡았던 사람의 글씨였다고 하더군요.\n\n현장 사람들은 그걸 보고서 용어로 부르지 않았습니다. 그냥, \"셈하는 접시\"라고 불렀죠.\n\n숫자가 인원수와 겹친다는 사실이 보고서에 오른 다음 날, 재단은 사람 대신 자동 기록 장치를 들였습니다. 사람이 없으면 셈할 대상도 없을 거라고, 다들 그렇게 생각했던 거죠.\n\n그런데 얼마 안 가서 문제가 생겼거든요. 자동 장치가 받은 걸 사람이 검토는 해야 했고요. 검토자 한 명이 그 숫자를 소리 내어 읽어 확인한 바로 다음 수신에서, 숫자가 하나 늘어 있었습니다.\n\n이 정도면, 그냥 우연이라고 하시겠죠? 저도 처음엔 그렇게 생각했었죠.\n\n당연히도… 다들 이게 보통 일이 아니라고 느꼈습니다. 그래서 이번엔 숫자로 옮기는 것 자체를 막아버렸습니다. 해독 없이, 그냥 파형 그래프로만 보게 하는 인지위해 필터를 걸었죠. 안다는 것 자체가 문제라면, 아예 모르게 하자는 계산이었죠.\n\n그랬더니 이상한 일이 일어났습니다. 신호 주기가 짧아지기 시작한 거예요. 열하루에서 아흐레로, 다시 엿새로요. 마치 저쪽에서 확인을 재촉하는 것 같았죠.\n\n주기가 너무 빨라지니 장비 점검이 급해졌고, D계급 기술자 한 명이 접시 위로 올라갔죠. 「저는 만지기만 했습니다. 정말입니다.」 그가 나중에 그렇게 말했죠. 접점이 영점 삼 밀리미터 어긋나 있어서 손을 댔을 뿐이라고요.\n\n그런데 그가 손을 댄 바로 다음 수신부터 — 숫자가 열둘이 아니라 스물넷까지 늘어 있었습니다. 그날 근처를 지나던 산악 조사팀, 하필 그 시각 초소를 지키던 목동까지, 그 자리에 있던 모두를 세고 있었다는 게 그제야 드러난 거죠.\n\n범위가 넓어지자 위기감이 커졌고, 기동특무부대 세타-9, \"침묵의 귀\"가 셈하는 접시를 향해 투입됐습니다. 접시 세 개 중 하나, 십칠 톤짜리를 통째로 떼어냈고요. 그런데 다음 수신 때, 숫자는 그대로 남아 있었습니다. 신호가 접시를 떠나서 — 근처에 있던 보청기로 옮겨붙질 않나, 이어폰은 기본이고, 나중엔 관제실 벽시계 스피커에서까지 들리기 시작했죠.\n\n그 소리, 처음 들으면… 그냥 잡음 같습니다. 그런데 계속 듣고 있으면 어느 순간, 잡음 사이사이에 아주 정확한 간격의 침묵이 끼어 있다는 걸 알게 되죠. 그 침묵과 침묵 사이 간격이 일 점 삼 초였고요. 숫자가 하나 늘어날 때마다, 그 간격이 영점 영일 초씩 짧아졌습니다.\n\n해체 시도 다음 날 아침, 혼자 야간을 지키던 인원 한 명이 사라졌습니다. 의자는 아직 따뜻했고, 헤드셋에서는 여전히 숫자가 흘러나오고 있었고요. 다들 알게 됐습니다. 신호를 없애려던 게 아니라, 청취자 하나가 스스로 발신원이 되어버렸다는 걸요.\n\n이 일 이후로 재단은 방향을 완전히 바꿨죠. 아예 안 들으면 저쪽에서 스스로 청취자를 찾아 나선다는 걸 깨달았거든요. 그래서 지금은 이런 방식입니다. 완전히 막지 않고, 정확히 한 사람만 상시로 배치해서 로그를 받게 하는 거죠.\n\n「하루만… 더 듣고 넘기겠습니다.」 오두야 연구원이 그렇게 말한 건, 순번이 벌써 몇 차례나 넘어간 뒤였습니다. 그때마다 누군가 자리를 비웠고요. 그녀는 그 부담을 신참에게 넘기고 싶지 않았습니다. 그럴듯한 이유였죠.\n\n그런데 그건 — 이 격리 절차가 정한 마지막 선이었죠. 한 사람이 한 주기만 듣고 반드시 교대한다는 것. 왜 어기면 안 되는지는, 어디에도 적혀 있지 않았습니다.\n\n동료 하나가 회의에서 그녀에게 물었습니다. 「그거, 세어본 적 있어요?」 오두야는 답하지 않았습니다.\n\n두 번째 주기가 끝나기 직전, 처음 보는 일이 일어났습니다. 숫자가 늘지 않고, 줄어들기 시작한 거예요. 마흔에서, 서른아홉으로. 서른아홉에서, 서른여덟로. 그녀의 마지막 로그에는 이렇게 적혀 있었습니다. 「…마흔하나.」 그 뒤로는, 아무것도 없었고요.\n\n여기서부터는… 저도 좀 그렇더라고요. 재단이 나중에 알아낸 건 이런 겁니다. 저 신호를 처음 만든 쪽도, 아주 오래전에 자기네 인원을 세다가 하나씩 잃었다는 것. 그러니까 이 셈은 구조 요청이면서, 동시에 초대장이었다는 거죠.\n\n그리고 재단이 그토록 안전하다고 믿었던 절차 — 정확히 한 사람이 상시로 듣고 확인해 준다는 그 규칙이야말로, 저쪽에 매 주기 확실한 응답을 보장해 준 셈이었습니다. 막으려던 게 아니라, 먹이고 있었던 거죠.\n\n이상하죠? 안전한 방법이라고 믿었던 게, 사실은 가장 확실한 배달 경로였다는 게요.\n\n이 신호와 닮은 파형이, 다른 사이트 세 곳에서도 뒤늦게 확인됐다는 내부 메모가 있습니다. 뱀의 손 쪽에서는 재단보다 먼저 알고 있었다는 소문도 돌았는데, 확인된 바는 없고요. 그리고 지금, \"정확히 한 사람\" 프로토콜은 비슷한 시설 전부의 표준 절차로 채택돼 있습니다.\n\n이 개체는 지금 SCP-9613, 등급은 케테르로 올라 있습니다. 격리는 여전히, 저 접시가 세는 숫자를 누군가 계속 받아 적는다는 뜻이고요.\n\n지금 이 순간, 셈하는 접시가 세고 있는 숫자는 마흔둘입니다.\n\n비슷한 걸 들어보신 적, 있으신가요? 아신다면 어떤 소리였는지, 댓글로 알려주시면 좋겠습니다. 이런 기록들, 계속 찾아서 들려드리겠습니다.",
+  "segments": [
+    {
+      "text": "접시 하나가, 밤새 같은 각도로 멈춰 있습니다.",
+      "est_sec": 6,
+      "text_en": "One dish has stayed at the same angle, all night.",
+      "text_ja": "皿がひとつ、一晩じゅう同じ角度で止まっています。",
+      "text_zh_Hant": "有一面碟子,整夜停在同一個角度。"
+    },
+    {
+      "text": "바람도 없는 고원인데,",
+      "est_sec": 3,
+      "text_en": "There's no wind on this plateau, and yet,",
+      "text_ja": "風もない高原なのに、",
+      "text_zh_Hant": "沒有風的高原上,"
+    },
+    {
+      "text": "그 접시만 새벽 세 시마다 스스로 이 도씩 방향을 틀었다가 되돌아옵니다.",
+      "est_sec": 9,
+      "text_en": "only that dish turns two degrees on its own every night at three, then returns.",
+      "text_ja": "その皿だけが毎晩三時、自分で二度ほど向きを変えては戻ります。",
+      "text_zh_Hant": "只有那面碟子每晚三點會自行轉兩度,再轉回來。"
+    },
+    {
+      "text": "관제실 야간 로그에는 그냥 \"정기 보정\"이라고 적혀 있었죠.",
+      "est_sec": 8,
+      "text_en": "The control room's night log just says \"routine calibration.\"",
+      "text_ja": "管制室の夜間ログにはただ「定期補正」とだけ書かれていました。",
+      "text_zh_Hant": "控制室的夜間紀錄只寫著「例行校正」。"
+    },
+    {
+      "text": "그런데 그 보정을 —",
+      "est_sec": 3,
+      "text_en": "But that calibration —",
+      "text_ja": "ですが、その補正を——",
+      "text_zh_Hant": "但那項校正——"
+    },
+    {
+      "text": "아무도 걸어둔 적이 없었거든요.",
+      "est_sec": 4,
+      "text_en": "no one had ever scheduled it.",
+      "text_ja": "誰も設定した覚えがなかったんです。",
+      "text_zh_Hant": "根本沒有人設定過。"
+    },
+    {
+      "text": "저도 이 기록을 처음 봤을 땐… 그냥 통신 잡음 보고서인 줄 알았습니다.",
+      "est_sec": 9,
+      "text_en": "When I first read this file… I thought it was just a comms-noise report.",
+      "text_ja": "この記録を初めて見たときは…ただの通信雑音の報告書だと思っていました。",
+      "text_zh_Hant": "我第一次看到這份紀錄時……還以為只是通訊雜訊報告。"
+    },
+    {
+      "text": "이 관측소, 해발 사천구백 미터 고원에 있습니다.",
+      "est_sec": 6,
+      "text_en": "This observatory sits on a plateau, forty-nine hundred meters up.",
+      "text_ja": "この観測所は、標高四千九百メートルの高原にあります。",
+      "text_zh_Hant": "這座觀測站,位在海拔四千九百公尺的高原上。"
+    },
+    {
+      "text": "다국적 인원 스물넷이 교대로 지키는 곳이고요.",
+      "est_sec": 6,
+      "text_en": "Twenty-four staff from different countries rotate shifts here.",
+      "text_ja": "多国籍の職員二十四人が交代で守っている場所です。",
+      "text_zh_Hant": "由二十四名不同國籍的人員輪班駐守。"
+    },
+    {
+      "text": "원래 하던 일은 단순했죠.",
+      "est_sec": 3,
+      "text_en": "The job used to be simple.",
+      "text_ja": "元々の仕事は単純でした。",
+      "text_zh_Hant": "原本的工作很單純。"
+    },
+    {
+      "text": "먼 우주에서 오는 배경 잡음을 받아서,",
+      "est_sec": 5,
+      "text_en": "Catching background noise from deep space,",
+      "text_ja": "遠い宇宙から来る背景雑音を受信して、",
+      "text_zh_Hant": "接收來自深空的背景雜訊,"
+    },
+    {
+      "text": "자연 현상인지 아닌지 걸러내는 일이었죠.",
+      "est_sec": 5,
+      "text_en": "and sorting out what's natural from what isn't.",
+      "text_ja": "自然現象かどうかを選別する仕事だったんです。",
+      "text_zh_Hant": "篩選出哪些是自然現象,哪些不是。"
+    },
+    {
+      "text": "그런데 십일 년 전 겨울,",
+      "est_sec": 3,
+      "text_en": "But eleven years ago this past winter,",
+      "text_ja": "ところが十一年前の冬、",
+      "text_zh_Hant": "但十一年前的那個冬天,"
+    },
+    {
+      "text": "규칙적인 펄스 하나가 잡혔습니다.",
+      "est_sec": 4,
+      "text_en": "a regular pulse was picked up.",
+      "text_ja": "規則的なパルスがひとつ捉えられました。",
+      "text_zh_Hant": "接收到了一段規律的脈衝訊號。"
+    },
+    {
+      "text": "열하루에 한 번, 정확히 같은 시각에요.",
+      "est_sec": 5,
+      "text_en": "Once every eleven days, at exactly the same hour.",
+      "text_ja": "十一日に一度、まったく同じ時刻にです。",
+      "text_zh_Hant": "每十一天一次,時間分毫不差。"
+    },
+    {
+      "text": "자연 현상치고는 너무 반듯했고,",
+      "est_sec": 4,
+      "text_en": "Too clean-cut to be natural, and",
+      "text_ja": "自然現象にしては整いすぎていて、",
+      "text_zh_Hant": "太過規律,不像自然現象,"
+    },
+    {
+      "text": "그래서 재단이 들어왔죠.",
+      "est_sec": 3,
+      "text_en": "that's why the Foundation stepped in.",
+      "text_ja": "それで財団が介入したんです。",
+      "text_zh_Hant": "於是基金會介入了。"
+    },
+    {
+      "text": "해독팀이 몇 주를 매달린 끝에 알아낸 건 이랬죠.",
+      "est_sec": 6,
+      "text_en": "What the decoding team found, after weeks of work, was this.",
+      "text_ja": "解読班が数週間かけて突き止めたのはこうでした。",
+      "text_zh_Hant": "解讀小組花了數週,查出的結果是這樣。"
+    },
+    {
+      "text": "그건 언어가 아니라 숫자였고요.",
+      "est_sec": 4,
+      "text_en": "It wasn't language. It was a number.",
+      "text_ja": "それは言語ではなく、数字でした。",
+      "text_zh_Hant": "那不是語言,是數字。"
+    },
+    {
+      "text": "그날 밤 그 관측소에 있던 사람 수와,",
+      "est_sec": 5,
+      "text_en": "It matched, exactly, the number of people at that observatory that night —",
+      "text_ja": "その夜、その観測所にいた人数と、",
+      "text_zh_Hant": "與那天夜裡站內的人數,"
+    },
+    {
+      "text": "정확히 열둘로 일치했습니다.",
+      "est_sec": 3,
+      "text_en": "twelve, precisely.",
+      "text_ja": "正確に十二で一致していました。",
+      "text_zh_Hant": "精準吻合,十二人。",
+      "emphasis": "정확히 열둘"
+    },
+    {
+      "text": "우연이라고 하기엔… 너무 정확했죠.",
+      "est_sec": 4,
+      "text_en": "Calling it coincidence would be… too exact.",
+      "text_ja": "偶然と呼ぶには…あまりに正確でした。",
+      "text_zh_Hant": "說是巧合……未免太精準了。"
+    },
+    {
+      "text": "여백에 손으로 적힌 메모가 하나 남아 있었습니다.",
+      "est_sec": 6,
+      "text_en": "A note was left, handwritten in the margin.",
+      "text_ja": "余白に手書きのメモがひとつ残っていました。",
+      "text_zh_Hant": "紀錄的空白處留了一行手寫字。"
+    },
+    {
+      "text": "「이 숫자, 내가 잘못 옮겨 적은 게 아니다.」",
+      "est_sec": 6,
+      "text_en": "\"This number — I did not copy it down wrong.\"",
+      "text_ja": "「この数字は、私が写し間違えたものではない」",
+      "text_zh_Hant": "「這個數字,不是我抄錯的。」"
+    },
+    {
+      "text": "해독을 맡았던 사람의 글씨였다고 하더군요.",
+      "est_sec": 5,
+      "text_en": "It was, apparently, the decoder's own handwriting.",
+      "text_ja": "解読を担当した人物の筆跡だったそうです。",
+      "text_zh_Hant": "據說是負責解讀的人親筆寫下的。"
+    },
+    {
+      "text": "현장 사람들은 그걸 보고서 용어로 부르지 않았습니다.",
+      "est_sec": 7,
+      "text_en": "Field staff never used the official report term for it.",
+      "text_ja": "現場の人たちは、それを報告書の用語では呼びませんでした。",
+      "text_zh_Hant": "現場人員從不用報告書上的官方名稱稱呼它。"
+    },
+    {
+      "text": "그냥, \"셈하는 접시\"라고 불렀죠.",
+      "est_sec": 4,
+      "text_en": "They just called it \"the Counting Dish.\"",
+      "text_ja": "ただ、「数える皿」と呼んでいました。",
+      "text_zh_Hant": "他們就叫它「數數的碟子」。"
+    },
+    {
+      "text": "숫자가 인원수와 겹친다는 사실이 보고서에 오른 다음 날,",
+      "est_sec": 7,
+      "text_en": "The day after the match with headcount hit the report,",
+      "text_ja": "数字が人数と一致するという事実が報告書に上がった翌日、",
+      "text_zh_Hant": "數字與人數吻合這件事寫進報告的隔天,"
+    },
+    {
+      "text": "재단은 사람 대신 자동 기록 장치를 들였습니다.",
+      "est_sec": 6,
+      "text_en": "the Foundation brought in automated logging instead of people.",
+      "text_ja": "財団は人の代わりに自動記録装置を導入しました。",
+      "text_zh_Hant": "基金會改用自動記錄裝置取代人力。"
+    },
+    {
+      "text": "사람이 없으면 셈할 대상도 없을 거라고,",
+      "est_sec": 5,
+      "text_en": "No people, no target to be counted — or so everyone thought,",
+      "text_ja": "人がいなければ数える対象もないだろうと、",
+      "text_zh_Hant": "他們以為沒有人,就沒有可數的對象——"
+    },
+    {
+      "text": "다들 그렇게 생각했던 거죠.",
+      "est_sec": 3,
+      "text_en": "or so they thought at the time.",
+      "text_ja": "みんなそう考えていたわけです。",
+      "text_zh_Hant": "當時大家都是這麼想的。"
+    },
+    {
+      "text": "그런데 얼마 안 가서 문제가 생겼거든요.",
+      "est_sec": 5,
+      "text_en": "But it didn't take long for a problem to show up.",
+      "text_ja": "ところが、しばらくして問題が起きました。",
+      "text_zh_Hant": "但沒過多久,問題就出現了。"
+    },
+    {
+      "text": "자동 장치가 받은 걸 사람이 검토는 해야 했고요.",
+      "est_sec": 6,
+      "text_en": "Someone still had to review what the machine received.",
+      "text_ja": "自動装置が受信したものは、人が確認しなければなりませんでした。",
+      "text_zh_Hant": "機器接收到的內容,終究還是得有人審核。"
+    },
+    {
+      "text": "검토자 한 명이 그 숫자를 소리 내어 읽어 확인한 바로 다음 수신에서,",
+      "est_sec": 9,
+      "text_en": "Right after one reviewer read the number aloud to confirm it,",
+      "text_ja": "ある確認担当者がその数字を声に出して確認した直後の受信で、",
+      "text_zh_Hant": "有位審核員把數字唸出聲確認,就在下一次接收時,"
+    },
+    {
+      "text": "숫자가 하나 늘어 있었습니다.",
+      "est_sec": 4,
+      "text_en": "the number had gone up by one.",
+      "text_ja": "数字がひとつ増えていました。",
+      "text_zh_Hant": "數字多了一。"
+    },
+    {
+      "text": "이 정도면, 그냥 우연이라고 하시겠죠?",
+      "est_sec": 5,
+      "text_en": "You'd call that coincidence, wouldn't you?",
+      "text_ja": "それくらいなら、偶然だと思われるでしょう?",
+      "text_zh_Hant": "這程度的話,您也會說是巧合吧?"
+    },
+    {
+      "text": "저도 처음엔 그렇게 생각했었죠.",
+      "est_sec": 4,
+      "text_en": "I thought so too, at first.",
+      "text_ja": "私も最初はそう思っていました。",
+      "text_zh_Hant": "我一開始也是這麼想的。"
+    },
+    {
+      "text": "당연히도… 다들 이게 보통 일이 아니라고 느꼈습니다.",
+      "est_sec": 7,
+      "text_en": "Naturally… everyone felt this was no ordinary matter.",
+      "text_ja": "当然ながら…これはただ事ではないと、みんな感じていました。",
+      "text_zh_Hant": "當然……大家都覺得這不是尋常小事。"
+    },
+    {
+      "text": "그래서 이번엔 숫자로 옮기는 것 자체를 막아버렸습니다.",
+      "est_sec": 7,
+      "text_en": "So this time, they banned converting it into numbers at all.",
+      "text_ja": "そこで今度は、数字に変換すること自体を禁じました。",
+      "text_zh_Hant": "於是這次,他們乾脆禁止把訊號轉成數字。"
+    },
+    {
+      "text": "해독 없이,",
+      "est_sec": 2,
+      "text_en": "No decoding —",
+      "text_ja": "解読はせず、",
+      "text_zh_Hant": "不解讀,"
+    },
+    {
+      "text": "그냥 파형 그래프로만 보게 하는 인지위해 필터를 걸었죠.",
+      "est_sec": 7,
+      "text_en": "just a cognitohazard filter, showing only the waveform graph.",
+      "text_ja": "波形グラフだけを見せる認知災害フィルターをかけたんです。",
+      "text_zh_Hant": "只用認知危害過濾器,讓人只看波形圖。"
+    },
+    {
+      "text": "안다는 것 자체가 문제라면,",
+      "est_sec": 3,
+      "text_en": "If knowing itself was the problem,",
+      "text_ja": "知ること自体が問題なら、",
+      "text_zh_Hant": "如果「知道」本身就是問題,"
+    },
+    {
+      "text": "아예 모르게 하자는 계산이었죠.",
+      "est_sec": 4,
+      "text_en": "the plan was to keep everyone from knowing at all.",
+      "text_ja": "いっそ知らせないようにしようという判断でした。",
+      "text_zh_Hant": "那就乾脆讓所有人都不知道。"
+    },
+    {
+      "text": "그랬더니 이상한 일이 일어났습니다.",
+      "est_sec": 4,
+      "text_en": "Then something strange happened.",
+      "text_ja": "すると、奇妙なことが起きました。",
+      "text_zh_Hant": "結果,發生了奇怪的事。"
+    },
+    {
+      "text": "신호 주기가 짧아지기 시작한 거예요.",
+      "est_sec": 5,
+      "text_en": "The signal's cycle started getting shorter.",
+      "text_ja": "信号の周期が短くなり始めたんです。",
+      "text_zh_Hant": "訊號的週期開始縮短。"
+    },
+    {
+      "text": "열하루에서 아흐레로, 다시 엿새로요.",
+      "est_sec": 5,
+      "text_en": "Eleven days became nine, then six.",
+      "text_ja": "十一日から九日へ、また六日へと。",
+      "text_zh_Hant": "從十一天變成九天,再變成六天。"
+    },
+    {
+      "text": "마치 저쪽에서 확인을 재촉하는 것 같았죠.",
+      "est_sec": 5,
+      "text_en": "It felt like the other side was pushing for confirmation.",
+      "text_ja": "まるで向こう側が確認を急かしているようでした。",
+      "text_zh_Hant": "感覺就像對方在催促確認。"
+    },
+    {
+      "text": "주기가 너무 빨라지니 장비 점검이 급해졌고,",
+      "est_sec": 6,
+      "text_en": "As the cycle sped up, equipment checks became urgent, and",
+      "text_ja": "周期が速まるにつれ点検が急がれ、",
+      "text_zh_Hant": "週期加快後,設備檢修變得急迫,"
+    },
+    {
+      "text": "D계급 기술자 한 명이 접시 위로 올라갔죠.",
+      "est_sec": 6,
+      "text_en": "a Class-D technician was sent up onto the dish.",
+      "text_ja": "D階級の技術者が一人、皿の上に上がりました。",
+      "text_zh_Hant": "一名D級技術人員被派上了碟型天線。"
+    },
+    {
+      "text": "「저는 만지기만 했습니다.",
+      "est_sec": 3,
+      "text_en": "\"I only touched it.",
+      "text_ja": "「触っただけです。",
+      "text_zh_Hant": "「我只是碰了一下。"
+    },
+    {
+      "text": "정말입니다.」",
+      "est_sec": 2,
+      "text_en": "I really did.\"",
+      "text_ja": "本当です」",
+      "text_zh_Hant": "真的。」"
+    },
+    {
+      "text": "그가 나중에 그렇게 말했죠.",
+      "est_sec": 3,
+      "text_en": "That's what he said, later.",
+      "text_ja": "彼は後にそう語りました。",
+      "text_zh_Hant": "他事後這麼說。"
+    },
+    {
+      "text": "접점이 영점 삼 밀리미터 어긋나 있어서 손을 댔을 뿐이라고요.",
+      "est_sec": 8,
+      "text_en": "The contact point was off by point-three millimeters, and that's all he'd done.",
+      "text_ja": "接点がゼロ点三ミリずれていて、手を触れただけだと言っていました。",
+      "text_zh_Hant": "接點偏移了零點三毫米,他說自己只是碰了一下。"
+    },
+    {
+      "text": "그런데 그가 손을 댄 바로 다음 수신부터 —",
+      "est_sec": 6,
+      "text_en": "But right after he touched it —",
+      "text_ja": "ところが彼が手を触れた直後の受信から——",
+      "text_zh_Hant": "但就在他碰過之後——"
+    },
+    {
+      "text": "숫자가 열둘이 아니라 스물넷까지 늘어 있었습니다.",
+      "est_sec": 6,
+      "text_en": "the number had risen to twenty-four, not twelve.",
+      "text_ja": "数字は十二ではなく、二十四まで増えていました。",
+      "text_zh_Hant": "數字不再是十二,而是漲到了二十四。"
+    },
+    {
+      "text": "그날 근처를 지나던 산악 조사팀,",
+      "est_sec": 4,
+      "text_en": "A mountaineering survey team passing nearby that day,",
+      "text_ja": "その日近くを通っていた登山調査隊、",
+      "text_zh_Hant": "那天恰好路過附近的登山調查隊,"
+    },
+    {
+      "text": "하필 그 시각 초소를 지키던 목동까지,",
+      "est_sec": 5,
+      "text_en": "even a herder who happened to be at the outpost that hour —",
+      "text_ja": "たまたまその時刻に監視所にいた牧夫まで——",
+      "text_zh_Hant": "還有恰好那時在哨站的牧民——"
+    },
+    {
+      "text": "그 자리에 있던 모두를 세고 있었다는 게 그제야 드러난 거죠.",
+      "est_sec": 8,
+      "text_en": "it turned out it was counting everyone in that place.",
+      "text_ja": "その場にいた全員を数えていたのだと、そこでようやく分かったんです。",
+      "text_zh_Hant": "原來它數的是當場所有人,這時才真相大白。"
+    },
+    {
+      "text": "범위가 넓어지자 위기감이 커졌고,",
+      "est_sec": 4,
+      "text_en": "As the scope widened, alarm grew, and",
+      "text_ja": "範囲が広がったことで危機感が高まり、",
+      "text_zh_Hant": "範圍擴大讓大家警覺起來,"
+    },
+    {
+      "text": "기동특무부대 세타-9,",
+      "est_sec": 3,
+      "text_en": "Mobile Task Force Theta-9,",
+      "text_ja": "機動特務部隊シータ-9、",
+      "text_zh_Hant": "機動特遣隊西塔-9,"
+    },
+    {
+      "text": "\"침묵의 귀\"가 셈하는 접시를 향해 투입됐습니다.",
+      "est_sec": 6,
+      "text_en": "\"Silent Ear,\" was sent in against the Counting Dish.",
+      "text_ja": "「静寂の耳」が数える皿に向けて投入されました。",
+      "text_zh_Hant": "「寂靜之耳」被派去對付這面數數的碟子。"
+    },
+    {
+      "text": "접시 세 개 중 하나,",
+      "est_sec": 3,
+      "text_en": "One of the three dishes,",
+      "text_ja": "皿三基のうちの一基、",
+      "text_zh_Hant": "三面碟子中的一面,"
+    },
+    {
+      "text": "십칠 톤짜리를 통째로 떼어냈고요.",
+      "est_sec": 4,
+      "text_en": "a seventeen-ton one, was torn out whole.",
+      "text_ja": "十七トンのものを丸ごと取り外しました。",
+      "text_zh_Hant": "重達十七噸,整座被拆了下來。"
+    },
+    {
+      "text": "그런데 다음 수신 때,",
+      "est_sec": 3,
+      "text_en": "But at the next reception,",
+      "text_ja": "ですが次の受信では、",
+      "text_zh_Hant": "但下一次接收時,"
+    },
+    {
+      "text": "숫자는 그대로 남아 있었습니다.",
+      "est_sec": 4,
+      "text_en": "the number was still there.",
+      "text_ja": "数字はそのまま残っていました。",
+      "text_zh_Hant": "數字依然存在。"
+    },
+    {
+      "text": "신호가 접시를 떠나서 —",
+      "est_sec": 3,
+      "text_en": "The signal left the dish —",
+      "text_ja": "信号は皿を離れて——",
+      "text_zh_Hant": "訊號離開了碟子——"
+    },
+    {
+      "text": "근처에 있던 보청기로 옮겨붙질 않나,",
+      "est_sec": 5,
+      "text_en": "jumping to nearby hearing aids,",
+      "text_ja": "近くにあった補聴器に飛び移ったり、",
+      "text_zh_Hant": "跳到附近的助聽器上,"
+    },
+    {
+      "text": "이어폰은 기본이고,",
+      "est_sec": 2,
+      "text_en": "earbuds, of course,",
+      "text_ja": "イヤホンは言うまでもなく、",
+      "text_zh_Hant": "耳機自然不在話下,"
+    },
+    {
+      "text": "나중엔 관제실 벽시계 스피커에서까지 들리기 시작했죠.",
+      "est_sec": 7,
+      "text_en": "and eventually even the control room's wall-clock speaker started playing it.",
+      "text_ja": "しまいには管制室の壁掛け時計のスピーカーからまで聞こえ始めました。",
+      "text_zh_Hant": "最後連控制室掛鐘的喇叭都開始傳出聲音。"
+    },
+    {
+      "text": "그 소리, 처음 들으면… 그냥 잡음 같습니다.",
+      "est_sec": 6,
+      "text_en": "That sound, the first time you hear it… it's just noise.",
+      "text_ja": "その音、最初に聞くと…ただの雑音に聞こえます。",
+      "text_zh_Hant": "那聲音第一次聽起來……只像雜訊。"
+    },
+    {
+      "text": "그런데 계속 듣고 있으면 어느 순간,",
+      "est_sec": 5,
+      "text_en": "But keep listening, and at some point,",
+      "text_ja": "でも聞き続けていると、ある瞬間、",
+      "text_zh_Hant": "但持續聽下去,某個瞬間,"
+    },
+    {
+      "text": "잡음 사이사이에 아주 정확한 간격의 침묵이 끼어 있다는 걸 알게 되죠.",
+      "est_sec": 9,
+      "text_en": "you notice a very precisely spaced silence between the bursts of noise.",
+      "text_ja": "雑音と雑音の間に、とても正確な間隔の沈黙が挟まっていることに気づきます。",
+      "text_zh_Hant": "會發現雜訊之間夾著間隔極為精準的靜默。"
+    },
+    {
+      "text": "그 침묵과 침묵 사이 간격이 일 점 삼 초였고요.",
+      "est_sec": 6,
+      "text_en": "That gap between silences was one-point-three seconds, and",
+      "text_ja": "その沈黙と沈黙の間隔は一点三秒で、",
+      "text_zh_Hant": "那靜默之間的間隔是一點三秒,",
+      "emphasis": "일 점 삼 초"
+    },
+    {
+      "text": "숫자가 하나 늘어날 때마다,",
+      "est_sec": 3,
+      "text_en": "every time the number went up by one,",
+      "text_ja": "数字がひとつ増えるたびに、",
+      "text_zh_Hant": "數字每增加一,"
+    },
+    {
+      "text": "그 간격이 영점 영일 초씩 짧아졌습니다.",
+      "est_sec": 5,
+      "text_en": "that gap shortened by point-zero-one seconds.",
+      "text_ja": "その間隔が零点零一秒ずつ短くなっていきました。",
+      "text_zh_Hant": "間隔就會縮短零點零一秒。"
+    },
+    {
+      "text": "해체 시도 다음 날 아침,",
+      "est_sec": 3,
+      "text_en": "The morning after the dismantling attempt,",
+      "text_ja": "解体を試みた翌朝、",
+      "text_zh_Hant": "拆除行動的隔天早上,"
+    },
+    {
+      "text": "혼자 야간을 지키던 인원 한 명이 사라졌습니다.",
+      "est_sec": 6,
+      "text_en": "the one person keeping the lone night watch had vanished.",
+      "text_ja": "夜間に一人で見張りをしていた人員が一人、姿を消していました。",
+      "text_zh_Hant": "獨自值夜的那名人員,不見了。"
+    },
+    {
+      "text": "의자는 아직 따뜻했고,",
+      "est_sec": 3,
+      "text_en": "The chair was still warm, and",
+      "text_ja": "椅子はまだ温かく、",
+      "text_zh_Hant": "椅子還是溫的,"
+    },
+    {
+      "text": "헤드셋에서는 여전히 숫자가 흘러나오고 있었고요.",
+      "est_sec": 6,
+      "text_en": "the headset was still streaming out numbers.",
+      "text_ja": "ヘッドセットからは依然として数字が流れ続けていました。",
+      "text_zh_Hant": "耳機裡仍不斷傳出數字。"
+    },
+    {
+      "text": "다들 알게 됐습니다.",
+      "est_sec": 3,
+      "text_en": "Everyone understood, then.",
+      "text_ja": "みんな、そこで理解しました。",
+      "text_zh_Hant": "大家這才明白。"
+    },
+    {
+      "text": "신호를 없애려던 게 아니라,",
+      "est_sec": 3,
+      "text_en": "It wasn't that the signal had been removed —",
+      "text_ja": "信号を消したわけではなく、",
+      "text_zh_Hant": "不是訊號被消除了——"
+    },
+    {
+      "text": "청취자 하나가 스스로 발신원이 되어버렸다는 걸요.",
+      "est_sec": 6,
+      "text_en": "one listener had become the transmitter itself.",
+      "text_ja": "聴き手のひとりが、自ら発信源になってしまったのだということを。",
+      "text_zh_Hant": "而是一名聽者,自己成了發訊源。"
+    },
+    {
+      "text": "이 일 이후로 재단은 방향을 완전히 바꿨죠.",
+      "est_sec": 6,
+      "text_en": "After that incident, the Foundation changed direction completely.",
+      "text_ja": "この一件以降、財団は方針を完全に転換しました。",
+      "text_zh_Hant": "這起事件之後,基金會徹底改變了方向。"
+    },
+    {
+      "text": "아예 안 들으면 저쪽에서 스스로 청취자를 찾아 나선다는 걸 깨달았거든요.",
+      "est_sec": 9,
+      "text_en": "They realized that total silence just makes the other side go looking for a listener on its own.",
+      "text_ja": "まったく聴かなければ、向こうが自分で聴き手を探しに来るのだと悟ったからです。",
+      "text_zh_Hant": "他們發現,完全不聽,對方反而會自己找上聽者。"
+    },
+    {
+      "text": "그래서 지금은 이런 방식입니다.",
+      "est_sec": 4,
+      "text_en": "So now, the approach is this.",
+      "text_ja": "だから今はこういうやり方です。",
+      "text_zh_Hant": "所以現在的做法是這樣。"
+    },
+    {
+      "text": "완전히 막지 않고,",
+      "est_sec": 2,
+      "text_en": "Not a total blackout,",
+      "text_ja": "完全に遮断するのではなく、",
+      "text_zh_Hant": "不是完全阻斷,"
+    },
+    {
+      "text": "정확히 한 사람만 상시로 배치해서 로그를 받게 하는 거죠.",
+      "est_sec": 7,
+      "text_en": "just exactly one person, posted at all times, to take the log.",
+      "text_ja": "正確に一人だけを常時配置して、ログを受け取らせるんです。",
+      "text_zh_Hant": "而是固定安排正好一人,全天候接收紀錄。"
+    },
+    {
+      "text": "「하루만… 더 듣고 넘기겠습니다.」",
+      "est_sec": 4,
+      "text_en": "\"Just one more day, and I'll hand it off.\"",
+      "text_ja": "「あと一日だけ聴いて、引き継ぎます」",
+      "text_zh_Hant": "「再聽一天,我就交接。」"
+    },
+    {
+      "text": "오두야 연구원이 그렇게 말한 건,",
+      "est_sec": 4,
+      "text_en": "Researcher Oduya said that,",
+      "text_ja": "オドゥヤ研究員がそう言ったのは、",
+      "text_zh_Hant": "歐都亞研究員這麼說的時候,"
+    },
+    {
+      "text": "순번이 벌써 몇 차례나 넘어간 뒤였습니다.",
+      "est_sec": 5,
+      "text_en": "well after her turn had already come around several times.",
+      "text_ja": "順番がすでに何度も回ってきた後のことでした。",
+      "text_zh_Hant": "輪班早已輪過她好幾次了。"
+    },
+    {
+      "text": "그때마다 누군가 자리를 비웠고요.",
+      "est_sec": 4,
+      "text_en": "Every time, someone had lost their seat.",
+      "text_ja": "そのたびに、誰かが席を空けていました。",
+      "text_zh_Hant": "每一次,都有人從此消失。"
+    },
+    {
+      "text": "그녀는 그 부담을 신참에게 넘기고 싶지 않았습니다.",
+      "est_sec": 7,
+      "text_en": "She didn't want to pass that burden onto a newer hire.",
+      "text_ja": "彼女は、その重荷を新人に押しつけたくなかったんです。",
+      "text_zh_Hant": "她不想把這份重擔轉嫁給新人。"
+    },
+    {
+      "text": "그럴듯한 이유였죠.",
+      "est_sec": 2,
+      "text_en": "It was a reasonable-sounding reason.",
+      "text_ja": "もっともらしい理由でした。",
+      "text_zh_Hant": "聽起來合情合理的理由。"
+    },
+    {
+      "text": "그런데 그건 —",
+      "est_sec": 2,
+      "text_en": "But that —",
+      "text_ja": "ですが、それこそが——",
+      "text_zh_Hant": "但那——"
+    },
+    {
+      "text": "이 격리 절차가 정한 마지막 선이었죠.",
+      "est_sec": 5,
+      "text_en": "was the last line this containment procedure had drawn.",
+      "text_ja": "この格納手順が定めた、最後の一線だったんです。",
+      "text_zh_Hant": "正是這套收容程序畫下的最後一條界線。"
+    },
+    {
+      "text": "한 사람이 한 주기만 듣고 반드시 교대한다는 것.",
+      "est_sec": 6,
+      "text_en": "That one person listens for exactly one cycle, then hands off without fail.",
+      "text_ja": "一人が一周期だけ聴き、必ず交代するということ。",
+      "text_zh_Hant": "一人只聽一個週期,必定交接。"
+    },
+    {
+      "text": "왜 어기면 안 되는지는,",
+      "est_sec": 3,
+      "text_en": "Why breaking it was forbidden,",
+      "text_ja": "なぜそれを破ってはいけないのか、",
+      "text_zh_Hant": "為什麼不能違反,"
+    },
+    {
+      "text": "어디에도 적혀 있지 않았습니다.",
+      "est_sec": 4,
+      "text_en": "was never written down anywhere.",
+      "text_ja": "どこにも書かれていませんでした。",
+      "text_zh_Hant": "從沒有任何地方寫明過。"
+    },
+    {
+      "text": "동료 하나가 회의에서 그녀에게 물었습니다.",
+      "est_sec": 5,
+      "text_en": "A colleague asked her, at a meeting.",
+      "text_ja": "会議で、同僚の一人が彼女に尋ねました。",
+      "text_zh_Hant": "會議上,一位同事這麼問她。"
+    },
+    {
+      "text": "「그거, 세어본 적 있어요?」",
+      "est_sec": 4,
+      "text_en": "\"Have you ever actually counted it?\"",
+      "text_ja": "「それ、数えたことあります?」",
+      "text_zh_Hant": "「那個,你真的數過嗎?」"
+    },
+    {
+      "text": "오두야는 답하지 않았습니다.",
+      "est_sec": 3,
+      "text_en": "Oduya didn't answer.",
+      "text_ja": "オドゥヤは答えませんでした。",
+      "text_zh_Hant": "歐都亞沒有回答。"
+    },
+    {
+      "text": "두 번째 주기가 끝나기 직전,",
+      "est_sec": 4,
+      "text_en": "Right before the second cycle ended,",
+      "text_ja": "二周期目が終わる直前、",
+      "text_zh_Hant": "第二個週期即將結束前,"
+    },
+    {
+      "text": "처음 보는 일이 일어났습니다.",
+      "est_sec": 4,
+      "text_en": "something no one had ever seen happened.",
+      "text_ja": "初めて目にする出来事が起きました。",
+      "text_zh_Hant": "發生了前所未見的事。"
+    },
+    {
+      "text": "숫자가 늘지 않고, 줄어들기 시작한 거예요.",
+      "est_sec": 6,
+      "text_en": "The number stopped rising, and started falling instead.",
+      "text_ja": "数字が増えるのではなく、減り始めたんです。",
+      "text_zh_Hant": "數字不再上升,反而開始下降。"
+    },
+    {
+      "text": "마흔에서, 서른아홉으로.",
+      "est_sec": 3,
+      "text_en": "From forty, to thirty-nine.",
+      "text_ja": "四十から、三十九へ。",
+      "text_zh_Hant": "從四十,變成三十九。"
+    },
+    {
+      "text": "서른아홉에서, 서른여덟로.",
+      "est_sec": 3,
+      "text_en": "From thirty-nine, to thirty-eight.",
+      "text_ja": "三十九から、三十八へ。",
+      "text_zh_Hant": "從三十九,變成三十八。"
+    },
+    {
+      "text": "그녀의 마지막 로그에는 이렇게 적혀 있었습니다.",
+      "est_sec": 6,
+      "text_en": "Her final log entry read like this.",
+      "text_ja": "彼女の最後のログには、こう記されていました。",
+      "text_zh_Hant": "她最後一則紀錄是這麼寫的。"
+    },
+    {
+      "text": "「…마흔하나.」",
+      "est_sec": 2,
+      "text_en": "\"…forty-one.\"",
+      "text_ja": "「…四十一」",
+      "text_zh_Hant": "「……四十一。」"
+    },
+    {
+      "text": "그 뒤로는, 아무것도 없었고요.",
+      "est_sec": 4,
+      "text_en": "After that, there was nothing more.",
+      "text_ja": "その後は、何も残っていませんでした。",
+      "text_zh_Hant": "在那之後,什麼都沒有了。"
+    },
+    {
+      "text": "여기서부터는… 저도 좀 그렇더라고요.",
+      "est_sec": 5,
+      "text_en": "From here on… it got a little hard for me too.",
+      "text_ja": "ここから先は…私も少し、こたえるものがありました。",
+      "text_zh_Hant": "從這裡開始……我心裡也不太好受。"
+    },
+    {
+      "text": "재단이 나중에 알아낸 건 이런 겁니다.",
+      "est_sec": 5,
+      "text_en": "What the Foundation later worked out was this.",
+      "text_ja": "財団が後に突き止めたのはこういうことでした。",
+      "text_zh_Hant": "基金會後來查明的是這樣的事。"
+    },
+    {
+      "text": "저 신호를 처음 만든 쪽도,",
+      "est_sec": 3,
+      "text_en": "Whoever first made that signal, too,",
+      "text_ja": "あの信号を最初に作った側もまた、",
+      "text_zh_Hant": "當初製造那段訊號的一方,"
+    },
+    {
+      "text": "아주 오래전에 자기네 인원을 세다가 하나씩 잃었다는 것.",
+      "est_sec": 7,
+      "text_en": "had, long ago, lost their own people one by one while counting them.",
+      "text_ja": "はるか昔、自分たちの仲間を数えながら一人ずつ失っていたのだということ。",
+      "text_zh_Hant": "很久以前,也曾在數自己的同伴時,一個接一個地失去了他們。"
+    },
+    {
+      "text": "그러니까 이 셈은 구조 요청이면서,",
+      "est_sec": 4,
+      "text_en": "So this count was, at once, a distress call,",
+      "text_ja": "つまりこの数え上げは、救助要請であると同時に、",
+      "text_zh_Hant": "所以這場計數,既是求救訊號,"
+    },
+    {
+      "text": "동시에 초대장이었다는 거죠.",
+      "est_sec": 3,
+      "text_en": "and an invitation, both.",
+      "text_ja": "招待状でもあったんです。",
+      "text_zh_Hant": "也是一封邀請函。"
+    },
+    {
+      "text": "그리고 재단이 그토록 안전하다고 믿었던 절차 —",
+      "est_sec": 6,
+      "text_en": "And the procedure the Foundation trusted as the safe one —",
+      "text_ja": "そして財団があれほど安全だと信じていた手順——",
+      "text_zh_Hant": "而基金會一直深信是安全措施的那套規程——"
+    },
+    {
+      "text": "정확히 한 사람이 상시로 듣고 확인해 준다는 그 규칙이야말로,",
+      "est_sec": 8,
+      "text_en": "exactly one person, always listening, always confirming — that very rule,",
+      "text_ja": "正確に一人が常に聴き、確認し続けるというその規則こそが、",
+      "text_zh_Hant": "固定由一人全天候聆聽並確認,這條規則,"
+    },
+    {
+      "text": "저쪽에 매 주기 확실한 응답을 보장해 준 셈이었습니다.",
+      "est_sec": 7,
+      "text_en": "was precisely what guaranteed a reliable answer, every single cycle.",
+      "text_ja": "毎周期、確実な応答を向こうに保証していたわけです。",
+      "text_zh_Hant": "恰恰保證了對方每個週期都能得到確實的回應。"
+    },
+    {
+      "text": "막으려던 게 아니라, 먹이고 있었던 거죠.",
+      "est_sec": 5,
+      "text_en": "They weren't stopping it. They were feeding it.",
+      "text_ja": "止めようとしていたのではなく、餌をやっていたんです。",
+      "text_zh_Hant": "不是在阻止它,而是在餵養它。"
+    },
+    {
+      "text": "이상하죠?",
+      "est_sec": 2,
+      "text_en": "Strange, isn't it?",
+      "text_ja": "妙でしょう?",
+      "text_zh_Hant": "很奇怪吧?"
+    },
+    {
+      "text": "안전한 방법이라고 믿었던 게,",
+      "est_sec": 4,
+      "text_en": "That the method they trusted as safe,",
+      "text_ja": "安全だと信じていた方法が、",
+      "text_zh_Hant": "他們信以為安全的方法,"
+    },
+    {
+      "text": "사실은 가장 확실한 배달 경로였다는 게요.",
+      "est_sec": 5,
+      "text_en": "turns out to have been the surest delivery route all along.",
+      "text_ja": "実は最も確実な配達経路だったというのが。",
+      "text_zh_Hant": "原來竟是最確實的傳遞管道。"
+    },
+    {
+      "text": "이 신호와 닮은 파형이,",
+      "est_sec": 3,
+      "text_en": "A waveform resembling this signal,",
+      "text_ja": "この信号に似た波形が、",
+      "text_zh_Hant": "與這段訊號相似的波形,"
+    },
+    {
+      "text": "다른 사이트 세 곳에서도 뒤늦게 확인됐다는 내부 메모가 있습니다.",
+      "est_sec": 8,
+      "text_en": "has reportedly since been confirmed at three other sites, per internal memos.",
+      "text_ja": "他の三箇所のサイトでも後になって確認されたという内部メモがあります。",
+      "text_zh_Hant": "據內部備忘錄記載,後來也在另外三個站點被證實出現過。"
+    },
+    {
+      "text": "뱀의 손 쪽에서는 재단보다 먼저 알고 있었다는 소문도 돌았는데,",
+      "est_sec": 8,
+      "text_en": "Rumor has it the Serpent's Hand knew before the Foundation did,",
+      "text_ja": "蛇の手側は財団より先に知っていたという噂もありましたが、",
+      "text_zh_Hant": "傳聞蛇之手一派早在基金會之前就已知情,"
+    },
+    {
+      "text": "확인된 바는 없고요.",
+      "est_sec": 3,
+      "text_en": "though nothing's been confirmed.",
+      "text_ja": "確認された事実ではありません。",
+      "text_zh_Hant": "但這點並未獲得證實。"
+    },
+    {
+      "text": "그리고 지금,",
+      "est_sec": 2,
+      "text_en": "And right now,",
+      "text_ja": "そして今、",
+      "text_zh_Hant": "而現在,"
+    },
+    {
+      "text": "\"정확히 한 사람\" 프로토콜은",
+      "est_sec": 4,
+      "text_en": "the \"exactly one person\" protocol",
+      "text_ja": "「正確に一人」というプロトコルは",
+      "text_zh_Hant": "「固定一人」的協議,"
+    },
+    {
+      "text": "비슷한 시설 전부의 표준 절차로 채택돼 있습니다.",
+      "est_sec": 6,
+      "text_en": "has been adopted as standard procedure across every similar facility.",
+      "text_ja": "類似施設すべての標準手順として採用されています。",
+      "text_zh_Hant": "已被採用為所有類似設施的標準程序。"
+    },
+    {
+      "text": "이 개체는 지금 SCP-9613,",
+      "est_sec": 4,
+      "text_en": "This object is now designated SCP-9613,",
+      "text_ja": "この個体は現在SCP-9613、",
+      "text_zh_Hant": "這個個體目前編號SCP-9613,"
+    },
+    {
+      "text": "등급은 케테르로 올라 있습니다.",
+      "est_sec": 4,
+      "text_en": "classified Keter.",
+      "text_ja": "等級はケテルに引き上げられています。",
+      "text_zh_Hant": "等級已提升至凱特爾。"
+    },
+    {
+      "text": "격리는 여전히,",
+      "est_sec": 2,
+      "text_en": "Containment still means, as ever,",
+      "text_ja": "格納とは今も変わらず、",
+      "text_zh_Hant": "收容,如今依然意味著,"
+    },
+    {
+      "text": "저 접시가 세는 숫자를 누군가 계속 받아 적는다는 뜻이고요.",
+      "est_sec": 8,
+      "text_en": "someone continuing to receive and log every number that dish counts.",
+      "text_ja": "誰かがその皿の数える数字を、絶えず受け取り続けるということです。",
+      "text_zh_Hant": "得有人不斷接下那面碟子數出的每一個數字。"
+    },
+    {
+      "text": "지금 이 순간,",
+      "est_sec": 2,
+      "text_en": "Right at this moment,",
+      "text_ja": "まさに今この瞬間、",
+      "text_zh_Hant": "就在此刻,"
+    },
+    {
+      "text": "셈하는 접시가 세고 있는 숫자는 마흔둘입니다.",
+      "est_sec": 6,
+      "text_en": "the number the Counting Dish is on stands at forty-two.",
+      "text_ja": "数える皿が数えている数字は、四十二です。",
+      "text_zh_Hant": "數數的碟子正數到的數字,是四十二。",
+      "emphasis": "숫자, 마흔둘"
+    },
+    {
+      "text": "비슷한 걸 들어보신 적, 있으신가요?",
+      "est_sec": 5,
+      "text_en": "Have you ever heard something like this?",
+      "text_ja": "似たようなものを聞いたこと、ありますか?",
+      "text_zh_Hant": "您是否曾聽過類似的聲音?"
+    },
+    {
+      "text": "아신다면 어떤 소리였는지,",
+      "est_sec": 3,
+      "text_en": "If you have, whatever it sounded like,",
+      "text_ja": "もしあれば、それがどんな音だったか、",
+      "text_zh_Hant": "如果有,那是什麼樣的聲音,"
+    },
+    {
+      "text": "댓글로 알려주시면 좋겠습니다.",
+      "est_sec": 4,
+      "text_en": "I'd love to hear about it in the comments.",
+      "text_ja": "コメントで教えていただけると嬉しいです。",
+      "text_zh_Hant": "歡迎在留言告訴我們。"
+    },
+    {
+      "text": "이런 기록들, 계속 찾아서 들려드리겠습니다.",
+      "est_sec": 6,
+      "text_en": "I'll keep finding records like this one, and bringing them to you.",
+      "text_ja": "こういった記録、これからも探して、お届けしていきます。",
+      "text_zh_Hant": "這樣的紀錄,我會繼續找下去,說給大家聽。"
+    }
+  ],
+  "scenes": [
+    {
+      "prompt": "a lone radio telescope dish on a windswept high-altitude plateau at night, tilted at an unnatural resting angle beside a low concrete building, wide shot, one-point perspective, symmetrical framing, deep focus, single sodium floodlight on a pole, hard cold shadows on gravel, weathered steel lattice, frost-cracked concrete, rusted rail, thin haze, faint starfield, desaturated slate blue, dull steel grey, dim amber floodlight, 24mm lens, f/8, sharp detail, photorealistic, lower quarter empty gravel. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "a cramped night-shift control room, one monitor showing a plain waveform with unnaturally even spacing, shot toward the console, one-point perspective, symmetrical framing, deep focus, single desk lamp with a green glass shade, hard downward shadow, scratched grey desk, cracked vinyl chair, dust-filmed glass, thin haze in the lamp light, desaturated teal, institutional grey-green, warm lamp amber, 28mm lens, f/8, sharp detail, photorealistic, lower quarter empty floor. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "a close-up of an open logbook page on a metal desk, one line of handwriting circled in pencil among ordinary tally marks, overhead close shot, centered framing, deep focus, single gooseneck lamp, tight hard pool of light on the page, yellowed paper, worn binding, pencil shavings, dust motes in the lamp light, desaturated cream, institutional green mat, dim amber highlight, 50mm macro, f/8, sharp detail, photorealistic, lower quarter empty desk surface. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "a close-up of the dish's support joint and cabling, one access panel left open, a loose cable strand against curved metal, low-angle close shot, tight framing, deep focus, single clamp work light, hard raking shadow on riveted metal, corroded panel, frayed sheathing, frost on bolts, thin cold mist, desaturated steel blue, institutional grey, dim work-light amber, 35mm lens, f/8, sharp detail, photorealistic, lower quarter empty concrete. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "a lone technician in a plain grey coverall at the dish's base, seen from behind, one gloved hand on an open junction box, no face visible, wide shot, off-center framing, deep focus, single floodlight above, long hard shadow on the platform, scoured steel grating, weathered rail, frost-rimed gloves, visible breath in cold air, desaturated slate, institutional green coverall, dim amber floodlight, 28mm lens, f/8, sharp detail, photorealistic, lower quarter empty grating. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "a wide shot of the observatory perimeter fence at dusk, a distant line of small dark silhouettes crossing the ridge beyond it, no faces visible, wide shot, symmetrical framing, deep focus, low flat dusk light from one direction, long cold shadows on gravel, chain-link fence, weathered sign post, frost-hardened track, thin blowing dust, desaturated slate blue, dull ochre ground, dim grey sky, 35mm lens, f/8, sharp detail, photorealistic, lower quarter empty gravel track. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "a wide shot of a crane lifting one dish assembly free of its mount at night, tactical crew in plain dark gear at the base, faces turned away, low-angle wide shot, symmetrical framing, deep focus, single mounted spotlight, hard cold beam through mist, scoured cable, weathered crane boom, frost on gear, thin lit mist, desaturated steel grey, dull olive gear, cold white spotlight, 24mm lens, f/8, sharp detail, photorealistic, lower quarter empty gravel yard. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "a close shot of an empty rolling chair at the console, a headset on the backrest, one cable still plugged into the panel, close shot, centered framing, deep focus, single desk lamp, tight hard pool of light on the headset, cracked vinyl, scratched armrest, dust on the console edge, dust motes in the lamp beam, desaturated teal, institutional grey, warm lamp amber, 35mm lens, f/8, sharp detail, photorealistic, lower quarter empty floor tile. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "a close-up of an old wall clock with a small built-in speaker grille above a corridor doorway, hands frozen at a non-round time, close shot, centered framing, deep focus, single ceiling fluorescent tube, hard downward shadow on the wall, water-stained plaster, peeling paint, dust on the grille, thin dust haze under the tube, desaturated teal, institutional green, dim fluorescent white, 50mm lens, f/8, sharp detail, photorealistic, lower quarter empty corridor floor. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "a rear silhouette of a lone seated figure at the night console, headset on, one hand raised as if about to write, no face visible, wide shot, off-center framing, deep focus, single desk lamp behind the figure, hard rim light on the shoulder, rest of room in shadow, scratched console housing, worn chair fabric, dust on the desk, dust motes in the lamp beam, desaturated slate, institutional grey-green, warm lamp amber, 35mm lens, f/8, sharp detail, photorealistic, lower quarter empty floor. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "a close-up of a manila folder on a metal shelf, one internal memo page angled outward with a paperclip catching the light, tab left blank, overhead close shot, centered framing, deep focus, single desk lamp, tight hard pool of light on the folder, worn cardstock, dust on the shelf edge, faint rust on the paperclip, dust motes in the light, desaturated cream, institutional grey shelving, dim amber highlight, 50mm macro, f/8, sharp detail, photorealistic, lower quarter empty shelf surface. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "a final wide static shot of the lone dish under a clear night sky, motionless, angled toward an unremarkable patch of stars, one indicator light glowing steady at its base, wide shot, symmetrical framing, deep focus, one small red indicator light as the only warm source, cold ambient starlight, weathered steel lattice, frost on the base plate, faint condensation on the dish, still air, desaturated near-black blue, dull steel grey, dim red indicator, 24mm lens, f/8, sharp, photorealistic, lower quarter empty gravel. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    }
+  ],
+  "background": {
+    "id": "scp-9613_bg",
+    "kind": "image",
+    "reuse": false,
+    "aspect": "16:9",
+    "resolution": "1920x1080",
+    "prompt": "a lone radio telescope dish on a windswept high-altitude plateau at night, resting at a faintly unnatural angle beside a squat concrete building, wide static shot, one-point perspective, symmetrical framing, deep focus, single sodium floodlight on a pole, hard cold shadow on gravel, weathered steel lattice, frost-cracked concrete, rusted rail, thin haze, faint starfield, desaturated slate blue, dull steel grey, dim amber glow, 24mm lens, f/8, sharp, photorealistic, lower quarter empty gravel. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization",
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, cartoon, anime, illustration, painting, 3d render, cgi, video game, oversaturated, neon, hdr glow, lens flare, vignette overload, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, uncanny face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion"
+  },
+  "thumbnail": {
+    "hook": "extreme close-up of a radio dish's curved metal edge against black night sky, one small steady indicator light at its base, dish angled slightly off, subject on the right third, left third dark empty space, single cold rim light, black background, weathered riveted metal, desaturated steel blue, warm amber indicator, 50mm lens, f/4, sharp, photorealistic. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization",
+    "hook_alt": [
+      "close-up of an open logbook page under a gooseneck lamp, one handwritten line circled in pencil among ordinary tally marks, subject on the right third, left third dark empty space, tight hard pool of lamp light, yellowed paper, worn binding, desaturated cream and institutional green, warm amber highlight, 50mm macro, f/4, sharp, photorealistic. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization",
+      "close-up of an empty rolling chair at a night console, a headset on the backrest cable still plugged in, subject on the right third, left third dark empty space, single desk lamp, hard pool of light on the headset, cracked vinyl, desaturated teal and institutional grey, warm amber glow, 35mm lens, f/4, sharp, photorealistic. institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    ],
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, cartoon, anime, illustration, painting, 3d render, cgi, video game, oversaturated, neon, hdr glow, lens flare, vignette overload, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, uncanny face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion",
+    "text_safe_area": "right third",
+    "resolution": "1280x720"
+  },
+  "platforms": {
+    "youtube": {
+      "title": "고원 전파관측소에서 사람 수를 세기 시작한 신호의 정체 [SCP-9613]",
+      "title_form": "A",
+      "thumbnail_text": "셈하는 접시",
+      "thumbnail_quote": "- 저는 만지기만 했습니다.",
+      "chapters": [
+        "00:00 접시가 도는 이유",
+        "01:26 해독팀이 찾아낸 숫자",
+        "02:16 사람을 빼도 셈은 계속된다",
+        "04:05 D계급이 접점을 만진 뒤",
+        "07:16 오두야의 마지막 순번"
+      ],
+      "description": "고원 지대 전파관측소에서 매일 밤 스스로 각도를 되돌리는 접시 하나, 그 접시가 받는 반복 신호는 사실 그날 그 자리에 있는 사람 수를 세는 숫자였습니다.\n\n비슷한 일을 겪어보신 적 있나요? 댓글로 들려주세요.\n\n※ SCP 재단 세계관 기반 오리지널 창작 · 허구의 이야기입니다\n※ 본 콘텐츠는 CC BY-SA 3.0 라이선스를 따릅니다 · 원작: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP재단 #괴담 #무서운이야기 #미스터리 #심야라디오 #공포라디오",
+      "pinned_comment": "이런 신호, 혹은 이유 모를 반복을 겪어보신 적 있으신가요? 어떤 상황이었는지 댓글로 들려주세요.",
+      "playlist": "SCP 아카이브 (전편 듣기)",
+      "localizations": {
+        "en": {
+          "title": "A Highland Observatory's Signal Was Counting Its Own Staff [SCP-9613]",
+          "description": "At a radio observatory on a high plateau, one dish resets its own angle every night at three. The repeating signal it receives turns out to be a number — the exact headcount of everyone on site that night.\n\nEver experienced something like this yourself? Let us know in the comments.\n\nThis is original fiction set in the SCP Foundation shared universe.\nLicensed under CC BY-SA 3.0 · Source: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCPFoundation #horror #creepypasta #mystery #nightradio"
+        },
+        "ja": {
+          "title": "高原の電波観測所が受信した、職員の数を数える信号の正体 [SCP-9613]",
+          "description": "高原にある電波観測所で、毎晩三時に自分で角度を戻す皿がひとつ。その皿が受信し続ける反復信号は、実はその夜そこにいた人数と一致する数字でした。\n\n似たような経験、ありますか? コメントで教えてください。\n\n本作はSCP財団の世界観に基づくオリジナル創作・フィクションです。\nCC BY-SA 3.0ライセンスに基づきます · 出典: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP財団 #怪談 #怖い話 #ミステリー #深夜ラジオ"
+        },
+        "zh-Hant": {
+          "title": "高原電波觀測站接收到、會數職員人數的訊號真相 [SCP-9613]",
+          "description": "在高原上的一座電波觀測站,有一面碟子每晚三點都會自行歸位。它持續接收到的重複訊號,其實是與當晚在場人數精準吻合的數字。\n\n您是否也曾遇過類似的經歷? 歡迎在留言告訴我們。\n\n本作品為SCP基金會世界觀下的原創虛構故事。\n採用CC BY-SA 3.0授權 · 原始出處: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP基金會 #怪談 #恐怖故事 #懸疑 #深夜廣播"
+        }
+      }
+    }
+  },
+  "shorts": {
+    "title": "고원의 접시가 사람 수를 세고 있었다 | SCP",
+    "overlay_top": [
+      "등급 : 케테르",
+      "당신도 세어지고 있을지 모릅니다"
+    ],
+    "script": "고원의 전파망원경 접시가, 밤마다 각도를 틀었다 되돌아옵니다. 재단이 해독해보니, 그 신호는 숫자였고요. 그날 근무 인원 수와 정확히 일치했습니다. 지금은 SCP-9613, 등급은 케테르입니다. 규칙은 셋입니다. 숫자를 소리 내어 읽지 않습니다. 해독한 내용은 옮겨 적지 않습니다. 정확히 한 사람만 상시로 듣고, 반드시 교대합니다. 어기면 어떻게 되는지는, 어디에도 적혀 있지 않습니다. 그런데 얼마 전, 담당 연구원이 그 마지막 규칙을 어겼습니다. 그 뒤에 무슨 일이 있었는지는, 전편에서 들려드립니다.",
+    "subject_prompt": "a single radio telescope dish centered and facing the viewer, filling the frame, one small steady red indicator light at its base, 9:16 vertical composition, subject centered and large, strong directional key light raking across the curved metal, deep black background, top 30% and bottom 25% of the frame are dark empty negative space for text, weathered riveted steel, frost texture, rich steel blue against black, sharp detail, photorealistic. sharp high-contrast product-still photography, single strong directional key light, deep black background, rich saturated color, crisp detail, dramatic rim light, photorealistic, 9:16 vertical composition",
+    "negative_prompt": "low contrast, washed out, faded, film grain, muted colors, text, letters, numbers, watermark, logo, signature, caption, subtitles, cartoon, anime, illustration, painting, 3d render, cgi, video game, oversaturated, neon, hdr glow, lens flare, vignette overload, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, uncanny face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion",
+    "description": "고원 전파관측소의 접시 하나가 매일 밤 스스로 각도를 되돌립니다. 그 신호가 세는 숫자는, 그 자리에 있던 사람 수였습니다. 전편에서 무슨 일이 있었는지 들려드립니다.\n\n#SCP #SCP재단 #괴담 #무서운이야기 #미스터리",
+    "playlist": "SCP 쇼츠"
+  },
+  "credit": "SCP 재단 세계관 기반 오리지널 창작 · 허구 · CC BY-SA 3.0",
+  "content_rating": "teen",
+  "notes": "SCP 아카이브 · 16:9 롱폼 + 9:16 쇼츠(롱폼 완료 시 자동) · 장면 전환 배경 + 자막 번인 · 단일 내레이터 · 완결형."
+}
