@@ -1,0 +1,41 @@
+name: 미아 산출물 감시 (루틴이 엉뚱한 브랜치에 커밋했나)
+
+# 왜 있나 — 2026-09-02.
+#   미장·국장 루틴이 며칠째 발행이 안 됐는데 ★Actions 에 빨간불이 하나도 없었다.
+#   파이프라인이 실패한 게 아니라, 스토리보드가 `claude/…` 브랜치로 가는 바람에
+#   shorts.yml 트리거(`routine/**`, `main`)에 아예 안 걸렸기 때문이다.
+#   실패하지 않는 고장은 아무도 모른다 → 그걸 시끄럽게 만드는 워크플로다.
+#
+# ⚠️ shorts.yml 트리거에 `claude/**` 를 추가하는 방식은 ★쓰지 않는다.
+#    그러면 개발 브랜치에서도 영상이 실제로 업로드된다.
+
+on:
+  schedule:
+    # 11:00 KST = 02:00 UTC — 전날 밤 미장(22:4x KST)과 그날 아침 국장(08:1x KST)이
+    # 모두 지난 뒤라 하루치를 한 번에 본다.
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+    inputs:
+      max_age_days:
+        description: "이보다 오래된 미아는 참고로만(기본 3)"
+        default: "3"
+
+permissions:
+  contents: read      # 아무것도 커밋/푸시하지 않는다
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0          # 전 브랜치를 봐야 한다
+          ref: main
+
+      - name: 원격 브랜치 전부 가져오기
+        run: git fetch origin "+refs/heads/*:refs/remotes/origin/*" --prune
+
+      - name: 미아 산출물 검사
+        run: |
+          python3 tools/find_orphan_storyboards.py \
+            --max-age-days "${{ github.event.inputs.max_age_days || '3' }}"
