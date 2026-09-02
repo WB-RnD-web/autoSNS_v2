@@ -28,6 +28,7 @@ import time
 import config
 import ledger as ledgermod
 import motion_short
+import news_copy_check
 import upload_youtube
 from upload_from_storyboard import build_meta
 
@@ -194,6 +195,8 @@ def process(sb_path, args, led):
         res["skipped"] = True
         print(f"   ⏭️  ledger 처리됨({ledgermod.key_for(sb)}) — 건너뜀")
         return res
+    # ★카피 점검 — 렌더 전에 본다. 밋밋하면 경고만 뜨고 계속 간다.
+    news_copy_check.report(sb)
     try:
         spec = resolve_spec(sb_path, sb, args)
         spec.setdefault("topic", sb.get("topic", ""))
