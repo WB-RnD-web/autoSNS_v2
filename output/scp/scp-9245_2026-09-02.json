@@ -1,0 +1,1200 @@
+{
+  "date": "2026-09-02",
+  "iso_week": "2026-W36",
+  "topic": "scp",
+  "privacy": "public",
+  "origin": "original",
+  "source_url": "",
+  "story_id": "scp-9245",
+  "scp_number": "SCP-9245",
+  "object_class": "Euclid",
+  "codename": "먼저 잠긴 칸",
+  "number_check": {
+    "checked_at": "2026-09-02",
+    "http_code": "unverified"
+  },
+  "title": "부에노스아이레스 지하 문서고에서 사흘 먼저 열리는 서랍의 정체 [SCP-9245]",
+  "theme": "도서관·아카이브",
+  "logline": "부에노스아이레스 외곽 지하 문서고의 오래된 목록함 이야기입니다. 서랍 하나가 사고가 나기 며칠 전에 저절로 잠기고, 열리면 그 안에 아직 일어나지 않은 사건이 적힌 카드가 들어 있습니다.",
+  "hook_line": "근무일지엔, 209번 서랍 얘기가 통째로 없습니다.",
+  "cold_open": "근무일지엔, 209번 서랍 얘기가 통째로 없습니다. 빠진 게 아니에요. 처음부터, 아예 안 적혀 있었습니다.",
+  "structure": "연대기형",
+  "opening_move": "문서의 빈칸",
+  "opening_note": "",
+  "closing_move": "기록이 아직 이어진다",
+  "number_reveal": "뒤",
+  "ending_mode": "가벼운 한마디",
+  "fault": "개체",
+  "procedures": [],
+  "character": {
+    "name": "아르마스",
+    "role": "문서고 담당 기록관",
+    "flaw": "보고보다 자기 손으로 먼저 해결하려는 고집 — 카드를 없애면 사건도 막을 수 있다고 확신해 스스로 규칙을 깼다"
+  },
+  "chain": [
+    {
+      "when": "",
+      "event": "부에노스아이레스 외곽 지하철 공사 중 오래된 지역 기록보존소 지하 문서고가 발견돼 재단이 회수했다.",
+      "because": ""
+    },
+    {
+      "when": "몇 주 뒤",
+      "event": "조사팀이 서랍 하나가 저절로 잠기고, 몇 시간 뒤 다시 열리면 안에 사흘 뒤 날짜가 적힌 새 카드가 나타난다는 걸 확인했다.",
+      "because": "오래된 지방 기록물로만 알고 회수했다가 서랍 잠금 이상을 감지해 야간 관찰을 시작했기 때문."
+    },
+    {
+      "when": "",
+      "event": "재단이 카드에 적힌 사고를 막으려 대상 인물을 격리·경고했지만, 사흘 뒤 다른 형태로 같은 결말이 그대로 일어났다.",
+      "because": "카드 내용을 확인한 이상 그대로 둘 수 없었기 때문."
+    },
+    {
+      "when": "이후",
+      "event": "막으려 개입할 때마다 다음 카드가 나오는 간격이 짧아진다는 걸 알고, 재단이 개입을 전면 중단했다.",
+      "because": "개입과 카드 발생 주기의 상관관계를 확인했기 때문."
+    },
+    {
+      "when": "몇 달 뒤",
+      "event": "개입을 멈추자 카드에 적히는 이름이 동네 주민에서 문서고 근무 인원으로 바뀌기 시작했다.",
+      "because": "그 지역 인구 기록이 이미 카드로 다 소진됐기 때문."
+    },
+    {
+      "when": "",
+      "event": "재단이 문제의 서랍을 콘크리트로, 강철판으로, 결국 통째로 뜯어내는 방식까지 시도했지만 그때마다 캐비닛 옆면에 새 서랍이 하나씩 더 생겼다.",
+      "because": "서랍 자체를 없애면 이름도 사라질 거라 판단했기 때문."
+    },
+    {
+      "when": "팔 개월 뒤",
+      "event": "담당 기록관 아르마스가 야간 점검 중 자기 사물함 번호(209번)로 잠긴 서랍을 발견하고, 다음 날 그 안에서 자기 이름이 적힌 카드를 찾았다.",
+      "because": "정기 야간 점검 순번이 그에게 돌아왔기 때문."
+    },
+    {
+      "when": "나흘째 밤",
+      "event": "그는 보고 대신 콘크리트 사건의 논리를 거꾸로 적용해, 카드를 몰래 꺼내 소각로에 태워 없앴다.",
+      "because": "보고하면 즉시 격리 대상이 되어 스스로 조사할 기회를 잃는다고 판단했기 때문."
+    },
+    {
+      "when": "그날 밤",
+      "event": "카드가 타 없어진 직후, 아르마스라는 존재 자체가 근무 기록·급여 대장·동료들의 기억에서 지워지기 시작했다.",
+      "because": "카드를 없앤 행위가 '기록되지 않으면 존재하지 않는다'는 개체의 규칙을 건드렸기 때문."
+    },
+    {
+      "when": "",
+      "event": "재단이 다른 서랍에 손으로 그의 기록을 되살려 써넣는 시도를 열일곱 번 했지만 전부 실패했다.",
+      "because": "지워지고 있는 존재를 막아야 했기 때문."
+    },
+    {
+      "when": "",
+      "event": "결국 209번 서랍을 영구 봉인했고, 아르마스의 흔적은 몇몇 동료의 흐릿한 기억으로만 남았다.",
+      "because": "되살리는 시도가 모두 실패로 끝났기 때문."
+    },
+    {
+      "when": "최근",
+      "event": "새 카드에 사이트 소속이 아닌 재단 상급 관리자의 이름이 등장해, 현재 이 개체의 등급 재분류 심사가 진행 중이다.",
+      "because": "대상이 될 만한 문서고 내부 인원 기록마저 거의 소진돼 대상 범위가 다시 바깥으로 넓어지고 있기 때문."
+    }
+  ],
+  "retention_beats": [
+    "…그런데 나머지는, 전부 맞았습니다. 우연이라고 하기엔 너무 정확하지 않나요?",
+    "다음 날 아침이면, 캐비닛 옆면에 서랍이 하나 더 생겨 있었습니다.",
+    "카드는 탔습니다. 문제는… 그다음이었어요."
+  ],
+  "twist_summary": "문서의 반전 — 카드는 사건을 예언하는 게 아니라, '기록됐다'는 사실 자체가 그 사람의 존재를 붙잡아두는 장치였다는 반전. 카드를 태워 사건을 막으려 한 아르마스 기록관은 사건 대신 자기 존재 자체가 지워지는 결과를 맞았고, 재단의 복구 시도는 열일곱 번 모두 실패했다.",
+  "narration_full": "근무일지엔, 209번 서랍 얘기가 통째로 없습니다. 빠진 게 아니에요. 처음부터, 아예 안 적혀 있었습니다. 이 얘기, 저도 「먼저 잠긴 칸」이라는 이름으로 처음 들었습니다. 대수롭지 않게 생각했는데… 자료를 볼수록, 그게 아니더라고요. 부에노스아이레스 외곽, 철거를 앞둔 지역 기록보존소 지하에서 이 문서고가 나온 게, 이 년 전입니다. 지하철 공사 인부들이 통로를 하나 잘못 뚫었고, 그 아래서 목록함이 발견됐습니다. 목록함 자체는 평범했어요. 나무 서랍 삼백열두 개, 1940년대부터 그 지역 출생·사망·재산 기록을 손으로 옮겨 적어둔 카드들. 재단이 처음 이걸 회수한 것도 그냥 \"오래된 지방 기록물\"이라서였습니다. 처음 이걸 발견한 인부들한테는 C등급 기억소거제를 놨습니다. 그런데 사흘 뒤부터, 그 골목을 일부러 피해 다녔다는 보고가 있었어요. 왜 피하는지는… 본인들도 몰랐고요. 이상한 점은 따로 있었습니다. 가끔, 서랍 하나가 저절로 잠깁니다. 손잡이를 당겨도 안 열려요. 그러다 몇 시간 뒤에 다시 열리는데 — 그 안에, 새 카드가 한 장 들어 있습니다. 문제는 그 카드였어요. 필체도, 잉크도, 종이 재질도 다 옛날 그대로인데, 적힌 날짜가 사흘 뒤였습니다. 처음 나온 카드엔 이렇게 적혀 있었습니다. 「인부 알가라뇨, 삼 일 후, 삼 층 계단에서 실족」. 재단은 당연히 그 인부를 격리하고 삼 층 근처엔 얼씬도 못 하게 했죠. 사흘 뒤, 그는 이 층 사다리에서 떨어졌습니다. 계단이 아니라 사다리였고, 삼 층이 아니라 이 층이었어요. …그런데 나머지는, 전부 맞았습니다. 우연이라고 하기엔 너무 정확하지 않나요? 여기서부터 재단은 몇 가지를 정했습니다. 카드가 나오면 즉시 봉인 봉투에 넣고, 대상 인물한텐 절대 알리지 않고, 내용을 막으려는 시도는, 하지 않기로요. 막으려 할수록, 다음 카드가 나오는 간격이 짧아졌거든요. 그런데 개입을 그만두니까, 이번엔 다른 문제가 생겼습니다. 서랍이 잠기는 빈도는 줄었는데, 카드에 적히는 이름이 바뀌기 시작한 거예요. 더 이상 동네 주민이 아니라, 문서고 안에서 일하는 사람들 이름이 나오기 시작했습니다. 지역 인구 기록이 다 소진됐다는 뜻이죠. 이백 살 넘은 마을 사람들 기록까지, 카드는 이미 다 써버린 겁니다. 재단은 이때 몇 가지를 시도했습니다. 문제의 서랍을 통째로 콘크리트로 발라봤고, 그다음엔 강철판을 겹으로 덧대봤고, 마지막엔 서랍 앞면을 아예 뜯어내 버렸습니다. 결과는 매번 같았어요. 다음 날 아침이면, 캐비닛 옆면에 서랍이 하나 더 생겨 있었습니다. 삼백열두 개였던 서랍이, 삼백열세 개가 됐죠. 이쯤 되면, 재단도 어지간히 질렸을 텐데요. 이때부터 이 개체는 「먼저 잠긴 칸」이라고 불리기 시작했습니다 — 잠기는 게 항상, 사건보다 먼저였으니까요. 이 개체엔 기동특무부대도 배정돼 있습니다. 람다-11, 별칭 '빈칸 조정관'이요. 이름과 달리, 이 사람들이 하는 일은 조정이 아니라 그냥 지켜보는 것뿐입니다. 담당 연구원 중에 아르마스라는 사람이 있었습니다. 신입은 아니고, 이 문서고에 배속된 지 팔 개월 된 기록관이었어요. 어느 날 야간 점검을 돌다가, 그는 잠긴 서랍 하나를 발견합니다. 번호를 확인하니 209번. 자기 사물함 번호였어요. 다음 날 다시 가보니 서랍은 열려 있었고, 안에 카드가 있었습니다. 그 서랍만 유난히 따뜻했다고, 그는 나중에 적어뒀습니다. 나무 색은 다른 칸이랑 똑같은 짙은 밤색인데, 만지면 꼭 방금 다림질한 천 같았다고요. 서랍 틈에서는 몰식자 잉크 냄새가, 아주 옅게 났습니다. 카드엔 자기 이름이 있었습니다. 「아르마스, 나흘 후, 지하 삼 층에서」. 나머지는 잉크가 번져서 못 읽었다고, 그는 진술했습니다. 그는 이걸 보고하지 않았습니다. 보고하면 바로 격리 대상이 되고, 자기 손으로 더 조사할 기회가 사라진다고, 생각했거든요. 「하루만 더 보고, 그다음에 올리겠습니다」 — 기록에 남은 그의 마지막 말입니다. 그 하루가, 나흘로 늘어났죠. 그는 콘크리트 사건을 알고 있었습니다. 그래서 거꾸로 생각한 거예요. 카드가 원인이면, 카드를 지우면 결과도 같이 지워지지 않을까 하고요. 나흘째 되던 날 밤, 그는 209번 서랍에서 자기 카드를 꺼내 소각로에 넣었습니다. 카드는 탔습니다. 문제는… 그다음이었어요. 그날 밤 근무일지엔, 「아르마스 씨, 출근하지 않음」이라고만 적혀 있습니다. 그런데 아무도 그를 찾지 않았습니다. 왜냐하면, 아무도 그를 기억하지 못했으니까요. 사물함에 이름표가 없었습니다. 원래부터 없었던 것처럼요. 출입 기록에도, 급여 대장에도, 그의 이름이 있어야 할 자리가 그냥 — 다음 사람 이름으로 당겨져 있었습니다. 누가 지운 게 아니라, 처음부터 한 자리가 부족했던 것처럼요. 동료 몇 명만 어렴풋이 기억했습니다. 「그런 사람이, 있었던 것 같기는 한데」라고요. 그마저도 시간이 갈수록… 흐려졌습니다. 재단은 그를 되찾으려고, 다른 서랍에 손으로 그의 기록을 다시 써넣는 시도를 했습니다. 그런데… 그 서랍은 계속 비어 있었어요. 아무리 써넣어도, 다음 날이면 백지였습니다. 열일곱 번 시도했고, 열일곱 번 다 실패했습니다. 지금 209번 서랍은 영구 봉인돼 있습니다. 열지도, 채우지도 않습니다. 남은 건 몇몇 동료의 흐릿한 기억과, 그 자리에 원래 누가 있었다는 사실 하나뿐입니다. 한번은 혼돈의 반란 쪽에서 이 카드 하나를 빼가려다 실패한 적도 있습니다. 뭘 노렸을까요? …아마, 미래 정보 그 자체겠죠. 다만 그쪽도, 카드를 없애면 어떻게 되는지는 몰랐던 것 같습니다. 그리고 이건 아직 사고 보고서로도 안 올라간 얘기인데요. 최근에 나온 카드 하나엔, 사이트-58 소속이 아닌 이름이 적혀 있었습니다. 재단 상급 관리자 명단에 있는 이름이었고요. 지금 이 개체는, 등급 재분류 심사가 걸려 있습니다. 왜 하필… 지금 이 시점에 그 이름이 나왔을까요? 예전에 다른 신호분석팀 쪽에서 이거랑 비슷한 파형을 봤다는 얘기도 들었는데, 확인은 안 됐습니다. 지금도 사이트 사람들은 이걸 209번 서랍이라고 안 부릅니다. 그냥 「먼저 잠긴 칸」이라고 하죠. 이 개체 번호는요, SCP-9245입니다. 저는 이 번호보다, 209번 서랍이 먼저 기억에 남더라고요. 여러분 회사에도, 이름이 안 붙은 사물함 하나쯤 있지 않나요?",
+  "segments": [
+    {
+      "text": "근무일지엔, 209번 서랍 얘기가 통째로 없습니다.",
+      "est_sec": 5,
+      "text_en": "The duty log has no mention of Drawer 209 at all.",
+      "text_ja": "業務日誌には、209番の引き出しの話がまったくありません。",
+      "text_zh_Hant": "值班日誌裡,完全沒有209號抽屜的紀錄。"
+    },
+    {
+      "text": "빠진 게 아니에요. 처음부터, 아예 안 적혀 있었습니다.",
+      "est_sec": 5,
+      "text_en": "It wasn't removed. It was never written down at all.",
+      "text_ja": "抜けているのではありません。最初から、まったく書かれていなかったのです。",
+      "text_zh_Hant": "不是被刪掉的。從一開始,就根本沒有寫過。"
+    },
+    {
+      "text": "이 얘기, 저도 「먼저 잠긴 칸」이라는 이름으로 처음 들었습니다.",
+      "est_sec": 6,
+      "text_en": "I first heard of this case by its nickname: \"The Drawer That Locks First.\"",
+      "text_ja": "この話、私も「先に閉まる引き出し」という名前で最初に聞きました。",
+      "text_zh_Hant": "這件事,我也是先聽到「先鎖上的抽屜」這個外號的。"
+    },
+    {
+      "text": "대수롭지 않게 생각했는데… 자료를 볼수록, 그게 아니더라고요.",
+      "est_sec": 6,
+      "text_en": "I didn't think much of it at first... but the more I read, the worse it got.",
+      "text_ja": "たいしたことないと思っていたのですが…資料を見るほど、そうではありませんでした。",
+      "text_zh_Hant": "本來沒放在心上…可是資料看得越多,越覺得不對勁。"
+    },
+    {
+      "text": "부에노스아이레스 외곽, 철거를 앞둔 지역 기록보존소 지하에서",
+      "est_sec": 6,
+      "text_en": "On the outskirts of Buenos Aires, under a local records office slated for demolition,",
+      "text_ja": "ブエノスアイレス郊外、取り壊しを控えた地域記録保存所の地下で、",
+      "text_zh_Hant": "在布宜諾斯艾利斯郊外,一棟即將拆除的地方檔案館地下,"
+    },
+    {
+      "text": "이 문서고가 나온 게, 이 년 전입니다.",
+      "est_sec": 3,
+      "text_en": "this archive was discovered two years ago.",
+      "text_ja": "この文書庫が見つかったのが、二年前です。",
+      "text_zh_Hant": "這座文獻庫是兩年前被發現的。"
+    },
+    {
+      "text": "지하철 공사 인부들이 통로를 하나 잘못 뚫었고,",
+      "est_sec": 4,
+      "text_en": "Subway construction workers accidentally broke through into a passage,",
+      "text_ja": "地下鉄工事の作業員が通路を一つ誤って掘り抜いてしまい、",
+      "text_zh_Hant": "地鐵施工的工人不小心打穿了一條通道,"
+    },
+    {
+      "text": "그 아래서 목록함이 발견됐습니다.",
+      "est_sec": 3,
+      "text_en": "and the card catalog cabinet was found beneath it.",
+      "text_ja": "その下で目録棚が発見されました。",
+      "text_zh_Hant": "在下面發現了這個卡片目錄櫃。"
+    },
+    {
+      "text": "목록함 자체는 평범했어요.",
+      "est_sec": 3,
+      "text_en": "The cabinet itself was perfectly ordinary.",
+      "text_ja": "目録棚自体はごく普通でした。",
+      "text_zh_Hant": "目錄櫃本身很普通。"
+    },
+    {
+      "text": "나무 서랍 삼백열두 개, 1940년대부터",
+      "est_sec": 4,
+      "text_en": "Three hundred and twelve wooden drawers, holding records handwritten",
+      "text_ja": "木製の引き出し三百十二個、1940年代から",
+      "text_zh_Hant": "三百一十二個木製抽屜,裝著從一九四〇年代起"
+    },
+    {
+      "text": "그 지역 출생·사망·재산 기록을 손으로 옮겨 적어둔 카드들.",
+      "est_sec": 5,
+      "text_en": "since the 1940s — births, deaths, property records for the district.",
+      "text_ja": "その地域の出生・死亡・財産記録を手書きで写しておいたカードです。",
+      "text_zh_Hant": "手抄下來的當地出生、死亡、財產紀錄卡片。"
+    },
+    {
+      "text": "재단이 처음 이걸 회수한 것도",
+      "est_sec": 3,
+      "text_en": "The Foundation only recovered it, at first,",
+      "text_ja": "財団が最初にこれを回収したのも、",
+      "text_zh_Hant": "當初基金會回收它,"
+    },
+    {
+      "text": "그냥 \"오래된 지방 기록물\"이라서였습니다.",
+      "est_sec": 4,
+      "text_en": "because it was labeled \"an old regional archive\" — nothing more.",
+      "text_ja": "ただ「古い地方の記録物」だったからです。",
+      "text_zh_Hant": "只是因為它是「一份古老的地方檔案」而已。"
+    },
+    {
+      "text": "처음 이걸 발견한 인부들한테는",
+      "est_sec": 3,
+      "text_en": "The workers who first found it",
+      "text_ja": "最初にこれを発見した作業員たちには、",
+      "text_zh_Hant": "最先發現它的工人們,"
+    },
+    {
+      "text": "C등급 기억소거제를 놨습니다.",
+      "est_sec": 3,
+      "text_en": "were given Class-C amnestics.",
+      "text_ja": "C級記憶消去剤を投与しました。",
+      "text_zh_Hant": "被施打了C級記憶消除劑。"
+    },
+    {
+      "text": "그런데 사흘 뒤부터, 그 골목을",
+      "est_sec": 3,
+      "text_en": "But starting three days later, they began",
+      "text_ja": "ところが三日後から、その路地を",
+      "text_zh_Hant": "但三天後開始,他們"
+    },
+    {
+      "text": "일부러 피해 다녔다는 보고가 있었어요.",
+      "est_sec": 4,
+      "text_en": "avoiding that particular alley — deliberately, according to the report.",
+      "text_ja": "わざと避けて歩いていたという報告がありました。",
+      "text_zh_Hant": "刻意繞開那條巷子,這是報告上寫的。"
+    },
+    {
+      "text": "왜 피하는지는… 본인들도 몰랐고요.",
+      "est_sec": 3,
+      "text_en": "Even they didn't know why they were doing it.",
+      "text_ja": "なぜ避けるのかは…本人たちも分かりませんでした。",
+      "text_zh_Hant": "至於為什麼要繞開…連他們自己也不知道。"
+    },
+    {
+      "text": "이상한 점은 따로 있었습니다.",
+      "est_sec": 3,
+      "text_en": "But the real anomaly was something else.",
+      "text_ja": "おかしな点は別にありました。",
+      "text_zh_Hant": "真正奇怪的地方,是另一件事。"
+    },
+    {
+      "text": "가끔, 서랍 하나가 저절로 잠깁니다. 손잡이를 당겨도 안 열려요.",
+      "est_sec": 6,
+      "text_en": "Sometimes, one drawer locks itself. Pulling the handle does nothing.",
+      "text_ja": "時々、引き出しが一つ勝手に閉まります。取っ手を引いても開きません。",
+      "text_zh_Hant": "偶爾,會有一個抽屜自己鎖上。拉把手也打不開。"
+    },
+    {
+      "text": "그러다 몇 시간 뒤에 다시 열리는데 —",
+      "est_sec": 3,
+      "text_en": "Then, a few hours later, it opens again on its own —",
+      "text_ja": "そして数時間後にまた開くのですが —",
+      "text_zh_Hant": "然後過幾個小時,它又會自己打開——"
+    },
+    {
+      "text": "그 안에, 새 카드가 한 장 들어 있습니다.",
+      "est_sec": 3,
+      "text_en": "and inside, there's a brand-new card.",
+      "text_ja": "その中に、新しいカードが一枚入っています。",
+      "text_zh_Hant": "裡面,會有一張新的卡片。"
+    },
+    {
+      "text": "문제는 그 카드였어요.",
+      "est_sec": 2,
+      "text_en": "The card itself was the problem.",
+      "text_ja": "問題はそのカードでした。",
+      "text_zh_Hant": "問題就出在那張卡片。"
+    },
+    {
+      "text": "필체도, 잉크도, 종이 재질도 다 옛날 그대로인데,",
+      "est_sec": 4,
+      "text_en": "The handwriting, the ink, the paper — all identical to the old ones,",
+      "text_ja": "筆跡も、インクも、紙質も全部昔のままなのに、",
+      "text_zh_Hant": "字跡、墨水、紙質全都和舊卡片一模一樣,"
+    },
+    {
+      "text": "적힌 날짜가 사흘 뒤였습니다.",
+      "est_sec": 3,
+      "text_en": "but the date on it was three days in the future.",
+      "text_ja": "書かれている日付は三日後でした。",
+      "text_zh_Hant": "但上面寫的日期,卻是三天後。",
+      "emphasis": "사흘 뒤"
+    },
+    {
+      "text": "처음 나온 카드엔 이렇게 적혀 있었습니다.",
+      "est_sec": 4,
+      "text_en": "The first card that appeared read like this:",
+      "text_ja": "最初に出たカードにはこう書かれていました。",
+      "text_zh_Hant": "第一張出現的卡片上這樣寫著:"
+    },
+    {
+      "text": "「인부 알가라뇨, 삼 일 후, 삼 층 계단에서 실족」.",
+      "est_sec": 4,
+      "text_en": "\"Worker Algarraño, three days hence, falls on the third-floor stairs.\"",
+      "text_ja": "「作業員アルガラーニョ、三日後、三階の階段で転落」。",
+      "text_zh_Hant": "「工人阿爾加拉尼奧,三日後,於三樓樓梯失足」。"
+    },
+    {
+      "text": "재단은 당연히 그 인부를 격리하고",
+      "est_sec": 3,
+      "text_en": "Naturally, the Foundation isolated the worker",
+      "text_ja": "財団は当然その作業員を隔離し、",
+      "text_zh_Hant": "基金會當然把這名工人隔離起來,"
+    },
+    {
+      "text": "삼 층 근처엔 얼씬도 못 하게 했죠.",
+      "est_sec": 3,
+      "text_en": "and kept him nowhere near the third floor.",
+      "text_ja": "三階付近には近づかせませんでした。",
+      "text_zh_Hant": "不讓他靠近三樓半步。"
+    },
+    {
+      "text": "사흘 뒤, 그는 이 층 사다리에서 떨어졌습니다.",
+      "est_sec": 4,
+      "text_en": "Three days later, he fell from a ladder on the second floor.",
+      "text_ja": "三日後、彼は二階の梯子から落ちました。",
+      "text_zh_Hant": "三天後,他從二樓的梯子上摔了下來。"
+    },
+    {
+      "text": "계단이 아니라 사다리였고,",
+      "est_sec": 3,
+      "text_en": "Not stairs, but a ladder.",
+      "text_ja": "階段ではなく梯子で、",
+      "text_zh_Hant": "不是樓梯,是梯子。"
+    },
+    {
+      "text": "삼 층이 아니라 이 층이었어요.",
+      "est_sec": 3,
+      "text_en": "Not the third floor, but the second.",
+      "text_ja": "三階ではなく二階でした。",
+      "text_zh_Hant": "不是三樓,是二樓。"
+    },
+    {
+      "text": "…그런데 나머지는, 전부 맞았습니다.",
+      "est_sec": 3,
+      "text_en": "...but everything else about it was exactly right.",
+      "text_ja": "…しかし残りは、すべて当たっていました。",
+      "text_zh_Hant": "…可是剩下的部分,全都對上了。"
+    },
+    {
+      "text": "우연이라고 하기엔 너무 정확하지 않나요?",
+      "est_sec": 4,
+      "text_en": "Isn't that a little too precise to call a coincidence?",
+      "text_ja": "偶然というには、正確すぎませんか?",
+      "text_zh_Hant": "說是巧合,會不會太精確了?"
+    },
+    {
+      "text": "여기서부터 재단은 몇 가지를 정했습니다.",
+      "est_sec": 4,
+      "text_en": "From that point, the Foundation set a few things in place.",
+      "text_ja": "ここから財団はいくつかのことを決めました。",
+      "text_zh_Hant": "從這時候起,基金會定下了幾件事。"
+    },
+    {
+      "text": "카드가 나오면 즉시 봉인 봉투에 넣고,",
+      "est_sec": 3,
+      "text_en": "The moment a card appears, seal it in an envelope immediately.",
+      "text_ja": "カードが出たら即座に封印袋に入れ、",
+      "text_zh_Hant": "卡片一出現,立刻裝進封存袋,"
+    },
+    {
+      "text": "대상 인물한텐 절대 알리지 않고,",
+      "est_sec": 3,
+      "text_en": "Never, under any circumstance, tell the named individual.",
+      "text_ja": "対象人物には絶対に知らせず、",
+      "text_zh_Hant": "絕對不告訴當事人,"
+    },
+    {
+      "text": "내용을 막으려는 시도는, 하지 않기로요.",
+      "est_sec": 4,
+      "text_en": "And never attempt to prevent what the card describes.",
+      "text_ja": "内容を防ごうとする試みは、しないことにしました。",
+      "text_zh_Hant": "而且,不試圖阻止卡片上的內容發生。"
+    },
+    {
+      "text": "막으려 할수록, 다음 카드가 나오는",
+      "est_sec": 3,
+      "text_en": "The more they tried to stop it, the shorter",
+      "text_ja": "防ごうとすればするほど、次のカードが出るまでの",
+      "text_zh_Hant": "越是想阻止,下一張卡片"
+    },
+    {
+      "text": "간격이 짧아졌거든요.",
+      "est_sec": 2,
+      "text_en": "the interval to the next card became.",
+      "text_ja": "間隔が短くなったのです。",
+      "text_zh_Hant": "出現的間隔就越短。"
+    },
+    {
+      "text": "그런데 개입을 그만두니까,",
+      "est_sec": 3,
+      "text_en": "But once they stopped intervening,",
+      "text_ja": "ところが介入をやめると、",
+      "text_zh_Hant": "但是,一旦停止介入,"
+    },
+    {
+      "text": "이번엔 다른 문제가 생겼습니다.",
+      "est_sec": 3,
+      "text_en": "a different problem arose.",
+      "text_ja": "今度は別の問題が起きました。",
+      "text_zh_Hant": "又出現了另一個問題。"
+    },
+    {
+      "text": "서랍이 잠기는 빈도는 줄었는데,",
+      "est_sec": 3,
+      "text_en": "The frequency of locking dropped,",
+      "text_ja": "引き出しが閉まる頻度は減ったのですが、",
+      "text_zh_Hant": "抽屜上鎖的頻率降低了,"
+    },
+    {
+      "text": "카드에 적히는 이름이 바뀌기 시작한 거예요.",
+      "est_sec": 4,
+      "text_en": "but the names written on the cards began to change.",
+      "text_ja": "カードに書かれる名前が変わり始めたのです。",
+      "text_zh_Hant": "但卡片上寫的名字,開始變了。"
+    },
+    {
+      "text": "더 이상 동네 주민이 아니라,",
+      "est_sec": 3,
+      "text_en": "No longer local residents —",
+      "text_ja": "もはや町の住民ではなく、",
+      "text_zh_Hant": "不再是社區居民,"
+    },
+    {
+      "text": "문서고 안에서 일하는 사람들 이름이 나오기 시작했습니다.",
+      "est_sec": 6,
+      "text_en": "instead, the names of people working inside the archive itself began appearing.",
+      "text_ja": "文書庫の中で働く人々の名前が出始めたのです。",
+      "text_zh_Hant": "開始出現的,是在文獻庫裡工作的人的名字。"
+    },
+    {
+      "text": "지역 인구 기록이 다 소진됐다는 뜻이죠.",
+      "est_sec": 4,
+      "text_en": "It meant the local population's records had simply run out.",
+      "text_ja": "地域の人口記録が使い尽くされたということです。",
+      "text_zh_Hant": "這代表當地居民的紀錄已經被用光了。"
+    },
+    {
+      "text": "이백 살 넘은 마을 사람들 기록까지,",
+      "est_sec": 3,
+      "text_en": "Even records of townspeople over two hundred years old —",
+      "text_ja": "二百年を超える村人の記録まで、",
+      "text_zh_Hant": "連兩百多歲的村民紀錄,"
+    },
+    {
+      "text": "카드는 이미 다 써버린 겁니다.",
+      "est_sec": 3,
+      "text_en": "the cabinet had already used them all.",
+      "text_ja": "カードはすでにすべて使い切っていたのです。",
+      "text_zh_Hant": "卡片全都已經用完了。"
+    },
+    {
+      "text": "재단은 이때 몇 가지를 시도했습니다.",
+      "est_sec": 3,
+      "text_en": "At this point, the Foundation tried a few things.",
+      "text_ja": "財団はこのとき、いくつかのことを試みました。",
+      "text_zh_Hant": "基金會這時嘗試了幾種辦法。"
+    },
+    {
+      "text": "문제의 서랍을 통째로 콘크리트로 발라봤고,",
+      "est_sec": 4,
+      "text_en": "They encased the drawer entirely in concrete,",
+      "text_ja": "問題の引き出しを丸ごとコンクリートで塗り固めてみたり、",
+      "text_zh_Hant": "把那個抽屜整個灌上混凝土,"
+    },
+    {
+      "text": "그다음엔 강철판을 겹으로 덧대봤고,",
+      "est_sec": 3,
+      "text_en": "then layered steel plates over that,",
+      "text_ja": "次に鋼板を重ねて貼り付けてみたり、",
+      "text_zh_Hant": "接著又加疊了鋼板,"
+    },
+    {
+      "text": "마지막엔 서랍 앞면을 아예 뜯어내 버렸습니다.",
+      "est_sec": 4,
+      "text_en": "and finally just tore the drawer's front panel off entirely.",
+      "text_ja": "最後には引き出しの前面をまるごと取り外してしまいました。",
+      "text_zh_Hant": "最後乾脆把抽屜前面整片拆掉。"
+    },
+    {
+      "text": "결과는 매번 같았어요.",
+      "est_sec": 2,
+      "text_en": "The result was the same every time.",
+      "text_ja": "結果は毎回同じでした。",
+      "text_zh_Hant": "每次的結果都一樣。"
+    },
+    {
+      "text": "다음 날 아침이면, 캐비닛 옆면에",
+      "est_sec": 3,
+      "text_en": "By the next morning, on the side panel of the cabinet,",
+      "text_ja": "翌朝になると、キャビネットの側面に",
+      "text_zh_Hant": "隔天早上,櫃子側面"
+    },
+    {
+      "text": "서랍이 하나 더 생겨 있었습니다.",
+      "est_sec": 3,
+      "text_en": "one more drawer had simply appeared.",
+      "text_ja": "引き出しが一つ増えていたのです。",
+      "text_zh_Hant": "就會多出一個抽屜。"
+    },
+    {
+      "text": "삼백열두 개였던 서랍이, 삼백열세 개가 됐죠.",
+      "est_sec": 4,
+      "text_en": "The three hundred twelve drawers became three hundred thirteen.",
+      "text_ja": "三百十二個だった引き出しが、三百十三個になったのです。",
+      "text_zh_Hant": "原本三百一十二個抽屜,變成了三百一十三個。",
+      "emphasis": "313개"
+    },
+    {
+      "text": "이쯤 되면, 재단도 어지간히 질렸을 텐데요.",
+      "est_sec": 4,
+      "text_en": "By this point, even the Foundation must have been thoroughly worn down.",
+      "text_ja": "この辺りになると、財団もかなりうんざりしたでしょうね。",
+      "text_zh_Hant": "到了這地步,基金會大概也相當疲於應付了。"
+    },
+    {
+      "text": "이때부터 이 개체는 「먼저 잠긴 칸」이라고",
+      "est_sec": 4,
+      "text_en": "From then on, the anomaly came to be called",
+      "text_ja": "この頃からこの個体は「先に閉まる引き出し」と",
+      "text_zh_Hant": "從那時起,這個個體開始被稱作"
+    },
+    {
+      "text": "불리기 시작했습니다 —",
+      "est_sec": 2,
+      "text_en": "\"The Drawer That Locks First\" —",
+      "text_ja": "呼ばれ始めました —",
+      "text_zh_Hant": "「先鎖上的抽屜」——"
+    },
+    {
+      "text": "잠기는 게 항상, 사건보다 먼저였으니까요.",
+      "est_sec": 4,
+      "text_en": "because the locking always came before the event, never after.",
+      "text_ja": "閉まるのがいつも、事件より先だったからです。",
+      "text_zh_Hant": "因為它上鎖,永遠都在事情發生之前。"
+    },
+    {
+      "text": "이 개체엔 기동특무부대도 배정돼 있습니다.",
+      "est_sec": 4,
+      "text_en": "This anomaly even has a Mobile Task Force assigned to it.",
+      "text_ja": "この個体には機動特務部隊も配属されています。",
+      "text_zh_Hant": "這個個體甚至配有機動特遣隊。"
+    },
+    {
+      "text": "람다-11, 별칭 '빈칸 조정관'이요.",
+      "est_sec": 3,
+      "text_en": "Lambda-11, nicknamed \"The Blank Coordinator.\"",
+      "text_ja": "ラムダ-11、通称『空欄調整官』です。",
+      "text_zh_Hant": "拉姆達-11,綽號「空格協調員」。"
+    },
+    {
+      "text": "이름과 달리, 이 사람들이 하는 일은",
+      "est_sec": 3,
+      "text_en": "Despite the name, what they actually do",
+      "text_ja": "名前とは違って、この人たちがしていることは",
+      "text_zh_Hant": "但和名字不同,他們實際做的事"
+    },
+    {
+      "text": "조정이 아니라 그냥 지켜보는 것뿐입니다.",
+      "est_sec": 4,
+      "text_en": "isn't coordinating anything — just watching.",
+      "text_ja": "調整ではなく、ただ見守ることだけです。",
+      "text_zh_Hant": "不是協調,只是看著而已。"
+    },
+    {
+      "text": "담당 연구원 중에 아르마스라는 사람이 있었습니다.",
+      "est_sec": 5,
+      "text_en": "Among the assigned researchers was a man named Armas.",
+      "text_ja": "担当研究員の中にアルマスという人がいました。",
+      "text_zh_Hant": "負責的研究員裡,有一位叫阿爾馬斯。"
+    },
+    {
+      "text": "신입은 아니고, 이 문서고에 배속된 지",
+      "est_sec": 3,
+      "text_en": "Not a newcomer — he'd been assigned to this archive",
+      "text_ja": "新人ではなく、この文書庫に配属されてから",
+      "text_zh_Hant": "他不是新人,調來這座文獻庫"
+    },
+    {
+      "text": "팔 개월 된 기록관이었어요.",
+      "est_sec": 3,
+      "text_en": "for eight months as its records keeper.",
+      "text_ja": "八ヶ月になる記録官でした。",
+      "text_zh_Hant": "已經八個月了,是這裡的檔案管理員。"
+    },
+    {
+      "text": "어느 날 야간 점검을 돌다가,",
+      "est_sec": 3,
+      "text_en": "One night, while making his rounds,",
+      "text_ja": "ある日、夜間点検をしていたところ、",
+      "text_zh_Hant": "有一天晚上巡視時,"
+    },
+    {
+      "text": "그는 잠긴 서랍 하나를 발견합니다.",
+      "est_sec": 3,
+      "text_en": "he found a locked drawer.",
+      "text_ja": "彼は閉まった引き出しを一つ見つけます。",
+      "text_zh_Hant": "他發現一個上鎖的抽屜。"
+    },
+    {
+      "text": "번호를 확인하니 209번. 자기 사물함 번호였어요.",
+      "est_sec": 5,
+      "text_en": "He checked the number: 209. His own locker number.",
+      "text_ja": "番号を確認すると209番。自分のロッカー番号でした。",
+      "text_zh_Hant": "一看號碼,209號。正是他自己置物櫃的號碼。"
+    },
+    {
+      "text": "다음 날 다시 가보니 서랍은 열려 있었고,",
+      "est_sec": 4,
+      "text_en": "The next day, he went back — the drawer was open,",
+      "text_ja": "翌日また行ってみると、引き出しは開いていて、",
+      "text_zh_Hant": "隔天再過去看,抽屜開著,"
+    },
+    {
+      "text": "안에 카드가 있었습니다.",
+      "est_sec": 2,
+      "text_en": "and inside was a card.",
+      "text_ja": "中にカードがありました。",
+      "text_zh_Hant": "裡面有一張卡片。"
+    },
+    {
+      "text": "그 서랍만 유난히 따뜻했다고, 그는 나중에 적어뒀습니다.",
+      "est_sec": 5,
+      "text_en": "He later noted that only that drawer felt oddly warm.",
+      "text_ja": "その引き出しだけ特に温かかったと、彼は後で書き残しています。",
+      "text_zh_Hant": "他後來寫下,唯獨那個抽屜特別溫熱。"
+    },
+    {
+      "text": "나무 색은 다른 칸이랑 똑같은 짙은 밤색인데,",
+      "est_sec": 4,
+      "text_en": "The wood was the same dark chestnut as every other drawer,",
+      "text_ja": "木の色は他の段と同じ濃い栗色なのに、",
+      "text_zh_Hant": "木頭顏色和其他格子一樣是深栗色,"
+    },
+    {
+      "text": "만지면 꼭 방금 다림질한 천 같았다고요.",
+      "est_sec": 4,
+      "text_en": "but touching it felt like fabric just off an iron.",
+      "text_ja": "触れるとまるでたった今アイロンをかけた布のようだったと。",
+      "text_zh_Hant": "但摸起來,卻像剛燙過的布一樣。"
+    },
+    {
+      "text": "서랍 틈에서는 몰식자 잉크 냄새가, 아주 옅게 났습니다.",
+      "est_sec": 5,
+      "text_en": "From the crack of the drawer, a faint smell of gall-nut ink drifted out.",
+      "text_ja": "引き出しの隙間からは没食子インクの匂いが、ごく薄く漂っていました。",
+      "text_zh_Hant": "抽屜縫隙間,飄出一絲極淡的沒食子墨水味。"
+    },
+    {
+      "text": "카드엔 자기 이름이 있었습니다.",
+      "est_sec": 3,
+      "text_en": "His own name was on the card.",
+      "text_ja": "カードには自分の名前がありました。",
+      "text_zh_Hant": "卡片上,寫著他自己的名字。"
+    },
+    {
+      "text": "「아르마스, 나흘 후, 지하 삼 층에서」.",
+      "est_sec": 3,
+      "text_en": "\"Armas, four days from now, on Basement Level 3.\"",
+      "text_ja": "「アルマス、四日後、地下三階で」。",
+      "text_zh_Hant": "「阿爾馬斯,四日後,於地下三樓」。"
+    },
+    {
+      "text": "나머지는 잉크가 번져서 못 읽었다고, 그는 진술했습니다.",
+      "est_sec": 5,
+      "text_en": "He reported that the rest had smudged and was unreadable.",
+      "text_ja": "残りはインクがにじんで読めなかったと、彼は供述しました。",
+      "text_zh_Hant": "他表示,剩下的部分墨水暈開,看不清楚。"
+    },
+    {
+      "text": "그는 이걸 보고하지 않았습니다.",
+      "est_sec": 3,
+      "text_en": "He never reported it.",
+      "text_ja": "彼はこれを報告しませんでした。",
+      "text_zh_Hant": "他沒有把這件事上報。"
+    },
+    {
+      "text": "보고하면 바로 격리 대상이 되고,",
+      "est_sec": 3,
+      "text_en": "He figured that reporting it meant instant quarantine,",
+      "text_ja": "報告すればすぐに隔離対象になり、",
+      "text_zh_Hant": "他認為一旦上報,立刻會被隔離,"
+    },
+    {
+      "text": "자기 손으로 더 조사할 기회가 사라진다고, 생각했거든요.",
+      "est_sec": 5,
+      "text_en": "and losing any chance to investigate it himself.",
+      "text_ja": "自分の手でさらに調査する機会が消えると、思ったからです。",
+      "text_zh_Hant": "也會失去親自查下去的機會。"
+    },
+    {
+      "text": "「하루만 더 보고, 그다음에 올리겠습니다」 —",
+      "est_sec": 4,
+      "text_en": "\"Give me one more day, then I'll file the report\" —",
+      "text_ja": "「あと一日だけ様子を見て、それから報告します」 —",
+      "text_zh_Hant": "「再讓我看一天,之後就上報」——"
+    },
+    {
+      "text": "기록에 남은 그의 마지막 말입니다.",
+      "est_sec": 3,
+      "text_en": "the last line of his recorded on file.",
+      "text_ja": "記録に残る彼の最後の言葉です。",
+      "text_zh_Hant": "這是他留下的最後一句紀錄。"
+    },
+    {
+      "text": "그 하루가, 나흘로 늘어났죠.",
+      "est_sec": 3,
+      "text_en": "That one day stretched into four.",
+      "text_ja": "その一日が、四日に延びました。",
+      "text_zh_Hant": "那一天,拖成了四天。"
+    },
+    {
+      "text": "그는 콘크리트 사건을 알고 있었습니다.",
+      "est_sec": 4,
+      "text_en": "He knew about the concrete incident.",
+      "text_ja": "彼はコンクリートの一件を知っていました。",
+      "text_zh_Hant": "他知道混凝土封抽屜那件事。"
+    },
+    {
+      "text": "그래서 거꾸로 생각한 거예요.",
+      "est_sec": 3,
+      "text_en": "So he reasoned it backward.",
+      "text_ja": "だから逆に考えたのです。",
+      "text_zh_Hant": "所以他反過來想。"
+    },
+    {
+      "text": "카드가 원인이면,",
+      "est_sec": 2,
+      "text_en": "If the card was the cause,",
+      "text_ja": "カードが原因であるなら、",
+      "text_zh_Hant": "如果卡片是原因,"
+    },
+    {
+      "text": "카드를 지우면 결과도 같이",
+      "est_sec": 3,
+      "text_en": "then erasing the card should erase",
+      "text_ja": "カードを消せば結果も一緒に",
+      "text_zh_Hant": "那把卡片消掉,結果應該也會"
+    },
+    {
+      "text": "지워지지 않을까 하고요.",
+      "est_sec": 2,
+      "text_en": "the outcome along with it.",
+      "text_ja": "消えるのではないかと。",
+      "text_zh_Hant": "跟著一起消失。"
+    },
+    {
+      "text": "나흘째 되던 날 밤, 그는 209번 서랍에서",
+      "est_sec": 4,
+      "text_en": "On the fourth night, he took his own card",
+      "text_ja": "四日目の夜、彼は209番の引き出しから",
+      "text_zh_Hant": "第四天晚上,他從209號抽屜裡"
+    },
+    {
+      "text": "자기 카드를 꺼내 소각로에 넣었습니다.",
+      "est_sec": 4,
+      "text_en": "out of Drawer 209 and fed it into the incinerator.",
+      "text_ja": "自分のカードを取り出し焼却炉に入れました。",
+      "text_zh_Hant": "拿出自己的卡片,丟進了焚化爐。"
+    },
+    {
+      "text": "카드는 탔습니다. 문제는… 그다음이었어요.",
+      "est_sec": 4,
+      "text_en": "The card burned. The problem... came after that.",
+      "text_ja": "カードは燃えました。問題は…その後でした。",
+      "text_zh_Hant": "卡片燒掉了。問題是……接下來的事。"
+    },
+    {
+      "text": "그날 밤 근무일지엔,",
+      "est_sec": 2,
+      "text_en": "That night's duty log reads only:",
+      "text_ja": "その夜の業務日誌には、",
+      "text_zh_Hant": "那天晚上的值班日誌上,"
+    },
+    {
+      "text": "「아르마스 씨, 출근하지 않음」이라고만 적혀 있습니다.",
+      "est_sec": 5,
+      "text_en": "\"Mr. Armas did not report for duty.\"",
+      "text_ja": "「アルマス氏、出勤せず」とだけ書かれています。",
+      "text_zh_Hant": "只寫著「阿爾馬斯先生,未到勤」。"
+    },
+    {
+      "text": "그런데 아무도 그를 찾지 않았습니다.",
+      "est_sec": 3,
+      "text_en": "But no one went looking for him.",
+      "text_ja": "ところが誰も彼を探しませんでした。",
+      "text_zh_Hant": "但沒有人去找他。"
+    },
+    {
+      "text": "왜냐하면, 아무도 그를 기억하지 못했으니까요.",
+      "est_sec": 4,
+      "text_en": "Because no one remembered him at all.",
+      "text_ja": "なぜなら、誰も彼を覚えていなかったからです。",
+      "text_zh_Hant": "因為根本沒有人記得他。"
+    },
+    {
+      "text": "사물함에 이름표가 없었습니다. 원래부터 없었던 것처럼요.",
+      "est_sec": 6,
+      "text_en": "His locker had no nameplate — as if it never had one.",
+      "text_ja": "ロッカーに名札がありませんでした。最初からなかったかのように。",
+      "text_zh_Hant": "置物櫃上沒有名牌,彷彿從來就沒有過。"
+    },
+    {
+      "text": "출입 기록에도, 급여 대장에도,",
+      "est_sec": 3,
+      "text_en": "In the access logs, in the payroll ledger,",
+      "text_ja": "入退記録にも、給与台帳にも、",
+      "text_zh_Hant": "出入紀錄裡,薪資名冊裡,"
+    },
+    {
+      "text": "그의 이름이 있어야 할 자리가 그냥 —",
+      "est_sec": 3,
+      "text_en": "the slot where his name should have been simply —",
+      "text_ja": "彼の名前があるべき場所がただ —",
+      "text_zh_Hant": "本該有他名字的位置,就這樣——"
+    },
+    {
+      "text": "다음 사람 이름으로 당겨져 있었습니다.",
+      "est_sec": 4,
+      "text_en": "had shifted up, filled by the next person's name.",
+      "text_ja": "次の人の名前に繰り上がっていました。",
+      "text_zh_Hant": "被下一個人的名字往前遞補了。"
+    },
+    {
+      "text": "누가 지운 게 아니라,",
+      "est_sec": 2,
+      "text_en": "It wasn't that someone had deleted it —",
+      "text_ja": "誰かが消したのではなく、",
+      "text_zh_Hant": "不是有人刪掉的,"
+    },
+    {
+      "text": "처음부터 한 자리가 부족했던 것처럼요.",
+      "est_sec": 4,
+      "text_en": "it was as if there had only ever been one slot too few.",
+      "text_ja": "最初から一人分の枠が足りなかったかのように。",
+      "text_zh_Hant": "而是像從一開始,就少了一個位置。"
+    },
+    {
+      "text": "동료 몇 명만 어렴풋이 기억했습니다.",
+      "est_sec": 3,
+      "text_en": "Only a few colleagues held a faint memory of him.",
+      "text_ja": "同僚数人だけがおぼろげに覚えていました。",
+      "text_zh_Hant": "只有幾位同事還隱約記得。"
+    },
+    {
+      "text": "「그런 사람이, 있었던 것 같기는 한데」라고요.",
+      "est_sec": 4,
+      "text_en": "\"There was... someone like that, I think\" — that's all they could say.",
+      "text_ja": "「そういう人が、いたような気はするんだけど」とだけ。",
+      "text_zh_Hant": "「好像……是有這麼一個人吧」——只能說到這裡。"
+    },
+    {
+      "text": "그마저도 시간이 갈수록… 흐려졌습니다.",
+      "est_sec": 4,
+      "text_en": "And even that faded... a little more with each passing day.",
+      "text_ja": "それさえも時間が経つにつれ…薄れていきました。",
+      "text_zh_Hant": "而且連這點記憶,也隨著時間……漸漸模糊了。"
+    },
+    {
+      "text": "재단은 그를 되찾으려고,",
+      "est_sec": 2,
+      "text_en": "The Foundation, trying to bring him back,",
+      "text_ja": "財団は彼を取り戻そうと、",
+      "text_zh_Hant": "基金會想把他找回來,"
+    },
+    {
+      "text": "다른 서랍에 손으로 그의 기록을",
+      "est_sec": 3,
+      "text_en": "tried writing his records by hand",
+      "text_ja": "別の引き出しに手で彼の記録を",
+      "text_zh_Hant": "試著在別的抽屜裡,親手"
+    },
+    {
+      "text": "다시 써넣는 시도를 했습니다.",
+      "est_sec": 3,
+      "text_en": "into another drawer.",
+      "text_ja": "書き直して入れる試みをしました。",
+      "text_zh_Hant": "重新寫下他的紀錄。"
+    },
+    {
+      "text": "그런데… 그 서랍은 계속 비어 있었어요.",
+      "est_sec": 3,
+      "text_en": "But... that drawer stayed empty, no matter what.",
+      "text_ja": "しかし…その引き出しはずっと空のままでした。",
+      "text_zh_Hant": "但是……那個抽屜,始終是空的。"
+    },
+    {
+      "text": "아무리 써넣어도, 다음 날이면 백지였습니다.",
+      "est_sec": 4,
+      "text_en": "However much they wrote, by the next day it was blank again.",
+      "text_ja": "いくら書き込んでも、翌日には白紙でした。",
+      "text_zh_Hant": "無論寫多少次,隔天都變回一張白紙。"
+    },
+    {
+      "text": "열일곱 번 시도했고, 열일곱 번 다 실패했습니다.",
+      "est_sec": 4,
+      "text_en": "They tried seventeen times. All seventeen failed.",
+      "text_ja": "十七回試み、十七回すべて失敗しました。",
+      "text_zh_Hant": "試了十七次,十七次全部失敗。",
+      "emphasis": "17번 실패"
+    },
+    {
+      "text": "지금 209번 서랍은 영구 봉인돼 있습니다.",
+      "est_sec": 4,
+      "text_en": "Drawer 209 is now permanently sealed.",
+      "text_ja": "現在209番の引き出しは永久に封印されています。",
+      "text_zh_Hant": "現在,209號抽屜已被永久封存。"
+    },
+    {
+      "text": "열지도, 채우지도 않습니다.",
+      "est_sec": 3,
+      "text_en": "They neither open it nor refill it.",
+      "text_ja": "開けることも、埋めることもしません。",
+      "text_zh_Hant": "既不打開,也不填補。"
+    },
+    {
+      "text": "남은 건 몇몇 동료의 흐릿한 기억과,",
+      "est_sec": 3,
+      "text_en": "What's left is a handful of colleagues' fading memories,",
+      "text_ja": "残っているのは数人の同僚の朧げな記憶と、",
+      "text_zh_Hant": "留下的,只有幾位同事模糊的記憶,"
+    },
+    {
+      "text": "그 자리에 원래 누가 있었다는 사실 하나뿐입니다.",
+      "est_sec": 5,
+      "text_en": "and the single fact that someone once stood in that spot.",
+      "text_ja": "その場所に元々誰かがいたという事実一つだけです。",
+      "text_zh_Hant": "以及那個位置上,曾經有過一個人這件事而已。"
+    },
+    {
+      "text": "한번은 혼돈의 반란 쪽에서",
+      "est_sec": 3,
+      "text_en": "Once, someone from the Chaos Insurgency",
+      "text_ja": "一度、混沌の反乱側から",
+      "text_zh_Hant": "有一次,混沌反叛軍那邊"
+    },
+    {
+      "text": "이 카드 하나를 빼가려다 실패한 적도 있습니다.",
+      "est_sec": 4,
+      "text_en": "tried to steal one of the cards, and failed.",
+      "text_ja": "このカードを一枚持ち出そうとして失敗したこともあります。",
+      "text_zh_Hant": "曾試圖偷走一張卡片,但失敗了。"
+    },
+    {
+      "text": "뭘 노렸을까요?",
+      "est_sec": 2,
+      "text_en": "What were they after?",
+      "text_ja": "何を狙っていたのでしょうか?",
+      "text_zh_Hant": "他們到底想要什麼?"
+    },
+    {
+      "text": "…아마, 미래 정보 그 자체겠죠.",
+      "est_sec": 3,
+      "text_en": "...probably the future itself, as information.",
+      "text_ja": "…おそらく、未来の情報そのものでしょう。",
+      "text_zh_Hant": "……大概,是未來本身這種情報吧。"
+    },
+    {
+      "text": "다만 그쪽도, 카드를 없애면 어떻게 되는지는 몰랐던 것 같습니다.",
+      "est_sec": 6,
+      "text_en": "But it seems even they didn't know what happens when a card is destroyed.",
+      "text_ja": "ただ彼らも、カードを消すとどうなるかは知らなかったようです。",
+      "text_zh_Hant": "只是,他們似乎也不知道,毀掉卡片後會發生什麼事。"
+    },
+    {
+      "text": "그리고 이건 아직 사고 보고서로도",
+      "est_sec": 3,
+      "text_en": "And this part hasn't even made it into",
+      "text_ja": "そしてこれはまだ事故報告書にも",
+      "text_zh_Hant": "而且這件事,連事故報告書"
+    },
+    {
+      "text": "안 올라간 얘기인데요.",
+      "est_sec": 2,
+      "text_en": "an incident report yet.",
+      "text_ja": "上がっていない話なのですが。",
+      "text_zh_Hant": "都還沒寫上去。"
+    },
+    {
+      "text": "최근에 나온 카드 하나엔,",
+      "est_sec": 2,
+      "text_en": "On a card that appeared recently,",
+      "text_ja": "最近出たカードの一枚には、",
+      "text_zh_Hant": "最近出現的一張卡片上,"
+    },
+    {
+      "text": "사이트-58 소속이 아닌 이름이 적혀 있었습니다.",
+      "est_sec": 5,
+      "text_en": "the name written wasn't from Site-58 at all.",
+      "text_ja": "サイト-58所属ではない名前が書かれていました。",
+      "text_zh_Hant": "寫的名字,根本不屬於58號基地。"
+    },
+    {
+      "text": "재단 상급 관리자 명단에 있는 이름이었고요.",
+      "est_sec": 4,
+      "text_en": "It was a name on the Foundation's senior administrator list.",
+      "text_ja": "財団の上級管理者名簿にある名前でした。",
+      "text_zh_Hant": "而是列在基金會高層管理名單上的一個名字。"
+    },
+    {
+      "text": "지금 이 개체는, 등급 재분류 심사가 걸려 있습니다.",
+      "est_sec": 5,
+      "text_en": "This anomaly is currently under review for reclassification.",
+      "text_ja": "現在この個体は、等級再分類審査が行われています。",
+      "text_zh_Hant": "這個個體,目前正在等待等級重新分類的審查。"
+    },
+    {
+      "text": "왜 하필… 지금 이 시점에",
+      "est_sec": 2,
+      "text_en": "Why, of all moments... did that name",
+      "text_ja": "なぜよりによって…今この時点で",
+      "text_zh_Hant": "為什麼偏偏……在這個時間點,"
+    },
+    {
+      "text": "그 이름이 나왔을까요?",
+      "est_sec": 2,
+      "text_en": "surface right now?",
+      "text_ja": "その名前が出てきたのでしょうか?",
+      "text_zh_Hant": "那個名字會出現?"
+    },
+    {
+      "text": "예전에 다른 신호분석팀 쪽에서",
+      "est_sec": 3,
+      "text_en": "There's also word from a separate signal analysis team",
+      "text_ja": "以前、別の信号分析チームの方から",
+      "text_zh_Hant": "以前,另一個信號分析小組那邊"
+    },
+    {
+      "text": "이거랑 비슷한 파형을 봤다는 얘기도 들었는데,",
+      "est_sec": 4,
+      "text_en": "that they once saw a similar waveform,",
+      "text_ja": "これと似た波形を見たという話も聞いたのですが、",
+      "text_zh_Hant": "也曾說過見過類似的波形,"
+    },
+    {
+      "text": "확인은 안 됐습니다.",
+      "est_sec": 2,
+      "text_en": "though it was never confirmed.",
+      "text_ja": "確認は取れていません。",
+      "text_zh_Hant": "但沒有得到證實。"
+    },
+    {
+      "text": "지금도 사이트 사람들은",
+      "est_sec": 2,
+      "text_en": "Even now, people at the site",
+      "text_ja": "今もサイトの人々は",
+      "text_zh_Hant": "直到現在,基地裡的人"
+    },
+    {
+      "text": "이걸 209번 서랍이라고 안 부릅니다.",
+      "est_sec": 4,
+      "text_en": "don't call it Drawer 209.",
+      "text_ja": "これを209番の引き出しとは呼びません。",
+      "text_zh_Hant": "都不叫它209號抽屜。"
+    },
+    {
+      "text": "그냥 「먼저 잠긴 칸」이라고 하죠.",
+      "est_sec": 3,
+      "text_en": "They just call it \"The Drawer That Locks First.\"",
+      "text_ja": "ただ「先に閉まる引き出し」と呼んでいます。",
+      "text_zh_Hant": "他們只叫它「先鎖上的抽屜」。"
+    },
+    {
+      "text": "이 개체 번호는요, SCP-9245입니다.",
+      "est_sec": 4,
+      "text_en": "This anomaly's number, by the way, is SCP-9245.",
+      "text_ja": "この個体の番号は、SCP-9245です。",
+      "text_zh_Hant": "這個個體的編號,是SCP-9245。"
+    },
+    {
+      "text": "저는 이 번호보다,",
+      "est_sec": 2,
+      "text_en": "For me, more than the number,",
+      "text_ja": "私はこの番号よりも、",
+      "text_zh_Hant": "對我來說,比起這個編號,"
+    },
+    {
+      "text": "209번 서랍이 먼저 기억에 남더라고요.",
+      "est_sec": 4,
+      "text_en": "it's Drawer 209 that stays with me.",
+      "text_ja": "209番の引き出しの方が先に記憶に残るんです。",
+      "text_zh_Hant": "更先留在記憶裡的,是209號抽屜。"
+    },
+    {
+      "text": "여러분 회사에도,",
+      "est_sec": 2,
+      "text_en": "Is there, perhaps, at your own workplace,",
+      "text_ja": "皆さんの会社にも、",
+      "text_zh_Hant": "各位的公司裡,"
+    },
+    {
+      "text": "이름이 안 붙은 사물함 하나쯤 있지 않나요?",
+      "est_sec": 4,
+      "text_en": "a locker somewhere without a name on it?",
+      "text_ja": "名前の付いていないロッカーが一つくらいありませんか?",
+      "text_zh_Hant": "會不會也有一個,沒有名字的置物櫃呢?"
+    }
+  ],
+  "scenes": [
+    {
+      "prompt": "a rough breach in a subway tunnel wall opening into a dark underground passage, broken concrete and exposed rebar around the hole, a sliver of warm lamplight leaking through the gap in the lower third of frame, low-angle wide shot into the darkness, deep focus, single portable work light off-camera, hard directional shadows, rough broken concrete, rusted rebar, damp packed earth, thin dust haze, cold damp air, desaturated teal shadow, raw concrete grey, dim amber glow, lower quarter empty floor, 24mm lens, f/8, sharp detail, photorealistic, institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "a long narrow underground archive room lined with tall wooden card-catalog cabinets, rows of small brass-labeled drawers receding into the distance, one drawer near center glowing faintly warm, eye-level wide shot, one-point perspective, deep focus, single bare incandescent bulb overhead, hard downward shadows, dark varnished oak, water-stained concrete floor, tarnished brass pulls, thin dust haze, cold damp air, desaturated teal, dark oak brown, dim amber, lower quarter empty floor, 24mm lens, f/8, sharp detail, photorealistic, institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "medium shot of one wooden card-catalog cabinet section, a single drawer pulled slightly open with a faint warm glow leaking from inside, rest of drawers closed and dark, centered composition, shallow depth of field, single warm light from inside the drawer, hard falloff into darkness, dark varnished oak, tarnished brass pull, aged paper dust, still cold air, desaturated teal surroundings, warm amber core light, 50mm lens, f/4, sharp detail on the drawer edge, photorealistic, institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "extreme close-up of a single aged handwritten index card face up inside an open wooden drawer, faded sepia ink cursive, the bottom line trailing into an illegible smear, shallow depth of field, macro composition, single warm desk-lamp light from upper left, hard shadow from the drawer edge, yellowed brittle paper, worn wood grain, faint dust motes in the light, cold surrounding air, warm amber highlight, dim oak brown shadow, 90mm macro lens, f/2.8, sharp detail on ink texture, photorealistic, institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "a narrow concrete stairwell inside an old archive building, empty, a single dented aluminum ladder leaning on the wall at the landing below, low-angle wide shot down the stairwell, deep focus, single caged utility light overhead, hard downward shadows, bare concrete steps, rusted iron handrail, chipped green paint, thin dust haze, cold still air, desaturated teal shadow, institutional green, dim amber on the ladder, lower quarter empty floor, 24mm lens, f/8, sharp detail, photorealistic, institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "close-up of a wooden card-catalog cabinet side panel, one section patched with rough grey concrete, and beside it a new wooden drawer front that does not match the surrounding grain, eye-level medium shot, straight-on composition, single bare bulb light above, hard shadow along the seam, rough concrete texture, mismatched pale wood against aged dark oak, tarnished brass pull, thin dust haze, cold damp air, desaturated teal, raw concrete grey, dim amber, 35mm lens, f/8, sharp detail on the seam, photorealistic, institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "close-up of a drawer front reinforced with rough poured concrete and a corner of dull steel plate bolted over it, exposed bolt heads catching a thin highlight, tight medium shot, shallow depth of field, single raking side light, hard shadow across the concrete, rough grey concrete, dull worn steel, rusted bolts, thin dust film, cold still air, desaturated teal shadow, raw concrete grey, dim amber rim light, 50mm lens, f/4, sharp detail on the bolts, photorealistic, institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "a handheld flashlight beam cutting through darkness to illuminate a small brass drawer plate engraved 209, the rest of the cabinet fading into black, tight medium shot, shallow depth of field, single flashlight beam as the only light source, hard-edged cone of light against total darkness, dark varnished oak at the light's edge, tarnished brass plate, dust crossing the beam, cold still air, desaturated near-black surroundings, warm white beam, dim amber reflection, 35mm lens, f/2.8, sharp detail on the number, photorealistic, institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "close-up looking straight down into an open wooden drawer, a single aged card resting inside, a faint warm haze rising from the drawer's interior, tight overhead shot, shallow depth of field, single warm light glowing from beneath the card, soft even falloff, yellowed paper, dark varnished wood interior, faint dust and warm haze above the card, cold surrounding air, warm amber core, desaturated teal edges, 60mm lens, f/2.8, sharp detail on paper texture, photorealistic, institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "close-up through a small incinerator viewing port, a curling scrap of burning paper glowing orange at its edges collapsing into ash, dark metal interior around the flame, tight shot, shallow depth of field, single light source being the fire itself, hard falloff into the dark chamber, blackened soot-covered steel, glowing orange embers, fine ash drifting, warm heat haze, desaturated dark metal surroundings, warm orange-amber core, 90mm macro lens, f/2.8, sharp detail on the ember edge, photorealistic, institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "a row of small metal employee lockers in a narrow corridor, one locker centered with an empty rectangular slot where a nameplate should be, slots on either side clearly labeled, eye-level medium shot, straight-on composition, single overhead fluorescent tube, even hard light, scratched grey metal lockers, empty brass nameplate slot, faint dust on the floor, cold static air, desaturated institutional green, dim fluorescent white, lower quarter empty floor, 35mm lens, f/8, sharp detail on the empty slot, photorealistic, institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "a wide shot of the underground archive room, rows of wooden catalog cabinets receding into soft darkness, a single empty wooden chair pulled away from the nearest cabinet, dust suspended in a shaft of light overhead, eye-level wide shot, one-point perspective, deep focus, single bare bulb overhead, long hard shadow from the chair, dark varnished oak, worn chair, water-stained concrete floor, thick dust haze, cold still air, desaturated teal, dark oak brown, dim amber, lower quarter empty floor, 24mm lens, f/8, sharp detail, photorealistic, institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    }
+  ],
+  "background": {
+    "id": "scp-9245_bg",
+    "kind": "image",
+    "reuse": false,
+    "aspect": "16:9",
+    "resolution": "1920x1080",
+    "prompt": "a wall of dark wooden card-catalog cabinets filling a narrow underground archive room, one drawer near center-left pulled slightly open with a faint warm glow escaping from inside, eye-level wide shot, one-point perspective, deep focus, single bare incandescent bulb overhead, hard downward shadows, dark varnished oak wood, water-stained concrete floor, tarnished brass pulls, thin dust haze in light, cold damp air, desaturated teal, dark oak brown, dim amber glow, lower quarter empty floor, 24mm lens, f/8, sharp detail, photorealistic, institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization",
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, cartoon, anime, illustration, painting, 3d render, cgi, video game, oversaturated, neon, hdr glow, lens flare, vignette overload, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, uncanny face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion"
+  },
+  "thumbnail": {
+    "hook": "extreme close-up of a single open wooden catalog drawer with one aged handwritten index card resting inside face up, warm amber light source from the left illuminating the card, subject positioned on the right third, left third is dark empty negative space, shallow depth of field, worn brass drawer rail, aged yellowed paper texture, faint dust in the light beam, desaturated teal shadow, warm amber highlight, 50mm lens, f/2.8, sharp detail on the card, institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization",
+    "hook_alt": [
+      "wide shot of a dim corridor lined with catalog cabinets receding into darkness, one drawer glowing faintly at the far end, subject positioned on the left third, right third is dark empty negative space, cold damp air, desaturated teal, dim amber glow, 28mm lens, f/8, sharp detail, photorealistic, institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization",
+      "close-up of a small empty employee locker with a blank rectangular slot where a nameplate used to be, subject positioned on the right third, left third is dark empty negative space, single overhead fluorescent light, scratched grey metal, desaturated institutional green, 50mm lens, f/4, sharp detail, photorealistic, institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    ],
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, cartoon, anime, illustration, painting, 3d render, cgi, video game, oversaturated, neon, hdr glow, lens flare, vignette overload, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, uncanny face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion",
+    "text_safe_area": "left third",
+    "resolution": "1280x720"
+  },
+  "platforms": {
+    "youtube": {
+      "title": "부에노스아이레스 지하 문서고에서 사흘 먼저 열리는 서랍의 정체 [SCP-9245]",
+      "title_form": "A",
+      "thumbnail_text": "먼저 잠긴 칸",
+      "thumbnail_quote": "- 하루만 더 보고, 올리겠습니다.",
+      "chapters": [
+        "00:00 없는 서랍 얘기",
+        "01:37 사흘 뒤 날짜가 적힌 카드",
+        "03:02 콘크리트로도 못 막다",
+        "03:53 아르마스 기록관",
+        "05:25 카드를 태운 밤",
+        "07:59 아직 열려 있는 목록"
+      ],
+      "description": "부에노스아이레스 외곽 지하 문서고에서 발견된 목록함 이야기입니다. 서랍 하나가 사고가 나기 며칠 전에 저절로 잠기고, 열어보면 그 안에 아직 일어나지 않은 사건이 손글씨로 적힌 카드가 들어 있습니다.\n\n여러분 회사나 학교에도, 이름이 안 붙은 사물함 하나쯤 있지 않나요? 댓글로 들려주세요.\n\n※ SCP 재단 세계관 기반 오리지널 창작 · 허구의 이야기입니다\n※ 본 콘텐츠는 CC BY-SA 3.0 라이선스를 따릅니다 · 원작: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP재단 #괴담 #무서운이야기 #미스터리 #심야라디오 #공포라디오",
+      "pinned_comment": "여러분 회사나 학교에는, 이름이 안 붙은 사물함 있나요? 있다면 그 얘기, 듣고 싶습니다.",
+      "playlist": "SCP 아카이브 (전편 듣기)",
+      "localizations": {
+        "en": {
+          "title": "The Underground Archive Where a Drawer Locks Before the Accident [SCP-9245]",
+          "description": "Beneath the outskirts of Buenos Aires, an old archive holds a card catalog where one drawer locks itself days before an accident — and opens again with a handwritten card describing it.\n\nDo you have an unmarked locker somewhere at your own workplace?\n\n※ Original fiction set in the SCP Foundation universe · This is a work of fiction\n※ Licensed under CC BY-SA 3.0 · Original source: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCPFoundation #horror #mystery #creepypasta"
+        },
+        "ja": {
+          "title": "事故の数日前に閉まる引き出しの正体 [SCP-9245]",
+          "description": "ブエノスアイレス地下の古い文書庫に、事故が起きる数日前に自ら閉まる引き出しがありました。開けるとそこには、まだ起きていない出来事が手書きで記されたカードが入っています。\n\n皆さんの職場にも、名前の付いていないロッカーはありませんか?\n\n※ SCP財団世界観に基づくオリジナル創作・フィクションです\n※ 本コンテンツはCC BY-SA 3.0ライセンスに従います・原作:SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP財団 #怖い話 #ミステリー #都市伝説"
+        },
+        "zh-Hant": {
+          "title": "會在事故發生前鎖上的抽屜真相 [SCP-9245]",
+          "description": "在布宜諾斯艾利斯地下的一座舊檔案館裡,有個目錄櫃的抽屜,總在事故發生前幾天自己鎖上。打開後,裡面會出現一張用手寫著尚未發生之事的卡片。\n\n你的公司或學校,是否也有一個沒有名牌的置物櫃呢?\n\n※ 基於SCP基金會世界觀的原創作品・純屬虛構\n※ 本內容採用CC BY-SA 3.0授權・原作:SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP基金會 #恐怖故事 #懸疑 #都市傳說"
+        }
+      }
+    }
+  },
+  "shorts": {
+    "title": "사흘 뒤 사고를 먼저 적어두는 서랍 | SCP",
+    "overlay_top": [
+      "등급 : 유클리드",
+      "사건보다 서랍이 먼저 잠깁니다"
+    ],
+    "script": "근무일지에 209번 서랍 얘기가 통째로 없습니다. 지하 문서고 서랍 하나가, 사고가 나기 며칠 전에 저절로 잠깁니다. 열어보면 그 안에 카드가 한 장 있는데요. 아직 일어나지 않은 사고가, 손글씨로 적혀 있습니다. 지켜야 할 게 셋 있었습니다. 카드를 발견하면 바로 봉인할 것. 대상 인물에겐 알리지 말 것. 내용을 막으려는 시도는, 하지 않을 것. 어기면 어떻게 되는지는, 어디에도 적혀 있지 않습니다. 그런데 어느 날, 그 카드에 담당 기록관 자신의 이름이 적혀 나옵니다. 그다음 얘기는, 전편에서 말씀드릴게요.",
+    "subject_prompt": "vertical close-up of a single wooden catalog drawer pulled open toward the camera, one aged handwritten index card glowing faintly from within, centered in the middle of the frame, strong single directional key light from below-left casting deep dramatic shadows, deep black background, worn brass drawer pull, aged yellowed paper texture, rich warm amber highlight against cold blue-black shadow, top 30% and bottom 25% of the frame are dark empty negative space for text, 9:16 vertical composition, sharp high-contrast product-still photography, single strong directional key light, deep black background, rich saturated color, crisp detail, dramatic rim light, photorealistic, 9:16 vertical composition",
+    "negative_prompt": "low contrast, washed out, faded, film grain, muted colors, text, letters, numbers, watermark, logo, signature, caption, subtitles, cartoon, anime, illustration, painting, 3d render, cgi, video game, oversaturated, neon, hdr glow, lens flare, vignette overload, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, uncanny face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion",
+    "description": "지하 문서고에서 발견된 이상현상 목록함 이야기입니다. 사고가 일어나기 전에 서랍이 먼저 잠기고, 그 안엔 아직 벌어지지 않은 일이 적힌 카드가 나타납니다. 전편에는 이 개체를 둘러싼 재단의 대응과 반전이 전부 담겨 있습니다.\n\n#SCP #SCP재단 #미스터리 #공포",
+    "playlist": "SCP 쇼츠"
+  },
+  "credit": "SCP 재단 세계관 기반 오리지널 창작 · 허구 · CC BY-SA 3.0",
+  "content_rating": "teen",
+  "notes": "SCP 아카이브 · 16:9 롱폼 + 9:16 쇼츠(롱폼 완료 시 자동) · 장면 전환 배경 + 자막 번인 · 단일 내레이터 · 완결형."
+}
