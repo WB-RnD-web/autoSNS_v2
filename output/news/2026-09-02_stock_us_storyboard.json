@@ -1,0 +1,98 @@
+{
+  "date": "2026-09-02",
+  "topic": "stock_us",
+  "privacy": "public",
+  "topic_keyword": "미국 국채금리 4.8%대",
+  "headline": "美 국채금리 4.8%대, 나스닥 1%대 하락 마감",
+  "hook_title": "애플만 웃었다, 나스닥은 울었다",
+  "accent": "#E5484D",
+  "loop_line": "출렁인 뉴욕, 내일 아침에 결과를 확인하시죠.",
+  "thumbnail_hook": "cinematic close-up of a glowing red stock ticker board reflected in a dark office window at night, Wall Street skyline lights faintly visible in the background, moody atmosphere, no text in image, photorealistic",
+  "thumbnail_text": "국채금리 4.8%, 나스닥 출렁",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "중동 재충돌",
+      "ghost": "WALLST",
+      "lines": ["뉴욕이", "다시", "출렁였다"],
+      "highlight": "출렁였다",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "중동에서 다시 포성이 커지자, 뉴욕 장이 열리자마자 출렁였습니다."
+    },
+    {
+      "type": "trend",
+      "label": "나스닥",
+      "from": 0,
+      "to": -1.03,
+      "suffix": "%",
+      "dir": "down",
+      "sub": "애플만 나홀로 <b>+2.6%</b>",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "나스닥은 어젯밤 하루 만에 일 퍼센트 넘게 밀려 마감했습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "왜 다시 흔들렸나",
+      "points": [
+        "<b>미국·이란</b> 이틀 만에 재충돌",
+        "국채금리 <b>4.8%대</b>, 2025년 1월 이후 최고",
+        "유가는 <b>90달러</b> 넘게 급등"
+      ],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "미국과 이란이 다시 부딪혔고 금리와 유가가 함께 뛰었습니다."
+    },
+    {
+      "type": "statement",
+      "text": "금리를 못 잡으면 환율도 흔들린다",
+      "highlight": "환율도",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "국채금리가 오늘 밤에도 안 잡히면 환율도 계속 흔들릴 수 있습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 밤 지켜볼 것",
+      "points": [
+        "장 마감 후 <b>브로드컴</b> 실적",
+        "고용 <b>JOLTS</b> 지표도 발표"
+      ],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "오늘 밤엔 브로드컴 실적과 고용 지표까지 한꺼번에 나옵니다."
+    },
+    {
+      "type": "statement",
+      "text": "지금 들어간다 vs 기다린다",
+      "highlight": "지금 들어간다",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "오늘 밤 지금 들어갈지 기다릴지는, 판단은 여러분 몫입니다."
+    }
+  ],
+  "sources": ["아시아경제", "머니투데이", "이데일리"],
+  "credit": "출처 아시아경제·머니투데이 등 · 투자 조언이 아닙니다",
+  "platforms": {
+    "youtube": {
+      "title": "애플만 웃었다, 나스닥은 울었다 #shorts",
+      "description": "美 국채금리 4.8%대, 나스닥 1%대 하락 마감\n출처 아시아경제·머니투데이 등\n※ 투자 조언이 아닙니다\n\n#미국주식 #나스닥 #뉴욕증시 #서학개미 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "Wall Street Wobbles as Yields Hit a New High #shorts",
+          "description": "US Treasury yields near 4.8%, Nasdaq slips over 1% as Mideast tensions flare — Apple was the lone winner.\nSources: Asia Economy, Money Today, etc.\n※ Not investment advice\n\n#USStocks #Nasdaq #WallStreet #shorts"
+        },
+        "ja": {
+          "title": "アップルだけ独り高、ナスダックは急落 #shorts",
+          "description": "米長期金利が4.8%台に急騰し、ナスダックは1%超下落しました。中東情勢の緊迫化が背景です。\n出典:アジア経済、マネートゥデイ ほか\n※投資助言ではありません\n\n#米国株 #ナスダック #ウォール街 #shorts"
+        },
+        "zh-Hant": {
+          "title": "蘋果逆勢上漲,那斯達克重挫 #shorts",
+          "description": "美國公債殖利率飆上4.8%,那斯達克下跌逾1%,中東緊張情勢升溫是主因。\n資料來源:亞洲經濟、Money Today 等\n※非投資建議\n\n#美股 #那斯達克 #華爾街 #shorts"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "애플만 웃었다, 나스닥은 울었다\n출처 아시아경제·머니투데이 등\n※ 투자 조언이 아닙니다\n\n#미국주식 #나스닥 #뉴욕증시 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "애플만 웃었다, 나스닥은 울었다\n출처 아시아경제·머니투데이 등"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음 · SESSION=US_PM(미국장 개장 전후 프리뷰)."
+}
