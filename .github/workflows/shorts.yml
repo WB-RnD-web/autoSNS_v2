@@ -44,6 +44,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 25   # 실측 최대 14분(커버 타임아웃 180s 포함 최악 ~20분)
     env:
+      # ★카피 점검 — 화면에만 있고 말엔 없는 수치, 밋밋한 hook 을 잡는다. 기본은 경고만.
+      NEWS_FAIL_ON_COPY: ${{ vars.NEWS_FAIL_ON_COPY || '' }}
+      NEWS_COPY_BANLIST: ${{ vars.NEWS_COPY_BANLIST }}
+      NEWS_MIN_NUM_RATIO: ${{ vars.NEWS_MIN_NUM_RATIO || '0.6' }}
       TZ: Asia/Seoul
       DEFAULT_PRIVACY: ${{ vars.DEFAULT_PRIVACY || 'private' }}
       # 장면 스펙 자동 추출 + 다국어 제목/설명 번역에 사용
