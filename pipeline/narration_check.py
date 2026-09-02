@@ -46,7 +46,9 @@ OPENER_RE = re.compile(r"^\s*SCP[-\s]?\d{3,4}(?:-[A-Z]{2})?\s*(?:은|는)\s")
 BREATH = "…—"
 
 MAX_ENDING_SHARE = float(os.environ.get("SCP_MAX_ENDING_SHARE", "0.55"))
-MIN_QUESTIONS_K = float(os.environ.get("SCP_MIN_QUESTIONS_K", "0.5"))   # 1000자당
+# v10 시험작 3편 중 2편이 0.6~0.9 였다 — 사슬을 촘촘히 짜면
+# 화자가 되묻는 자리가 제일 먼저 사라진다. 그래서 하한을 올렸다.
+MIN_QUESTIONS_K = float(os.environ.get("SCP_MIN_QUESTIONS_K", "1.0"))   # 1000자당
 MIN_BREATH_K = float(os.environ.get("SCP_MIN_BREATH_K", "0.5"))         # 1000자당
 # 인용은 ★밀도로 본다 — 편당 몇 개로 재면 짧은 대본이 억울하게 걸린다.
 # 프롬프트 권장(3,300자에 5~8쌍) ≈ 1.5~2.4/1000자. 그 아래쪽을 기준으로 둔다.
