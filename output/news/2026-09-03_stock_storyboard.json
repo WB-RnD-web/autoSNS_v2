@@ -1,0 +1,98 @@
+{
+  "date": "2026-09-03",
+  "topic": "stock",
+  "privacy": "public",
+  "topic_keyword": "코스피 급락 미이란 충돌",
+  "headline": "코스피 3.99% 급락, 미·이란 충돌에 6500선 턱걸이",
+  "hook_title": "코스피 -4%, 6500선 턱걸이",
+  "accent": "#E5484D",
+  "loop_line": "어제 6500선까지 밀렸던 코스피, 오늘은 어떻게 될까요.",
+  "thumbnail_hook": "empty pre-dawn Korean stock trading floor, a single ticker board glowing with red falling numbers in the dark, cinematic blue-hour lighting through large windows, no text in image, no real people depicted",
+  "thumbnail_text": "코스피 -4%, 오늘은?",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "수급 이상",
+      "ghost": "SEOUL",
+      "lines": ["코스피 -4%,", "6500선", "턱걸이"],
+      "highlight": "-4%",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "어제 코스피가 4% 가까이 밀리며 6500선까지 내려갔습니다."
+    },
+    {
+      "type": "trend",
+      "label": "코스피",
+      "from": 0,
+      "to": -3.99,
+      "suffix": "%",
+      "dir": "down",
+      "sub": "외국인·기관 <b>4조원</b> 순매도",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "코스피가 사 퍼센트 가까이 밀리며 사조원 넘게 빠져나갔습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "왜 흔들렸나",
+      "points": [
+        "미·이란 재충돌, 유가 <b>90달러</b> 돌파",
+        "美 국채금리 <b>4.8%</b>, 34개월 최고",
+        "국제유가 상승, 국내 <b>기름값</b> 자극 우려"
+      ],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "유가는 90달러, 금리는 사 점 팔 퍼센트까지 함께 뛰었습니다."
+    },
+    {
+      "type": "statement",
+      "text": "코스피는 급락했는데, 뉴욕은 반등했다",
+      "highlight": "반등했다",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "우리 장은 급락했지만 밤사이 뉴욕 3대 지수는 반등했습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 지켜볼 것",
+      "points": [
+        "반도체 - 엔비디아 3.2%↑, 반등 여부",
+        "환율·유가 방향 주목"
+      ],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "반도체는 엔비디아 삼 점 이 퍼센트 상승을 따라갈지 주목됩니다."
+    },
+    {
+      "type": "statement",
+      "text": "담는다 vs 지켜본다, 당신의 선택은?",
+      "highlight": "지켜본다",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "오늘 담을지 지켜볼지, 판단은 여러분 몫입니다."
+    }
+  ],
+  "sources": ["아시아경제", "한국경제", "머니투데이", "이투데이"],
+  "credit": "출처 아시아경제·한국경제·머니투데이 등 · 투자 조언이 아닙니다",
+  "platforms": {
+    "youtube": {
+      "title": "코스피 -4%, 6500선 턱걸이 #shorts",
+      "description": "코스피 3.99% 급락, 미·이란 충돌에 6500선 턱걸이\n출처 아시아경제·한국경제·머니투데이 등\n※ 투자 조언이 아닙니다\n\n#코스피 #주식 #증시 #개장전 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "Korea's Market Just Dropped 4% Overnight",
+          "description": "Korea's KOSPI fell nearly 4% as renewed US-Iran conflict sent oil and bond yields surging, even as Wall Street rebounded overnight. Not investment advice.\n\nSources: Asia Economy, Hankyung, Money Today\n\n#shorts"
+        },
+        "ja": {
+          "title": "コスピが一夜で4%急落した理由です",
+          "description": "米・イラン衝突再燃で原油価格と金利が急騰し、コスピは4%近く急落しました。一方でニューヨーク市場は反発しています。投資助言ではありません。\n\n出典: Asia Economy, Hankyung, Money Today\n\n#shorts"
+        },
+        "zh-Hant": {
+          "title": "南韓股市一夜暴跌4%,發生什麼事",
+          "description": "美伊衝突再起,油價與美債殖利率飆升,韓國KOSPI指數重挫近4%,但紐約股市卻同步反彈。非投資建議。\n\n資料來源: Asia Economy, Hankyung, Money Today\n\n#shorts"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "코스피 -4%, 6500선 턱걸이\n출처 아시아경제·한국경제·머니투데이 등\n※ 투자 조언이 아닙니다\n\n#코스피 #주식 #증시 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "코스피 -4%, 6500선 턱걸이\n출처 아시아경제·한국경제·머니투데이 등"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음 · SESSION=KR_AM(개장 전 프리뷰). 미·이란 충돌 재점화로 코스피 급락·유가/금리 급등, 밤사이 뉴욕은 반등(R8 대조)."
+}
