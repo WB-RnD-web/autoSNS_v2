@@ -217,6 +217,20 @@ jobs:
             $([ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.force_private }}" = "true" ] && echo --force-private) \
             $([ "${{ github.event.inputs.no_upload }}" = "true" ] && echo --no-upload)
 
+      # ★룩 검증용 — no_upload=true 로 돌렸을 때만 썸네일·장면 이미지를 아티팩트로 올린다.
+      #   유튜브에 안 올리고 ★그림만 보고 싶을 때가 있다(그림체를 바꿔보는 등).
+      #   운영 런(push)에서는 조건이 거짓이라 돌지 않는다 → 저장소 쿼터에 영향 없음.
+      - name: 렌더 결과 아티팩트(검증 모드 전용)
+        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.no_upload == 'true' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: scp-look-preview
+          if-no-files-found: warn
+          retention-days: 7
+          path: |
+            output/renders/*_thumb.jpg
+            output/_work/scp/**/*.png
+
   # ── 쇼츠: ★같은 런에서 이어 돈다 ─────────────────────────
   #   workflow_run 을 쓰지 않는다. 이름 문자열 계약도, 브랜치 조건도 없다.
   #   `@main` 고정이라 routine/scp 가 또 낡아도 항상 main 의 쇼츠 워크플로가 돈다.
