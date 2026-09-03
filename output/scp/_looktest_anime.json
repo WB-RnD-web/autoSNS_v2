@@ -1,0 +1,281 @@
+{
+  "date": "2026-09-03",
+  "iso_week": "2026-W36",
+  "topic": "scp",
+  "privacy": "private",
+  "origin": "original",
+  "source_url": "",
+  "story_id": "looktest-anime",
+  "scp_number": "SCP-9245",
+  "object_class": "Euclid",
+  "codename": "먼저 잠긴 칸",
+  "number_check": {
+    "checked_at": "2026-09-02",
+    "http_code": "unverified"
+  },
+  "title": "부에노스아이레스 지하 문서고에서 사흘 먼저 열리는 서랍의 정체 [SCP-9245]",
+  "theme": "도서관·아카이브",
+  "logline": "부에노스아이레스 외곽 지하 문서고의 오래된 목록함 이야기입니다. 서랍 하나가 사고가 나기 며칠 전에 저절로 잠기고, 열리면 그 안에 아직 일어나지 않은 사건이 적힌 카드가 들어 있습니다.",
+  "hook_line": "근무일지엔, 209번 서랍 얘기가 통째로 없습니다.",
+  "cold_open": "근무일지엔, 209번 서랍 얘기가 통째로 없습니다. 빠진 게 아니에요. 처음부터, 아예 안 적혀 있었습니다.",
+  "structure": "연대기형",
+  "opening_move": "문서의 빈칸",
+  "opening_note": "",
+  "closing_move": "기록이 아직 이어진다",
+  "number_reveal": "뒤",
+  "ending_mode": "가벼운 한마디",
+  "fault": "개체",
+  "procedures": [],
+  "character": {
+    "name": "아르마스",
+    "role": "문서고 담당 기록관",
+    "flaw": "보고보다 자기 손으로 먼저 해결하려는 고집 — 카드를 없애면 사건도 막을 수 있다고 확신해 스스로 규칙을 깼다"
+  },
+  "chain": [
+    {
+      "when": "",
+      "event": "부에노스아이레스 외곽 지하철 공사 중 오래된 지역 기록보존소 지하 문서고가 발견돼 재단이 회수했다.",
+      "because": ""
+    },
+    {
+      "when": "몇 주 뒤",
+      "event": "조사팀이 서랍 하나가 저절로 잠기고, 몇 시간 뒤 다시 열리면 안에 사흘 뒤 날짜가 적힌 새 카드가 나타난다는 걸 확인했다.",
+      "because": "오래된 지방 기록물로만 알고 회수했다가 서랍 잠금 이상을 감지해 야간 관찰을 시작했기 때문."
+    },
+    {
+      "when": "",
+      "event": "재단이 카드에 적힌 사고를 막으려 대상 인물을 격리·경고했지만, 사흘 뒤 다른 형태로 같은 결말이 그대로 일어났다.",
+      "because": "카드 내용을 확인한 이상 그대로 둘 수 없었기 때문."
+    },
+    {
+      "when": "이후",
+      "event": "막으려 개입할 때마다 다음 카드가 나오는 간격이 짧아진다는 걸 알고, 재단이 개입을 전면 중단했다.",
+      "because": "개입과 카드 발생 주기의 상관관계를 확인했기 때문."
+    },
+    {
+      "when": "몇 달 뒤",
+      "event": "개입을 멈추자 카드에 적히는 이름이 동네 주민에서 문서고 근무 인원으로 바뀌기 시작했다.",
+      "because": "그 지역 인구 기록이 이미 카드로 다 소진됐기 때문."
+    },
+    {
+      "when": "",
+      "event": "재단이 문제의 서랍을 콘크리트로, 강철판으로, 결국 통째로 뜯어내는 방식까지 시도했지만 그때마다 캐비닛 옆면에 새 서랍이 하나씩 더 생겼다.",
+      "because": "서랍 자체를 없애면 이름도 사라질 거라 판단했기 때문."
+    },
+    {
+      "when": "팔 개월 뒤",
+      "event": "담당 기록관 아르마스가 야간 점검 중 자기 사물함 번호(209번)로 잠긴 서랍을 발견하고, 다음 날 그 안에서 자기 이름이 적힌 카드를 찾았다.",
+      "because": "정기 야간 점검 순번이 그에게 돌아왔기 때문."
+    },
+    {
+      "when": "나흘째 밤",
+      "event": "그는 보고 대신 콘크리트 사건의 논리를 거꾸로 적용해, 카드를 몰래 꺼내 소각로에 태워 없앴다.",
+      "because": "보고하면 즉시 격리 대상이 되어 스스로 조사할 기회를 잃는다고 판단했기 때문."
+    },
+    {
+      "when": "그날 밤",
+      "event": "카드가 타 없어진 직후, 아르마스라는 존재 자체가 근무 기록·급여 대장·동료들의 기억에서 지워지기 시작했다.",
+      "because": "카드를 없앤 행위가 '기록되지 않으면 존재하지 않는다'는 개체의 규칙을 건드렸기 때문."
+    },
+    {
+      "when": "",
+      "event": "재단이 다른 서랍에 손으로 그의 기록을 되살려 써넣는 시도를 열일곱 번 했지만 전부 실패했다.",
+      "because": "지워지고 있는 존재를 막아야 했기 때문."
+    },
+    {
+      "when": "",
+      "event": "결국 209번 서랍을 영구 봉인했고, 아르마스의 흔적은 몇몇 동료의 흐릿한 기억으로만 남았다.",
+      "because": "되살리는 시도가 모두 실패로 끝났기 때문."
+    },
+    {
+      "when": "최근",
+      "event": "새 카드에 사이트 소속이 아닌 재단 상급 관리자의 이름이 등장해, 현재 이 개체의 등급 재분류 심사가 진행 중이다.",
+      "because": "대상이 될 만한 문서고 내부 인원 기록마저 거의 소진돼 대상 범위가 다시 바깥으로 넓어지고 있기 때문."
+    }
+  ],
+  "retention_beats": [
+    "…그런데 나머지는, 전부 맞았습니다. 우연이라고 하기엔 너무 정확하지 않나요?",
+    "다음 날 아침이면, 캐비닛 옆면에 서랍이 하나 더 생겨 있었습니다.",
+    "카드는 탔습니다. 문제는… 그다음이었어요."
+  ],
+  "twist_summary": "문서의 반전 — 카드는 사건을 예언하는 게 아니라, '기록됐다'는 사실 자체가 그 사람의 존재를 붙잡아두는 장치였다는 반전. 카드를 태워 사건을 막으려 한 아르마스 기록관은 사건 대신 자기 존재 자체가 지워지는 결과를 맞았고, 재단의 복구 시도는 열일곱 번 모두 실패했다.",
+  "narration_full": "근무일지엔, 209번 서랍 얘기가 통째로 없습니다. 빠진 게 아니에요. 처음부터, 아예 안 적혀 있었습니다. 이 얘기, 저도 「먼저 잠긴 칸」이라는 이름으로 처음 들었습니다. 대수롭지 않게 생각했는데… 자료를 볼수록, 그게 아니더라고요. 부에노스아이레스 외곽, 철거를 앞둔 지역 기록보존소 지하에서 이 문서고가 나온 게, 이 년 전입니다. 지하철 공사 인부들이 통로를 하나 잘못 뚫었고, 그 아래서 목록함이 발견됐습니다. 목록함 자체는 평범했어요. 나무 서랍 삼백열두 개, 1940년대부터 그 지역 출생·사망·재산 기록을 손으로 옮겨 적어둔 카드들. 재단이 처음 이걸 회수한 것도 그냥 \"오래된 지방 기록물\"이라서였습니다. 처음 이걸 발견한 인부들한테는",
+  "segments": [
+    {
+      "text": "근무일지엔, 209번 서랍 얘기가 통째로 없습니다.",
+      "est_sec": 5,
+      "text_en": "The duty log has no mention of Drawer 209 at all.",
+      "text_ja": "業務日誌には、209番の引き出しの話がまったくありません。",
+      "text_zh_Hant": "值班日誌裡,完全沒有209號抽屜的紀錄。"
+    },
+    {
+      "text": "빠진 게 아니에요. 처음부터, 아예 안 적혀 있었습니다.",
+      "est_sec": 5,
+      "text_en": "It wasn't removed. It was never written down at all.",
+      "text_ja": "抜けているのではありません。最初から、まったく書かれていなかったのです。",
+      "text_zh_Hant": "不是被刪掉的。從一開始,就根本沒有寫過。"
+    },
+    {
+      "text": "이 얘기, 저도 「먼저 잠긴 칸」이라는 이름으로 처음 들었습니다.",
+      "est_sec": 6,
+      "text_en": "I first heard of this case by its nickname: \"The Drawer That Locks First.\"",
+      "text_ja": "この話、私も「先に閉まる引き出し」という名前で最初に聞きました。",
+      "text_zh_Hant": "這件事,我也是先聽到「先鎖上的抽屜」這個外號的。"
+    },
+    {
+      "text": "대수롭지 않게 생각했는데… 자료를 볼수록, 그게 아니더라고요.",
+      "est_sec": 6,
+      "text_en": "I didn't think much of it at first... but the more I read, the worse it got.",
+      "text_ja": "たいしたことないと思っていたのですが…資料を見るほど、そうではありませんでした。",
+      "text_zh_Hant": "本來沒放在心上…可是資料看得越多,越覺得不對勁。"
+    },
+    {
+      "text": "부에노스아이레스 외곽, 철거를 앞둔 지역 기록보존소 지하에서",
+      "est_sec": 6,
+      "text_en": "On the outskirts of Buenos Aires, under a local records office slated for demolition,",
+      "text_ja": "ブエノスアイレス郊外、取り壊しを控えた地域記録保存所の地下で、",
+      "text_zh_Hant": "在布宜諾斯艾利斯郊外,一棟即將拆除的地方檔案館地下,"
+    },
+    {
+      "text": "이 문서고가 나온 게, 이 년 전입니다.",
+      "est_sec": 3,
+      "text_en": "this archive was discovered two years ago.",
+      "text_ja": "この文書庫が見つかったのが、二年前です。",
+      "text_zh_Hant": "這座文獻庫是兩年前被發現的。"
+    },
+    {
+      "text": "지하철 공사 인부들이 통로를 하나 잘못 뚫었고,",
+      "est_sec": 4,
+      "text_en": "Subway construction workers accidentally broke through into a passage,",
+      "text_ja": "地下鉄工事の作業員が通路を一つ誤って掘り抜いてしまい、",
+      "text_zh_Hant": "地鐵施工的工人不小心打穿了一條通道,"
+    },
+    {
+      "text": "그 아래서 목록함이 발견됐습니다.",
+      "est_sec": 3,
+      "text_en": "and the card catalog cabinet was found beneath it.",
+      "text_ja": "その下で目録棚が発見されました。",
+      "text_zh_Hant": "在下面發現了這個卡片目錄櫃。"
+    },
+    {
+      "text": "목록함 자체는 평범했어요.",
+      "est_sec": 3,
+      "text_en": "The cabinet itself was perfectly ordinary.",
+      "text_ja": "目録棚自体はごく普通でした。",
+      "text_zh_Hant": "目錄櫃本身很普通。"
+    },
+    {
+      "text": "나무 서랍 삼백열두 개, 1940년대부터",
+      "est_sec": 4,
+      "text_en": "Three hundred and twelve wooden drawers, holding records handwritten",
+      "text_ja": "木製の引き出し三百十二個、1940年代から",
+      "text_zh_Hant": "三百一十二個木製抽屜,裝著從一九四〇年代起"
+    },
+    {
+      "text": "그 지역 출생·사망·재산 기록을 손으로 옮겨 적어둔 카드들.",
+      "est_sec": 5,
+      "text_en": "since the 1940s — births, deaths, property records for the district.",
+      "text_ja": "その地域の出生・死亡・財産記録を手書きで写しておいたカードです。",
+      "text_zh_Hant": "手抄下來的當地出生、死亡、財產紀錄卡片。"
+    },
+    {
+      "text": "재단이 처음 이걸 회수한 것도",
+      "est_sec": 3,
+      "text_en": "The Foundation only recovered it, at first,",
+      "text_ja": "財団が最初にこれを回収したのも、",
+      "text_zh_Hant": "當初基金會回收它,"
+    },
+    {
+      "text": "그냥 \"오래된 지방 기록물\"이라서였습니다.",
+      "est_sec": 4,
+      "text_en": "because it was labeled \"an old regional archive\" — nothing more.",
+      "text_ja": "ただ「古い地方の記録物」だったからです。",
+      "text_zh_Hant": "只是因為它是「一份古老的地方檔案」而已。"
+    },
+    {
+      "text": "처음 이걸 발견한 인부들한테는",
+      "est_sec": 3,
+      "text_en": "The workers who first found it",
+      "text_ja": "最初にこれを発見した作業員たちには、",
+      "text_zh_Hant": "最先發現它的工人們,"
+    }
+  ],
+  "scenes": [
+    {
+      "prompt": "a rough breach in a subway tunnel wall opening into a dark underground passage, broken concrete and exposed rebar around the hole, a sliver of warm lamplight leaking through the gap in the lower third of frame, low-angle wide shot into the darkness, deep focus, single portable work light off-camera, hard directional shadows, rough broken concrete, rusted rebar, damp packed earth, thin dust haze, cold damp air, desaturated teal shadow, raw concrete grey, dim amber glow, lower quarter empty floor, 24mm lens, f/8, sharp detail, photorealistic, dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, limited palette of deep blue-black and cold grey with ONE hot amber accent, strong rim light from a single source, "
+    },
+    {
+      "prompt": "a long narrow underground archive room lined with tall wooden card-catalog cabinets, rows of small brass-labeled drawers receding into the distance, one drawer near center glowing faintly warm, eye-level wide shot, one-point perspective, deep focus, single bare incandescent bulb overhead, hard downward shadows, dark varnished oak, water-stained concrete floor, tarnished brass pulls, thin dust haze, cold damp air, desaturated teal, dark oak brown, dim amber, lower quarter empty floor, 24mm lens, f/8, sharp detail, photorealistic, dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, limited palette of deep blue-black and cold grey with ONE hot amber accent, strong rim light from a single source, cinematic lo"
+    },
+    {
+      "prompt": "medium shot of one wooden card-catalog cabinet section, a single drawer pulled slightly open with a faint warm glow leaking from inside, rest of drawers closed and dark, centered composition, shallow depth of field, single warm light from inside the drawer, hard falloff into darkness, dark varnished oak, tarnished brass pull, aged paper dust, still cold air, desaturated teal surroundings, warm amber core light, 50mm lens, f/4, sharp detail on the drawer edge, photorealistic, dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, limited palette of deep blue-black and cold grey with ONE hot amber accent, strong rim light from a single source, cinematic low angle, grain-free, no text anywhere"
+    }
+  ],
+  "background": {
+    "id": "scp-9245_bg",
+    "kind": "image",
+    "reuse": false,
+    "aspect": "16:9",
+    "resolution": "1920x1080",
+    "prompt": "a wall of dark wooden card-catalog cabinets filling a narrow underground archive room, one drawer near center-left pulled slightly open with a faint warm glow escaping from inside, eye-level wide shot, one-point perspective, deep focus, single bare incandescent bulb overhead, hard downward shadows, dark varnished oak wood, water-stained concrete floor, tarnished brass pulls, thin dust haze in light, cold damp air, desaturated teal, dark oak brown, dim amber glow, lower quarter empty floor, 24mm lens, f/8, sharp detail, photorealistic, dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, limited palette of deep blue-black and cold grey with ONE hot amber accent, strong rim light from a single source, cinema",
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, deformed hands, extra fingers, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution"
+  },
+  "thumbnail": {
+    "hook": "extreme close-up of a single open wooden catalog drawer with one aged handwritten index card resting inside face up, warm amber light source from the left illuminating the card, subject positioned on the right third, left third is dark empty negative space, shallow depth of field, worn brass drawer rail, aged yellowed paper texture, faint dust in the light beam, desaturated teal shadow, warm amber highlight, 50mm lens, f/2.8, sharp detail on the card, dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, limited palette of deep blue-black and cold grey with ONE hot amber accent, strong rim light from a single source, cinematic low angle, grain-free, no text anywhere",
+    "hook_alt": [
+      "wide shot of a dim corridor lined with catalog cabinets receding into darkness, one drawer glowing faintly at the far end, subject positioned on the left third, right third is dark empty negative space, cold damp air, desaturated teal, dim amber glow, 28mm lens, f/8, sharp detail, photorealistic, institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization",
+      "close-up of a small empty employee locker with a blank rectangular slot where a nameplate used to be, subject positioned on the right third, left third is dark empty negative space, single overhead fluorescent light, scratched grey metal, desaturated institutional green, 50mm lens, f/4, sharp detail, photorealistic, institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    ],
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, deformed hands, extra fingers, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution",
+    "text_safe_area": "left third",
+    "resolution": "1280x720"
+  },
+  "platforms": {
+    "youtube": {
+      "title": "부에노스아이레스 지하 문서고에서 사흘 먼저 열리는 서랍의 정체 [SCP-9245]",
+      "title_form": "A",
+      "thumbnail_text": "먼저 잠긴 칸",
+      "thumbnail_quote": "- 하루만 더 보고, 올리겠습니다.",
+      "chapters": [
+        "00:00 없는 서랍 얘기",
+        "01:37 사흘 뒤 날짜가 적힌 카드",
+        "03:02 콘크리트로도 못 막다",
+        "03:53 아르마스 기록관",
+        "05:25 카드를 태운 밤",
+        "07:59 아직 열려 있는 목록"
+      ],
+      "description": "부에노스아이레스 외곽 지하 문서고에서 발견된 목록함 이야기입니다. 서랍 하나가 사고가 나기 며칠 전에 저절로 잠기고, 열어보면 그 안에 아직 일어나지 않은 사건이 손글씨로 적힌 카드가 들어 있습니다.\n\n여러분 회사나 학교에도, 이름이 안 붙은 사물함 하나쯤 있지 않나요? 댓글로 들려주세요.\n\n※ SCP 재단 세계관 기반 오리지널 창작 · 허구의 이야기입니다\n※ 본 콘텐츠는 CC BY-SA 3.0 라이선스를 따릅니다 · 원작: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP재단 #괴담 #무서운이야기 #미스터리 #심야라디오 #공포라디오",
+      "pinned_comment": "여러분 회사나 학교에는, 이름이 안 붙은 사물함 있나요? 있다면 그 얘기, 듣고 싶습니다.",
+      "playlist": "SCP 아카이브 (전편 듣기)",
+      "localizations": {
+        "en": {
+          "title": "The Underground Archive Where a Drawer Locks Before the Accident [SCP-9245]",
+          "description": "Beneath the outskirts of Buenos Aires, an old archive holds a card catalog where one drawer locks itself days before an accident — and opens again with a handwritten card describing it.\n\nDo you have an unmarked locker somewhere at your own workplace?\n\n※ Original fiction set in the SCP Foundation universe · This is a work of fiction\n※ Licensed under CC BY-SA 3.0 · Original source: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCPFoundation #horror #mystery #creepypasta"
+        },
+        "ja": {
+          "title": "事故の数日前に閉まる引き出しの正体 [SCP-9245]",
+          "description": "ブエノスアイレス地下の古い文書庫に、事故が起きる数日前に自ら閉まる引き出しがありました。開けるとそこには、まだ起きていない出来事が手書きで記されたカードが入っています。\n\n皆さんの職場にも、名前の付いていないロッカーはありませんか?\n\n※ SCP財団世界観に基づくオリジナル創作・フィクションです\n※ 本コンテンツはCC BY-SA 3.0ライセンスに従います・原作:SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP財団 #怖い話 #ミステリー #都市伝説"
+        },
+        "zh-Hant": {
+          "title": "會在事故發生前鎖上的抽屜真相 [SCP-9245]",
+          "description": "在布宜諾斯艾利斯地下的一座舊檔案館裡,有個目錄櫃的抽屜,總在事故發生前幾天自己鎖上。打開後,裡面會出現一張用手寫著尚未發生之事的卡片。\n\n你的公司或學校,是否也有一個沒有名牌的置物櫃呢?\n\n※ 基於SCP基金會世界觀的原創作品・純屬虛構\n※ 本內容採用CC BY-SA 3.0授權・原作:SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP基金會 #恐怖故事 #懸疑 #都市傳說"
+        }
+      }
+    }
+  },
+  "shorts": {
+    "title": "사흘 뒤 사고를 먼저 적어두는 서랍 | SCP",
+    "overlay_top": [
+      "등급 : 유클리드",
+      "사건보다 서랍이 먼저 잠깁니다"
+    ],
+    "script": "근무일지에 209번 서랍 얘기가 통째로 없습니다. 지하 문서고 서랍 하나가, 사고가 나기 며칠 전에 저절로 잠깁니다. 열어보면 그 안에 카드가 한 장 있는데요. 아직 일어나지 않은 사고가, 손글씨로 적혀 있습니다. 지켜야 할 게 셋 있었습니다. 카드를 발견하면 바로 봉인할 것. 대상 인물에겐 알리지 말 것. 내용을 막으려는 시도는, 하지 않을 것. 어기면 어떻게 되는지는, 어디에도 적혀 있지 않습니다. 그런데 어느 날, 그 카드에 담당 기록관 자신의 이름이 적혀 나옵니다. 그다음 얘기는, 전편에서 말씀드릴게요.",
+    "subject_prompt": "vertical close-up of a single wooden catalog drawer pulled open toward the camera, one aged handwritten index card glowing faintly from within, centered in the middle of the frame, strong single directional key light from below-left casting deep dramatic shadows, deep black background, worn brass drawer pull, aged yellowed paper texture, rich warm amber highlight against cold blue-black shadow, top 30% and bottom 25% of the frame are dark empty negative space for text, 9:16 vertical composition, sharp high-contrast product-still photography, single strong directional key light, deep black background, rich saturated color, crisp detail, dramatic rim light, photorealistic, 9:16 vertical composition",
+    "negative_prompt": "low contrast, washed out, faded, film grain, muted colors, text, letters, numbers, watermark, logo, signature, caption, subtitles, cartoon, anime, illustration, painting, 3d render, cgi, video game, oversaturated, neon, hdr glow, lens flare, vignette overload, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, uncanny face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion",
+    "description": "지하 문서고에서 발견된 이상현상 목록함 이야기입니다. 사고가 일어나기 전에 서랍이 먼저 잠기고, 그 안엔 아직 벌어지지 않은 일이 적힌 카드가 나타납니다. 전편에는 이 개체를 둘러싼 재단의 대응과 반전이 전부 담겨 있습니다.\n\n#SCP #SCP재단 #미스터리 #공포",
+    "playlist": "SCP 쇼츠"
+  },
+  "credit": "SCP 재단 세계관 기반 오리지널 창작 · 허구 · CC BY-SA 3.0",
+  "content_rating": "teen",
+  "notes": "SCP 아카이브 · 16:9 롱폼 + 9:16 쇼츠(롱폼 완료 시 자동) · 장면 전환 배경 + 자막 번인 · 단일 내레이터 · 완결형."
+}
