@@ -1,0 +1,102 @@
+{
+  "date": "2026-09-04",
+  "topic": "stock",
+  "privacy": "public",
+  "topic_keyword": "코스피 급락",
+  "headline": "코스피 급락 후 강보합 마감, 외국인 반도체 매도",
+  "hook_title": "코스피, 10분 만에 4%p 급락",
+  "accent": "#D97757",
+  "loop_line": "코스피, 오늘도 흔들릴까요 — 오늘 밤 미국장에서 다시 확인합니다.",
+  "thumbnail_hook": "Pre-dawn view through an office window over a city skyline, a glowing digital stock ticker board reflected faintly on the glass, an empty desk with a coffee cup and a monitor showing an abstract candlestick silhouette, cool blue morning light, cinematic financial mood, no text in image, no real people",
+  "thumbnail_text": "코스피 4%p 출렁, 왜?",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "수급 이상",
+      "ghost": "SEOUL",
+      "lines": ["코스피가", "10분 만에", "4%p 급락"],
+      "highlight": "4%p",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "순항하던 코스피가 오후 들어 4%p 넘게 휘청였습니다."
+    },
+    {
+      "type": "trend",
+      "label": "나스닥",
+      "from": 0,
+      "to": 1.4,
+      "suffix": "%",
+      "dir": "up",
+      "sub": "다우도 <b>1.18%</b> 동반 상승",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "간밤 뉴욕 나스닥은 1.4%, 다우는 1.18% 올랐습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "왜 흔들렸나",
+      "points": [
+        "코스피 급락은 <b>원인 여전히 불명</b>",
+        "월러 연준 이사 <b>금리 동결</b> 지지 발언",
+        "美 10년물 금리 <b>4.761%</b>로 진정"
+      ],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "코스피 급락은 불명, 금리는 4.761%로 진정됐습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘의 변수",
+      "points": [
+        "외국인은 팔고 <b>나스닥</b>은 웃었다",
+        "<b>환율 1,350원대</b> 지키느냐가 관건"
+      ],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "환율이 천삼백오십원대를 지키느냐가 오늘의 관건입니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 지켜볼 것",
+      "points": [
+        "오늘 밤 <b>美 고용지표</b> 발표 예정",
+        "국제유가 <b>91달러</b>대, 기름값 촉각",
+        "외국인 순매도 <b>9월도</b> 이어지나"
+      ],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "오늘 밤 미국 고용지표와 91달러대 유가를 지켜보시면 됩니다."
+    },
+    {
+      "type": "statement",
+      "text": "오늘 담는다 vs 지켜본다, 당신은?",
+      "highlight": "지켜본다",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "코스피 담을지 지켜볼지, 판단은 여러분 몫입니다."
+    }
+  ],
+  "sources": ["이투데이", "머니투데이", "아주경제", "서울경제"],
+  "credit": "출처 이투데이·머니투데이 등 · 투자 조언이 아닙니다",
+  "platforms": {
+    "youtube": {
+      "title": "코스피, 10분 만에 4%p 급락 #shorts",
+      "description": "코스피 급락 후 강보합 마감, 외국인 반도체 매도\n출처 이투데이·머니투데이·아주경제·서울경제\n※ 투자 조언이 아닙니다\n\n#코스피 #주식 #증시 #개장전 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "Korea Stocks: 4% Swing In 10 Minutes, No Clear Reason",
+          "description": "KOSPI whipsawed 4 percentage points in just 10 minutes with no clear catalyst, while Wall Street rallied overnight on Fed rate-hold hopes.\n※ Not investment advice\n\n#shorts #KOSPI #StockMarket"
+        },
+        "ja": {
+          "title": "コスピが10分で4%急落、原因は謎のまま",
+          "description": "コスピが午後、わずか10分で4ポイント近く急落しましたが、はっきりした理由は分かっていません。一方、ニューヨーク市場は利上げ停止期待で反発しました。\n※投資助言ではありません\n\n#shorts #コスピ #株式"
+        },
+        "zh-Hant": {
+          "title": "南韓股市10分鐘暴跌4%,原因成謎",
+          "description": "南韓KOSPI指數午後10分鐘內驟跌逾4個百分點,原因至今不明;同一時間紐約股市因聯準會官員暗示暫停升息而反彈。\n※非投資建議\n\n#shorts #韓股 #股市"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "코스피, 10분 만에 4%p 급락\n출처 이투데이·머니투데이 등\n※ 투자 조언이 아닙니다\n\n#코스피 #주식 #증시 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "코스피, 10분 만에 4%p 급락\n출처 이투데이·머니투데이 등"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음 · SESSION=KR_AM(개장 전 프리뷰)."
+}
