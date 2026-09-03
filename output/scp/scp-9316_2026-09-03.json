@@ -1,0 +1,1088 @@
+{
+  "date": "2026-09-03",
+  "iso_week": "2026-W36",
+  "topic": "scp",
+  "privacy": "public",
+  "origin": "original",
+  "source_url": "",
+  "story_id": "scp-9316",
+  "scp_number": "SCP-9316",
+  "object_class": "Safe",
+  "codename": "자라는 얼음",
+  "number_check": {
+    "checked_at": "2026-09-03",
+    "http_code": "unverified"
+  },
+  "title": "남극 심부 시추 캠프에서 기록할 때마다 늘어난 얼음 코어의 정체 [SCP-9316]",
+  "theme": "극지·빙하",
+  "logline": "남극 대륙 사이트-142에서 뽑아 올린 얼음 코어 이야기입니다. 딱 한 번만 기록하면 괜찮지만, 다시 세거나 다시 적으면 그 코어는 하나 더 늘어납니다.",
+  "hook_line": "코어 재고는 여든여덟 개였습니다.",
+  "cold_open": "코어 재고는 여든여덟 개였습니다. 그런데 다음 날 아침 다시 세니, 여든아홉 개였고요.",
+  "structure": "연대기형",
+  "opening_move": "수치의 어긋남",
+  "opening_note": "1순위(장면 하나)가 recent_openings 최근 목록과 겹쳐 2순위(수치의 어긋남)를 사용함.",
+  "closing_move": "사람의 마지막 말",
+  "number_reveal": "앞",
+  "ending_mode": "질문+구독",
+  "fault": "재단",
+  "procedures": [],
+  "character": {
+    "name": "노박 박사",
+    "role": "극지 재고통합팀 책임자",
+    "flaw": "예산 심사에 쓸 데이터를 포기하지 못해, 자기 손으로 낸 목록을 몰래 다시 확인한다 — 마지막 원칙을 스스로 깬다"
+  },
+  "chain": [
+    {
+      "when": "",
+      "event": "남극 대륙 심부 시추 캠프 사이트-142의 시추팀이 얼음 코어 하나를 뽑아 재고 목록에 올렸다.",
+      "because": ""
+    },
+    {
+      "when": "다음 날 아침",
+      "event": "재고를 다시 세던 근무자가 같은 번호로 등록된 코어가 한 개 더 있는 걸 발견했다.",
+      "because": "야간 근무자가 목록을 확인하며 코어를 다시 한번 기록했기 때문."
+    },
+    {
+      "when": "",
+      "event": "가르시아 인턴이 재고를 다시 세고, 두 코어의 성분 분석까지 의뢰했다.",
+      "because": "단순 사무 착오로 보기엔, 다시 세도 개수가 똑같이 맞았기 때문."
+    },
+    {
+      "when": "",
+      "event": "재단이 통제된 재현 실험으로 '한 번만 기록하면 늘지 않는다'는 사실을 확인했다.",
+      "because": "성분 분석 결과 두 코어의 기포 배열이 소수점 이하까지 완전히 같았기 때문."
+    },
+    {
+      "when": "그 뒤 열 달 가까이",
+      "event": "사이트-142는 딱 한 번만 기록하는 방식을 지키며 별일 없이 지냈다.",
+      "because": "재현 실험으로 원인이 '기록 횟수'라는 게 밝혀졌기 때문."
+    },
+    {
+      "when": "여덟 달 뒤",
+      "event": "재단 상부가 예산 심사를 앞두고 전 세계 열일곱 개 극지 시설의 재고를 중앙 서버로 통합 재입력하라고 지시했다.",
+      "because": "예산 심사에 쓸 통합 재고 자료가 필요했기 때문."
+    },
+    {
+      "when": "재입력이 시작되자마자",
+      "event": "사이트-142뿐 아니라 그린란드, 시베리아, 뉴질랜드 보조기지에서도 동시에 같은 현상이 보고됐다.",
+      "because": "전 세계 사이트가 같은 시기에 코어를 두 번째로 기록했기 때문."
+    },
+    {
+      "when": "",
+      "event": "재단이 통합 작업을 중단시켰지만, 이미 입력된 재고는 줄지 않았다.",
+      "because": "이미 두 번 기록된 코어를 되돌릴 방법이 없었기 때문."
+    },
+    {
+      "when": "",
+      "event": "기동특무부대 오미크론-2가 투입돼 실물과 서류를 대조했지만, 대조 자체가 또 다른 기록이 되어 재고가 더 늘었다.",
+      "because": "대조 작업도 결국 코어를 다시 확인하고 기록하는 행위였기 때문."
+    },
+    {
+      "when": "",
+      "event": "노박 박사가 통합 작업 전면 중단에 반대하고, 자기 몫의 코어 목록을 몰래 다시 확인했다.",
+      "because": "예산 심사가 걸린 데이터를 포기할 수 없다고 판단했기 때문."
+    },
+    {
+      "when": "그날 밤",
+      "event": "노박 박사의 이름이 인사 기록에 두 줄로 나뉘어, 같은 시각 서로 다른 두 위치에서 근무한 것으로 등재됐다.",
+      "because": "그녀 자신이 마지막으로 남아 있던 원칙, '자기 기록은 다시 확인하지 않는다'를 스스로 깼기 때문."
+    },
+    {
+      "when": "지금",
+      "event": "재단은 중앙 통합 서버를 영구 동결했지만, 그린란드와 시베리아의 재고는 이번 주에도 조용히 늘었다는 보고가 올라왔다.",
+      "because": "통합 시스템을 껐어도, 이미 퍼진 재기록의 흐름 자체는 막을 수 없었기 때문."
+    }
+  ],
+  "retention_beats": [
+    "그런데 멈춰도… 이미 입력된 몫은 사라지지 않았습니다. 되돌릴 방법이, 없었던 거죠.",
+    "그의 출입 기록은, 같은 시각에 두 군데 찍혀 있었고요.",
+    "그날 밤, 그녀의 이름이 인사 기록에 두 줄로 나뉘어 등재됩니다."
+  ],
+  "twist_summary": "규모의 반전 — 사이트 하나의 문제인 줄 알았던 것이 사실 전 세계 극지 시설이 이미 동시에 겪고 있던 현상이었다는 반전. 재단이 예산 심사를 위해 지시한 전 세계 재고 통합 재입력이 오히려 원인이 되어 사태를 전 지구적으로 확산시켰으며, 담당자 노박 박사가 '자기 기록은 다시 확인하지 않는다'는 마지막 원칙을 스스로 깨면서 그녀 자신이 인사 기록에 두 명으로 중복 등재된다.",
+  "narration_full": "코어 재고는 여든여덟 개였습니다. 그런데 다음 날 아침 다시 세니, 여든아홉 개였고요. 이 얘기, 저도 처음엔 「자라는 얼음」이라는 별명으로 들었습니다. 대수롭지 않게 넘겼는데… 자료를 볼수록, 그게 아니더라고요. 남극 대륙 안쪽, 사이트-142라는 심부 시추 캠프가 있습니다. 상주 인원 스물, 다국적이고요. 캠프는 늘 영하 삼십 도 아래였고, 저장고 안은 그보다 더 차가웠습니다. 문을 열 때마다, 냉동고 특유의 파삭한 소리가 났고요. 여기서 하는 일은 단순합니다. 지하 삼천이백 미터 얼음을 뽑아 올려서, 번호를 매기고, 저장고에 넣는 것. 재단은 이 캠프에서 나온 코어 하나를 SCP-9316으로 등록했습니다. 등급은 세이프였고요 — 이 개체를 다루는 법을, 재단은 이미 알고 있었다는 뜻이었어요. 이상한 점은 딱 하나였습니다. 기록하면, 늘어난다는 것. 보고서에는 그냥 SCP-9316이라고만 적혀 있습니다. 그런데 사이트-142 사람들은 이걸 「자라는 얼음」이라고 불렀습니다. 뽑아 올릴 땐 분명 하나였는데, 목록에 올리고 나면 둘이 돼 있으니까요. 처음엔 사무 착오로 봤습니다. 야간 근무자가 목록을 두 번 적었나 보다, 하고요. 그런데 가르시아 인턴이 재고를 다시 셌을 때, 무전으로 이렇게 보고합니다. 「여든아홉 개입니다. 다시 세도 여든아홉이에요.」 성분 분석은 더 이상했습니다. 두 코어의 기포 배열이, 소수점 이하까지 똑같았거든요. 가르시아 인턴에게는 D등급 기억소거제를 놨습니다. 그런데 열흘도 안 돼서, 본인 입으로 다시 그 얘기를 꺼냈고요. 재단이 처음 한 일은 통제된 재현 실험이었습니다. 코어 하나를 딱 한 번만 기록하고, 절대 다시 확인하지 않는 방식으로요. 결과는 깨끗했습니다. 중복 없음. 원인은 물질이 아니라, '몇 번 기록했는가' 쪽이었던 거죠. 그때부터 사이트-142는, 손으로 쓴 메모 한 장을 창고 벽에 붙여뒀습니다. 「이 숫자, 제가 잘못 옮겨 적은 게 아닙니다.」 담당자가 몇 번이나 확인한 뒤에야 남긴 문장이었고요. 그 뒤로 열 달 가까이는, 별일 없었습니다. 딱 한 번만 기록하고 다시 확인하지 않는다 — 그거 하나만 지키면, 재고는 늘지 않았거든요. 여기까진, 사이트 하나의 사정이었습니다. 문제는 여덟 달 뒤에 터졌습니다. 재단 상부가 예산 심사를 앞두고, 전 세계 극지 시설 얼음 코어 재고를, 중앙 서버 하나로 통합하라는 지시를 내렸거든요. 열일곱 개 사이트의 재고를, 전부 다시 입력하라는 거였습니다. 이미 기록된 걸, 또 한 번 기록하라는 지시였던 셈이죠. 극지 재고통합팀 책임자, 노박 박사가 이 작업을 맡았습니다. 재입력이 시작되자마자, 사이트-142만이 아니라 그린란드에서도, 시베리아에서도, 심지어 뉴질랜드 보조기지에서도, 같은 보고가 동시에 올라왔습니다. 하나가 아니었던 겁니다. 이미 다들, 조용히 겪고 있었던 거예요. 재단은 통합 작업을 즉시 중단시켰습니다. 그런데 멈춰도… 이미 입력된 몫은 사라지지 않았습니다. 되돌릴 방법이, 없었던 거죠. 성장을 막아보려는 시도도 있었습니다. 저장고 온도를 더 낮춰도 봤고, 조명 주기를 완전히 꺼도 봤고, 아예 문을 콘크리트로 발라도 봤습니다. 그런데도 다음 날이면, 어김없이 하나가 더 있었고요. 폐기도 시도해 봤습니다. 코어를 녹여도 봤고, 소각로에 넣어도 봤고, 아예 서류상으로만 지워도 봤습니다. 그런데도 저장고 재고 수치는, 조금도 줄지 않았고요. 사이트-142 저장고를 직접 본 적이 있는데요. 벽 한쪽 가득, 그 「자라는 얼음」이 똑같은 모양으로 줄지어 서 있습니다. 라벨 번호만 다르고, 기포 하나하나, 갈라진 결 하나하나까지 똑같습니다. 형광등 아래 성에 낀 유리벽 너머로, 차가운 서리 냄새가 났고요. 그게 여든아홉 개인지 백 개인지는, 세는 사람마다 다르게 셌습니다. 기동특무부대 오미크론-2, 별칭 '이중 장부'가 투입돼 실물과 서류를 하나씩 대조하려 했는데요. 대조하는 그 행위 자체가 또 재기록이라, 대조할수록 숫자가 더 늘었습니다. 재고 점검을 나갔던 D-8822는 나중에 이렇게 말했습니다. 「저는 분명… 여기 한 번만 들어왔는데요.」 그의 출입 기록은, 같은 시각에 두 군데 찍혀 있었고요. 이쯤 되면, 이게 우연이라고 하실 수 있을까요? 노박 박사는 여기서 통합 작업을 완전히 멈추자는 의견에 반대했습니다. 「이 데이터가 없어지면, 지금까지 들어간 예산 심사가 전부 헛일이 됩니다.」 저도 이 대목에서, 그 심정이 아예 이해가 안 가는 건 아니었어요. 다만 그 뒤는… 좋지 않았습니다. 노박 박사는 몰래 재입력을 이어갔습니다. 자기 손으로 낸 코어 목록을, 다시 한번 확인하려고요. 그날 밤, 그녀의 이름이 인사 기록에 두 줄로 나뉘어 등재됩니다. 같은 시각, 서로 다른 두 위치에서 근무한 걸로요. 마지막 무전 로그에는 이렇게 남아 있었습니다. 「이거, 확인만 한 번 더 하고요.」 그 뒤로는… 아무것도 없었습니다. 이 사건은 지금, 세계 오컬트 연합도 마셜, 카터 & 다크도 알고 있습니다. 후자는 내부 메모로 이렇게 제안했다고 하고요. 「완벽하게 같은 복제 데이터, 저희가 사겠습니다.」 재단은 거절했습니다. 재단은 결국 중앙 통합 서버를 영구 동결했습니다. 격리는 지금도 간단합니다 — 어떤 것도, 두 번 세지 않는 것. 다만 그린란드도, 시베리아도, 아직 조용히 늘고 있다는 보고가, 이번 주에도 하나 더 올라왔습니다. 지금 사이트-142 저장고에 코어가 몇 개인지는… 재고 담당자조차 자신 있게 대답하지 못합니다. 이상하죠? 세는 행위가, 세는 대상을 만들어낸다는 게요. 여러분 회사 서버에도, 아무도 손대지 않았는데 파일 개수가 하나씩 늘어난 폴더, 있지 않나요? 있다면 몇 개까지 늘었었는지, 궁금하네요. 비슷한 기록들, 앞으로도 계속 찾아서 올려보겠습니다.",
+  "segments": [
+    {
+      "text": "코어 재고는 여든여덟 개였습니다.",
+      "est_sec": 3,
+      "text_en": "The core inventory count was eighty-eight.",
+      "text_ja": "コアの在庫は88本でした。",
+      "text_zh_Hant": "岩芯庫存原本是八十八根。"
+    },
+    {
+      "text": "그런데 다음 날 아침 다시 세니, 여든아홉 개였고요.",
+      "est_sec": 6,
+      "text_en": "But the next morning, when they recounted, it was eighty-nine.",
+      "text_ja": "でも翌朝、数え直すと89本になっていました。",
+      "text_zh_Hant": "但隔天早上重新清點,變成了八十九根。",
+      "emphasis": "여든아홉"
+    },
+    {
+      "text": "이 얘기,",
+      "est_sec": 2,
+      "text_en": "This story—",
+      "text_ja": "この話ですが、",
+      "text_zh_Hant": "這件事,"
+    },
+    {
+      "text": "저도 처음엔 「자라는 얼음」이라는 별명으로 들었습니다.",
+      "est_sec": 6,
+      "text_en": "I first heard it under the nickname \"Growing Ice.\"",
+      "text_ja": "私も最初は「育つ氷」というあだ名で聞きました。",
+      "text_zh_Hant": "我一開始是用「生長的冰」這個外號聽說的。"
+    },
+    {
+      "text": "대수롭지 않게 넘겼는데… 자료를 볼수록,",
+      "est_sec": 4,
+      "text_en": "I didn't think much of it at first... but the more I read,",
+      "text_ja": "たいしたことないと思っていたのですが…資料を見るほど、",
+      "text_zh_Hant": "本來沒放在心上…可是資料看得越多,"
+    },
+    {
+      "text": "그게 아니더라고요. 남극 대륙 안쪽,",
+      "est_sec": 4,
+      "text_en": "it turned out I was wrong. Deep in the Antarctic interior,",
+      "text_ja": "そうではありませんでした。南極大陸の内陸に、",
+      "text_zh_Hant": "越覺得不對勁。在南極大陸內陸,"
+    },
+    {
+      "text": "사이트-142라는 심부 시추 캠프가 있습니다.",
+      "est_sec": 5,
+      "text_en": "there's a deep ice-core drilling camp called Site-142.",
+      "text_ja": "サイト-142という深部掘削キャンプがあります。",
+      "text_zh_Hant": "有一座叫做「142號基地」的深層鑽探營地。"
+    },
+    {
+      "text": "상주 인원 스물, 다국적이고요.",
+      "est_sec": 3,
+      "text_en": "Resident staff: twenty, multinational.",
+      "text_ja": "常駐人員は20人、多国籍です。",
+      "text_zh_Hant": "常駐人員二十人,來自多國。"
+    },
+    {
+      "text": "캠프는 늘 영하 삼십 도 아래였고,",
+      "est_sec": 4,
+      "text_en": "The camp always sat below minus thirty degrees,",
+      "text_ja": "キャンプは常に氷点下30度以下で、",
+      "text_zh_Hant": "營地氣溫總是在零下三十度以下,"
+    },
+    {
+      "text": "저장고 안은 그보다 더 차가웠습니다.",
+      "est_sec": 4,
+      "text_en": "and the storage vault was even colder than that.",
+      "text_ja": "貯蔵庫の中はそれよりもっと寒かったです。",
+      "text_zh_Hant": "而儲藏庫裡面又更冷。"
+    },
+    {
+      "text": "문을 열 때마다, 냉동고 특유의 파삭한 소리가 났고요.",
+      "est_sec": 6,
+      "text_en": "Every time the door opened, you'd hear that dry crackle of a freezer.",
+      "text_ja": "扉を開けるたびに、冷凍庫特有のパリパリという音がしました。",
+      "text_zh_Hant": "每次開門,都會傳出那種冷凍庫特有的脆裂聲。"
+    },
+    {
+      "text": "여기서 하는 일은 단순합니다.",
+      "est_sec": 3,
+      "text_en": "What they do there is simple.",
+      "text_ja": "ここでやっていることは単純です。",
+      "text_zh_Hant": "這裡做的事很單純。"
+    },
+    {
+      "text": "지하 삼천이백 미터 얼음을 뽑아 올려서,",
+      "est_sec": 4,
+      "text_en": "They drill up ice from 3,200 meters underground,",
+      "text_ja": "地下三千二百メートルの氷を掘り出して、",
+      "text_zh_Hant": "從地下三千兩百公尺處鑽出冰芯,"
+    },
+    {
+      "text": "번호를 매기고, 저장고에 넣는 것.",
+      "est_sec": 4,
+      "text_en": "assign it a number, and put it in storage.",
+      "text_ja": "番号を付けて、貯蔵庫に入れる。それだけです。",
+      "text_zh_Hant": "編上號碼,放進儲藏庫。"
+    },
+    {
+      "text": "재단은 이 캠프에서 나온 코어 하나를 SCP-9316으로 등록했습니다.",
+      "est_sec": 8,
+      "text_en": "The Foundation registered one core from this camp as SCP-9316.",
+      "text_ja": "財団はこのキャンプで出たコアの一つをSCP-9316として登録しました。",
+      "text_zh_Hant": "基金會將這座營地取出的一根岩芯登記為SCP-9316。"
+    },
+    {
+      "text": "등급은 세이프였고요 — 이 개체를 다루는 법을,",
+      "est_sec": 5,
+      "text_en": "Its class was Safe—which meant the Foundation already knew",
+      "text_ja": "オブジェクトクラスはセーフでした — この個体の扱い方を、",
+      "text_zh_Hant": "等級是安全級 —— 這代表基金會早已"
+    },
+    {
+      "text": "재단은 이미 알고 있었다는 뜻이었어요.",
+      "est_sec": 4,
+      "text_en": "how to handle this object.",
+      "text_ja": "財団はすでに知っていたということです。",
+      "text_zh_Hant": "知道該如何處理這個個體。"
+    },
+    {
+      "text": "이상한 점은 딱 하나였습니다.",
+      "est_sec": 3,
+      "text_en": "There was exactly one strange thing about it.",
+      "text_ja": "奇妙な点はたった一つでした。",
+      "text_zh_Hant": "唯一奇怪的地方只有一個。"
+    },
+    {
+      "text": "기록하면, 늘어난다는 것.",
+      "est_sec": 3,
+      "text_en": "If you record it, it multiplies.",
+      "text_ja": "記録すると、増えるということ。",
+      "text_zh_Hant": "只要記錄它,它就會增加。"
+    },
+    {
+      "text": "보고서에는 그냥 SCP-9316이라고만 적혀 있습니다.",
+      "est_sec": 6,
+      "text_en": "The report simply lists it as SCP-9316.",
+      "text_ja": "報告書にはただSCP-9316とだけ記されています。",
+      "text_zh_Hant": "報告上只寫著SCP-9316。"
+    },
+    {
+      "text": "그런데 사이트-142 사람들은 이걸 「자라는 얼음」이라고 불렀습니다.",
+      "est_sec": 7,
+      "text_en": "But the people at Site-142 called it \"Growing Ice.\"",
+      "text_ja": "でもサイト-142の人々はこれを「育つ氷」と呼んでいました。",
+      "text_zh_Hant": "但142號基地的人都叫它「生長的冰」。"
+    },
+    {
+      "text": "뽑아 올릴 땐 분명 하나였는데,",
+      "est_sec": 3,
+      "text_en": "When it was drilled up, it was clearly just one—",
+      "text_ja": "掘り出した時は間違いなく一本だったのに、",
+      "text_zh_Hant": "鑽出來的時候明明只有一根——"
+    },
+    {
+      "text": "목록에 올리고 나면 둘이 돼 있으니까요.",
+      "est_sec": 4,
+      "text_en": "but once it was logged, there were two.",
+      "text_ja": "台帳に載せた後には二本になっているから。",
+      "text_zh_Hant": "一旦登記入冊,就變成兩根了。"
+    },
+    {
+      "text": "처음엔 사무 착오로 봤습니다.",
+      "est_sec": 3,
+      "text_en": "At first they took it for a clerical error.",
+      "text_ja": "最初は事務ミスだと思われていました。",
+      "text_zh_Hant": "一開始被當成文書失誤處理。"
+    },
+    {
+      "text": "야간 근무자가 목록을 두 번 적었나 보다, 하고요.",
+      "est_sec": 5,
+      "text_en": "Maybe the night shift logged it twice, they figured.",
+      "text_ja": "夜勤の担当者が二重に記帳したんだろう、と。",
+      "text_zh_Hant": "大概是夜班人員把記錄登記了兩次吧。"
+    },
+    {
+      "text": "그런데 가르시아 인턴이 재고를 다시 셌을 때,",
+      "est_sec": 5,
+      "text_en": "But when intern Garcia recounted the inventory,",
+      "text_ja": "でもガルシアという実習生が在庫を数え直した時、",
+      "text_zh_Hant": "但實習生賈西亞重新清點庫存時,"
+    },
+    {
+      "text": "무전으로 이렇게 보고합니다.",
+      "est_sec": 3,
+      "text_en": "this is what she reported over the radio.",
+      "text_ja": "無線でこう報告してきました。",
+      "text_zh_Hant": "透過無線電這樣回報。"
+    },
+    {
+      "text": "「여든아홉 개입니다. 다시 세도 여든아홉이에요.」",
+      "est_sec": 5,
+      "text_en": "\"It's eighty-nine. I recounted, and it's still eighty-nine.\"",
+      "text_ja": "「89本です。数え直しても89本です。」",
+      "text_zh_Hant": "「是八十九根。再數一次還是八十九根。」"
+    },
+    {
+      "text": "성분 분석은 더 이상했습니다.",
+      "est_sec": 3,
+      "text_en": "The composition analysis was even stranger.",
+      "text_ja": "成分分析はさらに奇妙でした。",
+      "text_zh_Hant": "成分分析結果更加詭異。"
+    },
+    {
+      "text": "두 코어의 기포 배열이, 소수점 이하까지 똑같았거든요.",
+      "est_sec": 6,
+      "text_en": "The bubble patterns in the two cores matched down to the decimal point.",
+      "text_ja": "二本のコアの気泡配列が、小数点以下まで完全に一致していたんです。",
+      "text_zh_Hant": "兩根岩芯的氣泡排列,連小數點以下都完全一致。",
+      "emphasis": "소수점까지 일치"
+    },
+    {
+      "text": "가르시아 인턴에게는 D등급 기억소거제를 놨습니다.",
+      "est_sec": 5,
+      "text_en": "Intern Garcia was given a Class-D amnestic.",
+      "text_ja": "ガルシア実習生にはD級記憶処理剤が投与されました。",
+      "text_zh_Hant": "他們對賈西亞實習生施打了D級記憶消除劑。"
+    },
+    {
+      "text": "그런데 열흘도 안 돼서,",
+      "est_sec": 2,
+      "text_en": "But less than ten days later,",
+      "text_ja": "でも十日も経たないうちに、",
+      "text_zh_Hant": "但不到十天,"
+    },
+    {
+      "text": "본인 입으로 다시 그 얘기를 꺼냈고요.",
+      "est_sec": 4,
+      "text_en": "she brought the story up herself, from memory.",
+      "text_ja": "彼女自身の口から、またその話が出てきました。",
+      "text_zh_Hant": "她自己又提起了這件事。"
+    },
+    {
+      "text": "재단이 처음 한 일은 통제된 재현 실험이었습니다.",
+      "est_sec": 5,
+      "text_en": "The first thing the Foundation did was a controlled reproduction test.",
+      "text_ja": "財団が最初に行ったのは、統制された再現実験でした。",
+      "text_zh_Hant": "基金會做的第一件事是進行受控重現實驗。"
+    },
+    {
+      "text": "코어 하나를 딱 한 번만 기록하고,",
+      "est_sec": 4,
+      "text_en": "Log a core exactly once,",
+      "text_ja": "コアを一度だけ記録して、",
+      "text_zh_Hant": "一根岩芯只記錄一次,"
+    },
+    {
+      "text": "절대 다시 확인하지 않는 방식으로요.",
+      "est_sec": 4,
+      "text_en": "and never, ever recheck it.",
+      "text_ja": "絶対に再確認しない、というやり方で。",
+      "text_zh_Hant": "絕對不再重新確認。"
+    },
+    {
+      "text": "결과는 깨끗했습니다. 중복 없음.",
+      "est_sec": 3,
+      "text_en": "The result was clean. No duplication.",
+      "text_ja": "結果はきれいなものでした。重複なし。",
+      "text_zh_Hant": "結果很乾淨,沒有重複。"
+    },
+    {
+      "text": "원인은 물질이 아니라,",
+      "est_sec": 2,
+      "text_en": "The cause wasn't the material—",
+      "text_ja": "原因は物質ではなく、",
+      "text_zh_Hant": "原因不在物質本身,"
+    },
+    {
+      "text": "'몇 번 기록했는가' 쪽이었던 거죠.",
+      "est_sec": 4,
+      "text_en": "it was how many times it had been recorded.",
+      "text_ja": "「何回記録したか」の方だったわけです。",
+      "text_zh_Hant": "而是「被記錄了幾次」。"
+    },
+    {
+      "text": "그때부터 사이트-142는,",
+      "est_sec": 3,
+      "text_en": "From then on, Site-142",
+      "text_ja": "それ以来、サイト-142は",
+      "text_zh_Hant": "從那之後,142號基地"
+    },
+    {
+      "text": "손으로 쓴 메모 한 장을 창고 벽에 붙여뒀습니다.",
+      "est_sec": 5,
+      "text_en": "hung a handwritten note on the storage wall.",
+      "text_ja": "手書きのメモを一枚、倉庫の壁に貼っておきました。",
+      "text_zh_Hant": "在儲藏庫牆上貼了一張手寫的紙條。"
+    },
+    {
+      "text": "「이 숫자, 제가 잘못 옮겨 적은 게 아닙니다.」",
+      "est_sec": 5,
+      "text_en": "\"This number is not a mistake I made in copying it.\"",
+      "text_ja": "「この数字は、私が書き写し間違えたものではありません。」",
+      "text_zh_Hant": "「這個數字,不是我抄錯的。」"
+    },
+    {
+      "text": "담당자가 몇 번이나 확인한 뒤에야 남긴 문장이었고요.",
+      "est_sec": 6,
+      "text_en": "A line the officer in charge wrote only after checking it several times.",
+      "text_ja": "担当者が何度も確認した末に残した一文でした。",
+      "text_zh_Hant": "是負責人反覆確認好幾次後才寫下的一句話。"
+    },
+    {
+      "text": "그 뒤로 열 달 가까이는, 별일 없었습니다.",
+      "est_sec": 5,
+      "text_en": "For nearly ten months after that, nothing happened.",
+      "text_ja": "それから十か月近く、何事もありませんでした。",
+      "text_zh_Hant": "此後將近十個月,都相安無事。"
+    },
+    {
+      "text": "딱 한 번만 기록하고 다시 확인하지 않는다 — 그거 하나만 지키면,",
+      "est_sec": 7,
+      "text_en": "Record it exactly once and never recheck it—just keep that one rule,",
+      "text_ja": "一度だけ記録して二度と確認しない — それさえ守れば、",
+      "text_zh_Hant": "只記錄一次,絕不再確認——只要守住這一條,"
+    },
+    {
+      "text": "재고는 늘지 않았거든요.",
+      "est_sec": 2,
+      "text_en": "and the inventory wouldn't grow.",
+      "text_ja": "在庫は増えませんでした。",
+      "text_zh_Hant": "庫存數量就不會增加。"
+    },
+    {
+      "text": "여기까진, 사이트 하나의 사정이었습니다.",
+      "est_sec": 4,
+      "text_en": "Up to this point, it was just one site's business.",
+      "text_ja": "ここまでは、一つのサイトだけの話でした。",
+      "text_zh_Hant": "到這裡為止,還只是單一基地的事。"
+    },
+    {
+      "text": "문제는 여덟 달 뒤에 터졌습니다.",
+      "est_sec": 3,
+      "text_en": "The problem broke out eight months later.",
+      "text_ja": "問題が起きたのは八か月後でした。",
+      "text_zh_Hant": "問題在八個月後爆發。"
+    },
+    {
+      "text": "재단 상부가 예산 심사를 앞두고,",
+      "est_sec": 3,
+      "text_en": "Ahead of a budget review, Foundation command",
+      "text_ja": "予算審査を控えた財団上層部が、",
+      "text_zh_Hant": "在預算審查前,基金會上層"
+    },
+    {
+      "text": "전 세계 극지 시설 얼음 코어 재고를,",
+      "est_sec": 4,
+      "text_en": "ordered every polar facility's ice-core inventory",
+      "text_ja": "世界中の極地施設の氷コア在庫を、",
+      "text_zh_Hant": "下令將全世界極地設施的冰芯庫存,"
+    },
+    {
+      "text": "중앙 서버 하나로 통합하라는 지시를 내렸거든요.",
+      "est_sec": 5,
+      "text_en": "consolidated into one central server.",
+      "text_ja": "一つの中央サーバーに統合しろと指示を出したんです。",
+      "text_zh_Hant": "統一整合到一台中央伺服器裡。"
+    },
+    {
+      "text": "열일곱 개 사이트의 재고를,",
+      "est_sec": 3,
+      "text_en": "The inventories of seventeen sites—",
+      "text_ja": "十七か所のサイトの在庫を、",
+      "text_zh_Hant": "十七個基地的庫存——"
+    },
+    {
+      "text": "전부 다시 입력하라는 거였습니다. 이미 기록된 걸,",
+      "est_sec": 5,
+      "text_en": "all of it had to be re-entered. Data already logged once,",
+      "text_ja": "全部もう一度入力しろというものでした。すでに記録されたものを、",
+      "text_zh_Hant": "全部得重新輸入一次。已經記錄過的東西,"
+    },
+    {
+      "text": "또 한 번 기록하라는 지시였던 셈이죠.",
+      "est_sec": 4,
+      "text_en": "was, in effect, an order to record it a second time.",
+      "text_ja": "もう一度記録しろという指示だったわけです。",
+      "text_zh_Hant": "等於是要求再記錄一次。"
+    },
+    {
+      "text": "극지 재고통합팀 책임자,",
+      "est_sec": 2,
+      "text_en": "The head of the Polar Inventory Consolidation Team—",
+      "text_ja": "極地在庫統合チームの責任者、",
+      "text_zh_Hant": "極地庫存整合小組的負責人——"
+    },
+    {
+      "text": "노박 박사가 이 작업을 맡았습니다.",
+      "est_sec": 4,
+      "text_en": "Dr. Novak—took charge of the project.",
+      "text_ja": "ノヴァク博士がこの作業を任されました。",
+      "text_zh_Hant": "諾瓦克博士,接下了這項任務。"
+    },
+    {
+      "text": "재입력이 시작되자마자,",
+      "est_sec": 2,
+      "text_en": "The moment re-entry began,",
+      "text_ja": "再入力が始まった途端、",
+      "text_zh_Hant": "重新輸入一開始,"
+    },
+    {
+      "text": "사이트-142만이 아니라 그린란드에서도,",
+      "est_sec": 4,
+      "text_en": "not just Site-142 but Greenland too,",
+      "text_ja": "サイト-142だけでなくグリーンランドでも、",
+      "text_zh_Hant": "不只142號基地,格陵蘭那邊、"
+    },
+    {
+      "text": "시베리아에서도, 심지어 뉴질랜드 보조기지에서도,",
+      "est_sec": 5,
+      "text_en": "Siberia too, even the New Zealand auxiliary base—",
+      "text_ja": "シベリアでも、さらにはニュージーランドの補助基地からも、",
+      "text_zh_Hant": "西伯利亞那邊,甚至紐西蘭的輔助基地都——"
+    },
+    {
+      "text": "같은 보고가 동시에 올라왔습니다.",
+      "est_sec": 3,
+      "text_en": "the same report came in, all at once.",
+      "text_ja": "同じ報告が同時に上がってきました。",
+      "text_zh_Hant": "同時傳來了一模一樣的報告。"
+    },
+    {
+      "text": "하나가 아니었던 겁니다.",
+      "est_sec": 2,
+      "text_en": "It hadn't been just one.",
+      "text_ja": "一つではなかったんです。",
+      "text_zh_Hant": "原來不只一處。"
+    },
+    {
+      "text": "이미 다들, 조용히 겪고 있었던 거예요.",
+      "est_sec": 4,
+      "text_en": "Everyone had already been quietly going through it.",
+      "text_ja": "みんなすでに、静かに経験していたわけです。",
+      "text_zh_Hant": "大家其實都早已默默經歷著同樣的事。"
+    },
+    {
+      "text": "재단은 통합 작업을 즉시 중단시켰습니다.",
+      "est_sec": 4,
+      "text_en": "The Foundation halted the consolidation immediately.",
+      "text_ja": "財団は統合作業を即座に中断させました。",
+      "text_zh_Hant": "基金會立刻中止了整合作業。"
+    },
+    {
+      "text": "그런데 멈춰도… 이미 입력된 몫은 사라지지 않았습니다.",
+      "est_sec": 6,
+      "text_en": "But stopping didn't make it go away... what had already been entered didn't disappear.",
+      "text_ja": "でも止めても…すでに入力された分は消えませんでした。",
+      "text_zh_Hant": "但就算停下來……已經輸入的部分也不會消失。"
+    },
+    {
+      "text": "되돌릴 방법이, 없었던 거죠.",
+      "est_sec": 3,
+      "text_en": "There was no way to undo it.",
+      "text_ja": "元に戻す方法が、なかったんです。",
+      "text_zh_Hant": "沒有辦法還原。"
+    },
+    {
+      "text": "성장을 막아보려는 시도도 있었습니다.",
+      "est_sec": 4,
+      "text_en": "There were also attempts to stop the growth itself.",
+      "text_ja": "増殖そのものを止めようとする試みもありました。",
+      "text_zh_Hant": "也曾嘗試阻止它繼續增生。"
+    },
+    {
+      "text": "저장고 온도를 더 낮춰도 봤고,",
+      "est_sec": 3,
+      "text_en": "They lowered the storage temperature further,",
+      "text_ja": "貯蔵庫の温度をさらに下げてみたり、",
+      "text_zh_Hant": "把儲藏庫的溫度調得更低,"
+    },
+    {
+      "text": "조명 주기를 완전히 꺼도 봤고,",
+      "est_sec": 3,
+      "text_en": "they turned the lighting cycle off completely,",
+      "text_ja": "照明サイクルを完全に消してみたり、",
+      "text_zh_Hant": "把照明週期完全關掉,"
+    },
+    {
+      "text": "아예 문을 콘크리트로 발라도 봤습니다.",
+      "est_sec": 4,
+      "text_en": "they even sealed the door in concrete.",
+      "text_ja": "扉をコンクリートで塗り固めてみたりもしました。",
+      "text_zh_Hant": "甚至用水泥把門封死。"
+    },
+    {
+      "text": "그런데도 다음 날이면, 어김없이 하나가 더 있었고요.",
+      "est_sec": 6,
+      "text_en": "But without fail, the next day there'd be one more.",
+      "text_ja": "それでも次の日になると、決まって一本増えていました。",
+      "text_zh_Hant": "但每次到了隔天,還是不出所料多出一根。"
+    },
+    {
+      "text": "폐기도 시도해 봤습니다.",
+      "est_sec": 2,
+      "text_en": "Disposal was tried too.",
+      "text_ja": "廃棄も試されました。",
+      "text_zh_Hant": "他們也試過銷毀。"
+    },
+    {
+      "text": "코어를 녹여도 봤고, 소각로에 넣어도 봤고,",
+      "est_sec": 5,
+      "text_en": "They melted cores, burned them in the incinerator,",
+      "text_ja": "コアを溶かしてみたり、焼却炉に入れてみたり、",
+      "text_zh_Hant": "把岩芯融化,丟進焚化爐燒掉,"
+    },
+    {
+      "text": "아예 서류상으로만 지워도 봤습니다.",
+      "est_sec": 4,
+      "text_en": "even just erased them from the paperwork.",
+      "text_ja": "書類上だけ消してみたりもしました。",
+      "text_zh_Hant": "甚至只在文件上把它們刪除。"
+    },
+    {
+      "text": "그런데도 저장고 재고 수치는, 조금도 줄지 않았고요.",
+      "est_sec": 6,
+      "text_en": "But the storage count never went down, not even a little.",
+      "text_ja": "それでも貯蔵庫の在庫数は、少しも減りませんでした。",
+      "text_zh_Hant": "但儲藏庫的庫存數字,一點都沒有減少。"
+    },
+    {
+      "text": "사이트-142 저장고를 직접 본 적이 있는데요.",
+      "est_sec": 5,
+      "text_en": "I've actually seen the Site-142 storage room myself.",
+      "text_ja": "サイト-142の貯蔵庫を、実際に見たことがあります。",
+      "text_zh_Hant": "我其實親眼看過142號基地的儲藏庫。"
+    },
+    {
+      "text": "벽 한쪽 가득,",
+      "est_sec": 2,
+      "text_en": "One whole wall,",
+      "text_ja": "壁の片側いっぱいに、",
+      "text_zh_Hant": "整面牆上,"
+    },
+    {
+      "text": "그 「자라는 얼음」이 똑같은 모양으로 줄지어 서 있습니다.",
+      "est_sec": 6,
+      "text_en": "lined with identical \"Growing Ice\" cores, row after row.",
+      "text_ja": "あの「育つ氷」が同じ形で並んでいます。",
+      "text_zh_Hant": "排滿了一模一樣的「生長的冰」。"
+    },
+    {
+      "text": "라벨 번호만 다르고, 기포 하나하나,",
+      "est_sec": 4,
+      "text_en": "Only the label numbers differ—every air bubble,",
+      "text_ja": "ラベルの番号だけが違って、気泡の一つ一つ、",
+      "text_zh_Hant": "只有標籤編號不同,每一個氣泡、"
+    },
+    {
+      "text": "갈라진 결 하나하나까지 똑같습니다.",
+      "est_sec": 4,
+      "text_en": "every crack in the ice, matches exactly.",
+      "text_ja": "ひび割れの一つ一つまで、まったく同じです。",
+      "text_zh_Hant": "每一道裂紋,都分毫不差。"
+    },
+    {
+      "text": "형광등 아래 성에 낀 유리벽 너머로,",
+      "est_sec": 4,
+      "text_en": "Past the frost-covered glass wall under the fluorescent light,",
+      "text_ja": "蛍光灯の下、霜の張ったガラス壁の向こうから、",
+      "text_zh_Hant": "在日光燈下,結霜的玻璃牆後,"
+    },
+    {
+      "text": "차가운 서리 냄새가 났고요.",
+      "est_sec": 3,
+      "text_en": "there was a cold smell of frost in the air.",
+      "text_ja": "冷たい霜の匂いがしていました。",
+      "text_zh_Hant": "飄來一股冰冷的霜氣味。"
+    },
+    {
+      "text": "그게 여든아홉 개인지 백 개인지는,",
+      "est_sec": 4,
+      "text_en": "Whether it was eighty-nine or a hundred,",
+      "text_ja": "それが89本なのか100本なのかは、",
+      "text_zh_Hant": "那到底是八十九根還是一百根,"
+    },
+    {
+      "text": "세는 사람마다 다르게 셌습니다.",
+      "est_sec": 3,
+      "text_en": "everyone who counted got a different number.",
+      "text_ja": "数える人によって毎回違いました。",
+      "text_zh_Hant": "每個去數的人數出來的都不一樣。"
+    },
+    {
+      "text": "기동특무부대 오미크론-2,",
+      "est_sec": 3,
+      "text_en": "Mobile Task Force Omicron-2,",
+      "text_ja": "機動特務部隊オミクロン-2、",
+      "text_zh_Hant": "機動特務部隊「Omicron-2」,"
+    },
+    {
+      "text": "별칭 '이중 장부'가 투입돼 실물과 서류를 하나씩 대조하려 했는데요.",
+      "est_sec": 7,
+      "text_en": "nicknamed \"Double Ledger,\" was sent in to cross-check the physical cores against the paperwork.",
+      "text_ja": "通称「二重帳簿」が投入され、実物と書類を一つずつ照合しようとしました。",
+      "text_zh_Hant": "外號「雙重帳本」,被派去逐一核對實物與文件。"
+    },
+    {
+      "text": "대조하는 그 행위 자체가 또 재기록이라,",
+      "est_sec": 4,
+      "text_en": "But the act of cross-checking was itself another recording,",
+      "text_ja": "でも照合するという行為自体がまた記録になるため、",
+      "text_zh_Hant": "但核對這個動作本身就是一次再記錄,"
+    },
+    {
+      "text": "대조할수록 숫자가 더 늘었습니다.",
+      "est_sec": 3,
+      "text_en": "so the more they checked, the more the number grew.",
+      "text_ja": "照合すればするほど数が増えていきました。",
+      "text_zh_Hant": "結果核對得越多,數字反而增加得越多。"
+    },
+    {
+      "text": "재고 점검을 나갔던 D-8822는 나중에 이렇게 말했습니다.",
+      "est_sec": 6,
+      "text_en": "D-8822, who'd gone in for the inventory check, said this afterward.",
+      "text_ja": "在庫点検に出たD-8822は、後にこう語りました。",
+      "text_zh_Hant": "被派去做庫存檢查的D-8822,事後這樣說。"
+    },
+    {
+      "text": "「저는 분명… 여기 한 번만 들어왔는데요.」",
+      "est_sec": 5,
+      "text_en": "\"I'm sure... I only went in here once.\"",
+      "text_ja": "「私は確かに…ここには一度しか入っていないのですが。」",
+      "text_zh_Hant": "「我明明……只進來過這裡一次而已。」"
+    },
+    {
+      "text": "그의 출입 기록은,",
+      "est_sec": 2,
+      "text_en": "His access log",
+      "text_ja": "彼の入退室記録は、",
+      "text_zh_Hant": "他的出入紀錄,"
+    },
+    {
+      "text": "같은 시각에 두 군데 찍혀 있었고요.",
+      "est_sec": 4,
+      "text_en": "showed him clocked in at two different places, at the exact same time.",
+      "text_ja": "同じ時刻に、二か所で記録されていました。",
+      "text_zh_Hant": "在同一個時間點,出現在兩個不同的地方。"
+    },
+    {
+      "text": "이쯤 되면, 이게 우연이라고 하실 수 있을까요?",
+      "est_sec": 5,
+      "text_en": "At this point, could you really call it a coincidence?",
+      "text_ja": "ここまで来ると、これを偶然だと言えるでしょうか。",
+      "text_zh_Hant": "到了這個地步,您還會說這只是巧合嗎?"
+    },
+    {
+      "text": "노박 박사는 여기서 통합 작업을 완전히 멈추자는 의견에 반대했습니다.",
+      "est_sec": 7,
+      "text_en": "Dr. Novak was against fully halting the consolidation work.",
+      "text_ja": "ノヴァク博士は、統合作業を完全に止めるという意見に反対しました。",
+      "text_zh_Hant": "諾瓦克博士反對徹底中止整合作業。"
+    },
+    {
+      "text": "「이 데이터가 없어지면,",
+      "est_sec": 2,
+      "text_en": "\"If this data disappears,",
+      "text_ja": "「このデータが消えたら、",
+      "text_zh_Hant": "「如果這份資料沒了,"
+    },
+    {
+      "text": "지금까지 들어간 예산 심사가 전부 헛일이 됩니다.」",
+      "est_sec": 5,
+      "text_en": "everything that's gone into this budget review will have been for nothing.\"",
+      "text_ja": "これまで積み上げてきた予算審査が全部無駄になります。」",
+      "text_zh_Hant": "至今為了預算審查投入的一切都會白費。」"
+    },
+    {
+      "text": "저도 이 대목에서,",
+      "est_sec": 2,
+      "text_en": "I'll admit, at this point in the story,",
+      "text_ja": "正直、この部分については、",
+      "text_zh_Hant": "老實說,聽到這裡,"
+    },
+    {
+      "text": "그 심정이 아예 이해가 안 가는 건 아니었어요.",
+      "est_sec": 5,
+      "text_en": "I couldn't say her feelings were entirely hard to understand.",
+      "text_ja": "その気持ちが全く分からないわけではありませんでした。",
+      "text_zh_Hant": "我不是完全無法理解她的心情。"
+    },
+    {
+      "text": "다만 그 뒤는… 좋지 않았습니다.",
+      "est_sec": 3,
+      "text_en": "Still, what came after... wasn't good.",
+      "text_ja": "ただ、その後は…良くありませんでした。",
+      "text_zh_Hant": "只是,後來的發展……並不好。"
+    },
+    {
+      "text": "노박 박사는 몰래 재입력을 이어갔습니다.",
+      "est_sec": 4,
+      "text_en": "Dr. Novak kept re-entering the data in secret.",
+      "text_ja": "ノヴァク博士はこっそり再入力を続けていました。",
+      "text_zh_Hant": "諾瓦克博士偷偷繼續進行重新輸入。"
+    },
+    {
+      "text": "자기 손으로 낸 코어 목록을, 다시 한번 확인하려고요.",
+      "est_sec": 6,
+      "text_en": "She wanted to double-check the list of cores she herself had logged.",
+      "text_ja": "自分の手で出したコアの目録を、もう一度確認しようとしたんです。",
+      "text_zh_Hant": "她想再次確認自己親手登記的岩芯清單。"
+    },
+    {
+      "text": "그날 밤,",
+      "est_sec": 2,
+      "text_en": "That night,",
+      "text_ja": "その夜、",
+      "text_zh_Hant": "那天晚上,"
+    },
+    {
+      "text": "그녀의 이름이 인사 기록에 두 줄로 나뉘어 등재됩니다.",
+      "est_sec": 6,
+      "text_en": "her name appeared in the personnel record split into two lines.",
+      "text_ja": "彼女の名前が人事記録に二行に分かれて登録されました。",
+      "text_zh_Hant": "她的名字在人事記錄上被拆成了兩行登記。",
+      "emphasis": "두 줄로 등재"
+    },
+    {
+      "text": "같은 시각, 서로 다른 두 위치에서 근무한 걸로요.",
+      "est_sec": 5,
+      "text_en": "Same time, but two different locations, both clocked in as on duty.",
+      "text_ja": "同じ時刻に、二つの異なる場所で勤務していたことになっていました。",
+      "text_zh_Hant": "同一時間,卻在兩個不同地點值勤。"
+    },
+    {
+      "text": "마지막 무전 로그에는 이렇게 남아 있었습니다.",
+      "est_sec": 5,
+      "text_en": "Her final radio log read like this.",
+      "text_ja": "最後の無線ログには、こう残されていました。",
+      "text_zh_Hant": "她最後的無線電紀錄留下這樣一句話。"
+    },
+    {
+      "text": "「이거, 확인만 한 번 더 하고요.」",
+      "est_sec": 4,
+      "text_en": "\"Just... one more check on this.\"",
+      "text_ja": "「これ、確認だけもう一回して。」",
+      "text_zh_Hant": "「這個,我再確認一次就好。」"
+    },
+    {
+      "text": "그 뒤로는… 아무것도 없었습니다.",
+      "est_sec": 3,
+      "text_en": "After that... there was nothing more.",
+      "text_ja": "その後は…何もありませんでした。",
+      "text_zh_Hant": "在那之後……就什麼都沒有了。"
+    },
+    {
+      "text": "이 사건은 지금, 세계 오컬트 연합도 마셜,",
+      "est_sec": 5,
+      "text_en": "This case is now known to both the Global Occult Coalition and,",
+      "text_ja": "この件は今、世界オカルト連合も、",
+      "text_zh_Hant": "這起事件目前世界神祕學聯盟"
+    },
+    {
+      "text": "카터 & 다크도 알고 있습니다.",
+      "est_sec": 3,
+      "text_en": "Marshall, Carter & Dark.",
+      "text_ja": "マーシャル・カーター&ダークも把握しています。",
+      "text_zh_Hant": "與馬歇爾、卡特&達克都已經知情。"
+    },
+    {
+      "text": "후자는 내부 메모로 이렇게 제안했다고 하고요.",
+      "est_sec": 5,
+      "text_en": "The latter reportedly made this proposal via internal memo.",
+      "text_ja": "後者は内部メモでこう提案してきたそうです。",
+      "text_zh_Hant": "後者據說透過內部備忘錄提出了這樣的提議。"
+    },
+    {
+      "text": "「완벽하게 같은 복제 데이터, 저희가 사겠습니다.」",
+      "est_sec": 5,
+      "text_en": "\"We'd like to buy that perfectly identical duplicate data.\"",
+      "text_ja": "「その完璧に同一な複製データ、私どもが買い取ります。」",
+      "text_zh_Hant": "「那份完全相同的複製資料,我們願意收購。」"
+    },
+    {
+      "text": "재단은 거절했습니다.",
+      "est_sec": 2,
+      "text_en": "The Foundation refused.",
+      "text_ja": "財団は断りました。",
+      "text_zh_Hant": "基金會拒絕了。"
+    },
+    {
+      "text": "재단은 결국 중앙 통합 서버를 영구 동결했습니다.",
+      "est_sec": 5,
+      "text_en": "In the end, the Foundation permanently froze the central consolidation server.",
+      "text_ja": "結局、財団は中央統合サーバーを永久凍結しました。",
+      "text_zh_Hant": "最後,基金會將中央整合伺服器永久凍結。"
+    },
+    {
+      "text": "격리는 지금도 간단합니다 — 어떤 것도,",
+      "est_sec": 4,
+      "text_en": "Containment is still simple now—just don't",
+      "text_ja": "格納は今でも単純です — どんなものも、",
+      "text_zh_Hant": "現在的收容措施依然很簡單——任何東西,"
+    },
+    {
+      "text": "두 번 세지 않는 것. 다만 그린란드도, 시베리아도,",
+      "est_sec": 6,
+      "text_en": "count anything twice. But Greenland, and Siberia too,",
+      "text_ja": "二度と数えないこと。ただグリーンランドも、シベリアも、",
+      "text_zh_Hant": "都絕不再數第二次。只是格陵蘭和西伯利亞,"
+    },
+    {
+      "text": "아직 조용히 늘고 있다는 보고가,",
+      "est_sec": 3,
+      "text_en": "keep sending in reports that the count is quietly rising still.",
+      "text_ja": "静かに増え続けているという報告が、",
+      "text_zh_Hant": "仍不斷傳來數量還在悄悄增加的報告,"
+    },
+    {
+      "text": "이번 주에도 하나 더 올라왔습니다.",
+      "est_sec": 4,
+      "text_en": "Just this week, one more came in.",
+      "text_ja": "今週もまた一件上がってきました。",
+      "text_zh_Hant": "就在這星期,又多了一份。"
+    },
+    {
+      "text": "지금 사이트-142 저장고에 코어가 몇 개인지는…",
+      "est_sec": 5,
+      "text_en": "Exactly how many cores are in the Site-142 vault right now...",
+      "text_ja": "今、サイト-142の貯蔵庫にコアが何本あるのか…",
+      "text_zh_Hant": "現在142號基地的儲藏庫裡到底有幾根岩芯……"
+    },
+    {
+      "text": "재고 담당자조차 자신 있게 대답하지 못합니다.",
+      "est_sec": 5,
+      "text_en": "even the inventory officer can't say for certain.",
+      "text_ja": "在庫担当者ですら、自信を持って答えられません。",
+      "text_zh_Hant": "就連庫存負責人自己,也無法肯定地回答。"
+    },
+    {
+      "text": "이상하죠?",
+      "est_sec": 2,
+      "text_en": "Isn't that strange?",
+      "text_ja": "不思議ですよね?",
+      "text_zh_Hant": "很奇怪吧?"
+    },
+    {
+      "text": "세는 행위가, 세는 대상을 만들어낸다는 게요.",
+      "est_sec": 5,
+      "text_en": "The act of counting is what creates the thing being counted.",
+      "text_ja": "数える行為が、数えられる対象を作り出しているという事実が。",
+      "text_zh_Hant": "「數」這個動作,竟然創造出了被數的東西。"
+    },
+    {
+      "text": "여러분 회사 서버에도,",
+      "est_sec": 2,
+      "text_en": "Doesn't your office server have one too—",
+      "text_ja": "皆さんの会社のサーバーにも、",
+      "text_zh_Hant": "各位公司的伺服器上,"
+    },
+    {
+      "text": "아무도 손대지 않았는데 파일 개수가 하나씩 늘어난 폴더,",
+      "est_sec": 6,
+      "text_en": "a folder where the file count keeps growing on its own, with nobody touching it?",
+      "text_ja": "誰も触っていないのにファイル数が勝手に増えていくフォルダ、ありませんか?",
+      "text_zh_Hant": "是不是也有一個沒人動過、檔案數量卻不斷自己增加的資料夾?"
+    },
+    {
+      "text": "있지 않나요?",
+      "est_sec": 2,
+      "text_en": "Does it, by any chance?",
+      "text_ja": "ありますか?",
+      "text_zh_Hant": "有的話,"
+    },
+    {
+      "text": "있다면 몇 개까지 늘었었는지, 궁금하네요.",
+      "est_sec": 4,
+      "text_en": "If so, I'd love to know how many it grew to.",
+      "text_ja": "あるなら、いくつまで増えたのか気になります。",
+      "text_zh_Hant": "很想知道它到底增加到了多少個。"
+    },
+    {
+      "text": "비슷한 기록들, 앞으로도 계속 찾아서 올려보겠습니다.",
+      "est_sec": 6,
+      "text_en": "Records like this one—I'll keep digging them up and bringing them to you.",
+      "text_ja": "こういった記録、これからも探して持ってきます。",
+      "text_zh_Hant": "類似的紀錄,我會繼續找出來說給大家聽。"
+    }
+  ],
+  "scenes": [
+    {
+      "prompt": "a remote Antarctic ice-core drilling camp at dusk, low insulated modular buildings half buried in snow, a drill tower in the distance, wide establishing shot, one-point perspective, deep focus, single warm window light against blue polar twilight, hard directional shadow on snow, weathered orange steel siding, packed snow, frost-covered cables, thin blowing snow haze, cold pale blue, dim amber glow, lower quarter empty snowfield, 24mm lens, f/8, sharp detail, photorealistic, institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "interior of a narrow subzero ice-core storage vault, rows of numbered cylindrical ice cores resting in open metal racks along one wall, eye-level wide shot, one-point perspective, deep focus, single bare fluorescent tube overhead, hard downward shadow, frost-crusted galvanized steel shelving, condensation-streaked concrete floor, thin cold vapor haze drifting near the floor, desaturated icy blue, institutional grey, dim fluorescent white, lower quarter empty floor, 24mm lens, f/8, sharp detail, photorealistic, institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "extreme close-up of a single translucent ice core cylinder resting on a steel tray, faint layered bubble patterns visible inside the ice, subject positioned on the right third, left third is dark empty negative space, single raking light from the left, shallow depth of field, wet steel surface, fine ice crystal texture, desaturated pale blue, cold white highlight, 50mm lens, f/2.8, sharp detail on the ice surface, photorealistic, institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "a young technician in a heavy insulated jacket standing beside a storage rack holding a handheld radio to her mouth, seen from behind at a slight angle, face not visible, medium wide shot, deep focus, single overhead fluorescent light, hard downward shadow, frost-dusted rack shelving, cold vapor near the floor, desaturated icy blue, dim amber highlight on the radio, lower quarter empty floor, 35mm lens, f/5.6, sharp detail, photorealistic, institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "two identical ice core cylinders placed side by side on a steel examination table under a single overhead lamp, their internal bubble patterns visually mirrored, close medium shot, deep focus, single hanging incandescent lamp directly above, hard downward shadow, brushed steel table, cold condensation droplets, desaturated pale blue, warm single highlight, 35mm lens, f/4, sharp detail, photorealistic, institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "a handwritten note taped to a frost-lined concrete storage wall next to a numbered rack tag, faint fogged glass beyond, close-up, shallow depth of field, single side raking light, rough painted concrete, curling masking tape, frost crystals on the wall surface, desaturated cold grey, dim warm highlight on the paper, subject positioned on the left third, right third is dark empty negative space, 50mm lens, f/2.8, sharp detail on the note surface, photorealistic, institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "a dim server room with a single rack of blinking status lights facing a wall map of the world marked with small site pins across the polar regions, wide shot, one-point perspective, deep focus, single monitor glow as the only light source, hard shadow across the floor, dark grey server casing, tangled cabling, thin dust haze, cold blue monitor light, dim amber status lights, lower quarter empty floor, 24mm lens, f/8, sharp detail, photorealistic, institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "two Mobile Task Force operators in matching cold-weather tactical gear standing at a storage rack comparing a clipboard against a row of ice cores, seen from behind, faces not visible, medium wide shot, deep focus, single overhead fluorescent light, hard downward shadow, frost-crusted steel shelving, cold vapor haze, desaturated icy blue, dim amber highlight on the clipboard, lower quarter empty floor, 35mm lens, f/5.6, sharp detail, photorealistic, institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "a lone figure in a plain grey jumpsuit standing at the far end of a long narrow storage corridor lined with identical ice core racks receding into darkness, seen from behind, small in frame, wide shot, one-point perspective, deep focus, single distant fluorescent fixture, hard directional shadow, frost-crusted steel racks, thin cold vapor haze, desaturated icy blue, dim fluorescent white, lower quarter empty floor, 24mm lens, f/8, sharp detail, photorealistic, institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "close-up of an open personnel binder on a metal desk, one name entry visibly duplicated across two adjacent lines with slightly different location codes typed beside each, subject positioned on the right third, left third is dark empty negative space, single desk lamp light from the left, shallow depth of field, worn paper texture, scattered pens, desaturated institutional green, warm desk lamp highlight, 50mm lens, f/2.8, sharp detail on the page, photorealistic, institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "a full wall of frost-covered glass storage cabinets packed floor to ceiling with identical numbered ice core cylinders receding into the distance, wide symmetrical shot, one-point perspective, deep focus, single row of bare fluorescent tubes overhead, hard downward shadow, frost-crusted glass, condensation-streaked steel frames, thin cold vapor haze drifting along the floor, desaturated icy blue, dim fluorescent white, lower quarter empty floor, 24mm lens, f/8, sharp detail, photorealistic, institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    },
+    {
+      "prompt": "a single steel inventory clipboard resting on an empty table in a dark storage vault, a bare overhead bulb the only light, tally marks trailing off unfinished near the bottom of the page, close medium shot, shallow depth of field, single hanging bulb above, hard downward shadow, brushed steel table, thin dust haze, cold desaturated blue, warm dim bulb highlight, subject positioned on the left third, right third dark empty negative space, 50mm lens, f/2.8, sharp detail, photorealistic, institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    }
+  ],
+  "background": {
+    "id": "scp-9316_bg",
+    "kind": "image",
+    "reuse": false,
+    "aspect": "16:9",
+    "resolution": "1920x1080",
+    "prompt": "a narrow subzero storage vault lined with metal racks holding numbered ice cores, one shelf near center holding two visually identical unlabeled cores side by side, eye-level wide shot, one-point perspective, symmetrical framing, deep focus, single bare fluorescent tube overhead, hard downward shadow, frost-crusted galvanized steel, condensation-streaked concrete floor, thin cold vapor haze near the floor, desaturated icy blue, institutional grey, dim fluorescent white, 24mm lens, f/8, sharp detail, lower quarter of frame is empty floor, institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization",
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, cartoon, anime, illustration, painting, 3d render, cgi, video game, oversaturated, neon, hdr glow, lens flare, vignette overload, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, uncanny face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion"
+  },
+  "thumbnail": {
+    "hook": "extreme close-up of a single translucent ice core cylinder on a steel tray, a second faint identical core barely visible just behind it in the shadow, subject positioned on the right third, left third is dark empty negative space, single raking light from the left, shallow depth of field, wet steel surface, fine ice crystal texture, desaturated pale blue shadow, cold white highlight, 50mm lens, f/2.8, sharp detail on the ice surface, institutional archival photograph, institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization",
+    "hook_alt": [
+      "wide shot down a narrow storage vault corridor lined with identical numbered ice core racks receding into darkness, one rack near the end glowing faintly under a distant fluorescent tube, subject positioned on the left third, right third is dark empty negative space, cold vapor haze near the floor, desaturated icy blue, dim fluorescent white, 24mm lens, f/8, sharp detail, photorealistic, institutional archival photograph, institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization",
+      "close-up of an open personnel binder page with one name entry duplicated across two lines, a desk lamp casting warm light across the paper, subject positioned on the right third, left third is dark empty negative space, worn paper texture, scattered pens, desaturated institutional green, warm lamp highlight, 50mm lens, f/2.8, sharp detail on the page, institutional archival photograph, institutional archival photograph, late-1990s Korean government facility documentation, shot on expired 35mm color negative film, natural grain, slightly faded emulsion, cold desaturated palette with a single warm practical light source, no stylization"
+    ],
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, cartoon, anime, illustration, painting, 3d render, cgi, video game, oversaturated, neon, hdr glow, lens flare, vignette overload, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, uncanny face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion",
+    "text_safe_area": "left third",
+    "resolution": "1280x720"
+  },
+  "platforms": {
+    "youtube": {
+      "title": "남극 심부 시추 캠프에서 기록할 때마다 늘어난 얼음 코어의 정체 [SCP-9316]",
+      "title_form": "A",
+      "thumbnail_text": "자라는 얼음",
+      "thumbnail_quote": "- 여기 한 번만 들어왔는데요.",
+      "chapters": [
+        "00:00 여든여덟에서 여든아홉으로",
+        "01:15 기록하면 늘어난다",
+        "03:21 전 세계 재고 통합 지시",
+        "04:08 하나가 아니었다",
+        "06:18 노박 박사의 반대",
+        "07:37 지금도 늘고 있는 재고"
+      ],
+      "description": "남극 대륙 사이트-142에서 뽑아 올린 얼음 코어 이야기입니다. 딱 한 번만 기록하면 괜찮지만, 다시 세거나 다시 적으면 그 코어는 하나 더 늘어납니다.\n\n여러분 회사나 학교 서버에도, 아무도 손대지 않았는데 파일 개수가 하나씩 늘어난 폴더 있나요? 있다면 몇 개까지 늘었는지 댓글로 들려주세요.\n\n※ SCP 재단 세계관 기반 오리지널 창작 · 허구의 이야기입니다\n※ 본 콘텐츠는 CC BY-SA 3.0 라이선스를 따릅니다 · 원작: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP재단 #괴담 #무서운이야기 #미스터리 #심야라디오 #공포라디오",
+      "pinned_comment": "여러분 회사나 학교 서버에도, 아무도 손대지 않았는데 파일 개수가 하나씩 늘어난 폴더 있나요? 있다면 몇 개까지 늘었는지 들려주세요.",
+      "playlist": "SCP 아카이브 (전편 듣기)",
+      "localizations": {
+        "en": {
+          "title": "The Antarctic Ice Camp Where Cores Multiply Every Time You Log Them [SCP-9316]",
+          "description": "At a deep-drilling camp on the Antarctic ice sheet, Site-142, researchers pull up ice cores from three kilometers down. Log one exactly once and it's fine. Log it a second time, and there's suddenly one more.\n\nDoes your own office server have a folder where the file count keeps quietly growing, with nobody touching it?\n\n※ Original fiction set in the SCP Foundation universe · This is a work of fiction\n※ Licensed under CC BY-SA 3.0 · Original source: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCPFoundation #horror #mystery #creepypasta"
+        },
+        "ja": {
+          "title": "記録するたびに増えていく南極の氷コアの正体 [SCP-9316]",
+          "description": "南極大陸の深部掘削キャンプ、サイト-142で見つかった氷コアの話です。一度だけ記録すれば問題ありませんが、もう一度記録すると、そのコアは一本増えています。\n\n皆さんの会社のサーバーにも、誰も触っていないのにファイル数が静かに増え続けるフォルダはありませんか?\n\n※ SCP財団世界観に基づくオリジナル創作・フィクションです\n※ 本コンテンツはCC BY-SA 3.0ライセンスに従います・原作:SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP財団 #怖い話 #ミステリー #都市伝説"
+        },
+        "zh-Hant": {
+          "title": "南極深層鑽探營地裡,每記錄一次就增生的冰芯真相 [SCP-9316]",
+          "description": "在南極大陸的深層鑽探營地142號基地,研究人員從地底三千公尺處鑽出冰芯。只記錄一次沒事,但只要再記錄一次,那根冰芯就會憑空多出一根。\n\n你的公司或學校伺服器上,是否也有一個沒人動過、檔案數量卻悄悄增加的資料夾呢?\n\n※ 基於SCP基金會世界觀的原創作品・純屬虛構\n※ 本內容採用CC BY-SA 3.0授權・原作:SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP基金會 #恐怖故事 #懸疑 #都市傳說"
+        }
+      }
+    }
+  },
+  "shorts": {
+    "title": "세면 셀수록 늘어나는 얼음 코어 | SCP",
+    "overlay_top": [
+      "등급 : 안전",
+      "정확히 여든아홉 개였다"
+    ],
+    "script": "코어 재고는 여든여덟 개였습니다. 다음 날 다시 세니, 여든아홉 개였고요. 남극 대륙 심부 시추 캠프에서 뽑아 올린 얼음 코어 이야기입니다. 딱 한 번만 기록하면 괜찮습니다. 지켜야 할 게 셋 있었습니다. 같은 코어를 두 번 세지 말 것. 목록을 다시 옮겨 적지 말 것. 재고 전체를 한꺼번에 세지 말 것. 어기면 어떻게 되는지는, 어디에도 적혀 있지 않습니다. 그런데 예산 심사 때문에 지시가 하나 내려옵니다. 전 세계 재고를, 한 번에 다시 입력하라는 지시였습니다. 그다음 얘기는, 전편에서 말씀드릴게요.",
+    "subject_prompt": "vertical close-up of a single translucent ice core cylinder held upright in the center of the frame, a faint second identical core barely visible in the deep shadow just behind it, strong single directional key light from below-left casting deep dramatic shadows, deep black background, fine internal bubble pattern, wet reflective ice surface, rich cold blue highlight against deep black shadow, top 30% and bottom 25% of the frame are dark empty negative space for text, 9:16 vertical composition, sharp high-contrast product-still photography, single strong directional key light, deep black background, rich saturated color, crisp detail, dramatic rim light, photorealistic, 9:16 vertical composition",
+    "negative_prompt": "low contrast, washed out, faded, film grain, muted colors, text, letters, numbers, watermark, logo, signature, caption, subtitles, cartoon, anime, illustration, painting, 3d render, cgi, video game, oversaturated, neon, hdr glow, lens flare, vignette overload, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, uncanny face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion",
+    "description": "남극 대륙 심부 시추 캠프에서 뽑아 올린 얼음 코어 이야기입니다. 한 번만 기록하면 괜찮지만, 다시 기록하면 코어가 하나 더 늘어납니다. 전편에는 이 개체를 둘러싼 재단의 대응과 반전이 전부 담겨 있습니다.\n\n#SCP #SCP재단 #미스터리 #공포",
+    "playlist": "SCP 쇼츠"
+  },
+  "credit": "SCP 재단 세계관 기반 오리지널 창작 · 허구 · CC BY-SA 3.0",
+  "content_rating": "teen",
+  "notes": "SCP 아카이브 · 16:9 롱폼 + 9:16 쇼츠(롱폼 완료 시 자동) · 장면 전환 배경 + 자막 번인 · 단일 내레이터 · 완결형."
+}
