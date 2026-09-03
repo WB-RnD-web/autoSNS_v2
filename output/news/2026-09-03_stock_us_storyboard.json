@@ -1,0 +1,99 @@
+{
+  "date": "2026-09-03",
+  "topic": "stock_us",
+  "privacy": "public",
+  "topic_keyword": "미 국채금리 4.818%",
+  "headline": "美 국채금리 2년來 최고, 나스닥·다우는 반등 마감",
+  "hook_title": "금리 4.8%, 그래도 증시 올랐다",
+  "accent": "#3FB950",
+  "loop_line": "오늘 밤 결과는, 내일 아침에 다시 짚어드립니다.",
+  "thumbnail_hook": "cinematic night shot of a bronze charging bull statue in a financial district, skyscraper lights glowing behind it, long exposure light trails from traffic, moody blue-and-gold night atmosphere, no text in image, photorealistic",
+  "thumbnail_text": "금리 4.8%, 증시 반등",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "금리 2년래 최고",
+      "ghost": "REBOUND",
+      "lines": ["금리 4.8%,", "그래도", "증시 올랐다"],
+      "highlight": "4.8%",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "국채금리가 이 년 만에 최고치를 찍었는데도, 뉴욕은 웃었습니다."
+    },
+    {
+      "type": "trend",
+      "label": "다우",
+      "from": 0,
+      "to": 0.6,
+      "suffix": "%",
+      "dir": "up",
+      "sub": "엔비디아 <b>+3%</b> 급등이 견인",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "엔비디아가 삼 퍼센트 뛰며 다우 전체를 끌어올렸습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "왜 반등했나",
+      "points": [
+        "10년물 금리 <b>4.818%</b> 찍고 진정",
+        "국제유가 상승폭도 <b>둔화</b>",
+        "<b>엔비디아</b> 등 기술주 강세 복귀"
+      ],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "10년물 금리가 사 점 팔일팔 퍼센트까지 찍고 나서야 진정됐습니다."
+    },
+    {
+      "type": "statement",
+      "text": "금리 못 잡으면, 환율도 다시 흔들린다",
+      "highlight": "환율도",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "금리가 다시 뛰면, 서학개미 환율도 같이 흔들립니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 밤 지켜볼 것",
+      "points": [
+        "어젯밤 웃던 선물, 지금은 <b>눈치보기</b>",
+        "장 마감 후 <b>룰루레몬·도큐사인</b> 실적",
+        "밤 9시 반 <b>실업수당</b> 청구 건수"
+      ],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "오늘 밤엔 룰루레몬·도큐사인 실적과 실업수당 지표를 보시면 됩니다."
+    },
+    {
+      "type": "statement",
+      "text": "오늘 밤, 웃을까요 굳을까요",
+      "highlight": "굳을까요",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "오늘 밤 다시 웃을지 굳어질지, 판단은 여러분 몫입니다."
+    }
+  ],
+  "sources": ["한국경제", "이투데이", "블록미디어"],
+  "credit": "출처 한국경제·이투데이 등 · 투자 조언이 아닙니다",
+  "platforms": {
+    "youtube": {
+      "title": "금리 4.8%, 그래도 증시 올랐다 #shorts",
+      "description": "美 국채금리 2년來 최고, 나스닥·다우는 반등 마감\n출처 한국경제·이투데이 등\n※ 투자 조언이 아닙니다\n\n#미국주식 #나스닥 #뉴욕증시 #서학개미 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "Yields Hit a 2-Year High, Stocks Rose Anyway #shorts",
+          "description": "The 10-year Treasury yield spiked to 4.818%, its highest since late 2023, yet Wall Street rebounded as Nvidia surged more than 3%.\nSources: Korea Economic Daily, Etoday, etc.\n※ Not investment advice\n\n#USStocks #Nasdaq #WallStreet #shorts"
+        },
+        "ja": {
+          "title": "金利2年ぶり高値でも、株は上がった #shorts",
+          "description": "米10年債利回りが4.818%まで急騰し2023年以来の高水準となりましたが、エヌビディアが3%超上昇しウォール街は反発しました。\n出典:韓国経済新聞、Etoday ほか\n※投資助言ではありません\n\n#米国株 #ナスダック #ウォール街 #shorts"
+        },
+        "zh-Hant": {
+          "title": "殖利率創兩年新高,股市卻上漲了 #shorts",
+          "description": "美國10年期公債殖利率飆升至4.818%,創2023年以來新高,但輝達大漲逾3%帶動華爾街反彈。\n資料來源:韓國經濟新聞、Etoday 等\n※非投資建議\n\n#美股 #那斯達克 #華爾街 #shorts"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "금리 4.8%, 그래도 증시 올랐다\n출처 한국경제·이투데이 등\n※ 투자 조언이 아닙니다\n\n#미국주식 #나스닥 #뉴욕증시 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "금리 4.8%, 그래도 증시 올랐다\n출처 한국경제·이투데이 등"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음 · SESSION=US_PM(미국장 개장 전후 프리뷰)."
+}
