@@ -103,20 +103,32 @@ with tempfile.TemporaryDirectory() as td:
     ck("강조가 있으면 결과가 달라진다", os.path.getsize(a) != os.path.getsize(b))
     ck("별표가 화면에 남지 않는다(본문에서 제거됨)", True)  # 로직상 제거 — 렌더 결과로는 못 재므로 표기만
 
-    print("\n── 6. ★번호 크기 (2026-09-04: 24% → 11%) ──")
+    print("\n── 6. ★SCP 썸네일 구조 (참고 채널 9장 대조) ──")
     import importlib
-    a = os.path.join(td, "num_small.jpg")
-    b = os.path.join(td, "num_off.jpg")
-    TH._overlay_title(bg, "말라버린 등뼈", a, style="scp", number="9514")
-    ck("번호 기본 비율이 11%", abs(TH.NUM_RATIO - 0.11) < 1e-9, str(TH.NUM_RATIO))
-    ck("스크림이 38% 이하", TH.SCRIM_BAND <= 0.40, str(TH.SCRIM_BAND))
+    a = os.path.join(td, "scp_full.jpg")
+    b = os.path.join(td, "scp_noquote.jpg")
+    c = os.path.join(td, "scp_nonum.jpg")
+    TH._overlay_title(bg, "말라버린 등뼈", a, style="scp", number="SCP-9514",
+                      quote="- 이거… 제 필체가 아닌데요")
+    TH._overlay_title(bg, "말라버린 등뼈", b, style="scp", number="SCP-9514")
+    ck("하단 대사가 있으면 결과가 달라진다", os.path.getsize(a) != os.path.getsize(b))
+    # 번호 크기 — 아침에 0.11 로 줄였다가 ★매체를 잘못 봤음을 알고 0.16 으로 되돌림
+    ck("번호 비율 0.16 (책 표지가 아니라 유튜브 썸네일 기준)",
+       abs(TH.NUM_RATIO - 0.16) < 1e-9, str(TH.NUM_RATIO))
+    ck("코드네임이 번호보다 크다", TH.NAME_RATIO > TH.NUM_RATIO,
+       f"{TH.NAME_RATIO} vs {TH.NUM_RATIO}")
+    ck("테두리를 그린다", TH.FRAME_PX > 0)
     os.environ["THUMB_NUM_RATIO"] = "0"
+    os.environ["THUMB_QUOTE_RATIO"] = "0"
     importlib.reload(TH)
-    TH._overlay_title(bg, "말라버린 등뼈", b, style="scp", number="9514")
-    ck("THUMB_NUM_RATIO=0 이면 번호가 빠진다", os.path.getsize(a) != os.path.getsize(b))
-    del os.environ["THUMB_NUM_RATIO"]
+    TH._overlay_title(bg, "말라버린 등뼈", c, style="scp", number="SCP-9514",
+                      quote="- 이거… 제 필체가 아닌데요")
+    ck("번호·대사를 env 로 끌 수 있다", os.path.getsize(a) != os.path.getsize(c))
+    del os.environ["THUMB_NUM_RATIO"], os.environ["THUMB_QUOTE_RATIO"]
     importlib.reload(TH)
-    ck("되돌리면 기본값 복귀", abs(TH.NUM_RATIO - 0.11) < 1e-9)
+    ck("되돌리면 기본값 복귀", abs(TH.NUM_RATIO - 0.16) < 1e-9)
+    ck("인자 3개 호출도 여전히 된다",
+       bool(TH._overlay_title(bg, "말라버린 등뼈", os.path.join(td, "compat.jpg"))))
 
 print()
 if FAIL:

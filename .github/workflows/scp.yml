@@ -99,8 +99,10 @@ jobs:
       SCP_FAIL_ON_NARRATION: ${{ vars.SCP_FAIL_ON_NARRATION || '' }}
       SCP_RITUAL_BANLIST: ${{ vars.SCP_RITUAL_BANLIST }}
       # ★썸네일 번호 크기(높이 대비). 0 이면 번호를 안 그린다.
-      #   2026-09-04: 0.24 → 0.11. 실제 SCP 출판물 표지엔 번호가 없다.
-      THUMB_NUM_RATIO: ${{ vars.THUMB_NUM_RATIO || '0.11' }}
+      #   2026-09-04: 0.24 → 0.11 → 0.16. 책 표지가 아니라 ★유튜브 썸네일 기준.
+      THUMB_NUM_RATIO: ${{ vars.THUMB_NUM_RATIO || '0.16' }}
+      THUMB_QUOTE_RATIO: ${{ vars.THUMB_QUOTE_RATIO || '0.062' }}
+      THUMB_FRAME_PX: ${{ vars.THUMB_FRAME_PX || '10' }}
       # ★재단 어휘 하한 — '격리' 가 0회면 그냥 괴담이 된다.
       SCP_MIN_CANON_K: ${{ vars.SCP_MIN_CANON_K || '8.0' }}
       SCP_MIN_CONTAIN: ${{ vars.SCP_MIN_CONTAIN || '3' }}
@@ -243,10 +245,13 @@ jobs:
   #   실패하면 ★이 런에 빨간불로 보인다 — 예전처럼 조용히 안 도는 일이 없다.
   shorts:
     needs: build-and-upload
-    # 렌더 검증(no_upload)일 땐 쇼츠까지 만들 이유가 없다.
+    # ⚠️ 2026-09-04: 쇼츠를 ★잠시 닫았다.
+    #   롱폼 예고편으로 만든 건데 실제로는 쇼츠 피드에서 다른 영상까지 끌어내리고 있었다.
+    #   되살리려면 레포 변수 SCP_SHORTS=1 로 두면 된다(코드는 그대로 살려 뒀다).
     if: >-
-      github.event_name != 'workflow_dispatch' ||
-      github.event.inputs.no_upload != 'true'
+      vars.SCP_SHORTS == '1' &&
+      (github.event_name != 'workflow_dispatch' ||
+       github.event.inputs.no_upload != 'true')
     uses: WB-RnD-web/autoSNS_v2/.github/workflows/scp-shorts.yml@main
     secrets: inherit
     with:
