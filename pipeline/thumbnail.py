@@ -108,13 +108,19 @@ THUMB_ACCENT = os.environ.get("THUMB_ACCENT", "#FF5A57")
 #   none   : ★문구를 아예 넣지 않는다. ASMR 상위 썸네일 6개 중 5개가 무텍스트였다
 THUMB_STYLE = os.environ.get("THUMB_STYLE", "bottom")
 THUMB_NUM_COLOR = os.environ.get("THUMB_NUM_COLOR", "#FFD54A")
-# ★번호 크기 — 썸네일 높이 대비. 0 이면 번호를 아예 안 그린다.
-#   2026-09-04: 0.24(높이의 24%) → 0.11. 실제 SCP 출판물 표지엔 번호가 없다.
-#   원작 SCP 회차는 번호가 곧 검색어이므로 그때만 키운다(루틴이 env 로 올린다).
-NUM_RATIO = float(os.environ.get("THUMB_NUM_RATIO", "0.11"))
-# 번호를 줄인 만큼 상단 스크림도 줄인다 — 예전 0.56/190 은 그림 절반을 죽였다.
-SCRIM_BAND = float(os.environ.get("THUMB_SCRIM_BAND", "0.38"))
-SCRIM_ALPHA = int(os.environ.get("THUMB_SCRIM_ALPHA", "165"))
+# ★번호 크기 — 썸네일 높이 대비. 0 이면 안 그린다.
+#   2026-09-04 아침: 0.24 → 0.11 로 줄였다. 근거는 "SCP 출판물 표지엔 번호가 없다" 였는데
+#   ★매체를 잘못 봤다. 책 표지와 유튜브 썸네일은 다르다 —
+#   같은 날 저녁 조회수 상위 SCP 채널의 ★썸네일을 놓고 보니 번호가 크다.
+#   0.16 으로 되돌린다(24% 는 과했고 11% 는 모자랐다).
+NUM_RATIO = float(os.environ.get("THUMB_NUM_RATIO", "0.16"))
+NAME_RATIO = float(os.environ.get("THUMB_NAME_RATIO", "0.19"))   # 코드네임(흰 글자)
+# 글자 자리만 어둡게. 상단은 번호+이름, 하단은 대사.
+SCRIM_BAND = float(os.environ.get("THUMB_SCRIM_BAND", "0.44"))
+SCRIM_ALPHA = int(os.environ.get("THUMB_SCRIM_ALPHA", "175"))
+QUOTE_RATIO = float(os.environ.get("THUMB_QUOTE_RATIO", "0.062"))  # 하단 대사. 0 이면 끔
+# 참고 채널이 전부 쓰는 바깥 테두리. 0 이면 안 그린다.
+FRAME_PX = int(os.environ.get("THUMB_FRAME_PX", "10"))
 
 
 def _hex_rgb(c: str, fallback=(255, 90, 87)) -> tuple:
@@ -169,62 +175,75 @@ def _stroked(draw, xy, text, font, fill, stroke_w, stroke_fill=(0, 0, 0)):
               stroke_width=stroke_w, stroke_fill=stroke_fill)
 
 
-def _overlay_scp(img, title: str, number: str, accent, out_path: str) -> str:
-    """번호 배지 + 제목. ★번호는 작게, 그림이 주인공이다.
+def _overlay_scp(img, title: str, number: str, accent, out_path: str, quote: str = "") -> str:
+    """조회수 상위 SCP 채널의 썸네일 구조를 그대로 따른다.
 
-    2026-09-04 정정. 예전 주석은 "번호를 상단에 초대형"이었고 실제로 높이의 24%까지
-    키웠다. 근거는 "조회수 상위 SCP 채널이 전부 이 형식"이었는데,
-    ★실제 SCP 출판물 표지를 놓고 보니 번호가 ★아예 없었다 —
-    개체 그림이 화면을 채우고 제목만 얹힌다.
+        [상단]  번호      — 초대형, 노랑, 검은 외곽선
+        [상단]  코드네임  — 초대형, 흰색
+        [전체]  개체 그림 — 프롬프트가 화면을 채운다(§2.5.2)
+        [하단]  대사 한 줄 — "- 왜.. 왜 이러세요!!!" 류
+        [가장자리] 얇은 강조색 테두리
 
-    번호를 크게 쓰면 두 가지를 동시에 잃는다:
-      ① 그림 자리를 뺏는다(상단 56%에 검은 스크림까지 깔았다)
-      ② 우리 오리지널 번호는 ★검색 수요가 0이라 커봐야 아무도 안 찾는다
-         (원작 회차는 다르다 — 그때만 키우면 된다: THUMB_NUM_RATIO)
+    2026-09-04 정정 2회. 아침엔 번호를 24%→11% 로 줄였는데, 근거로 삼은 게
+    ★SCP 출판물 '책 표지' 였다. 저녁에 같은 채널의 ★유튜브 썸네일을 보니
+    번호가 크다. 매체가 다르면 규칙도 다르다 — 0.16 으로 되돌렸다.
 
-    THUMB_NUM_RATIO=0 이면 번호를 아예 안 그린다.
+    하단 대사는 참고 채널이 예외 없이 쓴다. 무서운 그림 + 사람 말 한 줄의
+    조합이 "무슨 일이 벌어지는 중" 이라는 신호를 준다.
     """
     from PIL import Image, ImageDraw
     draw = ImageDraw.Draw(img)
     max_w = int(W * 0.92)
-    num = (number or "").strip()
+    num = (number or "").strip() if NUM_RATIO > 0 else ""
     body = (title or "").strip()
+    q = (quote or "").strip() if QUOTE_RATIO > 0 else ""
 
-    if NUM_RATIO <= 0:
-        num = ""
-
-    # 상단 어둡게 — ★글자가 앉을 자리만. 번호를 줄인 만큼 스크림도 줄인다.
-    #   예전엔 높이의 56%를 덮었다 — 그림 절반이 검게 죽었다.
     scrim = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     sd = ImageDraw.Draw(scrim)
     band = int(H * SCRIM_BAND)
     for y in range(band):
         sd.line([(0, y), (W, y)], fill=(0, 0, 0, int(SCRIM_ALPHA * (1 - y / band) ** 0.6)))
+    if q:                                   # 하단에도 얕게 — 대사가 앉을 자리
+        qb = int(H * 0.22)
+        for y in range(qb):
+            a = int(150 * (y / qb) ** 1.4)
+            sd.line([(0, H - qb + y), (W, H - qb + y)], fill=(0, 0, 0, a))
     img = Image.alpha_composite(img.convert("RGBA"), scrim).convert("RGB")
     draw = ImageDraw.Draw(img)
 
-    y = int(H * 0.045)
+    y = int(H * 0.035)
     if num:
-        ns, nf = _fit_line(draw, num, max_w, int(H * NUM_RATIO), int(H * NUM_RATIO * 0.6))
+        ns, nf = _fit_line(draw, num, max_w, int(H * NUM_RATIO), int(H * NUM_RATIO * 0.55))
         nw = draw.textlength(num, font=nf)
-        _stroked(draw, ((W - nw) / 2, y), num, nf, _hex_rgb(THUMB_NUM_COLOR, (255, 213, 74)),
-                 max(6, ns // 9))
+        _stroked(draw, ((W - nw) / 2, y), num, nf,
+                 _hex_rgb(THUMB_NUM_COLOR, (255, 213, 74)), max(7, ns // 7))
         y += int(ns * 1.02)
 
-    lines = None
-    for size in range(int(H * 0.22), int(H * 0.09), -6):
+    lines, tf, ts = None, None, None
+    for size in range(int(H * NAME_RATIO), int(H * 0.09), -6):
         f = _load_font(size)
         cand = _wrap_words(draw, body, f, max_w, 2)
         if len(cand) <= 2 and cand and max(draw.textlength(x, font=f) for x in cand) <= max_w:
             lines, tf, ts = cand, f, size
             break
     if lines is None:
-        ts = int(H * 0.09); tf = _load_font(ts)
+        ts = int(H * 0.09)
+        tf = _load_font(ts)
         lines = _wrap_words(draw, body, tf, max_w, 2) or [body]
     for ln in lines:
         w = draw.textlength(ln, font=tf)
-        _stroked(draw, ((W - w) / 2, y), ln, tf, (255, 255, 255), max(6, ts // 10))
+        _stroked(draw, ((W - w) / 2, y), ln, tf, (255, 255, 255), max(7, ts // 8))
         y += int(ts * 1.06)
+
+    if q:
+        qs, qf = _fit_line(draw, q, int(W * 0.90), int(H * QUOTE_RATIO), int(H * 0.036))
+        qw = draw.textlength(q, font=qf)
+        _stroked(draw, ((W - qw) / 2, H - int(H * 0.115)), q, qf,
+                 (255, 240, 214), max(4, qs // 6))
+
+    if FRAME_PX > 0:
+        fc = _hex_rgb(accent or THUMB_ACCENT, (229, 72, 77))
+        ImageDraw.Draw(img).rectangle([0, 0, W - 1, H - 1], outline=fc, width=FRAME_PX)
 
     os.makedirs(os.path.dirname(os.path.abspath(out_path)) or ".", exist_ok=True)
     img.save(out_path, "JPEG", quality=88)
@@ -233,12 +252,12 @@ def _overlay_scp(img, title: str, number: str, accent, out_path: str) -> str:
 
 def _overlay_title(bg_path: str, title: str, out_path: str,
                    accent: str | None = None, style: str | None = None,
-                   number: str = "") -> str:
+                   number: str = "", quote: str = "") -> str:
     """배경 + 문구. `*강조*` 로 감싼 부분은 accent 색으로 칠한다.
 
     style:
       "bottom" 하단 중앙 한 덩어리(기존 동작 · 기본값)
-      "scp"    ★번호를 상단에 초대형으로 올리고 그 아래 제목. `number` 를 함께 넘긴다
+      "scp"    번호 + 코드네임 + 하단 대사. `number` · `quote` 를 함께 넘긴다
       "none"   ★문구 없음. 배경 그대로 저장(ASMR 처럼 무텍스트가 관행인 장르)
 
     ★하위호환: 인자 3개 호출부(story_render·asmr_render·scp_render)는 그대로 동작한다.
@@ -254,7 +273,7 @@ def _overlay_title(bg_path: str, title: str, out_path: str,
         img.save(out_path, "JPEG", quality=88)
         return out_path
     if st == "scp":
-        return _overlay_scp(img, title, number, accent, out_path)
+        return _overlay_scp(img, title, number, accent, out_path, quote)
 
     raw = (title or "").strip()
     acc = _hex_rgb(accent or THUMB_ACCENT)
