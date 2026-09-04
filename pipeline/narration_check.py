@@ -54,6 +54,15 @@ MIN_BREATH_K = float(os.environ.get("SCP_MIN_BREATH_K", "0.5"))         # 1000�
 # 프롬프트 권장(3,300자에 5~8쌍) ≈ 1.5~2.4/1000자. 그 아래쪽을 기준으로 둔다.
 MIN_QUOTES_K = float(os.environ.get("SCP_MIN_QUOTES_K", "1.2"))
 
+# ★재단 용어 — 이게 없으면 SCP 가 아니라 그냥 괴담이다.
+#   2026-09-04 회차 실측: 대본 2,952자에 "격리" ★0회, 객체 등급·기억소거·재수용 각 0회.
+#   v10 에서 양식 라벨 배급제를 폐기할 때 의례만 없앤 게 아니라 절차까지 같이 사라졌다.
+#   ★이건 소재 키워드가 아니라 ★장르 어휘다 — 어떤 개체가 와도 재단은 격리를 한다.
+CANON_TERMS = ("재단", "격리", "사이트", "에어리어", "기동특무부대", "기억소거", "D계급",
+               "객체 등급", "인지위해", "재수용", "현실 안정", "휴메", "O5", "수용", "절차")
+MIN_CANON_K = float(os.environ.get("SCP_MIN_CANON_K", "8.0"))     # 1000자당
+MIN_CONTAIN = int(os.environ.get("SCP_MIN_CONTAIN", "3"))         # "격리" 최소 횟수
+
 
 def rituals() -> tuple[str, ...]:
     raw = os.environ.get("SCP_RITUAL_BANLIST")
@@ -85,6 +94,7 @@ def measure(narration: str, segments: list[dict] | None = None) -> dict:
     if ends:
         top, top_n = max(ends.items(), key=lambda kv: kv[1])
     quotes = min(n.count("「"), n.count("」"))
+    canon = sum(n.count(t) for t in CANON_TERMS)
     return {
         "chars": len(n),
         "sentences": len(sents),
@@ -94,6 +104,8 @@ def measure(narration: str, segments: list[dict] | None = None) -> dict:
         "breath_per_k": sum(n.count(c) for c in BREATH) / k,
         "quotes": quotes,
         "quotes_per_k": quotes / k,
+        "canon_per_k": canon / k,
+        "contain": n.count("격리"),
         "first_sentence": sents[0] if sents else "",
         "segments": len(segments or []),
     }
@@ -132,6 +144,12 @@ def check(narration: str, segments: list[dict] | None = None) -> list[str]:
         out.append(f"직접 인용(「 」)이 {m['quotes']}쌍뿐이다 "
                    f"({m['quotes_per_k']:.1f}/1000자, 권장 {MIN_QUOTES_K}+). "
                    "감정은 서술이 아니라 사람의 말에서 나온다")
+    if m["contain"] < MIN_CONTAIN:
+        out.append(f"`격리` 가 {m['contain']}회뿐이다 — 최소 {MIN_CONTAIN}회. "
+                   "격리가 안 나오면 SCP 가 아니라 그냥 무서운 이야기가 된다")
+    if m["canon_per_k"] < MIN_CANON_K:
+        out.append(f"재단 용어가 1000자당 {m['canon_per_k']:.1f}회다 (권장 {MIN_CANON_K}+). "
+                   "용어를 라벨로 낭독하라는 게 아니라 ★문장 안에서 일하게 하라는 뜻이다")
     return out
 
 

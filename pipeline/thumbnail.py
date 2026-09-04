@@ -108,6 +108,13 @@ THUMB_ACCENT = os.environ.get("THUMB_ACCENT", "#FF5A57")
 #   none   : ★문구를 아예 넣지 않는다. ASMR 상위 썸네일 6개 중 5개가 무텍스트였다
 THUMB_STYLE = os.environ.get("THUMB_STYLE", "bottom")
 THUMB_NUM_COLOR = os.environ.get("THUMB_NUM_COLOR", "#FFD54A")
+# ★번호 크기 — 썸네일 높이 대비. 0 이면 번호를 아예 안 그린다.
+#   2026-09-04: 0.24(높이의 24%) → 0.11. 실제 SCP 출판물 표지엔 번호가 없다.
+#   원작 SCP 회차는 번호가 곧 검색어이므로 그때만 키운다(루틴이 env 로 올린다).
+NUM_RATIO = float(os.environ.get("THUMB_NUM_RATIO", "0.11"))
+# 번호를 줄인 만큼 상단 스크림도 줄인다 — 예전 0.56/190 은 그림 절반을 죽였다.
+SCRIM_BAND = float(os.environ.get("THUMB_SCRIM_BAND", "0.38"))
+SCRIM_ALPHA = int(os.environ.get("THUMB_SCRIM_ALPHA", "165"))
 
 
 def _hex_rgb(c: str, fallback=(255, 90, 87)) -> tuple:
@@ -163,10 +170,19 @@ def _stroked(draw, xy, text, font, fill, stroke_w, stroke_fill=(0, 0, 0)):
 
 
 def _overlay_scp(img, title: str, number: str, accent, out_path: str) -> str:
-    """★조회수 상위 SCP 채널의 공통 형식 — 번호를 상단에 초대형, 그 아래 제목.
+    """번호 배지 + 제목. ★번호는 작게, 그림이 주인공이다.
 
-    검색으로 들어오는 장르라 ★번호가 곧 검색어다. 번호가 작으면
-    "내가 찾던 그거"라는 신호가 안 간다.
+    2026-09-04 정정. 예전 주석은 "번호를 상단에 초대형"이었고 실제로 높이의 24%까지
+    키웠다. 근거는 "조회수 상위 SCP 채널이 전부 이 형식"이었는데,
+    ★실제 SCP 출판물 표지를 놓고 보니 번호가 ★아예 없었다 —
+    개체 그림이 화면을 채우고 제목만 얹힌다.
+
+    번호를 크게 쓰면 두 가지를 동시에 잃는다:
+      ① 그림 자리를 뺏는다(상단 56%에 검은 스크림까지 깔았다)
+      ② 우리 오리지널 번호는 ★검색 수요가 0이라 커봐야 아무도 안 찾는다
+         (원작 회차는 다르다 — 그때만 키우면 된다: THUMB_NUM_RATIO)
+
+    THUMB_NUM_RATIO=0 이면 번호를 아예 안 그린다.
     """
     from PIL import Image, ImageDraw
     draw = ImageDraw.Draw(img)
@@ -174,18 +190,22 @@ def _overlay_scp(img, title: str, number: str, accent, out_path: str) -> str:
     num = (number or "").strip()
     body = (title or "").strip()
 
-    # 상단 어둡게 — 글자가 앉을 자리만
+    if NUM_RATIO <= 0:
+        num = ""
+
+    # 상단 어둡게 — ★글자가 앉을 자리만. 번호를 줄인 만큼 스크림도 줄인다.
+    #   예전엔 높이의 56%를 덮었다 — 그림 절반이 검게 죽었다.
     scrim = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     sd = ImageDraw.Draw(scrim)
-    band = int(H * 0.56)
+    band = int(H * SCRIM_BAND)
     for y in range(band):
-        sd.line([(0, y), (W, y)], fill=(0, 0, 0, int(190 * (1 - y / band) ** 0.6)))
+        sd.line([(0, y), (W, y)], fill=(0, 0, 0, int(SCRIM_ALPHA * (1 - y / band) ** 0.6)))
     img = Image.alpha_composite(img.convert("RGBA"), scrim).convert("RGB")
     draw = ImageDraw.Draw(img)
 
     y = int(H * 0.045)
     if num:
-        ns, nf = _fit_line(draw, num, max_w, int(H * 0.24), int(H * 0.11))
+        ns, nf = _fit_line(draw, num, max_w, int(H * NUM_RATIO), int(H * NUM_RATIO * 0.6))
         nw = draw.textlength(num, font=nf)
         _stroked(draw, ((W - nw) / 2, y), num, nf, _hex_rgb(THUMB_NUM_COLOR, (255, 213, 74)),
                  max(6, ns // 9))
