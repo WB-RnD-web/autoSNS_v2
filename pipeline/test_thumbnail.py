@@ -103,6 +103,21 @@ with tempfile.TemporaryDirectory() as td:
     ck("강조가 있으면 결과가 달라진다", os.path.getsize(a) != os.path.getsize(b))
     ck("별표가 화면에 남지 않는다(본문에서 제거됨)", True)  # 로직상 제거 — 렌더 결과로는 못 재므로 표기만
 
+    print("\n── 6. ★번호 크기 (2026-09-04: 24% → 11%) ──")
+    import importlib
+    a = os.path.join(td, "num_small.jpg")
+    b = os.path.join(td, "num_off.jpg")
+    TH._overlay_title(bg, "말라버린 등뼈", a, style="scp", number="9514")
+    ck("번호 기본 비율이 11%", abs(TH.NUM_RATIO - 0.11) < 1e-9, str(TH.NUM_RATIO))
+    ck("스크림이 38% 이하", TH.SCRIM_BAND <= 0.40, str(TH.SCRIM_BAND))
+    os.environ["THUMB_NUM_RATIO"] = "0"
+    importlib.reload(TH)
+    TH._overlay_title(bg, "말라버린 등뼈", b, style="scp", number="9514")
+    ck("THUMB_NUM_RATIO=0 이면 번호가 빠진다", os.path.getsize(a) != os.path.getsize(b))
+    del os.environ["THUMB_NUM_RATIO"]
+    importlib.reload(TH)
+    ck("되돌리면 기본값 복귀", abs(TH.NUM_RATIO - 0.11) < 1e-9)
+
 print()
 if FAIL:
     print(f"❌ 실패 {FAIL}건")
