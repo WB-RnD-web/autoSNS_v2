@@ -1,0 +1,946 @@
+{
+  "date": "2026-09-04",
+  "iso_week": "2026-W36",
+  "topic": "scp",
+  "privacy": "public",
+  "origin": "original",
+  "source_url": "",
+  "story_id": "scp-9514",
+  "scp_number": "SCP-9514",
+  "object_class": "Euclid",
+  "codename": "말라버린 등뼈",
+  "number_check": {
+    "checked_at": "2026-09-04",
+    "http_code": "unverified"
+  },
+  "title": "삼천 미터를 내려보내도 안 닿는, 카자흐스탄 마른 호수 바닥의 정체 [SCP-9514]",
+  "theme": "거대 생물",
+  "logline": "중앙아시아 마른 호수 바닥에서 발견된, 등뼈처럼 마디진 거대한 능선 이야기입니다. 열두 시간마다 한 번씩 숨을 쉬듯 부풀었다 가라앉고, 그 아래로 내려보낸 탐침은 삼천 미터를 내려가도 바닥에 닿지 않습니다.",
+  "hook_line": "코자예프 박사가 마지막으로 한 일은, 전원을 내리지 않은 것이었습니다.",
+  "cold_open": "코자예프 박사가 마지막으로 한 일은, 전원을 내리지 않은 것이었습니다. 지질학자였고, 사이트 하나를 통째로 맡고 있었죠. 그날 이후로 그의 이름은, 근무 명단에서 빠졌습니다.",
+  "structure": "금기형",
+  "opening_move": "사람 한 명",
+  "opening_note": "",
+  "closing_move": "화자가 답을 안 한다",
+  "number_reveal": "앞",
+  "ending_mode": "가벼운 한마디",
+  "fault": "개체",
+  "procedures": [
+    "지표 온도가 삼십육 점 오 도에 닿는 순간, 하루 두 번, 그때는 시추기를 반드시 끈다.",
+    "채취한 시료는 스물네 시간 안에 반드시 제자리로 돌려놓는다.",
+    "밤에는 절대 혼자 나가지 않는다."
+  ],
+  "character": {
+    "name": "코자예프 박사",
+    "role": "지질학자 · 사이트-266 팀장",
+    "flaw": "규칙을 최우선으로 여기던 사람이지만, 끊기지 않은 완전한 파형 그래프 하나에 대한 집착만은 놓지 못한다 — 마지막 규칙을 스스로 깬다"
+  },
+  "chain": [
+    {
+      "when": "이 년 전",
+      "event": "위성 사진에 중앙아시아의 한 소금호수가 유난히 빨리 마르는 게 잡혔다",
+      "because": ""
+    },
+    {
+      "when": "물이 빠지고 나서",
+      "event": "드러난 지형이 완만한 능선이 아니라 마디가 있는 등뼈 모양이라는 게 확인됐다",
+      "because": "위성 이상 신호를 직접 확인해야 했다"
+    },
+    {
+      "when": "지진계를 심고 몇 주 뒤",
+      "event": "열두 시간 간격으로 똑같은 파형이 반복해서 잡혔다",
+      "because": "현장에 지진계를 깔아두고 기다렸다"
+    },
+    {
+      "when": "그 직후",
+      "event": "재단이 사이트-266을 세우고 세 가지 절차를 정했다",
+      "because": "반복 파형이 자연현상이 아니라고 판단했다"
+    },
+    {
+      "when": "석 달 뒤",
+      "event": "신입 대원이 시료 반납 규칙을 어기고 반납을 사흘 미뤘다",
+      "because": "결과를 빨리 확인하고 싶어 절차를 건너뛰었다"
+    },
+    {
+      "when": "그 사흘 사이",
+      "event": "채취 자리가 스스로 메워지고 인근 지표가 삼 미터쯤 부풀었다",
+      "because": "시료가 제때 돌아오지 않았다"
+    },
+    {
+      "when": "부푼 자리를 확인하려던 때",
+      "event": "기동특무부대 제타-19가 능선 전체를 동시 기폭으로 스캔하려다 장약이 통째로 사라지는 실패를 겪었다",
+      "because": "부푼 이유를 알아야 다음 대응을 정할 수 있었다"
+    },
+    {
+      "when": "그 뒤 얼마 지나지 않아",
+      "event": "시추 기사 펠릭스가 야간 동행 규칙을 어기고 혼자 나가 넓어진 자리를 확인했다",
+      "because": "실패한 스캔 이후 궁금증을 참지 못했다"
+    },
+    {
+      "when": "다섯 달쯤 지난 어느 날",
+      "event": "코자예프 박사가 정점 파형을 완전한 형태로 남기려고 금지된 순간에도 시추기를 끄지 않았다",
+      "because": "그동안 놓친 적 없던 자기 원칙을, 이번 정점만은 지키지 않기로 했다"
+    },
+    {
+      "when": "그 순간",
+      "event": "등뼈 전체가 한 번 크게 부풀었다 가라앉으며 시추공 자리와 코자예프 박사가 함께 사라졌다",
+      "because": "금지된 순간에 시추가 계속되며 접힌 자리가 넓어졌다"
+    }
+  ],
+  "retention_beats": [
+    "채취 자리가 스스로 메워졌다는 걸 알았을 때, 다음엔 뭐가 넓어질지 아무도 몰랐습니다.",
+    "장약이 통째로 사라졌다는 보고가 올라온 순간, 사이트 전체가 그 능선을 다시 보기 시작했습니다.",
+    "코자예프 박사가 '이번 한 번만요'라고 말했을 때, 그게 마지막 무전이 될 줄은 아무도 몰랐습니다."
+  ],
+  "twist_summary": "역할의 반전 — 재단이 정한 세 가지 절차는 등뼈를 얌전히 재우기 위한 게 아니라, 등뼈처럼 보이는 표면 아래 접힌 공간의 이음매를 좁게 붙잡아두기 위한 것이었다는 반전. 코자예프 박사가 마지막 규칙을 어기고 금지된 순간에도 시추를 강행하자 접힌 자리가 넓어지며 그와 시추공 자리가 함께 사라졌다.",
+  "narration_full": "코자예프 박사가 마지막으로 한 일은, 전원을 내리지 않은 것이었습니다. 지질학자였고, 사이트 하나를 통째로 맡고 있었죠. 그날 이후로 그의 이름은, 근무 명단에서 빠졌습니다.\n\n이야기는 이 년 전, 위성 사진 한 장에서 시작됩니다. 중앙아시아 내륙의 소금호수 하나가, 그해 유난히 빨리 마르고 있었어요. 물이 빠진 자리에, 낯선 게 드러났습니다. 완만한 능선인 줄 알았는데, 위에서 보니 마디가 있었습니다. 등뼈처럼요. 정말 등뼈였을까요? 현장 사람들은 그걸 그냥 '말라버린 등뼈'라고 부르기 시작했습니다. 재단이 사이트-266을 세운 게, 그 다음이었고요. SCP-9514, 등급은 유클리드입니다.\n\n지진계를 심어놓고 몇 주를 기다렸더니, 신호가 하나 잡혔습니다. 정확히 열두 시간 간격으로, 똑같은 파형이 반복됐어요. 숨소리 같았죠. 저도 처음 이 그래프를 봤을 때, 심전도인 줄 알았습니다.\n\n재단은 세 가지를 정했습니다. 지표 온도가 삼십육 점 오 도에 닿는 순간, 하루 두 번 — 그때는 시추기를 반드시 끕니다. 채취한 시료는 스물네 시간 안에, 반드시 제자리로 돌려놓고요. 그리고 밤에는, 절대 혼자 나가지 않습니다. 왜 하필 이 세 가지였을까요? 그것도, 아무도 속 시원히 설명해주지 않았습니다. 어기면 어떻게 되는지도, 어디에도 적혀 있지 않았고요.\n\n사이트를 세우고 얼마 안 돼서, 경계 순찰 중에 이상한 게 나왔습니다. 능선 가장자리에, 오래된 돌무더기와 함께 조그만 제물이 놓여 있었던 거죠. 부서진 신의 교회 쪽 흔적이었습니다. 「우리보다 먼저 알고 있었네요.」 통신 담당 파텔이 그렇게 말했던 게 기억납니다. 그녀는 원래 남태평양 심해분소에서 일하던 사람이었어요. 거기서 있었던 일에 대해서는 — 그녀도 말을 아꼈습니다.\n\n그리고 석 달쯤 지났을 때, 첫 번째 규칙이 깨졌습니다. 신입 대원 하나가 시료 하나를 실험실로 보내면서, 반납을 사흘 미룬 겁니다. 「금방 돌려놓을게요… 결과만 보고요.」 그 사흘 동안, 시료를 파낸 자리가 스스로 메워졌습니다. 그리고 그 옆으로, 지표가 완만하게, 삼 미터쯤 부풀어 올랐고요.\n\n재단은 이유를 알아야 했습니다. 그래서 기동특무부대 제타-19, '이음매'를 투입해서, 능선 전체를 한 번에 스캔하기로 했어요. 장약을 능선을 따라 쭉 깔고, 야간에 동시 기폭할 계획이었습니다. 그런데 자정이 되기 직전, 「저 밑엔 안 내려갑니다. 그건… 사람이 낼 소리가 아니었어요.」 D계급 하나가 무전으로 그렇게 보고했습니다. 그리고 잠시 뒤, 장약이 통째로 사라졌습니다. 묻어둔 자리마다, 매끈한 돌만 남아 있었고요. 폭발음도, 신호도, 아무것도 없었습니다. 그냥, 없어졌어요. 보고서 제목에도, '말라버린 등뼈'라는 이름이 그대로 올라갔습니다.\n\n그 일이 있고 얼마 뒤, 두 번째 규칙이 깨졌습니다. 펠릭스라는 시추 기사가, 넓어진 자리가 궁금해서 혼자 나갔던 겁니다. 돌아오긴 했습니다. 그런데 정확히 얼마나 넓어졌는지는, 끝까지 말하지 않았어요. 「그냥… 저쪽으로 더 갔다고만 해두죠.」 숫자를 물어봐도, 대답을 피했습니다.\n\n여기서 한 번은, 그 능선을 제대로 보여드려야 할 것 같네요. 폭은 이백 미터쯤, 길이는 지평선 너머까지 이어집니다. 표면은 회갈색 각질처럼 갈라져 있고요. 마디마다 옅은 김이 올라옵니다. 가까이 다가가면, 밑에서 낮게 웅웅거리는 소리가 들리고요. 정확히 열두 시간마다, 전체가 딱 한 번, 아주 느리게 부풀었다 가라앉습니다. 그때 표면 온도는 삼십육 점 오 도까지 올라갑니다. 그리고 다시, 원래대로 내려가고요.\n\n이상한 건 따로 있었습니다. 탐침을 사백 미터까지 내려보내면, 원래는 소금호수 바닥에 닿아야 하는데요. 그런데 삼천 미터를 내려보내도… 신호가 돌아오지 않았습니다. 정확히 같은 자리에서, 매번요… 왜 안 닿았을까요? 재단 지질반은 이걸 두고, 능선 아래가 접혀 있는 것 같다고 했습니다. 그러니까 우리가 보는 등뼈는, 끝이 아니라 — 훨씬 큰 무언가의 단면이라는 거죠. 그 무언가가 어디 있는지는, 아직도 모릅니다.\n\n그리고 이 대목에서, 절차의 의미가 조금 달라집니다. 재단은 처음에, 이 규칙들이 등뼈를 얌전히 재우기 위한 거라고 생각했습니다. 그런데 나중에 보니, 그게 아니었어요. 이 세 가지는 오히려, 접힌 자리를 계속 좁게 붙잡아두는 쪽에 가까웠습니다. 이걸 어기면 등뼈가 사나워지는 게 아니라, 접힌 자리가 넓어집니다. 그 너머에 뭐가 있는지는, 아직 아무도 확인하지 못했고요.\n\n그리고 다섯 달쯤 지난 어느 날, 열두 시간 파형이 유난히 크게 잡혔습니다. 코자예프 박사는 이번 정점만은, 끊기지 않은 완전한 그래프로 남기고 싶어했습니다. 그동안 그는 늘, 규칙 지키는 걸 최우선으로 삼던 사람이었어요. 「사이트-266, 여기는 관제실. 정점까지 삼 분 남았습니다.」 파텔이 무전으로 그렇게 알렸고요. 「이번 한 번만요. 딱 이번 정점만, 끝까지 보고요.」 그가 그렇게 답한 게, 마지막이었습니다. 지표 온도가 삼십육 점 오 도에 닿았는데도, 그는 시추기를 끄지 않았습니다. 그리고 등뼈 전체가… 한 번, 아주 크게 부풀었다가, 가라앉았습니다. 시추공이 있던 자리가, 통째로 사라졌습니다. 코자예프 박사도, 함께요.\n\n그의 이름은 근무 명단에서 빠졌습니다. 그런데 사이트 식당 좌석표에는, 아직도 그의 자리가 비어 있는 걸로 표시됩니다. 아무도 그 표를 고치지 않았어요.\n\n그 뒤로 접힌 자리는, 조금 넓어진 채로 그대로입니다. 재단은 지금, 등급 재분류 심사를 준비하고 있습니다. 유클리드로 남을지, 아니면 다른 등급으로 넘어갈지는 — 아직 안 정해졌고요. 부서진 신의 교회는, 여전히 그 자리를 드나듭니다. 그들이 이 자리를 얼마나 오래전부터 알고 있었는지는, 재단도 아직 답을 못 찾았습니다. 말라버린 등뼈는, 지금도 그 자리에 그대로 있습니다.\n\n저도, 그 파형이 왜 하필 코자예프 박사 앞에서 그렇게 컸는지는 — 설명을 못 하겠습니다. 우연이었을까요, 아니었을까요? 다만 하나는 확실합니다. 완전한 그래프, 그거 하나 보겠다고 정오를 넘기지는 마세요.",
+  "segments": [
+    {
+      "text": "코자예프 박사가 마지막으로 한 일은,",
+      "est_sec": 3,
+      "text_en": "The last thing Dr. Kozayev did"
+    },
+    {
+      "text": "전원을 내리지 않은 것이었습니다.",
+      "est_sec": 3,
+      "text_en": "was leave the drill running."
+    },
+    {
+      "text": "지질학자였고,",
+      "est_sec": 1,
+      "text_en": "He was a geologist,"
+    },
+    {
+      "text": "사이트 하나를 통째로 맡고 있었죠.",
+      "est_sec": 3,
+      "text_en": "in charge of an entire site."
+    },
+    {
+      "text": "그날 이후로 그의 이름은,",
+      "est_sec": 2,
+      "text_en": "After that day, his name"
+    },
+    {
+      "text": "근무 명단에서 빠졌습니다.",
+      "est_sec": 2,
+      "text_en": "was gone from the roster."
+    },
+    {
+      "text": "이야기는 이 년 전, 위성 사진 한 장에서 시작됩니다.",
+      "est_sec": 5,
+      "text_en": "This starts two years ago, with one satellite photo."
+    },
+    {
+      "text": "중앙아시아 내륙의 소금호수 하나가,",
+      "est_sec": 3,
+      "text_en": "A salt lake in inland Central Asia"
+    },
+    {
+      "text": "그해 유난히 빨리 마르고 있었어요.",
+      "est_sec": 3,
+      "text_en": "was drying unusually fast that year."
+    },
+    {
+      "text": "물이 빠진 자리에, 낯선 게 드러났습니다.",
+      "est_sec": 4,
+      "text_en": "Where the water receded, something strange showed up."
+    },
+    {
+      "text": "완만한 능선인 줄 알았는데,",
+      "est_sec": 3,
+      "text_en": "It looked like a gentle ridge,"
+    },
+    {
+      "text": "위에서 보니 마디가 있었습니다. 등뼈처럼요.",
+      "est_sec": 4,
+      "text_en": "but from above it had segments. Like a spine."
+    },
+    {
+      "text": "정말 등뼈였을까요?",
+      "est_sec": 2,
+      "text_en": "Was it really a spine?"
+    },
+    {
+      "text": "현장 사람들은 그걸 그냥 '말라버린 등뼈'라고 부르기 시작했습니다.",
+      "est_sec": 6,
+      "text_en": "The crew just started calling it 'the Dried Spine.'"
+    },
+    {
+      "text": "재단이 사이트-266을 세운 게,",
+      "est_sec": 3,
+      "text_en": "The Foundation set up Site-266"
+    },
+    {
+      "text": "그 다음이었고요.",
+      "est_sec": 2,
+      "text_en": "right after that."
+    },
+    {
+      "text": "SCP-9514,",
+      "est_sec": 2,
+      "text_en": "SCP-9514,"
+    },
+    {
+      "text": "등급은 유클리드입니다.",
+      "est_sec": 2,
+      "text_en": "class Euclid."
+    },
+    {
+      "text": "지진계를 심어놓고 몇 주를 기다렸더니,",
+      "est_sec": 4,
+      "text_en": "They planted seismographs and waited a few weeks,"
+    },
+    {
+      "text": "신호가 하나 잡혔습니다.",
+      "est_sec": 2,
+      "text_en": "and caught a signal."
+    },
+    {
+      "text": "정확히 열두 시간 간격으로,",
+      "est_sec": 3,
+      "text_en": "Exactly every twelve hours,"
+    },
+    {
+      "text": "똑같은 파형이 반복됐어요. 숨소리 같았죠.",
+      "est_sec": 4,
+      "text_en": "the same waveform repeated. Like breathing."
+    },
+    {
+      "text": "저도 처음 이 그래프를 봤을 때,",
+      "est_sec": 3,
+      "text_en": "When I first saw this graph,"
+    },
+    {
+      "text": "심전도인 줄 알았습니다.",
+      "est_sec": 2,
+      "text_en": "I thought it was an EKG."
+    },
+    {
+      "text": "재단은 세 가지를 정했습니다.",
+      "est_sec": 3,
+      "text_en": "The Foundation set three rules."
+    },
+    {
+      "text": "지표 온도가 삼십육 점 오 도에 닿는 순간,",
+      "est_sec": 4,
+      "text_en": "The moment surface temperature hits 36.5 degrees,"
+    },
+    {
+      "text": "하루 두 번 — 그때는 시추기를 반드시 끕니다.",
+      "est_sec": 4,
+      "text_en": "twice a day — the drill must be shut off then."
+    },
+    {
+      "text": "채취한 시료는 스물네 시간 안에,",
+      "est_sec": 3,
+      "text_en": "Any sample taken"
+    },
+    {
+      "text": "반드시 제자리로 돌려놓고요.",
+      "est_sec": 3,
+      "text_en": "must go back within twenty-four hours."
+    },
+    {
+      "text": "그리고 밤에는, 절대 혼자 나가지 않습니다.",
+      "est_sec": 4,
+      "text_en": "And at night, never go out alone."
+    },
+    {
+      "text": "왜 하필 이 세 가지였을까요? 그것도,",
+      "est_sec": 4,
+      "text_en": "Why these three, of all things? That,"
+    },
+    {
+      "text": "아무도 속 시원히 설명해주지 않았습니다.",
+      "est_sec": 4,
+      "text_en": "nobody could really explain."
+    },
+    {
+      "text": "어기면 어떻게 되는지도,",
+      "est_sec": 2,
+      "text_en": "And what happens if you break them"
+    },
+    {
+      "text": "어디에도 적혀 있지 않았고요.",
+      "est_sec": 3,
+      "text_en": "isn't written down anywhere."
+    },
+    {
+      "text": "사이트를 세우고 얼마 안 돼서,",
+      "est_sec": 3,
+      "text_en": "Not long after the site went up,"
+    },
+    {
+      "text": "경계 순찰 중에 이상한 게 나왔습니다.",
+      "est_sec": 4,
+      "text_en": "something odd turned up on a perimeter patrol."
+    },
+    {
+      "text": "능선 가장자리에,",
+      "est_sec": 2,
+      "text_en": "At the edge of the ridge,"
+    },
+    {
+      "text": "오래된 돌무더기와 함께 조그만 제물이 놓여 있었던 거죠.",
+      "est_sec": 5,
+      "text_en": "an old cairn with a small offering laid beside it."
+    },
+    {
+      "text": "부서진 신의 교회 쪽 흔적이었습니다.",
+      "est_sec": 3,
+      "text_en": "It was a Church of the Broken God marker."
+    },
+    {
+      "text": "「우리보다 먼저 알고 있었네요.」",
+      "est_sec": 3,
+      "text_en": "\"They knew before we did.\""
+    },
+    {
+      "text": "통신 담당 파텔이 그렇게 말했던 게 기억납니다.",
+      "est_sec": 4,
+      "text_en": "I remember comms officer Patel saying that."
+    },
+    {
+      "text": "그녀는 원래 남태평양 심해분소에서 일하던 사람이었어요.",
+      "est_sec": 5,
+      "text_en": "She used to work at a deep-sea station in the South Pacific."
+    },
+    {
+      "text": "거기서 있었던 일에 대해서는 — 그녀도 말을 아꼈습니다.",
+      "est_sec": 5,
+      "text_en": "About what happened there — she never said much either."
+    },
+    {
+      "text": "그리고 석 달쯤 지났을 때,",
+      "est_sec": 3,
+      "text_en": "About three months in,"
+    },
+    {
+      "text": "첫 번째 규칙이 깨졌습니다.",
+      "est_sec": 3,
+      "text_en": "the first rule broke."
+    },
+    {
+      "text": "신입 대원 하나가 시료 하나를 실험실로 보내면서,",
+      "est_sec": 5,
+      "text_en": "A new hire sent a sample off to the lab"
+    },
+    {
+      "text": "반납을 사흘 미룬 겁니다.",
+      "est_sec": 2,
+      "text_en": "and put off returning it for three days."
+    },
+    {
+      "text": "「금방 돌려놓을게요… 결과만 보고요.」",
+      "est_sec": 4,
+      "text_en": "\"I'll put it back soon… just want the results.\""
+    },
+    {
+      "text": "그 사흘 동안, 시료를 파낸 자리가 스스로 메워졌습니다.",
+      "est_sec": 5,
+      "text_en": "In those three days, the hole where it was dug out healed itself."
+    },
+    {
+      "text": "그리고 그 옆으로, 지표가 완만하게,",
+      "est_sec": 3,
+      "text_en": "And beside it, the surface gently,"
+    },
+    {
+      "text": "삼 미터쯤 부풀어 올랐고요.",
+      "est_sec": 3,
+      "text_en": "swelled up by about three meters."
+    },
+    {
+      "text": "재단은 이유를 알아야 했습니다.",
+      "est_sec": 3,
+      "text_en": "The Foundation needed to know why."
+    },
+    {
+      "text": "그래서 기동특무부대 제타-19,",
+      "est_sec": 3,
+      "text_en": "So Mobile Task Force Zeta-19,"
+    },
+    {
+      "text": "'이음매'를 투입해서,",
+      "est_sec": 2,
+      "text_en": "\"The Seam,\" was sent in"
+    },
+    {
+      "text": "능선 전체를 한 번에 스캔하기로 했어요.",
+      "est_sec": 4,
+      "text_en": "to scan the whole ridge in one pass."
+    },
+    {
+      "text": "장약을 능선을 따라 쭉 깔고,",
+      "est_sec": 3,
+      "text_en": "They laid charges along the ridge,"
+    },
+    {
+      "text": "야간에 동시 기폭할 계획이었습니다.",
+      "est_sec": 3,
+      "text_en": "planning a simultaneous night detonation."
+    },
+    {
+      "text": "그런데 자정이 되기 직전,",
+      "est_sec": 2,
+      "text_en": "But just before midnight,"
+    },
+    {
+      "text": "「저 밑엔 안 내려갑니다.",
+      "est_sec": 2,
+      "text_en": "\"I'm not going down there."
+    },
+    {
+      "text": "그건… 사람이 낼 소리가 아니었어요.」",
+      "est_sec": 4,
+      "text_en": "That… wasn't a sound a person makes.\""
+    },
+    {
+      "text": "D계급 하나가 무전으로 그렇게 보고했습니다.",
+      "est_sec": 4,
+      "text_en": "one D-class radioed in, saying that."
+    },
+    {
+      "text": "그리고 잠시 뒤, 장약이 통째로 사라졌습니다.",
+      "est_sec": 4,
+      "text_en": "And a little later, the charges vanished entirely."
+    },
+    {
+      "text": "묻어둔 자리마다, 매끈한 돌만 남아 있었고요.",
+      "est_sec": 4,
+      "text_en": "Every burial spot just had smooth stone left behind."
+    },
+    {
+      "text": "폭발음도, 신호도, 아무것도 없었습니다.",
+      "est_sec": 4,
+      "text_en": "No blast, no signal, nothing at all."
+    },
+    {
+      "text": "그냥, 없어졌어요.",
+      "est_sec": 2,
+      "text_en": "They were simply gone."
+    },
+    {
+      "text": "보고서 제목에도,",
+      "est_sec": 2,
+      "text_en": "Even in the report title,"
+    },
+    {
+      "text": "'말라버린 등뼈'라는 이름이 그대로 올라갔습니다.",
+      "est_sec": 5,
+      "text_en": "the name 'the Dried Spine' stuck."
+    },
+    {
+      "text": "그 일이 있고 얼마 뒤,",
+      "est_sec": 2,
+      "text_en": "Not long after that,"
+    },
+    {
+      "text": "두 번째 규칙이 깨졌습니다.",
+      "est_sec": 3,
+      "text_en": "the second rule broke."
+    },
+    {
+      "text": "펠릭스라는 시추 기사가,",
+      "est_sec": 2,
+      "text_en": "A driller named Felix,"
+    },
+    {
+      "text": "넓어진 자리가 궁금해서 혼자 나갔던 겁니다.",
+      "est_sec": 4,
+      "text_en": "went out alone, curious about the widened spot."
+    },
+    {
+      "text": "돌아오긴 했습니다.",
+      "est_sec": 2,
+      "text_en": "He did come back."
+    },
+    {
+      "text": "그런데 정확히 얼마나 넓어졌는지는,",
+      "est_sec": 3,
+      "text_en": "But exactly how much it had widened,"
+    },
+    {
+      "text": "끝까지 말하지 않았어요.",
+      "est_sec": 2,
+      "text_en": "he never said, to the end."
+    },
+    {
+      "text": "「그냥… 저쪽으로 더 갔다고만 해두죠.」",
+      "est_sec": 4,
+      "text_en": "\"Let's just say… it goes further that way now.\""
+    },
+    {
+      "text": "숫자를 물어봐도, 대답을 피했습니다.",
+      "est_sec": 3,
+      "text_en": "Whenever asked for a number, he dodged it."
+    },
+    {
+      "text": "여기서 한 번은,",
+      "est_sec": 2,
+      "text_en": "Let me pause here"
+    },
+    {
+      "text": "그 능선을 제대로 보여드려야 할 것 같네요.",
+      "est_sec": 4,
+      "text_en": "and actually show you the ridge."
+    },
+    {
+      "text": "폭은 이백 미터쯤,",
+      "est_sec": 2,
+      "text_en": "It's about two hundred meters wide,"
+    },
+    {
+      "text": "길이는 지평선 너머까지 이어집니다.",
+      "est_sec": 3,
+      "text_en": "and runs past the horizon."
+    },
+    {
+      "text": "표면은 회갈색 각질처럼 갈라져 있고요.",
+      "est_sec": 4,
+      "text_en": "The surface is cracked like grayish-brown hide."
+    },
+    {
+      "text": "마디마다 옅은 김이 올라옵니다.",
+      "est_sec": 3,
+      "text_en": "Faint steam rises from every segment."
+    },
+    {
+      "text": "가까이 다가가면,",
+      "est_sec": 2,
+      "text_en": "Get close enough,"
+    },
+    {
+      "text": "밑에서 낮게 웅웅거리는 소리가 들리고요.",
+      "est_sec": 4,
+      "text_en": "and you can hear a low hum underneath."
+    },
+    {
+      "text": "정확히 열두 시간마다, 전체가 딱 한 번,",
+      "est_sec": 4,
+      "text_en": "Exactly every twelve hours, once,",
+      "emphasis": "열두 시간마다"
+    },
+    {
+      "text": "아주 느리게 부풀었다 가라앉습니다.",
+      "est_sec": 3,
+      "text_en": "the whole thing swells and sinks, very slowly."
+    },
+    {
+      "text": "그때 표면 온도는 삼십육 점 오 도까지 올라갑니다.",
+      "est_sec": 5,
+      "text_en": "At that moment the surface hits 36.5 degrees."
+    },
+    {
+      "text": "그리고 다시, 원래대로 내려가고요.",
+      "est_sec": 3,
+      "text_en": "And then it drops back down again."
+    },
+    {
+      "text": "이상한 건 따로 있었습니다.",
+      "est_sec": 3,
+      "text_en": "But something else was strange."
+    },
+    {
+      "text": "탐침을 사백 미터까지 내려보내면,",
+      "est_sec": 3,
+      "text_en": "Lower a probe four hundred meters"
+    },
+    {
+      "text": "원래는 소금호수 바닥에 닿아야 하는데요.",
+      "est_sec": 4,
+      "text_en": "and it should hit the old lakebed."
+    },
+    {
+      "text": "그런데 삼천 미터를 내려보내도… 신호가 돌아오지 않았습니다.",
+      "est_sec": 6,
+      "text_en": "But even at three thousand meters… no signal came back.",
+      "emphasis": "삼천 미터"
+    },
+    {
+      "text": "정확히 같은 자리에서, 매번요…",
+      "est_sec": 3,
+      "text_en": "At the exact same spot, every single time…"
+    },
+    {
+      "text": "왜 안 닿았을까요?",
+      "est_sec": 2,
+      "text_en": "Why didn't it reach anything?"
+    },
+    {
+      "text": "재단 지질반은 이걸 두고,",
+      "est_sec": 2,
+      "text_en": "The Foundation's geology team said"
+    },
+    {
+      "text": "능선 아래가 접혀 있는 것 같다고 했습니다.",
+      "est_sec": 4,
+      "text_en": "the space under the ridge seemed folded."
+    },
+    {
+      "text": "그러니까 우리가 보는 등뼈는,",
+      "est_sec": 3,
+      "text_en": "So the spine we're seeing"
+    },
+    {
+      "text": "끝이 아니라 — 훨씬 큰 무언가의 단면이라는 거죠.",
+      "est_sec": 5,
+      "text_en": "isn't the end of it — just a cross-section of something much larger."
+    },
+    {
+      "text": "그 무언가가 어디 있는지는, 아직도 모릅니다.",
+      "est_sec": 4,
+      "text_en": "Where that something is, nobody still knows."
+    },
+    {
+      "text": "그리고 이 대목에서,",
+      "est_sec": 2,
+      "text_en": "And this is where"
+    },
+    {
+      "text": "절차의 의미가 조금 달라집니다.",
+      "est_sec": 3,
+      "text_en": "the meaning of the rules starts to shift."
+    },
+    {
+      "text": "재단은 처음에,",
+      "est_sec": 1,
+      "text_en": "At first, the Foundation thought"
+    },
+    {
+      "text": "이 규칙들이 등뼈를 얌전히 재우기 위한 거라고 생각했습니다.",
+      "est_sec": 6,
+      "text_en": "these rules were meant to keep the spine calmly asleep."
+    },
+    {
+      "text": "그런데 나중에 보니, 그게 아니었어요.",
+      "est_sec": 4,
+      "text_en": "But later, it turned out that wasn't it."
+    },
+    {
+      "text": "이 세 가지는 오히려,",
+      "est_sec": 2,
+      "text_en": "These three rules were, if anything,"
+    },
+    {
+      "text": "접힌 자리를 계속 좁게 붙잡아두는 쪽에 가까웠습니다.",
+      "est_sec": 5,
+      "text_en": "closer to holding the fold shut, keeping it narrow."
+    },
+    {
+      "text": "이걸 어기면 등뼈가 사나워지는 게 아니라,",
+      "est_sec": 4,
+      "text_en": "Break them, and the spine doesn't turn violent —"
+    },
+    {
+      "text": "접힌 자리가 넓어집니다.",
+      "est_sec": 2,
+      "text_en": "the fold just widens."
+    },
+    {
+      "text": "그 너머에 뭐가 있는지는, 아직 아무도 확인하지 못했고요.",
+      "est_sec": 6,
+      "text_en": "What's on the other side, no one has confirmed yet."
+    },
+    {
+      "text": "그리고 다섯 달쯤 지난 어느 날,",
+      "est_sec": 3,
+      "text_en": "Then, about five months in,"
+    },
+    {
+      "text": "열두 시간 파형이 유난히 크게 잡혔습니다.",
+      "est_sec": 4,
+      "text_en": "the twelve-hour waveform came in unusually large."
+    },
+    {
+      "text": "코자예프 박사는 이번 정점만은,",
+      "est_sec": 3,
+      "text_en": "Dr. Kozayev wanted, just this once,"
+    },
+    {
+      "text": "끊기지 않은 완전한 그래프로 남기고 싶어했습니다.",
+      "est_sec": 5,
+      "text_en": "to record the peak as one unbroken graph."
+    },
+    {
+      "text": "그동안 그는 늘,",
+      "est_sec": 2,
+      "text_en": "Up to then, he'd always"
+    },
+    {
+      "text": "규칙 지키는 걸 최우선으로 삼던 사람이었어요.",
+      "est_sec": 4,
+      "text_en": "put following the rules first."
+    },
+    {
+      "text": "「사이트-266, 여기는 관제실.",
+      "est_sec": 3,
+      "text_en": "\"Site-266, this is Control."
+    },
+    {
+      "text": "정점까지 삼 분 남았습니다.」",
+      "est_sec": 3,
+      "text_en": "Three minutes to peak.\""
+    },
+    {
+      "text": "파텔이 무전으로 그렇게 알렸고요.",
+      "est_sec": 3,
+      "text_en": "Patel called that in over the radio."
+    },
+    {
+      "text": "「이번 한 번만요. 딱 이번 정점만,",
+      "est_sec": 3,
+      "text_en": "\"Just this once. Just this one peak,"
+    },
+    {
+      "text": "끝까지 보고요.」 그가 그렇게 답한 게,",
+      "est_sec": 4,
+      "text_en": "I want to see it through.\" That was his reply,"
+    },
+    {
+      "text": "마지막이었습니다.",
+      "est_sec": 2,
+      "text_en": "and his last words."
+    },
+    {
+      "text": "지표 온도가 삼십육 점 오 도에 닿았는데도,",
+      "est_sec": 4,
+      "text_en": "Even as surface temperature hit 36.5 degrees,"
+    },
+    {
+      "text": "그는 시추기를 끄지 않았습니다.",
+      "est_sec": 3,
+      "text_en": "he didn't shut the drill off."
+    },
+    {
+      "text": "그리고 등뼈 전체가… 한 번,",
+      "est_sec": 3,
+      "text_en": "And then the whole spine… once,"
+    },
+    {
+      "text": "아주 크게 부풀었다가, 가라앉았습니다.",
+      "est_sec": 4,
+      "text_en": "swelled up hugely, then sank."
+    },
+    {
+      "text": "시추공이 있던 자리가, 통째로 사라졌습니다.",
+      "est_sec": 4,
+      "text_en": "The whole borehole site was simply gone.",
+      "emphasis": "통째로 사라졌다"
+    },
+    {
+      "text": "코자예프 박사도, 함께요.",
+      "est_sec": 2,
+      "text_en": "Dr. Kozayev, along with it."
+    },
+    {
+      "text": "그의 이름은 근무 명단에서 빠졌습니다.",
+      "est_sec": 4,
+      "text_en": "His name dropped off the roster."
+    },
+    {
+      "text": "그런데 사이트 식당 좌석표에는,",
+      "est_sec": 3,
+      "text_en": "But on the mess hall seating chart,"
+    },
+    {
+      "text": "아직도 그의 자리가 비어 있는 걸로 표시됩니다.",
+      "est_sec": 4,
+      "text_en": "his seat is still marked as empty, reserved."
+    },
+    {
+      "text": "아무도 그 표를 고치지 않았어요.",
+      "est_sec": 3,
+      "text_en": "Nobody has fixed the chart."
+    },
+    {
+      "text": "그 뒤로 접힌 자리는,",
+      "est_sec": 2,
+      "text_en": "Since then, the fold"
+    },
+    {
+      "text": "조금 넓어진 채로 그대로입니다.",
+      "est_sec": 3,
+      "text_en": "has stayed just a little wider."
+    },
+    {
+      "text": "재단은 지금,",
+      "est_sec": 1,
+      "text_en": "Right now, the Foundation"
+    },
+    {
+      "text": "등급 재분류 심사를 준비하고 있습니다.",
+      "est_sec": 4,
+      "text_en": "is preparing a reclassification review."
+    },
+    {
+      "text": "유클리드로 남을지,",
+      "est_sec": 2,
+      "text_en": "Whether it stays Euclid,"
+    },
+    {
+      "text": "아니면 다른 등급으로 넘어갈지는 — 아직 안 정해졌고요.",
+      "est_sec": 5,
+      "text_en": "or moves to something else — that's not decided yet."
+    },
+    {
+      "text": "부서진 신의 교회는,",
+      "est_sec": 2,
+      "text_en": "The Church of the Broken God"
+    },
+    {
+      "text": "여전히 그 자리를 드나듭니다.",
+      "est_sec": 3,
+      "text_en": "still comes and goes from the site."
+    },
+    {
+      "text": "그들이 이 자리를 얼마나 오래전부터 알고 있었는지는,",
+      "est_sec": 5,
+      "text_en": "How long they've known about this place,"
+    },
+    {
+      "text": "재단도 아직 답을 못 찾았습니다.",
+      "est_sec": 3,
+      "text_en": "even the Foundation hasn't figured out."
+    },
+    {
+      "text": "말라버린 등뼈는, 지금도 그 자리에 그대로 있습니다.",
+      "est_sec": 5,
+      "text_en": "The Dried Spine is still right there, right now."
+    },
+    {
+      "text": "저도,",
+      "est_sec": 1,
+      "text_en": "As for me,"
+    },
+    {
+      "text": "그 파형이 왜 하필 코자예프 박사 앞에서 그렇게",
+      "est_sec": 4,
+      "text_en": "why that waveform peaked exactly in front of Dr. Kozayev,"
+    },
+    {
+      "text": "컸는지는 — 설명을 못 하겠습니다.",
+      "est_sec": 3,
+      "text_en": "I can't explain."
+    },
+    {
+      "text": "우연이었을까요, 아니었을까요?",
+      "est_sec": 3,
+      "text_en": "Was it coincidence, or wasn't it?"
+    },
+    {
+      "text": "다만 하나는 확실합니다. 완전한 그래프,",
+      "est_sec": 4,
+      "text_en": "One thing's for sure, though. That unbroken graph —"
+    },
+    {
+      "text": "그거 하나 보겠다고 정오를 넘기지는 마세요.",
+      "est_sec": 4,
+      "text_en": "don't let noon slip by just to see it."
+    }
+  ],
+  "scenes": [
+    {
+      "prompt": "vast dried salt lake at dusk, one long segmented ridge crossing the horizon; faint steam from segment cracks; eye-level wide shot, one-point perspective; single low amber sun, long hard shadows; cracked white salt crust, grayish-brown ridge hide; thin heat haze; deep blue-black sky, amber accent; 24mm lens, sharp detail, dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, limited palette of deep blue-black and cold grey with ONE hot accent color, strong rim light from a single source, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "extreme close-up of cracked grayish-brown segmented ridge surface, faint steam from one crack; low angle, texture fills frame; single raking amber side light, hard shadow in the crack; hide-like crust, mineral crystals; still dry air, fine dust; deep blue-black shadow, amber highlight; macro lens, sharp detail, dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, limited palette of deep blue-black and cold grey with ONE hot accent color, strong rim light from a single source, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "cramped underground control room, one monitor bank showing a slow repeating waveform; eye-level shot, monitor glow as only light, rest in shadow; cracked concrete wall, steel desk, coiled cable; still air; deep blue-black room, amber monitor glow; 35mm lens, one-point perspective toward screen, dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, limited palette of deep blue-black and cold grey with ONE hot accent color, strong rim light from a single source, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "single drilling rig at the base of the segmented ridge at night, one work light on the drill head; low angle, rig silhouetted against dark ridge; single harsh worklight, long shadow; rusted steel rig, cracked salt ground; thin dust in light beam; deep blue-black night, amber worklight; 24mm lens, lower quarter empty floor, dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, limited palette of deep blue-black and cold grey with ONE hot accent color, strong rim light from a single source, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "small stone cairn at the ridge's base at night, modest offering bowl beside it, one distant robed silhouette walking away; low wide shot, cairn foreground, ridge looming behind; single moonlight, hard rim on the silhouette; stacked stones, cracked salt ground; still cold air; deep blue-black night, pale moon rim light; 24mm lens, no face, dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, limited palette of deep blue-black and cold grey with ONE hot accent color, strong rim light from a single source, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "shallow excavation pit where a sample was taken, edges smoothing over as if healing, one gloved hand reaching just out of frame; close medium shot, pit centered; single flashlight beam from above; cracked crust folding inward, faint steam at center; still air; deep blue-black shadow, amber flashlight glow; 35mm lens, sharp center focus, dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, limited palette of deep blue-black and cold grey with ONE hot accent color, strong rim light from a single source, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "buried charge site after a failed detonation, one perfectly smooth stone disc where the charge was, cable leading to nothing; low wide shot, smooth stone centered in cracked salt; single low amber light, hard shadow around the disc; cracked salt crust, polished stone; still night air; deep blue-black night, amber rim light; 24mm lens, dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, limited palette of deep blue-black and cold grey with ONE hot accent color, strong rim light from a single source, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "steel cable spooling down a narrow borehole that fades into pure black, no bottom visible; low angle looking down the hole, cable the only clear line; single lamp above, light swallowed below; rusted casing, taut cable, salt-crusted rim; still air; deep blue-black void, amber lamp light; 35mm lens, one-point perspective downward, dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, limited palette of deep blue-black and cold grey with ONE hot accent color, strong rim light from a single source, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "lone figure in a work jacket walking away toward the dark ridge at night, back turned, no face visible; low wide shot, figure small against the ridge; single flashlight beam swinging from the hand; cracked salt ground, distant ridge silhouette; cold still air; deep blue-black night, small amber flashlight glow; 24mm lens, dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, limited palette of deep blue-black and cold grey with ONE hot accent color, strong rim light from a single source, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "close medium shot of the ridge's segmented spine mid-swell, joints faintly parting, thin steam venting, dim warm glow inside one crack; low angle, ridge fills frame, one-point perspective along segments; single warm amber glow from within the crack as key light; hide-like crust, mineral seams; thin steam haze; deep blue-black shadow, amber inner glow; 35mm lens, no creature face or eyes shown, dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, limited palette of deep blue-black and cold grey with ONE hot accent color, strong rim light from a single source, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "empty control room chair with a headset resting on it, a frozen waveform graph glowing on the monitor behind, an open logbook on the desk; eye-level shot, chair centered, room otherwise dark; single monitor glow as key light; cracked concrete wall, steel desk; still stale air; deep blue-black room, amber monitor glow; 35mm lens, dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, limited palette of deep blue-black and cold grey with ONE hot accent color, strong rim light from a single source, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "final static wide shot of the salt flat at dawn, the segmented ridge now visibly wider than before, empty landscape, no people; eye-level wide shot, one-point perspective; single low amber dawn light, long soft shadows; cracked white salt crust, grayish-brown ridge hide; still cold morning air; deep blue-black fading to amber horizon; 24mm lens, lower quarter empty floor, dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, limited palette of deep blue-black and cold grey with ONE hot accent color, strong rim light from a single source, cinematic low angle, grain-free, no text anywhere"
+    }
+  ],
+  "background": {
+    "id": "scp-9514_bg",
+    "kind": "image",
+    "reuse": false,
+    "aspect": "16:9",
+    "resolution": "1920x1080",
+    "prompt": "vast dried salt lake, one long segmented ridge crossing the horizon like a spine; faint steam between segments, small stone cairn with offering at its base; eye-level wide shot, one-point perspective, deep focus; single low amber sun, long hard shadows; cracked white salt crust, grayish-brown ridge hide; thin heat haze; deep blue-black sky, pale salt white, amber accent; 24mm lens, lower quarter empty floor, dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, limited palette of deep blue-black and cold grey with ONE hot accent color, strong rim light from a single source, cinematic low angle, grain-free, no text anywhere",
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, uncanny face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion"
+  },
+  "thumbnail": {
+    "hook": "close medium shot of segmented grayish-brown ridge surface, one deep crack venting faint steam with a dim warm glow inside; subject on the right third, left third dark empty negative space; single strong amber rim light from within the crack, rest in deep shadow; hide-like crust, mineral seams; thin steam haze; deep blue-black background, amber inner glow; 50mm lens, shallow depth, dramatic low angle, dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, limited palette of deep blue-black and cold grey with ONE hot accent color, strong rim light from a single source, cinematic low angle, grain-free, no text anywhere",
+    "hook_alt": [
+      "close-up of a small stone cairn with a modest offering bowl at night, dark segmented ridge looming out of focus behind it; subject on the left third, right third dark empty negative space; single cold moonlight rim light; stacked stones, cracked salt ground; still night air; deep blue-black night, pale moon rim light; 50mm lens, shallow depth, dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, limited palette of deep blue-black and cold grey with ONE hot accent color, strong rim light from a single source, cinematic low angle, grain-free, no text anywhere",
+      "silhouette of a lone figure at the edge of the dark ridge at night, back to camera, one flashlight beam cutting through the dark; subject on the right third, left third dark empty negative space; single flashlight key light from the hand; cracked salt ground, distant ridge silhouette; cold still air; deep blue-black night, small amber flashlight glow; 50mm lens, low angle, dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, limited palette of deep blue-black and cold grey with ONE hot accent color, strong rim light from a single source, cinematic low angle, grain-free, no text anywhere"
+    ],
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, uncanny face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion",
+    "text_safe_area": "left third",
+    "resolution": "1280x720"
+  },
+  "platforms": {
+    "youtube": {
+      "title": "삼천 미터를 내려보내도 안 닿는, 카자흐스탄 마른 호수 바닥의 정체 [SCP-9514]",
+      "title_form": "C",
+      "thumbnail_text": "말라버린 등뼈",
+      "thumbnail_quote": "- 저쪽으로 더 갔다고만 해두죠",
+      "chapters": [
+        "00:00 마지막 근무의 기록",
+        "01:00 소금호수 밑에서 나온 등뼈",
+        "02:40 지켜야 할 세 가지",
+        "04:20 사라진 장약과 넓어진 자리",
+        "06:40 정오를 넘긴 마지막 무전"
+      ],
+      "description": "중앙아시아 마른 호수 바닥에서 발견된, 등뼈처럼 마디진 거대한 능선 이야기입니다. 열두 시간마다 한 번씩 숨을 쉬듯 부풀었다 가라앉고, 그 아래로 내려보낸 탐침은 삼천 미터를 내려가도 바닥에 닿지 않습니다.\n\n비슷하게, 아주 오래 아주 크게 숨 쉬는 지형을 본 적 있으신가요? 댓글로 들려주세요.\n\n※ SCP 재단 세계관 기반 오리지널 창작 · 허구의 이야기입니다\n※ 본 콘텐츠는 CC BY-SA 3.0 라이선스를 따릅니다 · 원작: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP재단 #괴담 #무서운이야기 #미스터리 #심야라디오 #공포라디오",
+      "pinned_comment": "실제로 아주 오래, 아주 크게 숨 쉬는 지형을 본 적 있으신가요? 있다면 어디였는지 궁금합니다.",
+      "playlist": "SCP 아카이브 (전편 듣기)",
+      "localizations": {
+        "en": {
+          "title": "The Salt Lake Floor That Never Answered a 3,000-Meter Probe [SCP-9514]",
+          "description": "A story from a dried salt lake bed in inland Central Asia, where a colossal ridge, segmented like a spine, was found beneath the receding water. It swells and sinks once every twelve hours, like breathing — and a probe lowered three thousand meters down never once hit bottom.\n\nHave you ever seen ground that breathes, on that kind of scale? Let us know in the comments.\n\n※ Original fiction set in the SCP Foundation shared universe · This is a work of fiction.\n※ Licensed under CC BY-SA 3.0 · Based on the SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCPFoundation #horror #creepypasta #mystery #latenightradio"
+        },
+        "ja": {
+          "title": "三千メートル降ろしても底に届かない、乾いた塩湖の正体 [SCP-9514]",
+          "description": "中央アジア内陸の干上がった塩湖の底で見つかった、背骨のように節のある巨大な尾根の話です。十二時間ごとに一度、呼吸するように膨らんでは沈み、三千メートルまで降ろした探針は一度も底に届きません。\n\nそんな規模で呼吸する地形を見たことはありますか。コメントで教えてください。\n\n※ SCP財団の世界観に基づくオリジナル創作・フィクションです\n※ 本コンテンツはCC BY-SA 3.0ライセンスに従います・原作：SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP財団 #怖い話 #都市伝説 #ミステリー #深夜ラジオ"
+        },
+        "zh-Hant": {
+          "title": "探針放到三千公尺仍探不到底的乾涸鹽湖真相 [SCP-9514]",
+          "description": "故事發生在中亞內陸一座乾涸的鹽湖湖床，水位退去後露出一道如脊椎般分節的巨大山脊。每十二小時像呼吸一樣膨脹又沉降一次，而放到三千公尺深的探針，卻始終探不到底。\n\n你是否見過這種規模、會呼吸的地形呢？歡迎在留言告訴我們。\n\n※ 本作品為基於SCP基金會世界觀的原創虛構故事\n※ 本內容採用CC BY-SA 3.0授權・原作：SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP基金會 #恐怖故事 #都市傳說 #懸疑 #深夜電台"
+        }
+      }
+    }
+  },
+  "shorts": {
+    "title": "삼천 미터를 내려도 안 닿는 호수 바닥 | SCP",
+    "overlay_top": [
+      "등급 : 유클리드",
+      "말라버린 등뼈"
+    ],
+    "script": "코자예프 박사가 마지막으로 한 일은, 시추기를 끄지 않은 것이었습니다. 중앙아시아 마른 호수 바닥에서, 등뼈처럼 마디진 능선 하나가 발견됩니다. SCP-9514, 유클리드 등급입니다. 지켜야 할 게 세 가지 있었어요. 온도가 몸과 같아지는 순간엔 시추를 멈추고, 캐낸 시료는 하루 안에 돌려놓고, 밤엔 절대 혼자 나가지 않는 것. 어기면 어떻게 되는지는, 어디에도 적혀 있지 않습니다. 그런데 다섯 달 뒤, 박사는 그 규칙 하나를 스스로 어겼습니다. 무슨 일이 있었는지는, 전편에서 자세히 들려드릴게요.",
+    "subject_prompt": "segmented grayish-brown ridge rearing up frontal and centered like a colossal spine mid-swell, deep cracks venting steam with a dim warm glow inside; top 30% and bottom 25% of the frame are dark empty negative space for text; strong single directional amber key light from below the cracks, deep black background, dramatic rim light, dark anime cel illustration, bold clean linework, flat cel shading, single strong directional key light, deep black background, ONE hot accent color, dramatic rim light, high contrast, 9:16 vertical composition",
+    "negative_prompt": "low contrast, washed out, faded, film grain, muted colors, text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, uncanny face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion",
+    "description": "중앙아시아 마른 호수 바닥에서 발견된 거대한 등뼈 모양 능선. 지켜야 할 규칙은 세 가지였습니다.\n\n#SCP #SCP재단 #쇼츠 #무서운이야기 #미스터리",
+    "playlist": "SCP 쇼츠"
+  },
+  "credit": "SCP 재단 세계관 기반 오리지널 창작 · 허구 · CC BY-SA 3.0",
+  "content_rating": "teen",
+  "notes": "SCP 아카이브 · 16:9 롱폼 + 9:16 쇼츠(롱폼 완료 시 자동) · 장면 전환 배경 + 자막 번인 · 단일 내레이터 · 완결형."
+}
