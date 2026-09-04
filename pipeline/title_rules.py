@@ -6,9 +6,15 @@
 루틴이 어떤 공식으로 썼는지 `platforms.youtube.title_form` 에 ★스스로 적어 보내고,
 여기서는 그 선언이 실제 문장 구조와 맞는지만 확인한다.
 
-    A  장소+사건+번호   기본. 매 회 쓸 수 있다.       마리아나 해구 6,000m에서 발견된 … [SCP-9532]
-    B  증언 인용형      따옴표로 연다.               「어제보다 커졌습니다」 심해 … [SCP-9532]
-    C  수치 강조형      수치가 후킹이다.              구십 초만 눈을 떼면 자란다는 … [SCP-9532]
+2026-09-04 전면 교체. 발행 4편의 제목이 ★4편 모두 `~의 정체` 로 끝났다.
+옛 공식 A(`[어디서]+[무슨 일]+[번호]`)의 "무슨 일" 을 전부 그렇게 해석한 결과다.
+조회수 상위 채널은 ★개체가 주어이고 ★동사로 끝나고 ★피해자가 나온다.
+그래서 공식을 4개로 바꾸고 ★번호(n%4)로 배정한다 — `정체형` 은 4편에 1편까지.
+
+    0 사건형   [개체]가 [어디서] [무엇을 했는지] — ★동사로 끝난다   (기본)
+    1 피해형   [누가·얼마나]가 [어떻게 됐는지] — 사람이 주어
+    2 증언형   「현장의 한 마디」 + 사건 — 따옴표로 연다
+    3 정체형   [어디서] + [무엇]의 정체
 
 ★여기에 소재·주제 키워드는 한 글자도 없다.
    "장소가 들어있나" 같은 건 기계가 판정할 수 없어서 ★프롬프트 쪽 규칙으로 남겼다.
@@ -70,6 +76,17 @@ def norm_number(number: str) -> str:
     return s.strip()
 
 
+FORMS = ("사건형", "피해형", "증언형", "정체형")
+JEONGCHE = re.compile(r"의\s*정체\s*$")
+
+
+def form_for(number: str) -> str:
+    """번호가 정하는 제목 공식. 끝 두 자리 % 4."""
+    n = norm_number(number)
+    m = re.match(r"(\d{3,4})", n)
+    return FORMS[int(m.group(1)) % 100 % 4] if m else ""
+
+
 def infer_form(title: str) -> str:
     """구조만 보고 짐작한다 — 선언이 없을 때의 폴백이다.
 
@@ -83,18 +100,25 @@ def infer_form(title: str) -> str:
     return "A"
 
 
-def check_form(title: str, form: str) -> list[str]:
-    """선언한 공식이 문장 구조와 모순되지 않는지 — ★필요조건만 본다."""
-    form = (form or "").strip().upper()
+def check_form(title: str, form: str, number: str = "") -> list[str]:
+    """선언한 공식이 ①번호 배정 ②문장 구조와 맞는지. ★필요조건만 본다."""
+    form = (form or "").strip()
     body = strip_tail(title)
     out: list[str] = []
-    if form not in ("A", "B", "C"):
-        out.append(f"title_form 이 A/B/C 가 아니다: {form or '(없음)'}")
+    if form not in FORMS:
+        out.append(f"title_form 이 {' / '.join(FORMS)} 중 하나가 아니다: {form or '(없음)'}")
         return out
-    if form == "B" and body[:1] not in OPEN_QUOTE:
-        out.append("title_form=B(증언 인용형)인데 제목이 따옴표로 시작하지 않는다")
-    if form == "C" and not NUM_RE.search(body):
-        out.append("title_form=C(수치 강조형)인데 제목에 수치가 없다")
+    want = form_for(number)
+    if want and form != want:
+        out.append(f"title_form 이 번호 배정과 다르다: {form} ≠ {want} (번호 {number})")
+    if form == "증언형" and body[:1] not in OPEN_QUOTE:
+        out.append("title_form=증언형인데 제목이 따옴표로 시작하지 않는다")
+    if form != "정체형" and JEONGCHE.search(body):
+        out.append(f"title_form={form} 인데 제목이 `~의 정체` 로 끝난다 — "
+                   "4편 중 4편이 그렇게 끝나서 공식을 나눈 것이다. "
+                   "개체를 주어로 놓고 ★동사로 끝내라")
+    if form == "정체형" and not JEONGCHE.search(body):
+        out.append("title_form=정체형인데 제목이 `~의 정체` 로 끝나지 않는다")
     return out
 
 
@@ -128,7 +152,7 @@ def check(title: str, *, number: str = "", form: str = "",
         elif len(t) < LONG_MIN:
             out.append(f"제목 길이 {len(t)}자 — {LONG_MIN}자 미만이면 "
                        "★장소나 사건이 빠졌을 가능성이 높다(§2-H2)")
-        out += check_form(t, form)
+        out += check_form(t, form, number)
 
     hit = [w for w in banlist() if w in t]
     if hit:
