@@ -32,8 +32,10 @@ def spec(num="SCP-9421", **kw):
          "ending_mode": a["ending_mode"], "opening_move": a["opening"][0],
          "closing_move": a["closing"][0], "fault": a["fault"], "procedures": [],
          "chain": [{"when": f"{i}번째", "event": f"재단이 {i}번째 조치를 실행했다",
-                    "because": "" if i == 0 else "앞 조치가 실패했기 때문이다"}
+                    "because": "" if i == 0 else "앞 조치가 실패했기 때문이다",
+                    "shot": f"{i}번 격리실 문 앞에 선 요원 둘"}
                    for i in range(10)],
+         "cameos": [{"number": "SCP-682", "how": "옆 격리실에 같은 등급으로 있었다"}],
          # 번호는 ★배정된 위치에 놓는다(앞이면 앞, 뒤면 뒤) — 아니면 이 검사에 걸린다
          "narration_full": ("가" * 900 + f" 번호는 {num[-4:]} 입니다."
                             if a["number_reveal"] == "뒤"
@@ -113,6 +115,26 @@ ck("금기형은 6마디면 통과", S.check(spec("SCP-9286", chain=tb["chain"][
                                      procedures=["a", "b", "c"])) == [])
 ck("금기형인데 규칙이 없으면 잡는다",
    any("금기형인데" in x for x in S.check(spec("SCP-9286", procedures=[]))))
+
+print("\n── 5b. ★shot 과 카메오 (v13 — 그림에 요소가 없던 원인) ──")
+noshot = spec()
+for c in noshot["chain"]:
+    c["shot"] = ""
+ck("shot 이 없으면 잡는다", any("shot 이 채워진" in x for x in S.check(noshot)))
+short = spec()
+for c in short["chain"]:
+    c["shot"] = "지하"
+ck("shot 이 너무 짧으면 안 센다", any("shot 이 채워진" in x for x in S.check(short)))
+ck("6개만 채워도 통과", S.check(spec(chain=[
+    {**c, "shot": (c["shot"] if i < 6 else "")} for i, c in enumerate(spec()["chain"])])) == [])
+ck("카메오가 없으면 잡는다", any("카메오" in x for x in S.check(spec(cameos=[]))))
+ck("number 만 있고 how 가 비면 안 센다",
+   any("카메오" in x for x in S.check(spec(cameos=[{"number": "SCP-173", "how": ""}]))))
+ck("★231 은 카메오로도 막는다",
+   any("금지 개체" in x for x in S.check(spec(cameos=[
+       {"number": "SCP-682", "how": "옆방"}, {"number": "SCP-231", "how": "언급"}]))))
+ck("숫자만 적어도 231 을 잡는다",
+   any("금지 개체" in x for x in S.check(spec(cameos=[{"number": "231", "how": "언급"}]))))
 
 print("\n── 6. 번호 공개 위치 ──")
 ck("'뒤' 인데 앞에서 나오면 잡는다",

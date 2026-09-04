@@ -46,6 +46,16 @@ CHAIN_MIN = int(os.environ.get("SCP_CHAIN_MIN", "8"))          # 연대기형
 CHAIN_MIN_TABOO = int(os.environ.get("SCP_CHAIN_MIN_TABOO", "6"))
 EVENT_MIN = int(os.environ.get("SCP_EVENT_MIN", "15"))         # 마디 한 줄의 최소 길이
 
+# ★shot — 그 마디를 한 장으로 그리면 뭐가 보이나(§C-5).
+#   참고 영상은 마디마다 볼 것이 있다(식탁에 앉은 채 죽은 가족 · 죽어 있는 SCP-682 …).
+#   우리 대본은 "능선 하나가 드러났습니다" 라 그릴 게 없었다 →
+#   그림이 배경만 나오던 원인이 여기였다.
+#   ★"볼 수 있는 것인가" 는 재지 않는다 — 정규식으로 못 가린다(이미 한 번 오탐했다).
+#   기계가 아는 것만 본다: 몇 개나 채웠나, 한 줄이 너무 짧지 않나.
+SHOT_MIN = int(os.environ.get("SCP_SHOT_MIN", "6"))            # shot 이 채워진 마디 최소 수
+SHOT_LEN = int(os.environ.get("SCP_SHOT_LEN", "8"))            # shot 한 줄 최소 길이
+CAMEO_MIN = int(os.environ.get("SCP_CAMEO_MIN", "1"))          # 유명 SCP 카메오 최소 개수
+
 # ★"마디에 동사가 있는가"는 여기서 재지 않는다.
 #   `…있었다` 로 끝나는 문장을 상태 서술로 보는 정규식을 넣었다가
 #   "경계 반대편에서 뭔가를 조립하고 있었다"(멀쩡한 사건)를 잡아냈다.
@@ -88,6 +98,10 @@ def check_chain(chain: list[dict], structure: str) -> list[str]:
                if not str(c.get("because") or "").strip()]
     if missing:
         out.append(f"because 가 빈 마디: {missing} — 앞 마디의 ★결과가 아니면 사슬이 아니다")
+    shots = [c for c in chain if len(str(c.get("shot") or "").strip()) >= SHOT_LEN]
+    if len(shots) < SHOT_MIN:
+        out.append(f"shot 이 채워진 마디가 {len(shots)}개다 — 최소 {SHOT_MIN}개(§C-5). "
+                   "마디마다 ★볼 것이 없으면 그림이 배경만 나온다")
     thin = [i + 1 for i, c in enumerate(chain)
             if len(str(c.get("event") or "").strip()) < EVENT_MIN]
     if thin:
@@ -150,6 +164,15 @@ def check(spec: dict) -> list[str]:
     if structure == "금기형" and not (2 <= len(procs) <= 3):
         out.append(f"금기형인데 procedures 가 {len(procs)}개다 — 2~3개여야 한다")
 
+    cam = [c for c in (spec.get("cameos") or [])
+           if str(c.get("number") or "").strip() and str(c.get("how") or "").strip()]
+    if len(cam) < CAMEO_MIN:
+        out.append(f"유명 SCP 카메오가 {len(cam)}개다 — 최소 {CAMEO_MIN}개(§0-C2). "
+                   "한 편을 통째로 원작에 바치지 않아도 검색 수요를 가져올 수 있다")
+    banned = [c["number"] for c in cam if re.search(r"\b0*231\b", str(c.get("number")))]
+    if banned:
+        out.append(f"카메오에 금지 개체가 있다: {banned} — 231 은 카메오로도 쓰지 않는다")
+
     # 번호가 실제로 그 위치에서 처음 나오는가
     n = spec.get("narration_full") or ""
     num = digits(spec.get("scp_number", ""))
@@ -171,7 +194,8 @@ def report(spec: dict) -> list[str]:
     problems = check(spec)
     chain = spec.get("chain") or []
     if a:
-        print(f"   🧩 뼈대 {spec.get('structure','?')} · {len(chain)}마디 · "
+        shots = sum(1 for c in chain if len(str(c.get("shot") or "").strip()) >= SHOT_LEN)
+    print(f"   🧩 뼈대 {spec.get('structure','?')} · {len(chain)}마디(shot {shots}) · "
               f"번호공개 {spec.get('number_reveal','?')} · 닫기 {spec.get('ending_mode','?')} · "
               f"fault {spec.get('fault','?')}  (번호 {spec.get('scp_number')} 배정: "
               f"{a['structure']}/{a['number_reveal']}/{a['ending_mode']})")
