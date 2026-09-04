@@ -1,0 +1,1176 @@
+{
+  "date": "2026-09-04",
+  "iso_week": "2026-W36",
+  "topic": "scp",
+  "privacy": "public",
+  "origin": "original",
+  "origin_note": "",
+  "source_url": "",
+  "story_id": "scp-9762",
+  "scp_number": "SCP-9762",
+  "object_class": "Safe",
+  "codename": "정의 도둑",
+  "number_check": {
+    "checked_at": "2026-09-04",
+    "http_code": "unverified"
+  },
+  "theme": "언어·수학·개념",
+  "nature": "개념·규칙",
+  "twist_type": "관측자",
+  "logline": "히말라야 산자락 소수언어 채록 노트가 표제어의 뜻을 슬쩍 바꾸는 이야기입니다. 노트가 이상한 게 아니라, 그 뜻을 먼저 바꾸고 있던 건 채록하던 사람들 쪽이었습니다.",
+  "structure": "금기형",
+  "opening_move": "사람 한 명",
+  "opening_note": "",
+  "closing_move": "재단의 판단 보류",
+  "number_reveal": "앞",
+  "ending_mode": "없음",
+  "fault": "개체",
+  "hook_line": "라모스 박사가 마지막으로 되짚어본 낱말은, 자기 이름이었습니다.",
+  "procedures": [
+    "표제어는 하루에 두 번 다시 확인하지 않는다",
+    "노트는 마지막 화자 앞에서 펼치지 않는다",
+    "바뀐 낱말은 절대 소리 내어 읽지 않는다"
+  ],
+  "character": {
+    "name": "라모스",
+    "role": "박사 · 언어채록팀 팀장 언어학자",
+    "flaw": "자기 가설을 못 놓는다"
+  },
+  "chain": [
+    {
+      "when": "채록 사흘째 오후",
+      "event": "라모스 박사팀이 히말라야 산자락 마을에서 마지막 화자들의 말을 받아 적기 시작했다",
+      "because": "",
+      "shot": "노인 곁에 앉아 손으로 낱말을 받아적는 라모스"
+    },
+    {
+      "when": "그날 밤",
+      "event": "노트 맨 뒤에 아무도 안 적은 낱말 한 줄이 이미 올라와 있었다",
+      "because": "낮에 흘러나온 말 한마디를 아무도 옮겨 적지 않고 넘겼기 때문에",
+      "shot": "새벽에 홀로 펼쳐진 노트, 낯선 필체 한 줄"
+    },
+    {
+      "when": "일주일 뒤",
+      "event": "재단이 노트를 확보해 사이트-315 에어리어-12로 옮기고 SCP-9762로 등록, 객체 등급을 세이프로 매겼다",
+      "because": "같은 현상이 두 번 더 반복됐기 때문에",
+      "shot": "밀봉 상자에 담겨 옮겨지는 낡은 노트"
+    },
+    {
+      "when": "정밀 대조 이후",
+      "event": "노트가 새 낱말을 만드는 게 아니라 기존 낱말의 뜻을 바꾼다는 게 확인됐다",
+      "because": "이전 채록본과 표제어 뜻을 나란히 대조했기 때문에",
+      "shot": "두 시기 채록본을 나란히 놓고 대조하는 손가락"
+    },
+    {
+      "when": "곧이어",
+      "event": "표제어를 하루 두 번 다시 확인하지 않는다는 첫 번째 규칙이 세워졌다",
+      "because": "다시 확인한 표제어일수록 뜻이 더 크게 틀어진다는 상관관계가 나왔기 때문에",
+      "shot": "절차 안내문이 붙은 노트 보관 캐비닛"
+    },
+    {
+      "when": "규칙이 자리잡은 뒤",
+      "event": "근무자들 잡담에서도 특정 낱말이 이상한 뜻으로 쓰이기 시작했다",
+      "because": "노트를 들여다보지 않아도 뜻이 바뀌는 사례가 나왔기 때문에",
+      "shot": "식당에서 같은 낱말을 서로 다른 뜻으로 알아듣는 두 근무자"
+    },
+    {
+      "when": "대화 녹음 대조 후",
+      "event": "재단은 노트가 아니라 근무자들의 대화 쪽이 먼저 바뀐다는 사실을 확인했다",
+      "because": "대화 녹음 시각과 노트 기록 시각의 순서가 거꾸로였기 때문에",
+      "shot": "대조 화면에 나란히 뜬 두 시각, 대화가 기록보다 앞섬"
+    },
+    {
+      "when": "그래서",
+      "event": "바뀐 낱말은 절대 소리 내어 읽지 않는다는 마지막 규칙이 붙었다",
+      "because": "소리로만 뜻이 옮는다는 게 확인됐기 때문에",
+      "shot": "두꺼운 방음 케이스에 담겨 보관된 노트"
+    },
+    {
+      "when": "어느 날 밤",
+      "event": "라모스 박사가 자기 가설을 확인하려고 바뀐 표제어를 노인 앞에서 소리 내어 읽었다",
+      "because": "눈으로 보는 것만으론 자기 가설을 못 믿었기 때문에",
+      "shot": "노인 앞에서 노트를 펼쳐 소리 내어 읽는 라모스"
+    },
+    {
+      "when": "그 순간",
+      "event": "자리에 있던 모두가 그 낱말을 동시에 듣고 예전 뜻을 완전히 잊었다",
+      "because": "라모스가 규칙을 어기고 소리 내어 읽었기 때문에",
+      "shot": "같은 낱말을 서로 다른 얼굴로 되뇌는 근무자들"
+    },
+    {
+      "when": "다음 날",
+      "event": "근무자 명단에서 라모스의 성이 슬쩍 다르게 고쳐져 있었다",
+      "because": "그 자신도 그 자리에서 낱말을 들은 사람 중 하나였기 때문에",
+      "shot": "근무자 명단에서 성이 다르게 고쳐진 한 줄"
+    }
+  ],
+  "retention_beats": [
+    "노트가 아니라 사람 쪽이 먼저 바뀌고 있다는 게 확인됐을 때, 다들 그제서야 서로의 말을 의심하기 시작했습니다.",
+    "라모스 박사의 성이 근무자 명단에서 다르게 고쳐져 있다는 걸 알았을 때, 아무도 그게 언제부터였는지 몰랐습니다.",
+    "규칙을 어기면 어떻게 되는지는, 이 절차서 어디에도 적혀 있지 않았습니다."
+  ],
+  "cameos": [
+    {
+      "number": "SCP-173",
+      "how": "복도 끝 다른 격리실에 있다는 사실만 언급 — 눈을 떼면 움직인다는 것으로 알려진 개체라, 이쪽 절차와 정반대라는 대비로만 쓰였다."
+    },
+    {
+      "number": "SCP-914",
+      "how": "노트를 914에 넣어 '아주 정밀' 단계로 돌려본 시도만 언급 — 결과는 원본과 토씨 하나 다르지 않았고, 문제는 그대로였다."
+    }
+  ],
+  "twist_summary": "관측자의 반전 — 재단은 처음에 노트가 낱말의 뜻을 바꾼다고 봤지만, 대화 녹음과 노트 기록 시각을 대조한 결과 뜻이 바뀐 건 사람들의 대화 쪽이 먼저였고 노트는 그걸 뒤따라 기록했을 뿐이라는 반전. 라모스 박사가 마지막 규칙(바뀐 낱말은 소리 내어 읽지 않는다)을 스스로 어기고 노인 앞에서 낱말을 읽자, 그 자리의 모두가 동시에 새 뜻을 듣고 예전 뜻을 잊었으며 그 자신의 성도 근무자 명단에서 조용히 바뀌었다.",
+  "narration_full": "라모스 박사가 마지막으로 되짚어본 낱말은, 자기 이름이었습니다.\n\n히말라야 산자락에, 화자가 여든 명 남짓 남은 언어가 있습니다. 그 마을에 파견된 언어채록팀 팀장이, 라모스였고요. 노인 곁에 앉아 낱말을 받아 적는 게, 그의 하루 일과였습니다. 이 지역은 원래 휴메 지수가, 살짝 낮게 잡히는 곳이었다는 게 — 나중에야 확인됐습니다.\n\n채록 나흘째 밤, 노트 맨 뒤에 낯선 한 줄이, 이미 적혀 있었습니다. 아무도 안 적은 낱말이었죠. 팀원들은 처음엔, 노인이 밤새 혼자 적어 넣은 줄 알았습니다. 「저는 그 페이지 근처도 안 갔습니다」 — 노인의 대답은 그랬습니다.\n\n보고서엔 그냥 '이상 채록물'이라고만, 적혀 있는데요. 현장 사람들은 그 노트를, 다르게 불렀습니다. 「정의 도둑」, 이라고요. 뜻을 훔쳐 가는 놈이라는 뜻이었습니다.\n\n일주일 만에 재단이 노트를 확보했고, 사이트-315로 옮겨 격리에 들어갔습니다. 에어리어-12 안쪽, 별도 수용 유닛이었죠. 문서 번호는 SCP-9762, 객체 등급은 세이프였습니다.\n\n어려운 개체가 아니라, 다루는 방법이 이미 나와 있다는 뜻이었죠. 물론, 그 방법을 지키는 쪽이, 항상 문제였습니다.\n\n정밀 대조에서 드러난 건, 새 낱말이 아니라 뜻이 슬쩍 바뀐 낱말들이었습니다. '돌아오다'가 어느 밤 사이에, '떠나서 안 돌아오다' 쪽으로 기울어 있었죠. 다시 확인한 표제어일수록, 뜻이 더 크게 틀어져 있었고요.\n\n그래서 첫 번째 규칙이 생겼습니다. 표제어는 하루에 두 번, 다시 확인하지 않는다. 두 번째 규칙도 곧 붙었습니다. 노트는 마지막 화자 앞에서, 펼치지 않는다.\n\n복도 끝 격리실엔, 173이 있었는데요. 그 앞을 지날 때마다, 눈을 떼지 않는 법부터 배운다더군요. 이쪽 규칙은 반대였습니다. 보지 말고, 듣지도 말라는 거였으니까.\n\nD계급 한 명한테, 바뀐 표제어를 눈으로만 읽게 하는, 시험도 해봤습니다. 소리는 내지 않고, 눈으로만요. 결과는 이상 없음이었습니다. 뜻은 소리로만 옮는 모양이었죠. 인지위해 차단 헤드폰도, 씌워봤는데요. 옆에서 들리는 말까지는, 막지 못했습니다.\n\n「정의 도둑」을 914에 넣어, 아주 정밀 단계로 돌려본 적도 있습니다. 나온 페이지는, 토씨 하나 다르지 않았습니다. 한 번은 뜻을 원래대로 되돌리는, 재수용도 시도했습니다. 사흘 만에, 다시 틀어졌죠. 저도 처음엔… 그게 오히려 다행인 줄 알았어요.\n\nMTF 카파-4가 투입돼, 근무자들 잡담까지 통제하려 했습니다. 그런데도 특정 낱말이, 이상한 뜻으로 쓰이는 사례가 계속 나왔죠. 노트를 들여다보지 않은 사람들 사이에서도요 — 그 점을, 다들 제일 꺼림칙해했습니다.\n\n대화 녹음과 노트 기록 시각을, 나란히 대조했더니, 순서가 거꾸로였습니다. 뜻이 바뀐 대화가 먼저였고, 노트 기록은 그 뒤였던 거죠. 노트가 이상한 게 아니라, 우리 쪽이 먼저 바뀌고 있었던 겁니다.\n\n저도 이 대목에서는, 보고서를 다시 읽어야 했습니다. 그날 왜 하필 그 낱말이었을까요? 노트가 아니라 사람 쪽이 바뀌고 있다는 걸, 알았을 때요. 다들 그제서야… 서로의 말을 의심하기 시작했습니다.\n\n그래서 마지막 규칙이 붙었습니다. 바뀐 낱말은, 절대 소리 내어 읽지 않는다. 어기면 어떻게 되는지는, 이 절차서 어디에도 적혀 있지 않았습니다.\n\n라모스는, 자기 가설을, 눈으로 보는 것만으론 못 믿었습니다. 그래서 어느 날 밤, 바뀐 표제어 하나를, 노인 앞에서 소리 내어 읽었습니다. 「이 낱말, 지금은 이런 뜻이죠?」 그 순간 자리에 있던 모두가, 같은 낱말을 동시에 들었습니다.\n\n다음 날부터, 그 낱말은 모두에게 새 뜻으로, 굳어 있었습니다. 예전 뜻을 기억하는 사람은, 아무도 없었고요. 근무자 명단에서도, 라모스의 성이 슬쩍 바뀌어 있었습니다. 그 자신도… 그 자리에서, 낱말을 들은 사람 중 하나였으니까요.\n\n그가 매주 금요일마다, 딸에게 걸던 전화 기록은, 그대로 남아 있었습니다. 다만 상대방 이름이, 낯선 성으로 바뀌어 있었을 뿐이죠.\n\n그 자리에 있던 근무자들에게는, 씨등급 기억소거제를 썼습니다. 사흘 만에, 그 낱말에 대한 기억이, 슬쩍 되돌아왔다더군요.\n\n뱀의 손 쪽에서, 이 노트를 없애지 말라는 서신을, 보내왔다는 얘기도 있습니다. 이유는… 안 적혀 있었고요.\n\n격리 절차를 다시 손보는 회의가, 몇 차례 더 열렸습니다. 이 개체의 등급을 다시 매길지, 말지, 재단은 아직 결론을 못 냈습니다. 세이프로 둘지, 아니면 다른 등급으로, 올릴지, 그 심사가 아직 열려 있다는 뜻이죠. 여든 명 중 몇 명이나, 그 전 뜻을 기억하고 있을까요? 「정의 도둑」이라는 이름만, 사이트 안에서 여전히 쓰이고 있습니다.",
+  "segments": [
+    {
+      "text": "라모스 박사가 마지막으로 되짚어본 낱말은,",
+      "est_sec": 4,
+      "text_en": "The last word Dr. Ramos double-checked",
+      "text_ja": "ラモス博士が最後に確かめ直した単語は",
+      "text_zh_Hant": "拉莫斯博士最後重新確認的那個詞"
+    },
+    {
+      "text": "자기 이름이었습니다.",
+      "est_sec": 2,
+      "text_en": "was his own name.",
+      "text_ja": "自分の名前でした。",
+      "text_zh_Hant": "是他自己的名字。"
+    },
+    {
+      "text": "히말라야 산자락에,",
+      "est_sec": 2,
+      "text_en": "In the foothills of the Himalayas,",
+      "text_ja": "ヒマラヤの山裾に、",
+      "text_zh_Hant": "喜馬拉雅山腳下,"
+    },
+    {
+      "text": "화자가 여든 명 남짓 남은 언어가 있습니다.",
+      "est_sec": 5,
+      "text_en": "there's a language with barely eighty speakers left.",
+      "text_ja": "話者が八十人ほどしか残っていない言語があります。",
+      "text_zh_Hant": "有一種語言,使用者只剩下八十人左右。"
+    },
+    {
+      "text": "그 마을에 파견된 언어채록팀 팀장이,",
+      "est_sec": 4,
+      "text_en": "The team leader sent to record it,",
+      "text_ja": "その村に派遣された言語採録チームの隊長が、",
+      "text_zh_Hant": "被派往那個村莊的語言記錄小組隊長,"
+    },
+    {
+      "text": "라모스였고요.",
+      "est_sec": 1,
+      "text_en": "was Ramos.",
+      "text_ja": "ラモスでした。",
+      "text_zh_Hant": "就是拉莫斯。"
+    },
+    {
+      "text": "노인 곁에 앉아 낱말을 받아 적는 게,",
+      "est_sec": 4,
+      "text_en": "Sitting beside the elder writing down words,",
+      "text_ja": "老人のそばに座って単語を書き取るのが、",
+      "text_zh_Hant": "坐在老人身邊記錄詞語,"
+    },
+    {
+      "text": "그의 하루 일과였습니다.",
+      "est_sec": 2,
+      "text_en": "was his daily routine.",
+      "text_ja": "彼の日課でした。",
+      "text_zh_Hant": "是他每天的例行工作。"
+    },
+    {
+      "text": "이 지역은 원래 휴메 지수가,",
+      "est_sec": 3,
+      "text_en": "This region originally had a slightly low Hume index,",
+      "text_ja": "この地域はもともとヒューム指数がやや低めで、",
+      "text_zh_Hant": "這個地區的休姆指數原本就偏低,"
+    },
+    {
+      "text": "살짝 낮게 잡히는 곳이었다는 게",
+      "est_sec": 3,
+      "text_en": "as it turned out",
+      "text_ja": "だったということが",
+      "text_zh_Hant": "這件事"
+    },
+    {
+      "text": "— 나중에야 확인됐습니다.",
+      "est_sec": 3,
+      "text_en": "— only confirmed much later.",
+      "text_ja": "— 後になってから確認されました。",
+      "text_zh_Hant": "— 是後來才確認的。"
+    },
+    {
+      "text": "채록 나흘째 밤,",
+      "est_sec": 2,
+      "text_en": "On the fourth night of recording,",
+      "text_ja": "採録四日目の夜、",
+      "text_zh_Hant": "記錄的第四晚,"
+    },
+    {
+      "text": "노트 맨 뒤에 낯선 한 줄이,",
+      "est_sec": 3,
+      "text_en": "a strange line at the back of the notebook",
+      "text_ja": "ノートの最後のページに見覚えのない一行が、",
+      "text_zh_Hant": "筆記本最後一頁出現了陌生的一行字,"
+    },
+    {
+      "text": "이미 적혀 있었습니다.",
+      "est_sec": 2,
+      "text_en": "was already written there.",
+      "text_ja": "すでに書き込まれていました。",
+      "text_zh_Hant": "早已寫在那裡。"
+    },
+    {
+      "text": "아무도 안 적은 낱말이었죠.",
+      "est_sec": 3,
+      "text_en": "No one had written that word.",
+      "text_ja": "誰も書いていない単語でした。",
+      "text_zh_Hant": "沒有人寫過那個詞。"
+    },
+    {
+      "text": "팀원들은 처음엔,",
+      "est_sec": 2,
+      "text_en": "At first the team thought",
+      "text_ja": "チームは最初、",
+      "text_zh_Hant": "團隊起初以為,"
+    },
+    {
+      "text": "노인이 밤새 혼자 적어 넣은 줄 알았습니다.",
+      "est_sec": 5,
+      "text_en": "the old man had written it alone overnight.",
+      "text_ja": "老人が夜のうちに一人で書き足したのだと思いました。",
+      "text_zh_Hant": "是老人在夜裡獨自寫上去的。"
+    },
+    {
+      "text": "「저는 그 페이지 근처도 안 갔습니다」",
+      "est_sec": 4,
+      "text_en": "'I never even went near that page,'",
+      "text_ja": "「私はそのページの近くにも行っていません」",
+      "text_zh_Hant": "「我連那一頁附近都沒去過」"
+    },
+    {
+      "text": "— 노인의 대답은 그랬습니다.",
+      "est_sec": 3,
+      "text_en": "— that was the old man's answer.",
+      "text_ja": "— 老人の答えはそうでした。",
+      "text_zh_Hant": "— 老人是這麼回答的。"
+    },
+    {
+      "text": "보고서엔 그냥 '이상 채록물'이라고만,",
+      "est_sec": 4,
+      "text_en": "The report just calls it an 'anomalous recording,'",
+      "text_ja": "報告書にはただ『異常採録物』とだけ、",
+      "text_zh_Hant": "報告書上只寫著『異常記錄物』,"
+    },
+    {
+      "text": "적혀 있는데요.",
+      "est_sec": 2,
+      "text_en": "nothing more.",
+      "text_ja": "書かれているだけですが。",
+      "text_zh_Hant": "僅此而已。"
+    },
+    {
+      "text": "현장 사람들은 그 노트를,",
+      "est_sec": 3,
+      "text_en": "But people on site",
+      "text_ja": "現場の人たちは、",
+      "text_zh_Hant": "但現場的人們,"
+    },
+    {
+      "text": "다르게 불렀습니다.",
+      "est_sec": 2,
+      "text_en": "called it something else.",
+      "text_ja": "そのノートを別の名前で呼んでいました。",
+      "text_zh_Hant": "卻用另一個名字稱呼那本筆記本。"
+    },
+    {
+      "text": "「정의 도둑」, 이라고요.",
+      "est_sec": 3,
+      "text_en": "'The Definition Thief,'",
+      "text_ja": "「定義泥棒」、と。",
+      "text_zh_Hant": "「定義小偷」,他們這麼叫。"
+    },
+    {
+      "text": "뜻을 훔쳐 가는 놈이라는 뜻이었습니다.",
+      "est_sec": 4,
+      "emphasis": "정의 도둑",
+      "text_en": "meaning something that steals meaning.",
+      "text_ja": "意味を盗んでいく奴、という意味でした。",
+      "text_zh_Hant": "意思是偷走詞義的傢伙。"
+    },
+    {
+      "text": "일주일 만에 재단이 노트를 확보했고,",
+      "est_sec": 4,
+      "text_en": "Within a week the Foundation secured the notebook,",
+      "text_ja": "一週間のうちに財団がノートを確保し、",
+      "text_zh_Hant": "一週之內,基金會就確保了這本筆記本,"
+    },
+    {
+      "text": "사이트-315로 옮겨 격리에 들어갔습니다.",
+      "est_sec": 4,
+      "text_en": "moved it to Site-315, and placed it in containment.",
+      "text_ja": "サイト315に移して収容しました。",
+      "text_zh_Hant": "移送到315號基地並進行了收容。"
+    },
+    {
+      "text": "에어리어-12 안쪽, 별도 수용 유닛이었죠.",
+      "est_sec": 5,
+      "text_en": "Inside Area-12, in a separate containment unit.",
+      "text_ja": "エリア12の中、別の収容ユニットでした。",
+      "text_zh_Hant": "位於12號區域內,一個獨立的收容單位。"
+    },
+    {
+      "text": "문서 번호는 SCP-9762,",
+      "est_sec": 3,
+      "text_en": "The file number was set as SCP-9762,",
+      "text_ja": "文書番号はSCP-9762、",
+      "text_zh_Hant": "文件編號定為SCP-9762,"
+    },
+    {
+      "text": "객체 등급은 세이프였습니다.",
+      "est_sec": 3,
+      "text_en": "its object class was Safe.",
+      "text_ja": "オブジェクトクラスはセーフでした。",
+      "text_zh_Hant": "物件等級為安全級。"
+    },
+    {
+      "text": "어려운 개체가 아니라,",
+      "est_sec": 2,
+      "text_en": "Not because it was a hard case,",
+      "text_ja": "難しい個体だからではなく、",
+      "text_zh_Hant": "並不是因為它是難以應付的個體,"
+    },
+    {
+      "text": "다루는 방법이 이미 나와 있다는 뜻이었죠.",
+      "est_sec": 4,
+      "text_en": "but because a way to handle it already existed.",
+      "text_ja": "対処法がすでに確立されているという意味でした。",
+      "text_zh_Hant": "而是因為處理方法早已確立。"
+    },
+    {
+      "text": "물론, 그 방법을 지키는 쪽이,",
+      "est_sec": 3,
+      "text_en": "Of course, actually keeping to that method",
+      "text_ja": "もちろん、その方法を守る方が、",
+      "text_zh_Hant": "當然,能否遵守這個方法,"
+    },
+    {
+      "text": "항상 문제였습니다.",
+      "est_sec": 2,
+      "text_en": "was always the real problem.",
+      "text_ja": "いつも本当の問題でした。",
+      "text_zh_Hant": "才始終是真正的問題。"
+    },
+    {
+      "text": "정밀 대조에서 드러난 건,",
+      "est_sec": 3,
+      "text_en": "What the close comparison revealed",
+      "text_ja": "精密な照合で明らかになったのは、",
+      "text_zh_Hant": "精密比對揭露的,"
+    },
+    {
+      "text": "새 낱말이 아니라 뜻이 슬쩍 바뀐 낱말들이었습니다.",
+      "est_sec": 5,
+      "text_en": "wasn't new words, but words whose meanings had quietly shifted.",
+      "text_ja": "新しい単語ではなく、意味がひそかに変わった単語たちでした。",
+      "text_zh_Hant": "不是新詞,而是詞義被悄悄改變的那些詞。"
+    },
+    {
+      "text": "'돌아오다'가 어느 밤 사이에,",
+      "est_sec": 3,
+      "text_en": "'To return' had, overnight,",
+      "text_ja": "『戻る』が、ある夜の間に、",
+      "text_zh_Hant": "『歸來』在某天夜裡,"
+    },
+    {
+      "text": "'떠나서 안 돌아오다' 쪽으로 기울어 있었죠.",
+      "est_sec": 5,
+      "text_en": "tilted toward 'to leave and never come back.'",
+      "text_ja": "『去ったきり戻らない』の方へ傾いていました。",
+      "text_zh_Hant": "悄悄偏向了『離去而不再歸來』的意思。"
+    },
+    {
+      "text": "다시 확인한 표제어일수록,",
+      "est_sec": 3,
+      "text_en": "The more times a headword was re-checked,",
+      "text_ja": "確認し直した見出し語ほど、",
+      "text_zh_Hant": "被重新確認過越多次的詞條,"
+    },
+    {
+      "text": "뜻이 더 크게 틀어져 있었고요.",
+      "est_sec": 3,
+      "text_en": "the more its meaning had warped.",
+      "text_ja": "意味がより大きくずれていました。",
+      "text_zh_Hant": "意義扭曲得就越嚴重。"
+    },
+    {
+      "text": "그래서 첫 번째 규칙이 생겼습니다.",
+      "est_sec": 4,
+      "text_en": "So the first rule was made.",
+      "text_ja": "そこで最初の規則ができました。",
+      "text_zh_Hant": "於是第一條規則就此制定。"
+    },
+    {
+      "text": "표제어는 하루에 두 번,",
+      "est_sec": 2,
+      "text_en": "A headword is not checked twice",
+      "text_ja": "見出し語は一日に二度、",
+      "text_zh_Hant": "同一個詞條,一天之內"
+    },
+    {
+      "text": "다시 확인하지 않는다.",
+      "est_sec": 2,
+      "text_en": "in a single day.",
+      "text_ja": "確認し直さない。",
+      "text_zh_Hant": "不重新確認第二次。"
+    },
+    {
+      "text": "두 번째 규칙도 곧 붙었습니다.",
+      "est_sec": 3,
+      "text_en": "A second rule followed soon after.",
+      "text_ja": "二つ目の規則もすぐに加わりました。",
+      "text_zh_Hant": "第二條規則很快也跟著制定。"
+    },
+    {
+      "text": "노트는 마지막 화자 앞에서,",
+      "est_sec": 3,
+      "text_en": "The notebook is never opened",
+      "text_ja": "ノートは最後の話者の前では、",
+      "text_zh_Hant": "筆記本絕不在最後的使用者面前,"
+    },
+    {
+      "text": "펼치지 않는다.",
+      "est_sec": 2,
+      "text_en": "in front of the last speaker.",
+      "text_ja": "開かない。",
+      "text_zh_Hant": "被翻開。"
+    },
+    {
+      "text": "복도 끝 격리실엔,",
+      "est_sec": 2,
+      "text_en": "At the end of the hall, in another containment cell,",
+      "text_ja": "廊下の突き当たりの収容室には、",
+      "text_zh_Hant": "走廊盡頭的收容室裡,"
+    },
+    {
+      "text": "173이 있었는데요.",
+      "est_sec": 2,
+      "text_en": "was SCP-173.",
+      "text_ja": "173がいたそうです。",
+      "text_zh_Hant": "住著SCP-173。"
+    },
+    {
+      "text": "그 앞을 지날 때마다,",
+      "est_sec": 2,
+      "text_en": "Every time they passed it,",
+      "text_ja": "その前を通るたびに、",
+      "text_zh_Hant": "每次經過它時,"
+    },
+    {
+      "text": "눈을 떼지 않는 법부터 배운다더군요.",
+      "est_sec": 4,
+      "text_en": "staff learn never to look away.",
+      "text_ja": "目を離さない方法から学ぶのだと言います。",
+      "text_zh_Hant": "工作人員都要學會絕不移開視線。"
+    },
+    {
+      "text": "이쪽 규칙은 반대였습니다.",
+      "est_sec": 3,
+      "text_en": "Our rule here was the opposite.",
+      "text_ja": "こちらの規則は逆でした。",
+      "text_zh_Hant": "而這裡的規則正好相反。"
+    },
+    {
+      "text": "보지 말고, 듣지도 말라는 거였으니까.",
+      "est_sec": 4,
+      "text_en": "Don't look, and don't listen either.",
+      "text_ja": "見るな、そして聞くな、というものでしたから。",
+      "text_zh_Hant": "不要看,也不要聽。"
+    },
+    {
+      "text": "D계급 한 명한테,",
+      "est_sec": 2,
+      "text_en": "They even had one D-Class",
+      "text_ja": "D階級を一人使って、",
+      "text_zh_Hant": "他們甚至找來一名D級人員,"
+    },
+    {
+      "text": "바뀐 표제어를 눈으로만 읽게 하는,",
+      "est_sec": 4,
+      "text_en": "read an altered headword with only his eyes,",
+      "text_ja": "変わった見出し語を目だけで読ませる、",
+      "text_zh_Hant": "讓他只用眼睛去讀那個改變過的詞條,"
+    },
+    {
+      "text": "시험도 해봤습니다.",
+      "est_sec": 2,
+      "text_en": "as a test.",
+      "text_ja": "という試験もしました。",
+      "text_zh_Hant": "作為一項試驗。"
+    },
+    {
+      "text": "소리는 내지 않고, 눈으로만요.",
+      "est_sec": 3,
+      "text_en": "No sound, eyes only.",
+      "text_ja": "声は出さず、目だけで。",
+      "text_zh_Hant": "不出聲,只用眼睛看。"
+    },
+    {
+      "text": "결과는 이상 없음이었습니다.",
+      "est_sec": 3,
+      "text_en": "The result: no anomaly.",
+      "text_ja": "結果は異常なしでした。",
+      "text_zh_Hant": "結果顯示沒有異常。"
+    },
+    {
+      "text": "뜻은 소리로만 옮는 모양이었죠.",
+      "est_sec": 3,
+      "text_en": "The meaning seemed to spread only through sound.",
+      "text_ja": "意味は音でしか伝わらないようでした。",
+      "text_zh_Hant": "看來詞義只透過聲音傳播。"
+    },
+    {
+      "text": "인지위해 차단 헤드폰도, 씌워봤는데요.",
+      "est_sec": 4,
+      "text_en": "They even tried anti-memetic headphones,",
+      "text_ja": "認知有害遮断用のヘッドホンも、",
+      "text_zh_Hant": "他們甚至試過認知危害遮蔽耳機,"
+    },
+    {
+      "text": "옆에서 들리는 말까지는, 막지 못했습니다.",
+      "est_sec": 4,
+      "text_en": "but couldn't block words overheard nearby.",
+      "text_ja": "被せてみましたが、そばで聞こえる言葉までは防げませんでした。",
+      "text_zh_Hant": "但擋不住從旁邊聽到的話語。"
+    },
+    {
+      "text": "「정의 도둑」을 914에 넣어,",
+      "est_sec": 3,
+      "text_en": "They even ran the Definition Thief through SCP-914,",
+      "text_ja": "「定義泥棒」を914に入れて、",
+      "text_zh_Hant": "他們甚至把「定義小偷」放進914號,"
+    },
+    {
+      "text": "아주 정밀 단계로 돌려본 적도 있습니다.",
+      "est_sec": 4,
+      "text_en": "on the finest setting.",
+      "text_ja": "『最高精度』設定で回したこともあります。",
+      "text_zh_Hant": "以『極精細』檔位運轉過。"
+    },
+    {
+      "text": "나온 페이지는,",
+      "est_sec": 2,
+      "text_en": "The page that came out,",
+      "text_ja": "出てきたページは、",
+      "text_zh_Hant": "出來的那一頁,"
+    },
+    {
+      "text": "토씨 하나 다르지 않았습니다.",
+      "est_sec": 3,
+      "text_en": "didn't differ by so much as a punctuation mark.",
+      "text_ja": "句読点一つ違っていませんでした。",
+      "text_zh_Hant": "連一個標點符號都沒有不同。"
+    },
+    {
+      "text": "한 번은 뜻을 원래대로 되돌리는,",
+      "est_sec": 3,
+      "text_en": "Once, they even tried re-containment,",
+      "text_ja": "一度は、意味を元に戻す再収容も、",
+      "text_zh_Hant": "他們也曾嘗試過再收容,想把詞義還原,"
+    },
+    {
+      "text": "재수용도 시도했습니다.",
+      "est_sec": 2,
+      "text_en": "to reset the meaning.",
+      "text_ja": "試みました。",
+      "text_zh_Hant": "重新啟動收容程序。"
+    },
+    {
+      "text": "사흘 만에, 다시 틀어졌죠.",
+      "est_sec": 3,
+      "text_en": "Within three days, it had drifted again.",
+      "text_ja": "三日で、また変わってしまいました。",
+      "text_zh_Hant": "三天之內,又再度偏移了。"
+    },
+    {
+      "text": "저도 처음엔…",
+      "est_sec": 1,
+      "text_en": "At first, I too…",
+      "text_ja": "私も最初は…",
+      "text_zh_Hant": "起初,我也…"
+    },
+    {
+      "text": "그게 오히려 다행인 줄 알았어요.",
+      "est_sec": 3,
+      "text_en": "thought that was actually good news.",
+      "text_ja": "むしろそれを幸いだと思っていました。",
+      "text_zh_Hant": "還以為那反而是件幸運的事。"
+    },
+    {
+      "text": "MTF 카파-4가 투입돼,",
+      "est_sec": 3,
+      "text_en": "MTF Kappa-4 was brought in",
+      "text_ja": "MTFカッパ4が投入され、",
+      "text_zh_Hant": "MTF卡帕4小隊被派了進來,"
+    },
+    {
+      "text": "근무자들 잡담까지 통제하려 했습니다.",
+      "est_sec": 4,
+      "text_en": "to try to control even staff's idle chatter.",
+      "text_ja": "職員の何気ない会話まで統制しようとしました。",
+      "text_zh_Hant": "試圖連工作人員的閒聊都加以管控。"
+    },
+    {
+      "text": "그런데도 특정 낱말이,",
+      "est_sec": 2,
+      "text_en": "Even so, certain words",
+      "text_ja": "それでも特定の単語が、",
+      "text_zh_Hant": "即便如此,某些詞語"
+    },
+    {
+      "text": "이상한 뜻으로 쓰이는 사례가 계속 나왔죠.",
+      "est_sec": 4,
+      "text_en": "kept turning up used with a strange new meaning.",
+      "text_ja": "妙な意味で使われる事例が続きました。",
+      "text_zh_Hant": "仍不斷出現被以奇怪新義使用的案例。"
+    },
+    {
+      "text": "노트를 들여다보지 않은 사람들 사이에서도요",
+      "est_sec": 4,
+      "text_en": "Even among people who'd never looked at the notebook",
+      "text_ja": "ノートを一度も見ていない人たちの間でも、",
+      "text_zh_Hant": "甚至在從未看過那本筆記本的人之間也是如此"
+    },
+    {
+      "text": "— 그 점을, 다들 제일 꺼림칙해했습니다.",
+      "est_sec": 4,
+      "text_en": "— and that was what unsettled everyone the most.",
+      "text_ja": "— その点を、みんな一番不気味に思っていました。",
+      "text_zh_Hant": "— 這一點,是大家最感到不安的地方。"
+    },
+    {
+      "text": "대화 녹음과 노트 기록 시각을,",
+      "est_sec": 3,
+      "text_en": "When they cross-referenced conversation recordings",
+      "text_ja": "会話の録音とノートの記録時刻を、",
+      "text_zh_Hant": "當他們把對話錄音與筆記本記錄的時間"
+    },
+    {
+      "text": "나란히 대조했더니,",
+      "est_sec": 2,
+      "text_en": "against the notebook's timestamps,",
+      "text_ja": "並べて照合してみたところ、",
+      "text_zh_Hant": "拿來並列比對之後,"
+    },
+    {
+      "text": "순서가 거꾸로였습니다.",
+      "est_sec": 2,
+      "text_en": "the order was backwards.",
+      "text_ja": "順番が逆でした。",
+      "text_zh_Hant": "發現順序是顛倒的。"
+    },
+    {
+      "text": "뜻이 바뀐 대화가 먼저였고,",
+      "est_sec": 3,
+      "text_en": "The shifted conversation came first,",
+      "text_ja": "意味が変わった会話の方が先で、",
+      "text_zh_Hant": "詞義改變的對話發生在先,"
+    },
+    {
+      "text": "노트 기록은 그 뒤였던 거죠.",
+      "est_sec": 3,
+      "text_en": "and the notebook's entry came after.",
+      "text_ja": "ノートの記録はその後だったのです。",
+      "text_zh_Hant": "筆記本上的記錄反而在後。"
+    },
+    {
+      "text": "노트가 이상한 게 아니라,",
+      "est_sec": 3,
+      "text_en": "It wasn't the notebook that was strange —",
+      "text_ja": "おかしいのはノートではなく、",
+      "text_zh_Hant": "奇怪的不是那本筆記本,"
+    },
+    {
+      "text": "우리 쪽이 먼저 바뀌고 있었던 겁니다.",
+      "est_sec": 4,
+      "emphasis": "우리 쪽이 먼저",
+      "text_en": "it was us who had changed first.",
+      "text_ja": "私たちの方が先に変わっていたのです。",
+      "text_zh_Hant": "而是我們自己先發生了改變。"
+    },
+    {
+      "text": "저도 이 대목에서는,",
+      "est_sec": 2,
+      "text_en": "Even I, at this point in the report,",
+      "text_ja": "私もこの箇所では、",
+      "text_zh_Hant": "就連我,讀到報告的這一段時,"
+    },
+    {
+      "text": "보고서를 다시 읽어야 했습니다.",
+      "est_sec": 3,
+      "text_en": "had to go back and read it again.",
+      "text_ja": "報告書を読み返さなければなりませんでした。",
+      "text_zh_Hant": "也不得不重新讀一遍。"
+    },
+    {
+      "text": "그날 왜 하필 그 낱말이었을까요?",
+      "est_sec": 3,
+      "text_en": "Why that word, of all words, that day?",
+      "text_ja": "その日、なぜよりによってその単語だったのでしょうか?",
+      "text_zh_Hant": "那一天,為什麼偏偏是那個詞呢?"
+    },
+    {
+      "text": "노트가 아니라 사람 쪽이 바뀌고 있다는 걸,",
+      "est_sec": 5,
+      "text_en": "Once they realized it wasn't the notebook but the people",
+      "text_ja": "ノートではなく人の方が変わっているのだと、",
+      "text_zh_Hant": "當他們意識到不是筆記本,而是人在改變時,"
+    },
+    {
+      "text": "알았을 때요.",
+      "est_sec": 1,
+      "text_en": "who were changing,",
+      "text_ja": "分かった時点で、",
+      "text_zh_Hant": "就在明白這一點的那一刻,"
+    },
+    {
+      "text": "다들 그제서야…",
+      "est_sec": 2,
+      "text_en": "that's when everyone finally…",
+      "text_ja": "みんなようやく…",
+      "text_zh_Hant": "所有人才終於…"
+    },
+    {
+      "text": "서로의 말을 의심하기 시작했습니다.",
+      "est_sec": 4,
+      "text_en": "started doubting each other's words.",
+      "text_ja": "互いの言葉を疑い始めました。",
+      "text_zh_Hant": "開始懷疑起彼此的話語。"
+    },
+    {
+      "text": "그래서 마지막 규칙이 붙었습니다.",
+      "est_sec": 3,
+      "text_en": "So the last rule was added.",
+      "text_ja": "そうして最後の規則が加わりました。",
+      "text_zh_Hant": "於是,最後一條規則被加了上去。"
+    },
+    {
+      "text": "바뀐 낱말은,",
+      "est_sec": 1,
+      "text_en": "A shifted word",
+      "text_ja": "変わった単語は、",
+      "text_zh_Hant": "已經改變的詞語,"
+    },
+    {
+      "text": "절대 소리 내어 읽지 않는다.",
+      "est_sec": 3,
+      "text_en": "is never read aloud.",
+      "text_ja": "決して声に出して読まない。",
+      "text_zh_Hant": "絕不出聲朗讀。"
+    },
+    {
+      "text": "어기면 어떻게 되는지는,",
+      "est_sec": 2,
+      "text_en": "What happens if you break it —",
+      "text_ja": "破ったらどうなるのか、",
+      "text_zh_Hant": "如果違反了會怎樣——"
+    },
+    {
+      "text": "이 절차서 어디에도 적혀 있지 않았습니다.",
+      "est_sec": 4,
+      "text_en": "that was written nowhere in the procedures.",
+      "text_ja": "その手順書のどこにも書かれていませんでした。",
+      "text_zh_Hant": "這份程序文件裡,哪裡都沒有寫。"
+    },
+    {
+      "text": "라모스는, 자기 가설을,",
+      "est_sec": 2,
+      "text_en": "Ramos, unwilling to let go of his own theory,",
+      "text_ja": "ラモスは、自分の仮説を、",
+      "text_zh_Hant": "拉莫斯無法放下自己的假設,"
+    },
+    {
+      "text": "눈으로 보는 것만으론 못 믿었습니다.",
+      "est_sec": 4,
+      "text_en": "couldn't be convinced by sight alone.",
+      "text_ja": "目で見るだけでは信じられませんでした。",
+      "text_zh_Hant": "光靠眼睛看,無法讓他信服。"
+    },
+    {
+      "text": "그래서 어느 날 밤,",
+      "est_sec": 2,
+      "text_en": "So one night,",
+      "text_ja": "そこである夜、",
+      "text_zh_Hant": "於是在某個夜晚,"
+    },
+    {
+      "text": "바뀐 표제어 하나를,",
+      "est_sec": 2,
+      "text_en": "he took one altered headword",
+      "text_ja": "変わった見出し語を一つ、",
+      "text_zh_Hant": "他拿出一個已經改變的詞條,"
+    },
+    {
+      "text": "노인 앞에서 소리 내어 읽었습니다.",
+      "est_sec": 4,
+      "text_en": "and read it aloud in front of the old man.",
+      "text_ja": "老人の前で声に出して読みました。",
+      "text_zh_Hant": "在老人面前大聲讀了出來。"
+    },
+    {
+      "text": "「이 낱말, 지금은 이런 뜻이죠?」",
+      "est_sec": 4,
+      "text_en": "'This word — that's what it means now, right?'",
+      "text_ja": "「この言葉、今はこういう意味ですよね?」",
+      "text_zh_Hant": "「這個詞,現在是這個意思吧?」"
+    },
+    {
+      "text": "그 순간 자리에 있던 모두가,",
+      "est_sec": 3,
+      "text_en": "At that instant, everyone present",
+      "text_ja": "その瞬間、その場にいた全員が、",
+      "text_zh_Hant": "就在那一瞬間,在場的所有人"
+    },
+    {
+      "text": "같은 낱말을 동시에 들었습니다.",
+      "est_sec": 3,
+      "emphasis": "동시에 들었다",
+      "text_en": "heard the same word, at the same time.",
+      "text_ja": "同じ単語を同時に聞いてしまいました。",
+      "text_zh_Hant": "同時聽見了同一個詞。"
+    },
+    {
+      "text": "다음 날부터,",
+      "est_sec": 1,
+      "text_en": "From the next day on,",
+      "text_ja": "翌日から、",
+      "text_zh_Hant": "從隔天開始,"
+    },
+    {
+      "text": "그 낱말은 모두에게 새 뜻으로,",
+      "est_sec": 3,
+      "text_en": "that word had settled into its new meaning",
+      "text_ja": "その単語は全員にとって新しい意味で、",
+      "text_zh_Hant": "那個詞對所有人來說,已經固定成了新的意思,"
+    },
+    {
+      "text": "굳어 있었습니다.",
+      "est_sec": 2,
+      "text_en": "for everyone.",
+      "text_ja": "定着していました。",
+      "text_zh_Hant": "無一例外。"
+    },
+    {
+      "text": "예전 뜻을 기억하는 사람은,",
+      "est_sec": 3,
+      "text_en": "No one who remembered",
+      "text_ja": "以前の意味を覚えている人は、",
+      "text_zh_Hant": "還記得原本意思的人,"
+    },
+    {
+      "text": "아무도 없었고요.",
+      "est_sec": 2,
+      "text_en": "the old meaning was left.",
+      "text_ja": "一人もいませんでした。",
+      "text_zh_Hant": "一個都沒有。"
+    },
+    {
+      "text": "근무자 명단에서도,",
+      "est_sec": 2,
+      "text_en": "Even on the staff roster,",
+      "text_ja": "職員名簿でも、",
+      "text_zh_Hant": "就連職員名冊上,"
+    },
+    {
+      "text": "라모스의 성이 슬쩍 바뀌어 있었습니다.",
+      "est_sec": 4,
+      "text_en": "Ramos's surname had quietly been changed.",
+      "text_ja": "ラモスの姓がひっそりと変わっていました。",
+      "text_zh_Hant": "拉莫斯的姓氏也悄悄被改了。"
+    },
+    {
+      "text": "그 자신도… 그 자리에서,",
+      "est_sec": 3,
+      "text_en": "He himself, after all… had been",
+      "text_ja": "彼自身も…その場で",
+      "text_zh_Hant": "他自己……也是"
+    },
+    {
+      "text": "낱말을 들은 사람 중 하나였으니까요.",
+      "est_sec": 4,
+      "text_en": "one of the people who'd heard that word.",
+      "text_ja": "その単語を聞いた一人だったのですから。",
+      "text_zh_Hant": "在場聽見那個詞的其中一人。"
+    },
+    {
+      "text": "그가 매주 금요일마다,",
+      "est_sec": 2,
+      "text_en": "The call records of him phoning",
+      "text_ja": "毎週金曜日に娘へかけていた",
+      "text_zh_Hant": "他每週五打給女兒的"
+    },
+    {
+      "text": "딸에게 걸던 전화 기록은,",
+      "est_sec": 3,
+      "text_en": "his daughter every Friday",
+      "text_ja": "電話の記録は、",
+      "text_zh_Hant": "通話記錄,"
+    },
+    {
+      "text": "그대로 남아 있었습니다.",
+      "est_sec": 2,
+      "text_en": "were still there, untouched.",
+      "text_ja": "そのまま残っていました。",
+      "text_zh_Hant": "依然完好地留了下來。"
+    },
+    {
+      "text": "다만 상대방 이름이,",
+      "est_sec": 2,
+      "text_en": "Only the name on the other end",
+      "text_ja": "ただ、相手の名前だけが、",
+      "text_zh_Hant": "只是通話對象的名字,"
+    },
+    {
+      "text": "낯선 성으로 바뀌어 있었을 뿐이죠.",
+      "est_sec": 4,
+      "text_en": "had changed to an unfamiliar surname.",
+      "text_ja": "見覚えのない姓に変わっていただけです。",
+      "text_zh_Hant": "被換成了一個陌生的姓氏。"
+    },
+    {
+      "text": "그 자리에 있던 근무자들에게는,",
+      "est_sec": 3,
+      "text_en": "The staff who had been in that room",
+      "text_ja": "その場にいた職員たちには、",
+      "text_zh_Hant": "在場的所有工作人員,"
+    },
+    {
+      "text": "씨등급 기억소거제를 썼습니다.",
+      "est_sec": 3,
+      "text_en": "were given Class-C amnestics.",
+      "text_ja": "C等級の記憶処理剤が使われました。",
+      "text_zh_Hant": "都被施以C級記憶消除劑。"
+    },
+    {
+      "text": "사흘 만에,",
+      "est_sec": 1,
+      "text_en": "Within three days,",
+      "text_ja": "三日で、",
+      "text_zh_Hant": "三天之內,"
+    },
+    {
+      "text": "그 낱말에 대한 기억이,",
+      "est_sec": 2,
+      "text_en": "their memory of that word",
+      "text_ja": "その単語についての記憶が、",
+      "text_zh_Hant": "他們對那個詞的記憶"
+    },
+    {
+      "text": "슬쩍 되돌아왔다더군요.",
+      "est_sec": 2,
+      "text_en": "had quietly come back, they say.",
+      "text_ja": "そっと戻ってきたそうです。",
+      "text_zh_Hant": "據說又悄悄地恢復了。"
+    },
+    {
+      "text": "뱀의 손 쪽에서,",
+      "est_sec": 2,
+      "text_en": "Word has it that the Serpent's Hand",
+      "text_ja": "蛇の手の側から、",
+      "text_zh_Hant": "據說「蛇之手」那邊,"
+    },
+    {
+      "text": "이 노트를 없애지 말라는 서신을,",
+      "est_sec": 3,
+      "text_en": "sent a letter asking that the notebook not be destroyed.",
+      "text_ja": "このノートを破棄しないでほしいという書簡を、",
+      "text_zh_Hant": "曾送來一封信,要求不要銷毀這本筆記本。"
+    },
+    {
+      "text": "보내왔다는 얘기도 있습니다.",
+      "est_sec": 3,
+      "text_en": "At least, that's the rumor.",
+      "text_ja": "送ってきたという話もあります。",
+      "text_zh_Hant": "至少,有這樣的傳聞。"
+    },
+    {
+      "text": "이유는… 안 적혀 있었고요.",
+      "est_sec": 3,
+      "text_en": "The reason… was never written down.",
+      "text_ja": "理由は…書かれていませんでした。",
+      "text_zh_Hant": "理由……並沒有寫明。"
+    },
+    {
+      "text": "격리 절차를 다시 손보는 회의가,",
+      "est_sec": 3,
+      "text_en": "More meetings have been held",
+      "text_ja": "収容手順を見直す会議が、",
+      "text_zh_Hant": "重新審視收容程序的會議,"
+    },
+    {
+      "text": "몇 차례 더 열렸습니다.",
+      "est_sec": 2,
+      "text_en": "to revise the containment procedures.",
+      "text_ja": "その後も何度か開かれました。",
+      "text_zh_Hant": "此後又召開了好幾次。"
+    },
+    {
+      "text": "이 개체의 등급을 다시 매길지,",
+      "est_sec": 3,
+      "text_en": "Whether to reclassify this object",
+      "text_ja": "この個体の等級を見直すかどうか、",
+      "text_zh_Hant": "是否要重新評定這個個體的等級,"
+    },
+    {
+      "text": "말지, 재단은 아직 결론을 못 냈습니다.",
+      "est_sec": 4,
+      "text_en": "the Foundation still hasn't reached a conclusion.",
+      "text_ja": "財団はまだ結論を出せていません。",
+      "text_zh_Hant": "基金會至今仍未有結論。"
+    },
+    {
+      "text": "세이프로 둘지, 아니면 다른 등급으로,",
+      "est_sec": 4,
+      "text_en": "Keep it Safe, or raise it",
+      "text_ja": "セーフのままにするか、それとも別の等級に、",
+      "text_zh_Hant": "維持在安全級,還是調升為"
+    },
+    {
+      "text": "올릴지, 그 심사가 아직 열려 있다는 뜻이죠.",
+      "est_sec": 5,
+      "text_en": "to another class — that review is still open.",
+      "text_ja": "上げるか、その審査はまだ続いているということです。",
+      "text_zh_Hant": "另一個等級——審查依然懸而未決。"
+    },
+    {
+      "text": "여든 명 중 몇 명이나,",
+      "est_sec": 2,
+      "text_en": "Of the eighty or so speakers,",
+      "text_ja": "八十人ほどのうち、何人が、",
+      "text_zh_Hant": "在那八十來人當中,有多少人"
+    },
+    {
+      "text": "그 전 뜻을 기억하고 있을까요?",
+      "est_sec": 3,
+      "text_en": "how many still remember the old meaning?",
+      "text_ja": "以前の意味を覚えているでしょうか?",
+      "text_zh_Hant": "還記得原本的意思呢?"
+    },
+    {
+      "text": "「정의 도둑」이라는 이름만,",
+      "est_sec": 3,
+      "text_en": "Only the name 'the Definition Thief'",
+      "text_ja": "「定義泥棒」という呼び名だけが、",
+      "text_zh_Hant": "唯有「定義小偷」這個稱呼,"
+    },
+    {
+      "text": "사이트 안에서 여전히 쓰이고 있습니다.",
+      "est_sec": 4,
+      "text_en": "is still used around the site.",
+      "text_ja": "サイト内では今も使われています。",
+      "text_zh_Hant": "至今仍在基地裡被使用著。"
+    }
+  ],
+  "scenes": [
+    {
+      "prompt": "close shot of a worn leather field notebook open on a rough wooden table, handwritten lines glowing faintly teal as if the ink is still shifting; an elder's weathered hand near the page edge, a pencil mid-stroke just out of frame; low three-quarter angle, notebook fills most of frame; single warm lantern light from the left, rest of tent in near-black; worn leather cover, coarse paper, graphite pencil; thin dust motes in lamplight; deep black background, teal glow from the page; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "extreme close-up of the notebook's last page, one full line of unfamiliar handwriting glowing faint teal, clearly different ink from the rest of the page; page fills over eighty percent of frame, corner slightly curled; low angle looking down the page; single cold teal light emanating from the ink itself, everything else pitch black; aged paper grain, dried ink, torn edge; still air, faint mist; near-black background, teal accent glow; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "a heavy sealed transport case being carried through a dark canvas tent flap at night by a gloved hand, case latch glinting; case dominates frame, tent interior behind in shadow; low angle, three-quarter view; single flashlight beam from below-left; matte metal case, canvas tent fabric, frost on the ground; cold night mist drifting; near-black background, cold teal flashlight glow; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "two open notebooks placed side by side on a steel table, one entry circled in glowing teal ink showing a subtly different word between them, a gloved finger pointing at the difference; notebooks fill most of frame, overhead close angle; single desk lamp light from above; steel table surface, aged paper, glass magnifier lying nearby; still air, faint lamp hum; near-black background, teal highlight on the circled word; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "a scarred steel storage cabinet with a hand-lettered warning placard bolted to its door, faint teal light leaking from the seam around the door; cabinet fills the frame, low angle looking up; single overhead fluorescent light flickering from above; brushed steel, rivets, worn placard paper; dust in the light beam; near-black background, teal seam glow; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "two staff members in a dim canteen booth, one mid-sentence with a puzzled expression, the other visibly startled, both faces lit from a single ceiling lamp overhead; medium two-shot, eye level; single warm ceiling light, rest of canteen in shadow; formica table, plastic trays, steam from a mug; quiet hum of a vent; near-black background, warm amber light with a hint of teal on the mug steam; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "a control room monitor showing two waveform timelines stacked, one line before the other, a gloved hand pointing at the gap between them; monitor fills most of frame, low angle; single screen-glow light source, rest of room black; matte console plastic, cable bundles; faint screen flicker; near-black background, teal waveform glow; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "the notebook sealed inside a thick padded soundproof case with a small round observation window, faint teal light pulsing from within; case fills frame, straight-on low angle; single hard spotlight from above; quilted foam padding, reinforced clasps, glass window; still, sealed air; near-black background, teal pulse through the window; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "an elderly informant seated in a wooden chair, a researcher standing over an open notebook reading aloud, mouth open, teal light rising off the page like mist; two-figure composition, low dramatic angle, researcher silhouetted, elder's face half-lit; single light source rising from the notebook itself; canvas tent wall, wooden chair, worn notebook; mist curling upward; near-black background, strong teal uplight; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "a row of staff faces in profile, each mouth open repeating the same word, expressions ranging from confusion to blank certainty, faint teal light reflected on their faces; tight group composition, eye level, shallow row; single overhead light source; canteen wall behind, collars and name tags out of focus; still air, heavy silence implied; near-black background, cold teal face-light; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "a personnel roster page under a desk lamp, one line's surname smudged and rewritten in a slightly different hand, glowing faint teal; page fills most of frame, overhead close angle; single desk lamp from above-left; printed roster paper, ballpoint correction, paperclip; still office air; near-black background, teal glow on the altered line; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "hero close-up of the worn field notebook standing on its spine, pages fanned open, thin tendrils of glowing teal ink warping across the pages like living script, no legible letters, just flowing lines; notebook fills over seventy percent of frame, subject on the right third, left third dark empty space; single strong teal rim light from behind the spine; cracked leather cover, aged paper, ink tendrils; thin haze; deep black background, vivid teal glow; low dramatic angle; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    }
+  ],
+  "background": {
+    "id": "scp-9762_bg",
+    "kind": "image",
+    "reuse": false,
+    "aspect": "16:9",
+    "resolution": "1920x1080",
+    "prompt": "wide shot of a worn leather field notebook lying open on a rough wooden table inside a dim canvas tent, handwritten lines glowing faint teal as if the ink is alive; notebook and lantern dominate the frame, everything else in near-black; low three-quarter angle; single warm lantern light beside the notebook, its glow shading to cold teal near the page; worn leather cover, coarse paper, tent canvas folds; thin dust and mist drifting; deep black background, warm lantern light bleeding into teal page-glow; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere",
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion"
+  },
+  "thumbnail": {
+    "hook": "hero close-up of a worn leather field notebook standing open, pages fanned toward camera, thin tendrils of glowing teal ink warping and crawling across the pages like living script, no legible letters; notebook fills over seventy percent of frame, subject on the right third, left third dark empty negative space; single strong teal rim light from behind the spine, rest in deep shadow; cracked leather cover, aged handmade paper, faint ink tendrils; thin haze; deep blue-black background, vivid teal glow; 35mm lens, shallow depth, dramatic low angle, dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere",
+    "hook_alt": [
+      "close-up of an elderly informant's weathered hand resting beside the open notebook, teal ink glow reflected faintly on aged skin, researcher's silhouette blurred in the background; notebook and hand fill most of frame, subject on the left third, right third dark negative space; single cold teal light rising off the page; worn paper, weathered skin, wooden table; faint mist; deep blue-black background, teal uplight; 50mm lens, low angle, dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere",
+      "close-up of a steel storage cabinet door with a hand-lettered warning placard, faint teal light leaking from the door seam; cabinet fills most of frame, subject on the right third, left third dark negative space; single hard overhead light; brushed steel, rivets, worn placard paper; dust in the light beam; deep blue-black background, teal seam glow; low angle, dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    ],
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion",
+    "text_safe_area": "left third",
+    "resolution": "1280x720"
+  },
+  "platforms": {
+    "youtube": {
+      "title": "「저는 그 페이지 근처도 안 갔습니다」 히말라야 언어채록 노트가 낱말 뜻을 바꾼 사건 [SCP-9762]",
+      "title_form": "증언형",
+      "thumbnail_text": "정의 도둑",
+      "thumbnail_quote": "- 저는 그 페이지 근처도 안 갔습니다",
+      "tags": [
+        "SCP",
+        "SCP재단",
+        "SCP-173",
+        "SCP-914",
+        "괴담",
+        "미스터리",
+        "무서운이야기"
+      ],
+      "chapters": [
+        "00:00 라모스 박사와 사라진 이름",
+        "01:15 재단, 노트를 확보하다",
+        "02:07 규칙이 세워지다",
+        "03:50 바뀐 건 노트가 아니었다",
+        "04:43 라모스, 규칙을 어기다",
+        "06:06 아직 끝나지 않은 심사"
+      ],
+      "description": "히말라야 산자락 소수언어 채록 노트가 표제어의 뜻을 슬쩍 바꾸는 이야기입니다. 노트가 이상한 게 아니라, 그 뜻을 먼저 바꾸고 있던 건 채록하던 사람들 쪽이었습니다.\n\n※ SCP 재단 세계관 기반 오리지널 창작 · 허구의 이야기입니다\n※ CC BY-SA 3.0 · 원작: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP재단 #괴담 #무서운이야기 #미스터리",
+      "localizations": {
+        "en": {
+          "title": "\"I Never Went Near That Page\" — A Notebook in the Himalayas Rewrote Its Words [SCP-9762]",
+          "description": "A field linguist's notebook, recording a dying Himalayan language, quietly starts changing the meaning of words it already recorded. The notebook isn't the strange part — the people transcribing it changed first.\n\n※ Original fiction set in the SCP Foundation universe · a work of fiction\n※ CC BY-SA 3.0 · Source: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCPFoundation #creepypasta #horrorstory #mystery"
+        },
+        "ja": {
+          "title": "「そのページには近づいていません」 ヒマラヤの言語採録ノートが単語の意味を書き換えた事件 [SCP-9762]",
+          "description": "消えゆくヒマラヤの言語を記録するフィールドノートが、すでに書き取った単語の意味をひそかに書き換え始めます。おかしいのはノートではなく、書き取っていた人間の方でした。\n\n※ SCP財団の世界観に基づくオリジナル創作・フィクションです\n※ CC BY-SA 3.0 · 原作: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP財団 #怪談 #ホラー #ミステリー"
+        },
+        "zh-Hant": {
+          "title": "「我連那一頁附近都沒去過」喜馬拉雅語言記錄筆記本改寫詞義的事件 [SCP-9762]",
+          "description": "一本記錄瀕危喜馬拉雅語言的田野筆記本,悄悄開始改變已記錄詞語的含義。奇怪的不是這本筆記本,而是記錄它的人們先起了變化。\n\n※ 基於SCP基金會世界觀的原創作品,純屬虛構\n※ CC BY-SA 3.0 · 原作: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP基金會 #怪談 #恐怖故事 #懸疑"
+        }
+      },
+      "pinned_comment": "여러분이라면, 그 낱말을 소리 내어 읽었을까요? 비슷한 걸 겪어보신 적 있다면 댓글로 들려주세요.",
+      "playlist": "SCP 아카이브 (전편 듣기)"
+    }
+  },
+  "credit": "SCP 재단 세계관 기반 오리지널 창작 · 허구 · CC BY-SA 3.0",
+  "content_rating": "teen",
+  "notes": "SCP 아카이브 · 16:9 롱폼 · 장면 전환 배경 + 자막 번인 · 단일 내레이터 · 완결형."
+}
