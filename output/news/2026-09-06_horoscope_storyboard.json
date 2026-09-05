@@ -1,0 +1,85 @@
+{
+  "date": "2026-09-06",
+  "topic": "horoscope",
+  "privacy": "public",
+  "topic_keyword": "천칭자리 연애운 97점 · 오늘 1위",
+  "headline": "오늘 천칭자리 연애운 97점, 가장 높아요",
+  "hook_title": "오늘 딱 한 별자리, 마음 열려요",
+  "accent": "#C9A24B",
+  "loop_line": "내일은 또 어떤 별자리에 마음이 움직일지, 내일 다시 확인해보세요.",
+  "thumbnail_hook": "shimmering reflection of star constellations on a still dark lake at night, deep indigo sky glittering above, cosmic mystical mood; no human face, no text in image",
+  "thumbnail_text": "천칭자리 연애운 97점",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "오늘 연애운",
+      "ghost": "LOVE",
+      "lines": ["오늘,", "딱 한 별자리만", "마음 엽니다"],
+      "highlight": "별자리",
+      "brand": "일상공감뉴스 · 별자리",
+      "narration": "오늘은 열두 별자리 중 딱 하나만 마음이 크게 움직입니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 연애운 · 3위부터",
+      "points": ["3위 <b>사자자리</b> — 자신감이 매력으로 보이는 날", "2위 <b>물고기자리</b> — 감성 대화가 통하는 하루"],
+      "brand": "일상공감뉴스 · 별자리",
+      "narration": "연애운 3위는 사자자리, 2위는 물고기자리인데, 1위는 잠시 후 공개합니다."
+    },
+    {
+      "type": "stat",
+      "label": "연애운 1위 · 천칭자리",
+      "prefix": "",
+      "suffix": "점",
+      "from": 0,
+      "to": 97,
+      "bar": true,
+      "sub": "9월 23일~10월 22일생 · 오늘 금성이 <b>균형</b>을 비춰요",
+      "brand": "일상공감뉴스 · 별자리",
+      "narration": "천칭자리는 9월 23일에서 10월 22일 사이 태생이면 오늘 97점입니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘의 행운",
+      "points": ["행운의 색 <b>라벤더</b> · 숫자 <b>7</b>", "운 열리는 시간 <b>저녁 7시</b> · 캡처해 두세요", "<b>쌍둥이자리</b> — 충전 지수 최고, 오늘은 쉬어가면 좋아요"],
+      "brand": "일상공감뉴스 · 별자리",
+      "narration": "그래서 오늘은 저녁 7시쯤 마음을 전해 보시면 좋겠습니다."
+    },
+    {
+      "type": "statement",
+      "text": "당신 별자리는 연애운이 열렸나요? 별자리만 댓글로 남겨주세요",
+      "highlight": "연애운",
+      "brand": "일상공감뉴스 · 별자리",
+      "narration": "당신의 별자리는 오늘 연애운이 열렸는지, 댓글에 별자리만 남겨 주세요."
+    }
+  ],
+  "sources": ["서양 점성 12별자리 기반", "오늘의 별자리 흐름 참고"],
+  "credit": "재미로 보는 오늘의 별자리 운세",
+  "platforms": {
+    "youtube": {
+      "title": "오늘 딱 한 별자리, 마음 열려요 #shorts",
+      "description": "오늘 천칭자리 연애운 97점, 가장 높아요\n※ 재미로 보는 운세입니다\n\n#오늘의별자리 #별자리운세 #연애운 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "This Zodiac Sign's Love Luck Hits 97 Today #shorts",
+          "description": "One zodiac sign's love luck rockets to 97 out of 100 today — see if it's yours.\n※ Just for fun — today's horoscope\n\n#TodaysHoroscope #Zodiac #LoveHoroscope #Shorts #shorts"
+        },
+        "ja": {
+          "title": "今日、恋愛運97点の星座が判明 #shorts",
+          "description": "今日は恋愛運が97点まで跳ね上がる星座が登場します。あなたの星座かどうか確認してみてください。\n※ 楽しみとしてご覧ください\n\n#今日の星座 #星座占い #恋愛運 #ショート #shorts"
+        },
+        "zh-Hant": {
+          "title": "今天戀愛運97分的星座出爐 #shorts",
+          "description": "今天有一個星座戀愛運飆到97分,快來看看是不是你的星座。\n※ 僅供娛樂參考的星座運勢\n\n#今日星座 #星座運勢 #戀愛運 #Shorts #shorts"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "오늘 딱 한 별자리, 마음 열려요\n※ 재미로 보는 운세\n\n#오늘의별자리 #별자리운세 #연애운 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "오늘 딱 한 별자리, 마음 열려요\n※ 재미로 보는 운세"
+    }
+  },
+  "notes": "모션그래픽 5장면 · 단일 내레이터 · 배경음 없음."
+}
