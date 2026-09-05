@@ -1,0 +1,92 @@
+{
+  "date": "2026-09-06",
+  "topic": "fortune",
+  "privacy": "public",
+  "topic_keyword": "오늘 종합운 1위 쥐띠",
+  "headline": "오늘 종합운 1위 쥐띠, 뱀띠는 천천히 가면 좋아요",
+  "hook_title": "오늘 단 한 띠만 운이 트여요",
+  "accent": "#C9A24B",
+  "loop_line": "오늘 그 운, 당신 띠에도 트였을까요?",
+  "thumbnail_hook": "Front-facing traditional Korean rat zodiac emblem in symmetrical minhwa folk-art style, amethyst starlight and golden auspicious clouds swirling behind it, no human face, no text in image, no words, warm cinematic lighting, traditional Korean folk art",
+  "thumbnail_text": "오늘 1위 쥐띠 93점",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "오늘의 운세",
+      "ghost": "FORTUNE",
+      "lines": ["오늘", "단 한 띠", "운이 트여요"],
+      "highlight": "한 띠",
+      "brand": "일상공감뉴스 · 운세",
+      "narration": "오늘, 열두 띠 중에 유독 한 띠만 운이 확 트인다고 합니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 종합운 · 3위부터",
+      "points": ["3위 <b>양띠</b> — 뜻밖의 좋은 소식", "2위 <b>토끼띠</b> — 계획한 일이 술술"],
+      "brand": "일상공감뉴스 · 운세",
+      "narration": "3위는 양띠, 2위는 토끼띠인데, 1위는 잠시 뒤에 알려 드리겠습니다."
+    },
+    {
+      "type": "stat",
+      "label": "종합운 지수 1위 · 쥐띠",
+      "prefix": "",
+      "suffix": "점",
+      "from": 0,
+      "to": 93,
+      "bar": true,
+      "sub": "1984·1996·2008년생 — <b>자축 육합</b>의 날",
+      "brand": "일상공감뉴스 · 운세",
+      "narration": "1위는 쥐띠, 96년생이라면 오늘 종합운 지수가 93점입니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘의 행운 팁",
+      "points": ["행운의 색 <b>노랑</b> · 숫자 <b>9</b>", "뱀띠는 <b>여유 지수</b> UP — 오늘은 천천히"],
+      "brand": "일상공감뉴스 · 운세",
+      "narration": "그래서 오늘은 중요한 일을 서두르지 말고 차근차근 풀어보시면 좋겠습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "이번 주 행운의 로또 번호",
+      "points": ["<b>8 · 10 · 12 · 13 · 35 · 39</b>", "재미로 뽑아 본 번호예요 · 캡처해 두세요"],
+      "brand": "일상공감뉴스 · 운세",
+      "narration": "이번 주 행운의 로또 번호는, 8, 10, 12, 13, 35, 39입니다."
+    },
+    {
+      "type": "statement",
+      "text": "당신 띠는 종합운 몇 위였나요? 댓글에 띠만 적어 주세요",
+      "highlight": "몇 위",
+      "brand": "일상공감뉴스 · 운세",
+      "narration": "당신의 띠는 종합운 몇 위였는지, 댓글에 띠만 적어 주세요."
+    }
+  ],
+  "sources": ["전통 띠 운세(명리) 기반", "오늘의 일진 참고"],
+  "credit": "재미로 보는 오늘의 운세 · 명리 일진 참고",
+  "platforms": {
+    "youtube": {
+      "title": "오늘 단 한 띠만 운이 트여요 #shorts",
+      "description": "오늘 종합운 1위 쥐띠, 뱀띠는 천천히 가면 좋아요\n※ 재미로 보는 운세입니다\n\n#오늘의운세 #띠별운세 #운세 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "This Zodiac Sign Scores 93 in Luck Today",
+          "description": "The Rat sign tops today's overall luck chart at 93 points, while the Snake sign gets a calm day to slow down and recharge.\n※ For entertainment purposes only\n\n#shorts #koreanzodiac #dailyhoroscope #luckyday"
+        },
+        "ja": {
+          "title": "今日、運気93点の干支は子年です",
+          "description": "今日は子年生まれの総合運が93点で一位に、巳年生まれは今日はゆっくり過ごす日です。\n※ 娯楽目的の占いです\n\n#shorts #今日の運勢 #干支占い #運気"
+        },
+        "zh-Hant": {
+          "title": "今天運勢93分的生肖是鼠年生",
+          "description": "今天鼠年生肖綜合運勢高達93分躍居第一,蛇年生肖則適合放慢腳步、好好充電。\n※ 純屬娛樂占卜\n\n#shorts #今日運勢 #生肖運勢 #運勢"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "오늘 단 한 띠만 운이 트여요\n※ 재미로 보는 운세\n\n#오늘의운세 #띠별운세 #운세 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "오늘 단 한 띠만 운이 트여요\n※ 재미로 보는 운세"
+    }
+  },
+  "notes": "모션그래픽 6장면(로또 포함) · 단일 내레이터 · 배경음 없음 · 엔터테인먼트(재미) 운세 · MODE=daily."
+}
