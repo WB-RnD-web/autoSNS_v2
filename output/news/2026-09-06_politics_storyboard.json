@@ -1,0 +1,97 @@
+{
+  "date": "2026-09-06",
+  "topic": "politics",
+  "privacy": "public",
+  "topic_keyword": "김승원 후보자 통화 논란",
+  "headline": "김승원 법무장관 후보 임상 청탁 의혹, 통화 공개",
+  "hook_title": "청문회 D-10, 공개된 통화 한 통",
+  "accent": "#8FB0C9",
+  "thumbnail_hook": "A dim government building corridor at night, a landline telephone receiver resting off the hook on a wooden desk, scattered documents and a gavel nearby, blue-gray lighting, cinematic realism, no people, no text, vertical 9:16 composition.",
+  "thumbnail_text": "청문회 앞 통화 논란",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "청문회",
+      "ghost": "POLITICS",
+      "lines": ["청문회 열흘 전", "공개된", "통화 한 통"],
+      "highlight": "통화",
+      "brand": "일상공감뉴스 · 정치",
+      "narration": "법무부 장관 후보자의 인사청문회를 열흘 앞두고, 통화 녹음 하나가 전격 공개됐습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "무슨 의혹인가",
+      "points": [
+        "2021년 — 브로커 통해 <b>임상시험 청탁</b> 정황",
+        "2024년 12월 — 검찰 <b>기소유예</b> 처분"
+      ],
+      "brand": "일상공감뉴스 · 정치",
+      "narration": "이 후보자는 2021년 브로커를 통해 코로나19 치료제의 임상시험 승인을 서둘러 달라고 청탁했다는 의혹을 받았고, 지난해 12월 검찰에서 기소유예 처분을 받았습니다."
+    },
+    {
+      "type": "quote",
+      "text": "동생, 보고 싶어서 눈에서 눈물이 나네 그냥",
+      "attr": "— 공개된 통화 녹음",
+      "brand": "일상공감뉴스 · 정치",
+      "narration": "공개된 통화에는 브로커를 향한 사적인 표현이 담겨 있었던 것으로 알려졌습니다."
+    },
+    {
+      "type": "stat",
+      "label": "녹취 속 후원금 언급",
+      "prefix": "",
+      "suffix": "만원",
+      "from": 0,
+      "to": 500,
+      "bar": true,
+      "sub": "<b>500만원</b>이면 된다는 취지",
+      "brand": "일상공감뉴스 · 정치",
+      "narration": "같은 통화에서는 후원금 오백만 원이면 충분하다는 취지의 말도 나온 것으로 전해졌습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "여야 공방",
+      "points": [
+        "국민의힘 — <b>지명 철회</b> 요구",
+        "더불어민주당 — <b>정치 공세</b>라 반박"
+      ],
+      "brand": "일상공감뉴스 · 정치",
+      "narration": "국민의힘은 후보 지명을 철회하라고 요구했고, 더불어민주당은 정치적 흠집내기라며 맞섰습니다."
+    },
+    {
+      "type": "statement",
+      "text": "내가 먹는 약도 이렇게 승인될까?",
+      "highlight": "먹는 약",
+      "brand": "일상공감뉴스 · 정치",
+      "narration": "이런 청탁 정황이 사실이라면, 내가 먹는 약은 어떻게 승인되고 있는 걸까요?"
+    }
+  ],
+  "sources": ["경향신문", "뉴시스", "헤럴드경제", "세계일보"],
+  "credit": "출처 경향신문·뉴시스·헤럴드경제·세계일보 등",
+  "platforms": {
+    "youtube": {
+      "title": "청문회 D-10, 공개된 통화 한 통 #shorts",
+      "description": "김승원 법무장관 후보 임상 청탁 의혹, 통화 공개\n출처 경향신문·뉴시스·헤럴드경제·세계일보 등\n\n※ 사실관계는 보도 시점 기준이며, 수사·재판 중인 사안은 확정된 내용이 아닙니다.\n\n#김승원 #법무부장관 #인사청문회 #국회 #뉴스 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "Korea's Justice Pick Faces a Leaked Call, 10 Days Before Hearing",
+          "description": "South Korea's Justice Minister nominee faces renewed scrutiny after a leaked phone call surfaced ahead of his confirmation hearing.\nSources: Kyunghyang, Newsis, Herald and others\n\n*This report reflects information available at publication; matters under investigation are not final conclusions.\n\n#KoreaPolitics #News #Shorts"
+        },
+        "ja": {
+          "title": "聴聞会まで10日、流出した通話が波紋を呼んでいます",
+          "description": "韓国の法務部長官候補者が、聴聞会を前に流出した通話をめぐり注目を集めています。\n出典:京郷新聞・ニューシスほか\n\n※内容は報道時点のものであり、捜査・裁判中の事案は確定した事実ではありません。\n\n#韓国政治 #ニュース #shorts"
+        },
+        "zh-Hant": {
+          "title": "聽證會前10天,一通外流通話掀起波瀾",
+          "description": "南韓法務部長官被提名人在聽證會前,因一通外流通話引發關注。\n資料來源:京鄉新聞、Newsis等\n\n※內容以報導當時為準,偵查、審判中的案件尚未定案。\n\n#韓國政治 #新聞 #shorts"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "청문회 D-10, 공개된 통화 한 통\n출처 경향신문·뉴시스·헤럴드경제·세계일보 등\n\n#김승원 #법무부장관 #인사청문회 #국회 #뉴스 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "청문회 D-10, 공개된 통화 한 통\n출처 경향신문·뉴시스·헤럴드경제·세계일보 등"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음."
+}
