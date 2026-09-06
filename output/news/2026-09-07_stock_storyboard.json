@@ -1,0 +1,91 @@
+{
+  "date": "2026-09-07",
+  "topic": "stock",
+  "privacy": "public",
+  "topic_keyword": "코스피 반도체 랠리·미국 고용 서프라이즈",
+  "headline": "코스피 1.64% 마감, 미 증시는 고용쇼크에 하락",
+  "hook_title": "코스피 1.64%, 뉴욕은 얼어붙었다",
+  "accent": "#D97757",
+  "loop_line": "코스피가 웃던 그 밤, 뉴욕은 결국 흔들렸습니다.",
+  "thumbnail_hook": "Empty pre-market trading floor at dawn, rows of glowing monitor screens with abstract candlestick chart silhouettes, cool blue and warm orange ambient lighting, cinematic wide shot, no visible text, no people, photorealistic financial newsroom atmosphere",
+  "thumbnail_text": "코스피 1.64%, 오늘은",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "밤사이 뉴욕",
+      "ghost": "OPEN",
+      "lines": ["코스피가", "1.64%로", "웃던 밤 뉴욕은"],
+      "highlight": "뉴욕은",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "금요일 코스피는 1.64% 올랐는데 뉴욕은 얼어붙었습니다."
+    },
+    {
+      "type": "trend",
+      "label": "코스피",
+      "from": 0,
+      "to": 1.64,
+      "suffix": "%",
+      "dir": "up",
+      "sub": "6,600선 <b>회복</b>, 외국인·기관 <b>2.1조원</b> 매수",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "코스피가 1.64% 오르며 6,600선을 회복했습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "왜 올랐나",
+      "points": ["외국인·기관 <b>2.1조원</b> 동반 매수", "SK하이닉스·삼성전자 반도체 강세"],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "외국인과 기관이 2.1조원을 사들이며 반도체가 강했습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "그래서 오늘은",
+      "points": ["다우 <b>0.51%</b> 밀린 밤 지났다", "환율 <b>1,350원</b> 방어가 관건"],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "다우가 0.51% 밀렸고, 환율 1,350원이 관건입니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 지켜볼 것",
+      "points": ["미국 <b>9월 FOMC</b> 금리인상 경계", "환율 오르면 <b>해외직구·여행비</b> 부담"],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "환율이 뛰면 해외직구값과 여행비 부담이 커집니다."
+    },
+    {
+      "type": "statement",
+      "text": "오늘도 담는다 vs 환율부터 본다, 당신은?",
+      "highlight": "환율부터",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "판단은 여러분 몫입니다. 오늘, 어디를 보시겠습니까?"
+    }
+  ],
+  "sources": ["아시아경제", "파이낸셜뉴스", "이투데이", "Yahoo Finance"],
+  "credit": "출처 아시아경제·파이낸셜뉴스·이투데이·Yahoo Finance 등 · 투자 조언이 아닙니다",
+  "platforms": {
+    "youtube": {
+      "title": "코스피 1.64%, 뉴욕은 얼어붙었다 #shorts",
+      "description": "코스피 1.64% 마감, 미 증시는 고용쇼크에 하락\n출처 아시아경제·파이낸셜뉴스·이투데이 등\n※ 투자 조언이 아닙니다\n\n#코스피 #주식 #증시 #개장전 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "Kospi Partied at +1.64%, Then Wall Street Froze",
+          "description": "Kospi closed up 1.64% Friday on a chip rally, but Wall Street sank hours later on a shock US jobs report. What does that mean for Korea's open today?\n※ Not investment advice\n#shorts"
+        },
+        "ja": {
+          "title": "コスピ1.64%高、同じ夜ウォール街は凍りついた",
+          "description": "金曜日、コスピは半導体株の上昇で1.64%高となりましたが、同じ夜、米国では雇用統計のサプライズで株価が下落しました。今日の韓国市場はどう動くでしょうか。\n※投資助言ではありません\n#shorts"
+        },
+        "zh-Hant": {
+          "title": "韓股狂漲1.64%,同一夜華爾街卻凍結",
+          "description": "週五韓國股市在半導體股帶動下上漲1.64%,但同一晚華爾街卻因就業數據意外強勁而下跌。今天的韓股開盤會如何?\n※非投資建議\n#shorts"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "코스피 1.64%, 뉴욕은 얼어붙었다\n출처 아시아경제·파이낸셜뉴스·이투데이 등\n※ 투자 조언이 아닙니다\n\n#코스피 #주식 #증시 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "코스피 1.64%, 뉴욕은 얼어붙었다\n출처 아시아경제·파이낸셜뉴스·이투데이 등"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음 · SESSION=KR_AM(개장 전 프리뷰)."
+}
