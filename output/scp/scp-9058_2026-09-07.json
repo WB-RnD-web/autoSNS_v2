@@ -1,0 +1,1131 @@
+{
+  "date": "2026-09-07",
+  "iso_week": "2026-W37",
+  "topic": "scp",
+  "privacy": "public",
+  "origin": "original",
+  "origin_note": "",
+  "source_url": "",
+  "story_id": "scp-9058",
+  "scp_number": "SCP-9058",
+  "object_class": "Euclid",
+  "codename": "받아쓰는 나무",
+  "number_check": {
+    "checked_at": "2026-09-07",
+    "http_code": "unverified"
+  },
+  "theme": "밀림·고산",
+  "nature": "물질·생물",
+  "twist_type": "규모",
+  "logline": "안데스 고산 운무림 관측소 표시목 이야기입니다. 둘레를 재고 그 숫자를 적어두면, 나무는 그 숫자에 맞춰 곧바로 몸을 부풀립니다.",
+  "structure": "연대기형",
+  "opening_move": "장면 하나",
+  "opening_note": "",
+  "closing_move": "기록이 아직 이어진다",
+  "number_reveal": "앞",
+  "ending_mode": "질문+구독",
+  "fault": "개체",
+  "hook_line": "밑동을 갈랐는데, 나이테가 한 줄도 없었습니다.",
+  "procedures": [],
+  "character": {
+    "name": "발디비아",
+    "role": "박사 · 사이트-388 수석 식물학자",
+    "flaw": "위험한 숫자일수록 자기 손으로 직접 확인해야 직성이 풀린다"
+  },
+  "chain": [
+    {
+      "when": "몇 주 전",
+      "event": "발디비아 박사가 정기 측정에서 표시목 하나의 둘레가 나흘 전 기록과 토씨 하나 안 틀리고 같다는 걸 발견했다",
+      "because": "",
+      "shot": "줄자 눈금과 로그북 숫자가 나란히 겹쳐 보이는 손 클로즈업"
+    },
+    {
+      "when": "발견 직후",
+      "event": "재단이 격리에 들어가 줄자 사용을 금지하고 사진 촬영으로 기록 방식을 바꿨다",
+      "because": "나무가 '기록된 숫자'에 반응한다는 가설이 세워졌기 때문에",
+      "shot": "나무 앞에 줄지어 선 카메라 삼각대들"
+    },
+    {
+      "when": "이틀 뒤",
+      "event": "사진 한구석에 우연히 찍힌 눈금자 때문에 그 나무만 유독 부풀어 있는 게 발견돼, 눈금 없는 카메라로 다시 바꿨다",
+      "because": "사진 속 눈금자 하나도 나무를 반응시켰기 때문에",
+      "shot": "눈금자가 찍힌 사진 한 장과 그 옆 유독 굵어진 나무 몸통"
+    },
+    {
+      "when": "그 무렵",
+      "event": "발디비아 박사가 표본실의 백 년 된 마른 가지 표본 옆에 줄자를 대고 숫자를 카드에 적어 넣었다",
+      "because": "살아있는 나무만의 반응인지 확인해야 했기 때문에",
+      "shot": "유리 진열장 속 마른 가지 표본 옆에 놓인 줄자"
+    },
+    {
+      "when": "다음 날부터",
+      "event": "그 마른 표본도 눈에 띄게 굵어진 걸 확인하고, 재단이 전 세계 식물표본관 목록을 뽑아 대조를 시작했다",
+      "because": "표본 하나가 반응했다면 다른 어딘가의 표본도 반응했을 수 있기 때문에",
+      "shot": "오래된 목록 서류 더미와 세계지도 위에 표시된 붉은 점들"
+    },
+    {
+      "when": "대조 도중",
+      "event": "이백 년 전 유럽 식물학자가 오기로 적어 넣은 숫자 그대로 어느 표본이 지금까지 굵기를 유지하고 있다는 게 확인됐다",
+      "because": "대조를 시작하자마자 잊혔던 오래된 오기 하나가 걸렸기 때문에",
+      "shot": "색 바랜 라벨 위 낡은 손글씨 숫자와 그 옆 부자연스럽게 굵은 마른 가지"
+    },
+    {
+      "when": "그 뒤",
+      "event": "기동특무부대 파이-3(빈 나이테)가 투입돼 현실 안정 장치와 재수용 절차, D등급 재측정 노출 시험을 차례로 시도했지만 반응을 멈추지 못했다",
+      "because": "표본까지 반응한다는 게 확인된 이상 살아있는 나무 쪽도 다시 손대야 했기 때문에",
+      "shot": "나무 주변에 박힌 현실 안정 장치들과 그 옆에 선 D등급 인원"
+    },
+    {
+      "when": "비슷한 시기",
+      "event": "혼돈의 반란 쪽으로 의심되는 사람이 등산로 어귀에서 붙잡혔고, 소지품에서 표시목 둘레를 몇 배로 부풀리려던 계산 메모가 나왔다",
+      "because": "나무가 숫자에 반응한다는 소문이 격리 구역 밖으로 샜기 때문에",
+      "shot": "압수된 메모지에 적힌 말이 안 되게 큰 숫자"
+    },
+    {
+      "when": "메모 압수 며칠 뒤",
+      "event": "발디비아 박사가 봉인된 증거 봉투를 몰래 열어 그 메모의 숫자를 자기 손으로 옆 종이에 옮겨 적었다",
+      "because": "그 숫자가 얼마나 위험한지 직접 확인하고 싶었기 때문에",
+      "shot": "등불 아래 홀로 메모를 옮겨 적는 손"
+    },
+    {
+      "when": "몇 시간 만에",
+      "event": "그 숫자가 옮아 붙으며 표시목 하나가 원래 둘레의 몇 배로 부풀어 올라 통제 구역 담장을 뿌리째 밀어냈다",
+      "because": "박사가 옮겨 적은 순간 그 숫자가 새 기록이 되어버렸기 때문에",
+      "shot": "담장을 밀어내며 부풀어 오르는 거대한 나무 밑동"
+    },
+    {
+      "when": "그날 오전",
+      "event": "빈 나이테 팀이 재수용을 위해 부푼 밑동을 잘라봤지만 단면 어디에도 나이테나 새 목질 조직이 없다는 것만 확인했다",
+      "because": "부푼 만큼의 실제 물질적 근거가 어디에도 없었기 때문에",
+      "shot": "잘린 밑동 단면 — 나이테 없이 매끈한 속"
+    },
+    {
+      "when": "그 뒤로 지금까지",
+      "event": "발디비아 박사는 근무자 명단에서 조용히 지워졌고, 재단은 전 세계 표본관 대조 절차를 지금도 이어가고 있다",
+      "because": "박사 자신이 남긴 마지막 숫자가 그 자신의 존재 값을 대체해버렸기 때문에",
+      "shot": "근무자 명단에서 이름이 지워진 빈 줄과 실시간으로 바뀌는 대조 진행 현황판"
+    }
+  ],
+  "retention_beats": [
+    "이백 년 전 그 오기를 처음 적어 넣은 식물학자가, 정말 실수로 그랬는지는 아무도 모릅니다.",
+    "발디비아 박사의 마지막 서명이 본인 것인지, 이제는 필적 감정도 통과가 안 됩니다.",
+    "전 세계 표본관 대조가 몇 곳까지 끝났는지, 그 숫자는 이 문서를 읽는 지금도 바뀌고 있을 겁니다."
+  ],
+  "cameos": [
+    {
+      "number": "SCP-173",
+      "how": "눈을 떼는 순간만 움직인다고 알려진 개체라는 사실만 한 줄 언급 — 다른 사이트 서고 기록으로, 이쪽과 정반대의 반응 조건이라는 대비로만 쓰였다."
+    },
+    {
+      "number": "SCP-914",
+      "how": "완벽하게 맞물려 도는 태엽 장치로 알려진 개체라는 사실만 한 줄 언급 — 규칙이 있는 개체와 규칙이 없는 이쪽을 대비하는 데만 쓰였다."
+    }
+  ],
+  "twist_summary": "규모의 반전 — 사이트-388 안에서 시작된 것처럼 보였던 '숫자에 반응하는 나무'가, 실은 이백 년 전 유럽에서 잘못 기록된 표본 하나를 시작으로 전 세계 식물표본관에 이미 퍼져 있었다는 반전. 발디비아 박사가 압수된 위험 계산 메모의 숫자를 자기 손으로 옮겨 적자 표시목이 몇 시간 만에 몇 배로 부풀어 통제 구역 담장을 밀어냈고, 그는 인사 기록에서 조용히 지워졌다.",
+  "narration_full": "밑동을 갈랐는데, 나이테가 한 줄도 없었습니다.\n\n톱날이 지나간 자리는 매끈했고, 손을 대보면 아직도 따뜻했습니다. 마치 방금 데워진 것처럼요. 그 앞에 선 사람들 중 누구도, 먼저 입을 열지 않더군요.\n\nSCP-9058입니다. 객체 등급은 유클리드고요, 격리 등급 재분류 심사는 지금도 안 끝났습니다. 저도 처음 이 로그북 사본을 봤을 때는… 그냥 오탈자인 줄 알았습니다.\n\n자리는 안데스, 해발 삼천 미터를 넘는 고산 운무림 안쪽입니다. 사이트-388, 상주 인원 얼마 안 되는 작은 관측소고요. 습한 흙냄새가 늘 배어 있는 곳입니다. 보고서엔 그냥 '표시목'이라고만 적혀 있는데, 거기 연구원들은 그 나무를 다르게 불렀습니다 — 「받아쓰는 나무」.\n\n매주 월요일, 발디비아 박사는 표시목 열두 그루의 둘레를 줄자로 재고, 그 숫자를 로그북에 적었습니다. 그런데 그 주엔, 숫자가 이상했죠. 나흘 전에 적어둔 것과, 토씨 하나 안 틀리고 똑같았거든요. 나무는 자라지 않은 게 아니라 — 나흘 동안 정확히 그 숫자만큼만 굵어져 있었던 겁니다.\n\n재단은 곧바로 격리에 들어갔습니다. 줄자를 치워도 봤고, 사진 촬영으로 바꿔도 봤고, 눈금 없는 카메라까지 써봤습니다. 그래도 안 됐습니다. 사진 한구석에 우연히 찍힌 눈금자 하나 때문에, 그 나무만 유독 부풀어 있는 게 발견됐거든요.\n\n발디비아 박사는 이게 살아있는 나무만의 일인지 궁금해했습니다. 표본실 유리장 속, 백 년도 더 된 마른 가지 표본 옆에 줄자를 대봤죠. 「이것도 되는지 확인만 하는 겁니다.」 그렇게 말하고 잰 숫자를 옆 카드에 적어 넣었습니다. 다음 날 아침, 그 마른 가지는 눈에 띄게 더 굵어져 있더군요.\n\n그때부터 재단은 이 종의 표본을 갖고 있는 식물표본관 목록을 뽑았습니다. 유럽 몇 곳, 오세아니아, 남아메리카 — 대조는 오래 걸렸고, 얼마 안 가 하나가 걸렸습니다. 이백 년 전 어느 식물학자가 자로 재고 오기로 적어 넣은 숫자, 그 표본은 지금도… 그 잘못된 숫자만큼 굵은 채였습니다. 그러니까 이 일은 사이트-388 안에서 시작된 게 아니었던 겁니다. 훨씬 오래전부터, 훨씬 넓은 데서 이미 있었던 거죠. 저도 이 부분은… 아직 다 설명을 못 하겠습니다. 이 표본, 대체 몇 개나 이미 그렇게 굵어져 있었을까요?\n\n재단은 기동특무부대 파이-3, 별칭 빈 나이테 팀을 투입했습니다. 스크랜턴 현실 안정 장치도 박아봤고, 재수용 절차도 새로 짜봤고, D등급 인원을 넣어 재측정 노출 시험까지 해봤습니다. 그래도 나무는 반응을 멈추지 않았습니다. 그 인원에게 남은 말은 딱 한마디였죠. 「그냥 재고 나오겠습니다.」 다행히 별 이상 없이 재배치됐습니다. 등산로를 지나던 관광객 셋에게는 C급 기억소거제가 쓰였는데, 사흘 만에 기억이 다시 돌아왔다는 후속 보고가 남아 있습니다.\n\n소문은 격리 구역 밖으로도 샜습니다. 혼돈의 반란 쪽으로 의심되는 사람 하나가 등산로 어귀에서 붙잡혔는데, 소지품에서 표시목 둘레를 몇 배로 부풀리려던 것으로 보이는 계산 메모가 나왔습니다. 숫자만 몇 개, 말이 안 되게 큰 걸로요.\n\n이 사이트 서고엔, 다른 사이트 얘기도 몇 줄 적혀 있습니다. 눈을 떼는 순간만 움직인다는 조각상, 173 얘기도 있고, 완벽하게 맞물려 돌아가는 태엽 장치, 914 얘기도 있죠. 다만 그 둘은 적어도 규칙이 있었습니다. 이쪽은 규칙이랄 것도 없이, 그냥 적힌 대로였던 겁니다.\n\n발디비아 박사의 첫 보고서 여백엔, 급하게 휘갈긴 글씨로 이렇게 적혀 있습니다. 「이 숫자, 못 믿겠음.」 그런데도 박사는, 그 메모가 얼마나 위험한 숫자인지 직접 확인하고 싶어 했습니다. 봉인된 증거 봉투를 몰래 열어서, 숫자를 자기 손으로 옆 종이에 옮겨 적었습니다. 솔직히 저도, 왜 굳이 자기 손으로 옮겨 적었는지는… 이해가 잘 안 갑니다. 「제가 옮겨 적은 숫자였습니다.」 나중에 남은 진술은, 그 한 줄뿐이었습니다.\n\n몇 시간 만에, 표시목 하나가 원래 둘레의 몇 배로 부풀어 올랐습니다. 뿌리째 통제 구역 담장을 밀어냈고요. 그날 새벽, 무전에 이런 말이 잡혔습니다. 「담장이, 안쪽에서부터 밀리고 있습니다. …철수하겠습니다.」 안쪽에서부터 담장이 밀린다는 게 무슨 뜻인지, 그때 누가 알았을까요?\n\n빈 나이테 팀이 재수용을 위해 다시 들어가 부푼 밑동을 잘라봤습니다. 한 연구원은 나중에 이렇게 적었죠. 「분명히 어제 쟀던 자리인데, 오늘 자로 다시 재면 답이 또 바뀝니다.」 잘린 단면 어디에도, 나이테도 새 목질 조직도 없었습니다. 부푼 만큼의 실제 물질이, 어디에도 없었던 겁니다.\n\n발디비아 박사는 그 뒤로 근무자 명단에서 조용히 지워졌습니다. 자리 하나만, 이름 없이 남았고요. 사고 조사 서류에 남은 마지막 서명도, 본인 것이 맞는지 이제는 아무도 확인 못 합니다. 이 사건은 결국 O5 승인이 필요한 사안으로 격상됐습니다.\n\n혹시 여러분도, 뭔가의 둘레나 길이를 재고 그 숫자를 어딘가에 적어두신 적 있으신가요…? 다행히 말씀드리자면, 이 반응은 이 나무 한 종의 세포벽 구조에서만 확인된 것 같습니다. 여러분이 적어두신 숫자는, 아마 안전할 겁니다.\n\n전 세계 표본관 대조 절차는, 이 보고서가 쓰이는 지금도 계속되고 있습니다. 몇 곳까지 확인이 끝났는지… 그 숫자는 어제와 오늘이 또 다릅니다.\n\n여러분 수첩에도, 오래전에 적어놓고 다시는 안 들여다본 숫자 하나쯤 있지 않으신가요? 있다면 그게 뭐였는지, 궁금하지 않으세요? 구독해두시면, 이런 기록들 놓치지 않고 이어서 보실 수 있을 겁니다.",
+  "segments": [
+    {
+      "text": "밑동을 갈랐는데,",
+      "est_sec": 2,
+      "text_en": "They cut the trunk open,",
+      "text_ja": "幹を割ってみたら、",
+      "text_zh_Hant": "剖開了樹幹,"
+    },
+    {
+      "text": "나이테가 한 줄도 없었습니다.",
+      "est_sec": 3,
+      "emphasis": "나이테가 한 줄도",
+      "text_en": "and there wasn't a single growth ring.",
+      "text_ja": "年輪が一本もありませんでした。",
+      "text_zh_Hant": "裡面竟然一圈年輪都沒有。"
+    },
+    {
+      "text": "톱날이 지나간 자리는 매끈했고,",
+      "est_sec": 3,
+      "text_en": "The cut surface was smooth,",
+      "text_ja": "鋸を入れた跡は滑らかで、",
+      "text_zh_Hant": "鋸開的切面很光滑,"
+    },
+    {
+      "text": "손을 대보면 아직도 따뜻했습니다.",
+      "est_sec": 4,
+      "text_en": "and still warm to the touch.",
+      "text_ja": "触れるとまだ温かいほどでした。",
+      "text_zh_Hant": "摸上去甚至還帶著溫度。"
+    },
+    {
+      "text": "마치 방금 데워진 것처럼요.",
+      "est_sec": 3,
+      "text_en": "As if it had just been heated.",
+      "text_ja": "まるでたった今温められたかのように。",
+      "text_zh_Hant": "彷彿剛剛才被加熱過一樣。"
+    },
+    {
+      "text": "그 앞에 선 사람들 중 누구도,",
+      "est_sec": 3,
+      "text_en": "None of the people standing there",
+      "text_ja": "その場に立っていた誰も、",
+      "text_zh_Hant": "站在那裡的人,"
+    },
+    {
+      "text": "먼저 입을 열지 않더군요.",
+      "est_sec": 3,
+      "text_en": "spoke up first.",
+      "text_ja": "先に口を開こうとはしませんでした。",
+      "text_zh_Hant": "沒有一個人先開口。"
+    },
+    {
+      "text": "SCP-9058입니다.",
+      "est_sec": 2,
+      "text_en": "This is SCP-9058.",
+      "text_ja": "SCP-9058です。",
+      "text_zh_Hant": "這是SCP-9058。"
+    },
+    {
+      "text": "객체 등급은 유클리드고요,",
+      "est_sec": 3,
+      "text_en": "Its object class is Euclid,",
+      "text_ja": "対象等級はユークリッドで、",
+      "text_zh_Hant": "物件等級是歐幾里得,"
+    },
+    {
+      "text": "격리 등급 재분류 심사는 지금도 안 끝났습니다.",
+      "est_sec": 5,
+      "text_en": "and the reclassification review still hasn't ended.",
+      "text_ja": "収容等級の再分類審査は今も終わっていません。",
+      "text_zh_Hant": "收容等級的重新評估審查至今仍未結束。"
+    },
+    {
+      "text": "저도 처음 이 로그북 사본을 봤을 때는…",
+      "est_sec": 4,
+      "text_en": "When I first saw a copy of this logbook…",
+      "text_ja": "私も最初にこのログブックの写しを見たときは…",
+      "text_zh_Hant": "我第一次看到這份日誌副本時…"
+    },
+    {
+      "text": "그냥 오탈자인 줄 알았습니다.",
+      "est_sec": 3,
+      "text_en": "I just thought it was a typo.",
+      "text_ja": "ただの誤記だと思いました。",
+      "text_zh_Hant": "還以為只是筆誤。"
+    },
+    {
+      "text": "자리는 안데스,",
+      "est_sec": 2,
+      "text_en": "The location is the Andes,",
+      "text_ja": "場所はアンデス、",
+      "text_zh_Hant": "地點在安地斯山脈,"
+    },
+    {
+      "text": "해발 삼천 미터를 넘는 고산 운무림 안쪽입니다.",
+      "est_sec": 5,
+      "text_en": "deep in a cloud forest over three thousand meters up.",
+      "text_ja": "標高三千メートルを超える高山雲霧林の奥地です。",
+      "text_zh_Hant": "海拔超過三千公尺的高山雲霧林深處。"
+    },
+    {
+      "text": "사이트-388,",
+      "est_sec": 2,
+      "text_en": "Site-388,",
+      "text_ja": "サイト-388、",
+      "text_zh_Hant": "388號基地,"
+    },
+    {
+      "text": "상주 인원 얼마 안 되는 작은 관측소고요.",
+      "est_sec": 5,
+      "text_en": "a small outpost with just a handful of staff.",
+      "text_ja": "常駐人員がわずかな小さな観測所です。",
+      "text_zh_Hant": "是個常駐人員不多的小型觀測站。"
+    },
+    {
+      "text": "습한 흙냄새가 늘 배어 있는 곳입니다.",
+      "est_sec": 4,
+      "text_en": "The damp smell of soil always lingers there.",
+      "text_ja": "湿った土の匂いが常に染みついている場所です。",
+      "text_zh_Hant": "空氣裡總是瀰漫著潮濕的泥土味。"
+    },
+    {
+      "text": "보고서엔 그냥 '표시목'이라고만 적혀 있는데,",
+      "est_sec": 5,
+      "text_en": "The report just calls it a 'marker tree,'",
+      "text_ja": "報告書にはただ「標識木」とだけ書かれていますが、",
+      "text_zh_Hant": "報告書上只寫著「標記樹」,"
+    },
+    {
+      "text": "거기 연구원들은 그 나무를 다르게 불렀습니다 —",
+      "est_sec": 5,
+      "text_en": "but the researchers there called it something else —",
+      "text_ja": "そこの研究員たちは、その木を別の名前で呼んでいました —",
+      "text_zh_Hant": "但那裡的研究員私下另有稱呼 —"
+    },
+    {
+      "text": "「받아쓰는 나무」.",
+      "est_sec": 2,
+      "text_en": "\"The Tree That Takes Dictation.\"",
+      "text_ja": "「口述筆記する木」。",
+      "text_zh_Hant": "「聽寫的樹」。"
+    },
+    {
+      "text": "매주 월요일,",
+      "est_sec": 2,
+      "text_en": "Every Monday,",
+      "text_ja": "毎週月曜日、",
+      "text_zh_Hant": "每週一,"
+    },
+    {
+      "text": "발디비아 박사는 표시목 열두 그루의 둘레를 줄자로 재고,",
+      "est_sec": 6,
+      "text_en": "Dr. Valdivia measured the girth of twelve marker trees with a tape,",
+      "text_ja": "ヴァルディビア博士は標識木十二本の幹周りを巻尺で測り、",
+      "text_zh_Hant": "瓦爾迪維亞博士會用捲尺測量十二棵標記樹的周長,"
+    },
+    {
+      "text": "그 숫자를 로그북에 적었습니다.",
+      "est_sec": 3,
+      "text_en": "and wrote the numbers in the logbook.",
+      "text_ja": "その数字をログブックに記録していました。",
+      "text_zh_Hant": "並將數字寫進日誌本裡。"
+    },
+    {
+      "text": "그런데 그 주엔, 숫자가 이상했죠.",
+      "est_sec": 4,
+      "text_en": "But that week, the numbers were odd.",
+      "text_ja": "ところがその週は、数字がおかしかったのです。",
+      "text_zh_Hant": "但那一週,數字有點不對勁。"
+    },
+    {
+      "text": "나흘 전에 적어둔 것과,",
+      "est_sec": 3,
+      "text_en": "They matched what was written four days earlier,",
+      "text_ja": "四日前に記録した数字と、",
+      "text_zh_Hant": "跟四天前記下的數字,"
+    },
+    {
+      "text": "토씨 하나 안 틀리고 똑같았거든요.",
+      "est_sec": 4,
+      "text_en": "matching down to the last digit.",
+      "text_ja": "一字一句違わず同じだったんです。",
+      "text_zh_Hant": "竟然一字不差地完全相同。"
+    },
+    {
+      "text": "나무는 자라지 않은 게 아니라 —",
+      "est_sec": 4,
+      "text_en": "The tree hadn't failed to grow —",
+      "text_ja": "木が育たなかったのではなく —",
+      "text_zh_Hant": "並不是樹沒有生長 —"
+    },
+    {
+      "text": "나흘 동안 정확히 그 숫자만큼만 굵어져 있었던 겁니다.",
+      "est_sec": 6,
+      "text_en": "over four days, it had thickened by exactly that number, no more.",
+      "text_ja": "四日間で、まさにその数字の分だけ太くなっていたのです。",
+      "text_zh_Hant": "而是四天裡剛好只長粗了那個數字所寫的量。"
+    },
+    {
+      "text": "재단은 곧바로 격리에 들어갔습니다.",
+      "est_sec": 4,
+      "text_en": "The Foundation moved into containment right away.",
+      "text_ja": "財団はすぐに収容に入りました。",
+      "text_zh_Hant": "基金會立刻展開了收容。"
+    },
+    {
+      "text": "줄자를 치워도 봤고,",
+      "est_sec": 2,
+      "text_en": "They tried taking away the tape measure,",
+      "text_ja": "巻尺を取り上げてもみたし、",
+      "text_zh_Hant": "他們試過收走捲尺,"
+    },
+    {
+      "text": "사진 촬영으로 바꿔도 봤고,",
+      "est_sec": 3,
+      "text_en": "switched to photographing instead,",
+      "text_ja": "撮影に切り替えてもみたし、",
+      "text_zh_Hant": "也試過改用拍照記錄,"
+    },
+    {
+      "text": "눈금 없는 카메라까지 써봤습니다.",
+      "est_sec": 4,
+      "text_en": "even used a camera with no ruler markings at all.",
+      "text_ja": "目盛りのないカメラまで使ってみました。",
+      "text_zh_Hant": "甚至用上完全沒有刻度的相機。"
+    },
+    {
+      "text": "그래도 안 됐습니다.",
+      "est_sec": 2,
+      "text_en": "None of it worked.",
+      "text_ja": "それでも駄目でした。",
+      "text_zh_Hant": "但還是沒有用。"
+    },
+    {
+      "text": "사진 한구석에 우연히 찍힌 눈금자 하나 때문에,",
+      "est_sec": 5,
+      "text_en": "Because of one ruler that accidentally showed up in a corner of a photo,",
+      "text_ja": "写真の隅にたまたま写り込んだ物差し一つのせいで、",
+      "text_zh_Hant": "只因照片角落偶然拍到了一把尺,"
+    },
+    {
+      "text": "그 나무만 유독 부풀어 있는 게 발견됐거든요.",
+      "est_sec": 5,
+      "text_en": "that one tree alone was found unusually swollen.",
+      "text_ja": "その木だけが異様に膨らんでいるのが見つかったんです。",
+      "text_zh_Hant": "結果就發現唯獨那一棵樹異常變粗了。"
+    },
+    {
+      "text": "발디비아 박사는 이게 살아있는 나무만의 일인지 궁금해했습니다.",
+      "est_sec": 7,
+      "text_en": "Dr. Valdivia wondered if this only happened to living trees.",
+      "text_ja": "ヴァルディビア博士は、これが生きた木だけの現象なのか気になりました。",
+      "text_zh_Hant": "瓦爾迪維亞博士很好奇,這是否只發生在活著的樹身上。"
+    },
+    {
+      "text": "표본실 유리장 속,",
+      "est_sec": 2,
+      "text_en": "Inside a glass case in the specimen room,",
+      "text_ja": "標本室のガラスケースの中、",
+      "text_zh_Hant": "在標本室的玻璃櫃裡,"
+    },
+    {
+      "text": "백 년도 더 된 마른 가지 표본 옆에 줄자를 대봤죠.",
+      "est_sec": 6,
+      "text_en": "she held a tape to a dried branch specimen over a hundred years old.",
+      "text_ja": "百年以上前の枯れ枝の標本に巻尺を当ててみたのです。",
+      "text_zh_Hant": "她拿捲尺量了一段超過百年的乾燥枝條標本。"
+    },
+    {
+      "text": "「이것도 되는지 확인만 하는 겁니다.」",
+      "est_sec": 4,
+      "text_en": "\"I'm just checking if this works too.\"",
+      "text_ja": "「これも効くか確かめるだけです。」",
+      "text_zh_Hant": "「我只是想確認一下這個也會不會。」"
+    },
+    {
+      "text": "그렇게 말하고 잰 숫자를 옆 카드에 적어 넣었습니다.",
+      "est_sec": 6,
+      "text_en": "She said that, then wrote the measured number on the card beside it.",
+      "text_ja": "そう言って測った数字を隣のカードに書き込みました。",
+      "text_zh_Hant": "說完便把量到的數字寫在旁邊的卡片上。"
+    },
+    {
+      "text": "다음 날 아침,",
+      "est_sec": 2,
+      "text_en": "The next morning,",
+      "text_ja": "翌朝、",
+      "text_zh_Hant": "隔天早上,"
+    },
+    {
+      "text": "그 마른 가지는 눈에 띄게 더 굵어져 있더군요.",
+      "est_sec": 5,
+      "text_en": "the dried branch was noticeably thicker.",
+      "text_ja": "その枯れ枝は目に見えて太くなっていました。",
+      "text_zh_Hant": "那段乾枝竟然明顯變粗了。"
+    },
+    {
+      "text": "그때부터 재단은 이 종의 표본을 갖고 있는 식물표본관 목록을 뽑았습니다.",
+      "est_sec": 8,
+      "text_en": "From then on, the Foundation pulled a list of every herbarium holding a specimen of this species.",
+      "text_ja": "それから財団は、この種の標本を持つ植物標本館のリストを洗い出しました。",
+      "text_zh_Hant": "從那時起,基金會就開始清點全球持有這種植物標本的植物標本館。"
+    },
+    {
+      "text": "유럽 몇 곳, 오세아니아, 남아메리카 —",
+      "est_sec": 4,
+      "text_en": "A few in Europe, Oceania, South America —",
+      "text_ja": "ヨーロッパ数か所、オセアニア、南米 —",
+      "text_zh_Hant": "歐洲幾處、大洋洲、南美洲 —"
+    },
+    {
+      "text": "대조는 오래 걸렸고,",
+      "est_sec": 2,
+      "text_en": "the cross-check took a long time,",
+      "text_ja": "照合には時間がかかりましたが、",
+      "text_zh_Hant": "比對工作花了很長時間,"
+    },
+    {
+      "text": "얼마 안 가 하나가 걸렸습니다.",
+      "est_sec": 3,
+      "text_en": "but soon, one came up.",
+      "text_ja": "まもなく一件が引っかかりました。",
+      "text_zh_Hant": "但沒多久就查到了一件。"
+    },
+    {
+      "text": "이백 년 전 어느 식물학자가 자로 재고 오기로 적어 넣은 숫자,",
+      "est_sec": 7,
+      "text_en": "A number a botanist had mismeasured and misrecorded two hundred years ago —",
+      "text_ja": "二百年前、ある植物学者が物差しで測って誤記した数字、",
+      "text_zh_Hant": "兩百年前一位植物學家用尺量錯後誤記下的數字,"
+    },
+    {
+      "text": "그 표본은 지금도…",
+      "est_sec": 2,
+      "text_en": "that specimen, even now…",
+      "text_ja": "その標本は今も…",
+      "text_zh_Hant": "那份標本至今…"
+    },
+    {
+      "text": "그 잘못된 숫자만큼 굵은 채였습니다.",
+      "est_sec": 4,
+      "text_en": "remained exactly as thick as that wrong number said.",
+      "text_ja": "その間違った数字の分だけ太いままだったのです。",
+      "text_zh_Hant": "依然維持著那個錯誤數字所指的粗細。"
+    },
+    {
+      "text": "그러니까 이 일은 사이트-388 안에서 시작된 게 아니었던 겁니다.",
+      "est_sec": 7,
+      "text_en": "So this hadn't started inside Site-388 at all.",
+      "text_ja": "つまりこの現象は、サイト-388の中で始まったのではなかったのです。",
+      "text_zh_Hant": "也就是說,這件事根本不是從388號基地開始的。"
+    },
+    {
+      "text": "훨씬 오래전부터,",
+      "est_sec": 2,
+      "text_en": "It had already been happening far longer ago,",
+      "text_ja": "はるか昔から、",
+      "text_zh_Hant": "早在更久以前,"
+    },
+    {
+      "text": "훨씬 넓은 데서 이미 있었던 거죠.",
+      "est_sec": 4,
+      "text_en": "and in a far wider place than anyone thought.",
+      "text_ja": "はるかに広い場所で、すでに起きていたことだったんです。",
+      "text_zh_Hant": "在遠比想像更廣的地方就已經存在了。"
+    },
+    {
+      "text": "저도 이 부분은…",
+      "est_sec": 2,
+      "text_en": "This part, even I…",
+      "text_ja": "この部分は私も…",
+      "text_zh_Hant": "這一段,連我…"
+    },
+    {
+      "text": "아직 다 설명을 못 하겠습니다.",
+      "est_sec": 3,
+      "text_en": "still can't fully explain.",
+      "text_ja": "まだ完全には説明できません。",
+      "text_zh_Hant": "都還無法完全解釋清楚。"
+    },
+    {
+      "text": "이 표본,",
+      "est_sec": 2,
+      "text_en": "These specimens —",
+      "text_ja": "この標本、",
+      "text_zh_Hant": "這些標本,"
+    },
+    {
+      "text": "대체 몇 개나 이미 그렇게 굵어져 있었을까요?",
+      "est_sec": 5,
+      "text_en": "how many had already thickened like that?",
+      "text_ja": "一体いくつが、すでにそんな風に太っていたのでしょうか?",
+      "text_zh_Hant": "到底已經有多少份是這樣悄悄變粗的呢?"
+    },
+    {
+      "text": "재단은 기동특무부대 파이-3,",
+      "est_sec": 3,
+      "text_en": "The Foundation deployed Mobile Task Force Pi-3,",
+      "text_ja": "財団は機動特務部隊パイ-3、",
+      "text_zh_Hant": "基金會派出了機動特遣隊Pi-3,"
+    },
+    {
+      "text": "별칭 빈 나이테 팀을 투입했습니다.",
+      "est_sec": 4,
+      "text_en": "nicknamed \"Empty Ring.\"",
+      "text_ja": "通称「空の年輪」を投入しました。",
+      "text_zh_Hant": "外號「空年輪」小隊。"
+    },
+    {
+      "text": "스크랜턴 현실 안정 장치도 박아봤고,",
+      "est_sec": 4,
+      "text_en": "They drove in Scranton Reality Anchors,",
+      "text_ja": "スクラントン現実錨も打ち込んでみたし、",
+      "text_zh_Hant": "他們試過打入斯克蘭頓現實錨,"
+    },
+    {
+      "text": "재수용 절차도 새로 짜봤고,",
+      "est_sec": 3,
+      "text_en": "redesigned the recontainment procedure,",
+      "text_ja": "再収容の手順も新たに組んでみたし、",
+      "text_zh_Hant": "重新擬定過再收容程序,"
+    },
+    {
+      "text": "D등급 인원을 넣어 재측정 노출 시험까지 해봤습니다.",
+      "est_sec": 6,
+      "text_en": "and even ran a D-class re-measurement exposure test.",
+      "text_ja": "D階級要員を使った再測定曝露試験まで行いました。",
+      "text_zh_Hant": "甚至讓D級人員做了重新測量的暴露測試。"
+    },
+    {
+      "text": "그래도 나무는 반응을 멈추지 않았습니다.",
+      "est_sec": 4,
+      "text_en": "But the tree never stopped responding.",
+      "text_ja": "それでも木は反応をやめませんでした。",
+      "text_zh_Hant": "但那棵樹的反應始終沒有停止。"
+    },
+    {
+      "text": "그 인원에게 남은 말은 딱 한마디였죠.",
+      "est_sec": 4,
+      "text_en": "That person left behind just one line.",
+      "text_ja": "その要員が残した言葉は、たった一言でした。",
+      "text_zh_Hant": "那名人員留下的話只有一句。"
+    },
+    {
+      "text": "「그냥 재고 나오겠습니다.」",
+      "est_sec": 3,
+      "text_en": "\"I'll just measure it and come back.\"",
+      "text_ja": "「ただ測って戻ります。」",
+      "text_zh_Hant": "「我量完就出來。」"
+    },
+    {
+      "text": "다행히 별 이상 없이 재배치됐습니다.",
+      "est_sec": 4,
+      "text_en": "Thankfully, they were reassigned with no issues.",
+      "text_ja": "幸い、特に問題なく再配置されました。",
+      "text_zh_Hant": "所幸最後平安無事地被重新分配。"
+    },
+    {
+      "text": "등산로를 지나던 관광객 셋에게는 C급 기억소거제가 쓰였는데,",
+      "est_sec": 7,
+      "text_en": "Three hikers who passed the trail were given class-C amnestics,",
+      "text_ja": "登山道を通りかかった観光客三人にはC級記憶消去剤が使われましたが、",
+      "text_zh_Hant": "三名經過步道的登山客被施打了C級記憶消除劑,"
+    },
+    {
+      "text": "사흘 만에 기억이 다시 돌아왔다는 후속 보고가 남아 있습니다.",
+      "est_sec": 7,
+      "text_en": "and a follow-up report notes their memories returned within three days.",
+      "text_ja": "三日後には記憶が戻ったという後続報告が残っています。",
+      "text_zh_Hant": "後續報告顯示他們的記憶三天後就恢復了。"
+    },
+    {
+      "text": "소문은 격리 구역 밖으로도 샜습니다.",
+      "est_sec": 4,
+      "text_en": "The rumor leaked outside the containment zone.",
+      "text_ja": "噂は収容区画の外にも漏れました。",
+      "text_zh_Hant": "傳聞還是流出了收容區域之外。"
+    },
+    {
+      "text": "혼돈의 반란 쪽으로 의심되는 사람 하나가 등산로 어귀에서 붙잡혔는데,",
+      "est_sec": 8,
+      "text_en": "Someone suspected of ties to the Chaos Insurgency was caught at the trailhead,",
+      "text_ja": "混沌の反乱と思われる人物が一人、登山道の入り口で捕まりましたが、",
+      "text_zh_Hant": "一名疑似「混沌反叛軍」的人在步道入口被逮捕,"
+    },
+    {
+      "text": "소지품에서 표시목 둘레를 몇 배로 부풀리려던",
+      "est_sec": 5,
+      "text_en": "and their belongings held calculations that seemed aimed at swelling",
+      "text_ja": "所持品からは、標識木の幹周りを何倍にも膨らませようとしたと思われる",
+      "text_zh_Hant": "隨身物品裡搜出似乎是想把標記樹的周長"
+    },
+    {
+      "text": "것으로 보이는 계산 메모가 나왔습니다.",
+      "est_sec": 4,
+      "text_en": "a marker tree's girth many times over.",
+      "text_ja": "計算メモが見つかりました。",
+      "text_zh_Hant": "膨脹好幾倍的計算筆記。"
+    },
+    {
+      "text": "숫자만 몇 개, 말이 안 되게 큰 걸로요.",
+      "est_sec": 5,
+      "text_en": "Just a few numbers, absurdly large ones.",
+      "text_ja": "数字だけ、あり得ないほど大きなものでした。",
+      "text_zh_Hant": "上面只有幾個數字,大得離譜。"
+    },
+    {
+      "text": "이 사이트 서고엔,",
+      "est_sec": 2,
+      "text_en": "In this site's archive,",
+      "text_ja": "このサイトの書庫には、",
+      "text_zh_Hant": "在這座基地的檔案室裡,"
+    },
+    {
+      "text": "다른 사이트 얘기도 몇 줄 적혀 있습니다.",
+      "est_sec": 5,
+      "text_en": "there are a few lines about other sites too.",
+      "text_ja": "他のサイトの話も何行か記されています。",
+      "text_zh_Hant": "也記著幾行有關其他基地的事。"
+    },
+    {
+      "text": "눈을 떼는 순간만 움직인다는 조각상,",
+      "est_sec": 4,
+      "text_en": "A statue said to move only when unobserved —",
+      "text_ja": "目を離した瞬間だけ動くという彫像、",
+      "text_zh_Hant": "有一尊據說只在無人注視時才會移動的雕像,"
+    },
+    {
+      "text": "173 얘기도 있고,",
+      "est_sec": 2,
+      "text_en": "SCP-173, there's mention of it,",
+      "text_ja": "173の話もありますし、",
+      "text_zh_Hant": "也就是SCP-173,"
+    },
+    {
+      "text": "완벽하게 맞물려 돌아가는 태엽 장치,",
+      "est_sec": 4,
+      "text_en": "and a clockwork device with flawlessly meshing gears —",
+      "text_ja": "完璧に噛み合って動くゼンマイ仕掛け、",
+      "text_zh_Hant": "還有一台齒輪完美嚙合的發條裝置,"
+    },
+    {
+      "text": "914 얘기도 있죠.",
+      "est_sec": 2,
+      "text_en": "SCP-914, that one's mentioned too.",
+      "text_ja": "914の話もあります。",
+      "text_zh_Hant": "也就是SCP-914,也提到了。"
+    },
+    {
+      "text": "다만 그 둘은 적어도 규칙이 있었습니다.",
+      "est_sec": 4,
+      "text_en": "But at least those two had rules.",
+      "text_ja": "ただ、その二つには少なくとも規則がありました。",
+      "text_zh_Hant": "但至少那兩個都還有規則可循。"
+    },
+    {
+      "text": "이쪽은 규칙이랄 것도 없이,",
+      "est_sec": 3,
+      "text_en": "This one doesn't even have rules to speak of —",
+      "text_ja": "こちらは規則と呼べるものすらなく、",
+      "text_zh_Hant": "這棵樹卻連規則都稱不上,"
+    },
+    {
+      "text": "그냥 적힌 대로였던 겁니다.",
+      "est_sec": 3,
+      "text_en": "it just goes by whatever's written down.",
+      "text_ja": "ただ書かれた通りになるだけだったのです。",
+      "text_zh_Hant": "只是照著寫下的數字走而已。"
+    },
+    {
+      "text": "발디비아 박사의 첫 보고서 여백엔,",
+      "est_sec": 4,
+      "text_en": "In the margin of Dr. Valdivia's first report,",
+      "text_ja": "ヴァルディビア博士の最初の報告書の余白には、",
+      "text_zh_Hant": "在瓦爾迪維亞博士第一份報告的頁邊,"
+    },
+    {
+      "text": "급하게 휘갈긴 글씨로 이렇게 적혀 있습니다.",
+      "est_sec": 5,
+      "text_en": "hastily scrawled handwriting reads like this.",
+      "text_ja": "急いで走り書きされた文字でこう書かれています。",
+      "text_zh_Hant": "潦草地寫著這樣一句話。"
+    },
+    {
+      "text": "「이 숫자, 못 믿겠음.」 그런데도 박사는,",
+      "est_sec": 5,
+      "text_en": "\"Can't trust this number.\" And yet, the doctor",
+      "text_ja": "「この数字、信じられない。」それでも博士は、",
+      "text_zh_Hant": "「這數字,不敢相信。」然而博士,"
+    },
+    {
+      "text": "그 메모가 얼마나 위험한 숫자인지 직접 확인하고 싶어 했습니다.",
+      "est_sec": 7,
+      "text_en": "wanted to see for herself just how dangerous that number was.",
+      "text_ja": "そのメモがどれほど危険な数字なのか、自ら確かめたがりました。",
+      "text_zh_Hant": "還是想親自確認那張紙條上的數字有多危險。"
+    },
+    {
+      "text": "봉인된 증거 봉투를 몰래 열어서,",
+      "est_sec": 4,
+      "text_en": "She secretly opened the sealed evidence envelope,",
+      "text_ja": "封印された証拠品の封筒をこっそり開け、",
+      "text_zh_Hant": "她偷偷打開了封存的證物袋,"
+    },
+    {
+      "text": "숫자를 자기 손으로 옆 종이에 옮겨 적었습니다.",
+      "est_sec": 5,
+      "text_en": "and copied the number onto a piece of paper with her own hand.",
+      "text_ja": "その数字を自分の手で隣の紙に書き写しました。",
+      "text_zh_Hant": "親手把數字抄到了旁邊的紙上。"
+    },
+    {
+      "text": "솔직히 저도,",
+      "est_sec": 2,
+      "text_en": "Honestly, even I",
+      "text_ja": "正直、私も",
+      "text_zh_Hant": "老實說,連我"
+    },
+    {
+      "text": "왜 굳이 자기 손으로 옮겨 적었는지는…",
+      "est_sec": 4,
+      "text_en": "why she had to copy it with her own hand…",
+      "text_ja": "なぜわざわざ自分の手で書き写したのか…",
+      "text_zh_Hant": "都不太明白她為什麼非得親手抄寫不可…"
+    },
+    {
+      "text": "이해가 잘 안 갑니다.",
+      "est_sec": 2,
+      "text_en": "I don't quite understand.",
+      "text_ja": "よく理解できません。",
+      "text_zh_Hant": "這一點。"
+    },
+    {
+      "text": "「제가 옮겨 적은 숫자였습니다.」",
+      "est_sec": 4,
+      "text_en": "\"It was the number I copied down.\"",
+      "text_ja": "「私が書き写した数字でした。」",
+      "text_zh_Hant": "「是我抄下來的那個數字。」"
+    },
+    {
+      "text": "나중에 남은 진술은, 그 한 줄뿐이었습니다.",
+      "est_sec": 5,
+      "text_en": "That single line was all that was left of her statement.",
+      "text_ja": "後に残された証言は、その一行だけでした。",
+      "text_zh_Hant": "後來留下的證詞,就只有這一句。"
+    },
+    {
+      "text": "몇 시간 만에,",
+      "est_sec": 2,
+      "text_en": "Within a few hours,",
+      "text_ja": "数時間のうちに、",
+      "text_zh_Hant": "短短幾個小時內,"
+    },
+    {
+      "text": "표시목 하나가 원래 둘레의 몇 배로 부풀어 올랐습니다.",
+      "est_sec": 6,
+      "emphasis": "몇 배로 부풀어",
+      "text_en": "one marker tree swelled to several times its original girth.",
+      "text_ja": "標識木の一本が、元の幹周りの何倍にも膨れ上がりました。",
+      "text_zh_Hant": "有一棵標記樹膨脹到原本周長的好幾倍。"
+    },
+    {
+      "text": "뿌리째 통제 구역 담장을 밀어냈고요.",
+      "est_sec": 4,
+      "text_en": "It pushed the perimeter fence outward, roots and all.",
+      "text_ja": "根ごと統制区域の柵を押し出しました。",
+      "text_zh_Hant": "連根帶土地把管制區的圍籬都推倒了。"
+    },
+    {
+      "text": "그날 새벽, 무전에 이런 말이 잡혔습니다.",
+      "est_sec": 5,
+      "text_en": "That dawn, this came through on the radio.",
+      "text_ja": "その日の未明、無線にこんな声が入りました。",
+      "text_zh_Hant": "那天凌晨,無線電裡傳來了這樣一句話。"
+    },
+    {
+      "text": "「담장이, 안쪽에서부터 밀리고 있습니다.",
+      "est_sec": 4,
+      "text_en": "\"The fence — it's being pushed from the inside.",
+      "text_ja": "「柵が、内側から押されています。",
+      "text_zh_Hant": "「圍籬,正從裡面被往外推。"
+    },
+    {
+      "text": "… 철수하겠습니다.」",
+      "est_sec": 2,
+      "text_en": "…falling back.\"",
+      "text_ja": "…撤収します。」",
+      "text_zh_Hant": "……我們撤退。」"
+    },
+    {
+      "text": "안쪽에서부터 담장이 밀린다는 게 무슨 뜻인지,",
+      "est_sec": 5,
+      "text_en": "What it meant for the fence to be pushed from inside —",
+      "text_ja": "内側から柵が押されるというのがどういう意味なのか、",
+      "text_zh_Hant": "圍籬從裡面被往外推是什麼意思,"
+    },
+    {
+      "text": "그때 누가 알았을까요?",
+      "est_sec": 2,
+      "text_en": "did anyone understand it then?",
+      "text_ja": "その時、誰か分かっていたでしょうか?",
+      "text_zh_Hant": "當時有誰真正明白呢?"
+    },
+    {
+      "text": "빈 나이테 팀이 재수용을 위해 다시 들어가 부푼 밑동을 잘라봤습니다.",
+      "est_sec": 8,
+      "text_en": "The Empty Ring team went back in for recontainment and cut into the swollen trunk.",
+      "text_ja": "「空の年輪」チームが再収容のため再び入り、膨れた幹を切ってみました。",
+      "text_zh_Hant": "「空年輪」小隊為了再收容再次進入,切開了那膨脹的樹幹。"
+    },
+    {
+      "text": "한 연구원은 나중에 이렇게 적었죠.",
+      "est_sec": 4,
+      "text_en": "One researcher later wrote this.",
+      "text_ja": "ある研究員は後にこう記しました。",
+      "text_zh_Hant": "一名研究員後來這樣寫道。"
+    },
+    {
+      "text": "「분명히 어제 쟀던 자리인데,",
+      "est_sec": 3,
+      "text_en": "\"This is definitely where we measured yesterday,",
+      "text_ja": "「確かに昨日測った場所なのに、",
+      "text_zh_Hant": "「這裡明明是昨天量過的地方,"
+    },
+    {
+      "text": "오늘 자로 다시 재면 답이 또 바뀝니다.」",
+      "est_sec": 5,
+      "text_en": "but measure it again today and the answer changes again.\"",
+      "text_ja": "今日また測ると答えがまた変わるんです。」",
+      "text_zh_Hant": "但今天再量一次,答案又不一樣了。」"
+    },
+    {
+      "text": "잘린 단면 어디에도,",
+      "est_sec": 2,
+      "text_en": "Nowhere on the cut surface —",
+      "text_ja": "切断面のどこにも、",
+      "text_zh_Hant": "在切開的斷面上,不論哪裡,"
+    },
+    {
+      "text": "나이테도 새 목질 조직도 없었습니다.",
+      "est_sec": 4,
+      "text_en": "no growth rings, no new wood tissue at all.",
+      "text_ja": "年輪も新しい木質組織もありませんでした。",
+      "text_zh_Hant": "都沒有年輪,也沒有新生的木質組織。"
+    },
+    {
+      "text": "부푼 만큼의 실제 물질이,",
+      "est_sec": 3,
+      "text_en": "The actual matter to account for the swelling —",
+      "text_ja": "膨らんだ分の実際の物質が、",
+      "text_zh_Hant": "膨脹出來的那部分實質材料,"
+    },
+    {
+      "text": "어디에도 없었던 겁니다.",
+      "est_sec": 3,
+      "text_en": "was nowhere to be found.",
+      "text_ja": "どこにも存在しなかったのです。",
+      "text_zh_Hant": "根本無處可尋。"
+    },
+    {
+      "text": "발디비아 박사는 그 뒤로 근무자 명단에서 조용히 지워졌습니다.",
+      "est_sec": 7,
+      "emphasis": "조용히 지워졌습니다",
+      "text_en": "Dr. Valdivia was quietly erased from the staff roster afterward.",
+      "text_ja": "ヴァルディビア博士はその後、静かに職員名簿から消されました。",
+      "text_zh_Hant": "瓦爾迪維亞博士自此便悄悄從人員名冊上消失了。"
+    },
+    {
+      "text": "자리 하나만, 이름 없이 남았고요.",
+      "est_sec": 4,
+      "text_en": "Only a single slot remained, with no name.",
+      "text_ja": "一つの席だけが、名前のないまま残りました。",
+      "text_zh_Hant": "只留下一個沒有名字的空缺。"
+    },
+    {
+      "text": "사고 조사 서류에 남은 마지막 서명도,",
+      "est_sec": 4,
+      "text_en": "The last signature left on the incident report",
+      "text_ja": "事故調査書類に残った最後の署名も、",
+      "text_zh_Hant": "留在事故調查文件上的最後一個簽名,"
+    },
+    {
+      "text": "본인 것이 맞는지 이제는 아무도 확인 못 합니다.",
+      "est_sec": 5,
+      "text_en": "no one can confirm is really hers anymore.",
+      "text_ja": "本人のものかどうか、今ではもう誰も確認できません。",
+      "text_zh_Hant": "如今也沒人能確認究竟是不是她本人的筆跡。"
+    },
+    {
+      "text": "이 사건은 결국 O5 승인이 필요한 사안으로 격상됐습니다.",
+      "est_sec": 6,
+      "text_en": "This case was eventually escalated to require O5 approval.",
+      "text_ja": "この事件は結局、O5承認が必要な案件へと格上げされました。",
+      "text_zh_Hant": "這起事件最終被升級為需要O5理事會核准的案件。"
+    },
+    {
+      "text": "혹시 여러분도,",
+      "est_sec": 2,
+      "text_en": "Have any of you, too,",
+      "text_ja": "もしかして皆さんも、",
+      "text_zh_Hant": "不知道大家有沒有,"
+    },
+    {
+      "text": "뭔가의 둘레나 길이를 재고 그 숫자를 어딘가에 적어두신 적 있으신가요…?",
+      "est_sec": 8,
+      "text_en": "ever measured something's girth or length and written the number down somewhere…?",
+      "text_ja": "何かの周りや長さを測って、その数字をどこかに書き留めたことがありますか…?",
+      "text_zh_Hant": "曾經量過某樣東西的周長或長度,並把數字寫在什麼地方…?"
+    },
+    {
+      "text": "다행히 말씀드리자면,",
+      "est_sec": 2,
+      "text_en": "Fortunately, I can tell you,",
+      "text_ja": "幸い申し上げますと、",
+      "text_zh_Hant": "還好可以跟大家說,"
+    },
+    {
+      "text": "이 반응은 이 나무 한 종의 세포벽 구조에서만 확인된 것 같습니다.",
+      "est_sec": 7,
+      "text_en": "this reaction seems confirmed only in the cell-wall structure of this one tree species.",
+      "text_ja": "この反応は、この一種類の木の細胞壁構造でしか確認されていないようです。",
+      "text_zh_Hant": "這種反應似乎只在這一種樹的細胞壁結構中才會出現。"
+    },
+    {
+      "text": "여러분이 적어두신 숫자는,",
+      "est_sec": 3,
+      "text_en": "So the number you wrote down",
+      "text_ja": "皆さんが書き留めた数字は、",
+      "text_zh_Hant": "所以大家寫下的那個數字,"
+    },
+    {
+      "text": "아마 안전할 겁니다.",
+      "est_sec": 2,
+      "text_en": "is probably safe.",
+      "text_ja": "おそらく安全でしょう。",
+      "text_zh_Hant": "大概是安全的。"
+    },
+    {
+      "text": "전 세계 표본관 대조 절차는,",
+      "est_sec": 3,
+      "text_en": "The worldwide herbarium cross-check",
+      "text_ja": "世界中の標本館との照合作業は、",
+      "text_zh_Hant": "全球標本館的比對工作,"
+    },
+    {
+      "text": "이 보고서가 쓰이는 지금도 계속되고 있습니다.",
+      "est_sec": 5,
+      "text_en": "is still ongoing, even as this report is being written.",
+      "text_ja": "この報告書が書かれている今も続いています。",
+      "text_zh_Hant": "在這份報告撰寫的此刻仍在持續進行。"
+    },
+    {
+      "text": "몇 곳까지 확인이 끝났는지…",
+      "est_sec": 3,
+      "text_en": "How many sites have been checked so far…",
+      "text_ja": "何か所まで確認が終わったのか…",
+      "text_zh_Hant": "已經確認到第幾個地方了…"
+    },
+    {
+      "text": "그 숫자는 어제와 오늘이 또 다릅니다.",
+      "est_sec": 4,
+      "text_en": "that number is different again today than it was yesterday.",
+      "text_ja": "その数字は昨日と今日でまた違います。",
+      "text_zh_Hant": "這個數字今天和昨天又不一樣了。"
+    },
+    {
+      "text": "여러분 수첩에도,",
+      "est_sec": 2,
+      "text_en": "In your own notebooks, too,",
+      "text_ja": "皆さんの手帳にも、",
+      "text_zh_Hant": "在大家的筆記本裡,"
+    },
+    {
+      "text": "오래전에 적어놓고 다시는 안 들여다본 숫자 하나쯤 있지 않으신가요?",
+      "est_sec": 7,
+      "text_en": "isn't there some number you wrote down long ago and never looked at again?",
+      "text_ja": "昔書き留めて、二度と見返さなかった数字が一つくらいあるのではないでしょうか?",
+      "text_zh_Hant": "是不是也有個很久以前寫下、之後就再也沒翻看過的數字呢?"
+    },
+    {
+      "text": "있다면 그게 뭐였는지, 궁금하지 않으세요?",
+      "est_sec": 5,
+      "text_en": "If so, aren't you curious what it was?",
+      "text_ja": "もしあるなら、それが何だったのか気になりませんか?",
+      "text_zh_Hant": "如果有的話,難道不好奇那是什麼嗎?"
+    },
+    {
+      "text": "구독해두시면,",
+      "est_sec": 2,
+      "text_en": "If you subscribe,",
+      "text_ja": "登録しておいていただければ、",
+      "text_zh_Hant": "訂閱起來的話,"
+    },
+    {
+      "text": "이런 기록들 놓치지 않고 이어서 보실 수 있을 겁니다.",
+      "est_sec": 6,
+      "text_en": "you won't miss the next record like this one.",
+      "text_ja": "こうした記録を見逃さずに追っていただけるはずです。",
+      "text_zh_Hant": "就能持續追上這些紀錄,不會錯過了。"
+    }
+  ],
+  "scenes": [
+    {
+      "prompt": "close shot of a freshly cut tree stump cross-section filling most of the frame, perfectly smooth pale wood with not a single visible growth ring, faint wisps of steam rising off the still-warm cut surface; a discarded handsaw resting at the very edge of frame; low straight-on angle, stump fills over seventy percent of frame; single warm lantern light from above; pale raw wood grain, faint steam, cold night mist beyond; deep black background, warm amber glow on the wood; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (amber-yellow), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "row of camera tripods facing a single thick jungle tree trunk wrapped in cloud-forest vines, trunk dominates the frame with tripods small in the foreground; low three-quarter angle; single beam of grey morning light cutting through fog; wet bark, brass tripod legs, drifting mist; deep black background, one shaft of pale amber light on the bark; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (amber-yellow), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "a single developed photograph pinned to a corkboard, showing a tree trunk with a small ruler accidentally caught in the frame corner, the trunk in the photo visibly swollen; photograph fills most of frame, subject dead center; single desk-lamp light from above; glossy photo paper, small steel ruler, corkboard pin; thin dust in the lamp beam; deep black background, warm amber pool of lamplight; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (amber-yellow), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "close shot of a researcher's hand holding a cloth tape measure against a dried century-old branch specimen mounted behind glass, the branch fills most of frame with the hand and tape at the edge; low angle facing the glass case; single cold spotlight from above; brittle dried bark, glass reflection, faded specimen label; still dust in the case light; deep black background, cold-to-amber light gradient on the branch; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (amber-yellow), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "a spread of old herbarium ledger papers fanned across a dark table beside a small world globe with a few pins glowing faintly, papers and globe dominate the frame; overhead close angle; single warm desk lamp; yellowed paper, brass pins, worn globe surface; drifting dust; deep black background, amber lamp glow on the papers; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (amber-yellow), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "extreme close-up of a faded specimen label with old handwritten ink numbers, resting beside an unnaturally thick dried branch fragment, label and branch fill the frame; flat top-down angle; single narrow spotlight; aged paper, faded ink, cracked dry bark; fine dust motes; deep black background, amber spotlight pool; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (amber-yellow), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "a jungle-swallowed tree trunk with three metal reality-anchor pylons driven into the soil around its base, one worker in a plain jumpsuit standing small at the edge of frame, trunk dominates the composition; low wide angle; single portable floodlight; wet metal pylons, mossy bark, damp earth; thin fog; deep black background, harsh amber floodlight on the trunk; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (amber-yellow), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "close-up of a confiscated notepad held in a clear evidence bag, page covered in a few absurdly long handwritten numbers, notepad fills most of frame; top-down interrogation-table angle; single hard overhead light; creased paper, plastic evidence bag, ballpoint ink; faint glare; deep black background, harsh amber light on the page; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (amber-yellow), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "close shot of a single hand copying numbers onto a blank sheet of paper by lantern light late at night, the hand and paper dominate the frame, the rest of the room in total darkness; low intimate angle; single warm lantern beside the hand; worn paper, pencil, lantern glass; faint smoke curl from the wick; deep black background, warm amber lantern glow; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (amber-yellow), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "a massive swollen tree trunk breaking through a chain-link perimeter fence, roots visibly heaving the ground, trunk dominates over seventy percent of the frame; low dramatic angle looking up; single harsh floodlight from below; torn wire mesh, splintered wood, upturned soil; dust and debris in the air; deep black background, intense amber uplight on the trunk; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (amber-yellow), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "close shot of a second freshly cut cross-section on a now-massive trunk, smooth pale wood with no growth rings visible despite its huge size, cut surface fills most of frame; straight-on low angle; single cold work light; raw pale wood, sawdust, steel chainsaw blade at frame edge; drifting sawdust in the light; deep black background, cold-to-amber light on the wood; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (amber-yellow), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "close-up of a printed staff roster sheet with one name blacked out and a blank line left in its place, sheet fills most of frame, a small live progress-counter display glowing faintly in the soft blurred background; flat close angle; single desk light; printed paper, redaction ink, LED counter glow; still dust; deep black background, amber desk light with a faint counter glow; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (amber-yellow), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    }
+  ],
+  "background": {
+    "id": "scp-9058_bg",
+    "kind": "image",
+    "reuse": false,
+    "aspect": "16:9",
+    "resolution": "1920x1080",
+    "prompt": "wide shot of a single massive swollen tree trunk rising through mist at the center of a cloud-forest clearing, dominating well over sixty percent of the frame, the faint outline of a small research outpost dwarfed at its base; low three-quarter angle; single cold moonlight beam breaking through canopy fog; wet mossy bark, drifting mist, distant tin-roofed huts; heavy layered fog; deep black background, cold-to-amber moonlight on the bark; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (amber-yellow), strong rim light, cinematic low angle, grain-free, no text anywhere",
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion"
+  },
+  "thumbnail": {
+    "hook": "hero close-up of a single swollen jungle tree trunk with unnaturally smooth bark, a frayed tape measure wrapped partway around it glowing faint amber where the numbers sit; trunk fills over seventy percent of frame, subject on the right third, left third dark empty negative space; single strong amber rim light from behind the trunk, rest in deep shadow; damp bark texture, brass tape-measure buckle, drifting mist; thin haze; deep blue-black background, vivid amber glow; low angle, dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (amber-yellow), strong rim light, cinematic low angle, grain-free, no text anywhere",
+    "hook_alt": [
+      "close-up of a field notebook page pinned open beside a huge tree base, page showing a single overwritten number glowing faint amber, blurred bark filling the background; notebook on the left third, right third dark negative space; single warm lantern light; worn paper, ink smudge, damp bark; faint mist; deep blue-black background, amber page glow; low angle, dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (amber-yellow), strong rim light, cinematic low angle, grain-free, no text anywhere",
+      "close-up of a freshly cut tree cross-section held toward camera, perfectly smooth pale wood with no growth rings, a gloved hand at the frame edge; cross-section fills most of frame, subject centered-right, left third dark negative space; single hard work light from above; pale wood grain, glove fabric, sawdust; thin dust in light; deep blue-black background, amber highlight on wood; low angle, dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (amber-yellow), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    ],
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion",
+    "text_safe_area": "left third",
+    "resolution": "1280x720"
+  },
+  "platforms": {
+    "youtube": {
+      "title": "「제가 옮겨 적은 숫자였습니다」 안데스 운무림 표시목이 담장을 밀어낸 사건 [SCP-9058]",
+      "title_form": "증언형",
+      "thumbnail_text": "받아쓰는 나무",
+      "thumbnail_quote": "- 제가 옮겨 적은 숫자였습니다",
+      "tags": [
+        "SCP",
+        "SCP재단",
+        "SCP-173",
+        "SCP-914",
+        "괴담",
+        "미스터리",
+        "무서운이야기"
+      ],
+      "chapters": [
+        "00:00 나이테 없는 밑동",
+        "01:08 매주 월요일의 이상한 숫자",
+        "01:40 재단, 격리에 들어가다",
+        "02:37 표본관까지 번진 사실",
+        "03:32 기동특무부대의 실패",
+        "05:16 발디비아 박사, 규칙을 넘다",
+        "07:05 조용히 지워진 이름",
+        "07:55 아직 안 끝난 대조 작업"
+      ],
+      "description": "안데스 고산 운무림 관측소 표시목 이야기입니다. 둘레를 재고 그 숫자를 적어두면, 나무는 그 숫자에 맞춰 곧바로 몸을 부풀립니다.\n\n※ SCP 재단 세계관 기반 오리지널 창작 · 허구의 이야기입니다\n※ CC BY-SA 3.0 · 원작: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP재단 #괴담 #무서운이야기 #미스터리",
+      "localizations": {
+        "en": {
+          "title": "\"I Copied That Number Myself\" — A Marker Tree in the Andes Pushed Through a Fence [SCP-9058]",
+          "description": "A marker tree at a remote Andes cloud-forest outpost swells to match whatever number gets written in the logbook — the moment it's written.\n\n※ Original fiction set in the SCP Foundation universe · a work of fiction\n※ CC BY-SA 3.0 · Source: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCPFoundation #creepypasta #horrorstory #mystery"
+        },
+        "ja": {
+          "title": "「私が書き写した数字でした」 アンデス雲霧林の標識木が柵を押し倒した事件 [SCP-9058]",
+          "description": "アンデスの高山雲霧林にある観測所の標識木は、ログブックに書かれた数字に合わせて、その場ですぐに幹を膨らませます。\n\n※ SCP財団の世界観に基づくオリジナル創作・フィクションです\n※ CC BY-SA 3.0 · 原作: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP財団 #怪談 #ホラー #ミステリー"
+        },
+        "zh-Hant": {
+          "title": "「是我抄下來的那個數字」安地斯雲霧林的標記樹推倒圍籬事件 [SCP-9058]",
+          "description": "安地斯山脈高山雲霧林觀測站裡的標記樹,只要日誌本上寫下什麼數字,樹幹就會立刻膨脹到那個數字。\n\n※ 基於SCP基金會世界觀的原創作品,純屬虛構\n※ CC BY-SA 3.0 · 原作: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP基金會 #怪談 #恐怖故事 #懸疑"
+        }
+      },
+      "pinned_comment": "혹시 여러분도 뭔가의 길이를 재고 그 숫자를 적어두신 적 있나요? 어떤 숫자였는지 살짝 댓글로 알려주세요.",
+      "playlist": "SCP 아카이브 (전편 듣기)"
+    }
+  },
+  "credit": "SCP 재단 세계관 기반 오리지널 창작 · 허구 · CC BY-SA 3.0",
+  "content_rating": "teen",
+  "notes": "SCP 아카이브 · 16:9 롱폼 · 장면 전환 배경 + 자막 번인 · 단일 내레이터 · 완결형."
+}
