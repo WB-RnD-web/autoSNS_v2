@@ -66,14 +66,18 @@ jobs:
       IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
       THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
       THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
-      # IG/Threads 미리보기 커버(9:16) 생성용 qwen-image 게이트웨이(소설과 동일).
+      # IG/Threads 미리보기 커버(9:16) 생성용 wbSpark 게이트웨이(소설과 동일).
       #   TOKEN 은 게이트웨이 인증 걸면 사용. 느리면 영상 프레임 폴백(검은 미리보기 방지).
       WBSPARK_BASE: ${{ vars.WBSPARK_BASE || 'https://wangbyul.com/wbSpark' }}
       WBSPARK_TOKEN: ${{ secrets.WBSPARK_TOKEN }}
-      # 커버 생성 노브(선택): 끄기=SHORTS_COVER=0, qwen 대기 상한(초), 첫프레임 홀드(초)
+      # 커버 생성 노브(선택): 끄기=SHORTS_COVER=0, 게이트웨이 대기 상한(초), 첫프레임 홀드(초)
       SHORTS_COVER: ${{ vars.SHORTS_COVER || '1' }}
-      # 정상 생성 ~86초(콜드 +44초). 300은 서버 행 때 런당 5분 낭비라 180으로 하향(2026-07-18).
-      SHORTS_COVER_TIMEOUT: ${{ vars.SHORTS_COVER_TIMEOUT || '180' }}
+      # ★2026-09-07 상향(180→240). 180 의 근거였던 "콜드 66GB 재로드 +44초" 가 사라졌다 —
+      #   LLM 이 vLLM 상주형(gemma-4-26B)으로 바뀌어 콜드 재로드 자체가 없다. 대신 GPU 는
+      #   직렬 레인이라 남의 작업 뒤에 줄을 서면 그만큼 늦어진다. 즉 하향할 이유는 없어졌고
+      #   상향할 이유만 남았다. 같은 경로(LLM 보정 포함)를 재는 프로브가 260 을 쓰므로
+      #   180 은 정상 작업까지 끊는다. (실패해도 영상 프레임 폴백이라 치명적이진 않다)
+      SHORTS_COVER_TIMEOUT: ${{ vars.SHORTS_COVER_TIMEOUT || '240' }}
       SHORTS_COVER_HOLD: ${{ vars.SHORTS_COVER_HOLD || '0.7' }}
     steps:
       - uses: actions/checkout@v4

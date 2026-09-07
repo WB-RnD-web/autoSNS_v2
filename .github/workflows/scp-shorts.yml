@@ -77,7 +77,7 @@ jobs:
     # 롱폼 성공 여부는 ★호출부(scp.yml 의 needs:)가 판단한다 — 여기선 조건이 필요 없다.
     runs-on: ubuntu-latest
     # 대본 40~50초 · 이미지 2~3장 · 30fps 1080x1920 veryfast → 넉넉히 30분.
-    # (qwen-image 가 콜드일 때 장당 최대 7분까지 기다린다)
+    # (게이트웨이가 GPU 직렬 레인에서 남의 작업 뒤에 줄을 서면 장당 최대 7분까지 기다린다)
     timeout-minutes: 30
     env:
       TZ: Asia/Seoul
@@ -88,7 +88,9 @@ jobs:
       I18N_LOCALIZE: ${{ vars.I18N_LOCALIZE || '1' }}
       I18N_CAPTIONS: ${{ vars.I18N_CAPTIONS || '1' }}
       I18N_LANGS: ${{ vars.I18N_LANGS || 'en,ja,zh-Hant' }}
-      # 이미지: 자체 qwen-image(wbSpark) 우선 → 실패 시 FLUX 폴백.
+      # 이미지: 자체 wbSpark 게이트웨이 우선 → 실패 시 FLUX 폴백.
+      #   값 'qwen' 은 이 셀렉터의 옛 이름이다. 게이트웨이가 다중 모델이 된 뒤로는 부정확하지만
+      #   vars 에 이미 박혀 있어 별칭으로 계속 받는다 — '어느 백엔드냐'지 '어느 모델이냐'가 아니다.
       #   쇼츠는 '개체를 정면에 크게' 라 이미지 품질이 곧 조회수다. 뒤집으려면 vars 로 flux.
       SCP_SHORTS_IMG: ${{ vars.SCP_SHORTS_IMG || 'qwen' }}
       WBSPARK_BASE: ${{ vars.WBSPARK_BASE || 'https://wangbyul.com/wbSpark' }}

@@ -410,7 +410,7 @@ ai.api.nvidia.com           443/HTTPS   이미지 생성
 freesound.org               443/HTTPS   ASMR 음원
 news.google.com             443/HTTPS   뉴스 수집
 github.com, codeload.github.com  443    (5-B 하이브리드일 때)
-wangbyul.com                443/HTTPS   qwen 커버(사내면 내부 경유)
+wangbyul.com                443/HTTPS   wbSpark 커버(사내면 내부 경유)
 ```
 
 **선택 — IG/Threads 쓸 때만**

@@ -45,6 +45,14 @@ class FakeCommunicate:
                    "text": "@@@" if self.BROKEN else w}
             t += d
 
+    async def save(self, out_mp3):
+        """_synth(경계 없이 통짜 합성) 경로용 — stream() 과 같은 길이의 mp3 를 쓴다.
+
+        ★이게 없어서 이 테스트가 통째로 죽어 있었다. 프로소디(rate/pitch 변주)가
+          들어오면서 _synth 를 타는 경로가 생겼는데 목이 따라가지 않은 것.
+        """
+        _mp3(max(0.5, len(self.text) * SEC_PER_CHAR), out_mp3)
+
     def save_sync(self, *a, **k):
         raise RuntimeError("쓰지 않음")
 
