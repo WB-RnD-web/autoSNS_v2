@@ -38,8 +38,12 @@ MIN_SCENE_SEC = float(os.environ.get("SCP_SHORTS_MIN_SCENE_SEC", "12"))
 # (3줄 넘어가면 세로 화면에서 답답하고, 45~65세 타깃이라 더 줄이면 잘 안 보인다)
 FONT_SIZE = int(os.environ.get("SCP_SHORTS_FONT_SIZE", "68"))
 MAX_CAPTION_CHARS = int(os.environ.get("SCP_SHORTS_CAPTION_CHARS", "24"))
-# 이미지 백엔드: qwen(자체 wbSpark) → flux 폴백. 반대로 쓰려면 SCP_SHORTS_IMG=flux.
-IMG_BACKEND = os.environ.get("SCP_SHORTS_IMG", "qwen").strip().lower()
+# 이미지 백엔드: wbspark(자체 게이트웨이) → flux 폴백. 반대로 쓰려면 SCP_SHORTS_IMG=flux.
+#   'qwen' 은 이 셀렉터의 옛 이름이다. 게이트웨이는 이제 모델을 스스로 고르므로 부정확하지만
+#   레포 vars 에 그대로 박혀 있어 별칭으로 계속 받는다.
+IMG_BACKEND = os.environ.get("SCP_SHORTS_IMG", "wbspark").strip().lower()
+if IMG_BACKEND == "qwen":            # 옛 이름 호환
+    IMG_BACKEND = "wbspark"
 
 # 유튜브 쇼츠 상한 3분. 넘으면 일반 영상으로 취급돼 피드에 안 뜬다.
 HARD_MAX_SEC = float(os.environ.get("SCP_SHORTS_MAX_SEC", "175"))
@@ -225,16 +229,18 @@ def split_script(text: str, max_chars: int = MAX_CAPTION_CHARS) -> list[dict]:
 
 # ── 이미지 ─────────────────────────────────────────────
 def _gen_raw(prompt: str, out_png: str, seed: int) -> str | None:
-    """qwen(wbSpark) ↔ FLUX 중 설정된 쪽 먼저, 실패하면 다른 쪽. 둘 다 실패면 None."""
-    order = ["qwen", "flux"] if IMG_BACKEND != "flux" else ["flux", "qwen"]
+    """wbSpark ↔ FLUX 중 설정된 쪽 먼저, 실패하면 다른 쪽. 둘 다 실패면 None."""
+    order = ["wbspark", "flux"] if IMG_BACKEND != "flux" else ["flux", "wbspark"]
     for backend in order:
         try:
-            if backend == "qwen":
+            if backend == "wbspark":
                 import wbspark
-                to = int(os.environ.get("SCP_SHORTS_QWEN_TIMEOUT", "420"))
-                print(f"  · 이미지{seed} qwen-image 생성 시도(최대 {to // 60}분)…", flush=True)
+                # SCP_SHORTS_QWEN_TIMEOUT 은 옛 이름 — 이미 걸어둔 곳이 있어 계속 받는다.
+                to = int(os.environ.get("SCP_SHORTS_IMG_TIMEOUT")
+                         or os.environ.get("SCP_SHORTS_QWEN_TIMEOUT") or "420")
+                print(f"  · 이미지{seed} wbSpark 생성 시도(최대 {to // 60}분)…", flush=True)
                 if wbspark.generate_image(prompt, out_png, timeout_sec=to):
-                    print(f"  · qwen-image OK: {os.path.basename(out_png)}")
+                    print(f"  · wbSpark OK: {os.path.basename(out_png)}")
                     return out_png
             else:
                 import imagegen
