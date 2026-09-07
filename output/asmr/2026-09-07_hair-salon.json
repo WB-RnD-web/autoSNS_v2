@@ -1,0 +1,38 @@
+{
+  "date": "2026-09-07",
+  "topic": "asmr",
+  "privacy": "public",
+  "theme_id": "hair-salon",
+  "theme_name": "미용실",
+  "mode": "mixed",
+  "narration_voice": "male",
+  "narration_text": "오늘은 사각사각 가위질과 부드러운 브러시 소리가 있는 미용실 사운드예요. 편안하게 앉아서, 혹은 스르르 잠들면서 들어보세요. 좋은 시간 보내세요.",
+  "background": {
+    "prompt": "a cozy dim empty hair salon interior at night, soft warm lamp glow, salon chairs and mirrors, calm quiet late-night mood, low light, no people, no text"
+  },
+  "freesound": {
+    "queries": [
+      "hair scissors cutting asmr",
+      "electric razor shaving hair",
+      "shampoo hair washing sounds"
+    ],
+    "must": ["hair"],
+    "trigger_queries": [
+      "hair brush sweeping mic",
+      "scissors snip single cut",
+      "spray bottle mist spritz",
+      "comb through hair single stroke"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "title": "✂️ 미용실 ASMR 3시간 | 가위질·브러시 소리로 집중·수면",
+      "thumbnail_text": "미용실 가위질 3시간",
+      "thumbnail_hook": "a cozy dim empty hair salon interior at night, soft warm lamp glow, salon chairs and mirrors, calm quiet mood, no people, no text",
+      "description": "사각사각 가위질과 브러시 소리로 편안한 집중 시간을 보내보세요.\n\n잘 때·집중·휴식용 ASMR 백색소음입니다.\n#ASMR #백색소음 #수면 #미용실사운드 #집중 #힐링",
+      "playlist": "일상공감 ASMR"
+    }
+  },
+  "credit": "음원 Freesound(CC0) · 이미지 생성",
+  "notes": "ASMR 3~4시간 · 16:9 · 정적 배경 + 앰비언트·트리거 혼합 오디오 · 아주 낮은 나레이션 도입부 · 자막 없음."
+}
