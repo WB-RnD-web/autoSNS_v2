@@ -1,0 +1,1193 @@
+{
+  "date": "2026-09-08",
+  "iso_week": "2026-W37",
+  "topic": "scp",
+  "privacy": "public",
+  "origin": "original",
+  "origin_note": "",
+  "source_url": "",
+  "story_id": "scp-9236",
+  "scp_number": "SCP-9236",
+  "object_class": "Safe",
+  "codename": "덧그려진 마을",
+  "number_check": {
+    "checked_at": "2026-09-08",
+    "http_code": "unverified"
+  },
+  "theme": "버려진 도시",
+  "nature": "공간",
+  "twist_type": "역할",
+  "logline": "남미 파타고니아 폐광촌 어귀에 남은 낡은 인구 집계판 이야기입니다. 아무도 들어온 적 없는데, 그 숫자는 가끔 저절로 하나씩 늘어납니다.",
+  "structure": "연대기형",
+  "opening_move": "문서의 빈칸",
+  "opening_note": "",
+  "closing_move": "사람의 마지막 말",
+  "number_reveal": "앞",
+  "ending_mode": "가벼운 한마디",
+  "fault": "제3자",
+  "hook_line": "3월 17일부터 24일까지, 그 순찰 일지는 텅 비어 있습니다.",
+  "procedures": [],
+  "character": {
+    "name": "실바",
+    "role": "박사 · 사이트-402 담당 연구원",
+    "flaw": "숫자가 늘면 다음 날 아침까지 못 기다리고 그날 밤 안에 혼자 확인하러 나간다"
+  },
+  "chain": [
+    {
+      "when": "재단이 마을을 넘겨받은 직후",
+      "event": "순찰조가 마을 어귀에서 낡은 나무 집계판을 발견했다",
+      "because": "",
+      "shot": "먼지 쌓인 나무 틀 위, 손으로 깎아 넣은 숫자가 새겨진 집계판 클로즈업"
+    },
+    {
+      "when": "몇 주 뒤 정기 순찰에서",
+      "event": "집계판 숫자가 전날 기록보다 하나 늘어 있는 걸 확인했다",
+      "because": "그사이 아무도 마을에 들어온 기록이 없었기 때문에",
+      "shot": "손전등 불빛 아래, 어제 적어둔 숫자 옆에 새로 하나 늘어난 숫자판"
+    },
+    {
+      "when": "그날 오후",
+      "event": "재단이 마을 전체를 훑는 전수 순찰을 지시했다",
+      "because": "숫자 변화의 원인을 찾아야 했기 때문에",
+      "shot": "골목을 일렬로 훑으며 걷는 순찰조의 뒷모습"
+    },
+    {
+      "when": "그 순찰 중",
+      "event": "지도에 없는 목조 주택 한 채를 마을 끝에서 발견했다",
+      "because": "전수 순찰로 지도와 실제를 하나하나 대조했기 때문에",
+      "shot": "낡은 집들 사이, 유독 색이 옅고 새것 같은 목조 주택 한 채"
+    },
+    {
+      "when": "그 집 문을 연 순간",
+      "event": "안에서 접힌 자국이 그대로인 옛 청사진 한 장을 발견했다",
+      "because": "새 건물이 비어 있지 않고 뭔가를 담고 나타났기 때문에",
+      "shot": "먼지 앉은 마룻바닥에 펼쳐진 낡은 청사진 한 장"
+    },
+    {
+      "when": "청사진을 대조한 뒤",
+      "event": "그 집 번지수가 회사가 폐업 직전 계획했던 '3차 확장' 구역과 정확히 일치한다는 걸 확인했다",
+      "because": "도면의 번지수 체계가 지금 마을과 그대로 이어져 있었기 때문에",
+      "shot": "나란히 놓인 옛 확장 계획도와 최신 항공사진"
+    },
+    {
+      "when": "비슷한 시기",
+      "event": "지질팀이 마을 지하 수직갱 주변 지반 압력이 새 건물이 나타난 밤마다 함께 떨어진다는 걸 확인했다",
+      "because": "청사진 발견 이후 지하 구조까지 다시 조사했기 때문에",
+      "shot": "계기판 위 압력 그래프, 새 건물 출현 시점마다 뚝 떨어지는 선"
+    },
+    {
+      "when": "그 뒤",
+      "event": "재단이 D계급 인원을 시켜 밤마다 마을 전체를 사진으로만 기록하게 했다",
+      "because": "직접 순찰보다 안전할 거라고 판단했기 때문에",
+      "shot": "삼각대 위 카메라, 어두운 골목을 향해 셔터를 누르는 손"
+    },
+    {
+      "when": "그러나 며칠 안 가",
+      "event": "사진에는 새 건물이 찍히지 않고 다음 날 아침 실물로만 확인되는 일이 반복됐다",
+      "because": "사진이라는 기록 매체 자체가 새 건물을 포착하지 못했기 때문에",
+      "shot": "어제 찍은 사진 속 빈 공터와 오늘 아침 그 자리에 선 실제 건물 대조"
+    },
+    {
+      "when": "그 무렵",
+      "event": "혼돈의 반란 쪽으로 의심되는 사람이 인근 검문소에서 옛 확장 설계도 사본을 소지한 채 붙잡혔다",
+      "because": "소문이 격리 구역 밖으로 샜기 때문에",
+      "shot": "검문소 조명 아래 압수된 설계도 사본 뭉치"
+    },
+    {
+      "when": "실바 박사가 부임한 뒤",
+      "event": "그는 숫자가 늘 때마다 다음 날 아침이 아니라 그날 밤 안에 혼자 확인하러 나갔다",
+      "because": "그의 방식이 규칙보다 앞섰기 때문에",
+      "shot": "손전등 하나 든 실바 박사가 혼자 어두운 골목으로 들어가는 뒷모습"
+    },
+    {
+      "when": "그러던 어느 밤",
+      "event": "집계판 숫자가 한 번에 셋이나 늘자 실바 박사는 규칙을 어기고 혼자 들어갔고, 다음 날 그가 들어간 골목째로 지도에서 사라졌다",
+      "because": "한 번에 셋이 늘어난 건 처음이라 아침까지 기다릴 수 없었기 때문에",
+      "shot": "텅 빈 골목 끝, 실바 박사의 손전등만 켜진 채 바닥에 떨어져 있는 모습"
+    }
+  ],
+  "retention_beats": [
+    "그 회사가 왜 하필 그 수직갱만 그렇게 날림으로 막았는지, 다른 갱도 기록은 아직 안 뜯어봤습니다.",
+    "혼돈의 반란이 노리던 설계도 사본, 나머지 몇 장이 어디로 흘러갔는지는 아직 확인이 안 됐습니다.",
+    "실바 박사가 마지막으로 옮겼다는 벽돌 조각, 914를 거친 결과 기록 자체가 사이트 서고에서 통째로 빠져 있습니다."
+  ],
+  "cameos": [
+    {
+      "number": "SCP-914",
+      "how": "정교한 세공을 해내는 것으로 알려진 개체라는 사실만 한 줄 언급 — 실바 박사가 마을 벽돌 조각의 재질을 확인하려 914에 넣어봤다는 기록으로만 쓰였다."
+    },
+    {
+      "number": "SCP-682",
+      "how": "파괴하기 힘든 것으로 유명한 개체라는 사실만 비교 대상으로 한 줄 언급 — 이쪽 격리 난이도가 그에 못지않다는 사이트 내부 평가를 보여주는 데만 쓰였다."
+    }
+  ],
+  "twist_summary": "역할의 반전 — 재단은 새 건물이 나타나는 걸 막아야 할 확장 위협으로 봤지만, 실은 폐업한 광업 회사가 날림으로 막고 간 수직갱 주변 압력을 그때그때 메워주는 자기보정 과정이었다는 반전. 실바 박사가 규칙을 어기고 한 번에 셋이나 나타난 골목에 혼자 들어가자, 그 골목 자체가 지도에서 사라졌다.",
+  "narration_full": "3월 17일부터 24일까지, 그 순찰 일지는 텅 비어 있습니다.\n\n여드레 치 기록이 통째로 없더군요. 누가 찢어낸 흔적도 없고, 그냥 처음부터 아무도 안 적은 것처럼요. 그 여드레 동안 무슨 일이 있었는지, 이 보고서를 쓰는 저도… 아직 절반밖에 못 짜 맞췄습니다. 대체 무슨 일이었을까요?\n\nSCP-9236, 남미 파타고니아의 어느 폐광촌 어귀에 서 있는 나무 집계판입니다. 객체 등급은 세이프고요. 격리 방법은 확립돼 있는데, 문제는 그 방법을 아무도 정확히 지키고 싶어 하지 않는다는 겁니다. 사이트 사람들은 그 판을 그냥 「덧그려진 마을」이라고 불렀습니다.\n\n이 마을, 원래는 어느 광업 회사가 세운 사택 단지였고요. 회사가 망하면서 사람들도 다 떠났고요. 그런데 마을 어귀에, 예전에 노동자 수를 세던 이 나무 집계판만 그대로 남아 있었습니다. 재단이 이 구역을 넘겨받았을 때만 해도, 다들 그냥 낡은 표지판인 줄 알았다더군요.\n\n몇 주 뒤 정기 순찰에서, 그 판의 숫자가 어제 적어둔 것보다 하나 늘어 있는 게 확인됐습니다. 아무도 마을에 들어온 적이 없는데도요. 재단은 곧바로 격리 절차에 따라 전수 순찰을 지시했습니다. 골목 하나하나, 빈집 하나하나, 사람 없는 마당까지 — 순찰조는 그렇게 사흘을 훑었습니다.\n\n그 순찰에서, 지도에 없는 목조 주택 한 채가 마을 끝에서 발견됐죠. 다른 집들보다 유독 색이 옅고, 유독 새것 같았고요. 문을 열어본 대원 하나가 이렇게 무전을 남겼습니다. 「어제까지 여기, 빈 공터였는데요.」\n\n그 안에서 나온 건 낡은 청사진 한 장이었죠. 접힌 자국까지 그대로인 채로요. 번지수를 대조해보니, 그 집은 회사가 폐업 직전에 계획했던 '3차 확장' 구역, 딱 그 자리였습니다. 지어진 적 없는 계획이, 지금 지어지고 있었던 겁니다.\n\n비슷한 시기에 지질팀도 뭔가를 짚어냈죠. 마을 지하엔 회사가 남기고 간 수직갱이 하나 있는데, 새 건물이 나타난 밤마다 그 갱 주변 지반 압력 수치가 함께 떨어졌습니다. 저도 처음엔… 그냥 우연인 줄 알았거든요. 그런데 두 번, 세 번, 계속 그랬습니다. 우연이었을까요? 훗날 확인된 바로는, 이 회사가 폐업 직전 그 수직갱을 규정보다 훨씬 얕게, 날림으로 막고 떠났다고 합니다. 고의는 아니었겠죠. 그냥 돈이 없었을 뿐일 겁니다.\n\n재단은 D계급 인원을 시켜 밤마다 마을 전체를 사진으로만 기록하게 했죠. 직접 순찰보다는 안전할 거라고 봤거든요. 그런데 이 방식, 오래가지 못했습니다. 사진에는 새 건물이 안 찍히고, 다음 날 아침에야 실물로만 확인됐으니까요. 왜 하필 사진만 안 됐을까요? 「분명히 어제 사진엔 빈 공터였는데요.」 담당 D계급 인원이 남긴 보고는 그거 하나였습니다. 그는 절차대로 재배치됐고, 별다른 후유증은 없었다더군요.\n\n기동특무부대 오미크론-9, 별칭 「빈 번지」도 투입됐습니다. 감시 장비를 셋 놓아봤고, 골목 입구에 새 담을 쌓아봤고, 아예 그 골목 전체를 봉쇄해도 봤습니다. 그래도 소용없더군요. 봉쇄한 골목 안쪽에서 새 건물이 또 나왔거든요 — 담장을 넘지 않고, 안쪽에서요. 기동특무부대 문서에도 이 구역은 정식 명칭 대신 「덧그려진 마을」로 올라 있습니다.\n\n소문은 구역 밖으로도 샜고요. 혼돈의 반란 쪽으로 의심되는 사람 하나가 인근 검문소에서 붙잡혔는데, 소지품에서 옛 확장 설계도 사본이 나왔습니다. 자체 건설 기술로 응용하려던 것으로 추정됩니다만, 정확한 목적은 아직 확인이 안 됐고요. 그 자리를 지나던 등산객 둘에게는 B급 기억소거제가 쓰였고, 나흘 만에 기억이 돌아왔다는 후속 보고가 남아 있습니다.\n\n이 격리, 사이트-402 실바 박사가 맡았죠. 그는 숫자가 늘 때마다 다음 날 아침이 아니라 그날 밤 안에, 혼자 확인하러 나갔습니다. 규칙엔 분명히 '전수 순찰은 반드시 삼 인 이상, 해 뜬 뒤'라고 적혀 있었는데도요. 「그냥 눈으로만 보고 오겠습니다.」 매번 그렇게 말하고 나갔고요.\n\n그러던 어느 밤, 집계판 숫자가 한 번에 셋이나 늘었습니다. 그런 적은 그때까지 한 번도 없었죠. 실바 박사는 규칙을 어기고 혼자 마을 안으로 들어갔습니다. 무전에 마지막으로 잡힌 말은 이거였죠. 「셋 다, 같은 골목에… 나란히 서 있습니다.」\n\n다음 날 아침, 새 건물 세 채는 그대로 있었고요. 다만… 실바 박사는 어디에도 없었습니다. 그가 들어간 골목 자체가 — 지도에서 사라져 있었으니까요. 골목 하나가 통째로 없어진다는 게, 대체 어떻게 가능했을까요? 수색대는 사흘을 뒤졌지만, 그 골목이 있던 자리엔 그냥 빈 공터만 남아 있었고요. 「그 자리엔 그냥, 아무것도 없습니다.」 수색대장이 남긴 말은 그거였죠. 재수용 절차를 다시 짜야 했는데, 재수용할 대상 자체가 없어서, 그 절차는 지금도 서류로만 남아 있습니다.\n\n참고로 이 사이트 서고엔, 다른 개체 얘기도 한 줄 있고요. 세공을 정교하게 해내는 것으로 알려진 그 태엽 장치, 914 얘기요. 실바 박사가 예전에 이 마을 벽돌 조각 하나를 914에 넣어 재질을 확인해보려 했다는 기록이 남아 있습니다. 결과는… 문서에 안 남아 있습니다. 파괴하기 힘든 것으로 유명한 그 682급하고 비교해도, 이 격리 난이도는 절대 낮은 편이 아니라는 게 사이트 내부 평가입니다. 「덧그려진 마을」이라는 이름, 지금도 격리 서류 제목 줄에 그대로 남아 있습니다.\n\n지금 그 집계판에 새겨진 숫자는, 처음 발견 당시보다 여든하나가 많습니다.\n\n실바 박사가 마지막으로 남긴 말은, 지금도 이 사건 파일 맨 위에 그대로 적혀 있죠. 「셋 다, 같은 골목에… 나란히 서 있습니다.」\n\n아, 그리고… 마을회관 정문에 붙어 있던 낡은 페인트 글씨 중에, '입주 환영'이라는 부분만 유독 안 벗겨졌다고 하더군요.",
+  "segments": [
+    {
+      "text": "3월 17일부터 24일까지,",
+      "est_sec": 3,
+      "text_en": "From March seventeenth to the twenty-fourth,",
+      "text_ja": "3月17日から24日まで、",
+      "text_zh_Hant": "從3月17日到24日,"
+    },
+    {
+      "text": "그 순찰 일지는 텅 비어 있습니다.",
+      "est_sec": 4,
+      "text_en": "that patrol log is completely blank.",
+      "text_ja": "その巡回日誌はまるまる空白です。",
+      "text_zh_Hant": "那份巡邏日誌整段是空白的。"
+    },
+    {
+      "text": "여드레 치 기록이 통째로 없더군요.",
+      "est_sec": 4,
+      "text_en": "Eight full days of entries, simply gone.",
+      "text_ja": "八日分の記録がまるごとありませんでした。",
+      "text_zh_Hant": "整整八天的紀錄都不見了。"
+    },
+    {
+      "text": "누가 찢어낸 흔적도 없고,",
+      "est_sec": 3,
+      "text_en": "No sign anyone tore the pages out,",
+      "text_ja": "誰かが破り取った跡もなく、",
+      "text_zh_Hant": "沒有被人撕掉的痕跡,"
+    },
+    {
+      "text": "그냥 처음부터 아무도 안 적은 것처럼요.",
+      "est_sec": 4,
+      "text_en": "as if no one had written anything from the start.",
+      "text_ja": "まるで最初から誰も書かなかったかのようです。",
+      "text_zh_Hant": "彷彿一開始就沒人寫過一樣。"
+    },
+    {
+      "text": "그 여드레 동안 무슨 일이 있었는지,",
+      "est_sec": 4,
+      "text_en": "What happened during those eight days —",
+      "text_ja": "その八日間に何があったのか、",
+      "text_zh_Hant": "那八天裡到底發生了什麼,"
+    },
+    {
+      "text": "이 보고서를 쓰는 저도…",
+      "est_sec": 3,
+      "text_en": "even I, writing this report…",
+      "text_ja": "この報告書を書いている私も…",
+      "text_zh_Hant": "連撰寫這份報告的我…"
+    },
+    {
+      "text": "아직 절반밖에 못 짜 맞췄습니다.",
+      "est_sec": 4,
+      "text_en": "have only pieced together about half of it.",
+      "text_ja": "まだ半分ほどしか繋ぎ合わせられていません。",
+      "text_zh_Hant": "也只拼湊出一半左右。"
+    },
+    {
+      "text": "대체 무슨 일이었을까요?",
+      "est_sec": 3,
+      "text_en": "What on earth happened there?",
+      "text_ja": "一体何があったのでしょうか?",
+      "text_zh_Hant": "到底發生了什麼事呢?"
+    },
+    {
+      "text": "SCP-9236,",
+      "est_sec": 2,
+      "text_en": "This is SCP-9236,",
+      "text_ja": "SCP-9236、",
+      "text_zh_Hant": "這是SCP-9236,"
+    },
+    {
+      "text": "남미 파타고니아의 어느 폐광촌 어귀에 서 있는",
+      "est_sec": 5,
+      "text_en": "a wooden tally board standing at the edge",
+      "text_ja": "南米パタゴニアのある廃鉱町の入り口に立つ",
+      "text_zh_Hant": "立在南美巴塔哥尼亞某座廢棄礦鎮入口的"
+    },
+    {
+      "text": "나무 집계판입니다.",
+      "est_sec": 3,
+      "text_en": "of an abandoned mining town in Patagonia, South America.",
+      "text_ja": "木製の集計板です。",
+      "text_zh_Hant": "一塊木製計數牌。"
+    },
+    {
+      "text": "객체 등급은 세이프고요.",
+      "est_sec": 3,
+      "text_en": "Its object class is Safe.",
+      "text_ja": "対象等級はセーフで、",
+      "text_zh_Hant": "物件等級是安全級,"
+    },
+    {
+      "text": "격리 방법은 확립돼 있는데,",
+      "est_sec": 3,
+      "text_en": "The containment method is established,",
+      "text_ja": "収容方法は確立されているのですが、",
+      "text_zh_Hant": "收容方法已經確立,"
+    },
+    {
+      "text": "문제는 그 방법을,",
+      "est_sec": 3,
+      "text_en": "the problem is,",
+      "text_ja": "問題は、その方法を",
+      "text_zh_Hant": "問題是那個方法,"
+    },
+    {
+      "text": "아무도 정확히 지키고 싶어 하지 않는다는 겁니다.",
+      "est_sec": 5,
+      "text_en": "no one really wants to follow it to the letter.",
+      "text_ja": "誰も正確には守りたがらないということです。",
+      "text_zh_Hant": "根本沒人真的想確實遵守。"
+    },
+    {
+      "text": "사이트 사람들은 그 판을 그냥",
+      "est_sec": 4,
+      "text_en": "The people at the site just called the board",
+      "text_ja": "サイトの人たちはその板を、ただ",
+      "text_zh_Hant": "站點的人們就只是把那塊板子"
+    },
+    {
+      "text": "「덧그려진 마을」이라고 불렀습니다.",
+      "est_sec": 4,
+      "text_en": "\"the overtraced town.\"",
+      "text_ja": "「上書きされた村」と呼んでいました。",
+      "text_zh_Hant": "稱作「疊繪之村」。"
+    },
+    {
+      "text": "이 마을, 원래는 어느 광업 회사가 세운 사택 단지였고요.",
+      "est_sec": 6,
+      "text_en": "This town was originally a housing complex built by a mining company.",
+      "text_ja": "この村は元々、ある鉱業会社が建てた社宅団地でした。",
+      "text_zh_Hant": "這座小鎮原本是某家礦業公司蓋的員工宿舍區。"
+    },
+    {
+      "text": "회사가 망하면서 사람들도 다 떠났고요.",
+      "est_sec": 4,
+      "text_en": "When the company went under, everyone left.",
+      "text_ja": "会社が倒産すると、人々もみな去っていきました。",
+      "text_zh_Hant": "公司倒閉後,人們也全都離開了。"
+    },
+    {
+      "text": "그런데 마을 어귀에, 예전에 노동자 수를 세던",
+      "est_sec": 5,
+      "text_en": "But at the town's entrance, the old tally board",
+      "text_ja": "ところが村の入り口には、かつて労働者の数を数えた",
+      "text_zh_Hant": "但小鎮入口那塊過去用來計算工人人數的"
+    },
+    {
+      "text": "이 나무 집계판만 그대로 남아 있었습니다.",
+      "est_sec": 5,
+      "text_en": "that used to count the workers was still standing there.",
+      "text_ja": "この木製の集計板だけがそのまま残っていました。",
+      "text_zh_Hant": "木製計數牌卻原封不動地留了下來。"
+    },
+    {
+      "text": "재단이 이 구역을 넘겨받았을 때만 해도,",
+      "est_sec": 4,
+      "text_en": "When the Foundation first took over the zone,",
+      "text_ja": "財団がこの区域を引き継いだ時点では、",
+      "text_zh_Hant": "基金會剛接管這個區域時,"
+    },
+    {
+      "text": "다들 그냥 낡은 표지판인 줄 알았다더군요.",
+      "est_sec": 4,
+      "text_en": "everyone thought it was just an old sign.",
+      "text_ja": "みんなただの古い標識だと思っていたそうです。",
+      "text_zh_Hant": "大家都以為那只是塊老舊的招牌。"
+    },
+    {
+      "text": "몇 주 뒤 정기 순찰에서,",
+      "est_sec": 3,
+      "text_en": "A few weeks later, on a routine patrol,",
+      "text_ja": "数週間後の定期巡回で、",
+      "text_zh_Hant": "幾週後的例行巡邏中,"
+    },
+    {
+      "text": "그 판의 숫자가 어제 적어둔 것보다",
+      "est_sec": 4,
+      "text_en": "the number on the board had gone up by one",
+      "text_ja": "その板の数字が、昨日記録したものより",
+      "text_zh_Hant": "那塊板子上的數字比昨天記下的"
+    },
+    {
+      "text": "하나 늘어 있는 게 확인됐습니다.",
+      "est_sec": 4,
+      "text_en": "from what had been recorded the day before.",
+      "text_ja": "一つ増えていることが確認されました。",
+      "text_zh_Hant": "多了一個。"
+    },
+    {
+      "text": "아무도 마을에 들어온 적이 없는데도요.",
+      "est_sec": 4,
+      "text_en": "Even though no one had entered the town.",
+      "text_ja": "誰も村に入った者はいなかったのに、です。",
+      "text_zh_Hant": "明明沒有任何人進過鎮上。"
+    },
+    {
+      "text": "재단은 곧바로 격리 절차에 따라",
+      "est_sec": 4,
+      "text_en": "The Foundation immediately, per containment procedure,",
+      "text_ja": "財団はすぐに収容手順に従って、",
+      "text_zh_Hant": "基金會立刻依照收容程序,"
+    },
+    {
+      "text": "전수 순찰을 지시했습니다.",
+      "est_sec": 3,
+      "text_en": "ordered a full sweep of the town.",
+      "text_ja": "全域巡回を指示しました。",
+      "text_zh_Hant": "下令對全鎮進行地毯式巡查。"
+    },
+    {
+      "text": "골목 하나하나, 빈집 하나하나,",
+      "est_sec": 4,
+      "text_en": "Every alley, one by one, every empty house, one by one,",
+      "text_ja": "路地一つ一つ、空き家一軒一軒、",
+      "text_zh_Hant": "一條條巷子、一間間空屋,"
+    },
+    {
+      "text": "사람 없는 마당까지 —",
+      "est_sec": 3,
+      "text_en": "even the empty yards —",
+      "text_ja": "人のいない庭先まで —",
+      "text_zh_Hant": "連無人的院子都不放過 —"
+    },
+    {
+      "text": "순찰조는 그렇게 사흘을 훑었습니다.",
+      "est_sec": 4,
+      "text_en": "the patrol team spent three days combing through it all.",
+      "text_ja": "巡回班はそうして三日間くまなく調べました。",
+      "text_zh_Hant": "巡邏隊就這樣花了三天仔細搜查。"
+    },
+    {
+      "text": "그 순찰에서, 지도에 없는 목조 주택 한 채가",
+      "est_sec": 5,
+      "text_en": "During that sweep, a wooden house not on any map",
+      "text_ja": "その巡回で、地図にない木造家屋が一軒",
+      "text_zh_Hant": "在那次巡查中,一棟地圖上沒有的木造房屋"
+    },
+    {
+      "text": "마을 끝에서 발견됐죠.",
+      "est_sec": 3,
+      "text_en": "was found at the edge of town.",
+      "text_ja": "村の端で発見されました。",
+      "text_zh_Hant": "在小鎮邊緣被發現了。"
+    },
+    {
+      "text": "다른 집들보다 유독 색이 옅고,",
+      "est_sec": 4,
+      "text_en": "Its color was noticeably paler than the other houses,",
+      "text_ja": "他の家々より色がやけに薄く、",
+      "text_zh_Hant": "顏色比其他房子明顯要淺,"
+    },
+    {
+      "text": "유독 새것 같았고요.",
+      "est_sec": 3,
+      "text_en": "and it looked oddly new.",
+      "text_ja": "やけに新しく見えました。",
+      "text_zh_Hant": "看起來也格外新。"
+    },
+    {
+      "text": "문을 열어본 대원 하나가",
+      "est_sec": 3,
+      "text_en": "One team member who opened the door",
+      "text_ja": "扉を開けてみた隊員の一人が",
+      "text_zh_Hant": "打開門的一名隊員"
+    },
+    {
+      "text": "이렇게 무전을 남겼습니다.",
+      "est_sec": 3,
+      "text_en": "left this over the radio.",
+      "text_ja": "無線でこう報告を残しました。",
+      "text_zh_Hant": "透過無線電留下了這句話。"
+    },
+    {
+      "text": "「어제까지 여기, 빈 공터였는데요.」",
+      "est_sec": 4,
+      "text_en": "\"This was an empty lot until yesterday.\"",
+      "text_ja": "「昨日まで、ここは空き地だったんですが。」",
+      "text_zh_Hant": "「這裡到昨天為止,明明還是空地。」"
+    },
+    {
+      "text": "그 안에서 나온 건 낡은 청사진 한 장이었죠.",
+      "est_sec": 5,
+      "text_en": "What they found inside was a single old blueprint.",
+      "text_ja": "その中から出てきたのは、古い青写真一枚でした。",
+      "text_zh_Hant": "從裡面找到的,是一張老舊的藍圖。"
+    },
+    {
+      "text": "접힌 자국까지 그대로인 채로요.",
+      "est_sec": 4,
+      "text_en": "Even the fold creases were still intact.",
+      "text_ja": "折り目までそのまま残った状態でした。",
+      "text_zh_Hant": "連摺痕都還完好地留著。"
+    },
+    {
+      "text": "번지수를 대조해보니,",
+      "est_sec": 3,
+      "text_en": "When they checked the lot number against records,",
+      "text_ja": "番地を照合してみると、",
+      "text_zh_Hant": "比對門牌號碼後,"
+    },
+    {
+      "text": "그 집은 회사가 폐업 직전에 계획했던",
+      "est_sec": 4,
+      "text_en": "the house sat exactly on the lot the company had planned",
+      "text_ja": "その家は会社が廃業直前に計画していた",
+      "text_zh_Hant": "那棟房子正好座落在公司倒閉前規劃的"
+    },
+    {
+      "text": "'3차 확장' 구역, 딱 그 자리였습니다.",
+      "est_sec": 5,
+      "text_en": "for its \"phase-three expansion,\" right before it folded.",
+      "text_ja": "「第三次拡張」区画、まさにその場所だったのです。",
+      "text_zh_Hant": "「第三期擴建」用地上,一分不差。"
+    },
+    {
+      "text": "지어진 적 없는 계획이,",
+      "est_sec": 3,
+      "text_en": "A plan that was never built",
+      "text_ja": "建てられたことのない計画が、",
+      "text_zh_Hant": "一個從未動工的計畫,"
+    },
+    {
+      "text": "지금 지어지고 있었던 겁니다.",
+      "est_sec": 3,
+      "text_en": "was being built right now.",
+      "text_ja": "今、建てられていたのです。",
+      "text_zh_Hant": "如今卻正在被實現。"
+    },
+    {
+      "text": "비슷한 시기에 지질팀도 뭔가를 짚어냈죠.",
+      "est_sec": 5,
+      "text_en": "Around the same time, the geology team found something too.",
+      "text_ja": "同じ頃、地質チームも何かを突き止めました。",
+      "text_zh_Hant": "差不多同一時期,地質小組也查出了些端倪。"
+    },
+    {
+      "text": "마을 지하엔 회사가 남기고 간 수직갱이 하나 있는데,",
+      "est_sec": 6,
+      "text_en": "There's a mine shaft the company left behind under the town,",
+      "text_ja": "村の地下には会社が残していった立坑が一つあるのですが、",
+      "text_zh_Hant": "小鎮地下有一口公司留下的豎井,"
+    },
+    {
+      "text": "새 건물이 나타난 밤마다",
+      "est_sec": 3,
+      "text_en": "and every night a new building appeared,",
+      "text_ja": "新しい建物が現れる夜ごとに、",
+      "text_zh_Hant": "每次有新建築出現的夜晚,"
+    },
+    {
+      "text": "그 갱 주변 지반 압력 수치가 함께 떨어졌습니다.",
+      "est_sec": 6,
+      "text_en": "the ground pressure readings around that shaft dropped in tandem.",
+      "text_ja": "その坑の周辺の地盤圧力の数値も一緒に下がっていました。",
+      "text_zh_Hant": "那口豎井周邊的地層壓力數值就會同步下降。"
+    },
+    {
+      "text": "저도 처음엔… 그냥 우연인 줄 알았거든요.",
+      "est_sec": 4,
+      "text_en": "At first, even I… thought it was just a coincidence.",
+      "text_ja": "私も最初は…ただの偶然だと思っていたんです。",
+      "text_zh_Hant": "老實說一開始…我也以為只是巧合。"
+    },
+    {
+      "text": "그런데 두 번, 세 번, 계속 그랬습니다.",
+      "est_sec": 5,
+      "text_en": "But it happened a second time, a third time, again and again.",
+      "text_ja": "ところが二回、三回と、ずっとそうだったんです。",
+      "text_zh_Hant": "但接連兩次、三次,始終如此。"
+    },
+    {
+      "text": "우연이었을까요?",
+      "est_sec": 2,
+      "text_en": "Was it really a coincidence?",
+      "text_ja": "偶然だったのでしょうか?",
+      "text_zh_Hant": "真的只是巧合嗎?"
+    },
+    {
+      "text": "훗날 확인된 바로는,",
+      "est_sec": 3,
+      "text_en": "As it was later confirmed,",
+      "text_ja": "後に確認されたところでは、",
+      "text_zh_Hant": "後來查證的結果是,"
+    },
+    {
+      "text": "이 회사가 폐업 직전 그 수직갱을",
+      "est_sec": 4,
+      "text_en": "right before closing, the company had sealed that shaft",
+      "text_ja": "この会社が廃業直前、その立坑を",
+      "text_zh_Hant": "這家公司在倒閉前把那口豎井"
+    },
+    {
+      "text": "규정보다 훨씬 얕게, 날림으로 막고 떠났다고 합니다.",
+      "est_sec": 6,
+      "text_en": "far shallower than regulations required — a rushed, shoddy seal.",
+      "text_ja": "規定よりずっと浅く、いい加減に塞いで去ったそうです。",
+      "text_zh_Hant": "封得比規定淺得多,草草了事就走人了。"
+    },
+    {
+      "text": "고의는 아니었겠죠.",
+      "est_sec": 3,
+      "text_en": "It probably wasn't intentional.",
+      "text_ja": "故意ではなかったのでしょう。",
+      "text_zh_Hant": "應該不是故意的。"
+    },
+    {
+      "text": "그냥 돈이 없었을 뿐일 겁니다.",
+      "est_sec": 3,
+      "text_en": "They probably just didn't have the money.",
+      "text_ja": "ただお金がなかっただけでしょう。",
+      "text_zh_Hant": "大概只是沒錢了而已。"
+    },
+    {
+      "text": "재단은 D계급 인원을 시켜",
+      "est_sec": 3,
+      "text_en": "The Foundation had D-class personnel",
+      "text_ja": "財団はD階級要員に指示し、",
+      "text_zh_Hant": "基金會派D級人員"
+    },
+    {
+      "text": "밤마다 마을 전체를 사진으로만 기록하게 했죠.",
+      "est_sec": 5,
+      "text_en": "photograph the whole town every night instead of patrolling it directly.",
+      "text_ja": "毎晩、村全体を写真だけで記録させました。",
+      "text_zh_Hant": "每晚只用拍照的方式記錄整座小鎮。"
+    },
+    {
+      "text": "직접 순찰보다는 안전할 거라고 봤거든요.",
+      "est_sec": 4,
+      "text_en": "They figured it would be safer than a direct patrol.",
+      "text_ja": "直接巡回するよりは安全だろうと考えたからです。",
+      "text_zh_Hant": "他們認為這樣會比直接巡邏安全。"
+    },
+    {
+      "text": "그런데 이 방식, 오래가지 못했습니다.",
+      "est_sec": 4,
+      "text_en": "But this method didn't last long.",
+      "text_ja": "ところがこの方法、長くは続きませんでした。",
+      "text_zh_Hant": "但這個方法沒能撐太久。"
+    },
+    {
+      "text": "사진에는 새 건물이 안 찍히고,",
+      "est_sec": 4,
+      "text_en": "The new buildings didn't show up in the photos,",
+      "text_ja": "写真には新しい建物が写らず、",
+      "text_zh_Hant": "照片裡拍不到新建築,"
+    },
+    {
+      "text": "다음 날 아침에야 실물로만 확인됐으니까요.",
+      "est_sec": 4,
+      "text_en": "and could only be confirmed in person, the next morning.",
+      "text_ja": "翌朝になって初めて実物で確認できたからです。",
+      "text_zh_Hant": "只能等到隔天早上才能親眼確認實體建築。"
+    },
+    {
+      "text": "왜 하필 사진만 안 됐을까요?",
+      "est_sec": 4,
+      "text_en": "Why was it only photographs that failed?",
+      "text_ja": "なぜよりによって写真だけが駄目だったのでしょうか?",
+      "text_zh_Hant": "為什麼偏偏只有照片沒用呢?"
+    },
+    {
+      "text": "「분명히 어제 사진엔 빈 공터였는데요.」",
+      "est_sec": 4,
+      "text_en": "\"Yesterday's photo definitely showed an empty lot.\"",
+      "text_ja": "「確かに昨日の写真では、空き地だったんですが。」",
+      "text_zh_Hant": "「昨天的照片裡明明還是空地。」"
+    },
+    {
+      "text": "담당 D계급 인원이 남긴 보고는 그거 하나였습니다.",
+      "est_sec": 5,
+      "text_en": "That was the only report the D-class worker on duty left behind.",
+      "text_ja": "担当したD階級要員が残した報告は、それ一つだけでした。",
+      "text_zh_Hant": "負責的D級人員留下的報告就只有這一句。"
+    },
+    {
+      "text": "그는 절차대로 재배치됐고,",
+      "est_sec": 3,
+      "text_en": "He was reassigned per procedure,",
+      "text_ja": "彼は手順どおり再配置され、",
+      "text_zh_Hant": "他依照程序被重新分派,"
+    },
+    {
+      "text": "별다른 후유증은 없었다더군요.",
+      "est_sec": 3,
+      "text_en": "and apparently suffered no lasting effects.",
+      "text_ja": "特に後遺症はなかったそうです。",
+      "text_zh_Hant": "據說也沒留下什麼後遺症。"
+    },
+    {
+      "text": "기동특무부대 오미크론-9,",
+      "est_sec": 3,
+      "text_en": "Mobile Task Force Omicron-9,",
+      "text_ja": "機動特務部隊オミクロン-9、",
+      "text_zh_Hant": "機動特遣隊Omicron-9,"
+    },
+    {
+      "text": "별칭 「빈 번지」도 투입됐습니다.",
+      "est_sec": 4,
+      "text_en": "nicknamed \"Empty Lot,\" was also deployed.",
+      "text_ja": "通称「空番地」も投入されました。",
+      "text_zh_Hant": "外號「空門牌」也被派了進來。"
+    },
+    {
+      "text": "감시 장비를 셋 놓아봤고,",
+      "est_sec": 3,
+      "text_en": "They set up three sets of monitoring gear,",
+      "text_ja": "監視機材を三台設置してみたし、",
+      "text_zh_Hant": "他們架設了三套監控設備,"
+    },
+    {
+      "text": "골목 입구에 새 담을 쌓아봤고,",
+      "est_sec": 4,
+      "text_en": "built a new wall across the alley entrance,",
+      "text_ja": "路地の入り口に新しい塀を築いてみたし、",
+      "text_zh_Hant": "在巷口砌了新牆,"
+    },
+    {
+      "text": "아예 그 골목 전체를 봉쇄해도 봤습니다.",
+      "est_sec": 5,
+      "text_en": "and even sealed off the entire alley outright.",
+      "text_ja": "いっそその路地全体を封鎖してもみました。",
+      "text_zh_Hant": "甚至乾脆把整條巷子都封鎖了起來。"
+    },
+    {
+      "text": "그래도 소용없더군요.",
+      "est_sec": 3,
+      "text_en": "None of it worked.",
+      "text_ja": "それでも無駄でした。",
+      "text_zh_Hant": "結果還是沒用。"
+    },
+    {
+      "text": "봉쇄한 골목 안쪽에서 새 건물이 또 나왔거든요 —",
+      "est_sec": 5,
+      "text_en": "A new building appeared again, inside the sealed alley —",
+      "text_ja": "封鎖した路地の内側で、また新しい建物が現れたんです —",
+      "text_zh_Hant": "被封鎖的巷子裡面又冒出了新建築 —"
+    },
+    {
+      "text": "담장을 넘지 않고, 안쪽에서요.",
+      "est_sec": 4,
+      "text_en": "not by crossing the wall — from inside it.",
+      "text_ja": "塀を越えたのではなく、内側からです。",
+      "text_zh_Hant": "不是翻牆過來的,是從裡面冒出來的。"
+    },
+    {
+      "text": "기동특무부대 문서에도 이 구역은",
+      "est_sec": 4,
+      "text_en": "In Task Force records too, this zone",
+      "text_ja": "機動特務部隊の文書でも、この区域は",
+      "text_zh_Hant": "在機動特遣隊的文件裡,這個區域"
+    },
+    {
+      "text": "정식 명칭 대신 「덧그려진 마을」로 올라 있습니다.",
+      "est_sec": 5,
+      "text_en": "is listed as \"the overtraced town\" instead of its official name.",
+      "text_ja": "正式名称の代わりに「上書きされた村」と記載されています。",
+      "text_zh_Hant": "沒有登記正式名稱,而是寫成了「疊繪之村」。"
+    },
+    {
+      "text": "소문은 구역 밖으로도 샜고요.",
+      "est_sec": 4,
+      "text_en": "The rumor leaked outside the zone as well.",
+      "text_ja": "噂は区域の外にも漏れました。",
+      "text_zh_Hant": "傳聞也流到了區域之外。"
+    },
+    {
+      "text": "혼돈의 반란 쪽으로 의심되는 사람 하나가",
+      "est_sec": 4,
+      "text_en": "Someone suspected of ties to the Chaos Insurgency",
+      "text_ja": "混沌の反乱と思われる人物が一人、",
+      "text_zh_Hant": "一名疑似「混沌反叛軍」的人"
+    },
+    {
+      "text": "인근 검문소에서 붙잡혔는데,",
+      "est_sec": 3,
+      "text_en": "was caught at a nearby checkpoint,",
+      "text_ja": "近くの検問所で捕まったのですが、",
+      "text_zh_Hant": "在附近的檢查哨被逮捕,"
+    },
+    {
+      "text": "소지품에서 옛 확장 설계도 사본이 나왔습니다.",
+      "est_sec": 5,
+      "text_en": "and a copy of the old expansion blueprint was found on them.",
+      "text_ja": "所持品から昔の拡張設計図の写しが出てきました。",
+      "text_zh_Hant": "隨身物品裡搜出了那份舊擴建設計圖的副本。"
+    },
+    {
+      "text": "자체 건설 기술로 응용하려던 것으로 추정됩니다만,",
+      "est_sec": 5,
+      "text_en": "It's presumed they meant to adapt it into their own construction tech,",
+      "text_ja": "自前の建設技術に応用しようとしたものと推定されますが、",
+      "text_zh_Hant": "推測是想改造成自己的建造技術,"
+    },
+    {
+      "text": "정확한 목적은 아직 확인이 안 됐고요.",
+      "est_sec": 4,
+      "text_en": "though the exact purpose hasn't been confirmed yet.",
+      "text_ja": "正確な目的はまだ確認されていません。",
+      "text_zh_Hant": "但確切目的至今尚未查明。"
+    },
+    {
+      "text": "그 자리를 지나던 등산객 둘에게는",
+      "est_sec": 4,
+      "text_en": "Two hikers who happened to pass through",
+      "text_ja": "その場を通りかかった登山客二人には",
+      "text_zh_Hant": "當時經過的兩名登山客"
+    },
+    {
+      "text": "B급 기억소거제가 쓰였고,",
+      "est_sec": 3,
+      "text_en": "were given class-B amnestics,",
+      "text_ja": "B級記憶消去剤が使用され、",
+      "text_zh_Hant": "被施打了B級記憶消除劑,"
+    },
+    {
+      "text": "나흘 만에 기억이 돌아왔다는 후속 보고가 남아 있습니다.",
+      "est_sec": 6,
+      "text_en": "and a follow-up report notes their memories returned after four days.",
+      "text_ja": "四日後に記憶が戻ったという後続報告が残っています。",
+      "text_zh_Hant": "後續報告顯示他們四天後就恢復了記憶。"
+    },
+    {
+      "text": "이 격리, 사이트-402 실바 박사가 맡았죠.",
+      "est_sec": 5,
+      "text_en": "This containment was handled by Dr. Silva at Site-402.",
+      "text_ja": "この収容は、サイト-402のシルバ博士が担当しました。",
+      "text_zh_Hant": "這起收容案是由402號基地的席爾瓦博士負責的。"
+    },
+    {
+      "text": "그는 숫자가 늘 때마다",
+      "est_sec": 3,
+      "text_en": "Every time the number went up,",
+      "text_ja": "彼は数字が増えるたびに、",
+      "text_zh_Hant": "他每次一發現數字增加,"
+    },
+    {
+      "text": "다음 날 아침이 아니라 그날 밤 안에,",
+      "est_sec": 4,
+      "text_en": "he'd go check it that same night, not the next morning,",
+      "text_ja": "翌朝ではなくその夜のうちに、",
+      "text_zh_Hant": "就不等到隔天早上,而是當晚"
+    },
+    {
+      "text": "혼자 확인하러 나갔습니다.",
+      "est_sec": 3,
+      "text_en": "and he'd go alone.",
+      "text_ja": "一人で確認しに出かけました。",
+      "text_zh_Hant": "獨自出去確認。"
+    },
+    {
+      "text": "규칙엔 분명히 '전수 순찰은 반드시 삼 인 이상, 해 뜬 뒤'라고",
+      "est_sec": 6,
+      "text_en": "The rule clearly stated: \"full sweeps require at least three people, after sunrise.\"",
+      "text_ja": "規則には明確に「全域巡回は必ず三人以上、日の出後」と",
+      "text_zh_Hant": "規定上明明白白寫著「地毯式巡查須三人以上,且須在日出後進行」,"
+    },
+    {
+      "text": "적혀 있었는데도요.",
+      "est_sec": 3,
+      "text_en": "even though that was written right there.",
+      "text_ja": "書かれていたにもかかわらずです。",
+      "text_zh_Hant": "他卻依然故我。"
+    },
+    {
+      "text": "「그냥 눈으로만 보고 오겠습니다.」",
+      "est_sec": 4,
+      "text_en": "\"I'll just go take a look and come back.\"",
+      "text_ja": "「ただ目で見てくるだけです。」",
+      "text_zh_Hant": "「我就只是去看一眼就回來。」"
+    },
+    {
+      "text": "매번 그렇게 말하고 나갔고요.",
+      "est_sec": 3,
+      "text_en": "That's what he'd say every single time before heading out.",
+      "text_ja": "毎回そう言って出かけていました。",
+      "text_zh_Hant": "他每次都這麼說完就出門了。"
+    },
+    {
+      "text": "그러던 어느 밤, 집계판 숫자가 한 번에 셋이나 늘었습니다.",
+      "est_sec": 6,
+      "emphasis": "한 번에 셋이나",
+      "text_en": "Then one night, the number on the board jumped by three at once.",
+      "text_ja": "そんなある夜、集計板の数字が一度に三つも増えました。",
+      "text_zh_Hant": "然後有一晚,計數牌上的數字一口氣多了三個。"
+    },
+    {
+      "text": "그런 적은 그때까지 한 번도 없었죠.",
+      "est_sec": 4,
+      "text_en": "That had never happened before.",
+      "text_ja": "そんなことはそれまで一度もありませんでした。",
+      "text_zh_Hant": "在那之前從沒發生過這種事。"
+    },
+    {
+      "text": "실바 박사는 규칙을 어기고 혼자 마을 안으로 들어갔습니다.",
+      "est_sec": 6,
+      "text_en": "Dr. Silva broke the rule and went into the town alone.",
+      "text_ja": "シルバ博士は規則を破り、一人で村の中に入っていきました。",
+      "text_zh_Hant": "席爾瓦博士違反規定,獨自一人走進了鎮裡。"
+    },
+    {
+      "text": "무전에 마지막으로 잡힌 말은 이거였죠.",
+      "est_sec": 4,
+      "text_en": "The last thing caught over the radio was this.",
+      "text_ja": "無線に最後に残った言葉はこれでした。",
+      "text_zh_Hant": "無線電裡收到的最後一句話是這樣的。"
+    },
+    {
+      "text": "「셋 다, 같은 골목에… 나란히 서 있습니다.」",
+      "est_sec": 5,
+      "text_en": "\"All three — in the same alley… standing side by side.\"",
+      "text_ja": "「三つとも、同じ路地に…並んで立っています。」",
+      "text_zh_Hant": "「三棟都在同一條巷子裡……並排站著。」"
+    },
+    {
+      "text": "다음 날 아침, 새 건물 세 채는 그대로 있었고요.",
+      "est_sec": 5,
+      "text_en": "The next morning, the three new buildings were still there.",
+      "text_ja": "翌朝、新しい建物三棟はそのままありました。",
+      "text_zh_Hant": "隔天早上,那三棟新建築原封不動地留在原地。"
+    },
+    {
+      "text": "다만… 실바 박사는 어디에도 없었습니다.",
+      "est_sec": 4,
+      "text_en": "But… Dr. Silva was nowhere to be found.",
+      "text_ja": "ただ…シルバ博士はどこにもいませんでした。",
+      "text_zh_Hant": "只是……席爾瓦博士卻消失得無影無蹤。"
+    },
+    {
+      "text": "그가 들어간 골목 자체가 —",
+      "est_sec": 3,
+      "text_en": "The very alley he'd walked into —",
+      "text_ja": "彼が入っていった路地自体が —",
+      "text_zh_Hant": "他走進去的那條巷子本身 —"
+    },
+    {
+      "text": "지도에서 사라져 있었으니까요.",
+      "est_sec": 3,
+      "text_en": "had vanished from the map entirely.",
+      "text_ja": "地図から消えていたのですから。",
+      "text_zh_Hant": "已經整條從地圖上消失了。"
+    },
+    {
+      "text": "골목 하나가 통째로 없어진다는 게,",
+      "est_sec": 4,
+      "text_en": "An entire alley disappearing like that —",
+      "text_ja": "路地一本がまるごとなくなるというのが、",
+      "text_zh_Hant": "整條巷子就這樣憑空消失,"
+    },
+    {
+      "text": "대체 어떻게 가능했을까요?",
+      "est_sec": 3,
+      "text_en": "how was that even possible?",
+      "text_ja": "一体どうして可能だったのでしょうか?",
+      "text_zh_Hant": "這到底是怎麼可能發生的呢?"
+    },
+    {
+      "text": "수색대는 사흘을 뒤졌지만,",
+      "est_sec": 3,
+      "text_en": "The search team combed the area for three days,",
+      "text_ja": "捜索隊は三日間探しましたが、",
+      "text_zh_Hant": "搜索隊搜了三天,"
+    },
+    {
+      "text": "그 골목이 있던 자리엔 그냥 빈 공터만 남아 있었고요.",
+      "est_sec": 6,
+      "text_en": "but where the alley used to be, there was only an empty lot left.",
+      "text_ja": "その路地があった場所には、ただ空き地だけが残っていました。",
+      "text_zh_Hant": "但那條巷子原本的位置卻只剩下一片空地。"
+    },
+    {
+      "text": "「그 자리엔 그냥, 아무것도 없습니다.」",
+      "est_sec": 4,
+      "text_en": "\"There's just — nothing there.\"",
+      "text_ja": "「そこには、ただ何もありません。」",
+      "text_zh_Hant": "「那個地方,什麼都沒有。」"
+    },
+    {
+      "text": "수색대장이 남긴 말은 그거였죠.",
+      "est_sec": 3,
+      "text_en": "That's what the search team leader left behind.",
+      "text_ja": "捜索隊長が残した言葉はそれでした。",
+      "text_zh_Hant": "搜索隊隊長留下的話就只有這句。"
+    },
+    {
+      "text": "재수용 절차를 다시 짜야 했는데,",
+      "est_sec": 4,
+      "text_en": "A recontainment procedure had to be redrafted,",
+      "text_ja": "再収容手順を組み直す必要がありましたが、",
+      "text_zh_Hant": "雖然必須重新擬定再收容程序,"
+    },
+    {
+      "text": "재수용할 대상 자체가 없어서,",
+      "est_sec": 3,
+      "text_en": "but there was no subject left to recontain,",
+      "text_ja": "再収容する対象自体がないため、",
+      "text_zh_Hant": "但根本沒有可供再收容的對象,"
+    },
+    {
+      "text": "그 절차는 지금도 서류로만 남아 있습니다.",
+      "est_sec": 4,
+      "text_en": "so that procedure still exists only on paper.",
+      "text_ja": "その手順は今も書類上だけに残っています。",
+      "text_zh_Hant": "那份程序至今仍只停留在紙面上。"
+    },
+    {
+      "text": "참고로 이 사이트 서고엔,",
+      "est_sec": 3,
+      "text_en": "For reference, in this site's archive,",
+      "text_ja": "ちなみにこのサイトの書庫には、",
+      "text_zh_Hant": "順帶一提,在這座基地的檔案室裡,"
+    },
+    {
+      "text": "다른 개체 얘기도 한 줄 있고요.",
+      "est_sec": 3,
+      "text_en": "there's also a line about another entity.",
+      "text_ja": "他の対象の話も一行あります。",
+      "text_zh_Hant": "也記著一行有關其他物件的事。"
+    },
+    {
+      "text": "세공을 정교하게 해내는 것으로 알려진",
+      "est_sec": 4,
+      "text_en": "A clockwork device known for flawlessly",
+      "text_ja": "精巧な細工をこなすことで知られる",
+      "text_zh_Hant": "以能精密加工聞名的"
+    },
+    {
+      "text": "그 태엽 장치, 914 얘기요.",
+      "est_sec": 4,
+      "text_en": "refining materials — SCP-914, that one.",
+      "text_ja": "あの発条仕掛け、914の話です。",
+      "text_zh_Hant": "那台發條裝置,也就是SCP-914。"
+    },
+    {
+      "text": "실바 박사가 예전에 이 마을 벽돌 조각 하나를",
+      "est_sec": 5,
+      "text_en": "Dr. Silva once put a brick fragment from this town",
+      "text_ja": "シルバ博士は以前、この村の煉瓦の欠片を一つ",
+      "text_zh_Hant": "席爾瓦博士曾經拿這座鎮上的一塊磚頭碎片"
+    },
+    {
+      "text": "914에 넣어 재질을 확인해보려 했다는",
+      "est_sec": 4,
+      "text_en": "into 914 to try to check what it was made of,",
+      "text_ja": "914に入れて材質を確認しようとしたという",
+      "text_zh_Hant": "放進914裡想確認材質,"
+    },
+    {
+      "text": "기록이 남아 있습니다.",
+      "est_sec": 3,
+      "text_en": "and there's a record of that.",
+      "text_ja": "記録が残っています。",
+      "text_zh_Hant": "這件事有留下紀錄。"
+    },
+    {
+      "text": "결과는… 문서에 안 남아 있습니다.",
+      "est_sec": 4,
+      "text_en": "The result… isn't in the file.",
+      "text_ja": "結果は…文書に残っていません。",
+      "text_zh_Hant": "結果……並沒有留在文件裡。"
+    },
+    {
+      "text": "파괴하기 힘든 것으로 유명한 그 682급하고 비교해도,",
+      "est_sec": 6,
+      "text_en": "Even compared to that infamous, nearly indestructible SCP-682,",
+      "text_ja": "破壊が困難なことで有名なあの682級と比べても、",
+      "text_zh_Hant": "就算拿以難以摧毀聞名的682級來比較,"
+    },
+    {
+      "text": "이 격리 난이도는 절대 낮은 편이 아니라는 게",
+      "est_sec": 5,
+      "text_en": "this containment's difficulty is anything but low,",
+      "text_ja": "この収容難易度は決して低い方ではないというのが",
+      "text_zh_Hant": "這起收容案的難度也絕對不算低,"
+    },
+    {
+      "text": "사이트 내부 평가입니다.",
+      "est_sec": 3,
+      "text_en": "according to the internal assessment at the site.",
+      "text_ja": "サイト内部の評価です。",
+      "text_zh_Hant": "這是基地內部的評估結果。"
+    },
+    {
+      "text": "「덧그려진 마을」이라는 이름, 지금도",
+      "est_sec": 4,
+      "text_en": "The name \"the overtraced town\" is still",
+      "text_ja": "「上書きされた村」という名前は、今も",
+      "text_zh_Hant": "「疊繪之村」這個名字,如今依然"
+    },
+    {
+      "text": "격리 서류 제목 줄에 그대로 남아 있습니다.",
+      "est_sec": 5,
+      "text_en": "sitting right there in the containment file's title line.",
+      "text_ja": "収容書類の表題にそのまま残っています。",
+      "text_zh_Hant": "原封不動地留在收容文件的標題列上。"
+    },
+    {
+      "text": "지금 그 집계판에 새겨진 숫자는,",
+      "est_sec": 4,
+      "text_en": "The number carved into that board right now",
+      "text_ja": "今、その集計板に刻まれた数字は、",
+      "text_zh_Hant": "此刻刻在那塊計數牌上的數字,"
+    },
+    {
+      "text": "처음 발견 당시보다 여든하나가 많습니다.",
+      "est_sec": 4,
+      "emphasis": "여든하나가 많습니다",
+      "text_en": "is eighty-one more than when it was first found.",
+      "text_ja": "最初に発見された当時より八十一多いです。",
+      "text_zh_Hant": "比最初被發現時多了八十一。"
+    },
+    {
+      "text": "실바 박사가 마지막으로 남긴 말은,",
+      "est_sec": 4,
+      "text_en": "The last words Dr. Silva left behind",
+      "text_ja": "シルバ博士が最後に残した言葉は、",
+      "text_zh_Hant": "席爾瓦博士留下的最後一句話,"
+    },
+    {
+      "text": "지금도 이 사건 파일 맨 위에 그대로 적혀 있죠.",
+      "est_sec": 5,
+      "text_en": "are still written right at the top of this case file.",
+      "text_ja": "今もこの事件ファイルの一番上にそのまま記されています。",
+      "text_zh_Hant": "如今仍原封不動地寫在這份案件檔案的最上方。"
+    },
+    {
+      "text": "「셋 다, 같은 골목에… 나란히 서 있습니다.」",
+      "est_sec": 5,
+      "text_en": "\"All three — in the same alley… standing side by side.\"",
+      "text_ja": "「三つとも、同じ路地に…並んで立っています。」",
+      "text_zh_Hant": "「三棟都在同一條巷子裡……並排站著。」"
+    },
+    {
+      "text": "아, 그리고…",
+      "est_sec": 2,
+      "text_en": "Oh, and…",
+      "text_ja": "あ、それと…",
+      "text_zh_Hant": "啊,對了……"
+    },
+    {
+      "text": "마을회관 정문에 붙어 있던 낡은 페인트 글씨 중에,",
+      "est_sec": 5,
+      "text_en": "among the old painted letters on the town hall's front door,",
+      "text_ja": "村役場の正面玄関に貼られていた古いペンキ文字の中で、",
+      "text_zh_Hant": "小鎮會館正門上那些褪色的油漆字裡,"
+    },
+    {
+      "text": "'입주 환영'이라는 부분만",
+      "est_sec": 4,
+      "text_en": "only the part that says \"Welcome, New Residents\"",
+      "text_ja": "「入居歓迎」という部分だけ",
+      "text_zh_Hant": "只有寫著「歡迎入住」的那部分"
+    },
+    {
+      "text": "유독 안 벗겨졌다고 하더군요.",
+      "est_sec": 4,
+      "text_en": "apparently hasn't peeled off at all.",
+      "text_ja": "やけに剥がれていないそうです。",
+      "text_zh_Hant": "特別沒有剝落,聽說是這樣。"
+    }
+  ],
+  "scenes": [
+    {
+      "prompt": "close-up of a weathered wooden tally board standing at a dirt-road town entrance, hand-carved number grooves filling most of the frame, faded paint and old nail heads; board dominates over seventy percent of frame; low straight-on angle; single cold moonlight beam from above; splintered wood, rusted nails, dust film; thin night mist drifting past; deep black background, cold teal moonlight on the wood grain; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "close shot of a flashlight beam held over an open logbook page, yesterday's carved number visible beside a freshly changed number on the board behind it, hand and book fill the foreground; low intimate angle; single handheld flashlight beam; worn paper, brass board frame, dust motes; still night air; deep black background, teal flashlight glow on the page; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "row of patrol officers walking away from camera down a narrow dirt alley between abandoned houses, alley and figures dominate the frame, figures small and silhouetted; low wide angle from behind the group; single portable lamp light carried by the lead officer; cracked adobe walls, dry dirt, peeling paint; faint dust kicked up by boots; deep black background, teal lamplight on the walls; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "a single wooden house at the end of a ghost-town row, noticeably paler and newer than its neighbors, house fills most of the frame; low three-quarter angle; single cold moonlight from above; fresh unweathered planks beside decayed neighboring walls, dry weeds; faint mist; deep black background, teal moonlight rim on the fresh wood; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "close-up of an old folded blueprint spread open on a dusty wooden floor inside an empty house, creases and faded ink lines filling the frame; flat top-down angle; single narrow flashlight beam; yellowed paper, dust, worn floorboards; drifting dust motes; deep black background, teal spotlight pool on the paper; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "close-up of two documents laid side by side on a dark table, an old company expansion blueprint and a modern aerial photograph, matching outlines glowing faintly at one shared plot; overhead close angle; single desk lamp; aged paper, glossy photo print, pushpins; thin dust; deep black background, teal desk-lamp glow; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "close-up of a pressure-gauge readout panel showing a graph line dipping sharply, panel fills most of frame, faint reflection of a mine-shaft diagram etched beside it; flat instrument-panel angle; single console backlight; scratched dial glass, worn metal casing, small warning light; still air; deep black background, teal console glow; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "a tripod-mounted camera facing a dark row of ghost-town houses at night, camera and nearest house dominate the frame, operator's D-class jumpsuit sleeve visible at the frame edge; low angle from behind the tripod; single camera flash mid-fire; dry dirt road, weathered wood, tripod legs; faint night haze; deep black background, brief teal-white flash light; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "split composition of one dirt lot shown twice, left half an empty patch of ground, right half the same patch now holding a finished wooden house, both halves fill the frame equally; flat frontal angle; single cold moonlight; bare dirt, fresh timber, dry grass; faint mist; deep black background, teal moonlight across both halves; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "a freshly built concrete wall sealing off a narrow alley entrance at night, wall dominates the frame with rebar still exposed at its edge; low angle looking straight at the wall; single floodlight from the side; wet concrete, exposed rebar, packed dirt; drifting dust; deep black background, harsh teal floodlight on the concrete; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "a lone figure holding a single flashlight walking away from camera into a pitch-dark alley between silent houses, figure small against the darkness, alley mouth fills the frame; low wide angle from behind; single flashlight beam cutting into the dark; dry dirt path, cracked walls, loose gravel; thin drifting dust; deep black background, narrow teal flashlight beam; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "wide-ish close shot of an empty dirt lot where a row of houses used to stand, only a single dropped flashlight still glowing on the bare ground, flashlight and ground fill the frame; low angle at ground level; single flashlight glow as the only light source; packed dry earth, faint tire-groove marks, scattered pebbles; heavy still night air; deep black background, small teal glow pooling on the dirt; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    }
+  ],
+  "background": {
+    "id": "scp-9236_bg",
+    "kind": "image",
+    "reuse": false,
+    "aspect": "16:9",
+    "resolution": "1920x1080",
+    "prompt": "wide shot of a row of abandoned wooden houses along a dirt street under a full moon, one house near the center noticeably paler and newer than the rest, a weathered tally board standing small in the foreground at the street's edge; houses and board dominate well over sixty percent of the frame; low three-quarter angle; single cold moonlight beam breaking through thin cloud; dry cracked earth, splintered wood siding, drifting dust; heavy still night air; deep black background, cold teal moonlight across the rooftops; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere",
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion"
+  },
+  "thumbnail": {
+    "hook": "hero close-up of a weathered wooden tally board at a dirt-road town entrance, a hand-carved number glowing faint teal at its center, splintered dark houses blurred behind it; board fills over seventy percent of frame, subject on the right third, left third dark empty negative space; single strong teal rim light from behind the board, rest in deep shadow; old wood grain, rusted nail heads, drifting night dust; thin haze; deep blue-black background, vivid teal glow; low angle, dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere",
+    "hook_alt": [
+      "close-up of a single new wooden house glowing faintly teal at its windows, standing paler and newer between two decayed ghost-town houses in deep shadow; new house on the left third, right third dark negative space; single cold moonlight beam; fresh timber, dry weeds, cracked dirt road; thin mist; deep blue-black background, teal window glow; low angle, dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere",
+      "close-up of a dropped flashlight glowing teal on bare dirt ground where a row of houses used to stand, empty darkness filling the rest of the frame; flashlight centered-right, left third dark negative space; single flashlight glow as the only light source; packed dry earth, faint boot prints, scattered pebbles; still night air; deep blue-black background, small teal glow pool; low angle, dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    ],
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion",
+    "text_safe_area": "left third",
+    "resolution": "1280x720"
+  },
+  "platforms": {
+    "youtube": {
+      "title": "파타고니아 폐광촌 인구 집계판이 아무도 없는 밤마다 숫자를 늘려온 사건 [SCP-9236]",
+      "title_form": "사건형",
+      "thumbnail_text": "덧그려진 마을",
+      "thumbnail_quote": "- 셋 다, 같은 골목에 나란히 서 있습니다",
+      "tags": [
+        "SCP",
+        "SCP재단",
+        "SCP-914",
+        "SCP-682",
+        "괴담",
+        "미스터리",
+        "무서운이야기"
+      ],
+      "chapters": [
+        "00:00 텅 빈 순찰 일지",
+        "01:00 「덧그려진 마을」이라는 이름",
+        "01:32 하나 늘어난 숫자",
+        "02:05 지도에 없는 집",
+        "02:57 지반 압력과의 상관관계",
+        "03:47 사진에는 안 찍히는 건물",
+        "05:48 실바 박사, 규칙을 넘다",
+        "08:30 실바 박사의 마지막 말"
+      ],
+      "description": "남미 파타고니아 폐광촌 어귀에 남은 낡은 인구 집계판 이야기입니다. 아무도 들어온 적 없는데, 그 숫자는 가끔 저절로 하나씩 늘어납니다.\n\n※ SCP 재단 세계관 기반 오리지널 창작 · 허구의 이야기입니다\n※ CC BY-SA 3.0 · 원작: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP재단 #괴담 #무서운이야기 #미스터리",
+      "localizations": {
+        "en": {
+          "title": "A Population Tally Board in a Patagonian Ghost Town Keeps Raising Its Number [SCP-9236]",
+          "description": "A weathered tally board stands at the entrance of an abandoned mining town in Patagonia. No one ever walks in, yet the number on it sometimes climbs by itself.\n\n※ Original fiction set in the SCP Foundation universe · a work of fiction\n※ CC BY-SA 3.0 · Source: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCPFoundation #creepypasta #horrorstory #mystery"
+        },
+        "ja": {
+          "title": "パタゴニアの廃鉱町、人口集計板が誰もいない夜に数字を増やし続けた事件 [SCP-9236]",
+          "description": "南米パタゴニアのある廃鉱町の入り口に、古い人口集計板が残っています。誰も入った者はいないのに、その数字は時々ひとりでに増えていきます。\n\n※ SCP財団の世界観に基づくオリジナル創作・フィクションです\n※ CC BY-SA 3.0 · 原作: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP財団 #怪談 #ホラー #ミステリー"
+        },
+        "zh-Hant": {
+          "title": "巴塔哥尼亞廢棄礦鎮的人口計數牌,在無人的夜裡不斷增加數字的事件 [SCP-9236]",
+          "description": "南美巴塔哥尼亞某座廢棄礦鎮入口,留著一塊老舊的人口計數牌。明明沒有任何人走進去,上面的數字卻偶爾會自己增加。\n\n※ 基於SCP基金會世界觀的原創作品,純屬虛構\n※ CC BY-SA 3.0 · 原作: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP基金會 #怪談 #恐怖故事 #懸疑"
+        }
+      },
+      "pinned_comment": "혹시 여러분 동네에도, 아무 이유 없이 숫자가 하나씩 늘어나 있는 표지판 같은 게 있나요? 있다면 살짝 댓글로 알려주세요.",
+      "playlist": "SCP 아카이브 (전편 듣기)"
+    }
+  },
+  "credit": "SCP 재단 세계관 기반 오리지널 창작 · 허구 · CC BY-SA 3.0",
+  "content_rating": "teen",
+  "notes": "SCP 아카이브 · 16:9 롱폼 · 장면 전환 배경 + 자막 번인 · 단일 내레이터 · 완결형."
+}
