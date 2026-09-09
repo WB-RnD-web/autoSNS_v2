@@ -1,0 +1,91 @@
+{
+  "date": "2026-09-10",
+  "topic": "stock",
+  "privacy": "public",
+  "topic_keyword": "코스피 7000 회복",
+  "headline": "코스피 7051 마감, 33거래일만에 7000 회복",
+  "hook_title": "코스피 7000, 결국 지켜냈다",
+  "accent": "#3FB950",
+  "loop_line": "코스피 7000 이야기, 오늘 밤 미국장에서 이어집니다",
+  "thumbnail_hook": "Extreme close-up of a single glowing green candlestick bar rising against a dark trading screen, soft blue pre-dawn bokeh lights in background, cinematic, no text in image, no people",
+  "thumbnail_text": "코스피 7000, 지켰다",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "네 마녀의 날",
+      "ghost": "OPEN",
+      "lines": ["어제 그", "7000", "결국 지켰다"],
+      "highlight": "7000",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "어제 아깝게 놓쳤던 코스피 7000선을 결국 지켜냈습니다."
+    },
+    {
+      "type": "trend",
+      "label": "코스피",
+      "from": 0,
+      "to": 1.4,
+      "suffix": "%",
+      "dir": "up",
+      "sub": "종가 <b>7051</b>, 33거래일만에 최고",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "코스피가 기관 매수에 힘입어 하루 만에 일 점 사 퍼센트 올랐습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "왜 올랐나",
+      "points": ["<b>반도체</b> 대형주가 상승 주도", "기관 <b>닷새째</b> 순매수 이어가"],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "반도체 대형주가 오르며 기관도 닷새째 주식을 사들였습니다."
+    },
+    {
+      "type": "statement",
+      "text": "코스피는 웃었는데 뉴욕은 울었다",
+      "highlight": "울었다",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "그런데 밤사이 뉴욕은 국제유가 백 달러 부담에 사흘째 내렸습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 지켜볼 것",
+      "points": ["국제유가 <b>100달러</b>, 기름값 오를 수도", "환율 <b>1330원대</b>, 네 마녀의 날 변동성"],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "국제유가는 기름값에, 환율은 네 마녀의 날 변동성을 지켜보세요."
+    },
+    {
+      "type": "statement",
+      "text": "코스피 7000, 이어간다 vs 꺾인다",
+      "highlight": "꺾인다",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "코스피가 7000을 오늘도 지켜낼지, 판단은 여러분 몫입니다."
+    }
+  ],
+  "sources": ["머니투데이", "파이낸셜뉴스", "이데일리", "여성신문"],
+  "credit": "출처 머니투데이·파이낸셜뉴스·이데일리 등 · 투자 조언이 아닙니다",
+  "platforms": {
+    "youtube": {
+      "title": "코스피 7000, 결국 지켜냈다 #shorts",
+      "description": "코스피 7051 마감, 33거래일만에 7000 회복\n출처 머니투데이·파이낸셜뉴스·이데일리 등\n※ 투자 조언이 아닙니다\n\n#코스피 #주식 #증시 #개장전 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "Kospi Finally Holds 7,000 as Wall Street Slides",
+          "description": "Kospi closed at 7,051, reclaiming the 7,000 level for the first time in 33 sessions, even as Wall Street fell for a third straight day on an oil price spike.\n※ 투자 조언이 아닙니다\n\n#Kospi #StockMarket #Shorts #shorts"
+        },
+        "ja": {
+          "title": "コスピ、ついに7000死守もウォール街は続落です",
+          "description": "コスピが33営業日ぶりに7000を回復し7051で取引を終えましたが、ニューヨーク市場は原油高を受けて3日続落しました。\n※ 투자 조언이 아닙니다\n\n#コスピ #株式市場 #shorts"
+        },
+        "zh-Hant": {
+          "title": "KOSPI終於守住7000點,華爾街卻連跌三日",
+          "description": "KOSPI時隔33個交易日重返7000點,收在7051點,但華爾街受油價飆升影響連續三日下跌。\n※ 투자 조언이 아닙니다\n\n#KOSPI #股市 #shorts"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "코스피 7000, 결국 지켜냈다\n출처 머니투데이·파이낸셜뉴스·이데일리 등\n※ 투자 조언이 아닙니다\n\n#코스피 #주식 #증시 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "코스피 7000, 결국 지켜냈다\n출처 머니투데이·파이낸셜뉴스·이데일리 등"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음 · SESSION=KR_AM(개장 전 프리뷰). 전일 재료: 코스피 +1.4% 7051.64(33거래일만에 7000 회복, 기관 9005억 순매수), 원/달러 1336.1원(23개월 최저). 밤사이: 다우 -0.77%, S&P500 -0.48%, 나스닥 -0.64%(사흘째 하락, 중동발 유가 급등 배럴당 100달러 근접). 오늘: 9월 선물옵션 동시만기일(네 마녀의 날)."
+}
