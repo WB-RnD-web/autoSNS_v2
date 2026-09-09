@@ -1,0 +1,1030 @@
+{
+  "date": "2026-09-09",
+  "iso_week": "2026-W37",
+  "topic": "scp",
+  "privacy": "public",
+  "origin": "original",
+  "origin_note": "오늘은 날짜 규칙상(day%3==0) canon 회차여야 했으나, scp-wiki.wikidot.com·namu.wiki는 이 세션의 네트워크 정책상 접근이 차단(EGRESS_BLOCKED)됐고 scpko.wiki는 DNS 조회 자체가 실패해 세 경로 모두 원문 확인이 불가능했음. 규정에 따라 오리지널로 대체.",
+  "source_url": "",
+  "story_id": "scp-9421",
+  "scp_number": "SCP-9421",
+  "object_class": "Euclid",
+  "codename": "이름표 도둑",
+  "number_check": {
+    "checked_at": "2026-09-09",
+    "http_code": "unverified"
+  },
+  "theme": "꿈·집단 무의식",
+  "nature": "인지·밈",
+  "twist_type": "문서",
+  "logline": "전 세계 수면 클리닉에서 올라오는 꿈 전사록을 대조하는 사이트 이야기입니다. 서로 다른 두 사람의 꿈 기록이 완전히 일치한다고 확정되는 순간, 그 안의 내용이 실제로 일어납니다.",
+  "structure": "연대기형",
+  "opening_move": "증언으로 연다",
+  "opening_note": "",
+  "closing_move": "숫자 하나",
+  "number_reveal": "뒤",
+  "ending_mode": "없음",
+  "fault": "개체",
+  "hook_line": "「이 문장, 어제 다른 사람 것에서도 봤는데요.」",
+  "procedures": [],
+  "character": {
+    "name": "요르겐센",
+    "role": "박사 · 사이트-233 수면인지연구팀장",
+    "flaw": "보류함을 정리하려고 대조를 완결 직전까지 손수 밀어붙인다"
+  },
+  "chain": [
+    {
+      "when": "국제 수면 데이터 통합 사업이 석 달째 진행되던 무렵",
+      "event": "사이트-233 야간 당직 분석원 마르틴이 리스본과 자카르타 두 피험자의 꿈 전사록에서 완전히 같은 문장을 발견했다",
+      "because": "",
+      "shot": "나란히 펼쳐진 두 개의 필체 다른 전사록, 같은 문장 아래 그어진 밑줄 두 개"
+    },
+    {
+      "when": "그 다음 주",
+      "event": "세 번째, 네 번째 전사록에서도 같은 문장이 나온 걸 확인했다",
+      "because": "쉼표 위치까지 같은 문장이 우연이라기엔 너무 정확했기 때문에",
+      "shot": "책상 위에 나란히 쌓인 여러 언어의 전사록 더미"
+    },
+    {
+      "when": "그 직후",
+      "event": "재단이 그 문장을 '일치 후보'로 정식 등록하고 밈적 위해 후보로 격상시켰다",
+      "because": "반복되는 문장이 인지 계열 위협일 가능성이 제기됐기 때문에",
+      "shot": "모니터 화면에 뜬 '일치 후보' 등록 배지와 상승하는 진행률 막대"
+    },
+    {
+      "when": "대조가 끝나던 그 밤",
+      "event": "마르틴의 집 현관에 전사록 속 그 개와 똑같은 개 한 마리가 나타났다",
+      "because": "대조 완료 시각과 정확히 같은 시각이었기 때문에",
+      "shot": "현관 앞에 앉아 있는 낯선 개, 열린 문틈으로 비치는 실내 조명"
+    },
+    {
+      "when": "그날 밤 안으로",
+      "event": "사이트는 남은 일치 후보를 끝까지 대조하지 않고 보류함으로 넘기는 쪽으로 방침을 바꿨다",
+      "because": "대조 완결이 곧 현실에 무언가를 만들어낸다는 게 확인됐기 때문에",
+      "shot": "화면 가득한 '보류' 표시가 붙은 대조 후보 목록"
+    },
+    {
+      "when": "보류함이 여든 건을 넘어가던 날",
+      "event": "D계급 인원에게 그 문장을 그대로 옮겨 적게 하는 시험을 했지만 아무 반응도 없었다",
+      "because": "직접 손으로 옮겨 적는 것만으로는 아무 일도 안 일어난다는 걸 확인하려 했기 때문에",
+      "shot": "손을 떨며 문장을 받아 적는 D계급 인원의 손과 종이"
+    },
+    {
+      "when": "그러던 어느 날",
+      "event": "요르겐센 박사가 넘치는 보류함을 정리하려고 오래된 후보 하나를 다시 열어 마지막 한 글자만 남기고 대조를 재개했다",
+      "because": "보류함을 그대로 둘 수 없다고 판단했기 때문에",
+      "shot": "화면에 뜬 대조창, 딱 한 글자만 깜빡이며 남아 있는 모습"
+    },
+    {
+      "when": "그 순간",
+      "event": "마우스가 확정 버튼 위에서 미끄러지며 대조가 완결됐고, 근무자 명단에 낯선 이름이 새로 올라왔다",
+      "because": "한 글자 차이까지 좁혀둔 상태에서 실수로 확정이 눌렸기 때문에",
+      "shot": "근무자 명단 화면에 새로 추가된 낯선 이름 한 줄"
+    },
+    {
+      "when": "곧이어",
+      "event": "출입증 없는 그 인물이 정문에 나타나 삼 년째 근무해왔다고 주장했고, 몇몇 동료는 이미 그를 알고 있었다",
+      "because": "명단에 이름이 오른 순간 그의 근무 이력 전체가 함께 만들어졌기 때문에",
+      "shot": "정문 카메라 화면 속 출입증 없이 서 있는 낯선 남자, 그를 향해 손을 흔드는 동료"
+    },
+    {
+      "when": "조사가 길어지는 사이",
+      "event": "보류함의 다른 후보들도 아무도 손대지 않은 채 하나씩 저절로 완결되기 시작했다",
+      "because": "시스템 자체가 매칭 완결 조건을 스스로 채워나가고 있었기 때문에",
+      "shot": "빈 의자 앞, 저절로 움직이는 키보드 커서"
+    },
+    {
+      "when": "확산을 끊어야 한다는 판단이 서던 날",
+      "event": "요르겐센 박사가 규칙을 어기고 서버실 전원을 직접 내렸다",
+      "because": "시스템을 통째로 끄는 것 말고는 막을 방법이 없다고 판단했기 때문에",
+      "shot": "서버실 전원 스위치로 뻗는 요르겐센의 손, 화면에 뜬 그의 이름"
+    },
+    {
+      "when": "전원이 완전히 꺼진 뒤",
+      "event": "요르겐센 박사가 서 있던 그 자리엔 다른 이름표를 단 누군가가 대신 서 있었다",
+      "because": "전원이 내려가기 직전 화면에 뜬 마지막 일치 후보가 바로 그 자신의 이름이었기 때문에",
+      "shot": "꺼진 서버실 앞, 요르겐센이 서 있던 자리에 다른 이름표를 단 사람의 뒷모습"
+    }
+  ],
+  "retention_beats": [
+    "그 개가 정확히 어디서 왔는지는, 지금도 확인이 안 됩니다.",
+    "노박 박사가 지적한 유사성이 정확히 무엇을 뜻하는지는, 아직 결론이 안 났습니다.",
+    "지금 그 자리에 있는 사람이 정말 누구인지는, 서류로도 확인이 안 됩니다."
+  ],
+  "cameos": [
+    {
+      "number": "SCP-096",
+      "how": "얼굴을 보면 끝까지 쫓아온다고 알려진 개체라는 사실만 비교 대상으로 한 줄 언급 — 이번 사고가 그쪽보다 다루기 쉬운 축이라는 사이트 내부 평가로만 쓰였다."
+    },
+    {
+      "number": "SCP-682",
+      "how": "파괴하기 매우 힘든 것으로 유명한 개체라는 사실만 비교 대상으로 한 줄 언급 — 이번 통제 실패는 그 급에 비할 바가 아니라는 평가로만 쓰였다."
+    }
+  ],
+  "twist_summary": "문서의 반전 — 재단이 막으려 한 건 낯선 이름이 나타나는 사고 자체가 아니라, '대조 완결'이라는 절차 그 자체가 실제 존재를 밀어넣는 격리 장치였다는 반전. 대조를 미완결로 남겨두는 게 임시방편이 아니라 유일한 안전장치였으며, 요르겐센 박사가 확산을 끊으려 전원을 내린 순간이 오히려 자신의 이름이 걸린 마지막 후보를 확정지었다.",
+  "narration_full": "「이 문장, 어제 다른 사람 것에서도 봤는데요.」\n사이트-233 야간 당직 분석원 마르틴이 그렇게 말했을 때, 아무도 대수롭지 않게 넘겼습니다. 원래 이곳은, 전 세계 수면 클리닉에서 올라오는 꿈 전사록을 그냥 모아두는 데였거든요.\n\n리스본에서 온 전사록과 자카르타에서 온 전사록, 두 사람은 만난 적도 없었죠. 그런데 한 문장이, 쉼표 위치까지 완전히 같았습니다.\n\n우연 아니냐고요? 저도 처음엔… 그렇게 생각했습니다. 그런데 다음 주에 세 번째, 네 번째 전사록에서도 같은 문장이 나왔고요. 하나같이 새벽 세 시 사십 분쯤, 그 도시의 자정을 갓 넘긴 시각이었습니다.\n\n재단은 그 문장을 정식으로 \"일치 후보\"라는 이름으로 등록했습니다. 밈적 위해 후보로 격상시키고, 어떻게 격리할지부터 다시 정해야 했죠.\n\n대조가 딱 끝나던 그 밤, 마르틴의 집 현관엔 처음 보는 개 한 마리가 앉아 있었습니다. 전사록에 적혀 있던 바로 그 종이었고요. 한겨울인데도, 그 개의 털은 미지근했다더군요.\n\n우연이었을까요? 재단은 그렇게 보지 않았습니다. 대조가 끝난 시각과, 개가 나타난 시각이 정확히 겹쳤거든요.\n\n사이트는 그날 밤 안으로 방침을 바꿨습니다. 남은 일치 후보는 끝까지 가지 않고, 보류함으로 넘기기로 한 겁니다. 격리라기보다는, 그냥 안 보는 쪽에 가까웠죠.\n\n보류함은 금세 넘쳤습니다. 리스본 것 옆에 나이로비 것, 나이로비 것 옆에 오사카 것 — 후보는 그렇게 계속 쌓였고요. 그 수가 여든 건을 넘어가던 날, D계급 인원에게 그 문장을 그대로 옮겨 적게 하는 시험도 해봤습니다. 「그냥… 손이 좀 시린데요.」 그게 그날 나온 유일한 보고였습니다.\n\n사이트-233 수면인지연구팀장 요르겐센 박사는, 보류함을 그대로 둘 수 없다고 판단했죠. 「끝까지 가면 안 됩니다. 딱 한 글자만 남겨두세요.」 그가 팀원들에게 늘 하던 말이었죠.\n\n그런데 그날은… 마우스가 확정 버튼 위에서 살짝 미끄러졌습니다. 그 순간 근무자 명단에 낯선 이름 하나가 새로 올라왔습니다.\n\n「출입증이 없는데, 본인은 삼 년째 근무 중이시라고 하네요.」 정문 경비가 무전으로 보고했습니다. 「제 자리, 맞잖아요.」 그 사람은 그렇게만 대답했다더군요.\n\n그런데 몇몇 동료는 이미 그를 알고 있다는 듯 태연히 인사를 건넸다더군요. 심지어 그의 책상엔, 삼 년치 커피 얼룩까지 나이테처럼 배어 있었고요. 기동특무부대 카파-8, 별칭 「명찰갈이」가 곧장 투입됐습니다. 그 사람의 존재 자체를, 서류부터 되짚는 조사였죠.\n\n조사가 길어지는 사이, 보류함의 다른 후보들이 하나씩 저절로 완결되고 있었습니다. 아무도 손대지 않은 키보드에서, 커서가 혼자 움직였다더군요.\n\n사이트는 서둘러 노박 박사에게 자문을 구했습니다. 서류가 사람보다 먼저 바뀐다는, 그녀가 예전에 지적했던 그 현상과 닮았다는 이유였죠.\n\n세계 오컬트 연합 쪽에서, 이 대조망을 통째로 폭파해 없애야 한다는 요구를, 넣어온 적이 있다는 소문도 있었습니다. 재단은 아직 답을 미루고 있고요.\n\n막아보려는 시도는 여럿이었습니다. 감시 카메라도 새로 달아봤고, 방화벽도 다시 짰고, 아예 회선을 통째로 끊어도 봤죠 — 그래도 소용없었습니다.\n\n시스템을 강제로 끄면 후보가 한꺼번에 확정될 수 있다는 우려가 나왔고요. 그런데 요르겐센 박사는 규칙을 어기고 서버실로 향했습니다. 확산을 그 자리에서 끊어야 한다고 판단했던 거죠.\n\n전원을 내리기 직전, 화면에 마지막으로 뜬 일치 후보는… 요르겐센 박사, 그 자신의 이름이었습니다.\n\n전원은 완전히 꺼졌죠. 그런데 그 자리엔, 다른 이름표를 단 누군가가 서 있었습니다. 목소리도, 걸음걸이도, 그 사람이 하던 것과 똑같았다고 합니다.\n\n사이트 반대편 격리동엔, 얼굴을 보면 끝까지 쫓아온다는 그 096급 위협도 있습니다. 이번 사고는, 재단 내부 평가로는 그쪽보다 다루기 쉬운 축에 속했다고 하고요. 파괴하기 힘든 것으로 유명한 682급 통제 실패에 비할 바는, 더더욱 아니었습니다.\n\n이 현상, 지금은 SCP-9421로 등록돼 있습니다. 객체 등급은 유클리드. 예측이 안 된다는 뜻이죠.\n\n재수용을 몇 차례 시도했지만, 돌려받을 대상이 누구인지부터 확정을 못 했습니다. 왜 하필 요르겐센 박사 차례였을까요? …지금도 설명이 안 됩니다.\n\n그 사이트 서고 어딘가엔 — 이 사건과 닮은 대조 기록이 몇 건 더 있다고 하더군요.\n\n그 자리엔 지금, 서른일곱 번째 이름표가 걸려 있습니다.",
+  "segments": [
+    {
+      "text": "「이 문장, 어제 다른 사람 것에서도 봤는데요. 」",
+      "est_sec": 6,
+      "text_en": "「I saw this same sentence in someone else's, yesterday.」",
+      "text_ja": "「この文章、昨日別の人のにもありました。」",
+      "text_zh_Hant": "「這句話,昨天在別人的裡面也看過。」"
+    },
+    {
+      "text": "사이트-233 야간 당직 분석원 마르틴이",
+      "est_sec": 5,
+      "text_en": "Site-233's night-shift analyst, Martin,",
+      "text_ja": "サイト-233の夜勤分析員マーティンが",
+      "text_zh_Hant": "233號站點的夜班分析員馬丁"
+    },
+    {
+      "text": "그렇게 말했을 때,",
+      "est_sec": 2,
+      "text_en": "said that, and",
+      "text_ja": "そう言った時、",
+      "text_zh_Hant": "這麼說的時候,"
+    },
+    {
+      "text": "아무도 대수롭지 않게 넘겼습니다. 원래 이곳은,",
+      "est_sec": 5,
+      "text_en": "no one thought much of it. This place was originally",
+      "text_ja": "誰も気に留めませんでした。もともとここは、",
+      "text_zh_Hant": "沒有人放在心上。這裡原本"
+    },
+    {
+      "text": "전 세계 수면 클리닉에서 올라오는 꿈",
+      "est_sec": 4,
+      "text_en": "just where dream",
+      "text_ja": "世界中の睡眠クリニックから上がってくる夢の",
+      "text_zh_Hant": "只是彙整全球睡眠診所送來的夢境"
+    },
+    {
+      "text": "전사록을 그냥 모아두는 데였거든요.",
+      "est_sec": 4,
+      "text_en": "transcripts from sleep clinics worldwide got collected.",
+      "text_ja": "記録を集めておくだけの場所でしたから。",
+      "text_zh_Hant": "記錄的地方而已。"
+    },
+    {
+      "text": "리스본에서 온 전사록과 자카르타에서 온 전사록,",
+      "est_sec": 5,
+      "text_en": "A transcript from Lisbon and one from Jakarta—",
+      "text_ja": "リスボンから来た記録とジャカルタから来た記録、",
+      "text_zh_Hant": "一份來自里斯本的記錄和一份來自雅加達的記錄,"
+    },
+    {
+      "text": "두 사람은 만난 적도 없었죠.",
+      "est_sec": 3,
+      "text_en": "the two people had never even met.",
+      "text_ja": "二人は会ったこともありませんでした。",
+      "text_zh_Hant": "兩人根本沒見過面。"
+    },
+    {
+      "text": "그런데 한 문장이,",
+      "est_sec": 2,
+      "text_en": "And yet one sentence,",
+      "text_ja": "それなのに、ある一文が",
+      "text_zh_Hant": "但有一句話,"
+    },
+    {
+      "text": "쉼표 위치까지 완전히 같았습니다.",
+      "est_sec": 4,
+      "text_en": "matched right down to the comma placement.",
+      "text_ja": "読点の位置まで完全に一致していました。",
+      "text_zh_Hant": "連逗號的位置都完全一樣。",
+      "emphasis": "완전히 같았다"
+    },
+    {
+      "text": "우연 아니냐고요? 저도 처음엔…",
+      "est_sec": 4,
+      "text_en": "Just a coincidence? At first, I too…",
+      "text_ja": "偶然じゃないかって? 私も最初は…",
+      "text_zh_Hant": "說是巧合嗎?我一開始也…"
+    },
+    {
+      "text": "그렇게 생각했습니다.",
+      "est_sec": 2,
+      "text_en": "thought so.",
+      "text_ja": "そう思っていました。",
+      "text_zh_Hant": "是這麼想的。"
+    },
+    {
+      "text": "그런데 다음 주에 세 번째,",
+      "est_sec": 3,
+      "text_en": "But the next week, a third,",
+      "text_ja": "でも次の週に三番目、",
+      "text_zh_Hant": "但下週,第三份、"
+    },
+    {
+      "text": "네 번째 전사록에서도 같은 문장이 나왔고요.",
+      "est_sec": 5,
+      "text_en": "then a fourth transcript had the same sentence too.",
+      "text_ja": "四番目の記録にも同じ文章が出てきたんです。",
+      "text_zh_Hant": "第四份記錄裡也出現了同一句話。"
+    },
+    {
+      "text": "하나같이 새벽 세 시 사십 분쯤,",
+      "est_sec": 4,
+      "text_en": "Every single time, around 3:40 a.m.,",
+      "text_ja": "どれも決まって明け方三時四十分頃、",
+      "text_zh_Hant": "每一次都是在凌晨三點四十分左右,"
+    },
+    {
+      "text": "그 도시의 자정을 갓 넘긴 시각이었습니다.",
+      "est_sec": 5,
+      "text_en": "just past midnight local time in that city.",
+      "text_ja": "その都市ではちょうど日付が変わったばかりの時刻でした。",
+      "text_zh_Hant": "那正是當地城市剛過午夜的時刻。"
+    },
+    {
+      "text": "재단은 그 문장을 정식으로 \"일치 후보\"라는",
+      "est_sec": 5,
+      "text_en": "The Foundation officially registered the sentence as a",
+      "text_ja": "財団はその文章を正式に「一致候補」という",
+      "text_zh_Hant": "基金會正式將這句話登記為"
+    },
+    {
+      "text": "이름으로 등록했습니다.",
+      "est_sec": 2,
+      "text_en": "'match candidate.'",
+      "text_ja": "名前で登録しました。",
+      "text_zh_Hant": "「吻合候選」。"
+    },
+    {
+      "text": "밈적 위해 후보로 격상시키고,",
+      "est_sec": 3,
+      "text_en": "They upgraded it to a memetic hazard candidate,",
+      "text_ja": "ミーム的害悪の候補に格上げし、",
+      "text_zh_Hant": "並升級為迷因危害候選對象,"
+    },
+    {
+      "text": "어떻게 격리할지부터 다시 정해야 했죠.",
+      "est_sec": 4,
+      "text_en": "and had to figure out from scratch how to contain it.",
+      "text_ja": "どう収容するかから改めて決めなければなりませんでした。",
+      "text_zh_Hant": "得從頭決定該如何收容它。"
+    },
+    {
+      "text": "대조가 딱 끝나던 그 밤,",
+      "est_sec": 3,
+      "text_en": "The night the comparison was finished,",
+      "text_ja": "照合がちょうど終わったその夜、",
+      "text_zh_Hant": "對照作業剛結束的那個晚上,"
+    },
+    {
+      "text": "마르틴의 집 현관엔 처음 보는 개 한 마리가",
+      "est_sec": 5,
+      "text_en": "an unfamiliar dog was",
+      "text_ja": "マーティンの家の玄関には見たこともない犬が一匹",
+      "text_zh_Hant": "馬丁家門口有一隻沒見過的狗"
+    },
+    {
+      "text": "앉아 있었습니다.",
+      "est_sec": 2,
+      "text_en": "sitting on Martin's doorstep.",
+      "text_ja": "座っていました。",
+      "text_zh_Hant": "就坐在那裡。"
+    },
+    {
+      "text": "전사록에 적혀 있던 바로 그 종이었고요.",
+      "est_sec": 5,
+      "text_en": "It was the exact breed written in the transcript.",
+      "text_ja": "記録に書かれていたまさにその犬種でした。",
+      "text_zh_Hant": "正是記錄裡寫的那個品種。"
+    },
+    {
+      "text": "한겨울인데도, 그 개의 털은 미지근했다더군요.",
+      "est_sec": 5,
+      "text_en": "Even in the dead of winter, its fur was said to be lukewarm.",
+      "text_ja": "真冬なのに、その犬の毛は生ぬるかったそうです。",
+      "text_zh_Hant": "明明是隆冬,那隻狗的毛卻是溫的,聽說。"
+    },
+    {
+      "text": "우연이었을까요? 재단은 그렇게 보지 않았습니다.",
+      "est_sec": 5,
+      "text_en": "Was it a coincidence? The Foundation didn't think so.",
+      "text_ja": "偶然だったのでしょうか? 財団はそうは見ませんでした。",
+      "text_zh_Hant": "是巧合嗎?基金會不這麼認為。"
+    },
+    {
+      "text": "대조가 끝난 시각과,",
+      "est_sec": 2,
+      "text_en": "The moment the comparison finished",
+      "text_ja": "照合が終わった時刻と、",
+      "text_zh_Hant": "對照結束的時間,"
+    },
+    {
+      "text": "개가 나타난 시각이 정확히 겹쳤거든요.",
+      "est_sec": 4,
+      "text_en": "matched exactly with the moment the dog appeared.",
+      "text_ja": "犬が現れた時刻が正確に重なっていたんです。",
+      "text_zh_Hant": "和那隻狗出現的時間完全吻合。"
+    },
+    {
+      "text": "사이트는 그날 밤 안으로 방침을 바꿨습니다.",
+      "est_sec": 5,
+      "text_en": "The site changed its policy that very night.",
+      "text_ja": "サイトはその夜のうちに方針を変えました。",
+      "text_zh_Hant": "站點在當晚就改變了方針。"
+    },
+    {
+      "text": "남은 일치 후보는 끝까지 가지 않고,",
+      "est_sec": 4,
+      "text_en": "The remaining match candidates would never be taken to completion,",
+      "text_ja": "残りの一致候補は最後まで進めず、",
+      "text_zh_Hant": "剩下的吻合候選不再對照到底,"
+    },
+    {
+      "text": "보류함으로 넘기기로 한 겁니다.",
+      "est_sec": 4,
+      "text_en": "instead moved straight to a hold folder.",
+      "text_ja": "保留フォルダに回すことにしたのです。",
+      "text_zh_Hant": "而是全數移入待處理資料夾。"
+    },
+    {
+      "text": "격리라기보다는, 그냥 안 보는 쪽에 가까웠죠.",
+      "est_sec": 5,
+      "text_en": "It was less containment, more just... not looking.",
+      "text_ja": "収容というより、ただ見ないようにするのに近かったですね。",
+      "text_zh_Hant": "與其說是收容,不如說更接近「乾脆不看」。"
+    },
+    {
+      "text": "보류함은 금세 넘쳤습니다.",
+      "est_sec": 3,
+      "text_en": "The hold folder filled up fast.",
+      "text_ja": "保留フォルダはすぐにあふれました。",
+      "text_zh_Hant": "待處理資料夾很快就滿了。"
+    },
+    {
+      "text": "리스본 것 옆에 나이로비 것,",
+      "est_sec": 3,
+      "text_en": "The Lisbon one next to the Nairobi one,",
+      "text_ja": "リスボンの隣にナイロビの、",
+      "text_zh_Hant": "里斯本的旁邊是奈洛比的,"
+    },
+    {
+      "text": "나이로비 것 옆에 오사카 것 —",
+      "est_sec": 4,
+      "text_en": "the Nairobi one next to the Osaka one—",
+      "text_ja": "ナイロビの隣に大阪の——",
+      "text_zh_Hant": "奈洛比的旁邊又是大阪的——"
+    },
+    {
+      "text": "후보는 그렇게 계속 쌓였고요.",
+      "est_sec": 3,
+      "text_en": "the candidates just kept piling up.",
+      "text_ja": "候補はそうやってずっと積み上がっていきました。",
+      "text_zh_Hant": "候選案例就這樣一直堆積下去。"
+    },
+    {
+      "text": "그 수가 여든 건을 넘어가던 날,",
+      "est_sec": 4,
+      "text_en": "The day the count passed eighty,",
+      "text_ja": "その数が八十件を超えた日、",
+      "text_zh_Hant": "數量超過八十件的那天,"
+    },
+    {
+      "text": "D계급 인원에게 그 문장을 그대로 옮겨 적게",
+      "est_sec": 5,
+      "text_en": "they had a D-class personnel copy the sentence out",
+      "text_ja": "D階級の要員にその文章をそのまま書き写させる",
+      "text_zh_Hant": "曾讓一名D級人員原封不動地抄寫那句話,"
+    },
+    {
+      "text": "하는 시험도 해봤습니다.",
+      "est_sec": 3,
+      "text_en": "word for word, just to test it.",
+      "text_ja": "試験もしてみました。",
+      "text_zh_Hant": "做過這樣的試驗。"
+    },
+    {
+      "text": "「그냥… 손이 좀 시린데요. 」",
+      "est_sec": 4,
+      "text_en": "「It's nothing… my hand's just a little cold.」",
+      "text_ja": "「別に…手が少し冷たいだけです。」",
+      "text_zh_Hant": "「沒什麼…就是手有點冷。」"
+    },
+    {
+      "text": "그게 그날 나온 유일한 보고였습니다.",
+      "est_sec": 4,
+      "text_en": "That was the only report that came out of it.",
+      "text_ja": "それがその日出た唯一の報告でした。",
+      "text_zh_Hant": "那是那天唯一的報告。"
+    },
+    {
+      "text": "사이트-233 수면인지연구팀장 요르겐센 박사는,",
+      "est_sec": 5,
+      "text_en": "Dr. Jørgensen, head of Site-233's sleep cognition team,",
+      "text_ja": "サイト-233睡眠認知研究チーム長のヨルゲンセン博士は、",
+      "text_zh_Hant": "233號站點睡眠認知研究組組長約根森博士"
+    },
+    {
+      "text": "보류함을 그대로 둘 수 없다고 판단했죠.",
+      "est_sec": 5,
+      "text_en": "decided the hold folder couldn't just be left alone.",
+      "text_ja": "保留フォルダをそのままにはできないと判断しました。",
+      "text_zh_Hant": "認為不能就這樣放著待處理資料夾不管。"
+    },
+    {
+      "text": "「끝까지 가면 안 됩니다.",
+      "est_sec": 3,
+      "text_en": "「Never let it run to completion.",
+      "text_ja": "「最後まで行かせてはいけません。",
+      "text_zh_Hant": "「絕對不能對照到底。"
+    },
+    {
+      "text": "딱 한 글자만 남겨두세요. 」",
+      "est_sec": 3,
+      "text_en": "Always leave exactly one character unmatched.」",
+      "text_ja": "必ず一文字だけ残しておいてください。」",
+      "text_zh_Hant": "一定要留下剛好一個字不對。」"
+    },
+    {
+      "text": "그가 팀원들에게 늘 하던 말이었죠.",
+      "est_sec": 4,
+      "text_en": "That was what he always told his team.",
+      "text_ja": "それが彼がチームにいつも言っていた言葉でした。",
+      "text_zh_Hant": "這是他一直對組員說的話。"
+    },
+    {
+      "text": "그런데 그날은…",
+      "est_sec": 2,
+      "text_en": "But that day…",
+      "text_ja": "でもその日は…",
+      "text_zh_Hant": "但那一天…"
+    },
+    {
+      "text": "마우스가 확정 버튼 위에서",
+      "est_sec": 3,
+      "text_en": "the mouse, right over the confirm button,",
+      "text_ja": "マウスが確定ボタンの上で",
+      "text_zh_Hant": "滑鼠在確認鍵上"
+    },
+    {
+      "text": "살짝 미끄러졌습니다.",
+      "est_sec": 2,
+      "text_en": "slipped, just slightly.",
+      "text_ja": "わずかに滑ってしまいました。",
+      "text_zh_Hant": "輕輕滑了一下。"
+    },
+    {
+      "text": "그 순간 근무자 명단에 낯선 이름 하나가",
+      "est_sec": 5,
+      "text_en": "In that instant, an unfamiliar name",
+      "text_ja": "その瞬間、勤務者名簿に見知らぬ名前が一つ",
+      "text_zh_Hant": "那一瞬間,員工名冊上多了一個陌生的名字,"
+    },
+    {
+      "text": "새로 올라왔습니다.",
+      "est_sec": 2,
+      "text_en": "was newly added to the staff roster.",
+      "text_ja": "新しく上がっていました。",
+      "text_zh_Hant": "剛剛才被新增進去。"
+    },
+    {
+      "text": "「출입증이 없는데,",
+      "est_sec": 2,
+      "text_en": "「He has no badge,",
+      "text_ja": "「入館証がないのに、",
+      "text_zh_Hant": "「他沒有識別證,"
+    },
+    {
+      "text": "본인은 삼 년째 근무 중이시라고 하네요. 」",
+      "est_sec": 5,
+      "text_en": "but he says he's been working here for three years.」",
+      "text_ja": "ご本人は三年目の勤務だとおっしゃっていますが。」",
+      "text_zh_Hant": "但他本人說自己已經在這裡工作三年了。」"
+    },
+    {
+      "text": "정문 경비가 무전으로 보고했습니다.",
+      "est_sec": 4,
+      "text_en": "the front gate guard reported over the radio.",
+      "text_ja": "正門の警備員が無線でそう報告しました。",
+      "text_zh_Hant": "正門警衛用無線電這樣回報。"
+    },
+    {
+      "text": "「제 자리, 맞잖아요. 」",
+      "est_sec": 3,
+      "text_en": "「This is my spot, isn't it.」",
+      "text_ja": "「私の席じゃないですか。」",
+      "text_zh_Hant": "「這本來就是我的位子啊。」"
+    },
+    {
+      "text": "그 사람은 그렇게만 대답했다더군요.",
+      "est_sec": 4,
+      "text_en": "That was apparently all the man said in reply.",
+      "text_ja": "その人はそれだけしか答えなかったそうです。",
+      "text_zh_Hant": "據說那個人只回了這麼一句。"
+    },
+    {
+      "text": "그런데 몇몇 동료는 이미 그를 알고 있다는",
+      "est_sec": 5,
+      "text_en": "But a few colleagues already seemed to",
+      "text_ja": "ところが何人かの同僚はすでに彼を知っているかの",
+      "text_zh_Hant": "但有幾名同事似乎早就認識他,"
+    },
+    {
+      "text": "듯 태연히 인사를 건넸다더군요.",
+      "est_sec": 4,
+      "text_en": "know him, greeting him casually.",
+      "text_ja": "ように、平然と挨拶を交わしたそうです。",
+      "text_zh_Hant": "若無其事地跟他打了招呼。"
+    },
+    {
+      "text": "심지어 그의 책상엔,",
+      "est_sec": 2,
+      "text_en": "Even his desk",
+      "text_ja": "それどころか彼の机には、",
+      "text_zh_Hant": "甚至他的辦公桌上,"
+    },
+    {
+      "text": "삼 년치 커피 얼룩까지 나이테처럼 배어 있었고요.",
+      "est_sec": 6,
+      "text_en": "had three years' worth of coffee stains soaked in like tree rings.",
+      "text_ja": "三年分のコーヒーの染みが年輪のように染み込んでいました。",
+      "text_zh_Hant": "都像年輪一樣浸著三年份的咖啡漬。"
+    },
+    {
+      "text": "기동특무부대 카파-8, 별칭 「명찰갈이」",
+      "est_sec": 5,
+      "text_en": "Mobile Task Force Kappa-8, nicknamed 「Nametag Swap,」",
+      "text_ja": "機動特殊部隊カッパ-8、通称「名札すり替え」が",
+      "text_zh_Hant": "機動特遣隊Kappa-8,綽號「名牌賊」"
+    },
+    {
+      "text": "가 곧장 투입됐습니다.",
+      "est_sec": 2,
+      "text_en": "was deployed right away.",
+      "text_ja": "すぐに投入されました。",
+      "text_zh_Hant": "立刻被派往現場。"
+    },
+    {
+      "text": "그 사람의 존재 자체를,",
+      "est_sec": 3,
+      "text_en": "It was an investigation that traced the man's very existence",
+      "text_ja": "その人物の存在そのものを、",
+      "text_zh_Hant": "這是一場從書面紀錄開始"
+    },
+    {
+      "text": "서류부터 되짚는 조사였죠.",
+      "est_sec": 3,
+      "text_en": "back through the paperwork itself.",
+      "text_ja": "書類から遡って調べる調査でした。",
+      "text_zh_Hant": "追溯這個人本身存在的調查。"
+    },
+    {
+      "text": "조사가 길어지는 사이,",
+      "est_sec": 2,
+      "text_en": "While the investigation dragged on,",
+      "text_ja": "調査が長引く間に、",
+      "text_zh_Hant": "就在調查拖長的這段時間裡,"
+    },
+    {
+      "text": "보류함의 다른 후보들이 하나씩 저절로",
+      "est_sec": 4,
+      "text_en": "the other candidates in the hold folder",
+      "text_ja": "保留フォルダの他の候補が一つずつひとりでに",
+      "text_zh_Hant": "待處理資料夾裡的其他候選,"
+    },
+    {
+      "text": "완결되고 있었습니다.",
+      "est_sec": 2,
+      "text_en": "were completing themselves, one by one.",
+      "text_ja": "完了していっていました。",
+      "text_zh_Hant": "竟一個接一個地自行完成對照。"
+    },
+    {
+      "text": "아무도 손대지 않은 키보드에서,",
+      "est_sec": 4,
+      "text_en": "On a keyboard no one had touched,",
+      "text_ja": "誰も触れていないキーボードで、",
+      "text_zh_Hant": "在一台沒有人碰過的鍵盤上,"
+    },
+    {
+      "text": "커서가 혼자 움직였다더군요.",
+      "est_sec": 3,
+      "text_en": "the cursor apparently moved on its own.",
+      "text_ja": "カーソルがひとりでに動いていたそうです。",
+      "text_zh_Hant": "據說游標自己動了起來。"
+    },
+    {
+      "text": "사이트는 서둘러 노박 박사에게 자문을 구했습니다.",
+      "est_sec": 6,
+      "text_en": "The site hurriedly sought Dr. Novák's advice.",
+      "text_ja": "サイトは急いでノヴァーク博士に助言を求めました。",
+      "text_zh_Hant": "站點趕緊向諾瓦克博士請教。"
+    },
+    {
+      "text": "서류가 사람보다 먼저 바뀐다는,",
+      "est_sec": 4,
+      "text_en": "The idea that paperwork changes before the person does—",
+      "text_ja": "書類が人より先に書き換わるという、",
+      "text_zh_Hant": "「紀錄比人本身更早改變」——"
+    },
+    {
+      "text": "그녀가 예전에 지적했던 그 현상과 닮았다는",
+      "est_sec": 5,
+      "text_en": "it resembled the very phenomenon she had once pointed out,",
+      "text_ja": "彼女が以前指摘したあの現象と似ているという",
+      "text_zh_Hant": "這和她之前指出過的現象很相似,"
+    },
+    {
+      "text": "이유였죠. 세계 오컬트 연합 쪽에서,",
+      "est_sec": 4,
+      "text_en": "or so the reasoning went. From the Global Occult Coalition,",
+      "text_ja": "理由からでした。世界オカルト連合の方から、",
+      "text_zh_Hant": "這是理由。而世界超自然聯盟那邊,"
+    },
+    {
+      "text": "이 대조망을 통째로 폭파해 없애야 한다는 요구를,",
+      "est_sec": 6,
+      "text_en": "a demand came in that the whole matching network",
+      "text_ja": "この照合網をまるごと爆破して無くすべきだという要求を、",
+      "text_zh_Hant": "曾提出過要求,要求把整個對照網路"
+    },
+    {
+      "text": "넣어온 적이 있다는 소문도 있었습니다.",
+      "est_sec": 4,
+      "text_en": "should be blown up entirely, or so the rumor went.",
+      "text_ja": "送ってきたことがあるという噂もありました。",
+      "text_zh_Hant": "直接炸毀,這只是傳聞。"
+    },
+    {
+      "text": "재단은 아직 답을 미루고 있고요.",
+      "est_sec": 4,
+      "text_en": "The Foundation is still putting off an answer.",
+      "text_ja": "財団はまだ返答を先送りにしています。",
+      "text_zh_Hant": "基金會目前仍未回覆。"
+    },
+    {
+      "text": "막아보려는 시도는 여럿이었습니다.",
+      "est_sec": 4,
+      "text_en": "There were several attempts to stop it.",
+      "text_ja": "止めようとする試みはいくつもありました。",
+      "text_zh_Hant": "試圖阻止的手段有好幾種。"
+    },
+    {
+      "text": "감시 카메라도 새로 달아봤고,",
+      "est_sec": 3,
+      "text_en": "They installed new surveillance cameras,",
+      "text_ja": "監視カメラも新しく設置してみたし、",
+      "text_zh_Hant": "新裝過監視攝影機,"
+    },
+    {
+      "text": "방화벽도 다시 짰고,",
+      "est_sec": 2,
+      "text_en": "rewrote the firewall,",
+      "text_ja": "ファイアウォールも組み直したし、",
+      "text_zh_Hant": "也重新架設過防火牆,"
+    },
+    {
+      "text": "아예 회선을 통째로 끊어도 봤죠 —",
+      "est_sec": 4,
+      "text_en": "even cut the whole line entirely—",
+      "text_ja": "いっそ回線をまるごと切ってもみましたが——",
+      "text_zh_Hant": "甚至整條線路都切斷試過——"
+    },
+    {
+      "text": "그래도 소용없었습니다.",
+      "est_sec": 2,
+      "text_en": "none of it worked.",
+      "text_ja": "それでも無駄でした。",
+      "text_zh_Hant": "卻還是沒有用。"
+    },
+    {
+      "text": "시스템을 강제로 끄면 후보가 한꺼번에 확정될",
+      "est_sec": 5,
+      "text_en": "The worry arose that forcibly shutting the system down",
+      "text_ja": "システムを強制的に切れば候補が一斉に確定してしまう",
+      "text_zh_Hant": "有人擔心強制關閉系統"
+    },
+    {
+      "text": "수 있다는 우려가 나왔고요.",
+      "est_sec": 3,
+      "text_en": "might finalize all the candidates at once.",
+      "text_ja": "おそれがあるという懸念が出ていました。",
+      "text_zh_Hant": "反而會讓所有候選一次全部成立。"
+    },
+    {
+      "text": "그런데 요르겐센 박사는 규칙을 어기고",
+      "est_sec": 4,
+      "text_en": "But Dr. Jørgensen broke the rule and",
+      "text_ja": "それでもヨルゲンセン博士は規則を破り",
+      "text_zh_Hant": "但約根森博士還是違反規定,"
+    },
+    {
+      "text": "서버실로 향했습니다.",
+      "est_sec": 2,
+      "text_en": "headed for the server room.",
+      "text_ja": "サーバー室へ向かいました。",
+      "text_zh_Hant": "逕自走向了伺服器室。"
+    },
+    {
+      "text": "확산을 그 자리에서 끊어야 한다고 판단했던 거죠.",
+      "est_sec": 6,
+      "text_en": "He'd decided the spread had to be cut off right there.",
+      "text_ja": "拡散をその場で止めなければならないと判断したのです。",
+      "text_zh_Hant": "他判斷必須當場切斷擴散。"
+    },
+    {
+      "text": "전원을 내리기 직전,",
+      "est_sec": 2,
+      "text_en": "Right before he cut the power,",
+      "text_ja": "電源を落とす直前、",
+      "text_zh_Hant": "就在切斷電源之前,"
+    },
+    {
+      "text": "화면에 마지막으로 뜬 일치 후보는…",
+      "est_sec": 4,
+      "text_en": "the last match candidate to appear on screen was…",
+      "text_ja": "画面に最後に表示された一致候補は…",
+      "text_zh_Hant": "螢幕上最後跳出的吻合候選是……"
+    },
+    {
+      "text": "요르겐센 박사, 그 자신의 이름이었습니다.",
+      "est_sec": 5,
+      "text_en": "Dr. Jørgensen's own name.",
+      "text_ja": "ヨルゲンセン博士、彼自身の名前でした。",
+      "text_zh_Hant": "約根森博士自己的名字。",
+      "emphasis": "그 자신의 이름"
+    },
+    {
+      "text": "전원은 완전히 꺼졌죠. 그런데 그 자리엔,",
+      "est_sec": 5,
+      "text_en": "The power went out completely. But standing right there,",
+      "text_ja": "電源は完全に落ちました。それなのに、その場には、",
+      "text_zh_Hant": "電源徹底斷了。然而那個位置上,"
+    },
+    {
+      "text": "다른 이름표를 단 누군가가 서 있었습니다.",
+      "est_sec": 5,
+      "text_en": "was someone wearing a different name tag.",
+      "text_ja": "別の名札を付けた誰かが立っていました。",
+      "text_zh_Hant": "卻站著一個掛著不同名牌的人。"
+    },
+    {
+      "text": "목소리도, 걸음걸이도,",
+      "est_sec": 2,
+      "text_en": "The voice, the walk—",
+      "text_ja": "声も、歩き方も、",
+      "text_zh_Hant": "聲音也好,走路的樣子也好,"
+    },
+    {
+      "text": "그 사람이 하던 것과 똑같았다고 합니다.",
+      "est_sec": 5,
+      "text_en": "all exactly like the man who'd been there.",
+      "text_ja": "あの人がしていたのとまったく同じだったそうです。",
+      "text_zh_Hant": "據說全都跟那個人一模一樣。"
+    },
+    {
+      "text": "사이트 반대편 격리동엔,",
+      "est_sec": 3,
+      "text_en": "In the containment wing on the other side of the site,",
+      "text_ja": "サイトの反対側の収容棟には、",
+      "text_zh_Hant": "在站點另一側的收容大樓裡,"
+    },
+    {
+      "text": "얼굴을 보면 끝까지 쫓아온다는 그 096급",
+      "est_sec": 5,
+      "text_en": "there's also that 096-class threat",
+      "text_ja": "顔を見たら最後まで追ってくるというあの096級",
+      "text_zh_Hant": "也有那個一旦被看到臉就會追到底的096級"
+    },
+    {
+      "text": "위협도 있습니다. 이번 사고는,",
+      "est_sec": 4,
+      "text_en": "said to chase you forever if it sees your face. This incident,",
+      "text_ja": "脅威もいます。今回の事故は、",
+      "text_zh_Hant": "威脅存在。這次的事故,"
+    },
+    {
+      "text": "재단 내부 평가로는 그쪽보다 다루기 쉬운",
+      "est_sec": 5,
+      "text_en": "by the Foundation's internal assessment, fell into the category",
+      "text_ja": "財団内部の評価ではあちらより扱いやすい",
+      "text_zh_Hant": "就基金會內部評估而言,屬於比那個"
+    },
+    {
+      "text": "축에 속했다고 하고요.",
+      "est_sec": 2,
+      "text_en": "of being easier to handle than that one.",
+      "text_ja": "部類に入るとされていました。",
+      "text_zh_Hant": "更容易處理的一類。"
+    },
+    {
+      "text": "파괴하기 힘든 것으로 유명한 682급 통제",
+      "est_sec": 5,
+      "text_en": "And it was even further from the kind of containment",
+      "text_ja": "破壊しにくいことで有名な682級の制御",
+      "text_zh_Hant": "更遠遠比不上那個以難以摧毀聞名的682級"
+    },
+    {
+      "text": "실패에 비할 바는,",
+      "est_sec": 2,
+      "text_en": "failure famous for being nearly impossible to destroy—",
+      "text_ja": "失敗に比べられるものでは、",
+      "text_zh_Hant": "控制失敗事件——"
+    },
+    {
+      "text": "더더욱 아니었습니다. 이 현상,",
+      "est_sec": 4,
+      "text_en": "nowhere close. This phenomenon",
+      "text_ja": "さらにありませんでした。この現象、",
+      "text_zh_Hant": "完全不能相提並論。這個現象,"
+    },
+    {
+      "text": "지금은 SCP-9421로 등록돼 있습니다.",
+      "est_sec": 5,
+      "text_en": "is now registered as SCP-9421.",
+      "text_ja": "今はSCP-9421として登録されています。",
+      "text_zh_Hant": "現在被登記為SCP-9421。"
+    },
+    {
+      "text": "객체 등급은 유클리드.",
+      "est_sec": 2,
+      "text_en": "Object class: Euclid.",
+      "text_ja": "オブジェクトクラスはユークリッド。",
+      "text_zh_Hant": "物件等級為歐幾里得。"
+    },
+    {
+      "text": "예측이 안 된다는 뜻이죠.",
+      "est_sec": 3,
+      "text_en": "Meaning its behavior can't be predicted.",
+      "text_ja": "予測できないという意味です。",
+      "text_zh_Hant": "意思是行為無法預測。"
+    },
+    {
+      "text": "재수용을 몇 차례 시도했지만,",
+      "est_sec": 3,
+      "text_en": "Reacquisition was attempted several times, but",
+      "text_ja": "再収容を何度か試みましたが、",
+      "text_zh_Hant": "曾嘗試過幾次再收容,但"
+    },
+    {
+      "text": "돌려받을 대상이 누구인지부터 확정을 못 했습니다.",
+      "est_sec": 6,
+      "text_en": "they couldn't even confirm who exactly was supposed to be reclaimed.",
+      "text_ja": "取り戻すべき対象が誰なのかすら確定できませんでした。",
+      "text_zh_Hant": "連該找回的對象究竟是誰都無法確定。"
+    },
+    {
+      "text": "왜 하필 요르겐센 박사 차례였을까요? …",
+      "est_sec": 5,
+      "text_en": "Why did it have to be Dr. Jørgensen's turn? …",
+      "text_ja": "なぜよりによってヨルゲンセン博士の番だったのでしょうか? …",
+      "text_zh_Hant": "為什麼偏偏輪到約根森博士?……"
+    },
+    {
+      "text": "지금도 설명이 안 됩니다.",
+      "est_sec": 3,
+      "text_en": "Even now, there's no explanation.",
+      "text_ja": "今も説明がつきません。",
+      "text_zh_Hant": "至今仍然無法解釋。"
+    },
+    {
+      "text": "그 사이트 서고 어딘가엔 —",
+      "est_sec": 3,
+      "text_en": "Somewhere in that site's archive—",
+      "text_ja": "あのサイトの書庫のどこかには——",
+      "text_zh_Hant": "在那個站點的檔案庫某處——"
+    },
+    {
+      "text": "이 사건과 닮은 대조 기록이",
+      "est_sec": 3,
+      "text_en": "records of comparisons resembling this case",
+      "text_ja": "この事件と似た照合記録が",
+      "text_zh_Hant": "據說還有幾份與這起案件相似的對照紀錄"
+    },
+    {
+      "text": "몇 건 더 있다고 하더군요.",
+      "est_sec": 3,
+      "text_en": "are said to number a few more.",
+      "text_ja": "何件かあるそうです。",
+      "text_zh_Hant": "還存放在那裡。"
+    },
+    {
+      "text": "그 자리엔 지금,",
+      "est_sec": 2,
+      "text_en": "That spot now,",
+      "text_ja": "あの席には今、",
+      "text_zh_Hant": "那個位子現在,"
+    },
+    {
+      "text": "서른일곱 번째 이름표가 걸려 있습니다.",
+      "est_sec": 4,
+      "text_en": "has the thirty-seventh name tag hanging on it.",
+      "text_ja": "三十七枚目の名札が掛かっています。",
+      "text_zh_Hant": "掛著第三十七塊名牌。",
+      "emphasis": "서른일곱 번째"
+    }
+  ],
+  "scenes": [
+    {
+      "prompt": "extreme close-up of two handwritten dream transcripts lying side by side on a desk, different handwriting styles, one identical underlined sentence glowing faintly on both pages; transcripts fill over seventy percent of frame; flat overhead angle; single desk lamp above; aged paper, ink smudges, dried coffee ring; still air, faint dust; deep black background, warm amber lamp glow on the ink; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (amber-yellow), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "close-up of a tall stack of dream transcripts in different scripts and languages piled on a night-shift desk, top page catching the light; stack fills most of the frame; low three-quarter angle; single desk lamp; worn paper edges, paperclips, a half-empty coffee cup; faint steam; deep black background, amber lamp pool on the paper stack; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (amber-yellow), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "close-up of a computer monitor displaying a glowing match-candidate icon and a rising status bar, monitor fills the frame, operator's silhouette reflected faintly in the dark screen bezel; low desk-level angle; single monitor glow as the only light; worn keyboard, scattered sticky notes, dust on the screen edge; still air; deep black background, amber screen glow; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (amber-yellow), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "close-up of an unfamiliar dog sitting calmly on a dim apartment doorstep at night, door open a crack behind it with warm light spilling out, dog fills over sixty percent of frame; low ground-level angle; single warm doorway light; short wet-looking fur, worn welcome mat, night chill in the air; thin mist; deep black background, amber light spilling from the doorway; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (amber-yellow), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "close-up of a monitor filled with rows of match-candidates each stamped with a hold icon, screen dominates the frame, hand hovering near the keyboard at the frame edge; flat desk angle; single monitor backlight; smudged screen, worn desk surface, a cold mug; still night air; deep black background, amber glow across the rows; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (amber-yellow), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "close-up of a trembling hand in a plain jumpsuit sleeve copying a sentence onto paper under harsh light, hand and paper fill the frame; low tight angle; single overhead interrogation-style light; worn pencil, damp paper, restraint strap visible at the wrist; still cold air; deep black background, harsh amber spot on the paper; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (amber-yellow), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "extreme close-up of a match-comparison window on a monitor with only a single character left blinking to complete the match, screen fills the frame, tired eyes reflected faintly in the glass; flat close angle; single monitor glow; scratched screen coating, worn mouse, dim room; still air; deep black background, pulsing amber cursor light; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (amber-yellow), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "close-up of a digital staff roster screen with one unfamiliar name freshly added at the bottom row, glowing faintly, screen fills most of frame; flat desk angle; single monitor backlight; worn desk edge, coffee ring, scattered pens; still night air; deep black background, amber highlight on the new row; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (amber-yellow), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "security-camera framing of a front gate at night, an unfamiliar man standing calmly without a badge while a colleague in the background waves at him warmly, gate and figures fill the frame; low camera-angle perspective; single floodlight from above; chain-link fence, cracked pavement, night moths circling the light; thin haze; deep black background, amber floodlight glow; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (amber-yellow), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "close-up of an empty office chair and keyboard at night, the cursor visibly mid-motion on the monitor behind it with no hands present, chair and keyboard fill the frame; low static angle; single monitor glow as the only light; dust motes, cold coffee cup, hanging lanyard; still heavy air; deep black background, amber glow from the unattended screen; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (amber-yellow), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "close-up of a hand reaching toward a large server-room power switch, a monitor faintly visible behind showing a name highlighted on a match-candidate screen, hand and switch fill the frame; low dramatic angle; single server-rack indicator light; exposed cables, warning label, cold metal panel; deep black background, amber warning-light glow; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (amber-yellow), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "wide-close shot of a powered-down server room, a lone figure standing with their back to camera wearing an unfamiliar name tag glinting faintly, figure and server racks fill the frame; low angle from behind; single emergency light strip on the floor; dead monitors, cold metal racks, drifting dust; heavy still air; deep black background, dim amber emergency light; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (amber-yellow), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    }
+  ],
+  "background": {
+    "id": "scp-9421_bg",
+    "kind": "image",
+    "reuse": false,
+    "aspect": "16:9",
+    "resolution": "1920x1080",
+    "prompt": "wide shot of a dim night control room, a large wall screen behind a lone workstation showing a world map with several glowing pins connected by thin lines across continents, screen and workstation dominate well over sixty percent of the frame; low three-quarter angle; single glow from the wall screen as primary light; worn desk, empty coffee cups, scattered transcripts; faint dust drifting in the screen light; deep black background, warm amber glow across the map lines; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (amber-yellow), strong rim light, cinematic low angle, grain-free, no text anywhere",
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion"
+  },
+  "thumbnail": {
+    "hook": "hero close-up of a glowing employee ID badge hanging from a lanyard in near-total darkness, the name field glitching with faint overlapping letters as if two names fight to appear; badge fills over seventy percent of frame, on the right third, left third dark negative space; single strong amber rim light from behind the badge; worn plastic casing, frayed lanyard thread, fingerprint smudges; thin drifting dust; deep blue-black background, vivid amber glow; low angle, dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (amber-yellow), strong rim light, cinematic low angle, grain-free, no text anywhere",
+    "hook_alt": [
+      "close-up of an unfamiliar dog's face glowing faintly amber, sitting just inside a cracked-open doorway at night, rest of the frame in deep shadow; dog on the left third, right third dark negative space; single warm doorway light source; short damp fur, worn door frame, night chill; thin mist; deep blue-black background, amber glow around the dog; low angle, dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (amber-yellow), strong rim light, cinematic low angle, grain-free, no text anywhere",
+      "close-up from behind of a lone figure standing in a powered-down server room, an unfamiliar name tag glinting faintly amber on their shoulder, rest of the room in deep shadow; figure centered-right, left third dark negative space; single emergency floor light as the only source; cold server racks, drifting dust, dead monitor glow; still air; deep blue-black background, dim amber light; low angle, dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (amber-yellow), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    ],
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion",
+    "text_safe_area": "left third",
+    "resolution": "1280x720"
+  },
+  "platforms": {
+    "youtube": {
+      "title": "국제 수면 클리닉 네트워크에서, 요르겐센 박사 포함 서른일곱 명이 이름을 빼앗긴 사건 [SCP-9421]",
+      "title_form": "피해형",
+      "thumbnail_text": "이름표 도둑",
+      "thumbnail_quote": "- 본인은 삼 년째 근무 중이시라고 하네요",
+      "tags": [
+        "SCP",
+        "SCP재단",
+        "SCP-096",
+        "SCP-682",
+        "괴담",
+        "미스터리",
+        "무서운이야기"
+      ],
+      "chapters": [
+        "00:00 낯선 문장의 발견",
+        "01:03 재단, '일치 후보'로 격상",
+        "01:17 현관 앞의 개",
+        "01:48 보류함으로 넘기는 방침",
+        "02:39 요르겐센 박사와 규칙",
+        "03:13 출입증 없는 남자",
+        "03:48 기동특무부대 투입",
+        "04:16 노박 박사의 자문",
+        "05:12 서버실로 향하다",
+        "05:35 이름표가 바뀐 자리",
+        "06:22 SCP-9421 등록",
+        "06:49 서고에 남은 다른 기록"
+      ],
+      "description": "전 세계 수면 클리닉에서 올라오는 꿈 전사록을 대조하는 사이트 이야기입니다. 서로 다른 두 사람의 꿈 기록이 완전히 일치한다고 확정되는 순간, 그 안의 내용이 실제로 일어납니다.\n\n※ SCP 재단 세계관 기반 오리지널 창작 · 허구의 이야기입니다\n※ CC BY-SA 3.0 · 원작: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP재단 #괴담 #무서운이야기 #미스터리",
+      "localizations": {
+        "en": {
+          "title": "At a Global Sleep Clinic Network, Thirty-Seven People Including Dr. Jørgensen Lost Their Names [SCP-9421]",
+          "description": "A site that cross-checks dream transcripts sent in from sleep clinics around the world. The moment two strangers' dream records are confirmed to match completely, whatever is written in them actually happens.\n\n※ Original fiction set in the SCP Foundation universe · a work of fiction\n※ CC BY-SA 3.0 · Source: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCPFoundation #creepypasta #horrorstory #mystery"
+        },
+        "ja": {
+          "title": "世界規模の睡眠クリニック網で、ヨルゲンセン博士含む37人が名前を奪われた事件 [SCP-9421]",
+          "description": "世界中の睡眠クリニックから届く夢の記録を照合するサイトの話です。見知らぬ二人の夢の記録が完全に一致すると確定した瞬間、その内容が実際に起こります。\n\n※ SCP財団の世界観に基づくオリジナル創作・フィクションです\n※ CC BY-SA 3.0 · 原作: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP財団 #怪談 #ホラー #ミステリー"
+        },
+        "zh-Hant": {
+          "title": "在全球睡眠診所網路中,包含約根森博士在內的37人被奪走姓名的事件 [SCP-9421]",
+          "description": "一個負責比對全球睡眠診所送來夢境記錄的站點。當兩個素不相識的人的夢境記錄被確認完全吻合的那一刻,記錄裡的內容就會真實發生。\n\n※ 基於SCP基金會世界觀的原創作品,純屬虛構\n※ CC BY-SA 3.0 · 原作: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP基金會 #怪談 #恐怖故事 #懸疑"
+        }
+      },
+      "pinned_comment": "혹시 여러분도, 전혀 모르는 사람과 완전히 같은 꿈을 꾼 적 있나요? 있다면 살짝 댓글로 알려주세요.",
+      "playlist": "SCP 아카이브 (전편 듣기)"
+    }
+  },
+  "credit": "SCP 재단 세계관 기반 오리지널 창작 · 허구 · CC BY-SA 3.0",
+  "content_rating": "teen",
+  "notes": "SCP 아카이브 · 16:9 롱폼 · 장면 전환 배경 + 자막 번인 · 단일 내레이터 · 완결형."
+}
