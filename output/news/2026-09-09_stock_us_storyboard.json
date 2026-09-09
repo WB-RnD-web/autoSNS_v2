@@ -1,0 +1,91 @@
+{
+  "date": "2026-09-09",
+  "topic": "stock_us",
+  "privacy": "public",
+  "topic_keyword": "다우 628포인트 하락 중동 리스크",
+  "headline": "다우 628P·1.18%↓, 중동 리스크에 하락 마감",
+  "hook_title": "다우 628P↓ 테슬라는 4%↑",
+  "accent": "#D97757",
+  "loop_line": "다우가 다시 흔들릴지는 내일 아침 여덟 시에 짚어드립니다",
+  "thumbnail_hook": "A moody nighttime skyline of Wall Street and Lower Manhattan, glowing red and green stock ticker numbers reflected on wet pavement after rain, dramatic cinematic lighting, no text in image, no people close-up",
+  "thumbnail_text": "다우 628P, 새벽 2시",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "다우 628P↓",
+      "ghost": "WALLST",
+      "lines": ["다우는", "628P 빠졌다", "테슬라는 웃었다"],
+      "highlight": "628P",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "장이 열리자마자 밤사이 뉴욕이 크게 흔들렸습니다"
+    },
+    {
+      "type": "trend",
+      "label": "다우존스",
+      "from": 0,
+      "to": -1.18,
+      "suffix": "%",
+      "dir": "down",
+      "sub": "유가는 <b>6주</b> 만에 최고",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "다우존스는 628포인트, 일 점 일팔 퍼센트 밀렸습니다"
+    },
+    {
+      "type": "keypoint",
+      "label": "왜 갈렸나",
+      "points": ["사우디 피격, 유가 <b>6주</b> 만에 최고", "테슬라는 로보택시 허가로 <b>4%</b> 홀로 상승"],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "사우디 피격에 유가 6주 만에 최고, 테슬라는 4% 올랐습니다"
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 밤 전망",
+      "points": ["국채 입찰 무난하면 불안 진정", "환율 <b>1,336원</b>대, 계좌엔 이미 반영"],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "환율 1336원대, 서학개미 계좌에 이미 영향을 줍니다"
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 밤 지켜볼 것",
+      "points": ["애플 폴더블, 새벽 <b>2시</b> 공개", "10년물 국채 입찰 <b>390억달러</b>"],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "새벽 두 시 애플과 390억달러 국채 입찰을 보시면 됩니다"
+    },
+    {
+      "type": "statement",
+      "text": "애플을 보실까요, 금리를 보실까요",
+      "highlight": "금리",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "오늘 밤 애플을 볼지 금리를 볼지, 판단은 여러분 몫입니다"
+    }
+  ],
+  "sources": ["머니투데이", "파이낸셜뉴스", "뉴스핌"],
+  "credit": "출처 머니투데이·파이낸셜뉴스 등 · 투자 조언이 아닙니다",
+  "platforms": {
+    "youtube": {
+      "title": "다우 628P↓ 테슬라는 4%↑ #shorts",
+      "description": "다우 628P·1.18%↓, 중동 리스크에 하락 마감\n출처 머니투데이·파이낸셜뉴스·뉴스핌\n※ 투자 조언이 아닙니다\n\n#미국주식 #나스닥 #뉴욕증시 #서학개미 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "Dow Sank 628 Points, Tesla Jumped 4% #shorts",
+          "description": "Wall Street fell as Mideast tensions spiked oil, but Tesla bucked the trend on a Nevada robotaxi approval. Watch tonight: Apple's foldable iPhone event and a $39B Treasury auction.\n※ Not investment advice.\n\n#USstocks #Nasdaq #WallStreet #shorts"
+        },
+        "ja": {
+          "title": "ダウ628ポイント安、テスラは4%高 #shorts",
+          "description": "中東情勢の悪化で原油高、ダウは急落しましたが、テスラはネバダ州のロボタクシー認可で独歩高でした。今夜はアップルの新製品発表と390億ドルの国債入札に注目です。\n※投資助言ではありません。\n\n#米国株 #ナスダック #ウォール街 #shorts"
+        },
+        "zh-Hant": {
+          "title": "道瓊重挫628點,特斯拉逆勢漲4% #shorts",
+          "description": "中東局勢升溫推高油價,道瓊大跌,但特斯拉因內華達州機器人計程車獲批逆勢上漲。今晚關注蘋果新品發表會與390億美元公債標售。\n※非投資建議。\n\n#美股 #那斯達克 #華爾街 #shorts"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "다우 628P↓ 테슬라는 4%↑\n출처 머니투데이·파이낸셜뉴스·뉴스핌\n※ 투자 조언이 아닙니다\n\n#미국주식 #나스닥 #뉴욕증시 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "다우 628P↓ 테슬라는 4%↑\n출처 머니투데이·파이낸셜뉴스·뉴스핌"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음 · SESSION=US_PM(미국장 개장 전후 프리뷰). DOW=3(수요일), PREV_US=9/8 화요일 미국장, 서머타임(EDT)이라 22:30 KST=개장 직후."
+}
