@@ -1,4 +1,4 @@
-name: 미아 산출물 감시 (루틴이 엉뚱한 브랜치에 커밋했나)
+name: 발행 감시 (엉뚱한 브랜치로 갔나 · 아예 안 만들어졌나)
 
 # 왜 있나 — 2026-09-02.
 #   미장·국장 루틴이 며칠째 발행이 안 됐는데 ★Actions 에 빨간불이 하나도 없었다.
@@ -8,6 +8,17 @@ name: 미아 산출물 감시 (루틴이 엉뚱한 브랜치에 커밋했나)
 #
 # ⚠️ shorts.yml 트리거에 `claude/**` 를 추가하는 방식은 ★쓰지 않는다.
 #    그러면 개발 브랜치에서도 영상이 실제로 업로드된다.
+#    (2026-09-10 부터 orphan-rescue.yml 이 그 산출물을 routine/* 로 자동 이송한다)
+#
+# ─── 두 번째 검사가 붙은 이유 — 2026-09-10 ───────────────────────────────────
+#   별자리 루틴이 정상 발화(SUCCEEDED)했는데 산출물이 ★아무 브랜치에도 없었다.
+#   세션은 claude/vibrant-babbage-pkzyvi 를 받았지만 push 를 아예 하지 않았다.
+#   파일이 어디에도 없으니 위의 미아 검사에는 보이지 않고(잘못 놓인 파일을 찾는 도구다),
+#   자동 이송도 옮길 게 없어 손을 못 댔다 — 완전히 조용한 고장이었다.
+#   그래서 '올라와야 하는데 안 올라온 것' 을 따로 본다.
+#
+#   무엇이 올라와야 하는지는 ★하드코딩하지 않는다. 루틴은 레포 밖에 있고 수시로
+#   켜고 꺼지므로 표를 만들면 반드시 어긋난다 — Actions 이력에서 리듬을 배운다.
 
 on:
   schedule:
@@ -22,6 +33,7 @@ on:
 
 permissions:
   contents: read      # 아무것도 커밋/푸시하지 않는다
+  actions: read       # 발행 리듬을 배우려고 워크플로 실행 이력을 읽는다
 
 jobs:
   check:
@@ -35,7 +47,46 @@ jobs:
       - name: 원격 브랜치 전부 가져오기
         run: git fetch origin "+refs/heads/*:refs/remotes/origin/*" --prune
 
+      # ① 잘못된 브랜치에 있는 파일
       - name: 미아 산출물 검사
+        id: orphan
+        continue-on-error: true      # ②도 반드시 돌려야 한다 — 여기서 끊지 않는다
         run: |
           python3 tools/find_orphan_storyboards.py \
             --max-age-days "${{ github.event.inputs.max_age_days || '3' }}"
+
+      # ② 어디에도 없는 산출물 — 리듬은 Actions 이력에서 배운다
+      - name: 발행 이력 가져오기 (리듬 학습용)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          # 2페이지 = 최근 200 push. 하루 5~6건이니 ★4주 이상 덮는다(학습 창 28일).
+          for page in 1 2; do
+            curl -sS --fail-with-body \
+              -H "Authorization: Bearer $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "${{ github.api_url }}/repos/${{ github.repository }}/actions/runs?event=push&per_page=100&page=$page" \
+              -o "$RUNNER_TEMP/runs_$page.json"
+          done
+          wc -c "$RUNNER_TEMP"/runs_*.json
+
+      - name: 발행 누락 검사
+        id: missing
+        continue-on-error: true
+        run: |
+          python3 tools/find_missing_publishes.py \
+            --runs "$RUNNER_TEMP/runs_1.json" "$RUNNER_TEMP/runs_2.json"
+
+      # 둘 다 돌린 뒤에 판정한다 — 한쪽만 보고 끊으면 나머지가 가려진다
+      - name: 판정
+        run: |
+          O="${{ steps.orphan.outcome }}"
+          M="${{ steps.missing.outcome }}"
+          echo "미아 산출물 : $O"
+          echo "발행 누락   : $M"
+          if [ "$O" = "failure" ] || [ "$M" = "failure" ]; then
+            echo "::error::발행에 문제가 있다 — 위 두 검사 로그를 보라."
+            exit 1
+          fi
+          echo "✅ 둘 다 이상 없음."
