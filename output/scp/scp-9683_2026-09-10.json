@@ -1,0 +1,929 @@
+{
+  "date": "2026-09-10",
+  "iso_week": "2026-W37",
+  "topic": "scp",
+  "privacy": "public",
+  "origin": "original",
+  "origin_note": "",
+  "source_url": "",
+  "story_id": "scp-9683",
+  "scp_number": "SCP-9683",
+  "object_class": "Keter",
+  "codename": "예습하는 산호",
+  "number_check": {
+    "checked_at": "2026-09-10",
+    "http_code": "unverified"
+  },
+  "theme": "집단·군체",
+  "nature": "시간",
+  "twist_type": "인과",
+  "logline": "남태평양 어느 환초의 산호 군체 이야기입니다. 그 산호는 격자 지도가 완성되기 전에, 지도에 그려질 균열을 먼저 만들어 놓습니다.",
+  "structure": "금기형",
+  "opening_move": "사람 한 명",
+  "opening_note": "",
+  "closing_move": "기록이 아직 이어진다",
+  "number_reveal": "뒤",
+  "ending_mode": "질문+구독",
+  "fault": "재단",
+  "hook_line": "닐센 박사는, 다 그린 지도를 다시 펼쳤을 뿐입니다.",
+  "procedures": [
+    "같은 각도로 두 번 찍지 않는다",
+    "표면에 생긴 흠집은 다음 촬영 전까지 손대지 않는다",
+    "완성된 구간은 그 자리에서 다시 펼쳐 보지 않는다"
+  ],
+  "character": {
+    "name": "닐센",
+    "role": "박사 · 사이트-471 지도제작 책임자",
+    "flaw": "합성 지도를 끝까지 완성하려는 강박을 놓지 못한다"
+  },
+  "chain": [
+    {
+      "when": "환초 정기 조사 중",
+      "event": "재단 조사선이 방사형으로 뻗은 거대한 산호 군체를 발견하고, 표면 능선이 해도 등고선과 겹치는 걸 확인한다",
+      "because": "",
+      "shot": "산호 표면 능선이 해도 등고선과 겹쳐 보이는 근접 장면"
+    },
+    {
+      "when": "무늬가 실제 지형과 일치한다는 사실이 알려진 뒤",
+      "event": "재단이 사이트-471을 세우고, 각도를 매일 바꿔 찍어 합성 지도를 만드는 격리 절차를 확립한다",
+      "because": "산호 무늬가 아직 없는 지형까지 앞서 그려내고 있었기 때문에",
+      "shot": "잠수반이 카메라 리그를 산호 위에 고정하는 장면"
+    },
+    {
+      "when": "합성 지도를 짜 맞추던 중",
+      "event": "오카포 연구원이 전날과 같은 각도로 셔터를 두 번 누르고, 나흘 뒤 사진 속 균열이 실제로 생긴다",
+      "because": "각도 규칙을 무심코 어겼기 때문에",
+      "shot": "사진 두 장을 나란히 놓았을 때 한쪽에만 미리 그려진 균열선"
+    },
+    {
+      "when": "그 균열이 실제로 생기는 걸 확인한 뒤",
+      "event": "재단이 각도 배정표를 만들어 규칙을 다시 굳힌다",
+      "because": "같은 각도 촬영이 사고를 앞당긴다는 게 확인됐기 때문에",
+      "shot": "상황실 벽에 붙은 각도 배정표 클로즈업"
+    },
+    {
+      "when": "몇 주 뒤",
+      "event": "바스케스 잠수반장이 흠집 위에 방오 코팅제를 발라 규칙을 어기고, 사흘 뒤 코팅제 자국 모양 그대로 새 가지가 자란다",
+      "because": "표면 흠집이 신경 쓰였기 때문에",
+      "shot": "코팅제 얼룩과 똑같은 윤곽의 새 산호 가지"
+    },
+    {
+      "when": "콜로니가 자극보다 앞서 반응한다는 게 공식화된 뒤",
+      "event": "기동특무부대 델타-14가 드론과 위성으로 동시 촬영을 시도하지만, 산호가 모든 각도 평균으로 자라 지도가 뭉개진다",
+      "because": "매일 한 칸씩 찍는 방식 자체가 원인으로 지목됐기 때문에",
+      "shot": "여러 각도 사진을 겹쳤을 때 뭉개진 얼룩으로 나온 합성 지도"
+    },
+    {
+      "when": "같은 시기",
+      "event": "뱀의 손에서 지도를 끝내지 말라는 손편지가 도착하지만, 재단은 O5 승인 없이 봉투를 열지 못한 채 작업을 계속한다",
+      "because": "델타-14의 시도가 실패로 끝난 뒤였기 때문에",
+      "shot": "봉인된 채 놓인 손편지 봉투 클로즈업"
+    },
+    {
+      "when": "지도의 마지막 한 칸이 남았을 때",
+      "event": "닐센 박사가 완성된 구간을 다시 펼쳐 보지 말라는 규칙을 어기고 현장에서 곧바로 완성본을 열어보고, 산호 전체가 그 무늬로 동시에 굳는다",
+      "because": "마지막 한 칸이라는 사실 때문에 규칙을 대수롭지 않게 여겼기 때문에",
+      "shot": "완성된 지도와 같은 무늬로 굳은 산호 한가운데 비어 있는 잠수복"
+    }
+  ],
+  "retention_beats": [
+    "사이트-471 서고 쪽에 물어보니, 이런 요청을 받아본 게 이번이 처음은 아니라고 하더군요.",
+    "뱀의 손이 보낸 손편지 원본은, 아직 O5 열람 승인이 나지 않았습니다.",
+    "노박 박사가 이 얘기를 듣고, 자기 사건철과 한번 맞대보고 싶다는 요청을 보내왔습니다."
+  ],
+  "cameos": [
+    {
+      "number": "SCP-914",
+      "how": "회수한 산호 조각 하나를 914의 '고운' 단계로 통과시켰더니, 조각이 아니라 손바닥만 한 완성 모형이 나왔다는 기록이 있습니다."
+    }
+  ],
+  "twist_summary": "인과의 반전 — 재단은 산호가 미래를 미리 그린다고 봤지만, 실은 합성 지도를 만드는 관측 절차 자체가 원인이었고 사건은 그 결과였다는 반전. 마지막 규칙(완성된 구간은 다시 펼쳐 보지 않는다)을 닐센 박사가 스스로 어기고 마지막 한 칸을 현장에서 열어보자, 산호 전체가 그 지도 그대로 동시에 굳어버리며 그가 서 있던 자리엔 등고선 무늬가 찍힌 잠수복만 남았다.",
+  "narration_full": "닐센 박사는, 다 그린 지도를 다시 펼쳤을 뿐입니다.\n\n남태평양 어느 환초, 그러니까 카얀갈이라 부르던 얕은 초호 얘기부터 해야겠네요. 재단 조사선이 이 초호 바닥을 훑다가, 방사형으로 뻗은 거대한 산호 군체 하나를 찾아냈죠. 크기도 컸지만 진짜 문제는 표면 무늬였죠. 능선들이, 해도에 그려진 등고선과 토씨 하나 안 틀리고 겹쳤거든요.\n\n처음엔 다들 우연이라고 봤습니다. 그런데 다음 촬영본을 겹쳐보니 — 무늬가, 그 해도보다 사흘 앞서 있었습니다. 아직 측량도 안 된 구간의 등고선이, 산호 위에 먼저 그어져 있었던 겁니다. 저도 이 대목까진 그냥 우연인 줄 알았고요.\n\n재단은 사이트-471을 세우고, 이 군체 전체를 한 장의 지도로 합성하는 격리 절차에 들어갔습니다. 규칙은 세 가지였는데요 — 같은 각도로 두 번 찍지 않을 것, 흠집엔 다음 촬영 전까지 손대지 말 것, 완성된 구간은 그 자리에서 다시 펼쳐 보지 말 것. 어기면 무슨 일이 나는지는, 그 어디에도 적혀 있지 않았습니다.\n\nD계급 표본 채취반으로 D-9683이 투입됐는데요. 그가 남긴 보고엔 딱 한 줄, 「손대는 순간, 저기 잔무늬가 움직였습니다…」라고 적혀 있었습니다.\n\n첫 번째로 깨진 건 첫 번째 규칙이었습니다. 오카포 연구원이 전날과 같은 각도로 셔터를 두 번 눌렀거든요. 「저는 분명 다른 데서 눌렀는데요…」 본인은 그렇게 우겼지만, 로그엔 똑같은 좌표가 두 번 찍혀 있었죠. 대수롭지 않게 넘어갔는데, 나흘 뒤, 사진 속에만 있던 균열이 그 자리에 실제로 생겼습니다. 초음파 탐사선 스크루에 긁혀서요. 사진이 사고를 예언한 게 아니라, 사고보다 먼저 찍혀 있었던 거죠. 이 부분은 자료를 몇 번을 다시 봐도, 저도 잘 안 믿기더라고요. 이게 그냥 우연이었을까요?\n\n그다음은 두 번째 규칙이었습니다. 표면 흠집 하나가 신경 쓰였는지, 바스케스 잠수반장이 규칙을 어기고 방오 코팅제를 발라버렸거든요. 무전엔 「코팅제 다 발랐습니다, 이 정도면 됐죠」라고 남아 있고요. 사흘 뒤, 그 코팅제 자국 모양 그대로 새 가지 하나가 자라 있었더군요. 흠집을 메운 게 아니라, 메워질 모양을 산호가 먼저 베낀 겁니다.\n\n이쯤 되니 재단도 판단을 미룰 수 없었습니다. 이 산호는 다음에 일어날 일을 그리는 게 아니라, 누군가 그걸 기록하는 순간 그 모양대로 굳어버립니다. 그럼 대체 뭐가 먼저였을까요, 산호였을까요, 재단의 촬영이었을까요? 관측이 원인이고, 사건은 결과였던 겁니다. 매일 지도를 갱신하겠다는 그 격리 절차 자체가, 사고를 만들어내고 있던 셈이었죠.\n\n기동특무부대 델타-14, 별칭 「겹눈」이 투입됐습니다. 드론을 열 대씩 띄워보질 않나, 잠수반을 사방에 박아보질 않나, 나중엔 저궤도 위성 영상까지 동원했는데요 — 그 결과는, 매번 뭉개진 얼룩이었습니다. 산호가 모든 각도의 평균값으로 한꺼번에 자라버렸거든요. 그 작전은 결국 보류됐죠.\n\n비슷한 시기, 뱀의 손 쪽에서 손편지 한 통이 사이트로 도착했습니다. 「지도를… 끝내지 마세요.」 그것뿐이었죠. 이유는 적혀 있지 않았고, O5 승인 없인 봉투도 못 열게 돼 있어서, 재단은 서신만 보관해뒀습니다. 지도는 계속 그려졌고요.\n\n그리고 마지막 한 칸이 남았습니다. 상황실 로그창엔 이렇게 떠 있었다고 하고요 — 「완성률, 구십구점구칠 퍼센트.」 닐센 박사는 이 지도 작업을 처음부터 맡아온 사람이었는데요. 「이제 한 칸인데요, 뭘…」 그렇게 말하고, 세 번째 규칙을 어긴 채 방수 태블릿을 열어, 완성본을 그 자리에서 펼쳐 봤다고 동료들은 증언하더군요. 저라면 그 한 칸, 못 열어봤을 것 같은데요.\n\n지도가 완성되는 순간, 산호 전체가 그 무늬 그대로 한꺼번에 굳어버렸죠. 닐센 박사가 서 있던 자리엔, 등고선 무늬가 그대로 찍힌 잠수복만 남아 있었고요. 그는 인사 기록에서 지워졌고, 잠수 일지엔 '귀환'이라는 말만 덩그러니 남았습니다. 재수용 절차는, 대상이 없어 시작조차 되지 못했습니다.\n\n재단은 이 마지막 한 칸을 영원히 비워두기로 했습니다. 지도를 완성하지 않는 것, 그게 유일한 격리 방법이라는 결론이었죠. 회수한 산호 조각 하나를 SCP-914에 '고운' 단계로 넣어봤더니, 조각이 아니라 손바닥만 한 완성 모형이 나왔다는 기록도 있습니다. 다만 그게 무슨 뜻인지는, 아직 아무도 설명 못 하고 있습니다.\n\n객체 등급은 유클리드에서 케테르로 재분류됐습니다. 상황실 벽엔 지금도 그 지도가 걸려 있는데, 딱 한 칸만 빈칸입니다. 그런데 최근 들어… 그 빈칸 가장자리에, 아주 얇은 선 하나가 다시 번지고 있다는 관측 보고가 들어온다고 하네요.\n\n사이트-471 서고 쪽에 물어보니, 이런 요청을 받아본 게 이번이 처음은 아니라고 하더군요. 마침 노박 박사도 이 얘기를 듣고, 자기 사건철과 한번 맞대보고 싶다는 요청을 보내왔답니다. 서류가 사람보다 먼저 바뀐다는 게, 이제 한 사건만의 얘기는 아닌 모양입니다.\n\n여러분이라면, 그 마지막 한 칸을 열어보시겠습니까? 이런 기록, 발견되는 대로 계속 정리해서 들고 오겠습니다. 구독해두시면, 다음 걸 놓치지 않으실 겁니다.",
+  "segments": [
+    {
+      "text": "닐센 박사는, 다 그린 지도를 다시 펼쳤을",
+      "est_sec": 5,
+      "text_en": "Dr. Nielsen had already finished the map,",
+      "text_ja": "ニールセン博士は、描き終えた地図を",
+      "text_zh_Hant": "尼爾森博士只是把"
+    },
+    {
+      "text": "뿐입니다. 남태평양 어느 환초, 그러니까",
+      "est_sec": 5,
+      "text_en": "and simply opened it again. It starts on an atoll",
+      "text_ja": "もう一度開いただけです。舞台は南太平洋の",
+      "text_zh_Hant": "畫完的地圖,又重新打開了。故事要從南太平洋一座"
+    },
+    {
+      "text": "카얀갈이라 부르던 얕은 초호 얘기부터",
+      "est_sec": 4,
+      "text_en": "in the South Pacific — a shallow lagoon",
+      "text_ja": "環礁、カヤンガルと呼ばれた浅い礁湖です。",
+      "text_zh_Hant": "環礁說起,那是個叫卡揚加爾的淺潟湖。"
+    },
+    {
+      "text": "해야겠네요. 재단 조사선이 이 초호 바닥을",
+      "est_sec": 5,
+      "text_en": "they called Kayangal. A Foundation survey ship",
+      "text_ja": "財団の調査船がこの礁湖の底を調べていて、",
+      "text_zh_Hant": "基金會的調查船在探測潟湖底部時,"
+    },
+    {
+      "text": "훑다가, 방사형으로 뻗은 거대한 산호 군체",
+      "est_sec": 5,
+      "text_en": "was scanning the lagoon floor when it found a huge coral colony",
+      "text_ja": "放射状に広がる巨大なサンゴ群体を見つけました。",
+      "text_zh_Hant": "發現了一株呈放射狀生長的巨大珊瑚群體。"
+    },
+    {
+      "text": "하나를 찾아냈죠. 크기도 컸지만 진짜 문제는",
+      "est_sec": 5,
+      "text_en": "branching out like a wheel. The size wasn't the real problem —",
+      "text_ja": "大きさより問題だったのは表面の模様でした。",
+      "text_zh_Hant": "問題不在大小,而在表面的紋路——"
+    },
+    {
+      "text": "표면 무늬였죠. 능선들이, 해도에 그려진",
+      "est_sec": 5,
+      "text_en": "it was the surface pattern. The ridges",
+      "text_ja": "稜線が、海図に描かれた等高線と",
+      "text_zh_Hant": "那些稜線,和海圖上畫的等高線"
+    },
+    {
+      "text": "등고선과 토씨 하나 안 틀리고 겹쳤거든요.",
+      "est_sec": 5,
+      "text_en": "matched the chart's contour lines, letter for letter.",
+      "text_ja": "一字一句違わず重なっていたんです。",
+      "text_zh_Hant": "分毫不差地重疊在一起。"
+    },
+    {
+      "text": "처음엔 다들 우연이라고 봤습니다. 그런데 다음",
+      "est_sec": 5,
+      "text_en": "At first everyone called it coincidence. But when the next survey",
+      "text_ja": "最初は皆、偶然だと思っていました。ところが次の撮影分を",
+      "text_zh_Hant": "一開始大家都當作巧合。可是把下一次的拍攝結果"
+    },
+    {
+      "text": "촬영본을 겹쳐보니 — 무늬가, 그 해도보다",
+      "est_sec": 5,
+      "text_en": "was laid over the last — the pattern was",
+      "text_ja": "重ねてみると — 模様は",
+      "text_zh_Hant": "疊上去一看——那紋路"
+    },
+    {
+      "text": "사흘 앞서 있었습니다. 아직 측량도 안 된",
+      "est_sec": 5,
+      "text_en": "three days ahead of the chart. Contour lines for a section",
+      "text_ja": "海図より三日先を行っていました。まだ測量もしていない区間の",
+      "text_zh_Hant": "比海圖還早了三天。連還沒測繪的區段,"
+    },
+    {
+      "text": "구간의 등고선이, 산호 위에 먼저 그어져",
+      "est_sec": 5,
+      "text_en": "not yet surveyed, had already been carved",
+      "text_ja": "等高線が、サンゴの上に先に描かれていたんです。",
+      "text_zh_Hant": "等高線都已經先刻在珊瑚上了。"
+    },
+    {
+      "text": "있었던 겁니다. 저도 이 대목까진 그냥 우연인",
+      "est_sec": 5,
+      "text_en": "into the coral. I'll admit, at this point",
+      "text_ja": "私もこの辺りまでは、ただの偶然だと",
+      "text_zh_Hant": "其實到這裡為止,我也"
+    },
+    {
+      "text": "줄 알았고요. 재단은 사이트-471을 세우고,",
+      "est_sec": 5,
+      "text_en": "I still assumed it was just coincidence. The Foundation built",
+      "text_ja": "思っていました。財団はサイト-471を建て、",
+      "text_zh_Hant": "以為只是巧合而已。基金會設立了471號站點,"
+    },
+    {
+      "text": "이 군체 전체를 한 장의 지도로 합성하는 격리",
+      "est_sec": 5,
+      "text_en": "Site-471 and began a containment procedure to composite",
+      "text_ja": "この群体全体を一枚の地図に合成する格納",
+      "text_zh_Hant": "開始執行把整個群體合成一張地圖的收容"
+    },
+    {
+      "text": "절차에 들어갔습니다. 규칙은 세 가지였는데요",
+      "est_sec": 5,
+      "text_en": "the whole colony into one map. There were three rules,",
+      "text_ja": "手続きに入りました。規則は三つでした —",
+      "text_zh_Hant": "程序。規定一共有三條——"
+    },
+    {
+      "text": "— 같은 각도로 두 번 찍지 않을 것, 흠집엔",
+      "est_sec": 5,
+      "text_en": "they said — never shoot the same angle twice, never touch",
+      "text_ja": "同じ角度で二度撮らないこと、傷には",
+      "text_zh_Hant": "不在同一個角度拍第二次,傷痕在"
+    },
+    {
+      "text": "다음 촬영 전까지 손대지 말 것, 완성된",
+      "est_sec": 5,
+      "text_en": "a scar before the next survey, and never",
+      "text_ja": "次の撮影まで手を触れないこと、完成した",
+      "text_zh_Hant": "下次拍攝前不可觸碰,已完成的"
+    },
+    {
+      "text": "구간은 그 자리에서 다시 펼쳐 보지 말 것.",
+      "est_sec": 5,
+      "text_en": "unfold a finished section on-site again.",
+      "text_ja": "区間はその場で二度と開いて見ないこと。",
+      "text_zh_Hant": "區段不得在現場重新展開查看。"
+    },
+    {
+      "text": "어기면 무슨 일이 나는지는, 그 어디에도 적혀",
+      "est_sec": 5,
+      "text_en": "Nowhere was it written down, what happens",
+      "text_ja": "破るとどうなるかは、どこにも",
+      "text_zh_Hant": "如果違反會發生什麼事,任何文件裡"
+    },
+    {
+      "text": "있지 않았습니다. D계급 표본 채취반으로",
+      "est_sec": 5,
+      "text_en": "if you break them. A D-class sampling team",
+      "text_ja": "書かれていませんでした。D階級の採取班として",
+      "text_zh_Hant": "都沒有寫。派了D級人員採樣小隊,"
+    },
+    {
+      "text": "D-9683이 투입됐는데요. 그가 남긴 보고엔",
+      "est_sec": 5,
+      "text_en": "sent in D-9683. His only report read,",
+      "text_ja": "D-9683が投入されました。彼が残した報告書には一行だけ、",
+      "text_zh_Hant": "D-9683被投入其中。他留下的報告只有一行,"
+    },
+    {
+      "text": "딱 한 줄, 「손대는 순간, 저기 잔무늬가",
+      "est_sec": 5,
+      "text_en": "just one line — 「The moment I touched it, the faint pattern there",
+      "text_ja": "「触れた瞬間、あそこの細かい模様が",
+      "text_zh_Hant": "就一句——「碰到的瞬間,那邊的細紋"
+    },
+    {
+      "text": "움직였습니다…」라고 적혀 있었습니다. 첫",
+      "est_sec": 5,
+      "text_en": "moved…」 The first thing to break",
+      "text_ja": "動きました…」と書かれていました。",
+      "text_zh_Hant": "動了⋯」"
+    },
+    {
+      "text": "번째로 깨진 건 첫 번째 규칙이었습니다.",
+      "est_sec": 5,
+      "text_en": "was the first rule.",
+      "text_ja": "最初に破られたのは、一番目の規則でした。",
+      "text_zh_Hant": "紀錄上就是這麼寫的。"
+    },
+    {
+      "text": "오카포 연구원이 전날과 같은 각도로 셔터를 두",
+      "est_sec": 5,
+      "text_en": "Researcher Okafor fired the shutter twice",
+      "text_ja": "オカフォ研究員が前日と同じ角度で二度",
+      "text_zh_Hant": "第一個被打破的,是第一條規定。"
+    },
+    {
+      "text": "번 눌렀거든요. 「저는 분명 다른 데서",
+      "est_sec": 4,
+      "text_en": "from the same angle. 「I swear I shot it from somewhere else…」",
+      "text_ja": "シャッターを切ったんです。「私は確かに別の場所で",
+      "text_zh_Hant": "歐卡福研究員在同一個角度"
+    },
+    {
+      "text": "눌렀는데요…」 본인은 그렇게 우겼지만, 로그엔",
+      "est_sec": 5,
+      "text_en": "he insisted, but the log showed the same coordinates twice.",
+      "text_ja": "撮ったんですが…」本人はそう言い張りましたが、ログには",
+      "text_zh_Hant": "按了兩次快門。「我明明是在別的地方拍的⋯」"
+    },
+    {
+      "text": "똑같은 좌표가 두 번 찍혀 있었죠. 대수롭지",
+      "est_sec": 5,
+      "text_en": "No one thought much of it — but four days later,",
+      "text_ja": "同じ座標が二度記録されていました。大したことないと",
+      "text_zh_Hant": "他堅持這麼說,但紀錄上同一個座標出現了兩次。"
+    },
+    {
+      "text": "않게 넘어갔는데, 나흘 뒤, 사진 속에만 있던",
+      "est_sec": 5,
+      "text_en": "the crack that had only existed in the photo actually appeared there.",
+      "text_ja": "思って流していたら — 四日後、写真の中にしかなかった",
+      "text_zh_Hant": "當時沒人放在心上——四天後,"
+    },
+    {
+      "text": "균열이 그 자리에 실제로 생겼습니다. 초음파",
+      "est_sec": 5,
+      "text_en": "Scraped open by a survey sub's propeller. Ultrasound",
+      "text_ja": "亀裂が実際にその場所にできていました。潜水艇のスクリューに",
+      "text_zh_Hant": "只存在於照片裡的裂縫,真的出現在那個位置。",
+      "emphasis": "실제로 생겼습니다"
+    },
+    {
+      "text": "탐사선 스크루에 긁혀서요. 사진이 사고를",
+      "est_sec": 5,
+      "text_en": "survey. The photo hadn't predicted the accident —",
+      "text_ja": "引っかかれてです。写真が事故を予言したのではなく、",
+      "text_zh_Hant": "是被探測潛艇的螺旋槳刮出來的。照片不是預言了事故,"
+    },
+    {
+      "text": "예언한 게 아니라, 사고보다 먼저 찍혀 있었던",
+      "est_sec": 5,
+      "text_en": "it had been taken before the accident happened.",
+      "text_ja": "事故より先に撮られていたわけです。",
+      "text_zh_Hant": "而是比事故本身更早被拍下來了。"
+    },
+    {
+      "text": "거죠. 이 부분은 자료를 몇 번을 다시 봐도,",
+      "est_sec": 5,
+      "text_en": "Even now, re-reading the file,",
+      "text_ja": "この部分は資料を何度読み返しても、",
+      "text_zh_Hant": "這段內容我重看了好幾遍,"
+    },
+    {
+      "text": "저도 잘 안 믿기더라고요. 이게 그냥",
+      "est_sec": 4,
+      "text_en": "I still don't quite buy it. Was it",
+      "text_ja": "私もまだ信じ切れずにいます。これは本当に",
+      "text_zh_Hant": "也還是不太敢相信。這真的"
+    },
+    {
+      "text": "우연이었을까요? 그다음은 두 번째",
+      "est_sec": 4,
+      "text_en": "really just coincidence? Next came the second",
+      "text_ja": "ただの偶然だったんでしょうか。次は二番目の",
+      "text_zh_Hant": "只是巧合嗎?接下來是第二條"
+    },
+    {
+      "text": "규칙이었습니다. 표면 흠집 하나가 신경",
+      "est_sec": 4,
+      "text_en": "rule. A scar on the surface",
+      "text_ja": "規則でした。表面の傷が",
+      "text_zh_Hant": "規定。表面有處傷痕,"
+    },
+    {
+      "text": "쓰였는지, 바스케스 잠수반장이 규칙을 어기고",
+      "est_sec": 5,
+      "text_en": "must have bothered him, because dive-team lead Vasquez broke the rule",
+      "text_ja": "気になったのか、バスケス潜水班長が規則を破って",
+      "text_zh_Hant": "瓦斯奎茲潛水班長大概是在意,於是違規"
+    },
+    {
+      "text": "방오 코팅제를 발라버렸거든요. 무전엔 「코팅제",
+      "est_sec": 5,
+      "text_en": "and coated it with anti-fouling sealant. The radio log has 「Sealant's",
+      "text_ja": "防汚コーティング剤を塗ってしまいました。無線には「コーティング",
+      "text_zh_Hant": "塗上了防污塗層。無線電裡留著「塗層都塗好了,"
+    },
+    {
+      "text": "다 발랐습니다, 이 정도면 됐죠」라고 남아",
+      "est_sec": 5,
+      "text_en": "on, that should do it,」 on record. Three days later,",
+      "text_ja": "塗り終わりました、これで大丈夫でしょう」と残っています。三日後、",
+      "text_zh_Hant": "這樣應該就行了」的紀錄。三天後,"
+    },
+    {
+      "text": "있고요. 사흘 뒤, 그 코팅제 자국 모양",
+      "est_sec": 5,
+      "text_en": "a new branch had grown in exactly the shape",
+      "text_ja": "そのコーティングの跡と同じ形の新しい枝が",
+      "text_zh_Hant": "一根新枝條就長成了和那塗層痕跡"
+    },
+    {
+      "text": "그대로 새 가지 하나가 자라 있었더군요.",
+      "est_sec": 5,
+      "text_en": "of that sealant patch. It hadn't sealed the scar —",
+      "text_ja": "伸びていました。傷を塞いだのではなく、",
+      "text_zh_Hant": "一模一樣的形狀。不是把傷痕補上,"
+    },
+    {
+      "text": "흠집을 메운 게 아니라, 메워질 모양을 산호가",
+      "est_sec": 5,
+      "text_en": "the coral had copied the shape it would be sealed into, first.",
+      "text_ja": "塞がれる形をサンゴの方が先に真似たんです。",
+      "text_zh_Hant": "而是珊瑚先複製了它將被補上的形狀。"
+    },
+    {
+      "text": "먼저 베낀 겁니다. 이쯤 되니 재단도 판단을",
+      "est_sec": 5,
+      "text_en": "By this point the Foundation couldn't put off the call.",
+      "text_ja": "ここまで来ると財団も判断を先延ばしにできませんでした。",
+      "text_zh_Hant": "到這個地步,基金會也沒辦法再拖延判斷了。"
+    },
+    {
+      "text": "미룰 수 없었습니다. 이 산호는 다음에 일어날",
+      "est_sec": 5,
+      "text_en": "This coral wasn't drawing what would happen next —",
+      "text_ja": "このサンゴは次に起きることを描いているのではなく、",
+      "text_zh_Hant": "這珊瑚不是在描繪接下來會發生的事,"
+    },
+    {
+      "text": "일을 그리는 게 아니라, 누군가 그걸 기록하는",
+      "est_sec": 5,
+      "text_en": "it froze into that shape the instant",
+      "text_ja": "誰かがそれを記録した瞬間、その形に",
+      "text_zh_Hant": "而是有人記錄下它的瞬間,它就"
+    },
+    {
+      "text": "순간 그 모양대로 굳어버립니다. 그럼 대체",
+      "est_sec": 5,
+      "text_en": "someone recorded it. So which came first,",
+      "text_ja": "固まってしまうんです。では一体どちらが先だったのか、",
+      "text_zh_Hant": "照那個形狀凝固。那到底是誰先,"
+    },
+    {
+      "text": "뭐가 먼저였을까요, 산호였을까요, 재단의",
+      "est_sec": 5,
+      "text_en": "the coral, or the Foundation's own survey?",
+      "text_ja": "サンゴだったのか、財団の撮影だったのか。",
+      "text_zh_Hant": "是珊瑚,還是基金會的拍攝?"
+    },
+    {
+      "text": "촬영이었을까요? 관측이 원인이고, 사건은",
+      "est_sec": 5,
+      "text_en": "Observation was the cause, and the incident",
+      "text_ja": "観測が原因で、事件は結果",
+      "text_zh_Hant": "觀測才是原因,事件",
+      "emphasis": "관측이 원인이고"
+    },
+    {
+      "text": "결과였던 겁니다. 매일 지도를 갱신하겠다는 그",
+      "est_sec": 5,
+      "text_en": "was the result. The very containment procedure",
+      "text_ja": "だったわけです。毎日地図を更新するという、その",
+      "text_zh_Hant": "是結果。每天更新地圖的那個收容"
+    },
+    {
+      "text": "격리 절차 자체가, 사고를 만들어내고 있던",
+      "est_sec": 5,
+      "text_en": "of updating the map every day",
+      "text_ja": "格納手続き自体が",
+      "text_zh_Hant": "程序本身,"
+    },
+    {
+      "text": "셈이었죠. 기동특무부대 델타-14, 별칭",
+      "est_sec": 5,
+      "text_en": "was what had been causing the accidents.",
+      "text_ja": "事故を作り出していたということでした。",
+      "text_zh_Hant": "就是在製造事故。"
+    },
+    {
+      "text": "「겹눈」이 투입됐습니다. 드론을 열 대씩",
+      "est_sec": 5,
+      "text_en": "Mobile Task Force Delta-14, callsign",
+      "text_ja": "機動特務部隊デルタ-14、",
+      "text_zh_Hant": "機動特遣隊三角洲-14,"
+    },
+    {
+      "text": "띄워보질 않나, 잠수반을 사방에 박아보질",
+      "est_sec": 5,
+      "text_en": "「Compound Eye,」 was brought in. Instead of drones",
+      "text_ja": "通称「複眼」が投入されました。ドローンを",
+      "text_zh_Hant": "代號「複眼」被派了進去。與其一天拍一格,"
+    },
+    {
+      "text": "않나, 나중엔 저궤도 위성 영상까지",
+      "est_sec": 4,
+      "text_en": "one at a time, they tried packing the lagoon with dive teams,",
+      "text_ja": "何台も飛ばしてみたり、潜水班を四方に配置してみたり、",
+      "text_zh_Hant": "他們試過同時放好幾台無人機,又試過把潛水班撒滿四周,"
+    },
+    {
+      "text": "동원했는데요 — 그 결과는, 매번 뭉개진",
+      "est_sec": 5,
+      "text_en": "then finally even low-orbit satellite imagery —",
+      "text_ja": "最後には低軌道衛星映像まで動員したんですが —",
+      "text_zh_Hant": "最後連低軌衛星影像都動用了——"
+    },
+    {
+      "text": "얼룩이었습니다. 산호가 모든 각도의 평균값으로",
+      "est_sec": 5,
+      "text_en": "and the result, every time, was just a smeared blur.",
+      "text_ja": "結果は毎回、潰れた染みでした。",
+      "text_zh_Hant": "結果每次都是一團糊掉的污漬。"
+    },
+    {
+      "text": "한꺼번에 자라버렸거든요. 그 작전은 결국",
+      "est_sec": 5,
+      "text_en": "The coral grew to the average of every angle at once.",
+      "text_ja": "サンゴがすべての角度の平均値で一斉に育ってしまったんです。",
+      "text_zh_Hant": "珊瑚會同時朝所有角度的平均值生長。"
+    },
+    {
+      "text": "보류됐죠. 비슷한 시기, 뱀의 손 쪽에서",
+      "est_sec": 5,
+      "text_en": "That operation was eventually shelved. Around the same time,",
+      "text_ja": "その作戦は結局保留になりました。同じ頃、",
+      "text_zh_Hant": "那項行動最後只好擱置。差不多同一時期,"
+    },
+    {
+      "text": "손편지 한 통이 사이트로 도착했습니다.",
+      "est_sec": 4,
+      "text_en": "a hand-written letter arrived at the site from the Hand of the Snake.",
+      "text_ja": "蛇の手側から一通の手紙がサイトに届きました。",
+      "text_zh_Hant": "蛇之手那邊寄來了一封手寫信到站點。"
+    },
+    {
+      "text": "「지도를… 끝내지 마세요.」 그것뿐이었죠.",
+      "est_sec": 5,
+      "text_en": "「Don't… finish the map.」 That was all it said.",
+      "text_ja": "「地図を…完成させないでください。」それだけでした。",
+      "text_zh_Hant": "「請不要⋯把地圖畫完。」信裡只有這一句。"
+    },
+    {
+      "text": "이유는 적혀 있지 않았고, O5 승인 없인",
+      "est_sec": 5,
+      "text_en": "No reason was given, and without O5 clearance",
+      "text_ja": "理由は書かれておらず、O5承認がなければ",
+      "text_zh_Hant": "沒寫理由,而且沒有O5批准"
+    },
+    {
+      "text": "봉투도 못 열게 돼 있어서, 재단은 서신만",
+      "est_sec": 5,
+      "text_en": "the envelope couldn't even be opened, so the Foundation",
+      "text_ja": "封筒すら開けられないため、財団は",
+      "text_zh_Hant": "連信封都不能拆,所以基金會"
+    },
+    {
+      "text": "보관해뒀습니다. 지도는 계속 그려졌고요.",
+      "est_sec": 5,
+      "text_en": "just filed it away. The map kept getting drawn.",
+      "text_ja": "手紙をそのまま保管しておきました。地図は描かれ続けました。",
+      "text_zh_Hant": "只是把信收了起來。地圖還是繼續在畫。"
+    },
+    {
+      "text": "그리고 마지막 한 칸이 남았습니다. 상황실",
+      "est_sec": 5,
+      "text_en": "And then only one square was left. The control room",
+      "text_ja": "そして、最後の一区画だけが残りました。管制室の",
+      "text_zh_Hant": "然後,只剩下最後一格了。指揮室的"
+    },
+    {
+      "text": "로그창엔 이렇게 떠 있었다고 하고요 —",
+      "est_sec": 4,
+      "text_en": "log screen reportedly read —",
+      "text_ja": "ログ画面にはこう表示されていたそうです —",
+      "text_zh_Hant": "日誌畫面上據說顯示著——"
+    },
+    {
+      "text": "「완성률, 구십구점구칠 퍼센트.」 닐센 박사는",
+      "est_sec": 5,
+      "text_en": "「Completion: 99.97 percent.」 Dr. Nielsen",
+      "text_ja": "「完成率、99.97パーセント。」ニールセン博士は",
+      "text_zh_Hant": "「完成率,百分之九十九點九七。」尼爾森博士"
+    },
+    {
+      "text": "이 지도 작업을 처음부터 맡아온",
+      "est_sec": 4,
+      "text_en": "had run this mapping project from the very start.",
+      "text_ja": "この地図作業を最初から担当していた人でした。",
+      "text_zh_Hant": "從一開始就負責這項地圖工作。"
+    },
+    {
+      "text": "사람이었는데요. 「이제 한 칸인데요, 뭘…」",
+      "est_sec": 5,
+      "text_en": "「It's just one square left, come on…」",
+      "text_ja": "「もう一区画だけですし、なんでしょう…」",
+      "text_zh_Hant": "「就剩一格了,沒什麼吧⋯」"
+    },
+    {
+      "text": "그렇게 말하고, 세 번째 규칙을 어긴 채 방수",
+      "est_sec": 5,
+      "text_en": "He said that, and, breaking the third rule, opened his",
+      "text_ja": "そう言って、三番目の規則を破って防水",
+      "text_zh_Hant": "他這麼說完,違反第三條規定打開了防水"
+    },
+    {
+      "text": "태블릿을 열어, 완성본을 그 자리에서 펼쳐",
+      "est_sec": 5,
+      "text_en": "waterproof tablet and unfolded the finished map",
+      "text_ja": "タブレットを開き、完成版をその場で開いて",
+      "text_zh_Hant": "平板,當場把完成版"
+    },
+    {
+      "text": "봤다고 동료들은 증언하더군요. 저라면 그 한",
+      "est_sec": 5,
+      "text_en": "right there on-site, colleagues testified. I don't think",
+      "text_ja": "見たと、同僚たちは証言しています。私なら",
+      "text_zh_Hant": "展開來看,同事們如此作證。換作是我,"
+    },
+    {
+      "text": "칸, 못 열어봤을 것 같은데요. 지도가",
+      "est_sec": 4,
+      "text_en": "I could have opened that last square. Right",
+      "text_ja": "その一区画、開けられなかったと思います。地図が",
+      "text_zh_Hant": "應該打不開那最後一格。就在地圖"
+    },
+    {
+      "text": "완성되는 순간, 산호 전체가 그 무늬 그대로",
+      "est_sec": 5,
+      "text_en": "as the map was completed, the whole coral colony",
+      "text_ja": "完成する瞬間、サンゴ全体がその模様のまま",
+      "text_zh_Hant": "完成的瞬間,整株珊瑚照著那紋路"
+    },
+    {
+      "text": "한꺼번에 굳어버렸죠. 닐센 박사가 서 있던",
+      "est_sec": 5,
+      "text_en": "froze solid into that pattern at once. Where Dr. Nielsen",
+      "text_ja": "一斉に固まってしまいました。ニールセン博士が立っていた",
+      "text_zh_Hant": "一起凝固了。尼爾森博士站著的",
+      "emphasis": "한꺼번에 굳어버렸죠"
+    },
+    {
+      "text": "자리엔, 등고선 무늬가 그대로 찍힌 잠수복만",
+      "est_sec": 5,
+      "text_en": "had been standing, only a diving suit",
+      "text_ja": "場所には、等高線模様がそのまま刻まれた潜水服だけが",
+      "text_zh_Hant": "地方,只留下印著等高線紋路的"
+    },
+    {
+      "text": "남아 있었고요. 그는 인사 기록에서 지워졌고,",
+      "est_sec": 5,
+      "text_en": "stamped with the contour pattern was left. He was erased",
+      "text_ja": "残っていました。彼は人事記録から消され、",
+      "text_zh_Hant": "潛水衣。他從人事紀錄上被抹去,"
+    },
+    {
+      "text": "잠수 일지엔 '귀환'이라는 말만 덩그러니",
+      "est_sec": 5,
+      "text_en": "from the personnel files, and the dive log left only",
+      "text_ja": "潜水日誌には「帰還」という言葉だけが",
+      "text_zh_Hant": "潛水日誌上只留下「已返回」這幾個字,"
+    },
+    {
+      "text": "남았습니다. 재수용 절차는, 대상이 없어",
+      "est_sec": 5,
+      "text_en": "the word 'returned.' Reacquisition",
+      "text_ja": "ぽつんと残りました。再収容手続きは、",
+      "text_zh_Hant": "孤零零地留在那裡。再收容程序,"
+    },
+    {
+      "text": "시작조차 되지 못했습니다. 재단은 이 마지막",
+      "est_sec": 5,
+      "text_en": "never even began — there was no subject left to reacquire.",
+      "text_ja": "対象がおらず始めることすらできませんでした。",
+      "text_zh_Hant": "連對象都沒有,根本無從開始。"
+    },
+    {
+      "text": "한 칸을 영원히 비워두기로 했습니다. 지도를",
+      "est_sec": 5,
+      "text_en": "The Foundation decided to leave that last square",
+      "text_ja": "財団はこの最後の一区画を永遠に",
+      "text_zh_Hant": "基金會決定把這最後一格"
+    },
+    {
+      "text": "완성하지 않는 것, 그게 유일한 격리",
+      "est_sec": 4,
+      "text_en": "blank forever. Never finishing the map",
+      "text_ja": "空けておくことに決めました。地図を完成させないことが、",
+      "text_zh_Hant": "永遠留空。不把地圖畫完,"
+    },
+    {
+      "text": "방법이라는 결론이었죠. 회수한 산호 조각",
+      "est_sec": 5,
+      "text_en": "was the only containment method that worked. A recovered coral fragment",
+      "text_ja": "唯一の格納方法だという結論でした。回収したサンゴの破片一つを",
+      "text_zh_Hant": "是唯一有效的收容方式。回收的一塊珊瑚碎片"
+    },
+    {
+      "text": "하나를 SCP-914에 '고운' 단계로",
+      "est_sec": 4,
+      "text_en": "was run through SCP-914 on 'Fine.' Records say",
+      "text_ja": "SCP-914の「精密」設定に通したところ、記録によれば",
+      "text_zh_Hant": "被拿去用SCP-914的「精細」檔位處理,據紀錄"
+    },
+    {
+      "text": "넣어봤더니, 조각이 아니라 손바닥만 한 완성",
+      "est_sec": 5,
+      "text_en": "what came out wasn't a fragment, but a full palm-sized",
+      "text_ja": "出てきたのは破片ではなく、手のひら大の完成した",
+      "text_zh_Hant": "出來的不是碎片,而是一個手掌大小、完整成形的"
+    },
+    {
+      "text": "모형이 나왔다는 기록도 있습니다. 다만 그게",
+      "est_sec": 5,
+      "text_en": "model of the completed pattern. But what that means,",
+      "text_ja": "模型でした。ただ、それが何を意味するのかは",
+      "text_zh_Hant": "模型。只是那代表什麼意思,"
+    },
+    {
+      "text": "무슨 뜻인지는, 아직 아무도 설명 못 하고",
+      "est_sec": 5,
+      "text_en": "no one has been able to explain, even now.",
+      "text_ja": "今も誰も説明できずにいます。",
+      "text_zh_Hant": "至今誰也解釋不出來。"
+    },
+    {
+      "text": "있습니다. 객체 등급은 유클리드에서 케테르로",
+      "est_sec": 5,
+      "text_en": "The object class was reclassified from Euclid",
+      "text_ja": "オブジェクトクラスはユークリッドから",
+      "text_zh_Hant": "對象等級從歐幾里得"
+    },
+    {
+      "text": "재분류됐습니다. 상황실 벽엔 지금도 그 지도가",
+      "est_sec": 5,
+      "text_en": "to Keter. The map still hangs on the control room wall,",
+      "text_ja": "ケテルに再分類されました。管制室の壁には今もあの地図が",
+      "text_zh_Hant": "被重新分類為keter。指揮室牆上,那張地圖至今仍掛著,"
+    },
+    {
+      "text": "걸려 있는데, 딱 한 칸만 빈칸입니다. 그런데",
+      "est_sec": 5,
+      "text_en": "with exactly one blank square. But",
+      "text_ja": "掛かっていて、ちょうど一区画だけ空白です。ところが",
+      "text_zh_Hant": "正好留著一格空白。可是"
+    },
+    {
+      "text": "최근 들어… 그 빈칸 가장자리에, 아주 얇은",
+      "est_sec": 5,
+      "text_en": "lately… along the edge of that blank square, a very thin line",
+      "text_ja": "最近になって… その空白の縁に、とても細い線が一本",
+      "text_zh_Hant": "最近⋯那格空白的邊緣,有一條很細的線"
+    },
+    {
+      "text": "선 하나가 다시 번지고 있다는 관측 보고가",
+      "est_sec": 5,
+      "text_en": "has reportedly started spreading again, according to",
+      "text_ja": "再び広がっているという観測報告が",
+      "text_zh_Hant": "據說又開始蔓延了,根據"
+    },
+    {
+      "text": "들어온다고 하네요. 사이트-471 서고 쪽에",
+      "est_sec": 5,
+      "text_en": "recent observation reports. When I asked around Site-471's archive,",
+      "text_ja": "入ってきているそうです。サイト-471の資料室に尋ねてみると、",
+      "text_zh_Hant": "最近的觀測報告。我向471號站點的資料室打聽,"
+    },
+    {
+      "text": "물어보니, 이런 요청을 받아본 게 이번이",
+      "est_sec": 5,
+      "text_en": "they said this wasn't the first",
+      "text_ja": "こういう照会を受けたのは今回が",
+      "text_zh_Hant": "對方說這種請求"
+    },
+    {
+      "text": "처음은 아니라고 하더군요. 마침 노박 박사도",
+      "est_sec": 5,
+      "text_en": "time such a request had come in. Dr. Novak, hearing about it,",
+      "text_ja": "初めてではないそうです。ちょうどノヴァク博士もこの話を聞いて、",
+      "text_zh_Hant": "這次並不是第一次。剛好諾瓦克博士聽說這件事後,"
+    },
+    {
+      "text": "이 얘기를 듣고, 자기 사건철과 한번 맞대보고",
+      "est_sec": 5,
+      "text_en": "even sent a request to cross-check it against",
+      "text_ja": "自分の事件簿と一度照合してみたいという依頼を",
+      "text_zh_Hant": "也提出想拿自己的案卷交叉比對"
+    },
+    {
+      "text": "싶다는 요청을 보내왔답니다. 서류가 사람보다",
+      "est_sec": 5,
+      "text_en": "her own case file. Records changing before people do",
+      "text_ja": "送ってきたとのことです。書類が人より先に変わるというのは、",
+      "text_zh_Hant": "看看的請求。文件比人更早改變這件事,"
+    },
+    {
+      "text": "먼저 바뀐다는 게, 이제 한 사건만의 얘기는",
+      "est_sec": 5,
+      "text_en": "isn't just the story of one incident",
+      "text_ja": "もう一件だけの話では",
+      "text_zh_Hant": "看來已經不只是"
+    },
+    {
+      "text": "아닌 모양입니다. 여러분이라면, 그 마지막 한",
+      "est_sec": 5,
+      "text_en": "anymore, it seems. So — would you",
+      "text_ja": "なさそうです。皆さんなら、その最後の一区画を",
+      "text_zh_Hant": "一起案件的事了。如果是你,會"
+    },
+    {
+      "text": "칸을 열어보시겠습니까? 이런 기록, 발견되는",
+      "est_sec": 5,
+      "text_en": "open that last square? I'll keep digging up records",
+      "text_ja": "開けてみますか。こういう記録、見つかり次第",
+      "text_zh_Hant": "打開那最後一格嗎?這類紀錄,只要找到"
+    },
+    {
+      "text": "대로 계속 정리해서 들고 오겠습니다.",
+      "est_sec": 4,
+      "text_en": "like this and bringing them to you.",
+      "text_ja": "整理して持ってきます。",
+      "text_zh_Hant": "我都會整理好帶來給大家。"
+    },
+    {
+      "text": "구독해두시면, 다음 걸 놓치지 않으실 겁니다.",
+      "est_sec": 5,
+      "text_en": "If you subscribe, you won't miss the next one.",
+      "text_ja": "チャンネル登録しておけば、次のものを見逃しません。",
+      "text_zh_Hant": "訂閱起來的話,就不會錯過下一集。"
+    }
+  ],
+  "scenes": [
+    {
+      "prompt": "extreme close-up of a massive radial coral colony's ridged surface, its branching ridgelines glowing faintly with a ghostly white contour-line overlay that should not be there; coral fills over seventy percent of frame; low three-quarter angle; single shaft of red bioluminescent light from below; wet calcified texture, fine silt, drifting algae threads; deep black background, vivid crimson glow on the ridges; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (crimson-red), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "two nautical survey photos of the same coral pinned side by side on a corkboard, one photo showing an extra hairline crack drawn across the ridge that the other photo does not have; photos and corkboard fill over sixty-five percent of frame; flat overhead angle; single desk lamp light; curling photo paper, red grease-pencil marks, pushpins; still air, faint dust; deep black background, warm crimson lamp glow; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (crimson-red), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "close-up of a gloved diver's hand mounting a camera rig onto the coral's largest ridge, the coral dominating the frame around the hand; low three-quarter angle; single diving-light beam as key light; scratched dive gear, calcified rock, drifting bubbles; deep black background, crimson glow along the ridge edges; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (crimson-red), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "close-up of a D-class diver's fingertips just touching the coral surface, a faint pattern rippling outward from the touch point across the ridges; hand and coral fill over seventy percent of frame; low angle; single beam from a helmet light; wet coral texture, drifting particulates; deep black background, crimson ripple glow; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (crimson-red), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "two identical-angle survey photographs overlapping on a light table, the top one peeled back at a corner to reveal the same crack line already drawn beneath it; photos fill over seventy percent of frame; flat overhead angle; single light-table glow from below; curled photo edges, dust, red grease-pencil circle; deep black background, crimson backlight through the paper; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (crimson-red), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "close-up of a large assignment chart pinned to a dark wall, covered in a grid of diagonal arrows and circled sectors, one sector marked with a heavy red X; chart fills over sixty-five percent of frame; flat frontal angle; single spotlight from above; worn paper, pushpins, smudged ink; deep black background, crimson spotlight pool; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (crimson-red), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "extreme close-up of a smooth anti-fouling sealant patch on the coral ridge beside an identically shaped new coral branch growing right next to it; both fill over seventy percent of frame; low three-quarter angle; single beam of red light from the side; wet calcified texture, fine bubbles; deep black background, crimson rim light on both shapes; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (crimson-red), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "close-up of a blurred, smeared composite map glowing on a large monitor, ridgelines dissolving into an unreadable red-tinted smudge; monitor screen fills over sixty-five percent of frame; low three-quarter angle; single glow from the screen itself; dusty monitor housing, tangled cables; deep black background, crimson screen glow; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (crimson-red), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "close-up of a sealed hand-written envelope resting alone on a bare metal desk under a single hanging lamp; envelope fills over sixty percent of frame; flat overhead angle; single lamp as key light; aged paper texture, wax-sealed flap, faint fingerprints; deep black background, warm crimson lamp glow; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (crimson-red), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "close-up of a waterproof tablet screen held in a gloved hand, the screen showing a nearly complete radial progress ring glowing red with a single sliver left dark; tablet and hand fill over sixty-five percent of frame; low three-quarter angle; single glow from the tablet screen; scratched casing, water droplets; deep black background, crimson screen glow; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (crimson-red), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "hero shot of the entire coral colony frozen mid-shape with a ghostly contour pattern etched across every ridge, and at its center an empty diving suit pressed flat into the coral surface where a person once stood; coral and suit fill over seventy-five percent of frame; low hero angle; single strong crimson rim light from behind; hardened calcified texture, faint drifting particles; deep black background, vivid crimson glow; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (crimson-red), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "close-up of a large wall map in a dim control room, almost fully inked in except for one glowing blank square at its center, with a hairline of new red light bleeding in along its edge; map fills over seventy percent of frame; flat frontal angle; single glow from the blank square itself; worn paper, pushpins, faint dust; deep black background, crimson glow leaking from the square; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (crimson-red), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    }
+  ],
+  "background": {
+    "id": "scp-9683_bg",
+    "kind": "image",
+    "reuse": false,
+    "aspect": "16:9",
+    "resolution": "1920x1080",
+    "prompt": "wide-close shot of the massive radial coral colony filling the frame from a low three-quarter angle, its ridged surface catching a faint ghostly white contour-line glow across the ridges; coral fills over sixty-five percent of frame; single beam of deep red bioluminescent light from below-left; wet calcified texture, drifting silt and small bubbles, faint current motion; deep black background fading into open water, vivid crimson glow on the ridges; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (crimson-red), strong rim light, cinematic low angle, grain-free, no text anywhere",
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion"
+  },
+  "thumbnail": {
+    "hook": "hero close-up of a massive radial coral colony rearing up like a creature, its ridges etched with a faint glowing white contour-line pattern, and in the foreground a single empty diving suit pressed flat into the coral surface, arms splayed, glove fingertips still reaching; coral and suit fill over seventy-five percent of frame, positioned on the right two-thirds, left third dark negative space; single strong crimson rim light from behind the coral; wet calcified texture, fine drifting particles; deep near-black background, vivid crimson glow; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (crimson-red), strong rim light, cinematic low angle, grain-free, no text anywhere",
+    "hook_alt": [
+      "extreme close-up of an empty diving suit pressed flat into a coral wall, its surface glowing faintly with a contour-line pattern, glove fingertips splayed against the ridges; suit and coral fill over seventy-five percent of frame, on the right third, left third dark negative space; single crimson rim light from above; wet calcified texture; deep black background, vivid crimson glow; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (crimson-red), strong rim light, cinematic low angle, grain-free, no text anywhere",
+      "hero low-angle shot of the entire radial coral colony looming overhead like a creature, faint glowing contour lines across every ridge, a single small diver silhouette dwarfed near its base for scale; coral fills over seventy percent of frame, positioned center-right, left third dark negative space; single strong crimson rim light from above and behind; wet calcified texture, drifting particles; deep black background, vivid crimson glow; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (crimson-red), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    ],
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion",
+    "text_safe_area": "left third",
+    "resolution": "1280x720"
+  },
+  "platforms": {
+    "youtube": {
+      "title": "남태평양 카얀갈 환초에서 지도보다 먼저 균열을 그려낸 산호의 정체 [SCP-9683]",
+      "title_form": "정체형",
+      "thumbnail_text": "예습하는 산호",
+      "thumbnail_quote": "- 이제 한 칸인데요, 뭘",
+      "tags": [
+        "SCP",
+        "SCP재단",
+        "SCP-914",
+        "괴담",
+        "미스터리",
+        "무서운이야기"
+      ],
+      "chapters": [
+        "00:00 다 그린 지도를 다시 펼치다",
+        "01:04 사이트-471, 합성 지도 절차 시작",
+        "01:39 D-9683의 짧은 보고",
+        "02:04 오카포, 같은 각도로 두 번",
+        "03:00 바스케스, 코팅제를 바르다",
+        "03:35 관측이 원인, 사건은 결과",
+        "04:10 기동특무부대 델타-14 투입",
+        "04:44 뱀의 손의 손편지",
+        "05:13 마지막 한 칸이 남다",
+        "05:55 산호 전체가 굳어버리다",
+        "06:20 시작조차 못한 재수용",
+        "07:03 유클리드에서 케테르로",
+        "07:33 노박 박사의 대조 요청"
+      ],
+      "description": "남태평양 어느 환초의 산호 군체 이야기입니다. 그 산호는 격자 지도가 완성되기 전에, 지도에 그려질 균열을 먼저 만들어 놓습니다.\n\n※ SCP 재단 세계관 기반 오리지널 창작 · 허구의 이야기입니다\n※ CC BY-SA 3.0 · 원작: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP재단 #괴담 #무서운이야기 #미스터리",
+      "localizations": {
+        "en": {
+          "title": "A South Pacific Atoll's Coral Colony Kept Drawing Cracks Before They Happened [SCP-9683]",
+          "description": "The story of a coral colony on a remote South Pacific atoll. Before its composite survey map is ever finished, the coral has already carved in the cracks that map was going to show.\n\n※ Original fiction set in the SCP Foundation universe · a work of fiction\n※ CC BY-SA 3.0 · Source: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCPFoundation #creepypasta #horrorstory #mystery"
+        },
+        "ja": {
+          "title": "南太平洋の環礁のサンゴが、地図が完成する前に亀裂を先に刻んでいた事件 [SCP-9683]",
+          "description": "南太平洋のある環礁に生きるサンゴ群体の話です。合成地図が完成する前に、そのサンゴは地図に描かれるはずの亀裂を先に作ってしまいます。\n\n※ SCP財団の世界観に基づくオリジナル創作・フィクションです\n※ CC BY-SA 3.0 · 原作: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP財団 #怪談 #ホラー #ミステリー"
+        },
+        "zh-Hant": {
+          "title": "南太平洋環礁的珊瑚群體,在地圖完成前就先畫出裂痕的事件 [SCP-9683]",
+          "description": "南太平洋某環礁上珊瑚群體的故事。在合成地圖完成之前,那株珊瑚就已經先做出了地圖上將會出現的裂痕。\n\n※ 基於SCP基金會世界觀的原創作品,純屬虛構\n※ CC BY-SA 3.0 · 原作: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP基金會 #怪談 #恐怖故事 #懸疑"
+        }
+      },
+      "pinned_comment": "여러분이라면, 그 마지막 한 칸을 열어보셨을까요? 댓글로 살짝 들려주시면 재밌을 것 같아요.",
+      "playlist": "SCP 아카이브 (전편 듣기)"
+    }
+  },
+  "credit": "SCP 재단 세계관 기반 오리지널 창작 · 허구 · CC BY-SA 3.0",
+  "content_rating": "teen",
+  "notes": "SCP 아카이브 · 16:9 롱폼 · 장면 전환 배경 + 자막 번인 · 단일 내레이터 · 완결형."
+}
