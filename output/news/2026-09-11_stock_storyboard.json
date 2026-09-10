@@ -1,0 +1,91 @@
+{
+  "date": "2026-09-11",
+  "topic": "stock",
+  "privacy": "public",
+  "topic_keyword": "휘발유 2천원 돌파",
+  "headline": "서울 휘발유 평균 2,002원…이란전쟁 후 첫 2천원대",
+  "hook_title": "휘발유 2천원, 전쟁 후 처음",
+  "accent": "#E5484D",
+  "loop_line": "오늘 기름값 이야기, 밤 미국장에서 다시 확인합니다.",
+  "thumbnail_hook": "Extreme close-up of an oil price gauge needle swinging into the red danger zone, faint reflection of a falling stock chart in the glass behind it, moody amber and red lighting, cinematic, no text in image, no people",
+  "thumbnail_text": "기름값 2천원 돌파",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "기름값 비상",
+      "ghost": "OIL",
+      "lines": ["휘발유가", "2천원을", "넘었습니다"],
+      "highlight": "2천원",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "출근길에 본 기름값, 어느새 무섭게 올랐습니다."
+    },
+    {
+      "type": "trend",
+      "label": "코스피",
+      "from": 0,
+      "to": -0.25,
+      "suffix": "%",
+      "dir": "down",
+      "sub": "코스닥은 <b>0.79%</b> 나 홀로 올랐다",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "코스피는 영점 이오, 코스닥은 영점 칠구 퍼센트 엇갈렸습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "왜 이렇게 흔들렸나",
+      "points": ["외국인 <b>2.5조</b> 순매도", "호르무즈 <b>유조선 피격</b>, 유가 급등", "WTI <b>100달러</b> 돌파, 6.7%↑"],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "외국인 2.5조 팔고, 유가는 100달러 넘었습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 한국장은",
+      "points": ["유가 더 뛰면 코스피엔 <b>부담</b>", "환율 <b>1,340원</b> 넘으면 이탈 계속"],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "유가가 더 뛰거나 환율이 천삼백사십원 넘으면 부담됩니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 지켜볼 것",
+      "points": ["방산주, 전쟁 장기화 <b>수혜</b> 기대", "휘발유 <b>2천원대</b>, 카드값 부담 진짜"],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "방산주는 수혜, 기름값 2천원은 카드값 부담입니다."
+    },
+    {
+      "type": "statement",
+      "text": "오늘, 담는다 vs 지켜본다",
+      "highlight": "지켜본다",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "오늘 담을지 지켜볼지, 판단은 여러분 몫입니다."
+    }
+  ],
+  "sources": ["파이낸셜뉴스", "아시아경제", "비즈니스코리아", "MBC"],
+  "credit": "출처 파이낸셜뉴스·아시아경제·비즈니스코리아 등 · 투자 조언이 아닙니다",
+  "platforms": {
+    "youtube": {
+      "title": "휘발유 2천원, 전쟁 후 처음 #shorts",
+      "description": "서울 휘발유 평균 2,002원…이란전쟁 후 첫 2천원대\n출처 파이낸셜뉴스·아시아경제·비즈니스코리아 등\n※ 투자 조언이 아닙니다\n\n#코스피 #주식 #증시 #국제유가 #이란전쟁 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "Gas Prices Cross 2,000 Won as Iran War Rattles Oil Markets",
+          "description": "Seoul gas prices topped 2,000 won per liter for the first time since the Iran war began, as WTI crude surged past $100 a barrel on a tanker attack in the Strait of Hormuz. Wall Street fell for a fourth straight day on oil-driven inflation fears.\n※ 투자 조언이 아닙니다\n\n#Kospi #OilPrices #shorts"
+        },
+        "ja": {
+          "title": "ガソリン、ついに2000ウォンを超えました",
+          "description": "イラン戦争の余波でソウルのガソリン平均価格が2000ウォンを突破し、ホルムズ海峡でのタンカー攻撃を受けてWTI原油も100ドルを超えました。ウォール街も4日続落しています。\n※ 투자 조언이 아닙니다\n\n#原油価格 #株式市場 #shorts"
+        },
+        "zh-Hant": {
+          "title": "汽油價格終於衝破2000韓元",
+          "description": "受伊朗戰爭影響,首爾汽油平均價格首度突破每公升2000韓元,荷姆茲海峽油輪遇襲後WTI原油站上100美元大關,華爾街連續第四天下跌。\n※ 투자 조언이 아닙니다\n\n#國際油價 #股市 #shorts"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "휘발유 2천원, 전쟁 후 처음\n출처 파이낸셜뉴스·아시아경제·비즈니스코리아 등\n※ 투자 조언이 아닙니다\n\n#코스피 #주식 #증시 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "휘발유 2천원, 전쟁 후 처음\n출처 파이낸셜뉴스·아시아경제·비즈니스코리아 등"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음 · SESSION=KR_AM(개장 전 프리뷰). 전일(9/10) 재료: 코스피 -0.25% 7033.92(외국인 2.547조 순매도, 개인·기관 방어로 7000선 사수), 코스닥 +0.79% 836.92(기관 매수). 원/달러 1339.2원. 밤사이: 美·이란전쟁 격화로 호르무즈 해협 유조선 피격, WTI 100달러 돌파(+6.7%, 102.48달러) 브렌트 105~108달러대, 美 국채 10년물 4.95%로 급등, 다우·S&P·나스닥 나흘째 하락(각 -0.6%대). 국내: 서울 휘발유 평균가 리터당 2,002.79원으로 이란전쟁 이후 처음 2천원 돌파, 방산주(LIG넥스원·현대로템·한국항공우주·한화시스템 등)는 전쟁 장기화 수혜 기대."
+}
