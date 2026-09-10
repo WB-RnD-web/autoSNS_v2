@@ -1,0 +1,91 @@
+{
+  "date": "2026-09-10",
+  "topic": "stock_us",
+  "privacy": "public",
+  "topic_keyword": "PPI 물가 지표",
+  "headline": "美 8월 PPI 예상 상회…뉴욕증시 선물 하락",
+  "hook_title": "PPI 발표 후, 나스닥 선물 -1%",
+  "accent": "#E5484D",
+  "loop_line": "PPI로 흔들린 장, 결과는 내일 아침에 확인하시죠.",
+  "thumbnail_hook": "close-up of a glowing red candlestick stock chart on a dark trading monitor at night, faint oil barrel silhouette reflected in the glass, moody blue and red lighting, cinematic, no text, no people",
+  "thumbnail_text": "나스닥 선물 -1%",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "방금 열린 장",
+      "ghost": "PPI",
+      "lines": ["PPI 발표 후", "나스닥 선물", "벌써 -1%"],
+      "highlight": "-1%",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "장 열리기도 전에 물가 지표가 시장을 흔들었습니다."
+    },
+    {
+      "type": "trend",
+      "label": "나스닥 선물",
+      "from": 0,
+      "to": -1.0,
+      "suffix": "%",
+      "dir": "down",
+      "sub": "다우 선물은 <b>-0.29%</b>",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "나스닥 선물은 일 퍼센트 넘게, 다우는 덜 흔들렸습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "왜 이렇게 빠졌나",
+      "points": ["브렌트유 <b>101달러</b> 돌파, 7월 이후 최고", "10년물 금리 장중 <b>4.85%</b>", "중동 정세 <b>추가 확전</b> 우려"],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "유가는 백일달러, 금리는 사점팔오퍼센트까지 뛰었습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "그래서 오늘 밤은",
+      "points": ["물가 잡히면 인하, 안 잡히면 <b>인상론</b>", "환율 <b>1,300원대</b>도 흔들릴 변수"],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "물가가 안 잡히면 인상론에, 환율 천삼백원대도 흔들립니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 밤 지켜볼 것",
+      "points": ["내일 밤 <b>CPI</b> 발표가 분수령", "호르무즈·홍해 <b>추가 확전</b> 여부", "유가 급등에 <b>에너지주</b> 주목"],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "내일 밤 아홉 시 반, 씨피아이가 진짜 분수령입니다."
+    },
+    {
+      "type": "statement",
+      "text": "지금 버틸까, 좀 더 지켜볼까?",
+      "highlight": "지켜볼까",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "오늘 밤은 버틸지 지켜볼지, 판단은 여러분 몫입니다."
+    }
+  ],
+  "sources": ["머니투데이", "파이낸셜뉴스", "이데일리"],
+  "credit": "출처 머니투데이·파이낸셜뉴스·이데일리 등 · 투자 조언이 아닙니다",
+  "platforms": {
+    "youtube": {
+      "title": "PPI 발표 후, 나스닥 선물 -1% #shorts",
+      "description": "美 8월 PPI 예상 상회…뉴욕증시 선물 하락\n출처 머니투데이·파이낸셜뉴스·이데일리 등\n※ 투자 조언이 아닙니다\n\n#미국주식 #나스닥 #뉴욕증시 #서학개미 #PPI #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "Nasdaq Futures Sink 1% After Hot PPI Data",
+          "description": "US producer prices came in hotter than expected, sending Nasdaq futures down more than 1% right at the opening bell. Oil above $100 and 10-year yields near a 2023 high are adding pressure heading into tonight's session.\nSource: Money Today, Financial News, Edaily. This is not investment advice.\n\n#WallStreet #Nasdaq #StockMarket #shorts"
+        },
+        "ja": {
+          "title": "PPI予想超え、ナスダック先物1%急落",
+          "description": "米8月生産者物価指数(PPI)が予想を上回り、ナスダック先物は寄り付き前から1%超下落しました。原油は100ドル超、長期金利も2023年以来の高水準です。\n出典:マネートゥデイ他 ※投資助言ではありません\n\n#米国株 #ナスダック #ウォール街 #shorts"
+        },
+        "zh-Hant": {
+          "title": "PPI優於預期,那斯達克期貨重挫逾1%",
+          "description": "美國8月生產者物價指數(PPI)優於預期,那斯達克期貨開盤前重挫逾1%。國際油價站上100美元,10年期公債殖利率逼近2023年以來高點。\n資料來源:Money Today等 ※本內容非投資建議\n\n#美股 #那斯達克 #華爾街 #shorts"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "PPI 발표 후, 나스닥 선물 -1%\n출처 머니투데이 외 · 투자 조언이 아닙니다\n\n#미국주식 #나스닥 #뉴욕증시 #서학개미 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "PPI 발표 후, 나스닥 선물 -1%\n출처 머니투데이 외"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음 · SESSION=US_PM(미국장 개장 전후 프리뷰)."
+}
