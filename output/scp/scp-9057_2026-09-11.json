@@ -1,0 +1,1049 @@
+{
+  "date": "2026-09-11",
+  "iso_week": "2026-W37",
+  "topic": "scp",
+  "privacy": "public",
+  "origin": "original",
+  "origin_note": "",
+  "source_url": "",
+  "story_id": "scp-9057",
+  "scp_number": "SCP-9057",
+  "object_class": "Safe",
+  "codename": "베끼는 소금",
+  "number_check": {
+    "checked_at": "2026-09-11",
+    "http_code": "unverified"
+  },
+  "theme": "사막·불모지",
+  "nature": "물질·생물",
+  "twist_type": "규모",
+  "logline": "나미브 사막 안개 연구소 이야기입니다. 밤새 소금 바닥에 닿은 것은, 새벽이면 소금으로 된 복제와 나란히 눕습니다.",
+  "structure": "연대기형",
+  "opening_move": "문서의 빈칸",
+  "opening_note": "",
+  "closing_move": "화자가 답을 안 한다",
+  "number_reveal": "뒤",
+  "ending_mode": "질문+구독",
+  "fault": "개체",
+  "hook_line": "정오 이후 근무일지 열두 장이, 전부 빈 종이로 남아 있습니다.",
+  "procedures": [],
+  "character": {
+    "name": "클라센",
+    "role": "박사 · 사이트-395 안개생태팀 연구원",
+    "flaw": "복제를 파괴하기 전에 조금이라도 더 들여다보려는 미련을 못 버린다"
+  },
+  "chain": [
+    {
+      "when": "안개 딱정벌레 관측 중",
+      "event": "관측팀이 표본용 딱정벌레 한 마리를 유리 케이스 없이 밤새 소금 바닥에 풀어두고, 다음 날 새벽 똑같이 생긴 소금 결정 벌레가 옆에 놓인 걸 발견한다",
+      "because": "",
+      "shot": "살아 움직이는 딱정벌레와 그 옆에 놓인, 다리 마디까지 똑같은 소금 결정 딱정벌레가 나란히 있는 장면"
+    },
+    {
+      "when": "이 현상이 이백서른두 번 반복 확인된 뒤",
+      "event": "재단이 사이트-395를 세우고, 해가 뜨기 전 소금 복제를 반드시 부수는 격리 절차를 확립한다",
+      "because": "복제가 원본과 다리 마디 하나까지 똑같다는 게 반복 확인됐기 때문에",
+      "shot": "안개 낀 새벽 소금 바닥 앞에 세워진 사이트 경계 표지 기둥"
+    },
+    {
+      "when": "절차 확립 직후",
+      "event": "D계급 인원들이 손을 대보고 맨발로 밟아보고 옷자락을 스치는 실험을 거치고, D-9541이 남긴 손 모형은 지문 결까지 똑같이 나온다",
+      "because": "곤충 표본만으로는 복제 범위를 확정할 수 없었기 때문에",
+      "shot": "지문 결까지 선명한 소금 손 모형이 놓인 클로즈업"
+    },
+    {
+      "when": "근무조 교대가 겹친 어느 날",
+      "event": "담당 근무조가 교대에 쫓겨 소금 복제를 부수지 않은 채 철수하고, 그날 오후 케이스 안엔 소금 딱정벌레만 남아 있다",
+      "because": "교대 인수인계가 늦어졌기 때문에",
+      "shot": "빈 케이스 안, 살아있던 자리에 소금 딱정벌레만 놓여 있는 장면"
+    },
+    {
+      "when": "이 사건 이후",
+      "event": "재단이 격리 규칙의 진짜 의미 — 복제를 부수지 않으면 원본이 사라진다는 것 — 를 확인하고, 기동특무부대 세타-24를 배정한다",
+      "because": "복제 방치가 파괴가 아니라 원본과의 교체를 부른다는 게 드러났기 때문에",
+      "shot": "새벽빛 아래, 망치를 든 파쇄반 대원이 소금 결정을 내려치는 장면"
+    },
+    {
+      "when": "세타-24가 봉쇄를 시도하던 중",
+      "event": "지대 전체를 밤새 둘러싸 접촉을 원천 차단하려 하지만, 안개가 순찰차 타이어 자국을 대신 복제하며 작전이 사흘 만에 중단된다",
+      "because": "유기물만 복제 대상이라는 전제가 틀렸기 때문에",
+      "shot": "타이어 자국 모양 그대로 찍힌 소금 결정이 모래 위에 남은 클로즈업"
+    },
+    {
+      "when": "이 무렵 부임한",
+      "event": "클라센 박사가 소금 복제의 세포 구조까지 원본과 같다는 걸 확인하고, 격리 절차상 정해진 파괴 시한을 조금씩 넘기며 소형 표본을 더 오래 들여다보기 시작한다",
+      "because": "복제가 왜 만들어지는지 더 알고 싶었기 때문에",
+      "shot": "연구실 조명 아래, 파괴 시한을 넘긴 소금 표본을 들여다보는 손"
+    },
+    {
+      "when": "그렇게 몇 차례 지연이 별일 없이 지나간 뒤",
+      "event": "클라센 박사가 규정을 어기고 본인이 직접 밤새 소금 바닥에 서서, 다음 날 자기 자신과 똑같은 소금 사람을 남긴다",
+      "because": "작은 지연들이 규칙을 대수롭지 않게 만들었기 때문에",
+      "shot": "새벽 소금 바닥 위에 서 있는, 연구원 본인과 똑같이 생긴 소금 사람"
+    },
+    {
+      "when": "정오가 다가오자",
+      "event": "박사 본인이 파괴를 거부하는 사이 소금 표면에 균열이 가고, 무전 속 그의 목소리가 그대로 끊긴다",
+      "because": "그 소금 사람이 자신이라는 확신 때문에 부수지 못했기 때문에",
+      "shot": "섭씨 사십일 점 삼 도를 가리키는 온도계와 소리 없는 무전기가 함께 보이는 장면"
+    },
+    {
+      "when": "파쇄반이 도착했을 때",
+      "event": "발자국은 그 자리에서 끊겨 있었고, 소금 사람의 표면은 이미 살갗처럼 부드러워져 있었다",
+      "because": "정오를 넘겨버렸기 때문에",
+      "shot": "뚝 끊긴 발자국과, 표면이 부드러워진 소금 사람이 함께 보이는 장면"
+    },
+    {
+      "when": "지금",
+      "event": "재단이 재수용 절차를 시도하지만 되찾을 대상이 없다는 걸 확인하고, 그 자리에 남은 사람의 신원을 확정하지 못한 채 사건철을 열어둔다",
+      "because": "원본이 사라진 게 아니라 자리를 바꾼 것이었기 때문에",
+      "shot": "신원 미확정 도장이 찍힌 사건철과, 여전히 빈 채로 남은 근무일지 열두 장"
+    }
+  ],
+  "retention_beats": [
+    "사이트-395 서고 쪽에 확인해보니, 이런 신원 미확정 보고가 이번이 처음은 아니라고 하더군요.",
+    "부서진 신의 교회 쪽에서 이 현상에 관심을 보였다는 정황도 있습니다.",
+    "최근 들어선 아타카마 쪽 관측소에서도, 비슷한 인원 교체 보고가 들어오기 시작했다고 하고요."
+  ],
+  "cameos": [
+    {
+      "number": "SCP-294",
+      "how": "창고 쪽에서, 무엇이든 주문한 대로 만들어내는 자판기로 알려진 개체와 몇 번 비교됐다는 기록이 있습니다."
+    }
+  ],
+  "twist_summary": "규모의 반전 — 클라센 박사가 규정을 어기고 밤새 소금 바닥에 서서 자신과 똑같은 소금 복제를 남긴 뒤, 파괴를 거부하는 사이 원본인 그가 사라지고 복제 쪽이 대신 자리를 차지한다는 반전. 재단은 이게 사이트-395 하나만의 사고인 줄 알았지만, 최근 아타카마 쪽 관측소에서도 비슷한 인원 교체 보고가 들어오기 시작하면서, 이 현상이 이미 한 곳만의 일이 아니라는 정황이 드러난다.",
+  "narration_full": "정오 이후 근무일지 열두 장이, 전부 빈 종이로 남아 있습니다.\n\n나미브 사막 얘기부터 해야겠네요. 정확히는, 대서양 쪽에서 밀려온 안개가 매일 새벽 잠깐 사막을 덮고 가는 그 해안 지대입니다. 이 동네 딱정벌레들이 등판으로 안개를 받아 마신다는 건 다들 아실 텐데요, 재단이 눈여겨본 건 벌레가 아니라 벌레가 밟고 지나간 소금 바닥 쪽이었습니다.\n\n관측팀이 처음 이상한 걸 본 건, 표본용 딱정벌레 한 마리를 유리 케이스 없이 밤새 바닥에 풀어놓고 지켜본 다음 날이었죠. 새벽에 나가보니, 벌레가 두 마리였습니다. 한 마리는 그대로 기어다녔고, 다른 한 마리는 소금 결정 그대로 — 다리 마디 하나까지 똑같았는데, 움직이지는 않았습니다. 이후 이백서른두 번을 반복 관측했는데, 단 한 번도 어긋난 적이 없었다고 하고요.\n\n「이거, 어제 것 맞아요? 아니면 새로 생긴 거예요?」 현장에 있던 인턴이 무전으로 그렇게 물었다고 합니다. 대답은 둘 다였습니다. 원본은 그대로 살아 있었고, 복제만 하나 늘어난 거였죠.\n\n재단은 사이트-395를 세우고 격리에 들어갔습니다. 절차는 간단했습니다 — 해가 완전히 뜨기 전까지 소금 복제를 반드시 부술 것, 접촉한 유기물은 밤사이 자리를 옮기지 말 것, 본인이 직접 접촉하지 않을 것. 이 세 가지였는데요, 왜 꼭 부숴야 하는지는 처음엔 아무도 몰랐습니다.\n\nD계급 인원들을 여럿 투입해 확인에 들어갔습니다. 손을 대보질 않나, 맨발로 밟아보질 않나, 나중엔 옷자락만 살짝 스치게도 해봤는데요. 결과는 매번 같았습니다. 닿은 부위 그대로, 소금 결정이 옆에 놓였죠. 그중 D-9541이 남긴 손 모형은 지문 결까지 똑같았는데, 「따뜻해요, 근데 딱딱해요」라고만 보고했고, 그 기억은 을급으로 기억소거 처리됐습니다. 사흘 만에 자연히 흐려졌다고 하네요.\n\n그러다 한 번, 부수는 시한을 넘긴 적이 있었습니다. 담당 근무조가 교대에 쫓겨 소금 복제를 그대로 두고 철수했거든요. 그날 오후, 케이스 안엔 소금 딱정벌레만 남아 있었습니다. 살아있던 원본 쪽이 대신 사라진 겁니다. 이때부터 재단은 격리 규칙의 진짜 의미를 알게 됐죠 — 복제를 안 부수면, 부수는 게 아니라 원본이 사라진다는 걸요.\n\n기동특무부대 세타-24, 별칭 「파쇄반」이 배정됐습니다. 망치로 부숴보질 않나, 방수천으로 덮어보질 않나, 나중엔 아예 지대 전체를 밤새 둘러싸보기도 했는데요 — 결과는 매번 같았습니다. 안개가, 이번엔 벌레도 손도 아니고 순찰차 타이어 자국을 그대로 복제하기 시작했거든요. 접촉 대상을 유기물로만 한정해 둔 것 자체가, 애초에 틀린 전제였던 셈이죠. 그 작전은 사흘 만에 중단됐습니다.\n\n이 무렵 사이트에 부임한 게 클라센 박사였습니다. 안개생태팀 연구원이었는데요, 소금 복제가 원본의 세포 구조까지 그대로 베낀다는 걸 알고는 파괴 전에, 격리 절차상 정해진 시한을 조금씩 넘기며 좀 더 들여다보고 싶어 했습니다. 「한 시간만 더요… 딱 한 시간이면」 근무 일지에 이 말이 몇 번이고 반복해서 적혀 있었죠. 소형 표본으로는 몇 차례 그렇게 시간을 끌어도 별일이 없었고요.\n\n그게 문제였습니다. 별일이 없었다는 사실이, 규칙을 대수롭지 않은 걸로 만들어버렸거든요. 클라센 박사는 결국 규정을 어기고, 본인이 직접 밤새 소금 바닥에 발을 대고 서 있었습니다. 왜 그랬는지는 보고서에도 안 나와 있습니다. 그냥… 궁금했다고만.\n\n다음 날 새벽, 클라센 박사 본인과 똑같은 크기의 소금 사람이 그 자리에 서 있었습니다. 얼굴이며 손금이며, 그날 입고 있던 작업복 재봉선까지 똑같았죠. 절차대로라면 정오까지 부숴야 했는데, 박사 본인이 부수는 걸 거부했습니다. 「저거… 저예요. 저걸 어떻게 부숩니까」\n\n정오가 가까워지자 소금 표면에 미세한 균열이 가기 시작했습니다. 온도계는 정확히 섭씨 사십일 점 삼 도를 가리키고 있었고요. 그 순간 무전 속 클라센 박사 목소리가 그대로 끊겼습니다. 말을 하다가… 그냥 끊긴 거죠. 파쇄반이 도착했을 땐 발자국만 그 자리에서 뚝 끊겨 있었고, 소금 사람 쪽 표면은 이미 살갗처럼 부드러워져 있었습니다.\n\n지금 사이트에 남아 있는 건 그 사람입니다. 기억도, 말투도, 예전에 다치고 남은 흉터까지 그대로고요. 재수용 절차를 걸어보려 했지만 대상이 없었습니다 — 사라진 게 아니라, 자리를 바꾼 거였으니까요. 이 사람이 정말 클라센 박사인지, 재단은 지금도… 결론을 못 냈습니다.\n\n객체 등급은 세이프로 유지되고 있습니다. 격리 방법은 확실하니까요. 문제는 그 방법을, 사람이 못 지킨다는 것뿐이죠. 아, 그리고 창고 쪽 얘기를 들으니, SCP-294도 무에서 무언가를 만들어내는 부류라며 몇 번 비교됐다고 하더군요. 다만 294는 시킨 대로 만들고, 이쪽은 시키지 않아도 알아서 베낀다는 차이가 있답니다.\n\n부서진 신의 교회 쪽에서 이 현상에 관심을 보였다는 정황도 있습니다. 접촉 없이 형태를 그대로 복제하는 게, 자기네가 말하는 어떤 원리와 닮았다면서요. 정확히 뭘 원하는 건지는, 재단도 아직 파악 못 했습니다.\n\n사이트-395 서고 쪽에 확인해보니, 이런 신원 미확정 보고가 이번이 처음은 아니라고 하더군요. 최근 들어선 아타카마 쪽 관측소에서도, 비슷한 인원 교체 보고가 들어오기 시작했다고 하고요.\n\n그 열두 장 중 어디에도, 아직 아무것도 안 적혀 있습니다. 다음 장에 뭐라고 적어야 할지, 담당자도 아직 못 정한 모양입니다. 이 사건은 지금, SCP-9057이라는 문서 번호로만 남아 있습니다. 여러분이라면, 그 소금 사람을 원래 있던 자리로 부르시겠습니까? 저는 아직… 뭐가 맞는 건지 잘 모르겠습니다. 혹시 비슷하게 자리가 바뀐 것 같은 느낌, 받아보신 적 있으신가요? 있다면 그 순간이 언제였는지, 댓글에 한번 남겨주시면 반갑겠습니다. 이런 기록들, 발견되는 대로 계속 정리해서 가져오겠습니다.",
+  "segments": [
+    {
+      "text": "정오 이후 근무일지 열두 장이, 전부 빈",
+      "est_sec": 5,
+      "text_en": "Twelve pages of the duty log after noon are left completely blank.",
+      "text_ja": "正午以降の勤務日誌十二ページが、すべて白紙のまま残っています。",
+      "text_zh_Hant": "正午之後的十二頁值班日誌,全都留白。"
+    },
+    {
+      "text": "종이로 남아 있습니다. 나미브 사막 얘기부터",
+      "est_sec": 5,
+      "text_en": "Let's start with the Namib Desert. More precisely,",
+      "text_ja": "まずナミブ砂漠の話から始めましょう。正確には、",
+      "text_zh_Hant": "先從納米比沙漠說起。準確地說,"
+    },
+    {
+      "text": "해야겠네요. 정확히는, 대서양 쪽에서 밀려온",
+      "est_sec": 5,
+      "text_en": "a coastal strip where fog rolling in from",
+      "text_ja": "大西洋側から流れてくる霧が毎朝わずかの間、",
+      "text_zh_Hant": "是大西洋方向吹來的霧,每"
+    },
+    {
+      "text": "안개가 매일 새벽 잠깐 사막을 덮고 가는 그",
+      "est_sec": 5,
+      "text_en": "the Atlantic briefly covers the sand every dawn.",
+      "text_ja": "砂漠を覆っていく沿岸地帯です。",
+      "text_zh_Hant": "天清晨短暫籠罩的那片海岸地帶。"
+    },
+    {
+      "text": "해안 지대입니다. 이 동네 딱정벌레들이",
+      "est_sec": 4,
+      "text_en": "Most people know the local beetles drink",
+      "text_ja": "この土地の甲虫が背中で霧を",
+      "text_zh_Hant": "這裡的甲蟲會用背部承接霧氣飲用,"
+    },
+    {
+      "text": "등판으로 안개를 받아 마신다는 건 다들 아실",
+      "est_sec": 5,
+      "text_en": "that fog off their own backs — but",
+      "text_ja": "受けて飲むというのはご存じかと思いますが、",
+      "text_zh_Hant": "這點大家應該都知道,"
+    },
+    {
+      "text": "텐데요, 재단이 눈여겨본 건 벌레가 아니라",
+      "est_sec": 5,
+      "text_en": "what caught the Foundation's attention wasn't the beetles.",
+      "text_ja": "財団が注目したのは虫ではなく、",
+      "text_zh_Hant": "但基金會注意到的不是那些甲蟲,"
+    },
+    {
+      "text": "벌레가 밟고 지나간 소금 바닥 쪽이었습니다.",
+      "est_sec": 5,
+      "text_en": "It was the salt flat they'd walked across.",
+      "text_ja": "虫が踏んで通った塩の地面のほうでした。",
+      "text_zh_Hant": "而是牠們爬過的鹽地。"
+    },
+    {
+      "text": "관측팀이 처음 이상한 걸 본 건, 표본용",
+      "est_sec": 5,
+      "text_en": "The survey team first noticed something wrong the",
+      "text_ja": "観測班が最初に異変に気づいたのは、標本",
+      "text_zh_Hant": "觀測小組第一次發現異狀,是把一"
+    },
+    {
+      "text": "딱정벌레 한 마리를 유리 케이스 없이 밤새",
+      "est_sec": 5,
+      "text_en": "morning after they'd left a sample beetle loose on",
+      "text_ja": "用の甲虫一匹をガラスケースなしで一晩地面に",
+      "text_zh_Hant": "隻做為樣本的甲蟲不放進玻璃箱、"
+    },
+    {
+      "text": "바닥에 풀어놓고 지켜본 다음 날이었죠. 새벽에",
+      "est_sec": 5,
+      "text_en": "the ground overnight, with no glass case. At dawn there",
+      "text_ja": "放しておいた翌朝でした。夜明けに出てみると、",
+      "text_zh_Hant": "任其在地面過了一夜之後的隔天早上。"
+    },
+    {
+      "text": "나가보니, 벌레가 두 마리였습니다. 한 마리는",
+      "est_sec": 5,
+      "text_en": "were two beetles. One was still crawling around. The",
+      "text_ja": "虫が二匹いたんです。一匹はそのまま這い回っていましたが、",
+      "text_zh_Hant": "天亮出去一看,竟然有兩隻蟲。一隻照樣爬來爬去,"
+    },
+    {
+      "text": "그대로 기어다녔고, 다른 한 마리는 소금 결정",
+      "est_sec": 5,
+      "text_en": "other was made of pure salt crystal — every leg",
+      "text_ja": "もう一匹は塩の結晶そのもの —",
+      "text_zh_Hant": "另一隻卻是純粹的鹽結"
+    },
+    {
+      "text": "그대로 — 다리 마디 하나까지 똑같았는데,",
+      "est_sec": 5,
+      "text_en": "joint identical — and it didn't move at all.",
+      "text_ja": "脚の節の一本まで同じなのに、動きませんでした。",
+      "text_zh_Hant": "晶——連腿的每一節都一模一樣,卻完全不動。"
+    },
+    {
+      "text": "움직이지는 않았습니다. 이후 이백서른두 번을",
+      "est_sec": 5,
+      "text_en": "They repeated the observation two hundred thirty-two times after",
+      "text_ja": "その後二百三十二回繰り返し観測しましたが、",
+      "text_zh_Hant": "之後又重複觀測了兩百三十二次,"
+    },
+    {
+      "text": "반복 관측했는데, 단 한 번도 어긋난 적이",
+      "est_sec": 5,
+      "text_en": "that, and it reportedly never once failed to happen.",
+      "text_ja": "一度も外れたことがなかったそうです。",
+      "text_zh_Hant": "據說一次都沒有例外過。"
+    },
+    {
+      "text": "없었다고 하고요. 「이거, 어제 것 맞아요?",
+      "est_sec": 5,
+      "text_en": "「Is this yesterday's one? Or a new",
+      "text_ja": "「これ、昨日のですか?それとも新しくできたんですか?",
+      "text_zh_Hant": "「這隻是昨天那隻嗎?還是新出現的?"
+    },
+    {
+      "text": "아니면 새로 생긴 거예요?」 현장에 있던",
+      "est_sec": 5,
+      "text_en": "one?」 an intern on site reportedly asked",
+      "text_ja": "」現場にいたインターン",
+      "text_zh_Hant": "」據說現場的實習"
+    },
+    {
+      "text": "인턴이 무전으로 그렇게 물었다고 합니다.",
+      "est_sec": 5,
+      "text_en": "over the radio. The answer was",
+      "text_ja": "が無線でそう尋ねたそうです。答えは",
+      "text_zh_Hant": "生用無線電這麼問了。答案是兩者都對。"
+    },
+    {
+      "text": "대답은 둘 다였습니다. 원본은 그대로 살아",
+      "est_sec": 5,
+      "text_en": "both. The original was still alive —",
+      "text_ja": "どちらもでした。原本はそのまま生きていて、",
+      "text_zh_Hant": "原本活著的那隻還在,"
+    },
+    {
+      "text": "있었고, 복제만 하나 늘어난 거였죠. 재단은",
+      "est_sec": 5,
+      "text_en": "there was simply one more copy now.",
+      "text_ja": "複製が一つ増えただけだったんです。",
+      "text_zh_Hant": "只是多了一個複製品。"
+    },
+    {
+      "text": "사이트-395를 세우고 격리에 들어갔습니다.",
+      "est_sec": 5,
+      "text_en": "The Foundation set up Site-395 and began containment. The",
+      "text_ja": "財団はサイト-395を設立し、格納手続きに入りました。",
+      "text_zh_Hant": "基金會設立了395號站點,展開收容。"
+    },
+    {
+      "text": "절차는 간단했습니다 — 해가 완전히 뜨기",
+      "est_sec": 5,
+      "text_en": "procedure was simple — destroy the salt copy before",
+      "text_ja": "手順は単純でした — 日が完全に昇る前",
+      "text_zh_Hant": "程序很簡單——日出前必須"
+    },
+    {
+      "text": "전까지 소금 복제를 반드시 부술 것, 접촉한",
+      "est_sec": 5,
+      "text_en": "sunrise, no matter what; don't move any organic matter",
+      "text_ja": "に塩の複製を必ず壊すこと、接触した有機物は夜の間",
+      "text_zh_Hant": "摧毀鹽結晶複製品,接觸過的有機"
+    },
+    {
+      "text": "유기물은 밤사이 자리를 옮기지 말 것, 본인이",
+      "est_sec": 5,
+      "text_en": "that's made contact overnight; and never make contact yourself. Those",
+      "text_ja": "に位置を動かさないこと、本人が直接接触しないこと。",
+      "text_zh_Hant": "物在夜間不得移動位置,本人不得親自接觸。"
+    },
+    {
+      "text": "직접 접촉하지 않을 것. 이 세 가지였는데요,",
+      "est_sec": 5,
+      "text_en": "were the three rules. At first, nobody knew why",
+      "text_ja": "この三つだったんですが、なぜ壊さなければならないのか、",
+      "text_zh_Hant": "就這三條規定,但一開始沒"
+    },
+    {
+      "text": "왜 꼭 부숴야 하는지는 처음엔 아무도",
+      "est_sec": 4,
+      "text_en": "the copy had to be destroyed at all.",
+      "text_ja": "最初は誰も分かっていませんでした。",
+      "text_zh_Hant": "人知道為什麼一定要摧毀它。"
+    },
+    {
+      "text": "몰랐습니다. D계급 인원들을 여럿 투입해",
+      "est_sec": 5,
+      "text_en": "Several D-class personnel were sent in to test it.",
+      "text_ja": "D階級の職員が複数投入され、検証に入りました。",
+      "text_zh_Hant": "派了好幾名D級人員進去測試。用手碰一下、"
+    },
+    {
+      "text": "확인에 들어갔습니다. 손을 대보질 않나,",
+      "est_sec": 5,
+      "text_en": "They tried touching it with a hand, tried stepping",
+      "text_ja": "手を触れてみたり、素足で踏んでみたり、",
+      "text_zh_Hant": "光腳踩一下,後來甚至"
+    },
+    {
+      "text": "맨발로 밟아보질 않나, 나중엔 옷자락만 살짝",
+      "est_sec": 5,
+      "text_en": "on it barefoot, even tried just brushing it with a",
+      "text_ja": "しまいには袖の端をちょっと擦らせてみたりもしましたが、",
+      "text_zh_Hant": "只是讓袖子輕輕擦過,結果每次都一"
+    },
+    {
+      "text": "스치게도 해봤는데요. 결과는 매번 같았습니다.",
+      "est_sec": 5,
+      "text_en": "sleeve. The result was always the same — a salt",
+      "text_ja": "結果は毎回同じでした。触れた部位そのままに、",
+      "text_zh_Hant": "樣——碰到的部位原封不動地,一個"
+    },
+    {
+      "text": "닿은 부위 그대로, 소금 결정이 옆에 놓였죠.",
+      "est_sec": 5,
+      "text_en": "crystal formed right beside them, matching exactly whatever part had",
+      "text_ja": "塩の結晶が隣に現れたんです。その中で",
+      "text_zh_Hant": "鹽結晶就出現在旁邊。其中D-9541留下的手模,"
+    },
+    {
+      "text": "그중 D-9541이 남긴 손 모형은 지문",
+      "est_sec": 5,
+      "text_en": "made contact. The hand cast left by D-9541 matched",
+      "text_ja": "D-9541が残した手の型は指紋の筋まで同じで、",
+      "text_zh_Hant": "連指紋紋路都一模一樣,"
+    },
+    {
+      "text": "결까지 똑같았는데, 「따뜻해요, 근데",
+      "est_sec": 4,
+      "text_en": "down to the fingerprint ridges. All he reported was,",
+      "text_ja": "「温かいです、でも硬いです」と",
+      "text_zh_Hant": "他只報告了一句「是溫的,"
+    },
+    {
+      "text": "딱딱해요」라고만 보고했고, 그 기억은 을급으로",
+      "est_sec": 5,
+      "text_en": "「It's warm, but hard,」 and that memory was wiped at",
+      "text_ja": "しか報告しませんでした。その記憶はB級で記憶消去処理され、",
+      "text_zh_Hant": "但很硬」,那段記憶被以B級處理消除,"
+    },
+    {
+      "text": "기억소거 처리됐습니다. 사흘 만에 자연히",
+      "est_sec": 5,
+      "text_en": "Class B. Reportedly it faded naturally within three days.",
+      "text_ja": "三日で自然に薄れたそうです。",
+      "text_zh_Hant": "據說三天後就自然淡去了。"
+    },
+    {
+      "text": "흐려졌다고 하네요. 그러다 한 번, 부수는",
+      "est_sec": 5,
+      "text_en": "Then, one time, the destruction deadline was missed.",
+      "text_ja": "そんな中一度、破壊の期限を過ぎたことがありました。",
+      "text_zh_Hant": "後來有一次,超過了摧毀的期限。"
+    },
+    {
+      "text": "시한을 넘긴 적이 있었습니다. 담당 근무조가",
+      "est_sec": 5,
+      "text_en": "The shift crew, rushed by a handover, pulled out",
+      "text_ja": "担当班が交代に追われて塩の複製をその",
+      "text_zh_Hant": "負責的班次因為交接匆忙,把鹽結"
+    },
+    {
+      "text": "교대에 쫓겨 소금 복제를 그대로 두고",
+      "est_sec": 4,
+      "text_en": "and left the salt copy standing. That afternoon,",
+      "text_ja": "ままにして撤収したんです。その日の午後、",
+      "text_zh_Hant": "晶複製品留在原地就撤走了。"
+    },
+    {
+      "text": "철수했거든요. 그날 오후, 케이스 안엔 소금",
+      "est_sec": 5,
+      "text_en": "only the salt beetle was left in the case.",
+      "text_ja": "ケースの中には塩の甲虫だけが残っていました。",
+      "text_zh_Hant": "那天下午,箱子裡只剩下鹽甲蟲。"
+    },
+    {
+      "text": "딱정벌레만 남아 있었습니다. 살아있던 원본",
+      "est_sec": 5,
+      "text_en": "The living original had vanished instead. That's when",
+      "text_ja": "生きていたはずの原本のほうが代わりに消えていたのです。",
+      "text_zh_Hant": "原本活著的那隻反而消失了。基"
+    },
+    {
+      "text": "쪽이 대신 사라진 겁니다. 이때부터 재단은",
+      "est_sec": 5,
+      "text_en": "the Foundation understood the real point of the",
+      "text_ja": "この時から財団は格納規則の本",
+      "text_zh_Hant": "金會就是從這時起才明白收容規則"
+    },
+    {
+      "text": "격리 규칙의 진짜 의미를 알게 됐죠 — 복제를",
+      "est_sec": 5,
+      "text_en": "containment rule — fail to destroy the copy, and it",
+      "text_ja": "当の意味を理解しました — 複製を壊さなければ、",
+      "text_zh_Hant": "的真正意義——不摧毀複製品,消"
+    },
+    {
+      "text": "안 부수면, 부수는 게 아니라 원본이",
+      "est_sec": 4,
+      "text_en": "isn't destruction you lose, it's the original.",
+      "text_ja": "壊すのではなく原本が消えるのだと。",
+      "text_zh_Hant": "失的不是複製品,而是原本。"
+    },
+    {
+      "text": "사라진다는 걸요. 기동특무부대 세타-24,",
+      "est_sec": 5,
+      "text_en": "Mobile Task Force Theta-24, callsign 「Crushers,」 was assigned. They",
+      "text_ja": "機動特務部隊シータ-24、通称「破砕班」が",
+      "text_zh_Hant": "機動特遣隊西塔-24,代號「粉碎班」",
+      "emphasis": "사라진다는 걸요"
+    },
+    {
+      "text": "별칭 「파쇄반」이 배정됐습니다. 망치로",
+      "est_sec": 4,
+      "text_en": "tried smashing it with hammers, tried covering",
+      "text_ja": "配属されました。ハンマーで叩き壊してみたり、",
+      "text_zh_Hant": "被派了進去。用鐵鎚砸過、"
+    },
+    {
+      "text": "부숴보질 않나, 방수천으로 덮어보질 않나,",
+      "est_sec": 5,
+      "text_en": "it with tarps, and eventually tried cordoning off the",
+      "text_ja": "防水シートで覆ってみたり、しまいには区",
+      "text_zh_Hant": "用防水布蓋過,後來甚至"
+    },
+    {
+      "text": "나중엔 아예 지대 전체를 밤새 둘러싸보기도",
+      "est_sec": 5,
+      "text_en": "whole zone overnight — the result was always",
+      "text_ja": "域全体を一晩中包囲してみたりもしたんですが、",
+      "text_zh_Hant": "整晚把整個區域封鎖起來,結果每次都一樣。"
+    },
+    {
+      "text": "했는데요 — 결과는 매번 같았습니다. 안개가,",
+      "est_sec": 5,
+      "text_en": "the same. This time the fog started copying something else",
+      "text_ja": "結果は毎回同じでした。今度は霧が、虫でも手でも",
+      "text_zh_Hant": "這回霧氣開始複製的既"
+    },
+    {
+      "text": "이번엔 벌레도 손도 아니고 순찰차 타이어",
+      "est_sec": 5,
+      "text_en": "entirely: patrol truck tire tracks, not a beetle",
+      "text_ja": "なくパトロールカーのタイヤ跡をそのまま複製",
+      "text_zh_Hant": "不是蟲子也不是手,而是巡邏車的輪胎痕。"
+    },
+    {
+      "text": "자국을 그대로 복제하기 시작했거든요. 접촉",
+      "est_sec": 5,
+      "text_en": "or a hand. Assuming only organic matter could be",
+      "text_ja": "し始めたんです。接触対象を有機物だけに限定",
+      "text_zh_Hant": "把接觸對象限定在有機物本身,"
+    },
+    {
+      "text": "대상을 유기물로만 한정해 둔 것 자체가,",
+      "est_sec": 5,
+      "text_en": "copied had been the wrong premise from the",
+      "text_ja": "していたこと自体が、そもそも間違った前提だったわけです。",
+      "text_zh_Hant": "從一開始就是錯誤的前提。"
+    },
+    {
+      "text": "애초에 틀린 전제였던 셈이죠. 그 작전은 사흘",
+      "est_sec": 5,
+      "text_en": "start. That operation was called off after three days.",
+      "text_ja": "その作戦は三日で中止されました。",
+      "text_zh_Hant": "那項行動三天後就中止了。"
+    },
+    {
+      "text": "만에 중단됐습니다. 이 무렵 사이트에 부임한",
+      "est_sec": 5,
+      "text_en": "Around this time, Dr. Klaassen arrived at the site.",
+      "text_ja": "この頃サイトに赴任したのがクラッセン博士でした。",
+      "text_zh_Hant": "大約這時候,克拉森博士到站點赴任。"
+    },
+    {
+      "text": "게 클라센 박사였습니다. 안개생태팀",
+      "est_sec": 4,
+      "text_en": "A researcher on the fog ecology team,",
+      "text_ja": "霧生態チームの研究員だったのですが、",
+      "text_zh_Hant": "她是霧生態組的研究員,發"
+    },
+    {
+      "text": "연구원이었는데요, 소금 복제가 원본의 세포",
+      "est_sec": 5,
+      "text_en": "once she realized the salt copies replicated even",
+      "text_ja": "塩の複製が原本の細胞構造まで正確に写し取ってい",
+      "text_zh_Hant": "現鹽結晶複製品連原本的細胞結構"
+    },
+    {
+      "text": "구조까지 그대로 베낀다는 걸 알고는 파괴",
+      "est_sec": 5,
+      "text_en": "the original's cellular structure, she kept wanting to",
+      "text_ja": "るのを知ってからは、破壊の前に、格納手続き",
+      "text_zh_Hant": "都完整複製之後,便開始想在銷毀"
+    },
+    {
+      "text": "전에, 격리 절차상 정해진 시한을 조금씩",
+      "est_sec": 5,
+      "text_en": "study them a little longer — nudging the",
+      "text_ja": "上決められた期限を少しずつ延ばしながらもっと",
+      "text_zh_Hant": "前——把收容程序規定的期限一點"
+    },
+    {
+      "text": "넘기며 좀 더 들여다보고 싶어 했습니다. 「한",
+      "est_sec": 5,
+      "text_en": "containment deadline back bit by bit before destruction. 「Just one",
+      "text_ja": "調べたがるようになりました。「あと一時間だけ…あ",
+      "text_zh_Hant": "一點往後延——多觀察一會兒。「再一小時就好…"
+    },
+    {
+      "text": "시간만 더요… 딱 한 시간이면」 근무 일지에",
+      "est_sec": 5,
+      "text_en": "more hour… just one hour,」 the duty log",
+      "text_ja": "と一時間あれば」勤務日誌にはこの言葉が何度も繰り",
+      "text_zh_Hant": "就一小時」值班日誌上這"
+    },
+    {
+      "text": "이 말이 몇 번이고 반복해서 적혀 있었죠.",
+      "est_sec": 5,
+      "text_en": "recorded, over and over. With small specimens, stretching the",
+      "text_ja": "返し書かれていました。小さな標本でなら、そう",
+      "text_zh_Hant": "句話反覆出現了好幾次。用小型樣"
+    },
+    {
+      "text": "소형 표본으로는 몇 차례 그렇게 시간을 끌어도",
+      "est_sec": 5,
+      "text_en": "time like that had never once caused a problem.",
+      "text_ja": "やって時間を延ばしても何度か何事もなかったんです。",
+      "text_zh_Hant": "本這樣拖延時間,好幾次都平安無事。"
+    },
+    {
+      "text": "별일이 없었고요. 그게 문제였습니다. 별일이",
+      "est_sec": 5,
+      "text_en": "That was the problem. The fact that nothing",
+      "text_ja": "それが問題でした。何事もなかったという事実が、",
+      "text_zh_Hant": "這就是問題所在。什麼事都沒發生這件事,"
+    },
+    {
+      "text": "없었다는 사실이, 규칙을 대수롭지 않은 걸로",
+      "est_sec": 5,
+      "text_en": "happened was exactly what made the rule feel",
+      "text_ja": "規則を大したことないものにしてしまったんです。",
+      "text_zh_Hant": "反而讓規定顯得無關緊要。"
+    },
+    {
+      "text": "만들어버렸거든요. 클라센 박사는 결국 규정을",
+      "est_sec": 5,
+      "text_en": "unimportant. Dr. Klaassen eventually broke the regulation herself,",
+      "text_ja": "クラッセン博士は結局規定を破り、",
+      "text_zh_Hant": "克拉森博士最終違反規定,"
+    },
+    {
+      "text": "어기고, 본인이 직접 밤새 소금 바닥에 발을",
+      "est_sec": 5,
+      "text_en": "standing all night with her own feet planted",
+      "text_ja": "自分自身が一晩中塩の地面に足をつけて立っていました。",
+      "text_zh_Hant": "親自整夜把腳踩在鹽地上站著。"
+    },
+    {
+      "text": "대고 서 있었습니다. 왜 그랬는지는 보고서에도",
+      "est_sec": 5,
+      "text_en": "on the salt flat. Why she did it isn't",
+      "text_ja": "なぜそうしたのかは報告書にも書かれていません。",
+      "text_zh_Hant": "為什麼這麼做,報告裡並沒有寫。"
+    },
+    {
+      "text": "안 나와 있습니다. 그냥… 궁금했다고만. 다음",
+      "est_sec": 5,
+      "text_en": "in any report. Just… that she was curious.",
+      "text_ja": "ただ…気になったから、とだけ。",
+      "text_zh_Hant": "只是……好奇而已。"
+    },
+    {
+      "text": "날 새벽, 클라센 박사 본인과 똑같은 크기의",
+      "est_sec": 5,
+      "text_en": "The next dawn, a salt figure exactly Dr. Klaassen's size",
+      "text_ja": "翌朝、クラッセン博士本人と同じ大きさの塩の人が、",
+      "text_zh_Hant": "隔天清晨,一個和克拉森博士本人一樣大小的鹽人,"
+    },
+    {
+      "text": "소금 사람이 그 자리에 서 있었습니다.",
+      "est_sec": 4,
+      "text_en": "was standing in that spot. The face, the",
+      "text_ja": "その場に立っていました。顔も手相も、そ",
+      "text_zh_Hant": "就站在那個位置。"
+    },
+    {
+      "text": "얼굴이며 손금이며, 그날 입고 있던 작업복",
+      "est_sec": 5,
+      "text_en": "palm lines, even the seams of the work clothes",
+      "text_ja": "の日着ていた作業着の縫い目まで同じでした。手順",
+      "text_zh_Hant": "臉孔、掌紋,連當天穿的工作服縫線都一模一樣。"
+    },
+    {
+      "text": "재봉선까지 똑같았죠. 절차대로라면 정오까지",
+      "est_sec": 5,
+      "text_en": "she'd worn that day — all identical. Procedure required",
+      "text_ja": "通りなら正午までに壊さなければならなかったのに、",
+      "text_zh_Hant": "按程序應該在中午前銷毀,"
+    },
+    {
+      "text": "부숴야 했는데, 박사 본인이 부수는 걸",
+      "est_sec": 4,
+      "text_en": "destroying it by noon, but the doctor herself",
+      "text_ja": "博士本人が壊すことを拒否しました。「あれは…",
+      "text_zh_Hant": "但博士本人拒絕動手。「那個…"
+    },
+    {
+      "text": "거부했습니다. 「저거… 저예요. 저걸 어떻게",
+      "est_sec": 5,
+      "text_en": "refused. 「That's… me. How am I supposed to destroy that?」",
+      "text_ja": "私です。あれをどうやって壊すんですか」",
+      "text_zh_Hant": "…是我。那要我怎麼銷毀?」"
+    },
+    {
+      "text": "부숩니까」 정오가 가까워지자 소금 표면에",
+      "est_sec": 5,
+      "text_en": "As noon approached, fine cracks began to",
+      "text_ja": "正午が近づくと、塩の表面に細かいひびが入り始めました。",
+      "text_zh_Hant": "接近中午時,鹽的表面開始出現細微裂痕。",
+      "emphasis": "부숩니까"
+    },
+    {
+      "text": "미세한 균열이 가기 시작했습니다. 온도계는",
+      "est_sec": 5,
+      "text_en": "spread across the salt surface. The thermometer read",
+      "text_ja": "温度計はちょうど摂氏四十一点三",
+      "text_zh_Hant": "溫度計正好顯示攝"
+    },
+    {
+      "text": "정확히 섭씨 사십일 점 삼 도를 가리키고",
+      "est_sec": 5,
+      "text_en": "exactly 41.3 degrees Celsius. At that moment,",
+      "text_ja": "度を示していました。その瞬間、無線から聞",
+      "text_zh_Hant": "氏四十一點三度。就在那一刻,"
+    },
+    {
+      "text": "있었고요. 그 순간 무전 속 클라센 박사",
+      "est_sec": 5,
+      "text_en": "Dr. Klaassen's voice on the radio simply",
+      "text_ja": "こえていたクラッセン博士の声がそのまま途切れました。",
+      "text_zh_Hant": "無線電裡克拉森博士的聲音戛然而止,"
+    },
+    {
+      "text": "목소리가 그대로 끊겼습니다. 말을 하다가…",
+      "est_sec": 5,
+      "text_en": "cut off, mid-sentence. By the time the",
+      "text_ja": "話している途中で…そのまま途切れたんです。",
+      "text_zh_Hant": "說到一半就……斷了。"
+    },
+    {
+      "text": "그냥 끊긴 거죠. 파쇄반이 도착했을 땐",
+      "est_sec": 4,
+      "text_en": "Crushers arrived, the footprints just stopped dead",
+      "text_ja": "破砕班が到着した時には、足跡",
+      "text_zh_Hant": "粉碎班趕到時,腳印就在"
+    },
+    {
+      "text": "발자국만 그 자리에서 뚝 끊겨 있었고, 소금",
+      "est_sec": 5,
+      "text_en": "in that one spot, and the salt figure's",
+      "text_ja": "がその場でぷつりと途切れていて、塩の人の表面は",
+      "text_zh_Hant": "那個位置突然中斷,而鹽人的表"
+    },
+    {
+      "text": "사람 쪽 표면은 이미 살갗처럼 부드러워져",
+      "est_sec": 5,
+      "text_en": "surface had already gone soft, like skin.",
+      "text_ja": "すでに肌のように柔らかくなっていました。",
+      "text_zh_Hant": "面早已變得像皮膚一樣柔軟。"
+    },
+    {
+      "text": "있었습니다. 지금 사이트에 남아 있는 건 그",
+      "est_sec": 5,
+      "text_en": "What's left at the site now is that person. The memories,",
+      "text_ja": "今サイトに残っているのは、その人です。記憶も、話し方も、",
+      "text_zh_Hant": "現在留在站點的,就是那個人。記憶、說話方式,"
+    },
+    {
+      "text": "사람입니다. 기억도, 말투도, 예전에 다치고",
+      "est_sec": 5,
+      "text_en": "the speech patterns, even old scars from past injuries — all",
+      "text_ja": "以前負って残った傷跡までそのままです。再",
+      "text_zh_Hant": "甚至以前受傷留下的疤痕都完好無缺。"
+    },
+    {
+      "text": "남은 흉터까지 그대로고요. 재수용 절차를",
+      "est_sec": 5,
+      "text_en": "intact. They tried to initiate reacquisition, but there was no",
+      "text_ja": "収容手続きを試みようとしましたが、対象がいま",
+      "text_zh_Hant": "想要啟動再收容程序,卻找不"
+    },
+    {
+      "text": "걸어보려 했지만 대상이 없었습니다 — 사라진",
+      "est_sec": 5,
+      "text_en": "subject to reacquire — it wasn't that she'd disappeared, only that",
+      "text_ja": "せんでした — 消えたのではなく、場所が入れ替",
+      "text_zh_Hant": "到對象——因為她不是消失了,只是位置被替換了而已。"
+    },
+    {
+      "text": "게 아니라, 자리를 바꾼 거였으니까요. 이",
+      "est_sec": 5,
+      "text_en": "a place had been traded. Whether this person is really Dr.",
+      "text_ja": "わっただけだったからです。この人が本当にクラッ",
+      "text_zh_Hant": "這個人是不是真的克拉森博士,"
+    },
+    {
+      "text": "사람이 정말 클라센 박사인지, 재단은 지금도…",
+      "est_sec": 5,
+      "text_en": "Klaassen is something the Foundation still… hasn't been able to decide.",
+      "text_ja": "セン博士なのか、財団は今も…結論を出せずにいます。",
+      "text_zh_Hant": "基金會至今……仍未能下結論。"
+    },
+    {
+      "text": "결론을 못 냈습니다. 객체 등급은 세이프로",
+      "est_sec": 5,
+      "text_en": "The object class remains Safe. The containment method is",
+      "text_ja": "オブジェクトクラスはセーフのまま維持されています。",
+      "text_zh_Hant": "對象等級目前仍維持為safe。畢"
+    },
+    {
+      "text": "유지되고 있습니다. 격리 방법은 확실하니까요.",
+      "est_sec": 5,
+      "text_en": "certain, after all. The only problem is that people can't",
+      "text_ja": "格納方法は確実ですからね。問題は、その方",
+      "text_zh_Hant": "竟收容方法是確定的。問題只在於,人"
+    },
+    {
+      "text": "문제는 그 방법을, 사람이 못 지킨다는",
+      "est_sec": 4,
+      "text_en": "stick to it. Oh, and from what I",
+      "text_ja": "法を人が守れないというだけです。ああ、",
+      "text_zh_Hant": "做不到遵守那個方法。啊,對了,"
+    },
+    {
+      "text": "것뿐이죠. 아, 그리고 창고 쪽 얘기를",
+      "est_sec": 4,
+      "text_en": "heard around the storage wing, SCP-294 has been",
+      "text_ja": "それと倉庫のほうの話を聞くと、SCP-2",
+      "text_zh_Hant": "聽倉庫那邊的人說,SCP-2"
+    },
+    {
+      "text": "들으니, SCP-294도 무에서 무언가를",
+      "est_sec": 5,
+      "text_en": "compared to this a few times too, since it",
+      "text_ja": "94も無から何かを作り出す部類だとして何",
+      "text_zh_Hant": "94也因為同樣是無中生有那一類"
+    },
+    {
+      "text": "만들어내는 부류라며 몇 번 비교됐다고",
+      "est_sec": 4,
+      "text_en": "also makes something out of nothing. Though",
+      "text_ja": "度か比較されたそうです。ただ294は",
+      "text_zh_Hant": "而被拿來比較過幾次。只是2"
+    },
+    {
+      "text": "하더군요. 다만 294는 시킨 대로 만들고,",
+      "est_sec": 5,
+      "text_en": "apparently the difference is, 294 makes what it's told to,",
+      "text_ja": "指示通りに作るのに対し、こちらは指示しなくても",
+      "text_zh_Hant": "94是照指示製造,而這個則是不用吩"
+    },
+    {
+      "text": "이쪽은 시키지 않아도 알아서 베낀다는 차이가",
+      "est_sec": 5,
+      "text_en": "while this one copies things on its own, unasked.",
+      "text_ja": "勝手に写し取るという違いがあるとのことです。",
+      "text_zh_Hant": "咐也會自己複製,兩者有這個差別。"
+    },
+    {
+      "text": "있답니다. 부서진 신의 교회 쪽에서 이 현상에",
+      "est_sec": 5,
+      "text_en": "There are indications the Church of the Broken God",
+      "text_ja": "「壊れた神の教会」側がこの現象に関心を示した",
+      "text_zh_Hant": "也有跡象顯示,破碎神教會對這個"
+    },
+    {
+      "text": "관심을 보였다는 정황도 있습니다. 접촉 없이",
+      "est_sec": 5,
+      "text_en": "has taken an interest in this phenomenon as well, saying",
+      "text_ja": "という情況もあります。接触なしに形をその",
+      "text_zh_Hant": "現象表示出興趣,說是不經接觸就複製形態這點,"
+    },
+    {
+      "text": "형태를 그대로 복제하는 게, 자기네가 말하는",
+      "est_sec": 5,
+      "text_en": "that copying a form without contact resembles some principle",
+      "text_ja": "まま複製するのが、自分たちの言うある原理に",
+      "text_zh_Hant": "和他們口中的某種原理很相似。"
+    },
+    {
+      "text": "어떤 원리와 닮았다면서요. 정확히 뭘 원하는",
+      "est_sec": 5,
+      "text_en": "of their own. Exactly what they want, the Foundation",
+      "text_ja": "似ているとのことです。正確に何を望んでいるのかは、",
+      "text_zh_Hant": "他們究竟想要什麼,"
+    },
+    {
+      "text": "건지는, 재단도 아직 파악 못 했습니다.",
+      "est_sec": 5,
+      "text_en": "hasn't been able to work out yet either.",
+      "text_ja": "財団もまだ把握できていません。",
+      "text_zh_Hant": "基金會目前也還沒摸清楚。"
+    },
+    {
+      "text": "사이트-395 서고 쪽에 확인해보니, 이런",
+      "est_sec": 5,
+      "text_en": "When I checked with Site-395's archive, they said this",
+      "text_ja": "サイト-395の資料室に確認してみると、",
+      "text_zh_Hant": "向395號站點的資料室確認過後,"
+    },
+    {
+      "text": "신원 미확정 보고가 이번이 처음은 아니라고",
+      "est_sec": 5,
+      "text_en": "wasn't the first time an unconfirmed-identity report like this",
+      "text_ja": "こうした身元未確定の報告は今回が初めてで",
+      "text_zh_Hant": "對方說這種身分未確定的報"
+    },
+    {
+      "text": "하더군요. 최근 들어선 아타카마 쪽",
+      "est_sec": 4,
+      "text_en": "had come in. And lately, similar reports",
+      "text_ja": "はないそうです。最近ではアタカマ",
+      "text_zh_Hant": "告這次並不是第一次。最近"
+    },
+    {
+      "text": "관측소에서도, 비슷한 인원 교체 보고가",
+      "est_sec": 4,
+      "text_en": "of personnel being swapped out have reportedly started coming",
+      "text_ja": "側の観測所からも、似たような人員入れ",
+      "text_zh_Hant": "聽說阿塔卡馬那邊的觀測站,"
+    },
+    {
+      "text": "들어오기 시작했다고 하고요. 그 열두 장 중",
+      "est_sec": 5,
+      "text_en": "in from an observation post in the Atacama, too.",
+      "text_ja": "替わりの報告が入り始めているとのことです。",
+      "text_zh_Hant": "也開始傳出類似的人員替換報告。"
+    },
+    {
+      "text": "어디에도, 아직 아무것도 안 적혀 있습니다.",
+      "est_sec": 5,
+      "text_en": "Not one of those twelve pages has anything written on",
+      "text_ja": "その十二ページのどこにも、まだ何も書かれていません。",
+      "text_zh_Hant": "那十二頁裡沒有一頁寫上任何東西。"
+    },
+    {
+      "text": "다음 장에 뭐라고 적어야 할지, 담당자도 아직",
+      "est_sec": 5,
+      "text_en": "it yet. It seems the person in charge still hasn't",
+      "text_ja": "次のページに何を書けばいいのか、担当者",
+      "text_zh_Hant": "看來負責的人還沒決定下一頁該寫什麼。"
+    },
+    {
+      "text": "못 정한 모양입니다. 이 사건은 지금,",
+      "est_sec": 4,
+      "text_en": "decided what to write on the next one.",
+      "text_ja": "もまだ決めかねているようです。この事件は今、",
+      "text_zh_Hant": "這起事件目前,只以SCP"
+    },
+    {
+      "text": "SCP-9057이라는 문서 번호로만 남아",
+      "est_sec": 5,
+      "text_en": "Right now, this case is on file only under",
+      "text_ja": "SCP-9057という文書番号だけで残っています。",
+      "text_zh_Hant": "-9057這個文件編號存在。",
+      "emphasis": "SCP-9057"
+    },
+    {
+      "text": "있습니다. 여러분이라면, 그 소금 사람을 원래",
+      "est_sec": 5,
+      "text_en": "the designation SCP-9057. If it were you, would you call",
+      "text_ja": "皆さんなら、あの塩の人を元いた場",
+      "text_zh_Hant": "如果是你,你會把那個鹽人叫回原本的位置嗎?"
+    },
+    {
+      "text": "있던 자리로 부르시겠습니까? 저는 아직… 뭐가",
+      "est_sec": 5,
+      "text_en": "that salt person back to where they used to stand?",
+      "text_ja": "所に呼び戻しますか?私はまだ…何が正しいのかよ",
+      "text_zh_Hant": "我到現在……還是不太清楚什麼才是對的。"
+    },
+    {
+      "text": "맞는 건지 잘 모르겠습니다. 혹시 비슷하게",
+      "est_sec": 5,
+      "text_en": "I still… don't quite know what's right. Have you ever",
+      "text_ja": "く分かりません。もしかして、自分の居場所が",
+      "text_zh_Hant": "你是否也曾有過那種、"
+    },
+    {
+      "text": "자리가 바뀐 것 같은 느낌, 받아보신 적",
+      "est_sec": 5,
+      "text_en": "had a feeling like your own place had been",
+      "text_ja": "そっと入れ替わったような感覚、感じたことはありますか?",
+      "text_zh_Hant": "自己的位置好像被悄悄換掉的感覺?"
+    },
+    {
+      "text": "있으신가요? 있다면 그 순간이 언제였는지,",
+      "est_sec": 5,
+      "text_en": "quietly swapped out? If so, I'd love it if",
+      "text_ja": "あるなら、それがいつだったのか、",
+      "text_zh_Hant": "如果有的話,希望你能在留"
+    },
+    {
+      "text": "댓글에 한번 남겨주시면 반갑겠습니다. 이런",
+      "est_sec": 5,
+      "text_en": "you left a comment about when that moment was.",
+      "text_ja": "コメントで教えていただけると嬉しいです。",
+      "text_zh_Hant": "言告訴我那是什麼時候。這類紀錄,"
+    },
+    {
+      "text": "기록들, 발견되는 대로 계속 정리해서 가져오겠습니다.",
+      "est_sec": 6,
+      "text_en": "I'll keep digging up records like this and bringing them to you.",
+      "text_ja": "こういう記録、見つかり次第また整理してお持ちします。",
+      "text_zh_Hant": "只要找到,我都會繼續整理帶來給大家。"
+    }
+  ],
+  "scenes": [
+    {
+      "prompt": "extreme close-up of two identical desert darkling beetles side by side on cracked salt ground, one glossy and alive with legs mid-crawl, the other a pure white salt-crystal duplicate frozen mid-step with identical leg joints; beetles fill over seventy percent of frame; low three-quarter macro angle; single beam of cold pre-dawn light from the side; fine salt grains, faint mist tendrils; deep black background, cool teal-cyan glow on the crystal beetle; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "close-up of a weathered site-boundary marker post standing alone on a cracked salt flat at dawn, thin fog curling low around its base, a small warning plate bolted to it; post fills over sixty percent of frame; low frontal angle; single beam of pale dawn light through fog; rusted metal, salt-crusted ground; deep black background fading into mist, teal-cyan rim glow; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "extreme close-up of a human hand-shaped salt crystal cast resting on cracked salt ground, fingerprint ridges rendered in perfect crystalline detail; the cast fills over seventy percent of frame; low three-quarter angle; single beam of harsh work-light from above; fine salt crystal texture, faint glinting facets; deep black background, teal-cyan glow along the fingers; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "close-up of an empty specimen case under a work lamp, a single small white salt-crystal beetle resting motionless where a live one used to be, the case door left open; case and beetle fill over sixty-five percent of frame; flat overhead angle; single lamp glow from above; scratched glass, salt dust; deep black background, teal-cyan lamp glow; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "low-angle close-up of a gloved hand swinging a hammer down onto a glowing salt-crystal duplicate at dawn, the crystal mid-shatter into fine shards; hand, hammer and crystal fill over seventy percent of frame; low dramatic angle; single beam of cold dawn light from behind; scattered salt shards, worn glove leather; deep black background, teal-cyan glow on the shattering crystal; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "extreme close-up of a patrol truck tire track pressed into cracked salt ground, one groove rendered in solid pale salt crystal while the rest remains ordinary sand; the track fills over seventy percent of frame; flat overhead angle; single beam of harsh floodlight; fine grain texture, scattered pebbles; deep black background, teal-cyan glow along the crystallized groove; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "close-up of a researcher's hand under a desk lamp, holding a small salt-crystal specimen well past a blinking red countdown timer on the desk beside it; hand and specimen fill over sixty-five percent of frame; low three-quarter angle; single desk-lamp glow; worn notebook pages, dust motes; deep black background, teal-cyan glow from the specimen; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "hero shot of a full human-sized salt-crystal figure standing alone on cracked salt ground at dawn, its face, palm lines and clothing seams rendered in exact crystalline detail, motionless; figure fills over seventy-five percent of frame; low hero angle; single strong beam of dawn light from behind; fine salt texture, faint mist at the feet; deep black background, vivid teal-cyan rim light; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "close-up of an analog thermometer reading exactly 41.3 on its dial beside a silent handheld radio with its display dark, both resting on cracked salt ground; thermometer and radio fill over sixty-five percent of frame; flat overhead angle; single harsh midday-adjacent light; fine dust, hairline cracks spreading in the salt beneath them; deep black background, teal-cyan glow on the dial; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "close-up of a single set of footprints in salt ground that end abruptly mid-stride, beside them a salt-crystal human figure whose surface has begun to look soft and skin-like instead of crystalline; footprints and figure fill over seventy percent of frame; low three-quarter angle; single beam of dawn light; fine cracked salt texture; deep black background, teal-cyan rim glow on the figure; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "close-up of an open case file stamped with an unresolved-identity seal, resting beside a stack of twelve blank duty-log pages fanned open on a bare desk under a single hanging lamp; file and pages fill over seventy percent of frame; flat overhead angle; single lamp as key light; aged paper texture, faint dust; deep black background, teal-cyan lamp glow; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "close-up of a hand-lettered assignment board pinned to a dark wall, listing three short containment rules in worn chalk, one rule circled twice in red; board fills over sixty-five percent of frame; flat frontal angle; single spotlight from above; worn wood, chalk dust, faint smudges; deep black background, teal-cyan spotlight pool; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    }
+  ],
+  "background": {
+    "id": "scp-9057_bg",
+    "kind": "image",
+    "reuse": false,
+    "aspect": "16:9",
+    "resolution": "1920x1080",
+    "prompt": "wide-close shot of a cracked salt flat at dawn under thin coastal fog, a single human-sized salt-crystal figure standing motionless at center with faint hairline cracks across its surface; figure and salt ground fill over sixty percent of frame; low three-quarter angle; single beam of pale dawn light breaking through the fog from behind; fine salt crystal texture, drifting mist, scattered footprints leading up to the figure; deep black background dissolving into fog, vivid teal-cyan rim glow on the figure; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere",
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion"
+  },
+  "thumbnail": {
+    "hook": "hero close-up of a human-sized salt-crystal figure standing on cracked salt ground at dawn, its face rendered in exact crystalline detail with faint hairline cracks spreading across the cheek, positioned on the right two-thirds with the left third dark negative space; figure fills over seventy-five percent of frame; single strong teal-cyan rim light from behind; fine salt texture, thin fog at its feet; deep near-black background; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere",
+    "hook_alt": [
+      "extreme close-up on the cracked, glowing face of a salt-crystal human figure at dawn, eyes closed, faint teal-cyan light bleeding through the hairline cracks; face fills over seventy percent of frame, positioned right third, left third dark negative space; single strong rim light from behind; fine crystal texture; deep black background; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere",
+      "close-up of a single set of footprints stopping abruptly beside a full salt-crystal human figure on cracked salt ground at dawn, the figure's surface softening at the edges; footprints and figure fill over seventy percent of frame, positioned right two-thirds, left third dark negative space; single teal-cyan rim light from behind; fine salt texture, thin fog; deep black background; dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color (teal-cyan), strong rim light, cinematic low angle, grain-free, no text anywhere"
+    ],
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion",
+    "text_safe_area": "left third",
+    "resolution": "1280x720"
+  },
+  "platforms": {
+    "youtube": {
+      "title": "나미브 사막 안개관측소에서, 클라센 박사가 자기 자신에게 자리를 빼앗긴 사건 [SCP-9057]",
+      "title_form": "피해형",
+      "thumbnail_text": "베끼는 소금",
+      "thumbnail_quote": "- 저거… 저예요. 저걸 어떻게",
+      "tags": [
+        "SCP",
+        "SCP재단",
+        "SCP-294",
+        "괴담",
+        "미스터리",
+        "무서운이야기"
+      ],
+      "chapters": [
+        "00:00 열두 장의 빈 페이지",
+        "00:05 나미브 사막, 안개와 딱정벌레",
+        "00:39 소금 결정 벌레, 첫 관측",
+        "01:44 사이트-395, 격리 절차 확립",
+        "02:13 D계급 실험, 소금 손",
+        "02:57 파괴 시한을 넘기다",
+        "03:35 기동특무부대 세타-24 투입",
+        "04:19 클라센 박사 부임",
+        "05:03 파괴를 미루기 시작하다",
+        "05:33 박사 본인의 소금 복제",
+        "06:01 정오, 파괴를 거부하다",
+        "06:40 재수용 실패",
+        "07:10 세이프 등급, SCP-294 비교",
+        "07:47 부서진 신의 교회와 아타카마"
+      ],
+      "description": "나미브 사막 안개 연구소 이야기입니다. 밤새 소금 바닥에 닿은 것은, 새벽이면 소금으로 된 복제와 나란히 눕습니다.\n\n※ SCP 재단 세계관 기반 오리지널 창작 · 허구의 이야기입니다\n※ CC BY-SA 3.0 · 원작: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP재단 #괴담 #무서운이야기 #미스터리",
+      "localizations": {
+        "en": {
+          "title": "At a Namib Desert Fog Station, Dr. Klaassen Lost Her Own Place to Herself [SCP-9057]",
+          "description": "The story of a fog research outpost in the Namib Desert. Whatever touches the salt flat overnight lies beside a salt-crystal copy of itself by dawn.\n\n※ Original fiction set in the SCP Foundation universe · a work of fiction\n※ CC BY-SA 3.0 · Source: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCPFoundation #creepypasta #horrorstory #mystery"
+        },
+        "ja": {
+          "title": "ナミブ砂漠の霧観測所で、クラッセン博士が自分自身に居場所を奪われた事件 [SCP-9057]",
+          "description": "ナミブ砂漠にある霧研究拠点の話です。夜のうちに塩の地面に触れたものは、夜明けには塩の結晶でできた複製と並んで横たわっています。\n\n※ SCP財団の世界観に基づくオリジナル創作・フィクションです\n※ CC BY-SA 3.0 · 原作: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP財団 #怪談 #ホラー #ミステリー"
+        },
+        "zh-Hant": {
+          "title": "納米比沙漠霧氣觀測站,克拉森博士被自己奪走了位置的事件 [SCP-9057]",
+          "description": "納米比沙漠一處霧氣研究站的故事。夜裡碰觸鹽地的東西,到了黎明就會和一個鹽結晶複製品並排躺著。\n\n※ 基於SCP基金會世界觀的原創作品,純屬虛構\n※ CC BY-SA 3.0 · 原作: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP基金會 #怪談 #恐怖故事 #懸疑"
+        }
+      },
+      "pinned_comment": "여러분이라면, 그 소금 사람을 원래 자리로 부르셨을까요? 댓글로 살짝 들려주시면 재밌을 것 같아요.",
+      "playlist": "SCP 아카이브 (전편 듣기)"
+    }
+  },
+  "credit": "SCP 재단 세계관 기반 오리지널 창작 · 허구 · CC BY-SA 3.0",
+  "content_rating": "teen",
+  "notes": "SCP 아카이브 · 16:9 롱폼 · 장면 전환 배경 + 자막 번인 · 단일 내레이터 · 완결형."
+}
