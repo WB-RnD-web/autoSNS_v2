@@ -1,0 +1,102 @@
+{
+  "date": "2026-09-13",
+  "topic": "fortune",
+  "privacy": "public",
+  "topic_keyword": "오늘의 종합운 띠 랭킹",
+  "headline": "오늘 소띠 종합운 96점, 열두 띠 중 1위",
+  "hook_title": "오늘 소띠만 96점 열림",
+  "accent": "#C9A24B",
+  "loop_line": "오늘, 그 한 띠 이야기가 다시 시작됩니다",
+  "thumbnail_hook": "Silhouette of an ox standing atop golden auspicious clouds at dawn, traditional Korean minhwa folk-art style, amethyst purple sky with fading stars turning into golden sunrise light, no human face, no text in image, no words, mystical atmospheric lighting, traditional Korean folk art",
+  "thumbnail_text": "오늘 1위 소띠 96점",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "띠별 운세",
+      "ghost": "FORTUNE",
+      "lines": ["오늘", "딱 한 띠만", "운이 터져요"],
+      "highlight": "한 띠",
+      "brand": "일상공감뉴스 · 운세",
+      "narration": "오늘, 열두 띠 중에서 유독 한 띠만 흐름이 크게 열립니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 종합운 3위부터",
+      "points": ["3위 <b>돼지띠</b> — 뜻밖의 좋은 소식", "2위 <b>호랑이띠</b> — 자신감이 차오르는 날"],
+      "brand": "일상공감뉴스 · 운세",
+      "narration": "3위는 돼지띠, 2위는 호랑이띠인데, 1위는 잠시 후 공개할게요."
+    },
+    {
+      "type": "stat",
+      "label": "종합운 1위 · 소띠",
+      "prefix": "",
+      "suffix": "점",
+      "from": 0,
+      "to": 96,
+      "bar": true,
+      "sub": "1985·1997·2009년생 — 오늘 흐름을 잡는 <b>소띠</b>",
+      "brand": "일상공감뉴스 · 운세",
+      "narration": "1위는 소띠, 85년생과 97년생이라면 오늘 지수가 96점입니다."
+    },
+    {
+      "type": "gauge",
+      "label": "소띠 상승폭",
+      "from": 1,
+      "to": 2,
+      "unit": "배",
+      "sub": "평소보다 <b>2배</b> 순조로운 하루",
+      "brand": "일상공감뉴스 · 운세",
+      "narration": "오늘 일진과 소띠가 육합을 이루며 전체적으로 두 배는 순조롭습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘의 행운 팁",
+      "points": ["행운의 색 <b>노랑</b> · 숫자 <b>2</b>", "<b>양띠</b>는 휴식 지수 UP · 오늘은 천천히"],
+      "brand": "일상공감뉴스 · 운세",
+      "narration": "그래서 양띠라면 오늘은 속도를 조금만 줄이면 오히려 이득입니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "이번 주 행운의 로또 번호",
+      "points": ["<b>2 · 8 · 10 · 22 · 33 · 38</b>", "재미로 뽑아 본 번호예요 · 캡처해 두세요"],
+      "brand": "일상공감뉴스 · 운세",
+      "narration": "이번 주 행운의 로또 번호는, 2, 8, 10, 22, 33, 38입니다."
+    },
+    {
+      "type": "statement",
+      "text": "당신 띠는 오늘 몇 위였나요? 댓글에 띠만 적어 주세요",
+      "highlight": "몇 위",
+      "brand": "일상공감뉴스 · 운세",
+      "narration": "당신의 띠는 오늘 몇 위였는지, 댓글에 띠만 적어 주세요."
+    }
+  ],
+  "sources": ["전통 띠 운세(명리) 기반", "오늘의 일진 육합 관계 참고"],
+  "credit": "재미로 보는 오늘의 운세 · 명리 일진 참고",
+  "platforms": {
+    "youtube": {
+      "title": "오늘 소띠만 96점 열림 #shorts",
+      "description": "오늘 소띠 종합운 96점, 열두 띠 중 1위\n※ 재미로 보는 운세입니다\n\n#오늘의운세 #띠별운세 #종합운 #운세 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "This Zodiac Sign Scores 96 Out Of 100 Today",
+          "description": "The Ox zodiac sign's overall luck score jumps to 96 out of 100 today.\n※ For entertainment purposes only\n\n#shorts #koreanzodiac #dailyhoroscope"
+        },
+        "ja": {
+          "title": "今日の総合運1位はまさかのこの干支",
+          "description": "今日は丑年生まれの総合運指数が96点まで上昇しました。\n※ 娯楽目的の占いです\n\n#shorts #今日の運勢 #干支占い #総合運"
+        },
+        "zh-Hant": {
+          "title": "今天總運第一名是這個生肖",
+          "description": "今天牛年生肖的綜合運勢指數衝到96分。\n※ 純屬娛樂占卜\n\n#shorts #今日運勢 #生肖運勢 #總運"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "오늘 소띠만 96점 열림\n※ 재미로 보는 운세\n\n#오늘의운세 #띠별운세 #종합운 #운세 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "오늘 소띠만 96점 열림\n※ 재미로 보는 운세"
+    }
+  },
+  "notes": "모션그래픽 7장면(로또 포함) · 단일 내레이터 · 배경음 없음 · 엔터테인먼트(재미) 운세 · MODE=daily."
+}
