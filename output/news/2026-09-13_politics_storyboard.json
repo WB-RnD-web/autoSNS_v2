@@ -1,0 +1,96 @@
+{
+  "date": "2026-09-13",
+  "topic": "politics",
+  "privacy": "public",
+  "topic_keyword": "김민석 수첩 메모",
+  "headline": "김민석 대표 수첩 메모를 둘러싼 여야 공방",
+  "hook_title": "오세훈 1심 결과 전에 나온 명단",
+  "accent": "#8FB0C9",
+  "thumbnail_hook": "Empty South Korean National Assembly plenary hall at night, a closed leather notebook lying on a wooden desk under a single spotlight, scattered ballot papers and a gavel nearby, no people, no text, cinematic dramatic shadows",
+  "thumbnail_text": "이름 옆에 적힌 한 단어",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "포착",
+      "ghost": "POLITICS",
+      "lines": ["국회 카메라에", "잡힌 메모", "포착됐다"],
+      "highlight": "포착됐다",
+      "brand": "일상공감뉴스 · 정치",
+      "narration": "국회 본회의장에서, 한 정치인의 수첩이 카메라에 포착됐습니다."
+    },
+    {
+      "type": "stat",
+      "label": "오세훈 1심 벌금",
+      "prefix": "",
+      "suffix": "만원",
+      "from": 0,
+      "to": 1000,
+      "bar": true,
+      "sub": "<b>정치자금법</b> 위반, 항소심 중",
+      "brand": "일상공감뉴스 · 정치",
+      "narration": "오세훈 서울시장은 정치자금법 위반으로 1심에서 벌금형을 선고받았고, 지금은 항소심이 진행 중입니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "수첩 속 메모",
+      "points": ["여권 인사 이름 나열", "야권 의원 옆엔 <b>'OUT'</b>"],
+      "brand": "일상공감뉴스 · 정치",
+      "narration": "수첩에는 여권 인사들의 이름과 함께, 야권 의원 옆에 적힌 한 단어가 논란이 됐습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "여야 반응",
+      "points": ["국민의힘 — <b>사법부 겁박</b>이라 비판", "민주당 — <b>정치적 전망</b>일 뿐이라 반박"],
+      "brand": "일상공감뉴스 · 정치",
+      "narration": "국민의힘은 사법부에 대한 겁박이라 비판했고, 민주당은 단순한 정치적 전망이라고 반박했습니다."
+    },
+    {
+      "type": "stat",
+      "label": "2021년 보궐선거비",
+      "prefix": "",
+      "suffix": "억원",
+      "from": 0,
+      "to": 570,
+      "bar": true,
+      "sub": "이번에도 <b>세금</b>이 쓰일 수 있다",
+      "brand": "일상공감뉴스 · 정치",
+      "narration": "만약 시장이 바뀐다면, 지난번처럼 수백억 원의 세금이 다시 쓰일 수 있습니다."
+    },
+    {
+      "type": "statement",
+      "text": "이 메모, 여러분은 어떻게 보셨나요?",
+      "highlight": "메모",
+      "brand": "일상공감뉴스 · 정치",
+      "narration": "이번 메모를 두고 벌어진 논쟁, 여러분은 어떻게 보고 계신가요?"
+    }
+  ],
+  "sources": ["아주경제", "세계일보", "뉴스핌", "매일신문"],
+  "credit": "출처 아주경제·세계일보·뉴스핌 등",
+  "platforms": {
+    "youtube": {
+      "title": "오세훈 1심 결과 전에 나온 명단 #shorts",
+      "description": "김민석 더불어민주당 대표의 수첩 메모가 국회 카메라에 포착되며 여야 공방으로 번졌습니다.\n출처 아주경제·세계일보·뉴스핌 등\n\n※ 사실관계는 보도 시점 기준이며, 수사·재판 중인 사안은 확정된 내용이 아닙니다.\n\n#김민석 #오세훈 #서울시장 #국회 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "Seoul Mayor's Court Case Sparked a Political Notebook War",
+          "description": "A notebook photo caught in Korea's National Assembly ignited a political clash between the ruling and opposition parties.\nSources: Ajunews, Segye Ilbo, Newspim, and others\n\n※ 사실관계는 보도 시점 기준이며, 수사·재판 중인 사안은 확정된 내용이 아닙니다.\n\n#SeoulMayor #KoreanPolitics #shorts"
+        },
+        "ja": {
+          "title": "1枚のメモを巡り、与野党が激突です",
+          "description": "国会で撮影された手帳のメモ一枚が、与野党の激しい攻防を引き起こしました。\n出典:亜洲経済・世界日報・ニュースピムほか\n\n※ 사실관계는 보도 시점 기준이며, 수사·재판 중인 사안은 확정된 내용이 아닙니다.\n\n#ソウル市長 #韓国政治 #shorts"
+        },
+        "zh-Hant": {
+          "title": "一張筆記照片 引爆國會朝野論戰",
+          "description": "在國會被拍到的一則筆記,引爆了執政黨與在野黨的激烈交鋒。\n資料來源:亞洲經濟、世界日報、Newspim等\n\n※ 사실관계는 보도 시점 기준이며, 수사·재판 중인 사안은 확정된 내용이 아닙니다.\n\n#首爾市長 #韓國政治 #shorts"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "오세훈 1심 결과 전에 나온 명단\n출처 아주경제·세계일보·뉴스핌 등\n\n#김민석 #오세훈 #서울시장 #국회 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "오세훈 1심 결과 전에 나온 명단\n출처 아주경제·세계일보·뉴스핌 등"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음."
+}
