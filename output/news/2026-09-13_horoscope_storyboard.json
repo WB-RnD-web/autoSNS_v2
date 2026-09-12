@@ -1,0 +1,85 @@
+{
+  "date": "2026-09-13",
+  "topic": "horoscope",
+  "privacy": "public",
+  "topic_keyword": "양자리 운 지수 96점 · 초승달 기운",
+  "headline": "오늘 양자리 96점, 초승달 기운에 새 출발 신호",
+  "hook_title": "양자리, 초승달 뜨자 96점",
+  "accent": "#C9A24B",
+  "loop_line": "내일은 또 어떤 별자리에 새 기운이 몰릴지 모릅니다.",
+  "thumbnail_hook": "slender waxing crescent moon aligned beside a glowing Aries ram constellation symbol in a deep indigo starry night sky, soft cosmic glow, mystical mood; no human face, no text in image",
+  "thumbnail_text": "오늘 96점 양자리",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "초승달 기운",
+      "ghost": "STARS",
+      "lines": ["초승달이", "떴습니다", "오늘 딱 하나"],
+      "highlight": "딱 하나",
+      "brand": "일상공감뉴스 · 별자리",
+      "narration": "오늘 새로 뜬 초승달과 함께, 유독 한 별자리에만 기운이 몰립니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 별자리 · 3위부터",
+      "points": ["3위 <b>처녀자리</b> — 꼼꼼함이 통하는 날", "2위 <b>사수자리</b> — 도전이 즐거워지는 날"],
+      "brand": "일상공감뉴스 · 별자리",
+      "narration": "3위는 처녀자리, 2위는 사수자리인데, 1위는 잠시 후 공개합니다."
+    },
+    {
+      "type": "stat",
+      "label": "행운 지수 1위 · 양자리",
+      "prefix": "",
+      "suffix": "점",
+      "from": 0,
+      "to": 96,
+      "bar": true,
+      "sub": "3월21일~4월19일생 · 초승달 기운에 <b>양자리</b> 새 출발",
+      "brand": "일상공감뉴스 · 별자리",
+      "narration": "1위는 양자리, 3월 21일에서 4월 19일 사이 태생이면 오늘 96점입니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘의 행운",
+      "points": ["행운의 색 <b>레드</b> · 숫자 <b>1</b>", "운 열리는 시간 <b>오전 9시</b> · 캡처해 두세요", "<b>게자리</b> — 충전 지수 최고, 오늘은 천천히 가도 좋아요"],
+      "brand": "일상공감뉴스 · 별자리",
+      "narration": "그래서 오늘은 오전 아홉 시쯤 새로운 일을 시작해 보시면 좋겠습니다."
+    },
+    {
+      "type": "statement",
+      "text": "당신 별자리는 몇 위였나요? 댓글로 별자리만 남겨주세요",
+      "highlight": "몇 위",
+      "brand": "일상공감뉴스 · 별자리",
+      "narration": "당신의 별자리는 몇 위였는지, 댓글로 별자리만 남겨 주세요."
+    }
+  ],
+  "sources": ["서양 점성 12별자리 기반", "2026년 9월 13일 초승달(waxing crescent) 위상 참고"],
+  "credit": "재미로 보는 오늘의 별자리 운세",
+  "platforms": {
+    "youtube": {
+      "title": "양자리, 초승달 뜨자 96점 #shorts",
+      "description": "오늘 양자리 96점, 초승달 기운에 새 출발 신호\n※ 재미로 보는 운세입니다\n\n#오늘의별자리 #별자리운세 #운세 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "Aries Scores 96 As New Crescent Moon Rises #shorts",
+          "description": "A fresh crescent moon just rose, and Aries catches the biggest wave of luck today — a fitting 96 out of 100. See the full ranking.\n※ Just for fun — today's horoscope\n\n#TodaysHoroscope #Zodiac #Aries #Shorts #shorts"
+        },
+        "ja": {
+          "title": "牡羊座、三日月の日に96点です #shorts",
+          "description": "新月から昇ったばかりの三日月と共に、牡羊座に大きな運気が巡ってきました。指数はなんと96点です。\n※ 楽しみとしてご覧ください\n\n#今日の星座 #星座占い #おひつじ座 #ショート #shorts"
+        },
+        "zh-Hant": {
+          "title": "牡羊座今天96分,新月剛升起 #shorts",
+          "description": "新月剛升起,牡羊座今天運勢暴衝到96分,是這幾天最強的一天。快來看看完整排行。\n※ 僅供娛樂參考的星座運勢\n\n#今日星座 #星座運勢 #牡羊座 #Shorts #shorts"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "양자리, 초승달 뜨자 96점\n※ 재미로 보는 운세\n\n#오늘의별자리 #별자리운세 #운세 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "양자리, 초승달 뜨자 96점\n※ 재미로 보는 운세"
+    }
+  },
+  "notes": "모션그래픽 5장면 · 단일 내레이터 · 배경음 없음."
+}
