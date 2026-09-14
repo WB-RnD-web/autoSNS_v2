@@ -1,0 +1,1061 @@
+{
+  "date": "2026-09-14",
+  "iso_week": "2026-W38",
+  "topic": "scp",
+  "privacy": "public",
+  "origin": "original",
+  "origin_note": "",
+  "source_url": "",
+  "story_id": "scp-9648",
+  "scp_number": "SCP-9648",
+  "object_class": "Euclid",
+  "codename": "기준자",
+  "number_check": {
+    "checked_at": "2026-09-14",
+    "http_code": "unverified"
+  },
+  "theme": "상위 존재",
+  "nature": "공간",
+  "twist_type": "관측자",
+  "logline": "시베리아 영구동토 붕괴지대에서 발견된 돌문 안쪽 회랑 이야기입니다. 거리계는 늘 같은 숫자를 찍는데, 그 안에 오래 머문 사람일수록 키가 줄어듭니다.",
+  "structure": "연대기형",
+  "opening_move": "장면 하나",
+  "opening_note": "n%6 배정 후보(증언으로 연다·문서의 빈칸)와 n%5 배정 후보(숫자 하나·기록이 아직 이어진다)가 모두 recent_openings·recent_closings 최근 3개와 겹쳐, 오프닝은 장면 하나로, 클로징은 재단의 판단 보류로 대체함.",
+  "closing_move": "재단의 판단 보류",
+  "number_reveal": "앞",
+  "ending_mode": "질문+구독",
+  "fault": "재단",
+  "hook_line": "손전등 하나가, 얼음벽에 반쯤 파묻힌 돌문을 비췄습니다.",
+  "procedures": [],
+  "character": {
+    "name": "보이코",
+    "role": "박사 · 사이트-518 측량팀장",
+    "flaw": "자기 가설을 못 놓는다"
+  },
+  "chain": [
+    {
+      "when": "이 년 전 겨울",
+      "event": "시베리아 야쿠티아 내륙에서 영구동토 한쪽이 무너지며 함몰지가 드러났고, 그 벽에서 사람 손으로 다듬은 돌문이 나왔다.",
+      "because": "",
+      "shot": "얼음벽에 반쯤 파묻힌, 사람 손으로 다듬은 거대한 돌문."
+    },
+    {
+      "when": "확인 직후",
+      "event": "재단이 사이트-518을 세우고 구역을 확보, 격리에 들어갔다. 측량팀이 처음 회랑에 들어가 첫 갈림길까지 사십 미터, 육 분을 걸었다.",
+      "because": "자연 지형이 아니란 게 확인됐기 때문에",
+      "shot": "손전등을 든 측량팀이 좁은 얼음 회랑 안으로 걸어 들어가는 뒷모습."
+    },
+    {
+      "when": "다음 주",
+      "event": "같은 구간을 다시 쟀더니 레인지파인더는 여전히 사십 미터인데, 걷는 시간은 십일 분으로 늘어 있었다.",
+      "because": "첫 기록이 남아 매주 같은 구간을 반복 측정했기 때문에",
+      "shot": "레인지파인더 액정의 '40M' 숫자와 나란히 놓인 손목시계."
+    },
+    {
+      "when": "그 다음 달",
+      "event": "보이코 박사가 새 인원을 넣어 대조군을 만들었지만 처음 온 사람들도 십칠 분이 걸렸다. 가속도계로 재보니 걸음 수는 같은데 보폭만 줄어 있었다.",
+      "because": "사람의 착각인지 확인하려 새 팀을 넣었기 때문에",
+      "shot": "다리에 가속도계를 채운 대원의 발과, 그 옆에 적힌 두 숫자."
+    },
+    {
+      "when": "석 달째",
+      "event": "보이코 박사가 단독 진입 금지 수칙을 어기고 세 번째로 혼자 들어갔다. 나올 때 신장계에 찍힌 키가 신상 기록보다 작았다.",
+      "because": "가설을 스스로 검증하려 재진입 수칙을 어겼기 때문에",
+      "shot": "출입구 신장계 앞에 선 보이코 박사와 벽에 붙은 그의 신상 카드."
+    },
+    {
+      "when": "그 무렵",
+      "event": "현장 사람들이 회랑 끝의 정체 모를 무언가를 '기준자'라고 부르기 시작했다.",
+      "because": "보이코 박사의 키가 준 사실이 퍼졌기 때문에",
+      "shot": "탈의실 게시판에 누군가 손으로 적어 붙인 '기준자'라는 쪽지."
+    },
+    {
+      "when": "비슷한 시기",
+      "event": "D계급 재측정 노출 시험에서도 같은 패턴이 나왔다. 시험을 마친 D-9648이 헐렁해진 신발을 가리키며 짧게 말했다.",
+      "because": "사람 요인을 배제하려 D계급으로 통제 시험을 반복했기 때문에",
+      "shot": "시험을 마치고 나온 D계급 대원의 헐렁해진 신발."
+    },
+    {
+      "when": "그 직후",
+      "event": "기동특무부대 세타-31이 투입돼 회랑 끝까지 정밀 재측정에 나섰고, 그 끝에서 처음으로 거대한 형체를 보았다.",
+      "because": "정밀 재측정을 위해 처음으로 끝까지 도달했기 때문에",
+      "shot": "회랑 끝, 천장까지 닿은 거대한 조각상 같은 형체의 실루엣과 그 앞에 선 왜소한 대원들."
+    },
+    {
+      "when": "같은 날",
+      "event": "그 형체 앞에 오래 머문 대원일수록 신장계 수치가 더 크게 줄어 있었다. 거리도 시간도 아닌, 체류 시간이 기준이었다.",
+      "because": "형체를 발견한 뒤 데이터를 근접도로 다시 정리해봤기 때문에",
+      "shot": "체류 시간과 줄어든 키를 나란히 적은 표, 그 옆에 붙은 대원들 사진."
+    },
+    {
+      "when": "닷새 뒤",
+      "event": "재단이 회랑 진입을 전면 중단시켰지만, 보이코 박사는 이미 그 전 주에 O5 승인 없이 세 번을 더 들어간 뒤였다. 지금 그의 키는 처음보다 구 센티 작고, 그는 여전히 사이트에서 근무 중이다.",
+      "because": "진입할수록 줄어든다는 게 확인됐기 때문에 재단이 뒤늦게 진입을 막았지만",
+      "shot": "봉쇄 테이프가 둘린 돌문과, 예전 사진 속 키와 지금의 키를 나란히 놓은 신상 카드."
+    }
+  ],
+  "retention_beats": [
+    "부서진 신의 교회가 저 형체를 재단보다 먼저 신으로 알고 있었을지 모른다는 정황",
+    "사이트-518 회의는 세이프와 유클리드 사이에서 아직 결론을 못 내렸다",
+    "재측정 결과는 서류상 여전히 사십 미터로만 남아 있다"
+  ],
+  "cameos": [
+    {
+      "number": "SCP-914",
+      "how": "현장 연구원이 회랑을 두고 914에 넣었다 뺀 것 같다고 농담한 것으로 언급됨. 확인된 연관은 아님."
+    },
+    {
+      "number": "SCP-096",
+      "how": "인지위해 대응팀이 초기 대응 수칙을 참고했다는 사실만 언급됨. 실제 해당 사항은 없음."
+    }
+  ],
+  "twist_summary": "관측자의 반전 — 회랑이 길어지는 게 아니라, 그 앞에 다가가 오래 머문 사람의 몸 자체가 회랑 끝의 거대한 형체와 마주할수록 줄어들고 있었다는 반전. 재단이 착오를 확인하려 반복해서 사람을 밀어넣은 재측정 절차 자체가 사람을 깎아낸 원인이었으며, 보이코 박사가 단독 재진입 금지 수칙을 스스로 어기고 세 번을 더 들어간 뒤 키가 구 센티 줄어든 채로 사이트에 남는다.",
+  "narration_full": "손전등 하나가, 얼음벽에 반쯤 파묻힌 돌문을 비췄습니다. 이 년 전 겨울, 시베리아 야쿠티아 내륙 얘기입니다. 영구동토 한쪽이 무너지며, 함몰지 하나가 생겼죠. 지름 수백 미터짜리 구덩이 벽에서, 사람 손으로 다듬은 돌문이 나왔습니다. 자연 지형이 아니란 게 확인되자마자, 재단이 사이트-518을 세우고, 그 구역부터 확보, 격리에 들어갔습니다. 휴메 지수는 특별히 튀지 않았다더군요. 처음엔 그냥 오래된 유적 정도로 봤던 모양이에요. 객체 등급도 세이프. 문제는 안쪽이었습니다. 측량팀이 처음 들어갔을 때, 첫 갈림길까지는 사십 미터였어요. 걷는 데 육 분. 거리계도 걸음도 딱 맞았죠. 그런데 다음 주, 같은 구간을 다시 쟀더니, 레인지파인더는 여전히 사십 미터, 걷는 시간은 십일 분으로 늘어 있었습니다. 「어제도 이만큼 걸었나?」 팀원 하나가 물었는데, 아무도 자신 있게 답을 못 했다더군요. 보이코 박사, 사이트-518 측량팀장이었는데요, 이걸 사람 쪽 착각으로 봤어요. 그래서 새 인원을 넣었습니다. 처음 오는 사람이니 익숙해질 시간도 없었을 텐데, 그들도 십칠 분이 걸렸죠. 아니나 다를까, 걸음 수는 똑같은데 보폭 쪽이 문제였던 겁니다. 다리에 가속도계를 채우고 다시 재보니, 걸음 수는 그대로인데, 보폭만 조금씩 줄어 있었고요. 회랑이 늘어나는 게 아니라, 사람 쪽이 작아지고 있었다는 뜻이었죠. 이 가설을, 보이코 박사는 못 놓았습니다. 표준 절차로는 재진입 시 반드시 두 명 이상, 단독 진입은 금지 — 그는 그걸 어기고, 세 번째로 혼자 들어갔어요. 나올 때 출입구 신장계에 찍힌 키가, 그의 신상 기록보다 일 점 사 센티 작았습니다. 「측정 오차겠죠」 그가 그렇게 보고했다는데… 글쎄요. 그 뒤로 현장 사람들 사이에서, 이름이 하나 생겼죠. 회랑 끝에 뭔가 있다는 걸, 아직 아무도 확인 못 했을 때인데도, 다들 그쪽을 「기준자」라고, 부르기 시작한 겁니다. 자기들이 뭘 재고 있는 건지도, 모른 채로요. D계급 재측정 노출 시험에서도, 같은 패턴이 나왔어요. 시험을 마치고 나온 D-9648이, 남긴 말은 짧았습니다. 「키가 준 것도 준 건데… 신발이 헐렁해요.」 기동특무부대 세타-31이 투입돼, 회랑 끝까지 정밀 재측정에 나섰죠. 무전 기록엔 이렇게 남아 있습니다. 「고정 지점 통과, 계속 진행합니다.」 그리고 삼십 초 뒤. 「…뭔가 있습니다. 사람이 아닙니다.」 천장에 닿을 듯 서 있는, 조각처럼 다듬어진 거대한 형체였어요. 크기도 자세도 사람은 아니었는데, 사람 같은 데가 분명 있었다고 하더군요. 대원들은 그 앞에 오래 머문 순서대로, 신장계 수치가 더 크게 줄어 있었습니다. 거리도 시간도 아니었죠. 딱 하나, 기준자 앞에, 얼마나 서 있었는지, 그게 기준이었던 겁니다. 닷새 뒤 재단은, 회랑 진입을 전면 중단시켰어요. 그런데 보이코 박사는, 이미 그 전 주에, O5 승인 없이 세 번을 더 들어간 뒤였죠. 지금 그의 키는 처음보다 구 센티 작습니다. 더 줄지도, 원래대로 돌아오지도 않고요. 재수용 절차요? 대상이 없는데 뭘 재수용하겠습니까. 그는 지금도 사이트에서, 작아진 키 그대로 근무 중이라고 하네요. 옆 격리동엔 SCP-914가 있다고 들었어요. 현장 연구원 하나가 이 회랑 얘기를 하다가, 「이거, 914에 넣었다 뺀 것 같지 않아요?」 라고 농담을 했다던데 — 물론 확인된 연관은 아닙니다. 인지위해 대응팀도 초기엔, SCP-096 대응 수칙까지 참고했다는데, 여긴 해당 사항이 없었다고 하고요. 부서진 신의 교회 쪽 인물 하나가, 발굴 초기에 굴착 장비를 들고 접근하다, 검거된 적이 있어요. 목적은 아직도 확인이 안 됐습니다. 아마 그쪽은, 저 형체를 신으로 알고 있었던 게 아닐까요… 재단보다 먼저요. 지금도 사이트-518 회의에서는, 이 개체의 등급을 세이프로 계속 둘지, 유클리드로 올릴지 결론을 못 내리고 있어요. 재단 내부에서도 의견이 갈린다고 하고요. 격리 방법을 다시 짜는 회의만, 벌써 몇 차례째입니다. 재측정 결과는요? 여전히 사십 미터. 서류상으로는요. 기준자는, 그 자리에 그대로 있습니다. 혹시 여러분도, 어디 오래 서 있다 나왔더니, 옷이 괜히 헐렁해진 느낌, 받아보신 적 있으신가요? 있으시다면 그게 어디였는지, 댓글로 한번 남겨주시면 좋겠습니다. 이런 기록들, 계속 찾아서 들려드리겠습니다.",
+  "segments": [
+    {
+      "text": "손전등 하나가,",
+      "est_sec": 2,
+      "text_en": "A flashlight beam,",
+      "text_ja": "懐中電灯の光が、",
+      "text_zh_Hant": "一束手电筒光，"
+    },
+    {
+      "text": "얼음벽에 반쯤 파묻힌 돌문을 비췄습니다.",
+      "est_sec": 4,
+      "text_en": "swept over a stone door half-buried in ice.",
+      "text_ja": "氷の壁に半ば埋もれた石の扉を照らしました。",
+      "text_zh_Hant": "照在半埋在冰壁里的石门上。"
+    },
+    {
+      "text": "이 년 전 겨울,",
+      "est_sec": 2,
+      "text_en": "Two winters ago,",
+      "text_ja": "二年前の冬、",
+      "text_zh_Hant": "两年前的冬天，"
+    },
+    {
+      "text": "시베리아 야쿠티아 내륙 얘기입니다.",
+      "est_sec": 4,
+      "text_en": "this happened deep in Siberia's Yakutia.",
+      "text_ja": "シベリア、ヤクーチア内陸での話です。",
+      "text_zh_Hant": "故事发生在西伯利亚雅库特亚内陆。"
+    },
+    {
+      "text": "영구동토 한쪽이 무너지며,",
+      "est_sec": 3,
+      "text_en": "A stretch of permafrost collapsed,",
+      "text_ja": "永久凍土の一角が崩れ、",
+      "text_zh_Hant": "一片永久冻土坍塌，"
+    },
+    {
+      "text": "함몰지 하나가 생겼죠.",
+      "est_sec": 2,
+      "text_en": "leaving behind a sinkhole.",
+      "text_ja": "陥没地ができました。",
+      "text_zh_Hant": "形成了一处陷坑。"
+    },
+    {
+      "text": "지름 수백 미터짜리 구덩이 벽에서,",
+      "est_sec": 4,
+      "text_en": "In the wall of that pit, hundreds of meters wide,",
+      "text_ja": "直径数百メートルの穴の壁から、",
+      "text_zh_Hant": "在这个直径数百米的坑壁上，"
+    },
+    {
+      "text": "사람 손으로 다듬은 돌문이 나왔습니다.",
+      "est_sec": 4,
+      "text_en": "a stone door, clearly hand-carved, emerged.",
+      "text_ja": "人の手で削られた石の扉が現れました。",
+      "text_zh_Hant": "露出了一扇明显经人手雕琢的石门。"
+    },
+    {
+      "text": "자연 지형이 아니란 게 확인되자마자,",
+      "est_sec": 4,
+      "text_en": "The moment it was confirmed not to be natural,",
+      "text_ja": "自然の地形ではないと確認されるやいなや、",
+      "text_zh_Hant": "一确认这并非自然地形，"
+    },
+    {
+      "text": "재단이 사이트-518을 세우고,",
+      "est_sec": 4,
+      "text_en": "the Foundation set up Site-518,",
+      "text_ja": "財団はサイト-518を設立し、",
+      "text_zh_Hant": "基金会便建立了518号站点，"
+    },
+    {
+      "text": "그 구역부터 확보, 격리에 들어갔습니다.",
+      "est_sec": 4,
+      "text_en": "securing and containing the area first.",
+      "text_ja": "その区域から確保、収容に入りました。",
+      "text_zh_Hant": "先对该区域进行了确保与收容。"
+    },
+    {
+      "text": "휴메 지수는 특별히 튀지 않았다더군요.",
+      "est_sec": 4,
+      "text_en": "The Hume levels, apparently, showed nothing unusual.",
+      "text_ja": "ヒューム値は特に異常はなかったそうです。",
+      "text_zh_Hant": "据说休姆指数并无异常。"
+    },
+    {
+      "text": "처음엔 그냥 오래된 유적 정도로 봤던 모양이에요.",
+      "est_sec": 5,
+      "text_en": "At first they figured it was just an old ruin.",
+      "text_ja": "最初はただの古い遺跡程度に見ていたようです。",
+      "text_zh_Hant": "起初大家只当它是个古老遗迹。"
+    },
+    {
+      "text": "객체 등급도 세이프.",
+      "est_sec": 2,
+      "text_en": "Object class: Safe.",
+      "text_ja": "オブジェクトクラスもセーフ。",
+      "text_zh_Hant": "项目等级也定为安全。"
+    },
+    {
+      "text": "문제는 안쪽이었습니다.",
+      "est_sec": 3,
+      "text_en": "The problem was inside.",
+      "text_ja": "問題は内部でした。",
+      "text_zh_Hant": "问题出在里面。"
+    },
+    {
+      "text": "측량팀이 처음 들어갔을 때,",
+      "est_sec": 3,
+      "text_en": "When the survey team first went in,",
+      "text_ja": "測量チームが最初に入ったとき、",
+      "text_zh_Hant": "测量小组第一次进去时，"
+    },
+    {
+      "text": "첫 갈림길까지는 사십 미터였어요.",
+      "est_sec": 4,
+      "text_en": "it was forty meters to the first junction.",
+      "text_ja": "最初の分岐点まで四十メートルでした。",
+      "text_zh_Hant": "到第一个岔口是四十米。"
+    },
+    {
+      "text": "걷는 데 육 분.",
+      "est_sec": 2,
+      "text_en": "Six minutes on foot.",
+      "text_ja": "歩いて六分。",
+      "text_zh_Hant": "步行六分钟。"
+    },
+    {
+      "text": "거리계도 걸음도 딱 맞았죠.",
+      "est_sec": 3,
+      "text_en": "The rangefinder and their steps matched perfectly.",
+      "text_ja": "距離計も歩数もぴったり合っていました。",
+      "text_zh_Hant": "测距仪和步数完全吻合。"
+    },
+    {
+      "text": "그런데 다음 주,",
+      "est_sec": 2,
+      "text_en": "But the following week,",
+      "text_ja": "ところが翌週、",
+      "text_zh_Hant": "但到了下一周，"
+    },
+    {
+      "text": "같은 구간을 다시 쟀더니,",
+      "est_sec": 3,
+      "text_en": "they measured the same stretch again.",
+      "text_ja": "同じ区間を再び測ってみると、",
+      "text_zh_Hant": "再次测量同一段路时，"
+    },
+    {
+      "text": "레인지파인더는 여전히 사십 미터,",
+      "est_sec": 4,
+      "text_en": "The rangefinder still read forty meters,",
+      "text_ja": "レンジファインダーは相変わらず四十メートル、",
+      "text_zh_Hant": "测距仪读数依旧是四十米，"
+    },
+    {
+      "text": "걷는 시간은 십일 분으로 늘어 있었습니다.",
+      "est_sec": 4,
+      "text_en": "but the walk now took eleven minutes.",
+      "text_ja": "歩く時間は十一分に延びていました。",
+      "text_zh_Hant": "但步行时间却变成了十一分钟。"
+    },
+    {
+      "text": "「어제도 이만큼 걸었나?」",
+      "est_sec": 3,
+      "text_en": "「Did we walk this far yesterday?」",
+      "text_ja": "「昨日もこれだけ歩いたっけ?」",
+      "text_zh_Hant": "「昨天也走了这么远吗?」"
+    },
+    {
+      "text": "팀원 하나가 물었는데,",
+      "est_sec": 2,
+      "text_en": "one team member asked,",
+      "text_ja": "あるチーム員が尋ねましたが、",
+      "text_zh_Hant": "队里有人这么问，"
+    },
+    {
+      "text": "아무도 자신 있게 답을 못 했다더군요.",
+      "est_sec": 4,
+      "text_en": "and apparently no one could answer with confidence.",
+      "text_ja": "誰も自信を持って答えられなかったそうです。",
+      "text_zh_Hant": "据说没人能笃定地回答。"
+    },
+    {
+      "text": "보이코 박사, 사이트-518 측량팀장이었는데요,",
+      "est_sec": 5,
+      "text_en": "Dr. Boiko, the survey team lead at Site-518,",
+      "text_ja": "ボイコ博士、サイト-518の測量チーム長でしたが、",
+      "text_zh_Hant": "博伊科博士，518站点的测量组组长，"
+    },
+    {
+      "text": "이걸 사람 쪽 착각으로 봤어요.",
+      "est_sec": 3,
+      "text_en": "chalked it up to human error.",
+      "text_ja": "これを人間側の錯覚だと見ていました。",
+      "text_zh_Hant": "认为这是人的错觉。"
+    },
+    {
+      "text": "그래서 새 인원을 넣었습니다.",
+      "est_sec": 3,
+      "text_en": "So he brought in a fresh crew.",
+      "text_ja": "そこで新しい人員を投入しました。",
+      "text_zh_Hant": "于是他派入了新的人员。"
+    },
+    {
+      "text": "처음 오는 사람이니 익숙해질 시간도 없었을 텐데,",
+      "est_sec": 5,
+      "text_en": "First-timers, with no time to get used to it,",
+      "text_ja": "初めて来た人たちで、慣れる時間もなかったはずなのに、",
+      "text_zh_Hant": "都是初次进入,没时间产生适应，"
+    },
+    {
+      "text": "그들도 십칠 분이 걸렸죠.",
+      "est_sec": 3,
+      "text_en": "and yet they took seventeen minutes too.",
+      "text_ja": "彼らも十七分かかりました。",
+      "text_zh_Hant": "结果他们也花了十七分钟。"
+    },
+    {
+      "text": "아니나 다를까,",
+      "est_sec": 2,
+      "text_en": "Sure enough,",
+      "text_ja": "案の定、",
+      "text_zh_Hant": "果然，"
+    },
+    {
+      "text": "걸음 수는 똑같은데 보폭 쪽이 문제였던 겁니다.",
+      "est_sec": 5,
+      "text_en": "the step count was the same — the stride length was the problem.",
+      "text_ja": "歩数は同じなのに、歩幅の方が問題だったのです。",
+      "text_zh_Hant": "步数相同,问题出在步幅上。"
+    },
+    {
+      "text": "다리에 가속도계를 채우고 다시 재보니,",
+      "est_sec": 4,
+      "text_en": "They strapped accelerometers to their legs and measured again.",
+      "text_ja": "脚に加速度計を付けて再び測ってみると、",
+      "text_zh_Hant": "在腿上绑上加速度计再测，"
+    },
+    {
+      "text": "걸음 수는 그대로인데,",
+      "est_sec": 2,
+      "text_en": "The step count stayed the same,",
+      "text_ja": "歩数はそのままなのに、",
+      "text_zh_Hant": "步数没变，"
+    },
+    {
+      "text": "보폭만 조금씩 줄어 있었고요.",
+      "est_sec": 3,
+      "text_en": "but the stride had shrunk, little by little.",
+      "text_ja": "歩幅だけが少しずつ縮んでいました。",
+      "text_zh_Hant": "但步幅却在一点点变短。"
+    },
+    {
+      "text": "회랑이 늘어나는 게 아니라,",
+      "est_sec": 3,
+      "text_en": "It wasn't the corridor growing longer —",
+      "text_ja": "回廊が伸びているのではなく、",
+      "text_zh_Hant": "并非回廊在变长，"
+    },
+    {
+      "text": "사람 쪽이 작아지고 있었다는 뜻이었죠.",
+      "est_sec": 4,
+      "text_en": "it meant the people were the ones getting smaller.",
+      "text_ja": "人間の方が小さくなっていたということでした。",
+      "text_zh_Hant": "而是人本身在变小。",
+      "emphasis": "사람 쪽이 작아지고 있었다"
+    },
+    {
+      "text": "이 가설을, 보이코 박사는 못 놓았습니다.",
+      "est_sec": 4,
+      "text_en": "Dr. Boiko couldn't let go of this hypothesis.",
+      "text_ja": "この仮説を、ボイコ博士は手放せませんでした。",
+      "text_zh_Hant": "博伊科博士对这个假设难以释怀。"
+    },
+    {
+      "text": "표준 절차로는 재진입 시 반드시 두 명 이상,",
+      "est_sec": 4,
+      "text_en": "Standard procedure required at least two people on any re-entry,",
+      "text_ja": "標準手続きでは再進入時は必ず二名以上、",
+      "text_zh_Hant": "标准程序规定再次进入必须两人以上，"
+    },
+    {
+      "text": "단독 진입은 금지 —",
+      "est_sec": 2,
+      "text_en": "solo entry strictly forbidden —",
+      "text_ja": "単独進入は禁止 —",
+      "text_zh_Hant": "严禁单独进入 —"
+    },
+    {
+      "text": "그는 그걸 어기고,",
+      "est_sec": 2,
+      "text_en": "but he broke that rule,",
+      "text_ja": "彼はそれを破り、",
+      "text_zh_Hant": "他却违反了这条规定，"
+    },
+    {
+      "text": "세 번째로 혼자 들어갔어요.",
+      "est_sec": 3,
+      "text_en": "going in alone for the third time.",
+      "text_ja": "三度目、一人で入って行きました。",
+      "text_zh_Hant": "第三次独自进入。"
+    },
+    {
+      "text": "나올 때 출입구 신장계에 찍힌 키가,",
+      "est_sec": 4,
+      "text_en": "When he came out, the height reader at the entrance",
+      "text_ja": "出てきたとき、出入口の身長計に記録された身長が、",
+      "text_zh_Hant": "出来时,入口处身高仪测得的数值，"
+    },
+    {
+      "text": "그의 신상 기록보다 일 점 사 센티 작았습니다.",
+      "est_sec": 5,
+      "text_en": "showed him 1.4 centimeters shorter than his file.",
+      "text_ja": "彼の身上記録より一・四センチ低かったのです。",
+      "text_zh_Hant": "比他档案上的记录矮了一点四厘米。"
+    },
+    {
+      "text": "「측정 오차겠죠」",
+      "est_sec": 2,
+      "text_en": "「Must be a measurement error,」",
+      "text_ja": "「測定誤差でしょう」",
+      "text_zh_Hant": "「大概是测量误差吧」"
+    },
+    {
+      "text": "그가 그렇게 보고했다는데… 글쎄요.",
+      "est_sec": 4,
+      "text_en": "he reportedly wrote in his report… who knows.",
+      "text_ja": "彼はそう報告したそうですが…さあ、どうでしょう。",
+      "text_zh_Hant": "他在报告里这么写道…这可说不准。"
+    },
+    {
+      "text": "그 뒤로 현장 사람들 사이에서,",
+      "est_sec": 3,
+      "text_en": "After that, among the people on-site,",
+      "text_ja": "それ以来、現場の人々の間で、",
+      "text_zh_Hant": "从那以后,在现场人员之间，"
+    },
+    {
+      "text": "이름이 하나 생겼죠.",
+      "est_sec": 2,
+      "text_en": "a nickname started to stick.",
+      "text_ja": "ひとつの呼び名が生まれました。",
+      "text_zh_Hant": "渐渐有了一个称呼。"
+    },
+    {
+      "text": "회랑 끝에 뭔가 있다는 걸,",
+      "est_sec": 3,
+      "text_en": "No one had confirmed anything was even down at the end of the corridor,",
+      "text_ja": "回廊の奥に何かがいるということを、",
+      "text_zh_Hant": "谁都还没确认回廊尽头到底有什么，"
+    },
+    {
+      "text": "아직 아무도 확인 못 했을 때인데도,",
+      "est_sec": 4,
+      "text_en": "not yet, but still,",
+      "text_ja": "まだ誰も確認していない時だったのに、",
+      "text_zh_Hant": "可即便如此，"
+    },
+    {
+      "text": "다들 그쪽을 「기준자」라고,",
+      "est_sec": 3,
+      "text_en": "everyone had already started calling it 「the Yardstick,」",
+      "text_ja": "皆はそちらを「物差し」と、",
+      "text_zh_Hant": "大家已经开始把那东西叫做「量尺」，"
+    },
+    {
+      "text": "부르기 시작한 겁니다.",
+      "est_sec": 2,
+      "text_en": "before they even knew what it was.",
+      "text_ja": "呼び始めていたのです。",
+      "text_zh_Hant": "尽管谁也不知道那到底是什么。"
+    },
+    {
+      "text": "자기들이 뭘 재고 있는 건지도,",
+      "est_sec": 3,
+      "text_en": "Not even knowing what exactly they were measuring themselves against,",
+      "text_ja": "自分たちが何を測っているのかも、",
+      "text_zh_Hant": "连自己在拿什么当标准都不清楚，"
+    },
+    {
+      "text": "모른 채로요.",
+      "est_sec": 2,
+      "text_en": "not knowing at all.",
+      "text_ja": "分からないままでした。",
+      "text_zh_Hant": "就这样稀里糊涂地叫开了。"
+    },
+    {
+      "text": "D계급 재측정 노출 시험에서도,",
+      "est_sec": 3,
+      "text_en": "In a Class D re-measurement exposure test as well,",
+      "text_ja": "D級の再測定曝露試験でも、",
+      "text_zh_Hant": "在D级人员的再测量暴露试验中，"
+    },
+    {
+      "text": "같은 패턴이 나왔어요.",
+      "est_sec": 2,
+      "text_en": "the same pattern showed up.",
+      "text_ja": "同じパターンが出ました。",
+      "text_zh_Hant": "也出现了同样的规律。"
+    },
+    {
+      "text": "시험을 마치고 나온 D-9648이,",
+      "est_sec": 4,
+      "text_en": "D-9648, coming out after the test,",
+      "text_ja": "試験を終えて出てきたD-9648が、",
+      "text_zh_Hant": "结束试验走出来的D-9648，"
+    },
+    {
+      "text": "남긴 말은 짧았습니다.",
+      "est_sec": 2,
+      "text_en": "left only a short remark.",
+      "text_ja": "残した言葉は短いものでした。",
+      "text_zh_Hant": "留下的话很简短。"
+    },
+    {
+      "text": "「키가 준 것도 준 건데…",
+      "est_sec": 2,
+      "text_en": "「Losing height's one thing, but…",
+      "text_ja": "「背が縮んだのもそうだけど…",
+      "text_zh_Hant": "「个子变矮也就算了…"
+    },
+    {
+      "text": "신발이 헐렁해요.」",
+      "est_sec": 2,
+      "text_en": "my shoes are loose now.」",
+      "text_ja": "靴がぶかぶかです」",
+      "text_zh_Hant": "鞋子现在都松了。」"
+    },
+    {
+      "text": "기동특무부대 세타-31이 투입돼,",
+      "est_sec": 4,
+      "text_en": "Mobile Task Force Theta-31 was deployed,",
+      "text_ja": "機動特務部隊シータ-31が投入され、",
+      "text_zh_Hant": "机动特遣队西塔-31被派遣前往，"
+    },
+    {
+      "text": "회랑 끝까지 정밀 재측정에 나섰죠.",
+      "est_sec": 4,
+      "text_en": "sent to take precise measurements all the way to the end of the corridor.",
+      "text_ja": "回廊の奥まで精密な再測定に乗り出しました。",
+      "text_zh_Hant": "对回廊直到尽头进行精密再测量。"
+    },
+    {
+      "text": "무전 기록엔 이렇게 남아 있습니다.",
+      "est_sec": 4,
+      "text_en": "The radio log records it like this.",
+      "text_ja": "無線記録にはこう残っています。",
+      "text_zh_Hant": "无线电记录上留下了这样的话。"
+    },
+    {
+      "text": "「고정 지점 통과, 계속 진행합니다.」",
+      "est_sec": 4,
+      "text_en": "「Passing fixed point, continuing forward.」",
+      "text_ja": "「固定地点通過、進行を続けます」",
+      "text_zh_Hant": "「通过固定点,继续前进。」"
+    },
+    {
+      "text": "그리고 삼십 초 뒤.",
+      "est_sec": 2,
+      "text_en": "And thirty seconds later.",
+      "text_ja": "そして三十秒後。",
+      "text_zh_Hant": "然后三十秒后。"
+    },
+    {
+      "text": "「…뭔가 있습니다.",
+      "est_sec": 2,
+      "text_en": "「…There's something here.",
+      "text_ja": "「…何かいます。",
+      "text_zh_Hant": "「…这里有东西。"
+    },
+    {
+      "text": "사람이 아닙니다.」",
+      "est_sec": 2,
+      "text_en": "It's not human.」",
+      "text_ja": "人間ではありません」",
+      "text_zh_Hant": "不是人。」"
+    },
+    {
+      "text": "천장에 닿을 듯 서 있는,",
+      "est_sec": 2,
+      "text_en": "Standing tall enough to touch the ceiling,",
+      "text_ja": "天井に届きそうなほど立っている、",
+      "text_zh_Hant": "高得几乎顶到天花板，"
+    },
+    {
+      "text": "조각처럼 다듬어진 거대한 형체였어요.",
+      "est_sec": 4,
+      "text_en": "it was a massive figure, carved like a sculpture.",
+      "text_ja": "彫刻のように削られた巨大な形でした。",
+      "text_zh_Hant": "是一尊雕刻般精细打磨的庞大身形。"
+    },
+    {
+      "text": "크기도 자세도 사람은 아니었는데,",
+      "est_sec": 4,
+      "text_en": "Neither its size nor its posture was human,",
+      "text_ja": "大きさも姿勢も人間ではなかったのに、",
+      "text_zh_Hant": "无论体型还是姿态都不像人，"
+    },
+    {
+      "text": "사람 같은 데가 분명 있었다고 하더군요.",
+      "est_sec": 4,
+      "text_en": "but apparently there was something distinctly human about it.",
+      "text_ja": "人間らしいところが確かにあったそうです。",
+      "text_zh_Hant": "但据说确实带着几分人的气息。"
+    },
+    {
+      "text": "대원들은 그 앞에 오래 머문 순서대로,",
+      "est_sec": 4,
+      "text_en": "In order of how long each member had lingered in front of it,",
+      "text_ja": "隊員たちはその前に長く留まった順に、",
+      "text_zh_Hant": "队员们按照在它面前停留时间的长短排序，"
+    },
+    {
+      "text": "신장계 수치가 더 크게 줄어 있었습니다.",
+      "est_sec": 4,
+      "text_en": "their height readings had dropped by that much more.",
+      "text_ja": "身長計の数値がより大きく減っていました。",
+      "text_zh_Hant": "身高数值下降得也就越多。"
+    },
+    {
+      "text": "거리도 시간도 아니었죠.",
+      "est_sec": 3,
+      "text_en": "It wasn't distance, and it wasn't time.",
+      "text_ja": "距離でも時間でもありませんでした。",
+      "text_zh_Hant": "既不是距离,也不是时间。"
+    },
+    {
+      "text": "딱 하나, 기준자 앞에,",
+      "est_sec": 2,
+      "text_en": "Just one thing — how long you'd stood,",
+      "text_ja": "たったひとつ、物差しの前に、",
+      "text_zh_Hant": "只有一点,在量尺面前，"
+    },
+    {
+      "text": "얼마나 서 있었는지, 그게 기준이었던 겁니다.",
+      "est_sec": 5,
+      "text_en": "in front of the Yardstick — that was the standard.",
+      "text_ja": "どれだけ立っていたか、それが基準だったのです。",
+      "text_zh_Hant": "站了多久,这才是判定的标准。",
+      "emphasis": "그게 기준이었다"
+    },
+    {
+      "text": "닷새 뒤 재단은,",
+      "est_sec": 2,
+      "text_en": "Five days later, the Foundation",
+      "text_ja": "五日後、財団は、",
+      "text_zh_Hant": "五天后,基金会"
+    },
+    {
+      "text": "회랑 진입을 전면 중단시켰어요.",
+      "est_sec": 3,
+      "text_en": "suspended all entry into the corridor.",
+      "text_ja": "回廊への進入を全面中止させました。",
+      "text_zh_Hant": "全面暂停了对回廊的进入。"
+    },
+    {
+      "text": "그런데 보이코 박사는,",
+      "est_sec": 2,
+      "text_en": "But Dr. Boiko",
+      "text_ja": "ところがボイコ博士は、",
+      "text_zh_Hant": "但博伊科博士，"
+    },
+    {
+      "text": "이미 그 전 주에,",
+      "est_sec": 2,
+      "text_en": "had already, the week before,",
+      "text_ja": "すでにその前の週に、",
+      "text_zh_Hant": "早在前一周，"
+    },
+    {
+      "text": "O5 승인 없이 세 번을 더 들어간 뒤였죠.",
+      "est_sec": 4,
+      "text_en": "gone in three more times without O5 approval.",
+      "text_ja": "O5の承認なしに三回も余分に入った後でした。",
+      "text_zh_Hant": "就未经O5批准又多进去了三次。"
+    },
+    {
+      "text": "지금 그의 키는 처음보다 구 센티 작습니다.",
+      "est_sec": 4,
+      "text_en": "His height is now nine centimeters less than at the start.",
+      "text_ja": "今の彼の身長は、最初より九センチ低いです。",
+      "text_zh_Hant": "如今他的身高比最初矮了九厘米。"
+    },
+    {
+      "text": "더 줄지도, 원래대로 돌아오지도 않고요.",
+      "est_sec": 4,
+      "text_en": "It hasn't shrunk further, and it hasn't gone back either.",
+      "text_ja": "それ以上縮みもせず、元にも戻らずにいます。",
+      "text_zh_Hant": "既没再继续变矮,也没恢复原样。"
+    },
+    {
+      "text": "재수용 절차요?",
+      "est_sec": 2,
+      "text_en": "Re-containment procedure?",
+      "text_ja": "再収容手続き?",
+      "text_zh_Hant": "再收容程序?"
+    },
+    {
+      "text": "대상이 없는데 뭘 재수용하겠습니까.",
+      "est_sec": 4,
+      "text_en": "There's no subject to re-contain.",
+      "text_ja": "対象がいないのに何を再収容するというのですか。",
+      "text_zh_Hant": "都没有对象了,还谈什么再收容。"
+    },
+    {
+      "text": "그는 지금도 사이트에서,",
+      "est_sec": 3,
+      "text_en": "He's still at the Site,",
+      "text_ja": "彼は今もサイトで、",
+      "text_zh_Hant": "他如今仍在站点里，"
+    },
+    {
+      "text": "작아진 키 그대로 근무 중이라고 하네요.",
+      "est_sec": 4,
+      "text_en": "working, apparently, exactly as short as he now is.",
+      "text_ja": "縮んだ身長のまま勤務中だそうです。",
+      "text_zh_Hant": "就以变矮的身高继续工作着。"
+    },
+    {
+      "text": "옆 격리동엔 SCP-914가 있다고 들었어요.",
+      "est_sec": 5,
+      "text_en": "I hear SCP-914 is kept in the containment wing next door.",
+      "text_ja": "隣の収容棟にはSCP-914があると聞きました。",
+      "text_zh_Hant": "听说隔壁收容区就放着SCP-914。"
+    },
+    {
+      "text": "현장 연구원 하나가 이 회랑 얘기를 하다가,",
+      "est_sec": 4,
+      "text_en": "One on-site researcher, talking about this corridor,",
+      "text_ja": "現場のある研究員が、この回廊の話をしていて、",
+      "text_zh_Hant": "一位现场研究员在聊起这条回廊时，"
+    },
+    {
+      "text": "「이거, 914에 넣었다 뺀 것 같지 않아요?」",
+      "est_sec": 5,
+      "text_en": "「Doesn't this look like it went through 914?」",
+      "text_ja": "「これ、914に入れて出したみたいじゃないですか?」",
+      "text_zh_Hant": "「这不就像被914处理过一样吗?」"
+    },
+    {
+      "text": "라고 농담을 했다던데 —",
+      "est_sec": 2,
+      "text_en": "made that joke, apparently —",
+      "text_ja": "と冗談を言ったそうですが —",
+      "text_zh_Hant": "据说这么开玩笑过 —"
+    },
+    {
+      "text": "물론 확인된 연관은 아닙니다.",
+      "est_sec": 3,
+      "text_en": "though of course, no confirmed connection.",
+      "text_ja": "もちろん確認された関連ではありません。",
+      "text_zh_Hant": "当然,并未证实两者有关。"
+    },
+    {
+      "text": "인지위해 대응팀도 초기엔,",
+      "est_sec": 3,
+      "text_en": "The cognitohazard response team, early on,",
+      "text_ja": "認知的災害対応チームも初期には、",
+      "text_zh_Hant": "认知危害应对小组在初期，"
+    },
+    {
+      "text": "SCP-096 대응 수칙까지 참고했다는데,",
+      "est_sec": 5,
+      "text_en": "reportedly even referenced SCP-096 protocols,",
+      "text_ja": "SCP-096対応規則まで参考にしたそうですが、",
+      "text_zh_Hant": "据说甚至参考了SCP-096的应对准则，"
+    },
+    {
+      "text": "여긴 해당 사항이 없었다고 하고요.",
+      "est_sec": 4,
+      "text_en": "but none of that turned out to apply here.",
+      "text_ja": "ここには該当しなかったそうです。",
+      "text_zh_Hant": "但结果证明与此案并不相符。"
+    },
+    {
+      "text": "부서진 신의 교회 쪽 인물 하나가,",
+      "est_sec": 3,
+      "text_en": "Someone tied to the Church of the Broken God",
+      "text_ja": "壊れた神の教会側の人物一人が、",
+      "text_zh_Hant": "有一名与「破碎神之教会」有关的人物，"
+    },
+    {
+      "text": "발굴 초기에 굴착 장비를 들고 접근하다,",
+      "est_sec": 4,
+      "text_en": "approached with excavation gear early in the dig,",
+      "text_ja": "発掘初期に掘削機材を持って接近し、",
+      "text_zh_Hant": "在发掘初期携带挖掘设备意图接近，"
+    },
+    {
+      "text": "검거된 적이 있어요.",
+      "est_sec": 2,
+      "text_en": "and was apprehended.",
+      "text_ja": "拘束されたことがあります。",
+      "text_zh_Hant": "结果被抓获。"
+    },
+    {
+      "text": "목적은 아직도 확인이 안 됐습니다.",
+      "est_sec": 4,
+      "text_en": "The purpose still hasn't been confirmed.",
+      "text_ja": "目的はいまだ確認されていません。",
+      "text_zh_Hant": "其目的至今尚未查明。"
+    },
+    {
+      "text": "아마 그쪽은,",
+      "est_sec": 2,
+      "text_en": "Maybe they",
+      "text_ja": "おそらくあちらは、",
+      "text_zh_Hant": "或许对方，"
+    },
+    {
+      "text": "저 형체를 신으로 알고 있었던 게 아닐까요…",
+      "est_sec": 4,
+      "text_en": "already knew that figure as a god…",
+      "text_ja": "あの形を神だと知っていたのではないでしょうか…",
+      "text_zh_Hant": "早就把那个身影当作神明来看待了吧…"
+    },
+    {
+      "text": "재단보다 먼저요.",
+      "est_sec": 2,
+      "text_en": "before the Foundation ever did.",
+      "text_ja": "財団よりも先に。",
+      "text_zh_Hant": "比基金会更早知晓。"
+    },
+    {
+      "text": "지금도 사이트-518 회의에서는,",
+      "est_sec": 4,
+      "text_en": "Even now, in meetings at Site-518,",
+      "text_ja": "今もサイト-518の会議では、",
+      "text_zh_Hant": "至今在518站点的会议上，"
+    },
+    {
+      "text": "이 개체의 등급을 세이프로 계속 둘지,",
+      "est_sec": 4,
+      "text_en": "whether to keep this object's class at Safe,",
+      "text_ja": "この対象の等級をセーフのままにするか、",
+      "text_zh_Hant": "该项目的等级是继续维持安全级，"
+    },
+    {
+      "text": "유클리드로 올릴지 결론을 못 내리고 있어요.",
+      "est_sec": 5,
+      "text_en": "or raise it to Euclid, remains undecided.",
+      "text_ja": "ユークリッドに上げるか、結論が出ていません。",
+      "text_zh_Hant": "还是提升为欧几里得级,一直没有定论。"
+    },
+    {
+      "text": "재단 내부에서도 의견이 갈린다고 하고요.",
+      "est_sec": 4,
+      "text_en": "Opinions are apparently split even within the Foundation.",
+      "text_ja": "財団内部でも意見が分かれているそうです。",
+      "text_zh_Hant": "据说基金会内部意见也不统一。"
+    },
+    {
+      "text": "격리 방법을 다시 짜는 회의만,",
+      "est_sec": 3,
+      "text_en": "Meetings to redraw the containment procedure alone",
+      "text_ja": "収容方法を組み直す会議だけで、",
+      "text_zh_Hant": "光是重新拟定收容方案的会议，"
+    },
+    {
+      "text": "벌써 몇 차례째입니다.",
+      "est_sec": 2,
+      "text_en": "have already happened several times over.",
+      "text_ja": "もう何度目かになります。",
+      "text_zh_Hant": "就已经开了好几轮了。"
+    },
+    {
+      "text": "재측정 결과는요?",
+      "est_sec": 2,
+      "text_en": "And the re-measurement results?",
+      "text_ja": "再測定の結果は?",
+      "text_zh_Hant": "那再测量的结果呢?"
+    },
+    {
+      "text": "여전히 사십 미터.",
+      "est_sec": 2,
+      "text_en": "Still forty meters.",
+      "text_ja": "相変わらず四十メートル。",
+      "text_zh_Hant": "依旧是四十米。"
+    },
+    {
+      "text": "서류상으로는요.",
+      "est_sec": 2,
+      "text_en": "On paper, anyway.",
+      "text_ja": "書類上ではですが。",
+      "text_zh_Hant": "至少档案上是这么写的。"
+    },
+    {
+      "text": "기준자는, 그 자리에 그대로 있습니다.",
+      "est_sec": 4,
+      "text_en": "The Yardstick is still standing right where it was.",
+      "text_ja": "物差しは、あの場所にそのままいます。",
+      "text_zh_Hant": "量尺依旧原封不动地立在那里。",
+      "emphasis": "그 자리에 그대로"
+    },
+    {
+      "text": "혹시 여러분도,",
+      "est_sec": 2,
+      "text_en": "Maybe some of you, too,",
+      "text_ja": "もしかして皆さんも、",
+      "text_zh_Hant": "或许各位也曾经，"
+    },
+    {
+      "text": "어디 오래 서 있다 나왔더니,",
+      "est_sec": 3,
+      "text_en": "have stood somewhere for a long while, then walked out",
+      "text_ja": "どこかに長く立っていて出てきたら、",
+      "text_zh_Hant": "在某处站了很久,走出来之后，"
+    },
+    {
+      "text": "옷이 괜히 헐렁해진 느낌,",
+      "est_sec": 3,
+      "text_en": "feeling like your clothes had gone loose for no reason —",
+      "text_ja": "服が妙にゆるくなった感じ、",
+      "text_zh_Hant": "觉得衣服莫名松了一圈——"
+    },
+    {
+      "text": "받아보신 적 있으신가요?",
+      "est_sec": 3,
+      "text_en": "has that ever happened to you?",
+      "text_ja": "感じたことはありませんか?",
+      "text_zh_Hant": "有过这样的感觉吗?"
+    },
+    {
+      "text": "있으시다면 그게 어디였는지,",
+      "est_sec": 3,
+      "text_en": "If so, I'd like to know where it was —",
+      "text_ja": "あるとしたら、それがどこだったのか、",
+      "text_zh_Hant": "如果有,那是在什么地方，"
+    },
+    {
+      "text": "댓글로 한번 남겨주시면 좋겠습니다.",
+      "est_sec": 4,
+      "text_en": "leave it in the comments, if you don't mind.",
+      "text_ja": "コメントで教えていただけると嬉しいです。",
+      "text_zh_Hant": "欢迎在评论区告诉我。"
+    },
+    {
+      "text": "이런 기록들, 계속 찾아서 들려드리겠습니다.",
+      "est_sec": 5,
+      "text_en": "I'll keep digging up records like this and bringing them to you.",
+      "text_ja": "こうした記録、これからも探して届けます。",
+      "text_zh_Hant": "这样的档案,我会继续找来讲给大家听。"
+    }
+  ],
+  "scenes": [
+    {
+      "prompt": "SUBJECT: massive carved stone door half-buried in a cracked ice wall, filling most of frame. CONTEXT: frost pit wall, black void beyond the door edge. COMPOSITION: low-angle close shot, tilted up. LIGHT: one flashlight beam raking the stone. MATERIAL: hewn rock, crackled ice glaze. ATMOSPHERE: cold fog, drifting ice dust. PALETTE: icy teal on stone, near-black ground, small warm beam glow. RENDER: bold linework, flat cel shading, hard-edged shadows. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: lone surveyor from behind, stepping into a narrow ice corridor, headlamp beam swallowed by dark ahead. CONTEXT: rough rock-and-ice passage curving out of sight. COMPOSITION: tight rear three-quarter shot, low camera looking down the passage. LIGHT: single headlamp cone. MATERIAL: wet stone, hoarfrost, cables on the floor. ATMOSPHERE: visible breath, drifting mist. PALETTE: teal frost accent, muted cold blue figure, near-black rest. RENDER: bold linework, flat cel shading, hard-edged shadows. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: gloved hand holding a laser rangefinder glowing '40M' beside a wristwatch timer, both large in frame. CONTEXT: dark tunnel wall behind. COMPOSITION: macro close-up, devices centered. LIGHT: cold LED glow from the display. MATERIAL: matte plastic casing, scratched watch bezel, frosted glove. ATMOSPHERE: fogged breath at frame edge. PALETTE: hot cyan display glow, near-black background. RENDER: bold linework, flat cel shading, hard-edged shadows. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: bare ankle strapped with an accelerometer sensor rig, small readout beside it showing two stacked numbers. CONTEXT: dim field-tent equipment table. COMPOSITION: extreme close-up, diagonal framing. LIGHT: single hard work-lamp from above. MATERIAL: nylon straps, brushed metal housing, thermal sock fabric. ATMOSPHERE: dust motes in the lamp beam. PALETTE: amber readout glow, near-black surroundings. RENDER: bold linework, flat cel shading, hard-edged shadows. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: parka-clad man's silhouette at a wall height scanner, his ID card beside it showing a taller printed number. CONTEXT: rock checkpoint alcove, cables to the scanner. COMPOSITION: medium shot, scanner and card sharing frame, rear angle. LIGHT: one overhead light. MATERIAL: laminated card, brushed steel, frosted parka. ATMOSPHERE: cold still air, faint steam. PALETTE: red mismatch accent, near-black background. RENDER: bold linework, flat cel shading, hard-edged shadows. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: a curling handwritten paper note pinned to a corkboard among blank roster pages, a short nickname scrawled on it. CONTEXT: cramped staff locker-room wall. COMPOSITION: close-up centered on the note, slight low angle. LIGHT: single bare bulb overhead. MATERIAL: curling paper, rusted pushpin, plywood board. ATMOSPHERE: dust in the bulb's cone. PALETTE: warm amber note glow, near-black room. RENDER: bold linework, flat cel shading, hard-edged shadows, no legible lettering rendered. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: an oversized unlaced boot lying loose on a locker-room bench, clearly too big for its owner now. CONTEXT: bare institutional locker room. COMPOSITION: low close-up, boot dominating frame. LIGHT: single hard ceiling light. MATERIAL: scuffed leather, worn wooden bench, tile floor. ATMOSPHERE: faint steam rising from the boot. PALETTE: dull orange leather accent, near-black room. RENDER: bold linework, flat cel shading, hard-edged shadows. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: immense carved humanoid figure at a tunnel's end, head near the ceiling, faceted stone surface, two tiny armored figures far below for scale. CONTEXT: terminal chamber, walls into dark. COMPOSITION: low-angle shot, figure over sixty percent of frame. LIGHT: cold helmet-lamps on chest and face. MATERIAL: stone-carved skin, tool marks. ATMOSPHERE: ice fog at its feet. PALETTE: one hot red inner glow, rest near-black, cold blue. RENDER: bold linework, flat cel shading, hard-edged shadows. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: close-up on the figure's carved face, deep-set eyes, faint red glow behind them, weathered still expression. CONTEXT: tunnel darkness behind it. COMPOSITION: tight frontal close-up, face filling frame, low angle. LIGHT: cold beam from below, hot red glow in the eyes. MATERIAL: stone-carved skin, chisel lines, frost on the brow. ATMOSPHERE: thin drifting fog. PALETTE: near-black background, cold blue rim, hot red eye accent. RENDER: bold linework, flat cel shading, hard-edged shadows. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: a corkboard chart, hand-drawn number table beside small ID photos, one column trending sharply downward. CONTEXT: site operations room wall. COMPOSITION: medium close-up, chart filling most of frame, angled. LIGHT: single side desk lamp. MATERIAL: printed photos, grid paper, pushpins, cork texture. ATMOSPHERE: still office air, faint lamp glare. PALETTE: warm amber lamp glow, near-black room. RENDER: bold linework, flat cel shading, hard-edged shadows, no legible lettering rendered. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: yellow-black hazard tape strung across the ancient stone door, an abandoned ID lanyard hanging nearby. CONTEXT: sealed tunnel entrance, dim checkpoint lights behind. COMPOSITION: medium shot, tape crossing diagonally, door behind. LIGHT: single dim security light. MATERIAL: taut plastic tape, frayed cord, frost-rimed stone. ATMOSPHERE: still cold air, faint frost haze. PALETTE: hot yellow tape accent, near-black background. RENDER: bold linework, flat cel shading, hard-edged shadows. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: two identical ID cards pinned side by side, one an older taller photo, one a recent shorter photo of the same man. CONTEXT: personnel folder open under a desk lamp. COMPOSITION: extreme close-up, both cards filling frame, slight tilt. LIGHT: single warm desk lamp. MATERIAL: laminated card stock, worn folder paper. ATMOSPHERE: still, quiet office hush. PALETTE: warm amber glow, near-black surroundings. RENDER: bold linework, flat cel shading, hard-edged shadows, no legible lettering. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    }
+  ],
+  "background": {
+    "id": "scp-9648_bg",
+    "kind": "image",
+    "reuse": false,
+    "aspect": "16:9",
+    "resolution": "1920x1080",
+    "prompt": "SUBJECT: immense carved humanoid figure at a tunnel's end, head near ceiling, faceted stone surface, two tiny figures far below for scale. CONTEXT: terminal chamber, walls into dark. COMPOSITION: low-angle wide shot, figure over sixty percent of frame. LIGHT: cold helmet-lamps on chest and face. MATERIAL: stone-carved skin, tool marks. ATMOSPHERE: ice fog at its feet. PALETTE: one hot red inner glow, rest near-black, cold blue. RENDER: bold linework, flat cel shading, hard-edged shadows. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere",
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion"
+  },
+  "thumbnail": {
+    "hook": "A colossal carved stone figure looms in a dark ice tunnel, its face and deep-set eyes glowing faint red, filling most of the frame, one tiny frost-suited researcher dwarfed below, near-black background, one hot red accent. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere",
+    "hook_alt": [
+      "Extreme close-up of the towering stone figure's carved face and glowing red eyes filling the frame, tiny frost-suited silhouette below for scale, near-black background. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere",
+      "A researcher's gloved hand holding a rangefinder glowing '40M' in the dark tunnel, the colossal carved figure looming huge and half-lit behind him, near-black background, one hot red accent. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    ],
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion",
+    "text_safe_area": "right third",
+    "resolution": "1280x720"
+  },
+  "platforms": {
+    "youtube": {
+      "title": "시베리아 영구동토 회랑의 형체가, 서 있던 만큼 사람 키를 깎아냈다 [SCP-9648]",
+      "title_form": "사건형",
+      "thumbnail_text": "기준자",
+      "thumbnail_quote": "- 키가 준 것도 준 건데… 신발이 헐렁해요",
+      "tags": [
+        "SCP",
+        "SCP재단",
+        "SCP-914",
+        "SCP-096",
+        "괴담",
+        "무서운이야기",
+        "미스터리"
+      ],
+      "chapters": [
+        "00:00 돌문의 발견",
+        "00:40 사라진 사십 미터",
+        "01:30 줄어드는 사람들",
+        "02:40 기준자",
+        "03:40 회랑 끝의 형체",
+        "04:40 보이코 박사, 그 후"
+      ],
+      "description": "시베리아 영구동토 붕괴지대에서 발견된 돌문 안쪽 회랑 이야기입니다. 거리계는 늘 같은 숫자를 찍는데, 그 안에 오래 머문 사람일수록 키가 줄어듭니다.\n\n※ SCP 재단 세계관 기반 오리지널 창작 · 허구의 이야기입니다\n※ CC BY-SA 3.0 · 원작: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP재단 #괴담 #무서운이야기 #미스터리",
+      "localizations": {
+        "en": {
+          "title": "A Siberian Permafrost Tunnel Shrinks Everyone Who Stands Before It [SCP-9648]",
+          "description": "A stone door found in a Siberian permafrost collapse hides a corridor where the rangefinder always reads the same distance — but the longer you stand inside, the shorter you come out.\n\nThis is original fan fiction set in the SCP Foundation universe, entirely fictional.\nCC BY-SA 3.0 · Based on the SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCPFoundation #Horror #Mystery"
+        },
+        "ja": {
+          "title": "シベリア永久凍土の回廊が、立っていた分だけ人の背を縮めた話 [SCP-9648]",
+          "description": "シベリアの永久凍土陥没地で見つかった石の扉。その奥の回廊は、距離計がいつも同じ数字を示すのに、長く立っていた人ほど身長が縮んで出てきます。\n\n※ SCP財団世界観に基づくオリジナル創作・フィクションです\n※ CC BY-SA 3.0 · 原作: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP財団 #怖い話 #ミステリー"
+        },
+        "zh-Hant": {
+          "title": "西伯利亞凍原坑道,站得越久身高就被削去越多 [SCP-9648]",
+          "description": "西伯利亞永久凍土崩塌處發現的一扇石門,門後的坑道測距永遠是同一個數字,但在裡面待得越久的人，走出來時身高就變得越矮。\n\n※ 基於SCP基金會世界觀之原創創作,純屬虛構\n※ CC BY-SA 3.0 · 原作:SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP基金會 #怪談 #懸疑"
+        }
+      },
+      "pinned_comment": "혹시 여러분도 오래 서 있다 나왔더니 옷이 헐렁해진 느낌, 받아보신 적 있으신가요? 댓글로 알려주세요.",
+      "playlist": "SCP 아카이브 (전편 듣기)"
+    }
+  },
+  "credit": "SCP 재단 세계관 기반 오리지널 창작 · 허구 · CC BY-SA 3.0",
+  "content_rating": "teen",
+  "notes": "SCP 아카이브 · 16:9 롱폼 · 장면 전환 배경 + 자막 번인 · 단일 내레이터 · 완결형."
+}
