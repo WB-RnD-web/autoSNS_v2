@@ -1,0 +1,98 @@
+{
+  "date": "2026-09-14",
+  "topic": "stock",
+  "privacy": "public",
+  "topic_keyword": "코스피 7000선 하회",
+  "headline": "코스피, 금요일 7000선 하회 마감…나스닥은 반등",
+  "hook_title": "코스피 7000선, 사흘 만에 붕괴",
+  "accent": "#E5484D",
+  "loop_line": "코스피가 뉴욕처럼 웃을 수 있을지, 밤 10시반 미국장 프리뷰에서 이어집니다.",
+  "thumbnail_hook": "Pre-market financial mood at dawn: an empty Seoul trading floor bathed in dim blue morning light, a large dark ticker board just starting to flicker on with glowing red and green numbers, subtle downward arrow motif etched in reflections on a glass desk, a lone coffee cup beside a monitor, minimalist and moody, no text in image, no real people, 9:16 vertical",
+  "thumbnail_text": "코스피 7000, 오늘은?",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "개장 D-1시간",
+      "ghost": "SEOUL",
+      "lines": ["코스피", "7000선", "또 무너졌다"],
+      "highlight": "7000",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "지난 금요일, 코스피가 7000선 아래로 사흘 만에 다시 밀려났습니다."
+    },
+    {
+      "type": "trend",
+      "label": "나스닥",
+      "from": 0,
+      "to": 0.96,
+      "suffix": "%",
+      "dir": "up",
+      "sub": "다우 <b>+0.98%</b>, 4일 만에 반등",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "그런데 같은 시각 뉴욕은, 나스닥이 0.96퍼센트 올랐습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "왜 엇갈렸나",
+      "points": [
+        "美 국채금리 <b>4.96%</b>, 연중 최고",
+        "국제유가 <b>100달러</b> 돌파, 기름값 비상",
+        "반도체 대장주 나란히 <b>4%대</b> 하락"
+      ],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "국채금리 4.96%, 유가 100달러가 기름값 부담을 키웠습니다."
+    },
+    {
+      "type": "statement",
+      "text": "7000선 탈환이 오늘의 갈림길",
+      "highlight": "7000선",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "간밤 진정된 국채금리와 유가가 이어지면, 7000선 탈환도 가능합니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 지켜볼 것",
+      "points": [
+        "FOMC 결과, <b>17일</b> 새벽 3시 발표",
+        "환율 <b>1,350원</b> 방어선 시험대"
+      ],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "이틀 뒤 새벽 3시 FOMC 결과와, 환율 1,350원을 함께 보세요."
+    },
+    {
+      "type": "statement",
+      "text": "오늘 코스피, 7000 재도전일까 숨고르기일까",
+      "highlight": "7000",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "코스피가 오늘 7000선을 다시 넘을지, 판단은 여러분 몫입니다."
+    }
+  ],
+  "sources": ["머니투데이", "이데일리", "한국경제", "파이낸셜뉴스"],
+  "credit": "출처 머니투데이·이데일리·한국경제 등 · 투자 조언이 아닙니다",
+  "platforms": {
+    "youtube": {
+      "title": "코스피 7000선, 사흘 만에 붕괴 #shorts",
+      "description": "코스피, 금요일 7000선 하회 마감…나스닥은 반등\n출처 머니투데이·이데일리·한국경제 등\n※ 투자 조언이 아닙니다\n\n#코스피 #주식 #증시 #개장전 #FOMC #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "KOSPI Slides Below 7,000 as Wall Street Rallies",
+          "description": "KOSPI closed below the 7,000 line on Friday, while Wall Street rebounded the same night on cooling oil prices and yields. All eyes now turn to this week's FOMC decision.\n※ 투자 조언이 아닙니다\n\n#KOSPI #StockMarket #shorts"
+        },
+        "ja": {
+          "title": "コスピ7000割れ、裏でNY株は反発",
+          "description": "金曜日、コスピが7000のラインを割り込みました。同じ夜、ニューヨーク市場は原油価格と金利の落ち着きを受けて反発しました。今週はFOMCの結果に注目です。\n※ 투자 조언이 아닙니다\n\n#コスピ #株式市場 #shorts"
+        },
+        "zh-Hant": {
+          "title": "KOSPI跌破7000，華爾街卻反彈",
+          "description": "上週五KOSPI跌破7000點，同一夜華爾街卻因油價與殖利率降溫而反彈。本週市場焦點轉向FOMC利率決議。\n※ 투자 조언이 아닙니다\n\n#KOSPI #股市 #shorts"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "코스피 7000선, 사흘 만에 붕괴\n출처 머니투데이·이데일리·한국경제 등\n※ 투자 조언이 아닙니다\n\n#코스피 #주식 #증시 #FOMC #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "코스피 7000선, 사흘 만에 붕괴\n출처 머니투데이·이데일리·한국경제 등"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음 · SESSION=KR_AM(개장 전 프리뷰). R8 대조=금요일 코스피 하락 vs 같은 밤 뉴욕 반등. R3=국제유가발 기름값 부담."
+}
