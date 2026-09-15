@@ -1,0 +1,91 @@
+{
+  "date": "2026-09-16",
+  "topic": "stock",
+  "privacy": "public",
+  "topic_keyword": "미국 국채금리 5% 돌파",
+  "headline": "美 국채금리 5% 돌파, 코스피 나흘째 하락 마감",
+  "hook_title": "美 금리 5%, 3년 만에 처음",
+  "accent": "#E5484D",
+  "loop_line": "오늘 밤사이, 금리가 다시 시장의 방향을 정합니다.",
+  "thumbnail_hook": "Empty pre-dawn Korean stock trading floor, dim blue-gray lighting, a single faint red downward arrow glowing on a distant screen, a cooling coffee cup on the desk in the foreground, moody atmosphere, no on-screen text, no visible faces, wide shot",
+  "thumbnail_text": "금리 5%, 코스피 나흘째",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "국채금리 경보",
+      "ghost": "YIELD",
+      "lines": ["밤사이", "美 금리가", "5%를 넘었다"],
+      "highlight": "5%",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "밤사이 미국 국채 금리가 5퍼센트를 넘어서며 시장이 흔들렸습니다."
+    },
+    {
+      "type": "stat",
+      "label": "美 10년물 금리",
+      "from": 0,
+      "to": 5.01,
+      "suffix": "%",
+      "bar": true,
+      "sub": "2023년 이후 <b>최고</b>",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "미국 10년물 국채 금리가 5.01퍼센트까지 올랐습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "왜 흔들렸나",
+      "points": ["美 금리·유가 <b>105달러</b> 동반 상승", "외국인 팔았지만 <b>개인</b>이 받쳤다"],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "금리와 유가가 105달러까지 뛰자 외국인이 팔고 개인이 받쳤습니다."
+    },
+    {
+      "type": "statement",
+      "text": "6,600선 지키느냐가 오늘의 갈림길",
+      "highlight": "6,600선",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "코스피가 6,600선을 지키느냐가 오늘 갈림길이 될 수 있습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 지켜볼 것",
+      "points": ["반도체 업종, 미국 동종업계 <b>5%대 급락</b> 여파", "기름값·물가 부담 <b>확대</b> 우려", "오늘 밤 <b>FOMC</b> 결과 발표"],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "반도체 업종은 미국에서 5%대 급락했고, 기름값과 오늘 밤 FOMC 결과도 지켜보시면 됩니다."
+    },
+    {
+      "type": "statement",
+      "text": "지금 들어갈까요, 더 기다릴까요",
+      "highlight": "기다릴까요",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "지금 들어갈지 더 기다릴지, 판단은 여러분 몫입니다."
+    }
+  ],
+  "sources": ["머니투데이", "아시아경제", "뉴스핌"],
+  "credit": "출처 머니투데이·아시아경제·뉴스핌 등 · 투자 조언이 아닙니다",
+  "platforms": {
+    "youtube": {
+      "title": "美 금리 5%, 3년 만에 처음 #shorts",
+      "description": "美 국채금리 5% 돌파, 코스피 나흘째 하락 마감\n출처 머니투데이·아시아경제·뉴스핌 등\n※ 투자 조언이 아닙니다\n\n#코스피 #주식 #증시 #개장전 #FOMC #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "US Bond Yields Hit 5% — Korea Braces for More",
+          "description": "US 10-year Treasury yields broke above 5% for the first time since 2023, and Korea's KOSPI fell for a 4th straight session.\n출처 머니투데이·아시아경제·뉴스핌 등\n※ 투자 조언이 아닙니다\n\n#shorts #KOSPI #StockMarket"
+        },
+        "ja": {
+          "title": "米国債金利が5%を突破しました",
+          "description": "米10年債利回りが2023年以来初めて5%を超え、韓国のコスピは4日連続で下落しました。\n출처 머니투데이·아시아경제·뉴스핌 등\n※ 투자 조언이 아닙니다\n\n#shorts #株式 #コスピ"
+        },
+        "zh-Hant": {
+          "title": "美債殖利率衝破5%,韓股連四黑",
+          "description": "美國10年期公債殖利率時隔逾兩年重新衝破5%,南韓Kospi指數連四日下跌。\n출처 머니투데이·아시아경제·뉴스핌 등\n※ 투자 조언이 아닙니다\n\n#shorts #韓股 #Kospi"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "美 금리 5%, 3년 만에 처음\n출처 머니투데이·아시아경제·뉴스핌 등\n※ 투자 조언이 아닙니다\n\n#코스피 #주식 #증시 #FOMC #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "美 금리 5%, 3년 만에 처음\n출처 머니투데이·아시아경제·뉴스핌 등\n※ 투자 조언이 아닙니다"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음 · SESSION=KR_AM(개장 전 프리뷰). FOMC 결과는 9/17 새벽(KST) 발표 예정이라 이번 회차엔 결과 미포함, 관전포인트로만 안내."
+}
