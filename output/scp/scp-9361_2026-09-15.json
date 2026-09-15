@@ -1,0 +1,1364 @@
+{
+  "date": "2026-09-15",
+  "iso_week": "2026-W38",
+  "topic": "scp",
+  "privacy": "public",
+  "origin": "original",
+  "origin_note": "day%3==0 규칙상 canon이어야 했으나 scp-wiki.wikidot.com(EGRESS_BLOCKED), scpko.wiki(DNS 실패 ENOTFOUND), namu.wiki(EGRESS_BLOCKED)로 세 경로 모두 접근 불가 — 오리지널로 대체",
+  "source_url": "",
+  "story_id": "scp-9361",
+  "scp_number": "SCP-9361",
+  "object_class": "Safe",
+  "codename": "이름 대여소",
+  "number_check": {
+    "checked_at": "2026-09-15",
+    "http_code": "unverified"
+  },
+  "theme": "지하 시설",
+  "nature": "인지·밈",
+  "twist_type": "역할",
+  "logline": "노르웨이령 스발바르 폐광 갱도 지하에서 발견된 색인 카드함 이야기입니다. 카드를 옮겨 적던 사람에게, 자기 것이 아닌 필체와 이름이 조금씩 옮겨붙습니다.",
+  "structure": "연대기형",
+  "opening_move": "증언으로 연다",
+  "opening_note": "n%6 배정 후보(수치의 어긋남·장면 하나)가 모두 이번 소재(신원 뒤바뀜)와 안 맞아, 증언으로 연다로 대체함.",
+  "closing_move": "숫자 하나",
+  "number_reveal": "뒤",
+  "ending_mode": "질문+구독",
+  "fault": "개체",
+  "hook_line": "「이건 제 필체가 아닌데요.」",
+  "procedures": [],
+  "character": {
+    "name": "카를손",
+    "role": "박사 · 사이트-540 기록관리팀장",
+    "flaw": "자기 가설을 못 놓는다"
+  },
+  "chain": [
+    {
+      "when": "발견 당시",
+      "event": "냉전기에 버려진 스발바르 스피츠베르겐 섬 폐광 갱도 안쪽에서, 재단이 녹슨 철제 서가와 색인 카드함을 발견했다. 남은 카드는 이만 장 조금 넘었고, 소유주가 불분명해 사이트-540을 세우고 확보·격리에 들어갔다.",
+      "because": "",
+      "shot": "갱도 벽에 박힌 녹슨 철제 서가와 색인 카드함."
+    },
+    {
+      "when": "격리 직후",
+      "event": "재단이 이를 인지위해 후보로 두고 절차부터 세웠다. 카드는 반드시 두 사람이 함께 열람하고, 소리 내어 읽지 않기로 했다.",
+      "because": "소유주가 불분명해 인지위해 가능성을 배제할 수 없었기 때문에",
+      "shot": "차단 고글을 낀 두 조사관이 카드 한 장을 함께 들여다보는 모습."
+    },
+    {
+      "when": "목록화 초반",
+      "event": "카를손 박사가 카드를 필사하던 중 손을 멈췄다. 글씨가 자기 필체가 아니었다.",
+      "because": "목록화 작업이 정상 절차대로 진행됐기 때문에",
+      "shot": "필사하던 손이 멈추고, 낯선 필체가 보이는 카드."
+    },
+    {
+      "when": "그 직후",
+      "event": "재단이 이를 인지위해로 재규정하고 차단 고글을 지급, 낭독 금지 조항을 추가했다. 처음 신원이 겹친 요원 야콥센에게는 을급 기억소거제를 투여했고, 나흘 만에 별다른 후유증 없이 돌아왔다.",
+      "because": "필체 이상이 인지위해 가능성으로 보고됐기 때문에",
+      "shot": "차단 고글과 낭독 금지 조항이 붙은 카드 서랍."
+    },
+    {
+      "when": "몇 주 뒤",
+      "event": "열람자 신상 기록에 몇 초쯤 다른 이름이 겹쳐 찍혔다가 사라지는 사례가 늘었다. 그 무렵 현장 사람들 사이에서 이 카드함을 '이름 대여소'라고 부르는 말이 생겨났다.",
+      "because": "카드가 이만 장이라 목록화가 계속돼야 했기 때문에",
+      "shot": "신상 기록 화면에 두 이름이 겹쳐 깜빡이는 모니터."
+    },
+    {
+      "when": "그 무렵",
+      "event": "카를손 박사가 이를 위협으로 규정, 기동특무부대 카파-15('가명표')를 투입해 소각을 시도했다. 태운 자리에 한 시간도 안 돼 새 카드가 다시 꽂혔고, 담당 대원의 신상 기록은 한동안 완전히 비었다.",
+      "because": "카드가 열람자에게 가짜 신원을 덧씌우는 장치로 보였기 때문에",
+      "shot": "기동특무부대 대원이 카드를 소각로에 넣는 순간."
+    },
+    {
+      "when": "같은 시기",
+      "event": "D계급 재측정 시험에서도 같은 패턴이 나왔다. D-9361이 카드를 쥐고 나온 뒤 팔뚝에 없던 문신 자국을 남긴 채 짧게 말했다.",
+      "because": "사람 요인을 배제하려 D계급으로 통제 시험을 반복했기 때문에",
+      "shot": "D계급 대원의 팔뚝에 남은 희미한 문신 자국."
+    },
+    {
+      "when": "소각·봉쇄 모두 실패한 뒤",
+      "event": "카를손 박사가 갱도의 원 소유 기록을 뒤졌다. 이 시설은 냉전기 정보기관이 위장으로 쓰던 곳이었고, 옛 근무일지에는 이 카드함이 요원 신원을 대신 늙게 만드는 위장 신원 생성기였다는 한 줄이 남아 있었다. '이름 대여소'라는 별명이 그제야 딱 들어맞았다.",
+      "because": "소각도 봉쇄도 안 통해 원인을 다시 찾아야 했기 때문에",
+      "shot": "낡은 근무일지에 남은 손글씨 한 줄."
+    },
+    {
+      "when": "그날 밤",
+      "event": "카를손 박사가 본인 직접 접촉 금지 규칙을 스스로 어겼다. 부하 요원이 미행당하고 있다는 보고를 받자, 추적을 자기 쪽으로 돌리려 자기 신상 카드를 직접 색인철에 밀어 넣었다.",
+      "because": "부하 요원이 정체불명의 인물에게 미행당하고 있다는 보고가 올라왔기 때문에",
+      "shot": "카를손 박사가 자기 신상 카드를 색인철에 직접 밀어 넣는 손."
+    },
+    {
+      "when": "그날 이후",
+      "event": "그는 더 이상 자기 이름으로 서명하지 못한다. 사이트-540 명단엔 '리스고르'라는 이름으로 남아 있고, 말투와 필체는 그대로인데 신상 기록만 다른 사람 것이다. 이름 대여소는 지금도 그 자리에 있고, 카드는 여전히 이만 한 장, 그가 들어간 뒤로 하나 늘었다.",
+      "because": "카드함이 그의 진짜 얼굴을 대신 떠맡아 늙게 만드는 장치였기 때문에",
+      "shot": "'리스고르'라는 이름이 붙은 자리와, 옆에 걸린 카를손의 예전 사진."
+    }
+  ],
+  "retention_beats": [
+    "혼돈의 반란이 이 위장 신원 기술로 정확히 뭘 하려던 건지는 아직 확인 안 됐다",
+    "사이트-540 등급 재분류 심사는 아직 결론이 안 났다",
+    "카드 이만 한 장 중, 리스고르 말고 다른 이름이 몇 개나 더 섞여 있는지는 아직 아무도 세어보지 않았다"
+  ],
+  "cameos": [
+    {
+      "number": "SCP-914",
+      "how": "카드 한 장을 914에 넣고 '정밀'로 돌려본 적이 있으나 결과물이 똑같은 카드였다는 사실만 언급됨. 확인된 연관은 아님."
+    },
+    {
+      "number": "SCP-999",
+      "how": "격리동 반대편 이웃으로 짧게 언급됨. 사실 관계 확인 외 서술 없음."
+    }
+  ],
+  "twist_summary": "역할의 반전 — 재단은 카드함이 열람자에게 가짜 신원을 덧씌우는 위협이라고 봤지만, 실은 냉전기 정보기관이 만든 위장 신원 생성기로, 밖으로 나가는 요원의 진짜 얼굴을 대신 떠맡아 늙려주는 장치였다는 반전. 카를손 박사가 본인 직접 접촉 금지 규칙을 스스로 어기고 부하를 지키려 미끼가 된 뒤, 그의 정체성은 '리스고르'라는 다른 이름으로 완전히 대체돼 돌아오지 못한다.",
+  "narration_full": "「이건 제 필체가 아닌데요.」 그 말을 누가 처음 흘렸는지는, 기록에 남아 있지 않습니다. 노르웨이령 스발바르, 스피츠베르겐 섬 폐광 갱도 얘기입니다. 냉전기에 버려진 갱도 안쪽에서, 재단이 녹슨 철제 서가와 색인 카드함을 발견했어요. 남은 카드는 이만 장 조금 넘었습니다. 소유주가 불분명하다는 게 확인되자마자, 재단은 사이트-540을 세우고, 그 구역부터 확보, 격리에 들어갔습니다. 인지위해 후보로 두고, 절차부터 세웠어요. 카드는 반드시 두 사람이 함께 열람할 것, 내용을 소리 내어 읽지 않을 것 — 흔한 방식이었죠. 객체 등급은 세이프. 딱히 위협적으로는 안 보였으니까요. 카를손 박사, 사이트-540 기록관리팀장이었는데요, 목록화 작업을 맡았습니다. 카드 한 장을 필사하던 중이었어요. 손을 멈추고 보니, 글씨가 자기 필체가 아니었던 겁니다. 획이 가늘고, 마침표를 유난히 꾹 눌러 찍는 버릇까지 — 낯선 손이었죠. 종이에선 오래된 잉크 냄새 대신, 젖은 금속 냄새가 났다고 하고요. 그 글씨, 정말 자기 손으로 쓴 게 맞긴 할까요? 「이건 제 필체가 아닌데요.」 그가 그렇게 보고했습니다. 재단은 이걸 인지위해로 재규정하고, 차단 고글을 지급했어요. 낭독 금지 조항도 추가됐죠. 처음 신원이 겹친 요원 야콥센에게는, 을급 기억소거제를 투여했습니다. 나흘 만에, 별다른 후유증 없이 돌아왔다고는 하는데… 그 나흘 동안 뭘 했는지는, 본인도 기억 못 했다더군요. 그런데도 목록화는 계속돼야 했어요. 카드가 이만 장이니까요. 몇 주 지나자 비슷한 보고가 더 들어왔습니다. 열람자 신상 기록에, 몇 초쯤 다른 이름이 겹쳐 찍혔다가 사라지는 일이었죠. 처음엔 세 건, 다음 주엔 일곱 건, 그다음부터는 아예 세는 걸 그만뒀다고 하더군요. 그 무렵부터, 현장 사람들 사이에서 이 카드함을 부르는 말이 하나 생겼습니다. 다들 그걸 '이름 대여소'라고 불렀죠. 카를손 박사는 이걸 위협으로 봤습니다. 카드가 열람자에게 가짜 신원을 덧씌우는 장치라고요. 기동특무부대 카파-15, 현장에선 '가명표'라고 불렀는데, 그들이 투입돼 소각을 시도했습니다. 무전엔 이렇게 남아 있어요. 「소각 완료. …어, 잠깐만요. 카드가, 다시 있습니다.」 태운 자리에, 한 시간도 안 돼 새 카드가 꽂혀 있었던 겁니다. 담당 대원 하나는, 소각 직후 자기 신상 기록이 한동안 완전히 비어버리는 걸 겪었고요. 전면 재시도는 보류됐습니다. 같은 시기, D계급 재측정 시험도 진행됐어요. D-9361이 카드 한 장을 쥐고 나온 뒤 남긴 말은 짧았습니다. 「저 원래 이 이름 아니었죠?」 그 말을 듣고도, 다들 대수롭지 않게 넘겼다고 하더군요… 그의 팔뚝엔, 없던 문신 자국이 희미하게 남아 있었는데도요. 소각도 봉쇄도 안 통하자, 카를손 박사는 갱도의 원래 소유 기록을 뒤졌습니다. 서류상 명의는 광산 회사였지만, 실은 냉전기 정보기관 한 곳이 위장으로 쓰던 시설이었더군요. 옛 근무일지 한 줄이 남아 있었습니다. 「요원 신원은, 카드가 대신 늙는다.」 그러니까 이 카드함은, 처음부터 위협이 아니라 위장 신원 생성기였다는 뜻이었죠. 이름 대여소라는 그 별명이, 그제야 딱 들어맞았던 셈입니다. 밖으로 나가는 요원들의 진짜 얼굴을, 카드 쪽이 대신 떠맡아 늙어가게 만드는 장치였던 겁니다. 카를손 박사는 이 가설을 확인하고 싶어 했어요. 본인이 직접 접촉하지 않을 것 — 마지막 규칙이었는데, 그는 그걸 어겼습니다. 부하 요원 하나가 그날 밤, 사이트 밖에서 정체불명의 인물에게 미행당하고 있다는 보고가 올라오자, 자기 신상 카드를 직접 색인철에 밀어 넣었죠. 추적을 자기 쪽으로 돌리려던 거였습니다. 그날 이후로, 그는 자기 이름으로 서류에 서명한 적이 없습니다. 지금 사이트-540 근무자 명단엔 '리스고르'라는 이름이 올라 있어요. 말투도, 필체도, 마침표를 꾹 눌러 찍는 버릇까지 카를손 박사 그대로인데, 신상 기록만 다른 사람 걸로 바뀌어 있습니다. 그가 진짜 카를손인지, 지금도 확신할 수 있는 사람이 있을까요? 누가 물으면, 그는 이렇게 답한다고 하고요. 「지금 이름이 뭐가 중요합니까, 일 마저 합시다.」 재수용 절차요? 대상이 누군지부터 다시 정해야 하는데, 그것부터가… 막혀 있다고 하더군요. 원래 얼굴을 기억하는 동료는, 이제 두셋… 남았다고 하고요. 옆 격리동엔 SCP-914가 있다고 들었어요. 초기에 카드 한 장을 914에 넣고 '정밀'로 돌려본 적이 있다는데, 나온 건 그냥 똑같은 카드 한 장이었답니다. 격리동 반대편엔 SCP-999도 있다던데, 여기 분위기랑은 영 안 어울리는 이웃이죠. 혼돈의 반란 쪽에서, 이 위장 신원 기술을 빼내려던 인물 하나가 갱도 입구 검문소에서 검거된 일도 있었어요. 목적은 아직 확인이 안 됐습니다. 격리 절차를 다시 짜는 회의도, 몇 차례 더 열렸습니다. 등급 재분류 심사는, 아직 결론이 안 났고요. 저도 이 부분은 아직… 다 이해했다고는 말 못 하겠습니다. 이름 대여소는, 지금도 그 자리에 있습니다. 카드는 여전히 이만 한 장. 그가 들어간 뒤로, 하나… 늘었습니다. 혹시 여러분 지갑 속에도, 언제 넣었는지 기억 안 나는 카드 한 장, 섞여 있진 않으신가요? 있다면 그게 뭐였는지, 댓글에 한번 남겨주시면 좋겠습니다. 이런 기록들, 앞으로도 계속 찾아서 들려드리겠습니다.",
+  "segments": [
+    {
+      "text": "「이건 제 필체가 아닌데요.」",
+      "est_sec": 4,
+      "text_en": "「This isn't my handwriting.」",
+      "text_ja": "「これ、私の筆跡じゃないんですけど。」",
+      "text_zh_Hant": "「这不是我的笔迹啊。」"
+    },
+    {
+      "text": "그 말을 누가 처음 흘렸는지는,",
+      "est_sec": 4,
+      "text_en": "No one recorded who first said it,",
+      "text_ja": "その言葉を最初に漏らしたのが誰かは、",
+      "text_zh_Hant": "没人记下这句话最早是谁说的,"
+    },
+    {
+      "text": "기록에 남아 있지 않습니다.",
+      "est_sec": 3,
+      "text_en": "or so the records show.",
+      "text_ja": "記録には残っていません。",
+      "text_zh_Hant": "档案里没有留下。"
+    },
+    {
+      "text": "노르웨이령 스발바르,",
+      "est_sec": 3,
+      "text_en": "This is about Norway's Svalbard,",
+      "text_ja": "ノルウェー領スヴァールバル、",
+      "text_zh_Hant": "这是发生在挪威属地斯瓦尔巴,"
+    },
+    {
+      "text": "스피츠베르겐 섬 폐광 갱도 얘기입니다.",
+      "est_sec": 5,
+      "text_en": "an abandoned mine shaft on Spitsbergen Island.",
+      "text_ja": "スピッツベルゲン島の廃坑の話です。",
+      "text_zh_Hant": "斯匹次卑尔根岛一处废弃矿坑的事。"
+    },
+    {
+      "text": "냉전기에 버려진 갱도 안쪽에서,",
+      "est_sec": 4,
+      "text_en": "Deep inside a shaft abandoned since the Cold War,",
+      "text_ja": "冷戦期に放棄された坑道の奥で、",
+      "text_zh_Hant": "在冷战时期废弃的坑道深处,"
+    },
+    {
+      "text": "재단이 녹슨 철제 서가와",
+      "est_sec": 3,
+      "text_en": "the Foundation found rusted steel shelving",
+      "text_ja": "財団は錆びた鉄製の書架と",
+      "text_zh_Hant": "基金会发现了生锈的铁架，"
+    },
+    {
+      "text": "색인 카드함을 발견했어요.",
+      "est_sec": 3,
+      "text_en": "and an index card cabinet.",
+      "text_ja": "索引カード箱を発見しました。",
+      "text_zh_Hant": "还有一个索引卡箱。"
+    },
+    {
+      "text": "남은 카드는 이만 장 조금 넘었습니다.",
+      "est_sec": 5,
+      "text_en": "Just over twenty thousand cards remained.",
+      "text_ja": "残っていたカードは二万枚あまり。",
+      "text_zh_Hant": "留存的卡片超过两万张。"
+    },
+    {
+      "text": "소유주가 불분명하다는 게 확인되자마자,",
+      "est_sec": 5,
+      "text_en": "The moment ownership proved unclear,",
+      "text_ja": "所有者が不明だと確認されるやいなや、",
+      "text_zh_Hant": "一确认所有者不明，"
+    },
+    {
+      "text": "재단은 사이트-540을 세우고,",
+      "est_sec": 4,
+      "text_en": "the Foundation set up Site-540,",
+      "text_ja": "財団はサイト-540を設立し、",
+      "text_zh_Hant": "基金会便建立了540号站点，"
+    },
+    {
+      "text": "그 구역부터 확보,",
+      "est_sec": 2,
+      "text_en": "securing the area first,",
+      "text_ja": "その区域から確保、",
+      "text_zh_Hant": "先确保了该区域，"
+    },
+    {
+      "text": "격리에 들어갔습니다.",
+      "est_sec": 3,
+      "text_en": "then moved into containment.",
+      "text_ja": "収容に入りました。",
+      "text_zh_Hant": "随后展开了收容。"
+    },
+    {
+      "text": "인지위해 후보로 두고,",
+      "est_sec": 3,
+      "text_en": "Treating it as a possible cognitohazard,",
+      "text_ja": "認知的災害の候補として、",
+      "text_zh_Hant": "将其列为潜在认知危害,"
+    },
+    {
+      "text": "절차부터 세웠어요.",
+      "est_sec": 2,
+      "text_en": "procedure came first.",
+      "text_ja": "まず手続きを定めました。",
+      "text_zh_Hant": "首先制定了程序。"
+    },
+    {
+      "text": "카드는 반드시 두 사람이 함께 열람할 것,",
+      "est_sec": 5,
+      "text_en": "Cards were to be read only by two people together,",
+      "text_ja": "カードは必ず二人で閲覧すること、",
+      "text_zh_Hant": "卡片必须由两人一同查阅，"
+    },
+    {
+      "text": "내용을 소리 내어 읽지 않을 것 —",
+      "est_sec": 4,
+      "text_en": "and never read aloud —",
+      "text_ja": "内容を声に出して読まないこと —",
+      "text_zh_Hant": "且不得出声朗读 —"
+    },
+    {
+      "text": "흔한 방식이었죠.",
+      "est_sec": 2,
+      "text_en": "the usual approach.",
+      "text_ja": "よくあるやり方でしたね。",
+      "text_zh_Hant": "是常见的做法。"
+    },
+    {
+      "text": "객체 등급은 세이프.",
+      "est_sec": 3,
+      "text_en": "Object class: Safe.",
+      "text_ja": "オブジェクトクラスはセーフ。",
+      "text_zh_Hant": "项目等级为安全级。"
+    },
+    {
+      "text": "딱히 위협적으로는 안 보였으니까요.",
+      "est_sec": 4,
+      "text_en": "It didn't look particularly threatening.",
+      "text_ja": "特に脅威には見えなかったので。",
+      "text_zh_Hant": "毕竟看起来并不算特别危险。"
+    },
+    {
+      "text": "카를손 박사,",
+      "est_sec": 2,
+      "text_en": "Dr. Karlsson,",
+      "text_ja": "カールソン博士、",
+      "text_zh_Hant": "卡尔松博士，"
+    },
+    {
+      "text": "사이트-540 기록관리팀장이었는데요,",
+      "est_sec": 5,
+      "text_en": "the archives team lead at Site-540,",
+      "text_ja": "サイト-540の記録管理チーム長でしたが、",
+      "text_zh_Hant": "是540号站点的档案管理组组长，"
+    },
+    {
+      "text": "목록화 작업을 맡았습니다.",
+      "est_sec": 3,
+      "text_en": "was in charge of cataloging.",
+      "text_ja": "目録作成作業を担当していました。",
+      "text_zh_Hant": "负责编目工作。"
+    },
+    {
+      "text": "카드 한 장을 필사하던 중이었어요.",
+      "est_sec": 4,
+      "text_en": "He was copying out one card by hand.",
+      "text_ja": "カード一枚を書き写していたときでした。",
+      "text_zh_Hant": "当时他正在手抄一张卡片。"
+    },
+    {
+      "text": "손을 멈추고 보니,",
+      "est_sec": 2,
+      "text_en": "He stopped and looked —",
+      "text_ja": "手を止めて見てみると、",
+      "text_zh_Hant": "停下笔一看，"
+    },
+    {
+      "text": "글씨가 자기 필체가 아니었던 겁니다.",
+      "est_sec": 5,
+      "emphasis": "자기 필체가 아니었다",
+      "text_en": "the handwriting wasn't his own.",
+      "text_ja": "字が自分の筆跡ではなかったのです。",
+      "text_zh_Hant": "字迹竟然不是自己的。"
+    },
+    {
+      "text": "획이 가늘고,",
+      "est_sec": 2,
+      "text_en": "The strokes were thin,",
+      "text_ja": "画が細く、",
+      "text_zh_Hant": "笔画纤细，"
+    },
+    {
+      "text": "마침표를 유난히 꾹 눌러 찍는 버릇까지 —",
+      "est_sec": 5,
+      "text_en": "even the habit of pressing hard on periods —",
+      "text_ja": "句点を妙に強く押す癖まで —",
+      "text_zh_Hant": "连重重顿下句点的习惯都在 —"
+    },
+    {
+      "text": "낯선 손이었죠.",
+      "est_sec": 2,
+      "text_en": "it was someone else's hand.",
+      "text_ja": "見知らぬ手でした。",
+      "text_zh_Hant": "是一只陌生的手。"
+    },
+    {
+      "text": "종이에선 오래된 잉크 냄새 대신,",
+      "est_sec": 4,
+      "text_en": "Instead of old ink, the paper smelled",
+      "text_ja": "紙からは古いインクの匂いの代わりに、",
+      "text_zh_Hant": "纸上闻不到旧墨水味，"
+    },
+    {
+      "text": "젖은 금속 냄새가 났다고 하고요.",
+      "est_sec": 4,
+      "text_en": "of wet metal, apparently.",
+      "text_ja": "湿った金属の匂いがしたそうです。",
+      "text_zh_Hant": "反而带着一股潮湿金属味。"
+    },
+    {
+      "text": "그 글씨,",
+      "est_sec": 2,
+      "text_en": "That handwriting —",
+      "text_ja": "その字、",
+      "text_zh_Hant": "那笔字，"
+    },
+    {
+      "text": "정말 자기 손으로 쓴 게 맞긴 할까요?",
+      "est_sec": 5,
+      "text_en": "was it really written by his own hand?",
+      "text_ja": "本当に自分の手で書いたものだったのでしょうか?",
+      "text_zh_Hant": "真的是他自己写的吗?"
+    },
+    {
+      "text": "「이건 제 필체가 아닌데요.」",
+      "est_sec": 4,
+      "text_en": "「This isn't my handwriting.」",
+      "text_ja": "「これ、私の筆跡じゃないんですけど。」",
+      "text_zh_Hant": "「这不是我的笔迹啊。」"
+    },
+    {
+      "text": "그가 그렇게 보고했습니다.",
+      "est_sec": 3,
+      "text_en": "That's what he reported.",
+      "text_ja": "彼はそう報告しました。",
+      "text_zh_Hant": "他是这么报告的。"
+    },
+    {
+      "text": "재단은 이걸 인지위해로 재규정하고,",
+      "est_sec": 4,
+      "text_en": "The Foundation reclassified it as a cognitohazard",
+      "text_ja": "財団はこれを認知的災害として再定義し、",
+      "text_zh_Hant": "基金会将此重新定性为认知危害，"
+    },
+    {
+      "text": "차단 고글을 지급했어요.",
+      "est_sec": 3,
+      "text_en": "and issued blocking goggles.",
+      "text_ja": "遮断ゴーグルを支給しました。",
+      "text_zh_Hant": "并发放了遮蔽护目镜。"
+    },
+    {
+      "text": "낭독 금지 조항도 추가됐죠.",
+      "est_sec": 3,
+      "text_en": "A no-reading-aloud clause was added too.",
+      "text_ja": "朗読禁止の条項も追加されました。",
+      "text_zh_Hant": "还追加了禁止朗读的条款。"
+    },
+    {
+      "text": "처음 신원이 겹친 요원 야콥센에게는,",
+      "est_sec": 5,
+      "text_en": "Agent Jakobsen, the first to have his identity overlap,",
+      "text_ja": "最初に身元が重なった職員ヤコブセンには、",
+      "text_zh_Hant": "身份最先重叠的雅各布森特工，"
+    },
+    {
+      "text": "을급 기억소거제를 투여했습니다.",
+      "est_sec": 4,
+      "text_en": "was given a Class-B amnestic.",
+      "text_ja": "乙級記憶消去剤を投与されました。",
+      "text_zh_Hant": "被施以乙级记忆消除剂。"
+    },
+    {
+      "text": "나흘 만에,",
+      "est_sec": 2,
+      "text_en": "Within four days,",
+      "text_ja": "四日後、",
+      "text_zh_Hant": "四天后，"
+    },
+    {
+      "text": "별다른 후유증 없이 돌아왔다고는 하는데…",
+      "est_sec": 5,
+      "text_en": "he came back with no apparent aftereffects…",
+      "text_ja": "特に後遺症もなく戻ってきたそうですが…",
+      "text_zh_Hant": "据说恢复得没什么后遗症…"
+    },
+    {
+      "text": "그 나흘 동안 뭘 했는지는,",
+      "est_sec": 3,
+      "text_en": "what he did during those four days,",
+      "text_ja": "その四日間何をしていたのかは、",
+      "text_zh_Hant": "但那四天里他做了什么，"
+    },
+    {
+      "text": "본인도 기억 못 했다더군요.",
+      "est_sec": 3,
+      "text_en": "he couldn't even remember himself.",
+      "text_ja": "本人も覚えていなかったそうです。",
+      "text_zh_Hant": "据说连他自己都不记得。"
+    },
+    {
+      "text": "그런데도 목록화는 계속돼야 했어요.",
+      "est_sec": 4,
+      "text_en": "Even so, cataloging had to continue.",
+      "text_ja": "それでも目録作業は続けなければなりませんでした。",
+      "text_zh_Hant": "即便如此,编目工作仍须继续。"
+    },
+    {
+      "text": "카드가 이만 장이니까요.",
+      "est_sec": 3,
+      "text_en": "There were twenty thousand cards, after all.",
+      "text_ja": "カードが二万枚もあるのですから。",
+      "text_zh_Hant": "毕竟卡片有两万张呢。"
+    },
+    {
+      "text": "몇 주 지나자 비슷한 보고가 더 들어왔습니다.",
+      "est_sec": 6,
+      "text_en": "A few weeks later, similar reports came in.",
+      "text_ja": "数週間後、似たような報告がさらに入ってきました。",
+      "text_zh_Hant": "几周后,类似的报告陆续传来。"
+    },
+    {
+      "text": "열람자 신상 기록에,",
+      "est_sec": 3,
+      "text_en": "In the readers' personnel files,",
+      "text_ja": "閲覧者の身上記録に、",
+      "text_zh_Hant": "在查阅者的档案中，"
+    },
+    {
+      "text": "몇 초쯤 다른 이름이 겹쳐 찍혔다가",
+      "est_sec": 4,
+      "text_en": "a different name would overlap for a few seconds",
+      "text_ja": "数秒ほど別の名前が重なって表示され、",
+      "text_zh_Hant": "会有别的名字短暂重叠印出几秒，"
+    },
+    {
+      "text": "사라지는 일이었죠.",
+      "est_sec": 2,
+      "text_en": "then vanish.",
+      "text_ja": "消える現象でした。",
+      "text_zh_Hant": "随后又消失。"
+    },
+    {
+      "text": "처음엔 세 건,",
+      "est_sec": 2,
+      "text_en": "Three cases at first,",
+      "text_ja": "最初は三件、",
+      "text_zh_Hant": "起初是三例，"
+    },
+    {
+      "text": "다음 주엔 일곱 건,",
+      "est_sec": 3,
+      "text_en": "seven the following week,",
+      "text_ja": "翌週は七件、",
+      "text_zh_Hant": "下周变成七例，"
+    },
+    {
+      "text": "그다음부터는 아예 세는 걸",
+      "est_sec": 3,
+      "text_en": "and after that they simply stopped",
+      "text_ja": "それから先は数えるのを",
+      "text_zh_Hant": "再往后就干脆"
+    },
+    {
+      "text": "그만뒀다고 하더군요.",
+      "est_sec": 3,
+      "text_en": "counting altogether, apparently.",
+      "text_ja": "やめてしまったそうです。",
+      "text_zh_Hant": "不再计数了。"
+    },
+    {
+      "text": "그 무렵부터, 현장 사람들 사이에서",
+      "est_sec": 4,
+      "text_en": "Around then, among the people on-site,",
+      "text_ja": "その頃から、現場の人々の間で、",
+      "text_zh_Hant": "从那时起,在现场人员之间，"
+    },
+    {
+      "text": "이 카드함을 부르는 말이 하나 생겼습니다.",
+      "est_sec": 5,
+      "text_en": "a nickname for the cabinet started to stick.",
+      "text_ja": "このカード箱を呼ぶ言葉がひとつ生まれました。",
+      "text_zh_Hant": "渐渐有了一个称呼这卡片箱的说法。"
+    },
+    {
+      "text": "다들 그걸 '이름 대여소'라고 불렀죠.",
+      "est_sec": 5,
+      "text_en": "Everyone started calling it the 'Name Rental Shop.'",
+      "text_ja": "皆それを「名前レンタル所」と呼んでいました。",
+      "text_zh_Hant": "大家都管它叫「租名铺」。"
+    },
+    {
+      "text": "카를손 박사는 이걸 위협으로 봤습니다.",
+      "est_sec": 5,
+      "text_en": "Dr. Karlsson saw this as a threat.",
+      "text_ja": "カールソン博士はこれを脅威と見ていました。",
+      "text_zh_Hant": "卡尔松博士将此视为威胁。"
+    },
+    {
+      "text": "카드가 열람자에게",
+      "est_sec": 2,
+      "text_en": "that the cards were overlaying",
+      "text_ja": "カードが閲覧者に",
+      "text_zh_Hant": "认为卡片正把假身份"
+    },
+    {
+      "text": "가짜 신원을 덧씌우는 장치라고요.",
+      "est_sec": 4,
+      "text_en": "false identities onto whoever read them.",
+      "text_ja": "偽の身元を上書きする装置だというのです。",
+      "text_zh_Hant": "叠加到阅读者身上。"
+    },
+    {
+      "text": "기동특무부대 카파-15,",
+      "est_sec": 3,
+      "text_en": "Mobile Task Force Kappa-15,",
+      "text_ja": "機動特務部隊カッパ-15、",
+      "text_zh_Hant": "机动特遣队卡帕-15，"
+    },
+    {
+      "text": "현장에선 '가명표'라고 불렀는데,",
+      "est_sec": 4,
+      "text_en": "nicknamed 'Alias Tag' on-site,",
+      "text_ja": "現場では「偽名札」と呼ばれていましたが、",
+      "text_zh_Hant": "现场人员称之为「化名牌」，"
+    },
+    {
+      "text": "그들이 투입돼 소각을 시도했습니다.",
+      "est_sec": 4,
+      "text_en": "was deployed to attempt incineration.",
+      "text_ja": "彼らが投入され焼却を試みました。",
+      "text_zh_Hant": "他们被派去尝试焚毁卡片。"
+    },
+    {
+      "text": "무전엔 이렇게 남아 있어요.",
+      "est_sec": 3,
+      "text_en": "The radio log records this.",
+      "text_ja": "無線記録にはこう残っています。",
+      "text_zh_Hant": "无线电记录留下了这样的话。"
+    },
+    {
+      "text": "「소각 완료. …어,",
+      "est_sec": 3,
+      "text_en": "「Incineration complete. …Uh,",
+      "text_ja": "「焼却完了。…あの、",
+      "text_zh_Hant": "「焚毁完成。…呃,"
+    },
+    {
+      "text": "잠깐만요.",
+      "est_sec": 2,
+      "text_en": "hold on.",
+      "text_ja": "ちょっと待ってください。",
+      "text_zh_Hant": "等一下。"
+    },
+    {
+      "text": "카드가,",
+      "est_sec": 2,
+      "text_en": "The card —",
+      "text_ja": "カードが、",
+      "text_zh_Hant": "卡片，"
+    },
+    {
+      "text": "다시 있습니다.」",
+      "est_sec": 2,
+      "text_en": "it's back.」",
+      "text_ja": "また戻っています」",
+      "text_zh_Hant": "又出现了。」"
+    },
+    {
+      "text": "태운 자리에,",
+      "est_sec": 2,
+      "text_en": "Where it had burned,",
+      "text_ja": "燃やした場所に、",
+      "text_zh_Hant": "在焚毁之处，"
+    },
+    {
+      "text": "한 시간도 안 돼",
+      "est_sec": 2,
+      "text_en": "in under an hour",
+      "text_ja": "一時間も経たないうちに",
+      "text_zh_Hant": "不到一小时，"
+    },
+    {
+      "text": "새 카드가 꽂혀 있었던 겁니다.",
+      "est_sec": 4,
+      "text_en": "a new card was already back in place.",
+      "text_ja": "新しいカードが差し込まれていたのです。",
+      "text_zh_Hant": "一张新卡片已经重新插了回去。"
+    },
+    {
+      "text": "담당 대원 하나는,",
+      "est_sec": 2,
+      "text_en": "One of the operatives",
+      "text_ja": "担当隊員の一人は、",
+      "text_zh_Hant": "其中一名队员，"
+    },
+    {
+      "text": "소각 직후 자기 신상 기록이",
+      "est_sec": 3,
+      "text_en": "found his own personnel file completely blank",
+      "text_ja": "焼却直後、自分の身上記録が",
+      "text_zh_Hant": "在焚毁后随即发现自己的档案"
+    },
+    {
+      "text": "한동안 완전히 비어버리는 걸 겪었고요.",
+      "est_sec": 5,
+      "text_en": "for a while, right after the burn.",
+      "text_ja": "しばらく完全に空になるのを経験しました。",
+      "text_zh_Hant": "短暂地完全空白了一阵。"
+    },
+    {
+      "text": "전면 재시도는 보류됐습니다.",
+      "est_sec": 3,
+      "text_en": "A full retry was put on hold.",
+      "text_ja": "全面的な再試行は保留されました。",
+      "text_zh_Hant": "全面重试因此被搁置。"
+    },
+    {
+      "text": "같은 시기,",
+      "est_sec": 2,
+      "text_en": "Around the same time,",
+      "text_ja": "同じ時期、",
+      "text_zh_Hant": "同一时期，"
+    },
+    {
+      "text": "D계급 재측정 시험도 진행됐어요.",
+      "est_sec": 4,
+      "text_en": "a Class D re-measurement test was also run.",
+      "text_ja": "D級再測定試験も行われました。",
+      "text_zh_Hant": "也进行了D级人员的再测量试验。"
+    },
+    {
+      "text": "D-9361이 카드 한 장을 쥐고 나온 뒤",
+      "est_sec": 5,
+      "text_en": "After D-9361 came out holding one card,",
+      "text_ja": "D-9361がカード一枚を握って出てきた後、",
+      "text_zh_Hant": "D-9361攥着一张卡片走出来后，"
+    },
+    {
+      "text": "남긴 말은 짧았습니다.",
+      "est_sec": 3,
+      "text_en": "the words he left were short.",
+      "text_ja": "残した言葉は短いものでした。",
+      "text_zh_Hant": "留下的话很简短。"
+    },
+    {
+      "text": "「저 원래 이 이름 아니었죠?」",
+      "est_sec": 4,
+      "text_en": "「This wasn't my name to begin with, right?」",
+      "text_ja": "「私、元々この名前じゃなかったですよね?」",
+      "text_zh_Hant": "「我原本不是叫这个名字吧?」"
+    },
+    {
+      "text": "그 말을 듣고도,",
+      "est_sec": 2,
+      "text_en": "Even hearing that,",
+      "text_ja": "その言葉を聞いても、",
+      "text_zh_Hant": "听到这话后，"
+    },
+    {
+      "text": "다들 대수롭지 않게 넘겼다고 하더군요…",
+      "est_sec": 5,
+      "text_en": "everyone apparently brushed it off…",
+      "text_ja": "皆特に気にも留めなかったそうです…",
+      "text_zh_Hant": "大家似乎都没怎么在意…"
+    },
+    {
+      "text": "그의 팔뚝엔,",
+      "est_sec": 2,
+      "text_en": "On his forearm,",
+      "text_ja": "彼の腕には、",
+      "text_zh_Hant": "他的前臂上，"
+    },
+    {
+      "text": "없던 문신 자국이 희미하게 남아 있었는데도요.",
+      "est_sec": 6,
+      "text_en": "a faint tattoo mark that hadn't been there remained.",
+      "text_ja": "なかったはずの刺青の跡がうっすら残っていたのに。",
+      "text_zh_Hant": "明明留下了原本没有的淡淡纹身痕迹。"
+    },
+    {
+      "text": "소각도 봉쇄도 안 통하자,",
+      "est_sec": 3,
+      "text_en": "With burning and sealing both failing,",
+      "text_ja": "焼却も封鎖も通用しないとわかると、",
+      "text_zh_Hant": "焚毁和封锁都不奏效后，"
+    },
+    {
+      "text": "카를손 박사는",
+      "est_sec": 2,
+      "text_en": "Dr. Karlsson",
+      "text_ja": "カールソン博士は、",
+      "text_zh_Hant": "卡尔松博士"
+    },
+    {
+      "text": "갱도의 원래 소유 기록을 뒤졌습니다.",
+      "est_sec": 5,
+      "text_en": "dug into the mine's original ownership records.",
+      "text_ja": "坑道の元の所有記録を調べ始めました。",
+      "text_zh_Hant": "开始追查坑道最初的所有权记录。"
+    },
+    {
+      "text": "서류상 명의는 광산 회사였지만,",
+      "est_sec": 4,
+      "text_en": "On paper it belonged to a mining company,",
+      "text_ja": "書類上の名義は鉱山会社でしたが、",
+      "text_zh_Hant": "档案上登记的是一家矿业公司，"
+    },
+    {
+      "text": "실은 냉전기 정보기관 한 곳이",
+      "est_sec": 4,
+      "text_en": "but it turned out a Cold War-era intelligence agency",
+      "text_ja": "実は冷戦期の情報機関の一つが、",
+      "text_zh_Hant": "但实际上冷战时期某个情报机构"
+    },
+    {
+      "text": "위장으로 쓰던 시설이었더군요.",
+      "est_sec": 4,
+      "text_en": "had used it as a front, apparently.",
+      "text_ja": "偽装として使っていた施設だったのです。",
+      "text_zh_Hant": "曾把它当作幌子使用。"
+    },
+    {
+      "text": "옛 근무일지 한 줄이 남아 있었습니다.",
+      "est_sec": 5,
+      "text_en": "One line survived in an old duty log.",
+      "text_ja": "古い勤務日誌に一行残っていました。",
+      "text_zh_Hant": "一本旧值班日志里留有一行字。"
+    },
+    {
+      "text": "「요원 신원은,",
+      "est_sec": 2,
+      "text_en": "「An agent's identity,",
+      "text_ja": "「職員の身元は、",
+      "text_zh_Hant": "「特工的身份，"
+    },
+    {
+      "text": "카드가 대신 늙는다.」",
+      "est_sec": 3,
+      "text_en": "the card ages in his place.」",
+      "text_ja": "カードが代わりに老いる」",
+      "text_zh_Hant": "由卡片替他老去。」"
+    },
+    {
+      "text": "그러니까 이 카드함은,",
+      "est_sec": 3,
+      "text_en": "So this cabinet, from the start,",
+      "text_ja": "つまりこのカード箱は、",
+      "text_zh_Hant": "也就是说这个卡片箱，"
+    },
+    {
+      "text": "처음부터 위협이 아니라",
+      "est_sec": 3,
+      "text_en": "was never a threat,",
+      "text_ja": "最初から脅威ではなく、",
+      "text_zh_Hant": "从一开始就不是威胁，"
+    },
+    {
+      "text": "위장 신원 생성기였다는 뜻이었죠.",
+      "est_sec": 4,
+      "emphasis": "위장 신원 생성기",
+      "text_en": "but a false-identity generator.",
+      "text_ja": "偽装身元生成装置だったということでした。",
+      "text_zh_Hant": "而是一台伪装身份生成器。"
+    },
+    {
+      "text": "이름 대여소라는 그 별명이,",
+      "est_sec": 3,
+      "text_en": "That nickname, the Name Rental Shop —",
+      "text_ja": "「名前レンタル所」というその呼び名が、",
+      "text_zh_Hant": "「租名铺」这个称呼，"
+    },
+    {
+      "text": "그제야 딱 들어맞았던 셈입니다.",
+      "est_sec": 4,
+      "text_en": "only then did it finally make sense.",
+      "text_ja": "そのときようやくぴったり合った形でした。",
+      "text_zh_Hant": "直到这时才算真正对上了。"
+    },
+    {
+      "text": "밖으로 나가는 요원들의 진짜 얼굴을,",
+      "est_sec": 5,
+      "text_en": "It was built to take on agents' real faces",
+      "text_ja": "外に出て行く職員たちの本当の顔を、",
+      "text_zh_Hant": "把外出特工的真实面孔，"
+    },
+    {
+      "text": "카드 쪽이 대신 떠맡아",
+      "est_sec": 3,
+      "text_en": "as they went out into the field,",
+      "text_ja": "カードの方が代わりに引き受けて",
+      "text_zh_Hant": "由卡片一方替他们承担下来，"
+    },
+    {
+      "text": "늙어가게 만드는 장치였던 겁니다.",
+      "est_sec": 4,
+      "text_en": "and let them age on the card instead.",
+      "text_ja": "老けさせる装置だったのです。",
+      "text_zh_Hant": "让面孔在卡片上代为老去。"
+    },
+    {
+      "text": "카를손 박사는",
+      "est_sec": 2,
+      "text_en": "Dr. Karlsson",
+      "text_ja": "カールソン博士は",
+      "text_zh_Hant": "卡尔松博士"
+    },
+    {
+      "text": "이 가설을 확인하고 싶어 했어요.",
+      "est_sec": 4,
+      "text_en": "wanted to confirm this hypothesis.",
+      "text_ja": "この仮説を確かめたがっていました。",
+      "text_zh_Hant": "想要验证这个假设。"
+    },
+    {
+      "text": "본인이 직접 접촉하지 않을 것 —",
+      "est_sec": 4,
+      "text_en": "Never make contact yourself —",
+      "text_ja": "本人が直接接触しないこと —",
+      "text_zh_Hant": "本人不得直接接触 —"
+    },
+    {
+      "text": "마지막 규칙이었는데,",
+      "est_sec": 3,
+      "text_en": "that was the last rule,",
+      "text_ja": "最後の規則でしたが、",
+      "text_zh_Hant": "这是最后一条规则，"
+    },
+    {
+      "text": "그는 그걸 어겼습니다.",
+      "est_sec": 3,
+      "text_en": "and he broke it.",
+      "text_ja": "彼はそれを破りました。",
+      "text_zh_Hant": "他却违反了。"
+    },
+    {
+      "text": "부하 요원 하나가 그날 밤,",
+      "est_sec": 3,
+      "text_en": "One night, a subordinate agent",
+      "text_ja": "部下の職員一人がその夜、",
+      "text_zh_Hant": "那天夜里,一名下属特工"
+    },
+    {
+      "text": "사이트 밖에서 정체불명의 인물에게",
+      "est_sec": 4,
+      "text_en": "reported being tailed outside the Site",
+      "text_ja": "サイトの外で正体不明の人物に",
+      "text_zh_Hant": "报告称在站点外"
+    },
+    {
+      "text": "미행당하고 있다는 보고가 올라오자,",
+      "est_sec": 4,
+      "text_en": "by an unidentified figure,",
+      "text_ja": "尾行されているという報告が上がると、",
+      "text_zh_Hant": "被身份不明者跟踪，"
+    },
+    {
+      "text": "자기 신상 카드를 직접 색인철에 밀어 넣었죠.",
+      "est_sec": 6,
+      "text_en": "he personally pushed his own personnel card into the index.",
+      "text_ja": "彼は自分の身上カードを直接索引綴りに押し込みました。",
+      "text_zh_Hant": "他便亲手把自己的档案卡塞进了索引夹。"
+    },
+    {
+      "text": "추적을 자기 쪽으로 돌리려던 거였습니다.",
+      "est_sec": 5,
+      "text_en": "He was trying to draw the pursuit onto himself.",
+      "text_ja": "追跡を自分の方に向けようとしたのです。",
+      "text_zh_Hant": "是想把追踪引到自己身上。"
+    },
+    {
+      "text": "그날 이후로,",
+      "est_sec": 2,
+      "text_en": "From that day on,",
+      "text_ja": "その日以来、",
+      "text_zh_Hant": "从那天起，"
+    },
+    {
+      "text": "그는 자기 이름으로",
+      "est_sec": 2,
+      "text_en": "he has never signed",
+      "text_ja": "彼は自分の名前で",
+      "text_zh_Hant": "他再也没有用自己的名字"
+    },
+    {
+      "text": "서류에 서명한 적이 없습니다.",
+      "est_sec": 4,
+      "text_en": "a single document with his own name.",
+      "text_ja": "書類に署名したことがありません。",
+      "text_zh_Hant": "在文件上签过名。"
+    },
+    {
+      "text": "지금 사이트-540 근무자 명단엔",
+      "est_sec": 4,
+      "text_en": "On Site-540's current staff roster,",
+      "text_ja": "今、サイト-540の職員名簿には、",
+      "text_zh_Hant": "如今540号站点的职员名单上，"
+    },
+    {
+      "text": "'리스고르'라는 이름이 올라 있어요.",
+      "est_sec": 5,
+      "text_en": "the name 'Lysgaard' now appears.",
+      "text_ja": "「リスゴル」という名前が載っています。",
+      "text_zh_Hant": "写着「利斯戈」这个名字。"
+    },
+    {
+      "text": "말투도,",
+      "est_sec": 2,
+      "text_en": "The way he talks,",
+      "text_ja": "話し方も、",
+      "text_zh_Hant": "说话方式，"
+    },
+    {
+      "text": "필체도,",
+      "est_sec": 2,
+      "text_en": "his handwriting,",
+      "text_ja": "筆跡も、",
+      "text_zh_Hant": "笔迹，"
+    },
+    {
+      "text": "마침표를 꾹 눌러 찍는 버릇까지",
+      "est_sec": 4,
+      "text_en": "even his habit of pressing hard on periods —",
+      "text_ja": "句点を強く押す癖まで",
+      "text_zh_Hant": "甚至连重重顿句点的习惯，"
+    },
+    {
+      "text": "카를손 박사 그대로인데,",
+      "est_sec": 3,
+      "text_en": "it's all exactly Dr. Karlsson,",
+      "text_ja": "カールソン博士そのままなのに、",
+      "text_zh_Hant": "都和卡尔松博士一模一样，"
+    },
+    {
+      "text": "신상 기록만 다른 사람 걸로 바뀌어 있습니다.",
+      "est_sec": 6,
+      "text_en": "yet only his personnel record belongs to someone else.",
+      "text_ja": "身上記録だけが別人のものに変わっています。",
+      "text_zh_Hant": "唯独档案换成了别人的。"
+    },
+    {
+      "text": "그가 진짜 카를손인지,",
+      "est_sec": 3,
+      "text_en": "Whether he's really Karlsson —",
+      "text_ja": "彼が本物のカールソンなのか、",
+      "text_zh_Hant": "他究竟是不是真的卡尔松，"
+    },
+    {
+      "text": "지금도 확신할 수 있는 사람이 있을까요?",
+      "est_sec": 5,
+      "text_en": "is there anyone who could still say for sure?",
+      "text_ja": "今でも確信できる人がいるでしょうか?",
+      "text_zh_Hant": "如今还有谁能笃定地回答吗?"
+    },
+    {
+      "text": "누가 물으면,",
+      "est_sec": 2,
+      "text_en": "When someone asks,",
+      "text_ja": "誰かが尋ねると、",
+      "text_zh_Hant": "要是有人问起，"
+    },
+    {
+      "text": "그는 이렇게 답한다고 하고요.",
+      "est_sec": 4,
+      "text_en": "he apparently answers like this.",
+      "text_ja": "彼はこう答えるそうです。",
+      "text_zh_Hant": "据说他会这么回答。"
+    },
+    {
+      "text": "「지금 이름이 뭐가 중요합니까,",
+      "est_sec": 4,
+      "text_en": "「What does the name matter right now —",
+      "text_ja": "「今、名前なんてどうでもいいでしょう、",
+      "text_zh_Hant": "「现在名字重要吗，"
+    },
+    {
+      "text": "일 마저 합시다.」",
+      "est_sec": 2,
+      "text_en": "let's just get back to work.」",
+      "text_ja": "仕事を続けましょう」",
+      "text_zh_Hant": "还是先把工作做完吧。」"
+    },
+    {
+      "text": "재수용 절차요?",
+      "est_sec": 2,
+      "text_en": "Re-containment procedure?",
+      "text_ja": "再収容手続きですか?",
+      "text_zh_Hant": "再收容程序?"
+    },
+    {
+      "text": "대상이 누군지부터 다시 정해야 하는데,",
+      "est_sec": 5,
+      "text_en": "They'd first have to decide who the subject even is,",
+      "text_ja": "対象が誰なのかから決め直さなければなりませんが、",
+      "text_zh_Hant": "得先重新确定收容对象是谁，"
+    },
+    {
+      "text": "그것부터가…",
+      "est_sec": 2,
+      "text_en": "and that alone…",
+      "text_ja": "それからして…",
+      "text_zh_Hant": "光这一点…"
+    },
+    {
+      "text": "막혀 있다고 하더군요.",
+      "est_sec": 3,
+      "text_en": "is apparently stuck.",
+      "text_ja": "止まっているそうです。",
+      "text_zh_Hant": "据说就卡住了。"
+    },
+    {
+      "text": "원래 얼굴을 기억하는 동료는,",
+      "est_sec": 4,
+      "text_en": "Colleagues who remember his original face —",
+      "text_ja": "元の顔を覚えている同僚は、",
+      "text_zh_Hant": "还记得他原本长相的同事，"
+    },
+    {
+      "text": "이제 두셋…",
+      "est_sec": 2,
+      "text_en": "just two or three now…",
+      "text_ja": "もう二、三人…",
+      "text_zh_Hant": "如今只剩两三个了…"
+    },
+    {
+      "text": "남았다고 하고요.",
+      "est_sec": 2,
+      "text_en": "apparently.",
+      "text_ja": "残っているそうです。",
+      "text_zh_Hant": "据说是这样。"
+    },
+    {
+      "text": "옆 격리동엔 SCP-914가 있다고 들었어요.",
+      "est_sec": 6,
+      "text_en": "I hear SCP-914 is kept in the wing next door.",
+      "text_ja": "隣の収容棟にはSCP-914があると聞きました。",
+      "text_zh_Hant": "听说隔壁收容区就放着SCP-914。"
+    },
+    {
+      "text": "초기에 카드 한 장을 914에 넣고",
+      "est_sec": 4,
+      "text_en": "Early on, they ran one card through 914",
+      "text_ja": "初期にカード一枚を914に入れて",
+      "text_zh_Hant": "初期曾把一张卡片放进914，"
+    },
+    {
+      "text": "'정밀'로 돌려본 적이 있다는데,",
+      "est_sec": 4,
+      "text_en": "on the 'Fine' setting, apparently,",
+      "text_ja": "「精密」で回してみたことがあるそうですが、",
+      "text_zh_Hant": "调到「精细」档试过，"
+    },
+    {
+      "text": "나온 건 그냥 똑같은 카드 한 장이었답니다.",
+      "est_sec": 6,
+      "text_en": "and what came out was just an identical card.",
+      "text_ja": "出てきたのはただの同じカード一枚だったそうです。",
+      "text_zh_Hant": "据说出来的还是一模一样的一张卡片。"
+    },
+    {
+      "text": "격리동 반대편엔 SCP-999도 있다던데,",
+      "est_sec": 5,
+      "text_en": "Across the way, apparently, is SCP-999,",
+      "text_ja": "収容棟の反対側にはSCP-999もいるそうですが、",
+      "text_zh_Hant": "收容区对面据说还有SCP-999，"
+    },
+    {
+      "text": "여기 분위기랑은 영 안 어울리는 이웃이죠.",
+      "est_sec": 5,
+      "text_en": "an oddly mismatched neighbor for this place.",
+      "text_ja": "ここの雰囲気とは全然合わない隣人ですね。",
+      "text_zh_Hant": "跟这里的气氛完全不搭的邻居。"
+    },
+    {
+      "text": "혼돈의 반란 쪽에서,",
+      "est_sec": 3,
+      "text_en": "Someone tied to the Chaos Insurgency",
+      "text_ja": "混沌の反乱側から、",
+      "text_zh_Hant": "有个与「混沌反叛」有关的人物，"
+    },
+    {
+      "text": "이 위장 신원 기술을 빼내려던",
+      "est_sec": 4,
+      "text_en": "someone who tried to steal this false-identity technology,",
+      "text_ja": "この偽装身元技術を持ち出そうとした",
+      "text_zh_Hant": "企图窃取这项伪装身份技术，"
+    },
+    {
+      "text": "인물 하나가 갱도 입구 검문소에서",
+      "est_sec": 4,
+      "text_en": "one person, right at the mine entrance checkpoint —",
+      "text_ja": "人物一人が坑道入口の検問所で",
+      "text_zh_Hant": "结果在坑道入口的检查站"
+    },
+    {
+      "text": "검거된 일도 있었어요.",
+      "est_sec": 3,
+      "text_en": "was apprehended there, it turns out.",
+      "text_ja": "拘束されたこともありました。",
+      "text_zh_Hant": "被抓获了。"
+    },
+    {
+      "text": "목적은 아직 확인이 안 됐습니다.",
+      "est_sec": 4,
+      "text_en": "The purpose still hasn't been confirmed.",
+      "text_ja": "目的はまだ確認されていません。",
+      "text_zh_Hant": "其目的至今尚未查明。"
+    },
+    {
+      "text": "격리 절차를 다시 짜는 회의도,",
+      "est_sec": 4,
+      "text_en": "Meetings to redraw the containment procedure",
+      "text_ja": "収容手続きを組み直す会議も、",
+      "text_zh_Hant": "重新拟定收容方案的会议，"
+    },
+    {
+      "text": "몇 차례 더 열렸습니다.",
+      "est_sec": 3,
+      "text_en": "have been held a few more times.",
+      "text_ja": "何度か開かれました。",
+      "text_zh_Hant": "也开了好几轮。"
+    },
+    {
+      "text": "등급 재분류 심사는,",
+      "est_sec": 3,
+      "text_en": "The class reclassification review",
+      "text_ja": "等級再分類の審査は、",
+      "text_zh_Hant": "等级再分类的审查，"
+    },
+    {
+      "text": "아직 결론이 안 났고요.",
+      "est_sec": 3,
+      "text_en": "still hasn't concluded.",
+      "text_ja": "まだ結論が出ていません。",
+      "text_zh_Hant": "至今还没有结论。"
+    },
+    {
+      "text": "저도 이 부분은 아직…",
+      "est_sec": 3,
+      "text_en": "Even I still haven't quite…",
+      "text_ja": "私もこの部分はまだ…",
+      "text_zh_Hant": "这部分我自己也还没…"
+    },
+    {
+      "text": "다 이해했다고는 말 못 하겠습니다.",
+      "est_sec": 4,
+      "text_en": "managed to fully understand it, I'll admit.",
+      "text_ja": "完全に理解したとは言えません。",
+      "text_zh_Hant": "能说是完全弄明白了。"
+    },
+    {
+      "text": "이름 대여소는, 지금도 그 자리에 있습니다.",
+      "est_sec": 6,
+      "text_en": "The Name Rental Shop is still right there.",
+      "text_ja": "名前レンタル所は、今もあの場所にあります。",
+      "text_zh_Hant": "租名铺,如今仍在原地。"
+    },
+    {
+      "text": "카드는 여전히 이만 한 장.",
+      "est_sec": 3,
+      "emphasis": "이만 한 장",
+      "text_en": "The cards still number twenty thousand.",
+      "text_ja": "カードは今も二万枚。",
+      "text_zh_Hant": "卡片依旧是两万张。"
+    },
+    {
+      "text": "그가 들어간 뒤로,",
+      "est_sec": 2,
+      "text_en": "Since he entered,",
+      "text_ja": "彼が入った後、",
+      "text_zh_Hant": "自从他进去以后，"
+    },
+    {
+      "text": "하나…",
+      "est_sec": 2,
+      "text_en": "one more…",
+      "text_ja": "一枚…",
+      "text_zh_Hant": "多出了一张…"
+    },
+    {
+      "text": "늘었습니다.",
+      "est_sec": 2,
+      "text_en": "has been added.",
+      "text_ja": "増えました。",
+      "text_zh_Hant": "没有解释。"
+    },
+    {
+      "text": "혹시 여러분 지갑 속에도,",
+      "est_sec": 3,
+      "text_en": "Maybe in your own wallet, too,",
+      "text_ja": "もしかして皆さんの財布にも、",
+      "text_zh_Hant": "或许各位的钱包里，"
+    },
+    {
+      "text": "언제 넣었는지 기억 안 나는 카드 한 장,",
+      "est_sec": 5,
+      "text_en": "there's a card you don't remember putting in —",
+      "text_ja": "いつ入れたか覚えていないカード一枚、",
+      "text_zh_Hant": "也有一张不记得何时放进去的卡片——"
+    },
+    {
+      "text": "섞여 있진 않으신가요?",
+      "est_sec": 3,
+      "text_en": "has that ever happened?",
+      "text_ja": "紛れ込んでいませんか?",
+      "text_zh_Hant": "有过这样的事吗?"
+    },
+    {
+      "text": "있다면 그게 뭐였는지,",
+      "est_sec": 3,
+      "text_en": "If so, I'd like to know what it was —",
+      "text_ja": "あるとしたら、それが何だったのか、",
+      "text_zh_Hant": "如果有,那是张什么卡，"
+    },
+    {
+      "text": "댓글에 한번 남겨주시면 좋겠습니다.",
+      "est_sec": 4,
+      "text_en": "leave it in the comments, if you don't mind.",
+      "text_ja": "コメントで教えていただけると嬉しいです。",
+      "text_zh_Hant": "欢迎在评论区告诉我。"
+    },
+    {
+      "text": "이런 기록들,",
+      "est_sec": 2,
+      "text_en": "I'll keep digging up records like this",
+      "text_ja": "こうした記録、",
+      "text_zh_Hant": "这样的档案，"
+    },
+    {
+      "text": "앞으로도 계속 찾아서 들려드리겠습니다.",
+      "est_sec": 5,
+      "text_en": "and bringing them to you.",
+      "text_ja": "これからも探して届けます。",
+      "text_zh_Hant": "我会继续找来讲给大家听。"
+    }
+  ],
+  "scenes": [
+    {
+      "prompt": "SUBJECT: towering rusted steel shelving packed with an index card cabinet, filling most of frame. CONTEXT: rough mine shaft wall behind, cables and rubble. COMPOSITION: low-angle close shot, tilted up. LIGHT: one hanging work lamp. MATERIAL: rusted steel, aged wood drawers, damp stone. ATMOSPHERE: drifting dust, damp cold air. PALETTE: amber lamp glow on steel, near-black ground, teal shadow. RENDER: bold linework, flat cel shading, hard-edged shadows. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: two archivists reading one card together under thick blocking goggles, faces mostly hidden. CONTEXT: cramped desk deep in the shaft. COMPOSITION: medium two-shot, low angle. LIGHT: single desk lamp between them. MATERIAL: matte goggle lenses, worn card stock, metal desk. ATMOSPHERE: still cold air, dust in lamplight. PALETTE: cold cyan goggle glint, near-black background, warm lamp accent. RENDER: bold linework, flat cel shading, hard-edged shadows, no legible lettering. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: a gloved hand holding one index card close, thin unfamiliar handwriting and a heavily pressed period as abstract ink marks. CONTEXT: dark archive desk behind. COMPOSITION: macro close-up, diagonal framing. LIGHT: single desk lamp raking the card. MATERIAL: aged paper grain, faded ink, worn glove leather. ATMOSPHERE: dust motes in the beam. PALETTE: warm amber card glow, near-black surroundings. RENDER: bold linework, flat cel shading, hard-edged shadows, no legible lettering. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: a pair of heavy blocking goggles resting on an open card drawer, lenses catching a stray glint. CONTEXT: dim archive shelving out of focus behind. COMPOSITION: close-up, goggles centered low angle. LIGHT: single hard side light. MATERIAL: scratched matte lens, worn leather strap, wooden drawer edge. ATMOSPHERE: still dusty air. PALETTE: cold teal lens glint, near-black background. RENDER: bold linework, flat cel shading, hard-edged shadows. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: a monitor screen showing two ghostly overlapping name-shapes flickering against each other, abstract glowing forms only. CONTEXT: dark control room around the screen. COMPOSITION: tight close-up on the screen, low angle. LIGHT: the screen's own cold glow. MATERIAL: old glass screen, metal console housing. ATMOSPHERE: faint static shimmer. PALETTE: cold cyan screen glow, near-black room, hot red flicker accent. RENDER: bold linework, flat cel shading, hard-edged shadows, no legible lettering. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: an armored operative feeding a single index card into a small incinerator hatch, flame glow lighting his visor. CONTEXT: cramped utility alcove in the shaft. COMPOSITION: medium shot, low angle, operative dominant. LIGHT: hot orange flame glow as key light. MATERIAL: scorched steel hatch, tactical armor plating. ATMOSPHERE: rising smoke, heat shimmer. PALETTE: hot orange flame accent, near-black surroundings. RENDER: bold linework, flat cel shading, hard-edged shadows. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: an ash-streaked incinerator slot with a pristine new index card already jutting out of it, faint smoke curling around it. CONTEXT: scorched metal wall behind. COMPOSITION: extreme close-up, centered low angle. LIGHT: dim residual ember glow. MATERIAL: soot-blackened steel, crisp new paper edge. ATMOSPHERE: thin smoke, floating ash. PALETTE: dull ember orange accent, near-black background. RENDER: bold linework, flat cel shading, hard-edged shadows. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: a bare forearm held up in exam light, a faint unfamiliar tattoo mark visible on the skin. CONTEXT: sparse medical exam room. COMPOSITION: close-up, arm diagonal across frame. LIGHT: single overhead exam lamp. MATERIAL: pale skin, faded ink-like mark, metal table edge. ATMOSPHERE: sterile still air. PALETTE: cold white lamp light, near-black room, dull violet mark accent. RENDER: bold linework, flat cel shading, hard-edged shadows. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: an old leather-bound duty logbook lying open, one handwritten line catching the light amid otherwise blank abstract scrawl. CONTEXT: dusty archive storage shelf behind. COMPOSITION: close-up, book angled low. LIGHT: single warm desk lamp. MATERIAL: cracked leather cover, yellowed brittle paper. ATMOSPHERE: dust drifting in the lamp beam. PALETTE: warm amber page glow, near-black surroundings. RENDER: bold linework, flat cel shading, hard-edged shadows, no legible lettering. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: a man's hand pushing his own personnel card into a tightly packed index drawer, the card slightly glowing at its edge. CONTEXT: dark archive aisle around the drawer. COMPOSITION: tight close-up on hand and drawer, low angle. LIGHT: single cold overhead bulb. MATERIAL: worn drawer wood, card stock, pale hand skin. ATMOSPHERE: still cold air, faint dust. PALETTE: hot red card-edge glow, near-black background. RENDER: bold linework, flat cel shading, hard-edged shadows. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: two ID photos pinned side by side on a corkboard, one older face and one newer differing face, same posture and collar. CONTEXT: dim personnel office wall. COMPOSITION: extreme close-up, both photos filling frame, slight tilt. LIGHT: single warm desk lamp. MATERIAL: laminated photo stock, worn corkboard, rusted pushpins. ATMOSPHERE: quiet still office air. PALETTE: warm amber glow, near-black surroundings. RENDER: bold linework, flat cel shading, hard-edged shadows, no legible lettering. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: a vast wall of card-catalog drawers stretching into darkness, thousands of identical brass handles. CONTEXT: cavernous mine-shaft archive hall. COMPOSITION: wide low-angle shot, wall over sixty percent of frame. LIGHT: single distant hanging lamp. MATERIAL: aged wood drawers, tarnished brass handles, damp stone floor. ATMOSPHERE: cold fog, dust haze. PALETTE: amber glow fading into near-black, cold teal rim accent. RENDER: bold linework, flat cel shading, hard-edged shadows. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    }
+  ],
+  "background": {
+    "id": "scp-9361_bg",
+    "kind": "image",
+    "reuse": false,
+    "aspect": "16:9",
+    "resolution": "1920x1080",
+    "prompt": "SUBJECT: a vast wall of card drawers into darkness, brass handles catching light, one drawer open with a red glow. CONTEXT: cavernous mine-shaft archive hall. COMPOSITION: wide low-angle shot, wall over sixty percent of frame. LIGHT: distant hanging lamp plus red drawer glow. MATERIAL: aged wood drawers, tarnished brass, damp stone floor. ATMOSPHERE: cold fog, dust haze. PALETTE: amber fading to near-black, hot red drawer accent. RENDER: bold linework, flat cel shading, hard-edged shadows. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere",
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion"
+  },
+  "thumbnail": {
+    "hook": "A translucent ghostly human face assembling itself out of overlapping index cards emerging from a half-open archive drawer, filling most of the frame, one small silhouetted archivist dwarfed below, near-black background, one hot red accent. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere",
+    "hook_alt": [
+      "Extreme close-up of the ghostly card-face's eyes and brow made of overlapping handwritten card fragments, near-black background, one hot red accent. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere",
+      "A gloved hand holding a single index card up to the light, faint unfamiliar handwriting glowing on it, the vast dark card wall looming huge and half-lit behind, near-black background, one hot red accent. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    ],
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion",
+    "text_safe_area": "left third",
+    "resolution": "1280x720"
+  },
+  "platforms": {
+    "youtube": {
+      "title": "스발바르 폐광 지하 서고에서, 카를손 박사가 자기 이름을 빼앗긴 사건 [SCP-9361]",
+      "title_form": "피해형",
+      "thumbnail_text": "이름 대여소",
+      "thumbnail_quote": "- 저 원래 이 이름 아니었죠?",
+      "tags": [
+        "SCP",
+        "SCP재단",
+        "SCP-914",
+        "SCP-999",
+        "괴담",
+        "무서운이야기",
+        "미스터리"
+      ],
+      "chapters": [
+        "00:00 낯선 필체",
+        "00:48 격리 절차와 카를손 박사",
+        "02:03 인지위해 재규정",
+        "02:42 겹치는 신원들",
+        "03:22 소각 시도",
+        "04:19 D계급의 흔적",
+        "04:50 위장 신원 생성기",
+        "06:07 미끼가 된 박사, 그 후"
+      ],
+      "description": "노르웨이령 스발바르 폐광 갱도 지하에서 발견된 색인 카드함 이야기입니다. 카드를 옮겨 적던 사람에게, 자기 것이 아닌 필체와 이름이 조금씩 옮겨붙습니다.\n\n※ SCP 재단 세계관 기반 오리지널 창작 · 허구의 이야기입니다\n※ CC BY-SA 3.0 · 원작: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP재단 #괴담 #무서운이야기 #미스터리",
+      "localizations": {
+        "en": {
+          "title": "A Buried Card Archive in Svalbard Stole Dr. Karlsson's Name [SCP-9361]",
+          "description": "An index card cabinet found deep in an abandoned Svalbard mine shaft. Whoever copies its cards starts picking up handwriting, and eventually a name, that was never theirs.\n\nThis is original fan fiction set in the SCP Foundation universe, entirely fictional.\nCC BY-SA 3.0 · Based on the SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCPFoundation #Horror #Mystery"
+        },
+        "ja": {
+          "title": "スヴァールバル廃坑の地下書庫が、カールソン博士から名前を奪った話 [SCP-9361]",
+          "description": "ノルウェー領スヴァールバルの廃坑奥深くで見つかった索引カード箱。カードを書き写した者には、自分のものではない筆跡と、やがて名前までもが移っていきます。\n\n※ SCP財団世界観に基づくオリジナル創作・フィクションです\n※ CC BY-SA 3.0 · 原作: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP財団 #怖い話 #ミステリー"
+        },
+        "zh-Hant": {
+          "title": "斯瓦爾巴廢礦坑地下檔案室,奪走了卡爾松博士的名字 [SCP-9361]",
+          "description": "在挪威屬地斯瓦爾巴一處廢棄礦坑深處發現的索引卡箱。凡是抄寫過卡片的人,都會漸漸沾染上不屬於自己的筆跡,最終連名字也一併換掉。\n\n※ 基於SCP基金會世界觀之原創創作,純屬虛構\n※ CC BY-SA 3.0 · 原作:SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP基金會 #怪談 #懸疑"
+        }
+      },
+      "pinned_comment": "혹시 여러분 지갑 속에도 언제 넣었는지 기억 안 나는 카드 한 장, 섞여 있지 않나요? 댓글로 알려주세요.",
+      "playlist": "SCP 아카이브 (전편 듣기)"
+    }
+  },
+  "credit": "SCP 재단 세계관 기반 오리지널 창작 · 허구 · CC BY-SA 3.0",
+  "content_rating": "teen",
+  "notes": "SCP 아카이브 · 16:9 롱폼 · 장면 전환 배경 + 자막 번인 · 단일 내레이터 · 완결형."
+}
