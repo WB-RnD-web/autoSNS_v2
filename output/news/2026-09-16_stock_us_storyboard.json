@@ -1,0 +1,107 @@
+{
+  "date": "2026-09-16",
+  "topic": "stock_us",
+  "privacy": "public",
+  "topic_keyword": "반도체 급락 FOMC",
+  "headline": "필라델피아 반도체지수 5.86% 급락, 나스닥 이틀째 하락",
+  "hook_title": "반도체지수 -5.86%, 무너졌다",
+  "accent": "#E5484D",
+  "loop_line": "밤사이 흔들린 반도체, 내일 아침 다시 확인합니다.",
+  "thumbnail_hook": "cinematic photo of a dark home office at night, a computer monitor glowing with red falling stock chart lines reflected in a window, blurred New York City skyline lights outside, moody red and blue glow, no on-screen text, no people, no logos",
+  "thumbnail_text": "반도체 5.86% 급락",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "FOMC 데이",
+      "ghost": "CHIPS",
+      "lines": [
+        "반도체가",
+        "-5.86%",
+        "빠졌다"
+      ],
+      "highlight": "5.86",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "장 열리자마자 반도체가 오 점 팔 육 퍼센트나 빠졌습니다."
+    },
+    {
+      "type": "trend",
+      "label": "나스닥",
+      "from": 0,
+      "to": -0.56,
+      "suffix": "%",
+      "dir": "down",
+      "sub": "지금 선물은 <b>소폭 반등</b>",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "어젯밤 나스닥은 영점 오육 퍼센트 내리고 마감했습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "왜 흔들렸나",
+      "points": [
+        "아모데이 앤스로픽 CEO, 속도 늦추자",
+        "올트먼·머스크도 동조",
+        "10년물 금리 <b>5%</b> 돌파"
+      ],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "AI 리더들도 속도 조절을 요구했고 금리는 5%를 넘었습니다."
+    },
+    {
+      "type": "statement",
+      "text": "인하 폭이 크면 반등, 작으면 실망",
+      "highlight": "인하 폭",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "연준이 금리를 얼마나 내리느냐가 오늘 밤을 가릅니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "밤사이 지켜볼 것",
+      "points": [
+        "FOMC 결과 새벽 <b>3시</b> 발표",
+        "환율도 함께 출렁이는 밤",
+        "엔비디아·브로드컴, 다시 흔들리나"
+      ],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "새벽 3시 FOMC 결과와 환율 흐름을 확인하세요."
+    },
+    {
+      "type": "statement",
+      "text": "지금 담을까, 새벽까지 볼까?",
+      "highlight": "새벽까지",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "지금 담을지 새벽까지 지켜볼지, 판단은 여러분 몫입니다."
+    }
+  ],
+  "sources": [
+    "국민일보",
+    "서울신문",
+    "뉴스핌"
+  ],
+  "credit": "출처 국민일보·서울신문·뉴스핌 등 · 투자 조언이 아닙니다",
+  "platforms": {
+    "youtube": {
+      "title": "반도체지수 -5.86%, 무너졌다 #shorts",
+      "description": "필라델피아 반도체지수 5.86% 급락, 나스닥 이틀째 하락\n출처 국민일보·서울신문·뉴스핌 등\n※ 투자 조언이 아닙니다\n\n#미국주식 #나스닥 #반도체 #FOMC #서학개미 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "Chip Stocks Crash 5.86% Right Before the Fed Decision",
+          "description": "Philadelphia Semiconductor Index plunged 5.86% as AI leaders called for slowing development, just hours before tonight's FOMC rate decision.\nSources: Kookmin Ilbo, Seoul Shinmun, Newspim\n※ Not investment advice.\n\n#USstocks #Nasdaq #semiconductors #FOMC #shorts"
+        },
+        "ja": {
+          "title": "半導体急落5.86%、FOMC決定前夜に何が",
+          "description": "フィラデルフィア半導体指数が5.86%急落しました。AI大手による「開発速度を調整すべき」との発言がきっかけです。今夜のFOMC結果にも注目です。\n出典:国民日報・ソウル新聞・ニュースピム\n※投資助言ではありません。\n\n#米国株 #ナスダック #半導体 #FOMC #shorts"
+        },
+        "zh-Hant": {
+          "title": "半導體暴跌5.86%,聯準會決議前夕",
+          "description": "費城半導體指數暴跌5.86%,AI大廠齊呼「應放慢開發速度」。今晚聯準會（FOMC）決議結果同樣值得關注。\n資料來源:國民日報、首爾新聞、Newspim\n※非投資建議。\n\n#美股 #那斯達克 #半導體 #FOMC #shorts"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "반도체지수 -5.86%, 무너졌다\n출처 국민일보·서울신문·뉴스핌 등\n※ 투자 조언이 아닙니다\n\n#미국주식 #나스닥 #반도체 #FOMC #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "반도체지수 -5.86%, 무너졌다\n출처 국민일보·서울신문·뉴스핌 등"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음 · SESSION=US_PM(미국장 개장 직후 프리뷰, EDT 서머타임 22:30 KST 개장)."
+}
