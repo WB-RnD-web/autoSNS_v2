@@ -1,0 +1,91 @@
+{
+  "date": "2026-09-17",
+  "topic": "stock",
+  "privacy": "public",
+  "topic_keyword": "미 연준 3년 만의 금리 인상",
+  "headline": "美 연준, 3년 만에 기준금리 0.25%p 인상",
+  "hook_title": "금리, 3년 만에 방향 틀었다",
+  "accent": "#D97757",
+  "loop_line": "3년 만의 금리 인상, 오늘 코스피가 답할 차례입니다.",
+  "thumbnail_hook": "A dim pre-dawn financial district at dawn, a glowing red digital stock ticker board reflecting a rising interest-rate arrow graphic, empty modern trading floor with monitors glowing blue and red, moody cinematic lighting, photographic realism, no on-screen text, no real people",
+  "thumbnail_text": "금리 3년만에 올랐다",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "FOMC 발표",
+      "ghost": "HIKE",
+      "lines": ["금리가", "3년 만에", "방향 틀었다"],
+      "highlight": "3년",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "밤사이 미국이 삼 년 만에 기준금리를 올렸습니다."
+    },
+    {
+      "type": "trend",
+      "label": "다우존스",
+      "from": 0,
+      "to": -1.21,
+      "suffix": "%",
+      "dir": "down",
+      "sub": "나스닥은 <b>-0.01%</b> 그쳐",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "다우존스는 하루 만에 일 점 이일 퍼센트 밀렸습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "왜 금리를 올렸나",
+      "points": ["연준, <b>3년 만에</b> 0.25%p 인상", "위원 <b>18명 중 16명</b> 추가인상 시사"],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "연준이 삼 년 만에 영 점 이오 퍼센트포인트 올렸습니다."
+    },
+    {
+      "type": "statement",
+      "text": "코스피는 웃었는데 월가는 흔들렸다",
+      "highlight": "흔들렸다",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "환율 천삼백칠십원 넘으면 어제 상승분도 흔들릴 수 있습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 지켜볼 것",
+      "points": ["전세자금대출 <b>금리 부담</b> 커지나", "외국인 반도체 매수 <b>오늘도</b> 이어지나"],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "전세대출 금리와 외국인 반도체 수급을 오늘 지켜보시면 됩니다."
+    },
+    {
+      "type": "statement",
+      "text": "코스피, 버틸까 흔들릴까",
+      "highlight": "흔들릴까",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "오늘 버틸지 흔들릴지, 판단은 여러분 몫입니다."
+    }
+  ],
+  "sources": ["서울신문", "머니투데이", "CNBC", "Businesskorea"],
+  "credit": "출처 서울신문·CNBC·머니투데이 등 · 투자 조언이 아닙니다",
+  "platforms": {
+    "youtube": {
+      "title": "금리, 3년 만에 방향 틀었다 #shorts",
+      "description": "美 연준, 3년 만에 기준금리 0.25%p 인상\n출처 서울신문·CNBC·머니투데이 등\n※ 투자 조언이 아닙니다\n\n#코스피 #주식 #증시 #금리인상 #개장전 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "The Fed Just Hiked Rates for the First Time in 3 Years",
+          "description": "The Fed raised rates 25bp to 3.75-4%, its first hike in three years, while Dow fell and Nasdaq held steady.\n\n※ Not investment advice.\n\n#shorts #stocks #KOSPI #FederalReserve"
+        },
+        "ja": {
+          "title": "FRB、3年ぶりの利上げを決定しました",
+          "description": "FRBが政策金利を0.25%引き上げ、3.75〜4%に。ダウは下落、ナスダックは踏みとどまりました。\n\n※投資助言ではありません。\n\n#shorts #株式 #コスピ #FRB"
+        },
+        "zh-Hant": {
+          "title": "聯準會三年來首次升息",
+          "description": "聯準會升息0.25個百分點至3.75-4%,道瓊下跌,那斯達克持穩。\n\n※非投資建議。\n\n#shorts #股市 #KOSPI #聯準會"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "금리, 3년 만에 방향 틀었다\n출처 서울신문·CNBC·머니투데이 등\n※ 투자 조언이 아닙니다\n\n#코스피 #주식 #증시 #금리인상 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "금리, 3년 만에 방향 틀었다\n출처 서울신문·CNBC·머니투데이 등"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음 · SESSION=KR_AM(개장 전 프리뷰). 밤사이 FOMC 3년 만의 금리 인상(3.75~4%)이 핵심 재료."
+}
