@@ -1,0 +1,1285 @@
+{
+  "date": "2026-09-16",
+  "iso_week": "2026-W38",
+  "topic": "scp",
+  "privacy": "public",
+  "origin": "original",
+  "origin_note": "",
+  "source_url": "",
+  "story_id": "scp-9873",
+  "scp_number": "SCP-9873",
+  "object_class": "Keter",
+  "codename": "먼저 뜨는 경보",
+  "number_check": {
+    "checked_at": "2026-09-16",
+    "http_code": "unverified"
+  },
+  "theme": "궤도·우주",
+  "nature": "시간",
+  "twist_type": "인과",
+  "logline": "저궤도 통신 중계 정거장 화물칸에서 발견된 낡은 진단 패널 이야기입니다. 고장이 나기도 전에 먼저 고장 코드를 띄우는데, 그 코드에 반응하는 순간 고장이 그대로 일어납니다.",
+  "structure": "연대기형",
+  "opening_move": "수치의 어긋남",
+  "opening_note": "",
+  "closing_move": "기록이 아직 이어진다",
+  "number_reveal": "뒤",
+  "ending_mode": "가벼운 한마디",
+  "fault": "제3자",
+  "hook_line": "패널 시계는 열한 시간 앞서 있었고, 계기판은 멀쩡했습니다.",
+  "procedures": [],
+  "character": {
+    "name": "코바치",
+    "role": "사이트-609 환경정비팀 선임기술관",
+    "flaw": "보고를 미루고 효율을 앞세워 규칙보다 자기 판단을 따른다"
+  },
+  "chain": [
+    {
+      "when": "발견 당시",
+      "event": "사이트-609 정비 개편 중, 화물칸 구석에서 낡은 진단 패널 하나가 발견됐다. 예전에 파산한 민간 통신위성 회사의 지상관제소 창고에서 흘러나온 물건으로, 남는 배선함에 얹혔을 뿐인데 전원이 붙었다.",
+      "because": "",
+      "shot": "화물칸 배선함 위에 놓인 채 전원이 들어온 낡은 진단 패널."
+    },
+    {
+      "when": "발견 직후",
+      "event": "패널에 산소 정화 장치 이상 코드가 떴지만, 실제 계기판은 초록불 그대로였다. 기술관 코바치는 대수롭지 않게 넘겼다.",
+      "because": "패널이 예전 회사의 캐시 데이터를 그대로 띄우는 고물로 여겨졌기 때문에",
+      "shot": "코드가 뜬 패널 화면과, 나란히 정상 표시 중인 진짜 계기판."
+    },
+    {
+      "when": "열한 시간 사십칠 분 뒤",
+      "event": "코드가 뜬 그 부품이, 정확히 그 코드 그대로 멎었다. 재단이 사이트를 인수하고 조사가 시작됐다.",
+      "because": "우연이라기엔 예고 시각과 실제 고장 시각이 너무 정확히 맞아떨어졌기 때문에",
+      "shot": "멈춰 선 채 그을린 부품 앞에 선 조사관들."
+    },
+    {
+      "when": "조사 초기",
+      "event": "기동특무부대 오미크론-14, 별칭 '반사판'이 투입됐다. 카메라 감시, D계급 배치, 부품 전체 은폐까지 시도했지만 예고된 시각에 조명판은 저절로 꺼졌다.",
+      "because": "패널이 뭔가를 미리 안다는 가설을 확인하려 했기 때문에",
+      "shot": "감시 카메라 앞에서, 아무도 손대지 않았는데 저절로 꺼진 조명판."
+    },
+    {
+      "when": "가설 검증",
+      "event": "재단은 반대로 실험했다. 코드가 뜬 부품을 예방 차원에서 미리 교체했다. 새 부품은 켜지자마자 예정된 고장 패턴을 그대로 재현했다.",
+      "because": "패널이 진짜 예지 능력을 가졌는지 확인하려 했기 때문에",
+      "shot": "방금 교체한 새 부품에서 그대로 나타나는 옛 고장 신호."
+    },
+    {
+      "when": "결론 도출",
+      "event": "재단은 결론을 내렸다. 원인과 결과가 아니라, 표시와 순응이었다. 패널이 뭔가를 본 게 아니라 뭔가를 정하고 있었다.",
+      "because": "부품을 바꿔도 자리만 같으면 같은 고장이 재현됐기 때문에",
+      "shot": "정면으로 클로즈업된 패널 화면, 초록 배경에 뜬 붉은 코드."
+    },
+    {
+      "when": "격리 절차 수립",
+      "event": "격리 절차는 하나로 정리됐다. 패널이 찍은 코드에 절대 반응하지 않고, 고장이 나면 그때 고친다.",
+      "because": "반응하는 행위 자체가 고장을 확정짓는다는 게 확인됐기 때문에",
+      "shot": "반응 금지 표지판이 붙은 패널 앞을 그냥 지나치는 근무자."
+    },
+    {
+      "when": "봉쇄 시도",
+      "event": "패널을 없애려 차폐막, 배선 교체, 완전 철거까지 시도했지만, 코드는 옆 모니터로 옮겨 붙었다. 봉쇄 절차는 완전히 실패했다.",
+      "because": "패널 자체가 아니라 그 자리의 '표시 권한'이 문제였기 때문에",
+      "shot": "차폐막을 씌운 패널 옆, 대신 같은 코드를 띄운 예비 모니터."
+    },
+    {
+      "when": "제3자 접촉",
+      "event": "마셜, 카터 & 다크가 접촉해 파산한 회사의 원천 기술 도면을 사겠다고 제안했다. 재단은 거절했다. 재단도 그 회사가 뭘 실험했는지 아직 몰랐기 때문이다.",
+      "because": "봉쇄 실패 소식이 외부에 흘러나갔기 때문에",
+      "shot": "거절 서한과 함께 봉인된 협상 서류철."
+    },
+    {
+      "when": "이 년 가까이 지속",
+      "event": "격리는 유지됐고 코바치는 계속 그 자리에 남았다. 그러다 패널에 자기 숙소 산소 밸브 코드가 뜬 걸 보고, 그는 원칙을 어겼다. 보고를 미루고 혼자 렌치를 들고 들어가 밸브를 손봤다.",
+      "because": "이번엔 남의 부품이 아니라 자기 방이었기 때문에",
+      "shot": "혼자 렌치를 들고 자기 숙소 밸브 앞에 선 코바치."
+    },
+    {
+      "when": "사흘 뒤",
+      "event": "의무실에서 코바치의 생체 신호가 이상해졌다. 심박도 산소포화도도 아닌, 그 패널과 똑같은 형식의 고장 코드가 그의 화면에 떴다. 기억소거제 을급을 투여하고 현실 안정 장치 두 대를 추가로 돌렸다.",
+      "because": "코바치가 규칙을 어기고 코드에 직접 반응했기 때문에",
+      "shot": "의무실 모니터에 뜬, 장비 고장 코드와 똑같은 형식의 생체 이상 신호."
+    },
+    {
+      "when": "현재",
+      "event": "코바치는 사흘 만에 회복해 재배치됐고, 격리 절차엔 사람 이름이 뜨면 알리지 않는다는 줄이 추가됐다. 화물 인수증엔 봉인 상자가 최소 두 개 더 있었다고 적혀 있고, 등급 재분류 심사는 열리지 않았다.",
+      "because": "다들 안 보고 지나가는 쪽을 택했기 때문에",
+      "shot": "여전히 깜빡이는 패널과, 그 앞을 그냥 지나치기로 한 근무자들."
+    }
+  ],
+  "retention_beats": [
+    "화물 인수증에 남은 나머지 두 봉인 상자",
+    "마셜, 카터 & 다크가 원천 기술 도면을 노린 이유",
+    "재단 기록에 아직 없는 결론"
+  ],
+  "cameos": [
+    {
+      "number": "SCP-914",
+      "how": "태엽 장치로 알려진 안전 등급 개체. 같은 정거장 화물칸에 한때 잠시 보관됐다 나감"
+    },
+    {
+      "number": "SCP-682",
+      "how": "파괴하기 힘든 것으로 알려진 개체. 이 패널과 같은 케테르 등급으로 언급됨"
+    }
+  ],
+  "twist_summary": "인과의 반전 — 재단은 처음에 패널이 고장을 미리 예측한다고 봤지만, 부품을 바꿔도 같은 고장이 그대로 재현되는 걸 확인하며 실은 표시가 원인이고 고장은 그 결과였다는 게 드러난다. 패널의 원리는 파산한 민간 통신위성 회사가 남긴 원천 기술에서 비롯됐고, 재단조차 그 회사가 뭘 실험했는지 모른다. 코바치가 자기 숙소 코드를 보고 직접 반응하는 원칙을 어기자, 고장 코드가 장비가 아니라 그의 생체 신호에 그대로 옮겨붙는다.",
+  "narration_full": "패널 시계는 열한 시간 앞서 있었고, 계기판은 멀쩡했습니다.\n\n사이트-육공구, 저궤도 통신 중계 정거장 얘기입니다. 상주 인원은 소수, 국적은 제각각이었죠.\n\n이 년 전 정비 개편 때, 화물칸 구석에서 낡은 진단 패널 하나가 나왔습니다. 예전에 파산한 민간 통신위성 회사, 그 지상관제소 창고에서 흘러나온 물건이었습니다. 남는 배선함에 얹어놨을 뿐인데, 전원이 붙었죠.\n\n기술관 코바치는 그날 그냥 웃었습니다. 「이 고물, 아직도 살아 있네요…」 정비일지 여백엔 이렇게 적혔습니다. 「매뉴얼에 없는 부품임.」\n\n패널엔 코드 하나가 떴습니다. 산소 정화 장치 이상. 정작 진짜 계기판은 초록불 그대로였고요.\n\n열한 시간 사십칠 분 뒤, 정확히 그 부품이 그 코드 그대로 멎었습니다.\n\n우연치고는… 숫자가 너무 정확했습니다. 재단이 사이트를 인수했고, 조사가 시작됐습니다.\n\n담당은 기동특무부대 오미크론-십사, 별칭 '반사판'이었습니다. 처음엔 간단했어요. 패널이 뭔가를 미리 안다, 그러면 확인해보자는 거였죠.\n\n이것저것 해봤습니다. 카메라를 세워놓질 않나, D계급을 시켜 손 하나 못 대게 지키질 않나, 부품을 통째로 가려보기까지 했고요. 그래도, 코드는 떴습니다.\n\n예고된 시각에, 조명판은 저절로 꺼졌습니다. 「저 진짜 아무도 안 건드렸는데요?」 D-구팔칠삼이 보고한 말입니다.\n\n이쯤 되니 다들 알아차렸습니다. 이건 예측이 아니라 — 방향이 거꾸로 된 인과였다는 걸요.\n\n현장 사람들은 이 패널을, 어느새 '먼저 뜨는 경보'라고 부르고 있었습니다. 재단 문서에도 그 별칭이 그대로 올라갔습니다.\n\n그래서 다음 실험은 반대로 가봤습니다. 코드가 뜬 부품을 예방 차원에서 미리 바꿔치기 해본 거죠.\n\n결과는 더 나빴습니다. 새 부품이 켜지자마자, 예정됐던 그 고장 패턴을 그대로 재현했거든요. 낡은 부품이든 새 부품이든, 그 자리에 뭘 꽂든 상관없었습니다.\n\n재단은 결론을 냈습니다. 원인과 결과가 아니라, 표시와 순응이었다고요. 패널이 뭔가를 본 게 아니라 — 패널이 뭔가를 정하고 있었던 겁니다.\n\n그게 예측이었을까요, 아니면 다른 무엇이었을까요. 저도 이 부분은, 아직 다 이해했다고는 말 못 하겠습니다.\n\n이때 패널을 정면으로 살펴본 기록이 하나 남아 있습니다. 가로 서른두 센티, 세로 스물네 센티. 화면 유리는 늘 손끝보다 차가웠고, 낮게 웅웅거리는 소리가 났습니다. 코드는 초록 배경에 붉은 글자, 딱 삼 초간 떴다가 사라졌습니다. 뒷면에서는 오래된 회로 특유의, 쇠 비린내 비슷한 냄새가 났고요.\n\n격리 절차는 그래서 하나로 정리됐습니다. 절대로, '먼저 뜨는 경보'가 찍은 코드에 반응하지 않는다. 그냥 둔다. 고장이 나면, 그때 고친다.\n\n패널을 아예 치우려고 몇 가지를 시도했습니다. 차폐막을 씌워보질 않나, 배선을 통째로 갈아보질 않나, 아예 들어내 보기도 했고요. 그래도, 코드는 옆 모니터로 옮겨 붙었습니다. 봉쇄 절차는, 완전히 실패했습니다. 오미크론-십사 현장 보고엔 이렇게 남았습니다. 「차폐, 소용없음. 옆으로 옮겨 붙음.」\n\n그 무렵 마셜, 카터 & 다크 쪽에서 접촉이 왔습니다. 그 파산한 회사의 원천 기술 도면을 사겠다고요. 당연하게도, 재단은 거절했습니다. 이유는 간단했죠. 재단도, 그 회사가 뭘 실험했었는지 아직 모른다는 것.\n\n이런 식으로 이 년 가까이 흘렀습니다. 격리는 유지됐고, 코바치는 계속 그 자리에 남았습니다.\n\n그런데 코바치가, 원칙을 하나 어겼습니다.\n\n패널에 자기 숙소 산소 밸브 코드가 뜬 걸 본 겁니다. 다른 부품이야 놔뒀지만, 이건 자기 방이었거든요.\n\n「저것만은, 미리 봐야겠습니다…」\n\n보고를 미루고, 혼자 렌치를 들고 들어갔습니다. 밸브를 손봤고, 코드는 사라졌습니다. 그날 밤은 아무 일도 없었습니다.\n\n사흘 뒤, 의무실에서 그의 생체 신호가 이상해졌습니다. 심박도, 산소포화도도 아니었어요. 화면에 뜬 건 — 그 패널과 똑같은 형식의 고장 코드였습니다. 장비가 아니라, 사람한테 뜬 코드였죠.\n\n「이게 대체 무슨 형식이죠?」 의무관이 되물었습니다. 아무도 답을 못 했습니다…\n\n기억소거제 을급을 투여하고, 현실 안정 장치 두 대를 추가로 돌렸습니다. 출력은 정상 범위를 살짝 넘겼지만, 버텼습니다. 코바치는 사흘 만에 회복했고, 재배치됐습니다.\n\n이 사고 이후로 격리 절차에 한 줄이 더 붙었습니다. 패널이 사람 이름이 적힌 코드를 띄우면, 그 사람에게 알리지 않는다.\n\n화물 인수증엔, 그날 함께 들어온 봉인 상자가 최소 두 개 더 있었다고 적혀 있습니다. 그중 하나가 이 패널이었고요. 나머지 둘은, 아직 창고 어딘가에서 열리지 않은 채로 있습니다. 그 두 상자 안엔 대체 뭐가 들었을까요?\n\n등급 재분류 심사는 딱히 열리지 않았습니다. 다들 그냥, 안 보고 지나가는 쪽을 택했으니까요…\n\n참고로 이 정거장 화물칸엔, SCP-914로 알려진 태엽 장치가 예전에 잠깐 보관됐다 나갔다고 합니다. 등급은 안전, 이쪽 패널과는 급이 달랐죠. 저 유명한 SCP-682와 같은 케테르 등급, 이쪽도 마찬가지였습니다.\n\n재단 기록엔, 이 코드에 대한 결론이 아직 없습니다.\n\n그러니까 이 '먼저 뜨는 경보', 정식 문서 번호로는 SCP-9873입니다.\n\n로그는 지금도 쌓이고 있습니다. 어제도 하나, 오늘 아침에도 하나 더 떴다고 하네요…\n\n그나저나 코바치는 요즘, 숙소를 아예 다른 층으로 옮겼다고 하더군요.",
+  "segments": [
+    {
+      "text": "패널 시계는 열한 시간 앞서 있었고",
+      "est_sec": 4,
+      "text_en": "The panel's clock ran eleven hours ahead,",
+      "text_ja": "パネルの時計は十一時間先を指していて、",
+      "text_zh_Hant": "面板上的时钟快了十一个小时,"
+    },
+    {
+      "text": "계기판은 멀쩡했습니다.",
+      "est_sec": 3,
+      "text_en": "while the real gauge looked fine.",
+      "text_ja": "本物の計器盤は正常でした。",
+      "text_zh_Hant": "而真正的仪表却一切正常。"
+    },
+    {
+      "text": "사이트-육공구",
+      "est_sec": 2,
+      "text_en": "Site-609.",
+      "text_ja": "サイト-609。",
+      "text_zh_Hant": "六〇九站。"
+    },
+    {
+      "text": "저궤도 통신 중계 정거장 얘기입니다.",
+      "est_sec": 5,
+      "text_en": "This is about a low-orbit relay station.",
+      "text_ja": "低軌道の通信中継ステーションの話です。",
+      "text_zh_Hant": "这是一座低轨道通讯中继站的故事。"
+    },
+    {
+      "text": "상주 인원은 소수, 국적은 제각각이었죠.",
+      "est_sec": 5,
+      "text_en": "A small, multinational crew lived there.",
+      "text_ja": "常駐人員はわずかで、国籍もばらばらでした。",
+      "text_zh_Hant": "常驻人员不多,国籍也各不相同。"
+    },
+    {
+      "text": "이 년 전 정비 개편 때",
+      "est_sec": 3,
+      "text_en": "During a refit two years back,",
+      "text_ja": "二年前の整備改編の際、",
+      "text_zh_Hant": "两年前设备改造时,"
+    },
+    {
+      "text": "화물칸 구석에서",
+      "est_sec": 2,
+      "text_en": "in a corner of the cargo bay,",
+      "text_ja": "貨物室の隅で、",
+      "text_zh_Hant": "在货舱角落里,"
+    },
+    {
+      "text": "낡은 진단 패널 하나가 나왔습니다.",
+      "est_sec": 4,
+      "text_en": "an old diagnostic panel turned up.",
+      "text_ja": "古い診断パネルが一台出てきました。",
+      "text_zh_Hant": "发现了一块老旧的诊断面板。"
+    },
+    {
+      "text": "예전에 파산한 민간 통신위성 회사",
+      "est_sec": 4,
+      "text_en": "It once belonged to a bankrupt satellite firm,",
+      "text_ja": "かつて倒産した民間通信衛星会社の、",
+      "text_zh_Hant": "曾属于一家已破产的民营通信卫星公司,"
+    },
+    {
+      "text": "그 지상관제소 창고에서",
+      "est_sec": 3,
+      "text_en": "from that firm's ground-control warehouse.",
+      "text_ja": "その地上管制所の倉庫から、",
+      "text_zh_Hant": "是从其地面控制中心的仓库里,"
+    },
+    {
+      "text": "흘러나온 물건이었습니다.",
+      "est_sec": 3,
+      "text_en": "That's where it had drifted in from.",
+      "text_ja": "流れ出てきたものでした。",
+      "text_zh_Hant": "流出来的东西。"
+    },
+    {
+      "text": "남는 배선함에 얹어놨을 뿐인데",
+      "est_sec": 4,
+      "text_en": "They just set it on a spare wiring rack,",
+      "text_ja": "余った配線盤に置いただけなのに、",
+      "text_zh_Hant": "只是随手放在多余的配线柜上,"
+    },
+    {
+      "text": "전원이 붙었죠.",
+      "est_sec": 2,
+      "text_en": "and it powered on.",
+      "text_ja": "電源が入ったのです。",
+      "text_zh_Hant": "电源却接通了。"
+    },
+    {
+      "text": "기술관 코바치는 그날 그냥 웃었습니다.",
+      "est_sec": 5,
+      "text_en": "Technician Kovach just laughed that day.",
+      "text_ja": "技術官コバチはその日、ただ笑いました。",
+      "text_zh_Hant": "技术员科瓦奇当天只是笑了笑。"
+    },
+    {
+      "text": "「이 고물, 아직도 살아 있네요…」",
+      "est_sec": 4,
+      "text_en": "「This old junk still works…」",
+      "text_ja": "「このガラクタ、まだ動くんですね…」",
+      "text_zh_Hant": "「这破烂玩意儿,居然还活着呢…」"
+    },
+    {
+      "text": "정비일지 여백엔 이렇게 적혔습니다.",
+      "est_sec": 4,
+      "text_en": "In the margin of the maintenance log, someone wrote:",
+      "text_ja": "整備日誌の余白にはこう書かれていました。",
+      "text_zh_Hant": "维修日志的空白处这样写道:"
+    },
+    {
+      "text": "「매뉴얼에 없는 부품임.」",
+      "est_sec": 3,
+      "text_en": "「Part not listed in any manual.」",
+      "text_ja": "「マニュアルにない部品。」",
+      "text_zh_Hant": "「手册上没有的零件。」"
+    },
+    {
+      "text": "패널엔 코드 하나가 떴습니다.",
+      "est_sec": 4,
+      "text_en": "A code lit up on the panel.",
+      "text_ja": "パネルに一つのコードが表示されました。",
+      "text_zh_Hant": "面板上亮起了一个代码。"
+    },
+    {
+      "text": "산소 정화 장치 이상.",
+      "est_sec": 3,
+      "text_en": "Oxygen scrubber malfunction.",
+      "text_ja": "酸素浄化装置の異常。",
+      "text_zh_Hant": "氧气净化装置异常。"
+    },
+    {
+      "text": "정작 진짜 계기판은 초록불 그대로였고요.",
+      "est_sec": 5,
+      "text_en": "But the real gauge still glowed green.",
+      "text_ja": "本物の計器盤は緑のままでした。",
+      "text_zh_Hant": "但真正的仪表依旧是绿灯。"
+    },
+    {
+      "text": "열한 시간 사십칠 분 뒤",
+      "est_sec": 3,
+      "text_en": "Eleven hours and forty-seven minutes later,",
+      "text_ja": "十一時間四十七分後、",
+      "text_zh_Hant": "十一小时四十七分钟后,"
+    },
+    {
+      "text": "정확히 그 부품이 그 코드 그대로 멎었습니다.",
+      "est_sec": 6,
+      "text_en": "that exact part failed, matching the code exactly.",
+      "text_ja": "正確にその部品が、あのコード通りに止まりました。",
+      "text_zh_Hant": "那个部件正好按那段代码停止了运转。"
+    },
+    {
+      "text": "우연치고는…",
+      "est_sec": 2,
+      "text_en": "For a coincidence…",
+      "text_ja": "偶然にしては…",
+      "text_zh_Hant": "说是巧合的话…"
+    },
+    {
+      "text": "숫자가 너무 정확했습니다.",
+      "est_sec": 3,
+      "text_en": "the numbers matched too well.",
+      "text_ja": "数字が正確すぎました。",
+      "text_zh_Hant": "数字未免太精确了。"
+    },
+    {
+      "text": "재단이 사이트를 인수했고",
+      "est_sec": 3,
+      "text_en": "The Foundation took over the site,",
+      "text_ja": "財団がサイトを引き継ぎ、",
+      "text_zh_Hant": "基金会接管了该站点,"
+    },
+    {
+      "text": "조사가 시작됐습니다.",
+      "est_sec": 3,
+      "text_en": "and an investigation began.",
+      "text_ja": "調査が始まりました。",
+      "text_zh_Hant": "调查随即展开。"
+    },
+    {
+      "text": "담당은 기동특무부대 오미크론-십사",
+      "est_sec": 4,
+      "text_en": "Mobile Task Force Omicron-14 took the case,",
+      "text_ja": "担当は機動特務部隊オミクロン-14、",
+      "text_zh_Hant": "负责的是机动特遣队奥米克隆-14,"
+    },
+    {
+      "text": "별칭 '반사판'이었습니다.",
+      "est_sec": 3,
+      "text_en": "nicknamed \"Reflector.\"",
+      "text_ja": "通称「反射板」でした。",
+      "text_zh_Hant": "别称「反射板」。"
+    },
+    {
+      "text": "처음엔 간단했어요.",
+      "est_sec": 2,
+      "text_en": "At first it seemed simple.",
+      "text_ja": "最初は単純でした。",
+      "text_zh_Hant": "起初看似简单。"
+    },
+    {
+      "text": "패널이 뭔가를 미리 안다",
+      "est_sec": 3,
+      "text_en": "If the panel knew something in advance,",
+      "text_ja": "パネルが何かを先に知っているなら、",
+      "text_zh_Hant": "如果面板能提前知道些什么,"
+    },
+    {
+      "text": "그러면 확인해보자는 거였죠.",
+      "est_sec": 3,
+      "text_en": "they'd just go test it.",
+      "text_ja": "確かめてみようという話でした。",
+      "text_zh_Hant": "那就验证看看。"
+    },
+    {
+      "text": "이것저것 해봤습니다.",
+      "est_sec": 3,
+      "text_en": "They tried a few things.",
+      "text_ja": "いろいろ試しました。",
+      "text_zh_Hant": "试了各种办法。"
+    },
+    {
+      "text": "카메라를 세워놓질 않나",
+      "est_sec": 3,
+      "text_en": "Setting up cameras, for one,",
+      "text_ja": "カメラを設置してみたり、",
+      "text_zh_Hant": "架设摄像头不说,"
+    },
+    {
+      "text": "D계급을 시켜 손 하나 못 대게 지키질 않나",
+      "est_sec": 6,
+      "text_en": "posting a D-class to guard it hands-off,",
+      "text_ja": "D階級に見張らせて手を触れさせなかったり、",
+      "text_zh_Hant": "派D级人员看守却不许碰不说,"
+    },
+    {
+      "text": "부품을 통째로 가려보기까지 했고요.",
+      "est_sec": 4,
+      "text_en": "even covering the whole part up.",
+      "text_ja": "部品ごと覆い隠したりまでしました。",
+      "text_zh_Hant": "甚至把整个部件都遮了起来。"
+    },
+    {
+      "text": "그래도, 코드는 떴습니다.",
+      "est_sec": 3,
+      "text_en": "Still, the code lit up.",
+      "text_ja": "それでも、コードは表示されました。",
+      "text_zh_Hant": "结果代码照样亮起。"
+    },
+    {
+      "text": "예고된 시각에, 조명판은 저절로 꺼졌습니다.",
+      "est_sec": 6,
+      "text_en": "Right on schedule, the light panel just shut off.",
+      "text_ja": "予告された時刻に、照明盤は勝手に消えました。",
+      "text_zh_Hant": "到了预告的时刻,照明板自己熄灭了。"
+    },
+    {
+      "text": "「저 진짜 아무도 안 건드렸는데요?」",
+      "est_sec": 5,
+      "text_en": "「Nobody touched it, I swear?」",
+      "text_ja": "「本当に誰も触ってませんけど?」",
+      "text_zh_Hant": "「真的没人碰过啊?」"
+    },
+    {
+      "text": "D-구팔칠삼이 보고한 말입니다.",
+      "est_sec": 4,
+      "text_en": "That's what D-9873 reported.",
+      "text_ja": "D-9873が報告した言葉です。",
+      "text_zh_Hant": "这是D-9873报告时说的话。"
+    },
+    {
+      "text": "이쯤 되니 다들 알아차렸습니다.",
+      "est_sec": 4,
+      "text_en": "By then, everyone had figured it out.",
+      "text_ja": "この段階で、皆が気づきました。",
+      "text_zh_Hant": "到这时候,大家都察觉到了。"
+    },
+    {
+      "text": "이건 예측이 아니라 —",
+      "est_sec": 3,
+      "text_en": "This wasn't prediction —",
+      "text_ja": "これは予測ではなく——",
+      "text_zh_Hant": "这不是预测——"
+    },
+    {
+      "text": "방향이 거꾸로 된 인과였다는 걸요.",
+      "est_sec": 4,
+      "text_en": "it was causation running backward.",
+      "text_ja": "因果の向きが逆になっていたのです。",
+      "text_zh_Hant": "而是因果关系整个反过来了。",
+      "emphasis": "거꾸로 된 인과"
+    },
+    {
+      "text": "현장 사람들은 이 패널을",
+      "est_sec": 3,
+      "text_en": "People on site had started calling this panel",
+      "text_ja": "現場の人々はこのパネルを、",
+      "text_zh_Hant": "现场的人们,"
+    },
+    {
+      "text": "어느새 '먼저 뜨는 경보'라고",
+      "est_sec": 4,
+      "text_en": "the 'Alarm That Rings First,'",
+      "text_ja": "いつしか「先に鳴る警報」と",
+      "text_zh_Hant": "不知不觉就把它叫做"
+    },
+    {
+      "text": "부르고 있었습니다.",
+      "est_sec": 2,
+      "text_en": "before anyone quite noticed.",
+      "text_ja": "呼ぶようになっていました。",
+      "text_zh_Hant": "「先响的警报」了。"
+    },
+    {
+      "text": "재단 문서에도 그 별칭이 그대로 올라갔습니다.",
+      "est_sec": 6,
+      "text_en": "The nickname made it straight into Foundation files.",
+      "text_ja": "財団の文書にも、その呼び名がそのまま載りました。",
+      "text_zh_Hant": "这个绰号也原封不动地写进了基金会文件。"
+    },
+    {
+      "text": "그래서 다음 실험은 반대로 가봤습니다.",
+      "est_sec": 5,
+      "text_en": "So the next test went the other way.",
+      "text_ja": "そこで次の実験は逆をいってみました。",
+      "text_zh_Hant": "于是下一场实验反其道而行。"
+    },
+    {
+      "text": "코드가 뜬 부품을",
+      "est_sec": 2,
+      "text_en": "The part the code flagged —",
+      "text_ja": "コードが表示された部品を、",
+      "text_zh_Hant": "面板显示故障的那个部件,"
+    },
+    {
+      "text": "예방 차원에서 미리 바꿔치기 해본 거죠.",
+      "est_sec": 5,
+      "text_en": "they swapped it out early, as prevention.",
+      "text_ja": "予防のつもりで先に交換してみたのです。",
+      "text_zh_Hant": "出于预防提前把它换掉了。"
+    },
+    {
+      "text": "결과는 더 나빴습니다.",
+      "est_sec": 3,
+      "text_en": "The result was worse.",
+      "text_ja": "結果はもっと悪いものでした。",
+      "text_zh_Hant": "结果反而更糟。"
+    },
+    {
+      "text": "새 부품이 켜지자마자",
+      "est_sec": 3,
+      "text_en": "The moment the new part powered on,",
+      "text_ja": "新しい部品の電源が入った途端、",
+      "text_zh_Hant": "新部件一通电,"
+    },
+    {
+      "text": "예정됐던 그 고장 패턴을 그대로 재현했거든요.",
+      "est_sec": 6,
+      "text_en": "it reproduced the scheduled failure exactly.",
+      "text_ja": "予定されていた故障パターンをそのまま再現したのです。",
+      "text_zh_Hant": "就原封不动地重现了预定的故障模式。"
+    },
+    {
+      "text": "낡은 부품이든 새 부품이든",
+      "est_sec": 3,
+      "text_en": "Old part or new part,",
+      "text_ja": "古い部品でも新しい部品でも、",
+      "text_zh_Hant": "不管是旧部件还是新部件,"
+    },
+    {
+      "text": "그 자리에 뭘 꽂든 상관없었습니다.",
+      "est_sec": 4,
+      "text_en": "it didn't matter what filled the slot.",
+      "text_ja": "その場に何を挿しても関係ありませんでした。",
+      "text_zh_Hant": "插在那个位置的东西是什么都无所谓。"
+    },
+    {
+      "text": "재단은 결론을 냈습니다.",
+      "est_sec": 3,
+      "text_en": "The Foundation reached a conclusion.",
+      "text_ja": "財団は結論を出しました。",
+      "text_zh_Hant": "基金会得出了结论。"
+    },
+    {
+      "text": "원인과 결과가 아니라, 표시와 순응이었다고요.",
+      "est_sec": 6,
+      "text_en": "Not cause and effect — display and compliance.",
+      "text_ja": "原因と結果ではなく、表示と追従だったと。",
+      "text_zh_Hant": "这不是因果,而是显示与服从。",
+      "emphasis": "표시와 순응"
+    },
+    {
+      "text": "패널이 뭔가를 본 게 아니라 —",
+      "est_sec": 4,
+      "text_en": "The panel wasn't seeing anything —",
+      "text_ja": "パネルは何かを見ていたのではなく——",
+      "text_zh_Hant": "面板并非看见了什么——"
+    },
+    {
+      "text": "패널이 뭔가를 정하고 있었던 겁니다.",
+      "est_sec": 5,
+      "text_en": "it was deciding something.",
+      "text_ja": "何かを決めていたのです。",
+      "text_zh_Hant": "而是在决定着什么。"
+    },
+    {
+      "text": "그게 예측이었을까요",
+      "est_sec": 2,
+      "text_en": "Was it really prediction,",
+      "text_ja": "それは予測だったのでしょうか、",
+      "text_zh_Hant": "那究竟是预测,"
+    },
+    {
+      "text": "아니면 다른 무엇이었을까요.",
+      "est_sec": 3,
+      "text_en": "or something else entirely.",
+      "text_ja": "それとも他の何かだったのでしょうか。",
+      "text_zh_Hant": "还是别的什么东西。"
+    },
+    {
+      "text": "저도 이 부분은",
+      "est_sec": 2,
+      "text_en": "I'll admit, this part —",
+      "text_ja": "私もこの部分は、",
+      "text_zh_Hant": "这一部分,我自己也"
+    },
+    {
+      "text": "아직 다 이해했다고는 말 못 하겠습니다.",
+      "est_sec": 5,
+      "text_en": "I still can't say I fully understand it.",
+      "text_ja": "まだ完全に理解できたとは言えません。",
+      "text_zh_Hant": "还不能说完全弄明白了。"
+    },
+    {
+      "text": "이때 패널을 정면으로 살펴본",
+      "est_sec": 3,
+      "text_en": "One record actually examined the panel head-on,",
+      "text_ja": "このとき、パネルを正面から調べた、",
+      "text_zh_Hant": "当时有一份记录,是正面细看这块面板留下的,"
+    },
+    {
+      "text": "기록이 하나 남아 있습니다.",
+      "est_sec": 3,
+      "text_en": "and it survives.",
+      "text_ja": "記録が一つ残っています。",
+      "text_zh_Hant": "至今还保存着。"
+    },
+    {
+      "text": "가로 서른두 센티, 세로 스물네 센티.",
+      "est_sec": 5,
+      "text_en": "Thirty-two centimeters wide, twenty-four tall.",
+      "text_ja": "横三十二センチ、縦二十四センチ。",
+      "text_zh_Hant": "宽三十二厘米,高二十四厘米。"
+    },
+    {
+      "text": "화면 유리는 늘 손끝보다 차가웠고",
+      "est_sec": 4,
+      "text_en": "The screen glass was always colder than a fingertip,",
+      "text_ja": "画面のガラスはいつも指先より冷たく、",
+      "text_zh_Hant": "屏幕的玻璃总是比指尖还要冰凉,"
+    },
+    {
+      "text": "낮게 웅웅거리는 소리가 났습니다.",
+      "est_sec": 4,
+      "text_en": "and it hummed low and steady.",
+      "text_ja": "低くうなるような音がしていました。",
+      "text_zh_Hant": "还发出低沉的嗡嗡声。"
+    },
+    {
+      "text": "코드는 초록 배경에 붉은 글자",
+      "est_sec": 4,
+      "text_en": "The code showed red letters on a green field,",
+      "text_ja": "コードは緑の背景に赤い文字で、",
+      "text_zh_Hant": "代码是绿底红字,"
+    },
+    {
+      "text": "딱 삼 초간 떴다가 사라졌습니다.",
+      "est_sec": 4,
+      "text_en": "appearing for exactly three seconds before fading.",
+      "text_ja": "ちょうど三秒間表示されて消えました。",
+      "text_zh_Hant": "恰好显示三秒后就消失了。"
+    },
+    {
+      "text": "뒷면에서는 오래된 회로 특유의",
+      "est_sec": 4,
+      "text_en": "From the back came that smell peculiar to old circuits —",
+      "text_ja": "裏側からは古い回路特有の、",
+      "text_zh_Hant": "从背面还会传出老旧电路特有的,"
+    },
+    {
+      "text": "쇠 비린내 비슷한 냄새가 났고요.",
+      "est_sec": 4,
+      "text_en": "something like the tang of raw metal.",
+      "text_ja": "鉄錆に似た匂いがしました。",
+      "text_zh_Hant": "类似铁腥味的气味。"
+    },
+    {
+      "text": "격리 절차는 그래서 하나로 정리됐습니다.",
+      "est_sec": 5,
+      "text_en": "So the containment procedure came down to one rule.",
+      "text_ja": "それゆえ、収容手順は一つに絞られました。",
+      "text_zh_Hant": "于是,收容程序最终归结为一条。"
+    },
+    {
+      "text": "절대로",
+      "est_sec": 2,
+      "text_en": "Never",
+      "text_ja": "絶対に、",
+      "text_zh_Hant": "绝对"
+    },
+    {
+      "text": "'먼저 뜨는 경보'가 찍은",
+      "est_sec": 3,
+      "text_en": "react to a code",
+      "text_ja": "「先に鳴る警報」が示す",
+      "text_zh_Hant": "不对「先响的警报」显示的"
+    },
+    {
+      "text": "코드에 반응하지 않는다.",
+      "est_sec": 3,
+      "text_en": "the Alarm That Rings First shows.",
+      "text_ja": "コードに反応しない。",
+      "text_zh_Hant": "代码做出反应。"
+    },
+    {
+      "text": "그냥 둔다.",
+      "est_sec": 2,
+      "text_en": "Leave it be.",
+      "text_ja": "そのままにしておく。",
+      "text_zh_Hant": "放着不管。"
+    },
+    {
+      "text": "고장이 나면, 그때 고친다.",
+      "est_sec": 3,
+      "text_en": "Fix it only once it actually breaks.",
+      "text_ja": "故障が起きたら、その時に直す。",
+      "text_zh_Hant": "等真正故障了,再去修。"
+    },
+    {
+      "text": "패널을 아예 치우려고 몇 가지를 시도했습니다.",
+      "est_sec": 6,
+      "text_en": "They tried a few things to remove the panel entirely.",
+      "text_ja": "パネルを完全に撤去しようと、いくつか試しました。",
+      "text_zh_Hant": "有人试图彻底把面板拆掉,试了几种办法。"
+    },
+    {
+      "text": "차폐막을 씌워보질 않나",
+      "est_sec": 3,
+      "text_en": "Covering it in a shield, for one,",
+      "text_ja": "遮蔽膜をかぶせてみたり、",
+      "text_zh_Hant": "蒙上屏蔽罩不说,"
+    },
+    {
+      "text": "배선을 통째로 갈아보질 않나",
+      "est_sec": 3,
+      "text_en": "rewiring the whole thing, for another,",
+      "text_ja": "配線を丸ごと交換してみたり、",
+      "text_zh_Hant": "整套线路重接不说,"
+    },
+    {
+      "text": "아예 들어내 보기도 했고요.",
+      "est_sec": 3,
+      "text_en": "even ripping it out entirely.",
+      "text_ja": "完全に取り外してみたりもしました。",
+      "text_zh_Hant": "甚至把它整个拆了出去。"
+    },
+    {
+      "text": "그래도, 코드는 옆 모니터로 옮겨 붙었습니다.",
+      "est_sec": 6,
+      "text_en": "Still, the code just moved to the monitor next to it.",
+      "text_ja": "それでも、コードは隣のモニターに移りました。",
+      "text_zh_Hant": "结果代码还是转移到了旁边的显示器上。"
+    },
+    {
+      "text": "봉쇄 절차는, 완전히 실패했습니다.",
+      "est_sec": 4,
+      "text_en": "Containment failed completely.",
+      "text_ja": "封じ込め手順は、完全に失敗しました。",
+      "text_zh_Hant": "封锁措施彻底失败了。"
+    },
+    {
+      "text": "오미크론-십사 현장 보고엔 이렇게 남았습니다.",
+      "est_sec": 6,
+      "text_en": "Omicron-14's field report reads:",
+      "text_ja": "オミクロン-14の現場報告にはこう残っています。",
+      "text_zh_Hant": "奥米克隆-14的现场报告上这样写着:"
+    },
+    {
+      "text": "「차폐, 소용없음. 옆으로 옮겨 붙음.」",
+      "est_sec": 5,
+      "text_en": "「Shielding useless. Migrated sideways.」",
+      "text_ja": "「遮蔽、無意味。隣へ移動。」",
+      "text_zh_Hant": "「屏蔽无效。已转移至旁侧。」"
+    },
+    {
+      "text": "그 무렵 마셜",
+      "est_sec": 2,
+      "text_en": "Around then, Marshall,",
+      "text_ja": "その頃、マーシャル、",
+      "text_zh_Hant": "那时候,马歇尔、"
+    },
+    {
+      "text": "카터 & 다크 쪽에서 접촉이 왔습니다.",
+      "est_sec": 5,
+      "text_en": "Carter & Dark made contact.",
+      "text_ja": "カーター&ダーク社から接触がありました。",
+      "text_zh_Hant": "卡特与达克那边前来接触了。"
+    },
+    {
+      "text": "그 파산한 회사의 원천 기술 도면을",
+      "est_sec": 4,
+      "text_en": "They wanted to buy the bankrupt firm's",
+      "text_ja": "あの倒産した会社の基礎技術図面を、",
+      "text_zh_Hant": "想要买下那家破产公司的"
+    },
+    {
+      "text": "사겠다고요.",
+      "est_sec": 2,
+      "text_en": "original technical blueprints.",
+      "text_ja": "買いたいと言ってきたのです。",
+      "text_zh_Hant": "原始技术图纸。"
+    },
+    {
+      "text": "당연하게도, 재단은 거절했습니다.",
+      "est_sec": 4,
+      "text_en": "The Foundation refused, naturally.",
+      "text_ja": "当然ながら、財団は断りました。",
+      "text_zh_Hant": "基金会理所当然地拒绝了。"
+    },
+    {
+      "text": "이유는 간단했죠.",
+      "est_sec": 2,
+      "text_en": "The reason was simple.",
+      "text_ja": "理由は単純でした。",
+      "text_zh_Hant": "理由很简单。"
+    },
+    {
+      "text": "재단도",
+      "est_sec": 2,
+      "text_en": "Even the Foundation",
+      "text_ja": "財団自身も、",
+      "text_zh_Hant": "就连基金会,"
+    },
+    {
+      "text": "그 회사가 뭘 실험했었는지 아직 모른다는 것.",
+      "est_sec": 6,
+      "text_en": "still doesn't know what that company had been testing.",
+      "text_ja": "あの会社が何を実験していたのか、まだ分かっていないということでした。",
+      "text_zh_Hant": "也仍不知道那家公司到底在实验些什么。"
+    },
+    {
+      "text": "이런 식으로 이 년 가까이 흘렀습니다.",
+      "est_sec": 5,
+      "text_en": "Nearly two years passed this way.",
+      "text_ja": "こんな調子で二年近くが流れました。",
+      "text_zh_Hant": "就这样过去了将近两年。"
+    },
+    {
+      "text": "격리는 유지됐고",
+      "est_sec": 2,
+      "text_en": "Containment held,",
+      "text_ja": "収容は維持され、",
+      "text_zh_Hant": "收容始终维持着,"
+    },
+    {
+      "text": "코바치는 계속 그 자리에 남았습니다.",
+      "est_sec": 5,
+      "text_en": "and Kovach stayed on at his post.",
+      "text_ja": "コバチはその場に留まり続けました。",
+      "text_zh_Hant": "科瓦奇也一直留在那个岗位上。"
+    },
+    {
+      "text": "그런데 코바치가, 원칙을 하나 어겼습니다.",
+      "est_sec": 5,
+      "text_en": "But then, Kovach broke one rule.",
+      "text_ja": "ところがコバチは、一つの原則を破りました。",
+      "text_zh_Hant": "然而科瓦奇,却违背了一条原则。"
+    },
+    {
+      "text": "패널에 자기 숙소 산소 밸브",
+      "est_sec": 3,
+      "text_en": "The panel flagged the oxygen valve",
+      "text_ja": "パネルに自分の部屋の酸素バルブの、",
+      "text_zh_Hant": "面板上出现了自己宿舍的氧气阀门,"
+    },
+    {
+      "text": "코드가 뜬 걸 본 겁니다.",
+      "est_sec": 3,
+      "text_en": "in his own quarters.",
+      "text_ja": "コードが表示されたのを見たのです。",
+      "text_zh_Hant": "显示出故障代码。"
+    },
+    {
+      "text": "다른 부품이야 놔뒀지만",
+      "est_sec": 3,
+      "text_en": "He'd left every other part alone,",
+      "text_ja": "他の部品なら放っておいたでしょうが、",
+      "text_zh_Hant": "别的部件他都放着不管,"
+    },
+    {
+      "text": "이건 자기 방이었거든요.",
+      "est_sec": 3,
+      "text_en": "but this was his own room.",
+      "text_ja": "これは自分の部屋だったのです。",
+      "text_zh_Hant": "但这是他自己的房间。"
+    },
+    {
+      "text": "「저것만은, 미리 봐야겠습니다…」",
+      "est_sec": 4,
+      "text_en": "「Just this one, I have to check early…」",
+      "text_ja": "「これだけは、先に見ておかないと…」",
+      "text_zh_Hant": "「唯独这个,我得提前处理一下…」"
+    },
+    {
+      "text": "보고를 미루고",
+      "est_sec": 2,
+      "text_en": "He put off reporting it,",
+      "text_ja": "報告を後回しにして、",
+      "text_zh_Hant": "他推迟了上报,"
+    },
+    {
+      "text": "혼자 렌치를 들고 들어갔습니다.",
+      "est_sec": 4,
+      "text_en": "and went in alone with a wrench.",
+      "text_ja": "一人でレンチを持って中に入りました。",
+      "text_zh_Hant": "独自拿着扳手进去了。"
+    },
+    {
+      "text": "밸브를 손봤고, 코드는 사라졌습니다.",
+      "est_sec": 5,
+      "text_en": "He fixed the valve, and the code vanished.",
+      "text_ja": "バルブを直すと、コードは消えました。",
+      "text_zh_Hant": "修好阀门后,代码消失了。"
+    },
+    {
+      "text": "그날 밤은 아무 일도 없었습니다.",
+      "est_sec": 4,
+      "text_en": "That night, nothing happened.",
+      "text_ja": "その夜は何事もありませんでした。",
+      "text_zh_Hant": "那天晚上什么事都没发生。"
+    },
+    {
+      "text": "사흘 뒤",
+      "est_sec": 2,
+      "text_en": "Three days later,",
+      "text_ja": "三日後、",
+      "text_zh_Hant": "三天后,"
+    },
+    {
+      "text": "의무실에서 그의 생체 신호가 이상해졌습니다.",
+      "est_sec": 6,
+      "text_en": "his vitals went strange in the med bay.",
+      "text_ja": "医務室で彼のバイタルサインが異常を示しました。",
+      "text_zh_Hant": "医务室里他的生命体征出现了异常。"
+    },
+    {
+      "text": "심박도, 산소포화도도 아니었어요.",
+      "est_sec": 4,
+      "text_en": "Not the heart rate, not the oxygen level.",
+      "text_ja": "心拍数でも、酸素飽和度でもありませんでした。",
+      "text_zh_Hant": "不是心率,也不是血氧。"
+    },
+    {
+      "text": "화면에 뜬 건 —",
+      "est_sec": 2,
+      "text_en": "What showed on the screen —",
+      "text_ja": "画面に表示されたのは——",
+      "text_zh_Hant": "屏幕上出现的——"
+    },
+    {
+      "text": "그 패널과 똑같은 형식의 고장 코드였습니다.",
+      "est_sec": 6,
+      "text_en": "was a fault code in the exact same format as the panel's.",
+      "text_ja": "あのパネルと全く同じ形式の故障コードでした。",
+      "text_zh_Hant": "竟是和那块面板一模一样格式的故障代码。"
+    },
+    {
+      "text": "장비가 아니라, 사람한테 뜬 코드였죠.",
+      "est_sec": 5,
+      "text_en": "Not on equipment — on a person.",
+      "text_ja": "機器ではなく、人間に表示されたコードでした。",
+      "text_zh_Hant": "不是显示在设备上,而是显示在人身上。",
+      "emphasis": "사람한테 뜬 코드"
+    },
+    {
+      "text": "「이게 대체 무슨 형식이죠?」",
+      "est_sec": 4,
+      "text_en": "「What on earth is this format?」",
+      "text_ja": "「これ、一体何の形式なんですか?」",
+      "text_zh_Hant": "「这到底是什么格式?」"
+    },
+    {
+      "text": "의무관이 되물었습니다.",
+      "est_sec": 3,
+      "text_en": "the medical officer asked back.",
+      "text_ja": "医療官が聞き返しました。",
+      "text_zh_Hant": "医官反问道。"
+    },
+    {
+      "text": "아무도 답을 못 했습니다…",
+      "est_sec": 3,
+      "text_en": "No one could answer…",
+      "text_ja": "誰も答えられませんでした…",
+      "text_zh_Hant": "没有人能回答…"
+    },
+    {
+      "text": "기억소거제 을급을 투여하고",
+      "est_sec": 3,
+      "text_en": "They administered a Class-B amnestic,",
+      "text_ja": "B級記憶消去薬を投与し、",
+      "text_zh_Hant": "施打了乙级记忆消除剂,"
+    },
+    {
+      "text": "현실 안정 장치 두 대를 추가로 돌렸습니다.",
+      "est_sec": 6,
+      "text_en": "and ran two extra reality anchors.",
+      "text_ja": "現実安定装置を二台追加で稼働させました。",
+      "text_zh_Hant": "又额外启动了两台现实稳定装置。"
+    },
+    {
+      "text": "출력은 정상 범위를 살짝 넘겼지만",
+      "est_sec": 4,
+      "text_en": "Output crept just past normal range,",
+      "text_ja": "出力は正常範囲をわずかに超えましたが、",
+      "text_zh_Hant": "输出功率略微超出了正常范围,"
+    },
+    {
+      "text": "버텼습니다.",
+      "est_sec": 2,
+      "text_en": "but it held.",
+      "text_ja": "持ちこたえました。",
+      "text_zh_Hant": "但还是撑住了。"
+    },
+    {
+      "text": "코바치는 사흘 만에 회복했고, 재배치됐습니다.",
+      "est_sec": 6,
+      "text_en": "Kovach recovered in three days and was reassigned.",
+      "text_ja": "コバチは三日で回復し、配置転換されました。",
+      "text_zh_Hant": "科瓦奇三天后康复,并被重新分配了岗位。"
+    },
+    {
+      "text": "이 사고 이후로",
+      "est_sec": 2,
+      "text_en": "After this incident,",
+      "text_ja": "この事故以降、",
+      "text_zh_Hant": "这起事故之后,"
+    },
+    {
+      "text": "격리 절차에 한 줄이 더 붙었습니다.",
+      "est_sec": 5,
+      "text_en": "one more line was added to the containment procedure.",
+      "text_ja": "収容手順にもう一行が追加されました。",
+      "text_zh_Hant": "收容程序里又加上了一条。"
+    },
+    {
+      "text": "패널이 사람 이름이 적힌 코드를 띄우면",
+      "est_sec": 5,
+      "text_en": "If the panel ever displays a code with a person's name,",
+      "text_ja": "パネルが人の名前が書かれたコードを表示したら、",
+      "text_zh_Hant": "如果面板显示出带有人名的代码,"
+    },
+    {
+      "text": "그 사람에게 알리지 않는다.",
+      "est_sec": 3,
+      "text_en": "that person is never told.",
+      "text_ja": "その人には知らせない。",
+      "text_zh_Hant": "绝不告知本人。"
+    },
+    {
+      "text": "화물 인수증엔",
+      "est_sec": 2,
+      "text_en": "The cargo manifest states",
+      "text_ja": "貨物受領証には、",
+      "text_zh_Hant": "货物签收单上写着,"
+    },
+    {
+      "text": "그날 함께 들어온 봉인 상자가",
+      "est_sec": 4,
+      "text_en": "at least two more sealed crates",
+      "text_ja": "あの日一緒に運び込まれた封印箱が、",
+      "text_zh_Hant": "那天一同运抵的封印箱,"
+    },
+    {
+      "text": "최소 두 개 더 있었다고 적혀 있습니다.",
+      "est_sec": 5,
+      "text_en": "came in that same day.",
+      "text_ja": "少なくとももう二箱あったと記されています。",
+      "text_zh_Hant": "至少还有另外两箱。"
+    },
+    {
+      "text": "그중 하나가 이 패널이었고요.",
+      "est_sec": 4,
+      "text_en": "One of them was this panel.",
+      "text_ja": "そのうちの一つがこのパネルでした。",
+      "text_zh_Hant": "其中一箱就是这块面板。"
+    },
+    {
+      "text": "나머지 둘은",
+      "est_sec": 2,
+      "text_en": "The other two",
+      "text_ja": "残りの二箱は、",
+      "text_zh_Hant": "剩下的两箱,"
+    },
+    {
+      "text": "아직 창고 어딘가에서",
+      "est_sec": 3,
+      "text_en": "are still somewhere in the warehouse,",
+      "text_ja": "今も倉庫のどこかで、",
+      "text_zh_Hant": "至今仍在仓库的某处,"
+    },
+    {
+      "text": "열리지 않은 채로 있습니다.",
+      "est_sec": 3,
+      "text_en": "unopened.",
+      "text_ja": "未開封のまま残っています。",
+      "text_zh_Hant": "尚未开封。"
+    },
+    {
+      "text": "그 두 상자 안엔 대체 뭐가 들었을까요?",
+      "est_sec": 5,
+      "text_en": "What could possibly be inside those two boxes?",
+      "text_ja": "あの二箱の中には、一体何が入っているのでしょうか。",
+      "text_zh_Hant": "那两个箱子里,到底装着什么呢?"
+    },
+    {
+      "text": "등급 재분류 심사는 딱히 열리지 않았습니다.",
+      "est_sec": 6,
+      "text_en": "No reclassification hearing was ever really held.",
+      "text_ja": "等級再分類の審査は特に開かれませんでした。",
+      "text_zh_Hant": "等级重新分类的审议也没怎么正式召开过。"
+    },
+    {
+      "text": "다들 그냥",
+      "est_sec": 2,
+      "text_en": "Everyone just chose,",
+      "text_ja": "みんなただ、",
+      "text_zh_Hant": "大家都只是,"
+    },
+    {
+      "text": "안 보고 지나가는 쪽을 택했으니까요…",
+      "est_sec": 5,
+      "text_en": "not to look and move on…",
+      "text_ja": "見ないで通り過ぎる方を選んだのですから…",
+      "text_zh_Hant": "选择视而不见地走过去了…"
+    },
+    {
+      "text": "참고로 이 정거장 화물칸엔",
+      "est_sec": 3,
+      "text_en": "For reference, this station's cargo bay",
+      "text_ja": "ちなみに、この基地の貨物室には、",
+      "text_zh_Hant": "顺带一提,这座站点的货舱里,"
+    },
+    {
+      "text": "SCP-914로 알려진 태엽 장치가",
+      "est_sec": 4,
+      "text_en": "once briefly held the clockwork device",
+      "text_ja": "SCP-914として知られる時計仕掛けの装置が、",
+      "text_zh_Hant": "曾经短暂存放过那台名叫SCP-914的钟表装置,"
+    },
+    {
+      "text": "예전에 잠깐 보관됐다 나갔다고 합니다.",
+      "est_sec": 5,
+      "text_en": "known as SCP-914, before it moved on.",
+      "text_ja": "以前少しの間保管された後、出て行ったそうです。",
+      "text_zh_Hant": "后来又转移了出去。"
+    },
+    {
+      "text": "등급은 안전, 이쪽 패널과는 급이 달랐죠.",
+      "est_sec": 5,
+      "text_en": "Object class Safe — a different league from this panel.",
+      "text_ja": "等級は安全、こちらのパネルとは格が違いました。",
+      "text_zh_Hant": "等级是安全级,和这块面板完全不是一个级别。"
+    },
+    {
+      "text": "저 유명한 SCP-682와 같은 케테르 등급",
+      "est_sec": 6,
+      "text_en": "The same Keter class as the famous SCP-682 —",
+      "text_ja": "あの有名なSCP-682と同じケテル等級——",
+      "text_zh_Hant": "与那大名鼎鼎的SCP-682同为混沌级——"
+    },
+    {
+      "text": "이쪽도 마찬가지였습니다.",
+      "est_sec": 3,
+      "text_en": "this one shared that, too.",
+      "text_ja": "こちらも同じでした。",
+      "text_zh_Hant": "这边也是一样。"
+    },
+    {
+      "text": "재단 기록엔",
+      "est_sec": 2,
+      "text_en": "In Foundation records,",
+      "text_ja": "財団の記録には、",
+      "text_zh_Hant": "在基金会的记录里,"
+    },
+    {
+      "text": "이 코드에 대한 결론이 아직 없습니다.",
+      "est_sec": 5,
+      "text_en": "there's still no conclusion on this code.",
+      "text_ja": "このコードについての結論はまだありません。",
+      "text_zh_Hant": "关于这段代码,至今仍未有定论。"
+    },
+    {
+      "text": "그러니까 이 '먼저 뜨는 경보'",
+      "est_sec": 4,
+      "text_en": "So this 'Alarm That Rings First'",
+      "text_ja": "つまりこの「先に鳴る警報」、",
+      "text_zh_Hant": "所以这个「先响的警报」,"
+    },
+    {
+      "text": "정식 문서 번호로는 SCP-9873입니다.",
+      "est_sec": 5,
+      "text_en": "its official file number is SCP-9873.",
+      "text_ja": "正式な文書番号はSCP-9873です。",
+      "text_zh_Hant": "正式档案编号是SCP-9873。"
+    },
+    {
+      "text": "로그는 지금도 쌓이고 있습니다.",
+      "est_sec": 4,
+      "text_en": "The logs are still piling up.",
+      "text_ja": "ログは今も積み重なっています。",
+      "text_zh_Hant": "日志至今仍在不断累积。"
+    },
+    {
+      "text": "어제도 하나",
+      "est_sec": 2,
+      "text_en": "One came in yesterday,",
+      "text_ja": "昨日も一つ、",
+      "text_zh_Hant": "昨天又多了一条,"
+    },
+    {
+      "text": "오늘 아침에도 하나 더 떴다고 하네요…",
+      "est_sec": 5,
+      "text_en": "and another this morning, apparently…",
+      "text_ja": "今朝もまた一つ出たそうです…",
+      "text_zh_Hant": "据说今天早上又亮起了一条…"
+    },
+    {
+      "text": "그나저나 코바치는 요즘",
+      "est_sec": 3,
+      "text_en": "By the way, Kovach these days",
+      "text_ja": "それはそうと、コバチは最近、",
+      "text_zh_Hant": "对了,科瓦奇最近"
+    },
+    {
+      "text": "숙소를 아예 다른 층으로 옮겼다고 하더군요.",
+      "est_sec": 6,
+      "text_en": "has apparently moved his quarters to a whole different floor.",
+      "text_ja": "部屋ごと別の階に移したそうですよ。",
+      "text_zh_Hant": "据说干脆把宿舍搬到了别的楼层。"
+    }
+  ],
+  "scenes": [
+    {
+      "prompt": "SUBJECT: an old rectangular diagnostic panel wired into a spare junction box, filling most of frame, one small red LED blinking on. CONTEXT: cluttered cargo bay corner of a low-orbit relay station module. COMPOSITION: close three-quarter shot, low angle. LIGHT: single overhead maintenance lamp. MATERIAL: scratched metal casing, tangled cable bundles, frost-dusted bulkhead. ATMOSPHERE: drifting dust in still air, cold sterile haze. PALETTE: near-black background, cold blue-white station light, one hot red LED accent. RENDER: bold linework, flat cel shading, hard-edged shadows. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: the panel screen glowing with a sharp red fault code, filling most of frame. CONTEXT: a second, normal green gauge glowing faintly just beside it. COMPOSITION: extreme close-up, slight low angle. LIGHT: the panel's own red glow as key light. MATERIAL: thick scratched screen glass, worn plastic bezel. ATMOSPHERE: still station air, faint haze. PALETTE: near-black background, hot red code glow, one cool green accent. RENDER: bold linework, flat cel shading, hard-edged shadows. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: a scorched, seized mechanical valve unit matching the earlier fault code, filling most of frame. CONTEXT: a cramped equipment corridor around it. COMPOSITION: medium shot, low angle looking up at the failed unit. LIGHT: single flickering utility lamp. MATERIAL: blackened metal, cracked gauge glass, scorched piping. ATMOSPHERE: faint smoke haze drifting. PALETTE: near-black background, warm amber failure glow, one hot red accent. RENDER: bold linework, flat cel shading, hard-edged shadows. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: a lone D-class figure standing guard before the panel, arms crossed, faceless silhouette, filling most of frame. CONTEXT: a tripod camera aimed at the panel beside them. COMPOSITION: wide low-angle two-shot. LIGHT: the panel's red glow plus a small camera indicator light. MATERIAL: matte jumpsuit fabric, metal tripod legs, worn panel casing. ATMOSPHERE: still recycled air, faint dust. PALETTE: near-black background, hot red panel accent, one cool blue camera-light. RENDER: bold linework, flat cel shading, hard-edged shadows. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: a gloved hand installing a brand-new replacement part into an open panel bay, filling most of frame. CONTEXT: the old diagnostic panel glowing faintly in the background. COMPOSITION: close-up on hands and part, low angle. LIGHT: a single clipped work lamp. MATERIAL: shiny new metal part, worn socket, thick glove. ATMOSPHERE: faint static dust suspended in the light beam. PALETTE: near-black background, cool white work light, one hot red accent from the panel behind. RENDER: bold linework, flat cel shading, hard-edged shadows. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: the diagnostic panel shown dead-center and frontal, its red-on-green fault code glowing sharply, filling over sixty percent of frame. CONTEXT: dark equipment bay walls barely visible behind it. COMPOSITION: symmetrical frontal close-up. LIGHT: the panel's own glow as the sole light source. MATERIAL: cold scratched glass screen, aged metal frame, faint corrosion streaks. ATMOSPHERE: dust motes suspended in the glow. PALETTE: near-black background, hot red code on a green field, no secondary color. RENDER: bold linework, flat cel shading, hard-edged shadows. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: a station worker walking past the panel without looking, one hand raised in a habitual don't-look gesture, filling most of frame. CONTEXT: a small posted procedure placard bolted beside the panel. COMPOSITION: medium tracking shot, low angle. LIGHT: dim corridor lighting plus the panel's red glow. MATERIAL: placard's brushed metal surface, worker's matte uniform fabric. ATMOSPHERE: still, quiet corridor air. PALETTE: near-black background, dim cool corridor light, one hot red panel accent. RENDER: bold linework, flat cel shading, hard-edged shadows. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: a bolted metal shield covering the original panel, while an adjacent backup monitor glows with the same red fault code, filling most of frame. CONTEXT: exposed wiring conduit connecting the two across the wall. COMPOSITION: wide shot holding both panel and monitor in frame. LIGHT: the backup monitor's red glow as key light. MATERIAL: bolted shield plate, monitor glass, exposed cable bundle. ATMOSPHERE: faint dust drifting between them. PALETTE: near-black background, hot red monitor glow, cool metal shield tone. RENDER: bold linework, flat cel shading, hard-edged shadows. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: a sealed document folder stamped with a rejection mark, held by an unseen gloved hand, filling most of frame. CONTEXT: a dim office desk with a station window and stars beyond. COMPOSITION: close-up on the folder, low angle. LIGHT: a single desk lamp. MATERIAL: worn paper, a wax seal, cold window glass. ATMOSPHERE: still office air. PALETTE: near-black background, warm amber lamp light, one hot red wax-seal accent. RENDER: bold linework, flat cel shading, hard-edged shadows. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: a technician alone in his own quarters, wrench in hand, facing an oxygen valve glowing with a red fault code, filling most of frame. CONTEXT: a cramped personal habitat module around him. COMPOSITION: medium shot from behind, low angle, face hidden. LIGHT: the valve's red code glow as key light. MATERIAL: worn metal valve, aged wrench, cluttered personal quarters. ATMOSPHERE: still, close air. PALETTE: near-black background, hot red valve glow, cool habitat-blue shadow. RENDER: bold linework, flat cel shading, hard-edged shadows. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: a medical monitor screen displaying the same red fault-code format, now reading a person's vitals, filling most of frame. CONTEXT: a med-bay cot with a silhouetted figure lying down behind it. COMPOSITION: close-up on the monitor, figure blurred in background. LIGHT: the monitor's red glow as the sole light source. MATERIAL: monitor glass, cot fabric, medical restraint straps. ATMOSPHERE: sterile, still air. PALETTE: near-black background, hot red code glow, cool clinical white accent. RENDER: bold linework, flat cel shading, hard-edged shadows. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: the diagnostic panel glowing faintly alone at the far end of an empty corridor, filling a modest but clearly lit portion of frame. CONTEXT: a dim, deserted station hallway with no one present. COMPOSITION: wide symmetrical corridor shot, panel small but glowing at the vanishing point. LIGHT: the panel's distant red glow as the sole light source. MATERIAL: metal corridor walls, worn panel casing. ATMOSPHERE: still air, dust drifting in the distant glow. PALETTE: near-black background, one distant hot red accent, everything else in shadow. RENDER: bold linework, flat cel shading, hard-edged shadows. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    }
+  ],
+  "background": {
+    "id": "scp-9873_bg",
+    "kind": "image",
+    "reuse": false,
+    "aspect": "16:9",
+    "resolution": "1920x1080",
+    "prompt": "SUBJECT: the diagnostic panel mounted on a wiring rack, its screen glowing with a red fault code, filling over sixty percent of frame. CONTEXT: the cluttered cargo bay of a low-orbit relay station module, dim crate shapes behind. COMPOSITION: low-angle three-quarter shot, panel dominating the frame. LIGHT: the panel's own red glow as key light. MATERIAL: aged metal casing, tangled cable bundles, frost-dusted bulkhead plating. ATMOSPHERE: drifting dust motes in the glow, faint cold haze. PALETTE: near-black background, hot red code glow, cool station-blue rim light. RENDER: bold linework, flat cel shading, hard-edged shadows. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere",
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion"
+  },
+  "thumbnail": {
+    "hook": "A weathered diagnostic panel screen glowing with a sharp red fault code on a green field, filling most of the frame, mounted on a dark cargo-bay wiring rack, a faint silhouette of a station worker dwarfed in the background, near-black background, one hot red accent. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere",
+    "hook_alt": [
+      "Extreme close-up on the panel's cracked glass screen, red code reflected faintly in a worker's wide eye peering just beside it, near-black background, one hot red accent. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere",
+      "A gloved hand reaching toward the glowing red panel but stopped just short of touching it, a blurred warning placard beside it, vast dark cargo bay looming behind, near-black background, one hot red accent. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    ],
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion",
+    "text_safe_area": "left third",
+    "resolution": "1280x720"
+  },
+  "platforms": {
+    "youtube": {
+      "title": "저궤도 정거장에서, 코바치 기술관이 자기 방 경보에 손댔다가 벌어진 사건 [SCP-9873]",
+      "title_form": "피해형",
+      "thumbnail_text": "먼저 뜨는 경보",
+      "thumbnail_quote": "- 저것만은, 미리 봐야겠습니다",
+      "tags": [
+        "SCP",
+        "SCP재단",
+        "SCP-914",
+        "SCP-682",
+        "괴담",
+        "무서운이야기",
+        "미스터리"
+      ],
+      "chapters": [
+        "00:00 열한 시간 앞선 시계",
+        "01:00 첫 번째 코드",
+        "02:21 거꾸로 된 인과",
+        "03:48 패널을 정면으로",
+        "04:41 봉쇄 실패",
+        "05:56 코바치의 위반",
+        "07:07 사람에게 옮겨붙은 코드",
+        "08:24 남은 두 상자"
+      ],
+      "description": "저궤도 통신 중계 정거장 화물칸에서 발견된 낡은 진단 패널 이야기입니다. 고장이 나기도 전에 먼저 고장 코드를 띄우는데, 그 코드에 반응하는 순간 고장이 그대로 일어납니다.\n\n※ SCP 재단 세계관 기반 오리지널 창작 · 허구의 이야기입니다\n※ CC BY-SA 3.0 · 원작: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP재단 #괴담 #무서운이야기 #미스터리",
+      "localizations": {
+        "en": {
+          "title": "A Space Station's Old Panel Predicted Failures Before They Happened [SCP-9873]",
+          "description": "An old diagnostic panel found in a low-orbit relay station's cargo bay. It flashes a fault code before anything actually breaks, and reacting to that code is what makes the failure real.\n\nThis is original fan fiction set in the SCP Foundation universe, entirely fictional.\nCC BY-SA 3.0 · Based on the SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCPFoundation #Horror #Mystery"
+        },
+        "ja": {
+          "title": "低軌道ステーションの古いパネルが、故障を先に予告していた話 [SCP-9873]",
+          "description": "低軌道通信中継ステーションの貨物室で見つかった、古い診断パネル。実際に壊れる前に故障コードを表示し、そのコードに反応した瞬間、故障が現実になります。\n\n※ SCP財団世界観に基づくオリジナル創作・フィクションです\n※ CC BY-SA 3.0 · 原作: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP財団 #怖い話 #ミステリー"
+        },
+        "zh-Hant": {
+          "title": "低軌道太空站的舊面板,總在故障發生前先顯示代碼 [SCP-9873]",
+          "description": "在低軌道通訊中繼站貨艙裡發現的一塊老舊診斷面板。它會在系統真正故障之前先顯示故障代碼,而一旦對那段代碼做出反應,故障就會照著代碼發生。\n\n※ 基於SCP基金會世界觀之原創創作,純屬虛構\n※ CC BY-SA 3.0 · 原作:SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP基金會 #怪談 #懸疑"
+        }
+      },
+      "pinned_comment": "혹시 여러분 회사 장비에도, 고장 나기 전에 먼저 경고부터 울리는 녀석 있나요? 있다면 그거, 그냥 두시는 게 나을 수도 있습니다.",
+      "playlist": "SCP 아카이브 (전편 듣기)"
+    }
+  },
+  "credit": "SCP 재단 세계관 기반 오리지널 창작 · 허구 · CC BY-SA 3.0",
+  "content_rating": "teen",
+  "notes": "SCP 아카이브 · 16:9 롱폼 · 장면 전환 배경 + 자막 번인 · 단일 내레이터 · 완결형."
+}
