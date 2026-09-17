@@ -1,0 +1,979 @@
+{
+  "date": "2026-09-17",
+  "iso_week": "2026-W38",
+  "topic": "scp",
+  "privacy": "public",
+  "origin": "original",
+  "origin_note": "",
+  "source_url": "",
+  "story_id": "scp-9139",
+  "scp_number": "SCP-9139",
+  "object_class": "Safe",
+  "codename": "움직인 눈금",
+  "number_check": {
+    "checked_at": "2026-09-17",
+    "http_code": "unverified"
+  },
+  "theme": "도서관·아카이브",
+  "nature": "개념·규칙",
+  "twist_type": "문서",
+  "logline": "발트해 옛 항구도시 창고 지하에서 발견된 놋쇠 원기와 장부 이야기입니다. 장부의 숫자를 고쳐 적으면, 그 즉시 원기의 실제 무게가 그 숫자에 맞춰 변합니다.",
+  "structure": "연대기형",
+  "opening_move": "문서의 빈칸",
+  "opening_note": "",
+  "closing_move": "사람의 마지막 말",
+  "number_reveal": "뒤",
+  "ending_mode": "없음",
+  "fault": "제3자",
+  "hook_line": "장부의 마지막 줄은, 끝내 아무도 채우지 않았습니다.",
+  "procedures": [],
+  "character": {
+    "name": "베르캄프",
+    "role": "감사관 · 순회계량감사관 출신",
+    "flaw": "자기 가설(원래 값을 스스로 찾아낼 수 있다는 확신)을 못 놓는다"
+  },
+  "chain": [
+    {
+      "when": "발트해 연안 항구도시 창고 철거 현장에서",
+      "event": "재단이 벽 속에 감춰진 나무 궤짝 하나를 회수했다",
+      "because": "",
+      "shot": "나무 궤짝 안에 가지런히 놓인 놋쇠 원기 열두 개와 얼룩진 가죽 장부."
+    },
+    {
+      "when": "회수 직후 현장에서",
+      "event": "계량팀이 원기 무게를 저울로 세 번 다시 쟀는데 매번 장부 속 숫자와 정확히 같았다",
+      "because": "원기 옆면 숫자가 장부 숫자와 토씨 하나 안 틀리고 같았기 때문",
+      "shot": "서로 다른 저울 두 대가 똑같은 눈금을 가리키는 장면."
+    },
+    {
+      "when": "사이트-284로 옮긴 뒤",
+      "event": "연구원 하나가 호기심에 원기 하나를 아주 살짝 깎아봤다",
+      "because": "숫자가 너무 딱 맞아떨어져 의심이 들었기 때문",
+      "shot": "줄칼을 대는 손과 그 아래 반짝이는 놋쇠 단면."
+    },
+    {
+      "when": "깎은 직후",
+      "event": "장부의 그 줄 숫자가 잉크가 마르기도 전에 스스로 지워지고 새 숫자로 바뀌었다",
+      "because": "원기를 건드렸기 때문",
+      "shot": "펼쳐진 장부 페이지 위, 잉크 자국이 저절로 뭉개지며 다시 쓰이는 모습."
+    },
+    {
+      "when": "그다음 실험에서",
+      "event": "이번엔 반대로 장부의 숫자를 손으로 고쳐 적었다",
+      "because": "원인이 원기인지 장부인지 확인하려고",
+      "shot": "저울에 올려진 원기가 눈에 보이게 무게를 더해가는 순간."
+    },
+    {
+      "when": "원인이 장부 쪽으로 확인된 뒤",
+      "event": "재단이 이 창고의 원래 주인, 「북해 상인 조합」의 기록을 캐냈다",
+      "because": "장부가 원인이라는 게 실험으로 확인됐기 때문",
+      "shot": "빛바랜 옛 조합 명부와 그 표지에 찍힌 낡은 인장."
+    },
+    {
+      "when": "며칠 뒤",
+      "event": "인접 도시 문서보관소에서 이백 년 전 상속 계약서들이 발견됐고, 그 위 수치도 흔들리고 있음을 확인했다",
+      "because": "조합이 만든 원기·장부 체계가 세상에 더 퍼져 있었기 때문",
+      "shot": "빛바랜 계약서 위, 겹쳐 찍힌 두 개의 서로 다른 숫자."
+    },
+    {
+      "when": "그사이",
+      "event": "MTF 세타-33이 진공 포장, 질소 밀폐, 자기장 차폐로 봉인을 시도했으나 사흘 만에 실패했다",
+      "because": "소유권 분쟁 확산을 막으려 격리를 서둘렀기 때문",
+      "shot": "밀봉된 유리 케이스 안에서 저절로 넘어가는 장부 페이지."
+    },
+    {
+      "when": "봉인 작전이 보류된 뒤",
+      "event": "감사관 베르캄프가 투입돼 장부 여백에 자기 손으로 추정치를 적어 넣기 시작했다",
+      "because": "그가 오류의 원래 값을 자기가 찾을 수 있다고 확신했기 때문",
+      "shot": "장부 여백에 낯선 필체로 적힌 숫자와 그 위에 얹힌 손."
+    },
+    {
+      "when": "그 직후",
+      "event": "원기 무게가 하루에도 몇 번씩 바뀌고 저울 바늘과 벽시계 초침까지 제멋대로 움직이기 시작했다",
+      "because": "베르캄프가 절차를 어기고 장부를 계속 건드렸기 때문",
+      "shot": "혼자 흔들리는 저울 바늘과 미친 듯이 도는 벽시계 초침."
+    },
+    {
+      "when": "베르캄프가 마지막 숫자를 적어 넣은 순간",
+      "event": "방 안의 모든 계측기 눈금이 그 숫자로 재배열되고, 그의 인사 기록 체중란도 같은 숫자로 바뀌었다가 영으로 남았다",
+      "because": "그가 확신하는 최종 값을 장부에 직접 확정지었기 때문",
+      "shot": "텅 빈 방바닥과 인사 기록 카드 체중란에 찍힌 숫자 영."
+    },
+    {
+      "when": "지금",
+      "event": "재단은 장부를 다시 봉인했지만 원래 숫자가 무엇이었는지는 아무도 모르는 채로 남았고, 새 감사관들에게 같은 경고가 계속 전해진다",
+      "because": "베르캄프가 지운 원래 값을 되돌릴 방법이 없기 때문",
+      "shot": "잠긴 금고 속 장부와 인수인계 문서 위에 밑줄 그어진 문장."
+    }
+  ],
+  "retention_beats": [
+    "북해 상인 조합이 다른 도시에도 비슷한 장부를 남겼을 가능성",
+    "마셜, 카터 & 다크가 아직도 「정정 이전」 숫자를 노리고 있다는 정황",
+    "SCP-914 옆에서 아무도 웃지 않는다는 담당자들의 반응"
+  ],
+  "cameos": [
+    {
+      "number": "SCP-914",
+      "how": "복도 끝 격리실에 있는, 무엇이든 정교하게 다시 만들어 내놓는 태엽 장치로 알려진 개체."
+    }
+  ],
+  "twist_summary": "문서의 반전 — 원인은 원기가 아니라 장부 쪽이었고, 그 장부는 옛 「북해 상인 조합」이 부정거래를 막으려 만든 자기수정 계량 장치였다는 반전. 감사관 베르캄프가 절차를 어기고 자신이 확신하는 「원래 값」을 장부에 직접 적어 넣자, 방 안의 모든 계측기와 그의 인사 기록 체중란까지 그 숫자에 맞춰 재배열되고, 그는 체중란에 영 하나만 남긴 채 사라진다.",
+  "narration_full": "장부의 마지막 줄은, 끝내 아무도 채우지 않았습니다.\n\n발트해 연안, 폐업한 지 오래인 항구도시 창고 지하 — 재단이 그 자리를 인수한 건 순전히 철거 때문이었죠. 낡은 세관 창고를 헐다가, 인부들이 벽 속에 감춰진 나무 궤짝 하나를 발견했거든요. 안엔 놋쇠 원기 열두 개랑, 가죽으로 싼 장부 한 권이 나란히 들어 있었고요.\n\n원기마다 옆면에 숫자가 새겨져 있었는데, 그 숫자가 장부에 적힌 숫자랑 토씨 하나 안 틀리고 같았습니다. 그것까지는… 뭐 그럴 수 있다 치죠. 근데 다른 저울로 다시 재봐도, 늘 같은 숫자가 나왔거든요. 재단 계량팀이 회수 직후 현장에서 시험 삼아 세 번을 쟀는데, 세 번 다 정확히 같았다고 하더군요.\n\n사이트-284로 옮긴 뒤 담당자들은 이걸 그냥 「움직인 눈금」이라고 불렀습니다. 절차상 문서엔 물론 다른 이름이 붙었지만, 창고를 드나들던 사람들 사이에선 처음부터 그렇게 불렸다고 하고요.\n\n호기심을 못 참은 연구원 하나가 원기 하나를 아주 살짝 깎아봤죠. 그러자 장부의 그 줄 숫자가, 잉크가 마르기도 전에… 스스로 지워지고 새 숫자로 바뀌어 있었습니다. 저도 이 부분은 보고서를 세 번 다시 읽었거든요. 원기가 바뀌면 장부가 따라가는 줄로만 알았는데 말이죠.\n\n그런데 반대로 해보니 얘기가 완전히 달라졌습니다. 장부의 숫자를 손으로 고쳐 적자, 저울 위 원기의 실제 무게가 그 숫자에 맞춰 변해 있었던 겁니다. 원인이 사물 쪽일까요, 문서 쪽일까요? 재단의 결론은 후자였고요. 저도 여기까진… 뭐가 먼저인지 여전히 헷갈립니다.\n\n재단은 그제야 이 창고 주인이 누구였는지를 캐기 시작했습니다. 옛 「북해 상인 조합」이라는 곳이었는데, 거래마다 무게를 속이는 상인들 때문에 골머리를 앓다가 이 원기와 장부를 함께 만들어 냈다는 기록이 나왔더군요. 자기들 딴엔 부정을 막으려던 거였는데, 그 방식이 하필 이거였던 겁니다. 정말 조합원들 뜻대로 된 걸까요? 장부 여백엔 조합원 누군가 이렇게 적어놨습니다. 「셈이 정직해야, 무게도 정직해진다.」\n\n문제는 그 조합의 옛 계약서들이 아직도 세상 어딘가에 남아 있다는 거였죠. 인접 도시 문서보관소에서 이백 년 전 상속 계약서 몇 장이 발견됐는데, 거기 적힌 수치들도 장부와 함께 조금씩 흔들리고 있었습니다. 재단은 소유권 분쟁으로 번질까 봐, 흩어진 문서를 추적하는 데만 요원을 여섯 붙였고요. 이 무렵부터 다들 이 물건을 「움직인 눈금」이라고 다시 불렀습니다.\n\n이쯤에서 재단이 시도한 격리 조치를 늘어놓자면, 진공 포장을 해봤고, 질소를 채운 밀폐고에 넣어도 봤고, 자기장 차폐막까지 둘렀습니다. 그런데도 밀봉된 유리 케이스 안에서 페이지가 저절로 넘어가는 건 못 막았더군요. MTF 세타-33, 현장에서는 「저울추」라고 부르는 팀이었는데, 이 격리 작전은 사흘 만에 전면 보류로 끝났습니다.\n\n담당 감사관은 베르캄프였습니다. 순회계량감사관 출신이었죠. 그는 이 모든 게 「원래 값」에서 벗어난 오류라고 믿었고요. 자기가 그 진짜 숫자를 찾아낼 수 있다고, 아무도 안 믿는데 혼자 확신했습니다.\n\n「하루만 더 원본 대조를 해보겠습니다.」\n\n그가 상급자에게 남긴 말이었죠. 절차상 장부는 절대 손대지 않는 게 원칙인데, 그는 이걸 그냥 대조 작업이라고 스스로를 설득한 모양이었습니다. 여백에 자기 손으로 추정치를 적어 넣기 시작한 거고요.\n\n그러자 원기들이 하나씩 말썽을 부리기 시작했습니다. 무게가 하루에도 몇 번씩 바뀌질 않나, 저울 바늘이 아무도 안 건드렸는데 혼자 흔들리질 않나, 나중엔 벽시계 초침까지 제멋대로 돌았죠. 그 방에 있던 D계급 인원 하나가 을급 기억소거제를 맞고 재배치됐는데, 나흘 만에 기억이 부분적으로 되돌아왔다고 하더군요. 그가 재배치 전 남긴 말은 이거였습니다. 「무게가 계속 바뀌는데요, 이거 정상이에요?」\n\n베르캄프는 그래도 멈추지 않았습니다. 「이번이 진짜 마지막입니다.」 장부 맨 뒷장에, 자기가 확신하는 최종 숫자를 적어 넣었죠.\n\n그 순간, 방 안의 저울과 온도계와 벽시계 눈금이 전부 그 숫자에 맞춰 재배열됐습니다. 그리고 그의 인사 기록에도 같은 숫자가 찍혔는데 — 하필 체중란이었고요. 다음 날 확인했을 때, 그 칸엔 원래 숫자 대신, 영 하나만 남아 있었습니다.\n\n재수용 시도는 세 차례 있었죠. 셋 다 실패했고요. 그가 서 있던 자리엔… 정말 아무것도 남지 않았습니다.\n\n마셜, 카터 & 다크가 이 장부의 「정정 이전」 숫자를 사겠다고 접근한 적이 있습니다. 재단은 거절했는데, 이유는 간단했죠. 그 이전 숫자가 뭐였는지는, 이제 저도… 재단도 모릅니다.\n\n복도 끝 격리실엔 SCP-914가 있습니다. 뭘 넣든 정교하게 다시 만들어 내놓는 태엽 장치로 알려진 개체죠. 그 옆을 지날 때마다 담당자들은 「저기 넣으면, 원래 값을 뽑아줄까요.」 하는 농담을 한 번씩 하고, 그때마다 아무도 웃지 않는다고 합니다. 지금도 다들 이걸 그냥 「움직인 눈금」이라고 부릅니다.\n\n이 물건은 지금 SCP-9139로 등록돼 격리 대상에 올라 있습니다. 객체 등급은 세이프고요. 절차는 간단합니다 — 장부는 열지 않는다, 온습도만 기계로 자동 기록한다, 사람 손은 대지 않는다.\n\n그런데 이상하죠. 온습도 기록계보다, 사람 손이 늘 먼저 그 앞에 다가갑니다.\n\n「하루만 더 대조를 해보겠습니다.」\n\n지금도 신입 감사관이 배치될 때마다, 인수인계 문서 맨 위엔 이 문장이 밑줄로 남아 있습니다.",
+  "segments": [
+    {
+      "text": "장부의 마지막 줄은, 끝내 아무도 채우지 않았습니다.",
+      "est_sec": 6,
+      "text_en": "No one had ever filled in that ledger's last line.",
+      "text_ja": "その台帳の最後の一行は、最後まで誰も埋めませんでした。",
+      "text_zh_Hant": "那本帳冊的最後一行,始終沒有人填上。"
+    },
+    {
+      "text": "발트해 연안, 폐업한 지 오래인 항구도시 창고 지하 —",
+      "est_sec": 7,
+      "text_en": "On the Baltic coast, in the basement of a long-defunct port city's warehouse —",
+      "text_ja": "バルト海沿岸、廃業して久しい港町の倉庫地下 —",
+      "text_zh_Hant": "波羅的海沿岸,一座早已停業的港口城市倉庫地下室 —"
+    },
+    {
+      "text": "재단이 그 자리를 인수한 건 순전히 철거 때문이었죠.",
+      "est_sec": 6,
+      "text_en": "the Foundation only took over the site for a demolition.",
+      "text_ja": "財団がその場所を引き継いだのは、単なる解体工事のためでした。",
+      "text_zh_Hant": "基金會接手這裡,純粹是因為要拆除工程。"
+    },
+    {
+      "text": "낡은 세관 창고를 헐다가, 인부들이 벽 속에 감춰진 나무",
+      "est_sec": 7,
+      "text_en": "While tearing down the old customs warehouse, workers found a wooden",
+      "text_ja": "古い税関倉庫を取り壊していたところ、作業員たちが壁の中に隠された木箱を",
+      "text_zh_Hant": "拆除舊海關倉庫時,工人在牆壁裡發現了一個"
+    },
+    {
+      "text": "궤짝 하나를 발견했거든요. 안엔 놋쇠 원기 열두 개랑,",
+      "est_sec": 7,
+      "text_en": "crate hidden inside a wall. Inside were twelve brass reference weights,",
+      "text_ja": "一つ発見したんです。中には真鍮製の分銅十二個と、",
+      "text_zh_Hant": "藏起來的木箱。裡面放著十二個黃銅砝碼原器,"
+    },
+    {
+      "text": "가죽으로 싼 장부 한 권이 나란히 들어 있었고요.",
+      "est_sec": 6,
+      "text_en": "and a leather-bound ledger, lying side by side.",
+      "text_ja": "革表紙の台帳一冊が並んで入っていました。",
+      "text_zh_Hant": "和一本皮革裝訂的帳冊,並排躺著。"
+    },
+    {
+      "text": "원기마다 옆면에 숫자가 새겨져 있었는데,",
+      "est_sec": 5,
+      "text_en": "Each weight had a number engraved on its side,",
+      "text_ja": "分銅にはそれぞれ側面に数字が刻まれていて、",
+      "text_zh_Hant": "每個砝碼側面都刻著數字,"
+    },
+    {
+      "text": "그 숫자가 장부에 적힌 숫자랑",
+      "est_sec": 3,
+      "text_en": "and that number matched the one written in the ledger",
+      "text_ja": "その数字が台帳に記された数字と",
+      "text_zh_Hant": "而那個數字和帳冊上寫的數字"
+    },
+    {
+      "text": "토씨 하나 안 틀리고 같았습니다. 그것까지는…",
+      "est_sec": 5,
+      "text_en": "down to the last digit. That much, well…",
+      "text_ja": "一字一句違わず一致していました。そこまでは…",
+      "text_zh_Hant": "分毫不差地一致。這一點,倒還…"
+    },
+    {
+      "text": "뭐 그럴 수 있다 치죠. 근데 다른 저울로 다시 재봐도,",
+      "est_sec": 7,
+      "text_en": "could be a coincidence, sure. But even weighing it again on a different scale,",
+      "text_ja": "まあ、あり得るとしましょう。でも別の秤で量り直しても、",
+      "text_zh_Hant": "算了,姑且說得過去吧。但換一台秤重新量,"
+    },
+    {
+      "text": "늘 같은 숫자가 나왔거든요.",
+      "est_sec": 3,
+      "text_en": "it always came out to the exact same number.",
+      "text_ja": "いつも同じ数字が出てきたんです。",
+      "text_zh_Hant": "得到的還是同一個數字。"
+    },
+    {
+      "text": "재단 계량팀이 회수 직후 현장에서",
+      "est_sec": 4,
+      "text_en": "The Foundation's metrology team, right after recovery, on site,",
+      "text_ja": "財団の計量チームが回収直後、現場で",
+      "text_zh_Hant": "基金會計量小組在回收後,當場"
+    },
+    {
+      "text": "시험 삼아 세 번을 쟀는데,",
+      "est_sec": 3,
+      "text_en": "measured it three times as a test,",
+      "text_ja": "試しに三回測ってみたところ、",
+      "text_zh_Hant": "試著測了三次,"
+    },
+    {
+      "text": "세 번 다 정확히 같았다고 하더군요.",
+      "est_sec": 4,
+      "text_en": "and apparently all three came out identical.",
+      "text_ja": "三回とも寸分違わず同じだったそうです。",
+      "text_zh_Hant": "據說三次結果完全一致。"
+    },
+    {
+      "text": "사이트-284로 옮긴 뒤 담당자들은 이걸",
+      "est_sec": 5,
+      "text_en": "After it was moved to Site-284, the staff there",
+      "text_ja": "サイト-284に移送された後、担当者たちはこれを",
+      "text_zh_Hant": "移送到二八四號站點後,工作人員"
+    },
+    {
+      "text": "그냥 「움직인 눈금」이라고 불렀습니다.",
+      "est_sec": 5,
+      "text_en": "just started calling it \"The Shifted Mark.\"",
+      "text_ja": "ただ「動いた目盛り」と呼んでいました。",
+      "text_zh_Hant": "就直接叫它「移動的刻度」。"
+    },
+    {
+      "text": "절차상 문서엔 물론 다른 이름이 붙었지만,",
+      "est_sec": 5,
+      "text_en": "Of course the official paperwork used a different name,",
+      "text_ja": "正式な文書にはもちろん別の名前が付けられていましたが、",
+      "text_zh_Hant": "正式文件上當然掛著別的名字,"
+    },
+    {
+      "text": "창고를 드나들던 사람들 사이에선",
+      "est_sec": 4,
+      "text_en": "but among the people who worked in that warehouse",
+      "text_ja": "倉庫に出入りしていた人たちの間では",
+      "text_zh_Hant": "但在出入那座倉庫的人之間"
+    },
+    {
+      "text": "처음부터 그렇게 불렸다고 하고요.",
+      "est_sec": 4,
+      "text_en": "it had apparently been called that from the very start.",
+      "text_ja": "最初からそう呼ばれていたそうです。",
+      "text_zh_Hant": "據說一開始就是這麼叫的。"
+    },
+    {
+      "text": "호기심을 못 참은 연구원 하나가",
+      "est_sec": 4,
+      "text_en": "One researcher, unable to resist curiosity,",
+      "text_ja": "好奇心を抑えきれなかった研究員の一人が",
+      "text_zh_Hant": "一名按捺不住好奇心的研究員"
+    },
+    {
+      "text": "원기 하나를 아주 살짝 깎아봤죠.",
+      "est_sec": 4,
+      "text_en": "shaved a tiny bit off one of the weights.",
+      "text_ja": "分銅の一つをほんの少しだけ削ってみたんです。",
+      "text_zh_Hant": "把其中一個砝碼稍微削掉了一點。"
+    },
+    {
+      "text": "그러자 장부의 그 줄 숫자가, 잉크가 마르기도 전에…",
+      "est_sec": 6,
+      "text_en": "And the number on that line of the ledger, before the ink had even dried…",
+      "text_ja": "すると台帳のその行の数字が、インクが乾く前に…",
+      "text_zh_Hant": "結果帳冊上那一行的數字,墨水都還沒乾…"
+    },
+    {
+      "text": "스스로 지워지고 새 숫자로 바뀌어 있었습니다.",
+      "est_sec": 5,
+      "text_en": "had erased itself and changed to a new number.",
+      "text_ja": "ひとりでに消えて、新しい数字に変わっていました。",
+      "text_zh_Hant": "就自己消失,換成了新的數字。",
+      "emphasis": "스스로 지워졌다"
+    },
+    {
+      "text": "저도 이 부분은 보고서를 세 번 다시 읽었거든요.",
+      "est_sec": 6,
+      "text_en": "I read this part of the report three times myself.",
+      "text_ja": "私もこの部分は報告書を三回読み返しました。",
+      "text_zh_Hant": "這部分我自己也把報告重讀了三遍。"
+    },
+    {
+      "text": "원기가 바뀌면 장부가 따라가는 줄로만 알았는데 말이죠.",
+      "est_sec": 7,
+      "text_en": "I'd assumed the ledger just followed whatever the weight became.",
+      "text_ja": "分銅が変われば台帳がそれに従うだけだと思っていたんですけどね。",
+      "text_zh_Hant": "我原本以為,是砝碼變了帳冊才跟著變的。"
+    },
+    {
+      "text": "그런데 반대로 해보니 얘기가 완전히 달라졌습니다.",
+      "est_sec": 6,
+      "text_en": "But when they tried it the other way around, the story changed completely.",
+      "text_ja": "ところが逆をやってみると、話がまったく違ってきました。",
+      "text_zh_Hant": "但反過來試了一次,事情就完全不一樣了。"
+    },
+    {
+      "text": "장부의 숫자를 손으로 고쳐 적자,",
+      "est_sec": 4,
+      "text_en": "When someone wrote a new number into the ledger by hand,",
+      "text_ja": "台帳の数字を手で書き直すと、",
+      "text_zh_Hant": "當有人親手改寫帳冊上的數字,"
+    },
+    {
+      "text": "저울 위 원기의 실제 무게가 그",
+      "est_sec": 4,
+      "text_en": "the actual weight of the reference piece on the scale",
+      "text_ja": "秤の上の分銅の実際の重さが、その",
+      "text_zh_Hant": "秤上那個砝碼原器的實際重量"
+    },
+    {
+      "text": "숫자에 맞춰 변해 있었던 겁니다.",
+      "est_sec": 4,
+      "text_en": "had changed to match that number.",
+      "text_ja": "数字に合わせて変わっていたのです。",
+      "text_zh_Hant": "就跟著那個數字變了。"
+    },
+    {
+      "text": "원인이 사물 쪽일까요, 문서 쪽일까요?",
+      "est_sec": 5,
+      "text_en": "So was the object the cause, or was it the document?",
+      "text_ja": "原因は物のほうでしょうか、それとも文書のほうでしょうか?",
+      "text_zh_Hant": "原因究竟是在物品那邊,還是文件那邊?"
+    },
+    {
+      "text": "재단의 결론은 후자였고요. 저도 여기까진…",
+      "est_sec": 5,
+      "text_en": "The Foundation concluded it was the latter. I'll admit, up to here…",
+      "text_ja": "財団の結論は後者でした。私もここまでは…",
+      "text_zh_Hant": "基金會的結論是後者。老實說,到這裡為止…"
+    },
+    {
+      "text": "뭐가 먼저인지 여전히 헷갈립니다.",
+      "est_sec": 4,
+      "text_en": "I still get confused about which came first.",
+      "text_ja": "どちらが先なのか、いまだに混乱します。",
+      "text_zh_Hant": "我還是分不清究竟誰先誰後。"
+    },
+    {
+      "text": "재단은 그제야 이 창고 주인이",
+      "est_sec": 3,
+      "text_en": "Only then did the Foundation start digging into who",
+      "text_ja": "財団はそこでようやく、この倉庫の持ち主が",
+      "text_zh_Hant": "基金會這時才開始追查,這座倉庫的主人"
+    },
+    {
+      "text": "누구였는지를 캐기 시작했습니다.",
+      "est_sec": 4,
+      "text_en": "had actually owned this warehouse.",
+      "text_ja": "誰だったのかを調べ始めました。",
+      "text_zh_Hant": "到底是誰。"
+    },
+    {
+      "text": "옛 「북해 상인 조합」이라는 곳이었는데,",
+      "est_sec": 5,
+      "text_en": "It turned out to be an old outfit called the \"North Sea Merchants' Guild,\"",
+      "text_ja": "それは昔「北海商人組合」というところで、",
+      "text_zh_Hant": "原來是一個叫「北海商人公會」的舊組織,"
+    },
+    {
+      "text": "거래마다 무게를 속이는 상인들 때문에 골머리를 앓다가 이",
+      "est_sec": 7,
+      "text_en": "which had been plagued by merchants cheating on weights in every trade, until it",
+      "text_ja": "取引のたびに重さをごまかす商人たちに頭を悩ませた末、この",
+      "text_zh_Hant": "因為每次交易都有商人在重量上動手腳而頭疼不已,最後"
+    },
+    {
+      "text": "원기와 장부를 함께 만들어 냈다는 기록이 나왔더군요.",
+      "est_sec": 6,
+      "text_en": "came up with this weight and ledger together, according to the records.",
+      "text_ja": "分銅と台帳をセットで作り出したという記録が出てきました。",
+      "text_zh_Hant": "才一起打造出這套砝碼和帳冊,紀錄上是這麼寫的。"
+    },
+    {
+      "text": "자기들 딴엔 부정을 막으려던 거였는데,",
+      "est_sec": 5,
+      "text_en": "In their own minds, they were just trying to stop fraud,",
+      "text_ja": "彼らなりに不正を防ごうとしただけだったのに、",
+      "text_zh_Hant": "他們自己是想防止舞弊,"
+    },
+    {
+      "text": "그 방식이 하필 이거였던 겁니다.",
+      "est_sec": 4,
+      "text_en": "but of all things, this was the method they landed on.",
+      "text_ja": "よりによってその方法がこれだったわけです。",
+      "text_zh_Hant": "偏偏用的就是這種方法。"
+    },
+    {
+      "text": "정말 조합원들 뜻대로 된 걸까요?",
+      "est_sec": 4,
+      "text_en": "Did it really turn out the way the guild members intended?",
+      "text_ja": "本当に組合員たちの思惑通りになったのでしょうか?",
+      "text_zh_Hant": "這真的如公會成員所願了嗎?"
+    },
+    {
+      "text": "장부 여백엔 조합원 누군가 이렇게 적어놨습니다.",
+      "est_sec": 6,
+      "text_en": "Someone in the guild had written this in the margin of the ledger.",
+      "text_ja": "台帳の余白には、組合員の誰かがこう書き残していました。",
+      "text_zh_Hant": "帳冊的空白處,有位公會成員這樣寫道。"
+    },
+    {
+      "text": "「셈이 정직해야, 무게도 정직해진다.」",
+      "est_sec": 5,
+      "text_en": "\"Only an honest count makes an honest weight.\"",
+      "text_ja": "「勘定が正直であってこそ、重さも正直になる。」",
+      "text_zh_Hant": "「算得誠實,重量才會誠實。」"
+    },
+    {
+      "text": "문제는 그 조합의 옛 계약서들이 아직도",
+      "est_sec": 5,
+      "text_en": "The problem was that the guild's old contracts were still",
+      "text_ja": "問題は、その組合の古い契約書が今もなお",
+      "text_zh_Hant": "問題是,那個公會的舊契約書至今仍然"
+    },
+    {
+      "text": "세상 어딘가에 남아 있다는 거였죠.",
+      "est_sec": 4,
+      "text_en": "sitting out there somewhere in the world.",
+      "text_ja": "世界のどこかに残っているということでした。",
+      "text_zh_Hant": "留存在世界的某個角落。"
+    },
+    {
+      "text": "인접 도시 문서보관소에서 이백 년 전",
+      "est_sec": 4,
+      "text_en": "At an archive in a neighboring city, two-hundred-year-old",
+      "text_ja": "隣接する都市の文書保管所で、二百年前の",
+      "text_zh_Hant": "在鄰近城市的檔案館裡,兩百年前的"
+    },
+    {
+      "text": "상속 계약서 몇 장이 발견됐는데,",
+      "est_sec": 4,
+      "text_en": "inheritance contracts turned up,",
+      "text_ja": "相続契約書が数枚見つかったのですが、",
+      "text_zh_Hant": "幾張繼承契約被人發現,"
+    },
+    {
+      "text": "거기 적힌 수치들도 장부와 함께 조금씩 흔들리고 있었습니다.",
+      "est_sec": 7,
+      "text_en": "and the figures written on them were also drifting slightly, in step with the ledger.",
+      "text_ja": "そこに記された数値も、台帳と一緒に少しずつ揺らいでいました。",
+      "text_zh_Hant": "上面寫的數字也跟著帳冊,一點一點在浮動。"
+    },
+    {
+      "text": "재단은 소유권 분쟁으로 번질까 봐,",
+      "est_sec": 4,
+      "text_en": "Worried this could spiral into an ownership dispute,",
+      "text_ja": "財団は所有権紛争に発展することを恐れ、",
+      "text_zh_Hant": "基金會擔心這會演變成所有權糾紛,"
+    },
+    {
+      "text": "흩어진 문서를 추적하는 데만 요원을 여섯 붙였고요.",
+      "est_sec": 6,
+      "text_en": "the Foundation assigned six agents just to track down the scattered documents.",
+      "text_ja": "散らばった文書の追跡だけに要員を六人も割り当てました。",
+      "text_zh_Hant": "光是追蹤這些散落的文件,就派了六名特工。"
+    },
+    {
+      "text": "이 무렵부터 다들 이 물건을 「움직인 눈금」이라고 다시 불렀습니다.",
+      "est_sec": 8,
+      "text_en": "Around this point, people started calling it \"The Shifted Mark\" again.",
+      "text_ja": "この頃から、みんなこれを再び「動いた目盛り」と呼ぶようになりました。",
+      "text_zh_Hant": "從這時候起,大家又開始把它叫做「移動的刻度」。"
+    },
+    {
+      "text": "이쯤에서 재단이 시도한 격리 조치를 늘어놓자면,",
+      "est_sec": 6,
+      "text_en": "If I list out the containment measures the Foundation tried at this point,",
+      "text_ja": "ここで財団が試みた収容措置を並べてみると、",
+      "text_zh_Hant": "說到這裡,基金會嘗試過的收容措施包括,"
+    },
+    {
+      "text": "진공 포장을 해봤고, 질소를 채운 밀폐고에 넣어도 봤고,",
+      "est_sec": 7,
+      "text_en": "vacuum-sealing it, putting it in a nitrogen-filled sealed vault,",
+      "text_ja": "真空パックにしてみたり、窒素を充填した密閉庫に入れてみたり、",
+      "text_zh_Hant": "真空包裝試過了,放進充氮的密閉庫也試過了,"
+    },
+    {
+      "text": "자기장 차폐막까지 둘렀습니다.",
+      "est_sec": 3,
+      "text_en": "and even wrapping it in a magnetic shield.",
+      "text_ja": "磁気遮蔽膜まで巻いてみました。",
+      "text_zh_Hant": "甚至還裹上了磁場屏蔽膜。"
+    },
+    {
+      "text": "그런데도 밀봉된 유리 케이스 안에서 페이지가",
+      "est_sec": 5,
+      "text_en": "And yet, inside the sealed glass case, the pages",
+      "text_ja": "それでも密封されたガラスケースの中でページが",
+      "text_zh_Hant": "但即使如此,密封的玻璃櫃裡,書頁"
+    },
+    {
+      "text": "저절로 넘어가는 건 못 막았더군요. MTF 세타-33,",
+      "est_sec": 7,
+      "text_en": "still turned on their own — that, they couldn't stop. MTF Theta-33,",
+      "text_ja": "ひとりでにめくれるのは防げなかったそうです。MTFシータ-33、",
+      "text_zh_Hant": "還是會自己翻頁,這一點沒能阻止。機動特遣隊Theta-33,"
+    },
+    {
+      "text": "현장에서는 「저울추」라고 부르는 팀이었는데,",
+      "est_sec": 5,
+      "text_en": "known on-site as \"The Counterweight\" — that team's",
+      "text_ja": "現場では「秤の分銅」と呼ばれていたチームでしたが、",
+      "text_zh_Hant": "現場人稱「秤錘」的那支小隊,"
+    },
+    {
+      "text": "이 격리 작전은 사흘 만에 전면 보류로 끝났습니다.",
+      "est_sec": 6,
+      "text_en": "containment operation was shelved entirely after just three days.",
+      "text_ja": "この収容作戦は三日で全面保留に終わりました。",
+      "text_zh_Hant": "這次收容行動,三天後就全面喊停了。"
+    },
+    {
+      "text": "담당 감사관은 베르캄프였습니다. 순회계량감사관 출신이었죠.",
+      "est_sec": 7,
+      "text_en": "The auditor in charge was Verkamp, a former traveling calibration inspector.",
+      "text_ja": "担当の監査官はベルカンプでした。巡回計量監査官出身でしたね。",
+      "text_zh_Hant": "負責的稽核員是貝爾坎普,出身巡迴計量稽核員。"
+    },
+    {
+      "text": "그는 이 모든 게 「원래 값」에서 벗어난 오류라고 믿었고요.",
+      "est_sec": 7,
+      "text_en": "He believed all of this was just an error, a deviation from the \"true value.\"",
+      "text_ja": "彼はこれら全てが「本来の値」から外れた誤差だと信じていました。",
+      "text_zh_Hant": "他堅信這一切,都只是偏離了「原始數值」的誤差。"
+    },
+    {
+      "text": "자기가 그 진짜 숫자를 찾아낼 수 있다고,",
+      "est_sec": 5,
+      "text_en": "Convinced he alone could find the real number,",
+      "text_ja": "自分ならその本当の数字を見つけ出せると、",
+      "text_zh_Hant": "他認定自己能找出那個真正的數字,"
+    },
+    {
+      "text": "아무도 안 믿는데 혼자 확신했습니다.",
+      "est_sec": 4,
+      "text_en": "he was certain of it, though no one else believed him.",
+      "text_ja": "誰も信じていないのに、一人で確信していたんです。",
+      "text_zh_Hant": "儘管沒有人相信,他還是獨自堅信不疑。",
+      "emphasis": "혼자 확신"
+    },
+    {
+      "text": "「하루만 더 원본 대조를 해보겠습니다.」",
+      "est_sec": 5,
+      "text_en": "\"Just one more day to cross-check the original.\"",
+      "text_ja": "「あと一日だけ、原本の照合をさせてください。」",
+      "text_zh_Hant": "「再給我一天,我要對照一下原本。」"
+    },
+    {
+      "text": "그가 상급자에게 남긴 말이었죠.",
+      "est_sec": 4,
+      "text_en": "That's what he told his supervisor.",
+      "text_ja": "それが彼が上司に残した言葉でした。",
+      "text_zh_Hant": "這是他對上級留下的話。"
+    },
+    {
+      "text": "절차상 장부는 절대 손대지 않는 게 원칙인데,",
+      "est_sec": 5,
+      "text_en": "The rule was that the ledger was never, under any procedure, to be touched,",
+      "text_ja": "規則上、台帳には絶対に手を触れないのが原則なのに、",
+      "text_zh_Hant": "按照規定,原則上絕不能碰帳冊,"
+    },
+    {
+      "text": "그는 이걸 그냥 대조 작업이라고",
+      "est_sec": 4,
+      "text_en": "but he had simply convinced himself",
+      "text_ja": "彼はこれをただの照合作業だと",
+      "text_zh_Hant": "但他卻說服自己,"
+    },
+    {
+      "text": "스스로를 설득한 모양이었습니다. 여백에 자기 손으로 추정치를",
+      "est_sec": 7,
+      "text_en": "that this was just a cross-check, apparently. And began writing his own estimates in the margin,",
+      "text_ja": "自分を納得させていたようです。余白に自分の手で推定値を",
+      "text_zh_Hant": "這只是一次對照工作。開始親手在空白處寫下自己推估的數值,"
+    },
+    {
+      "text": "적어 넣기 시작한 거고요.",
+      "est_sec": 3,
+      "text_en": "in his own hand.",
+      "text_ja": "書き込み始めたわけです。",
+      "text_zh_Hant": "就這樣動起筆來。"
+    },
+    {
+      "text": "그러자 원기들이 하나씩 말썽을 부리기 시작했습니다.",
+      "est_sec": 6,
+      "text_en": "And then the weights started acting up, one by one.",
+      "text_ja": "すると分銅たちが一つずつ問題を起こし始めました。",
+      "text_zh_Hant": "結果那些砝碼一個接一個開始出狀況。"
+    },
+    {
+      "text": "무게가 하루에도 몇 번씩 바뀌질 않나,",
+      "est_sec": 5,
+      "text_en": "The weight would change several times a day, for one thing,",
+      "text_ja": "重さが一日に何度も変わるかと思えば、",
+      "text_zh_Hant": "重量一天變好幾次不說,"
+    },
+    {
+      "text": "저울 바늘이 아무도 안 건드렸는데 혼자 흔들리질 않나,",
+      "est_sec": 7,
+      "text_en": "the scale needle would swing on its own with nobody touching it, for another,",
+      "text_ja": "秤の針が誰も触っていないのに勝手に揺れるかと思えば、",
+      "text_zh_Hant": "秤的指針沒人碰也自己晃個不停,"
+    },
+    {
+      "text": "나중엔 벽시계 초침까지 제멋대로 돌았죠.",
+      "est_sec": 5,
+      "text_en": "and eventually even the wall clock's second hand started spinning on its own.",
+      "text_ja": "しまいには壁時計の秒針まで勝手に回り出しました。",
+      "text_zh_Hant": "最後連牆上時鐘的秒針都開始亂轉。"
+    },
+    {
+      "text": "그 방에 있던 D계급 인원 하나가",
+      "est_sec": 4,
+      "text_en": "One of the D-class personnel in that room",
+      "text_ja": "その部屋にいたD階級要員の一人が",
+      "text_zh_Hant": "當時房裡的一名D級人員"
+    },
+    {
+      "text": "을급 기억소거제를 맞고 재배치됐는데,",
+      "est_sec": 4,
+      "text_en": "was given a class-B amnestic and reassigned,",
+      "text_ja": "乙級記憶処理剤を投与されて再配置されたのですが、",
+      "text_zh_Hant": "被施打了乙級記憶消除劑後調離,"
+    },
+    {
+      "text": "나흘 만에 기억이 부분적으로 되돌아왔다고 하더군요.",
+      "est_sec": 6,
+      "text_en": "and apparently some of the memory partially came back within four days.",
+      "text_ja": "四日後には記憶が部分的に戻ってきたそうです。",
+      "text_zh_Hant": "據說過了四天,部分記憶又恢復了。"
+    },
+    {
+      "text": "그가 재배치 전 남긴 말은 이거였습니다.",
+      "est_sec": 5,
+      "text_en": "Before being reassigned, this is what he'd said.",
+      "text_ja": "再配置される前に彼が残した言葉は、これでした。",
+      "text_zh_Hant": "調離之前,他留下的話是這樣。"
+    },
+    {
+      "text": "「무게가 계속 바뀌는데요, 이거 정상이에요?」",
+      "est_sec": 5,
+      "text_en": "\"The weight keeps changing — is that normal?\"",
+      "text_ja": "「重さがずっと変わるんですけど、これって普通ですか?」",
+      "text_zh_Hant": "「重量一直在變,這正常嗎?」"
+    },
+    {
+      "text": "베르캄프는 그래도 멈추지 않았습니다.",
+      "est_sec": 4,
+      "text_en": "Even so, Verkamp didn't stop.",
+      "text_ja": "それでもベルカンプは止まりませんでした。",
+      "text_zh_Hant": "即便如此,貝爾坎普還是沒有停手。"
+    },
+    {
+      "text": "「이번이 진짜 마지막입니다.」 장부 맨 뒷장에,",
+      "est_sec": 6,
+      "text_en": "\"This is really the last time.\" On the very last page of the ledger,",
+      "text_ja": "「今度こそ本当に最後です。」台帳の一番最後のページに、",
+      "text_zh_Hant": "「這次真的是最後一次了。」在帳冊的最後一頁,"
+    },
+    {
+      "text": "자기가 확신하는 최종 숫자를 적어 넣었죠. 그 순간,",
+      "est_sec": 6,
+      "text_en": "he wrote in the final number he was certain of. At that instant,",
+      "text_ja": "彼が確信する最終的な数字を書き込みました。その瞬間、",
+      "text_zh_Hant": "他寫下了自己深信不疑的最終數字。就在那一刻,"
+    },
+    {
+      "text": "방 안의 저울과 온도계와 벽시계 눈금이",
+      "est_sec": 5,
+      "text_en": "every scale, thermometer, and wall clock in the room",
+      "text_ja": "部屋の中の秤も温度計も壁時計の目盛りも",
+      "text_zh_Hant": "房裡的秤、溫度計和牆鐘的刻度"
+    },
+    {
+      "text": "전부 그 숫자에 맞춰 재배열됐습니다.",
+      "est_sec": 4,
+      "text_en": "rearranged themselves to match that number.",
+      "text_ja": "すべてその数字に合わせて並び替わりました。",
+      "text_zh_Hant": "全都跟著那個數字重新排列。"
+    },
+    {
+      "text": "그리고 그의 인사 기록에도 같은 숫자가 찍혔는데 —",
+      "est_sec": 6,
+      "text_en": "And that same number appeared on his personnel file too —",
+      "text_ja": "そして彼の人事記録にも同じ数字が刻まれていたのですが —",
+      "text_zh_Hant": "而他的人事檔案上也印上了同一個數字 —"
+    },
+    {
+      "text": "하필 체중란이었고요.",
+      "est_sec": 2,
+      "text_en": "of all fields, in the weight column.",
+      "text_ja": "よりによって体重欄でした。",
+      "text_zh_Hant": "偏偏就印在體重欄。"
+    },
+    {
+      "text": "다음 날 확인했을 때, 그 칸엔 원래 숫자 대신,",
+      "est_sec": 6,
+      "text_en": "The next day, when someone checked, in place of the original number,",
+      "text_ja": "翌日確認したところ、その欄には元の数字の代わりに、",
+      "text_zh_Hant": "隔天再去查看時,那一欄裡原本的數字不見了,"
+    },
+    {
+      "text": "영 하나만 남아 있었습니다. 재수용 시도는 세 차례 있었죠.",
+      "est_sec": 7,
+      "text_en": "there was only a single zero left. There were three attempts to reacquire him.",
+      "text_ja": "ゼロが一つ残っているだけでした。再収容の試みは三回ありました。",
+      "text_zh_Hant": "只剩下一個孤零零的零。再收容行動嘗試過三次。",
+      "emphasis": "영 하나만"
+    },
+    {
+      "text": "셋 다 실패했고요. 그가 서 있던 자리엔…",
+      "est_sec": 5,
+      "text_en": "All three failed. Where he had been standing…",
+      "text_ja": "三回とも失敗しました。彼が立っていた場所には…",
+      "text_zh_Hant": "三次全都失敗了。他站過的地方…"
+    },
+    {
+      "text": "정말 아무것도 남지 않았습니다.",
+      "est_sec": 4,
+      "text_en": "there was truly nothing left at all.",
+      "text_ja": "本当に何一つ残っていませんでした。",
+      "text_zh_Hant": "真的什麼都沒有留下。"
+    },
+    {
+      "text": "마셜, 카터 & 다크가 이 장부의 「정정 이전」",
+      "est_sec": 6,
+      "text_en": "Marshall, Carter & Dark approached, wanting the \"pre-correction\"",
+      "text_ja": "マーシャル・カーター&ダークが、この台帳の「訂正前の」",
+      "text_zh_Hant": "馬歇爾、卡特與達克曾找上門,想買下這本帳冊「更正前」"
+    },
+    {
+      "text": "숫자를 사겠다고 접근한 적이 있습니다.",
+      "est_sec": 5,
+      "text_en": "figures in this ledger, offering to buy them.",
+      "text_ja": "数字を買い取りたいと接触してきたことがありました。",
+      "text_zh_Hant": "的數字。"
+    },
+    {
+      "text": "재단은 거절했는데, 이유는 간단했죠.",
+      "est_sec": 4,
+      "text_en": "The Foundation refused, and the reason was simple.",
+      "text_ja": "財団は断りましたが、理由は単純でした。",
+      "text_zh_Hant": "基金會拒絕了,理由很簡單。"
+    },
+    {
+      "text": "그 이전 숫자가 뭐였는지는, 이제 저도… 재단도 모릅니다.",
+      "est_sec": 7,
+      "text_en": "What that earlier number even was — at this point, even I… even the Foundation doesn't know.",
+      "text_ja": "その以前の数字が何だったのか、今はもう私も… 財団も分かりません。",
+      "text_zh_Hant": "那個更正前的數字究竟是什麼,現在連我…連基金會都不知道了。"
+    },
+    {
+      "text": "복도 끝 격리실엔 SCP-914가 있습니다.",
+      "est_sec": 5,
+      "text_en": "At the end of the corridor, SCP-914 is kept in containment.",
+      "text_ja": "廊下の突き当りの収容室にはSCP-914がいます。",
+      "text_zh_Hant": "走廊盡頭的收容室裡,關著SCP-914。"
+    },
+    {
+      "text": "뭘 넣든 정교하게 다시 만들어",
+      "est_sec": 3,
+      "text_en": "Whatever you put in, it precisely refashions",
+      "text_ja": "何を入れても精巧に作り変えて",
+      "text_zh_Hant": "無論放進什麼,它都能精密地重新製作"
+    },
+    {
+      "text": "내놓는 태엽 장치로 알려진 개체죠.",
+      "est_sec": 4,
+      "text_en": "and produces it, a clockwork device — that's the entity it's known as.",
+      "text_ja": "出力する、ぜんまい仕掛けの装置として知られる個体です。",
+      "text_zh_Hant": "並輸出出來,是眾所周知的發條裝置個體。"
+    },
+    {
+      "text": "그 옆을 지날 때마다 담당자들은 「저기 넣으면,",
+      "est_sec": 6,
+      "text_en": "Every time staff pass by it, they joke, \"If we put it in there,",
+      "text_ja": "その横を通るたびに、担当者たちは「あれに入れたら、",
+      "text_zh_Hant": "每次經過那裡,工作人員都會開玩笑說「丟進那裡,"
+    },
+    {
+      "text": "원래 값을 뽑아줄까요.」 하는 농담을 한 번씩 하고,",
+      "est_sec": 6,
+      "text_en": "would it spit out the original value?\" and every single time,",
+      "text_ja": "元の値を出してくれるかな。」という冗談を一度ずつ言い、",
+      "text_zh_Hant": "會不會就吐出原本的數值呢」,而每次"
+    },
+    {
+      "text": "그때마다 아무도 웃지 않는다고 합니다.",
+      "est_sec": 5,
+      "text_en": "apparently, nobody laughs.",
+      "text_ja": "誰も笑わないそうです。",
+      "text_zh_Hant": "都沒有人笑得出來。"
+    },
+    {
+      "text": "지금도 다들 이걸 그냥 「움직인 눈금」이라고 부릅니다.",
+      "est_sec": 7,
+      "text_en": "Even now, everyone just calls it \"The Shifted Mark.\"",
+      "text_ja": "今でも皆、これをただ「動いた目盛り」と呼んでいます。",
+      "text_zh_Hant": "現在大家還是直接叫它「移動的刻度」。"
+    },
+    {
+      "text": "이 물건은 지금 SCP-9139로",
+      "est_sec": 4,
+      "text_en": "This object is now officially catalogued",
+      "text_ja": "この物体は現在SCP-9139として",
+      "text_zh_Hant": "這件物品現在被登記為"
+    },
+    {
+      "text": "등록돼 격리 대상에 올라 있습니다. 객체 등급은 세이프고요.",
+      "est_sec": 7,
+      "text_en": "as SCP-9139, listed for containment. Its object class is Safe.",
+      "text_ja": "登録され、収容対象となっています。オブジェクトクラスはセーフです。",
+      "text_zh_Hant": "SCP-9139,列入收容對象。物體等級是安全級。"
+    },
+    {
+      "text": "절차는 간단합니다 — 장부는 열지 않는다,",
+      "est_sec": 5,
+      "text_en": "The procedure is simple — never open the ledger,",
+      "text_ja": "手順は単純です — 台帳は開かない、",
+      "text_zh_Hant": "程序很簡單 — 不打開帳冊,"
+    },
+    {
+      "text": "온습도만 기계로 자동 기록한다, 사람 손은 대지 않는다.",
+      "est_sec": 7,
+      "text_en": "let a machine automatically log temperature and humidity, and never let human hands touch it.",
+      "text_ja": "温湿度は機械で自動記録する、人の手は触れさせない。",
+      "text_zh_Hant": "溫濕度只用機器自動記錄,不讓人手碰觸。"
+    },
+    {
+      "text": "그런데 이상하죠. 온습도 기록계보다,",
+      "est_sec": 4,
+      "text_en": "But it's strange, isn't it. More than the temperature-humidity logger,",
+      "text_ja": "でも不思議なんです。温湿度記録計よりも、",
+      "text_zh_Hant": "但奇怪的是,比起溫濕度記錄器,"
+    },
+    {
+      "text": "사람 손이 늘 먼저 그 앞에 다가갑니다.",
+      "est_sec": 5,
+      "text_en": "it's always a human hand that reaches it first.",
+      "text_ja": "いつも人の手のほうが先にその前に近づくんです。",
+      "text_zh_Hant": "總是人的手先伸到它面前。"
+    },
+    {
+      "text": "「하루만 더 대조를 해보겠습니다.」",
+      "est_sec": 4,
+      "text_en": "\"Just one more day to cross-check.\"",
+      "text_ja": "「あと一日だけ照合させてください。」",
+      "text_zh_Hant": "「再給我一天,我要對照一下。」"
+    },
+    {
+      "text": "지금도 신입 감사관이 배치될 때마다,",
+      "est_sec": 4,
+      "text_en": "Even now, every time a new auditor is assigned,",
+      "text_ja": "今でも新人監査官が配属されるたびに、",
+      "text_zh_Hant": "至今每當有新任稽核員上任,"
+    },
+    {
+      "text": "인수인계 문서 맨 위엔 이 문장이 밑줄로 남아 있습니다.",
+      "est_sec": 7,
+      "text_en": "this sentence is left underlined at the very top of the handover documents.",
+      "text_ja": "引き継ぎ文書の一番上には、この一文が下線付きで残されています。",
+      "text_zh_Hant": "交接文件的最上方,這句話依然被畫著底線,留在那裡。"
+    }
+  ],
+  "scenes": [
+    {
+      "prompt": "SUBJECT: twelve brass weights in an open wooden crate beside a stained leather ledger, filling most of frame. CONTEXT: dim basement warehouse, splintered crate wood at the edges. COMPOSITION: high-angle close shot into the crate. LIGHT: single hanging work lamp. MATERIAL: dull brass, cracked leather cover, rough wood slats. ATMOSPHERE: dust drifting through the lamp beam. PALETTE: near-black background, warm brass glow, dull amber accent. RENDER: dark anime cel illustration, bold clean linework, flat cel shading, hard-edged shadows, high contrast, saturated subject on a near-black background, one hot accent color, strong rim light, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: two mismatched balance scales, both needles at the exact same reading, filling most of frame. CONTEXT: cluttered metrology lab table. COMPOSITION: eye-level close shot on the two scale faces. LIGHT: single desk lamp above. MATERIAL: brushed steel arms, brass weight on each pan, worn wood table. ATMOSPHERE: faint dust in the lamp cone. PALETTE: near-black background, cool steel glow, warm brass accent. RENDER: dark anime cel illustration, bold clean linework, flat cel shading, hard-edged shadows, high contrast, saturated subject on a near-black background, one hot accent color, strong rim light, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: a gloved hand filing one brass weight, bright fresh metal shavings catching the light, filling most of frame. CONTEXT: sterile examination bench in the containment lab. COMPOSITION: extreme close three-quarter shot on hand and weight. LIGHT: single overhead surgical lamp. MATERIAL: polished brass, steel file, gloved fingers. ATMOSPHERE: fine metal dust in the light beam. PALETTE: near-black background, bright brass highlight, cool white accent. RENDER: dark anime cel illustration, bold clean linework, flat cel shading, hard-edged shadows, high contrast, saturated subject on a near-black background, one hot accent color, strong rim light, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: an open ledger page, handwritten ink numbers visibly smearing and rewriting into a new figure, filling most of frame. CONTEXT: the lab bench, blurred behind the page. COMPOSITION: top-down close shot over the page. LIGHT: single desk lamp raking the paper. MATERIAL: aged paper grain, wet dark ink, leather binding edge. ATMOSPHERE: soft diffusion around the ink. PALETTE: near-black background, warm paper glow, hot ink-black accent. RENDER: dark anime cel illustration, bold clean linework, flat cel shading, hard-edged shadows, high contrast, saturated subject on a near-black background, one hot accent color, strong rim light, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: a brass weight on a scale pan, visibly denser as the needle creeps upward on its own, filling most of frame. CONTEXT: metrology lab, an open ledger blurred behind. COMPOSITION: low three-quarter close shot on the pan. LIGHT: single lamp above the pan. MATERIAL: dense brass surface, steel scale mechanism. ATMOSPHERE: faint shimmer around the weight. PALETTE: near-black background, warm brass glow, cool steel accent. RENDER: dark anime cel illustration, bold clean linework, flat cel shading, hard-edged shadows, high contrast, saturated subject on a near-black background, one hot accent color, strong rim light, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: a faded old guild registry book, its leather cover stamped with a weathered wax seal, filling most of frame. CONTEXT: a Foundation archive desk, a magnifying lamp nearby. COMPOSITION: close three-quarter shot on cover and seal. LIGHT: single archive desk lamp. MATERIAL: cracked leather, embossed wax seal, yellowed paper edges. ATMOSPHERE: dry archival dust in the light. PALETTE: near-black background, warm sepia glow, dull red wax accent. RENDER: dark anime cel illustration, bold clean linework, flat cel shading, hard-edged shadows, high contrast, saturated subject on a near-black background, one hot accent color, strong rim light, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: an old faded contract with two overlapping handwritten numbers ghosted atop each other, filling most of frame. CONTEXT: dim archive shelving behind. COMPOSITION: top-down close shot over the document. LIGHT: single handheld inspection lamp. MATERIAL: brittle yellowed paper, faded brown ink. ATMOSPHERE: fine paper dust in the beam. PALETTE: near-black background, warm parchment glow, pale ghost-white accent. RENDER: dark anime cel illustration, bold clean linework, flat cel shading, hard-edged shadows, high contrast, saturated subject on a near-black background, one hot accent color, strong rim light, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: the ledger sealed inside a thick glass case, one page caught mid-turn on its own, filling most of frame. CONTEXT: a reinforced containment vault room. COMPOSITION: eye-level close shot on the glass case. LIGHT: single cold ceiling floodlight. MATERIAL: thick tempered glass, steel case frame, aged ledger paper. ATMOSPHERE: faint condensation on the glass. PALETTE: near-black background, cool blue-white glow, warm paper accent. RENDER: dark anime cel illustration, bold clean linework, flat cel shading, hard-edged shadows, high contrast, saturated subject on a near-black background, one hot accent color, strong rim light, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: a hand pressing a pen into the ledger's margin, an unfamiliar handwritten number freshly inked beside the columns, filling most of frame. CONTEXT: the vault room, the case lid open beside it. COMPOSITION: close three-quarter shot on hand and margin. LIGHT: single low warm desk lamp. MATERIAL: worn ledger paper, dark ink, pale skin, a brass pen. ATMOSPHERE: faint dust in the lamp cone. PALETTE: near-black background, warm ink glow, cool skin-tone accent. RENDER: dark anime cel illustration, bold clean linework, flat cel shading, hard-edged shadows, high contrast, saturated subject on a near-black background, one hot accent color, strong rim light, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: a scale needle swinging wildly on its own beside a wall clock whose second hand spins in a blur, filling most of frame. CONTEXT: the vault room, dim shelving behind. COMPOSITION: close two-shot on the scale face and clock face. LIGHT: single flickering overhead lamp. MATERIAL: brushed steel scale, aged clock glass and brass hands. ATMOSPHERE: faint motion-blur on the hands. PALETTE: near-black background, cool steel glow, warm brass accent. RENDER: dark anime cel illustration, bold clean linework, flat cel shading, hard-edged shadows, high contrast, saturated subject on a near-black background, one hot accent color, strong rim light, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: a personnel record card on an empty floor, its weight field stamped with one large zero, filling most of frame. CONTEXT: the vault room now empty, a door ajar behind. COMPOSITION: high-angle close shot onto the card. LIGHT: single cold ceiling light. MATERIAL: crisp paper card, a stark printed zero, concrete floor. ATMOSPHERE: fine dust settling in still air. PALETTE: near-black background, stark white glow, cold blue accent. RENDER: dark anime cel illustration, bold clean linework, flat cel shading, hard-edged shadows, high contrast, saturated subject on a near-black background, one hot accent color, strong rim light, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: the ledger locked behind a small safe's glass window beside a handover document with one line underlined in red, filling most of frame. CONTEXT: a quiet site office shelf. COMPOSITION: close three-quarter shot spanning safe and document. LIGHT: single desk lamp above. MATERIAL: brushed steel safe door, glass window, printed paper, red ink. ATMOSPHERE: still dusty office air. PALETTE: near-black background, warm paper glow, hot red accent. RENDER: dark anime cel illustration, bold clean linework, flat cel shading, hard-edged shadows, high contrast, saturated subject on a near-black background, one hot accent color, strong rim light, grain-free, no text anywhere"
+    }
+  ],
+  "background": {
+    "id": "scp-9139_bg",
+    "kind": "image",
+    "reuse": false,
+    "aspect": "16:9",
+    "resolution": "1920x1080",
+    "prompt": "SUBJECT: a row of brass weight cylinders in a line beside an open leather ledger, filling over sixty percent of frame. CONTEXT: dim shelving inside a sealed containment vault. COMPOSITION: low-angle three-quarter hero shot, weights dominating the frame. LIGHT: single cold ceiling floodlight. MATERIAL: dull brass, cracked leather cover, aged paper. ATMOSPHERE: fine dust drifting through the light. PALETTE: near-black background, warm brass glow, cool blue-white rim light. RENDER: dark anime cel illustration, bold clean linework, flat cel shading, hard-edged shadows, high contrast, saturated subject on a near-black background, one hot accent color, strong rim light, grain-free, no text anywhere",
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion"
+  },
+  "thumbnail": {
+    "hook": "A brass reference weight glowing under lamplight beside an open ledger whose ink is rewriting itself, filling the frame, dark vault shelving behind. dark anime cel illustration, bold clean linework, flat cel shading, hard-edged shadows, high contrast, saturated subject on a near-black background, one hot accent color, strong rim light, grain-free, no text anywhere",
+    "hook_alt": [
+      "Close on an open ledger page, ink numbers smearing into a new figure, a brass weight blurred in the foreground. dark anime cel illustration, bold clean linework, flat cel shading, hard-edged shadows, high contrast, saturated subject on a near-black background, one hot accent color, strong rim light, grain-free, no text anywhere",
+      "A gloved hand filing a brass weight, bright fresh shavings catching the light, the ledger blurred behind. dark anime cel illustration, bold clean linework, flat cel shading, hard-edged shadows, high contrast, saturated subject on a near-black background, one hot accent color, strong rim light, grain-free, no text anywhere"
+    ],
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion",
+    "text_safe_area": "right third",
+    "resolution": "1280x720"
+  },
+  "platforms": {
+    "youtube": {
+      "title": "발트해 옛 항구도시 창고 지하에서 나온, 스스로 고쳐 쓰는 장부의 정체 [SCP-9139]",
+      "title_form": "정체형",
+      "thumbnail_text": "움직인 눈금",
+      "thumbnail_quote": "- 하루만 더 대조를 해보겠습니다",
+      "tags": [
+        "SCP",
+        "SCP재단",
+        "SCP-914",
+        "괴담",
+        "무서운이야기",
+        "미스터리"
+      ],
+      "chapters": [
+        "00:00 비어 있는 마지막 줄",
+        "01:13 사이트로 옮겨진 원기",
+        "01:44 스스로 고쳐 쓰는 숫자",
+        "02:47 북해 상인 조합의 정체",
+        "04:19 실패한 봉인 작전",
+        "05:05 베르캄프의 확신",
+        "06:59 체중란에 남은 영",
+        "08:06 SCP-9139로 등록되다"
+      ],
+      "description": "발트해 옛 항구도시 창고 지하에서 발견된 놋쇠 원기와 장부 이야기입니다. 장부의 숫자를 고쳐 적으면, 그 즉시 원기의 실제 무게가 그 숫자에 맞춰 변합니다.\n\n※ SCP 재단 세계관 기반 오리지널 창작 · 허구의 이야기입니다\n※ CC BY-SA 3.0 · 원작: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP재단 #괴담 #무서운이야기 #미스터리",
+      "localizations": {
+        "en": {
+          "title": "A Ledger in an Old Baltic Warehouse Keeps Rewriting Its Own Numbers [SCP-9139]",
+          "description": "An old ledger and a set of brass reference weights found in the basement of a long-defunct Baltic port warehouse. Rewrite a number in the ledger, and the real weight of the object changes to match it instantly.\n\nThis is original fan fiction set in the SCP Foundation universe, entirely fictional.\nCC BY-SA 3.0 · Based on the SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCPFoundation #Horror #Mystery"
+        },
+        "ja": {
+          "title": "バルト海の古い倉庫の帳簿が、勝手に数字を書き換えていた話 [SCP-9139]",
+          "description": "バルト海沿岸、廃業して久しい港町の倉庫地下で見つかった、真鍮の分銅と一冊の台帳の話です。台帳の数字を書き直すと、その瞬間に分銅の実際の重さがその数字に合わせて変わります。\n\n※ SCP財団世界観に基づくオリジナル創作・フィクションです\n※ CC BY-SA 3.0 · 原作: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP財団 #怖い話 #ミステリー"
+        },
+        "zh-Hant": {
+          "title": "波羅的海舊倉庫裡的帳冊,會自己改寫數字 [SCP-9139]",
+          "description": "在波羅的海沿岸,一座早已停業的港口城市倉庫地下室裡,發現了一組黃銅砝碼原器和一本帳冊。只要改寫帳冊上的數字,砝碼的實際重量就會立刻隨之改變。\n\n※ 基於SCP基金會世界觀之原創創作,純屬虛構\n※ CC BY-SA 3.0 · 原作:SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP基金會 #怪談 #懸疑"
+        }
+      },
+      "pinned_comment": "혹시 여러분 회사에도, 숫자 하나 고쳐 적었을 뿐인데 뭔가 달라진 것 같았던 경험 있으신가요?",
+      "playlist": "SCP 아카이브 (전편 듣기)"
+    }
+  },
+  "credit": "SCP 재단 세계관 기반 오리지널 창작 · 허구 · CC BY-SA 3.0",
+  "content_rating": "teen",
+  "notes": "SCP 아카이브 · 16:9 롱폼 · 장면 전환 배경 + 자막 번인 · 단일 내레이터 · 완결형."
+}
