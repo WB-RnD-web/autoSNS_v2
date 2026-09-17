@@ -1,0 +1,91 @@
+{
+  "date": "2026-09-18",
+  "topic": "stock",
+  "privacy": "public",
+  "topic_keyword": "원달러 환율 1,382원",
+  "headline": "원·달러 환율 1,382원, 코스피는 6715선 보합",
+  "hook_title": "환율, 3주 만에 1,382원",
+  "accent": "#D97757",
+  "loop_line": "오늘 새벽 흔들린 환율, 오늘 밤 미국장에서 답이 나옵니다.",
+  "thumbnail_hook": "Empty pre-dawn Seoul stock trading floor, glowing red and green ticker board reflected in dark window glass, moody blue morning light, cinematic wide shot, no text, no people",
+  "thumbnail_text": "환율 1,382원 어디까지",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "환율 경보",
+      "ghost": "WON",
+      "lines": ["환율이", "3주 만에", "1,382원"],
+      "highlight": "3주",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "새벽 사이 원화 값이 천삼백팔십이 원까지 밀렸습니다."
+    },
+    {
+      "type": "trend",
+      "label": "다우존스",
+      "from": 0,
+      "to": -1.21,
+      "suffix": "%",
+      "dir": "down",
+      "sub": "코스피는 <b>-0.04%</b> 방어",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "다우가 일 점 이 일 퍼센트 빠지는 동안 코스피는 버텼습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "왜 흔들렸나",
+      "points": ["<b>3년 2개월 만</b>의 기준금리 인상", "<b>워시</b> 의장 매파 발언", "여름 내내 물가가 안 잡혔다"],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "미국은 삼 년 이 개월 만에 기준금리를 다시 올렸습니다."
+    },
+    {
+      "type": "statement",
+      "text": "1,400원 넘으면 기름값 부담",
+      "highlight": "1,400원",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "환율이 천사백원에 다가서면 기름값과 물가가 흔들립니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 지켜볼 것",
+      "points": ["외국인 <b>7거래일째</b> 순매도", "반도체, 미국 강세 이어받나"],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "외국인이 칠 거래일째 팔았고 반도체가 이어받을지 지켜봅니다."
+    },
+    {
+      "type": "statement",
+      "text": "오늘도 버틸까요, 흔들릴까요",
+      "highlight": "버틸까요",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "코스피가 오늘도 버틸지 흔들릴지, 판단은 여러분 몫입니다."
+    }
+  ],
+  "sources": ["뉴스핌", "파이낸셜뉴스", "머니투데이"],
+  "credit": "출처 뉴스핌·파이낸셜뉴스·머니투데이 등 · 투자 조언이 아닙니다",
+  "platforms": {
+    "youtube": {
+      "title": "환율, 3주 만에 1,382원 #shorts",
+      "description": "원·달러 환율 1,382원, 코스피는 6715선 보합\n출처 뉴스핌·파이낸셜뉴스·머니투데이\n※ 투자 조언이 아닙니다\n오늘 밤 미국장은 밤 열 시 반에 다시 짚어드립니다.\n\n#코스피 #주식 #증시 #환율 #개장전 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "Won Slides to 1,382 as the Fed Hikes Rates",
+          "description": "The Fed raised interest rates for the first time in over 3 years, sending the won to a 3-week high of 1,382 per dollar. Korea's KOSPI held nearly flat despite a 7th straight day of foreign selling.\nSources: Newspim, Financial News, MoneyToday\n※ 투자 조언이 아닙니다\n\n#KOSPI #WonDollar #StockMarket #shorts"
+        },
+        "ja": {
+          "title": "ウォン、3週間ぶり1,382ウォンに下落しました",
+          "description": "FRBが3年ぶりに利上げし、ウォンは1ドル=1,382ウォンと3週間ぶりの安値になりました。コスピは外国人の7日連続売りにもかかわらずほぼ横ばいでした。\n出典: Newspim, Financial News, MoneyToday\n※ 투자 조언이 아닙니다\n\n#コスピ #為替 #株式 #shorts"
+        },
+        "zh-Hant": {
+          "title": "韓元貶至1,382，創三週新低",
+          "description": "美聯儲三年來首次升息，韓元兌美元貶至1,382，創三週新低。儘管外資連續七個交易日賣超，韓國KOSPI指數仍幾乎持平。\n資料來源：Newspim, Financial News, MoneyToday\n※ 투자 조언이 아닙니다\n\n#韓股 #匯率 #股市 #shorts"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "환율, 3주 만에 1,382원\n출처 뉴스핌·파이낸셜뉴스·머니투데이\n※ 투자 조언이 아닙니다\n\n#코스피 #주식 #증시 #환율 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "환율, 3주 만에 1,382원\n출처 뉴스핌·파이낸셜뉴스·머니투데이"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음 · SESSION=KR_AM(개장 전 프리뷰). <PREV>=2026-09-17(목, 코스피 6715.41 보합 마감·외국인 7거래일째 순매도) · 밤사이 뉴욕은 Fed의 3년 2개월 만의 기준금리 인상(다우 -1.21%·S&P -0.45%·나스닥 -0.01%)에 흔들렸고, 원/달러 환율은 1,382원(3주 최고)까지 상승."
+}
