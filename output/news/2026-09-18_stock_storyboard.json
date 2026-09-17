@@ -2,40 +2,40 @@
   "date": "2026-09-18",
   "topic": "stock",
   "privacy": "public",
-  "topic_keyword": "원달러 환율 1,382원",
-  "headline": "원·달러 환율 1,382원, 코스피는 6715선 보합",
-  "hook_title": "환율, 3주 만에 1,382원",
+  "topic_keyword": "나스닥 하루 만에 반등",
+  "headline": "뉴욕증시 하루 만에 반등, 코스피는 외국인 매도 지속",
+  "hook_title": "나스닥 1.69%, 하루 만에 반전",
   "accent": "#D97757",
-  "loop_line": "오늘 새벽 흔들린 환율, 오늘 밤 미국장에서 답이 나옵니다.",
+  "loop_line": "오늘 밤 뉴욕이 또 달라질지, 열 시 반에 다시 확인하겠습니다.",
   "thumbnail_hook": "Empty pre-dawn Seoul stock trading floor, glowing red and green ticker board reflected in dark window glass, moody blue morning light, cinematic wide shot, no text, no people",
-  "thumbnail_text": "환율 1,382원 어디까지",
+  "thumbnail_text": "나스닥 하루 만에 반전",
   "scenes": [
     {
       "type": "hook",
-      "pill": "환율 경보",
-      "ghost": "WON",
-      "lines": ["환율이", "3주 만에", "1,382원"],
-      "highlight": "3주",
+      "pill": "금리 충격 해소",
+      "ghost": "REBOUND",
+      "lines": ["나스닥이", "하루 만에", "1.69% 반등"],
+      "highlight": "1.69",
       "brand": "일상공감뉴스 · 주식",
-      "narration": "새벽 사이 원화 값이 천삼백팔십이 원까지 밀렸습니다."
+      "narration": "간밤 뉴욕 증시가 하루 만에 완전히 달라졌습니다."
     },
     {
       "type": "trend",
-      "label": "다우존스",
+      "label": "나스닥",
       "from": 0,
-      "to": -1.21,
+      "to": 1.69,
       "suffix": "%",
-      "dir": "down",
-      "sub": "코스피는 <b>-0.04%</b> 방어",
+      "dir": "up",
+      "sub": "다우도 하루 만에 <b>+0.61%</b> 반등",
       "brand": "일상공감뉴스 · 주식",
-      "narration": "다우가 일 점 이 일 퍼센트 빠지는 동안 코스피는 버텼습니다."
+      "narration": "나스닥이 하루 만에 일 점 육 구 퍼센트나 올랐습니다."
     },
     {
       "type": "keypoint",
-      "label": "왜 흔들렸나",
-      "points": ["<b>3년 2개월 만</b>의 기준금리 인상", "<b>워시</b> 의장 매파 발언", "여름 내내 물가가 안 잡혔다"],
+      "label": "왜 반등했나",
+      "points": ["유가·금리 <b>동반 하락</b>", "美 고용지표 <b>양호</b>", "VIX(공포지수) <b>12.8%</b> 급락"],
       "brand": "일상공감뉴스 · 주식",
-      "narration": "미국은 삼 년 이 개월 만에 기준금리를 다시 올렸습니다."
+      "narration": "유가와 금리가 함께 내리고 고용지표도 좋게 나왔습니다."
     },
     {
       "type": "statement",
@@ -47,45 +47,45 @@
     {
       "type": "keypoint",
       "label": "오늘 지켜볼 것",
-      "points": ["외국인 <b>7거래일째</b> 순매도", "반도체, 미국 강세 이어받나"],
+      "points": ["외국인 매도, <b>8일째</b>로 이어지나", "코스피, 어제 눌린 만큼 되돌리나"],
       "brand": "일상공감뉴스 · 주식",
-      "narration": "외국인이 칠 거래일째 팔았고 반도체가 이어받을지 지켜봅니다."
+      "narration": "외국인이 여드레째 파는지, 코스피가 얼마나 따라가는지 보세요."
     },
     {
       "type": "statement",
-      "text": "오늘도 버틸까요, 흔들릴까요",
-      "highlight": "버틸까요",
+      "text": "코스피도 웃을까요, 눌릴까요",
+      "highlight": "웃을까요",
       "brand": "일상공감뉴스 · 주식",
-      "narration": "코스피가 오늘도 버틸지 흔들릴지, 판단은 여러분 몫입니다."
+      "narration": "코스피도 따라 웃을지 눌릴지, 판단은 여러분 몫입니다."
     }
   ],
   "sources": ["뉴스핌", "파이낸셜뉴스", "머니투데이"],
   "credit": "출처 뉴스핌·파이낸셜뉴스·머니투데이 등 · 투자 조언이 아닙니다",
   "platforms": {
     "youtube": {
-      "title": "환율, 3주 만에 1,382원 #shorts",
-      "description": "원·달러 환율 1,382원, 코스피는 6715선 보합\n출처 뉴스핌·파이낸셜뉴스·머니투데이\n※ 투자 조언이 아닙니다\n오늘 밤 미국장은 밤 열 시 반에 다시 짚어드립니다.\n\n#코스피 #주식 #증시 #환율 #개장전 #쇼츠 #shorts",
+      "title": "나스닥 1.69%, 하루 만에 반전 #shorts",
+      "description": "뉴욕증시 하루 만에 반등, 코스피는 외국인 매도 지속\n출처 뉴스핌·파이낸셜뉴스·머니투데이\n※ 투자 조언이 아닙니다\n오늘 밤 미국장은 밤 열 시 반에 다시 짚어드립니다.\n\n#코스피 #주식 #증시 #나스닥 #개장전 #쇼츠 #shorts",
       "localizations": {
         "en": {
-          "title": "Won Slides to 1,382 as the Fed Hikes Rates",
-          "description": "The Fed raised interest rates for the first time in over 3 years, sending the won to a 3-week high of 1,382 per dollar. Korea's KOSPI held nearly flat despite a 7th straight day of foreign selling.\nSources: Newspim, Financial News, MoneyToday\n※ 투자 조언이 아닙니다\n\n#KOSPI #WonDollar #StockMarket #shorts"
+          "title": "Nasdaq Erases Fed-Hike Shock in a Single Day",
+          "description": "Wall Street reversed the previous session's rate-hike selloff overnight, with the Nasdaq up 1.69% as oil and yields fell together and jobs data came in strong. Korea's KOSPI still faces a 7th straight day of foreign selling.\nSources: Newspim, Financial News, MoneyToday\n※ 투자 조언이 아닙니다\n\n#KOSPI #Nasdaq #StockMarket #shorts"
         },
         "ja": {
-          "title": "ウォン、3週間ぶり1,382ウォンに下落しました",
-          "description": "FRBが3年ぶりに利上げし、ウォンは1ドル=1,382ウォンと3週間ぶりの安値になりました。コスピは外国人の7日連続売りにもかかわらずほぼ横ばいでした。\n出典: Newspim, Financial News, MoneyToday\n※ 투자 조언이 아닙니다\n\n#コスピ #為替 #株式 #shorts"
+          "title": "ナスダック、利上げショックを1日で払拭しました",
+          "description": "ニューヨーク市場は一夜にして前日の利上げショックを取り戻し、ナスダックは1.69%上昇しました。原油と金利がそろって下落し、雇用統計も良好でした。コスピは外国人の7日連続売りが続いています。\n出典: Newspim, Financial News, MoneyToday\n※ 투자 조언이 아닙니다\n\n#コスピ #ナスダック #株式 #shorts"
         },
         "zh-Hant": {
-          "title": "韓元貶至1,382，創三週新低",
-          "description": "美聯儲三年來首次升息，韓元兌美元貶至1,382，創三週新低。儘管外資連續七個交易日賣超，韓國KOSPI指數仍幾乎持平。\n資料來源：Newspim, Financial News, MoneyToday\n※ 투자 조언이 아닙니다\n\n#韓股 #匯率 #股市 #shorts"
+          "title": "那斯達克單日抹平升息衝擊",
+          "description": "紐約股市一夜之間收復前一交易日的升息跌幅，那斯達克上漲1.69%，油價與公債殖利率同步下滑，就業數據也表現亮眼。韓國KOSPI則仍面臨外資連續七個交易日賣超。\n資料來源：Newspim, Financial News, MoneyToday\n※ 투자 조언이 아닙니다\n\n#韓股 #那斯達克 #股市 #shorts"
         }
       }
     },
     "instagram": {
-      "caption": "환율, 3주 만에 1,382원\n출처 뉴스핌·파이낸셜뉴스·머니투데이\n※ 투자 조언이 아닙니다\n\n#코스피 #주식 #증시 #환율 #쇼츠 #shorts #릴스"
+      "caption": "나스닥 1.69%, 하루 만에 반전\n출처 뉴스핌·파이낸셜뉴스·머니투데이\n※ 투자 조언이 아닙니다\n\n#코스피 #주식 #증시 #나스닥 #쇼츠 #shorts #릴스"
     },
     "threads": {
-      "text": "환율, 3주 만에 1,382원\n출처 뉴스핌·파이낸셜뉴스·머니투데이"
+      "text": "나스닥 1.69%, 하루 만에 반전\n출처 뉴스핌·파이낸셜뉴스·머니투데이"
     }
   },
-  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음 · SESSION=KR_AM(개장 전 프리뷰). <PREV>=2026-09-17(목, 코스피 6715.41 보합 마감·외국인 7거래일째 순매도) · 밤사이 뉴욕은 Fed의 3년 2개월 만의 기준금리 인상(다우 -1.21%·S&P -0.45%·나스닥 -0.01%)에 흔들렸고, 원/달러 환율은 1,382원(3주 최고)까지 상승."
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음 · SESSION=KR_AM(개장 전 프리뷰). <PREV>=2026-09-17(목, 코스피 6715.41 보합 마감·외국인 7거래일째 순매도·원/달러 1,382원 3주 최고) · 밤사이 뉴욕은 전날 Fed 금리인상 충격을 하루 만에 되돌리며 반등(나스닥 +1.69%·S&P +1.14%·다우 +0.61%, 유가·금리 동반 하락에 VIX 12.8%↓)."
 }
