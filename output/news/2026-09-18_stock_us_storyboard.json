@@ -1,0 +1,91 @@
+{
+  "date": "2026-09-18",
+  "topic": "stock_us",
+  "privacy": "public",
+  "topic_keyword": "BOJ 금리인상 엔화 약세 나스닥 반등",
+  "headline": "일본은행, 기준금리 1.25%로 인상…엔화는 오히려 약세",
+  "hook_title": "일본, 금리 올렸는데 엔화 157엔",
+  "accent": "#D97757",
+  "loop_line": "엔화 157엔대가 오늘 밤에도 유지될지, 내일 아침 다시 확인하겠습니다.",
+  "thumbnail_hook": "dark trading floor at night, single glowing green candlestick chart close-up on a monitor, faint holographic yen and dollar currency symbols overlaid, deep navy and amber tones, cinematic, no text in image, no real people, no logos",
+  "thumbnail_text": "157엔대인데 반도체 상승",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "BOJ 발표",
+      "ghost": "YEN",
+      "lines": ["일본은", "금리를 올렸는데", "엔화는 157엔"],
+      "highlight": "157엔",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "장 열리기도 전에, 삼십일 년 만의 소식이 터졌습니다."
+    },
+    {
+      "type": "trend",
+      "label": "나스닥",
+      "from": 0,
+      "to": 1.69,
+      "suffix": "%",
+      "dir": "up",
+      "sub": "전날 급락 딛고 반등",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "나스닥은 어젯밤 하루 만에 일 점 육 구 퍼센트나 뛰었습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "왜 반등했나",
+      "points": ["국채금리·유가 나란히 하락", "<b>인텔·SK하이닉스</b> 메모리 동맹 기대"],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "금리·유가 하락에, 인텔·하이닉스 동맹 기대까지 겹쳤습니다."
+    },
+    {
+      "type": "statement",
+      "text": "엔화가 157엔대를 지키면, 위험선호는 이어집니다",
+      "highlight": "157엔대",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "엔화가 백오십칠엔대를 지키면, 위험선호는 이어질 겁니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 밤 지켜볼 것",
+      "points": ["인텔 — 반도체 랠리, 프리마켓 <b>2.86%</b>↑", "연준 <b>보우먼</b> 부의장, 은행규제 연설", "원달러 <b>1,383원</b>, 급변시 계좌 출렁"],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "인텔은 이 점 팔 육 퍼센트, 환율은 천삼백팔십삼원입니다."
+    },
+    {
+      "type": "statement",
+      "text": "이 반등 믿는다 vs 지켜본다, 당신은?",
+      "highlight": "지켜본다",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "이 반등을 믿을지 지켜볼지, 판단은 여러분 몫입니다."
+    }
+  ],
+  "sources": ["머니투데이", "뉴스핌", "서울경제", "글로벌이코노믹", "토큰포스트", "이투데이"],
+  "credit": "출처 머니투데이·뉴스핌·토큰포스트 등 · 투자 조언이 아닙니다",
+  "platforms": {
+    "youtube": {
+      "title": "일본, 금리 올렸는데 엔화 157엔 #shorts",
+      "description": "일본은행, 기준금리 1.25%로 인상…엔화는 오히려 약세\n출처 머니투데이·뉴스핌·토큰포스트 등\n※ 투자 조언이 아닙니다\n\n#미국주식 #나스닥 #뉴욕증시 #서학개미 #엔화 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "Japan Hiked Rates — But the Yen Just Fell to 157",
+          "description": "The Bank of Japan raised rates to a 31-year high, yet the yen weakened to around 157 per dollar, keeping the carry trade alive.\nSources: Money Today, Newspim, TokenPost, etc.\n※ Not investment advice.\n\n#shorts #USstocks #NASDAQ #WallStreet #YenCarryTrade"
+        },
+        "ja": {
+          "title": "日銀が利上げしたのに、円は157円台に下落",
+          "description": "日本銀行が政策金利を31年ぶりの高水準に引き上げましたが、円は157円台まで下落し、キャリー取引が続いています。\n出典:マネートゥデイ、ニュースピムほか\n※投資助言ではありません。\n\n#shorts #米国株 #ナスダック #ウォール街 #円キャリー"
+        },
+        "zh-Hant": {
+          "title": "日本升息,日圓卻跌破157",
+          "description": "日本央行升息至31年來新高,但日圓卻貶值至157附近,套利交易未見鬆動。\n資料來源:Money Today、Newspim等\n※本內容不構成投資建議。\n\n#shorts #美股 #那斯達克 #華爾街 #日圓套利交易"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "일본, 금리 올렸는데 엔화 157엔\n출처 머니투데이·뉴스핌·토큰포스트 등\n※ 투자 조언이 아닙니다\n\n#미국주식 #나스닥 #뉴욕증시 #서학개미 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "일본, 금리 올렸는데 엔화 157엔\n출처 머니투데이·뉴스핌·토큰포스트 등"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음 · SESSION=US_PM(미국장 개장 전후 프리뷰). BOJ 31년 만의 최고 금리인상에도 엔화가 오히려 약세로 돌며 엔캐리 자금이 안 풀린 점을 축으로, 전날 연준발 급락을 하루 만에 되돌린 나스닥 반등과 오늘 밤 반도체·크립토 프리마켓 강세를 연결."
+}
