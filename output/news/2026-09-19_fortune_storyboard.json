@@ -1,0 +1,92 @@
+{
+  "date": "2026-09-19",
+  "topic": "fortune",
+  "privacy": "public",
+  "topic_keyword": "오늘 띠별 운세",
+  "headline": "오늘 띠별 운세, 쥐띠 재물운 1위 93점",
+  "hook_title": "오늘 세 띠는 쉬어야 해요",
+  "accent": "#C9A24B",
+  "loop_line": "오늘 열리는 그 띠, 혹시 당신이었나요? 처음부터 다시 볼까요?",
+  "thumbnail_hook": "Extreme close-up on a stylized golden rat's eye and whiskers, traditional East Asian zodiac motif, amethyst night sky reflected in the eye, swirling gold clouds, small twinkling stars, auspicious lucky mood, no human face, no text, no letters, vertical 9:16 composition, cinematic lighting",
+  "thumbnail_text": "오늘 93점 쥐띠",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "띠별 운세",
+      "ghost": "FORTUNE",
+      "lines": ["오늘", "세 띠는 쉬고", "한 띠만 열려요"],
+      "highlight": "세 띠",
+      "brand": "일상공감뉴스 · 운세",
+      "narration": "오늘 열두 띠 가운데 세 띠는 쉬어가고 한 띠만 크게 열립니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 쉬어가기 좋은 띠",
+      "points": ["<b>호랑이띠</b> — 오늘은 쉼표가 필요해요", "<b>양띠</b> — 속도만 줄이면 이득", "<b>닭띠</b> — 무리하지 않으면 편해요"],
+      "brand": "일상공감뉴스 · 운세",
+      "narration": "호랑이띠와 양띠, 닭띠는 오늘 잠시 쉬어가면 더 좋은 하루입니다."
+    },
+    {
+      "type": "stat",
+      "label": "행운 지수 1위 · 쥐띠",
+      "prefix": "",
+      "suffix": "점",
+      "from": 0,
+      "to": 93,
+      "bar": true,
+      "sub": "1984·1996·2008년생 — <b>재물운</b> 활짝",
+      "brand": "일상공감뉴스 · 운세",
+      "narration": "자수 기운 강해지는 절기라, 쥐띠 지수가 오늘 93점까지 오릅니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘의 행운 팁",
+      "points": ["행운의 색 <b>초록</b> · 숫자 <b>9</b>", "중요한 얘기는 <b>오전</b>에 꺼내면 잘 풀려요"],
+      "brand": "일상공감뉴스 · 운세",
+      "narration": "오늘은 초록색과 숫자 9가 행운을 불러오는 하루입니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "이번 주 행운의 로또 번호",
+      "points": ["<b>7 · 8 · 29 · 36 · 37 · 39</b>", "재미로 뽑아 본 번호예요 · 캡처해 두세요"],
+      "brand": "일상공감뉴스 · 운세",
+      "narration": "이번 주 행운의 로또 번호는 7, 8, 29, 36, 37, 39입니다."
+    },
+    {
+      "type": "statement",
+      "text": "당신은 오늘 쉬어가는 띠인가요, 열리는 띠인가요?",
+      "highlight": "열리는 띠",
+      "brand": "일상공감뉴스 · 운세",
+      "narration": "당신은 오늘 쉬어가는 띠인가요, 아니면 열리는 띠인가요?"
+    }
+  ],
+  "sources": ["전통 띠 운세(명리) 기반", "절기와 지지(地支) 오행 참고"],
+  "credit": "재미로 보는 오늘의 운세 · 명리 일진 참고",
+  "platforms": {
+    "youtube": {
+      "title": "오늘 세 띠는 쉬어야 해요 #shorts",
+      "description": "오늘 띠별 운세, 쥐띠 재물운 1위 93점\n※ 재미로 보는 운세입니다\n\n#오늘의운세 #띠별운세 #쥐띠 #운세 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "Three Zodiac Signs Rest Today, One Hits 93",
+          "description": "Today's zodiac forecast — three signs take it easy while one soars to a 93 score. For fun only, not a real prediction.\n#shorts #horoscope #zodiac"
+        },
+        "ja": {
+          "title": "今日休む干支は3つ、輝くのは1つだけです",
+          "description": "今日の干支占いです。3つの干支はゆっくり過ごし、残る1つだけが93点で大きく輝きます。楽しみとしてご覧ください。\n#shorts"
+        },
+        "zh-Hant": {
+          "title": "今天三個生肖該休息，只有一個衝上93分",
+          "description": "今日生肖運勢，三個生肖適合放慢腳步，只有一個生肖衝上93分！純屬娛樂參考。\n#shorts"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "오늘 세 띠는 쉬어야 해요\n※ 재미로 보는 운세\n\n#오늘의운세 #띠별운세 #운세 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "오늘 세 띠는 쉬어야 해요\n※ 재미로 보는 운세"
+    }
+  },
+  "notes": "모션그래픽 6장면(로또 포함) · 단일 내레이터 · 배경음 없음 · 엔터테인먼트(재미) 운세 · MODE=daily."
+}
