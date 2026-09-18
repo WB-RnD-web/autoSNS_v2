@@ -1,0 +1,92 @@
+{
+  "date": "2026-09-19",
+  "topic": "horoscope",
+  "privacy": "public",
+  "topic_keyword": "물고기자리 연애운 1위 · 97점",
+  "headline": "오늘 물고기자리 연애운이 97점까지 오릅니다",
+  "hook_title": "오늘 사랑운 1위, 물고기자리",
+  "accent": "#C9A24B",
+  "loop_line": "내일은 또 다른 별자리가 사랑을 이야기할지 모릅니다.",
+  "thumbnail_hook": "delicate golden fish constellation symbol glowing softly, reflected in a still moonlit lake at night, a warm venus-like star shimmering nearby, deep indigo sky with faint stars; no human face, no text in image",
+  "thumbnail_text": "연애운 1위 물고기자리",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "오늘의 연애운",
+      "ghost": "LOVE",
+      "lines": ["오늘", "사랑운이", "활짝 열리는"],
+      "highlight": "사랑운",
+      "brand": "일상공감뉴스 · 별자리",
+      "narration": "오늘, 유독 사랑운이 활짝 열리는 별자리가 하나 있습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘의 연애운 · 3위부터",
+      "points": ["3위 <b>사자자리</b> — 자신감이 매력이 되는 날", "2위 <b>천칭자리</b> — 대화가 관계를 풀어주는 날"],
+      "brand": "일상공감뉴스 · 별자리",
+      "narration": "3위 사자자리, 2위 천칭자리, 1위는 잠시 뒤에 알려드립니다."
+    },
+    {
+      "type": "stat",
+      "label": "연애 지수 1위 · 물고기자리",
+      "prefix": "",
+      "suffix": "점",
+      "from": 0,
+      "to": 97,
+      "bar": true,
+      "sub": "2월19일~3월20일생 · <b>금성</b>이 사랑운을 밀어주는 날",
+      "brand": "일상공감뉴스 · 별자리",
+      "narration": "1위는 물고기자리, 2월 19일에서 3월 20일 사이에 태어나셨다면 오늘 97점입니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘의 행운",
+      "points": ["행운의 색 <b>핑크</b> · 숫자 <b>7</b>", "사랑운 열리는 시간 <b>저녁 7시</b> · 캡처해 두세요", "<b>쌍둥이자리</b> — 오늘은 천천히 가면 좋은 날"],
+      "brand": "일상공감뉴스 · 별자리",
+      "narration": "그래서 오늘은 저녁 7시쯤 마음을 전해보시면 좋겠습니다."
+    },
+    {
+      "type": "quote",
+      "text": "설레는 마음을 오늘은 숨기지 마세요",
+      "attr": "— 오늘의 한 마디",
+      "brand": "일상공감뉴스 · 별자리",
+      "narration": "설레는 마음이 있다면 오늘은 숨기지 않아도 좋습니다."
+    },
+    {
+      "type": "statement",
+      "text": "오늘 사랑운 몇 점? 댓글에 별자리만 적어주세요",
+      "highlight": "몇 점",
+      "brand": "일상공감뉴스 · 별자리",
+      "narration": "당신의 사랑운은 오늘 몇 점이었는지, 댓글에 별자리만 남겨주세요."
+    }
+  ],
+  "sources": ["서양 점성 12별자리 기반", "오늘의 금성 흐름 참고"],
+  "credit": "재미로 보는 오늘의 별자리 운세",
+  "platforms": {
+    "youtube": {
+      "title": "오늘 사랑운 1위, 물고기자리 #shorts",
+      "description": "오늘 물고기자리 연애운이 97점까지 오릅니다\n※ 재미로 보는 운세입니다\n\n#오늘의별자리 #별자리운세 #운세 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "This Zodiac Sign's Love Luck Just Hit 97",
+          "description": "One zodiac sign's love luck is off the charts today — see who's #1, and check where you rank.\n※ Just for fun — today's horoscope\n\n#TodaysHoroscope #Zodiac #Pisces #Shorts #shorts"
+        },
+        "ja": {
+          "title": "今日、恋愛運97点の星座がいます",
+          "description": "今日、ある星座の恋愛運が97点まで跳ね上がります。それが誰なのか、あなたの順位も一緒にチェックしてみてください。\n※ 楽しみとしてご覧ください\n\n#今日の星座 #星座占い #恋愛運 #ショート #shorts"
+        },
+        "zh-Hant": {
+          "title": "今天,這個星座戀愛運飆到97分",
+          "description": "今天,某個星座的戀愛運飆升到97分。快來看看是哪個星座,你排第幾。\n※ 僅供娛樂參考的星座運勢\n\n#今日星座 #星座運勢 #戀愛運 #Shorts #shorts"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "오늘 사랑운 1위, 물고기자리\n※ 재미로 보는 운세\n\n#오늘의별자리 #별자리운세 #운세 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "오늘 사랑운 1위, 물고기자리\n※ 재미로 보는 운세"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음."
+}
