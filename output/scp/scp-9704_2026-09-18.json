@@ -1,0 +1,950 @@
+{
+  "date": "2026-09-18",
+  "iso_week": "2026-W38",
+  "topic": "scp",
+  "privacy": "public",
+  "origin": "original",
+  "origin_note": "day%3==0 규칙상 canon이어야 했으나 scp-wiki.wikidot.com·scpko.wiki·namu.wiki 세 경로 모두 EGRESS_BLOCKED(조직 네트워크 정책상 접근 차단)로 확인 불가 — 오리지널로 대체",
+  "source_url": "",
+  "story_id": "scp-9704",
+  "scp_number": "SCP-9704",
+  "object_class": "Keter",
+  "codename": "덤으로 있는 문",
+  "number_check": {
+    "checked_at": "2026-09-18",
+    "http_code": "unverified"
+  },
+  "theme": "인접 층위",
+  "nature": "공간",
+  "twist_type": "규모",
+  "logline": "남인도양 케르겔렌 제도 기상중계기지 지하에서 발견된, 도면에 없는 문 이야기입니다. 그 문을 열면 시계가 십 분 사십 초 느리게 가는 또 다른 본관이 나타납니다.",
+  "structure": "연대기형",
+  "opening_move": "장면 하나",
+  "opening_note": "",
+  "closing_move": "화자가 답을 안 한다",
+  "number_reveal": "앞",
+  "ending_mode": "없음",
+  "fault": "재단",
+  "hook_line": "문 안쪽엔, 아직 식지 않은 커피가 그대로 놓여 있었습니다.",
+  "procedures": [],
+  "character": {
+    "name": "뒤퓌",
+    "role": "기술관 · 사이트-681 통신중계 정비 선임기술관",
+    "flaw": "자기 가설(구조 신호)을 포기하지 못한다"
+  },
+  "chain": [
+    {
+      "when": "야간 정비 순찰 중",
+      "event": "뒤퓌 기술관이 창고동과 본관을 잇는 지하 통로 끝에서 도면에 없는 문을 발견했다",
+      "because": "",
+      "shot": "안개가 새어 나오는 문틈을 비추는 손전등 불빛."
+    },
+    {
+      "when": "문을 열어본 직후",
+      "event": "본관과 똑같지만 벽시계가 십 분 사십 초 어긋난 방을 발견했다",
+      "because": "그 구간 순찰이 처음으로 뒤퓌에게 배정됐기 때문에",
+      "shot": "같은 방에 걸린, 시각이 다른 벽시계 두 개."
+    },
+    {
+      "when": "되짚어 나온 직후",
+      "event": "동료 라이문도가 그를 낯선 사람 보듯 바라보며 방금 전엔 없었다고 말했다",
+      "because": "뒤퓌가 그 방과 같은 만큼 위상이 어긋난 채 돌아왔기 때문에",
+      "shot": "낯설게 쳐다보는 라이문도의 얼굴."
+    },
+    {
+      "when": "보고 서른여섯 시간 뒤",
+      "event": "기동특무부대 시그마-6이 도착해 현실 안정 장치를 통로 벽에 설치했다",
+      "because": "이상 현상이 인사 보고 체계에 즉시 잡혔기 때문에",
+      "shot": "통로 벽에 박힌 육중한 현실 안정 장치."
+    },
+    {
+      "when": "장치를 켠 직후",
+      "event": "장치가 위상차를 좁히려다 오히려 문을 더 자주 열리게 만들었다",
+      "because": "장치가 두 위상을 강제로 동기화하려 했기 때문에",
+      "shot": "요동치는 계기판 바늘과 더 넓게 벌어진 문틈."
+    },
+    {
+      "when": "장치 실패 이후",
+      "event": "재단이 D-9704를 반대편에 투입했고, 그는 자신과 똑같은 사람과 마주쳤다",
+      "because": "재단이 반대편 상태를 직접 확인해야 했기 때문에",
+      "shot": "똑같은 얼굴과 얼룩진 정비복을 한 두 사람이 마주 선 모습."
+    },
+    {
+      "when": "D계급 보고 이후",
+      "event": "지질·공간반이 옛 설계도를 전수 조사해 일곱 곳의 옛 기상중계기지에서 동일한 예비 문을 확인했다",
+      "because": "시그마-6의 실패 보고가 상부로 올라가며 유사 사례 조사가 시작됐기 때문에",
+      "shot": "나란히 펼쳐진 세 장의 옛 설계도, 같은 자리에 그려진 문 표시."
+    },
+    {
+      "when": "설계도 대조 중",
+      "event": "누렇게 바랜 원 설계도 여백에서 '통신 지연, 여기서 흡수함'이라는 손글씨 메모를 발견했다",
+      "because": "일곱 기지 모두 같은 컨소시엄이 설계했다는 사실이 드러났기 때문에",
+      "shot": "여백에 손글씨로 남은 메모 클로즈업."
+    },
+    {
+      "when": "메모 발견 이후",
+      "event": "재단은 자신들의 정기 위상 동기화 점검 일정이 문이 열린 시각과 정확히 겹친다는 걸 확인했다",
+      "because": "규모 조사에 O5 승인이 떨어지며 전체 기록을 대조했기 때문에",
+      "shot": "점검 일정표와 개방 기록이 겹쳐진 달력."
+    },
+    {
+      "when": "이 사실이 알려진 뒤",
+      "event": "뒤퓌는 자기 가설을 못 버리고 단독 재진입 금지 수칙을 어기며 혼자 문 안으로 들어갔다",
+      "because": "그가 처음 봤던 '십 분 늦은 자신'이 아직 안에 있다고 믿었기 때문에",
+      "shot": "혼자 문 안으로 걸어 들어가는 뒤퓌의 뒷모습."
+    },
+    {
+      "when": "그가 들어간 뒤",
+      "event": "뒤퓌는 돌아오지 않았고, 그의 정비 태블릿에는 '점검 완료, 이상 없음'이라는 줄이 항상 십 분 사십 초 전 시각으로 갱신되고 있다",
+      "because": "그가 위상 반대편에 완전히 남았기 때문에",
+      "shot": "십 분 사십 초 전 시각을 계속 찍는 태블릿 화면."
+    },
+    {
+      "when": "지금",
+      "event": "재단은 문을 봉쇄하지 못한 채 시그마-6에 전면 재진입 금지를 내렸다",
+      "because": "재수용 시도가 세 번 다 실패했기 때문에",
+      "shot": "봉쇄 테이프가 둘린 문, 그 틈으로 새는 불빛."
+    }
+  ],
+  "retention_beats": [
+    "케르겔렌 말고 다른 여섯 옛 기지의 예비 문은 아직 봉쇄되지 않았다는 사실",
+    "세계 오컬트 연합이 이 네트워크 전체 폭파를 요구했다는 소문의 진위",
+    "사이트-142 사건과 닮았다는 얘기가 정확히 어디서 나온 건지"
+  ],
+  "cameos": [
+    {
+      "number": "SCP-682",
+      "how": "등급 케테르. 파괴하기 매우 어려운 것으로 알려진 개체."
+    }
+  ],
+  "twist_summary": "규모의 반전 — 케르겔렌 사이트-681의 예비 문이 그 기지만의 이상 현상인 줄 알았지만, 실은 냉전기 국제 기상통신 컨소시엄이 통신 지연을 떠넘기려 설계한 여유 공간이 전 세계 일곱 옛 기지에 똑같이 심어져 있었다는 반전. 게다가 그 문을 실제로 열리게 만든 건 다른 누구도 아닌 재단 자신의 정기 위상 동기화 점검 절차였다. 뒤퓌 기술관이 단독 재진입 금지를 스스로 어기고 '십 분 늦은 자신'을 구하러 들어간 뒤 돌아오지 않았고, 그의 정비 로그만 지금도 십 분 사십 초 전 시각으로 갱신되고 있다.",
+  "narration_full": "문 안쪽엔, 아직 식지 않은 커피가 그대로 놓여 있었습니다. 아무도 없는 방인데 말이죠.\n\n무대는 프랑스령 케르겔렌 제도, 남인도양 한복판에 뜬 사이트-681입니다. 원래 1970년대에 여러 나라가 함께 세운 기상통신 중계기지였는데, 지금은 재단이 넘겨받아 다른 기지들 사이 통신만 근근이 이어주고 있죠. 상주 인원이라고 해봤자 몇 명 안 되는, 조용하다 못해 심심한 곳이었습니다.\n\n참고로 뒤퓌가 신입 때 오리엔테이션에서 지나쳤던 사이트-19 격리동에는, SCP-682라는 문패가 붙은 방도 있었다고 합니다. 등급은 케테르, 파괴하기 몹시 어려운 것으로 유명한 개체죠.\n\n재단 문서엔 이 사건이 SCP-9704, 등급 케테르로 올라 있습니다. 격리 대상치곤 좀 거창하다 싶으실 텐데요, 왜 그런지는 곧 나옵니다.\n\n시작은 뒤퓌 기술관이 야간 순찰을 돌다가, 창고동과 본관을 잇는 지하 정비 통로 끝에서 문 하나를 발견하면서였습니다. 도면 어디에도 없는 문이었어요. 뒤퓌는… 그냥 새로 뚫은 환기구인 줄 알았답니다.\n\n문을 열었더니 본관이 나왔습니다. 그런데 뭔가 이상했죠. 벽시계가 두 개였는데, 하나는 지금 시각을, 다른 하나는 십 분 사십 초 전 시각을 가리키고 있었거든요. 방금 나갔다던 동료의 커피잔은, 식기는커녕 여전히 김이 올라오고 있었고요.\n\n되짚어 나왔더니, 라이문도가 — 방금까지 옆에 있던 동료가 — 그를 낯선 사람 보듯 쳐다봤습니다.\n\n「방금 전엔… 여기 안 계셨잖아요.」\n\n시계를 맞춰보니 뒤퓌 쪽 시간이 딱 십 분 사십 초 느렸습니다. 그 안쪽 방과 정확히 같은 만큼요.\n\n보고가 올라가고 서른여섯 시간 만에 기동특무부대 시그마-6, 별칭 「뒷문」이 도착했습니다. 현실 안정 장치를 통로 벽에 박아 위상차를 붙잡으려 했는데요, 그 앞 휴메 지수부터가 유독 낮게 잡혔다고 하더군요. 출력을 낮춰보질 않나, 위치를 반대쪽 벽으로 옮겨보질 않나, 아예 다른 기종으로 통째로 바꿔보는 것도 기본이었는데 — 그래도 안 됐답니다. 아니나 다를까, 장치를 켜자마자 문이 더 자주 열리기 시작했습니다. 원래 이레에 한 번꼴이던 게, 사흘로 줄었고요.\n\n「장치를 껐는데, 계기판이 아직 도는데요.」\n\n시그마-6 팀장이 무전으로 남긴 말입니다. 격리 방법을 다시 논의하는 회의가, 그 뒤로 몇 차례나 더 열렸다고 하고요.\n\n그다음엔 D계급 한 명, D-9704를 들여보냈습니다. 반대편에 뭐가 있는지 확인하려고요. 칠 분 만에 돌아오긴 했는데… 정확히 한 명이었어야 할 자리에 잠깐 두 명이 서 있었답니다. 얼굴도, 정비복 얼룩도 똑같았고요.\n\n「저기 있는 거, 저 아닌가요?」\n\n둘 다 이렇게 물었다는데, 결국 걸어 나온 건 한 명뿐이었습니다. 어느 쪽이 진짜였을까요? 재단도 끝내 확인 못 했고요.\n\n여기서부터 얘기가 커집니다. 지질·공간반이 옛 설계도를 뒤지다가, 알류샨 열도, 트리스탄다쿠냐, 포클랜드 제도까지 — 일곱 곳의 옛 기상중계기지에 전부 똑같은 자리에 똑같은 예비 문이 그려져 있다는 걸 확인한 겁니다. 사이트-681 하나만의 일이 아니었던 거죠.\n\n누렇게 바랜 원 설계도 여백엔, 이런 메모가 손글씨로 남아 있었습니다.\n\n「통신 지연, 여기서 흡수함.」\n\n그러니까 이 문들은, 애초에 통신 지연이라는 골칫거리를 어딘가로 떠넘기려고 일부러 끼워 넣은 여유 공간이었던 겁니다. 그 옛 컨소시엄이 정확히 뭘 어떻게 한 건지는… 재단도 아직 다 못 밝혀냈다고 하고요.\n\n더 안 좋은 소식도 있었습니다. 재단이 네트워크 전체를 대상으로 정기적으로 돌리는 위상 동기화 점검 일정과, 사이트-681에서 문이 열린 시각을 나란히 놓아 보니… 완전히 겹쳤습니다. 문을 열리게 만든 게, 다른 누구도 아니라 재단의 정기 점검, 그 절차 자체였던 겁니다. 이 정도 규모 조사엔 O5 승인이 따로 필요했다고 하고요.\n\n이쯤 되면 그냥 문 닫고 나가면 될 것 같은데, 뒤퓌는 그러질 못했습니다. 처음 봤던 그 '십 분 늦은 자신'이, 아직 저 안에 남아 있다고 믿었거든요. 구조 신호라는 거죠. 정말 그럴까요? 격리 절차 중 하나인 단독 재진입 금지를, 시그마-6이 몇 번을 말려도 소용없었습니다.\n\n「금방 확인만 하고 나오겠습니다.」\n\n이게 그의 마지막 무전이었습니다.\n\n그는 돌아오지 않았습니다. 다만 그의 정비 태블릿엔, 지금도 이런 줄이 자동으로 올라온다는군요.\n\n「점검 완료, 이상 없음.」\n\n시각은 늘 십 분 사십 초 전으로 찍혀 있고요. 돌아오지 않은 그를 재수용하려는 시도는, 세 번 다 실패했습니다. 라이문도한테는 갑급 기억소거제까지 들어갔는데, 열흘 만에 저절로 풀렸다고 하고요.\n\n세계 오컬트 연합 쪽에서는 예전에 이 네트워크를 통째로 폭파해야 한다는 요구를 넣어온 적이 있다는데, 재단은 아직 답을 미루고 있습니다. 사이트-142에서 있었던 일하고 닮았다는 얘기도 나오는 모양이고요.\n\n지금 그 문은, 봉쇄 테이프만 두른 채 남아 있습니다. 그 틈으로 여전히, 불빛이 새어 나온다고 하네요.\n\n왜 하필 뒤퓌였는지는, 저도 설명을 못 하겠습니다.",
+  "segments": [
+    {
+      "text": "문 안쪽엔, 아직 식지 않은 커피가 그대로",
+      "est_sec": 6,
+      "text_en": "Inside the door, a cup of coffee sat there,",
+      "text_ja": "扉の向こうには、まだ冷めていない",
+      "text_zh_Hant": "門的另一側,一杯咖啡還放在那裡,"
+    },
+    {
+      "text": "놓여 있었습니다. 아무도 없는 방인데 말이죠.",
+      "est_sec": 6,
+      "text_en": "still warm. And no one was in the room.",
+      "text_ja": "コーヒーがそのまま置かれていました。誰もいない部屋なのに、です。",
+      "text_zh_Hant": "連涼都沒涼。可房間裡,一個人也沒有。"
+    },
+    {
+      "text": "무대는 프랑스령 케르겔렌 제도, 남인도양",
+      "est_sec": 6,
+      "text_en": "The setting is the French Kerguelen Islands, in the middle",
+      "text_ja": "舞台はフランス領ケルゲレン諸島、南インド洋の",
+      "text_zh_Hant": "故事發生在法屬凱爾蓋朗群島,南印度洋"
+    },
+    {
+      "text": "한복판에 뜬 사이트-681입니다. 원래",
+      "est_sec": 5,
+      "text_en": "of the southern Indian Ocean — Site-681. It was",
+      "text_ja": "ど真ん中に浮かぶサイト-681です。もともとは",
+      "text_zh_Hant": "正中央的681號站點。這裡原本是"
+    },
+    {
+      "text": "1970년대에 여러 나라가 함께 세운 기상통신",
+      "est_sec": 6,
+      "text_en": "originally built in the 1970s as a joint",
+      "text_ja": "1970年代に複数の国が共同で建てた気象通信",
+      "text_zh_Hant": "一九七零年代由好幾個國家聯合建造的氣象通訊"
+    },
+    {
+      "text": "중계기지였는데, 지금은 재단이 넘겨받아 다른",
+      "est_sec": 6,
+      "text_en": "international weather-relay station, and now the Foundation runs it, just",
+      "text_ja": "中継基地だったのですが、今は財団が引き継いで、他の",
+      "text_zh_Hant": "中繼基地,現在由基金會接手,勉強維持著和其他"
+    },
+    {
+      "text": "기지들 사이 통신만 근근이 이어주고 있죠.",
+      "est_sec": 6,
+      "text_en": "barely keeping communications going between other sites.",
+      "text_ja": "基地同士の通信をかろうじてつないでいます。",
+      "text_zh_Hant": "站點之間的通訊。"
+    },
+    {
+      "text": "상주 인원이라고 해봤자 몇 명 안 되는,",
+      "est_sec": 6,
+      "text_en": "With only a handful of resident staff,",
+      "text_ja": "常駐人員もほんの数人という、",
+      "text_zh_Hant": "常駐人員沒幾個,"
+    },
+    {
+      "text": "조용하다 못해 심심한 곳이었습니다.",
+      "est_sec": 5,
+      "text_en": "it was quiet to the point of being dull.",
+      "text_ja": "静かを通り越して退屈な場所でした。",
+      "text_zh_Hant": "安靜到近乎無聊。"
+    },
+    {
+      "text": "참고로 뒤퓌가 신입 때 오리엔테이션에서 지나쳤던",
+      "est_sec": 6,
+      "text_en": "For reference, during his rookie orientation Dupuis had walked past",
+      "text_ja": "ちなみに、デュピュイが新人研修で通りかかった",
+      "text_zh_Hant": "順帶一提,杜普伊剛入職受訓時,經過"
+    },
+    {
+      "text": "사이트-19 격리동에는, SCP-682라는 문패가",
+      "est_sec": 6,
+      "text_en": "a room at Site-19's containment wing labeled SCP-682 —",
+      "text_ja": "サイト-19の収容棟にあった、SCP-682と書かれた",
+      "text_zh_Hant": "19號站點收容區,也看過一扇門牌寫著SCP-682的"
+    },
+    {
+      "text": "붙은 방도 있었다고 합니다. 등급은 케테르,",
+      "est_sec": 5,
+      "text_en": "class Keter,",
+      "text_ja": "部屋もあったそうです。等級はケテル、",
+      "text_zh_Hant": "房間——等級Keter,"
+    },
+    {
+      "text": "파괴하기 몹시 어려운 것으로 유명한 개체죠.",
+      "est_sec": 6,
+      "text_en": "notoriously hard to destroy.",
+      "text_ja": "破壊が非常に困難なことで知られる個体です。",
+      "text_zh_Hant": "以極難摧毀聞名。"
+    },
+    {
+      "text": "재단 문서엔 이 사건이 SCP-9704, 등급",
+      "est_sec": 6,
+      "text_en": "Foundation files list this incident as SCP-9704,",
+      "text_ja": "財団の文書ではこの事案、SCP-9704、",
+      "text_zh_Hant": "基金會檔案裡,這起事件被歸為SCP-9704,"
+    },
+    {
+      "text": "케테르로 올라 있습니다. 격리 대상치곤 좀",
+      "est_sec": 6,
+      "text_en": "class Keter. That might sound a bit much",
+      "text_ja": "等級はケテルとして登録されています。収容対象にしては少々",
+      "text_zh_Hant": "等級Keter。以一個看起來這麼不起眼的收容對象來說,"
+    },
+    {
+      "text": "거창하다 싶으실 텐데요, 왜 그런지는 곧 나옵니다.",
+      "est_sec": 7,
+      "text_en": "for a target this unassuming, but the reason comes soon enough.",
+      "text_ja": "仰々しい気もするでしょうが、その理由はすぐに出てきます。",
+      "text_zh_Hant": "這等級是重了點,不過原因很快就會揭曉。"
+    },
+    {
+      "text": "시작은 뒤퓌 기술관이 야간 순찰을 돌다가,",
+      "est_sec": 6,
+      "text_en": "It started when Technician Dupuis, on night rounds,",
+      "text_ja": "始まりは、デュピュイ技術官が夜間巡回中、",
+      "text_zh_Hant": "事情要從杜普伊技術員的一次夜間巡邏說起。"
+    },
+    {
+      "text": "창고동과 본관을 잇는 지하 정비 통로 끝에서",
+      "est_sec": 6,
+      "text_en": "found a door at the end of the underground maintenance corridor",
+      "text_ja": "倉庫棟と本館をつなぐ地下整備通路の突き当たりで",
+      "text_zh_Hant": "他在連接倉庫棟和本館的地下維修通道盡頭,"
+    },
+    {
+      "text": "문 하나를 발견하면서였습니다. 도면 어디에도",
+      "est_sec": 6,
+      "text_en": "connecting the warehouse to the main building. It wasn't on",
+      "text_ja": "ドアを一つ見つけたことでした。図面のどこにも",
+      "text_zh_Hant": "發現了一扇門——藍圖上哪裡都"
+    },
+    {
+      "text": "없는 문이었어요. 뒤퓌는… 그냥 새로 뚫은",
+      "est_sec": 6,
+      "text_en": "any blueprint. Dupuis… figured it was just a newly cut",
+      "text_ja": "載っていないドアです。デュピュイは……新しく開けられた",
+      "text_zh_Hant": "沒標。杜普伊當時……還以為只是新開的"
+    },
+    {
+      "text": "환기구인 줄 알았답니다.",
+      "est_sec": 3,
+      "text_en": "vent.",
+      "text_ja": "通気口だろうと思ったそうです。",
+      "text_zh_Hant": "通風口。"
+    },
+    {
+      "text": "문을 열었더니 본관이 나왔습니다. 그런데 뭔가",
+      "est_sec": 6,
+      "text_en": "He opened it, and there was the main building. But something",
+      "text_ja": "ドアを開けると本館が現れました。ただ、何かが",
+      "text_zh_Hant": "他打開門,看到的是本館沒錯。可有些"
+    },
+    {
+      "text": "이상했죠. 벽시계가 두 개였는데, 하나는 지금",
+      "est_sec": 6,
+      "text_en": "was off. Two wall clocks — one showing the current",
+      "text_ja": "おかしかった。壁時計が二つあり、片方は現在",
+      "text_zh_Hant": "不對勁。牆上掛著兩個鐘,一個顯示現在的"
+    },
+    {
+      "text": "시각을, 다른 하나는 십 분 사십 초 전",
+      "est_sec": 6,
+      "emphasis": "십 분 사십 초",
+      "text_en": "time, the other ten minutes forty seconds behind.",
+      "text_ja": "時刻を、もう片方は十分四十秒前の",
+      "text_zh_Hant": "時間,另一個卻慢了十分四十秒。"
+    },
+    {
+      "text": "시각을 가리키고 있었거든요. 방금 나갔다던",
+      "est_sec": 6,
+      "text_en": "And a coworker's coffee cup, who'd supposedly just stepped out,",
+      "text_ja": "時刻を指していたのです。しかも、たった今出て行ったはずの",
+      "text_zh_Hant": "而且,同事那杯說是剛端走的咖啡,"
+    },
+    {
+      "text": "동료의 커피잔은, 식기는커녕 여전히 김이",
+      "est_sec": 6,
+      "text_en": "was still",
+      "text_ja": "同僚のコーヒーカップは、冷めるどころかまだ",
+      "text_zh_Hant": "別說涼了,還冒著"
+    },
+    {
+      "text": "올라오고 있었고요.",
+      "est_sec": 2,
+      "text_en": "steaming, nowhere near cold.",
+      "text_ja": "湯気を立てていました。",
+      "text_zh_Hant": "熱氣。"
+    },
+    {
+      "text": "되짚어 나왔더니, 라이문도가 — 방금까지 옆에",
+      "est_sec": 6,
+      "text_en": "He backed out, and Raimundo — the coworker who'd been right",
+      "text_ja": "引き返してみると、ライムンドが——さっきまで",
+      "text_zh_Hant": "他退了出來,結果雷蒙多——剛才還站在他"
+    },
+    {
+      "text": "있던 동료가 — 그를 낯선 사람 보듯 쳐다봤습니다.",
+      "est_sec": 7,
+      "text_en": "beside him — looked at him like a stranger.",
+      "text_ja": "隣にいた同僚が——彼を見知らぬ人のように見つめました。",
+      "text_zh_Hant": "旁邊的同事——像看陌生人一樣看著他。"
+    },
+    {
+      "text": "「방금 전엔… 여기 안 계셨잖아요.」",
+      "est_sec": 5,
+      "text_en": "\"Weren't you… not here a second ago?\"",
+      "text_ja": "「さっきまで……ここにいませんでしたよね。」",
+      "text_zh_Hant": "「你剛才……不是不在這裡嗎?」"
+    },
+    {
+      "text": "시계를 맞춰보니 뒤퓌 쪽 시간이 딱 십 분",
+      "est_sec": 6,
+      "text_en": "When they checked the clocks, Dupuis's time was exactly ten minutes",
+      "text_ja": "時計を合わせてみると、デュピュイ側の時間がちょうど十分",
+      "text_zh_Hant": "對過時間才發現,杜普伊這邊的時間正好慢了十分"
+    },
+    {
+      "text": "사십 초 느렸습니다. 그 안쪽 방과 정확히",
+      "est_sec": 6,
+      "text_en": "forty seconds slow — exactly the same gap",
+      "text_ja": "四十秒遅れていました。あの内側の部屋とまったく",
+      "text_zh_Hant": "四十秒——跟裡面那個房間,"
+    },
+    {
+      "text": "같은 만큼요. 보고가 올라가고 서른여섯 시간 만에",
+      "est_sec": 7,
+      "text_en": "as that inner room. Thirty-six hours after the report went up,",
+      "text_ja": "同じ差だけ。報告が上がって三十六時間後、",
+      "text_zh_Hant": "一分不差。回報送上去三十六小時後,"
+    },
+    {
+      "text": "기동특무부대 시그마-6, 별칭 「뒷문」이",
+      "est_sec": 6,
+      "text_en": "Mobile Task Force Sigma-6, nicknamed \"Back Door,\"",
+      "text_ja": "機動特務部隊シグマ-6、通称「裏口」が",
+      "text_zh_Hant": "機動特遣隊西格瑪-6,代號「後門」"
+    },
+    {
+      "text": "도착했습니다. 현실 안정 장치를 통로 벽에",
+      "est_sec": 6,
+      "text_en": "arrived. They drove a Scranton Reality Anchor into the corridor wall",
+      "text_ja": "到着しました。現実安定装置を通路の壁に",
+      "text_zh_Hant": "抵達了現場。他們把史蘭頓現實錨定裝置打進通道牆裡,"
+    },
+    {
+      "text": "박아 위상차를 붙잡으려 했는데요, 그 앞 휴메",
+      "est_sec": 6,
+      "text_en": "to try to pin down the phase difference — and the Hume",
+      "text_ja": "打ち込んで位相差を抑えようとしたのですが、その手前でヒューム",
+      "text_zh_Hant": "想壓住那個相位差,結果裝置前面測到的休姆"
+    },
+    {
+      "text": "지수부터가 유독 낮게 잡혔다고 하더군요.",
+      "est_sec": 6,
+      "text_en": "index there was already reading unusually low.",
+      "text_ja": "指数からしてすでに異常に低く出ていたそうです。",
+      "text_zh_Hant": "指數本來就已經低得不正常。"
+    },
+    {
+      "text": "출력을 낮춰보질 않나, 위치를 반대쪽 벽으로",
+      "est_sec": 6,
+      "text_en": "They dialed the output down, moved it to the opposite",
+      "text_ja": "出力を下げてみたり、反対側の壁に",
+      "text_zh_Hant": "調低輸出、換到對面"
+    },
+    {
+      "text": "옮겨보질 않나, 아예 다른 기종으로 통째로",
+      "est_sec": 6,
+      "text_en": "wall, even swapped in an entirely different",
+      "text_ja": "移してみたり、いっそ別の機種に丸ごと",
+      "text_zh_Hant": "牆、甚至整台換成別的"
+    },
+    {
+      "text": "바꿔보는 것도 기본이었는데 — 그래도 안",
+      "est_sec": 6,
+      "text_en": "unit — none of it",
+      "text_ja": "替えてみたりもしましたが——それでも",
+      "text_zh_Hant": "型號——全都試過,還是沒"
+    },
+    {
+      "text": "됐답니다. 아니나 다를까, 장치를 켜자마자",
+      "est_sec": 6,
+      "text_en": "worked. Sure enough, the moment they switched it on,",
+      "text_ja": "駄目でした。案の定、装置を起動した途端、",
+      "text_zh_Hant": "用。果不其然,裝置一啟動,"
+    },
+    {
+      "text": "문이 더 자주 열리기 시작했습니다. 원래",
+      "est_sec": 6,
+      "text_en": "the door started opening more often. What used to happen",
+      "text_ja": "ドアはより頻繁に開き始めたのです。もともと",
+      "text_zh_Hant": "那扇門反而開得更勤了。原本"
+    },
+    {
+      "text": "이레에 한 번꼴이던 게, 사흘로 줄었고요.",
+      "est_sec": 6,
+      "text_en": "once a week dropped to once every three days.",
+      "text_ja": "七日に一度だったのが、三日に一度まで縮まりました。",
+      "text_zh_Hant": "七天一次,縮短成三天一次。"
+    },
+    {
+      "text": "「장치를 껐는데, 계기판이 아직 도는데요.」",
+      "est_sec": 6,
+      "text_en": "\"We turned it off, and the gauge is still moving.\"",
+      "text_ja": "「装置を切ったのに、計器盤がまだ動いているんですが。」",
+      "text_zh_Hant": "「裝置關了,可儀表還在動。」"
+    },
+    {
+      "text": "시그마-6 팀장이 무전으로 남긴 말입니다.",
+      "est_sec": 6,
+      "text_en": "That's what the Sigma-6 team lead reported over the radio.",
+      "text_ja": "シグマ-6の隊長が無線で残した言葉です。",
+      "text_zh_Hant": "這是西格瑪-6隊長用無線電回報的原話。"
+    },
+    {
+      "text": "격리 방법을 다시 논의하는 회의가, 그 뒤로",
+      "est_sec": 6,
+      "text_en": "Meetings on how to rework containment kept getting called",
+      "text_ja": "収容方法を練り直す会議が、その後も",
+      "text_zh_Hant": "之後,重新研擬收容方式的會議又"
+    },
+    {
+      "text": "몇 차례나 더 열렸다고 하고요.",
+      "est_sec": 4,
+      "text_en": "after that, several more times.",
+      "text_ja": "何度か開かれたそうです。",
+      "text_zh_Hant": "開了好幾次。"
+    },
+    {
+      "text": "그다음엔 D계급 한 명, D-9704를",
+      "est_sec": 5,
+      "text_en": "Next they sent in a D-Class, D-9704,",
+      "text_ja": "次にD級一名、D-9704を",
+      "text_zh_Hant": "接著他們派了一名D級人員,D-9704,"
+    },
+    {
+      "text": "들여보냈습니다. 반대편에 뭐가 있는지",
+      "est_sec": 5,
+      "text_en": "to see what was on the other side.",
+      "text_ja": "送り込みました。向こう側に何があるか",
+      "text_zh_Hant": "進去查看對面到底有什麼。"
+    },
+    {
+      "text": "확인하려고요. 칠 분 만에 돌아오긴 했는데…",
+      "est_sec": 6,
+      "text_en": "He came back in seven minutes — but",
+      "text_ja": "確認するためです。七分で戻ってきたのですが……",
+      "text_zh_Hant": "七分鐘後他回來了——只是,"
+    },
+    {
+      "text": "정확히 한 명이었어야 할 자리에 잠깐 두 명이",
+      "est_sec": 6,
+      "text_en": "for a moment, where exactly one person should have stood,",
+      "text_ja": "ちょうど一人だけのはずの場所に、一瞬二人",
+      "text_zh_Hant": "原本該只有一個人站的位置,曾經短短出現過兩個人。"
+    },
+    {
+      "text": "서 있었답니다. 얼굴도, 정비복 얼룩도 똑같았고요.",
+      "est_sec": 7,
+      "text_en": "there were two. Same face, same stains on the coveralls.",
+      "text_ja": "立っていたといいます。顔も、作業服の染みまでそっくりでした。",
+      "text_zh_Hant": "臉一樣,連工作服上的污漬都一模一樣。"
+    },
+    {
+      "text": "「저기 있는 거, 저 아닌가요?」",
+      "est_sec": 4,
+      "text_en": "\"Is that… me, over there?\"",
+      "text_ja": "「あそこにいるの……私じゃないですか?」",
+      "text_zh_Hant": "「那邊那個……是我吧?」"
+    },
+    {
+      "text": "둘 다 이렇게 물었다는데, 결국 걸어 나온 건",
+      "est_sec": 6,
+      "text_en": "Both of them reportedly asked that. In the end, only",
+      "text_ja": "二人とも同じことを尋ねたそうですが、結局歩いて戻ってきたのは",
+      "text_zh_Hant": "兩個人似乎都這麼問了對方。最後走出來的,卻只有"
+    },
+    {
+      "text": "한 명뿐이었습니다. 어느 쪽이 진짜였을까요?",
+      "est_sec": 6,
+      "text_en": "one walked out. Which one was the original?",
+      "text_ja": "一人だけでした。どちらが本物だったのかは、",
+      "text_zh_Hant": "一個。到底哪一個才是原本那個人,"
+    },
+    {
+      "text": "재단도 끝내 확인 못 했고요.",
+      "est_sec": 4,
+      "text_en": "The Foundation never confirmed.",
+      "text_ja": "財団も最後まで確認できませんでした。",
+      "text_zh_Hant": "基金會始終沒能確認。"
+    },
+    {
+      "text": "여기서부터 얘기가 커집니다. 지질·공간반이 옛",
+      "est_sec": 6,
+      "text_en": "This is where it gets bigger. The geo-spatial team went digging",
+      "text_ja": "ここから話が大きくなります。地質・空間班が古い",
+      "text_zh_Hant": "事情從這裡開始變大。地質空間小組翻查"
+    },
+    {
+      "text": "설계도를 뒤지다가, 알류샨 열도,",
+      "est_sec": 4,
+      "text_en": "through old blueprints and found the same spare door — the Aleutians,",
+      "text_ja": "設計図を調べていくと、アリューシャン列島、",
+      "text_zh_Hant": "舊設計圖時發現,阿留申群島、"
+    },
+    {
+      "text": "트리스탄다쿠냐, 포클랜드 제도까지 — 일곱",
+      "est_sec": 6,
+      "text_en": "Tristan da Cunha, the Falklands — seven",
+      "text_ja": "トリスタンダクーニャ、フォークランド諸島まで——七",
+      "text_zh_Hant": "特里斯坦達庫尼亞、福克蘭群島——一共七座"
+    },
+    {
+      "text": "곳의 옛 기상중계기지에 전부 똑같은 자리에",
+      "est_sec": 6,
+      "text_en": "old weather-relay stations, all with the same spare door",
+      "text_ja": "か所の旧気象中継基地すべてに、同じ位置に",
+      "text_zh_Hant": "舊氣象中繼站,全都在同一個位置"
+    },
+    {
+      "text": "똑같은 예비 문이 그려져 있다는 걸 확인한",
+      "est_sec": 6,
+      "text_en": "drawn in exactly the same spot.",
+      "text_ja": "同じ予備ドアが描かれていることが確認された",
+      "text_zh_Hant": "畫著同一扇備用門。"
+    },
+    {
+      "text": "겁니다. 사이트-681 하나만의 일이 아니었던 거죠.",
+      "est_sec": 7,
+      "text_en": "This was never just a Site-681 problem.",
+      "text_ja": "のです。サイト-681だけの問題ではなかったわけです。",
+      "text_zh_Hant": "這從來就不只是681號站點一個地方的問題。"
+    },
+    {
+      "text": "누렇게 바랜 원 설계도 여백엔, 이런 메모가",
+      "est_sec": 6,
+      "text_en": "In the margin of one yellowed original blueprint,",
+      "text_ja": "黄ばんだ元の設計図の余白には、こんなメモが",
+      "text_zh_Hant": "在一張泛黃的原始設計圖空白處,留著一行"
+    },
+    {
+      "text": "손글씨로 남아 있었습니다.",
+      "est_sec": 4,
+      "text_en": "someone had scrawled a note by hand.",
+      "text_ja": "手書きで残されていました。",
+      "text_zh_Hant": "手寫的字。"
+    },
+    {
+      "text": "「통신 지연, 여기서 흡수함.」",
+      "est_sec": 4,
+      "text_en": "\"Comms lag — absorbed here.\"",
+      "text_ja": "「通信遅延、ここで吸収」",
+      "text_zh_Hant": "「通訊延遲,在此吸收」"
+    },
+    {
+      "text": "그러니까 이 문들은, 애초에 통신 지연이라는",
+      "est_sec": 6,
+      "text_en": "So these doors had been built in on purpose, all along,",
+      "text_ja": "つまりこれらのドアは、そもそも通信遅延という",
+      "text_zh_Hant": "也就是說,這些門從一開始就是故意留出來的緩衝空間,"
+    },
+    {
+      "text": "골칫거리를 어딘가로 떠넘기려고 일부러 끼워",
+      "est_sec": 6,
+      "text_en": "as slack space meant to shove the headache of comms lag",
+      "text_ja": "厄介事をどこかへ押し付けるために、わざと組み込まれた",
+      "text_zh_Hant": "目的是把通訊延遲這個麻煩丟到"
+    },
+    {
+      "text": "넣은 여유 공간이었던 겁니다. 그 옛",
+      "est_sec": 5,
+      "text_en": "off somewhere else. Exactly what that old",
+      "text_ja": "余裕空間だったのです。あの当時の",
+      "text_zh_Hant": "別的地方去。至於當年那個"
+    },
+    {
+      "text": "컨소시엄이 정확히 뭘 어떻게 한 건지는…",
+      "est_sec": 6,
+      "text_en": "consortium did, or how…",
+      "text_ja": "コンソーシアムが正確に何をどうしたのかは、",
+      "text_zh_Hant": "財團到底具體做了什麼、怎麼做的,"
+    },
+    {
+      "text": "재단도 아직 다 못 밝혀냈다고 하고요.",
+      "est_sec": 5,
+      "text_en": "the Foundation still hasn't fully worked out.",
+      "text_ja": "財団もまだ完全には解明できていないそうです。",
+      "text_zh_Hant": "基金會到現在也沒完全查清楚。"
+    },
+    {
+      "text": "더 안 좋은 소식도 있었습니다. 재단이",
+      "est_sec": 5,
+      "text_en": "There was worse news. The Foundation's",
+      "text_ja": "さらに悪い知らせもありました。財団が",
+      "text_zh_Hant": "還有更糟的消息。"
+    },
+    {
+      "text": "네트워크 전체를 대상으로 정기적으로 돌리는",
+      "est_sec": 6,
+      "text_en": "own network-wide phase-sync check, run on",
+      "text_ja": "ネットワーク全体を対象に定期的に回している",
+      "text_zh_Hant": "把基金會自己定期在整個網路上執行的"
+    },
+    {
+      "text": "위상 동기화 점검 일정과, 사이트-681에서",
+      "est_sec": 6,
+      "text_en": "a regular schedule, and the times the Site-681",
+      "text_ja": "位相同期点検の日程と、サイト-681で",
+      "text_zh_Hant": "相位同步檢查排程,拿來跟681號站點"
+    },
+    {
+      "text": "문이 열린 시각을 나란히 놓아 보니… 완전히",
+      "est_sec": 6,
+      "text_en": "door had opened — laid side by side, they",
+      "text_ja": "ドアが開いた時刻を並べてみると……完全に",
+      "text_zh_Hant": "那扇門開啟的時間點對照……完全"
+    },
+    {
+      "text": "겹쳤습니다. 문을 열리게 만든 게, 다른",
+      "est_sec": 6,
+      "text_en": "matched completely. It wasn't anyone else",
+      "text_ja": "一致したのです。ドアを開かせていたのは、他でもない",
+      "text_zh_Hant": "吻合。讓那扇門打開的,不是"
+    },
+    {
+      "text": "누구도 아니라 재단의 정기 점검, 그 절차",
+      "est_sec": 6,
+      "emphasis": "재단의 정기 점검",
+      "text_en": "opening the door — it was the Foundation's own routine check,",
+      "text_ja": "財団自身の定期点検、その手続き",
+      "text_zh_Hant": "別人,正是基金會自己的例行檢查——那個程序"
+    },
+    {
+      "text": "자체였던 겁니다. 이 정도 규모 조사엔 O5",
+      "est_sec": 6,
+      "text_en": "the procedure itself. An investigation at this scale needed O5",
+      "text_ja": "そのものだったわけです。この規模の調査にはO5の",
+      "text_zh_Hant": "本身。這種規模的調查,還得另外拿到O5的"
+    },
+    {
+      "text": "승인이 따로 필요했다고 하고요.",
+      "est_sec": 4,
+      "text_en": "sign-off.",
+      "text_ja": "承認が別途必要だったそうです。",
+      "text_zh_Hant": "批准。"
+    },
+    {
+      "text": "이쯤 되면 그냥 문 닫고 나가면 될 것",
+      "est_sec": 5,
+      "text_en": "At this point you'd think you'd just shut the door and",
+      "text_ja": "ここまでくれば、もうドアを閉めて",
+      "text_zh_Hant": "事情到這一步,照理說關上門"
+    },
+    {
+      "text": "같은데, 뒤퓌는 그러질 못했습니다. 처음 봤던",
+      "est_sec": 6,
+      "text_en": "walk away, but Dupuis couldn't. He was convinced",
+      "text_ja": "立ち去ればいいはずなのに、デュピュイにはそれができませんでした。",
+      "text_zh_Hant": "走人就行了,但杜普伊做不到。他一直相信"
+    },
+    {
+      "text": "그 '십 분 늦은 자신'이, 아직 저 안에",
+      "est_sec": 6,
+      "text_en": "the \"him, ten minutes behind\" he'd first seen was still",
+      "text_ja": "最初に見たあの「十分遅れの自分」が、まだあの中に",
+      "text_zh_Hant": "自己最初看到的那個「慢十分鐘的自己」,還留在"
+    },
+    {
+      "text": "남아 있다고 믿었거든요. 구조 신호라는 거죠.",
+      "est_sec": 6,
+      "text_en": "in there. A distress signal, he called it.",
+      "text_ja": "残っていると信じていたからです。救難信号だ、というわけです。",
+      "text_zh_Hant": "裡面。他說那是求救訊號。"
+    },
+    {
+      "text": "정말 그럴까요? 격리 절차 중 하나인 단독",
+      "est_sec": 6,
+      "text_en": "Was it, though? One of the containment rules was no solo",
+      "text_ja": "本当にそうでしょうか? 単独再進入禁止という収容手続きの一つを、",
+      "text_zh_Hant": "真是這樣嗎?單獨禁止再次進入,明明是收容程序裡的一條,"
+    },
+    {
+      "text": "재진입 금지를, 시그마-6이 몇 번을 말려도",
+      "est_sec": 6,
+      "text_en": "re-entry — Sigma-6 tried talking him out of it, over and over,",
+      "text_ja": "シグマ-6が何度止めても",
+      "text_zh_Hant": "西格瑪-6再怎麼勸"
+    },
+    {
+      "text": "소용없었습니다. 「금방 확인만 하고 나오겠습니다.」",
+      "est_sec": 7,
+      "text_en": "but it didn't matter. \"I'll just check quickly and come right back.\"",
+      "text_ja": "無駄でした。「すぐ確認だけして戻ります。」",
+      "text_zh_Hant": "也沒用。「我很快確認一下就出來。」"
+    },
+    {
+      "text": "이게 그의 마지막 무전이었습니다.",
+      "est_sec": 4,
+      "text_en": "That was his last radio call.",
+      "text_ja": "これが彼の最後の無線でした。",
+      "text_zh_Hant": "這是他最後一次的無線電通話。"
+    },
+    {
+      "text": "그는 돌아오지 않았습니다. 다만 그의 정비",
+      "est_sec": 6,
+      "text_en": "He never came back. But his maintenance",
+      "text_ja": "彼は戻りませんでした。ただ、彼の整備用",
+      "text_zh_Hant": "他沒有回來。只是他那台維修用的"
+    },
+    {
+      "text": "태블릿엔, 지금도 이런 줄이 자동으로 올라온다는군요.",
+      "est_sec": 7,
+      "text_en": "tablet still auto-updates a line, even now.",
+      "text_ja": "タブレットには、今もこんな一行が自動で更新され続けているそうです。",
+      "text_zh_Hant": "平板電腦,現在還自動跳出這樣一行字。"
+    },
+    {
+      "text": "「점검 완료, 이상 없음.」",
+      "est_sec": 4,
+      "text_en": "\"Inspection complete. No issues.\"",
+      "text_ja": "「点検完了、異常なし。」",
+      "text_zh_Hant": "「檢查完畢,一切正常。」"
+    },
+    {
+      "text": "시각은 늘 십 분 사십 초 전으로 찍혀",
+      "est_sec": 5,
+      "text_en": "Always time-stamped ten minutes forty seconds",
+      "text_ja": "時刻は常に十分四十秒前の",
+      "text_zh_Hant": "時間永遠停在十分四十秒之前。"
+    },
+    {
+      "text": "있고요. 돌아오지 않은 그를 재수용하려는",
+      "est_sec": 6,
+      "text_en": "behind. Every attempt to reclaim him",
+      "text_ja": "まま。戻らなかった彼を再収容しようとした",
+      "text_zh_Hant": "想把沒回來的他重新收容,"
+    },
+    {
+      "text": "시도는, 세 번 다 실패했습니다.",
+      "est_sec": 4,
+      "emphasis": "세 번 다 실패",
+      "text_en": "has failed — three for three.",
+      "text_ja": "試みは、三度とも失敗しました。",
+      "text_zh_Hant": "試了三次,三次都失敗。"
+    },
+    {
+      "text": "라이문도한테는 갑급 기억소거제까지 들어갔는데,",
+      "est_sec": 6,
+      "text_en": "Raimundo got hit with a Class-A amnestic,",
+      "text_ja": "ライムンドには甲級記憶消去剤まで投与されましたが、",
+      "text_zh_Hant": "雷蒙多被注射了甲級記憶消除劑,"
+    },
+    {
+      "text": "열흘 만에 저절로 풀렸다고 하고요.",
+      "est_sec": 5,
+      "text_en": "and even that wore off on its own after ten days.",
+      "text_ja": "十日ほどで自然に戻ってしまったそうです。",
+      "text_zh_Hant": "結果十天後又自己恢復了。"
+    },
+    {
+      "text": "세계 오컬트 연합 쪽에서는 예전에 이",
+      "est_sec": 5,
+      "text_en": "The Global Occult Coalition apparently once demanded",
+      "text_ja": "世界オカルト連合からは以前、この",
+      "text_zh_Hant": "世界超自然聯合會之前似乎提出過,要求把這"
+    },
+    {
+      "text": "네트워크를 통째로 폭파해야 한다는 요구를",
+      "est_sec": 6,
+      "text_en": "the whole network be blown up",
+      "text_ja": "ネットワークを丸ごと爆破すべきだという要求が",
+      "text_zh_Hant": "整個網路徹底炸毀,"
+    },
+    {
+      "text": "넣어온 적이 있다는데, 재단은 아직 답을",
+      "est_sec": 6,
+      "text_en": "— the Foundation still hasn't given an",
+      "text_ja": "来たことがあるそうですが、財団はまだ答えを",
+      "text_zh_Hant": "基金會至今還沒給出"
+    },
+    {
+      "text": "미루고 있습니다. 사이트-142에서 있었던",
+      "est_sec": 6,
+      "text_en": "answer. People have started saying it resembles something",
+      "text_ja": "保留しています。サイト-142であったことと",
+      "text_zh_Hant": "答覆。也有人說,這件事跟142號站點發生過的事"
+    },
+    {
+      "text": "일하고 닮았다는 얘기도 나오는 모양이고요.",
+      "est_sec": 6,
+      "text_en": "that happened at Site-142.",
+      "text_ja": "似ている、という話も出ているようです。",
+      "text_zh_Hant": "很像。"
+    },
+    {
+      "text": "지금 그 문은, 봉쇄 테이프만 두른 채 남아",
+      "est_sec": 6,
+      "text_en": "Right now that door just sits there, wrapped",
+      "text_ja": "今もあのドアは、封鎖テープだけを巻かれたまま",
+      "text_zh_Hant": "現在那扇門,還纏著封鎖膠帶"
+    },
+    {
+      "text": "있습니다. 그 틈으로 여전히, 불빛이 새어",
+      "est_sec": 6,
+      "text_en": "in containment tape. Light is still said to leak",
+      "text_ja": "残っています。その隙間から今も、明かりが漏れている",
+      "text_zh_Hant": "留在原地。聽說縫隙裡,至今仍透著"
+    },
+    {
+      "text": "나온다고 하네요.",
+      "est_sec": 2,
+      "text_en": "through the gap.",
+      "text_ja": "そうです。",
+      "text_zh_Hant": "光。"
+    },
+    {
+      "text": "왜 하필 뒤퓌였는지는, 저도 설명을 못 하겠습니다.",
+      "est_sec": 7,
+      "text_en": "Why it had to be Dupuis — that, I honestly can't explain.",
+      "text_ja": "なぜよりによってデュピュイだったのか——それは私にも、説明がつきません。",
+      "text_zh_Hant": "為什麼偏偏是杜普伊——這一點,我也說不清楚。"
+    }
+  ],
+  "scenes": [
+    {
+      "prompt": "SUBJECT: steel hatch ajar, thin mist curling out. CONTEXT: dim underground corridor, bare pipes. COMPOSITION: close head-on shot on the door gap. LIGHT: single flashlight beam. MATERIAL: scratched steel, condensation, rubber seal. ATMOSPHERE: cold mist drifting low. PALETTE: near-black corridor, pale mist, red accent on door seam. RENDER: bold linework, flat cel shading, sharp edges, high contrast. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: two identical wall clocks, hands ten minutes apart. CONTEXT: plain break-room wall. COMPOSITION: tight symmetrical shot on both faces. LIGHT: single overhead bulb. MATERIAL: scratched glass, brass hands. ATMOSPHERE: dust motes in still air. PALETTE: near-black wall, warm bulb glow, red accent on slower hand. RENDER: bold linework, flat cel shading, sharp edges, high contrast. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: ceramic mug, steam rising untouched. CONTEXT: small empty office, chair pushed back. COMPOSITION: low close shot on mug and steam. LIGHT: single desk lamp. MATERIAL: glazed ceramic, steel desk edge. ATMOSPHERE: steam curling in cold air. PALETTE: near-black room, warm glow, red accent in the steam. RENDER: bold linework, flat cel shading, sharp edges, high contrast. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: technician's face, staring back with unease. CONTEXT: narrow corridor doorway. COMPOSITION: close head-and-shoulders, eye-level. LIGHT: single ceiling light. MATERIAL: worn coveralls, scuffed helmet. ATMOSPHERE: held breath, faint cold fog. PALETTE: near-black corridor, cool light, red accent warning strip. RENDER: bold linework, flat cel shading, sharp edges, high contrast. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: reality-anchor device bolted to wall, gauge needle trembling. CONTEXT: narrow service corridor, cables overhead. COMPOSITION: low-angle close shot on the gauge. LIGHT: single clipped work lamp. MATERIAL: riveted grey casing, glass gauge. ATMOSPHERE: faint hum, thin dust haze. PALETTE: near-black corridor, cool glow, red accent on the needle. RENDER: bold linework, flat cel shading, sharp edges, high contrast. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: two coverall-clad figures face to face, identical stance. CONTEXT: cramped corridor, same as seen before. COMPOSITION: symmetrical two-figure shot, backlit. LIGHT: flat overhead corridor light. MATERIAL: matching worn coveralls, dull boots. ATMOSPHERE: unnervingly still air. PALETTE: near-black corridor, flat light, red accent on both collars. RENDER: bold linework, flat cel shading, sharp edges, high contrast. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: old blueprint sheets spread open, matching door symbol circled. CONTEXT: cluttered records room, map tubes leaning. COMPOSITION: top-down close shot over the sheets. LIGHT: single hanging drafting lamp. MATERIAL: yellowed linen paper, faded ink lines. ATMOSPHERE: dust settled in paper creases. PALETTE: near-black room, warm glow, red accent circling the symbol. RENDER: bold linework, flat cel shading, sharp edges, high contrast. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: handwritten note in faded ink beside a small door symbol. CONTEXT: edge of a drafting table, blurred behind. COMPOSITION: macro close-up on the handwriting. LIGHT: single raking desk lamp. MATERIAL: brittle linen paper, iron-gall ink. ATMOSPHERE: visible paper grain and foxing. PALETTE: near-black background, warm glow, red accent underline. RENDER: bold linework, flat cel shading, sharp edges, high contrast. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: wall calendar overlaid with a printed schedule, matching red-circled dates. CONTEXT: cramped office wall, pinboard edges. COMPOSITION: close frontal shot on the dates. LIGHT: single ceiling strip light. MATERIAL: worn paper, laminated sheet. ATMOSPHERE: faint glare off laminate. PALETTE: near-black wall, cool light, red accent on matching dates. RENDER: bold linework, flat cel shading, sharp edges, high contrast. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: lone figure's back stepping through an open steel hatch. CONTEXT: same underground corridor, hatch in foreground. COMPOSITION: wide low shot from behind, hatch dominant. LIGHT: light spilling from inside the hatch. MATERIAL: worn coveralls, steel hatch frame. ATMOSPHERE: mist curling around boots. PALETTE: near-black corridor, deep red glow ahead, red accent. RENDER: bold linework, flat cel shading, sharp edges, high contrast. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: cracked tablet screen on a shelf, one glowing status line. CONTEXT: abandoned shelf, coiled cables beside it. COMPOSITION: close three-quarter shot on the screen. LIGHT: the screen's own glow only. MATERIAL: scratched plastic casing, dusty shelf. ATMOSPHERE: undisturbed dust around the tablet. PALETTE: near-black shelf, red-tinted glow, red accent status line. RENDER: bold linework, flat cel shading, sharp edges, high contrast. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: steel hatch wrapped in containment tape, a thin light seam leaking. CONTEXT: quiet sealed corridor, tape ends fluttering. COMPOSITION: centered close shot on door and seam. LIGHT: the leaking light as the only source. MATERIAL: scuffed steel door, frayed tape. ATMOSPHERE: faint draft stirring the tape. PALETTE: near-black corridor, thin red light seam, red accent. RENDER: bold linework, flat cel shading, sharp edges, high contrast. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    }
+  ],
+  "background": {
+    "id": "scp-9704_bg",
+    "kind": "image",
+    "reuse": false,
+    "aspect": "16:9",
+    "resolution": "1920x1080",
+    "prompt": "SUBJECT: steel hatch ajar, deep red light spilling through, over sixty percent of frame. CONTEXT: dim underground corridor, bare pipes, chalk tally marks. COMPOSITION: low-angle head-on hero shot on the open hatch. LIGHT: leaking light as dominant source, cold rim from the side. MATERIAL: scratched steel, condensation, worn concrete. ATMOSPHERE: thin mist curling low. PALETTE: near-black corridor, red-orange glow, cool rim light. RENDER: bold linework, flat cel shading, sharp edges, high contrast. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere",
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion"
+  },
+  "thumbnail": {
+    "hook": "A steel maintenance hatch bursting open with deep red-tinted light, filling most of the frame, two faint identical silhouettes barely visible in the glow behind it, dark corridor pipes framing the edges. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere",
+    "hook_alt": [
+      "Extreme close-up on two identical wall clocks side by side, one hand frozen minutes behind the other, cold light catching the brass hands, dark break-room wall blurred behind. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere",
+      "A lone coverall-clad figure's back stepping into a glowing red hatch, headlamp beam cutting through mist, dark corridor walls closing in around the frame. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    ],
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion",
+    "text_safe_area": "right third",
+    "resolution": "1280x720"
+  },
+  "platforms": {
+    "youtube": {
+      "title": "케르겔렌 기상중계기지의 여분의 문이, 뒤퓌 기술관의 시간을 십 분 사십 초 늦춰놓았다 [SCP-9704]",
+      "title_form": "사건형",
+      "thumbnail_text": "덤으로 있는 문",
+      "thumbnail_quote": "- 방금 전엔… 여기 안 계셨잖아요.",
+      "tags": [
+        "SCP",
+        "SCP재단",
+        "SCP-682",
+        "괴담",
+        "무서운이야기",
+        "미스터리"
+      ],
+      "chapters": [
+        "00:00 아직 식지 않은 커피",
+        "01:34 도면에 없는 문",
+        "03:03 기동특무부대 시그마-6 도착",
+        "04:32 D계급 투입",
+        "05:21 일곱 곳의 예비 문",
+        "06:38 재단 자신의 정기 점검",
+        "08:09 뒤퓌의 마지막 무전"
+      ],
+      "description": "남인도양 케르겔렌 제도 기상중계기지 지하에서 발견된, 도면에 없는 문 이야기입니다. 그 문을 열면 시계가 십 분 사십 초 느리게 가는 또 다른 본관이 나타납니다.\n\n※ SCP 재단 세계관 기반 오리지널 창작 · 허구의 이야기입니다\n※ CC BY-SA 3.0 · 원작: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP재단 #괴담 #무서운이야기 #미스터리",
+      "localizations": {
+        "en": {
+          "title": "A Spare Door at a Remote Weather Station Rewound One Technician's Clock by Ten Minutes [SCP-9704]",
+          "description": "A spare door with no blueprint, found in the basement of a remote weather-relay station on the Kerguelen Islands. Open it, and you find a near-identical version of the building — except the clocks run exactly ten minutes and forty seconds behind.\n\nThis is original fan fiction set in the SCP Foundation universe, entirely fictional.\nCC BY-SA 3.0 · Based on the SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCPFoundation #Horror #Mystery"
+        },
+        "ja": {
+          "title": "ケルゲレン諸島の気象中継基地、余分な扉が技術官の時計を十分四十秒巻き戻した話 [SCP-9704]",
+          "description": "南インド洋、フランス領ケルゲレン諸島の気象中継基地地下で見つかった、図面にない扉の話です。開けると、時計だけが十分四十秒遅れているだけの、ほぼ同じ本館が現れます。\n\n※ SCP財団世界観に基づくオリジナル創作・フィクションです\n※ CC BY-SA 3.0 · 原作: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP財団 #怖い話 #ミステリー"
+        },
+        "zh-Hant": {
+          "title": "凱爾蓋朗氣象中繼站,一扇多出來的門把技術員的時鐘倒轉了十分四十秒 [SCP-9704]",
+          "description": "在南印度洋法屬凱爾蓋朗群島的氣象中繼站地下室,發現了一扇藍圖上沒有的門。打開它,會看到幾乎一模一樣的本館——只是時鐘永遠慢了十分四十秒。\n\n※ 基於SCP基金會世界觀之原創創作,純屬虛構\n※ CC BY-SA 3.0 · 原作:SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP基金會 #怪談 #懸疑"
+        }
+      },
+      "pinned_comment": "혹시 여러분도, 방금까지 옆에 있던 사람이 나를 처음 보는 사람처럼 쳐다본 적 있으신가요?",
+      "playlist": "SCP 아카이브 (전편 듣기)"
+    }
+  },
+  "credit": "SCP 재단 세계관 기반 오리지널 창작 · 허구 · CC BY-SA 3.0",
+  "content_rating": "teen",
+  "notes": "SCP 아카이브 · 16:9 롱폼 · 장면 전환 배경 + 자막 번인 · 단일 내레이터 · 완결형."
+}
