@@ -1,0 +1,82 @@
+{
+  "date": "2026-09-19",
+  "topic": "politics",
+  "privacy": "public",
+  "topic_keyword": "조작기소특검법 공소취소 조항",
+  "headline": "이재명 대통령, 조작기소특검법 공소취소 조항 삭제 요청",
+  "hook_title": "특검법서 대통령이 조항 빼달라",
+  "accent": "#8FB0C9",
+  "thumbnail_hook": "A dim, empty National Assembly plenary chamber at dusk, a wooden gavel resting on stacked legal documents on a marble podium, a single microphone stand, dramatic blue-grey lighting, deep shadows, cinematic, vertical 9:16 composition, no people, no text",
+  "thumbnail_text": "이 조항, 왜 빼달랬나",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "기자회견",
+      "ghost": "POLITICS",
+      "lines": ["특검법서", "대통령이", "조항 빼달라"],
+      "highlight": "빼달라",
+      "brand": "일상공감뉴스 · 정치",
+      "narration": "어제저녁 기자회견 도중, 대통령이 국회에 이례적인 요청을 했습니다."
+    },
+    {
+      "type": "quote",
+      "text": "불필요하게 공소취소 논란이 발생하지 않게 조치해주길 요청드린다",
+      "attr": "이재명 대통령",
+      "brand": "일상공감뉴스 · 정치",
+      "narration": "이재명 대통령은 조작기소 특검법에서 공소취소와 관련된 조항을 빼달라고 요청했습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "엇갈린 반응",
+      "points": [
+        "이재명 대통령 — <b>공소취소 조항</b> 삭제 요청",
+        "한동훈 의원 — “실질은 안 바뀐다”며 반박"
+      ],
+      "brand": "일상공감뉴스 · 정치",
+      "narration": "대통령 측 설명에도 한동훈 의원 등은 실질적으로 달라지는 게 없다고 맞섰습니다."
+    },
+    {
+      "type": "quote",
+      "text": "저는 연임할 생각이 전혀 없습니다",
+      "attr": "이재명 대통령",
+      "brand": "일상공감뉴스 · 정치",
+      "narration": "같은 자리에서 대통령은 연임할 생각이 전혀 없다고도 못박았습니다."
+    },
+    {
+      "type": "statement",
+      "text": "법 앞의 형평성, 어떻게 보십니까?",
+      "highlight": "형평성",
+      "brand": "일상공감뉴스 · 정치",
+      "narration": "법이 예외 없이 적용돼야 한다는 원칙은 결국 우리 모두의 문제이기도 합니다."
+    }
+  ],
+  "sources": ["경향신문", "헤럴드경제", "뉴데일리"],
+  "credit": "출처 경향신문·헤럴드경제·뉴데일리 등",
+  "platforms": {
+    "youtube": {
+      "title": "특검법서 대통령이 조항 빼달라 #shorts",
+      "description": "이재명 대통령, 조작기소특검법 공소취소 조항 삭제 요청\n출처 경향신문·헤럴드경제·뉴데일리 등\n\n※ 사실관계는 보도 시점 기준이며, 수사·재판 중인 사안은 확정된 내용이 아닙니다.\n\n#이재명 #특검법 #국회 #정치 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "South Korea's President Wants This Clause Cut From a Bill",
+          "description": "President Lee Jae-myung asked South Korea's National Assembly to remove the indictment-cancellation clause from a special counsel bill, while also ruling out seeking a third term.\n\n※ Facts are current as of the report; matters under investigation or trial are not confirmed.\n\n#shorts #KoreaPolitics #NationalAssembly"
+        },
+        "ja": {
+          "title": "韓国大統領、この法案条項を削除してほしいと要請",
+          "description": "イ・ジェミョン大統領は国会に対し、特別検察官法案の中の公訴取消に関する条項を削除するよう求めました。同じ席で、続投の意思は全くないとも明言しました。\n\n※事実関係は報道時点のものであり、捜査・裁判中の事案は確定した内容ではありません。\n\n#shorts #韓国政治 #国会"
+        },
+        "zh-Hant": {
+          "title": "南韓總統要求刪除這項法案條款",
+          "description": "南韓總統李在明要求國會刪除特別檢察官法案中有關撤銷起訴的條款,同時明確表示完全沒有連任的打算。\n\n※事實依報導當時為準,偵查或審判中的案件尚未確定。\n\n#shorts #韓國政治 #國會"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "특검법서 대통령이 조항 빼달라\n출처 경향신문·헤럴드경제·뉴데일리 등\n\n#특검법 #정치 #국회 #뉴스 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "특검법서 대통령이 조항 빼달라\n출처 경향신문·헤럴드경제·뉴데일리 등"
+    }
+  },
+  "notes": "모션그래픽 5장면 · 단일 내레이터 · 배경음 없음."
+}
