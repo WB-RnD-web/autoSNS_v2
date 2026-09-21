@@ -1,0 +1,108 @@
+{
+  "date": "2026-09-21",
+  "topic": "stock_us",
+  "privacy": "public",
+  "topic_keyword": "국채금리 5%",
+  "headline": "美 국채금리 5%대, 나스닥선물은 1%대 강세",
+  "hook_title": "금리 5%, 그런데 선물은 웃었다",
+  "accent": "#D97757",
+  "loop_line": "그 금리, 오늘 밤에도 그대로일지 내일 아침에 확인해 드립니다.",
+  "thumbnail_hook": "wide night skyline over Wall Street, glowing ticker board in the dark, financial district at night, cinematic, no text in image",
+  "thumbnail_text": "금리 5%, 선물은 상승",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "국채금리 5%",
+      "ghost": "YIELD",
+      "lines": [
+        "국채금리가",
+        "3년 만에",
+        "5%를 뚫었다"
+      ],
+      "highlight": "5%를",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "뉴욕 증시가 열리자마자 국채금리가 3년 만에 최고로 올랐습니다."
+    },
+    {
+      "type": "trend",
+      "label": "나스닥",
+      "from": 0,
+      "to": 0.39,
+      "suffix": "%",
+      "dir": "up",
+      "sub": "필라델피아반도체 <b>+2.8%</b>",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "금요일 나스닥은 반도체 힘으로 이 점 팔 퍼센트 뛰었습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "왜 그런가",
+      "points": [
+        "중동 전쟁이 <b>유가 110달러</b>대 지속",
+        "연준 <b>0.25%p 인상</b>, 3년만에 첫 인상",
+        "엔비디아·브로드컴 등 <b>반도체 강세</b>"
+      ],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "중동 전쟁이 유가를 110달러로 밀었고 연준은 0.25%p 올렸습니다."
+    },
+    {
+      "type": "statement",
+      "text": "다우는 내렸는데 선물은 벌써 1% 올랐다",
+      "highlight": "1%",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "금리가 다시 뛰지 않아야 지금 이 일 퍼센트 상승이 이어집니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 밤 지켜볼 것",
+      "points": [
+        "환율 <b>1,380원</b> 아래면 계좌엔 이득",
+        "마이크론 실적, <b>수요일 발표</b>",
+        "목요일 밤 <b>신규 실업수당</b> 청구건수"
+      ],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "환율까지 천삼백팔십원 밑으로 가면 서학개미 계좌는 더 웃습니다."
+    },
+    {
+      "type": "statement",
+      "text": "지금 올라타실 건가요, 지켜보실 건가요?",
+      "highlight": "올라타실",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "오늘 밤 올라탈지 지켜볼지, 판단은 여러분 몫입니다."
+    }
+  ],
+  "sources": [
+    "뉴스핌",
+    "이투데이",
+    "CBC뉴스",
+    "파이낸셜뉴스"
+  ],
+  "credit": "출처 뉴스핌·이투데이·CBC뉴스 등 · 투자 조언이 아닙니다",
+  "platforms": {
+    "youtube": {
+      "title": "금리 5%, 그런데 선물은 웃었다 #shorts",
+      "description": "美 국채금리 5%대, 나스닥선물은 1%대 강세\n출처 뉴스핌·이투데이·CBC뉴스 등\n※ 투자 조언이 아닙니다\n\n#미국주식 #나스닥 #뉴욕증시 #서학개미 #국채금리 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "Bond Yields Hit 5%. Futures Are Rallying Anyway.",
+          "description": "The 10-year Treasury yield broke above 5% for the first time in 3 years, yet Nasdaq futures are up over 1% tonight.\nSources: Newspim, Etoday, CBC News, and more\n※ Not investment advice\n\n#USstocks #Nasdaq #WallStreet #shorts"
+        },
+        "ja": {
+          "title": "金利5%突破、それでも先物は上昇中です",
+          "description": "米10年債利回りが3年ぶりに5%を突破しましたが、ナスダック先物は今夜1%超上昇しています。\n出典:Newspim、Etodayほか\n※投資助言ではありません\n\n#米国株 #ナスダック #ウォール街 #shorts"
+        },
+        "zh-Hant": {
+          "title": "殖利率衝破5%，期貨卻逆勢上漲",
+          "description": "美國10年期公債殖利率3年來首度突破5%，那斯達克期貨今晚卻上漲逾1%。\n資料來源：Newspim、Etoday等\n※非投資建議\n\n#美股 #那斯達克 #華爾街 #shorts"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "금리 5%, 그런데 선물은 웃었다\n출처 뉴스핌·이투데이·CBC뉴스 등\n※ 투자 조언이 아닙니다\n\n#미국주식 #나스닥 #뉴욕증시 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "금리 5%, 그런데 선물은 웃었다\n출처 뉴스핌·이투데이·CBC뉴스 등"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음 · SESSION=US_PM(미국장 개장 전후 프리뷰). 서머타임(EDT) 적용, 22:30 KST는 개장 직후."
+}
