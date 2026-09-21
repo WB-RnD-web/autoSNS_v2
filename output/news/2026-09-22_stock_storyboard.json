@@ -1,0 +1,99 @@
+{
+  "date": "2026-09-22",
+  "topic": "stock",
+  "privacy": "public",
+  "topic_keyword": "반도체 랠리·코스피 7000",
+  "headline": "코스피 7,000 회복, 반도체가 주도했다",
+  "hook_title": "코스피 7,000, 7거래일 만",
+  "accent": "#2E7D5B",
+  "loop_line": "코스피 7,000을 지켰는지, 내일 다시 확인합니다.",
+  "thumbnail_hook": "Extreme macro shot of glowing green candlestick chart bars on a dark trading screen, a faint semiconductor circuit-board pattern reflected in the background bokeh, pre-dawn blue-orange gradient light, empty desk, no people, no text in image, cinematic financial photography, vertical composition",
+  "thumbnail_text": "코스피 7,000 회복",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "반도체 랠리",
+      "ghost": "CHIP",
+      "lines": ["코스피가", "7거래일 만에", "웃었다"],
+      "highlight": "7거래일",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "밤사이 들썩인 반도체, 코스피도 일 점 육오 퍼센트 올랐습니다."
+    },
+    {
+      "type": "trend",
+      "label": "미국 반도체지수",
+      "from": 0,
+      "to": 4.29,
+      "suffix": "%",
+      "dir": "up",
+      "sub": "인텔 <b>+12%</b>·메타 <b>+11%</b>",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "미국 반도체지수가 사 점 이구 퍼센트 뛰었습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "반도체가 왜 뛰었나",
+      "points": [
+        "메타 <b>뮤즈</b> 흥행에 반도체 기대",
+        "반도체 수출 <b>259%</b> 역대 최대",
+        "기관 <b>1.5조</b> 사고 개인 <b>3조</b> 팔았다"
+      ],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "국내 반도체 수출도 이백오십구 퍼센트 늘며 최대를 썼습니다."
+    },
+    {
+      "type": "statement",
+      "text": "7,000 지키느냐가 오늘의 갈림길",
+      "highlight": "7,000",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "이십사일 미중 정상회담 결과가 흐름을 가를 수 있습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘의 관전포인트",
+      "points": [
+        "24일 미중회담, 수출통제 변수",
+        "국민연금 대주주지분, 반도체 <b>55%</b>",
+        "환율 <b>1,380원대</b>, 하락 이어지나"
+      ],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "국민연금 대주주지분도 반도체가 오십오 퍼센트나 됩니다."
+    },
+    {
+      "type": "statement",
+      "text": "반도체 랠리, 오늘도 이어질까요",
+      "highlight": "반도체 랠리",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "코스피가 칠천 포인트를 지킬지, 판단은 여러분 몫입니다."
+    }
+  ],
+  "sources": ["파이낸셜뉴스", "서울신문", "뉴스핌", "인더스트리뉴스"],
+  "credit": "출처 파이낸셜뉴스·서울신문·뉴스핌 등 · 투자 조언이 아닙니다",
+  "platforms": {
+    "youtube": {
+      "title": "코스피 7,000, 7거래일 만 #shorts",
+      "description": "코스피 7,000 회복, 반도체가 주도했다\n출처 파이낸셜뉴스·서울신문·뉴스핌 등\n※ 투자 조언이 아닙니다\n\n#코스피 #주식 #증시 #반도체 #개장전 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "Korea's KOSPI Tops 7,000 as Chip Stocks Surge",
+          "description": "Samsung Electronics and SK Hynix led a chip-fueled rally past the 7,000 mark, echoing an overnight Intel-Meta surge on Wall Street. This is not investment advice. #shorts"
+        },
+        "ja": {
+          "title": "コスピ7000突破、半導体が主導しました",
+          "description": "サムスン電子とSKハイニックスが上昇を主導し、コスピが7000を回復しました。夜間の米インテル・メタ急伸も追い風になりました。投資助言ではありません。 #shorts"
+        },
+        "zh-Hant": {
+          "title": "韓股重返7000點,半導體領漲",
+          "description": "三星電子與SK海力士領漲,韓國KOSPI指數重返7000點,隔夜美股英特爾與Meta同步走強帶來助力。本內容非投資建議。 #shorts"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "코스피 7,000, 7거래일 만\n출처 파이낸셜뉴스·서울신문·뉴스핌 등\n※ 투자 조언이 아닙니다\n\n#코스피 #주식 #증시 #반도체 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "코스피 7,000, 7거래일 만\n출처 파이낸셜뉴스·서울신문·뉴스핌 등"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음 · SESSION=KR_AM(개장 전 프리뷰). R3=국민연금 반도체 비중(⑤), R8=기관 매수/개인 매도 대조(③)."
+}
