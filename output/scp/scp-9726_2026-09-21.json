@@ -1,0 +1,1091 @@
+{
+  "date": "2026-09-21",
+  "iso_week": "2026-W39",
+  "topic": "scp",
+  "privacy": "public",
+  "origin": "original",
+  "origin_note": "day%3==0 규칙상 canon이어야 했으나 scp-wiki.wikidot.com(EGRESS_BLOCKED), scpko.wiki(DNS 실패 ENOTFOUND), namu.wiki(EGRESS_BLOCKED)로 세 경로 모두 접근 불가 — 오리지널로 대체",
+  "source_url": "",
+  "story_id": "scp-9726",
+  "scp_number": "SCP-9726",
+  "object_class": "Safe",
+  "codename": "되짚는 손",
+  "number_check": {
+    "checked_at": "2026-09-21",
+    "http_code": "unverified"
+  },
+  "theme": "언어·수학·개념",
+  "nature": "인지·밈",
+  "twist_type": "관측자",
+  "logline": "프랑스 알프스 기슭 옛 통신 중계소 지하에서 발견된 놋쇠 전신 사운더 이야기입니다. 전선은 오십 년 전에 끊겼는데, 장치는 가장 오래 곁에 있던 사람의 맥박을 그대로 부호로 되돌려줍니다.",
+  "structure": "금기형",
+  "opening_move": "사람 한 명",
+  "opening_note": "",
+  "closing_move": "숫자 하나",
+  "number_reveal": "앞",
+  "ending_mode": "없음",
+  "fault": "개체",
+  "hook_line": "카티야 홀름 박사가 마지막으로 요청한 건, 딱 삼십 분이었습니다.",
+  "procedures": [
+    "받은 부호를 그대로 따라 두드리지 않는다",
+    "낯선 부호가 찍히면, 그날 안에 반드시 태운다",
+    "한 사람이, 서른 분 넘게 혼자 듣지 않는다"
+  ],
+  "character": {
+    "name": "홀름",
+    "role": "박사 · 사이트-227 신호분석팀장",
+    "flaw": "자기 가설을 못 놓는다"
+  },
+  "chain": [
+    {
+      "when": "개보수 공사 중",
+      "event": "배관공 뒤부아가 벽 너머 소리를 신고해 놋쇠 사운더를 발견했다",
+      "because": "",
+      "shot": "벽을 뜯어낸 자리에서 드러난 놋쇠 사운더 클로즈업."
+    },
+    {
+      "when": "발견 직후 조사",
+      "event": "재단이 사운더로 이어지던 전선이 오십 년 전에 끊겨 있었다는 걸 확인했다",
+      "because": "장치가 왜 계속 작동하는지 확인해야 했기 때문에",
+      "shot": "끊긴 채 땅에 묻힌 낡은 전선 단면."
+    },
+    {
+      "when": "격리 절차 수립 이후",
+      "event": "신참 D계급이 받은 부호를 그대로 따라 두드려 첫 번째 규칙을 어겼다",
+      "because": "규칙이 왜 필요한지 아무도 설명해주지 않았기 때문에",
+      "shot": "장치 앞에 쪼그려 앉아 따라 두드리는 손."
+    },
+    {
+      "when": "그날 밤",
+      "event": "사이트 반대편 스피커 세 대가 동시에 같은 부호를 울렸다",
+      "because": "규칙을 어긴 신호가 다른 장비로 옮겨붙었기 때문에",
+      "shot": "아무도 없는 통신실에서 저절로 울리는 스피커 세 대."
+    },
+    {
+      "when": "확산 직후",
+      "event": "재단이 사운더를 방음실로 옮기고 배선을 걷어냈지만 당직자 헤드폰엔 여전히 부호가 들렸다",
+      "because": "소리와 전기를 모두 차단하면 막을 수 있다고 봤기 때문에",
+      "shot": "방음실 안, 헤드폰을 쓰고 굳은 얼굴로 앉은 당직자."
+    },
+    {
+      "when": "재단 대응 실패 이후",
+      "event": "기동특무부대 제타-22가 투입돼 차폐와 밀봉을 시도했지만 전부 실패했다",
+      "because": "물리적 차단으로 매체를 특정하려 했기 때문에",
+      "shot": "밀봉 자재로 뒤덮인 사운더와 계기판."
+    },
+    {
+      "when": "실패 보고 이후",
+      "event": "신호분석팀이 부호 타이밍이 그 자리에 가장 오래 있던 사람의 맥박과 겹친다는 걸 확인했다",
+      "because": "차단이 실패한 원인을 몸 쪽에서 찾기 시작했기 때문에",
+      "shot": "맥박 그래프와 부호 타이밍이 나란히 겹친 모니터 화면."
+    },
+    {
+      "when": "가설이 나온 뒤",
+      "event": "홀름 박사가 장치는 사람의 몸을 부호로 되돌려줄 뿐이라는 가설에 매달렸다",
+      "because": "열아홉 번의 일치가 우연이라기엔 너무 정확했기 때문에",
+      "shot": "화이트보드에 '거울'이라고 적어놓고 서 있는 홀름 박사."
+    },
+    {
+      "when": "가설을 증명하려던 밤",
+      "event": "홀름 박사가 규칙을 스스로 어기고 서른 분을 채워 혼자 들었다",
+      "because": "자기가 만든 규칙이니 자기가 제일 잘 안다고 믿었기 때문에",
+      "shot": "격리실 안, 홀로 앉아 헤드폰을 쓴 홀름 박사의 뒷모습."
+    },
+    {
+      "when": "서른 분째",
+      "event": "사운더가 그녀 자신의 이름을 부호로 찍었고 곧 그녀의 목소리가 마이크에 잡혔다",
+      "because": "장치가 가장 오래 있던 사람인 그녀의 몸을 그대로 되돌렸기 때문에",
+      "shot": "빈 의자와 홀로 놓인 사운더, 켜진 채인 마이크."
+    },
+    {
+      "when": "문을 열었을 때",
+      "event": "격리실 안엔 아무도 없었고 그녀의 이름은 인사 기록에서 지워졌다",
+      "because": "재수용 대상을 특정할 수 없었기 때문에",
+      "shot": "텅 빈 격리실 문틈으로 보이는 사운더."
+    },
+    {
+      "when": "지금",
+      "event": "마셜, 카터 & 다크의 매입 제안을 거절한 채 재단은 세 번째 규칙에 '예외 없음'이라는 문구만 덧붙였다",
+      "because": "재단도 아직 작동 원리를 모르기 때문에",
+      "shot": "세 번째 규칙 옆에 덧붙은 손글씨 문구 클로즈업."
+    }
+  ],
+  "retention_beats": [
+    "혼돈의 반란이나 다른 GoI가 이미 이 '되짚는 손'과 닮은 장치를 갖고 있는지",
+    "다른 옛 통신 중계소 지하에도 비슷한 사운더가 묻혀 있는지",
+    "SCP-9762의 '관측자가 먼저 움직인' 패턴과 이 사건이 정말 같은 계열인지"
+  ],
+  "cameos": [
+    {
+      "number": "SCP-999",
+      "how": "등급 세이프. '간지럼 괴물'로 알려진, 사람을 즐겁게 하는 개체."
+    }
+  ],
+  "twist_summary": "관측자의 반전 — 재단은 처음에 사운더가 외부 신호를 수신한다고 봤지만, 부호가 나타나는 타이밍이 그 자리에 가장 오래 있던 사람의 맥박과 정확히 겹친다는 걸 확인하며 실은 장치가 사람의 몸을 그대로 부호로 바꿔 되돌려줄 뿐이라는 게 드러난다. 신호를 보낸 건 외부가 아니라 언제나 듣고 있던 쪽이었다는 반전. 홀름 박사가 서른 분 제한 규칙을 스스로 어기고 혼자 다 채워 듣자, 사운더는 그녀 자신의 이름을 찍었고 곧 그녀의 목소리가 마이크에 잡혔다. 문을 열었을 때 격리실 안엔 아무도 없었다.",
+  "narration_full": "카티야 홀름 박사가 마지막으로 요청한 건, 딱 삼십 분이었습니다.\n\n그 삼십 분을 넘기지 말라는 규칙은… 다른 누구도 아니고 그녀 자신이 만든 거였죠.\n\n프랑스 알프스 기슭, 옛 군용 통신 중계소. 사이트-227은 그 지하 개보수 공사 중에 시작됐습니다. 배관공 뒤부아가 벽 너머에서 두드리는 소리를 들었다고 신고했고, 뜯어보니 놋쇠 사운더 하나가 나왔죠. 전신 부호를 소리로 바꿔주는 옛날 수신기였습니다. 지하실은 서늘했고, 오래된 놋쇠 특유의 쌉싸름한 냄새가 났다고 하더군요.\n\n문제는 — 그 장치로 이어지던 전선이, 이미 오십 년 전에 끊겨 땅에 묻혀 있었다는 겁니다.\n\n연결된 곳이 없는데도, 장치는 두드렸다는 거죠. 저도 이 대목까진… 그러려니 했어요. 낡은 기계엔 원래 이상한 버릇이 하나쯤 있으니까요.\n\n재단은 처음엔 대수롭지 않게 봤습니다. 격리 등급이 세이프였으니까요. 사이트 지하 격리실로 옮기고, 절차 세 가지만 붙이면 끝날 일이라고 봤던 겁니다.\n\n「받은 부호를 그대로 따라 두드리지 않는다.」\n「낯선 부호가 찍히면, 그날 안에 반드시 태운다.」\n「한 사람이, 서른 분 넘게 혼자 듣지 않는다.」\n\n간단해 보였습니다. 지키기 어려운 규칙도 아니었고요. 안 그래요?\n\n복도 끝 다른 격리동엔, 999도 있다고 하더군요. 사람들 사이에 '간지럼 괴물'로 불리는, 그 명랑한 개체 말입니다. 그쪽은 사람을 웃게 만든다는데 — 되짚는 손은, 정반대였습니다. 왜 하필 이쪽만 이랬을까요?\n\n석 달째 되던 날, 신참 D계급 하나가 첫 번째 규칙을 어겼습니다. 심심해서, 라고 그는 나중에 진술했죠. 「그냥 궁금했습니다… 똑같이 하면 뭐가 오나.」\n\n그날 밤, 사이트 반대편 통신실 스피커 세 대가 동시에 같은 부호를 울렸습니다. 아무도 손댄 적 없는 스피커였는데 말이죠.\n\n재단은 곧바로 다음 수를 뒀습니다. 사운더를 방음실로 옮기질 않나, 바닥엔 진동 차단재를 깔질 않나, 배선은 아예 뿌리째 걷어내는 것까지, 손쓸 수 있는 건 다 했습니다. 이론상으론 이제 소리도, 신호도 만들 수 없어야 했죠. 방음실 안은 후텁지근할 정도로 조용했다고 합니다.\n\n그런데 헤드폰을 쓴 당직자 귀엔, 여전히 부호가 들렸습니다.\n\n기동특무부대 제타-22, 별칭 「여운」이 이때 투입됐습니다. 소리를 막아보질 않나, 전기를 아예 끊어보질 않나, 나중엔 장치를 통째로 밀봉까지 해봤는데 — 전부 실패했습니다. 「여운」의 작전 기록엔 딱 한 줄만 남았죠. 「매체를 특정할 수 없음. 차단 방식 전면 재검토.」\n\n가까이서 보면 별거 없었습니다. 손바닥만 한 놋쇠 상자, 녹슨 태엽 팔 하나가 접점을 두드리는 구조였죠. 두드릴 때마다 딱, 딱, 마른 나뭇가지 부러지는 소리가 났답니다.\n\n그러다 신호분석팀이 이상한 걸 잡아냈습니다. 부호가 나타나는 타이밍이, 늘 그 자리에 가장 오래 있던 사람의 맥박과 정확히 겹친다는 거였죠. 숨을 들이쉬는 순간 부호 하나, 내쉬는 순간 또 하나.\n\n우연이라기엔, 열아홉 번 전부 일치했습니다. 우연이었을까요?\n\n홀름 박사는 이 가설에 매달렸습니다. 장치가 사람을 듣는 게 아니라 — 사람의 몸을 그대로 부호로 바꿔 되돌려줄 뿐이라고요. 「이건 수신기가 아니에요. 거울입니다.」 동료들 붙잡고 그렇게 말하고 다녔다더군요.\n\n가설을 증명하려면, 직접 들어야 했습니다. 서른 분을 꽉 채워서요.\n\n동료들은 당연히 말렸죠. 「그 규칙, 박사님이 만드신 거잖아요.」 홀름 박사는 웃으며 대답했다고 합니다. 「제가 만들었으니까… 제가 제일 잘 알죠.」\n\n아무래도 그 말이… 그녀의 마지막 농담이 된 것 같습니다.\n\n그녀는 밤 근무를 자원했고, 격리실에 혼자 들어갔습니다. 스물아홉 분째까지는 기록에 아무 이상이 없었어요.\n\n서른 분째, 사운더가 부호 하나를 찍었습니다. 신호분석팀이 나중에 풀어보니, 나온 건 사람 이름 석 자였습니다. 홀름 박사, 그녀 자신의 이름이었죠.\n\n몇 초 뒤… 격리실 마이크에 그녀의 목소리가 잡혔습니다. 자기 이름을, 자기 입으로 부르는 목소리였습니다.\n\n그게 마지막이었습니다.\n\n문을 열었을 때, 격리실 안엔 아무도 없었습니다. 사운더만, 다음 부호를 기다리듯 가만히 놓여 있었죠. 인사 기록에서 그녀의 이름은 조용히 지워졌고, 출입 카드는 지금도 '내부'로 표시돼 있습니다.\n\n재수용 시도랍시고 사운더를 다시 틀어보질 않나, 대역 인원을 세워보질 않나, 같은 시각 같은 자리를 재현까지 해봤지만 — 전부 실패로 끝났습니다.\n\n마셜, 카터 & 다크는 이 장치의 원리에 눈독을 들였습니다. 현장에서는 이걸 '되짚는 손'이라고 부르기 시작했죠. 몸의 리듬을 부호로 바꾸는 기술이라면, 도청 장비로 못 팔 이유가 없었을 테니까요. 재단은 거래를 거절했습니다. 이유는 간단합니다. 재단도 아직, 이게 정확히 어떻게 작동하는지 모른다는 거죠. 이 정도 사안은 O5 승인 없이는 결론도 못 낸다고 하고요.\n\n왜 하필 홀름 박사 차례에 규칙이 무너졌는지는… 저도 설명을 못 하겠습니다.\n\n사이트-227의 격리 절차는 지금도 그 세 가지 그대로입니다. 다만 세 번째 규칙 옆엔, 짧은 문장 하나가 덧붙었죠. 「예외 없음. 담당자 등급 무관.」\n\n방음실 벽 너머, 사운더는 여전히 가끔 두드립니다. 신호분석팀이 최근 넉 달 치 기록을 세어봤는데요. 다음 넉 달 치는, 몇 번일까요?\n\n예순한 번이었습니다.",
+  "segments": [
+    {
+      "text": "카티야 홀름 박사가 마지막으로 요청한 건,",
+      "est_sec": 6,
+      "text_en": "The last thing Dr. Katja Holm asked for",
+      "text_ja": "カティア・ホルム博士が最後に求めたのは、",
+      "text_zh_Hant": "卡蒂亞‧霍爾姆博士最後要求的,"
+    },
+    {
+      "text": "딱 삼십 분이었습니다.",
+      "est_sec": 3,
+      "text_en": "was just thirty minutes.",
+      "text_ja": "たった三十分でした。",
+      "text_zh_Hant": "只是三十分鐘而已。"
+    },
+    {
+      "text": "그 삼십 분을 넘기지 말라는 규칙은… 다른",
+      "est_sec": 6,
+      "text_en": "The rule against going past thirty minutes… wasn't",
+      "text_ja": "その三十分を超えるなというルールは……他の",
+      "text_zh_Hant": "不准超過三十分鐘這條規矩……"
+    },
+    {
+      "text": "누구도 아니고 그녀 자신이 만든 거였죠.",
+      "est_sec": 6,
+      "text_en": "made by anyone else — she made it herself.",
+      "text_ja": "誰でもなく、彼女自身が作ったものでした。",
+      "text_zh_Hant": "不是別人定的,正是她自己訂下的。"
+    },
+    {
+      "text": "프랑스 알프스 기슭, 옛 군용 통신 중계소.",
+      "est_sec": 6,
+      "text_en": "At the foot of the French Alps, an old military relay station.",
+      "text_ja": "フランス・アルプスの麓、古い軍用通信中継所。",
+      "text_zh_Hant": "法國阿爾卑斯山腳下,一座舊軍用通訊中繼站。"
+    },
+    {
+      "text": "사이트-227은 그 지하 개보수 공사 중에",
+      "est_sec": 6,
+      "text_en": "Site-227's story began during basement renovation work,",
+      "text_ja": "サイト-227は、その地下改修工事の最中に",
+      "text_zh_Hant": "227號站點的故事,始於地下室整修工程期間。"
+    },
+    {
+      "text": "시작됐습니다. 배관공 뒤부아가 벽 너머에서",
+      "est_sec": 6,
+      "text_en": "when plumber Dubois heard tapping from behind",
+      "text_ja": "始まりました。配管工デュボワが壁の向こうから",
+      "text_zh_Hant": "水管工杜布瓦聽見牆壁另一頭"
+    },
+    {
+      "text": "두드리는 소리를 들었다고 신고했고, 뜯어보니",
+      "est_sec": 6,
+      "text_en": "the wall and reported it. When they broke it open,",
+      "text_ja": "叩く音を聞いたと報告し、壊してみると",
+      "text_zh_Hant": "傳來敲擊聲並上報,鑿開牆面後,"
+    },
+    {
+      "text": "놋쇠 사운더 하나가 나왔죠. 전신 부호를",
+      "est_sec": 6,
+      "text_en": "out came a brass telegraph sounder — a device that turns",
+      "text_ja": "真鍮製のサウンダーが一つ出てきました。電信符号を",
+      "text_zh_Hant": "發現一個黃銅音響器——一種把電報密碼"
+    },
+    {
+      "text": "소리로 바꿔주는 옛날 수신기였습니다.",
+      "est_sec": 5,
+      "text_en": "telegraph code into sound, an old-fashioned receiver.",
+      "text_ja": "音に変える、昔の受信機でした。",
+      "text_zh_Hant": "轉成聲音的老式接收裝置。"
+    },
+    {
+      "text": "지하실은 서늘했고, 오래된 놋쇠 특유의",
+      "est_sec": 5,
+      "text_en": "The basement was cold, and there was that particular",
+      "text_ja": "地下室はひんやりとしていて、古い真鍮特有の",
+      "text_zh_Hant": "地下室很陰涼,還飄著那種老黃銅"
+    },
+    {
+      "text": "쌉싸름한 냄새가 났다고 하더군요.",
+      "est_sec": 4,
+      "text_en": "sharp, metallic smell of old brass, they say.",
+      "text_ja": "苦みのある匂いがしていたそうです。",
+      "text_zh_Hant": "特有的微澀氣味,據說是這樣。"
+    },
+    {
+      "text": "문제는 — 그 장치로 이어지던 전선이, 이미",
+      "est_sec": 6,
+      "text_en": "The problem was — the wire that once connected to it",
+      "text_ja": "問題は——その装置につながっていた電線が、すでに",
+      "text_zh_Hant": "問題是——曾經接到這台裝置的電線,"
+    },
+    {
+      "text": "오십 년 전에 끊겨 땅에 묻혀 있었다는",
+      "est_sec": 5,
+      "text_en": "had been cut and buried underground fifty years",
+      "text_ja": "五十年前に切断され、地中に埋められていた",
+      "text_zh_Hant": "早在五十年前就被切斷,埋進了地下——"
+    },
+    {
+      "text": "겁니다.",
+      "est_sec": 2,
+      "text_en": "earlier.",
+      "text_ja": "ということです。",
+      "text_zh_Hant": "這件事。"
+    },
+    {
+      "text": "연결된 곳이 없는데도, 장치는 두드렸다는",
+      "est_sec": 6,
+      "text_en": "Nothing was connected to it anywhere. And yet it tapped.",
+      "text_ja": "つながっている先がないのに、装置は叩いていた",
+      "text_zh_Hant": "明明沒接到任何地方,那裝置卻還在敲。"
+    },
+    {
+      "text": "거죠. 저도 이 대목까진… 그러려니 했어요.",
+      "est_sec": 6,
+      "text_en": "I'll admit, up to this point… I shrugged it off too.",
+      "text_ja": "というわけです。私もここまでは……まあそんなものかと思いました。",
+      "text_zh_Hant": "老實說,到這裡……我也覺得沒什麼大不了。"
+    },
+    {
+      "text": "낡은 기계엔 원래 이상한 버릇이 하나쯤",
+      "est_sec": 5,
+      "text_en": "Old machines always have one strange habit",
+      "text_ja": "古い機械には元々、変な癖の一つくらい",
+      "text_zh_Hant": "老機器嘛,總會有一兩個怪癖,"
+    },
+    {
+      "text": "있으니까요.",
+      "est_sec": 2,
+      "text_en": "or another.",
+      "text_ja": "あるものですから。",
+      "text_zh_Hant": "不是嗎。"
+    },
+    {
+      "text": "재단은 처음엔 대수롭지 않게 봤습니다. 격리",
+      "est_sec": 6,
+      "text_en": "The Foundation didn't think much of it at first. The containment",
+      "text_ja": "財団は最初、大したことないと見ていました。収容",
+      "text_zh_Hant": "基金會起初並不當回事。收容"
+    },
+    {
+      "text": "등급이 세이프였으니까요. 사이트 지하",
+      "est_sec": 5,
+      "text_en": "class was Safe, after all.",
+      "text_ja": "等級はセーフでしたから。サイト地下の",
+      "text_zh_Hant": "等級是安全級,自然沒把它放在眼裡。"
+    },
+    {
+      "text": "격리실로 옮기고, 절차 세 가지만 붙이면",
+      "est_sec": 6,
+      "text_en": "Move it to the site's basement containment cell, attach three procedures,",
+      "text_ja": "収容室に移して、手順を三つ付ければ",
+      "text_zh_Hant": "移到站點地下收容室,只要附上三條程序,"
+    },
+    {
+      "text": "끝날 일이라고 봤던 겁니다.",
+      "est_sec": 4,
+      "text_en": "and be done with it — or so they thought.",
+      "text_ja": "それで済む話だと考えていたのです。",
+      "text_zh_Hant": "這事就結束了——他們是這麼以為的。"
+    },
+    {
+      "text": "「받은 부호를 그대로 따라 두드리지 않는다.」",
+      "est_sec": 6,
+      "text_en": "\"Never tap back the exact code it sends.\"",
+      "text_ja": "「受け取った符号をそのまま真似て叩かない。」",
+      "text_zh_Hant": "「收到的密碼絕不原樣敲回去。」"
+    },
+    {
+      "text": "「낯선 부호가 찍히면, 그날 안에 반드시",
+      "est_sec": 6,
+      "text_en": "\"If an unfamiliar code appears, it must be",
+      "text_ja": "「見知らぬ符号が打たれたら、その日のうちに必ず",
+      "text_zh_Hant": "「若出現陌生密碼,當天內務必"
+    },
+    {
+      "text": "태운다.」",
+      "est_sec": 2,
+      "text_en": "burned that same day.\"",
+      "text_ja": "焼却する。」",
+      "text_zh_Hant": "燒毀。」"
+    },
+    {
+      "text": "「한 사람이, 서른 분 넘게 혼자 듣지",
+      "est_sec": 5,
+      "text_en": "\"No one listens alone for more than thirty",
+      "text_ja": "「一人で三十分を超えて、一人で",
+      "text_zh_Hant": "「任何人都不得獨自聆聽超過三十"
+    },
+    {
+      "text": "않는다.」",
+      "est_sec": 2,
+      "text_en": "minutes.\"",
+      "text_ja": "聞かない。」",
+      "text_zh_Hant": "分鐘。」"
+    },
+    {
+      "text": "간단해 보였습니다. 지키기 어려운 규칙도",
+      "est_sec": 6,
+      "text_en": "It looked simple. None of these rules were",
+      "text_ja": "簡単に見えました。守るのが難しいルールでも",
+      "text_zh_Hant": "看起來很簡單。這些規矩也不是"
+    },
+    {
+      "text": "아니었고요. 안 그래요?",
+      "est_sec": 3,
+      "text_en": "hard to follow, right?",
+      "text_ja": "なかったですしね。そう思いませんか?",
+      "text_zh_Hant": "難守的,不是嗎?"
+    },
+    {
+      "text": "복도 끝 다른 격리동엔, 999도 있다고",
+      "est_sec": 6,
+      "text_en": "Down the hall, in another containment wing, they say 999 is there too —",
+      "text_ja": "廊下の突き当たりの別の収容棟には、999もいると",
+      "text_zh_Hant": "走廊盡頭的另一個收容區,據說還住著999——"
+    },
+    {
+      "text": "하더군요. 사람들 사이에 '간지럼 괴물'로",
+      "est_sec": 6,
+      "text_en": "the one people nicknamed the \"Tickle Monster.\"",
+      "text_ja": "聞きました。人々の間で「くすぐり魔」と",
+      "text_zh_Hant": "人們私下叫牠「搔癢怪」。"
+    },
+    {
+      "text": "불리는, 그 명랑한 개체 말입니다. 그쪽은",
+      "est_sec": 6,
+      "text_en": "That cheerful entity. That one",
+      "text_ja": "呼ばれている、あの陽気な個体です。あちらは",
+      "text_zh_Hant": "那個性情開朗的個體。那邊"
+    },
+    {
+      "text": "사람을 웃게 만든다는데 — 되짚는 손은,",
+      "est_sec": 6,
+      "text_en": "makes people laugh, apparently — the Retracing Hand,",
+      "text_ja": "人を笑わせるそうですが——「たどり返す手」は、",
+      "text_zh_Hant": "會讓人發笑,而「回溯之手」呢,"
+    },
+    {
+      "text": "정반대였습니다. 왜 하필 이쪽만 이랬을까요?",
+      "est_sec": 6,
+      "emphasis": "정반대였습니다",
+      "text_en": "was the exact opposite. Why only this one?",
+      "text_ja": "正反対でした。どうしてこちらだけ、こうなのでしょうか?",
+      "text_zh_Hant": "正好相反。為什麼偏偏是這一個?"
+    },
+    {
+      "text": "석 달째 되던 날, 신참 D계급 하나가 첫",
+      "est_sec": 6,
+      "text_en": "Three months in, a rookie D-Class broke the first",
+      "text_ja": "三か月目のある日、新入りのD階級の一人が最初の",
+      "text_zh_Hant": "第三個月的某一天,一名新來的D級人員違反了第一條"
+    },
+    {
+      "text": "번째 규칙을 어겼습니다. 심심해서, 라고",
+      "est_sec": 6,
+      "text_en": "rule. Out of boredom, he later said —",
+      "text_ja": "ルールを破りました。暇だったから、と",
+      "text_zh_Hant": "規矩。他後來供稱,原因是無聊——"
+    },
+    {
+      "text": "그는 나중에 진술했죠. 「그냥 궁금했습니다…",
+      "est_sec": 6,
+      "text_en": "in his statement. \"I was just curious…",
+      "text_ja": "後に供述しています。「ただ気になって……",
+      "text_zh_Hant": "他在供詞裡這麼說。「我只是好奇……"
+    },
+    {
+      "text": "똑같이 하면 뭐가 오나.」",
+      "est_sec": 4,
+      "text_en": "what would come back if I did the same thing.\"",
+      "text_ja": "同じことをしたら何が来るのか。」",
+      "text_zh_Hant": "同樣敲一次,會出現什麼。」"
+    },
+    {
+      "text": "그날 밤, 사이트 반대편 통신실 스피커 세",
+      "est_sec": 6,
+      "text_en": "That night, three speakers in the comms room",
+      "text_ja": "その夜、サイトの反対側にある通信室のスピーカー三",
+      "text_zh_Hant": "當晚,站點另一頭通訊室裡的三台"
+    },
+    {
+      "text": "대가 동시에 같은 부호를 울렸습니다. 아무도",
+      "est_sec": 6,
+      "text_en": "on the other side of the site rang out the same code at once —",
+      "text_ja": "台が同時に同じ符号を鳴らしました。誰も",
+      "text_zh_Hant": "喇叭同時響起了同樣的密碼——"
+    },
+    {
+      "text": "손댄 적 없는 스피커였는데 말이죠.",
+      "est_sec": 5,
+      "text_en": "speakers no one had ever touched.",
+      "text_ja": "手を触れたことのないスピーカーだったのに、です。",
+      "text_zh_Hant": "而那些喇叭,根本沒人碰過。"
+    },
+    {
+      "text": "재단은 곧바로 다음 수를 뒀습니다. 사운더를",
+      "est_sec": 6,
+      "text_en": "The Foundation moved fast. They took the sounder",
+      "text_ja": "財団はすぐに次の手を打ちました。サウンダーを",
+      "text_zh_Hant": "基金會立刻採取下一步行動。他們把音響器"
+    },
+    {
+      "text": "방음실로 옮기질 않나, 바닥엔 진동 차단재를",
+      "est_sec": 6,
+      "text_en": "to a soundproof room, laid vibration dampeners",
+      "text_ja": "防音室に移したり、床に振動遮断材を",
+      "text_zh_Hant": "搬進隔音室、在地板鋪上防震材料、"
+    },
+    {
+      "text": "깔질 않나, 배선은 아예 뿌리째 걷어내는",
+      "est_sec": 6,
+      "text_en": "on the floor, and ripped out the wiring",
+      "text_ja": "敷いたり、配線を根こそぎ撤去する",
+      "text_zh_Hant": "把線路連根拔除——"
+    },
+    {
+      "text": "것까지, 손쓸 수 있는 건 다 했습니다.",
+      "est_sec": 6,
+      "text_en": "down to the roots — they did everything they could think of.",
+      "text_ja": "ところまで、できることは全てやりました。",
+      "text_zh_Hant": "能做的都做了。"
+    },
+    {
+      "text": "이론상으론 이제 소리도, 신호도 만들 수",
+      "est_sec": 6,
+      "text_en": "In theory, the device shouldn't have been able to make",
+      "text_ja": "理論上はもう、音も信号も作り",
+      "text_zh_Hant": "照理說,它應該再也發不出"
+    },
+    {
+      "text": "없어야 했죠. 방음실 안은 후텁지근할 정도로",
+      "est_sec": 6,
+      "text_en": "sound or signal at all. The soundproof room was quiet",
+      "text_ja": "出せないはずでした。防音室の中は蒸し暑いほど",
+      "text_zh_Hant": "任何聲音或信號了。隔音室裡安靜得"
+    },
+    {
+      "text": "조용했다고 합니다.",
+      "est_sec": 2,
+      "text_en": "to the point of stifling, they say.",
+      "text_ja": "静かだったそうです。",
+      "text_zh_Hant": "近乎悶熱。"
+    },
+    {
+      "text": "그런데 헤드폰을 쓴 당직자 귀엔, 여전히",
+      "est_sec": 6,
+      "text_en": "But in the headphones of the officer on duty,",
+      "text_ja": "ところが、ヘッドホンをつけた当直者の耳には、依然として",
+      "text_zh_Hant": "然而,戴著耳機值班的人員耳中,"
+    },
+    {
+      "text": "부호가 들렸습니다.",
+      "est_sec": 2,
+      "text_en": "the code could still be heard.",
+      "text_ja": "符号が聞こえていました。",
+      "text_zh_Hant": "依舊聽得見密碼聲。"
+    },
+    {
+      "text": "기동특무부대 제타-22, 별칭 「여운」이",
+      "est_sec": 6,
+      "text_en": "Mobile Task Force Zeta-22, nicknamed \"Lingering Echo,\"",
+      "text_ja": "機動特務部隊ゼータ-22、通称「余韻」が",
+      "text_zh_Hant": "機動特遣隊澤塔-22,代號「餘音」"
+    },
+    {
+      "text": "이때 투입됐습니다. 소리를 막아보질 않나,",
+      "est_sec": 6,
+      "text_en": "was deployed at this point. They tried blocking the sound,",
+      "text_ja": "この時投入されました。音を遮ってみたり、",
+      "text_zh_Hant": "在這時被派往現場。他們試過隔絕聲音、"
+    },
+    {
+      "text": "전기를 아예 끊어보질 않나, 나중엔 장치를",
+      "est_sec": 6,
+      "text_en": "cutting the power entirely, and eventually even",
+      "text_ja": "電気を完全に断ってみたり、しまいには装置を",
+      "text_zh_Hant": "徹底切斷電源,最後甚至把整台裝置"
+    },
+    {
+      "text": "통째로 밀봉까지 해봤는데 — 전부",
+      "est_sec": 4,
+      "text_en": "sealing the whole thing — none of it",
+      "text_ja": "丸ごと密封までしてみましたが——全て",
+      "text_zh_Hant": "整個封死——結果全部"
+    },
+    {
+      "text": "실패했습니다. 「여운」의 작전 기록엔 딱 한",
+      "est_sec": 6,
+      "text_en": "worked. \"Lingering Echo's\" operation log has just one",
+      "text_ja": "失敗しました。「余韻」の作戦記録にはたった一",
+      "text_zh_Hant": "都失敗了。「餘音」的行動記錄裡,只留下一"
+    },
+    {
+      "text": "줄만 남았죠. 「매체를 특정할 수 없음.",
+      "est_sec": 6,
+      "text_en": "line left: \"Medium cannot be identified.",
+      "text_ja": "行だけ残っています。「媒体を特定できず。",
+      "text_zh_Hant": "行字:「無法鎖定媒介。"
+    },
+    {
+      "text": "차단 방식 전면 재검토.」",
+      "est_sec": 4,
+      "text_en": "Full review of blocking method needed.\"",
+      "text_ja": "遮断方式を全面的に再検討。」",
+      "text_zh_Hant": "阻斷方式須全面重新檢討。」"
+    },
+    {
+      "text": "가까이서 보면 별거 없었습니다. 손바닥만 한",
+      "est_sec": 6,
+      "text_en": "Up close, it wasn't much to look at — a palm-sized",
+      "text_ja": "近くで見ると大したものではありませんでした。手のひらほどの",
+      "text_zh_Hant": "近看其實沒什麼特別——一個巴掌大的"
+    },
+    {
+      "text": "놋쇠 상자, 녹슨 태엽 팔 하나가 접점을",
+      "est_sec": 6,
+      "text_en": "brass box, a single rusted spring-arm tapping",
+      "text_ja": "真鍮の箱、錆びたぜんまい仕掛けの腕が一つ、接点を",
+      "text_zh_Hant": "黃銅盒子,一根生鏽的發條臂敲打著"
+    },
+    {
+      "text": "두드리는 구조였죠. 두드릴 때마다 딱, 딱,",
+      "est_sec": 6,
+      "text_en": "against a contact point. Every tap went click, click,",
+      "text_ja": "叩く仕組みでした。叩くたびにカチ、カチと、",
+      "text_zh_Hant": "接點的構造。每敲一下就發出「喀、喀」"
+    },
+    {
+      "text": "마른 나뭇가지 부러지는 소리가 났답니다.",
+      "est_sec": 6,
+      "text_en": "like a dry twig snapping.",
+      "text_ja": "乾いた小枝が折れるような音がしたそうです。",
+      "text_zh_Hant": "像乾枯樹枝折斷的聲音。"
+    },
+    {
+      "text": "그러다 신호분석팀이 이상한 걸 잡아냈습니다.",
+      "est_sec": 6,
+      "text_en": "Then the signal analysis team caught something strange.",
+      "text_ja": "そんな中、信号分析チームが妙なことに気づきました。",
+      "text_zh_Hant": "後來,信號分析小組發現了一件怪事。"
+    },
+    {
+      "text": "부호가 나타나는 타이밍이, 늘 그 자리에",
+      "est_sec": 6,
+      "text_en": "The timing of the code always matched the pulse",
+      "text_ja": "符号が現れるタイミングが、常にその場に",
+      "text_zh_Hant": "密碼出現的時機,總是和在場待得最久的人"
+    },
+    {
+      "text": "가장 오래 있던 사람의 맥박과 정확히",
+      "est_sec": 5,
+      "text_en": "of whoever had been there longest, down to the second.",
+      "text_ja": "一番長くいた人の脈拍と正確に",
+      "text_zh_Hant": "的脈搏"
+    },
+    {
+      "text": "겹친다는 거였죠. 숨을 들이쉬는 순간 부호",
+      "est_sec": 6,
+      "text_en": "One code on the inhale,",
+      "text_ja": "重なっていたのです。息を吸う瞬間に符号",
+      "text_zh_Hant": "完全同步。吸氣的瞬間敲一個密碼,"
+    },
+    {
+      "text": "하나, 내쉬는 순간 또 하나.",
+      "est_sec": 4,
+      "text_en": "another on the exhale.",
+      "text_ja": "一つ、吐く瞬間にもう一つ。",
+      "text_zh_Hant": "呼氣時再敲一個。"
+    },
+    {
+      "text": "우연이라기엔, 열아홉 번 전부 일치했습니다.",
+      "est_sec": 6,
+      "emphasis": "열아홉 번",
+      "text_en": "Too consistent for coincidence — all nineteen times, it matched.",
+      "text_ja": "偶然というには、十九回すべて一致していました。",
+      "text_zh_Hant": "說是巧合未免太整齊——十九次,全部吻合。"
+    },
+    {
+      "text": "우연이었을까요?",
+      "est_sec": 2,
+      "text_en": "Was it coincidence?",
+      "text_ja": "偶然だったのでしょうか?",
+      "text_zh_Hant": "這真的是巧合嗎?"
+    },
+    {
+      "text": "홀름 박사는 이 가설에 매달렸습니다. 장치가",
+      "est_sec": 6,
+      "text_en": "Dr. Holm became fixated on this theory. The device",
+      "text_ja": "ホルム博士はこの仮説に取りつかれました。装置が",
+      "text_zh_Hant": "霍爾姆博士對這個假說緊抓不放。她認為裝置"
+    },
+    {
+      "text": "사람을 듣는 게 아니라 — 사람의 몸을",
+      "est_sec": 5,
+      "text_en": "wasn't listening to people — it was just taking a person's body",
+      "text_ja": "人の声を聞いているのではなく——人の体を",
+      "text_zh_Hant": "不是在「聆聽」人——而是把人的身體"
+    },
+    {
+      "text": "그대로 부호로 바꿔 되돌려줄 뿐이라고요.",
+      "est_sec": 6,
+      "text_en": "and converting it straight into code, reflecting it back.",
+      "text_ja": "そのまま符号に変えて返しているだけだと。",
+      "text_zh_Hant": "原封不動地轉成密碼再回放出來而已。"
+    },
+    {
+      "text": "「이건 수신기가 아니에요. 거울입니다.」",
+      "est_sec": 6,
+      "text_en": "\"This isn't a receiver. It's a mirror.\"",
+      "text_ja": "「これは受信機じゃありません。鏡です。」",
+      "text_zh_Hant": "「這不是接收器,是一面鏡子。」"
+    },
+    {
+      "text": "동료들 붙잡고 그렇게 말하고 다녔다더군요.",
+      "est_sec": 6,
+      "text_en": "She apparently told everyone who'd listen.",
+      "text_ja": "同僚をつかまえてはそう言って回っていたそうです。",
+      "text_zh_Hant": "據說她逢人就這麼說。"
+    },
+    {
+      "text": "가설을 증명하려면, 직접 들어야 했습니다.",
+      "est_sec": 6,
+      "text_en": "To prove the theory, she had to listen herself.",
+      "text_ja": "仮説を証明するには、自分で聞くしかありませんでした。",
+      "text_zh_Hant": "要證明這個假說,她就得親自去聽。"
+    },
+    {
+      "text": "서른 분을 꽉 채워서요.",
+      "est_sec": 3,
+      "text_en": "A full thirty minutes, no less.",
+      "text_ja": "三十分きっちり。",
+      "text_zh_Hant": "整整三十分鐘,一分不少。"
+    },
+    {
+      "text": "동료들은 당연히 말렸죠. 「그 규칙,",
+      "est_sec": 5,
+      "text_en": "Her colleagues obviously tried to stop her. \"That rule —",
+      "text_ja": "同僚たちは当然止めました。「そのルール、",
+      "text_zh_Hant": "同事們當然勸阻她。「那條規矩,"
+    },
+    {
+      "text": "박사님이 만드신 거잖아요.」 홀름 박사는",
+      "est_sec": 6,
+      "text_en": "you're the one who made it.\" Dr. Holm",
+      "text_ja": "博士が作ったものじゃないですか。」ホルム博士は",
+      "text_zh_Hant": "是您自己定的吧。」霍爾姆博士"
+    },
+    {
+      "text": "웃으며 대답했다고 합니다. 「제가",
+      "est_sec": 4,
+      "text_en": "reportedly smiled and answered, \"That's exactly why",
+      "text_ja": "笑いながら答えたそうです。「私が",
+      "text_zh_Hant": "據說笑著回答:「正因為是我定的,"
+    },
+    {
+      "text": "만들었으니까… 제가 제일 잘 알죠.」",
+      "est_sec": 5,
+      "text_en": "I made it… I know it best.\"",
+      "text_ja": "作ったんですから……一番よく分かっています。」",
+      "text_zh_Hant": "我才最清楚它的分寸。」"
+    },
+    {
+      "text": "아무래도 그 말이… 그녀의 마지막 농담이 된",
+      "est_sec": 6,
+      "text_en": "That line, it seems… became her last joke.",
+      "text_ja": "どうやらその言葉が……彼女の最後の冗談になった",
+      "text_zh_Hant": "看來,那句話……成了她最後的一句玩笑。"
+    },
+    {
+      "text": "것 같습니다.",
+      "est_sec": 2,
+      "text_en": "At least, that's how it feels.",
+      "text_ja": "ようです。",
+      "text_zh_Hant": "至少現在看來是這樣。"
+    },
+    {
+      "text": "그녀는 밤 근무를 자원했고, 격리실에 혼자",
+      "est_sec": 6,
+      "text_en": "She volunteered for the night shift and went alone",
+      "text_ja": "彼女は夜勤を志願し、収容室に一人で",
+      "text_zh_Hant": "她自願值夜班,獨自走進了收容室。"
+    },
+    {
+      "text": "들어갔습니다. 스물아홉 분째까지는 기록에",
+      "est_sec": 6,
+      "text_en": "into the containment cell. Up to the twenty-ninth minute,",
+      "text_ja": "入っていきました。二十九分目までは記録に",
+      "text_zh_Hant": "直到第二十九分鐘為止,記錄"
+    },
+    {
+      "text": "아무 이상이 없었어요.",
+      "est_sec": 3,
+      "text_en": "the logs showed nothing unusual.",
+      "text_ja": "異常はありませんでした。",
+      "text_zh_Hant": "都顯示一切正常。"
+    },
+    {
+      "text": "서른 분째, 사운더가 부호 하나를",
+      "est_sec": 4,
+      "text_en": "At the thirtieth minute, the sounder tapped out",
+      "text_ja": "三十分目、サウンダーが一つの符号を",
+      "text_zh_Hant": "第三十分鐘,音響器敲出了一段密碼。"
+    },
+    {
+      "text": "찍었습니다. 신호분석팀이 나중에 풀어보니,",
+      "est_sec": 6,
+      "text_en": "a code. When the signal team decoded it later,",
+      "text_ja": "打ちました。信号分析チームが後で解読すると、",
+      "text_zh_Hant": "信號分析小組事後解讀,"
+    },
+    {
+      "text": "나온 건 사람 이름 석 자였습니다. 홀름",
+      "est_sec": 6,
+      "text_en": "it turned out to be a three-syllable name — Holm",
+      "text_ja": "出てきたのは人の名前でした。ホルム",
+      "text_zh_Hant": "發現那是一個人名——是霍爾姆"
+    },
+    {
+      "text": "박사, 그녀 자신의 이름이었죠.",
+      "est_sec": 4,
+      "text_en": "Doctor's own name.",
+      "text_ja": "博士、彼女自身の名前だったのです。",
+      "text_zh_Hant": "博士自己的名字。"
+    },
+    {
+      "text": "몇 초 뒤… 격리실 마이크에 그녀의 목소리가",
+      "est_sec": 6,
+      "text_en": "A few seconds later… her voice was picked up",
+      "text_ja": "数秒後……収容室のマイクに彼女の声が",
+      "text_zh_Hant": "幾秒鐘後……收容室的麥克風錄下了她的聲音,"
+    },
+    {
+      "text": "잡혔습니다. 자기 이름을, 자기 입으로",
+      "est_sec": 5,
+      "text_en": "on the containment room mic, saying her own name",
+      "text_ja": "拾われました。自分の名前を、自分の口で",
+      "text_zh_Hant": "用自己的嘴,喊出了自己的名字。"
+    },
+    {
+      "text": "부르는 목소리였습니다.",
+      "est_sec": 3,
+      "text_en": "with her own mouth.",
+      "text_ja": "呼ぶ声でした。",
+      "text_zh_Hant": "那是她自己的聲音。"
+    },
+    {
+      "text": "그게 마지막이었습니다.",
+      "est_sec": 3,
+      "text_en": "That was the last of her.",
+      "text_ja": "それが最後でした。",
+      "text_zh_Hant": "那是最後一次。"
+    },
+    {
+      "text": "문을 열었을 때, 격리실 안엔 아무도",
+      "est_sec": 5,
+      "text_en": "When they opened the door, no one",
+      "text_ja": "扉を開けたとき、収容室の中には誰も",
+      "text_zh_Hant": "打開門時,收容室裡"
+    },
+    {
+      "text": "없었습니다. 사운더만, 다음 부호를 기다리듯",
+      "est_sec": 6,
+      "text_en": "was inside. Only the sounder remained, sitting still",
+      "text_ja": "いませんでした。サウンダーだけが、次の符号を待つように",
+      "text_zh_Hant": "空無一人。只剩音響器靜靜擺著,"
+    },
+    {
+      "text": "가만히 놓여 있었죠. 인사 기록에서 그녀의",
+      "est_sec": 6,
+      "text_en": "as if waiting for the next code. Her name",
+      "text_ja": "静かに置かれていました。人事記録から彼女の",
+      "text_zh_Hant": "彷彿在等下一段密碼。她的名字"
+    },
+    {
+      "text": "이름은 조용히 지워졌고, 출입 카드는 지금도",
+      "est_sec": 6,
+      "text_en": "was quietly erased from personnel records, and her access card",
+      "text_ja": "名前は静かに消され、入館カードは今も",
+      "text_zh_Hant": "已悄悄從人事記錄中抹去,而她的門禁卡"
+    },
+    {
+      "text": "'내부'로 표시돼 있습니다.",
+      "est_sec": 4,
+      "text_en": "still reads \"inside\" to this day.",
+      "text_ja": "「内部」のままになっています。",
+      "text_zh_Hant": "至今仍顯示「在內」。"
+    },
+    {
+      "text": "재수용 시도랍시고 사운더를 다시 틀어보질",
+      "est_sec": 6,
+      "text_en": "As for reacquisition attempts — they tried running the sounder again,",
+      "text_ja": "再収容を試みるとして、サウンダーを再び作動させて",
+      "text_zh_Hant": "至於重新收容的嘗試——他們重新啟動音響器、"
+    },
+    {
+      "text": "않나, 대역 인원을 세워보질 않나, 같은",
+      "est_sec": 6,
+      "text_en": "stationing stand-ins in her place, and even reenacting",
+      "text_ja": "みたり、代役の人員を立たせてみたり、同じ",
+      "text_zh_Hant": "安排替身人員站崗、"
+    },
+    {
+      "text": "시각 같은 자리를 재현까지 해봤지만 — 전부",
+      "est_sec": 6,
+      "text_en": "the same time in the same spot — none",
+      "text_ja": "時刻に同じ場所を再現までしてみましたが——全て",
+      "text_zh_Hant": "甚至在同一時間、同一地點重現當時情況——結果全部"
+    },
+    {
+      "text": "실패로 끝났습니다.",
+      "est_sec": 2,
+      "text_en": "of it worked.",
+      "text_ja": "失敗に終わりました。",
+      "text_zh_Hant": "都以失敗告終。"
+    },
+    {
+      "text": "마셜, 카터 & 다크는 이 장치의 원리에",
+      "est_sec": 6,
+      "text_en": "Marshall, Carter & Dark took an interest in how the device worked.",
+      "text_ja": "マーシャル、カーター&ダークはこの装置の原理に",
+      "text_zh_Hant": "馬歇爾、卡特&達克盯上了這台裝置的原理。"
+    },
+    {
+      "text": "눈독을 들였습니다. 현장에서는 이걸 '되짚는",
+      "est_sec": 6,
+      "text_en": "On site, staff had started calling it the \"Retracing",
+      "text_ja": "目を付けました。現場ではこれを「たどり返す",
+      "text_zh_Hant": "現場人員已經開始叫它「回溯之"
+    },
+    {
+      "text": "손'이라고 부르기 시작했죠. 몸의 리듬을",
+      "est_sec": 6,
+      "text_en": "Hand.\" A technology that turns the body's rhythm",
+      "text_ja": "手」と呼び始めていました。体のリズムを",
+      "text_zh_Hant": "手」。既然這技術能把身體的節奏"
+    },
+    {
+      "text": "부호로 바꾸는 기술이라면, 도청 장비로 못",
+      "est_sec": 6,
+      "text_en": "into code — there was no reason it couldn't be sold",
+      "text_ja": "符号に変える技術であれば、盗聴機器として売れない",
+      "text_zh_Hant": "轉成密碼,拿去做竊聽器材"
+    },
+    {
+      "text": "팔 이유가 없었을 테니까요. 재단은 거래를",
+      "est_sec": 6,
+      "text_en": "as surveillance hardware. The Foundation turned",
+      "text_ja": "理由がなかったでしょうから。財団は取引を",
+      "text_zh_Hant": "自然也不成問題。基金會拒絕了"
+    },
+    {
+      "text": "거절했습니다. 이유는 간단합니다. 재단도",
+      "est_sec": 6,
+      "text_en": "down the deal. The reason was simple: even the Foundation",
+      "text_ja": "断りました。理由は単純です。財団も",
+      "text_zh_Hant": "這筆交易。理由很簡單:就連基金會"
+    },
+    {
+      "text": "아직, 이게 정확히 어떻게 작동하는지",
+      "est_sec": 5,
+      "text_en": "still didn't know exactly how the thing",
+      "text_ja": "まだ、これが正確にどう作動するのか",
+      "text_zh_Hant": "自己也還沒搞清楚,這東西究竟是怎麼"
+    },
+    {
+      "text": "모른다는 거죠. 이 정도 사안은 O5 승인",
+      "est_sec": 6,
+      "text_en": "worked. A matter of this scale needed O5 approval",
+      "text_ja": "分かっていないのです。これほどの案件はO5承認",
+      "text_zh_Hant": "運作的。這種等級的問題,沒有O5的批准"
+    },
+    {
+      "text": "없이는 결론도 못 낸다고 하고요.",
+      "est_sec": 4,
+      "text_en": "just to reach any conclusion.",
+      "text_ja": "なしでは結論すら出せないそうです。",
+      "text_zh_Hant": "根本連個結論都下不了。"
+    },
+    {
+      "text": "왜 하필 홀름 박사 차례에 규칙이",
+      "est_sec": 4,
+      "text_en": "Why the rule broke down specifically on Dr. Holm's turn —",
+      "text_ja": "なぜよりによってホルム博士の番でルールが",
+      "text_zh_Hant": "為什麼偏偏是輪到霍爾姆博士時規矩才崩壞——"
+    },
+    {
+      "text": "무너졌는지는… 저도 설명을 못 하겠습니다.",
+      "est_sec": 6,
+      "text_en": "that, I honestly can't explain.",
+      "text_ja": "崩れたのかは……私にも説明がつきません。",
+      "text_zh_Hant": "這一點,我也說不清楚。"
+    },
+    {
+      "text": "사이트-227의 격리 절차는 지금도 그 세",
+      "est_sec": 6,
+      "text_en": "Site-227's containment procedure still stands on those same three",
+      "text_ja": "サイト-227の収容手続きは、今もあの三つの",
+      "text_zh_Hant": "227號站點的收容程序,至今仍是原本那三條。"
+    },
+    {
+      "text": "가지 그대로입니다. 다만 세 번째 규칙",
+      "est_sec": 5,
+      "text_en": "rules. Only, next to the third rule,",
+      "text_ja": "ままです。ただ、三番目のルールの",
+      "text_zh_Hant": "只是,第三條規矩旁邊"
+    },
+    {
+      "text": "옆엔, 짧은 문장 하나가 덧붙었죠. 「예외",
+      "est_sec": 6,
+      "text_en": "a short line has been added: \"No exceptions —",
+      "text_ja": "横には、短い一文が付け加えられました。「例外",
+      "text_zh_Hant": "多加了一行短短的字:「無例外——"
+    },
+    {
+      "text": "없음. 담당자 등급 무관.」",
+      "est_sec": 4,
+      "text_en": "regardless of the staff member's rank.\"",
+      "text_ja": "なし。担当者の等級を問わず。」",
+      "text_zh_Hant": "無論負責人職級高低。」"
+    },
+    {
+      "text": "방음실 벽 너머, 사운더는 여전히 가끔",
+      "est_sec": 5,
+      "text_en": "Beyond the soundproof wall, the sounder still taps",
+      "text_ja": "防音室の壁の向こうで、サウンダーは今も時々",
+      "text_zh_Hant": "隔音牆的另一頭,音響器如今偶爾"
+    },
+    {
+      "text": "두드립니다. 신호분석팀이 최근 넉 달 치",
+      "est_sec": 6,
+      "text_en": "now and then. The signal team recently counted",
+      "text_ja": "叩いています。信号分析チームが最近、四か月分の",
+      "text_zh_Hant": "仍會敲響。信號分析小組最近數了數,"
+    },
+    {
+      "text": "기록을 세어봤는데요. 다음 넉 달 치는, 몇",
+      "est_sec": 6,
+      "text_en": "the past four months' worth of records. How many",
+      "text_ja": "記録を数えてみたそうです。次の四か月は、何",
+      "text_zh_Hant": "過去四個月的記錄。下一個四個月,又會是"
+    },
+    {
+      "text": "번일까요?",
+      "est_sec": 2,
+      "text_en": "times will the next four months bring?",
+      "text_ja": "回になるのでしょうか?",
+      "text_zh_Hant": "幾次呢?"
+    },
+    {
+      "text": "예순한 번이었습니다.",
+      "est_sec": 3,
+      "emphasis": "예순한 번",
+      "text_en": "Sixty-one times.",
+      "text_ja": "六十一回でした。",
+      "text_zh_Hant": "六十一次。"
+    }
+  ],
+  "scenes": [
+    {
+      "prompt": "SUBJECT: brass telegraph sounder revealed in a broken wall. CONTEXT: rough concrete gap, exposed rebar. COMPOSITION: close head-on shot on the sounder in the gap. LIGHT: single work light from the side. MATERIAL: tarnished brass, cracked concrete, rusted rebar. ATMOSPHERE: fine dust drifting in the beam. PALETTE: near-black wall, warm brass glow, red accent on the strike arm. RENDER: bold linework, flat cel shading, sharp edges, high contrast. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: severed wire end buried in dark soil. CONTEXT: shallow excavated trench underground. COMPOSITION: low close shot along the cut wire. LIGHT: single handheld lamp. MATERIAL: frayed copper wire, damp soil, old rubber insulation. ATMOSPHERE: faint mist rising from the trench. PALETTE: near-black soil, dull copper glint, red accent on the cut end. RENDER: bold linework, flat cel shading, sharp edges, high contrast. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: a hand crouched close, tapping the sounder's key. CONTEXT: dim containment cell, a cot blurred in the background. COMPOSITION: tight close shot on the hand and key. LIGHT: single overhead bulb. MATERIAL: worn coverall sleeve, brass key. ATMOSPHERE: still, held-breath air. PALETTE: near-black cell, warm bulb glow, red accent on the key contact. RENDER: bold linework, flat cel shading, sharp edges, high contrast. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: three wall speakers ringing on their own in an empty room. CONTEXT: dark communications room, dead monitors. COMPOSITION: wide low shot across empty desks toward the speakers. LIGHT: speaker indicator lights only. MATERIAL: dusty speaker grilles, cold metal desks. ATMOSPHERE: faint vibration in still air. PALETTE: near-black room, red indicator glow, red accent. RENDER: bold linework, flat cel shading, sharp edges, high contrast. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: duty officer wearing headphones, frozen expression. CONTEXT: soundproofed padded room. COMPOSITION: close head-and-shoulders, eye-level. LIGHT: single low desk lamp. MATERIAL: acoustic foam padding, worn headphone cups. ATMOSPHERE: unnervingly dead silence. PALETTE: near-black padded walls, cool lamp light, red accent on the headphone wire. RENDER: bold linework, flat cel shading, sharp edges, high contrast. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: brass sounder wrapped in heavy sealant and cabling. CONTEXT: cramped sealed containment chamber. COMPOSITION: close three-quarter shot on the sealed device and a gauge. LIGHT: single harsh work light. MATERIAL: thick rubber seals, riveted casing, brass glinting through gaps. ATMOSPHERE: faint hum, dust settled on the seals. PALETTE: near-black chamber, cool glow, red accent on the gauge needle. RENDER: bold linework, flat cel shading, sharp edges, high contrast. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: monitor screen showing an overlapping pulse graph and code timing. CONTEXT: cluttered analysis desk, cables trailing. COMPOSITION: close shot centered on the overlapping waveforms. LIGHT: the screen's own glow only. MATERIAL: scratched monitor bezel, tangled cables. ATMOSPHERE: faint screen flicker. PALETTE: near-black desk, cool screen glow, red accent on the matching peaks. RENDER: bold linework, flat cel shading, sharp edges, high contrast. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: a researcher standing before a whiteboard with one word written large. CONTEXT: small briefing room, chairs empty. COMPOSITION: medium shot from behind her shoulder toward the board. LIGHT: single overhead panel light. MATERIAL: worn whiteboard, marker ink, lab coat. ATMOSPHERE: still, quiet focus. PALETTE: near-black room, white board glow, red accent under the word. RENDER: bold linework, flat cel shading, sharp edges, high contrast. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: a lone figure seated in a containment cell wearing headphones, seen from behind. CONTEXT: dim cell, the sounder on a small table ahead. COMPOSITION: wide shot from behind the seated figure toward the device. LIGHT: single low lamp on the table. MATERIAL: metal chair, worn headphone cable. ATMOSPHERE: heavy stillness, dust in lamp light. PALETTE: near-black cell, warm lamp glow, red accent on the sounder. RENDER: bold linework, flat cel shading, sharp edges, high contrast. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: an empty chair beside the sounder, a microphone stand still lit. CONTEXT: same containment cell, headphones left on the table. COMPOSITION: close shot centered on the empty chair and lit mic. LIGHT: the microphone's indicator light only. MATERIAL: cold metal chair, worn table surface. ATMOSPHERE: unmoving air, faint dust settling. PALETTE: near-black cell, small red mic light, red accent. RENDER: bold linework, flat cel shading, sharp edges, high contrast. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: the sounder alone in an empty containment cell, seen through a half-open door. CONTEXT: dark corridor outside the cell. COMPOSITION: framed shot through the door gap toward the device. LIGHT: single light spilling from inside the cell. MATERIAL: scuffed steel door, brass sounder. ATMOSPHERE: cold draft through the gap. PALETTE: near-black corridor, warm light spilling, red accent on the sounder. RENDER: bold linework, flat cel shading, sharp edges, high contrast. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: a handwritten addition beside a posted procedure sheet. CONTEXT: corkboard wall, other papers pinned around it. COMPOSITION: macro close-up on the handwriting. LIGHT: single raking desk lamp. MATERIAL: worn paper, ink pen marks, corkboard texture. ATMOSPHERE: visible paper grain. PALETTE: near-black board, warm lamp glow, red accent underline. RENDER: bold linework, flat cel shading, sharp edges, high contrast. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    }
+  ],
+  "background": {
+    "id": "scp-9726_bg",
+    "kind": "image",
+    "reuse": false,
+    "aspect": "16:9",
+    "resolution": "1920x1080",
+    "prompt": "SUBJECT: antique brass telegraph sounder resting on a bare table, over sixty percent of frame, its spring-arm caught mid-tap. CONTEXT: dim underground containment cell, an exposed pipe overhead. COMPOSITION: low-angle head-on hero shot centered on the sounder. LIGHT: single hanging bulb directly above as dominant source. MATERIAL: tarnished brass, worn wood table, chipped concrete floor. ATMOSPHERE: thin dust drifting in the bulb's light. PALETTE: near-black cell, warm brass-gold glow, red accent on the strike arm. RENDER: bold linework, flat cel shading, sharp edges, high contrast. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere",
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion"
+  },
+  "thumbnail": {
+    "hook": "An antique brass telegraph sounder glowing under harsh red-tinted light, filling most of the frame, its rusted spring-arm frozen mid-tap, a faint out-of-focus silhouette of a listening figure barely visible behind it, dark underground cell walls framing the edges. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere",
+    "hook_alt": [
+      "Extreme close-up on a duty officer's headphones, one earcup catching a thin red glow, eyes wide and unfocused, dark soundproofed padding blurred behind. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere",
+      "A lone empty metal chair beside the sounder, a small red microphone light glowing in the dark, nobody in the frame, cold containment cell walls closing in. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    ],
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion",
+    "text_safe_area": "right third",
+    "resolution": "1280x720"
+  },
+  "platforms": {
+    "youtube": {
+      "title": "「이건 수신기가 아니에요, 거울입니다」 프랑스 알프스 통신소에서 사라진 홀름 박사 [SCP-9726]",
+      "title_form": "증언형",
+      "thumbnail_text": "되짚는 손",
+      "thumbnail_quote": "- 이건 수신기가 아니에요, 거울입니다",
+      "tags": [
+        "SCP",
+        "SCP재단",
+        "SCP-999",
+        "괴담",
+        "무서운이야기",
+        "미스터리"
+      ],
+      "chapters": [
+        "00:00 마지막 요청, 삼십 분",
+        "00:21 사이트-227, 도면에 없던 사운더",
+        "01:37 세 가지 규칙, 세이프 등급",
+        "02:58 D계급, 첫 번째 규칙을 어기다",
+        "03:37 방음실로 옮겨도 들리는 부호",
+        "04:23 기동특무부대 제타-22 투입",
+        "05:25 맥박과 겹치는 부호 타이밍",
+        "07:06 홀름 박사, 격리실에 홀로 들어가다",
+        "07:58 아무도 없는 격리실",
+        "08:45 마셜, 카터 & 다크의 제안",
+        "10:26 예순한 번"
+      ],
+      "description": "프랑스 알프스 기슭 옛 통신 중계소 지하에서 발견된 놋쇠 전신 사운더 이야기입니다. 전선은 오십 년 전에 끊겼는데, 장치는 가장 오래 곁에 있던 사람의 맥박을 그대로 부호로 되돌려줍니다.\n\n※ SCP 재단 세계관 기반 오리지널 창작 · 허구의 이야기입니다\n※ CC BY-SA 3.0 · 원작: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP재단 #괴담 #무서운이야기 #미스터리",
+      "localizations": {
+        "en": {
+          "title": "\"This Isn't a Receiver, It's a Mirror\" — The Researcher Who Vanished at a French Alps Relay Station [SCP-9726]",
+          "description": "A brass telegraph sounder found in the basement of an old relay station at the foot of the French Alps. The wire connecting it was cut fifty years ago — yet the device echoes back the pulse of whoever has stood nearest the longest, turned into code.\n\nThis is original fan fiction set in the SCP Foundation universe, entirely fictional.\nCC BY-SA 3.0 · Based on the SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCPFoundation #Horror #Mystery"
+        },
+        "ja": {
+          "title": "「これは受信機じゃない、鏡です」——フランス・アルプスの中継所で消えた研究者 [SCP-9726]",
+          "description": "フランス・アルプスの麓、古い通信中継所の地下で見つかった真鍮製の電信サウンダーの話です。つながる電線は五十年前に切れているのに、装置は一番長くそばにいた人の脈拍を、そのまま符号にして打ち返します。\n\n※ SCP財団世界観に基づくオリジナル創作・フィクションです\n※ CC BY-SA 3.0 · 原作: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP財団 #怖い話 #ミステリー"
+        },
+        "zh-Hant": {
+          "title": "「這不是接收器,是一面鏡子」——在法國阿爾卑斯中繼站失蹤的研究員 [SCP-9726]",
+          "description": "在法國阿爾卑斯山腳下一座舊通訊中繼站地下室,發現了一台黃銅電報音響器。接到它的電線早在五十年前就已切斷,但這台裝置,仍會把待得最久的人的脈搏,原封不動地轉成密碼敲回來。\n\n※ 基於SCP基金會世界觀之原創創作,純屬虛構\n※ CC BY-SA 3.0 · 原作:SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP基金會 #怪談 #懸疑"
+        }
+      },
+      "pinned_comment": "혹시 여러분도, 가만히 있는데 옆에서 뭔가 자기 심장 소리에 맞춰 움직이는 것 같은 느낌, 받아보신 적 있으신가요?",
+      "playlist": "SCP 아카이브 (전편 듣기)"
+    }
+  },
+  "credit": "SCP 재단 세계관 기반 오리지널 창작 · 허구 · CC BY-SA 3.0",
+  "content_rating": "teen",
+  "notes": "SCP 아카이브 · 16:9 롱폼 · 장면 전환 배경 + 자막 번인 · 단일 내레이터 · 완결형."
+}
