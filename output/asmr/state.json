@@ -1,6 +1,6 @@
 {
-  "recent_themes": ["forest-rain", "hair-salon", "keyboard-typing", "ice-cracking", "ocean-waves", "summer-night-bugs", "campfire-night"],
-  "last_voice": "female",
-  "last_mode": "sleep",
-  "mode_cycle_pos": 0
+  "recent_themes": ["paper-crumpling", "forest-rain", "hair-salon", "keyboard-typing", "ice-cracking", "ocean-waves", "summer-night-bugs"],
+  "last_voice": "male",
+  "last_mode": "trigger",
+  "mode_cycle_pos": 1
 }
