@@ -1,0 +1,99 @@
+{
+  "date": "2026-09-23",
+  "topic": "stock",
+  "privacy": "public",
+  "topic_keyword": "코스피 나스닥 신고가",
+  "headline": "코스피 7017 턱걸이 마감, 나스닥은 2.26% 올라 사상 최고치",
+  "hook_title": "코스피 7000턱걸이, 나스닥 신고가",
+  "accent": "#D97757",
+  "loop_line": "코스피가 반납한 그 자리, 연휴 끝나면 다시 채울 수 있을까요.",
+  "thumbnail_hook": "A cinematic pre-dawn cityscape view through an office window, a distant stock ticker board just beginning to light up in blue and green, a steaming coffee cup resting on the desk in the foreground, soft morning light, moody financial atmosphere, no text or numbers visible in the image, photorealistic",
+  "thumbnail_text": "코스피 7017 턱걸이",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "휴장 D-1",
+      "ghost": "RECORD",
+      "lines": ["코스피는", "7000 턱걸이", "나스닥 2.26"],
+      "highlight": "2.26",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "밤사이 뉴욕에서 나스닥이 이 점 이육 퍼센트 뛰었습니다."
+    },
+    {
+      "type": "trend",
+      "label": "코스피 장중 고점",
+      "from": 0,
+      "to": 2.2,
+      "suffix": "%",
+      "dir": "up",
+      "sub": "종가는 <b>7017</b>, 오르다 반납",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "코스피가 장중 두 퍼센트대까지 올랐다가 상승분을 반납했습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "왜 이렇게 됐나",
+      "points": [
+        "개인 <b>1.9조원</b> 매도 압박",
+        "SK하이닉스 <b>차익실현</b> 매물",
+        "나스닥은 <b>AI 대형주</b>가 견인"
+      ],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "개인이 일조 구천억원어치를 팔며 상승분을 반납했습니다."
+    },
+    {
+      "type": "statement",
+      "text": "환율 1350원대를 지키느냐가 오늘 갈림길",
+      "highlight": "1350원대",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "환율이 천삼백오십원대를 지키느냐가 오늘의 갈림길입니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 지켜볼 것",
+      "points": [
+        "내일부터 <b>나흘간</b> 증시 휴장",
+        "원화 강세는 수입 물가엔 <b>호재</b>",
+        "PCB·반도체 테마 <b>이어지나</b>"
+      ],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "내일부터 나흘 쉬는 만큼, 오늘 흐름을 잘 보셔야 합니다."
+    },
+    {
+      "type": "statement",
+      "text": "연휴 앞두고 줄인다 vs 들고 간다, 당신은?",
+      "highlight": "줄인다",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "연휴 앞두고 줄일지 들고 갈지, 판단은 여러분 몫입니다."
+    }
+  ],
+  "sources": ["한국경제", "이투데이", "머니투데이", "뉴스핌"],
+  "credit": "출처 한국경제·이투데이·머니투데이 등 · 투자 조언이 아닙니다",
+  "platforms": {
+    "youtube": {
+      "title": "코스피 7000턱걸이, 나스닥 신고가 #shorts",
+      "description": "코스피 7017 턱걸이 마감, 나스닥은 2.26% 올라 사상 최고치\n출처 한국경제·이투데이·머니투데이 등\n※ 투자 조언이 아닙니다\n\n#코스피 #주식 #증시 #추석연휴 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "KOSPI Barely Holds 7000 as Nasdaq Hits a Record",
+          "description": "KOSPI closed at 7017, giving back an early 2%+ rally. Nasdaq surged 2.26% overnight to a fresh record high. Source: Hankyung, Etoday, Money Today\n※ 투자 조언이 아닙니다\n\n#KOSPI #StockMarket #Nasdaq #shorts"
+        },
+        "ja": {
+          "title": "コスピ7000死守、ナスダックは最高値",
+          "description": "コスピは寄り付き後に2%超上昇しましたが、上げ幅を返して7017で引けました。夜間のナスダックは2.26%急騰し、最高値を更新しました。出典:韓国経済、イートゥデイ、マネートゥデイ\n※ 투자 조언이 아닙니다\n\n#コスピ #株式 #ナスダック #shorts"
+        },
+        "zh-Hant": {
+          "title": "韓股勉強守住7000,那斯達克創新高",
+          "description": "韓國KOSPI指數早盤一度大漲逾2%,終場卻回吐漲幅,收在7017點。那斯達克指數隔夜勁揚2.26%,再創歷史新高。資料來源:韓國經濟、Etoday、Money Today\n※ 투자 조언이 아닙니다\n\n#韓股 #那斯達克 #股市 #shorts"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "코스피 7000턱걸이, 나스닥 신고가\n출처 한국경제·이투데이·머니투데이 등\n※ 투자 조언이 아닙니다\n\n#코스피 #주식 #증시 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "코스피 7000턱걸이, 나스닥 신고가\n출처 한국경제·이투데이 등"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음 · SESSION=KR_AM(개장 전 프리뷰) · 추석 연휴(9/24~27) 앞 마지막 거래일."
+}
