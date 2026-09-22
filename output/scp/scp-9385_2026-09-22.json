@@ -1,0 +1,1187 @@
+{
+  "date": "2026-09-22",
+  "iso_week": "2026-W39",
+  "topic": "scp",
+  "privacy": "public",
+  "origin": "original",
+  "origin_note": "",
+  "source_url": "",
+  "story_id": "scp-9385",
+  "scp_number": "SCP-9385",
+  "object_class": "Euclid",
+  "codename": "겹자정",
+  "number_check": {
+    "checked_at": "2026-09-22",
+    "http_code": "unverified"
+  },
+  "theme": "과학 시설",
+  "nature": "시간",
+  "twist_type": "인과",
+  "logline": "핀란드 지하 정밀계측연구소의 원자시계가 매일 자정 조금씩 어긋나기 시작합니다. 재단이 그 오차를 잡으려고 만든 보정 절차가, 사실은 매일 밤 그 방을 몇 초씩 겹치게 만드는 원인이었습니다.",
+  "structure": "연대기형",
+  "opening_move": "수치의 어긋남",
+  "opening_note": "",
+  "closing_move": "기록이 아직 이어진다",
+  "number_reveal": "뒤",
+  "ending_mode": "질문+구독",
+  "fault": "재단",
+  "hook_line": "위성 시각과 연구소 시계, 영점 사 초가 어긋나 있었습니다.",
+  "procedures": [],
+  "character": {
+    "name": "브란트",
+    "role": "박사 · 사이트-356 계측공학팀장",
+    "flaw": "완벽한 영점 드리프트에 집착해, 규정을 어기고 직접 보정값을 손으로 고친다"
+  },
+  "chain": [
+    {
+      "when": "발견 당시",
+      "event": "국제 계량표준망 감시팀이 이 연구소 원자시계가 위성 기준시와 어긋난다는 걸 포착한다",
+      "because": "",
+      "shot": "관제실 모니터 속, 두 시계판 사이 숫자 하나가 어긋나 있다"
+    },
+    {
+      "when": "그 직후",
+      "event": "재단이 연구소를 조용히 인수해 사이트-356으로 격리 지정하고, 매일 자정 '보정값 기입' 절차를 새로 만든다",
+      "because": "오차가 국제표준 허용치를 넘길 조짐을 보여서",
+      "shot": "기술자가 콘솔에 보정 숫자를 입력하는 손"
+    },
+    {
+      "when": "절차 시행 첫날 밤부터",
+      "event": "관제실 CCTV에 같은 사람이 겹쳐 찍히는 장면이 나타나기 시작한다",
+      "because": "보정값을 기입한 직후부터",
+      "shot": "모니터 속, 문을 나간 사람과 다시 들어오는 같은 사람이 겹쳐 있다"
+    },
+    {
+      "when": "며칠 뒤",
+      "event": "브란트 박사가 책상 위 커피잔이 두 개로 늘어난 걸 발견하고, 영상만이 아니라 물건도 겹친다는 걸 확인한다",
+      "because": "화면 결함이라던 설명으로는 더 이상 설명이 안 돼서",
+      "shot": "책상 위, 똑같이 식은 커피잔 두 개"
+    },
+    {
+      "when": "그 무렵",
+      "event": "겹침이 서랍, 문 기록, 의자 위치 같은 사물 전체로 번지고, 현장 사람들이 이 현상을 '겹자정'이라 부르기 시작한다",
+      "because": "겹침이 매일 자정마다 반복돼서",
+      "shot": "서랍 손잡이 옆, 두 겹으로 흐릿하게 찍힌 기록지"
+    },
+    {
+      "when": "오차를 더 서둘러 잡으려던 시기",
+      "event": "재단이 보정을 하루 두 번으로 늘리자, 겹침 구간이 초 단위에서 분 단위로 길어진다",
+      "because": "보정을 늘리면 오차도 빨리 잡힐 거라 판단해서",
+      "shot": "벽시계 두 개가 나란히 걸려 있는데 하나가 분 단위로 어긋나 있다"
+    },
+    {
+      "when": "곧이어",
+      "event": "기동특무부대 오미크론-19가 현실 안정 장치 세 대를 동원해 겹침을 막으려 하지만, 구간만 흐릿해질 뿐 사라지지 않는다",
+      "because": "안정 장치로 물리적 이상은 다 눌러봤지만",
+      "shot": "안정 장치 세 대가 나란히 돌아가는 관제실, 화면은 여전히 두 겹"
+    },
+    {
+      "when": "그 실패 이후",
+      "event": "브란트 박사가 겹침 길이와 보정 횟수가 정확히 비례한다는 걸 발견하고, 몰래 하루 보정을 건너뛴다",
+      "because": "상부가 정식 실험은 반대해서",
+      "shot": "콘솔 화면에 뜬 '보정 건너뜀' 로그와 빈 확인란"
+    },
+    {
+      "when": "그날 밤",
+      "event": "CCTV에 아무 겹침도 찍히지 않아, 원인이 오차가 아니라 보정 절차 자체였다는 게 드러난다",
+      "because": "보정을 건너뛰었기 때문에",
+      "shot": "텅 빈 CCTV 화면, 커피잔 하나만 그대로"
+    },
+    {
+      "when": "그런데도",
+      "event": "보정을 완전히 멈추면 원자시계가 국제표준에서 탈락하고, 완전 중단엔 O5 승인까지 필요해 계속도 중단도 못하는 상황에 몰린다",
+      "because": "확인은 됐지만 대안이 없어서",
+      "shot": "결재 서류, 아직 도장이 안 찍힌 빈 서명란"
+    },
+    {
+      "when": "결국",
+      "event": "브란트 박사가 규정을 어기고 직접 보정값 소수점을 몰래 고쳐 넣다가, 그 순간이 겹침 구간과 맞물려 그녀 자신이 두 명으로 겹친다",
+      "because": "겹침을 조금이라도 줄여보려고 자기 손으로 값을 바꿔서",
+      "shot": "감시 화면 속, 같은 얼굴 둘이 같은 자리에 서 있다"
+    },
+    {
+      "when": "다음 날부터 지금까지",
+      "event": "인사 기록엔 그녀 이름이 두 줄로 겹쳐 남고, 사이트-356은 매일 자정 최소한의 보정만 유지한 채 등급 재분류 심사를 미뤄두고 있다",
+      "because": "겹침 현상 자체는 잦아들었지만 그녀 쪽 겹침은 풀리지 않아서",
+      "shot": "인사 기록 화면 속 이름 두 줄, 배경엔 마스터 시계 두 자리 숫자"
+    }
+  ],
+  "retention_beats": [
+    "마셜, 카터 & 다크가 이 보정 알고리즘으로 정확히 뭘 하려는지는 아직 밝혀지지 않았다",
+    "노박 박사가 지적한 '기록이 사람보다 먼저 바뀐다'는 패턴이, 이번에도 낯익게 반복됐다",
+    "사이트-356의 격리 등급 재분류 심사는 아직 결론이 나지 않았다"
+  ],
+  "cameos": [
+    {
+      "number": "SCP-914",
+      "how": "등급 세이프. 넣은 물건을 정밀하게 가공해 내보내는 톱니장치로 알려져 있다."
+    },
+    {
+      "number": "SCP-294",
+      "how": "등급 세이프. 원하는 음료 이름을 입력하면 그대로 나오는 자판기로 알려져 있다."
+    }
+  ],
+  "twist_summary": "인과의 반전 — 재단이 오차를 잡으려고 만든 '매일 자정 보정값 기입' 절차 자체가 그 방을 몇 초씩 겹치게 만드는 원인이었다는 반전. 겹침 길이가 보정 횟수에 정확히 비례한다는 걸 확인한 브란트 박사가 몰래 보정을 건너뛰어 이를 증명했지만, 완전 중단엔 O5 승인이 필요해 재단은 멈추지도 계속하지도 못한다. 결국 그녀가 규정을 어기고 직접 보정값을 고쳐 넣은 밤, 자신이 서 있던 순간이 겹침 구간과 맞물려 그녀 자신이 두 명으로 겹쳤다.",
+  "narration_full": "위성 시각과 연구소 시계, 영점 사 초가 어긋나 있었습니다. 핀란드 발트순상지, 지하 사백 미터 정밀계측연구소 얘기입니다. 국제 계량표준망에 물린 원자시계 앙상블 중 하나가, 위성 기준시랑 조금씩 벌어지고 있었거든요. 다들 처음엔 대수롭지 않게 여겼죠. 영점 사 초, 그 정도야… 흔한 오차니까요. 저도 이 대목을 처음 봤을 땐, 그냥 흔한 오차 보고인 줄 알았습니다. 그런데 그 오차가, 사흘마다 갑절로 커졌습니다. 재단이 이 연구소를 조용히 인수해 격리 대상으로 지정한 게, 바로 그 무렵이었고요. 이름은 사이트-356으로 바뀌었고, 담당팀은 매일 자정 '보정값 기입'이라는 절차를 새로 넣었습니다. 「자정에 숫자 하나만 고쳐 넣으면 됩니다.」 인수인계 문서엔, 딱 이렇게만 적혀 있었다더군요. 그런데 그 절차를 시작한 첫날 밤부터, 관제실 CCTV에 이상한 장면이 찍혔습니다. 같은 사람이 문을 나갔다가, 다시 들어오는 장면이 몇 초씩 겹쳐서요. 브란트 박사는 처음엔… 그냥 화면 결함이라고 봤습니다. 그런데 다음 날 아침, 책상 위에 반쯤 식은 커피잔이 두 개 놓여 있었죠. 하나는 그녀 것이었고, 하나는… 그녀 것이었습니다. 그 뒤로 며칠은, 겹침이 물건 쪽으로도 번졌습니다. 서랍이 두 번 잠기질 않나, 문 열림 기록이 두 번 찍히질 않나, 의자 위치까지 미세하게 두 갈래로 어긋나 있었죠. 보고서엔 그냥 '위상 중첩 현상'이라고 적혀 있는데, 사이트 사람들은 그걸 '겹자정'이라고 불렀습니다. 자정마다 겹친다고요. 재단은 오차를 서둘러 잡겠다고, 보정을 하루 두 번으로 늘렸습니다. 그러자 겹침도 같이 늘었어요. 초 단위였던 게, 사흘 만에 분 단위로요. 현실 안정 장치도 세 대 들여놨습니다. 출력을 올려보질 않나, 위치를 바꿔보질 않나, 두 대를 겹쳐 돌려보기도 했고요. 현실 안정 장치는 좀처럼 겹침을 줄이지 못했습니다. 기동특무부대 오미크론-19 — 현장에선 그냥 '초침'이라고 부르는 팀이, 겹자정을 잡으러 투입됐는데요. 안정 장치 세 대를 한꺼번에 돌렸지만, 겹침 구간만 좀 흐릿해졌을 뿐 사라지진 않았습니다. 브란트 박사가 이상한 걸 하나 짚었습니다. 겹침 길이가, 정확히 보정 횟수에 비례한다는 거였죠. 「그럼 하루만 건너뛰어 보면 되잖아요.」 그녀가 그렇게 제안했는데요. 상부는 반대했습니다. 국제표준 이탈은, 재단 바깥에서도 바로 눈에 띄니까요. 그런데 그녀는, 몰래 한 번 건너뛰었습니다. 그날 밤 CCTV엔, 아무 겹침도 없었죠. 원인은 오차가 아니라 — 오차를 잡겠다고 매일 적어 넣은, 그 숫자를 기입하는 절차 쪽이었던 겁니다. 문제는, 보정을 아예 멈추면 이 원자시계가 국제표준에서 탈락한다는 거였죠. 완전 중단엔 O5 승인이 필요했는데, 그 결재는 아직도 올라가지 않고 있습니다. 계속할 수도, 멈출 수도 없는 상황이었죠. D계급 한 명을, 겹침 구간 안에 세워두는 시험도 있었습니다. 결과는요? 그날치 기억이, 두 갈래로 갈라진 채 남았습니다. 어느 쪽이 진짜인지는, D계급 본인도 구분 못 했고요. 왜 하필 그 기억만 갈라졌을까요? 「저는… 분명 두 번 다 여기 서 있었는데요.」 D-9385가 그렇게 진술했다더군요. 이 부분은 저도… 아직 다 이해했다고는 말 못 하겠더군요. 결국 브란트 박사는 규정을 어기고, 자기 손으로 보정값 소수점 한 자리를 몰래 더 고쳐 넣기 시작했습니다. 「이 정도는, 아무도 모를 겁니다.」 동료에게 그렇게 말했다더군요. 그런데 그날 밤, 그녀가 직접 콘솔 앞에 서 있던 그 순간이, 겹침 구간과 정확히 맞물렸습니다. 화면 속엔, 같은 얼굴 둘이 같은 자리에 서 있었죠. 야간 당직자 진술로는, 스피커에서 같은 목소리가 반 박자 차이로 두 번 들렸다고 합니다. 「제가… 방금 저를 봤어요, 제 뒤에서.」 다음 날 인사 기록엔, 그녀 이름이 두 줄로 겹쳐 있었습니다. 그녀 자신도, 그날 밤 자기가 뭘 했는지 두 가지로 기억하고 있고요. 격리동 복도 끝엔, 낯익은 이름도 하나 있습니다. 정교한 톱니장치, SCP-914 — 등급은 세이프고요. 이 연구소 사람들은, 그 문 앞엔 오래 서 있지 않습니다. 휴게실 자판기도 사실 SCP-294입니다. 다만 아무도 그 앞에서 커피를 두 잔 시키진 않죠. 마셜, 카터 & 다크가, 이 보정 알고리즘 자체를 사겠다고 접근한 적도 있습니다. 재단은 거절했죠. 이유는 간단합니다. 재단도 이 알고리즘이 왜 이런 결과를 내는지, 아직 다 모른다는 거죠. 재고통합팀 노박 박사에게도, 잠깐 자문을 구했습니다. 기록이 사람보다 먼저 바뀌는 사례, 낯익다고 하더군요. 지금도 사이트-356은, 매일 자정 최소한의 보정만 넣고 있습니다. 격리 등급 재분류 심사는, 아직 안 끝났고요. 솔직히 저도, 이 두 자리 숫자가 왜 계속 벌어지는지는 설명 못 하겠습니다. 겹자정은 지금도, 자정마다 몇 초씩 남죠. 마스터 시계 두 자리 숫자는, 오늘 밤도 조금 벌어져 있을 겁니다. 이 사건은 지금, SCP-9385라는 문서 번호로만 남아 있습니다. 혹시 집에 시계가 두 개 이상이신 분 — 오늘 밤 그 둘을 나란히 맞춰보시겠어요? 몇 초나 벌어져 있는지, 그 결과가 궁금합니다. 이 사이트 소식은, 다음 편에서 마저 전해드리죠.",
+  "segments": [
+    {
+      "text": "위성 시각과 연구소 시계,",
+      "est_sec": 3,
+      "text_en": "Satellite time and the lab clock,",
+      "text_ja": "衛星時刻と研究所の時計、",
+      "text_zh_Hant": "衛星時間與研究所的時鐘,"
+    },
+    {
+      "text": "영점 사 초가 어긋나 있었습니다.",
+      "est_sec": 4,
+      "text_en": "were off by zero-point-four seconds.",
+      "text_ja": "○.四秒ずれていました。",
+      "text_zh_Hant": "相差了零點四秒。"
+    },
+    {
+      "text": "핀란드 발트순상지,",
+      "est_sec": 2,
+      "text_en": "On Finland's Baltic Shield,",
+      "text_ja": "フィンランドのバルト楯状地、",
+      "text_zh_Hant": "在芬蘭波羅的海地盾,"
+    },
+    {
+      "text": "지하 사백 미터 정밀계측연구소 얘기입니다.",
+      "est_sec": 5,
+      "text_en": "there's a precision metrology lab, 400 meters underground.",
+      "text_ja": "地下四百メートルの精密計測研究所の話です。",
+      "text_zh_Hant": "有一座地下四百公尺的精密計測研究所。"
+    },
+    {
+      "text": "국제 계량표준망에 물린",
+      "est_sec": 3,
+      "text_en": "Hooked into the international metrology network,",
+      "text_ja": "国際計量標準網に繋がった",
+      "text_zh_Hant": "接入國際計量標準網的"
+    },
+    {
+      "text": "원자시계 앙상블 중 하나가,",
+      "est_sec": 3,
+      "text_en": "one of its atomic clock ensembles",
+      "text_ja": "原子時計アンサンブルの一つが、",
+      "text_zh_Hant": "其中一組原子鐘,"
+    },
+    {
+      "text": "위성 기준시랑 조금씩 벌어지고 있었거든요.",
+      "est_sec": 5,
+      "text_en": "kept drifting from satellite reference time.",
+      "text_ja": "衛星基準時から少しずつずれ始めていたんです。",
+      "text_zh_Hant": "漸漸與衛星基準時間出現了偏差。"
+    },
+    {
+      "text": "다들 처음엔 대수롭지 않게 여겼죠.",
+      "est_sec": 4,
+      "text_en": "At first, no one thought much of it.",
+      "text_ja": "最初は誰も大したことないと思っていました。",
+      "text_zh_Hant": "一開始大家都不以為意。"
+    },
+    {
+      "text": "영점 사 초, 그 정도야… 흔한 오차니까요.",
+      "est_sec": 6,
+      "text_en": "Zero-point-four seconds… that's a common margin of error.",
+      "text_ja": "○.四秒くらいなら…よくある誤差ですから。",
+      "text_zh_Hant": "零點四秒…畢竟是常見的誤差。"
+    },
+    {
+      "text": "저도 이 대목을 처음 봤을 땐,",
+      "est_sec": 4,
+      "text_en": "When I first read this part,",
+      "text_ja": "私もこのくだりを最初に読んだ時は、",
+      "text_zh_Hant": "我第一次看到這段時,"
+    },
+    {
+      "text": "그냥 흔한 오차 보고인 줄 알았습니다.",
+      "est_sec": 5,
+      "text_en": "I thought it was just a routine error report.",
+      "text_ja": "ただのよくある誤差報告だと思いました。",
+      "text_zh_Hant": "還以為只是常見的誤差報告。"
+    },
+    {
+      "text": "그런데 그 오차가,",
+      "est_sec": 2,
+      "text_en": "But that margin of error",
+      "text_ja": "ところがその誤差が、",
+      "text_zh_Hant": "但那個誤差,"
+    },
+    {
+      "text": "사흘마다 갑절로 커졌습니다.",
+      "est_sec": 3,
+      "text_en": "doubled every three days.",
+      "text_ja": "三日ごとに倍になっていきました。",
+      "text_zh_Hant": "每三天就翻倍。"
+    },
+    {
+      "text": "재단이 이 연구소를 조용히 인수해",
+      "est_sec": 4,
+      "text_en": "The Foundation quietly acquired the lab",
+      "text_ja": "財団はこの研究所をひそかに買収し、",
+      "text_zh_Hant": "基金會悄悄收購了這座研究所,"
+    },
+    {
+      "text": "격리 대상으로 지정한 게,",
+      "est_sec": 3,
+      "text_en": "and designated it a containment site,",
+      "text_ja": "収容対象に指定したのが、",
+      "text_zh_Hant": "並將其列為收容對象,"
+    },
+    {
+      "text": "바로 그 무렵이었고요.",
+      "est_sec": 3,
+      "text_en": "right around that time.",
+      "text_ja": "ちょうどその頃でした。",
+      "text_zh_Hant": "就是在那個時候。"
+    },
+    {
+      "text": "이름은 사이트-356으로 바뀌었고,",
+      "est_sec": 4,
+      "text_en": "It was renamed Site-356,",
+      "text_ja": "名前はサイト-356に変わり、",
+      "text_zh_Hant": "名稱改為Site-356,"
+    },
+    {
+      "text": "담당팀은 매일 자정 '보정값",
+      "est_sec": 3,
+      "text_en": "and the team added a new procedure: every midnight,",
+      "text_ja": "担当チームは毎晩零時に「補正値",
+      "text_zh_Hant": "負責團隊每天午夜新增了一項程序——"
+    },
+    {
+      "text": "기입'이라는 절차를 새로 넣었습니다.",
+      "est_sec": 5,
+      "text_en": "entering a fresh calibration value.",
+      "text_ja": "入力」という手順を新しく加えました。",
+      "text_zh_Hant": "「輸入校正值」。"
+    },
+    {
+      "text": "「자정에 숫자 하나만 고쳐 넣으면 됩니다.」",
+      "est_sec": 6,
+      "text_en": "「Just fix one number in at midnight.」",
+      "text_ja": "「零時に数字を一つ直して入れるだけです。」",
+      "text_zh_Hant": "「午夜時只要改一個數字輸入就行了。」"
+    },
+    {
+      "text": "인수인계 문서엔,",
+      "est_sec": 2,
+      "text_en": "That's all the handover notes said,",
+      "text_ja": "引き継ぎ文書には、",
+      "text_zh_Hant": "交接文件上,"
+    },
+    {
+      "text": "딱 이렇게만 적혀 있었다더군요.",
+      "est_sec": 4,
+      "text_en": "apparently — nothing more.",
+      "text_ja": "そう書かれていただけだったそうです。",
+      "text_zh_Hant": "據說就只寫了這麼一句。"
+    },
+    {
+      "text": "그런데 그 절차를 시작한 첫날 밤부터,",
+      "est_sec": 5,
+      "text_en": "But from the very first night of that procedure,",
+      "text_ja": "ところがその手順を始めた初日の夜から、",
+      "text_zh_Hant": "但從實行這道程序的第一晚起,"
+    },
+    {
+      "text": "관제실 CCTV에 이상한 장면이 찍혔습니다.",
+      "est_sec": 6,
+      "text_en": "the control room's CCTV caught something strange.",
+      "text_ja": "管制室のCCTVに奇妙な映像が映り込みました。",
+      "text_zh_Hant": "管制室的監視器就拍到了異常畫面。"
+    },
+    {
+      "text": "같은 사람이 문을 나갔다가,",
+      "est_sec": 3,
+      "text_en": "The same person would walk out the door,",
+      "text_ja": "同じ人物がドアから出て行ったかと思うと、",
+      "text_zh_Hant": "同一個人走出門後,"
+    },
+    {
+      "text": "다시 들어오는 장면이 몇 초씩 겹쳐서요.",
+      "est_sec": 5,
+      "text_en": "then walk back in — overlapping by a few seconds each time.",
+      "text_ja": "また入ってくる場面が数秒ずつ重なっていたんです。",
+      "text_zh_Hant": "又走回來的畫面,前後重疊了幾秒鐘。"
+    },
+    {
+      "text": "브란트 박사는 처음엔… 그냥",
+      "est_sec": 3,
+      "text_en": "Dr. Brandt figured, at first… it was just",
+      "text_ja": "ブラント博士は最初は…単なる",
+      "text_zh_Hant": "布蘭特博士一開始…只當是"
+    },
+    {
+      "text": "화면 결함이라고 봤습니다.",
+      "est_sec": 3,
+      "text_en": "a screen glitch.",
+      "text_ja": "画面の不具合だと思っていました。",
+      "text_zh_Hant": "畫面故障。"
+    },
+    {
+      "text": "그런데 다음 날 아침,",
+      "est_sec": 3,
+      "text_en": "But the next morning,",
+      "text_ja": "ところが翌朝、",
+      "text_zh_Hant": "但隔天早上,"
+    },
+    {
+      "text": "책상 위에 반쯤 식은 커피잔이",
+      "est_sec": 4,
+      "text_en": "on her desk sat a half-cooled coffee cup —",
+      "text_ja": "机の上に半分冷めたコーヒーカップが",
+      "text_zh_Hant": "桌上放著兩杯已經半涼的咖啡——"
+    },
+    {
+      "text": "두 개 놓여 있었죠. 하나는 그녀 것이었고,",
+      "est_sec": 6,
+      "text_en": "two of them. One was hers,",
+      "text_ja": "二つ置かれていました。一つは彼女のもので、",
+      "text_zh_Hant": "一杯是她自己的,"
+    },
+    {
+      "text": "하나는… 그녀 것이었습니다.",
+      "est_sec": 3,
+      "text_en": "and the other… was also hers.",
+      "text_ja": "もう一つも…彼女のものでした。",
+      "text_zh_Hant": "另一杯…也是她的。"
+    },
+    {
+      "text": "그 뒤로 며칠은,",
+      "est_sec": 2,
+      "text_en": "Over the following days,",
+      "text_ja": "その後数日は、",
+      "text_zh_Hant": "接下來幾天,"
+    },
+    {
+      "text": "겹침이 물건 쪽으로도 번졌습니다.",
+      "est_sec": 4,
+      "text_en": "the overlap spread to objects too.",
+      "text_ja": "重なりは物にまで広がっていきました。",
+      "text_zh_Hant": "重疊現象也蔓延到了物品上。"
+    },
+    {
+      "text": "서랍이 두 번 잠기질 않나,",
+      "est_sec": 3,
+      "text_en": "A drawer would lock itself twice,",
+      "text_ja": "引き出しが二回鍵をかけられたり、",
+      "text_zh_Hant": "抽屜被上了兩次鎖,"
+    },
+    {
+      "text": "문 열림 기록이 두 번 찍히질 않나,",
+      "est_sec": 5,
+      "text_en": "the door-open log would record the same entry twice,",
+      "text_ja": "ドアの開閉記録が二重に記録されたり、",
+      "text_zh_Hant": "開門紀錄被記錄了兩次,"
+    },
+    {
+      "text": "의자 위치까지 미세하게 두",
+      "est_sec": 3,
+      "text_en": "even a chair's position would split, ever so slightly, into two",
+      "text_ja": "椅子の位置まで微妙に二つの",
+      "text_zh_Hant": "連椅子的位置都微微出現了兩種"
+    },
+    {
+      "text": "갈래로 어긋나 있었죠.",
+      "est_sec": 3,
+      "text_en": "different positions.",
+      "text_ja": "パターンにずれていました。",
+      "text_zh_Hant": "細微的偏差。"
+    },
+    {
+      "text": "보고서엔 그냥 '위상 중첩",
+      "est_sec": 3,
+      "text_en": "The report just called it 'phase overlap,'",
+      "text_ja": "報告書にはただ「位相重畳",
+      "text_zh_Hant": "報告上只寫著「相位重疊"
+    },
+    {
+      "text": "현상'이라고 적혀 있는데,",
+      "est_sec": 3,
+      "text_en": "a phenomenon —",
+      "text_ja": "現象」とだけ書かれていましたが、",
+      "text_zh_Hant": "現象」,"
+    },
+    {
+      "text": "사이트 사람들은 그걸",
+      "est_sec": 3,
+      "text_en": "but the site staff called it",
+      "text_ja": "サイトの職員たちはそれを",
+      "text_zh_Hant": "但站點的人卻把它叫做"
+    },
+    {
+      "text": "'겹자정'이라고 불렀습니다.",
+      "est_sec": 3,
+      "text_en": "'Double Midnight.'",
+      "text_ja": "「二重零時」と呼んでいました。",
+      "text_zh_Hant": "「重疊子夜」。"
+    },
+    {
+      "text": "자정마다 겹친다고요.",
+      "est_sec": 3,
+      "text_en": "Because it overlapped every midnight.",
+      "text_ja": "零時のたびに重なるからだそうです。",
+      "text_zh_Hant": "因為它每到午夜就會重疊。"
+    },
+    {
+      "text": "재단은 오차를 서둘러 잡겠다고,",
+      "est_sec": 4,
+      "text_en": "In a hurry to fix the drift,",
+      "text_ja": "財団は誤差を急いで正そうと、",
+      "text_zh_Hant": "基金會為了盡快修正誤差,"
+    },
+    {
+      "text": "보정을 하루 두 번으로 늘렸습니다.",
+      "est_sec": 4,
+      "text_en": "the Foundation doubled the calibrations to twice a day.",
+      "text_ja": "補正を一日二回に増やしました。",
+      "text_zh_Hant": "把校正次數增加到了一天兩次。"
+    },
+    {
+      "text": "그러자 겹침도 같이 늘었어요.",
+      "est_sec": 4,
+      "text_en": "The overlap grew right along with it.",
+      "text_ja": "すると重なりも一緒に増えました。",
+      "text_zh_Hant": "結果重疊現象也跟著加劇了。"
+    },
+    {
+      "text": "초 단위였던 게, 사흘 만에 분 단위로요.",
+      "est_sec": 5,
+      "text_en": "What was seconds became minutes within three days.",
+      "text_ja": "秒単位だったものが、三日で分単位に。",
+      "text_zh_Hant": "原本以秒計算的,三天後就變成了以分鐘計算。"
+    },
+    {
+      "text": "현실 안정 장치도 세 대 들여놨습니다.",
+      "est_sec": 5,
+      "text_en": "They even brought in three Scranton Reality Anchors.",
+      "text_ja": "スクラントン現実固定装置も三台導入しました。",
+      "text_zh_Hant": "他們甚至調來了三台史克蘭頓現實錨定裝置。"
+    },
+    {
+      "text": "출력을 올려보질 않나, 위치를 바꿔보질 않나,",
+      "est_sec": 6,
+      "text_en": "They cranked up the output, moved the units around,",
+      "text_ja": "出力を上げてみたり、位置を変えてみたり、",
+      "text_zh_Hant": "調高輸出功率,又換過擺放位置,"
+    },
+    {
+      "text": "두 대를 겹쳐 돌려보기도 했고요.",
+      "est_sec": 4,
+      "text_en": "even ran two of them overlapped.",
+      "text_ja": "二台を重ねて稼働させたりもしました。",
+      "text_zh_Hant": "還試過讓兩台疊在一起運轉。"
+    },
+    {
+      "text": "현실 안정 장치는 좀처럼",
+      "est_sec": 3,
+      "text_en": "But the anchors barely",
+      "text_ja": "現実固定装置はなかなか",
+      "text_zh_Hant": "現實錨定裝置卻遲遲"
+    },
+    {
+      "text": "겹침을 줄이지 못했습니다.",
+      "est_sec": 3,
+      "text_en": "reduced the overlap at all.",
+      "text_ja": "重なりを減らせませんでした。",
+      "text_zh_Hant": "無法減少重疊現象。"
+    },
+    {
+      "text": "기동특무부대 오미크론-19 — 현장에선",
+      "est_sec": 5,
+      "text_en": "Mobile Task Force Omicron-19 — nicknamed",
+      "text_ja": "機動特務部隊オミクロン-19、現場では",
+      "text_zh_Hant": "機動特遣隊Omicron-19——現場都"
+    },
+    {
+      "text": "그냥 '초침'이라고 부르는 팀이,",
+      "est_sec": 4,
+      "text_en": "'Second Hand' on-site —",
+      "text_ja": "「秒針」と呼ばれるこのチームが、",
+      "text_zh_Hant": "叫他們「秒針」——"
+    },
+    {
+      "text": "겹자정을 잡으러 투입됐는데요.",
+      "est_sec": 4,
+      "text_en": "was deployed to deal with Double Midnight.",
+      "text_ja": "二重零時を止めるために投入されました。",
+      "text_zh_Hant": "被派來處理重疊子夜。"
+    },
+    {
+      "text": "안정 장치 세 대를 한꺼번에 돌렸지만,",
+      "est_sec": 5,
+      "text_en": "They ran all three anchors at once,",
+      "text_ja": "安定装置三台を一斉に稼働させましたが、",
+      "text_zh_Hant": "他們同時啟動了三台錨定裝置,"
+    },
+    {
+      "text": "겹침 구간만 좀 흐릿해졌을",
+      "est_sec": 3,
+      "text_en": "and the overlap only got a little blurrier —",
+      "text_ja": "重なりの区間が少しぼやけただけで",
+      "text_zh_Hant": "但重疊的時段只是變得模糊了一些,"
+    },
+    {
+      "text": "뿐 사라지진 않았습니다.",
+      "est_sec": 3,
+      "text_en": "it never disappeared.",
+      "text_ja": "消えはしませんでした。",
+      "text_zh_Hant": "並沒有消失。"
+    },
+    {
+      "text": "브란트 박사가 이상한 걸 하나 짚었습니다.",
+      "est_sec": 5,
+      "text_en": "Dr. Brandt noticed something odd.",
+      "text_ja": "ブラント博士は一つ妙な点に気づきました。",
+      "text_zh_Hant": "布蘭特博士注意到了一件怪事。"
+    },
+    {
+      "text": "겹침 길이가,",
+      "est_sec": 2,
+      "text_en": "The overlap's length",
+      "text_ja": "重なりの長さが、",
+      "text_zh_Hant": "重疊的時長,"
+    },
+    {
+      "text": "정확히 보정 횟수에 비례한다는 거였죠.",
+      "est_sec": 5,
+      "text_en": "was exactly proportional to the number of calibrations.",
+      "text_ja": "補正回数に正確に比例していたのです。",
+      "text_zh_Hant": "恰好與校正次數成正比。"
+    },
+    {
+      "text": "「그럼 하루만 건너뛰어 보면 되잖아요.」",
+      "est_sec": 5,
+      "text_en": "「Then let's just skip it for one day.」",
+      "text_ja": "「じゃあ一日だけ飛ばしてみればいいじゃないですか。」",
+      "text_zh_Hant": "「那只要跳過一天不就行了嗎。」"
+    },
+    {
+      "text": "그녀가 그렇게 제안했는데요.",
+      "est_sec": 3,
+      "text_en": "That's what she proposed.",
+      "text_ja": "彼女はそう提案しました。",
+      "text_zh_Hant": "她是這麼提議的。"
+    },
+    {
+      "text": "상부는 반대했습니다. 국제표준 이탈은,",
+      "est_sec": 5,
+      "text_en": "Command refused. Deviating from the standard",
+      "text_ja": "上層部は反対しました。国際標準からの逸脱は、",
+      "text_zh_Hant": "上層拒絕了。偏離國際標準,"
+    },
+    {
+      "text": "재단 바깥에서도 바로 눈에 띄니까요.",
+      "est_sec": 5,
+      "text_en": "would be noticed outside the Foundation immediately.",
+      "text_ja": "財団の外にもすぐに気づかれてしまいますから。",
+      "text_zh_Hant": "在基金會之外馬上就會被發現。"
+    },
+    {
+      "text": "그런데 그녀는, 몰래 한 번 건너뛰었습니다.",
+      "est_sec": 6,
+      "text_en": "But she skipped it once, in secret.",
+      "text_ja": "それでも彼女は、こっそり一度だけ飛ばしました。",
+      "text_zh_Hant": "但她還是偷偷跳過了一次。"
+    },
+    {
+      "text": "그날 밤 CCTV엔, 아무 겹침도 없었죠.",
+      "est_sec": 5,
+      "text_en": "That night, the CCTV showed no overlap at all.",
+      "text_ja": "その夜のCCTVには、重なりが全くありませんでした。",
+      "text_zh_Hant": "那天晚上,監視器上完全沒有出現重疊。",
+      "emphasis": "아무 겹침도 없었죠"
+    },
+    {
+      "text": "원인은 오차가 아니라 — 오차를",
+      "est_sec": 4,
+      "text_en": "The cause wasn't the drift — it was",
+      "text_ja": "原因は誤差ではなく — 誤差を",
+      "text_zh_Hant": "原因不是誤差本身——而是"
+    },
+    {
+      "text": "잡겠다고 매일 적어 넣은,",
+      "est_sec": 3,
+      "text_en": "the number entered every night to fix it,",
+      "text_ja": "正そうと毎晩書き込んでいた、",
+      "text_zh_Hant": "為了修正它而每晚輸入的,"
+    },
+    {
+      "text": "그 숫자를 기입하는 절차 쪽이었던 겁니다.",
+      "est_sec": 5,
+      "text_en": "the procedure of entering that number itself.",
+      "text_ja": "その数字を入力する手順の方だったのです。",
+      "text_zh_Hant": "那個輸入數字的程序本身。"
+    },
+    {
+      "text": "문제는, 보정을 아예 멈추면 이 원자시계가",
+      "est_sec": 5,
+      "text_en": "The problem was, if they stopped calibrating entirely, this clock",
+      "text_ja": "問題は、補正を完全に止めればこの原子時計が",
+      "text_zh_Hant": "問題是,若完全停止校正,這座原子鐘"
+    },
+    {
+      "text": "국제표준에서 탈락한다는 거였죠.",
+      "est_sec": 4,
+      "text_en": "would be disqualified from the international standard.",
+      "text_ja": "国際標準から脱落してしまうことでした。",
+      "text_zh_Hant": "就會被剔除出國際標準。"
+    },
+    {
+      "text": "완전 중단엔 O5 승인이 필요했는데,",
+      "est_sec": 5,
+      "text_en": "A full shutdown needed O5 authorization,",
+      "text_ja": "完全停止にはO5の承認が必要でしたが、",
+      "text_zh_Hant": "完全停止需要O5的批准,"
+    },
+    {
+      "text": "그 결재는 아직도 올라가지 않고 있습니다.",
+      "est_sec": 5,
+      "text_en": "and that request still hasn't gone through.",
+      "text_ja": "その決裁はいまだに上がっていません。",
+      "text_zh_Hant": "而這份申請至今仍未送出。"
+    },
+    {
+      "text": "계속할 수도, 멈출 수도 없는 상황이었죠.",
+      "est_sec": 5,
+      "text_en": "They could neither continue nor stop.",
+      "text_ja": "続けることも、止めることもできない状況でした。",
+      "text_zh_Hant": "陷入了進退兩難的局面。"
+    },
+    {
+      "text": "D계급 한 명을,",
+      "est_sec": 2,
+      "text_en": "They stood one D-Class",
+      "text_ja": "D階級を一人、",
+      "text_zh_Hant": "他們讓一名D級人員"
+    },
+    {
+      "text": "겹침 구간 안에 세워두는 시험도 있었습니다.",
+      "est_sec": 6,
+      "text_en": "inside the overlap window, as a test.",
+      "text_ja": "重なりの区間内に立たせる試験も行いました。",
+      "text_zh_Hant": "站在重疊時段內進行測試。"
+    },
+    {
+      "text": "결과는요? 그날치 기억이,",
+      "est_sec": 3,
+      "text_en": "The result? That day's memory",
+      "text_ja": "結果は?その日の記憶が、",
+      "text_zh_Hant": "結果呢?那天的記憶,"
+    },
+    {
+      "text": "두 갈래로 갈라진 채 남았습니다.",
+      "est_sec": 4,
+      "text_en": "was left split into two versions.",
+      "text_ja": "二つに分かれたまま残りました。",
+      "text_zh_Hant": "分裂成了兩個版本留了下來。"
+    },
+    {
+      "text": "어느 쪽이 진짜인지는,",
+      "est_sec": 3,
+      "text_en": "Which one was real,",
+      "text_ja": "どちらが本物なのかは、",
+      "text_zh_Hant": "哪一個才是真的,"
+    },
+    {
+      "text": "D계급 본인도 구분 못 했고요.",
+      "est_sec": 4,
+      "text_en": "even the D-Class himself couldn't tell.",
+      "text_ja": "D階級本人にも区別がつきませんでした。",
+      "text_zh_Hant": "連D級人員自己也分不清。"
+    },
+    {
+      "text": "왜 하필 그 기억만 갈라졌을까요?",
+      "est_sec": 4,
+      "text_en": "Why did only that memory split?",
+      "text_ja": "なぜよりによってその記憶だけが分かれたんでしょうか?",
+      "text_zh_Hant": "為什麼偏偏是那段記憶分裂了呢?"
+    },
+    {
+      "text": "「저는… 분명 두 번 다 여기 서 있었는데요.」",
+      "est_sec": 6,
+      "text_en": "「I… was definitely standing here both times.」",
+      "text_ja": "「私は…確かに二回とも、ここに立っていたんですが。」",
+      "text_zh_Hant": "「我…確實兩次都站在這裡啊。」"
+    },
+    {
+      "text": "D-9385가 그렇게 진술했다더군요.",
+      "est_sec": 5,
+      "text_en": "D-9385 reportedly gave that testimony.",
+      "text_ja": "D-9385はそう証言したそうです。",
+      "text_zh_Hant": "據說D-9385是這樣作證的。"
+    },
+    {
+      "text": "이 부분은 저도… 아직 다",
+      "est_sec": 3,
+      "text_en": "This part, honestly… I still can't",
+      "text_ja": "この部分は私も…まだ完全には",
+      "text_zh_Hant": "這部分老實說…我也還"
+    },
+    {
+      "text": "이해했다고는 말 못 하겠더군요.",
+      "est_sec": 4,
+      "text_en": "say I fully understand.",
+      "text_ja": "理解したとは言えません。",
+      "text_zh_Hant": "沒能完全理解。"
+    },
+    {
+      "text": "결국 브란트 박사는 규정을 어기고,",
+      "est_sec": 4,
+      "text_en": "In the end, Dr. Brandt broke protocol,",
+      "text_ja": "結局ブラント博士は規定を破り、",
+      "text_zh_Hant": "最後布蘭特博士違反規定,"
+    },
+    {
+      "text": "자기 손으로 보정값 소수점 한 자리를",
+      "est_sec": 5,
+      "text_en": "and started secretly nudging one decimal place",
+      "text_ja": "自分の手で補正値の小数点一桁を",
+      "text_zh_Hant": "親自偷偷修改了校正值小數點後一位,"
+    },
+    {
+      "text": "몰래 더 고쳐 넣기 시작했습니다.",
+      "est_sec": 4,
+      "text_en": "of the calibration value herself.",
+      "text_ja": "こっそりさらに書き換え始めました。",
+      "text_zh_Hant": "開始悄悄多加以修正。"
+    },
+    {
+      "text": "「이 정도는, 아무도 모를 겁니다.」",
+      "est_sec": 5,
+      "text_en": "「No one will notice this much.」",
+      "text_ja": "「これくらいなら、誰にも分からないはずです。」",
+      "text_zh_Hant": "「這種程度,應該沒人會發現。」"
+    },
+    {
+      "text": "동료에게 그렇게 말했다더군요.",
+      "est_sec": 4,
+      "text_en": "She apparently told a colleague.",
+      "text_ja": "同僚にそう言っていたそうです。",
+      "text_zh_Hant": "據說她是這麼跟同事說的。"
+    },
+    {
+      "text": "그런데 그날 밤,",
+      "est_sec": 2,
+      "text_en": "But that night,",
+      "text_ja": "ところがその夜、",
+      "text_zh_Hant": "但就在那天晚上,"
+    },
+    {
+      "text": "그녀가 직접 콘솔 앞에 서 있던 그 순간이,",
+      "est_sec": 6,
+      "text_en": "the very moment she stood at the console herself",
+      "text_ja": "彼女自身がコンソールの前に立っていたその瞬間が、",
+      "text_zh_Hant": "她親自站在控制台前的那一刻,"
+    },
+    {
+      "text": "겹침 구간과 정확히 맞물렸습니다. 화면 속엔,",
+      "est_sec": 6,
+      "text_en": "lined up exactly with the overlap window. On screen,",
+      "text_ja": "重なりの区間と正確に重なりました。画面には、",
+      "text_zh_Hant": "恰好與重疊時段完全吻合。畫面中,",
+      "emphasis": "정확히 맞물렸습니다"
+    },
+    {
+      "text": "같은 얼굴 둘이 같은 자리에 서 있었죠.",
+      "est_sec": 5,
+      "text_en": "two of the same face stood in the same spot.",
+      "text_ja": "同じ顔が二人、同じ場所に立っていました。",
+      "text_zh_Hant": "出現了兩張同樣的臉,站在同一個位置。"
+    },
+    {
+      "text": "야간 당직자 진술로는,",
+      "est_sec": 3,
+      "text_en": "According to the night-shift officer,",
+      "text_ja": "夜勤担当者の証言によると、",
+      "text_zh_Hant": "根據夜班人員的證詞,"
+    },
+    {
+      "text": "스피커에서 같은 목소리가 반 박자",
+      "est_sec": 4,
+      "text_en": "the same voice came through the speaker, half a beat",
+      "text_ja": "スピーカーから同じ声が半拍",
+      "text_zh_Hant": "喇叭裡傳出同一個聲音,相差半拍"
+    },
+    {
+      "text": "차이로 두 번 들렸다고 합니다.",
+      "est_sec": 4,
+      "text_en": "apart, twice.",
+      "text_ja": "ずれて二回聞こえたそうです。",
+      "text_zh_Hant": "響了兩次。"
+    },
+    {
+      "text": "「제가… 방금 저를 봤어요, 제 뒤에서.」",
+      "est_sec": 5,
+      "text_en": "「I… just saw myself. Behind me.」",
+      "text_ja": "「私…さっき自分を見ました、自分の後ろに。」",
+      "text_zh_Hant": "「我…剛剛看到我自己了,在我背後。」",
+      "emphasis": "제 뒤에서"
+    },
+    {
+      "text": "다음 날 인사 기록엔,",
+      "est_sec": 3,
+      "text_en": "The next day, her personnel record",
+      "text_ja": "翌日、人事記録には、",
+      "text_zh_Hant": "隔天,人事紀錄上"
+    },
+    {
+      "text": "그녀 이름이 두 줄로 겹쳐 있었습니다.",
+      "est_sec": 5,
+      "text_en": "showed her name overlapping in two lines.",
+      "text_ja": "彼女の名前が二行重なって記載されていました。",
+      "text_zh_Hant": "她的名字重疊成了兩行。"
+    },
+    {
+      "text": "그녀 자신도, 그날 밤 자기가 뭘 했는지",
+      "est_sec": 5,
+      "text_en": "Even she herself remembers what she did that night",
+      "text_ja": "彼女自身も、その夜自分が何をしたのか",
+      "text_zh_Hant": "連她自己,對於那晚做了什麼,"
+    },
+    {
+      "text": "두 가지로 기억하고 있고요.",
+      "est_sec": 3,
+      "text_en": "in two different ways.",
+      "text_ja": "二通りに記憶しています。",
+      "text_zh_Hant": "都留有兩種不同的記憶。"
+    },
+    {
+      "text": "격리동 복도 끝엔,",
+      "est_sec": 2,
+      "text_en": "At the end of the containment wing's corridor,",
+      "text_ja": "収容棟の廊下の突き当たりには、",
+      "text_zh_Hant": "收容棟走廊的盡頭,"
+    },
+    {
+      "text": "낯익은 이름도 하나 있습니다.",
+      "est_sec": 4,
+      "text_en": "there's a familiar name too.",
+      "text_ja": "見覚えのある名前も一つあります。",
+      "text_zh_Hant": "也有一個熟悉的名字。"
+    },
+    {
+      "text": "정교한 톱니장치,",
+      "est_sec": 2,
+      "text_en": "An intricate clockwork device —",
+      "text_ja": "精巧な歯車仕掛け、",
+      "text_zh_Hant": "精巧的齒輪裝置——"
+    },
+    {
+      "text": "SCP-914 — 등급은 세이프고요.",
+      "est_sec": 5,
+      "text_en": "SCP-914. Safe class.",
+      "text_ja": "SCP-914 — 等級はセーフです。",
+      "text_zh_Hant": "SCP-914——等級為安全。"
+    },
+    {
+      "text": "이 연구소 사람들은,",
+      "est_sec": 3,
+      "text_en": "The staff here",
+      "text_ja": "この研究所の人たちは、",
+      "text_zh_Hant": "這座研究所的人,"
+    },
+    {
+      "text": "그 문 앞엔 오래 서 있지 않습니다.",
+      "est_sec": 5,
+      "text_en": "don't linger in front of that door.",
+      "text_ja": "そのドアの前には長居しません。",
+      "text_zh_Hant": "不會在那扇門前久留。"
+    },
+    {
+      "text": "휴게실 자판기도 사실 SCP-294입니다.",
+      "est_sec": 5,
+      "text_en": "The break room vending machine is actually SCP-294.",
+      "text_ja": "休憩室の自動販売機も実はSCP-294です。",
+      "text_zh_Hant": "休息室的自動販賣機其實就是SCP-294。"
+    },
+    {
+      "text": "다만 아무도 그 앞에서",
+      "est_sec": 3,
+      "text_en": "But no one here",
+      "text_ja": "ただ、誰もその前で",
+      "text_zh_Hant": "只是沒人會在它面前"
+    },
+    {
+      "text": "커피를 두 잔 시키진 않죠.",
+      "est_sec": 3,
+      "text_en": "orders two coffees at once.",
+      "text_ja": "コーヒーを二杯注文したりはしません。",
+      "text_zh_Hant": "點兩杯咖啡。"
+    },
+    {
+      "text": "마셜, 카터 & 다크가,",
+      "est_sec": 3,
+      "text_en": "Marshall, Carter & Dark",
+      "text_ja": "マーシャル・カーター&ダークが、",
+      "text_zh_Hant": "馬歇爾、卡特和達克公司"
+    },
+    {
+      "text": "이 보정 알고리즘 자체를",
+      "est_sec": 3,
+      "text_en": "once approached about buying",
+      "text_ja": "この補正アルゴリズムそのものを",
+      "text_zh_Hant": "曾接觸想買下"
+    },
+    {
+      "text": "사겠다고 접근한 적도 있습니다.",
+      "est_sec": 4,
+      "text_en": "the calibration algorithm itself.",
+      "text_ja": "買いたいと接触してきたこともあります。",
+      "text_zh_Hant": "這套校正演算法本身。"
+    },
+    {
+      "text": "재단은 거절했죠. 이유는 간단합니다.",
+      "est_sec": 5,
+      "text_en": "The Foundation refused. The reason's simple.",
+      "text_ja": "財団は断りました。理由は単純です。",
+      "text_zh_Hant": "基金會拒絕了。理由很簡單。"
+    },
+    {
+      "text": "재단도 이 알고리즘이 왜 이런 결과를 내는지,",
+      "est_sec": 6,
+      "text_en": "Even the Foundation doesn't know why this algorithm",
+      "text_ja": "財団自身も、このアルゴリズムがなぜこんな結果を出すのか、",
+      "text_zh_Hant": "連基金會自己都不知道,這套演算法為何會產生這種結果,"
+    },
+    {
+      "text": "아직 다 모른다는 거죠.",
+      "est_sec": 3,
+      "text_en": "produces this result — not fully, anyway.",
+      "text_ja": "まだ完全には分かっていないからです。",
+      "text_zh_Hant": "至今仍未完全弄清楚。"
+    },
+    {
+      "text": "재고통합팀 노박 박사에게도,",
+      "est_sec": 3,
+      "text_en": "They even consulted Dr. Novak",
+      "text_ja": "在庫統合チームのノヴァク博士にも、",
+      "text_zh_Hant": "他們也向庫存整合小組的諾瓦克博士"
+    },
+    {
+      "text": "잠깐 자문을 구했습니다.",
+      "est_sec": 3,
+      "text_en": "of the inventory-reconciliation team, briefly.",
+      "text_ja": "少しの間助言を求めました。",
+      "text_zh_Hant": "簡短徵詢過意見。"
+    },
+    {
+      "text": "기록이 사람보다 먼저 바뀌는 사례,",
+      "est_sec": 4,
+      "text_en": "Cases where the record changes before the person does —",
+      "text_ja": "記録が人より先に変わる事例、",
+      "text_zh_Hant": "紀錄比人先改變的案例——"
+    },
+    {
+      "text": "낯익다고 하더군요. 지금도 사이트-356은,",
+      "est_sec": 6,
+      "text_en": "she said it looked familiar. Even now, Site-356",
+      "text_ja": "見覚えがあると言っていました。今もサイト-356は、",
+      "text_zh_Hant": "她說這很眼熟。如今Site-356"
+    },
+    {
+      "text": "매일 자정 최소한의 보정만 넣고 있습니다.",
+      "est_sec": 5,
+      "text_en": "enters only the bare minimum calibration each midnight.",
+      "text_ja": "毎晩最小限の補正だけを入れています。",
+      "text_zh_Hant": "每天午夜只輸入最低限度的校正值。"
+    },
+    {
+      "text": "격리 등급 재분류 심사는, 아직 안 끝났고요.",
+      "est_sec": 6,
+      "text_en": "The reclassification review is still pending.",
+      "text_ja": "収容等級の再分類審査は、まだ終わっていません。",
+      "text_zh_Hant": "收容等級的重新分類審查,至今仍未結束。"
+    },
+    {
+      "text": "솔직히 저도, 이 두 자리 숫자가 왜 계속",
+      "est_sec": 5,
+      "text_en": "Honestly, even I can't explain why these two digits keep",
+      "text_ja": "正直、私もこの二桁の数字がなぜずっと",
+      "text_zh_Hant": "老實說,我也無法解釋為什麼這兩位數字"
+    },
+    {
+      "text": "벌어지는지는 설명 못 하겠습니다.",
+      "est_sec": 4,
+      "text_en": "drifting apart.",
+      "text_ja": "ずれ続けているのか説明できません。",
+      "text_zh_Hant": "會持續偏離。"
+    },
+    {
+      "text": "겹자정은 지금도, 자정마다 몇 초씩 남죠.",
+      "est_sec": 5,
+      "text_en": "Double Midnight still leaves a few seconds behind, every night.",
+      "text_ja": "二重零時は今も、毎晩数秒ずつ残っています。",
+      "text_zh_Hant": "重疊子夜至今仍每晚留下幾秒的殘影。"
+    },
+    {
+      "text": "마스터 시계 두 자리 숫자는,",
+      "est_sec": 4,
+      "text_en": "The master clock's two digits",
+      "text_ja": "マスター時計の二桁の数字は、",
+      "text_zh_Hant": "主時鐘的那兩位數字,"
+    },
+    {
+      "text": "오늘 밤도 조금 벌어져 있을 겁니다.",
+      "est_sec": 5,
+      "text_en": "will likely be a little further apart again tonight.",
+      "text_ja": "今夜もまた少しずれているはずです。",
+      "text_zh_Hant": "今晚應該又會稍微偏離一點。"
+    },
+    {
+      "text": "이 사건은 지금, SCP-9385라는 문서",
+      "est_sec": 5,
+      "text_en": "For now, this case exists only under a file number,",
+      "text_ja": "この事件は今、SCP-9385という文書",
+      "text_zh_Hant": "這起事件如今,只以SCP-9385"
+    },
+    {
+      "text": "번호로만 남아 있습니다.",
+      "est_sec": 3,
+      "text_en": "SCP-9385.",
+      "text_ja": "番号としてのみ残っています。",
+      "text_zh_Hant": "這個檔案編號留存下來。"
+    },
+    {
+      "text": "혹시 집에 시계가 두 개 이상이신 분 —",
+      "est_sec": 5,
+      "text_en": "If you happen to have two or more clocks at home —",
+      "text_ja": "もし家に時計が二つ以上ある方は —",
+      "text_zh_Hant": "如果你家裡剛好有兩個以上的時鐘——"
+    },
+    {
+      "text": "오늘 밤 그 둘을 나란히 맞춰보시겠어요?",
+      "est_sec": 5,
+      "text_en": "would you line them up side by side tonight?",
+      "text_ja": "今夜その二つを並べて合わせてみませんか?",
+      "text_zh_Hant": "今晚要不要把它們擺在一起對一對時間?"
+    },
+    {
+      "text": "몇 초나 벌어져 있는지,",
+      "est_sec": 3,
+      "text_en": "How many seconds apart they are —",
+      "text_ja": "何秒ずれているのか、",
+      "text_zh_Hant": "相差了幾秒鐘,"
+    },
+    {
+      "text": "그 결과가 궁금합니다. 이 사이트 소식은,",
+      "est_sec": 5,
+      "text_en": "I'd love to know the result. News from this site",
+      "text_ja": "その結果が気になります。このサイトの続報は、",
+      "text_zh_Hant": "我很好奇結果。這個站點的後續消息,"
+    },
+    {
+      "text": "다음 편에서 마저 전해드리죠.",
+      "est_sec": 4,
+      "text_en": "I'll bring you the rest, next time.",
+      "text_ja": "次回でまたお伝えしますね。",
+      "text_zh_Hant": "我會在下一集繼續告訴大家。"
+    }
+  ],
+  "scenes": [
+    {
+      "prompt": "A large digital master clock display, two stacked time readouts, one digit glowing amber and visibly out of sync, mounted on a dark control-room wall, blurred server racks behind, dead-on close shot filling the frame, single amber glow, rest near-black, brushed steel panel, matte glass, thin haze. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "A technician's hand pressing one glowing amber key on a console keypad, extreme close-up, low angle, key fills half the frame, single amber key-light, worn plastic keys, faint fingerprint smudges, brushed metal edge, near-black background. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "A CCTV monitor showing a translucent double-exposure of the same silhouetted figure exiting and re-entering a doorway, edges glowing amber where the images overlap, monitor alone on a dark desk, close centered shot, matte bezel, dust motes in the glow. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "Two identical half-full coffee cups side by side on a dark desk, faint amber double-exposure shimmer around their rims, close low-angle shot dominating the frame, single warm amber light above, ceramic cups, faint steam, near-black background. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "A logbook page with the same timestamp stamped twice, slightly offset, glowing amber where the stamps overlap, a drawer handle faint at the edge, top-down close shot centered on the doubled stamp, worn paper, near-black desk. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "Two identical wall clocks side by side, hands clearly diverging by minutes, the lagging clock's face glowing amber, bare concrete corridor wall, straight-on shot, both clocks large in frame, matte black casings, near-black surroundings. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "Three tall industrial Scranton Reality Anchor pylons together, coils glowing amber, humming in a dark control room, a monitor faintly showing a ghosted double image behind, low angle filling the frame, brushed industrial metal, thin haze. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "A terminal screen showing one log line for a skipped calibration, an empty checkbox glowing amber beside it, dark keyboard faint below, close centered shot filling the frame, matte screen glass, near-black room. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "A CCTV monitor showing one clear, un-doubled coffee cup on an empty desk, no ghosting anywhere, close centered shot, single faint amber glow from the monitor, matte bezel, unusually still near-black room. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "An authorization document on a dark desk, an empty signature field glowing amber, a small warning icon beside it, blurred terminal behind, close top-down shot centered on the glowing field, crisp paper, near-black desk. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "Two translucent overlapping figures of the same woman at a console, both faces visible, one slightly phased and glowing amber at the edges, console lights blurred behind, close three-quarter shot filling the frame, lab coat fabric, near-black room. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "A personnel record screen showing the same name printed twice in overlapping rows, glowing amber, the master clock's mismatched digits faint behind, close centered shot, matte monitor glass, empty office chair beside, near-black room. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    }
+  ],
+  "background": {
+    "id": "scp-9385_bg",
+    "kind": "image",
+    "reuse": false,
+    "aspect": "16:9",
+    "resolution": "1920x1080",
+    "prompt": "A large digital master clock display on a dark control-room wall, two stacked time readouts, one digit glowing amber and clearly out of sync, blurred server racks and cabling behind, centered shot, display dominant in frame, single amber glow, brushed steel panel, matte glass, near-black background, cold still air, faint haze. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere",
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion"
+  },
+  "thumbnail": {
+    "hook": "Two translucent overlapping figures of the same woman stand at a glowing console in a pitch-black underground lab, both faces visible, one phased and rimmed in searing amber light. Extreme close low angle, one hot amber accent, dark anime cel illustration, bold linework, flat cel shading, high contrast, cinematic.",
+    "hook_alt": [
+      "A stark amber-lit digital clock display showing two mismatched time readouts side by side in a near-black underground control room, one digit glitching apart from the other, dark anime cel illustration, bold linework, flat cel shading, high contrast, cinematic low angle.",
+      "A CCTV monitor glowing amber in a pitch-black control room, showing a ghostly double-exposure of the same silhouetted figure overlapping at a doorway, dark anime cel illustration, bold linework, flat cel shading, high contrast, cinematic close shot."
+    ],
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion",
+    "text_safe_area": "right third",
+    "resolution": "1280x720"
+  },
+  "platforms": {
+    "youtube": {
+      "title": "핀란드 지하 정밀계측연구소, 브란트 박사가 자정마다 자기 자신과 겹쳐버렸다 [SCP-9385]",
+      "title_form": "피해형",
+      "thumbnail_text": "겹자정",
+      "thumbnail_quote": "- 방금 저를 봤어요, 제 뒤에서",
+      "tags": [
+        "SCP",
+        "SCP재단",
+        "SCP-914",
+        "SCP-294",
+        "괴담",
+        "무서운이야기",
+        "미스터리"
+      ],
+      "chapters": [
+        "00:00 도입 — 어긋난 영점 사 초",
+        "00:49 재단 인수 — 사이트-356, 보정 절차 시작",
+        "01:23 첫 겹침 — 관제실 CCTV",
+        "02:39 보정 강화, 겹침도 함께 커지다",
+        "04:17 반전 확인 — 보정을 건너뛴 밤",
+        "06:12 브란트 박사, 자기 자신과 겹치다",
+        "06:34 「제가 방금 저를 봤어요」",
+        "08:41 지금도 이어지는 기록"
+      ],
+      "description": "핀란드 지하 정밀계측연구소의 원자시계가 매일 자정 조금씩 어긋나기 시작합니다. 재단이 그 오차를 잡으려고 만든 보정 절차가, 사실은 매일 밤 그 방을 몇 초씩 겹치게 만드는 원인이었습니다.\n\n※ SCP 재단 세계관 기반 오리지널 창작 · 허구의 이야기입니다\n※ CC BY-SA 3.0 · 원작: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP재단 #괴담 #무서운이야기 #미스터리",
+      "localizations": {
+        "en": {
+          "title": "A Finnish Metrology Lab's Midnight Ritual Made Dr. Brandt Overlap With Herself [SCP-9385]",
+          "description": "An atomic clock buried in Finland's ancient bedrock starts drifting from satellite time by fractions of a second. The Foundation's own nightly calibration ritual turns out to be the actual cause — and the engineer who tampers with it ends up standing face to face with herself.\n\n※ Original fiction set in the SCP Foundation universe — a work of fiction\n※ CC BY-SA 3.0 · Source: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCPFoundation #creepypasta #horror #mystery"
+        },
+        "ja": {
+          "title": "フィンランドの地下計測研究所で、ブラント博士が毎晩自分自身と重なった [SCP-9385]",
+          "description": "フィンランドの地盤深くに埋められた原子時計が、衛星時刻から少しずつずれ始めます。財団自身が毎晩行う補正の儀式こそが、実はその原因でした——そしてその値をこっそり書き換えた技術者は、自分自身と向き合うことになります。\n\n※ SCP財団世界観に基づくオリジナル創作・フィクションです\n※ CC BY-SA 3.0 · 原作:SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP財団 #怖い話 #ホラー #ミステリー"
+        },
+        "zh-Hant": {
+          "title": "芬蘭地下精密計測研究所,布蘭特博士每晚與自己重疊 [SCP-9385]",
+          "description": "埋藏在芬蘭古老地盾深處的原子鐘,開始與衛星時間出現零點幾秒的偏差。基金會自己每晚執行的校正儀式,竟然才是真正的原因——而偷偷竄改數值的工程師,最終與自己面對面站在了一起。\n\n※ 基於SCP基金會世界觀的原創作品·純屬虛構\n※ CC BY-SA 3.0 · 原作:SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP基金會 #怪談 #恐怖故事 #懸疑"
+        }
+      },
+      "pinned_comment": "혹시 손목시계나 벽시계 두 개를 나란히 맞춰보신 적 있으신가요? 몇 초나 벌어져 있었는지 댓글로 들려주세요.",
+      "playlist": "SCP 아카이브 (전편 듣기)"
+    }
+  },
+  "credit": "SCP 재단 세계관 기반 오리지널 창작 · 허구 · CC BY-SA 3.0",
+  "content_rating": "teen",
+  "notes": "SCP 아카이브 · 16:9 롱폼 · 장면 전환 배경 + 자막 번인 · 단일 내레이터 · 완결형."
+}
