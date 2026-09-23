@@ -1,0 +1,982 @@
+{
+  "date": "2026-09-23",
+  "iso_week": "2026-W39",
+  "topic": "scp",
+  "privacy": "public",
+  "origin": "original",
+  "origin_note": "",
+  "source_url": "",
+  "story_id": "scp-9462",
+  "scp_number": "SCP-9462",
+  "object_class": "Safe",
+  "codename": "덧걸음",
+  "number_check": {
+    "checked_at": "2026-09-23",
+    "http_code": "unverified"
+  },
+  "theme": "접힌 공간",
+  "nature": "개념·규칙",
+  "twist_type": "역할",
+  "logline": "알래스카 내륙, 냉전기 조기경보기지 지하에 도면에도 없는 통로가 하나 있습니다. 잴 때마다 길이가 달라지는데, 재단이 막으려던 건 사실 그 통로가 감추고 있던 진짜 대피실 쪽이었습니다.",
+  "structure": "금기형",
+  "opening_move": "화자의 고백",
+  "opening_note": "",
+  "closing_move": "재단의 판단 보류",
+  "number_reveal": "앞",
+  "ending_mode": "없음",
+  "fault": "개체",
+  "hook_line": "저는 이 통로 사진을 보고, 한참 동안 어디가 잘못됐는지 못 찾았습니다.",
+  "procedures": [
+    "통로 길이를 잴 땐, 반드시 둘이 함께 걷는다",
+    "숫자는 통로 밖에서만 적는다",
+    "짧아진 숫자로는 기존 기록을 덮어쓰지 않는다"
+  ],
+  "character": {
+    "name": "마르첸코",
+    "role": "감독관 · 사이트-499 시설관리팀장",
+    "flaw": "늘 최신 값이 곧 맞는 값이라 믿어, 규정을 어기고서라도 기록을 최신으로 되돌리려 한다"
+  },
+  "chain": [
+    {
+      "when": "재단이 기지를 인수한 지 한참 지나서",
+      "event": "시설관리팀이 정기 점검 절차를 돌다가, 콘크리트 벽에 페인트로 번호만 적힌 낯선 통로 입구를 하나 더 찾아냈다",
+      "because": "",
+      "shot": "손전등 불빛 속에 드러난, 콘크리트 벽에 페인트로 번호만 적힌 낯선 통로 입구"
+    },
+    {
+      "when": "측정팀이 처음 통로를 재고 나서",
+      "event": "로그북에 백열두 미터라고 적었는데, 다음 날 다시 재보니 숫자가 조금 더 늘어 있었다",
+      "because": "도면에 없는 통로를 재확인하려던 것이 계기였다",
+      "shot": "로그북 페이지 위, 어제 적은 숫자보다 조금 더 큰 숫자가 새로 적혀 있다"
+    },
+    {
+      "when": "차이가 반복되자",
+      "event": "관리팀장 마르첸코가 절차 세 가지를 만들었다 — 둘이 함께 걷고, 통로 밖에서만 적고, 짧아진 숫자로는 덮어쓰지 않는다",
+      "because": "숫자가 잴 때마다 달라지는 걸 막을 방법이 그것뿐이었다",
+      "shot": "통로 입구에 붙은, 손글씨로 적힌 세 줄짜리 안내문"
+    },
+    {
+      "when": "몇 달 뒤 어느 야간 당직",
+      "event": "대원 하나가 동료를 깨우기 싫어 혼자 통로에 들어갔다",
+      "because": "규칙은 잘 지켜지고 있었지만, 그날만 혼자였다",
+      "shot": "혼자 통로 끝까지 걸어 들어가는 사람의 뒷모습, 손전등 불빛만 흔들린다"
+    },
+    {
+      "when": "다음 날 확인해보니",
+      "event": "통로가 하룻밤 사이 스물두 걸음만큼 늘어 있었다. 첫 번째 절차가 깨진 대가였다",
+      "because": "혼자 걸으면 보폭을 맞춰줄 사람이 없었다",
+      "shot": "새로 늘어난 통로 끝, 아직 낯선 벽면 결"
+    },
+    {
+      "when": "이 무렵",
+      "event": "누군가 통로 안에서 곧바로 숫자를 수첩에 눌러 적었다. 두 번째 절차가 깨졌다",
+      "because": "밖으로 나가는 동안 숫자를 잊을까 봐 그랬다는 진술이었다",
+      "shot": "통로 안, 벽에 대고 수첩에 숫자를 눌러 적는 손"
+    },
+    {
+      "when": "그날 이후",
+      "event": "통로가 하루가 멀다 하고 길어지자, 재단은 기동특무부대 세타-41을 투입해 레이저 거리계를 고정 설치했다",
+      "because": "사람 손으로 재는 것 자체가 오차를 만든다고 판단했다",
+      "shot": "삼각대에 고정된 레이저 거리계, 빨간 점이 통로 끝 어둠 속으로 사라진다"
+    },
+    {
+      "when": "거리계를 설치한 지 사흘 만에",
+      "event": "화면 속 숫자가 스스로 오르기 시작했고, 통로는 그 숫자만큼 자랐다",
+      "because": "절차는 사람의 기록만 막았을 뿐, 숫자 자체를 막지는 못했다",
+      "shot": "레이저 거리계 화면에 뜬 숫자가, 지켜보는 눈앞에서 한 자리 올라간다"
+    },
+    {
+      "when": "세타-41이 물러난 뒤, 지질반이 옛 도면을 뒤진 끝에",
+      "event": "이 통로가 위험한 확장이 아니라, 냉전기 설계자들이 진짜 대피실을 감추려고 만든 가짜 막다른 길이라는 사실이 드러났다",
+      "because": "다른 기지 자료 창고에서 사본 한 장이 뒤늦게 나왔다",
+      "shot": "빛바랜 청사진 위, 굵은 글씨로 적힌 '예비 종점 — 고정하지 말 것'"
+    },
+    {
+      "when": "마르첸코가 이 사실을 알고도",
+      "event": "기록을 원래 숫자로 되돌리면 통로도 짧아질 거라 믿고, 로그북 옛 페이지를 찢어내고 짧은 숫자를 적어 넣었다. 세 번째 절차를 이번엔 담당자 자신이 어겼다",
+      "because": "그는 늘 최신 값이 곧 맞는 값이라 믿는 사람이었다",
+      "shot": "로그북 옛 페이지를 찢어내고, 그 자리에 작은 숫자를 눌러 적는 손"
+    },
+    {
+      "when": "그날 밤",
+      "event": "통로는 짧아지지 않았다. 대신 지금까지 한 번도 없던 두꺼운 철문 하나가 벽에서 그대로 드러났다",
+      "because": "숫자를 줄이는 게 아니라, 기록이 잠깐 비는 순간 자체가 조건이었다",
+      "shot": "복도 맨 끝, 콘크리트 벽에서 그대로 드러난 두꺼운 철문 하나"
+    },
+    {
+      "when": "재진입 금지 명령이 내려오기 전",
+      "event": "마르첸코가 먼저 그 문 안으로 들어갔고, 그 뒤로 연락이 없었다",
+      "because": "그는 자신이 만든 규칙을 자신이 마지막까지 믿지 않았다",
+      "shot": "반쯤 열린 두꺼운 철문, 안쪽은 아무것도 보이지 않는 어둠뿐"
+    }
+  ],
+  "retention_beats": [
+    "마셜, 카터 & 다크가 이 절차 자체로 정확히 뭘 하려는지는 아직 밝혀지지 않았다",
+    "다른 냉전기 옛 기지에도 비슷한 '예비 종점'이 더 있을지는 아직 확인되지 않았다",
+    "SCP-9462의 재분류 심사는 아직 결론이 나지 않았다"
+  ],
+  "cameos": [
+    {
+      "number": "SCP-914",
+      "how": "등급 세이프. 무엇이든 넣으면 다른 것으로 바꿔 내보내는 장치로 알려져 있다."
+    },
+    {
+      "number": "SCP-999",
+      "how": "등급 세이프. 간지럼을 태우는 것으로 알려진 끈적한 점액질 개체다."
+    }
+  ],
+  "twist_summary": "역할의 반전 — 재단은 이 통로가 위험하게 확장되는 현상이라 보고 억제하려 했지만, 실은 냉전기 설계자들이 진짜 대피실을 감추기 위해 길이를 계속 조정하도록 설계해둔 가짜 막다른 길이었다는 반전. 관리팀장 마르첸코가 '최신 값이 맞는 값'이라 믿고 마지막 절차(짧아진 숫자로 덮어쓰지 않는다)를 스스로 어기자, 통로는 짧아지지 않고 대신 한 번도 없던 철문이 드러났으며 그는 그 문 안으로 들어간 뒤 돌아오지 않았다.",
+  "narration_full": "저는 이 통로 사진을 보고, 한참 동안 어디가 잘못됐는지 못 찾았습니다. 사진 자체엔 별다른 게 없거든요. 콘크리트 복도 하나, 어두운 끝. 그런데 옆에 붙은 로그북 사본을 보고서야 알았습니다 — 같은 통로를 잰 숫자가, 마흔한 번 다 달랐습니다.\n\n문서엔 그냥 SCP-9462라고만 적혀 있는데… 사이트-499 사람들은 이 통로를 「덧걸음」이라고 불렀습니다. 걸을 때마다 걸음 수가 저절로 덧붙는다고 해서 붙은 이름이었죠. 알래스카 내륙, 냉전이 한창이던 시절 조기경보 레이더를 돌리던 기지입니다. 지하 삼층, 도면에도 없던 곁가지 통로 하나가 무대고요. 객체 등급은 세이프입니다. 격리 방법은 있다는 뜻인데, 문제는 그 방법을 사람이 못 지켰다는 겁니다.\n\n재단이 기지를 인수한 지 한참 지나서였습니다. 시설관리팀이 정기 점검 절차를 돌다가, 콘크리트 벽에 페인트로 번호만 적힌 낯선 통로 입구를 하나 더 찾아냈습니다. 도면 어디에도 없는 자리였죠.\n\n측정팀이 들어가 길이를 재고 로그북에 적었습니다. 백열두 미터. 그런데 다음 날 다시 재보니… 숫자가 조금 더 늘어 있었습니다. 도면에 없는 통로를 재확인하려던 것뿐이었는데요.\n\n차이가 반복되자, 관리팀장 마르첸코가 절차 세 가지를 만들었습니다. 「이제부터, 혼자 들어가지 않습니다.」 통로 입구엔 손글씨 안내문이 붙었죠. 둘이 함께 걸을 것, 숫자는 통로 밖에서만 적을 것, 짧아진 숫자로는 기존 기록을 덮어쓰지 않을 것. 그렇게, 셋. 둘이 걸으면 정말 괜찮았던 걸까요? 그건 아직도 아무도 모릅니다.\n\n몇 달은 잘 지켜졌습니다. 그러다 야간 당직이던 대원 하나가, 동료를 깨우기 싫어서 혼자 들어갔죠. 로그북 여백엔 나중에 이렇게 적혀 있었습니다. 「오늘은 저 혼자였습니다. 다음부턴 안 그러겠습니다.」\n\n다음 날 확인해보니, 통로는 하룻밤 사이 스물두 걸음만큼 늘어 있었습니다. 첫 번째 절차가 깨진 대가였죠. 혼자 걸으면, 보폭을 맞춰줄 사람이 없으니까요.\n\n이 무렵, 또 한 사람이 통로 안에서 곧바로 숫자를 수첩에 눌러 적었습니다. 밖으로 나가는 동안 숫자를 잊을까 봐 그랬다더군요. 두 번째 절차까지, 그렇게 깨졌습니다.\n\n그날 이후로 통로는 하루가 멀다 하고 길어졌고, 걸음 수도 늘고, 로그북 페이지 수까지 늘었습니다. 재단은 결국… 사람 손을 아예 빼기로 했죠. 기동특무부대 세타-41, 별칭 「잣대」가 투입돼 덧걸음 격리를 위해 레이저 거리계를 고정 설치했습니다.\n\n레이저로 재보질 않나, 드론으로 스캔해보질 않나, 나중엔 아예 통로 입구를 막아버리자는 얘기까지 나왔습니다. 다 소용없었습니다.\n\n사흘 만이었습니다. 화면 속 숫자가 스스로 오르기 시작했고, 그 숫자가 오를 때마다 통로가 그만큼 자랐습니다. 당직 대원의 무전이 남아 있습니다. 「화면이 방금, 또 하나 올라갔습니다.」\n\n세타-41은 결국 거리계를 전부 철거하고 물러났습니다… 사람의 기록만 막았지, 숫자 자체를 막는 절차는 아무도 만들지 않았던 거죠. 완전 폐쇄엔 O5 승인이 필요했지만, 그 승인은 아직도 나지 않았습니다. 「덧걸음」이라는 이름은 그사이, 사이트-499 안에서 그대로 굳어버렸습니다.\n\n이쯤에서 지질반이 옛 설계 도면을 뒤지기 시작했습니다. 다른 기지 자료 창고에서 뒤늦게 사본 하나가 나왔는데, 거기엔 굵은 글씨로 이렇게 적혀 있었습니다. 「예비 종점 — 고정하지 말 것」. 그 문구를 보자마자, 지질반 연구원 하나가 중얼거렸습니다. 「이거, 어디서 본 구조인데요.」\n\n그러니까 이 통로는, 처음부터 위험한 확장이 아니었습니다. 냉전기 설계자들이 진짜 대피실을 감추려고, 길이를 계속 조정하도록 만들어둔 가짜 막다른 길이었던 겁니다. 재단이 격리하려던 건, 사실 누군가가 오래전부터 숨기려던 것 쪽이었습니다. 저도 이 대목에서, 뭐가 원인이고 뭐가 결과인지 한참 헷갈렸습니다.\n\n마르첸코는 이 사실을 알고도… 다른 결론을 냈습니다. 기록을 원래 숫자로 되돌리면, 통로도 다시 짧아질 거라고요. 「최신 값이 맞는 값입니다.」 그는 늘 그렇게 믿는 사람이었습니다. 솔직히 저도, 왜 그렇게까지 확신했는지는 다 이해 못 하겠습니다.\n\nD계급 대원 하나가 먼저 시험 삼아 끝까지 걸었습니다. 「저는 그냥… 끝까지 걸어보라고 해서 걸었습니다.」 나온 뒤엔 을급 기억소거제가 투여됐고, 나흘 만에 자연히 풀렸습니다. 별다른 반응은, 그때는 없었죠.\n\n그리고 마르첸코가, 로그북 옛 페이지를 찢어내고 짧은 숫자를 적어 넣었습니다. 세 번째 절차를, 이번엔 담당자 자신이 어긴 거였습니다.\n\n통로는 짧아지지 않았습니다. 대신 그날 밤, 지금까지 한 번도 없던 두꺼운 철문 하나가 벽에서 그대로 드러났습니다. 숫자를 줄이는 게 조건이었을까요, 아니면 기록이 잠깐 비는 그 순간 자체가 조건이었을까요?\n\n재진입 금지 명령이 내려오기 전에, 마르첸코가 먼저 그 문 안으로 들어갔습니다. 아내와 어린 딸이 기지 밖에서 그를 기다리고 있었다는 사실은, 사고 보고서 어디에도 적히지 않았습니다. 그가 마지막으로 본 게, 정말 원래 있던 문이었을까요?\n\n그의 마지막 무전은 이랬습니다. 「문이, 원래 있어야 할 자리에 있었던 것 같습니다.」\n\n그 뒤로 연락은… 없었습니다. 재수용 시도는 세 차례, 전부 실패했습니다. 통로 길이는 그날 이후 단 한 번도 안 바뀌었고요.\n\n마셜, 카터 & 다크가 이 절차 자체를 사겠다고 접근했다는 얘기도 있습니다. 재단은 거절했습니다. 이유는 간단했죠 — 재단도 이 절차가 왜 이렇게 짜여 있는지, 아직 다 모른다는 것.\n\n참고로 그 복도에서 몇 구역 떨어진 격리실엔, 뭐든 다른 걸로 바꿔준다는 그 유명한 수선기가 있습니다. 등급은 세이프. 복도 반대편엔 간지럼을 태운다는 그 개체도 있다고 하고요. 이번 일과는 상관없지만요.\n\nSCP-9462의 등급을 세이프로 계속 둘지, 유클리드로 올릴지 — 그 재분류 심사는 아직 결론이 안 났습니다. 이 부분은 저도… 아직 뭐라고 정리해야 할지 모르겠습니다. 로그북 마지막 장엔 지금도, 아무 숫자도 적혀 있지 않습니다.",
+  "segments": [
+    {
+      "text": "저는 이 통로 사진을 보고, 한참 동안 어디가 잘못됐는지 못",
+      "est_sec": 6,
+      "text_en": "I looked at a photo of this corridor, and for a while I couldn't tell",
+      "text_ja": "私はこの通路の写真を見て、しばらく何がおかしいのか",
+      "text_zh_Hant": "我看著這條通道的照片,一時之間找不出"
+    },
+    {
+      "text": "찾았습니다. 사진 자체엔 별다른 게 없거든요.",
+      "est_sec": 5,
+      "text_en": "what was wrong. The photo itself looks perfectly ordinary.",
+      "text_ja": "分かりませんでした。写真自体には特に変わった点はありません。",
+      "text_zh_Hant": "哪裡不對勁。照片本身其實沒什麼特別的。"
+    },
+    {
+      "text": "콘크리트 복도 하나, 어두운 끝. 그런데 옆에 붙은 로그북",
+      "est_sec": 6,
+      "text_en": "Just a concrete corridor, a dark end. But the logbook copy",
+      "text_ja": "コンクリートの通路一本、暗い突き当たり。でも隣にあった記録簿の",
+      "text_zh_Hant": "一條水泥通道,盡頭一片漆黑。但旁邊附的那份日誌影本"
+    },
+    {
+      "text": "사본을 보고서야 알았습니다 — 같은 통로를 잰 숫자가,",
+      "est_sec": 5,
+      "text_en": "was what finally told me — the numbers measured for that same corridor,",
+      "text_ja": "を見て初めて気づきました — 同じ通路を測った数字が、",
+      "text_zh_Hant": "才讓我看懂——量同一條通道量出來的數字,"
+    },
+    {
+      "text": "마흔한 번 다 달랐습니다.",
+      "est_sec": 3,
+      "text_en": "differed, all forty-one times.",
+      "text_ja": "四十一回とも違っていたんです。",
+      "text_zh_Hant": "四十一次,次次都不一樣。",
+      "emphasis": "마흔한 번"
+    },
+    {
+      "text": "문서엔 그냥 SCP-9462라고만 적혀 있는데…",
+      "est_sec": 5,
+      "text_en": "The file just calls it SCP-9462…",
+      "text_ja": "文書にはただSCP-9462とだけ書かれていますが…",
+      "text_zh_Hant": "檔案上只寫著SCP-9462……"
+    },
+    {
+      "text": "사이트-499 사람들은 이 통로를 「덧걸음」이라고",
+      "est_sec": 5,
+      "text_en": "but the people at Site-499 called this corridor",
+      "text_ja": "サイト-499の人たちはこの通路を「余分歩」と",
+      "text_zh_Hant": "但499號站點的人都把這條通道叫做"
+    },
+    {
+      "text": "불렀습니다. 걸을 때마다 걸음 수가 저절로 덧붙는다고 해서",
+      "est_sec": 6,
+      "text_en": "\"Extra Steps\" — because every time you walk it, the step count adds itself on.",
+      "text_ja": "呼んでいました。歩くたびに歩数が勝手に足されるからと",
+      "text_zh_Hant": "「加步」——因為每次走過,步數都會自己多出來。"
+    },
+    {
+      "text": "붙은 이름이었죠. 알래스카 내륙, 냉전이 한창이던 시절",
+      "est_sec": 6,
+      "text_en": "That's how the name stuck. Inland Alaska, back when the Cold War",
+      "text_ja": "付いた名前でした。アラスカ内陸、冷戦真っ只中の時代に",
+      "text_zh_Hant": "才有了這個名字。阿拉斯加內陸,冷戰正盛的年代"
+    },
+    {
+      "text": "조기경보 레이더를 돌리던 기지입니다. 지하 삼층,",
+      "est_sec": 5,
+      "text_en": "was running an early-warning radar station. Three floors underground,",
+      "text_ja": "早期警戒レーダーを回していた基地です。地下三階、",
+      "text_zh_Hant": "曾運轉早期預警雷達的基地。地下三層,"
+    },
+    {
+      "text": "도면에도 없던 곁가지 통로 하나가 무대고요.",
+      "est_sec": 4,
+      "text_en": "a side corridor that isn't even on the blueprints is our stage.",
+      "text_ja": "図面にもなかった枝分かれの通路が舞台です。",
+      "text_zh_Hant": "藍圖上根本沒有的一條岔道,就是這次的舞台。"
+    },
+    {
+      "text": "객체 등급은 세이프입니다. 격리 방법은 있다는 뜻인데,",
+      "est_sec": 6,
+      "text_en": "Object class: Safe. Which means a containment method exists,",
+      "text_ja": "オブジェクトクラスはセーフです。収容方法はあるという意味ですが、",
+      "text_zh_Hant": "物件等級是安全級。意思是收容方法是有的,"
+    },
+    {
+      "text": "문제는 그 방법을 사람이 못 지켰다는 겁니다.",
+      "est_sec": 4,
+      "text_en": "the problem is, people couldn't stick to it.",
+      "text_ja": "問題は、その方法を人が守れなかったということです。",
+      "text_zh_Hant": "問題是,那個方法沒人守得住。"
+    },
+    {
+      "text": "재단이 기지를 인수한 지 한참 지나서였습니다.",
+      "est_sec": 5,
+      "text_en": "It was a good while after the Foundation took over the base.",
+      "text_ja": "財団が基地を引き継いでから、だいぶ経ってのことでした。",
+      "text_zh_Hant": "那是在基金會接手這座基地很久之後的事。"
+    },
+    {
+      "text": "시설관리팀이 정기 점검 절차를 돌다가, 콘크리트 벽에",
+      "est_sec": 5,
+      "text_en": "The facilities team was running a routine inspection when, on a concrete wall,",
+      "text_ja": "施設管理チームが定期点検の手順を回っていて、コンクリートの壁に",
+      "text_zh_Hant": "設施管理小組在跑例行檢查程序時,在水泥牆上"
+    },
+    {
+      "text": "페인트로 번호만 적힌 낯선 통로 입구를 하나 더",
+      "est_sec": 4,
+      "text_en": "they found one more unfamiliar corridor entrance, marked only with a painted number.",
+      "text_ja": "ペンキで番号だけ書かれた見知らぬ通路の入り口をもう一つ",
+      "text_zh_Hant": "又發現了一個陌生的通道入口,上面只用油漆寫了個編號。"
+    },
+    {
+      "text": "찾아냈습니다. 도면 어디에도 없는 자리였죠.",
+      "est_sec": 5,
+      "text_en": "It was a spot that appeared nowhere on any blueprint.",
+      "text_ja": "見つけたんです。図面のどこにもない場所でした。",
+      "text_zh_Hant": "藍圖上哪裡都找不到這個位置。"
+    },
+    {
+      "text": "측정팀이 들어가 길이를 재고 로그북에 적었습니다.",
+      "est_sec": 5,
+      "text_en": "A survey team went in, measured the length, and wrote it in the logbook.",
+      "text_ja": "測定チームが入って長さを測り、記録簿に記入しました。",
+      "text_zh_Hant": "測量小組進去量了長度,寫進了日誌。"
+    },
+    {
+      "text": "백열두 미터. 그런데 다음 날 다시 재보니… 숫자가 조금 더",
+      "est_sec": 6,
+      "text_en": "One hundred twelve meters. But measuring again the next day… the number had",
+      "text_ja": "百十二メートル。でも翌日また測ってみると…数字が少し",
+      "text_zh_Hant": "一百一十二公尺。但隔天再量一次……數字又稍微"
+    },
+    {
+      "text": "늘어 있었습니다. 도면에 없는 통로를 재확인하려던",
+      "est_sec": 5,
+      "text_en": "grown a little more. They'd only meant to double-check a corridor",
+      "text_ja": "増えていました。図面にない通路を再確認しようとした",
+      "text_zh_Hant": "多了一點。原本只是想再確認一下藍圖上沒有的這條通道,"
+    },
+    {
+      "text": "것뿐이었는데요.",
+      "est_sec": 2,
+      "text_en": "that wasn't on any map, that's all.",
+      "text_ja": "だけだったのですが。",
+      "text_zh_Hant": "如此而已。"
+    },
+    {
+      "text": "차이가 반복되자, 관리팀장 마르첸코가 절차 세 가지를",
+      "est_sec": 5,
+      "text_en": "As the discrepancy kept repeating, team lead Marchenko drew up three",
+      "text_ja": "差異が繰り返されると、管理チーム長マルチェンコが手順を三つ",
+      "text_zh_Hant": "差異不斷重複之後,管理組長馬爾琴科訂下了三條"
+    },
+    {
+      "text": "만들었습니다. 「이제부터, 혼자 들어가지 않습니다.」",
+      "est_sec": 6,
+      "text_en": "procedures. \"From now on, no one goes in alone.\"",
+      "text_ja": "作りました。「これからは、一人では入りません。」",
+      "text_zh_Hant": "程序。「從現在起,任何人都不准獨自進去。」"
+    },
+    {
+      "text": "통로 입구엔 손글씨 안내문이 붙었죠. 둘이 함께 걸을 것,",
+      "est_sec": 6,
+      "text_en": "A handwritten notice went up at the entrance. Walk it in pairs,",
+      "text_ja": "通路の入り口には手書きの案内文が貼られました。二人で一緒に歩くこと、",
+      "text_zh_Hant": "通道入口貼出了一張手寫告示。要兩人同行、"
+    },
+    {
+      "text": "숫자는 통로 밖에서만 적을 것, 짧아진 숫자로는 기존 기록을",
+      "est_sec": 6,
+      "text_en": "write the number only outside the corridor, and never overwrite the existing record",
+      "text_ja": "数字は通路の外でだけ記入すること、短くなった数字で既存の記録を",
+      "text_zh_Hant": "只能在通道外記下數字、若量出來的數字變短了,絕不能拿它去覆蓋"
+    },
+    {
+      "text": "덮어쓰지 않을 것. 그렇게, 셋. 둘이 걸으면 정말 괜찮았던",
+      "est_sec": 6,
+      "text_en": "with a shorter one. Three rules, that's all. But was walking in pairs really",
+      "text_ja": "既存の記録を上書きしないこと。それで、三つ。二人で歩けば本当に",
+      "text_zh_Hant": "原本的紀錄。就這樣,三條。但兩人同行,真的就"
+    },
+    {
+      "text": "걸까요? 그건 아직도 아무도 모릅니다.",
+      "est_sec": 4,
+      "text_en": "enough? Nobody knows that, even now.",
+      "text_ja": "大丈夫だったのでしょうか？それは今もまだ誰も分かりません。",
+      "text_zh_Hant": "沒事了嗎?這點,至今誰也不知道。"
+    },
+    {
+      "text": "몇 달은 잘 지켜졌습니다. 그러다 야간 당직이던 대원",
+      "est_sec": 5,
+      "text_en": "For a few months, the rules held. Then one night, an on-duty staffer",
+      "text_ja": "数ヶ月はよく守られていました。そのうち夜間当直だった隊員が",
+      "text_zh_Hant": "有好幾個月,規矩都守得很好。後來有個值夜班的人員"
+    },
+    {
+      "text": "하나가, 동료를 깨우기 싫어서 혼자 들어갔죠.",
+      "est_sec": 5,
+      "text_en": "didn't want to wake a colleague, so he went in alone.",
+      "text_ja": "一人、同僚を起こしたくなくて一人で入りました。",
+      "text_zh_Hant": "不想吵醒同事,就自己一個人進去了。"
+    },
+    {
+      "text": "로그북 여백엔 나중에 이렇게 적혀 있었습니다.",
+      "est_sec": 5,
+      "text_en": "In the logbook's margin, this was written afterward:",
+      "text_ja": "記録簿の余白には、後でこう書かれていました。",
+      "text_zh_Hant": "日誌的空白處,後來留下了這樣一句話:"
+    },
+    {
+      "text": "「오늘은 저 혼자였습니다. 다음부턴 안 그러겠습니다.」",
+      "est_sec": 6,
+      "text_en": "\"It was just me today. I won't do it again.\"",
+      "text_ja": "「今日は私一人でした。次からはしません。」",
+      "text_zh_Hant": "「今天是我一個人。下次不會再這樣了。」"
+    },
+    {
+      "text": "다음 날 확인해보니, 통로는 하룻밤 사이 스물두 걸음만큼",
+      "est_sec": 6,
+      "text_en": "Checking the next day, the corridor had grown by twenty-two paces",
+      "text_ja": "翌日確認してみると、通路は一晩のうちに二十二歩分",
+      "text_zh_Hant": "隔天一查,通道在一夜之間多了二十二步的長度,"
+    },
+    {
+      "text": "늘어 있었습니다. 첫 번째 절차가 깨진 대가였죠.",
+      "est_sec": 5,
+      "text_en": "overnight. That was the price of breaking the first rule.",
+      "text_ja": "伸びていました。一つ目の手順が破られた代償でした。",
+      "text_zh_Hant": "這是打破第一條規矩的代價。"
+    },
+    {
+      "text": "혼자 걸으면, 보폭을 맞춰줄 사람이 없으니까요.",
+      "est_sec": 5,
+      "text_en": "Walk alone, and there's no one to match your stride against.",
+      "text_ja": "一人で歩けば、歩幅を合わせてくれる人がいませんから。",
+      "text_zh_Hant": "獨自一人走,就沒有人可以跟你對齊步伐。"
+    },
+    {
+      "text": "이 무렵, 또 한 사람이 통로 안에서 곧바로 숫자를 수첩에 눌러",
+      "est_sec": 6,
+      "text_en": "Around this time, someone else wrote the number straight into a notebook, right inside the corridor,",
+      "text_ja": "この頃、また別の一人が通路の中でそのまま数字を手帳に書き",
+      "text_zh_Hant": "差不多這個時候,又有一個人在通道裡就直接把數字寫進"
+    },
+    {
+      "text": "적었습니다. 밖으로 나가는 동안 숫자를 잊을까 봐",
+      "est_sec": 5,
+      "text_en": "worried he'd forget the number by the time he walked back out.",
+      "text_ja": "つけました。外に出るまでに数字を忘れそうだったからだと",
+      "text_zh_Hant": "了筆記本。他說是怕走出去之前把數字忘了。"
+    },
+    {
+      "text": "그랬다더군요. 두 번째 절차까지, 그렇게 깨졌습니다.",
+      "est_sec": 6,
+      "text_en": "So he said. That's how the second rule broke too.",
+      "text_ja": "言っていました。二つ目の手順もこうして破られました。",
+      "text_zh_Hant": "第二條規矩,就這樣也破了。"
+    },
+    {
+      "text": "그날 이후로 통로는 하루가 멀다 하고 길어졌고, 걸음 수도",
+      "est_sec": 6,
+      "text_en": "From that day on, the corridor grew almost daily, the step count kept climbing,",
+      "text_ja": "その日以来、通路は日を追うごとに伸び、歩数も",
+      "text_zh_Hant": "從那天起,通道幾乎天天在變長,步數"
+    },
+    {
+      "text": "늘고, 로그북 페이지 수까지 늘었습니다.",
+      "est_sec": 4,
+      "text_en": "and even the number of logbook pages kept increasing.",
+      "text_ja": "増え、記録簿のページ数まで増えました。",
+      "text_zh_Hant": "在增加,連日誌的頁數都跟著多了起來。"
+    },
+    {
+      "text": "재단은 결국… 사람 손을 아예 빼기로 했죠.",
+      "est_sec": 4,
+      "text_en": "In the end… the Foundation decided to take human hands out of it entirely.",
+      "text_ja": "財団は結局…人の手を完全に外すことにしました。",
+      "text_zh_Hant": "基金會最後……決定乾脆把人手完全撤掉。"
+    },
+    {
+      "text": "기동특무부대 세타-41, 별칭 「잣대」가 투입돼 덧걸음",
+      "est_sec": 6,
+      "text_en": "Mobile Task Force Theta-41, nicknamed \"Yardstick,\" was deployed",
+      "text_ja": "機動特務部隊シータ-41、通称「物差し」が投入され「余分歩」の",
+      "text_zh_Hant": "機動特遣隊西塔-41,綽號「量尺」,被派來為"
+    },
+    {
+      "text": "격리를 위해 레이저 거리계를 고정 설치했습니다.",
+      "est_sec": 5,
+      "text_en": "and fixed a laser rangefinder in place to contain the corridor.",
+      "text_ja": "収容のためにレーザー距離計を固定設置しました。",
+      "text_zh_Hant": "「加步」的收容,固定裝設了一台雷射測距儀。"
+    },
+    {
+      "text": "레이저로 재보질 않나, 드론으로 스캔해보질 않나, 나중엔",
+      "est_sec": 6,
+      "text_en": "They tried the laser, they tried a drone scan, and eventually",
+      "text_ja": "レーザーで測ってみたり、ドローンでスキャンしてみたり、しまいには",
+      "text_zh_Hant": "用雷射量過,也用無人機掃描過,到後來"
+    },
+    {
+      "text": "아예 통로 입구를 막아버리자는 얘기까지 나왔습니다.",
+      "est_sec": 5,
+      "text_en": "someone even suggested just sealing the entrance for good.",
+      "text_ja": "いっそ通路の入り口を塞いでしまおうという話まで出ました。",
+      "text_zh_Hant": "甚至有人提議乾脆把入口封死算了。"
+    },
+    {
+      "text": "다 소용없었습니다.",
+      "est_sec": 2,
+      "text_en": "None of it worked.",
+      "text_ja": "全部無駄でした。",
+      "text_zh_Hant": "全都沒用。",
+      "emphasis": "다 소용없었다"
+    },
+    {
+      "text": "사흘 만이었습니다. 화면 속 숫자가 스스로 오르기",
+      "est_sec": 5,
+      "text_en": "It took three days. The number on the screen started climbing",
+      "text_ja": "三日目のことでした。画面の中の数字が自分で上がり",
+      "text_zh_Hant": "才過了三天。螢幕上的數字就開始自己"
+    },
+    {
+      "text": "시작했고, 그 숫자가 오를 때마다 통로가 그만큼",
+      "est_sec": 5,
+      "text_en": "on its own, and each time it went up, the corridor grew",
+      "text_ja": "始め、その数字が上がるたびに通路がその分",
+      "text_zh_Hant": "往上跳,每跳一次,通道就跟著"
+    },
+    {
+      "text": "자랐습니다. 당직 대원의 무전이 남아 있습니다.",
+      "est_sec": 5,
+      "text_en": "by exactly that much. A radio log from the duty staffer survives.",
+      "text_ja": "伸びました。当直隊員の無線記録が残っています。",
+      "text_zh_Hant": "長了那麼多。值班人員的無線電記錄留了下來。"
+    },
+    {
+      "text": "「화면이 방금, 또 하나 올라갔습니다.」",
+      "est_sec": 4,
+      "text_en": "\"The screen just — it just went up one more.\"",
+      "text_ja": "「画面が今、また一つ上がりました。」",
+      "text_zh_Hant": "「螢幕剛剛,又跳了一格。」"
+    },
+    {
+      "text": "세타-41은 결국 거리계를 전부 철거하고 물러났습니다…",
+      "est_sec": 6,
+      "text_en": "Theta-41 ended up tearing out every rangefinder and pulling back…",
+      "text_ja": "シータ-41は結局距離計を全部撤去して退きました…",
+      "text_zh_Hant": "西塔-41最後把測距儀全部拆除,撤了出來……"
+    },
+    {
+      "text": "사람의 기록만 막았지, 숫자 자체를 막는 절차는 아무도",
+      "est_sec": 5,
+      "text_en": "They'd only blocked people from recording — no one had made a rule",
+      "text_ja": "人の記録だけを止めていて、数字自体を止める手順は誰も",
+      "text_zh_Hant": "他們只擋住了人的記錄,卻沒有一條程序"
+    },
+    {
+      "text": "만들지 않았던 거죠. 완전 폐쇄엔 O5 승인이 필요했지만,",
+      "est_sec": 6,
+      "text_en": "against the number itself. Fully shutting it down needed O5 approval,",
+      "text_ja": "作っていなかったのです。完全閉鎖にはO5の承認が必要でしたが、",
+      "text_zh_Hant": "是專門擋住數字本身的。要完全封閉,需要O5核准,"
+    },
+    {
+      "text": "그 승인은 아직도 나지 않았습니다. 「덧걸음」이라는",
+      "est_sec": 5,
+      "text_en": "and that approval still hasn't come through. The name \"Extra Steps\"",
+      "text_ja": "その承認はまだ下りていません。「余分歩」という",
+      "text_zh_Hant": "而那份核准至今還沒下來。「加步」這個名字,"
+    },
+    {
+      "text": "이름은 그사이, 사이트-499 안에서 그대로",
+      "est_sec": 5,
+      "text_en": "had, in the meantime, simply settled in",
+      "text_ja": "名前はその間に、サイト-499の中でそのまま",
+      "text_zh_Hant": "在這段時間裡,就這樣在499號站點內"
+    },
+    {
+      "text": "굳어버렸습니다.",
+      "est_sec": 2,
+      "text_en": "as a fixture at Site-499.",
+      "text_ja": "定着してしまいました。",
+      "text_zh_Hant": "固定了下來。"
+    },
+    {
+      "text": "이쯤에서 지질반이 옛 설계 도면을 뒤지기 시작했습니다.",
+      "est_sec": 6,
+      "text_en": "Around this point, the geology team started digging through old blueprints.",
+      "text_ja": "この辺りで地質班が古い設計図面を漁り始めました。",
+      "text_zh_Hant": "差不多這時候,地質組開始翻找起舊的設計圖。"
+    },
+    {
+      "text": "다른 기지 자료 창고에서 뒤늦게 사본 하나가 나왔는데,",
+      "est_sec": 5,
+      "text_en": "A copy turned up, belatedly, in another base's archive,",
+      "text_ja": "別の基地の資料倉庫から遅れて写しが一枚出てきたのですが、",
+      "text_zh_Hant": "在另一座基地的資料庫裡,遲來地找到了一份影本,"
+    },
+    {
+      "text": "거기엔 굵은 글씨로 이렇게 적혀 있었습니다.",
+      "est_sec": 4,
+      "text_en": "and on it, in bold lettering, was written this:",
+      "text_ja": "そこには太字でこう書かれていました。",
+      "text_zh_Hant": "上面用粗體字寫著這麼一句話:"
+    },
+    {
+      "text": "「예비 종점 — 고정하지 말 것」. 그 문구를 보자마자,",
+      "est_sec": 5,
+      "text_en": "\"Spare terminus — do not fix.\" The moment they saw that line,",
+      "text_ja": "「予備終点 — 固定しないこと」。その文句を見たとたん、",
+      "text_zh_Hant": "「備用終點——請勿固定」。地質組的一名研究員一看到這句話,"
+    },
+    {
+      "text": "지질반 연구원 하나가 중얼거렸습니다. 「이거, 어디서 본",
+      "est_sec": 6,
+      "text_en": "one geology researcher muttered, \"Wait, I've seen",
+      "text_ja": "地質班の研究員の一人がつぶやきました。「これ、どこかで見た",
+      "text_zh_Hant": "就低聲說了一句。「這個,我好像在哪見過"
+    },
+    {
+      "text": "구조인데요.」",
+      "est_sec": 2,
+      "text_en": "this layout before.\"",
+      "text_ja": "構造ですね。」",
+      "text_zh_Hant": "這種結構。」"
+    },
+    {
+      "text": "그러니까 이 통로는, 처음부터 위험한 확장이",
+      "est_sec": 4,
+      "text_en": "In other words, this corridor was never a dangerous expansion",
+      "text_ja": "つまりこの通路は、最初から危険な拡張",
+      "text_zh_Hant": "換句話說,這條通道從一開始就不是危險的擴張"
+    },
+    {
+      "text": "아니었습니다. 냉전기 설계자들이 진짜 대피실을",
+      "est_sec": 5,
+      "text_en": "to begin with. Cold War-era engineers had built it to adjust its length",
+      "text_ja": "ではなかったのです。冷戦期の設計者たちが本物の避難室を",
+      "text_zh_Hant": "現象。冷戰時期的設計者為了隱藏真正的避難室,"
+    },
+    {
+      "text": "감추려고, 길이를 계속 조정하도록 만들어둔 가짜 막다른",
+      "est_sec": 6,
+      "text_en": "on and on, just to hide the real shelter — a fake dead end",
+      "text_ja": "隠すために、長さを調整し続けるよう作られた偽の行き止まり",
+      "text_zh_Hant": "把它設計成一條會不斷調整長度的假死路"
+    },
+    {
+      "text": "길이었던 겁니다. 재단이 격리하려던 건, 사실 누군가가",
+      "est_sec": 6,
+      "text_en": "the whole time. What the Foundation had been trying to contain was really something someone",
+      "text_ja": "だったのです。財団が収容しようとしていたのは、実は誰かが",
+      "text_zh_Hant": "而已。基金會一直想要收容的,其實是有人"
+    },
+    {
+      "text": "오래전부터 숨기려던 것 쪽이었습니다. 저도 이 대목에서,",
+      "est_sec": 6,
+      "text_en": "had been hiding for a very long time. Even I, at this point,",
+      "text_ja": "ずっと以前から隠そうとしていたもののほうでした。私もこの辺りで、",
+      "text_zh_Hant": "老早就在藏的東西。連我讀到這裡,"
+    },
+    {
+      "text": "뭐가 원인이고 뭐가 결과인지 한참 헷갈렸습니다.",
+      "est_sec": 5,
+      "text_en": "got thoroughly confused about which part was cause and which was effect.",
+      "text_ja": "何が原因で何が結果なのか、しばらく混乱しました。",
+      "text_zh_Hant": "都被搞得一頭霧水,分不清哪個是因、哪個是果。"
+    },
+    {
+      "text": "마르첸코는 이 사실을 알고도… 다른 결론을 냈습니다.",
+      "est_sec": 5,
+      "text_en": "Even knowing this… Marchenko reached a different conclusion.",
+      "text_ja": "マルチェンコはこの事実を知っても…違う結論を出しました。",
+      "text_zh_Hant": "馬爾琴科即使知道了這一切……卻得出了不同的結論。"
+    },
+    {
+      "text": "기록을 원래 숫자로 되돌리면, 통로도 다시 짧아질",
+      "est_sec": 5,
+      "text_en": "If you put the record back to the original number, he believed, the corridor would",
+      "text_ja": "記録を元の数字に戻せば、通路もまた短くなる",
+      "text_zh_Hant": "他相信只要把紀錄改回原本的數字,通道也會"
+    },
+    {
+      "text": "거라고요. 「최신 값이 맞는 값입니다.」",
+      "est_sec": 4,
+      "text_en": "shrink back too. \"The latest value is the correct value.\"",
+      "text_ja": "はずだと。「最新の値が正しい値です。」",
+      "text_zh_Hant": "跟著縮短。「最新的數字,才是正確的數字。」"
+    },
+    {
+      "text": "그는 늘 그렇게 믿는 사람이었습니다. 솔직히 저도, 왜",
+      "est_sec": 5,
+      "text_en": "He was always the kind of man who believed that. Honestly, even I don't quite understand",
+      "text_ja": "彼はいつもそう信じる人でした。正直、私も、なぜ",
+      "text_zh_Hant": "他一直是這樣的人。老實說,我也不太懂,"
+    },
+    {
+      "text": "그렇게까지 확신했는지는 다 이해 못 하겠습니다.",
+      "est_sec": 5,
+      "text_en": "why he was so certain about it.",
+      "text_ja": "そこまで確信していたのか、全部は理解できません。",
+      "text_zh_Hant": "他為什麼能這麼篤定。"
+    },
+    {
+      "text": "D계급 대원 하나가 먼저 시험 삼아 끝까지 걸었습니다.",
+      "est_sec": 5,
+      "text_en": "One D-Class was sent in first, as a test, to walk it all the way to the end.",
+      "text_ja": "D階級の隊員一人が先に試しとして最後まで歩きました。",
+      "text_zh_Hant": "一名D級人員先被派去試走,一路走到了盡頭。"
+    },
+    {
+      "text": "「저는 그냥… 끝까지 걸어보라고 해서 걸었습니다.」",
+      "est_sec": 5,
+      "text_en": "\"I just… walked because they told me to walk to the end.\"",
+      "text_ja": "「私はただ…最後まで歩けと言われたから歩きました。」",
+      "text_zh_Hant": "「我只是……叫我走到底,我就走了而已。」"
+    },
+    {
+      "text": "나온 뒤엔 을급 기억소거제가 투여됐고, 나흘 만에 자연히",
+      "est_sec": 6,
+      "text_en": "Afterward he was given a Class-B amnestic, which wore off naturally",
+      "text_ja": "出た後は乙級記憶処理剤が投与され、四日で自然に",
+      "text_zh_Hant": "出來之後被施打了乙級記憶消除劑,四天後自然"
+    },
+    {
+      "text": "풀렸습니다. 별다른 반응은, 그때는 없었죠.",
+      "est_sec": 5,
+      "text_en": "in four days. There was no unusual reaction, not at that point.",
+      "text_ja": "解けました。これといった反応は、その時はありませんでした。",
+      "text_zh_Hant": "恢復。當時,並沒有出現什麼異常反應。"
+    },
+    {
+      "text": "그리고 마르첸코가, 로그북 옛 페이지를 찢어내고 짧은",
+      "est_sec": 5,
+      "text_en": "And then Marchenko tore out an old logbook page, and wrote in a shorter",
+      "text_ja": "そしてマルチェンコが、記録簿の古いページを破り取り、短い",
+      "text_zh_Hant": "接著馬爾琴科撕下了日誌裡的一頁舊紀錄,寫上一個較短的"
+    },
+    {
+      "text": "숫자를 적어 넣었습니다. 세 번째 절차를, 이번엔 담당자",
+      "est_sec": 6,
+      "text_en": "number in its place. This time, it was the officer in charge himself",
+      "text_ja": "数字を書き入れました。三つ目の手順を、今度は担当者",
+      "text_zh_Hant": "數字。第三條規矩,這次是負責人"
+    },
+    {
+      "text": "자신이 어긴 거였습니다.",
+      "est_sec": 3,
+      "text_en": "who broke the third rule.",
+      "text_ja": "自身が破ったのでした。",
+      "text_zh_Hant": "自己打破的。"
+    },
+    {
+      "text": "통로는 짧아지지 않았습니다. 대신 그날 밤, 지금까지 한",
+      "est_sec": 6,
+      "text_en": "The corridor didn't shrink. Instead, that night, for the first time ever,",
+      "text_ja": "通路は短くなりませんでした。代わりにその夜、これまで一",
+      "text_zh_Hant": "通道並沒有變短。取而代之的是,那天晚上,一扇從未"
+    },
+    {
+      "text": "번도 없던 두꺼운 철문 하나가 벽에서 그대로 드러났습니다.",
+      "est_sec": 6,
+      "text_en": "a thick iron door appeared, plain as day, right out of the wall.",
+      "text_ja": "度もなかった分厚い鉄の扉が一つ、壁からそのまま現れました。",
+      "text_zh_Hant": "出現過的厚重鐵門,就這麼從牆裡顯露了出來。",
+      "emphasis": "철문 하나"
+    },
+    {
+      "text": "숫자를 줄이는 게 조건이었을까요, 아니면 기록이 잠깐 비는",
+      "est_sec": 6,
+      "text_en": "Was the trigger the number going down — or was it the brief moment",
+      "text_ja": "数字を減らすことが条件だったのでしょうか、それとも記録が一瞬",
+      "text_zh_Hant": "觸發的條件,究竟是數字變小,還是紀錄"
+    },
+    {
+      "text": "그 순간 자체가 조건이었을까요?",
+      "est_sec": 3,
+      "text_en": "when the record itself went blank?",
+      "text_ja": "空白になったその瞬間自体が条件だったのでしょうか？",
+      "text_zh_Hant": "短暫空白的那一瞬間本身?"
+    },
+    {
+      "text": "재진입 금지 명령이 내려오기 전에, 마르첸코가 먼저 그 문",
+      "est_sec": 6,
+      "text_en": "Before the no-reentry order could come down, Marchenko went through",
+      "text_ja": "再進入禁止命令が下りる前に、マルチェンコが先にその扉の",
+      "text_zh_Hant": "在禁止再進入的命令下達之前,馬爾琴科搶先一步"
+    },
+    {
+      "text": "안으로 들어갔습니다. 아내와 어린 딸이 기지 밖에서 그를",
+      "est_sec": 6,
+      "text_en": "the door first. That his wife and young daughter were outside the base, waiting",
+      "text_ja": "中に入りました。妻と幼い娘が基地の外で彼を",
+      "text_zh_Hant": "走進了那扇門。他的妻子和年幼的女兒還在基地外面"
+    },
+    {
+      "text": "기다리고 있었다는 사실은, 사고 보고서 어디에도 적히지",
+      "est_sec": 6,
+      "text_en": "for him — that fact appears nowhere in the incident report.",
+      "text_ja": "待っていたという事実は、事故報告書のどこにも書かれて",
+      "text_zh_Hant": "等他——這個事實,在事故報告的任何一處都沒被寫下。"
+    },
+    {
+      "text": "않았습니다. 그가 마지막으로 본 게, 정말 원래 있던",
+      "est_sec": 5,
+      "text_en": "Was what he saw last really a door that had",
+      "text_ja": "いませんでした。彼が最後に見たものは、本当に元々あった",
+      "text_zh_Hant": "他最後看到的,真的是本來就存在的"
+    },
+    {
+      "text": "문이었을까요?",
+      "est_sec": 2,
+      "text_en": "always been there?",
+      "text_ja": "扉だったのでしょうか？",
+      "text_zh_Hant": "那扇門嗎?"
+    },
+    {
+      "text": "그의 마지막 무전은 이랬습니다. 「문이, 원래 있어야 할",
+      "est_sec": 6,
+      "text_en": "His last radio transmission went like this: \"The door — it seems to be right",
+      "text_ja": "彼の最後の無線はこうでした。「扉が、元々あるべき",
+      "text_zh_Hant": "他最後的無線電通訊是這樣的。「這扇門,好像就在"
+    },
+    {
+      "text": "자리에 있었던 것 같습니다.」",
+      "est_sec": 3,
+      "text_en": "where it was always supposed to be.\"",
+      "text_ja": "場所にあったようです。」",
+      "text_zh_Hant": "它原本該在的位置上。」"
+    },
+    {
+      "text": "그 뒤로 연락은… 없었습니다. 재수용 시도는 세 차례, 전부",
+      "est_sec": 6,
+      "text_en": "After that, there was… no more contact. Three reacquisition attempts, every one",
+      "text_ja": "その後連絡は…ありませんでした。再収容の試みは三回、全て",
+      "text_zh_Hant": "在那之後,就……再也沒有消息了。三次再收容嘗試,"
+    },
+    {
+      "text": "실패했습니다.",
+      "est_sec": 2,
+      "text_en": "of them failed.",
+      "text_ja": "失敗しました。",
+      "text_zh_Hant": "全部失敗。"
+    },
+    {
+      "text": "통로 길이는 그날 이후 단 한 번도 안 바뀌었고요.",
+      "est_sec": 5,
+      "text_en": "And the corridor's length hasn't changed, not once, since that day.",
+      "text_ja": "通路の長さは、その日以来一度も変わっていません。",
+      "text_zh_Hant": "而通道的長度,從那天起一次也沒再變過。"
+    },
+    {
+      "text": "마셜, 카터 & 다크가 이 절차 자체를 사겠다고 접근했다는",
+      "est_sec": 6,
+      "text_en": "There's word that Marshall, Carter & Dark approached, wanting to buy the procedure itself",
+      "text_ja": "マーシャル・カーター&ダークがこの手順自体を買いたいと接触してきたという",
+      "text_zh_Hant": "據說馬歇爾、卡特&達克集團曾接觸基金會,想直接買下這套程序本身,"
+    },
+    {
+      "text": "얘기도 있습니다. 재단은 거절했습니다.",
+      "est_sec": 4,
+      "text_en": "too. The Foundation turned them down.",
+      "text_ja": "話もあります。財団は断りました。",
+      "text_zh_Hant": "這則傳聞也是有的。基金會拒絕了。"
+    },
+    {
+      "text": "이유는 간단했죠 — 재단도 이 절차가 왜 이렇게 짜여 있는지,",
+      "est_sec": 6,
+      "text_en": "The reason was simple — even the Foundation doesn't fully know why the procedure",
+      "text_ja": "理由は単純でした — 財団もこの手順がなぜこう組まれているのか、",
+      "text_zh_Hant": "理由很簡單——就連基金會自己,也還不完全清楚這套程序"
+    },
+    {
+      "text": "아직 다 모른다는 것.",
+      "est_sec": 2,
+      "text_en": "is built the way it is.",
+      "text_ja": "まだ全部は分かっていないということでした。",
+      "text_zh_Hant": "為什麼會是這樣運作的。"
+    },
+    {
+      "text": "참고로 그 복도에서 몇 구역 떨어진 격리실엔, 뭐든 다른 걸로",
+      "est_sec": 6,
+      "text_en": "For reference, a few blocks down from that corridor sits a containment cell holding that famous device",
+      "text_ja": "ちなみにその廊下から数区画離れた収容室には、何でも別の物に",
+      "text_zh_Hant": "順帶一提,離那條通道幾個區塊外的收容室裡,還放著那台"
+    },
+    {
+      "text": "바꿔준다는 그 유명한 수선기가 있습니다.",
+      "est_sec": 4,
+      "text_en": "that turns anything into something else.",
+      "text_ja": "変えてくれるというあの有名な修繕機があります。",
+      "text_zh_Hant": "有名的「修繕機」,任何東西放進去都能變成別的東西。"
+    },
+    {
+      "text": "등급은 세이프. 복도 반대편엔 간지럼을 태운다는 그 개체도",
+      "est_sec": 6,
+      "text_en": "Object class: Safe. On the other side of the hall, there's also that thing said to give you the giggles —",
+      "text_ja": "クラスはセーフ。廊下の反対側にはくすぐるというあの個体も",
+      "text_zh_Hant": "等級是安全級。走廊另一頭,也有那個據說會搔癢的個體——"
+    },
+    {
+      "text": "있다고 하고요. 이번 일과는 상관없지만요.",
+      "est_sec": 4,
+      "text_en": "though none of that has anything to do with this case.",
+      "text_ja": "いるそうです。今回の件とは関係ありませんが。",
+      "text_zh_Hant": "雖然這跟這次的事件一點關係都沒有。"
+    },
+    {
+      "text": "SCP-9462의 등급을 세이프로 계속 둘지,",
+      "est_sec": 5,
+      "text_en": "Whether SCP-9462 stays classified Safe,",
+      "text_ja": "SCP-9462のクラスをセーフのままにするか、",
+      "text_zh_Hant": "SCP-9462的等級要繼續維持安全級,"
+    },
+    {
+      "text": "유클리드로 올릴지 — 그 재분류 심사는 아직 결론이 안",
+      "est_sec": 5,
+      "text_en": "or gets bumped up to Euclid — that reclassification review still hasn't",
+      "text_ja": "ユークリッドに上げるか — その再分類審査はまだ結論が",
+      "text_zh_Hant": "還是要升為歐幾里得級——那項再分類審查,至今"
+    },
+    {
+      "text": "났습니다. 이 부분은 저도… 아직 뭐라고 정리해야 할지",
+      "est_sec": 5,
+      "text_en": "reached a conclusion. This part, I still… haven't figured out",
+      "text_ja": "出ていません。この部分は私も…まだどう整理すればいいのか",
+      "text_zh_Hant": "都還沒有結論。這一段,老實說我也……還不知道該怎麼"
+    },
+    {
+      "text": "모르겠습니다. 로그북 마지막 장엔 지금도, 아무 숫자도",
+      "est_sec": 6,
+      "text_en": "how to put into words. On the logbook's last page, even now, no number",
+      "text_ja": "分かりません。記録簿の最後のページには今も、何の数字も",
+      "text_zh_Hant": "整理才好。日誌的最後一頁,直到現在,還是"
+    },
+    {
+      "text": "적혀 있지 않습니다.",
+      "est_sec": 2,
+      "text_en": "has been written at all.",
+      "text_ja": "書かれていません。",
+      "text_zh_Hant": "一個數字都沒有寫上。"
+    }
+  ],
+  "scenes": [
+    {
+      "prompt": "A weathered concrete corridor entrance with a hand-painted stencil number faintly visible on the wall, absent from any blueprint, dead-ahead close composition filling most of frame, single flashlight beam cutting from lower frame, wet raw concrete and rusted pipe and peeling paint, cold damp still air with drifting dust, near-black background with one teal-cyan accent glow. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "An open logbook page filling most of the frame, rows of handwritten numbers with the newest one visibly larger than the one above it, close overhead composition, single desk lamp light from upper corner, aged paper grain and worn leather cover and smudged pencil graphite, still dusty archive air, near-black background beyond the page edge with one teal-cyan accent glow. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "A handwritten three-line notice pinned to a concrete corridor wall beside a doorway, paper curling slightly at the corners, close three-quarter composition with the notice dominant, single flashlight beam raking across the paper, rough concrete texture and rusted pin and creased paper, still cold air, near-black background with one teal-cyan accent glow. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "A lone silhouetted engineer seen from behind walking deep into a long dark concrete corridor, figure filling the lower frame small against the vanishing point, flashlight beam wavering ahead of them, single handheld flashlight as the only light source, rough concrete walls and puddled floor and distant painted number, cold damp still air with faint haze, near-black background with one teal-cyan accent glow far ahead. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "The freshly extended dead end of a concrete corridor, the new wall surface visibly different in texture from the older stone around it, close dead-on composition filling most of frame, single flashlight beam from lower frame edge, raw wet-looking concrete and faint tool marks and settling dust, cold still air, near-black background with one teal-cyan accent glow. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "A close shot of a hand pressing a pencil into a small notebook braced against a rough concrete wall inside a dark corridor, hand and notebook dominant in frame, single flashlight beam from the side, worn notebook paper and calloused knuckles and damp concrete texture, still cold air, near-black background with one teal-cyan accent glow. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "A tripod-mounted laser rangefinder standing in a dark concrete corridor, a thin red beam stretching from the device into pitch darkness ahead, device dominant in lower frame with the beam leading the eye backward, single red laser point as accent light source, brushed metal tripod and matte plastic housing and rough concrete floor, cold still air with faint haze, near-black background with one teal-cyan accent glow. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "An extreme close shot of a laser rangefinder's digital display, glowing numerals mid-change as if ticking upward on their own, screen filling most of frame, single screen glow as the only light source, matte plastic bezel and faint fingerprint smudges and reflected dark corridor behind, still cold air, near-black background with one teal-cyan accent glow. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "A close shot of a faded blueprint sheet held under a single desk lamp, bold underlined handwriting reading a stark warning near a dead-end symbol, blueprint dominant filling most of frame, single desk lamp glow from upper corner, aged blue-tinted paper and worn creases and faded ink lines, still archive air, near-black background beyond the page with one teal-cyan accent glow. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "A close shot of a hand tearing an old page from a leather logbook and pressing a pencil to write a smaller number onto a fresh page beneath it, hands and book dominant in frame, single desk lamp glow from the side, torn paper edge and worn leather cover and graphite smudges, still tense air, near-black background with one teal-cyan accent glow. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "A massive riveted iron door emerging seamlessly from a raw concrete corridor wall at the dead end, door dominant filling most of frame at low angle, single hanging work-light casting hard directional glow from above, rusted rivets and cold iron surface and cracked surrounding concrete, still damp air with faint haze, near-black background with one teal-cyan accent glow on the door. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "A thick iron door standing half open in a dark concrete corridor, pure impenetrable blackness visible through the gap, door and opening dominant filling most of frame, single dim work-light grazing the door's edge, cold rusted iron and damp concrete and faint dust in the air, still heavy silence implied, near-black background and near-black opening with one teal-cyan accent rim on the door edge. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    }
+  ],
+  "background": {
+    "id": "scp-9462_bg",
+    "kind": "image",
+    "reuse": false,
+    "aspect": "16:9",
+    "resolution": "1920x1080",
+    "prompt": "A long raw concrete corridor stretching into darkness, a massive riveted iron door emerging halfway from the wall near the vanishing point, faint hand-painted number stenciled beside the entrance, centered low-angle composition, door dominant near center-frame, single hanging work-light casting hard directional glow, wet concrete and rusted steel and scuffed paint, cold damp still air with faint haze, near-black background with one teal-cyan accent on the door. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere",
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion"
+  },
+  "thumbnail": {
+    "hook": "A massive riveted iron door half-emerged from a raw concrete corridor wall, faint stenciled number beside it, dominating the frame at low angle, single bare hanging work-light casting hard rim light, deep near-black background, cold damp concrete texture, one teal-cyan accent color, dark anime cel illustration, bold clean linework, flat cel shading, high contrast, cinematic.",
+    "hook_alt": [
+      "Close low-angle shot of a hand pressing a pen into a torn logbook page inside a dark concrete corridor, a faint number just visible on the paper, single flashlight rim light, near-black background, teal-cyan accent, dark anime cel illustration, bold linework, flat cel shading, high contrast, cinematic.",
+      "A lone silhouetted engineer walking into a long dark concrete corridor, back turned, flashlight beam cutting through near-black dark, distant painted number on the wall, one teal-cyan accent light, dark anime cel illustration, bold linework, flat cel shading, high contrast, cinematic low angle."
+    ],
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion",
+    "text_safe_area": "left third",
+    "resolution": "1280x720"
+  },
+  "platforms": {
+    "youtube": {
+      "title": "「문이, 원래 있어야 할 자리에 있었습니다」 알래스카 옛 레이더기지에서 사라진 마르첸코 감독관 [SCP-9462]",
+      "title_form": "증언형",
+      "thumbnail_text": "덧걸음",
+      "thumbnail_quote": "- 문이, 원래 있어야 할 자리에 있었던 것 같습니다",
+      "tags": [
+        "SCP",
+        "SCP재단",
+        "SCP-914",
+        "SCP-999",
+        "괴담",
+        "무서운이야기",
+        "미스터리"
+      ],
+      "chapters": [
+        "00:00 도입 — 마흔한 번 다른 숫자",
+        "01:06 사이트-499, 「덧걸음」 통로 발견",
+        "01:43 마르첸코, 절차 세 가지를 만들다",
+        "02:16 첫 번째 절차가 깨지다",
+        "03:20 기동특무부대 세타-41 투입",
+        "04:36 옛 설계 도면, 「예비 종점」",
+        "05:36 마르첸코의 다른 결론",
+        "06:35 철문이 드러나다",
+        "07:43 재단의 판단 보류"
+      ],
+      "description": "알래스카 내륙, 냉전기 조기경보기지 지하에 도면에도 없는 통로가 하나 있습니다. 잴 때마다 길이가 달라지는데, 재단이 막으려던 건 사실 그 통로가 감추고 있던 진짜 대피실 쪽이었습니다.\n\n※ SCP 재단 세계관 기반 오리지널 창작 · 허구의 이야기입니다\n※ CC BY-SA 3.0 · 원작: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP재단 #괴담 #무서운이야기 #미스터리",
+      "localizations": {
+        "en": {
+          "title": "\"The Door Was Right Where It Belonged\": Alaska Radar Base's Vanished Officer [SCP-9462]",
+          "description": "Beneath an old Cold War radar station in inland Alaska, there's a hidden corridor that changes length every time someone measures it. The three rules meant to contain it get broken one by one — and what waited at the end wasn't a threat, but something the Foundation didn't even know it was protecting.\n\n※ Original fiction set in the SCP Foundation universe — a work of fiction\n※ CC BY-SA 3.0 · Source: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCPFoundation #creepypasta #horror #mystery"
+        },
+        "ja": {
+          "title": "「扉は、元々あるべき場所にありました」アラスカの旧レーダー基地で消えた監督官 [SCP-9462]",
+          "description": "アラスカ内陸の冷戦期レーダー基地地下に、測るたびに長さが変わる通路がありました。収容のための三つの手順が一つずつ破られていく先で待っていたのは脅威ではなく、財団自身も知らなかった「守られていたもの」でした。\n\n※ SCP財団世界観に基づくオリジナル創作・フィクションです\n※ CC BY-SA 3.0 · 原作:SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP財団 #怖い話 #ホラー #ミステリー"
+        },
+        "zh-Hant": {
+          "title": "「門,原本就在它該在的地方」阿拉斯加舊雷達基地失蹤的主管 [SCP-9462]",
+          "description": "阿拉斯加內陸一座冷戰時期雷達基地的地下,有一條每次測量長度都不一樣的通道。為收容它訂下的三條規矩被一條條打破,而在盡頭等著的不是威脅,是基金會自己都不知道自己在保護的東西。\n\n※ 基於SCP基金會世界觀的原創作品·純屬虛構\n※ CC BY-SA 3.0 · 原作:SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP基金會 #怪談 #恐怖故事 #懸疑"
+        }
+      },
+      "pinned_comment": "혹시 며칠 전에 적어두고 다시 안 들여다본 숫자 하나, 있으신가요? 있다면 그게 뭐였는지 댓글로 들려주세요.",
+      "playlist": "SCP 아카이브 (전편 듣기)"
+    }
+  },
+  "credit": "SCP 재단 세계관 기반 오리지널 창작 · 허구 · CC BY-SA 3.0",
+  "content_rating": "teen",
+  "notes": "SCP 아카이브 · 16:9 롱폼 · 장면 전환 배경 + 자막 번인 · 단일 내레이터 · 완결형."
+}
