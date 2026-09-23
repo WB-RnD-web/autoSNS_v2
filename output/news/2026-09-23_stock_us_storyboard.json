@@ -1,0 +1,91 @@
+{
+  "date": "2026-09-23",
+  "topic": "stock_us",
+  "privacy": "public",
+  "topic_keyword": "메타 AI '뮤즈'발 금융주 급락",
+  "headline": "나스닥 최고치 속 메타 AI발 금융주 급락",
+  "hook_title": "나스닥 최고치인데 금융주 -2%",
+  "accent": "#D97757",
+  "loop_line": "월가가 갈렸던 오늘 밤, 결과는 내일 아침에 짚어드립니다.",
+  "thumbnail_hook": "cinematic night view of a financial district, glowing stock ticker board reflecting on a wet street, dark skyscrapers lit up against a night sky, dramatic blue and gold tones, no text in image, no readable faces",
+  "thumbnail_text": "금융주 하루새 -2%",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "금융주 급락",
+      "ghost": "BANKS",
+      "lines": ["나스닥은", "최고치인데", "금융주는 -2%"],
+      "highlight": "-2%",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "장 마감하자마자 금융주만 이 퍼센트 빠졌습니다."
+    },
+    {
+      "type": "trend",
+      "label": "나스닥",
+      "from": 0,
+      "to": 0.45,
+      "suffix": "%",
+      "dir": "up",
+      "sub": "다우는 <b>0.36%</b> 하락",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "나스닥은 영 점 사오 퍼센트 오르며 최고치, 다우는 내렸습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "왜 갈렸나",
+      "points": ["메타 AI '뮤즈'에 <b>찰스슈왑 -6%</b>", "반도체 강세가 <b>나스닥 최고치</b> 이끌어"],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "메타의 새 AI비서가 나오자 찰스슈왑이 육 퍼센트 빠졌습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 밤 전망",
+      "points": ["금리 <b>5%</b> 넘으면 환율도 출렁", "환율 <b>1,350원대</b>, 서학개미 주목"],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "금리가 오 퍼센트 넘으면 환율도 천삼백오십원대로 움직입니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 지켜볼 것",
+      "points": ["PMI <b>밤 10시 45분</b> 발표", "마이크론 <b>9월 30일</b> 실적"],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "피엠아이는 밤 열시 사십오분, 마이크론은 다음주 실적입니다."
+    },
+    {
+      "type": "statement",
+      "text": "사서 버틸까, 지켜볼까",
+      "highlight": "지켜볼까",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "사서 버틸지 지켜볼지, 판단은 여러분 몫입니다."
+    }
+  ],
+  "sources": ["뉴스핌", "서울신문", "블록미디어", "아시아경제", "뉴스1"],
+  "credit": "출처 뉴스핌·서울신문·블록미디어 등 · 투자 조언이 아닙니다",
+  "platforms": {
+    "youtube": {
+      "title": "나스닥 최고치인데 금융주 -2% #shorts",
+      "description": "나스닥 최고치 속 메타 AI발 금융주 급락\n출처 뉴스핌·서울신문·블록미디어 등\n※ 투자 조언이 아닙니다\n\n#미국주식 #나스닥 #뉴욕증시 #서학개미 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "Nasdaq Hits Record, But Bank Stocks Just Fell 2%",
+          "description": "Wall Street split overnight — chip stocks powered Nasdaq to a fresh record while bank and travel stocks slid on AI disruption fears.\n\n※ Not investment advice.\n\n#USStocks #Nasdaq #WallStreet #shorts"
+        },
+        "ja": {
+          "title": "ナスダック最高値なのに、金融株は2%安",
+          "description": "ウォール街が二極化しました。半導体株がナスダックを最高値に押し上げる一方、AIへの不安で金融株や旅行株が下落しました。\n\n※投資助言ではありません。\n\n#米国株 #ナスダック #ウォール街 #shorts"
+        },
+        "zh-Hant": {
+          "title": "納斯達克創新高,金融股卻跌2%",
+          "description": "華爾街一夜分裂。半導體股帶動納斯達克再創新高,但AI衝擊疑慮讓金融與旅遊股走跌。\n\n※非投資建議。\n\n#美股 #納斯達克 #華爾街 #shorts"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "나스닥 최고치인데 금융주 -2%\n출처 뉴스핌·서울신문 등\n※ 투자 조언이 아닙니다\n\n#미국주식 #나스닥 #뉴욕증시 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "나스닥 최고치인데 금융주 -2%\n출처 뉴스핌·서울신문 등"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음 · SESSION=US_PM(미국장 개장 전후 프리뷰)."
+}
