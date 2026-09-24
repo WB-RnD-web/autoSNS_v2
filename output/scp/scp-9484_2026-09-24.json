@@ -1,0 +1,1051 @@
+{
+ "date": "2026-09-24",
+ "iso_week": "2026-W39",
+ "topic": "scp",
+ "privacy": "public",
+ "origin": "original",
+ "origin_note": "day%3==0 규칙상 canon이어야 했으나 scp-wiki.wikidot.com·scpko.wiki·namu.wiki 세 경로 모두 조직 네트워크 정책상 접근 차단(EGRESS_BLOCKED)으로 확인 불가 — 오리지널로 대체",
+ "source_url": "",
+ "story_id": "scp-9484",
+ "scp_number": "SCP-9484",
+ "object_class": "Keter",
+ "codename": "돌려막기",
+ "number_check": {
+  "checked_at": "2026-09-24",
+  "http_code": "unverified"
+ },
+ "theme": "심해",
+ "nature": "물질·생물",
+ "twist_type": "규모",
+ "logline": "통가 해구 열수구에서 채집된 정체불명 조직 표본 하나가, 잘라내도 무게가 그대로 돌아옵니다. 알고 보니 이 표본은 세계 곳곳 실험실에 흩어진 자매 표본들과 무게를 나눠 갖고 있었습니다.",
+ "structure": "연대기형",
+ "opening_move": "증언으로 연다",
+ "opening_note": "",
+ "closing_move": "화자가 답을 안 한다",
+ "number_reveal": "앞",
+ "ending_mode": "없음",
+ "fault": "재단",
+ "hook_line": "「반, 이거 이만큼 잘랐는데… 왜 그대로예요?」",
+ "procedures": [],
+ "character": {
+  "name": "노보아",
+  "role": "박사 · 사이트-714 심해생물학팀장",
+  "flaw": "소각 재분배 결과를 보고 '반드시 원본이 있다'는 자기 가설을 놓지 못해, 승인 없이 위험한 시험을 밀어붙인다"
+ },
+ "chain": [
+  {
+   "when": "통가 해구 심해 조사 항해 중",
+   "event": "무인잠수정이 열수구 지대 화산암에서 회색 막 조직 표본을 회수했다",
+   "because": "",
+   "shot": "칠흑 같은 심해에서 로봇 팔이 집게로 든 잿빛 막 조직"
+  },
+  {
+   "when": "표본을 배 위 실험실로 옮긴 직후",
+   "event": "저울에 올려 삼점이 킬로그램을 확인하고 조직검사용으로 사십 그램을 잘라냈다",
+   "because": "정체불명 표본에 대한 기본 분석 절차였기 때문에",
+   "shot": "저울 위 잿빛 조각과 옆에 놓인 메스, 사십 그램짜리 조직 조각"
+  },
+  {
+   "when": "그날 밤 재계량했을 때",
+   "event": "잘라낸 사십 그램이 없는데도 저울 숫자가 처음과 똑같이 나왔다",
+   "because": "표준 절차대로 재계량을 한 번 더 돌렸기 때문에",
+   "shot": "디지털 저울 화면 숫자와 그 옆 빈 조직검사 접시"
+  },
+  {
+   "when": "저울을 새것으로 통째로 교체하고 세 번째로 잰 뒤",
+   "event": "본토 재단 연락책에게 이상 보고가 올라가고 재단이 항해 전체를 인수했다",
+   "because": "장비 오류가 아니라는 게 세 번째 재계량으로 확인됐기 때문에",
+   "shot": "통신실 스피커 앞에 모여선 승조원들의 뒷모습"
+  },
+  {
+   "when": "사이트-714로 재지정된 뒤",
+   "event": "정체불명 생물 표본에 적용되는 매달 전량 재계량 감사 절차가 시작됐다",
+   "because": "표준 수용 규정에 따른 조치였기 때문에",
+   "shot": "격리용기 옆에 붙은 감사 일정표와 서명란"
+  },
+  {
+   "when": "첫 정기 감사 도중",
+   "event": "기록반이 옛 서류에서 이 조직이 1970년대 국제 해양조사 컨소시엄에 의해 이미 채집돼 해외 두 연구소에 대출된 기록을 찾아냈다",
+   "because": "감사 절차상 표본의 전체 이력을 추적해야 했기 때문에",
+   "shot": "누렇게 바랜 1970년대 표본 대출 기록지"
+  },
+  {
+   "when": "그 대출 기록의 해외 연구소 두 곳을 확인하러 간 날",
+   "event": "기동특무부대 람다-77이 현지에서 자매 표본 두 개를 각각 찾아냈다",
+   "because": "같은 원본에서 나온 조각들이 아직 세상에 남아 있다는 걸 알게 됐기 때문에",
+   "shot": "먼지 쌓인 표본병 두 개, 각기 다른 실험실 선반 위"
+  },
+  {
+   "when": "세 표본을 동시에 재계량한 순간",
+   "event": "한쪽 저울 숫자가 줄면 다른 쪽 숫자가 그만큼 늘어나는 게 실시간으로 확인됐다",
+   "because": "람다-77이 세 지점 동시 계량을 처음으로 시도했기 때문에",
+   "shot": "나란히 뜬 세 화면 속 저울 숫자, 같은 순간 반대로 움직이는 그래프"
+  },
+  {
+   "when": "현상을 없앨 수 있는지 시험하려던 날",
+   "event": "D계급을 시켜 표본 하나를 완전히 소각했더니 사라진 무게가 나머지 두 표본에 정확히 나뉘어 붙었다",
+   "because": "질량이 재분배되는지 확인하는 첫 실증 시험이었기 때문에",
+   "shot": "소각로 앞에서 재계량 결과를 바라보는 연구원들의 얼굴"
+  },
+  {
+   "when": "노보아 박사가 원본 가설을 세운 뒤",
+   "event": "그는 통가 원본만 남기고 나머지를 순서대로 태우면 현상이 완전히 꺼질 거라 주장했다",
+   "because": "소각 실험으로 재분배가 확인되며 하나의 원본이 있을 거라 확신했기 때문에",
+   "shot": "실험 노트 여백에 적힌 「셋 중 하나는, 반드시 원본이다」라는 손글씨"
+  },
+  {
+   "when": "사이트 지휘부가 완전 소각 승인을 미룬 지 사흘 뒤",
+   "event": "노보아 박사가 지시를 어기고 D-9484에게 나머지 두 표본을 순서대로 태우게 했다",
+   "because": "O5 승인이 계속 미뤄지자 그가 직접 결단을 내렸기 때문에",
+   "shot": "소각로 조작판 앞에 선 D계급 대원의 장갑 낀 손"
+  },
+  {
+   "when": "마지막 표본, 통가 원본이 소각로에 들어간 순간",
+   "event": "사라진 무게가 원본이 아니라 노보아 박사 본인의 체중계 숫자에 그대로 얹혔다",
+   "because": "원본이라 믿었던 마지막 표본까지 함께 사라져 버렸기 때문에",
+   "shot": "의무실 체중계 앞에 선 노보아 박사와 숫자를 보고 굳은 의무관"
+  }
+ ],
+ "retention_beats": [
+  "세계 오컬트 연합이 어딘가에서 다른 자매 표본을 이미 없앴다면, 그 무게는 지금 누구에게 가 있는지는 아직 밝혀지지 않았다",
+  "이 열수구가 SCP-9532 아래에 있는 것과 이어져 있다는 얘기가 예전부터 있었지만, 여전히 확인되지 않았다",
+  "노보아 박사의 재분류 심사는 아직 결론이 나지 않았다"
+ ],
+ "cameos": [
+  {
+   "number": "SCP-682",
+   "how": "등급 케테르. 파괴가 거의 불가능한 것으로 알려진 개체다."
+  }
+ ],
+ "twist_summary": "규모의 반전 — 통가 해구에서 건진 표본이 하나뿐인 이상 현상인 줄 알았지만, 실은 1970년대부터 세계 곳곳 실험실에 나뉘어 있던 자매 표본들과 지금도 무게를 나눠 지고 있었다는 반전. 게다가 이 네트워크를 실제로 드러낸 건 재단이 정기적으로 돌리는 표본 재계량 감사 절차였다. 노보아 박사가 '반드시 원본이 있다'는 가설을 세우고 승인 없이 나머지 표본을 순서대로 소각하자, 사라진 무게는 원본이 아니라 그녀 자신의 몸에 얹혔고 이후 격리 대상과 사람의 경계가 사라져 버렸다.",
+ "narration_full": "「반, 이거 이만큼 잘랐는데… 왜 그대로예요?」\n\n이 무전, 통가 해구 심해 조사선에서 나온 겁니다. 저도 이 로그를 처음 봤을 때, 그냥 눈금을 잘못 본 줄 알았어요.\n\n사연은 이렇습니다. 남태평양 통가 해구, 수심 구천 미터 근처 열수구 지대에서 무인잠수정이 회색 막 같은 조직을 하나 건져 올렸습니다. 화산암 표면에 딱 달라붙어 있던 걸 조심스레 떼어낸 거였죠.\n\n배 위 실험실 저울에 올리니 삼점이 킬로그램. 조직검사용으로 사십 그램을 잘라냈고요. 그런데 그날 밤 다시 재보니, 저울은 여전히 삼점이 킬로그램을 가리키고 있었습니다.\n\n저울 오류인가… 싶었죠. 그런데 저울을 통째로 새것으로 바꿔서 재도 똑같더군요. 세 번째 재계량까지 같은 숫자가 나오자, 승조원들도 더는 웃지 못했습니다. 그 배에 타고 있던 민간 승조원들에겐 결국 갑급 기억소거제가 투여됐고, 열흘 만에 자연히 풀렸다고 하고요.\n\n그사이 표본 쪽 분석도 계속됐습니다. 화학 조성 분석을 돌리질 않나, 전자현미경 촬영은 기본이고, 방사성 동위원소 연대측정까지 붙었죠. 그런데… 뭐 하나 속 시원히 맞아떨어지는 게 없었습니다.\n\n본토 재단 연락책에게 보고가 올라갔고, 재단은 항해 전체를 그대로 인수했습니다. 이름도 새로 붙었죠 — 사이트-714, 통가 해구 심해 관측지원기지.\n\n이 무렵 붙은 별명이 하나 있는데요. 보고서엔 그냥 표본이라고만 적혀 있지만, 현장 사람들은 이걸 「돌려막기」라고 불렀습니다. 빚 돌려막듯, 모자란 만큼을 어디선가 그대로 메꿔 넣는다고 해서 붙은 이름이었죠. 그 별명, 정말 틀린 말이었을까요?\n\n문서 번호는 SCP-9484. 격리 등급은 나중에 케테르로 최종 분류됩니다. 왜 그렇게까지 올라갔는지는, 뒤에 나옵니다.\n\n정체불명 생물 표본에는 기본 수용 절차가 붙습니다. 매달 표본 전량을 다시 재는 감사 일정이었어요. 별거 아닌 점검 같았는데, 여기서부터 일이 커지더군요.\n\n첫 정기 감사 도중, 재단 기록반이 오래된 서류를 뒤지다 이상한 걸 찾아냈습니다. 이 조직, 재단이 처음 만난 게 아니었어요 — 1970년대 국제 해양조사 컨소시엄이 이미 채집해서, 해외 연구소 두 곳에 표본을 나눠 대출한 기록까지 남아 있었습니다.\n\n기동특무부대 람다-77, 별칭 「저울판」이 두 곳에 각각 파견됐습니다. 먼지 쌓인 표본병 두 개가, 여전히 실험실 선반 위에 놓여 있었죠.\n\n세 표본을 동시에 재계량하기로 한 날, 화면 세 개를 나란히 띄워놓고 지켜봤습니다. 한쪽 숫자가 줄면, 다른 쪽 숫자가 그만큼 늘었어요. 실시간으로요. 람다-77 무전에서 나온 말은 짧았습니다 — 「지금요, 지금 숫자가 움직입니다.」\n\n이게 뭘 뜻하는지, 다들 알아챘습니다. 하나가 아니라는 겁니다. 세계 어딘가에 흩어진 조각들이, 지금도 서로 무게를 나눠 지고 있다는 거였어요. 우연이었을까요? 저도 이 대목을 읽으면서, 그래프를 몇 번이나 다시 돌려봤습니다. 그건 지금도 아무도 모릅니다.\n\n없앨 수 있는지 시험해보자는 얘기가 나왔습니다. D계급을 투입해 소각로를 다루게 하는 게 표준 절차였죠. 표본 하나를 완전히 소각했어요. 사라진 무게는 사라지지 않았습니다. 나머지 두 표본에 정확히 나뉘어 붙었을 뿐이었죠.\n\n담당이던 노보아 박사는 이걸 다르게 읽었습니다. 셋 중 하나가 「원본」이고, 나머지 둘은 거기서 갈라진 그림자일 뿐이라는 가설이었죠. 원본만 남기고 순서대로 태우면, 무게는 갈 곳을 잃고 그대로 꺼질 거라고요. 그의 실험 노트 여백엔 이렇게 적혀 있었습니다 — 「셋 중 하나는, 반드시 원본이다.」\n\n사이트 지휘부는 승인을 미뤘습니다. O5 승인 없인 완전 소각을 못 한다는 거였어요. 사흘째 되던 날, 노보아 박사는 그냥 결정을 내려버렸습니다.\n\n「D-9484, 저거 순서대로 넣어.」\n\nD계급에게 순서란 게 따로 있지 않죠. 지시받은 대로 태울 뿐입니다. 두 표본이 차례로 소각로에 들어갔습니다.\n\n마지막, 통가 원본이 들어가려던 순간이었어요. 노보아 박사는 확신하고 있었습니다. 이번엔 갈 곳이 없으니까, 사라질 거라고요.\n\n그런데 사라진 무게는, 원본이 아니라 노보아 박사 본인에게 얹혔습니다. 의무실 체중계 숫자가, 소각로가 꺼지는 순간과 정확히 같은 초에 튀어 올랐죠.\n\n「이게… 왜 저한테 붙어 있는 거죠?」\n\n그날 밤 그가 남긴 말은 이거였습니다. 재단도 아직 이유를 설명 못 합니다. 몸 안쪽 정확히 어디부터가 표본이고… 어디부터가 그의 몸인지, 확실하진 않은데요. 냉동 보존을 시도하질 않나, 국소 절제를 시도하질 않나, 효소로 녹여보기까지 했죠. 전부 소용없었습니다. 재수용 시도는 세 차례, 마찬가지로 전부 실패했습니다.\n\n격리라고 부르기도 이제 애매해졌습니다 — 격리할 대상 자체가 사람 몸과 겹쳐버렸으니까요. 케테르 등급, 이래서 붙은 겁니다. SCP-682처럼 파괴가 거의 안 통하는 개체는 아니지만, 이쪽은 격리 절차를 사람한테 어떻게 적용할지부터가 막막했던 거죠.\n\n세계 오컬트 연합 쪽 옛 기록에도 이 해구 이야기가 몇 줄 나온다고 하더군요. 이 열수구가 SCP-9532 아래에 있는 것과 이어져 있다는 얘기도 예전부터 있었는데, 그쪽이 먼저 알고 있었는지는 여전히 확인이 안 됩니다.\n\n세계 오컬트 연합이 어딘가에서 다른 자매 표본을 이미 없앴다면, 그 무게는 지금 누구한테 가 있는 걸까요?\n\n노보아 박사의 재분류 심사는 아직 끝나지 않았습니다. 왜 하필 그였는지는, 저도… 답을 못 하겠습니다.",
+ "segments": [
+  {
+   "text": "「반, 이거 이만큼 잘랐는데… 왜",
+   "est_sec": 3,
+   "text_en": "\"Chief, I cut off this much... why",
+   "text_ja": "「隊長、これだけ切ったのに…なんで",
+   "text_zh_Hant": "「隊長,我切了這麼多…為什麼"
+  },
+  {
+   "text": "그대로예요?」 이 무전, 통가 해구 심해",
+   "est_sec": 4,
+   "text_en": "is it still the same?\" This radio call came from a deep-sea research vessel",
+   "text_ja": "そのままなんですか」この無線は、深海調査船から",
+   "text_zh_Hant": "還是一樣?」這通無線電,來自"
+  },
+  {
+   "text": "조사선에서 나온 겁니다.",
+   "est_sec": 2,
+   "text_en": "in the Tonga Trench.",
+   "text_ja": "出たものでした。",
+   "text_zh_Hant": "東加海溝的深海調查船。"
+  },
+  {
+   "text": "저도 이 로그를 처음 봤을 때, 그냥 눈금을",
+   "est_sec": 4,
+   "text_en": "The first time I heard this log, I honestly thought",
+   "text_ja": "私もこのログを初めて見たとき、単に",
+   "text_zh_Hant": "我第一次看到這份紀錄時,一度以為"
+  },
+  {
+   "text": "잘못 본 줄 알았어요.",
+   "est_sec": 2,
+   "text_en": "someone had just misread the scale.",
+   "text_ja": "目盛りを見間違えたのかと思いました。",
+   "text_zh_Hant": "只是有人看錯了刻度。"
+  },
+  {
+   "text": "사연은 이렇습니다. 남태평양 통가 해구, 수심",
+   "est_sec": 5,
+   "text_en": "Here's the story. In the South Pacific's Tonga Trench, near a",
+   "text_ja": "話はこうです。南太平洋のトンガ海溝、水深",
+   "text_zh_Hant": "事情是這樣的。南太平洋東加海溝,水深"
+  },
+  {
+   "text": "구천 미터 근처 열수구 지대에서 무인잠수정이",
+   "est_sec": 4,
+   "text_en": "hydrothermal vent field about nine thousand meters down, an ROV",
+   "text_ja": "九千メートル付近の熱水噴出域で、無人潜水機が",
+   "text_zh_Hant": "九千公尺附近的熱泉區,一台無人潛水器"
+  },
+  {
+   "text": "회색 막 같은 조직을 하나 건져 올렸습니다.",
+   "est_sec": 4,
+   "text_en": "brought up a piece of grayish tissue.",
+   "text_ja": "灰色い膜のような組織を一つ引き上げました。",
+   "text_zh_Hant": "打撈上了一塊灰色的膜狀組織。"
+  },
+  {
+   "text": "화산암 표면에 딱 달라붙어 있던 걸 조심스레",
+   "est_sec": 4,
+   "text_en": "It had been clinging to volcanic rock, and they",
+   "text_ja": "火山岩の表面にぴったり張り付いていたものを、慎重に",
+   "text_zh_Hant": "它原本緊貼在火山岩表面,被小心翼翼地"
+  },
+  {
+   "text": "떼어낸 거였죠. 배 위 실험실 저울에 올리니",
+   "est_sec": 4,
+   "text_en": "carefully peeled it off. Once it was on the ship's lab scale,",
+   "text_ja": "剥がしたものでした。船上の実験室で秤に乗せると",
+   "text_zh_Hant": "剝了下來。放上船上實驗室的秤,"
+  },
+  {
+   "text": "삼점이 킬로그램. 조직검사용으로 사십 그램을",
+   "est_sec": 4,
+   "text_en": "it read 3.2 kilograms. They cut off forty grams for a biopsy,",
+   "text_ja": "三点二キログラム。組織検査用に四十グラムを切り取り",
+   "text_zh_Hant": "顯示三點二公斤。切下四十克做組織切片,"
+  },
+  {
+   "text": "잘라냈고요. 그런데 그날 밤 다시 재보니,",
+   "est_sec": 4,
+   "text_en": "and that night, when they weighed it again,",
+   "text_ja": "その夜、もう一度計量してみると",
+   "text_zh_Hant": "當天晚上再秤一次,"
+  },
+  {
+   "text": "저울은 여전히 삼점이 킬로그램을 가리키고",
+   "est_sec": 4,
+   "text_en": "the scale still showed 3.2 kilograms.",
+   "text_ja": "秤は依然として三点二キログラムを示していました。",
+   "text_zh_Hant": "秤上顯示的還是三點二公斤。"
+  },
+  {
+   "text": "있었습니다. 저울 오류인가… 싶었죠.",
+   "est_sec": 4,
+   "text_en": "At first they thought the scale was faulty...",
+   "text_ja": "最初は秤の故障かと…思いました。",
+   "text_zh_Hant": "一開始還以為是秤壞了…"
+  },
+  {
+   "text": "그런데 저울을 통째로 새것으로 바꿔서 재도",
+   "est_sec": 4,
+   "text_en": "but they swapped it for a brand-new one and weighed it again,",
+   "text_ja": "でも秤を丸ごと新品に替えて量り直しても",
+   "text_zh_Hant": "但把秤整台換成新的再秤,"
+  },
+  {
+   "text": "똑같더군요. 세 번째 재계량까지 같은 숫자가",
+   "est_sec": 4,
+   "text_en": "and got the exact same result. By the third reweighing,",
+   "text_ja": "全く同じ結果でした。三度目の再計量になると",
+   "text_zh_Hant": "結果完全一樣。到了第三次重新秤重,"
+  },
+  {
+   "text": "나오자, 승조원들도 더는 웃지 못했습니다.",
+   "est_sec": 4,
+   "text_en": "the crew stopped joking about it.",
+   "text_ja": "乗組員たちも笑えなくなっていました。",
+   "text_zh_Hant": "船員們已經笑不出來了。"
+  },
+  {
+   "text": "그 배에 타고 있던 민간 승조원들에겐 결국",
+   "est_sec": 4,
+   "text_en": "The civilian crew members aboard that ship",
+   "text_ja": "その船に乗っていた民間の乗組員たちには結局",
+   "text_zh_Hant": "當時船上的民間船員,最後"
+  },
+  {
+   "text": "갑급 기억소거제가 투여됐고, 열흘 만에 자연히",
+   "est_sec": 5,
+   "text_en": "ended up being given a Class-A amnestic, and",
+   "text_ja": "甲級記憶処理剤が投与され、十日ほどで",
+   "text_zh_Hant": "被施打了甲級記憶消除劑,大約十天後"
+  },
+  {
+   "text": "풀렸다고 하고요. 그사이 표본 쪽 분석도",
+   "est_sec": 4,
+   "text_en": "their memories naturally came back within ten days. Meanwhile, analysis of the sample",
+   "text_ja": "自然に記憶が戻ったそうです。その間、検体側の分析も",
+   "text_zh_Hant": "記憶就自然恢復了。與此同時,樣本那邊的分析"
+  },
+  {
+   "text": "계속됐습니다. 화학 조성 분석을 돌리질 않나,",
+   "est_sec": 5,
+   "text_en": "kept going. They ran chemical composition tests,",
+   "text_ja": "続けられました。化学組成分析を回すわ、",
+   "text_zh_Hant": "也持續進行。化學成分分析跑了一輪,"
+  },
+  {
+   "text": "전자현미경 촬영은 기본이고, 방사성 동위원소",
+   "est_sec": 4,
+   "text_en": "electron microscopy as a matter of course, and even",
+   "text_ja": "電子顕微鏡撮影は当たり前、放射性同位体による",
+   "text_zh_Hant": "電子顯微鏡拍攝是基本配備,連放射性同位素"
+  },
+  {
+   "text": "연대측정까지 붙었죠. 그런데… 뭐 하나 속",
+   "est_sec": 4,
+   "text_en": "radioisotope dating. But... not a single one of it",
+   "text_ja": "年代測定までやったのに。でも…どれ一つとして",
+   "text_zh_Hant": "定年都做了。可是…沒有一項"
+  },
+  {
+   "text": "시원히 맞아떨어지는 게 없었습니다.",
+   "est_sec": 3,
+   "text_en": "came back with a clean, satisfying answer.",
+   "text_ja": "すっきり答えが合うものはありませんでした。",
+   "text_zh_Hant": "能得出讓人滿意的結果。"
+  },
+  {
+   "text": "본토 재단 연락책에게 보고가 올라갔고, 재단은",
+   "est_sec": 5,
+   "text_en": "A report went up to the Foundation's local contact, and the Foundation",
+   "text_ja": "本部の財団連絡員に報告が上がり、財団は",
+   "text_zh_Hant": "報告呈報到本部的基金會聯絡人那裡,基金會"
+  },
+  {
+   "text": "항해 전체를 그대로 인수했습니다.",
+   "est_sec": 3,
+   "text_en": "took over the entire expedition.",
+   "text_ja": "航海全体をそのまま接収しました。",
+   "text_zh_Hant": "直接接管了整趟航行。"
+  },
+  {
+   "text": "이름도 새로 붙었죠 — 사이트-714, 통가",
+   "est_sec": 4,
+   "text_en": "It was given a new name — Site-714, the",
+   "text_ja": "新しい名前もつきました — サイト714、トンガ海溝の",
+   "text_zh_Hant": "也有了新名字 — 714站,東加海溝"
+  },
+  {
+   "text": "해구 심해 관측지원기지.",
+   "est_sec": 2,
+   "text_en": "Tonga Trench deep-sea observation support base.",
+   "text_ja": "深海観測支援基地です。",
+   "text_zh_Hant": "深海觀測支援基地。"
+  },
+  {
+   "text": "이 무렵 붙은 별명이 하나 있는데요.",
+   "est_sec": 4,
+   "text_en": "Around this time, it picked up a nickname.",
+   "text_ja": "この頃、あだ名が一つつきました。",
+   "text_zh_Hant": "大約這時候,它多了一個外號。"
+  },
+  {
+   "text": "보고서엔 그냥 표본이라고만 적혀 있지만, 현장",
+   "est_sec": 5,
+   "text_en": "The report just calls it \"the specimen,\" but the people on site",
+   "text_ja": "報告書にはただ「検体」としか書かれていませんが、現場の人々は",
+   "text_zh_Hant": "報告書上只寫著「樣本」,但現場的人"
+  },
+  {
+   "text": "사람들은 이걸 「돌려막기」라고 불렀습니다.",
+   "est_sec": 4,
+   "emphasis": "돌려막기",
+   "text_en": "called it \"Debt Roller.\"",
+   "text_ja": "これを「借金の回し」と呼んでいました。",
+   "text_zh_Hant": "把它叫做「以債養債」。"
+  },
+  {
+   "text": "빚 돌려막듯, 모자란 만큼을 어디선가 그대로",
+   "est_sec": 4,
+   "text_en": "Like juggling debts, wherever a shortfall appeared, it seemed to get",
+   "text_ja": "借金を回すように、足りない分をどこかから",
+   "text_zh_Hant": "就像拆東牆補西牆一樣,少掉的部分似乎"
+  },
+  {
+   "text": "메꿔 넣는다고 해서 붙은 이름이었죠.",
+   "est_sec": 4,
+   "text_en": "filled right back in from somewhere else — that's how the name stuck.",
+   "text_ja": "そのまま埋めてしまうということで、そう呼ばれ始めた名前でした。",
+   "text_zh_Hant": "總會從某處補回來,因此才有了這個名字。"
+  },
+  {
+   "text": "그 별명, 정말 틀린 말이었을까요?",
+   "est_sec": 3,
+   "text_en": "That nickname — was it really so far off?",
+   "text_ja": "そのあだ名、本当に間違っていたのでしょうか。",
+   "text_zh_Hant": "這個外號,真的說錯了嗎?"
+  },
+  {
+   "text": "문서 번호는 SCP-9484.",
+   "est_sec": 3,
+   "text_en": "The file number is SCP-9484.",
+   "text_ja": "文書番号はSCP-9484。",
+   "text_zh_Hant": "文件編號是SCP-9484。"
+  },
+  {
+   "text": "격리 등급은 나중에 케테르로 최종 분류됩니다.",
+   "est_sec": 5,
+   "text_en": "Its containment class would later be finalized as Keter.",
+   "text_ja": "収容クラスは後にケテルに最終分類されます。",
+   "text_zh_Hant": "收容等級後來被最終列為Keter。"
+  },
+  {
+   "text": "왜 그렇게까지 올라갔는지는, 뒤에 나옵니다.",
+   "est_sec": 4,
+   "text_en": "Why it climbed that high comes later.",
+   "text_ja": "なぜそこまで上がったのかは、後で出てきます。",
+   "text_zh_Hant": "為什麼會升到那麼高,稍後會提到。"
+  },
+  {
+   "text": "정체불명 생물 표본에는 기본 수용 절차가",
+   "est_sec": 4,
+   "text_en": "Any unidentified biological specimen comes with a standard containment procedure —",
+   "text_ja": "正体不明の生物検体には基本の収容手順が",
+   "text_zh_Hant": "任何身分不明的生物樣本,都會附帶一套基本收容程序 —"
+  },
+  {
+   "text": "붙습니다. 매달 표본 전량을 다시 재는 감사",
+   "est_sec": 4,
+   "text_en": "a monthly audit that reweighs every fragment on file.",
+   "text_ja": "つきます。毎月、検体全量を再計量する監査",
+   "text_zh_Hant": "每月對全部樣本重新秤重的稽核"
+  },
+  {
+   "text": "일정이었어요. 별거 아닌 점검 같았는데,",
+   "est_sec": 4,
+   "text_en": "It seemed like a minor check, but",
+   "text_ja": "予定でした。大したことのない点検のようでしたが、",
+   "text_zh_Hant": "行程。看似只是個小小的例行檢查,"
+  },
+  {
+   "text": "여기서부터 일이 커지더군요.",
+   "est_sec": 3,
+   "text_en": "this is exactly where things got bigger.",
+   "text_ja": "ここから事態が大きくなっていきました。",
+   "text_zh_Hant": "但事情就是從這裡開始鬧大的。"
+  },
+  {
+   "text": "첫 정기 감사 도중, 재단 기록반이 오래된",
+   "est_sec": 4,
+   "text_en": "During the first regular audit, the Foundation's records team dug through",
+   "text_ja": "最初の定期監査の最中、財団の記録班が古い",
+   "text_zh_Hant": "第一次例行稽核時,基金會記錄組翻找"
+  },
+  {
+   "text": "서류를 뒤지다 이상한 걸 찾아냈습니다.",
+   "est_sec": 4,
+   "text_en": "old paperwork and found something strange.",
+   "text_ja": "書類を漁って、奇妙なものを見つけました。",
+   "text_zh_Hant": "舊文件,發現了一件怪事。"
+  },
+  {
+   "text": "이 조직, 재단이 처음 만난 게 아니었어요 —",
+   "est_sec": 5,
+   "text_en": "This tissue wasn't something the Foundation was meeting for the first time —",
+   "text_ja": "この組織、財団が初めて出会ったものではありませんでした —",
+   "text_zh_Hant": "這個組織,並不是基金會第一次接觸到 —"
+  },
+  {
+   "text": "1970년대 국제 해양조사 컨소시엄이 이미",
+   "est_sec": 4,
+   "text_en": "back in the 1970s, an international marine research consortium had already",
+   "text_ja": "1970年代、国際海洋調査コンソーシアムがすでに",
+   "text_zh_Hant": "早在一九七〇年代,一個國際海洋調查聯盟就已經"
+  },
+  {
+   "text": "채집해서, 해외 연구소 두 곳에 표본을 나눠",
+   "est_sec": 4,
+   "text_en": "collected it, and had loaned fragments out to two overseas labs,",
+   "text_ja": "採集していて、海外の研究所二か所に検体を分けて貸し出した",
+   "text_zh_Hant": "採集過它,並將樣本分借給海外兩間實驗室,"
+  },
+  {
+   "text": "대출한 기록까지 남아 있었습니다.",
+   "est_sec": 3,
+   "text_en": "with the loan records still on file.",
+   "text_ja": "記録まで残っていました。",
+   "text_zh_Hant": "連借出紀錄都還留著。"
+  },
+  {
+   "text": "기동특무부대 람다-77, 별칭 「저울판」이 두",
+   "est_sec": 5,
+   "text_en": "Mobile Task Force Lambda-77, nicknamed \"Scale Plate,\" was",
+   "text_ja": "機動特務部隊ラムダ77、通称「秤盤」が二か所に",
+   "text_zh_Hant": "機動特遣隊Lambda-77,綽號「秤盤」,"
+  },
+  {
+   "text": "곳에 각각 파견됐습니다.",
+   "est_sec": 2,
+   "text_en": "dispatched to both locations.",
+   "text_ja": "それぞれ派遣されました。",
+   "text_zh_Hant": "分別被派往這兩個地點。"
+  },
+  {
+   "text": "먼지 쌓인 표본병 두 개가, 여전히 실험실",
+   "est_sec": 4,
+   "text_en": "Two dusty specimen jars were still",
+   "text_ja": "埃をかぶった検体瓶が二つ、今も",
+   "text_zh_Hant": "兩瓶積滿灰塵的樣本瓶,依然"
+  },
+  {
+   "text": "선반 위에 놓여 있었죠.",
+   "est_sec": 2,
+   "text_en": "sitting on lab shelves.",
+   "text_ja": "実験室の棚に置かれていました。",
+   "text_zh_Hant": "擱在實驗室的架子上。"
+  },
+  {
+   "text": "세 표본을 동시에 재계량하기로 한 날, 화면",
+   "est_sec": 4,
+   "text_en": "On the day they set out to reweigh all three specimens at once, they had",
+   "text_ja": "三つの検体を同時に再計量することにした日、",
+   "text_zh_Hant": "決定同時重新秤量三份樣本的那天,"
+  },
+  {
+   "text": "세 개를 나란히 띄워놓고 지켜봤습니다.",
+   "est_sec": 4,
+   "text_en": "three screens lined up side by side, watching.",
+   "text_ja": "三つの画面を並べて見守りました。",
+   "text_zh_Hant": "並排架起三個螢幕盯著看。"
+  },
+  {
+   "text": "한쪽 숫자가 줄면, 다른 쪽 숫자가 그만큼",
+   "est_sec": 4,
+   "text_en": "When the number on one screen dropped, the number on another",
+   "text_ja": "片方の数字が減れば、もう片方の数字が",
+   "text_zh_Hant": "一邊的數字一減少,另一邊的數字"
+  },
+  {
+   "text": "늘었어요. 실시간으로요.",
+   "est_sec": 2,
+   "text_en": "rose by exactly that much. In real time.",
+   "text_ja": "ちょうどその分だけ増える。リアルタイムでです。",
+   "text_zh_Hant": "就恰好增加同樣的量。而且是即時的。"
+  },
+  {
+   "text": "람다-77 무전에서 나온 말은 짧았습니다 —",
+   "est_sec": 4,
+   "text_en": "What Lambda-77 reported over the radio was short —",
+   "text_ja": "ラムダ77の無線から出てきた言葉は短いものでした —",
+   "text_zh_Hant": "Lambda-77無線電裡傳來的話很短 —"
+  },
+  {
+   "text": "「지금요, 지금 숫자가 움직입니다.」",
+   "est_sec": 4,
+   "text_en": "\"It's happening now, the numbers are moving right now.\"",
+   "text_ja": "「今です、今、数字が動いています」",
+   "text_zh_Hant": "「就是現在,數字現在正在動。」"
+  },
+  {
+   "text": "이게 뭘 뜻하는지, 다들 알아챘습니다.",
+   "est_sec": 4,
+   "text_en": "Everyone realized what this meant.",
+   "text_ja": "これが何を意味するのか、皆すぐに気づきました。",
+   "text_zh_Hant": "這代表什麼,大家都立刻明白了。"
+  },
+  {
+   "text": "하나가 아니라는 겁니다.",
+   "est_sec": 2,
+   "text_en": "It meant this wasn't just one.",
+   "text_ja": "一つではなかったということです。",
+   "text_zh_Hant": "這不是單一一份樣本。"
+  },
+  {
+   "text": "세계 어딘가에 흩어진 조각들이, 지금도 서로",
+   "est_sec": 4,
+   "text_en": "Fragments scattered somewhere across the world were, even now,",
+   "text_ja": "世界のどこかに散らばった破片たちが、今もなお",
+   "text_zh_Hant": "散落在世界某處的碎片,如今仍然"
+  },
+  {
+   "text": "무게를 나눠 지고 있다는 거였어요.",
+   "est_sec": 3,
+   "text_en": "sharing weight back and forth with each other.",
+   "text_ja": "互いに重さを分け合っているということでした。",
+   "text_zh_Hant": "彼此分擔著重量。"
+  },
+  {
+   "text": "우연이었을까요? 저도 이 대목을 읽으면서,",
+   "est_sec": 4,
+   "text_en": "Was it a coincidence? I found myself, while reading this part,",
+   "text_ja": "偶然だったのでしょうか。私もこの箇所を読みながら",
+   "text_zh_Hant": "這是巧合嗎?我讀到這一段時,"
+  },
+  {
+   "text": "그래프를 몇 번이나 다시 돌려봤습니다.",
+   "est_sec": 4,
+   "text_en": "rewinding the graph over and over.",
+   "text_ja": "グラフを何度も見返してしまいました。",
+   "text_zh_Hant": "把圖表反覆倒回去看了好幾次。"
+  },
+  {
+   "text": "그건 지금도 아무도 모릅니다.",
+   "est_sec": 3,
+   "text_en": "Even now, nobody knows the answer.",
+   "text_ja": "それは今も、誰にも分かりません。",
+   "text_zh_Hant": "這一點,至今仍無人知曉。"
+  },
+  {
+   "text": "없앨 수 있는지 시험해보자는 얘기가",
+   "est_sec": 3,
+   "text_en": "The question came up of whether it could be eliminated —",
+   "text_ja": "これを消せるのか、試してみようという話が",
+   "text_zh_Hant": "有人提出要不要試著把它消滅掉 —"
+  },
+  {
+   "text": "나왔습니다. D계급을 투입해 소각로를 다루게",
+   "est_sec": 4,
+   "text_en": "standard procedure called for a D-class to be sent in to run the incinerator.",
+   "text_ja": "出ました。D階級を投入して焼却炉を扱わせるのが",
+   "text_zh_Hant": "按標準程序,派D級人員去操作焚化爐。"
+  },
+  {
+   "text": "하는 게 표준 절차였죠.",
+   "est_sec": 2,
+   "text_en": "That was the standard procedure.",
+   "text_ja": "標準の手順でした。",
+   "text_zh_Hant": "這是標準流程。"
+  },
+  {
+   "text": "표본 하나를 완전히 소각했어요.",
+   "est_sec": 3,
+   "text_en": "They incinerated one specimen completely.",
+   "text_ja": "検体を一つ、完全に焼却しました。",
+   "text_zh_Hant": "他們把一份樣本完全燒毀了。"
+  },
+  {
+   "text": "사라진 무게는 사라지지 않았습니다.",
+   "est_sec": 3,
+   "text_en": "The lost weight did not disappear.",
+   "text_ja": "失われた重さは消えませんでした。",
+   "text_zh_Hant": "消失的重量並沒有真的消失。"
+  },
+  {
+   "text": "나머지 두 표본에 정확히 나뉘어 붙었을",
+   "est_sec": 4,
+   "text_en": "It simply attached itself, split exactly evenly,",
+   "text_ja": "残る二つの検体にきっちり分かれて",
+   "text_zh_Hant": "只是精確地平分,"
+  },
+  {
+   "text": "뿐이었죠. 담당이던 노보아 박사는 이걸 다르게",
+   "est_sec": 5,
+   "text_en": "onto the remaining two specimens. Dr. Noboa, who was in charge, read this",
+   "text_ja": "くっついただけでした。担当のノボア博士はこれを違う形で",
+   "text_zh_Hant": "附著到剩下的兩份樣本上。負責的諾博亞博士對此有不同的解讀。"
+  },
+  {
+   "text": "읽었습니다. 셋 중 하나가 「원본」이고,",
+   "est_sec": 4,
+   "text_en": "differently. She believed one of the three was the \"original,\"",
+   "text_ja": "読み取りました。三つのうち一つが「原本」で、",
+   "text_zh_Hant": "她認為三份之中有一份是「原本」,"
+  },
+  {
+   "text": "나머지 둘은 거기서 갈라진 그림자일 뿐이라는",
+   "est_sec": 4,
+   "text_en": "and the other two were merely shadows split off from it —",
+   "text_ja": "残る二つはそこから分かれた影に過ぎないという",
+   "text_zh_Hant": "另外兩份不過是從那裡分裂出去的影子 —"
+  },
+  {
+   "text": "가설이었죠. 원본만 남기고 순서대로 태우면,",
+   "est_sec": 4,
+   "text_en": "that was her hypothesis. If they burned them one by one, leaving only the original,",
+   "text_ja": "仮説でした。原本だけを残して順番に燃やせば、",
+   "text_zh_Hant": "這是她的假設。如果只留下原本,依序燒掉其他的,"
+  },
+  {
+   "text": "무게는 갈 곳을 잃고 그대로 꺼질 거라고요.",
+   "est_sec": 4,
+   "text_en": "the weight would have nowhere to go and would simply go out.",
+   "text_ja": "重さは行き場を失ってそのまま消えるだろうと。",
+   "text_zh_Hant": "重量就會無處可去,自然而然熄滅消失。"
+  },
+  {
+   "text": "그의 실험 노트 여백엔 이렇게 적혀 있었습니다",
+   "est_sec": 5,
+   "text_en": "In the margin of her lab notebook, this was written —",
+   "text_ja": "彼女の実験ノートの余白には、こう書かれていました",
+   "text_zh_Hant": "她的實驗筆記空白處,寫著這麼一句話 —"
+  },
+  {
+   "text": "— 「셋 중 하나는, 반드시 원본이다.」",
+   "est_sec": 4,
+   "text_en": "\"One of the three has to be the original.\"",
+   "text_ja": "— 「三つのうち一つは、必ず原本である」",
+   "text_zh_Hant": "「三份之中,必定有一份是原本。」"
+  },
+  {
+   "text": "사이트 지휘부는 승인을 미뤘습니다.",
+   "est_sec": 3,
+   "text_en": "Site command held off on approval.",
+   "text_ja": "サイト指揮部は承認を保留しました。",
+   "text_zh_Hant": "站方指揮部延後了核准。"
+  },
+  {
+   "text": "O5 승인 없인 완전 소각을 못 한다는",
+   "est_sec": 4,
+   "text_en": "Without O5 authorization, full incineration couldn't proceed —",
+   "text_ja": "O5承認なしには完全焼却はできないという",
+   "text_zh_Hant": "沒有O5的授權,不能進行完全焚毀 —"
+  },
+  {
+   "text": "거였어요. 사흘째 되던 날, 노보아 박사는",
+   "est_sec": 4,
+   "text_en": "that was the answer. On the third day, Dr. Noboa",
+   "text_ja": "話でした。三日目になって、ノボア博士は",
+   "text_zh_Hant": "就是這麼回事。到了第三天,諾博亞博士"
+  },
+  {
+   "text": "그냥 결정을 내려버렸습니다.",
+   "est_sec": 3,
+   "text_en": "simply made the call herself.",
+   "text_ja": "自分でそのまま決定を下してしまいました。",
+   "text_zh_Hant": "就這麼自己下了決定。"
+  },
+  {
+   "text": "「D-9484, 저거 순서대로 넣어.」",
+   "est_sec": 4,
+   "text_en": "\"D-9484, feed those in, one after another.\"",
+   "text_ja": "「D-9484、あれを順番に入れろ」",
+   "text_zh_Hant": "「D-9484,把那些依序丟進去。」"
+  },
+  {
+   "text": "D계급에게 순서란 게 따로 있지 않죠.",
+   "est_sec": 4,
+   "text_en": "A D-class doesn't get to have an order of its own.",
+   "text_ja": "D階級には、自分なりの順番なんてものはありません。",
+   "text_zh_Hant": "D級人員沒有所謂自己的順序。"
+  },
+  {
+   "text": "지시받은 대로 태울 뿐입니다.",
+   "est_sec": 3,
+   "text_en": "It just burns whatever it's told to.",
+   "text_ja": "指示された通りに燃やすだけです。",
+   "text_zh_Hant": "只是照指示焚燒罷了。"
+  },
+  {
+   "text": "두 표본이 차례로 소각로에 들어갔습니다.",
+   "est_sec": 4,
+   "text_en": "Two specimens went into the incinerator, one after the other.",
+   "text_ja": "二つの検体が次々と焼却炉に入れられました。",
+   "text_zh_Hant": "兩份樣本先後被送進焚化爐。"
+  },
+  {
+   "text": "마지막, 통가 원본이 들어가려던 순간이었어요.",
+   "est_sec": 5,
+   "text_en": "It was the moment the last one, the Tonga original, was about to go in.",
+   "text_ja": "最後に、トンガの原本が入れられようとした瞬間でした。",
+   "text_zh_Hant": "就在最後,那份東加原本即將被送入的瞬間。"
+  },
+  {
+   "text": "노보아 박사는 확신하고 있었습니다.",
+   "est_sec": 3,
+   "text_en": "Dr. Noboa was certain.",
+   "text_ja": "ノボア博士は確信していました。",
+   "text_zh_Hant": "諾博亞博士深信不疑。"
+  },
+  {
+   "text": "이번엔 갈 곳이 없으니까, 사라질 거라고요.",
+   "est_sec": 4,
+   "text_en": "This time, with nowhere left to go, it would simply vanish.",
+   "text_ja": "今度こそ行き場がないから、消えるはずだと。",
+   "text_zh_Hant": "這次已經無處可去,一定會就此消失。"
+  },
+  {
+   "text": "그런데 사라진 무게는, 원본이 아니라 노보아",
+   "est_sec": 4,
+   "text_en": "But the weight that vanished didn't land on the original — it landed on Noboa",
+   "text_ja": "ところが消えた重さは、原本ではなくノボア",
+   "text_zh_Hant": "但消失的重量,並沒有落到原本上,而是落到了諾博亞"
+  },
+  {
+   "text": "박사 본인에게 얹혔습니다.",
+   "est_sec": 3,
+   "emphasis": "본인에게 얹혔습니다",
+   "text_en": "herself, the doctor.",
+   "text_ja": "博士本人に乗ってしまいました。",
+   "text_zh_Hant": "博士本人身上。"
+  },
+  {
+   "text": "의무실 체중계 숫자가, 소각로가 꺼지는 순간과",
+   "est_sec": 5,
+   "text_en": "The number on the infirmary scale spiked at the exact same second",
+   "text_ja": "医務室の体重計の数字が、焼却炉の火が消える",
+   "text_zh_Hant": "醫務室體重計上的數字,在焚化爐熄滅的"
+  },
+  {
+   "text": "정확히 같은 초에 튀어 올랐죠.",
+   "est_sec": 3,
+   "text_en": "the incinerator's fire went out.",
+   "text_ja": "瞬間と、まさに同じ秒に跳ね上がりました。",
+   "text_zh_Hant": "那一瞬間,精確地在同一秒飆升。"
+  },
+  {
+   "text": "「이게… 왜 저한테 붙어 있는 거죠?」",
+   "est_sec": 4,
+   "text_en": "\"Why... is this thing stuck on me?\"",
+   "text_ja": "「これ…なんで私についているんですか」",
+   "text_zh_Hant": "「這個……為什麼黏在我身上?」"
+  },
+  {
+   "text": "그날 밤 그가 남긴 말은 이거였습니다.",
+   "est_sec": 4,
+   "text_en": "That was what she said that night.",
+   "text_ja": "その夜、彼女が残した言葉はこれでした。",
+   "text_zh_Hant": "那天晚上,她留下的話就是這句。"
+  },
+  {
+   "text": "재단도 아직 이유를 설명 못 합니다.",
+   "est_sec": 4,
+   "text_en": "Even the Foundation still can't explain why.",
+   "text_ja": "財団もまだ理由を説明できていません。",
+   "text_zh_Hant": "基金會至今仍無法解釋原因。"
+  },
+  {
+   "text": "몸 안쪽 정확히 어디부터가 표본이고…",
+   "est_sec": 4,
+   "text_en": "Exactly where the specimen ends and where her body begins...",
+   "text_ja": "体のどこからが検体で、どこからが彼女自身の体なのか、",
+   "text_zh_Hant": "身體裡究竟從哪裡開始是樣本、從哪裡開始是她自己的身體…"
+  },
+  {
+   "text": "어디부터가 그의 몸인지, 확실하진 않은데요.",
+   "est_sec": 4,
+   "text_en": "isn't clear even now — I honestly can't say for sure.",
+   "text_ja": "はっきりとは分かっていません…正直、確信は持てません。",
+   "text_zh_Hant": "至今仍不清楚——老實說我也無法肯定。"
+  },
+  {
+   "text": "냉동 보존을 시도하질 않나, 국소 절제를",
+   "est_sec": 4,
+   "text_en": "They tried cryopreservation, they tried localized excision,",
+   "text_ja": "冷凍保存を試すわ、局所切除を試すわ、",
+   "text_zh_Hant": "冷凍保存試過,局部切除也試過,"
+  },
+  {
+   "text": "시도하질 않나, 효소로 녹여보기까지 했죠.",
+   "est_sec": 4,
+   "text_en": "they even tried dissolving it with enzymes.",
+   "text_ja": "酵素で溶かしてみたりまでしました。",
+   "text_zh_Hant": "甚至還試過用酵素溶解。"
+  },
+  {
+   "text": "전부 소용없었습니다. 재수용 시도는 세 차례,",
+   "est_sec": 5,
+   "text_en": "None of it worked. Reintegration was attempted three times,",
+   "text_ja": "全部無駄でした。再収容の試みは三回、",
+   "text_zh_Hant": "全都沒有用。再收容嘗試了三次,"
+  },
+  {
+   "text": "마찬가지로 전부 실패했습니다.",
+   "est_sec": 3,
+   "text_en": "and every single one of them failed just the same.",
+   "text_ja": "それも同様にすべて失敗しました。",
+   "text_zh_Hant": "同樣也全部失敗。"
+  },
+  {
+   "text": "격리라고 부르기도 이제 애매해졌습니다 —",
+   "est_sec": 4,
+   "text_en": "Calling it \"containment\" has even gotten awkward at this point —",
+   "text_ja": "「収容」と呼ぶことすら、今では曖昧になっています —",
+   "text_zh_Hant": "現在連「收容」這個詞都變得曖昧了 —"
+  },
+  {
+   "text": "격리할 대상 자체가 사람 몸과",
+   "est_sec": 3,
+   "text_en": "because the thing to be contained has merged with a person's",
+   "text_ja": "収容対象そのものが人間の",
+   "text_zh_Hant": "因為收容對象本身,已經和一個人的"
+  },
+  {
+   "text": "겹쳐버렸으니까요. 케테르 등급, 이래서 붙은",
+   "est_sec": 4,
+   "emphasis": "케테르 등급",
+   "text_en": "body. That's why it got the Keter",
+   "text_ja": "体と重なってしまったからです。だからケテル",
+   "text_zh_Hant": "身體重疊在一起。這就是為什麼它會被列為Keter"
+  },
+  {
+   "text": "겁니다. SCP-682처럼 파괴가 거의 안",
+   "est_sec": 4,
+   "text_en": "classification. It's not that it's indestructible like SCP-682,",
+   "text_ja": "分類がついたわけです。SCP-682のようにほとんど破壊が効かない個体ではありませんが、",
+   "text_zh_Hant": "等級。它不像SCP-682那樣幾乎無法摧毀,"
+  },
+  {
+   "text": "통하는 개체는 아니지만, 이쪽은 격리 절차를",
+   "est_sec": 4,
+   "text_en": "but on this one, no one even knew how to apply containment procedure",
+   "text_ja": "こちらは収容手順を",
+   "text_zh_Hant": "但問題在於,根本不知道該如何"
+  },
+  {
+   "text": "사람한테 어떻게 적용할지부터가 막막했던 거죠.",
+   "est_sec": 5,
+   "text_en": "to a person in the first place.",
+   "text_ja": "どう人間に当てはめればいいのかすら分からなかったのです。",
+   "text_zh_Hant": "對一個人套用收容程序。"
+  },
+  {
+   "text": "세계 오컬트 연합 쪽 옛 기록에도 이 해구",
+   "est_sec": 4,
+   "text_en": "Old records from the Global Occult Coalition apparently mention this trench",
+   "text_ja": "世界オカルト連合の古い記録にも、この海溝の話が",
+   "text_zh_Hant": "世界超自然聯盟的舊紀錄裡,似乎也提到過這條海溝,"
+  },
+  {
+   "text": "이야기가 몇 줄 나온다고 하더군요.",
+   "est_sec": 3,
+   "text_en": "in a few lines.",
+   "text_ja": "数行、出てくるそうです。",
+   "text_zh_Hant": "只有寥寥數行。"
+  },
+  {
+   "text": "이 열수구가 SCP-9532 아래에 있는 것과",
+   "est_sec": 5,
+   "text_en": "There had long been talk that this vent connects to whatever lies beneath SCP-9532 —",
+   "text_ja": "この熱水噴出孔がSCP-9532の下にあるものと",
+   "text_zh_Hant": "早就有傳言說,這個熱泉區和SCP-9532下方的東西"
+  },
+  {
+   "text": "이어져 있다는 얘기도 예전부터 있었는데,",
+   "est_sec": 4,
+   "text_en": "a rumor that's existed for a while,",
+   "text_ja": "つながっているという話も以前からありましたが、",
+   "text_zh_Hant": "彼此相連 — 這個傳言早就存在,"
+  },
+  {
+   "text": "그쪽이 먼저 알고 있었는지는 여전히 확인이 안",
+   "est_sec": 5,
+   "text_en": "but whether they knew about it first is still",
+   "text_ja": "向こうが先に知っていたのかどうかは、いまだに",
+   "text_zh_Hant": "但對方是否早已知情,至今仍然"
+  },
+  {
+   "text": "됩니다. 세계 오컬트 연합이 어딘가에서 다른",
+   "est_sec": 4,
+   "text_en": "unconfirmed. If the Global Occult Coalition has already destroyed",
+   "text_ja": "確認できていません。もし世界オカルト連合がどこかで",
+   "text_zh_Hant": "無法確認。如果世界超自然聯盟已經在某處"
+  },
+  {
+   "text": "자매 표본을 이미 없앴다면, 그 무게는 지금",
+   "est_sec": 4,
+   "text_en": "another sister specimen somewhere, that weight is right now",
+   "text_ja": "別の姉妹検体をすでに始末しているとしたら、その重さは今",
+   "text_zh_Hant": "銷毀了另一份姊妹樣本,那份重量現在"
+  },
+  {
+   "text": "누구한테 가 있는 걸까요?",
+   "est_sec": 3,
+   "text_en": "sitting on whoever it landed on. Who could that be?",
+   "text_ja": "誰かに乗っているはずです。それは一体誰なのでしょうか。",
+   "text_zh_Hant": "正落在某個人身上。那會是誰呢?"
+  },
+  {
+   "text": "노보아 박사의 재분류 심사는 아직 끝나지",
+   "est_sec": 4,
+   "text_en": "Dr. Noboa's reclassification review still hasn't",
+   "text_ja": "ノボア博士の再分類審査は、まだ",
+   "text_zh_Hant": "諾博亞博士的重新分類審查,至今仍未"
+  },
+  {
+   "text": "않았습니다. 왜 하필 그였는지는, 저도… 답을 못 하겠습니다.",
+   "est_sec": 6,
+   "text_en": "concluded. As for why it had to be her, I... can't answer that either.",
+   "text_ja": "終わっていません。なぜよりによって彼女だったのかは、私も…答えられません。",
+   "text_zh_Hant": "有結論。至於為什麼偏偏是她,我……也答不上來。"
+  }
+ ],
+ "scenes": [
+  {
+   "prompt": "A large gray gelatinous tissue mass gripped by a submersible's robotic claw, dominant subject filling most of frame, wet membrane catching light, black volcanic vent rock barely visible behind, close low-angle composition centered on claw and tissue, single shaft of submersible floodlight cutting through black water, wet gelatinous membrane and corroded steel claw and rough basalt rock, heavy suspended sediment drifting in black water, near-black background with one deep red accent glow on the tissue. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+  },
+  {
+   "prompt": "A gray tissue fragment on a digital lab scale, dominant subject center-frame, a scalpel and a small forty-gram cut piece beside it, steel lab bench kept to the edges, overhead close composition looking straight down at the readout, single cold fluorescent panel light from above, wet tissue and brushed steel scale and glass specimen dish, sterile still air with faint condensation, near-black background with one deep red accent on the tissue. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+  },
+  {
+   "prompt": "A digital scale's glowing readout showing an unchanged weight number, dominant subject in tight close-up, an empty biopsy dish beside it, dark steel lab bench kept minimal, extreme close low-angle composition on the display, single harsh readout-glow as the only light, backlit LED digits and brushed steel and empty glass dish, still cold air with faint dust in the light beam, near-black background with one deep red accent glowing from the display. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+  },
+  {
+   "prompt": "Ship crew members seen from behind, gathered close around a crackling radio speaker, dominant subject filling the frame, dim communication room kept dark around them, low-angle composition from behind the group toward the speaker, single work-light above the panel as the only source, worn foul-weather jackets and scratched steel panel and coiled cabling, humid stale air, near-black background with one deep red accent glow from the speaker light. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+  },
+  {
+   "prompt": "A clipboard audit schedule pinned beside a sealed specimen containment jar, dominant subject filling most of frame, rows of signatures visible, steel containment shelf kept minimal behind, close angled composition looking across the jar toward the sheet, single overhead task light as the only source, laminated paper and glass jar and rubber seal gasket, sterile still air, near-black background with one deep red accent glow reflecting off the jar glass. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+  },
+  {
+   "prompt": "A yellowed 1970s specimen loan record sheet held under a desk lamp, dominant subject filling the frame, faded typewritten institute names visible, dark archive shelf kept to the background, close overhead composition looking down at the page, single warm desk lamp as the only light source, brittle aged paper and cracked ink stamp and dusty folder edge, still dusty air with visible motes, near-black background with one deep red accent glow pooling on the page. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+  },
+  {
+   "prompt": "Two dust-covered specimen jars on a weathered laboratory shelf, dominant subject filling most of frame, faint old handwritten labels visible, dim disused laboratory kept minimal behind, close low-angle composition facing the shelf directly, single shaft of flashlight beam as the only light source, grimy glass and rusted shelf bracket and cracked rubber stopper, still stale air thick with dust, near-black background with one deep red accent glow on the jars. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+  },
+  {
+   "prompt": "Three monitor screens side by side each showing a live scale graph moving in opposite directions, dominant subject filling the frame, dark control room kept minimal around the screens, straight-on close composition facing all three screens, single glow from the screens as the only light source, matte screen glass and tangled cable bundles and worn control desk edge, still cold air, near-black background with one deep red accent glow from the diverging graph lines. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+  },
+  {
+   "prompt": "Researchers' faces lit from below by an incinerator viewport as they stare at a reweighing readout, dominant subject filling the frame, tense expressions visible, dark furnace room kept minimal, low-angle composition facing the group toward the glowing viewport, single furnace-glow as the only light, scorched steel furnace door and safety-glass viewport and worn protective gloves, hot dry air with faint heat shimmer, near-black background with one deep red accent glow from the furnace. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+  },
+  {
+   "prompt": "A handwritten line in the margin of an open lab notebook, dominant subject filling most of frame, ink slightly smudged, cluttered desk kept to the edges, close overhead composition looking straight down at the page, single desk-lamp beam as the only light source, worn notebook paper and dried ink and scuffed pen, still quiet air, near-black background with one deep red accent glow pooling at the page edge. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+  },
+  {
+   "prompt": "A gloved hand resting on an incinerator control panel switch, dominant subject filling the frame, a specimen jar waiting beside the panel, dim furnace room kept minimal behind, extreme close low-angle composition on the hand and switch, single warning-light glow as the only light source, thick rubber glove and scratched steel panel and glass jar reflection, hot still air, near-black background with one deep red accent glow from the warning light. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+  },
+  {
+   "prompt": "A digital infirmary scale's readout spiking upward at the exact instant shown, dominant subject filling most of frame, a pair of feet just visible on the scale platform, dim medical bay kept minimal behind, extreme close low-angle composition on the display, single cold medical ceiling light as the only source, backlit LED digits and worn scale platform rubber and sterile tile floor, still clinical air, near-black background with one deep red accent glow from the spiking display. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+  }
+ ],
+ "background": {
+  "id": "scp-9484_bg",
+  "kind": "image",
+  "reuse": false,
+  "aspect": "16:9",
+  "resolution": "1920x1080",
+  "prompt": "A massive gray gelatinous tissue mass spread across black volcanic rock, a human hand's silhouette pressed faintly into its edge, dominant subject filling most of frame, deep-sea trench kept near-black, close low-angle composition with the tissue centered, single deep red glow pulsing from within the tissue as the only light, wet membrane and rough basalt rock and pale skin, heavy sediment drifting in black water, near-black background with one deep red accent glow radiating from the tissue's core. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere",
+  "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion"
+ },
+ "thumbnail": {
+  "hook": "A massive gray gelatinous tissue mass filling most of the frame, wet membrane rippling with faint red-veined pulses, draped over black volcanic rock, dominant close low-angle shot, single deep red rim light glowing from within the tissue, near-black background, one hot red accent color. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere",
+  "hook_alt": [
+   "Extreme close-up of a digital scale readout glowing in the dark, the same weight number locked on the display, a small empty specimen dish beside it, dominant subject filling the frame, single harsh red-tinted readout glow, near-black background, one hot red accent color. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere",
+   "A pair of bare feet standing on an infirmary scale, the display number blurred but spiking red beneath them, dominant low-angle shot from floor level, near-black medical bay behind, single cold light cut through by a red glow from the scale, one hot red accent color. dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+  ],
+  "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion",
+  "text_safe_area": "left third",
+  "resolution": "1280x720"
+ },
+ "platforms": {
+  "youtube": {
+   "title": "통가 해구에서 건진 잿빛 조직이, 노보아 박사의 체중계 숫자를 통째로 삼켰다 [SCP-9484]",
+   "title_form": "사건형",
+   "thumbnail_text": "돌려막기",
+   "thumbnail_quote": "- 왜 저한테 붙어 있는 거죠",
+   "tags": [
+    "SCP",
+    "SCP재단",
+    "SCP-682",
+    "괴담",
+    "무서운이야기",
+    "미스터리"
+   ],
+   "chapters": [
+    "00:00 도입 — 「이만큼 잘랐는데 왜 그대로예요」",
+    "01:04 재단, 항해를 그대로 인수하다",
+    "01:47 별명 「돌려막기」",
+    "02:23 매달 재계량하는 감사 절차 시작",
+    "03:01 기동특무부대 람다-77, 자매 표본을 찾다",
+    "03:36 세 표본 동시 재계량 — 규모의 반전",
+    "04:19 노보아 박사의 원본 가설",
+    "05:03 미승인 소각 실행",
+    "05:45 「왜 저한테 붙어 있는 거죠」",
+    "06:45 세계 오컬트 연합, 남은 물음표"
+   ],
+   "description": "통가 해구 열수구에서 채집된 정체불명 조직 표본 하나가, 잘라내도 무게가 그대로 돌아옵니다. 알고 보니 이 표본은 세계 곳곳 실험실에 흩어진 자매 표본들과 무게를 나눠 갖고 있었습니다.\n\n※ SCP 재단 세계관 기반 오리지널 창작 · 허구의 이야기입니다\n※ CC BY-SA 3.0 · 원작: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP재단 #괴담 #무서운이야기 #미스터리",
+   "localizations": {
+    "en": {
+     "title": "A Gray Tissue From the Tonga Trench Devoured Dr. Noboa's Own Body Weight [SCP-9484]",
+     "description": "A gray tissue sample pulled from a hydrothermal vent in the Tonga Trench won't lose weight, no matter how much is cut away. The missing mass always comes back — because somewhere else in the world, a sister sample is quietly making up the difference.\n\n※ Original fiction set in the SCP Foundation universe — a work of fiction\n※ CC BY-SA 3.0 · Source: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCPFoundation #creepypasta #horror #mystery"
+    },
+    "ja": {
+     "title": "トンガ海溝で引き上げた灰色の組織が、ノボア博士自身の体重を丸ごと呑み込んだ [SCP-9484]",
+     "description": "トンガ海溝の熱水噴出孔から引き上げた灰色の組織は、どれだけ切り取っても重さが元に戻ります。世界のどこかにある姉妹検体が、その分をこっそり肩代わりしていたのです。\n\n※ SCP財団世界観に基づくオリジナル創作・フィクションです\n※ CC BY-SA 3.0 · 原作:SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP財団 #怖い話 #ホラー #ミステリー"
+    },
+    "zh-Hant": {
+     "title": "從東加海溝撈起的灰色組織,把諾博亞博士的體重整個吞掉了 [SCP-9484]",
+     "description": "從東加海溝熱泉區打撈上來的灰色組織,不管切掉多少,重量總會恢復原狀。原來世界某處,還有姊妹樣本悄悄替它補上了差額。\n\n※ 基於SCP基金會世界觀的原創作品·純屬虛構\n※ CC BY-SA 3.0 · 原作:SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP基金會 #怪談 #恐怖故事 #懸疑"
+    }
+   },
+   "pinned_comment": "혹시 요즘 어디선가 자꾸 모자란 게, 다른 데서 채워지고 있다는 느낌 받아보신 적 있으신가요? 있다면 댓글로 들려주세요.",
+   "playlist": "SCP 아카이브 (전편 듣기)"
+  }
+ },
+ "credit": "SCP 재단 세계관 기반 오리지널 창작 · 허구 · CC BY-SA 3.0",
+ "content_rating": "teen",
+ "notes": "SCP 아카이브 · 16:9 롱폼 · 장면 전환 배경 + 자막 번인 · 단일 내레이터 · 완결형."
+}
