@@ -1,0 +1,1306 @@
+{
+  "date": "2026-09-25",
+  "iso_week": "2026-W39",
+  "topic": "scp",
+  "privacy": "public",
+  "origin": "original",
+  "origin_note": "",
+  "source_url": "",
+  "story_id": "scp-9673",
+  "scp_number": "SCP-9673",
+  "object_class": "Euclid",
+  "codename": "증인바위",
+  "number_check": {
+    "checked_at": "2026-09-25",
+    "http_code": "unverified"
+  },
+  "theme": "밀림·고산",
+  "nature": "인지·밈",
+  "twist_type": "관측자",
+  "logline": "파푸아뉴기니 고산 초소 능선에 박힌 놋쇠 표석 이야기입니다. 그 앞에서 표석 사연을 들어본 적 있는 사람만, 거기 없던 형체를 보게 됩니다.",
+  "structure": "연대기형",
+  "opening_move": "장면 하나",
+  "opening_note": "",
+  "closing_move": "숫자 하나",
+  "number_reveal": "뒤",
+  "ending_mode": "질문+구독",
+  "fault": "제3자",
+  "hook_line": "표석 옆 사진 한 장, 아무도 없던 자리에 사람이 서 있었습니다.",
+  "procedures": [],
+  "character": {
+    "name": "타바레스",
+    "role": "박사 · 인류학자 · 사이트-762 담당",
+    "flaw": "자기 가설을 못 놓는다"
+  },
+  "chain": [
+    {
+      "when": "초소가 세워지고 얼마 지나지 않았을 때",
+      "event": "보급팀이 능선의 놋쇠 표석 옆에서 사진을 찍었고, 인화해보니 아무도 없던 자리에 사람 그림자가 찍혀 있었다",
+      "because": "",
+      "shot": "이끼 낀 놋쇠 표석 옆, 인화된 사진 속에 서 있는 흐릿한 사람 그림자"
+    },
+    {
+      "when": "그 사진이 보고서에 오른 뒤",
+      "event": "분석팀이 지난 몇 년 치 사진을 모아 대조했고, 형체는 표석 사연을 미리 들은 사람이 찍은 사진에서만 나타난다는 걸 확인했다",
+      "because": "사진 한 장으로는 설명이 안 돼 과거 기록을 전부 대조했기 때문에",
+      "shot": "회의실 테이블에 나란히 놓인 두 무더기 사진, 한쪽에만 빨간 동그라미가 찍혀 있다"
+    },
+    {
+      "when": "그래서",
+      "event": "재단이 절반은 사연을 알려주고 절반은 모르게 한 채 근무를 돌리는 대조 시험을 했고, 아는 쪽 근무일지에만 목격란이 채워졌다",
+      "because": "상관관계만으로는 확신할 수 없어 변수를 직접 통제해봤기 때문에",
+      "shot": "나란히 놓인 근무일지 두 권, 한쪽 목격란만 빼곡히 채워져 있다"
+    },
+    {
+      "when": "이 무렵부터",
+      "event": "현장 사람들이 그 표석을 「증인바위」라고 부르기 시작했다",
+      "because": "대조 시험 결과가 사람들 입에 오르내리기 시작했기 때문에",
+      "shot": "격리동 복도 팻말에 손글씨로 덧붙여진 「증인바위」라는 이름"
+    },
+    {
+      "when": "원인이 사진이라고 본 뒤",
+      "event": "재단이 카메라를 봉인 필름통으로 바꿨지만, 필름을 한 번도 본 적 없는 신입이 근무 중 맨눈으로 형체를 봤다",
+      "because": "매체부터 틀어막아야 한다고 판단했기 때문에",
+      "shot": "봉인 딱지가 붙은 필름통 상자들이 쌓인 창고, 그 옆 떨리는 손으로 쓴 목격 보고서"
+    },
+    {
+      "when": "매체가 문제가 아니란 걸 안 뒤",
+      "event": "재단이 폐업한 코럴리지 광업 사무소 창고에서 백 년 다 된 장부를 회수했고, 표석이 식민지 시절 '증인 선언' 절차용으로 박힌 물건이었다는 걸 알아냈다",
+      "because": "매체를 막아도 안 통하자 표석 자체의 내력부터 파헤쳤기 때문에",
+      "shot": "누렇게 바랜 장부 페이지, '증인 선언' 항목에 찍힌 회사 도장과 서명란"
+    },
+    {
+      "when": "장부 내용과 목격 패턴을 겹쳐본 뒤",
+      "event": "재단이 가설을 다시 세웠다, 형체는 산의 수호령이 아니라 아직 완성 안 된 백 년 전 증인 선언 그 절차 자체였다",
+      "because": "장부와 목격 기록 사이 앞뒤가 맞아떨어졌기 때문에",
+      "shot": "벽에 붙은 지도, 장부 사본과 목격 기록 사이를 잇는 빨간 실"
+    },
+    {
+      "when": "소문이 새 나간 뒤",
+      "event": "혼돈의 반란 쪽 인물 하나가 초소 인근 검문소에서 낡은 장부 사본을 쥔 채 붙잡혔다",
+      "because": "이 절차의 존재가 밖으로 흘러나갔기 때문에",
+      "shot": "철조망 앞에서 붙잡힌 사내가 손에 쥔 낡은 장부 사본 한 장"
+    },
+    {
+      "when": "그 사이",
+      "event": "D계급 한 명이 검은 고글을 쓴 채 표석 앞에서 '안 보인다'는 말을 여든 번 반복했지만 여든한 번째에 다른 말이 나왔고, 기동특무부대 누-7이 완전 침묵 프로토콜을 시도했지만 메모에 '봤다'고 적기만 해도 형체가 옮겨붙었다",
+      "because": "인지위해 차단과 침묵 통제가 통하는지 확인해야 했기 때문에",
+      "shot": "검은 고글을 쓴 D계급 뒤로, 바닥에 흩어진 메모지들과 그 위에 겹쳐 찍힌 지문"
+    },
+    {
+      "when": "그런 가운데",
+      "event": "인류학자 타바레스 박사가 형체를 원주민 쪽 수호 존재로 보는 자기 가설을 굽히지 않고, 후배 연구원에게 원격으로 마지막 확인을 부탁했다",
+      "because": "앞선 실패들이 전부 자기 가설과 안 맞는다고 여겼기 때문에",
+      "shot": "헤드셋을 쓴 채 표석 앞에 웅크려 앉은 타바레스, 손이 표석 표면에 닿아 있다"
+    },
+    {
+      "when": "그 통화 중",
+      "event": "타바레스가 규칙을 어기고 표석에 손을 댄 채 '제가 봤습니다'라고 육성으로 선언했고, 그 순간 수백 킬로미터 밖 사무실에 있던 후배 연구원도 자기 옆에 같은 형체가 선 걸 봤다",
+      "because": "그녀가 마지막 선을 넘었기 때문에",
+      "shot": "화면 저편, 사무실 창가에 서 있는 형체를 보고 굳은 후배 연구원의 얼굴"
+    },
+    {
+      "when": "그 뒤로",
+      "event": "재단이 통화 녹음을 최고 등급 인지위해 자료로 격리했지만, 그 녹음을 들은 순서대로 목격 사례가 하나씩 늘고 있다",
+      "because": "육성 선언이 현장 없이도 통했다는 걸 확인했기 때문에",
+      "shot": "봉인 라벨이 붙은 녹음 장치 옆에, 쌓여가는 재생 이력 용지"
+    }
+  ],
+  "retention_beats": [
+    "혼돈의 반란이 스발바르에서 노렸던 위장 신원 기술과, 이번 증인 선언 방식 사이에 어떤 연관이 있는지는 아직 확인되지 않았다.",
+    "타바레스 박사의 재배치 여부는 아직 결정되지 않았다.",
+    "사이트-762 서고엔, 아직 열어보지 않은 코럴리지 광업 관련 상자가 더 있다고 한다."
+  ],
+  "cameos": [
+    {
+      "number": "SCP-096",
+      "how": "통칭 '수줍은 자'. 자기 얼굴이 사진이나 화면에 찍히면 격렬히 반응하는 것으로 알려진 개체 — 증인바위와 정반대 사례로 언급됨."
+    }
+  ],
+  "twist_summary": "관측자의 반전 — 증인바위는 산의 수호령이 아니라, 식민지 시절 미완성된 '증인 선언' 절차 그 자체였다는 반전. 이 선언은 표석을 본 적 없는 사람의 전언까지 인정하며, 타바레스 박사가 규칙을 어기고 표석에 손을 댄 채 육성으로 선언하자 원격 통화 중이던 후배 연구원에게까지 형체가 나타나, 현장 없이도 선언만으로 전이된다는 게 확인됐다.",
+  "narration_full": "표석 옆 사진 한 장,\n아무도 없던 자리에 사람이 서 있었습니다.\n파푸아뉴기니 오로 산악지대,\n사이트-762 능선에 박힌 놋쇠 표석 얘깁니다.\n이끼가 두꺼워서 그동안\n아무도 눈여겨보지 않았죠.\n다들 필름 결함이라 넘겼는데…\n그 사진 한 장만 자꾸\n다시 들여다본 사람이 있었습니다.\n분석팀이 지난 사 년 치 사진을\n싹 모아 대조했습니다.\n이상하더군요. 형체가 찍힌 건 전부\n표석 사연을 미리 들은 사람\n사진뿐이었어요.\n모르고 찍은 사진엔,\n단 한 장도 없었고요.\n그런데 왜 하필\n사연을 들은 쪽에서만 찍혔을까요?\n「이거… 우연치곤 너무 깔끔한데요.」\n분석관 한 명이 그렇게\n중얼거렸다고 하더군요.\n그래서 정식 대조 시험을 했습니다.\n절반한테는 사연을 알려주고,\n절반한테는 아예 말을 안 해줬어요.\n아니나 다를까 —\n아는 쪽 근무일지에만\n목격란이 채워졌습니다.\n모르는 쪽은 한 칸도요.\n현장 사람들은 그때부터\n그 표석을 「증인바위」라고\n부르기 시작했습니다.\n보고서엔 그냥 표석 개체라고만\n적혀 있는데, 정작 이름은\n거기서 근무하던 사람들 입에서\n먼저 나온 거였죠.\n원인이 사진이라 보고,\n재단은 카메라를 전부\n봉인 필름통으로 바꿨습니다.\n현상은 본부에서만 하고,\n현장에선 절대 못 보게요.\n그런데도 필름 구경\n한 번 못 해본 신입이,\n근무 중 맨눈으로 그 형체를\n봤다고 보고했습니다.\n이쯤 되니 매체가\n문제는 아니었던 거죠.\n재단은 폐업한 「코럴리지 광업」\n사무소 창고에서 백 년 다 된\n장부를 회수했습니다.\n표석은 원래, 땅 경계를\n확정할 때 증인이 그 자리에서\n직접 소리 내어 선언해야\n성립하던 식민지 시절\n절차용으로 박힌 물건이었어요.\n그러니까 증인바위는\n산을 지키는 뭔가가 아니라,\n아직 못 채운 백 년 전 증인 선언,\n그 절차 자체였던 겁니다.\n게다가 이 선언은\n표석을 직접 본 적 없는\n사람의 전언까지도\n인정하는 모양이었고요.\n왜 하필 그렇게 설계됐을까요?\n지금도 아무도 모릅니다.\n소문이 새 나가서였는지,\n혼돈의 반란 쪽 인물 하나가\n초소 인근 검문소에서 붙잡혔습니다.\n손에 쥔 건 그 낡은\n장부 사본이었죠.\n몇 해 전 스발바르에서\n위장 신원 기술을 노렸던 쪽과\n같은 계열이라는 얘기가 있는데,\n그때도 노린 건 결국\n누군가의 존재를\n서류 한 장으로 확정짓는\n방법이었습니다.\n이번에도 같은 걸 노렸는지는…\n아직 확인이 안 됩니다.\n이 무렵 재단은\n격리 등급을 다시 매기는\n회의를 열었습니다.\n세이프로 두기엔 이미\n통제가 헐거워졌다는\n의견이 많았죠.\nD계급 한 명이 검은 고글을 쓴 채\n표석 앞에 세워졌습니다.\n\"아무것도 안 보입니다\"를\n여든 번 반복하도록 시켰는데,\n여든한 번째에 다른 말이 나왔어요.\n「저기, 서 있는데요.」\n기동특무부대 누-7,\n별칭 「증인석」이\n완전 침묵 프로토콜을 시도했습니다.\n표석 반경 오백 미터 안에선\n말 대신 메모로만\n소통하게 한 거죠.\n그런데 메모지에 \"봤다\"고\n적기만 해도, 그걸 읽은 사람에게\n형체가 그대로 옮겨붙었습니다.\n매체는 상관없었던 거예요 —\n말이든 글이든,\n선언 하나면 됐던 거죠.\n인류학자 타바레스 박사는\n이걸 원주민 쪽 수호 존재로\n보는 자기 가설을\n끝까지 안 놓았습니다.\n「이건 절차가 아니라 존재입니다.」\n그녀는 후배 연구원한테\n원격으로 마지막 확인을 부탁했죠.\n통화 중에 그녀는\n규칙을 어기고 표석에\n손을 얹은 채, 육성으로 선언했습니다.\n「저기 있습니다. 제가 봤습니다.」\n그 말이 끝나기가 무섭게,\n수백 킬로미터 떨어진 사무실에\n있던 후배 연구원 옆에도\n같은 형체가 나타났습니다.\n그녀는 현장 근처에도\n간 적이 없었어요.\n전화기 너머로 들은 게\n전부였는데… 그것만으로\n충분했던 겁니다.\n이게 대체 어디까지\n넘어갈 수 있는 걸까요?\n재단도 아직 답을 못 내놨습니다.\n재단은 그 통화 녹음을\n최고 등급 인지위해 자료로 격리했습니다.\n을급 기억소거제를 투여했고,\n닷새 만에 기억이\n절반쯤 돌아왔죠.\n그런데 그 녹음을 들은 순서대로,\n목격 사례가 하나씩 늘고 있습니다.\n복도 하나 건너 격리동엔,\n자기 얼굴이 사진에 찍히면\n못 견딘다는 그 유명한\n개체도 있다더군요.\n증인바위는 정반대였습니다.\n안 찍혀야 사라지는 게 아니라 —\n안 찍혀야 나타나는 쪽이었으니까요.\n완전 폐쇄엔 O5 승인이 필요한데,\n그 승인은… 아직 안 났습니다.\n재단은 이걸 그날 이후로\nSCP-9673으로 기록하기 시작했습니다.\n지금까지 접수된 건,\n아홉 건입니다.\n혹시 여러분도,\n누가 해준 이야기를 듣고 나서야\n유독 눈에 밟히기 시작한 게\n있으신가요?\n있으시다면 그게 뭐였는지\n궁금하네요.\n이 채널을 구독해두시면,\n다음 이야기도\n편하게 챙겨보실 수 있을 겁니다.",
+  "segments": [
+    {
+      "text": "표석 옆 사진 한 장,",
+      "est_sec": 3,
+      "text_en": "A photo taken beside the marker,",
+      "text_ja": "標石の脇で撮った写真一枚、",
+      "text_zh_Hant": "在標石旁拍下的一張照片,"
+    },
+    {
+      "text": "아무도 없던 자리에 사람이 서 있었습니다.",
+      "est_sec": 5,
+      "text_en": "showed someone standing where no one had been.",
+      "text_ja": "誰もいなかった場所に人が立っていました。",
+      "text_zh_Hant": "照片裡,沒人在的地方站著一個人。"
+    },
+    {
+      "text": "파푸아뉴기니 오로 산악지대,",
+      "est_sec": 3,
+      "text_en": "In the highlands of Oro, Papua New Guinea,",
+      "text_ja": "パプアニューギニアのオロ高地、",
+      "text_zh_Hant": "巴布亞紐幾內亞奧羅高地,"
+    },
+    {
+      "text": "사이트-762 능선에 박힌 놋쇠 표석 얘깁니다.",
+      "est_sec": 6,
+      "text_en": "there's a brass survey marker on a ridge at Site-762.",
+      "text_ja": "サイト-762の尾根に打たれた真鍮の標石の話です。",
+      "text_zh_Hant": "762號基地稜線上一塊黃銅界標的故事。"
+    },
+    {
+      "text": "이끼가 두꺼워서 그동안",
+      "est_sec": 3,
+      "text_en": "The moss was so thick",
+      "text_ja": "苔がとても厚くて、",
+      "text_zh_Hant": "苔蘚長得太厚,"
+    },
+    {
+      "text": "아무도 눈여겨보지 않았죠.",
+      "est_sec": 3,
+      "text_en": "no one had ever paid it much attention.",
+      "text_ja": "それまで誰も気に留めていませんでした。",
+      "text_zh_Hant": "這些年一直沒人特別留意。"
+    },
+    {
+      "text": "다들 필름 결함이라 넘겼는데…",
+      "est_sec": 4,
+      "text_en": "Everyone blamed the film for the flaw... but",
+      "text_ja": "みんなフィルムの不良だと思っていましたが…",
+      "text_zh_Hant": "大家都當成底片瑕疵,可是…"
+    },
+    {
+      "text": "그 사진 한 장만 자꾸",
+      "est_sec": 3,
+      "text_en": "one person kept",
+      "text_ja": "その一枚だけを",
+      "text_zh_Hant": "有個人"
+    },
+    {
+      "text": "다시 들여다본 사람이 있었습니다.",
+      "est_sec": 4,
+      "text_en": "coming back to that same photo.",
+      "text_ja": "何度も見返す人がいました。",
+      "text_zh_Hant": "卻一再翻看那張照片。"
+    },
+    {
+      "text": "분석팀이 지난 사 년 치 사진을",
+      "est_sec": 4,
+      "text_en": "The analysis team gathered four years' worth of photos",
+      "text_ja": "分析チームが過去四年分の写真を集めて",
+      "text_zh_Hant": "分析組把過去四年的照片全部收集起來"
+    },
+    {
+      "text": "싹 모아 대조했습니다.",
+      "est_sec": 3,
+      "text_en": "and cross-checked them.",
+      "text_ja": "照合しました。",
+      "text_zh_Hant": "進行比對。"
+    },
+    {
+      "text": "이상하더군요. 형체가 찍힌 건 전부",
+      "est_sec": 4,
+      "text_en": "Strange thing. The figure appeared",
+      "text_ja": "妙なんです。人影が写っていたのは",
+      "text_zh_Hant": "很奇怪。人影出現的照片"
+    },
+    {
+      "text": "표석 사연을 미리 들은 사람",
+      "est_sec": 3,
+      "text_en": "only in photos taken by people",
+      "text_ja": "標石の話を前もって聞いていた人の",
+      "text_zh_Hant": "全都是事先聽過標石傳聞的人"
+    },
+    {
+      "text": "사진뿐이었어요.",
+      "est_sec": 2,
+      "text_en": "who'd already heard the marker's story.",
+      "text_ja": "写真だけでした。",
+      "text_zh_Hant": "拍的照片。"
+    },
+    {
+      "text": "모르고 찍은 사진엔,",
+      "est_sec": 2,
+      "text_en": "In photos taken by people who didn't know,",
+      "text_ja": "知らずに撮った写真には、",
+      "text_zh_Hant": "不知情的人拍的照片裡,"
+    },
+    {
+      "text": "단 한 장도 없었고요.",
+      "est_sec": 3,
+      "text_en": "there wasn't a single one.",
+      "text_ja": "一枚もありませんでした。",
+      "text_zh_Hant": "一張都沒有。"
+    },
+    {
+      "text": "그런데 왜 하필",
+      "est_sec": 2,
+      "text_en": "So why was it",
+      "text_ja": "では、なぜ",
+      "text_zh_Hant": "那麼,為什麼"
+    },
+    {
+      "text": "사연을 들은 쪽에서만 찍혔을까요?",
+      "est_sec": 4,
+      "text_en": "only the ones who'd heard the story who caught it?",
+      "text_ja": "話を聞いた人の写真だけに写ったのでしょうか。",
+      "text_zh_Hant": "偏偏只有聽過故事的人才拍得到呢?"
+    },
+    {
+      "text": "「이거… 우연치곤 너무 깔끔한데요.」",
+      "est_sec": 4,
+      "text_en": "\"This... is too clean to be a coincidence.\"",
+      "text_ja": "「これ…偶然にしては綺麗すぎますね。」",
+      "text_zh_Hant": "「這個…乾淨得不像巧合啊。」"
+    },
+    {
+      "text": "분석관 한 명이 그렇게",
+      "est_sec": 3,
+      "text_en": "one analyst",
+      "text_ja": "ある分析官が",
+      "text_zh_Hant": "據說有位分析員"
+    },
+    {
+      "text": "중얼거렸다고 하더군요.",
+      "est_sec": 3,
+      "text_en": "reportedly muttered.",
+      "text_ja": "そうつぶやいたそうです。",
+      "text_zh_Hant": "這樣嘀咕過。"
+    },
+    {
+      "text": "그래서 정식 대조 시험을 했습니다.",
+      "est_sec": 4,
+      "text_en": "So they ran a formal controlled test.",
+      "text_ja": "それで正式な対照実験をしました。",
+      "text_zh_Hant": "於是進行了正式的對照實驗。"
+    },
+    {
+      "text": "절반한테는 사연을 알려주고,",
+      "est_sec": 3,
+      "text_en": "Half were told the story,",
+      "text_ja": "半分には話を伝え、",
+      "text_zh_Hant": "一半人被告知了傳聞,"
+    },
+    {
+      "text": "절반한테는 아예 말을 안 해줬어요.",
+      "est_sec": 4,
+      "text_en": "the other half weren't told a thing.",
+      "text_ja": "半分にはまったく伝えませんでした。",
+      "text_zh_Hant": "另一半完全沒被告知。"
+    },
+    {
+      "text": "아니나 다를까 —",
+      "est_sec": 2,
+      "text_en": "Sure enough —",
+      "text_ja": "案の定 —",
+      "text_zh_Hant": "果不其然 —"
+    },
+    {
+      "text": "아는 쪽 근무일지에만",
+      "est_sec": 2,
+      "text_en": "only the logs of those who knew",
+      "text_ja": "知っている側の勤務日誌にだけ",
+      "text_zh_Hant": "只有知情那一組的值班日誌"
+    },
+    {
+      "text": "목격란이 채워졌습니다.",
+      "est_sec": 3,
+      "text_en": "had a sighting entry filled in.",
+      "text_ja": "目撃欄が埋まりました。",
+      "text_zh_Hant": "填上了目擊欄。"
+    },
+    {
+      "text": "모르는 쪽은 한 칸도요.",
+      "est_sec": 3,
+      "text_en": "Not a single one from those who didn't.",
+      "text_ja": "知らない側は一欄も、です。",
+      "text_zh_Hant": "不知情那一組,一欄都沒有。"
+    },
+    {
+      "text": "현장 사람들은 그때부터",
+      "est_sec": 3,
+      "text_en": "From then on, the staff",
+      "text_ja": "現場の人々はその頃から",
+      "text_zh_Hant": "從那時起,現場的人"
+    },
+    {
+      "text": "그 표석을 「증인바위」라고",
+      "est_sec": 3,
+      "text_en": "started calling the marker",
+      "text_ja": "あの標石を「証人岩」と",
+      "text_zh_Hant": "開始把那塊標石",
+      "emphasis": "증인바위"
+    },
+    {
+      "text": "부르기 시작했습니다.",
+      "est_sec": 2,
+      "text_en": "the \"Witness Rock.\"",
+      "text_ja": "呼び始めました。",
+      "text_zh_Hant": "叫做「證人岩」。"
+    },
+    {
+      "text": "보고서엔 그냥 표석 개체라고만",
+      "est_sec": 4,
+      "text_en": "The report just called it an object,",
+      "text_ja": "報告書にはただ標石オブジェクトとしか、",
+      "text_zh_Hant": "報告書上只寫著標石物件,"
+    },
+    {
+      "text": "적혀 있는데, 정작 이름은",
+      "est_sec": 3,
+      "text_en": "but the name",
+      "text_ja": "でも名前は",
+      "text_zh_Hant": "但這個名字"
+    },
+    {
+      "text": "거기서 근무하던 사람들 입에서",
+      "est_sec": 4,
+      "text_en": "had come first",
+      "text_ja": "そこで働いていた人々の口から",
+      "text_zh_Hant": "其實是先從"
+    },
+    {
+      "text": "먼저 나온 거였죠.",
+      "est_sec": 2,
+      "text_en": "from the people who worked there.",
+      "text_ja": "先に出たものでした。",
+      "text_zh_Hant": "在那裡工作的人口中傳出來的。"
+    },
+    {
+      "text": "원인이 사진이라 보고,",
+      "est_sec": 3,
+      "text_en": "Assuming the photo was the cause,",
+      "text_ja": "原因は写真だと考え、",
+      "text_zh_Hant": "既然認定原因是照片,"
+    },
+    {
+      "text": "재단은 카메라를 전부",
+      "est_sec": 2,
+      "text_en": "the Foundation replaced every camera",
+      "text_ja": "財団はカメラを全て",
+      "text_zh_Hant": "基金會就把所有相機"
+    },
+    {
+      "text": "봉인 필름통으로 바꿨습니다.",
+      "est_sec": 3,
+      "text_en": "with sealed film canisters.",
+      "text_ja": "密封フィルム缶に替えました。",
+      "text_zh_Hant": "換成了密封底片罐。"
+    },
+    {
+      "text": "현상은 본부에서만 하고,",
+      "est_sec": 3,
+      "text_en": "Film was only developed at headquarters,",
+      "text_ja": "現像は本部でだけ行い、",
+      "text_zh_Hant": "沖印只在總部進行,"
+    },
+    {
+      "text": "현장에선 절대 못 보게요.",
+      "est_sec": 3,
+      "text_en": "never seen on site.",
+      "text_ja": "現場では絶対に見せません。",
+      "text_zh_Hant": "現場絕不讓人看到。"
+    },
+    {
+      "text": "그런데도 필름 구경",
+      "est_sec": 2,
+      "text_en": "But even so, a new hire",
+      "text_ja": "それでもフィルムを一度も",
+      "text_zh_Hant": "可即便如此,一個從沒見過"
+    },
+    {
+      "text": "한 번 못 해본 신입이,",
+      "est_sec": 3,
+      "text_en": "who'd never once seen the film",
+      "text_ja": "見たことのない新人が、",
+      "text_zh_Hant": "底片的新人,"
+    },
+    {
+      "text": "근무 중 맨눈으로 그 형체를",
+      "est_sec": 3,
+      "text_en": "reported seeing the figure",
+      "text_ja": "勤務中に肉眼でその人影を",
+      "text_zh_Hant": "值班時居然用肉眼"
+    },
+    {
+      "text": "봤다고 보고했습니다.",
+      "est_sec": 2,
+      "text_en": "with the naked eye, on duty.",
+      "text_ja": "見たと報告しました。",
+      "text_zh_Hant": "看到了那個人影,並上報。"
+    },
+    {
+      "text": "이쯤 되니 매체가",
+      "est_sec": 2,
+      "text_en": "So by this point",
+      "text_ja": "ここまで来ると",
+      "text_zh_Hant": "到了這一步,"
+    },
+    {
+      "text": "문제는 아니었던 거죠.",
+      "est_sec": 3,
+      "text_en": "the medium wasn't the issue.",
+      "text_ja": "媒体の問題ではなかったのです。",
+      "text_zh_Hant": "問題顯然不在媒介上。"
+    },
+    {
+      "text": "재단은 폐업한 「코럴리지 광업」",
+      "est_sec": 4,
+      "text_en": "The Foundation recovered a century-old ledger",
+      "text_ja": "財団は廃業した「コーラリッジ鉱業」の",
+      "text_zh_Hant": "基金會從已停業的「科拉利奇礦業」"
+    },
+    {
+      "text": "사무소 창고에서 백 년 다 된",
+      "est_sec": 4,
+      "text_en": "from the abandoned office",
+      "text_ja": "事務所倉庫から",
+      "text_zh_Hant": "辦公室倉庫裡,"
+    },
+    {
+      "text": "장부를 회수했습니다.",
+      "est_sec": 2,
+      "text_en": "of \"Corallidge Mining.\"",
+      "text_ja": "百年前の帳簿を回収しました。",
+      "text_zh_Hant": "找回了一本快百年的帳本。"
+    },
+    {
+      "text": "표석은 원래, 땅 경계를",
+      "est_sec": 3,
+      "text_en": "The marker had originally been driven in, so that",
+      "text_ja": "標石はもともと、土地の境界を",
+      "text_zh_Hant": "標石原本是為了確定土地邊界時,"
+    },
+    {
+      "text": "확정할 때 증인이 그 자리에서",
+      "est_sec": 4,
+      "text_en": "a witness standing right there",
+      "text_ja": "確定する際に証人がその場で",
+      "text_zh_Hant": "讓見證人當場"
+    },
+    {
+      "text": "직접 소리 내어 선언해야",
+      "est_sec": 3,
+      "text_en": "would declare it aloud",
+      "text_ja": "直接声に出して宣言してこそ",
+      "text_zh_Hant": "親口大聲宣告,"
+    },
+    {
+      "text": "성립하던 식민지 시절",
+      "est_sec": 2,
+      "text_en": "to formalize a colonial-era",
+      "text_ja": "成立する植民地時代の",
+      "text_zh_Hant": "才能成立的殖民時期"
+    },
+    {
+      "text": "절차용으로 박힌 물건이었어요.",
+      "est_sec": 4,
+      "text_en": "land-boundary procedure.",
+      "text_ja": "手続き用に打たれた物でした。",
+      "text_zh_Hant": "程序用品。"
+    },
+    {
+      "text": "그러니까 증인바위는",
+      "est_sec": 2,
+      "text_en": "So the Witness Rock",
+      "text_ja": "つまり証人岩は",
+      "text_zh_Hant": "也就是說,證人岩"
+    },
+    {
+      "text": "산을 지키는 뭔가가 아니라,",
+      "est_sec": 3,
+      "text_en": "wasn't some guardian of the mountain —",
+      "text_ja": "山を守る何かではなく、",
+      "text_zh_Hant": "並不是什麼守護山的存在,"
+    },
+    {
+      "text": "아직 못 채운 백 년 전 증인 선언,",
+      "est_sec": 4,
+      "text_en": "it was the century-old witness declaration itself,",
+      "text_ja": "まだ満たされていない百年前の証人宣言、",
+      "text_zh_Hant": "而是那份尚未完成的百年前見證宣告,"
+    },
+    {
+      "text": "그 절차 자체였던 겁니다.",
+      "est_sec": 3,
+      "text_en": "still unfulfilled, the procedure incarnate.",
+      "text_ja": "その手続きそのものだったのです。",
+      "text_zh_Hant": "程序本身。"
+    },
+    {
+      "text": "게다가 이 선언은",
+      "est_sec": 2,
+      "text_en": "And this declaration, it seemed,",
+      "text_ja": "しかもこの宣言は",
+      "text_zh_Hant": "而且這份宣告,"
+    },
+    {
+      "text": "표석을 직접 본 적 없는",
+      "est_sec": 3,
+      "text_en": "accepted even secondhand reports",
+      "text_ja": "標石を直接見たことのない",
+      "text_zh_Hant": "似乎連從沒親眼見過標石的人"
+    },
+    {
+      "text": "사람의 전언까지도",
+      "est_sec": 2,
+      "text_en": "from people who'd",
+      "text_ja": "人の伝聞さえも",
+      "text_zh_Hant": "轉述的說法"
+    },
+    {
+      "text": "인정하는 모양이었고요.",
+      "est_sec": 3,
+      "text_en": "never actually seen the marker.",
+      "text_ja": "認めるようでした。",
+      "text_zh_Hant": "也一併承認。"
+    },
+    {
+      "text": "왜 하필 그렇게 설계됐을까요?",
+      "est_sec": 4,
+      "text_en": "Why was it designed that way?",
+      "text_ja": "なぜそのように設計されたのか、",
+      "text_zh_Hant": "為什麼要這樣設計?"
+    },
+    {
+      "text": "지금도 아무도 모릅니다.",
+      "est_sec": 3,
+      "text_en": "Even now, no one knows.",
+      "text_ja": "今も誰にも分かりません。",
+      "text_zh_Hant": "至今仍沒人知道。"
+    },
+    {
+      "text": "소문이 새 나가서였는지,",
+      "est_sec": 3,
+      "text_en": "Maybe because the rumor leaked,",
+      "text_ja": "噂が漏れたせいなのか、",
+      "text_zh_Hant": "或許是傳聞走漏了風聲,"
+    },
+    {
+      "text": "혼돈의 반란 쪽 인물 하나가",
+      "est_sec": 3,
+      "text_en": "a member of the Chaos Insurgency",
+      "text_ja": "混沌の反乱の人物が一人",
+      "text_zh_Hant": "混沌叛亂的一名成員"
+    },
+    {
+      "text": "초소 인근 검문소에서 붙잡혔습니다.",
+      "est_sec": 4,
+      "text_en": "was caught at a checkpoint near the outpost.",
+      "text_ja": "哨所付近の検問所で捕まりました。",
+      "text_zh_Hant": "在哨所附近的檢查站被捕。"
+    },
+    {
+      "text": "손에 쥔 건 그 낡은",
+      "est_sec": 2,
+      "text_en": "What they held was",
+      "text_ja": "手にしていたのは",
+      "text_zh_Hant": "他手裡拿著的"
+    },
+    {
+      "text": "장부 사본이었죠.",
+      "est_sec": 2,
+      "text_en": "a copy of that old ledger.",
+      "text_ja": "あの古い帳簿の写しでした。",
+      "text_zh_Hant": "正是那份舊帳本的複本。"
+    },
+    {
+      "text": "몇 해 전 스발바르에서",
+      "est_sec": 3,
+      "text_en": "Years earlier at Svalbard",
+      "text_ja": "数年前スヴァールバルで",
+      "text_zh_Hant": "幾年前在斯瓦爾巴,"
+    },
+    {
+      "text": "위장 신원 기술을 노렸던 쪽과",
+      "est_sec": 4,
+      "text_en": "they'd gone after a fake-identity technology,",
+      "text_ja": "偽装身分技術を狙っていた勢力と",
+      "text_zh_Hant": "他們曾覬覦過偽造身分技術,"
+    },
+    {
+      "text": "같은 계열이라는 얘기가 있는데,",
+      "est_sec": 4,
+      "text_en": "and word has it the two are related —",
+      "text_ja": "同じ系統だという話がありますが、",
+      "text_zh_Hant": "據說兩者是同一系人馬 —"
+    },
+    {
+      "text": "그때도 노린 건 결국",
+      "est_sec": 2,
+      "text_en": "back then too, what they wanted",
+      "text_ja": "あの時も狙っていたのは結局",
+      "text_zh_Hant": "那時他們想要的,說到底"
+    },
+    {
+      "text": "누군가의 존재를",
+      "est_sec": 2,
+      "text_en": "was, in the end, a method for",
+      "text_ja": "誰かの存在を",
+      "text_zh_Hant": "也是一種"
+    },
+    {
+      "text": "서류 한 장으로 확정짓는",
+      "est_sec": 3,
+      "text_en": "formally confirming someone's existence",
+      "text_ja": "書類一枚で確定させる",
+      "text_zh_Hant": "能用一張文件"
+    },
+    {
+      "text": "방법이었습니다.",
+      "est_sec": 2,
+      "text_en": "with a single document.",
+      "text_ja": "方法だったのです。",
+      "text_zh_Hant": "確定某人存在的方法。"
+    },
+    {
+      "text": "이번에도 같은 걸 노렸는지는…",
+      "est_sec": 4,
+      "text_en": "Whether they wanted the same thing this time...",
+      "text_ja": "今回も同じものを狙ったのかは…",
+      "text_zh_Hant": "這次是否也覬覦同樣的東西…"
+    },
+    {
+      "text": "아직 확인이 안 됩니다.",
+      "est_sec": 3,
+      "text_en": "still hasn't been confirmed.",
+      "text_ja": "まだ確認できていません。",
+      "text_zh_Hant": "目前仍未證實。"
+    },
+    {
+      "text": "이 무렵 재단은",
+      "est_sec": 2,
+      "text_en": "Around this time, the Foundation",
+      "text_ja": "この頃財団は",
+      "text_zh_Hant": "這段時間,基金會"
+    },
+    {
+      "text": "격리 등급을 다시 매기는",
+      "est_sec": 3,
+      "text_en": "held a meeting to reclassify",
+      "text_ja": "格付けを見直す",
+      "text_zh_Hant": "召開了重新評定"
+    },
+    {
+      "text": "회의를 열었습니다.",
+      "est_sec": 2,
+      "text_en": "the object class.",
+      "text_ja": "会議を開きました。",
+      "text_zh_Hant": "物件等級的會議。"
+    },
+    {
+      "text": "세이프로 두기엔 이미",
+      "est_sec": 2,
+      "text_en": "With Safe, many felt,",
+      "text_ja": "セーフのままにしておくには",
+      "text_zh_Hant": "許多人認為"
+    },
+    {
+      "text": "통제가 헐거워졌다는",
+      "est_sec": 2,
+      "text_en": "the control had already",
+      "text_ja": "すでに統制が",
+      "text_zh_Hant": "繼續列為安全級"
+    },
+    {
+      "text": "의견이 많았죠.",
+      "est_sec": 2,
+      "text_en": "grown too loose.",
+      "text_ja": "緩すぎるという意見が多かったのです。",
+      "text_zh_Hant": "已經控制得太鬆了。"
+    },
+    {
+      "text": "D계급 한 명이 검은 고글을 쓴 채",
+      "est_sec": 4,
+      "text_en": "A D-Class, wearing black blackout goggles,",
+      "text_ja": "D級一名が黒い遮光ゴーグルをつけたまま",
+      "text_zh_Hant": "一名D級人員戴著黑色遮光護目鏡,"
+    },
+    {
+      "text": "표석 앞에 세워졌습니다.",
+      "est_sec": 3,
+      "text_en": "was placed in front of the marker.",
+      "text_ja": "標石の前に立たされました。",
+      "text_zh_Hant": "被安排站到標石前。"
+    },
+    {
+      "text": "\"아무것도 안 보입니다\"를",
+      "est_sec": 3,
+      "text_en": "Told to say \"I see nothing\"",
+      "text_ja": "「何も見えません」を",
+      "text_zh_Hant": "讓他反覆說「什麼都看不見」"
+    },
+    {
+      "text": "여든 번 반복하도록 시켰는데,",
+      "est_sec": 4,
+      "text_en": "eighty times in a row,",
+      "text_ja": "八十回繰り返させたところ、",
+      "text_zh_Hant": "八十次,"
+    },
+    {
+      "text": "여든한 번째에 다른 말이 나왔어요.",
+      "est_sec": 4,
+      "text_en": "on the eighty-first, something else came out.",
+      "text_ja": "八十一回目に別の言葉が出ました。",
+      "text_zh_Hant": "結果第八十一次,冒出了別的話。"
+    },
+    {
+      "text": "「저기, 서 있는데요.」",
+      "est_sec": 3,
+      "text_en": "\"There— it's standing right there.\"",
+      "text_ja": "「そこに、立ってますよ。」",
+      "text_zh_Hant": "「那裡,站著一個人呢。」"
+    },
+    {
+      "text": "기동특무부대 누-7,",
+      "est_sec": 2,
+      "text_en": "Mobile Task Force Nu-7,",
+      "text_ja": "機動特務部隊ヌー7、",
+      "text_zh_Hant": "機動特遣隊Nu-7,"
+    },
+    {
+      "text": "별칭 「증인석」이",
+      "est_sec": 2,
+      "text_en": "nicknamed \"The Witness Stand,\"",
+      "text_ja": "通称「証人席」が",
+      "text_zh_Hant": "綽號「證人席」,"
+    },
+    {
+      "text": "완전 침묵 프로토콜을 시도했습니다.",
+      "est_sec": 4,
+      "text_en": "tried a full silence protocol.",
+      "text_ja": "完全沈黙プロトコルを試みました。",
+      "text_zh_Hant": "嘗試了完全沉默協議。"
+    },
+    {
+      "text": "표석 반경 오백 미터 안에선",
+      "est_sec": 3,
+      "text_en": "Within five hundred meters of the marker,",
+      "text_ja": "標石半径五百メートル以内では",
+      "text_zh_Hant": "標石半徑五百公尺內,"
+    },
+    {
+      "text": "말 대신 메모로만",
+      "est_sec": 2,
+      "text_en": "people could only communicate",
+      "text_ja": "言葉の代わりにメモだけで",
+      "text_zh_Hant": "只能用紙條溝通,"
+    },
+    {
+      "text": "소통하게 한 거죠.",
+      "est_sec": 2,
+      "text_en": "by written note, never speech.",
+      "text_ja": "意思疎通させたのです。",
+      "text_zh_Hant": "不准開口說話。"
+    },
+    {
+      "text": "그런데 메모지에 \"봤다\"고",
+      "est_sec": 3,
+      "text_en": "But even writing \"I saw it\"",
+      "text_ja": "ですがメモに「見た」とだけ書いても、",
+      "text_zh_Hant": "但只要紙條上寫著「看到了」,"
+    },
+    {
+      "text": "적기만 해도, 그걸 읽은 사람에게",
+      "est_sec": 4,
+      "text_en": "on a note was enough — whoever read it",
+      "text_ja": "それを読んだ人にも",
+      "text_zh_Hant": "讀到的人"
+    },
+    {
+      "text": "형체가 그대로 옮겨붙었습니다.",
+      "est_sec": 4,
+      "text_en": "had the figure appear beside them too.",
+      "text_ja": "人影がそのまま乗り移りました。",
+      "text_zh_Hant": "身邊也照樣冒出那個人影。"
+    },
+    {
+      "text": "매체는 상관없었던 거예요 —",
+      "est_sec": 3,
+      "text_en": "The medium didn't matter —",
+      "text_ja": "媒体は関係なかったのです —",
+      "text_zh_Hant": "媒介根本不重要 —"
+    },
+    {
+      "text": "말이든 글이든,",
+      "est_sec": 2,
+      "text_en": "spoken or written,",
+      "text_ja": "話し言葉でも文字でも、",
+      "text_zh_Hant": "不管是說出口還是寫下來,"
+    },
+    {
+      "text": "선언 하나면 됐던 거죠.",
+      "est_sec": 3,
+      "text_en": "a declaration alone was enough.",
+      "text_ja": "宣言さえあれば十分でした。",
+      "text_zh_Hant": "只要有這句宣告就夠了。"
+    },
+    {
+      "text": "인류학자 타바레스 박사는",
+      "est_sec": 3,
+      "text_en": "Anthropologist Dr. Tavares",
+      "text_ja": "人類学者タヴァレス博士は",
+      "text_zh_Hant": "人類學家塔瓦雷斯博士"
+    },
+    {
+      "text": "이걸 원주민 쪽 수호 존재로",
+      "est_sec": 3,
+      "text_en": "held to her own theory,",
+      "text_ja": "これを先住民側の守護存在だとする",
+      "text_zh_Hant": "堅持自己的假說,"
+    },
+    {
+      "text": "보는 자기 가설을",
+      "est_sec": 2,
+      "text_en": "that this was some indigenous guardian spirit,",
+      "text_ja": "自分の仮説を",
+      "text_zh_Hant": "認定那是原住民一方的守護存在,"
+    },
+    {
+      "text": "끝까지 안 놓았습니다.",
+      "est_sec": 3,
+      "text_en": "and wouldn't let it go.",
+      "text_ja": "最後まで捨てませんでした。",
+      "text_zh_Hant": "到最後都不肯放棄。"
+    },
+    {
+      "text": "「이건 절차가 아니라 존재입니다.」",
+      "est_sec": 4,
+      "text_en": "\"This isn't a procedure. It's a being.\"",
+      "text_ja": "「これは手続きではなく存在です。」",
+      "text_zh_Hant": "「這不是程序,是存在。」"
+    },
+    {
+      "text": "그녀는 후배 연구원한테",
+      "est_sec": 3,
+      "text_en": "She asked a junior researcher",
+      "text_ja": "彼女は後輩研究員に",
+      "text_zh_Hant": "她請後輩研究員"
+    },
+    {
+      "text": "원격으로 마지막 확인을 부탁했죠.",
+      "est_sec": 4,
+      "text_en": "to confirm it remotely, one last time.",
+      "text_ja": "遠隔で最後の確認を頼みました。",
+      "text_zh_Hant": "透過遠端做最後一次確認。"
+    },
+    {
+      "text": "통화 중에 그녀는",
+      "est_sec": 2,
+      "text_en": "During the call,",
+      "text_ja": "通話中に",
+      "text_zh_Hant": "通話當中,"
+    },
+    {
+      "text": "규칙을 어기고 표석에",
+      "est_sec": 2,
+      "text_en": "she broke protocol, placed her hand on the marker,",
+      "text_ja": "彼女は規則を破って標石に手を置き、",
+      "text_zh_Hant": "她違反規定,把手放上標石,"
+    },
+    {
+      "text": "손을 얹은 채, 육성으로 선언했습니다.",
+      "est_sec": 5,
+      "text_en": "and declared it aloud.",
+      "text_ja": "肉声で宣言しました。",
+      "text_zh_Hant": "親口大聲宣告。"
+    },
+    {
+      "text": "「저기 있습니다. 제가 봤습니다.」",
+      "est_sec": 4,
+      "text_en": "\"It's there. I saw it.\"",
+      "text_ja": "「そこにいます。私が見ました。」",
+      "text_zh_Hant": "「就在那裡。我看到了。」",
+      "emphasis": "제가 봤습니다"
+    },
+    {
+      "text": "그 말이 끝나기가 무섭게,",
+      "est_sec": 3,
+      "text_en": "The moment she said it,",
+      "text_ja": "その言葉が終わるか終わらないかのうちに、",
+      "text_zh_Hant": "話音剛落,"
+    },
+    {
+      "text": "수백 킬로미터 떨어진 사무실에",
+      "est_sec": 4,
+      "text_en": "in an office hundreds of kilometers away,",
+      "text_ja": "数百キロ離れたオフィスにいた",
+      "text_zh_Hant": "遠在數百公里外辦公室裡的"
+    },
+    {
+      "text": "있던 후배 연구원 옆에도",
+      "est_sec": 3,
+      "text_en": "the junior researcher",
+      "text_ja": "後輩研究員の隣にも",
+      "text_zh_Hant": "那位後輩研究員身邊,"
+    },
+    {
+      "text": "같은 형체가 나타났습니다.",
+      "est_sec": 3,
+      "text_en": "saw the same figure standing beside her.",
+      "text_ja": "同じ人影が現れました。",
+      "text_zh_Hant": "也出現了同樣的人影。"
+    },
+    {
+      "text": "그녀는 현장 근처에도",
+      "est_sec": 2,
+      "text_en": "She had never",
+      "text_ja": "彼女は現場の近くにさえ",
+      "text_zh_Hant": "她根本"
+    },
+    {
+      "text": "간 적이 없었어요.",
+      "est_sec": 2,
+      "text_en": "been anywhere near the site.",
+      "text_ja": "行ったことがありませんでした。",
+      "text_zh_Hant": "沒到過現場附近。"
+    },
+    {
+      "text": "전화기 너머로 들은 게",
+      "est_sec": 3,
+      "text_en": "All she'd done was listen",
+      "text_ja": "電話越しに聞いただけなのに…",
+      "text_zh_Hant": "她做的,只是透過電話聽著…"
+    },
+    {
+      "text": "전부였는데… 그것만으로",
+      "est_sec": 3,
+      "text_en": "over the phone... and that alone",
+      "text_ja": "それだけで",
+      "text_zh_Hant": "僅僅如此"
+    },
+    {
+      "text": "충분했던 겁니다.",
+      "est_sec": 2,
+      "text_en": "had been enough.",
+      "text_ja": "十分だったのです。",
+      "text_zh_Hant": "就已經足夠。"
+    },
+    {
+      "text": "이게 대체 어디까지",
+      "est_sec": 2,
+      "text_en": "How far could this",
+      "text_ja": "これは一体どこまで",
+      "text_zh_Hant": "這件事究竟能"
+    },
+    {
+      "text": "넘어갈 수 있는 걸까요?",
+      "est_sec": 3,
+      "text_en": "possibly spread?",
+      "text_ja": "広がりうるのでしょうか。",
+      "text_zh_Hant": "傳多遠?"
+    },
+    {
+      "text": "재단도 아직 답을 못 내놨습니다.",
+      "est_sec": 4,
+      "text_en": "The Foundation still has no answer.",
+      "text_ja": "財団もまだ答えを出せていません。",
+      "text_zh_Hant": "基金會至今仍給不出答案。"
+    },
+    {
+      "text": "재단은 그 통화 녹음을",
+      "est_sec": 3,
+      "text_en": "The Foundation sealed the recording of that call",
+      "text_ja": "財団はその通話の録音を",
+      "text_zh_Hant": "基金會把那通電話的錄音"
+    },
+    {
+      "text": "최고 등급 인지위해 자료로 격리했습니다.",
+      "est_sec": 5,
+      "text_en": "as top-tier cognitohazardous material.",
+      "text_ja": "最上級の認知的災害資料として隔離しました。",
+      "text_zh_Hant": "以最高等級的認知危害資料隔離收容。"
+    },
+    {
+      "text": "을급 기억소거제를 투여했고,",
+      "est_sec": 3,
+      "text_en": "They administered a Class-B amnestic,",
+      "text_ja": "乙級記憶処理剤を投与し、",
+      "text_zh_Hant": "投用了乙級記憶抹除劑,"
+    },
+    {
+      "text": "닷새 만에 기억이",
+      "est_sec": 2,
+      "text_en": "and after five days",
+      "text_ja": "五日後には",
+      "text_zh_Hant": "五天後"
+    },
+    {
+      "text": "절반쯤 돌아왔죠.",
+      "est_sec": 2,
+      "text_en": "about half her memory had returned.",
+      "text_ja": "記憶が半分ほど戻りました。",
+      "text_zh_Hant": "記憶恢復了大約一半。"
+    },
+    {
+      "text": "그런데 그 녹음을 들은 순서대로,",
+      "est_sec": 4,
+      "text_en": "But in the order people listened to that recording,",
+      "text_ja": "ですがその録音を聞いた順に、",
+      "text_zh_Hant": "可是按照聽過那段錄音的先後順序,"
+    },
+    {
+      "text": "목격 사례가 하나씩 늘고 있습니다.",
+      "est_sec": 4,
+      "text_en": "the sighting cases keep piling up, one by one.",
+      "text_ja": "目撃例が一つずつ増えています。",
+      "text_zh_Hant": "目擊案例正一件一件增加。"
+    },
+    {
+      "text": "복도 하나 건너 격리동엔,",
+      "est_sec": 3,
+      "text_en": "One containment wing over,",
+      "text_ja": "廊下一つ隔てた収容棟には、",
+      "text_zh_Hant": "隔一條走廊的收容區裡,"
+    },
+    {
+      "text": "자기 얼굴이 사진에 찍히면",
+      "est_sec": 3,
+      "text_en": "there's a famous entity that can't stand",
+      "text_ja": "自分の顔が写真に写ると",
+      "text_zh_Hant": "據說還有個出了名"
+    },
+    {
+      "text": "못 견딘다는 그 유명한",
+      "est_sec": 3,
+      "text_en": "having its face",
+      "text_ja": "耐えられないという有名な個体も",
+      "text_zh_Hant": "受不了自己的臉"
+    },
+    {
+      "text": "개체도 있다더군요.",
+      "est_sec": 2,
+      "text_en": "caught on camera, they say.",
+      "text_ja": "いるそうです。",
+      "text_zh_Hant": "被拍下來的個體。"
+    },
+    {
+      "text": "증인바위는 정반대였습니다.",
+      "est_sec": 3,
+      "text_en": "The Witness Rock was the exact opposite.",
+      "text_ja": "証人岩はその正反対でした。",
+      "text_zh_Hant": "證人岩恰恰相反。"
+    },
+    {
+      "text": "안 찍혀야 사라지는 게 아니라 —",
+      "est_sec": 4,
+      "text_en": "It doesn't vanish when photographed —",
+      "text_ja": "写ると消えるのではなく —",
+      "text_zh_Hant": "不是拍到就消失 —"
+    },
+    {
+      "text": "안 찍혀야 나타나는 쪽이었으니까요.",
+      "est_sec": 4,
+      "text_en": "it appears when it isn't.",
+      "text_ja": "写らないと現れる方だったのです。",
+      "text_zh_Hant": "而是沒被拍到才會出現。"
+    },
+    {
+      "text": "완전 폐쇄엔 O5 승인이 필요한데,",
+      "est_sec": 4,
+      "text_en": "Full closure requires O5 approval,",
+      "text_ja": "完全閉鎖にはO5の承認が必要ですが、",
+      "text_zh_Hant": "完全封閉需要O5批准,"
+    },
+    {
+      "text": "그 승인은… 아직 안 났습니다.",
+      "est_sec": 4,
+      "text_en": "which... still hasn't come.",
+      "text_ja": "その承認は…まだ下りていません。",
+      "text_zh_Hant": "而那份批准…至今沒有下來。"
+    },
+    {
+      "text": "재단은 이걸 그날 이후로",
+      "est_sec": 3,
+      "text_en": "From that day on, the Foundation",
+      "text_ja": "財団はこれをあの日以降、",
+      "text_zh_Hant": "基金會從那天起,"
+    },
+    {
+      "text": "SCP-9673으로 기록하기 시작했습니다.",
+      "est_sec": 5,
+      "text_en": "began filing this as SCP-9673.",
+      "text_ja": "SCP-9673として記録し始めました。",
+      "text_zh_Hant": "開始把這個案例記錄為SCP-9673。"
+    },
+    {
+      "text": "지금까지 접수된 건,",
+      "est_sec": 2,
+      "text_en": "So far, the reported cases",
+      "text_ja": "今のところ報告されたのは、",
+      "text_zh_Hant": "目前為止接獲的通報,"
+    },
+    {
+      "text": "아홉 건입니다.",
+      "est_sec": 2,
+      "text_en": "number nine.",
+      "text_ja": "九件です。",
+      "text_zh_Hant": "共有九件。",
+      "emphasis": "아홉 건입니다"
+    },
+    {
+      "text": "혹시 여러분도,",
+      "est_sec": 2,
+      "text_en": "And you—",
+      "text_ja": "皆さんはどうですか、",
+      "text_zh_Hant": "各位是否也有過,"
+    },
+    {
+      "text": "누가 해준 이야기를 듣고 나서야",
+      "est_sec": 4,
+      "text_en": "has there ever been something",
+      "text_ja": "誰かに聞かされてから初めて",
+      "text_zh_Hant": "聽別人說起之後"
+    },
+    {
+      "text": "유독 눈에 밟히기 시작한 게",
+      "est_sec": 3,
+      "text_en": "you only started noticing",
+      "text_ja": "妙に目につくようになったもの、",
+      "text_zh_Hant": "才開始特別在意的"
+    },
+    {
+      "text": "있으신가요?",
+      "est_sec": 2,
+      "text_en": "after someone told you about it?",
+      "text_ja": "ありませんか?",
+      "text_zh_Hant": "什麼東西呢?"
+    },
+    {
+      "text": "있으시다면 그게 뭐였는지",
+      "est_sec": 3,
+      "text_en": "If so, I'd be curious",
+      "text_ja": "もしあれば、それが何だったのか",
+      "text_zh_Hant": "如果有的話,"
+    },
+    {
+      "text": "궁금하네요.",
+      "est_sec": 2,
+      "text_en": "what it was.",
+      "text_ja": "気になりますね。",
+      "text_zh_Hant": "我很好奇是什麼。"
+    },
+    {
+      "text": "이 채널을 구독해두시면,",
+      "est_sec": 3,
+      "text_en": "Hit subscribe on this channel,",
+      "text_ja": "このチャンネルを登録しておけば、",
+      "text_zh_Hant": "訂閱這個頻道,"
+    },
+    {
+      "text": "다음 이야기도",
+      "est_sec": 2,
+      "text_en": "and you won't miss",
+      "text_ja": "次の話も",
+      "text_zh_Hant": "下一集"
+    },
+    {
+      "text": "편하게 챙겨보실 수 있을 겁니다.",
+      "est_sec": 4,
+      "text_en": "the next story.",
+      "text_ja": "気軽に見ていただけると思います。",
+      "text_zh_Hant": "就不會錯過了。"
+    }
+  ],
+  "scenes": [
+    {
+      "prompt": "SUBJECT: tall faceless shadow-figure standing rigid beside a weathered brass survey marker, 65% of frame. CONTEXT: mossy jungle ridge stone, thin mist. COMPOSITION: low-angle close, figure looming over marker. LIGHT: single cold moonbeam, upper-left. MATERIAL: oxidized brass, wet moss, matte-black silhouette skin. ATMOSPHERE: humid fog, drifting spores. PALETTE: near-black jungle, warm ochre brass, yellow rim-light on figure's edge. LOOK: dark anime cel illustration, bold clean linework, flat cel shading, hard-edged shadows, high contrast, saturated subject vs near-black background, one hot accent (electric yellow), strong rim light, low angle, no text."
+    },
+    {
+      "prompt": "SUBJECT: a photo print held up, showing the same faceless shadow-figure beside the marker, 65% of frame. CONTEXT: dim analysis-room table edge behind. COMPOSITION: extreme close-up on photo between two fingers. LIGHT: single desk lamp, below-left. MATERIAL: glossy photo paper, ink smudge, matte silhouette. ATMOSPHERE: still air, dust motes. PALETTE: near-black room, pale photo-white, yellow glow off the figure's printed outline. LOOK: dark anime cel illustration, bold clean linework, flat cel shading, hard-edged shadows, high contrast, saturated subject vs near-black background, one hot accent (electric yellow), strong rim light, low angle, no text."
+    },
+    {
+      "prompt": "SUBJECT: an open logbook, its sighting column filled with repeating hand-drawn shadow-figure sketches, 65% of frame. CONTEXT: a second closed logbook beside it, blank. COMPOSITION: overhead close on the open page. LIGHT: single overhead bulb. MATERIAL: worn paper, ink strokes, cracked leather cover. ATMOSPHERE: still dusty air. PALETTE: near-black desk, aged cream paper, yellow ink strokes on the sketches. LOOK: dark anime cel illustration, bold clean linework, flat cel shading, hard-edged shadows, high contrast, saturated subject vs near-black background, one hot accent (electric yellow), strong rim light, low angle, no text."
+    },
+    {
+      "prompt": "SUBJECT: a crooked hand-lettered wooden sign nailed beside a containment-wing door, 65% of frame. CONTEXT: dark corridor wall behind. COMPOSITION: frontal close on the sign. LIGHT: single flickering hallway light above. MATERIAL: splintered wood, chalk lettering, rusted nail. ATMOSPHERE: cold stale air. PALETTE: near-black corridor, pale wood grain, yellow chalk lettering. LOOK: dark anime cel illustration, bold clean linework, flat cel shading, hard-edged shadows, high contrast, saturated subject vs near-black background, one hot accent (electric yellow), strong rim light, low angle, no text."
+    },
+    {
+      "prompt": "SUBJECT: a stack of sealed film canisters with tamper tape, one canister prominent, 65% of frame. CONTEXT: a shaky handwritten incident report pinned beside it. COMPOSITION: low-angle close on the canisters. LIGHT: single bare bulb above. MATERIAL: matte-black plastic, torn tamper tape, crumpled paper. ATMOSPHERE: dusty storage air. PALETTE: near-black warehouse shadow, dull grey metal, yellow warning tape. LOOK: dark anime cel illustration, bold clean linework, flat cel shading, hard-edged shadows, high contrast, saturated subject vs near-black background, one hot accent (electric yellow), strong rim light, low angle, no text."
+    },
+    {
+      "prompt": "SUBJECT: a yellowed century-old ledger page open to a stamped witness-declaration clause, 65% of frame. CONTEXT: faded company seal, cracked leather spine at edge. COMPOSITION: overhead close on the page. LIGHT: single desk lamp, right side. MATERIAL: brittle paper, faded ink, wax seal. ATMOSPHERE: dry musty air. PALETTE: near-black desk shadow, aged parchment cream, yellow ink underline. LOOK: dark anime cel illustration, bold clean linework, flat cel shading, hard-edged shadows, high contrast, saturated subject vs near-black background, one hot accent (electric yellow), strong rim light, low angle, no text."
+    },
+    {
+      "prompt": "SUBJECT: a wall map with red string linking ledger photos to sighting-log pins, string and pins fill 65% of frame. CONTEXT: dark office wall around the map. COMPOSITION: close angled shot along the string. LIGHT: single desk lamp below. MATERIAL: paper map, red yarn, metal pushpins. ATMOSPHERE: still office air. PALETTE: near-black wall, faded map tan, yellow highlight on pin heads. LOOK: dark anime cel illustration, bold clean linework, flat cel shading, hard-edged shadows, high contrast, saturated subject vs near-black background, one hot accent (electric yellow), strong rim light, low angle, no text."
+    },
+    {
+      "prompt": "SUBJECT: a man's hands gripping a photocopied ledger page against a chain-link fence, 65% of frame. CONTEXT: checkpoint floodlight post behind the fence. COMPOSITION: low-angle close on hands and wire. LIGHT: single harsh floodlight above. MATERIAL: rusted chain-link, damp paper, weathered skin. ATMOSPHERE: humid night air. PALETTE: near-black night, pale paper white, yellow floodlight glare. LOOK: dark anime cel illustration, bold clean linework, flat cel shading, hard-edged shadows, high contrast, saturated subject vs near-black background, one hot accent (electric yellow), strong rim light, low angle, no text."
+    },
+    {
+      "prompt": "SUBJECT: a D-Class figure in thick black blackout goggles, head tilted toward the marker, 65% of frame. CONTEXT: scattered notes on the ground behind, one bearing a smudged fingerprint. COMPOSITION: low-angle close on the goggled face. LIGHT: single spotlight directly above. MATERIAL: rubber straps, jumpsuit fabric, crumpled paper. ATMOSPHERE: still tense air. PALETTE: near-black backdrop, muted grey jumpsuit, yellow fingerprint smudge. LOOK: dark anime cel illustration, bold clean linework, flat cel shading, hard-edged shadows, high contrast, saturated subject vs near-black background, one hot accent (electric yellow), strong rim light, low angle, no text."
+    },
+    {
+      "prompt": "SUBJECT: a researcher crouched before the brass marker, headset on, hand pressed flat on its surface, 65% of frame. CONTEXT: dark jungle ridge stone behind her. COMPOSITION: low-angle three-quarter close. LIGHT: single headlamp beam. MATERIAL: worn field jacket, brass texture, tangled cable. ATMOSPHERE: thin humid mist. PALETTE: near-black jungle dark, muted khaki, yellow headlamp beam. LOOK: dark anime cel illustration, bold clean linework, flat cel shading, hard-edged shadows, high contrast, saturated subject vs near-black background, one hot accent (electric yellow), strong rim light, low angle, no text."
+    },
+    {
+      "prompt": "SUBJECT: a researcher's face frozen mid-gasp, window reflection behind showing a faceless shadow-figure at her shoulder, 65% of frame. CONTEXT: dim office desk edge below. COMPOSITION: tight close-up on face and reflection. LIGHT: single monitor glow below. MATERIAL: glass reflection, skin texture, collar fabric. ATMOSPHERE: still office air. PALETTE: near-black office night, pale blue-white glow, yellow rim-light on the reflected figure. LOOK: dark anime cel illustration, bold clean linework, flat cel shading, hard-edged shadows, high contrast, saturated subject vs near-black background, one hot accent (electric yellow), strong rim light, low angle, no text."
+    },
+    {
+      "prompt": "SUBJECT: a sealed cognitohazard recording device on a shelf, a growing stack of playback-log slips beside it, 65% of frame. CONTEXT: dark containment shelving behind. COMPOSITION: close shot angled down onto device and slips. LIGHT: single warning-strip light above. MATERIAL: matte-black casing, tamper-seal sticker, thin paper slips. ATMOSPHERE: still sealed-room air. PALETTE: near-black shelving, dull grey casing, yellow tamper-seal sticker. LOOK: dark anime cel illustration, bold clean linework, flat cel shading, hard-edged shadows, high contrast, saturated subject vs near-black background, one hot accent (electric yellow), strong rim light, low angle, no text."
+    }
+  ],
+  "background": {
+    "id": "scp-9673_bg",
+    "kind": "image",
+    "reuse": false,
+    "aspect": "16:9",
+    "resolution": "1920x1080",
+    "prompt": "SUBJECT: tall faceless shadow-figure standing beside a weathered brass survey marker on a misty jungle ridge, 65% of frame. CONTEXT: dense dark highland jungle silhouettes behind. COMPOSITION: low-angle wide-to-close hybrid, figure and marker dominant in lower-center. LIGHT: single cold moonbeam from upper-left. MATERIAL: oxidized brass marker, wet moss, matte-black silhouette skin, jungle canopy texture. ATMOSPHERE: humid drifting fog, faint spores. PALETTE: near-black jungle backdrop, warm ochre brass, electric-yellow rim-light on the figure's edge. LOOK: dark anime cel illustration, bold clean linework, flat cel shading, hard-edged shadows, high contrast, saturated subject vs near-black background, one hot accent (electric yellow), strong rim light, low angle, no text.",
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion"
+  },
+  "thumbnail": {
+    "hook": "A tall faceless humanoid shadow-figure looms beside a weathered brass survey marker on a misty dark jungle ridge, filling most of the frame, rim-lit in one hot electric-yellow light from a low angle, near-black background, bold anime cel-shaded linework, hard-edged shadows, high contrast, single light source, cinematic dread.",
+    "hook_alt": [
+      "Close low-angle shot of a black rimless-eyed silhouette standing just behind a brass ridge marker at night, one yellow rim light, near-black jungle backdrop, bold cel-shaded anime linework, high contrast, no text.",
+      "A faceless dark humanoid figure reflected in an office window at night, yellow rim-light along its edge, near-black interior, bold flat cel shading, hard shadows, high contrast, cinematic low angle, no text."
+    ],
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion",
+    "text_safe_area": "right third",
+    "resolution": "1280x720"
+  },
+  "platforms": {
+    "youtube": {
+      "title": "파푸아뉴기니 고산 초소 요원들이, 타바레스 박사의 통화 한 통에 같은 형체를 보게 됐다 [SCP-9673]",
+      "title_form": "피해형",
+      "thumbnail_text": "증인바위",
+      "thumbnail_quote": "- 저기 있습니다, 제가 봤습니다",
+      "tags": [
+        "SCP",
+        "SCP재단",
+        "SCP-096",
+        "미스터리",
+        "괴담",
+        "무서운이야기"
+      ],
+      "chapters": [
+        "00:00 표석 옆의 사진 한 장",
+        "01:36 「증인바위」라는 이름",
+        "02:33 백 년 전 증인 선언",
+        "04:12 격리 시도와 실패",
+        "05:07 타바레스 박사의 고집",
+        "06:19 통화 이후"
+      ],
+      "description": "파푸아뉴기니 고산 초소 능선에 박힌 놋쇠 표석 이야기입니다. 그 앞에서 표석 사연을 들어본 적 있는 사람만, 거기 없던 형체를 보게 됩니다.\n\n※ SCP 재단 세계관 기반 오리지널 창작 · 허구의 이야기입니다\n※ CC BY-SA 3.0 · 원작: SCP Foundation (scp-wiki.wikidot.com)\n\n#SCP #SCP재단 #괴담 #무서운이야기 #미스터리",
+      "localizations": {
+        "en": {
+          "title": "Everyone Who Heard Her Voice Started Seeing the Same Figure — PNG Highlands [SCP-9673]",
+          "description": "A brass survey marker on a jungle ridge in Papua New Guinea. Only people who've heard its story ever see the figure standing beside it — until a call changes that.\n\nThis is original fan fiction set in the SCP Foundation universe.\nCC BY-SA 3.0 · Source: SCP Foundation (scp-wiki.wikidot.com)\n\nObject Class: Euclid\n\n#SCP #SCPFoundation #horror #mystery"
+        },
+        "ja": {
+          "title": "彼女の声を聞いた全員が同じ人影を見た — パプアニューギニア高地 [SCP-9673]",
+          "description": "パプアニューギニアのジャングルの尾根に打たれた真鍮の標石の話です。その話を聞いたことがある人にだけ、そこにいない人影が見えます。\n\n本作はSCP財団の世界観に基づくオリジナル創作・フィクションです。\nCC BY-SA 3.0 · 原作: SCP Foundation (scp-wiki.wikidot.com)\n\n収容クラス: ユークリッド\n\n#SCP #SCP財団 #ホラー #ミステリー"
+        },
+        "zh-Hant": {
+          "title": "聽過她聲音的人,全都看到了同一個身影——巴布亞紐幾內亞高地 [SCP-9673]",
+          "description": "巴布亞紐幾內亞叢林稜線上一塊黃銅界標的故事。只有聽過這個傳聞的人,才會看到站在那裡、實際上不存在的身影。\n\n本作為基於SCP基金會世界觀的原創虛構故事。\nCC BY-SA 3.0 · 原作:SCP Foundation (scp-wiki.wikidot.com)\n\n物件等級:歐幾里得\n\n#SCP #SCP基金會 #恐怖 #懸疑"
+        }
+      },
+      "pinned_comment": "혹시 누가 해준 이야기를 듣고 나서야 보이기 시작한 것, 있으신가요? 있다면 그게 뭐였는지 댓글로 들려주세요.",
+      "playlist": "SCP 아카이브 (전편 듣기)"
+    }
+  },
+  "credit": "SCP 재단 세계관 기반 오리지널 창작 · 허구 · CC BY-SA 3.0",
+  "content_rating": "teen",
+  "notes": "SCP 아카이브 · 16:9 롱폼 · 장면 전환 배경 + 자막 번인 · 단일 내레이터 · 완결형."
+}
