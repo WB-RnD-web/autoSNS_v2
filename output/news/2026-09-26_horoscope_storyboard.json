@@ -1,0 +1,95 @@
+{
+  "date": "2026-09-26",
+  "topic": "horoscope",
+  "privacy": "public",
+  "topic_keyword": "천칭자리 연애운지수 1위 · 94점",
+  "headline": "오늘 태양이 천칭자리를 지나며 연애운이 94점까지 오릅니다",
+  "hook_title": "천칭자리, 오늘 마음이 열려요",
+  "accent": "#8E9BE8",
+  "loop_line": "내일도 어떤 별자리 마음은 활짝 열려 있을 거예요.",
+  "thumbnail_hook": "wide panorama of the zodiac constellation belt stretching across a deep indigo night sky, Libra scales constellation faintly glowing among countless stars, soft moonlight, cosmic mystical mood; no human face, no text in image",
+  "thumbnail_text": "천칭자리 94점 1위",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "천칭자리 시즌",
+      "ghost": "ZODIAC",
+      "lines": ["오늘", "한 곳만", "마음이 열려요"],
+      "highlight": "한 곳",
+      "brand": "일상공감뉴스 · 별자리",
+      "narration": "오늘, 열두 별자리 중 한 곳만 마음의 문이 열립니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 연애운 · 3위부터",
+      "points": ["3위 <b>사자자리</b> — 고백하기 좋은 날", "2위 <b>물고기자리</b> — 감정이 통하는 하루"],
+      "brand": "일상공감뉴스 · 별자리",
+      "narration": "3위 사자자리, 2위 물고기자리, 1위는 곧 공개할게요."
+    },
+    {
+      "type": "stat",
+      "label": "연애운 지수 1위 · 천칭자리",
+      "prefix": "",
+      "suffix": "점",
+      "from": 0,
+      "to": 94,
+      "bar": true,
+      "sub": "9월23일~10월22일생 · 태양이 <b>천칭자리</b>를 지나는 날",
+      "brand": "일상공감뉴스 · 별자리",
+      "narration": "1위는 천칭자리, 9월 23일에서 10월 22일 사이라면 오늘 94점입니다."
+    },
+    {
+      "type": "gauge",
+      "label": "오늘 천칭자리 연애운",
+      "from": 1,
+      "to": 3,
+      "unit": "배",
+      "sub": "평소보다 <b>3배</b> 빨리 마음이 통하는 날",
+      "brand": "일상공감뉴스 · 별자리",
+      "narration": "천칭자리는 오늘 마음이 평소보다 세 배 빠르게 통합니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘의 행운",
+      "points": ["행운의 색 <b>라벤더</b> · 숫자 <b>6</b>", "마음이 열리는 시간 <b>저녁 8시</b> · 캡처해 두세요", "<b>쌍둥이자리</b> — 충전 지수 최고, 오늘은 쉬어가는 날"],
+      "brand": "일상공감뉴스 · 별자리",
+      "narration": "그래서 오늘은 저녁 여덟 시쯤 마음을 먼저 전해 보시면 좋겠습니다."
+    },
+    {
+      "type": "statement",
+      "text": "당신 연애운 몇 위? 별자리 댓글 남겨요",
+      "highlight": "몇 위",
+      "brand": "일상공감뉴스 · 별자리",
+      "narration": "당신의 연애운은 몇 위였는지, 댓글에 별자리만 남겨주세요."
+    }
+  ],
+  "sources": ["서양 점성 12별자리 기반", "가을 태양-천칭자리 절기 흐름 참고"],
+  "credit": "재미로 보는 오늘의 별자리 운세",
+  "platforms": {
+    "youtube": {
+      "title": "천칭자리, 오늘 마음이 열려요 #shorts",
+      "description": "오늘 태양이 천칭자리를 지나며 연애운이 94점까지 오릅니다\n※ 재미로 보는 운세입니다\n\n#오늘의별자리 #별자리운세 #운세 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "One Zodiac Sign's Heart Opens Today",
+          "description": "As the sun moves through Libra, one sign's love-luck score climbs to 94 today. See who tops the chart, and where your sign lands.\n※ Just for fun — today's horoscope\n\n#TodaysHoroscope #Zodiac #Libra #Shorts #shorts"
+        },
+        "ja": {
+          "title": "今日、心の扉が開く星座があります",
+          "description": "太陽が天秤座を通過する今日、恋愛運指数が94点まで上がる星座があります。今日の1位が気になる方はぜひご覧ください。\n※ 楽しみとしてご覧ください\n\n#今日の星座 #星座占い #恋愛運 #ショート #shorts"
+        },
+        "zh-Hant": {
+          "title": "今天,這個星座的心門大開",
+          "description": "太陽今天正好行經天秤座,讓它的戀愛運指數飆升到94分。想知道是哪個星座嗎?一起來看看今天的排名。\n※ 僅供娛樂參考的星座運勢\n\n#今日星座 #星座運勢 #戀愛運 #Shorts #shorts"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "천칭자리, 오늘 마음이 열려요\n※ 재미로 보는 운세\n\n#오늘의별자리 #별자리운세 #운세 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "천칭자리, 오늘 마음이 열려요\n※ 재미로 보는 운세"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음."
+}
