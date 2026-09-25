@@ -1,0 +1,96 @@
+{
+  "date": "2026-09-26",
+  "topic": "politics",
+  "privacy": "public",
+  "topic_keyword": "DMZ 지뢰 폭발 현장조사 지연",
+  "headline": "DMZ 지뢰 폭발 나흘째... 현장조사는 추석 이후로",
+  "hook_title": "군인 3명 부상, 조사는 나흘째 제자리",
+  "accent": "#8FB0C9",
+  "thumbnail_hook": "A misty demilitarized zone border fence at dusk, barbed wire coils, a red skull-icon landmine warning sign, an empty military watchtower silhouette, rain clouds gathering over rugged hillside terrain, cinematic tension, muted blue-grey tones, no people, no faces, no text.",
+  "thumbnail_text": "군인 3명 부상, 조사는 아직",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "논란",
+      "ghost": "POLITICS",
+      "lines": ["군인이", "다쳤는데", "조사는 아직?"],
+      "highlight": "아직",
+      "brand": "일상공감뉴스 · 정치",
+      "narration": "군인이 다치는 사고가 있었는데, 그 뒤로 무슨 일이 있었던 걸까요?"
+    },
+    {
+      "type": "stat",
+      "label": "부상 인원",
+      "prefix": "",
+      "suffix": "명",
+      "from": 0,
+      "to": 3,
+      "bar": true,
+      "sub": "MDL 인근, 지뢰 <b>추정</b> 폭발",
+      "brand": "일상공감뉴스 · 정치",
+      "narration": "지난 21일, DMZ 인근에서 지뢰로 추정되는 폭발로 군인 세 명이 다쳤습니다."
+    },
+    {
+      "type": "stat",
+      "label": "현장조사 지연",
+      "prefix": "",
+      "suffix": "일째",
+      "from": 0,
+      "to": 4,
+      "bar": true,
+      "sub": "유엔사 합동조사 <b>미착수</b>",
+      "brand": "일상공감뉴스 · 정치",
+      "narration": "나흘이 지난 지금까지도, 유엔사와의 합동 현장조사는 시작되지 않았습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "여야 입장",
+      "points": ["정부·軍 — 안전 확보가 먼저라는 입장", "야당 — 조사 지연에 의문 제기"],
+      "brand": "일상공감뉴스 · 정치",
+      "narration": "정부와 군은 안전 확보가 먼저라고 말하고, 야당은 조사가 늦어지는 이유를 묻고 있습니다."
+    },
+    {
+      "type": "statement",
+      "text": "군대 간 내 가족, 안전이 걸려 있습니다",
+      "highlight": "안전",
+      "brand": "일상공감뉴스 · 정치",
+      "narration": "군대에 자녀를 보낸 가정에게는, 이런 안전 문제가 더 가깝게 느껴질 수 있습니다."
+    },
+    {
+      "type": "statement",
+      "text": "군 안전조사, 얼마나 투명해야 할까요?",
+      "highlight": "투명",
+      "brand": "일상공감뉴스 · 정치",
+      "narration": "군의 안전조사는 앞으로 얼마나 투명하게 이뤄져야 할까요?"
+    }
+  ],
+  "sources": ["서울신문", "뉴스핌", "파이낸셜뉴스", "오마이뉴스"],
+  "credit": "출처 서울신문·뉴스핌·파이낸셜뉴스 등",
+  "platforms": {
+    "youtube": {
+      "title": "군인 3명 부상, 조사는 나흘째 제자리 #shorts",
+      "description": "DMZ 지뢰 폭발 나흘째... 현장조사는 추석 이후로\n출처 서울신문·뉴스핌·파이낸셜뉴스 등\n\n※ 사실관계는 보도 시점 기준이며, 수사·재판 중인 사안은 확정된 내용이 아닙니다.\n\n#DMZ #지뢰폭발 #국방 #뉴스 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "3 Soldiers Hurt Near DMZ, Probe Stalled for 4 Days",
+          "description": "Three South Korean soldiers were hurt in a suspected landmine blast near the DMZ, and the joint on-site investigation with the UN Command has stalled for four days.\n출처 서울신문·뉴스핌·파이낸셜뉴스 등\n\n※ 사실관계는 보도 시점 기준이며, 수사·재판 중인 사안은 확정된 내용이 아닙니다.\n\n#DMZ #shorts"
+        },
+        "ja": {
+          "title": "DMZ近くで兵士3人負傷 調査は4日間停滞",
+          "description": "非武装地帯(DMZ)付近で地雷とみられる爆発があり、兵士3人が負傷しました。国連軍司令部との合同現地調査は4日経っても始まっていません。\n출처 서울신문·뉴스핌·파이낸셜뉴스 등\n\n※ 사실관계는 보도 시점 기준이며, 수사·재판 중인 사안은 확정된 내용이 아닙니다.\n\n#DMZ #shorts"
+        },
+        "zh-Hant": {
+          "title": "DMZ附近3名軍人受傷 現場調查延宕4天",
+          "description": "南韓非軍事區(DMZ)附近疑似地雷爆炸,3名軍人受傷,與聯合國軍司令部的現場聯合調查四天來仍未展開。\n출처 서울신문·뉴스핌·파이낸셜뉴스 등\n\n※ 사실관계는 보도 시점 기준이며, 수사·재판 중인 사안은 확정된 내용이 아닙니다.\n\n#DMZ #shorts"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "군인 3명 부상, 조사는 나흘째 제자리\n출처 서울신문·뉴스핌·파이낸셜뉴스 등\n\n#DMZ #지뢰폭발 #국방 #뉴스 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "군인 3명 부상, 조사는 나흘째 제자리\n출처 서울신문·뉴스핌·파이낸셜뉴스 등"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음."
+}
