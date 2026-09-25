@@ -1,0 +1,92 @@
+{
+  "date": "2026-09-26",
+  "topic": "fortune",
+  "privacy": "public",
+  "topic_keyword": "오늘의 띠별 종합운 · 토끼띠 1위",
+  "headline": "오늘 계묘일 해묘미 삼합, 토끼띠 운세 97점",
+  "hook_title": "토요일 오늘, 한 띠만 크게 웃어요",
+  "accent": "#C9A24B",
+  "loop_line": "그 한 띠, 당신이었을 수도 있어요",
+  "thumbnail_hook": "Close-up of an ornate golden rabbit zodiac emblem, detailed amethyst eye catching moonlight, intricate East Asian gold filigree, soft lavender mist background, no human face, no text, no letters, vertical 9:16 composition, cinematic lighting",
+  "thumbnail_text": "오늘 1위 토끼띠",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "띠별 운세",
+      "ghost": "FORTUNE",
+      "lines": ["토요일 오늘", "딱 한 띠만", "기운이 세요"],
+      "highlight": "한 띠만",
+      "brand": "일상공감뉴스 · 운세",
+      "narration": "토요일인 오늘, 열두 띠 중 딱 한 띠만 기운이 크게 열립니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 3위·2위 미리보기",
+      "points": ["3위 <b>개띠</b> — 묘술육합으로 짝이 맞아요", "2위 <b>양띠</b> — 해묘미 삼합으로 기운이 통해요"],
+      "brand": "일상공감뉴스 · 운세",
+      "narration": "3위는 개띠, 2위는 양띠인데, 1위는 잠시 뒤에 알려드릴게요."
+    },
+    {
+      "type": "stat",
+      "label": "오늘 종합운 1위 · 토끼띠",
+      "prefix": "",
+      "suffix": "점",
+      "from": 0,
+      "to": 97,
+      "bar": true,
+      "sub": "1987 · 1999 · 2011년생 — <b>묘일</b>이라 기운 직행",
+      "brand": "일상공감뉴스 · 운세",
+      "narration": "1위는 토끼띠, 87년생 99년생이면 오늘 지수가 97점입니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘의 행운 팁",
+      "points": ["행운의 색 <b>보라</b> · 숫자 <b>3</b>", "닭띠는 오늘 <b>충전 지수</b> 최고 — 잠깐 쉬면 더 좋아요"],
+      "brand": "일상공감뉴스 · 운세",
+      "narration": "그래서 오늘은 보라색 소품을 챙겨 보시면 좋겠습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "이번 주 행운의 로또 번호",
+      "points": ["<b>16 · 21 · 33 · 37 · 42 · 44</b>", "재미로 뽑아 본 번호예요 · 캡처해 두세요"],
+      "brand": "일상공감뉴스 · 운세",
+      "narration": "이번 주 행운의 로또 번호는, 16, 21, 33, 37, 42, 44입니다."
+    },
+    {
+      "type": "statement",
+      "text": "느꼈다 vs 몰랐다, 댓글로 골라주세요",
+      "highlight": "느꼈다",
+      "brand": "일상공감뉴스 · 운세",
+      "narration": "오늘 이 기운을 느꼈는지 몰랐는지, 댓글로 골라 주세요."
+    }
+  ],
+  "sources": ["전통 띠 운세(명리) 기반", "계묘일(癸卯日) 해묘미(亥卯未) 삼합 참고"],
+  "credit": "재미로 보는 오늘의 운세 · 명리 일진 참고",
+  "platforms": {
+    "youtube": {
+      "title": "토요일 오늘, 한 띠만 크게 웃어요 #shorts",
+      "description": "오늘 계묘일 해묘미 삼합, 토끼띠 운세 97점\n※ 재미로 보는 운세입니다\n\n#오늘의운세 #띠별운세 #운세 #토끼띠 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "One Zodiac Sign Gets Its Own Lucky Day Today",
+          "description": "Today's zodiac fortune spotlights the one sign having an especially strong day today, based on traditional Chinese zodiac day-branch compatibility. For fun only, not a real prediction.\n#shorts #horoscope #zodiac"
+        },
+        "ja": {
+          "title": "今日、運が集中するのはこの干支だけ",
+          "description": "今日の干支占いです。今日は特に運が集中する干支が一つだけあります。楽しみとしてご覧ください。\n#shorts"
+        },
+        "zh-Hant": {
+          "title": "今天,好運只屬於一個生肖",
+          "description": "今天的生肖運勢，好運特別集中在一個生肖身上！純屬娛樂參考。\n#shorts"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "토요일 오늘, 한 띠만 크게 웃어요\n※ 재미로 보는 운세\n\n#오늘의운세 #띠별운세 #운세 #토끼띠 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "토요일 오늘, 한 띠만 크게 웃어요\n※ 재미로 보는 운세"
+    }
+  },
+  "notes": "모션그래픽 6장면(로또 포함) · 단일 내레이터 · 배경음 없음 · 엔터테인먼트(재미) 운세 · MODE=daily."
+}
