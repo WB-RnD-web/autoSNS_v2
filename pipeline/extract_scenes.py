@@ -5,7 +5,7 @@
 모션그래픽 4~6장면 스펙으로 변환한다. 장면 타입: hook / stat / gauge / trend.
 각 장면엔 단일 내레이터 내레이션 1줄 포함.
 
-요구: ANTHROPIC_API_KEY (CI 시크릿). CLAUDE_MODEL(기본 claude-sonnet-4-6).
+요구: ANTHROPIC_API_KEY (CI 시크릿). CLAUDE_MODEL(기본 claude-sonnet-5).
 키가 없으면 에러 — 파이프라인은 미리 만든 스펙 파일로 폴백 가능(run_pipeline 참고).
 
 사용:
@@ -18,7 +18,7 @@ import os
 import re
 import sys
 
-MODEL = os.environ.get("CLAUDE_MODEL", "claude-sonnet-4-6")
+MODEL = os.environ.get("CLAUDE_MODEL", "claude-sonnet-5")
 
 SCHEMA_GUIDE = """\
 출력은 아래 JSON 형식만(설명/마크다운 없이):

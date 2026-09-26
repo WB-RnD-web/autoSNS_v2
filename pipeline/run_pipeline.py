@@ -189,15 +189,19 @@ def do_social(video, sb, res):
             mid = upload_instagram.publish_reel(
                 url, plat.get("instagram", {}).get("caption", ""), cover_url=cover_url)
             out.append(f"IG:{mid}"); ok = True
-        except Exception as e:  # noqa: BLE001
+        # ★SystemExit 까지 잡는다 — 업로더가 SystemExit 를 던지면 잡 전체가 exit 1 로 끝나고
+        #   Cloudinary 정리·다음 스토리보드 처리가 통째로 빠졌다. 소셜 실패는 경고로만 남긴다.
+        except (Exception, SystemExit) as e:  # noqa: BLE001
             out.append(f"IG실패:{e}")
+            print(f"::warning title=Instagram 게시 실패::{e}")
     if th:
         try:
             import upload_threads
             tid = upload_threads.publish_thread(url, plat.get("threads", {}).get("text", ""))
             out.append(f"Threads:{tid}"); ok = True
-        except Exception as e:  # noqa: BLE001
+        except (Exception, SystemExit) as e:  # noqa: BLE001
             out.append(f"Threads실패:{e}")
+            print(f"::warning title=Threads 게시 실패::{e}")
     out.append(f"커버:{cover_src}")
     # 게시 성공 시 Cloudinary 원본 삭제(영상+커버). 전부 실패면 재시도 위해 보존.
     if ok:
