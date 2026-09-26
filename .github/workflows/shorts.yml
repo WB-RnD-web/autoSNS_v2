@@ -42,7 +42,7 @@ permissions:
 jobs:
   build-and-upload:
     runs-on: ubuntu-latest
-    timeout-minutes: 25   # 실측 최대 14분(커버 타임아웃 180s 포함 최악 ~20분)
+    timeout-minutes: 35   # 키비주얼·진행자 추가 후 여유(2026-09-27). 커버 타임아웃 포함 최악 ~25분
     env:
       # ★카피 점검 — 화면에만 있고 말엔 없는 수치, 밋밋한 hook 을 잡는다. 기본은 경고만.
       NEWS_FAIL_ON_COPY: ${{ vars.NEWS_FAIL_ON_COPY || '' }}
@@ -79,6 +79,14 @@ jobs:
       #   180 은 정상 작업까지 끊는다. (실패해도 영상 프레임 폴백이라 치명적이진 않다)
       SHORTS_COVER_TIMEOUT: ${{ vars.SHORTS_COVER_TIMEOUT || '240' }}
       SHORTS_COVER_HOLD: ${{ vars.SHORTS_COVER_HOLD || '0.7' }}
+      # ★레포 변수는 여기 적어야 파이썬에 닿는다(적지 않으면 '끄기' 스위치가 먹지 않는다).
+      SHORTS_BG: ${{ vars.SHORTS_BG || '1' }}                 # 키비주얼 배경 (0=끄기)
+      SHORTS_BG_TIMEOUT: ${{ vars.SHORTS_BG_TIMEOUT || '240' }}
+      PRESENTER: ${{ vars.PRESENTER || '1' }}                 # 별이·별하 진행자 (0=끄기)
+      PRESENTER_DUO: ${{ vars.PRESENTER_DUO || '1' }}         # 0=별하 혼자
+      VO_BACKEND: ${{ vars.VO_BACKEND || 'wbspark' }}         # wbspark(Supertonic) | edge
+      VO_PRESET_BYEOLHA: ${{ vars.VO_PRESET_BYEOLHA || 'F1' }}
+      VO_PRESET_BYEORI: ${{ vars.VO_PRESET_BYEORI || 'M1' }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -199,10 +207,22 @@ jobs:
           cd pipeline
           # privacy: push(운영)는 JSON privacy 준수(★현재 전 토픽 public — 정치도 포함).
           #          강제 private 은 수동 테스트(workflow_dispatch)에서 force_private=true 일 때만.
+          # ★수동 테스트에서 force_private 이면 IG/Threads 도 막는다(--no-social).
+          #   force_private 는 유튜브에만 걸려서, 비공개 테스트 영상이 인스타·쓰레드엔 ★공개로 올라갔다.
           python run_pipeline.py $(for f in $FILES; do echo "../$f"; done) \
             --use-ledger --log ../output/run_log.json \
-            $([ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.force_private }}" = "true" ] && echo --force-private) \
+            $([ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.force_private }}" = "true" ] && echo --force-private --no-social) \
             $([ "${{ github.event.inputs.no_upload }}" = "true" ] && echo --no-upload)
 
-      # 산출물은 유튜브/IG/Threads 업로드(API) — GitHub 아티팩트는 쓰지 않는다(저장소 쿼터 회피).
+      # 산출물은 유튜브/IG/Threads 업로드(API) — 운영 실행은 GitHub 아티팩트를 쓰지 않는다(저장소 쿼터 회피).
       # 실행 로그는 Actions 콘솔에서 확인, ledger 는 위 actions/cache 로 런 간 보존.
+      # ★예외: 수동 실행(workflow_dispatch)만 렌더 결과를 2일 보관한다 — '업로드 없이' 로 돌려도
+      #   영상을 내려받아 눈으로 볼 수 있어야 렌더러 변경을 머지 전에 확인할 수 있다.
+      - name: 렌더 결과 보관 (수동 실행만)
+        if: always() && github.event_name == 'workflow_dispatch'
+        uses: actions/upload-artifact@v4
+        with:
+          name: renders-${{ github.run_number }}
+          path: output/renders/*.mp4
+          retention-days: 2
+          if-no-files-found: ignore

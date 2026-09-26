@@ -53,9 +53,34 @@ def _headers() -> dict:
     return {"Authorization": f"Bearer {tok}"} if tok else {}
 
 
+# ── '글자 넣지 마' 문구 제거 (2026-09-27 실측) ─────────────────
+# tools/wbspark_route_check.py 로 확정: 같은 그림에 "no text, no letters, no watermark" 를
+# 붙이면 needs_text() 가 걸려 z-image-turbo(80초) → qwen-image(198초)로 간다.
+# 글자를 빼라는 문장이 글자 모델을 부르고 있었다. Z-Image 는 시키지 않으면 글자를 거의 안 그리므로
+# wbSpark 로 보낼 때만 이 부정형을 지운다(FLUX 경로 imagegen.py 는 그대로 — 거기선 필요하다).
+# 루틴이 쓴 thumbnail_hook 안의 "no text" 도 여기서 같이 걸러진다. 끄기: WBSPARK_KEEP_NEGATIVES=1
+import re as _re
+
+_NEG_TEXT = _re.compile(
+    r"(?i)(?:^|[,.;]\s*|\s)(?:no|without)\s+(?:any\s+)?"
+    r"(?:text|letters?|words?|watermarks?|typography|captions?|logos?|titles?|writing)"
+    r"(?:\s+(?:in|on)\s+(?:the\s+)?image)?(?=\s*(?:[,.;]|$))")
+_TEXT_FREE = _re.compile(r"(?i)(?:^|[,.;]\s*|\s)text[- ]free(?=\s*(?:[,.;]|$))")
+
+
+def strip_text_negatives(prompt: str) -> str:
+    if os.environ.get("WBSPARK_KEEP_NEGATIVES") in ("1", "true", "True"):
+        return prompt
+    out = _TEXT_FREE.sub("", _NEG_TEXT.sub("", prompt))
+    out = _re.sub(r"\s*,(\s*,)+", ",", out)          # 빈 항목이 남긴 ", ,"
+    out = _re.sub(r"\s+([,.;])", r"\1", out).strip(" ,;")
+    return out
+
+
 def generate_image(prompt: str, out_path: str,
                    timeout_sec: int = 720, poll_sec: float = 4.0,
-                   model: str | None = None) -> bool:
+                   model: str | None = None, aspect: str | None = None,
+                   no_llm: bool = False) -> bool:
     """프롬프트로 이미지 1장 생성 → out_path 에 PNG 저장. 성공 시 True.
 
     GPU 는 직렬 레인이라 앞선 작업이 있으면 그만큼 밀린다(2026-08-08 부터 gpu·cpu·llm
@@ -66,10 +91,18 @@ def generate_image(prompt: str, out_path: str,
     """
     requests = _requests()
     base, headers = _base(), _headers()
+    prompt = strip_text_negatives(prompt)
     body = {"type": "image", "prompt": prompt}
     mdl = model or os.environ.get("WBSPARK_MODEL")
     if mdl:
         body["model"] = mdl
+    # aspect: 게이트웨이가 받는 비율("9:16" 등). no_llm: 서버의 LLM 프롬프트 보정을 건너뛴다 —
+    #   루틴이 이미 자세한 영어 프롬프트를 썼으므로 보정은 시간만 쓴다(2026-09-27 실측:
+    #   z-image-turbo 고정 + no_llm 35초 vs 기본 경로 147초, 'sign' 이 들어가면 qwen 으로 새서 240초+).
+    if aspect:
+        body["aspect"] = aspect
+    if no_llm:
+        body["no_llm"] = True
     try:
         r = requests.post(f"{base}/jobs", json=body, headers=headers, timeout=40)
         if r.status_code != 200:
@@ -120,6 +153,46 @@ def generate_image(prompt: str, out_path: str,
         return True
     except Exception as e:  # noqa: BLE001
         sys.stderr.write(f"[warn] wbSpark 다운로드 예외: {e}\n")
+        return False
+
+
+def tts(text: str, out_path: str, voice: str, timeout_sec: int = 180,
+        poll_sec: float = 1.5) -> bool:
+    """Supertonic 프리셋 음성합성(F1~F5 / M1~M5) → out_path 에 WAV. 성공 시 True.
+
+    cpu 레인이라 GPU 작업(키비주얼 등) 뒤에 줄 서지 않는다. 한 문장 6~10초(2026-09-27 실측).
+    실패는 경고 후 False — 호출측이 edge-tts 로 되돌아간다.
+    """
+    requests = _requests()
+    base, headers = _base(), _headers()
+    try:
+        r = requests.post(f"{base}/jobs", json={"type": "tts", "prompt": text, "voice": voice},
+                          headers=headers, timeout=30)
+        job_id = r.json().get("job_id") if r.status_code == 200 else None
+        if not job_id:
+            sys.stderr.write(f"[warn] wbSpark TTS 제출 실패 {r.status_code}: {r.text[:200]}\n")
+            return False
+        deadline = time.monotonic() + timeout_sec
+        while time.monotonic() < deadline:
+            time.sleep(poll_sec)
+            js = requests.get(f"{base}/jobs/{job_id}", headers=headers, timeout=20).json() or {}
+            st = js.get("status")
+            if st == "done":
+                f = requests.get(f"{base}/jobs/{job_id}/file", headers=headers, timeout=60)
+                if f.status_code != 200 or not f.content:
+                    sys.stderr.write(f"[warn] wbSpark TTS 파일 수신 실패 {f.status_code}\n")
+                    return False
+                os.makedirs(os.path.dirname(os.path.abspath(out_path)) or ".", exist_ok=True)
+                with open(out_path, "wb") as fp:
+                    fp.write(f.content)
+                return True
+            if st in ("error", "failed"):
+                sys.stderr.write(f"[warn] wbSpark TTS 실패: {str(js)[:200]}\n")
+                return False
+        sys.stderr.write(f"[warn] wbSpark TTS 타임아웃({timeout_sec}s)\n")
+        return False
+    except Exception as e:  # noqa: BLE001
+        sys.stderr.write(f"[warn] wbSpark TTS 예외: {e}\n")
         return False
 
 
