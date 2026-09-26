@@ -79,7 +79,8 @@ def strip_text_negatives(prompt: str) -> str:
 
 def generate_image(prompt: str, out_path: str,
                    timeout_sec: int = 720, poll_sec: float = 4.0,
-                   model: str | None = None) -> bool:
+                   model: str | None = None, aspect: str | None = None,
+                   no_llm: bool = False) -> bool:
     """프롬프트로 이미지 1장 생성 → out_path 에 PNG 저장. 성공 시 True.
 
     GPU 는 직렬 레인이라 앞선 작업이 있으면 그만큼 밀린다(2026-08-08 부터 gpu·cpu·llm
@@ -95,6 +96,13 @@ def generate_image(prompt: str, out_path: str,
     mdl = model or os.environ.get("WBSPARK_MODEL")
     if mdl:
         body["model"] = mdl
+    # aspect: 게이트웨이가 받는 비율("9:16" 등). no_llm: 서버의 LLM 프롬프트 보정을 건너뛴다 —
+    #   루틴이 이미 자세한 영어 프롬프트를 썼으므로 보정은 시간만 쓴다(2026-09-27 실측:
+    #   z-image-turbo 고정 + no_llm 35초 vs 기본 경로 147초, 'sign' 이 들어가면 qwen 으로 새서 240초+).
+    if aspect:
+        body["aspect"] = aspect
+    if no_llm:
+        body["no_llm"] = True
     try:
         r = requests.post(f"{base}/jobs", json=body, headers=headers, timeout=40)
         if r.status_code != 200:

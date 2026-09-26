@@ -42,7 +42,7 @@ permissions:
 jobs:
   build-and-upload:
     runs-on: ubuntu-latest
-    timeout-minutes: 25   # 실측 최대 14분(커버 타임아웃 180s 포함 최악 ~20분)
+    timeout-minutes: 35   # 키비주얼·진행자 추가 후 여유(2026-09-27). 커버 타임아웃 포함 최악 ~25분
     env:
       # ★카피 점검 — 화면에만 있고 말엔 없는 수치, 밋밋한 hook 을 잡는다. 기본은 경고만.
       NEWS_FAIL_ON_COPY: ${{ vars.NEWS_FAIL_ON_COPY || '' }}

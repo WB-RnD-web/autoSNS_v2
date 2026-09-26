@@ -161,7 +161,11 @@ def build_bg(sb: dict, out_png: str, timeout_sec: int = 300) -> str | None:
     os.makedirs(os.path.dirname(os.path.abspath(out_png)) or ".", exist_ok=True)
     prompt = f"{hook}. {_style_prompt(style)}, {TECH}"
     print(f"   🎨 키비주얼 생성(wbSpark)… (최대 {max(1, timeout_sec // 60)}분)")
-    if not wbspark.generate_image(prompt, out_png, timeout_sec=timeout_sec):
+    # 배경엔 글자가 필요 없다 → 빠른 모델로 고정 + 서버 LLM 보정 생략(2026-09-27: 147초 → 35초,
+    # 'warning sign' 같은 낱말이 있어도 느린 글자 모델로 새지 않는다). 모델명은 레포 변수로 바꿀 수 있다.
+    bg_model = os.environ.get("WBSPARK_BG_MODEL", "z-image-turbo")
+    if not wbspark.generate_image(prompt, out_png, timeout_sec=timeout_sec,
+                                  model=bg_model or None, aspect="9:16", no_llm=True):
         print("   ⏭️  키비주얼 생성 실패/타임아웃(검정 배경)")
         return None
     return out_png

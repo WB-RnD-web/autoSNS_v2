@@ -191,8 +191,11 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#0A0808;font-fam
 # 글자 가독성은 스크림(위·아래 진하게, 글자 자리 중간도 톤다운)이 맡는다.
 # 그림이 없으면 이 CSS 는 안 붙는다 → 기존 검정 화면 그대로.
 CSS_BG = """
+/* ★CSS filter(blur)를 쓰지 않는다 — 매 프레임 확대되는 전체 화면에 blur 를 걸면 GPU 없는
+   러너에서 프레임마다 다시 그려 렌더가 3~4배 느려졌다(2026-09-27 테스트: 한 편 16분).
+   흐림·채도는 _stage_bg 가 그림에 미리 굽고, 여기선 will-change 로 한 번만 그려 둔다. */
 #bg{position:absolute;inset:-4%;background:#0A0808 url("assets/_bg.jpg") center/cover no-repeat;
-  z-index:0;transform-origin:50% 40%;filter:blur(2px) saturate(1.1);}
+  z-index:0;transform-origin:50% 40%;will-change:transform;}
 /* 글자가 앉는 자리(화면 22~60%)를 가장 진하게 — 밝고 복잡한 그림에서도 읽혀야 한다 */
 #scrim{position:absolute;inset:0;z-index:0;pointer-events:none;
   background:linear-gradient(180deg,rgba(10,8,8,.70) 0%,rgba(10,8,8,.45) 12%,
@@ -206,8 +209,8 @@ CSS_BG = """
 # 쇼츠 하단 UI(채널명·제목)는 대략 84% 아래, 오른쪽 버튼 열은 x 960 부근 — 캐릭터는 그 밖에 둔다.
 CSS_PRESENTER = """
 #pr{position:absolute;left:56px;top:1120px;width:720px;height:500px;z-index:45;pointer-events:none;}
-#pr .pc{position:absolute;bottom:78px;transform-origin:50% 100%;}
-#pr .pc img{height:100%;display:block;filter:drop-shadow(0 18px 28px rgba(0,0,0,.45));}
+#pr .pc{position:absolute;bottom:78px;transform-origin:50% 100%;will-change:transform;}
+#pr .pc img{height:100%;display:block;will-change:transform;filter:drop-shadow(0 18px 28px rgba(0,0,0,.45));}
 #pr-byeori{left:34px;height:432px;}
 #pr-byeolha{left:334px;height:402px;}
 #desk{position:absolute;left:0;bottom:0;width:720px;height:96px;border-radius:26px;
@@ -579,8 +582,10 @@ def _stage_bg(src):
     if not src or not os.path.exists(src):
         return False
     try:
-        from PIL import Image, ImageOps
+        from PIL import Image, ImageEnhance, ImageFilter, ImageOps
         img = ImageOps.fit(Image.open(src).convert("RGB"), (W, H), Image.LANCZOS)
+        # 흐림·채도는 여기서 굽는다(CSS filter 는 프레임마다 다시 계산돼 렌더가 느려진다)
+        img = ImageEnhance.Color(img.filter(ImageFilter.GaussianBlur(2))).enhance(1.1)
         img.save(dst, "JPEG", quality=90)
         return True
     except Exception as e:  # noqa: BLE001
