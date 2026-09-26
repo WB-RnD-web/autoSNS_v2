@@ -34,7 +34,14 @@ concurrency:
 jobs:
   rescue:
     # 끄고 싶으면 레포 변수 ORPHAN_RESCUE=0
-    if: vars.ORPHAN_RESCUE != '0'
+    #
+    # ★2026-09-26 수정 — 이 줄 때문에 9/14~9/23 9번 전부 skipped 였다(한 번도 안 옮겼다).
+    #   옛 조건 `vars.ORPHAN_RESCUE != '0'` 은 변수를 안 만들었을 때 null 이 된다.
+    #   GitHub 표현식은 타입이 다르면 둘 다 숫자로 바꿔 비교한다 → null→0, '0'→0
+    #   → '같다' → != 가 거짓 → 잡이 통째로 건너뛰어졌다. 기본값이 '꺼짐' 인 킬스위치였다.
+    #   || 로 기본값을 먼저 채워 문자열끼리 비교하게 한다(레포의 다른 vars 와 같은 관용구).
+    #   '0' 은 문자열이라 참(truthy)이므로 ORPHAN_RESCUE=0 은 여전히 끈다.
+    if: (vars.ORPHAN_RESCUE || '1') != '0'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
