@@ -69,6 +69,7 @@ TOPIC_ACCENT = {
     "stock":    "#E5484D",   # 국장/미장
     "market":   "#E5484D",
     "zodiac":   "#7C6BD6",   # 인디고 — 별자리
+    "horoscope": "#7C6BD6",  # ★별자리 루틴의 실제 슬러그 — 빠져 있어서 코랄로 나갔다
     "star":     "#7C6BD6",
     "fortune":  "#C9A227",   # 금색 — 운세
     "luck":     "#C9A227",
