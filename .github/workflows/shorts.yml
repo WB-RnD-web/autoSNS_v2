@@ -84,7 +84,7 @@ jobs:
       SHORTS_BG_TIMEOUT: ${{ vars.SHORTS_BG_TIMEOUT || '240' }}
       PRESENTER: ${{ vars.PRESENTER || '1' }}                 # 별이·별하 진행자 (0=끄기)
       PRESENTER_DUO: ${{ vars.PRESENTER_DUO || '1' }}         # 0=별하 혼자
-      VO_BACKEND: ${{ vars.VO_BACKEND || 'edge' }}            # edge | wbspark(Supertonic)
+      VO_BACKEND: ${{ vars.VO_BACKEND || 'wbspark' }}         # wbspark(Supertonic) | edge
       VO_PRESET_BYEOLHA: ${{ vars.VO_PRESET_BYEOLHA || 'F1' }}
       VO_PRESET_BYEORI: ${{ vars.VO_PRESET_BYEORI || 'M1' }}
     steps:
