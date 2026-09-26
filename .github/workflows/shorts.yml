@@ -52,7 +52,7 @@ jobs:
       DEFAULT_PRIVACY: ${{ vars.DEFAULT_PRIVACY || 'private' }}
       # 장면 스펙 자동 추출 + 다국어 제목/설명 번역에 사용
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-      CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL || 'claude-sonnet-4-6' }}
+      CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL || 'claude-sonnet-5' }}
       # ★다국어: 번역은 '루틴이' 스펙에 써준다 → 번역 API 비용 0원.
       #   ANTHROPIC_API_KEY 는 루틴이 번역을 빠뜨렸을 때만 쓰는 ★선택적 폴백이다(없어도 정상).
       I18N_LOCALIZE: ${{ vars.I18N_LOCALIZE || '1' }}

@@ -46,7 +46,7 @@ LANGS = [s.strip() for s in config.env("I18N_LANGS", "en,ja,zh-Hant").split(",")
 SOURCE_LANG = config.env("I18N_SOURCE_LANG", "ko")
 DO_LOCALIZE = config.env("I18N_LOCALIZE", "1") not in ("0", "false", "off", "")
 DO_CAPTIONS = config.env("I18N_CAPTIONS", "1") not in ("0", "false", "off", "")
-MODEL = config.env("I18N_MODEL") or config.env("CLAUDE_MODEL", "claude-sonnet-4-6")
+MODEL = config.env("I18N_MODEL") or config.env("CLAUDE_MODEL", "claude-sonnet-5")
 
 # 자막 트랙 이름(유튜브 자막 선택 메뉴에 뜨는 문구) + 번역 지시용 언어 이름
 LANG_NAME = {
