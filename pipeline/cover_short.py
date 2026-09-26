@@ -54,11 +54,35 @@ def _fields(sb: dict) -> tuple[str, str, str]:
     text = (pick("thumbnail_text")
             or (sb.get("hook_title") or "").strip()
             or (sb.get("headline") or "").strip())
-    style = pick("thumbnail_style").lower()
+    style = pick("thumbnail_style").lower() or _topic_style(sb.get("topic", ""))
     return hook, text, style
 
 
+# ── 토픽 → 그림체 (2026-09-27) ────────────────────────────
+# 모든 토픽이 같은 보도사진 톤이면 운세도 뉴스처럼 보인다. 그림체를 ★코드에서 토픽으로 고정해
+# 루틴이 thumbnail_style 을 빼먹어도 토픽마다 같은 결이 나오게 한다(루틴 지시는 안 지켜질 때가 있다).
+# 스토리보드에 thumbnail_style 이 있으면 그게 우선이다.
+TOPIC_STYLE_PROMPT = {
+    "fortune": ("adorable 3D chibi zodiac animal mascot character, big expressive eyes, "
+                "soft pastel colors, warm glowing lucky atmosphere, playful Pixar-like render"),
+    "horoscope": ("dreamy celestial illustration, glowing constellation lines and stars, "
+                  "deep indigo night sky, soft magical light, whimsical and modern"),
+    "zodiac": ("dreamy celestial illustration, glowing constellation lines and stars, "
+               "deep indigo night sky, soft magical light, whimsical and modern"),
+}
+
+
+def _topic_style(topic: str) -> str:
+    t = (topic or "").strip().lower()
+    for k in TOPIC_STYLE_PROMPT:
+        if t == k or t.startswith(k):
+            return "topic:" + k
+    return ""
+
+
 def _style_prompt(style: str) -> str:
+    if style.startswith("topic:"):
+        return TOPIC_STYLE_PROMPT.get(style[6:], NEWS_PRESET)
     if not style or style == "news":
         return NEWS_PRESET
     try:
@@ -125,10 +149,32 @@ def _overlay(bg_path: str, text: str, out_path: str, accent: str = CORAL) -> str
     return out_path
 
 
-def build_cover(sb: dict, out_path: str, workdir: str, timeout_sec: int = 300) -> str | None:
-    """루틴이 준 thumbnail_hook 으로 9:16 커버 생성. hook 없거나 실패 시 None(→프레임 폴백)."""
-    hook, text, style = _fields(sb)
+def build_bg(sb: dict, out_png: str, timeout_sec: int = 300) -> str | None:
+    """thumbnail_hook 으로 글자 없는 9:16 키비주얼만 생성. 영상 배경·커버가 같이 쓴다.
+
+    hook 없거나 실패 시 None — 호출측은 검정 배경(기존 모습)으로 진행한다.
+    """
+    hook, _text, style = _fields(sb)
     if not hook:
+        print("   ⏭️  키비주얼 스킵 — thumbnail_hook 없음(검정 배경)")
+        return None
+    os.makedirs(os.path.dirname(os.path.abspath(out_png)) or ".", exist_ok=True)
+    prompt = f"{hook}. {_style_prompt(style)}, {TECH}"
+    print(f"   🎨 키비주얼 생성(wbSpark)… (최대 {max(1, timeout_sec // 60)}분)")
+    if not wbspark.generate_image(prompt, out_png, timeout_sec=timeout_sec):
+        print("   ⏭️  키비주얼 생성 실패/타임아웃(검정 배경)")
+        return None
+    return out_png
+
+
+def build_cover(sb: dict, out_path: str, workdir: str, timeout_sec: int = 300,
+                raw: str | None = None) -> str | None:
+    """루틴이 준 thumbnail_hook 으로 9:16 커버 생성. hook 없거나 실패 시 None(→프레임 폴백).
+
+    raw 가 있으면(영상 배경으로 이미 만든 키비주얼) ★다시 생성하지 않고 그 위에 글자만 얹는다.
+    """
+    hook, text, style = _fields(sb)
+    if not hook and not raw:
         print("   ⏭️  쇼츠 커버 스킵 — thumbnail_hook 없음(영상 프레임 폴백)")
         return None
     try:
@@ -138,12 +184,15 @@ def build_cover(sb: dict, out_path: str, workdir: str, timeout_sec: int = 300) -
         return None
 
     os.makedirs(workdir, exist_ok=True)
-    raw = os.path.join(workdir, "cover_raw.png")
-    prompt = f"{hook}. {_style_prompt(style)}, {TECH}"
-    print(f"   🎨 쇼츠 커버 배경 생성(qwen-image)… (최대 {max(1, timeout_sec // 60)}분)")
-    if not wbspark.generate_image(prompt, raw, timeout_sec=timeout_sec):
-        print("   ⏭️  커버 배경 생성 실패/타임아웃(영상 프레임 폴백)")
-        return None
+    if raw and os.path.exists(raw):
+        print("   ♻️  커버 배경 = 영상 키비주얼 재사용(재생성 없음)")
+    else:
+        raw = os.path.join(workdir, "cover_raw.png")
+        prompt = f"{hook}. {_style_prompt(style)}, {TECH}"
+        print(f"   🎨 쇼츠 커버 배경 생성(qwen-image)… (최대 {max(1, timeout_sec // 60)}분)")
+        if not wbspark.generate_image(prompt, raw, timeout_sec=timeout_sec):
+            print("   ⏭️  커버 배경 생성 실패/타임아웃(영상 프레임 폴백)")
+            return None
     try:
         p = _overlay(raw, text, out_path, accent=_accent(sb))
         print(f"   🖼️  쇼츠 커버 완성: {os.path.basename(p)}")

@@ -167,6 +167,23 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#0A0808;font-fam
   transform-origin:left center;transform:scaleX(0);z-index:61;}
 """
 
+# ── 키비주얼 배경 (2026-09-27) ─────────────────────────────
+# 검정 바탕에 글자만 있으면 카드뉴스로 보여 첫 화면에서 넘겨진다(쇼츠 이탈 65.7%).
+# 그림 한 장을 전체 배경으로 깔고 영상 내내 천천히 당긴다. 장면은 투명해져 그림이 비친다.
+# 글자 가독성은 스크림(위·아래 진하게, 글자 자리 중간도 톤다운)이 맡는다.
+# 그림이 없으면 이 CSS 는 안 붙는다 → 기존 검정 화면 그대로.
+CSS_BG = """
+#bg{position:absolute;inset:-4%;background:#0A0808 url("assets/_bg.jpg") center/cover no-repeat;
+  z-index:0;transform-origin:50% 40%;filter:blur(2px) saturate(1.1);}
+/* 글자가 앉는 자리(화면 22~60%)를 가장 진하게 — 밝고 복잡한 그림에서도 읽혀야 한다 */
+#scrim{position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(10,8,8,.70) 0%,rgba(10,8,8,.45) 12%,
+    rgba(10,8,8,.72) 24%,rgba(10,8,8,.76) 58%,rgba(10,8,8,.84) 78%,rgba(10,8,8,.94) 100%);}
+.scene{background:transparent;}
+.glow{opacity:.18 !important;}
+.h1,.statement,.quote-text,.kp,.num,.label,.sub,.closer{text-shadow:0 4px 24px rgba(0,0,0,.55);}
+"""
+
 
 def esc(s):
     return (s or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
@@ -389,10 +406,20 @@ def scene_js(i, sc, acc):
     return "\n".join(out)
 
 
-def build_html(scenes, total, acc="#D97757"):
+def build_html(scenes, total, acc="#D97757", bg=False):
     css = f":root{{--acc:{acc};}}\n" + CSS.replace("#D97757", "var(--acc,#D97757)")
     parts = [scene_html(i, sc, acc) for i, sc in enumerate(scenes)]
     js = "\n".join(scene_js(i, sc, acc) for i, sc in enumerate(scenes))
+    bg_html = ""
+    if bg:
+        css += CSS_BG
+        bg_html = '<div id="bg"></div><div id="scrim"></div>\n'
+        # 영상 내내 천천히 당긴다 — 정지 사진이 아니라는 신호
+        js += f'\ntl.fromTo("#bg",{{scale:1.0}},{{scale:1.12,duration:{total:.2f},ease:"none"}},0);'
+        # ★장면이 투명해져서 다음 장면이 들어올 때 이전 글자가 비쳐 겹친다 → 나가는 장면을 지운다
+        for i in range(len(scenes) - 1):
+            js += (f'\ntl.to("#s{i}",{{opacity:0,duration:0.35,ease:"power1.in"}},'
+                   f'{scenes[i + 1]["start"]:.2f});')
     return f"""<!doctype html>
 <html lang="ko"><head><meta charset="UTF-8" />
 <meta name="viewport" content="width=1080, height=1920" />
@@ -400,7 +427,7 @@ def build_html(scenes, total, acc="#D97757"):
 <style>{css}</style></head>
 <body>
 <div id="root" data-composition-id="main" data-start="0" data-duration="{total:.2f}" data-width="1080" data-height="1920">
-{''.join(parts)}
+{bg_html}{''.join(parts)}
 <div id="progbase"></div><div id="prog"></div>
 <div id="fade"></div>
 </div>
@@ -423,6 +450,26 @@ def synth_vo(text, out_mp3):
         "--text", text, "--write-media", out_mp3])
 
 
+def _stage_bg(src):
+    """키비주얼을 HyperFrames 프로젝트 assets/_bg.jpg 로 옮긴다. 없거나 실패하면 False(검정 배경).
+
+    ★이전 실행의 _bg.jpg 가 남아 엉뚱한 그림이 깔리지 않게, 그림이 없을 때는 지운다.
+    """
+    dst = os.path.join(PROJ, "assets", "_bg.jpg")
+    if os.path.exists(dst):
+        os.remove(dst)
+    if not src or not os.path.exists(src):
+        return False
+    try:
+        from PIL import Image, ImageOps
+        img = ImageOps.fit(Image.open(src).convert("RGB"), (W, H), Image.LANCZOS)
+        img.save(dst, "JPEG", quality=90)
+        return True
+    except Exception as e:  # noqa: BLE001
+        sys.stderr.write(f"[warn] 키비주얼 준비 실패 → 검정 배경: {e}\n")
+        return False
+
+
 def build_motion(spec, out_mp4, workdir, quality="standard"):
     os.makedirs(workdir, exist_ok=True)
     os.environ["PATH"] = os.environ.get("PATH", "") + os.pathsep + os.path.dirname(FFMPEG)
@@ -439,9 +486,10 @@ def build_motion(spec, out_mp4, workdir, quality="standard"):
         start += vis - OVERLAP
     total = round(scenes[-1]["start"] + (probe_dur(scenes[-1]["_vo"]) + PAD), 2)
     # ③ HTML
+    has_bg = _stage_bg(spec.get("_bg"))
     with open(os.path.join(PROJ, "index.html"), "w", encoding="utf-8") as f:
         acc = spec.get("accent") or topic_accent(spec.get("topic", ""))
-        f.write(build_html(scenes, total, acc))
+        f.write(build_html(scenes, total, acc, bg=has_bg))
     # ④ render
     silent = os.path.join(workdir, "silent.mp4")
     r = subprocess.run(f'npx --yes hyperframes@0.7.9 render --quality {quality} --output "{silent}"',

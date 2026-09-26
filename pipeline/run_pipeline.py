@@ -81,6 +81,29 @@ def resolve_spec(sb_path, sb, args):
     raise RuntimeError("장면 스펙 없음 — --spec 지정, output/specs/ 사전생성, 또는 ANTHROPIC_API_KEY 필요")
 
 
+def _prepare_bg(sb, spec, wd):
+    """영상 배경 키비주얼(best-effort). 성공하면 spec['_bg'] 에 경로를 싣는다.
+
+    검정 배경 + 글자만 있는 화면은 카드뉴스처럼 보여 첫 화면에서 스와이프된다.
+    커버용으로 어차피 만들던 그림을 ★렌더 전에 당겨 만들어 영상 배경에도 깐다.
+    같은 그림을 커버가 재사용하므로(sb['_bg_raw']) 생성 횟수는 그대로다.
+    실패하면 아무것도 안 싣는다 → 렌더러는 기존 검정 배경으로 그린다.
+    """
+    if config.env("SHORTS_BG", "1") in ("0", "false", "False", ""):
+        return None
+    try:
+        import cover_short
+        timeout = int(config.env("SHORTS_BG_TIMEOUT", "240") or "240")
+        bg = cover_short.build_bg(sb, os.path.join(wd, "keyvisual.png"), timeout_sec=timeout)
+    except Exception as e:  # noqa: BLE001
+        sys.stderr.write(f"[warn] 키비주얼 예외 → 검정 배경: {e}\n")
+        bg = None
+    if bg:
+        spec["_bg"] = bg
+        sb["_bg_raw"] = bg
+    return bg
+
+
 def _prepare_cover(video, sb, base):
     """소셜 미리보기 커버 준비(best-effort). (커버이미지경로, 소셜영상경로, 소스태그) 반환.
 
@@ -103,7 +126,8 @@ def _prepare_cover(video, sb, base):
 
     cover_img, src = None, "none"
     try:
-        c = cover_short.build_cover(sb, os.path.join(wd, "cover.jpg"), wd, timeout_sec=timeout)
+        c = cover_short.build_cover(sb, os.path.join(wd, "cover.jpg"), wd, timeout_sec=timeout,
+                                    raw=sb.get("_bg_raw"))
         if c:
             cover_img, src = c, "qwen"
         else:
@@ -204,6 +228,7 @@ def process(sb_path, args, led):
         out_mp4 = str(config.RENDERS_DIR / f"{sb.get('date','out')}{suffix}_final.mp4")
         wd = str(config.OUTPUT / "_work" / f"{sb.get('date','')}{suffix}")
         config.ensure_dirs()
+        _prepare_bg(sb, spec, wd)
         res["video"] = motion_short.build_motion(spec, out_mp4, wd, quality=args.quality)
     except Exception as e:  # noqa: BLE001
         res["error"] = f"render: {e}"
