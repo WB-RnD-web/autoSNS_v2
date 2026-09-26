@@ -79,11 +79,13 @@ def publish_reel(video_url: str, caption: str, share_to_feed: bool = True,
         code = s.json().get("status_code")
         if code == "FINISHED":
             break
+        # ★SystemExit 가 아니라 RuntimeError — do_social 이 잡아 요약에 남기고 잡은 계속 간다
+        #   (SystemExit 는 except Exception 을 뚫고 잡 전체를 exit 1 로 끝냈다)
         if code == "ERROR":
-            raise SystemExit(f"[error] IG 미디어 처리 실패: {s.json()}")
+            raise RuntimeError(f"IG 미디어 처리 실패: {s.json()}")
         time.sleep(5)
     else:
-        raise SystemExit("[error] IG 미디어 처리 타임아웃")
+        raise RuntimeError("IG 미디어 처리 타임아웃")
 
     # 3) 게시
     p = requests.post(f"{GRAPH}/{user_id}/media_publish",
