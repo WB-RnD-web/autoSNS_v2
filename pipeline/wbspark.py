@@ -53,6 +53,30 @@ def _headers() -> dict:
     return {"Authorization": f"Bearer {tok}"} if tok else {}
 
 
+# ── '글자 넣지 마' 문구 제거 (2026-09-27 실측) ─────────────────
+# tools/wbspark_route_check.py 로 확정: 같은 그림에 "no text, no letters, no watermark" 를
+# 붙이면 needs_text() 가 걸려 z-image-turbo(80초) → qwen-image(198초)로 간다.
+# 글자를 빼라는 문장이 글자 모델을 부르고 있었다. Z-Image 는 시키지 않으면 글자를 거의 안 그리므로
+# wbSpark 로 보낼 때만 이 부정형을 지운다(FLUX 경로 imagegen.py 는 그대로 — 거기선 필요하다).
+# 루틴이 쓴 thumbnail_hook 안의 "no text" 도 여기서 같이 걸러진다. 끄기: WBSPARK_KEEP_NEGATIVES=1
+import re as _re
+
+_NEG_TEXT = _re.compile(
+    r"(?i)(?:^|[,.;]\s*|\s)(?:no|without)\s+(?:any\s+)?"
+    r"(?:text|letters?|words?|watermarks?|typography|captions?|logos?|titles?|writing)"
+    r"(?:\s+(?:in|on)\s+(?:the\s+)?image)?(?=\s*(?:[,.;]|$))")
+_TEXT_FREE = _re.compile(r"(?i)(?:^|[,.;]\s*|\s)text[- ]free(?=\s*(?:[,.;]|$))")
+
+
+def strip_text_negatives(prompt: str) -> str:
+    if os.environ.get("WBSPARK_KEEP_NEGATIVES") in ("1", "true", "True"):
+        return prompt
+    out = _TEXT_FREE.sub("", _NEG_TEXT.sub("", prompt))
+    out = _re.sub(r"\s*,(\s*,)+", ",", out)          # 빈 항목이 남긴 ", ,"
+    out = _re.sub(r"\s+([,.;])", r"\1", out).strip(" ,;")
+    return out
+
+
 def generate_image(prompt: str, out_path: str,
                    timeout_sec: int = 720, poll_sec: float = 4.0,
                    model: str | None = None) -> bool:
@@ -66,6 +90,7 @@ def generate_image(prompt: str, out_path: str,
     """
     requests = _requests()
     base, headers = _base(), _headers()
+    prompt = strip_text_negatives(prompt)
     body = {"type": "image", "prompt": prompt}
     mdl = model or os.environ.get("WBSPARK_MODEL")
     if mdl:
