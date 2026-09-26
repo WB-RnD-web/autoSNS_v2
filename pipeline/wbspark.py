@@ -148,6 +148,46 @@ def generate_image(prompt: str, out_path: str,
         return False
 
 
+def tts(text: str, out_path: str, voice: str, timeout_sec: int = 180,
+        poll_sec: float = 1.5) -> bool:
+    """Supertonic 프리셋 음성합성(F1~F5 / M1~M5) → out_path 에 WAV. 성공 시 True.
+
+    cpu 레인이라 GPU 작업(키비주얼 등) 뒤에 줄 서지 않는다. 한 문장 6~10초(2026-09-27 실측).
+    실패는 경고 후 False — 호출측이 edge-tts 로 되돌아간다.
+    """
+    requests = _requests()
+    base, headers = _base(), _headers()
+    try:
+        r = requests.post(f"{base}/jobs", json={"type": "tts", "prompt": text, "voice": voice},
+                          headers=headers, timeout=30)
+        job_id = r.json().get("job_id") if r.status_code == 200 else None
+        if not job_id:
+            sys.stderr.write(f"[warn] wbSpark TTS 제출 실패 {r.status_code}: {r.text[:200]}\n")
+            return False
+        deadline = time.monotonic() + timeout_sec
+        while time.monotonic() < deadline:
+            time.sleep(poll_sec)
+            js = requests.get(f"{base}/jobs/{job_id}", headers=headers, timeout=20).json() or {}
+            st = js.get("status")
+            if st == "done":
+                f = requests.get(f"{base}/jobs/{job_id}/file", headers=headers, timeout=60)
+                if f.status_code != 200 or not f.content:
+                    sys.stderr.write(f"[warn] wbSpark TTS 파일 수신 실패 {f.status_code}\n")
+                    return False
+                os.makedirs(os.path.dirname(os.path.abspath(out_path)) or ".", exist_ok=True)
+                with open(out_path, "wb") as fp:
+                    fp.write(f.content)
+                return True
+            if st in ("error", "failed"):
+                sys.stderr.write(f"[warn] wbSpark TTS 실패: {str(js)[:200]}\n")
+                return False
+        sys.stderr.write(f"[warn] wbSpark TTS 타임아웃({timeout_sec}s)\n")
+        return False
+    except Exception as e:  # noqa: BLE001
+        sys.stderr.write(f"[warn] wbSpark TTS 예외: {e}\n")
+        return False
+
+
 def main() -> int:
     import argparse
     ap = argparse.ArgumentParser(description="wbSpark 이미지 생성(테스트)")

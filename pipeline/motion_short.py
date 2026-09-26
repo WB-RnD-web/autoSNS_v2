@@ -33,9 +33,15 @@ VO_RATE = os.environ.get("VO_RATE", "+6%")
 # 끄기: PRESENTER=0 · 한 목소리로: PRESENTER_DUO=0 (그때는 별하 혼자 말한다)
 PRESENTER_DIR = os.path.join(PROJ, "assets", "presenter")
 SPEAKERS = {
-    "byeolha": {"name": "별하", "voice": NARRATOR},
-    "byeori": {"name": "별이", "voice": os.environ.get("VO_VOICE_BYEORI", "ko-KR-HyunsuMultilingualNeural")},
+    "byeolha": {"name": "별하", "voice": NARRATOR,
+                "preset": os.environ.get("VO_PRESET_BYEOLHA", "F1")},
+    "byeori": {"name": "별이", "voice": os.environ.get("VO_VOICE_BYEORI", "ko-KR-HyunsuMultilingualNeural"),
+               "preset": os.environ.get("VO_PRESET_BYEORI", "M1")},
 }
+# 목소리 엔진: edge(기본, MS Edge 읽어주기) | wbspark(DGX Supertonic 프리셋 F1~F5/M1~M5).
+# wbspark 가 실패하면 그 장면만 edge 로 되돌아간다. 2026-09-27 Whisper 역인식 실측에서
+# F3·F4 는 '1위'를 '2비'로 읽었다 — 고를 때 피할 것.
+VO_BACKEND = os.environ.get("VO_BACKEND", "edge").strip().lower()
 PAD = 0.6        # 내레이션 뒤 여유
 OVERLAP = 0.4    # 장면 전환 겹침
 BRAND = {"ink": "#0A0808", "cream": "#EDD9BC", "coral": "#D97757", "red": "#E5484D"}
@@ -542,9 +548,24 @@ window.__timelines["main"] = tl;
 """
 
 
-def synth_vo(text, out_mp3, voice=None):
+def synth_vo(text, out_base, voice=None, preset=None):
+    """내레이션 한 줄 → 음성 파일. out_base 는 확장자 없는 경로, 만든 파일 경로를 돌려준다.
+
+    VO_BACKEND=wbspark 면 DGX Supertonic 프리셋(wav)을 먼저 쓰고, 실패하면 edge-tts(mp3).
+    """
+    if VO_BACKEND == "wbspark" and preset:
+        try:
+            import wbspark
+            wav = out_base + ".wav"
+            if wbspark.tts(text, wav, preset):
+                return wav
+        except Exception as e:  # noqa: BLE001
+            sys.stderr.write(f"[warn] Supertonic 예외: {e}\n")
+        sys.stderr.write("[warn] Supertonic 실패 → 이 장면은 edge-tts\n")
+    mp3 = out_base + ".mp3"
     sh([sys.executable, "-m", "edge_tts", "--voice", voice or NARRATOR, f"--rate={VO_RATE}",
-        "--text", text, "--write-media", out_mp3])
+        "--text", text, "--write-media", mp3])
+    return mp3
 
 
 def _stage_bg(src):
@@ -577,10 +598,12 @@ def build_motion(spec, out_mp4, workdir, quality="standard"):
     # ① VO + 길이 → 타이밍 (진행자 2인이면 장면마다 말하는 사람 목소리)
     start = 0.0
     for i, sc in enumerate(scenes):
-        mp3 = os.path.join(workdir, f"vo_{i}.mp3")
-        synth_vo(sc["narration"], mp3, voice=SPEAKERS[sc["_spk"]]["voice"] if duo else None)
-        sc["_vo"] = mp3
-        vis = probe_dur(mp3) + PAD
+        # duo 가 아니면 assign_speakers 가 전부 별하로 둔다 → 별하 목소리 = 기존 단일 내레이터
+        spk = SPEAKERS[sc["_spk"]]
+        vo = synth_vo(sc["narration"], os.path.join(workdir, f"vo_{i}"),
+                      voice=spk["voice"], preset=spk["preset"])
+        sc["_vo"] = vo
+        vis = probe_dur(vo) + PAD
         sc["start"] = round(start, 2)
         sc["clip"] = round(vis + (0.5 if i < len(scenes) - 1 else 0.0), 2)
         start += vis - OVERLAP
@@ -590,7 +613,7 @@ def build_motion(spec, out_mp4, workdir, quality="standard"):
     with open(os.path.join(PROJ, "index.html"), "w", encoding="utf-8") as f:
         acc = spec.get("accent") or topic_accent(spec.get("topic", ""))
         f.write(build_html(scenes, total, acc, bg=has_bg, presenter=pr_on))
-    print(f"   🎙️ 진행자: {'별이·별하 번갈아' if duo else ('별하' if pr_on else '없음')}")
+    print(f"   🎙️ 진행자: {'별이·별하 번갈아' if duo else ('별하' if pr_on else '없음')} · 목소리 {VO_BACKEND}")
     # ④ render
     silent = os.path.join(workdir, "silent.mp4")
     r = subprocess.run(f'npx --yes hyperframes@0.7.9 render --quality {quality} --output "{silent}"',

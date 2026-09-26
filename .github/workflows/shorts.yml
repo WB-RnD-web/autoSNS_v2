@@ -79,6 +79,14 @@ jobs:
       #   180 은 정상 작업까지 끊는다. (실패해도 영상 프레임 폴백이라 치명적이진 않다)
       SHORTS_COVER_TIMEOUT: ${{ vars.SHORTS_COVER_TIMEOUT || '240' }}
       SHORTS_COVER_HOLD: ${{ vars.SHORTS_COVER_HOLD || '0.7' }}
+      # ★레포 변수는 여기 적어야 파이썬에 닿는다(적지 않으면 '끄기' 스위치가 먹지 않는다).
+      SHORTS_BG: ${{ vars.SHORTS_BG || '1' }}                 # 키비주얼 배경 (0=끄기)
+      SHORTS_BG_TIMEOUT: ${{ vars.SHORTS_BG_TIMEOUT || '240' }}
+      PRESENTER: ${{ vars.PRESENTER || '1' }}                 # 별이·별하 진행자 (0=끄기)
+      PRESENTER_DUO: ${{ vars.PRESENTER_DUO || '1' }}         # 0=별하 혼자
+      VO_BACKEND: ${{ vars.VO_BACKEND || 'edge' }}            # edge | wbspark(Supertonic)
+      VO_PRESET_BYEOLHA: ${{ vars.VO_PRESET_BYEOLHA || 'F1' }}
+      VO_PRESET_BYEORI: ${{ vars.VO_PRESET_BYEORI || 'M1' }}
     steps:
       - uses: actions/checkout@v4
         with:
