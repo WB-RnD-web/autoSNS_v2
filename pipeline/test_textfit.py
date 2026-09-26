@@ -128,6 +128,27 @@ for i, sc in enumerate(TYPES):
             miss.append(sel)
     ck(f"{sc['type']:<10} 셀렉터 정합", not miss, f"없는 것: {miss}")
 
+print("── 키비주얼 배경 on/off ──")
+# 그림이 없을 때는 ★기존 화면과 한 글자도 다르면 안 된다(실패 시 폴백이 기존 모습이어야 한다).
+_sc = [{"type": "statement", "text": "가나다 라마", "highlight": "라마", "narration": "x",
+        "start": 0.0, "clip": 3.0},
+       {"type": "statement", "text": "바사 아자", "highlight": "아자", "narration": "y",
+        "start": 2.6, "clip": 3.0}]
+_off = M.build_html(_sc, 5.6, "#D97757")
+_on = M.build_html(_sc, 5.6, "#D97757", bg=True)
+ck("bg=False 면 배경 레이어 없음", 'id="bg"' not in _off and "_bg.jpg" not in _off)
+ck("bg=True 면 배경·스크림 레이어", 'id="bg"' in _on and 'id="scrim"' in _on)
+ck("bg=True 면 나가는 장면을 지운다(글자 겹침 방지)",
+   'tl.to("#s0",{opacity:0' in _on and 'tl.to("#s1",{opacity:0' not in _on)
+ck("bg=True 면 배경을 영상 길이만큼 당긴다", 'tl.fromTo("#bg"' in _on and "duration:5.60" in _on)
+
+import cover_short as CS  # noqa: E402
+ck("운세 토픽은 캐릭터 그림체", CS._fields({"topic": "fortune"})[2] == "topic:fortune")
+ck("별자리(horoscope)는 천체 그림체", CS._fields({"topic": "horoscope"})[2] == "topic:horoscope")
+ck("정치는 보도사진 톤 유지", CS._style_prompt(CS._fields({"topic": "politics"})[2]) == CS.NEWS_PRESET)
+ck("스토리보드 thumbnail_style 이 토픽보다 우선",
+   CS._fields({"topic": "fortune", "thumbnail_style": "webtoon"})[2] == "webtoon")
+
 print()
 if FAIL:
     print(f"❌ 실패 {FAIL}건")
