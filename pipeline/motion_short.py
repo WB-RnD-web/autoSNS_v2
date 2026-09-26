@@ -25,6 +25,17 @@ PROJ = os.path.join(HERE, "motion")
 W, H, FPS = 1080, 1920, 30
 NARRATOR = os.environ.get("VO_VOICE", "ko-KR-SunHiNeural")
 VO_RATE = os.environ.get("VO_RATE", "+6%")
+
+# ── 진행자(왕별이 — 별이·별하) (2026-09-27) ─────────────────
+# 카드뉴스처럼 글자만 넘어가면 '누가 말하는지'가 없다. 채널 캐릭터 둘을 화면 아래 앵커 데스크에
+# 앉히고, 장면마다 번갈아 말하게 한다(말하는 쪽이 앞으로 나오고 몸이 들썩인다).
+# 이미지: motion/assets/presenter/{byeori,byeolha}.png (투명 PNG). 없으면 진행자 없이 기존 화면.
+# 끄기: PRESENTER=0 · 한 목소리로: PRESENTER_DUO=0 (그때는 별하 혼자 말한다)
+PRESENTER_DIR = os.path.join(PROJ, "assets", "presenter")
+SPEAKERS = {
+    "byeolha": {"name": "별하", "voice": NARRATOR},
+    "byeori": {"name": "별이", "voice": os.environ.get("VO_VOICE_BYEORI", "ko-KR-HyunsuMultilingualNeural")},
+}
 PAD = 0.6        # 내레이션 뒤 여유
 OVERLAP = 0.4    # 장면 전환 겹침
 BRAND = {"ink": "#0A0808", "cream": "#EDD9BC", "coral": "#D97757", "red": "#E5484D"}
@@ -184,6 +195,81 @@ CSS_BG = """
 .h1,.statement,.quote-text,.kp,.num,.label,.sub,.closer{text-shadow:0 4px 24px rgba(0,0,0,.55);}
 """
 
+# 진행자 자리(화면 60~84%)를 비우려고 아래쪽 차트·막대를 위로 올린다.
+# 쇼츠 하단 UI(채널명·제목)는 대략 84% 아래, 오른쪽 버튼 열은 x 960 부근 — 캐릭터는 그 밖에 둔다.
+CSS_PRESENTER = """
+#pr{position:absolute;left:56px;top:1120px;width:720px;height:500px;z-index:45;pointer-events:none;}
+#pr .pc{position:absolute;bottom:78px;transform-origin:50% 100%;}
+#pr .pc img{height:100%;display:block;filter:drop-shadow(0 18px 28px rgba(0,0,0,.45));}
+#pr-byeori{left:34px;height:432px;}
+#pr-byeolha{left:334px;height:402px;}
+#desk{position:absolute;left:0;bottom:0;width:720px;height:96px;border-radius:26px;
+  background:linear-gradient(180deg,rgba(255,255,255,.97),rgba(237,217,188,.94));
+  box-shadow:0 12px 40px rgba(0,0,0,.35);}
+#desk .dot{position:absolute;left:34px;top:37px;width:22px;height:22px;border-radius:50%;background:var(--acc,#D97757);}
+#desk .t{position:absolute;left:72px;top:22px;font-weight:800;font-size:40px;color:#0A0808;letter-spacing:1px;white-space:nowrap;}
+#desk .nm{position:absolute;right:30px;top:20px;padding:6px 20px;border-radius:999px;background:#0A0808;
+  color:#EDD9BC;font-weight:800;font-size:32px;opacity:0;}
+.brand{display:none;}
+.barbase{bottom:790px;height:380px;}
+.bar{bottom:790px;}
+.track,.fill{bottom:820px;}
+.trend svg{bottom:820px;height:240px;}
+.closer{bottom:830px;}
+.ghost{top:720px;}
+/* 항목 3개가 전부 3줄이면 캐릭터 머리까지 내려온다 → 목록만 조금 위에서 시작 */
+.kpw{top:390px !important;}
+.kp{margin-top:22px;}
+"""
+
+
+def presenter_on():
+    """진행자 이미지 두 장이 다 있고 PRESENTER=0 이 아니면 켠다."""
+    if os.environ.get("PRESENTER", "1") in ("0", "false", "False"):
+        return False
+    return all(os.path.exists(os.path.join(PRESENTER_DIR, f"{k}.png")) for k in SPEAKERS)
+
+
+def assign_speakers(scenes, duo=True):
+    """장면마다 말하는 사람. 별하부터 번갈아. duo=False 면 별하 혼자."""
+    for i, sc in enumerate(scenes):
+        sc["_spk"] = "byeori" if (duo and i % 2 == 1) else "byeolha"
+    return scenes
+
+
+def presenter_html(brand):
+    pcs = "".join(f'<div class="pc" id="pr-{k}"><img src="assets/presenter/{k}.png" alt=""/></div>'
+                  for k in SPEAKERS)
+    nms = "".join(f'<span class="nm" id="nm-{k}">{esc(v["name"])}</span>' for k, v in SPEAKERS.items())
+    return (f'<div id="pr">{pcs}<div id="desk"><span class="dot"></span>'
+            f'<span class="t">{esc(brand)}</span>{nms}</div></div>\n')
+
+
+def presenter_js(scenes, total):
+    out = ['tl.set("#pr .pc",{filter:"brightness(1)",scale:1},0);',
+           'tl.fromTo("#pr",{y:520},{y:0,duration:0.7,ease:"back.out(1.3)"},0.1);']
+    half = 0.17
+    for sc in scenes:
+        sp = sc.get("_spk", "byeolha")
+        ot = "byeori" if sp == "byeolha" else "byeolha"
+        S = sc["start"]
+        out.append(f'tl.to("#pr-{sp}",{{scale:1.05,filter:"brightness(1)",duration:0.25,ease:"power2.out"}},{S:.2f});')
+        out.append(f'tl.to("#pr-{ot}",{{scale:0.93,filter:"brightness(0.62)",duration:0.25,ease:"power2.out"}},{S:.2f});')
+        out.append(f'tl.to("#nm-{sp}",{{opacity:1,duration:0.2}},{S:.2f});')
+        out.append(f'tl.to("#nm-{ot}",{{opacity:0,duration:0.2}},{S:.2f});')
+        # 말하는 동안 몸이 들썩인다(립싱크 대신). clip = 음성 + PAD + 0.5 이므로 거꾸로 음성 길이를 잡는다
+        talk = max(0.6, sc["clip"] - PAD - 0.6)
+        reps = int(talk / (2 * half)) * 2 - 1
+        if reps >= 1:
+            out.append(f'tl.to("#pr-{sp} img",{{y:-9,duration:{half},ease:"sine.inOut",yoyo:true,repeat:{reps}}},{S + 0.3:.2f});')
+        # 장면 중간에 한 번 톡 튄다 — 3초마다 뭔가 움직여야 넘기지 않는다
+        out.append(f'tl.to("#pr-{sp}",{{y:-26,duration:0.16,ease:"power2.out",yoyo:true,repeat:1}},{S + 0.3 + talk * 0.55:.2f});')
+    # 마지막엔 둘 다 앞으로 — 댓글 유도 장면에서 같이 묻는 느낌
+    end = max(0.0, total - 1.6)
+    out.append(f'tl.to("#pr .pc",{{scale:1.03,filter:"brightness(1)",duration:0.3,ease:"power2.out"}},{end:.2f});')
+    out.append(f'tl.to("#pr .pc",{{y:-20,duration:0.18,ease:"power2.out",yoyo:true,repeat:1,stagger:0.12}},{end + 0.3:.2f});')
+    return "\n".join(out)
+
 
 def esc(s):
     return (s or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
@@ -312,7 +398,7 @@ def scene_html(i, sc, acc):
                               for ln in TF.wrap(ptxt, fs, BOX_KP * 0.94))
             items.append(f'<div class="kp" id="{gid}-kp{j}" style="font-size:{fs}px">'
                          f'<span class="b">{j+1}</span><span>{ph}</span></div>')
-        body = ('<div class="wrap" style="top:480px">'
+        body = ('<div class="wrap kpw" style="top:480px">'
                 + f'<div class="label" id="{gid}-label" style="font-size:{lp}px">{lh}</div>'
                 + "".join(items) + "</div>")
     elif t == "statement":
@@ -337,7 +423,7 @@ def scene_html(i, sc, acc):
 TRANSITIONS = ["fade", "pushup", "slideleft", "zoom"]
 
 
-def scene_js(i, sc, acc):
+def scene_js(i, sc, acc, bar_h=560, presenter=False):
     gid, S = f"s{i}", sc["start"]
     out = []
     tr = "fade" if i == 0 else TRANSITIONS[1 + (i - 1) % 3]
@@ -385,7 +471,7 @@ def scene_js(i, sc, acc):
             pre, suf = sc.get("prefix", ""), sc.get("suffix", "")
             out.append(f'cu("#{gid}-num",{sc.get("from",0)},{sc.get("to",0)},{cu},1.4,v=>"{pre}"+Math.round(v)+"{suf}");')
             if sc.get("bar"):
-                out.append(f'tl.fromTo("#{gid}-bar",{{height:0}},{{height:560,duration:1.4,ease:"power2.out"}},{cu});')
+                out.append(f'tl.fromTo("#{gid}-bar",{{height:0}},{{height:{bar_h},duration:1.4,ease:"power2.out"}},{cu});')
         elif t == "gauge":
             out.append(f'cu("#{gid}-num",{sc.get("from",1)},{sc.get("to",1)},{cu},1.3,v=>Math.round(v));')
             ratio = float(sc.get("to", 1)) / max(1e-6, float(sc.get("from", 1)))
@@ -403,13 +489,23 @@ def scene_js(i, sc, acc):
         out.append(f'tl.from("#{gid}-sub",{{y:30,opacity:0,duration:0.5,ease:"power2.out"}},{S+1.6:.2f});')
         if t == "trend" and sc.get("closer"):
             out.append(f'tl.to("#{gid}-closer",{{opacity:1,y:-10,duration:0.6,ease:"power3.out"}},{S+4.3:.2f});')
+            if presenter:
+                # 진행자 자리를 비우려고 차트를 위로 올렸더니 마무리 문장과 겹친다 → 차트를 흐리게
+                out.append(f'tl.to("#{gid} svg",{{opacity:0.18,duration:0.4,ease:"power2.out"}},{S+4.2:.2f});')
     return "\n".join(out)
 
 
-def build_html(scenes, total, acc="#D97757", bg=False):
+def build_html(scenes, total, acc="#D97757", bg=False, presenter=False):
     css = f":root{{--acc:{acc};}}\n" + CSS.replace("#D97757", "var(--acc,#D97757)")
     parts = [scene_html(i, sc, acc) for i, sc in enumerate(scenes)]
-    js = "\n".join(scene_js(i, sc, acc) for i, sc in enumerate(scenes))
+    bar_h = 360 if presenter else 560
+    js = "\n".join(scene_js(i, sc, acc, bar_h=bar_h, presenter=presenter)
+                   for i, sc in enumerate(scenes))
+    pr_html = ""
+    if presenter:
+        css += CSS_PRESENTER
+        pr_html = presenter_html(scenes[0].get("brand", "일상공감뉴스") if scenes else "일상공감뉴스")
+        js += "\n" + presenter_js(scenes, total)
     bg_html = ""
     if bg:
         css += CSS_BG
@@ -428,7 +524,7 @@ def build_html(scenes, total, acc="#D97757", bg=False):
 <body>
 <div id="root" data-composition-id="main" data-start="0" data-duration="{total:.2f}" data-width="1080" data-height="1920">
 {bg_html}{''.join(parts)}
-<div id="progbase"></div><div id="prog"></div>
+{pr_html}<div id="progbase"></div><div id="prog"></div>
 <div id="fade"></div>
 </div>
 <script>
@@ -445,8 +541,8 @@ window.__timelines["main"] = tl;
 """
 
 
-def synth_vo(text, out_mp3):
-    sh([sys.executable, "-m", "edge_tts", "--voice", NARRATOR, f"--rate={VO_RATE}",
+def synth_vo(text, out_mp3, voice=None):
+    sh([sys.executable, "-m", "edge_tts", "--voice", voice or NARRATOR, f"--rate={VO_RATE}",
         "--text", text, "--write-media", out_mp3])
 
 
@@ -474,11 +570,14 @@ def build_motion(spec, out_mp4, workdir, quality="standard"):
     os.makedirs(workdir, exist_ok=True)
     os.environ["PATH"] = os.environ.get("PATH", "") + os.pathsep + os.path.dirname(FFMPEG)
     scenes = spec["scenes"]
-    # ① VO + 길이 → 타이밍
+    pr_on = presenter_on()
+    duo = pr_on and os.environ.get("PRESENTER_DUO", "1") not in ("0", "false", "False")
+    assign_speakers(scenes, duo=duo)
+    # ① VO + 길이 → 타이밍 (진행자 2인이면 장면마다 말하는 사람 목소리)
     start = 0.0
     for i, sc in enumerate(scenes):
         mp3 = os.path.join(workdir, f"vo_{i}.mp3")
-        synth_vo(sc["narration"], mp3)
+        synth_vo(sc["narration"], mp3, voice=SPEAKERS[sc["_spk"]]["voice"] if duo else None)
         sc["_vo"] = mp3
         vis = probe_dur(mp3) + PAD
         sc["start"] = round(start, 2)
@@ -489,7 +588,8 @@ def build_motion(spec, out_mp4, workdir, quality="standard"):
     has_bg = _stage_bg(spec.get("_bg"))
     with open(os.path.join(PROJ, "index.html"), "w", encoding="utf-8") as f:
         acc = spec.get("accent") or topic_accent(spec.get("topic", ""))
-        f.write(build_html(scenes, total, acc, bg=has_bg))
+        f.write(build_html(scenes, total, acc, bg=has_bg, presenter=pr_on))
+    print(f"   🎙️ 진행자: {'별이·별하 번갈아' if duo else ('별하' if pr_on else '없음')}")
     # ④ render
     silent = os.path.join(workdir, "silent.mp4")
     r = subprocess.run(f'npx --yes hyperframes@0.7.9 render --quality {quality} --output "{silent}"',
