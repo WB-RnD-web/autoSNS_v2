@@ -47,7 +47,8 @@ def get_service():
 
 
 def upload(video: str, title: str, description: str, privacy: str = "private",
-           tags: list[str] | None = None, localizations: dict | None = None) -> str:
+           tags: list[str] | None = None, localizations: dict | None = None,
+           synthetic: bool | None = None) -> str:
     from googleapiclient.http import MediaFileUpload
     yt = get_service()
     body = {
@@ -56,11 +57,26 @@ def upload(video: str, title: str, description: str, privacy: str = "private",
                     "categoryId": "25"},  # News & Politics
         "status": {"privacyStatus": privacy, "selfDeclaredMadeForKids": False},
     }
-    req = yt.videos().insert(part="snippet,status", body=body,
-                             media_body=MediaFileUpload(video, chunksize=-1, resumable=True))
-    resp = None
+    # 뉴스 쇼츠 배경은 실제 장소를 사진처럼 그린 AI 이미지다 → '변형·합성 콘텐츠' 표시(Help 14328491:
+    # 사실적인 합성은 공개 의무, 표시 자체는 도달에 영향 없음). 호출측이 토픽을 보고 정한다.
+    if synthetic is not None:
+        body["status"]["containsSyntheticMedia"] = bool(synthetic)
+
+    def _req():
+        return yt.videos().insert(part="snippet,status", body=body,
+                                  media_body=MediaFileUpload(video, chunksize=-1, resumable=True))
+
+    req, resp = _req(), None
     while resp is None:
-        status, resp = req.next_chunk()
+        try:
+            status, resp = req.next_chunk()
+        except Exception as e:  # noqa: BLE001
+            if "containsSyntheticMedia" in str(e) and "containsSyntheticMedia" in body["status"]:
+                print(f"   ⚠️ containsSyntheticMedia 거부 → 빼고 재시도: {str(e)[:160]}")
+                body["status"].pop("containsSyntheticMedia")
+                req = _req()
+                continue
+            raise
         if status:
             print(f"   업로드 {int(status.progress() * 100)}%")
     vid = resp["id"]

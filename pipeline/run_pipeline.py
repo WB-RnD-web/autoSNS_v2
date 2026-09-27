@@ -46,12 +46,27 @@ def has_credentials():
     return bool(config.env("YT_TOKEN_JSON")) or os.path.exists(token)
 
 
+# 그림체 토픽(운세 캐릭터·별자리 천체 일러스트)은 누가 봐도 그림이라 표시 대상이 아니다.
+ILLUSTRATED_TOPICS = ("fortune", "horoscope", "zodiac", "star", "luck", "love")
+
+
+def synthetic_label(sb: dict, spec: dict) -> bool | None:
+    """AI 키비주얼을 깐 사실적(보도사진 톤) 쇼츠면 True. 키비주얼이 없으면 None(필드 안 보냄)."""
+    if not spec.get("_bg"):
+        return None
+    topic = str(sb.get("topic") or spec.get("topic") or "").lower()
+    return not any(topic.startswith(t) for t in ILLUSTRATED_TOPICS)
+
+
 def upload_with_retry(video, meta, retries=2):
     last = None
     for attempt in range(1, retries + 2):
         try:
+            # 루틴이 스토리보드에 써준 번역을 그대로 넘긴다(없으면 yt_i18n 이 Spark 로 번역).
             return upload_youtube.upload(video, meta["title"], meta["description"],
-                                         meta["privacy"], tags=meta["tags"])
+                                         meta["privacy"], tags=meta["tags"],
+                                         localizations=meta.get("localizations"),
+                                         synthetic=meta.get("synthetic"))
         except Exception as e:  # noqa: BLE001
             last = e
             sys.stderr.write(f"[upload 재시도 {attempt}/{retries + 1}] {e}\n")
@@ -241,7 +256,17 @@ def process(sb_path, args, led):
     if args.no_upload:
         return res
     meta = build_meta(sb, args.force_private)
-    print(f"   업로드 메타: title='{meta['title']}' privacy={meta['privacy']}")
+    meta["synthetic"] = synthetic_label(sb, spec)
+    # Supertonic 3 는 OpenRAIL-M(상업 이용 가능 · 사용 제한 · 출처 표기) — 설명란 끝에 한 줄.
+    if motion_short.VO_BACKEND == "wbspark" and "Supertonic" not in meta["description"]:
+        meta["description"] = f"{meta['description']}\n\n🎙️ Voice: Supertonic (Supertone · OpenRAIL-M)"
+    try:
+        import yt_i18n
+        meta["localizations"] = yt_i18n.from_spec(sb) or None
+    except Exception:  # noqa: BLE001
+        meta["localizations"] = None
+    print(f"   업로드 메타: title='{meta['title']}' privacy={meta['privacy']} "
+          f"AI표시={meta['synthetic']} 번역={list(meta['localizations'] or [])}")
     if args.dry_run_upload:
         res["uploaded"] = f"[dry-run] privacy={meta['privacy']}"
         return res
