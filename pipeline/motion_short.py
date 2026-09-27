@@ -233,10 +233,31 @@ CSS_PRESENTER = """
 """
 
 
-def presenter_on():
-    """진행자 이미지 두 장이 다 있고 PRESENTER=0 이 아니면 켠다."""
+# 진행자를 세우는 토픽(접두사 매칭). 정치·주식·경제는 ★뺀다 (2026-09-27)
+# 유튜브 수익 창출 정책(2026-07 개정, Help 1311392)은 건강·법률·★금융·정치 정보를 전달하는
+# 'AI 생성 페르소나' 채널을 수익 창출 불가로 명시한다. 별이·별하는 AI 이미지 + 합성 음성이라
+# 여기에 해당할 수 있다 → 그 토픽에서는 진행자 없이 기존 화면(단일 내레이션)으로 나간다.
+# 바꾸기: 레포 변수 PRESENTER_TOPICS (쉼표 구분). 비우면 아래 기본값.
+PRESENTER_TOPICS_DEFAULT = "fortune,horoscope,zodiac,star,luck,love"
+
+
+def presenter_topics():
+    raw = (os.environ.get("PRESENTER_TOPICS") or "").strip() or PRESENTER_TOPICS_DEFAULT
+    return [t.strip().lower() for t in raw.split(",") if t.strip()]
+
+
+def presenter_on(topic=None):
+    """진행자 이미지 두 장이 다 있고 PRESENTER=0 이 아니면 켠다.
+
+    topic 을 주면 PRESENTER_TOPICS 에 든 토픽(접두사 매칭)일 때만 켠다.
+    topic=None 은 토픽 검사를 건너뛴다(이미지·스위치만 본다).
+    """
     if os.environ.get("PRESENTER", "1") in ("0", "false", "False"):
         return False
+    if topic is not None:
+        t = (topic or "").strip().lower()
+        if not any(t == k or t.startswith(k) for k in presenter_topics()):
+            return False
     return all(os.path.exists(os.path.join(PRESENTER_DIR, f"{k}.png")) for k in SPEAKERS)
 
 
@@ -613,7 +634,7 @@ def build_motion(spec, out_mp4, workdir, quality="standard"):
     os.makedirs(workdir, exist_ok=True)
     os.environ["PATH"] = os.environ.get("PATH", "") + os.pathsep + os.path.dirname(FFMPEG)
     scenes = spec["scenes"]
-    pr_on = presenter_on()
+    pr_on = presenter_on(spec.get("topic", ""))
     duo = pr_on and os.environ.get("PRESENTER_DUO", "1") not in ("0", "false", "False")
     assign_speakers(scenes, duo=duo)
     # ① VO + 길이 → 타이밍 (진행자 2인이면 장면마다 말하는 사람 목소리)
@@ -634,7 +655,8 @@ def build_motion(spec, out_mp4, workdir, quality="standard"):
     with open(os.path.join(PROJ, "index.html"), "w", encoding="utf-8") as f:
         acc = spec.get("accent") or topic_accent(spec.get("topic", ""))
         f.write(build_html(scenes, total, acc, bg=has_bg, presenter=pr_on))
-    print(f"   🎙️ 진행자: {'별이·별하 번갈아' if duo else ('별하' if pr_on else '없음')} · 목소리 {VO_BACKEND}")
+    why = "" if pr_on or not presenter_on() else f" (토픽 {spec.get('topic', '')!r} 은 진행자 제외 — PRESENTER_TOPICS)"
+    print(f"   🎙️ 진행자: {'별이·별하 번갈아' if duo else ('별하' if pr_on else '없음')}{why} · 목소리 {VO_BACKEND}")
     # ④ render
     silent = os.path.join(workdir, "silent.mp4")
     r = subprocess.run(f'npx --yes hyperframes@0.7.9 render --quality {quality} --output "{silent}"',

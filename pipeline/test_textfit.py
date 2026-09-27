@@ -151,6 +151,14 @@ ck("스토리보드 thumbnail_style 이 토픽보다 우선",
 
 print("── 진행자(별이·별하) ──")
 ck("진행자 이미지 두 장이 레포에 있다(없으면 조용히 꺼진다)", M.presenter_on())
+ck("운세·별자리는 진행자 켜짐", M.presenter_on("fortune") and M.presenter_on("horoscope"))
+ck("정치·주식·경제는 진행자 꺼짐(AI 페르소나 정책)",
+   not any(M.presenter_on(t) for t in ("politics", "stock", "stock_us", "economy", "world", "")))
+os.environ["PRESENTER_TOPICS"] = "politics"
+ck("PRESENTER_TOPICS 로 바꿀 수 있다", M.presenter_on("politics") and not M.presenter_on("fortune"))
+os.environ["PRESENTER_TOPICS"] = ""
+ck("PRESENTER_TOPICS 가 비면 기본값", M.presenter_on("fortune") and not M.presenter_on("politics"))
+del os.environ["PRESENTER_TOPICS"]
 _sp = M.assign_speakers([dict(s) for s in _sc] + [dict(_sc[0])], duo=True)
 ck("별하부터 번갈아 말한다", [s["_spk"] for s in _sp] == ["byeolha", "byeori", "byeolha"])
 ck("duo=False 면 별하 혼자", {s["_spk"] for s in M.assign_speakers([dict(s) for s in _sc], duo=False)} == {"byeolha"})
