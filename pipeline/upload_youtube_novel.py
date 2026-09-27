@@ -75,7 +75,8 @@ def get_service():
 # ── 업로드(일반 동영상) ──
 def upload_video(yt, video: str, title: str, description: str,
                  privacy: str = "unlisted", tags: list[str] | None = None,
-                 category_id: str | None = None) -> str:
+                 category_id: str | None = None, default_language: str | None = None,
+                 synthetic: bool | None = None) -> str:
     from googleapiclient.http import MediaFileUpload
     category_id = category_id or config.env("NOVEL_YT_CATEGORY", "24")  # 24=Entertainment
     body = {
@@ -88,13 +89,37 @@ def upload_video(yt, video: str, title: str, description: str,
         # 16:9 일반 동영상. #shorts 없음. 성인 대상(아동용 아님).
         "status": {"privacyStatus": privacy, "selfDeclaredMadeForKids": False},
     }
-    req = yt.videos().insert(part="snippet,status", body=body,
-                             media_body=MediaFileUpload(video, chunksize=-1, resumable=True))
-    resp = None
+    # 기본 언어: 영어 제목으로 올리는 해외 시리즈(Korea Sleep Sounds)가 'en' 을 준다.
+    #   비어 있으면 스튜디오에서 번역을 붙일 수 없다(2026-09-27 ASMR 전부 미설정이었다).
+    if default_language:
+        body["snippet"]["defaultLanguage"] = default_language
+    # AI 로 만든 사실적 장면 표시. 유튜브는 이 표시가 도달에 영향이 없다고 밝혔다(Help 14328491).
+    if synthetic is not None:
+        body["status"]["containsSyntheticMedia"] = bool(synthetic)
+    # 8시간 움직임 영상은 수 GB 다 — 한 번에 보내지 않고 64MB 조각으로(재개 가능 업로드).
+    chunk = -1 if os.path.getsize(video) < 1024 ** 3 else 64 * 1024 * 1024
+
+    def _req():
+        return yt.videos().insert(part="snippet,status", body=body,
+                                  media_body=MediaFileUpload(video, chunksize=chunk, resumable=True))
+
+    req, resp, last = _req(), None, -1
     while resp is None:
-        status, resp = req.next_chunk()
+        try:
+            status, resp = req.next_chunk()
+        except Exception as e:  # noqa: BLE001
+            # containsSyntheticMedia 를 모르는 API 면 첫 요청이 400 — 그 필드만 빼고 처음부터.
+            if "containsSyntheticMedia" in str(e) and "containsSyntheticMedia" in body["status"]:
+                print(f"   ⚠️ containsSyntheticMedia 거부 → 빼고 재시도: {str(e)[:160]}")
+                body["status"].pop("containsSyntheticMedia")
+                req = _req()
+                continue
+            raise
         if status:
-            print(f"   업로드 {int(status.progress() * 100)}%")
+            pct = int(status.progress() * 100)
+            if pct // 10 != last:                    # 조각이 많아도 10% 단위로만 찍는다
+                last = pct // 10
+                print(f"   업로드 {pct}%")
     vid = resp["id"]
     # ⚠️ "16:9 일반영상" 을 하드코딩해 두었더니 ★쇼츠 로그에도 그대로 찍혔다.
     #   이 업로더는 롱폼(16:9)과 SCP 쇼츠(9:16)가 ★같이 쓴다 — 실제 비율을 재서 적는다.
@@ -219,15 +244,20 @@ def publish(video: str, title: str, description: str, privacy: str,
             playlist_title: str = "", tags: list[str] | None = None,
             category_id: str | None = None, thumbnail: str | None = None,
             srt: str | None = None, localizations: dict | None = None,
-            srts: dict | None = None) -> dict:
+            srts: dict | None = None, default_language: str | None = None,
+            i18n_langs: list[str] | None = None, playlist_description: str | None = None,
+            synthetic: bool | None = None) -> dict:
     """업로드 → 썸네일 → 재생목록 → ★다국어(현지화 + 선택적 자막 트랙).
 
     localizations/srts 는 ★루틴이 스펙에 써준 번역 — 번역 API 비용이 들지 않는다.
     srts 를 주면 그 언어들로 자막 트랙까지 올린다(400 units/언어라 SCP 처럼 편수가
     적은 파이프라인만 준다). 현지화(50 units)는 전 토픽 기본 적용.
+    default_language/i18n_langs: 영어가 기본인 영상은 'en' + ['ko'] 처럼 준다
+    (안 주면 기존대로 한국어 기본 + I18N_LANGS).
     """
     yt = get_service()
-    vid = upload_video(yt, video, title, description, privacy, tags, category_id)
+    vid = upload_video(yt, video, title, description, privacy, tags, category_id,
+                       default_language=default_language, synthetic=synthetic)
     res = {"video_id": vid, "url": f"https://youtu.be/{vid}", "privacy": privacy, "playlist_id": None}
     if thumbnail and os.path.exists(thumbnail):
         res["thumbnail_set"] = set_thumbnail(yt, vid, thumbnail)
@@ -236,7 +266,7 @@ def publish(video: str, title: str, description: str, privacy: str,
             # 재생목록 공개도(영상이 unlisted 라도 재생목록은 public 으로 노출 가능 — 운영 선택)
             pl_privacy = config.env("NOVEL_PLAYLIST_PRIVACY", "public")
             pid = ensure_playlist(yt, playlist_title,
-                                  description="시리즈 정주행 재생목록 · 오리지널 창작",
+                                  description=playlist_description or "시리즈 정주행 재생목록 · 오리지널 창작",
                                   privacy=pl_privacy)
             add_to_playlist(yt, pid, vid)
             res["playlist_id"] = pid
@@ -246,7 +276,7 @@ def publish(video: str, title: str, description: str, privacy: str,
     # 다국어는 전부 best-effort — 여기서 뭐가 터져도 업로드는 이미 끝났다.
     try:
         import yt_i18n
-        res.update(yt_i18n.apply(vid, srt, localizations=localizations, srts=srts))
+        res.update(yt_i18n.apply(vid, srt, langs=i18n_langs, localizations=localizations, srts=srts))
     except Exception as e:  # noqa: BLE001
         print(f"   ⚠️ 다국어 처리 실패(업로드는 성공): {e}")
     return res

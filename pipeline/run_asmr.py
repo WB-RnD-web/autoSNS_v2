@@ -42,15 +42,24 @@ def build_meta(spec: dict, attrs_block: str, force_private: bool) -> dict:
         tags.append(theme)
     if spec.get("theme_id"):
         tags.append(english_name(spec["theme_id"]).lower())
-    # 재생목록: 레포 변수 ASMR_PLAYLIST 가 있으면 그걸 우선(오타/불일치로 새 재생목록 생성 방지)
-    playlist = config.env("ASMR_PLAYLIST") or yt.get("playlist", "")
+    series = bool(spec.get("series"))
+    if series and spec.get("tags"):
+        tags = list(spec["tags"])            # 시리즈 스펙(korea_sounds.py)이 영어 태그를 직접 준다
+    # 재생목록: 레포 변수 ASMR_PLAYLIST 가 있으면 그걸 우선(오타/불일치로 새 재생목록 생성 방지).
+    #   단 시리즈는 자기 재생목록이 있다 — ASMR_PLAYLIST 로 한국어 재생목록에 섞이면 안 된다.
+    playlist = (yt.get("playlist", "") if series
+                else config.env("ASMR_PLAYLIST") or yt.get("playlist", ""))
     return {
         "title": yt.get("title", theme or "ASMR"),
         "description": desc,
         "privacy": privacy,
         "playlist": playlist,
+        "playlist_description": yt.get("playlist_description") or None,
         "tags": tags,
         "category_id": config.env("ASMR_YT_CATEGORY", "24"),  # 24=Entertainment
+        "default_language": spec.get("default_language") or None,
+        # 시리즈 배경은 실제 장소를 사실적으로 그린 AI 이미지다 → 합성 콘텐츠 표시
+        "synthetic": True if series else None,
     }
 
 
@@ -65,9 +74,13 @@ import re as _re
 _LEAD_EMOJI = _re.compile(r"^\s*([^\w\s가-힣]+)\s*")
 
 
+_SMALL = {"a", "an", "and", "at", "by", "for", "in", "of", "on", "the", "to"}
+
+
 def english_name(theme_id: str) -> str:
     words = [w for w in _re.split(r"[-_\s]+", theme_id or "") if w and w.lower() != "asmr"]
-    return " ".join(w[:1].upper() + w[1:] for w in words) or "Relaxing"
+    return " ".join(w.lower() if (i and w.lower() in _SMALL) else w[:1].upper() + w[1:]
+                    for i, w in enumerate(words)) or "Relaxing"
 
 
 def english_localization(spec: dict, duration_sec: float | None) -> dict:
@@ -90,10 +103,27 @@ def english_localization(spec: dict, duration_sec: float | None) -> dict:
 
 def asmr_localizations(spec: dict, duration_sec: float | None) -> dict:
     import yt_i18n
+    if (spec.get("default_language") or "ko") != "ko":
+        # 영어가 기본인 시리즈 — 스펙이 준 번역(ko 등)을 언어 목록 제한 없이 그대로 쓴다
+        raw = ((spec.get("platforms") or {}).get("youtube") or {}).get("localizations") or {}
+        return yt_i18n.normalize_localizations(raw, list(raw))
     loc = dict(yt_i18n.from_spec(spec))
     if "en" not in loc and "en" in yt_i18n.LANGS:
         loc["en"] = english_localization(spec, duration_sec)
     return loc
+
+
+def series_thumbnail(bg_png: str | None, out_jpg: str) -> str | None:
+    """시리즈 썸네일 = 영상 배경 그대로(1280×720 JPEG). 새로 그리면 영상과 다른 장면이 된다."""
+    if not bg_png or not os.path.exists(bg_png):
+        return None
+    try:
+        from PIL import Image
+        Image.open(bg_png).convert("RGB").resize((1280, 720)).save(out_jpg, quality=90)
+        return out_jpg
+    except Exception as e:  # noqa: BLE001
+        sys.stderr.write(f"[warn] 시리즈 썸네일 실패 → 스킵: {e}\n")
+        return None
 
 
 def has_credentials() -> bool:
@@ -172,6 +202,15 @@ def process(spec_path: str, args, led) -> dict:
         res["error"] = f"render: {e}"
         return res
 
+    # 시리즈는 배경 그림을 그대로 썸네일로 쓴다 — 렌더만 하는 검증 실행에서도 만들어 둔다(아티팩트로 확인).
+    series_thumb = None
+    if spec.get("series"):
+        series_thumb = series_thumbnail(info.get("bg"),
+                                        str(config.RENDERS_DIR / f"asmr_{date}_{theme_id}_thumb.jpg"))
+        if info.get("loop"):
+            import shutil
+            shutil.copy(info["loop"], str(config.RENDERS_DIR / f"asmr_{date}_{theme_id}_loop.mp4"))
+
     if args.no_upload:
         return res
     meta = build_meta(spec, attrs_block, args.force_private)
@@ -186,12 +225,13 @@ def process(spec_path: str, args, led) -> dict:
 
     # 썸네일(FLUX) — best-effort
     yt = (spec.get("platforms") or {}).get("youtube") or {}
-    thumb = None
+    thumb = series_thumb
     try:
-        thumb_path = str(config.RENDERS_DIR / f"asmr_{date}_{theme_id}_thumb.jpg")
-        thumb = asmr_render.build_thumbnail(yt.get("thumbnail_hook", ""),
-                                            yt.get("thumbnail_text", spec.get("theme_name", "")),
-                                            thumb_path, wd)
+        if not thumb:
+            thumb_path = str(config.RENDERS_DIR / f"asmr_{date}_{theme_id}_thumb.jpg")
+            thumb = asmr_render.build_thumbnail(yt.get("thumbnail_hook", ""),
+                                                yt.get("thumbnail_text", spec.get("theme_name", "")),
+                                                thumb_path, wd)
     except Exception as e:  # noqa: BLE001
         sys.stderr.write(f"[warn] 썸네일 단계 예외 → 스킵: {e}\n")
     res["thumbnail"] = thumb
@@ -200,11 +240,16 @@ def process(spec_path: str, args, led) -> dict:
     last = None
     for attempt in range(1, args.retries + 2):
         try:
+            loc = asmr_localizations(spec, res.get("duration_sec"))
             pub = upload_youtube_novel.publish(
                 res["video"], meta["title"], meta["description"], meta["privacy"],
                 playlist_title=meta["playlist"], tags=meta["tags"],
                 category_id=meta["category_id"], thumbnail=thumb,
-                localizations=asmr_localizations(spec, res.get("duration_sec")))
+                localizations=loc,
+                default_language=meta["default_language"],
+                i18n_langs=list(loc) if meta["default_language"] else None,
+                playlist_description=meta["playlist_description"],
+                synthetic=meta["synthetic"])
             res["uploaded"] = f"{pub['url']} ({meta['privacy']})"
             res["playlist"] = pub.get("playlist_id")
             if led is not None:
