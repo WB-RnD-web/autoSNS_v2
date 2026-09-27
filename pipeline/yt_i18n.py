@@ -94,7 +94,11 @@ def _service(kinds: list[str], scopes: list[str]):
         if not p or not os.path.exists(p):
             continue
         try:
-            creds = Credentials.from_authorized_user_file(p, scopes)
+            # ★토큰 파일에 적힌(=실제로 받은) 스코프로 연다. 여기서 scopes 를 넘기면 갱신 요청에 그 스코프가
+            #   실리고, 토큰이 안 가진 스코프(force-ssl)가 섞이면 구글이 invalid_scope 로 거절한다.
+            #   2026-09-27 실측: 그래서 token_novel(ASMR·소설·라디오)의 현지화가 전부 조용히 빠지고 있었다.
+            #   스코프가 모자라면 이후 API 호출이 403 → 호출측이 '권한 부족'으로 경고하고 넘어간다.
+            creds = Credentials.from_authorized_user_file(p)
             if creds and creds.expired and creds.refresh_token:
                 creds.refresh(Request())
             return build("youtube", "v3", credentials=creds)
