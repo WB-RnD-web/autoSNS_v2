@@ -1,4 +1,4 @@
-name: ASMR 영어 제목 소급(1회성)
+name: 영어 제목 소급(1회성 · ASMR + 라디오·소설)
 
 # 이미 올라간 ASMR 롱폼에 영어 제목·설명(현지화)을 붙인다 — pipeline/asmr_i18n_backfill.py.
 # 기본은 미리보기(바꾸지 않음). apply 를 켜야 실제로 유튜브 영상 메타데이터를 수정한다.
@@ -11,6 +11,10 @@ on:
         description: "실제 적용(끄면 미리보기만)"
         type: boolean
         default: false
+      translate:
+        description: "ASMR 가 아닌 롱폼(라디오·소설)도 Spark gemma 로 번역해 채우기"
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -18,9 +22,11 @@ permissions:
 jobs:
   backfill:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 60              # 번역 포함 시 40편 × 1~2분 ÷ 동시 4
     env:
       I18N_LOCALIZE: "1"
+      WBSPARK_BASE: ${{ vars.WBSPARK_BASE || 'https://wangbyul.com/wbSpark' }}
+      WBSPARK_TOKEN: ${{ secrets.WBSPARK_TOKEN }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -40,4 +46,4 @@ jobs:
       - name: 소급
         run: |
           cd pipeline
-          python asmr_i18n_backfill.py $([ "${{ github.event.inputs.apply }}" = "true" ] && echo --apply)
+          python asmr_i18n_backfill.py             $([ "${{ github.event.inputs.apply }}" = "true" ] && echo --apply)             $([ "${{ github.event.inputs.translate }}" = "true" ] && echo --translate --min-min 4)
