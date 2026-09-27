@@ -37,7 +37,55 @@ KO_EN = [
     ("창가 빗소리", "rain-on-the-window"), ("숲속 빗소리", "rain-in-the-forest"),
     ("빗소리", "rain-sounds"), ("파도", "ocean-waves"), ("종이", "paper-crumpling"),
 ]
+# 재생목록 영어 제목(--playlists). 여기 없는 재생목록은 Spark gemma 로 번역한다.
+PLAYLIST_EN = {
+    "SCP 쇼츠": "SCP Shorts",
+    "SCP 아카이브 (전편 듣기)": "SCP Archive (Full Episodes)",
+    "괴담라디오 (전편 듣기)": "Korean Ghost Story Radio (Full Episodes)",
+    "사연라디오 (전편 듣기)": "Korean Life Story Radio (Full Episodes)",
+    "빈 이름": "The Empty Name (Korean Audio Drama)",
+    "일상공감 ASMR": "Everyday ASMR — Sleep & Study Sounds",
+}
 _ISO = re.compile(r"PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?")
+
+
+def backfill_playlists(yt, apply: bool) -> int:
+    """내 재생목록에 en 현지화를 붙인다(playlists.update 50 units/개). 이미 en 이 있으면 건너뛴다."""
+    tok, done, total = None, 0, 0
+    while True:
+        r = yt.playlists().list(part="snippet,localizations", mine=True, maxResults=50,
+                                pageToken=tok).execute()
+        for p in r.get("items", []):
+            sn = p["snippet"]
+            title = sn.get("title", "")
+            if "en" in (p.get("localizations") or {}) or not re.search("[가-힣]", title):
+                continue
+            total += 1
+            en_title = PLAYLIST_EN.get(title)
+            if en_title:
+                loc = {"en": {"title": en_title, "description": ""}}
+                if sn.get("description"):
+                    tr = yt_i18n.translate_meta(title, sn["description"], ["en"]) if apply else {}
+                    loc["en"]["description"] = (tr.get("en") or {}).get("description", "")
+            else:
+                loc = yt_i18n.translate_meta(title, sn.get("description", ""), ["en"]) if apply else {}
+            print(f"  재생목록 {p['id']}  {title}  → {(loc.get('en') or {}).get('title', '(번역 예정)')}")
+            if not apply or not loc.get("en"):
+                continue
+            body = {"id": p["id"],
+                    "snippet": {"title": title, "description": sn.get("description", ""),
+                                "defaultLanguage": sn.get("defaultLanguage") or "ko"},
+                    "localizations": loc}
+            try:
+                yt.playlists().update(part="snippet,localizations", body=body).execute()
+                done += 1
+            except Exception as e:  # noqa: BLE001
+                print(f"  ⚠️ 재생목록 현지화 실패 {p['id']}: {str(e)[:200]}")
+        tok = r.get("nextPageToken")
+        if not tok:
+            break
+    print(f"재생목록 {'적용' if apply else '대상'} {done if apply else total}/{total}")
+    return 0 if (not apply or done == total) else 1
 
 
 def iso_sec(s: str) -> int:
@@ -85,12 +133,14 @@ def main() -> int:
     ap.add_argument("--min-min", type=int, default=30, help="이 분 이상 영상만")
     ap.add_argument("--translate", action="store_true",
                     help="테마 매핑이 없는 롱폼은 Spark gemma 로 번역해서 채운다")
+    ap.add_argument("--playlists", action="store_true", help="재생목록 제목도 영어로")
     a = ap.parse_args()
     config.load_dotenv()
     yt = yt_i18n._service(["novel", "forcessl", "shorts"], [yt_i18n.SCOPE_MANAGE])
     if yt is None:
         print("[stop] 토큰 없음(token_novel.json)")
         return 1
+    rc_pl = backfill_playlists(yt, a.apply) if a.playlists else 0
     ids = uploads(yt)
     print(f"업로드 {len(ids)}편 검사 · {'적용' if a.apply else '미리보기'}"
           f"{' · 번역 포함' if a.translate else ''}\n")
