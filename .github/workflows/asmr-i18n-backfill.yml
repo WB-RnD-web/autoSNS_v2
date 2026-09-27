@@ -39,10 +39,15 @@ jobs:
         env:
           YT_CLIENT_SECRET_JSON: ${{ secrets.YT_CLIENT_SECRET_JSON }}
           YT_TOKEN_JSON_NOVEL: ${{ secrets.YT_TOKEN_JSON_NOVEL }}
+          YT_TOKEN_JSON_FORCESSL: ${{ secrets.YT_TOKEN_JSON_FORCESSL }}
         run: |
           mkdir -p pipeline/secrets
           printf '%s' "$YT_CLIENT_SECRET_JSON" > pipeline/secrets/client_secret.json
           printf '%s' "$YT_TOKEN_JSON_NOVEL" > pipeline/secrets/token_novel.json
+          # 현지화(영어 제목)용 예비 토큰 — SCP 가 이 토큰으로 영어 제목을 붙여 왔다
+          if [ -n "$YT_TOKEN_JSON_FORCESSL" ]; then
+            printf '%s' "$YT_TOKEN_JSON_FORCESSL" > pipeline/secrets/token_forcessl.json
+          fi
       - name: 소급
         run: |
           cd pipeline

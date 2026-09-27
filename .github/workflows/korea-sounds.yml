@@ -81,6 +81,7 @@ jobs:
         env:
           YT_CLIENT_SECRET_JSON: ${{ secrets.YT_CLIENT_SECRET_JSON }}
           YT_TOKEN_JSON_NOVEL: ${{ secrets.YT_TOKEN_JSON_NOVEL }}
+          YT_TOKEN_JSON_FORCESSL: ${{ secrets.YT_TOKEN_JSON_FORCESSL }}
         run: |
           mkdir -p pipeline/secrets
           if [ -n "$YT_CLIENT_SECRET_JSON" ]; then
@@ -90,6 +91,10 @@ jobs:
             printf '%s' "$YT_TOKEN_JSON_NOVEL" > pipeline/secrets/token_novel.json
           else
             echo "⚠️ YT_TOKEN_JSON_NOVEL 없음 — 렌더만 진행"
+          fi
+          # 현지화(영어 제목)용 예비 토큰 — SCP 가 이 토큰으로 영어 제목을 붙여 왔다
+          if [ -n "$YT_TOKEN_JSON_FORCESSL" ]; then
+            printf '%s' "$YT_TOKEN_JSON_FORCESSL" > pipeline/secrets/token_forcessl.json
           fi
 
       - name: 오늘의 테마 스펙 생성(날짜 → 슬롯 → 테마)
