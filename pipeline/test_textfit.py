@@ -149,6 +149,22 @@ ck("정치는 보도사진 톤 유지", CS._style_prompt(CS._fields({"topic": "p
 ck("스토리보드 thumbnail_style 이 토픽보다 우선",
    CS._fields({"topic": "fortune", "thumbnail_style": "webtoon"})[2] == "webtoon")
 
+print("── 진행자(별이·별하) ──")
+ck("진행자 이미지 두 장이 레포에 있다(없으면 조용히 꺼진다)", M.presenter_on())
+_sp = M.assign_speakers([dict(s) for s in _sc] + [dict(_sc[0])], duo=True)
+ck("별하부터 번갈아 말한다", [s["_spk"] for s in _sp] == ["byeolha", "byeori", "byeolha"])
+ck("duo=False 면 별하 혼자", {s["_spk"] for s in M.assign_speakers([dict(s) for s in _sc], duo=False)} == {"byeolha"})
+_pon = M.build_html(M.assign_speakers([dict(s) for s in _sc]), 5.6, "#D97757", presenter=True)
+ck("presenter=False 면 진행자 레이어 없음", 'id="pr"' not in _off)
+ck("presenter=True 면 두 캐릭터·데스크", 'id="pr-byeori"' in _pon and 'id="pr-byeolha"' in _pon and 'id="desk"' in _pon)
+ck("진행자 이미지 경로가 실제 파일", all(os.path.exists(os.path.join(M.PROJ, p)) for p in
+                                  re.findall(r'src="(assets/presenter/[^"]+)"', _pon)))
+_stat = [{"type": "stat", "label": "x", "from": 0, "to": 3, "bar": True, "sub": "y",
+          "narration": "z", "start": 0.0, "clip": 3.0}]
+ck("진행자 모드에선 막대가 낮아진다(캐릭터 자리 비움)",
+   "height:360" in M.build_html(_stat, 3.0, presenter=True) and "height:560" in M.build_html(_stat, 3.0))
+ck("말하는 쪽 이름표가 켜진다", 'tl.to("#nm-byeolha",{opacity:1' in _pon and 'tl.to("#nm-byeori",{opacity:1' in _pon)
+
 print()
 if FAIL:
     print(f"❌ 실패 {FAIL}건")
