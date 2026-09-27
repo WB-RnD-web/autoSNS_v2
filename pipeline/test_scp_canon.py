@@ -42,6 +42,12 @@ for n in C.QUEUE:
     ok = bool(meta.get("cite")) and "CC BY-SA" in meta.get("cite", "") and meta.get("url", "").endswith(f"scp-{n}")
     size = os.path.getsize(os.path.join(C.PACK, f"scp-{n}.md")) if os.path.exists(os.path.join(C.PACK, f"scp-{n}.md")) else 0
     ck(f"SCP-{n} 원문·저작자 표기", ok and size > 1000, f"{meta} {size}")
+ck("큐 52편 · 중복 없음", len(C.QUEUE) == 52 and len(set(C.QUEUE)) == 52, str(len(C.QUEUE)))
+ck("제외 개체가 큐에 없다",
+   not set(C.QUEUE) & {"610", "231", "008", "058", "882", "1048", "012", "2521", "3125", "6000"})
+packs = {f[4:-3] for f in os.listdir(C.PACK) if f.startswith("scp-") and f.endswith(".md")}
+ck("팩 파일 = 큐(남는 파일·빠진 파일 없음)", packs == set(C.QUEUE), str(packs ^ set(C.QUEUE)))
+ck("1년 뒤 월요일까지 원작", C.assign(C.START + dt.timedelta(days=7 * 51))["origin"] == "canon")
 
 print("── 강제(gate) ──")
 ck("원작 날에 오리지널이면 막는다",
