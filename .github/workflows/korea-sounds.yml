@@ -1,0 +1,124 @@
+name: Korea Sleep Sounds — 8시간 한국 풍경 사운드(해외용) → 유튜브
+
+# 매주 수·토 20:00 KST. 루틴 없이 코드가 날짜로 테마를 배정한다(pipeline/korea_sounds.py).
+#   근거: ASMR 해외 시청자 1회 30~66분 vs 한국 2~23분(2026-09-27 스튜디오 실측).
+#   영상: wbSpark 배경 + 이음새 없는 움직임 루프(ambient_motion.py) + Freesound CC0 8시간 믹스.
+#   제목·설명은 영어가 기본, 한국어는 현지화. 재생목록 'Korea Sleep Sounds'.
+#
+# ⚠️ 루프 가드: permissions read — 레포에 아무것도 커밋하지 않는다(산출물은 유튜브로만).
+#   같은 날짜를 다시 돌려도 ledger(actions/cache)가 중복 업로드를 막는다.
+
+on:
+  schedule:
+    - cron: "0 11 * * 3,6"      # 수·토 11:00 UTC = 20:00 KST
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "배정 날짜 YYYY-MM-DD (비우면 오늘 KST)"
+        default: ""
+      no_upload:
+        description: "업로드 없이 렌더만(검증) — 썸네일·루프를 아티팩트로 남긴다"
+        type: boolean
+        default: true
+      force_private:
+        description: "비공개로 업로드(테스트)"
+        type: boolean
+        default: false
+      hours:
+        description: "길이(시간). 비우면 KOREA_HOURS 변수 또는 8"
+        default: ""
+
+concurrency:
+  group: asmr-pipeline          # ASMR(월)과 같은 채널·토큰 — 겹쳐 돌지 않게
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-upload:
+    runs-on: ubuntu-latest
+    # 8시간 믹스(약 15분) + 수 GB 업로드. 여유 있게.
+    timeout-minutes: 150
+    env:
+      TZ: Asia/Seoul
+      NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}          # 배경 폴백(FLUX)
+      FREESOUND_API_KEY: ${{ secrets.FREESOUND_API_KEY }}
+      WBSPARK_BASE: ${{ vars.WBSPARK_BASE || 'https://wangbyul.com/wbSpark' }}
+      WBSPARK_TOKEN: ${{ secrets.WBSPARK_TOKEN }}
+      I18N_LOCALIZE: "1"
+      I18N_CAPTIONS: "0"
+      KOREA_HOURS: ${{ github.event.inputs.hours || vars.KOREA_HOURS || '8' }}
+      KOREA_PLAYLIST: ${{ vars.KOREA_PLAYLIST || 'Korea Sleep Sounds' }}
+      # 움직임 루프 화질·크기 (8시간 = 루프 비트레이트 × 8h. 빗줄기 736kbps → 약 2.5GB)
+      AMBIENT_FPS: ${{ vars.AMBIENT_FPS || '12' }}
+      AMBIENT_CRF: ${{ vars.AMBIENT_CRF || '30' }}
+      ASMR_SOURCE_SEC: ${{ vars.ASMR_SOURCE_SEC || '1200' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: pipeline/requirements.txt
+
+      - name: 시스템 의존성 설치
+        run: |
+          set -e
+          command -v ffmpeg >/dev/null 2>&1 || { sudo apt-get update && sudo apt-get install -y ffmpeg; }
+          python -m pip install -r pipeline/requirements.txt
+          df -h . | tail -1
+
+      - name: ledger 캐시 복원/저장
+        uses: actions/cache@v4
+        with:
+          path: output/korea_ledger.json
+          key: korea-ledger-${{ github.run_id }}
+          restore-keys: korea-ledger-
+
+      - name: YouTube 자격증명(ASMR 과 같은 채널 토큰)
+        env:
+          YT_CLIENT_SECRET_JSON: ${{ secrets.YT_CLIENT_SECRET_JSON }}
+          YT_TOKEN_JSON_NOVEL: ${{ secrets.YT_TOKEN_JSON_NOVEL }}
+        run: |
+          mkdir -p pipeline/secrets
+          if [ -n "$YT_CLIENT_SECRET_JSON" ]; then
+            printf '%s' "$YT_CLIENT_SECRET_JSON" > pipeline/secrets/client_secret.json
+          fi
+          if [ -n "$YT_TOKEN_JSON_NOVEL" ]; then
+            printf '%s' "$YT_TOKEN_JSON_NOVEL" > pipeline/secrets/token_novel.json
+          else
+            echo "⚠️ YT_TOKEN_JSON_NOVEL 없음 — 렌더만 진행"
+          fi
+
+      - name: 오늘의 테마 스펙 생성(날짜 → 슬롯 → 테마)
+        id: spec
+        run: |
+          set -e
+          D="${{ github.event.inputs.date }}"
+          P=$(python pipeline/korea_sounds.py ${D:+--date "$D"} --out output/asmr)
+          echo "path=$P" >> "$GITHUB_OUTPUT"
+          echo "스펙: $P"
+          python -c "import json,sys; s=json.load(open(sys.argv[1],encoding='utf-8')); y=s['platforms']['youtube']; print('테마', s['theme_id'], '· 슬롯', s['slot'], '· 움직임', s['motion'], '·', s['duration_sec']//3600, '시간'); print('제목', y['title'])" "$P"
+
+      - name: 렌더 + 업로드
+        run: |
+          cd pipeline
+          python run_asmr.py "../${{ steps.spec.outputs.path }}" \
+            --use-ledger --ledger-path ../output/korea_ledger.json --log ../output/korea_log.json \
+            $([ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.force_private }}" = "true" ] && echo --force-private) \
+            $([ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.no_upload }}" = "true" ] && echo --no-upload)
+
+      # 검증 실행에서만: 썸네일·움직임 루프(수백 KB)만 남긴다. 8시간 본편은 수 GB 라 올리지 않는다.
+      - name: 검증 산출물(썸네일·루프)
+        if: always() && github.event_name == 'workflow_dispatch' && github.event.inputs.no_upload == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: korea-preview-${{ github.run_number }}
+          path: |
+            output/renders/*_thumb.jpg
+            output/renders/*_loop.mp4
+            output/korea_log.json
+          retention-days: 3
+          if-no-files-found: warn

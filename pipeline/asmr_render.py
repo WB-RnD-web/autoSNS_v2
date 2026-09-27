@@ -257,10 +257,26 @@ def mix_audio(layers: list[dict], out_m4a: str, total_sec: float,
     return out_m4a
 
 
-# ── 배경 이미지(FLUX → 실패 시 절차적 다크) ──
-def ensure_background(prompt: str, out_png: str, workdir: str) -> str:
+# ── 배경 이미지(wbSpark 또는 FLUX → 실패 시 절차적 다크) ──
+def _wbspark_bg(prompt: str, workdir: str) -> str | None:
+    """DGX Spark z-image-turbo 로 가로 배경. 게이트웨이는 '16:9' 를 1216×832 로 준다(2026-09-27 실측)
+    → 아래 ffmpeg 단계에서 16:9 로 잘라 1920×1080 으로 올린다."""
+    try:
+        import wbspark
+        raw = os.path.join(workdir, "bg_spark.png")
+        ok = wbspark.generate_image(prompt, raw, timeout_sec=int(os.environ.get("ASMR_BG_TIMEOUT", "300")),
+                                    model=os.environ.get("WBSPARK_BG_MODEL", "z-image-turbo"),
+                                    aspect="16:9", no_llm=True)
+        return raw if ok else None
+    except Exception as e:  # noqa: BLE001
+        sys.stderr.write(f"[warn] wbSpark 배경 실패 → FLUX 로: {e}\n")
+        return None
+
+
+def ensure_background(prompt: str, out_png: str, workdir: str, engine: str = "flux") -> str:
     import imagegen
-    raw = imagegen.flux_image(prompt, os.path.join(workdir, "bg_raw.png"), 1344, 768)
+    raw = _wbspark_bg(prompt, workdir) if (engine == "wbspark" and prompt.strip()) else None
+    raw = raw or imagegen.flux_image(prompt, os.path.join(workdir, "bg_raw.png"), 1344, 768)
     src = raw or _procedural_bg(os.path.join(workdir, "bg_proc.png"))
     sh([FFMPEG, "-y", "-i", src, "-vf",
         f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},setsar=1,"
@@ -366,9 +382,12 @@ def render(spec: dict, clips: list[str], out_mp4: str, workdir: str,
     _lap("앰비언트 루프 단위")
 
     if g["trig"] > 0 and trigger_clips:
+        # 스펙이 간격을 주면 그걸 쓴다 — 수면용 풍경(종·풍경 소리)은 3~11초마다 울리면 잠을 깨운다.
+        gap = spec.get("trigger_gap") or [TRIG_GAP_MIN, TRIG_GAP_MAX]
         layers.append({"path": build_triggers(trigger_clips, os.path.join(workdir, "trig.wav"),
-                                              UNIT_TRIG, workdir,
-                                              seed=str(spec.get("theme_id") or spec.get("date") or "")),
+                                              max(UNIT_TRIG, float(gap[1]) * 12), workdir,
+                                              seed=str(spec.get("theme_id") or spec.get("date") or ""),
+                                              gap_min=float(gap[0]), gap_max=float(gap[1])),
                        "gain": g["trig"]})
         _lap("트리거 루프 단위")
     elif g["trig"] > 0:
@@ -393,16 +412,29 @@ def render(spec: dict, clips: list[str], out_mp4: str, workdir: str,
                       nar_wav=nar, nar_gain=gain)
     _lap(f"믹스({len(layers)}레이어 무한루프 → {_hms(target)})")
 
+    engine = str(spec.get("bg_engine") or "flux").lower()
     bg = ensure_background((spec.get("background") or {}).get("prompt", ""),
-                           os.path.join(workdir, "bg.png"), workdir)
-    _lap("배경 이미지(FLUX)")
-    render_video(bg, audio, out_mp4)
-    _lap(f"영상 인코딩({FPS}fps/{PRESET})")
+                           os.path.join(workdir, "bg.png"), workdir, engine=engine)
+    _lap(f"배경 이미지({engine})")
+    motion = str(spec.get("motion") or "").strip().lower()
+    loop = None
+    if motion:
+        # 움직이는 배경: 짧은 루프 한 번만 그리고 재인코딩 없이 오디오 길이만큼 이어 붙인다(ambient_motion).
+        import ambient_motion
+        loop = ambient_motion.make_loop(bg, motion, os.path.join(workdir, "loop.mp4"),
+                                        seed=f"{spec.get('theme_id', '')}|{spec.get('date', '')}")
+        _lap(f"움직임 루프({motion} {ambient_motion.LOOP_SEC:.0f}s·{ambient_motion.FPS}fps)")
+        ambient_motion.mux_loop(loop, audio, out_mp4, probe_dur(audio))
+        _lap("루프 이어 붙이기(-c copy)")
+    else:
+        render_video(bg, audio, out_mp4)
+        _lap(f"영상 인코딩({FPS}fps/{PRESET})")
     dur = probe_dur(out_mp4)
     size_mb = os.path.getsize(out_mp4) / 1e6
     print(f"✅ {out_mp4}  ({dur:.0f}s, {size_mb:.1f}MB, voice={'남' if voice==voice_m else '여'}, "
           f"나레이션={'있음' if nar else '없음'})")
-    return {"out": out_mp4, "duration_sec": round(dur, 1), "size_mb": round(size_mb, 1)}
+    return {"out": out_mp4, "duration_sec": round(dur, 1), "size_mb": round(size_mb, 1),
+            "bg": bg, "loop": loop}
 
 
 def main() -> int:
