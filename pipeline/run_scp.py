@@ -42,6 +42,12 @@ def build_meta(spec: dict, chapters: list[str], force_private: bool) -> dict:
     # 유튜브 챕터: description 맨 앞 블록 + 첫 줄이 00:00 이어야 마커가 생성된다.
     if chapters and str(chapters[0]).strip().startswith("00:00"):
         desc = "\n".join(chapters) + "\n\n" + desc
+    # 원작 회차는 CC BY-SA 3.0 저작자 표기가 ★필수다 — 루틴이 빠뜨려도 코드가 붙인다.
+    if str(spec.get("origin") or "") == "canon":
+        import scp_canon
+        cite = scp_canon.cite_for(spec)
+        if cite and cite not in desc:
+            desc = f"{desc}\n\n원작 · Original: {cite}"
     privacy = "private" if force_private else (spec.get("privacy") or "public")
     tags = list(TAGS)
     for k in ("theme", "object_class", "scp_number"):
@@ -81,6 +87,16 @@ def process(spec_path: str, args, led) -> dict:
     if led is not None and ledgermod.is_done(led, _led_key(spec)):
         res["skipped"] = True
         print(f"   ⏭️  ledger 처리됨({_led_key(spec)}) — 건너뜀")
+        return res
+
+    # ★원작 회차 강제(2026-09-27) — 원작 차례인데 오리지널이면 렌더도 업로드도 하지 않는다.
+    #   원문은 레포(scp/canon_pack)에 있으니 '위키가 막혀서' 는 더 이상 사유가 아니다.
+    import scp_canon
+    bad = scp_canon.gate(spec)
+    if bad and config.env("SCP_CANON_GATE", "1") != "0":
+        for b in bad:
+            print(f"::error title=원작 회차 배정 위반::{b}")
+        res["error"] = "canon gate: " + " / ".join(bad)
         return res
 
     # ★렌더 전에 본다. 로그 맨 위에 남아야 나중에 찾기 쉽다.

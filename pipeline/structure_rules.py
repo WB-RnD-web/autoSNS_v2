@@ -110,11 +110,18 @@ def check_chain(chain: list[dict], structure: str) -> list[str]:
 
 
 def origin_for(date: str) -> str:
-    """`2026-09-04` → 일(day) 4 % 3 = 1 → original. 0 이면 canon (3일에 한 번)."""
-    m = re.search(r"\d{4}-\d{2}-(\d{2})", str(date or ""))
-    if not m:
+    """원작/오리지널 배정 — ★scp_canon.assign 하나만 믿는다(2026-09-27부터 월요일 회차 = 원작).
+
+    예전 규칙(일(day) % 3 == 0)은 월·목 발행과 맞물려 어떤 주는 0편, 어떤 주는 2편이 됐고,
+    무엇보다 루틴 환경에서 위키가 막혀 원작 회차가 한 번도 안 나왔다(scp_canon.py 머리말).
+    """
+    import datetime as _dt
+    import scp_canon
+    try:
+        d = _dt.date.fromisoformat(str(date or "")[:10])
+    except ValueError:
         return ""
-    return "canon" if int(m.group(1)) % 3 == 0 else "original"
+    return scp_canon.assign(d)["origin"]
 
 
 def check(spec: dict) -> list[str]:
@@ -122,10 +129,10 @@ def check(spec: dict) -> list[str]:
     want_origin = origin_for(spec.get("date", ""))
     got_origin = str(spec.get("origin") or "").strip()
     if want_origin and got_origin and got_origin != want_origin:
-        if want_origin == "canon" and not str(spec.get("origin_note") or "").strip():
+        if want_origin == "canon":
+            # 경고로 끝나지 않는다 — run_scp 가 scp_canon.gate 로 업로드를 막는다.
             out.append(f"{spec.get('date')} 는 원작(canon) 차례인데 origin={got_origin} 이다 — "
-                       "원문을 못 읽어 내려간 거라면 ★origin_note 에 이유를 적어라 "
-                       "(안 적으면 매번 조용히 오리지널로 도망친다. 실제로 10편 내리 그랬다)")
+                       "원문은 레포 scp/canon_pack/ 에 있다(웹 접속 불필요)")
         elif want_origin == "original":
             out.append(f"{spec.get('date')} 는 오리지널 차례인데 origin={got_origin} 이다")
     a = assign(spec.get("scp_number", ""))
