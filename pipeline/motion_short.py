@@ -257,7 +257,8 @@ def presenter_html(brand):
 
 def presenter_js(scenes, total):
     out = ['tl.set("#pr .pc",{filter:"brightness(1)",scale:1},0);',
-           'tl.fromTo("#pr",{y:520},{y:0,duration:0.7,ease:"back.out(1.3)"},0.1);']
+           # 첫 프레임부터 자리에 있다(아래서 올라오는 0.7초 동안 빈 자리였다) — 살짝 튀기만 한다
+           'tl.fromTo("#pr",{y:24},{y:0,duration:0.35,ease:"back.out(2)"},0);']
     half = 0.17
     for sc in scenes:
         sp = sc.get("_spk", "byeolha")
@@ -436,9 +437,13 @@ TRANSITIONS = ["fade", "pushup", "slideleft", "zoom"]
 def scene_js(i, sc, acc, bar_h=560, presenter=False):
     gid, S = f"s{i}", sc["start"]
     out = []
-    tr = "fade" if i == 0 else TRANSITIONS[1 + (i - 1) % 3]
+    # ★첫 장면은 0초부터 보인다 (2026-09-27). 쇼츠 피드는 첫 프레임부터 자동 재생되고
+    #   '넘길지'가 1초 안에 갈린다. 예전엔 투명→페이드인 + 글자가 0.45~1.4초에 걸쳐 나타나
+    #   첫 0.5초가 빈 화면이었다(이탈 65.7%). 사라졌다 나타나는 대신 '보이는 채로 툭 튄다'.
+    first = (i == 0)
+    tr = "fade" if first else TRANSITIONS[1 + (i - 1) % 3]
     if tr == "fade":
-        out.append(f'tl.fromTo("#{gid}",{{opacity:0,scale:1.08}},{{opacity:1,scale:1,duration:0.5,ease:"power2.out"}},{S:.2f});')
+        out.append(f'tl.fromTo("#{gid}",{{scale:1.04}},{{scale:1,duration:0.4,ease:"power2.out"}},{S:.2f});')
     elif tr == "pushup":
         out.append(f'tl.fromTo("#{gid}",{{yPercent:100}},{{yPercent:0,duration:0.45,ease:"power3.out"}},{S:.2f});')
     elif tr == "slideleft":
@@ -450,15 +455,25 @@ def scene_js(i, sc, acc, bar_h=560, presenter=False):
     if t == "hook":
         if sc.get("ghost"):
             out.append(f'tl.to("#{gid}-ghost",{{x:-60,duration:{sc["clip"]:.2f},ease:"none"}},{S:.2f});')
-        out.append(f'tl.from("#{gid} .pill",{{y:-40,opacity:0,duration:0.5,ease:"power3.out"}},{S+0.2:.2f});')
-        # 필이 한 번 두근 — 정지 화면이 아니라는 신호
-        out.append(f'tl.to("#{gid}-pill",{{scale:1.06,duration:0.5,ease:"sine.inOut",yoyo:true,repeat:3,transformOrigin:"left center"}},{S+0.8:.2f});')
-        # ★줄 통째가 아니라 ★어절 단위로 튀어나온다 — 같은 시간에 움직임이 훨씬 많다
-        for j in range(len(sc.get("lines", []))):
-            out.append(f'tl.from("#{gid}-l{j} .w",{{y:70,opacity:0,rotateX:-45,transformPerspective:700,duration:0.42,ease:"back.out(1.7)",stagger:0.055}},{S+0.45+j*0.26:.2f});')
-        if sc.get("highlight"):
-            out.append(f'tl.fromTo("#{gid}-hl",{{scale:0.4,color:"{BRAND["cream"]}"}},{{scale:1,color:"{acc}",duration:0.6,ease:"back.out(2.4)"}},{S+1.1:.2f});')
-            out.append(f'tl.to("#{gid}-hl",{{scale:1.06,duration:0.28,ease:"sine.inOut",yoyo:true,repeat:1}},{S+1.75:.2f});')
+        if first:
+            # 첫 프레임에 필·세 줄·하이라이트가 ★이미 다 떠 있다. 움직임은 '보이는 채로' 준다.
+            out.append(f'tl.fromTo("#{gid} .pill",{{scale:0.92}},{{scale:1,duration:0.35,ease:"back.out(2)",transformOrigin:"left center"}},{S:.2f});')
+            for j in range(len(sc.get("lines", []))):
+                out.append(f'tl.fromTo("#{gid}-l{j} .w",{{scale:1.1,y:-6}},{{scale:1,y:0,duration:0.3,ease:"back.out(2)",stagger:0.04}},{S+j*0.08:.2f});')
+            if sc.get("highlight"):
+                out.append(f'tl.fromTo("#{gid}-hl",{{scale:0.85,color:"{BRAND["cream"]}"}},{{scale:1,color:"{acc}",duration:0.45,ease:"back.out(2.4)"}},{S+0.35:.2f});')
+                out.append(f'tl.to("#{gid}-hl",{{scale:1.06,duration:0.28,ease:"sine.inOut",yoyo:true,repeat:1}},{S+0.9:.2f});')
+            out.append(f'tl.to("#{gid}-pill",{{scale:1.06,duration:0.5,ease:"sine.inOut",yoyo:true,repeat:3,transformOrigin:"left center"}},{S+0.8:.2f});')
+        else:
+            out.append(f'tl.from("#{gid} .pill",{{y:-40,opacity:0,duration:0.5,ease:"power3.out"}},{S+0.2:.2f});')
+            # 필이 한 번 두근 — 정지 화면이 아니라는 신호
+            out.append(f'tl.to("#{gid}-pill",{{scale:1.06,duration:0.5,ease:"sine.inOut",yoyo:true,repeat:3,transformOrigin:"left center"}},{S+0.8:.2f});')
+            # ★줄 통째가 아니라 ★어절 단위로 튀어나온다 — 같은 시간에 움직임이 훨씬 많다
+            for j in range(len(sc.get("lines", []))):
+                out.append(f'tl.from("#{gid}-l{j} .w",{{y:70,opacity:0,rotateX:-45,transformPerspective:700,duration:0.42,ease:"back.out(1.7)",stagger:0.055}},{S+0.45+j*0.26:.2f});')
+            if sc.get("highlight"):
+                out.append(f'tl.fromTo("#{gid}-hl",{{scale:0.4,color:"{BRAND["cream"]}"}},{{scale:1,color:"{acc}",duration:0.6,ease:"back.out(2.4)"}},{S+1.1:.2f});')
+                out.append(f'tl.to("#{gid}-hl",{{scale:1.06,duration:0.28,ease:"sine.inOut",yoyo:true,repeat:1}},{S+1.75:.2f});')
     elif t == "quote":
         out.append(f'tl.from("#{gid}-qm",{{scale:0.5,opacity:0,duration:0.6,ease:"back.out(1.6)"}},{S+0.4:.2f});')
         out.append(f'tl.from("#{gid}-qt",{{y:40,opacity:0,duration:0.6,ease:"power3.out"}},{S+0.6:.2f});')
@@ -544,7 +559,8 @@ function cu(sel,from,to,t,dur,fmt){{const o={{v:from}},el=document.querySelector
 {js}
 // 상단 진행 바 — 전체 길이에 걸쳐 선형으로 찬다(남은 분량이 보이면 이탈이 준다)
 tl.fromTo("#prog",{{scaleX:0}},{{scaleX:1,duration:{total:.2f},ease:"none"}},0);
-tl.to("#fade",{{opacity:1,duration:0.7,ease:"power2.in"}},{total-0.7:.2f});
+// ★끝에 검정 페이드를 두지 않는다(2026-09-27) — 쇼츠는 끝나면 처음부터 다시 돈다.
+//   0.7초 검정 화면이 반복 재생의 이음매를 끊고 '끝났다' 신호를 줬다. 마지막 장면이 그대로 머문다.
 window.__timelines["main"] = tl;
 </script>
 </body></html>

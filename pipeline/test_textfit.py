@@ -165,6 +165,20 @@ ck("진행자 모드에선 막대가 낮아진다(캐릭터 자리 비움)",
    "height:360" in M.build_html(_stat, 3.0, presenter=True) and "height:560" in M.build_html(_stat, 3.0))
 ck("말하는 쪽 이름표가 켜진다", 'tl.to("#nm-byeolha",{opacity:1' in _pon and 'tl.to("#nm-byeori",{opacity:1' in _pon)
 
+print("── 첫 프레임·반복 재생 ──")
+# 쇼츠는 첫 프레임부터 자동 재생 — 첫 장면이 투명에서 시작하면 첫 0.5초가 빈 화면이 된다.
+_hook = [{"type": "hook", "pill": "속보", "lines": ["가나다", "라마바"], "highlight": "라마",
+          "narration": "x", "start": 0.0, "clip": 3.0},
+         {"type": "hook", "pill": "속보", "lines": ["사아자"], "highlight": "",
+          "narration": "y", "start": 2.6, "clip": 3.0}]
+_js0 = M.scene_js(0, _hook[0], "#D97757")
+_js1 = M.scene_js(1, _hook[1], "#D97757")
+ck("첫 장면은 투명에서 시작하지 않는다", "opacity:0" not in _js0, _js0[:200])
+ck("두 번째 장면부터는 기존 등장 연출 유지", "opacity:0" in _js1)
+_full = M.build_html(M.assign_speakers([dict(s) for s in _hook]), 5.6, presenter=True)
+ck("끝에 검정 페이드가 없다(반복 재생 이음매)", 'tl.to("#fade"' not in _full)
+ck("진행자는 0초부터 자리에 있다(아래서 올라오지 않음)", '{y:520}' not in _full)
+
 print()
 if FAIL:
     print(f"❌ 실패 {FAIL}건")
