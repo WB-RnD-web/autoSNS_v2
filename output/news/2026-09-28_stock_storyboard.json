@@ -1,0 +1,102 @@
+{
+  "date": "2026-09-28",
+  "topic": "stock",
+  "privacy": "public",
+  "topic_keyword": "삼성전자 특별배당 마지막 거래일",
+  "headline": "삼성전자, 오늘이 주당 약 4,500원 특별배당 마지막 거래일",
+  "hook_title": "삼성전자 배당 4,500원 오늘까지",
+  "accent": "#D97757",
+  "loop_line": "오늘 하루, 누군가의 돈은 들어오고 누군가의 돈은 나갑니다.",
+  "thumbnail_hook": "Warm early morning light through a home window, a smartphone glowing with an abstract stock chart pattern on a wooden table beside a coffee cup and a small stack of Korean won coins, cozy lifestyle mood, shallow depth of field, no readable text, no people, photorealistic",
+  "thumbnail_text": "배당 4,500원 마감",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "배당 마감",
+      "ghost": "DIVIDEND",
+      "lines": ["삼성전자", "4,500원", "오늘까지만"],
+      "highlight": "오늘",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "삼성전자 주식을 갖고 있다면, 오늘을 놓치면 안 됩니다."
+    },
+    {
+      "type": "stat",
+      "label": "주당 배당금",
+      "prefix": "",
+      "suffix": "원",
+      "from": 0,
+      "to": 4500,
+      "bar": true,
+      "sub": "삼성전자 <b>특별배당</b> 약 30조원 추정",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "삼성전자가 주당 약 사천오백원을 배당할 예정입니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "어제 증시는",
+      "points": [
+        "코스피 <b>4거래일째</b> 상승 마감",
+        "기관 홀로 <b>3,173억</b> 순매수",
+        "개인·외국인은 <b>2조</b> 순매도"
+      ],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "어제는 기관만 사고, 개미와 외국인은 팔았습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "그래서 오늘은",
+      "points": [
+        "뉴욕 3대 지수, <b>3주 만에</b> 첫 상승",
+        "유가·금리 진정되면 숨통 트일 수도"
+      ],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "뉴욕이 삼 주 만에 웃었고, 유가·금리도 진정되는 분위기입니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 지켜볼 것",
+      "points": [
+        "삼성전자 — 배당 받는 <b>마지막</b> 거래일",
+        "반도체 — 어제 <b>2.59%</b> 강세, 오늘도 이어지나"
+      ],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "삼성전자 배당을 받으려면, 오늘이 마지막 날입니다."
+    },
+    {
+      "type": "statement",
+      "text": "배당 받으러 산다 vs 그냥 지켜본다",
+      "highlight": "배당",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "배당 받으러 살지, 지켜볼지, 판단은 여러분 몫입니다."
+    }
+  ],
+  "sources": ["머니투데이", "아시아경제", "뉴데일리", "글로벌이코노믹"],
+  "credit": "출처 머니투데이·아시아경제·뉴데일리 등 · 투자 조언이 아닙니다",
+  "platforms": {
+    "youtube": {
+      "title": "삼성전자 배당 4,500원 오늘까지 #shorts",
+      "description": "삼성전자, 오늘이 주당 약 4,500원 특별배당 마지막 거래일\n출처 머니투데이·아시아경제·뉴데일리 등\n※ 투자 조언이 아닙니다\n\n#삼성전자 #배당 #코스피 #주식 #증시 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "Samsung's ₩4,500 Dividend — Last Day to Qualify #shorts",
+          "description": "Today is the last trading day to buy Samsung Electronics stock and still qualify for its roughly ₩4,500-per-share special dividend.\n출처 머니투데이·아시아경제·뉴데일리 등\n※ 투자 조언이 아닙니다\n\n#Samsung #Dividend #KOSPI #shorts"
+        },
+        "ja": {
+          "title": "サムスン配当4,500ウォン、今日が最終日 #shorts",
+          "description": "サムスン電子の特別配当(1株約4,500ウォン)を受け取るには、今日が最後の取引日です。\n出典 머니투데이·아시아경제·뉴데일리 등\n※ 投資助言ではありません\n\n#サムスン電子 #配当 #KOSPI #shorts"
+        },
+        "zh-Hant": {
+          "title": "三星配息4,500韓元,今天是最後一天 #shorts",
+          "description": "今天是最後一個交易日,買進三星電子股票才能領到每股約4,500韓元的特別股息。\n出處 머니투데이·아시아경제·뉴데일리 등\n※ 非投資建議\n\n#三星電子 #股息 #KOSPI #shorts"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "삼성전자 배당 4,500원 오늘까지\n출처 머니투데이·아시아경제·뉴데일리 등\n※ 투자 조언이 아닙니다\n\n#삼성전자 #배당 #코스피 #주식 #증시 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "삼성전자 배당 4,500원 오늘까지\n출처 머니투데이·아시아경제·뉴데일리 등"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음 · SESSION=KR_AM(개장 전 프리뷰). 추석 연휴(9/24~26, 대체공휴일 없음)로 직전 거래일은 2026-09-23(수), 미국장은 주말 휴장으로 2026-09-25(금) 마감 기준. 삼성전자 특별배당 DPS·총액은 추정치(글로벌이코노믹 등 교차확인, 공식 확정 아님) — 헤드라인/내레이션에 '약' 명시."
+}
