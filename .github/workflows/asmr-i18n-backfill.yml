@@ -15,6 +15,10 @@ on:
         description: "ASMR 가 아닌 롱폼(라디오·소설)도 Spark gemma 로 번역해 채우기"
         type: boolean
         default: false
+      playlists:
+        description: "재생목록 제목도 영어로"
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -51,4 +55,9 @@ jobs:
       - name: 소급
         run: |
           cd pipeline
-          python asmr_i18n_backfill.py             $([ "${{ github.event.inputs.apply }}" = "true" ] && echo --apply)             $([ "${{ github.event.inputs.translate }}" = "true" ] && echo --translate --min-min 4)
+          ARGS=""
+          [ "${{ github.event.inputs.apply }}" = "true" ] && ARGS="$ARGS --apply"
+          [ "${{ github.event.inputs.translate }}" = "true" ] && ARGS="$ARGS --translate --min-min 4"
+          [ "${{ github.event.inputs.playlists }}" = "true" ] && ARGS="$ARGS --playlists"
+          echo "옵션:$ARGS"
+          python asmr_i18n_backfill.py $ARGS

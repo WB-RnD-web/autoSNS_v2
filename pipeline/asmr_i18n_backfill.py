@@ -196,7 +196,7 @@ def main() -> int:
         done = yt_i18n.localize(vid, langs=list(loc), localizations=loc)
         ok += bool(done)
     print(f"\n적용 {ok}/{n}")
-    return 0 if ok == n else 1
+    return 0 if (ok == n and rc_pl == 0) else 1
 
 
 if __name__ == "__main__":
