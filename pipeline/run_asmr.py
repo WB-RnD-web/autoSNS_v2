@@ -36,9 +36,12 @@ def build_meta(spec: dict, attrs_block: str, force_private: bool) -> dict:
         desc = f"{desc}\n\n{attrs_block}"
     privacy = "private" if force_private else (spec.get("privacy") or "public")
     theme = spec.get("theme_name", "")
-    tags = ["ASMR", "백색소음", "수면", "잠들기전", "asmr", "white noise", "sleep"]
+    tags = ["ASMR", "백색소음", "수면", "잠들기전", "asmr", "white noise", "sleep",
+            "sleep sounds", "study sounds"]
     if theme:
         tags.append(theme)
+    if spec.get("theme_id"):
+        tags.append(english_name(spec["theme_id"]).lower())
     # 재생목록: 레포 변수 ASMR_PLAYLIST 가 있으면 그걸 우선(오타/불일치로 새 재생목록 생성 방지)
     playlist = config.env("ASMR_PLAYLIST") or yt.get("playlist", "")
     return {
@@ -49,6 +52,48 @@ def build_meta(spec: dict, attrs_block: str, force_private: bool) -> dict:
         "tags": tags,
         "category_id": config.env("ASMR_YT_CATEGORY", "24"),  # 24=Entertainment
     }
+
+
+# ── 영어 제목(현지화) — 루틴이 안 써줘도 코드가 채운다 (2026-09-27) ─────────
+# 스튜디오 실측: ASMR 13편 전부 '동영상 언어' 미설정 · 현지화 0개 → 해외 시청자도 한글 제목만 봤다.
+# 그런데 해외 시청자가 ASMR 시청시간의 절반 이상이다(파도 3h: 해외 41회가 45시간,
+# 한국 130회가 50시간 · 얼음 3h: 해외 53회가 52시간, 한국 270회가 9시간).
+# 스펙에 localizations 가 없어 yt_i18n 이 조용히 건너뛰고 있었다 → theme_id(영문 슬러그)와
+# 실제 길이로 영어 제목·설명을 결정론적으로 만든다. 루틴이 en 을 써주면 그걸 우선한다.
+import re as _re
+
+_LEAD_EMOJI = _re.compile(r"^\s*([^\w\s가-힣]+)\s*")
+
+
+def english_name(theme_id: str) -> str:
+    words = [w for w in _re.split(r"[-_\s]+", theme_id or "") if w and w.lower() != "asmr"]
+    return " ".join(w[:1].upper() + w[1:] for w in words) or "Relaxing"
+
+
+def english_localization(spec: dict, duration_sec: float | None) -> dict:
+    yt = (spec.get("platforms") or {}).get("youtube") or {}
+    name = english_name(spec.get("theme_id", ""))
+    m = _LEAD_EMOJI.match(yt.get("title", ""))
+    emoji = (m.group(1).strip() + " ") if m else ""
+    # 내림 — 한글 제목과 같은 규칙(3시간 40분 → "3 Hours"). 올리면 없는 시간을 약속하게 된다.
+    hours = max(1, int((duration_sec or 0) // 3600)) if duration_sec else None
+    length = f"{hours} Hour{'s' if hours != 1 else ''}" if hours else "Long"
+    title = f"{emoji}{name} ASMR {length} | Sounds for Sleep, Study & Relaxing"
+    if len(title) > 100:
+        title = f"{emoji}{name} ASMR {length} | Sleep Sounds"[:100]
+    talk = "" if (spec.get("narration_text") or "").strip() else " No talking."
+    desc = (f"{name} sounds for {length.lower()} — to fall asleep, focus or unwind.{talk}\n\n"
+            f"Sound sources: Freesound (CC0) · background image generated.\n"
+            f"#ASMR #{name.replace(' ', '')} #SleepSounds #WhiteNoise")
+    return {"title": title, "description": desc}
+
+
+def asmr_localizations(spec: dict, duration_sec: float | None) -> dict:
+    import yt_i18n
+    loc = dict(yt_i18n.from_spec(spec))
+    if "en" not in loc and "en" in yt_i18n.LANGS:
+        loc["en"] = english_localization(spec, duration_sec)
+    return loc
 
 
 def has_credentials() -> bool:
@@ -152,7 +197,6 @@ def process(spec_path: str, args, led) -> dict:
     res["thumbnail"] = thumb
 
     import upload_youtube_novel
-    import yt_i18n
     last = None
     for attempt in range(1, args.retries + 2):
         try:
@@ -160,7 +204,7 @@ def process(spec_path: str, args, led) -> dict:
                 res["video"], meta["title"], meta["description"], meta["privacy"],
                 playlist_title=meta["playlist"], tags=meta["tags"],
                 category_id=meta["category_id"], thumbnail=thumb,
-                localizations=yt_i18n.from_spec(spec))
+                localizations=asmr_localizations(spec, res.get("duration_sec")))
             res["uploaded"] = f"{pub['url']} ({meta['privacy']})"
             res["playlist"] = pub.get("playlist_id")
             if led is not None:
