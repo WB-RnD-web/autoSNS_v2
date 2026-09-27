@@ -94,7 +94,11 @@ def _service(kinds: list[str], scopes: list[str]):
         if not p or not os.path.exists(p):
             continue
         try:
-            creds = Credentials.from_authorized_user_file(p, scopes)
+            # ★토큰 파일에 적힌(=실제로 받은) 스코프로 연다. 여기서 scopes 를 넘기면 갱신 요청에 그 스코프가
+            #   실리고, 토큰이 안 가진 스코프(force-ssl)가 섞이면 구글이 invalid_scope 로 거절한다.
+            #   2026-09-27 실측: 그래서 token_novel(ASMR·소설·라디오)의 현지화가 전부 조용히 빠지고 있었다.
+            #   스코프가 모자라면 이후 API 호출이 403 → 호출측이 '권한 부족'으로 경고하고 넘어간다.
+            creds = Credentials.from_authorized_user_file(p)
             if creds and creds.expired and creds.refresh_token:
                 creds.refresh(Request())
             return build("youtube", "v3", credentials=creds)
@@ -118,6 +122,49 @@ def _claude(system: str, user: str, max_tokens: int = 4000) -> str | None:
     except Exception as e:  # noqa: BLE001
         sys.stderr.write(f"[warn] 번역 호출 실패: {e}\n")
         return None
+
+
+# ── 번역 폴백: DGX Spark gemma-4-26B (2026-09-27) ─────────────
+# 루틴이 번역을 안 써주고 ANTHROPIC_API_KEY 도 없으면 현지화가 '조용히' 빠졌다 — 공개 채널 실측
+# 롱폼 64편(ASMR·사연/괴담 라디오·소설 연재)이 영어 제목 없이 올라가 있었다. 자체 Spark 서버의
+# LLM(type=llm, 결과는 응답의 "text")으로 채운다. 비용 0, 한 건 15초~2분. 끄기: I18N_SPARK=0
+def _spark_on() -> bool:
+    return config.env("I18N_SPARK", "1") not in ("0", "false", "off", "")
+
+
+def _spark_llm(system: str, user: str, timeout_sec: int = 300) -> str | None:
+    try:
+        import requests
+        import wbspark
+        base, headers = wbspark._base(), wbspark._headers()
+        r = requests.post(f"{base}/jobs", headers=headers, timeout=30,
+                          json={"type": "llm", "prompt": f"{system}\n\n{user}", "think": False})
+        jid = r.json().get("job_id") if r.status_code == 200 else None
+        if not jid:
+            sys.stderr.write(f"[warn] Spark 번역 제출 실패 {r.status_code}: {r.text[:200]}\n")
+            return None
+        deadline = time.monotonic() + timeout_sec
+        while time.monotonic() < deadline:
+            time.sleep(2)
+            d = requests.get(f"{base}/jobs/{jid}", headers=headers, timeout=30).json() or {}
+            if d.get("status") == "done":
+                return d.get("text") or (d.get("result") or {}).get("text")
+            if d.get("status") in ("error", "failed"):
+                sys.stderr.write(f"[warn] Spark 번역 실패: {str(d)[:200]}\n")
+                return None
+        sys.stderr.write(f"[warn] Spark 번역 타임아웃({timeout_sec}s)\n")
+    except Exception as e:  # noqa: BLE001
+        sys.stderr.write(f"[warn] Spark 번역 예외: {e}\n")
+    return None
+
+
+def _llm(system: str, user: str, max_tokens: int = 4000) -> str | None:
+    """Claude(키가 있으면) → 실패하거나 키가 없으면 Spark gemma."""
+    out = _claude(system, user, max_tokens) if config.env("ANTHROPIC_API_KEY") else None
+    if out is None and _spark_on():
+        print("   🌐 번역: Spark gemma-4 (루틴 번역·Claude 키 없음)")
+        out = _spark_llm(system, user)
+    return out
 
 
 def _json_block(text: str):
@@ -154,7 +201,7 @@ def translate_meta(title: str, description: str, langs: list[str]) -> dict:
                        "title": title, "description": description}, ensure_ascii=False)
     user += ('\n\nReturn exactly: {"<lang>": {"title": "...", "description": "..."}, ...} '
              f'with these keys: {list(targets)}')
-    raw = _claude(sysmsg, user, max_tokens=4000)
+    raw = _llm(sysmsg, user, max_tokens=4000)
     if raw is None:
         return {}                         # 키 없음/호출 실패 — 이미 경고를 남겼다
     data = _json_block(raw)
@@ -257,10 +304,10 @@ def localize(video_id: str, langs: list[str] | None = None,
     loc_given = normalize_localizations(localizations, langs)
     if loc_given:
         print(f"   🌐 루틴이 써준 번역 사용: {', '.join(loc_given)} (번역 API 호출 없음)")
-    elif not config.env("ANTHROPIC_API_KEY"):
+    elif not config.env("ANTHROPIC_API_KEY") and not _spark_on():
         # 번역을 못 하는데 videos.list(1 unit)를 먼저 쏘면 쿼터만 낭비된다.
         sys.stderr.write("[warn] 현지화 스킵 — 스펙에 localizations 없고 "
-                         "ANTHROPIC_API_KEY 도 없음(루틴 프롬프트에 번역 블록을 넣을 것)\n")
+                         "ANTHROPIC_API_KEY 도 없고 Spark 번역도 꺼짐(I18N_SPARK=0)\n")
         return []
     yt = _service(["forcessl", "novel", "shorts"], [SCOPE_FORCE, SCOPE_MANAGE, SCOPE_UPLOAD])
     if yt is None:

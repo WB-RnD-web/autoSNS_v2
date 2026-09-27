@@ -12,6 +12,11 @@ PR #68 부터 새 ASMR 은 자동으로 붙지만 기존 영상은 그대로라 
 
   python asmr_i18n_backfill.py            # 미리보기(바꾸지 않음)
   python asmr_i18n_backfill.py --apply    # 실제 적용
+
+--translate (2026-09-27 추가): ASMR 가 아닌 롱폼(사연·괴담 라디오, 소설 연재 등)도 채운다.
+  테마 매핑이 없는 영상은 제목·설명을 Spark gemma 로 번역한다(yt_i18n.translate_meta — 한 편 1~2분,
+  Spark LLM 레인이 4개라 4편씩 동시에). --min-min 을 낮춰(기본 4분) 쇼츠(3분 이하)는 제외한다.
+  python asmr_i18n_backfill.py --translate --min-min 4 [--apply]
 """
 from __future__ import annotations
 import argparse
@@ -32,7 +37,55 @@ KO_EN = [
     ("창가 빗소리", "rain-on-the-window"), ("숲속 빗소리", "rain-in-the-forest"),
     ("빗소리", "rain-sounds"), ("파도", "ocean-waves"), ("종이", "paper-crumpling"),
 ]
+# 재생목록 영어 제목(--playlists). 여기 없는 재생목록은 Spark gemma 로 번역한다.
+PLAYLIST_EN = {
+    "SCP 쇼츠": "SCP Shorts",
+    "SCP 아카이브 (전편 듣기)": "SCP Archive (Full Episodes)",
+    "괴담라디오 (전편 듣기)": "Korean Ghost Story Radio (Full Episodes)",
+    "사연라디오 (전편 듣기)": "Korean Life Story Radio (Full Episodes)",
+    "빈 이름": "The Empty Name (Korean Audio Drama)",
+    "일상공감 ASMR": "Everyday ASMR — Sleep & Study Sounds",
+}
 _ISO = re.compile(r"PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?")
+
+
+def backfill_playlists(yt, apply: bool) -> int:
+    """내 재생목록에 en 현지화를 붙인다(playlists.update 50 units/개). 이미 en 이 있으면 건너뛴다."""
+    tok, done, total = None, 0, 0
+    while True:
+        r = yt.playlists().list(part="snippet,localizations", mine=True, maxResults=50,
+                                pageToken=tok).execute()
+        for p in r.get("items", []):
+            sn = p["snippet"]
+            title = sn.get("title", "")
+            if "en" in (p.get("localizations") or {}) or not re.search("[가-힣]", title):
+                continue
+            total += 1
+            en_title = PLAYLIST_EN.get(title)
+            if en_title:
+                loc = {"en": {"title": en_title, "description": ""}}
+                if sn.get("description"):
+                    tr = yt_i18n.translate_meta(title, sn["description"], ["en"]) if apply else {}
+                    loc["en"]["description"] = (tr.get("en") or {}).get("description", "")
+            else:
+                loc = yt_i18n.translate_meta(title, sn.get("description", ""), ["en"]) if apply else {}
+            print(f"  재생목록 {p['id']}  {title}  → {(loc.get('en') or {}).get('title', '(번역 예정)')}")
+            if not apply or not loc.get("en"):
+                continue
+            body = {"id": p["id"],
+                    "snippet": {"title": title, "description": sn.get("description", ""),
+                                "defaultLanguage": sn.get("defaultLanguage") or "ko"},
+                    "localizations": loc}
+            try:
+                yt.playlists().update(part="snippet,localizations", body=body).execute()
+                done += 1
+            except Exception as e:  # noqa: BLE001
+                print(f"  ⚠️ 재생목록 현지화 실패 {p['id']}: {str(e)[:200]}")
+        tok = r.get("nextPageToken")
+        if not tok:
+            break
+    print(f"재생목록 {'적용' if apply else '대상'} {done if apply else total}/{total}")
+    return 0 if (not apply or done == total) else 1
 
 
 def iso_sec(s: str) -> int:
@@ -78,15 +131,20 @@ def main() -> int:
     ap = argparse.ArgumentParser(description="ASMR 영어 제목 소급")
     ap.add_argument("--apply", action="store_true", help="실제로 적용(없으면 미리보기)")
     ap.add_argument("--min-min", type=int, default=30, help="이 분 이상 영상만")
+    ap.add_argument("--translate", action="store_true",
+                    help="테마 매핑이 없는 롱폼은 Spark gemma 로 번역해서 채운다")
+    ap.add_argument("--playlists", action="store_true", help="재생목록 제목도 영어로")
     a = ap.parse_args()
     config.load_dotenv()
     yt = yt_i18n._service(["novel", "forcessl", "shorts"], [yt_i18n.SCOPE_MANAGE])
     if yt is None:
         print("[stop] 토큰 없음(token_novel.json)")
         return 1
+    rc_pl = backfill_playlists(yt, a.apply) if a.playlists else 0
     ids = uploads(yt)
-    print(f"업로드 {len(ids)}편 검사 · {'적용' if a.apply else '미리보기'}\n")
-    todo, skipped = [], []
+    print(f"업로드 {len(ids)}편 검사 · {'적용' if a.apply else '미리보기'}"
+          f"{' · 번역 포함' if a.translate else ''}\n")
+    todo, need_tr, skipped = [], [], []
     for i in range(0, len(ids), 50):
         r = yt.videos().list(part="snippet,contentDetails,localizations",
                              id=",".join(ids[i:i + 50])).execute()
@@ -99,24 +157,46 @@ def main() -> int:
                 skipped.append((v["id"], title, "이미 en 있음"))
                 continue
             en = english_for(title, sec)
-            if not en:
+            if en:
+                todo.append((v["id"], title, {"en": en}, sec))
+            elif a.translate:
+                need_tr.append((v["id"], title, v["snippet"].get("description", ""), sec))
+            else:
                 skipped.append((v["id"], title, "테마 매핑 없음"))
-                continue
-            todo.append((v["id"], title, en, sec))
-    for vid, title, en, sec in todo:
-        print(f"  {vid}  {sec // 3600}h{sec % 3600 // 60:02d}m  {title}\n      → {en['title']}")
+    for vid, title, loc, sec in todo:
+        print(f"  {vid}  {sec // 3600}h{sec % 3600 // 60:02d}m  {title}\n      → {loc['en']['title']}")
+    for vid, title, _, sec in need_tr:
+        print(f"  {vid}  {sec // 60}m  {title}  (번역 대상)")
     for vid, title, why in skipped:
         print(f"  건너뜀 {vid}  {title}  ({why})")
-    print(f"\n대상 {len(todo)}편 · 건너뜀 {len(skipped)}편 · 예상 쿼터 {len(todo) * 51} units")
+    n = len(todo) + len(need_tr)
+    print(f"\n대상 {n}편(ASMR {len(todo)} · 번역 {len(need_tr)}) · 건너뜀 {len(skipped)}편"
+          f" · 예상 쿼터 {n * 51} units")
     if not a.apply:
         print("미리보기만 했다 — 적용하려면 --apply")
         return 0
+    if need_tr:
+        # Spark LLM 레인이 4개 — 4편씩 동시에 번역한다(순서대로면 40편에 1시간 가까이 걸린다)
+        from concurrent.futures import ThreadPoolExecutor
+        langs = yt_i18n.LANGS
+
+        def _tr(item):
+            vid, title, desc, sec = item
+            return vid, title, yt_i18n.translate_meta(title, desc, langs), sec
+
+        with ThreadPoolExecutor(max_workers=4) as ex:
+            for vid, title, loc, sec in ex.map(_tr, need_tr):
+                if loc.get("en"):
+                    print(f"  🌐 {vid}  {title}\n      → {loc['en']['title']}")
+                    todo.append((vid, title, loc, sec))
+                else:
+                    print(f"  ⚠️ 번역 실패 {vid}  {title}")
     ok = 0
-    for vid, title, en, _ in todo:
-        done = yt_i18n.localize(vid, langs=["en"], localizations={"en": en})
+    for vid, title, loc, _ in todo:
+        done = yt_i18n.localize(vid, langs=list(loc), localizations=loc)
         ok += bool(done)
-    print(f"\n적용 {ok}/{len(todo)}")
-    return 0 if ok == len(todo) else 1
+    print(f"\n적용 {ok}/{n}")
+    return 0 if (ok == n and rc_pl == 0) else 1
 
 
 if __name__ == "__main__":

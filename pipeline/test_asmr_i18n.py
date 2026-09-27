@@ -45,6 +45,32 @@ given = {**spec, "platforms": {"youtube": {**spec["platforms"]["youtube"],
 ck("루틴이 써준 en 이 우선", R.asmr_localizations(given, 11427)["en"]["title"] == "Routine title")
 ck("영문 태그가 붙는다", "paper crumpling" in R.build_meta(spec, "", False)["tags"])
 
+# ── 번역 폴백(Spark gemma) — 루틴 번역·Claude 키가 없어도 영어가 빠지지 않게 ──
+import yt_i18n as Y  # noqa: E402
+calls = []
+_orig = (Y._claude, Y._spark_llm)
+Y._claude = lambda s, u, m=4000: calls.append("claude") or None
+Y._spark_llm = lambda s, u, timeout_sec=300: calls.append("spark") or '{"en":{"title":"T","description":"D"}}'
+os.environ.pop("ANTHROPIC_API_KEY", None)
+os.environ.pop("I18N_SPARK", None)
+ck("키가 없으면 Spark 로 번역한다", Y.translate_meta("제목", "설명", ["en"]) == {"en": {"title": "T", "description": "D"}}
+   and calls == ["spark"], str(calls))
+calls.clear()
+os.environ["ANTHROPIC_API_KEY"] = "x"
+Y._llm("s", "u")
+ck("키가 있으면 Claude 먼저, 실패하면 Spark", calls == ["claude", "spark"], str(calls))
+del os.environ["ANTHROPIC_API_KEY"]
+os.environ["I18N_SPARK"] = "0"
+calls.clear()
+ck("I18N_SPARK=0 이면 Spark 도 안 부른다", Y._llm("s", "u") is None and calls == [], str(calls))
+del os.environ["I18N_SPARK"]
+Y._claude, Y._spark_llm = _orig
+
+import asmr_i18n_backfill as B  # noqa: E402
+ck("소급: ASMR 제목은 템플릿으로", B.english_for("🌊 파도 소리 ASMR 1시간 | 수면", 3601)["title"].startswith("🌊 Ocean Waves ASMR 1 Hour"))
+ck("소급: 라디오 제목은 매핑 없음(→ 번역 모드)", B.english_for("탄약고 자물쇠에, 손가락 성에가 맺혔습니다 | 괴담라디오", 900) is None)
+ck("ISO 길이 파싱", B.iso_sec("PT3H26M54S") == 12414 and B.iso_sec("PT42S") == 42)
+
 print()
 if FAIL:
     print(f"❌ 실패 {FAIL}건")
