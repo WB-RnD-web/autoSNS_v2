@@ -1,0 +1,1330 @@
+{
+  "date": "2026-09-28",
+  "iso_week": "2026-W40",
+  "topic": "scp",
+  "privacy": "public",
+  "origin": "canon",
+  "origin_note": "",
+  "source_url": "https://scp-wiki.wikidot.com/scp-682",
+  "story_id": "scp-682",
+  "scp_number": "SCP-682",
+  "object_class": "Keter",
+  "codename": "불사의 파충류",
+  "number_check": {
+    "checked_at": "2026-09-28",
+    "http_code": "canon"
+  },
+  "theme": "과학 시설",
+  "nature": "물질·생물",
+  "twist_type": "인과",
+  "logline": "어떤 수단으로도 죽지 않는 파충류형 개체 SCP-682. 재단은 염산 격리실에 가뒀지만, 가둔 산이 먹이였고 죽이려고 쓴 개체는 면역만 남겼습니다.",
+  "structure": "연대기형",
+  "opening_move": "수치의 어긋남",
+  "opening_note": "원작 회차 — 번호는 assign 배정값(n=82). 오프닝 후보 4(장면 하나)·1(수치의 어긋남) 중 원작의 가장 유명한 관측(87% 손상 상태로 말함)이 숫자라 1을 택함. 첫 15초 = 원작의 대표 장면(§0-C). 원작 회차라 canon.json threads/links 는 열지 않음. 원작에 없는 GoI·기억소거 등은 넣지 않음(원문에 있는 것만).",
+  "closing_move": "재단의 판단 보류",
+  "number_reveal": "앞",
+  "ending_mode": "질문+구독",
+  "fault": "재단",
+  "hook_line": "몸의 팔십칠 퍼센트가 없었습니다.",
+  "procedures": [],
+  "character": {
+    "name": "Dr. ██████ (원문에서 이름 말소)",
+    "role": "682 인터뷰 담당 연구원",
+    "flaw": "대답을 받아내려고 D-085에게 마이크를 더 가까이 대라고 거듭 지시한다"
+  },
+  "chain": [
+    {
+      "when": "기록이 시작되기 전",
+      "event": "재단이 기원 불명의 파충류형 개체를 확보하고 격리 절차 첫 줄에 '가능한 한 빨리 파괴'를 적는다",
+      "because": "",
+      "shot": "폐허가 된 시험장 한가운데 멀쩡히 서 있는 거대한 파충류형 개체"
+    },
+    {
+      "when": "곧이어",
+      "event": "어떤 수단으로도 죽지 않자 재단이 5m 입방 격리실을 25cm 내산성 강판으로 싸고 염산을 채워 가라앉힌다",
+      "because": "죽일 수단이 없어서 가둘 수밖에 없었다",
+      "shot": "초록빛 염산 속에 코끝과 눈 하나만 내놓고 잠긴 개체"
+    },
+    {
+      "when": "가둔 뒤",
+      "event": "콧구멍 속 여과 아가미가 염산에서 쓸 물질을 걸러 개체가 계속 재생한다",
+      "because": "격리 수단인 염산이 곧 먹이가 되었다",
+      "shot": "벌어진 콧구멍 안쪽에서 겹겹이 떨리는 아가미 클로즈업"
+    },
+    {
+      "when": "그 무렵",
+      "event": "몸 87%가 망가진 상태로 움직이고 말하는 모습이 관측된다",
+      "because": "재생이 손상 속도를 따라잡았다",
+      "shot": "몸 절반이 윤곽만 남은 채 입을 벌려 말하는 개체"
+    },
+    {
+      "when": "어느 인터뷰",
+      "event": "담당 박사가 농부 살해 이유를 추궁하며 D-085에게 마이크를 더 가까이 대라고 지시한다",
+      "because": "말을 한다는 사실이 확인되자 대답을 받아내려 했다",
+      "shot": "관찰창 너머 거대한 눈 하나와 마이크 붐을 든 주황 작업복의 뒷모습"
+    },
+    {
+      "when": "그 직후",
+      "event": "682가 D-085를 공격하고 '역겨웠어'라고 말하며, 박사는 물러나고 재단은 682와의 대화를 금지한다",
+      "because": "마이크를 들이민 D-085가 사정거리에 들어갔다",
+      "shot": "텅 빈 인터뷰실 바닥에 떨어진 마이크와 어둠 속 이빨"
+    },
+    {
+      "when": "그 뒤로 몇 차례",
+      "event": "682가 탈출을 17번 시도해 6번 성공하고, 기동특무부대가 매번 재수용한다",
+      "because": "대화도 끊긴 채 격리만 남았고, 개체는 계속 벽을 시험했다",
+      "shot": "안쪽에서 뜯겨 나간 강판 벽을 뚫고 나오는 개체와 붉은 경광등"
+    },
+    {
+      "when": "탈출 기록이 쌓이면서",
+      "event": "사망 31명·실종 1명이 명단에 남고, 재단은 7명 미만 팀의 교전을 금지하고 반경 50km 개발을 막는다",
+      "because": "탈출할 때마다 투입 인원이 대부분 돌아오지 못했다",
+      "shot": "복도 끝 거대한 그림자와 그 앞에 선 일곱 명의 무장 대원 뒷모습"
+    },
+    {
+      "when": "종료 시도 중 하나",
+      "event": "재단이 사건 682-E18에서 SCP-409를 682에 노출시킨다",
+      "because": "가두는 것만으로는 안 돼 다시 죽이는 쪽으로 돌아섰다",
+      "shot": "개체의 옆구리와 앞다리를 타고 번지는 창백한 결정"
+    },
+    {
+      "when": "같은 날 오후",
+      "event": "결정화가 62%에서 멈추고 폭발했지만 682는 재생하며 관계자 전원을 죽이겠다고 선언하고, 409에 면역이 된다",
+      "because": "409가 평소보다 느리게 퍼졌고 개체가 버텨냈다",
+      "shot": "흩어진 결정 조각 사이에서 다시 일어서는 개체의 불타는 눈"
+    },
+    {
+      "when": "그 뒤",
+      "event": "재단이 다른 SCP는 먼저 682 샘플에 시험하라는 절차를 추가하고, SCP-689 종료 요청은 승인 대기에, SCP-182는 격리 구역 진입을 꺼린다",
+      "because": "409라는 수단 하나를 영영 잃었다",
+      "shot": "검은 비늘 조각 하나가 든 밀봉 시험관, 유리에 비친 거대한 눈"
+    }
+  ],
+  "retention_beats": [
+    "가둔 염산이 곧 먹이였다(콧구멍 여과 아가미)",
+    "D-085 녹취 — 「…그것들은… 역겨웠어…」",
+    "409 결정화 62%에서 폭발 → 재생 → 면역"
+  ],
+  "cameos": [
+    {
+      "number": "SCP-079",
+      "how": "682와 제한된 시간 접촉했을 때 복잡한 의사소통을 주고받는 모습이 관측됐다(원문)"
+    },
+    {
+      "number": "SCP-409",
+      "how": "사건 682-E18에서 682에 쓰였고 결정화가 62%에서 멈춘 뒤 682가 면역이 됐다(원문)"
+    }
+  ],
+  "twist_summary": "인과의 반전 — 682를 가두려고 채운 염산이 콧구멍 여과 아가미를 통해 곧 먹이가 됐고, 죽이려고 쓴 SCP-409는 682를 면역으로 만들어 수단 하나를 영영 지웠다. 재단은 이후 모든 종료 수단을 먼저 682 샘플에 시험하게 했고, SCP-689 요청은 승인 대기 중이다.",
+  "narration_full": "몸의 팔십칠 퍼센트가 없었습니다. 그런데 그게, 말을 했습니다. 부서지고 썩어 들어간 몸으로… 움직이면서요. 재단 문서에 실제로 적힌 관측입니다. 저도 처음엔 숫자를 잘못 읽은 줄 알았어요. 문서에 적힌 건 번호뿐인데, 다들 이 개체를 이렇게 부르죠. 불사의 파충류. 오늘 꺼낼 문서는 SCP-682입니다. 이 문서는 첫 줄부터 이상합니다. 보통 격리 절차는 가두는 법부터 적거든요. 여긴 아닙니다. 「가능한 한 빨리 파괴되어야 한다.」 그리고 바로 다음 줄이 이겁니다. 「현재 어떤 수단으로도 파괴할 수 없다.」 「큰 손상을 줄 수 있을 뿐이다.」 죽여야 하는데, 못 죽인다. 그래서 가둔다. 이 문서 전체가 그 한 줄에서 굴러갑니다. 생김새는 대략 파충류를 닮았다고만 합니다. 크고요. 어디서 왔냐고요? 모릅니다. 기원 불명, 그게 전부예요. 대신 알아낸 게 하나 있죠. 이놈은 먹는 걸 가리지 않습니다. 살아 있던 것이든, 쇠붙이든 — 삼키면 전부 힘이 됩니다. 먹으면 커지고, 덜어내면 줄고요. 그래서 재단이 짠 방이 이렇습니다. 격리실은 가로 세로 높이 오 미터 정육면체. 안쪽 모든 면에 내산성 강판, 두께는 이십오 센티. 그리고 그 안을… 염산으로 채웁니다. 682가 잠겨서 못 움직일 때까지요. 녹이면서 가둔다는 거죠. 이 정도면 되겠다, 싶었을 겁니다. 그런데 사달은 콧구멍에서 났습니다. 콧구멍 안쪽에 아가미가 한 벌 있었거든요. 어떤 액체든, 쓸 만한 것만 걸러내는. 그러니까 가둬둔 산이… 먹이였던 겁니다. 그 산을 먹고, 계속 재생했고요. 그 보고서 받은 사람 표정, 궁금하지 않으세요? 격리 장치가 곧 급식 장치였으니까요. 맨 처음 그 숫자가 여기서 나옵니다. 팔십칠 퍼센트가 망가진 채로, 움직이고 말하는 게 관측됐죠. 말을 한다. 이게 또 문제였습니다. 문서는 이놈이 극도로 영리하다고 적습니다. SCP-079와 잠깐 같이 있었을 때, 복잡한 대화가 오간 게 관측됐을 정도로요. 그리고 인터뷰마다 드러난 게 하나 있습니다. 모든 생명에 대한, 증오. 남은 녹취 한 토막을 볼까요? 이십일 분 오십이 초부터입니다. 담당 박사 이름은 지워져 있고요. 「그 농부들은 왜 죽였지?」 682는 대답이 없습니다. 박사가 압박하죠. 말 안 하면 격리실로 도로 넣겠다고. 그제야 뭔가 웅얼거리는데, 알아들을 수가 없어요. 박사가 D계급 D-085에게 지시합니다. 「마이크, 더 가까이 대.」 또 안 들리자, 목소리가 커집니다. 증폭에도 한계가 있으니 더 붙이라고요. D-085가 한 말은 이겁니다. 「이놈 목 망가졌다고요, 보세요.」 「말 못 한다니까—」 기록엔 그다음이, 숨 들이켜는 소리와 비명. 그리고 682의 목소리가 처음 또렷하게 잡힙니다. 「…그것들은… 역겨웠어…」 박사는 방에서 물러났고, 녹취는 거기서 끝납니다. D-085가 어떻게 됐는지는… 굳이 말 안 해도 되겠죠? 이 녹취 하나로 격리 절차에 조항이 붙습니다. 682에게 말을 거는 것 자체가 금지. 격노 상태를 부를 수 있어서요. 어기면 강제로 끌어낸다고 적혀 있습니다. 대답을 받아내려던 그 고집이, 고스란히 금지 규정이 된 셈이죠. 그래도 682는 가만있지 않았습니다. 격리를 깨려는 시도, 열일곱 번. 그중 실제로 뚫고 나간 게 여섯 번. 객체 등급 케테르가 딱 이런 뜻입니다. 세서가 아니라, 가둬도 안 가둬져서. 뚫릴 때마다 기동특무부대가 총동원돼 쫓아가서 재수용합니다. 조건이 하나 붙어요. 일곱 명이 안 되는 팀은 교전 금지. 왜 일곱인지는, 명단을 보면 짐작이 갑니다. 여섯 번의 격리 실패 기록. 사망 표시를 세어보면 서른한 개입니다. 요원이 쓰러지질 않나, 대령 계급까지 명단에 오르질 않나, D계급은 거의 매번이고요. 다섯 번째엔 여덟 명이 나갔는데, 돌아온 건 D-221 한 명뿐입니다. 여섯 번째엔 표시 하나가 달라요. 사망이 아니라, 실종. D-291. 어디로 갔을까요? 문서엔 없습니다. 날짜도 전부 지워져 있고요. 탈출 한 번이 재단을 세상에 드러낼 수 있죠. 그래서 682는 위치가 지워진 사이트에 있습니다. 반경 오십 킬로미터 안엔 개발 금지. 가둬서 안 되면, 죽여야죠. 재단은 그 줄을 끝까지 안 놓습니다. 그런데 여기서, 재단이 일을 키웁니다. 재단 기록명, 사건 682-E18. 다른 개체, SCP-409를 682에 씁니다. 닿은 것을 결정으로 바꾸는 개체죠. 장성 둘, 박사 하나가 지켜봅니다. 네 시, 노출. 682가 닿은 자리를 스스로 찢기 시작합니다. 그리고 몇 번이나 묻죠. 나한테 뭘 쓴 거냐고. 여덟 시, 결정화 시작. 그런데 평소보다 훨씬 느립니다. 정오, 극심한 고통. 그리고 발작. 오후 한 시, 결정화가 멈춥니다. 육십이 퍼센트에서요. 그리고 결정이 된 부분이, 터집니다. 여기까지 들으면, 됐다 싶잖아요? 두 시, 682는 회복합니다. 팔다리와 장기 일부를 잃은 채로요. 재생을 시작하면서, 이렇게 말합니다. 관여한 직원 전부를 죽여 먹겠다고. 그리고 그 뒤로, 409에 면역이 됩니다. 재단이 죽이려고 쓴 무기 하나가, 목록에서 영영 지워진 겁니다. 쓸 때마다 한 장씩 버리는 카드였던 거죠. 되돌릴 방법은, 없고요. 그래서 절차가 또 바뀝니다. 다른 SCP로 없애려면, 먼저 682의 샘플에 시험할 것. 카드 아끼는 법을, 카드를 잃고 배운 셈이죠. 지금 이 문서엔 두 가지가 걸려 있습니다. 하나는 SCP-689로 종료해 보자는 요청. 박사 두 명이 올린 겁니다. 이 요청은 「현재 승인 대기 중」. 누가 승인하는지조차 검게 칠해져 있어요. 다른 하나는 기어스 박사의 제안입니다. SCP-182로, 682와 대화를 시도하자고. 그런데 182 쪽이 꺼립니다. 할 수만 있다면, 그 격리 구역엔 안 들어가겠다고. 다른 개체조차 가기 싫어하는 방. 불사의 파충류는, 거기 있습니다. 문서 맨 아래엔 종료 기록이 이어집니다. 기록 번호가, 다섯 자리예요. 한두 번이 아니었다는 거, 느껴지시죠? 불사의 파충류를 두고, 재단은 아직 판단을 못 내렸습니다. 무엇으로 죽여야 하는지도, 애초에 죽일 수는 있는 건지도요. 여러분이라면 다음엔 뭘 써보시겠어요? 단, 한 번 쓰면 영영 못 쓴다는 조건입니다. 생각나는 게 있으면 댓글에 남겨주세요. 구독해두시면, 다음 재단 문서도 같이 열어보죠.",
+  "segments": [
+    {
+      "text": "몸의 팔십칠 퍼센트가 없었습니다.",
+      "est_sec": 4,
+      "text_en": "Eighty-seven percent of its body was gone.",
+      "text_ja": "体の八十七パーセントが失われていました。",
+      "text_zh_Hant": "牠的身體,有百分之八十七已經不在了。",
+      "emphasis": "팔십칠 퍼센트"
+    },
+    {
+      "text": "그런데 그게, 말을 했습니다.",
+      "est_sec": 3,
+      "text_en": "And yet, it spoke.",
+      "text_ja": "それなのに、それは喋ったんです。",
+      "text_zh_Hant": "可是,牠開口說話了。"
+    },
+    {
+      "text": "부서지고 썩어 들어간 몸으로… 움직이면서요.",
+      "est_sec": 5,
+      "text_en": "Moving… in a body broken and rotting away.",
+      "text_ja": "壊れて腐りかけた体で…動きながら。",
+      "text_zh_Hant": "拖著破碎腐爛的身體…還在動。"
+    },
+    {
+      "text": "재단 문서에 실제로 적힌 관측입니다.",
+      "est_sec": 4,
+      "text_en": "That's an actual observation in the Foundation file.",
+      "text_ja": "財団の文書に実際に記された観測です。",
+      "text_zh_Hant": "這是基金會文件裡真實記載的觀測。"
+    },
+    {
+      "text": "저도 처음엔 숫자를 잘못 읽은 줄 알았어요.",
+      "est_sec": 5,
+      "text_en": "At first I thought I'd misread the number.",
+      "text_ja": "私も最初は数字を読み違えたと思いました。",
+      "text_zh_Hant": "我一開始也以為自己看錯了數字。"
+    },
+    {
+      "text": "문서에 적힌 건 번호뿐인데,",
+      "est_sec": 3,
+      "text_en": "The file gives only a number,",
+      "text_ja": "文書にあるのは番号だけですが、",
+      "text_zh_Hant": "文件上只寫著編號,"
+    },
+    {
+      "text": "다들 이 개체를 이렇게 부르죠.",
+      "est_sec": 3,
+      "text_en": "but everyone calls this thing something else.",
+      "text_ja": "誰もがこの存在をこう呼びます。",
+      "text_zh_Hant": "但大家都這樣稱呼牠。"
+    },
+    {
+      "text": "불사의 파충류.",
+      "est_sec": 2,
+      "text_en": "The Immortal Reptile.",
+      "text_ja": "不死の爬虫類。",
+      "text_zh_Hant": "不死的爬蟲。"
+    },
+    {
+      "text": "오늘 꺼낼 문서는 SCP-682입니다.",
+      "est_sec": 4,
+      "text_en": "Today's file is SCP-682.",
+      "text_ja": "今日開く文書は、SCP-682です。",
+      "text_zh_Hant": "今天要打開的文件是 SCP-682。"
+    },
+    {
+      "text": "이 문서는 첫 줄부터 이상합니다.",
+      "est_sec": 4,
+      "text_en": "This file is strange from the very first line.",
+      "text_ja": "この文書は一行目からおかしいんです。",
+      "text_zh_Hant": "這份文件從第一行就不對勁。"
+    },
+    {
+      "text": "보통 격리 절차는 가두는 법부터 적거든요.",
+      "est_sec": 5,
+      "text_en": "Containment procedures usually start with how to hold it.",
+      "text_ja": "普通、収容手順は閉じ込め方から書きます。",
+      "text_zh_Hant": "一般收容程序都先寫怎麼關住。"
+    },
+    {
+      "text": "여긴 아닙니다.",
+      "est_sec": 2,
+      "text_en": "Not this one.",
+      "text_ja": "ここは違います。",
+      "text_zh_Hant": "這份不是。"
+    },
+    {
+      "text": "「가능한 한 빨리 파괴되어야 한다.」",
+      "est_sec": 4,
+      "text_en": "\"Must be destroyed as soon as possible.\"",
+      "text_ja": "「可能な限り速やかに破壊されなければならない。」",
+      "text_zh_Hant": "「必須盡快予以摧毀。」"
+    },
+    {
+      "text": "그리고 바로 다음 줄이 이겁니다.",
+      "est_sec": 4,
+      "text_en": "And the very next line reads:",
+      "text_ja": "そしてすぐ次の行がこれです。",
+      "text_zh_Hant": "而緊接著的下一行是這樣:"
+    },
+    {
+      "text": "「현재 어떤 수단으로도 파괴할 수 없다.」",
+      "est_sec": 5,
+      "text_en": "\"No means currently available can destroy it.\"",
+      "text_ja": "「現在、いかなる手段でも破壊できない。」",
+      "text_zh_Hant": "「目前沒有任何手段能摧毀它。」"
+    },
+    {
+      "text": "「큰 손상을 줄 수 있을 뿐이다.」",
+      "est_sec": 4,
+      "text_en": "\"Only cause massive damage.\"",
+      "text_ja": "「大きな損傷を与えられるだけだ。」",
+      "text_zh_Hant": "「只能造成重大損傷。」"
+    },
+    {
+      "text": "죽여야 하는데, 못 죽인다.",
+      "est_sec": 3,
+      "text_en": "It must be killed. It can't be killed.",
+      "text_ja": "殺さねばならないのに、殺せない。",
+      "text_zh_Hant": "必須殺死,卻殺不死。"
+    },
+    {
+      "text": "그래서 가둔다.",
+      "est_sec": 2,
+      "text_en": "So they contain it.",
+      "text_ja": "だから閉じ込める。",
+      "text_zh_Hant": "所以只能關起來。"
+    },
+    {
+      "text": "이 문서 전체가 그 한 줄에서 굴러갑니다.",
+      "est_sec": 5,
+      "text_en": "The whole file rolls out from that one line.",
+      "text_ja": "この文書はすべて、その一行から転がり出します。",
+      "text_zh_Hant": "整份文件,都從那一句開始滾動。"
+    },
+    {
+      "text": "생김새는 대략 파충류를 닮았다고만 합니다.",
+      "est_sec": 5,
+      "text_en": "It's described only as vaguely reptile-like.",
+      "text_ja": "外見は、どこか爬虫類に似ているとだけ。",
+      "text_zh_Hant": "外型只說隱約像爬蟲類。"
+    },
+    {
+      "text": "크고요.",
+      "est_sec": 2,
+      "text_en": "And large.",
+      "text_ja": "大きくて。",
+      "text_zh_Hant": "而且很大。"
+    },
+    {
+      "text": "어디서 왔냐고요?",
+      "est_sec": 2,
+      "text_en": "Where did it come from?",
+      "text_ja": "どこから来たのか、ですか?",
+      "text_zh_Hant": "從哪裡來的?"
+    },
+    {
+      "text": "모릅니다. 기원 불명, 그게 전부예요.",
+      "est_sec": 4,
+      "text_en": "No one knows. Origin unknown. That's all.",
+      "text_ja": "わかりません。起源不明、それだけです。",
+      "text_zh_Hant": "不知道。來源不明,就這樣。"
+    },
+    {
+      "text": "대신 알아낸 게 하나 있죠.",
+      "est_sec": 3,
+      "text_en": "But one thing they did learn.",
+      "text_ja": "代わりに分かったことがひとつあります。",
+      "text_zh_Hant": "不過,倒是弄清楚了一件事。"
+    },
+    {
+      "text": "이놈은 먹는 걸 가리지 않습니다.",
+      "est_sec": 4,
+      "text_en": "It isn't picky about what it eats.",
+      "text_ja": "こいつは食べる物を選びません。",
+      "text_zh_Hant": "牠什麼都吃。"
+    },
+    {
+      "text": "살아 있던 것이든, 쇠붙이든 —",
+      "est_sec": 3,
+      "text_en": "Organic or not, even metal —",
+      "text_ja": "生き物だろうと、鉄くずだろうと——",
+      "text_zh_Hant": "不管是有機物,還是金屬——"
+    },
+    {
+      "text": "삼키면 전부 힘이 됩니다.",
+      "est_sec": 3,
+      "text_en": "whatever it swallows becomes energy.",
+      "text_ja": "飲み込めば全部が力になります。",
+      "text_zh_Hant": "吞下去就全變成能量。"
+    },
+    {
+      "text": "먹으면 커지고, 덜어내면 줄고요.",
+      "est_sec": 4,
+      "text_en": "It grows as it eats, shrinks as it sheds.",
+      "text_ja": "食べれば大きくなり、削げば縮む。",
+      "text_zh_Hant": "吃了就變大,脫落就縮小。"
+    },
+    {
+      "text": "그래서 재단이 짠 방이 이렇습니다.",
+      "est_sec": 4,
+      "text_en": "So here's the room the Foundation built.",
+      "text_ja": "そこで財団が用意した部屋がこうです。",
+      "text_zh_Hant": "於是基金會打造了這樣的房間。"
+    },
+    {
+      "text": "격리실은 가로 세로 높이 오 미터 정육면체.",
+      "est_sec": 5,
+      "text_en": "The containment chamber: a five-meter cube.",
+      "text_ja": "収容室は縦横高さ五メートルの立方体。",
+      "text_zh_Hant": "收容室是長寬高各五公尺的立方體。"
+    },
+    {
+      "text": "안쪽 모든 면에 내산성 강판,",
+      "est_sec": 3,
+      "text_en": "Acid-resistant steel on every inner face,",
+      "text_ja": "内側の全面に耐酸性の鋼板、",
+      "text_zh_Hant": "內側每一面都鋪上耐酸鋼板,"
+    },
+    {
+      "text": "두께는 이십오 센티.",
+      "est_sec": 2,
+      "text_en": "twenty-five centimeters thick.",
+      "text_ja": "厚さ二十五センチ。",
+      "text_zh_Hant": "厚達二十五公分。"
+    },
+    {
+      "text": "그리고 그 안을… 염산으로 채웁니다.",
+      "est_sec": 4,
+      "text_en": "And then they fill it… with hydrochloric acid.",
+      "text_ja": "そしてその中を…塩酸で満たします。",
+      "text_zh_Hant": "然後把裡面…灌滿鹽酸。"
+    },
+    {
+      "text": "682가 잠겨서 못 움직일 때까지요.",
+      "est_sec": 4,
+      "text_en": "Until 682 is submerged and can't move.",
+      "text_ja": "682が沈んで動けなくなるまで。",
+      "text_zh_Hant": "直到682沉在裡面動彈不得。"
+    },
+    {
+      "text": "녹이면서 가둔다는 거죠.",
+      "est_sec": 3,
+      "text_en": "Contain it by dissolving it.",
+      "text_ja": "溶かしながら閉じ込めるわけです。",
+      "text_zh_Hant": "邊溶解邊關押。"
+    },
+    {
+      "text": "이 정도면 되겠다, 싶었을 겁니다.",
+      "est_sec": 4,
+      "text_en": "They must have thought that would do it.",
+      "text_ja": "これで大丈夫だ、と思ったでしょう。",
+      "text_zh_Hant": "他們大概覺得這樣就夠了。"
+    },
+    {
+      "text": "그런데 사달은 콧구멍에서 났습니다.",
+      "est_sec": 4,
+      "text_en": "But the trouble started in its nostrils.",
+      "text_ja": "ところが、問題は鼻の穴で起きました。",
+      "text_zh_Hant": "結果,問題出在牠的鼻孔。"
+    },
+    {
+      "text": "콧구멍 안쪽에 아가미가 한 벌 있었거든요.",
+      "est_sec": 5,
+      "text_en": "Inside them was a set of filtering gills.",
+      "text_ja": "鼻の奥に、ひと組のエラがあったんです。",
+      "text_zh_Hant": "鼻孔深處長著一組鰓。"
+    },
+    {
+      "text": "어떤 액체든, 쓸 만한 것만 걸러내는.",
+      "est_sec": 4,
+      "text_en": "Able to pull usable matter from any liquid.",
+      "text_ja": "どんな液体からも使える物だけを濾し取る。",
+      "text_zh_Hant": "能從任何液體裡濾出有用的物質。"
+    },
+    {
+      "text": "그러니까 가둬둔 산이… 먹이였던 겁니다.",
+      "est_sec": 4,
+      "text_en": "So the acid holding it… was feeding it.",
+      "text_ja": "つまり閉じ込めていた酸が…餌だったんです。",
+      "text_zh_Hant": "也就是說,關住牠的酸…正在餵牠。"
+    },
+    {
+      "text": "그 산을 먹고, 계속 재생했고요.",
+      "est_sec": 4,
+      "text_en": "It kept regenerating off that acid.",
+      "text_ja": "その酸を食べて、再生し続けた。",
+      "text_zh_Hant": "牠吃著那些酸,持續再生。"
+    },
+    {
+      "text": "그 보고서 받은 사람 표정, 궁금하지 않으세요?",
+      "est_sec": 5,
+      "text_en": "Don't you wonder about the face of whoever read that report?",
+      "text_ja": "その報告を受けた人の顔、気になりませんか?",
+      "text_zh_Hant": "你不好奇收到那份報告的人是什麼表情嗎?"
+    },
+    {
+      "text": "격리 장치가 곧 급식 장치였으니까요.",
+      "est_sec": 4,
+      "text_en": "The containment unit was a feeding unit.",
+      "text_ja": "収容装置が、そのまま給餌装置だったんですから。",
+      "text_zh_Hant": "收容裝置,其實就是餵食裝置。"
+    },
+    {
+      "text": "맨 처음 그 숫자가 여기서 나옵니다.",
+      "est_sec": 4,
+      "text_en": "That's where the number from the start comes in.",
+      "text_ja": "冒頭のあの数字は、ここから来ます。",
+      "text_zh_Hant": "開頭那個數字就是從這來的。"
+    },
+    {
+      "text": "팔십칠 퍼센트가 망가진 채로,",
+      "est_sec": 3,
+      "text_en": "With eighty-seven percent destroyed,",
+      "text_ja": "八十七パーセントが壊れたまま、",
+      "text_zh_Hant": "在百分之八十七損毀的狀態下,"
+    },
+    {
+      "text": "움직이고 말하는 게 관측됐죠.",
+      "est_sec": 3,
+      "text_en": "it was seen moving and speaking.",
+      "text_ja": "動き、喋る姿が観測されました。",
+      "text_zh_Hant": "仍被觀測到在移動、說話。"
+    },
+    {
+      "text": "말을 한다. 이게 또 문제였습니다.",
+      "est_sec": 4,
+      "text_en": "It speaks. That was another problem.",
+      "text_ja": "喋る。これがまた問題でした。",
+      "text_zh_Hant": "會說話。這又是另一個問題。"
+    },
+    {
+      "text": "문서는 이놈이 극도로 영리하다고 적습니다.",
+      "est_sec": 5,
+      "text_en": "The file calls it extremely intelligent.",
+      "text_ja": "文書はこいつを極めて知能が高いと書いています。",
+      "text_zh_Hant": "文件寫著牠極度聰明。"
+    },
+    {
+      "text": "SCP-079와 잠깐 같이 있었을 때,",
+      "est_sec": 4,
+      "text_en": "During brief exposure to SCP-079,",
+      "text_ja": "SCP-079と短い間一緒にいた時、",
+      "text_zh_Hant": "牠和SCP-079短暫接觸時,"
+    },
+    {
+      "text": "복잡한 대화가 오간 게 관측됐을 정도로요.",
+      "est_sec": 5,
+      "text_en": "the two were seen in complex communication.",
+      "text_ja": "複雑な会話が観測されたほどです。",
+      "text_zh_Hant": "曾被觀測到進行複雜的交流。"
+    },
+    {
+      "text": "그리고 인터뷰마다 드러난 게 하나 있습니다.",
+      "est_sec": 5,
+      "text_en": "And every interview revealed one thing.",
+      "text_ja": "そして面談のたびに現れたものがひとつ。",
+      "text_zh_Hant": "而每次訪談都顯露出一件事。"
+    },
+    {
+      "text": "모든 생명에 대한, 증오.",
+      "est_sec": 3,
+      "text_en": "A hatred of all life.",
+      "text_ja": "すべての生命への、憎悪。",
+      "text_zh_Hant": "對一切生命的,憎恨。"
+    },
+    {
+      "text": "남은 녹취 한 토막을 볼까요?",
+      "est_sec": 3,
+      "text_en": "Shall we look at one surviving transcript?",
+      "text_ja": "残っている記録を一つ見てみましょうか?",
+      "text_zh_Hant": "來看一段留存的錄音紀錄吧?"
+    },
+    {
+      "text": "이십일 분 오십이 초부터입니다.",
+      "est_sec": 3,
+      "text_en": "It starts at twenty-one minutes, fifty-two seconds.",
+      "text_ja": "二十一分五十二秒からです。",
+      "text_zh_Hant": "從二十一分五十二秒開始。"
+    },
+    {
+      "text": "담당 박사 이름은 지워져 있고요.",
+      "est_sec": 4,
+      "text_en": "The doctor's name is redacted.",
+      "text_ja": "担当博士の名前は消されています。",
+      "text_zh_Hant": "負責博士的名字被塗掉了。"
+    },
+    {
+      "text": "「그 농부들은 왜 죽였지?」",
+      "est_sec": 3,
+      "text_en": "\"Now, why did you kill those farmers?\"",
+      "text_ja": "「なぜあの農夫たちを殺した?」",
+      "text_zh_Hant": "「你為什麼殺了那些農夫?」"
+    },
+    {
+      "text": "682는 대답이 없습니다.",
+      "est_sec": 3,
+      "text_en": "682 gives no answer.",
+      "text_ja": "682は答えません。",
+      "text_zh_Hant": "682沒有回答。"
+    },
+    {
+      "text": "박사가 압박하죠.",
+      "est_sec": 2,
+      "text_en": "The doctor presses.",
+      "text_ja": "博士は圧をかけます。",
+      "text_zh_Hant": "博士施壓。"
+    },
+    {
+      "text": "말 안 하면 격리실로 도로 넣겠다고.",
+      "est_sec": 4,
+      "text_en": "Talk, or you go back into containment.",
+      "text_ja": "話さなければ収容室に戻すと。",
+      "text_zh_Hant": "不說話,就把你送回收容室。"
+    },
+    {
+      "text": "그제야 뭔가 웅얼거리는데,",
+      "est_sec": 3,
+      "text_en": "Only then does it mumble something,",
+      "text_ja": "ようやく何かを呟きますが、",
+      "text_zh_Hant": "牠這才咕噥了什麼,"
+    },
+    {
+      "text": "알아들을 수가 없어요.",
+      "est_sec": 2,
+      "text_en": "but it's incomprehensible.",
+      "text_ja": "聞き取れません。",
+      "text_zh_Hant": "卻完全聽不清。"
+    },
+    {
+      "text": "박사가 D계급 D-085에게 지시합니다.",
+      "est_sec": 4,
+      "text_en": "The doctor turns to D-class D-085.",
+      "text_ja": "博士はDクラスのD-085に指示します。",
+      "text_zh_Hant": "博士命令D級人員D-085:"
+    },
+    {
+      "text": "「마이크, 더 가까이 대.」",
+      "est_sec": 3,
+      "text_en": "\"Move the mic up closer.\"",
+      "text_ja": "「マイクをもっと近づけろ。」",
+      "text_zh_Hant": "「麥克風,再靠近一點。」"
+    },
+    {
+      "text": "또 안 들리자, 목소리가 커집니다.",
+      "est_sec": 4,
+      "text_en": "Still nothing, and his voice rises.",
+      "text_ja": "また聞こえず、声が大きくなります。",
+      "text_zh_Hant": "還是聽不到,他提高了音量。"
+    },
+    {
+      "text": "증폭에도 한계가 있으니 더 붙이라고요.",
+      "est_sec": 4,
+      "text_en": "The mic only has so much gain. Closer.",
+      "text_ja": "増幅にも限界がある、もっと近づけろと。",
+      "text_zh_Hant": "麥克風增益有限,再貼近一點。"
+    },
+    {
+      "text": "D-085가 한 말은 이겁니다.",
+      "est_sec": 3,
+      "text_en": "Here's what D-085 said.",
+      "text_ja": "D-085が言ったのはこうです。",
+      "text_zh_Hant": "D-085是這麼說的:"
+    },
+    {
+      "text": "「이놈 목 망가졌다고요, 보세요.」",
+      "est_sec": 4,
+      "text_en": "\"His throat's messed up, man, look at it.\"",
+      "text_ja": "「こいつの喉、イカれてますって、見てくださいよ。」",
+      "text_zh_Hant": "「牠喉嚨都爛了,你看啊。」"
+    },
+    {
+      "text": "「말 못 한다니까—」",
+      "est_sec": 2,
+      "text_en": "\"He ain't talking—\"",
+      "text_ja": "「喋れっこない——」",
+      "text_zh_Hant": "「牠根本不能說——」"
+    },
+    {
+      "text": "기록엔 그다음이, 숨 들이켜는 소리와 비명.",
+      "est_sec": 5,
+      "text_en": "The log records a gasp, then screams.",
+      "text_ja": "記録にはその後、息をのむ音と悲鳴。",
+      "text_zh_Hant": "紀錄接下來是倒抽一口氣,和尖叫。"
+    },
+    {
+      "text": "그리고 682의 목소리가 처음 또렷하게 잡힙니다.",
+      "est_sec": 5,
+      "text_en": "Then, clearly for the first time, 682's voice.",
+      "text_ja": "そして682の声が初めてはっきり録れます。",
+      "text_zh_Hant": "接著,第一次清楚錄到682的聲音。"
+    },
+    {
+      "text": "「…그것들은… 역겨웠어…」",
+      "est_sec": 3,
+      "text_en": "\"…they were… disgusting…\"",
+      "text_ja": "「…あいつらは…気色悪かった…」",
+      "text_zh_Hant": "「…牠們…很噁心…」"
+    },
+    {
+      "text": "박사는 방에서 물러났고,",
+      "est_sec": 3,
+      "text_en": "The doctor retreated from the room,",
+      "text_ja": "博士は部屋から退き、",
+      "text_zh_Hant": "博士退出了房間,"
+    },
+    {
+      "text": "녹취는 거기서 끝납니다.",
+      "est_sec": 3,
+      "text_en": "and the log ends there.",
+      "text_ja": "記録はそこで終わります。",
+      "text_zh_Hant": "紀錄就此結束。"
+    },
+    {
+      "text": "D-085가 어떻게 됐는지는…",
+      "est_sec": 3,
+      "text_en": "As for what happened to D-085…",
+      "text_ja": "D-085がどうなったかは…",
+      "text_zh_Hant": "至於D-085後來怎麼樣…"
+    },
+    {
+      "text": "굳이 말 안 해도 되겠죠?",
+      "est_sec": 3,
+      "text_en": "I don't really need to say, do I?",
+      "text_ja": "わざわざ言うまでもないでしょう?",
+      "text_zh_Hant": "我就不必多說了吧?"
+    },
+    {
+      "text": "이 녹취 하나로 격리 절차에 조항이 붙습니다.",
+      "est_sec": 5,
+      "text_en": "That one transcript added a clause to the procedures.",
+      "text_ja": "この記録ひとつで収容手順に条項が加わります。",
+      "text_zh_Hant": "就因為這段紀錄,收容程序多了一條。"
+    },
+    {
+      "text": "682에게 말을 거는 것 자체가 금지.",
+      "est_sec": 4,
+      "text_en": "No one may speak to 682. At all.",
+      "text_ja": "682に話しかけること自体が禁止。",
+      "text_zh_Hant": "禁止對682說話,任何形式都不行。"
+    },
+    {
+      "text": "격노 상태를 부를 수 있어서요.",
+      "est_sec": 3,
+      "text_en": "It might provoke a rage-state.",
+      "text_ja": "激昂状態を招きかねないからです。",
+      "text_zh_Hant": "因為可能引發狂怒狀態。"
+    },
+    {
+      "text": "어기면 강제로 끌어낸다고 적혀 있습니다.",
+      "est_sec": 4,
+      "text_en": "Violators are to be removed by force.",
+      "text_ja": "違反すれば力ずくで排除される、と。",
+      "text_zh_Hant": "違者將被強制帶離。"
+    },
+    {
+      "text": "대답을 받아내려던 그 고집이,",
+      "est_sec": 3,
+      "text_en": "That insistence on getting an answer",
+      "text_ja": "答えを引き出そうとしたあの執着が、",
+      "text_zh_Hant": "那份非要逼出答案的執著,"
+    },
+    {
+      "text": "고스란히 금지 규정이 된 셈이죠.",
+      "est_sec": 4,
+      "text_en": "turned straight into a ban.",
+      "text_ja": "そのまま禁止規定になったわけです。",
+      "text_zh_Hant": "原封不動變成了禁令。"
+    },
+    {
+      "text": "그래도 682는 가만있지 않았습니다.",
+      "est_sec": 4,
+      "text_en": "Still, 682 did not stay put.",
+      "text_ja": "それでも682はじっとしていませんでした。",
+      "text_zh_Hant": "即使如此,682也沒安分過。"
+    },
+    {
+      "text": "격리를 깨려는 시도, 열일곱 번.",
+      "est_sec": 4,
+      "text_en": "Seventeen attempted breaches.",
+      "text_ja": "収容を破る試み、十七回。",
+      "text_zh_Hant": "試圖突破收容,十七次。",
+      "emphasis": "열일곱 번"
+    },
+    {
+      "text": "그중 실제로 뚫고 나간 게 여섯 번.",
+      "est_sec": 4,
+      "text_en": "Six of them succeeded.",
+      "text_ja": "うち実際に破ったのが六回。",
+      "text_zh_Hant": "其中真的衝出去的,六次。"
+    },
+    {
+      "text": "객체 등급 케테르가 딱 이런 뜻입니다.",
+      "est_sec": 4,
+      "text_en": "That's exactly what the Keter class means.",
+      "text_ja": "オブジェクトクラス「ケテル」とはまさにこれです。",
+      "text_zh_Hant": "物件等級Keter,指的正是這個。"
+    },
+    {
+      "text": "세서가 아니라, 가둬도 안 가둬져서.",
+      "est_sec": 4,
+      "text_en": "Not strong. Just uncontainable, again and again.",
+      "text_ja": "強いからではなく、閉じ込めても閉じ込められないから。",
+      "text_zh_Hant": "不是因為強,而是怎麼關都關不住。"
+    },
+    {
+      "text": "뚫릴 때마다 기동특무부대가 총동원돼",
+      "est_sec": 4,
+      "text_en": "Each breach, every Mobile Task Force available",
+      "text_ja": "破られるたび機動部隊が総動員され、",
+      "text_zh_Hant": "每次突破,所有機動特遣隊都會出動"
+    },
+    {
+      "text": "쫓아가서 재수용합니다.",
+      "est_sec": 2,
+      "text_en": "tracks it down and recontains it.",
+      "text_ja": "追跡して再収容します。",
+      "text_zh_Hant": "追捕並重新收容。"
+    },
+    {
+      "text": "조건이 하나 붙어요.",
+      "est_sec": 2,
+      "text_en": "With one condition.",
+      "text_ja": "条件がひとつ付きます。",
+      "text_zh_Hant": "但附帶一個條件。"
+    },
+    {
+      "text": "일곱 명이 안 되는 팀은 교전 금지.",
+      "est_sec": 4,
+      "text_en": "No team under seven may engage it.",
+      "text_ja": "七名未満のチームは交戦禁止。",
+      "text_zh_Hant": "不滿七人的小隊,禁止交戰。"
+    },
+    {
+      "text": "왜 일곱인지는, 명단을 보면 짐작이 갑니다.",
+      "est_sec": 5,
+      "text_en": "Why seven? The rosters give you an idea.",
+      "text_ja": "なぜ七人か、名簿を見れば見当がつきます。",
+      "text_zh_Hant": "為什麼是七人?看名單就猜得到。"
+    },
+    {
+      "text": "여섯 번의 격리 실패 기록.",
+      "est_sec": 3,
+      "text_en": "Six records of failed containment.",
+      "text_ja": "六回の収容失敗記録。",
+      "text_zh_Hant": "六次收容失敗紀錄。"
+    },
+    {
+      "text": "사망 표시를 세어보면 서른한 개입니다.",
+      "est_sec": 4,
+      "text_en": "Count the KIA marks: thirty-one.",
+      "text_ja": "死亡の印を数えると三十一。",
+      "text_zh_Hant": "數一數陣亡標記,共三十一個。"
+    },
+    {
+      "text": "요원이 쓰러지질 않나,",
+      "est_sec": 2,
+      "text_en": "Agents fall,",
+      "text_ja": "エージェントは倒れるし、",
+      "text_zh_Hant": "探員倒下,"
+    },
+    {
+      "text": "대령 계급까지 명단에 오르질 않나,",
+      "est_sec": 4,
+      "text_en": "even a colonel ends up on the list,",
+      "text_ja": "大佐まで名簿に載るし、",
+      "text_zh_Hant": "連上校都上了名單,"
+    },
+    {
+      "text": "D계급은 거의 매번이고요.",
+      "est_sec": 3,
+      "text_en": "and D-class, nearly every time.",
+      "text_ja": "Dクラスはほぼ毎回です。",
+      "text_zh_Hant": "D級人員幾乎每次都有。"
+    },
+    {
+      "text": "다섯 번째엔 여덟 명이 나갔는데,",
+      "est_sec": 4,
+      "text_en": "The fifth time, eight went out.",
+      "text_ja": "五回目は八人が出ましたが、",
+      "text_zh_Hant": "第五次,出動了八個人,"
+    },
+    {
+      "text": "돌아온 건 D-221 한 명뿐입니다.",
+      "est_sec": 4,
+      "text_en": "Only D-221 came back.",
+      "text_ja": "戻ったのはD-221ひとりだけ。",
+      "text_zh_Hant": "回來的只有D-221一人。"
+    },
+    {
+      "text": "여섯 번째엔 표시 하나가 달라요.",
+      "est_sec": 4,
+      "text_en": "The sixth has one mark that's different.",
+      "text_ja": "六回目には、ひとつ違う印があります。",
+      "text_zh_Hant": "第六次,有一個標記不一樣。"
+    },
+    {
+      "text": "사망이 아니라, 실종.",
+      "est_sec": 2,
+      "text_en": "Not killed. Missing.",
+      "text_ja": "死亡ではなく、行方不明。",
+      "text_zh_Hant": "不是陣亡,是失蹤。"
+    },
+    {
+      "text": "D-291.",
+      "est_sec": 2,
+      "text_en": "D-291.",
+      "text_ja": "D-291。",
+      "text_zh_Hant": "D-291。"
+    },
+    {
+      "text": "어디로 갔을까요?",
+      "est_sec": 2,
+      "text_en": "Where did they go?",
+      "text_ja": "どこへ行ったんでしょう?",
+      "text_zh_Hant": "他去了哪裡?"
+    },
+    {
+      "text": "문서엔 없습니다. 날짜도 전부 지워져 있고요.",
+      "est_sec": 5,
+      "text_en": "The file doesn't say. Every date is redacted.",
+      "text_ja": "文書にはありません。日付も全部消されています。",
+      "text_zh_Hant": "文件沒寫。日期也全被塗掉了。"
+    },
+    {
+      "text": "탈출 한 번이 재단을 세상에 드러낼 수 있죠.",
+      "est_sec": 5,
+      "text_en": "One breach could expose the Foundation.",
+      "text_ja": "脱走一度で財団が世に露見しかねません。",
+      "text_zh_Hant": "一次脫逃,就可能讓基金會曝光。"
+    },
+    {
+      "text": "그래서 682는 위치가 지워진 사이트에 있습니다.",
+      "est_sec": 5,
+      "text_en": "So 682 sits in a site whose name is redacted.",
+      "text_ja": "だから682は、所在の消されたサイトにいます。",
+      "text_zh_Hant": "所以682被關在一個地點被塗掉的站點。"
+    },
+    {
+      "text": "반경 오십 킬로미터 안엔 개발 금지.",
+      "est_sec": 4,
+      "text_en": "No human development within fifty kilometers.",
+      "text_ja": "半径五十キロ以内は開発禁止。",
+      "text_zh_Hant": "方圓五十公里內禁止任何開發。"
+    },
+    {
+      "text": "가둬서 안 되면, 죽여야죠.",
+      "est_sec": 3,
+      "text_en": "If you can't hold it, you kill it.",
+      "text_ja": "閉じ込められないなら、殺すしかない。",
+      "text_zh_Hant": "關不住,就只能殺。"
+    },
+    {
+      "text": "재단은 그 줄을 끝까지 안 놓습니다.",
+      "est_sec": 4,
+      "text_en": "The Foundation never lets go of that line.",
+      "text_ja": "財団はその一線を決して手放しません。",
+      "text_zh_Hant": "基金會始終沒放棄這條路。"
+    },
+    {
+      "text": "그런데 여기서, 재단이 일을 키웁니다.",
+      "est_sec": 4,
+      "text_en": "And this is where the Foundation makes it worse.",
+      "text_ja": "ところがここで、財団が事を大きくします。",
+      "text_zh_Hant": "但就在這裡,基金會把事情弄大了。"
+    },
+    {
+      "text": "재단 기록명, 사건 682-E18.",
+      "est_sec": 4,
+      "text_en": "Foundation record: Event 682-E18.",
+      "text_ja": "財団の記録名、事案682-E18。",
+      "text_zh_Hant": "基金會紀錄名稱:事件682-E18。"
+    },
+    {
+      "text": "다른 개체, SCP-409를 682에 씁니다.",
+      "est_sec": 5,
+      "text_en": "They use another object, SCP-409, on 682.",
+      "text_ja": "別のオブジェクト、SCP-409を682に使います。",
+      "text_zh_Hant": "他們把另一個物件SCP-409用在682身上。"
+    },
+    {
+      "text": "닿은 것을 결정으로 바꾸는 개체죠.",
+      "est_sec": 4,
+      "text_en": "It turns what it touches into crystal.",
+      "text_ja": "触れたものを結晶に変えるオブジェクトです。",
+      "text_zh_Hant": "那是個會讓接觸物結晶化的物件。"
+    },
+    {
+      "text": "장성 둘, 박사 하나가 지켜봅니다.",
+      "est_sec": 4,
+      "text_en": "Two generals and a doctor observe.",
+      "text_ja": "将官二人と博士一人が見守ります。",
+      "text_zh_Hant": "兩名將軍和一名博士在場觀察。"
+    },
+    {
+      "text": "네 시, 노출.",
+      "est_sec": 2,
+      "text_en": "0400. Exposure.",
+      "text_ja": "〇四〇〇、曝露。",
+      "text_zh_Hant": "〇四〇〇,接觸。"
+    },
+    {
+      "text": "682가 닿은 자리를 스스로 찢기 시작합니다.",
+      "est_sec": 5,
+      "text_en": "682 starts tearing at the point of contact.",
+      "text_ja": "682は接触箇所を自ら裂き始めます。",
+      "text_zh_Hant": "682開始撕扯接觸的部位。"
+    },
+    {
+      "text": "그리고 몇 번이나 묻죠. 나한테 뭘 쓴 거냐고.",
+      "est_sec": 5,
+      "text_en": "And asks, again and again, what it's been exposed to.",
+      "text_ja": "そして何度も尋ねます。何を使ったのかと。",
+      "text_zh_Hant": "並一再追問:你們對我用了什麼?"
+    },
+    {
+      "text": "여덟 시, 결정화 시작.",
+      "est_sec": 3,
+      "text_en": "0800. Crystallization begins.",
+      "text_ja": "〇八〇〇、結晶化開始。",
+      "text_zh_Hant": "〇八〇〇,開始結晶化。"
+    },
+    {
+      "text": "그런데 평소보다 훨씬 느립니다.",
+      "est_sec": 3,
+      "text_en": "But far slower than normal.",
+      "text_ja": "ただ、普段よりずっと遅い。",
+      "text_zh_Hant": "但比平常慢得多。"
+    },
+    {
+      "text": "정오, 극심한 고통. 그리고 발작.",
+      "est_sec": 4,
+      "text_en": "1200. Extreme pain. Seizures.",
+      "text_ja": "一二〇〇、激痛。そして発作。",
+      "text_zh_Hant": "一二〇〇,劇痛,接著痙攣。"
+    },
+    {
+      "text": "오후 한 시, 결정화가 멈춥니다.",
+      "est_sec": 4,
+      "text_en": "1300. Crystallization stops.",
+      "text_ja": "一三〇〇、結晶化が止まります。",
+      "text_zh_Hant": "一三〇〇,結晶化停止。"
+    },
+    {
+      "text": "육십이 퍼센트에서요.",
+      "est_sec": 2,
+      "text_en": "At sixty-two percent.",
+      "text_ja": "六十二パーセントで。",
+      "text_zh_Hant": "停在百分之六十二。"
+    },
+    {
+      "text": "그리고 결정이 된 부분이, 터집니다.",
+      "est_sec": 4,
+      "text_en": "Then the crystallized part explodes.",
+      "text_ja": "そして結晶化した部分が、弾けます。",
+      "text_zh_Hant": "然後,結晶的部分爆開了。"
+    },
+    {
+      "text": "여기까지 들으면, 됐다 싶잖아요?",
+      "est_sec": 4,
+      "text_en": "Hearing that, you'd think that's it, right?",
+      "text_ja": "ここまで聞けば、やったと思いますよね?",
+      "text_zh_Hant": "聽到這裡,會覺得成功了吧?"
+    },
+    {
+      "text": "두 시, 682는 회복합니다.",
+      "est_sec": 3,
+      "text_en": "1400. 682 recovers.",
+      "text_ja": "一四〇〇、682は回復します。",
+      "text_zh_Hant": "一四〇〇,682恢復了。"
+    },
+    {
+      "text": "팔다리와 장기 일부를 잃은 채로요.",
+      "est_sec": 4,
+      "text_en": "Despite losing limbs and organs.",
+      "text_ja": "手足と臓器の一部を失ったまま。",
+      "text_zh_Hant": "即使失去了肢體和部分器官。"
+    },
+    {
+      "text": "재생을 시작하면서, 이렇게 말합니다.",
+      "est_sec": 4,
+      "text_en": "As it regenerates, it declares",
+      "text_ja": "再生を始めながら、こう言います。",
+      "text_zh_Hant": "一邊再生,一邊宣告:"
+    },
+    {
+      "text": "관여한 직원 전부를 죽여 먹겠다고.",
+      "est_sec": 4,
+      "text_en": "it will kill and consume everyone involved.",
+      "text_ja": "関わった職員を全員殺して喰らうと。",
+      "text_zh_Hant": "要殺光並吃掉所有參與者。"
+    },
+    {
+      "text": "그리고 그 뒤로, 409에 면역이 됩니다.",
+      "est_sec": 5,
+      "text_en": "And from then on, it's immune to 409.",
+      "text_ja": "そしてその後、409に免疫を得ます。",
+      "text_zh_Hant": "從此以後,牠對409免疫了。",
+      "emphasis": "409에 면역"
+    },
+    {
+      "text": "재단이 죽이려고 쓴 무기 하나가,",
+      "est_sec": 4,
+      "text_en": "One weapon the Foundation used to kill it",
+      "text_ja": "財団が殺すために使った武器ひとつが、",
+      "text_zh_Hant": "基金會用來殺牠的一件武器,"
+    },
+    {
+      "text": "목록에서 영영 지워진 겁니다.",
+      "est_sec": 3,
+      "text_en": "was erased from the list for good.",
+      "text_ja": "リストから永遠に消えたわけです。",
+      "text_zh_Hant": "從清單上永遠消失了。"
+    },
+    {
+      "text": "쓸 때마다 한 장씩 버리는 카드였던 거죠.",
+      "est_sec": 5,
+      "text_en": "Each use burns a card.",
+      "text_ja": "使うたびに一枚ずつ捨てるカードだったんです。",
+      "text_zh_Hant": "每用一次,就少一張牌。"
+    },
+    {
+      "text": "되돌릴 방법은, 없고요.",
+      "est_sec": 3,
+      "text_en": "And there's no getting it back.",
+      "text_ja": "取り戻す方法は、ありません。",
+      "text_zh_Hant": "而且無法挽回。"
+    },
+    {
+      "text": "그래서 절차가 또 바뀝니다.",
+      "est_sec": 3,
+      "text_en": "So the procedure changes again.",
+      "text_ja": "それで手順がまた変わります。",
+      "text_zh_Hant": "於是程序又改了。"
+    },
+    {
+      "text": "다른 SCP로 없애려면,",
+      "est_sec": 3,
+      "text_en": "To use any other SCP to terminate it,",
+      "text_ja": "別のSCPで消そうとするなら、",
+      "text_zh_Hant": "要用其他SCP消滅牠,"
+    },
+    {
+      "text": "먼저 682의 샘플에 시험할 것.",
+      "est_sec": 4,
+      "text_en": "test it first on a sample of 682.",
+      "text_ja": "まず682のサンプルで試すこと。",
+      "text_zh_Hant": "必須先在682的樣本上測試。"
+    },
+    {
+      "text": "카드 아끼는 법을, 카드를 잃고 배운 셈이죠.",
+      "est_sec": 5,
+      "text_en": "They learned to save cards by losing one.",
+      "text_ja": "カードの節約を、カードを失って学んだわけです。",
+      "text_zh_Hant": "丟了一張牌,才學會省著用。"
+    },
+    {
+      "text": "지금 이 문서엔 두 가지가 걸려 있습니다.",
+      "est_sec": 5,
+      "text_en": "Two things hang on this file right now.",
+      "text_ja": "今この文書には、二つの件が懸かっています。",
+      "text_zh_Hant": "這份文件現在懸著兩件事。"
+    },
+    {
+      "text": "하나는 SCP-689로 종료해 보자는 요청.",
+      "est_sec": 5,
+      "text_en": "One: a request to terminate it with SCP-689.",
+      "text_ja": "一つはSCP-689で終了させる要請。",
+      "text_zh_Hant": "一是用SCP-689終結牠的申請。"
+    },
+    {
+      "text": "박사 두 명이 올린 겁니다.",
+      "est_sec": 3,
+      "text_en": "Filed by two doctors.",
+      "text_ja": "博士二人が出したものです。",
+      "text_zh_Hant": "由兩位博士提出。"
+    },
+    {
+      "text": "이 요청은 「현재 승인 대기 중」.",
+      "est_sec": 4,
+      "text_en": "Its status: \"currently pending approval.\"",
+      "text_ja": "この要請は「現在承認待ち」。",
+      "text_zh_Hant": "這項申請「目前仍在等待批准」。"
+    },
+    {
+      "text": "누가 승인하는지조차 검게 칠해져 있어요.",
+      "est_sec": 4,
+      "text_en": "Even who approves it is blacked out.",
+      "text_ja": "誰が承認するのかさえ黒塗りです。",
+      "text_zh_Hant": "連由誰批准都被塗黑了。"
+    },
+    {
+      "text": "다른 하나는 기어스 박사의 제안입니다.",
+      "est_sec": 4,
+      "text_en": "Two: a suggestion from Dr. Gears.",
+      "text_ja": "もう一つはギアーズ博士の提案です。",
+      "text_zh_Hant": "另一件是吉爾斯博士的提議。"
+    },
+    {
+      "text": "SCP-182로, 682와 대화를 시도하자고.",
+      "est_sec": 5,
+      "text_en": "Use SCP-182 to try to communicate with 682.",
+      "text_ja": "SCP-182を使って682との対話を試みようと。",
+      "text_zh_Hant": "用SCP-182嘗試和682溝通。"
+    },
+    {
+      "text": "그런데 182 쪽이 꺼립니다.",
+      "est_sec": 3,
+      "text_en": "But 182 is reluctant.",
+      "text_ja": "ところが182の方が嫌がります。",
+      "text_zh_Hant": "但182本身不願意。"
+    },
+    {
+      "text": "할 수만 있다면, 그 격리 구역엔 안 들어가겠다고.",
+      "est_sec": 6,
+      "text_en": "If at all possible, it refuses to enter that area.",
+      "text_ja": "できることなら、あの収容区域には入らないと。",
+      "text_zh_Hant": "只要可以,牠拒絕進入那個收容區。"
+    },
+    {
+      "text": "다른 개체조차 가기 싫어하는 방.",
+      "est_sec": 4,
+      "text_en": "A room even other anomalies won't enter.",
+      "text_ja": "他のオブジェクトすら行きたがらない部屋。",
+      "text_zh_Hant": "連其他異常都不願踏進的房間。"
+    },
+    {
+      "text": "불사의 파충류는, 거기 있습니다.",
+      "est_sec": 4,
+      "text_en": "That's where the Immortal Reptile is.",
+      "text_ja": "不死の爬虫類は、そこにいます。",
+      "text_zh_Hant": "不死的爬蟲,就在那裡。"
+    },
+    {
+      "text": "문서 맨 아래엔 종료 기록이 이어집니다.",
+      "est_sec": 4,
+      "text_en": "At the bottom, the termination logs begin.",
+      "text_ja": "文書の最後には終了記録が続きます。",
+      "text_zh_Hant": "文件最下方,接著是終結紀錄。"
+    },
+    {
+      "text": "기록 번호가, 다섯 자리예요.",
+      "est_sec": 3,
+      "text_en": "The log number has five digits.",
+      "text_ja": "記録番号は、五桁です。",
+      "text_zh_Hant": "紀錄編號,是五位數。"
+    },
+    {
+      "text": "한두 번이 아니었다는 거, 느껴지시죠?",
+      "est_sec": 4,
+      "text_en": "You can tell it wasn't just once or twice, right?",
+      "text_ja": "一度や二度じゃないって、伝わりますよね?",
+      "text_zh_Hant": "感覺得出不只一兩次了吧?"
+    },
+    {
+      "text": "불사의 파충류를 두고, 재단은 아직 판단을 못 내렸습니다.",
+      "est_sec": 6,
+      "text_en": "On the Immortal Reptile, the Foundation still hasn't decided.",
+      "text_ja": "不死の爬虫類について、財団はまだ判断を下せていません。",
+      "text_zh_Hant": "對於不死的爬蟲,基金會至今仍未做出判斷。"
+    },
+    {
+      "text": "무엇으로 죽여야 하는지도,",
+      "est_sec": 3,
+      "text_en": "What to kill it with,",
+      "text_ja": "何で殺すべきかも、",
+      "text_zh_Hant": "該用什麼殺牠,"
+    },
+    {
+      "text": "애초에 죽일 수는 있는 건지도요.",
+      "est_sec": 4,
+      "text_en": "or whether it can be killed at all.",
+      "text_ja": "そもそも殺せるのかどうかも。",
+      "text_zh_Hant": "甚至,牠到底殺不殺得死。"
+    },
+    {
+      "text": "여러분이라면 다음엔 뭘 써보시겠어요?",
+      "est_sec": 4,
+      "text_en": "What would you try next?",
+      "text_ja": "皆さんなら、次は何を試しますか?",
+      "text_zh_Hant": "如果是你,下一次會用什麼?"
+    },
+    {
+      "text": "단, 한 번 쓰면 영영 못 쓴다는 조건입니다.",
+      "est_sec": 5,
+      "text_en": "Catch: once used, it's gone forever.",
+      "text_ja": "ただし、一度使えば二度と使えない条件です。",
+      "text_zh_Hant": "條件是:用過一次,就永遠不能再用。"
+    },
+    {
+      "text": "생각나는 게 있으면 댓글에 남겨주세요.",
+      "est_sec": 4,
+      "text_en": "Leave your pick in the comments.",
+      "text_ja": "思いついたらコメントに残してください。",
+      "text_zh_Hant": "想到了就留言告訴我吧。"
+    },
+    {
+      "text": "구독해두시면, 다음 재단 문서도 같이 열어보죠.",
+      "est_sec": 5,
+      "text_en": "Subscribe, and we'll open the next Foundation file together.",
+      "text_ja": "チャンネル登録で、次の財団文書も一緒に開きましょう。",
+      "text_zh_Hant": "訂閱頻道,下一份基金會文件我們一起打開。"
+    }
+  ],
+  "scenes": [
+    {
+      "prompt": "SUBJECT: huge reptilian creature, half its body a hollow broken outline, jaw open as if speaking, 65% of frame. CONTEXT: dark concrete floor of a test bay. COMPOSITION: low angle, frontal close on head and torso. LIGHT: single hard spotlight from above. MATERIAL: scaled hide, cracked concrete, exposed steel rebar. ATMOSPHERE: dust hanging in the beam. PALETTE: near-black, dull olive hide, red rim light. RENDER: sharp cel edges; empty lower quarter. LOOK: dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: the reptilian creature crouched mid-step, unharmed, amid scorched debris, 60% of frame, eyes glowing. CONTEXT: ruined weapons test range, bent barricades. COMPOSITION: low wide angle, creature filling center. LIGHT: one harsh floodlight behind, strong rim. MATERIAL: scaled hide, scorched metal, shattered stone. ATMOSPHERE: smoke drifting low. PALETTE: black, charcoal grey, red eye glow. RENDER: sharp cel edges; empty lower quarter. LOOK: dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: massive reptilian creature sunk in murky green acid, only snout and one eye above the surface, 60% of frame. CONTEXT: 5-meter chamber with thick riveted steel plating. COMPOSITION: frontal, eye-level with the waterline. LIGHT: single sickly overhead lamp. MATERIAL: acid-resistant steel plate, oily liquid surface, wet scales. ATMOSPHERE: acrid vapor curling off the acid. PALETTE: near-black, toxic green, red accent on the eye. RENDER: sharp cel edges; empty lower quarter. LOOK: dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: close-up of the creature's snout, nostrils flared open showing layered filter-gills inside, 70% of frame. CONTEXT: acid liquid lapping at its jaw. COMPOSITION: macro side profile. LIGHT: single cold light from below the liquid. MATERIAL: layered gill membranes, wet scales, acid droplets. ATMOSPHERE: steam and bubbles. PALETTE: black, sickly green, red rim on gill edges. RENDER: sharp cel edges; empty lower quarter. LOOK: dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: creature's head behind thick glass, one huge eye near it, 60% of frame. CONTEXT: a mic boom held toward it by an orange-jumpsuit figure seen from behind. COMPOSITION: over-the-shoulder. LIGHT: single fluorescent tube overhead. MATERIAL: scratched glass, steel, orange fabric. ATMOSPHERE: still, heavy air. PALETTE: near-black, orange jumpsuit, red eye glow. RENDER: sharp cel edges; empty lower quarter. LOOK: dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: creature's jaws parted in a snarl in darkness, 60% of frame; a dropped microphone in foreground. CONTEXT: empty interview room, door ajar. COMPOSITION: low floor-level angle past the microphone. LIGHT: one shaft of light from the open door. MATERIAL: steel floor, microphone cable, scaled lips. ATMOSPHERE: silence, drifting dust. PALETTE: black, cold grey, red accent on the teeth. RENDER: sharp cel edges; empty lower quarter. LOOK: dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: reptilian creature bursting through torn steel plating mid-lunge, 65% of frame. CONTEXT: containment chamber wall peeled outward, alarm beacon. COMPOSITION: low heroic angle from the corridor. LIGHT: single rotating red alarm light. MATERIAL: peeled steel plate, sparks, scaled hide. ATMOSPHERE: sparks and drifting smoke. PALETTE: near-black, red alarm glow, steel grey. RENDER: sharp cel edges; empty lower quarter. LOOK: dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: towering creature at corridor's end facing seven armored soldiers seen from behind, creature 60% of frame. CONTEXT: long concrete corridor, emergency lighting. COMPOSITION: one-point perspective. LIGHT: single backlight behind the creature. MATERIAL: tactical armor, concrete, scaled hide. ATMOSPHERE: haze in the corridor. PALETTE: black, desaturated blue armor, red rim on the creature. RENDER: sharp cel edges; empty lower quarter. LOOK: dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: the creature writhing as pale crystal spreads across its flank and foreleg, 65% of frame, head twisted back toward the crystal. CONTEXT: observation bay with steel restraints. COMPOSITION: three-quarter low angle. LIGHT: single cold white overhead light. MATERIAL: faceted crystal, scaled hide, steel restraints. ATMOSPHERE: glittering crystal dust. PALETTE: near-black, icy white crystal, red accent in its eye. RENDER: sharp cel edges; empty lower quarter. LOOK: dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: creature rising from shattered crystal shards, missing parts as dark silhouette gaps, eyes burning, 65% of frame. CONTEXT: wrecked observation bay floor. COMPOSITION: low angle looking up at the head. LIGHT: single hard light from behind, strong rim. MATERIAL: crystal shards, scaled hide, cracked floor. ATMOSPHERE: floating crystal dust. PALETTE: black, pale crystal glints, red eye glow. RENDER: sharp cel edges; empty lower quarter. LOOK: dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: a sealed test vial holding one dark scale fragment, the huge silhouette of the creature's eye reflected in the glass, 60% of frame. CONTEXT: lab bench under a hood. COMPOSITION: extreme close, frontal. LIGHT: one narrow lamp. MATERIAL: borosilicate glass, dark scale, brushed steel. ATMOSPHERE: faint vapor inside the vial. PALETTE: near-black, steel grey, red reflection. RENDER: sharp cel edges; empty lower quarter. LOOK: dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    },
+    {
+      "prompt": "SUBJECT: creature half-submerged in acid, one eye open watching the viewer, 60% of frame. CONTEXT: steel cube chamber in total darkness, sealed hatch above. COMPOSITION: frontal, eye-level with the acid surface. LIGHT: single thin beam from the hatch seam. MATERIAL: riveted steel, acid surface, scales. ATMOSPHERE: slow rising vapor. PALETTE: near-black, toxic green, red accent in the eye. RENDER: sharp cel edges; empty lower quarter. LOOK: dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    }
+  ],
+  "background": {
+    "id": "scp-682_bg",
+    "kind": "image",
+    "reuse": false,
+    "aspect": "16:9",
+    "resolution": "1920x1080",
+    "prompt": "SUBJECT: massive reptilian creature sunk in murky green acid, only snout and one eye above the surface, 60% of frame. CONTEXT: 5-meter chamber with thick riveted steel plating. COMPOSITION: frontal, eye-level with the waterline. LIGHT: single sickly overhead lamp. MATERIAL: acid-resistant steel plate, oily liquid surface, wet scales. ATMOSPHERE: acrid vapor curling off the acid. PALETTE: near-black, toxic green, red accent on the eye. RENDER: sharp cel edges; empty lower quarter. LOOK: dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere",
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion"
+  },
+  "thumbnail": {
+    "hook": "Colossal reptilian creature's head rising from murky green acid, jaws half open, one burning red eye glaring at viewer, filling 65% of frame, riveted steel chamber wall barely visible behind, single hard overhead light, near-black background. LOOK: dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere",
+    "hook_alt": [
+      "Reptilian creature bursting through peeled-open steel plating, whole head and forelimbs lunging toward viewer, red alarm light rim, near-black background. LOOK: dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere",
+      "Reptilian creature half-encased in pale crystal, head twisted and roaring, crystal cracking apart, single cold white light, near-black background. LOOK: dark anime cel illustration, 2D hand-drawn animation still, bold clean linework, flat cel shading with hard-edged shadows, high contrast, saturated color on the subject against a near-black background, ONE hot accent color, strong rim light, cinematic low angle, grain-free, no text anywhere"
+    ],
+    "negative_prompt": "text, letters, numbers, watermark, logo, signature, caption, subtitles, photo, photograph, photorealistic, realistic render, 3d render, cgi, octane, live action, film grain, depth of field blur, bokeh, oversaturated, neon, hdr glow, lens flare, chibi, cute, moe, shounen bright palette, gore, blood, corpse, wound, injury, deformed hands, extra fingers, extra limbs, distorted face, crowd, multiple light sources, cluttered composition, blurry, low resolution, jpeg artifacts, tilted horizon, fisheye distortion",
+    "text_safe_area": "left third",
+    "resolution": "1280x720"
+  },
+  "platforms": {
+    "youtube": {
+      "title": "SCP-682 불사의 파충류 — 「…그것들은 역겨웠어」 산성 격리실 녹취 [SCP-682]",
+      "title_form": "증언형",
+      "thumbnail_text": "불사의 파충류",
+      "thumbnail_quote": "- 이놈 목 망가졌다고요, 보세요",
+      "tags": [
+        "SCP",
+        "SCP재단",
+        "SCP-682",
+        "SCP-079",
+        "SCP-409",
+        "불사의 파충류",
+        "케테르",
+        "괴담",
+        "무서운이야기",
+        "미스터리"
+      ],
+      "chapters": [
+        "00:00 몸의 87%가 사라진 채로",
+        "01:41 염산 격리실",
+        "02:10 가둔 산이 먹이였다",
+        "03:16 녹취 682-B — 「역겨웠어」",
+        "04:55 탈출 17회, 성공 6회",
+        "06:25 사건 682-E18 — SCP-409",
+        "08:19 승인 대기 중"
+      ],
+      "description": "어떤 수단으로도 죽지 않는 파충류형 개체 SCP-682. 재단은 염산 격리실에 가뒀지만, 가둔 산이 먹이였고 죽이려고 쓴 개체는 면역만 남겼습니다.\n\n※ SCP 재단 원작 각색 · 허구의 이야기입니다\n※ CC BY-SA 3.0 · 원작: SCP Foundation (scp-wiki.wikidot.com)\n※ SCP 재단 원작 각색 · CC BY-SA 3.0\n※ 원작: \"SCP-682\" by Dr Gears and Epic Phail Spy, from the SCP Wiki. Source: https://scpwiki.com/scp-682. Licensed under CC BY-SA 3.0.\n\n#SCP #SCP재단 #SCP682 #괴담 #무서운이야기 #미스터리",
+      "localizations": {
+        "en": {
+          "title": "SCP-682 The Immortal Reptile — \"…they were disgusting\" The Acid Chamber Tapes [SCP-682]",
+          "description": "An adaptation of SCP-682: a reptile-like entity no means can destroy. The Foundation sank it in acid — the acid fed it. They tried SCP-409 — it became immune.\n\nAdapted from the original SCP Foundation article · fiction.\nCC BY-SA 3.0 · Source: SCP Foundation (scp-wiki.wikidot.com)\nOriginal: \"SCP-682\" by Dr Gears and Epic Phail Spy, from the SCP Wiki. Source: https://scpwiki.com/scp-682. Licensed under CC BY-SA 3.0.\n\nObject Class: Keter\n\n#SCP #SCPFoundation #SCP682 #horror"
+        },
+        "ja": {
+          "title": "SCP-682 不死の爬虫類 — 「…あいつらは気色悪かった」塩酸収容室の記録 [SCP-682]",
+          "description": "SCP-682の原作翻案です。いかなる手段でも破壊できない爬虫類型の存在。財団は塩酸に沈めた——その酸が餌になった。SCP-409を使った——免疫だけが残った。\n\nSCP財団原作の翻案・フィクションです。\nCC BY-SA 3.0 · 原作: SCP Foundation (scp-wiki.wikidot.com)\n原作: \"SCP-682\" by Dr Gears and Epic Phail Spy, from the SCP Wiki. Source: https://scpwiki.com/scp-682. Licensed under CC BY-SA 3.0.\n\nオブジェクトクラス: ケテル\n\n#SCP #SCP財団 #SCP682 #ホラー"
+        },
+        "zh-Hant": {
+          "title": "SCP-682 不死的爬蟲 ——「…牠們很噁心」鹽酸收容室紀錄 [SCP-682]",
+          "description": "SCP-682原作改編:任何手段都無法摧毀的爬蟲型實體。基金會把牠泡在鹽酸裡——酸成了牠的食物。用了SCP-409——只換來免疫。\n\n改編自SCP基金會原作・虛構故事。\nCC BY-SA 3.0 · 原作:SCP Foundation (scp-wiki.wikidot.com)\n原作: \"SCP-682\" by Dr Gears and Epic Phail Spy, from the SCP Wiki. Source: https://scpwiki.com/scp-682. Licensed under CC BY-SA 3.0.\n\n物件等級:Keter\n\n#SCP #SCP基金會 #SCP682 #恐怖"
+        }
+      },
+      "pinned_comment": "682한테 딱 한 번만 쓸 수 있다면, 여러분은 뭘 고르시겠어요? 쓰는 순간 영영 못 쓴다는 조건입니다.",
+      "playlist": "SCP 아카이브 (전편 듣기)"
+    }
+  },
+  "credit": "SCP 재단 원작 각색 · SCP-682 by Dr Gears and Epic Phail Spy · 허구 · CC BY-SA 3.0",
+  "content_rating": "teen",
+  "notes": "SCP 아카이브 · 16:9 롱폼 · 장면 전환 배경 + 자막 번인 · 단일 내레이터 · 완결형 · 원작 각색 회차."
+}
