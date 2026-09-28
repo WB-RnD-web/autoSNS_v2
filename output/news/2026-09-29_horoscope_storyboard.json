@@ -1,0 +1,85 @@
+{
+  "date": "2026-09-29",
+  "topic": "horoscope",
+  "privacy": "public",
+  "topic_keyword": "물병자리 금전운지수 1위 · 97점",
+  "headline": "오늘 목성이 물병자리를 지나며 금전운이 97점까지 오릅니다",
+  "hook_title": "오늘 한 달만 97점 뜹니다",
+  "accent": "#8E9BE8",
+  "loop_line": "내일은 또 어떤 달에 지갑이 열릴지 궁금해지네요.",
+  "thumbnail_hook": "close-up glowing Aquarius water-bearer constellation symbol against a deep indigo starry night sky, faint golden coin-like sparkles drifting among the stars, cosmic mystical mood; no human face, no text in image",
+  "thumbnail_text": "금전운 1위 물병자리",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "오늘의 금전운",
+      "ghost": "WEALTH",
+      "lines": ["오늘", "이 달만", "지갑 열림"],
+      "highlight": "이 달만",
+      "brand": "일상공감뉴스 · 별자리",
+      "narration": "오늘, 열두 달 중 유독 지갑 사정이 풀리는 달이 있습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 금전운 랭킹 · 3위부터",
+      "points": ["3위 6/22~7/22생 <b>게자리</b> · 뜻밖의 수입", "2위 11/22~12/21생 <b>사수자리</b> · 투자운 상승"],
+      "brand": "일상공감뉴스 · 별자리",
+      "narration": "3위는 6월생, 2위는 11월생인데, 1위는 잠시 뒤 공개할게요."
+    },
+    {
+      "type": "stat",
+      "label": "1위 · 1/20~2/18생 물병자리",
+      "prefix": "",
+      "suffix": "점",
+      "from": 0,
+      "to": 97,
+      "bar": true,
+      "sub": "1월 말~2월생 · 목성이 <b>물병자리</b>를 지나는 때",
+      "brand": "일상공감뉴스 · 별자리",
+      "narration": "1월 20일에서 2월 18일 생일이면 물병자리, 오늘 97점입니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘의 행운",
+      "points": ["행운의 색 <b>민트</b> · 숫자 <b>8</b>", "지출 결정 좋은 시간 <b>오전 11시</b> · 캡처해두세요", "8/23~9/22생 <b>처녀자리</b> — 오늘은 지갑 닫는 날"],
+      "brand": "일상공감뉴스 · 별자리",
+      "narration": "그래서 오늘은 오전 열한 시쯤 중요한 지출을 결정해보세요."
+    },
+    {
+      "type": "statement",
+      "text": "당신 생일은 이 중 몇 번째였나요? 댓글에 생일만 남겨주세요",
+      "highlight": "몇 번째",
+      "brand": "일상공감뉴스 · 별자리",
+      "narration": "당신의 생일은 이 중 몇 번째였는지, 댓글에 생일만 남겨주세요."
+    }
+  ],
+  "sources": ["서양 점성 12별자리 기반", "목성-물병자리 이동 시기 참고"],
+  "credit": "재미로 보는 오늘의 별자리 운세",
+  "platforms": {
+    "youtube": {
+      "title": "오늘 한 달만 97점 뜹니다 #shorts",
+      "description": "오늘 목성이 물병자리를 지나며 금전운이 97점까지 오릅니다\n※ 재미로 보는 운세입니다\n\n#오늘의별자리 #별자리운세 #금전운 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "Only One Birthday Month Hits 97 Today",
+          "description": "As Jupiter moves through Aquarius, one birthday month's money-luck score hits 97 today. See who's #1, and where you land.\n※ Just for fun — today's horoscope\n\n#TodaysHoroscope #Zodiac #Aquarius #Shorts #shorts"
+        },
+        "ja": {
+          "title": "今日、金運97点の誕生月があります",
+          "description": "木星が水瓶座を通過する今日、金運指数が97点まで上がる誕生月があります。今日の1位が気になる方はぜひご覧ください。\n※ 楽しみとしてご覧ください\n\n#今日の星座 #星座占い #水瓶座 #ショート #shorts"
+        },
+        "zh-Hant": {
+          "title": "今天,這個生日月財運飆到97分",
+          "description": "木星今天行經水瓶座,讓某個生日月的財運指數飆升到97分。想知道是哪個月份嗎?一起來看看今天的排名。\n※ 僅供娛樂參考的星座運勢\n\n#今日星座 #星座運勢 #水瓶座 #Shorts #shorts"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "오늘 한 달만 97점 뜹니다\n※ 재미로 보는 운세\n\n#오늘의별자리 #별자리운세 #금전운 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "오늘 한 달만 97점 뜹니다\n※ 재미로 보는 운세"
+    }
+  },
+  "notes": "모션그래픽 5장면 · 단일 내레이터 · 배경음 없음."
+}
