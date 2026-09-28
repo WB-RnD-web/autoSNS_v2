@@ -1,0 +1,47 @@
+{
+  "date": "2026-09-28",
+  "topic": "asmr",
+  "privacy": "public",
+  "theme_id": "window-rain",
+  "theme_name": "창가에 부딪히는 빗소리",
+  "mode": "sleep",
+  "narration_voice": "female",
+  "narration_text": "오늘은 창가에 부딪히는 잔잔한 빗소리예요. 편안하게 눈을 감고, 빗소리에 맞춰 천천히 숨을 쉬어 보세요. 좋은 밤 되세요, 잘 자요.",
+  "background": {
+    "prompt": "a cozy dim bedroom window with soft rain streaks at night, warm lamp glow, calm and sleepy mood, no people, no text"
+  },
+  "freesound": {
+    "queries": [
+      "gentle rain on window glass night",
+      "soft rain window ambience loop",
+      "light rain tapping glass",
+      "rain window night no thunder"
+    ],
+    "must": ["rain"]
+  },
+  "platforms": {
+    "youtube": {
+      "title": "🌧️ 창가에 부딪히는 빗소리 ASMR 3시간 | 잘 때 듣는 백색소음·수면",
+      "thumbnail_text": "창가 빗소리 3시간",
+      "thumbnail_hook": "a cozy dim bedroom window with soft rain streaks at night, warm lamp glow, calm and sleepy mood, no people, no text",
+      "description": "창가에 톡톡 부딪히는 빗소리로 편안한 밤을 만들어 드려요.\n\n잘 때·집중·휴식용 ASMR 백색소음입니다.\n#ASMR #백색소음 #수면 #빗소리 #잠들기전 #힐링",
+      "playlist": "일상공감 ASMR",
+      "localizations": {
+        "en": {
+          "title": "Rain on Window Sounds for Sleeping 3 Hours | Cozy White Noise ASMR",
+          "description": "Gentle rain tapping on a bedroom window for about 3 hours — perfect for sleep, studying, or deep focus.\nIncludes a short, quiet Korean narration intro.\n#RainSounds #SleepSounds #WhiteNoise #ASMR"
+        },
+        "ja": {
+          "title": "窓に当たる雨音 3時間 | 睡眠用・作業用 ASMR",
+          "description": "窓に優しく当たる雨音を約3時間収録しました。睡眠や作業用のホワイトノイズとしてどうぞ。\n冒頭に短い韓国語のナレーションが入ります。\n#雨音 #睡眠用 #ホワイトノイズ #ASMR"
+        },
+        "zh-Hant": {
+          "title": "窗邊雨聲 3小時 | 助眠白噪音 ASMR",
+          "description": "窗邊輕柔的雨聲,約3小時,適合睡眠、讀書與專注工作。\n開頭附有簡短的韓文旁白。\n#雨聲 #助眠 #白噪音 #ASMR"
+        }
+      }
+    }
+  },
+  "credit": "음원 Freesound(CC0) · 이미지 생성",
+  "notes": "ASMR 3~4시간 · 16:9 · 정적 배경 + 루프 오디오 · 아주 낮은 나레이션 도입부 · 자막 없음."
+}
