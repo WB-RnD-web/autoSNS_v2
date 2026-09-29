@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-02",
+  "story_id": "drama-sample",
+  "title": "아들 내외에게 집을 내준 어머니, 삼 년 뒤 대문 앞에서 본 것",
+  "description": "평생 일군 집을 아들 내외에게 넘겨준 어머니. 삼 년 만에 그 집 대문 앞에 선 날, 어머니는 무엇을 보았을까요? (파이프라인 점검용 짧은 견본)",
+  "thumbnail_text": "삼 년 만에 연 대문\n*그 안에 있던 것*",
+  "thumbnail_prompt": "an elderly Korean woman in a cardigan standing before a closed wooden gate of a traditional house at dusk, holding a small cloth bundle, emotional atmosphere",
+  "characters": [
+    {"name": "며느리", "gender": "F", "age": 38},
+    {"name": "아들", "gender": "M", "age": 42}
+  ],
+  "images": [
+    {"chapter": 1, "prompt": "an elderly Korean woman standing in front of a closed iron gate of a suburban house in the morning, autumn leaves"},
+    {"chapter": 1, "prompt": "inside a warm Korean living room, a young couple looking surprised at the doorway"},
+    {"chapter": 2, "prompt": "an old wooden cabinet opened, revealing neatly stacked envelopes and a savings passbook"},
+    {"chapter": 2, "prompt": "an elderly mother and her adult son sitting at a small kitchen table, tea steaming, soft evening light"}
+  ],
+  "tags": ["사연", "어머니", "아들"]
+}
