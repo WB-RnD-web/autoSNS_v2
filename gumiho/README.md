@@ -30,16 +30,17 @@ Spark는 공용 서버다. 2026-09-29에 작업이 몰려 한 번 멈췄다. 그
 |---|---|---|
 | Claude | `anthropic` | `claude-sonnet-5-5` |
 | Gemma | `spark` | Spark 게이트웨이(Gemma 4 26B-A4B) |
-| GPT-OSS | `openai` | `openai/gpt-oss-120b` |
+| GPT-OSS | `openai` | `openai/gpt-oss-20b` |
 | Nemotron | `openai` | `nvidia/nemotron-3-super-120b-a12b` |
-| Qwen | `openai` | `qwen/qwen3.6-35b-a3b` |
-| Llama | `openai` | `meta-llama/llama-4-maverick` |
+| DeepSeek | `openai` | `deepseek-ai/deepseek-v4.1-flash` |
+| Kimi | `openai` | `moonshotai/kimi-k3` |
 
 - **Spark 게이트웨이:** 2026-09-29 실측으로 `model` 값을 무시하고 늘 Gemma 4가 답한다.
-- **공개 모델 4종:** OpenRouter로 부른다. ID는 2026-09-29 OpenRouter 목록 기준이다.
-  - 주소: 저장소 변수 `GUMIHO_OPENAI_BASE` = `https://openrouter.ai/api/v1`
-  - 키: 시크릿 `GUMIHO_OPENAI_KEY`
-- **비용 추정:** 편당(5판) 공개 모델 $0.1 미만, Claude 약 $0.7.
+- **공개 모델 4종:** NVIDIA API 카탈로그(`https://integrate.api.nvidia.com/v1`)로 부른다.
+  - 키는 왕별이가 이미 쓰는 시크릿 `NVIDIA_API_KEY`(무료)다. 추가 비용이 없다.
+  - 2026-09-29 목록에는 Qwen·Llama 최신판이 없어서 DeepSeek·Kimi로 바꿨다.
+  - 다른 곳(OpenRouter 등)을 쓰려면 `GUMIHO_OPENAI_BASE`/`GUMIHO_OPENAI_KEY`를 넣는다.
+- **Claude:** 왕별이의 `ANTHROPIC_API_KEY`를 쓴다. 편당 몇백 원이다(추정).
 
 ## 실행
 

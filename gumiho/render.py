@@ -586,8 +586,8 @@ def meta(match: dict, chapters: str) -> dict:
             f"Host lines and the hint were written by us.\n\n⏱ Chapters\n{chapters}\n\n"
             f"Host art, voices and visuals are AI-generated. Made in Seoul.\n\n#AI #LLM #FoxHunt #Mafia #GumihoGames")
     return {"title": title[:95], "description": desc[:4900],
-            "tags": ["AI", "LLM", "AI plays games", "mafia game", "werewolf", "social deduction", "Claude", "Gemma",
-                     "gumiho", "Korean folklore", "AI vs AI"]}
+            "tags": ["AI", "LLM", "AI plays games", "mafia game", "werewolf", "social deduction"]
+            + [s["name"] for s in match["roster"]] + ["gumiho", "Korean folklore", "AI vs AI"]}
 
 
 def render(match_path: str, out_dir: str, frames_only: bool = False, tts=None) -> dict:
