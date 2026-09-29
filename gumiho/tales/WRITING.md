@@ -27,10 +27,12 @@ and cite its `sources` in the `sources` field. If a detail differs between versi
 1. **Cold open** (scene 0–2): an image + one eerie, specific line that makes the viewer need the
    answer. ≤45 words in scene 0. No greeting before the hook.
 2. **Gumi intro** (2–3 `gumi` scenes): "…This is Tale Number N." Keep under 30 seconds.
-3. `{"card": "TALE 00N", "sub": "<short tale name>"}`
-4. **3–4 chapters**, each opened by `{"card": "I", "sub": "…"}` (II, III…). Background/lore first,
+3. `{"card": "TALE 00N", "sub": "<short tale name>"}` — this card also opens the first chapter.
+   **Never put two cards back to back** (the checker rejects it): 5 seconds of text-only screen is where viewers leave.
+4. **3–4 chapters**: the first starts right after the TALE card; the next ones open with `{"card": "I", "sub": "…"}` (then II, III…). Background/lore first,
    then the tale proper with rising tension, then what it means / how Korea (or Japan/China) tells it today.
-5. **Ending**: Gumi's personal answer or reflection → teaser for **next week's catalog entry**
+5. **Ending**: Gumi's personal answer or reflection → **one question for the comments**
+   ("If you were that boy, would you have swallowed the bead? Tell me in the comments.") → teaser for **next week's catalog entry**
    (use its `angle`) → sign-off in one line (vary it; a callback to the cold open is best).
 
 ## Format (the entry's `format` field)

@@ -1,9 +1,10 @@
 {
  "001_gumiho": {
-  "long": "https://youtu.be/t9SN8SIqCo0",
-  "short": "https://youtu.be/Q2X8ODY-ero",
+  "long": "https://youtu.be/RhKwrpHRLeY",
+  "short": "https://youtu.be/606zQkXIKRs",
   "thumb": true,
   "captions": false,
-  "note": "2026-09-29 로컬에서 비공개 업로드(견본)"
+  "public": true,
+  "note": "2026-09-30 검수 후 수정본(카드 연속 제거·댓글 유도·쇼츠 훅)을 로컬에서 올려 공개. 첫 비공개본 t9SN8SIqCo0·Q2X8ODY-ero 는 비공개로 남김"
  }
 }

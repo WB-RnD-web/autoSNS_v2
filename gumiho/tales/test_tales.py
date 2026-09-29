@@ -54,6 +54,10 @@ ck("금지어는 막힌다", any("금지어" in e for e in T.check(bad)))
 bad = copy.deepcopy(S)
 bad["thumb"]["text"] = "THIS IS WAY TOO LONG A LINE"
 ck("썸네일 문구 4단어 초과는 막힌다", any("썸네일" in e for e in T.check(bad)))
+bad = copy.deepcopy(S)
+k = next(i for i, x in enumerate(bad["scenes"]) if x.get("card"))
+bad["scenes"].insert(k + 1, {"card": "I", "sub": "Extra"})
+ck("카드 두 장이 연달아 나오면 막힌다", any("연달아" in e for e in T.check(bad)))
 ck("파일 이름이 id_slug 와 다르면 막힌다", any("파일 이름" in e for e in T.check(S, "/x/002_other.json")))
 
 print("── 편성(날짜로 결정론적) ──")

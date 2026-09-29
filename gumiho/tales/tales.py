@@ -128,6 +128,9 @@ def check(s: dict, path: str | None = None) -> list[str]:
         for f in ("say", "img", "note"):
             if BANNED.search(x.get(f, "")):
                 errs.append(f"장면 {i}: 금지어 {BANNED.search(x[f]).group(0)!r}")
+    for i in range(1, len(sc)):
+        if sc[i].get("card") and sc[i - 1].get("card"):
+            errs.append(f"장면 {i - 1}·{i}: 카드가 연달아 나온다 — 글자 화면만 5초 넘게 이어지면 이탈한다(TALE 카드가 1장을 겸한다)")
     first = sc[0] if sc else {}
     if not (first.get("img") and first.get("say")):
         errs.append("첫 장면은 그림+내레이션(콜드 오픈)이어야 한다")
