@@ -10,12 +10,19 @@
   → 어느 날 어느 번호인지도 ★코드가 정한다(assign). 루틴 판단에 맡기지 않는다.
 
 배정 규칙:
-  원작 회차 = 월요일(KST) 회차. SCP 루틴은 월·목 09:00 KST 에 돈다 → 주 1편 원작 · 1편 오리지널.
+  원작 회차 = 월요일(KST) 회차. SCP 루틴은 월 09:00 KST 에 돈다(2026-09-29 목요일 오리지널 중단 —
+  9월 오리지널 16편이 편당 누적 25회 수준이었다. 10/19 원작 3편 7일 조회로 유지·분리·중단을 정한다).
   몇 번째 원작 회차인지(= QUEUE 의 몇 번째 번호인지) = START(첫 월요일)부터 센 월요일 수.
   큐를 다 돌면 처음으로 돌아가지 않고 오리지널로 둔다(같은 원작 반복 방지) — 큐를 늘리면 이어진다.
 
 라이선스: SCP 위키 본문은 CC BY-SA 3.0. 원작 회차 설명란에 ★저작자·원문 URL·라이선스를 넣는다
   (팩 파일 머리의 cite 줄 그대로). 원작 이미지는 쓰지 않는다(이미지별 라이선스가 다르다) — 그림은 우리가 새로 그린다.
+
+부속 문서(SUBPAGES, 2026-09-29):
+  가장 유명한 장면이 본문이 아니라 별도 페이지에 있는 개체가 있다. SCP-682 첫 회차 루틴이 "원문이
+  종료 기록(T-98816) 제목에서 끊긴다"고 남겼다 — 종료 시도 기록은 별도 페이지였다. 같은 작품의
+  부속 문서만 팩 뒤에 붙이고, 페이지마다 cite 를 따로 머리에 적는다(sub_cite). 본문 링크 중 작가
+  페이지·다른 작가의 이야기(tale)·허브는 넣지 않는다 — 저작자가 달라지고 원작이 흐려진다.
 
   python scp_canon.py assign --date 2026-09-28        # 이 날짜 회차 배정(JSON)
   python scp_canon.py fetch 682 096 …                 # 원문 팩 받기(네트워크 되는 곳에서)
@@ -44,6 +51,22 @@ QUEUE = ["682", "096", "173", "049", "106", "3008", "087", "055",
          "1733", "140", "354", "1440", "184", "105", "015", "131",
          "3812", "066", "738", "239", "513", "303", "097", "1609",
          "053", "033", "447", "8000"]
+# 부속 문서 — 본문이 링크하는 같은 작품의 기록. 긴 기록은 앞부분 SUB_MAX 자만 넣는다
+# (682 종료 기록은 30만 자다. 유명한 초기 시도가 앞에 있다).
+# 뺀 것: 914 실험 허브(다른 작가의 허브), 076-2(안내 한 줄짜리 페이지).
+SUBPAGES = {
+    "682": ["experiment-log-t-98816-oc108-682"],
+    "096": ["document-096-1", "incident-096-1-a"],
+    "087": ["document-087-i", "document-087-ii", "document-087-iii"],
+    "939": ["initial-contact-log-scp-939", "incident-report-amn-c227-939"],
+    "093": ["scp-093-red-test"],
+    "701": ["incident-report-scp70119971", "scp7011640b1"],
+    "507": ["document-507-3b", "interview-507-g"],
+    "354": ["exploratory-mission-354-alpha"],
+    "097": ["event-log-scp-097"],
+    "447": ["experiment-log-447-a"],
+}
+SUB_MAX = 25000
 NICK = {  # 한국 팬덤에서 통하는 통칭 — 제목 앞머리에 쓴다(원작은 번호·통칭이 곧 검색어)
     "682": "불사의 파충류", "096": "수줍은 자", "173": "조각상", "049": "역병 의사",
     "106": "늙은 노인", "3008": "무한한 이케아", "087": "계단", "055": "반-밈",
@@ -93,7 +116,9 @@ def read_meta(path: str) -> dict:
                         break
                     continue
                 m = re.match(r"<!--\s*(\w+):\s*(.*?)\s*-->", line)
-                if m:
+                if m and m.group(1) == "sub_cite":
+                    meta.setdefault("sub_cites", []).append(m.group(2))
+                elif m:
                     meta[m.group(1)] = m.group(2)
     except OSError:
         pass
@@ -123,14 +148,20 @@ def gate(spec: dict) -> list[str]:
     return out
 
 
-def cite_for(spec: dict) -> str:
-    """원작 회차의 CC BY-SA 저작자 표기 한 줄(팩 파일 머리의 cite)."""
+def cites_for(spec: dict) -> list[str]:
+    """원작 회차의 CC BY-SA 저작자 표기 — [본문 cite, 부속 문서 cite…] (팩 파일 머리 그대로)."""
     num = re.sub(r"[^0-9]", "", str(spec.get("scp_number") or ""))
     for cand in (num, num.zfill(3)):
         meta = read_meta(os.path.join(PACK, f"scp-{cand}.md"))
         if meta.get("cite"):
-            return meta["cite"]
-    return ""
+            return [meta["cite"], *meta.get("sub_cites", [])]
+    return []
+
+
+def cite_for(spec: dict) -> str:
+    """본문 cite 한 줄."""
+    c = cites_for(spec)
+    return c[0] if c else ""
 
 
 # ── 원문 받기(네트워크 되는 곳에서만 — 루틴 환경은 막혀 있다) ──────────
@@ -170,15 +201,19 @@ def _cite(raw: str) -> str:
     return f"{c} Licensed under CC BY-SA 3.0."
 
 
-def fetch(nums: list[str]) -> int:
+def _get(url: str) -> str:
     import urllib.request
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    return urllib.request.urlopen(req, timeout=30).read().decode("utf-8", "ignore")
+
+
+def fetch(nums: list[str]) -> int:
     os.makedirs(PACK, exist_ok=True)
     bad = 0
     for n in nums:
         url = f"https://scp-wiki.wikidot.com/scp-{n}"
         try:
-            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-            raw = urllib.request.urlopen(req, timeout=30).read().decode("utf-8", "ignore")
+            raw = _get(url)
         except Exception as e:  # noqa: BLE001
             print(f"  ✗ SCP-{n}: {e}")
             bad += 1
@@ -187,14 +222,38 @@ def fetch(nums: list[str]) -> int:
         if len(text) < 800 or not cite:
             print(f"  ✗ SCP-{n}: 본문 {len(text)}자 · cite {'있음' if cite else '없음'} — 확인 필요")
             bad += 1
+        subs = []   # (url, cite, text)
+        for slug in SUBPAGES.get(n, []):
+            su = f"https://scp-wiki.wikidot.com/{slug}"
+            try:
+                sraw = _get(su)
+            except Exception as e:  # noqa: BLE001
+                print(f"  ✗ SCP-{n} 부속 {slug}: {e}")
+                bad += 1
+                continue
+            st, sc = _page_text(sraw), _cite(sraw)
+            if len(st) < 800 or not sc:
+                print(f"  ✗ SCP-{n} 부속 {slug}: 본문 {len(st)}자 · cite {'있음' if sc else '없음'}")
+                bad += 1
+                continue
+            if len(st) > SUB_MAX:
+                cut = st.rfind("\n", 0, SUB_MAX)
+                st = (st[:cut if cut > SUB_MAX // 2 else SUB_MAX].rstrip()
+                      + f"\n\n(이하 생략 — 원문 {len(st):,}자 중 앞부분. 전체: {su})")
+            subs.append((su, sc, st))
         out = os.path.join(PACK, f"scp-{n}.md")
         with open(out, "w", encoding="utf-8", newline="\n") as f:
-            f.write(f"<!-- number: SCP-{n} -->\n<!-- url: {url} -->\n<!-- cite: {cite} -->\n"
-                    f"<!-- fetched: {dt.date.today().isoformat()} -->\n"
-                    "<!-- license: CC BY-SA 3.0 — 원작 회차 설명란에 cite 줄을 그대로 넣는다. "
+            f.write(f"<!-- number: SCP-{n} -->\n<!-- url: {url} -->\n<!-- cite: {cite} -->\n")
+            for su, sc, _ in subs:
+                f.write(f"<!-- sub_cite: {sc} -->\n")
+            f.write(f"<!-- fetched: {dt.date.today().isoformat()} -->\n"
+                    "<!-- license: CC BY-SA 3.0 — 원작 회차 설명란에 cite·sub_cite 줄을 그대로 넣는다. "
                     "원작 이미지는 쓰지 않는다. -->\n\n")
             f.write(text + "\n")
-        print(f"  ✓ SCP-{n}: {len(text):,}자 · {cite[:80]}")
+            for su, _, st in subs:
+                f.write(f"\n\n---\n\n## 부속 문서 — {su}\n\n{st}\n")
+        extra = f" + 부속 {len(subs)}편({sum(len(s[2]) for s in subs):,}자)" if subs else ""
+        print(f"  ✓ SCP-{n}: {len(text):,}자{extra} · {cite[:80]}")
     return 1 if bad else 0
 
 

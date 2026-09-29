@@ -5,7 +5,7 @@
 모션그래픽 4~6장면 스펙으로 변환한다. 장면 타입: hook / stat / gauge / trend.
 각 장면엔 단일 내레이터 내레이션 1줄 포함.
 
-요구: ANTHROPIC_API_KEY (CI 시크릿). CLAUDE_MODEL(기본 claude-sonnet-5).
+요구: ANTHROPIC_API_KEY (CI 시크릿). CLAUDE_MODEL(기본 claude-sonnet-5-5).
 키가 없으면 에러 — 파이프라인은 미리 만든 스펙 파일로 폴백 가능(run_pipeline 참고).
 
 사용:
@@ -18,7 +18,7 @@ import os
 import re
 import sys
 
-MODEL = os.environ.get("CLAUDE_MODEL", "claude-sonnet-5")
+MODEL = os.environ.get("CLAUDE_MODEL", "claude-sonnet-5-5")
 
 SCHEMA_GUIDE = """\
 출력은 아래 JSON 형식만(설명/마크다운 없이):
@@ -77,7 +77,8 @@ def extract_scenes(sb: dict) -> dict:
         raise SystemExit("[error] ANTHROPIC_API_KEY 없음 — 키 설정 또는 미리 만든 스펙 사용")
     client = anthropic.Anthropic(api_key=key)
     msg = client.messages.create(
-        model=MODEL, max_tokens=2000,
+        # Sonnet 5.5 는 기본으로 생각(thinking)을 켜고, 생각 토큰도 max_tokens 에 들어간다 → 2000 이면 JSON 이 잘릴 수 있다.
+        model=MODEL, max_tokens=8000,
         system="너는 한국 뉴스 모션그래픽 영상의 장면 설계자다. 반드시 유효한 JSON만 출력한다.",
         messages=[{"role": "user", "content": build_prompt(sb)}],
     )
