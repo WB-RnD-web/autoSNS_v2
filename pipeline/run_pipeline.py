@@ -47,6 +47,29 @@ def has_credentials():
     return bool(config.env("YT_TOKEN_JSON")) or os.path.exists(token)
 
 
+# ── 쇼츠 토픽 일시정지 (2026-09-29) ──────────────────────────────
+# 스튜디오 실측(8/31~9/28, '계속 시청함' = 피드에서 넘기지 않고 본 비율):
+#   정치 30~59% · 운세 22~47% → 편당 ~1,000회
+#   미장·국장 9~15% · 별자리 9~25% → 편당 30~350회(9/28 미장 30회)
+# 채널 시청자(55세 이상 88%)와 안 맞는 토픽은 피드에서 85~90%가 넘긴다. 잠시 올리지 않고
+# 되는 두 토픽(정치·운세)에 모은다. 루틴이 스토리보드를 올려도 ★코드가 렌더 전에 건너뛴다.
+# 바꾸기: 레포 변수 SHORTS_PAUSED_TOPICS (쉼표 구분, 토픽 이름과 정확히 일치).
+#   전부 재개 = "none". 비우거나 안 만들면 아래 기본값.
+PAUSED_TOPICS_DEFAULT = "horoscope,zodiac,stock,stock_us"
+
+
+def paused_topics() -> set[str]:
+    raw = (os.environ.get("SHORTS_PAUSED_TOPICS") or "").strip() or PAUSED_TOPICS_DEFAULT
+    if raw.lower() in ("none", "off", "0", "-"):
+        return set()
+    return {t.strip().lower() for t in raw.split(",") if t.strip()}
+
+
+def is_paused(sb: dict) -> bool:
+    topic = str(sb.get("topic") or "").strip().lower()
+    return bool(topic) and topic in paused_topics()
+
+
 # 그림체 토픽(운세 캐릭터·별자리 천체 일러스트)은 누가 봐도 그림이라 표시 대상이 아니다.
 ILLUSTRATED_TOPICS = ("fortune", "horoscope", "zodiac", "star", "luck", "love")
 
@@ -235,6 +258,11 @@ def process(sb_path, args, led):
            "uploaded": None, "social": None, "skipped": False, "error": None}
     with open(sb_path, encoding="utf-8") as f:
         sb = json.load(f)
+    if is_paused(sb) and not getattr(args, "include_paused", False):
+        res["skipped"] = "paused"
+        print(f"   ⏸️  일시정지 토픽({sb.get('topic')}) — 렌더·업로드 안 함 "
+              f"(재개: 레포 변수 SHORTS_PAUSED_TOPICS)")
+        return res
     if led is not None and ledgermod.is_done(led, sb):
         res["skipped"] = True
         print(f"   ⏭️  ledger 처리됨({ledgermod.key_for(sb)}) — 건너뜀")
@@ -318,6 +346,8 @@ def main():
     ap.add_argument("--use-ledger", action="store_true")
     ap.add_argument("--ledger-path", default=ledgermod.DEFAULT_PATH)
     ap.add_argument("--log", default="")
+    ap.add_argument("--include-paused", action="store_true",
+                    help="일시정지 토픽도 처리(수동 테스트용 — SHORTS_PAUSED_TOPICS 무시)")
     args = ap.parse_args()
     config.load_dotenv()
 
@@ -340,7 +370,10 @@ def main():
     rc = 0
     for r in results:
         line = f"  {r['storyboard']}: "
-        line += "SKIP(ledger)" if r["skipped"] else f"video={'OK' if r['video'] else 'FAIL'}"
+        if r["skipped"]:
+            line += "SKIP(일시정지 토픽)" if r["skipped"] == "paused" else "SKIP(ledger)"
+        else:
+            line += f"video={'OK' if r['video'] else 'FAIL'}"
         if r["uploaded"]:
             line += f", yt={r['uploaded']}"
         if r.get("social"):
