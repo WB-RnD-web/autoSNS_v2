@@ -188,13 +188,14 @@ def _json_block(text: str):
 def translate_meta(title: str, description: str, langs: list[str]) -> dict:
     """제목/설명을 여러 언어로 한 번에 번역 → {lang: {title, description}}."""
     targets = {l: _name(l)[1] for l in langs}
-    sysmsg = ("You localize Korean YouTube metadata. Output VALID JSON ONLY, no prose, no fences.\n"
+    sysmsg = ("You localize YouTube metadata from the given source_language. Output VALID JSON ONLY, no prose, no fences.\n"
               "Rules:\n"
               "- Localize, don't transliterate: the title must work as a hook for a native speaker.\n"
               "- Keep the title UNDER 90 characters.\n"
               "- Keep hashtags, URLs, emoji, license notices and line breaks exactly as-is; "
               "translate only the surrounding prose.\n"
               "- Keep '#shorts' literally.\n"
+              "- Keep chapter timestamps (e.g. 00:42) exactly at the start of their lines; translate only the chapter names.\n"
               "- Proper nouns that are part of a franchise (e.g. SCP) stay in their standard form "
               "for that language.")
     user = json.dumps({"source_language": SOURCE_LANG, "targets": targets,
