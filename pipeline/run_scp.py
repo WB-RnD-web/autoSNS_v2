@@ -45,9 +45,12 @@ def build_meta(spec: dict, chapters: list[str], force_private: bool) -> dict:
     # 원작 회차는 CC BY-SA 3.0 저작자 표기가 ★필수다 — 루틴이 빠뜨려도 코드가 붙인다.
     if str(spec.get("origin") or "") == "canon":
         import scp_canon
-        cite = scp_canon.cite_for(spec)
-        if cite and cite not in desc:
-            desc = f"{desc}\n\n원작 · Original: {cite}"
+        cites = scp_canon.cites_for(spec)
+        if cites and cites[0] not in desc:
+            desc = f"{desc}\n\n원작 · Original: {cites[0]}"
+        for c in cites[1:]:   # 부속 문서(종료 기록·사건 보고서)도 작가·출처가 따로 있다
+            if c not in desc:
+                desc += f"\n부속 문서 · Also: {c}"
     privacy = "private" if force_private else (spec.get("privacy") or "public")
     tags = list(TAGS)
     for k in ("theme", "object_class", "scp_number"):

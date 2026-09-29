@@ -49,6 +49,20 @@ packs = {f[4:-3] for f in os.listdir(C.PACK) if f.startswith("scp-") and f.endsw
 ck("팩 파일 = 큐(남는 파일·빠진 파일 없음)", packs == set(C.QUEUE), str(packs ^ set(C.QUEUE)))
 ck("1년 뒤 월요일까지 원작", C.assign(C.START + dt.timedelta(days=7 * 51))["origin"] == "canon")
 
+print("── 부속 문서 ──")
+ck("부속 문서 개체는 모두 큐에 있다", set(C.SUBPAGES) <= set(C.QUEUE), str(set(C.SUBPAGES) - set(C.QUEUE)))
+for n, slugs in C.SUBPAGES.items():
+    path = os.path.join(C.PACK, f"scp-{n}.md")
+    meta = C.read_meta(path)
+    body = open(path, encoding="utf-8").read()
+    secs = body.split("\n## 부속 문서 — ")[1:]
+    ok = (len(meta.get("sub_cites", [])) == len(slugs) == len(secs)
+          and all("CC BY-SA" in c for c in meta["sub_cites"])
+          and all(len(s) <= C.SUB_MAX + 300 for s in secs))
+    ck(f"SCP-{n} 부속 {len(slugs)}편 · 저작자 표기", ok, f"{len(meta.get('sub_cites', []))} {len(secs)}")
+ck("682 팩에 종료 시도 기록 본문이 있다", "Termination Test Record" in open(
+    os.path.join(C.PACK, "scp-682.md"), encoding="utf-8").read())
+
 print("── 강제(gate) ──")
 ck("원작 날에 오리지널이면 막는다",
    C.gate({"date": "2026-09-28", "origin": "original", "scp_number": "SCP-9412"}) != [])
@@ -66,6 +80,13 @@ ck("원작 회차 설명란에 CC BY-SA 저작자 줄이 붙는다", "Dr Gears" 
    m["description"])
 m2 = R.build_meta({**spec, "origin": "original"}, [], False)
 ck("오리지널 회차에는 안 붙는다", "Dr Gears" not in m2["description"])
+ck("부속 문서 저작자 줄도 붙는다", "부속 문서 · Also:" in m["description"]
+   and "Experiment Log T-98816" in m["description"], m["description"])
+main_cite = C.cite_for(spec)
+spec3 = {**spec, "platforms": {"youtube": {"title": "SCP-682", "description": f"설명\n\n{main_cite}"}}}
+d3 = R.build_meta(spec3, [], False)["description"]
+ck("루틴이 본문 cite 를 이미 넣었으면 중복 없이 부속만 붙인다",
+   d3.count(main_cite) == 1 and "원작 · Original:" not in d3 and "부속 문서 · Also:" in d3, d3)
 
 print()
 if FAIL:
