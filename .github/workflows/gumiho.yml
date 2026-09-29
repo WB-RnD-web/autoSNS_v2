@@ -5,6 +5,7 @@ name: Gumiho Games — 대국 N판 → 가장 극적인 판 → 렌더 → 비�
 #   목소리 합성도 동시 2건만(GUMIHO_TTS_WORKERS). 그래서 느려도 되게 timeout 을 넉넉히 둔다.
 # ★업로드는 항상 비공개 — 사람이 보고 공개한다. 점검용 판(모든 자리를 한 백엔드로)은 코드가 업로드를 막는다.
 # 정기 실행(schedule)은 시범 3편을 본 뒤에 켠다.
+# ★돈이 드는 호출 금지(사용자 원칙): 출연진은 Spark(Gemma)와 NVIDIA 무료 키만 쓴다. 유료 백엔드는 코드가 막는다.
 
 on:
   workflow_dispatch:
@@ -42,10 +43,7 @@ jobs:
       TZ: Asia/Seoul
       WBSPARK_BASE: ${{ vars.WBSPARK_BASE || 'https://wangbyul.com/wbSpark' }}
       WBSPARK_TOKEN: ${{ secrets.WBSPARK_TOKEN }}
-      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}          # 공개 모델 4종(NVIDIA API 카탈로그, 왕별이와 같은 키)
-      GUMIHO_OPENAI_BASE: ${{ vars.GUMIHO_OPENAI_BASE }}
-      GUMIHO_OPENAI_KEY: ${{ secrets.GUMIHO_OPENAI_KEY }}
       GUMIHO_TTS_WORKERS: "2"
       GUMIHO_SPARK_MAX_WAITING: "6"
       I18N_LOCALIZE: "0"
