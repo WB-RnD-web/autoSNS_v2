@@ -1,169 +1,496 @@
 {
- "about": "Nine Tails Tales 편성표. 루틴은 `python gumiho/tales/tales.py next --date <오늘>` 이 준 한 편만 쓴다(날짜로 결정론적 배정). facts 는 확인된 뼈대, careful 은 단정하면 안 되는 것. 순서: 한국 설화가 기본, 3~4편마다 일본·중국 이웃 설화(수요가 한국 주제의 5~50배 — 2026-09-29 조사).",
+ "about": "Nine Tails Tales 편성표. 루틴은 `python gumiho/tales/tales.py next --date <오늘>` 이 준 한 편만 쓴다(날짜로 결정론적 배정). facts 는 확인된 뼈대, careful 은 단정하면 안 되는 것. format: tale(설화) · urban(현대 괴담) · list(카운트다운) · versus(대결) — 같은 틀이 연속되지 않게 섞는다. 지역: 한국이 기본, 3~4편마다 일본·중국(수요가 한국 주제의 5~50배 — 2026-09-29 조사). 10월(할로윈 달)은 가장 무서운 편을 앞에 둔다.",
  "start": "2026-09-30",
  "tales": [
-  {"id": 1, "slug": "gumiho", "region": "KR", "title_idea": "Korea's Nine-Tailed Fox Is Darker Than Japan's Kitsune", "done": true},
-  {"id": 2, "slug": "fox-sister", "region": "KR",
+  {
+   "id": 1,
+   "slug": "gumiho",
+   "region": "KR",
+   "title_idea": "Korea's Nine-Tailed Fox Is Darker Than Japan's Kitsune",
+   "done": true,
+   "format": "tale"
+  },
+  {
+   "id": 2,
+   "slug": "fox-sister",
+   "region": "KR",
    "title_idea": "The Fox Sister: Korea's Most Terrifying Folk Tale",
    "angle": "A family begs heaven for a daughter. They get one. Every night after, a cow dies with its liver missing.",
-   "facts": ["Korean folk tale 여우누이 (Yeou-nui, 'Fox Sister'), told in many regional versions",
-             "A rich family with several sons prays for a daughter; a girl is born (or arrives) and is doted on",
-             "Livestock start dying each night; a son is set to keep watch and sees the girl slip her arm into a cow and eat its liver",
-             "The father refuses to believe him and drives him out (other sons lie to please the father)",
-             "Years later he returns with three magic bottles (commonly white, red, blue) from a helper (a monk, a wife, or the Dragon King's daughter depending on version)",
-             "The village is empty; the fox sister has eaten everyone; she greets him sweetly and tries to eat him",
-             "He flees on horseback throwing the bottles: a thorn forest, a sea of fire, a sea of water — the fox drowns or burns"],
-   "careful": ["Bottle colors and the helper differ by version — say 'in one version'", "Keep the liver scenes implied, not graphic"],
+   "facts": [
+    "Korean folk tale 여우누이 (Yeou-nui, 'Fox Sister'), told in many regional versions",
+    "A rich family with several sons prays for a daughter; a girl is born (or arrives) and is doted on",
+    "Livestock start dying each night; a son is set to keep watch and sees the girl slip her arm into a cow and eat its liver",
+    "The father refuses to believe him and drives him out (other sons lie to please the father)",
+    "Years later he returns with three magic bottles (commonly white, red, blue) from a helper (a monk, a wife, or the Dragon King's daughter depending on version)",
+    "The village is empty; the fox sister has eaten everyone; she greets him sweetly and tries to eat him",
+    "He flees on horseback throwing the bottles: a thorn forest, a sea of fire, a sea of water — the fox drowns or burns"
+   ],
+   "careful": [
+    "Bottle colors and the helper differ by version — say 'in one version'",
+    "Keep the liver scenes implied, not graphic"
+   ],
    "tie_in": "Classic Korean horror; the 'three bottles' chase appears in many Asian magic-flight tales (compare Japan's Sanmai no ofuda)",
-   "sources": ["Encyclopedia of Korean Folk Culture — 여우누이: https://folkency.nfm.go.kr"]},
-  {"id": 3, "slug": "jeoseung-saja", "region": "KR",
-   "title_idea": "Korea's Grim Reapers Don't Carry Scythes — They Carry a List",
-   "angle": "When a Korean family lays out three bowls of rice and straw sandals at a funeral, it isn't for the dead. It's for the ones who came to collect them.",
-   "facts": ["Jeoseung saja (저승사자) = messenger/envoy of the afterlife (jeoseung) who escorts the dead",
-             "Saja-bap: at traditional funerals families set out rice, money and straw sandals for the reapers so they treat the soul kindly",
-             "Jeju shaman epic Chasa-bonpuri: the clever official Gangrim captures King Yeomra (ruler of the underworld) and becomes a reaper",
-             "Often described as coming in threes in shamanic tradition",
-             "The black gat and black robe look is largely a modern image popularized by TV and film (e.g., Guardian: The Lonely and Great God, 2016; Along with the Gods, 2017)"],
-   "careful": ["Don't claim the black-robe costume is ancient", "Details of Chasa-bonpuri vary; keep the core: Gangrim, Yeomra, becoming a reaper"],
-   "tie_in": "KPop Demon Hunters' 'Saja Boys' are demons posing as reapers; Netflix Joseon ghost drama The East Palace (2026)",
-   "sources": ["Encyclopedia of Korean Folk Culture — 저승사자, 사자상, 차사본풀이: https://folkency.nfm.go.kr"]},
-  {"id": 4, "slug": "dokkaebi", "region": "KR",
-   "title_idea": "Dokkaebi: Korea's Goblins Want to Wrestle You, Not Eat You",
-   "angle": "Meet a dokkaebi on a dark road and he won't kill you. He'll challenge you to wrestle till dawn.",
-   "facts": ["Dokkaebi (도깨비) are Korean goblin spirits, often born from old household objects (a broom, a pestle) touched by human blood",
-             "Love ssireum (wrestling), buckwheat jelly (memil-muk) and practical jokes; can be dim-witted and are often outsmarted",
-             "Dokkaebi bangmangi — a magic club that produces anything when struck ('gold, come out!')",
-             "Folk tale 혹부리 영감 (The Old Man with the Lump): a kind old man sings, goblins buy his lump thinking it's where the song lives; a greedy neighbor tries the same and gets a second lump",
-             "Dokkaebi-bul: ghostly will-o'-the-wisp lights"],
-   "careful": ["Horned red oni-style dokkaebi is a 20th-century image influenced by Japanese oni — say so", "Not demons"],
-   "tie_in": "K-drama Guardian: The Lonely and Great God (Goblin, 2016); KPop Demon Hunters' tiger-and-magpie art comes from the same folk-painting world",
-   "sources": ["Encyclopedia of Korean Folk Culture — 도깨비, 혹부리 영감: https://folkency.nfm.go.kr"]},
-  {"id": 5, "slug": "tamamo-no-mae", "region": "JP",
-   "title_idea": "In 2022, a Stone in Japan Split in Half — and a Nine-Tailed Fox Walked Free",
-   "angle": "In March 2022 hikers found the Killing Stone at Nasu cracked in two. The internet asked: what was sealed inside?",
-   "facts": ["Sessho-seki (the Killing Stone) at Nasu, Tochigi was found split in March 2022 (widely reported)",
-             "Legend: Tamamo-no-Mae, a beautiful and brilliant courtesan of Emperor Toba (12th century), made him ill; the onmyoji Abe no Yasunari exposed her as a nine-tailed fox",
-             "She fled to Nasu, was killed by warriors (Miura-no-suke, Kazusa-no-suke), and her spirit became a poison stone that killed anything that touched it",
-             "Later tellings link her to China's Daji and an Indian queen — the same fox across three empires",
-             "Kitsune in Japan are also Inari's messengers — foxes aren't always villains there"],
-   "careful": ["The stone likely split from weathering — say that plainly", "Gumi calls kitsune her 'cousins'"],
-   "tie_in": "Naruto's Nine-Tails and countless anime borrow from Tamamo",
-   "sources": ["Nasu town / Tochigi tourism pages on Sessho-seki", "Otogizoshi & Noh play 'Sessho-seki'"]},
-  {"id": 6, "slug": "arang", "region": "KR",
-   "title_idea": "Every Magistrate Who Slept in This Town Died by Morning",
-   "angle": "In Miryang, every new magistrate was found dead the morning after he arrived. Then one of them stayed awake.",
-   "facts": ["Arang legend of Miryang (밀양 아랑 전설): the magistrate's daughter Arang (often named Yun Jeong-ok) is murdered after refusing a servant's advances",
-             "Her ghost appears to each new magistrate, who dies of fright",
-             "A brave new magistrate (often Yi Sang-sa) listens; she tells him her killer; the body is found and justice done; her ghost is at peace",
-             "The Arang shrine (Arang-gak) stands near Yeongnamnu pavilion in Miryang",
-             "Arang is the model of the cheonyeo gwishin — the young woman's ghost with long black hair and white clothes, driven by han (unresolved grief)"],
-   "careful": ["Names differ between versions", "No graphic violence"],
-   "tie_in": "K-drama Arang and the Magistrate (2012); the long-haired ghost look later seen in J-horror",
-   "sources": ["Encyclopedia of Korean Folk Culture — 아랑전설: https://folkency.nfm.go.kr", "Miryang city tourism — Arang-gak"]},
-  {"id": 7, "slug": "rose-red-lotus-red", "region": "KR",
-   "title_idea": "Two Sisters Came Back From the Dead to Name Their Killer",
-   "angle": "Two sisters die in the same pond. Every magistrate they visit dies of fright. The third one listens.",
-   "facts": ["Janghwa Hongryeon jeon (장화홍련전), Joseon-era tale based on a Pyeongan-do case",
-             "A stepmother frames the elder sister Janghwa with a fake miscarriage (a skinned rat) to shame her; Janghwa is drowned in a pond; younger sister Hongryeon follows her",
-             "Their ghosts appear to magistrates who die of fright until magistrate Jeong Dong-u listens and exposes the stepmother",
-             "In the ending the sisters are reborn as twins to their father"],
-   "careful": ["Keep the 'skinned rat' mention brief and non-graphic"],
-   "tie_in": "Film A Tale of Two Sisters (2003), remade in Hollywood as The Uninvited (2009)",
-   "sources": ["Encyclopedia of Korean Culture — 장화홍련전: https://encykorea.aks.ac.kr"]},
-  {"id": 8, "slug": "jangsanbeom", "region": "KR",
+   "sources": [
+    "Encyclopedia of Korean Folk Culture — 여우누이: https://folkency.nfm.go.kr"
+   ],
+   "format": "tale"
+  },
+  {
+   "id": 3,
+   "slug": "korean-superstitions",
+   "region": "KR",
+   "format": "list",
+   "title_idea": "7 Korean Superstitions That Could Get You Killed (or Worse)",
+   "angle": "In Korea, cutting your nails at night can let a mouse steal your whole life. Gumi counts down seven rules Koreans still half-believe.",
+   "facts": [
+    "Fan death (선풍기 사망): the belief that sleeping in a closed room with an electric fan on can kill you; widely held in Korea since the late 20th century; fans were sold with timers; there is no scientific support — say so plainly",
+    "Red ink: writing a living person's name in red is taboo, because red was used for the names of the dead",
+    "The number 4 (사) sounds like the Sino-Korean word for death (死); many buildings label the 4th floor 'F' or skip it",
+    "Whistling at night is said to call snakes or ghosts",
+    "Folk tale 손톱 먹은 들쥐: a mouse eats a man's discarded nail clippings, turns into his exact double and takes over his home; the family can't tell them apart until a cat exposes the fake — hence 'don't cut your nails at night'",
+    "Eating seaweed soup (miyeokguk) before an exam means you'll 'slip' and fail",
+    "Giving shoes to a lover means they'll walk away from you"
+   ],
+   "careful": [
+    "These are beliefs, some half-joking today — don't mock them and don't claim they're true",
+    "Fan death: state clearly it has no scientific basis"
+   ],
+   "tie_in": "Evergreen; very shareable with viewers aged 13–30 (countdown format)",
+   "sources": [
+    "Encyclopedia of Korean Folk Culture — 손톱 먹은 들쥐, 금기어: https://folkency.nfm.go.kr"
+   ]
+  },
+  {
+   "id": 4,
+   "slug": "jangsanbeom",
+   "region": "KR",
    "title_idea": "The Tiger of Mount Jang Can Speak in Your Mother's Voice",
    "angle": "Hikers near Busan swear they heard a woman calling their name from the trees. There was no woman.",
-   "facts": ["Jangsanbeom (장산범) is a 21st-century Korean internet legend from Jangsan mountain in Busan",
-             "Described as a pale, long-haired creature that moves on all fours and mimics human voices",
-             "It inherits older Korean tiger lore — in folk tales tigers imitate human voices, e.g., the tiger that disguises itself as the mother in 'The Sun and the Moon' (해와 달이 된 오누이)",
-             "Film The Mimic (2017) is based on it"],
-   "careful": ["It's a modern legend — say so; don't present sightings as fact"],
+   "facts": [
+    "Jangsanbeom (장산범) is a 21st-century Korean internet legend from Jangsan mountain in Busan",
+    "Described as a pale, long-haired creature that moves on all fours and mimics human voices",
+    "It inherits older Korean tiger lore — in folk tales tigers imitate human voices, e.g., the tiger that disguises itself as the mother in 'The Sun and the Moon' (해와 달이 된 오누이)",
+    "Film The Mimic (2017) is based on it"
+   ],
+   "careful": [
+    "It's a modern legend — say so; don't present sightings as fact"
+   ],
    "tie_in": "Korean creepypasta; Beauties & Beasts' Jangsanbeom video passed 300K views",
-   "sources": ["Film The Mimic (장산범, 2017)", "Encyclopedia of Korean Folk Culture — 해와 달이 된 오누이"]},
-  {"id": 9, "slug": "daji", "region": "CN",
-   "title_idea": "The Fox Who Ended a Dynasty: Daji and the Fall of Shang",
-   "angle": "Three thousand years ago a king fell in love with the most beautiful woman in China. She wasn't a woman.",
-   "facts": ["Daji, consort of King Zhou, last king of Shang (c. 11th century BCE) — historical figure turned legend",
-             "In the Ming novel Investiture of the Gods (Fengshen Yanyi) a thousand-year-old fox spirit possesses her on the goddess Nüwa's orders",
-             "Legendary cruelties: the Paolao bronze pillar, the pool of wine and forest of meat",
-             "Jiang Ziya and King Wu of Zhou overthrow Shang; the fox is executed",
-             "Japanese legend later says the same fox fled to become Tamamo-no-Mae"],
-   "careful": ["Separate history from the novel", "Torture mentioned, not shown"],
-   "tie_in": "Chinese film Creation of the Gods I (2023); Tamamo episode #5",
-   "sources": ["Fengshen Yanyi (Investiture of the Gods)", "Sima Qian, Records of the Grand Historian — Annals of Yin"]},
-  {"id": 10, "slug": "princess-bari", "region": "KR",
-   "title_idea": "The Princess Her Father Threw Away Became the Goddess of the Dead",
-   "angle": "A king ordered his seventh daughter thrown into the sea at birth. Years later, only she could save his life.",
-   "facts": ["Bari Gongju / Barideogi (바리공주) — shaman epic sung at Korean rites for the dead",
-             "The king, wanting a son, abandons his seventh daughter in a jade box on the water; she's raised by an old couple",
-             "The king falls deathly ill; only medicinal water from the otherworld can cure him; none of the six elder daughters will go",
-             "Bari travels to the underworld, serves its guardian (Mujangseung) for years, marries him and bears sons, returns with the water and flowers of life",
-             "She revives her parents and becomes the goddess who guides the dead — patron of Korean shamans (mudang)"],
-   "careful": ["Many versions — number of sons and tasks vary"],
-   "tie_in": "The shaman lineage behind KPop Demon Hunters' heroines",
-   "sources": ["Encyclopedia of Korean Folk Culture — 바리공주: https://folkency.nfm.go.kr"]},
-  {"id": 11, "slug": "korean-ghosts", "region": "KR",
+   "sources": [
+    "Film The Mimic (장산범, 2017)",
+    "Encyclopedia of Korean Folk Culture — 해와 달이 된 오누이"
+   ],
+   "format": "urban"
+  },
+  {
+   "id": 5,
+   "slug": "red-mask",
+   "region": "JP",
+   "format": "urban",
+   "title_idea": "'Am I Pretty?' — The Slit-Mouthed Woman Who Crossed the Sea to Korea",
+   "angle": "A woman in a surgical mask stops a child walking home and asks one question. Every answer is wrong.",
+   "facts": [
+    "Kuchisake-onna (口裂け女, 'slit-mouthed woman') is a Japanese urban legend; a panic spread among Japanese schoolchildren in 1979, and some schools had children walk home in groups",
+    "She wears a mask and asks 'Am I pretty?'; unmasked, her mouth is cut from ear to ear; 'no' and 'yes' both end badly",
+    "Escape tricks in the rumors: answer 'you're average', throw candy (bekko-ame) at her, or say 'pomade' three times",
+    "Some claim much older roots in Edo-period tales — the evidence is thin",
+    "In Korea she became 'Ppalgan Mask' (빨간 마스크, the Red Mask), a rumor that swept elementary schools in the 2000s"
+   ],
+   "careful": [
+    "Modern legend — present sightings as rumors",
+    "Keep the mouth imagery implied (mask, shadow), no gore"
+   ],
+   "tie_in": "Japanese urban legend videos regularly pass 1M views",
+   "sources": [
+    "Michael Dylan Foster, 'The Question of the Slit-Mouthed Woman' (Asian Folklore Studies, 2007)"
+   ]
+  },
+  {
+   "id": 6,
+   "slug": "jeoseung-saja",
+   "region": "KR",
+   "title_idea": "Korea's Grim Reapers Don't Carry Scythes — They Carry a List",
+   "angle": "When a Korean family lays out three bowls of rice and straw sandals at a funeral, it isn't for the dead. It's for the ones who came to collect them.",
+   "facts": [
+    "Jeoseung saja (저승사자) = messenger/envoy of the afterlife (jeoseung) who escorts the dead",
+    "Saja-bap: at traditional funerals families set out rice, money and straw sandals for the reapers so they treat the soul kindly",
+    "Jeju shaman epic Chasa-bonpuri: the clever official Gangrim captures King Yeomra (ruler of the underworld) and becomes a reaper",
+    "Often described as coming in threes in shamanic tradition",
+    "The black gat and black robe look is largely a modern image popularized by TV and film (e.g., Guardian: The Lonely and Great God, 2016; Along with the Gods, 2017)"
+   ],
+   "careful": [
+    "Don't claim the black-robe costume is ancient",
+    "Details of Chasa-bonpuri vary; keep the core: Gangrim, Yeomra, becoming a reaper"
+   ],
+   "tie_in": "KPop Demon Hunters' 'Saja Boys' are demons posing as reapers; Netflix Joseon ghost drama The East Palace (2026)",
+   "sources": [
+    "Encyclopedia of Korean Folk Culture — 저승사자, 사자상, 차사본풀이: https://folkency.nfm.go.kr"
+   ],
+   "format": "tale"
+  },
+  {
+   "id": 7,
+   "slug": "dokkaebi",
+   "region": "KR",
+   "title_idea": "Dokkaebi: Korea's Goblins Want to Wrestle You, Not Eat You",
+   "angle": "Meet a dokkaebi on a dark road and he won't kill you. He'll challenge you to wrestle till dawn.",
+   "facts": [
+    "Dokkaebi (도깨비) are Korean goblin spirits, often born from old household objects (a broom, a pestle) touched by human blood",
+    "Love ssireum (wrestling), buckwheat jelly (memil-muk) and practical jokes; can be dim-witted and are often outsmarted",
+    "Dokkaebi bangmangi — a magic club that produces anything when struck ('gold, come out!')",
+    "Folk tale 혹부리 영감 (The Old Man with the Lump): a kind old man sings, goblins buy his lump thinking it's where the song lives; a greedy neighbor tries the same and gets a second lump",
+    "Dokkaebi-bul: ghostly will-o'-the-wisp lights"
+   ],
+   "careful": [
+    "Horned red oni-style dokkaebi is a 20th-century image influenced by Japanese oni — say so",
+    "Not demons"
+   ],
+   "tie_in": "K-drama Guardian: The Lonely and Great God (Goblin, 2016); KPop Demon Hunters' tiger-and-magpie art comes from the same folk-painting world",
+   "sources": [
+    "Encyclopedia of Korean Folk Culture — 도깨비, 혹부리 영감: https://folkency.nfm.go.kr"
+   ],
+   "format": "tale"
+  },
+  {
+   "id": 8,
+   "slug": "fox-trio",
+   "region": "EA",
+   "format": "versus",
+   "title_idea": "Gumiho vs Kitsune vs Huli Jing: Which Nine-Tailed Fox Would Win?",
+   "angle": "Three nine-tailed foxes, three countries, one very biased judge.",
+   "facts": [
+    "Korea's gumiho: almost always malevolent in folklore; human liver motif; fox bead (yeowoo guseul)",
+    "Japan's kitsune: messengers of the rice god Inari as well as tricksters; gain tails with age; famous villain Tamamo-no-Mae",
+    "China's huli jing: in early texts (Classic of Mountains and Seas) the nine-tailed fox is a man-eater, while in Han-era thought it could be an auspicious omen; Daji in Investiture of the Gods",
+    "Rounds: origins, powers (shapeshifting, possession, fox fire), weaknesses (dogs, being discovered, losing the bead), most famous case, pop culture"
+   ],
+   "careful": [
+    "Gumi is openly biased toward the gumiho — play it as a joke",
+    "Don't overlap episode 1's fox bead story beyond one line"
+   ],
+   "tie_in": "Linfamy's comparison video passed 300K views",
+   "sources": [
+    "Shanhaijing (Classic of Mountains and Seas)",
+    "Encyclopedia of Korean Folk Culture — 구미호",
+    "Otogizoshi — Tamamo-no-Mae"
+   ]
+  },
+  {
+   "id": 9,
+   "slug": "arang",
+   "region": "KR",
+   "title_idea": "Every Magistrate Who Slept in This Town Died by Morning",
+   "angle": "In Miryang, every new magistrate was found dead the morning after he arrived. Then one of them stayed awake.",
+   "facts": [
+    "Arang legend of Miryang (밀양 아랑 전설): the magistrate's daughter Arang (often named Yun Jeong-ok) is murdered after refusing a servant's advances",
+    "Her ghost appears to each new magistrate, who dies of fright",
+    "A brave new magistrate (often Yi Sang-sa) listens; she tells him her killer; the body is found and justice done; her ghost is at peace",
+    "The Arang shrine (Arang-gak) stands near Yeongnamnu pavilion in Miryang",
+    "Arang is the model of the cheonyeo gwishin — the young woman's ghost with long black hair and white clothes, driven by han (unresolved grief)"
+   ],
+   "careful": [
+    "Names differ between versions",
+    "No graphic violence"
+   ],
+   "tie_in": "K-drama Arang and the Magistrate (2012); the long-haired ghost look later seen in J-horror",
+   "sources": [
+    "Encyclopedia of Korean Folk Culture — 아랑전설: https://folkency.nfm.go.kr",
+    "Miryang city tourism — Arang-gak"
+   ],
+   "format": "tale"
+  },
+  {
+   "id": 10,
+   "slug": "tamamo-no-mae",
+   "region": "JP",
+   "title_idea": "In 2022, a Stone in Japan Split in Half — and a Nine-Tailed Fox Walked Free",
+   "angle": "In March 2022 hikers found the Killing Stone at Nasu cracked in two. The internet asked: what was sealed inside?",
+   "facts": [
+    "Sessho-seki (the Killing Stone) at Nasu, Tochigi was found split in March 2022 (widely reported)",
+    "Legend: Tamamo-no-Mae, a beautiful and brilliant courtesan of Emperor Toba (12th century), made him ill; the onmyoji Abe no Yasunari exposed her as a nine-tailed fox",
+    "She fled to Nasu, was killed by warriors (Miura-no-suke, Kazusa-no-suke), and her spirit became a poison stone that killed anything that touched it",
+    "Later tellings link her to China's Daji and an Indian queen — the same fox across three empires",
+    "Kitsune in Japan are also Inari's messengers — foxes aren't always villains there"
+   ],
+   "careful": [
+    "The stone likely split from weathering — say that plainly",
+    "Gumi calls kitsune her 'cousins'"
+   ],
+   "tie_in": "Naruto's Nine-Tails and countless anime borrow from Tamamo",
+   "sources": [
+    "Nasu town / Tochigi tourism pages on Sessho-seki",
+    "Otogizoshi & Noh play 'Sessho-seki'"
+   ],
+   "format": "tale"
+  },
+  {
+   "id": 11,
+   "slug": "korean-ghosts",
+   "region": "KR",
    "title_idea": "7 Korean Ghosts You Should Never Meet After Dark",
    "angle": "A ghost with no face at all. A drowned ghost that pulls swimmers down. Korea has a ghost for every kind of bad night.",
-   "facts": ["Cheonyeo gwishin — unmarried young woman's ghost (white clothes, long hair), driven by han",
-             "Mongdal gwishin — ghost of a man who died unmarried",
-             "Mul gwishin — water ghosts that drag swimmers down",
-             "Dalgyal gwishin — 'egg ghost', a ghost with a completely blank, featureless face",
-             "Gaksi — bride ghosts; Songaksi — ghost of a young woman who died unmarried, a household spirit in some regions",
-             "Jibakryeong-style 'bound' ghosts are a modern borrowing — note it if used"],
-   "careful": ["Dalgyal gwishin is mostly modern/urban-legend — say so", "List format but each with a mini story"],
+   "facts": [
+    "Cheonyeo gwishin — unmarried young woman's ghost (white clothes, long hair), driven by han",
+    "Mongdal gwishin — ghost of a man who died unmarried",
+    "Mul gwishin — water ghosts that drag swimmers down",
+    "Dalgyal gwishin — 'egg ghost', a ghost with a completely blank, featureless face",
+    "Gaksi — bride ghosts; Songaksi — ghost of a young woman who died unmarried, a household spirit in some regions",
+    "Jibakryeong-style 'bound' ghosts are a modern borrowing — note it if used"
+   ],
+   "careful": [
+    "Dalgyal gwishin is mostly modern/urban-legend — say so",
+    "List format but each with a mini story"
+   ],
    "tie_in": "Netflix The East Palace (2026)",
-   "sources": ["Encyclopedia of Korean Folk Culture — 처녀귀신, 몽달귀신, 물귀신: https://folkency.nfm.go.kr"]},
-  {"id": 12, "slug": "yuki-onna", "region": "JP",
+   "sources": [
+    "Encyclopedia of Korean Folk Culture — 처녀귀신, 몽달귀신, 물귀신: https://folkency.nfm.go.kr"
+   ],
+   "format": "list"
+  },
+  {
+   "id": 12,
+   "slug": "rose-red-lotus-red",
+   "region": "KR",
+   "title_idea": "Two Sisters Came Back From the Dead to Name Their Killer",
+   "angle": "Two sisters die in the same pond. Every magistrate they visit dies of fright. The third one listens.",
+   "facts": [
+    "Janghwa Hongryeon jeon (장화홍련전), Joseon-era tale based on a Pyeongan-do case",
+    "A stepmother frames the elder sister Janghwa with a fake miscarriage (a skinned rat) to shame her; Janghwa is drowned in a pond; younger sister Hongryeon follows her",
+    "Their ghosts appear to magistrates who die of fright until magistrate Jeong Dong-u listens and exposes the stepmother",
+    "In the ending the sisters are reborn as twins to their father"
+   ],
+   "careful": [
+    "Keep the 'skinned rat' mention brief and non-graphic"
+   ],
+   "tie_in": "Film A Tale of Two Sisters (2003), remade in Hollywood as The Uninvited (2009)",
+   "sources": [
+    "Encyclopedia of Korean Culture — 장화홍련전: https://encykorea.aks.ac.kr"
+   ],
+   "format": "tale"
+  },
+  {
+   "id": 13,
+   "slug": "school-ghosts",
+   "region": "KR",
+   "format": "urban",
+   "title_idea": "At Midnight, Korea's School Statues Come Alive",
+   "angle": "Every Korean kid knows it: at midnight, Admiral Yi draws his sword and King Sejong turns a page.",
+   "facts": [
+    "Hakgyo goedam (학교 괴담, school ghost stories) are a staple of Korean childhood",
+    "Common versions: the Admiral Yi Sun-sin statue draws its sword or walks at midnight; the King Sejong statue turns the page of its book; the anatomy model in the science room walks; the eyes of the Beethoven portrait in the music room follow you; a 13th stair or an extra floor appears at night",
+    "The film Whispering Corridors (여고괴담, 1998) launched a long-running school-horror franchise",
+    "Similar school legends exist in Japan (gakkō no kaidan, e.g., Hanako-san of the toilet)"
+   ],
+   "careful": [
+    "Present as rumors kids trade; no real schools or real students named"
+   ],
+   "tie_in": "Nostalgic for Korean viewers, fresh for global ones; Japan comparison adds reach",
+   "sources": [
+    "Encyclopedia of Korean Folk Culture — 학교괴담: https://folkency.nfm.go.kr",
+    "Film Whispering Corridors (1998)"
+   ]
+  },
+  {
+   "id": 14,
+   "slug": "daji",
+   "region": "CN",
+   "title_idea": "The Fox Who Ended a Dynasty: Daji and the Fall of Shang",
+   "angle": "Three thousand years ago a king fell in love with the most beautiful woman in China. She wasn't a woman.",
+   "facts": [
+    "Daji, consort of King Zhou, last king of Shang (c. 11th century BCE) — historical figure turned legend",
+    "In the Ming novel Investiture of the Gods (Fengshen Yanyi) a thousand-year-old fox spirit possesses her on the goddess Nüwa's orders",
+    "Legendary cruelties: the Paolao bronze pillar, the pool of wine and forest of meat",
+    "Jiang Ziya and King Wu of Zhou overthrow Shang; the fox is executed",
+    "Japanese legend later says the same fox fled to become Tamamo-no-Mae"
+   ],
+   "careful": [
+    "Separate history from the novel",
+    "Torture mentioned, not shown"
+   ],
+   "tie_in": "Chinese film Creation of the Gods I (2023); Tamamo episode #5",
+   "sources": [
+    "Fengshen Yanyi (Investiture of the Gods)",
+    "Sima Qian, Records of the Grand Historian — Annals of Yin"
+   ],
+   "format": "tale"
+  },
+  {
+   "id": 15,
+   "slug": "princess-bari",
+   "region": "KR",
+   "title_idea": "The Princess Her Father Threw Away Became the Goddess of the Dead",
+   "angle": "A king ordered his seventh daughter thrown into the sea at birth. Years later, only she could save his life.",
+   "facts": [
+    "Bari Gongju / Barideogi (바리공주) — shaman epic sung at Korean rites for the dead",
+    "The king, wanting a son, abandons his seventh daughter in a jade box on the water; she's raised by an old couple",
+    "The king falls deathly ill; only medicinal water from the otherworld can cure him; none of the six elder daughters will go",
+    "Bari travels to the underworld, serves its guardian (Mujangseung) for years, marries him and bears sons, returns with the water and flowers of life",
+    "She revives her parents and becomes the goddess who guides the dead — patron of Korean shamans (mudang)"
+   ],
+   "careful": [
+    "Many versions — number of sons and tasks vary"
+   ],
+   "tie_in": "The shaman lineage behind KPop Demon Hunters' heroines",
+   "sources": [
+    "Encyclopedia of Korean Folk Culture — 바리공주: https://folkency.nfm.go.kr"
+   ],
+   "format": "tale"
+  },
+  {
+   "id": 16,
+   "slug": "korean-monsters",
+   "region": "KR",
+   "format": "list",
+   "title_idea": "5 Korean Monsters Nobody Outside Korea Knows About",
+   "angle": "Dogs that bite the sun. A serpent that waits a thousand years to become a dragon. Korea's bestiary is stranger than you think.",
+   "facts": [
+    "Bulgae (불개): fire dogs sent from a dark kingdom (Gamangnara) to steal the sun and moon; their bites are why eclipses happen",
+    "Imugi (이무기): a great serpent that must endure a thousand years (or win a magic pearl, yeouiju) to become a dragon; one that fails turns bitter and dangerous (film D-War, 2007)",
+    "Haetae (해태): a lion-like guardian said to devour fire; statues stand before Gyeongbokgung palace; today Seoul's mascot is based on it",
+    "Samjok-o (삼족오): the three-legged crow of the sun, painted in Goguryeo tomb murals",
+    "Eop-gureongi (업구렁이): a great serpent that lives under a house as its luck spirit — harm it and the family's fortune leaves"
+   ],
+   "careful": [
+    "Versions vary; the fire-eating haetae story around Gyeongbokgung is tradition, not proven history"
+   ],
+   "tie_in": "Imugi appears in K-dramas (e.g., Tale of the Nine Tailed)",
+   "sources": [
+    "Encyclopedia of Korean Folk Culture — 불개, 이무기, 해태, 삼족오, 업: https://folkency.nfm.go.kr"
+   ]
+  },
+  {
+   "id": 17,
+   "slug": "yuki-onna",
+   "region": "JP",
    "title_idea": "The Snow Woman Spared Him — on One Condition",
    "angle": "In a blizzard, a woman made of snow killed an old woodcutter and let the young one live. If he ever told anyone...",
-   "facts": ["Lafcadio Hearn's 'Yuki-Onna' in Kwaidan (1904): woodcutters Mosaku and Minokichi shelter from a blizzard",
-             "Yuki-onna freezes Mosaku with her breath, spares Minokichi on condition he never tells",
-             "He marries a beautiful woman, O-Yuki; they have ten children; she never ages",
-             "Years later he tells her the story; she reveals she is the snow woman, spares him for the children's sake, and melts away"],
-   "careful": ["Hearn's version is the famous one; older regional yuki-onna tales differ"],
+   "facts": [
+    "Lafcadio Hearn's 'Yuki-Onna' in Kwaidan (1904): woodcutters Mosaku and Minokichi shelter from a blizzard",
+    "Yuki-onna freezes Mosaku with her breath, spares Minokichi on condition he never tells",
+    "He marries a beautiful woman, O-Yuki; they have ten children; she never ages",
+    "Years later he tells her the story; she reveals she is the snow woman, spares him for the children's sake, and melts away"
+   ],
+   "careful": [
+    "Hearn's version is the famous one; older regional yuki-onna tales differ"
+   ],
    "tie_in": "Countless anime; Kwaidan film (1964)",
-   "sources": ["Lafcadio Hearn, Kwaidan (1904) — public domain"]},
-  {"id": 13, "slug": "bulgasari", "region": "KR",
+   "sources": [
+    "Lafcadio Hearn, Kwaidan (1904) — public domain"
+   ],
+   "format": "tale"
+  },
+  {
+   "id": 18,
+   "slug": "bulgasari",
+   "region": "KR",
    "title_idea": "The Monster That Ate Iron — and the Dictator Who Kidnapped a Director to Film It",
    "angle": "A Korean legend about a monster that couldn't be killed. A North Korean remake that required kidnapping South Korea's greatest director.",
-   "facts": ["Bulgasari (불가살이) legend of late Goryeo: a creature formed from rice (in many versions by a monk) that eats iron and grows; 'bulgasari' puns on 'cannot be killed'",
-             "It ate the country's iron — needles, spoons, weapons — and could not be killed by blades; fire in some versions",
-             "Real history: director Shin Sang-ok and actress Choi Eun-hee were abducted to North Korea in 1978 on Kim Jong-il's orders",
-             "Shin directed the monster film Pulgasari (1985) there; the couple escaped at the US embassy in Vienna in 1986"],
-   "careful": ["Legend ending varies", "Keep the politics factual and short — this is a tale channel"],
+   "facts": [
+    "Bulgasari (불가살이) legend of late Goryeo: a creature formed from rice (in many versions by a monk) that eats iron and grows; 'bulgasari' puns on 'cannot be killed'",
+    "It ate the country's iron — needles, spoons, weapons — and could not be killed by blades; fire in some versions",
+    "Real history: director Shin Sang-ok and actress Choi Eun-hee were abducted to North Korea in 1978 on Kim Jong-il's orders",
+    "Shin directed the monster film Pulgasari (1985) there; the couple escaped at the US embassy in Vienna in 1986"
+   ],
+   "careful": [
+    "Legend ending varies",
+    "Keep the politics factual and short — this is a tale channel"
+   ],
    "tie_in": "Pulgasari (1985), often compared to Godzilla",
-   "sources": ["Encyclopedia of Korean Folk Culture — 불가살이", "Paul Fischer, A Kim Jong-Il Production (2015)"]},
-  {"id": 14, "slug": "jiangshi", "region": "CN",
+   "sources": [
+    "Encyclopedia of Korean Folk Culture — 불가살이",
+    "Paul Fischer, A Kim Jong-Il Production (2015)"
+   ],
+   "format": "tale"
+  },
+  {
+   "id": 19,
+   "slug": "reaper-trio",
+   "region": "EA",
+   "format": "versus",
+   "title_idea": "Korea's Grim Reaper vs Japan's Shinigami vs China's Ox-Head and Horse-Face",
+   "angle": "Three countries, three ways to be collected when you die. Which one would you rather meet?",
+   "facts": [
+    "Korea: jeoseung saja escort the dead, often in threes, carrying a register of names; families offer saja-bap (rice, sandals, coins)",
+    "China: Ox-Head and Horse-Face (牛頭馬面) are guardians/escorts of the underworld (Diyu) under King Yama; also Heibai Wuchang, the black and white guards of impermanence",
+    "Japan: 'shinigami' as a death god is largely a later concept (Edo-period tales and rakugo like 'Shinigami'), popularized worldwide by manga such as Death Note",
+    "Rounds: who they are, how they find you, can you bribe or trick them, the afterlife they take you to"
+   ],
+   "careful": [
+    "Say plainly that shinigami is a comparatively recent idea",
+    "Keep Buddhist/Taoist beliefs respectful"
+   ],
+   "tie_in": "Follows the jeoseung saja episode; Death Note and Bleach fans",
+   "sources": [
+    "Encyclopedia of Korean Folk Culture — 저승사자",
+    "Rakugo 'Shinigami' (San'yūtei Enchō, Meiji era)"
+   ]
+  },
+  {
+   "id": 20,
+   "slug": "jiangshi",
+   "region": "CN",
    "title_idea": "Why Chinese Vampires Hop",
    "angle": "In old China, corpses walked home in single file at night, hopping — and a priest with a bell led the way.",
-   "facts": ["Jiangshi (僵尸) — 'stiff corpse', a reanimated body that drains qi from the living",
-             "Linked to the 'corpse herders' of Xiangxi, Hunan, said to guide the dead home for burial at night",
-             "Remedies in folklore: Taoist talismans on the forehead, holding your breath, mirrors, sticky rice, peach wood",
-             "Mr. Vampire (1985, Hong Kong) made the hopping vampire iconic"],
-   "careful": ["Corpse-herding practicalities are debated — say 'according to legend'"],
+   "facts": [
+    "Jiangshi (僵尸) — 'stiff corpse', a reanimated body that drains qi from the living",
+    "Linked to the 'corpse herders' of Xiangxi, Hunan, said to guide the dead home for burial at night",
+    "Remedies in folklore: Taoist talismans on the forehead, holding your breath, mirrors, sticky rice, peach wood",
+    "Mr. Vampire (1985, Hong Kong) made the hopping vampire iconic"
+   ],
+   "careful": [
+    "Corpse-herding practicalities are debated — say 'according to legend'"
+   ],
    "tie_in": "Hong Kong horror-comedy classics; Genshin Impact's Qiqi",
-   "sources": ["Yuan Mei, Zi Bu Yu (18th c.) — jiangshi tales", "Mr. Vampire (1985)"]},
-  {"id": 15, "slug": "mudang-gut", "region": "KR",
+   "sources": [
+    "Yuan Mei, Zi Bu Yu (18th c.) — jiangshi tales",
+    "Mr. Vampire (1985)"
+   ],
+   "format": "tale"
+  },
+  {
+   "id": 21,
+   "slug": "mudang-gut",
+   "region": "KR",
    "title_idea": "The Real Shamans Behind KPop Demon Hunters",
    "angle": "Korea's shamans sing, dance on blades and argue with the dead. Some still work in Seoul today.",
-   "facts": ["Mudang (무당) — Korean shamans, mostly women, mediating between people and spirits",
-             "Gut (굿) — shamanic rituals with music, costume changes and possession; e.g., jakdu-tagi, dancing on straw-cutter blades",
-             "Mansin is an honorific for shamans; spirit sickness (sinbyeong) often precedes initiation",
-             "Many shrines on Mount Inwang in Seoul (Guksadang)"],
-   "careful": ["Be respectful — living religious practice", "Don't claim KPDH plot details beyond public basics"],
+   "facts": [
+    "Mudang (무당) — Korean shamans, mostly women, mediating between people and spirits",
+    "Gut (굿) — shamanic rituals with music, costume changes and possession; e.g., jakdu-tagi, dancing on straw-cutter blades",
+    "Mansin is an honorific for shamans; spirit sickness (sinbyeong) often precedes initiation",
+    "Many shrines on Mount Inwang in Seoul (Guksadang)"
+   ],
+   "careful": [
+    "Be respectful — living religious practice",
+    "Don't claim KPDH plot details beyond public basics"
+   ],
    "tie_in": "KPop Demon Hunters (2025) and its sequel; film Exhuma (2024)",
-   "sources": ["Encyclopedia of Korean Folk Culture — 무당, 굿, 작두타기: https://folkency.nfm.go.kr", "Laurel Kendall, Shamans, Housewives, and Other Restless Spirits (1985)"]},
-  {"id": 16, "slug": "sun-and-moon", "region": "KR",
+   "sources": [
+    "Encyclopedia of Korean Folk Culture — 무당, 굿, 작두타기: https://folkency.nfm.go.kr",
+    "Laurel Kendall, Shamans, Housewives, and Other Restless Spirits (1985)"
+   ],
+   "format": "tale"
+  },
+  {
+   "id": 22,
+   "slug": "sun-and-moon",
+   "region": "KR",
    "title_idea": "The Tiger Who Ate Their Mother Came Knocking at the Door",
    "angle": "'Give me a rice cake and I won't eat you.' She gave him every rice cake she had. It wasn't enough.",
-   "facts": ["해와 달이 된 오누이 (The Brother and Sister Who Became the Sun and the Moon)",
-             "A tiger eats the mother on her way home from selling rice cakes, one demand at a time",
-             "Disguised in her clothes, it comes to the children's door; they notice its hairy hand",
-             "They climb a tree; the tiger follows; they pray and a rope descends from heaven; the tiger's rotten rope snaps",
-             "The children become the sun and moon; the tiger's blood stains sorghum red"],
-   "careful": ["Which child becomes the sun varies by version"],
+   "facts": [
+    "해와 달이 된 오누이 (The Brother and Sister Who Became the Sun and the Moon)",
+    "A tiger eats the mother on her way home from selling rice cakes, one demand at a time",
+    "Disguised in her clothes, it comes to the children's door; they notice its hairy hand",
+    "They climb a tree; the tiger follows; they pray and a rope descends from heaven; the tiger's rotten rope snaps",
+    "The children become the sun and moon; the tiger's blood stains sorghum red"
+   ],
+   "careful": [
+    "Which child becomes the sun varies by version"
+   ],
    "tie_in": "Origin of the voice-mimicking tiger (see Jangsanbeom #8)",
-   "sources": ["Encyclopedia of Korean Folk Culture — 해와 달이 된 오누이: https://folkency.nfm.go.kr"]}
+   "sources": [
+    "Encyclopedia of Korean Folk Culture — 해와 달이 된 오누이: https://folkency.nfm.go.kr"
+   ],
+   "format": "tale"
+  }
  ]
 }

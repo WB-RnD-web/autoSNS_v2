@@ -33,6 +33,27 @@ and cite its `sources` in the `sources` field. If a detail differs between versi
 5. **Ending**: Gumi's personal answer or reflection → teaser for **next week's catalog entry**
    (use its `angle`) → sign-off in one line (vary it; a callback to the cold open is best).
 
+## Format (the entry's `format` field)
+Same narrator every week, **different shape** — so the channel never feels like the same video twice.
+- `tale` — one story told start to finish (the structure above).
+- `list` — a countdown ("7 Korean Superstitions…"). Cold open teases #1. Each item opens with a
+  card `{"card": "#7", "sub": "<item name>"}` followed by 4–8 scenes: a mini scene that *shows* it,
+  the real belief/fact, Gumi's comment. Get stranger as you count down; #1 is the scariest or most surprising.
+  Only the first 3 cards need `sub`s for chapters; give every item a `sub` anyway.
+- `urban` — a modern legend (school panics, internet creatures). Open on a "witness" moment,
+  framed as a rumor ("people swear…"), then: where it started, the older folklore underneath it,
+  how the panic spread, what's real vs. rumor, Gumi's verdict. Never present sightings as fact,
+  never name private people or private addresses.
+- `versus` — three contenders, 3–4 rounds as chapters (origins, powers, weaknesses, most famous case),
+  a comically biased verdict from Gumi, and a question for the comments ("who would YOU pick?").
+
+## Make it hit (every format)
+- **Scene 0 is the scariest or strangest image of the episode**, not the calm beginning.
+- Plant **one shock beat around the middle**: a short line (≤8 words) that turns the story,
+  with `"hold": 1.0`–`1.5`, `"fx": "none"`, `"move": "in"` (001: "Your liver.").
+- End every chapter on an open question or a threat, so the next card feels like a cliffhanger.
+- Dread and suspense, never gore: the scariest thing is what the viewer imagines.
+
 ## Length and scenes
 - **1,700–2,300 words** of narration (≈11–15 minutes). The checker allows 1,200–2,600.
 - **45–75 scenes.** One scene = one picture on screen for 6–20 seconds = **12–45 words**
