@@ -130,6 +130,11 @@ class OpenAICompat(Backend):
             raise SystemExit("[error] 공개 모델 API 키 없음 — NVIDIA_API_KEY(또는 GUMIHO_OPENAI_KEY)")
         self.label = f"openai:{model}"
 
+    # 2026-09-29 실측: 무료 카탈로그는 모델에 따라 404(계정에 안 열림)·3분+ 무응답이 난다.
+    # 대국 전에 probe 로 걸러내고, 대국 중에는 짧게 기다렸다가 그 턴만 메운다(오래 멈추지 않게).
+    TIMEOUT = int(os.environ.get("GUMIHO_OPENAI_TIMEOUT", "75"))
+    ATTEMPTS = 2
+
     def complete(self, system: str, user: str, max_tokens: int = 600) -> str:
         import requests
         # 생각(reasoning)을 먼저 쓰는 모델이 많아 답이 잘리지 않게 넉넉히 준다.
@@ -137,9 +142,9 @@ class OpenAICompat(Backend):
                 "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}]}
         headers = {"Authorization": f"Bearer {self.key}"} if self.key else {}
         wait = 5
-        for attempt in range(6):
+        for attempt in range(self.ATTEMPTS):
             try:
-                r = requests.post(f"{self.base}/chat/completions", json=body, headers=headers, timeout=180)
+                r = requests.post(f"{self.base}/chat/completions", json=body, headers=headers, timeout=self.TIMEOUT)
                 if r.status_code == 200:
                     msg = r.json()["choices"][0]["message"]
                     return msg.get("content") or msg.get("reasoning_content") or ""
@@ -201,10 +206,76 @@ def make_backend(seat: dict, override: str | None = None, seed: int = 0) -> Back
     raise SystemExit(f"[error] 알 수 없는 backend: {kind}")
 
 
+SEATS = 6
+VOICE_POOL = ["F1", "F5", "M1", "M2", "M3", "M4", "M5"]   # F2 는 진행자 구미, F3·F4 는 쓰지 않는다
+
+
 def load_roster(path: str) -> list[dict]:
+    """후보 목록(우선순위 순). 같은 이름이 여러 번 나오면 뒤쪽은 그 이름의 대체 모델이다."""
     with open(path, encoding="utf-8") as f:
-        roster = json.load(f)
-    names = [s["name"] for s in roster]
-    if len(set(n.lower() for n in names)) != len(names):
-        raise SystemExit("[error] roster 이름 중복")
-    return roster
+        cands = json.load(f)
+    if len({c["name"].lower() for c in cands}) < SEATS:
+        raise SystemExit(f"[error] 후보 이름이 {SEATS}개보다 적다")
+    return cands
+
+
+def _assign_voices(cast: list[dict]) -> list[dict]:
+    used, out = set(), []
+    for s in cast:
+        v = s.get("voice") if s.get("voice") in VOICE_POOL and s.get("voice") not in used else \
+            next(x for x in VOICE_POOL if x not in used)
+        used.add(v)
+        out.append({**s, "voice": v})
+    return out
+
+
+def default_cast(cands: list[dict]) -> list[dict]:
+    """점검 없이 앞에서부터 이름별 첫 후보 6개(점검용·오프라인)."""
+    seen, cast = set(), []
+    for c in cands:
+        if c["name"].lower() not in seen:
+            seen.add(c["name"].lower())
+            cast.append(c)
+        if len(cast) == SEATS:
+            break
+    return _assign_voices(cast)
+
+
+def probe(seat: dict, timeout: int = 45) -> tuple[bool, str]:
+    """출연 전 점검 — 짧은 질문에 제시간 안에 형식대로 답하는지. (통과, 사유)"""
+    t0 = time.time()
+    try:
+        b = make_backend(seat)
+        if isinstance(b, OpenAICompat):
+            b.TIMEOUT, b.ATTEMPTS = timeout, 1
+        elif isinstance(b, SparkLLM):
+            b.timeout = timeout * 4          # 공용 서버 대기열을 감안해 조금 더 기다린다
+        text = b.complete("You are a contestant on a game show. Answer only with JSON.",
+                          'Respond ONLY with JSON: {"say": "<one short friendly sentence>"}', 300)
+    except SystemExit as e:
+        return False, str(e)[:80]
+    except Exception as e:  # noqa: BLE001
+        return False, f"{type(e).__name__}"
+    sec = time.time() - t0
+    if '"say"' not in (text or "") and "say" not in (text or "").lower():
+        return False, f"형식 불일치({sec:.0f}초)"
+    if sec > timeout:
+        return False, f"느림({sec:.0f}초)"
+    return True, f"{sec:.0f}초"
+
+
+def select_cast(cands: list[dict], probe_fn=probe) -> tuple[list[dict], list[str]]:
+    """우선순위대로 점검해 통과한 이름 6개를 출연진으로. 같은 이름의 대체 모델은 앞 모델이 떨어졌을 때만 본다."""
+    cast, report, taken = [], [], set()
+    for c in cands:
+        key = c["name"].lower()
+        if key in taken:
+            continue
+        ok, why = probe_fn(c)
+        report.append(f"{'✓' if ok else '✗'} {c['name']} ({c.get('model')}) {why}")
+        if ok:
+            taken.add(key)
+            cast.append(c)
+            if len(cast) == SEATS:
+                break
+    return _assign_voices(cast), report

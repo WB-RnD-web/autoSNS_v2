@@ -1,8 +1,15 @@
 [
- {"name": "Mistral",  "backend": "openai", "model": "mistralai/mistral-large-2-instruct",  "voice": "M3", "color": "#FA7A18", "sprite": "mistral"},
- {"name": "GPT-OSS",  "backend": "openai", "model": "openai/gpt-oss-20b",                  "voice": "M1", "color": "#E9E9E9", "sprite": "gpt"},
- {"name": "Gemma",    "backend": "spark",  "model": "gemma-4-26B-A4B-it",                  "voice": "F1", "color": "#5AA9FF", "sprite": "gemma"},
- {"name": "Nemotron", "backend": "openai", "model": "nvidia/nemotron-3-super-120b-a12b",   "voice": "M4", "color": "#76B900", "sprite": "nemo"},
- {"name": "DeepSeek", "backend": "openai", "model": "deepseek-ai/deepseek-v4.1-flash",     "voice": "F5", "color": "#4D6BFE", "sprite": "deepseek"},
- {"name": "Kimi",     "backend": "openai", "model": "moonshotai/kimi-k3",                  "voice": "M5", "color": "#F2C14E", "sprite": "kimi"}
+ {"name": "Gemma",    "backend": "spark",  "model": "gemma-4-26B-A4B-it",                 "voice": "F1", "color": "#5AA9FF", "sprite": "gemma"},
+ {"name": "GPT-OSS",  "backend": "openai", "model": "openai/gpt-oss-20b",                 "voice": "M1", "color": "#E9E9E9", "sprite": "gpt"},
+ {"name": "Nemotron", "backend": "openai", "model": "nvidia/nemotron-3-super-120b-a12b",  "voice": "M4", "color": "#76B900", "sprite": "nemo"},
+ {"name": "Kimi",     "backend": "openai", "model": "moonshotai/kimi-k3",                 "voice": "M5", "color": "#F2C14E", "sprite": "kimi"},
+ {"name": "Kimi",     "backend": "openai", "model": "moonshotai/kimi-k2.6",               "voice": "M5", "color": "#F2C14E", "sprite": "kimi"},
+ {"name": "DeepSeek", "backend": "openai", "model": "deepseek-ai/deepseek-v4.1-flash",    "voice": "F5", "color": "#4D6BFE", "sprite": "deepseek"},
+ {"name": "GLM",      "backend": "openai", "model": "z-ai/glm-5.3",                       "voice": "M2", "color": "#2BC6B4", "sprite": "glm"},
+ {"name": "GLM",      "backend": "openai", "model": "z-ai/glm-5.3-flash",                 "voice": "M2", "color": "#2BC6B4", "sprite": "glm"},
+ {"name": "Mistral",  "backend": "openai", "model": "mistralai/mistral-large-2-instruct", "voice": "M3", "color": "#FA7A18", "sprite": "mistral"},
+ {"name": "Mistral",  "backend": "openai", "model": "mistralai/mistral-large",            "voice": "M3", "color": "#FA7A18", "sprite": "mistral"},
+ {"name": "Phi",      "backend": "openai", "model": "microsoft/phi-3.5-moe-instruct",     "voice": "M3", "color": "#7FB3FF", "sprite": "phi"},
+ {"name": "Jamba",    "backend": "openai", "model": "ai21labs/jamba-1.5-large-instruct",  "voice": "F5", "color": "#D63FB8", "sprite": "jamba"},
+ {"name": "Granite",  "backend": "openai", "model": "ibm/granite-3.0-8b-instruct",        "voice": "M2", "color": "#9AA3AE", "sprite": "granite"}
 ]

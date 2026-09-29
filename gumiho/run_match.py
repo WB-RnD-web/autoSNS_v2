@@ -84,7 +84,16 @@ def main() -> int:
     ap.add_argument("--backend", choices=["spark", "mock", "anthropic"], help="모든 자리를 이 백엔드로(점검용)")
     ap.add_argument("--out", default=os.path.join(ROOT, "output", "gumiho", "matches"))
     args = ap.parse_args()
-    roster = players.load_roster(args.roster)
+    cands = players.load_roster(args.roster)
+    if args.backend:          # 점검용: 모든 자리를 한 백엔드로 — 모델 점검 없이 앞에서부터 6명
+        roster = players.default_cast(cands)
+    else:                     # 실제 출연: 우선순위대로 점검해 통과한 6명(떨어지면 대기 명단에서 자동 교체)
+        roster, report = players.select_cast(cands)
+        print("🎟️ 출연 전 점검\n   " + "\n   ".join(report), flush=True)
+        if len(roster) < players.SEATS:
+            print(f"::error::출연 가능 모델이 {len(roster)}개뿐이다(필요 {players.SEATS})")
+            return 1
+        print("   → 출연: " + ", ".join(f"{s['name']}({s['model']})" for s in roster), flush=True)
     os.makedirs(args.out, exist_ok=True)
     base = int(args.date.replace("-", "")) * 100
     best = None

@@ -24,22 +24,17 @@ Spark는 공용 서버다. 2026-09-29에 작업이 몰려 한 번 멈췄다. 그
 
 ## 출연진
 
-`roster.json`에 있다.
+`roster.json`은 **후보 목록(우선순위 순)**이다. 실제 출연 6명은 대국 전에 코드가 정한다.
 
-| 이름 | 연결 | 모델 |
-|---|---|---|
-| Mistral | `openai` | `mistralai/mistral-large-2-instruct` |
-| Gemma | `spark` | Spark 게이트웨이(Gemma 4 26B-A4B) |
-| GPT-OSS | `openai` | `openai/gpt-oss-20b` |
-| Nemotron | `openai` | `nvidia/nemotron-3-super-120b-a12b` |
-| DeepSeek | `openai` | `deepseek-ai/deepseek-v4.1-flash` |
-| Kimi | `openai` | `moonshotai/kimi-k3` |
-
-- **Spark 게이트웨이:** 2026-09-29 실측으로 `model` 값을 무시하고 늘 Gemma 4가 답한다.
-- **공개 모델 4종:** NVIDIA API 카탈로그(`https://integrate.api.nvidia.com/v1`)로 부른다.
-  - 키는 왕별이가 이미 쓰는 시크릿 `NVIDIA_API_KEY`(무료)다. 추가 비용이 없다.
-  - 2026-09-29 목록에는 Qwen·Llama 최신판이 없어서 DeepSeek·Kimi로 바꿨다.
-- **돈이 드는 호출 금지(사용자 원칙, 2026-09-29).** 레포에 Anthropic 키가 없고 유료이므로 Claude 자리는 Mistral로 바꿨다.
+- **출연 전 점검:** `players.select_cast`가 후보마다 짧은 질문을 한 번 던진다. 45초 안에 형식대로 답한 모델만 출연한다.
+- **대기 명단:** 떨어진 모델 자리는 뒤쪽 후보가 채운다. 같은 이름이 여러 줄이면 뒤 줄은 그 이름의 대체 모델이다(예: Kimi K3 → K2.6).
+- **대국 중 실패:** 한 턴은 75초만 기다리고 그 턴만 메운다. 메움이 15%를 넘으면 그 판은 버린다.
+- **현재 우선순위:** Gemma(Spark) · GPT-OSS · Nemotron · Kimi · DeepSeek · GLM · Mistral · Phi · Jamba · Granite.
+- **2026-09-29 실측:**
+  - Mistral Large 2는 이 계정에서 404(열려 있지 않음)가 났다.
+  - DeepSeek v4.1 Flash는 3분 넘게 응답하지 않는 일이 잦았다.
+- **Spark 게이트웨이:** `model` 값을 무시하고 늘 Gemma 4가 답한다(실측). 다른 모델을 Spark에서 돌리려면 게이트웨이에 모델 라우팅을 넣어야 한다.
+- **돈이 드는 호출 금지(사용자 원칙, 2026-09-29).** 공개 모델은 왕별이의 `NVIDIA_API_KEY`(무료)로만 부른다.
   - Claude API·OpenRouter 같은 유료 경로는 `GUMIHO_ALLOW_PAID=1`이 없으면 코드가 실행을 멈춘다.
 
 ## 실행

@@ -14,7 +14,8 @@ import players as P    # noqa: E402
 import run_match as R  # noqa: E402
 
 FAIL = 0
-ROSTER = P.load_roster(os.path.join(os.path.dirname(os.path.abspath(__file__)), "roster.json"))
+CANDS = P.load_roster(os.path.join(os.path.dirname(os.path.abspath(__file__)), "roster.json"))
+ROSTER = P.default_cast(CANDS)          # 점검 없이 앞에서부터 6명(mock 테스트용)
 NAMES = [s["name"] for s in ROSTER]
 
 
@@ -153,7 +154,19 @@ try:
 except SystemExit:
     ck("NVIDIA 무료 주소가 아니면 막힌다", True)
 os.environ.pop("GUMIHO_OPENAI_BASE", None)
-ck("시즌 출연진은 전부 무료 경로(spark·openai→NVIDIA)", all(s["backend"] in ("spark", "openai") for s in ROSTER))
+ck("후보 전원이 무료 경로(spark·openai→NVIDIA)", all(s["backend"] in ("spark", "openai") for s in CANDS))
+
+print("── 출연 전 점검 ──")
+dead = {"deepseek-ai/deepseek-v4.1-flash", "mistralai/mistral-large-2-instruct", "moonshotai/kimi-k3"}
+cast, rep = P.select_cast(CANDS, probe_fn=lambda c: (c["model"] not in dead, "fake"))
+names = [c["name"] for c in cast]
+ck("떨어진 모델 대신 대기 명단이 채운다", len(cast) == 6 and "DeepSeek" not in names and "GLM" in names, str(names))
+ck("같은 이름 대체 모델(Kimi k3 → k2.6)", any(c["name"] == "Kimi" and c["model"] == "moonshotai/kimi-k2.6" for c in cast))
+ck("이름 중복 없음", len(set(names)) == 6)
+ck("목소리 6개 모두 다름·진행자(F2)와 안 겹침", len({c['voice'] for c in cast}) == 6 and "F2" not in {c['voice'] for c in cast})
+ck("점검 기록이 남는다", any(r.startswith("✗ DeepSeek") for r in rep))
+cast2, _ = P.select_cast(CANDS, probe_fn=lambda c: (c["backend"] == "spark", "fake"))
+ck("6명이 안 되면 모자란 채로 돌려준다(실행은 run_match 가 막음)", len(cast2) == 1)
 
 print()
 if FAIL:
