@@ -63,6 +63,9 @@ ck("수 10/7 → 3편 · 수 10/14 → 4편", T.assigned_id("2026-10-07") == 3 a
 cat = T.load(T.CATALOG)["tales"]
 ck("catalog 번호 1부터 연속·slug 중복 없음", [e["id"] for e in cat] == list(range(1, len(cat) + 1))
    and len({e["slug"] for e in cat}) == len(cat))
+ck("format 은 tale·urban·list·versus 중 하나", all(e.get("format", "tale") in T.FORMATS for e in cat))
+ck("같은 format 이 4편 넘게 연속되지 않는다",
+   max(len(list(g)) for _, g in __import__("itertools").groupby(e.get("format", "tale") for e in cat)) <= 4)
 ck("아직 안 쓴 편은 facts·sources 가 있다", all(e.get("facts") and e.get("sources") for e in cat if not e.get("done")))
 
 print("── 메타데이터 ──")

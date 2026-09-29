@@ -32,6 +32,7 @@ WPM = 159                                            # F2 실측(2026-09-29) —
 GUMI = ("front", "bead", "wink")
 FX = ("none", "dust", "fog", "embers", "snow", "rain", "fireflies")
 MOVES = ("in", "out", "left", "right", "up", "down")
+FORMATS = ("tale", "urban", "list", "versus")   # catalog.format — 같은 틀이 연속되지 않게 섞는다(WRITING.md)
 
 # 분량: 8분이 넘어야 중간 광고가 붙는다. 너무 길면 한 주 안에 Spark 그림이 부담.
 WORDS_MIN, WORDS_MAX = 1200, 2600
