@@ -103,13 +103,17 @@ def main() -> int:
             led.setdefault(k, v)
     done = led.get(stem, {})
     publish_at = a.publish_at or (next_saturday_15utc() if a.mode == "scheduled" else None)
-    md = T.meta(s, rm.get("starts"))
+    # 앞서 올린 편(최신순 4개)을 설명에 링크 — 새 편이 옛 편을, 옛 편 검색 유입이 새 편을 끌어 준다
+    more = [(v.get("title") or k, v["long"]) for k, v in sorted(led.items(), reverse=True)
+            if k != stem and v.get("long")]
+    md = T.meta(s, rm.get("starts"), more=more)
 
     import upload_youtube_novel as U
     yt = U.get_service()
     if not done.get("long"):
         vid = insert(yt, rm["video"], md, "private", publish_at)
         done["long"] = f"https://youtu.be/{vid}"
+        done["title"] = md["title"]
         print(f"✅ 본편 {done['long']} · {'예약 ' + publish_at if publish_at else '비공개'}")
         done["thumb"] = bool(U.set_thumbnail(yt, vid, rm["thumb"]))
         if not done["thumb"]:

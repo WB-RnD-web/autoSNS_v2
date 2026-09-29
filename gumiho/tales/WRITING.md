@@ -35,6 +35,16 @@ and cite its `sources` in the `sources` field. If a detail differs between versi
    ("If you were that boy, would you have swallowed the bead? Tell me in the comments.") → teaser for **next week's catalog entry**
    (use its `angle`) → sign-off in one line (vary it; a callback to the cold open is best).
 
+## Evergreen — it must still work a year from now
+This channel lives on search and recommendations, not on today's feed. An episode should be able to
+pick up views months later.
+- No time-bound phrases: "this Halloween", "recently", "this year", "trending", "right now" (the checker rejects them).
+  Years stated as facts are fine ("the 1994 film", "in March 2022").
+- The title carries the searchable name people actually type (gumiho, dokkaebi, jangsanbeom, kitsune…) —
+  one of the first three `tags` must appear in the title (checked).
+- Mention dramas/films only as background, never as the hook.
+- Tie episodes together: a callback to an earlier tale where it fits, and the teaser for the next one.
+
 ## Format (the entry's `format` field)
 Same narrator every week, **different shape** — so the channel never feels like the same video twice.
 - `tale` — one story told start to finish (the structure above).
