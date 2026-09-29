@@ -30,7 +30,8 @@ VO_RATE = os.environ.get("VO_RATE", "+6%")
 # 카드뉴스처럼 글자만 넘어가면 '누가 말하는지'가 없다. 채널 캐릭터 둘을 화면 아래 앵커 데스크에
 # 앉히고, 장면마다 번갈아 말하게 한다(말하는 쪽이 앞으로 나오고 몸이 들썩인다).
 # 이미지: motion/assets/presenter/{byeori,byeolha}.png (투명 PNG). 없으면 진행자 없이 기존 화면.
-# 끄기: PRESENTER=0 · 한 목소리로: PRESENTER_DUO=0 (그때는 별하 혼자 말한다)
+# ★기본 꺼짐(2026-09-29): 켠 첫날(9/28) 운세 484→184회·평균 시청 75→51%, 별자리 802→142회.
+#   켜기: PRESENTER=1 · 한 목소리로: PRESENTER_DUO=0 (그때는 별하 혼자 말한다)
 PRESENTER_DIR = os.path.join(PROJ, "assets", "presenter")
 SPEAKERS = {
     "byeolha": {"name": "별하", "voice": NARRATOR,
@@ -296,13 +297,13 @@ def presenter_topics():
 
 
 def presenter_on(topic=None):
-    """진행자 이미지 두 장이 다 있고 PRESENTER=0 이 아니면 켠다.
+    """진행자 이미지 두 장이 다 있고 PRESENTER=1 이면 켠다(기본 꺼짐).
 
     topic 을 주면 PRESENTER_TOPICS 에 든 토픽(접두사 매칭)일 때만 켠다.
     topic=None 은 토픽 검사를 건너뛴다(이미지·스위치만 본다).
     """
-    if os.environ.get("PRESENTER", "1") in ("0", "false", "False"):
-        return False
+    if os.environ.get("PRESENTER", "0") not in ("1", "true", "True", "on"):
+        return False  # 기본 꺼짐 — PRESENTER=1 일 때만 켠다(2026-09-29)
     if topic is not None:
         t = (topic or "").strip().lower()
         if not any(t == k or t.startswith(k) for k in presenter_topics()):

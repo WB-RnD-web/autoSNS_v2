@@ -55,7 +55,10 @@ jobs:
       CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL || 'claude-sonnet-5-5' }}
       # ★다국어: 번역은 '루틴이' 스펙에 써준다 → 번역 API 비용 0원.
       #   ANTHROPIC_API_KEY 는 루틴이 번역을 빠뜨렸을 때만 쓰는 ★선택적 폴백이다(없어도 정상).
-      I18N_LOCALIZE: ${{ vars.I18N_LOCALIZE || '1' }}
+      # ★쇼츠는 기본 한국어만(2026-09-29). 한국어 음성·한국어 화면 글자라 영어·일어·중국어 제목은
+      #   얻는 게 없고, 현지화가 실제로 붙기 시작한 9/28 부터 쇼츠 조회가 꺼졌다(원인 미확정 — 되돌려 본다).
+      #   ASMR·SCP 는 계속 I18N_LOCALIZE 를 쓴다. 쇼츠만 다시 켜기: 레포 변수 SHORTS_I18N=1
+      I18N_LOCALIZE: ${{ vars.SHORTS_I18N || '0' }}
       I18N_CAPTIONS: "0"
       I18N_LANGS: ${{ vars.I18N_LANGS || 'en,ja,zh-Hant' }}
       # IG Reels + Threads (자격증명 있을 때만 동작 — 없으면 자동 스킵)
@@ -82,12 +85,15 @@ jobs:
       # ★레포 변수는 여기 적어야 파이썬에 닿는다(적지 않으면 '끄기' 스위치가 먹지 않는다).
       SHORTS_BG: ${{ vars.SHORTS_BG || '1' }}                 # 키비주얼 배경 (0=끄기)
       SHORTS_BG_TIMEOUT: ${{ vars.SHORTS_BG_TIMEOUT || '240' }}
-      PRESENTER: ${{ vars.PRESENTER || '1' }}                 # 별이·별하 진행자 (0=끄기)
+      PRESENTER: ${{ vars.PRESENTER || '0' }}                 # 별이·별하 진행자 — ★기본 꺼짐(1=켜기, 2026-09-29)
       PRESENTER_DUO: ${{ vars.PRESENTER_DUO || '1' }}         # 0=별하 혼자
       PRESENTER_TOPICS: ${{ vars.PRESENTER_TOPICS || '' }}    # 비우면 운세·별자리·연애만 (정치·주식 제외 — AI 페르소나 정책)
       VO_BACKEND: ${{ vars.VO_BACKEND || 'wbspark' }}         # wbspark(Supertonic) | edge
       VO_PRESET_BYEOLHA: ${{ vars.VO_PRESET_BYEOLHA || 'F1' }}
       VO_PRESET_BYEORI: ${{ vars.VO_PRESET_BYEORI || 'M1' }}
+      # ★일시정지 토픽(2026-09-29) — 피드에서 85~90% 가 넘기는 별자리·국장·미장은 렌더 전에 건너뛴다.
+      #   비우면 코드 기본값(horoscope,zodiac,stock,stock_us). 전부 재개 = none
+      SHORTS_PAUSED_TOPICS: ${{ vars.SHORTS_PAUSED_TOPICS || '' }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -213,7 +219,7 @@ jobs:
           python run_pipeline.py $(for f in $FILES; do echo "../$f"; done) \
             --use-ledger --log ../output/run_log.json \
             $([ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ github.event.inputs.force_private }}" = "true" ] && echo --force-private --no-social) \
-            $([ "${{ github.event.inputs.no_upload }}" = "true" ] && echo --no-upload)
+            $([ "${{ github.event.inputs.no_upload }}" = "true" ] && echo --no-upload)             $([ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ github.event.inputs.storyboard }}" ] && echo --include-paused)
 
       # 산출물은 유튜브/IG/Threads 업로드(API) — 운영 실행은 GitHub 아티팩트를 쓰지 않는다(저장소 쿼터 회피).
       # 실행 로그는 Actions 콘솔에서 확인, ledger 는 위 actions/cache 로 런 간 보존.

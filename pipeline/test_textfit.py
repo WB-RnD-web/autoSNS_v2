@@ -150,6 +150,12 @@ ck("스토리보드 thumbnail_style 이 토픽보다 우선",
    CS._fields({"topic": "fortune", "thumbnail_style": "webtoon"})[2] == "webtoon")
 
 print("── 진행자(별이·별하) ──")
+_pr_saved = os.environ.pop("PRESENTER", None)
+ck("진행자는 기본 꺼짐(PRESENTER 없음 → 끔, 2026-09-29)",
+   not M.presenter_on() and not M.presenter_on("fortune"))
+os.environ["PRESENTER"] = "0"
+ck("PRESENTER=0 이면 꺼짐", not M.presenter_on("fortune"))
+os.environ["PRESENTER"] = "1"
 ck("진행자 이미지 두 장이 레포에 있다(없으면 조용히 꺼진다)", M.presenter_on())
 ck("운세·별자리는 진행자 켜짐", M.presenter_on("fortune") and M.presenter_on("horoscope"))
 ck("정치·주식·경제는 진행자 꺼짐(AI 페르소나 정책)",
@@ -159,6 +165,10 @@ ck("PRESENTER_TOPICS 로 바꿀 수 있다", M.presenter_on("politics") and not 
 os.environ["PRESENTER_TOPICS"] = ""
 ck("PRESENTER_TOPICS 가 비면 기본값", M.presenter_on("fortune") and not M.presenter_on("politics"))
 del os.environ["PRESENTER_TOPICS"]
+if _pr_saved is None:
+    del os.environ["PRESENTER"]
+else:
+    os.environ["PRESENTER"] = _pr_saved
 _sp = M.assign_speakers([dict(s) for s in _sc] + [dict(_sc[0])], duo=True)
 ck("별하부터 번갈아 말한다", [s["_spk"] for s in _sp] == ["byeolha", "byeori", "byeolha"])
 ck("duo=False 면 별하 혼자", {s["_spk"] for s in M.assign_speakers([dict(s) for s in _sc], duo=False)} == {"byeolha"})
