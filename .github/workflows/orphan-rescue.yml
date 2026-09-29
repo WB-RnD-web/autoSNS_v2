@@ -21,6 +21,7 @@ on:
     paths:                   # 산출물이 실제로 올라온 push 만
       - "output/news/**_storyboard.json"
       - "output/scp/**.json"
+      - "output/tales/**.json"   # Nine Tails Tales 대본 → routine/tales
 
 # GITHUB_TOKEN 은 ★읽기만. push 는 아래 checkout 이 심어둔 PAT 으로 나간다.
 #   (permissions 는 GITHUB_TOKEN 의 권한이지 PAT 의 권한이 아니다 — 최소 권한을 유지한다)

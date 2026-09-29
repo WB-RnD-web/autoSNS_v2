@@ -32,7 +32,7 @@ import subprocess
 import sys
 
 # 루틴이 만들어 커밋하는 산출물의 경로 모양. ★토픽 이름은 안 쓴다.
-WATCH = ("output/news/*_storyboard.json", "output/scp/*.json")
+WATCH = ("output/news/*_storyboard.json", "output/scp/*.json", "output/tales/*.json")
 # 이 브랜치들에 있으면 정상이다(워크플로 트리거가 걸리는 곳).
 HOME = ("main", "routine/*")
 DATE_RE = re.compile(r"(\d{4}-\d{2}-\d{2})")
