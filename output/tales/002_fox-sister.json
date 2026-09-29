@@ -1,0 +1,519 @@
+{
+ "id": 2,
+ "slug": "fox-sister",
+ "title": "They Wished for a Daughter. Then the Cows Started Dying | The Fox Sister, Korea's Scariest Folk Tale",
+ "thumb": {
+  "text": "SHE ATE THEM ALL",
+  "img": "close-up of a pale little girl in a red jeogori jacket and white skirt with a long black braid tied with a white ribbon standing in a dark barn doorway at night, smiling sweetly, her shadow on the wall behind her shaped like a fox with a long tail, frightened cows in the background, moonlight"
+ },
+ "hook": "A Korean family begged heaven for a daughter. The night she arrived, their cows started dying.",
+ "tags": [
+  "fox sister",
+  "yeou-nui",
+  "korean folk tale",
+  "korean folklore",
+  "korean mythology",
+  "korean horror story",
+  "gumiho",
+  "fox spirit",
+  "korean ghost story",
+  "magic flight",
+  "three bottles",
+  "joseon",
+  "animated story",
+  "scary folk tale"
+ ],
+ "sources": [
+  "Encyclopedia of Korean Folk Culture — 여우누이: https://folkency.nfm.go.kr"
+ ],
+ "scenes": [
+  {
+   "say": "Every night, one cow in the barn died. No wound on its hide. No thief at the gate. Just a hollow where its liver used to be. And every morning, the family's little daughter woke up smiling.",
+   "img": "a pale little girl in a red jeogori jacket and white skirt with a long black braid tied with a white ribbon standing in the doorway of a dark wooden barn at midnight holding a paper lantern, frightened cows pressed against the far wall, her face in shadow except for a faint smile, eerie moonlight",
+   "fx": "fog",
+   "move": "in",
+   "key": "barn"
+  },
+  {
+   "say": "Her brother saw what she did in the dark. He told his father. And his father threw him out.",
+   "img": "a lean young Korean man in a faded blue hanbok with his hair tied in a topknot kneeling in the dust outside the tall wooden gate of a rich hanok estate at dawn, the gate slamming shut, cold grey light",
+   "fx": "fog",
+   "move": "out",
+   "hold": 0.8
+  },
+  {
+   "say": "Of all the stories grandmothers told in Korea, this is the one that kept children awake the longest. I should know. I was listening at the window.",
+   "gumi": "front",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "Good evening, dear human. I'm Gumi, a gumiho, a thousand years old and counting. Last time I told you about my own kind and the fox bead.",
+   "gumi": "bead",
+   "fx": "embers",
+   "move": "left"
+  },
+  {
+   "say": "This is Tale Number Two. It's about a fox too. But I promise you, she's no relative of mine. Probably.",
+   "gumi": "wink",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "card": "TALE 002",
+   "sub": "The Fox Sister"
+  },
+  {
+   "say": "The Koreans call it Yeou-nui. The Fox Sister. It's a folk tale, which means nobody owns it. Every province, every village, every grandmother told it a little differently.",
+   "img": "an old Korean grandmother in a white hanbok telling a story to wide-eyed children around a low table in a hanok room at night, an oil lamp, shadows on paper walls",
+   "fx": "dust",
+   "move": "right",
+   "note": "여우누이  Yeou-nui  =  Fox Sister"
+  },
+  {
+   "say": "But the bones of it never change. A rich family. A long wish. A daughter who should never have come.",
+   "img": "a large prosperous hanok estate with tiled roofs and a walled courtyard at the foot of pine mountains, late afternoon golden light, wide establishing shot",
+   "fx": "dust",
+   "move": "right"
+  },
+  {
+   "say": "The family had everything. Rice fields to the horizon. Oxen and cows in the barn. And sons. Three of them, in the version I like best, though some say more.",
+   "img": "three young Korean brothers in hanbok of different colors working in golden rice paddies beside their family estate, autumn light, mountains behind",
+   "fx": "dust",
+   "move": "left"
+  },
+  {
+   "say": "What they did not have was a daughter. And the parents wanted one more than anything.",
+   "img": "a stern wealthy Korean father with a grey beard in a black gat hat and white silk robes and his wife in a pale pink hanbok standing together in their empty courtyard at dusk, looking wistfully at a neighbor's little girl playing beyond the wall",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "So they prayed. To the mountain spirit, to the Big Dipper, to anyone who would listen. Every night, a bowl of clean water on a stone altar. Every night, the same wish.",
+   "img": "a Korean woman in a pale pink hanbok bowing before a small stone altar with a white bowl of clear water under a starry night sky, the Big Dipper bright above the pine mountains",
+   "fx": "fireflies",
+   "move": "up"
+  },
+  {
+   "say": "Here's a lesson from someone who has granted a few wishes in her time. Be careful when you ask the dark for something, and don't say exactly what.",
+   "img": "a single white bowl of water on a stone altar at night, the reflection of the stars in it rippling, and the faint reflection of two glowing animal eyes",
+   "fx": "none",
+   "move": "in"
+  },
+  {
+   "say": "In one version, the mother gives birth to a baby girl. In another, a little girl simply appears at the gate one evening with nowhere to go, and they take her in. Either way, the wish was answered.",
+   "img": "a pale little girl in a red jeogori jacket and white skirt with a long black braid tied with a white ribbon standing alone outside the tall wooden gate of a hanok estate at dusk, looking up with large dark eyes, pine forest behind her",
+   "fx": "fog",
+   "move": "in",
+   "key": "girl"
+  },
+  {
+   "say": "And oh, how they loved her. Silk for her jackets. Sweets from the market. The best seat at every meal. Her father would not let anyone say a single harsh word to her.",
+   "img": "a stern wealthy Korean father with a grey beard in a black gat hat and white silk robes smiling warmly while handing a sweet rice cake to a pale little girl in a red jeogori jacket and white skirt with a long black braid tied with a white ribbon at a low table in a bright hanok room, her brothers watching from the side",
+   "fx": "dust",
+   "move": "left"
+  },
+  {
+   "say": "She grew into a quiet, pretty child. She never cried. She never got sick. And she never, ever ate much at dinner.",
+   "img": "a pale little girl in a red jeogori jacket and white skirt with a long black braid tied with a white ribbon sitting at a low family dinner table, her bowl of rice untouched, looking sideways toward the barn through an open door, warm lamplight",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "Then, around her sixth year, if you believe the storytellers, things started to die.",
+   "img": "a dark wooden barn at night seen from outside, the doors slightly open, a thin shaft of moonlight across straw, utterly silent",
+   "fx": "fog",
+   "move": "in",
+   "hold": 0.8
+  },
+  {
+   "card": "I",
+   "sub": "The Barn at Night"
+  },
+  {
+   "say": "The first morning, the servants found one cow lying in its stall. No marks of a wolf or a tiger. The cow looked asleep. It was not asleep.",
+   "img": "Korean servants in rough white hanbok gathered in a barn at dawn around a cow lying still in the straw, puzzled and uneasy faces, grey morning light",
+   "fx": "dust",
+   "move": "right"
+  },
+  {
+   "say": "The next morning, another. Then another. Only the best cattle, one each night, and always the same strange thing. Something had taken the liver.",
+   "img": "a row of empty cattle stalls in a barn at dawn, a single overturned water bucket, dust floating in pale light, abandoned and eerie",
+   "fx": "dust",
+   "move": "left"
+  },
+  {
+   "say": "A rich man can lose a cow. He cannot lose one every night. So the father called his sons and told them: one of you will watch the barn until the thief is caught.",
+   "img": "a stern wealthy Korean father with a grey beard in a black gat hat and white silk robes standing on the veranda of his hanok addressing his three sons in the courtyard, stern expression, lantern light at dusk",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "The eldest son went first. He sat in the dark with a club across his knees, and somewhere past midnight, his head began to nod. By morning, another cow was dead.",
+   "img": "a young Korean man in a dark green hanbok asleep sitting against a barn post at night with a wooden club in his lap, a lantern burned low, shadows moving behind him",
+   "fx": "fog",
+   "move": "down"
+  },
+  {
+   "say": "The second son went next. Same dark. Same sleep. Same dead cow. It was as if the night itself was pressing their eyes shut.",
+   "img": "a young Korean man in a brown hanbok slumped asleep beside a lantern in a barn, mist creeping across the straw floor, a faint figure in the doorway behind him",
+   "fx": "fog",
+   "move": "in"
+  },
+  {
+   "say": "Then came the youngest. And the youngest did something clever. He cut his own finger, and in some versions he rubbed salt into it, so the sting would keep him awake all night.",
+   "img": "close-up of a lean young Korean man in a faded blue hanbok with his hair tied in a topknot sitting in a dark barn, clenching his bandaged hand, eyes wide open and alert, a single lantern beside him",
+   "fx": "none",
+   "move": "in",
+   "key": "brother"
+  },
+  {
+   "say": "Midnight passed. The cows shifted and groaned. The lantern hissed. And then, very softly, the barn door opened.",
+   "img": "a heavy wooden barn door slowly creaking open at night, moonlight spilling across the straw, the shadow of a small figure stretched long across the floor",
+   "fx": "fog",
+   "move": "in"
+  },
+  {
+   "say": "It was his little sister. Barefoot. Her braid undone. She walked between the cows the way you walk through your own kitchen.",
+   "img": "a pale little girl in a red jeogori jacket and white skirt with a long black braid tied with a white ribbon walking barefoot through a dark barn between frightened cows, her braid coming loose, moonlight on her face, calm and unnatural",
+   "fx": "fog",
+   "move": "right"
+  },
+  {
+   "say": "She stopped beside the biggest cow. She stroked its flank, almost lovingly. And then she did something no child can do.",
+   "img": "a pale little girl in a red jeogori jacket and white skirt with a long black braid tied with a white ribbon gently resting her small hand on the flank of a large brown cow in a dark barn, the cow's eye wide with terror, moonlight",
+   "fx": "none",
+   "move": "in"
+  },
+  {
+   "say": "She did a somersault, and when she landed, she was a fox.",
+   "img": "a small white fox landing on the straw of a dark barn floor in a swirl of mist, a white ribbon drifting to the ground beside it, eerie moonlight",
+   "fx": "fog",
+   "move": "out",
+   "hold": 1.2,
+   "key": "fox"
+  },
+  {
+   "say": "I will spare you what happened next. Let's just say she reached into that cow the way you'd reach into a pocket, and she took what she came for. And the cow lay down and did not get up.",
+   "img": "the shadow of a fox on a barn wall cast by lantern light, reaching toward the shadow of a great cow that is sinking to the floor, stark and silent",
+   "fx": "none",
+   "move": "in"
+  },
+  {
+   "say": "His sister.",
+   "img": "extreme close-up of the face of a lean young Korean man in a faded blue hanbok with his hair tied in a topknot, pale with horror, lantern light flickering in his eyes, a hand pressed over his mouth",
+   "fx": "none",
+   "move": "in",
+   "hold": 1.3
+  },
+  {
+   "say": "Then the fox licked its paws, did another somersault, and there was a little girl again, tying her ribbon, humming as she walked back to bed.",
+   "img": "a pale little girl in a red jeogori jacket and white skirt with a long black braid tied with a white ribbon walking out of a dark barn into the moonlit courtyard, tying a white ribbon into her braid, humming, a small peaceful smile",
+   "fx": "fog",
+   "move": "left",
+   "key": "smile"
+  },
+  {
+   "say": "The boy sat in that barn until the sun came up. He couldn't make his legs work. And he had no idea how he was going to tell his father.",
+   "img": "a lean young Korean man in a faded blue hanbok with his hair tied in a topknot sitting frozen against a barn post at sunrise, a dead cow lying in the straw nearby, golden light creeping through the gaps in the boards",
+   "fx": "dust",
+   "move": "out"
+  },
+  {
+   "card": "II",
+   "sub": "The Son Who Told the Truth"
+  },
+  {
+   "say": "The two older brothers went to their father first. We saw nothing, they said. It must be a tiger. Or a thief who is very quiet.",
+   "img": "two young Korean men in dark green and brown hanbok bowing low before a stern wealthy Korean father with a grey beard in a black gat hat and white silk robes in a hanok hall, nervous glances at each other",
+   "fx": "dust",
+   "move": "right"
+  },
+  {
+   "say": "Then the youngest came, and he told the truth. Father, the thief is my sister. She turns into a fox. I watched her do it.",
+   "img": "a lean young Korean man in a faded blue hanbok with his hair tied in a topknot kneeling before a stern wealthy Korean father with a grey beard in a black gat hat and white silk robes in a lamplit hanok hall, pleading with outstretched hands, the father's face darkening",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "Now, dear human, put yourself in the father's place. You prayed for years for this child. She's the light of your house. And your son tells you she's a monster.",
+   "img": "a stern wealthy Korean father with a grey beard in a black gat hat and white silk robes holding a pale little girl in a red jeogori jacket and white skirt with a long black braid tied with a white ribbon on his knee protectively, glaring down at his kneeling son, the girl peeking out with innocent eyes",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "The father did not believe him. He was furious. How dare you speak that way about your sister. Get out of my house, and don't come back.",
+   "img": "a stern wealthy Korean father with a grey beard in a black gat hat and white silk robes pointing toward the gate in rage in a torchlit courtyard, servants turning away, a lean young Korean man in a faded blue hanbok with his hair tied in a topknot standing alone with a small cloth bundle",
+   "fx": "embers",
+   "move": "out"
+  },
+  {
+   "say": "In some tellings, the older brothers even agreed with the father. They saw which way the wind was blowing. It's safer to be wrong with a powerful man than right against him.",
+   "img": "two young Korean men in dark green and brown hanbok standing behind their father's shoulder, avoiding their younger brother's eyes, torchlight",
+   "fx": "dust",
+   "move": "left"
+  },
+  {
+   "say": "So the boy who told the truth walked out through the gate alone. And behind him, on the veranda, his little sister waved goodbye.",
+   "img": "a lean young Korean man in a faded blue hanbok with his hair tied in a topknot walking away down a dirt road at dawn with a cloth bundle on his back, and behind him in the distance a pale little girl in a red jeogori jacket and white skirt with a long black braid tied with a white ribbon on the veranda of the hanok, waving",
+   "fx": "fog",
+   "move": "right"
+  },
+  {
+   "say": "I have lived a very long time, and I have seen this more than foxes. The one who tells an ugly truth is often the one who pays for it. Remember that when we get to the end.",
+   "gumi": "front",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "He wandered for years. Some say he went to the mountains. Some say he crossed the sea. In several versions, he married, and lived a quiet, ordinary life far away.",
+   "img": "a lean young Korean man in a faded blue hanbok with his hair tied in a topknot walking along a high ridge of layered blue Korean mountains with a walking stick, older now, clouds below him, wide landscape",
+   "fx": "fog",
+   "move": "right"
+  },
+  {
+   "say": "But he could never forget that night in the barn. Or the family he left behind with her.",
+   "img": "a lean young Korean man in a faded blue hanbok with his hair tied in a topknot sitting alone by a campfire at night in the mountains, staring into the flames, a worried distant expression",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "One day he decided to go home. And whoever helped him on the road, a wise old monk, or his clever wife, or in one version the daughter of the Dragon King, gave him three small bottles.",
+   "img": "an old Buddhist monk in grey robes with a wooden staff handing three small glass bottles to a lean young Korean man in a faded blue hanbok with his hair tied in a topknot at the gate of a remote mountain temple in the mist, pine trees, soft morning light",
+   "fx": "fog",
+   "move": "in",
+   "key": "bottles"
+  },
+  {
+   "say": "In the version I remember, one bottle was white, one was red, and one was blue. Keep them safe, he was told. When she chases you, throw them behind you, one by one.",
+   "img": "close-up of three small glass bottles resting in a weathered open palm, one white, one red and one blue, each glowing faintly from within, dark background",
+   "fx": "fireflies",
+   "move": "in",
+   "note": "In other tellings: different colors, different order"
+  },
+  {
+   "say": "And he was given a horse. A fast one. Because he was going to need it.",
+   "img": "a lean young Korean man in a faded blue hanbok with his hair tied in a topknot riding a white horse down a winding mountain road toward a distant valley at dusk, storm clouds gathering",
+   "fx": "fog",
+   "move": "right"
+  },
+  {
+   "card": "III",
+   "sub": "The Empty Village"
+  },
+  {
+   "say": "When he rode into his home village, something was wrong. No dogs barked. No smoke rose from the kitchens. No children ran to see the stranger on the horse.",
+   "img": "an empty Joseon village street at twilight, hanok houses with doors hanging open, no smoke from any chimney, a lone crow on a stone wall, silent and eerie",
+   "fx": "fog",
+   "move": "right"
+  },
+  {
+   "say": "The rice fields were full of weeds. The laundry lines were bare. And the only sound was the wind in the dry grass.",
+   "img": "overgrown rice paddies full of tall weeds around a deserted Korean village at dusk, broken fences, a forgotten straw hat on a path",
+   "fx": "dust",
+   "move": "left"
+  },
+  {
+   "say": "He came to his father's gate. The great house was falling apart. The tiles had slipped from the roof. The courtyard where he played as a boy was silent.",
+   "img": "a ruined hanok estate with fallen roof tiles and a sagging wooden gate in a weed-choked courtyard at twilight, cold blue light",
+   "fx": "fog",
+   "move": "in"
+  },
+  {
+   "say": "And there, on the veranda, sitting where she had waved goodbye all those years before, was his sister.",
+   "img": "a pale little girl in a red jeogori jacket and white skirt with a long black braid tied with a white ribbon sitting alone on the veranda of a ruined hanok at twilight, looking up with a sweet smile, her face too pale",
+   "fx": "fog",
+   "move": "in",
+   "key": "sister"
+  },
+  {
+   "say": "Brother, she said. You've come home. I missed you so much.",
+   "img": "close-up of the smiling face of a pale little girl in a red jeogori jacket and white skirt with a long black braid tied with a white ribbon, her eyes catching the last light with a faint amber glow",
+   "fx": "none",
+   "move": "in",
+   "hold": 0.8
+  },
+  {
+   "say": "Where is our father, he asked. Where is our mother? Where are our brothers?",
+   "img": "a lean young Korean man in a faded blue hanbok with his hair tied in a topknot standing at the ruined gate holding the reins of his white horse, his hand tight on the bottles in his belt, wary",
+   "fx": "fog",
+   "move": "in"
+  },
+  {
+   "say": "She tilted her head, and she smiled a little wider.",
+   "img": "a pale little girl in a red jeogori jacket and white skirt with a long black braid tied with a white ribbon tilting her head on the ruined veranda, her shadow on the paper door behind her shaped like a fox",
+   "fx": "none",
+   "move": "in"
+  },
+  {
+   "say": "She ate them.",
+   "img": "the dark empty interior of a ruined hanok, overturned bowls and a cold hearth, a single shoe on the floor, moonlight through a torn paper window",
+   "fx": "none",
+   "move": "in",
+   "hold": 1.5
+  },
+  {
+   "say": "Father first. Then mother. Then the brothers who took her side. Then the servants, the neighbors, the whole village, one by one, the same way she had eaten the cows.",
+   "img": "an entire deserted Joseon valley village seen from above at night under a pale moon, every window dark, mist creeping between the roofs",
+   "fx": "fog",
+   "move": "out"
+  },
+  {
+   "say": "And now there was only one person left. Her brother. The only one who ever saw what she really was.",
+   "img": "a pale little girl in a red jeogori jacket and white skirt with a long black braid tied with a white ribbon slowly standing up on the veranda at night, her white ribbon lifting in a sudden wind, her smile fixed",
+   "fx": "fog",
+   "move": "in"
+  },
+  {
+   "say": "He knew he could not run straight away. So he played along. He said he was hungry, and she said she would cook for him. He said his horse needed water.",
+   "img": "a lean young Korean man in a faded blue hanbok with his hair tied in a topknot leading his white horse toward a stone well in the ruined courtyard at night, glancing back over his shoulder at the kitchen door",
+   "fx": "fog",
+   "move": "left"
+  },
+  {
+   "say": "In some tellings, he hears her in the kitchen, sharpening a knife. In others, she goes off to eat the horse's leg, and comes back licking her lips. In all of them, he knows he has only minutes.",
+   "img": "a dark hanok kitchen doorway at night, the silhouette of a small girl inside against the glow of a clay stove, the shape of a fox's ears in her shadow",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "He swung onto the horse and rode for the gate.",
+   "img": "a lean young Korean man in a faded blue hanbok with his hair tied in a topknot leaping onto his white horse and galloping through the broken gate of the ruined hanok at night, dust flying, moonlight",
+   "fx": "dust",
+   "move": "right"
+  },
+  {
+   "card": "IV",
+   "sub": "Three Bottles"
+  },
+  {
+   "say": "Behind him, a scream split the night. Not a little girl's scream. And when he looked back, the thing chasing him was no longer pretending.",
+   "img": "a huge white fox with glowing eyes bursting out of a ruined hanok gate at night and chasing a rider on a white horse down a dirt road, dramatic horror anime",
+   "fx": "embers",
+   "move": "out",
+   "key": "chase"
+  },
+  {
+   "say": "She was fast. Faster than the horse. Every time he looked back, she was closer. So he reached into his belt and threw the first bottle. The white one.",
+   "img": "a lean young Korean man in a faded blue hanbok with his hair tied in a topknot on a galloping white horse at night twisting in the saddle to throw a small white glass bottle behind him, a white fox gaining on him",
+   "fx": "dust",
+   "move": "right"
+  },
+  {
+   "say": "Where it smashed, a forest of thorns burst out of the ground. Thick, black, knotted, taller than a house.",
+   "img": "a gigantic wall of black thorny brambles erupting out of a moonlit road, twisting and tall as a house, a white fox tangled at the edge, dramatic",
+   "fx": "fog",
+   "move": "up"
+  },
+  {
+   "say": "It slowed her. It didn't stop her. She tore through it, and she came on.",
+   "img": "a white fox with glowing eyes tearing its way out of a thick thorn forest at night, fur torn and ragged, relentless",
+   "fx": "none",
+   "move": "in"
+  },
+  {
+   "say": "He threw the red bottle. Where it broke, the whole field behind him burst into flame, a sea of fire from one side of the valley to the other.",
+   "img": "a wide valley at night engulfed in a sea of roaring orange flames, a small rider on a white horse fleeing in the foreground, sparks rising into the sky",
+   "fx": "embers",
+   "move": "out"
+  },
+  {
+   "say": "And still, out of the smoke, came the fox. Singed and furious and still coming.",
+   "img": "a white fox leaping out of a wall of fire and smoke at night, its fur blackened at the edges, eyes blazing, sparks around it",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "He had one bottle left. The blue one. He threw it with everything he had.",
+   "img": "close-up of the hand of a lean young Korean man in a faded blue hanbok with his hair tied in a topknot hurling a small blue glass bottle through the night air, the bottle glowing, motion blur, the horse's mane in frame",
+   "fx": "none",
+   "move": "in"
+  },
+  {
+   "say": "And the ground behind him became a sea. Black water, wide and deep, rolling in from nowhere. The fox leapt into it, and she did not come out.",
+   "img": "a vast dark sea suddenly flooding a moonlit valley, huge waves swallowing the land, a small white shape vanishing beneath the water, a rider on a white horse on a hill beyond",
+   "fx": "rain",
+   "move": "down",
+   "key": "sea"
+  },
+  {
+   "say": "In one version, she burns in the fire. In another, the water takes her. In most of them, it ends the same way. The last of his family was gone, and so was the thing that had eaten them.",
+   "img": "a lean young Korean man in a faded blue hanbok with his hair tied in a topknot sitting on his white horse on a hilltop at dawn looking back over a calm grey lake where a valley used to be, mist rising, silent",
+   "fx": "fog",
+   "move": "out"
+  },
+  {
+   "card": "THE END OF THE ROAD"
+  },
+  {
+   "say": "People compare this chase to other tales. In Japan, a young monk flees a mountain witch using three magic charms. Across Asia and Europe, heroes throw a comb that becomes a forest. A very old story, running in many shoes.",
+   "gumi": "bead",
+   "fx": "embers",
+   "move": "left"
+  },
+  {
+   "say": "But what makes the Fox Sister frightening isn't the chase. It's the father. He had the truth handed to him, on his knees, by his own son. And he chose the sweet lie.",
+   "gumi": "front",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "Children heard this tale by lamplight for generations. And I think the grown-ups were listening just as hard. Because sometimes the monster is the one you wished for.",
+   "gumi": "front",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "So here's my question. If you were the youngest son, and your father would never believe you, would you still have gone back? Tell me in the comments. I read every one.",
+   "gumi": "wink",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "Next time, something different. Seven Korean superstitions, counted down. In Korea, they say if you cut your nails at night, a mouse can eat the clippings and steal your whole life.",
+   "img": "a small grey mouse sitting on a wooden floor of a hanok room at night beside a few scattered fingernail clippings, lamplight, eerie",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "Until then, dear human, sleep well. And if you ever wish for something in the dark, check the barn in the morning.",
+   "gumi": "wink",
+   "fx": "embers",
+   "move": "in",
+   "hold": 1.5
+  }
+ ],
+ "short": {
+  "title": "They Wished for a Daughter. Then the Cows Started Dying #shorts #foxsister",
+  "lines": [
+   {
+    "say": "Every night, one cow in the barn died, and something had taken its liver.",
+    "scene": "barn"
+   },
+   {
+    "say": "The family had prayed for years for a daughter. When she finally came, they gave her everything.",
+    "scene": "girl"
+   },
+   {
+    "say": "So the youngest son stayed up to watch the barn. At midnight, his little sister walked in.",
+    "scene": "brother"
+   },
+   {
+    "say": "She did a somersault. And when she landed, she was a fox.",
+    "scene": "fox"
+   },
+   {
+    "say": "He told his father everything. And his father threw him out.",
+    "scene": "smile"
+   },
+   {
+    "say": "Years later, he came home with three magic bottles. The whole village was empty. Except for her.",
+    "scene": "sister"
+   },
+   {
+    "say": "What happened next is the scariest tale Korean grandmothers ever told. The full story is on my channel.",
+    "gumi": "wink"
+   }
+  ]
+ }
+}
