@@ -651,7 +651,7 @@ def build_audio(shots: list[dict], total: float, out_m4a: str, wd: str, seed: in
     act = np.abs(voice) > 1e-4
     vr = float(np.sqrt(np.mean(voice[act] ** 2))) if act.any() else 0.1
     b = bed(n, seed)
-    b *= vr * 0.16 / (float(np.sqrt(np.mean(b ** 2))) + 1e-9)          # 내레이션보다 약 16dB 아래
+    b *= vr * 0.13 / (float(np.sqrt(np.mean(b ** 2))) + 1e-9)          # 말 사이 약 -18dB(9/29 1화 실측 -16dB → 조금 낮춤)
     # 덕킹: 말하는 동안 배경을 한 번 더 낮춘다(0.25초 창 → 부드럽게)
     win = int(SR * 0.25)
     env = movavg(np.abs(voice), win)
@@ -723,7 +723,17 @@ def build_srt(shots: list[dict], out: str) -> int:
 # ── 썸네일 ────────────────────────────────────────────
 def thumbnail(s: dict, raw: str, out: str):
     tw_, th_ = 1280, 720
-    img = ImageOps.fit(Image.open(raw).convert("RGB"), (tw_, th_), Image.LANCZOS, centering=(0.6, 0.45))
+    base = ImageOps.fit(Image.open(raw).convert("RGB"), (tw_, th_), Image.LANCZOS, centering=(0.5, 0.45))
+    # 주인공(대개 그림 가운데)을 오른쪽으로 밀어 왼쪽을 글자 자리로 비운다 — 빈 곳은 가장자리를 뒤집어 흐려 채운다
+    sh_x = 300
+    img = Image.new("RGB", (tw_, th_))
+    img.paste(base.crop((0, 0, tw_ - sh_x, th_)), (sh_x, 0))
+    img.paste(base.crop((0, 0, sh_x, th_)).transpose(Image.FLIP_LEFT_RIGHT), (0, 0))
+    ramp = Image.new("L", (tw_, th_), 0)
+    rd = ImageDraw.Draw(ramp)
+    for x in range(sh_x + 80):                       # 왼쪽은 흐리게, 이음새 둘레 80px 에서 서서히 선명하게
+        rd.line([(x, 0), (x, th_)], fill=int(255 * min(1.0, max(0.0, (sh_x + 80 - x) / 160))))
+    img = Image.composite(img.filter(ImageFilter.GaussianBlur(14)), img, ramp)
     img = ImageEnhance.Contrast(img).enhance(1.12)
     img = ImageEnhance.Color(img).enhance(1.15)
     grad = Image.linear_gradient("L").rotate(90, expand=True).resize((tw_, th_))   # 왼쪽 255 → 오른쪽 0

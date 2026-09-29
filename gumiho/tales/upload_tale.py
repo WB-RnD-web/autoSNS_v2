@@ -27,6 +27,7 @@ import tales as T  # noqa: E402
 PLAYLIST = "Nine Tails Tales — Every Tale"
 PLAYLIST_DESC = "Every tale Gumi has told so far, in order. Korean and East Asian myths, monsters and ghost stories."
 CATEGORY = "24"          # Entertainment
+UPLOADED = os.path.join(HERE, "uploaded.json")
 
 
 def next_saturday_15utc(now: dt.datetime | None = None) -> str:
@@ -96,6 +97,10 @@ def main() -> int:
     if os.path.exists(a.ledger):
         with open(a.ledger, encoding="utf-8") as f:
             led = json.load(f)
+    # Actions 캐시 밖에서(로컬에서) 올린 편 — 레포에 기록해 두고 다시 올리지 않는다
+    with open(UPLOADED, encoding="utf-8") as f:
+        for k, v in json.load(f).items():
+            led.setdefault(k, v)
     done = led.get(stem, {})
     publish_at = a.publish_at or (next_saturday_15utc() if a.mode == "scheduled" else None)
     md = T.meta(s, rm.get("starts"))
