@@ -57,8 +57,9 @@ ck("썸네일 문구 4단어 초과는 막힌다", any("썸네일" in e for e in
 ck("파일 이름이 id_slug 와 다르면 막힌다", any("파일 이름" in e for e in T.check(S, "/x/002_other.json")))
 
 print("── 편성(날짜로 결정론적) ──")
-ck("10/1 주 → 2편", T.assigned_id("2026-10-01") == 2 and T.assigned_id("2026-10-07") == 2)
-ck("10/8 → 3편 · 10/15 → 4편", T.assigned_id("2026-10-08") == 3 and T.assigned_id("2026-10-15") == 4)
+# 루틴은 매주 수요일(9/30 첫 실행) — 수요일마다 번호가 하나씩 올라야 한다(9/29 발견: start 가 목요일이면 9/30·10/7 이 같은 번호)
+ck("수 9/30 → 2편 · 화 10/6 → 2편", T.assigned_id("2026-09-30") == 2 and T.assigned_id("2026-10-06") == 2)
+ck("수 10/7 → 3편 · 수 10/14 → 4편", T.assigned_id("2026-10-07") == 3 and T.assigned_id("2026-10-14") == 4)
 cat = T.load(T.CATALOG)["tales"]
 ck("catalog 번호 1부터 연속·slug 중복 없음", [e["id"] for e in cat] == list(range(1, len(cat) + 1))
    and len({e["slug"] for e in cat}) == len(cat))

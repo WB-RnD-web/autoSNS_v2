@@ -200,7 +200,7 @@ def meta(s: dict, starts: list[float] | None = None, short_of: str | None = None
 
 # ── 다음 편 ──────────────────────────────────────────────
 def assigned_id(date: str) -> int:
-    """날짜 → 편 번호. catalog.start 가 있는 주가 2편, 그 뒤 7일마다 +1(루틴이 한 주 빠져도 번호는 밀리지 않는다)."""
+    """날짜 → 편 번호. catalog.start(루틴 첫 실행일, 수요일)부터 7일 안이 2편, 그 뒤 7일마다 +1(루틴이 한 주 빠져도 번호는 밀리지 않는다)."""
     import datetime as dt
     start = dt.date.fromisoformat(load(CATALOG)["start"])
     d = dt.date.fromisoformat(date)
