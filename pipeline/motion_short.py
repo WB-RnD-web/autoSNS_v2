@@ -232,6 +232,55 @@ CSS_PRESENTER = """
 .kp{margin-top:22px;}
 """
 
+# ── 뉴스 첫 화면 헤드라인을 맨 위로 (2026-09-29) ─────────────────
+# 경쟁 정치·시사 쇼츠 상위권의 공통점: 화면 위 1/4 에 2~3줄 초대형·고대비 헤드라인.
+# 우리 첫 화면은 29% 지점부터 크림색 글자라 피드에서 한눈에 안 읽혔다. 첫 장면(훅)만
+# 진한 띠 위에 흰 글씨로 올린다. 그림체 토픽(운세·별자리)은 제외. 끄기: TOP_HOOK=0
+TOP_BIG_RATIO = 1.3        # 위쪽 띠는 높이가 한정돼 하이라이트를 덜 키운다(기본 1.77)
+TOP_PAD, TOP_PAD_BOTTOM = 90, 56
+CSS_TOP = """
+.topband{position:absolute;left:0;top:0;width:1080px;z-index:2;
+  background:linear-gradient(180deg,rgba(6,6,8,.95),rgba(6,6,8,.9));
+  border-bottom:8px solid var(--acc,#D97757);}
+.topwrap{z-index:3;}
+.h1.top{color:#FFFFFF;letter-spacing:-2px;}
+"""
+
+# ── 띠별 운세 '12띠 한 장 표' (2026-09-29, fortune_card.py) ──────────
+# 두 칸 × 여섯 줄. 1·2위가 맨 윗줄. 오른쪽 끝(쇼츠 버튼 열, x 960~)과 아래 22%(제목 자리)는 비운다.
+CARD_TOP, CARD_H, CARD_GAP, CARD_W = 360, 178, 14, 452
+CARD_X = (60, 530)
+CSS_CARD = """
+.cpill{position:absolute;left:60px;top:110px;}
+.ctitle{position:absolute;left:60px;top:196px;width:960px;color:#FFFFFF;font-weight:800;font-size:96px;
+  line-height:1.05;letter-spacing:-3px;text-shadow:0 4px 24px rgba(0,0,0,.6);}
+.cell{position:absolute;border-radius:26px;background:rgba(10,8,8,.66);
+  border:2px solid rgba(237,217,188,.14);will-change:transform;}
+.cell.top3{border:3px solid var(--acc,#D97757);background:rgba(10,8,8,.78);}
+.cell .rk{position:absolute;left:20px;top:22px;width:62px;height:62px;border-radius:50%;
+  background:rgba(237,217,188,.16);color:#EDD9BC;font-weight:800;font-size:36px;
+  display:flex;align-items:center;justify-content:center;}
+.cell.top3 .rk{background:var(--acc,#D97757);color:#0A0808;}
+.cell .nm{position:absolute;left:98px;top:12px;color:#FFFFFF;font-weight:800;font-size:58px;
+  letter-spacing:-1px;white-space:nowrap;}
+.cell .sc{color:var(--acc,#D97757);font-size:44px;margin-left:12px;}
+.cell .yr{position:absolute;left:98px;top:86px;color:rgba(237,217,188,.78);font-weight:600;font-size:30px;
+  white-space:nowrap;font-variant-numeric:tabular-nums;}
+.cell .ln{position:absolute;left:98px;top:124px;color:#EDD9BC;font-weight:700;font-size:34px;white-space:nowrap;}
+"""
+
+
+def top_hook_on(topic=None):
+    if os.environ.get("TOP_HOOK", "1") in ("0", "false", "False"):
+        return False
+    t = (topic or "").strip().lower()
+    return not any(t.startswith(k) for k in ("fortune", "horoscope", "zodiac", "star", "luck", "love"))
+
+
+def card_cell_xy(k):
+    """k 번째(0부터) 칸의 왼쪽 위 좌표 — 1·2위가 윗줄, 행 우선."""
+    return CARD_X[k % 2], CARD_TOP + (k // 2) * (CARD_H + CARD_GAP)
+
 
 # 진행자를 세우는 토픽(접두사 매칭). 정치·주식·경제는 ★뺀다 (2026-09-27)
 # 유튜브 수익 창출 정책(2026-07 개정, Help 1311392)은 건강·법률·★금융·정치 정보를 전달하는
@@ -363,7 +412,37 @@ def scene_html(i, sc, acc):
     grain = '<div class="grain"></div>'
     brand = f'<div class="brand">{esc(sc.get("brand","일상공감뉴스"))}</div>'
     body = ""
-    if t == "hook":
+    if t == "hook" and sc.get("_top"):
+        lines = sc.get("lines", [])
+        hl = sc.get("highlight", "")
+        ghost = f'<div class="ghost" id="{gid}-ghost">{esc(sc.get("ghost",""))}</div>' if sc.get("ghost") else ""
+        fs = _uniform("h1", lines, BOX, big=hl, big_ratio=TOP_BIG_RATIO)
+        big_px = int(round(fs * TOP_BIG_RATIO))
+        band_h = TOP_PAD + TOP_PAD_BOTTOM + int(sum(
+            (big_px if hl and hl in ln else fs) * 1.05 for ln in lines))
+        st = {"used": False}
+        hl_html = f'<span class="big" id="{gid}-hl" style="font-size:{big_px}px">{{}}</span>'
+        lhtml = [f'<div class="h1 top" id="{gid}-l{j}" style="font-size:{fs}px">'
+                 + _words(ln, hl, hl_html, st) + "</div>"
+                 for j, ln in enumerate(lines)]
+        pill = (f'<div class="pillrow" style="top:{band_h + 40}px"><span class="pill" id="{gid}-pill">'
+                f'<span class="dot"></span>{esc(sc.get("pill","BREAKING"))}</span></div>')
+        body = (ghost + f'<div class="topband" id="{gid}-band" style="height:{band_h}px"></div>'
+                + f'<div class="wrap topwrap" style="top:{TOP_PAD}px">' + "".join(lhtml) + "</div>" + pill)
+    elif t == "card":
+        cells = []
+        for k, r in enumerate(sc.get("rows", [])):
+            x, y = card_cell_xy(k)
+            yrs = "·".join(f"{v % 100:02d}" for v in r.get("years", [])) + "년생"
+            cls = "cell top3" if r.get("rank", 99) <= 3 else "cell"
+            cells.append(
+                f'<div class="{cls}" id="{gid}-c{k}" style="left:{x}px;top:{y}px;width:{CARD_W}px;height:{CARD_H}px">'
+                f'<div class="rk">{int(r.get("rank", k + 1))}</div>'
+                f'<div class="nm">{esc(r.get("animal", ""))}띠<span class="sc">{int(r.get("score", 0))}점</span></div>'
+                f'<div class="yr">{esc(yrs)}</div><div class="ln">{esc(r.get("line", ""))}</div></div>')
+        body = (f'<div class="cpill"><span class="pill" id="{gid}-pill"><span class="dot"></span>{esc(sc.get("pill",""))}</span></div>'
+                f'<div class="ctitle" id="{gid}-title">{esc(sc.get("title",""))}</div>' + "".join(cells))
+    elif t == "hook":
         lines = sc.get("lines", [])
         hl = sc.get("highlight", "")
         ghost = f'<div class="ghost" id="{gid}-ghost">{esc(sc.get("ghost",""))}</div>' if sc.get("ghost") else ""
@@ -482,7 +561,9 @@ def scene_js(i, sc, acc, bar_h=560, presenter=False):
             for j in range(len(sc.get("lines", []))):
                 out.append(f'tl.fromTo("#{gid}-l{j} .w",{{scale:1.1,y:-6}},{{scale:1,y:0,duration:0.3,ease:"back.out(2)",stagger:0.04}},{S+j*0.08:.2f});')
             if sc.get("highlight"):
-                out.append(f'tl.fromTo("#{gid}-hl",{{scale:0.85,color:"{BRAND["cream"]}"}},{{scale:1,color:"{acc}",duration:0.45,ease:"back.out(2.4)"}},{S+0.35:.2f});')
+                # ★첫 프레임에서 이미 강조색·제 크기다(2026-09-29 미리보기: 0.85배·크림색으로 시작해
+                #   피드 첫 화면에서 핵심 단어가 오히려 작고 흐리게 보였다). 움직임은 두근거림으로만.
+                out.append(f'tl.to("#{gid}-hl",{{scale:1.08,duration:0.22,ease:"sine.inOut",yoyo:true,repeat:1}},{S+0.35:.2f});')
                 out.append(f'tl.to("#{gid}-hl",{{scale:1.06,duration:0.28,ease:"sine.inOut",yoyo:true,repeat:1}},{S+0.9:.2f});')
             out.append(f'tl.to("#{gid}-pill",{{scale:1.06,duration:0.5,ease:"sine.inOut",yoyo:true,repeat:3,transformOrigin:"left center"}},{S+0.8:.2f});')
         else:
@@ -495,6 +576,11 @@ def scene_js(i, sc, acc, bar_h=560, presenter=False):
             if sc.get("highlight"):
                 out.append(f'tl.fromTo("#{gid}-hl",{{scale:0.4,color:"{BRAND["cream"]}"}},{{scale:1,color:"{acc}",duration:0.6,ease:"back.out(2.4)"}},{S+1.1:.2f});')
                 out.append(f'tl.to("#{gid}-hl",{{scale:1.06,duration:0.28,ease:"sine.inOut",yoyo:true,repeat:1}},{S+1.75:.2f});')
+    elif t == "card":
+        # 표는 0초부터 전부 떠 있다(캡처·반복 재생용). 1~3위 칸만 차례로 톡 튄다.
+        out.append(f'tl.fromTo("#{gid}-pill",{{scale:0.92}},{{scale:1,duration:0.35,ease:"back.out(2)",transformOrigin:"left center"}},{S:.2f});')
+        for k in range(min(3, len(sc.get("rows", [])))):
+            out.append(f'tl.to("#{gid}-c{k}",{{scale:1.05,duration:0.22,ease:"sine.inOut",yoyo:true,repeat:1}},{S + 0.5 + k * 0.35:.2f});')
     elif t == "quote":
         out.append(f'tl.from("#{gid}-qm",{{scale:0.5,opacity:0,duration:0.6,ease:"back.out(1.6)"}},{S+0.4:.2f});')
         out.append(f'tl.from("#{gid}-qt",{{y:40,opacity:0,duration:0.6,ease:"power3.out"}},{S+0.6:.2f});')
@@ -543,6 +629,10 @@ def scene_js(i, sc, acc, bar_h=560, presenter=False):
 
 def build_html(scenes, total, acc="#D97757", bg=False, presenter=False):
     css = f":root{{--acc:{acc};}}\n" + CSS.replace("#D97757", "var(--acc,#D97757)")
+    if any(sc.get("_top") for sc in scenes):
+        css += CSS_TOP
+    if any(sc.get("type") == "card" for sc in scenes):
+        css += CSS_CARD
     parts = [scene_html(i, sc, acc) for i, sc in enumerate(scenes)]
     bar_h = 360 if presenter else 560
     js = "\n".join(scene_js(i, sc, acc, bar_h=bar_h, presenter=presenter)
@@ -634,9 +724,12 @@ def build_motion(spec, out_mp4, workdir, quality="standard"):
     os.makedirs(workdir, exist_ok=True)
     os.environ["PATH"] = os.environ.get("PATH", "") + os.pathsep + os.path.dirname(FFMPEG)
     scenes = spec["scenes"]
-    pr_on = presenter_on(spec.get("topic", ""))
+    # 한 장 표는 화면 전체를 쓴다 → 진행자 자리 없음
+    pr_on = presenter_on(spec.get("topic", "")) and not any(sc.get("type") == "card" for sc in scenes)
     duo = pr_on and os.environ.get("PRESENTER_DUO", "1") not in ("0", "false", "False")
     assign_speakers(scenes, duo=duo)
+    if scenes and scenes[0].get("type") == "hook" and top_hook_on(spec.get("topic", "")):
+        scenes[0]["_top"] = True
     # ① VO + 길이 → 타이밍 (진행자 2인이면 장면마다 말하는 사람 목소리)
     start = 0.0
     for i, sc in enumerate(scenes):
@@ -650,6 +743,11 @@ def build_motion(spec, out_mp4, workdir, quality="standard"):
         sc["clip"] = round(vis + (0.5 if i < len(scenes) - 1 else 0.0), 2)
         start += vis - OVERLAP
     total = round(scenes[-1]["start"] + (probe_dur(scenes[-1]["_vo"]) + PAD), 2)
+    # 한 장 표처럼 내레이션이 짧은 형식은 최소 길이만큼 화면을 붙잡아 둔다(오디오는 apad 로 무음 채움)
+    min_total = float(spec.get("_min_total") or 0)
+    if total < min_total:
+        scenes[-1]["clip"] = round(min_total - scenes[-1]["start"], 2)
+        total = round(min_total, 2)
     # ③ HTML
     has_bg = _stage_bg(spec.get("_bg"))
     with open(os.path.join(PROJ, "index.html"), "w", encoding="utf-8") as f:
@@ -669,7 +767,7 @@ def build_motion(spec, out_mp4, workdir, quality="standard"):
         ins += ["-i", sc["_vo"]]
         ms = int((sc["start"] + 0.3) * 1000)
         filt.append(f"[{i}]adelay={ms}|{ms}[a{i}]"); labs.append(f"[a{i}]")
-    fc = ";".join(filt) + ";" + "".join(labs) + f"amix=inputs={len(scenes)}:normalize=0[a]"
+    fc = ";".join(filt) + ";" + "".join(labs) + f"amix=inputs={len(scenes)}:normalize=0,apad[a]"
     vo = os.path.join(workdir, "votrack.m4a")
     sh([FFMPEG, "-y", *ins, "-filter_complex", fc, "-map", "[a]", "-t", f"{total:.2f}",
         "-c:a", "aac", "-b:a", "192k", vo])

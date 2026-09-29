@@ -26,6 +26,7 @@ import sys
 import time
 
 import config
+import fortune_card
 import ledger as ledgermod
 import motion_short
 import news_copy_check
@@ -243,6 +244,10 @@ def process(sb_path, args, led):
     try:
         spec = resolve_spec(sb_path, sb, args)
         spec.setdefault("topic", sb.get("topic", ""))
+        # 운세는 격일로 '12띠 한 장 표'(fortune_card) — 기존 형식과 A/B
+        if fortune_card.use_card(sb):
+            spec = fortune_card.build_spec(sb)
+            print("   🗂️ 운세 한 장 표 (격일 A/B · fortune_card)")
         suffix = f"_{sb.get('topic','')}" if sb.get("topic") else ""
         out_mp4 = str(config.RENDERS_DIR / f"{sb.get('date','out')}{suffix}_final.mp4")
         wd = str(config.OUTPUT / "_work" / f"{sb.get('date','')}{suffix}")
@@ -264,6 +269,13 @@ def process(sb_path, args, led):
         import yt_i18n
         meta["localizations"] = yt_i18n.from_spec(sb) or None
     except Exception:  # noqa: BLE001
+        meta["localizations"] = None
+    if fortune_card.use_card(sb):
+        # 표 날은 제목·설명을 표에 맞춘다(목소리 출처 줄은 유지). 루틴이 쓴 번역은 원래 형식의 제목이라 버린다.
+        cm = fortune_card.meta(sb)
+        credit = meta["description"][len(build_meta(sb, False)["description"]):]
+        meta["title"] = f"{cm['title']} #shorts"
+        meta["description"] = cm["description"] + credit
         meta["localizations"] = None
     print(f"   업로드 메타: title='{meta['title']}' privacy={meta['privacy']} "
           f"AI표시={meta['synthetic']} 번역={list(meta['localizations'] or [])}")
