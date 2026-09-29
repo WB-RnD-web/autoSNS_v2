@@ -1,0 +1,8 @@
+[
+ {"name": "Claude",   "backend": "anthropic", "model": "claude-sonnet-5-5",                   "voice": "M3", "color": "#E8835F", "sprite": "claude"},
+ {"name": "GPT-OSS",  "backend": "openai",    "model": "openai/gpt-oss-120b",                 "voice": "M1", "color": "#E9E9E9", "sprite": "gpt"},
+ {"name": "Gemma",    "backend": "spark",     "model": "gemma-4-26B-A4B-it",                  "voice": "F1", "color": "#5AA9FF", "sprite": "gemma"},
+ {"name": "Nemotron", "backend": "openai",    "model": "nvidia/nemotron-3-super-120b-a12b",   "voice": "M4", "color": "#76B900", "sprite": "nemo"},
+ {"name": "Qwen",     "backend": "openai",    "model": "qwen/qwen3.6-35b-a3b",                "voice": "F5", "color": "#A970FF", "sprite": "qwen"},
+ {"name": "Llama",    "backend": "openai",    "model": "meta-llama/llama-4-maverick",         "voice": "M5", "color": "#F2EFE9", "sprite": "llama"}
+]
