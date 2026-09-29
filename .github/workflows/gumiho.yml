@@ -14,8 +14,10 @@ on:
         description: "몇 판 돌려서 고를지"
         default: "3"
       backend:
-        description: "모든 자리를 이 백엔드로(점검용: spark / mock) — 비우면 roster.json 대로"
-        default: "spark"
+        description: "출연진 — roster(실제 출연진, 업로드 가능) / spark·mock(모든 자리를 한 백엔드로, 점검용·업로드 불가)"
+        type: choice
+        options: ["roster", "spark", "mock"]
+        default: "roster"
       render:
         description: "렌더까지(영상·썸네일·자막)"
         type: boolean
@@ -75,7 +77,7 @@ jobs:
       - name: 대국
         run: |
           D="${{ github.event.inputs.date }}"; [ -z "$D" ] && D=$(date +%F)
-          B="${{ github.event.inputs.backend }}"
+          B="${{ github.event.inputs.backend }}"; [ "$B" = "roster" ] && B=""   # 2026-09-29: 빈 칸이 기본값 spark 로 바뀌어 점검용 판이 돌았다 → 선택형으로
           python gumiho/run_match.py --matches "${{ github.event.inputs.matches }}" --date "$D" ${B:+--backend "$B"}
 
       - name: 렌더
