@@ -54,6 +54,17 @@ ck("금지어는 막힌다", any("금지어" in e for e in T.check(bad)))
 bad = copy.deepcopy(S)
 bad["thumb"]["text"] = "THIS IS WAY TOO LONG A LINE"
 ck("썸네일 문구 4단어 초과는 막힌다", any("썸네일" in e for e in T.check(bad)))
+bad = copy.deepcopy(S)
+k = next(i for i, x in enumerate(bad["scenes"]) if x.get("card"))
+bad["scenes"].insert(k + 1, {"card": "I", "sub": "Extra"})
+ck("카드 두 장이 연달아 나오면 막힌다", any("연달아" in e for e in T.check(bad)))
+bad = copy.deepcopy(S)
+bad["scenes"][5]["say"] = "This Halloween, everyone is talking about foxes."
+ck("날짜를 타는 표현은 막힌다(역주행 가능하게)", any("날짜" in e for e in T.check(bad)))
+bad = copy.deepcopy(S)
+bad["title"] = "A Very Scary Story"
+ck("제목에 검색어가 없으면 막힌다", any("검색어" in e for e in T.check(bad)))
+ck("설명에 다른 편 링크", "Tale X — https://youtu.be/A" in T.meta(S, None, more=[("Tale X", "https://youtu.be/A")])["description"])
 ck("파일 이름이 id_slug 와 다르면 막힌다", any("파일 이름" in e for e in T.check(S, "/x/002_other.json")))
 
 print("── 편성(날짜로 결정론적) ──")

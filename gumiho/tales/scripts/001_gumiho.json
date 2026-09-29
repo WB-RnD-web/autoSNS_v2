@@ -72,10 +72,6 @@
    "sub": "The Gumiho"
   },
   {
-   "card": "I",
-   "sub": "A Thousand Years"
-  },
-  {
    "say": "Every gumiho begins as an ordinary fox. A red fox hunting mice in the barley fields, hiding from tigers, and hiding from hunters even more.",
    "img": "a small red fox crouching in a golden barley field at dawn, rice paddies and misty hills of old Korea behind, soft warm light",
    "fx": "dust",
@@ -157,7 +153,7 @@
    "move": "in"
   },
   {
-   "card": "II",
+   "card": "I",
    "sub": "The Fox Bead"
   },
   {
@@ -291,7 +287,7 @@
    "move": "in"
   },
   {
-   "card": "III",
+   "card": "II",
    "sub": "The Thousand Days"
   },
   {
@@ -358,6 +354,12 @@
    "move": "left"
   },
   {
+   "say": "Now it's your turn. If you were that boy on the mountain path, would you have swallowed the bead? Tell me in the comments. I read every single one.",
+   "gumi": "front",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
    "say": "Next time, I'll tell you the tale Korean grandmothers used to keep children close to home. The Fox Sister. A family wishes for a daughter. They get one. And every night after she arrives, one of their cows dies.",
    "img": "a young girl in a hanbok holding a lantern standing in a dark barn at night beside frightened cows, her eyes glowing faintly, eerie shadows, horror atmosphere",
    "fx": "dust",
@@ -375,7 +377,7 @@
   "title": "Never Kiss a Stranger on a Korean Mountain Road #shorts #gumiho",
   "lines": [
    {
-    "say": "In old Korea, a schoolboy met a beautiful girl on a mountain path.",
+    "say": "In Korea, there's one gift you should never take from a beautiful stranger. Especially with a kiss.",
     "scene": "girl"
    },
    {

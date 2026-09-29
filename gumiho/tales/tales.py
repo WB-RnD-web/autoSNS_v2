@@ -42,6 +42,9 @@ HOOK_MAX_WORDS = 45         # 첫 장면(콜드 오픈) — 첫 15초가 이탈�
 SHORT_WORDS = (60, 150)     # 쇼츠 30~55초
 SHORT_LINES = (4, 9)
 THUMB_MAX_WORDS = 4
+# 몇 달 뒤에도 통해야 한다(역주행) — 날짜를 타는 말은 금지. 사실로 적는 연도(1994년 영화 등)는 괜찮다
+DATED = re.compile(r"(?i)\b(this (year|week|month|halloween|summer|winter|season)|last (week|month|year)|recently|"
+                   r"right now|these days|currently|trending|as of today)\b")
 BANNED = re.compile(r"(?i)\b(fuck|shit|rape|porn|nude|naked|gore|dismember|suicide|decapitat)\w*")
 
 AI_NOTE = ("Illustrations and the narrator's voice are AI-generated. Stories are researched from Korean folklore "
@@ -128,6 +131,15 @@ def check(s: dict, path: str | None = None) -> list[str]:
         for f in ("say", "img", "note"):
             if BANNED.search(x.get(f, "")):
                 errs.append(f"장면 {i}: 금지어 {BANNED.search(x[f]).group(0)!r}")
+    for i in range(1, len(sc)):
+        if sc[i].get("card") and sc[i - 1].get("card"):
+            errs.append(f"장면 {i - 1}·{i}: 카드가 연달아 나온다 — 글자 화면만 5초 넘게 이어지면 이탈한다(TALE 카드가 1장을 겸한다)")
+    for i, x in enumerate(sc):
+        m = DATED.search(x.get("say", ""))
+        if m:
+            errs.append(f"장면 {i}: 날짜를 타는 표현 {m.group(0)!r} — 몇 달 뒤에 보는 사람에게도 맞게 쓴다")
+    if not any(t.lower() in s["title"].lower() for t in s["tags"][:3]):
+        errs.append("제목에 검색어가 없다 — 태그 앞 3개 중 하나(예: gumiho)를 제목에 넣는다(검색 유입이 오래 간다)")
     first = sc[0] if sc else {}
     if not (first.get("img") and first.get("say")):
         errs.append("첫 장면은 그림+내레이션(콜드 오픈)이어야 한다")
@@ -181,13 +193,17 @@ def chapters(s: dict, starts: list[float]) -> str:
     return "\n".join(out)
 
 
-def meta(s: dict, starts: list[float] | None = None, short_of: str | None = None) -> dict:
+def meta(s: dict, starts: list[float] | None = None, short_of: str | None = None,
+         more: list[tuple[str, str]] | None = None) -> dict:
     tags = list(dict.fromkeys(s["tags"] + ["nine tails tales", "korean folklore", "korean mythology"]))
     src = "\n".join(f"• {x}" for x in s["sources"])
     chap = chapters(s, starts) if starts else ""
+    # 앞서 올린 편 링크 — 새 편이 옛 편을, 옛 편의 검색 유입이 새 편을 끌어 준다(역주행)
+    more_txt = ("More tales from Gumi:\n" + "\n".join(f"▶ {t} — {u}" for t, u in more[:4]) + "\n\n") if more else ""
     desc = (f"{s['hook']}\n\n"
             f"Tale {s['id']:03d} of 1,000 — told by Gumi, a 1,000-year-old gumiho.\n\n"
             + (f"{chap}\n\n" if chap else "")
+            + more_txt
             + f"Sources & further reading:\n{src}\n\n{ABOUT}\n\n{AI_NOTE}\n\n"
             + "#gumiho #koreanfolklore #koreanmythology")
     out = {"title": s["title"][:100], "description": desc[:4900], "tags": tags}
