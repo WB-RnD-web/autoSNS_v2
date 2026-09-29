@@ -1,0 +1,407 @@
+{
+ "id": 1,
+ "slug": "gumiho",
+ "title": "Korea's Nine-Tailed Fox Is Darker Than Japan's Kitsune | The Gumiho Legend",
+ "thumb": {
+  "text": "NEVER KISS HER",
+  "img": "close-up of a beautiful young woman in a pale jade hanbok on a misty mountain path at night, holding a glowing blue marble to her lips, her shadow on the rocks behind her has fox ears and nine tails, moonlight, eerie and alluring"
+ },
+ "hook": "In Korea, if a beautiful stranger offers to walk you home through the mountains, count her tails.",
+ "tags": [
+  "gumiho",
+  "nine tailed fox",
+  "korean mythology",
+  "korean folklore",
+  "korean legend",
+  "fox spirit",
+  "kumiho",
+  "korean ghost story",
+  "folk tale",
+  "yeowoo guseul",
+  "fox bead",
+  "joseon",
+  "animated story"
+ ],
+ "sources": [
+  "Encyclopedia of Korean Folk Culture (National Folk Museum of Korea) — 구미호 / 여우구슬 entries: https://folkency.nfm.go.kr",
+  "Heinz Insu Fenkl, 'Fox Bead' tale retellings and notes on the Korean fox",
+  "Shanhaijing (Classic of Mountains and Seas) — earliest nine-tailed fox references"
+ ],
+ "scenes": [
+  {
+   "say": "There's an old warning in Korea. If a beautiful stranger offers to walk you home through the mountains at night, don't look at her face. Look at her shadow.",
+   "img": "a moonlit mountain path through pine trees at night, a beautiful woman in a pale jade hanbok seen from behind walking ahead, long black hair with a red ribbon, thin fog, blue moonlight",
+   "fx": "fog",
+   "move": "in"
+  },
+  {
+   "say": "Because the shadow might have nine tails.",
+   "hold": 0.8,
+   "img": "a shadow cast on moonlit rocks shaped like a woman with fox ears and nine long fox tails, pine needles, cold blue light, ominous",
+   "fx": "fog",
+   "move": "up"
+  },
+  {
+   "say": "I would know. I'm one of them.",
+   "hold": 0.6,
+   "gumi": "front",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "Hello, dear human. My name is Gumi. I'm a gumiho, a nine-tailed fox, and I've been alive for a little over a thousand years.",
+   "gumi": "bead",
+   "fx": "embers",
+   "move": "left",
+   "note": "GUMI · gumiho · age 1,000+"
+  },
+  {
+   "say": "In that time, I've collected a lot of stories. Tales my kind whispered to each other, and tales humans whispered about us, behind paper doors, around charcoal fires, on nights just like this one.",
+   "img": "a Joseon village at night, warm light glowing through paper doors of hanok houses, a small group of villagers huddled around a charcoal brazier telling stories, snow on the roofs, deep blue night",
+   "fx": "snow",
+   "move": "right"
+  },
+  {
+   "say": "This is Tale Number One. And it's only fair that I start with my own kind.",
+   "gumi": "wink",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "card": "TALE 001",
+   "sub": "The Gumiho"
+  },
+  {
+   "card": "I",
+   "sub": "A Thousand Years"
+  },
+  {
+   "say": "Every gumiho begins as an ordinary fox. A red fox hunting mice in the barley fields, hiding from tigers, and hiding from hunters even more.",
+   "img": "a small red fox crouching in a golden barley field at dawn, rice paddies and misty hills of old Korea behind, soft warm light",
+   "fx": "dust",
+   "move": "right"
+  },
+  {
+   "say": "But Korean elders said that if a fox lives long enough, something strange begins to happen. It starts to understand human speech. It starts to study human faces.",
+   "img": "an old red fox hiding in tall grass at the edge of a Joseon village, watching farmers in white hanbok and straw hats at work, its eyes glowing faintly amber",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "After a hundred years, it can take a human shape. Most often, a young woman so beautiful that people forget to be afraid.",
+   "img": "a fox standing on its hind legs in a moonlit forest clearing, its silhouette dissolving into swirling mist and turning into the silhouette of a young woman in hanbok, magical, eerie",
+   "fx": "fog",
+   "move": "in"
+  },
+  {
+   "say": "And after a thousand years, it grows its ninth tail.",
+   "hold": 0.8,
+   "img": "a white fox sitting on a black rock under a huge full moon, nine glowing white tails fanned out behind it like a crown, pine forest silhouette, night sky",
+   "fx": "fireflies",
+   "move": "up"
+  },
+  {
+   "say": "Nine is the highest single number. The number of completion. A fox with nine tails has nothing left to become. Nothing, except one thing.",
+   "img": "nine long glowing fox tails fanned across a starry night sky like the arms of a galaxy, a tiny fox silhouette on a mountain peak below, awe-inspiring",
+   "fx": "fireflies",
+   "move": "down"
+  },
+  {
+   "say": "That's a gumiho. Gu means nine. Mi means tail. Ho means fox. A nine-tailed fox.",
+   "note": "九尾狐  gu · mi · ho  =  nine · tail · fox",
+   "img": "an old paper scroll unrolled on a low wooden desk, an ink painting of a nine-tailed fox on it, a brush, an ink stone and a candle, candlelight",
+   "fx": "dust",
+   "move": "left"
+  },
+  {
+   "say": "You may have met our cousins. In Japan, they're called kitsune, and some serve as messengers of the gods. In China, the nine-tailed fox could be a sign of good fortune, or the beauty who ruined a dynasty.",
+   "img": "three mysterious fox spirits standing in a misty ancient forest, each with a different number of glowing tails, dreamlike, soft moonlight",
+   "fx": "fog",
+   "move": "right"
+  },
+  {
+   "say": "But in Korea's old stories, the gumiho is almost never kind. She's the one grandmothers warned you about.",
+   "img": "a Korean grandmother in a white hanbok telling a scary story to three wide-eyed children by an oil lamp inside a hanok room, shadows on the paper walls",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "Because a gumiho wants something from humans. Something very specific.",
+   "img": "extreme close-up of glowing amber fox eyes in total darkness, a hint of a smile",
+   "fx": "none",
+   "move": "in"
+  },
+  {
+   "say": "Your liver.",
+   "hold": 1.2,
+   "img": "silhouette of a woman with fox ears standing on a hill against a blood red full moon, nine tails swaying, wind blowing her hanbok",
+   "fx": "embers",
+   "move": "out"
+  },
+  {
+   "say": "In the old way of thinking, the liver held a person's energy, their gi. The stories say a gumiho who ate enough of it could finally become human.",
+   "img": "a traditional Korean herbal medicine cabinet with many small wooden drawers, dried herbs, a flickering candle, and the shadow of a fox woman on the wall",
+   "fx": "dust",
+   "move": "left"
+  },
+  {
+   "say": "Some storytellers said a hundred livers. Some said a thousand. And some said that if a gumiho could go a thousand days without harming a single human, she would wake up one morning, mortal.",
+   "img": "a young woman with faint fox ears sitting alone on a grassy hill watching the sunrise over layered blue Korean mountains, peaceful and lonely",
+   "fx": "dust",
+   "move": "right"
+  },
+  {
+   "say": "Which one do I believe? I'll tell you at the end. First, let me tell you about the boy, and the marble.",
+   "gumi": "bead",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "card": "II",
+   "sub": "The Fox Bead"
+  },
+  {
+   "say": "Long ago, in a village at the foot of a mountain, there lived a boy who walked to the village school every morning. The path went up and over a ridge covered in pines.",
+   "img": "a twelve-year-old Korean boy in a plain white hanbok with his long black hair in a single braid down his back carrying books wrapped in cloth, walking alone up a misty pine-covered mountain path in early morning, a stone lantern by the path",
+   "fx": "fog",
+   "move": "right"
+  },
+  {
+   "say": "The schoolmaster was strict, the lessons were long, and the boy was ordinary in every way. Until the day he met the girl.",
+   "img": "inside a traditional Korean village school, boys in white hanbok kneeling at low desks reading, a stern old schoolmaster with a white beard and black gat hat, morning light through paper windows",
+   "fx": "dust",
+   "move": "left"
+  },
+  {
+   "say": "She was standing beside the path, where no girl should have been. Pale skin. Long black hair tied with a red ribbon. A smile that made the pine trees seem to lean a little closer.",
+   "img": "a beautiful young woman in a pale jade hanbok with a red ribbon in her long black hair standing beside a misty mountain path among pine trees, smiling mysteriously, soft morning light",
+   "fx": "fog",
+   "move": "in",
+   "key": "girl"
+  },
+  {
+   "say": "She asked him to play a game. She would hold a small marble in her mouth, pass it to him with a kiss, and he would pass it back. That was all. Just a game.",
+   "img": "a beautiful young woman in a pale jade hanbok holding up a small glowing blue marble between her fingers, smiling playfully at a shy twelve-year-old Korean boy in a plain white hanbok with his long black hair in a single braid down his back, pine forest, innocent and mysterious",
+   "fx": "fireflies",
+   "move": "in",
+   "key": "game"
+  },
+  {
+   "say": "The first time, he laughed nervously and said no. She only smiled, and the next morning she was there again. And a boy who walks the same lonely road every day can only say no so many times.",
+   "img": "a shy twelve-year-old Korean boy in a plain white hanbok with his long black hair in a single braid down his back blushing and looking away while a beautiful young woman in a pale jade hanbok with a red ribbon leans against a pine tree smiling at him, morning mist",
+   "fx": "fog",
+   "move": "right"
+  },
+  {
+   "say": "The marble was warm, and it shimmered like moonlight. Every day on his way to school, she was waiting. Every day, the game.",
+   "img": "close-up of a small glowing blue marble resting in an open palm, shimmering with swirling moonlight inside, dark background",
+   "fx": "fireflies",
+   "move": "in"
+  },
+  {
+   "say": "And every day, the boy grew a little paler. A little thinner. He fell asleep over his books, and his hands shook when he held a brush.",
+   "img": "a pale exhausted twelve-year-old Korean boy in a plain white hanbok with his long black hair in a single braid down his back asleep over a book at a low desk in a village school, dark circles under his eyes, gloomy grey light",
+   "fx": "dust",
+   "move": "out",
+   "key": "pale"
+  },
+  {
+   "say": "His mother made him bone broth. The village herbalist gave him bitter roots. Nothing helped. And the strangest part? The boy felt fine. Better than fine. He couldn't wait to climb that mountain every morning.",
+   "img": "a worried Korean mother in a hanok kitchen ladling steaming broth into a bowl for her pale son, warm firelight from a clay stove, cozy yet uneasy",
+   "fx": "dust",
+   "move": "left"
+  },
+  {
+   "say": "But the schoolmaster had lived a long time too, and he knew the old stories. He took the boy aside and asked him quietly: who have you been meeting on the mountain?",
+   "img": "an old Korean schoolmaster with a white beard and black gat hat kneeling face to face with a worried twelve-year-old Korean boy in a plain white hanbok with his long black hair in a single braid down his back in a dim room, lamplight, serious expression",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "When the boy told him, the old man went very still. Then he said: that is no girl. That is a fox. And the marble is her fox bead, her yeowoo guseul. It holds all of her power.",
+   "note": "여우구슬  yeowoo guseul  =  the fox bead",
+   "img": "close-up of an old Korean scholar's face lit by a single oil lamp, eyes wide with alarm, deep shadows",
+   "fx": "dust",
+   "move": "in",
+   "key": "teacher"
+  },
+  {
+   "say": "Every time she passes it through you, she drinks a little of your life. When she has taken enough, she'll become human. And you won't be needing your life anymore.",
+   "img": "the shadow of a woman with fox ears projected on a paper sliding door, lit from behind by a lantern, the silhouette of a frightened boy on the other side",
+   "fx": "none",
+   "move": "in"
+  },
+  {
+   "say": "Tomorrow, the teacher said, when she passes you the bead, don't give it back. Swallow it. And then look up at the sky. Whatever happens, look at the sky.",
+   "img": "an old schoolmaster pointing up at a vast starry night sky above dark mountains, a twelve-year-old Korean boy in a plain white hanbok with his long black hair in a single braid down his back looking up beside him, the Milky Way glowing",
+   "fx": "fireflies",
+   "move": "up",
+   "key": "sky"
+  },
+  {
+   "say": "The next morning, she was waiting, as always. She leaned in close. The marble slipped into the boy's mouth. And he swallowed it.",
+   "img": "a tense close-up of the face of a twelve-year-old Korean boy in a plain white hanbok with his long black hair in a single braid down his back with wide frightened eyes, a faint blue glow at his throat, a woman's long black hair and red ribbon at the edge of the frame, misty pines",
+   "fx": "fog",
+   "move": "in"
+  },
+  {
+   "say": "The girl screamed. Not a girl's scream. A fox's scream. Her face stretched. Her ears rose. And behind her, tails began to unfold.",
+   "hold": 0.6,
+   "img": "a woman in a pale jade hanbok transforming into a monstrous fox spirit on a misty mountain path, sharp fox ears, glowing eyes, many red fox tails bursting out behind her, wind and swirling leaves, dramatic horror anime",
+   "fx": "embers",
+   "move": "out",
+   "key": "scream"
+  },
+  {
+   "say": "The boy ran. He tripped on a pine root, fell hard, and for one terrified moment, he stared at the ground beneath him instead of the sky.",
+   "img": "a twelve-year-old Korean boy in a plain white hanbok with his long black hair in a single braid down his back, fallen face down on a rocky mountain path among pine roots, his books scattered, dramatic low angle, dawn fog",
+   "fx": "fog",
+   "move": "down"
+  },
+  {
+   "say": "And that one mistake decided the rest of his life.",
+   "hold": 0.8,
+   "img": "close-up of dark earth and pine roots with faint glowing golden lines spreading through the soil like veins, mystical",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "Because the bead was knowledge. If he had looked at the sky, he would have understood the heavens. The stars, the seasons, the fate of kings. But he looked at the earth.",
+   "img": "a mystical split view, above a vast glowing star map of constellations, below dark Korean mountains and rivers with glowing golden energy lines flowing through the land",
+   "fx": "fireflies",
+   "move": "down"
+  },
+  {
+   "say": "So he understood the earth. Where water runs beneath the soil. Which hills are lucky, and which valleys are cursed. They say he grew up to become one of the greatest geomancers in the land.",
+   "img": "a dignified middle-aged Korean scholar in a black gat hat standing on a mountaintop holding a round geomancer's compass, looking over valleys and rivers of old Korea at golden sunset",
+   "fx": "dust",
+   "move": "right"
+  },
+  {
+   "say": "And the fox? Without her bead, a thousand years of power were gone. Some say she ran back into the mountains, just an ordinary fox again. Some say she didn't live through the night.",
+   "img": "a small ordinary red fox running away into a dark pine forest at dawn, looking back over its shoulder, a single red ribbon caught on a branch behind it",
+   "fx": "fog",
+   "move": "left"
+  },
+  {
+   "say": "As for me? Was it me on that mountain path? Hmm. A lady never tells.",
+   "hold": 0.6,
+   "gumi": "wink",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "card": "III",
+   "sub": "The Thousand Days"
+  },
+  {
+   "say": "Imagine watching the same village for a thousand years. The children you saw born grow old and die, then their grandchildren, then theirs. You learn every song they sing at harvest. And not one of them ever learns your name.",
+   "img": "a fox woman sitting high on a mossy stone wall above a Joseon village during a harvest festival, villagers dancing with drums and lanterns below, she watches alone from the shadows",
+   "fx": "fireflies",
+   "move": "right"
+  },
+  {
+   "say": "People ask me what a gumiho really wants. They think it's livers. It isn't. Livers are just the price.",
+   "img": "a woman with faint fox ears in a dark hanbok standing alone in a snowy Joseon village street at night, looking at the warm glowing windows of the houses",
+   "fx": "snow",
+   "move": "right"
+  },
+  {
+   "say": "What we want is what you have without even trying. A heartbeat that slows down with age. A face that grows old. A name someone remembers after you're gone.",
+   "img": "through a glowing paper window, silhouettes of a family sharing a meal together, and outside in the snow the lonely figure of a fox woman watching them",
+   "fx": "snow",
+   "move": "in"
+  },
+  {
+   "say": "That's why the stories keep circling the same dream: a gumiho who tries to become human. And the stories almost never let her.",
+   "img": "a fox woman kneeling in falling snow under a bare tree, her nine red tails fading like smoke, sorrowful, beautiful, moonlight",
+   "fx": "snow",
+   "move": "out"
+  },
+  {
+   "say": "In many retellings, she hides her tails and lives as a wife for almost a thousand days. And on the very last night, the secret gets out, and she's a fox again, forever.",
+   "img": "a traditional Korean wedding scene at dusk in a hanok courtyard, a bride in red wonsam robes with a hidden fox tail peeking from beneath her skirt, lanterns glowing",
+   "fx": "fireflies",
+   "move": "left"
+  },
+  {
+   "say": "Korea never stopped telling these stories. There was the 1994 film simply called Gumiho, one of the first Korean movies to lean on computer graphics. The drama My Girlfriend Is a Gumiho in 2010. Tale of the Nine Tailed in 2020.",
+   "img": "a 1990s Seoul street at night outside an old movie theater with glowing neon lights and a crowd lining up, retro anime style, rainy reflections",
+   "fx": "rain",
+   "move": "right"
+  },
+  {
+   "say": "Somewhere along the way, the gumiho changed. Once she was the monster in the dark. Now she's often the heroine who just wants to be loved. I suppose we finally got better publicity.",
+   "img": "a beautiful young woman with silver hair, fox ears and nine red fox tails in a black hanbok standing on a modern Seoul rooftop at night, the city lights and a lit palace gate behind her, wind in her hair",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "But when the old storytellers lowered their voices by the fire, they didn't want you to feel sorry for the fox. They wanted you home before dark.",
+   "img": "an old storyteller with a long pipe sitting by a crackling fire in a Joseon village at night, listeners leaning in, dark forest and mountains behind them",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "card": "TONIGHT'S ANSWER"
+  },
+  {
+   "say": "So, which do I believe? A hundred livers? A thousand days? I think the only way a fox ever becomes a little bit human is if humans remember her.",
+   "gumi": "front",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "So every tale you hear from me is one more night I stay a little bit human. I'm collecting a thousand of them. That was number one.",
+   "gumi": "bead",
+   "fx": "embers",
+   "move": "left"
+  },
+  {
+   "say": "Next time, I'll tell you the tale Korean grandmothers used to keep children close to home. The Fox Sister. A family wishes for a daughter. They get one. And every night after she arrives, one of their cows dies.",
+   "img": "a young girl in a hanbok holding a lantern standing in a dark barn at night beside frightened cows, her eyes glowing faintly, eerie shadows, horror atmosphere",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "Stay close. And if a stranger offers to walk you home tonight, count the tails.",
+   "hold": 1.5,
+   "gumi": "wink",
+   "fx": "embers",
+   "move": "in"
+  }
+ ],
+ "short": {
+  "title": "Never Kiss a Stranger on a Korean Mountain Road #shorts #gumiho",
+  "lines": [
+   {
+    "say": "In old Korea, a schoolboy met a beautiful girl on a mountain path.",
+    "scene": "girl"
+   },
+   {
+    "say": "Every day she played a game. She passed him a glowing marble with a kiss, and he passed it back.",
+    "scene": "game"
+   },
+   {
+    "say": "And every day, he got paler.",
+    "scene": "pale"
+   },
+   {
+    "say": "His teacher said: that's no girl. That's a gumiho, a nine-tailed fox, and that marble is draining your life.",
+    "scene": "teacher"
+   },
+   {
+    "say": "Swallow it, he said, and look at the sky.",
+    "scene": "sky"
+   },
+   {
+    "say": "The boy swallowed it. The girl screamed, and nine tails burst out behind her.",
+    "scene": "scream"
+   },
+   {
+    "say": "What happened next? The full tale is on my channel. I'm Gumi, and I'm a gumiho too.",
+    "gumi": "wink"
+   }
+  ]
+ }
+}
