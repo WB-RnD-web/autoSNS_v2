@@ -38,16 +38,19 @@ WORKERS = int(os.environ.get("GUMIHO_TTS_WORKERS", "2"))
 GOLD, RED, INK, PAPER = (242, 200, 110), (226, 58, 44), (22, 16, 26), (250, 247, 242)
 ROLE_COLOR = {"fox": (226, 58, 44), "shaman": (170, 120, 255), "villager": (150, 150, 160)}
 
-FONT_PATHS = {
-    900: ["/usr/share/fonts/truetype/noto/NotoSans-Black.ttf", "/usr/share/fonts/truetype/noto/NotoSans-ExtraBold.ttf"],
-    700: ["/usr/share/fonts/truetype/noto/NotoSans-Bold.ttf"],
-    400: ["/usr/share/fonts/truetype/noto/NotoSans-Regular.ttf"],
-}
-VF = [r"C:\Windows\Fonts\NotoSansKR-VF.ttf", "/usr/share/fonts/truetype/noto/NotoSans-VF.ttf"]
-NANUM = {900: "/usr/share/fonts/truetype/nanum/NanumGothicExtraBold.ttf",
+# 굵기별 파일(fonts-noto-core). 없는 굵기는 가장 가까운 것을 쓴다 — 2026-09-29 Actions 에서 800 이 없어 멈췄다.
+NOTO_DIR = "/usr/share/fonts/truetype/noto"
+NOTO = {400: "NotoSans-Regular.ttf", 600: "NotoSans-SemiBold.ttf", 700: "NotoSans-Bold.ttf",
+        800: "NotoSans-ExtraBold.ttf", 900: "NotoSans-Black.ttf"}
+VF = [r"C:\Windows\Fonts\NotoSansKR-VF.ttf", f"{NOTO_DIR}/NotoSans-VF.ttf"]
+NANUM = {400: "/usr/share/fonts/truetype/nanum/NanumGothic.ttf",
          700: "/usr/share/fonts/truetype/nanum/NanumGothicBold.ttf",
-         400: "/usr/share/fonts/truetype/nanum/NanumGothic.ttf"}
+         800: "/usr/share/fonts/truetype/nanum/NanumGothicExtraBold.ttf"}
 _fc: dict = {}
+
+
+def _by_nearest(table: dict, weight: int) -> list[str]:
+    return [table[k] for k in sorted(table, key=lambda k: (abs(k - weight), -k))]
 
 
 def font(size: int, weight: int = 700) -> ImageFont.FreeTypeFont:
@@ -55,7 +58,8 @@ def font(size: int, weight: int = 700) -> ImageFont.FreeTypeFont:
     if k in _fc:
         return _fc[k]
     f = None
-    for p in FONT_PATHS.get(weight, []):
+    for name in _by_nearest(NOTO, weight):
+        p = os.path.join(NOTO_DIR, name)
         if os.path.exists(p):
             f = ImageFont.truetype(p, size)
             break
@@ -68,8 +72,11 @@ def font(size: int, weight: int = 700) -> ImageFont.FreeTypeFont:
                 except Exception:  # noqa: BLE001
                     pass
                 break
-    if f is None and os.path.exists(NANUM[weight]):
-        f = ImageFont.truetype(NANUM[weight], size)
+    if f is None:
+        for p in _by_nearest(NANUM, weight):
+            if os.path.exists(p):
+                f = ImageFont.truetype(p, size)
+                break
     _fc[k] = f or ImageFont.load_default()
     return _fc[k]
 
@@ -579,8 +586,8 @@ def meta(match: dict, chapters: str) -> dict:
             f"Host lines and the hint were written by us.\n\n⏱ Chapters\n{chapters}\n\n"
             f"Host art, voices and visuals are AI-generated. Made in Seoul.\n\n#AI #LLM #FoxHunt #Mafia #GumihoGames")
     return {"title": title[:95], "description": desc[:4900],
-            "tags": ["AI", "LLM", "AI plays games", "mafia game", "werewolf", "social deduction", "Claude", "Gemma",
-                     "gumiho", "Korean folklore", "AI vs AI"]}
+            "tags": ["AI", "LLM", "AI plays games", "mafia game", "werewolf", "social deduction"]
+            + [s["name"] for s in match["roster"]] + ["gumiho", "Korean folklore", "AI vs AI"]}
 
 
 def render(match_path: str, out_dir: str, frames_only: bool = False, tts=None) -> dict:

@@ -115,20 +115,25 @@ class Claude(Backend):
         raise RuntimeError("Claude 호출 실패")
 
 
+NVIDIA_BASE = "https://integrate.api.nvidia.com/v1"
+
+
 class OpenAICompat(Backend):
-    """OpenAI 호환 chat/completions (OpenRouter · 자체 호스팅 · 게이트웨이 라우팅 등)."""
+    """OpenAI 호환 chat/completions. 기본은 NVIDIA API 카탈로그 — 왕별이가 이미 쓰는 NVIDIA_API_KEY(무료)로 부른다.
+    다른 곳(OpenRouter 등)을 쓰려면 GUMIHO_OPENAI_BASE / GUMIHO_OPENAI_KEY 로 바꾼다."""
 
     def __init__(self, model: str, base: str | None = None, key: str | None = None):
         self.model = model
-        self.base = (base or os.environ.get("GUMIHO_OPENAI_BASE") or "").rstrip("/")
-        self.key = key or os.environ.get("GUMIHO_OPENAI_KEY") or ""
-        if not self.base:
-            raise SystemExit("[error] GUMIHO_OPENAI_BASE 없음 — 공개 모델 API 주소를 정해야 한다")
+        self.base = (base or os.environ.get("GUMIHO_OPENAI_BASE") or NVIDIA_BASE).rstrip("/")
+        self.key = key or os.environ.get("GUMIHO_OPENAI_KEY") or os.environ.get("NVIDIA_API_KEY") or ""
+        if not self.key:
+            raise SystemExit("[error] 공개 모델 API 키 없음 — NVIDIA_API_KEY(또는 GUMIHO_OPENAI_KEY)")
         self.label = f"openai:{model}"
 
     def complete(self, system: str, user: str, max_tokens: int = 600) -> str:
         import requests
-        body = {"model": self.model, "max_tokens": max(1200, max_tokens), "temperature": 0.8,
+        # 생각(reasoning)을 먼저 쓰는 모델이 많아 답이 잘리지 않게 넉넉히 준다.
+        body = {"model": self.model, "max_tokens": max(2500, max_tokens), "temperature": 0.8,
                 "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}]}
         headers = {"Authorization": f"Bearer {self.key}"} if self.key else {}
         wait = 5
@@ -136,7 +141,8 @@ class OpenAICompat(Backend):
             try:
                 r = requests.post(f"{self.base}/chat/completions", json=body, headers=headers, timeout=180)
                 if r.status_code == 200:
-                    return r.json()["choices"][0]["message"].get("content") or ""
+                    msg = r.json()["choices"][0]["message"]
+                    return msg.get("content") or msg.get("reasoning_content") or ""
                 _log(f"[openai] {self.model} {r.status_code}: {r.text[:120]}")
                 if r.status_code < 500 and r.status_code != 429:
                     break

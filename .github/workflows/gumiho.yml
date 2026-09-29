@@ -43,6 +43,7 @@ jobs:
       WBSPARK_BASE: ${{ vars.WBSPARK_BASE || 'https://wangbyul.com/wbSpark' }}
       WBSPARK_TOKEN: ${{ secrets.WBSPARK_TOKEN }}
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}          # 공개 모델 4종(NVIDIA API 카탈로그, 왕별이와 같은 키)
       GUMIHO_OPENAI_BASE: ${{ vars.GUMIHO_OPENAI_BASE }}
       GUMIHO_OPENAI_KEY: ${{ secrets.GUMIHO_OPENAI_KEY }}
       GUMIHO_TTS_WORKERS: "2"
