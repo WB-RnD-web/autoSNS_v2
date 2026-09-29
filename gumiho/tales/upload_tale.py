@@ -24,6 +24,8 @@ sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(ROOT, "pipeline"))
 import tales as T  # noqa: E402
 
+# 현지화: 그 나라 사용자에게 그 나라 말 제목·설명이 뜬다(videos.update 50 units, 번역은 Spark gemma — 무료)
+LANGS = [x.strip() for x in os.environ.get("TALES_LANGS", "es,pt,id,ja,ko,de,fr,vi").split(",") if x.strip()]
 PLAYLIST = "Nine Tails Tales — Every Tale"
 PLAYLIST_DESC = "Every tale Gumi has told so far, in order. Korean and East Asian myths, monsters and ghost stories."
 CATEGORY = "24"          # Entertainment
@@ -57,6 +59,41 @@ def insert(yt, video: str, md: dict, privacy: str, publish_at: str | None) -> st
             last = int(st.progress() * 10)
             print(f"   업로드 {last * 10}%", flush=True)
     return resp["id"]
+
+
+def localize(vid: str, title: str | None = None, description: str | None = None) -> list[str]:
+    """제목·설명 현지화(best-effort — 실패해도 업로드는 끝났다). 원문은 영어.
+
+    Gemma 는 8개 언어를 한 번에 JSON 으로 주면 설명이 길 때 출력이 잘린다(2026-09-30 실측: 4편 중 2편 파싱 실패)
+    → 2개 언어씩 나눠 번역하고, 실패한 묶음은 한 번 더.
+    """
+    if not LANGS:
+        return []
+    os.environ["I18N_SOURCE_LANG"] = "en"
+    # 이 채널 토큰만 쓰게 한다 — yt_i18n 은 forcessl → novel 순으로 토큰을 고른다(왕별이 토큰이 섞이지 않게)
+    os.environ["YT_TOKEN_FORCESSL"] = os.environ.get("YT_TOKEN_NOVEL", "")
+    try:
+        import importlib
+        import yt_i18n
+        importlib.reload(yt_i18n)            # SOURCE_LANG 은 import 시점에 읽힌다
+        if title is None:
+            yt = yt_i18n._service(["forcessl", "novel"], [])
+            sn = yt.videos().list(part="snippet", id=vid).execute()["items"][0]["snippet"]
+            title, description = sn["title"], sn.get("description", "")
+        loc = {}
+        for k in range(0, len(LANGS), 2):
+            group = LANGS[k:k + 2]
+            for _ in range(2):
+                got = yt_i18n.translate_meta(title, description or "", group)
+                if got:
+                    loc.update(got)
+                    break
+        if not loc:
+            return []
+        return yt_i18n.localize(vid, LANGS, localizations=loc)
+    except Exception as e:  # noqa: BLE001
+        print(f"   ⚠️ 현지화 실패(업로드는 성공): {e}")
+        return []
 
 
 def captions(yt, vid: str, srt: str) -> bool:
@@ -119,6 +156,7 @@ def main() -> int:
         if not done["thumb"]:
             print("   ⚠️ 썸네일 실패 — 채널 전화 인증(youtube.com/verify)이 안 됐으면 맞춤 썸네일이 막힌다")
         done["captions"] = captions(yt, vid, rm["srt"])
+        done["langs"] = localize(vid, md["title"], md["description"])
         if publish_at:
             try:
                 pid = U.ensure_playlist(yt, PLAYLIST, PLAYLIST_DESC, privacy="public")
@@ -139,6 +177,7 @@ def main() -> int:
         sid = insert(yt, short["video"], smd, "private", s_at)
         done["short"] = f"https://youtu.be/{sid}"
         print(f"✅ 쇼츠 {done['short']}")
+        localize(sid, smd["title"], smd["description"])
         led[stem] = done
         _save(a.ledger, led)
     print(json.dumps({stem: done}, ensure_ascii=False))
