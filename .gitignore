@@ -58,3 +58,4 @@ docs/ROUTINE_PROMPT*.md
 
 # 키비주얼 배경(렌더 시 생성)
 pipeline/motion/assets/_bg.jpg
+/output/gumiho/

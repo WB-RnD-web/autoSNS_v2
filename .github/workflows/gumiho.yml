@@ -1,0 +1,115 @@
+name: Gumiho Games — 대국 N판 → 가장 극적인 판 → 렌더 → 비공개 업로드
+
+# 새 채널(@GumihoGames, 영어). 왕별이와 무관 — 토큰·재생목록이 따로다.
+# ★Spark 는 공용 서버: 대국은 한 판씩, LLM 요청은 한 건씩, 대기열이 길면 기다린다(gumiho/players.py).
+#   목소리 합성도 동시 2건만(GUMIHO_TTS_WORKERS). 그래서 느려도 되게 timeout 을 넉넉히 둔다.
+# ★업로드는 항상 비공개 — 사람이 보고 공개한다. 점검용 판(모든 자리를 한 백엔드로)은 코드가 업로드를 막는다.
+# 정기 실행(schedule)은 시범 3편을 본 뒤에 켠다.
+
+on:
+  workflow_dispatch:
+    inputs:
+      matches:
+        description: "몇 판 돌려서 고를지"
+        default: "3"
+      backend:
+        description: "모든 자리를 이 백엔드로(점검용: spark / mock) — 비우면 roster.json 대로"
+        default: "spark"
+      render:
+        description: "렌더까지(영상·썸네일·자막)"
+        type: boolean
+        default: true
+      upload:
+        description: "비공개 업로드(roster 대로 돈 판만 가능)"
+        type: boolean
+        default: false
+      date:
+        description: "날짜(seed) — 비우면 오늘"
+        default: ""
+
+concurrency:
+  group: gumiho
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    env:
+      TZ: Asia/Seoul
+      WBSPARK_BASE: ${{ vars.WBSPARK_BASE || 'https://wangbyul.com/wbSpark' }}
+      WBSPARK_TOKEN: ${{ secrets.WBSPARK_TOKEN }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      GUMIHO_OPENAI_BASE: ${{ vars.GUMIHO_OPENAI_BASE }}
+      GUMIHO_OPENAI_KEY: ${{ secrets.GUMIHO_OPENAI_KEY }}
+      GUMIHO_TTS_WORKERS: "2"
+      GUMIHO_SPARK_MAX_WAITING: "6"
+      I18N_LOCALIZE: "0"
+      I18N_CAPTIONS: "0"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: pipeline/requirements.txt
+
+      - name: 시스템 의존성
+        run: |
+          sudo apt-get update && sudo apt-get install -y ffmpeg fonts-noto-core
+          python -m pip install -r pipeline/requirements.txt
+
+      - name: 테스트(오프라인)
+        run: python gumiho/test_gumiho.py
+
+      - name: ledger 캐시
+        uses: actions/cache@v4
+        with:
+          path: output/gumiho/ledger.json
+          key: gumiho-ledger-${{ github.run_id }}
+          restore-keys: gumiho-ledger-
+
+      - name: 대국
+        run: |
+          D="${{ github.event.inputs.date }}"; [ -z "$D" ] && D=$(date +%F)
+          B="${{ github.event.inputs.backend }}"
+          python gumiho/run_match.py --matches "${{ github.event.inputs.matches }}" --date "$D" ${B:+--backend "$B"}
+
+      - name: 렌더
+        if: github.event.inputs.render == 'true'
+        run: python gumiho/render.py "$(cat output/gumiho/matches/*_best.txt | head -1)"
+
+      - name: YouTube 자격증명(Gumiho 채널 전용 토큰)
+        if: github.event.inputs.upload == 'true'
+        env:
+          YT_CLIENT_SECRET_JSON: ${{ secrets.YT_CLIENT_SECRET_JSON }}
+          YT_TOKEN_JSON_GUMIHO: ${{ secrets.YT_TOKEN_JSON_GUMIHO }}
+        run: |
+          mkdir -p pipeline/secrets
+          [ -n "$YT_CLIENT_SECRET_JSON" ] && printf '%s' "$YT_CLIENT_SECRET_JSON" > pipeline/secrets/client_secret.json
+          if [ -z "$YT_TOKEN_JSON_GUMIHO" ]; then echo "::error::시크릿 YT_TOKEN_JSON_GUMIHO 없음"; exit 1; fi
+          printf '%s' "$YT_TOKEN_JSON_GUMIHO" > pipeline/secrets/token_gumiho.json
+
+      - name: 비공개 업로드
+        if: github.event.inputs.upload == 'true' && github.event.inputs.render == 'true'
+        env:
+          YT_TOKEN_NOVEL: pipeline/secrets/token_gumiho.json
+        run: python gumiho/upload.py "$(cat output/gumiho/matches/*_best.txt | head -1)"
+
+      - name: 결과물(대국 기록·썸네일·자막·영상)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gumiho-${{ github.run_number }}
+          path: |
+            output/gumiho/matches/*.json
+            output/gumiho/renders/*_thumb.jpg
+            output/gumiho/renders/*.srt
+            output/gumiho/renders/*_meta.json
+            output/gumiho/renders/*.mp4
+          retention-days: 5
+          if-no-files-found: warn
