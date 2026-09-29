@@ -28,7 +28,7 @@ Spark는 공용 서버다. 2026-09-29에 작업이 몰려 한 번 멈췄다. 그
 
 | 이름 | 연결 | 모델 |
 |---|---|---|
-| Claude | `anthropic` | `claude-sonnet-5-5` |
+| Mistral | `openai` | `mistralai/mistral-large-2-instruct` |
 | Gemma | `spark` | Spark 게이트웨이(Gemma 4 26B-A4B) |
 | GPT-OSS | `openai` | `openai/gpt-oss-20b` |
 | Nemotron | `openai` | `nvidia/nemotron-3-super-120b-a12b` |
@@ -39,8 +39,8 @@ Spark는 공용 서버다. 2026-09-29에 작업이 몰려 한 번 멈췄다. 그
 - **공개 모델 4종:** NVIDIA API 카탈로그(`https://integrate.api.nvidia.com/v1`)로 부른다.
   - 키는 왕별이가 이미 쓰는 시크릿 `NVIDIA_API_KEY`(무료)다. 추가 비용이 없다.
   - 2026-09-29 목록에는 Qwen·Llama 최신판이 없어서 DeepSeek·Kimi로 바꿨다.
-  - 다른 곳(OpenRouter 등)을 쓰려면 `GUMIHO_OPENAI_BASE`/`GUMIHO_OPENAI_KEY`를 넣는다.
-- **Claude:** 왕별이의 `ANTHROPIC_API_KEY`를 쓴다. 편당 몇백 원이다(추정).
+- **돈이 드는 호출 금지(사용자 원칙, 2026-09-29).** 레포에 Anthropic 키가 없고 유료이므로 Claude 자리는 Mistral로 바꿨다.
+  - Claude API·OpenRouter 같은 유료 경로는 `GUMIHO_ALLOW_PAID=1`이 없으면 코드가 실행을 멈춘다.
 
 ## 실행
 

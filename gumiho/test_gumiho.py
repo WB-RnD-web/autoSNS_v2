@@ -35,7 +35,7 @@ ck("키가 없으면 None", F.parse_json('{"thought":"t"}', "vote") is None)
 ck("두 객체 중 키 있는 쪽", F.parse_json('{"a":1} then {"vote":"Llama"}', "vote")["vote"] == "Llama")
 ck("이름 맞추기: gpt → GPT-OSS", F.match_name("gpt", NAMES) == "GPT-OSS")
 ck("이름 맞추기: 문장 속 이름", F.match_name("I vote for Gemma.", NAMES) == "Gemma")
-ck("이름 맞추기: 없는 이름은 None", F.match_name("Mistral", NAMES) is None)
+ck("이름 맞추기: 없는 이름은 None", F.match_name("Grok", NAMES) is None)
 ck("이름 맞추기: 빈 값 None", F.match_name("", NAMES) is None)
 ck("단어 자르기", F.clip_words("a " * 80, 60).count("a") == 60)
 
@@ -140,6 +140,20 @@ try:
     ck("모델 미정이면 멈춘다", False)
 except SystemExit:
     ck("모델 미정이면 멈춘다", True)
+os.environ.pop("GUMIHO_ALLOW_PAID", None)
+try:
+    P.make_backend({"name": "X", "backend": "anthropic", "model": "claude-sonnet-5-5"})
+    ck("유료(Claude API)는 기본으로 막힌다", False)
+except SystemExit:
+    ck("유료(Claude API)는 기본으로 막힌다", True)
+os.environ["GUMIHO_OPENAI_BASE"] = "https://openrouter.ai/api/v1"
+try:
+    P.make_backend({"name": "X", "backend": "openai", "model": "openai/gpt-oss-20b"})
+    ck("NVIDIA 무료 주소가 아니면 막힌다", False)
+except SystemExit:
+    ck("NVIDIA 무료 주소가 아니면 막힌다", True)
+os.environ.pop("GUMIHO_OPENAI_BASE", None)
+ck("시즌 출연진은 전부 무료 경로(spark·openai→NVIDIA)", all(s["backend"] in ("spark", "openai") for s in ROSTER))
 
 print()
 if FAIL:

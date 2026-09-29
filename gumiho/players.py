@@ -175,16 +175,27 @@ class Mock(Backend):
                            "vote": pick, "target": pick, "inspect": pick})
 
 
+def paid_allowed() -> bool:
+    """★사용자 원칙(2026-09-29): 돈이 드는 호출은 없어야 한다. 무료 경로(Spark · NVIDIA 무료 키)만 기본 허용.
+    유료 백엔드(Claude API · OpenRouter 등)는 GUMIHO_ALLOW_PAID=1 을 사람이 직접 켤 때만."""
+    return os.environ.get("GUMIHO_ALLOW_PAID") == "1"
+
+
 def make_backend(seat: dict, override: str | None = None, seed: int = 0) -> Backend:
     kind = override or seat.get("backend")
     if kind == "spark":
         return SparkLLM()
     if kind == "anthropic":
+        if not paid_allowed():
+            raise SystemExit(f"[error] {seat['name']}: Claude API 는 유료라 막혀 있다(GUMIHO_ALLOW_PAID)")
         return Claude(seat.get("model") or "claude-sonnet-5-5")
     if kind == "openai":
         if not seat.get("model") or seat["model"] == "TBD":
             raise SystemExit(f"[error] {seat['name']}: 공개 모델 ID 가 정해지지 않았다(roster)")
-        return OpenAICompat(seat["model"])
+        base = (os.environ.get("GUMIHO_OPENAI_BASE") or NVIDIA_BASE).rstrip("/")
+        if base != NVIDIA_BASE and not paid_allowed():
+            raise SystemExit(f"[error] {seat['name']}: 무료 NVIDIA 주소가 아니다({base}) — 유료일 수 있어 막는다")
+        return OpenAICompat(seat["model"], base=base)
     if kind == "mock":
         return Mock(seat["name"], seed)
     raise SystemExit(f"[error] 알 수 없는 backend: {kind}")
