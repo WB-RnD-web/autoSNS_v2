@@ -1,6 +1,6 @@
 {
  "about": "Nine Tails Tales 편성표. 루틴은 `python gumiho/tales/tales.py next --date <오늘>` 이 준 한 편만 쓴다(날짜로 결정론적 배정). facts 는 확인된 뼈대, careful 은 단정하면 안 되는 것. 순서: 한국 설화가 기본, 3~4편마다 일본·중국 이웃 설화(수요가 한국 주제의 5~50배 — 2026-09-29 조사).",
- "start": "2026-10-01",
+ "start": "2026-09-30",
  "tales": [
   {"id": 1, "slug": "gumiho", "region": "KR", "title_idea": "Korea's Nine-Tailed Fox Is Darker Than Japan's Kitsune", "done": true},
   {"id": 2, "slug": "fox-sister", "region": "KR",
