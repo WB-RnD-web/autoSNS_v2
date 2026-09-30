@@ -9,14 +9,22 @@
 여기서 막는다 — 하나라도 못 넘으면 렌더도 업로드도 하지 않고 잡이 빨간불로 끝난다.
 루틴은 git 을 손으로 만지지 않는다 — 슬롯·검사·올리기를 전부 이 파일로 한다:
     python pipeline/ai_news.py slot              # 지금 날짜·슬롯(am/pm)·파일 이름(시계로만 정한다)
+    python pipeline/ai_news.py feed              # 오늘의 후보 기사(data/ai-news-feed) — ★출처는 여기서만
+    python pipeline/ai_news.py feed --show ID    # 그 기사 본문 + 출처 뼈대(facts 는 본문에서 숫자째)
     python pipeline/ai_news.py history           # 최근 14일 AI 대본(같은 이야기·같은 형식 피하기)
     python pipeline/ai_news.py check <파일>      # 파이프라인과 똑같은 검사
     python pipeline/ai_news.py push <파일>       # 검사 통과 시 routine/ai_<slot> 에 올린다(= 실제 업로드)
+
+피드(2026-10-01): 루틴 샌드박스는 기사 페이지를 못 연다(egress 차단). 원문은 ai-news-feed.yml 이
+  인터넷이 열린 Actions 에서 받아 data/ai-news-feed 브랜치(feed/ai/<DATE>_<am|pm>.json)에 둔다
+  (pipeline/ai_news_feed.py). 루틴은 git 으로 읽고, 검사는 출처를 이 피드와 대조한다.
 
 막는 것
   · 이름·슬롯    output/news/<DATE>_ai_<am|pm>_storyboard.json · topic=ai · slot=am|pm
                  · date = 파일 날짜 = 오늘/어제(KST). 한 날짜에 슬롯 2개 = 하루 최대 2편
   · 출처         sources[] 마다 outlet·url·published_at·confirmed·facts, 그중 ★하나 이상은 48시간 안
+  · 피드 대조    출처는 ★피드에 있는 기사만(URL) · published_at 은 피드 값 그대로 ·
+                 facts·title 의 숫자는 전부 그 기사 본문(피드)에 있어야 한다
   · 중복         최근 14일 AI 대본(routine/ai_am·ai_pm 브랜치 + ledger + 유튜브 최근 업로드)과
                  출처 URL 이 같거나 제목이 비슷하면 탈락
   · 숫자         화면·제목·말에 쓴 아라비아 숫자는 전부 출처 facts 에 있어야 한다(지어낸 숫자 금지)
@@ -35,11 +43,13 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import glob
+import hashlib
 import json
 import os
 import re
 import subprocess
 import sys
+import unicodedata
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -55,6 +65,15 @@ NAME_RE = re.compile(r"^(\d{4}-\d{2}-\d{2})_ai_(am|pm)_storyboard\.json$")
 BRAND = "일상공감뉴스 · AI"
 ACCENT = "#5EC8D8"          # 거의 검정 배경(#0A0808) 대비 10:1 — 정치(#8FB0C9)·운세(금색)와 겹치지 않는 청록
 MARKER = "AI 소식"            # 설명란 마지막 줄 'AI 소식 <날짜> <오전|저녁>' — 유튜브 쪽 중복 업로드 판정에 쓴다
+
+# 피드 — 기사 원문(ai-news-feed.yml 이 Actions 에서 받아 둔다). ★main·routine/* 가 아닌 데이터 전용 브랜치.
+FEED_BRANCH = "data/ai-news-feed"
+FEED_DIR = "feed/ai"
+FEED_NAME_RE = re.compile(r"^(\d{4}-\d{2}-\d{2})_(am|pm)\.json$")
+FEED_FILE_DAYS = 3          # 오늘 포함 4일치 파일을 본다(피드에서 밀려난 기사도 대조되게)
+FEED_TIME_SLACK = 60        # published_at 이 피드와 이만큼(초) 넘게 다르면 탈락
+# 피드 밖에서도 출처로 받아 줄 도메인 — 루틴이 ★실제로 열어 볼 수 있는 곳만. 지금은 없다(전부 egress 차단).
+FEED_ALLOW_DOMAINS: tuple[str, ...] = ()
 
 FRESH_HOURS = 48
 DEDUPE_DAYS = 14
@@ -326,6 +345,148 @@ def load_history(today: dt.date, exclude: str = "", *, ledger: dict | None = Non
     return sorted(keep, key=lambda e: (e.get("date", ""), _slot_order(e.get("slot", ""))), reverse=True)
 
 
+# ── 피드(기사 원문 — data/ai-news-feed) ───────────────────────────
+def feed_id(url: str) -> str:
+    """기사 짧은 id — 정규화한 URL 의 해시 앞 8자리(피드를 여러 번 만들어도 같은 기사는 같은 id)."""
+    return hashlib.sha1(norm_url(url).encode("utf-8")).hexdigest()[:8]
+
+
+def _feed_doc(raw: str):
+    try:
+        doc = json.loads(raw or "null")
+    except json.JSONDecodeError:
+        return None
+    return doc if isinstance(doc, dict) else None
+
+
+def feed_docs_from_refs(refs=(FEED_BRANCH,), root: str | None = None) -> list[tuple[str, dict]]:
+    out = []
+    for ref in refs:
+        r = f"origin/{ref}"
+        for name in _git("ls-tree", "-r", "--name-only", r, "--", FEED_DIR, root=root).splitlines():
+            base = os.path.basename(name.strip())
+            if FEED_NAME_RE.match(base):
+                doc = _feed_doc(_git("show", f"{r}:{name.strip()}", root=root))
+                if doc:
+                    out.append((base, doc))
+    return out
+
+
+def feed_docs_from_dirs(dirs) -> list[tuple[str, dict]]:
+    out = []
+    for d in dirs or []:
+        for p in sorted(glob.glob(os.path.join(d, "*.json"))):
+            if FEED_NAME_RE.match(os.path.basename(p)):
+                try:
+                    with open(p, encoding="utf-8") as f:
+                        doc = _feed_doc(f.read())
+                except OSError:
+                    doc = None
+                if doc:
+                    out.append((os.path.basename(p), doc))
+    return out
+
+
+def feed_index(docs, today: dt.date, days: int = FEED_FILE_DAYS) -> dict:
+    """피드 파일들 → {files(최신 먼저), docs, by_url(정규화 URL → 판들), by_id, error}.
+    같은 기사가 여러 파일에 있으면 판을 모두 모은다(최신 파일 판이 앞)."""
+    lo, hi = today - dt.timedelta(days=days), today + dt.timedelta(days=1)
+    keep = []
+    for name, doc in docs:
+        m = FEED_NAME_RE.match(name)
+        try:
+            d = dt.date.fromisoformat(m.group(1)) if m else None
+        except ValueError:
+            d = None
+        if d and lo <= d <= hi:
+            keep.append(((d.isoformat(), _slot_order(m.group(2))), name, doc))
+    keep.sort(key=lambda x: x[0], reverse=True)
+    files, by_url, by_id, used = [], {}, {}, {}
+    for _, name, doc in keep:
+        if name in used:
+            continue
+        used[name] = doc
+        files.append(name)
+        for it in doc.get("items") or []:
+            if isinstance(it, dict) and it.get("url"):
+                u = norm_url(it["url"])
+                by_url.setdefault(u, []).append(it)
+                by_id.setdefault(str(it.get("id") or feed_id(it["url"])), u)
+    err = None if files else f"{FEED_BRANCH} 에 최근 {days + 1}일 피드 파일이 없다(ai-news-feed.yml 이 돌았나?)"
+    return {"files": files, "docs": used, "by_url": by_url, "by_id": by_id, "error": err}
+
+
+def load_feed(now: dt.datetime | None = None, refs=(FEED_BRANCH,), dirs=None, root: str | None = None) -> dict:
+    """원격 피드 브랜치(먼저 fetch_branches((FEED_BRANCH,)))와 dirs 의 피드 파일을 읽는다."""
+    now = (now or dt.datetime.now(KST)).astimezone(KST)
+    return feed_index(feed_docs_from_refs(refs, root) + feed_docs_from_dirs(dirs), now.date())
+
+
+def feed_candidates(feed: dict, now: dt.datetime, skip_urls=(), hours: int = FRESH_HOURS) -> list[dict]:
+    """고를 수 있는 기사 — 48시간 안 · skip_urls(14일 안 다룬 기사) 제외 · 최신 순. 기사마다 최신 판 하나."""
+    now = now.astimezone(KST)
+    skip = {norm_url(u) if "://" in u else u for u in skip_urls}
+    out = []
+    for u, vers in (feed or {}).get("by_url", {}).items():
+        it = vers[0]
+        w = parse_when(it.get("published_at"))
+        if u in skip or not w or not (-1 <= (now - w).total_seconds() / 3600 <= hours):
+            continue
+        out.append(it)
+    return sorted(out, key=lambda it: parse_when(it.get("published_at")), reverse=True)
+
+
+def _feed_nums(text: str) -> set[str]:
+    return numbers(unicodedata.normalize("NFKC", text or ""))
+
+
+def _date_nums(when: dt.datetime | None) -> set[str]:
+    """기사 날짜(연·월·일)는 본문에 안 적혀 있어도 기사의 일부로 본다('올해' = 2026)."""
+    if not when:
+        return set()
+    k = when.astimezone(KST)
+    return {str(k.year), str(k.year % 100), str(k.month), str(k.day)}
+
+
+def _domain(url: str) -> str:
+    m = re.match(r"(?i)^https?://([^/?#]+)", (url or "").strip())
+    return re.sub(r"^(www|m|mobile)\.", "", m.group(1).lower()) if m else ""
+
+
+def feed_problems(srcs, feed: dict | None) -> list[tuple[str, bool]]:
+    """[(문제, 느슨 모드에서 경고로 내릴지)]. 출처는 피드의 기사만 · published_at 은 피드 값 ·
+    facts·title 의 숫자는 그 기사 본문(피드)에 있어야 한다."""
+    if feed is None or feed.get("error") or not feed.get("by_url"):
+        why = (feed or {}).get("error") or "피드를 읽지 않았다"
+        return [(f"출처 피드({FEED_BRANCH})와 대조할 수 없다: {why} — 원문 대조 없이는 올리지 않는다", True)]
+    out = []
+    for i, s in enumerate(srcs):
+        if not isinstance(s, dict) or not str(s.get("url") or "").strip():
+            continue
+        vers = feed["by_url"].get(norm_url(s["url"]))
+        if not vers:
+            dom = _domain(s["url"])
+            if not any(dom == d or dom.endswith("." + d) for d in FEED_ALLOW_DOMAINS):
+                out.append((f"sources[{i}] {s['url']} 는 피드에 없는 기사다 — `python pipeline/ai_news.py feed` "
+                            "목록의 기사만 출처로 쓴다(검색 결과·요약은 출처가 아니다)", True))
+            continue
+        theirs = [parse_when(v.get("published_at")) for v in vers]
+        mine = parse_when(s.get("published_at"))
+        if mine and not any(t and abs((mine - t).total_seconds()) <= FEED_TIME_SLACK for t in theirs):
+            ref = next((v.get("published_at") for v in vers if v.get("published_at")), "?")
+            out.append((f"sources[{i}].published_at {s.get('published_at')!r} 가 피드의 {ref!r} 와 다르다 "
+                        "— 피드 값을 그대로 옮긴다", False))
+        have: set[str] = set()
+        for v, t in zip(vers, theirs):
+            have |= _feed_nums(f"{v.get('title', '')}\n{v.get('text', '')}") | _date_nums(t)
+        facts = " ".join(x for x in (s.get("facts") or []) if isinstance(x, str))
+        miss = sorted(_feed_nums(f"{facts} {s.get('title', '')}") - have, key=float)
+        if miss:
+            out.append((f"sources[{i}] facts·title 의 숫자 {', '.join(miss)} 가 기사 본문(피드)에 없다 — "
+                        f"`python pipeline/ai_news.py feed --show {feed_id(s['url'])}` 본문에서 숫자째 옮긴다", False))
+    return out
+
+
 # ── 검사 ─────────────────────────────────────────────────
 def _url_problem(url: str) -> tuple[str, bool] | None:
     """(문제, 느슨 모드에서 경고로 내릴지) 또는 None."""
@@ -342,11 +503,12 @@ def _url_problem(url: str) -> tuple[str, bool] | None:
 
 
 def check(sb: dict, path: str = "", now: dt.datetime | None = None, history: list[dict] | None = None,
-          lenient: bool = False) -> tuple[list[str], list[str]]:
+          lenient: bool = False, feed: dict | None = None) -> tuple[list[str], list[str]]:
     """(오류, 경고). 오류가 하나라도 있으면 올리지 않는다.
 
-    lenient=True(수동 점검 전용)는 날짜·신선도·중복·돌려쓰기·견본 주소만 경고로 내린다.
-    형식·출처 모양·숫자·용어·캡션 규칙은 느슨 모드에서도 오류다.
+    feed = load_feed() 결과. ★None(안 읽음)이면 '대조할 수 없다'로 탈락 — 빠뜨려서 새는 일이 없게.
+    lenient=True(수동 점검 전용)는 날짜·신선도·중복·돌려쓰기·견본 주소·피드에 없음만 경고로 내린다.
+    형식·출처 모양·숫자(피드 본문 대조 포함)·용어·캡션 규칙은 느슨 모드에서도 오류다.
     """
     now = (now or dt.datetime.now(KST)).astimezone(KST)
     history = history or []
@@ -411,6 +573,10 @@ def check(sb: dict, path: str = "", now: dt.datetime | None = None, history: lis
             bad(f"sources[{i}].confirmed(true/false)가 없다 — 공식 발표·확정=true, 보도·유출·전망=false")
     if srcs and not fresh:
         bad(f"{FRESH_HOURS}시간 안에 나온 출처(url+published_at)가 하나도 없다 — 오늘의 소식이 아니다", True)
+
+    # ②-b 피드 대조 — 루틴은 기사 페이지를 못 연다. 원문은 Actions 가 받아 둔 피드에만 있다.
+    for msg, relax in feed_problems(srcs, feed):
+        bad(msg, relax)
 
     # ③ 중복 — 최근 14일 AI 대본과 URL·제목
     mine_urls = {norm_url(s.get("url", "")) for s in srcs if isinstance(s, dict) and s.get("url")}
@@ -680,14 +846,15 @@ def _run(args: list[str], cwd: str) -> tuple[int, str]:
 
 def check_file(path: str, now: dt.datetime | None = None, root: str | None = None,
                lenient: bool = False) -> tuple[list[str], list[str], dict, list[dict]]:
-    """파일 하나 검사(루틴 자기 점검·push 공용). 이미 원격 AI 브랜치에 있는 슬롯이면 오류."""
+    """파일 하나 검사(루틴 자기 점검·push 공용). 이미 원격 AI 브랜치에 있는 슬롯이면 오류.
+    피드는 ★원격 피드 브랜치(origin/data/ai-news-feed)에서만 읽는다 — 로컬 파일로 바꿔 끼울 수 없다."""
     now = (now or dt.datetime.now(KST)).astimezone(KST)
     with open(path, encoding="utf-8") as f:
         sb = json.load(f)
     key = slot_key(sb)
     news_dir = os.path.join(root or ROOT, "output", "news")
     hist = load_history(now.date(), exclude=key, dirs=[news_dir, os.path.dirname(os.path.abspath(path))], root=root)
-    errs, warns = check(sb, path, now=now, history=hist, lenient=lenient)
+    errs, warns = check(sb, path, now=now, history=hist, lenient=lenient, feed=load_feed(now, root=root))
     if key in {e["key"] for e in entries_from_refs(root=root)}:
         errs.append(f"{key} 는 이미 {'/'.join(BRANCHES)} 에 있다 — 같은 슬롯은 다시 올리지 않는다")
     return errs, warns, sb, hist
@@ -705,7 +872,7 @@ def push(path: str, now: dt.datetime | None = None, root: str | None = None,
     m = NAME_RE.match(name)
     if not m:
         return False, f"파일 이름 {name!r} — <DATE>_ai_<am|pm>_storyboard.json 이어야 한다"
-    fetch_branches(root=root)
+    fetch_branches(BRANCHES + (FEED_BRANCH,), root=root)
     _run(["git", "fetch", "-q", "--no-tags", remote, f"+refs/heads/main:refs/remotes/{remote}/main"], root)
     errs, _, sb, _ = check_file(path, now=now, root=root)
     if errs:
@@ -752,11 +919,77 @@ def _print_history(hist: list[dict]) -> None:
             print(f"    {u}")
 
 
+def _hm(s) -> str:
+    w = parse_when(s)
+    return f"{w.astimezone(KST):%m/%d %H:%M}" if w else "?"
+
+
+def feed_listing(feed: dict, now: dt.datetime, hist: list[dict] | None = None, show_all: bool = False) -> tuple[str, int]:
+    """(루틴이 읽을 후보 목록 글, 후보 수)."""
+    now = now.astimezone(KST)
+    d, slot = slot_now(now)
+    want = f"{d}_{slot}.json"
+    used = sorted({u for e in hist or [] for u in e.get("urls") or []})
+    lines = [f"📰 AI 소식 피드 — {FEED_BRANCH} · 이번 슬롯 {d} {slot}({SLOTS[slot]})"]
+    if feed.get("error"):
+        lines.append(f"❌ {feed['error']}")
+        lines.append("   → 원문이 없으면 쓰지 않는다. 오늘 이 슬롯은 올리지 않고 사유만 남긴다.")
+        return "\n".join(lines), 0
+    files = feed.get("files") or []
+    gen = (feed.get("docs", {}).get(files[0]) or {}).get("generated_at", "") if files else ""
+    lines.append(f"   파일: {', '.join(files[:4])}{' …' if len(files) > 4 else ''} (최신 {_hm(gen)} 생성)")
+    if want not in files:
+        lines.append(f"   ⚠️ 이번 슬롯 파일({want})이 아직 없다 — 직전 파일들로 대신한다(피드 워크플로가 늦는 중)")
+    cands = feed_candidates(feed, now, () if show_all else used)
+    n_used = len(feed_candidates(feed, now)) - len(cands)
+    lines.append(f"   후보 {len(cands)}건(48시간 안)" + (f" · 14일 안 다룬 기사 {n_used}건은 뺐다" if n_used > 0 else ""))
+    lines.append("")
+    for it in cands:
+        tag = " · 공식 발표" if it.get("official") else ""
+        lang = " · EN" if it.get("lang") == "en" else ""
+        lines.append(f"[{it.get('id') or feed_id(it['url'])}] {_hm(it.get('published_at'))} · {it.get('outlet', '')}"
+                     f"{tag}{lang} · 본문 {len(it.get('text') or ''):,}자")
+        lines.append(f"    {it.get('title', '')}")
+    lines.append("")
+    lines.append("→ 고른 기사 본문 + 출처 뼈대: python pipeline/ai_news.py feed --show <id>  (여러 개면 id 를 이어서)")
+    lines.append("  ★출처는 이 목록의 기사만. facts 는 --show 본문에서 숫자째 옮긴다. published_at 은 그대로 복사.")
+    return "\n".join(lines), len(cands)
+
+
+def feed_show(feed: dict, ident: str) -> str | None:
+    u = (feed.get("by_id") or {}).get(ident) or ((feed.get("by_url") or {}).get(norm_url(ident)) and norm_url(ident))
+    vers = (feed.get("by_url") or {}).get(u or "")
+    if not vers:
+        return None
+    it = vers[0]
+    skel = {"outlet": it.get("outlet", ""), "title": it.get("title", ""), "url": it.get("url", ""),
+            "published_at": it.get("published_at", ""),
+            "confirmed": bool(it.get("official")),
+            "facts": ["<아래 본문 문장을 숫자째 그대로>"]}
+    return "\n".join([
+        f"── [{it.get('id') or feed_id(it['url'])}] {it.get('outlet', '')} · {it.get('published_at', '')}"
+        + (" · 공식 발표" if it.get("official") else ""),
+        f"제목: {it.get('title', '')}",
+        f"주소: {it.get('url', '')}",
+        f"본문({len(it.get('text') or ''):,}자 / 원문 {it.get('text_chars', '?')}자, 앞부분):",
+        "",
+        it.get("text") or "",
+        "",
+        "출처 뼈대(sources[] 에 넣는다 — confirmed 는 공식 발표·확정이면 true, 한 매체 보도·전망이면 false):",
+        json.dumps(skel, ensure_ascii=False),
+    ])
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="AI 소식 쇼츠 — 슬롯·이력·검사·올리기(루틴용)")
     sub = ap.add_subparsers(dest="cmd", required=True)
     sl = sub.add_parser("slot", help="지금 돌면 어느 날짜·슬롯인가(시계로만 정한다)")
     sl.add_argument("--now", help="기준 시각(ISO) — 테스트용")
+    fd = sub.add_parser("feed", help="오늘의 후보 기사(원문 피드) — 출처는 여기서만 고른다")
+    fd.add_argument("--show", nargs="+", metavar="ID", help="이 기사들의 본문 + 출처 뼈대")
+    fd.add_argument("--all", action="store_true", help="14일 안 다룬 기사도 보이기")
+    fd.add_argument("--dir", help="(로컬 미리보기) 피드 브랜치 대신 이 폴더의 <DATE>_<slot>.json")
+    fd.add_argument("--now", help="기준 시각(ISO) — 테스트용")
     h = sub.add_parser("history", help="최근 14일 AI 대본(중복·형식 피하기용)")
     h.add_argument("--days", type=int, default=DEDUPE_DAYS)
     c = sub.add_parser("check", help="대본 검사(루틴은 push 전에 반드시)")
@@ -765,9 +998,14 @@ def main() -> int:
     c.add_argument("--lenient", action="store_true", help="수동 점검: 날짜·신선도·중복을 경고로")
     pu = sub.add_parser("push", help="검사 통과한 대본을 routine/ai_<slot> 에 올린다(= 실제 업로드가 시작된다)")
     pu.add_argument("path")
-    for x in (h, c):
+    for x in (h, c, fd):
         x.add_argument("--no-fetch", action="store_true")
     a = ap.parse_args()
+    for stream in (sys.stdout, sys.stderr):     # 윈도 콘솔(cp949)에서도 한글·기호가 깨져 죽지 않게
+        try:
+            stream.reconfigure(encoding="utf-8", errors="replace")
+        except (AttributeError, ValueError):
+            pass
 
     now = dt.datetime.fromisoformat(a.now).astimezone(KST) if getattr(a, "now", None) else dt.datetime.now(KST)
     if a.cmd == "slot":
@@ -787,7 +1025,21 @@ def main() -> int:
         print(("✅ " if ok else "❌ ") + msg)
         return 0 if ok else 1
     if not a.no_fetch:
-        fetch_branches()
+        fetch_branches(BRANCHES + (FEED_BRANCH,))
+    if a.cmd == "feed":
+        feed = load_feed(now, refs=() if a.dir else (FEED_BRANCH,), dirs=[a.dir] if a.dir else None)
+        if a.show:
+            miss = 0
+            for ident in a.show:
+                out = feed_show(feed, ident)
+                print(out if out else f"❌ 피드에 {ident!r} 가 없다 — `python pipeline/ai_news.py feed` 목록의 id")
+                print()
+                miss += out is None
+            return 1 if miss else 0
+        text, n = feed_listing(feed, now, load_history(now.date(), dirs=[os.path.join(ROOT, "output", "news")]),
+                               show_all=a.all)
+        print(text)
+        return 0 if n else 1
     if a.cmd == "history":
         _print_history(load_history(now.date(), dirs=[os.path.join(ROOT, "output", "news")], days=a.days))
         return 0

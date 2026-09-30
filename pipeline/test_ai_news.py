@@ -6,7 +6,9 @@
 
 지키는 것: 출처·날짜 필수(48시간) · 14일 중복 · 슬롯 멱등(같은 슬롯 두 번 = 한 번만) ·
 카테고리 28 · 재생목록 · 크로스포스트는 AI 토픽만(INSTA_PUBLISH 없으면 dry-run) ·
-숫자·용어·확인 안 된 보도·캡션·형식 돌려쓰기 · 진행자 금지 · 워크플로 연결.
+숫자·용어·확인 안 된 보도·캡션·형식 돌려쓰기 · 진행자 금지 · 워크플로 연결 ·
+원문 피드(data/ai-news-feed): 출처는 피드의 기사만 · published_at 그대로 · facts 숫자는 본문에 ·
+피드 만들기(RSS/Atom·기사 본문·ODT 첨부·48시간·AI 거르기) · 피드 브랜치 push 가 업로드를 깨우지 않는다.
 """
 from __future__ import annotations
 
@@ -14,6 +16,7 @@ import copy
 import datetime as dt
 import json
 import os
+import re
 import subprocess
 import sys
 import tempfile
@@ -82,8 +85,26 @@ def base(date="2026-09-30", slot="am", published="2026-09-30T08:10:00+09:00"):
     }
 
 
-def errs(sb, path=PATH, now=NOW, history=None, lenient=False):
-    return A.check(sb, path, now=now, history=history or [], lenient=lenient)
+def feed_item(url, published, text, title="", outlet="연합뉴스", official=False):
+    return {"id": A.feed_id(url), "source": "t", "outlet": outlet, "official": official, "lang": "ko",
+            "title": title, "url": url, "published_at": published, "text": text, "text_chars": len(text),
+            "text_from": "page"}
+
+
+def feed_of(*sbs, name="2026-09-30_am.json", today=None):
+    """대본의 출처를 그대로 담은 피드(본문 = facts) — 피드 대조 말고 다른 규칙을 볼 때의 기본값."""
+    items = [feed_item(s["url"], s.get("published_at", ""),
+                       " ".join(f for f in s.get("facts") or [] if isinstance(f, str)), s.get("title", ""))
+             for sb in sbs for s in sb.get("sources") or [] if isinstance(s, dict) and s.get("url")]
+    return A.feed_index([(name, {"items": items})], today or NOW.date())
+
+
+MIRROR = object()
+
+
+def errs(sb, path=PATH, now=NOW, history=None, lenient=False, feed=MIRROR):
+    return A.check(sb, path, now=now, history=history or [], lenient=lenient,
+                   feed=feed_of(sb) if feed is MIRROR else feed)
 
 
 def has(lst, word):
@@ -301,7 +322,7 @@ D = today.strftime("%Y-%m-%d")
 pub = (today - dt.timedelta(hours=2)).isoformat()
 _orig = (P._prepare_bg, M.build_motion, M.probe_dur, P.has_credentials, P.upload_with_retry,
          P.add_playlist, A.recent_uploads, N.get_service, config.OUTPUT, config.RENDERS_DIR,
-         config.NEWS_DIR, config.ASSETS_DIR)
+         config.NEWS_DIR, config.ASSETS_DIR, A.load_feed)
 
 
 def fake_build(spec, out_mp4, wd, quality="standard"):
@@ -325,7 +346,7 @@ try:
         N.get_service = lambda: object()
         news = os.path.join(td, "news")
         os.makedirs(news)
-        paths = {}
+        paths, sbs = {}, []
         for slot in ("am", "pm"):
             sb = base(date=D, slot=slot, published=pub)
             if slot == "pm":                           # 저녁 편은 다른 이야기·다른 형식
@@ -336,6 +357,9 @@ try:
             paths[slot] = os.path.join(news, f"{D}_ai_{slot}_storyboard.json")
             with open(paths[slot], "w", encoding="utf-8") as f:
                 json.dump(sb, f, ensure_ascii=False)
+            sbs.append(sb)
+        # Actions 에서는 data/ai-news-feed 를 읽는다 — 여기선 두 편의 출처를 담은 피드로 바꿔 낀다
+        A.load_feed = lambda now=None, **k: feed_of(*sbs, name=f"{D}_am.json", today=today.date())
         led_path = os.path.join(td, "ai_ledger.json")
         args = SimpleNamespace(include_paused=False, no_upload=False, no_social=False, force_private=False,
                                dry_run_upload=False, quality="draft", ledger_path=led_path, ai_lenient=False,
@@ -382,12 +406,25 @@ try:
         r6 = P.process(bp, args, {})
         ck("출처 없는 대본은 렌더·업로드 없이 실패", str(r6["error"]).startswith("ai_check") and r6["video"] is None
            and len(calls["upload"]) == n_up)
+        # 루틴이 check 를 건너뛰고 밀어도 — Actions 가 피드와 다시 대조한다
+        other = base(date=D, slot="am", published=pub)
+        other["sources"][0]["url"] = "https://www.etnews.com/20260930000999"
+        A.load_feed = lambda now=None, **k: feed_of(other, name=f"{D}_am.json", today=today.date())
+        r7 = P.process(paths["am"], args, {})
+        ck("피드에 없는 출처면 Actions 에서도 렌더·업로드 없이 실패",
+           str(r7["error"]).startswith("ai_check") and "피드에 없는 기사" in str(r7["error"])
+           and r7["video"] is None and len(calls["upload"]) == n_up, str(r7))
+        A.load_feed = lambda now=None, **k: {"files": [], "docs": {}, "by_url": {}, "by_id": {}, "error": "없음"}
+        r8 = P.process(paths["am"], args, {})
+        ck("피드를 못 읽으면(브랜치 없음) 올리지 않는다", "대조할 수 없다" in str(r8["error"]) and len(calls["upload"]) == n_up,
+           str(r8))
         # 느슨 모드는 공개 업로드에서 무시된다
         ck("--ai-lenient 는 공개 업로드에서 무시", P.ai_lenient(SimpleNamespace(ai_lenient=True)) is False
            and P.ai_lenient(SimpleNamespace(ai_lenient=True, force_private=True)) is True)
 finally:
     (P._prepare_bg, M.build_motion, M.probe_dur, P.has_credentials, P.upload_with_retry, P.add_playlist,
-     A.recent_uploads, N.get_service, config.OUTPUT, config.RENDERS_DIR, config.NEWS_DIR, config.ASSETS_DIR) = _orig
+     A.recent_uploads, N.get_service, config.OUTPUT, config.RENDERS_DIR, config.NEWS_DIR, config.ASSETS_DIR,
+     A.load_feed) = _orig
     for k, v in _env.items():
         if v is not None:
             os.environ[k] = v
@@ -410,6 +447,19 @@ with tempfile.TemporaryDirectory() as td:
     g("add", "-A", cwd=seed)
     g("commit", "-q", "-m", "init", cwd=seed)
     g("push", "-q", "origin", "main", cwd=seed)
+    # 원문 피드 브랜치(Actions 가 만든다) — 오전·저녁 편 출처 기사가 들어 있다
+    g("checkout", "-q", "--orphan", "data/ai-news-feed", cwd=seed)
+    g("rm", "-q", "-f", "README.md", cwd=seed)
+    os.makedirs(os.path.join(seed, "feed", "ai"))
+    facts_txt = " ".join(base()["sources"][0]["facts"])
+    with open(os.path.join(seed, "feed", "ai", "2026-09-30_am.json"), "w", encoding="utf-8") as f:
+        json.dump({"version": 1, "date": "2026-09-30", "slot": "am", "generated_at": "2026-09-30T09:40:00+09:00",
+                   "items": [feed_item(base()["sources"][0]["url"], "2026-09-30T08:10:00+09:00", facts_txt),
+                             feed_item("https://www.hani.co.kr/arti/economy/7654321.html",
+                                       "2026-09-30T08:10:00+09:00", facts_txt)]}, f, ensure_ascii=False)
+    g("add", "-A", cwd=seed)
+    g("commit", "-q", "-m", "feed", cwd=seed)
+    g("push", "-q", "origin", "data/ai-news-feed", cwd=seed)
     g("clone", "-q", "-b", "main", origin, sess, cwd=td)
     for k, v in (("user.email", "t@t"), ("user.name", "t")):
         g("config", k, v, cwd=sess)
@@ -434,6 +484,20 @@ with tempfile.TemporaryDirectory() as td:
     ok3, msg3 = A.push(badp, now=NOW, root=sess)
     ck("검사 실패면 올리지 않는다", not ok3 and "검사 실패" in msg3
        and "routine/ai_pm" not in g("branch", "-a", cwd=origin))
+    stray = base(slot="pm")
+    stray["sources"][0]["url"] = "https://www.seoul.co.kr/news/2026/09/30/20260930500123"   # 검색으로만 본 기사
+    stray["headline"] = "병원 AI 문진, 대기 3배 줄여"; stray["hook_title"] = "병원 대기, AI가 3배 줄였다"
+    stray["format"] = "explain"; stray["scenes"][0]["pill"] = "새 기능"
+    stray["scenes"] = [stray["scenes"][i] for i in (0, 2, 1, 3, 4)]
+    strayp = os.path.join(drafts, "y", "2026-09-30_ai_pm_storyboard.json")
+    os.makedirs(os.path.dirname(strayp))
+    with open(strayp, "w", encoding="utf-8") as f:
+        json.dump(stray, f, ensure_ascii=False)
+    ok5, msg5 = A.push(strayp, now=NOW, root=sess)
+    ck("피드(origin/data/ai-news-feed)에 없는 기사는 push 못 한다", not ok5 and "피드에 없는 기사" in msg5
+       and "routine/ai_pm" not in g("branch", "-a", cwd=origin), msg5)
+    ck("…피드는 원격 브랜치에서 읽는다(기사 2건)",
+       len(A.load_feed(NOW, root=sess)["by_url"]) == 2 and A.load_feed(NOW, root=sess)["files"] == ["2026-09-30_am.json"])
     pm = base(slot="pm")
     pm["sources"][0]["url"] = "https://www.hani.co.kr/arti/economy/7654321.html"
     pm["headline"] = "병원 AI 문진, 대기 3배 줄여"; pm["hook_title"] = "병원 대기, AI가 3배 줄였다"
@@ -445,7 +509,261 @@ with tempfile.TemporaryDirectory() as td:
     ok4, msg4 = A.push(pmp, now=NOW, root=sess)
     ck("저녁 편은 routine/ai_pm 으로(오전 편 이력을 보고 검사한 뒤)", ok4 and "routine/ai_pm" in g("branch", "-a", cwd=origin), msg4)
 
-print("\n── 10. 워크플로 연결 ──")
+print("\n── 10. 피드 대조 —출처는 피드의 기사만 · published_at 그대로 · facts 숫자는 본문에 ──")
+URL = base()["sources"][0]["url"]
+ART = ("(서울=연합뉴스) 경찰청은 올해 1~8월 AI 목소리 복제 의심 신고가 1,245건으로 작년 같은 기간의 3배라고 "
+       "30일 밝혔다. 경찰은 목소리 3초 분량이면 복제할 수 있다고 설명했다.")
+FEED = A.feed_index([("2026-09-30_am.json", {"items": [feed_item(URL, "2026-09-30T08:10:00+09:00", ART,
+                                                                  "AI 목소리 복제 보이스피싱 신고 3배")]})], NOW.date())
+e, w = errs(base(), feed=FEED)
+ck("기준 대본은 실제 기사 본문과 대조해도 통과", e == [] and w == [], str(e))
+e, w = errs(base(), feed=None)
+ck("피드를 안 넘기면(None) 탈락 — 빠뜨려서 새지 않게", has(e, "대조할 수 없다"), str(e))
+e, w = errs(base(), feed=None, lenient=True)
+ck("…느슨 모드(수동 점검)에선 경고로만", e == [] and has(w, "대조할 수 없다"), str(e))
+empty = A.feed_index([], NOW.date())
+ck("피드 파일이 없으면(워크플로가 안 돌았다) 탈락", has(errs(base(), feed=empty)[0], "피드 파일이 없다"))
+sb = base(); sb["sources"][0]["url"] = "https://www.seoul.co.kr/news/2026/09/30/20260930500123"
+e, w = errs(sb, feed=FEED)
+ck("피드에 없는 기사(검색으로만 본 것)는 탈락", has(e, "피드에 없는 기사"), str(e))
+ck("…느슨 모드에선 경고로만", errs(sb, feed=FEED, lenient=True)[0] == []
+   and has(errs(sb, feed=FEED, lenient=True)[1], "피드에 없는 기사"))
+_allow = A.FEED_ALLOW_DOMAINS
+A.FEED_ALLOW_DOMAINS = ("seoul.co.kr",)
+ck("허용 도메인(루틴이 실제로 열 수 있는 곳)이면 피드 밖도 받는다 — 지금 목록은 비어 있다",
+   not has(errs(sb, feed=FEED)[0], "피드에 없는 기사") and _allow == ())
+A.FEED_ALLOW_DOMAINS = _allow
+sb = base(); sb["sources"][0]["url"] = "https://m.yna.co.kr/view/AKR20260930000100017?utm_source=x"
+ck("주소 모양이 달라도(m.·utm) 같은 기사면 통과", errs(sb, feed=FEED)[0] == [], str(errs(sb, feed=FEED)[0]))
+sb = base(published="2026-09-30T09:10:00+09:00")
+ck("published_at 이 피드와 다르면 탈락", has(errs(sb, feed=FEED)[0], "피드의 '2026-09-30T08:10:00+09:00'"))
+sb = base(published="2026-09-29T23:10:00Z")
+ck("…같은 시각을 UTC 로 적으면 통과", errs(sb, feed=FEED)[0] == [], str(errs(sb, feed=FEED)[0]))
+sb = base(); sb["sources"][0]["facts"][0] = "올해 1~8월 AI 목소리 복제 의심 신고 1,500건"
+e, _ = errs(sb, feed=FEED)
+ck("facts 숫자가 기사 본문에 없으면 탈락(느슨 모드도)", has(e, "숫자 1500 가 기사 본문(피드)에 없다")
+   and has(errs(sb, feed=FEED, lenient=True)[0], "기사 본문"), str(e))
+sb = base(); sb["sources"][0]["facts"][0] = "올해 1~8월 AI 목소리 복제 의심 신고 1245건, 작년 같은 기간의 3배"
+ck("쉼표 없는 1245 = 본문의 1,245", errs(sb, feed=FEED)[0] == [], str(errs(sb, feed=FEED)[0]))
+ck("피드 대조는 전각 숫자도 같게 본다(NFKC)", A._feed_nums("１，２４５건 ４．５％") == {"1245", "4.5"})
+sb = base(); sb["sources"][0]["facts"][0] = "2026년 1~8월 AI 목소리 복제 의심 신고 1,245건, 작년의 3배"
+ck("기사 날짜의 연도(2026)는 본문에 없어도 된다('올해')", errs(sb, feed=FEED)[0] == [], str(errs(sb, feed=FEED)[0]))
+sb = base(); sb["sources"][0]["title"] = "AI 목소리 복제 신고 5배"
+ck("출처 title 의 숫자도 본문 대조", has(errs(sb, feed=FEED)[0], "숫자 5 가"))
+old_ver = feed_item(URL, "2026-09-30T08:10:00+09:00", ART + " 피해액은 42억원이다.")
+two = A.feed_index([("2026-09-30_am.json", {"items": [feed_item(URL, "2026-09-30T08:10:00+09:00", ART)]}),
+                    ("2026-09-29_pm.json", {"items": [old_ver]})], NOW.date())
+sb = base(); sb["sources"][0]["facts"].append("피해액은 42억원")
+ck("같은 기사의 이전 판(다른 파일) 본문도 대조에 쓴다", errs(sb, feed=two)[0] == [] and two["files"][0] == "2026-09-30_am.json",
+   str(errs(sb, feed=two)[0]))
+sample_p = os.path.join(ROOT, "docs", "samples", "2026-01-01_ai_am_storyboard.json")
+with open(sample_p, encoding="utf-8") as f:
+    sample = json.load(f)
+e, w = A.check(sample, sample_p, now=NOW, history=[], lenient=True, feed=None)
+ck("견본 대본(수동 점검 기본값)은 느슨 모드에서 여전히 통과(경고만)", e == [] and has(w, "대조할 수 없다"), str(e))
+e, _ = A.check(sample, sample_p, now=NOW, history=[], lenient=True, feed=FEED)
+ck("…피드가 있어도 견본 주소는 경고로만", e == [], str(e))
+
+print("\n── 11. 피드 읽기 —파일 고르기·후보 목록·본문 보기 ──")
+with tempfile.TemporaryDirectory() as td:
+    PM_URL = "https://www.aitimes.com/news/articleView.html?idxno=215817"
+    docs = {
+        "2026-09-30_am.json": [feed_item(URL, "2026-09-30T08:10:00+09:00", ART, "AI 목소리 복제 보이스피싱 신고 3배")],
+        "2026-09-29_pm.json": [feed_item(PM_URL, "2026-09-29T18:22:02+09:00", "배경훈 장관 독파모 " * 20,
+                                         "배경훈 장관 “독파모 계속된다”", "AI타임스"),
+                               feed_item("https://www.msit.go.kr/bbs/view.do?nttSeqNo=1", "2026-09-28T09:00:00+09:00",
+                                         "과기정통부 보도자료 " * 20, "오래된 보도자료", "과학기술정보통신부", True)],
+        "2026-09-20_am.json": [feed_item("https://old.example/1", "2026-09-20T08:00:00+09:00", "x" * 300, "아주 옛날")],
+    }
+    for name, its in docs.items():
+        with open(os.path.join(td, name), "w", encoding="utf-8") as f:
+            json.dump({"generated_at": f"{name[:10]}T09:40:00+09:00", "items": its}, f, ensure_ascii=False)
+    fd = A.load_feed(NOW, refs=(), dirs=[td])
+    ck("최근 4일 파일만 · 최신 먼저", fd["files"] == ["2026-09-30_am.json", "2026-09-29_pm.json"], str(fd["files"]))
+    cands = A.feed_candidates(fd, NOW)
+    ck("후보 = 48시간 안 기사만(50시간 전 보도자료 제외) · 최신 순", [c["url"] for c in cands] == [URL, PM_URL],
+       str([c["url"] for c in cands]))
+    ck("14일 안 다룬 기사는 후보에서 뺀다", [c["url"] for c in A.feed_candidates(fd, NOW, [A.norm_url(URL)])] == [PM_URL])
+    txt, n = A.feed_listing(fd, NOW)
+    ck("목록: id·매체·제목", n == 2 and f"[{A.feed_id(URL)}]" in txt and "AI타임스" in txt and "독파모 계속된다" in txt, txt)
+    ck("…이번 슬롯 파일이 있으면 경고 없음", "아직 없다" not in txt)
+    txt, _ = A.feed_listing(fd, dt.datetime(2026, 9, 30, 19, 7, tzinfo=A.KST))
+    ck("…저녁 편인데 저녁 파일이 없으면(워크플로 지연) 직전 파일로 대신한다고 알린다",
+       "2026-09-30_pm.json)이 아직 없다" in txt, txt)
+    txt, n = A.feed_listing(A.feed_index([], NOW.date()), NOW)
+    ck("…피드가 없으면 ❌ + 올리지 않는다고 안내", n == 0 and "❌" in txt and "올리지 않고" in txt)
+    shown = A.feed_show(fd, A.feed_id(URL))
+    ck("--show: 본문 + 출처 뼈대(published_at 그대로)", shown and ART in shown
+       and '"published_at": "2026-09-30T08:10:00+09:00"' in shown and '"url": "' + URL in shown, shown)
+    ck("--show: 주소로도 찾는다 · 없는 id 는 None", A.feed_show(fd, PM_URL) and A.feed_show(fd, "zzzzzzzz") is None)
+    ck("id 는 주소 모양이 달라도 같다", A.feed_id("https://m.yna.co.kr/view/AKR20260930000100017/?utm_source=a")
+       == A.feed_id(URL))
+    r = subprocess.run([sys.executable, os.path.join(HERE, "ai_news.py"), "feed", "--dir", td, "--no-fetch",
+                        "--now", "2026-09-30T10:07:00+09:00"], capture_output=True, text=True, encoding="utf-8")
+    ck("CLI: feed --dir 가 목록을 찍는다(종료코드 0)", r.returncode == 0 and "독파모" in r.stdout, r.stdout[-300:] + r.stderr[-300:])
+
+print("\n── 12. 피드 만들기(ai_news_feed.py) — 네트워크 없이 가짜 응답으로 ──")
+import ai_news_feed as FE  # noqa: E402
+import io as _io  # noqa: E402
+import zipfile as _zip  # noqa: E402
+
+RSS = """<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel><title>테스트</title>
+<item><title><![CDATA[AI 목소리 복제 보이스피싱 신고 3배]]></title>
+ <link><![CDATA[https://news.test/view.do?a=1&amp;b=2]]></link>
+ <pubDate>Wed, 30 Sep 2026 08:10:00 +0900</pubDate>
+ <description><![CDATA[경찰청은 AI 목소리 복제 신고가 늘었다고 밝혔다.]]></description></item>
+<item><title>반도체 수출 늘었다</title><link>https://news.test/2</link>
+ <pubDate>Wed, 30 Sep 2026 07:00:00 +0900</pubDate><description>수출이 늘었다&nbsp;발표 &middot; 산업부</description></item>
+<item><title>AI 사흘 지난 기사</title><link>https://news.test/3</link>
+ <pubDate>Sun, 27 Sep 2026 07:00:00 +0900</pubDate><description>AI</description></item>
+<item><title>Thai food said to be great</title><link>https://news.test/4</link>
+ <pubDate>Wed, 30 Sep 2026 07:30:00 +0900</pubDate><description>food</description></item>
+<item><title>AI 요약만 있는 기사</title><link>https://news.test/5</link>
+ <pubDate>Wed, 30 Sep 2026 06:00:00 +0900</pubDate><description>짧은 요약</description></item>
+</channel></rss>"""
+ATOM = """<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Lab</title>
+<entry><title>Introducing a safer model</title><link rel="alternate" href="https://lab.test/news/safer"/>
+ <published>2026-09-29T22:00:00Z</published>
+ <summary>We are releasing a new model for everyone with stronger safety checks and 40% fewer errors on hard tasks today.</summary></entry>
+<entry><title>Long post</title><link href="https://lab.test/news/long"/><updated>2026-09-30T00:30:00+00:00</updated>
+ <content type="html">&lt;p&gt;LONG&lt;/p&gt;</content></entry>
+</feed>""".replace("LONG", "The new assistant answers questions in 12 languages. " * 30)
+PAGE = """<html><head><meta property="article:published_time" content="2026-09-30T08:10:00+09:00">
+<script>var t = "AI AI AI";</script><title>제목</title></head><body><div class="header">메뉴 로그인</div>
+<div id="article-view-content-div">
+<p>(서울=연합뉴스) 경찰청은 올해 1~8월 AI 목소리 복제 의심 신고가 1,245건으로 작년 같은 기간의 3배라고 30일 밝혔다.</p>
+<p>경찰은 목소리 3초 분량이면 복제할 수 있다며, 가족끼리 암호를 정해 두라고 당부했다. 인공지능을 이용한 사기는
+갈수록 정교해지고 있어 모르는 번호로 걸려 온 가족의 다급한 목소리는 일단 의심해야 한다고 경찰은 설명했다.
+특히 돈을 보내 달라는 전화라면 끊고 가족에게 직접 다시 걸어 확인하는 것이 가장 확실한 방법이라고 덧붙였다.</p>
+<script>Util.copyToClipboardToast(selector, '', url);</script>
+<ul class="related"><li><a href="/9">관련기사 AI에 99조원 투자</a></li></ul>
+<p><a href="/8">다른 기사 77만 명 몰렸다</a> 2026.09.23</p>
+<p>저작권자 © 테스트 무단전재 및 재배포 금지</p>
+</div><div class="footer">© 2026 테스트</div></body></html>"""
+LD = ('<html><head><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage"},'
+      '{"@type":"NewsArticle","datePublished":"2026-09-30T09:00:00+09:00","articleBody":"' + "생성형 AI 규칙이 바뀐다. " * 20
+      + '"}]}</script></head><body><div class="menu">x</div></body></html>')
+
+
+def odt_bytes(text_xml):
+    buf = _io.BytesIO()
+    with _zip.ZipFile(buf, "w") as z:
+        z.writestr("mimetype", "application/vnd.oasis.opendocument.text")
+        z.writestr("content.xml", '<?xml version="1.0" encoding="UTF-8"?><office:document-content '
+                   'xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" '
+                   'xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0"><office:body><office:text>'
+                   + text_xml + "</office:text></office:body></office:document-content>")
+    return buf.getvalue()
+
+
+class FakeHttp:
+    def __init__(self, pages, blocked=()):
+        self.pages, self.blocked, self.calls = pages, set(blocked), []
+
+    def get(self, url, data=None, referer=""):
+        self.calls.append((url, data))
+        if url in self.blocked:
+            raise PermissionError("robots.txt 가 막는다")
+        key = (url, data) if data else url
+        if key not in self.pages:
+            raise OSError("404")
+        b = self.pages[key]
+        return url, (b if isinstance(b, bytes) else b.encode("utf-8")), "text/html; charset=utf-8"
+
+
+es = FE.parse_feed(RSS.encode("utf-8"))
+ck("RSS: CDATA 주소의 &amp; 를 푼다", es[0]["url"] == "https://news.test/view.do?a=1&b=2", es[0]["url"])
+ck("RSS: pubDate(RFC 822) → 시간대 있는 시각", es[0]["published"] == dt.datetime(2026, 9, 30, 8, 10, tzinfo=A.KST))
+ck("RSS: XML 에 없는 HTML 엔터티(&nbsp;)도 죽지 않는다", "수출이 늘었다" in FE.html_to_text(es[1]["body"]))
+ea = FE.parse_feed(ATOM, FE.UTC)
+ck("Atom: link href · published(Z) · content(HTML 이스케이프)",
+   ea[0]["url"] == "https://lab.test/news/safer" and ea[0]["published"].utcoffset() == dt.timedelta(0)
+   and "12 languages" in FE.html_to_text(ea[1]["body"]))
+ck("시간대 없는 날짜 → 그 피드의 기본 시간대(국내=KST)",
+   FE.parse_date("2026-09-30 18:22:02") == dt.datetime(2026, 9, 30, 18, 22, 2, tzinfo=A.KST)
+   and FE.parse_date("Wed, 30 Sep 2026 20:53:47 +09:00") == dt.datetime(2026, 9, 30, 20, 53, 47, tzinfo=A.KST))
+ck("AI 판별: 'AI'·인공지능 O · Thai·said X", FE.is_ai("AI 목소리 복제") and FE.is_ai("생성형 인공지능 규칙")
+   and not FE.is_ai("Thai food said to be great") and not FE.is_ai("반도체 수출", "AI 한 번"))
+art = FE.extract_article(PAGE)
+ck("본문 칸: 기사 문단만 — 숫자·문장 그대로", "1,245건" in art["text"] and "3초 분량" in art["text"], art["text"])
+ck("…스크립트·메뉴·관련 기사 링크 줄·저작권 줄은 뺀다",
+   not any(x in art["text"] for x in ("Util.copy", "메뉴", "99조원", "77만", "저작권자", "AI AI AI")), art["text"])
+ck("…게시 시각 메타도 읽는다", art["published"] == "2026-09-30T08:10:00+09:00")
+ld = FE.extract_article(LD)
+ck("JSON-LD articleBody(@graph 안)도 읽는다", ld["how"] == "jsonld" and ld["text"].startswith("생성형 AI 규칙이"), str(ld))
+ck("두 번 이스케이프된 조각·한글 문서 주석은 버린다",
+   FE.html_to_text("&lt;p&gt;첫 문장&lt;/p&gt;<!--[data-hwpjson]{\"a\": 1}-->") == "첫 문장")
+odt = odt_bytes('<text:h>AI 기본법 시행령</text:h><text:p>과기정통부는 시행령을<text:s/>1월 22일부터 시행한다.</text:p>')
+ck("ODT 첨부(과기정통부 '기계판독용') 본문", FE.odt_text(odt) == "AI 기본법 시행령\n과기정통부는 시행령을 1월 22일부터 시행한다.",
+   FE.odt_text(odt))
+att = FE.odt_attachment("<a onclick=\"fn_download('55214', '2', 'odt')\">", "https://www.msit.go.kr/bbs/view.do?x=1")
+ck("…게시판 페이지에서 ODT 첨부 주소를 찾는다(과기정통부만)",
+   att == ("https://www.msit.go.kr/ssm/file/fileDown.do", b"atchFileNo=55214&fileOrd=2&fileBtn=A")
+   and FE.odt_attachment("fn_download('1', '1', 'odt')", "https://other.test/x") is None, str(att))
+
+SRC = [{"id": "news", "outlet": "테스트뉴스", "lang": "ko", "official": False, "ai_only": False,
+        "url": "https://news.test/rss"},
+       {"id": "lab", "outlet": "Lab", "lang": "en", "official": True, "ai_only": True, "url": "https://lab.test/rss"},
+       {"id": "dup", "outlet": "테스트뉴스", "lang": "ko", "official": False, "ai_only": True,
+        "url": "https://news.test/rss2"},
+       {"id": "dead", "outlet": "죽은 피드", "lang": "ko", "official": False, "ai_only": True,
+        "url": "https://dead.test/rss"},
+       {"id": "gov", "outlet": "과학기술정보통신부", "lang": "ko", "official": True, "ai_only": False,
+        "url": "https://www.msit.go.kr/rss"}]
+GOV_RSS = ("<rss><channel><item><title>AI 기본법 시행령 시행</title>"
+           "<link>https://www.msit.go.kr/bbs/view.do?sCode=user&amp;nttSeqNo=9</link>"
+           "<pubDate>Wed, 30 Sep 2026 09:00:00 +0900</pubDate><description>- 부제</description></item></channel></rss>")
+GOV_PAGE = "<div class='bbs_view'>자세한 내용은 첨부파일을 참고하시기 바랍니다.</div><a onclick=\"fn_download('77', '2', 'odt')\">"
+GOV_ODT = odt_bytes("<text:p>" + "과기정통부는 AI 기본법 시행령을 1월 22일부터 시행한다고 밝혔다. " * 5 + "</text:p>")
+http = FakeHttp({"https://news.test/rss": RSS, "https://news.test/rss2": RSS, "https://lab.test/rss": ATOM,
+                 "https://news.test/view.do?a=1&b=2": PAGE, "https://www.msit.go.kr/rss": GOV_RSS,
+                 "https://www.msit.go.kr/bbs/view.do?sCode=user&nttSeqNo=9": GOV_PAGE,
+                 ("https://www.msit.go.kr/ssm/file/fileDown.do", b"atchFileNo=77&fileOrd=2&fileBtn=A"): GOV_ODT},
+                blocked={"https://lab.test/news/safer"})
+items, stats = FE.collect(NOW, SRC, http, log=lambda *a: None)
+by = {it["url"]: it for it in items}
+ck("48시간 안 AI 기사만(사흘 지난 것·AI 아닌 것·Thai 제외)",
+   set(by) == {"https://news.test/view.do?a=1&b=2", "https://lab.test/news/safer", "https://lab.test/news/long",
+               "https://www.msit.go.kr/bbs/view.do?sCode=user&nttSeqNo=9"}, str(sorted(by)))
+k = by.get("https://news.test/view.do?a=1&b=2", {})
+ck("피드 요약이 짧으면 기사 페이지에서 본문(숫자 그대로)", k.get("text_from") == "page" and "1,245건" in k.get("text", ""), str(k))
+ck("…published_at 은 KST ISO(시간대 포함)", k.get("published_at") == "2026-09-30T08:10:00+09:00")
+ck("…같은 기사가 두 피드에 있으면 하나로", sum(1 for it in items if it["url"] == k.get("url")) == 1)
+ck("…id = ai_news.feed_id(주소)", k.get("id") == A.feed_id("https://news.test/view.do?a=1&b=2"))
+s = by.get("https://lab.test/news/safer", {})
+ck("robots 가 막은 페이지는 열지 않는다 — 공식 발표는 요약(100자↑)만이라도 남긴다",
+   s.get("text_from") == "feed" and "40% fewer errors" in s.get("text", "") and s.get("official") is True
+   and s.get("published_at") == "2026-09-30T07:00:00+09:00", str(s))
+ck("…매체 기사는 요약뿐이면(페이지 404) 버린다", "https://news.test/5" not in by)
+ck("피드 본문이 충분하면 페이지를 열지 않는다", not any(u == "https://lab.test/news/long" for u, _ in http.calls))
+g_ = by.get("https://www.msit.go.kr/bbs/view.do?sCode=user&nttSeqNo=9", {})
+ck("부처 보도자료: 게시판 → ODT 첨부 본문", g_.get("text_from") == "odt" and "1월 22일부터" in g_.get("text", ""), str(g_))
+st = {x["id"]: x for x in stats}
+ck("피드 하나가 죽어도 나머지는 간다(통계에 오류)", st["dead"]["ok"] is False and st["dead"]["error"] and st["news"]["ok"])
+ck("긴 본문은 4,000자로 자른다", len(FE.trim("가나다라. " * 2000)) <= FE.TEXT_MAX)
+with tempfile.TemporaryDirectory() as td:
+    keep = feed_item("https://keep.test/a", "2026-09-30T06:00:00+09:00", "x" * 300, "아까 받은 기사")
+    with open(os.path.join(td, "2026-09-30_am.json"), "w", encoding="utf-8") as f:
+        json.dump({"items": [keep]}, f)
+    for old_name in ("2026-09-26_pm.json", "2026-09-27_am.json"):
+        open(os.path.join(td, old_name), "w").write("{}")
+    path, doc = FE.build(td, NOW, SRC, FakeHttp(http.pages, http.blocked), log=lambda *a: None)
+    ck("build: 슬롯 파일 이름 = 시계로 정한 슬롯(10:20 → 오전)", os.path.basename(path) == "2026-09-30_am.json")
+    ck("…같은 슬롯 파일이 있으면 합친다(피드에서 밀려난 기사도 남게)",
+       any(it["url"] == "https://keep.test/a" for it in doc["items"]) and len(doc["items"]) == len(items) + 1)
+    ck("…오래된 파일은 지운다(오늘 포함 4일치만)", sorted(os.listdir(td)) == ["2026-09-27_am.json", "2026-09-30_am.json"],
+       str(sorted(os.listdir(td))))
+    fd = A.load_feed(NOW, refs=(), dirs=[td])
+    ck("…만든 파일을 ai_news 가 그대로 읽는다", A.norm_url("https://news.test/view.do?a=1&b=2") in fd["by_url"])
+ck("User-Agent 에 이름과 레포 주소를 밝힌다", FE.UA.startswith("autoSNS-ai-news-feed/") and "github.com/WB-RnD-web" in FE.UA)
+ck("피드 목록: 전부 https · id 중복 없음 · 국내·해외·공식 섞임",
+   all(s["url"].startswith("https://") for s in FE.SOURCES) and len({s["id"] for s in FE.SOURCES}) == len(FE.SOURCES)
+   and {"ko", "en"} <= {s["lang"] for s in FE.SOURCES} and any(s["official"] for s in FE.SOURCES))
+
+print("\n── 13. 워크플로 연결 ──")
 wf = os.path.join(ROOT, ".github", "workflows")
 shorts = open(os.path.join(wf, "shorts.yml"), encoding="utf-8").read()
 tramp = open(os.path.join(wf, "ai-news.yml"), encoding="utf-8").read()
@@ -462,6 +780,70 @@ sys.path.insert(0, os.path.join(ROOT, "tools"))
 import find_orphan_storyboards as F  # noqa: E402
 ck("미아 복구 목적지: AI 오전 → routine/ai_am",
    F.guess_topic("output/news/2026-09-30_ai_am_storyboard.json") == "ai_am")
+ck("ai-news-run.yml 은 원문 피드 브랜치도 받아 온다(Actions 에서 출처를 다시 대조)",
+   "for b in routine/ai_am routine/ai_pm data/ai-news-feed; do" in run)
+
+
+def push_branches(text):
+    """워크플로의 on.push.branches (push 트리거가 없으면 None · 브랜치 필터가 없으면 ['**'] = 전부)."""
+    pats, in_on, push_ind, br_ind = None, False, None, None
+    for raw in text.splitlines():
+        line = raw.split(" #")[0].rstrip()
+        s = line.strip()
+        if not s or s.startswith("#"):
+            continue
+        ind = len(line) - len(line.lstrip())
+        if ind == 0:
+            in_on, push_ind, br_ind = s.startswith("on:"), None, None
+            continue
+        if not in_on:
+            continue
+        if push_ind is not None and ind <= push_ind:
+            push_ind = br_ind = None
+        if push_ind is None:
+            if s == "push:" or s.startswith("push:"):
+                push_ind, pats = ind, ["**"]
+            continue
+        if s.startswith("branches:"):
+            br_ind, pats = ind, []
+        elif br_ind is not None and s.startswith("- ") and ind >= br_ind:
+            pats.append(s[2:].strip().strip("\"'"))
+        elif br_ind is not None and ind <= br_ind:
+            br_ind = None
+    return pats
+
+
+def gh_match(pats, ref):
+    """GitHub 브랜치 필터: * = '/' 빼고 아무거나 · ** = 아무거나 · '!' = 빼기(뒤 규칙이 이긴다)."""
+    hit = False
+    for p in pats or []:
+        neg = p.startswith("!")
+        rx = re.escape(p[1:] if neg else p).replace(r"\*\*", ".*").replace(r"\*", "[^/]*")
+        if re.fullmatch(rx, ref):
+            hit = not neg
+    return hit
+
+
+flows ={n: open(os.path.join(wf, n), encoding="utf-8").read() for n in sorted(os.listdir(wf)) if n.endswith(".yml")}
+trig = {n: push_branches(t) for n, t in flows.items()}
+ck("(가드 점검) 필터 해석이 맞다: shorts 는 routine/날짜 O · routine/ai_am X · ai-news 는 routine/ai_am O",
+   gh_match(trig["shorts.yml"], "routine/2026-06-26_politics") and not gh_match(trig["shorts.yml"], "routine/ai_am")
+   and gh_match(trig["ai-news.yml"], "routine/ai_am") and trig["korea-sounds.yml"] is None, str(trig["shorts.yml"]))
+ck("어떤 push 트리거 워크플로도 data/ai-news-feed 에 반응하지 않는다(업로드가 깨어나지 않게)",
+   not [n for n, p in trig.items() if p is not None and gh_match(p, "data/ai-news-feed")],
+   str([n for n, p in trig.items() if p is not None and gh_match(p, "data/ai-news-feed")]))
+feedwf = flows.get("ai-news-feed.yml", "")
+ck("ai-news-feed.yml: 루틴 30분 전 두 번(정각 피함) + 수동 실행",
+   re.findall(r'cron:\s*"(\d+) (\d+) \* \* \*"', feedwf) == [("37", "0"), ("37", "9")] and "workflow_dispatch:" in feedwf)
+ck("…contents: write 는 이 워크플로에만",
+   [n for n, t in flows.items() if re.search(r"(?m)^\s*contents:\s*write", t)] == ["ai-news-feed.yml"])
+pushes = [ln for ln in feedwf.splitlines() if "git" in ln and " push" in ln and not ln.strip().startswith("#")]
+ck("…push 는 data/ai-news-feed 하나로만(main·routine/* 아님)",
+   len(pushes) == 1 and 'refs/heads/$FEED_BRANCH"' in pushes[0] and "FEED_BRANCH: data/ai-news-feed" in feedwf
+   and "routine/" not in pushes[0] and "main" not in pushes[0], str(pushes))
+ck("…코드는 main 에서 · 테스트가 깨지면 피드를 덮어쓰지 않는다",
+   "ref: main" in feedwf and "run: python3 pipeline/ai_news_feed.py build" in feedwf
+   and feedwf.index("run: python3 pipeline/test_ai_news.py") < feedwf.index("run: python3 pipeline/ai_news_feed.py build"))
 
 print()
 if FAIL:

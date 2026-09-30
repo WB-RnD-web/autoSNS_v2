@@ -7,6 +7,8 @@ name: AI 소식 쇼츠 — 대본 검사 → 렌더 → 유튜브(+인스타·�
 #
 # 대본은 pipeline/ai_news.py 가 먼저 검사한다(출처·48시간·14일 중복·숫자·용어·캡션·형식 돌려쓰기).
 #   못 넘으면 렌더도 업로드도 없이 빨간불. 규칙은 코드에만 있다 — 루틴 프롬프트의 부탁은 자주 무시된다.
+#   ★출처는 원문 피드(data/ai-news-feed, ai-news-feed.yml 이 만든다)와 여기서 다시 대조한다 — 피드에 없는 기사,
+#   피드와 다른 published_at, 기사 본문에 없는 facts 숫자는 탈락(루틴이 check 를 건너뛰어도 여기서 막힌다).
 #
 # ⚠️ 루프 가드: permissions read — 레포에 아무것도 커밋하지 않는다(산출물은 유튜브·인스타로만).
 
@@ -93,13 +95,13 @@ jobs:
       - name: AI 소식 검사 테스트(깨진 코드로는 올리지 않는다)
         run: python3 pipeline/test_ai_news.py
 
-      # 2) 데이터: AI 누적 브랜치 둘 다(중복 검사 이력) + 이번 push 에서 새로 추가된 대본만
+      # 2) 데이터: AI 누적 브랜치 둘 다(중복 검사 이력) + 원문 피드(출처 대조) + 이번 push 에서 새로 추가된 대본만
       - name: 처리할 AI 대본 고르기
         id: pick
         run: |
           set -euo pipefail
           mkdir -p output/news
-          for b in routine/ai_am routine/ai_pm; do
+          for b in routine/ai_am routine/ai_pm data/ai-news-feed; do
             git fetch -q --no-tags origin "+refs/heads/$b:refs/remotes/origin/$b" 2>/dev/null \
               || echo "($b 아직 없음)"
           done
