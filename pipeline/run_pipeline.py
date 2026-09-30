@@ -374,6 +374,7 @@ def ai_precheck(sb_path, sb, args, led, res) -> bool:
     """AI 소식 대본 검사(렌더 전). 계속하면 True. 못 넘으면 res 에 이유를 적고 False.
 
     이력 = 누적 브랜치 routine/ai_am·ai_pm(워크플로가 fetch) + 같은 폴더 + ledger.
+    피드 = data/ai-news-feed(워크플로가 fetch) — 루틴과 ★똑같은 대조를 여기서 다시 한다(루틴이 건너뛰어도 막힌다).
     실제로 올릴 때는 유튜브 최근 업로드도 본다(3 units) — ledger 캐시가 날아가도 같은 슬롯을 두 번 올리지 않게.
     """
     ai_news.normalize(sb)
@@ -381,9 +382,11 @@ def ai_precheck(sb_path, sb, args, led, res) -> bool:
     key = ai_news.slot_key(sb)
     hist = ai_news.load_history(now.date(), exclude=key, ledger=led,
                                 dirs=[os.path.dirname(os.path.abspath(sb_path))])
+    feed = ai_news.load_feed(now)
     lenient = ai_lenient(args)
-    errs, warns = ai_news.check(sb, sb_path, now=now, history=hist, lenient=lenient)
-    print(f"   🤖 AI 소식 검사 · {key} · 이력 {len(hist)}편 · 읽는 글자 "
+    errs, warns = ai_news.check(sb, sb_path, now=now, history=hist, lenient=lenient, feed=feed)
+    print(f"   🤖 AI 소식 검사 · {key} · 이력 {len(hist)}편 · 피드 {len(feed['files'])}파일·기사 "
+          f"{len(feed['by_url'])}건 · 읽는 글자 "
           f"{ai_news.spoken_chars(ai_news.narration(sb))}자{' · 느슨 모드' if lenient else ''}")
     for w in warns:
         print(f"::warning title=AI 소식 검사(느슨 모드)::{w}")

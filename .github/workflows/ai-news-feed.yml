@@ -1,0 +1,89 @@
+name: AI 소식 피드 — 기사 원문 → data/ai-news-feed
+
+# 왜 (2026-09-30 첫 저녁 편 미발행): AI 소식 루틴이 도는 클라우드 샌드박스는 WebSearch 는 되지만 기사 페이지
+#   WebFetch 는 egress 프록시에 막힌다(EGRESS_BLOCKED). 검색 요약만으로는 숫자가 서로 달라 루틴이 건너뛰었다.
+#   SCP 위키 때(PR #71)처럼 원문은 ★인터넷이 열린 Actions 에서 받아 git 에 둔다:
+#     이 워크플로 → pipeline/ai_news_feed.py build → data/ai-news-feed 의 feed/ai/<DATE>_<am|pm>.json
+#     루틴 → python pipeline/ai_news.py feed (후보) · feed --show ID (본문) → 출처는 여기서만
+#     검사 → ai_news.check 가 출처 URL·published_at·facts 숫자를 피드와 대조(루틴 push 때 + ai-news-run.yml 에서 다시)
+#
+# 언제: 루틴(10:07·19:07 KST) 30분 전. ★정각은 GitHub 예약이 몰려 늦거나 빠진다(orphan-check 에서 겪음) — :37 로.
+#   예약이 늦어도 루틴은 멈추지 않는다: 이번 슬롯 파일이 없으면 직전 파일들(48시간 안 기사)로 고른다.
+#
+# ⚠️ 업로드·루프 가드
+#   · 쓰는 곳은 data/ai-news-feed ★하나(고아 커밋 하나를 강제 push — 역사가 쌓여 레포가 불지 않게).
+#     main·routine/* 에는 절대 쓰지 않는다.
+#   · 그 브랜치엔 feed/ai/*.json 과 README.md 뿐이다. push 트리거는 ★push 된 커밋 안의 워크플로 파일로 도는데
+#     .github 폴더가 없으니 아무것도 깨어나지 않는다. GITHUB_TOKEN 으로 한 push 는 원래 다른 워크플로를 깨우지
+#     않고, 어느 워크플로의 브랜치 필터(shorts.yml routine/**·main · ai-news.yml routine/ai_* …)에도 data/** 는
+#     없다(pipeline/test_ai_news.py 가 확인한다).
+#   · contents: write 는 ★이 워크플로에만 준다.
+
+on:
+  schedule:
+    - cron: "37 0 * * *"      # 09:37 KST — 오전 편 루틴(10:07) 전
+    - cron: "37 9 * * *"      # 18:37 KST — 저녁 편 루틴(19:07) 전
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ai-news-feed
+  cancel-in-progress: false
+
+jobs:
+  feed:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      TZ: Asia/Seoul
+      FEED_BRANCH: data/ai-news-feed
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+
+      # 표준 라이브러리만 쓴다(pip 설치 없음). 검사 테스트가 깨졌으면 피드를 덮어쓰지 않는다.
+      - name: 피드·검사 테스트
+        run: python3 pipeline/test_ai_news.py
+
+      - name: 지난 피드 받기(같은 슬롯 합치기 · 오래된 파일 정리용)
+        run: |
+          set -euo pipefail
+          OUT="$RUNNER_TEMP/feedroot"
+          mkdir -p "$OUT/feed/ai"
+          if git fetch -q --no-tags --depth=1 origin "+refs/heads/$FEED_BRANCH:refs/remotes/origin/$FEED_BRANCH"; then
+            git archive "origin/$FEED_BRANCH" feed | tar -x -C "$OUT" || echo "(지난 피드 풀기 실패 — 새로 만든다)"
+          else
+            echo "($FEED_BRANCH 아직 없음 — 첫 실행)"
+          fi
+          ls -la "$OUT/feed/ai"
+
+      - name: 기사 모으기(RSS/Atom · 공식 보도자료 → 48시간 안 AI 기사 원문)
+        run: python3 pipeline/ai_news_feed.py build --dir "$RUNNER_TEMP/feedroot/feed/ai"
+
+      - name: data/ai-news-feed 에 올리기(고아 커밋 하나 · 강제)
+        run: |
+          set -euo pipefail
+          OUT="$RUNNER_TEMP/feedroot"
+          {
+            echo "# data/ai-news-feed — 자동 생성(손대지 않는다)"
+            echo
+            echo "- 만든 곳: .github/workflows/ai-news-feed.yml (main) · pipeline/ai_news_feed.py"
+            echo "- 읽는 곳: python pipeline/ai_news.py feed / check / push, ai-news-run.yml"
+            echo "- 파일: feed/ai/<DATE>_<am|pm>.json — 48시간 안 AI 기사(제목·주소·published_at·본문 앞 4,000자)"
+            echo "- 매번 고아 커밋 하나로 강제 push 한다(최근 4일치 파일만 남긴다)."
+            echo "- 마지막 생성: $(date '+%F %H:%M') KST · run ${GITHUB_RUN_ID}"
+          } > "$OUT/README.md"
+          export GIT_INDEX_FILE="$RUNNER_TEMP/feed.index"
+          export GIT_AUTHOR_NAME="ai-news-feed" GIT_AUTHOR_EMAIL="41898282+github-actions[bot]@users.noreply.github.com"
+          export GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME" GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
+          REPO="$GITHUB_WORKSPACE/.git"
+          ( cd "$OUT" && git --git-dir="$REPO" --work-tree=. add -A -f . )
+          TREE=$(git --git-dir="$REPO" write-tree)
+          COMMIT=$(git --git-dir="$REPO" commit-tree "$TREE" -m "data: AI 소식 피드 $(date '+%F %H:%M') KST")
+          git --git-dir="$REPO" ls-tree -r --name-only "$COMMIT"
+          # ★대상은 data/ai-news-feed 하나로 고정(main·routine/* 금지)
+          git --git-dir="$REPO" push -f origin "$COMMIT:refs/heads/$FEED_BRANCH"
