@@ -63,15 +63,15 @@ for p, s in ((GUIDE_P, G), (REPORT_P, RP)):
 
 print("── 편성(요일 → 형식, 날짜 → 주제) ──")
 cat = I.catalog()
-ck("start 는 월요일", I._date(cat["start"]).weekday() == 0)
+ck("start 는 가이드 요일(월·수·금)", I._date(cat["start"]).weekday() in (0, 2, 4))
 week = {d: I.format_for(f"2026-10-{d:02d}") for d in range(5, 12)}
 ck("월·수·금 guide · 일 report · 화·목·토 쉼",
    week == {5: "guide", 6: None, 7: "guide", 8: None, 9: "guide", 10: None, 11: "report"}, str(week))
 slugs = [t["slug"] for t in cat["topics"]]
-ck("10/5 → 1번 · 10/7 → 2번 · 10/9 → 3번 · 10/12 → 4번",
-   [I.assigned(d)["slug"] for d in ("2026-10-05", "2026-10-07", "2026-10-09", "2026-10-12")] == slugs[:4])
+ck("9/30 → 1번 · 10/2 → 2번 · 10/5 → 3번 · 10/7 → 4번",
+   [I.assigned(d)["slug"] for d in ("2026-09-30", "2026-10-02", "2026-10-05", "2026-10-07")] == slugs[:4])
 ck("일요일은 weekly-report", I.assigned("2026-10-11")["slug"] == I.REPORT_SLUG)
-ck("start 이전 가이드 날은 쉼", I.assigned("2026-09-30")["format"] is None)
+ck("start 이전 가이드 날은 쉼", I.assigned("2026-09-28")["format"] is None)
 ck("같은 날짜는 늘 같은 주제(결정론)", I.assigned("2026-10-21") == I.assigned("2026-10-21"))
 last = I._date(cat["start"])
 while I.assigned(last)["slug"] != slugs[-1]:
