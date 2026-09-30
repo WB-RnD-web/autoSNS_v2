@@ -828,7 +828,10 @@ flows ={n: open(os.path.join(wf, n), encoding="utf-8").read() for n in sorted(os
 trig = {n: push_branches(t) for n, t in flows.items()}
 ck("(가드 점검) 필터 해석이 맞다: shorts 는 routine/날짜 O · routine/ai_am X · ai-news 는 routine/ai_am O",
    gh_match(trig["shorts.yml"], "routine/2026-06-26_politics") and not gh_match(trig["shorts.yml"], "routine/ai_am")
-   and gh_match(trig["ai-news.yml"], "routine/ai_am") and trig["korea-sounds.yml"] is None, str(trig["shorts.yml"]))
+   and gh_match(trig["ai-news.yml"], "routine/ai_am")
+   # korea-sounds 는 PR #97 부터 routine/korea_sounds push 로도 돈다 — 그 브랜치에만 반응해야 한다
+   and gh_match(trig["korea-sounds.yml"], "routine/korea_sounds")
+   and not gh_match(trig["korea-sounds.yml"], "routine/ai_am"), str(trig["shorts.yml"]))
 ck("어떤 push 트리거 워크플로도 data/ai-news-feed 에 반응하지 않는다(업로드가 깨어나지 않게)",
    not [n for n, p in trig.items() if p is not None and gh_match(p, "data/ai-news-feed")],
    str([n for n, p in trig.items() if p is not None and gh_match(p, "data/ai-news-feed")]))
