@@ -1,0 +1,49 @@
+name: 오디오 언어 되돌리기(1회성)
+
+# 한국어 음성인데 '오디오 언어: 영어(en-US)'로 바뀐 영상을 'ko' 로 되돌린다 — pipeline/fix_audio_lang.py.
+# 기본은 미리보기(바꾸지 않음). apply 를 켜야 실제로 수정한다(1편 50 units — 쇼츠 업로드가 적은 시간에).
+
+on:
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: "실제 적용(끄면 미리보기만)"
+        type: boolean
+        default: false
+      limit:
+        description: "최근 몇 편까지 볼지"
+        default: "200"
+
+permissions:
+  contents: read
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: pipeline/requirements.txt
+      - run: python -m pip install -r pipeline/requirements.txt
+      - name: YouTube 자격증명(왕별이 채널 토큰)
+        env:
+          YT_CLIENT_SECRET_JSON: ${{ secrets.YT_CLIENT_SECRET_JSON }}
+          YT_TOKEN_JSON_NOVEL: ${{ secrets.YT_TOKEN_JSON_NOVEL }}
+          YT_TOKEN_JSON_FORCESSL: ${{ secrets.YT_TOKEN_JSON_FORCESSL }}
+        run: |
+          mkdir -p pipeline/secrets
+          printf '%s' "$YT_CLIENT_SECRET_JSON" > pipeline/secrets/client_secret.json
+          printf '%s' "$YT_TOKEN_JSON_NOVEL" > pipeline/secrets/token_novel.json
+          if [ -n "$YT_TOKEN_JSON_FORCESSL" ]; then
+            printf '%s' "$YT_TOKEN_JSON_FORCESSL" > pipeline/secrets/token_forcessl.json
+          fi
+      - name: 되돌리기
+        run: |
+          cd pipeline
+          ARGS="--limit ${{ github.event.inputs.limit }}"
+          [ "${{ github.event.inputs.apply }}" = "true" ] && ARGS="$ARGS --apply"
+          python fix_audio_lang.py $ARGS

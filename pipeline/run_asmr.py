@@ -83,6 +83,11 @@ def english_name(theme_id: str) -> str:
                     for i, w in enumerate(words)) or "Relaxing"
 
 
+def audio_language(spec: dict) -> str:
+    """말소리가 없는 소리 영상은 'zxx'(관련 없음) — 특정 언어권에만 묶이지 않게. 나레이션이 있으면 한국어."""
+    return "ko" if (spec.get("narration_text") or "").strip() else "zxx"
+
+
 def english_localization(spec: dict, duration_sec: float | None) -> dict:
     yt = (spec.get("platforms") or {}).get("youtube") or {}
     name = english_name(spec.get("theme_id", ""))
@@ -249,7 +254,7 @@ def process(spec_path: str, args, led) -> dict:
                 default_language=meta["default_language"],
                 i18n_langs=list(loc) if meta["default_language"] else None,
                 playlist_description=meta["playlist_description"],
-                synthetic=meta["synthetic"])
+                synthetic=meta["synthetic"], audio_language=audio_language(spec))
             res["uploaded"] = f"{pub['url']} ({meta['privacy']})"
             res["playlist"] = pub.get("playlist_id")
             if led is not None:
