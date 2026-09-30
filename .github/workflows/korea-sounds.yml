@@ -10,7 +10,8 @@ name: Korea Sleep Sounds — 8시간 한국 풍경 사운드(해외용) → 유�
 
 on:
   schedule:
-    - cron: "0 11 * * 3,6"      # 수·토 11:00 UTC = 20:00 KST
+    # ★정각(:00)은 GitHub 예약이 가장 몰려 늦거나 빠진다 — 9/27 첫 예약이 아예 안 돌았다. 한산한 분으로.
+    - cron: "37 10 * * 3,6"     # 수·토 10:37 UTC = 19:37 KST
   workflow_dispatch:
     inputs:
       date:
