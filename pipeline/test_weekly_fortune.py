@@ -66,7 +66,8 @@ def has(errs, word):
 print("── 주 배정 ──")
 ck("일 17:00 → 다음 주 월요일", WF.target_monday(at("2026-10-04T17:00")) == dt.date(2026, 10, 5))
 ck("늦게 돌아 월 01:00 → 같은 주", WF.target_monday(at("2026-10-05T01:00")) == dt.date(2026, 10, 5))
-ck("토요일 → 이번 주", WF.target_monday(at("2026-10-10T12:00")) == dt.date(2026, 10, 5))
+ck("토 17:00(루틴) → 다음 주 월요일", WF.target_monday(at("2026-10-03T17:00")) == dt.date(2026, 10, 5))
+ck("금요일 → 이번 주", WF.target_monday(at("2026-10-09T12:00")) == dt.date(2026, 10, 5))
 ck("일 23:59 → 다음 주", WF.target_monday(at("2026-10-11T23:59")) == dt.date(2026, 10, 12))
 ck("주 번호 ↔ 월요일", WF.week_key(dt.date(2026, 10, 5)) == "2026-W41" and WF.monday_of("2026-W41") == dt.date(2026, 10, 5))
 ck("해가 바뀌는 주(ISO)", WF.week_key(dt.date(2026, 12, 28)) == "2026-W53" and WF.monday_of("2027-W01") == dt.date(2027, 1, 4))
@@ -78,11 +79,11 @@ ck("날짜 범위(달이 바뀌면 달을 다시 쓴다)", WF.range_label(dt.dat
 ck("출력 경로가 shorts.yml(output/news/**_storyboard.json)과 겹치지 않는다",
    not WF.OUT_DIR.startswith("output/news") and not WF.file_name(dt.date(2026, 10, 5)).endswith("_storyboard.json"))
 
-print("── 공개 시각(일 20:00 KST 예약) ──")
-ck("일 17:40 에 렌더 끝 → 그날 20:00 KST = 11:00Z",
-   WF.publish_at(dt.date(2026, 10, 5), at("2026-10-04T17:40")) == "2026-10-04T11:00:00Z")
-ck("이미 20:00 이 지났으면 바로 공개(None)", WF.publish_at(dt.date(2026, 10, 5), at("2026-10-04T20:30")) is None)
-ck("10분 안이면 바로 공개", WF.publish_at(dt.date(2026, 10, 5), at("2026-10-04T19:55")) is None)
+print("── 공개 시각(일 08:00 KST 예약) ──")
+ck("토 17:40 에 렌더 끝 → 일 08:00 KST = 토 23:00Z",
+   WF.publish_at(dt.date(2026, 10, 5), at("2026-10-03T17:40")) == "2026-10-03T23:00:00Z")
+ck("이미 일 08:00 이 지났으면 바로 공개(None)", WF.publish_at(dt.date(2026, 10, 5), at("2026-10-04T08:30")) is None)
+ck("10분 안이면 바로 공개", WF.publish_at(dt.date(2026, 10, 5), at("2026-10-04T07:55")) is None)
 ck("시각 바꾸기(WEEKLY_PUBLISH_HHMM)", WF.publish_at(dt.date(2026, 10, 5), at("2026-10-04T12:00"), "19:30")
    == "2026-10-04T10:30:00Z")
 

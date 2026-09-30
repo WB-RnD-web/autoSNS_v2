@@ -130,9 +130,12 @@ ANIMAL_NAME_RE = re.compile(r"(" + "|".join(sorted(ANIMALS, key=len, reverse=Tru
 
 # ── 주 ───────────────────────────────────────────────────────
 def target_monday(now: dt.datetime | None = None) -> dt.date:
-    """이번에 쓸 주의 월요일 — '내일이 속한 ISO 주'. 일요일 → 다음 주, 월~토 → 이번 주."""
+    """이번에 쓸 주의 월요일 — '모레가 속한 ISO 주'. 토·일 → 다음 주, 월~금 → 이번 주.
+
+    2026-10-01: 루틴을 토 17:00 에 돌려 일요일 아침(08:00)에 공개한다 — 왕별이 시청자는 아침 7시~오후 3시에
+    몰려 있고(스튜디오 '시청자가 YouTube를 이용하는 시간대') 저녁은 한산하다."""
     now = (now or dt.datetime.now(KST)).astimezone(KST)
-    t = now.date() + dt.timedelta(days=1)
+    t = now.date() + dt.timedelta(days=2)
     return t - dt.timedelta(days=t.weekday())
 
 
@@ -164,10 +167,10 @@ def range_label(monday: dt.date, short: bool = False) -> str:
 
 
 def publish_at(monday: dt.date, now: dt.datetime | None = None, hhmm: str | None = None) -> str | None:
-    """공개 시각(UTC RFC3339) — 그 주 월요일 전날(일) 20:00 KST. 이미 지났거나 10분 안이면 None(바로 공개).
+    """공개 시각(UTC RFC3339) — 그 주 월요일 전날(일) 08:00 KST. 이미 지났거나 10분 안이면 None(바로 공개).
 
-    일요일 19:07 KST 전후는 AI 소식 저녁 편이 올라가는 시간이라 피한다(렌더는 17시대에 끝난다)."""
-    hhmm = hhmm or os.environ.get("WEEKLY_PUBLISH_HHMM") or "20:00"
+    렌더는 토요일 17시대에 끝난다. 일요일 아침은 시청자가 가장 많은 때다(저녁 8시는 한산했다)."""
+    hhmm = hhmm or os.environ.get("WEEKLY_PUBLISH_HHMM") or "08:00"
     try:
         h, m = (int(x) for x in hhmm.split(":"))
     except ValueError:

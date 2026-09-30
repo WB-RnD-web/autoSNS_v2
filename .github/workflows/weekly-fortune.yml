@@ -1,8 +1,8 @@
 name: 주간 띠별 운세 풀이 (routine/weekly_fortune push → main 의 weekly-fortune-run.yml)
 
-# 트리거: 주간 운세 루틴(일 17:00 KST)이 ★누적 브랜치 routine/weekly_fortune 에
+# 트리거: 주간 운세 루틴(토 17:00 KST)이 ★누적 브랜치 routine/weekly_fortune 에
 #   output/weekly_fortune/<월요일>_weekly_fortune.json 을 올리면(python pipeline/weekly_fortune.py push) 실행.
-#   렌더 20~30분(목소리는 공용 Spark 에 한 건씩) → 그 주 월요일 전날(일) 20:00 KST 예약 공개.
+#   렌더 20~30분(목소리는 공용 Spark 에 한 건씩) → 그 주 월요일 전날(일) 08:00 KST 예약 공개.
 #   루틴이 claude/* 로 잘못 밀면 orphan-rescue.yml 이 경로(output/weekly_fortune/)로 routine/weekly_fortune 에 옮긴다.
 #
 # ⚠️ push 트리거는 ★push 된 브랜치의 사본이 실행된다. 누적 브랜치의 사본은 브랜치가 생긴 날에 멈춰 낡는다.
