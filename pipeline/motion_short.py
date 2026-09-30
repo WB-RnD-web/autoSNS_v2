@@ -81,6 +81,7 @@ TOPIC_ACCENT = {
     "fortune":  "#C9A227",   # 금색 — 운세
     "luck":     "#C9A227",
     "love":     "#E0559B",
+    "ai":       "#5EC8D8",   # 청록 — AI 소식(2026-09-30). 거의 검정 배경 대비 10:1
 }
 
 
@@ -289,6 +290,9 @@ def card_cell_xy(k):
 # 여기에 해당할 수 있다 → 그 토픽에서는 진행자 없이 기존 화면(단일 내레이션)으로 나간다.
 # 바꾸기: 레포 변수 PRESENTER_TOPICS (쉼표 구분). 비우면 아래 기본값.
 PRESENTER_TOPICS_DEFAULT = "fortune,horoscope,zodiac,star,luck,love"
+# ★레포 변수로도 못 켜는 토픽(접두사). AI 소식은 정보 전달 뉴스라 AI 진행자·아바타를 세우지 않는다
+#   (2026-09-30 정책 결정 — 위 수익 창출 정책의 'AI 생성 페르소나' 위험을 새 토픽에서 다시 만들지 않는다).
+PRESENTER_NEVER = ("ai",)
 
 
 def presenter_topics():
@@ -306,6 +310,8 @@ def presenter_on(topic=None):
         return False  # 기본 꺼짐 — PRESENTER=1 일 때만 켠다(2026-09-29)
     if topic is not None:
         t = (topic or "").strip().lower()
+        if any(t == k or t.startswith(k + "_") for k in PRESENTER_NEVER):
+            return False
         if not any(t == k or t.startswith(k) for k in presenter_topics()):
             return False
     return all(os.path.exists(os.path.join(PRESENTER_DIR, f"{k}.png")) for k in SPEAKERS)

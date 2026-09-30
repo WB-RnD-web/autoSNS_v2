@@ -1,0 +1,57 @@
+{
+  "date": "2026-01-01",
+  "topic": "ai",
+  "slot": "am",
+  "privacy": "private",
+  "format": "guard",
+  "angle": "사기·딥페이크",
+  "topic_keyword": "목소리 복제 사기(견본)",
+  "headline": "견본 — AI 목소리 복제 사기 신고, 작년의 3배",
+  "hook_title": "엄마 목소리, 3초면 복제됩니다",
+  "accent": "#5EC8D8",
+  "thumbnail_hook": "A worried elderly hand holding an old flip phone on a wooden kitchen table at night, warm lamp light, soft blue glow from the phone, shallow depth of field, cinematic, no text, no faces",
+  "thumbnail_text": "3초면 복제",
+  "glossary": [
+    {"term": "딥페이크", "plain": "AI로 진짜처럼 만든 가짜"}
+  ],
+  "sources": [
+    {
+      "outlet": "견본 매체(가상)",
+      "title": "견본 — AI 목소리 복제 사기 신고 3배",
+      "url": "https://example.com/sample/ai-voice-scam",
+      "published_at": "2026-01-01T08:10:00+09:00",
+      "confirmed": true,
+      "facts": [
+        "견본(가상) — 1~8월 AI 목소리 복제 의심 신고 1,245건, 작년 같은 기간의 3배",
+        "견본(가상) — 목소리 3초 분량이면 복제할 수 있다"
+      ]
+    }
+  ],
+  "scenes": [
+    {"type": "hook", "pill": "사기 주의", "ghost": "AI", "lines": ["엄마 목소리", "3초면 복제"], "highlight": "3초",
+     "narration": "전화 속에서 들리는 엄마 목소리가, 사실은 AI가 만든 가짜일 수 있습니다."},
+    {"type": "stat", "label": "AI 목소리 사기 신고", "prefix": "", "suffix": "건", "from": 0, "to": 1245, "bar": true,
+     "sub": "작년의 <b>3배</b>",
+     "narration": "여덟 달 동안 신고가 천이백 건을 넘었고, 작년 같은 기간의 세 배입니다."},
+    {"type": "statement", "text": "딥페이크, 이제 목소리도", "highlight": "목소리",
+     "narration": "딥페이크, 그러니까 AI로 진짜처럼 만든 가짜가 이제 목소리까지 흉내 냅니다."},
+    {"type": "keypoint", "label": "막는 법 3가지",
+     "points": ["가족끼리 <b>암호 한 단어</b>", "끊고 <b>다시 걸기</b>", "돈 얘기면 <b>일단 멈춤</b>"],
+     "narration": "막는 법은 간단합니다. 가족끼리 암호 한 단어를 정하고, 일단 끊고 다시 걸고, 돈 얘기가 나오면 멈추세요."},
+    {"type": "statement", "text": "우리 집 암호, 정하셨나요?", "highlight": "암호",
+     "narration": "오늘 저녁 식사 자리에서, 가족끼리 암호 한 단어 정해 두시면 어떨까요?"}
+  ],
+  "platforms": {
+    "youtube": {
+      "title": "엄마 목소리, 3초면 복제됩니다 #shorts",
+      "description": "견본(가상) — 렌더 점검용 대본입니다. 실제 뉴스가 아닙니다.\n\n#AI #보이스피싱 #shorts"
+    },
+    "instagram": {
+      "caption": "엄마 목소리, 3초면 복제됩니다\n\n가족끼리 암호 한 단어 정해 두세요.\n매일 오전·저녁 AI 소식은 유튜브 '왕별이'에서 쉽게 풀어 드려요.\n(견본 — 실제 뉴스 아님)\n\n#AI #보이스피싱 #딥페이크"
+    },
+    "threads": {
+      "text": "엄마 목소리도 3초면 복제된대요. 가족끼리 암호 한 단어 정해 두세요. 매일 AI 소식은 유튜브 왕별이에서 쉽게 풀어요. (견본) #AI소식"
+    }
+  },
+  "notes": "렌더 점검용 견본 — ai-news-run.yml 수동 실행 기본값(비공개·업로드 없음·느슨 검사). 실제 뉴스가 아니다."
+}
