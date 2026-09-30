@@ -24,7 +24,8 @@ on:
   schedule:
     # 11:00 KST = 02:00 UTC — 전날 밤 미장(22:4x KST)과 그날 아침 국장(08:1x KST)이
     # 모두 지난 뒤라 하루치를 한 번에 본다.
-    - cron: "0 2 * * *"
+    # ★정각 예약은 몰려서 9월 내내 4~5시간 늦게 돌았다(02:00 → 06:45~07:48 UTC). 한산한 분으로.
+    - cron: "43 1 * * *"
   workflow_dispatch:
     inputs:
       max_age_days:
