@@ -51,10 +51,14 @@ def upload(video: str, title: str, description: str, privacy: str = "private",
            synthetic: bool | None = None) -> str:
     from googleapiclient.http import MediaFileUpload
     yt = get_service()
+    tags = tags or ["뉴스", "이슈", "쇼츠", "shorts"]
+    # ★오디오 언어를 처음부터 박는다 — 비어 있으면 현지화 덮어쓰기 때 영어로 바뀌어
+    #   한국어 쇼츠가 영어권에 뿌려졌다(2026-09-28~29 쇼츠 0~183회).
+    audio_lang = config.env("SHORTS_AUDIO_LANG", "ko")
     body = {
-        "snippet": {"title": title[:100], "description": description,
-                    "tags": tags or ["뉴스", "이슈", "쇼츠", "shorts"],
-                    "categoryId": "25"},  # News & Politics
+        "snippet": {"title": title[:100], "description": description, "tags": tags,
+                    "categoryId": "25",  # News & Politics
+                    "defaultLanguage": "ko", "defaultAudioLanguage": audio_lang},
         "status": {"privacyStatus": privacy, "selfDeclaredMadeForKids": False},
     }
     # 뉴스 쇼츠 배경은 실제 장소를 사진처럼 그린 AI 이미지다 → '변형·합성 콘텐츠' 표시(Help 14328491:
@@ -86,7 +90,7 @@ def upload(video: str, title: str, description: str, privacy: str = "private",
     #   token_novel.json(youtube 스코프)을 찾아 쓴다. 없으면 조용히 스킵.
     try:
         import yt_i18n
-        yt_i18n.localize(vid, localizations=localizations)
+        yt_i18n.localize(vid, localizations=localizations, audio_lang=audio_lang, tags=tags)
     except Exception as e:  # noqa: BLE001
         print(f"   ⚠️ 현지화 실패(업로드는 성공): {e}")
     return vid

@@ -76,7 +76,7 @@ def get_service():
 def upload_video(yt, video: str, title: str, description: str,
                  privacy: str = "unlisted", tags: list[str] | None = None,
                  category_id: str | None = None, default_language: str | None = None,
-                 synthetic: bool | None = None) -> str:
+                 synthetic: bool | None = None, audio_language: str | None = None) -> str:
     from googleapiclient.http import MediaFileUpload
     category_id = category_id or config.env("NOVEL_YT_CATEGORY", "24")  # 24=Entertainment
     body = {
@@ -93,6 +93,9 @@ def upload_video(yt, video: str, title: str, description: str,
     #   비어 있으면 스튜디오에서 번역을 붙일 수 없다(2026-09-27 ASMR 전부 미설정이었다).
     if default_language:
         body["snippet"]["defaultLanguage"] = default_language
+    # ★오디오 언어: 유튜브가 '누구에게 보여 줄지'를 고르는 값. 비워 두면 현지화 덮어쓰기 때 영어(en-US)로
+    #   바뀌어 한국어 SCP·쇼츠가 영어권에 뿌려졌다(2026-09-30 확인). 음성이 없는 소리 영상은 'zxx'(관련 없음).
+    body["snippet"]["defaultAudioLanguage"] = audio_language or config.env("NOVEL_AUDIO_LANG", "ko")
     # AI 로 만든 사실적 장면 표시. 유튜브는 이 표시가 도달에 영향이 없다고 밝혔다(Help 14328491).
     if synthetic is not None:
         body["status"]["containsSyntheticMedia"] = bool(synthetic)
@@ -246,7 +249,7 @@ def publish(video: str, title: str, description: str, privacy: str,
             srt: str | None = None, localizations: dict | None = None,
             srts: dict | None = None, default_language: str | None = None,
             i18n_langs: list[str] | None = None, playlist_description: str | None = None,
-            synthetic: bool | None = None) -> dict:
+            synthetic: bool | None = None, audio_language: str | None = None) -> dict:
     """업로드 → 썸네일 → 재생목록 → ★다국어(현지화 + 선택적 자막 트랙).
 
     localizations/srts 는 ★루틴이 스펙에 써준 번역 — 번역 API 비용이 들지 않는다.
@@ -256,8 +259,9 @@ def publish(video: str, title: str, description: str, privacy: str,
     (안 주면 기존대로 한국어 기본 + I18N_LANGS).
     """
     yt = get_service()
+    audio_language = audio_language or config.env("NOVEL_AUDIO_LANG", "ko")
     vid = upload_video(yt, video, title, description, privacy, tags, category_id,
-                       default_language=default_language, synthetic=synthetic)
+                       default_language=default_language, synthetic=synthetic, audio_language=audio_language)
     res = {"video_id": vid, "url": f"https://youtu.be/{vid}", "privacy": privacy, "playlist_id": None}
     if thumbnail and os.path.exists(thumbnail):
         res["thumbnail_set"] = set_thumbnail(yt, vid, thumbnail)
@@ -276,7 +280,8 @@ def publish(video: str, title: str, description: str, privacy: str,
     # 다국어는 전부 best-effort — 여기서 뭐가 터져도 업로드는 이미 끝났다.
     try:
         import yt_i18n
-        res.update(yt_i18n.apply(vid, srt, langs=i18n_langs, localizations=localizations, srts=srts))
+        res.update(yt_i18n.apply(vid, srt, langs=i18n_langs, localizations=localizations, srts=srts,
+                                 audio_lang=audio_language, tags=tags))
     except Exception as e:  # noqa: BLE001
         print(f"   ⚠️ 다국어 처리 실패(업로드는 성공): {e}")
     return res

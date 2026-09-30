@@ -290,12 +290,34 @@ def normalize_localizations(raw, langs: list[str] | None = None) -> dict:
     return out
 
 
+AUDIO_LANG = config.env("I18N_AUDIO_LANG", "")
+
+
+def snippet_for_update(sn: dict, audio_lang: str | None = None, tags: list[str] | None = None) -> dict:
+    """videos.update(part=snippet) 는 snippet 을 통째로 덮어쓴다 — 빠뜨린 필드는 초기화된다.
+
+    그래서 읽어 온 값을 그대로 다시 싣고, 비어 있으면 업로드한 쪽이 준 값(audio_lang·tags)을 쓴다.
+    오디오 언어는 유튜브가 '누구에게 보여 줄지' 고르는 데 쓴다 — 절대 비워 보내지 않는다.
+    """
+    out = {"title": sn.get("title", ""), "description": sn.get("description", ""),
+           "categoryId": sn.get("categoryId", "24"), "tags": sn.get("tags") or list(tags or []),
+           "defaultLanguage": sn.get("defaultLanguage") or SOURCE_LANG,
+           "defaultAudioLanguage": sn.get("defaultAudioLanguage") or audio_lang or AUDIO_LANG or SOURCE_LANG}
+    return out
+
+
 def localize(video_id: str, langs: list[str] | None = None,
-             localizations: dict | None = None, retries: int = 3) -> list[str]:
+             localizations: dict | None = None, retries: int = 3,
+             audio_lang: str | None = None, tags: list[str] | None = None) -> list[str]:
     """제목·설명 현지화. 성공한 언어 목록 반환. 실패는 경고만(업로드는 이미 끝났다).
 
     localizations 를 주면 그걸 쓴다(★루틴이 써준 번역 — API 비용 0).
     없을 때만 ANTHROPIC_API_KEY 로 폴백하고, 키도 없으면 스킵한다.
+
+    audio_lang / tags: 업로드한 쪽이 아는 값. 읽어 온 snippet 에 없으면 이걸 쓴다.
+    ★2026-09-30 실측: 이 함수가 snippet 을 덮어쓰면서 defaultAudioLanguage 를 빼먹어, 한국어 음성
+      쇼츠·SCP 가 전부 '오디오 언어 영어(en-US)'가 됐다(9/28~9/29 쇼츠 0~183회 → ko 로 돌아온 9/30
+      운세 6시간 1,285회). 업로드 직후라 태그가 아직 안 읽혀 태그도 비워졌다(최근 120편 중 27편).
     """
     if not DO_LOCALIZE:
         return []
@@ -333,9 +355,7 @@ def localize(video_id: str, langs: list[str] | None = None,
     body = {
         "id": video_id,
         # localizations 를 쓰려면 defaultLanguage 가 반드시 설정돼 있어야 한다.
-        "snippet": {"title": sn.get("title", ""), "description": sn.get("description", ""),
-                    "categoryId": sn.get("categoryId", "24"), "tags": sn.get("tags", []),
-                    "defaultLanguage": sn.get("defaultLanguage") or SOURCE_LANG},
+        "snippet": snippet_for_update(sn, audio_lang, tags),
         "localizations": loc,
     }
     for attempt in range(1, retries + 1):
@@ -427,12 +447,13 @@ def add_caption_tracks(video_id: str, srt_path: str = "", langs: list[str] | Non
 
 # ── 고수준: 업로드 직후 한 방에 ────────────────────────
 def apply(video_id: str, srt_path: str | None = None, langs: list[str] | None = None,
-          localizations: dict | None = None, srts: dict | None = None) -> dict:
+          localizations: dict | None = None, srts: dict | None = None,
+          audio_lang: str | None = None, tags: list[str] | None = None) -> dict:
     """현지화(항상) + 자막 트랙(자막 소스를 준 파이프라인만).
 
     localizations / srts 는 ★루틴이 써준 번역. 없으면 API 폴백(키가 있을 때만).
     """
-    return {"localized": localize(video_id, langs, localizations=localizations),
+    return {"localized": localize(video_id, langs, localizations=localizations, audio_lang=audio_lang, tags=tags),
             "captions": add_caption_tracks(video_id, srt_path or "", langs, srts=srts)}
 
 
