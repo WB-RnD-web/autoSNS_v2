@@ -48,7 +48,7 @@ def get_service():
 
 def upload(video: str, title: str, description: str, privacy: str = "private",
            tags: list[str] | None = None, localizations: dict | None = None,
-           synthetic: bool | None = None) -> str:
+           synthetic: bool | None = None, category: str = "25") -> str:
     from googleapiclient.http import MediaFileUpload
     yt = get_service()
     tags = tags or ["뉴스", "이슈", "쇼츠", "shorts"]
@@ -57,7 +57,7 @@ def upload(video: str, title: str, description: str, privacy: str = "private",
     audio_lang = config.env("SHORTS_AUDIO_LANG", "ko")
     body = {
         "snippet": {"title": title[:100], "description": description, "tags": tags,
-                    "categoryId": "25",  # News & Politics
+                    "categoryId": category,  # 25 News & Politics · 운세는 24 Entertainment
                     "defaultLanguage": "ko", "defaultAudioLanguage": audio_lang},
         "status": {"privacyStatus": privacy, "selfDeclaredMadeForKids": False},
     }

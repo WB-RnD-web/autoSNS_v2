@@ -82,6 +82,28 @@ def synthetic_label(sb: dict, spec: dict) -> bool | None:
     return not any(topic.startswith(t) for t in ILLUSTRATED_TOPICS)
 
 
+FORTUNE_TOPICS = ("fortune", "horoscope", "zodiac")
+FORTUNE_PLAYLIST = "오늘의 띠별 운세 | 매일 아침 1위~12위"
+FORTUNE_PLAYLIST_DESC = "매일 아침 올라오는 띠별 운세 1위부터 12위까지. 45~96년생 전부, 재미로 보는 운세예요."
+
+
+def category_for(topic: str) -> str:
+    """운세·별자리는 엔터테인먼트(24), 뉴스·주식은 뉴스·정치(25). 2026-09-30 전엔 전부 25였다."""
+    return "24" if str(topic or "").lower().startswith(FORTUNE_TOPICS) else "25"
+
+
+def add_fortune_playlist(vid: str) -> None:
+    """운세 쇼츠를 재생목록에 — 가장 많이 보는 콘텐츠인데 목록이 없었다. 실패해도 업로드는 끝났다."""
+    try:
+        import upload_youtube_novel as N
+        yt = N.get_service()
+        pid = N.ensure_playlist(yt, FORTUNE_PLAYLIST, FORTUNE_PLAYLIST_DESC, privacy="public")
+        N.add_to_playlist(yt, pid, vid)
+        print(f"   📂 운세 재생목록에 추가: {pid}")
+    except Exception as e:  # noqa: BLE001
+        print(f"   ⚠️ 운세 재생목록 실패(업로드는 성공): {e}")
+
+
 def upload_with_retry(video, meta, retries=2):
     last = None
     for attempt in range(1, retries + 2):
@@ -90,7 +112,8 @@ def upload_with_retry(video, meta, retries=2):
             return upload_youtube.upload(video, meta["title"], meta["description"],
                                          meta["privacy"], tags=meta["tags"],
                                          localizations=meta.get("localizations"),
-                                         synthetic=meta.get("synthetic"))
+                                         synthetic=meta.get("synthetic"),
+                                         category=meta.get("category", "25"))
         except Exception as e:  # noqa: BLE001
             last = e
             sys.stderr.write(f"[upload 재시도 {attempt}/{retries + 1}] {e}\n")
@@ -299,6 +322,7 @@ def process(sb_path, args, led):
         return res
     meta = build_meta(sb, args.force_private)
     meta["synthetic"] = synthetic_label(sb, spec)
+    meta["category"] = category_for(sb.get("topic", ""))
     # Supertonic 3 는 OpenRAIL-M(상업 이용 가능 · 사용 제한 · 출처 표기) — 설명란 끝에 한 줄.
     if motion_short.VO_BACKEND == "wbspark" and "Supertonic" not in meta["description"]:
         meta["description"] = f"{meta['description']}\n\n🎙️ Voice: Supertonic (Supertone · OpenRAIL-M)"
@@ -325,6 +349,8 @@ def process(sb_path, args, led):
         try:
             vid = upload_with_retry(res["video"], meta)
             res["uploaded"] = f"https://youtu.be/{vid} ({meta['privacy']})"
+            if meta["category"] == "24" and meta["privacy"] == "public":
+                add_fortune_playlist(vid)
             if led is not None:
                 ledgermod.mark(led, sb, vid, meta["privacy"], time.time(), args.ledger_path)
         except Exception as e:  # noqa: BLE001

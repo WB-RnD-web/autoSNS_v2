@@ -41,6 +41,7 @@ SAY_MAX_WORDS = 70          # 한 그림에 26초 넘게 머물지 않게
 HOOK_MAX_WORDS = 45         # 첫 장면(콜드 오픈) — 첫 15초가 이탈을 가른다
 SHORT_WORDS = (60, 150)     # 쇼츠 30~55초
 SHORT_HOOK_WORDS, SHORT_HOOK_CHARS = 7, 38     # 쇼츠 위 두 줄 제목
+TITLE_SEARCH_MAX = 70                          # 검색 결과에서 보이는 제목 길이(3화부터)
 SHORT_LINES = (4, 9)
 THUMB_MAX_WORDS = 4
 # 몇 달 뒤에도 통해야 한다(역주행) — 날짜를 타는 말은 금지. 사실로 적는 연도(1994년 영화 등)는 괜찮다
@@ -91,6 +92,8 @@ def check(s: dict, path: str | None = None) -> list[str]:
             errs.append(f"파일 이름은 {want} 여야 한다(지금 {base})")
     if len(s["title"]) > 100:
         errs.append(f"제목 {len(s['title'])}자 > 100")
+    elif s.get("id", 0) >= 3 and len(s["title"]) > TITLE_SEARCH_MAX:
+        errs.append(f"제목 {len(s['title'])}자 > {TITLE_SEARCH_MAX} — 검색 결과에서 잘린다(검색어를 앞쪽에)")
     th = s["thumb"]
     if not th.get("text") or words(th["text"]) > THUMB_MAX_WORDS or len(th["text"]) > 22:
         errs.append(f"썸네일 문구는 {THUMB_MAX_WORDS}단어·22자 이하: {th.get('text')!r}")

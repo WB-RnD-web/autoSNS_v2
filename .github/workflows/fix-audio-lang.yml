@@ -11,8 +11,8 @@ on:
         type: boolean
         default: false
       limit:
-        description: "최근 몇 편까지 볼지"
-        default: "200"
+        description: "최근 몇 편까지 볼지(기본: 채널 전체 — 잘못 들어간 값만 고치니 쿼터는 그만큼만)"
+        default: "500"
 
 permissions:
   contents: read

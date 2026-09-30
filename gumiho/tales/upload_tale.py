@@ -16,6 +16,7 @@ import argparse
 import datetime as dt
 import json
 import os
+import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -26,8 +27,33 @@ import tales as T  # noqa: E402
 
 # 현지화: 그 나라 사용자에게 그 나라 말 제목·설명이 뜬다(videos.update 50 units, 번역은 Spark gemma — 무료)
 LANGS = [x.strip() for x in os.environ.get("TALES_LANGS", "es,pt,id,ja,ko,de,fr,vi").split(",") if x.strip()]
-PLAYLIST = "Nine Tails Tales — Every Tale"
-PLAYLIST_DESC = "Every tale Gumi has told so far, in order. Korean and East Asian myths, monsters and ghost stories."
+# ★이름을 바꾸면 ensure_playlist 가 못 찾고 새 목록을 만든다 — 스튜디오/API 에서 바꾼 이름과 같아야 한다(2026-09-30 변경).
+PLAYLIST = "Every Tale: Korean Folklore, Myths & Ghost Stories | Nine Tails Tales"
+PLAYLIST_DESC = ("Every tale Gumi, a 1,000-year-old gumiho (nine-tailed fox), has told so far, in order. "
+                 "Korean folklore, Japanese and Chinese legends, monsters and ghost stories. A new tale every Saturday.")
+URL_RE = re.compile(r"https?://\S+|youtu\.be/\S+")
+
+
+def protect_urls(text: str) -> tuple[str, list[str]]:
+    """번역 전에 링크를 ⟦0⟧ 같은 자리표시로 바꾼다 — Gemma 가 URL 을 고쳐 쓰다 깨뜨렸다(2026-09-30: youtu.beRhKw…)."""
+    urls: list[str] = []
+
+    def sub(m):
+        urls.append(m.group(0))
+        return f"⟦{len(urls) - 1}⟧"
+    return URL_RE.sub(sub, text), urls
+
+
+def restore_urls(text: str, urls: list[str]) -> str:
+    """자리표시를 원래 링크로. 번역이 자리표시를 잃었으면 빠진 링크를 끝에 붙인다."""
+    missing = []
+    for i, u in enumerate(urls):
+        if f"⟦{i}⟧" in text:
+            text = text.replace(f"⟦{i}⟧", u)
+        else:
+            missing.append(u)
+    text = re.sub(r"⟦\d+⟧", "", text)
+    return text + ("\n\n" + "\n".join(missing) if missing else "")
 CATEGORY = "24"          # Entertainment
 UPLOADED = os.path.join(HERE, "uploaded.json")
 
@@ -81,11 +107,14 @@ def localize(vid: str, title: str | None = None, description: str | None = None)
             sn = yt.videos().list(part="snippet", id=vid).execute()["items"][0]["snippet"]
             title, description = sn["title"], sn.get("description", "")
         loc = {}
+        masked, urls = protect_urls(description or "")
         for k in range(0, len(LANGS), 2):
             group = LANGS[k:k + 2]
             for _ in range(2):
-                got = yt_i18n.translate_meta(title, description or "", group)
+                got = yt_i18n.translate_meta(title, masked, group)
                 if got:
+                    for g in got.values():
+                        g["description"] = restore_urls(g.get("description", ""), urls)
                     loc.update(got)
                     break
         if not loc:
@@ -157,12 +186,12 @@ def main() -> int:
             print("   ⚠️ 썸네일 실패 — 채널 전화 인증(youtube.com/verify)이 안 됐으면 맞춤 썸네일이 막힌다")
         done["captions"] = captions(yt, vid, rm["srt"])
         done["langs"] = localize(vid, md["title"], md["description"])
-        if publish_at:
-            try:
-                pid = U.ensure_playlist(yt, PLAYLIST, PLAYLIST_DESC, privacy="public")
-                U.add_to_playlist(yt, pid, vid)
-            except Exception as e:  # noqa: BLE001
-                print(f"   ⚠️ 재생목록 실패(업로드는 성공): {e}")
+        # 비공개로 올려도 넣는다 — 공개로 바뀌는 순간 재생목록에 이미 있어야 한다(목록은 공개 영상만 보여 준다).
+        try:
+            pid = U.ensure_playlist(yt, PLAYLIST, PLAYLIST_DESC, privacy="public")
+            U.add_to_playlist(yt, pid, vid)
+        except Exception as e:  # noqa: BLE001
+            print(f"   ⚠️ 재생목록 실패(업로드는 성공): {e}")
         led[stem] = done
         _save(a.ledger, led)
     else:

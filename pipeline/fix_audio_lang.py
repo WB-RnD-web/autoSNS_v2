@@ -24,6 +24,15 @@ HANGUL = re.compile(r"[가-힣]")
 SOUND = re.compile(r"ASMR|백색소음|빗소리|Sleep Sounds|White Noise", re.I)
 
 
+def needs_fix(sn: dict, include_unset: bool = False) -> str | None:
+    """고칠 값(ko) 또는 None. 기본은 값이 '잘못 들어간' 영상만 — 비어 있는 옛 영상은 문제가 없었다."""
+    want = target(sn)
+    cur = sn.get("defaultAudioLanguage")
+    if not want or cur == want or (not cur and not include_unset):
+        return None
+    return want
+
+
 def target(sn: dict) -> str | None:
     t = sn.get("title", "")
     if SOUND.search(t) or not HANGUL.search(t):
@@ -35,6 +44,7 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--apply", action="store_true")
     ap.add_argument("--limit", type=int, default=200, help="최근 몇 편까지 볼지(쿼터: 수정 1편 50 units)")
+    ap.add_argument("--include-unset", action="store_true", help="오디오 언어가 비어 있는 옛 영상도(쿼터 주의)")
     a = ap.parse_args()
     yt = yt_i18n._service(["novel", "forcessl"], [yt_i18n.SCOPE_MANAGE])
     if yt is None:
@@ -58,8 +68,8 @@ def main() -> int:
     for k in range(0, len(ids), 50):
         for v in yt.videos().list(part="snippet", id=",".join(ids[k:k + 50])).execute()["items"]:
             sn = v["snippet"]
-            want = target(sn)
-            if want and sn.get("defaultAudioLanguage") != want:
+            want = needs_fix(sn, a.include_unset)
+            if want:
                 todo.append((v["id"], sn, want))
     print(f"본 영상 {len(ids)}편 · 고칠 영상 {len(todo)}편 · 쿼터 약 {len(todo) * 50} units")
     done = 0

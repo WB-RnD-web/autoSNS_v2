@@ -160,6 +160,23 @@ finally:
 ck("쇼츠 첫 줄 그림 = 썸네일 그림", sp["rows"][0]["raw"] == "/img/THUMB.png", sp["rows"][0]["raw"])
 ck("썸네일 없으면 원래 그림", sp0["rows"][0]["raw"] != "/img/THUMB.png")
 
+print("── 제목·링크 ──")
+long_ = copy.deepcopy(S)
+long_["id"] = 3
+long_["title"] = "Gumiho " + "x" * 70
+ck("3화부터 제목 70자 넘으면 거부", any("70" in e for e in T.check(long_, "x.json")))
+old_ = copy.deepcopy(long_)
+old_["id"] = 1
+ck("1·2화는 예외(이미 올라감)", not any("70" in e for e in T.check(old_, "x.json")))
+import upload_tale as U0  # noqa: E402
+m_, us_ = U0.protect_urls("Full tale: https://youtu.be/RhKwrpHRLeY
+More: https://youtu.be/D0JiefhF73o")
+ck("번역 전 링크를 자리표시로", "youtu" not in m_ and len(us_) == 2, m_)
+ck("번역 뒤 링크 복원", U0.restore_urls("Histoire : ⟦0⟧
+Plus : ⟦1⟧", us_).count("https://youtu.be/") == 2)
+ck("번역이 자리표시를 잃으면 끝에 붙인다", "RhKwrpHRLeY" in U0.restore_urls("Histoire complète", us_[:1]))
+ck("재생목록 이름 = 스튜디오 이름(바뀌면 새 목록이 생긴다)", U0.PLAYLIST.startswith("Every Tale: Korean Folklore"))
+
 print("── 업로드 가드 ──")
 import upload_tale as U  # noqa: E402
 import datetime as dt  # noqa: E402
