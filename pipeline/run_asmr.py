@@ -84,12 +84,13 @@ def english_name(theme_id: str) -> str:
 
 
 def audio_language(spec: dict) -> str:
-    """나레이션이 있으면 한국어. 말소리가 없는 소리 영상은 ''(오디오 언어를 넣지 않는다).
+    """나레이션이 있으면 한국어(ko). 말소리가 없는 소리 영상은 영어(en).
 
-    ★2026-10-01: 'zxx'(관련 없음)를 넣었더니 videos.insert 가 400 INVALID_REQUEST_METADATA 로
-    거부했다(Korea Sleep Sounds 9/30 편 업로드 3회 실패). 유튜브 언어 목록에 zxx 가 없다.
+    - 'zxx'(관련 없음)는 videos.insert 가 400 INVALID_REQUEST_METADATA 로 거부한다(2026-10-01).
+    - 비워 두면 유튜브가 채널 기본값(ko)을 채운다(0vsVKiCPL6U 확인) — 해외용 수면 사운드가 한국어권에 묶인다.
+    - ASMR 해외 시청자가 1회 30~66분(한국 2~23분)을 볼 때 이 영상들의 오디오 언어는 en-US 였다.
     """
-    return "ko" if (spec.get("narration_text") or "").strip() else ""
+    return "ko" if (spec.get("narration_text") or "").strip() else "en"
 
 
 def english_localization(spec: dict, duration_sec: float | None) -> dict:
