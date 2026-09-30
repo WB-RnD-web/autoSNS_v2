@@ -11,6 +11,7 @@
 
 편성(코드가 정한다 — KST 날짜 기준)
   월·수·금 = guide(따라 하는 가이드, 주제는 catalog 순서대로 날짜로 배정) · 일 = report(주간 성적표) · 화·목·토 = 쉼
+  형식(publish_formats): 매 편 릴스·카드 둘 다 렌더 → 인스타 = 가이드 릴스 · 성적표 카드 / 쓰레드 = 늘 카드
 
 숫자 규칙 ★
   대본(말·제목·화면 글자·캡션)에 숫자를 직접 쓰지 않는다. 숫자는 전부 자리표시자로:
@@ -680,18 +681,126 @@ def estimate(s: dict) -> dict:
     return {"scenes": n, "chars": chars, "est_sec": round(chars / CPS + 0.5 * n + 0.7 + holds, 1)}
 
 
+# ── 게시 형식(코드가 날짜로 정한다) ─────────────────────
+# 매 편 릴스(render_reel)와 카드(render_cards, 4:5 캐러셀)를 둘 다 만든다. 어디에 무엇을 올릴지는 요일로:
+#   인스타 = 월·수·금 가이드 → 릴스 · 일 성적표 → 카드       쓰레드 = 늘 카드(글·이미지 중심 앱)
+# 덮어쓰기(레포 변수): INSTA_IG_FORMAT = auto|reel|cards|both · INSTA_THREADS_FORMAT = auto|cards|reel
+IG_FORMAT_BY_KIND = {"guide": "reel", "report": "cards"}
+THREADS_FORMAT_DEFAULT = "cards"
+IG_FORMATS = ("auto", "reel", "cards", "both")
+THREADS_FORMATS = ("auto", "cards", "reel")
+
+
+def publish_formats(date, fmt: str | None = None, env=None) -> dict:
+    """그 편을 어디에 어떤 형식으로 — {"kind", "ig": ["reel"] | ["cards"] | ["reel", "cards"], "threads": "cards"|"reel",
+    "warn": [...]}. 쓰레드를 실제로 올릴지는 INSTA_THREADS(post_reel)가 따로 정한다."""
+    env = os.environ if env is None else env
+    kind = format_for(date) or fmt or "guide"
+    warn = []
+    ig = (env.get("INSTA_IG_FORMAT") or "auto").strip().lower()
+    if ig not in IG_FORMATS:
+        warn.append(f"INSTA_IG_FORMAT={ig!r} 은 모르는 값 — auto 로({'|'.join(IG_FORMATS)})")
+        ig = "auto"
+    if ig == "auto":
+        ig = IG_FORMAT_BY_KIND.get(kind, "reel")
+    th = (env.get("INSTA_THREADS_FORMAT") or "auto").strip().lower()
+    if th not in THREADS_FORMATS:
+        warn.append(f"INSTA_THREADS_FORMAT={th!r} 은 모르는 값 — auto 로({'|'.join(THREADS_FORMATS)})")
+        th = "auto"
+    if th == "auto":
+        th = THREADS_FORMAT_DEFAULT
+    return {"kind": kind, "ig": ["reel", "cards"] if ig == "both" else [ig], "threads": th, "warn": warn}
+
+
 # ── 캡션(게시용) ────────────────────────────────────────
+IG_CAPTION_MAX = 2200           # 인스타 캡션 한도
+THREADS_MAX = 500               # 쓰레드 글 한도(이모지는 UTF-8 바이트 수로 센다)
+CHANNELS_LINE = "기록 중인 채널: 왕별이(한국어) · Nine Tails Tales(영어)"
+
+
+def _fit_caption(body: str, tail: str, limit: int = IG_CAPTION_MAX) -> str:
+    out = f"{body}\n\n{tail}"
+    if len(out) <= limit:
+        return out
+    room = limit - len(tail) - 3
+    return body[: room - 1].rstrip() + "…\n\n" + tail
+
+
 def final_caption(s: dict, ctx: dict) -> str:
     body = resolve(s["caption"], ctx).strip()
-    return f"{body}\n\n{FOOTER}\n\n" + " ".join(s["hashtags"])
+    return _fit_caption(body, f"{FOOTER}\n\n" + " ".join(s["hashtags"]))
 
 
-def threads_text(s: dict, ctx: dict, limit: int = 480) -> str:
-    """쓰레드는 500자 — 첫 줄 + 단계 + 저장 줄."""
-    lines = resolve(s["caption"], ctx).strip().splitlines()
-    keep = [lines[0], ""] + [ln for ln in lines[1:] if STEP_LINE.match(ln) or BULLET_LINE.match(ln) or "저장" in ln]
-    out = "\n".join(keep)
-    return out if len(out) <= limit else out[: limit - 1].rstrip() + "…"
+def card_footer(ai_art: bool) -> str:
+    """카드용 꼬리말 — 목소리가 없으니 AI 표시는 그림만(AI 그림이 들어간 편에만)."""
+    return (f"{CHANNELS_LINE} — 프로필에서 볼 수 있어요.\n"
+            + ("일부 그림은 AI로 만들었어요. " if ai_art else "") + "숫자는 유튜브 실측이에요.")
+
+
+def card_caption(s: dict, ctx: dict, ai_art: bool = False) -> str:
+    """인스타 카드(캐러셀) 캡션 — 본문은 릴스와 같고 꼬리말만 카드용. 2,200자 안."""
+    body = resolve(s["caption"], ctx).strip()
+    return _fit_caption(body, card_footer(ai_art) + "\n\n" + " ".join(s["hashtags"]))
+
+
+def threads_len(text: str) -> int:
+    """쓰레드가 세는 글자 수 — 이모지는 UTF-8 바이트 수(Threads API 문서), 나머지는 한 글자."""
+    n = 0
+    for c in text:
+        o = ord(c)
+        emoji = o >= 0x1F000 or 0x2600 <= o <= 0x27BF or o in (0xFE0F, 0x200D, 0x20E3)
+        n += len(c.encode("utf-8")) if emoji else 1
+    return n
+
+
+def topic_tag(s: dict) -> str | None:
+    """쓰레드 주제 태그 하나(쓰레드는 글 하나에 태그 하나) = 해시태그 첫 개에서 # 뺀 것. 1~50자, 마침표·& 없이."""
+    for t in s.get("hashtags") or []:
+        tag = re.sub(r"[.&#\s]", "", t or "")
+        if 1 <= len(tag) <= 50:
+            return tag
+    return None
+
+
+def threads_text(s: dict, ctx: dict, limit: int = THREADS_MAX, tail: str = CHANNELS_LINE) -> str:
+    """쓰레드 글(500자) — 캡션 전체 + 채널 한 줄이 들어가면 그대로. 해시태그는 넣지 않는다(topic_tag 로 하나).
+    넘치면 문장 중간을 자르지 않고 줄 단위로 덜어 낸다: 채널 줄 → 설명 줄(첫 줄·항목·단계·단계 제목·저장 줄만 남김)
+    → 뒤쪽 항목부터(저장 줄은 남긴다) → 그래도 넘치면 마지막에만 자른다."""
+    lines = [ln.rstrip() for ln in resolve(s["caption"], ctx).strip().splitlines()]
+    whole = "\n".join(lines)                                          # 다 들어가면 캡션 그대로(주의 문장까지)
+    for out in ((f"{whole}\n\n{tail}" if tail else whole), whole):
+        if threads_len(out) <= limit:
+            return out
+    first, rest = lines[0], lines[1:]
+    item = lambda ln: bool(STEP_LINE.match(ln) or BULLET_LINE.match(ln))  # noqa: E731
+    keep = []
+    for k, ln in enumerate(rest):
+        nxt = rest[k + 1] if k + 1 < len(rest) else ""
+        heading = ln.strip() and not item(ln) and STEP_LINE.match(nxt)    # 단계 목록 바로 위 제목 줄('따라 하는 법')
+        if item(ln) or "저장" in ln or heading:
+            gap = k > 0 and not rest[k - 1].strip()                       # 원문에서 빈 줄로 나뉜 곳은 그대로 띄운다
+            keep.append(("\n" if gap else "") + ln)
+
+    def build(its: list[str], with_tail: bool) -> str:
+        its = [its[0].lstrip("\n")] + its[1:] if its else its
+        out = "\n".join([first, ""] + its).rstrip()
+        return out + (f"\n\n{tail}" if with_tail and tail else "")
+
+    out = build(keep, True)
+    if threads_len(out) <= limit:
+        return out
+    its = keep[:]
+    while True:
+        out = build(its, False)
+        if threads_len(out) <= limit:
+            return out
+        k = next((i for i in range(len(its) - 1, -1, -1) if "저장" not in its[i]), None)
+        if k is None:
+            break
+        its.pop(k)
+    while threads_len(out) > limit - 1:
+        out = out[:-1]
+    return out.rstrip() + "…"
 
 
 # ── CLI ─────────────────────────────────────────────────

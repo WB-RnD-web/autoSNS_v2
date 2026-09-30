@@ -5,8 +5,11 @@
 """
 from __future__ import annotations
 
+import contextlib
 import copy
 import datetime as dt
+import glob
+import io
 import json
 import os
 import re
@@ -19,6 +22,7 @@ sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(ROOT, "tools"))
 import insta as I          # noqa: E402
 import post_reel as PR     # noqa: E402
+import render_cards as RC  # noqa: E402
 import render_reel as R    # noqa: E402
 import stats as ST         # noqa: E402
 
@@ -190,6 +194,31 @@ with tempfile.TemporaryDirectory() as td:
         ck(f"{os.path.basename(p)} 이미 올린 편은 게시 안 함", has(why, "이미 올린"))
         why = PR.blockers(s, p, dict(meta, mock=False, stats_mock=False), {}, I._date(s["date"]))
         ck(f"{os.path.basename(p)} 조건이 맞으면 게시 가능", not why, str(why))
+        # 카드도 같은 곳에 렌더 → post_reel dry-run 이 요일 형식대로 호출 순서를 만든다(네트워크·토큰 없이)
+        cres = RC.render(p, os.path.join(td, "out"), os.path.join(td, "work"), mock=True)
+        ck(f"{os.path.basename(p)} 카드 메타는 mock 표시(게시 불가)", cres["mock"] and cres["stats_mock"])
+        why = PR.blockers(s, p, meta, {}, I._date(s["date"]), cards=cres, need=("cards",))
+        ck(f"{os.path.basename(p)} mock 카드는 게시 안 함", has(why, "mock"))
+        keep = {k: os.environ.pop(k, None) for k in ("INSTA_PUBLISH", "INSTA_THREADS", "INSTA_IG_FORMAT",
+                                                       "INSTA_THREADS_FORMAT", "GITHUB_STEP_SUMMARY")}
+        os.environ["INSTA_THREADS"] = "1"
+        argv, buf = sys.argv, io.StringIO()
+        sys.argv = ["post_reel.py", p, "--renders", os.path.join(td, "out"), "--ledger", os.path.join(td, "led.json"),
+                    "--posted", os.path.join(td, "posted.json"), "--today", s["date"]]
+        try:
+            with contextlib.redirect_stdout(buf):
+                rc = PR.main()
+        finally:
+            sys.argv = argv
+            os.environ.pop("INSTA_THREADS", None)
+            os.environ.update({k: v for k, v in keep.items() if v is not None})
+        o = buf.getvalue()
+        ig_call = '"media_type": "REELS"' if s["format"] == "guide" else '"media_type": "CAROUSEL"'
+        ck(f"{os.path.basename(p)} dry-run: 인스타 {'릴스' if s['format'] == 'guide' else '카드'} + 쓰레드 카드 호출 순서를 보여 준다",
+           rc == 0 and "이 순서로 호출한다" in o and ig_call in o and "threads_publish" in o
+           and "graph.instagram.com/{IG_USER_ID}/media_publish" in o, o[-600:])
+        ck(f"{os.path.basename(p)} dry-run 은 기록하지 않고 토큰도 쓰지 않는다",
+           not os.path.exists(os.path.join(td, "posted.json")) and "access_token" not in o)
     host_env = os.environ.pop("INSTA_PUBLISH", None)
     ck("INSTA_PUBLISH 가 없으면 dry-run", not PR._on("INSTA_PUBLISH"))
     if host_env is not None:
@@ -199,6 +228,146 @@ ck("숫자 올라가기 모양 유지", R.count_up("1,285회", 0.5).endswith("�
 ck("배경음 20초·클리핑 없음", len(R.bed(R.SR * 20)) == R.SR * 20 and float(abs(R.bed(R.SR * 5)).max()) <= 1.0001)
 for kind in ("head", "bold", "reg"):
     ck(f"한글 글꼴 '{kind}' = 실제 트루타입({os.path.basename(R.font_path(kind))})", R.font(kind, 80).size == 80)
+
+print("── 카드(캐러셀) ──")
+for p, s in ((GUIDE_P, G), (REPORT_P, RP)):
+    pl = RC.card_plan(s)
+    ck(f"{os.path.basename(p)} 카드 {pl['count']}장 — 5~9장(최대 {RC.MAX_SLIDES})", 5 <= pl["count"] <= 9)
+    ck(f"{os.path.basename(p)} 훅 = 첫 장면 화면", pl["hook"]["scenes"] == [0])
+pl = RC.card_plan(G)
+ck("강조(hi)만 다른 같은 단계 화면은 한 장으로(말은 첫 장면 것)",
+   any(x["scenes"] == [5, 6] and x["text"] == G["scenes"][5]["say"] for x in pl["points"]),
+   str([x["scenes"] for x in pl["points"]]))
+many = dict(G, scenes=[G["scenes"][0]]
+            + [{"say": f"그림 {k}", "show": {"img": f"a calm lake at dawn number {k}"}} for k in range(6)]
+            + [{"say": f"숫자 {k}", "show": {"stat": "{{fact.continued}}", "label": f"라벨 {k}"}} for k in range(6)])
+pl = RC.card_plan(many)
+kinds = [x["kind"] for x in pl["points"]]
+ck("장면이 많으면 10장으로 — 분위기 그림(img)부터, 뒤에서부터 뺀다",
+   pl["count"] == RC.MAX_SLIDES and kinds.count("img") == 2 and kinds.count("stat") == 6
+   and [x["scenes"][0] for x in pl["points"]][:2] == [1, 2], str(kinds))
+
+with tempfile.TemporaryDirectory() as td:
+    from PIL import Image
+    for p in (GUIDE_P, REPORT_P):
+        n = os.path.basename(p)
+        a = RC.render(p, os.path.join(td, "a"), os.path.join(td, "work"), mock=True)
+        ims, shape = [], []
+        for x in a["cards"]:
+            with Image.open(x) as im:                 # 닫아 둔다(윈도는 열린 파일을 못 지운다)
+                shape.append((im.format, im.size))
+                ims.append(im.convert("RGB"))
+        ck(f"{n} 카드 {a['count']}장 — {RC.MIN_SLIDES}~{RC.MAX_SLIDES}", RC.MIN_SLIDES <= a["count"] <= RC.MAX_SLIDES)
+        ck(f"{n} 카드는 전부 1080×1350 JPEG(4:5)", all(sh == ("JPEG", (1080, 1350)) for sh in shape), str(shape))
+        ck(f"{n} 카드는 게시 규격 통과(2~10장·크기·형식)", not PR.card_problems(a))
+        hook = ims[0]
+        bright = sum(1 for px in hook.crop(RC.HOOK_HEAD).getdata() if px[0] > 200 and px[1] > 170)
+        ck(f"{n} 첫 장에 큰 제목이 보인다", bright > 20000, str(bright))
+        ck(f"{n} 제목은 격자 미리보기(1:1 가운데·3:4) 안",
+           RC.SQUARE[1] <= RC.HOOK_TAG_Y and RC.HOOK_HEAD[3] <= RC.SQUARE[3]
+           and RC.GRID34[0] <= RC.HOOK_HEAD[0] and RC.HOOK_HEAD[2] <= RC.GRID34[2])
+        box = (RC.PANEL_XY[0], RC.PANEL_XY[1], RC.PANEL_XY[0] + R.PW, RC.PANEL_XY[1] + R.PH)
+        ck(f"{n} 가운데 장에 실물 화면이 차 있다", len(set(ims[1].crop(box).resize((48, 48)).getdata())) > 20)
+        b = RC.render(p, os.path.join(td, "b"), os.path.join(td, "work"), mock=True)
+        same = all(open(x, "rb").read() == open(y, "rb").read() for x, y in zip(a["cards"], b["cards"]))
+        ck(f"{n} 같은 대본 → 같은 카드(결정론)", same and a["count"] == b["count"])
+        tags = I.load(p)["hashtags"]
+        ck(f"{n} 카드 캡션: 자리표시자 없음·2,200자 안·해시태그 끝",
+           "{{" not in a["caption"] and len(a["caption"]) <= 2200 and a["caption"].rstrip().endswith(tags[-1]))
+        ck(f"{n} 쓰레드 글 500자 안·해시태그 없음·주제 태그 하나",
+           I.threads_len(a["threads"]) <= 500 and "#" not in a["threads"] and a["topic_tag"] == tags[0].lstrip("#"))
+    ck("카드 꼬리말: 목소리 말 없음 · AI 그림 표시는 있을 때만",
+       "목소리" not in I.card_footer(True) and "AI" in I.card_footer(True) and "AI로" not in I.card_footer(False))
+
+print("── 게시 형식(요일 → 어디에 무엇을) ──")
+fm = lambda d, **e: I.publish_formats(d, env=e)  # noqa: E731
+ck("월·수·금(가이드) → 인스타 릴스 · 쓰레드 카드",
+   all(fm(d)["ig"] == ["reel"] and fm(d)["threads"] == "cards" for d in ("2026-10-05", "2026-10-07", "2026-10-09")))
+ck("일(성적표) → 인스타 카드 · 쓰레드 카드", fm("2026-10-11")["ig"] == ["cards"] and fm("2026-10-11")["threads"] == "cards")
+ck("auto 는 기본과 같다", fm("2026-10-05", INSTA_IG_FORMAT="auto", INSTA_THREADS_FORMAT="auto") == fm("2026-10-05"))
+ck("INSTA_IG_FORMAT=both → 릴스+카드", fm("2026-10-05", INSTA_IG_FORMAT="both")["ig"] == ["reel", "cards"])
+ck("INSTA_IG_FORMAT=cards → 월요일도 카드", fm("2026-10-05", INSTA_IG_FORMAT="cards")["ig"] == ["cards"])
+ck("INSTA_IG_FORMAT=reel → 일요일도 릴스", fm("2026-10-11", INSTA_IG_FORMAT="reel")["ig"] == ["reel"])
+ck("INSTA_THREADS_FORMAT=reel → 쓰레드 릴스", fm("2026-10-11", INSTA_THREADS_FORMAT="reel")["threads"] == "reel")
+bad = fm("2026-10-05", INSTA_IG_FORMAT="gif", INSTA_THREADS_FORMAT="x")
+ck("모르는 값은 기본으로 + 경고", bad["ig"] == ["reel"] and bad["threads"] == "cards" and len(bad["warn"]) == 2)
+sun = fm("2026-10-11")
+ck("일요일 카드 렌더가 없으면 인스타는 릴스로 대신", PR.route(sun, True, False, False)["ig"] == ["reel"])
+ck("쓰레드는 INSTA_THREADS 없으면 안 올린다", PR.route(sun, True, True, False)["threads"] is None)
+ck("쓰레드 카드 렌더가 없으면 릴스로 대신", PR.route(sun, True, False, True)["threads"] == "reel")
+ck("both 인데 릴스가 없으면 카드만", PR.route(fm("2026-10-05", INSTA_IG_FORMAT="both"), False, True, True)["ig"] == ["cards"])
+
+print("── 쓰레드 글·캡션 길이 ──")
+ctx_g = I.context(I.topic_entry(G["topic"]), ST.mock(dt.date(2026, 10, 4)), G["date"])
+long_g = dict(G, caption="첫 화면이 전부였어요.\n\n따라 하는 법\n" + "\n".join(
+    f"{k}. 이 단계는 설명이 아주 길어서 쓰레드 글자 수를 넘기게 만드는 줄이에요, 정말로 길어요" for k in range(1, 16))
+    + "\n\n저장해 두고 그대로 해 보세요.")
+t = I.threads_text(long_g, ctx_g)
+ck("쓰레드 글: 500자 안 · 첫 줄·저장 줄은 남기고 뒤 단계부터 줄 단위로 덜어 낸다",
+   I.threads_len(t) <= 500 and t.startswith("첫 화면이 전부였어요.") and "저장해 두고" in t and "…" not in t
+   and "15." not in t and "1. " in t, t[-200:])
+ck("쓰레드 글자 수: 이모지는 UTF-8 바이트로 센다", I.threads_len("가😀") == 5 and I.threads_len("가나") == 2)
+ck("쓰레드 주제 태그 = 첫 해시태그(# 없이)", I.topic_tag(G) == "유튜브쇼츠" and I.topic_tag({"hashtags": ["#A.I&B"]}) == "AIB")
+huge = dict(G, caption="첫 줄\n" + "가" * 3000)
+ck("인스타 캡션은 길어도 2,200자 안(꼬리말·해시태그는 남긴다)",
+   len(I.card_caption(huge, ctx_g)) <= 2200 and I.card_caption(huge, ctx_g).rstrip().endswith("#AI유튜브")
+   and len(I.final_caption(huge, ctx_g)) <= 2200)
+
+print("── 게시 호출 순서(가짜 전송 — 네트워크 없음) ──")
+with tempfile.TemporaryDirectory() as td:
+    cards_m = {"cards": [os.path.join(td, f"c{k}.jpg") for k in range(1, 4)], "caption": "카드 캡션", "threads": "쓰레드 글"}
+    reel_m = {"video": os.path.join(td, "v.mp4"), "cover": os.path.join(td, "cover.jpg"), "caption": "릴스 캡션",
+              "threads": "쓰레드 릴스 글"}
+    dry = PR.DryBackend()
+    with contextlib.redirect_stdout(io.StringIO()):
+        res = PR.publish({"ig": ["cards"], "threads": "cards", "notes": []}, None, cards_m, G, dry)
+    posts = [(u.split("/")[-1], b) for m, u, b in dry.calls if m == "POST"]
+    ig = [(e, b) for e, b in posts if e in ("media", "media_publish")]
+    th = [(e, b) for e, b in posts if e in ("threads", "threads_publish")]
+    ck("인스타 카드: 장마다 컨테이너(is_carousel_item) → CAROUSEL(children·caption) → media_publish",
+       [e for e, _ in ig] == ["media"] * 4 + ["media_publish"]
+       and all(b.get("is_carousel_item") == "true" and b.get("image_url", "").endswith(".jpg") for _, b in ig[:3])
+       and ig[3][1].get("media_type") == "CAROUSEL" and ig[3][1].get("children") == "dry1,dry2,dry3"
+       and ig[3][1].get("caption") == "카드 캡션" and ig[4][1] == {"creation_id": "dry4"}, str(ig))
+    ck("쓰레드 카드: IMAGE 컨테이너(is_carousel_item) → CAROUSEL(children·text·topic_tag) → threads_publish",
+       [e for e, _ in th] == ["threads"] * 4 + ["threads_publish"]
+       and all(b.get("media_type") == "IMAGE" and b.get("is_carousel_item") == "true" for _, b in th[:3])
+       and th[3][1].get("media_type") == "CAROUSEL" and th[3][1].get("children") == "dry6,dry7,dry8"
+       and th[3][1].get("text") == "쓰레드 글" and th[3][1].get("topic_tag") == "유튜브쇼츠"
+       and th[4][1] == {"creation_id": "dry9"}, str(th))
+    gets = [u for m, u, _ in dry.calls if m == "GET"]
+    ck("컨테이너마다 상태를 확인한 뒤 게시(인스타·쓰레드 각 4번)", len(gets) == 8, str(gets))
+    ck("가짜 전송: 토큰 없음 · 공개 URL 도 가짜",
+       all("access_token" not in b for _, _, b in dry.calls)
+       and all(b.get("image_url", "https://dry-run.invalid/").startswith("https://dry-run.invalid/") for _, _, b in dry.calls))
+    ck("게시 결과 id(인스타·쓰레드 카드)", res["ig"] == {"cards": "dry5"} and res["threads"] == {"cards": "dry10"}, str(res))
+    ck("성공하면 올린 카드 원본을 지운다(무료 한도)",
+       sum(1 for c in dry.calls if c[0] == "CLEANUP") == sum(1 for c in dry.calls if c[0] == "HOST") == 3)
+    dry = PR.DryBackend()
+    with contextlib.redirect_stdout(io.StringIO()):
+        res = PR.publish({"ig": ["reel"], "threads": None, "notes": []}, reel_m, None, G, dry)
+    posts = [(u.split("/")[-1], b) for m, u, b in dry.calls if m == "POST"]
+    ck("인스타 릴스: REELS(video_url·cover_url) → 상태 확인 → media_publish",
+       [e for e, _ in posts] == ["media", "media_publish"] and posts[0][1].get("media_type") == "REELS"
+       and posts[0][1].get("cover_url", "").endswith("_cover.jpg") and res["ig"] == {"reel": "dry2"}, str(posts))
+    led = {}
+    lp, pp = os.path.join(td, "led.json"), os.path.join(td, "posted.json")
+    PR.record(led, G, {"ig": {"reel": "111"}, "threads": {"cards": "222"}, "errors": {}}, lp, pp, now=0)
+    stem = f"{G['date']}_{G['topic']}"
+    rec = I.load(pp)[stem]
+    ck("기록: posted.json·ledger 에 형식까지", rec["formats"] == {"ig": ["reel"], "threads": ["cards"]}
+       and rec["ids"] == {"ig_reel": "111", "threads_cards": "222"} and stem in I.load(lp))
+    ck("기록한 편은 다시 올리지 않는다", has(PR.blockers(G, GUIDE_P, {}, PR.load_ledger(lp, pp), I._date(G["date"]),
+                                                need=()), "이미 올린"))
+
+with open(os.path.join(ROOT, ".github", "workflows", "insta.yml"), encoding="utf-8") as f:
+    wf = f.read()
+ck("insta.yml: 카드 렌더 + 형식 변수(기본 auto) + 카드 결과물",
+   "insta/render_cards.py" in wf and "INSTA_IG_FORMAT: ${{ vars.INSTA_IG_FORMAT || 'auto' }}" in wf
+   and "INSTA_THREADS_FORMAT: ${{ vars.INSTA_THREADS_FORMAT || 'auto' }}" in wf and "_card[0-9][0-9].jpg" in wf)
+sample_cards = sorted(glob.glob(os.path.join(HERE, "samples", "cards", "*.jpg")))
+ck(f"견본 카드 {len(sample_cards)}장(insta/samples/cards) — 1080×1350",
+   RC.MIN_SLIDES <= len(sample_cards) <= RC.MAX_SLIDES and not PR.card_problems({"cards": sample_cards}))
 
 print("── 미아 감시·복구 · 왕별이 크로스포스트 끔 ──")
 import find_orphan_storyboards as FO  # noqa: E402

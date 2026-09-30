@@ -1,4 +1,4 @@
-name: 인스타 릴스 — 대본 검사 → 실제 숫자(YouTube API) → 렌더(Spark) → 게시(기본 dry-run)
+name: 인스타 릴스·카드 — 대본 검사 → 실제 숫자(YouTube API) → 렌더(릴스+카드) → 게시(기본 dry-run)
 
 # 인스타 계정 '0원으로 AI 유튜브 채널을 굴리는 실제 기록'(한국어, 가이드형). 왕별이·Nine Tails Tales 두 채널의 실제 운영 기록.
 # 트리거: 인스타 루틴이 routine/insta(★누적 브랜치)에 output/insta/<날짜>_<slug>.json 을 push 하면 실행.
@@ -7,6 +7,10 @@ name: 인스타 릴스 — 대본 검사 → 실제 숫자(YouTube API) → 렌�
 #   루틴이 claude/* 로 잘못 밀면 orphan-rescue.yml 이 routine/insta 로 옮긴다(WATCH 에 output/insta 추가).
 # 게시: ★레포 변수 INSTA_PUBLISH=1 일 때만 실제로 올린다(기본은 dry-run — 렌더 결과만 아티팩트로).
 #   쓰레드도: INSTA_THREADS=1 · 진행자: INSTA_HOST = none(기본) | gumi
+# 형식: 매 편 릴스(render_reel)와 카드 4:5 캐러셀(render_cards)을 둘 다 만든다. 어디에 무엇을 — 코드가 날짜로(insta.publish_formats):
+#   인스타 = 월·수·금 가이드 → 릴스 · 일 성적표 → 카드 / 쓰레드 = 늘 카드
+#   덮어쓰기(레포 변수): INSTA_IG_FORMAT = auto(기본)|reel|cards|both · INSTA_THREADS_FORMAT = auto(기본)|cards|reel
+#   한쪽 렌더가 실패해도 다른 쪽은 올린다(post_reel 이 있는 형식으로 대신) — 대신 잡은 마지막에 실패로 표시한다.
 # ★Spark 는 공용 서버: 목소리는 한 문장씩 차례로, 그림은 한 장씩(대기열이 길면 기다림).
 # ★돈 드는 호출 없음: Spark · YouTube Data API(읽기) · Cloudinary 무료 · 퍼블릭 레포 Actions.
 # 예약(cron) 없음 — 루틴의 push 가 곧 게시 시각이다.
@@ -128,18 +132,31 @@ jobs:
           key: insta-ledger-${{ github.run_id }}
           restore-keys: insta-ledger-
 
-      - name: 렌더
+      - name: 렌더(릴스)
+        id: reel
         if: steps.pick.outputs.targets != ''
+        continue-on-error: true     # 실패해도 카드는 올린다 — 마지막 단계가 잡을 실패로 표시
         run: |
           for f in ${{ steps.pick.outputs.targets }}; do
             python insta/render_reel.py "$f" $([ "${{ github.event.inputs.mock }}" = "true" ] && echo --mock)
           done
 
-      - name: 게시(INSTA_PUBLISH=1 일 때만 — 아니면 dry-run)
+      - name: 렌더(카드 — 4:5 캐러셀, 릴스 그림 캐시를 그대로 쓴다)
+        id: cards
         if: steps.pick.outputs.targets != ''
+        continue-on-error: true
+        run: |
+          for f in ${{ steps.pick.outputs.targets }}; do
+            python insta/render_cards.py "$f" $([ "${{ github.event.inputs.mock }}" = "true" ] && echo --mock)
+          done
+
+      - name: 게시(INSTA_PUBLISH=1 일 때만 — 아니면 dry-run — 호출 순서만 출력)
+        if: steps.pick.outputs.targets != '' && (steps.reel.outcome == 'success' || steps.cards.outcome == 'success')
         env:
           INSTA_PUBLISH: ${{ github.event_name == 'push' && vars.INSTA_PUBLISH || '0' }}
           INSTA_THREADS: ${{ vars.INSTA_THREADS || '0' }}
+          INSTA_IG_FORMAT: ${{ vars.INSTA_IG_FORMAT || 'auto' }}
+          INSTA_THREADS_FORMAT: ${{ vars.INSTA_THREADS_FORMAT || 'auto' }}
           CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
           CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
           CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
@@ -152,11 +169,17 @@ jobs:
             python insta/post_reel.py "$f"
           done
 
+      - name: 렌더 실패 표시(올릴 수 있는 건 위에서 올렸다)
+        if: steps.reel.outcome == 'failure' || steps.cards.outcome == 'failure'
+        run: |
+          echo "::error title=인스타 렌더 실패::릴스 ${{ steps.reel.outcome }} · 카드 ${{ steps.cards.outcome }} — 로그 확인"
+          exit 1
+
       - name: 토큰 파일 지우기
         if: always()
         run: rm -rf pipeline/secrets
 
-      - name: 결과물(커버·한눈에 보기·메타·영상)
+      - name: 결과물(커버·한눈에 보기·메타·영상·카드)
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -166,6 +189,8 @@ jobs:
             output/insta_render/*_sheet.jpg
             output/insta_render/*_meta.json
             output/insta_render/*.mp4
+            output/insta_render/*_card[0-9][0-9].jpg
+            output/insta_render/*_cards.json
             output/insta_render/stats.json
           retention-days: 5
           if-no-files-found: warn
