@@ -6,7 +6,9 @@
   우리 운세는 27~36초 내레이션형이고 편당 ~1,000회에서 멈춘다.
   → 격일로 두 형식을 번갈아 내보내 비교한다(A/B).
 
-배정: CARD_START 부터 ★짝수 날 = 표, 홀수 날 = 기존 형식. 루틴 판단이 아니라 스토리보드 날짜로 정한다.
+배정: ★2026-10-01 부터 매일 표(9/30 표 첫 편 5,700회·좋아요 101 — 기존 형식은 편당 ~800~1,000회에서 멈췄다).
+  FORTUNE_CARD=ab 면 예전처럼 CARD_START 부터 짝수 날 = 표, 홀수 날 = 기존 형식. FORTUNE_CARD=0 이면 끈다.
+  루틴 판단이 아니라 스토리보드 날짜로 정한다.
 데이터: 루틴 스토리보드에는 1~3위만 있다 → 그대로 쓰고, 4~12위·점수·한 줄은 날짜 해시로 정한다
   (같은 날짜면 늘 같은 표). 재미로 보는 운세라는 고지는 설명란에 넣는다.
 
@@ -48,14 +50,19 @@ def sb_date(sb: dict) -> dt.date | None:
 
 
 def use_card(sb: dict) -> bool:
-    """운세 스토리보드이고 표 차례인 날이면 True. 끄기: FORTUNE_CARD=0"""
+    """운세 스토리보드면 True(CARD_START 이후 매일). FORTUNE_CARD=ab 면 격일 A/B, =0 이면 끈다."""
     import os
-    if os.environ.get("FORTUNE_CARD", "1") in ("0", "false", "False"):
+    mode = os.environ.get("FORTUNE_CARD", "1").strip().lower()
+    if mode in ("0", "false", "off"):
         return False
     if not str(sb.get("topic") or "").lower().startswith("fortune"):
         return False
     d = sb_date(sb)
-    return bool(d and is_card_day(d))
+    if not d:
+        return False
+    if mode == "ab":
+        return is_card_day(d)
+    return d >= CARD_START
 
 
 def _h(*parts) -> int:
