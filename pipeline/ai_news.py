@@ -776,8 +776,10 @@ def main() -> int:
         name = f"{d}_{TOPIC}_{slot}_storyboard.json"
         import tempfile
         taken = f"{d}_{TOPIC}_{slot}" in {e["key"] for e in entries_from_refs()}
+        out_dir = os.path.join(tempfile.gettempdir(), "ai_news")      # 레포 밖 — 세션 브랜치에 커밋될 일이 없다
+        os.makedirs(out_dir, exist_ok=True)
         print(f"DATE={d}\nSLOT={slot}\nLABEL={SLOTS[slot]}\nNAME={name}\n"
-              f"WRITE_TO={os.path.join(tempfile.gettempdir(), 'ai_news', name)}\n"
+              f"WRITE_TO={os.path.join(out_dir, name)}\n"
               f"BRANCH=routine/ai_{slot}\nTAKEN={'yes' if taken else 'no'}")
         return 0
     if a.cmd == "push":
