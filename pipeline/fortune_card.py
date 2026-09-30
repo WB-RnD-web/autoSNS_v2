@@ -106,20 +106,23 @@ def scope_of(sb: dict) -> str:
     return "오늘"
 
 
-def build_rows(sb: dict) -> list[dict]:
+def build_rows(sb: dict, key=None) -> list[dict]:
+    """key: 해시 씨앗(기본 = 스토리보드 날짜). 주간 롱폼(weekly_fortune)은 '2026-W41' 같은 주 번호를 준다
+    — 같은 방식으로 뽑되 월요일 하루 표와 똑같아지지 않게."""
     d = sb_date(sb) or dt.date.today()
+    k = d if key is None else key
     top, s1 = top_from_storyboard(sb)
-    rest = sorted((a for a in ANIMALS if a not in top), key=lambda a: _h(d, "order", a))
+    rest = sorted((a for a in ANIMALS if a not in top), key=lambda a: _h(k, "order", a))
     order = top + rest
-    score = max(80, min(99, s1 or 90 + _h(d, "s1") % 8))
+    score = max(80, min(99, s1 or 90 + _h(k, "s1") % 8))
     rows, used = [], {"top": set(), "mid": set(), "low": set()}
     for i, a in enumerate(order):
         if i:
-            score -= 1 + _h(d, "gap", i) % 3
+            score -= 1 + _h(k, "gap", i) % 3
         score = max(score, 58)
         tier = "top" if i < 3 else ("mid" if i < 8 else "low")
         bank = [x for x in LINES[tier] if x not in used[tier]] or LINES[tier]
-        line = bank[_h(d, "line", a) % len(bank)]
+        line = bank[_h(k, "line", a) % len(bank)]
         used[tier].add(line)
         rows.append({"rank": i + 1, "animal": a, "years": years_of(a), "score": score, "line": line})
     return rows

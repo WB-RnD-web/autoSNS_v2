@@ -835,6 +835,9 @@ ck("(가드 점검) 필터 해석이 맞다: shorts 는 routine/날짜 O · rout
 ck("어떤 push 트리거 워크플로도 data/ai-news-feed 에 반응하지 않는다(업로드가 깨어나지 않게)",
    not [n for n, p in trig.items() if p is not None and gh_match(p, "data/ai-news-feed")],
    str([n for n, p in trig.items() if p is not None and gh_match(p, "data/ai-news-feed")]))
+ck("routine/weekly_fortune(주간 띠별 운세)에 반응하는 push 워크플로는 weekly-fortune.yml 하나(shorts.yml 아님)",
+   [n for n, p in trig.items() if p is not None and gh_match(p, "routine/weekly_fortune")] == ["weekly-fortune.yml"],
+   str([n for n, p in trig.items() if p is not None and gh_match(p, "routine/weekly_fortune")]))
 feedwf = flows.get("ai-news-feed.yml", "")
 ck("ai-news-feed.yml: 루틴 30분 전 두 번(정각 피함) + 수동 실행",
    re.findall(r'cron:\s*"(\d+) (\d+) \* \* \*"', feedwf) == [("37", "0"), ("37", "9")] and "workflow_dispatch:" in feedwf)
