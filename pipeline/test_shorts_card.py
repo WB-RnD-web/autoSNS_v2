@@ -49,6 +49,13 @@ os.environ["FORTUNE_CARD"] = "0"
 ck("FORTUNE_CARD=0 이면 끈다", not FC.use_card(SB))
 os.environ.pop("FORTUNE_CARD")
 ck("운세 + 표 날이면 켠다", FC.use_card(SB))
+import datetime as _dt
+_odd = {**SB, "date": str(FC.CARD_START + _dt.timedelta(days=1))}
+ck("기본은 매일 표(홀수 날도)", FC.use_card(_odd))
+os.environ["FORTUNE_CARD"] = "ab"
+ck("FORTUNE_CARD=ab 면 홀수 날은 기존 형식", not FC.use_card(_odd) and FC.use_card(SB))
+os.environ.pop("FORTUNE_CARD")
+ck("CARD_START 이전 날짜는 표 아님", not FC.use_card({**SB, "date": str(FC.CARD_START - _dt.timedelta(days=1))}))
 
 print("── 표 데이터 ──")
 top, s1 = FC.top_from_storyboard(SB)
