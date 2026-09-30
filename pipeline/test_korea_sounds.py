@@ -98,6 +98,17 @@ try:
 except ValueError:
     ck("모르는 움직임은 거부", True)
 
+print("── 슬롯 발행일(늦게 돈 예약이 중복으로 올리지 않게) ──")
+import datetime as _d
+_S = K.START
+ck("수요일은 그대로", K.slot_date(_S) == _S)
+ck("목요일 새벽 = 같은 슬롯의 수요일", K.slot_date(_S + _d.timedelta(days=1)) == _S)
+ck("금요일도 수요일", K.slot_date(_S + _d.timedelta(days=2)) == _S)
+ck("토요일은 토요일", K.slot_date(_S + _d.timedelta(days=3)) == _S + _d.timedelta(days=3))
+ck("일·월·화는 그 주 토요일", all(K.slot_date(_S + _d.timedelta(days=k)) == _S + _d.timedelta(days=3) for k in (4, 5, 6)))
+ck("다음 주 수요일", K.slot_date(_S + _d.timedelta(days=7)) == _S + _d.timedelta(days=7))
+ck("같은 슬롯이면 테마도 같다", K.pick(_S)[0]["id"] == K.pick(_S + _d.timedelta(days=1))[0]["id"])
+
 print()
 if FAIL:
     print(f"❌ 실패 {FAIL}건")
