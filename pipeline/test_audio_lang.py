@@ -49,6 +49,12 @@ ck("SCP 한국어 → ko", F.target({"title": "SCP-682 불사의 파충류 — �
 ck("ASMR 은 건드리지 않음", F.target({"title": "🌧️ 창가에 부딪히는 빗소리 ASMR 3시간"}) is None)
 ck("영어 제목은 건드리지 않음", F.target({"title": "Korea Sleep Sounds — Rain on Hanok Roof 8 Hours"}) is None)
 
+print("── 잘못 들어간 값만 고친다 ──")
+ck("en-US 로 잘못 들어간 한국어 영상 → ko", F.needs_fix({"title": "괴담라디오 1화", "defaultAudioLanguage": "en-US"}) == "ko")
+ck("비어 있는 옛 영상은 기본으로 건너뜀(쿼터)", F.needs_fix({"title": "오늘 운세 #shorts"}) is None)
+ck("--include-unset 이면 비어 있는 것도", F.needs_fix({"title": "오늘 운세 #shorts"}, include_unset=True) == "ko")
+ck("이미 ko 면 건너뜀", F.needs_fix({"title": "오늘 운세 #shorts", "defaultAudioLanguage": "ko"}) is None)
+
 print("── ASMR 오디오 언어 ──")
 ck("말소리 없는 ASMR → zxx(관련 없음)", A.audio_language({"narration_text": ""}) == "zxx")
 ck("나레이션 있으면 ko", A.audio_language({"narration_text": "편안한 밤 되세요"}) == "ko")
