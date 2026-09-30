@@ -56,7 +56,7 @@ ck("--include-unset 이면 비어 있는 것도", F.needs_fix({"title": "오늘 
 ck("이미 ko 면 건너뜀", F.needs_fix({"title": "오늘 운세 #shorts", "defaultAudioLanguage": "ko"}) is None)
 
 print("── ASMR 오디오 언어 ──")
-ck("말소리 없는 ASMR → ''(넣지 않음 — zxx 는 400 으로 거부)", A.audio_language({"narration_text": ""}) == "")
+ck("말소리 없는 ASMR → en(비우면 채널 기본 ko 가 들어간다 · zxx 는 400)", A.audio_language({"narration_text": ""}) == "en")
 ck("소리 영상(audio_lang='')은 번역 때도 오디오 언어를 채우지 않음",
    "defaultAudioLanguage" not in I.snippet_for_update({"title": "Rain 8 Hours"}, audio_lang=""))
 ck("이미 들어 있는 값은 그대로", I.snippet_for_update({"title": "x", "defaultAudioLanguage": "en-US"}, audio_lang="")["defaultAudioLanguage"] == "en-US")
