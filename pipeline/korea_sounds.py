@@ -167,6 +167,18 @@ def slot_for(d: dt.date) -> int:
     return (days // 7) * 2 + (0 if days % 7 < 3 else 1)
 
 
+def slot_date(d: dt.date) -> dt.date:
+    """d 가 속한 슬롯의 발행일(수 또는 토). 날짜를 이걸로 맞춰야 늦게 돈 실행이 중복으로 올리지 않는다.
+
+    2026-10-01: 수요일 GitHub 예약이 6시간 반 늦게 목요일 새벽에 돌아, ledger 키(<date>_<theme>)가
+    9/30 과 10/1 로 갈려 같은 8시간 영상이 두 번 올라갔다(0vsVKiCPL6U · 7xqNiIHIhKs).
+    """
+    days = (d - START).days
+    if days < 0:
+        raise ValueError(f"{d} 는 시리즈 시작일 {START} 이전")
+    return START + dt.timedelta(days=(days // 7) * 7 + (0 if days % 7 < 3 else 3))
+
+
 def pick(d: dt.date) -> tuple[dict, int, int]:
     """(테마, 슬롯 번호, 권 번호)."""
     s = slot_for(d)
@@ -223,11 +235,12 @@ def kst_today() -> dt.date:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description="Korea Sleep Sounds 스펙 생성")
-    ap.add_argument("--date", default="", help="YYYY-MM-DD (비우면 오늘 KST)")
+    ap.add_argument("--date", default="", help="YYYY-MM-DD (비우면 오늘 KST 가 속한 슬롯의 수·토)")
     ap.add_argument("--out", default="")
     ap.add_argument("--list", action="store_true")
     a = ap.parse_args()
-    d = dt.date.fromisoformat(a.date) if a.date else kst_today()
+    # 날짜를 안 주면(예약·루틴 실행) 오늘이 속한 슬롯의 발행일로 맞춘다 — 늦게 돈 실행도 같은 ledger 키가 된다.
+    d = dt.date.fromisoformat(a.date) if a.date else slot_date(kst_today())
     if a.list:
         cur = max(d, START)
         for _ in range(len(THEMES)):
