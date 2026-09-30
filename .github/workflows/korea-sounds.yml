@@ -9,6 +9,14 @@ name: Korea Sleep Sounds — 8시간 한국 풍경 사운드(해외용) → 유�
 #   같은 날짜를 다시 돌려도 ledger(actions/cache)가 중복 업로드를 막는다.
 
 on:
+  # ★주 트리거: 클라우드 루틴 "Korea Sleep Sounds 트리거"가 수·토 19:20 KST 에 routine/korea_sounds 로
+  #   표식 파일(output/korea/<날짜>.trigger)을 push 한다. GitHub 예약(cron)은 9/27·9/30 두 번 다 안 돌았다 —
+  #   루틴은 제시간에 돈다. 아래 cron 은 예비로 남긴다(둘 다 돌아도 ledger 가 같은 날짜 중복 업로드를 막는다).
+  push:
+    branches:
+      - "routine/korea_sounds"
+    paths:
+      - "output/korea/**"
   schedule:
     # ★정각(:00)은 GitHub 예약이 가장 몰려 늦거나 빠진다 — 9/27 첫 예약이 아예 안 돌았다. 한산한 분으로.
     - cron: "37 10 * * 3,6"     # 수·토 10:37 UTC = 19:37 KST
