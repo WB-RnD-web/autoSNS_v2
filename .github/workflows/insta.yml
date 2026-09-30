@@ -1,0 +1,171 @@
+name: 인스타 릴스 — 대본 검사 → 실제 숫자(YouTube API) → 렌더(Spark) → 게시(기본 dry-run)
+
+# 인스타 계정 '0원으로 AI 유튜브 채널을 굴리는 실제 기록'(한국어, 가이드형). 왕별이·Nine Tails Tales 두 채널의 실제 운영 기록.
+# 트리거: 인스타 루틴이 routine/insta(★누적 브랜치)에 output/insta/<날짜>_<slug>.json 을 push 하면 실행.
+#   편성은 코드가 정한다(insta/insta.py next --date): 월·수·금 가이드(catalog 순서), 일 주간 성적표.
+#   ★대본을 믿지 않고 insta.py check 로 다시 검사한다 — 요일·주제·분량·숫자(자리표시자만)·금지 표현을 못 넘으면 멈춘다.
+#   루틴이 claude/* 로 잘못 밀면 orphan-rescue.yml 이 routine/insta 로 옮긴다(WATCH 에 output/insta 추가).
+# 게시: ★레포 변수 INSTA_PUBLISH=1 일 때만 실제로 올린다(기본은 dry-run — 렌더 결과만 아티팩트로).
+#   쓰레드도: INSTA_THREADS=1 · 진행자: INSTA_HOST = none(기본) | gumi
+# ★Spark 는 공용 서버: 목소리는 한 문장씩 차례로, 그림은 한 장씩(대기열이 길면 기다림).
+# ★돈 드는 호출 없음: Spark · YouTube Data API(읽기) · Cloudinary 무료 · 퍼블릭 레포 Actions.
+# 예약(cron) 없음 — 루틴의 push 가 곧 게시 시각이다.
+
+on:
+  push:
+    branches:
+      - "routine/insta"
+    paths:
+      - "output/insta/**"
+  workflow_dispatch:
+    inputs:
+      script:
+        description: "대본 경로(렌더만 — 게시하지 않는다)"
+        default: "insta/samples/first-second.json"
+      mock:
+        description: "Spark·네트워크 없이(가짜 목소리·그림·숫자)"
+        type: boolean
+        default: false
+      host:
+        description: "진행자 자리"
+        type: choice
+        options: [none, gumi]
+        default: none
+
+concurrency:
+  group: insta
+  cancel-in-progress: false
+
+permissions:
+  contents: read          # 레포에 아무것도 쓰지 않는다(루프 방지)
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      TZ: Asia/Seoul
+      PYTHONIOENCODING: utf-8
+      WBSPARK_BASE: ${{ vars.WBSPARK_BASE || 'https://wangbyul.com/wbSpark' }}
+      WBSPARK_TOKEN: ${{ secrets.WBSPARK_TOKEN }}
+      NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+      GUMIHO_SPARK_MAX_WAITING: "6"
+      INSTA_HOST: ${{ github.event.inputs.host || vars.INSTA_HOST || 'none' }}
+      INSTA_VOICE: ${{ vars.INSTA_VOICE || 'F1' }}
+      INSTA_TOKEN_FILES: pipeline/secrets/token_novel.json,pipeline/secrets/token_gumiho.json
+    steps:
+      # ★코드는 항상 main 에서 — routine/insta 는 누적 브랜치라 코드가 낡는다.
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: routine/insta 대본 가져오기(데이터만)
+        if: github.event_name == 'push'
+        run: |
+          git fetch origin routine/insta && git checkout FETCH_HEAD -- output/insta/ \
+            || echo "(routine/insta 에 output/insta 없음)"
+          ls output/insta/ 2>/dev/null | tail -5 || true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: pipeline/requirements.txt
+
+      - name: 시스템 의존성
+        run: |
+          sudo apt-get update && sudo apt-get install -y ffmpeg fonts-noto-cjk
+          # fonttools+brotli = 레포의 Pretendard woff2 → ttf(제목·자막 글꼴). 없으면 Noto CJK 로 내려간다
+          python -m pip install -r pipeline/requirements.txt numpy fonttools brotli
+
+      - name: 테스트(오프라인)
+        run: python insta/test_insta.py
+
+      - name: 처리 대상
+        id: pick
+        run: |
+          set -e
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            T="${{ github.event.inputs.script }}"
+          else
+            BEFORE="${{ github.event.before }}"; AFTER="${{ github.event.after }}"
+            if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+              RANGE="$AFTER~1 $AFTER"
+            else
+              RANGE="$BEFORE $AFTER"
+            fi
+            T=$(git diff --name-only --diff-filter=AM $RANGE -- 'output/insta/*.json' 2>/dev/null | tr '\n' ' ' || true)
+          fi
+          echo "targets=$T" >> "$GITHUB_OUTPUT"
+          echo "대상: '$T'"
+
+      - name: 대본 검사(못 넘으면 여기서 멈춘다)
+        if: steps.pick.outputs.targets != ''
+        run: python insta/insta.py check ${{ steps.pick.outputs.targets }}
+
+      - name: YouTube 토큰(읽기 전용으로만 쓴다)
+        if: steps.pick.outputs.targets != '' && github.event.inputs.mock != 'true'
+        env:
+          YT_TOKEN_JSON_NOVEL: ${{ secrets.YT_TOKEN_JSON_NOVEL }}
+          YT_TOKEN_JSON_GUMIHO: ${{ secrets.YT_TOKEN_JSON_GUMIHO }}
+        run: |
+          mkdir -p pipeline/secrets
+          [ -n "$YT_TOKEN_JSON_NOVEL" ] && printf '%s' "$YT_TOKEN_JSON_NOVEL" > pipeline/secrets/token_novel.json || true
+          [ -n "$YT_TOKEN_JSON_GUMIHO" ] && printf '%s' "$YT_TOKEN_JSON_GUMIHO" > pipeline/secrets/token_gumiho.json || true
+          ls pipeline/secrets/ | sed 's/^/  토큰 파일: /'
+
+      - name: 실제 숫자(두 채널)
+        if: steps.pick.outputs.targets != '' && github.event.inputs.mock != 'true'
+        run: |
+          D=$(python -c "import json,sys; print(json.load(open(sys.argv[1], encoding='utf-8'))['date'])" $(echo ${{ steps.pick.outputs.targets }} | awk '{print $1}'))
+          python insta/stats.py --date "$D" --out output/insta_render/stats.json
+
+      - name: 게시 ledger 캐시
+        uses: actions/cache@v4
+        with:
+          path: output/insta_render/posted_ledger.json
+          key: insta-ledger-${{ github.run_id }}
+          restore-keys: insta-ledger-
+
+      - name: 렌더
+        if: steps.pick.outputs.targets != ''
+        run: |
+          for f in ${{ steps.pick.outputs.targets }}; do
+            python insta/render_reel.py "$f" $([ "${{ github.event.inputs.mock }}" = "true" ] && echo --mock)
+          done
+
+      - name: 게시(INSTA_PUBLISH=1 일 때만 — 아니면 dry-run)
+        if: steps.pick.outputs.targets != ''
+        env:
+          INSTA_PUBLISH: ${{ github.event_name == 'push' && vars.INSTA_PUBLISH || '0' }}
+          INSTA_THREADS: ${{ vars.INSTA_THREADS || '0' }}
+          CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
+          CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
+          CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+        run: |
+          for f in ${{ steps.pick.outputs.targets }}; do
+            python insta/post_reel.py "$f"
+          done
+
+      - name: 토큰 파일 지우기
+        if: always()
+        run: rm -rf pipeline/secrets
+
+      - name: 결과물(커버·한눈에 보기·메타·영상)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: insta-${{ github.run_number }}
+          path: |
+            output/insta_render/*_cover.jpg
+            output/insta_render/*_sheet.jpg
+            output/insta_render/*_meta.json
+            output/insta_render/*.mp4
+            output/insta_render/stats.json
+          retention-days: 5
+          if-no-files-found: warn

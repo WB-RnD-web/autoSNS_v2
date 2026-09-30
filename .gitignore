@@ -59,3 +59,5 @@ docs/ROUTINE_PROMPT*.md
 # 키비주얼 배경(렌더 시 생성)
 pipeline/motion/assets/_bg.jpg
 /output/gumiho/
+# 인스타 릴스 렌더·통계·ledger(렌더 때 생성) — output/insta/ 의 대본(루틴이 커밋)은 커밋 대상
+/output/insta_render/
