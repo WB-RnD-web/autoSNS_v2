@@ -139,6 +139,27 @@ for kind in ("sans", "sans_bold", "serif", "cjk"):
 ck("모든 글꼴이 실제 트루타입(크기 적용)", ok)
 ck("큰 글자용 sans 는 Bold 이상 굵기", any(w in (R.font_path("sans") or "") for w in ("Black", "ExtraBold", "-VF", "arialbd", "Bold")))
 
+print("── 쇼츠 첫 1초 ──")
+bad = copy.deepcopy(S)
+bad["short"]["hook"] = "THIS HOOK IS FAR TOO LONG TO FIT ON TWO LINES AT THE TOP"
+ck("쇼츠 hook 너무 길면 거부", any("hook" in e for e in T.check(bad, "x.json")))
+ok_ = copy.deepcopy(S)
+ok_["short"]["hook"] = "SHE ATE THEM ALL"
+ck("쇼츠 hook 짧으면 통과", not any("hook" in e for e in T.check(ok_, "x.json")))
+ck("hook 없으면 썸네일 문구", R.short_hook(S) == S["thumb"]["text"].upper())
+fake = {x.get("key"): {"key": x.get("key"), "raw": f"/img/{x.get('key')}.png"} for x in S["scenes"] if x.get("key")}
+shots_ = list(fake.values())
+voices_ = {ln["say"]: "v.wav" for ln in S["short"]["lines"]}
+_wd = R.wav_dur
+R.wav_dur = lambda _p: 3.0
+try:
+    sp = R.short_plan(S, shots_, voices_, ".", thumb_raw="/img/THUMB.png")
+    sp0 = R.short_plan(S, shots_, voices_, ".")
+finally:
+    R.wav_dur = _wd
+ck("쇼츠 첫 줄 그림 = 썸네일 그림", sp["rows"][0]["raw"] == "/img/THUMB.png", sp["rows"][0]["raw"])
+ck("썸네일 없으면 원래 그림", sp0["rows"][0]["raw"] != "/img/THUMB.png")
+
 print("── 업로드 가드 ──")
 import upload_tale as U  # noqa: E402
 import datetime as dt  # noqa: E402

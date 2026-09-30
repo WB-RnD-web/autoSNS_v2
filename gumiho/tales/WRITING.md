@@ -104,6 +104,10 @@ Same narrator every week, **different shape** — so the channel never feels lik
 
 ## The Short (`short`)
 - 5–8 lines, 70–130 words (35–55 s). Line 1 is the hook (a situation, not a greeting).
+- `hook`: 2–7 words (≤38 characters) shown in big letters at the top for the whole Short —
+  the question the viewer needs answered ("SHE ATE THEM ALL", "NEVER KISS HER ON THIS ROAD").
+  Viewers decide in the first second, often with sound off. The renderer uses the thumbnail
+  picture for line 1, so write line 1 to fit `thumb.img` (the scariest image of the tale).
 - Tell the setup and the turn; **do not reveal the ending** — the last line is Gumi
   (`"gumi": "wink"`) sending viewers to the full tale.
 - Reuse pictures by `scene` key; `title` ≤100 chars ending with `#shorts`.
