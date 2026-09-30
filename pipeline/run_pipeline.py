@@ -187,6 +187,15 @@ def _prepare_cover(video, sb, base):
     return cover_img, social_video, src
 
 
+def social_crosspost_on() -> bool:
+    """왕별이 쇼츠 → 인스타 릴스·쓰레드 크로스포스트. ★기본 꺼짐(2026-09-30).
+
+    인스타 계정을 '0원 AI 유튜브 운영 실제 기록'(insta/ · insta.yml)으로 바꿨다. 같은 계정에 뉴스·운세 쇼츠가
+    섞여 올라가면 안 된다. 다시 켜기: 레포 변수 SOCIAL_CROSSPOST=1 (shorts.yml 이 넘긴다).
+    """
+    return (config.env("SOCIAL_CROSSPOST", "0") or "0").strip() in ("1", "true", "True", "yes")
+
+
 def do_social(video, sb, res):
     """IG Reels + Threads 업로드(자격증명 있을 때만). 공개 URL 은 Cloudinary 경유.
 
@@ -324,8 +333,10 @@ def process(sb_path, args, led):
         res["uploaded"] = "[skip] YT 자격증명 없음"
         print("   ⏭️  YouTube 스킵(자격증명 없음).")
 
-    # ── Instagram Reels + Threads (자격증명 있을 때, 독립) ──
-    if not args.no_social:
+    # ── Instagram Reels + Threads (자격증명 있을 때, 독립) — ★SOCIAL_CROSSPOST=1 일 때만(기본 끔) ──
+    if not args.no_social and not social_crosspost_on():
+        res["social"] = "[skip] SOCIAL_CROSSPOST 꺼짐 — 인스타는 insta/ 계정으로 전환"
+    elif not args.no_social:
         try:
             do_social(res["video"], sb, res)
         except Exception as e:  # noqa: BLE001

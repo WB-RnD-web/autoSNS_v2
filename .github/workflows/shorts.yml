@@ -62,6 +62,9 @@ jobs:
       I18N_CAPTIONS: "0"
       I18N_LANGS: ${{ vars.I18N_LANGS || 'en,ja,zh-Hant' }}
       # IG Reels + Threads (자격증명 있을 때만 동작 — 없으면 자동 스킵)
+      # ★기본 꺼짐(2026-09-30): 인스타 계정을 'AI 유튜브 운영 기록'(insta.yml)으로 바꿨다 — 뉴스·운세 쇼츠를 섞지 않는다.
+      #   다시 켜기: 레포 변수 SOCIAL_CROSSPOST=1
+      SOCIAL_CROSSPOST: ${{ vars.SOCIAL_CROSSPOST || '0' }}
       CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
       CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
       CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}

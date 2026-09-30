@@ -1,0 +1,35 @@
+{
+ "date": "2026-10-04",
+ "format": "report",
+ "topic": "weekly-report",
+ "headline": ["이번 주 성적표", "{{week.range}}"],
+ "scenes": [
+  {
+   "say": "이번 주 성적표예요. 두 채널 숫자를 고치지 않고 그대로 보여 드릴게요.",
+   "show": {"week": "both"}
+  },
+  {
+   "say": "왕별이는 이번 주 {{wb.week.uploads}}을 올렸고, 합쳐서 {{wb.week.views}}가 나왔어요.",
+   "show": {"week": "wb"}
+  },
+  {
+   "say": "제일 많이 본 건 {{wb.week.top_title}}, {{wb.week.top_views}}예요.",
+   "show": {"thumb": "wb.week.top", "label": "왕별이 이번 주 가장 많이 본 영상 · {{wb.week.top_views}}"}
+  },
+  {
+   "say": "영어 채널 {{ntt.name}}는 {{ntt.week.uploads}}, 조회는 {{ntt.week.views}}예요. 아직 시작 단계예요.",
+   "show": {"week": "ntt"}
+  },
+  {
+   "say": "이번 주에 바꾼 건 운세를 한 장 표로 바꾼 것, 그리고 AI 진행자를 끈 거예요.",
+   "show": {"steps": ["운세 쇼츠를 한 장 표로", "AI 진행자 끄기", "쇼츠 현지화 끄기"], "hi": -1}
+  },
+  {
+   "say": "구독자는 왕별이 {{wb.subs}}, {{ntt.name}} {{ntt.subs}}. 다음 주에도 숫자 그대로 가져올게요.",
+   "show": {"bars": [{"label": "왕별이 구독자", "value": "{{wb.subs}}"}, {"label": "Nine Tails 구독자", "value": "{{ntt.subs}}"}], "hi": 0},
+   "hold": 0.6
+  }
+ ],
+ "caption": "{{week.range}} 두 채널 성적표예요.\n\n• 왕별이: 영상 {{wb.week.uploads}} · 조회 {{wb.week.views}} · 구독자 {{wb.subs}}\n• Nine Tails Tales: 영상 {{ntt.week.uploads}} · 조회 {{ntt.week.views}} · 구독자 {{ntt.subs}}\n• 가장 많이 본 영상: {{wb.week.top_title}} ({{wb.week.top_views}})\n\n이번 주에 바꾼 것\n1. 운세 쇼츠를 한 장 표로\n2. AI 진행자 끄기\n3. 쇼츠 현지화 끄기\n\n숫자는 매주 일요일 고치지 않고 올려요. 저장해 두고 다음 주와 비교해 보세요.",
+ "hashtags": ["#유튜브운영", "#AI유튜브", "#유튜브성장기"]
+}
