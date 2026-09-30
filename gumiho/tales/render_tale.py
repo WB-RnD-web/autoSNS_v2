@@ -787,11 +787,23 @@ def thumbnail(s: dict, raw: str, out: str):
 
 
 # ── 쇼츠 ──────────────────────────────────────────────
-def short_plan(s: dict, shots: list[dict], voices: dict, wd: str) -> dict:
+def short_hook(s: dict) -> str:
+    """쇼츠 위에 끝까지 떠 있는 두 줄 제목. short.hook 이 없으면 썸네일 문구."""
+    return (s["short"].get("hook") or s["thumb"]["text"]).upper()
+
+
+def short_plan(s: dict, shots: list[dict], voices: dict, wd: str, thumb_raw: str | None = None) -> dict:
+    """첫 줄 그림은 썸네일 그림(이 편에서 가장 강한 그림)으로 바꾼다.
+
+    1화 쇼츠(2026-09-30): 첫 화면이 산길에 선 평범한 소녀 + 'In Korea,' → 계속 시청함 11.9%.
+    피드에서 첫 1초에 멈추게 하는 건 그림과 위 제목이다.
+    """
     by_key = {x["key"]: x for x in shots if x.get("key")}
     rows, t = [], 0.25
     for j, ln in enumerate(s["short"]["lines"]):
-        if ln.get("scene"):
+        if j == 0 and thumb_raw and not ln.get("gumi"):
+            raw = thumb_raw
+        elif ln.get("scene"):
             raw = by_key[ln["scene"]]["raw"]
         elif ln.get("gumi"):
             raw = os.path.join(ASSETS, f"gumi_{ln['gumi']}.jpg")
@@ -800,7 +812,8 @@ def short_plan(s: dict, shots: list[dict], voices: dict, wd: str) -> dict:
         v = voices[ln["say"]]
         d = wav_dur(v)
         rows.append({"say": ln["say"], "raw": raw, "wav": v, "start": round(t, 3), "vdur": d,
-                     "dur": round(d + 0.3, 3), "gumi": bool(ln.get("gumi")), "dir": 1 if j % 2 == 0 else -1})
+                     "dur": round(d + 0.3, 3), "gumi": bool(ln.get("gumi")), "dir": 1 if j % 2 == 0 else -1,
+                     "hook": raw == thumb_raw})
         t += d + 0.3
     total = round(t + 0.9, 3)
     rows[-1]["dur"] += 0.9
@@ -837,16 +850,33 @@ class ShortPainter:
                 self.imgs[r["raw"]] = im.resize((int(im.width * sc), int(im.height * sc)), Image.LANCZOS)
             r["chunks"] = caption_chunks(r["say"])
         self.fcap = font("sans", 92)
-        self.ftop = font("sans_bold", 40)
+        self.ftop = font("sans_bold", 34)
+        self.fhook = font("sans", 104)
+        self.hook_lines = self._hook_lines(short_hook(s))
+
+    def _hook_lines(self, text: str) -> list[str]:
+        """두 줄로 고르게 나눈다('SHE ATE THEM / ALL' 처럼 한 단어만 떨어지지 않게), 들어가는 가장 큰 글자."""
+        d = ImageDraw.Draw(Image.new("RGB", (8, 8)))
+        ws = text.split()
+        for size in (124, 112, 100, 90, 80, 70):
+            f = font("sans", size)
+            cands = [[text]] if len(ws) < 3 else []
+            cands += [[" ".join(ws[:k]), " ".join(ws[k:])] for k in range(1, len(ws))]
+            best = min(cands, key=lambda ls: max(d.textlength(x, font=f) for x in ls))
+            if max(d.textlength(x, font=f) for x in best) <= SW - 110:
+                self.fhook = f
+                return best
+        self.fhook = font("sans", 70)
+        return wrap(d, text, self.fhook, SW - 110)[:2]
 
     def base(self, r: dict, t: float) -> Image.Image:
         im = self.imgs[r["raw"]]
         p = ease((t - r["start"] + 0.25) / (r["dur"] + 0.5))
         span = min(im.width - SW, 900)
         cx = im.width / 2 + r["dir"] * (p - 0.5) * span
-        if r["gumi"]:
+        if r["gumi"] or r.get("hook"):          # 첫 그림은 가운데(주인공)에서 천천히 다가간다
             cx = im.width / 2
-        cw = SW / (1 + 0.04 * p)
+        cw = SW / (1 + (0.08 if r.get("hook") else 0.04) * p)
         return view(im, cw, cx, im.height / 2, SW, SH)
 
     def frame(self, t: float) -> Image.Image:
@@ -858,11 +888,18 @@ class ShortPainter:
         fr = self.fx.draw(fr, "embers", t)
         fr = ImageChops.multiply(fr, self.vig)
         d = ImageDraw.Draw(fr)
-        # 위: 시리즈 표시
+        # 위: 시리즈 표시 + 끝까지 떠 있는 두 줄 제목(소리 없이 넘겨 보는 사람도 첫 프레임에 읽는다)
         top = "KOREAN LEGEND"
         tl = d.textlength(top, font=self.ftop)
-        d.rounded_rectangle([(SW - tl) / 2 - 28, 180, (SW + tl) / 2 + 28, 246], 14, fill=RED)
-        d.text(((SW - tl) / 2, 188), top, font=self.ftop, fill=(255, 255, 255))
+        d.rounded_rectangle([(SW - tl) / 2 - 24, 150, (SW + tl) / 2 + 24, 206], 12, fill=RED)
+        d.text(((SW - tl) / 2, 157), top, font=self.ftop, fill=(255, 255, 255))
+        y = 232
+        lh = int(self.fhook.size * 1.12)
+        for ln in self.hook_lines:
+            w_ = d.textlength(ln, font=self.fhook)
+            d.text(((SW - w_) / 2, y), ln, font=self.fhook, fill=(255, 255, 255), stroke_width=10,
+                   stroke_fill=(0, 0, 0))
+            y += lh
         # 가운데 아래: 지금 말하는 조각
         lt = t - r["start"]
         if 0 <= lt <= r["vdur"] + 0.25:
@@ -886,15 +923,15 @@ class ShortPainter:
             el = d.textlength(end, font=fe)
             d.rounded_rectangle([(SW - el) / 2 - 30, 1420, (SW + el) / 2 + 30, 1500], 16, fill=(12, 8, 12))
             d.text(((SW - el) / 2, 1432), end, font=fe, fill=GOLD)
-        fade = min(1.0, t / 0.3, max(0.0, (self.SP["total"] - t) / 0.8))
+        fade = min(1.0, max(0.0, (self.SP["total"] - t) / 0.8))     # 첫 프레임부터 밝게(피드 자동 재생 첫 장)
         if fade < 1:
             fr = ImageEnhance.Brightness(fr).enhance(max(0.0, fade))
         return fr
 
 
-def render_short(s: dict, shots: list[dict], voices: dict, wd: str, out: str) -> dict:
+def render_short(s: dict, shots: list[dict], voices: dict, wd: str, out: str, thumb_raw: str | None = None) -> dict:
     import numpy as np
-    SP = short_plan(s, shots, voices, wd)
+    SP = short_plan(s, shots, voices, wd, thumb_raw)
     if SP["total"] > SHORT_MAX:
         raise RuntimeError(f"쇼츠 {SP['total']}초 > {SHORT_MAX}")
     pa = ShortPainter(SP, s)
@@ -982,7 +1019,7 @@ def render(path: str, out_dir: str, work: str, mock: bool = False, skip_short: b
            "sheet": base + "_sheet.jpg", "minutes": round(total / 60, 2), "cues": n_cues,
            "images": im["images"], "mock": mock, "starts": [x["start"] for x in shots], **md}
     if not skip_short:
-        res["short"].update(render_short(s, shots, voices, wd, base + "_short.mp4"))
+        res["short"].update(render_short(s, shots, voices, wd, base + "_short.mp4", im["thumb_raw"]))
     with open(base + "_meta.json", "w", encoding="utf-8") as f:
         json.dump(res, f, ensure_ascii=False, indent=1)
     print(f"✅ {base}.mp4 · {res['minutes']}분 · 그림 {im['images']} · 자막 {n_cues}"

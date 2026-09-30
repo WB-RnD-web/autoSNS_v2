@@ -40,6 +40,7 @@ SCENES_MIN, SCENES_MAX = 30, 90
 SAY_MAX_WORDS = 70          # 한 그림에 26초 넘게 머물지 않게
 HOOK_MAX_WORDS = 45         # 첫 장면(콜드 오픈) — 첫 15초가 이탈을 가른다
 SHORT_WORDS = (60, 150)     # 쇼츠 30~55초
+SHORT_HOOK_WORDS, SHORT_HOOK_CHARS = 7, 38     # 쇼츠 위 두 줄 제목
 SHORT_LINES = (4, 9)
 THUMB_MAX_WORDS = 4
 # 몇 달 뒤에도 통해야 한다(역주행) — 날짜를 타는 말은 금지. 사실로 적는 연도(1994년 영화 등)는 괜찮다
@@ -154,6 +155,10 @@ def check(s: dict, path: str | None = None) -> list[str]:
         errs.append(f"쇼츠 {sw}단어 — {SHORT_WORDS}(30~55초)")
     if not sh.get("title") or len(sh["title"]) > 100:
         errs.append("쇼츠 제목 1~100자")
+    # 쇼츠 위에 끝까지 떠 있는 두 줄 제목(없으면 썸네일 문구) — 첫 1초에 읽혀야 한다
+    hook = sh.get("hook") or s["thumb"].get("text", "")
+    if not 2 <= len(hook.split()) <= SHORT_HOOK_WORDS or len(hook) > SHORT_HOOK_CHARS:
+        errs.append(f"쇼츠 hook {hook!r} — 2~{SHORT_HOOK_WORDS}단어·{SHORT_HOOK_CHARS}자 이하(화면 위 두 줄)")
     for j, ln in enumerate(lines):
         src = [k for k in ("scene", "gumi", "img") if ln.get(k)]
         if len(src) != 1:
