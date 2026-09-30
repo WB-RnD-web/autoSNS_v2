@@ -8,6 +8,8 @@ output/assets/
 output/renders/
 /output/ledger.json
 /output/run_log.json
+/output/ai_ledger.json
+/output/ai_run_log.json
 /output/*.log
 *.mp4
 *.mov

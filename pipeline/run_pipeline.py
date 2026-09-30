@@ -28,6 +28,7 @@ import time
 import config
 import fortune_card
 import ledger as ledgermod
+import ai_news
 import motion_short
 import news_copy_check
 import upload_youtube
@@ -85,23 +86,59 @@ def synthetic_label(sb: dict, spec: dict) -> bool | None:
 FORTUNE_TOPICS = ("fortune", "horoscope", "zodiac")
 FORTUNE_PLAYLIST = "오늘의 띠별 운세 | 매일 아침 1위~12위"
 FORTUNE_PLAYLIST_DESC = "매일 아침 올라오는 띠별 운세 1위부터 12위까지. 45~96년생 전부, 재미로 보는 운세예요."
+# AI 소식(2026-09-30) — 하루 두 번. 과학·기술(28) + 재생목록.
+AI_PLAYLIST = "AI 소식 | 매일 오전·저녁, 쉽게 듣는 AI 뉴스"
+AI_PLAYLIST_DESC = ("오늘 AI 세상에서 바뀐 것, 그리고 그게 내 일자리·돈·안전에 뭘 뜻하는지. "
+                    "어려운 말은 쉽게 풀고, 출처는 설명란에 적어요.")
 
 
 def category_for(topic: str) -> str:
-    """운세·별자리는 엔터테인먼트(24), 뉴스·주식은 뉴스·정치(25). 2026-09-30 전엔 전부 25였다."""
-    return "24" if str(topic or "").lower().startswith(FORTUNE_TOPICS) else "25"
+    """운세·별자리는 엔터테인먼트(24), AI 소식은 과학·기술(28), 뉴스·주식은 뉴스·정치(25).
+
+    2026-09-30 전엔 전부 25였다.
+    """
+    t = str(topic or "").lower()
+    if t.startswith(FORTUNE_TOPICS):
+        return "24"
+    if ai_news.is_ai(t):
+        return "28"
+    return "25"
 
 
-def add_fortune_playlist(vid: str) -> None:
-    """운세 쇼츠를 재생목록에 — 가장 많이 보는 콘텐츠인데 목록이 없었다. 실패해도 업로드는 끝났다."""
+def playlist_for(topic: str) -> tuple[str, str] | None:
+    """공개 업로드를 자동으로 넣을 재생목록(제목, 설명). 없으면 None."""
+    t = str(topic or "").lower()
+    if t.startswith(FORTUNE_TOPICS):
+        return FORTUNE_PLAYLIST, FORTUNE_PLAYLIST_DESC
+    if ai_news.is_ai(t):
+        return AI_PLAYLIST, AI_PLAYLIST_DESC
+    return None
+
+
+def add_playlist(vid: str, title: str, desc: str) -> None:
+    """쇼츠를 재생목록에 — 실패해도 업로드는 끝났다(경고만). 쿼터: playlists.list 1 + playlistItems.insert 50."""
     try:
         import upload_youtube_novel as N
         yt = N.get_service()
-        pid = N.ensure_playlist(yt, FORTUNE_PLAYLIST, FORTUNE_PLAYLIST_DESC, privacy="public")
+        pid = N.ensure_playlist(yt, title, desc, privacy="public")
         N.add_to_playlist(yt, pid, vid)
-        print(f"   📂 운세 재생목록에 추가: {pid}")
+        print(f"   📂 재생목록에 추가: {title} ({pid})")
     except Exception as e:  # noqa: BLE001
-        print(f"   ⚠️ 운세 재생목록 실패(업로드는 성공): {e}")
+        print(f"   ⚠️ 재생목록 실패(업로드는 성공): {e}")
+
+
+def add_fortune_playlist(vid: str) -> None:
+    """운세 쇼츠를 재생목록에 — 가장 많이 보는 콘텐츠인데 목록이 없었다."""
+    add_playlist(vid, FORTUNE_PLAYLIST, FORTUNE_PLAYLIST_DESC)
+
+
+# 쿼터가 바닥났다는 응답. 재시도해도 똑같이 거절되고 ★재시도마다 쿼터를 또 먹는다 → 바로 멈춘다.
+#   videos.insert 는 2026-06-01 부터 자기 버킷(하루 100회)이고 나머지 호출은 10,000 units 를 나눠 쓴다.
+QUOTA_REASONS = ("quotaExceeded", "uploadLimitExceeded", "dailyLimitExceeded")
+
+
+def is_quota_error(e: BaseException) -> bool:
+    return any(r in str(e) for r in QUOTA_REASONS)
 
 
 def upload_with_retry(video, meta, retries=2):
@@ -116,6 +153,10 @@ def upload_with_retry(video, meta, retries=2):
                                          category=meta.get("category", "25"))
         except Exception as e:  # noqa: BLE001
             last = e
+            if is_quota_error(e):
+                sys.stderr.write(f"[upload] 쿼터 소진 — 재시도하지 않는다(재시도도 쿼터를 먹는다): {e}\n")
+                print(f"::error title=유튜브 쿼터 소진::{str(e)[:200]} — 다음 쿼터일(16:00 KST, 겨울 17:00)에 다시")
+                raise
             sys.stderr.write(f"[upload 재시도 {attempt}/{retries + 1}] {e}\n")
     raise last
 
@@ -210,13 +251,38 @@ def _prepare_cover(video, sb, base):
     return cover_img, social_video, src
 
 
-def social_crosspost_on() -> bool:
-    """왕별이 쇼츠 → 인스타 릴스·쓰레드 크로스포스트. ★기본 꺼짐(2026-09-30).
+def _on(name: str, default: str = "0") -> bool:
+    return (config.env(name, default) or default).strip() in ("1", "true", "True", "yes")
 
-    인스타 계정을 '0원 AI 유튜브 운영 실제 기록'(insta/ · insta.yml)으로 바꿨다. 같은 계정에 뉴스·운세 쇼츠가
-    섞여 올라가면 안 된다. 다시 켜기: 레포 변수 SOCIAL_CROSSPOST=1 (shorts.yml 이 넘긴다).
+
+# 인스타·쓰레드로도 보내는 토픽(정확히 일치). 인스타 계정이 'AI 유튜브 운영 기록'(@zerocrew.studio)이라
+# ★AI 소식만 어울린다 — 뉴스·운세는 섞지 않는다(2026-09-30). 바꾸기: 레포 변수 SOCIAL_CROSSPOST_TOPICS
+#   (쉼표 구분 · 전부 끄기 = none).
+CROSSPOST_TOPICS_DEFAULT = "ai"
+
+
+def crosspost_topics() -> set[str]:
+    raw = (config.env("SOCIAL_CROSSPOST_TOPICS") or "").strip() or CROSSPOST_TOPICS_DEFAULT
+    if raw.lower() in ("none", "off", "0", "-"):
+        return set()
+    return {t.strip().lower() for t in raw.split(",") if t.strip()}
+
+
+def social_crosspost_on(topic: str | None = None) -> bool:
+    """왕별이 쇼츠 → 인스타 릴스·쓰레드 크로스포스트 대상인가.
+
+    ★토픽별(2026-09-30): SOCIAL_CROSSPOST_TOPICS(기본 'ai')에 든 토픽만.
+    옛 스위치 SOCIAL_CROSSPOST=1 은 '전 토픽'으로 그대로 둔다(기본 꺼짐 — 인스타 계정을 바꿨다).
+    실제 게시 여부는 따로 INSTA_PUBLISH=1 이 정한다(social_live) — 없으면 dry-run.
     """
-    return (config.env("SOCIAL_CROSSPOST", "0") or "0").strip() in ("1", "true", "True", "yes")
+    if _on("SOCIAL_CROSSPOST"):
+        return True
+    return str(topic or "").strip().lower() in crosspost_topics()
+
+
+def social_live() -> bool:
+    """insta/post_reel.py 와 같은 안전장치: INSTA_PUBLISH=1 일 때만 실제로 올린다(아니면 dry-run)."""
+    return _on("INSTA_PUBLISH")
 
 
 def do_social(video, sb, res):
@@ -226,9 +292,18 @@ def do_social(video, sb, res):
       - 커버 확보(qwen-image 커버 → 실패 시 영상 프레임 폴백)
       - IG: cover_url 로 커버 지정 / Threads: 커버 API 없어 커버를 영상 첫 프레임으로 굽는다
       - YouTube 쇼츠는 이 함수와 무관(원본 res["video"] 그대로 업로드)
+    ★INSTA_PUBLISH=1 이 아니면 dry-run(캡션만 보여 주고 아무것도 안 올린다). 쓰레드는 INSTA_THREADS=1 일 때만.
     """
+    plat = sb.get("platforms", {})
+    cap = plat.get("instagram", {}).get("caption", "")
+    txt = plat.get("threads", {}).get("text", "")
+    if not social_live():
+        res["social"] = (f"[dry-run] IG 캡션 {len(cap)}자 · 쓰레드 {len(txt)}자 "
+                         f"— 레포 변수 INSTA_PUBLISH=1 이면 게시{' (+쓰레드: INSTA_THREADS=1)' if not _on('INSTA_THREADS') else ''}")
+        print(f"   🧪 {res['social']}\n── IG 캡션 ──\n{cap}\n── 쓰레드 ──\n{txt}\n──────────")
+        return
     ig = config.env("IG_USER_ID") and config.env("IG_ACCESS_TOKEN")
-    th = config.env("THREADS_USER_ID") and config.env("THREADS_ACCESS_TOKEN")
+    th = _on("INSTA_THREADS") and config.env("THREADS_USER_ID") and config.env("THREADS_ACCESS_TOKEN")
     if not ig and not th:
         return  # 자격증명 없음 → 조용히 스킵
     import host_video
@@ -285,6 +360,62 @@ def do_social(video, sb, res):
     res["social"] = " · ".join(out)
 
 
+def ai_lenient(args) -> bool:
+    """AI 검사 느슨 모드(날짜·신선도·중복을 경고로) — ★비공개이거나 안 올릴 때만 먹힌다."""
+    want = getattr(args, "ai_lenient", False)
+    safe = (getattr(args, "force_private", False) or getattr(args, "no_upload", False)
+            or getattr(args, "dry_run_upload", False))
+    if want and not safe:
+        print("   ⚠️ --ai-lenient 무시 — 공개 업로드에서는 느슨 모드를 쓰지 않는다")
+    return bool(want and safe)
+
+
+def ai_precheck(sb_path, sb, args, led, res) -> bool:
+    """AI 소식 대본 검사(렌더 전). 계속하면 True. 못 넘으면 res 에 이유를 적고 False.
+
+    이력 = 누적 브랜치 routine/ai_am·ai_pm(워크플로가 fetch) + 같은 폴더 + ledger.
+    실제로 올릴 때는 유튜브 최근 업로드도 본다(3 units) — ledger 캐시가 날아가도 같은 슬롯을 두 번 올리지 않게.
+    """
+    ai_news.normalize(sb)
+    now = dt.datetime.now(ai_news.KST)
+    key = ai_news.slot_key(sb)
+    hist = ai_news.load_history(now.date(), exclude=key, ledger=led,
+                                dirs=[os.path.dirname(os.path.abspath(sb_path))])
+    lenient = ai_lenient(args)
+    errs, warns = ai_news.check(sb, sb_path, now=now, history=hist, lenient=lenient)
+    print(f"   🤖 AI 소식 검사 · {key} · 이력 {len(hist)}편 · 읽는 글자 "
+          f"{ai_news.spoken_chars(ai_news.narration(sb))}자{' · 느슨 모드' if lenient else ''}")
+    for w in warns:
+        print(f"::warning title=AI 소식 검사(느슨 모드)::{w}")
+    if errs:
+        for e in errs:
+            print(f"::error title=AI 소식 검사::{e}")
+        res["error"] = f"ai_check {len(errs)}건: {errs[0]}"
+        return False
+    if getattr(args, "no_upload", False) or getattr(args, "dry_run_upload", False) or not has_credentials():
+        return True
+    try:
+        import upload_youtube_novel as N
+        vid, dup = ai_news.youtube_conflicts(sb, ai_news.recent_uploads(N.get_service()), now)
+    except Exception as e:  # noqa: BLE001
+        print(f"   ⚠️ 유튜브 이중 확인 건너뜀(ledger·브랜치 이력만으로 판정): {str(e)[:160]}")
+        return True
+    if vid:
+        res["skipped"] = "uploaded"
+        res["uploaded"] = f"https://youtu.be/{vid} (이미 올라감)"
+        print(f"   ⏭️  '{ai_news.marker(sb)}' 영상이 이미 채널에 있다({vid}) — 다시 올리지 않는다")
+        if led is not None:
+            ledgermod.mark(led, sb, vid, sb.get("privacy") or "public", time.time(),
+                           getattr(args, "ledger_path", ledgermod.DEFAULT_PATH), extra={"ai": ai_news.entry(sb)})
+        return False
+    if dup and not lenient:
+        for e in dup:
+            print(f"::error title=AI 소식 중복::{e}")
+        res["error"] = f"ai_check 중복 {len(dup)}건: {dup[0]}"
+        return False
+    return True
+
+
 def process(sb_path, args, led):
     res = {"storyboard": os.path.basename(sb_path), "video": None,
            "uploaded": None, "social": None, "skipped": False, "error": None}
@@ -299,6 +430,9 @@ def process(sb_path, args, led):
         res["skipped"] = True
         print(f"   ⏭️  ledger 처리됨({ledgermod.key_for(sb)}) — 건너뜀")
         return res
+    is_ai = ai_news.is_ai(sb)
+    if is_ai and not ai_precheck(sb_path, sb, args, led, res):
+        return res
     # ★카피 점검 — 렌더 전에 본다. 밋밋하면 경고만 뜨고 계속 간다.
     news_copy_check.report(sb)
     try:
@@ -309,6 +443,8 @@ def process(sb_path, args, led):
             spec = fortune_card.build_spec(sb)
             print("   🗂️ 운세 한 장 표 (격일 A/B · fortune_card)")
         suffix = f"_{sb.get('topic','')}" if sb.get("topic") else ""
+        if sb.get("slot"):
+            suffix += f"_{sb['slot']}"          # 하루 여러 편(AI 소식 am·pm) — 파일이 서로 덮지 않게
         out_mp4 = str(config.RENDERS_DIR / f"{sb.get('date','out')}{suffix}_final.mp4")
         wd = str(config.OUTPUT / "_work" / f"{sb.get('date','')}{suffix}")
         config.ensure_dirs()
@@ -317,12 +453,26 @@ def process(sb_path, args, led):
     except Exception as e:  # noqa: BLE001
         res["error"] = f"render: {e}"
         return res
+    if is_ai:
+        try:
+            sec = motion_short.probe_dur(res["video"])
+        except Exception:  # noqa: BLE001
+            sec = None
+        msg = ai_news.check_duration(sec)
+        if msg:
+            print(f"::error title=AI 소식 길이::{msg}")
+            res["error"] = f"ai_check: {msg}"
+            return res
 
     if args.no_upload:
         return res
     meta = build_meta(sb, args.force_private)
     meta["synthetic"] = synthetic_label(sb, spec)
     meta["category"] = category_for(sb.get("topic", ""))
+    if is_ai:
+        # 설명 = 루틴 설명 + 출처(주소·날짜) + 'AI 소식 <날짜> <오전|저녁>' 표식(유튜브 쪽 중복 판정)
+        meta["description"] = ai_news.youtube_description(sb)
+        meta["tags"] = list(ai_news.TAGS)
     # Supertonic 3 는 OpenRAIL-M(상업 이용 가능 · 사용 제한 · 출처 표기) — 설명란 끝에 한 줄.
     if motion_short.VO_BACKEND == "wbspark" and "Supertonic" not in meta["description"]:
         meta["description"] = f"{meta['description']}\n\n🎙️ Voice: Supertonic (Supertone · OpenRAIL-M)"
@@ -349,19 +499,24 @@ def process(sb_path, args, led):
         try:
             vid = upload_with_retry(res["video"], meta)
             res["uploaded"] = f"https://youtu.be/{vid} ({meta['privacy']})"
-            if meta["category"] == "24" and meta["privacy"] == "public":
-                add_fortune_playlist(vid)
+            pl = playlist_for(sb.get("topic", ""))
+            if pl and meta["privacy"] == "public":
+                add_playlist(vid, *pl)
             if led is not None:
-                ledgermod.mark(led, sb, vid, meta["privacy"], time.time(), args.ledger_path)
+                ledgermod.mark(led, sb, vid, meta["privacy"], time.time(), args.ledger_path,
+                               extra={"ai": ai_news.entry(sb)} if is_ai else None)
         except Exception as e:  # noqa: BLE001
             res["error"] = f"upload: {e}"
     else:
         res["uploaded"] = "[skip] YT 자격증명 없음"
         print("   ⏭️  YouTube 스킵(자격증명 없음).")
 
-    # ── Instagram Reels + Threads (자격증명 있을 때, 독립) — ★SOCIAL_CROSSPOST=1 일 때만(기본 끔) ──
-    if not args.no_social and not social_crosspost_on():
-        res["social"] = "[skip] SOCIAL_CROSSPOST 꺼짐 — 인스타는 insta/ 계정으로 전환"
+    # ── Instagram Reels + Threads — ★SOCIAL_CROSSPOST_TOPICS(기본 ai)에 든 토픽만, 실제 게시는 INSTA_PUBLISH=1 ──
+    if not args.no_social and not social_crosspost_on(sb.get("topic")):
+        res["social"] = "[skip] 크로스포스트 대상 토픽 아님(SOCIAL_CROSSPOST_TOPICS — 인스타는 AI 소식만)"
+    elif not args.no_social and res["error"]:
+        # 유튜브가 실패하면 ledger 가 안 남아 재실행된다 → 그때 인스타·쓰레드가 두 번 올라가지 않게 보류
+        res["social"] = "[skip] 유튜브 업로드 실패 — 재실행 때 중복 게시되지 않게 인스타·쓰레드 보류"
     elif not args.no_social:
         try:
             do_social(res["video"], sb, res)
@@ -385,6 +540,8 @@ def main():
     ap.add_argument("--log", default="")
     ap.add_argument("--include-paused", action="store_true",
                     help="일시정지 토픽도 처리(수동 테스트용 — SHORTS_PAUSED_TOPICS 무시)")
+    ap.add_argument("--ai-lenient", action="store_true",
+                    help="AI 소식 검사에서 날짜·신선도·중복을 경고로(수동 점검 — 비공개/업로드 없음일 때만 먹힌다)")
     args = ap.parse_args()
     config.load_dotenv()
 
@@ -408,7 +565,8 @@ def main():
     for r in results:
         line = f"  {r['storyboard']}: "
         if r["skipped"]:
-            line += "SKIP(일시정지 토픽)" if r["skipped"] == "paused" else "SKIP(ledger)"
+            line += {"paused": "SKIP(일시정지 토픽)",
+                     "uploaded": "SKIP(이미 유튜브에 있음)"}.get(r["skipped"], "SKIP(ledger)")
         else:
             line += f"video={'OK' if r['video'] else 'FAIL'}"
         if r["uploaded"]:

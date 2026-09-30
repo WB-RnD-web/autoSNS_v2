@@ -1,0 +1,30 @@
+name: AI 소식 쇼츠 (routine/ai_am·ai_pm push → main 의 ai-news-run.yml)
+
+# 트리거: AI 소식 루틴이 ★누적 브랜치 routine/ai_am(오전)·routine/ai_pm(저녁)에
+#   output/news/<DATE>_ai_<am|pm>_storyboard.json 을 push 하면 실행(2026-09-30, 하루 두 번).
+#   루틴이 claude/* 로 잘못 밀면 orphan-rescue.yml 이 파일 이름(…_ai_am_…)으로 routine/ai_am 에 옮긴다
+#   — tools/ 수정 없이 그대로 된다(guess_topic 이 'ai_am' 을 돌려준다).
+#
+# 왜 누적 브랜치인가: 지난 14일 AI 대본이 곧 중복 검사 이력이다. 루틴도 파이프라인도
+#   같은 브랜치를 읽으므로(pipeline/ai_news.py) 같은 이야기를 다시 고르지 않는다.
+#   슬롯이 브랜치 이름에 있으니 발행 감시(find_missing_publishes)도 오전·저녁을 따로 배운다.
+#
+# ⚠️ push 트리거는 ★push 된 브랜치의 사본이 실행된다. 누적 브랜치의 사본은 브랜치가 생긴 날에 멈춰
+#    낡는다(scp.yml 에서 겪은 일). 그래서 여기엔 로직을 두지 않고 실제 일은 @main 고정으로 부른다.
+# ⚠️ shorts.yml 은 "!routine/ai_*" 로 이 브랜치들을 뺀다 — 둘 다 돌면 같은 영상이 두 번 올라간다.
+
+on:
+  push:
+    branches:
+      - "routine/ai_am"
+      - "routine/ai_pm"
+    paths:
+      - "output/news/**_storyboard.json"
+
+permissions:
+  contents: read
+
+jobs:
+  run:
+    uses: WB-RnD-web/autoSNS_v2/.github/workflows/ai-news-run.yml@main
+    secrets: inherit

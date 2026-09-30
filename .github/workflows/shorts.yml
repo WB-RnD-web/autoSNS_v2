@@ -14,6 +14,9 @@ on:
   push:
     branches:
       - "routine/**"      # 루틴 전용 브랜치(예: routine/2026-06-26_politics)
+      # ★AI 소식(routine/ai_am·ai_pm)은 ai-news.yml 이 따로 처리한다 — 누적 브랜치라 여기서 돌면
+      #   지난 대본까지 전부 다시 집고, 같은 영상이 두 번 올라간다(2026-09-30).
+      - "!routine/ai_*"
       - main              # (선택) main 에 storyboard 가 올라오면도 처리
     paths:
       - "output/news/**_storyboard.json"
@@ -65,6 +68,11 @@ jobs:
       # ★기본 꺼짐(2026-09-30): 인스타 계정을 'AI 유튜브 운영 기록'(insta.yml)으로 바꿨다 — 뉴스·운세 쇼츠를 섞지 않는다.
       #   다시 켜기: 레포 변수 SOCIAL_CROSSPOST=1
       SOCIAL_CROSSPOST: ${{ vars.SOCIAL_CROSSPOST || '0' }}
+      # 토픽별 크로스포스트(기본 'ai' — 이 워크플로는 AI 소식을 안 다루므로 사실상 전부 끔).
+      #   ★실제 게시는 INSTA_PUBLISH=1, 쓰레드는 INSTA_THREADS=1 일 때만(insta.yml·ai-news-run.yml 과 같은 스위치)
+      SOCIAL_CROSSPOST_TOPICS: ${{ vars.SOCIAL_CROSSPOST_TOPICS || 'ai' }}
+      INSTA_PUBLISH: ${{ vars.INSTA_PUBLISH || '0' }}
+      INSTA_THREADS: ${{ vars.INSTA_THREADS || '0' }}
       CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
       CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
       CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
