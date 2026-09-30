@@ -132,6 +132,29 @@ def add_fortune_playlist(vid: str) -> None:
     add_playlist(vid, FORTUNE_PLAYLIST, FORTUNE_PLAYLIST_DESC)
 
 
+def add_weekly_link(meta: dict, topic: str) -> str | None:
+    """운세 쇼츠 설명 끝에 최신 '주간 띠별 운세 풀이' 롱폼 한 줄(2026-10-01, weekly_fortune.py).
+
+    쇼츠 피드 시청은 YPP 시청 시간에 안 들어간다 — 표를 본 사람이 이어 볼 롱폼으로 보낸다.
+    '주간 띠별 운세' 재생목록에서 공개된 가장 최근 영상을 찾는다(2~3 units). 없거나 실패하면 조용히 넘어간다.
+    끄기: WEEKLY_LINK=0. 설명 형식은 그대로 두고 맨 끝에 한 줄만 붙인다."""
+    if not str(topic or "").strip().lower().startswith("fortune"):
+        return None
+    if (config.env("WEEKLY_LINK", "1") or "1").strip() in ("0", "false", "False", "off"):
+        return None
+    try:
+        import upload_youtube_novel as N
+        import weekly_fortune
+        vid = weekly_fortune.latest_public_video(N.get_service())
+    except Exception as e:  # noqa: BLE001
+        print(f"   (주간 운세 링크 건너뜀: {str(e)[:120]})")
+        return None
+    if vid:
+        meta["description"] = weekly_fortune.append_link(meta["description"], vid)
+        print(f"   🔗 주간 띠별 운세 풀이 링크: https://youtu.be/{vid}")
+    return vid
+
+
 # 쿼터가 바닥났다는 응답. 재시도해도 똑같이 거절되고 ★재시도마다 쿼터를 또 먹는다 → 바로 멈춘다.
 #   videos.insert 는 2026-06-01 부터 자기 버킷(하루 100회)이고 나머지 호출은 10,000 units 를 나눠 쓴다.
 QUOTA_REASONS = ("quotaExceeded", "uploadLimitExceeded", "dailyLimitExceeded")
@@ -499,6 +522,7 @@ def process(sb_path, args, led):
 
     # ── YouTube (자격증명 있을 때) ──
     if has_credentials():
+        add_weekly_link(meta, sb.get("topic", ""))
         try:
             vid = upload_with_retry(res["video"], meta)
             res["uploaded"] = f"https://youtu.be/{vid} ({meta['privacy']})"

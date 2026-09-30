@@ -1,0 +1,45 @@
+name: 주간 띠별 운세 풀이 (routine/weekly_fortune push → main 의 weekly-fortune-run.yml)
+
+# 트리거: 주간 운세 루틴(일 17:00 KST)이 ★누적 브랜치 routine/weekly_fortune 에
+#   output/weekly_fortune/<월요일>_weekly_fortune.json 을 올리면(python pipeline/weekly_fortune.py push) 실행.
+#   렌더 20~30분(목소리는 공용 Spark 에 한 건씩) → 그 주 월요일 전날(일) 20:00 KST 예약 공개.
+#   루틴이 claude/* 로 잘못 밀면 orphan-rescue.yml 이 경로(output/weekly_fortune/)로 routine/weekly_fortune 에 옮긴다.
+#
+# ⚠️ push 트리거는 ★push 된 브랜치의 사본이 실행된다. 누적 브랜치의 사본은 브랜치가 생긴 날에 멈춰 낡는다.
+#    그래서 여기엔 로직을 두지 않고 실제 일은 @main 고정으로 부른다(ai-news.yml 과 같은 구조).
+# ⚠️ shorts.yml 은 "!routine/weekly_*" 로 이 브랜치를 빼고, 경로도 output/news 가 아니다 — 두 번 올라가지 않는다.
+# 수동 실행 기본값 = 견본(docs/samples/weekly_fortune_sample.json) · 업로드 없음 · 비공개
+#   → 영상(약 10분)·썸네일·순위표를 아티팩트로 3일 보관한다(머지 후 눈으로 확인).
+
+on:
+  push:
+    branches:
+      - "routine/weekly_fortune"
+    paths:
+      - "output/weekly_fortune/**"
+  workflow_dispatch:
+    inputs:
+      script:
+        description: "대본 경로 — 레포 파일(docs/samples/…) 또는 routine/weekly_fortune 의 output/weekly_fortune/<월요일>_weekly_fortune.json"
+        default: "docs/samples/weekly_fortune_sample.json"
+      no_upload:
+        description: "업로드 없이 렌더만(검증) — 영상·썸네일·순위표를 아티팩트로 3일 보관"
+        type: boolean
+        default: true
+      force_private:
+        description: "비공개로 업로드(테스트)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+jobs:
+  run:
+    uses: WB-RnD-web/autoSNS_v2/.github/workflows/weekly-fortune-run.yml@main
+    with:
+      script: ${{ github.event.inputs.script || '' }}
+      no_upload: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.no_upload == 'true' }}
+      force_private: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.force_private == 'true' }}
+      manual: ${{ github.event_name == 'workflow_dispatch' }}
+    secrets: inherit

@@ -76,7 +76,8 @@ def get_service():
 def upload_video(yt, video: str, title: str, description: str,
                  privacy: str = "unlisted", tags: list[str] | None = None,
                  category_id: str | None = None, default_language: str | None = None,
-                 synthetic: bool | None = None, audio_language: str | None = None) -> str:
+                 synthetic: bool | None = None, audio_language: str | None = None,
+                 publish_at: str | None = None) -> str:
     from googleapiclient.http import MediaFileUpload
     category_id = category_id or config.env("NOVEL_YT_CATEGORY", "24")  # 24=Entertainment
     body = {
@@ -102,6 +103,10 @@ def upload_video(yt, video: str, title: str, description: str,
     # AI 로 만든 사실적 장면 표시. 유튜브는 이 표시가 도달에 영향이 없다고 밝혔다(Help 14328491).
     if synthetic is not None:
         body["status"]["containsSyntheticMedia"] = bool(synthetic)
+    # 예약 공개(UTC RFC3339). 유튜브는 예약이 있으면 비공개로 올려야 받는다 — 그 시각에 스스로 공개된다.
+    if publish_at:
+        body["status"]["privacyStatus"] = "private"
+        body["status"]["publishAt"] = publish_at
     # 8시간 움직임 영상은 수 GB 다 — 한 번에 보내지 않고 64MB 조각으로(재개 가능 업로드).
     chunk = -1 if os.path.getsize(video) < 1024 ** 3 else 64 * 1024 * 1024
 
@@ -130,7 +135,8 @@ def upload_video(yt, video: str, title: str, description: str,
     # ⚠️ "16:9 일반영상" 을 하드코딩해 두었더니 ★쇼츠 로그에도 그대로 찍혔다.
     #   이 업로더는 롱폼(16:9)과 SCP 쇼츠(9:16)가 ★같이 쓴다 — 실제 비율을 재서 적는다.
     #   (2026-08-28: 이 문구 때문에 쇼츠가 가로로 올라간 줄 알고 한참 헤맸다)
-    print(f"✅ YouTube 업로드: https://youtu.be/{vid} (privacy={privacy}, {_shape(video)})")
+    print(f"✅ YouTube 업로드: https://youtu.be/{vid} (privacy={body['status']['privacyStatus']}"
+          f"{', 예약 ' + publish_at if publish_at else ''}, {_shape(video)})")
     return vid
 
 
@@ -252,7 +258,8 @@ def publish(video: str, title: str, description: str, privacy: str,
             srt: str | None = None, localizations: dict | None = None,
             srts: dict | None = None, default_language: str | None = None,
             i18n_langs: list[str] | None = None, playlist_description: str | None = None,
-            synthetic: bool | None = None, audio_language: str | None = None) -> dict:
+            synthetic: bool | None = None, audio_language: str | None = None,
+            publish_at: str | None = None) -> dict:
     """업로드 → 썸네일 → 재생목록 → ★다국어(현지화 + 선택적 자막 트랙).
 
     localizations/srts 는 ★루틴이 스펙에 써준 번역 — 번역 API 비용이 들지 않는다.
@@ -265,8 +272,10 @@ def publish(video: str, title: str, description: str, privacy: str,
     if audio_language is None:                       # '' 은 '넣지 않음' 그대로 둔다
         audio_language = config.env("NOVEL_AUDIO_LANG", "ko")
     vid = upload_video(yt, video, title, description, privacy, tags, category_id,
-                       default_language=default_language, synthetic=synthetic, audio_language=audio_language)
-    res = {"video_id": vid, "url": f"https://youtu.be/{vid}", "privacy": privacy, "playlist_id": None}
+                       default_language=default_language, synthetic=synthetic, audio_language=audio_language,
+                       publish_at=publish_at)
+    res = {"video_id": vid, "url": f"https://youtu.be/{vid}", "privacy": "private" if publish_at else privacy,
+           "publish_at": publish_at, "playlist_id": None}
     if thumbnail and os.path.exists(thumbnail):
         res["thumbnail_set"] = set_thumbnail(yt, vid, thumbnail)
     if playlist_title.strip():
