@@ -301,8 +301,11 @@ def snippet_for_update(sn: dict, audio_lang: str | None = None, tags: list[str] 
     """
     out = {"title": sn.get("title", ""), "description": sn.get("description", ""),
            "categoryId": sn.get("categoryId", "24"), "tags": sn.get("tags") or list(tags or []),
-           "defaultLanguage": sn.get("defaultLanguage") or SOURCE_LANG,
-           "defaultAudioLanguage": sn.get("defaultAudioLanguage") or audio_lang or AUDIO_LANG or SOURCE_LANG}
+           "defaultLanguage": sn.get("defaultLanguage") or SOURCE_LANG}
+    # audio_lang='' = 말소리 없는 소리 영상 — 비어 있으면 비워 둔다(기본값으로 채우지 않는다).
+    dal = sn.get("defaultAudioLanguage") or (audio_lang if audio_lang is not None else (AUDIO_LANG or SOURCE_LANG))
+    if dal:
+        out["defaultAudioLanguage"] = dal
     return out
 
 

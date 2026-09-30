@@ -84,8 +84,12 @@ def english_name(theme_id: str) -> str:
 
 
 def audio_language(spec: dict) -> str:
-    """말소리가 없는 소리 영상은 'zxx'(관련 없음) — 특정 언어권에만 묶이지 않게. 나레이션이 있으면 한국어."""
-    return "ko" if (spec.get("narration_text") or "").strip() else "zxx"
+    """나레이션이 있으면 한국어. 말소리가 없는 소리 영상은 ''(오디오 언어를 넣지 않는다).
+
+    ★2026-10-01: 'zxx'(관련 없음)를 넣었더니 videos.insert 가 400 INVALID_REQUEST_METADATA 로
+    거부했다(Korea Sleep Sounds 9/30 편 업로드 3회 실패). 유튜브 언어 목록에 zxx 가 없다.
+    """
+    return "ko" if (spec.get("narration_text") or "").strip() else ""
 
 
 def english_localization(spec: dict, duration_sec: float | None) -> dict:
