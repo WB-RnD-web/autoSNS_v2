@@ -129,6 +129,16 @@ with tempfile.TemporaryDirectory() as td:
     ck("이동 평균 길이 보존", len(R.movavg(np.ones(1000, dtype="float32"), 50)) == 1000)
     ck("캡션 조각 3단어 이하", all(len(c.split()) <= 3 for c in R.caption_chunks("The boy swallowed it and the girl screamed, loudly.")))
 
+print("── 글꼴(9/30 사고: 리눅스에 Black 이 없어 썸네일·쇼츠 자막이 깨알 글꼴로 나갔다) ──")
+from PIL import ImageFont  # noqa: E402
+ok = True
+for kind in ("sans", "sans_bold", "serif", "cjk"):
+    f = R.font(kind, 100)
+    ok &= isinstance(f, ImageFont.FreeTypeFont) and f.size == 100
+    print(f"     {kind}: {R.font_path(kind)}")
+ck("모든 글꼴이 실제 트루타입(크기 적용)", ok)
+ck("큰 글자용 sans 는 Bold 이상 굵기", any(w in (R.font_path("sans") or "") for w in ("Black", "ExtraBold", "-VF", "arialbd", "Bold")))
+
 print("── 업로드 가드 ──")
 import upload_tale as U  # noqa: E402
 import datetime as dt  # noqa: E402

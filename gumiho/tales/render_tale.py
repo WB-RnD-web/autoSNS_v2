@@ -60,13 +60,18 @@ SHORT_MAX = 59.0
 
 
 # ── 글꼴 ──────────────────────────────────────────────
+# ★2026-09-30: 우분투 fonts-noto-core 에는 NotoSans Regular/Bold 뿐이라 Black 이 없었다 → 기본 비트맵 글꼴로 떨어져
+#   2화 썸네일 큰 글자·쇼츠 자막이 깨알만 하게 나갔다. Black 은 fonts-noto-extra 에 있다(워크플로가 설치).
+#   그래도 없으면 ExtraBold → Bold → DejaVu 순으로 내려가고, 하나도 없으면 ★멈춘다(조용히 기본 글꼴 금지).
+_NOTO = "/usr/share/fonts/truetype/noto"
+_DEJAVU_B = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 _FONTS = {
-    "sans": ["/usr/share/fonts/truetype/noto/NotoSans-Black.ttf", r"C:\Windows\Fonts\NotoSansKR-VF.ttf",
-             r"C:\Windows\Fonts\arialbd.ttf"],
-    "sans_bold": ["/usr/share/fonts/truetype/noto/NotoSans-Bold.ttf", r"C:\Windows\Fonts\NotoSansKR-VF.ttf",
+    "sans": [f"{_NOTO}/NotoSans-Black.ttf", f"{_NOTO}/NotoSans-ExtraBold.ttf", f"{_NOTO}/NotoSans-Bold.ttf",
+             _DEJAVU_B, r"C:\Windows\Fonts\NotoSansKR-VF.ttf", r"C:\Windows\Fonts\arialbd.ttf"],
+    "sans_bold": [f"{_NOTO}/NotoSans-Bold.ttf", _DEJAVU_B, r"C:\Windows\Fonts\NotoSansKR-VF.ttf",
                   r"C:\Windows\Fonts\arialbd.ttf"],
-    "serif": ["/usr/share/fonts/truetype/noto/NotoSerif-Bold.ttf", r"C:\Windows\Fonts\georgiab.ttf",
-              r"C:\Windows\Fonts\NotoSerifKR-VF.ttf"],
+    "serif": [f"{_NOTO}/NotoSerif-Bold.ttf", "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf",
+              r"C:\Windows\Fonts\georgiab.ttf", r"C:\Windows\Fonts\NotoSerifKR-VF.ttf"],
     # 한글·한자 주석(여우구슬 · 九尾狐)
     "cjk": ["/usr/share/fonts/truetype/nanum/NanumGothicBold.ttf",
             "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc", r"C:\Windows\Fonts\NotoSansKR-VF.ttf",
@@ -89,8 +94,14 @@ def font(kind: str, size: int) -> ImageFont.FreeTypeFont:
                     except Exception:  # noqa: BLE001
                         pass
                 break
-        _fc[k] = f or ImageFont.load_default()
+        if f is None:
+            raise RuntimeError(f"글꼴 '{kind}' 없음 — {_FONTS[kind][:3]} (fonts-noto-extra·fonts-nanum 설치 확인)")
+        _fc[k] = f
     return _fc[k]
+
+
+def font_path(kind: str) -> str | None:
+    return next((p for p in _FONTS[kind] if os.path.exists(p)), None)
 
 
 def needs_cjk(t: str) -> bool:

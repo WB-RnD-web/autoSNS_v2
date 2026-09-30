@@ -66,7 +66,7 @@ jobs:
 
       - name: 시스템 의존성
         run: |
-          sudo apt-get update && sudo apt-get install -y ffmpeg fonts-noto-core fonts-nanum
+          sudo apt-get update && sudo apt-get install -y ffmpeg fonts-noto-core fonts-noto-extra fonts-nanum   # extra = NotoSans-Black(썸네일·쇼츠 자막)
           python -m pip install -r pipeline/requirements.txt numpy
 
       - name: 테스트(오프라인)
