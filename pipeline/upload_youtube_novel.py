@@ -94,8 +94,11 @@ def upload_video(yt, video: str, title: str, description: str,
     if default_language:
         body["snippet"]["defaultLanguage"] = default_language
     # ★오디오 언어: 유튜브가 '누구에게 보여 줄지'를 고르는 값. 비워 두면 현지화 덮어쓰기 때 영어(en-US)로
-    #   바뀌어 한국어 SCP·쇼츠가 영어권에 뿌려졌다(2026-09-30 확인). 음성이 없는 소리 영상은 'zxx'(관련 없음).
-    body["snippet"]["defaultAudioLanguage"] = audio_language or config.env("NOVEL_AUDIO_LANG", "ko")
+    #   바뀌어 한국어 SCP·쇼츠가 영어권에 뿌려졌다(2026-09-30 확인).
+    #   None = 기본값(NOVEL_AUDIO_LANG 또는 ko) · '' = 넣지 않음(말소리 없는 소리 영상 — 'zxx' 는 400 으로 거부된다).
+    al = config.env("NOVEL_AUDIO_LANG", "ko") if audio_language is None else audio_language
+    if al:
+        body["snippet"]["defaultAudioLanguage"] = al
     # AI 로 만든 사실적 장면 표시. 유튜브는 이 표시가 도달에 영향이 없다고 밝혔다(Help 14328491).
     if synthetic is not None:
         body["status"]["containsSyntheticMedia"] = bool(synthetic)
@@ -259,7 +262,8 @@ def publish(video: str, title: str, description: str, privacy: str,
     (안 주면 기존대로 한국어 기본 + I18N_LANGS).
     """
     yt = get_service()
-    audio_language = audio_language or config.env("NOVEL_AUDIO_LANG", "ko")
+    if audio_language is None:                       # '' 은 '넣지 않음' 그대로 둔다
+        audio_language = config.env("NOVEL_AUDIO_LANG", "ko")
     vid = upload_video(yt, video, title, description, privacy, tags, category_id,
                        default_language=default_language, synthetic=synthetic, audio_language=audio_language)
     res = {"video_id": vid, "url": f"https://youtu.be/{vid}", "privacy": privacy, "playlist_id": None}
