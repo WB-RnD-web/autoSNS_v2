@@ -256,7 +256,7 @@ def format_for(date) -> str | None:
 
 
 def guide_index(date) -> int:
-    """catalog.start(월요일)부터 이 날짜 전까지의 가이드 날 수 = 이 날 가이드의 catalog 순번(0부터)."""
+    """catalog.start(가이드 요일)부터 이 날짜 전까지의 가이드 날 수 = 이 날 가이드의 catalog 순번(0부터)."""
     start = _date(catalog()["start"])
     d = _date(date)
     return sum(1 for k in range((d - start).days) if (start + dt.timedelta(days=k)).weekday() in (0, 2, 4))
