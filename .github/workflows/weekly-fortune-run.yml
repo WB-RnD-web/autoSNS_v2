@@ -8,7 +8,7 @@ name: 주간 띠별 운세 풀이 — 대본 검사 → 목소리·화면 → �
 # 대본은 pipeline/weekly_fortune.py 가 먼저 검사한다(주·12띠 순서·칸마다 글자 수·금지어·반복·예상 길이 8~12분).
 #   못 넘으면 렌더도 업로드도 없이 빨간불. 규칙은 코드에만 있다 — 루틴 프롬프트의 부탁은 자주 무시된다.
 # 업로드: 카테고리 24 · 기본 언어 ko · 오디오 언어 ko · 아동용 아님 · 합성 표시 안 함(그림체 운세 — 쇼츠와 같은 관례)
-#   · 재생목록 '주간 띠별 운세'(없으면 만든다) · 일 20:00 KST 예약 공개(이미 지났으면 바로 공개).
+#   · 재생목록 '주간 띠별 운세'(없으면 만든다) · 일 08:00 KST 예약 공개(이미 지났으면 바로 공개).
 #
 # ⚠️ 루프 가드: permissions read — 레포에 아무것도 커밋하지 않는다(산출물은 유튜브·아티팩트로만).
 
@@ -50,7 +50,7 @@ jobs:
       WEEKLY_VOICE: ${{ vars.WEEKLY_VOICE || 'F2' }}
       WEEKLY_TEMPO: ${{ vars.WEEKLY_TEMPO || '0.92' }}
       WEEKLY_TTS_WORKERS: "1"                     # ★공용 Spark — 한 건씩
-      WEEKLY_PUBLISH_HHMM: ${{ vars.WEEKLY_PUBLISH_HHMM || '20:00' }}
+      WEEKLY_PUBLISH_HHMM: ${{ vars.WEEKLY_PUBLISH_HHMM || '08:00' }}
       WEEKLY_PLAYLIST: ${{ vars.WEEKLY_PLAYLIST || '주간 띠별 운세' }}
       # 한국 시니어 대상 — 영어 제목·자막 번역은 붙이지 않는다
       I18N_LOCALIZE: "0"
