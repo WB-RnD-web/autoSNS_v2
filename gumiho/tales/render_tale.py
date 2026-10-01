@@ -482,6 +482,10 @@ class Painter:
         self.shots = P["shots"]
         self.starts = [x["start"] for x in self.shots]
         self.total = P["total"]
+        # 수면판(sleep.py)은 전환을 길게·화면을 어둡게·끝을 길게 사라지게 한다 — 본편은 기본값 그대로
+        self.xf = float(P.get("xf", XF))
+        self.dim = float(P.get("dim", 1.0))
+        self.fade_out = float(P.get("fade_out", 1.2))
         self.fx = FX(W, H)
         self.vig = vignette(W, H)
         self._img: dict = {}
@@ -496,7 +500,7 @@ class Painter:
 
     def shot(self, k: int, t: float) -> Image.Image:
         x = self.shots[k]
-        p = (t - x["start"] + XF / 2) / (x["dur"] + XF)
+        p = (t - x["start"] + self.xf / 2) / (x["dur"] + self.xf)
         zmax = 1.035 if x["kind"] == "card" else ZOOM
         cw, cx, cy = cam(x["move"], p, PW, PH, W, H, zmax)
         fr = view(self.img(x["prep"]), cw, cx, cy, W, H)
@@ -516,16 +520,17 @@ class Painter:
         k = max(0, bisect.bisect_right(self.starts, t) - 1)
         x = self.shots[k]
         end = x["start"] + x["dur"]
-        if k > 0 and t < x["start"] + XF / 2:
-            a = (t - (x["start"] - XF / 2)) / XF
+        xf = self.xf
+        if k > 0 and t < x["start"] + xf / 2:
+            a = (t - (x["start"] - xf / 2)) / xf
             fr = Image.blend(self.shot(k - 1, t), self.shot(k, t), a)
-        elif k + 1 < len(self.shots) and t >= end - XF / 2:
-            a = (t - (end - XF / 2)) / XF
+        elif k + 1 < len(self.shots) and t >= end - xf / 2:
+            a = (t - (end - xf / 2)) / xf
             fr = Image.blend(self.shot(k, t), self.shot(k + 1, t), a)
         else:
             fr = self.shot(k, t)
         fr = ImageChops.multiply(fr, self.vig)
-        fade = min(1.0, t / 0.6, max(0.0, (self.total - t) / 1.2))
+        fade = min(1.0, t / 0.6, max(0.0, (self.total - t) / self.fade_out)) * self.dim
         if fade < 1:
             fr = ImageEnhance.Brightness(fr).enhance(max(0.0, fade))
         return fr
