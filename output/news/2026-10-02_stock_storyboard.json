@@ -1,0 +1,99 @@
+{
+  "date": "2026-10-02",
+  "topic": "stock",
+  "privacy": "public",
+  "topic_keyword": "코스닥 4% 급등·연휴 전 마지막 장",
+  "headline": "코스닥 4.48%·코스피 1.95% 상승 마감, 연휴 전 마지막 장",
+  "hook_title": "개인이 판 날, 코스닥 4% 뛰었다",
+  "accent": "#3FB950",
+  "loop_line": "개인이 팔던 그 장, 오늘은 누가 받칠까요?",
+  "thumbnail_hook": "dim early-morning office desk by a window, steaming coffee cup beside a laptop glowing with soft blurred green candlestick lines, a small luggage tag and passport on the desk, calm pre-holiday mood, no text in image",
+  "thumbnail_text": "코스닥 4.48%, 연휴 전",
+  "scenes": [
+    {
+      "type": "hook",
+      "pill": "연휴 전 마지막 장",
+      "ghost": "KOSDAQ",
+      "lines": ["개인이 판 날", "코스닥은", "4% 뛰었다"],
+      "highlight": "4%",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "개인 투자자가 팔던 날, 코스닥은 사 점 사팔 퍼센트 뛰었습니다."
+    },
+    {
+      "type": "trend",
+      "label": "코스닥",
+      "from": 0,
+      "to": 4.48,
+      "suffix": "%",
+      "dir": "up",
+      "sub": "개인 <b>순매도</b> · 기관 <b>순매수</b>",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "코스닥이 사 점 사팔 퍼센트 뛰는 동안, 개인은 팔고 기관이 샀습니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "반도체 변수",
+      "points": [
+        "마이크론 <b>호실적</b> 훈풍",
+        "간밤 하이닉스 <b>ADR 5%</b>↑",
+        "9월 <b>수출</b> 호조"
+      ],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "마이크론 호실적에 수출 호조, 간밤 하이닉스 ADR도 오 퍼센트 넘게 뛰었습니다."
+    },
+    {
+      "type": "statement",
+      "text": "환율 1,360원, 연휴 환전의 갈림길",
+      "highlight": "1,360원",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "환율이 천삼백육십원을 넘으면, 연휴 해외여행 환전 부담도 커집니다."
+    },
+    {
+      "type": "keypoint",
+      "label": "오늘 지켜볼 것",
+      "points": [
+        "오전 <b>소비자물가</b> 발표",
+        "밤 미국 <b>고용보고서</b>",
+        "월요일 <b>휴장</b> 전 마지막 장"
+      ],
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "오전엔 소비자물가, 밤엔 미국 고용보고서, 그리고 휴장 전 마지막 장입니다."
+    },
+    {
+      "type": "statement",
+      "text": "연휴 앞 마지막 장, 지켜본다 vs 쉬어간다",
+      "highlight": "쉬어간다",
+      "brand": "일상공감뉴스 · 주식",
+      "narration": "연휴 전 마지막 장, 지켜보실지 쉬어가실지 판단은 여러분 몫입니다."
+    }
+  ],
+  "sources": ["뉴스핌", "아시아경제", "헤럴드경제", "SBS Biz"],
+  "credit": "출처 뉴스핌·아시아경제·헤럴드경제·SBS Biz 등 · 투자 조언이 아닙니다",
+  "platforms": {
+    "youtube": {
+      "title": "개인이 판 날, 코스닥 4% 뛰었다 #shorts",
+      "description": "코스닥 4.48%·코스피 1.95% 상승 마감, 연휴 전 마지막 장\n출처 뉴스핌·아시아경제·헤럴드경제·SBS Biz\n※ 투자 조언이 아닙니다\n\n#코스피 #코스닥 #주식 #증시 #개장전 #쇼츠 #shorts",
+      "localizations": {
+        "en": {
+          "title": "Retail sold. KOSDAQ still jumped 4% #shorts",
+          "description": "KOSDAQ closed up 4.48% and KOSPI up 1.95% yesterday. Today is the last session before the Monday holiday.\nSource: Newspim, Asia Economy, Herald Economy, SBS Biz\n※ Not investment advice.\n\n#KOSPI #KOSDAQ #stocks #shorts"
+        },
+        "ja": {
+          "title": "個人が売った日、KOSDAQは4%上昇 #shorts",
+          "description": "昨日、KOSDAQは4.48%、KOSPIは1.95%上昇して取引を終えました。今日は月曜休場前の最後の取引日です。\n出典：ニューススピム、アジア経済、ヘラルド経済、SBS Biz\n※投資助言ではありません。\n\n#KOSPI #KOSDAQ #株式 #shorts"
+        },
+        "zh-Hant": {
+          "title": "散戶賣超那天，KOSDAQ 大漲 4% #shorts",
+          "description": "昨日 KOSDAQ 上漲 4.48%、KOSPI 上漲 1.95% 收盤。今天是週一休市前的最後一個交易日。\n出處：Newspim、亞洲經濟、Herald Economy、SBS Biz\n※ 非投資建議。\n\n#KOSPI #KOSDAQ #股市 #shorts"
+        }
+      }
+    },
+    "instagram": {
+      "caption": "개인이 판 날, 코스닥 4% 뛰었다\n출처 뉴스핌·아시아경제·헤럴드경제·SBS Biz\n※ 투자 조언이 아닙니다\n\n#코스피 #코스닥 #주식 #증시 #쇼츠 #shorts #릴스"
+    },
+    "threads": {
+      "text": "개인이 판 날, 코스닥 4% 뛰었다\n출처 뉴스핌·아시아경제·헤럴드경제·SBS Biz"
+    }
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음 · SESSION=KR_AM(개장 전 프리뷰). 미국 수치는 ③ 한 장면(ADR)만. 수급 금액은 매체별 차이가 있어 방향만 사용. 10/5(월)·10/9(금) 휴장이라 다음 편 예고 문구는 넣지 않음."
+}
