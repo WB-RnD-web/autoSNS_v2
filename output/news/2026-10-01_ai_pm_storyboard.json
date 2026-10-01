@@ -1,0 +1,93 @@
+{
+ "date": "2026-10-01",
+ "topic": "ai",
+ "slot": "pm",
+ "privacy": "public",
+ "format": "qa",
+ "angle": "생활 도구",
+ "topic_keyword": "모두의 AI",
+ "headline": "SKT·카카오·KT, 전 국민 무료 '모두의 AI' 공개 예정",
+ "hook_title": "국산 AI 전 국민 무료, 10월 공개",
+ "thumbnail_hook": "An elderly hand holding a smartphone with a warm glowing screen on a living room table, soft evening light, family photo frames blurred in the background, cozy and calm mood, no text, no faces",
+ "thumbnail_text": "국산 AI 무료로",
+ "glossary": [],
+ "sources": [
+  {
+   "outlet": "연합뉴스",
+   "title": "SKT·카카오·KT, 10월 중 '모두의 AI' 첫선…전국민 무료",
+   "url": "https://www.yna.co.kr/view/AKR20260930159700017",
+   "published_at": "2026-10-01T06:13:01+09:00",
+   "confirmed": false,
+   "facts": [
+    "SK텔레콤[017670]과 카카오[035720], KT[030200]가 10월 중에 전 국민이 무료로 이용할 수 있는 국산 인공지능(AI) 서비스 '모두의 AI'를 선보인다.",
+    "올해 말까지 이용자 1천500만명을 확보하고 내년부터는 행정·생활 서비스를 대신 수행하는 '1인 1 AI 에이전트'로 발전시킨다는 구상이다.",
+    "앱과 웹뿐 아니라 전화와 문자로도 서비스를 이용할 수 있도록 해 고령층과 디지털 취약계층의 접근성을 높인다는 계획이다.",
+    "기본 기능은 무료로 공급하되 기업이 자체 개발한 고도화 기능에는 자율 수익 모델을 적용할 수 있다.",
+    "연내 월간활성이용자(MAU) 500만명 확보를 공통 목표로 제시했으며, 카카오는 2027년 1천만명, 2030년 3천만명까지 이용자를 확대한다는 계획을 밝혔다."
+   ]
+  }
+ ],
+ "scenes": [
+  {
+   "type": "hook",
+   "pill": "출시",
+   "lines": [
+    "국산 AI 등장",
+    "전 국민 무료"
+   ],
+   "highlight": "무료",
+   "narration": "이달 중, 누구나 무료로 쓸 수 있는 국산 AI가 나온다고 전해졌어요."
+  },
+  {
+   "type": "statement",
+   "text": "돈을 내야 하나요?",
+   "highlight": "돈",
+   "narration": "먼저, 돈을 내야 할까요? 기본 기능은 무료로 쓸 수 있다고 알려졌어요."
+  },
+  {
+   "type": "stat",
+   "label": "회사별 연내 목표(매달 쓰는 사람)",
+   "from": 0,
+   "to": 500,
+   "prefix": "",
+   "suffix": "만명",
+   "bar": true,
+   "sub": "연내 정식 서비스 시작 예정",
+   "narration": "회사마다 연말까지 매달 오백만 명이 쓰게 하는 것이 목표라고 보도됐어요."
+  },
+  {
+   "type": "keypoint",
+   "label": "어떻게 쓰나요?",
+   "points": [
+    "앱·웹은 물론 <b>전화·문자</b>로도",
+    "예약·신청까지 <b>대신 처리</b>"
+   ],
+   "narration": "앱뿐 아니라 전화와 문자로도 쓸 수 있고, 예약과 신청까지 대신해 준다고 전해졌어요."
+  },
+  {
+   "type": "statement",
+   "text": "개인정보는 어디까지?",
+   "highlight": "개인정보",
+   "narration": "다만 개인정보를 어디까지 쓸지는 아직 정리할 과제로 남아 있다고 보도됐어요."
+  },
+  {
+   "type": "statement",
+   "text": "부모님께 알려 드릴까요?",
+   "highlight": "부모님",
+   "narration": "공개되면 부모님께 전화로 쓰는 법을 알려 드려 보세요."
+  }
+ ],
+ "platforms": {
+  "youtube": {
+   "title": "국산 AI 전 국민 무료, 10월 공개 #shorts",
+   "description": "SK텔레콤·카카오·KT가 이달 중 전 국민 무료 국산 AI '모두의 AI'를 선보인다고 보도됐습니다. 전화와 문자로도 쓸 수 있다고 해요.\n\n#AI #모두의AI #shorts"
+  },
+  "instagram": {
+   "caption": "국산 AI 전 국민 무료, 10월 공개\n\n통신 3사가 이달 중 '모두의 AI'를 선보인다고 해요.\n기본 기능은 무료, 전화와 문자로도 쓸 수 있다고 알려졌어요.\n다만 개인정보 활용 범위는 아직 정리할 과제래요.\n매일 오전·저녁 AI 소식은 유튜브 '왕별이'에서 쉽게 풀어 드려요.\n출처 연합뉴스\n\n#AI #모두의AI #국산AI"
+  },
+  "threads": {
+   "text": "통신 3사가 이달 중 누구나 무료로 쓰는 국산 AI '모두의 AI'를 선보인다고 보도됐어요. 전화와 문자로도 쓸 수 있대요. 매일 AI 소식은 유튜브 왕별이에서. #AI소식"
+  }
+ },
+ "notes": "AI 소식 저녁 편 · qa · 장면 6개"
+}
