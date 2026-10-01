@@ -1,7 +1,8 @@
 # Nine Tails Tales — how to write one episode
 
 You are writing **one** episode script for the English YouTube channel **Nine Tails Tales**
-(Korean and East Asian myths, monsters and ghost stories for viewers aged 13–30 worldwide).
+(Korean urban legends, real places and mysteries, ghost stories and myths for viewers aged 13–34 worldwide —
+most of them Korean-culture fans; old myths are at most one episode in four).
 The narrator is **Gumi**, a 1,000-year-old Korean gumiho (nine-tailed fox). The exemplar is
 `gumiho/tales/scripts/001_gumiho.json` — read it first and match its voice, pacing and JSON shape.
 
@@ -71,6 +72,12 @@ Same narrator every week, **different shape** — so the channel never feels lik
   characters, costumes or scenes in pictures (draw the folklore itself: Joseon reapers, a minhwa-style
   tiger, a shaman's ritual); say the film "echoes" or "draws on" a tradition unless a source says the
   creators stated it; never imply the channel is affiliated with the studio.
+- `mystery` — a real record or a real place that nobody has fully explained (a royal chronicle's
+  sky sighting, an abandoned building with a legend). Cold open on the record or the place itself.
+  Chapters: what was actually recorded or reported → the world it happened in → the explanations
+  (science first, then folklore and rumor) → what is still unexplained. Gumi gives her verdict and asks
+  the comments. Rules: never present the supernatural as fact; paraphrase records, never invent quotes,
+  names or numbers; no real victims, patients or private people named or depicted; no trespassing dares.
 
 ## Make it hit (every format)
 - **Scene 0 is the scariest or strangest image of the episode**, not the calm beginning.

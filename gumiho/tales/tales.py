@@ -32,8 +32,9 @@ WPM = 159                                            # F2 실측(2026-09-29) —
 GUMI = ("front", "bead", "wink")
 FX = ("none", "dust", "fog", "embers", "snow", "rain", "fireflies")
 MOVES = ("in", "out", "left", "right", "up", "down")
-FORMATS = ("tale", "urban", "list", "versus", "behind")   # catalog.format — 같은 틀이 연속되지 않게 섞는다(WRITING.md)
+FORMATS = ("tale", "urban", "list", "versus", "behind", "mystery")   # catalog.format — 같은 틀이 연속되지 않게 섞는다(WRITING.md)
 # behind(2026-10-01) — 유명 작품(KPop Demon Hunters·파묘) 속 진짜 한국 설화. 작품은 검색 입구, 이야기는 설화다.
+# mystery(2026-10-01) — 실제 기록·장소의 미스터리(1609 조선 하늘 기록 등). 영어권 대형 공포 채널은 실화·실제 장소가 주류다.
 
 # 분량: 8분이 넘어야 중간 광고가 붙는다. 너무 길면 한 주 안에 Spark 그림이 부담.
 WORDS_MIN, WORDS_MAX = 1200, 2600
@@ -52,7 +53,7 @@ BANNED = re.compile(r"(?i)\b(fuck|shit|rape|porn|nude|naked|gore|dismember|suici
 
 AI_NOTE = ("Illustrations and the narrator's voice are AI-generated. Stories are researched from Korean folklore "
            "and retold by Nine Tails Tales; details vary between regional versions.")
-ABOUT = ("Nine Tails Tales: Korean and East Asian myths, monsters and ghost stories, told by Gumi, "
+ABOUT = ("Nine Tails Tales: Korean urban legends, real mysteries, ghost stories and myths, told by Gumi, "
          "a 1,000-year-old nine-tailed fox. A new tale every week.")
 
 
