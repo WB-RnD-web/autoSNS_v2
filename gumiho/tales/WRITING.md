@@ -42,7 +42,8 @@ pick up views months later.
   Years stated as facts are fine ("the 1994 film", "in March 2022").
 - The title carries the searchable name people actually type (gumiho, dokkaebi, jangsanbeom, kitsune…) —
   one of the first three `tags` must appear in the title (checked).
-- Mention dramas/films only as background, never as the hook.
+- Mention dramas/films only as background, never as the hook — **except `behind` episodes** (below),
+  where a famous film or drama is the doorway. Even there, the folklore is the story.
 - Tie episodes together: a callback to an earlier tale where it fits, and the teaser for the next one.
 
 ## Format (the entry's `format` field)
@@ -58,6 +59,18 @@ Same narrator every week, **different shape** — so the channel never feels lik
   never name private people or private addresses.
 - `versus` — three contenders, 3–4 rounds as chapters (origins, powers, weaknesses, most famous case),
   a comically biased verdict from Gumi, and a question for the comments ("who would YOU pick?").
+- `behind` — the real Korean folklore behind a famous film or drama (KPop Demon Hunters, Exhuma…).
+  Viewers aged 13–34 search for the culture behind what they just watched; the work is the doorway.
+  The title names the work and the folklore ("The Real Korean Legends Hidden in KPop Demon Hunters").
+  Cold open on the folklore, not the film: the oldest, strangest version of the thing the viewer
+  thinks they know. Then **3 chapters, one per element** (e.g. the reapers, the tiger and magpie,
+  the shamans): what the film shows in one line → the real tradition, told with a mini scene →
+  what the film changed or kept. End with Gumi's verdict and a comments question
+  ("Which one did you recognize?").
+  Rules: premise only — no plot spoilers past the first act; never quote the film; never depict its
+  characters, costumes or scenes in pictures (draw the folklore itself: Joseon reapers, a minhwa-style
+  tiger, a shaman's ritual); say the film "echoes" or "draws on" a tradition unless a source says the
+  creators stated it; never imply the channel is affiliated with the studio.
 
 ## Make it hit (every format)
 - **Scene 0 is the scariest or strangest image of the episode**, not the calm beginning.
