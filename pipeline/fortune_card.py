@@ -55,7 +55,8 @@ def use_card(sb: dict) -> bool:
     mode = os.environ.get("FORTUNE_CARD", "1").strip().lower()
     if mode in ("0", "false", "off"):
         return False
-    if not str(sb.get("topic") or "").lower().startswith("fortune"):
+    t = str(sb.get("topic") or "").lower()
+    if not t.startswith("fortune") or t.startswith("fortune_theme"):   # 낮 12시 테마 표는 theme_card 가 만든다
         return False
     d = sb_date(sb)
     if not d:

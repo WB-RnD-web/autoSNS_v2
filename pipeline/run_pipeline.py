@@ -27,6 +27,7 @@ import time
 
 import config
 import fortune_card
+import theme_card
 import ledger as ledgermod
 import ai_news
 import motion_short
@@ -87,6 +88,10 @@ FORTUNE_TOPICS = ("fortune", "horoscope", "zodiac")
 FORTUNE_PLAYLIST = "오늘의 띠별 운세 | 매일 아침 1위~12위"
 FORTUNE_PLAYLIST_DESC = "매일 아침 올라오는 띠별 운세 1위부터 12위까지. 45~96년생 전부, 재미로 보는 운세예요."
 # AI 소식(2026-09-30) — 하루 두 번. 과학·기술(28) + 재생목록.
+# 띠별 테마 순위 표(2026-10-01, theme_card.py) — 매일 낮 12시. 아침 표와 재생목록을 나눈다(제목이 '매일 아침'이라).
+THEME_PLAYLIST = "띠별 순위 특집 | 돈·자식·말년 복 1위~12위"
+THEME_PLAYLIST_DESC = ("매일 낮 12시, 주제를 바꿔 12띠 순위를 한 장에 모아요. 돈 들어오는 띠, 자식 덕 보는 띠, "
+                       "말년 복 있는 띠… 45~96년생 전부. 재미로 보는 운세예요.")
 AI_PLAYLIST = "AI 소식 | 매일 오전·저녁, 쉽게 듣는 AI 뉴스"
 AI_PLAYLIST_DESC = ("오늘 AI 세상에서 바뀐 것, 그리고 그게 내 일자리·돈·안전에 뭘 뜻하는지. "
                     "어려운 말은 쉽게 풀고, 출처는 설명란에 적어요.")
@@ -108,6 +113,8 @@ def category_for(topic: str) -> str:
 def playlist_for(topic: str) -> tuple[str, str] | None:
     """공개 업로드를 자동으로 넣을 재생목록(제목, 설명). 없으면 None."""
     t = str(topic or "").lower()
+    if t == theme_card.TOPIC:
+        return THEME_PLAYLIST, THEME_PLAYLIST_DESC
     if t.startswith(FORTUNE_TOPICS):
         return FORTUNE_PLAYLIST, FORTUNE_PLAYLIST_DESC
     if ai_news.is_ai(t):
@@ -460,7 +467,9 @@ def process(sb_path, args, led):
     if is_ai and not ai_precheck(sb_path, sb, args, led, res):
         return res
     # ★카피 점검 — 렌더 전에 본다. 밋밋하면 경고만 뜨고 계속 간다.
-    news_copy_check.report(sb)
+    # 테마 표는 문구가 전부 코드(theme_card.THEMES)에서 나온다 — 뉴스 카피 규칙(hook 수치 등)과 맞지 않아 건너뛴다.
+    if not theme_card.is_theme(sb):
+        news_copy_check.report(sb)
     try:
         spec = resolve_spec(sb_path, sb, args)
         spec.setdefault("topic", sb.get("topic", ""))
@@ -513,6 +522,13 @@ def process(sb_path, args, led):
         credit = meta["description"][len(build_meta(sb, False)["description"]):]
         meta["title"] = f"{cm['title']} #shorts"
         meta["description"] = cm["description"] + credit
+        meta["localizations"] = None
+    if theme_card.is_theme(sb):
+        # 테마 표 — 제목·설명은 theme_card 가 정한다(목소리 출처 줄은 유지). 번역은 넣지 않는다.
+        tm = theme_card.meta(sb)
+        credit = meta["description"][len(build_meta(sb, False)["description"]):]
+        meta["title"] = f"{tm['title']} #shorts"
+        meta["description"] = tm["description"] + credit
         meta["localizations"] = None
     print(f"   업로드 메타: title='{meta['title']}' privacy={meta['privacy']} "
           f"AI표시={meta['synthetic']} 번역={list(meta['localizations'] or [])}")
