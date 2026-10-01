@@ -160,6 +160,50 @@ finally:
 ck("쇼츠 첫 줄 그림 = 썸네일 그림", sp["rows"][0]["raw"] == "/img/THUMB.png", sp["rows"][0]["raw"])
 ck("썸네일 없으면 원래 그림", sp0["rows"][0]["raw"] != "/img/THUMB.png")
 
+print("── 편당 쇼츠 2~3개(3화부터) ──")
+keys_ = [x["key"] for x in S["scenes"] if x.get("key")]
+main_first = T.first_src(S["short"])
+alt = next(k for k in keys_ if k != main_first)
+ex = copy.deepcopy(S["short"])
+ex["hook"] = "DON'T LOOK BACK"
+ex["title"] = "A different way in #shorts"
+ex["lines"][0] = {"scene": alt, "say": ex["lines"][0]["say"]}
+three = copy.deepcopy(S)
+three["id"] = 3
+three["title"] = "Gumiho " + three["title"][:40]
+ck("3화부터 shorts_extra 없으면 거부", any("편당 2~3개" in e for e in T.check(three, "x.json")))
+three["shorts_extra"] = [ex]
+errs3 = [e for e in T.check(three, "x.json") if "쇼츠" in e]
+ck("추가 쇼츠 1개(다른 hook·첫 장면·제목)면 통과", not errs3, str(errs3))
+b_ = copy.deepcopy(three)
+b_["shorts_extra"][0]["hook"] = S["short"].get("hook") or S["thumb"]["text"]
+ck("hook 이 본 쇼츠와 같으면 거부", any("hook 이 다른 쇼츠와 같다" in e for e in T.check(b_, "x.json")))
+b_ = copy.deepcopy(three)
+b_["shorts_extra"][0]["lines"][0] = {"gumi": "front", "say": "hello there dear human"}
+ck("첫 줄이 구미면 거부", any("첫 줄은 구미" in e for e in T.check(b_, "x.json")))
+b_ = copy.deepcopy(three)
+b_["shorts_extra"][0]["lines"][0] = copy.deepcopy(S["short"]["lines"][0])
+ck("첫 장면이 본 쇼츠와 같으면 거부", any("첫 장면 그림" in e for e in T.check(b_, "x.json")))
+b_ = copy.deepcopy(three)
+b_["shorts_extra"] = [ex, ex, ex]
+ck("추가 쇼츠 3개(합계 4개)는 거부", any("편당 2~3개" in e for e in T.check(b_, "x.json")))
+md3 = T.meta(three, None, short_of="https://youtu.be/X")
+ck("메타에 추가 쇼츠 제목·본편 링크", md3["shorts_extra"][0]["title"] == ex["title"]
+   and "youtu.be/X" in md3["shorts_extra"][0]["description"])
+ck("1·2화는 추가 쇼츠 없어도 통과(이미 올라감)", not any("편당" in e for e in T.check(S, "x.json")))
+fake2 = {x.get("key"): {"key": x.get("key"), "raw": f"/img/{x.get('key')}.png"} for x in S["scenes"] if x.get("key")}
+_wd2 = R.wav_dur
+R.wav_dur = lambda _p: 3.0
+try:
+    spx = R.short_plan(dict(S, short=ex), list(fake2.values()), {ln["say"]: "v.wav" for ln in ex["lines"]}, ".")
+finally:
+    R.wav_dur = _wd2
+ck("추가 쇼츠 첫 줄 = 자기 장면 그림(썸네일 아님)", spx["rows"][0]["raw"] == f"/img/{alt}.png", spx["rows"][0]["raw"])
+import upload_tale as UX  # noqa: E402
+ck("추가 쇼츠 예약: 본편 토 → 화·목", UX.extra_short_at("2026-10-10T15:00:00Z", 2) == "2026-10-13T15:00:00Z"
+   and UX.extra_short_at("2026-10-10T15:00:00Z", 3) == "2026-10-15T15:00:00Z")
+ck("본편 비공개면 추가 쇼츠도 예약 없음", UX.extra_short_at(None, 2) is None)
+
 print("── 제목·링크 ──")
 long_ = copy.deepcopy(S)
 long_["id"] = 3

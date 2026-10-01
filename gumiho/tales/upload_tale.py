@@ -209,8 +209,32 @@ def main() -> int:
         localize(sid, smd["title"], smd["description"])
         led[stem] = done
         _save(a.ledger, led)
+    # 추가 쇼츠(2026-10-01) — 본편이 공개된 ★뒤에 푼다(화·목 15:00 UTC). 관련 동영상 연결은 공개 영상만 고를 수 있다.
+    smeta = T.meta(s, None, short_of=done.get("long"))["shorts_extra"]
+    for k, ex in enumerate(rm.get("shorts_extra") or [], start=2):
+        key = f"short{k}"
+        if a.no_short or not ex.get("video") or done.get(key) or k - 2 >= len(smeta):
+            continue
+        x_at = extra_short_at(publish_at, k)
+        xid = insert(yt, ex["video"], smeta[k - 2], "private", x_at)
+        done[key] = f"https://youtu.be/{xid}"
+        print(f"✅ 쇼츠{k} {done[key]} · {'예약 ' + x_at if x_at else '비공개'}")
+        localize(xid, smeta[k - 2]["title"], smeta[k - 2]["description"])
+        led[stem] = done
+        _save(a.ledger, led)
     print(json.dumps({stem: done}, ensure_ascii=False))
     return 0
+
+
+EXTRA_SHORT_DAYS = {2: 3, 3: 5}     # 본편(토) 뒤 +3일(화) · +5일(목)
+
+
+def extra_short_at(publish_at: str | None, k: int) -> str | None:
+    """추가 쇼츠 k(2·3)의 예약 공개 시각. 본편이 비공개(예약 없음)면 None."""
+    if not publish_at:
+        return None
+    t = dt.datetime.strptime(publish_at, "%Y-%m-%dT%H:%M:%SZ") + dt.timedelta(days=EXTRA_SHORT_DAYS.get(k, 3))
+    return t.strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
 def _save(path: str, led: dict):
