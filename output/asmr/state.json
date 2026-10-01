@@ -1,6 +1,14 @@
 {
-  "recent_themes": ["window-rain", "paper-crumpling", "forest-rain", "hair-salon", "keyboard-typing", "ice-cracking", "ocean-waves"],
-  "last_voice": "female",
-  "last_mode": "sleep",
-  "mode_cycle_pos": 2
+  "recent_themes": [
+    "fireplace",
+    "window-rain",
+    "paper-crumpling",
+    "forest-rain",
+    "hair-salon",
+    "keyboard-typing",
+    "ice-cracking"
+  ],
+  "last_voice": "male",
+  "last_mode": "mixed",
+  "mode_cycle_pos": 0
 }

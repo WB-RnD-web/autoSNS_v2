@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-01",
+  "topic": "asmr",
+  "privacy": "public",
+  "theme_id": "fireplace",
+  "theme_name": "벽난로 장작 타는 소리",
+  "mode": "mixed",
+  "narration_voice": "male",
+  "narration_text": "오늘은 벽난로에서 장작이 타닥타닥 타는 소리예요. 따뜻한 불빛 옆에서 천천히 숨을 고르며 쉬어 보세요. 좋은 하루 보내세요, 편안한 시간 되길 바라요.",
+  "background": {
+    "prompt": "a cozy dim living room with a crackling stone fireplace, warm orange glow, wooden floor and soft blanket, calm and relaxing mood, no people, no text"
+  },
+  "freesound": {
+    "queries": [
+      "fireplace crackling ambience loop",
+      "wood fire burning room ambience",
+      "soft fire crackle loop no music",
+      "cozy fireplace burning sounds"
+    ],
+    "must": ["fire", "campfire"],
+    "trigger_queries": [
+      "wood log crack snap",
+      "ember pop crackle",
+      "dry twig snap",
+      "log settling thud fire",
+      "wood burning pop"
+    ]
+  },
+  "platforms": {
+    "youtube": {
+      "title": "🔥 벽난로 장작 타는 소리 ASMR 3시간 | 집중·작업용 백색소음",
+      "thumbnail_text": "벽난로 불멍 3시간",
+      "thumbnail_hook": "a cozy dim living room with a crackling stone fireplace, warm orange glow, calm relaxing night mood, no people, no text",
+      "description": "타닥타닥 장작 타는 소리로 포근한 시간을 만들어 드려요.\n\n잘 때·집중·휴식용 ASMR 백색소음입니다.\n#ASMR #백색소음 #벽난로 #불멍 #집중 #힐링",
+      "playlist": "일상공감 ASMR",
+      "localizations": {
+        "en": {
+          "title": "Crackling Fireplace Sounds for Focus 3 Hours | Cozy Fire White Noise ASMR",
+          "description": "Warm crackling fireplace sounds for about 3 hours — perfect for studying, working, relaxing, or sleep.\nIncludes a short, quiet Korean narration intro.\n#FireplaceSounds #WhiteNoise #SleepSounds #ASMR"
+        },
+        "ja": {
+          "title": "暖炉の薪がはぜる音 3時間 | 作業用・睡眠用 ASMR",
+          "description": "パチパチと燃える暖炉の音を約3時間収録。作業用・勉強用・睡眠用のホワイトノイズとしてどうぞ。\n冒頭に短い韓国語のナレーションが入ります。\n#暖炉 #作業用BGM #睡眠用 #ASMR"
+        },
+        "zh-Hant": {
+          "title": "壁爐柴火燃燒聲 3小時 | 專注工作白噪音 ASMR",
+          "description": "溫暖的壁爐柴火劈啪聲,約3小時,適合專注、讀書、放鬆與睡眠。\n開頭附有簡短的韓文旁白。\n#壁爐 #白噪音 #助眠 #ASMR"
+        }
+      }
+    }
+  },
+  "credit": "음원 Freesound(CC0) · 이미지 생성",
+  "notes": "ASMR 3~4시간 · 16:9 · 정적 배경 + 루프 오디오 + 트리거 · 아주 낮은 나레이션 도입부 · 자막 없음."
+}
