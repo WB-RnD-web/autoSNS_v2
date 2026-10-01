@@ -49,6 +49,7 @@ DIM = 0.8             # 화면 밝기(잠자리에서 눈부시지 않게)
 FPS = 15              # 움직임이 느려서 충분하다 — 한 시간 분량 프레임을 Actions 시간 안에
 FADE_OUT = 30.0       # 끝 30초 동안 천천히 검게
 LUFS = -16            # 본편 -14 보다 조용히(유튜브는 큰 소리만 줄이고 작은 소리는 키우지 않는다)
+TAIL_BOOST = 2.5      # 끝 '비만' 구간은 빗소리를 +8dB(10/1 샘플 실측: 말 -15.6 LUFS · 비 -31.9 LUFS 로 너무 작았다)
 TAIL_MIN = (0, 20)    # 끝 비 화면(분)
 TALES_N = (2, 6)
 SCENE_MAX_WORDS = 70
@@ -385,6 +386,7 @@ def build_audio(shots: list[dict], total: float, out_m4a: str, wd: str, seed: in
             cache[v] = R.wav_read(v) * g
         return cache[v]
 
+    tail_s = next((int(x["start"] * SR) for x in shots if x.get("tail")), n_all)
     pad = int(SR * 0.5)
     win = int(SR * 0.25)
     raw = os.path.join(wd, "mix.wav")
@@ -407,6 +409,9 @@ def build_audio(shots: list[dict], total: float, out_m4a: str, wd: str, seed: in
             env = R.movavg(np.abs(voice), win)
             duck = R.movavg(1 - 0.3 * np.clip(env / (vr * 0.5 + 1e-9), 0, 1), win).astype("float32")
             bed = amb.block(a0, n0) * amb_gain
+            if a0 + n0 > tail_s:                      # 끝 비 구간: 8초에 걸쳐 빗소리를 키운다
+                ramp = np.clip((np.arange(a0, a0 + n0) - tail_s) / (SR * 8.0), 0, 1).astype("float32")
+                bed *= 1 + (TAIL_BOOST - 1) * ramp
             mix = (voice + bed * duck + fxs)[a - a0:a - a0 + n]
             idx = np.arange(a, a + n)
             fade = np.minimum(1.0, np.minimum(idx / fin, np.maximum(0.0, (n_all - idx) / fout))).astype("float32")
