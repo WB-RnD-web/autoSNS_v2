@@ -1,5 +1,5 @@
 {
- "about": "Nine Tails Tales 편성표. 루틴은 `python gumiho/tales/tales.py next --date <오늘>` 이 준 한 편만 쓴다(날짜로 결정론적 배정). facts 는 확인된 뼈대, careful 은 단정하면 안 되는 것. format: tale(설화) · urban(현대 괴담) · list(카운트다운) · versus(대결) · behind(유명 작품 속 진짜 한국 — 작품은 입구, 이야기는 설화) — 같은 틀이 연속되지 않게 섞는다. 지역: 한국이 기본, 3~4편마다 일본·중국(수요가 한국 주제의 5~50배 — 2026-09-29 조사). 10월(할로윈 달)은 가장 무서운 편을 앞에 둔다.",
+ "about": "Nine Tails Tales 편성표. 루틴은 `python gumiho/tales/tales.py next --date <오늘>` 이 준 한 편만 쓴다(날짜로 결정론적 배정). facts 는 확인된 뼈대, careful 은 단정하면 안 되는 것. format: tale(설화) · urban(현대 괴담) · list(카운트다운) · versus(대결) · behind(유명 작품 속 진짜 한국 — 작품은 입구, 이야기는 설화) · mystery(실제 기록·장소의 미스터리). ★2026-10-01 재편: 영어권 대형 공포 채널은 실화·실제 장소·인터넷 괴담이 주류이고, 옛 설화 '소개'는 채널 평균의 10~15%에 그친다 — 옛이야기는 4편에 1편 이하로 — 같은 틀이 연속되지 않게 섞는다. 지역: 한국이 기본, 3~4편마다 일본·중국(수요가 한국 주제의 5~50배 — 2026-09-29 조사). 10월(할로윈 달)은 가장 무서운 편을 앞에 둔다.",
  "start": "2026-09-30",
  "tales": [
   {
@@ -115,29 +115,57 @@
   },
   {
    "id": 6,
-   "slug": "red-mask",
-   "region": "JP",
+   "slug": "elevator-game",
+   "region": "KR",
    "format": "urban",
-   "title_idea": "'Am I Pretty?' — The Slit-Mouthed Woman Who Crossed the Sea to Korea",
-   "angle": "A woman in a surgical mask stops a child walking home and asks one question. Every answer is wrong.",
+   "title_idea": "The Elevator Game: The Korean Ritual That Takes You to Another World",
+   "angle": "Ride an elevator alone. Press 4, 2, 6, 2, 10, then 5. If a woman gets on at the fifth floor — don't look at her, and don't say a word.",
    "facts": [
-    "Kuchisake-onna (口裂け女, 'slit-mouthed woman') is a Japanese urban legend; a panic spread among Japanese schoolchildren in 1979, and some schools had children walk home in groups",
-    "She wears a mask and asks 'Am I pretty?'; unmasked, her mouth is cut from ear to ear; 'no' and 'yes' both end badly",
-    "Escape tricks in the rumors: answer 'you're average', throw candy (bekko-ame) at her, or say 'pomade' three times",
-    "Some claim much older roots in Edo-period tales — the evidence is thin",
-    "In Korea she became 'Ppalgan Mask' (빨간 마스크, the Red Mask), a rumor that swept elementary schools in the 2000s"
+    "The Elevator Game is an internet ritual: alone in an elevator of a building with at least 10 floors, you press the floors in a fixed order (commonly 4, 2, 6, 2, 10, then 5); a woman may get on at floor 5 and you must not speak to or look at her; if it 'works', pressing 1 takes you up instead of down, to an 'other world'",
+    "Common details of the 'other world': the building looks the same but you are the only person, the lights are off, and in some versions a red cross glows in the distance",
+    "It is usually said to have started on Korean internet forums and spread to English-language sites in the 2010s",
+    "It belongs to a family of 'ritual' creepypastas where following steps exactly is the scary part"
    ],
    "careful": [
-    "Modern legend — present sightings as rumors",
-    "Keep the mouth imagery implied (mask, shadow), no gore"
+    "It's an internet legend — say 'is said to', never claim anyone was taken",
+    "Do NOT mention or link any real person's death or real criminal case to the game",
+    "Don't encourage viewers to try it in a real building (no instructions framed as a dare); Gumi can joke that she wouldn't",
+    "The Korean origin is commonly claimed but not proven — say so"
    ],
-   "tie_in": "Japanese urban legend videos regularly pass 1M views",
+   "tie_in": "One of the best-known internet rituals in English creepypasta culture — the Korean origin is the hook",
    "sources": [
-    "Michael Dylan Foster, 'The Question of the Slit-Mouthed Woman' (Asian Folklore Studies, 2007)"
+    "Wikipedia — Elevator game",
+    "Creepypasta wiki / Know Your Meme — Elevator Game (origin claims)"
    ]
   },
   {
    "id": 7,
+   "slug": "gonjiam",
+   "region": "KR",
+   "format": "urban",
+   "title_idea": "Gonjiam: The Real Korean Asylum Called One of the Creepiest Places on Earth",
+   "angle": "In 2012 CNN listed an abandoned hospital in the Korean hills among the freakiest places on the planet. The rumors about what happened inside were worse than the truth.",
+   "facts": [
+    "Gonjiam Psychiatric Hospital (곤지암 정신병원) was an abandoned hospital building near Gonjiam in Gwangju, Gyeonggi Province",
+    "Rumors claimed patients died there and that the director vanished; reports say the hospital simply closed in the 1990s and the rumors of mass deaths are not supported",
+    "CNN Travel (2012) listed it among 'seven of the freakiest places on the planet'",
+    "The found-footage horror film Gonjiam: Haunted Asylum (2018) was a box-office hit in Korea",
+    "The building was demolished in 2018"
+   ],
+   "careful": [
+    "Separate rumor from fact clearly — the scary stories are rumors; don't present them as events",
+    "It was private property and trespassing was illegal; don't encourage urbex",
+    "No real former patients, staff or owners named or depicted",
+    "Mental illness: never mock patients; the horror is the rumor machine, not the people"
+   ],
+   "tie_in": "Real-place horror ('What Happened Here…') is the strongest English horror pattern (Scary Interesting 1.47M for a real Japanese island)",
+   "sources": [
+    "CNN Travel (2012): 7 of the freakiest places on the planet",
+    "Coverage of the film Gonjiam: Haunted Asylum (2018) and the building's 2018 demolition (Korea Herald / Korea JoongAng Daily)"
+   ]
+  },
+  {
+   "id": 8,
    "slug": "dokkaebi",
    "region": "KR",
    "title_idea": "Dokkaebi: Korea's Goblins Want to Wrestle You, Not Eat You",
@@ -160,52 +188,28 @@
    "format": "tale"
   },
   {
-   "id": 8,
-   "slug": "fox-trio",
-   "region": "EA",
-   "format": "versus",
-   "title_idea": "Gumiho vs Kitsune vs Huli Jing: Which Nine-Tailed Fox Would Win?",
-   "angle": "Three nine-tailed foxes, three countries, one very biased judge.",
-   "facts": [
-    "Korea's gumiho: almost always malevolent in folklore; human liver motif; fox bead (yeowoo guseul)",
-    "Japan's kitsune: messengers of the rice god Inari as well as tricksters; gain tails with age; famous villain Tamamo-no-Mae",
-    "China's huli jing: in early texts (Classic of Mountains and Seas) the nine-tailed fox is a man-eater, while in Han-era thought it could be an auspicious omen; Daji in Investiture of the Gods",
-    "Rounds: origins, powers (shapeshifting, possession, fox fire), weaknesses (dogs, being discovered, losing the bead), most famous case, pop culture"
-   ],
-   "careful": [
-    "Gumi is openly biased toward the gumiho — play it as a joke",
-    "Don't overlap episode 1's fox bead story beyond one line"
-   ],
-   "tie_in": "Linfamy's comparison video passed 300K views",
-   "sources": [
-    "Shanhaijing (Classic of Mountains and Seas)",
-    "Encyclopedia of Korean Folk Culture — 구미호",
-    "Otogizoshi — Tamamo-no-Mae"
-   ]
-  },
-  {
    "id": 9,
-   "slug": "arang",
+   "slug": "joseon-ufo-1609",
    "region": "KR",
-   "title_idea": "Every Magistrate Who Slept in This Town Died by Morning",
-   "angle": "In Miryang, every new magistrate was found dead the morning after he arrived. Then one of them stayed awake.",
+   "format": "mystery",
+   "title_idea": "In 1609, Korea's Royal Records Logged Something Burning in the Sky",
+   "angle": "Joseon officials didn't believe in flying saucers. But in 1609, five towns sent the king the same report: something round and burning, crossing the sky.",
    "facts": [
-    "Arang legend of Miryang (밀양 아랑 전설): the magistrate's daughter Arang (often named Yun Jeong-ok) is murdered after refusing a servant's advances",
-    "Her ghost appears to each new magistrate, who dies of fright",
-    "A brave new magistrate (often Yi Sang-sa) listens; she tells him her killer; the body is found and justice done; her ghost is at peace",
-    "The Arang shrine (Arang-gak) stands near Yeongnamnu pavilion in Miryang",
-    "Arang is the model of the cheonyeo gwishin — the young woman's ghost with long black hair and white clothes, driven by han (unresolved grief)"
+    "The Annals of the Joseon Dynasty (Gwanghaegun Ilgi, 1609) record reports from Gangwon Province of bright objects seen in the sky in several towns (including Yangyang and Gangneung) on the same day",
+    "Witnesses described shapes like a round vessel or a bright disc with fire, moving and making sounds",
+    "The record is often cited by modern UFO enthusiasts as Korea's oldest UFO report",
+    "Joseon courts recorded unusual sky phenomena carefully because they were read as omens about the king's rule"
    ],
    "careful": [
-    "Names differ between versions",
-    "No graphic violence"
+    "It's a real historical record of something unexplained — don't claim aliens; mention natural explanations (bright meteor/fireball) as the likely reading",
+    "Quote only what the record says in paraphrase; don't invent exact wording or witness names",
+    "Keep dates as given by sources (1609, Gwanghaegun's first year)"
    ],
-   "tie_in": "K-drama Arang and the Magistrate (2012); the long-haired ghost look later seen in J-horror",
+   "tie_in": "Real-record mysteries travel well in English ('the royal court wrote it down')",
    "sources": [
-    "Encyclopedia of Korean Folk Culture — 아랑전설: https://folkency.nfm.go.kr",
-    "Miryang city tourism — Arang-gak"
-   ],
-   "format": "tale"
+    "Annals of the Joseon Dynasty — Gwanghaegun Ilgi, 1609 (sillok.history.go.kr)",
+    "Korea JoongAng Daily / Korea Times features on the 1609 Gangwon sky record"
+   ]
   },
   {
    "id": 10,
@@ -237,70 +241,71 @@
   },
   {
    "id": 11,
-   "slug": "tamamo-no-mae",
+   "slug": "red-mask",
    "region": "JP",
-   "title_idea": "In 2022, a Stone in Japan Split in Half — and a Nine-Tailed Fox Walked Free",
-   "angle": "In March 2022 hikers found the Killing Stone at Nasu cracked in two. The internet asked: what was sealed inside?",
+   "format": "urban",
+   "title_idea": "'Am I Pretty?' — The Slit-Mouthed Woman Who Crossed the Sea to Korea",
+   "angle": "A woman in a surgical mask stops a child walking home and asks one question. Every answer is wrong.",
    "facts": [
-    "Sessho-seki (the Killing Stone) at Nasu, Tochigi was found split in March 2022 (widely reported)",
-    "Legend: Tamamo-no-Mae, a beautiful and brilliant courtesan of Emperor Toba (12th century), made him ill; the onmyoji Abe no Yasunari exposed her as a nine-tailed fox",
-    "She fled to Nasu, was killed by warriors (Miura-no-suke, Kazusa-no-suke), and her spirit became a poison stone that killed anything that touched it",
-    "Later tellings link her to China's Daji and an Indian queen — the same fox across three empires",
-    "Kitsune in Japan are also Inari's messengers — foxes aren't always villains there"
+    "Kuchisake-onna (口裂け女, 'slit-mouthed woman') is a Japanese urban legend; a panic spread among Japanese schoolchildren in 1979, and some schools had children walk home in groups",
+    "She wears a mask and asks 'Am I pretty?'; unmasked, her mouth is cut from ear to ear; 'no' and 'yes' both end badly",
+    "Escape tricks in the rumors: answer 'you're average', throw candy (bekko-ame) at her, or say 'pomade' three times",
+    "Some claim much older roots in Edo-period tales — the evidence is thin",
+    "In Korea she became 'Ppalgan Mask' (빨간 마스크, the Red Mask), a rumor that swept elementary schools in the 2000s"
    ],
    "careful": [
-    "The stone likely split from weathering — say that plainly",
-    "Gumi calls kitsune her 'cousins'"
+    "Modern legend — present sightings as rumors",
+    "Keep the mouth imagery implied (mask, shadow), no gore"
    ],
-   "tie_in": "Naruto's Nine-Tails and countless anime borrow from Tamamo",
+   "tie_in": "Japanese urban legend videos regularly pass 1M views",
    "sources": [
-    "Nasu town / Tochigi tourism pages on Sessho-seki",
-    "Otogizoshi & Noh play 'Sessho-seki'"
-   ],
-   "format": "tale"
+    "Michael Dylan Foster, 'The Question of the Slit-Mouthed Woman' (Asian Folklore Studies, 2007)"
+   ]
   },
   {
    "id": 12,
-   "slug": "korean-ghosts",
+   "slug": "bunshinsaba",
    "region": "KR",
-   "title_idea": "7 Korean Ghosts You Should Never Meet After Dark",
-   "angle": "A ghost with no face at all. A drowned ghost that pulls swimmers down. Korea has a ghost for every kind of bad night.",
+   "format": "urban",
+   "title_idea": "Bunshinsaba: The Spirit Game Korean Students Were Told Never to Play",
+   "angle": "Two students hold one pen. They whisper a chant they don't understand. The pen starts to move — and it won't stop.",
    "facts": [
-    "Cheonyeo gwishin — unmarried young woman's ghost (white clothes, long hair), driven by han",
-    "Mongdal gwishin — ghost of a man who died unmarried",
-    "Mul gwishin — water ghosts that drag swimmers down",
-    "Dalgyal gwishin — 'egg ghost', a ghost with a completely blank, featureless face",
-    "Gaksi — bride ghosts; Songaksi — ghost of a young woman who died unmarried, a household spirit in some regions",
-    "Jibakryeong-style 'bound' ghosts are a modern borrowing — note it if used"
+    "Bunshinsaba (분신사바) is a spirit-summoning game played by Korean students: two people hold one pen over paper and chant 'bunshinsaba, bunshinsaba, oide kudasai', then ask questions as the pen moves",
+    "It descends from the Japanese game kokkuri-san (a ouija-like table game); the chant mixes Japanese words",
+    "Schools and parents warned students against it; stories say you must end the session properly or the spirit stays",
+    "The horror film Bunshinsaba (2004) made the game famous across Korea"
    ],
    "careful": [
-    "Dalgyal gwishin is mostly modern/urban-legend — say so",
-    "List format but each with a mini story"
+    "Folk belief and school rumor — don't claim spirits are real",
+    "No instructions framed as a dare; don't encourage children to play"
    ],
-   "tie_in": "Netflix The East Palace (2026)",
+   "tie_in": "Bridges to the known ouija board and Japan's kokkuri-san",
    "sources": [
-    "Encyclopedia of Korean Folk Culture — 처녀귀신, 몽달귀신, 물귀신: https://folkency.nfm.go.kr"
-   ],
-   "format": "list"
+    "Encyclopedia of Korean Folk Culture — 분신사바 / 학교 괴담: https://folkency.nfm.go.kr",
+    "Film Bunshinsaba (분신사바, 2004)"
+   ]
   },
   {
    "id": 13,
-   "slug": "rose-red-lotus-red",
+   "slug": "arang",
    "region": "KR",
-   "title_idea": "Two Sisters Came Back From the Dead to Name Their Killer",
-   "angle": "Two sisters die in the same pond. Every magistrate they visit dies of fright. The third one listens.",
+   "title_idea": "Every Magistrate Who Slept in This Town Died by Morning",
+   "angle": "In Miryang, every new magistrate was found dead the morning after he arrived. Then one of them stayed awake.",
    "facts": [
-    "Janghwa Hongryeon jeon (장화홍련전), Joseon-era tale based on a Pyeongan-do case",
-    "A stepmother frames the elder sister Janghwa with a fake miscarriage (a skinned rat) to shame her; Janghwa is drowned in a pond; younger sister Hongryeon follows her",
-    "Their ghosts appear to magistrates who die of fright until magistrate Jeong Dong-u listens and exposes the stepmother",
-    "In the ending the sisters are reborn as twins to their father"
+    "Arang legend of Miryang (밀양 아랑 전설): the magistrate's daughter Arang (often named Yun Jeong-ok) is murdered after refusing a servant's advances",
+    "Her ghost appears to each new magistrate, who dies of fright",
+    "A brave new magistrate (often Yi Sang-sa) listens; she tells him her killer; the body is found and justice done; her ghost is at peace",
+    "The Arang shrine (Arang-gak) stands near Yeongnamnu pavilion in Miryang",
+    "Arang is the model of the cheonyeo gwishin — the young woman's ghost with long black hair and white clothes, driven by han (unresolved grief)"
    ],
    "careful": [
-    "Keep the 'skinned rat' mention brief and non-graphic"
+    "Names differ between versions",
+    "No graphic violence"
    ],
-   "tie_in": "Film A Tale of Two Sisters (2003), remade in Hollywood as The Uninvited (2009)",
+   "tie_in": "K-drama Arang and the Magistrate (2012); the long-haired ghost look later seen in J-horror",
    "sources": [
-    "Encyclopedia of Korean Culture — 장화홍련전: https://encykorea.aks.ac.kr"
+    "Encyclopedia of Korean Folk Culture — 아랑전설: https://folkency.nfm.go.kr",
+    "Miryang city tourism — Arang-gak"
    ],
    "format": "tale"
   },
@@ -328,6 +333,121 @@
   },
   {
    "id": 15,
+   "slug": "korean-ghosts",
+   "region": "KR",
+   "title_idea": "7 Korean Ghosts You Should Never Meet After Dark",
+   "angle": "A ghost with no face at all. A drowned ghost that pulls swimmers down. Korea has a ghost for every kind of bad night.",
+   "facts": [
+    "Cheonyeo gwishin — unmarried young woman's ghost (white clothes, long hair), driven by han",
+    "Mongdal gwishin — ghost of a man who died unmarried",
+    "Mul gwishin — water ghosts that drag swimmers down",
+    "Dalgyal gwishin — 'egg ghost', a ghost with a completely blank, featureless face",
+    "Gaksi — bride ghosts; Songaksi — ghost of a young woman who died unmarried, a household spirit in some regions",
+    "Jibakryeong-style 'bound' ghosts are a modern borrowing — note it if used"
+   ],
+   "careful": [
+    "Dalgyal gwishin is mostly modern/urban-legend — say so",
+    "List format but each with a mini story"
+   ],
+   "tie_in": "Netflix The East Palace (2026)",
+   "sources": [
+    "Encyclopedia of Korean Folk Culture — 처녀귀신, 몽달귀신, 물귀신: https://folkency.nfm.go.kr"
+   ],
+   "format": "list"
+  },
+  {
+   "id": 16,
+   "slug": "fox-trio",
+   "region": "EA",
+   "format": "versus",
+   "title_idea": "Gumiho vs Kitsune vs Huli Jing: Which Nine-Tailed Fox Would Win?",
+   "angle": "Three nine-tailed foxes, three countries, one very biased judge.",
+   "facts": [
+    "Korea's gumiho: almost always malevolent in folklore; human liver motif; fox bead (yeowoo guseul)",
+    "Japan's kitsune: messengers of the rice god Inari as well as tricksters; gain tails with age; famous villain Tamamo-no-Mae",
+    "China's huli jing: in early texts (Classic of Mountains and Seas) the nine-tailed fox is a man-eater, while in Han-era thought it could be an auspicious omen; Daji in Investiture of the Gods",
+    "Rounds: origins, powers (shapeshifting, possession, fox fire), weaknesses (dogs, being discovered, losing the bead), most famous case, pop culture"
+   ],
+   "careful": [
+    "Gumi is openly biased toward the gumiho — play it as a joke",
+    "Don't overlap episode 1's fox bead story beyond one line"
+   ],
+   "tie_in": "Linfamy's comparison video passed 300K views",
+   "sources": [
+    "Shanhaijing (Classic of Mountains and Seas)",
+    "Encyclopedia of Korean Folk Culture — 구미호",
+    "Otogizoshi — Tamamo-no-Mae"
+   ]
+  },
+  {
+   "id": 17,
+   "slug": "tamamo-no-mae",
+   "region": "JP",
+   "title_idea": "In 2022, a Stone in Japan Split in Half — and a Nine-Tailed Fox Walked Free",
+   "angle": "In March 2022 hikers found the Killing Stone at Nasu cracked in two. The internet asked: what was sealed inside?",
+   "facts": [
+    "Sessho-seki (the Killing Stone) at Nasu, Tochigi was found split in March 2022 (widely reported)",
+    "Legend: Tamamo-no-Mae, a beautiful and brilliant courtesan of Emperor Toba (12th century), made him ill; the onmyoji Abe no Yasunari exposed her as a nine-tailed fox",
+    "She fled to Nasu, was killed by warriors (Miura-no-suke, Kazusa-no-suke), and her spirit became a poison stone that killed anything that touched it",
+    "Later tellings link her to China's Daji and an Indian queen — the same fox across three empires",
+    "Kitsune in Japan are also Inari's messengers — foxes aren't always villains there"
+   ],
+   "careful": [
+    "The stone likely split from weathering — say that plainly",
+    "Gumi calls kitsune her 'cousins'"
+   ],
+   "tie_in": "Naruto's Nine-Tails and countless anime borrow from Tamamo",
+   "sources": [
+    "Nasu town / Tochigi tourism pages on Sessho-seki",
+    "Otogizoshi & Noh play 'Sessho-seki'"
+   ],
+   "format": "tale"
+  },
+  {
+   "id": 18,
+   "slug": "rose-red-lotus-red",
+   "region": "KR",
+   "title_idea": "Two Sisters Came Back From the Dead to Name Their Killer",
+   "angle": "Two sisters die in the same pond. Every magistrate they visit dies of fright. The third one listens.",
+   "facts": [
+    "Janghwa Hongryeon jeon (장화홍련전), Joseon-era tale based on a Pyeongan-do case",
+    "A stepmother frames the elder sister Janghwa with a fake miscarriage (a skinned rat) to shame her; Janghwa is drowned in a pond; younger sister Hongryeon follows her",
+    "Their ghosts appear to magistrates who die of fright until magistrate Jeong Dong-u listens and exposes the stepmother",
+    "In the ending the sisters are reborn as twins to their father"
+   ],
+   "careful": [
+    "Keep the 'skinned rat' mention brief and non-graphic"
+   ],
+   "tie_in": "Film A Tale of Two Sisters (2003), remade in Hollywood as The Uninvited (2009)",
+   "sources": [
+    "Encyclopedia of Korean Culture — 장화홍련전: https://encykorea.aks.ac.kr"
+   ],
+   "format": "tale"
+  },
+  {
+   "id": 19,
+   "slug": "korean-monsters",
+   "region": "KR",
+   "format": "list",
+   "title_idea": "5 Korean Monsters Nobody Outside Korea Knows About",
+   "angle": "Dogs that bite the sun. A serpent that waits a thousand years to become a dragon. Korea's bestiary is stranger than you think.",
+   "facts": [
+    "Bulgae (불개): fire dogs sent from a dark kingdom (Gamangnara) to steal the sun and moon; their bites are why eclipses happen",
+    "Imugi (이무기): a great serpent that must endure a thousand years (or win a magic pearl, yeouiju) to become a dragon; one that fails turns bitter and dangerous (film D-War, 2007)",
+    "Haetae (해태): a lion-like guardian said to devour fire; statues stand before Gyeongbokgung palace; today Seoul's mascot is based on it",
+    "Samjok-o (삼족오): the three-legged crow of the sun, painted in Goguryeo tomb murals",
+    "Eop-gureongi (업구렁이): a great serpent that lives under a house as its luck spirit — harm it and the family's fortune leaves"
+   ],
+   "careful": [
+    "Versions vary; the fire-eating haetae story around Gyeongbokgung is tradition, not proven history"
+   ],
+   "tie_in": "Imugi appears in K-dramas (e.g., Tale of the Nine Tailed)",
+   "sources": [
+    "Encyclopedia of Korean Folk Culture — 불개, 이무기, 해태, 삼족오, 업: https://folkency.nfm.go.kr"
+   ]
+  },
+  {
+   "id": 20,
    "slug": "daji",
    "region": "CN",
    "title_idea": "The Fox Who Ended a Dynasty: Daji and the Fall of Shang",
@@ -351,7 +471,7 @@
    "format": "tale"
   },
   {
-   "id": 16,
+   "id": 21,
    "slug": "princess-bari",
    "region": "KR",
    "title_idea": "The Princess Her Father Threw Away Became the Goddess of the Dead",
@@ -373,73 +493,7 @@
    "format": "tale"
   },
   {
-   "id": 17,
-   "slug": "korean-monsters",
-   "region": "KR",
-   "format": "list",
-   "title_idea": "5 Korean Monsters Nobody Outside Korea Knows About",
-   "angle": "Dogs that bite the sun. A serpent that waits a thousand years to become a dragon. Korea's bestiary is stranger than you think.",
-   "facts": [
-    "Bulgae (불개): fire dogs sent from a dark kingdom (Gamangnara) to steal the sun and moon; their bites are why eclipses happen",
-    "Imugi (이무기): a great serpent that must endure a thousand years (or win a magic pearl, yeouiju) to become a dragon; one that fails turns bitter and dangerous (film D-War, 2007)",
-    "Haetae (해태): a lion-like guardian said to devour fire; statues stand before Gyeongbokgung palace; today Seoul's mascot is based on it",
-    "Samjok-o (삼족오): the three-legged crow of the sun, painted in Goguryeo tomb murals",
-    "Eop-gureongi (업구렁이): a great serpent that lives under a house as its luck spirit — harm it and the family's fortune leaves"
-   ],
-   "careful": [
-    "Versions vary; the fire-eating haetae story around Gyeongbokgung is tradition, not proven history"
-   ],
-   "tie_in": "Imugi appears in K-dramas (e.g., Tale of the Nine Tailed)",
-   "sources": [
-    "Encyclopedia of Korean Folk Culture — 불개, 이무기, 해태, 삼족오, 업: https://folkency.nfm.go.kr"
-   ]
-  },
-  {
-   "id": 18,
-   "slug": "yuki-onna",
-   "region": "JP",
-   "title_idea": "The Snow Woman Spared Him — on One Condition",
-   "angle": "In a blizzard, a woman made of snow killed an old woodcutter and let the young one live. If he ever told anyone...",
-   "facts": [
-    "Lafcadio Hearn's 'Yuki-Onna' in Kwaidan (1904): woodcutters Mosaku and Minokichi shelter from a blizzard",
-    "Yuki-onna freezes Mosaku with her breath, spares Minokichi on condition he never tells",
-    "He marries a beautiful woman, O-Yuki; they have ten children; she never ages",
-    "Years later he tells her the story; she reveals she is the snow woman, spares him for the children's sake, and melts away"
-   ],
-   "careful": [
-    "Hearn's version is the famous one; older regional yuki-onna tales differ"
-   ],
-   "tie_in": "Countless anime; Kwaidan film (1964)",
-   "sources": [
-    "Lafcadio Hearn, Kwaidan (1904) — public domain"
-   ],
-   "format": "tale"
-  },
-  {
-   "id": 19,
-   "slug": "bulgasari",
-   "region": "KR",
-   "title_idea": "The Monster That Ate Iron — and the Dictator Who Kidnapped a Director to Film It",
-   "angle": "A Korean legend about a monster that couldn't be killed. A North Korean remake that required kidnapping South Korea's greatest director.",
-   "facts": [
-    "Bulgasari (불가살이) legend of late Goryeo: a creature formed from rice (in many versions by a monk) that eats iron and grows; 'bulgasari' puns on 'cannot be killed'",
-    "It ate the country's iron — needles, spoons, weapons — and could not be killed by blades; fire in some versions",
-    "Real history: director Shin Sang-ok and actress Choi Eun-hee were abducted to North Korea in 1978 on Kim Jong-il's orders",
-    "Shin directed the monster film Pulgasari (1985) there; the couple escaped at the US embassy in Vienna in 1986"
-   ],
-   "careful": [
-    "Legend ending varies",
-    "Keep the politics factual and short — this is a tale channel"
-   ],
-   "tie_in": "Pulgasari (1985), often compared to Godzilla",
-   "sources": [
-    "Encyclopedia of Korean Folk Culture — 불가살이",
-    "Paul Fischer, A Kim Jong-Il Production (2015)"
-   ],
-   "format": "tale"
-  },
-  {
-   "id": 20,
+   "id": 22,
    "slug": "reaper-trio",
    "region": "EA",
    "format": "versus",
@@ -462,7 +516,51 @@
    ]
   },
   {
-   "id": 21,
+   "id": 23,
+   "slug": "yuki-onna",
+   "region": "JP",
+   "title_idea": "The Snow Woman Spared Him — on One Condition",
+   "angle": "In a blizzard, a woman made of snow killed an old woodcutter and let the young one live. If he ever told anyone...",
+   "facts": [
+    "Lafcadio Hearn's 'Yuki-Onna' in Kwaidan (1904): woodcutters Mosaku and Minokichi shelter from a blizzard",
+    "Yuki-onna freezes Mosaku with her breath, spares Minokichi on condition he never tells",
+    "He marries a beautiful woman, O-Yuki; they have ten children; she never ages",
+    "Years later he tells her the story; she reveals she is the snow woman, spares him for the children's sake, and melts away"
+   ],
+   "careful": [
+    "Hearn's version is the famous one; older regional yuki-onna tales differ"
+   ],
+   "tie_in": "Countless anime; Kwaidan film (1964)",
+   "sources": [
+    "Lafcadio Hearn, Kwaidan (1904) — public domain"
+   ],
+   "format": "tale"
+  },
+  {
+   "id": 24,
+   "slug": "bulgasari",
+   "region": "KR",
+   "title_idea": "The Monster That Ate Iron — and the Dictator Who Kidnapped a Director to Film It",
+   "angle": "A Korean legend about a monster that couldn't be killed. A North Korean remake that required kidnapping South Korea's greatest director.",
+   "facts": [
+    "Bulgasari (불가살이) legend of late Goryeo: a creature formed from rice (in many versions by a monk) that eats iron and grows; 'bulgasari' puns on 'cannot be killed'",
+    "It ate the country's iron — needles, spoons, weapons — and could not be killed by blades; fire in some versions",
+    "Real history: director Shin Sang-ok and actress Choi Eun-hee were abducted to North Korea in 1978 on Kim Jong-il's orders",
+    "Shin directed the monster film Pulgasari (1985) there; the couple escaped at the US embassy in Vienna in 1986"
+   ],
+   "careful": [
+    "Legend ending varies",
+    "Keep the politics factual and short — this is a tale channel"
+   ],
+   "tie_in": "Pulgasari (1985), often compared to Godzilla",
+   "sources": [
+    "Encyclopedia of Korean Folk Culture — 불가살이",
+    "Paul Fischer, A Kim Jong-Il Production (2015)"
+   ],
+   "format": "tale"
+  },
+  {
+   "id": 25,
    "slug": "jiangshi",
    "region": "CN",
    "title_idea": "Why Chinese Vampires Hop",
@@ -484,29 +582,7 @@
    "format": "tale"
   },
   {
-   "id": 22,
-   "slug": "sun-and-moon",
-   "region": "KR",
-   "title_idea": "The Tiger Who Ate Their Mother Came Knocking at the Door",
-   "angle": "'Give me a rice cake and I won't eat you.' She gave him every rice cake she had. It wasn't enough.",
-   "facts": [
-    "해와 달이 된 오누이 (The Brother and Sister Who Became the Sun and the Moon)",
-    "A tiger eats the mother on her way home from selling rice cakes, one demand at a time",
-    "Disguised in her clothes, it comes to the children's door; they notice its hairy hand",
-    "They climb a tree; the tiger follows; they pray and a rope descends from heaven; the tiger's rotten rope snaps",
-    "The children become the sun and moon; the tiger's blood stains sorghum red"
-   ],
-   "careful": [
-    "Which child becomes the sun varies by version"
-   ],
-   "tie_in": "Origin of the voice-mimicking tiger (see Jangsanbeom #8)",
-   "sources": [
-    "Encyclopedia of Korean Folk Culture — 해와 달이 된 오누이: https://folkency.nfm.go.kr"
-   ],
-   "format": "tale"
-  },
-  {
-   "id": 23,
+   "id": 26,
    "slug": "jeoseung-saja",
    "region": "KR",
    "title_idea": "Korea's Grim Reapers Don't Carry Scythes — They Carry a List",
