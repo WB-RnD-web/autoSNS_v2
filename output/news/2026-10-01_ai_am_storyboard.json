@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-01", "topic": "ai", "slot": "am", "privacy": "public",
+  "format": "explain",
+  "angle": "규칙·정책",
+  "topic_keyword": "제미나이 4 아르곤",
+  "headline": "구글 최상위 AI 공개, 일반 접근은 제한",
+  "hook_title": "구글 새 AI, 7개월 만에 공개",
+  "thumbnail_hook": "A glowing locked door in a dark server room with a single beam of light shining through the keyhole, rows of blinking server lights fading into the background, calm blue tones, no text, no faces",
+  "thumbnail_text": "구글 새 AI, 7개월 만",
+  "glossary": [],
+  "sources": [
+    {"outlet": "연합뉴스", "title": "드디어 최상위 AI '제미나이4' 공개한 구글…일반 접근은 제한",
+     "url": "https://www.yna.co.kr/view/AKR20261001012500091",
+     "published_at": "2026-10-01T07:48:16+09:00", "confirmed": false,
+     "facts": ["구글은 차세대 AI모델 '제미나이 4 아르곤'을 출시했다고 30일(현지시간) 밝혔다.",
+               "이는 구글이 2026년 2월 '제미나이 3.1 프로'를 내놓은 이후 약 7개월 만에 내놓은 최상위 모델이다.",
+               "다만 구글은 이 모델의 성능이 높아진 만큼 오남용 위험도 커졌다면서 일반 이용자의 접근은 당분간 막기로 했다.",
+               "구글은 자사가 주도하는 보안 계획인 '페어윈드 프로그램'을 통해 검증된 사이버 보안 전문가들에 이 모델을 우선 제공할 방침이다."]},
+    {"outlet": "Google DeepMind", "title": "Gemini 4 Argon: our next era of frontier intelligence",
+     "url": "https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/",
+     "published_at": "2026-10-01T05:01:45+09:00", "confirmed": true,
+     "facts": ["Gemini 4 Argon’s capabilities across coding, reasoning, and multimodality and its ability to sustain long, multi-step tasks enable it to excel across a range of enterprise workflows."]}
+  ],
+  "scenes": [
+    {"type": "hook", "pill": "발표", "lines": ["구글 최상위 AI", "일반 공개 보류"], "highlight": "보류",
+     "narration": "구글이 가장 똑똑한 새 AI를 내놨는데, 일반 이용자는 아직 쓸 수 없다고 전해졌습니다."},
+    {"type": "stat", "label": "이전 최상위 모델 이후", "from": 0, "to": 7, "prefix": "약 ", "suffix": "개월", "bar": true, "sub": "제미나이 <b>4</b> 아르곤 공개",
+     "narration": "구글은 약 일곱 달 만에 최상위 모델, 제미나이 4 아르곤을 내놓았다고 밝혔습니다."},
+    {"type": "statement", "text": "남용 위험 때문에 접근 제한", "highlight": "접근 제한",
+     "narration": "성능이 높아진 만큼 나쁘게 쓰일 위험도 커져서, 일반 접근은 당분간 막았다고 알려졌습니다."},
+    {"type": "keypoint", "label": "공개 순서", "points": ["<b>보안 전문가</b>에게 먼저", "미국 정부 <b>사전 평가</b>", "일반 이용자는 <b>나중에</b>"],
+     "narration": "검증된 보안 전문가들에게 먼저 제공하고, 일반 이용자는 단계적으로 늘린다는 방침입니다."},
+    {"type": "statement", "text": "당장 쓰는 AI는 그대로", "highlight": "그대로",
+     "narration": "그래서 우리가 쓰는 AI가 당장 달라지진 않지만, 더 똑똑한 AI가 안전 점검을 거쳐 차례로 열릴 전망입니다."},
+    {"type": "statement", "text": "안전 먼저 vs 빨리 쓰기?", "highlight": "안전",
+     "narration": "여러분은 새 AI, 안전이 먼저일까요, 빨리 써 보는 게 먼저일까요?"}
+  ],
+  "platforms": {
+    "youtube": {"title": "구글 새 AI, 7개월 만에 공개 #shorts", "description": "구글이 최상위 AI 제미나이 4 아르곤을 내놨지만, 오남용 위험 때문에 일반 접근은 당분간 제한했다고 전해졌어요.\n\n#AI #구글 #shorts"},
+    "instagram": {"caption": "구글 새 AI, 7개월 만에 공개\n\n구글이 가장 똑똑한 AI 모델 '제미나이 4 아르곤'을 내놨어요.\n다만 나쁘게 쓰일 위험 때문에 일반 이용자 접근은 당분간 막았다고 해요.\n보안 전문가부터 먼저 쓰고, 점차 넓힌다는 계획입니다.\n매일 오전·저녁 AI 소식은 유튜브 '왕별이'에서 쉽게 풀어 드려요.\n출처 연합뉴스, Google DeepMind\n\n#AI #구글 #제미나이"},
+    "threads": {"text": "구글이 7개월 만에 최상위 AI를 내놨는데, 위험 때문에 일반 접근은 당분간 막았대요. 안전이 먼저일까요, 빨리 써 보는 게 먼저일까요? 매일 AI 소식은 유튜브 왕별이에서. #AI소식"}
+  },
+  "notes": "AI 오전 편 · explain · 장면 6개"
+}
