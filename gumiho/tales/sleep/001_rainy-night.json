@@ -1,0 +1,63 @@
+{
+ "id": 1,
+ "slug": "rainy-night",
+ "title": "Korean Folklore to Fall Asleep To | Gumiho, Fox Sister & Grim Reapers",
+ "hook": "Lie back, listen to the rain, and let Gumi, a 1,000-year-old nine-tailed fox, tell you four Korean tales until you drift off.",
+ "thumb": {
+  "text": "Rainy Night Tales",
+  "img": "a white nine-tailed fox curled up asleep on the wooden veranda of a traditional Korean hanok at night, gentle rain falling, one paper lantern glowing warm amber, deep blue night, peaceful"
+ },
+ "tags": ["korean folklore", "sleep stories", "gumiho", "stories to fall asleep to", "korean legends",
+          "fox sister", "korean mythology", "korean superstitions", "kpop demon hunters", "jeoseung saja",
+          "bedtime stories", "korean ghost stories"],
+ "render_from": "2026-10-18",
+ "publish_at": "2026-10-26T01:00:00Z",
+ "intro": [
+  {"img": "a quiet room in a traditional Korean hanok at night, a single paper lantern glowing low, rain falling past the open sliding door, soft blue shadows, peaceful",
+   "fx": "rain", "move": "in",
+   "say": "Shh. It's late, and the rain has found the roof tiles. You don't need to do anything now. Just get comfortable, and let your eyes grow a little heavy."},
+  {"gumi": "bead", "fx": "dust",
+   "say": "It's only me, Gumi. I've been awake for a thousand years, so tonight, let me do the staying awake for you."},
+  {"img": "a sleeping Joseon village under a full moon, thatched roofs, mist drifting along dark mountains, fireflies over the rice paddies, calm",
+   "fx": "fireflies", "move": "left",
+   "say": "I'll tell you four old stories, slowly, one after another. You don't have to remember any of them. If you fall asleep halfway through, the stories will wait for you."}
+ ],
+ "tales": [
+  {"file": "001_gumiho", "chapter": "The Gumiho",
+   "link": [
+    {"img": "a narrow mountain path through pine trees at dusk in old Korea, a lone lantern hanging from a branch, soft fog, calm and quiet",
+     "fx": "fog", "move": "right",
+     "say": "The first story is about my own kind. A boy, a long road over the mountain, and a girl with a red ribbon who was always waiting beside the path."}
+   ]},
+  {"file": "002_fox-sister", "chapter": "The Fox Sister",
+   "link": [
+    {"img": "a large traditional Korean farmhouse at night, warm light in one paper window, a wooden barn beside it, quiet fields under the stars, calm",
+     "fx": "dust", "move": "left",
+     "say": "Breathe in slowly. And out. The next story comes from a big house with a quiet barn, and a family who wished very hard for a daughter."}
+   ]},
+  {"file": "003_korean-superstitions", "chapter": "Korean Superstitions",
+   "link": [
+    {"img": "a cozy room with a warm ondol floor in an old Korean house at night, a folded sleeping mat, a small electric fan, moonlight through paper doors, peaceful",
+     "fx": "dust", "move": "in",
+     "say": "Now something gentler. Not one tale this time, but a handful of small old rules that Korean grandmothers still whisper. Just listen, and let them float by."}
+   ]},
+  {"file": "004_kpop-demon-hunters-legends", "chapter": "The Real Legends in KPop Demon Hunters",
+   "link": [
+    {"img": "a quiet Korean village lane at midnight, paper lanterns, far down the lane the silhouette of a tall figure in a wide black hat, soft mist, calm and mysterious",
+     "fx": "fog", "move": "right",
+     "say": "One more, and then you can let the rain take over. This last story is about the quiet men in black hats who come at the very end of a long life, and the old ways Korean families greeted them."}
+   ]}
+ ],
+ "outro": [
+  {"gumi": "front", "fx": "dust",
+   "say": "That's all the stories for tonight. You did very well, dear human. You listened all the way to the end, or maybe you didn't, and that's fine too."},
+  {"img": "rain falling softly on the tiled roof and wooden veranda of a quiet hanok at night, a single lantern, puddles reflecting warm light, deep blue darkness, peaceful, no people",
+   "fx": "rain", "move": "out",
+   "say": "I'll leave the rain on for a while. Sleep well, dear human. I'll keep watch until morning."}
+ ],
+ "tail": {
+  "min": 10,
+  "fx": "rain",
+  "img": "rain falling softly on the tiled roof and wooden veranda of a quiet hanok at night, a single lantern, puddles reflecting warm light, deep blue darkness, peaceful, no people"
+ }
+}

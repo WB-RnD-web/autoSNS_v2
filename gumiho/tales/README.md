@@ -27,6 +27,20 @@ tales.yml(Actions) ─ 대본 재검사 → render_tale.py → upload_tale.py(�
 | `render_tale.py` | 렌더(본편·쇼츠·썸네일·자막·한눈에 보기) |
 | `upload_tale.py` | 업로드(비공개/예약) · ledger |
 | `test_tales.py` | 오프라인 테스트 |
+| `sleep/NNN_slug.json` | 수면판(월 1회) spec — 묶을 편·새 연결 내레이션·render_from·publish_at |
+| `sleep.py` | 수면판 검사·due·렌더·업로드(편을 자르고 느리게·어둡게·빗소리로 다시 짓는다) |
+| `test_sleep.py` | 수면판 오프라인 테스트(가짜 편 두 개로 끝까지 렌더) |
+
+## 수면판(Sleep Edition, 월 1회)
+```
+tales-sleep.yml(매일 12:41 KST) ─ sleep.py due → render_from 지남·대본 다 있음·안 올림
+   └ seen(유튜브 표식 'Sleep Edition NNN' 확인) → sleep.py render → sleep.py upload(publish_at 예약)
+```
+- 같은 영상을 이어 붙이기만 하면 재사용 콘텐츠다 → 새 연결 내레이션(인트로·편 사이·아웃트로)·새로 그린 그림·
+  느린 목소리(0.92)·긴 전환·어두운 화면·빗소리·끝 10분 비 화면으로 다시 짓는다.
+- 편에서 가져오는 범위는 코드가 자른다: TALE 카드부터, 마지막 카드 뒤 '댓글/다음 편' 줄 앞까지. 장 카드·화면 주석·
+  '지난 편/다음 편' 말은 뺀다.
+- 다음 수면판은 `sleep/002_*.json` 을 PR 로 추가한다(render_from 은 묶을 마지막 편이 공개된 다음 날).
 
 ## 로컬
 ```
