@@ -322,7 +322,10 @@ D = today.strftime("%Y-%m-%d")
 pub = (today - dt.timedelta(hours=2)).isoformat()
 _orig = (P._prepare_bg, M.build_motion, M.probe_dur, P.has_credentials, P.upload_with_retry,
          P.add_playlist, A.recent_uploads, N.get_service, config.OUTPUT, config.RENDERS_DIR,
-         config.NEWS_DIR, config.ASSETS_DIR, A.load_feed)
+         config.NEWS_DIR, config.ASSETS_DIR, A.load_feed, A.entries_from_refs)
+# ★테스트는 레포의 진짜 원격 브랜치(routine/ai_am·ai_pm)를 읽지 않는다 — 2026-10-01 실물 첫 대본(오늘 날짜·explain)이
+#   이 절의 '오늘' 견본과 같은 키라서 이력에 끼어들어, 깨진 코드가 아닌데도 테스트가 실패하고 업로드가 통째로 막혔다.
+A.entries_from_refs = lambda refs=A.BRANCHES, root=None: []
 
 
 def fake_build(spec, out_mp4, wd, quality="standard"):
@@ -424,7 +427,7 @@ try:
 finally:
     (P._prepare_bg, M.build_motion, M.probe_dur, P.has_credentials, P.upload_with_retry, P.add_playlist,
      A.recent_uploads, N.get_service, config.OUTPUT, config.RENDERS_DIR, config.NEWS_DIR, config.ASSETS_DIR,
-     A.load_feed) = _orig
+     A.load_feed, A.entries_from_refs) = _orig
     for k, v in _env.items():
         if v is not None:
             os.environ[k] = v
