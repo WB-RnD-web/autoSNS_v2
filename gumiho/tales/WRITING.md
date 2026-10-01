@@ -132,6 +132,17 @@ Same narrator every week, **different shape** — so the channel never feels lik
   (`"gumi": "wink"`) sending viewers to the full tale.
 - Reuse pictures by `scene` key; `title` ≤100 chars ending with `#shorts`.
 
+## Extra Shorts (`shorts_extra`, required from tale 3)
+1–2 more Shorts from the same episode, same shape as `short` (lines, `hook`, `title`). Each one is a
+**different way in** — so we learn which angle and which first second works:
+- a different **angle**: the creepiest rule or fact, a 'did you know' twist, the scariest single moment,
+  or a question that splits the comments — not the same setup told again;
+- a different **first picture**: line 1 must be a `scene` (or `img`), never `gumi`, and not the scene
+  the main Short opens on (the checker compares them);
+- its own `hook` (required, 2–7 words) and its own `title`.
+Still never reveal the ending; the last line is Gumi sending viewers to the full tale.
+They are released after the episode is public (Tue and Thu), so they can link to it.
+
 ## Done
 Save as `output/tales/<NNN>_<slug>.json` (the `file` value from `next`), run the checker until ✅,
 commit **only that file**, push to `routine/tales`.

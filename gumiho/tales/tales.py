@@ -45,6 +45,9 @@ SHORT_WORDS = (60, 150)     # 쇼츠 30~55초
 SHORT_HOOK_WORDS, SHORT_HOOK_CHARS = 7, 38     # 쇼츠 위 두 줄 제목
 TITLE_SEARCH_MAX = 70                          # 검색 결과에서 보이는 제목 길이(3화부터)
 SHORT_LINES = (4, 9)
+# 편당 쇼츠 2~3개(2026-10-01): short + shorts_extra 1~2개. 쇼츠 피드 시간은 YPP 에 안 들어가지만 새 채널의 유입 깔때기다.
+# 같은 편에서 첫 장면·hook·각도가 다른 쇼츠를 나눠 올려 어떤 주제·첫 1초가 먹히는지 비교한다(3화부터 필수).
+EXTRA_SHORTS = (1, 2)
 THUMB_MAX_WORDS = 4
 # 몇 달 뒤에도 통해야 한다(역주행) — 날짜를 타는 말은 금지. 사실로 적는 연도(1994년 영화 등)는 괜찮다
 DATED = re.compile(r"(?i)\b(this (year|week|month|halloween|summer|winter|season)|last (week|month|year)|recently|"
@@ -151,29 +154,74 @@ def check(s: dict, path: str | None = None) -> list[str]:
         errs.append("첫 장면은 그림+내레이션(콜드 오픈)이어야 한다")
     elif words(first["say"]) > HOOK_MAX_WORDS:
         errs.append(f"첫 장면 {words(first['say'])}단어 > {HOOK_MAX_WORDS}")
-    sh = s["short"]
+    errs += short_errs(s["short"], keys, s, "쇼츠")
+    extra = s.get("shorts_extra") or []
+    if not isinstance(extra, list):
+        errs.append("shorts_extra 는 목록이어야 한다")
+        extra = []
+    if s.get("id", 0) >= 3 and not EXTRA_SHORTS[0] <= len(extra) <= EXTRA_SHORTS[1]:
+        errs.append(f"쇼츠는 편당 2~3개 — shorts_extra {len(extra)}개(1~2개 필요, 3화부터). "
+                    "첫 장면·hook·각도가 다른 쇼츠로 어떤 게 먹히는지 비교한다")
+    hooks = {(s["short"].get("hook") or s["thumb"].get("text", "")).strip().lower()}
+    firsts = {first_src(s["short"])}
+    titles = {s["short"].get("title", "").strip().lower()}
+    for k, ex in enumerate(extra, start=2):
+        lab = f"쇼츠{k}"
+        if not isinstance(ex, dict):
+            errs.append(f"{lab}: 객체가 아니다")
+            continue
+        errs += short_errs(ex, keys, s, lab)
+        h = (ex.get("hook") or "").strip().lower()
+        if not h:
+            errs.append(f"{lab}: hook 필수 — 첫 1초 두 줄 제목이 다른 쇼츠와 달라야 한다")
+        elif h in hooks:
+            errs.append(f"{lab}: hook 이 다른 쇼츠와 같다")
+        hooks.add(h)
+        ls = ex.get("lines") or []
+        if ls and ls[0].get("gumi"):
+            errs.append(f"{lab}: 첫 줄은 구미가 아니라 장면(scene)·그림(img) — 첫 1초에 멈추게 하는 건 그림이다")
+        f = first_src(ex)
+        if f in firsts:
+            errs.append(f"{lab}: 첫 장면 그림이 다른 쇼츠와 같다 — 첫 프레임을 다르게")
+        firsts.add(f)
+        tt = ex.get("title", "").strip().lower()
+        if tt in titles:
+            errs.append(f"{lab}: 제목이 다른 쇼츠와 같다")
+        titles.add(tt)
+    if len(",".join(s["tags"])) > 480:
+        errs.append("태그 합계 480자 이하")
+    return errs
+
+
+def first_src(sh: dict) -> str:
+    """쇼츠 첫 줄의 그림 출처 — 쇼츠끼리 첫 프레임이 겹치는지 본다."""
+    ln = (sh.get("lines") or [{}])[0]
+    return str(ln.get("scene") or ln.get("img") or f"gumi:{ln.get('gumi')}")
+
+
+def short_errs(sh: dict, keys: set, s: dict, label: str = "쇼츠") -> list[str]:
+    """쇼츠 한 편 검사(본 쇼츠·추가 쇼츠 공통)."""
+    errs = []
     lines = sh.get("lines") or []
     sw = sum(words(ln.get("say", "")) for ln in lines)
     if not SHORT_LINES[0] <= len(lines) <= SHORT_LINES[1]:
-        errs.append(f"쇼츠 줄 {len(lines)} — {SHORT_LINES}")
+        errs.append(f"{label} 줄 {len(lines)} — {SHORT_LINES}")
     if not SHORT_WORDS[0] <= sw <= SHORT_WORDS[1]:
-        errs.append(f"쇼츠 {sw}단어 — {SHORT_WORDS}(30~55초)")
+        errs.append(f"{label} {sw}단어 — {SHORT_WORDS}(30~55초)")
     if not sh.get("title") or len(sh["title"]) > 100:
-        errs.append("쇼츠 제목 1~100자")
+        errs.append(f"{label} 제목 1~100자")
     # 쇼츠 위에 끝까지 떠 있는 두 줄 제목(없으면 썸네일 문구) — 첫 1초에 읽혀야 한다
     hook = sh.get("hook") or s["thumb"].get("text", "")
     if not 2 <= len(hook.split()) <= SHORT_HOOK_WORDS or len(hook) > SHORT_HOOK_CHARS:
-        errs.append(f"쇼츠 hook {hook!r} — 2~{SHORT_HOOK_WORDS}단어·{SHORT_HOOK_CHARS}자 이하(화면 위 두 줄)")
+        errs.append(f"{label} hook {hook!r} — 2~{SHORT_HOOK_WORDS}단어·{SHORT_HOOK_CHARS}자 이하(화면 위 두 줄)")
     for j, ln in enumerate(lines):
         src = [k for k in ("scene", "gumi", "img") if ln.get(k)]
         if len(src) != 1:
-            errs.append(f"쇼츠 {j}: scene·gumi·img 중 하나")
+            errs.append(f"{label} {j}: scene·gumi·img 중 하나")
         elif ln.get("scene") and ln["scene"] not in keys:
-            errs.append(f"쇼츠 {j}: scene key {ln['scene']!r} 가 본편에 없다")
+            errs.append(f"{label} {j}: scene key {ln['scene']!r} 가 본편에 없다")
         if ln.get("gumi") and ln["gumi"] not in GUMI:
-            errs.append(f"쇼츠 {j}: gumi 는 {GUMI}")
-    if len(",".join(s["tags"])) > 480:
-        errs.append("태그 합계 480자 이하")
+            errs.append(f"{label} {j}: gumi 는 {GUMI}")
     return errs
 
 
@@ -217,11 +265,12 @@ def meta(s: dict, starts: list[float] | None = None, short_of: str | None = None
             + f"Sources & further reading:\n{src}\n\n{ABOUT}\n\n{AI_NOTE}\n\n"
             + "#gumiho #koreanfolklore #koreanmythology")
     out = {"title": s["title"][:100], "description": desc[:4900], "tags": tags}
-    sh = s["short"]
     sdesc = (f"{s['hook']}\n\n"
              + (f"Full tale: {short_of}\n\n" if short_of else "Full tale on the channel.\n\n")
              + f"{AI_NOTE}\n\n#shorts #gumiho #koreanfolklore #koreanlegend")
-    out["short"] = {"title": sh["title"][:100], "description": sdesc, "tags": tags[:15]}
+    out["short"] = {"title": s["short"]["title"][:100], "description": sdesc, "tags": tags[:15]}
+    out["shorts_extra"] = [{"title": ex["title"][:100], "description": sdesc, "tags": tags[:15]}
+                           for ex in (s.get("shorts_extra") or []) if isinstance(ex, dict) and ex.get("title")]
     return out
 
 

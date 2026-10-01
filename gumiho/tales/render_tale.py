@@ -1000,6 +1000,7 @@ def render(path: str, out_dir: str, work: str, mock: bool = False, skip_short: b
     t0 = time.time()
     shots = plan(s)
     texts = [x["say"] for x in shots if x["say"]] + [ln["say"] for ln in s["short"]["lines"]]
+    texts += [ln["say"] for ex in (s.get("shorts_extra") or []) for ln in ex["lines"]]
     voices = synth(texts, os.path.join(wd, "tts"), mock)
     total = timeline(shots, voices)
     print(f"   ⏱️ 본편 {total / 60:.1f}분 · 장면 {len(shots)}", flush=True)
@@ -1020,6 +1021,12 @@ def render(path: str, out_dir: str, work: str, mock: bool = False, skip_short: b
            "images": im["images"], "mock": mock, "starts": [x["start"] for x in shots], **md}
     if not skip_short:
         res["short"].update(render_short(s, shots, voices, wd, base + "_short.mp4", im["thumb_raw"]))
+        # 추가 쇼츠(2026-10-01) — 첫 줄은 썸네일이 아니라 그 쇼츠가 고른 장면 그림(첫 프레임이 서로 다르게)
+        for k, ex in enumerate(s.get("shorts_extra") or [], start=2):
+            wdk = os.path.join(wd, f"short{k}")
+            os.makedirs(wdk, exist_ok=True)
+            r = render_short(dict(s, short=ex), shots, voices, wdk, base + f"_short{k}.mp4", None)
+            res["shorts_extra"][k - 2].update(r)
     with open(base + "_meta.json", "w", encoding="utf-8") as f:
         json.dump(res, f, ensure_ascii=False, indent=1)
     print(f"✅ {base}.mp4 · {res['minutes']}분 · 그림 {im['images']} · 자막 {n_cues}"
