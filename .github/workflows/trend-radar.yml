@@ -1,0 +1,89 @@
+name: 트렌드 레이더 — 참고 채널·우리 채널 조회수 → 주제별 떡상·끝물(data/trend-radar)
+
+# 매일 아침 한 번: 참고 채널(tools/trend_niches.json) 최신 업로드 + 30일 안 영상 조회수를 읽어 스냅숏을 쌓고,
+#   '그 채널 평소 대비 배수'로 주제별 강세·약세(지난주가 있으면 떡상·식는 중·끝물)를 낸다.
+#   결과: data/trend-radar 의 trends.json(코드가 읽는다) · report.md(사람이 읽는다) · weekly/<날짜>.json(지난주 비교).
+# ★숫자만 낸다. '그래서 무엇을 바꿀까'는 주간 검토가 PR 로 한다(루틴에게 '트렌드를 반영해라'는 지켜지지 않는다).
+# 비용: 유튜브 API 하루 약 150~300 units(업로드 1건 = 1,600). RSS 는 2026-10-01 404 로 막혀 쓰지 않는다.
+# ⚠️ main 에는 아무것도 커밋하지 않는다 — data/trend-radar 에 고아 커밋 하나로 강제 push.
+
+on:
+  schedule:
+    - cron: "47 21 * * *"      # 06:47 KST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: trend-radar
+  cancel-in-progress: false
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      TZ: Asia/Seoul
+      DATA_BRANCH: data/trend-radar
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 의존성
+        run: python -m pip install -q google-api-python-client google-auth
+
+      - name: 테스트(오프라인)
+        run: python tools/test_trend_radar.py
+
+      - name: 지난 데이터 받기(레지스트리·주간 기록)
+        run: |
+          set -euo pipefail
+          OUT="$RUNNER_TEMP/radar"
+          mkdir -p "$OUT"
+          if git fetch -q --no-tags --depth=1 origin "+refs/heads/$DATA_BRANCH:refs/remotes/origin/$DATA_BRANCH"; then
+            git archive "origin/$DATA_BRANCH" | tar -x -C "$OUT" || echo "(풀기 실패 — 새로 시작)"
+          else
+            echo "($DATA_BRANCH 아직 없음 — 첫 실행)"
+          fi
+          ls -la "$OUT"
+
+      - name: 모으기·판정
+        env:
+          YT_TOKEN_JSON_GUMIHO: ${{ secrets.YT_TOKEN_JSON_GUMIHO }}
+        run: |
+          set -euo pipefail
+          if [ -z "$YT_TOKEN_JSON_GUMIHO" ]; then echo "::error::시크릿 YT_TOKEN_JSON_GUMIHO 없음"; exit 1; fi
+          printf '%s' "$YT_TOKEN_JSON_GUMIHO" > "$RUNNER_TEMP/token.json"
+          python tools/trend_radar.py run --dir "$RUNNER_TEMP/radar" --token "$RUNNER_TEMP/token.json"
+          rm -f "$RUNNER_TEMP/token.json"
+          head -60 "$RUNNER_TEMP/radar/report.md" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: data/trend-radar 에 올리기(고아 커밋 하나 · 강제)
+        run: |
+          set -euo pipefail
+          OUT="$RUNNER_TEMP/radar"
+          {
+            echo "# data/trend-radar — 자동 생성(손대지 않는다)"
+            echo
+            echo "- 만든 곳: .github/workflows/trend-radar.yml (main) · tools/trend_radar.py · tools/trend_niches.json"
+            echo "- trends.json: 분야·주제별 배수(채널 평소 대비)·대박 비율·판정 — 코드가 읽는다"
+            echo "- report.md: 사람이 읽는 요약 · weekly/<날짜>.json: 지난주 비교용 · registry.json: 영상별 조회수 스냅숏(75일)"
+            echo "- 마지막 생성: $(date '+%F %H:%M') KST · run ${GITHUB_RUN_ID}"
+          } > "$OUT/README.md"
+          export GIT_INDEX_FILE="$RUNNER_TEMP/radar.index"
+          export GIT_AUTHOR_NAME="trend-radar" GIT_AUTHOR_EMAIL="41898282+github-actions[bot]@users.noreply.github.com"
+          export GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME" GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
+          REPO="$GITHUB_WORKSPACE/.git"
+          ( cd "$OUT" && git --git-dir="$REPO" --work-tree=. add -A -f . )
+          TREE=$(git --git-dir="$REPO" write-tree)
+          COMMIT=$(git --git-dir="$REPO" commit-tree "$TREE" -m "data: 트렌드 레이더 $(date '+%F %H:%M') KST")
+          git --git-dir="$REPO" ls-tree -r --name-only "$COMMIT" | head -20
+          git --git-dir="$REPO" push -f origin "$COMMIT:refs/heads/$DATA_BRANCH"
