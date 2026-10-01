@@ -1,5 +1,5 @@
 {
- "about": "Nine Tails Tales 편성표. 루틴은 `python gumiho/tales/tales.py next --date <오늘>` 이 준 한 편만 쓴다(날짜로 결정론적 배정). facts 는 확인된 뼈대, careful 은 단정하면 안 되는 것. format: tale(설화) · urban(현대 괴담) · list(카운트다운) · versus(대결) — 같은 틀이 연속되지 않게 섞는다. 지역: 한국이 기본, 3~4편마다 일본·중국(수요가 한국 주제의 5~50배 — 2026-09-29 조사). 10월(할로윈 달)은 가장 무서운 편을 앞에 둔다.",
+ "about": "Nine Tails Tales 편성표. 루틴은 `python gumiho/tales/tales.py next --date <오늘>` 이 준 한 편만 쓴다(날짜로 결정론적 배정). facts 는 확인된 뼈대, careful 은 단정하면 안 되는 것. format: tale(설화) · urban(현대 괴담) · list(카운트다운) · versus(대결) · behind(유명 작품 속 진짜 한국 — 작품은 입구, 이야기는 설화) — 같은 틀이 연속되지 않게 섞는다. 지역: 한국이 기본, 3~4편마다 일본·중국(수요가 한국 주제의 5~50배 — 2026-09-29 조사). 10월(할로윈 달)은 가장 무서운 편을 앞에 둔다.",
  "start": "2026-09-30",
  "tales": [
   {
@@ -62,6 +62,37 @@
   },
   {
    "id": 4,
+   "slug": "kpop-demon-hunters-legends",
+   "region": "KR",
+   "format": "behind",
+   "title_idea": "The Real Korean Legends Hidden in KPop Demon Hunters",
+   "angle": "The Saja Boys' black hats weren't invented for a cartoon. In Korea, men in black have come for the dying for centuries — and families still set out rice for them.",
+   "facts": [
+    "KPop Demon Hunters (2025) is an animated musical film by Sony Pictures Animation released on Netflix, directed by Maggie Kang and Chris Appelhans. Premise: a K-pop girl group (Huntrix) secretly protects the world from demons with their voices",
+    "The rival boy band is the Saja Boys — 'saja' echoes jeoseung saja (저승사자), the envoys of the afterlife who escort the dead; their black robes and black gat hats match the modern pop image of the reaper",
+    "Saja-bap: at traditional funerals families set out rice, money and straw sandals for the reapers so they treat the soul kindly",
+    "Jeju shaman epic Chasa-bonpuri: the clever official Gangrim captures King Yeomra (ruler of the underworld) and becomes a reaper",
+    "The black gat and black robe look is largely a modern image popularized by TV and film (Guardian: The Lonely and Great God, 2016; Along with the Gods, 2017)",
+    "The tiger and magpie companions echo kkachi-horangi (까치호랑이, 'magpie and tiger'), a beloved Joseon-era folk painting (minhwa) genre: a goofy, harmless-looking tiger under a pine with a magpie; the magpie brings good news and the tiger wards off evil, and the tiger is often drawn comically",
+    "Mudang (무당) — Korean shamans, mostly women — perform gut (굿) rituals with song, dance, drums and bright costumes to call, appease or drive away spirits; this is the folk root for singers who protect people from spirits"
+   ],
+   "careful": [
+    "Talk about the film only through its premise and visible designs — no plot spoilers past the first act, no quotes from the film, no film characters or scenes in pictures (draw the folklore itself)",
+    "Say the film 'echoes' or 'draws on' a tradition unless a source says the creators stated it; never invent quotes from the directors",
+    "Don't claim the black-robe reaper costume is ancient",
+    "Respect shamanism as a living religion; don't mock mudang",
+    "Use the film title as text only; never imply this channel is affiliated with Netflix or Sony"
+   ],
+   "tie_in": "KPop Demon Hunters became Netflix's most-watched film (Korea Herald, 2025-08-27) — strong search demand from viewers aged 13–34 for the Korean culture behind it",
+   "sources": [
+    "Netflix Tudum — KPop Demon Hunters",
+    "Korea Herald (2025-08-27): KPop Demon Hunters becomes Netflix's most-watched film",
+    "Encyclopedia of Korean Folk Culture — 저승사자, 사자밥, 차사본풀이: https://folkency.nfm.go.kr",
+    "Encyclopedia of Korean Folk Culture — 까치호랑이(민화), 무당, 굿: https://folkency.nfm.go.kr"
+   ]
+  },
+  {
+   "id": 5,
    "slug": "jangsanbeom",
    "region": "KR",
    "title_idea": "The Tiger of Mount Jang Can Speak in Your Mother's Voice",
@@ -83,7 +114,7 @@
    "format": "urban"
   },
   {
-   "id": 5,
+   "id": 6,
    "slug": "red-mask",
    "region": "JP",
    "format": "urban",
@@ -104,29 +135,6 @@
    "sources": [
     "Michael Dylan Foster, 'The Question of the Slit-Mouthed Woman' (Asian Folklore Studies, 2007)"
    ]
-  },
-  {
-   "id": 6,
-   "slug": "jeoseung-saja",
-   "region": "KR",
-   "title_idea": "Korea's Grim Reapers Don't Carry Scythes — They Carry a List",
-   "angle": "When a Korean family lays out three bowls of rice and straw sandals at a funeral, it isn't for the dead. It's for the ones who came to collect them.",
-   "facts": [
-    "Jeoseung saja (저승사자) = messenger/envoy of the afterlife (jeoseung) who escorts the dead",
-    "Saja-bap: at traditional funerals families set out rice, money and straw sandals for the reapers so they treat the soul kindly",
-    "Jeju shaman epic Chasa-bonpuri: the clever official Gangrim captures King Yeomra (ruler of the underworld) and becomes a reaper",
-    "Often described as coming in threes in shamanic tradition",
-    "The black gat and black robe look is largely a modern image popularized by TV and film (e.g., Guardian: The Lonely and Great God, 2016; Along with the Gods, 2017)"
-   ],
-   "careful": [
-    "Don't claim the black-robe costume is ancient",
-    "Details of Chasa-bonpuri vary; keep the core: Gangrim, Yeomra, becoming a reaper"
-   ],
-   "tie_in": "KPop Demon Hunters' 'Saja Boys' are demons posing as reapers; Netflix Joseon ghost drama The East Palace (2026)",
-   "sources": [
-    "Encyclopedia of Korean Folk Culture — 저승사자, 사자상, 차사본풀이: https://folkency.nfm.go.kr"
-   ],
-   "format": "tale"
   },
   {
    "id": 7,
@@ -201,6 +209,34 @@
   },
   {
    "id": 10,
+   "slug": "exhuma-shamans",
+   "region": "KR",
+   "format": "behind",
+   "title_idea": "The Real Korean Shamans and Grave Curses Behind Exhuma",
+   "angle": "In Korea, when a family's luck keeps going wrong, someone eventually asks the question Exhuma starts with: is it the grave?",
+   "facts": [
+    "Exhuma (파묘, 2024) is a Korean occult thriller directed by Jang Jae-hyun; premise: a shaman, her apprentice, a geomancer and an undertaker are hired to move a wealthy family's ancestral grave. It drew over 10 million cinema admissions in Korea",
+    "Pungsu-jiri (풍수지리, Korean geomancy): the belief that where an ancestor is buried affects the fortunes of the descendants; families consult a geomancer (jigwan, 지관) to choose a grave site",
+    "Ijang (이장) — moving a grave — is done with rituals and care; opening a grave (pamyo) is treated as serious and dangerous to the family's luck",
+    "Mudang (무당) — Korean shamans, mostly women, mediating between people and spirits; mansin is an honorific; spirit sickness (sinbyeong) often precedes initiation",
+    "Gut (굿) — shamanic rituals with music, costume changes and possession; e.g., jakdu-tagi (작두타기), where the shaman dances barefoot on straw-cutter blades as a sign the spirit has come",
+    "Many shrines on Mount Inwang in Seoul (Guksadang)"
+   ],
+   "careful": [
+    "Premise only — never reveal the film's second-half twist or ending",
+    "If you mention the story of iron stakes driven into Korean mountains (쇠말뚝), present it as a widely told belief that historians dispute, not as fact",
+    "Be respectful — shamanism is a living religious practice",
+    "No film characters or scenes in pictures; draw graves, shrines, rituals, mountains"
+   ],
+   "tie_in": "Exhuma (2024) was one of Korea's biggest hits and reached global streaming; evergreen search for 'Korean shaman' and 'pamyo'",
+   "sources": [
+    "Encyclopedia of Korean Folk Culture — 무당, 굿, 작두타기, 풍수, 이장: https://folkency.nfm.go.kr",
+    "Laurel Kendall, Shamans, Housewives, and Other Restless Spirits (1985)",
+    "Korea JoongAng Daily / Yonhap coverage of Exhuma's box office (2024)"
+   ]
+  },
+  {
+   "id": 11,
    "slug": "tamamo-no-mae",
    "region": "JP",
    "title_idea": "In 2022, a Stone in Japan Split in Half — and a Nine-Tailed Fox Walked Free",
@@ -224,7 +260,7 @@
    "format": "tale"
   },
   {
-   "id": 11,
+   "id": 12,
    "slug": "korean-ghosts",
    "region": "KR",
    "title_idea": "7 Korean Ghosts You Should Never Meet After Dark",
@@ -248,7 +284,7 @@
    "format": "list"
   },
   {
-   "id": 12,
+   "id": 13,
    "slug": "rose-red-lotus-red",
    "region": "KR",
    "title_idea": "Two Sisters Came Back From the Dead to Name Their Killer",
@@ -269,7 +305,7 @@
    "format": "tale"
   },
   {
-   "id": 13,
+   "id": 14,
    "slug": "school-ghosts",
    "region": "KR",
    "format": "urban",
@@ -291,7 +327,7 @@
    ]
   },
   {
-   "id": 14,
+   "id": 15,
    "slug": "daji",
    "region": "CN",
    "title_idea": "The Fox Who Ended a Dynasty: Daji and the Fall of Shang",
@@ -315,7 +351,7 @@
    "format": "tale"
   },
   {
-   "id": 15,
+   "id": 16,
    "slug": "princess-bari",
    "region": "KR",
    "title_idea": "The Princess Her Father Threw Away Became the Goddess of the Dead",
@@ -337,7 +373,7 @@
    "format": "tale"
   },
   {
-   "id": 16,
+   "id": 17,
    "slug": "korean-monsters",
    "region": "KR",
    "format": "list",
@@ -359,7 +395,7 @@
    ]
   },
   {
-   "id": 17,
+   "id": 18,
    "slug": "yuki-onna",
    "region": "JP",
    "title_idea": "The Snow Woman Spared Him — on One Condition",
@@ -380,7 +416,7 @@
    "format": "tale"
   },
   {
-   "id": 18,
+   "id": 19,
    "slug": "bulgasari",
    "region": "KR",
    "title_idea": "The Monster That Ate Iron — and the Dictator Who Kidnapped a Director to Film It",
@@ -403,7 +439,7 @@
    "format": "tale"
   },
   {
-   "id": 19,
+   "id": 20,
    "slug": "reaper-trio",
    "region": "EA",
    "format": "versus",
@@ -426,7 +462,7 @@
    ]
   },
   {
-   "id": 20,
+   "id": 21,
    "slug": "jiangshi",
    "region": "CN",
    "title_idea": "Why Chinese Vampires Hop",
@@ -444,29 +480,6 @@
    "sources": [
     "Yuan Mei, Zi Bu Yu (18th c.) — jiangshi tales",
     "Mr. Vampire (1985)"
-   ],
-   "format": "tale"
-  },
-  {
-   "id": 21,
-   "slug": "mudang-gut",
-   "region": "KR",
-   "title_idea": "The Real Shamans Behind KPop Demon Hunters",
-   "angle": "Korea's shamans sing, dance on blades and argue with the dead. Some still work in Seoul today.",
-   "facts": [
-    "Mudang (무당) — Korean shamans, mostly women, mediating between people and spirits",
-    "Gut (굿) — shamanic rituals with music, costume changes and possession; e.g., jakdu-tagi, dancing on straw-cutter blades",
-    "Mansin is an honorific for shamans; spirit sickness (sinbyeong) often precedes initiation",
-    "Many shrines on Mount Inwang in Seoul (Guksadang)"
-   ],
-   "careful": [
-    "Be respectful — living religious practice",
-    "Don't claim KPDH plot details beyond public basics"
-   ],
-   "tie_in": "KPop Demon Hunters (2025) and its sequel; film Exhuma (2024)",
-   "sources": [
-    "Encyclopedia of Korean Folk Culture — 무당, 굿, 작두타기: https://folkency.nfm.go.kr",
-    "Laurel Kendall, Shamans, Housewives, and Other Restless Spirits (1985)"
    ],
    "format": "tale"
   },
@@ -489,6 +502,29 @@
    "tie_in": "Origin of the voice-mimicking tiger (see Jangsanbeom #8)",
    "sources": [
     "Encyclopedia of Korean Folk Culture — 해와 달이 된 오누이: https://folkency.nfm.go.kr"
+   ],
+   "format": "tale"
+  },
+  {
+   "id": 23,
+   "slug": "jeoseung-saja",
+   "region": "KR",
+   "title_idea": "Korea's Grim Reapers Don't Carry Scythes — They Carry a List",
+   "angle": "When a Korean family lays out three bowls of rice and straw sandals at a funeral, it isn't for the dead. It's for the ones who came to collect them.",
+   "facts": [
+    "Jeoseung saja (저승사자) = messenger/envoy of the afterlife (jeoseung) who escorts the dead",
+    "Saja-bap: at traditional funerals families set out rice, money and straw sandals for the reapers so they treat the soul kindly",
+    "Jeju shaman epic Chasa-bonpuri: the clever official Gangrim captures King Yeomra (ruler of the underworld) and becomes a reaper",
+    "Often described as coming in threes in shamanic tradition",
+    "The black gat and black robe look is largely a modern image popularized by TV and film (e.g., Guardian: The Lonely and Great God, 2016; Along with the Gods, 2017)"
+   ],
+   "careful": [
+    "Don't claim the black-robe costume is ancient",
+    "Details of Chasa-bonpuri vary; keep the core: Gangrim, Yeomra, becoming a reaper"
+   ],
+   "tie_in": "Deep dive after the KPop Demon Hunters episode (tale 4) — the full Chasa-bonpuri story of how a man became a reaper",
+   "sources": [
+    "Encyclopedia of Korean Folk Culture — 저승사자, 사자상, 차사본풀이: https://folkency.nfm.go.kr"
    ],
    "format": "tale"
   }

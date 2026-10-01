@@ -20,7 +20,7 @@ tales.yml(Actions) ─ 대본 재검사 → render_tale.py → upload_tale.py(�
 ## 파일
 | 파일 | 하는 일 |
 |---|---|
-| `catalog.json` | 편성표 — 번호·설화·형식(tale·urban·list·versus)·확인된 사실·주의점·출처. 날짜로 편 번호가 정해진다(9/30(수) 주 = 2편, 7일마다 +1) |
+| `catalog.json` | 편성표 — 번호·설화·형식(tale·urban·list·versus·behind)·확인된 사실·주의점·출처. 날짜로 편 번호가 정해진다(9/30(수) 주 = 2편, 7일마다 +1) |
 | `WRITING.md` | 루틴이 따르는 작성법(목소리·구조·분량·그림 프롬프트·쇼츠) |
 | `scripts/001_gumiho.json` | 사람이 쓴 1화(견본) |
 | `tales.py` | 대본 검사(분량·장면·필드·금지어)·챕터·설명·태그·편성 |
