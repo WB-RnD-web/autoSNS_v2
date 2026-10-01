@@ -1,0 +1,114 @@
+{
+ "about": "트렌드 레이더 참고 채널·주제 규칙. 채널은 2026-10-01 search.list 1회 탐색(분야별 최근 30일 조회수 상위)으로 골랐다. 우리 채널(own_*)은 API 로 전부 읽는다(RSS 는 최신 15개뿐). tags 는 제목 정규식 — 한 영상이 여러 주제에 들 수 있다.",
+ "niches": {
+  "fortune_kr": {
+   "label": "운세(왕별이)",
+   "channels": {
+    "UCR62KSLu3FFhR3Y3V65wzUQ": "가화만사성", "UCT9X4BIvpfzcc86glAI-p7Q": "조선명리학", "UCn2O-Zgn8sDDuUHDdCGrR_A": "주마등",
+    "UCuyX60UF5m5dZhc7kJc9Wig": "행운 충전소", "UCpaGrfuMKafdl4rwugBLJQw": "사주공감", "UC0asDkei6mvw2YXcq6had8g": "도화도르",
+    "UCHx7lcw-mE1hKT43zeoR7XA": "월하당", "UCCAgQsZRSi8jRfkcBUxf8kQ": "心の教科書", "UCSGPlesjHP6aC30SbQsli7Q": "행운을 부르는 복채널",
+    "UCNC0SN21Obas3apmXAmvWtA": "투어땅", "UC9pqnztZBUTADtN3_7t5h7g": "신이말해줌", "UCffyiNeYrciBYUP8HizkAKw": "상위 1%"
+   },
+   "tags": {
+    "띠별": "띠", "출생연도·나이": "출생|년생|나이|연도|태어난", "별자리": "별자리", "사주·명리": "사주|명리|팔자",
+    "무당·신점": "무당|신점|신내림|점집|보살|도사", "타로": "타로", "꿈해몽": "꿈", "관상": "관상|얼굴|인상", "이름·성씨": "이름|성씨|한자", "돈·재물": "돈|재물|금전|부자|로또|대박|횡재",
+    "자식·가족": "자식|자녀|가족|며느리|사위|손주|부모", "말년·노후": "말년|노후|노년|늙", "부부·궁합": "부부|배우자|남편|아내|궁합",
+    "건강·수명": "건강|수명|장수", "정치인 운세": "이재명|한동훈|윤석열|김건희|대통령|국회|정치",
+    "일간 운세": "오늘의 ?운세|\\d+월 ?\\d+일", "순위·TOP": "순위|1위|TOP|베스트|\\d+ ?가지", "연·월 운세": "\\d+월 운세|\\d{4}년|정미년|병오년|추석|설날"
+   }
+  },
+  "senior_kr": {
+   "label": "시니어 생활·건강(왕별이 시청층)",
+   "channels": {
+    "UCtBZ3J_f7mhRC66oOHADq4A": "인생생활백서", "UCkYEheMgBAUr1CVauhoMaxw": "오늘의 건강명언", "UC04o9FnnbAW0NLzQo-_y7SQ": "인생백과",
+    "UCb763mDr-ZwjtuC3gVhJ4pA": "인생꿀팁", "UCK7a5pIrpOJ92d91elFGtxA": "마음쉼터", "UCaiMBwX-hTJgtgCWot4lQxA": "마음산책",
+    "UC3Eg4kQIoQTt84rp5umDTAw": "마음가짐", "UC07xSLP2GbfpQ-jioBYaFDQ": "마음의 건강"
+   },
+   "tags": {
+    "음식·궁합": "음식|식품|궁합|먹|식단", "관절·근육": "무릎|관절|근육|허리", "노후 돈": "돈|연금|노후 ?준비|재테크", "명언·지혜": "명언|지혜|인생",
+    "살림 꿀팁": "살림|꿀팁|냉장|냉동|세탁|청소", "장수": "장수|수명|오래|100세|백세", "운동": "운동|걷기|스트레칭", "뇌·치매": "치매|뇌|기억",
+    "자식·관계": "자식|자녀|며느리|손주|부부|친구", "하지 마세요형": "절대|하지 ?마|안 ?되는|위험", "숫자 목록": "\\d+ ?가지"
+   }
+  },
+  "ainews_kr": {
+   "label": "AI 소식(왕별이)",
+   "channels": {
+    "UC6kZpTl39-_SqfBrF1-N2oQ": "연합뉴스경제TV", "UCvjTW12xqQmPn_e8r_jkzjA": "조팀장의 AI 공략집", "UCE9Q2l8yGDiDph3nTIQvDzQ": "위키타카",
+    "UCLOsPoIK68KqJAjCtpP1i_w": "뉴머니", "UCFFSCInZuQK8-bQMlfM4X8g": "정치일분"
+   },
+   "tags": {
+    "새 모델": "GPT|제미나이|Gemini|클로드|Claude|라마|모델", "로봇": "로봇|휴머노이드", "일자리": "일자리|신입|직업|해고|취업",
+    "AI로 돈벌기": "돈|수익|부업|자동화|억", "중국 AI": "중국|딥시크", "빅테크": "엔비디아|애플|구글|오픈AI|OpenAI|메타|MS|마이크로소프트",
+    "AI 드라마·영상": "드라마|영상|영화|배우", "공포·경고": "두려|경고|위험|소름|무서"
+   }
+  },
+  "stock_kr": {
+   "label": "주식 시황(왕별이)",
+   "channels": {
+    "UCdOjVxkj5JA0iDu3_xcsTyQ": "증시각도기TV", "UCF8AeLlUbEpKju6v1H6p8Eg": "한국경제TV", "UCCG6BEYjfQMGzypJw2EJCDQ": "815머니톡",
+    "UCMupe3fvv1-Hi3SRxZzSsTw": "에디 Eddie", "UC_JJ_NhRqPKcIOj5Ko3W_3w": "오선의 미국 증시 라이브", "UCRCNBeNS8MrOwFV6h6Yjemw": "시황맨TV",
+    "UCDnIfMiHBNs1RP7y6B6wf1Q": "염블리와 함께"
+   },
+   "tags": {
+    "반도체": "반도체|엔비디아|삼성전자|하이닉스", "금리·연준": "금리|연준|FOMC|국채", "환율·달러": "환율|달러", "유가": "유가|원유",
+    "고용·물가": "고용|물가|CPI", "코인": "코인|비트코인", "미국장": "미국|미증시|나스닥|S&P|다우", "코스피": "코스피|코스닥|국장", "AI 인프라": "AI|데이터센터|델"
+   }
+  },
+  "horror_en": {
+   "label": "Horror stories (Nine Tails)",
+   "channels": {
+    "UCnM02drQP-dF7WMgtJHR4Xw": "Mr. Nightmare", "UCtPrkXdtCM5DACLufB9jbsA": "MrBallen", "UCGAmpBtWveYp0-3v9npnhvQ": "Chilling Scares",
+    "UCCe6naZ5Gen2aWmS2-4V00w": "Maroon Files", "UCN64HIrZNqFQYZ2BuyY-4zg": "Chills", "UCRrR_UV2aJkGlchEtBxh9gg": "Merrily Horror Animations",
+    "UCnIuNL3SvzSonp-TGmxXKTg": "ScaryStaticReal"
+   },
+   "tags": {
+    "true story": "(?i)\\btrue\\b|\\breal\\b", "reddit": "(?i)reddit", "japan": "(?i)japan|yokai|kitsune", "korea": "(?i)korea",
+    "countdown": "(?i)^\\d+ |\\btop \\d+", "hours compilation": "(?i)\\d+ hours?|compilation", "woods·camping": "(?i)camping|hiking|woods|forest|trail|night walk",
+    "home·house": "(?i)house|home|apartment|neighbor", "school": "(?i)school|college|teacher", "cursed·ritual": "(?i)curse|cursed|ritual|game",
+    "disturbing": "(?i)disturbing|creepiest|terrifying|scariest"
+   }
+  },
+  "sleep_en": {
+   "label": "Sleep stories (Nine Tails 수면판)",
+   "channels": {
+    "UCtOOJcon2npC5P3aebUzKpQ": "Get Sleepy", "UC45OWitn6BWG20rxLCL109A": "Snook", "UC725TaGg1wVx8z9Y9kCCHrA": "Merrick After Midnight",
+    "UCQeL_pkffYxumse96jr1o-A": "Nick at Midnight", "UCNZegH5HQPx_chNsPqJw1Rw": "Sleepy Science Channel", "UCf2_jHMXGR-Q7VYaWG7OAsQ": "Midnight Monk",
+    "UCCD4-G3Aokt2sM7TYQV2HmA": "Bedtime Stories"
+   },
+   "tags": {
+    "reddit": "(?i)reddit", "strange·disturbing": "(?i)strange|disturbing|creepy|scary", "history": "(?i)history|historical|ancient|medieval",
+    "science·space": "(?i)science|facts|universe|space|planet|ocean", "myth·folklore": "(?i)myth|folklore|legend|gods", "calm·buddhist": "(?i)calm|buddh|zen|relax",
+    "hours": "(?i)\\d+ hours?", "rain": "(?i)rain"
+   }
+  },
+  "sleepsound": {
+   "label": "Sleep sounds (왕별이 ASMR)",
+   "channels": {
+    "UC3g0kvG39KBMS2K0l3VwMDg": "Through Ghibli Window", "UC4H4-MyD5rZWn-7aZVvzznw": "Cozy Jazz Ambience", "UCCckA4vqi9cig8YdI02pN1A": "Night Rain Storm",
+    "UC9phtjM5RaAX5Og4prZNKmg": "PLUVORA SOUNDS", "UCPDyymIxPoQzggi9FvtyOgQ": "Restful",
+    "UCZcnOSepQNtKBQVeAiy1Oow": "Aroma Ghibli-life"
+   },
+   "tags": {
+    "rain": "(?i)rain", "thunder·storm": "(?i)thunder|storm", "cozy": "(?i)cozy|cosy|warm", "village": "(?i)village|countryside|cabin|hut",
+    "ghibli·anime": "(?i)ghibli|anime", "jazz·music": "(?i)jazz|piano|music", "fire": "(?i)fire|fireplace|campfire", "no ads": "(?i)no ads",
+    "long (hours)": "(?i)\\d+ hours?|10h|8h", "korea·asia": "(?i)korea|japan|hanok|temple"
+   }
+  },
+  "own_wb": {
+   "label": "우리: 왕별이",
+   "own": true,
+   "channels": {"UCBmHETsvCsvT0xOb99Yx19Q": "왕별이"},
+   "tags": {
+    "띠별 운세": "띠별|띠 ", "띠 순위 특집": "순위|1위|특집", "별자리": "별자리", "주간 운세": "주간|이번 주", "정치": "국회|대통령|정부|여당|야당|의원|장관|검찰|법안",
+    "AI 소식": "AI|인공지능|GPT|제미나이|로봇", "주식": "코스피|코스닥|나스닥|증시|주가|반도체|미장|국장", "ASMR·수면": "ASMR|빗소리|수면|잠",
+    "드라마": "드라마|회차|결말"
+   }
+  },
+  "own_tales": {
+   "label": "우리: Nine Tails Tales",
+   "own": true,
+   "channels": {"UCoPIsIO_ximUdyh-n_-rIfQ": "Nine Tails Tales"},
+   "tags": {"gumiho·fox": "(?i)gumiho|fox|kitsune", "folk tale": "(?i)tale|legend|folk", "sleep": "(?i)sleep"}
+  }
+ }
+}
