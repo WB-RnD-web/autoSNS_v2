@@ -1,0 +1,28 @@
+{
+  "date":"2026-10-02","topic":"politics","slot":"aft","privacy":"public",
+  "topic_keyword":"국민연금법 개정 군 복무 크레딧","headline":"국민연금법 개정안 국회 통과, 군 복무 전체 기간 가입 인정",
+  "hook_title":"군 복무 18개월, 이제 전부 연금으로","accent":"#8FB0C9",
+  "thumbnail_hook":"Empty National Assembly plenary hall with a wooden gavel on the podium, a stack of bound documents and a small calendar page beside it, soft blue-gray light, no people, no text",
+  "thumbnail_text":"군 복무, 연금 인정 달라진다",
+  "scenes":[
+    {"type":"hook","pill":"가결","ghost":"POLITICS","lines":["군 복무","1년 넘게 했는데","연금은?"],"highlight":"1년","brand":"일상공감뉴스 · 정치","narration":"군대에서 일 년 넘게 복무해도, 연금 가입기간은 일 년까지만 인정받았습니다."},
+    {"type":"stat","label":"군 복무 인정 기간","prefix":"","suffix":"개월","from":12,"to":18,"bar":true,"sub":"육군·해병 기준 <b>18개월</b> 전부 인정","brand":"일상공감뉴스 · 정치","narration":"어제 국회 본회의를 통과한 국민연금법 개정안으로, 이제 실제 복무기간 전체가 인정됩니다."},
+    {"type":"keypoint","label":"복무 기간별 인정","points":["육군·해병대 — <b>18개월</b>","해군 — <b>20개월</b>","공군·사회복무 — <b>21개월</b>"],"brand":"일상공감뉴스 · 정치","narration":"육군과 해병대는 18개월, 해군은 20개월, 공군과 사회복무요원은 21개월이 반영됩니다."},
+    {"type":"stat","label":"둘째 출산 크레딧","prefix":"","suffix":"개월","from":12,"to":15,"bar":true,"sub":"둘째 자녀 인정 <b>3개월</b> 확대","brand":"일상공감뉴스 · 정치","narration":"둘째 아이 출산에 따른 가입기간 인정도 열두 달에서 열다섯 달로 늘어납니다."},
+    {"type":"keypoint","label":"적용 시점","points":["<b>2027년 1월 1일</b> 이후 전역자부터","같은 날 이후 둘째 출산도 해당"],"brand":"일상공감뉴스 · 정치","narration":"그래서 우리한테는, 2027년 이후 전역하는 가입자와 그 이후 둘째를 낳는 가정부터 적용된다는 점이 중요합니다."},
+    {"type":"statement","text":"내 연금, 몇 개월 늘어날까?","highlight":"몇 개월","brand":"일상공감뉴스 · 정치","narration":"이번 개정, 여러분께는 어떻게 다가오십니까?"}
+  ],
+  "sources":["경기일보","이데일리","간호사신문","뉴스핌"],"credit":"출처 경기일보·이데일리·간호사신문·뉴스핌 등",
+  "platforms":{
+    "youtube":{"title":"군 복무 18개월, 이제 전부 연금으로 #shorts","description":"국민연금법 개정안 국회 본회의 통과, 군 복무 전체 기간 가입기간 인정\n출처 경기일보·이데일리·간호사신문·뉴스핌 등\n\n※ 사실관계는 보도 시점 기준이며, 수사·재판 중인 사안은 확정된 내용이 아닙니다.\n\n#국민연금 #군복무 #국회 #뉴스 #쇼츠 #shorts",
+      "localizations":{
+        "en":{"title":"Korea: All Military Service Months Now Count Toward Pension #shorts","description":"Korea's National Assembly passed a National Pension Act amendment: from 2027, the full actual military service period counts toward pension contributions, and the second-child credit rises from 12 to 15 months.\nSources: Kyeonggi Ilbo, Edaily, Newspim\n\n#shorts #Korea #pension"},
+        "ja":{"title":"韓国、兵役の全期間を年金加入期間に算入へ #shorts","description":"韓国国会が国民年金法の改正案を可決しました。2027年以降の除隊者から、実際の兵役期間すべてが年金加入期間として認められ、第2子の出産クレジットも12か月から15か月に拡大されます。\n出典：京畿日報、イーデイリー、ニューススピム\n\n#shorts #韓国 #年金"},
+        "zh-Hant":{"title":"南韓兵役全期間納入國民年金 #shorts","description":"南韓國會通過國民年金法修正案：自2027年起，退伍者的實際服役期間將全數計入年金加入期間，第二胎生育年資補償也從12個月延長為15個月。\n來源：京畿日報、Edaily、Newspim\n\n#shorts #南韓 #年金"}
+      }
+    },
+    "instagram":{"caption":"군 복무 18개월, 이제 전부 연금으로\n출처 경기일보·이데일리·간호사신문·뉴스핌\n\n#국민연금 #군복무 #국회 #뉴스 #쇼츠 #shorts #릴스"},
+    "threads":{"text":"군 복무 18개월, 이제 전부 연금으로\n출처 경기일보·이데일리·간호사신문·뉴스핌"}
+  },
+  "notes":"모션그래픽 6장면 · 단일 내레이터 · 배경음 없음."
+}
