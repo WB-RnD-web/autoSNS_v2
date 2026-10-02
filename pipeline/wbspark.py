@@ -77,6 +77,31 @@ def strip_text_negatives(prompt: str) -> str:
     return out
 
 
+# no_llm 이면 게이트웨이가 aspect 를 무시하고 늘 가로 1216x832 를 준다(2026-10-02 실측 — "9:16" 을 줘도 세 번 다 가로).
+# 그래서 쇼츠 키비주얼이 가로 그림 가운데를 잘라 2.3배 키운 화면이 됐다. 크기를 직접 실어 보낸다
+# (width/height 를 주면 그대로 나온다 — 같은 날 832x1216 확인). 값은 64 배수로 화면 비율에 가깝게.
+ASPECT_SIZE = {"9:16": (768, 1344), "16:9": (1344, 768), "1:1": (1024, 1024)}
+
+
+def image_body(prompt: str, model: str | None = None, aspect: str | None = None,
+               no_llm: bool = False) -> dict:
+    body = {"type": "image", "prompt": strip_text_negatives(prompt)}
+    mdl = model or os.environ.get("WBSPARK_MODEL")
+    if mdl:
+        body["model"] = mdl
+    # aspect: 게이트웨이가 받는 비율("9:16" 등). no_llm: 서버의 LLM 프롬프트 보정을 건너뛴다 —
+    #   루틴이 이미 자세한 영어 프롬프트를 썼으므로 보정은 시간만 쓴다(2026-09-27 실측:
+    #   z-image-turbo 고정 + no_llm 35초 vs 기본 경로 147초, 'sign' 이 들어가면 qwen 으로 새서 240초+).
+    if aspect:
+        body["aspect"] = aspect
+        size = ASPECT_SIZE.get(aspect.replace(" ", ""))
+        if size:
+            body["width"], body["height"] = size
+    if no_llm:
+        body["no_llm"] = True
+    return body
+
+
 def generate_image(prompt: str, out_path: str,
                    timeout_sec: int = 720, poll_sec: float = 4.0,
                    model: str | None = None, aspect: str | None = None,
@@ -91,18 +116,7 @@ def generate_image(prompt: str, out_path: str,
     """
     requests = _requests()
     base, headers = _base(), _headers()
-    prompt = strip_text_negatives(prompt)
-    body = {"type": "image", "prompt": prompt}
-    mdl = model or os.environ.get("WBSPARK_MODEL")
-    if mdl:
-        body["model"] = mdl
-    # aspect: 게이트웨이가 받는 비율("9:16" 등). no_llm: 서버의 LLM 프롬프트 보정을 건너뛴다 —
-    #   루틴이 이미 자세한 영어 프롬프트를 썼으므로 보정은 시간만 쓴다(2026-09-27 실측:
-    #   z-image-turbo 고정 + no_llm 35초 vs 기본 경로 147초, 'sign' 이 들어가면 qwen 으로 새서 240초+).
-    if aspect:
-        body["aspect"] = aspect
-    if no_llm:
-        body["no_llm"] = True
+    body = image_body(prompt, model=model, aspect=aspect, no_llm=no_llm)
     try:
         r = requests.post(f"{base}/jobs", json=body, headers=headers, timeout=40)
         if r.status_code != 200:
