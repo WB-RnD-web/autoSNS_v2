@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-02", "topic": "ai", "slot": "am", "privacy": "public",
+  "format": "compare",
+  "angle": "일자리",
+  "topic_keyword": "신입 채용",
+  "headline": "ICT 신입 채용 3년 새 절반 가까이 감소",
+  "hook_title": "IT 신입 채용 3년 새 반토막",
+  "thumbnail_hook": "An empty office desk with a single chair and a closed laptop, soft morning light through a window, a stack of unopened job application folders beside it, quiet and calm mood, no text, no faces",
+  "thumbnail_text": "신입 채용 반토막",
+  "glossary": [],
+  "sources": [
+    {"outlet": "동아일보", "title": "[단독]IT 신입채용 3년새 반토막… 일 배울 기회조차 못 얻는 청년들",
+     "url": "https://www.donga.com/news/Economy/article/all/20261001/134764258/2",
+     "published_at": "2026-10-01T04:30:00+09:00",
+     "confirmed": false,
+     "facts": [
+       "인공지능(AI)발 채용 한파에 국내 정보통신기술(ICT) 신입 채용이 3년 새 반 토막 난 것으로 나타났다.",
+       "ICT 산업 신입 채용은 2022년 9만5116명에서 지난해 4만8669명으로 48.8% 줄었다.",
+       "전체 채용자 중 신입 비중은 71.2%에서 49.7%까지 하락했다.",
+       "ICT 경력 채용이 신입을 앞지른 것은 지난해가 2016년 이후 9년 만이다."
+     ]}
+  ],
+  "scenes": [
+    {"type": "hook", "pill": "일자리", "lines": ["IT 신입 채용", "3년 새 반토막"], "highlight": "반토막",
+     "narration": "정보통신 분야 신입 채용이 3년 새 거의 절반으로 줄었다고 보도됐어요."},
+    {"type": "stat", "label": "신입 채용 감소율", "from": 0, "to": 48.8, "prefix": "", "suffix": "%", "bar": true,
+     "sub": "<b>9만5116명</b>에서 <b>4만8669명</b>으로",
+     "narration": "과기정통부 자료로는 2022년 구만 오천 명이던 신입이 지난해 사만 팔천 명대로 줄었다고 전해졌어요."},
+    {"type": "gauge", "label": "전체 채용 중 신입 비중", "from": 71.2, "to": 49.7, "unit": "%",
+     "sub": "경력 채용이 <b>9년</b> 만에 앞질렀어요",
+     "narration": "전체 채용에서 신입 몫도 칠십일 퍼센트에서 오십 퍼센트 아래로 내려왔다고 알려졌어요."},
+    {"type": "keypoint", "label": "그래서 우리한테는",
+     "points": ["AI가 맡는 일이 <b>신입 업무</b>와 겹쳐요", "회사들이 <b>경력직</b>을 더 찾아요"],
+     "narration": "AI가 맡는 일이 신입의 일과 겹치면서 회사들이 경력직을 더 찾는다는 분석입니다."},
+    {"type": "statement", "text": "손주 진로, 같이 얘기해 볼까요", "highlight": "진로",
+     "narration": "자녀와 손주의 진로, 오늘 한번 같이 이야기해 보시면 어떨까요?"}
+  ],
+  "platforms": {
+    "youtube": {"title": "IT 신입 채용 3년 새 반토막 #shorts", "description": "정보통신 분야 신입 채용이 3년 새 거의 절반으로 줄었다고 보도됐어요. AI 도입 이후 회사들이 경력직을 더 찾는다는 분석입니다.\n\n#AI #일자리 #shorts"},
+    "instagram": {"caption": "IT 신입 채용 3년 새 반토막\n\n정보통신 분야 신입 채용이 2022년 9만5116명에서 지난해 4만8669명으로 줄었대요.\n경력 채용이 9년 만에 신입을 앞질렀다고 해요.\n매일 오전·저녁 AI 소식은 유튜브 '왕별이'에서 쉽게 풀어 드려요.\n출처 동아일보\n\n#AI #일자리 #신입채용"},
+    "threads": {"text": "정보통신 분야 신입 채용이 3년 새 거의 절반으로 줄었다고 보도됐어요. 경력 채용이 신입을 9년 만에 앞질렀대요. 매일 AI 소식은 유튜브 왕별이에서 쉽게 풀어 드려요. #AI소식"}
+  },
+  "notes": "AI 소식 오전 편 · compare · 장면 5개"
+}
