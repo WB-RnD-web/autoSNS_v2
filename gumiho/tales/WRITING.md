@@ -33,7 +33,7 @@ and cite its `sources` in the `sources` field. If a detail differs between versi
 4. **3–4 chapters**: the first starts right after the TALE card; the next ones open with `{"card": "I", "sub": "…"}` (then II, III…). Background/lore first,
    then the tale proper with rising tension, then what it means / how Korea (or Japan/China) tells it today.
 5. **Ending**: Gumi's personal answer or reflection → **one question for the comments**
-   ("If you were that boy, would you have swallowed the bead? Tell me in the comments.") → teaser for **next week's catalog entry**
+   ("If you were that boy, would you have swallowed the bead? Tell me in the comments.") → teaser for **the next catalog entry** (say "in my next tale", never "next week" — some weeks we post daily)
    (use its `angle`) → sign-off in one line (vary it; a callback to the cold open is best).
 
 ## Evergreen — it must still work a year from now
@@ -78,6 +78,7 @@ Same narrator every week, **different shape** — so the channel never feels lik
   (science first, then folklore and rumor) → what is still unexplained. Gumi gives her verdict and asks
   the comments. Rules: never present the supernatural as fact; paraphrase records, never invent quotes,
   names or numbers; no real victims, patients or private people named or depicted; no trespassing dares.
+- `pov` — the viewer is the main character. Second person, present tense ("You hear your name. It's your mother's voice. Your mother is at home."). Cold open puts YOU in the moment of danger; then rewind to how you got there. Gumi interrupts at each turning point (her own lines, past tense, slightly amused) to tell you what the real legend says happens to people who do what you're about to do — that's where the folklore, origins and versions go. Chapters follow your choices (e.g. The Voice → Don't Answer → The Thing in the Trees → If You Survive). Keep the rules of the legend exact; the 'you' story may be invented, the folklore may not. End by asking the comments what THEY would have done. Image prompts show the scene from the viewer's eye level, never a named person; never show 'you' as a specific face.
 
 ## Make it hit (every format)
 - **Scene 0 is the scariest or strangest image of the episode**, not the calm beginning.

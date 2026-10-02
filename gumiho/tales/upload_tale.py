@@ -67,6 +67,21 @@ def next_saturday_15utc(now: dt.datetime | None = None) -> str:
     return t.strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
+def sprint_times(day, now: dt.datetime | None = None) -> tuple[str, str]:
+    """스프린트 편(1주 형식 실험): 본편 그날 15:00 UTC(미 동부 오전 11시) · 쇼츠 2시간 전.
+    렌더가 늦어 시각이 지났거나 1시간 안이면 지금+2시간 정각으로 민다(쇼츠는 본편과 같은 시각까지)."""
+    now = now or dt.datetime.now(dt.timezone.utc)
+    soon = (now + dt.timedelta(hours=2)).replace(minute=0, second=0, microsecond=0)
+    long_at = dt.datetime(day.year, day.month, day.day, 15, tzinfo=dt.timezone.utc)
+    if long_at < now + dt.timedelta(hours=1):
+        long_at = soon
+    short_at = long_at - dt.timedelta(hours=2)
+    if short_at < now + dt.timedelta(hours=1):
+        short_at = min(soon, long_at)
+    f = "%Y-%m-%dT%H:%M:%SZ"
+    return long_at.strftime(f), short_at.strftime(f)
+
+
 def insert(yt, video: str, md: dict, privacy: str, publish_at: str | None) -> str:
     from googleapiclient.http import MediaFileUpload
     status = {"privacyStatus": "private" if publish_at else privacy, "selfDeclaredMadeForKids": False,
@@ -169,6 +184,11 @@ def main() -> int:
             led.setdefault(k, v)
     done = led.get(stem, {})
     publish_at = a.publish_at or (next_saturday_15utc() if a.mode == "scheduled" else None)
+    day = T.sprint_day(s["id"])
+    short_at = None
+    if day and a.mode == "scheduled" and not a.publish_at:
+        publish_at, short_at = sprint_times(day)
+        print(f"   스프린트 편({day}) — 본편 {publish_at} · 쇼츠 {short_at} · 추가 쇼츠 없음")
     # 앞서 올린 편(최신순 4개)을 설명에 링크 — 새 편이 옛 편을, 옛 편 검색 유입이 새 편을 끌어 준다
     more = [(v.get("title") or k, v["long"]) for k, v in sorted(led.items(), reverse=True)
             if k != stem and v.get("long")]
@@ -199,8 +219,8 @@ def main() -> int:
     short = rm.get("short", {})
     if not a.no_short and short.get("video") and not done.get("short"):
         smd = T.meta(s, None, short_of=done["long"])["short"]
-        s_at = None
-        if publish_at:                               # 쇼츠는 본편 하루 전에 풀어 본편으로 끌어온다
+        s_at = short_at
+        if publish_at and not s_at:                  # 쇼츠는 본편 하루 전에 풀어 본편으로 끌어온다
             s_at = (dt.datetime.strptime(publish_at, "%Y-%m-%dT%H:%M:%SZ") - dt.timedelta(days=1)).strftime(
                 "%Y-%m-%dT%H:%M:%SZ")
         sid = insert(yt, short["video"], smd, "private", s_at)
@@ -211,7 +231,7 @@ def main() -> int:
         _save(a.ledger, led)
     # 추가 쇼츠(2026-10-01) — 본편이 공개된 ★뒤에 푼다(화·목 15:00 UTC). 관련 동영상 연결은 공개 영상만 고를 수 있다.
     smeta = T.meta(s, None, short_of=done.get("long"))["shorts_extra"]
-    for k, ex in enumerate(rm.get("shorts_extra") or [], start=2):
+    for k, ex in enumerate([] if day else (rm.get("shorts_extra") or []), start=2):
         key = f"short{k}"
         if a.no_short or not ex.get("video") or done.get(key) or k - 2 >= len(smeta):
             continue
