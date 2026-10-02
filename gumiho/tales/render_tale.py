@@ -1005,7 +1005,9 @@ def render(path: str, out_dir: str, work: str, mock: bool = False, skip_short: b
     t0 = time.time()
     shots = plan(s)
     texts = [x["say"] for x in shots if x["say"]] + [ln["say"] for ln in s["short"]["lines"]]
-    texts += [ln["say"] for ex in (s.get("shorts_extra") or []) for ln in ex["lines"]]
+    # 스프린트 편(catalog.sprint)은 추가 쇼츠를 만들지 않는다 — 매일 본편이 나와 쇼츠가 너무 많아진다
+    extras = [] if T.sprint_day(s["id"]) else (s.get("shorts_extra") or [])
+    texts += [ln["say"] for ex in extras for ln in ex["lines"]]
     voices = synth(texts, os.path.join(wd, "tts"), mock)
     total = timeline(shots, voices)
     print(f"   ⏱️ 본편 {total / 60:.1f}분 · 장면 {len(shots)}", flush=True)
@@ -1027,7 +1029,7 @@ def render(path: str, out_dir: str, work: str, mock: bool = False, skip_short: b
     if not skip_short:
         res["short"].update(render_short(s, shots, voices, wd, base + "_short.mp4", im["thumb_raw"]))
         # 추가 쇼츠(2026-10-01) — 첫 줄은 썸네일이 아니라 그 쇼츠가 고른 장면 그림(첫 프레임이 서로 다르게)
-        for k, ex in enumerate(s.get("shorts_extra") or [], start=2):
+        for k, ex in enumerate(extras, start=2):
             wdk = os.path.join(wd, f"short{k}")
             os.makedirs(wdk, exist_ok=True)
             r = render_short(dict(s, short=ex), shots, voices, wdk, base + f"_short{k}.mp4", None)

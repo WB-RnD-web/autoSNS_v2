@@ -1,5 +1,5 @@
 {
- "about": "Nine Tails Tales 편성표. 루틴은 `python gumiho/tales/tales.py next --date <오늘>` 이 준 한 편만 쓴다(날짜로 결정론적 배정). facts 는 확인된 뼈대, careful 은 단정하면 안 되는 것. format: tale(설화) · urban(현대 괴담) · list(카운트다운) · versus(대결) · behind(유명 작품 속 진짜 한국 — 작품은 입구, 이야기는 설화) · mystery(실제 기록·장소의 미스터리). ★2026-10-01 재편: 영어권 대형 공포 채널은 실화·실제 장소·인터넷 괴담이 주류이고, 옛 설화 '소개'는 채널 평균의 10~15%에 그친다 — 옛이야기는 4편에 1편 이하로 — 같은 틀이 연속되지 않게 섞는다. 지역: 한국이 기본, 3~4편마다 일본·중국(수요가 한국 주제의 5~50배 — 2026-09-29 조사). 10월(할로윈 달)은 가장 무서운 편을 앞에 둔다.",
+ "about": "Nine Tails Tales 편성표. 루틴은 `python gumiho/tales/tales.py next --date <오늘>` 이 준 한 편만 쓴다(날짜로 결정론적 배정). facts 는 확인된 뼈대, careful 은 단정하면 안 되는 것. format: tale(설화) · urban(현대 괴담) · list(카운트다운) · versus(대결) · behind(유명 작품 속 진짜 한국 — 작품은 입구, 이야기는 설화) · mystery(실제 기록·장소의 미스터리). ★2026-10-01 재편: 영어권 대형 공포 채널은 실화·실제 장소·인터넷 괴담이 주류이고, 옛 설화 '소개'는 채널 평균의 10~15%에 그친다 — 옛이야기는 4편에 1편 이하로 — 같은 틀이 연속되지 않게 섞는다. 지역: 한국이 기본, 3~4편마다 일본·중국(수요가 한국 주제의 5~50배 — 2026-09-29 조사). 10월(할로윈 달)은 가장 무서운 편을 앞에 둔다. ★2026-10-02 1주 형식 실험(sprint): 10/4~10/10 하루 한 편(3~9화), 10/14 부터 주 1편(10화~). pov = 2인칭(you) 이야기.",
  "start": "2026-09-30",
  "tales": [
   {
@@ -93,25 +93,27 @@
   },
   {
    "id": 5,
-   "slug": "jangsanbeom",
-   "region": "KR",
-   "title_idea": "The Tiger of Mount Jang Can Speak in Your Mother's Voice",
-   "angle": "Hikers near Busan swear they heard a woman calling their name from the trees. There was no woman.",
+   "slug": "fox-trio",
+   "region": "EA",
+   "format": "versus",
+   "title_idea": "Gumiho vs Kitsune vs Huli Jing: Which Nine-Tailed Fox Would Win?",
+   "angle": "Three nine-tailed foxes, three countries, one very biased judge.",
    "facts": [
-    "Jangsanbeom (장산범) is a 21st-century Korean internet legend from Jangsan mountain in Busan",
-    "Described as a pale, long-haired creature that moves on all fours and mimics human voices",
-    "It inherits older Korean tiger lore — in folk tales tigers imitate human voices, e.g., the tiger that disguises itself as the mother in 'The Sun and the Moon' (해와 달이 된 오누이)",
-    "Film The Mimic (2017) is based on it"
+    "Korea's gumiho: almost always malevolent in folklore; human liver motif; fox bead (yeowoo guseul)",
+    "Japan's kitsune: messengers of the rice god Inari as well as tricksters; gain tails with age; famous villain Tamamo-no-Mae",
+    "China's huli jing: in early texts (Classic of Mountains and Seas) the nine-tailed fox is a man-eater, while in Han-era thought it could be an auspicious omen; Daji in Investiture of the Gods",
+    "Rounds: origins, powers (shapeshifting, possession, fox fire), weaknesses (dogs, being discovered, losing the bead), most famous case, pop culture"
    ],
    "careful": [
-    "It's a modern legend — say so; don't present sightings as fact"
+    "Gumi is openly biased toward the gumiho — play it as a joke",
+    "Don't overlap episode 1's fox bead story beyond one line"
    ],
-   "tie_in": "Korean creepypasta; Beauties & Beasts' Jangsanbeom video passed 300K views",
+   "tie_in": "Linfamy's comparison video passed 300K views",
    "sources": [
-    "Film The Mimic (장산범, 2017)",
-    "Encyclopedia of Korean Folk Culture — 해와 달이 된 오누이"
-   ],
-   "format": "urban"
+    "Shanhaijing (Classic of Mountains and Seas)",
+    "Encyclopedia of Korean Folk Culture — 구미호",
+    "Otogizoshi — Tamamo-no-Mae"
+   ]
   },
   {
    "id": 6,
@@ -140,6 +142,76 @@
   },
   {
    "id": 7,
+   "slug": "tamamo-no-mae",
+   "region": "JP",
+   "title_idea": "In 2022, a Stone in Japan Split in Half — and a Nine-Tailed Fox Walked Free",
+   "angle": "In March 2022 hikers found the Killing Stone at Nasu cracked in two. The internet asked: what was sealed inside?",
+   "facts": [
+    "Sessho-seki (the Killing Stone) at Nasu, Tochigi was found split in March 2022 (widely reported)",
+    "Legend: Tamamo-no-Mae, a beautiful and brilliant courtesan of Emperor Toba (12th century), made him ill; the onmyoji Abe no Yasunari exposed her as a nine-tailed fox",
+    "She fled to Nasu, was killed by warriors (Miura-no-suke, Kazusa-no-suke), and her spirit became a poison stone that killed anything that touched it",
+    "Later tellings link her to China's Daji and an Indian queen — the same fox across three empires",
+    "Kitsune in Japan are also Inari's messengers — foxes aren't always villains there"
+   ],
+   "careful": [
+    "The stone likely split from weathering — say that plainly",
+    "Gumi calls kitsune her 'cousins'"
+   ],
+   "tie_in": "Naruto's Nine-Tails and countless anime borrow from Tamamo",
+   "sources": [
+    "Nasu town / Tochigi tourism pages on Sessho-seki",
+    "Otogizoshi & Noh play 'Sessho-seki'"
+   ],
+   "format": "tale"
+  },
+  {
+   "id": 8,
+   "slug": "joseon-ufo-1609",
+   "region": "KR",
+   "format": "mystery",
+   "title_idea": "In 1609, Korea's Royal Records Logged Something Burning in the Sky",
+   "angle": "Joseon officials didn't believe in flying saucers. But in 1609, five towns sent the king the same report: something round and burning, crossing the sky.",
+   "facts": [
+    "The Annals of the Joseon Dynasty (Gwanghaegun Ilgi, 1609) record reports from Gangwon Province of bright objects seen in the sky in several towns (including Yangyang and Gangneung) on the same day",
+    "Witnesses described shapes like a round vessel or a bright disc with fire, moving and making sounds",
+    "The record is often cited by modern UFO enthusiasts as Korea's oldest UFO report",
+    "Joseon courts recorded unusual sky phenomena carefully because they were read as omens about the king's rule"
+   ],
+   "careful": [
+    "It's a real historical record of something unexplained — don't claim aliens; mention natural explanations (bright meteor/fireball) as the likely reading",
+    "Quote only what the record says in paraphrase; don't invent exact wording or witness names",
+    "Keep dates as given by sources (1609, Gwanghaegun's first year)"
+   ],
+   "tie_in": "Real-record mysteries travel well in English ('the royal court wrote it down')",
+   "sources": [
+    "Annals of the Joseon Dynasty — Gwanghaegun Ilgi, 1609 (sillok.history.go.kr)",
+    "Korea JoongAng Daily / Korea Times features on the 1609 Gangwon sky record"
+   ]
+  },
+  {
+   "id": 9,
+   "slug": "jangsanbeom",
+   "region": "KR",
+   "title_idea": "The Tiger of Mount Jang Can Speak in Your Mother's Voice",
+   "angle": "YOU are the one on the trail. Second person, present tense: you hike Mount Jang alone at dusk, you hear your mother call your name from the trees — but your mother is at home. Gumi interrupts at the turning points to tell you what the legend says happens next.",
+   "facts": [
+    "Jangsanbeom (장산범) is a 21st-century Korean internet legend from Jangsan mountain in Busan",
+    "Described as a pale, long-haired creature that moves on all fours and mimics human voices",
+    "It inherits older Korean tiger lore — in folk tales tigers imitate human voices, e.g., the tiger that disguises itself as the mother in 'The Sun and the Moon' (해와 달이 된 오누이)",
+    "Film The Mimic (2017) is based on it"
+   ],
+   "careful": [
+    "It's a modern legend — say so; don't present sightings as fact"
+   ],
+   "tie_in": "Korean creepypasta; Beauties & Beasts' Jangsanbeom video passed 300K views",
+   "sources": [
+    "Film The Mimic (장산범, 2017)",
+    "Encyclopedia of Korean Folk Culture — 해와 달이 된 오누이"
+   ],
+   "format": "pov"
+  },
+  {
+   "id": 10,
    "slug": "gonjiam",
    "region": "KR",
    "format": "urban",
@@ -165,7 +237,7 @@
    ]
   },
   {
-   "id": 8,
+   "id": 11,
    "slug": "dokkaebi",
    "region": "KR",
    "title_idea": "Dokkaebi: Korea's Goblins Want to Wrestle You, Not Eat You",
@@ -188,31 +260,7 @@
    "format": "tale"
   },
   {
-   "id": 9,
-   "slug": "joseon-ufo-1609",
-   "region": "KR",
-   "format": "mystery",
-   "title_idea": "In 1609, Korea's Royal Records Logged Something Burning in the Sky",
-   "angle": "Joseon officials didn't believe in flying saucers. But in 1609, five towns sent the king the same report: something round and burning, crossing the sky.",
-   "facts": [
-    "The Annals of the Joseon Dynasty (Gwanghaegun Ilgi, 1609) record reports from Gangwon Province of bright objects seen in the sky in several towns (including Yangyang and Gangneung) on the same day",
-    "Witnesses described shapes like a round vessel or a bright disc with fire, moving and making sounds",
-    "The record is often cited by modern UFO enthusiasts as Korea's oldest UFO report",
-    "Joseon courts recorded unusual sky phenomena carefully because they were read as omens about the king's rule"
-   ],
-   "careful": [
-    "It's a real historical record of something unexplained — don't claim aliens; mention natural explanations (bright meteor/fireball) as the likely reading",
-    "Quote only what the record says in paraphrase; don't invent exact wording or witness names",
-    "Keep dates as given by sources (1609, Gwanghaegun's first year)"
-   ],
-   "tie_in": "Real-record mysteries travel well in English ('the royal court wrote it down')",
-   "sources": [
-    "Annals of the Joseon Dynasty — Gwanghaegun Ilgi, 1609 (sillok.history.go.kr)",
-    "Korea JoongAng Daily / Korea Times features on the 1609 Gangwon sky record"
-   ]
-  },
-  {
-   "id": 10,
+   "id": 12,
    "slug": "exhuma-shamans",
    "region": "KR",
    "format": "behind",
@@ -240,7 +288,7 @@
    ]
   },
   {
-   "id": 11,
+   "id": 13,
    "slug": "red-mask",
    "region": "JP",
    "format": "urban",
@@ -263,7 +311,7 @@
    ]
   },
   {
-   "id": 12,
+   "id": 14,
    "slug": "bunshinsaba",
    "region": "KR",
    "format": "urban",
@@ -286,7 +334,7 @@
    ]
   },
   {
-   "id": 13,
+   "id": 15,
    "slug": "arang",
    "region": "KR",
    "title_idea": "Every Magistrate Who Slept in This Town Died by Morning",
@@ -310,7 +358,7 @@
    "format": "tale"
   },
   {
-   "id": 14,
+   "id": 16,
    "slug": "school-ghosts",
    "region": "KR",
    "format": "urban",
@@ -332,7 +380,7 @@
    ]
   },
   {
-   "id": 15,
+   "id": 17,
    "slug": "korean-ghosts",
    "region": "KR",
    "title_idea": "7 Korean Ghosts You Should Never Meet After Dark",
@@ -354,54 +402,6 @@
     "Encyclopedia of Korean Folk Culture — 처녀귀신, 몽달귀신, 물귀신: https://folkency.nfm.go.kr"
    ],
    "format": "list"
-  },
-  {
-   "id": 16,
-   "slug": "fox-trio",
-   "region": "EA",
-   "format": "versus",
-   "title_idea": "Gumiho vs Kitsune vs Huli Jing: Which Nine-Tailed Fox Would Win?",
-   "angle": "Three nine-tailed foxes, three countries, one very biased judge.",
-   "facts": [
-    "Korea's gumiho: almost always malevolent in folklore; human liver motif; fox bead (yeowoo guseul)",
-    "Japan's kitsune: messengers of the rice god Inari as well as tricksters; gain tails with age; famous villain Tamamo-no-Mae",
-    "China's huli jing: in early texts (Classic of Mountains and Seas) the nine-tailed fox is a man-eater, while in Han-era thought it could be an auspicious omen; Daji in Investiture of the Gods",
-    "Rounds: origins, powers (shapeshifting, possession, fox fire), weaknesses (dogs, being discovered, losing the bead), most famous case, pop culture"
-   ],
-   "careful": [
-    "Gumi is openly biased toward the gumiho — play it as a joke",
-    "Don't overlap episode 1's fox bead story beyond one line"
-   ],
-   "tie_in": "Linfamy's comparison video passed 300K views",
-   "sources": [
-    "Shanhaijing (Classic of Mountains and Seas)",
-    "Encyclopedia of Korean Folk Culture — 구미호",
-    "Otogizoshi — Tamamo-no-Mae"
-   ]
-  },
-  {
-   "id": 17,
-   "slug": "tamamo-no-mae",
-   "region": "JP",
-   "title_idea": "In 2022, a Stone in Japan Split in Half — and a Nine-Tailed Fox Walked Free",
-   "angle": "In March 2022 hikers found the Killing Stone at Nasu cracked in two. The internet asked: what was sealed inside?",
-   "facts": [
-    "Sessho-seki (the Killing Stone) at Nasu, Tochigi was found split in March 2022 (widely reported)",
-    "Legend: Tamamo-no-Mae, a beautiful and brilliant courtesan of Emperor Toba (12th century), made him ill; the onmyoji Abe no Yasunari exposed her as a nine-tailed fox",
-    "She fled to Nasu, was killed by warriors (Miura-no-suke, Kazusa-no-suke), and her spirit became a poison stone that killed anything that touched it",
-    "Later tellings link her to China's Daji and an Indian queen — the same fox across three empires",
-    "Kitsune in Japan are also Inari's messengers — foxes aren't always villains there"
-   ],
-   "careful": [
-    "The stone likely split from weathering — say that plainly",
-    "Gumi calls kitsune her 'cousins'"
-   ],
-   "tie_in": "Naruto's Nine-Tails and countless anime borrow from Tamamo",
-   "sources": [
-    "Nasu town / Tochigi tourism pages on Sessho-seki",
-    "Otogizoshi & Noh play 'Sessho-seki'"
-   ],
-   "format": "tale"
   },
   {
    "id": 18,
@@ -604,5 +604,12 @@
    ],
    "format": "tale"
   }
- ]
+ ],
+ "sprint": {
+  "from": "2026-10-04",
+  "to": "2026-10-10",
+  "first_id": 3,
+  "resume_from": "2026-10-14",
+  "why": "2026-10-02 사용자: '매일 새로운 주제·새로운 방식, 쇼츠랑 롱폼 1주일'. 7편 = 7형식(list·behind·versus·urban·tale(JP)·mystery·pov), 하루 한 편 15:00 UTC 공개 + 쇼츠 2시간 전, 추가 쇼츠 없음. 10/14(수)부터 다시 주 1편(10화)."
+ }
 }

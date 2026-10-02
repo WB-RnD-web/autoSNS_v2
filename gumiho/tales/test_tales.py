@@ -69,8 +69,9 @@ ck("파일 이름이 id_slug 와 다르면 막힌다", any("파일 이름" in e 
 
 print("── 편성(날짜로 결정론적) ──")
 # 루틴은 매주 수요일(9/30 첫 실행) — 수요일마다 번호가 하나씩 올라야 한다(9/29 발견: start 가 목요일이면 9/30·10/7 이 같은 번호)
-ck("수 9/30 → 2편 · 화 10/6 → 2편", T.assigned_id("2026-09-30") == 2 and T.assigned_id("2026-10-06") == 2)
-ck("수 10/7 → 3편 · 수 10/14 → 4편", T.assigned_id("2026-10-07") == 3 and T.assigned_id("2026-10-14") == 4)
+ck("수 9/30 → 2편 · 토 10/3 → 2편", T.assigned_id("2026-09-30") == 2 and T.assigned_id("2026-10-03") == 2)
+# 10/4~10/10 은 1주 형식 실험(하루 한 편, 아래 sprint 검사) — 수 10/14 부터 다시 수요일마다 +1
+ck("수 10/14 → 10편 · 수 10/21 → 11편", T.assigned_id("2026-10-14") == 10 and T.assigned_id("2026-10-21") == 11)
 cat = T.load(T.CATALOG)["tales"]
 ck("catalog 번호 1부터 연속·slug 중복 없음", [e["id"] for e in cat] == list(range(1, len(cat) + 1))
    and len({e["slug"] for e in cat}) == len(cat))
@@ -169,9 +170,9 @@ ex["hook"] = "DON'T LOOK BACK"
 ex["title"] = "A different way in #shorts"
 ex["lines"][0] = {"scene": alt, "say": ex["lines"][0]["say"]}
 three = copy.deepcopy(S)
-three["id"] = 3
+three["id"] = 10                     # 스프린트(3~9화)는 추가 쇼츠 예외 — 그 밖의 편으로 검사
 three["title"] = "Gumiho " + three["title"][:40]
-ck("3화부터 shorts_extra 없으면 거부", any("편당 2~3개" in e for e in T.check(three, "x.json")))
+ck("3화부터(스프린트 편 제외) shorts_extra 없으면 거부", any("편당 2~3개" in e for e in T.check(three, "x.json")))
 three["shorts_extra"] = [ex]
 errs3 = [e for e in T.check(three, "x.json") if "쇼츠" in e]
 ck("추가 쇼츠 1개(다른 hook·첫 장면·제목)면 통과", not errs3, str(errs3))
@@ -226,6 +227,41 @@ sat = U.next_saturday_15utc(dt.datetime(2026, 10, 1, 3, 0, tzinfo=dt.timezone.ut
 ck("예약: 다음 토요일 15:00 UTC", sat == "2026-10-03T15:00:00Z", sat)
 sat = U.next_saturday_15utc(dt.datetime(2026, 10, 3, 12, 0, tzinfo=dt.timezone.utc))
 ck("토요일 6시간 안이면 그다음 주", sat == "2026-10-10T15:00:00Z", sat)
+
+print("── 1주 형식 실험(sprint, 2026-10-04~10) ──")
+import datetime as _dt  # noqa: E402
+import upload_tale as US  # noqa: E402
+sp = T.sprint()
+ids = [T.assigned_id(f"2026-10-{d:02d}") for d in range(4, 11)]
+ck("10/4~10/10 하루 한 편 = 3~9화", ids == list(range(3, 10)), ids)
+fmts = [T.entry(i).get("format", "tale") for i in ids]
+ck("스프린트 7편은 형식이 전부 다르다", len(set(fmts)) == 7, fmts)
+ck("스프린트 전: 10/3 = 2화(이미 씀), 9/30 = 2화", T.assigned_id("2026-10-03") == 2 and T.assigned_id("2026-09-30") == 2)
+ck("스프린트 뒤 재개 전(10/11~13)은 9화(이미 써서 루틴이 멈춘다)",
+   {T.assigned_id(f"2026-10-{d}") for d in (11, 12, 13)} == {9})
+ck("10/14(수)부터 다시 주 1편: 10화 · 10/21 11화 · 10/20 은 10화",
+   T.assigned_id("2026-10-14") == 10 and T.assigned_id("2026-10-21") == 11 and T.assigned_id("2026-10-20") == 10)
+ck("수면판 1호(1~4화)의 3·4화는 그대로(미신·케데헌)",
+   T.entry(3)["slug"] == "korean-superstitions" and T.entry(4)["slug"] == "kpop-demon-hunters-legends")
+ck("스프린트 편 날짜", T.sprint_day(3) == _dt.date(2026, 10, 4) and T.sprint_day(9) == _dt.date(2026, 10, 10)
+   and T.sprint_day(2) is None and T.sprint_day(10) is None)
+sp3 = copy.deepcopy(S)
+sp3["id"] = 5
+sp3["title"] = "Gumiho " + sp3["title"][:40]
+ck("스프린트 편은 추가 쇼츠 없어도 통과", not any("편당" in e for e in T.check(sp3, "x.json")))
+_now = _dt.datetime(2026, 10, 4, 2, 0, tzinfo=_dt.timezone.utc)
+ck("스프린트 공개: 그날 15:00 UTC · 쇼츠 13:00", US.sprint_times(_dt.date(2026, 10, 4), _now)
+   == ("2026-10-04T15:00:00Z", "2026-10-04T13:00:00Z"))
+_late = _dt.datetime(2026, 10, 4, 14, 20, tzinfo=_dt.timezone.utc)
+ck("렌더가 늦으면 지금+2시간 정각(쇼츠도 본편보다 늦지 않게)", US.sprint_times(_dt.date(2026, 10, 4), _late)
+   == ("2026-10-04T16:00:00Z", "2026-10-04T16:00:00Z"))
+_mid = _dt.datetime(2026, 10, 4, 12, 30, tzinfo=_dt.timezone.utc)
+ck("쇼츠 시각만 지났으면 쇼츠만 민다", US.sprint_times(_dt.date(2026, 10, 4), _mid)
+   == ("2026-10-04T15:00:00Z", "2026-10-04T14:00:00Z"))
+ck("pov 형식은 WRITING.md 에 설명이 있다", "- `pov`" in open(os.path.join(T.HERE, "WRITING.md"), encoding="utf-8").read())
+ck("render·upload 가 스프린트 편 추가 쇼츠를 건너뛴다",
+   "T.sprint_day(s[\"id\"])" in open(os.path.join(T.HERE, "render_tale.py"), encoding="utf-8").read()
+   and "[] if day else" in open(os.path.join(T.HERE, "upload_tale.py"), encoding="utf-8").read())
 
 print()
 if FAIL:

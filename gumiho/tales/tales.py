@@ -32,9 +32,10 @@ WPM = 159                                            # F2 실측(2026-09-29) —
 GUMI = ("front", "bead", "wink")
 FX = ("none", "dust", "fog", "embers", "snow", "rain", "fireflies")
 MOVES = ("in", "out", "left", "right", "up", "down")
-FORMATS = ("tale", "urban", "list", "versus", "behind", "mystery")   # catalog.format — 같은 틀이 연속되지 않게 섞는다(WRITING.md)
+FORMATS = ("tale", "urban", "list", "versus", "behind", "mystery", "pov")   # catalog.format — 같은 틀이 연속되지 않게 섞는다(WRITING.md)
 # behind(2026-10-01) — 유명 작품(KPop Demon Hunters·파묘) 속 진짜 한국 설화. 작품은 검색 입구, 이야기는 설화다.
 # mystery(2026-10-01) — 실제 기록·장소의 미스터리(1609 조선 하늘 기록 등). 영어권 대형 공포 채널은 실화·실제 장소가 주류다.
+# pov(2026-10-02) — 시청자를 주인공(you)으로 세우는 2인칭 이야기. 1주 형식 실험(catalog.sprint)에서 처음 시험한다.
 
 # 분량: 8분이 넘어야 중간 광고가 붙는다. 너무 길면 한 주 안에 Spark 그림이 부담.
 WORDS_MIN, WORDS_MAX = 1200, 2600
@@ -159,7 +160,7 @@ def check(s: dict, path: str | None = None) -> list[str]:
     if not isinstance(extra, list):
         errs.append("shorts_extra 는 목록이어야 한다")
         extra = []
-    if s.get("id", 0) >= 3 and not EXTRA_SHORTS[0] <= len(extra) <= EXTRA_SHORTS[1]:
+    if s.get("id", 0) >= 3 and not sprint_day(s.get("id", 0)) and not EXTRA_SHORTS[0] <= len(extra) <= EXTRA_SHORTS[1]:
         errs.append(f"쇼츠는 편당 2~3개 — shorts_extra {len(extra)}개(1~2개 필요, 3화부터). "
                     "첫 장면·hook·각도가 다른 쇼츠로 어떤 게 먹히는지 비교한다")
     hooks = {(s["short"].get("hook") or s["thumb"].get("text", "")).strip().lower()}
@@ -275,11 +276,38 @@ def meta(s: dict, starts: list[float] | None = None, short_of: str | None = None
 
 
 # ── 다음 편 ──────────────────────────────────────────────
-def assigned_id(date: str) -> int:
-    """날짜 → 편 번호. catalog.start(루틴 첫 실행일, 수요일)부터 7일 안이 2편, 그 뒤 7일마다 +1(루틴이 한 주 빠져도 번호는 밀리지 않는다)."""
+def sprint() -> dict:
+    """1주 형식 실험(2026-10-02 사용자: '매일 새로운 주제·새로운 방식, 쇼츠랑 롱폼 1주일').
+    catalog.sprint = {"from", "to", "first_id", "resume_from"} — from~to 하루 한 편(first_id 부터), 그 뒤 resume_from(수)부터 다시 주 1편."""
+    return load(CATALOG).get("sprint") or {}
+
+
+def sprint_day(tale_id: int):
+    """스프린트 편이면 그 편의 날짜(date), 아니면 None. 스프린트 편은 그날 15:00 UTC 공개 · 추가 쇼츠 없음."""
     import datetime as dt
-    start = dt.date.fromisoformat(load(CATALOG)["start"])
+    sp = sprint()
+    if not sp:
+        return None
+    f, t = dt.date.fromisoformat(sp["from"]), dt.date.fromisoformat(sp["to"])
+    k = tale_id - sp["first_id"]
+    return f + dt.timedelta(days=k) if 0 <= k <= (t - f).days else None
+
+
+def assigned_id(date: str) -> int:
+    """날짜 → 편 번호. catalog.start(루틴 첫 실행일, 수요일)부터 7일 안이 2편, 그 뒤 7일마다 +1(루틴이 한 주 빠져도 번호는 밀리지 않는다).
+    스프린트 기간에는 하루 한 편, 끝난 뒤 resume_from 전까지는 마지막 스프린트 편(이미 써서 루틴이 멈춘다), 그 뒤 다시 주 1편."""
+    import datetime as dt
     d = dt.date.fromisoformat(date)
+    sp = sprint()
+    if sp:
+        f, t = dt.date.fromisoformat(sp["from"]), dt.date.fromisoformat(sp["to"])
+        last = sp["first_id"] + (t - f).days
+        if f <= d <= t:
+            return sp["first_id"] + (d - f).days
+        if d > t:
+            r = dt.date.fromisoformat(sp["resume_from"])
+            return last + 1 + (d - r).days // 7 if d >= r else last
+    start = dt.date.fromisoformat(load(CATALOG)["start"])
     return 2 + max(0, (d - start).days // 7)
 
 
