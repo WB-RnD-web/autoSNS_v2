@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-02", "topic": "ai", "slot": "pm", "privacy": "public",
+  "format": "number",
+  "angle": "사기·딥페이크",
+  "topic_keyword": "암표 AI 위조 승차권",
+  "headline": "코레일, 추석 암표 35건 수사 의뢰…AI 위조 승차권도 적발",
+  "hook_title": "추석 암표 35건, AI 가짜표까지",
+  "thumbnail_hook": "Close-up of a hand holding a crumpled paper train ticket in a quiet railway station waiting hall at dusk, soft platform lights blurred in the background, warm tones, no text, no faces",
+  "thumbnail_text": "추석 암표 35건 수사",
+  "glossary": [],
+  "sources": [
+    {"outlet": "연합뉴스", "title": "추석 암표 35건 수사의뢰·회원 8명 강제탈퇴…생성형AI 위조 적발",
+     "url": "https://www.yna.co.kr/view/AKR20261002114300063",
+     "published_at": "2026-10-02T14:53:26+09:00",
+     "confirmed": true,
+     "facts": [
+       "한국철도공사(코레일)는 올해 추석 연휴 기간에 확인한 암표 의심 거래 35건을 수사 의뢰했다고 2일 밝혔다.",
+       "이 중 25건은 홈페이지와 모바일 앱 '코레일+'의 '암표 제보방'에 접수된 시민 제보로, 코레일은 제보자에게는 KTX 할인쿠폰을 지급했다.",
+       "나머지 10건(판매자 8명)은 직원이 구매자로 위장한 '미스터리 쇼퍼' 방식으로 가려냈다.",
+       "지난달 20일 AI 위조 승차권을 제시한 승객이 철도특별사법경찰대에 인계됐고, 해당 승객은 '유가증권위조' 혐의로 입건돼 검찰 송치를 앞두고 있다."
+     ]}
+  ],
+  "scenes": [
+    {"type": "hook", "pill": "발표", "lines": ["암표 35건", "수사 의뢰"], "highlight": "35건",
+     "narration": "올 추석 연휴, 코레일이 암표 의심 거래 서른다섯 건을 수사 의뢰했다고 밝혔습니다."},
+    {"type": "stat", "label": "추석 암표 수사 의뢰", "from": 0, "to": 35, "prefix": "", "suffix": "건",
+     "bar": true, "sub": "시민 제보 <b>25건</b> · 암행 <b>10건</b>",
+     "narration": "이 가운데 스물다섯 건은 시민 제보였고, 열 건은 직원이 구매자로 위장해 가려냈습니다."},
+    {"type": "statement", "text": "AI로 만든 가짜 승차권도 적발", "highlight": "가짜",
+     "narration": "AI로 만든 가짜 승차권을 내민 승객도 적발돼, 검찰 송치를 앞두고 있습니다."},
+    {"type": "keypoint", "label": "표 살 때 이것만",
+     "points": ["<b>코레일 앱</b>·홈페이지에서만", "웃돈 붙은 <b>개인 거래</b> 피하기", "수상하면 <b>암표 제보방</b>"],
+     "narration": "표는 코레일 앱과 홈페이지에서만 사시고, 웃돈 붙은 개인 거래는 피하시고, 수상하면 제보방에 알리세요."},
+    {"type": "statement", "text": "다음 귀성길, 표는 공식 앱에서?", "highlight": "공식 앱",
+     "narration": "다음 귀성길 승차권, 공식 앱에서 사시면 어떨까요?"}
+  ],
+  "platforms": {
+    "youtube": {"title": "추석 암표 35건, AI 가짜표까지 #shorts", "description": "코레일이 올 추석 연휴 암표 의심 거래 35건을 수사 의뢰했고, AI로 만든 가짜 승차권을 낸 승객도 적발했습니다. 승차권은 공식 앱에서만 사세요.\n\n#AI #코레일 #shorts"},
+    "instagram": {"caption": "추석 암표 35건, AI 가짜표까지\n\n코레일이 올 추석 연휴 암표 의심 거래 35건을 수사 의뢰했어요.\nAI로 만든 가짜 승차권을 낸 승객도 적발됐다고 해요.\n표는 공식 앱에서만 사는 게 안전해요.\n매일 오전·저녁 AI 소식은 유튜브 '왕별이'에서 쉽게 풀어 드려요.\n출처 연합뉴스\n\n#AI #코레일 #암표 #AI소식"},
+    "threads": {"text": "코레일이 올 추석 암표 의심 거래 35건을 수사 의뢰했어요. AI로 만든 가짜 승차권까지 나왔대요. 표는 공식 앱에서만 사세요. 매일 AI 소식은 유튜브 왕별이에서. #AI소식"}
+  },
+  "notes": "AI 소식 저녁 편 · number · 장면 5개"
+}
