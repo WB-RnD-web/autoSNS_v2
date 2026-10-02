@@ -272,6 +272,36 @@ CSS_CARD = """
 """
 
 
+# ── '내 것 찾기' 표 (2026-10-02, name_card.py) — 이름 글자 24칸·태어난 달 12칸 ──────────
+# 칸 안은 큰 글자(찾는 것) + 작은 글자(한자·순위) + 한 줄. 오른쪽 끝(x 960~)과 아래 22%는 비운다.
+GRID_X0, GRID_W, GRID_TOP, GRID_BOTTOM, GRID_GAP = 60, 900, 470, 1440, 14
+CSS_GRID = """
+.gpill{position:absolute;left:60px;top:96px;}
+.gtitle{position:absolute;left:60px;top:176px;width:900px;font-weight:900;font-size:76px;line-height:1.12;
+  letter-spacing:-2px;text-shadow:0 4px 24px rgba(0,0,0,.6);}
+.gtitle .l1{color:#FFFFFF;display:block;white-space:nowrap;}
+.gtitle .l2{color:var(--acc,#D97757);display:block;white-space:nowrap;}
+.gcell{position:absolute;border-radius:22px;background:rgba(10,8,8,.72);border:2px solid rgba(237,217,188,.16);
+  will-change:transform;overflow:hidden;}
+.gcell.hi{border:3px solid var(--acc,#D97757);background:rgba(10,8,8,.82);}
+.gcell .gb{position:absolute;left:18px;color:#FFFFFF;font-weight:900;letter-spacing:-1px;white-space:nowrap;line-height:1;}
+.gcell .gs{position:absolute;right:16px;color:var(--acc,#D97757);font-weight:800;white-space:nowrap;line-height:1;}
+.gcell .gn{position:absolute;left:18px;right:12px;color:rgba(237,217,188,.88);font-weight:700;white-space:nowrap;
+  overflow:hidden;text-overflow:ellipsis;line-height:1.1;}
+.gfoot{position:absolute;left:60px;width:900px;color:rgba(237,217,188,.72);font-weight:600;font-size:28px;}
+"""
+
+
+def grid_layout(n, cols):
+    """칸 n개 · cols 열 → (칸 너비, 칸 높이, [(x, y)…])."""
+    cols = max(1, int(cols))
+    rows = max(1, -(-n // cols))
+    cw = (GRID_W - GRID_GAP * (cols - 1)) / cols
+    ch = min(260.0, (GRID_BOTTOM - GRID_TOP - GRID_GAP * (rows - 1)) / rows)
+    xy = [(GRID_X0 + (k % cols) * (cw + GRID_GAP), GRID_TOP + (k // cols) * (ch + GRID_GAP)) for k in range(n)]
+    return cw, ch, xy
+
+
 def top_hook_on(topic=None):
     if os.environ.get("TOP_HOOK", "1") in ("0", "false", "False"):
         return False
@@ -449,6 +479,35 @@ def scene_html(i, sc, acc):
                 f'<div class="yr">{esc(yrs)}</div><div class="ln">{esc(r.get("line", ""))}</div></div>')
         body = (f'<div class="cpill"><span class="pill" id="{gid}-pill"><span class="dot"></span>{esc(sc.get("pill",""))}</span></div>'
                 f'<div class="ctitle" id="{gid}-title">{esc(sc.get("title",""))}</div>' + "".join(cells))
+    elif t == "grid":
+        items = sc.get("cells", [])
+        cw, ch, xy = grid_layout(len(items), sc.get("cols", 4))
+        def em(s):                                         # 대략 글자 폭(em) — 숫자·영문은 좁다
+            return sum(0.6 if ch_.isascii() else 1.0 for ch_ in str(s)) or 1.0
+        big_em = max(em(c.get("big", "")) for c in items) if items else 1.0
+        small_em = max(em(c.get("small", "")) for c in items) if items else 1.0
+        fb = int(min(ch * 0.46, cw * 0.36, 96))           # 큰 글자
+        fs = int(fb * 0.62)                                # 한자·순위
+        # 큰 글자 + 오른쪽 작은 글자가 칸 너비를 넘지 않게 함께 줄인다(예: '10월생' + '12위')
+        room = cw - 40
+        if fb * big_em + fs * small_em + 16 > room:
+            k_ = room / (fb * big_em + fs * small_em + 16)
+            fb, fs = int(fb * k_), int(fs * k_)
+        fn = int(max(22, min(ch * 0.19, 34)))              # 한 줄
+        cells = []
+        for k, c in enumerate(items):
+            x, y = xy[k]
+            cls = "gcell hi" if c.get("hi") else "gcell"
+            cells.append(
+                f'<div class="{cls}" id="{gid}-c{k}" style="left:{x:.0f}px;top:{y:.0f}px;width:{cw:.0f}px;height:{ch:.0f}px">'
+                f'<div class="gb" style="top:{ch * 0.10:.0f}px;font-size:{fb}px">{esc(c.get("big", ""))}</div>'
+                f'<div class="gs" style="top:{ch * 0.12:.0f}px;font-size:{fs}px">{esc(c.get("small", ""))}</div>'
+                f'<div class="gn" style="bottom:{ch * 0.09:.0f}px;font-size:{fn}px">{esc(c.get("note", ""))}</div></div>')
+        foot_y = (xy[-1][1] + ch + 22) if xy else GRID_BOTTOM
+        body = (f'<div class="gpill"><span class="pill" id="{gid}-pill"><span class="dot"></span>{esc(sc.get("pill",""))}</span></div>'
+                f'<div class="gtitle" id="{gid}-title"><span class="l1">{esc(sc.get("title",""))}</span>'
+                f'<span class="l2">{esc(sc.get("title2",""))}</span></div>' + "".join(cells)
+                + f'<div class="gfoot" style="top:{foot_y:.0f}px">{esc(sc.get("foot",""))}</div>')
     elif t == "hook":
         lines = sc.get("lines", [])
         hl = sc.get("highlight", "")
@@ -588,6 +647,12 @@ def scene_js(i, sc, acc, bar_h=560, presenter=False):
         out.append(f'tl.fromTo("#{gid}-pill",{{scale:0.92}},{{scale:1,duration:0.35,ease:"back.out(2)",transformOrigin:"left center"}},{S:.2f});')
         for k in range(min(3, len(sc.get("rows", [])))):
             out.append(f'tl.to("#{gid}-c{k}",{{scale:1.05,duration:0.22,ease:"sine.inOut",yoyo:true,repeat:1}},{S + 0.5 + k * 0.35:.2f});')
+    elif t == "grid":
+        # 표는 0초부터 전부 떠 있다(찾기·캡처·반복 재생용). 강조 칸(1~3위)만 차례로 톡 튄다 — 글자 표는 움직임 최소.
+        out.append(f'tl.fromTo("#{gid}-pill",{{scale:0.92}},{{scale:1,duration:0.35,ease:"back.out(2)",transformOrigin:"left center"}},{S:.2f});')
+        hi = [k for k, c in enumerate(sc.get("cells", [])) if c.get("hi")][:3]
+        for j, k in enumerate(hi):
+            out.append(f'tl.to("#{gid}-c{k}",{{scale:1.05,duration:0.22,ease:"sine.inOut",yoyo:true,repeat:1}},{S + 0.5 + j * 0.35:.2f});')
     elif t == "quote":
         out.append(f'tl.from("#{gid}-qm",{{scale:0.5,opacity:0,duration:0.6,ease:"back.out(1.6)"}},{S+0.4:.2f});')
         out.append(f'tl.from("#{gid}-qt",{{y:40,opacity:0,duration:0.6,ease:"power3.out"}},{S+0.6:.2f});')
@@ -640,6 +705,8 @@ def build_html(scenes, total, acc="#D97757", bg=False, presenter=False):
         css += CSS_TOP
     if any(sc.get("type") == "card" for sc in scenes):
         css += CSS_CARD
+    if any(sc.get("type") == "grid" for sc in scenes):
+        css += CSS_GRID
     parts = [scene_html(i, sc, acc) for i, sc in enumerate(scenes)]
     bar_h = 360 if presenter else 560
     js = "\n".join(scene_js(i, sc, acc, bar_h=bar_h, presenter=presenter)
@@ -732,7 +799,7 @@ def build_motion(spec, out_mp4, workdir, quality="standard"):
     os.environ["PATH"] = os.environ.get("PATH", "") + os.pathsep + os.path.dirname(FFMPEG)
     scenes = spec["scenes"]
     # 한 장 표는 화면 전체를 쓴다 → 진행자 자리 없음
-    pr_on = presenter_on(spec.get("topic", "")) and not any(sc.get("type") == "card" for sc in scenes)
+    pr_on = presenter_on(spec.get("topic", "")) and not any(sc.get("type") in ("card", "grid") for sc in scenes)
     duo = pr_on and os.environ.get("PRESENTER_DUO", "1") not in ("0", "false", "False")
     assign_speakers(scenes, duo=duo)
     if scenes and scenes[0].get("type") == "hook" and top_hook_on(spec.get("topic", "")):
