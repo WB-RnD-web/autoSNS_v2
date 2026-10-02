@@ -1,0 +1,37 @@
+{
+  "date":"2026-10-03","topic":"stock_us","privacy":"public",
+  "topic_keyword":"9월 고용 쇼크 속 나스닥 상승",
+  "headline":"美 9월 고용 2.9만명 증가, 나스닥 1.2% 상승 마감",
+  "hook_title":"일자리 2.9만, 내 주식은 웃었다","accent":"#3FB950",
+  "loop_line":"월요일 밤 결과는 화요일 아침 일곱 시에 짚어드립니다.",
+  "thumbnail_hook":"first light over lower manhattan skyline, a smartphone with a green rising stock app on a breakfast table next to a coffee cup, warm dawn glow; no text in image",
+  "thumbnail_text":"나스닥 1.2% 상승",
+  "scenes":[
+    {"type":"hook","pill":"일자리 쇼크","ghost":"NASDAQ","lines":["일자리 2.9만","내 주식은","웃었다"],"highlight":"웃었다",
+     "brand":"일상공감뉴스 · 주식","narration":"나쁜 소식이 나왔는데 뉴욕은 오히려 웃었습니다, 일자리가 이만 구천 명뿐이었거든요."},
+    {"type":"trend","label":"나스닥","from":0,"to":1.2,"suffix":"%","dir":"up","sub":"일자리는 <b>쇼크</b>, 증시는 환호","closer":"엔비디아 5월 이후 최고가",
+     "brand":"일상공감뉴스 · 주식","narration":"나스닥은 일 점 이 퍼센트 올랐고 엔비디아는 오월 이후 처음 최고가를 찍었습니다."},
+    {"type":"keypoint","label":"왜 올랐나","points":["일자리 <b>2.9만</b>, 예상 크게 밑돌아","금리 <b>인상 기대</b> 후퇴","전날 10년물 금리 <b>2002년 이후</b> 최고"],
+     "brand":"일상공감뉴스 · 주식","narration":"일자리가 예상보다 크게 적어 연준이 금리를 더 올릴 이유가 줄었다는 해석입니다."},
+    {"type":"statement","text":"내 계좌엔 숨통, 일자리엔 경고등","highlight":"경고등",
+     "brand":"일상공감뉴스 · 주식","narration":"금리 부담이 덜면 미국 주식과 연금 속 해외 펀드엔 숨통이지만 일자리는 식었습니다."},
+    {"type":"keypoint","label":"다음 주 지켜볼 것","points":["월요일 밤 <b>10시 30분</b> 뉴욕장 개장","실업률 <b>4.2%</b>, 더 오르나","본격 실적 시즌은 <b>10월 중순</b>"],
+     "brand":"일상공감뉴스 · 주식","narration":"오늘 밤은 장이 쉬고 월요일 밤 열 시 반에 열리는데, 실업률 사 점 이 퍼센트가 더 오르는지가 관건입니다."},
+    {"type":"statement","text":"계속 간다 vs 여기까지","highlight":"여기까지",
+     "brand":"일상공감뉴스 · 주식","narration":"나쁜 소식이 호재인 장세가 계속될지 여기까지일지, 판단은 여러분 몫입니다."}
+  ],
+  "sources":["뉴스핌","이데일리","블록미디어","핀포인트뉴스","CNBC"],
+  "credit":"출처 뉴스핌·이데일리·블록미디어·CNBC 등 · 투자 조언이 아닙니다",
+  "platforms":{
+    "youtube":{"title":"일자리 2.9만, 내 주식은 웃었다 #shorts","description":"美 9월 고용 2.9만명 증가, 나스닥 1.2% 상승 마감\n출처 뉴스핌·이데일리·블록미디어·CNBC 등\n※ 투자 조언이 아닙니다\n\n#미국주식 #나스닥 #뉴욕증시 #서학개미 #쇼츠 #shorts",
+      "localizations":{
+        "en":{"title":"Only 29K jobs added. Wall Street cheered anyway #shorts","description":"US September payrolls +29K, Nasdaq up 1.2%.\nSources: Newspim, Edaily, CNBC\n※ Not investment advice.\n\n#Nasdaq #WallStreet #stocks #shorts"},
+        "ja":{"title":"雇用わずか2.9万人なのに、米国株は上昇 #shorts","description":"米9月雇用+2.9万人、ナスダック1.2%上昇。\n出典：Newspim、Edaily、CNBC\n※投資助言ではありません。\n\n#米国株 #ナスダック #shorts"},
+        "zh-Hant":{"title":"就業僅增2.9萬，美股卻大漲 #shorts","description":"美國9月非農就業增2.9萬人，那斯達克上漲1.2%。\n來源：Newspim、Edaily、CNBC\n※非投資建議。\n\n#美股 #那斯達克 #shorts"}
+      }
+    },
+    "instagram":{"caption":"일자리 2.9만, 내 주식은 웃었다\n출처 뉴스핌·이데일리·블록미디어·CNBC\n※ 투자 조언이 아닙니다\n\n#미국주식 #나스닥 #뉴욕증시 #쇼츠 #shorts #릴스"},
+    "threads":{"text":"일자리 2.9만, 내 주식은 웃었다\n출처 뉴스핌·이데일리·CNBC"}
+  },
+  "notes":"모션그래픽 6장면 · 단일 내레이터 · SESSION=US_AM · 토요일 아침이라 '오늘 밤' 대신 '월요일 밤'으로 표기 · 지수 절대값·금리 현재값은 매체별 불일치로 제외."
+}
