@@ -1,0 +1,192 @@
+{
+  "date": "2026-10-02",
+  "story_id": "drama-2026-10-02",
+  "title": "한밤중 며느리가 시어머니를 집에서 내쫓은 이유, 사돈이 논을 판 사연을 알고 오열했습니다",
+  "description": "국수 장사로 평생 일군 집을 아들 이름으로 넘겨준 어머니. 어느 날 밤 며느리는 현관 비밀번호를 바꾸고 어머니를 내쫓습니다. 갈 곳 없던 그날, 옆집 할머니가 건넨 분홍색 편지 한 통이 모든 것을 바꿔 놓습니다. 모진 말 뒤에 숨은 마음을 아는 순간, 여러분이라면 그 문 앞에서 어떻게 하셨을까요?",
+  "thumbnail_text": "*쫓겨난* 밤\n바뀐 비밀번호",
+  "thumbnail_prompt": "A Korean woman in her late 60s with short permed gray hair and a beige cardigan stands outside a gate at night holding a gray suitcase, tears on her face, warm yellow light spilling from a closed front door behind her, dramatic cinematic lighting",
+  "characters": [
+    {
+      "name": "며느리",
+      "gender": "F",
+      "age": 36
+    },
+    {
+      "name": "아들",
+      "gender": "M",
+      "age": 39
+    },
+    {
+      "name": "사돈",
+      "gender": "F",
+      "age": 66
+    },
+    {
+      "name": "옆집 할머니",
+      "gender": "F",
+      "age": 78
+    },
+    {
+      "name": "낯선 남자",
+      "gender": "M",
+      "age": 45
+    }
+  ],
+  "images": [
+    {
+      "chapter": 1,
+      "prompt": "an elderly Korean woman in her late 60s with short permed gray hair and a beige cardigan stands with a gray suitcase at the front door of a two-story house at dusk, streetlamp glowing, cold autumn wind"
+    },
+    {
+      "chapter": 1,
+      "prompt": "close-up of an elderly Korean woman in her late 60s with short permed gray hair and a beige cardigan trembling finger pressing a digital door lock keypad at night, warm light leaking from the window behind"
+    },
+    {
+      "chapter": 1,
+      "prompt": "an elderly Korean woman in her late 60s with short permed gray hair and a beige cardigan sits alone beneath a persimmon tree outside the gate, evening blue sky, sorrowful mood"
+    },
+    {
+      "chapter": 2,
+      "prompt": "an elderly Korean woman in her late 60s with short permed gray hair and a beige cardigan as a young woman in her late 30s with an apron stirring a big pot of noodle broth in a tiny market stall at dawn, steam rising, a little boy doing homework in the corner"
+    },
+    {
+      "chapter": 2,
+      "prompt": "a small Korean market alley restaurant with six chairs and an old-fashioned noodle counter, lunchtime customers slurping noodles, warm yellow light"
+    },
+    {
+      "chapter": 2,
+      "prompt": "an elderly Korean woman in her late 60s with short permed gray hair and a beige cardigan proudly watching a framed house under construction with a builder, wooden beams, spring sunlight"
+    },
+    {
+      "chapter": 3,
+      "prompt": "a modest Korean wedding hall in April, an elderly Korean woman in her late 60s with short permed gray hair and a beige cardigan in a hanbok holding a small framed photo of her late husband, cherry blossoms outside the window"
+    },
+    {
+      "chapter": 3,
+      "prompt": "an elderly Korean woman in her late 60s with short permed gray hair and a beige cardigan and a Korean woman in her mid 30s with shoulder-length black hair and a gray apron (the daughter-in-law) sitting at a kitchen table with warm jujube tea, a document with a seal stamp between them, soft evening light"
+    },
+    {
+      "chapter": 3,
+      "prompt": "a lawyer office desk where an elderly Korean woman in her late 60s with short permed gray hair and a beige cardigan presses a red seal stamp onto papers, son beside her smiling nervously"
+    },
+    {
+      "chapter": 4,
+      "prompt": "a short sturdy Korean woman in her mid 60s with weathered hands and a faded floral blouse unpacking a big cloth bundle of vegetables in a bright kitchen while an elderly Korean woman in her late 60s with short permed gray hair and a beige cardigan watches quietly, tense atmosphere"
+    },
+    {
+      "chapter": 4,
+      "prompt": "an elderly Korean woman in her late 60s with short permed gray hair and a beige cardigan standing alone in a kitchen late at night looking at a plate of cold grilled fish, dim light"
+    },
+    {
+      "chapter": 4,
+      "prompt": "a little Korean girl of five with pigtails and a yellow sweater hugging an elderly Korean woman in her late 60s with short permed gray hair and a beige cardigan on a sofa, evening living room, gentle mood"
+    },
+    {
+      "chapter": 5,
+      "prompt": "an elderly Korean woman in her late 60s with short permed gray hair and a beige cardigan carrying boxes up the stairs to a small cold attic bedroom, an old sewing machine and a framed photo of her husband on a small dresser"
+    },
+    {
+      "chapter": 5,
+      "prompt": "an elderly Korean woman in her late 60s with short permed gray hair and a beige cardigan and a little Korean girl of five with pigtails and a yellow sweater stuffing a rolled towel into a window gap in a winter bedroom, snow falling outside"
+    },
+    {
+      "chapter": 5,
+      "prompt": "a Korean man in his late 30s with short black hair and a navy work vest sitting at a dining table at night holding his head over bank papers, an elderly Korean woman in her late 60s with short permed gray hair and a beige cardigan watching from the staircase in shadow"
+    },
+    {
+      "chapter": 6,
+      "prompt": "an elderly Korean woman in her late 60s with short permed gray hair and a beige cardigan sitting at the top of the staircase in the dark listening, rain on the window, a tense night scene"
+    },
+    {
+      "chapter": 6,
+      "prompt": "a Korean man in his late 30s with short black hair and a navy work vest talking on the phone in a rainy yard at night, a short sturdy Korean woman in her mid 60s with weathered hands and a faded floral blouse standing at the doorway wearing a wet raincoat"
+    },
+    {
+      "chapter": 6,
+      "prompt": "a Korean woman in her mid 30s with shoulder-length black hair and a gray apron (the daughter-in-law) looking up from the bottom of the stairs with a pale frightened face"
+    },
+    {
+      "chapter": 7,
+      "prompt": "three strangers in dark jackets with a document folder standing in the front yard of a house, a Korean woman in her mid 30s with shoulder-length black hair and a gray apron (the daughter-in-law) holding a little Korean girl of five with pigtails and a yellow sweater protectively, afternoon light"
+    },
+    {
+      "chapter": 7,
+      "prompt": "an elderly Korean woman in her late 60s with short permed gray hair and a beige cardigan and a Korean woman in her mid 30s with shoulder-length black hair and a gray apron (the daughter-in-law) on a wooden bench in the yard, one crying, one angry, late afternoon, tense emotion"
+    },
+    {
+      "chapter": 7,
+      "prompt": "an elderly Korean woman in her late 60s with short permed gray hair and a beige cardigan opening a dresser drawer and holding an old bankbook under a lamp"
+    },
+    {
+      "chapter": 8,
+      "prompt": "an elderly Korean woman in her late 60s with short permed gray hair and a beige cardigan standing in front of a closed office door with a handwritten notice taped to the glass, gloomy daylight"
+    },
+    {
+      "chapter": 8,
+      "prompt": "an elderly Korean woman in her late 60s with short permed gray hair and a beige cardigan sitting alone on a bus stop bench at night with a gray suitcase, streetlamp light, tears on her cheeks"
+    },
+    {
+      "chapter": 8,
+      "prompt": "an elderly Korean woman in her late 60s with short permed gray hair and a beige cardigan hugging an elderly neighbor woman in a quiet alley at night, emotional embrace"
+    },
+    {
+      "chapter": 9,
+      "prompt": "an old Korean woman in her late 70s with white hair handing a pink flower-patterned envelope to an elderly Korean woman in her late 60s with short permed gray hair and a beige cardigan in a small warm room, warm lamp light"
+    },
+    {
+      "chapter": 9,
+      "prompt": "an elderly Korean woman in her late 60s with short permed gray hair and a beige cardigan looking through a curtain at a black van parked outside a house at night, tension"
+    },
+    {
+      "chapter": 9,
+      "prompt": "a Korean woman in her mid 30s with shoulder-length black hair and a gray apron (the daughter-in-law) standing outside her front door at night in a cardigan, blocking men with documents from entering, shot through a window"
+    },
+    {
+      "chapter": 10,
+      "prompt": "an elderly Korean woman in her late 60s with short permed gray hair and a beige cardigan walking up a hill path with rice fields on both sides under a clear autumn sky, a bus stop in the distance"
+    },
+    {
+      "chapter": 10,
+      "prompt": "an elderly Korean woman in her late 60s with short permed gray hair and a beige cardigan and a short sturdy Korean woman in her mid 60s with weathered hands and a faded floral blouse sitting on a heated floor in a small farmhouse room, a family photo on the wall, warm afternoon"
+    },
+    {
+      "chapter": 10,
+      "prompt": "a short sturdy Korean woman in her mid 60s with weathered hands and a faded floral blouse sitting on a wooden porch looking at golden rice fields, gentle breeze, thoughtful"
+    },
+    {
+      "chapter": 11,
+      "prompt": "a Korean man in his late 30s with short black hair and a navy work vest kneeling at the front door holding an elderly Korean woman in her late 60s with short permed gray hair and a beige cardigan hands, crying, evening light"
+    },
+    {
+      "chapter": 11,
+      "prompt": "an elderly Korean woman in her late 60s with short permed gray hair and a beige cardigan hugging a Korean woman in her mid 30s with shoulder-length black hair and a gray apron (the daughter-in-law) tightly in a living room while a short sturdy Korean woman in her mid 60s with weathered hands and a faded floral blouse wipes her eyes nearby, emotional warm light"
+    },
+    {
+      "chapter": 11,
+      "prompt": "an elderly Korean woman in her late 60s with short permed gray hair and a beige cardigan reading a flower-patterned letter holding it to her chest at a dining table"
+    },
+    {
+      "chapter": 12,
+      "prompt": "an elderly Korean woman in her late 60s with short permed gray hair and a beige cardigan, a Korean woman in her mid 30s with shoulder-length black hair and a gray apron (the daughter-in-law), a Korean man in his late 30s with short black hair and a navy work vest, a short sturdy Korean woman in her mid 60s with weathered hands and a faded floral blouse and a little Korean girl of five with pigtails and a yellow sweater sitting around a dining table sharing bowls of noodles, warm family atmosphere"
+    },
+    {
+      "chapter": 12,
+      "prompt": "an elderly Korean woman in her late 60s with short permed gray hair and a beige cardigan on a ladder picking persimmons in front of a house, a little Korean girl of five with pigtails and a yellow sweater below looking up, golden autumn light"
+    },
+    {
+      "chapter": 12,
+      "prompt": "an elderly Korean woman in her late 60s with short permed gray hair and a beige cardigan entering a front door as the family welcomes her, bright smiles, warm light flowing out"
+    }
+  ],
+  "tags": [
+    "사연",
+    "시어머니",
+    "며느리",
+    "사돈",
+    "반전",
+    "가족",
+    "감동",
+    "오디오드라마",
+    "시니어"
+  ]
+}
