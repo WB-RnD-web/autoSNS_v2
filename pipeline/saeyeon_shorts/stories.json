@@ -1,0 +1,345 @@
+{
+  "style": "photorealistic vertical film still, cinematic Korean drama scene, realistic skin texture, natural light, shallow depth of field",
+  "playlist": "사연 쇼츠 | 오늘의 사이다·감동 사연",
+  "stories": [
+    {
+      "id": 1, "slug": "gukbap",
+      "title": "국밥집에서 할머니 무시한 남자… 건물주가 누군지 듣고 얼어붙었다",
+      "top": ["국밥집 할머니 무시한 남자", "건물주 정체에 얼어붙다"],
+      "place": "inside a small old Korean gukbap restaurant at lunchtime, steel tables, kimchi side dishes, warm daylight",
+      "cast": {
+        "narr": {"voice": "F2"},
+        "granny": {"voice": "F4", "look": "a kind Korean grandmother in her late 70s with short gray permed hair, simple floral blouse and gray cardigan"},
+        "man": {"voice": "M2", "look": "an arrogant Korean man in his mid 30s with slicked back hair, navy suit, expensive watch"},
+        "owner": {"voice": "F1", "look": "a Korean woman restaurant owner in her 50s, short hair, white apron over a beige shirt"}
+      },
+      "scenes": [
+        {"who": "narr", "say": "점심시간, 동네 국밥집. 할머니 한 분이 혼자 국밥을 드시고 계셨어요.", "sub": "점심시간, 동네 국밥집", "shot": "{granny} sitting alone eating a bowl of gukbap, peaceful"},
+        {"who": "granny", "say": "사장님, 여기 김치 조금만 더 주세요.", "sub": "\"김치 조금만 더 주세요\"", "shot": "{granny} politely raising her hand asking for more kimchi, smiling"},
+        {"who": "man", "say": "할머니, 반찬 그만 좀 달라고 하세요. 다른 사람도 먹어야죠.", "sub": "\"반찬 그만 좀 달라고 하세요\"", "shot": "{man} at the next table frowning and looking annoyed at an old woman"},
+        {"who": "granny", "say": "아이고, 미안해요 총각. 김치가 하도 맛있어서.", "sub": "\"김치가 하도 맛있어서\"", "shot": "{granny} smiling gently and nodding, not offended"},
+        {"who": "man", "say": "계산이요. 그리고 이 건물 주인 어디 계세요? 매입 건으로 왔는데요.", "sub": "\"이 건물 주인 어디 계세요?\"", "shot": "{man} standing at the cash counter holding documents, talking to {owner}"},
+        {"who": "owner", "say": "건물주님이요? 저기 김치 더 달라고 하신 분이요.", "sub": "\"저기 김치 더 달라신 분이요\"", "shot": "{owner} behind the counter smiling and pointing toward a table in the back"},
+        {"who": "narr", "say": "남자는 그 자리에서 얼어붙고 말았어요.", "sub": "그 자리에서 얼어붙은 남자", "shot": "close up of {man} frozen in shock with wide eyes, documents in hand",
+         "move": "static camera, the man's eyes slowly widen in shock, he stays still, very subtle movement, realistic"},
+        {"who": "granny", "say": "김치 맛있게 담그는 집은 월세 안 올려요. 총각 일은 다음에 봅시다.", "sub": "\"총각 일은 다음에 봅시다\"", "shot": "{granny} calmly wiping her mouth with a napkin and smiling with dignity",
+         "move": "static camera, the old woman gently smiles with dignity and lowers the napkin, very subtle movement, realistic"}
+      ]
+    },
+    {
+      "id": 2, "slug": "taxi-father",
+      "title": "택시 몰고 딸 결혼식 온 아버지… 사돈이 알아본 20년 전 그날 밤",
+      "top": ["택시 몰고 온 신부 아빠", "사돈이 알아본 그날 밤"],
+      "place": "an elegant Korean wedding hall lobby, flower decorations, warm chandelier light",
+      "cast": {
+        "narr": {"voice": "F2"},
+        "bride": {"voice": "F3", "look": "a Korean bride in her early 30s in a white wedding dress"},
+        "father": {"voice": "M3", "look": "a Korean man in his late 60s with gray hair, slightly worn dark suit, rough hands"},
+        "inlaw": {"voice": "M4", "look": "a dignified Korean man in his late 60s in an expensive black suit"}
+      },
+      "scenes": [
+        {"who": "narr", "say": "딸의 결혼식 날, 아버지는 택시를 몰고 식장에 오셨어요.", "sub": "택시 몰고 온 아버지", "shot": "{father} getting out of an old taxi in front of a wedding hall building", "place": "a street in front of a Korean wedding hall building, morning"},
+        {"who": "bride", "say": "아빠, 오늘만은 택시 좀 두고 오시지.", "sub": "\"오늘만은 택시 두고 오시지…\"", "shot": "{bride} looking embarrassed, talking to {father}"},
+        {"who": "father", "say": "미안하다. 새벽 손님 모셔다드리고 바로 오느라.", "sub": "\"새벽 손님 모셔다드리느라\"", "shot": "{father} smiling apologetically, adjusting his old tie"},
+        {"who": "narr", "say": "그때 신랑 아버지가 다가와 아버지 얼굴을 한참 바라봤어요.", "sub": "아버지를 한참 바라보는 사돈", "shot": "{inlaw} staring at {father} with a surprised expression"},
+        {"who": "inlaw", "say": "혹시 이십 년 전 비 오던 밤, 만삭인 제 아내를 병원까지 태워 주신 기사님 아니세요?", "sub": "\"20년 전 만삭인 제 아내를…\"", "shot": "{inlaw} holding the hands of {father}, eyes wide with recognition"},
+        {"who": "narr", "say": "그날 아버지는 요금도 받지 않고 사라졌대요. 그 아기가 바로 오늘의 신랑이었어요.", "sub": "그날 태어난 아기가 바로 신랑", "shot": "{inlaw} bowing deeply to {father}, both moved",
+         "move": "static camera, the man slowly bows deeply to the older man, very subtle movement, realistic"},
+        {"who": "bride", "say": "아빠, 몰랐어. 미안해.", "sub": "\"아빠… 미안해\"", "shot": "{bride} hugging {father} with tears",
+         "move": "static camera, the bride hugs her father tightly with tears, very subtle movement, realistic"},
+        {"who": "narr", "say": "그날 하객들은 신부 아버지에게 가장 큰 박수를 보냈어요.", "sub": "가장 큰 박수는 신부 아버지에게", "shot": "wedding guests applauding warmly, {father} standing modestly in the middle", "place": "inside a bright Korean wedding hall during the ceremony"}
+      ]
+    },
+    {
+      "id": 3, "slug": "guard-trainer",
+      "title": "경비원에게 막말한 신입사원… 연수 강사로 들어온 사람을 보고 얼어붙었다",
+      "top": ["경비원에 막말한 신입", "연수 강사를 보고 얼어붙다"],
+      "place": "a Korean apartment complex entrance with a small security booth, morning",
+      "cast": {
+        "narr": {"voice": "F2"},
+        "guard": {"voice": "M3", "look": "a gentle Korean man in his late 60s with gray hair, navy security guard uniform and cap"},
+        "lecturer": {"voice": "M3", "look": "a gentle Korean man in his late 60s with gray hair, neat gray suit"},
+        "youth": {"voice": "M2", "look": "a rude Korean man in his late 20s in a sharp new suit with a backpack"}
+      },
+      "scenes": [
+        {"who": "narr", "say": "출근길, 청년이 경비실 앞에서 소리를 질렀어요.", "sub": "출근길 경비실 앞", "shot": "{youth} shouting at the window of a small security booth"},
+        {"who": "youth", "say": "택배를 왜 이렇게 늦게 줘요? 하는 일이 그거밖에 없으면서!", "sub": "\"하는 일이 그거밖에 없으면서!\"", "shot": "{youth} pointing his finger angrily at {guard}"},
+        {"who": "guard", "say": "미안해요. 오늘 첫 출근이라더니, 잘 다녀와요.", "sub": "\"첫 출근 잘 다녀와요\"", "shot": "{guard} smiling kindly and handing over a parcel box"},
+        {"who": "narr", "say": "청년은 대꾸도 없이 회사로 향했어요. 신입사원 연수 첫날이었죠.", "sub": "신입사원 연수 첫날", "shot": "{youth} sitting among young new employees in suits", "place": "a bright corporate training room with rows of desks"},
+        {"who": "narr", "say": "그런데 강사로 들어온 사람은, 아침의 그 경비 아저씨였어요.", "sub": "강사는 아침의 그 경비원", "shot": "{lecturer} standing at the front of the room, smiling", "place": "a bright corporate training room with rows of desks"},
+        {"who": "narr", "say": "이 회사 부사장 출신으로, 퇴직 후에도 해마다 신입 연수를 맡아 오셨대요.", "sub": "알고 보니 이 회사 부사장 출신", "shot": "close up of {youth} frozen in shock at his desk", "place": "a bright corporate training room with rows of desks",
+         "move": "static camera, the young man's eyes widen in shock and he slowly sinks in his chair, very subtle movement, realistic"},
+        {"who": "lecturer", "say": "일에는 높고 낮음이 없어요. 사람을 대하는 법부터 배웁시다.", "sub": "\"일에는 높고 낮음이 없어요\"", "shot": "{lecturer} speaking warmly to the room", "place": "a bright corporate training room with rows of desks",
+         "move": "static camera, the old man smiles calmly while speaking, very subtle movement, realistic"},
+        {"who": "narr", "say": "그날 저녁, 청년은 음료수 한 상자를 들고 경비실을 찾아갔어요.", "sub": "그날 저녁, 경비실 앞에서", "shot": "{youth} bowing apologetically in front of the security booth holding a box of drinks, evening"}
+      ]
+    },
+    {
+      "id": 4, "slug": "side-dish-box",
+      "title": "엄마 반찬 귀찮다던 아들… 김치통 바닥에서 나온 봉투",
+      "top": ["귀찮던 엄마 반찬 택배", "김치통 바닥의 봉투"],
+      "place": "a small modern Seoul apartment kitchen in the evening, warm indoor light",
+      "cast": {
+        "narr": {"voice": "F2"},
+        "son": {"voice": "M1", "look": "a tired Korean man in his early 40s in a white dress shirt with a loosened tie"},
+        "wife": {"voice": "F5", "look": "a Korean woman in her late 30s in a beige knit sweater"},
+        "mom": {"voice": "F4", "look": "a Korean grandmother in her 70s with short permed gray hair and flowered work clothes"}
+      },
+      "scenes": [
+        {"who": "narr", "say": "시골 어머니가 또 반찬 택배를 보내셨어요.", "sub": "또 온 엄마 반찬 택배", "shot": "{son} looking at a large cardboard box full of plastic side-dish containers on the kitchen counter"},
+        {"who": "son", "say": "엄마는 왜 자꾸 이렇게 많이 보내. 다 먹지도 못하는데.", "sub": "\"다 먹지도 못하는데 또…\"", "shot": "{son} sighing with his hands on his hips"},
+        {"who": "wife", "say": "그래도 어머님 정성인데, 냉장고 정리해서 넣어요.", "sub": "\"어머님 정성인데요\"", "shot": "{wife} opening the side-dish containers one by one"},
+        {"who": "narr", "say": "그런데 김치통 바닥에서 비닐에 싼 봉투가 나왔어요.", "sub": "김치통 바닥에서 나온 봉투", "shot": "close up of hands lifting a plastic-wrapped white envelope from the bottom of an empty kimchi container"},
+        {"who": "narr", "say": "안에는 꼬깃꼬깃한 만 원짜리 서른 장과 편지 한 장이 들어 있었어요.", "sub": "꼬깃꼬깃한 만 원짜리 서른 장", "shot": "{son} holding a folded handwritten letter and a stack of worn banknotes, stunned",
+         "move": "static camera, the man slowly unfolds the letter and his eyes fill with tears, very subtle movement, realistic"},
+        {"who": "mom", "say": "아들아, 요즘 힘들지. 손주 운동화 하나 사 줘라. 엄마는 괜찮다.", "sub": "\"엄마는 괜찮다\"", "shot": "{mom} smiling gently in her vegetable garden", "place": "a rural Korean vegetable garden at sunset"},
+        {"who": "narr", "say": "그 돈은 어머니가 장날마다 고추를 팔아 모은 돈이었어요.", "sub": "장날마다 고추 팔아 모은 돈", "shot": "{mom} selling red peppers at a small market stall", "place": "a rural Korean five-day market, morning"},
+        {"who": "son", "say": "엄마, 이번 주말에 내려갈게요. 반찬 다 맛있게 먹을게.", "sub": "\"엄마, 이번 주말에 갈게요\"", "shot": "{son} crying quietly at the kitchen table holding the letter",
+         "move": "static camera, the man wipes tears from his eyes, very subtle movement, realistic"}
+      ]
+    },
+    {
+      "id": 5, "slug": "bank-scam",
+      "title": "적금 깨서 현금 달라는 할머니… 은행 직원이 끝까지 막은 이유",
+      "top": ["현금 찾으러 온 할머니", "직원이 끝까지 막은 이유"],
+      "place": "inside a Korean bank branch, teller counter with a glass partition, bright light, waiting chairs",
+      "cast": {
+        "narr": {"voice": "F2"},
+        "granny": {"voice": "F4", "look": "an anxious Korean grandmother in her late 70s with short gray permed hair and a purple padded vest"},
+        "teller": {"voice": "F3", "look": "a young Korean female bank teller in her late 20s, navy uniform vest, neat ponytail"},
+        "officer": {"voice": "M4", "look": "a Korean police officer in his 40s in a dark navy police uniform"}
+      },
+      "scenes": [
+        {"who": "narr", "say": "은행 창구에 할머니 한 분이 급하게 오셨어요.", "sub": "급하게 은행에 온 할머니", "shot": "{granny} hurrying to the teller counter holding a bankbook, worried face"},
+        {"who": "granny", "say": "아가씨, 적금 깨서 현금으로 천만 원만 줘요. 빨리.", "sub": "\"적금 깨서 현금 천만 원만…\"", "shot": "{granny} pushing a bankbook across the counter toward {teller}"},
+        {"who": "teller", "say": "어르신, 혹시 누가 현금으로 찾아오라고 하던가요?", "sub": "\"누가 현금으로 찾아오래요?\"", "shot": "{teller} looking at {granny} with concern"},
+        {"who": "granny", "say": "내 돈 내가 찾는데 왜 이래요! 아들이 급하대요.", "sub": "\"아들이 급하다잖아요!\"", "shot": "{granny} angrily raising her voice at the counter"},
+        {"who": "narr", "say": "직원은 끝까지 웃으며, 아드님 번호로 직접 연락해 드렸어요.", "sub": "아드님께 직접 연락해 보니", "shot": "{teller} calmly talking to {granny} across the counter with a reassuring gesture"},
+        {"who": "narr", "say": "아드님은 회사에서 멀쩡히 일하고 있었어요. 보이스피싱이었던 거죠.", "sub": "아들은 멀쩡히 회사에 있었다", "shot": "close up of {granny} frozen in shock with her hand over her mouth",
+         "move": "static camera, the old woman slowly covers her mouth in shock, very subtle movement, realistic"},
+        {"who": "narr", "say": "돈을 받으러 은행 앞에 와 있던 남자는 경찰에게 붙잡혔어요.", "sub": "돈 받으러 온 남자는 체포", "shot": "{officer} escorting a man in a black cap outside a bank entrance", "place": "a city street in front of a Korean bank branch, daytime"},
+        {"who": "granny", "say": "아가씨 아니었으면 평생 모은 돈 다 날릴 뻔했네. 고마워요.", "sub": "\"아가씨 아니었으면 큰일 날 뻔\"", "shot": "{granny} holding the hands of {teller} with teary grateful eyes",
+         "move": "static camera, the old woman gently squeezes the young woman's hands with teary eyes, very subtle movement, realistic"},
+        {"who": "narr", "say": "현금으로 찾아오라는 전화, 무조건 끊으세요.", "sub": "현금 찾아오라는 전화는 끊으세요", "shot": "{granny} and {teller} smiling together at the counter"}
+      ]
+    },
+    {
+      "id": 6, "slug": "reunion-bill",
+      "title": "동창회에서 버스기사 친구 무시한 사장님… 계산대에서 얼어붙었다",
+      "top": ["버스기사 친구 무시한 동창", "계산대에서 얼어붙다"],
+      "place": "a Korean restaurant private room with a long low table full of dishes, evening, warm light",
+      "cast": {
+        "narr": {"voice": "F2"},
+        "brag": {"voice": "M2", "look": "a flashy Korean man in his late 50s in a shiny suit with a gold watch"},
+        "quiet": {"voice": "M5", "look": "a modest Korean man in his late 50s in a plain gray jacket with a gentle smile"},
+        "owner": {"voice": "F1", "look": "a Korean restaurant owner woman in her 60s wearing an apron"}
+      },
+      "scenes": [
+        {"who": "narr", "say": "삼십 년 만의 고등학교 동창회였어요.", "sub": "30년 만의 동창회", "shot": "middle-aged Korean men toasting around the table, {brag} in the center"},
+        {"who": "brag", "say": "나 이번에 차 바꿨잖아. 독일 차야. 너는 아직도 버스 모냐?", "sub": "\"너는 아직도 버스 모냐?\"", "shot": "{brag} laughing loudly and pointing at {quiet}"},
+        {"who": "quiet", "say": "응, 버스 운전 이십오 년째야. 재밌어.", "sub": "\"버스 운전 25년째야\"", "shot": "{quiet} smiling calmly, holding a glass of water"},
+        {"who": "brag", "say": "오늘은 내가 다 낸다. 다들 나한테 고마워해라.", "sub": "\"오늘은 내가 다 낸다\"", "shot": "{brag} standing up proudly, raising his glass"},
+        {"who": "narr", "say": "그런데 계산대에서 사장님이 고개를 저었어요.", "sub": "계산대에서 고개 젓는 사장님", "shot": "{brag} at the cashier counter holding a credit card, {owner} shaking her head", "place": "the cashier counter of a Korean restaurant, evening"},
+        {"who": "owner", "say": "벌써 계산됐어요. 저분이 매달 동네 어르신들 점심도 대접하시는 분이에요.", "sub": "\"저분이 벌써 계산하셨어요\"", "shot": "{owner} pointing toward {quiet} sitting at the table", "place": "the cashier counter of a Korean restaurant, evening"},
+        {"who": "narr", "say": "큰소리치던 친구는 아무 말도 하지 못했어요.", "sub": "아무 말도 못 한 친구", "shot": "close up of {brag} frozen with an awkward embarrassed face, holding a credit card", "place": "the cashier counter of a Korean restaurant, evening",
+         "move": "static camera, the man's face freezes in embarrassment and he slowly lowers his credit card, very subtle movement, realistic"},
+        {"who": "quiet", "say": "친구들 얼굴 보는 게 고마워서 그래. 다음에 또 보자.", "sub": "\"얼굴 보는 게 고마워서\"", "shot": "{quiet} smiling warmly and patting a friend's shoulder",
+         "move": "static camera, the man smiles warmly and nods, very subtle movement, realistic"}
+      ]
+    },
+    {
+      "id": 7, "slug": "bakery-letter",
+      "title": "노숙인 할아버지에게 매일 빵 준 사장님… 한 달 뒤 찾아온 변호사",
+      "top": ["매일 빵 받던 할아버지", "한 달 뒤 찾아온 변호사"],
+      "place": "a small cozy neighborhood bakery in Seoul, wooden shelves with bread, morning light",
+      "cast": {
+        "narr": {"voice": "F2"},
+        "baker": {"voice": "F1", "look": "a kind Korean woman baker in her late 40s with a white baker's cap and apron"},
+        "grandpa": {"voice": "M4", "look": "a thin Korean grandfather in his 80s with white stubble and an old worn coat"},
+        "customer": {"voice": "F5", "look": "a picky Korean woman in her 40s in a trench coat"},
+        "lawyer": {"voice": "M5", "look": "a Korean male lawyer in his 50s in a dark suit with glasses"}
+      },
+      "scenes": [
+        {"who": "narr", "say": "동네 빵집에 매일 아침 오시는 할아버지가 계셨어요.", "sub": "매일 아침 오시는 할아버지", "shot": "{grandpa} standing shyly at the bakery door"},
+        {"who": "baker", "say": "할아버지, 어제 남은 빵이에요. 따뜻할 때 드세요.", "sub": "\"따뜻할 때 드세요\"", "shot": "{baker} handing a paper bag of bread to {grandpa}, smiling"},
+        {"who": "customer", "say": "사장님, 저런 분 들이면 손님 떨어져요.", "sub": "\"저런 분 들이면 손님 떨어져요\"", "shot": "{customer} frowning at the counter, complaining"},
+        {"who": "baker", "say": "빵은 누구나 먹어야죠.", "sub": "\"빵은 누구나 먹어야죠\"", "shot": "{baker} answering calmly with a gentle smile"},
+        {"who": "narr", "say": "그러다 어느 날부터 할아버지가 보이지 않았어요.", "sub": "어느 날 사라진 할아버지", "shot": "an empty bakery doorway on a rainy morning, a paper bag of bread waiting on the counter"},
+        {"who": "lawyer", "say": "고인께서 사장님께 편지와 돈을 남기셨어요. 퇴직하신 교장 선생님이셨습니다.", "sub": "\"퇴직하신 교장 선생님이셨어요\"", "shot": "{lawyer} handing an envelope to {baker} at the counter"},
+        {"who": "grandpa", "say": "매일 아침 빵 한 봉지가 내 하루를 살게 했소. 이 동네 아이들 빵값에 보태 주시오.", "sub": "\"아이들 빵값에 보태 주시오\"", "shot": "{baker} reading a handwritten letter with tears",
+         "move": "static camera, the woman reads the letter as tears roll down her cheeks, very subtle movement, realistic"},
+        {"who": "narr", "say": "그 뒤로 빵집에서는 아이들 빵은 돈을 받지 않는대요.", "sub": "아이들 빵은 무료", "shot": "{baker} handing bread to smiling schoolchildren at the bakery counter",
+         "move": "static camera, the woman gently hands bread to a child and smiles, very subtle movement, realistic"}
+      ]
+    },
+    {
+      "id": 8, "slug": "subway-firefighter",
+      "title": "노약자석 청년에게 호통친 할아버지… 청년이 일어나자 모두 숙연해졌다",
+      "top": ["노약자석 청년에 호통", "일어나자 숙연해졌다"],
+      "place": "inside a Seoul subway car in the daytime, seats along the sides",
+      "cast": {
+        "narr": {"voice": "F2"},
+        "old": {"voice": "M3", "look": "a stern Korean grandfather in his late 70s with a cane and a flat cap"},
+        "young": {"voice": "M1", "look": "a quiet Korean man in his early 30s in a plain navy jacket and jeans"},
+        "lady": {"voice": "F5", "look": "a Korean woman in her 50s in a beige coat"}
+      },
+      "scenes": [
+        {"who": "narr", "say": "지하철 노약자석에 청년 한 명이 앉아 있었어요.", "sub": "노약자석에 앉은 청년", "shot": "{young} sitting in a priority seat with his eyes closed, tired"},
+        {"who": "old", "say": "젊은 사람이 어디 노약자석에 앉아 있어! 당장 안 일어나?", "sub": "\"젊은 사람이 노약자석에!\"", "shot": "{old} scolding loudly, pointing his cane at {young}"},
+        {"who": "narr", "say": "청년은 아무 말 없이 일어났어요. 그런데 걸음이 이상했어요.", "sub": "걸음이 이상한 청년", "shot": "{young} standing up slowly holding a pole, wincing in pain"},
+        {"who": "lady", "say": "어르신, 저 청년 다리 좀 보세요.", "sub": "\"저 청년 다리 좀 보세요\"", "shot": "{lady} speaking quietly to {old}"},
+        {"who": "young", "say": "괜찮습니다. 작년에 화재 현장에서 다쳤어요. 소방관이었거든요.", "sub": "\"화재 현장에서 다쳤어요\"", "shot": "{young} smiling politely at {old}"},
+        {"who": "narr", "say": "할아버지의 얼굴이 순간 굳었어요.", "sub": "굳어 버린 할아버지", "shot": "close up of {old} frozen in shock and shame",
+         "move": "static camera, the old man's face freezes in shock and shame, very subtle movement, realistic"},
+        {"who": "old", "say": "내가 큰 실수를 했네. 우리 같은 사람 지켜 줘서 고맙소.", "sub": "\"지켜 줘서 고맙소\"", "shot": "{old} taking off his cap and bowing to {young}",
+         "move": "static camera, the old man slowly bows his head to the young man, very subtle movement, realistic"},
+        {"who": "narr", "say": "겉모습만으로는 아무것도 알 수 없어요.", "sub": "겉모습만으론 알 수 없어요", "shot": "{young} and {old} sitting side by side, peaceful"}
+      ]
+    },
+    {
+      "id": 9, "slug": "recipe-notebook",
+      "title": "칠순 선물로 낡은 공책 내민 며느리… 시누이가 비웃다 조용해진 이유",
+      "top": ["칠순 선물로 낡은 공책", "시누이가 조용해진 이유"],
+      "place": "a Korean family living room at a birthday gathering, a cake with candles on a low table, warm light",
+      "cast": {
+        "narr": {"voice": "F2"},
+        "mil": {"voice": "F4", "look": "a Korean grandmother in her early 70s with neat short gray hair and an elegant blouse"},
+        "dil": {"voice": "F3", "look": "a gentle Korean woman in her late 30s in a cream cardigan"},
+        "sil": {"voice": "F5", "look": "a Korean woman in her early 40s in a stylish black dress"}
+      },
+      "scenes": [
+        {"who": "narr", "say": "시어머니 칠순 생신날, 가족들이 선물을 꺼냈어요.", "sub": "시어머니 칠순 생신날", "shot": "family gathered around {mil}, gift boxes on the table"},
+        {"who": "sil", "say": "엄마, 명품 가방이야. 언니는 뭐 사 왔어요?", "sub": "\"언니는 뭐 사 왔어요?\"", "shot": "{sil} proudly holding up a luxury handbag, glancing at {dil}"},
+        {"who": "narr", "say": "며느리가 내민 건 낡은 공책 한 권이었어요.", "sub": "며느리가 내민 낡은 공책", "shot": "{dil} shyly holding out an old notebook tied with a ribbon"},
+        {"who": "sil", "say": "공책이요? 칠순 선물이 이게 다예요?", "sub": "\"칠순 선물이 이게 다예요?\"", "shot": "{sil} smirking with her arms crossed"},
+        {"who": "narr", "say": "공책에는 어머니가 해 주신 음식 백 가지가 손글씨로 적혀 있었어요.", "sub": "어머니 음식 100가지 손글씨", "shot": "close up of an old woman's hands turning the pages of a handwritten recipe notebook"},
+        {"who": "dil", "say": "어머님 손맛, 애들한테도 물려주고 싶어서요. 십 년 동안 옆에서 받아 적었어요.", "sub": "\"10년 동안 옆에서 받아 적었어요\"", "shot": "{dil} smiling softly"},
+        {"who": "mil", "say": "우리 며느리가, 내 인생을 다 적어 놨구나.", "sub": "\"내 인생을 다 적어 놨구나\"", "shot": "{mil} with tears, holding the notebook to her chest",
+         "move": "static camera, the old woman hugs the notebook to her chest with tears, very subtle movement, realistic"},
+        {"who": "narr", "say": "시누이는 조용히 가방을 내려놓았어요.", "sub": "조용해진 시누이", "shot": "{sil} quietly putting down the luxury handbag, looking ashamed",
+         "move": "static camera, the woman slowly lowers her eyes and puts down the bag, very subtle movement, realistic"}
+      ]
+    },
+    {
+      "id": 10, "slug": "watch-master",
+      "title": "명품 매장서 무시당한 할아버지… 수리 기술자가 달려와 '선생님!'",
+      "top": ["시계 고치러 온 할아버지", "기술자가 달려와 '선생님'"],
+      "place": "an elegant luxury watch boutique in a Seoul department store, glass display cases, bright lighting",
+      "cast": {
+        "narr": {"voice": "F2"},
+        "grandpa": {"voice": "M4", "look": "a modest Korean grandfather in his late 70s in an old brown jacket"},
+        "clerk": {"voice": "M2", "look": "a cold young Korean male store clerk in his late 20s in a black suit"},
+        "master": {"voice": "M5", "look": "a senior Korean watchmaker in his 60s in a white shirt with a jeweler's loupe on his forehead"}
+      },
+      "scenes": [
+        {"who": "narr", "say": "백화점 명품 시계 매장에 허름한 차림의 할아버지가 들어왔어요.", "sub": "허름한 차림의 할아버지", "shot": "{grandpa} entering the boutique and looking at the display cases"},
+        {"who": "grandpa", "say": "이 시계 줄 좀 고칠 수 있을까요? 손녀가 첫 월급으로 사 준 거라.", "sub": "\"손녀가 첫 월급으로 사 준 거라\"", "shot": "{grandpa} holding out an old wristwatch to {clerk}"},
+        {"who": "clerk", "say": "어르신, 여긴 그런 데 아니에요. 수리는 본사에 예약하세요.", "sub": "\"여긴 그런 데 아니에요\"", "shot": "{clerk} waving his hand dismissively"},
+        {"who": "narr", "say": "그때 안쪽 수리실에서 나온 기술자가 할아버지를 보고 멈춰 섰어요.", "sub": "할아버지를 보고 멈춘 기술자", "shot": "{master} stopping in surprise as he sees {grandpa}"},
+        {"who": "master", "say": "선생님! 저 기억하세요? 사십 년 전 종로 시계방에서 저를 가르쳐 주셨잖아요.", "sub": "\"40년 전 저를 가르쳐 주셨잖아요\"", "shot": "{master} rushing over and holding the hands of {grandpa}"},
+        {"who": "narr", "say": "할아버지는 이 나라 일 세대 시계 장인이었어요.", "sub": "알고 보니 1세대 시계 장인", "shot": "close up of {clerk} frozen in shock with his mouth slightly open",
+         "move": "static camera, the young clerk freezes in shock with his eyes widening, very subtle movement, realistic"},
+        {"who": "master", "say": "선생님 시계는 제가 직접 고쳐 드리겠습니다.", "sub": "\"제가 직접 고쳐 드리겠습니다\"", "shot": "{master} carefully holding an old wristwatch with both hands, bowing slightly to {grandpa}",
+         "move": "static camera, the watchmaker bows respectfully while holding the watch, very subtle movement, realistic"},
+        {"who": "narr", "say": "직원은 그날 처음으로, 손님에게 고개 숙여 사과했어요.", "sub": "고개 숙여 사과한 직원", "shot": "{clerk} bowing deeply to {grandpa}"}
+      ]
+    },
+    {
+      "id": 11, "slug": "market-extra",
+      "title": "가난한 학생에게 늘 덤 주던 할머니… 15년 뒤 병원에서 생긴 일",
+      "top": ["늘 덤 주던 시장 할머니", "15년 뒤 병원에서"],
+      "place": "a traditional Korean outdoor market with vegetable stalls, afternoon",
+      "cast": {
+        "narr": {"voice": "F2"},
+        "granny": {"voice": "F4", "look": "a cheerful Korean grandmother in her 70s with a floral headscarf and a quilted vest"},
+        "patient": {"voice": "F4", "look": "a frail Korean grandmother in her 80s in a hospital patient gown"},
+        "student": {"voice": "M1", "look": "a skinny Korean high school boy in a school uniform"},
+        "doctor": {"voice": "M1", "look": "a Korean male doctor in his early 30s in a white coat with a stethoscope"}
+      },
+      "scenes": [
+        {"who": "narr", "say": "시장 채소 가게 할머니에게는 단골 고등학생이 있었어요.", "sub": "시장 할머니의 단골 학생", "shot": "{student} buying vegetables at a stall run by {granny}"},
+        {"who": "granny", "say": "엄마 아프다며. 이거 덤이야, 고기도 좀 사 먹어.", "sub": "\"이거 덤이야, 고기도 사 먹어\"", "shot": "{granny} putting extra vegetables into a bag for {student}"},
+        {"who": "narr", "say": "할머니는 삼 년 동안 그 학생에게 한 번도 제값을 받지 않았어요.", "sub": "3년 동안 제값을 안 받은 할머니", "shot": "{granny} waving goodbye warmly to {student}"},
+        {"who": "narr", "say": "그리고 십오 년 뒤, 할머니가 쓰러져 큰 병원에 실려 갔어요.", "sub": "15년 뒤, 쓰러진 할머니", "shot": "{patient} lying in a hospital bed, weak", "place": "a clean bright Korean hospital room"},
+        {"who": "doctor", "say": "할머니, 저 기억하세요? 덤 주시던 그 학생이에요.", "sub": "\"덤 주시던 그 학생이에요\"", "shot": "{doctor} leaning over the hospital bed, smiling with emotion", "place": "a clean bright Korean hospital room"},
+        {"who": "patient", "say": "아이고, 네가 의사가 됐구나.", "sub": "\"네가 의사가 됐구나\"", "shot": "close up of {patient} in a hospital bed tearing up in surprise", "place": "a clean bright Korean hospital room",
+         "move": "static camera, the old woman's eyes fill with tears in surprise, very subtle movement, realistic"},
+        {"who": "doctor", "say": "이번엔 제가 덤 드릴게요. 수술 걱정 마세요.", "sub": "\"이번엔 제가 덤 드릴게요\"", "shot": "{doctor} gently holding the hand of {patient}", "place": "a clean bright Korean hospital room",
+         "move": "static camera, the doctor gently holds the old woman's hand and smiles, very subtle movement, realistic"},
+        {"who": "narr", "say": "할머니의 덤은, 십오 년 만에 돌아왔어요.", "sub": "15년 만에 돌아온 덤", "shot": "{patient} smiling peacefully by the hospital window", "place": "a clean bright Korean hospital room"}
+      ]
+    },
+    {
+      "id": 12, "slug": "upstairs-noise",
+      "title": "층간소음에 화나 올라간 청년… 문 너머에서 들린 소리",
+      "top": ["층간소음에 화난 청년", "문 너머에서 들린 소리"],
+      "place": "a Korean apartment hallway at night, dim light",
+      "cast": {
+        "narr": {"voice": "F2"},
+        "youth": {"voice": "M1", "look": "a Korean man in his early 30s in a gray hoodie"},
+        "granny": {"voice": "F4", "look": "a frail Korean grandmother in her 80s with gray hair and a cardigan"}
+      },
+      "scenes": [
+        {"who": "narr", "say": "밤 열한 시, 윗집에서 쿵 하는 소리가 났어요.", "sub": "밤 11시, 윗집에서 쿵", "shot": "{youth} lying on a sofa looking up at the ceiling, annoyed", "place": "a small Korean apartment living room at night"},
+        {"who": "youth", "say": "또 시작이네. 이번엔 진짜 올라가서 말해야겠다.", "sub": "\"이번엔 진짜 올라가야겠다\"", "shot": "{youth} getting up from the sofa, frowning", "place": "a small Korean apartment living room at night"},
+        {"who": "narr", "say": "그런데 초인종을 눌러도 대답이 없었어요. 안에서 작은 신음 소리만 들렸죠.", "sub": "대답 없이 들리는 신음 소리", "shot": "{youth} standing in front of an apartment door, listening carefully, worried"},
+        {"who": "narr", "say": "청년은 바로 119에 신고했어요.", "sub": "바로 119에 신고", "shot": "paramedics in uniforms running up the stairs, {youth} guiding them"},
+        {"who": "narr", "say": "윗집 할머니가 혼자 계시다 쓰러지셨던 거예요.", "sub": "혼자 쓰러져 계셨던 할머니", "shot": "paramedics carrying {granny} on a stretcher along the hallway"},
+        {"who": "narr", "say": "며칠 뒤, 퇴원한 할머니가 떡 한 접시를 들고 내려오셨어요.", "sub": "며칠 뒤, 떡을 들고 온 할머니", "shot": "{granny} standing at the door holding a plate of rice cakes, smiling", "place": "a Korean apartment doorway in the daytime"},
+        {"who": "granny", "say": "총각 덕분에 살았어요. 시끄럽게 해서 미안했어요.", "sub": "\"총각 덕분에 살았어요\"", "shot": "close up of {granny} smiling gratefully, offering a plate of rice cakes", "place": "a Korean apartment doorway in the daytime",
+         "move": "static camera, the old woman smiles gratefully and offers the plate, very subtle movement, realistic"},
+        {"who": "youth", "say": "아니에요, 할머니. 이제 저녁마다 인사드리러 올게요.", "sub": "\"저녁마다 인사드리러 올게요\"", "shot": "{youth} smiling warmly and accepting the plate", "place": "a Korean apartment doorway in the daytime",
+         "move": "static camera, the young man smiles warmly and bows slightly, very subtle movement, realistic"},
+        {"who": "narr", "say": "혼자 사시는 이웃, 오늘 한 번 안부를 물어 주세요.", "sub": "혼자 사는 이웃, 안부 한번 물어요", "shot": "{youth} and {granny} chatting happily in the apartment hallway", "place": "a Korean apartment hallway in the daytime"}
+      ]
+    },
+    {
+      "id": 13, "slug": "graduation-bow",
+      "title": "폐지 줍는 할머니가 창피했던 손자… 졸업식 단상에서 한 말",
+      "top": ["폐지 줍는 할머니가", "창피했던 손자의 고백"],
+      "place": "a Korean university graduation ceremony hall, students in gowns, bright daylight",
+      "cast": {
+        "narr": {"voice": "F2"},
+        "granny": {"voice": "F4", "look": "a small Korean grandmother in her late 70s with a bent back and a simple padded jacket"},
+        "student": {"voice": "M1", "look": "a Korean man in his early 20s in casual clothes"},
+        "grad": {"voice": "M1", "look": "a Korean man in his mid 20s in a black graduation gown"}
+      },
+      "scenes": [
+        {"who": "narr", "say": "할머니는 손자 등록금을 위해 매일 새벽 폐지를 주우셨어요.", "sub": "매일 새벽 폐지 줍는 할머니", "shot": "{granny} pulling a small cart stacked with flattened cardboard", "place": "a narrow Korean alley at dawn"},
+        {"who": "narr", "say": "손자는 그런 할머니가 창피해, 친구들 앞에서 모른 척한 적도 있었어요.", "sub": "친구들 앞에선 모른 척한 손자", "shot": "{student} walking past with friends, looking away from {granny}", "place": "a Korean university street, daytime"},
+        {"who": "granny", "say": "괜찮다, 우리 강아지. 공부만 열심히 해라.", "sub": "\"공부만 열심히 해라\"", "shot": "{granny} smiling and handing an envelope to {student}", "place": "a small old Korean room with a warm lamp"},
+        {"who": "narr", "say": "사 년 뒤 졸업식, 손자는 수석 졸업생 대표로 단상에 섰어요.", "sub": "4년 뒤, 수석 졸업생 대표", "shot": "{grad} standing at a podium on stage"},
+        {"who": "grad", "say": "제 등록금은 할머니가 새벽마다 주운 폐지로 냈습니다.", "sub": "\"할머니가 주운 폐지로 냈습니다\"", "shot": "{grad} speaking at the podium with emotion"},
+        {"who": "grad", "say": "할머니, 그동안 모른 척해서 죄송했어요. 사랑합니다.", "sub": "\"모른 척해서 죄송했어요\"", "shot": "{grad} kneeling and bowing deeply in front of {granny}",
+         "move": "static camera, the young man bows deeply in front of the old woman, very subtle movement, realistic"},
+        {"who": "narr", "say": "할머니는 손자의 학사모를 쓰고 한참을 우셨어요.", "sub": "학사모 쓰고 한참 우신 할머니", "shot": "{granny} wearing a graduation cap, crying and smiling",
+         "move": "static camera, the old woman cries and smiles under the graduation cap, very subtle movement, realistic"},
+        {"who": "narr", "say": "그날 졸업식장에서 가장 큰 박수를 받은 사람은 할머니였어요.", "sub": "가장 큰 박수를 받은 할머니", "shot": "graduates applauding {granny} who is standing next to {grad}"}
+      ]
+    },
+    {
+      "id": 14, "slug": "bus-cpr",
+      "title": "출근길 갑자기 멈춘 버스… 화내던 승객이 고개 숙인 이유",
+      "top": ["출근길 갑자기 멈춘 버스", "화내던 승객이 숙인 고개"],
+      "place": "inside a Korean city bus in the morning, passengers seated",
+      "cast": {
+        "narr": {"voice": "F2"},
+        "driver": {"voice": "M5", "look": "a Korean male bus driver in his 50s in a light blue uniform shirt"},
+        "passenger": {"voice": "M2", "look": "an impatient Korean man in his 40s in a business suit"},
+        "granny": {"voice": "F4", "look": "an elderly Korean woman in her 70s in a purple coat"}
+      },
+      "scenes": [
+        {"who": "narr", "say": "출근 시간, 버스가 갑자기 길가에 멈춰 섰어요.", "sub": "갑자기 멈춘 버스", "shot": "{driver} stopping the bus and turning his head back urgently"},
+        {"who": "passenger", "say": "아니 기사님, 지금 뭐 하시는 거예요? 다들 바빠요!", "sub": "\"다들 바빠요!\"", "shot": "{passenger} standing up angrily"},
+        {"who": "narr", "say": "기사님은 대답 대신 뒷자리로 달려갔어요. 할머니 한 분이 쓰러져 계셨거든요.", "sub": "뒷자리에 쓰러진 할머니", "shot": "{driver} rushing to the back of the bus where {granny} has collapsed on a seat"},
+        {"who": "driver", "say": "119 좀 불러 주세요! 제가 심폐소생술 하겠습니다.", "sub": "\"119 불러 주세요!\"", "shot": "{driver} kneeling and giving chest compressions to {granny} lying on the bus floor, passengers watching"},
+        {"who": "narr", "say": "구급차가 올 때까지 칠 분, 기사님은 한 번도 멈추지 않았어요.", "sub": "구급차가 올 때까지 7분", "shot": "close up of {driver} sweating and concentrating"},
+        {"who": "narr", "say": "할머니가 숨을 몰아쉬며 눈을 떴어요.", "sub": "할머니가 눈을 떴다", "shot": "close up of {granny} slowly opening her eyes",
+         "move": "static camera, the old woman slowly opens her eyes and breathes, very subtle movement, realistic"},
+        {"who": "narr", "say": "소리치던 남자는 조용히 다가와 기사님께 고개를 숙였어요.", "sub": "소리치던 남자의 사과", "shot": "{passenger} bowing his head to {driver}",
+         "move": "static camera, the man slowly bows his head in apology, very subtle movement, realistic"},
+        {"who": "narr", "say": "그날 버스 안 승객들은 모두 기사님께 박수를 보냈어요.", "sub": "기사님께 보낸 박수", "shot": "passengers applauding {driver} inside the bus, warm atmosphere"}
+      ]
+    }
+  ]
+}

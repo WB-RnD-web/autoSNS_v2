@@ -1,0 +1,130 @@
+name: 사연 쇼츠(실사 AI) — 하루 한 편 · 14편 2주 시험
+
+# 매일 13:07 KST 에 깨서, 아직 안 올린 가장 낮은 번호 한 편을 만들어 왕별이 채널에 올린다.
+#   대본은 레포(pipeline/saeyeon_shorts/stories.json) — 루틴이 쓰지 않는다. 14편이 끝나면 할 일이 없어 1분 안에 끝난다.
+# ★두 번 올리지 않는다: ① ledger(Actions 캐시 saeyeon-shorts-ledger-) ② 사연 재생목록·최근 업로드의 표식 '사연 S001'
+# ★Spark 보호: 영상(5B)은 대기열이 비었을 때만, 실패·바쁨이면 그 장면은 사진으로. 끄려면 레포 변수 SAEYEON_VIDEO=0.
+# ★돈 드는 호출 없음: Spark(그림·목소리·영상) · 퍼블릭 레포 Actions 뿐.
+# 공개 범위는 레포 변수 SAEYEON_PUBLISH(기본 public). 수동 실행에서 upload 를 끄면 렌더만 하고 영상은 아티팩트로.
+
+on:
+  schedule:
+    - cron: "7 4 * * *"         # 매일 13:07 KST(빈 시간대 · 시청 활발 07~15시 안)
+  workflow_dispatch:
+    inputs:
+      n:
+        description: "편 번호(비우면 다음 편)"
+        default: ""
+      upload:
+        description: "업로드. 끄면 렌더만 — 영상은 아티팩트"
+        type: boolean
+        default: false
+      video:
+        description: "결정적 장면 5B 영상 사용"
+        type: boolean
+        default: true
+
+concurrency:
+  group: saeyeon-shorts
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      TZ: Asia/Seoul
+      WBSPARK_BASE: ${{ vars.WBSPARK_BASE || 'https://wangbyul.com/wbSpark' }}
+      WBSPARK_TOKEN: ${{ secrets.WBSPARK_TOKEN }}
+      SAEYEON_PUBLISH: ${{ vars.SAEYEON_PUBLISH || 'public' }}
+      SAEYEON_VIDEO: ${{ vars.SAEYEON_VIDEO || '1' }}
+      YT_TOKEN_NOVEL: pipeline/secrets/token_novel.json
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: pipeline/requirements.txt
+
+      - name: 파이썬 의존성
+        run: python -m pip install -r pipeline/requirements.txt
+
+      - name: 대본 검사(오프라인)
+        run: |
+          python pipeline/saeyeon_shorts.py check
+          python pipeline/test_saeyeon_shorts.py
+
+      - name: ledger 복원
+        uses: actions/cache/restore@v4
+        with:
+          path: output/saeyeon_shorts_ledger.json
+          key: saeyeon-shorts-ledger-${{ github.run_id }}
+          restore-keys: saeyeon-shorts-ledger-
+
+      # 같은 채널의 youtube 스코프 토큰(재생목록·표식 확인·업로드 모두 이것 하나로)
+      - name: YouTube 자격증명
+        id: cred
+        if: github.event_name == 'schedule' || github.event.inputs.upload == 'true'
+        env:
+          YT_TOKEN_JSON_NOVEL: ${{ secrets.YT_TOKEN_JSON_NOVEL }}
+        run: |
+          mkdir -p pipeline/secrets
+          if [ -z "$YT_TOKEN_JSON_NOVEL" ]; then echo "::error::시크릿 YT_TOKEN_JSON_NOVEL 없음"; exit 1; fi
+          printf '%s' "$YT_TOKEN_JSON_NOVEL" > pipeline/secrets/token_novel.json
+
+      - name: 오늘 올릴 편
+        id: pick
+        run: |
+          set -e
+          N="${{ github.event.inputs.n }}"
+          if [ -z "$N" ]; then N=$(python pipeline/saeyeon_shorts.py due | tail -1); fi
+          echo "n=$N" >> "$GITHUB_OUTPUT"
+          echo "대상: '${N:-없음(14편 끝)}'"
+
+      - name: 시스템 의존성
+        if: steps.pick.outputs.n != ''
+        run: |
+          NEED=""
+          command -v ffmpeg >/dev/null 2>&1 || NEED="$NEED ffmpeg"
+          fc-list 2>/dev/null | grep -qi nanum || NEED="$NEED fonts-nanum"
+          if [ -n "$NEED" ]; then sudo apt-get update && sudo apt-get install -y $NEED; fi
+
+      - name: 만들기
+        if: steps.pick.outputs.n != ''
+        run: |
+          V=""
+          if [ "${{ github.event.inputs.video }}" = "false" ]; then V="--no-video"; fi
+          python pipeline/saeyeon_shorts.py render "${{ steps.pick.outputs.n }}" $V
+
+      - name: 업로드
+        if: steps.pick.outputs.n != '' && steps.cred.outcome == 'success'
+        run: python pipeline/saeyeon_shorts.py upload "${{ steps.pick.outputs.n }}"
+
+      # 올라간 건 올라간 거다 — 잡이 실패해도 ledger 는 남긴다(다음 날 두 번 올리지 않게)
+      - name: ledger 저장
+        if: always() && hashFiles('output/saeyeon_shorts_ledger.json') != ''
+        uses: actions/cache/save@v4
+        with:
+          path: output/saeyeon_shorts_ledger.json
+          key: saeyeon-shorts-ledger-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: 결과물(한눈에 보기·메타 — 렌더만 한 경우 영상까지)
+        if: always() && steps.pick.outputs.n != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: saeyeon-shorts-${{ github.run_number }}
+          path: |
+            output/saeyeon_shorts/saeyeon_*_sheet.jpg
+            output/saeyeon_shorts/saeyeon_*_meta.json
+            output/saeyeon_shorts_ledger.json
+            ${{ steps.cred.outcome != 'success' && 'output/saeyeon_shorts/saeyeon_*.mp4' || '' }}
+          retention-days: 3
+          if-no-files-found: warn
