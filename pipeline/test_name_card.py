@@ -66,6 +66,14 @@ for i in range(40):
             ok = len(cells) == N.NAME_CELLS and len({c["big"] for c in cells}) == N.NAME_CELLS
             ok &= [c["big"] for c in cells] == sorted(c["big"] for c in cells)
             seen_am.add(tuple(c["big"] for c in cells))
+        elif slot == "year":
+            ok = [c["big"] for c in cells] == [f"{n}년생" for n in range(10)]
+            ok &= sorted(int(c["small"][:-1]) for c in cells) == list(range(1, 11))
+            ok &= sum(c["hi"] for c in cells) == 3 and all(int(c["small"][:-1]) <= 3 for c in cells if c["hi"])
+        elif slot == "surname":
+            ok = [c["big"] for c in cells] == sorted(f"{x}씨" for x in N.SURNAMES) and len(cells) == 20
+            ok &= sorted(int(c["small"][:-1]) for c in cells) == list(range(1, 21))
+            ok &= sum(c["hi"] for c in cells) == 3 and all(int(c["small"][:-1]) <= 3 for c in cells if c["hi"])
         else:
             ok = [c["big"] for c in cells] == [f"{m}월생" for m in range(1, 13)]
             ok &= sorted(int(c["small"][:-1]) for c in cells) == list(range(1, 13))
@@ -85,6 +93,13 @@ ck("같은 테마라도 날마다 고르는 글자가 달라진다(같은 표 �
 ck("같은 날짜·슬롯이면 늘 같은 표", N.storyboard(d0, "am") == prev)
 ck("오후 달 표 테마는 같은 날 12시 띠 표와 다르다",
    all(N.month_theme(d0 + dt.timedelta(days=i))["id"] != T.theme_for(d0 + dt.timedelta(days=i))["id"] for i in range(30)))
+ck("하루 네 표(해 끝자리·성씨·태어난 달·12시 띠)의 주제가 전부 다르다(60일)",
+   all(len({N.year_theme(x)["id"], N.surname_theme(x)["id"], N.month_theme(x)["id"], T.theme_for(x)["id"]}) == 4
+       for x in (d0 + dt.timedelta(days=i) for i in range(60))))
+ck("천간: 1984 갑 · 1990 경 · 1955 을 · 1963 계(끝자리 → 천간)",
+   dict((n, g) for n, g, _ in N.STEMS)[4] == "갑" and dict((n, g) for n, g, _ in N.STEMS)[0] == "경"
+   and dict((n, g) for n, g, _ in N.STEMS)[5] == "을" and dict((n, g) for n, g, _ in N.STEMS)[3] == "계")
+ck("성씨 20개 · 겹치지 않음", len(N.SURNAMES) == 20 and len(set(N.SURNAMES)) == 20)
 
 print("── 메타·경로·파이프라인 연결")
 sb = N.storyboard(d0, "am")
@@ -95,15 +110,17 @@ ck("ledger 키에 슬롯(하루 두 편이 서로 막지 않게)",
 m = N.meta(sb)
 ck("meta 제목 95자 이내·설명에 '재미로'", len(m["title"]) <= 95 and "재미로" in m["description"])
 ck("fortune_card 아침 표가 이 토픽을 가로채지 않는다", not FC.use_card(sb))
-ck("슬롯 자동: 9시 40분 am · 15시 40분 pm",
-   N.slot_now(dt.datetime(2026, 10, 2, 9, 40, tzinfo=N.KST)) == "am"
-   and N.slot_now(dt.datetime(2026, 10, 2, 15, 40, tzinfo=N.KST)) == "pm")
+ck("슬롯 자동: 7:40 year · 9:40 am · 13:40 surname · 15:40 pm",
+   [N.slot_now(dt.datetime(2026, 10, 2, h, 40, tzinfo=N.KST)) for h in (7, 9, 13, 15)]
+   == ["year", "am", "surname", "pm"])
+ck("네 슬롯 저장 경로가 서로 다르다(하루 네 편이 서로 막지 않게)",
+   len({N.path_for(d0, sl) for sl in N.SLOTS}) == 4)
 import run_pipeline as RP  # noqa: E402
 ck("재생목록 '내 것 찾기'", RP.playlist_for(N.TOPIC) == (RP.NAME_PLAYLIST, RP.NAME_PLAYLIST_DESC))
 ck("카테고리 24(엔터테인먼트)", RP.category_for(N.TOPIC) == "24")
 
 print("── 화면(grid 장면)")
-for slot, n in (("am", N.NAME_CELLS), ("pm", 12)):
+for slot, n in (("am", N.NAME_CELLS), ("pm", 12), ("year", 10), ("surname", 20)):
     s = N.storyboard(d0, slot)
     sc = dict(s["scenes"][0], start=0, clip=9.0, _spk=0)
     html = M.build_html([sc], 9.0, acc=s["accent"], bg=False)
@@ -113,6 +130,9 @@ for slot, n in (("am", N.NAME_CELLS), ("pm", 12)):
     cw, ch, xy = M.grid_layout(n, sc["cols"])
     ck(f"{slot}: 표가 오른쪽 버튼 열(x 960)·아래 22%(y 1500) 안 침범",
        max(x for x, _ in xy) + cw <= 961 and max(y for _, y in xy) + ch <= 1500, (cw, ch))
+    fns = [int(m) for m in re.findall(r'class="gn" style="bottom:\d+px;font-size:(\d+)px"', html)]
+    longest = max(sum(0.6 if c_.isascii() else 1.0 for c_ in x["note"]) for x in sc["cells"])
+    ck(f"{slot}: 한 줄 글자가 칸 안에 든다(…로 안 잘림)", fns and fns[0] * longest <= cw - 30, (fns[:1], longest, cw))
 ck("진행자는 표 화면에 서지 않는다(grid)", "grid" in M.build_motion.__code__.co_consts
    or "grid" in open(M.__file__, encoding="utf-8").read().split("pr_on = presenter_on", 1)[1][:200])
 

@@ -494,6 +494,8 @@ def scene_html(i, sc, acc):
             k_ = room / (fb * big_em + fs * small_em + 16)
             fb, fs = int(fb * k_), int(fs * k_)
         fn = int(max(22, min(ch * 0.19, 34)))              # 한 줄
+        note_em = max(em(c.get("note", "")) for c in items) if items else 1.0
+        fn = int(max(20, min(fn, (cw - 34) / note_em)))    # 4칸 줄(성씨 표)에서 한 줄이 '…'로 잘리지 않게
         cells = []
         for k, c in enumerate(items):
             x, y = xy[k]
