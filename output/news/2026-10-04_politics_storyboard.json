@@ -1,0 +1,27 @@
+{
+  "date":"2026-10-04","topic":"politics","privacy":"public",
+  "topic_keyword":"국정감사 대법원장 증인 채택","headline":"국정감사 6일 시작, 대법원장 증인 채택 두고 여야 공방",
+  "hook_title":"국감 D-2, 대법원장 증인석 공방","accent":"#8FB0C9",
+  "thumbnail_hook":"Empty National Assembly hearing room at dawn, a lone witness table with a microphone facing a long committee dais, stacked document binders, soft blue-grey light through tall windows, no people, no text",
+  "thumbnail_text":"국감 이틀 앞, 쟁점은",
+  "scenes":[
+    {"type":"hook","pill":"국정감사","ghost":"POLITICS","lines":["국감 D-2","대법원장이","증인석에?"],"highlight":"증인석","brand":"일상공감뉴스 · 정치","narration":"국정감사를 이틀 앞두고, 증인 채택 문제를 둘러싼 공방이 이어지고 있습니다."},
+    {"type":"stat","label":"국정감사 기간","prefix":"","suffix":"주","from":0,"to":3,"bar":true,"sub":"10월 <b>6일</b>부터 <b>27일</b>까지","brand":"일상공감뉴스 · 정치","narration":"올해 국정감사는 10월 6일부터 27일까지 3주간 진행되는 것으로 알려졌습니다."},
+    {"type":"keypoint","label":"증인 채택 쟁점","points":["민주당 — 재제청 거부 과정, 직접 설명해야","국민의힘 — 사법부 수장 증인은 <b>삼권분립</b> 문제","대법원장 — 출석 요구는 법 취지에 맞지 않아"],"brand":"일상공감뉴스 · 정치","narration":"민주당은 대법관 재제청 거부 과정을 직접 설명해야 한다고 주장했고, 국민의힘은 삼권분립에 어긋난다며 반발했으며, 대법원장 측은 증인 출석 요구가 법 취지에 맞지 않는다는 입장입니다."},
+    {"type":"statement","text":"국감, 내 세금 쓰임을 묻는 자리","highlight":"내 세금","brand":"일상공감뉴스 · 정치","narration":"국정감사는 정부가 우리 세금을 어떻게 쓰는지 따져 묻는 자리이기도 합니다."},
+    {"type":"statement","text":"증인 채택, 어떻게 보십니까?","highlight":"어떻게","brand":"일상공감뉴스 · 정치","narration":"대법원장 증인 채택 문제, 여러분은 어떻게 보십니까?"}
+  ],
+  "sources":["YTN","inews24","데일리안","뉴스1"],"credit":"출처 YTN·inews24·데일리안·뉴스1 등",
+  "platforms":{
+    "youtube":{"title":"국감 D-2, 대법원장 증인석 공방 #shorts","description":"국정감사 6일 시작, 대법원장 증인 채택 두고 여야 공방\n출석 요구의 적절성을 두고 여야와 대법원 측 입장이 엇갈리고 있습니다.\n출처 YTN·inews24·데일리안·뉴스1 등\n\n※ 사실관계는 보도 시점 기준이며, 수사·재판 중인 사안은 확정된 내용이 아닙니다.\n\n#국정감사 #국감 #정치 #뉴스 #쇼츠 #shorts",
+      "localizations":{
+        "en":{"title":"Audit Starts in 2 Days: Chief Justice as Witness? #shorts","description":"South Korea's parliamentary audit begins Oct 6. Parties and the judiciary clash over calling the Chief Justice as a witness.\nSources: YTN, inews24, Dailian, News1\n\n※ Facts are as of the time of reporting; matters under investigation or trial are not confirmed.\n\n#shorts #SouthKorea #politics #news"},
+        "ja":{"title":"国政監査まであと2日、大法院長の証人採択で攻防 #shorts","description":"国政監査は10月6日に始まります。大法院長の証人採択をめぐり、与野党と大法院側の立場が分かれています。\n出典：YTN・inews24・デイリアン・ニュース1\n\n※ 事実関係は報道時点のものであり、捜査・裁判中の事案は確定した内容ではありません。\n\n#shorts #韓国政治 #ニュース"},
+        "zh-Hant":{"title":"國政監查倒數2天，大法院長證人之爭 #shorts","description":"國政監查將於10月6日展開，朝野與大法院方面就是否傳喚大法院長出任證人立場分歧。\n出處：YTN、inews24、Dailian、News1\n\n※ 事實以報導時點為準，偵查、審判中的事項並非確定內容。\n\n#shorts #韓國政治 #新聞"}
+      }
+    },
+    "instagram":{"caption":"국감 D-2, 대법원장 증인석 공방\n출처 YTN·inews24·데일리안·뉴스1 등\n\n#국정감사 #국감 #정치 #뉴스 #쇼츠 #shorts #릴스"},
+    "threads":{"text":"국감 D-2, 대법원장 증인석 공방\n출처 YTN·inews24·데일리안·뉴스1 등"}
+  },
+  "notes":"모션그래픽 5장면 · 단일 내레이터 · 배경음 없음."
+}
