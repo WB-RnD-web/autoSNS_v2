@@ -1,0 +1,29 @@
+{
+  "date":"2026-10-03","topic":"politics","slot":"noon","privacy":"public",
+  "topic_keyword":"국정감사 민생 과제","headline":"국정감사 6일 시작, 여당 을지로위 민생 7대 과제 제시",
+  "hook_title":"846곳 감사, 25일 시작합니다","accent":"#8FB0C9",
+  "thumbnail_hook":"Empty National Assembly hearing room with rows of microphones and stacked document binders on long wooden tables, soft morning light through tall windows, calm and formal atmosphere, no people, no text",
+  "thumbnail_text":"국감 D-3, 쟁점은?",
+  "scenes":[
+    {"type":"hook","pill":"국정감사","ghost":"POLITICS","lines":["국감 사흘 전","먼저 꺼낸","민생 과제"],"highlight":"민생","brand":"일상공감뉴스 · 정치","narration":"국정감사를 사흘 앞두고, 여당이 먼저 민생 과제 목록을 내놨습니다."},
+    {"type":"stat","label":"감사 대상 기관","prefix":"","suffix":"곳","from":0,"to":846,"bar":true,"sub":"<b>10월 6일</b>부터 25일간","brand":"일상공감뉴스 · 정치","narration":"올해 국정감사는 10월 6일부터 25일간, 팔백마흔여섯 개 기관을 대상으로 진행됩니다."},
+    {"type":"stat","label":"을지로위 국감 과제","prefix":"","suffix":"개","from":0,"to":7,"bar":true,"sub":"더불어민주당 을지로위원회 발표","brand":"일상공감뉴스 · 정치","narration":"더불어민주당 을지로위원회는 국정감사에서 집중할 민생 과제 일곱 가지를 발표했습니다."},
+    {"type":"keypoint","label":"과제 가운데 일부","points":["<b>홈플러스</b> 사태와 납품대금 변제","<b>배달앱</b> 수수료·불공정 계약","<b>택배</b> 노동자 과로사 대책"],"brand":"일상공감뉴스 · 정치","narration":"홈플러스 사태, 배달앱 수수료, 택배 노동자 과로사 대책 등이 포함됐습니다."},
+    {"type":"keypoint","label":"생활과 맞닿은 곳","points":["배달 수수료 — 내 <b>주문 가격</b>","새벽배송 — 내 <b>택배 시간</b>"],"brand":"일상공감뉴스 · 정치","narration":"배달 수수료와 새벽배송 문제는 소비자가 매일 쓰는 가격과 서비스에 닿아 있습니다."},
+    {"type":"statement","text":"이번 국감, 무엇을 봐야 할까?","highlight":"무엇을","brand":"일상공감뉴스 · 정치","narration":"이번 국정감사에서 여러분은 어떤 문제를 가장 살펴보길 바라십니까?"}
+  ],
+  "sources":["뉴스핌","파이낸셜뉴스","디지털데일리","더페어뉴스"],
+  "credit":"출처 뉴스핌·파이낸셜뉴스·디지털데일리·더페어뉴스 등",
+  "platforms":{
+    "youtube":{"title":"846곳 감사, 25일 시작합니다 #shorts","description":"국정감사 6일 시작, 여당 을지로위 민생 7대 과제 제시\n출처 뉴스핌·파이낸셜뉴스·디지털데일리·더페어뉴스\n\n※ 사실관계는 보도 시점 기준이며, 수사·재판 중인 사안은 확정된 내용이 아닙니다.\n\n#국정감사 #국감 #민생 #뉴스 #쇼츠 #shorts",
+      "localizations":{
+        "en":{"title":"846 Institutions, 25 Days: Korea's Audit Starts Tuesday #shorts","description":"Korea's annual parliamentary audit begins Oct 6, covering 846 institutions over 25 days. The ruling party unveiled seven livelihood priorities, including Homeplus and delivery-app fees.\n\n※ Facts are as of reporting time; matters under investigation or trial are not confirmed.\n\n#shorts"},
+        "ja":{"title":"846機関を25日間監査、韓国国政監査が始まります #shorts","description":"韓国の国政監査は10月6日から25日間、846機関が対象です。与党はホームプラスや配達アプリ手数料など、生活に関わる7つの課題を発表しました。\n\n※ 事実関係は報道時点のものであり、捜査・裁判中の事案は確定した内容ではありません。\n\n#shorts"},
+        "zh-Hant":{"title":"846個機關、25天：韓國國政監査即將登場 #shorts","description":"韓國國政監査將於10月6日起進行25天，對象為846個機關。執政黨公布了包括Homeplus、外送平台手續費在內的7項民生課題。\n\n※ 事實以報導時點為準，偵查或審判中的案件並非確定內容。\n\n#shorts"}
+      }
+    },
+    "instagram":{"caption":"846곳 감사, 25일 시작합니다\n출처 뉴스핌·파이낸셜뉴스·디지털데일리\n\n#국정감사 #국감 #민생 #뉴스 #쇼츠 #shorts #릴스"},
+    "threads":{"text":"846곳 감사, 25일 시작합니다\n출처 뉴스핌·파이낸셜뉴스·디지털데일리"}
+  },
+  "notes":"모션그래픽 6장면 · 단일 내레이터 · 배경음 없음."
+}
