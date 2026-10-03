@@ -229,6 +229,26 @@ def build_spec(d: dt.date) -> dict:
     return spec
 
 
+def on_youtube(title: str, yt=None) -> str | None:
+    """채널 최근 업로드 50개에 같은 제목이 있으면 그 주소. 토큰이 없으면 None(확인 못 함 → 진행).
+
+    2026-10-03: 루틴 push(routine/korea_sounds)와 예비 cron(main)이 둘 다 돌아 Jeju 8시간이 두 번 올라갔다
+    (_MCmKYLw2Qo · PRJvQxgFJbY). ledger 는 Actions 캐시라 브랜치마다 따로 놀아 서로를 못 본다 — 유튜브를 직접 본다."""
+    if yt is None:
+        try:
+            import upload_youtube_novel as U
+            yt = U.get_service()
+        except BaseException as e:  # noqa: BLE001 — 토큰 없을 때 SystemExit 도 삼킨다
+            print(f"(유튜브 확인 생략: {str(e)[:80]})", file=sys.stderr)
+            return None
+    ch = yt.channels().list(part="contentDetails", mine=True).execute()["items"][0]
+    up = ch["contentDetails"]["relatedPlaylists"]["uploads"]
+    for it in yt.playlistItems().list(part="snippet", playlistId=up, maxResults=50).execute().get("items", []):
+        if (it["snippet"].get("title") or "").strip() == title.strip():
+            return f"https://youtu.be/{it['snippet']['resourceId']['videoId']}"
+    return None
+
+
 def kst_today() -> dt.date:
     return (dt.datetime.now(dt.timezone.utc) + dt.timedelta(hours=9)).date()
 
@@ -238,6 +258,7 @@ def main() -> int:
     ap.add_argument("--date", default="", help="YYYY-MM-DD (비우면 오늘 KST 가 속한 슬롯의 수·토)")
     ap.add_argument("--out", default="")
     ap.add_argument("--list", action="store_true")
+    ap.add_argument("--seen", action="store_true", help="이 슬롯 영상이 채널에 이미 있으면 주소를 찍고 0, 없으면 1")
     a = ap.parse_args()
     # 날짜를 안 주면(예약·루틴 실행) 오늘이 속한 슬롯의 발행일로 맞춘다 — 늦게 돈 실행도 같은 ledger 키가 된다.
     d = dt.date.fromisoformat(a.date) if a.date else slot_date(kst_today())
@@ -251,6 +272,10 @@ def main() -> int:
             cur += dt.timedelta(days=1)
         return 0
     spec = build_spec(d)
+    if a.seen:
+        url = on_youtube(spec["platforms"]["youtube"]["title"])
+        print(url or "")
+        return 0 if url else 1
     out_dir = a.out or "."
     os.makedirs(out_dir, exist_ok=True)
     path = os.path.join(out_dir, f"{spec['date']}_korea-{spec['theme_id']}.json")
