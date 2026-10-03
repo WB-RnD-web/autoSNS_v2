@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-03", "topic": "ai", "slot": "pm", "privacy": "public",
+  "format": "explain",
+  "angle": "규칙·정책",
+  "topic_keyword": "애플 전체 디스크 접근",
+  "headline": "애플, 맥의 전체 디스크 접근 권한 통제 강화",
+  "hook_title": "애플이 맥 속 AI 접근 막는다",
+  "thumbnail_hook": "A closed laptop on a desk at night with a glowing padlock icon floating above it, soft blue light, tidy home office, symbolic privacy and security concept, no text, no faces",
+  "thumbnail_text": "내 메일, 누가 보나",
+  "glossary": [],
+  "sources": [
+    {"outlet": "한국경제", "title": "\"내 이메일·메시지까지 AI가 본다고?\"…애플, 맥 보안 빗장",
+     "url": "https://www.hankyung.com/article/2026100314867",
+     "published_at": "2026-10-03T08:00:29+09:00", "confirmed": true,
+     "facts": ["애플은 2일(현지시간) 개발자 공지를 통해 맥 컴퓨터의 ‘전체 디스크 접근’ 설정에 추가 보안 제어 장치를 도입하겠다고 밝혔다.",
+               "이를 허용하면 앱이 파일뿐 아니라 이메일과 메시지, 웹 방문 기록 등 시스템에 저장된 민감한 정보에 접근할 수 있다."]},
+    {"outlet": "AI타임스", "title": "애플, 맥OS '전체 디스크 접근' 제어 강화...AI 에이전트 무단 접근 막는다",
+     "url": "https://www.aitimes.com/news/articleView.html?idxno=215938",
+     "published_at": "2026-10-03T12:39:36+09:00", "confirmed": true,
+     "facts": ["앞으로 이처럼 광범위한 권한을 부여하려면 사용자가 ‘명시적인 승인(very explicit user action)’을 직접 수행하도록 추가적인 통제를 적용할 계획이다.",
+               "구체적으로 어떤 방식으로 권한 승인 절차가 바뀌는지와 적용 시점은 아직 공개하지 않았다."]}
+  ],
+  "scenes": [
+    {"type": "hook", "pill": "보안", "lines": ["AI가 내 메일", "애플이 잠근다"], "highlight": "애플",
+     "narration": "내 컴퓨터 속 메일과 메시지를, 일을 대신 해 주는 AI가 읽을 수 있다는 걱정이 커지고 있습니다."},
+    {"type": "statement", "text": "맥 ‘전체 디스크 접근’ 강화", "highlight": "전체 디스크 접근",
+     "narration": "애플이 개발자 공지를 통해, 맥의 전체 디스크 접근 설정에 보안 장치를 더하겠다고 밝혔습니다."},
+    {"type": "statement", "text": "허용하면 메일·메시지도 열려요", "highlight": "메일",
+     "narration": "이 권한을 허용하면 앱이 파일뿐 아니라 메일과 메시지, 웹 방문 기록까지 볼 수 있습니다."},
+    {"type": "keypoint", "label": "앞으로 달라지는 점",
+     "points": ["큰 권한은 <b>직접 승인</b>", "허용 전 <b>위험을 분명히</b>", "적용 시점은 <b>미공개</b>"],
+     "narration": "앞으로는 넓은 권한을 줄 때 사용자가 직접 분명하게 승인해야 하고, 구체적인 방식과 시점은 아직 공개되지 않았습니다."},
+    {"type": "statement", "text": "내 앱 권한, 한번 확인해요", "highlight": "권한",
+     "narration": "오늘 저녁, 어떤 앱에 모든 파일 접근을 허락해 두었는지 한번 살펴보시면 어떨까요?"}
+  ],
+  "platforms": {
+    "youtube": {"title": "애플이 맥 속 AI 접근 막는다 #shorts", "description": "애플이 맥의 전체 디스크 접근 권한을 더 엄격하게 관리하겠다고 밝혔어요. 큰 권한은 직접 승인해야 합니다.\n\n#AI #애플 #shorts"},
+    "instagram": {"caption": "애플이 맥 속 AI 접근 막는다\n\n애플이 맥의 '전체 디스크 접근' 권한에 보안 장치를 더하겠다고 밝혔어요.\n이 권한을 주면 앱이 메일과 메시지, 웹 방문 기록까지 볼 수 있거든요.\n앞으로는 사용자가 직접 분명하게 승인해야 하고, 시점은 아직 공개되지 않았어요.\n매일 오전·저녁 AI 소식은 유튜브 '왕별이'에서 쉽게 풀어 드려요.\n출처 한국경제, AI타임스\n\n#AI #애플 #개인정보 #보안"},
+    "threads": {"text": "애플이 맥에서 앱에 주는 '전체 디스크 접근' 권한을 더 엄격하게 관리하겠다고 했어요. 메일과 메시지까지 볼 수 있는 권한이라 직접 승인이 필요해진다고 합니다. 매일 AI 소식은 유튜브 왕별이에서. #AI소식"}
+  },
+  "notes": "AI 소식 저녁 편 · explain · 장면 5개"
+}
