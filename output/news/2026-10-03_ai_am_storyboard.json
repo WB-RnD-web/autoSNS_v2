@@ -1,0 +1,114 @@
+{
+ "date": "2026-10-03",
+ "topic": "ai",
+ "slot": "am",
+ "privacy": "public",
+ "format": "guard",
+ "angle": "돈",
+ "topic_keyword": "은행 해킹",
+ "headline": "은행권 잇단 고객정보 유출, AI 공격 추정",
+ "hook_title": "하나은행 89명 정보 유출, AI 추정",
+ "thumbnail_hook": "A dark empty bank counter at night with a glowing computer monitor, a closed padlock icon projected on the glass window, blue server room light reflecting, quiet tense mood, no text, no faces",
+ "thumbnail_text": "은행 정보 유출 주의",
+ "glossary": [],
+ "sources": [
+  {
+   "outlet": "동아일보",
+   "title": "은행 6곳 ‘융단폭격 해킹’ 4곳 뚫려…“AI 활용 전방위 공격 추정”",
+   "url": "https://www.donga.com/news/Economy/article/all/20261002/134777336/1",
+   "published_at": "2026-10-02T20:32:00+09:00",
+   "confirmed": false,
+   "facts": [
+    "신한은행에서는 대출모집인들이 모바일 홈페이지 ‘M 신한’에서 자신이 접수한 대출 처리 현황을 조회하는 시스템이 지난달 28일부터 공격받기 시작했다.",
+    "국민은행에서는 지난달 30일 늦은 오후 직원용 모바일 업무지원 시스템에서 비정상적인 외부 접근이 발생해 고객 119명의 정보가 빠져나갔다.",
+    "보안업계에서는 이번 공격에 AI 에이전트를 활용한 자동화된 해킹 기법이 동원됐을 가능성을 높게 보고 있다."
+   ]
+  },
+  {
+   "outlet": "연합뉴스",
+   "title": "하나은행도 AI 해킹 뚫렸다…89명 개인정보 유출(종합)",
+   "url": "https://www.yna.co.kr/view/AKR20261002160251002",
+   "published_at": "2026-10-02T17:54:59+09:00",
+   "confirmed": false,
+   "facts": [
+    "하나은행은 2일 \"외부 해킹 세력을 통해 89명의 정보(주민번호, 성명, 주소, 이메일주소, 전화번호, 휴대번호, 직장명)가 유출된 것으로 파악된다\"고 밝혔다.",
+    "해당 시스템은 인터넷 및 모바일 뱅킹 거래 시스템과는 별개의 채널로, 고객의 금융거래 정보 유출과는 관련이 없는 것으로 확인됐다"
+   ]
+  },
+  {
+   "outlet": "연합뉴스",
+   "title": "은행권 전방위 해킹 피해…AI시대 금융 보안 비상(종합)",
+   "url": "https://www.yna.co.kr/view/AKR20261002128851002",
+   "published_at": "2026-10-02T19:16:54+09:00",
+   "confirmed": false,
+   "facts": [
+    "\"기존 해커들은 큰 시스템에서 정보를 빼가는 방식으로 일하지만, AI는 작은 시스템을 다 훑으며 보안 취약성을 찾는다\"",
+    "핵심 금융거래 시스템 자체가 뚫린 것이 아니라는 점은 그나마 다행스럽지만, 고객정보가 실제 외부로 빠져나간 만큼 보안 체계에 허점이 있었다는 지적을 피하기는 어려운 상황이다."
+   ]
+  }
+ ],
+ "scenes": [
+  {
+   "type": "hook",
+   "pill": "주의",
+   "lines": [
+    "은행 정보가",
+    "줄줄이 유출"
+   ],
+   "highlight": "유출",
+   "narration": "여러 은행에서 고객 정보가 빠져나갔고, AI를 쓴 공격으로 보인다고 전해졌습니다."
+  },
+  {
+   "type": "stat",
+   "label": "하나은행 유출 고객",
+   "from": 0,
+   "to": 89,
+   "prefix": "",
+   "suffix": "명",
+   "bar": true,
+   "sub": "KB국민은행 <b>119명</b>",
+   "narration": "하나은행은 고객 팔십구 명의 정보가 유출됐다고 밝혔고, 국민은행도 백열아홉 명이라고 전해졌습니다."
+  },
+  {
+   "type": "statement",
+   "text": "송금 시스템과는 별개",
+   "highlight": "별개",
+   "narration": "하나은행은 뚫린 곳이 인터넷과 모바일 뱅킹 거래 시스템과는 별개라고 설명했습니다."
+  },
+  {
+   "type": "statement",
+   "text": "AI는 허술한 곳부터 훑어요",
+   "highlight": "허술한",
+   "narration": "전문가들은 AI가 관리가 허술한 작은 시스템부터 훑으며 약점을 찾는다고 말했다고 전해졌습니다."
+  },
+  {
+   "type": "keypoint",
+   "label": "오늘 해 볼 3가지",
+   "points": [
+    "은행 <b>공식 앱·번호</b>로 확인",
+    "모르는 링크는 <b>누르지 않기</b>",
+    "비밀번호 <b>바꿔 두기</b>"
+   ],
+   "narration": "은행 안내라도 공식 앱이나 번호로 다시 확인하고, 모르는 링크는 누르지 마시고, 비밀번호를 바꿔 두세요."
+  },
+  {
+   "type": "statement",
+   "text": "내 정보도 해당될까요?",
+   "highlight": "내 정보",
+   "narration": "걱정되신다면 거래하시는 은행 고객센터에 내 정보가 해당되는지 물어보시면 어떨까요?"
+  }
+ ],
+ "platforms": {
+  "youtube": {
+   "title": "하나은행 89명 정보 유출, AI 추정 #shorts",
+   "description": "여러 은행에서 고객 정보가 유출됐고 AI를 쓴 공격으로 추정된다고 전해졌어요. 오늘 해 볼 안전 습관 3가지를 정리했어요.\n\n#AI #은행 #shorts"
+  },
+  "instagram": {
+   "caption": "하나은행 89명 정보 유출, AI 추정\n\n신한·KB국민·하나·부산은행에서 고객 정보가 빠져나갔고, AI를 쓴 공격으로 보인다고 전해졌어요.\n하나은행은 인터넷·모바일 뱅킹 거래 시스템과는 별개라고 밝혔어요.\n은행 안내는 공식 앱이나 번호로 다시 확인해 보세요.\n매일 오전·저녁 AI 소식은 유튜브 '왕별이'에서 쉽게 풀어 드려요.\n출처 동아일보, 연합뉴스\n\n#AI #은행 #개인정보 #보안"
+  },
+  "threads": {
+   "text": "여러 은행에서 고객 정보가 유출됐고 AI를 쓴 공격으로 보인다고 해요. 은행 안내도 공식 앱이나 번호로 다시 확인해 보세요. 매일 AI 소식은 유튜브 왕별이에서. #AI소식"
+  }
+ },
+ "notes": "AI 소식 오전 편 · guard · 장면 6개"
+}
