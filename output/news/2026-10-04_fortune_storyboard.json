@@ -1,0 +1,40 @@
+{
+  "date":"2026-10-04","topic":"fortune","privacy":"public",
+  "topic_keyword":"일요일 띠별 운세",
+  "headline":"10월 4일 일요일 띠별 운세, 평소 조용하던 토끼띠 급상승",
+  "hook_title":"일요일, 토끼띠만 2.4배 열려요",
+  "accent":"#C9A24B",
+  "loop_line":"그 한 띠가 누구인지 알았다면, 다시 처음부터 볼까요.",
+  "thumbnail_hook":"Close-up of a golden rabbit emblem with glowing amber eyes, fine scale-like gold engraving, traditional auspicious gold cloud patterns over an amethyst starry night, small gold coin pouch glowing at the bottom, no human face, no text in image",
+  "thumbnail_text":"96점 나온 토끼띠",
+  "scenes":[
+    {"type":"hook","pill":"띠별 운세","ghost":"FORTUNE","lines":["일요일","평소 조용한","한 띠가 떠요"],"highlight":"한 띠",
+     "brand":"일상공감뉴스 · 운세","narration":"일요일, 열두 띠 중에 평소 조용하던 한 띠만 크게 열립니다."},
+    {"type":"keypoint","label":"일요일 운 좋은 띠 · 3위부터","points":["3위 <b>소띠</b> — 미룬 일이 술술 풀려요","2위 <b>양띠</b> — 가벼운 만남이 힘이 돼요"],
+     "brand":"일상공감뉴스 · 운세","narration":"3위는 소띠, 2위는 양띠이고, 1위는 잠시 뒤에 알려 드릴게요."},
+    {"type":"stat","label":"행운 지수 1위 · 토끼띠","prefix":"","suffix":"점","from":0,"to":96,"bar":true,
+     "sub":"<b>1987</b> · <b>1999</b> · <b>2011</b>년생이라면",
+     "brand":"일상공감뉴스 · 운세","narration":"1위는 토끼띠, 87년생과 99년생이라면 오늘 지수가 96점입니다."},
+    {"type":"gauge","label":"토끼띠 흐름","from":1,"to":2.4,"unit":"배","sub":"평소보다 <b>2.4배</b> 열리는 날",
+     "brand":"일상공감뉴스 · 운세","narration":"쉬는 날의 여유와 맞물려 평소보다 흐름이 두 배 넘게 열린다고 해요."},
+    {"type":"keypoint","label":"오늘의 행운 팁","points":["행운의 색 <b>연두</b> · 숫자 <b>3</b>","<b>토끼띠</b> — 고민한 연락은 오후에","<b>닭띠</b> — 속도만 줄이면 충전 지수 상승"],
+     "brand":"일상공감뉴스 · 운세","narration":"그래서 오늘은 망설이던 연락을 오후에 해 보시면 좋겠습니다."},
+    {"type":"keypoint","label":"이번 주 행운의 로또 번호","points":["<b>14 · 26 · 32 · 33 · 43 · 44</b>","재미로 뽑아 본 번호예요 · 캡처해 두세요"],
+     "brand":"일상공감뉴스 · 운세","narration":"이번 주 행운의 로또 번호는, 14, 26, 32, 33, 43, 44입니다."},
+    {"type":"statement","text":"토끼띠 vs 나머지 띠, 당신은 어느 쪽?","highlight":"어느 쪽",
+     "brand":"일상공감뉴스 · 운세","narration":"당신은 토끼띠인가요, 아닌가요, 댓글로 알려 주세요. 재미로 보는 운세예요."}
+  ],
+  "sources":["전통 띠 운세(명리) 기반"],"credit":"재미로 보는 오늘의 운세 · 명리 일진 참고",
+  "platforms":{
+    "youtube":{"title":"일요일, 토끼띠만 2.4배 열려요 #shorts","description":"10월 4일 일요일 띠별 운세, 평소 조용하던 토끼띠 급상승\n※ 재미로 보는 운세입니다\n\n#오늘의운세 #띠별운세 #운세 #쇼츠 #shorts",
+      "localizations":{
+        "en":{"title":"Only the Rabbit Sign Opens Up 2.4x Today #shorts","description":"Sunday zodiac fortune: the usually quiet Rabbit sign rises to the top.\n※ Just for fun, not a prediction.\n\n#horoscope #zodiac #fortune #shorts"},
+        "ja":{"title":"日曜日、うさぎ年だけ運気が2.4倍に開きます #shorts","description":"日曜日の干支別運勢、いつも静かなうさぎ年が急上昇です。\n※ 楽しみのための運勢です。\n\n#今日の運勢 #干支 #占い #shorts"},
+        "zh-Hant":{"title":"週日只有屬兔運勢開到2.4倍 #shorts","description":"週日生肖運勢，平時安靜的屬兔急速上升。\n※ 僅供娛樂參考。\n\n#今日運勢 #生肖 #運勢 #shorts"}
+      }
+    },
+    "instagram":{"caption":"일요일, 토끼띠만 2.4배 열려요\n※ 재미로 보는 운세\n\n#오늘의운세 #띠별운세 #운세 #쇼츠 #shorts #릴스"},
+    "threads":{"text":"일요일, 토끼띠만 2.4배 열려요\n※ 재미로 보는 운세"}
+  },
+  "notes":"모션그래픽 7장면(로또 포함) · 단일 내레이터 · 배경음 없음 · 엔터테인먼트(재미) 운세 · MODE=daily · ANGLE=G."
+}
