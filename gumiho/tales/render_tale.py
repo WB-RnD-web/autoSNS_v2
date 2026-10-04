@@ -53,7 +53,21 @@ WORKERS = int(os.environ.get("TALES_TTS_WORKERS", "2"))
 SPARK_MAX_WAITING = int(os.environ.get("GUMIHO_SPARK_MAX_WAITING", "6"))
 IMG_MODEL = os.environ.get("TALES_IMG_MODEL", "z-image-turbo")
 LOOK = ("anime film still, Korean folklore, Joseon dynasty era, painterly detailed background, "
-        "cinematic lighting, atmospheric, ")
+        "cinematic lighting, atmospheric, ")      # look 없는 옛 대본(1~9화) — 글자 하나 안 바꾼다(그림 캐시·화풍 유지)
+# 화풍(레포 변수 TALES_STYLE): anime(기본 — 구미 초상화와 같은 결) | film(영화 같은 반실사). 10/5 같은 장면 비교:
+#   C:\wbtmpench\look\compare.jpg — 옛 화풍은 현대 엘리베이터를 한옥 마당에, 손톱 깎는 사람을 한복 차림으로 그렸다.
+STYLES = {
+    "anime": ("anime film still, ", "painterly detailed background, cinematic lighting, atmospheric, "),
+    "film": ("cinematic horror film still, ", "digital painting, moody low-key lighting, shallow depth of field, atmospheric, "),
+}
+STYLE_HEAD, STYLE_TAIL = STYLES.get(os.environ.get("TALES_STYLE", "anime"), STYLES["anime"])
+
+
+def look_prefix(look: str | None) -> str:
+    """그림 프롬프트 앞에 붙는 화풍 + 시대. look 은 대본(또는 장면)의 'look' — tales.LOOKS 키."""
+    if not look:
+        return LOOK
+    return STYLE_HEAD + T.LOOKS[look] + STYLE_TAIL
 ASSETS = os.path.join(GUMIHO, "assets", "tales")
 GOLD, RED, CREAM = (236, 196, 110), (214, 52, 40), (246, 238, 222)
 SHORT_MAX = 59.0
@@ -253,7 +267,7 @@ def spark_wait():
         print(f"   ⚠️ 대기열 확인 실패(계속): {e}")
 
 
-def gen_image(prompt: str, out_png: str, mock: bool = False, seed: int = 0) -> bool:
+def gen_image(prompt: str, out_png: str, mock: bool = False, seed: int = 0, look: str = LOOK) -> bool:
     if mock:
         rnd = random.Random(prompt)
         im = Image.new("RGB", (1216, 832), tuple(rnd.randint(30, 200) for _ in range(3)))
@@ -266,13 +280,13 @@ def gen_image(prompt: str, out_png: str, mock: bool = False, seed: int = 0) -> b
     import wbspark
     for attempt in range(3):
         spark_wait()
-        if wbspark.generate_image(LOOK + prompt, out_png, aspect="16:9", no_llm=True,
+        if wbspark.generate_image(look + prompt, out_png, aspect="16:9", no_llm=True,
                                   model=IMG_MODEL or None, timeout_sec=900):
             return True
         time.sleep(10 + attempt * 20)
     try:                                   # 폴백: NVIDIA 무료 FLUX
         import imagegen
-        return bool(imagegen.flux_image(LOOK + prompt, out_png, 1344, 768, seed=seed))
+        return bool(imagegen.flux_image(look + prompt, out_png, 1344, 768, seed=seed))
     except Exception as e:  # noqa: BLE001
         print(f"   ⚠️ FLUX 폴백 실패: {e}")
     return False
@@ -315,12 +329,17 @@ def make_images(s: dict, shots: list[dict], wd: str, mock: bool = False) -> dict
     os.makedirs(wd, exist_ok=True)
     prompts = list(dict.fromkeys(x["img"] for x in shots if x["kind"] == "img"))
     prompts.append(s["thumb"]["img"])
+    # 장면별 look(현대 이야기 속 회상 장면 등) — 없으면 대본 look, 그것도 없으면 옛 조선 화풍(LOOK)
+    scene_look = {x["img"]: x.get("look") for x in (s.get("scenes") or []) if x.get("img") and x.get("look")}
+    if s.get("id", 0) < T.GLOBAL_FROM:      # 실험 주간(3~9화)은 대본에 look 이 있어도 예전 화풍 — 형식만 비교한다
+        scene_look, s = {}, dict(s, look=None)
     raw = {}
     t0 = time.time()
     for n, p in enumerate(prompts, 1):
-        out = os.path.join(wd, f"raw_{h16(LOOK, p, mock)}.png")
+        lp = look_prefix(scene_look.get(p) or s.get("look"))
+        out = os.path.join(wd, f"raw_{h16(lp, p, mock)}.png")
         if not (os.path.exists(out) and os.path.getsize(out) > 10000):
-            if not gen_image(p, out, mock, seed=n):
+            if not gen_image(p, out, mock, seed=n, look=lp):
                 raise RuntimeError(f"그림 실패: {p[:60]}")
         raw[p] = out
         if n % 5 == 0 or n == len(prompts):
