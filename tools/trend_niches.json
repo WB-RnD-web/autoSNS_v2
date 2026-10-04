@@ -1,5 +1,5 @@
 {
- "about": "트렌드 레이더 참고 채널·주제 규칙. 채널은 2026-10-01 search.list 1회 탐색(분야별 최근 30일 조회수 상위)으로 골랐다. 우리 채널(own_*)은 API 로 전부 읽는다(RSS 는 최신 15개뿐). tags 는 제목 정규식 — 한 영상이 여러 주제에 들 수 있다.",
+ "about": "트렌드 레이더 참고 채널·주제 규칙. 채널은 2026-10-01 search.list 1회 탐색(분야별 최근 30일 조회수 상위)으로 골랐다. 2026-10-04 정치 쇼츠(search.list 2회 — 최근 14일 조회수 상위 중 방송사 아닌 쇼츠 채널, 진영 양쪽)·사연 쇼츠·동양 설화(영어)는 10/2 떡상 채널 해부에서 골랐다. 우리 채널(own_*)은 API 로 전부 읽는다(RSS 는 최신 15개뿐). tags 는 제목 정규식 — 한 영상이 여러 주제에 들 수 있다.",
  "niches": {
   "fortune_kr": {
    "label": "운세(왕별이)",
@@ -94,14 +94,59 @@
     "long (hours)": "(?i)\\d+ hours?|10h|8h", "korea·asia": "(?i)korea|japan|hanok|temple"
    }
   },
+  "politics_kr": {
+   "label": "정치 쇼츠(왕별이)",
+   "channels": {
+    "UC79_XHG4OI6h7bpDsjdBhlw": "1분컷 K-이슈", "UCeO1r1w60KQvSCFYWNNXetg": "내로남불시러", "UCU76w3ZugfpQ9HUUpNj2utw": "민주답",
+    "UC2YGBmPHODDhztqL5rO8PBA": "보수tv", "UCDhcXhZBOGfLi1g7g-k8iXA": "명랑뉴스", "UCgdnxkDUNxOn0FZK1V_j05w": "우로나란히",
+    "UCcSSwxCUElNMIG-ZQrINKFQ": "正國세상", "UCgjXZYS0Ktg3CXpvs5cPpWA": "정치폭격"
+   },
+   "tags": {
+    "대통령": "대통령|대통령실|용산|청와대", "국회·국감": "국회|국감|국정감사|본회의|법안|의원", "여야 공방": "여야|민주당|국민의힘|국힘|조국|개혁신당",
+    "검찰·사법": "검찰|검사|법원|대법|판사|재판|수사|특검|구속", "돈·세금": "세금|예산|연금|수당|지원금|떡값|세비|월급|\\d+억|\\d+만 ?원",
+    "선거": "선거|지선|총선|보궐|후보|공천", "외교·북한": "북한|미국|트럼프|중국|일본|외교|관세",
+    "말싸움·일침": "막말|논란|발끈|폭발|버럭|일침|참교육|팩폭|사이다|박살|쩔쩔|말문",
+    "질문형": "\\?|왜 |진짜", "숫자 제목": "\\d"
+   }
+  },
+  "saeyeon_kr": {
+   "label": "사연 쇼츠(왕별이 13:07)",
+   "channels": {
+    "UCoySkcWs7KaUJnPiB6Y_bNQ": "김여사네", "UCfGT0xaIxV6TR_1wiDVtQAQ": "사연콸콸", "UCZKYyDOi3L_Dmxcqlk1crZA": "참교육TV",
+    "UC8Rm2CjJOMGahyjs8sM3ZkQ": "꿀잼톡톡", "UC1BdU8vL4ZYNLBrIhnST3dA": "이슈드라마", "UC_xQGgl4pBzaO7kq94k7aDg": "백년해로사연_zip",
+    "UCYgYuSunyyF3DTFKRQMYzEQ": "감동국밥집", "UCBk_BF7JYGuCpFvK6-OeDmg": "백세극장", "UC6-fcpli_L7Hox3pum3sMsg": "공감1분드라마"
+   },
+   "tags": {
+    "참교육·사이다": "참교육|사이다|복수|응징|혼쭐|통쾌", "감동·반전": "감동|눈물|반전|결국|알고 보니|정체",
+    "시댁·며느리": "시어머니|시댁|며느리|시누|장모|사위|시아버지", "자식·효도": "자식|아들|딸|효도|불효|손주|손자|손녀",
+    "돈·유산": "유산|재산|빚|상속|건물주|부자|통장|\\d+억", "부부": "남편|아내|이혼|바람|불륜|부부",
+    "노인 무시": "노인|할머니|할아버지|무시|거지|노숙|초라", "가게·직장": "식당|가게|사장|직원|회장|알바|손님|국밥",
+    "말줄임 제목": "…|\\.\\.\\."
+   }
+  },
+  "folklore_en": {
+   "label": "Asian folklore & myth (Nine Tails 본편)",
+   "channels": {
+    "UCK-H_9O_MBnuW69KvwjZyTw": "Beauties & Beasts", "UCh4ClQULCOEtO2EIOLPcuRw": "Shadow Stories", "UC0K5uzc42RiwDP_4ZAfSWqw": "Mytho Facts",
+    "UCRjxhVtRUKgSmPYGRJuTaOw": "Judicium", "UCH79AUjm7pjCVHKjNU3ENFg": "slurpy"
+   },
+   "tags": {
+    "korea": "(?i)korea|joseon|gumiho|dokkaebi|gwishin", "japan": "(?i)japan|yokai|kitsune|yurei|onryo|oni\\b", "china": "(?i)china|chinese|huli jing|jiangshi",
+    "fox·spirit": "(?i)fox|kitsune|gumiho|spirit|ghost", "don't·never": "(?i)^don'?t|^never|do not|why you should",
+    "list·ranking": "(?i)^\\d+ |scariest|most |creatures|monsters", "explained·origin": "(?i)explained|origin|legend|myth|history",
+    "she·he story": "(?i)^(she|he|they) |\\bwho\\b", "wedding·marriage": "(?i)wedding|bride|marri|husband|wife"
+   }
+  },
   "own_wb": {
    "label": "우리: 왕별이",
    "own": true,
    "channels": {"UCBmHETsvCsvT0xOb99Yx19Q": "왕별이"},
    "tags": {
     "띠별 운세": "띠별|띠 ", "띠 순위 특집": "순위|1위|특집", "별자리": "별자리", "주간 운세": "주간|이번 주", "정치": "국회|대통령|정부|여당|야당|의원|장관|검찰|법안",
-    "AI 소식": "AI|인공지능|GPT|제미나이|로봇", "주식": "코스피|코스닥|나스닥|증시|주가|반도체|미장|국장", "ASMR·수면": "ASMR|빗소리|수면|잠",
-    "드라마": "드라마|회차|결말"
+    "AI 소식": "AI|인공지능|GPT|제미나이|로봇", "주식": "코스피|코스닥|나스닥|증시|(?<!건물)주가|반도체|미장|국장", "ASMR·수면": "ASMR|빗소리|수면|잠",
+    "드라마": "드라마|회차|결말",
+   "태어난 달 표": "태어난 달로 보는", "이름 표": "이름 한자 풀이", "해 끝자리 표": "태어난 해 끝자리", "성씨 표": "성씨로 보는",
+   "사연": "^(?!.*(국회|대통령|의원|장관|검찰|정부|여당|야당|민주당|국민의힘|코스피|나스닥|AI)).*…"
    }
   },
   "own_tales": {
