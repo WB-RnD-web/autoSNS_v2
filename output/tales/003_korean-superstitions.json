@@ -1,0 +1,484 @@
+{
+ "id": 3,
+ "slug": "korean-superstitions",
+ "title": "7 Korean Superstitions That Could Get You Killed (or Worse)",
+ "thumb": {
+  "text": "DON'T CUT YOUR NAILS",
+  "img": "close-up of a young Korean scholar in a plain white hanbok and a black gat hat with a thin mustache kneeling at a low table in a lamplit hanok room at night, looking straight at the viewer with a calm, too-wide smile, his shadow on the paper wall behind him shaped like a giant mouse with round ears and a long thin tail, eerie"
+ },
+ "hook": "In Korea, cutting your nails at night can let a mouse steal your whole life. Here are seven rules Koreans still half-believe.",
+ "tags": [
+  "korean superstitions",
+  "korean folklore",
+  "fan death",
+  "korean culture",
+  "korean legend",
+  "number 4 unlucky",
+  "red ink name",
+  "seonpunggi samang",
+  "korean folk tale",
+  "korean ghost story",
+  "superstitions",
+  "joseon",
+  "animated story",
+  "gumiho"
+ ],
+ "sources": [
+  "Encyclopedia of Korean Folk Culture — 손톱 먹은 들쥐, 금기어: https://folkency.nfm.go.kr"
+ ],
+ "scenes": [
+  {
+   "say": "The man came home from a long journey, opened his own gate, and found himself already sitting inside. Same face. Same voice. Same wife pouring his tea. And the one at the table looked up and said: who are you?",
+   "img": "inside a lamplit hanok room at night, a young Korean scholar in a plain white hanbok and a black gat hat with a thin mustache kneeling at a low table looks up calmly at the open sliding door, where a young Korean scholar in a plain white hanbok and a black gat hat with a thin mustache stands frozen in shock, two identical men, the seated one's shadow on the paper wall has round ears and a thin tail, eerie",
+   "fx": "none",
+   "move": "in",
+   "hold": 0.6,
+   "key": "double"
+  },
+  {
+   "say": "All because of something he threw away. Something you probably threw away last night.",
+   "img": "close-up of small crescent nail clippings scattered on a dark wooden floor beside a flickering oil lamp, a tiny pair of glowing eyes in the shadows under the floorboards",
+   "fx": "none",
+   "move": "in",
+   "hold": 0.8,
+   "key": "nails"
+  },
+  {
+   "say": "Don't worry. I'll tell you how it ends. But we have six other rules to get through first.",
+   "gumi": "front",
+   "fx": "embers",
+   "move": "left"
+  },
+  {
+   "say": "Hello, dear human. I'm Gumi, a gumiho, and I've been alive for a little over a thousand years. Long enough to watch humans invent a great many rules about how not to die.",
+   "gumi": "bead",
+   "fx": "embers",
+   "move": "left"
+  },
+  {
+   "say": "This is Tale Number Three. Tonight it isn't one tale. It's seven. Seven Korean superstitions, counted down from the merely unlucky to the truly unsettling.",
+   "gumi": "wink",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "card": "TALE 003",
+   "sub": "7 Korean Superstitions"
+  },
+  {
+   "say": "First, a small confession. Most Koreans will tell you they don't believe any of this. Then they will quietly skip the fourth floor, and they will not whistle after dark.",
+   "img": "a quiet modern Seoul apartment street at night, warm lit windows stacked in tall buildings, a single woman walking home under streetlights, calm but watchful mood",
+   "fx": "dust",
+   "move": "right"
+  },
+  {
+   "say": "Superstitions are like that. Half joke, half habit, and a small part of you that says: why take the chance? Let's start with the gentle ones.",
+   "img": "an old Korean grandmother in a white hanbok sitting on a wooden porch of a hanok at dusk, wagging a finger at a grinning grandchild, persimmon tree and soft orange light",
+   "fx": "dust",
+   "move": "left"
+  },
+  {
+   "card": "#7",
+   "sub": "Never Give Your Lover Shoes"
+  },
+  {
+   "say": "A young couple. Their first winter together. She saves for weeks and buys him a beautiful pair of leather shoes. He opens the box, and his smile freezes.",
+   "img": "a young Korean couple in winter coats sitting on a bench by a snowy riverside at night, the young man holding an open shoebox, his smile frozen, city lights reflected on the water",
+   "fx": "snow",
+   "move": "in"
+  },
+  {
+   "say": "Because in Korea, there's an old saying that if you give shoes to the one you love, they will use them to walk away from you.",
+   "img": "a single pair of new leather shoes standing alone on a snowy path, a line of footprints leading away from them into the distance, soft blue evening light",
+   "fx": "snow",
+   "move": "out"
+  },
+  {
+   "say": "Some couples laugh it off. Others play it safe. The one who receives the shoes hands back a coin or two, so the shoes were bought, not given. A gift that is technically a sale cannot curse anyone.",
+   "img": "close-up of a young man's hand placing a single silver coin into a young woman's open palm, a shoebox between them, warm cafe lighting",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "I like this one. Humans found a loophole in fate and paid for it in small change. Very fox of you.",
+   "gumi": "wink",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "Some people say the same about giving a friend a knife or scissors. A blade cuts things, and the friendship might be cut with it. Again, a coin fixes everything. Humans are wonderfully practical about doom.",
+   "img": "a pair of old Korean iron scissors and a small folded knife lying on a cloth beside a single bronze coin, soft window light, still life",
+   "fx": "dust",
+   "move": "left"
+  },
+  {
+   "card": "#6",
+   "sub": "The Slippery Soup"
+  },
+  {
+   "say": "The night before a big exam, a mother sets a steaming bowl in front of her son. He looks down. Seaweed soup. He looks up at her in horror.",
+   "img": "a Korean teenage boy in a school uniform at a kitchen table at night staring down in horror at a bowl of dark green seaweed soup, his mother behind him looking confused, warm kitchen light",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "Miyeokguk is a gentle food. Mothers eat it after giving birth, and many Koreans eat it on every birthday. But seaweed is slippery.",
+   "img": "a steaming bowl of Korean seaweed soup on a wooden tray with rice and side dishes, morning sunlight through a window, cozy and homely",
+   "fx": "dust",
+   "move": "left",
+   "note": "미역국  miyeokguk  =  seaweed soup"
+  },
+  {
+   "say": "And in Korean, to fail an exam can be said as to slip. So eat seaweed before a test, and you might slide right off the list of people who passed.",
+   "img": "dark green seaweed ribbons swirling slowly in clear water, a single sheet of exam paper sinking among them, dreamlike underwater light",
+   "fx": "none",
+   "move": "down"
+  },
+  {
+   "say": "Students would rather eat something sticky instead, like taffy, so the right answers stick to them. Gentle stuff. A soup can't hurt you. Let's go somewhere darker.",
+   "img": "a stack of school textbooks on a desk under a lamp at night, a small bowl of sticky golden taffy beside them, a clock on the wall, quiet tension",
+   "fx": "dust",
+   "move": "right"
+  },
+  {
+   "card": "#5",
+   "sub": "The Fourth Floor"
+  },
+  {
+   "say": "Step into an elevator in an older Korean building and look at the buttons. One, two, three, F, five. There's no fourth floor. Or rather, there is. It's just wearing a disguise.",
+   "img": "close-up of old metal elevator buttons glowing softly in a dim elevator, one button darker than the rest, cold fluorescent light, uneasy mood",
+   "fx": "none",
+   "move": "in"
+  },
+  {
+   "say": "The reason is a sound. The number four in Korean is sa. And sa is also how Koreans read the old Chinese character for death.",
+   "img": "an old ink brush painting a single bold Chinese character on rice paper by candlelight, the ink still wet and glistening, deep shadows",
+   "fx": "dust",
+   "move": "in",
+   "note": "四 sa = four   ·   死 sa = death"
+  },
+  {
+   "say": "Four and death. Same sound. So many buildings label the fourth floor with an F, or skip the number entirely. Some hospitals were said to avoid it too, which, when you think about it, is very sensible marketing.",
+   "img": "a long empty hospital corridor at night lit by flickering fluorescent lights, a door at the end slightly open, a gurney by the wall, quiet and eerie",
+   "fx": "dust",
+   "move": "out"
+  },
+  {
+   "say": "Japan and China share the same fear for the same reason. Three countries, one unlucky number. Four has been having a very bad few centuries.",
+   "img": "a dark stairwell in an old apartment building, concrete steps going up into shadow, a single dim light on the landing above, empty and silent",
+   "fx": "dust",
+   "move": "up"
+  },
+  {
+   "say": "Me? I have nine tails. Nine is a lovely number. Nobody is afraid of nine. Well. Mostly.",
+   "gumi": "bead",
+   "fx": "embers",
+   "move": "left"
+  },
+  {
+   "say": "And to be fair to four, it isn't evil in itself. It's only a sound. But that's the thing about words, dear human. Say a sound often enough, and it starts to cast a shadow.",
+   "img": "an empty apartment hallway at sunset with four identical closed doors, long shadows stretching across the floor, quiet and slightly uneasy",
+   "fx": "dust",
+   "move": "right"
+  },
+  {
+   "card": "#4",
+   "sub": "Don't Whistle at Night"
+  },
+  {
+   "say": "A boy walks home along a country road after dark, whistling to keep himself brave. Somewhere in the tall grass beside him, something stops moving. And listens.",
+   "img": "a Korean boy in a white hanbok walking alone on a dark country road at night, whistling, rice paddies and black mountains behind him, the tall grass beside the path rippling, full moon",
+   "fx": "fog",
+   "move": "right",
+   "key": "whistle"
+  },
+  {
+   "say": "In Korea, children were told never to whistle at night. A whistle in the dark, the elders said, calls snakes. Or it calls ghosts.",
+   "img": "close-up of a dark snake sliding out of tall grass onto a moonlit dirt path, its eyes catching the light, cold blue night",
+   "fx": "fog",
+   "move": "in"
+  },
+  {
+   "say": "Think about why. A whistle is thin and high. It carries far over empty fields. It sounds a little like a call, a little like a summons. And at night, you never know who is answering.",
+   "img": "a pale misty shape standing among dark pine trees at the edge of a field at night, too far to see clearly, its head turned toward the road, ghostly",
+   "fx": "fog",
+   "move": "in"
+  },
+  {
+   "say": "I have heard a lot of whistling in a thousand years. I have never once been the one who came. Probably.",
+   "gumi": "wink",
+   "fx": "embers",
+   "move": "left"
+  },
+  {
+   "say": "Is it true? I can tell you the snakes in old Korean fields didn't need an invitation. But the rule isn't really about snakes. It's about the night itself. Be quiet in the dark. Don't announce yourself to things you cannot see.",
+   "img": "a dark wooden gate of a hanok at night seen from inside the courtyard, a faint lantern glow beyond the gate, a thin mist drifting under it, someone or something waiting outside",
+   "fx": "fog",
+   "move": "in"
+  },
+  {
+   "card": "#3",
+   "sub": "Names in Red Ink"
+  },
+  {
+   "say": "A new student borrows a red pen and writes his classmate's name on a birthday card. The whole classroom goes quiet. Someone actually gasps.",
+   "img": "a Korean classroom in afternoon light, students at desks turning to stare at one boy holding a red pen over a card, shocked faces, dust in the sunbeams",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "Because in Korea, you never write a living person's name in red.",
+   "img": "extreme close-up of a red ink brush tip hovering over blank white paper, a single drop of red ink about to fall, black background",
+   "fx": "none",
+   "move": "out"
+  },
+  {
+   "say": "Red was for the dead.",
+   "img": "a dim candlelit shrine room in an old hanok, a wooden memorial tablet and folded papers on a low altar, smoke from incense curling upward, solemn and silent",
+   "fx": "none",
+   "move": "in",
+   "hold": 1.2,
+   "key": "redink"
+  },
+  {
+   "say": "The old custom, as many people explain it, was that the names of the dead were written in red. So writing a living person's name that way is like writing them into the wrong book. Some people say it's wishing them dead. Others say it's simply rude.",
+   "img": "an old leather-bound family record book open on a low wooden desk by lamplight, rows of brushed names, a red brush resting beside it, shadows",
+   "fx": "dust",
+   "move": "left"
+  },
+  {
+   "say": "Most Koreans today will just give you a strange look and hand you a black pen. But they will hand it to you very quickly.",
+   "img": "a hand sliding a black pen across a classroom desk toward another hand holding a red pen, warm afternoon light, a small awkward moment",
+   "fx": "dust",
+   "move": "right"
+  },
+  {
+   "say": "Now we leave the gentle half of the list behind. The last two rules have a body count. Or at least, people believe they do.",
+   "gumi": "front",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "card": "#2",
+   "sub": "Fan Death"
+  },
+  {
+   "say": "A hot summer night. A small apartment room. The window is shut tight, the door is closed, and an electric fan turns slowly back and forth beside a sleeping student.",
+   "img": "a small dark apartment bedroom on a hot summer night, a student asleep on a mattress on the floor, an electric fan beside them turning slowly, closed window with city lights outside, blue night light",
+   "fx": "none",
+   "move": "in",
+   "key": "fan"
+  },
+  {
+   "say": "By morning, the belief goes, the student will never wake up. Killed by the fan. This is fan death, and for decades a lot of people in Korea took it very seriously.",
+   "img": "close-up of an electric fan's blades spinning in a dark room, moonlight cutting through them, faintly ominous",
+   "fx": "none",
+   "move": "out",
+   "note": "선풍기 사망  seonpunggi samang  =  fan death"
+  },
+  {
+   "say": "The fear spread in the late twentieth century, just as electric fans became common in Korean homes. People argued about how it worked. The fan stole the air. The fan chilled your body until it stopped.",
+   "img": "a 1980s Korean living room in warm retro colors, a family gathered around a new electric fan with curiosity, an old television set in the corner",
+   "fx": "dust",
+   "move": "left"
+  },
+  {
+   "say": "Fans were sold with timers so they would switch themselves off while you slept. Parents warned their children. Some news stories even blamed fans when someone died in the night.",
+   "img": "close-up of an old electric fan's round timer dial being turned by a hand, the dial glowing faintly in a dark room",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "Doctors and scientists looked hard at it. A fan does not use up the air in a room. It cannot freeze a healthy sleeper. When someone died on a hot night, the real causes were things like heat, illness or alcohol, not a spinning blade.",
+   "img": "a calm doctor in a white coat standing in a bright clinic beside an electric fan, holding a clipboard, gentle reassuring morning light",
+   "fx": "dust",
+   "move": "right"
+  },
+  {
+   "say": "So let me be very plain, dear human, because a gumiho does not lie about everything. There is no scientific evidence that a fan in a closed room can kill a healthy person. None. Turn it on. Sleep well.",
+   "gumi": "front",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "Fan death is a strange gift of the modern world. Every age invents the monster it deserves. Your grandparents had foxes and goblins. You got a household appliance.",
+   "img": "a lonely electric fan standing in an empty room with a closed window, moonlight on the floor, looking oddly like a tall figure watching, gentle and absurd",
+   "fx": "dust",
+   "move": "out"
+  },
+  {
+   "say": "But the last rule on my list is very, very old. And it starts with a man who was careless with his fingernails.",
+   "gumi": "bead",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "card": "#1",
+   "sub": "Don't Cut Your Nails at Night"
+  },
+  {
+   "say": "Long ago, there lived a young scholar who studied by lamplight late into the night. When his nails grew long, he trimmed them where he sat, and he swept the clippings into a corner without a second thought.",
+   "img": "a young Korean scholar in a plain white hanbok and a black gat hat with a thin mustache sitting at a low desk in a hanok room late at night, trimming his nails by the light of an oil lamp, books and a brush beside him, deep shadows in the corners",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "His mother had warned him, of course. Every mother did. But he was a scholar. He had read the classics. He did not believe in old wives' tales about mice.",
+   "img": "a young Korean scholar in a plain white hanbok and a black gat hat with a thin mustache waving his hand dismissively at an old woman in a white hanbok standing in the doorway, a pile of books on his desk, lamplight, a proud young face",
+   "fx": "dust",
+   "move": "left"
+  },
+  {
+   "say": "He didn't notice the mouse. It came out of a crack in the floor every night, crept to the corner, and ate them. One by one.",
+   "img": "a small grey field mouse creeping out of a crack in old wooden floorboards at night, nibbling at tiny nail clippings in a dark corner, its eyes gleaming in the lamplight",
+   "fx": "none",
+   "move": "in",
+   "key": "mouse"
+  },
+  {
+   "say": "The old storytellers said that a nail, or a hair, carries a little piece of a person. Eat enough of them, and you begin to carry that person too.",
+   "img": "a close-up of a mouse's dark shadow on a paper wall stretching slowly taller and wider, changing shape in the flickering lamplight, unsettling",
+   "fx": "none",
+   "move": "up"
+  },
+  {
+   "say": "Then the scholar left home on a long journey. And while he was gone, the mouse ate the last clipping. And it stood up.",
+   "img": "a young Korean scholar in a plain white hanbok and a black gat hat with a thin mustache walking away down a misty mountain road with a cloth bundle on his back, a hanok house behind him on the hillside, early morning fog",
+   "fx": "fog",
+   "move": "right"
+  },
+  {
+   "say": "When he came home, there was a man at his table. His face. His voice. His clothes. Wearing his life as if it had always belonged to him.",
+   "img": "a young Korean scholar in a plain white hanbok and a black gat hat with a thin mustache kneeling at a low table eating rice with a contented smile, a Korean woman in a pale blue jeogori and white skirt with her hair in a low bun held by a silver pin serving him, lamplight, an ordinary evening that feels wrong",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "He shouted that the other man was a fraud. The other man shouted the same thing. His wife looked from one face to the other, and she could not tell them apart.",
+   "img": "a Korean woman in a pale blue jeogori and white skirt with her hair in a low bun held by a silver pin standing between two identical men, a young Korean scholar in a plain white hanbok and a black gat hat with a thin mustache on the left and a young Korean scholar in a plain white hanbok and a black gat hat with a thin mustache on the right, both pointing at each other and shouting, her hands at her mouth in fear, lamplit hanok courtyard at night",
+   "fx": "dust",
+   "move": "in",
+   "key": "wife"
+  },
+  {
+   "say": "In one version, the family tests them both with questions about the house. How many bowls are in the cupboard? Where is the rice kept? And the fake answers every one, because a mouse has spent years watching from the walls.",
+   "img": "a dark kitchen cupboard in an old hanok, rows of brass bowls and rice jars, a tiny pair of eyes watching from a gap in the wall, dim light",
+   "fx": "dust",
+   "move": "left"
+  },
+  {
+   "say": "The real man got the questions wrong. He'd never once counted the bowls. So the family believed the impostor.",
+   "img": "close-up of the worried face of a Korean woman in a pale blue jeogori and white skirt with her hair in a low bun held by a silver pin in lamplight, her eyes filled with doubt, a man's silhouette blurred behind her",
+   "fx": "none",
+   "move": "in"
+  },
+  {
+   "say": "And the real one was thrown out of his own home.",
+   "img": "a young Korean scholar in a plain white hanbok and a black gat hat with a thin mustache standing alone outside a closed wooden gate in the rain at night, the warm light of the house glowing behind the wall, his head bowed",
+   "fx": "rain",
+   "move": "out",
+   "hold": 1.0
+  },
+  {
+   "say": "He wandered for a long time, a beggar wearing his own face. In one version, a monk at a mountain temple heard his story, nodded slowly, and gave him a gift. A cat.",
+   "img": "an old Buddhist monk in grey robes at a mountain temple gate handing a sleek striped cat to a tired traveler, pine trees and drifting mist, soft dawn light",
+   "fx": "fog",
+   "move": "right"
+  },
+  {
+   "say": "He carried the cat home under his coat. He pushed open the gate. And he let it go.",
+   "img": "a striped cat leaping from a man's arms into a lamplit hanok courtyard at night, the house door open ahead, tense moment",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "Inside, the man at the table was laughing at dinner with the family. Then the gate creaked. Every head turned. And the laughter stopped.",
+   "img": "a lamplit hanok room at night, a Korean woman in a pale blue jeogori and white skirt with her hair in a low bun held by a silver pin and an old father turning their heads toward the open door, a young Korean scholar in a plain white hanbok and a black gat hat with a thin mustache at the low table frozen mid-laugh with a cup in his hand",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "The man at the table saw the cat, and his face changed. He backed away. He trembled. And then he shrank, smaller and smaller, until there was only a grey mouse running across the floor.",
+   "img": "a striped cat pouncing across a hanok floor toward a small grey mouse, an empty set of white clothes and a black gat hat collapsed on the floor where a man had been, lamplight, dramatic",
+   "fx": "embers",
+   "move": "down",
+   "key": "cat"
+  },
+  {
+   "say": "The cat did the rest. The family wept and begged forgiveness, and the scholar was home at last. And ever since, Korean children have been told: never cut your nails at night.",
+   "img": "a young Korean scholar in a plain white hanbok and a black gat hat with a thin mustache kneeling with a Korean woman in a pale blue jeogori and white skirt with her hair in a low bun held by a silver pin in a warm lamplit hanok room at dawn, both bowing their heads in relief, a striped cat curled up asleep by the door",
+   "fx": "dust",
+   "move": "out"
+  },
+  {
+   "say": "Some grandmothers still say it. Wrap your clippings. Throw them out properly. And never, ever leave them where a mouse might find them.",
+   "img": "an old Korean grandmother folding tiny nail clippings carefully into a scrap of paper by lamplight, a child watching wide-eyed, a dark crack in the floorboards nearby",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "card": "THE COUNTDOWN ENDS"
+  },
+  {
+   "say": "So, does any of it work? I'll tell you what a thousand years taught me. A superstition is just fear that has learned good manners. It gives you something to do with the dark.",
+   "gumi": "front",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "And the nail story is the one I respect most. Because it isn't really about mice. It's about how little the people who love you actually know about you. Would yours pass the test?",
+   "gumi": "bead",
+   "fx": "embers",
+   "move": "left"
+  },
+  {
+   "say": "Now it's your turn. Which of these seven do you still half believe? Or which one does your own family have that I didn't name? Tell me in the comments. I read every single one.",
+   "gumi": "front",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "In my next tale, I'll show you the men in black who come for the dying. You may have seen their black hats in a famous animated film. In Korea, families have set out rice for them for centuries.",
+   "img": "a tall shadowy figure in long black robes and a wide black gat hat standing at the gate of a Joseon hanok at night, a small table with bowls of rice and straw sandals set out before him, mist and lantern light, solemn",
+   "fx": "fog",
+   "move": "in"
+  },
+  {
+   "say": "Until then, keep your nails short, your lights on, and count the people at your table. Make sure there's only one of you.",
+   "gumi": "wink",
+   "fx": "embers",
+   "move": "left",
+   "hold": 1.5
+  }
+ ],
+ "short": {
+  "title": "Never Cut Your Nails at Night in Korea. Here's Why #shorts #koreansuperstitions",
+  "hook": "DON'T CUT YOUR NAILS AT NIGHT",
+  "lines": [
+   {
+    "say": "A man came home from a long journey and found himself already sitting at his own table.",
+    "scene": "double"
+   },
+   {
+    "say": "Same face. Same voice. And it all started with his fingernails.",
+    "scene": "nails"
+   },
+   {
+    "say": "Every night he trimmed his nails by lamplight and swept them into a corner. And every night, a mouse came out and ate them.",
+    "scene": "mouse"
+   },
+   {
+    "say": "Now there were two of him. And his own wife could not tell which one was real.",
+    "scene": "wife"
+   },
+   {
+    "say": "That's why Korean grandmothers say: never cut your nails at night.",
+    "img": "an old Korean grandmother folding tiny nail clippings carefully into a scrap of paper by lamplight, a child watching wide-eyed, a dark crack in the floorboards nearby"
+   },
+   {
+    "say": "So who won? The full story, and six more Korean superstitions, are on my channel. I'm Gumi. Count your nails.",
+    "gumi": "wink"
+   }
+  ]
+ }
+}
