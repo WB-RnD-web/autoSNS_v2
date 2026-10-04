@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""'내 것 찾기' 표 쇼츠 — 이름 글자(오전) · 태어난 달(오후) (2026-10-02).
+"""'내 것 찾기' 표 쇼츠 — 태어난 해 끝자리(07:40) · 이름 글자(09:40) · 성씨(13:40) · 태어난 달(15:40).
+
+2026-10-04 하루 2편 추가: 10/3 표 쇼츠가 채널 기록을 갈았다(띠 테마 13시간 1만 회 · 태어난 달 9시간 9천 회 ·
+  이름 6,566회) — 같은 틀에 '찾을 축'만 바꾼 새 표 두 가지(해 끝자리 10칸 · 성씨 20칸)를 빈 시간대에 넣는다.
 
 왜(10/2 떡상 채널 해부 https://claude.ai/artifact/Xz3JeJNVox4nB7ZCXJxJ8r):
   가화만사성 '이름에 이 글자 있으면 나이 들수록 돈이 붙어요' — 9초짜리 정지 표 한 장이 529만 회.
@@ -11,9 +14,10 @@
   글자 표는 ★한자 뜻이 테마와 맞는 글자만★ 싣는다(富 부자 부 → 재물). 아무 글자나 '돈 붙는 글자'라 하지 않는다.
   문구 금지어는 theme_card.BANNED 와 같다(의료·투자·겁주기). 렌더는 motion_short 'grid' 장면.
 
-    python pipeline/name_card.py show [--date …] [--slot am|pm]
+    python pipeline/name_card.py show [--date …] [--slot year|am|surname|pm]
     python pipeline/name_card.py make [--date …] [--slot …] [--out <path>]
-    python pipeline/name_card.py path [--date …] [--slot …]       # 슬롯을 안 주면 지금 KST 시각으로(15시 전 am)
+    python pipeline/name_card.py path [--date …] [--slot …]       # 슬롯을 안 주면 지금 KST 시각으로
+    python pipeline/name_card.py slot                              # 지금 시각의 슬롯(루틴 트리거가 쓴다)
 """
 from __future__ import annotations
 
@@ -32,7 +36,8 @@ EPOCH = dt.date(2026, 10, 2)
 KST = dt.timezone(dt.timedelta(hours=9))
 ACCENT = "#C9A227"
 BRAND = "왕별이 · 내 것 찾기"
-SLOTS = ("am", "pm")
+SLOTS = ("am", "pm", "year", "surname")
+SLOT_TIME = {"year": "아침 7시 40분", "am": "아침 9시 40분", "surname": "오후 1시 40분", "pm": "오후 3시 40분"}
 NAME_CELLS = 24                  # 4칸 × 6줄 — 한 화면에서 내 글자를 찾을 수 있는 크기
 LINE_MAX = 11                    # 제목 한 줄(76px) 한글 11자
 
@@ -103,7 +108,9 @@ def kst_now() -> dt.datetime:
 
 
 def slot_now(t: dt.datetime | None = None) -> str:
-    return "am" if (t or kst_now()).hour < 15 else "pm"
+    """07:40 해 끝자리 · 09:40 이름 · 13:40 성씨 · 15:40 태어난 달 — 루틴이 정시에 깨우니 시(時)만 본다."""
+    h = (t or kst_now()).hour
+    return "year" if h < 9 else "am" if h < 13 else "surname" if h < 15 else "pm"
 
 
 def name_theme(d: dt.date) -> dict:
@@ -113,6 +120,47 @@ def name_theme(d: dt.date) -> dict:
 def month_theme(d: dt.date) -> dict:
     # 같은 날 12시 띠 테마 표와 겹치지 않게 다섯 칸 밀어서 고른다
     return theme_card.THEMES[((d - EPOCH).days + 5) % len(theme_card.THEMES)]
+
+
+# ── 07:40 태어난 해 끝자리(10칸) — 끝자리 = 천간(1984 갑자 → 4 = 갑) ──
+STEMS = [(0, "경", "庚"), (1, "신", "辛"), (2, "임", "壬"), (3, "계", "癸"), (4, "갑", "甲"),
+         (5, "을", "乙"), (6, "병", "丙"), (7, "정", "丁"), (8, "무", "戊"), (9, "기", "己")]
+# ── 13:40 성씨(20칸) — 인구 많은 성씨 20(2015 통계청 순). 한자는 본관마다 달라 싣지 않는다.
+SURNAMES = ["김", "이", "박", "최", "정", "강", "조", "윤", "장", "임", "한", "오", "서", "신", "권", "황", "안", "송", "전", "홍"]
+TIERS = {10: (("top", 3), ("mid", 4), ("low", 3)), 20: (("top", 4), ("mid", 10), ("low", 6))}
+
+
+def year_theme(d: dt.date) -> dict:
+    return theme_card.THEMES[((d - EPOCH).days + 8) % len(theme_card.THEMES)]
+
+
+def surname_theme(d: dt.date) -> dict:
+    return theme_card.THEMES[((d - EPOCH).days + 3) % len(theme_card.THEMES)]
+
+
+def ranked(d: dt.date, th: dict, keys: list, kind: str) -> dict:
+    """keys 를 날짜 해시로 줄 세우고 순위·한 줄을 붙인다 → {key: (순위, 한 줄)}."""
+    k = f"{d.isoformat()}|{kind}|{th['id']}"
+    order = sorted(keys, key=lambda x: _h(k, "order", x))
+    out, i = {}, 0
+    for tier, n in TIERS[len(keys)]:
+        bank = sorted(th[tier], key=lambda x: _h(k, "line", tier, x))
+        for j in range(n):
+            out[order[i]] = (i + 1, bank[j % len(bank)])
+            i += 1
+    return out
+
+
+def year_cells(d: dt.date, th: dict) -> list[dict]:
+    r = ranked(d, th, [n for n, _, _ in STEMS], "year")
+    return [{"big": f"{n}년생", "small": f"{r[n][0]}위", "note": f"{hj} · {r[n][1]}", "hi": r[n][0] <= 3}
+            for n, _, hj in STEMS]
+
+
+def surname_cells(d: dt.date, th: dict) -> list[dict]:
+    r = ranked(d, th, SURNAMES, "surname")
+    return [{"big": f"{s}씨", "small": f"{r[s][0]}위", "note": r[s][1], "hi": r[s][0] <= 3}
+            for s in sorted(SURNAMES)]                 # 찾기 쉽게 가나다순
 
 
 def name_cells(d: dt.date, th: dict) -> list[dict]:
@@ -149,6 +197,10 @@ def title(d: dt.date, slot: str) -> str:
     if slot == "am":
         th = name_theme(d)
         return f"{th['yt']} | 이름 한자 풀이"
+    if slot == "year":
+        return f"태어난 해 끝자리로 보는 {month_label(d, year_theme(d))} 순위 1위~10위 | 0년생~9년생 전부"
+    if slot == "surname":
+        return f"성씨로 보는 {month_label(d, surname_theme(d))} 순위 1위~20위 | 김·이·박·최… 많은 성씨 20개"
     th = month_theme(d)
     return f"태어난 달로 보는 {month_label(d, th)} 순위 1위~12위 | 1월생~12월생 전부"
 
@@ -159,13 +211,24 @@ def description(d: dt.date, slot: str) -> str:
         head = (f"{th['yt']} — 뜻이 좋은 이름 한자 {NAME_CELLS}자를 한 장에 모았어요. "
                 "내 이름 글자가 있나요? 댓글로 남겨 주세요 🙏")
         tags = "#이름풀이 #이름한자 #운세 #shorts"
+    elif slot == "year":
+        head = (f"태어난 해 끝자리로 보는 {month_label(d, year_theme(d))} 순위 — 0년생부터 9년생까지 한 장에 모았어요. "
+                "1954년생이면 4년생이에요. 내 끝자리는 몇 위인가요? 댓글로 남겨 주세요 🙏")
+        tags = "#태어난해 #띠별운세 #운세 #shorts"
+    elif slot == "surname":
+        head = (f"성씨로 보는 {month_label(d, surname_theme(d))} 순위 — 많은 성씨 20개를 한 장에 모았어요. "
+                "내 성씨는 몇 위인가요? 표에 없는 성씨는 댓글로 알려 주세요 🙏")
+        tags = "#성씨 #성씨운세 #운세 #shorts"
     else:
         th = month_theme(d)
         head = (f"태어난 달로 보는 {month_label(d, th)} 순위 — 1월생부터 12월생까지 한 장에 모았어요. "
                 "내 생일 달은 몇 위인가요? 댓글로 남겨 주세요 🙏")
         tags = "#생일운세 #태어난달 #운세 #shorts"
-    return (f"{head}\n매일 아침 9시 40분엔 '이름 글자', 오후 3시 40분엔 '태어난 달' 표가 올라와요.\n\n"
-            f"※ 재미로 보는 풀이입니다. 한자 뜻은 사전의 새김을 따랐어요.\n\n{tags}")
+    sched = " · ".join(f"{SLOT_TIME[k]} {lab}" for k, lab in
+                       (("year", "태어난 해"), ("am", "이름 글자"), ("surname", "성씨"), ("pm", "태어난 달")))
+    note = "한자 뜻은 사전의 새김을 따랐어요." if slot == "am" else "순위는 재미로 정한 것이에요."
+    return (f"{head}\n매일 {sched} 표가 올라와요.\n\n"
+            f"※ 재미로 보는 풀이입니다. {note}\n\n{tags}")
 
 
 def storyboard(d: dt.date, slot: str) -> dict:
@@ -178,6 +241,20 @@ def storyboard(d: dt.date, slot: str) -> dict:
                  "cells": name_cells(d, th), "foot": "※ 재미로 보는 이름 풀이 · 한자 뜻은 사전 새김", "brand": BRAND,
                  "narration": f"{th['yt']}. 내 이름 글자가 있는지 찾아보세요."}
         hook, theme_id = th["hook"], f"name:{th['id']}"
+    elif slot == "year":
+        th = year_theme(d)
+        lab = month_label(d, th)
+        scene = {"type": "grid", "pill": pill, "title": "태어난 해 끝자리로 보는", "title2": f"{lab} 순위",
+                 "cols": 2, "cells": year_cells(d, th), "foot": "※ 끝자리: 1954년생 → 4년생 · 재미로 보는 운세",
+                 "brand": BRAND, "narration": f"태어난 해 끝자리로 보는 {lab} 순위예요. 내 끝자리는 몇 위인지 찾아보세요."}
+        hook, theme_id = th["hook"], f"year:{th['id']}"
+    elif slot == "surname":
+        th = surname_theme(d)
+        lab = month_label(d, th)
+        scene = {"type": "grid", "pill": pill, "title": "성씨로 보는", "title2": f"{lab} 순위",
+                 "cols": 4, "cells": surname_cells(d, th), "foot": "※ 많은 성씨 20개 · 재미로 보는 운세",
+                 "brand": BRAND, "narration": f"성씨로 보는 {lab} 순위예요. 내 성씨는 몇 위인지 찾아보세요."}
+        hook, theme_id = th["hook"], f"surname:{th['id']}"
     else:
         th = month_theme(d)
         rows = month_rows(d, th)
@@ -212,14 +289,17 @@ def path_for(d: dt.date, slot: str, root: str | None = None) -> str:
 
 
 def main(argv=None) -> int:
-    ap = argparse.ArgumentParser(description="내 것 찾기 표(이름 글자·태어난 달) 스토리보드")
-    ap.add_argument("cmd", choices=["show", "make", "path"])
+    ap = argparse.ArgumentParser(description="내 것 찾기 표(해 끝자리·이름 글자·성씨·태어난 달) 스토리보드")
+    ap.add_argument("cmd", choices=["show", "make", "path", "slot"])
     ap.add_argument("--date", help="YYYY-MM-DD (기본: 오늘 KST)")
-    ap.add_argument("--slot", choices=SLOTS, help="am=이름 글자 · pm=태어난 달 (기본: 지금 KST 15시 전이면 am)")
+    ap.add_argument("--slot", choices=SLOTS, help="year=해 끝자리 · am=이름 글자 · surname=성씨 · pm=태어난 달 (기본: 지금 KST 시각)")
     ap.add_argument("--out")
     a = ap.parse_args(argv)
     d = dt.date.fromisoformat(a.date) if a.date else kst_now().date()
     slot = a.slot or slot_now()
+    if a.cmd == "slot":
+        print(slot)
+        return 0
     if a.cmd == "path":
         print(os.path.relpath(path_for(d, slot)))
         return 0
