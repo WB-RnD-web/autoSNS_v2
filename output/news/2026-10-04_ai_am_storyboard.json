@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-04", "topic": "ai", "slot": "am", "privacy": "public",
+  "format": "compare",
+  "angle": "일자리",
+  "topic_keyword": "포드 CEO 숙련 기능직",
+  "headline": "포드 CEO, AI가 사무직은 바꾸고 기능직은 더 찾는다",
+  "hook_title": "AI 시대, 포드가 찾는 사람들",
+  "thumbnail_hook": "An empty factory workbench with tools and a small robotic arm under warm overhead lights, a hard hat resting beside a toolbox, quiet industrial atmosphere, symbolic of skilled trades and automation, no text, no faces",
+  "thumbnail_text": "AI 시대 뜨는 직종",
+  "glossary": [],
+  "sources": [
+    {"outlet": "동아일보", "title": "“로봇 늘수록 사람 더 필요”…포드 CEO가 꼽은 AI 시대 살아남을 직종",
+     "url": "https://www.donga.com/news/Economy/article/all/20261002/134775793/2",
+     "published_at": "2026-10-03T19:00:00+09:00",
+     "confirmed": false,
+     "facts": [
+       "인공지능(AI)이 재무·콜센터·초급 프로그래밍 같은 사무직 일자리를 바꾸거나 없애는 반면, 공장에서는 로봇과 자동화 설비를 다룰 숙련 기능인력이 더 필요해지고 있다는 진단이 나왔다.",
+       "포드에서는 이미 1만명이 넘는 숙련 기능직이 로봇을 수리하고 소프트웨어와 자동화 설비를 다루고 있다.",
+       "그러나 공식 교육·훈련 과정에서 배출되는 인력은 필요한 인원 100명당 55명 수준이다."
+     ]}
+  ],
+  "scenes": [
+    {"type": "hook", "pill": "일자리", "lines": ["AI가 바꾸는", "일자리 지도"], "highlight": "일자리",
+     "narration": "AI 시대에 일자리가 바뀐다는데, 어떤 일은 줄고 어떤 일은 더 필요해진다고 합니다."},
+    {"type": "keypoint", "label": "바뀔 수 있는 일", "points": ["<b>재무</b> 스프레드시트 업무", "<b>콜센터</b> 상담 업무", "<b>초급</b> 프로그래머"],
+     "narration": "포드 최고경영자는 재무, 콜센터, 초급 프로그래머 일자리가 바뀌거나 사라질 수 있다고 말했다고 보도됐습니다."},
+    {"type": "stat", "label": "포드의 숙련 기능직(미국)", "from": 0, "to": 1, "prefix": "", "suffix": "만명 넘게",
+     "bar": true, "sub": "로봇을 <b>고치고</b> 설비를 다뤄요",
+     "narration": "반면 포드는 로봇을 고치고 설비를 다루는 숙련 기능직을 미국에서 만 명 넘게 두고 있다고 전해졌습니다."},
+    {"type": "gauge", "label": "필요한 인원 100명당 배출", "from": 0, "to": 55, "unit": "명",
+     "sub": "기술 인력, <b>아직 부족</b>해요",
+     "narration": "그런데 교육과 훈련을 마치고 나오는 사람은 필요한 백 명당 쉰다섯 명 수준이라고 알려졌습니다."},
+    {"type": "statement", "text": "우리 아이에겐 어떤 기술을?", "highlight": "기술",
+     "narration": "AI가 일을 바꾸는 시대, 손으로 익히는 기술도 한번 눈여겨보면 어떨까요?"}
+  ],
+  "platforms": {
+    "youtube": {"title": "AI 시대, 포드가 찾는 사람들 #shorts", "description": "포드 최고경영자가 AI 시대에 바뀌는 일자리와 더 필요해지는 숙련 기능직을 짚었다고 보도됐어요.\n\n#AI #일자리 #shorts"},
+    "instagram": {"caption": "AI 시대, 포드가 찾는 사람들\n\n재무·콜센터·초급 프로그래머 일은 바뀔 수 있다고 포드 CEO가 말했대요.\n반대로 로봇을 고치고 설비를 다루는 기능직은 더 필요하다고 해요.\n매일 오전·저녁 AI 소식은 유튜브 '왕별이'에서 쉽게 풀어 드려요.\n출처 동아일보\n\n#AI #일자리 #기능직"},
+    "threads": {"text": "포드 CEO는 재무·콜센터 같은 일은 바뀔 수 있지만 로봇을 다루는 기능직은 더 필요하다고 했대요. 매일 AI 소식은 유튜브 왕별이에서. #AI소식"}
+  },
+  "notes": "AI 소식 오전 편 · compare · 장면 5개"
+}
