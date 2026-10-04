@@ -1,5 +1,5 @@
 {
- "about": "트렌드 레이더 참고 채널·주제 규칙. 채널은 2026-10-01 search.list 1회 탐색(분야별 최근 30일 조회수 상위)으로 골랐다. 2026-10-04 정치 쇼츠(search.list 2회 — 최근 14일 조회수 상위 중 방송사 아닌 쇼츠 채널, 진영 양쪽)·사연 쇼츠·동양 설화(영어)는 10/2 떡상 채널 해부에서 골랐다. 우리 채널(own_*)은 API 로 전부 읽는다(RSS 는 최신 15개뿐). tags 는 제목 정규식 — 한 영상이 여러 주제에 들 수 있다.",
+ "about": "트렌드 레이더 참고 채널·주제 규칙. 채널은 2026-10-01 search.list 1회 탐색(분야별 최근 30일 조회수 상위)으로 골랐다. 2026-10-04 정치 쇼츠(search.list 2회 — 최근 14일 조회수 상위 중 방송사 아닌 쇼츠 채널, 진영 양쪽)·사연 쇼츠(10/2 떡상 채널 해부)·동양 설화 영어 롱폼(search.list 2회 — 최근 60일 'korean folklore horror story'·'japanese yokai folklore story', 같은 길을 가는 작은 채널 둘 포함)을 더했다. 우리 채널(own_*)은 API 로 전부 읽는다(RSS 는 최신 15개뿐). tags 는 제목 정규식 — 한 영상이 여러 주제에 들 수 있다.",
  "niches": {
   "fortune_kr": {
    "label": "운세(왕별이)",
@@ -127,8 +127,8 @@
   "folklore_en": {
    "label": "Asian folklore & myth (Nine Tails 본편)",
    "channels": {
-    "UCK-H_9O_MBnuW69KvwjZyTw": "Beauties & Beasts", "UCh4ClQULCOEtO2EIOLPcuRw": "Shadow Stories", "UC0K5uzc42RiwDP_4ZAfSWqw": "Mytho Facts",
-    "UCRjxhVtRUKgSmPYGRJuTaOw": "Judicium", "UCH79AUjm7pjCVHKjNU3ENFg": "slurpy"
+    "UCK-H_9O_MBnuW69KvwjZyTw": "Beauties & Beasts", "UCv7T8nEy4No3BwUr2PCtxdA": "J Nightmares", "UCwN4mG8hhZMgCzouFacWtJw": "For The Love of History",
+    "UCBznS2QliCx7kom1dp6AUUg": "The 2 AM Scholar", "UCfNFb0l79tU71veR-jgAI0g": "Chained Grove", "UCDdkUE0SdsTfD8F7__A_ShQ": "Hearth Bone"
    },
    "tags": {
     "korea": "(?i)korea|joseon|gumiho|dokkaebi|gwishin", "japan": "(?i)japan|yokai|kitsune|yurei|onryo|oni\\b", "china": "(?i)china|chinese|huli jing|jiangshi",
