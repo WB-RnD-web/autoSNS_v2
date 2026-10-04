@@ -107,6 +107,7 @@ jobs:
       # ★일시정지 토픽(2026-09-29) — 피드에서 85~90% 가 넘기는 별자리·국장·미장은 렌더 전에 건너뛴다.
       #   비우면 코드 기본값(horoscope,zodiac,stock,stock_us). 전부 재개 = none
       SHORTS_PAUSED_TOPICS: ${{ vars.SHORTS_PAUSED_TOPICS || '' }}
+      NEWS_CARD: ${{ vars.NEWS_CARD || '1' }}          # 정치·주식·AI '10초 한 장'(2026-10-04) — 0 이면 예전 40초 형식
       # 운세 쇼츠 설명 끝에 최신 '주간 띠별 운세 풀이' 롱폼 한 줄(재생목록에서 찾는다 · 2~3 units). 끄기 = 0
       WEEKLY_LINK: ${{ vars.WEEKLY_LINK || '1' }}
     steps:
