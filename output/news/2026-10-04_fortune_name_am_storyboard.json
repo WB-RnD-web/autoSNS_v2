@@ -1,0 +1,177 @@
+{
+ "date": "2026-10-04",
+ "topic": "fortune_name",
+ "slot": "am",
+ "theme": "name:children",
+ "privacy": "public",
+ "accent": "#C9A227",
+ "_min_total": 9.0,
+ "hook_title": "자식 덕 보고 살아요",
+ "headline": "이름에 이 글자 있으면 자식 덕 보고 살아요 | 이름 한자 풀이",
+ "thumbnail_hook": "cozy Korean living room at golden hour, family photos on a wooden shelf, warm tea on a low table, soft bokeh, no faces",
+ "scenes": [
+  {
+   "type": "grid",
+   "pill": "10월 4일 일요일 · 내 것 찾기",
+   "title": "이름에 이 글자 있으면",
+   "title2": "자식 덕 보고 살아요",
+   "cols": 4,
+   "cells": [
+    {
+     "big": "경",
+     "small": "敬",
+     "note": "공경 경",
+     "hi": false
+    },
+    {
+     "big": "계",
+     "small": "繼",
+     "note": "이을 계",
+     "hi": false
+    },
+    {
+     "big": "덕",
+     "small": "德",
+     "note": "큰 덕",
+     "hi": false
+    },
+    {
+     "big": "락",
+     "small": "樂",
+     "note": "즐길 락",
+     "hi": false
+    },
+    {
+     "big": "모",
+     "small": "慕",
+     "note": "그릴 모",
+     "hi": false
+    },
+    {
+     "big": "선",
+     "small": "善",
+     "note": "착할 선",
+     "hi": false
+    },
+    {
+     "big": "손",
+     "small": "孫",
+     "note": "손자 손",
+     "hi": false
+    },
+    {
+     "big": "숙",
+     "small": "淑",
+     "note": "맑을 숙",
+     "hi": false
+    },
+    {
+     "big": "순",
+     "small": "順",
+     "note": "순할 순",
+     "hi": false
+    },
+    {
+     "big": "승",
+     "small": "承",
+     "note": "이을 승",
+     "hi": false
+    },
+    {
+     "big": "애",
+     "small": "愛",
+     "note": "사랑 애",
+     "hi": false
+    },
+    {
+     "big": "예",
+     "small": "禮",
+     "note": "예도 예",
+     "hi": false
+    },
+    {
+     "big": "윤",
+     "small": "胤",
+     "note": "자손 윤",
+     "hi": false
+    },
+    {
+     "big": "융",
+     "small": "融",
+     "note": "화할 융",
+     "hi": false
+    },
+    {
+     "big": "은",
+     "small": "恩",
+     "note": "은혜 은",
+     "hi": false
+    },
+    {
+     "big": "의",
+     "small": "義",
+     "note": "옳을 의",
+     "hi": false
+    },
+    {
+     "big": "인",
+     "small": "仁",
+     "note": "어질 인",
+     "hi": false
+    },
+    {
+     "big": "자",
+     "small": "慈",
+     "note": "사랑 자",
+     "hi": false
+    },
+    {
+     "big": "정",
+     "small": "貞",
+     "note": "곧을 정",
+     "hi": false
+    },
+    {
+     "big": "현",
+     "small": "賢",
+     "note": "어질 현",
+     "hi": false
+    },
+    {
+     "big": "혜",
+     "small": "惠",
+     "note": "은혜 혜",
+     "hi": false
+    },
+    {
+     "big": "화",
+     "small": "和",
+     "note": "화할 화",
+     "hi": false
+    },
+    {
+     "big": "효",
+     "small": "孝",
+     "note": "효도 효",
+     "hi": false
+    },
+    {
+     "big": "희",
+     "small": "喜",
+     "note": "기쁠 희",
+     "hi": false
+    }
+   ],
+   "foot": "※ 재미로 보는 이름 풀이 · 한자 뜻은 사전 새김",
+   "brand": "왕별이 · 내 것 찾기",
+   "narration": "이름에 이 글자 있으면 자식 덕 보고 살아요. 내 이름 글자가 있는지 찾아보세요."
+  }
+ ],
+ "platforms": {
+  "youtube": {
+   "title": "이름에 이 글자 있으면 자식 덕 보고 살아요 | 이름 한자 풀이 #shorts",
+   "description": "이름에 이 글자 있으면 자식 덕 보고 살아요 — 뜻이 좋은 이름 한자 24자를 한 장에 모았어요. 내 이름 글자가 있나요? 댓글로 남겨 주세요 🙏\n매일 아침 9시 40분엔 '이름 글자', 오후 3시 40분엔 '태어난 달' 표가 올라와요.\n\n※ 재미로 보는 풀이입니다. 한자 뜻은 사전의 새김을 따랐어요.\n\n#이름풀이 #이름한자 #운세 #shorts"
+  }
+ },
+ "notes": "내 것 찾기 표 · name:children · name_card.py 가 만든 스토리보드(루틴은 실행 스위치만)"
+}
