@@ -52,6 +52,7 @@ def runs(topic, days_ago_list, hh, mm=0, event="push", prefix="routine/", base=N
 def verdict(payload, now=NOW, **kw):
     hist = M.parse_runs({"workflow_runs": payload})
     learned = M.learn(hist, now, kw.pop("days", 28))
+    kw.setdefault("retired", {})          # 꺼 둔 루틴 목록(RETIRED)은 ⑫에서 따로 본다 — 여기선 비운다
     return M.judge(learned, now, **kw)
 
 
@@ -146,6 +147,12 @@ print("\n── ⑪ 주 1회 루틴은 다른 요일에 조용하다")
 mondays = [n for n in range(1, 30) if (NOW - dt.timedelta(days=n)).weekday() == 0]
 miss11, held11 = verdict(runs("asmr", mondays, 23, 0))
 check("목요일엔 안 잡는다", len(miss11) == 0, f"{len(miss11)}건")
+
+print("\n── ⑫ 꺼 둔 루틴은 기다리지 않는다(9/29 별자리를 끈 뒤 닷새 연속 빨간불)")
+miss12, held12 = verdict(runs("horoscope", list(range(6, 20)), 7, 37), retired=M.RETIRED)
+check("꺼 둔 루틴은 누락으로 안 잡는다", len(miss12) == 0, f"{len(miss12)}건")
+check("보류 목록에 '루틴 끔'으로 남는다", any(h["topic"] == "horoscope" and "끔" in h["why"] for h in held12))
+check("기본 목록에 별자리가 있다", "horoscope" in M.RETIRED)
 
 print("")
 if FAIL:

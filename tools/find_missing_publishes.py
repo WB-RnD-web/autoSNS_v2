@@ -39,6 +39,7 @@ Actions 실행 기록은 push 마다 남아 온전하다.
 from __future__ import annotations
 
 import argparse
+import os
 import datetime as dt
 import json
 import statistics
@@ -52,6 +53,10 @@ MIN_SAMPLES = 4         # 이보다 적으면 판단하지 않는다 — 모르�
 DOW_THRESHOLD = 0.6     # 이 요일 발행 확률이 이 이상이면 '오늘 올라와야 한다' 로 본다
 GRACE_HOURS = 2.0       # 기대 시각 + 이만큼은 기다려준다(루틴 지연·렌더 시간)
 DOW_KO = ("월", "화", "수", "목", "금", "토", "일")
+# 꺼 둔 루틴 — 이력이 남아 있어도 기다리지 않는다. 9/29 별자리를 끈 뒤 매일 '발행 누락'으로 빨갛게 떠서
+#   (9/29~10/3 다섯 번 연속 실패) 진짜 문제(10/2 띠 테마 push 403)를 가렸다. 레포 변수 MISSING_RETIRED(쉼표)로 더할 수 있다.
+RETIRED = {"horoscope": "별자리 루틴 끔(2026-09-29)", "scp": "SCP 루틴 끔", "gwedam": "괴담 루틴 끔",
+           "sayeon": "사연 오디오북 루틴 끔"}
 
 
 def parse_runs(payload: dict | list) -> list[tuple[str, dt.datetime]]:
@@ -145,14 +150,18 @@ def expect_p(info: dict, target: dt.date, min_dow: int = 2) -> tuple[float, str]
 
 def judge(learned: dict[str, dict], now: dt.datetime, *,
           min_samples: int = MIN_SAMPLES, dow_threshold: float = DOW_THRESHOLD,
-          grace_hours: float = GRACE_HOURS) -> tuple[list[dict], list[dict]]:
+          grace_hours: float = GRACE_HOURS, retired: dict | None = None) -> tuple[list[dict], list[dict]]:
     """(누락, 보류) 반환.
 
     검사 대상 날짜는 ★기대 시각이 이미 지난 가장 최근 날짜다. 밤에 발행되는 토픽을
     아침에 '오늘 안 올라왔다' 고 잡으면 매일 오탐이 난다.
     """
     missing, held = [], []
+    retired = RETIRED if retired is None else retired
     for topic, info in sorted(learned.items()):
+        if topic in retired:
+            held.append({"topic": topic, "why": f"{retired[topic] or '루틴 끔'} — 기다리지 않는다"})
+            continue
         if info["count"] < min_samples:
             held.append({"topic": topic, "why":
                          f"이력 {info['count']}회 — {min_samples}회 미만이라 판단 보류"})
@@ -203,9 +212,13 @@ def main() -> int:
     now = (dt.datetime.fromisoformat(args.now).astimezone(KST) if args.now
            else dt.datetime.now(KST))
     learned = learn(history, now, args.days)
+    retired = dict(RETIRED)
+    for t in (os.environ.get("MISSING_RETIRED") or "").split(","):
+        if t.strip():
+            retired[t.strip()] = "레포 변수 MISSING_RETIRED"
     missing, held = judge(learned, now, min_samples=args.min_samples,
                           dow_threshold=args.dow_threshold,
-                          grace_hours=args.grace_hours)
+                          grace_hours=args.grace_hours, retired=retired)
 
     print(f"기준 {now:%Y-%m-%d %H:%M} KST · 최근 {args.days}일 · 발행기록 {len(history)}건")
     print("")
