@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-04", "topic": "ai", "slot": "pm", "privacy": "public",
+  "format": "number",
+  "angle": "돈",
+  "topic_keyword": "AI 사용 비용 하락",
+  "headline": "같은 성능 AI 쓰는 비용, 1년 새 13분의 1로",
+  "hook_title": "AI 쓰는 값, 1년 새 13분의 1",
+  "thumbnail_hook": "A worn piggy bank on a kitchen table beside an old smartphone, a few coins scattered, soft evening light through a window, calm everyday mood, close-up still life, no text, no faces",
+  "thumbnail_text": "AI 사용료 13분의 1",
+  "glossary": [],
+  "sources": [
+    {"outlet": "연합뉴스", "title": "[AI픽] \"AI 두뇌값 1년새 13분의 1\"…유례없는 가격 폭락",
+     "url": "https://www.yna.co.kr/view/AKR20261003037600017",
+     "published_at": "2026-10-04T10:33:00+09:00",
+     "confirmed": false,
+     "facts": [
+       "1년으로 환산하면 매년 13분의 1(13배 하락) 수준으로 떨어지는 셈이다.",
+       "2023년 이후 동일한 수준의 AI 성능을 구현하는 데 드는 비용이 분기마다 약 47%씩 하락했다고 4일 밝혔다.",
+       "박사급 시험인 GPQA 다이아몬드에서 정답률 75%를 기록하는 데 문제당 평균 30센트(약 400원)의 비용이 들었다.",
+       "같은 성적을 내는 데 단 0.04센트(0.0004달러)밖에 쓰지 않았다.",
+       "18개월 만에 같은 수준의 두뇌를 빌려 쓰는 가격이 725분의 1로 주저앉은 것이다."
+     ]}
+  ],
+  "scenes": [
+    {"type": "hook", "pill": "연구", "lines": ["AI 사용료", "13분의 1"], "highlight": "13분",
+     "narration": "AI를 쓰는 값이 1년 만에 십삼분의 일로 떨어졌다고 알려졌어요."},
+    {"type": "stat", "label": "같은 AI 쓰는 값, 1년 새", "from": 0, "to": 13, "prefix": "", "suffix": "배 싸짐",
+     "bar": true, "sub": "분기마다 <b>절반 가까이</b> 하락",
+     "narration": "한 연구기관이 같은 수준의 AI를 쓰는 비용이 해마다 열세 배씩 싸지고 있다고 밝혔다고 보도됐어요."},
+    {"type": "stat", "label": "박사급 문제 하나 푸는 값", "from": 30, "to": 0.04, "prefix": "", "suffix": "센트",
+     "bar": false, "sub": "18개월 만에 <b>725분의 1</b>",
+     "narration": "박사급 시험 문제 하나를 푸는 값이 삼십 센트에서 0.04센트로, 열여덟 달 만에 크게 내려갔다고 해요."},
+    {"type": "statement", "text": "값은 내리고, 쓸 곳은 늘고", "highlight": "내리고",
+     "narration": "그만큼 AI 서비스 요금이 내려가고, 무료나 저렴한 기능이 늘어날 수 있어요."},
+    {"type": "keypoint", "label": "그래서 우리한테는",
+     "points": ["요금제, <b>비교</b>해 보기", "공짜 기능부터 <b>써 보기</b>", "결제 전 <b>한 번 더</b> 확인"],
+     "narration": "요금제는 비교해 보시고, 공짜 기능부터 써 보시고, 결제하기 전에 한 번 더 확인하세요."},
+    {"type": "statement", "text": "AI, 부담 없이 써 볼까요?", "highlight": "부담",
+     "narration": "오늘 저녁, 자주 쓰는 AI 기능 하나만 골라 보시면 어떨까요?"}
+  ],
+  "platforms": {
+    "youtube": {"title": "AI 쓰는 값, 1년 새 13분의 1 #shorts", "description": "같은 수준의 AI를 쓰는 비용이 1년 새 13분의 1로 떨어졌다는 분석이 나왔어요. 요금제는 비교하고 결제 전 한 번 더 확인하세요.\n\n#AI #AI소식 #shorts"},
+    "instagram": {"caption": "AI 쓰는 값, 1년 새 13분의 1\n\n같은 수준의 AI를 쓰는 비용이 해마다 크게 싸지고 있다는 분석이 나왔어요.\n박사급 문제 하나 푸는 값이 18개월 만에 725분의 1이 됐다고 해요.\n매일 오전·저녁 AI 소식은 유튜브 '왕별이'에서 쉽게 풀어 드려요.\n출처 연합뉴스\n\n#AI #AI소식 #인공지능"},
+    "threads": {"text": "같은 수준의 AI를 쓰는 값이 1년 새 13분의 1로 떨어졌다는 분석이 나왔어요. 요금제는 비교하고, 결제 전엔 한 번 더 확인해 보세요. 매일 AI 소식은 유튜브 왕별이에서. #AI소식"}
+  },
+  "notes": "AI 소식 저녁 편 · number · 장면 6개"
+}
