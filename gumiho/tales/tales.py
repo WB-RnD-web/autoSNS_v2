@@ -49,6 +49,21 @@ SHORT_LINES = (4, 9)
 # 편당 쇼츠 2~3개(2026-10-01): short + shorts_extra 1~2개. 쇼츠 피드 시간은 YPP 에 안 들어가지만 새 채널의 유입 깔때기다.
 # 같은 편에서 첫 장면·hook·각도가 다른 쇼츠를 나눠 올려 어떤 주제·첫 1초가 먹히는지 비교한다(3화부터 필수).
 EXTRA_SHORTS = (1, 2)
+# ★2026-10-05 사용자: "구미호 영상이 너무 조선 같은 분위기만 풍긴다 — 좀 글로벌하게". 그림 앞에 늘 'Joseon dynasty era'
+#   가 붙어 엘리베이터 괴담·곤지암 같은 현대 이야기도 갓·한옥으로 그려졌다. 10화(10/14, 실험 주간 다음)부터는
+#   대본이 시대(look)를 고른다. 그 전 편은 look 이 없어 예전 화풍 그대로다(실험 주간을 흔들지 않는다).
+LOOKS = {
+    "modern": "present day, contemporary setting, ",      # 지금도 도는 괴담·미신·장소 — 기본
+    "joseon": "Korean folklore, Joseon dynasty era, ",    # 조선이 배경인 옛이야기
+    "japan": "Japanese folklore, old Japan, ",
+    "china": "Chinese folklore, ancient China, ",
+    "myth": "timeless mythic East Asian setting, ",       # 신화·저승·하늘처럼 시대가 없는 곳
+}
+GLOBAL_FROM = 10
+# 같은 날(10/5) 점검: 첫 구독자 4명 중 3명이 'Never Cut Your Nails at Night in Korea' 쇼츠에서 왔다. 규칙형 쇼츠
+#   420·161회 vs 이야기형 11회. 10화부터 쇼츠 3개(본 쇼츠 + 추가 2) 중 하나 이상은 규칙형 제목('Korean Rules').
+RULE_TITLE = re.compile(r"(?i)^\s*(never|don'?t|do not|if you|always|you should never|why you should never)\b")
+EXTRA_SHORTS_GLOBAL = (2, 2)
 THUMB_MAX_WORDS = 4
 # 몇 달 뒤에도 통해야 한다(역주행) — 날짜를 타는 말은 금지. 사실로 적는 연도(1994년 영화 등)는 괜찮다
 DATED = re.compile(r"(?i)\b(this (year|week|month|halloween|summer|winter|season)|last (week|month|year)|recently|"
@@ -160,9 +175,17 @@ def check(s: dict, path: str | None = None) -> list[str]:
     if not isinstance(extra, list):
         errs.append("shorts_extra 는 목록이어야 한다")
         extra = []
-    if s.get("id", 0) >= 3 and not sprint_day(s.get("id", 0)) and not EXTRA_SHORTS[0] <= len(extra) <= EXTRA_SHORTS[1]:
-        errs.append(f"쇼츠는 편당 2~3개 — shorts_extra {len(extra)}개(1~2개 필요, 3화부터). "
+    tid = s.get("id", 0)
+    lo, hi = EXTRA_SHORTS_GLOBAL if tid >= GLOBAL_FROM else EXTRA_SHORTS
+    if tid >= 3 and not sprint_day(tid) and not lo <= len(extra) <= hi:
+        errs.append(f"쇼츠는 편당 {lo + 1}~{hi + 1}개 — shorts_extra {len(extra)}개({lo}~{hi}개 필요). "
                     "첫 장면·hook·각도가 다른 쇼츠로 어떤 게 먹히는지 비교한다")
+    errs += look_errs(s)
+    if tid >= GLOBAL_FROM:
+        alls = [s["short"]] + [ex for ex in extra if isinstance(ex, dict)]
+        if not any(RULE_TITLE.match(x.get("title", "")) for x in alls):
+            errs.append("쇼츠 중 하나 이상은 규칙형 제목('Never … in Korea. Here's Why', 'Don't …', 'If You …') — "
+                        "WRITING.md 'Korean Rules'")
     hooks = {(s["short"].get("hook") or s["thumb"].get("text", "")).strip().lower()}
     firsts = {first_src(s["short"])}
     titles = {s["short"].get("title", "").strip().lower()}
@@ -191,6 +214,21 @@ def check(s: dict, path: str | None = None) -> list[str]:
         titles.add(tt)
     if len(",".join(s["tags"])) > 480:
         errs.append("태그 합계 480자 이하")
+    return errs
+
+
+def look_errs(s: dict) -> list[str]:
+    """10화부터 look 필수. 장면마다 look 을 바꿀 수도 있다(현대 이야기 속 옛 회상 장면 등)."""
+    errs = []
+    lk = s.get("look")
+    if lk is None:
+        if s.get("id", 0) >= GLOBAL_FROM:
+            errs.append(f"look 필수(10화부터) — {', '.join(LOOKS)} 중 하나. 지금도 도는 괴담·미신은 modern")
+    elif lk not in LOOKS:
+        errs.append(f"look {lk!r} — {', '.join(LOOKS)} 중 하나")
+    for i, x in enumerate(s.get("scenes") or []):
+        if x.get("look") is not None and x["look"] not in LOOKS:
+            errs.append(f"장면 {i}: look {x['look']!r} — {', '.join(LOOKS)} 중 하나")
     return errs
 
 

@@ -165,17 +165,25 @@ print("── 편당 쇼츠 2~3개(3화부터) ──")
 keys_ = [x["key"] for x in S["scenes"] if x.get("key")]
 main_first = T.first_src(S["short"])
 alt = next(k for k in keys_ if k != main_first)
+alt2 = next(k for k in keys_ if k not in (main_first, alt))
 ex = copy.deepcopy(S["short"])
 ex["hook"] = "DON'T LOOK BACK"
-ex["title"] = "A different way in #shorts"
+ex["title"] = "Never Look Back on a Korean Mountain Road #shorts"    # 규칙형(10화부터 하나 이상)
 ex["lines"][0] = {"scene": alt, "say": ex["lines"][0]["say"]}
+ex2 = copy.deepcopy(S["short"])
+ex2["hook"] = "SHE KEPT THE BEAD"
+ex2["title"] = "A different way in #shorts"
+ex2["lines"][0] = {"scene": alt2, "say": ex2["lines"][0]["say"]}
 three = copy.deepcopy(S)
 three["id"] = 10                     # 스프린트(3~9화)는 추가 쇼츠 예외 — 그 밖의 편으로 검사
+three["look"] = "modern"
 three["title"] = "Gumiho " + three["title"][:40]
-ck("3화부터(스프린트 편 제외) shorts_extra 없으면 거부", any("편당 2~3개" in e for e in T.check(three, "x.json")))
+ck("10화부터 shorts_extra 없으면 거부", any("편당" in e for e in T.check(three, "x.json")))
 three["shorts_extra"] = [ex]
-errs3 = [e for e in T.check(three, "x.json") if "쇼츠" in e]
-ck("추가 쇼츠 1개(다른 hook·첫 장면·제목)면 통과", not errs3, str(errs3))
+ck("10화부터 추가 쇼츠 1개면 거부(2개 — 주 3편)", any("편당" in e for e in T.check(three, "x.json")))
+three["shorts_extra"] = [ex, ex2]
+errs3 = [e for e in T.check(three, "x.json") if "쇼츠" in e or "look" in e]
+ck("추가 쇼츠 2개(다른 hook·첫 장면·제목)+규칙형 하나면 통과", not errs3, str(errs3))
 b_ = copy.deepcopy(three)
 b_["shorts_extra"][0]["hook"] = S["short"].get("hook") or S["thumb"]["text"]
 ck("hook 이 본 쇼츠와 같으면 거부", any("hook 이 다른 쇼츠와 같다" in e for e in T.check(b_, "x.json")))
@@ -186,8 +194,34 @@ b_ = copy.deepcopy(three)
 b_["shorts_extra"][0]["lines"][0] = copy.deepcopy(S["short"]["lines"][0])
 ck("첫 장면이 본 쇼츠와 같으면 거부", any("첫 장면 그림" in e for e in T.check(b_, "x.json")))
 b_ = copy.deepcopy(three)
-b_["shorts_extra"] = [ex, ex, ex]
-ck("추가 쇼츠 3개(합계 4개)는 거부", any("편당 2~3개" in e for e in T.check(b_, "x.json")))
+b_["shorts_extra"] = [ex, ex2, ex2]
+ck("추가 쇼츠 3개(합계 4개)는 거부", any("편당" in e for e in T.check(b_, "x.json")))
+
+print("── 글로벌 화풍·Korean Rules(10화부터, 2026-10-05) ──")
+b_ = copy.deepcopy(three)
+del b_["look"]
+ck("10화부터 look 없으면 거부", any("look 필수" in e for e in T.check(b_, "x.json")))
+b_["look"] = "victorian"
+ck("look 이 목록 밖이면 거부", any("look 'victorian'" in e for e in T.check(b_, "x.json")))
+b_ = copy.deepcopy(three)
+b_["scenes"][5]["look"] = "space"
+ck("장면 look 이 목록 밖이면 거부", any("장면 5: look" in e for e in T.check(b_, "x.json")))
+b_ = copy.deepcopy(three)
+b_["scenes"][5]["look"] = "joseon"
+ck("현대 이야기 속 조선 회상 장면은 통과", not any("look" in e for e in T.check(b_, "x.json")))
+b_ = copy.deepcopy(three)
+b_["shorts_extra"][0]["title"] = "One more way in #shorts"
+b_["short"]["title"] = "The Fox Bead Legend #shorts"          # 1화 본 쇼츠 제목도 규칙형(Never Kiss…)이라 바꿔서
+ck("10화부터 규칙형 쇼츠가 하나도 없으면 거부", any("규칙형" in e for e in T.check(b_, "x.json")))
+ck("1·2화(look 없음)는 look 검사 안 함", not any("look" in e for e in T.check(S, "x.json")))
+ck("look 없는 옛 대본은 예전 화풍 문자열 그대로(그림 캐시 유지)", R.look_prefix(None) == R.LOOK)
+ck("modern 은 조선이 아니라 현대", "present day" in R.look_prefix("modern") and "Joseon" not in R.look_prefix("modern"))
+ck("joseon 은 조선 그대로", "Joseon dynasty era" in R.look_prefix("joseon"))
+import inspect as _ins  # noqa: E402
+ck("9화까지는 look 이 있어도 예전 화풍(실험 주간 보호)", "T.GLOBAL_FROM" in _ins.getsource(R.make_images))
+ck("규칙형 제목 판별", bool(T.RULE_TITLE.match("Never Cut Your Nails at Night in Korea. Here's Why #shorts"))
+   and bool(T.RULE_TITLE.match("If You Hear Your Name, Don't Turn #shorts"))
+   and not T.RULE_TITLE.match("They Wished for a Daughter #shorts"))
 md3 = T.meta(three, None, short_of="https://youtu.be/X")
 ck("메타에 추가 쇼츠 제목·본편 링크", md3["shorts_extra"][0]["title"] == ex["title"]
    and "youtu.be/X" in md3["shorts_extra"][0]["description"])

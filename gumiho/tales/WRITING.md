@@ -95,13 +95,30 @@ Same narrator every week, **different shape** — so the channel never feels lik
 - `note` puts a small caption on screen: use it for Korean/Chinese/Japanese terms,
   e.g. `"여우구슬  yeowoo guseul  =  the fox bead"`. At most ~5 per episode.
 
+## Look — when and where the pictures live (`look`, required from Tale 010)
+Our viewers are not Korean. Most of them meet these legends **today** — in an apartment elevator, a
+school at night, a hiking trail, a convenience store, a phone screen. So the pictures should feel like
+a horror film set in the present, not a museum of old Korea.
+- Set `"look"` at the top level of the script. Options:
+  `modern` (present day — **the default** for urban legends, superstitions, real places, internet rituals,
+  rules people still follow), `joseon` (the story itself happens in Joseon Korea), `japan`, `china`,
+  `myth` (afterlife, sky, gods — no era).
+- Even an old legend can open in the present: a modern hiker on Mount Jang hears the voice; then the
+  legend's origin is a flashback. Put `"look": "joseon"` (or `japan`/`china`) **on those scenes only**.
+- People in `modern` scenes wear ordinary present-day clothes. Hanbok, gat hats and hanok villages only
+  in scenes that are really set in the past.
+- Settings that travel well: apartments, elevators, subways, schools, hospitals, mountain trails,
+  convenience stores, rainy city streets at night, small seaside towns. Korea stays Korea (it is the
+  hook), but the frame should feel like a film any viewer has seen, not a history lesson.
+- Gumi's own portraits (`gumi`) stay as they are.
+
 ## Pictures (`img`)
-- The renderer prepends a house style (anime film still, painterly, cinematic). Your prompt
-  describes **subject, setting, time of day, light, mood** in one sentence. English only.
+- The renderer prepends a house style (anime film still, painterly, cinematic) plus the era from
+  `look`. Your prompt describes **subject, setting, time of day, light, mood** in one sentence. English only.
 - **Recurring characters**: write one fixed description and reuse it *verbatim* every time
   (001 uses "a beautiful young woman in a pale jade hanbok with a red ribbon in her long black hair").
-- Korean tales: hanbok, hanok, gat hats, Joseon villages, pine mountains. Never torii gates,
-  kimono or pagodas in a Korean tale (and vice versa for Japan/China episodes).
+- Scenes set in old Korea (`joseon`): hanbok, hanok, gat hats, Joseon villages, pine mountains. Never torii
+  gates, kimono or pagodas in a Korean tale (and vice versa for Japan/China episodes).
 - No words/letters/signs in pictures. No nudity, no gore, no real celebrities, no logos, no scenes
   copied from films or dramas (mention a drama in narration; don't depict its actors).
 - Vary shot size: wide establishing → medium → close-up (eyes, hands, an object) → wide.
@@ -118,6 +135,9 @@ Same narrator every week, **different shape** — so the channel never feels lik
   Patterns that work: "Korea's X Is Darker Than Japan's Y | The X Legend",
   "Every Magistrate Who Slept Here Died by Morning | The Legend of Arang".
   Use the catalog `title_idea` or improve it.
+  From Tale 010, prefer the two forms that are working for us and for the biggest channels in this niche:
+  a **rule** ("Never Play Bunshinsaba Alone — Korean Students Know Why") or a **dark truth**
+  ("The Dark Truth Behind Korea's Gonjiam Asylum"). Keep the searchable name in the title.
 - `thumb.text`: 2–4 punchy words in caps-friendly English ("NEVER KISS HER", "DON'T ANSWER").
   `thumb.img`: the single most arresting image of the tale, a face or figure large in frame.
 - `hook`: one sentence for the description's first line.
@@ -143,6 +163,19 @@ Same narrator every week, **different shape** — so the channel never feels lik
 - its own `hook` (required, 2–7 words) and its own `title`.
 Still never reveal the ending; the last line is Gumi sending viewers to the full tale.
 They are released after the episode is public (Tue and Thu), so they can link to it.
+
+### Korean Rules (from Tale 010: exactly 2 extra Shorts, at least one Short is a rule)
+Our first subscribers came from a rule Short: "Never Cut Your Nails at Night in Korea. Here's Why"
+(420 views in 4 hours) — while a story Short ("They Wished for a Daughter…") got 11. So at least one of
+the episode's three Shorts must be a **rule**:
+- `title` starts with **Never / Don't / If You / Always** and names Korea (or Japan/China for those
+  episodes): "Never Whistle at Night in Korea. Here's Why #shorts",
+  "If You Hear Your Name on Mount Jang, Don't Turn Around #shorts".
+- `hook` is the rule in 2–7 words ("NEVER WHISTLE AT NIGHT").
+- Line 1 shows someone about to break the rule, in a present-day setting; then the real belief and
+  where it comes from; then the turn; last line Gumi sends them to the full tale. The rule must be a real
+  belief or the real rule of the legend — never invent one.
+- The checker requires `look` and at least one rule title from Tale 010.
 
 ## Done
 Save as `output/tales/<NNN>_<slug>.json` (the `file` value from `next`), run the checker until ✅,

@@ -44,6 +44,8 @@ jobs:
       TALES_TTS_WORKERS: "2"
       GUMIHO_SPARK_MAX_WAITING: "6"
       TALES_PUBLISH: ${{ vars.TALES_PUBLISH || 'private' }}
+      # 화풍(10화부터 대본 look 과 함께 쓰인다): anime(기본) | film — 레포 변수로 바꾼다(2026-10-05)
+      TALES_STYLE: ${{ vars.TALES_STYLE || 'anime' }}
       PYTHONIOENCODING: utf-8
     steps:
       # ★코드는 항상 main 에서 — routine/tales 는 누적 브랜치라 코드가 낡는다.

@@ -215,7 +215,7 @@
    "slug": "gonjiam",
    "region": "KR",
    "format": "urban",
-   "title_idea": "Gonjiam: The Real Korean Asylum Called One of the Creepiest Places on Earth",
+   "title_idea": "The Dark Truth Behind Gonjiam, Korea's 'Haunted' Asylum",
    "angle": "In 2012 CNN listed an abandoned hospital in the Korean hills among the freakiest places on the planet. The rumors about what happened inside were worse than the truth.",
    "facts": [
     "Gonjiam Psychiatric Hospital (곤지암 정신병원) was an abandoned hospital building near Gonjiam in Gwangju, Gyeonggi Province",
@@ -234,13 +234,14 @@
    "sources": [
     "CNN Travel (2012): 7 of the freakiest places on the planet",
     "Coverage of the film Gonjiam: Haunted Asylum (2018) and the building's 2018 demolition (Korea Herald / Korea JoongAng Daily)"
-   ]
+   ],
+   "look": "modern"
   },
   {
    "id": 11,
    "slug": "dokkaebi",
    "region": "KR",
-   "title_idea": "Dokkaebi: Korea's Goblins Want to Wrestle You, Not Eat You",
+   "title_idea": "Never Wrestle a Stranger on a Dark Korean Road — Dokkaebi Rules",
    "angle": "Meet a dokkaebi on a dark road and he won't kill you. He'll challenge you to wrestle till dawn.",
    "facts": [
     "Dokkaebi (도깨비) are Korean goblin spirits, often born from old household objects (a broom, a pestle) touched by human blood",
@@ -257,14 +258,15 @@
    "sources": [
     "Encyclopedia of Korean Folk Culture — 도깨비, 혹부리 영감: https://folkency.nfm.go.kr"
    ],
-   "format": "tale"
+   "format": "tale",
+   "look": "joseon"
   },
   {
    "id": 12,
    "slug": "exhuma-shamans",
    "region": "KR",
    "format": "behind",
-   "title_idea": "The Real Korean Shamans and Grave Curses Behind Exhuma",
+   "title_idea": "The Dark Truth Behind Exhuma: Korea's Real Grave Curses",
    "angle": "In Korea, when a family's luck keeps going wrong, someone eventually asks the question Exhuma starts with: is it the grave?",
    "facts": [
     "Exhuma (파묘, 2024) is a Korean occult thriller directed by Jang Jae-hyun; premise: a shaman, her apprentice, a geomancer and an undertaker are hired to move a wealthy family's ancestral grave. It drew over 10 million cinema admissions in Korea",
@@ -285,14 +287,15 @@
     "Encyclopedia of Korean Folk Culture — 무당, 굿, 작두타기, 풍수, 이장: https://folkency.nfm.go.kr",
     "Laurel Kendall, Shamans, Housewives, and Other Restless Spirits (1985)",
     "Korea JoongAng Daily / Yonhap coverage of Exhuma's box office (2024)"
-   ]
+   ],
+   "look": "modern"
   },
   {
    "id": 13,
    "slug": "red-mask",
    "region": "JP",
    "format": "urban",
-   "title_idea": "'Am I Pretty?' — The Slit-Mouthed Woman Who Crossed the Sea to Korea",
+   "title_idea": "If a Masked Woman Asks 'Am I Pretty?', Never Say Yes",
    "angle": "A woman in a surgical mask stops a child walking home and asks one question. Every answer is wrong.",
    "facts": [
     "Kuchisake-onna (口裂け女, 'slit-mouthed woman') is a Japanese urban legend; a panic spread among Japanese schoolchildren in 1979, and some schools had children walk home in groups",
@@ -308,14 +311,15 @@
    "tie_in": "Japanese urban legend videos regularly pass 1M views",
    "sources": [
     "Michael Dylan Foster, 'The Question of the Slit-Mouthed Woman' (Asian Folklore Studies, 2007)"
-   ]
+   ],
+   "look": "modern"
   },
   {
    "id": 14,
    "slug": "bunshinsaba",
    "region": "KR",
    "format": "urban",
-   "title_idea": "Bunshinsaba: The Spirit Game Korean Students Were Told Never to Play",
+   "title_idea": "Never Play Bunshinsaba Alone — Korean Students Know Why",
    "angle": "Two students hold one pen. They whisper a chant they don't understand. The pen starts to move — and it won't stop.",
    "facts": [
     "Bunshinsaba (분신사바) is a spirit-summoning game played by Korean students: two people hold one pen over paper and chant 'bunshinsaba, bunshinsaba, oide kudasai', then ask questions as the pen moves",
@@ -331,7 +335,8 @@
    "sources": [
     "Encyclopedia of Korean Folk Culture — 분신사바 / 학교 괴담: https://folkency.nfm.go.kr",
     "Film Bunshinsaba (분신사바, 2004)"
-   ]
+   ],
+   "look": "modern"
   },
   {
    "id": 15,
@@ -355,14 +360,15 @@
     "Encyclopedia of Korean Folk Culture — 아랑전설: https://folkency.nfm.go.kr",
     "Miryang city tourism — Arang-gak"
    ],
-   "format": "tale"
+   "format": "tale",
+   "look": "joseon"
   },
   {
    "id": 16,
    "slug": "school-ghosts",
    "region": "KR",
    "format": "urban",
-   "title_idea": "At Midnight, Korea's School Statues Come Alive",
+   "title_idea": "Never Walk Past a Korean School Statue at Midnight",
    "angle": "Every Korean kid knows it: at midnight, Admiral Yi draws his sword and King Sejong turns a page.",
    "facts": [
     "Hakgyo goedam (학교 괴담, school ghost stories) are a staple of Korean childhood",
@@ -377,7 +383,8 @@
    "sources": [
     "Encyclopedia of Korean Folk Culture — 학교괴담: https://folkency.nfm.go.kr",
     "Film Whispering Corridors (1998)"
-   ]
+   ],
+   "look": "modern"
   },
   {
    "id": 17,
