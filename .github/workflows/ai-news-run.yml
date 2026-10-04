@@ -85,6 +85,7 @@ jobs:
       VO_PRESET_BYEOLHA: ${{ vars.VO_PRESET_BYEOLHA || 'F1' }}
       # 멈추기: 레포 변수 SHORTS_PAUSED_TOPICS 에 ai 를 넣는다(예: horoscope,zodiac,stock,stock_us,ai)
       SHORTS_PAUSED_TOPICS: ${{ vars.SHORTS_PAUSED_TOPICS || '' }}
+      NEWS_CARD: ${{ vars.NEWS_CARD || '1' }}          # 정치·주식·AI '10초 한 장'(2026-10-04) — 0 이면 예전 40초 형식
     steps:
       # 1) 코드는 main 에서 — workflow_call 이면 github.ref 가 호출한 브랜치(routine/ai_*)라 ref 를 꼭 적는다.
       - uses: actions/checkout@v4

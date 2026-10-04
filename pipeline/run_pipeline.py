@@ -29,6 +29,7 @@ import config
 import fortune_card
 import theme_card
 import name_card
+import news_card
 import ledger as ledgermod
 import ai_news
 import motion_short
@@ -484,6 +485,10 @@ def process(sb_path, args, led):
         if fortune_card.use_card(sb):
             spec = fortune_card.build_spec(sb)
             print("   🗂️ 운세 한 장 표 (격일 A/B · fortune_card)")
+        elif news_card.use(sb):
+            # 정치·주식·AI 소식은 '10초 한 장'(2026-10-04) — 루틴 대본에서 뽑는다. 끄기: 레포 변수 NEWS_CARD=0
+            spec = news_card.build_spec(sb)
+            print(f"   🗂️ 소식 한 장 ({spec['scenes'][0].get('layout')} · news_card)")
         suffix = f"_{sb.get('topic','')}" if sb.get("topic") else ""
         if sb.get("slot"):
             suffix += f"_{sb['slot']}"          # 하루 여러 편(AI 소식 am·pm) — 파일이 서로 덮지 않게

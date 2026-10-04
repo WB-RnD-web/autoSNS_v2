@@ -91,7 +91,8 @@ THREADS_MAX = 500
 IG_TAGS_MAX = 5
 CHANNEL = "왕별이"
 GLOSS_MAX = 40
-DUR_SEC = (25.0, 58.0)
+# 2026-10-04: 소식은 '10초 한 장'(news_card, 11초)으로 바뀌었다 — 아래 끝을 8초로. 위 끝(한 호흡)은 그대로.
+DUR_SEC = (8.0, 58.0)
 TYPES = ("hook", "stat", "gauge", "trend", "quote", "keypoint", "statement")
 
 # 형식 — 매번 같은 틀이면 '대량 생산'으로 읽힌다. 코드가 돌려쓰기를 막는다(check §틀).

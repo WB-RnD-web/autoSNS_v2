@@ -292,6 +292,129 @@ CSS_GRID = """
 """
 
 
+# ── 소식 '10초 한 장' (2026-10-04, news_card.py) — 정치 찬반 · 주식 성적표 · AI 체크리스트 · 요점 ──────────
+# 위에서 아래로 흐르는 한 기둥(flex). 오른쪽 끝(x 960~)과 아래 22%(y 1500~)는 비운다.
+# ▲▼·✓·○× 는 글꼴마다 없을 수 있어 CSS 도형으로 그린다(리눅스 러너에서 네모로 나오지 않게).
+NEWS_X, NEWS_TOP, NEWS_W, NEWS_BOTTOM = 60, 96, 900, 1460
+CSS_NEWS = """
+.nwrap{position:absolute;left:60px;top:96px;width:900px;display:flex;flex-direction:column;gap:20px;}
+.nwrap .ntitle{font-weight:900;line-height:1.1;letter-spacing:-2px;color:#FFFFFF;text-shadow:0 4px 24px rgba(0,0,0,.6);}
+.nwrap .ntitle span{display:block;white-space:nowrap;}
+.nwrap .nt2{font-weight:900;color:var(--acc,#D97757);line-height:1.15;letter-spacing:-1px;margin-top:-6px;
+  white-space:nowrap;text-shadow:0 4px 24px rgba(0,0,0,.6);}
+.nbox{border-radius:24px;background:rgba(10,8,8,.8);border:2px solid rgba(237,217,188,.16);padding:22px 30px;}
+.nbig .nl{font-size:34px;font-weight:800;color:rgba(237,217,188,.85);}
+.nbig .nn{font-weight:900;letter-spacing:-3px;line-height:1.05;color:#FFFFFF;white-space:nowrap;}
+.nbig .nn small{font-size:52px;margin-left:8px;color:var(--acc,#D97757);letter-spacing:-1px;}
+.nbig .ns{font-size:34px;font-weight:700;color:rgba(237,217,188,.9);word-break:keep-all;}
+.nbig .ns b,.nbul b{color:var(--acc,#D97757);}
+.nsides{display:flex;gap:20px;}
+.nside{flex:1;min-width:0;border-radius:24px;background:rgba(10,8,8,.82);padding:22px 26px;border:4px solid #3FB6A8;}
+.nside.b{border-color:#E8954A;}
+.nside .h{font-size:36px;font-weight:800;margin-bottom:10px;color:#3FB6A8;}
+.nside.b .h{color:#E8954A;}
+.nside .q{font-weight:900;line-height:1.18;letter-spacing:-1px;color:#FFFFFF;word-break:keep-all;}
+.nrow{display:flex;align-items:center;gap:20px;}
+.nrow .k{flex:1;min-width:0;font-size:46px;font-weight:900;color:#FFFFFF;word-break:keep-all;line-height:1.15;}
+.nrow .k small{display:block;font-size:28px;font-weight:700;color:rgba(237,217,188,.75);margin-top:4px;}
+.nrow .v{flex:none;font-size:60px;font-weight:900;letter-spacing:-1px;white-space:nowrap;color:var(--acc,#D97757);}
+.nrow .v.up,.nbig .nn.up{color:#FF5A4F;}
+.nrow .v.down,.nbig .nn.down{color:#4F8CFF;}
+.tri{display:inline-block;width:0;height:0;border-left:17px solid transparent;border-right:17px solid transparent;
+  margin-right:12px;vertical-align:middle;position:relative;top:-6px;}
+.tri.up{border-bottom:30px solid currentColor;}
+.tri.down{border-top:30px solid currentColor;}
+.nchk{display:flex;align-items:center;gap:22px;font-size:48px;font-weight:900;color:#FFFFFF;word-break:keep-all;line-height:1.2;}
+.nchk .ck{flex:none;width:70px;height:70px;border-radius:16px;background:#3FB6A8;position:relative;}
+.nchk .ck:after{content:"";position:absolute;left:23px;top:9px;width:18px;height:36px;
+  border-right:9px solid #0D0C0B;border-bottom:9px solid #0D0C0B;transform:rotate(45deg);}
+.nlab{font-size:36px;font-weight:800;color:rgba(237,217,188,.85);}
+.nbul{display:flex;gap:18px;font-size:46px;font-weight:800;color:#FFFFFF;line-height:1.2;word-break:keep-all;}
+.nbul .dot2{flex:none;width:16px;height:16px;border-radius:50%;background:var(--acc,#D97757);margin-top:20px;}
+.nverd{border-radius:24px;background:var(--acc,#D97757);color:#111111;padding:20px 28px;font-size:48px;font-weight:900;
+  line-height:1.2;word-break:keep-all;}
+.nverd small{display:block;font-size:28px;font-weight:800;opacity:.75;margin-bottom:4px;}
+.nox{display:flex;gap:20px;}
+.nox div{flex:1;display:flex;align-items:center;justify-content:center;gap:20px;border-radius:24px;
+  background:rgba(255,255,255,.1);padding:20px 0;font-size:56px;font-weight:900;color:#FFFFFF;}
+.nox .o{width:52px;height:52px;border-radius:50%;border:9px solid #FF5A4F;box-sizing:border-box;}
+.nox .x{font-size:84px;line-height:.7;color:#4F8CFF;font-weight:900;}
+.nask{text-align:center;font-size:44px;font-weight:800;color:var(--acc,#D97757);}
+.nshare{text-align:center;border-radius:24px;border:3px dashed var(--acc,#D97757);padding:18px;font-size:44px;
+  font-weight:900;color:var(--acc,#D97757);}
+.nfoot{font-size:28px;font-weight:600;color:rgba(237,217,188,.72);}
+"""
+
+
+def _em(s):
+    return sum(0.6 if ch_.isascii() else 1.0 for ch_ in str(s)) or 1.0
+
+
+def _tri(d):
+    return f'<i class="tri {d}"></i>' if d in ("up", "down") else ""
+
+
+def news_html(gid, sc):
+    """소식 한 장. 칸마다 id({gid}-n{k})를 달아 차례로 톡 튀게 한다."""
+    W_ = NEWS_W
+    items, k = [], [0]
+
+    def box(html, cls="nbox"):
+        items.append(f'<div class="{cls}" id="{gid}-n{k[0]}">{html}</div>')
+        k[0] += 1
+
+    lines = sc.get("title") or []
+    tf = int(max(58, min(84, (W_ - 10) / max(_em(x) for x in lines)))) if lines else 84
+    head = f'<div class="ntitle" style="font-size:{tf}px">' + "".join(f"<span>{esc(x)}</span>" for x in lines) + "</div>"
+    t2 = sc.get("title2") or ""
+    if t2:
+        head += f'<div class="nt2" style="font-size:{int(max(42, min(62, (W_ - 10) / _em(t2))))}px">{esc(t2)}</div>'
+    pill = f'<div><span class="pill" id="{gid}-pill"><span class="dot"></span>{esc(sc.get("pill", ""))}</span></div>'
+    big = sc.get("big")
+    lay = sc.get("layout", "bullets")
+    if big and lay != "board":
+        nf = int(max(72, min(116, (W_ - 120) / (_em(big.get("num", "")) + 0.5 * _em(big.get("unit", "")) + 0.5))))
+        d = big.get("dir", "flat")
+        box((f'<div class="nl">{esc(big.get("label", ""))}</div>' if big.get("label") else "")
+            + f'<div class="nn {d}" style="font-size:{nf}px">{_tri(d)}{esc(big.get("num", ""))}'
+            + f'<small>{esc(big.get("unit", ""))}</small></div>'
+            + (f'<div class="ns">{_allow_b(big.get("sub", ""))}</div>' if big.get("sub") else ""), "nbox nbig")
+    if lay == "debate":
+        sd = sc.get("sides") or []
+        qf = int(max(40, min(54, 380 / max([_em(x.get("q", "")) / 2.2 for x in sd] + [1]))))
+        box('<div class="nsides">' + "".join(
+            f'<div class="nside {"ab"[j]}"><div class="h">{esc(x.get("h", ""))}</div>'
+            f'<div class="q" style="font-size:{qf}px">“{esc(x.get("q", ""))}”</div></div>' for j, x in enumerate(sd[:2]))
+            + "</div>", "nsides-wrap")
+    elif lay == "board":
+        for r in sc.get("rows") or []:
+            box(f'<div class="nrow"><div class="k">{esc(r.get("k", ""))}'
+                + (f'<small>{esc(r.get("s", ""))}</small>' if r.get("s") else "") + "</div>"
+                + f'<div class="v {r.get("dir", "flat")}">{_tri(r.get("dir"))}{esc(r.get("v", ""))}</div></div>')
+    elif lay == "check":
+        for x in sc.get("items") or []:
+            box(f'<div class="nchk"><span class="ck"></span>{esc(x)}</div>')
+    else:
+        lab = sc.get("label") or ""
+        if lab and lab != t2:
+            items.append(f'<div class="nlab">{esc(lab)}</div>')
+        for x in sc.get("items") or []:
+            box(f'<div class="nbul"><span class="dot2"></span><span>{_allow_b(x)}</span></div>')
+    if sc.get("verdict"):
+        items.append(f'<div class="nverd" id="{gid}-verd"><small>한 줄 정리</small>{esc(sc["verdict"])}</div>')
+    if sc.get("ox"):
+        o, x = (sc["ox"] + ["", ""])[:2]
+        items.append(f'<div class="nox" id="{gid}-ox"><div><span class="o"></span>{esc(o)}</div>'
+                     f'<div><span class="x">×</span>{esc(x)}</div></div>')
+        if sc.get("ask"):
+            items.append(f'<div class="nask">{esc(sc["ask"])}</div>')
+    if sc.get("share"):
+        items.append(f'<div class="nshare" id="{gid}-share">{esc(sc["share"])}</div>')
+    if sc.get("foot"):
+        items.append(f'<div class="nfoot">{esc(sc["foot"])}</div>')
+    return f'<div class="nwrap" id="{gid}-nw">' + pill + head + "".join(items) + "</div>", k[0]
+
+
 def grid_layout(n, cols):
     """칸 n개 · cols 열 → (칸 너비, 칸 높이, [(x, y)…])."""
     cols = max(1, int(cols))
@@ -508,6 +631,8 @@ def scene_html(i, sc, acc):
                 f'<div class="gtitle" id="{gid}-title"><span class="l1">{esc(sc.get("title",""))}</span>'
                 f'<span class="l2">{esc(sc.get("title2",""))}</span></div>' + "".join(cells)
                 + f'<div class="gfoot" style="top:{foot_y:.0f}px">{esc(sc.get("foot",""))}</div>')
+    elif t == "news":
+        body, sc["_n"] = news_html(gid, sc)
     elif t == "hook":
         lines = sc.get("lines", [])
         hl = sc.get("highlight", "")
@@ -653,6 +778,14 @@ def scene_js(i, sc, acc, bar_h=560, presenter=False):
         hi = [k for k, c in enumerate(sc.get("cells", [])) if c.get("hi")][:3]
         for j, k in enumerate(hi):
             out.append(f'tl.to("#{gid}-c{k}",{{scale:1.05,duration:0.22,ease:"sine.inOut",yoyo:true,repeat:1}},{S + 0.5 + j * 0.35:.2f});')
+    elif t == "news":
+        # 한 장은 0초부터 전부 떠 있다(캡처·반복 재생용). 칸이 차례로 한 번씩 톡 — 정지 화면이 아니라는 신호.
+        out.append(f'tl.fromTo("#{gid}-pill",{{scale:0.92}},{{scale:1,duration:0.35,ease:"back.out(2)",transformOrigin:"left center"}},{S:.2f});')
+        for k in range(min(5, int(sc.get("_n", 0)))):
+            out.append(f'tl.to("#{gid}-n{k}",{{scale:1.03,duration:0.22,ease:"sine.inOut",yoyo:true,repeat:1}},{S + 0.5 + k * 0.32:.2f});')
+        for tail in ("verd", "ox", "share"):
+            if sc.get({"verd": "verdict"}.get(tail, tail)):
+                out.append(f'tl.to("#{gid}-{tail}",{{scale:1.04,duration:0.25,ease:"sine.inOut",yoyo:true,repeat:3}},{S + 2.4:.2f});')
     elif t == "quote":
         out.append(f'tl.from("#{gid}-qm",{{scale:0.5,opacity:0,duration:0.6,ease:"back.out(1.6)"}},{S+0.4:.2f});')
         out.append(f'tl.from("#{gid}-qt",{{y:40,opacity:0,duration:0.6,ease:"power3.out"}},{S+0.6:.2f});')
@@ -707,6 +840,8 @@ def build_html(scenes, total, acc="#D97757", bg=False, presenter=False):
         css += CSS_CARD
     if any(sc.get("type") == "grid" for sc in scenes):
         css += CSS_GRID
+    if any(sc.get("type") == "news" for sc in scenes):
+        css += CSS_NEWS
     parts = [scene_html(i, sc, acc) for i, sc in enumerate(scenes)]
     bar_h = 360 if presenter else 560
     js = "\n".join(scene_js(i, sc, acc, bar_h=bar_h, presenter=presenter)
@@ -799,7 +934,7 @@ def build_motion(spec, out_mp4, workdir, quality="standard"):
     os.environ["PATH"] = os.environ.get("PATH", "") + os.pathsep + os.path.dirname(FFMPEG)
     scenes = spec["scenes"]
     # 한 장 표는 화면 전체를 쓴다 → 진행자 자리 없음
-    pr_on = presenter_on(spec.get("topic", "")) and not any(sc.get("type") in ("card", "grid") for sc in scenes)
+    pr_on = presenter_on(spec.get("topic", "")) and not any(sc.get("type") in ("card", "grid", "news") for sc in scenes)
     duo = pr_on and os.environ.get("PRESENTER_DUO", "1") not in ("0", "false", "False")
     assign_speakers(scenes, duo=duo)
     if scenes and scenes[0].get("type") == "hook" and top_hook_on(spec.get("topic", "")):
