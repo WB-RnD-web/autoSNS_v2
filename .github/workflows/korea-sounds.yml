@@ -118,7 +118,20 @@ jobs:
           echo "스펙: $P"
           python -c "import json,sys; s=json.load(open(sys.argv[1],encoding='utf-8')); y=s['platforms']['youtube']; print('테마', s['theme_id'], '· 슬롯', s['slot'], '· 움직임', s['motion'], '·', s['duration_sec']//3600, '시간'); print('제목', y['title'])" "$P"
 
+      # ★두 번 올리지 않는다(2026-10-03 Jeju 8시간 중복): 루틴 push 실행과 예비 cron 실행은 브랜치가 달라
+      #   ledger 캐시를 서로 못 본다. 그래서 두 시간짜리 렌더 전에 채널에 같은 제목이 있는지 직접 본다.
+      - name: 유튜브에 이미 있나(같은 슬롯)
+        id: seen
+        if: github.event.inputs.no_upload != 'true'
+        run: |
+          D="${{ github.event.inputs.date }}"
+          if U=$(python pipeline/korea_sounds.py ${D:+--date "$D"} --seen); then
+            echo "이미 올라감: $U — 이번 실행은 건너뛴다"
+            echo "skip=1" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: 렌더 + 업로드
+        if: steps.seen.outputs.skip != '1'
         run: |
           cd pipeline
           python run_asmr.py "../${{ steps.spec.outputs.path }}" \

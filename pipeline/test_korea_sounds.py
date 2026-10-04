@@ -109,6 +109,39 @@ ck("일·월·화는 그 주 토요일", all(K.slot_date(_S + _d.timedelta(days=
 ck("다음 주 수요일", K.slot_date(_S + _d.timedelta(days=7)) == _S + _d.timedelta(days=7))
 ck("같은 슬롯이면 테마도 같다", K.pick(_S)[0]["id"] == K.pick(_S + _d.timedelta(days=1))[0]["id"])
 
+print("── 중복 업로드 막기(10/3 Jeju 두 번)")
+
+
+class _Req:
+    def __init__(self, r):
+        self.r = r
+
+    def execute(self):
+        return self.r
+
+
+class _YT:
+    def __init__(self, titles):
+        self.titles = titles
+
+    def channels(self):
+        return type("C", (), {"list": lambda _s, **k: _Req({"items": [{"contentDetails": {"relatedPlaylists": {"uploads": "UUx"}}}]})})()
+
+    def playlistItems(self):
+        items = [{"snippet": {"title": t, "resourceId": {"videoId": f"v{i}"}}} for i, t in enumerate(self.titles)]
+        return type("P", (), {"list": lambda _s, **k: _Req({"items": items})})()
+
+
+_t = K.build_spec(_S)["platforms"]["youtube"]["title"]
+ck("같은 슬롯 제목이 채널에 있으면 주소", K.on_youtube(_t, _YT(["다른 영상", _t])) == "https://youtu.be/v1")
+ck("없으면 None(올린다)", K.on_youtube(_t, _YT(["다른 영상"])) is None)
+ck("같은 슬롯이면 늦게 돈 실행도 같은 제목(예비 cron 이 알아본다)",
+   K.build_spec(K.slot_date(_S + _d.timedelta(days=1)))["platforms"]["youtube"]["title"] == _t)
+_wf = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".github", "workflows", "korea-sounds.yml"),
+           encoding="utf-8").read()
+ck("워크플로: 렌더 전에 유튜브 확인 · 있으면 렌더·업로드 건너뜀",
+   "--seen" in _wf and "if: steps.seen.outputs.skip != '1'" in _wf and _wf.index("--seen") < _wf.index("run_asmr.py"))
+
 print()
 if FAIL:
     print(f"❌ 실패 {FAIL}건")
