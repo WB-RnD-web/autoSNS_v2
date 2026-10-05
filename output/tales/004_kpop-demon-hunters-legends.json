@@ -1,0 +1,526 @@
+{
+ "id": 4,
+ "slug": "kpop-demon-hunters-legends",
+ "look": "joseon",
+ "title": "The Real Korean Legends Hidden in KPop Demon Hunters",
+ "thumb": {
+  "text": "THE REAL SAJA BOYS",
+  "img": "close-up of a tall pale reaper in a long black robe and a wide black gat hat standing at a hanok gate at night, his pale face half in shadow under the hat brim, staring straight at the viewer, three bowls of rice on a small table before him, mist and a single lantern, chilling"
+ },
+ "hook": "The black-hatted reapers, the goofy tiger and the singers who fight spirits weren't invented for a cartoon. Here is the real Korean folklore behind KPop Demon Hunters.",
+ "tags": [
+  "kpop demon hunters",
+  "jeoseung saja",
+  "korean grim reaper",
+  "saja boys",
+  "korean folklore",
+  "korean mythology",
+  "kkachi horangi",
+  "tiger and magpie",
+  "mudang",
+  "korean shaman",
+  "gut ritual",
+  "chasa bonpuri",
+  "minhwa",
+  "gumiho"
+ ],
+ "sources": [
+  "Netflix Tudum — KPop Demon Hunters",
+  "Korea Herald (2025-08-27): KPop Demon Hunters becomes Netflix's most-watched film",
+  "Encyclopedia of Korean Folk Culture — 저승사자, 사자밥, 차사본풀이: https://folkency.nfm.go.kr",
+  "Encyclopedia of Korean Folk Culture — 까치호랑이(민화), 무당, 굿: https://folkency.nfm.go.kr"
+ ],
+ "scenes": [
+  {
+   "say": "When someone in an old Korean house was dying, the family set a small table outside the gate. Three bowls of rice. Three pairs of straw sandals. A few coins. It was not for the guests. It was for the three who were coming.",
+   "img": "a tall pale reaper in a long black robe and a wide black gat hat standing at the gate of a Joseon hanok at night, his face hidden in shadow, a small low table before him with three bowls of rice, three pairs of straw sandals and a few coins, mist and lantern light, solemn and eerie",
+   "key": "reaper",
+   "fx": "fog",
+   "move": "in"
+  },
+  {
+   "say": "And if the rice was good, they say, the three would be gentle on the road.",
+   "img": "close-up of three bowls of white rice and three pairs of woven straw sandals on a low wooden table beside a hanok gate at night, a lantern flickering, long shadows of three tall figures falling across the table",
+   "hold": 0.8,
+   "key": "table",
+   "fx": "fog",
+   "move": "down"
+  },
+  {
+   "say": "You've seen their hats before. Maybe on a screen, on a stage, on a boy band in an animated film. Don't worry, dear human. I'll explain.",
+   "gumi": "front",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "Hello again. I'm Gumi, a gumiho, a nine-tailed fox, a little over a thousand years old. I have met the men in black more than once. We nod. We don't chat.",
+   "gumi": "bead",
+   "note": "GUMI · gumiho · age 1,000+",
+   "fx": "embers",
+   "move": "left"
+  },
+  {
+   "say": "Here is what brought so many of you to my den. In 2025, Netflix released an animated musical from Sony Pictures Animation called KPop Demon Hunters, directed by Maggie Kang and Chris Appelhans.",
+   "img": "a dark teenage bedroom at night lit only by the blue glow of a laptop screen, a young viewer in a hoodie seen from behind, posters on the wall, rain on the window, cozy and mysterious",
+   "look": "modern",
+   "fx": "rain",
+   "move": "right"
+  },
+  {
+   "say": "The premise is simple. A K-pop girl group spends its nights secretly protecting the world from demons, and the weapon is their voices. It became one of the most watched films Netflix has ever had.",
+   "img": "a crowded concert hall in Seoul glowing with thousands of colorful light sticks in the dark, a stage far away flooded with light, no performers visible, energy and awe",
+   "look": "modern",
+   "fx": "fireflies",
+   "move": "up"
+  },
+  {
+   "say": "But a lot of what you saw in it isn't invented. It echoes things Korea has believed, painted and sung for hundreds of years. I'm not with the studio. I'm a fox. I just know the originals.",
+   "img": "an old Korean folk painting scroll, an ink drawing of a reaper, a painted tiger and a shaman's drum laid out together on a low wooden table, candlelight, dust in the air",
+   "fx": "dust",
+   "move": "left"
+  },
+  {
+   "say": "So tonight, three secrets hiding in plain sight. The reapers, the tiger and the magpie, and the singers who fight spirits. This is Tale Number Four.",
+   "gumi": "wink",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "card": "TALE 004",
+   "sub": "The Men in Black"
+  },
+  {
+   "say": "In the film, the rival boy band is called the Saja Boys. To Korean ears, that word saja rings a very old bell. Jeoseung saja. The envoys of the afterlife.",
+   "img": "a tall pale reaper in a long black robe and a wide black gat hat standing alone on a dark misty road between pine trees at night, holding a rolled paper scroll, his face pale and calm, cold blue moonlight",
+   "note": "저승사자  jeoseung saja  =  envoy of the afterlife",
+   "fx": "fog",
+   "move": "in"
+  },
+  {
+   "say": "Jeoseung is the world after this one. Saja means messenger, or envoy. They are not demons. They are officials. Civil servants of death, if you like, sent to collect a soul whose time has come.",
+   "img": "a vast shadowy underworld courtroom of old Korea, red pillars disappearing into darkness, rows of desks with scrolls, faint candles floating in the air, awe and dread",
+   "look": "myth",
+   "fx": "dust",
+   "move": "up"
+  },
+  {
+   "say": "Every saja carries a list. On it, a name, a birthday, a village. When the date arrives, they walk into the house without opening the door, and they call the name three times.",
+   "img": "close-up of an old paper scroll with brushstroke columns held in a pale hand with long fingers, an oil lamp flickering behind it, black robe sleeve",
+   "key": "list",
+   "fx": "none",
+   "move": "in"
+  },
+  {
+   "say": "Some families say the dying can see them first. A grandfather staring at the corner of the room. A grandmother asking who those gentlemen are, standing by the door.",
+   "img": "an old Korean grandmother lying on a sleeping mat in a dim hanok room, her eyes fixed on a dark corner where a tall shadow stands, her family kneeling beside her, lamplight",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "That's why the table goes out. Saja-bap, the reapers' rice. Bowls of rice, money for the long road, straw sandals because the journey to the other world is very far on foot.",
+   "img": "a Joseon family in white mourning clothes carefully setting a low table outside their gate at dusk, bowls of rice, coins and straw sandals, an old man watching from the doorway, quiet and sad",
+   "note": "사자밥  saja-bap  =  the reapers' rice",
+   "fx": "dust",
+   "move": "right"
+  },
+  {
+   "say": "It is hospitality, and it is also a bribe. The idea is that a well fed messenger treats your loved one kindly on the way. Nobody wants a hungry official walking their grandmother through the dark.",
+   "img": "three tall reapers in long black robes and wide black gat hats seen from behind, walking slowly on a foggy mountain path at night, a small pale soul in white walking between them",
+   "fx": "fog",
+   "move": "left"
+  },
+  {
+   "say": "Some families kept the custom long after they stopped believing. Just in case. I've always respected that. Humans are at their best when they're polite to things they can't see.",
+   "img": "a modern Korean funeral hall at night, white chrysanthemums, a framed photo surrounded by flowers, a single bowl of rice placed carefully at the side, mourners in black suits, soft light",
+   "look": "modern",
+   "fx": "dust",
+   "move": "out"
+  },
+  {
+   "say": "But how did a soul end up needing messengers at all? For that, we go south. To Jeju Island, where shamans still sing a long epic called the Chasa-bonpuri. The origin song of the reaper.",
+   "img": "the volcanic coast of Jeju Island at dusk, black lava rocks, crashing waves, a stone grandfather statue on a hill, wind and orange sky",
+   "note": "차사본풀이  Chasa-bonpuri  =  origin song of the reaper",
+   "fx": "fog",
+   "move": "right"
+  },
+  {
+   "say": "It goes like this. In one version, three young brothers are murdered for their silver on a journey. Then something impossible happens. They are born again, as three sons in the very house where they were killed.",
+   "img": "three young brothers in Joseon travelling clothes resting at a remote inn at night, a candle, a shadowy figure watching them from behind a paper screen, menace",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "The boys grow up handsome and clever. They pass the royal examination together. And on the same day, all three drop dead. Their grieving parents beg the local magistrate for justice.",
+   "img": "a magistrate's courtyard in Joseon at daytime, a weeping mother and father kneeling on the stone before a magistrate seated on a raised platform, guards in red, tense",
+   "fx": "dust",
+   "move": "left"
+  },
+  {
+   "say": "Only one judge can hear a case like that. Yeomra, the king of the underworld. So the magistrate turns to his cleverest official, a man named Gangrim, and gives him an impossible order. Go get him.",
+   "img": "a sharp-eyed young Joseon official in a dark blue robe with a red sash and a black hat kneeling before a stern magistrate in a lamplit office, receiving a sealed letter, his face calm but his hands tight, night",
+   "key": "official",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "Gangrim has no idea how to reach the land of the dead. In the song, his wife bakes him rice cakes, and the household gods, the spirit of the kitchen and the guardian of the gate, help show him the road.",
+   "img": "a Joseon woman in a plain hanbok handing a cloth bundle of rice cakes to her husband at the gate of a hanok before dawn, a warm glow from the kitchen fire behind them, mist",
+   "fx": "fog",
+   "move": "right"
+  },
+  {
+   "say": "He walks until the roads end. He crosses where living men don't cross. And then he waits beside the path where the king of death passes in his procession.",
+   "img": "a narrow stone path in a grey misty otherworld with tall dead trees, a long procession of ghostly lanterns approaching from far away, a lone figure hiding at the side of the path, eerie",
+   "look": "myth",
+   "fx": "fog",
+   "move": "left"
+  },
+  {
+   "say": "And Gangrim tied him up.",
+   "img": "a giant stern king of the underworld in red royal robes with a long black beard and a jeweled crown bound with thick ropes on a misty stone road, glaring down in fury at a sharp-eyed young Joseon official in a dark blue robe with a red sash and a black hat who holds the rope calmly, ghostly lanterns scattered on the ground",
+   "hold": 1.3,
+   "look": "myth",
+   "key": "king",
+   "fx": "none",
+   "move": "in"
+  },
+  {
+   "say": "A mortal clerk, holding the king of death by a rope. You have to admire it. I certainly do. In the song, Yeomra is so impressed, or so embarrassed, that he agrees to come to the living world and settle the case.",
+   "img": "a giant stern king of the underworld in red royal robes with a long black beard and a jeweled crown and a sharp-eyed young Joseon official in a dark blue robe with a red sash and a black hat walking side by side out of a swirling grey mist toward a glowing gate of the living world, the king grudging, the official proud",
+   "look": "myth",
+   "fx": "fog",
+   "move": "out"
+  },
+  {
+   "say": "He judges it, and the murdered brothers get their justice. In one version, they are even brought back to life. But a king does not forget being tied up by a clerk.",
+   "img": "a giant stern king of the underworld in red royal robes with a long black beard and a jeweled crown seated on a judgment throne inside a Joseon courtroom, pointing at a terrified culprit kneeling below, three young brothers glowing faintly behind him",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "Yeomra asked the magistrate for one thing in return. Gangrim. The magistrate tried to be clever. He offered the body and kept the soul. The king of death took the soul.",
+   "img": "a sharp-eyed young Joseon official in a dark blue robe with a red sash and a black hat lying still on a sleeping mat in a dim hanok room, a faint glowing figure of himself rising from his body and walking toward a door of light, sorrowful",
+   "fx": "fog",
+   "move": "up"
+  },
+  {
+   "say": "And so Gangrim became a saja. A messenger of the dead, walking the road he had walked once already. Some say he was the first reaper. The one all the others are measured against.",
+   "img": "a sharp-eyed young Joseon official in a dark blue robe with a red sash and a black hat now in a long black robe and a wide black gat hat, standing on a misty mountain ridge at dawn holding a scroll of names, looking down at a sleeping village below",
+   "key": "gangrim",
+   "fx": "fog",
+   "move": "right"
+  },
+  {
+   "say": "In one version, he is sent to bring back only the old. But a crow carrying his list loses it on the way. That is why, the song says, death does not take people in order.",
+   "img": "a black crow flying over a Joseon village at dusk, a scroll slipping from its claws and fluttering away on the wind, a red sky, ominous",
+   "fx": "embers",
+   "move": "down"
+  },
+  {
+   "say": "Personally, I find that the most frightening part. Not the reaper. The paperwork.",
+   "gumi": "wink",
+   "hold": 0.6,
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "Now, the look. The pale face, the black robe, the black gat. You might think it's ancient. It mostly isn't. Old paintings and songs imagined the messengers in many shapes, often as officials or warriors.",
+   "img": "an old faded Korean temple painting of the underworld courts showing messengers in armor and official robes leading souls, cracked colors, seen in candlelight",
+   "fx": "dust",
+   "move": "left"
+  },
+  {
+   "say": "That sleek, all black look was sharpened on screens. The drama Guardian: The Lonely and Great God in 2016. The film Along with the Gods in 2017. So the boy band's black hats echo a newer image, built on a very old idea.",
+   "img": "a tall pale reaper in a long black robe and a wide black gat hat standing in the rain on a modern Seoul street at night, neon reflections on wet pavement, people with umbrellas passing without noticing him",
+   "look": "modern",
+   "fx": "rain",
+   "move": "right"
+  },
+  {
+   "say": "Which leaves one question. If the men in black come for every one of us, who protects the living while we're still here? Old Korea had two answers. One had stripes.",
+   "img": "a dark pine forest at night, two huge glowing amber eyes watching from between the trees, mist curling around the trunks",
+   "fx": "fog",
+   "move": "in"
+  },
+  {
+   "card": "I",
+   "sub": "The Tiger and the Magpie"
+  },
+  {
+   "say": "In the film, the heroes have two little companions. A goofy tiger and a magpie. If you laughed at that tiger, good. Korean painters wanted you to.",
+   "img": "a goofy wide-eyed striped tiger with a big toothy grin, painted in the flat bright style of a Korean folk painting sitting under a crooked pine tree with a black and white magpie perched on a branch above it, plain cream paper background, charming and funny",
+   "key": "tiger",
+   "fx": "dust",
+   "move": "right"
+  },
+  {
+   "say": "For centuries, the tiger was the most feared animal in Korea. Real tigers walked the mountains, and the old stories begin with a phrase that means once upon a time: back when tigers smoked pipes.",
+   "img": "a real Siberian tiger walking through deep snow in a dark Korean pine forest at dusk, breath steaming, powerful and dangerous",
+   "fx": "snow",
+   "move": "left"
+  },
+  {
+   "say": "A tiger could carry off an ox. Villagers were told never to walk the mountain passes alone after sunset. So you'd expect the paintings to make him terrifying.",
+   "img": "a lonely Joseon traveller with a lantern on a snowy mountain pass at night, giant tiger pawprints in the snow beside the path, dread",
+   "fx": "snow",
+   "move": "in"
+  },
+  {
+   "say": "Instead, look at him. Crossed eyes. A grin like a cat that's been caught stealing fish. Fur spotted like a leopard and striped like a tiger at the same time. That is kkachi-horangi, the magpie and tiger painting.",
+   "img": "close-up of a goofy wide-eyed striped tiger with a big toothy grin, painted in the flat bright style of a Korean folk painting, crossed eyes, spotted and striped fur, its face silly and proud, a black and white magpie chattering at it from a pine branch, folk painting style",
+   "note": "까치호랑이  kkachi-horangi  =  magpie and tiger",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "It belongs to a style called minhwa, folk painting. Not for palaces. For ordinary homes. Painted by artists whose names we mostly never learned, and hung where everyone could see.",
+   "img": "a cosy Joseon home interior with a colorful folk painting of a tiger and magpie hanging on a paper wall, a low table, warm afternoon light, dust in the air",
+   "fx": "dust",
+   "move": "right"
+  },
+  {
+   "say": "The two had jobs. The magpie brought good news. If one chattered at your gate in the morning, Koreans said a welcome guest was coming. The tiger's job was to scare away evil.",
+   "img": "a black and white magpie perched on the tiled roof of a hanok gate at sunrise, chattering, a family stepping out in surprise, golden light",
+   "fx": "dust",
+   "move": "up"
+  },
+  {
+   "say": "At the New Year, families pasted tiger pictures on their gates. Bad luck, sickness, wandering spirits would look at that face and decide to try another house.",
+   "img": "a Joseon father pasting a painting of a goofy wide-eyed striped tiger with a big toothy grin, painted in the flat bright style of a Korean folk painting onto a wooden gate on a snowy New Year morning, his children watching, a faint shadowy spirit turning away in the street",
+   "fx": "snow",
+   "move": "left"
+  },
+  {
+   "say": "And why silly? Here's one reading people love. The tiger is the pompous official, the magpie is the common villager, and the magpie is clearly winning the argument. A joke you could hang on your wall without being arrested.",
+   "img": "a black and white magpie scolding a goofy wide-eyed striped tiger with a big toothy grin, painted in the flat bright style of a Korean folk painting who looks offended and confused under a pine tree, folk painting style, comic",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "Koreans even had a famous story about a tiger outwitted by a fruit. A crying child won't stop for the tiger at the window. But the moment the mother says dried persimmon, the child goes quiet.",
+   "img": "a huge tiger crouching outside the paper window of a hanok at night listening, inside a mother holding a crying baby by an oil lamp, a string of dried persimmons hanging from the eaves, snow",
+   "fx": "snow",
+   "move": "in"
+  },
+  {
+   "say": "The tiger panics. What is this persimmon, more frightening than a tiger? And it runs off into the dark, terrified of a snack.",
+   "img": "a giant tiger fleeing in panic through a snowy moonlit Joseon village, eyes wide, a dried persimmon hanging from a roof behind it, comic and eerie",
+   "fx": "snow",
+   "move": "left"
+  },
+  {
+   "say": "I've met tigers. Very impressive. Very easily confused. Please don't tell them I said so.",
+   "gumi": "wink",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "So the film's goofy tiger with a magpie friend draws on something real. Fear turned into a guardian. The most dangerous thing in the mountains, painted as a friend who keeps bad things away.",
+   "img": "a goofy wide-eyed striped tiger with a big toothy grin, painted in the flat bright style of a Korean folk painting sitting proudly before the gate of a hanok at night like a guard dog, a black and white magpie on its head, lanterns glowing, warm and protective",
+   "fx": "fireflies",
+   "move": "out"
+  },
+  {
+   "say": "But a painting can only scare the small spirits. When something bigger came knocking, a sickness that wouldn't leave, a ghost who wouldn't rest, a painting wasn't enough. Families called someone who could sing.",
+   "img": "a dark hanok courtyard at night, a cold wind blowing dry leaves, every paper door shut, one window glowing, a sense of something unseen pressing in",
+   "fx": "fog",
+   "move": "in"
+  },
+  {
+   "card": "II",
+   "sub": "The Singers Who Fight Spirits"
+  },
+  {
+   "say": "In the film, the girls fight demons with songs. In Korea, the people who stand between the living and the spirits have sung for a very long time. They are called mudang. Shamans. Most of them women.",
+   "img": "a Korean shaman woman in a bright red and blue ceremonial robe with long white sleeves standing in a lantern lit courtyard at night holding a fan and a cluster of brass bells, her face calm and focused, incense smoke curling around her",
+   "key": "shaman",
+   "note": "무당  mudang  =  shaman",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "Their ritual is called a gut. It is not quiet. There are drums, cymbals, bells. Costumes in red, blue and yellow. Songs that last for hours, sometimes through the whole night.",
+   "img": "a Korean shaman woman in a bright red and blue ceremonial robe with long white sleeves dancing in a whirl of bright silk sleeves before a table piled with fruit and rice cakes, drummers and a cymbal player beside her, villagers watching, lanterns, motion and color",
+   "key": "gut",
+   "note": "굿  gut  =  shamanic ritual",
+   "fx": "embers",
+   "move": "right"
+  },
+  {
+   "say": "A gut can call a spirit in, comfort it, or send it on its way. For a sick child. For a fishing boat that must come home. For a family that needs to speak to someone they lost.",
+   "img": "a small fishing village on the Korean coast at dawn, colorful ritual flags flapping on poles by the harbor, wooden boats, families gathered on the shore, wind and waves",
+   "fx": "fog",
+   "move": "left"
+  },
+  {
+   "say": "Sometimes the mudang speaks in a voice that isn't hers. The family hears a grandmother scolding them, the way she always did. People cry. People laugh. Then the drums carry her away again.",
+   "img": "close-up of a Korean shaman woman in a bright red and blue ceremonial robe with long white sleeves with her eyes half closed in a trance, lips parted as if speaking in another voice, an old family watching in tears behind her, candlelight",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "And here is the part I love. That Jeju song about Gangrim and the king of death? It's not a book. It is sung by shamans, inside the ritual. The reaper's story lives in the singer's mouth.",
+   "img": "a Korean shaman woman in a bright red and blue ceremonial robe with long white sleeves singing beside a drum on a windswept Jeju hillside at dusk, black lava stone walls behind her, ribbons streaming in the wind",
+   "fx": "fog",
+   "move": "right"
+  },
+  {
+   "say": "There is a gut for the newly dead, too. It helps the soul let go of this world and find the road. In some regions they sing of Princess Bari, a cast out daughter who walked to the underworld herself and came back to guide the dead.",
+   "img": "a young princess in a white hanbok walking alone on a glowing path through a dark underworld of mist and flowers, a lantern in her hand, brave and lonely",
+   "look": "myth",
+   "fx": "fireflies",
+   "move": "up"
+  },
+  {
+   "say": "So the singer and the reaper aren't really enemies. The reaper takes the soul. The singer makes sure it leaves gently, says goodbye, and doesn't stay behind to haunt the people it loved.",
+   "img": "a Korean shaman woman in a bright red and blue ceremonial robe with long white sleeves bowing at a gate at night, and on the misty road beyond, a tall pale reaper in a long black robe and a wide black gat hat bowing back to her, a small pale soul in white between them, solemn and peaceful",
+   "fx": "fog",
+   "move": "in"
+  },
+  {
+   "say": "Mudang are not only a thing of the past. Gut are still performed, in villages and in cities, and some are protected as national heritage. Many Koreans who never visit one still carry the songs somewhere in their bones.",
+   "img": "a Korean shaman woman in a bright red and blue ceremonial robe with long white sleeves performing a ritual dance on a rooftop in modern Seoul at night, apartment towers glowing around her, a small crowd in ordinary clothes watching respectfully",
+   "look": "modern",
+   "fx": "embers",
+   "move": "out"
+  },
+  {
+   "say": "So when a film imagines girls who protect people with their voices, it draws on that root. Bright clothes. Drums. A song that stands between you and the things in the dark.",
+   "img": "a single shaman's drum and a fan of bright silk ribbons resting on a wooden floor under a spotlight of moonlight, stillness after a ritual",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "I've watched many gut from the edge of the trees. A fox learns when to keep her tails low. Those women are not to be laughed at. Some of them could see me.",
+   "gumi": "front",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "card": "GUMI'S VERDICT"
+  },
+  {
+   "say": "So, which one is closest to the real thing? The tiger and magpie, almost straight from the old paintings. The singers, a glittering cousin of the mudang. The reapers? A modern costume over a very old fear.",
+   "gumi": "bead",
+   "fx": "embers",
+   "move": "left"
+  },
+  {
+   "say": "And that is my favorite part. Korea took a story about death, and sang it, and painted it, and joked about it, and fed it rice. That's how you live next to the dark without letting it win.",
+   "gumi": "front",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "Now it's your turn. Which of these three did you recognize before tonight? The reapers, the tiger, or the shamans? Tell me in the comments. I read every single one.",
+   "gumi": "wink",
+   "fx": "embers",
+   "move": "left"
+  },
+  {
+   "say": "In my next tale, a fight I've waited a thousand years to judge. Korea's gumiho. Japan's kitsune. China's huli jing. Three nine-tailed foxes, three countries, and one very biased judge.",
+   "img": "three fox spirits facing each other on three mountain peaks under one huge full moon, each with nine glowing tails of a different color, red, white and gold, dramatic and mysterious",
+   "fx": "embers",
+   "move": "up"
+  },
+  {
+   "say": "Until then, if you ever hear your name called three times in the night, don't answer. And leave a little rice by the gate. Just in case.",
+   "gumi": "wink",
+   "hold": 1.5,
+   "fx": "embers",
+   "move": "in"
+  }
+ ],
+ "short": {
+  "title": "Why Koreans Set Out Rice for the Grim Reaper #shorts #jeoseungsaja",
+  "hook": "RICE FOR THE REAPER",
+  "lines": [
+   {
+    "say": "In old Korea, when someone was dying, a table appeared outside the gate. And it wasn't for the guests.",
+    "scene": "reaper"
+   },
+   {
+    "say": "Three bowls of rice. Three pairs of straw sandals. A few coins for a very long road.",
+    "scene": "table"
+   },
+   {
+    "say": "It was for the jeoseung saja, the envoys of the afterlife. They carry a list, and they call your name three times.",
+    "scene": "list"
+   },
+   {
+    "say": "Feed them well, the families said, and they will be gentle with the one they take.",
+    "img": "a Joseon family in white mourning clothes kneeling beside a low table of rice by a gate at dusk, a tall dark figure in the mist beyond"
+   },
+   {
+    "say": "But where did the reapers come from? A Korean song says the first one tied up the king of death.",
+    "scene": "king"
+   },
+   {
+    "say": "The whole tale is on my channel. I'm Gumi. Leave a little rice out tonight.",
+    "gumi": "wink"
+   }
+  ]
+ },
+ "shorts_extra": [
+  {
+   "title": "Never Leave a Korean Reaper Hungry. Here's Why #shorts #koreanfolklore",
+   "hook": "NEVER LET THEM GO HUNGRY",
+   "lines": [
+    {
+     "say": "In Korea, families set a table for guests no one invites. Rice, sandals, coins, right by the gate.",
+     "scene": "table"
+    },
+    {
+     "say": "Because when someone is dying, three messengers of the dead are already on the way.",
+     "img": "three tall reapers in long black robes and wide black gat hats walking down a foggy village lane at night, lanterns going dark as they pass"
+    },
+    {
+     "say": "They are officials of the underworld. They carry a list with a name on it.",
+     "scene": "list"
+    },
+    {
+     "say": "The rice is called saja-bap, the reapers' rice. Feed them, and they will treat the soul kindly on the long road.",
+     "scene": "reaper"
+    },
+    {
+     "say": "Forget it, and the old fear was simple: a hungry messenger is not a gentle one.",
+     "img": "close-up of an empty low table beside a hanok gate at night, an overturned bowl, a long black sleeve at the edge of the frame"
+    },
+    {
+     "say": "Where did the reapers come from? It's on my channel. I'm Gumi, and I always tip.",
+     "gumi": "wink"
+    }
+   ]
+  },
+  {
+   "title": "He Tied Up the King of Death. So Death Made Him a Reaper #shorts #koreanmyth",
+   "hook": "HE TIED UP THE KING OF DEATH",
+   "lines": [
+    {
+     "say": "A Korean clerk once tied up the king of the underworld with a rope.",
+     "scene": "king"
+    },
+    {
+     "say": "His name was Gangrim. His magistrate needed a judge for three brothers who had died on the same day.",
+     "scene": "official"
+    },
+    {
+     "say": "Only Yeomra, king of the dead, could hear a case like that. So Gangrim walked to the land of the dead and waited by the road.",
+     "img": "a narrow stone path in a grey misty otherworld, a ghostly procession of lanterns approaching, a lone official in a dark blue robe hiding behind a dead tree"
+    },
+    {
+     "say": "He caught the king. He brought him back. The case was solved.",
+     "scene": "gangrim"
+    },
+    {
+     "say": "But a king never forgets who tied him up. And he asked for one thing in return.",
+     "img": "a giant stern king of the underworld in red royal robes with a long black beard and a jeweled crown smiling coldly in a dark throne room, candles"
+    },
+    {
+     "say": "What did it cost him? The full tale is on my channel. I'm Gumi.",
+     "gumi": "wink"
+    }
+   ]
+  }
+ ]
+}
