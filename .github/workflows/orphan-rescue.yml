@@ -24,6 +24,8 @@ on:
       - "output/tales/**.json"   # Nine Tails Tales 대본 → routine/tales
       - "output/insta/**.json"   # 인스타 릴스 대본 → routine/insta
       - "output/weekly_fortune/**.json"   # 주간 띠별 운세 대본 → routine/weekly_fortune
+      - "output/tales_rules/**.json"      # Nine Tails RULES 대본 → routine/tales_rules
+      - "output/pulse/**"                 # 채널 맥박 보고서 → routine/pulse(영상 업로드 없음 — 검사·PR 만)
 
 # GITHUB_TOKEN 은 ★읽기만. push 는 아래 checkout 이 심어둔 PAT 으로 나간다.
 #   (permissions 는 GITHUB_TOKEN 의 권한이지 PAT 의 권한이 아니다 — 최소 권한을 유지한다)

@@ -70,6 +70,19 @@ class FakeYT:
                      "contentDetails": {"duration": f"PT{yt.v[i]['dur']}S"}} for i in ids if i in yt.v]})
         return V()
 
+    def channels(self):
+        yt = self
+
+        class C:
+            def list(self, part, id):
+                yt.calls["ch"] = yt.calls.get("ch", 0) + 1
+                ids = id.split(",")
+                return Req(lambda: {"items": [
+                    {"id": c, "statistics": {"viewCount": str(sum(x["views"] for x in yt.v.values() if x["ch"] == c)),
+                                             "subscriberCount": "42", "videoCount": str(sum(x["ch"] == c for x in yt.v.values()))}}
+                    for c in ids]})
+        return C()
+
 
 def mk(ch, n, views, title="오늘의 띠별 운세", start_day=4, dur=40, pre=""):
     return {f"{ch}_{pre}{k}": {"ch": ch, "title": title, "views": views, "dur": dur,
@@ -104,6 +117,16 @@ ck("스냅숏 키는 시각(UTC 시)", list(reg["UCaaaa_0"]["views"]) == ["2026-
 ck("쇼츠·롱폼 구분(3분)", TR.fmt(reg["UCaaaa_0"]) == "short" and TR.fmt(reg["long1"]) == "long")
 ck("quota 추정 = 채널 수 + 50개 묶음", st["units_est"] == 3 + (st["new"] + 49) // 50, str(st["units_est"]))
 
+print("── 채널 전체 스냅숏(channels.json — 채널 맥박이 읽는다) ──")
+chans = {}
+cs = TR.collect_channels(chans, cfg, yt, NOW)
+ck("참고·우리 채널 전부 한 번에(50개 묶음 1 unit)", cs["channels"] == 3 and yt.calls.get("ch") == 1, str(cs))
+ck("스냅숏 = 채널 전체 조회수·구독자·영상 수", chans["UCwwww"]["snaps"]["2026-10-20T00"] == {"views": 1000, "subs": 42, "videos": 5}
+   and chans["UCwwww"]["own"] is True and chans["UCwwww"]["niche"] == "own_wb", str(chans["UCwwww"]))
+chans["UCwwww"]["snaps"]["2025-01-01T00"] = {"views": 1, "subs": 1, "videos": 1}
+TR.collect_channels(chans, cfg, yt, NOW + dt.timedelta(days=1))
+ck("400일 지난 채널 스냅숏은 정리 · 하루 하나씩 쌓인다", sorted(chans["UCwwww"]["snaps"]) == ["2026-10-20T00", "2026-10-21T00"])
+
 print("── 7일째 조회수 ──")
 rec = {"pub": "2026-10-01T00:00:00Z", "views": {"2026-10-06T00": 600, "2026-10-09T00": 900}}
 ck("5일 600 · 8일 900 → 7일 800(보간)", abs(TR.views_at(rec, 7) - 800) < 1e-6, str(TR.views_at(rec, 7)))
@@ -114,6 +137,10 @@ rt = TR.ratios(reg, NOW)
 ck("평소 영상 배수 ≈ 1", abs(rt["UCaaaa_0"]["ratio"] - 1.0) < 0.01, str(rt["UCaaaa_0"]))
 ck("대박 영상 = 평소의 5배", abs(rt["UCaaaa_hit0"]["ratio"] - 5.0) < 0.01, str(rt["UCaaaa_hit0"]))
 ck("작은 채널도 자기 평소 대비(100회 = 1배)", abs(rt["UCbbbb_0"]["ratio"] - 1.0) < 0.01)
+zero = {f"z{k}": {"ch": "UCzz", "niche": "own_tales", "title": "t", "dur": 30, "likes": 0, "comments": 0,
+                  "pub": (NOW - dt.timedelta(days=4 + k)).strftime("%Y-%m-%dT%H:%M:%SZ"), "views": {"2026-10-20T00": 0 if k else 7}}
+        for k in range(4)}
+ck("평소(중앙값)가 0 인 갓 생긴 채널도 빼지 않는다(10/5 NT n=0 버그)", len(TR.ratios(zero, NOW)) == 4, str(TR.ratios(zero, NOW)))
 ck("3일 안 된 영상은 재지 않는다", "UCaaaa_0" in rt and not any(k for k in rt if reg[k]["title"].startswith("갓")))
 res = TR.analyze(reg, cfg, NOW)
 f = res["niches"]["fortune_kr"]["tags"]
