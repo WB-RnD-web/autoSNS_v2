@@ -37,6 +37,8 @@ for path, want in [
     ("output/news/2026-08-21_horoscope_storyboard.json", "horoscope"),
     ("output/scp/scp-9245_2026-09-02.json", "scp"),
     ("output/asmr/2026-08-31_keyboard.json", "asmr"),
+    ("output/tales_rules/R001_name-called-at-night.json", "tales_rules"),
+    ("output/pulse/2026-10-06/fill.json", "pulse"),
 ]:
     ck(f"{path.split('/')[-1]} → {want}", F.guess_topic(path) == want, F.guess_topic(path))
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """트렌드 레이더 — 참고 채널 새 영상이 '그 채널 평소'보다 얼마나 잘 되는지로 주제별 떡상·끝물을 가린다.
 
-    python tools/trend_radar.py collect --dir <data>     # 유튜브 API → registry.json 에 조회수 스냅숏
+    python tools/trend_radar.py collect --dir <data>     # 유튜브 API → registry.json(영상) · channels.json(채널 전체) 스냅숏
     python tools/trend_radar.py analyze --dir <data>     # trends.json · report.md · weekly/<날짜>.json
     python tools/trend_radar.py run --dir <data>         # 둘 다(워크플로가 매일 부른다)
 
@@ -34,6 +34,7 @@ UTC = dt.timezone.utc
 MIN_AGE = 3.0          # 이보다 어린 영상은 재지 않는다(조회수가 덜 찼다)
 TRACK_DAYS = 30        # 이 나이까지 매일 조회수를 다시 읽는다
 KEEP_DAYS = 75         # 레지스트리 보관(주간 비교에 두 달 남짓)
+CH_KEEP_DAYS = 400     # channels.json(채널 전체 조회수·구독자 스냅숏) 보관 — 채널 맥박(tools/pulse.py)이 읽는다
 WINDOW = 21            # 주제 판정에 쓰는 '최근' 범위(게시일 기준)
 HIT = 2.0              # 대박 = 채널 평소의 2배 이상
 MIN_N = 3              # 표본이 이보다 적으면 판정하지 않는다
@@ -167,6 +168,33 @@ def collect(reg: dict, cfg: dict, yt, at: dt.datetime | None = None) -> dict:
             "videos": len(reg), "errors": errors, "units_est": len(owner) + (len(want) + 49) // 50}
 
 
+def collect_channels(chans: dict, cfg: dict, yt, at: dt.datetime | None = None) -> dict:
+    """channels.json 을 갱신한다(제자리): 채널마다 {name, niche, own, snaps: {스탬프: {views, subs, videos}}}.
+    channels.list 50개당 1 unit. 30일 넘은 영상까지 포함한 '채널 전체' 조회수라 우리 채널 하루 조회의 기준이 된다."""
+    at = at or now_utc()
+    key = stamp(at)
+    meta = {ch: (niche, name, bool(c.get("own"))) for niche, c in cfg.items() for ch, name in c["channels"].items()}
+    ids, errors = sorted(meta), []
+    for i in range(0, len(ids), 50):
+        try:
+            r = yt.channels().list(part="statistics", id=",".join(ids[i:i + 50])).execute()
+        except Exception as e:  # noqa: BLE001 — 채널 통계가 막혀도 영상 스냅숏은 이미 모았다
+            errors.append(f"channels.list: {str(e)[:120]}")
+            continue
+        for it in r.get("items", []):
+            st = it.get("statistics", {})
+            niche, name, own = meta.get(it["id"], ("", "", False))
+            c = chans.setdefault(it["id"], {"snaps": {}})
+            c.update({"name": name, "niche": niche, "own": own})
+            c["snaps"][key] = {"views": int(st.get("viewCount", 0) or 0),
+                               "subs": None if st.get("hiddenSubscriberCount") else int(st.get("subscriberCount", 0) or 0),
+                               "videos": int(st.get("videoCount", 0) or 0)}
+    cut = at - dt.timedelta(days=CH_KEEP_DAYS)
+    for c in chans.values():
+        c["snaps"] = {k: v for k, v in c.get("snaps", {}).items() if parse_t(k) >= cut}
+    return {"channels": len(chans), "errors": errors}
+
+
 # ── 재기 ────────────────────────────────────────────────
 def snaps(rec: dict) -> list[tuple[float, int]]:
     """(나이(일), 조회수) 시간순."""
@@ -208,9 +236,10 @@ def ratios(reg: dict, at: dt.datetime) -> dict:
             a = age_days(reg[v], at)
             if a < MIN_AGE:
                 continue
-            if b7 and v7[v] is not None:
+            # ★중앙값 0 도 '평소'다(갓 생긴 채널) — `if b7` 로 쓰면 0 을 거짓으로 봐서 채널이 통째로 빠졌다(10/5 NT n=0)
+            if b7 is not None and v7[v] is not None:
                 out[v] = {"ratio": v7[v] / max(1.0, b7), "basis": "7d", "views": latest(reg[v])}
-            elif bnow and a <= TRACK_DAYS:
+            elif bnow is not None and a <= TRACK_DAYS:
                 out[v] = {"ratio": latest(reg[v]) / max(1.0, bnow), "basis": "now", "views": latest(reg[v])}
     return out
 
@@ -336,11 +365,16 @@ def main() -> int:
             print("::error::토큰 없음(TREND_TOKEN) — 모으지 못한다")
             return 2
         reg = load_json(os.path.join(a.dir, "registry.json"), {})
-        st = collect(reg, cfg, service(a.token), at)
+        yt = service(a.token)
+        st = collect(reg, cfg, yt, at)
         save_json(os.path.join(a.dir, "registry.json"), reg)
         print(f"   📥 새 영상 {st['new']} · 갱신 {st['updated']} · 추적 {st['tracked']} · 정리 {st['dropped']} · 전체 {st['videos']}"
               f" · 약 {st['units_est']} units")
-        for e in st["errors"]:
+        chans = load_json(os.path.join(a.dir, "channels.json"), {})
+        cs = collect_channels(chans, cfg, yt, at)
+        save_json(os.path.join(a.dir, "channels.json"), chans)
+        print(f"   📊 채널 통계 {cs['channels']}곳")
+        for e in st["errors"] + cs["errors"]:
             print(f"   ⚠️ {e}")
     if a.cmd in ("analyze", "run"):
         res = run_analyze(a.dir, cfg, at)

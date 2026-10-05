@@ -2,14 +2,17 @@ name: 트렌드 레이더 — 참고 채널·우리 채널 조회수 → 주제�
 
 # 매일 아침 한 번: 참고 채널(tools/trend_niches.json) 최신 업로드 + 30일 안 영상 조회수를 읽어 스냅숏을 쌓고,
 #   '그 채널 평소 대비 배수'로 주제별 강세·약세(지난주가 있으면 떡상·식는 중·끝물)를 낸다.
-#   결과: data/trend-radar 의 trends.json(코드가 읽는다) · report.md(사람이 읽는다) · weekly/<날짜>.json(지난주 비교).
+#   결과: data/trend-radar 의 trends.json(코드가 읽는다) · report.md(사람이 읽는다) · weekly/<날짜>.json(지난주 비교)
+#   · channels.json(채널 전체 조회수·구독자 — 채널 맥박 tools/pulse.py 가 읽는다).
 # ★숫자만 낸다. '그래서 무엇을 바꿀까'는 주간 검토가 PR 로 한다(루틴에게 '트렌드를 반영해라'는 지켜지지 않는다).
 # 비용: 유튜브 API 하루 약 150~300 units(업로드 1건 = 1,600). RSS 는 2026-10-01 404 로 막혀 쓰지 않는다.
 # ⚠️ main 에는 아무것도 커밋하지 않는다 — data/trend-radar 에 고아 커밋 하나로 강제 push.
 
 on:
   schedule:
-    - cron: "47 21 * * *"      # 06:47 KST
+    # 04:17 KST — 2026-10-05: 06:47 예약이 매일 2~3시간 늦게(09~10시) 돌았다. 채널 맥박 분석 루틴(07:30 KST)이
+    #   그날 숫자를 읽도록 당겼다. 늦어도 루틴이 최대 1시간 기다리고, 그래도 없으면 DATA_STALE 로 알린다.
+    - cron: "17 19 * * *"
   workflow_dispatch:
 
 permissions:
@@ -75,7 +78,7 @@ jobs:
             echo
             echo "- 만든 곳: .github/workflows/trend-radar.yml (main) · tools/trend_radar.py · tools/trend_niches.json"
             echo "- trends.json: 분야·주제별 배수(채널 평소 대비)·대박 비율·판정 — 코드가 읽는다"
-            echo "- report.md: 사람이 읽는 요약 · weekly/<날짜>.json: 지난주 비교용 · registry.json: 영상별 조회수 스냅숏(75일)"
+            echo "- report.md: 사람이 읽는 요약 · weekly/<날짜>.json: 지난주 비교용 · registry.json: 영상별 조회수 스냅숏(75일) · channels.json: 채널 전체 스냅숏(400일)"
             echo "- 마지막 생성: $(date '+%F %H:%M') KST · run ${GITHUB_RUN_ID}"
           } > "$OUT/README.md"
           export GIT_INDEX_FILE="$RUNNER_TEMP/radar.index"

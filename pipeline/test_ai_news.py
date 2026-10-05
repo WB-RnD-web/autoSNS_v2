@@ -846,8 +846,9 @@ ck("ai-news-feed.yml: 루틴 30분 전 두 번(정각 피함) + 수동 실행",
    re.findall(r'cron:\s*"(\d+) (\d+) \* \* \*"', feedwf) == [("37", "0"), ("37", "9")] and "workflow_dispatch:" in feedwf)
 # 쓰기 권한은 '데이터 브랜치에 고아 커밋을 미는' 워크플로에만 — AI 피드와 트렌드 레이더(2026-10-01 #112).
 #   ★10/1 레이더를 더하면서 이 목록을 안 고쳐 AI 소식 업로드가 하루 막혔다(테스트 단계 실패) — 새 데이터 워크플로는 여기에 함께 적는다.
-WRITERS = {"ai-news-feed.yml": "data/ai-news-feed", "trend-radar.yml": "data/trend-radar"}
-ck("…contents: write 는 데이터 브랜치 워크플로(AI 피드·트렌드 레이더)에만",
+#   2026-10-05 채널 맥박(pulse.yml)은 분석 루틴이 제안한 개선 PR 브랜치(pulse/<날짜>-<slug>)만 push 한다.
+WRITERS = {"ai-news-feed.yml": "data/ai-news-feed", "trend-radar.yml": "data/trend-radar", "pulse.yml": "refs/heads/$BR"}
+ck("…contents: write 는 데이터 브랜치 워크플로(AI 피드·트렌드 레이더)·맥박 PR 브랜치에만",
    sorted(n for n, t in flows.items() if re.search(r"(?m)^\s*contents:\s*write", t)) == sorted(WRITERS),
    str(sorted(n for n, t in flows.items() if re.search(r"(?m)^\s*contents:\s*write", t))))
 for _wf, _br in WRITERS.items():

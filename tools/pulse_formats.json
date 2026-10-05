@@ -1,0 +1,44 @@
+{
+ "about": "채널 맥박(tools/pulse.py)이 우리 영상을 '형식'으로 나누는 규칙. 위에서부터 처음 맞는 규칙 하나만 쓴다(겹침 없음). 제목(title_prefix·title_re)·한국 시각 분(kst_min: [[시작, 끝], ...], 0~1439)·길이(dur: short=3분 이하·long)·게시일(before/after, KST 날짜)로 고른다. 편성 시각이 바뀌면 여기만 고치면 된다(분석 루틴이 PR 로 고칠 수 있는 파일). 2026-10-05 기준 편성: 운세 06:00 · 미장 07:10 · 국장 08:00 · 정치 08:30/11:30/14:30 · AI 10:07/19:07 · 사연 쇼츠 13:07(GitHub 예약이 몇 시간씩 늦어 시각 대신 제목의 '…'로 가린다) · 이름 표 07:40/09:40/13:40/15:40 · 띠 테마 12:00 · 주간 운세 일 20:00 · RULES 21:00 UTC.",
+ "channels": {
+  "wb": {
+   "id": "UCBmHETsvCsvT0xOb99Yx19Q",
+   "name": "왕별이",
+   "niche": "own_wb",
+   "rules": [
+    {"key": "scp", "label": "SCP", "title_re": "\\[SCP-"},
+    {"key": "asmr", "label": "ASMR·수면(롱)", "dur": "long", "title_re": "(?i)ASMR|빗소리|수면|잠|rain|sleep|hours|waves"},
+    {"key": "weekly", "label": "주간 운세(롱)", "dur": "long", "title_re": "이번 주|주간"},
+    {"key": "saeyeon_long", "label": "사연(롱)", "dur": "long"},
+    {"key": "daily", "label": "매일 운세 표", "title_prefix": "오늘 띠별 운세 1위~12위"},
+    {"key": "name", "label": "이름 표", "title_re": "이름 한자 풀이"},
+    {"key": "month", "label": "태어난 달 표", "title_prefix": "태어난 달로 보는"},
+    {"key": "year", "label": "해 끝자리 표", "title_prefix": "태어난 해 끝자리"},
+    {"key": "surname", "label": "성씨 표", "title_prefix": "성씨로 보는"},
+    {"key": "theme", "label": "띠 테마 표", "title_re": "띠 순위 1위~12위"},
+    {"key": "weekly_short", "label": "주간 운세 쇼츠", "dur": "short", "title_prefix": "이번 주 띠별 운세"},
+    {"key": "saeyeon_short", "label": "사연 쇼츠", "dur": "short", "after": "2026-10-02", "title_re": "^(?!.*(국회|대통령|의원|장관|검찰|정부|여당|야당|민주당|국민의힘|코스피|코스닥|나스닥|AI|#shorts)).*…"},
+    {"key": "ai", "label": "AI 소식", "dur": "short", "kst_min": [[600, 640], [1140, 1180]]},
+    {"key": "oldf", "label": "옛 운세·별자리 쇼츠", "dur": "short", "before": "2026-10-02", "title_re": "띠|별자리|월생|일생|점 나온|운세"},
+    {"key": "us", "label": "미장", "dur": "short", "kst_min": [[425, 459]]},
+    {"key": "kr", "label": "국장", "dur": "short", "kst_min": [[475, 504]]},
+    {"key": "pol", "label": "정치", "dur": "short", "kst_min": [[505, 545], [685, 720], [865, 900]]},
+    {"key": "etc_short", "label": "기타 쇼츠", "dur": "short"},
+    {"key": "etc_long", "label": "기타 롱폼", "dur": "long"}
+   ]
+  },
+  "nt": {
+   "id": "UCoPIsIO_ximUdyh-n_-rIfQ",
+   "name": "Nine Tails Tales",
+   "niche": "own_tales",
+   "rules": [
+    {"key": "sleep", "label": "수면판(롱)", "dur": "long", "title_re": "(?i)sleep"},
+    {"key": "episode", "label": "본편(롱)", "dur": "long"},
+    {"key": "versus", "label": "대결 쇼츠", "dur": "short", "title_re": "(?i)\\bvs\\.?\\b"},
+    {"key": "pov", "label": "POV 쇼츠", "dur": "short", "title_re": "(?i)^\\s*pov\\b"},
+    {"key": "rules", "label": "규칙형 쇼츠", "dur": "short", "title_re": "(?i)^\\s*(never|don'?t|do not|if\\b|always|you should never|why you should never)"},
+    {"key": "story_short", "label": "이야기 쇼츠", "dur": "short"}
+   ]
+  }
+ }
+}
