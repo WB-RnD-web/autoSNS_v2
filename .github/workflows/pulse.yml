@@ -103,7 +103,9 @@ jobs:
           mkdir -p "$RUNNER_TEMP/radar"
           git fetch -q --depth=1 origin data/trend-radar
           git archive FETCH_HEAD | tar -x -C "$RUNNER_TEMP/radar"
-          python tools/pulse.py verify-pr "$DIR" --radar "$RUNNER_TEMP/radar"
+          mkdir -p "$RUNNER_TEMP/ypp"
+          if git fetch -q --depth=1 origin data/ypp 2>/dev/null; then git archive FETCH_HEAD | tar -x -C "$RUNNER_TEMP/ypp"; fi
+          python tools/pulse.py verify-pr "$DIR" --radar "$RUNNER_TEMP/radar" --ypp "$RUNNER_TEMP/ypp"
           BR=$(python tools/pulse.py pr "$DIR" --field branch)
           TITLE=$(python tools/pulse.py pr "$DIR" --field title)
           python tools/pulse.py pr "$DIR" --field body > "$RUNNER_TEMP/body.md"

@@ -23,6 +23,7 @@ import datetime as dt
 import glob
 import html
 import json
+import math
 import os
 import re
 import shutil
@@ -34,6 +35,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 FORMATS = os.path.join(HERE, "pulse_formats.json")
 EXPERIMENTS = os.path.join(HERE, "pulse_experiments.json")
+YPP = os.path.join(HERE, "pulse_ypp.json")
 REPO = "WB-RnD-web/autoSNS_v2"
 UTC = dt.timezone.utc
 KST = dt.timezone(dt.timedelta(hours=9))
@@ -321,6 +323,7 @@ def analyze_channel(key: str, spec: dict, reg: dict, chans: dict, at: dt.datetim
         "uploads_7d": sum(a < 7 for a in age.values()),
         "last_pub_h": round((at - last_pub).total_seconds() / 3600) if last_pub else None,
         "_m24": {v: views_at(recs[v], 1.0) for v in recs}, "_fk": fk, "_age": age, "_fby": fby,
+        "_main": main, "_cs": cs,
     }
 
 
@@ -383,6 +386,82 @@ def exp_status(today: dt.date, chans: dict) -> tuple[list, list]:
                 flags.append({"id": f"EXP_DUE:{e['id']}", "level": "warn",
                               "text": f"실험 '{e['title']}' 판정일 {e['judge']} 지남 — 판정하고 pulse_experiments.json 을 닫을 것"})
     return rows, flags
+
+
+def load_ypp(override_dir: str | None = None) -> dict:
+    """수익화 목표·스튜디오 보정값(tools/pulse_ypp.json). override_dir/studio.json(로컬 작업이 data/ypp 에 넣는다)의
+    채널별 값이 더 새로우면(checked) 그것을 쓴다."""
+    cal = load(YPP, {}) or {}
+    if override_dir:
+        o = load(os.path.join(override_dir, "studio.json"), {}) or {}
+        for k, v in (o.get("studio") or {}).items():
+            if isinstance(v, dict) and v.get("checked", "") > cal.get("studio", {}).get(k, {}).get("checked", ""):
+                cal.setdefault("studio", {})[k] = v
+    return cal
+
+
+def ypp_status(cal: dict, chans: dict, today: dt.date) -> tuple[dict, list]:
+    """수익화 기준까지 남은 거리·속도·예상 날짜.
+    유효 Shorts 조회(90일) 추정 = 스튜디오 숫자(data_date 기준) + 유효 비율 × 그 뒤 하루 조회 합.
+    유효 비율 = 스튜디오 '유효 조회수 ÷ 조회수'(짧은 쇼츠는 반복 재생이 조회수에 다 잡혀 유효는 일부다).
+    90일 창은 굴러간다 → 하루 속도 p 를 유지하면 90일 합의 최대는 90p. 그래서 기준 ÷ 90 이 '필요한 하루 속도'다."""
+    out, flags = {}, []
+    if not cal.get("tiers"):
+        return out, flags
+    deadline = dt.date.fromisoformat(cal["deadline"])
+    for k, st in (cal.get("studio") or {}).items():
+        c = chans.get(k)
+        if not c:
+            continue
+        ratio = st["engaged_ratio"]
+        main = c["_main"]
+        plays_after = sum(x["views"] for x in main if x["d"] > st["data_date"])
+        gap = bool(main) and main[0]["d"] > (dt.date.fromisoformat(st["data_date"]) + dt.timedelta(days=1)).isoformat()
+        valid = st["valid_shorts_90d"] + ratio * plays_after
+        w = c["window"]
+        pace = ratio * w["cur"] if w else None
+        subs_now = (c.get("subs") or {}).get("now") or st["subs"]
+        sd = [x["subs_d"] for x in c["_cs"][-7:] if x.get("subs_d") is not None]
+        srate = statistics.fmean(sd) if sd else None
+        if srate is None:
+            gone = (today - dt.date.fromisoformat(st["checked"])).days
+            srate = (subs_now - st["subs"]) / gone if gone > 0 and subs_now != st["subs"] else None
+        tiers = []
+        for t in cal["tiers"]:
+            need_s = max(0, t["subs"] - subs_now)
+            s_eta = 0 if not need_s else (math.ceil(need_s / srate) if srate and srate > 0 else None)
+            need_v = max(0, t["shorts"] - valid)
+            cap = 90 * pace if pace else None
+            if not need_v:
+                v_eta = 0
+            elif pace and cap >= t["shorts"]:
+                v_eta = math.ceil(need_v / pace)
+            else:
+                v_eta = None
+            hours_ok = st["valid_hours_365d"] >= t["hours"]
+            ready = not need_s and (not need_v or hours_ok)
+            eta = 0 if ready else (max(s_eta, v_eta) if s_eta is not None and v_eta is not None else None)
+            row = {"key": t["key"], "label": t["label"], "subs": subs_now, "subs_need": t["subs"], "subs_eta": s_eta,
+                   "valid": round(valid), "valid_need": t["shorts"], "valid_eta": v_eta, "pace_need": round(t["shorts"] / 90),
+                   "cap": rnd(cap), "hours": st["valid_hours_365d"], "hours_need": t["hours"], "ready": ready, "eta": eta,
+                   "eta_date": (today + dt.timedelta(days=eta)).isoformat() if eta is not None else None,
+                   "valid_eta_date": (today + dt.timedelta(days=v_eta)).isoformat() if v_eta is not None else None}
+            tiers.append(row)
+            if ready:
+                flags.append({"id": f"YPP_READY:{k}:{t['key']}", "level": "good",
+                              "text": f"{c['name']} '{t['label']}' 기준을 넘은 것으로 추정 — 스튜디오 수익 창출 탭에서 확인하고 신청할 때"})
+            elif v_eta is None and not hours_ok:
+                flags.append({"id": f"YPP_PACE:{k}:{t['key']}", "level": "warn",
+                              "text": f"{c['name']} '{t['label']}': 지금 속도(유효 하루 {man(pace)})로는 90일 합이 최대 {man(cap)} — "
+                                      f"{man(t['shorts'])} 에는 유효 하루 {man(t['shorts'] / 90)}(조회수로 약 {man(t['shorts'] / 90 / ratio)}) 필요"})
+            elif row["eta_date"] and dt.date.fromisoformat(row["eta_date"]) > deadline and t["key"] == "ads":
+                flags.append({"id": f"YPP_LATE:{k}", "level": "warn",
+                              "text": f"{c['name']} 광고 수익 기준 예상일 {row['eta_date']} — 마감 {cal['deadline']}(그 뒤 새 신청은 기준이 두 배) 뒤다"})
+        out[k] = {"name": c["name"], "ratio": ratio, "valid": round(valid), "plays_after": plays_after, "gap": gap,
+                  "pace": rnd(pace), "subs": subs_now, "srate": rnd(srate, 1), "hours": st["valid_hours_365d"],
+                  "checked": st["checked"], "data_date": st["data_date"], "deadline": cal["deadline"],
+                  "days_left": (deadline - today).days, "tiers": tiers}
+    return out, flags
 
 
 def radar_trends(trends: dict) -> dict:
@@ -457,7 +536,8 @@ def flag_days(fid: str, history: list[dict], day: str) -> int:
             return n
 
 
-def build(radar_dir: str, out_root: str, day: str | None = None, now: dt.datetime | None = None) -> dict:
+def build(radar_dir: str, out_root: str, day: str | None = None, now: dt.datetime | None = None,
+          ypp_dir: str | None = None) -> dict:
     now = now or dt.datetime.now(UTC)
     day = day or kst_day(now)
     reg = load(os.path.join(radar_dir, "registry.json"), {})
@@ -477,12 +557,14 @@ def build(radar_dir: str, out_root: str, day: str | None = None, now: dt.datetim
         flags += channel_flags(c)
     exps, ef = exp_status(dt.date.fromisoformat(day), chans)
     flags += ef
+    ypp, yf = ypp_status(load_ypp(ypp_dir), chans, dt.date.fromisoformat(day))
+    flags += yf
     hist_dirs = prev_dirs(out_root, day)
     history = [h for h in (load(os.path.join(d, "pulse.json")) for d in hist_dirs) if h]
     P = {"date": day, "generated": now.isoformat(timespec="minutes"), "data_at": at.isoformat(timespec="minutes"),
          "radar_at": radar_t.isoformat(timespec="minutes"), "radar_age_h": round(age_h, 1),
          "channels": {k: {x: y for x, y in c.items() if not x.startswith("_")} for k, c in chans.items()},
-         "experiments": exps, "trends": radar_trends(trends)}
+         "experiments": exps, "trends": radar_trends(trends), "ypp": ypp}
     prev_fill = load(os.path.join(out_root, (dt.date.fromisoformat(day) - dt.timedelta(days=1)).isoformat(), "fill.json"))
     P["pred_scored"] = score(P, prev_fill)
     misses = sum(p["ok"] is False for p in P["pred_scored"])
@@ -635,6 +717,13 @@ def branch_name(day: str, slug: str) -> str:
 def report_md(P: dict, F: dict) -> str:
     d = dt.date.fromisoformat(P["date"])
     o = [f"# 채널 맥박 — {P['date']} ({WEEKDAY[d.weekday()]})", "", f"> {F['summary']}", ""]
+    for y in P.get("ypp", {}).values():
+        o += [f"## 수익화까지 — {y['name']} (마감 {y['deadline']}, D-{y['days_left']})", ""]
+        for t in y["tiers"]:
+            o.append(f"- {t['label']}: 구독 {t['subs']:,}/{t['subs_need']:,} · 유효 Shorts(90일, 추정) {man(t['valid'])}/{man(t['valid_need'])}"
+                     f" · 시청 {t['hours']:,}/{t['hours_need']:,}시간 → {ypp_when(t)}")
+        o.append(f"- 유효 하루 속도 {man(y['pace'])}(조회수의 {y['ratio']:.0%}) · 구독 하루 {y['srate'] if y['srate'] is not None else '–'}명 · 스튜디오 {y['checked']} 확인값 기준")
+        o.append("")
     for k, c in P["channels"].items():
         fc = F["channels"][k]
         w = c["window"]
@@ -731,7 +820,50 @@ td.n,th.n{text-align:right;font-family:"IBM Plex Mono",ui-monospace,monospace;fo
 a{color:var(--info)}
 .pr{border-left:3px solid var(--accent)}
 footer{font-size:.8rem;color:var(--muted);display:grid;gap:4px}
+.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:18px}
+.tier{display:grid;gap:6px;min-width:0}
+.meter{display:grid;grid-template-columns:minmax(0,7.5em) 1fr minmax(0,9.5em);gap:8px;align-items:center;font-size:.84rem}
+.meter .track{height:8px;border-radius:4px;background:var(--chip);overflow:hidden}
+.meter .track i{display:block;height:100%;background:var(--warn)}
+.meter .track i.up{background:var(--up)}
+.meter span:last-child{text-align:right}
 """
+
+
+def ypp_when(t: dict) -> str:
+    """기준까지 남은 날을 한 줄로(구독·유효 Shorts 중 늦은 쪽). 구독 속도를 아직 모르면 Shorts 예상일만."""
+    if t["ready"]:
+        return "기준 충족(추정) — 신청할 때"
+    if t["eta_date"]:
+        return f"예상 {t['eta_date']}"
+    if t["valid_eta_date"]:
+        return f"유효 Shorts 예상 {t['valid_eta_date']} · 구독 속도는 기록이 쌓이면"
+    return f"이 속도로는 안 닿음 — 유효 하루 {man(t['pace_need'])} 필요"
+
+
+def meter(label: str, cur, need, text: str) -> str:
+    pct = 100 if not need else max(0.0, min(100.0, (cur or 0) / need * 100))
+    done = "up" if pct >= 100 else ""
+    return (f'<div class="meter"><span>{e(label)}</span><span class="track"><i class="{done}" style="width:{pct:.1f}%"></i></span>'
+            f'<span class="num">{e(text)}</span></div>')
+
+
+def ypp_html(P: dict) -> list[str]:
+    out = []
+    for y in P.get("ypp", {}).values():
+        out.append(f'<section class="panel"><div class="row"><h2>수익화까지 — {e(y["name"])}</h2>'
+                   f'<span class="chip">마감 {e(y["deadline"][5:])} · D-{y["days_left"]}</span></div><div class="tiers">')
+        for t in y["tiers"]:
+            cls = "up" if t["ready"] else "warn" if not (t["eta_date"] or t["valid_eta_date"]) else ""
+            when = f'<b class="{cls}">{e(ypp_when(t))}</b>'
+            out.append(f'<div class="tier"><div class="row"><b>{e(t["label"])}</b><span class="small">{when}</span></div>'
+                       + meter("구독", t["subs"], t["subs_need"], f'{t["subs"]:,} / {t["subs_need"]:,}')
+                       + meter("유효 Shorts 90일", t["valid"], t["valid_need"], f'{man(t["valid"])} / {man(t["valid_need"])}')
+                       + meter("시청시간", t["hours"], t["hours_need"], f'{t["hours"]:,} / {t["hours_need"]:,}h') + "</div>")
+        out.append(f'</div><span class="muted small">유효 조회 = 처음 몇 초 뒤에도 계속 본 횟수(수익화 기준) · 지금 조회수의 {y["ratio"]:.0%} · '
+                   f'유효 하루 <span class="num">{e(man(y["pace"]))}</span> · 구독 하루 <span class="num">{e(y["srate"] if y["srate"] is not None else "–")}</span>명 · '
+                   f'스튜디오 {e(y["checked"])} 확인값({e(y["data_date"])} 기준) + 그 뒤 조회수로 추정 · 시청시간은 스튜디오 값</span></section>')
+    return out
 
 
 def page_html(P: dict, F: dict) -> str:
@@ -743,8 +875,9 @@ def page_html(P: dict, F: dict) -> str:
            f"<style>{CSS}</style>", '<main class="wrap">',
            f'<header class="top"><span class="kicker">Channel pulse · {e(P["date"])} ({WEEKDAY[d.weekday()]})</span>'
            f'<h1>채널 맥박</h1><p class="summary">{e(F["summary"])}</p>'
-           f'<span class="muted small">데이터: 트렌드 레이더 {radar:%m-%d %H:%M} KST 수집 · 하루 조회 = 아침 기준 24시간</span></header>',
-           '<section class="grid2">']
+           f'<span class="muted small">데이터: 트렌드 레이더 {radar:%m-%d %H:%M} KST 수집 · 하루 조회 = 아침 기준 24시간</span></header>']
+    out += ypp_html(P)
+    out.append('<section class="grid2">')
     for k, c in P["channels"].items():
         fc = F["channels"][k]
         t = c["trend"]["state"]
@@ -875,7 +1008,7 @@ def check(day_dir: str) -> list[str]:
     return errs
 
 
-def verify_pr(day_dir: str, radar_dir: str) -> list[str]:
+def verify_pr(day_dir: str, radar_dir: str, ypp_dir: str | None = None) -> list[str]:
     """워크플로가 PR 을 열기 전에: 레이더 데이터로 숫자를 다시 내서 pr.evidence 플래그가 정말 있고 3일 이상
     이어졌는지(또는 실험 판정일인지) 확인한다. 루틴이 pulse.json 을 잘못 고쳤어도 PR 은 못 연다."""
     P, F = load(os.path.join(day_dir, "pulse.json")), load(os.path.join(day_dir, "fill.json"))
@@ -889,7 +1022,7 @@ def verify_pr(day_dir: str, radar_dir: str) -> list[str]:
             for n in ("pulse.json", "fill.json"):
                 if os.path.exists(os.path.join(d, n)):
                     shutil.copy(os.path.join(d, n), os.path.join(td, os.path.basename(d), n))
-        Q = build(radar_dir, td, P["date"])
+        Q = build(radar_dir, td, P["date"], ypp_dir=ypp_dir)
     days = {f["id"]: f["days"] for f in Q["flags"]}
     errs = [f"근거 {x} 가 다시 낸 숫자에 없다" for x in pr.get("evidence", []) if x not in days]
     if not any(x in days and (days[x] >= PR_MIN_DAYS or x.startswith("EXP_DUE:")) for x in pr.get("evidence", [])):
@@ -925,20 +1058,26 @@ def main() -> int:
     b.add_argument("--radar", required=True)
     b.add_argument("--out", default=os.path.join("output", "pulse"))
     b.add_argument("--date")
+    b.add_argument("--ypp", help="data/ypp 를 푼 폴더(studio.json) — 없으면 tools/pulse_ypp.json 만")
     c = sub.add_parser("check")
     c.add_argument("dir")
     v = sub.add_parser("verify-pr")
     v.add_argument("dir")
     v.add_argument("--radar", required=True)
+    v.add_argument("--ypp")
     p = sub.add_parser("pr")
     p.add_argument("dir")
     p.add_argument("--field", required=True, choices=["slug", "title", "branch", "body"])
     a = ap.parse_args()
     if a.cmd == "build":
-        P = build(a.radar, a.out, a.date)
+        P = build(a.radar, a.out, a.date, ypp_dir=a.ypp)
         print(f"📈 {P['date']} · 데이터 {parse_t(P['radar_at']).astimezone(KST):%m-%d %H:%M} KST ({P['radar_age_h']}시간 전)")
         for k, ch in P["channels"].items():
             print(f"   {ch['name']}: 하루 {man(ch['today'])} · {state_text(ch)} · 기준 {ch['basis']}")
+        for k, y in P.get("ypp", {}).items():
+            for t in y["tiers"]:
+                print(f"   💰 {y['name']} {t['label']}: 구독 {t['subs']:,}/{t['subs_need']:,} · 유효 Shorts {man(t['valid'])}/{man(t['valid_need'])}"
+                      f" · {ypp_when(t)}")
         for f in P["flags"]:
             print(f"   [{f['level']}] {f['id']} ({f['days']}일째) {f['text']}")
         print(f"   → {os.path.join(a.out, P['date'], 'pulse.json')}")
@@ -953,7 +1092,7 @@ def main() -> int:
         print(f"✅ 통과 — {os.path.join(a.dir, 'report.md')} · page.html")
         return 0
     if a.cmd == "verify-pr":
-        errs = verify_pr(a.dir, a.radar)
+        errs = verify_pr(a.dir, a.radar, a.ypp)
         for x in errs:
             print(f"❌ {x}")
         if not errs:
