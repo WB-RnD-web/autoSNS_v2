@@ -1,0 +1,142 @@
+name: Nine Tails RULES — 규칙괴담 쇼츠 대본 검사 → 목소리·세로 그림(Spark) → 렌더 → 업로드
+
+# 2026-10-05 사용자: 'Nine Tails 를 어린 친구·청년용 도파민 쇼츠로' → 동아시아 규칙괴담 매일 쇼츠(gumiho/tales/rules.py).
+# 트리거: RULES 루틴이 routine/tales_rules(★누적 브랜치)에 output/tales_rules/R<NNN>_<slug>.json 을 push 하면 실행.
+#   ★대본을 믿지 않고 rules.py check 로 다시 검사한다 — 못 넘으면 렌더·업로드하지 않는다.
+#   routine/tales 와 경로·브랜치가 달라 tales.yml 과 겹치지 않는다(shorts.yml 은 output/news 만 본다).
+# 공개 방식: 레포 변수 RULES_PUBLISH(없으면 TALES_PUBLISH) — private | scheduled(매일 21:00 UTC 예약).
+# ★Spark 는 공용 서버: 그림은 한 건씩·대기열 6 초과면 기다림. ★돈 드는 호출 없음.
+
+on:
+  push:
+    branches:
+      - "routine/tales_rules"
+    paths:
+      - "output/tales_rules/**"
+  workflow_dispatch:
+    inputs:
+      script:
+        description: "대본 경로"
+        default: "gumiho/tales/rules_scripts/R001_name-called-at-night.json"
+      upload:
+        description: "업로드(공개 방식은 RULES_PUBLISH). 끄면 렌더만 — 결과는 아티팩트"
+        type: boolean
+        default: false
+
+concurrency:
+  group: tales-rules
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    # 30초 쇼츠: 목소리 ~1분 + 세로 그림 6–9장 ~6분(대기열 없을 때) + 프레임 ~2분 + 업로드
+    timeout-minutes: 60
+    env:
+      TZ: Asia/Seoul
+      WBSPARK_BASE: ${{ vars.WBSPARK_BASE || 'https://wangbyul.com/wbSpark' }}
+      WBSPARK_TOKEN: ${{ secrets.WBSPARK_TOKEN }}
+      NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+      TALES_TTS_WORKERS: "2"
+      GUMIHO_SPARK_MAX_WAITING: "6"
+      RULES_PUBLISH: ${{ vars.RULES_PUBLISH || vars.TALES_PUBLISH || 'private' }}
+      TALES_STYLE: ${{ vars.TALES_STYLE || 'anime' }}
+      PYTHONIOENCODING: utf-8
+    steps:
+      # ★코드는 항상 main 에서 — routine/tales_rules 는 누적 브랜치라 코드가 낡는다.
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: routine/tales_rules 대본 가져오기(데이터만)
+        run: |
+          git fetch origin routine/tales_rules 2>/dev/null && git checkout FETCH_HEAD -- output/tales_rules/ \
+            || echo "(routine/tales_rules 에 output/tales_rules 없음)"
+          ls output/tales_rules/ 2>/dev/null | tail -5 || true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: pipeline/requirements.txt
+
+      - name: 시스템 의존성
+        run: |
+          sudo apt-get update && sudo apt-get install -y ffmpeg fonts-noto-core fonts-noto-extra fonts-nanum
+          python -m pip install -r pipeline/requirements.txt numpy
+
+      - name: 테스트(오프라인)
+        run: python gumiho/tales/test_rules.py
+
+      - name: 처리 대상
+        id: pick
+        run: |
+          set -e
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            T="${{ github.event.inputs.script }}"
+          else
+            BEFORE="${{ github.event.before }}"; AFTER="${{ github.event.after }}"
+            git fetch -q origin routine/tales_rules
+            if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+              RANGE="$AFTER~1 $AFTER"
+            else
+              RANGE="$BEFORE $AFTER"
+            fi
+            T=$(git diff --name-only --diff-filter=AM $RANGE -- 'output/tales_rules/*.json' 2>/dev/null | tr '\n' ' ' || true)
+          fi
+          echo "targets=$T" >> "$GITHUB_OUTPUT"
+          echo "대상: '$T'"
+
+      - name: 대본 검사
+        if: steps.pick.outputs.targets != ''
+        run: python gumiho/tales/rules.py check ${{ steps.pick.outputs.targets }}
+
+      - name: ledger 캐시
+        uses: actions/cache@v4
+        with:
+          path: output/gumiho/rules_ledger.json
+          key: rules-ledger-${{ github.run_id }}
+          restore-keys: rules-ledger-
+
+      - name: 렌더
+        if: steps.pick.outputs.targets != ''
+        run: |
+          for f in ${{ steps.pick.outputs.targets }}; do
+            python gumiho/tales/render_rule.py "$f"
+          done
+
+      - name: YouTube 자격증명(Nine Tails 채널 전용 토큰)
+        id: cred
+        if: steps.pick.outputs.targets != '' && (github.event_name == 'push' || github.event.inputs.upload == 'true')
+        env:
+          YT_TOKEN_JSON_GUMIHO: ${{ secrets.YT_TOKEN_JSON_GUMIHO }}
+        run: |
+          mkdir -p pipeline/secrets
+          if [ -z "$YT_TOKEN_JSON_GUMIHO" ]; then echo "::error::시크릿 YT_TOKEN_JSON_GUMIHO 없음"; exit 1; fi
+          printf '%s' "$YT_TOKEN_JSON_GUMIHO" > pipeline/secrets/token_gumiho.json
+
+      - name: 업로드
+        if: steps.cred.outcome == 'success'
+        env:
+          YT_TOKEN_NOVEL: pipeline/secrets/token_gumiho.json
+        run: |
+          for f in ${{ steps.pick.outputs.targets }}; do
+            python gumiho/tales/upload_rule.py "$f"
+          done
+
+      - name: 결과물(첫 프레임·메타 — 렌더만 한 경우 영상까지)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tales-rules-${{ github.run_number }}
+          path: |
+            output/gumiho/rules/*_first.jpg
+            output/gumiho/rules/*_meta.json
+            output/gumiho/rules_ledger.json
+            ${{ steps.cred.outcome != 'success' && 'output/gumiho/rules/*.mp4' || '' }}
+          retention-days: 5
+          if-no-files-found: warn

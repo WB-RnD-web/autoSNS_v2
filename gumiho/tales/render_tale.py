@@ -63,6 +63,15 @@ STYLES = {
 STYLE_HEAD, STYLE_TAIL = STYLES.get(os.environ.get("TALES_STYLE", "anime"), STYLES["anime"])
 
 
+def gumi_asset(pose: str, s: dict | None = None) -> str:
+    """구미 초상화. 10화부터 후드티 구미(2026-10-05 사용자 선택 — '한복 차림은 진부하다'), 그 전 편은 한복 그대로."""
+    if s and s.get("id", 0) >= T.GLOBAL_FROM:
+        p = os.path.join(ASSETS, f"gumi_{pose}_hoodie.jpg")
+        if os.path.exists(p):
+            return p
+    return os.path.join(ASSETS, f"gumi_{pose}.jpg")
+
+
 def look_prefix(look: str | None) -> str:
     """그림 프롬프트 앞에 붙는 화풍 + 시대. look 은 대본(또는 장면)의 'look' — tales.LOOKS 키."""
     if not look:
@@ -348,7 +357,7 @@ def make_images(s: dict, shots: list[dict], wd: str, mock: bool = False) -> dict
         if x["kind"] == "img":
             x["raw"] = raw[x["img"]]
         elif x["kind"] == "gumi":
-            x["raw"] = os.path.join(ASSETS, f"gumi_{x['gumi']}.jpg")
+            x["raw"] = gumi_asset(x["gumi"], s)
     for x in shots:
         if x["kind"] == "card":
             continue
@@ -799,7 +808,7 @@ def thumbnail(s: dict, raw: str, out: str):
     d.rounded_rectangle([50, 44, 50 + tl + 40, 100], 12, fill=RED)
     d.text((70, 50), tag, font=ft, fill=(255, 255, 255))
     # 구미 배지(오른쪽 아래)
-    g = Image.open(os.path.join(ASSETS, "gumi_wink.jpg")).convert("RGB")
+    g = Image.open(gumi_asset("wink", s)).convert("RGB")
     g = g.crop((g.width * 0.28, 0, g.width * 0.72, g.height * 0.64)).resize((210, 210), Image.LANCZOS)
     m = Image.new("L", (210, 210), 0)
     ImageDraw.Draw(m).ellipse([0, 0, 209, 209], fill=255)
@@ -830,7 +839,7 @@ def short_plan(s: dict, shots: list[dict], voices: dict, wd: str, thumb_raw: str
         elif ln.get("scene"):
             raw = by_key[ln["scene"]]["raw"]
         elif ln.get("gumi"):
-            raw = os.path.join(ASSETS, f"gumi_{ln['gumi']}.jpg")
+            raw = gumi_asset(ln["gumi"], s)
         else:
             raw = next(x["raw"] for x in shots if x.get("img") == ln["img"])
         v = voices[ln["say"]]
