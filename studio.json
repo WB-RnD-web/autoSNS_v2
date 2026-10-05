@@ -1,0 +1,10 @@
+{
+ "about": "왕별이 스튜디오 공식 숫자(수익 창출 탭 + 분석 Shorts 28일). 로컬 예약 작업 ypp-studio-check 가 주 2회 크롬으로 읽어 넣는다. 채널 맥박(tools/pulse.py --ypp)이 tools/pulse_ypp.json 보다 새로우면 이 값을 쓴다.",
+ "studio": {
+  "wb": {"checked": "2026-10-05", "data_date": "2026-09-30", "subs": 492, "valid_shorts_90d": 42000, "valid_hours_365d": 565,
+         "engaged_ratio": 0.345, "engaged_note": "분석 > 콘텐츠 > Shorts 지난 28일: 조회수 43.8만 · 유효 조회수 15.1만 · 계속 시청함 60.3% · 구독 +300"}
+ },
+ "history": [
+  {"checked": "2026-10-05", "data_date": "2026-09-30", "subs": 492, "valid_shorts_90d": 42000, "valid_hours_365d": 565, "views_28d": 438000, "engaged_28d": 151000}
+ ]
+}
