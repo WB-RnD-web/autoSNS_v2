@@ -12,7 +12,7 @@
   {"id": "ypp-wb", "ch": "wb", "title": "왕별이 수익화 — 광고 수익 기준(구독 1,000 + 유효 Shorts 90일 1,000만) 넘고 한 번에 승인", "start": "2026-10-05", "judge": "2027-01-31",
    "criterion": "유효 하루 11.1만 이상을 유지(지금 약 4.5만) · 신청 전 표 쇼츠를 풀이형으로 전환 · 2027-02-01 전에 승인", "formats": ["daily", "theme", "month", "name", "year", "surname"], "owner": "pulse", "status": "running"},
   {"id": "tables-v2", "ch": "wb", "title": "풀이형 표(편마다 근거·해설이 다른 표) — 새 시간대에 먼저 시험", "start": "2026-10-08", "judge": "2026-10-22",
-   "criterion": "(내가 정함) 풀이형의 첫 24시간 중앙값이 같은 기간 기존 표의 70% 이상이면 기존 표 시간대도 순서대로 전환 · 50% 미만이면 구성 다시", "formats": ["theme", "month", "name", "year", "surname", "daily"], "owner": "pulse", "status": "scheduled"},
+   "criterion": "(내가 정함) 풀이형의 첫 24시간 중앙값이 같은 기간 기존 표의 70% 이상이면 기존 표 시간대도 순서대로 전환 · 50% 미만이면 구성 다시", "formats": ["pulli", "theme", "month", "name", "year", "surname", "daily"], "owner": "pulse", "status": "scheduled"},
   {"id": "weekly-fortune-long", "ch": "wb", "title": "주간 띠별 운세 롱폼(일 20:00) + 표 쇼츠 '관련 동영상' 연결", "start": "2026-10-04", "judge": "2026-10-26",
    "criterion": "(내가 정함) 4편의 7일 조회 중앙값 300 이상이면 유지, 아니면 길이·제목 손질", "formats": ["weekly"], "owner": "pulse", "status": "running"},
   {"id": "wb-split", "ch": "wb", "title": "ASMR·수면 사운드 채널 분리 결정", "start": "2026-09-29", "judge": "2026-10-26",
