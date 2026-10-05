@@ -195,6 +195,40 @@ with tempfile.TemporaryDirectory() as td:
         and set(e["formats"]) <= {r["key"] for r in F[e["ch"]]["rules"]}
         for e in PU.load(PU.EXPERIMENTS)["experiments"]))
 
+    print("── 수익화 진행(YPP) ──")
+    realy = PU.YPP
+    PU.YPP = os.path.join(td, "ypp.json")
+    PU.save(PU.YPP, {"deadline": "2027-01-31", "tiers": [
+        {"key": "fan", "label": "팬", "subs": 500, "uploads_90d": 3, "hours": 3000, "shorts": 3000000},
+        {"key": "ads", "label": "광고", "subs": 1000, "hours": 4000, "shorts": 10000000}],
+        "studio": {"wb": {"checked": "2026-10-14", "data_date": "2026-10-14", "subs": 400, "valid_shorts_90d": 1000000,
+                          "valid_hours_365d": 600, "engaged_ratio": 0.5}}})
+    ch_wb = PU.analyze_channel("wb", F["wb"], reg, PU.load(os.path.join(radar, "channels.json")), NOW)
+    y, yf = PU.ypp_status(PU.load_ypp(), {"wb": ch_wb}, dt.date(2026, 10, 21))
+    yw = y["wb"]
+    after = sum(x["views"] for x in ch_wb["_main"] if x["d"] > "2026-10-14")
+    ck("유효 Shorts 추정 = 스튜디오 값 + 유효 비율 × 그 뒤 조회", yw["valid"] == round(1000000 + 0.5 * after), (yw["valid"], after))
+    ck("유효 하루 속도 = 유효 비율 × 최근 평균", yw["pace"] == round(0.5 * ch_wb["window"]["cur"]))
+    ck("구독: 채널 스냅숏(499) · 하루 증감은 채널 스냅숏에서", yw["subs"] == 495 and yw["srate"] == -1.0, (yw["subs"], yw["srate"]))
+    ids = {f["id"] for f in yf}
+    fan = yw["tiers"][0]
+    ck("구독이 줄면 구독 예상일은 없다(속도 음수)", fan["subs_eta"] is None and fan["eta_date"] is None)
+    cap_ok = 90 * yw["pace"] >= 10_000_000
+    ck("90일 최대(90 × 하루 유효)가 기준보다 작으면 YPP_PACE", ("YPP_PACE:wb:ads" in ids) == (not cap_ok), (yw["pace"], ids))
+    PU.save(os.path.join(td, "ypp_dir", "studio.json"), {"studio": {"wb": {"checked": "2026-10-20", "data_date": "2026-10-19", "subs": 1200,
+                                                                         "valid_shorts_90d": 12000000, "valid_hours_365d": 700, "engaged_ratio": 0.4}}})
+    cal = PU.load_ypp(os.path.join(td, "ypp_dir"))
+    ck("data/ypp 의 스튜디오 값이 더 새로우면 그것을 쓴다", cal["studio"]["wb"]["subs"] == 1200)
+    ch_wb["subs"] = None
+    y2, yf2 = PU.ypp_status(cal, {"wb": ch_wb}, dt.date(2026, 10, 21))
+    ck("구독·유효 Shorts 둘 다 넘으면 YPP_READY(광고·팬 둘 다)", {"YPP_READY:wb:ads", "YPP_READY:wb:fan"} <= {f["id"] for f in yf2},
+       [f["id"] for f in yf2])
+    ck("기준 충족 문구", PU.ypp_when(y2["wb"]["tiers"][1]).startswith("기준 충족"))
+    PU.YPP = realy
+    real = PU.load(PU.YPP)
+    ck("실제 YPP 파일: 두 단계 · 마감 · 유효 비율 0~1", [t["key"] for t in real["tiers"]] == ["fan", "ads"]
+       and real["deadline"] == "2027-01-31" and 0 < real["studio"]["wb"]["engaged_ratio"] < 1)
+
     print("── fill.json 검사 ──")
     day = os.path.join(out, DAY)
     good = {
@@ -262,6 +296,7 @@ with tempfile.TemporaryDirectory() as td:
     ck("페이지: 제목 '채널 맥박' 이 맨 앞 · 다크 모드 토큰 · 비교 링크",
        page.startswith("<title>채널 맥박</title>") and 'prefers-color-scheme:dark' in page and ':root[data-theme="dark"]' in page
        and "compare/main...pulse/2026-10-21-pol-slot-check" in page)
+    ck("페이지: 수익화까지(진행 막대)", "수익화까지" in page and 'class="meter"' in page)
     ck("페이지: 근거/추측 표시 · 신호마다 대응", "근거</span>" in page and "추측</span>" in page and page.count('class="resp"') == len(P["flags"]))
     ck("PR 브랜치 = pulse/<날짜>-<slug>", PU.pr_field(day, "branch") == "pulse/2026-10-21-pol-slot-check")
     body = PU.pr_field(day, "body")

@@ -1,0 +1,20 @@
+{
+ "about": "수익화(YPP) 목표와 스튜디오 보정값. 채널 맥박(tools/pulse.py)이 매일 '유효 Shorts 조회수(지난 90일)'를 추정한다: 스튜디오 숫자(data_date 기준) + engaged_ratio × 그 뒤 쌓인 조회수. 유효 조회수 = '처음 몇 초가 지난 뒤에도 계속 본 횟수'(스튜디오 분석 > 콘텐츠 > Shorts) — 짧은 쇼츠는 반복 재생이 조회수에 다 잡혀서 유효 조회는 조회수의 일부다. 스튜디오 숫자는 매주 로컬 작업(ypp-studio-check)이 data/ypp 브랜치 studio.json 으로 새로 넣는다(이 파일보다 checked 가 새로우면 그쪽을 쓴다). 기준: 2026-10-05 스튜디오 '수익 창출' 탭.",
+ "deadline": "2027-01-31",
+ "deadline_note": "2027-02-01 부터 새 신청은 시청 8,000시간 또는 Shorts 90일 2,000만 회 + 구독 1,000 (blog.youtube YPP 2027 업데이트) — 그 전에 신청해 승인받아야 지금 기준이 적용된다(추정, 확인 중)",
+ "tiers": [
+  {"key": "fan", "label": "팬 후원(멤버십·Supers·Shopping)", "subs": 500, "uploads_90d": 3, "hours": 3000, "shorts": 3000000},
+  {"key": "ads", "label": "광고 수익(보기 페이지·Shorts 피드 광고)", "subs": 1000, "hours": 4000, "shorts": 10000000}
+ ],
+ "studio": {
+  "wb": {
+   "checked": "2026-10-05",
+   "data_date": "2026-09-30",
+   "subs": 492,
+   "valid_shorts_90d": 42000,
+   "valid_hours_365d": 565,
+   "engaged_ratio": 0.345,
+   "engaged_note": "분석 > 콘텐츠 > Shorts 지난 28일: 조회수 43.8만 · 유효 조회수 15.1만 · 계속 시청함 60.3%"
+  }
+ }
+}
