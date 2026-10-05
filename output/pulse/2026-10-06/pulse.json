@@ -1,0 +1,1312 @@
+{
+ "date": "2026-10-06",
+ "generated": "2026-10-05T23:24+00:00",
+ "data_at": "2026-10-05T00:00+00:00",
+ "radar_at": "2026-10-05T00:13+00:00",
+ "radar_age_h": 23.2,
+ "channels": {
+  "wb": {
+   "key": "wb",
+   "name": "왕별이",
+   "id": "UCBmHETsvCsvT0xOb99Yx19Q",
+   "basis": "videos",
+   "series": [
+    {
+     "d": "2026-10-02",
+     "views": 5065,
+     "hours": 21.0
+    },
+    {
+     "d": "2026-10-03",
+     "views": 9579,
+     "hours": 23.0
+    },
+    {
+     "d": "2026-10-04",
+     "views": 73721,
+     "hours": 24.0
+    },
+    {
+     "d": "2026-10-05",
+     "views": 186810,
+     "hours": 24.0
+    }
+   ],
+   "series_videos": [
+    {
+     "d": "2026-10-02",
+     "views": 5065
+    },
+    {
+     "d": "2026-10-03",
+     "views": 9579
+    },
+    {
+     "d": "2026-10-04",
+     "views": 73721
+    },
+    {
+     "d": "2026-10-05",
+     "views": 186810
+    }
+   ],
+   "today": 186810,
+   "today_d": "2026-10-05",
+   "trend": {
+    "state": "up",
+    "streak": 3,
+    "today": "up",
+    "days": 4
+   },
+   "window": {
+    "k": 2,
+    "cur": 130266,
+    "prev": 7322,
+    "ratio": 17.79
+   },
+   "peak": {
+    "d": "2026-10-05",
+    "views": 186810
+   },
+   "vs_peak": 1.0,
+   "subs": null,
+   "formats": [
+    {
+     "key": "scp",
+     "label": "SCP",
+     "n7": 1,
+     "med24": null,
+     "n24": 0,
+     "prev24": null,
+     "nprev": 0,
+     "base24": null,
+     "nbase": 0
+    },
+    {
+     "key": "asmr",
+     "label": "ASMR·수면(롱)",
+     "n7": 4,
+     "med24": 2,
+     "n24": 3,
+     "prev24": null,
+     "nprev": 0,
+     "base24": 2,
+     "nbase": 3
+    },
+    {
+     "key": "weekly",
+     "label": "주간 운세(롱)",
+     "n7": 1,
+     "med24": 26,
+     "n24": 1,
+     "prev24": null,
+     "nprev": 0,
+     "base24": 26,
+     "nbase": 1
+    },
+    {
+     "key": "saeyeon_long",
+     "label": "사연(롱)",
+     "n7": 1,
+     "med24": 0,
+     "n24": 1,
+     "prev24": null,
+     "nprev": 0,
+     "base24": 0,
+     "nbase": 1
+    },
+    {
+     "key": "daily",
+     "label": "매일 운세 표",
+     "n7": 4,
+     "med24": 3411,
+     "n24": 4,
+     "prev24": null,
+     "nprev": 0,
+     "base24": 3411,
+     "nbase": 4
+    },
+    {
+     "key": "name",
+     "label": "이름 표",
+     "n7": 3,
+     "med24": 7812,
+     "n24": 2,
+     "prev24": null,
+     "nprev": 0,
+     "base24": 7812,
+     "nbase": 2
+    },
+    {
+     "key": "month",
+     "label": "태어난 달 표",
+     "n7": 3,
+     "med24": 17649,
+     "n24": 2,
+     "prev24": null,
+     "nprev": 0,
+     "base24": 17649,
+     "nbase": 2
+    },
+    {
+     "key": "year",
+     "label": "해 끝자리 표",
+     "n7": 1,
+     "med24": null,
+     "n24": 0,
+     "prev24": null,
+     "nprev": 0,
+     "base24": null,
+     "nbase": 0
+    },
+    {
+     "key": "surname",
+     "label": "성씨 표",
+     "n7": 1,
+     "med24": null,
+     "n24": 0,
+     "prev24": null,
+     "nprev": 0,
+     "base24": null,
+     "nbase": 0
+    },
+    {
+     "key": "theme",
+     "label": "띠 테마 표",
+     "n7": 4,
+     "med24": 2036,
+     "n24": 3,
+     "prev24": null,
+     "nprev": 0,
+     "base24": 2036,
+     "nbase": 3
+    },
+    {
+     "key": "weekly_short",
+     "label": "주간 운세 쇼츠",
+     "n7": 1,
+     "med24": null,
+     "n24": 0,
+     "prev24": null,
+     "nprev": 0,
+     "base24": null,
+     "nbase": 0
+    },
+    {
+     "key": "saeyeon_short",
+     "label": "사연 쇼츠",
+     "n7": 2,
+     "med24": 2032,
+     "n24": 1,
+     "prev24": null,
+     "nprev": 0,
+     "base24": 2032,
+     "nbase": 1
+    },
+    {
+     "key": "ai",
+     "label": "AI 소식",
+     "n7": 5,
+     "med24": 115,
+     "n24": 3,
+     "prev24": null,
+     "nprev": 0,
+     "base24": 115,
+     "nbase": 3
+    },
+    {
+     "key": "oldf",
+     "label": "옛 운세·별자리 쇼츠",
+     "n7": 2,
+     "med24": 380,
+     "n24": 1,
+     "prev24": null,
+     "nprev": 0,
+     "base24": 380,
+     "nbase": 1
+    },
+    {
+     "key": "us",
+     "label": "미장",
+     "n7": 2,
+     "med24": 58,
+     "n24": 2,
+     "prev24": null,
+     "nprev": 0,
+     "base24": 58,
+     "nbase": 2
+    },
+    {
+     "key": "kr",
+     "label": "국장",
+     "n7": 3,
+     "med24": 135,
+     "n24": 2,
+     "prev24": null,
+     "nprev": 0,
+     "base24": 135,
+     "nbase": 2
+    },
+    {
+     "key": "pol",
+     "label": "정치",
+     "n7": 12,
+     "med24": 169,
+     "n24": 10,
+     "prev24": null,
+     "nprev": 0,
+     "base24": 169,
+     "nbase": 10
+    },
+    {
+     "key": "etc_short",
+     "label": "기타 쇼츠",
+     "n7": 5,
+     "med24": 25,
+     "n24": 3,
+     "prev24": null,
+     "nprev": 0,
+     "base24": 25,
+     "nbase": 3
+    }
+   ],
+   "drivers": [
+    {
+     "key": "month",
+     "label": "태어난 달 표",
+     "gain": 66838,
+     "share": 0.358,
+     "n": 3
+    },
+    {
+     "key": "theme",
+     "label": "띠 테마 표",
+     "gain": 57422,
+     "share": 0.307,
+     "n": 4
+    },
+    {
+     "key": "name",
+     "label": "이름 표",
+     "gain": 33934,
+     "share": 0.182,
+     "n": 3
+    },
+    {
+     "key": "daily",
+     "label": "매일 운세 표",
+     "gain": 16279,
+     "share": 0.087,
+     "n": 4
+    },
+    {
+     "key": "surname",
+     "label": "성씨 표",
+     "gain": 6264,
+     "share": 0.034,
+     "n": 1
+    },
+    {
+     "key": "weekly_short",
+     "label": "주간 운세 쇼츠",
+     "gain": 2263,
+     "share": 0.012,
+     "n": 1
+    },
+    {
+     "key": "saeyeon_short",
+     "label": "사연 쇼츠",
+     "gain": 1584,
+     "share": 0.008,
+     "n": 2
+    },
+    {
+     "key": "pol",
+     "label": "정치",
+     "gain": 1110,
+     "share": 0.006,
+     "n": 34
+    }
+   ],
+   "movers": [
+    {
+     "id": "pDfeQZG6elo",
+     "title": "태어난 달로 보는 10월 몸 가벼움 순위 1위~12위 | 1월생~12월생 전부 #shorts",
+     "fmt": "태어난 달 표",
+     "gain": 35756,
+     "views": 35756,
+     "age_d": 0.7
+    },
+    {
+     "id": "Uq2UrZsWfrQ",
+     "title": "말년 복 있는 띠 순위 1위~12위 | 10월 4일 · 45~96년생 전부 #shorts",
+     "fmt": "띠 테마 표",
+     "gain": 32343,
+     "views": 32343,
+     "age_d": 0.9
+    },
+    {
+     "id": "7XeeAjH48oI",
+     "title": "태어난 달로 보는 10월 겹경사 순위 1위~12위 | 1월생~12월생 전부 #shorts",
+     "fmt": "태어난 달 표",
+     "gain": 25081,
+     "views": 51410,
+     "age_d": 1.7
+    },
+    {
+     "id": "2KtoLpFxuPU",
+     "title": "이름에 이 글자 있으면 자식 덕 보고 살아요 | 이름 한자 풀이 #shorts",
+     "fmt": "이름 표",
+     "gain": 20100,
+     "views": 20100,
+     "age_d": 1.0
+    },
+    {
+     "id": "6D5bshGUq7Q",
+     "title": "자식 덕 보는 띠 순위 1위~12위 | 10월 3일 · 45~96년생 전부 #shorts",
+     "fmt": "띠 테마 표",
+     "gain": 17822,
+     "views": 38487,
+     "age_d": 1.9
+    },
+    {
+     "id": "ptHLf8A3cIQ",
+     "title": "이름에 이 글자 있으면 오래오래 건강해요 | 이름 한자 풀이 #shorts",
+     "fmt": "이름 표",
+     "gain": 13319,
+     "views": 27358,
+     "age_d": 2.0
+    }
+   ],
+   "new": [
+    {
+     "id": "AzyM84MnsQY",
+     "title": "국감 하루 전, 대법원장 증인 논란 #shorts",
+     "fmt": "정치",
+     "age_h": 0,
+     "views": 56,
+     "expect": 2,
+     "ratio": null
+    },
+    {
+     "id": "x1Orlb_ODG8",
+     "title": "태어난 해 끝자리로 보는 10월 돈복 순위 1위~10위 | 0년생~9년생 전부 #shorts",
+     "fmt": "해 끝자리 표",
+     "age_h": 1,
+     "views": 425,
+     "expect": null,
+     "ratio": null
+    },
+    {
+     "id": "PtwRDU-Wsfw",
+     "title": "이번 주 띠별 운세 1위~12위 | 10월 5일 월요일 · 45~96년생 전부 #shorts",
+     "fmt": "주간 운세 쇼츠",
+     "age_h": 3,
+     "views": 2263,
+     "expect": null,
+     "ratio": null
+    },
+    {
+     "id": "2rCoGLgd-w4",
+     "title": "택시 몰고 딸 결혼식 온 아버지… 사돈이 알아본 20년 전 그날 밤",
+     "fmt": "사연 쇼츠",
+     "age_h": 13,
+     "views": 1351,
+     "expect": 1831,
+     "ratio": null
+    },
+    {
+     "id": "3RwNCHoysyw",
+     "title": "AI 쓰는 값, 1년 새 13분의 1 #shorts",
+     "fmt": "AI 소식",
+     "age_h": 14,
+     "views": 109,
+     "expect": 33,
+     "ratio": 3.27
+    },
+    {
+     "id": "pDfeQZG6elo",
+     "title": "태어난 달로 보는 10월 몸 가벼움 순위 1위~12위 | 1월생~12월생 전부 #shorts",
+     "fmt": "태어난 달 표",
+     "age_h": 17,
+     "views": 35756,
+     "expect": 14016,
+     "ratio": null
+    },
+    {
+     "id": "DITChg6ucc4",
+     "title": "성씨로 보는 손주 복 순위 1위~20위 | 김·이·박·최… 많은 성씨 20개 #shorts",
+     "fmt": "성씨 표",
+     "age_h": 19,
+     "views": 6264,
+     "expect": null,
+     "ratio": null
+    },
+    {
+     "id": "Uq2UrZsWfrQ",
+     "title": "말년 복 있는 띠 순위 1위~12위 | 10월 4일 · 45~96년생 전부 #shorts",
+     "fmt": "띠 테마 표",
+     "age_h": 21,
+     "views": 32343,
+     "expect": 1883,
+     "ratio": 17.18
+    },
+    {
+     "id": "zP1WduDW-vo",
+     "title": "AI 시대, 포드가 찾는 사람들 #shorts",
+     "fmt": "AI 소식",
+     "age_h": 23,
+     "views": 179,
+     "expect": 113,
+     "ratio": 1.58
+    },
+    {
+     "id": "2KtoLpFxuPU",
+     "title": "이름에 이 글자 있으면 자식 덕 보고 살아요 | 이름 한자 풀이 #shorts",
+     "fmt": "이름 표",
+     "age_h": 23,
+     "views": 20100,
+     "expect": 7601,
+     "ratio": null
+    },
+    {
+     "id": "bgcq73Ttcjo",
+     "title": "국감 D-2, 대법원장 증인석 공방 #shorts",
+     "fmt": "정치",
+     "age_h": 24,
+     "views": 1009,
+     "expect": 164,
+     "ratio": 6.17
+    },
+    {
+     "id": "7wJ9ioZbtjs",
+     "title": "이번 주 띠별 운세 10월 5일~11일 | 돼지띠 용띠 호랑이띠가 웃어요 · 45~96년생 전부",
+     "fmt": "주간 운세(롱)",
+     "age_h": 25,
+     "views": 27,
+     "expect": null,
+     "ratio": null
+    },
+    {
+     "id": "yrezHZSh0tE",
+     "title": "오늘 띠별 운세 1위~12위 | 10월 4일 일요일 · 45~96년생 전부 #shorts",
+     "fmt": "매일 운세 표",
+     "age_h": 27,
+     "views": 12763,
+     "expect": 2320,
+     "ratio": 5.5
+    }
+   ],
+   "uploads": {
+    "2026-09-22": 6,
+    "2026-09-23": 6,
+    "2026-09-24": 6,
+    "2026-09-25": 4,
+    "2026-09-26": 3,
+    "2026-09-27": 3,
+    "2026-09-28": 6,
+    "2026-09-29": 4,
+    "2026-09-30": 3,
+    "2026-10-01": 8,
+    "2026-10-02": 13,
+    "2026-10-03": 11,
+    "2026-10-04": 10,
+    "2026-10-05": 3
+   },
+   "uploads_7d": 55,
+   "last_pub_h": 0
+  },
+  "nt": {
+   "key": "nt",
+   "name": "Nine Tails Tales",
+   "id": "UCoPIsIO_ximUdyh-n_-rIfQ",
+   "basis": "videos",
+   "series": [
+    {
+     "d": "2026-10-02",
+     "views": 2,
+     "hours": 21.0
+    },
+    {
+     "d": "2026-10-03",
+     "views": 7,
+     "hours": 23.0
+    },
+    {
+     "d": "2026-10-04",
+     "views": 7,
+     "hours": 24.0
+    },
+    {
+     "d": "2026-10-05",
+     "views": 444,
+     "hours": 24.0
+    }
+   ],
+   "series_videos": [
+    {
+     "d": "2026-10-02",
+     "views": 2
+    },
+    {
+     "d": "2026-10-03",
+     "views": 7
+    },
+    {
+     "d": "2026-10-04",
+     "views": 7
+    },
+    {
+     "d": "2026-10-05",
+     "views": 444
+    }
+   ],
+   "today": 444,
+   "today_d": "2026-10-05",
+   "trend": {
+    "state": "up",
+    "streak": 3,
+    "today": "up",
+    "days": 4
+   },
+   "window": {
+    "k": 2,
+    "cur": 226,
+    "prev": 4,
+    "ratio": 50.11
+   },
+   "peak": {
+    "d": "2026-10-05",
+    "views": 444
+   },
+   "vs_peak": 1.0,
+   "subs": null,
+   "formats": [
+    {
+     "key": "episode",
+     "label": "본편(롱)",
+     "n7": 4,
+     "med24": 0,
+     "n24": 3,
+     "prev24": null,
+     "nprev": 0,
+     "base24": 0,
+     "nbase": 3
+    },
+    {
+     "key": "rules",
+     "label": "규칙형 쇼츠",
+     "n7": 4,
+     "med24": 0,
+     "n24": 3,
+     "prev24": null,
+     "nprev": 0,
+     "base24": 0,
+     "nbase": 3
+    },
+    {
+     "key": "story_short",
+     "label": "이야기 쇼츠",
+     "n7": 3,
+     "med24": 0,
+     "n24": 3,
+     "prev24": null,
+     "nprev": 0,
+     "base24": 0,
+     "nbase": 3
+    }
+   ],
+   "drivers": [
+    {
+     "key": "rules",
+     "label": "규칙형 쇼츠",
+     "gain": 431,
+     "share": 0.971,
+     "n": 4
+    },
+    {
+     "key": "story_short",
+     "label": "이야기 쇼츠",
+     "gain": 10,
+     "share": 0.023,
+     "n": 3
+    },
+    {
+     "key": "episode",
+     "label": "본편(롱)",
+     "gain": 3,
+     "share": 0.007,
+     "n": 4
+    }
+   ],
+   "movers": [
+    {
+     "id": "ofwKcP_fzHk",
+     "title": "Never Cut Your Nails at Night in Korea. Here's Why #shorts #koreansuperstitions",
+     "fmt": "규칙형 쇼츠",
+     "gain": 423,
+     "views": 423,
+     "age_d": 0.5
+    },
+    {
+     "id": "l8PNIee3NtE",
+     "title": "They Wished for a Daughter. Then the Cows Started Dying #shorts #foxsister",
+     "fmt": "이야기 쇼츠",
+     "gain": 10,
+     "views": 18,
+     "age_d": 2.4
+    },
+    {
+     "id": "606zQkXIKRs",
+     "title": "Never Kiss a Stranger on a Korean Mountain Road #shorts #gumiho",
+     "fmt": "규칙형 쇼츠",
+     "gain": 6,
+     "views": 163,
+     "age_d": 5.4
+    },
+    {
+     "id": "RhKwrpHRLeY",
+     "title": "Korea's Nine-Tailed Fox Is Darker Than Japan's Kitsune | The Gumiho Legend",
+     "fmt": "본편(롱)",
+     "gain": 3,
+     "views": 7,
+     "age_d": 5.4
+    },
+    {
+     "id": "sRd8SOlSzEA",
+     "title": "Never Kiss a Stranger on a Korean Mountain Road #shorts #gumiho",
+     "fmt": "규칙형 쇼츠",
+     "gain": 2,
+     "views": 2,
+     "age_d": 3.4
+    }
+   ],
+   "new": [
+    {
+     "id": "y67UnYjTcz8",
+     "title": "7 Korean Superstitions That Could Get You Killed (or Worse)",
+     "fmt": "본편(롱)",
+     "age_h": 9,
+     "views": 0,
+     "expect": 0,
+     "ratio": null
+    },
+    {
+     "id": "ofwKcP_fzHk",
+     "title": "Never Cut Your Nails at Night in Korea. Here's Why #shorts #koreansuperstitions",
+     "fmt": "규칙형 쇼츠",
+     "age_h": 11,
+     "views": 423,
+     "expect": 0,
+     "ratio": null
+    },
+    {
+     "id": "D0JiefhF73o",
+     "title": "They Wished for a Daughter. Then the Cows Started Dying | Fox Sister",
+     "fmt": "본편(롱)",
+     "age_h": 33,
+     "views": 0,
+     "expect": 1,
+     "ratio": null
+    }
+   ],
+   "uploads": {
+    "2026-09-29": 2,
+    "2026-09-30": 4,
+    "2026-10-02": 1,
+    "2026-10-03": 1,
+    "2026-10-04": 2,
+    "2026-10-05": 1
+   },
+   "uploads_7d": 11,
+   "last_pub_h": 9
+  }
+ },
+ "experiments": [
+  {
+   "id": "ai-slots",
+   "ch": "wb",
+   "title": "AI 소식 오전(10:07)·저녁(19:07) 두 번",
+   "start": "2026-09-30",
+   "judge": "2026-10-08",
+   "criterion": "저녁 편 48시간 조회가 오전 편의 절반 미만이면 저녁 편을 끈다",
+   "owner": "local:judge-ai-slots-1008",
+   "status": "running",
+   "days_left": 2,
+   "started": true,
+   "nums": [
+    {
+     "fmt": "AI 소식",
+     "n7": 5,
+     "med24": 115,
+     "base24": 115
+    }
+   ]
+  },
+  {
+   "id": "stocks-trial",
+   "ch": "wb",
+   "title": "국장·미장 2주 재시험(10/4부터 '10초 한 장' 카드)",
+   "start": "2026-10-01",
+   "judge": "2026-10-14",
+   "criterion": "각각 편당 조회 중앙값 300 이상 · 계속 시청함 20% 이상 — 못 넘는 쪽은 끈다",
+   "owner": "local:judge-stocks-1014",
+   "status": "running",
+   "days_left": 8,
+   "started": true,
+   "nums": [
+    {
+     "fmt": "국장",
+     "n7": 3,
+     "med24": 135,
+     "base24": 135
+    },
+    {
+     "fmt": "미장",
+     "n7": 2,
+     "med24": 58,
+     "base24": 58
+    }
+   ]
+  },
+  {
+   "id": "saeyeon-shorts",
+   "ch": "wb",
+   "title": "사연 쇼츠 14편(매일 13:07)",
+   "start": "2026-10-03",
+   "judge": "2026-10-17",
+   "criterion": "사연 쇼츠 중앙값 ÷ 전체 쇼츠 중앙값: 2배 이상 확대 · 1~2배 손질 · 1배 미만 중단",
+   "owner": "local:judge-saeyeon-1017",
+   "status": "running",
+   "days_left": 11,
+   "started": true,
+   "nums": [
+    {
+     "fmt": "사연 쇼츠",
+     "n7": 2,
+     "med24": 2032,
+     "base24": 2032
+    }
+   ]
+  },
+  {
+   "id": "tables",
+   "ch": "wb",
+   "title": "표 쇼츠(매일 운세·띠 테마·태어난 달·이름·해 끝자리·성씨)",
+   "start": "2026-09-30",
+   "judge": "ongoing",
+   "criterion": "식는 중 = 최근 2편 중앙값이 이전 중앙값의 절반 미만(이전 300 이상). 식으면 주제 교체를 제안",
+   "owner": "pulse",
+   "status": "running",
+   "days_left": null,
+   "started": true,
+   "nums": [
+    {
+     "fmt": "매일 운세 표",
+     "n7": 4,
+     "med24": 3411,
+     "base24": 3411
+    },
+    {
+     "fmt": "띠 테마 표",
+     "n7": 4,
+     "med24": 2036,
+     "base24": 2036
+    },
+    {
+     "fmt": "태어난 달 표",
+     "n7": 3,
+     "med24": 17649,
+     "base24": 17649
+    },
+    {
+     "fmt": "이름 표",
+     "n7": 3,
+     "med24": 7812,
+     "base24": 7812
+    },
+    {
+     "fmt": "해 끝자리 표",
+     "n7": 1,
+     "med24": null,
+     "base24": null
+    },
+    {
+     "fmt": "성씨 표",
+     "n7": 1,
+     "med24": null,
+     "base24": null
+    }
+   ]
+  },
+  {
+   "id": "ypp-wb",
+   "ch": "wb",
+   "title": "왕별이 수익화 — 광고 수익 기준(구독 1,000 + 유효 Shorts 90일 1,000만) 넘고 한 번에 승인",
+   "start": "2026-10-05",
+   "judge": "2027-01-31",
+   "criterion": "유효 하루 11.1만 이상을 유지(지금 약 4.5만) · 신청 전 표 쇼츠를 풀이형으로 전환 · 2027-02-01 전에 승인",
+   "owner": "pulse",
+   "status": "running",
+   "days_left": 117,
+   "started": true,
+   "nums": [
+    {
+     "fmt": "매일 운세 표",
+     "n7": 4,
+     "med24": 3411,
+     "base24": 3411
+    },
+    {
+     "fmt": "띠 테마 표",
+     "n7": 4,
+     "med24": 2036,
+     "base24": 2036
+    },
+    {
+     "fmt": "태어난 달 표",
+     "n7": 3,
+     "med24": 17649,
+     "base24": 17649
+    },
+    {
+     "fmt": "이름 표",
+     "n7": 3,
+     "med24": 7812,
+     "base24": 7812
+    },
+    {
+     "fmt": "해 끝자리 표",
+     "n7": 1,
+     "med24": null,
+     "base24": null
+    },
+    {
+     "fmt": "성씨 표",
+     "n7": 1,
+     "med24": null,
+     "base24": null
+    }
+   ]
+  },
+  {
+   "id": "tables-v2",
+   "ch": "wb",
+   "title": "풀이형 표(편마다 근거·해설이 다른 표) — 새 시간대에 먼저 시험",
+   "start": "2026-10-08",
+   "judge": "2026-10-22",
+   "criterion": "(내가 정함) 풀이형의 첫 24시간 중앙값이 같은 기간 기존 표의 70% 이상이면 기존 표 시간대도 순서대로 전환 · 50% 미만이면 구성 다시",
+   "owner": "pulse",
+   "status": "scheduled",
+   "days_left": 16,
+   "started": false,
+   "nums": [
+    {
+     "fmt": "띠 테마 표",
+     "n7": 4,
+     "med24": 2036,
+     "base24": 2036
+    },
+    {
+     "fmt": "태어난 달 표",
+     "n7": 3,
+     "med24": 17649,
+     "base24": 17649
+    },
+    {
+     "fmt": "이름 표",
+     "n7": 3,
+     "med24": 7812,
+     "base24": 7812
+    },
+    {
+     "fmt": "해 끝자리 표",
+     "n7": 1,
+     "med24": null,
+     "base24": null
+    },
+    {
+     "fmt": "성씨 표",
+     "n7": 1,
+     "med24": null,
+     "base24": null
+    },
+    {
+     "fmt": "매일 운세 표",
+     "n7": 4,
+     "med24": 3411,
+     "base24": 3411
+    }
+   ]
+  },
+  {
+   "id": "weekly-fortune-long",
+   "ch": "wb",
+   "title": "주간 띠별 운세 롱폼(일 20:00) + 표 쇼츠 '관련 동영상' 연결",
+   "start": "2026-10-04",
+   "judge": "2026-10-26",
+   "criterion": "(내가 정함) 4편의 7일 조회 중앙값 300 이상이면 유지, 아니면 길이·제목 손질",
+   "owner": "pulse",
+   "status": "running",
+   "days_left": 20,
+   "started": true,
+   "nums": [
+    {
+     "fmt": "주간 운세(롱)",
+     "n7": 1,
+     "med24": 26,
+     "base24": 26
+    }
+   ]
+  },
+  {
+   "id": "wb-split",
+   "ch": "wb",
+   "title": "ASMR·수면 사운드 채널 분리 결정",
+   "start": "2026-09-29",
+   "judge": "2026-10-26",
+   "criterion": "해외 시청 비중·주간 시청시간 속도로 결정(스튜디오 숫자 필요)",
+   "owner": "local",
+   "status": "running",
+   "days_left": 20,
+   "started": true,
+   "nums": [
+    {
+     "fmt": "ASMR·수면(롱)",
+     "n7": 4,
+     "med24": 2,
+     "base24": 2
+    }
+   ]
+  },
+  {
+   "id": "tales-sprint",
+   "ch": "nt",
+   "title": "Nine Tails 7형식 1주 실험(3~9화, 10/4~10/10)",
+   "start": "2026-10-04",
+   "judge": "2026-10-13",
+   "criterion": "형식별 7일 조회·쇼츠 반응 비교 → 이긴 형식 위주로 편성",
+   "owner": "local:judge-tales-sprint-1013",
+   "status": "running",
+   "days_left": 7,
+   "started": true,
+   "nums": [
+    {
+     "fmt": "본편(롱)",
+     "n7": 4,
+     "med24": 0,
+     "base24": 0
+    },
+    {
+     "fmt": "규칙형 쇼츠",
+     "n7": 4,
+     "med24": 0,
+     "base24": 0
+    },
+    {
+     "fmt": "이야기 쇼츠",
+     "n7": 3,
+     "med24": 0,
+     "base24": 0
+    }
+   ]
+  },
+  {
+   "id": "tales-global-look",
+   "ch": "nt",
+   "title": "10화부터 현대·글로벌 화풍 + 후드티 구미",
+   "start": "2026-10-14",
+   "judge": "2026-10-28",
+   "criterion": "(내가 정함) 10~11화 쇼츠 7일 조회 중앙값이 3~9화 쇼츠 중앙값 이상이면 유지",
+   "owner": "local:check-tales-global-1014",
+   "status": "scheduled",
+   "days_left": 22,
+   "started": false,
+   "nums": [
+    {
+     "fmt": "본편(롱)",
+     "n7": 4,
+     "med24": 0,
+     "base24": 0
+    },
+    {
+     "fmt": "규칙형 쇼츠",
+     "n7": 4,
+     "med24": 0,
+     "base24": 0
+    },
+    {
+     "fmt": "이야기 쇼츠",
+     "n7": 3,
+     "med24": 0,
+     "base24": 0
+    }
+   ]
+  },
+  {
+   "id": "tales-rules",
+   "ch": "nt",
+   "title": "RULES 규칙괴담 매일 쇼츠(21:00 UTC, 28편)",
+   "start": "2026-10-14",
+   "judge": "2026-11-11",
+   "criterion": "(내가 정함) 7일 조회 1,000 이상이 5편 이상이거나 1만 이상이 한 편 → 계속·카탈로그 보충, 아니면 형식 재검토. 카탈로그는 11/10 에 바닥난다",
+   "owner": "pulse",
+   "status": "scheduled",
+   "days_left": 36,
+   "started": false,
+   "nums": [
+    {
+     "fmt": "규칙형 쇼츠",
+     "n7": 4,
+     "med24": 0,
+     "base24": 0
+    }
+   ]
+  },
+  {
+   "id": "tales-sleep",
+   "ch": "nt",
+   "title": "수면판 1호(10/26 공개)",
+   "start": "2026-10-26",
+   "judge": "2026-11-09",
+   "criterion": "(내가 정함) 2주 조회 300 이상이면 월 1회 유지",
+   "owner": "pulse",
+   "status": "scheduled",
+   "days_left": 34,
+   "started": false,
+   "nums": []
+  },
+  {
+   "id": "nt-overall",
+   "ch": "nt",
+   "title": "Nine Tails 종합 판정",
+   "start": "2026-10-01",
+   "judge": "2026-11-14",
+   "criterion": "주간 시청 100시간 목표(10/1 계획 B) · 구독 추세",
+   "owner": "pulse",
+   "status": "running",
+   "days_left": 39,
+   "started": true,
+   "nums": []
+  }
+ ],
+ "trends": {
+  "rows": [
+   {
+    "niche": "Asian folklore & myth (Nine Tails 본편)",
+    "tag": "japan",
+    "label": "강세",
+    "med": 4.75,
+    "prev": null,
+    "n": 5,
+    "hit": 0.6
+   },
+   {
+    "niche": "시니어 생활·건강(왕별이 시청층)",
+    "tag": "운동",
+    "label": "강세",
+    "med": 3.37,
+    "prev": null,
+    "n": 7,
+    "hit": 0.57
+   },
+   {
+    "niche": "정치 쇼츠(왕별이)",
+    "tag": "검찰·사법",
+    "label": "강세",
+    "med": 2.99,
+    "prev": null,
+    "n": 14,
+    "hit": 0.64
+   },
+   {
+    "niche": "정치 쇼츠(왕별이)",
+    "tag": "선거",
+    "label": "강세",
+    "med": 2.37,
+    "prev": null,
+    "n": 4,
+    "hit": 0.5
+   },
+   {
+    "niche": "Horror stories (Nine Tails)",
+    "tag": "school",
+    "label": "강세",
+    "med": 1.8,
+    "prev": null,
+    "n": 4,
+    "hit": 0.5
+   },
+   {
+    "niche": "Sleep sounds (왕별이 ASMR)",
+    "tag": "jazz·music",
+    "label": "강세",
+    "med": 1.63,
+    "prev": null,
+    "n": 6,
+    "hit": 0.5
+   },
+   {
+    "niche": "사연 쇼츠(왕별이 13:07)",
+    "tag": "돈·유산",
+    "label": "강세",
+    "med": 1.6,
+    "prev": null,
+    "n": 8,
+    "hit": 0.5
+   },
+   {
+    "niche": "Sleep sounds (왕별이 ASMR)",
+    "tag": "fire",
+    "label": "강세",
+    "med": 1.58,
+    "prev": null,
+    "n": 8,
+    "hit": 0.38
+   }
+  ],
+  "hits": [
+   {
+    "niche": "정치 쇼츠(왕별이)",
+    "ch": "보수tv",
+    "title": "고함치는 민주당 단숨에 얼어붙게 만든 '조용한 팩트폭격' ㄷㄷ 아직 사람들이 진가를 모르는 국힘 숨은 에이스 김석기의원",
+    "ratio": 333.07,
+    "views": 312082,
+    "id": "EdkV8xW8n5k"
+   },
+   {
+    "niche": "Asian folklore & myth (Nine Tails 본편)",
+    "ch": "Hearth Bone",
+    "title": "What's the creepiest moment you've ever had that you literally can't explain #reddit #redd",
+    "ratio": 210.94,
+    "views": 1793,
+    "id": "zg4pHtUcQqM"
+   },
+   {
+    "niche": "Asian folklore & myth (Nine Tails 본편)",
+    "ch": "Hearth Bone",
+    "title": "I was hearing things and Then an adult voice outside my door said shut up #scarystories #r",
+    "ratio": 177.53,
+    "views": 1509,
+    "id": "PcbM6LnumKM"
+   },
+   {
+    "niche": "시니어 생활·건강(왕별이 시청층)",
+    "ch": "오늘의 건강명언",
+    "title": "#김치비법#김치맛있게담그는법#김치레시피#김장비법#살림꿀팁##건강#명언#지혜#습관#노후#노년#중년#행복#힐링#마음#생활#장수#몸#방법#인생#삶#50대#60대#70대",
+    "ratio": 174.17,
+    "views": 1539512,
+    "id": "n4-LsXdmlg4"
+   },
+   {
+    "niche": "Asian folklore & myth (Nine Tails 본편)",
+    "ch": "Hearth Bone",
+    "title": "What’s the creepiest unexplained thing you’ve ever experienced that still gives you chills",
+    "ratio": 157.53,
+    "views": 1339,
+    "id": "6ycwUVLVBoE"
+   },
+   {
+    "niche": "시니어 생활·건강(왕별이 시청층)",
+    "ch": "마음산책",
+    "title": "약사들도 집에 꼭 쟁여두는 국민 상비약 10가지 #가정상비약 #건강상식 #5060건강 #shorts",
+    "ratio": 72.9,
+    "views": 1224640,
+    "id": "j6nw1VL42B8"
+   },
+   {
+    "niche": "정치 쇼츠(왕별이)",
+    "ch": "보수tv",
+    "title": "김태규 \"영화 시나리오 쓰듯 재판했다?\" 헌재의 기막힌 재판 진행 방식",
+    "ratio": 63.29,
+    "views": 59305,
+    "id": "zD5ouk5AfTs"
+   },
+   {
+    "niche": "주식 시황(왕별이)",
+    "ch": "한국경제TV",
+    "title": "삼성전자 100조 실적 나와도 주가 크게 안 움직이는 이유 | 김형석 KCGI자산운용 팀장ㅣ김치형 앵커",
+    "ratio": 44.07,
+    "views": 186780,
+    "id": "hqzD5_ib4ng"
+   }
+  ]
+ },
+ "ypp": {
+  "wb": {
+   "name": "왕별이",
+   "ratio": 0.345,
+   "valid": 136935,
+   "plays_after": 275175,
+   "gap": true,
+   "pace": 44942,
+   "subs": 492,
+   "srate": null,
+   "hours": 565,
+   "checked": "2026-10-05",
+   "data_date": "2026-09-30",
+   "deadline": "2027-01-31",
+   "days_left": 117,
+   "tiers": [
+    {
+     "key": "fan",
+     "label": "팬 후원(멤버십·Supers·Shopping)",
+     "subs": 492,
+     "subs_need": 500,
+     "subs_eta": null,
+     "valid": 136935,
+     "valid_need": 3000000,
+     "valid_eta": 64,
+     "pace_need": 33333,
+     "cap": 4044759,
+     "hours": 565,
+     "hours_need": 3000,
+     "ready": false,
+     "eta": null,
+     "eta_date": null,
+     "valid_eta_date": "2026-12-09"
+    },
+    {
+     "key": "ads",
+     "label": "광고 수익(보기 페이지·Shorts 피드 광고)",
+     "subs": 492,
+     "subs_need": 1000,
+     "subs_eta": null,
+     "valid": 136935,
+     "valid_need": 10000000,
+     "valid_eta": null,
+     "pace_need": 111111,
+     "cap": 4044759,
+     "hours": 565,
+     "hours_need": 4000,
+     "ready": false,
+     "eta": null,
+     "eta_date": null,
+     "valid_eta_date": null
+    }
+   ]
+  }
+ },
+ "pred_scored": [],
+ "flags": [
+  {
+   "id": "YPP_PACE:wb:ads",
+   "level": "warn",
+   "text": "왕별이 '광고 수익(보기 페이지·Shorts 피드 광고)': 지금 속도(유효 하루 4.5만)로는 90일 합이 최대 404만 — 1,000만 에는 유효 하루 11.1만(조회수로 약 32.2만) 필요",
+   "days": 1
+  },
+  {
+   "id": "CH_UP:nt",
+   "level": "good",
+   "text": "Nine Tails Tales 하루 조회 상승 3일째 (최근 2일 평균 226 · 그 전 2일의 ×50.11)",
+   "days": 1
+  },
+  {
+   "id": "CH_UP:wb",
+   "level": "good",
+   "text": "왕별이 하루 조회 상승 3일째 (최근 2일 평균 13만 · 그 전 2일의 ×17.79)",
+   "days": 1
+  }
+ ],
+ "history": []
+}
