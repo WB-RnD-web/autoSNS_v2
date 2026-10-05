@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-05",
+  "topic": "asmr",
+  "privacy": "public",
+  "theme_id": "ocean-waves",
+  "theme_name": "밤바다 파도 소리",
+  "mode": "sleep",
+  "narration_voice": "female",
+  "narration_text": "오늘은 밤바다에 천천히 밀려오는 잔잔한 파도 소리예요. 편안하게 눈을 감고, 파도에 맞춰 천천히 숨을 쉬어 보세요. 좋은 밤 되세요, 잘 자요.",
+  "background": {
+    "prompt": "a calm moonlit beach at night with gentle waves rolling onto the sand, soft blue tones, quiet and sleepy mood, no people, no text"
+  },
+  "freesound": {
+    "queries": [
+      "gentle ocean waves ambience loop",
+      "soft sea waves on beach night",
+      "calm waves lapping shore no seagulls",
+      "relaxing ocean surf loop"
+    ],
+    "must": ["wave", "ocean"],
+    "music_queries": ["calm ambient piano"]
+  },
+  "platforms": {
+    "youtube": {
+      "title": "🌊 밤바다 파도 소리 ASMR 3시간 | 잘 때 듣는 백색소음·수면",
+      "thumbnail_text": "밤바다 파도 3시간",
+      "thumbnail_hook": "a calm moonlit beach at night with gentle waves rolling onto the sand, soft blue tones, cozy sleepy mood, no people, no text",
+      "description": "잔잔하게 밀려오는 밤바다 파도 소리로 편안한 잠자리를 만들어 드려요.\n\n잘 때·집중·휴식용 ASMR 백색소음입니다.\n#ASMR #백색소음 #수면 #파도소리 #잠들기전 #힐링",
+      "playlist": "일상공감 ASMR",
+      "localizations": {
+        "en": {
+          "title": "Ocean Waves at Night Sounds for Sleeping 3 Hours | Calm Beach White Noise ASMR",
+          "description": "Gentle ocean waves rolling onto the shore for about 3 hours — perfect for sleeping, studying, and relaxing.\nIncludes a short, quiet Korean narration intro.\n#SleepSounds #WhiteNoise #OceanWaves #ASMR"
+        },
+        "ja": {
+          "title": "夜の波の音 3時間 | 睡眠用・作業用 ASMR",
+          "description": "穏やかに寄せては返す夜の海の波音を約3時間収録。睡眠用・勉強用・リラックス用のホワイトノイズとしてどうぞ。\n冒頭に短い韓国語のナレーションが入ります。\n#波の音 #睡眠用 #作業用BGM #ASMR"
+        },
+        "zh-Hant": {
+          "title": "夜晚海浪聲 3小時 | 助眠白噪音 ASMR",
+          "description": "輕柔的夜晚海浪聲,約3小時,適合睡眠、讀書與放鬆。\n開頭附有簡短的韓文旁白。\n#海浪聲 #白噪音 #助眠 #ASMR"
+        }
+      }
+    }
+  },
+  "credit": "음원 Freesound(CC0) · 이미지 생성",
+  "notes": "ASMR 3~4시간 · 16:9 · 정적 배경 + 루프 오디오 · 아주 낮은 나레이션 도입부 · 자막 없음."
+}
