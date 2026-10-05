@@ -1,0 +1,44 @@
+{
+ "date": "2026-10-05",
+ "format": "guide",
+ "topic": "fortune-one-card",
+ "headline": ["운세 쇼츠를 한 장 표로", "{{fact.before_views}} → {{fact.after_views}}"],
+ "scenes": [
+  {
+   "say": "운세 쇼츠를 한 장 표로 바꿨더니 {{fact.after_hours}} 만에 {{fact.after_views}}를 봤어요.",
+   "show": {"vs": [{"label": "내레이션형 운세 쇼츠", "value": "{{fact.before_views}}", "tone": "bad"},
+                   {"label": "열두 띠 한 장 표", "value": "{{fact.after_views}}", "tone": "good"}]}
+  },
+  {
+   "say": "원래는 {{fact.old_sec}}짜리 내레이션형, 하루 {{fact.before_views}}에 그쳤어요.",
+   "show": {"thumb": "before_short", "label": "바꾸기 전 운세 쇼츠 · 지금 조회 {{vid.before_short.views}}"}
+  },
+  {
+   "say": "그 무렵 노출이 꺼졌어요. 유력한 원인은 오디오 언어가 영어로 저장된 거예요.",
+   "show": {"text": "원인은 아직 확정 못 했어요", "sub": "가장 유력한 후보일 뿐"}
+  },
+  {
+   "say": "같은 날 {{fact.zodiacs}} 순위를 한 장 표에 전부 넣은 {{fact.card_sec}}짜리로 바꿨어요.",
+   "show": {"thumb": "card_short", "label": "열두 띠 한 장 표 · 지금 조회 {{vid.card_short.views}}"}
+  },
+  {
+   "say": "쇼츠 피드에서 넘기지 않고 본 비율은 {{fact.continued}}였어요.",
+   "show": {"stat": "{{fact.continued}}", "label": "넘기지 않고 본 비율", "tone": "good"}
+  },
+  {
+   "say": "같은 날 언어도 바뀌어서 형식 덕인지는 몰라요. 하루 비교예요.",
+   "show": {"text": "형식과 언어가 같이 바뀐 하루", "sub": "형식만의 효과라고는 못 해요"}
+  },
+  {
+   "say": "경쟁 채널도 같은 표로 {{fact.rival_views}}가 나왔어요.",
+   "show": {"steps": ["결론을 첫 프레임에 전부", "내레이션 없이 짧게", "재미로 보는 운세라고 고지"], "hi": 0}
+  },
+  {
+   "say": "내 쇼츠도 첫 프레임에 결론이 있는지 보세요. 저장해 두고 그대로 따라 해 보세요.",
+   "show": {"steps": ["결론을 첫 프레임에 전부", "내레이션 없이 짧게", "재미로 보는 운세라고 고지"], "hi": -1},
+   "hold": 0.6
+  }
+ ],
+ "caption": "운세 쇼츠를 한 장 표로 바꾼 날, {{fact.after_hours}} 만에 {{fact.after_views}}.\n\n• 바꾸기 전: {{fact.old_sec}}짜리 내레이션형, 하루 {{fact.before_views}}\n• 바꾼 뒤: {{fact.zodiacs}} 순위를 한 장 표에 전부, {{fact.card_sec}}, 진행자 없음\n• 넘기지 않고 본 비율 {{fact.continued}}\n\n한 장 표 쇼츠 만드는 법\n1. 결론(순위·점수)을 첫 프레임 한 장에 전부 넣는다\n2. 내레이션과 진행자를 빼고 짧게 끝낸다\n3. 재미로 보는 운세라는 고지를 설명란에 넣는다\n\n저장해 두고 다음 쇼츠 만들 때 그대로 해 보세요.\n같은 날 오디오 언어(영어→한국어)도 바뀌어서 형식만의 효과인지는 몰라요. 하루 비교예요.",
+ "hashtags": ["#유튜브쇼츠", "#유튜브팁", "#AI유튜브", "#쇼츠만들기"]
+}
