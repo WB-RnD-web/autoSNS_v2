@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-05", "topic": "ai", "slot": "am", "privacy": "public",
+  "format": "explain",
+  "angle": "돈",
+  "topic_keyword": "제미나이 요금제",
+  "headline": "구글 제미나이, 무료·저가 요금제에서 프로 모델 제외",
+  "hook_title": "제미나이 무료, 9일부터 달라진다",
+  "thumbnail_hook": "A smartphone on a wooden table showing a blank chat screen, a small padlock resting beside it, soft morning window light, calm home setting, shallow depth of field, no text, no faces",
+  "thumbnail_text": "제미나이 무료, 9일 변화",
+  "glossary": [],
+  "sources": [
+    {"outlet": "AI타임스", "title": "구글, 제미나이 요금제 개편..무료·저가 요금제서 '프로' 모델 뺀다",
+     "url": "https://www.aitimes.com/news/articleView.html?idxno=215946",
+     "published_at": "2026-10-04T16:16:07+09:00",
+     "confirmed": false,
+     "facts": ["구글에 따르면, 9일부터 무료 사용자는 제미나이에서 '플래시-라이트'만 사용할 수 있게 된다.", "AI 플러스 요금제에서도 '프로' 모델 접근이 사라지고 플래시-라이트와 '플래시'만 제공된다. 프로 모델은 앞으로 AI 프로와 AI 울트라 가입자에게만 제공된다."]}
+  ],
+  "scenes": [
+    {"type": "hook", "pill": "요금", "lines": ["무료 제미나이", "9일부터 변화"], "highlight": "9일",
+     "narration": "구글 제미나이를 무료로 쓰시는 분들, 9일부터 달라진다고 보도됐어요."},
+    {"type": "statement", "text": "무료는 가벼운 모델만", "highlight": "가벼운",
+     "narration": "구글에 따르면 9일부터 무료 이용자는 가장 가벼운 모델인 플래시 라이트만 쓸 수 있게 된다고 알려졌어요."},
+    {"type": "keypoint", "label": "요금제별 달라지는 점",
+     "points": ["무료는 <b>플래시-라이트</b>만", "AI 플러스도 <b>프로</b> 모델 제외", "<b>프로</b> 모델은 AI 프로부터"],
+     "narration": "AI 플러스 요금제에서도 프로 모델이 빠지고, 프로 모델은 AI 프로와 AI 울트라 가입자에게만 제공된다고 전해졌어요."},
+    {"type": "statement", "text": "똑똑한 AI는 비싼 요금제로", "highlight": "비싼",
+     "narration": "계산이 많이 드는 고급 기능을 비싼 요금제로 옮기려는 조치로 풀이된다고 해요."},
+    {"type": "keypoint", "label": "그래서 우리는",
+     "points": ["간단한 질문은 <b>무료로 충분</b>", "결제 전에 <b>내 사용 습관</b> 확인", "바뀐 안내는 <b>앱에서 확인</b>"],
+     "narration": "간단한 질문은 가벼운 모델로도 충분하니, 결제를 늘리기 전에 내가 어떤 기능을 쓰는지 먼저 살펴보세요."},
+    {"type": "statement", "text": "내 AI, 어떤 요금제?", "highlight": "요금제",
+     "narration": "여러분은 지금 어떤 요금제로 쓰고 계신가요?"}
+  ],
+  "platforms": {
+    "youtube": {"title": "제미나이 무료, 9일부터 달라진다 #shorts", "description": "구글이 제미나이 요금제를 개편해 무료·저가 요금제에서 프로 모델을 뺀다고 보도됐어요.\n\n#AI #제미나이 #shorts"},
+    "instagram": {"caption": "제미나이 무료, 9일부터 달라진다\n\n9일부터 무료 이용자는 가벼운 모델만 쓸 수 있다고 해요.\nAI 플러스도 프로 모델이 빠진다고 전해졌어요.\n결제 전에 내가 뭘 쓰는지부터 확인해 보세요.\n매일 오전·저녁 AI 소식은 유튜브 '왕별이'에서 쉽게 풀어 드려요.\n출처 AI타임스\n\n#AI #제미나이 #AI소식"},
+    "threads": {"text": "제미나이 무료 쓰시는 분, 9일부터 가벼운 모델만 쓸 수 있게 된다고 보도됐어요. 결제 전에 내가 뭘 쓰는지 먼저 확인해 보세요. 매일 AI 소식은 유튜브 왕별이에서. #AI소식"}
+  },
+  "notes": "AI 소식 오전 편 · explain · 장면 6개"
+}
