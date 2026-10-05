@@ -1,0 +1,81 @@
+{
+ "date": "2026-10-05",
+ "topic": "ai",
+ "slot": "pm",
+ "privacy": "public",
+ "format": "myth",
+ "angle": "규칙·정책",
+ "topic_keyword": "AI 영상 법정 증거",
+ "headline": "미국 항소법원, AI로 만든 피해자 영상 쓴 선고 파기",
+ "hook_title": "AI 피해자 영상에 법원 제동",
+ "thumbnail_hook": "An empty courtroom with a wooden judge's bench, a gavel resting beside an old projector screen glowing faintly, soft evening light through tall windows, calm serious mood, no text, no faces",
+ "thumbnail_text": "AI 영상, 법정에선 안 돼",
+ "glossary": [],
+ "sources": [
+  {
+   "outlet": "AI타임스",
+   "title": "'AI 피해자 영상'에 속아 내려진 중형...미국 법원 \"형량 잘못됐다\" 선고 파기",
+   "url": "https://www.aitimes.com/news/articleView.html?idxno=215964",
+   "published_at": "2026-10-05T09:53:49+09:00",
+   "confirmed": false,
+   "facts": [
+    "미국 애리조나주 항소법원이 과실치사 혐의로 징역 10년6개월을 선고받았던 가브리엘 호르카시타스의 선고 판결을 파기하고, 사건을 마리코파 카운티 고등법원으로 돌려보내 형량을 다시 정하도록 명령했다.",
+    "유죄 판결 자체는 유지됐지만, 양형 재판 과정에서 AI로 복원된 피해자의 영상을 증거로 채택해 형량을 매긴 조치가 \"근본적인 오류\"였다는 판단이다.",
+    "영상 속 대본은 웨일스가 직접 작성했다."
+   ]
+  }
+ ],
+ "scenes": [
+  {
+   "type": "hook",
+   "pill": "판결",
+   "lines": [
+    "피해자 AI 영상",
+    "법원이 제동"
+   ],
+   "highlight": "제동",
+   "narration": "AI로 되살린 피해자의 영상이 재판에서 쓰였다가, 미국 항소법원이 제동을 걸었다고 전해졌어요."
+  },
+  {
+   "type": "statement",
+   "text": "AI 영상 보고 형량이 무거워졌다",
+   "highlight": "형량",
+   "narration": "가족이 AI로 만든 피해자 영상을 법정에서 보여 줬고, 판사가 법정 최고형을 내렸다고 보도됐어요."
+  },
+  {
+   "type": "quote",
+   "text": "근본적인 오류",
+   "attr": "미국 애리조나주 항소법원",
+   "narration": "항소법원은 이 영상을 증거로 쓴 것이 근본적인 오류라며 선고를 파기했다고 알려졌어요."
+  },
+  {
+   "type": "keypoint",
+   "label": "법원이 문제 삼은 점",
+   "points": [
+    "영상 속 <b>대본은 가족</b>이 작성",
+    "피해자 <b>실제 의견과 다른</b> 내용",
+    "피고인의 <b>공정한 선고</b> 권리"
+   ],
+   "narration": "영상 속 대본은 가족이 썼고, 피해자의 실제 생각과 달라서, 공정하게 선고받을 권리를 해쳤다는 판단입니다."
+  },
+  {
+   "type": "statement",
+   "text": "영상 속 말, 진짜일까요?",
+   "highlight": "진짜",
+   "narration": "화면 속 목소리가 정말 그 사람의 말인지, 한 번 더 생각해 보시면 어떨까요?"
+  }
+ ],
+ "platforms": {
+  "youtube": {
+   "title": "AI 피해자 영상에 법원 제동 #shorts",
+   "description": "미국 항소법원이 AI로 만든 피해자 영상을 증거로 쓴 선고를 파기했다고 보도됐어요.\n\n#AI #AI소식 #shorts"
+  },
+  "instagram": {
+   "caption": "AI 피해자 영상에 법원 제동\n\n미국 항소법원이 AI로 만든 피해자 영상을 쓴 선고를 파기했다고 해요.\n영상 속 대본은 가족이 쓴 것이라, 피해자의 진짜 말과 다르다는 판단이에요.\n매일 오전·저녁 AI 소식은 유튜브 '왕별이'에서 쉽게 풀어 드려요.\n출처 AI타임스\n\n#AI #AI소식 #법원"
+  },
+  "threads": {
+   "text": "AI로 만든 피해자 영상을 쓴 재판, 미국 항소법원이 선고를 뒤집었다고 해요. 영상 속 말이 진짜 그 사람의 말은 아니라는 거죠. 매일 AI 소식은 유튜브 왕별이에서. #AI소식"
+  }
+ },
+ "notes": "AI 소식 저녁 편 · myth · 장면 5개"
+}
