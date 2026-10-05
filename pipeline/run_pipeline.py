@@ -28,6 +28,7 @@ import time
 import config
 import fortune_card
 import theme_card
+import pulli_card
 import name_card
 import news_card
 import ledger as ledgermod
@@ -99,6 +100,10 @@ THEME_PLAYLIST_DESC = ("매일 낮 12시, 주제를 바꿔 12띠 순위를 한 �
 NAME_PLAYLIST = "내 것 찾기 | 이름 글자·태어난 달로 보는 복"
 NAME_PLAYLIST_DESC = ("내 이름 글자, 성씨, 태어난 해·달이 표에 있는지 찾아보세요. 매일 아침 7시 40분 태어난 해, 9시 40분 이름 한자, "
                       "오후 1시 40분 성씨, 3시 40분 태어난 달 순위가 올라와요. 재미로 보는 풀이예요.")
+# 풀이형 표(2026-10-06, pulli_card.py — tables-v2) — 오늘 일진과 띠의 합·충으로 순위 + 이유. ★제목 바꾸지 않는다(새 목록이 생긴다).
+PULLI_PLAYLIST = "띠별 일진 풀이 | 오늘 순위의 이유까지"
+PULLI_PLAYLIST_DESC = ("오늘의 일진(60갑자)과 내 띠가 합인지 충인지로 12띠 순위를 매기고, 이유까지 풀어 드려요. "
+                       "45~96년생 전부. 전통 일진 풀이를 재미로 정리한 운세예요.")
 AI_PLAYLIST = "AI 소식 | 매일 오전·저녁, 쉽게 듣는 AI 뉴스"
 AI_PLAYLIST_DESC = ("오늘 AI 세상에서 바뀐 것, 그리고 그게 내 일자리·돈·안전에 뭘 뜻하는지. "
                     "어려운 말은 쉽게 풀고, 출처는 설명란에 적어요.")
@@ -122,6 +127,8 @@ def playlist_for(topic: str) -> tuple[str, str] | None:
     t = str(topic or "").lower()
     if t == theme_card.TOPIC:
         return THEME_PLAYLIST, THEME_PLAYLIST_DESC
+    if t == pulli_card.TOPIC:
+        return PULLI_PLAYLIST, PULLI_PLAYLIST_DESC
     if t == name_card.TOPIC:
         return NAME_PLAYLIST, NAME_PLAYLIST_DESC
     if t.startswith(FORTUNE_TOPICS):
@@ -477,7 +484,7 @@ def process(sb_path, args, led):
         return res
     # ★카피 점검 — 렌더 전에 본다. 밋밋하면 경고만 뜨고 계속 간다.
     # 테마 표는 문구가 전부 코드(theme_card.THEMES)에서 나온다 — 뉴스 카피 규칙(hook 수치 등)과 맞지 않아 건너뛴다.
-    if not (theme_card.is_theme(sb) or name_card.is_name(sb)):
+    if not (theme_card.is_theme(sb) or name_card.is_name(sb) or pulli_card.is_pulli(sb)):
         news_copy_check.report(sb)
     try:
         spec = resolve_spec(sb_path, sb, args)
@@ -542,6 +549,13 @@ def process(sb_path, args, led):
         credit = meta["description"][len(build_meta(sb, False)["description"]):]
         meta["title"] = f"{tm['title']} #shorts"
         meta["description"] = tm["description"] + credit
+        meta["localizations"] = None
+    if pulli_card.is_pulli(sb):
+        # 풀이형 표 — 제목·설명(12띠 이유 전부)은 pulli_card 가 정한다(목소리 출처 줄은 유지). 번역은 넣지 않는다.
+        pm = pulli_card.meta(sb)
+        credit = meta["description"][len(build_meta(sb, False)["description"]):]
+        meta["title"] = f"{pm['title']} #shorts"
+        meta["description"] = pm["description"] + credit
         meta["localizations"] = None
     if name_card.is_name(sb):
         # 내 것 찾기 표 — 제목·설명은 name_card 가 정한다(목소리 출처 줄은 유지). 번역은 넣지 않는다.
