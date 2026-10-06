@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-06",
+  "topic": "politics",
+  "slot": "noon",
+  "privacy": "public",
+  "topic_keyword": "대미 자문계약 비용 국감",
+  "headline": "외교·산업부 대미 자문계약 비용, 지난해 약 41억원",
+  "hook_title": "미국 의회 자문비, 연 41억",
+  "accent": "#8FB0C9",
+  "thumbnail_hook": "Empty National Assembly hearing room with rows of microphones and stacked documents on a long desk, a small balance scale in the foreground, soft blue-gray light, no people, no text",
+  "thumbnail_text": "연 41억, 어디에 쓰나",
+  "scenes": [
+    {"type": "hook", "pill": "국감", "ghost": "POLITICS", "lines": ["미국 의회에", "쓰는 돈", "얼마일까"], "highlight": "얼마", "brand": "일상공감뉴스 · 정치", "narration": "정부가 미국 의회와 행정부를 상대로 쓰는 자문 비용, 얼마나 될까요?"},
+    {"type": "stat", "label": "대미 자문계약 (2025)", "prefix": "약 ", "suffix": "억", "from": 0, "to": 41, "bar": true, "sub": "2022년 약 <b>37억</b> → 2025년 약 <b>41억</b>", "brand": "일상공감뉴스 · 정치", "narration": "국회 국정감사에서 공개된 자료에 따르면, 외교부와 산업부의 지난해 대미 자문계약 비용은 약 41억 원이었습니다."},
+    {"type": "keypoint", "label": "계약 내용", "points": ["두 부처 — 해마다 <b>10곳</b> 안팎 업체와 계약", "내용 — 의회 자문·정책 홍보·법률 자문"], "brand": "일상공감뉴스 · 정치", "narration": "두 부처는 해마다 열 곳 안팎의 미국 업체와 의회 자문, 정책 홍보, 법률 자문 계약을 맺어 왔다고 합니다."},
+    {"type": "keypoint", "label": "엇갈린 시각", "points": ["고동진 의원 — 한미 갈등 해결에 <b>실효성</b> 점검 필요", "정부 측 입장 — 제작 시점 <b>미확인</b>"], "brand": "일상공감뉴스 · 정치", "narration": "고동진 의원은 이 비용이 한미 갈등 해결에 실제로 도움이 됐는지 점검해야 한다고 주장했고, 정부 측 입장은 제작 시점까지 확인하지 못했습니다."},
+    {"type": "statement", "text": "내 세금, 어디에 쓰이면 좋을까?", "highlight": "내 세금", "brand": "일상공감뉴스 · 정치", "narration": "이 비용은 모두 세금에서 나갑니다. 여러분은 어떻게 생각하십니까?"}
+  ],
+  "sources": ["헤럴드경제", "뉴스핌", "시사이슈"],
+  "credit": "출처 헤럴드경제·뉴스핌·시사이슈 등",
+  "platforms": {
+    "youtube": {
+      "title": "미국 의회 자문비, 연 41억 #shorts",
+      "description": "외교·산업부 대미 자문계약 비용, 지난해 약 41억원\n출처 헤럴드경제·뉴스핌·시사이슈 등\n\n※ 사실관계는 보도 시점 기준이며, 의원 주장은 확정된 내용이 아닙니다.\n\n#국정감사 #국회 #세금 #뉴스 #쇼츠 #shorts",
+      "localizations": {
+        "en": {"title": "Seoul Spends ~4.1B Won a Year on US Lobbying #shorts", "description": "Korea's foreign and trade ministries spent about 4.1 billion won on US advisory contracts last year, according to data released at the parliamentary audit.\n\n※ Facts as of reporting time; lawmakers' claims are not confirmed.\n\n#shorts #Korea #politics"},
+        "ja": {"title": "米国議会への助言費、年間約41億ウォン #shorts", "description": "国政監査で公開された資料によると、外交部と産業部の昨年の対米助言契約費は約41億ウォンでした。\n\n※ 報道時点の情報で、議員の主張は確定した内容ではありません。\n\n#shorts #韓国 #政治"},
+        "zh-Hant": {"title": "對美國國會顧問費 一年約41億韓元 #shorts", "description": "據國政監査公開資料，外交部與產業部去年的對美顧問合約費用約為41億韓元。\n\n※ 內容以報導時點為準，議員主張尚未確定。\n\n#shorts #韓國 #政治"}
+      }
+    },
+    "instagram": {"caption": "미국 의회 자문비, 연 41억\n출처 헤럴드경제·뉴스핌·시사이슈 등\n\n#국정감사 #국회 #세금 #뉴스 #쇼츠 #shorts #릴스"},
+    "threads": {"text": "미국 의회 자문비, 연 41억\n출처 헤럴드경제·뉴스핌·시사이슈 등"}
+  },
+  "notes": "모션그래픽 5장면 · 단일 내레이터 · 배경음 없음."
+}
