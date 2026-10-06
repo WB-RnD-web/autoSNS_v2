@@ -272,6 +272,61 @@ CSS_CARD = """
 """
 
 
+# ── 운세 등급표(S·A·B·C 티어표, 2026-10-07, tier_card.py) ──────────
+# 왼쪽 색 칸(등급) + 오른쪽 띠 칸(한 줄에 두 칸). 칸 수가 날마다 달라 높이를 그때그때 나눈다.
+# 띠 칸 안은 세 줄 — 띠 이름 / 출생연도 / 이유. 출생연도를 이름 옆에 붙이면 55세 이상에게 너무 작았다(10/7 견본).
+# 오른쪽 끝(x 960~)과 아래 22%(y 1460~)는 비운다(쇼츠 버튼·제목 자리).
+TIER_X0, TIER_W, TIER_TOP, TIER_BOTTOM = 60, 900, 304, 1446
+TIER_LABEL_W, TIER_GAP, TIER_ROW_GAP, TIER_CHIP_MAX = 124, 12, 16, 156
+CSS_TIER = """
+.tpill{position:absolute;left:60px;top:104px;}
+.ttitle{position:absolute;left:60px;top:176px;width:900px;color:#FFFFFF;font-weight:900;font-size:84px;
+  line-height:1.05;letter-spacing:-3px;white-space:nowrap;text-shadow:0 4px 24px rgba(0,0,0,.6);}
+.tlab{position:absolute;border-radius:22px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  color:#1A1410;box-shadow:0 8px 26px rgba(0,0,0,.35);will-change:transform;}
+.tlab .L{font-weight:900;line-height:.92;}
+.tlab .K{font-weight:800;line-height:1.1;}
+.tchip{position:absolute;border-radius:20px;background:rgba(10,8,8,.74);border:2px solid rgba(237,217,188,.16);
+  will-change:transform;overflow:hidden;}
+.tchip.top{border:3px solid var(--tc);background:rgba(10,8,8,.84);}
+.tchip .tn{position:absolute;left:18px;color:#FFFFFF;font-weight:900;letter-spacing:-1px;white-space:nowrap;line-height:1;}
+.tchip .ty{position:absolute;left:18px;color:rgba(237,217,188,.86);font-weight:700;white-space:nowrap;line-height:1;
+  font-variant-numeric:tabular-nums;}
+.tchip .tl{position:absolute;left:18px;right:12px;color:#EDD9BC;font-weight:700;white-space:nowrap;line-height:1;
+  overflow:hidden;text-overflow:ellipsis;}
+.tnone{position:absolute;color:rgba(237,217,188,.6);font-weight:700;display:flex;align-items:center;}
+.tfoot{position:absolute;left:60px;width:900px;color:rgba(237,217,188,.78);font-weight:700;font-size:28px;white-space:nowrap;}
+"""
+
+
+def _em(s):
+    """대략 글자 폭(em) — 숫자는 좁고 가운뎃점은 더 좁다."""
+    return sum(0.56 if c.isdigit() else 0.3 if c in "·., " else 0.6 if c.isascii() else 1.0 for c in str(s)) or 1.0
+
+
+def tier_layout(tiers):
+    """등급 줄마다 (y, 높이, 칸 줄 수)와 칸 크기·글자 크기. 한 줄에 띠 두 칸."""
+    lines = [max(1, (len(t.get("items", [])) + 1) // 2) for t in tiers]
+    inner = sum(n - 1 for n in lines) * TIER_GAP
+    avail = TIER_BOTTOM - TIER_TOP - TIER_ROW_GAP * (len(tiers) - 1) - inner
+    ch = min(TIER_CHIP_MAX, avail / max(1, sum(lines)))
+    cw = (TIER_W - TIER_LABEL_W - TIER_GAP * 2) / 2
+    rows, y = [], TIER_TOP
+    for n in lines:
+        h = n * ch + (n - 1) * TIER_GAP
+        rows.append((y, h, n))
+        y += h + TIER_ROW_GAP
+    items = [r for t in tiers for r in t.get("items", [])]
+    fn, fy, fl = min(60, ch * 0.37), min(32, ch * 0.2), min(32, ch * 0.2)
+    room = cw - 36
+    for r in items:                                    # 세 줄 각각 칸 너비를 넘지 않게
+        yrs = "·".join(f"{v % 100:02d}" for v in r.get("years", [])) + "년생"
+        fn = min(fn, room / _em(r.get("animal", "") + "띠"))
+        fy = min(fy, room / _em(yrs))
+        fl = min(fl, room / _em(r.get("line", "")))
+    return {"rows": rows, "ch": ch, "cw": cw, "fn": int(fn), "fy": int(fy), "fl": int(fl), "bottom": y - TIER_ROW_GAP}
+
+
 # ── '내 것 찾기' 표 (2026-10-02, name_card.py) — 이름 글자 24칸·태어난 달 12칸 ──────────
 # 칸 안은 큰 글자(찾는 것) + 작은 글자(한자·순위) + 한 줄. 오른쪽 끝(x 960~)과 아래 22%는 비운다.
 GRID_X0, GRID_W, GRID_TOP, GRID_BOTTOM, GRID_GAP = 60, 900, 470, 1440, 14
@@ -602,6 +657,35 @@ def scene_html(i, sc, acc):
                 f'<div class="yr">{esc(yrs)}</div><div class="ln">{esc(r.get("line", ""))}</div></div>')
         body = (f'<div class="cpill"><span class="pill" id="{gid}-pill"><span class="dot"></span>{esc(sc.get("pill",""))}</span></div>'
                 f'<div class="ctitle" id="{gid}-title">{esc(sc.get("title",""))}</div>' + "".join(cells))
+    elif t == "tier":
+        tiers = sc.get("tiers", [])
+        lay = tier_layout(tiers)
+        ch, cw = lay["ch"], lay["cw"]
+        x_chip = TIER_X0 + TIER_LABEL_W + TIER_GAP
+        parts = []
+        for ti, (tr, (y, h, n)) in enumerate(zip(tiers, lay["rows"])):
+            col = tr.get("color", acc)
+            fL = int(min(h * 0.55, ch * 0.62, 104))
+            parts.append(f'<div class="tlab" id="{gid}-L{ti}" style="left:{TIER_X0}px;top:{y:.0f}px;width:{TIER_LABEL_W}px;'
+                         f'height:{h:.0f}px;background:{col}"><div class="L" style="font-size:{fL}px">{esc(tr.get("id", ""))}</div>'
+                         f'<div class="K" style="font-size:{int(max(24, fL * 0.36))}px">{esc(tr.get("label", ""))}</div></div>')
+            items = tr.get("items", [])
+            if not items:
+                parts.append(f'<div class="tnone" style="left:{x_chip}px;top:{y:.0f}px;height:{h:.0f}px;font-size:{lay["fl"]}px">오늘은 없어요</div>')
+            for k, r in enumerate(items):
+                x = x_chip + (k % 2) * (cw + TIER_GAP)
+                yy = y + (k // 2) * (ch + TIER_GAP)
+                yrs = "·".join(f"{v % 100:02d}" for v in r.get("years", [])) + "년생"
+                cls = "tchip top" if ti == 0 else "tchip"
+                pad = (ch - lay["fn"] - lay["fy"] - lay["fl"]) / 4      # 위·사이·사이·아래 같은 틈
+                parts.append(
+                    f'<div class="{cls}" id="{gid}-t{ti}-{k}" style="--tc:{col};left:{x:.0f}px;top:{yy:.0f}px;width:{cw:.0f}px;height:{ch:.0f}px">'
+                    f'<div class="tn" style="top:{pad:.0f}px;font-size:{lay["fn"]}px">{esc(r.get("animal", ""))}띠</div>'
+                    f'<div class="ty" style="top:{pad * 2 + lay["fn"]:.0f}px;font-size:{lay["fy"]}px">{esc(yrs)}</div>'
+                    f'<div class="tl" style="top:{pad * 3 + lay["fn"] + lay["fy"]:.0f}px;font-size:{lay["fl"]}px">{esc(r.get("line", ""))}</div></div>')
+        body = (f'<div class="tpill"><span class="pill" id="{gid}-pill"><span class="dot"></span>{esc(sc.get("pill",""))}</span></div>'
+                f'<div class="ttitle" id="{gid}-title">{esc(sc.get("title",""))}</div>' + "".join(parts)
+                + f'<div class="tfoot" style="top:{lay["bottom"] + 20:.0f}px">{esc(sc.get("foot",""))}</div>')
     elif t == "grid":
         items = sc.get("cells", [])
         cw, ch, xy = grid_layout(len(items), sc.get("cols", 4))
@@ -774,6 +858,16 @@ def scene_js(i, sc, acc, bar_h=560, presenter=False):
         out.append(f'tl.fromTo("#{gid}-pill",{{scale:0.92}},{{scale:1,duration:0.35,ease:"back.out(2)",transformOrigin:"left center"}},{S:.2f});')
         for k in range(min(3, len(sc.get("rows", [])))):
             out.append(f'tl.to("#{gid}-c{k}",{{scale:1.05,duration:0.22,ease:"sine.inOut",yoyo:true,repeat:1}},{S + 0.5 + k * 0.35:.2f});')
+    elif t == "tier":
+        # 등급표는 0초부터 전부 떠 있다(캡처·반복 재생용). S 칸이 차례로 톡 → C 색 칸이 두근.
+        out.append(f'tl.fromTo("#{gid}-pill",{{scale:0.92}},{{scale:1,duration:0.35,ease:"back.out(2)",transformOrigin:"left center"}},{S:.2f});')
+        tiers = sc.get("tiers", [])
+        if tiers:
+            out.append(f'tl.to("#{gid}-L0",{{scale:1.06,duration:0.25,ease:"sine.inOut",yoyo:true,repeat:1}},{S + 0.4:.2f});')
+            for k in range(min(4, len(tiers[0].get("items", [])))):
+                out.append(f'tl.to("#{gid}-t0-{k}",{{scale:1.05,duration:0.22,ease:"sine.inOut",yoyo:true,repeat:1}},{S + 0.7 + k * 0.35:.2f});')
+            last = len(tiers) - 1
+            out.append(f'tl.to("#{gid}-L{last}",{{scale:1.06,duration:0.25,ease:"sine.inOut",yoyo:true,repeat:3}},{S + 2.2:.2f});')
     elif t == "grid":
         # 표는 0초부터 전부 떠 있다(찾기·캡처·반복 재생용). 강조 칸(1~3위)만 차례로 톡 튄다 — 글자 표는 움직임 최소.
         out.append(f'tl.fromTo("#{gid}-pill",{{scale:0.92}},{{scale:1,duration:0.35,ease:"back.out(2)",transformOrigin:"left center"}},{S:.2f});')
@@ -842,6 +936,8 @@ def build_html(scenes, total, acc="#D97757", bg=False, presenter=False):
         css += CSS_CARD
     if any(sc.get("type") == "grid" for sc in scenes):
         css += CSS_GRID
+    if any(sc.get("type") == "tier" for sc in scenes):
+        css += CSS_TIER
     if any(sc.get("type") == "news" for sc in scenes):
         css += CSS_NEWS
     parts = [scene_html(i, sc, acc) for i, sc in enumerate(scenes)]
@@ -936,7 +1032,7 @@ def build_motion(spec, out_mp4, workdir, quality="standard"):
     os.environ["PATH"] = os.environ.get("PATH", "") + os.pathsep + os.path.dirname(FFMPEG)
     scenes = spec["scenes"]
     # 한 장 표는 화면 전체를 쓴다 → 진행자 자리 없음
-    pr_on = presenter_on(spec.get("topic", "")) and not any(sc.get("type") in ("card", "grid", "news") for sc in scenes)
+    pr_on = presenter_on(spec.get("topic", "")) and not any(sc.get("type") in ("card", "grid", "news", "tier") for sc in scenes)
     duo = pr_on and os.environ.get("PRESENTER_DUO", "1") not in ("0", "false", "False")
     assign_speakers(scenes, duo=duo)
     if scenes and scenes[0].get("type") == "hook" and top_hook_on(spec.get("topic", "")):

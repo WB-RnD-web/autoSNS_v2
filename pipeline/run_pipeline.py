@@ -29,6 +29,7 @@ import config
 import fortune_card
 import theme_card
 import pulli_card
+import tier_card
 import name_card
 import news_card
 import ledger as ledgermod
@@ -104,6 +105,10 @@ NAME_PLAYLIST_DESC = ("내 이름 글자, 성씨, 태어난 해·달이 표에 �
 PULLI_PLAYLIST = "띠별 일진 풀이 | 오늘 순위의 이유까지"
 PULLI_PLAYLIST_DESC = ("오늘의 일진(60갑자)과 내 띠가 합인지 충인지로 12띠 순위를 매기고, 이유까지 풀어 드려요. "
                        "45~96년생 전부. 전통 일진 풀이를 재미로 정리한 운세예요.")
+# 운세 등급표(2026-10-07, tier_card.py) — 같은 일진 근거를 S·A·B·C 네 칸으로. ★제목 바꾸지 않는다(새 목록이 생긴다).
+TIER_PLAYLIST = "띠별 운세 등급표 | 오늘 S급 대길은?"
+TIER_PLAYLIST_DESC = ("오늘의 일진(60갑자)과 합이 되는 띠는 S급, 충이 되는 띠는 C급. 12띠를 네 등급으로 나누고 "
+                      "띠마다 이유를 적어 드려요. 45~96년생 전부. 전통 일진 풀이를 재미로 정리한 운세예요.")
 AI_PLAYLIST = "AI 소식 | 매일 오전·저녁, 쉽게 듣는 AI 뉴스"
 AI_PLAYLIST_DESC = ("오늘 AI 세상에서 바뀐 것, 그리고 그게 내 일자리·돈·안전에 뭘 뜻하는지. "
                     "어려운 말은 쉽게 풀고, 출처는 설명란에 적어요.")
@@ -129,6 +134,8 @@ def playlist_for(topic: str) -> tuple[str, str] | None:
         return THEME_PLAYLIST, THEME_PLAYLIST_DESC
     if t == pulli_card.TOPIC:
         return PULLI_PLAYLIST, PULLI_PLAYLIST_DESC
+    if t == tier_card.TOPIC:
+        return TIER_PLAYLIST, TIER_PLAYLIST_DESC
     if t == name_card.TOPIC:
         return NAME_PLAYLIST, NAME_PLAYLIST_DESC
     if t.startswith(FORTUNE_TOPICS):
@@ -484,13 +491,17 @@ def process(sb_path, args, led):
         return res
     # ★카피 점검 — 렌더 전에 본다. 밋밋하면 경고만 뜨고 계속 간다.
     # 테마 표는 문구가 전부 코드(theme_card.THEMES)에서 나온다 — 뉴스 카피 규칙(hook 수치 등)과 맞지 않아 건너뛴다.
-    if not (theme_card.is_theme(sb) or name_card.is_name(sb) or pulli_card.is_pulli(sb)):
+    if not (theme_card.is_theme(sb) or name_card.is_name(sb) or pulli_card.is_pulli(sb) or tier_card.is_tier(sb)):
         news_copy_check.report(sb)
     try:
         spec = resolve_spec(sb_path, sb, args)
         spec.setdefault("topic", sb.get("topic", ""))
         # 운세는 격일로 '12띠 한 장 표'(fortune_card) — 기존 형식과 A/B
-        if fortune_card.use_card(sb):
+        if tier_card.use_ab(sb):
+            # 운세 등급표 A/B(2026-10-09~22) — 06:13 매일 운세 자리에서 하루씩 등급표. 끄기: 레포 변수 FORTUNE_TIER=0
+            spec = tier_card.build_spec(sb)
+            print("   🗂️ 운세 등급표 (격일 A/B · tier_card)")
+        elif fortune_card.use_card(sb):
             spec = fortune_card.build_spec(sb)
             print("   🗂️ 운세 한 장 표 (격일 A/B · fortune_card)")
         elif news_card.use(sb):
@@ -536,7 +547,14 @@ def process(sb_path, args, led):
         meta["localizations"] = yt_i18n.from_spec(sb) or None
     except Exception:  # noqa: BLE001
         meta["localizations"] = None
-    if fortune_card.use_card(sb):
+    if tier_card.use_ab(sb):
+        # 등급표 날 — 제목·설명(12띠 등급·이유)은 tier_card 가 정한다. 재생목록은 매일 운세 그대로(A/B 공정하게).
+        tm = tier_card.meta(sb)
+        credit = meta["description"][len(build_meta(sb, False)["description"]):]
+        meta["title"] = f"{tm['title']} #shorts"
+        meta["description"] = tm["description"] + credit
+        meta["localizations"] = None
+    elif fortune_card.use_card(sb):
         # 표 날은 제목·설명을 표에 맞춘다(목소리 출처 줄은 유지). 루틴이 쓴 번역은 원래 형식의 제목이라 버린다.
         cm = fortune_card.meta(sb)
         credit = meta["description"][len(build_meta(sb, False)["description"]):]
@@ -556,6 +574,13 @@ def process(sb_path, args, led):
         credit = meta["description"][len(build_meta(sb, False)["description"]):]
         meta["title"] = f"{pm['title']} #shorts"
         meta["description"] = pm["description"] + credit
+        meta["localizations"] = None
+    if tier_card.is_tier(sb):
+        # 운세 등급표 — 제목·설명(12띠 등급·이유 전부)은 tier_card 가 정한다(목소리 출처 줄은 유지). 번역은 넣지 않는다.
+        tm = tier_card.meta(sb)
+        credit = meta["description"][len(build_meta(sb, False)["description"]):]
+        meta["title"] = f"{tm['title']} #shorts"
+        meta["description"] = tm["description"] + credit
         meta["localizations"] = None
     if name_card.is_name(sb):
         # 내 것 찾기 표 — 제목·설명은 name_card 가 정한다(목소리 출처 줄은 유지). 번역은 넣지 않는다.

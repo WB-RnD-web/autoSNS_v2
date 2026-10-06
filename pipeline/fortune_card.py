@@ -56,8 +56,8 @@ def use_card(sb: dict) -> bool:
     if mode in ("0", "false", "off"):
         return False
     t = str(sb.get("topic") or "").lower()
-    # 낮 12시 테마 표는 theme_card, 09:40·15:40 '내 것 찾기' 표는 name_card, 10:40 풀이형 표는 pulli_card 가 만든다
-    if not t.startswith("fortune") or t.startswith(("fortune_theme", "fortune_name", "fortune_pulli")):
+    # 낮 12시 테마 표는 theme_card, 09:40·15:40 '내 것 찾기' 표는 name_card, 10:40 풀이형 표는 pulli_card, 운세 등급표는 tier_card 가 만든다
+    if not t.startswith("fortune") or t.startswith(("fortune_theme", "fortune_name", "fortune_pulli", "fortune_tier")):
         return False
     d = sb_date(sb)
     if not d:

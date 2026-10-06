@@ -16,6 +16,7 @@
     {"key": "year", "label": "해 끝자리 표", "title_prefix": "태어난 해 끝자리"},
     {"key": "surname", "label": "성씨 표", "title_prefix": "성씨로 보는"},
     {"key": "pulli", "label": "풀이형 표", "title_re": "[가-힣]{2}일 풀이 ·"},
+    {"key": "tier", "label": "운세 등급표", "title_re": "운세 등급표"},
     {"key": "theme", "label": "띠 테마 표", "title_re": "띠 순위 1위~12위"},
     {"key": "weekly_short", "label": "주간 운세 쇼츠", "dur": "short", "title_prefix": "이번 주 띠별 운세"},
     {"key": "saeyeon_short", "label": "사연 쇼츠", "dur": "short", "after": "2026-10-02", "title_re": "^(?!.*(국회|대통령|의원|장관|검찰|정부|여당|야당|민주당|국민의힘|코스피|코스닥|나스닥|AI|#shorts)).*…"},
