@@ -1,0 +1,27 @@
+{
+  "date":"2026-10-07","topic":"politics","privacy":"public",
+  "topic_keyword":"투표용지 부족 국정감사","headline":"국감 이틀째, 6·3 지방선거 투표용지 부족 사태 쟁점",
+  "hook_title":"50곳에서 투표용지가 모자랐다","accent":"#8FB0C9",
+  "thumbnail_hook":"Empty polling booth with a ballot box and a few blank paper sheets on a table, soft morning light, quiet election hall, no people, no text, symbolic documentary style",
+  "thumbnail_text":"투표용지가 모자랐다",
+  "scenes":[
+    {"type":"hook","pill":"국정감사","ghost":"POLITICS","lines":["투표 당일","종이가","모자랐다?"],"highlight":"모자랐","brand":"일상공감뉴스 · 정치","narration":"지난 6월 지방선거 투표 당일, 투표소에서 어떤 일이 있었을까요?"},
+    {"type":"stat","label":"용지 부족 투표소","prefix":"","suffix":"곳","from":0,"to":50,"bar":true,"sub":"본투표 당일 <b>전국</b> 실제 발생","brand":"일상공감뉴스 · 정치","narration":"본투표 당일 전국 오십 개 투표소에서 투표용지 부족이 실제로 발생한 것으로 확인됐습니다."},
+    {"type":"stat","label":"투표 일시 중단","prefix":"","suffix":"곳","from":0,"to":22,"bar":true,"sub":"추가 용지 도착 뒤 <b>재개</b>","brand":"일상공감뉴스 · 정치","narration":"이 가운데 이십이 곳은 투표가 잠시 중단됐다가 다시 시작됐습니다."},
+    {"type":"keypoint","label":"선관위 설명과 지적","points":["선관위 — 사전투표율 상승 감안, 인쇄량 <b>50%</b>까지 축소 가능","지적 — 투표소별 <b>편차</b>를 반영하지 못했다"],"brand":"일상공감뉴스 · 정치","narration":"선관위는 사전투표율 상승을 감안한 지침이었다고 설명했고, 일각에서는 투표소별 편차를 반영하지 못했다는 지적이 나옵니다."},
+    {"type":"statement","text":"내 한 표, 어떻게 지켜야 할까?","highlight":"내 한 표","brand":"일상공감뉴스 · 정치","narration":"국정감사 이틀째, 이 문제를 놓고 여야가 어떤 공방을 벌일지 지켜볼 대목인데, 여러분은 어떻게 보십니까?"}
+  ],
+  "sources":["파이낸셜뉴스","뉴스핌","전남일보"],"credit":"출처 파이낸셜뉴스·뉴스핌·전남일보 등",
+  "platforms":{
+    "youtube":{"title":"50곳에서 투표용지가 모자랐다 #shorts","description":"국감 이틀째, 6·3 지방선거 투표용지 부족 사태 쟁점\n출처 파이낸셜뉴스·뉴스핌·전남일보 등\n\n※ 사실관계는 보도 시점 기준이며, 수사·재판 중인 사안은 확정된 내용이 아닙니다.\n\n#투표용지 #국정감사 #선관위 #뉴스 #쇼츠 #shorts",
+      "localizations":{
+        "en":{"title":"Ballot Papers Ran Short at 50 Polling Stations #shorts","description":"Day 2 of the parliamentary audit: the June 3 local election ballot shortage.\nSources: Financial News, Newspim, Jeonnam Ilbo\n\n※ Facts are as of reporting time; matters under investigation or trial are not confirmed.\n\n#Korea #election #news #shorts"},
+        "ja":{"title":"投票用紙が足りなかった投票所は50か所 #shorts","description":"国政監査2日目、6・3地方選挙の投票用紙不足問題。\n出典：ファイナンシャルニュースほか\n\n※ 事実関係は報道時点のもので、捜査・裁判中の事案は確定した内容ではありません。\n\n#韓国 #選挙 #ニュース #shorts"},
+        "zh-Hant":{"title":"全國50處投票所選票不夠用 #shorts","description":"國政監査第二天，聚焦6·3地方選舉選票不足風波。\n出處：Financial News、Newspim、全南日報等\n\n※ 事實以報導時點為準，偵查、審判中的事件並非確定內容。\n\n#韓國 #選舉 #新聞 #shorts"}
+      }
+    },
+    "instagram":{"caption":"50곳에서 투표용지가 모자랐다\n출처 파이낸셜뉴스·뉴스핌·전남일보 등\n\n#투표용지 #국정감사 #선관위 #뉴스 #쇼츠 #shorts #릴스"},
+    "threads":{"text":"50곳에서 투표용지가 모자랐다\n출처 파이낸셜뉴스·뉴스핌·전남일보 등"}
+  },
+  "notes":"모션그래픽 5장면 · 단일 내레이터 · 배경음 없음."
+}
