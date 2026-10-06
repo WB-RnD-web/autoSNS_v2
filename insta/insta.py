@@ -613,6 +613,14 @@ def check(s: dict, path: str | None = None, strict: bool | None = None) -> list[
             errs.append(f"숫자 화면이 없다 — {DATA_VISUALS} 중 하나 이상")
         if sc and "저장" not in sc[-1].get("say", ""):
             errs.append("마지막 장면 말에 '저장'이 없다 — '저장해 두고 그대로 따라 해 보세요' 같은 한 줄로 끝낸다")
+        # ★첫 1초(2026-10-06 진단 — 릴스 편당 17~71회·반응 0): 시험 노출된 비팔로워가 첫 화면에서 멈출 이유 = 실측 숫자.
+        #   첫 장면 화면은 숫자 화면, 첫 장면 말과 제목에도 실측 숫자 자리표시자.
+        if sc and not (isinstance(sc[0].get("show"), dict) and set(sc[0]["show"]) & set(DATA_VISUALS)):
+            errs.append(f"첫 장면 화면이 숫자 화면이 아니다 — {DATA_VISUALS} 중 하나(첫 1초에 가장 센 실측 숫자)")
+        if sc and not PH.search(sc[0].get("say", "")):
+            errs.append("첫 장면 말에 실측 숫자({{fact.…}})가 없다 — 인사·배경 없이 결과 숫자부터")
+        if isinstance(head, list) and not any(PH.search(ln or "") for ln in head):
+            errs.append("제목(위 두 줄)에 실측 숫자 자리표시자가 없다 — 둘째 줄을 결과 숫자로(예: '{{fact.a}} → {{fact.b}}')")
     else:
         if "week" not in kinds:
             errs.append("성적표에는 week 화면이 있어야 한다")
@@ -649,6 +657,32 @@ def check(s: dict, path: str | None = None, strict: bool | None = None) -> list[
     else:
         if sum(1 for ln in lines if BULLET_LINE.match(ln)) < 3:
             errs.append("성적표 캡션은 항목 3줄 이상(• 또는 1.)")
+    # 쓰레드 글(threads_post) — 캡션을 옮긴 글이 아니라 쓰레드용 짧은 1인칭 경험담
+    tp = s.get("threads_post")
+    if d >= _date(THREADS_POST_FROM) and not tp:
+        errs.append("threads_post 없음 — 쓰레드용 짧은 1인칭 글(WRITING.md '쓰레드 글')")
+    if tp:
+        if not isinstance(tp, str):
+            errs.append("threads_post 는 글(문자열)")
+        else:
+            _check_text("쓰레드 글", tp, errs, dated=False)
+            try:
+                shown = resolve(tp, ctx)
+            except Missing:
+                shown = tp
+            n = threads_len(shown)
+            if not THREADS_POST_LEN[0] <= n <= THREADS_POST_LEN[1]:
+                errs.append(f"쓰레드 글 {n}자 — {THREADS_POST_LEN[0]}~{THREADS_POST_LEN[1]}자(짧게)")
+            if not PH.search(tp):
+                errs.append("쓰레드 글에 실측 숫자({{fact.…}}·{{wb.…}})가 하나도 없다")
+            if not FIRST_PERSON.search(tp):
+                errs.append("쓰레드 글은 1인칭 경험담 — '제가·저는·제 …·내가·나는' 같은 말로")
+            if not shown.rstrip().endswith("?"):
+                errs.append("쓰레드 글 끝은 진짜 궁금한 질문 하나(물음표로 끝) — 답글이 쓰레드에서 가장 큰 신호")
+            if "#" in tp:
+                errs.append("쓰레드 글에 # 금지 — 주제 태그는 hashtags 첫 개")
+            if tp.count("\n") > 6:
+                errs.append("쓰레드 글 줄 7개 이하 — 짧게")
     # 해시태그
     tags = s["hashtags"]
     if not isinstance(tags, list) or not HASHTAGS[0] <= len(tags) <= HASHTAGS[1]:
@@ -688,7 +722,26 @@ def estimate(s: dict) -> dict:
 IG_FORMAT_BY_KIND = {"guide": "reel", "report": "cards"}
 THREADS_FORMAT_DEFAULT = "cards"
 IG_FORMATS = ("auto", "reel", "cards", "both")
-THREADS_FORMATS = ("auto", "cards", "reel")
+THREADS_FORMATS = ("auto", "cards", "reel", "text")
+# ★쓰레드 A/B(2026-10-06 진단 — 첫 7일 쓰레드 편당 11~55회·반응 거의 0, 인스타 캐러셀을 그대로 옮긴 글):
+#   한국 쓰레드는 반말·1인칭·경험담 짧은 글과 답글이 퍼진다(조사 https://claude.ai/artifact/SAWS7fA8fSnh7hwodLg5P7).
+#   이 기간엔 게시하는 날 순서대로 'text'(대본의 threads_post + 카드 첫 장 한 장)와 'cards'(지금 방식)를 번갈아 낸다
+#   — 첫 편이 text. 끝나면 인사이트로 비교해 기본값을 정한다(pulse_experiments.json threads-ab).
+THREADS_AB = ("2026-10-07", "2026-10-20")
+THREADS_POST_FROM = "2026-10-07"        # 이날부터 대본에 threads_post 필수(쓰레드 형식과 상관없이 — 비교하려면 늘 있어야)
+THREADS_POST_LEN = (40, 280)            # 쓰레드 글 길이(쓰레드가 세는 글자) — 짧게
+FIRST_PERSON = re.compile(r"(저는|제가|저도|저희|제\s|나는|내가|나도|내\s)")
+
+
+def threads_ab(date) -> str | None:
+    """A/B 기간이면 그날 쓰레드 형식('text'|'cards'), 아니면 None. 같은 종류(가이드끼리·성적표끼리) 게시일만 세어
+    번갈아 — 각 종류의 첫 편 = text. 종류를 섞어 세면 일요일 성적표가 한쪽에 몰려 비교가 흐려진다."""
+    d, (a, b) = _date(date), (_date(x) for x in THREADS_AB)
+    kind = format_for(d)
+    if not (a <= d <= b) or not kind:
+        return None
+    k = sum(1 for i in range((d - a).days) if format_for(a + dt.timedelta(days=i)) == kind)
+    return "text" if k % 2 == 0 else "cards"
 
 
 def publish_formats(date, fmt: str | None = None, env=None) -> dict:
@@ -708,7 +761,7 @@ def publish_formats(date, fmt: str | None = None, env=None) -> dict:
         warn.append(f"INSTA_THREADS_FORMAT={th!r} 은 모르는 값 — auto 로({'|'.join(THREADS_FORMATS)})")
         th = "auto"
     if th == "auto":
-        th = THREADS_FORMAT_DEFAULT
+        th = threads_ab(date) or THREADS_FORMAT_DEFAULT
     return {"kind": kind, "ig": ["reel", "cards"] if ig == "both" else [ig], "threads": th, "warn": warn}
 
 
@@ -751,6 +804,12 @@ def threads_len(text: str) -> int:
         emoji = o >= 0x1F000 or 0x2600 <= o <= 0x27BF or o in (0xFE0F, 0x200D, 0x20E3)
         n += len(c.encode("utf-8")) if emoji else 1
     return n
+
+
+def threads_post_text(s: dict, ctx: dict) -> str | None:
+    """쓰레드 '글' 형식(text)의 본문 — 대본 threads_post 에 숫자를 채운 것. 없으면 None."""
+    tp = s.get("threads_post")
+    return resolve(tp, ctx).strip() if tp else None
 
 
 def topic_tag(s: dict) -> str | None:

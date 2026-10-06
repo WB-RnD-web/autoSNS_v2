@@ -43,7 +43,7 @@ KST = dt.timezone(dt.timedelta(hours=9))
 POSTED = os.path.join(HERE, "posted.json")
 CARD_SIZE = (1080, 1350)
 CARDS_RANGE = (2, 10)                              # 인스타 캐러셀 2~10장
-KO = {"reel": "릴스", "cards": "카드"}
+KO = {"reel": "릴스", "cards": "카드", "text": "글+이미지"}
 
 
 def _on(name: str) -> bool:
@@ -104,16 +104,19 @@ def blockers(s: dict, path: str, meta: dict, led: dict, today: dt.date, cards: d
         why.append(f"대본 날짜 {d} 가 오늘({today})·어제가 아니다 — 늦게 도착한 원고는 올리지 않는다")
     if "reel" in need and not os.path.exists((meta or {}).get("video", "")):
         why.append("렌더된 영상이 없다")
-    if "cards" in need:
+    if "cards" in need or "text" in need:
         why += card_problems(cards)
+    if "text" in need and not (cards or {}).get("threads_post"):
+        why.append("쓰레드 글(threads_post) 렌더가 없다")
     return why
 
 
-def route(plan: dict, have_reel: bool, have_cards: bool, threads_on: bool) -> dict:
+def route(plan: dict, have_reel: bool, have_cards: bool, threads_on: bool, have_text: bool = False) -> dict:
     """정한 형식(plan) → 실제로 올릴 것 {"ig": [...], "threads": 형식|None, "notes": [...]}.
-    정한 형식의 렌더가 없으면 있는 다른 형식으로(릴스·카드는 같은 대본이라 내용이 같다)."""
-    have = {"reel": have_reel, "cards": have_cards}
-    other = {"reel": "cards", "cards": "reel"}
+    정한 형식의 렌더가 없으면 있는 다른 형식으로(릴스·카드는 같은 대본이라 내용이 같다).
+    쓰레드 'text' = 대본 threads_post + 카드 첫 장 — 없으면 카드로."""
+    have = {"reel": have_reel, "cards": have_cards, "text": have_text}
+    other = {"reel": "cards", "cards": "reel", "text": "cards"}
     notes = []
     ig = [f for f in plan["ig"] if have[f]]
     for f in plan["ig"]:
@@ -239,7 +242,9 @@ def publish(rt: dict, reel: dict | None, cards: dict | None, s: dict, be) -> dic
     stem = f"{s['date']}_{s['topic']}"
     out: dict = {"ig": {}, "threads": {}, "errors": {}}
     need_reel = "reel" in rt["ig"] or rt["threads"] == "reel"
-    need_cards = "cards" in rt["ig"] or rt["threads"] == "cards"
+    need_cards = "cards" in rt["ig"] or rt["threads"] in ("cards", "text")
+    # 쓰레드 글+이미지만 필요하면 카드 첫 장 하나만 올린다(무료 한도 아끼기)
+    card_files = cards["cards"] if ("cards" in rt["ig"] or rt["threads"] == "cards") else (cards or {}).get("cards", [])[:1]
     pid = f"insta_{stem}"
     hosted: list[tuple[str, str]] = []
     video_url = cover_url = None
@@ -260,7 +265,7 @@ def publish(rt: dict, reel: dict | None, cards: dict | None, s: dict, be) -> dic
             if cover_url:
                 hosted.append((f"{pid}_cover", "image"))
     if need_cards:
-        for k, p in enumerate(cards["cards"], 1):
+        for k, p in enumerate(card_files, 1):
             cpid = f"{pid}_card{k:02d}"
             u = be.host_image(p, cpid)
             if not u:
@@ -284,6 +289,8 @@ def publish(rt: dict, reel: dict | None, cards: dict | None, s: dict, be) -> dic
         try:
             if f == "reel":
                 out["threads"]["reel"] = UT.publish_thread(video_url, reel["threads"], tag, **be.th)
+            elif f == "text":
+                out["threads"]["text"] = UT.publish_image(card_urls[0], cards["threads_post"], tag, **be.th)
             else:
                 out["threads"]["cards"] = UT.publish_carousel(card_urls, cards["threads"], tag, **be.th)
             ok = True
@@ -355,7 +362,9 @@ def main() -> int:
         print(f"::warning title=게시 형식::{w}")
     live = _on("INSTA_PUBLISH")
     threads = _on("INSTA_THREADS")
-    rt = route(plan, bool(reel) and os.path.exists(reel.get("video", "")), not card_problems(cards), threads)
+    cards_ok = not card_problems(cards)
+    rt = route(plan, bool(reel) and os.path.exists(reel.get("video", "")), cards_ok, threads,
+               have_text=cards_ok and bool((cards or {}).get("threads_post")))
     need = tuple(dict.fromkeys(rt["ig"] + ([rt["threads"]] if rt["threads"] else [])))
     why = blockers(s, a.script, reel or {}, led, today, cards=cards, need=need)
     if not need:
@@ -375,7 +384,7 @@ def main() -> int:
         print(f"── 인스타 {KO[f]} 캡션({len(cap)}자) ──\n{cap}\n──────────")
     if rt["threads"]:
         src = reel if rt["threads"] == "reel" else cards
-        txt = src.get("threads", "")
+        txt = src.get("threads_post" if rt["threads"] == "text" else "threads", "") or ""
         print(f"── 쓰레드 {KO[rt['threads']]} 글({I.threads_len(txt)}/{I.THREADS_MAX}자 · 주제 태그 {I.topic_tag(s)}) ──\n"
               f"{txt}\n──────────")
     _summary([f"### 인스타 {stem}", f"- 형식: {fmt_line}"] + [f"- ⚠️ {n}" for n in rt["notes"]])

@@ -114,6 +114,28 @@ def publish_carousel(image_urls: list[str], text: str, topic_tag: str | None = N
     return tid
 
 
+def publish_image(image_url: str, text: str, topic_tag: str | None = None, *, http=None,
+                  sleep=time.sleep, user_id: str | None = None, token: str | None = None) -> str:
+    """이미지 한 장 + 글(500자 안) → thread id. 쓰레드 '글' 형식(2026-10-06 A/B) — 카드 첫 장을 붙인다."""
+    requests = http or _requests()
+    user_id, token = _creds(user_id, token)
+    data = {"media_type": "IMAGE", "image_url": image_url, "text": text, "access_token": token}
+    if topic_tag:
+        data["topic_tag"] = topic_tag
+    r = requests.post(f"{GRAPH}/{user_id}/threads", data=data, timeout=60)     # 1) 컨테이너
+    _check(r, "이미지 글 컨테이너 생성")
+    cid = r.json()["id"]
+    ok, err = _wait(requests, cid, token, sleep, tries=24)
+    if not ok:
+        raise RuntimeError(f"Threads 이미지 글 처리 실패: {err}")
+    p = requests.post(f"{GRAPH}/{user_id}/threads_publish",                    # 2) 게시
+                      data={"creation_id": cid, "access_token": token}, timeout=60)
+    _check(p, "이미지 글 게시")
+    tid = p.json()["id"]
+    print(f"✅ Threads 글+이미지 게시 완료: id={tid}")
+    return tid
+
+
 def publish_thread(video_url: str, text: str, topic_tag: str | None = None, *, http=None,
                    sleep=time.sleep, user_id: str | None = None, token: str | None = None) -> str:
     requests = http or _requests()

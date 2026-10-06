@@ -93,6 +93,38 @@ ck("파일 이름이 날짜_주제와 다르면 막힌다",
    has(I.check(G, os.path.join(I.ROUTINE_DIR, "2026-10-12_other.json"), strict=True), "파일 이름"))
 
 print("── 숫자는 자리표시자로만 ──")
+print("── 첫 1초(2026-10-06 진단) ──")
+ck("첫 장면 화면이 숫자 화면이 아니면 막힌다(가이드)",
+   has(errs_of(dict(G, scenes=[dict(G["scenes"][0], show={"text": "첫 화면", "sub": "차이"})] + G["scenes"][1:])), "첫 장면 화면"))
+ck("첫 장면 말에 실측 숫자가 없으면 막힌다", has(errs_of(with_say(G, 0, "제 영어 쇼츠 이야기를 해 볼게요.")), "첫 장면 말에 실측"))
+ck("제목에 숫자 자리표시자가 없으면 막힌다", has(errs_of(dict(G, headline=["첫 화면이 가른 차이", "보는 비율"])), "제목(위 두 줄)"))
+ck("성적표는 첫 1초 규칙을 따로 본다(week 화면)", not has(errs_of(RP), "첫 장면"))
+
+print("── 쓰레드 글(threads_post) ──")
+ck("10/7부터 threads_post 가 없으면 막힌다", has(errs_of({k: v for k, v in G.items() if k != "threads_post"}), "threads_post 없음"))
+ck("10/7 전 날짜는 없어도 된다", not has(errs_of({k: v for k, v in RP.items() if k != "threads_post"}), "threads_post"))
+TP = G["threads_post"]
+ck("1인칭이 없으면 막힌다", has(errs_of(dict(G, threads_post=TP.replace("제 ", "그 "))), "1인칭"))
+ck("질문으로 끝나지 않으면 막힌다", has(errs_of(dict(G, threads_post=TP.rstrip("?") + ".")), "질문"))
+ck("숫자를 직접 쓰면 막힌다", has(errs_of(dict(G, threads_post=TP.replace("{{fact.continued}}", "11.9%"))), "숫자"))
+ck("실측 자리표시자가 없으면 막힌다", has(errs_of(dict(G, threads_post="제가 쇼츠 첫 화면을 바꿔 봤어요. 생각보다 차이가 컸어요. 다들 첫 화면에 뭘 넣으세요?")), "실측 숫자"))
+ck("너무 길면 막힌다", has(errs_of(dict(G, threads_post=TP.replace("다들", "제가 " + "정말 " * 90 + "다들"))), "짧게"))
+ck("# 은 막힌다", has(errs_of(dict(G, threads_post=TP.replace("?", " #쇼츠?"))), "# 금지"))
+ck("참여 낚시는 막힌다", has(errs_of(dict(G, threads_post=TP + " 댓글에 자료라고 남기면 보내 드려요?")), "참여 낚시"))
+ck("견본 쓰레드 글은 통과·숫자가 채워진다", not has(errs_of(G), "쓰레드 글")
+   and "{{" not in I.threads_post_text(G, I.context(I.topic_entry(G["topic"]), ST.mock(dt.date(2026, 10, 4)), G["date"])))
+
+print("── 새 주제(10/6 실측) ──")
+ck("10/7 = 하루 조회 5천→32만 · 10/9 = 유효 조회 35%", I.assigned("2026-10-07")["slug"] == "table-shorts-boom"
+   and I.assigned("2026-10-09")["slug"] == "valid-views-35")
+for _slug in ("table-shorts-boom", "valid-views-35"):
+    _t = I.topic_entry(_slug)
+    _ctx = I.context(_t, ST.mock(dt.date(2026, 10, 6)), "2026-10-07")
+    ck(f"{_slug}: 숫자마다 출처 · 제목 둘째 줄이 실측 숫자 · 제목 폭 안",
+       all(v.get("src") for v in _t["nums"].values()) and I.PH.search(_t["headline"][-1])
+       and all(I.width_units(I.resolve(h, _ctx)) <= I.HEAD_UNITS for h in _t["headline"]),
+       str([I.width_units(I.resolve(h, _ctx)) for h in _t["headline"]]))
+
 ck("말에 숫자를 직접 쓰면 막힌다", has(errs_of(with_say(G, 1, "조회는 1,285회였어요.")), "숫자"))
 ck("제목에 숫자를 직접 쓰면 막힌다", has(errs_of(dict(G, headline=["첫 화면", "11.9% vs 57.4%"])), "숫자"))
 ck("화면 글자(steps)에 숫자를 쓰면 막힌다",
@@ -281,9 +313,19 @@ with tempfile.TemporaryDirectory() as td:
 
 print("── 게시 형식(요일 → 어디에 무엇을) ──")
 fm = lambda d, **e: I.publish_formats(d, env=e)  # noqa: E731
-ck("월·수·금(가이드) → 인스타 릴스 · 쓰레드 카드",
-   all(fm(d)["ig"] == ["reel"] and fm(d)["threads"] == "cards" for d in ("2026-10-05", "2026-10-07", "2026-10-09")))
-ck("일(성적표) → 인스타 카드 · 쓰레드 카드", fm("2026-10-11")["ig"] == ["cards"] and fm("2026-10-11")["threads"] == "cards")
+ck("월·수·금(가이드) → 인스타 릴스 · 쓰레드 카드(A/B 기간 밖)",
+   all(fm(d)["ig"] == ["reel"] and fm(d)["threads"] == "cards" for d in ("2026-10-02", "2026-10-05", "2026-10-21", "2026-10-23")))
+ck("일(성적표) → 인스타 카드 · 쓰레드 카드(A/B 기간 밖)", fm("2026-10-04")["ig"] == ["cards"] and fm("2026-10-04")["threads"] == "cards"
+   and fm("2026-10-25")["threads"] == "cards")
+ab = {d: fm(d)["threads"] for d in ("2026-10-07", "2026-10-09", "2026-10-11", "2026-10-12", "2026-10-14", "2026-10-16",
+                                    "2026-10-18", "2026-10-19")}
+ck("쓰레드 A/B(10/7~10/20): 가이드끼리·성적표끼리 글/카드를 번갈아 — 각 종류 첫 편이 글, 글 4 · 카드 4",
+   ab == {"2026-10-07": "text", "2026-10-09": "cards", "2026-10-11": "text", "2026-10-12": "text", "2026-10-14": "cards",
+          "2026-10-16": "text", "2026-10-18": "cards", "2026-10-19": "cards"}, str(ab))
+ck("A/B 기간에도 INSTA_THREADS_FORMAT 이 이긴다", fm("2026-10-07", INSTA_THREADS_FORMAT="cards")["threads"] == "cards"
+   and fm("2026-10-09", INSTA_THREADS_FORMAT="text")["threads"] == "text")
+ck("쓰레드 글 렌더가 없으면 카드로", PR.route(fm("2026-10-07"), True, True, True, have_text=False)["threads"] == "cards"
+   and PR.route(fm("2026-10-07"), True, True, True, have_text=True)["threads"] == "text")
 ck("auto 는 기본과 같다", fm("2026-10-05", INSTA_IG_FORMAT="auto", INSTA_THREADS_FORMAT="auto") == fm("2026-10-05"))
 ck("INSTA_IG_FORMAT=both → 릴스+카드", fm("2026-10-05", INSTA_IG_FORMAT="both")["ig"] == ["reel", "cards"])
 ck("INSTA_IG_FORMAT=cards → 월요일도 카드", fm("2026-10-05", INSTA_IG_FORMAT="cards")["ig"] == ["cards"])
@@ -291,7 +333,7 @@ ck("INSTA_IG_FORMAT=reel → 일요일도 릴스", fm("2026-10-11", INSTA_IG_FOR
 ck("INSTA_THREADS_FORMAT=reel → 쓰레드 릴스", fm("2026-10-11", INSTA_THREADS_FORMAT="reel")["threads"] == "reel")
 bad = fm("2026-10-05", INSTA_IG_FORMAT="gif", INSTA_THREADS_FORMAT="x")
 ck("모르는 값은 기본으로 + 경고", bad["ig"] == ["reel"] and bad["threads"] == "cards" and len(bad["warn"]) == 2)
-sun = fm("2026-10-11")
+sun = fm("2026-10-04")          # A/B 기간 밖 일요일(쓰레드 = 카드)
 ck("일요일 카드 렌더가 없으면 인스타는 릴스로 대신", PR.route(sun, True, False, False)["ig"] == ["reel"])
 ck("쓰레드는 INSTA_THREADS 없으면 안 올린다", PR.route(sun, True, True, False)["threads"] is None)
 ck("쓰레드 카드 렌더가 없으면 릴스로 대신", PR.route(sun, True, False, True)["threads"] == "reel")
@@ -350,6 +392,18 @@ with tempfile.TemporaryDirectory() as td:
     ck("인스타 릴스: REELS(video_url·cover_url) → 상태 확인 → media_publish",
        [e for e, _ in posts] == ["media", "media_publish"] and posts[0][1].get("media_type") == "REELS"
        and posts[0][1].get("cover_url", "").endswith("_cover.jpg") and res["ig"] == {"reel": "dry2"}, str(posts))
+    dry = PR.DryBackend()
+    cards_t = dict(cards_m, threads_post="제 쓰레드 글이에요?")
+    with contextlib.redirect_stdout(io.StringIO()):
+        res = PR.publish({"ig": [], "threads": "text", "notes": []}, None, cards_t, G, dry)
+    posts = [(u.split("/")[-1], b) for m, u, b in dry.calls if m == "POST"]
+    ck("쓰레드 글+이미지: 카드 첫 장 하나만 올려 IMAGE(text·topic_tag) → threads_publish",
+       [e for e, _ in posts] == ["threads", "threads_publish"] and posts[0][1].get("media_type") == "IMAGE"
+       and posts[0][1].get("text") == "제 쓰레드 글이에요?" and posts[0][1].get("topic_tag") == "유튜브쇼츠"
+       and "is_carousel_item" not in posts[0][1]
+       and sum(1 for c in dry.calls if c[0] == "HOST") == 1 and res["threads"] == {"text": "dry2"}, str(posts))
+    ck("쓰레드 글 렌더(threads_post)가 없으면 게시 막음", has(PR.blockers(G, GUIDE_P, {}, {}, I._date(G["date"]), cards=cards_m,
+                                                              need=("text",)), "threads_post"))
     led = {}
     lp, pp = os.path.join(td, "led.json"), os.path.join(td, "posted.json")
     PR.record(led, G, {"ig": {"reel": "111"}, "threads": {"cards": "222"}, "errors": {}}, lp, pp, now=0)

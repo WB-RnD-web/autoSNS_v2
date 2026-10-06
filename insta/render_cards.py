@@ -283,6 +283,7 @@ def render(path: str, out_dir: str, work: str, stats_path: str | None = None, mo
         ai_art = any(x["kind"] in ("img", "gumi") for x in [plan["hook"]] + plan["points"])
         caption = I.card_caption(s, ctx, ai_art)
         threads = I.threads_text(s, ctx)
+        threads_post = I.threads_post_text(s, ctx)
     except I.Missing as e:
         raise SystemExit(f"❌ {e}")
     items = [plan["hook"]] + plan["points"]
@@ -304,7 +305,7 @@ def render(path: str, out_dir: str, work: str, stats_path: str | None = None, mo
            "slides": ["hook:" + plan["hook"]["kind"]] + [f"{x['kind']}:{'+'.join(map(str, x['scenes']))}"
                                                            for x in plan["points"]] + ["cta"],
            "dropped": [x["scenes"] for x in plan["dropped"]],
-           "caption": caption, "threads": threads, "topic_tag": I.topic_tag(s)}
+           "caption": caption, "threads": threads, "threads_post": threads_post, "topic_tag": I.topic_tag(s)}
     with open(os.path.join(out_dir, f"{stem}_cards.json"), "w", encoding="utf-8") as f:
         json.dump(res, f, ensure_ascii=False, indent=1)
     print(f"✅ 카드 {len(paths)}장 · {stem} · {' / '.join(res['slides'])} · 그림 {info['spark_images']}"
