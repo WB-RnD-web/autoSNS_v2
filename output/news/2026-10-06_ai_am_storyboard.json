@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-06", "topic": "ai", "slot": "am", "privacy": "public",
+  "format": "compare",
+  "angle": "생활 도구",
+  "topic_keyword": "챗GPT 광고",
+  "headline": "오픈AI, 챗GPT 이미지 생성 화면에 그림 광고 시험",
+  "hook_title": "챗GPT 그림 옆에 광고가 뜬다",
+  "thumbnail_hook": "A hand holding a smartphone in a dim living room, the glowing screen showing a blank colorful gallery frame with a small empty banner card beside it, soft evening light, no text, no faces",
+  "thumbnail_text": "챗GPT 그림에 광고",
+  "glossary": [],
+  "sources": [
+    {"outlet": "The Verge", "title": "OpenAI is sticking more ads in ChatGPT",
+     "url": "https://www.theverge.com/ai-artificial-intelligence/1004655/openai-chatgpt-visual-ads",
+     "published_at": "2026-10-05T22:09:48+09:00",
+     "confirmed": false,
+     "facts": [
+       "OpenAI’s latest ad format will put images of sponsored products and services on your screen.",
+       "The ads, which OpenAI will begin testing in the US later this month, will “initially” appear when you generate images with ChatGPT, according to an announcement on Monday.",
+       "Until now, ChatGPT’s ads only showed a company’s name, logo, and a link to its product in a “sponsored” section beneath your chat.",
+       "Ads won’t appear if you subscribe to ChatGPT’s Plus, Pro, or Enterprise plans."
+     ]}
+  ],
+  "scenes": [
+    {"type": "hook", "pill": "광고", "lines": ["그림 만들면", "광고가 뜬다"], "highlight": "광고",
+     "narration": "챗GPT로 그림을 만들면, 그 옆에 광고 이미지가 함께 나오게 된다고 보도됐어요."},
+    {"type": "statement", "text": "광고는 지금껏 채팅창 아래에만", "highlight": "아래",
+     "narration": "지금까지 챗GPT 광고는 대화창 아래쪽에 회사 이름과 링크만 보였다고 알려졌어요."},
+    {"type": "keypoint", "label": "이번에 달라진 점",
+     "points": ["그림 만들 때 <b>광고 이미지</b>", "이달 안에 <b>미국에서 시험</b>", "답변엔 영향 없다고 해요"],
+     "narration": "이번에는 그림을 만들 때 광고 이미지가 나오고, 이달 안에 미국에서 먼저 시험한다고 전해졌어요."},
+    {"type": "statement", "text": "유료 요금제는 광고 없어요", "highlight": "유료",
+     "narration": "플러스나 프로 같은 유료 요금제를 쓰면 광고가 나오지 않는다고 알려졌어요."},
+    {"type": "statement", "text": "광고인지 구분하고 계신가요?", "highlight": "구분",
+     "narration": "광고는 그림과 따로 표시된다고 하니, 화면 속 광고인지 한 번 구분해 보시면 어떨까요?"}
+  ],
+  "platforms": {
+    "youtube": {"title": "챗GPT 그림 옆에 광고가 뜬다 #shorts", "description": "챗GPT로 그림을 만들 때 광고 이미지가 함께 나오는 방식을 오픈AI가 시험한다고 보도됐어요. 유료 요금제는 광고가 없다고 합니다.\n\n#AI #챗GPT #shorts"},
+    "instagram": {"caption": "챗GPT 그림 옆에 광고가 뜬다\n\n챗GPT로 그림을 만들면 광고 이미지가 같이 나온대요.\n이달 안에 미국에서 먼저 시험한다고 해요.\n유료 요금제는 광고가 안 나온다고 알려졌어요.\n매일 오전·저녁 AI 소식은 유튜브 '왕별이'에서 쉽게 풀어 드려요.\n출처 The Verge\n\n#AI #챗GPT #오픈AI"},
+    "threads": {"text": "챗GPT로 그림 만들 때 광고 이미지가 함께 나오는 방식을 시험한다고 해요. 유료 요금제는 광고가 없다고 알려졌어요. 매일 AI 소식은 유튜브 왕별이에서. #AI소식"}
+  },
+  "notes": "AI 소식 오전 편 · compare · 장면 5개"
+}
