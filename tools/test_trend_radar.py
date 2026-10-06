@@ -169,6 +169,11 @@ with tempfile.TemporaryDirectory() as td:
     ck("보고서: 배수 설명·표·대박 링크", "배수 =" in md and "| 판정 |" in md and "https://youtu.be/" in md)
     ck("보고서: '지금 조회수 기준(추정)' 표시", "추정" in md)
 
+print("── 워크플로 ──")
+_wf = open(os.path.join(os.path.dirname(HERE), ".github", "workflows", "trend-radar.yml"), encoding="utf-8").read()
+ck("routine/radar_kick push 로도 돈다(예약이 늦거나 빠지는 날 대비) · 코드는 main", '- "routine/radar_kick"' in _wf and "ref: main" in _wf
+   and "schedule:" in _wf)
+
 print("── 실제 설정 파일 ──")
 real = TR.load_niches()
 ck("분야마다 채널·주제", all(c["channels"] and c["tags"] for c in real.values()))
