@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-06", "topic": "ai", "slot": "pm", "privacy": "public",
+  "format": "qa",
+  "angle": "일자리",
+  "topic_keyword": "로봇 상사 금지법",
+  "headline": "미국 캘리포니아, AI 판단만으로 해고 못 하게 하는 법 서명",
+  "hook_title": "AI 혼자 해고 못 한다, 캘리포니아",
+  "thumbnail_hook": "An empty office desk at dusk with a single chair and a closed laptop, a paper folder with a handwritten signature line lying beside it, soft warm window light, calm serious mood, no text, no faces",
+  "thumbnail_text": "AI 혼자 해고 금지",
+  "glossary": [],
+  "sources": [
+    {"outlet": "한국경제", "title": "\"또 지각?\" AI가 해고 결정까지…'로봇 상사 금지법' 나온다 [김대영의 노무스쿨]",
+     "url": "https://www.hankyung.com/article/202610065576g",
+     "published_at": "2026-10-06T14:58:56+09:00",
+     "confirmed": false,
+     "facts": [
+       "6일 미국 캘리포니아 주정부에 따르면 개빈 뉴섬 주지사는 최근 직장 감시·자동화된 인사 결정을 제한하는 법안(AB1883·AB1331·SB947)에 서명했다.",
+       "이 법은 자동화된 의사결정 시스템에만 의존해 직원을 징계·해고할 수 없도록 했다.",
+       "또 해당 직원에겐 시스템 활용, 인간 직원의 검토 사실 등을 서면으로 알려야 한다.",
+       "해당 법을 위반한 사용자는 위반 건당 최대 500달러의 금전적 제재에 처할 수 있다.",
+       "개인정보위는 \"AI 채용 솔루션 및 이용기관을 대상으로 자동화된 결정 해당 여부, 설명 의무, 주요 평가기준 공개 여부 등 투명성 확보 노력을 점검하겠다\"고 했다."
+     ]}
+  ],
+  "scenes": [
+    {"type": "hook", "pill": "규제", "lines": ["AI 혼자 해고", "이제 못 해요"], "highlight": "해고",
+     "narration": "미국 캘리포니아에서 AI 혼자서는 사람을 해고하지 못하게 하는 법이 나왔다고 보도됐어요."},
+    {"type": "statement", "text": "AI 판단만으론 해고 금지", "highlight": "해고",
+     "narration": "주지사가 AI의 판단만으로 직원을 징계하거나 해고하지 못하게 한 법안에 서명했다고 전해졌어요."},
+    {"type": "statement", "text": "결과는 반드시 사람이 확인", "highlight": "사람",
+     "narration": "회사는 AI가 낸 결과를 사람이 확인하고, 그 사실을 직원에게 서면으로 알려야 한다고 알려졌어요."},
+    {"type": "stat", "label": "위반 한 건당 최대 제재금", "from": 0, "to": 500, "prefix": "", "suffix": "달러", "bar": true,
+     "sub": "직장 감시 관련 법을 어기면",
+     "narration": "법을 어기면 한 건당 최대 오백 달러의 제재를 받을 수 있다고 보도됐어요."},
+    {"type": "keypoint", "label": "우리나라는 지금", "points": ["개인정보위가 <b>AI 채용</b> 점검", "결정 <b>설명 의무</b>도 살핀다"],
+     "narration": "우리나라에서도 개인정보보호위원회가 AI 채용 도구의 설명 의무 등을 점검하겠다고 밝힌 것으로 전해졌어요."},
+    {"type": "statement", "text": "마지막 확인은 사람이?", "highlight": "사람",
+     "narration": "AI가 일터의 결정까지 돕는 시대, 마지막 확인은 사람이 해야 할까요?"}
+  ],
+  "platforms": {
+    "youtube": {"title": "AI 혼자 해고 못 한다, 캘리포니아 #shorts", "description": "미국 캘리포니아가 AI의 판단만으로 직원을 해고하지 못하게 하는 법안에 서명했다고 보도됐어요. 결과는 반드시 사람이 확인해야 합니다.\n\n#AI #일자리 #shorts"},
+    "instagram": {"caption": "AI 혼자 해고 못 한다, 캘리포니아\n\n미국 캘리포니아가 AI의 판단만으로 직원을 징계하거나 해고하지 못하게 하는 법안에 서명했다고 해요.\n결과는 사람이 확인하고 직원에게 알려야 한다는 내용이에요.\n매일 오전·저녁 AI 소식은 유튜브 '왕별이'에서 쉽게 풀어 드려요.\n출처 한국경제\n\n#AI #일자리 #AI규제"},
+    "threads": {"text": "캘리포니아가 AI 혼자서는 직원을 해고하지 못하게 하는 법안에 서명했다고 해요. 마지막 확인은 사람이 해야 한다는 거죠. 매일 AI 소식은 유튜브 왕별이에서. #AI소식"}
+  },
+  "notes": "AI 소식 저녁 편 · qa · 장면 6개"
+}
