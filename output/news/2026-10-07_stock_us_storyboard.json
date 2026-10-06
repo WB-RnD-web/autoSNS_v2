@@ -1,0 +1,39 @@
+{
+  "date":"2026-10-07","topic":"stock_us","privacy":"public",
+  "topic_keyword":"S&P500 7,800 첫 돌파",
+  "headline":"뉴욕증시 S&P500·나스닥 동반 사상 최고 마감",
+  "hook_title":"내 미국 주식, 자는 새 최고가",
+  "accent":"#3FB950",
+  "loop_line":"자는 새 최고가를 찍은 내 계좌, 오늘 밤엔 뭘 볼까요?",
+  "thumbnail_hook":"first light over lower manhattan seen through a window, smartphone showing a green stock app lying beside a coffee cup on a breakfast table, warm morning glow, shallow depth of field, no text in image",
+  "thumbnail_text":"S&P 7,800 첫 돌파",
+  "scenes":[
+    {"type":"hook","pill":"7,800 첫 돌파","ghost":"RECORD","lines":["내 미국 주식","자는 새","최고가 찍었다"],"highlight":"최고가",
+     "brand":"일상공감뉴스 · 주식","narration":"자는 사이 뉴욕에서 내 미국 주식 계좌에 반가운 일이 있었습니다."},
+    {"type":"trend","label":"미국 대표지수","from":0,"to":0.58,"suffix":"%","dir":"up","sub":"7,800선 <b>사상 첫</b> 마감",
+     "brand":"일상공감뉴스 · 주식","narration":"미국 대표지수가 영 점 오팔 퍼센트 올라 처음으로 칠천팔백 위에서 마감했습니다."},
+    {"type":"keypoint","label":"금리 높은데 왜","points":["국채금리 <b>5.27%</b>로 하락","브렌트유 <b>100달러</b>대서 안정"],
+     "brand":"일상공감뉴스 · 주식","narration":"금리가 오 점 이칠 퍼센트로 내리고 유가가 백 달러대에서 버티자 실적 기대가 앞섰습니다."},
+    {"type":"keypoint","label":"내 계좌는","points":["미국 주식·연금 해외펀드 <b>평가액</b> 상승","원화 수익은 <b>환율</b>이 가른다"],
+     "brand":"일상공감뉴스 · 주식","narration":"미국 주식이나 연금 해외펀드는 평가액이 올랐고, 원화 수익은 환율이 가릅니다."},
+    {"type":"keypoint","label":"오늘 밤 지켜볼 것","points":["밤 <b>11시 45분</b> 연준 보먼 발언","내일 새벽 <b>3시</b> 9월 회의록"],
+     "brand":"일상공감뉴스 · 주식","narration":"밤 열한 시 사십오 분 연준 보먼 이사 발언과 새벽 세 시 공개되는 회의록을 보시면 됩니다."},
+    {"type":"statement","text":"더 간다 vs 쉬어간다, 당신은?","highlight":"쉬어간다",
+     "brand":"일상공감뉴스 · 주식","narration":"신고가 뒤에 더 갈지 쉬어갈지, 판단은 여러분 몫입니다. 결과는 내일 아침 일곱 시에 짚어드립니다."}
+  ],
+  "sources":["Reuters","SBS Biz","아시아경제","Yahoo Finance"],
+  "credit":"출처 Reuters·SBS Biz·아시아경제 등 · 투자 조언이 아닙니다",
+  "platforms":{
+    "youtube":{"title":"내 미국 주식, 자는 새 최고가 #shorts",
+      "description":"뉴욕증시 S&P500·나스닥 동반 사상 최고 마감, 오늘 밤 지켜볼 일정\n출처 Reuters·SBS Biz·아시아경제\n※ 투자 조언이 아닙니다\n\n#미국주식 #나스닥 #뉴욕증시 #서학개미 #쇼츠 #shorts",
+      "localizations":{
+        "en":{"title":"While you slept, US stocks hit a record #shorts","description":"S&P 500 closed above 7,800 for the first time and the Nasdaq hit a record. What to watch tonight.\nSources: Reuters, SBS Biz, Asia Economy\n※ Not investment advice.\n\n#USstocks #Nasdaq #WallStreet #shorts"},
+        "ja":{"title":"寝ている間に米国株が最高値を更新しました #shorts","description":"S&P500が初めて7,800を上回って終了、ナスダックも最高値。今夜の注目点です。\n出典 Reuters・SBS Biz・アジア経済\n※投資助言ではありません。\n\n#米国株 #ナスダック #ウォール街 #shorts"},
+        "zh-Hant":{"title":"你睡覺時，美股又創歷史新高 #shorts","description":"標普500首度收在7,800點之上，那斯達克同創新高。今晚關注重點。\n來源 Reuters、SBS Biz、亞洲經濟\n※本內容非投資建議。\n\n#美股 #那斯達克 #華爾街 #shorts"}
+      }
+    },
+    "instagram":{"caption":"내 미국 주식, 자는 새 최고가\n출처 Reuters·SBS Biz·아시아경제\n※ 투자 조언이 아닙니다\n\n#미국주식 #나스닥 #뉴욕증시 #쇼츠 #shorts #릴스"},
+    "threads":{"text":"내 미국 주식, 자는 새 최고가\n출처 Reuters·SBS Biz·아시아경제"}
+  },
+  "notes":"모션그래픽 6장면 · 단일 내레이터 · 배경음 없음 · SESSION=US_AM(간밤 미국장 마감 정리). 10/6 마감 수치는 Reuters 계열 영문 2곳+국내 SBS Biz·아시아경제(10/7 06시)로 교차 확인. 시간외 실적·FOMC 외 개별 실적 일정은 확인 불충분해 제외."
+}
