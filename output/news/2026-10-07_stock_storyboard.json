@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-07",
+  "topic": "stock",
+  "privacy": "public",
+  "topic_keyword": "외국인 1.7조 순매도",
+  "headline": "코스피 6941 마감, 외국인 1.7조 매도에 7000선 반납",
+  "hook_title": "하루 1.7조, 외국인이 던졌다",
+  "accent": "#E5484D",
+  "loop_line": "하루 1.7조, 그 돈이 오늘은 어디로 향할까요? 내일 아침 여덟 시에 짚어드립니다.",
+  "thumbnail_hook": "A dim office window before dawn, a glowing monitor beside a coffee cup and a small stack of coins on the desk, moody city lights outside, cinematic, no text in image",
+  "thumbnail_text": "외국인 1.7조 매도",
+  "scenes": [
+    {"type": "hook", "pill": "수급 이상", "ghost": "SELL", "lines": ["외국인이", "하루에", "1.7조 팔았다"], "highlight": "1.7조",
+     "brand": "일상공감뉴스 · 주식", "narration": "연휴 뒤 첫날부터 외국인이 우리 주식을 일조 칠천오백억 원어치 팔아치웠습니다."},
+    {"type": "trend", "label": "코스피", "from": 0, "to": -0.89, "suffix": "%", "dir": "down", "sub": "코스닥은 <b>+2.98%</b>",
+     "brand": "일상공감뉴스 · 주식", "narration": "코스피가 영 점 팔구 퍼센트 밀린 날, 코스닥은 이 점 구팔 퍼센트 뛰었습니다."},
+    {"type": "keypoint", "label": "왜 밀렸나", "points": ["외국인 매도, <b>반도체</b>에 집중", "SK하이닉스 <b>-3.69%</b>", "삼성전자 <b>-1.45%</b>"],
+     "brand": "일상공감뉴스 · 주식", "narration": "매도가 반도체에 몰려 하이닉스가 삼 점 육구, 삼성전자는 일 점 사오 퍼센트 밀렸습니다."},
+    {"type": "statement", "text": "외국인 매도 멈추느냐가 갈림길", "highlight": "갈림길",
+     "brand": "일상공감뉴스 · 주식", "narration": "간밤 뉴욕 지수는 함께 올랐지만, 외국인이 매도를 멈추느냐가 오늘의 갈림길입니다."},
+    {"type": "keypoint", "label": "연금·ETF 점검", "points": ["퇴직연금 <b>반도체 ETF</b> 비중", "환율 <b>1340원대</b> 유지", "내일 <b>삼성전자</b> 3분기 실적"],
+     "brand": "일상공감뉴스 · 주식", "narration": "내 퇴직연금 속 반도체 ETF 비중과 환율 천삼백사십 원대, 내일 삼성전자 실적을 보세요."},
+    {"type": "statement", "text": "외국인 따라갈까 vs 지켜볼까", "highlight": "지켜볼까",
+     "brand": "일상공감뉴스 · 주식", "narration": "따라갈지 지켜볼지, 판단은 여러분 몫입니다."}
+  ],
+  "sources": ["서울신문", "강원도민일보", "더비즈", "경제타임스"],
+  "credit": "출처 서울신문·강원도민일보·더비즈·경제타임스 등 · 투자 조언이 아닙니다",
+  "platforms": {
+    "youtube": {
+      "title": "하루 1.7조, 외국인이 던졌다 #shorts",
+      "description": "코스피 6941 마감, 외국인 1.7조 매도에 7000선 반납\n출처 서울신문·강원도민일보·더비즈·경제타임스\n※ 투자 조언이 아닙니다\n\n#코스피 #주식 #증시 #개장전 #쇼츠 #shorts",
+      "localizations": {
+        "en": {"title": "Foreigners dumped 1.7 trillion won in one day #shorts", "description": "KOSPI closed at 6,941, losing the 7,000 line as foreigners net-sold 1.7 trillion won.\nSources: Seoul Shinmun, Gangwon Domin Ilbo, The Biz, Economic Times\n※ Not investment advice\n\n#KOSPI #Korea #stocks #shorts"},
+        "ja": {"title": "外国人が1日で1.7兆ウォン売り越しました #shorts", "description": "KOSPIは6,941で取引を終え、外国人の1.7兆ウォンの売り越しで7,000台を割りました。\n出典：ソウル新聞ほか\n※投資助言ではありません\n\n#KOSPI #韓国株 #shorts"},
+        "zh-Hant": {"title": "外資一天賣超1.7兆韓元 #shorts", "description": "KOSPI收在6,941點，在外資賣超1.7兆韓元下跌破7,000點。\n出處：首爾新聞等\n※非投資建議\n\n#KOSPI #韓股 #shorts"}
+      }
+    },
+    "instagram": {"caption": "하루 1.7조, 외국인이 던졌다\n출처 서울신문·강원도민일보·더비즈·경제타임스\n※ 투자 조언이 아닙니다\n\n#코스피 #주식 #증시 #쇼츠 #shorts #릴스"},
+    "threads": {"text": "하루 1.7조, 외국인이 던졌다\n출처 서울신문·강원도민일보·더비즈·경제타임스"}
+  },
+  "notes": "모션그래픽 6장면 · 단일 내레이터 · 배경음 없음 · SESSION=KR_AM(개장 전 프리뷰). 직전 거래일 10/6(화), 개천절 대체휴일 직후. 간밤 뉴욕은 한 장면(④)에서만 언급."
+}
