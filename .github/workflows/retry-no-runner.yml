@@ -1,0 +1,104 @@
+name: 실행기 못 잡은 실행 다시 돌리기
+
+# 왜 있나 — 2026-10-06.
+#   06:13 매일 운세가 GitHub 실행기를 15분 동안 못 잡고 실패했다(단계 0개 · runner_id 0).
+#   빨간불은 떴지만 사람이 볼 때(14:40)까지 아침 자리가 비었다 → 그날 06~10시 조회 −36%.
+#   우리 쪽 고장이 아니라 GitHub 쪽 일시 장애라, 조금 기다렸다 다시 돌리면 된다.
+#
+# ⚠️ 판단은 tools/retry_no_runner.py 에 있다(테스트: tools/test_retry_no_runner.py).
+#    단계가 하나라도 돈 실행은 ★다시 돌리지 않는다 — 업로드가 이미 됐을 수 있다(두 번 올라감).
+#    사람이 누른 취소(cancelled)도 건드리지 않는다. 다시 돌리기는 두 번까지만.
+#
+# workflow_run 은 ★main 에 있는 이 파일로만 돈다. 다시 돌린 실행은 원래 브랜치·커밋 그대로 돈다.
+# 아래 목록은 push·schedule 로 도는 워크플로 전부다 — 새 워크플로를 만들면 여기에도 넣는다
+#   (빠뜨리면 test_retry_no_runner 가 막는다. 이름이 틀리면 아무 일도 안 일어나므로 이름도 검사한다).
+# 끄기: 레포 변수 RETRY_NO_RUNNER=0
+
+on:
+  workflow_run:
+    workflows:
+      - "뉴스 스토리보드 → HyperFrames 쇼츠 → 유튜브 업로드 (v2)"
+      - "AI 소식 쇼츠 (routine/ai_am·ai_pm push → main 의 ai-news-run.yml)"
+      - "AI 소식 피드 — 기사 원문 → data/ai-news-feed"
+      - "주간 띠별 운세 풀이 (routine/weekly_fortune push → main 의 weekly-fortune-run.yml)"
+      - "사연 쇼츠(실사 AI) — 하루 한 편 · 14편 2주 시험"
+      - "사연(sayeon) 라디오 → 낭독 오디오북(16:9) → 유튜브(+재생목록)"
+      - "사연 오디오드라마 — 대본 검사 → 여러 목소리 합성 → 장면 그림 → 롱폼 업로드"
+      - "괴담(gwedam) 라디오 → 낭독 오디오북(16:9) → 유튜브(+재생목록)"
+      - "소설(novel) render-spec → 16:9 오디오소설 → 유튜브(일반영상+재생목록)"
+      - "ASMR 테마 스펙 → 정적배경 + Freesound 3~4시간 루프 → 유튜브(+재생목록)"
+      - "SCP 아카이브 → 다장면 롱폼(16:9) → 유튜브(+재생목록)"
+      - "Korea Sleep Sounds — 8시간 한국 풍경 사운드(해외용) → 유튜브"
+      - "Nine Tails Tales — 대본 검사 → 목소리·그림(Spark) → 본편·쇼츠 렌더 → 비공개 업로드"
+      - "Nine Tails RULES — 규칙괴담 쇼츠 대본 검사 → 목소리·세로 그림(Spark) → 렌더 → 업로드"
+      - "Nine Tails Tales — 수면판(Sleep Edition) · 지난 편을 다시 지어 한 시간짜리 → 예약 업로드"
+      - "인스타 릴스·카드 — 대본 검사 → 실제 숫자(YouTube API) → 렌더(릴스+카드) → 게시(기본 dry-run)"
+      - "채널 맥박 — 분석 루틴 보고서 검사 → (제안이 있으면) 테스트 통과한 개선 PR"
+      - "트렌드 레이더 — 참고 채널·우리 채널 조회수 → 주제별 떡상·끝물(data/trend-radar)"
+      - "미아 산출물 자동 복구 (claude/* → routine/*)"
+      - "발행 감시 (엉뚱한 브랜치로 갔나 · 아예 안 만들어졌나)"
+      - "IG/Threads 장기토큰 자동 갱신"
+    types: [completed]
+
+permissions:
+  contents: read      # 아무것도 커밋/푸시하지 않는다
+  actions: write      # 다시 돌리기(rerun-failed-jobs)에 필요한 것만
+
+concurrency:
+  group: retry-no-runner-${{ github.event.workflow_run.id }}
+  cancel-in-progress: false
+
+jobs:
+  retry:
+    # 실패가 아니면 잡 자체가 건너뛰어진다(실행기를 쓰지 않는다)
+    if: >-
+      github.event.workflow_run.conclusion == 'failure'
+      && github.event.workflow_run.run_attempt < 3
+      && (vars.RETRY_NO_RUNNER || '1') != '0'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: 실패한 시도의 잡 읽기
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_ID: ${{ github.event.workflow_run.id }}
+          ATTEMPT: ${{ github.event.workflow_run.run_attempt }}
+        run: |
+          set -euo pipefail
+          curl -sS --fail-with-body \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "${{ github.api_url }}/repos/${{ github.repository }}/actions/runs/$RUN_ID/attempts/$ATTEMPT/jobs?per_page=100" \
+            -o "$RUNNER_TEMP/jobs.json"
+
+      - name: 판정 (단계가 하나도 안 돈 실패만)
+        id: plan
+        run: python3 tools/retry_no_runner.py --event "$GITHUB_EVENT_PATH" --jobs "$RUNNER_TEMP/jobs.json"
+
+      - name: 잠깐 기다렸다가 다시 돌리기
+        if: steps.plan.outputs.retry == 'true'
+        env:
+          TOKEN: ${{ github.token }}
+          PAT: ${{ secrets.GH_PAT }}
+          RUN_ID: ${{ github.event.workflow_run.id }}
+          RUN_URL: ${{ github.event.workflow_run.html_url }}
+        run: |
+          set -u
+          sleep 120     # 실행기 장애가 풀릴 틈을 준다
+          URL="${{ github.api_url }}/repos/${{ github.repository }}/actions/runs/$RUN_ID/rerun-failed-jobs"
+          for T in "$TOKEN" "$PAT"; do
+            [ -n "$T" ] || continue
+            CODE=$(curl -sS -o "$RUNNER_TEMP/rerun.txt" -w '%{http_code}' -X POST \
+              -H "Authorization: Bearer $T" -H "Accept: application/vnd.github+json" "$URL")
+            if [ "$CODE" = "201" ]; then
+              echo "✅ 다시 돌렸다: $RUN_URL"
+              exit 0
+            fi
+            echo "::warning::다시 돌리기 응답 $CODE: $(head -c 300 "$RUNNER_TEMP/rerun.txt")"
+          done
+          echo "::error::다시 돌리지 못했다 — Actions 에서 손으로 'Re-run failed jobs' 를 누른다: $RUN_URL"
+          exit 1
