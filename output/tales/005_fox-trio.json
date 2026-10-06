@@ -1,0 +1,584 @@
+{
+ "id": 5,
+ "slug": "fox-trio",
+ "look": "myth",
+ "title": "Gumiho vs Kitsune vs Huli Jing: Which Nine-Tailed Fox Wins?",
+ "thumb": {
+  "text": "WHICH FOX WINS?",
+  "img": "three nine-tailed fox women side by side under a full moon, in the center a beautiful young woman in a pale jade hanbok with a red ribbon in her long black hair with glowing amber eyes, on the left a graceful court lady in layered Heian-era silk robes of pale gold and red with long straight black hair reaching the floor, on the right an elegant consort in flowing crimson silk robes with a golden phoenix hairpin in her high-piled black hair, each with a fox-tailed shadow, dramatic and eerie"
+ },
+ "hook": "Korea's gumiho, Japan's kitsune and China's huli jing all have nine tails. A thousand-year-old gumiho judges which one is the scariest. She is not neutral.",
+ "tags": [
+  "gumiho",
+  "kitsune",
+  "huli jing",
+  "nine tailed fox",
+  "korean folklore",
+  "japanese folklore",
+  "chinese mythology",
+  "tamamo no mae",
+  "daji",
+  "fox spirit",
+  "kumiho",
+  "shanhaijing",
+  "sessho seki",
+  "inari"
+ ],
+ "sources": [
+  "Shanhaijing (Classic of Mountains and Seas)",
+  "Encyclopedia of Korean Folk Culture — 구미호: https://folkency.nfm.go.kr",
+  "Otogizoshi — Tamamo-no-Mae",
+  "Nihon Ryōiki — the fox wife tale",
+  "Fengshen Yanyi (Investiture of the Gods) — Daji"
+ ],
+ "scenes": [
+  {
+   "say": "Three foxes. Three countries. One in Korea, one in Japan, one in China. All three have nine tails. And between them, they are blamed for the fall of a dynasty, a sick emperor, and a great many missing livers.",
+   "img": "three tall fox silhouettes with nine tails each standing on three separate mountain peaks under one huge full moon, mist between the peaks, eerie and majestic",
+   "fx": "fog",
+   "move": "out",
+   "key": "three"
+  },
+  {
+   "say": "Only one of them can be the scariest fox in East Asia.",
+   "img": "close-up of glowing amber fox eyes opening in total darkness, three pairs of them, one pair slightly brighter than the others",
+   "fx": "none",
+   "move": "in",
+   "hold": 0.8
+  },
+  {
+   "say": "And the judge happens to be a gumiho. I'm sure that won't matter at all.",
+   "gumi": "wink",
+   "fx": "embers",
+   "move": "in",
+   "hold": 0.6
+  },
+  {
+   "say": "Hello, dear human. I'm Gumi, a thousand-year-old nine-tailed fox from Korea. Tonight my cousins from Japan and China come to visit, and we settle an old family argument.",
+   "gumi": "front",
+   "fx": "embers",
+   "move": "left",
+   "note": "GUMI · gumiho · age 1,000+"
+  },
+  {
+   "say": "Four rounds. Origins, powers, weaknesses, and the most famous case. This is Tale Number Five. Let the foxes in.",
+   "gumi": "bead",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "card": "TALE 005",
+   "sub": "Gumiho vs Kitsune vs Huli Jing"
+  },
+  {
+   "say": "Round one is about where each fox comes from. And the oldest family tree belongs to China. Let's be polite and start with the eldest.",
+   "img": "an ancient Chinese bamboo scroll unrolled on a dark lacquered table beside a bronze incense burner, ink drawings of strange beasts on it, candlelight",
+   "fx": "dust",
+   "move": "left",
+   "look": "china"
+  },
+  {
+   "say": "There's an old Chinese book of strange places and stranger beasts, the Classic of Mountains and Seas, the Shanhaijing. On a mountain called Green Hill, it says, lives a fox with nine tails.",
+   "img": "a misty green mountain in ancient China with twisted pines and waterfalls, a nine-tailed fox shape barely visible among the rocks, dawn haze",
+   "fx": "fog",
+   "move": "right",
+   "look": "china",
+   "note": "山海經  Shanhaijing  =  Classic of Mountains and Seas"
+  },
+  {
+   "say": "Its cry sounds like a crying baby. And it eats people. That's the very first nine-tailed fox in the written record: a man-eater hiding in the hills.",
+   "img": "a dark Chinese mountain forest at night, a crying sound implied by a tiny abandoned bundle of cloth on a rock, a huge fox shadow with nine tails looming behind it",
+   "fx": "fog",
+   "move": "in",
+   "look": "china",
+   "key": "cry"
+  },
+  {
+   "say": "But China changed its mind. In the Han dynasty, some thinkers saw the nine-tailed fox as a lucky sign. A good omen that heaven approved of a ruler. It was carved beside the Queen Mother of the West.",
+   "img": "an ancient Chinese stone relief carving showing a goddess on a throne with a nine-tailed fox and a jade rabbit beside her, warm torchlight on carved stone",
+   "fx": "dust",
+   "move": "up",
+   "look": "china"
+  },
+  {
+   "say": "One old story says the great flood-tamer, Yu, saw a white nine-tailed fox and took it as a sign that he should marry. So in China, the fox was both a monster and a blessing.",
+   "img": "a pure white fox with nine glowing white tails standing on a riverbank in ancient China at sunrise, a lone traveler in simple robes bowing to it in awe",
+   "fx": "fireflies",
+   "move": "right",
+   "look": "china"
+  },
+  {
+   "say": "Over the centuries, Chinese stories filled with huli jing, fox spirits. Fox wives, fox scholars, fox tricksters. Some kind, some cruel, almost all beautiful.",
+   "img": "a scholar's study in old China at night, a lamp burning low, a beautiful woman with faint fox ears reflected in a bronze mirror behind the unaware scholar",
+   "fx": "dust",
+   "move": "in",
+   "look": "china",
+   "note": "狐狸精  huli jing  =  fox spirit"
+  },
+  {
+   "say": "Now, Japan. The kitsune came later in writing, but she came with a fan club. Many kitsune serve Inari, the god of rice and harvest.",
+   "img": "a Japanese mountain shrine path lined with hundreds of vermilion torii gates in soft rain, stone fox statues with red bibs on either side, quiet morning",
+   "fx": "rain",
+   "move": "in",
+   "look": "japan",
+   "key": "inari"
+  },
+  {
+   "say": "Walk into almost any Inari shrine and you'll find stone foxes guarding the gate, often holding a key or a jewel in their mouths. Messengers of a god. That is very good publicity.",
+   "img": "close-up of a weathered stone fox statue at a Japanese shrine wearing a faded red bib and holding a key in its mouth, moss, rain drops, lanterns behind",
+   "fx": "rain",
+   "move": "down",
+   "look": "japan"
+  },
+  {
+   "say": "But not every kitsune works for Inari. The wild ones, the field foxes, are tricksters. They lead travelers in circles, steal tofu, and marry men who never ask enough questions.",
+   "img": "a lost traveler in a straw hat walking in circles through a moonlit Japanese rice field, a fox watching him from tall grass with a sly grin, will-o-wisp lights",
+   "fx": "fireflies",
+   "move": "left",
+   "look": "japan"
+  },
+  {
+   "say": "And Korea? The gumiho has no shrine. No god. No lucky omen. In our old stories, she is almost always the thing in the dark.",
+   "img": "a beautiful young woman in a pale jade hanbok with a red ribbon in her long black hair standing alone at the edge of a pine forest at dusk, her face hidden in shadow, a Joseon village with glowing paper windows far below",
+   "fx": "fog",
+   "move": "out",
+   "look": "joseon",
+   "key": "gumiho"
+  },
+  {
+   "say": "Korean grandmothers didn't build her temples. They told children to come home before sunset. That's not a weakness, dear human. That's a reputation.",
+   "img": "a Korean grandmother in a white hanbok calling children home from a village lane at sunset, long shadows, a fox's eyes glinting in the bushes behind",
+   "fx": "dust",
+   "move": "right",
+   "look": "joseon"
+  },
+  {
+   "say": "Korean stories do say she can grow tame. Some tellings give her a way out: a hundred livers, or a thousand days without harming a single human, and she wakes up mortal. Almost nobody in the old stories makes it to day one thousand.",
+   "img": "a beautiful young woman in a pale jade hanbok with a red ribbon in her long black hair sitting alone on a grassy hill at dawn, counting pebbles laid out in long rows in the grass, layered blue mountains behind her",
+   "fx": "dust",
+   "move": "right",
+   "look": "joseon"
+  },
+  {
+   "say": "Round one goes to China for seniority, Japan for public relations, and Korea for fear. I'm counting fear double. It's my contest.",
+   "gumi": "wink",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "card": "I",
+   "sub": "Round Two: Powers"
+  },
+  {
+   "say": "Round two. What can each fox actually do? Start with the basics. All three can take human shape, and almost always the same shape: a beautiful woman.",
+   "img": "three beautiful women standing in a row in a dark misty void, each with a long shadow behind her shaped like a fox with nine tails, dreamlike",
+   "fx": "fog",
+   "move": "right",
+   "key": "women"
+  },
+  {
+   "say": "The Japanese kitsune is the showiest. She grows a new tail as she gets older and wiser. In many tellings, a fox that reaches a thousand years gains its ninth tail and turns white or gold.",
+   "img": "a pure white fox with nine glowing white tails and a red bib around its neck sitting on a snowy Japanese mountain ridge under a full moon, its tails fanned out like a crown",
+   "fx": "snow",
+   "move": "up",
+   "look": "japan"
+  },
+  {
+   "say": "She makes kitsunebi, fox fire. Floating lights in the fields at night. In one old belief, on New Year's Eve the foxes gathered under a great tree, and farmers counted their fires to guess the harvest.",
+   "img": "dozens of small floating blue-white flames drifting over dark Japanese rice fields at night, a giant old tree on the horizon, a farmer watching from a doorway",
+   "fx": "fireflies",
+   "move": "left",
+   "look": "japan",
+   "key": "fire",
+   "note": "狐火  kitsunebi  =  fox fire"
+  },
+  {
+   "say": "And her strangest power: kitsune-tsuki, fox possession. People believed a fox could slip inside a person. They would crave fried tofu, speak in odd voices, and act unlike themselves.",
+   "img": "a dim Japanese farmhouse room at night, a woman kneeling with her back to the viewer, her shadow on the paper screen showing a fox's head instead of her own, a single oil lamp",
+   "fx": "none",
+   "move": "in",
+   "look": "japan",
+   "key": "possess"
+  },
+  {
+   "say": "The Chinese huli jing is the seductress and the scholar. She charms, she bewitches, she drains the life from lovers night by night. Some stories say she studied the moon to become an immortal.",
+   "img": "an elegant consort in flowing crimson silk robes with a golden phoenix hairpin in her high-piled black hair standing on a palace balcony at night gazing up at a huge full moon, her shadow on the floor showing nine fox tails",
+   "fx": "fireflies",
+   "move": "up",
+   "look": "china"
+  },
+  {
+   "say": "And the gumiho? Her power is simpler. She takes a face you trust, she walks beside you, and she wants one thing. You remember what it is.",
+   "img": "a beautiful young woman in a pale jade hanbok with a red ribbon in her long black hair walking beside a young man in white hanbok on a moonlit mountain path, smiling at him, his face trusting, her shadow behind them with fox ears",
+   "fx": "fog",
+   "move": "in",
+   "look": "joseon"
+  },
+  {
+   "say": "The old idea was that the liver held a person's energy, their gi. Eat enough of it, and a fox could finally become human. It's not a talent, exactly. It's a diet with very high stakes.",
+   "img": "a traditional Korean herbal medicine cabinet with many small wooden drawers, dried herbs, a flickering candle, and the shadow of a fox woman on the wall",
+   "fx": "dust",
+   "move": "left",
+   "look": "joseon"
+  },
+  {
+   "say": "Your liver.",
+   "img": "extreme close-up of the face of a beautiful young woman in a pale jade hanbok with a red ribbon in her long black hair smiling in the dark, eyes glowing amber, the rest of her fading into shadow",
+   "fx": "none",
+   "move": "in",
+   "hold": 1.2,
+   "look": "joseon",
+   "key": "liver"
+  },
+  {
+   "say": "And yes, she has her fox bead, the marble of her power. I told that story in Tale One, so I won't repeat it. Let's just say a kiss with a gumiho is never just a kiss.",
+   "img": "close-up of a small glowing blue marble on a dark stone, swirling moonlight inside it, a single red ribbon lying beside it",
+   "fx": "fireflies",
+   "move": "out"
+  },
+  {
+   "say": "Shapeshifting, fire, possession, seduction. On paper, Japan wins the talent show. But the gumiho never needed a talent show. She only needed you to take the shortcut over the mountain.",
+   "img": "a narrow mountain shortcut path disappearing into dark pine forest at dusk, a single lantern left hanging on a branch, fog rolling in",
+   "fx": "fog",
+   "move": "right"
+  },
+  {
+   "say": "Round two goes to the kitsune. I'm biased, dear human, not blind.",
+   "gumi": "front",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "card": "II",
+   "sub": "Round Three: Weaknesses"
+  },
+  {
+   "say": "Round three. Every monster has a way to beat it. And here, my cousins and I share one embarrassing enemy. Dogs.",
+   "img": "a big shaggy village dog barking furiously at a beautiful woman on a dark lane, her shadow on the wall behind her showing fox ears, lantern light",
+   "fx": "dust",
+   "move": "in",
+   "key": "dog"
+  },
+  {
+   "say": "In one of the oldest Japanese fox stories, a man marries a lovely woman he meets in a field. They have a son. But the family dog hates her, and one day it chases her, and she turns back into a fox.",
+   "img": "a Japanese farmhouse yard at dawn, a frightened fox running away past a barking dog, a woman's kimono lying empty on the ground, a stunned husband in the doorway",
+   "fx": "dust",
+   "move": "left",
+   "look": "japan"
+  },
+  {
+   "say": "Her husband tells her: come back and sleep with me anyway. Kitsu-ne. Come and sleep. That story is often given as a folk explanation of the word kitsune itself. Rather sweet, for a fox story.",
+   "img": "a lonely fox sitting at the edge of a moonlit field looking back at a small Japanese farmhouse with one warm window, gentle and sad",
+   "fx": "fireflies",
+   "move": "out",
+   "look": "japan",
+   "note": "来つ寝  kitsu-ne  =  come and sleep"
+  },
+  {
+   "say": "Chinese fox spirits had more enemies. Hunting dogs. Taoist priests with mirrors and talismans. A demon-revealing mirror could show a beautiful woman's true face in its reflection.",
+   "img": "a Taoist priest in dark robes holding up a round bronze mirror toward a frightened beautiful woman in a courtyard at night, the mirror's reflection showing a fox's face",
+   "fx": "embers",
+   "move": "in",
+   "look": "china",
+   "key": "mirror"
+  },
+  {
+   "say": "And the gumiho? She hates being discovered. In many Korean tales, if a human sees what she really is before her work is done, all her years of patience are wasted.",
+   "img": "a beautiful young woman in a pale jade hanbok with a red ribbon in her long black hair turning around in shock on a moonlit path, a boy with a lantern staring at her long shadow which has nine tails",
+   "fx": "fog",
+   "move": "in",
+   "look": "joseon"
+  },
+  {
+   "say": "Lose the bead, and she loses her power. Be seen, and she loses her chance at becoming human. Our weakness isn't a dog or a mirror. It's being looked at too closely.",
+   "img": "a fox woman's reflection trembling in a dark well, the face in the water half human and half fox, cold moonlight",
+   "fx": "none",
+   "move": "down"
+  },
+  {
+   "say": "Which is why, between you and me, I never take the same road twice.",
+   "img": "a lone mountain path at night forking in two directions, one lit by moonlight, one swallowed by fog, nobody in sight",
+   "fx": "fog",
+   "move": "left"
+  },
+  {
+   "say": "Round three is a draw. Everyone loses to dogs. We don't talk about it at family dinners.",
+   "gumi": "wink",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "card": "III",
+   "sub": "Round Four: The Most Famous Fox"
+  },
+  {
+   "say": "Final round. Each fox brings her most famous case. China goes first, with a name every Chinese child knows. Daji.",
+   "img": "an elegant consort in flowing crimson silk robes with a golden phoenix hairpin in her high-piled black hair kneeling in a vast dark Shang-dynasty palace hall lit by bronze braziers, looking up with a cold smile",
+   "fx": "embers",
+   "move": "in",
+   "look": "china",
+   "key": "daji"
+  },
+  {
+   "say": "Three thousand years ago, King Zhou of Shang ruled China. In the Ming-era novel Investiture of the Gods, a nine-tailed fox spirit takes over the body of his new consort, Daji.",
+   "img": "an elegant consort in flowing crimson silk robes with a golden phoenix hairpin in her high-piled black hair entering a palace throne room in a grand procession, a cruel king on a bronze throne watching her, courtiers bowing low, golden firelight",
+   "fx": "embers",
+   "move": "right",
+   "look": "china",
+   "note": "封神演義  Investiture of the Gods"
+  },
+  {
+   "say": "In the novel, the fox was sent by a goddess to bring the dynasty down. And Daji does exactly that. The king grows crueler and crueler at her side. Loyal ministers are punished. The kingdom rots.",
+   "img": "a dark palace garden at night with an enormous wine pool and lanterns reflected in it, a king and a consort silhouetted on a terrace above, ominous",
+   "fx": "embers",
+   "move": "out",
+   "look": "china"
+  },
+  {
+   "say": "When the dynasty finally falls, Daji is captured. In one version she is so beautiful that the soldiers can't bring themselves to strike. The fox spirit must be ended by the gods themselves.",
+   "img": "an elegant consort in flowing crimson silk robes with a golden phoenix hairpin in her high-piled black hair kneeling in chains in a smoky courtyard, soldiers hesitating with lowered weapons around her, a glowing fox shadow rising behind her",
+   "fx": "embers",
+   "move": "up",
+   "look": "china"
+  },
+  {
+   "say": "Japan answers with Tamamo-no-Mae, the most famous fox in Japanese history.",
+   "img": "a graceful court lady in layered Heian-era silk robes of pale gold and red with long straight black hair reaching the floor sitting behind a bamboo blind in a Heian palace, her face half hidden by a fan, autumn leaves outside",
+   "fx": "dust",
+   "move": "in",
+   "look": "japan",
+   "key": "tamamo"
+  },
+  {
+   "say": "She was a court lady to Emperor Toba, nine centuries ago. Beautiful, brilliant, she could answer any question about poetry or the stars. And the emperor fell in love.",
+   "img": "a graceful court lady in layered Heian-era silk robes of pale gold and red with long straight black hair reaching the floor reciting poetry to an admiring emperor in court robes inside a lantern-lit Heian palace hall, courtiers listening",
+   "fx": "dust",
+   "move": "right",
+   "look": "japan"
+  },
+  {
+   "say": "Then the emperor fell ill. No doctor could cure him. Until a court diviner discovered the truth. One night, they say, Tamamo-no-Mae glowed in the dark.",
+   "img": "a graceful court lady in layered Heian-era silk robes of pale gold and red with long straight black hair reaching the floor standing in a pitch black palace room, her body giving off a soft eerie light, frightened servants pressed against the walls",
+   "fx": "none",
+   "move": "in",
+   "look": "japan",
+   "hold": 0.6,
+   "key": "glow"
+  },
+  {
+   "say": "In the Otogizoshi telling, a diviner of the Abe family performed a ritual, and under its pressure the lady's true shape came out. Nine tails. A fox who had been hiding in the emperor's own bedroom.",
+   "img": "a graceful court lady in layered Heian-era silk robes of pale gold and red with long straight black hair reaching the floor recoiling in a candlelit Heian palace hall as a court diviner in a tall black cap holds up a paper charm, her shadow on the screen behind her showing nine fox tails",
+   "fx": "embers",
+   "move": "in",
+   "look": "japan"
+  },
+  {
+   "say": "Exposed, she fled as a nine-tailed fox to the plains of Nasu. Two warriors hunted her with arrows and a sword. And when she died, her body became a stone.",
+   "img": "a pure white fox with nine glowing white tails and a red bib around its neck running across a wide misty plain at dawn, two mounted Japanese warriors with bows chasing it, autumn grass",
+   "fx": "fog",
+   "move": "left",
+   "look": "japan"
+  },
+  {
+   "say": "The Sesshō-seki, the killing stone. Legend says it poisoned anything that touched it. The stone is real. It still sits at Nasu. And in March 2022, it was found split in two.",
+   "img": "a large black volcanic boulder split cleanly in two, bound with a thick straw rope, on a barren misty hillside with sulfur steam rising, eerie",
+   "fx": "fog",
+   "move": "out",
+   "look": "japan",
+   "key": "stone",
+   "note": "殺生石  Sesshō-seki  =  the killing stone"
+  },
+  {
+   "say": "Geologists pointed to weathering and cracks in the rock. The internet had other ideas. Here's the twist, though. In later Japanese tellings, Tamamo-no-Mae and Daji are the same fox. One fox, fleeing from China to Japan.",
+   "img": "a pure white fox with nine glowing white tails and a red bib around its neck crossing a dark stormy sea on the clouds from a distant Chinese palace toward the mountains of Japan, lightning",
+   "fx": "rain",
+   "move": "right"
+  },
+  {
+   "say": "Which means China and Japan are sharing a champion. I call that cheating.",
+   "img": "a graceful court lady in layered Heian-era silk robes of pale gold and red with long straight black hair reaching the floor and an elegant consort in flowing crimson silk robes with a golden phoenix hairpin in her high-piled black hair standing back to back in a dark misty void, sharing one long shadow with nine fox tails",
+   "fx": "fog",
+   "move": "in",
+   "hold": 0.6
+  },
+  {
+   "say": "Korea's champion has no palace and no novel. Her most famous case is a little girl. The Fox Sister. A family wished for a daughter, and the cows began to die, one each night.",
+   "img": "a young girl in a hanbok holding a lantern in a dark barn at night beside frightened cows, her eyes glowing faintly, eerie shadows",
+   "fx": "dust",
+   "move": "in",
+   "look": "joseon",
+   "key": "sister"
+  },
+  {
+   "say": "I told that tale in Tale Two. No emperor. No dynasty. Just one family, one farm, and one sister who was not what she seemed. Some people find that scarier. A fox doesn't need a throne to ruin you.",
+   "img": "an empty Joseon farmyard at dawn, a broken gate swinging, an overturned lantern in the dirt, small fox footprints leading toward the mountains",
+   "fx": "fog",
+   "move": "out",
+   "look": "joseon"
+  },
+  {
+   "say": "And if a fox like that can hide inside your own home, eating at your table, smiling at your mother, then no wall in the world is high enough. That's the Korean fear. Not the palace. The house next door.",
+   "img": "a quiet Joseon village at night seen from the mountainside, every window dark except one, a small figure standing motionless in that window",
+   "fx": "fog",
+   "move": "in",
+   "look": "joseon"
+  },
+  {
+   "say": "Round four. China and Japan share a fox, so they share half a point each. Korea gets a whole point for working alone.",
+   "gumi": "bead",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "card": "THE VERDICT"
+  },
+  {
+   "say": "And in modern pop culture, all three are everywhere. Japan's Nine-Tails sleeps inside a famous ninja. China's fox goddesses star in long romantic fantasy dramas. Korea's gumiho turned into a heroine in shows like Tale of the Nine Tailed.",
+   "img": "a rainy modern Seoul street at night with glowing billboards reflected in puddles, a woman with faint fox ears under a transparent umbrella walking through the crowd",
+   "fx": "rain",
+   "move": "right",
+   "look": "modern",
+   "key": "modern"
+  },
+  {
+   "say": "So the cousins went from monsters to idols. I suppose we finally got better publicity. All three of us.",
+   "img": "three fox spirits sitting together on a modern city rooftop at night, nine tails each glowing in different colors, the skyline behind them, playful mood",
+   "fx": "fireflies",
+   "move": "up",
+   "look": "modern"
+  },
+  {
+   "say": "Now, the final score. China for age, Japan for talent, a draw on dogs, and shared custody of one emperor-wrecking fox. Adding it all up very carefully, with my own claws, the winner is the gumiho.",
+   "gumi": "front",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "Was the math fair? No. Was the judge a gumiho? Yes. Those two facts may be related.",
+   "gumi": "wink",
+   "fx": "embers",
+   "move": "in",
+   "hold": 0.6
+  },
+  {
+   "say": "But I'll say this honestly. The kitsune gets shrines. The huli jing gets a place in heaven's omens. The gumiho only ever got a warning. And a warning is the one story everybody remembers.",
+   "gumi": "bead",
+   "fx": "embers",
+   "move": "out"
+  },
+  {
+   "say": "Maybe that's why my cousins became idols first. Gods and emperors make good movies. A fox waiting at the edge of your own village makes a better reason to hurry home.",
+   "gumi": "front",
+   "fx": "embers",
+   "move": "left"
+  },
+  {
+   "say": "Now it's your turn. If one of us were waiting for you on a dark mountain road, who would YOU pick? The gumiho, the kitsune, or the huli jing? Tell me in the comments.",
+   "gumi": "front",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "In my next tale, a ritual said to have started on Korean forums. Ride an elevator alone. Press the floors in one strange order. And if a woman gets on at the fifth floor, don't look at her.",
+   "img": "a dim empty apartment elevator interior late at night, the doors half open onto a dark corridor, a woman's silhouette standing just outside, flickering light",
+   "fx": "none",
+   "move": "in",
+   "look": "modern"
+  },
+  {
+   "say": "Until then, stay close. And if three beautiful strangers ever offer to walk you home, choose the one from Korea. At least you'll know what she wants.",
+   "gumi": "wink",
+   "fx": "embers",
+   "move": "out",
+   "hold": 1.5
+  }
+ ],
+ "short": {
+  "title": "Gumiho vs Kitsune vs Huli Jing: Which Fox Is Scariest? #shorts #gumiho",
+  "hook": "3 FOXES. ONLY ONE WINS",
+  "lines": [
+   {
+    "say": "Korea, Japan and China each have a nine-tailed fox. Only one of them can be the scariest.",
+    "scene": "three"
+   },
+   {
+    "say": "China's is the oldest. An ancient book says it cries like a baby, and it eats people.",
+    "scene": "cry"
+   },
+   {
+    "say": "Japan's makes fox fire and can slip inside a human body.",
+    "scene": "possess"
+   },
+   {
+    "say": "Korea's only wants one thing from you. Your liver.",
+    "scene": "liver"
+   },
+   {
+    "say": "And two of them may be the same fox, the one blamed for ruining a Chinese king and a Japanese emperor.",
+    "scene": "tamamo"
+   },
+   {
+    "say": "So who wins? The full verdict is on my channel. I'm Gumi, and I'm totally neutral.",
+    "gumi": "wink"
+   }
+  ]
+ },
+ "shorts_extra": [
+  {
+   "title": "Never Touch the Killing Stone in Japan. Here's Why #shorts #kitsune",
+   "hook": "NEVER TOUCH THIS STONE",
+   "lines": [
+    {
+     "say": "There's a stone in Japan wrapped in a thick rope. Legend says you should never touch it.",
+     "scene": "stone"
+    },
+    {
+     "say": "They call it the Sesshō-seki, the killing stone. The old story says it poisoned anything that came near.",
+     "img": "a dead bird lying on grey volcanic ground beside a large black roped boulder, sulfur steam drifting, desolate morning"
+    },
+    {
+     "say": "Because inside it, they said, was a nine-tailed fox. Once she was the emperor's favorite, until she glowed in the dark.",
+     "scene": "glow"
+    },
+    {
+     "say": "Warriors hunted her down, and her body became that stone.",
+     "img": "a pure white fox with nine glowing white tails and a red bib around its neck curled up and turning to stone on a misty plain, its tails fading into rock"
+    },
+    {
+     "say": "And in March 2022, the stone was found split in two.",
+     "img": "close-up of a fresh crack running through a black boulder bound with straw rope, mist, eerie silence"
+    },
+    {
+     "say": "Who was she, and where did she come from? The full tale is on my channel. I'm Gumi.",
+     "gumi": "wink"
+    }
+   ]
+  },
+  {
+   "title": "Why Fox Spirits Fear Dogs in Korea, Japan and China #shorts #gumiho",
+   "hook": "FOXES FEAR ONE THING",
+   "lines": [
+    {
+     "say": "The scariest monsters in East Asia all share one embarrassing weakness. Dogs.",
+     "scene": "dog"
+    },
+    {
+     "say": "In an old Japanese story, a man's lovely wife is chased by the family dog, and she turns back into a fox.",
+     "img": "a Japanese farmhouse yard at dawn, a frightened fox running away past a barking dog, a woman's kimono lying empty on the ground"
+    },
+    {
+     "say": "In China, priests used mirrors too. One look in the glass and the beautiful woman showed a fox's face.",
+     "scene": "mirror"
+    },
+    {
+     "say": "And in Korea, the gumiho fears one thing above all. Being seen for what she really is.",
+     "scene": "gumiho"
+    },
+    {
+     "say": "So which fox is scariest? I judged it. Fairly. The full verdict is on my channel. I'm Gumi.",
+     "gumi": "wink"
+    }
+   ]
+  }
+ ]
+}
