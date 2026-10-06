@@ -1,0 +1,99 @@
+{
+ "date": "2026-10-06",
+ "topic": "politics",
+ "privacy": "public",
+ "slot": "aft",
+ "topic_keyword": "대법원장 국감 증인선서",
+ "headline": "조희대 대법원장, 법사위 국감서 증인선서 거부…여야 이석 놓고 충돌",
+ "hook_title": "국감 첫날 대법원장이 선서 거부",
+ "accent": "#8FB0C9",
+ "thumbnail_hook": "Empty witness stand and a wooden gavel in a large empty National Assembly hearing room, soft blue-gray lighting, scales of justice on a desk, no people, no text, symbolic editorial style, vertical composition",
+ "thumbnail_text": "국감 첫날 선서 거부",
+ "scenes": [
+  {
+   "type": "hook",
+   "pill": "국정감사",
+   "ghost": "POLITICS",
+   "lines": [
+    "대법원장이",
+    "선서를",
+    "거부했다"
+   ],
+   "highlight": "거부했다",
+   "brand": "일상공감뉴스 · 정치",
+   "narration": "국정감사 첫날, 대법원장이 증인 선서를 거부했습니다."
+  },
+  {
+   "type": "keypoint",
+   "label": "법사위 국감",
+   "points": [
+    "대법원장 — 인사말 뒤 <b>증인선서</b> 거부",
+    "제청 증언 요구는 <b>삼권분립</b> 훼손 우려",
+    "선서 없이 질의에는 직접 답변"
+   ],
+   "brand": "일상공감뉴스 · 정치",
+   "narration": "대법원장은 제청 관련 증언 요구가 삼권분립과 사법 독립을 훼손할 우려가 있다며 선서를 거부했고, 질의에는 직접 답했다고 전해졌습니다."
+  },
+  {
+   "type": "keypoint",
+   "label": "양측 입장",
+   "points": [
+    "민주당 — 제청 거부 사안, <b>직접 답변</b>할 의무",
+    "국민의힘 — 인사말 뒤 이석이 <b>관례</b>"
+   ],
+   "brand": "일상공감뉴스 · 정치",
+   "narration": "더불어민주당은 직접 답변할 의무가 있다며 이석을 허용하지 않았고, 국민의힘은 인사말 뒤 이석이 관례라고 맞섰습니다."
+  },
+  {
+   "type": "keypoint",
+   "label": "쟁점",
+   "points": [
+    "국회 — 국정감사는 <b>헌법상</b> 권한",
+    "법원 — 재판·인사의 <b>독립</b>도 헌법 원칙"
+   ],
+   "brand": "일상공감뉴스 · 정치",
+   "narration": "국회의 감사 권한과 사법부의 독립, 두 헌법 가치가 처음부터 부딪힌 셈입니다."
+  },
+  {
+   "type": "statement",
+   "text": "감사와 사법 독립, 선은 어디?",
+   "highlight": "선은 어디",
+   "brand": "일상공감뉴스 · 정치",
+   "narration": "재판을 받는 국민 모두와 이어진 문제인데, 국회의 감사와 사법부 독립의 선은 어디라고 보십니까?"
+  }
+ ],
+ "sources": [
+  "파이낸셜뉴스",
+  "뉴데일리",
+  "미디어오늘",
+  "서울경제"
+ ],
+ "credit": "출처 파이낸셜뉴스·뉴데일리·미디어오늘·서울경제 등",
+ "platforms": {
+  "youtube": {
+   "title": "국감 첫날 대법원장이 선서 거부 #shorts",
+   "description": "조희대 대법원장, 법사위 국감서 증인선서 거부…여야 이석 놓고 충돌\n출처 파이낸셜뉴스·뉴데일리·미디어오늘·서울경제 등\n\n※ 사실관계는 보도 시점 기준이며, 수사·재판 중인 사안은 확정된 내용이 아닙니다.\n\n#국정감사 #대법원 #국회 #뉴스 #쇼츠 #shorts",
+   "localizations": {
+    "en": {
+     "title": "Day 1 of Audit: Chief Justice Refuses to Take the Oath #shorts",
+     "description": "Korea's Chief Justice declined to be sworn in at the National Assembly audit, and parties clashed over whether he could leave.\nSources: Financial News, Newdaily, MediaToday, Seoul Economic Daily\n\n※ Facts as of reporting time; matters under investigation or trial are not confirmed.\n\n#shorts #Korea #news"
+    },
+    "ja": {
+     "title": "国政監査初日、大法院長が宣誓を拒否 #shorts",
+     "description": "国会の国政監査で大法院長が証人宣誓を拒否し、退席をめぐり与野党が衝突しました。\n出典：金融ニュース、ニューデイリー、メディアトゥデイ、ソウル経済\n\n※ 事実関係は報道時点のものです。捜査・裁判中の事案は確定した内容ではありません。\n\n#shorts #韓国 #ニュース"
+    },
+    "zh-Hant": {
+     "title": "國政監查首日 大法院長拒絕宣誓 #shorts",
+     "description": "韓國大法院長在國會國政監查中拒絕證人宣誓，朝野就是否准許離席發生衝突。\n來源：金融新聞、Newdaily、MediaToday、首爾經濟\n\n※ 事實以報導時點為準；偵查、審理中的案件並非定論。\n\n#shorts #韓國 #新聞"
+    }
+   }
+  },
+  "instagram": {
+   "caption": "국감 첫날 대법원장이 선서 거부\n출처 파이낸셜뉴스·뉴데일리·미디어오늘·서울경제 등\n\n#국정감사 #대법원 #국회 #뉴스 #쇼츠 #shorts #릴스"
+  },
+  "threads": {
+   "text": "국감 첫날 대법원장이 선서 거부\n출처 파이낸셜뉴스·뉴데일리·미디어오늘·서울경제 등"
+  }
+ },
+ "notes": "모션그래픽 5장면 · 단일 내레이터 · 배경음 없음."
+}
