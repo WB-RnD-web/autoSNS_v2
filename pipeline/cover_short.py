@@ -63,8 +63,11 @@ def _fields(sb: dict) -> tuple[str, str, str]:
 # 루틴이 thumbnail_style 을 빼먹어도 토픽마다 같은 결이 나오게 한다(루틴 지시는 안 지켜질 때가 있다).
 # 스토리보드에 thumbnail_style 이 있으면 그게 우선이다.
 TOPIC_STYLE_PROMPT = {
-    "fortune": ("adorable 3D chibi zodiac animal mascot character, big expressive eyes, "
-                "soft pastel colors, warm glowing lucky atmosphere, playful Pixar-like render"),
+    # ★2026-10-07: 'lucky atmosphere' + 띠 동물 마스코트가 중국 설날 그림(快乐·福 글자)을 불렀다(등급표·궁합표 견본).
+    #   'no text' 같은 부정 문구는 wbspark.strip_text_negatives 가 지우므로(빠른 모델로 보내려고) 긍정형으로 막는다:
+    #   한국 한옥 실내 · 민무늬 벽.
+    "fortune": ("adorable 3D chibi zodiac animal mascot character inside a cozy Korean hanok room with plain "
+                "paper walls, big expressive eyes, soft pastel colors, warm gentle glow, playful Pixar-like render"),
     "horoscope": ("dreamy celestial illustration, glowing constellation lines and stars, "
                   "deep indigo night sky, soft magical light, whimsical and modern"),
     "zodiac": ("dreamy celestial illustration, glowing constellation lines and stars, "

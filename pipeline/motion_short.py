@@ -327,6 +327,44 @@ def tier_layout(tiers):
     return {"rows": rows, "ch": ch, "cw": cw, "fn": int(fn), "fy": int(fy), "fl": int(fl), "bottom": y - TIER_ROW_GAP}
 
 
+# ── 띠 궁합표(2026-10-07, gunghap_card.py) — 12줄 × (내 띠 | 좋은 짝 | 조심할 띠) ──────────
+# 줄마다 두 줄 글자(이름/출생연도 · 짝/근거). 오른쪽 끝(x 960~)과 아래 22%(y 1460~)는 비운다.
+GH_X0, GH_W, GH_TOP, GH_BOTTOM, GH_GAP = 60, 900, 352, 1430, 8
+GH_COLS = (0, 300, 630)          # 열 시작(줄 안 x) — 내 띠 · 좋은 짝 · 조심할 띠
+CSS_GUNGHAP = """
+.gpill2{position:absolute;left:60px;top:104px;}
+.ghtitle{position:absolute;left:60px;top:176px;width:900px;color:#FFFFFF;font-weight:900;font-size:84px;
+  line-height:1.05;letter-spacing:-3px;white-space:nowrap;text-shadow:0 4px 24px rgba(0,0,0,.6);}
+.ghhead{position:absolute;color:rgba(237,217,188,.82);font-weight:800;font-size:28px;white-space:nowrap;}
+.ghrow{position:absolute;border-radius:18px;background:rgba(10,8,8,.74);border:2px solid rgba(237,217,188,.14);
+  will-change:transform;overflow:hidden;}
+.ghrow .a,.ghrow .g,.ghrow .b{position:absolute;white-space:nowrap;line-height:1;font-weight:900;letter-spacing:-1px;}
+.ghrow .a{color:#FFFFFF;}
+.ghrow .g{color:var(--acc,#E8657A);}
+.ghrow .b{color:#9CC3E6;}
+.ghrow .s{position:absolute;white-space:nowrap;line-height:1;font-weight:700;color:rgba(237,217,188,.8);
+  font-variant-numeric:tabular-nums;}
+.ghfoot{position:absolute;left:60px;width:900px;color:rgba(237,217,188,.78);font-weight:700;font-size:26px;white-space:nowrap;}
+"""
+
+
+def gunghap_layout(rows):
+    """줄 높이와 글자 크기 — 열 너비를 넘지 않게 함께 줄인다."""
+    n = max(1, len(rows))
+    rh = (GH_BOTTOM - GH_TOP - GH_GAP * (n - 1)) / n
+    widths = (GH_COLS[1] - GH_COLS[0] - 24, GH_COLS[2] - GH_COLS[1] - 16, GH_W - GH_COLS[2] - 20)
+    fa, fg, fb = min(44, rh * 0.48), min(40, rh * 0.44), min(36, rh * 0.40)
+    fs = max(18, min(24, rh * 0.27))
+    em = lambda t: sum(0.56 if c.isdigit() else 0.3 if c in "·., " else 1.0 for c in str(t)) or 1.0
+    for r in rows:
+        fa = min(fa, widths[0] / em(r.get("animal", "") + "띠"))
+        fg = min(fg, widths[1] / em(r.get("good", "")))
+        fb = min(fb, widths[2] / em(r.get("bad", "")))
+        yrs = "·".join(f"{v % 100:02d}" for v in r.get("years", [])) + "년생"
+        fs = min(fs, widths[0] / em(yrs), widths[1] / em(r.get("good_line", "")), widths[2] / em(r.get("bad_line", "")))
+    return {"rh": rh, "fa": int(fa), "fg": int(fg), "fb": int(fb), "fs": int(fs)}
+
+
 # ── '내 것 찾기' 표 (2026-10-02, name_card.py) — 이름 글자 24칸·태어난 달 12칸 ──────────
 # 칸 안은 큰 글자(찾는 것) + 작은 글자(한자·순위) + 한 줄. 오른쪽 끝(x 960~)과 아래 22%는 비운다.
 GRID_X0, GRID_W, GRID_TOP, GRID_BOTTOM, GRID_GAP = 60, 900, 470, 1440, 14
@@ -657,6 +695,31 @@ def scene_html(i, sc, acc):
                 f'<div class="yr">{esc(yrs)}</div><div class="ln">{esc(r.get("line", ""))}</div></div>')
         body = (f'<div class="cpill"><span class="pill" id="{gid}-pill"><span class="dot"></span>{esc(sc.get("pill",""))}</span></div>'
                 f'<div class="ctitle" id="{gid}-title">{esc(sc.get("title",""))}</div>' + "".join(cells))
+    elif t == "gunghap":
+        rows = sc.get("rows", [])
+        lay = gunghap_layout(rows)
+        rh = lay["rh"]
+        cols = sc.get("cols", ["좋은 짝", "조심할 띠"])
+        parts = [f'<div class="ghhead" style="left:{GH_X0 + 18}px;top:{GH_TOP - 42}px">내 띠</div>',
+                 f'<div class="ghhead" style="left:{GH_X0 + GH_COLS[1]}px;top:{GH_TOP - 42}px">{esc(cols[0])}</div>',
+                 f'<div class="ghhead" style="left:{GH_X0 + GH_COLS[2]}px;top:{GH_TOP - 42}px">{esc(cols[1])}</div>']
+        for k, r in enumerate(rows):
+            y = GH_TOP + k * (rh + GH_GAP)
+            top1 = (rh - lay["fa"] - lay["fs"] - 6) / 2
+            top2 = top1 + max(lay["fa"], lay["fg"], lay["fb"]) + 6
+            yrs = "·".join(f"{v % 100:02d}" for v in r.get("years", [])) + "년생"
+            parts.append(
+                f'<div class="ghrow" id="{gid}-r{k}" style="left:{GH_X0}px;top:{y:.0f}px;width:{GH_W}px;height:{rh:.0f}px">'
+                f'<div class="a" style="left:{GH_COLS[0] + 18}px;top:{top1:.0f}px;font-size:{lay["fa"]}px">{esc(r.get("animal", ""))}띠</div>'
+                f'<div class="s" style="left:{GH_COLS[0] + 18}px;top:{top2:.0f}px;font-size:{lay["fs"]}px">{esc(yrs)}</div>'
+                f'<div class="g" style="left:{GH_COLS[1]}px;top:{top1:.0f}px;font-size:{lay["fg"]}px">{esc(r.get("good", ""))}</div>'
+                f'<div class="s" style="left:{GH_COLS[1]}px;top:{top2:.0f}px;font-size:{lay["fs"]}px">{esc(r.get("good_line", ""))}</div>'
+                f'<div class="b" style="left:{GH_COLS[2]}px;top:{top1:.0f}px;font-size:{lay["fb"]}px">{esc(r.get("bad", ""))}</div>'
+                f'<div class="s" style="left:{GH_COLS[2]}px;top:{top2:.0f}px;font-size:{lay["fs"]}px">{esc(r.get("bad_line", ""))}</div></div>')
+        foot_y = GH_TOP + len(rows) * (rh + GH_GAP) + 10
+        body = (f'<div class="gpill2"><span class="pill" id="{gid}-pill"><span class="dot"></span>{esc(sc.get("pill",""))}</span></div>'
+                f'<div class="ghtitle" id="{gid}-title">{esc(sc.get("title",""))}</div>' + "".join(parts)
+                + f'<div class="ghfoot" style="top:{foot_y:.0f}px">{esc(sc.get("foot",""))}</div>')
     elif t == "tier":
         tiers = sc.get("tiers", [])
         lay = tier_layout(tiers)
@@ -858,6 +921,11 @@ def scene_js(i, sc, acc, bar_h=560, presenter=False):
         out.append(f'tl.fromTo("#{gid}-pill",{{scale:0.92}},{{scale:1,duration:0.35,ease:"back.out(2)",transformOrigin:"left center"}},{S:.2f});')
         for k in range(min(3, len(sc.get("rows", [])))):
             out.append(f'tl.to("#{gid}-c{k}",{{scale:1.05,duration:0.22,ease:"sine.inOut",yoyo:true,repeat:1}},{S + 0.5 + k * 0.35:.2f});')
+    elif t == "gunghap":
+        # 궁합표는 0초부터 전부 떠 있다(찾기·캡처·반복 재생용). 위에서부터 줄이 차례로 한 번씩 톡.
+        out.append(f'tl.fromTo("#{gid}-pill",{{scale:0.92}},{{scale:1,duration:0.35,ease:"back.out(2)",transformOrigin:"left center"}},{S:.2f});')
+        for k in range(len(sc.get("rows", []))):
+            out.append(f'tl.to("#{gid}-r{k}",{{scale:1.025,duration:0.18,ease:"sine.inOut",yoyo:true,repeat:1}},{S + 0.5 + k * 0.16:.2f});')
     elif t == "tier":
         # 등급표는 0초부터 전부 떠 있다(캡처·반복 재생용). S 칸이 차례로 톡 → C 색 칸이 두근.
         out.append(f'tl.fromTo("#{gid}-pill",{{scale:0.92}},{{scale:1,duration:0.35,ease:"back.out(2)",transformOrigin:"left center"}},{S:.2f});')
@@ -938,6 +1006,8 @@ def build_html(scenes, total, acc="#D97757", bg=False, presenter=False):
         css += CSS_GRID
     if any(sc.get("type") == "tier" for sc in scenes):
         css += CSS_TIER
+    if any(sc.get("type") == "gunghap" for sc in scenes):
+        css += CSS_GUNGHAP
     if any(sc.get("type") == "news" for sc in scenes):
         css += CSS_NEWS
     parts = [scene_html(i, sc, acc) for i, sc in enumerate(scenes)]
@@ -1032,7 +1102,7 @@ def build_motion(spec, out_mp4, workdir, quality="standard"):
     os.environ["PATH"] = os.environ.get("PATH", "") + os.pathsep + os.path.dirname(FFMPEG)
     scenes = spec["scenes"]
     # 한 장 표는 화면 전체를 쓴다 → 진행자 자리 없음
-    pr_on = presenter_on(spec.get("topic", "")) and not any(sc.get("type") in ("card", "grid", "news", "tier") for sc in scenes)
+    pr_on = presenter_on(spec.get("topic", "")) and not any(sc.get("type") in ("card", "grid", "news", "tier", "gunghap") for sc in scenes)
     duo = pr_on and os.environ.get("PRESENTER_DUO", "1") not in ("0", "false", "False")
     assign_speakers(scenes, duo=duo)
     if scenes and scenes[0].get("type") == "hook" and top_hook_on(spec.get("topic", "")):
