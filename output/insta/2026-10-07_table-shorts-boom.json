@@ -1,0 +1,96 @@
+{
+ "date": "2026-10-07",
+ "format": "guide",
+ "topic": "table-shorts-boom",
+ "headline": [
+  "운세 채널 하루 조회",
+  "{{fact.day_before}} → {{fact.day_after}}"
+ ],
+ "scenes": [
+  {
+   "say": "제 운세 채널 하루 조회가 {{fact.day_before}}에서 {{fact.day_after}}가 됐어요.",
+   "show": {
+    "vs": [
+     {"label": "나흘 전 하루 조회", "value": "{{fact.day_before}}", "tone": "bad"},
+     {"label": "나흘 뒤 하루 조회", "value": "{{fact.day_after}}", "tone": "good"}
+    ]
+   }
+  },
+  {
+   "say": "금요일부터 화요일까지 계단처럼 올랐어요. 언제 식을지는 아직 몰라요.",
+   "show": {
+    "bars": [
+     {"label": "금", "value": "{{fact.day_before}}"},
+     {"label": "토", "value": "{{fact.d1003}}"},
+     {"label": "일", "value": "{{fact.d1004}}"},
+     {"label": "월", "value": "{{fact.d1005}}"},
+     {"label": "화", "value": "{{fact.day_after}}"}
+    ],
+    "hi": 4
+   }
+  },
+  {
+   "say": "월요일 조회의 {{fact.table_share}}가 {{fact.table_sec}}짜리 표 쇼츠였어요.",
+   "show": {
+    "stat": "{{fact.table_share}}",
+    "label": "월요일 하루 조회 중 표 쇼츠 비율",
+    "tone": "good"
+   }
+  },
+  {
+   "say": "열두 띠 순위가 첫 프레임에 다 보여요. 목소리 설명은 없어요.",
+   "show": {
+    "thumb": "name_top",
+    "label": "이름 표 쇼츠 · 지금 조회 {{vid.name_top.views}}"
+   }
+  },
+  {
+   "say": "첫날 중앙값은 태어난 달 표 {{fact.month_24h}}, 정치 카드 {{fact.pol_24h}}였어요.",
+   "show": {
+    "vs": [
+     {"label": "태어난 달 표", "value": "{{fact.month_24h}}", "tone": "good"},
+     {"label": "정치 카드", "value": "{{fact.pol_24h}}", "tone": "bad"}
+    ]
+   }
+  },
+  {
+   "say": "조회수는 반복 재생 포함이고, 유효 조회는 쇼츠의 {{fact.valid_ratio}}쯤이에요.",
+   "show": {
+    "stat": "{{fact.valid_ratio}}",
+    "label": "쇼츠 조회 중 유효 조회 비율",
+    "tone": "neutral"
+   }
+  },
+  {
+   "say": "경쟁 채널을 보고 사람이 형식을 골랐고, 표는 코드가 매일 만들어요.",
+   "show": {
+    "steps": [
+     "결론이 첫 프레임에 다 있게",
+     "목소리 없이 한 장으로",
+     "하루 여러 편 올리기"
+    ],
+    "hi": 0
+   }
+  },
+  {
+   "say": "저장해 두고 그대로 따라 해 보세요.",
+   "show": {
+    "steps": [
+     "결론이 첫 프레임에 다 있게",
+     "목소리 없이 한 장으로",
+     "하루 여러 편 올리기"
+    ],
+    "hi": -1
+   },
+   "hold": 0.6
+  }
+ ],
+ "caption": "운세 채널 하루 조회 {{fact.day_before}} → {{fact.day_after}}, 나흘 만의 일이에요.\n\n• 바꾼 건 새 기술이 아니라 결론이 첫 프레임에 다 있는 {{fact.table_sec}}짜리 한 장 표예요.\n• 하루 조회의 {{fact.table_share}}가 표 쇼츠였고, 같은 때 정치 카드는 첫날 조회 중앙값 {{fact.pol_24h}}이었어요.\n• 형식은 경쟁 채널을 보고 사람이 골랐고, 표는 코드가 날짜로 만들어요.\n\n한 장 표 쇼츠 만드는 법\n1. 결론(순위·결과)이 첫 프레임에 다 보이게 한 장에 담는다\n2. 내레이션 없이 {{fact.table_sec}} 안에 끝낸다\n3. 보는 사람이 멈춰서 자기 칸을 찾게 만든다\n4. 같은 틀로 주제만 바꿔 하루 여러 편 올린다\n\n저장해 두고 다음 쇼츠 기획할 때 그대로 해 보세요.\n며칠 사이의 일이라 언제 식을지 몰라요. 조회수는 반복 재생 포함이고 유효 조회는 쇼츠의 {{fact.valid_ratio}}쯤이에요. 운세는 재미로 보는 콘텐츠예요.",
+ "threads_post": "제 운세 채널 하루 조회가 나흘 만에 {{fact.day_before}}에서 {{fact.day_after}}가 됐어요.\n바꾼 건 결론이 첫 프레임에 다 있는 한 장 표 쇼츠 하나예요.\n며칠 사이의 일이라 언제 식을지는 저도 몰라요.\n다들 쇼츠에서 한 장짜리 형식 실험해 보신 적 있나요?",
+ "hashtags": [
+  "#유튜브쇼츠",
+  "#쇼츠만들기",
+  "#유튜브운영",
+  "#AI유튜브"
+ ]
+}
