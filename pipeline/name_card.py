@@ -10,6 +10,12 @@
   같은 계열로 처음 1천 회 천장을 뚫었고, 트렌드 레이더도 운세판 '이름·성씨'를 강세로 잡았다(평소 1.8배).
   → 하루 두 편 더: 09:40 이름 글자 표 · 15:40 태어난 달 표. 12:00 띠 테마 표와 합쳐 '내 것 찾기' 하루 3편.
 
+★2026-10-08부터 하루 한 칸만(ROTATION — 4일 순환): 10/7 진단(https://claude.ai/artifact/NDdBVWfyKViDirvcMtYgYP)
+  10/6 13시쯤부터 모든 표가 한꺼번에 피드에서 덜 퍼졌다(그날 올린 표 2.5만~6만 → 200~2천, 사흘 연속 같은 꼴이던
+  해 끝자리 표는 피드 노출 0). 본 사람의 계속 시청(67.5% vs 64.6%)은 그대로 — 질림보다 '같은 꼴 반복'을 의심한다.
+  → 네 칸이 매일 다 나가던 것을 하루 한 칸으로: 같은 표는 4일에 한 번. 트리거는 하루 네 번 그대로 깨우고,
+  그날 칸이 아니면 make 가 아무것도 쓰지 않는다(트리거가 '건너뜀'으로 끝낸다). 되돌리기 = ROTATE_FROM 을 None 으로.
+
 전부 코드가 정한다(루틴은 실행 스위치만): 테마 = 날짜 순환, 칸·순위 = 날짜 해시. 같은 날짜·같은 슬롯이면 늘 같은 표.
   글자 표는 ★한자 뜻이 테마와 맞는 글자만★ 싣는다(富 부자 부 → 재물). 아무 글자나 '돈 붙는 글자'라 하지 않는다.
   문구 금지어는 theme_card.BANNED 와 같다(의료·투자·겁주기). 렌더는 motion_short 'grid' 장면.
@@ -37,6 +43,8 @@ KST = dt.timezone(dt.timedelta(hours=9))
 ACCENT = "#C9A227"
 BRAND = "왕별이 · 내 것 찾기"
 SLOTS = ("am", "pm", "year", "surname")
+ROTATE_FROM: dt.date | None = dt.date(2026, 10, 8)   # 이날부터 하루 한 칸(아래 순서로 4일 순환). None = 매일 네 칸
+ROTATION = ("am", "pm", "year", "surname")           # 10/8 이름 글자 · 10/9 태어난 달 · 10/10 해 끝자리 · 10/11 성씨 …
 SLOT_TIME = {"year": "아침 7시 40분", "am": "아침 9시 40분", "surname": "오후 1시 40분", "pm": "오후 3시 40분"}
 NAME_CELLS = 24                  # 4칸 × 6줄 — 한 화면에서 내 글자를 찾을 수 있는 크기
 LINE_MAX = 11                    # 제목 한 줄(76px) 한글 11자
@@ -111,6 +119,18 @@ def slot_now(t: dt.datetime | None = None) -> str:
     """07:40 해 끝자리 · 09:40 이름 · 13:40 성씨 · 15:40 태어난 달 — 루틴이 정시에 깨우니 시(時)만 본다."""
     h = (t or kst_now()).hour
     return "year" if h < 9 else "am" if h < 13 else "surname" if h < 15 else "pm"
+
+
+def slot_of_day(d: dt.date) -> str | None:
+    """그날 나가는 칸 하나. 돌리기 전(ROTATE_FROM 이전·None)이면 None = 네 칸 모두."""
+    if ROTATE_FROM is None or d < ROTATE_FROM:
+        return None
+    return ROTATION[(d - ROTATE_FROM).days % len(ROTATION)]
+
+
+def is_slot_day(d: dt.date, slot: str) -> bool:
+    day = slot_of_day(d)
+    return day is None or day == slot
 
 
 def name_theme(d: dt.date) -> dict:
@@ -294,6 +314,7 @@ def main(argv=None) -> int:
     ap.add_argument("--date", help="YYYY-MM-DD (기본: 오늘 KST)")
     ap.add_argument("--slot", choices=SLOTS, help="year=해 끝자리 · am=이름 글자 · surname=성씨 · pm=태어난 달 (기본: 지금 KST 시각)")
     ap.add_argument("--out")
+    ap.add_argument("--force", action="store_true", help="그날 칸이 아니어도 만든다(견본용)")
     a = ap.parse_args(argv)
     d = dt.date.fromisoformat(a.date) if a.date else kst_now().date()
     slot = a.slot or slot_now()
@@ -302,6 +323,9 @@ def main(argv=None) -> int:
         return 0
     if a.cmd == "path":
         print(os.path.relpath(path_for(d, slot)))
+        return 0
+    if a.cmd == "make" and not (a.force or is_slot_day(d, slot)):
+        print(f"{d}: 오늘 '내 것 찾기' 칸은 {slot_of_day(d)} — {slot} 은 건너뜀(하루 한 칸 순환)")
         return 0
     sb = storyboard(d, slot)
     if a.cmd == "show":

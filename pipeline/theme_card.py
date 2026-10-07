@@ -27,6 +27,9 @@ from fortune_card import ANIMALS, WEEKDAY, _h, years_of  # noqa: E402
 
 TOPIC = "fortune_theme"
 EPOCH = dt.date(2026, 10, 2)          # 첫 편 — 테마 순환의 0번
+# ★2026-10-08부터 이틀에 한 번(짝수 번째 날만) — 10/7 진단: 같은 꼴 표를 매일 내면 피드가 덜 퍼뜨린다
+#   (name_card.ROTATION 과 같은 이유). 테마는 그대로 날짜 순환(11개 · 이틀 간격이어도 전부 돈다). 되돌리기 = None.
+ALT_FROM: dt.date | None = dt.date(2026, 10, 8)
 KST = dt.timezone(dt.timedelta(hours=9))
 ACCENT = "#C9A227"
 BRAND = "왕별이 · 띠별 순위"
@@ -111,6 +114,10 @@ BANNED = ("치료", "완치", "처방", "복용", "수술", "진단", "약 ", "�
           "충격", "경악", "역대급", "대박", "무조건", "떼돈", "부적", "굿판", "굿을", "점집")
 
 
+def is_post_day(d: dt.date) -> bool:
+    return ALT_FROM is None or d < ALT_FROM or (d - ALT_FROM).days % 2 == 0
+
+
 def theme_for(d: dt.date) -> dict:
     return THEMES[(d - EPOCH).days % len(THEMES)]
 
@@ -189,10 +196,14 @@ def main(argv=None) -> int:
     ap.add_argument("cmd", choices=["show", "make", "path"])
     ap.add_argument("--date", help="YYYY-MM-DD (기본: 오늘 KST)")
     ap.add_argument("--out", help="make: 쓸 경로(기본: output/news/<날짜>_fortune_theme_storyboard.json)")
+    ap.add_argument("--force", action="store_true", help="쉬는 날이어도 만든다(견본용)")
     a = ap.parse_args(argv)
     d = dt.date.fromisoformat(a.date) if a.date else kst_today()
     if a.cmd == "path":
         print(os.path.relpath(path_for(d)))
+        return 0
+    if a.cmd == "make" and not (a.force or is_post_day(d)):
+        print(f"{d}: 띠 테마 표 쉬는 날(이틀에 한 번, {ALT_FROM} 부터 짝수 번째 날) — 건너뜀")
         return 0
     sb = storyboard(d)
     if a.cmd == "show":
