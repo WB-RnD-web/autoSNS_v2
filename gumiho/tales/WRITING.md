@@ -177,6 +177,14 @@ the episode's three Shorts must be a **rule**:
   belief or the real rule of the legend — never invent one.
 - The checker requires `look` and at least one rule title from Tale 010.
 
+**Update 2026-10-07 (from Tale 006):** a **versus** title counts too ("Gumiho vs Kitsune vs Huli Jing:
+Which Fox Is Scariest? #shorts" got 1,555 views in 11 hours, 41 likes — our best Short). Story-style Short
+titles ("They Wished for a Daughter. Then…") got 2–22 views. From Tale 006, including the sprint episodes
+(which have only the main Short), at least one Short title must be a **rule** or a **versus**:
+- sprint examples: Tale 006 "Never Play the Elevator Game Alone. Here's Why #shorts",
+  Tale 009 "If You Hear Your Mother Calling From the Mountain, Don't Answer #shorts".
+- versus = two or three real creatures, a real question in the title, the verdict only in the full tale.
+
 ## Done
 Save as `output/tales/<NNN>_<slug>.json` (the `file` value from `next`), run the checker until ✅,
 commit **only that file**, push to `routine/tales`.

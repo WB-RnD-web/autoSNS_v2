@@ -1,6 +1,6 @@
 {
  "about": "Nine Tails RULES 쇼츠 편성표(2026-10-05 사용자: '어린 친구·청년 타깃, 도파민·자극성·중독성' → 동아시아 규칙괴담 매일 쇼츠). 루틴은 `python gumiho/tales/rules.py next --date <오늘>` 이 준 한 편만 쓴다(날짜로 결정론적 배정 — start 부터 하루 한 편, 목록 순서대로). format: rules(규칙 4–5개 + 어긋나는 마지막 규칙 → 처음으로 루프) · versus(괴물 대결, 설화 근거로 판정 + 댓글 투표) · pov(2인칭 '너' 생존). facts 는 확인된 뼈대(규칙은 반드시 여기서 — 지어내지 않는다), careful 은 단정하면 안 되는 것. 목록이 바닥나기 전에 주간 검토가 PR 로 채운다.",
- "start": "2026-10-14",
+ "start": "2026-10-08",
  "publish_utc": "21:00",
  "rules": [
   {"n": 1, "slug": "name-called-at-night", "format": "rules", "region": "KR/CN", "look": "modern",

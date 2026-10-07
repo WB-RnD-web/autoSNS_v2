@@ -334,9 +334,20 @@ def card_image(sh_: dict, bg: str | None, out: str):
     img.save(out, "JPEG", quality=93)
 
 
-def make_images(s: dict, shots: list[dict], wd: str, mock: bool = False) -> dict:
+def short_only_prompts(s: dict, shots: list[dict], extras: list[dict] | None = None) -> list[str]:
+    """쇼츠 줄이 본편에 없는 새 그림(img)을 쓴 경우 그 프롬프트들.
+
+    2026-10-05 4화: 쇼츠 한 줄이 본편에 없는 그림을 써서, 본편 35분 렌더가 끝난 뒤 short_plan 이
+    StopIteration 으로 멈췄다(대본 검사는 통과) — 그 편은 통째로 안 올라갔다. 이제 미리 같이 그린다.
+    """
+    scene = {x["img"] for x in shots if x.get("img")}
+    lines = list((s.get("short") or {}).get("lines") or []) + [ln for ex in (extras or []) for ln in ex.get("lines") or []]
+    return list(dict.fromkeys(ln["img"] for ln in lines if ln.get("img") and ln["img"] not in scene))
+
+
+def make_images(s: dict, shots: list[dict], wd: str, mock: bool = False, extra_prompts: list[str] | None = None) -> dict:
     os.makedirs(wd, exist_ok=True)
-    prompts = list(dict.fromkeys(x["img"] for x in shots if x["kind"] == "img"))
+    prompts = list(dict.fromkeys([x["img"] for x in shots if x["kind"] == "img"] + list(extra_prompts or [])))
     prompts.append(s["thumb"]["img"])
     # 장면별 look(현대 이야기 속 회상 장면 등) — 없으면 대본 look, 그것도 없으면 옛 조선 화풍(LOOK)
     scene_look = {x["img"]: x.get("look") for x in (s.get("scenes") or []) if x.get("img") and x.get("look")}
@@ -369,7 +380,7 @@ def make_images(s: dict, shots: list[dict], wd: str, mock: bool = False) -> dict
             nxt = next((y.get("prep") for y in shots[k + 1:] if y.get("prep")), None)
             x["prep"] = os.path.join(wd, f"card_{k:02d}.jpg")
             card_image(x, nxt, x["prep"])
-    return {"thumb_raw": raw[s["thumb"]["img"]], "images": len(prompts)}
+    return {"thumb_raw": raw[s["thumb"]["img"]], "images": len(prompts), "raw": raw}
 
 
 # ── 타임라인 ──────────────────────────────────────────
@@ -825,7 +836,8 @@ def short_hook(s: dict) -> str:
     return (s["short"].get("hook") or s["thumb"]["text"]).upper()
 
 
-def short_plan(s: dict, shots: list[dict], voices: dict, wd: str, thumb_raw: str | None = None) -> dict:
+def short_plan(s: dict, shots: list[dict], voices: dict, wd: str, thumb_raw: str | None = None,
+               raw_map: dict | None = None) -> dict:
     """첫 줄 그림은 썸네일 그림(이 편에서 가장 강한 그림)으로 바꾼다.
 
     1화 쇼츠(2026-09-30): 첫 화면이 산길에 선 평범한 소녀 + 'In Korea,' → 계속 시청함 11.9%.
@@ -841,7 +853,16 @@ def short_plan(s: dict, shots: list[dict], voices: dict, wd: str, thumb_raw: str
         elif ln.get("gumi"):
             raw = gumi_asset(ln["gumi"], s)
         else:
-            raw = next(x["raw"] for x in shots if x.get("img") == ln["img"])
+            # 본편 그림 → 쇼츠 전용으로 미리 그린 그림(raw_map) → 그래도 없으면 썸네일·첫 그림.
+            #   ★여기서 멈추면 35분 렌더한 본편까지 안 올라간다(2026-10-05 4화) — 그림 하나로 예외 내지 않는다.
+            want = ln.get("img")
+            raw = (next((x["raw"] for x in shots if x.get("img") == want and x.get("raw")), None)
+                   or (raw_map or {}).get(want))
+            if raw is None:
+                raw = thumb_raw or next((x["raw"] for x in shots if x.get("raw")), None)
+                print(f"   ⚠️ 쇼츠 그림을 못 찾아 대신 씀: {str(want)[:60]}", flush=True)
+            if raw is None:
+                raise RuntimeError(f"쇼츠 그림 없음: {str(want)[:60]}")
         v = voices[ln["say"]]
         d = wav_dur(v)
         rows.append({"say": ln["say"], "raw": raw, "wav": v, "start": round(t, 3), "vdur": d,
@@ -962,9 +983,10 @@ class ShortPainter:
         return fr
 
 
-def render_short(s: dict, shots: list[dict], voices: dict, wd: str, out: str, thumb_raw: str | None = None) -> dict:
+def render_short(s: dict, shots: list[dict], voices: dict, wd: str, out: str, thumb_raw: str | None = None,
+                 raw_map: dict | None = None) -> dict:
     import numpy as np
-    SP = short_plan(s, shots, voices, wd, thumb_raw)
+    SP = short_plan(s, shots, voices, wd, thumb_raw, raw_map)
     if SP["total"] > SHORT_MAX:
         raise RuntimeError(f"쇼츠 {SP['total']}초 > {SHORT_MAX}")
     pa = ShortPainter(SP, s)
@@ -1039,7 +1061,8 @@ def render(path: str, out_dir: str, work: str, mock: bool = False, skip_short: b
     voices = synth(texts, os.path.join(wd, "tts"), mock)
     total = timeline(shots, voices)
     print(f"   ⏱️ 본편 {total / 60:.1f}분 · 장면 {len(shots)}", flush=True)
-    im = make_images(s, shots, os.path.join(wd, "img"), mock)
+    im = make_images(s, shots, os.path.join(wd, "img"), mock,
+                     extra_prompts=[] if skip_short else short_only_prompts(s, shots, extras))
     P = {"shots": shots, "total": total}
     base = os.path.join(out_dir, stem)
     contact_sheet(P, base + "_sheet.jpg")
@@ -1055,12 +1078,12 @@ def render(path: str, out_dir: str, work: str, mock: bool = False, skip_short: b
            "sheet": base + "_sheet.jpg", "minutes": round(total / 60, 2), "cues": n_cues,
            "images": im["images"], "mock": mock, "starts": [x["start"] for x in shots], **md}
     if not skip_short:
-        res["short"].update(render_short(s, shots, voices, wd, base + "_short.mp4", im["thumb_raw"]))
+        res["short"].update(render_short(s, shots, voices, wd, base + "_short.mp4", im["thumb_raw"], im["raw"]))
         # 추가 쇼츠(2026-10-01) — 첫 줄은 썸네일이 아니라 그 쇼츠가 고른 장면 그림(첫 프레임이 서로 다르게)
         for k, ex in enumerate(extras, start=2):
             wdk = os.path.join(wd, f"short{k}")
             os.makedirs(wdk, exist_ok=True)
-            r = render_short(dict(s, short=ex), shots, voices, wdk, base + f"_short{k}.mp4", None)
+            r = render_short(dict(s, short=ex), shots, voices, wdk, base + f"_short{k}.mp4", None, im["raw"])
             res["shorts_extra"][k - 2].update(r)
     with open(base + "_meta.json", "w", encoding="utf-8") as f:
         json.dump(res, f, ensure_ascii=False, indent=1)
