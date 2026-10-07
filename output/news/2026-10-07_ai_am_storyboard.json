@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-07", "topic": "ai", "slot": "am", "privacy": "public",
+  "format": "myth",
+  "angle": "규칙·정책",
+  "topic_keyword": "텍스트 워터마크",
+  "headline": "오픈AI, EU에서 챗GPT 글에 AI 표시 워터마크 도입",
+  "hook_title": "챗GPT 글에 숨은 표시 생긴다",
+  "thumbnail_hook": "A close-up of a hand holding a pen over a handwritten letter on a wooden desk, faint glowing dotted pattern hidden within the paper fibers, soft warm lamp light, no text, no faces",
+  "thumbnail_text": "AI 글에 숨은 표시",
+  "glossary": [],
+  "sources": [
+    {"outlet": "동아일보", "title": "“AI가 쓴 글입니다” 챗GPT - 코덱스에 워터마크 도입",
+     "url": "https://www.donga.com/news/Economy/article/all/20261006/134796382/2",
+     "published_at": "2026-10-07T00:30:00+09:00",
+     "confirmed": false,
+     "facts": [
+       "오픈AI가 유럽연합(EU) 지역에서 챗GPT와 코덱스가 쓴 글에 인공지능(AI)이 만든 글임을 알아볼 수 있는 ‘텍스트 워터마크’를 도입한다.",
+       "오픈AI의 자체 실험에 따르면 AI로 쓴 약 1600자 분량의 영어 글의 단어 10%를 비슷한 의미의 다른 단어로 바꾸자, 전용 프로그램이 해당 워터마크를 찾아낸 비율이 92%에서 66%로 떨어졌다.",
+       "단어 25%를 바꿨을 때는 17%까지 낮아졌다."
+     ]}
+  ],
+  "scenes": [
+    {"type": "hook", "pill": "발표", "lines": ["AI가 쓴 글", "숨은 표시"], "highlight": "표시",
+     "narration": "AI가 쓴 글에는 티가 안 난다고 생각하셨죠? 이제 보이지 않는 표시가 들어갑니다."},
+    {"type": "statement", "text": "EU에서 먼저 시작합니다", "highlight": "EU",
+     "narration": "오픈AI가 유럽연합 지역의 챗GPT 글부터 표시를 넣기로 했다고 보도됐습니다."},
+    {"type": "stat", "label": "단어 10% 바꿨을 때 찾아낸 비율", "from": 100, "to": 66, "prefix": "", "suffix": "%",
+     "bar": true, "sub": "원래는 <b>92%</b>",
+     "narration": "다만 사람이 글을 조금 고치면 표시를 찾는 비율이 구십이 퍼센트에서 육십육 퍼센트로 떨어졌다고 알려졌습니다."},
+    {"type": "gauge", "label": "단어 25% 바꿨을 때", "from": 92, "to": 17, "unit": "%", "sub": "많이 고칠수록 약해져요",
+     "narration": "단어의 사 분의 일을 바꾸면 십칠 퍼센트까지 낮아졌다고 전해졌습니다."},
+    {"type": "statement", "text": "표시가 없어도 직접 확인", "highlight": "직접",
+     "narration": "표시가 없다고 사람이 쓴 글은 아니니, 중요한 글은 한 번 더 확인해 보세요."}
+  ],
+  "platforms": {
+    "youtube": {"title": "챗GPT 글에 숨은 표시 생긴다 #shorts", "description": "오픈AI가 EU 지역 챗GPT 글에 AI가 썼다는 숨은 표시를 넣는다고 보도됐어요. 다만 글을 고치면 표시가 약해진다고 해요.\n\n#AI #AI소식 #shorts"},
+    "instagram": {"caption": "챗GPT 글에 숨은 표시 생긴다\n\n오픈AI가 유럽연합 지역에서 챗GPT 글에 AI가 썼다는 숨은 표시를 넣는다고 보도됐어요.\n다만 사람이 글을 고치면 표시를 찾는 비율이 떨어진대요.\n매일 오전·저녁 AI 소식은 유튜브 '왕별이'에서 쉽게 풀어 드려요.\n출처 동아일보\n\n#AI #챗GPT #AI소식"},
+    "threads": {"text": "챗GPT 글에 사람 눈엔 안 보이는 표시가 들어간대요. 유럽부터 시작이고, 글을 고치면 표시가 약해진다고 보도됐어요. 매일 AI 소식은 유튜브 왕별이에서. #AI소식"}
+  },
+  "notes": "AI 소식 오전 편 · myth · 장면 5개"
+}
