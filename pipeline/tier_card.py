@@ -42,12 +42,13 @@ AB_END = dt.date(2026, 10, 22)        # 2주 — 끝나면 기존 표로 돌아�
 ACCENT = "#C9A227"
 BRAND = "왕별이 · 오늘의 일진 등급표"
 
-# 등급 — color 는 화면 칸 색(어두운 글자가 올라간다)
+# 등급 — color 는 화면 칸 색(어두운 글자가 올라간다). id 는 코드 안 이름일 뿐, 화면·목소리·제목엔 label·stars 를 쓴다
+# (2026-10-07 사용자: 왕별이는 어르신 채널 — 'S급·C급'·'에스급' 같은 게임 말투는 위화감이 있다).
 TIERS = [
-    {"id": "S", "label": "대길", "color": "#FF6B6B", "basis": "오늘 일진과 합(육합·삼합)"},
-    {"id": "A", "label": "길", "color": "#FFA94D", "basis": "같은 띠 · 나를 돕는 기운"},
-    {"id": "B", "label": "보통", "color": "#FFD43B", "basis": "무난한 기운 · 가벼운 엇갈림(해·파)"},
-    {"id": "C", "label": "조심", "color": "#74C0FC", "basis": "충·원진·형"},
+    {"id": "S", "label": "대길", "stars": "★★★★", "color": "#FF6B6B", "basis": "오늘 일진과 합(육합·삼합)"},
+    {"id": "A", "label": "길", "stars": "★★★", "color": "#FFA94D", "basis": "같은 띠 · 나를 돕는 기운"},
+    {"id": "B", "label": "보통", "stars": "★★", "color": "#FFD43B", "basis": "무난한 기운 · 가벼운 엇갈림(해·파)"},
+    {"id": "C", "label": "조심", "stars": "★", "color": "#74C0FC", "basis": "충·원진·형"},
 ]
 TIER_IDS = [t["id"] for t in TIERS]
 # 배경 키비주얼 — 10/7 견본에서 '매듭 장식·축제' 를 넣었더니 중국 설날 그림(快乐 글자)이 나왔다. 한옥 방·감으로.
@@ -82,18 +83,18 @@ def build_tiers(d: dt.date) -> list[dict]:
 
 
 def title(d: dt.date) -> str:
-    return f"오늘 띠별 운세 등급표 S급~C급 | {d.month}월 {d.day}일 {ganzhi(d)['name']}일 · 45~96년생 전부"
+    return f"오늘 띠별 운세 등급표 대길~조심 | {d.month}월 {d.day}일 {ganzhi(d)['name']}일 · 45~96년생 전부"
 
 
 def narration(d: dt.date) -> str:
     g, tiers = ganzhi(d), build_tiers(d)
     s, c = tiers[0]["items"], tiers[3]["items"]
-    # ★화면은 S·C 글자, 목소리는 '에스급'·'씨급' — 합성 음성이 영문 한 글자를 엉뚱하게 읽지 않게
+    # ★우리말 등급(대길·조심) — 영문 등급은 어르신께 위화감(10/7). 조심 띠는 꾸짖지 않고 조언으로.
     # ★짧게(9초 안팎) — 표는 짧아야 다시 돈다(기존 표 8~10초). 날짜는 화면 위 알약에 있다.
-    say = f"{g['name']}일 띠별 운세 등급표예요. 에스급은 {', '.join(r['animal'] for r in s)}띠. "
+    say = f"{g['name']}일 띠별 운세 등급표예요. 대길은 {', '.join(r['animal'] for r in s)}띠. "
     if c:
-        say += f"씨급은 {', '.join(r['animal'] for r in c)}띠. "
-    return say + "내 띠는 몇 급인가요?"
+        say += f"{', '.join(r['animal'] for r in c)}띠는 오늘 한 박자 쉬어 가세요. "
+    return say + "내 띠도 찾아보세요."
 
 
 def description(d: dt.date) -> str:
@@ -102,13 +103,13 @@ def description(d: dt.date) -> str:
     lines = [f"오늘 띠별 운세 등급표 — {d.month}월 {d.day}일은 {g['name']}일({g['hanja']}日), "
              f"{EL_WORD[g['el']]} 기운의 {g['animal']}날이에요.", ""]
     for t in tiers:
-        lines.append(f"[{t['id']}급 {t['label']}] {t['basis']}")
+        lines.append(f"[{t['label']} {t['stars']}] {t['basis']}")
         lines += [f"· {r['animal']}띠({'·'.join(f'{y % 100:02d}' for y in r['years'])}년생) — {reason(r, g)}."
                   for r in t["items"]] or ["· 오늘은 없어요."]
         lines.append("")
-    lines += [f"등급은 이렇게 정했어요: 오늘 일진의 띠({g['animal']})와 내 띠가 합(육합·삼합)이면 S, "
-              "충·원진·형이면 C, 그 사이는 오늘 기운과 내 띠 오행의 관계로 A·B를 나눴어요.",
-              "내 띠는 몇 급인가요? 댓글로 남겨 주세요 🙏", "",
+    lines += [f"등급은 이렇게 정했어요: 오늘 일진의 띠({g['animal']})와 내 띠가 합(육합·삼합)이면 대길, "
+              "충·원진·형이면 조심, 그 사이는 오늘 기운과 내 띠 오행의 관계로 길·보통을 나눴어요.",
+              "내 띠는 어디에 있나요? 댓글로 남겨 주세요 🙏", "",
               "※ 전통 명리의 일진 풀이를 재미로 정리한 운세입니다.", "",
               f"#운세 #띠별운세 #오늘의일진 #{g['name']}일 #운세등급표 #shorts"]
     return "\n".join(lines)
@@ -119,7 +120,7 @@ def storyboard(d: dt.date) -> dict:
     tiers = build_tiers(d)
     pill = f"{d.month}월 {d.day}일 {WEEKDAY[d.weekday()]}요일 · {g['name']}일"
     t = title(d)
-    scene_tiers = [{"id": x["id"], "label": x["label"], "color": x["color"],
+    scene_tiers = [{"id": x["id"], "label": x["label"], "big": x["label"], "small": x["stars"], "color": x["color"],
                     "items": [{k: r[k] for k in ("animal", "years", "line")} for r in x["items"]]} for x in tiers]
     return {
         "date": d.isoformat(), "topic": TOPIC, "ganzhi": g["name"], "privacy": "public",
@@ -127,7 +128,7 @@ def storyboard(d: dt.date) -> dict:
         "hook_title": "오늘 띠별 운세 등급표", "headline": t, "thumbnail_hook": HOOK + HOOK_TAIL,
         "scenes": [
             {"type": "tier", "pill": pill, "title": "오늘 띠별 운세 등급표", "tiers": scene_tiers,
-             "foot": f"S 합 · C 충·원진·형 — {g['name']}일 일진 풀이, 재미로 보세요",
+             "foot": f"대길 = 합 · 조심 = 충·원진·형 — {g['name']}일 일진 풀이, 재미로 보세요",
              "brand": BRAND, "narration": narration(d)},
         ],
         "platforms": {"youtube": {"title": f"{t} #shorts", "description": description(d)}},
@@ -142,7 +143,8 @@ def use_ab(sb: dict) -> bool:
     if mode in ("0", "false", "off"):
         return False
     t = str(sb.get("topic") or "").lower()
-    if not t.startswith("fortune") or t.startswith(("fortune_theme", "fortune_name", "fortune_pulli", "fortune_tier", "fortune_gunghap")):
+    if not t.startswith("fortune") or t.startswith(("fortune_theme", "fortune_name", "fortune_pulli", "fortune_tier", "fortune_gunghap",
+                                                    "fortune_newyear")):
         return False
     if scope_of(sb) != "오늘":
         return False

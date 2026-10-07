@@ -17,6 +17,8 @@
    "criterion": "(내가 정함) 등급표 첫 24시간 중앙값이 같은 기간 1~12위 매일 운세 표 이상이면 06:13 을 등급표로 바꾸고 다른 표 자리로 넓힌다 · 70~100%면 손질 후 한 번 더 · 70% 미만이면 접는다", "formats": ["tier", "daily"], "owner": "pulse", "status": "scheduled"},
   {"id": "gunghap-series", "ch": "wb", "title": "띠 궁합표 6편 시리즈(부부·친구·재물·귀인·사돈·손주, 화·금 18:13, gunghap_card)", "start": "2026-10-09", "judge": "2026-10-30",
    "criterion": "(내가 정함) 6편 첫 24시간 중앙값이 같은 기간 다른 표(이름·태어난 달·해 끝자리·띠 테마·성씨) 중앙값의 70% 이상이면 새 묶음을 채워 계속 · 50% 미만이면 접는다", "formats": ["gunghap", "name", "month", "year", "theme", "surname"], "owner": "pulse", "status": "scheduled"},
+  {"id": "newyear-probe", "ch": "wb", "title": "2027 정미년 신년운세 표 4편(총운·재물운 등급표·좋은 달·해 끝자리, 월·목 08:13, newyear_card)", "start": "2026-10-12", "judge": "2026-10-26",
+   "criterion": "(내가 정함) 4편 첫 24시간 중앙값이 같은 기간 다른 표(이름·태어난 달·해 끝자리·띠 테마·성씨) 중앙값의 100% 이상이면 12~1월 본편성(띠별 단독 12편·롱폼)을 앞당겨 만든다 · 70~100%면 잘 된 편의 꼴로만 채운다 · 70% 미만이면 11/20 원래 계획대로", "formats": ["newyear", "name", "month", "year", "theme", "surname"], "owner": "pulse", "status": "scheduled"},
   {"id": "threads-ab", "ch": "wb", "title": "쓰레드: 카드 묶음 그대로 vs 짧은 1인칭 글 + 이미지 한 장(A/B 4편씩)", "start": "2026-10-07", "judge": "2026-10-21",
    "criterion": "(내가 정함) 글 쪽 조회 중앙값이 카드 쪽의 3배 이상이면 글을 기본으로 · 답글 수도 비교 — 숫자는 쓰레드 인사이트(크롬)", "formats": [], "owner": "local", "status": "running"},
   {"id": "insta-reels", "ch": "wb", "title": "인스타 운영 기록 릴스(첫 1초 실측 숫자 강제 · 10/7~)", "start": "2026-10-07", "judge": "2026-11-14",

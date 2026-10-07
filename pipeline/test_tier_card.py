@@ -77,18 +77,23 @@ ck("토픽 fortune_tier · 장면 = tier 하나 · 9초 이상 머문다", sb["t
 ck("등급 칸: S·A·B·C 순서 · 색 · 띠마다 이름·출생연도·한 줄", [t["id"] for t in sc["tiers"]] == ["S", "A", "B", "C"]
    and all(t["color"].startswith("#") for t in sc["tiers"])
    and set(sc["tiers"][0]["items"][0]) == {"animal", "years", "line"})
-ck("내레이션: 영문 등급은 소리 나는 대로(에스급·씨급) · 일진 이름", "에스급" in sc["narration"] and "씨급" in sc["narration"]
-   and "을묘일" in sc["narration"] and not re.search(r"[SABC]급", sc["narration"]))
+ck("내레이션: 우리말 등급(대길) · 조심 띠는 조언으로 · 일진 이름 · 영문 등급 없음(어르신 눈높이 10/7)",
+   "대길은" in sc["narration"] and "한 박자 쉬어 가세요" in sc["narration"]
+   and "을묘일" in sc["narration"] and not re.search(r"[SABC]급|에스급|씨급", sc["narration"]), sc["narration"])
 desc = T.description(d8)
 ck("설명란: 12띠 등급·출생연도·이유 전부 · 정한 방법 · 재미 고지", all(f"· {a}띠(" in desc for a in FC.ANIMALS)
-   and "등급은 이렇게 정했어요" in desc and "재미로" in desc and all(f"[{x}급" in desc for x in "SABC"))
-ck("제목: 등급표 · 일진 이름 · 45~96년생", T.title(d8) == "오늘 띠별 운세 등급표 S급~C급 | 10월 8일 을묘일 · 45~96년생 전부")
+   and "등급은 이렇게 정했어요" in desc and "재미로" in desc and all(f"[{x['label']} {x['stars']}]" in desc for x in T.TIERS)
+   and not re.search(r"[SABC]급", desc))
+ck("제목: 등급표 · 대길~조심 · 일진 이름 · 45~96년생", T.title(d8) == "오늘 띠별 운세 등급표 대길~조심 | 10월 8일 을묘일 · 45~96년생 전부")
 ck("배경 그림: 글자·간판 금지 꼬리 · 중국 설 장식 없음(10/7 견본 快乐 글자)",
    sb["thumbnail_hook"].endswith(P.HOOK_TAIL) and "knot" not in sb["thumbnail_hook"] and "festive" not in sb["thumbnail_hook"])
 
 print("── 화면(motion_short) ──")
 html = M.scene_html(0, dict(sc), "#C9A227")
 ck("띠 칸 12개 · 등급 칸 4개 · 아래 한 줄", html.count('class="tchip') == 12 and html.count('class="tlab"') == 4 and "tfoot" in html)
+ck("등급 칸 글자 = '대길'·'★★★★' (영문 S·A·B·C 없음) · 네 칸 큰 글자 같은 크기",
+   ">대길<" in html and ">★★★★<" in html and ">조심<" in html and not re.search(r'class="L"[^>]*>[SABC]<', html)
+   and len(set(re.findall(r'class="L" style="font-size:(\d+)px"', html))) == 1)
 xs = [float(x) + float(w) for x, w in re.findall(r'class="tchip[^"]*"[^>]*left:([\d.]+)px;top:[\d.]+px;width:([\d.]+)px', html)]
 ck("오른쪽 쇼츠 버튼 열(x 960~)을 비운다", xs and max(xs) <= 961, max(xs) if xs else None)
 ck("S 칸은 등급 색 테두리", html.count('class="tchip top"') == 3)
