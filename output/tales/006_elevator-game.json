@@ -1,0 +1,452 @@
+{
+ "id": 6,
+ "slug": "elevator-game",
+ "look": "modern",
+ "title": "The Elevator Game: The Korean Ritual That Opens Another World",
+ "thumb": {
+  "text": "DON'T LOOK AT HER",
+  "img": "inside a dim elevator cabin at night, a pale woman in a long white coat with long black hair covering her face standing directly behind a frightened young man's shoulder, her face hidden but leaning close, flickering fluorescent light, cold green tint"
+ },
+ "hook": "Ride an elevator alone and press 4, 2, 6, 2, 10, then 5. If a woman gets on at the fifth floor, don't look at her.",
+ "tags": [
+  "elevator game",
+  "korean urban legend",
+  "creepypasta",
+  "elevator ritual",
+  "korean horror",
+  "korean ghost story",
+  "another world",
+  "internet ritual",
+  "korean folklore",
+  "scary stories",
+  "gumiho",
+  "nine tails tales",
+  "urban legend"
+ ],
+ "sources": [
+  "Wikipedia — Elevator game",
+  "Creepypasta wiki / Know Your Meme — Elevator Game (origin claims)"
+ ],
+ "scenes": [
+  {
+   "say": "People swear it goes like this. You are alone in an elevator, late at night. The doors open on the fifth floor. A woman steps in. Whatever you do, don't look at her.",
+   "img": "elevator doors sliding open onto a dark apartment corridor on the fifth floor at night, a pale woman in a long white coat with long black hair covering her face standing perfectly still just outside, flickering fluorescent light, cold green shadows",
+   "fx": "dust",
+   "move": "in",
+   "key": "woman"
+  },
+  {
+   "say": "Because the button you pressed was the first floor. And the elevator is going up.",
+   "img": "close-up of a steel elevator button panel at night, only the lowest button glowing, the floor display arrow pointing upward, a dim reflection of a long-haired figure in the brushed metal",
+   "fx": "none",
+   "move": "up",
+   "hold": 0.9,
+   "key": "up"
+  },
+  {
+   "say": "I've lived for a thousand years, dear human, and I've climbed many strange mountains. But I will not be riding that elevator.",
+   "gumi": "front",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "Hello. My name is Gumi. I'm a gumiho, a nine-tailed fox, and I collect the stories humans whisper. Once they whispered them by the fire. Now they whisper them into glowing screens at two in the morning.",
+   "gumi": "bead",
+   "fx": "embers",
+   "move": "left",
+   "note": "GUMI · gumiho · age 1,000+"
+  },
+  {
+   "say": "And some of the strangest new stories were born in exactly the kind of place most people in a Korean city call home. Tall towers of concrete and glass, where thousands of neighbors share the same few elevators.",
+   "img": "a vast Korean apartment complex at night, rows of identical tall white towers with scattered lit windows, empty parking lot, light rain and orange street lamps",
+   "fx": "rain",
+   "move": "right"
+  },
+  {
+   "say": "This is Tale Number Six. Tonight, we're taking the elevator. Well, you are. I'll take the stairs.",
+   "gumi": "wink",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "card": "TALE 006",
+   "sub": "The Rules"
+  },
+  {
+   "say": "The Elevator Game isn't really a story. It's a list of rules. That's what makes it frightening. Someone, somewhere, wrote down the steps, the way you would write down a recipe.",
+   "img": "a phone screen glowing in a dark bedroom at night, lighting the face of a young man lying in bed reading, blue light, posters and shadows on the wall",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "The rules are said to go like this. You need a building with at least ten floors. And you need to be alone. If anyone else gets in, the ritual is broken, and you have to start over.",
+   "img": "a tall modern Korean apartment building seen from the ground at night, a single lit elevator shaft running up its side, clouds moving fast over the roof",
+   "fx": "fog",
+   "move": "up"
+  },
+  {
+   "say": "Then you press the floors in a fixed order. Four. Then two. Then six. Then two again. Then ten. You never step out. You simply ride, up and down, through a sleeping building.",
+   "img": "close-up of a finger pressing a steel elevator button, other buttons glowing in the dim cabin, cold fluorescent light, tense mood",
+   "fx": "none",
+   "move": "in",
+   "note": "4 → 2 → 6 → 2 → 10 → 5"
+  },
+  {
+   "say": "At the tenth floor, you press five. And this, they say, is where a woman may get on.",
+   "img": "the inside of a narrow elevator cabin at night seen from the corner, a young man in a grey hoodie with a black backpack standing alone facing the doors, the floor display glowing, flickering ceiling light",
+   "fx": "dust",
+   "move": "right",
+   "key": "alone"
+  },
+  {
+   "say": "Rule one. Don't look at her. Rule two. Don't speak to her. Not a word, not a hello, not a sorry. The rules never say what happens if you do. They don't need to.",
+   "img": "a pale woman in a long white coat with long black hair covering her face standing in the corner of an elevator cabin with her back to the camera, the reflection in the steel wall blurred and wrong, cold light",
+   "fx": "none",
+   "move": "in"
+  },
+  {
+   "say": "Then you press the first floor. If the elevator goes down, nothing happened. You can go home. But if it goes up, to the tenth floor, the story says you've arrived somewhere else.",
+   "img": "an elevator floor display glowing red in darkness, the number climbing, the reflection of a frightened eye in the metal frame",
+   "fx": "none",
+   "move": "up"
+  },
+  {
+   "say": "Notice something, dear human? No one in the rules is a hero. No one wins anything. There's only a door, and a woman you mustn't look at. I like that. It's very elegant.",
+   "gumi": "bead",
+   "fx": "embers",
+   "move": "left"
+  },
+  {
+   "card": "I",
+   "sub": "The Fifth Floor"
+  },
+  {
+   "say": "Here is how the story is usually told online. A young man in a grey hoodie hears about the game from a friend. He laughs. Then, at one in the morning, he can't sleep, and the elevator is right outside his door.",
+   "img": "a young man in a grey hoodie with a black backpack standing in a dim apartment corridor at one in the morning, staring at closed steel elevator doors, a single buzzing ceiling light, the rest of the hallway in darkness",
+   "fx": "dust",
+   "move": "in",
+   "key": "boy"
+  },
+  {
+   "say": "He presses the button. The doors open on an empty cabin. It smells of cold metal and someone's old cigarette. He steps in, and the doors close behind him.",
+   "img": "a young man in a grey hoodie with a black backpack stepping into an empty elevator cabin, the doors closing behind him, mirrored walls reflecting him again and again into the distance",
+   "fx": "dust",
+   "move": "out"
+  },
+  {
+   "say": "Four. The doors open on a dark hallway. He doesn't step out. Two. A bicycle leaning on a wall, and a pair of children's shoes by a door. Six. Nothing at all.",
+   "img": "a montage-like view through open elevator doors onto a dark apartment hallway, a child's pair of small shoes neatly placed outside a closed door, a bicycle, dim green emergency light",
+   "fx": "dust",
+   "move": "left"
+  },
+  {
+   "say": "Two again. Ten. The building is so quiet he can hear the cables humming somewhere above him, like something breathing in the walls.",
+   "img": "a dark elevator shaft seen from inside, steel cables disappearing up into blackness, faint light from the cabin roof below, ominous",
+   "fx": "fog",
+   "move": "up"
+  },
+  {
+   "say": "He presses five. The cabin starts down. He watches the numbers fall. Nine. Eight. Seven. His heart is louder than the machine.",
+   "img": "close-up of the face of a young man in a grey hoodie with a black backpack lit from above by cold fluorescent light, sweat on his forehead, eyes fixed on the floor display",
+   "fx": "none",
+   "move": "in"
+  },
+  {
+   "say": "The doors open on the fifth floor. The hallway beyond is dark. And there is a woman standing in it, as if she has been waiting there for a very long time.",
+   "img": "elevator doors open onto a pitch dark fifth floor corridor, a pale woman in a long white coat with long black hair covering her face standing in the middle of the hallway facing the elevator, only her white coat visible in the gloom",
+   "fx": "fog",
+   "move": "out"
+  },
+  {
+   "say": "She steps in. She doesn't press a button. She stands in the corner behind him, close enough that he can feel the cold coming off her, like the air from an open freezer.",
+   "img": "inside an elevator cabin, a young man in a grey hoodie with a black backpack standing rigid facing the doors, a pale woman in a long white coat with long black hair covering her face standing very close behind him in the corner, cold mist curling at the floor",
+   "fx": "fog",
+   "move": "in",
+   "key": "behind"
+  },
+  {
+   "say": "Don't look. Don't speak. He fixes his eyes on the buttons. In the steel of the doors there is a blurred shape that should be her face. He doesn't let himself look at it.",
+   "img": "extreme close-up of brushed steel elevator doors reflecting a blurred pale shape with long black hair just behind a young man's shoulder",
+   "fx": "none",
+   "move": "out"
+  },
+  {
+   "say": "His finger is shaking. He presses one.",
+   "img": "close-up of a trembling finger hovering over the lowest glowing button of an elevator panel, cold blue light",
+   "fx": "none",
+   "move": "in",
+   "hold": 0.6
+  },
+  {
+   "say": "And the elevator goes up.",
+   "img": "an elevator floor display in total darkness, the upward arrow lit, glowing numbers climbing",
+   "fx": "none",
+   "move": "in",
+   "hold": 1.3
+  },
+  {
+   "say": "Six. Seven. Eight. Behind him, the woman makes a sound. In some versions it's a whisper. In others, it's a question. And in others, she says nothing at all. She only waits for him to turn around.",
+   "img": "low angle inside the elevator, a pale woman in a long white coat with long black hair covering her face in the corner, her hair hanging over her face, the edge of a faint smile in the shadows, flickering light",
+   "fx": "dust",
+   "move": "out"
+  },
+  {
+   "say": "Ten. The doors open.",
+   "img": "elevator doors sliding open from inside, a young man in a grey hoodie with a black backpack seen from behind as a silhouette, facing a silent dark corridor",
+   "fx": "fog",
+   "move": "out"
+  },
+  {
+   "card": "II",
+   "sub": "The Other World"
+  },
+  {
+   "say": "It's his building. The same hallway. The same doors. The same bicycle by the wall. But the lights are off, all of them, all the way down.",
+   "img": "a long apartment corridor completely without power, every door shut, a bicycle against the wall, faint grey light from a window at the far end, eerie stillness",
+   "fx": "dust",
+   "move": "right"
+  },
+  {
+   "say": "He walks to the window. Outside, the city is dark. No cars. No lit windows in the towers across the street. Not a single sound.",
+   "img": "a young man in a grey hoodie with a black backpack seen from behind standing at a hallway window looking out at a whole Korean city completely dark under a heavy grey sky, no lights anywhere, silent towers",
+   "fx": "fog",
+   "move": "out",
+   "key": "city"
+  },
+  {
+   "say": "He knocks on his neighbor's door. No answer. He knocks on the next door, and the next. His knuckles echo down the corridor, and nothing in the whole building knocks back.",
+   "img": "a young man in a grey hoodie with a black backpack knocking on a closed apartment door in a dark corridor, rows of identical shut doors stretching away behind him, dead silence",
+   "fx": "none",
+   "move": "left"
+  },
+  {
+   "say": "That, the story says, is how you know. The world looks exactly like yours. But you are the only person in it.",
+   "img": "an empty wide Seoul street at dusk with no people and no cars, traffic lights dark, apartment towers silent, a plastic bag drifting in the wind",
+   "fx": "dust",
+   "move": "left"
+  },
+  {
+   "say": "In some versions, far away across the rooftops, there's one light still burning. A red cross, glowing in the distance. Nobody agrees on what it is. Nobody in the story ever walks toward it.",
+   "img": "a distant red cross glowing on a rooftop across a completely dark city at night, black towers in silhouette, low clouds",
+   "fx": "fog",
+   "move": "in",
+   "key": "cross"
+  },
+  {
+   "say": "I'll admit it. That red cross is my favorite detail. Not because it's explained. Because it isn't. Your mind fills it in, and your mind is far crueler than any storyteller.",
+   "gumi": "front",
+   "fx": "embers",
+   "move": "out"
+  },
+  {
+   "say": "And the woman? When he turns back to the elevator, she's gone. Or she's still there, standing in the dark cabin, holding the doors open for him.",
+   "img": "a dark elevator cabin glowing faintly at the end of a corridor, doors open, a pale woman in a long white coat with long black hair covering her face standing inside, waiting",
+   "fx": "none",
+   "move": "in"
+  },
+  {
+   "say": "Some say that if you ride the same floors again, four, two, six, two, ten, you can come home. Some say you can't. And some say you'll come home, but you'll never be quite sure the home you came back to is the right one.",
+   "img": "a young man in a grey hoodie with a black backpack standing alone inside an elevator, his reflection repeating endlessly in the mirrored walls, but one reflection is turned the wrong way",
+   "fx": "fog",
+   "move": "down"
+  },
+  {
+   "say": "That's where the rules always stop. Right at the door. Which leaves just one question. Who wrote them?",
+   "img": "a flickering laptop screen in a dark room showing a long forum thread, the glow lighting an empty chair, rain on the window",
+   "fx": "rain",
+   "move": "in"
+  },
+  {
+   "card": "III",
+   "sub": "Where It Came From"
+  },
+  {
+   "say": "The usual answer is Korea. The game is said to have started on Korean internet forums, then spread to English-language sites in the 2010s, where it was copied, translated and retold again and again.",
+   "img": "a Korean internet café late at night, rows of glowing monitors, a few students hunched in gaming chairs, blue light and haze",
+   "fx": "dust",
+   "move": "right"
+  },
+  {
+   "say": "In English, it became one of the best-known internet rituals of all. People retold it in forum threads, read it aloud in late-night videos, and argued in the comments about the exact order of the buttons.",
+   "img": "a dark bedroom lit only by a laptop playing a video, a teenager wrapped in a blanket watching with wide eyes, rain streaking the window",
+   "fx": "rain",
+   "move": "in"
+  },
+  {
+   "say": "But here is the honest part. Nobody has ever clearly traced the very first post. The Korean origin is what everyone repeats. It has never been proven.",
+   "img": "a stack of old printed forum pages scattered on a desk under a lamp, most of them blank or faded, mystery and dust",
+   "fx": "dust",
+   "move": "out"
+  },
+  {
+   "say": "Which is very Korean, if you ask me. Our best ghost stories never come with a name attached. Just a friend of a friend, and a building you could walk past tomorrow.",
+   "gumi": "wink",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "And Korea is the perfect stage for it. In big Korean cities, most people live in tall apartment blocks. Every day, people step into a small steel box with strangers and stare at the doors.",
+   "img": "a crowded Korean apartment elevator in the morning, office workers and students in coats standing silently facing the doors, phones in hand, soft daylight",
+   "fx": "dust",
+   "move": "left"
+  },
+  {
+   "say": "Then look at the first button in the sequence. Four. In Korean, the word for four sounds just like the word for death. Many Korean elevators don't even print a four. They print the letter F instead.",
+   "img": "close-up of an old Korean apartment elevator button panel, worn steel buttons, one button stands out from the others, warm dim light",
+   "fx": "none",
+   "move": "in",
+   "note": "四  sa  =  four   ·   死  sa  =  death"
+  },
+  {
+   "say": "If you watched my list of Korean superstitions, you already know how seriously some people take that number. The game begins with death. Of course it does.",
+   "img": "a hospital corridor at night with a row of numbered doors, one door missing its number plate, cold blue light",
+   "fx": "dust",
+   "move": "right"
+  },
+  {
+   "say": "But the oldest piece hiding inside the game is the rule about the woman. Don't look. Don't speak. That rule is far older than any elevator.",
+   "img": "a dark mountain road at night with a figure standing far off between the pine trees, mist, moonlight, foreboding",
+   "fx": "fog",
+   "move": "in"
+  },
+  {
+   "say": "Korean villages tell of a greedy rich man whose house was swallowed by a flood. Only his kind daughter-in-law was warned to flee, and told one thing. Whatever you hear behind you, don't look back.",
+   "img": "a young Joseon woman in a white hanbok running up a muddy mountain path in heavy rain carrying a baby on her back, a dark village and a rising flood behind her",
+   "fx": "rain",
+   "move": "up",
+   "look": "joseon"
+  },
+  {
+   "say": "She heard the roar of the water. She looked back. And in that version, she turned to stone on the hillside, where the village had been.",
+   "img": "a weathered stone statue of a woman carrying a child on her back standing on a misty hillside above a still pond, grey dawn light",
+   "fx": "fog",
+   "move": "out",
+   "look": "joseon",
+   "key": "stone"
+  },
+  {
+   "say": "Korean mountain stories say the same thing in different words. If a voice calls your name in the dark, don't answer. Turning around, and answering, are how the other world gets hold of you.",
+   "img": "a lone traveler with a lantern on a forest path at night, a pale shape among the trees behind him, mist and silence",
+   "fx": "fog",
+   "move": "left",
+   "look": "joseon"
+  },
+  {
+   "say": "So the Elevator Game is a brand new ghost wearing a very old coat. The mountain road became a steel box. The voice behind you became a woman on the fifth floor. But the rule never changed. Don't look back.",
+   "gumi": "bead",
+   "fx": "embers",
+   "move": "left"
+  },
+  {
+   "card": "IV",
+   "sub": "What's Real"
+  },
+  {
+   "say": "So what's real? The Elevator Game belongs to a whole family of internet rituals. Stories where the scary part is not a monster, but the instructions. Follow the steps exactly, and something might answer.",
+   "img": "a candle burning on a bathroom sink in front of a dark mirror, a phone lying beside it showing a long list of steps, shadows on tiled walls",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "Part of their power is that you could almost do them. That's why they spread. A ghost in a castle stays in the castle. A ritual in an elevator follows you home.",
+   "img": "a young man in a grey hoodie with a black backpack standing in a brightly lit modern apartment lobby in the daytime, glancing nervously at the elevator doors, ordinary residents walking past",
+   "fx": "dust",
+   "move": "right"
+  },
+  {
+   "say": "And the frightening moments have dull explanations. An elevator that goes up when you press one? Someone on a higher floor called it first, and the machine is simply answering them.",
+   "img": "a cutaway view of an apartment building at night showing an elevator cabin traveling up its shaft toward a lit upper floor, technical and calm",
+   "fx": "dust",
+   "move": "up"
+  },
+  {
+   "say": "Even the rules don't agree with each other. The floors change slightly from telling to telling, and so does what waits at the top. That's how you know a story has passed through a great many hands.",
+   "img": "many hands passing a single glowing smartphone from one to another in a dark room, each face lit faintly by the screen",
+   "fx": "dust",
+   "move": "right"
+  },
+  {
+   "say": "A neighbor stepping in on the fifth floor at night is just a neighbor going out for snacks. Probably. It's the rule not to look that makes her terrifying.",
+   "img": "an ordinary tired woman in a padded coat holding a convenience store bag waiting at an apartment elevator at night, warm everyday light",
+   "fx": "dust",
+   "move": "left"
+  },
+  {
+   "say": "Nobody has been taken to another world by an elevator. It's an internet legend, and it's told as one. People who try it usually just get some exercise, and a very confused neighbor.",
+   "img": "a sleepy security guard in a Korean apartment lobby watching a small monitor showing an elevator going up and down, tired and mildly confused, late night",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "And please, dear human, don't play it. Not because you'll vanish. Because a person riding to every floor at two in the morning is exactly what other people make ghost stories about.",
+   "gumi": "front",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "card": "TONIGHT'S ANSWER"
+  },
+  {
+   "say": "So do I believe in the other world? I'm a nine-tailed fox. I'm not allowed to be skeptical. But I do believe in the woman on the fifth floor.",
+   "gumi": "bead",
+   "fx": "embers",
+   "move": "left"
+  },
+  {
+   "say": "Every age invents one stranger you must never look at. Once she stood on a mountain road. Now she waits by an elevator. The rule that keeps you safe is always the same. Keep your eyes forward, and go home.",
+   "gumi": "front",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "Now your turn. If the doors opened on the fifth floor and she stepped in, could you keep from looking? Tell me in the comments. I read every single one.",
+   "gumi": "wink",
+   "fx": "embers",
+   "move": "out"
+  },
+  {
+   "say": "In my next tale, we cross the sea to Japan, to a black stone on a volcanic plain. In March 2022, people found it split in two. And the legend says a nine-tailed fox was sealed inside.",
+   "img": "a large black boulder bound with a thick straw rope lying split in two on a grey volcanic plain, sulfur mist drifting, eerie dawn light",
+   "fx": "fog",
+   "move": "in",
+   "look": "japan"
+  },
+  {
+   "say": "One of my Japanese cousins. A very famous one. Until then, take the stairs. And if a woman gets on at the fifth floor, keep your eyes on the doors.",
+   "gumi": "wink",
+   "fx": "embers",
+   "move": "in",
+   "hold": 1.5
+  }
+ ],
+ "short": {
+  "title": "Never Play the Elevator Game Alone. Here's Why #shorts #elevatorgame",
+  "hook": "DON'T LOOK AT HER",
+  "lines": [
+   {
+    "say": "There's a ritual people say started in Korea. Ride an elevator alone, at night, and press the floors in a certain order.",
+    "scene": "woman"
+   },
+   {
+    "say": "Four, two, six, two, ten. Then five.",
+    "scene": "alone"
+   },
+   {
+    "say": "On the fifth floor, a woman may step in. Don't look at her. Don't say a word.",
+    "scene": "behind"
+   },
+   {
+    "say": "Then press the first floor. If the elevator goes down, nothing happened.",
+    "scene": "up"
+   },
+   {
+    "say": "But if it goes up, the story says you arrive in a world where you are the only one left.",
+    "scene": "city"
+   },
+   {
+    "say": "So what's waiting up there? The full tale is on my channel. I'm Gumi, and I take the stairs.",
+    "gumi": "wink"
+   }
+  ]
+ }
+}
