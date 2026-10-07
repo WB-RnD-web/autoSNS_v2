@@ -328,7 +328,7 @@ def tier_layout(tiers):
 
 
 # ── 띠 궁합표(2026-10-07, gunghap_card.py) — 12줄 × (내 띠 | 좋은 짝 | 조심할 띠) ──────────
-# 줄마다 두 줄 글자(이름/출생연도 · 짝/근거). 오른쪽 끝(x 960~)과 아래 22%(y 1460~)는 비운다.
+# 줄마다 두 줄 글자(이름/출생연도 · 짝/근거). 줄 이름은 기본 '<띠>띠', label 이 있으면 그것(신년 '끝자리 2' 등), 머리글은 head. 오른쪽 끝(x 960~)과 아래 22%(y 1460~)는 비운다.
 GH_X0, GH_W, GH_TOP, GH_BOTTOM, GH_GAP = 60, 900, 352, 1430, 8
 GH_COLS = (0, 300, 630)          # 열 시작(줄 안 x) — 내 띠 · 좋은 짝 · 조심할 띠
 CSS_GUNGHAP = """
@@ -356,12 +356,14 @@ def gunghap_layout(rows):
     fa, fg, fb = min(44, rh * 0.48), min(40, rh * 0.44), min(36, rh * 0.40)
     fs = max(18, min(24, rh * 0.27))
     em = lambda t: sum(0.56 if c.isdigit() else 0.3 if c in "·., " else 1.0 for c in str(t)) or 1.0
+    # 출생연도 줄은 실제 글꼴이 더 넓다(10/7 끝자리 표: 여섯 해 '45·55·…·95년생'이 옆 칸에 붙었다) — 넉넉히 잰다
+    em_y = lambda t: sum(0.62 if c.isdigit() else 0.4 if c in "·., " else 1.0 for c in str(t)) or 1.0
     for r in rows:
-        fa = min(fa, widths[0] / em(r.get("animal", "") + "띠"))
+        fa = min(fa, widths[0] / em(r.get("label") or r.get("animal", "") + "띠"))
         fg = min(fg, widths[1] / em(r.get("good", "")))
         fb = min(fb, widths[2] / em(r.get("bad", "")))
         yrs = "·".join(f"{v % 100:02d}" for v in r.get("years", [])) + "년생"
-        fs = min(fs, widths[0] / em(yrs), widths[1] / em(r.get("good_line", "")), widths[2] / em(r.get("bad_line", "")))
+        fs = min(fs, (widths[0] - 16) / em_y(yrs), widths[1] / em(r.get("good_line", "")), widths[2] / em(r.get("bad_line", "")))
     return {"rh": rh, "fa": int(fa), "fg": int(fg), "fb": int(fb), "fs": int(fs)}
 
 
@@ -700,7 +702,7 @@ def scene_html(i, sc, acc):
         lay = gunghap_layout(rows)
         rh = lay["rh"]
         cols = sc.get("cols", ["좋은 짝", "조심할 띠"])
-        parts = [f'<div class="ghhead" style="left:{GH_X0 + 18}px;top:{GH_TOP - 42}px">내 띠</div>',
+        parts = [f'<div class="ghhead" style="left:{GH_X0 + 18}px;top:{GH_TOP - 42}px">{esc(sc.get("head", "내 띠"))}</div>',
                  f'<div class="ghhead" style="left:{GH_X0 + GH_COLS[1]}px;top:{GH_TOP - 42}px">{esc(cols[0])}</div>',
                  f'<div class="ghhead" style="left:{GH_X0 + GH_COLS[2]}px;top:{GH_TOP - 42}px">{esc(cols[1])}</div>']
         for k, r in enumerate(rows):
@@ -710,7 +712,7 @@ def scene_html(i, sc, acc):
             yrs = "·".join(f"{v % 100:02d}" for v in r.get("years", [])) + "년생"
             parts.append(
                 f'<div class="ghrow" id="{gid}-r{k}" style="left:{GH_X0}px;top:{y:.0f}px;width:{GH_W}px;height:{rh:.0f}px">'
-                f'<div class="a" style="left:{GH_COLS[0] + 18}px;top:{top1:.0f}px;font-size:{lay["fa"]}px">{esc(r.get("animal", ""))}띠</div>'
+                f'<div class="a" style="left:{GH_COLS[0] + 18}px;top:{top1:.0f}px;font-size:{lay["fa"]}px">{esc(r.get("label") or r.get("animal", "") + "띠")}</div>'
                 f'<div class="s" style="left:{GH_COLS[0] + 18}px;top:{top2:.0f}px;font-size:{lay["fs"]}px">{esc(yrs)}</div>'
                 f'<div class="g" style="left:{GH_COLS[1]}px;top:{top1:.0f}px;font-size:{lay["fg"]}px">{esc(r.get("good", ""))}</div>'
                 f'<div class="s" style="left:{GH_COLS[1]}px;top:{top2:.0f}px;font-size:{lay["fs"]}px">{esc(r.get("good_line", ""))}</div>'
@@ -726,12 +728,19 @@ def scene_html(i, sc, acc):
         ch, cw = lay["ch"], lay["cw"]
         x_chip = TIER_X0 + TIER_LABEL_W + TIER_GAP
         parts = []
+        # 색 칸 큰 글자 = big(없으면 id) · 작은 글자 = small(없으면 label). 2026-10-07 어르신 눈높이: 영문 S·A·B·C 대신
+        # '대길'·'★★★★'를 넣는다 — 큰 글자는 칸 너비에 맞춰 네 칸이 같은 크기로.
+        bigs = [tr.get("big") or tr.get("id", "") for tr in tiers]
+        smalls = [tr.get("small") or tr.get("label", "") for tr in tiers]
+        fit_L = min([(TIER_LABEL_W - 18) / _em(b) for b in bigs] or [104])
+        fit_K = min([(TIER_LABEL_W - 14) / _em(k) for k in smalls] or [40])
         for ti, (tr, (y, h, n)) in enumerate(zip(tiers, lay["rows"])):
             col = tr.get("color", acc)
-            fL = int(min(h * 0.55, ch * 0.62, 104))
+            fL = int(min(h * 0.55, ch * 0.62, 104, fit_L))
+            fK = int(min(max(24, fL * 0.36), fit_K))
             parts.append(f'<div class="tlab" id="{gid}-L{ti}" style="left:{TIER_X0}px;top:{y:.0f}px;width:{TIER_LABEL_W}px;'
-                         f'height:{h:.0f}px;background:{col}"><div class="L" style="font-size:{fL}px">{esc(tr.get("id", ""))}</div>'
-                         f'<div class="K" style="font-size:{int(max(24, fL * 0.36))}px">{esc(tr.get("label", ""))}</div></div>')
+                         f'height:{h:.0f}px;background:{col}"><div class="L" style="font-size:{fL}px">{esc(bigs[ti])}</div>'
+                         f'<div class="K" style="font-size:{fK}px">{esc(smalls[ti])}</div></div>')
             items = tr.get("items", [])
             if not items:
                 parts.append(f'<div class="tnone" style="left:{x_chip}px;top:{y:.0f}px;height:{h:.0f}px;font-size:{lay["fl"]}px">오늘은 없어요</div>')

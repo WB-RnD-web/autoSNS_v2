@@ -10,6 +10,7 @@
     {"key": "asmr", "label": "ASMR·수면(롱)", "dur": "long", "title_re": "(?i)ASMR|빗소리|수면|잠|rain|sleep|hours|waves"},
     {"key": "weekly", "label": "주간 운세(롱)", "dur": "long", "title_re": "이번 주|주간"},
     {"key": "saeyeon_long", "label": "사연(롱)", "dur": "long"},
+    {"key": "newyear", "label": "2027 신년운세 표", "title_re": "정미년"},
     {"key": "daily", "label": "매일 운세 표", "title_prefix": "오늘 띠별 운세 1위~12위"},
     {"key": "name", "label": "이름 표", "title_re": "이름 한자 풀이"},
     {"key": "month", "label": "태어난 달 표", "title_prefix": "태어난 달로 보는"},

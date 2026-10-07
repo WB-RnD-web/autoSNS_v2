@@ -31,6 +31,7 @@ import theme_card
 import pulli_card
 import tier_card
 import gunghap_card
+import newyear_card
 import name_card
 import news_card
 import ledger as ledgermod
@@ -114,6 +115,10 @@ TIER_PLAYLIST_DESC = ("오늘의 일진(60갑자)과 합이 되는 띠는 S급, 
 GUNGHAP_PLAYLIST = "띠 궁합표 | 내 띠의 찰떡 짝·조심할 띠"
 GUNGHAP_PLAYLIST_DESC = ("부부·친구·사돈·손주까지, 내 띠를 찾으면 잘 맞는 띠와 조심할 띠가 바로 보여요. "
                          "육합·삼합·충·원진 같은 전통 띠 궁합을 재미로 정리했어요. 45~96년생 전부.")
+# 2027 신년운세(2026-10-07, newyear_card.py) — 총운·재물운 등급표 · 좋은 달 · 해 끝자리 4편. ★제목 바꾸지 않는다(새 목록이 생긴다).
+NEWYEAR_PLAYLIST = "2027 정미년 신년운세 | 띠별·태어난 해별"
+NEWYEAR_PLAYLIST_DESC = ("2027년 정미년(丁未年), 내 띠와 태어난 해로 보는 신년운세예요. 총운·재물운 등급과 좋은 달·조심할 달까지 "
+                         "이유와 함께 정리했어요. 45~96년생 전부. 전통 명리 풀이를 재미로 정리한 운세예요.")
 AI_PLAYLIST = "AI 소식 | 매일 오전·저녁, 쉽게 듣는 AI 뉴스"
 AI_PLAYLIST_DESC = ("오늘 AI 세상에서 바뀐 것, 그리고 그게 내 일자리·돈·안전에 뭘 뜻하는지. "
                     "어려운 말은 쉽게 풀고, 출처는 설명란에 적어요.")
@@ -143,6 +148,8 @@ def playlist_for(topic: str) -> tuple[str, str] | None:
         return TIER_PLAYLIST, TIER_PLAYLIST_DESC
     if t == gunghap_card.TOPIC:
         return GUNGHAP_PLAYLIST, GUNGHAP_PLAYLIST_DESC
+    if t == newyear_card.TOPIC:
+        return NEWYEAR_PLAYLIST, NEWYEAR_PLAYLIST_DESC
     if t == name_card.TOPIC:
         return NAME_PLAYLIST, NAME_PLAYLIST_DESC
     if t.startswith(FORTUNE_TOPICS):
@@ -499,7 +506,7 @@ def process(sb_path, args, led):
     # ★카피 점검 — 렌더 전에 본다. 밋밋하면 경고만 뜨고 계속 간다.
     # 테마 표는 문구가 전부 코드(theme_card.THEMES)에서 나온다 — 뉴스 카피 규칙(hook 수치 등)과 맞지 않아 건너뛴다.
     if not (theme_card.is_theme(sb) or name_card.is_name(sb) or pulli_card.is_pulli(sb) or tier_card.is_tier(sb)
-            or gunghap_card.is_gunghap(sb)):
+            or gunghap_card.is_gunghap(sb) or newyear_card.is_newyear(sb)):
         news_copy_check.report(sb)
     try:
         spec = resolve_spec(sb_path, sb, args)
@@ -582,6 +589,13 @@ def process(sb_path, args, led):
         credit = meta["description"][len(build_meta(sb, False)["description"]):]
         meta["title"] = f"{pm['title']} #shorts"
         meta["description"] = pm["description"] + credit
+        meta["localizations"] = None
+    if newyear_card.is_newyear(sb):
+        # 2027 신년운세 — 제목·설명(12띠·끝자리 이유 전부)은 newyear_card 가 정한다(목소리 출처 줄은 유지). 번역은 넣지 않는다.
+        nm = newyear_card.meta(sb)
+        credit = meta["description"][len(build_meta(sb, False)["description"]):]
+        meta["title"] = f"{nm['title']} #shorts"
+        meta["description"] = nm["description"] + credit
         meta["localizations"] = None
     if gunghap_card.is_gunghap(sb):
         # 띠 궁합표 — 제목·설명(12띠 짝·근거 전부)은 gunghap_card 가 정한다(목소리 출처 줄은 유지). 번역은 넣지 않는다.
