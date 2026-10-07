@@ -136,5 +136,29 @@ for slot, n in (("am", N.NAME_CELLS), ("pm", 12), ("year", 10), ("surname", 20))
 ck("진행자는 표 화면에 서지 않는다(grid)", "grid" in M.build_motion.__code__.co_consts
    or "grid" in open(M.__file__, encoding="utf-8").read().split("pr_on = presenter_on", 1)[1][:200])
 
+print("── 하루 한 칸 순환(10/8~, 10/7 진단) ──")
+import datetime as _dt  # noqa: E402
+import tempfile as _tf  # noqa: E402
+_d0 = _dt.date(2026, 10, 8)
+_week = [N.slot_of_day(_d0 + _dt.timedelta(days=k)) for k in range(8)]
+ck("10/8 이름 · 10/9 태어난 달 · 10/10 해 끝자리 · 10/11 성씨 · 4일마다 반복",
+   _week == ["am", "pm", "year", "surname"] * 2, _week)
+ck("10/7 까지는 네 칸 모두(순환 전)", N.slot_of_day(_dt.date(2026, 10, 7)) is None
+   and all(N.is_slot_day(_dt.date(2026, 10, 7), s) for s in N.SLOTS))
+ck("하루에 정확히 한 칸만", all(sum(N.is_slot_day(_d0 + _dt.timedelta(days=k), s) for s in N.SLOTS) == 1 for k in range(28)))
+_seen = {s: [N.storyboard(_d0 + _dt.timedelta(days=k), s)["theme"] for k in range(40) if N.slot_of_day(_d0 + _dt.timedelta(days=k)) == s]
+         for s in N.SLOTS}
+ck("칸마다 다음 차례엔 다른 테마(같은 표가 연달아 안 나온다)", all(a != b for v in _seen.values() for a, b in zip(v, v[1:])), _seen)
+with _tf.TemporaryDirectory() as _tmp:
+    _p = os.path.join(_tmp, "x.json")
+    N.main(["make", "--date", "2026-10-08", "--slot", "year", "--out", _p])
+    _skip = not os.path.exists(_p)
+    N.main(["make", "--date", "2026-10-08", "--slot", "am", "--out", _p])
+    ck("그날 칸이 아니면 make 가 안 쓰고, 그날 칸이면 쓴다(트리거는 '파일 없음 = 건너뜀')", _skip and os.path.exists(_p))
+    _p2 = os.path.join(_tmp, "y.json")
+    N.main(["make", "--date", "2026-10-08", "--slot", "year", "--out", _p2, "--force"])
+    ck("--force 면 그날 칸이 아니어도 쓴다(견본용)", os.path.exists(_p2))
+
+
 print(f"\n{'✅ 전부 통과' if not FAIL else f'❌ 실패 {FAIL}'}")
 sys.exit(1 if FAIL else 0)

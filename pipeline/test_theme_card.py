@@ -119,5 +119,21 @@ with tempfile.TemporaryDirectory() as td:
 ck("path = output/news/<날짜>_fortune_theme_storyboard.json",
    T.path_for(d0).replace("\\", "/").endswith("output/news/2026-10-02_fortune_theme_storyboard.json"))
 
+print("── 이틀에 한 번(10/8~, 10/7 진단) ──")
+import datetime as _dt  # noqa: E402
+_d0 = _dt.date(2026, 10, 8)
+_on = [T.is_post_day(_d0 + _dt.timedelta(days=k)) for k in range(6)]
+ck("10/8 · 10/10 · 10/12 … 짝수 번째 날만 · 10/7 까지는 매일", _on == [True, False] * 3
+   and all(T.is_post_day(_dt.date(2026, 10, d)) for d in range(1, 8)), _on)
+_ths = [T.theme_for(_d0 + _dt.timedelta(days=k))["id"] for k in range(0, 44, 2)]
+ck("이틀 간격이어도 테마 11개가 전부 돈다", len(set(_ths)) == len(T.THEMES), _ths)
+with tempfile.TemporaryDirectory() as _tmp:
+    _p = os.path.join(_tmp, "t.json")
+    T.main(["make", "--date", "2026-10-09", "--out", _p])
+    _skip = not os.path.exists(_p)
+    T.main(["make", "--date", "2026-10-10", "--out", _p])
+    ck("쉬는 날엔 make 가 안 쓰고, 내는 날엔 쓴다", _skip and os.path.exists(_p))
+
+
 print(f"\n{'✅ 전부 통과' if not FAIL else f'❌ {FAIL}건 실패'}")
 sys.exit(1 if FAIL else 0)
