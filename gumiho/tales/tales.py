@@ -63,6 +63,16 @@ GLOBAL_FROM = 10
 # 같은 날(10/5) 점검: 첫 구독자 4명 중 3명이 'Never Cut Your Nails at Night in Korea' 쇼츠에서 왔다. 규칙형 쇼츠
 #   420·161회 vs 이야기형 11회. 10화부터 쇼츠 3개(본 쇼츠 + 추가 2) 중 하나 이상은 규칙형 제목('Korean Rules').
 RULE_TITLE = re.compile(r"(?i)^\s*(never|don'?t|do not|if you|always|you should never|why you should never)\b")
+# 10/6 점검: 대결 쇼츠 'Gumiho vs Kitsune vs Huli Jing: Which Fox Is Scariest?' 11시간 1,555회(좋아요 41) ·
+#   규칙 쇼츠 445 · 이야기형 쇼츠 2~22. 피드가 미는 건 규칙형과 대결형뿐이었다 → 6화(스프린트 남은 편)부터
+#   쇼츠 중 하나 이상은 규칙형 또는 대결형 제목. 10화부터는 그대로(추가 쇼츠 2개 포함 셋 중 하나 이상).
+VERSUS_TITLE = re.compile(r"(?i)\bvs\.?\s")
+SHORT_TITLE_FROM = 6
+
+
+def feed_title(title: str) -> bool:
+    """피드가 미는 쇼츠 제목 꼴 — 규칙형(Never/Don't/If You/Always) 또는 대결형(A vs B)."""
+    return bool(RULE_TITLE.match(title or "") or VERSUS_TITLE.search(title or ""))
 EXTRA_SHORTS_GLOBAL = (2, 2)
 THUMB_MAX_WORDS = 4
 # 몇 달 뒤에도 통해야 한다(역주행) — 날짜를 타는 말은 금지. 사실로 적는 연도(1994년 영화 등)는 괜찮다
@@ -181,11 +191,11 @@ def check(s: dict, path: str | None = None) -> list[str]:
         errs.append(f"쇼츠는 편당 {lo + 1}~{hi + 1}개 — shorts_extra {len(extra)}개({lo}~{hi}개 필요). "
                     "첫 장면·hook·각도가 다른 쇼츠로 어떤 게 먹히는지 비교한다")
     errs += look_errs(s)
-    if tid >= GLOBAL_FROM:
+    if tid >= SHORT_TITLE_FROM:
         alls = [s["short"]] + [ex for ex in extra if isinstance(ex, dict)]
-        if not any(RULE_TITLE.match(x.get("title", "")) for x in alls):
-            errs.append("쇼츠 중 하나 이상은 규칙형 제목('Never … in Korea. Here's Why', 'Don't …', 'If You …') — "
-                        "WRITING.md 'Korean Rules'")
+        if not any(feed_title(x.get("title", "")) for x in alls):
+            errs.append("쇼츠 중 하나 이상은 규칙형 제목('Never … in Korea. Here's Why', 'Don't …', 'If You …') "
+                        "또는 대결형('A vs B: Which … ?') — WRITING.md 'Korean Rules'")
     hooks = {(s["short"].get("hook") or s["thumb"].get("text", "")).strip().lower()}
     firsts = {first_src(s["short"])}
     titles = {s["short"].get("title", "").strip().lower()}

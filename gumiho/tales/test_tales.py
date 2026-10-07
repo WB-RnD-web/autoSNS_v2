@@ -161,6 +161,31 @@ finally:
 ck("쇼츠 첫 줄 그림 = 썸네일 그림", sp["rows"][0]["raw"] == "/img/THUMB.png", sp["rows"][0]["raw"])
 ck("썸네일 없으면 원래 그림", sp0["rows"][0]["raw"] != "/img/THUMB.png")
 
+print("── 쇼츠에만 있는 그림(10/5 4화 렌더 실패) ──")
+new_img = "a Joseon family in white mourning clothes kneeling beside a low table of rice by a gate at dusk"
+S4 = copy.deepcopy(S)
+S4["short"]["lines"][1] = {k: v for k, v in S4["short"]["lines"][1].items() if k not in ("scene", "gumi")}
+S4["short"]["lines"][1]["img"] = new_img
+ck("쇼츠 전용 그림을 찾는다(본편에 있는 그림은 빼고)", R.short_only_prompts(S4, shots_) == [new_img], R.short_only_prompts(S4, shots_))
+R.wav_dur = lambda _p: 3.0
+try:
+    v4 = {ln["say"]: "v.wav" for ln in S4["short"]["lines"]}
+    sp4 = R.short_plan(S4, shots_, v4, ".", thumb_raw="/img/THUMB.png", raw_map={new_img: "/img/NEW.png"})
+    sp5 = R.short_plan(S4, shots_, v4, ".", thumb_raw="/img/THUMB.png")
+    sp6 = R.short_plan(S4, shots_, v4, ".")
+finally:
+    R.wav_dur = _wd
+ck("미리 그린 쇼츠 전용 그림을 쓴다", sp4["rows"][1]["raw"] == "/img/NEW.png", sp4["rows"][1]["raw"])
+ck("없으면 썸네일 그림으로 대신(예외로 멈추지 않는다)", sp5["rows"][1]["raw"] == "/img/THUMB.png", sp5["rows"][1]["raw"])
+ck("썸네일도 없으면 본편 첫 그림", sp6["rows"][1]["raw"] == shots_[0]["raw"], sp6["rows"][1]["raw"])
+with tempfile.TemporaryDirectory() as td4:
+    sh4 = R.plan(S4)
+    inf4 = R.make_images(S4, sh4, os.path.join(td4, "img"), mock=True, extra_prompts=R.short_only_prompts(S4, sh4))
+    ck("make_images 가 쇼츠 전용 그림도 그린다(그림 수 +1 · raw 지도에 있다)",
+       inf4["images"] == len({x["img"] for x in sh4 if x.get("img")}) + 2 and os.path.exists(inf4["raw"][new_img]))
+ck("render: 쇼츠 전용 그림을 본편 그림과 같이 만들고 쇼츠에 넘긴다",
+   "short_only_prompts(s, shots, extras)" in open(R.__file__, encoding="utf-8").read() and 'im["raw"])' in open(R.__file__, encoding="utf-8").read())
+
 print("── 편당 쇼츠 2~3개(3화부터) ──")
 keys_ = [x["key"] for x in S["scenes"] if x.get("key")]
 main_first = T.first_src(S["short"])
@@ -219,6 +244,18 @@ ck("modern 은 조선이 아니라 현대", "present day" in R.look_prefix("mode
 ck("joseon 은 조선 그대로", "Joseon dynasty era" in R.look_prefix("joseon"))
 import inspect as _ins  # noqa: E402
 ck("9화까지는 look 이 있어도 예전 화풍(실험 주간 보호)", "T.GLOBAL_FROM" in _ins.getsource(R.make_images))
+ck("대결형 제목도 피드형(6화부터 · 10/6 대결 쇼츠 1,555회)", T.feed_title("Gumiho vs Kitsune vs Huli Jing: Which Fox Is Scariest? #shorts")
+   and T.feed_title("Never Play the Elevator Game Alone #shorts") and not T.feed_title("They Wished for a Daughter. Then the Cows Started Dying #shorts"))
+s6 = copy.deepcopy(S)
+s6["id"] = 6
+s6["short"]["title"] = "They Wished for a Daughter. Then the Cows Started Dying #shorts"
+ck("6화(스프린트)부터 쇼츠 제목이 이야기형이면 거부", any("규칙형" in e for e in T.check(s6, "x.json")))
+s6["short"]["title"] = "Gumiho vs Kitsune: Which Fox Is Deadlier? #shorts"
+ck("…대결형이면 통과", not any("규칙형" in e for e in T.check(s6, "x.json")))
+s5 = copy.deepcopy(S)
+s5["id"] = 5
+s5["short"]["title"] = "They Wished for a Daughter. Then the Cows Started Dying #shorts"
+ck("5화까지는 그대로(이미 올라간 편)", not any("규칙형" in e for e in T.check(s5, "x.json")))
 ck("규칙형 제목 판별", bool(T.RULE_TITLE.match("Never Cut Your Nails at Night in Korea. Here's Why #shorts"))
    and bool(T.RULE_TITLE.match("If You Hear Your Name, Don't Turn #shorts"))
    and not T.RULE_TITLE.match("They Wished for a Daughter #shorts"))
