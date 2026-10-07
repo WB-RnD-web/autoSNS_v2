@@ -142,7 +142,7 @@ def use_ab(sb: dict) -> bool:
     if mode in ("0", "false", "off"):
         return False
     t = str(sb.get("topic") or "").lower()
-    if not t.startswith("fortune") or t.startswith(("fortune_theme", "fortune_name", "fortune_pulli", "fortune_tier")):
+    if not t.startswith("fortune") or t.startswith(("fortune_theme", "fortune_name", "fortune_pulli", "fortune_tier", "fortune_gunghap")):
         return False
     if scope_of(sb) != "오늘":
         return False

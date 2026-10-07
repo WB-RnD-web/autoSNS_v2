@@ -98,7 +98,7 @@ empty = dict(sc, tiers=[dict(t, items=[]) if t["id"] == "B" else t for t in sc["
 ck("빈 등급이면 '오늘은 없어요'", "오늘은 없어요" in M.scene_html(0, empty, "#C9A227"))
 full = M.build_html([dict(sc)], 9.6, "#C9A227")
 ck("CSS 가 붙는다 · 진행자는 등급표에 서지 않는다", ".tchip{" in full
-   and '"tier")' in open(M.__file__, encoding="utf-8").read().split("pr_on = presenter_on", 1)[1][:200])
+   and '"tier"' in open(M.__file__, encoding="utf-8").read().split("pr_on = presenter_on", 1)[1].splitlines()[0])
 
 print("── 파이프라인 연결 ──")
 ck("아침 운세 표(fortune_card)가 등급표를 덮어쓰지 않는다", not FC.use_card(sb))
