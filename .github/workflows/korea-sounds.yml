@@ -48,6 +48,9 @@ permissions:
 
 jobs:
   build-and-upload:
+    # ★2026-10-07 왕별이를 운세 전문 채널로 좁혔다(수익화 심사 대비 · 사용자 결정) — 예약 실행은 건너뛴다.
+    #   다시 켜기: 레포 변수 KOREA_SCHEDULE=1 · 수동 실행(workflow_dispatch)은 그대로 된다.
+    if: github.event_name != 'schedule' || vars.KOREA_SCHEDULE == '1'
     runs-on: ubuntu-latest
     # 8시간 믹스(약 15분) + 수 GB 업로드. 여유 있게.
     timeout-minutes: 150
