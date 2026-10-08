@@ -299,6 +299,28 @@ CSS_TIER = """
 """
 
 
+# ── 기준 한 줄(2026-10-08, birth_basis.py) — '띠는 입춘부터 · 그 전 생일은 앞 해 띠' · '음력 생일 달로' ──────────
+# 댓글 '월생 기준이 양력? 음력?' — 표마다 기준을 화면에 못박는다. 앞에 '기준' 딱지, 표 바로 아래(띠 순위 카드는 제목 아래).
+# 원래 발밑 글(foot)은 그 아래로 한 줄 내려간다. 900px 한 줄을 넘지 않게 글자 크기를 줄인다.
+BASIS_H = 46                     # 기준 줄 높이 + 틈 — 발밑 글이 이만큼 내려간다
+CSS_BASIS = """
+.basis{position:absolute;left:60px;width:900px;display:flex;align-items:center;gap:12px;white-space:nowrap;
+  color:#FFF1D6;font-weight:800;line-height:1.2;text-shadow:0 2px 10px rgba(0,0,0,.7);}
+.basis b{flex:none;background:var(--acc,#D97757);color:#0A0808;border-radius:10px;padding:3px 12px;font-size:24px;font-weight:900;
+  text-shadow:none;}
+"""
+
+
+def basis_html(gid, text, top):
+    """기준 줄 — 딱지 '기준' + 한 줄(칸 너비에 맞춰 28px 에서 줄인다)."""
+    if not text:
+        return ""
+    em = sum(0.56 if c.isdigit() else 0.3 if c in "·., ()~" else 0.6 if c.isascii() else 1.0 for c in str(text)) or 1.0
+    fs = int(min(28, (900 - 96) / em))
+    return (f'<div class="basis" id="{gid}-basis" style="top:{top:.0f}px;font-size:{fs}px">'
+            f'<b>기준</b><span>{esc(text)}</span></div>')
+
+
 def _em(s):
     """대략 글자 폭(em) — 숫자는 좁고 가운뎃점은 더 좁다."""
     return sum(0.56 if c.isdigit() else 0.3 if c in "·., " else 0.6 if c.isascii() else 1.0 for c in str(s)) or 1.0
@@ -696,7 +718,8 @@ def scene_html(i, sc, acc):
                 f'<div class="nm">{esc(r.get("animal", ""))}띠<span class="sc">{int(r.get("score", 0))}점</span></div>'
                 f'<div class="yr">{esc(yrs)}</div><div class="ln">{esc(r.get("line", ""))}</div></div>')
         body = (f'<div class="cpill"><span class="pill" id="{gid}-pill"><span class="dot"></span>{esc(sc.get("pill",""))}</span></div>'
-                f'<div class="ctitle" id="{gid}-title">{esc(sc.get("title",""))}</div>' + "".join(cells))
+                f'<div class="ctitle" id="{gid}-title">{esc(sc.get("title",""))}</div>' + "".join(cells)
+                + basis_html(gid, sc.get("basis"), CARD_TOP - 50))     # 순위 카드는 아래가 꽉 차서 제목과 칸 사이에
     elif t == "gunghap":
         rows = sc.get("rows", [])
         lay = gunghap_layout(rows)
@@ -719,8 +742,10 @@ def scene_html(i, sc, acc):
                 f'<div class="b" style="left:{GH_COLS[2]}px;top:{top1:.0f}px;font-size:{lay["fb"]}px">{esc(r.get("bad", ""))}</div>'
                 f'<div class="s" style="left:{GH_COLS[2]}px;top:{top2:.0f}px;font-size:{lay["fs"]}px">{esc(r.get("bad_line", ""))}</div></div>')
         foot_y = GH_TOP + len(rows) * (rh + GH_GAP) + 10
+        bas = basis_html(gid, sc.get("basis"), foot_y - 4)
+        foot_y += BASIS_H if bas else 0
         body = (f'<div class="gpill2"><span class="pill" id="{gid}-pill"><span class="dot"></span>{esc(sc.get("pill",""))}</span></div>'
-                f'<div class="ghtitle" id="{gid}-title">{esc(sc.get("title",""))}</div>' + "".join(parts)
+                f'<div class="ghtitle" id="{gid}-title">{esc(sc.get("title",""))}</div>' + "".join(parts) + bas
                 + f'<div class="ghfoot" style="top:{foot_y:.0f}px">{esc(sc.get("foot",""))}</div>')
     elif t == "tier":
         tiers = sc.get("tiers", [])
@@ -755,9 +780,11 @@ def scene_html(i, sc, acc):
                     f'<div class="tn" style="top:{pad:.0f}px;font-size:{lay["fn"]}px">{esc(r.get("animal", ""))}띠</div>'
                     f'<div class="ty" style="top:{pad * 2 + lay["fn"]:.0f}px;font-size:{lay["fy"]}px">{esc(yrs)}</div>'
                     f'<div class="tl" style="top:{pad * 3 + lay["fn"] + lay["fy"]:.0f}px;font-size:{lay["fl"]}px">{esc(r.get("line", ""))}</div></div>')
+        bas = basis_html(gid, sc.get("basis"), lay["bottom"] + 14)
+        foot_y = lay["bottom"] + 20 + (BASIS_H if bas else 0)
         body = (f'<div class="tpill"><span class="pill" id="{gid}-pill"><span class="dot"></span>{esc(sc.get("pill",""))}</span></div>'
-                f'<div class="ttitle" id="{gid}-title">{esc(sc.get("title",""))}</div>' + "".join(parts)
-                + f'<div class="tfoot" style="top:{lay["bottom"] + 20:.0f}px">{esc(sc.get("foot",""))}</div>')
+                f'<div class="ttitle" id="{gid}-title">{esc(sc.get("title",""))}</div>' + "".join(parts) + bas
+                + f'<div class="tfoot" style="top:{foot_y:.0f}px">{esc(sc.get("foot",""))}</div>')
     elif t == "grid":
         items = sc.get("cells", [])
         cw, ch, xy = grid_layout(len(items), sc.get("cols", 4))
@@ -785,9 +812,11 @@ def scene_html(i, sc, acc):
                 f'<div class="gs" style="top:{ch * 0.12:.0f}px;font-size:{fs}px">{esc(c.get("small", ""))}</div>'
                 f'<div class="gn" style="bottom:{ch * 0.09:.0f}px;font-size:{fn}px">{esc(c.get("note", ""))}</div></div>')
         foot_y = (xy[-1][1] + ch + 22) if xy else GRID_BOTTOM
+        bas = basis_html(gid, sc.get("basis"), foot_y - 6)
+        foot_y += BASIS_H if bas else 0
         body = (f'<div class="gpill"><span class="pill" id="{gid}-pill"><span class="dot"></span>{esc(sc.get("pill",""))}</span></div>'
                 f'<div class="gtitle" id="{gid}-title"><span class="l1">{esc(sc.get("title",""))}</span>'
-                f'<span class="l2">{esc(sc.get("title2",""))}</span></div>' + "".join(cells)
+                f'<span class="l2">{esc(sc.get("title2",""))}</span></div>' + "".join(cells) + bas
                 + f'<div class="gfoot" style="top:{foot_y:.0f}px">{esc(sc.get("foot",""))}</div>')
     elif t == "news":
         body, sc["_n"] = news_html(gid, sc)
@@ -1019,6 +1048,8 @@ def build_html(scenes, total, acc="#D97757", bg=False, presenter=False):
         css += CSS_GUNGHAP
     if any(sc.get("type") == "news" for sc in scenes):
         css += CSS_NEWS
+    if any(sc.get("basis") for sc in scenes):
+        css += CSS_BASIS
     parts = [scene_html(i, sc, acc) for i, sc in enumerate(scenes)]
     bar_h = 360 if presenter else 560
     js = "\n".join(scene_js(i, sc, acc, bar_h=bar_h, presenter=presenter)

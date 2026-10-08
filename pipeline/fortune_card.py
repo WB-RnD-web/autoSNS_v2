@@ -21,6 +21,8 @@ import json
 import re
 import sys
 
+import birth_basis
+
 CARD_START = dt.date(2026, 9, 30)
 
 ANIMALS = ["쥐", "소", "호랑이", "토끼", "용", "뱀", "말", "양", "원숭이", "닭", "개", "돼지"]
@@ -152,7 +154,7 @@ def build_spec(sb: dict) -> dict:
         "_min_total": 7.0,       # 표를 읽을 시간 — 내레이션이 짧아도 7초는 머문다
         "scenes": [{
             "type": "card", "pill": date_label(d), "title": f"{scope} 띠별 운세 순위",
-            "rows": build_rows(sb), "brand": brand,
+            "rows": build_rows(sb), "brand": brand, "basis": birth_basis.SCREEN_DDI,
             "narration": f"{scope} 띠별 운세 순위입니다. 내 띠는 몇 위인지 확인하고, 댓글로 남겨 주세요.",
         }],
     }
@@ -164,6 +166,7 @@ def meta(sb: dict) -> dict:
     scope = scope_of(sb)
     title = f"{scope} 띠별 운세 1위~12위 | {d.month}월 {d.day}일 {WEEKDAY[d.weekday()]}요일 · 45~96년생 전부"
     desc = (f"{scope} 12띠 운세를 한 장에 모았어요. 내 띠는 몇 위인가요? 댓글로 남겨 주세요 🙏\n\n"
+            f"{birth_basis.ddi_note()}\n\n"
             "※ 재미로 보는 운세입니다.\n\n"
             f"#운세 #띠별운세 #{scope.replace(' ', '')}운세 #오늘의운세 #shorts")
     return {"title": title[:95], "description": desc}

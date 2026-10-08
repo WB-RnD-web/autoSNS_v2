@@ -41,6 +41,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from fortune_card import ANIMALS, YEAR_MAX, YEAR_MIN, years_of  # noqa: E402
+import birth_basis  # noqa: E402
 from pulli_card import (BRANCH_EL, BRANCHES, CAT_BASE, CTL, EL_WORD, GEN, HOOK_TAIL, REL, STEM_EL, STEMS,  # noqa: E402
                         STEMS_HJ, BRANCHES_HJ, kst_today, relation, sipsin)
 from tier_card import TIERS, tier_of  # noqa: E402
@@ -274,7 +275,7 @@ EPISODES = [
     {"id": "months", "scene": "gunghap", "card": "2027 좋은 달·조심할 달",
      "yt": "2027 정미년 띠별 좋은 달·조심할 달 | 12띠 전부 · 45~96년생",
      "cols": ("좋은 달", "조심할 달"),
-     "foot": "달은 절기 기준(매달 4~8일께 바뀜) — 재미로 보세요",
+     "foot": "달은 양력 · 절기로 매달 4~8일께 바뀌어요 — 재미로 보세요",
      "hook": LAMB + "sitting on a hanok wooden porch looking at a garden with a maple tree and a plum tree, "
                     "soft seasonal light, peaceful mood, no people"},
     {"id": "digit", "scene": "gunghap", "card": "끝자리로 보는 2027",
@@ -333,7 +334,9 @@ def description(ep: dict) -> str:
             "money": "2027년 정미년(丁未年) 띠별 재물운 등급표 — 올해의 두 기운(정 = 불 · 미 = 흙)이 내 띠의 재물 기운인지 봤어요.",
             "months": "2027년 띠별 좋은 달·조심할 달 — 달마다 바뀌는 월건(月建)과 내 띠의 관계로 정했어요.",
             "digit": "태어난 해 끝자리로 보는 2027년 운세 — 끝자리는 태어난 해의 천간이에요. 2027년 천간 정(丁)이 나에게 무엇인지 봤어요."}
-    lines = [head[ep["id"]], ""]
+    note = {"digit": birth_basis.year_note(),
+            "months": birth_basis.ddi_note() + "\n" + birth_basis.cal_month_note()}.get(ep["id"]) or birth_basis.ddi_note()
+    lines = [head[ep["id"]], "", note, ""]
     if ep["scene"] == "tier":
         for t in build_tiers(ep["id"]):
             lines.append(f"[{t['label']} {t['stars']}] {t['basis']}")
@@ -369,6 +372,7 @@ def description(ep: dict) -> str:
 def scene_for(ep: dict) -> dict:
     pill = "2027 정미년 · 끝자리 0~9 · 45~96년생" if ep["id"] == "digit" else "2027 정미년 · 12띠 · 45~96년생"
     base = {"type": ep["scene"], "pill": pill, "title": ep["card"], "foot": ep["foot"], "brand": BRAND,
+            "basis": birth_basis.SCREEN_YEAR if ep["id"] == "digit" else birth_basis.SCREEN_DDI,
             "narration": narration(ep)}
     if ep["scene"] == "tier":
         base["tiers"] = [{"id": t["id"], "label": t["label"], "big": t["label"], "small": t["stars"], "color": t["color"],

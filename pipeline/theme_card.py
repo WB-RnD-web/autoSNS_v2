@@ -24,6 +24,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from fortune_card import ANIMALS, WEEKDAY, _h, years_of  # noqa: E402
+import birth_basis  # noqa: E402
 
 TOPIC = "fortune_theme"
 EPOCH = dt.date(2026, 10, 2)          # 첫 편 — 테마 순환의 0번
@@ -155,6 +156,7 @@ def description(d: dt.date, th: dict) -> str:
     tag = th["card"].replace(" ", "")
     return (f"{yt_phrase(d, th)} — 12띠를 한 장에 모았어요. 내 띠는 몇 위인가요? 댓글로 남겨 주세요 🙏\n"
             f"매일 아침 6시엔 '오늘 띠별 운세', 낮 12시엔 '띠별 순위 특집'이 올라와요.\n\n"
+            f"{birth_basis.ddi_note()}\n\n"
             "※ 재미로 보는 운세입니다.\n\n"
             f"#운세 #띠별운세 #{tag} #띠별순위 #shorts")
 
@@ -170,7 +172,7 @@ def storyboard(d: dt.date) -> dict:
         "hook_title": yt_phrase(d, th), "headline": t,
         "thumbnail_hook": th["hook"],
         "scenes": [{"type": "card", "pill": pill, "title": th["card"], "rows": build_rows(d, th),
-                    "brand": BRAND, "narration": narr}],
+                    "basis": birth_basis.SCREEN_DDI, "brand": BRAND, "narration": narr}],
         "platforms": {"youtube": {"title": f"{t} #shorts", "description": description(d, th)}},
         "notes": f"띠별 테마 순위 표 · theme={th['id']} · theme_card.py 가 만든 스토리보드(루틴은 실행 스위치만)",
     }

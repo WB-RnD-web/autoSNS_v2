@@ -35,6 +35,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from fortune_card import WEEKDAY, _h  # noqa: E402
+import birth_basis  # noqa: E402
 import theme_card  # noqa: E402
 
 TOPIC = "fortune_name"
@@ -222,7 +223,7 @@ def title(d: dt.date, slot: str) -> str:
     if slot == "surname":
         return f"성씨로 보는 {month_label(d, surname_theme(d))} 순위 1위~20위 | 김·이·박·최… 많은 성씨 20개"
     th = month_theme(d)
-    return f"태어난 달로 보는 {month_label(d, th)} 순위 1위~12위 | 1월생~12월생 전부"
+    return f"태어난 달로 보는 {month_label(d, th)} 순위 1위~12위 | 음력 1월생~12월생 전부"
 
 
 def description(d: dt.date, slot: str) -> str:
@@ -241,14 +242,16 @@ def description(d: dt.date, slot: str) -> str:
         tags = "#성씨 #성씨운세 #운세 #shorts"
     else:
         th = month_theme(d)
-        head = (f"태어난 달로 보는 {month_label(d, th)} 순위 — 1월생부터 12월생까지 한 장에 모았어요. "
+        head = (f"태어난 달로 보는 {month_label(d, th)} 순위 — 음력 1월생부터 12월생까지 한 장에 모았어요. "
                 "내 생일 달은 몇 위인가요? 댓글로 남겨 주세요 🙏")
         tags = "#생일운세 #태어난달 #운세 #shorts"
     sched = " · ".join(f"{SLOT_TIME[k]} {lab}" for k, lab in
                        (("year", "태어난 해"), ("am", "이름 글자"), ("surname", "성씨"), ("pm", "태어난 달")))
     note = "한자 뜻은 사전의 새김을 따랐어요." if slot == "am" else "순위는 재미로 정한 것이에요."
-    return (f"{head}\n매일 {sched} 표가 올라와요.\n\n"
-            f"※ 재미로 보는 풀이입니다. {note}\n\n{tags}")
+    # 기준 안내(2026-10-08 댓글 '월생 기준이 양력? 음력?') — 해 끝자리 = 입춘 · 태어난 달 = 음력 생일 달
+    basis = {"year": birth_basis.year_note(), "pm": birth_basis.month_note()}.get(slot)
+    return (f"{head}\n매일 {sched} 표가 올라와요.\n\n" + (f"{basis}\n\n" if basis else "")
+            + f"※ 재미로 보는 풀이입니다. {note}\n\n{tags}")
 
 
 def storyboard(d: dt.date, slot: str) -> dict:
@@ -266,6 +269,7 @@ def storyboard(d: dt.date, slot: str) -> dict:
         lab = month_label(d, th)
         scene = {"type": "grid", "pill": pill, "title": "태어난 해 끝자리로 보는", "title2": f"{lab} 순위",
                  "cols": 2, "cells": year_cells(d, th), "foot": "※ 끝자리: 1954년생 → 4년생 · 재미로 보는 운세",
+                 "basis": birth_basis.SCREEN_YEAR,
                  "brand": BRAND, "narration": f"태어난 해 끝자리로 보는 {lab} 순위예요. 내 끝자리는 몇 위인지 찾아보세요."}
         hook, theme_id = th["hook"], f"year:{th['id']}"
     elif slot == "surname":
@@ -278,9 +282,11 @@ def storyboard(d: dt.date, slot: str) -> dict:
     else:
         th = month_theme(d)
         rows = month_rows(d, th)
-        scene = {"type": "grid", "pill": pill, "title": "태어난 달로 보는", "title2": f"{month_label(d, th)} 순위",
-                 "cols": 2, "cells": month_cells(rows), "foot": "※ 재미로 보는 운세", "brand": BRAND,
-                 "narration": f"태어난 달로 보는 {month_label(d, th)} 순위예요. 내 생일 달은 몇 위인지 찾아보세요."}
+        # 화면 제목부터 '음력'을 박는다(댓글 '월생 기준이 양력? 음력?') — 유튜브 제목 앞머리는 그대로(형식 집계가 쓴다)
+        scene = {"type": "grid", "pill": pill, "title": "음력 생일 달로 보는", "title2": f"{month_label(d, th)} 순위",
+                 "cols": 2, "cells": month_cells(rows), "basis": birth_basis.SCREEN_MONTH, "foot": "※ 재미로 보는 운세",
+                 "brand": BRAND,
+                 "narration": f"태어난 달로 보는 {month_label(d, th)} 순위예요. 음력 생일 달로 내 순위를 찾아보세요."}
         hook, theme_id = th["hook"], f"month:{th['id']}"
     t = title(d, slot)
     return {

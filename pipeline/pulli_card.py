@@ -27,6 +27,7 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import birth_basis  # noqa: E402
 from fortune_card import ANIMALS, WEEKDAY, years_of  # noqa: E402
 
 TOPIC = "fortune_pulli"
@@ -260,6 +261,7 @@ def description(d: dt.date) -> str:
     rows = build_rows(d, th)
     lines = [f"{th['yt']} — {d.month}월 {d.day}일은 {g['name']}일({g['hanja']}日), "
              f"{EL_WORD[g['el']]} 기운의 {g['animal']}날이에요.", "",
+             birth_basis.ddi_note(), "",
              "띠별 풀이(오늘 일진과의 관계):"]
     lines += [f"{r['rank']}위 {r['animal']}띠({r['score']}점) — {reason(r, g, th)}." for r in rows]
     lines += ["", f"순위는 이렇게 정했어요: 오늘 일진의 띠와 내 띠가 합(육합·삼합)인지 충·원진·형·해·파인지, "
@@ -289,7 +291,8 @@ def storyboard(d: dt.date) -> dict:
         "accent": ACCENT, "_min_total": 14.0,
         "hook_title": th["yt"], "headline": t, "thumbnail_hook": th["hook"] + HOOK_TAIL,
         "scenes": [
-            {"type": "card", "pill": pill, "title": th["card"], "rows": card_rows, "brand": BRAND, "narration": say1},
+            {"type": "card", "pill": pill, "title": th["card"], "rows": card_rows, "basis": birth_basis.SCREEN_DDI,
+             "brand": BRAND, "narration": say1},
             {"type": "news", "layout": "bullets", "pill": f"{g['name']}일 풀이", "title": ["왜 이 순위일까?"],
              "items": ex["items"], "verdict": ex["why"], "foot": "전통 일진 풀이 · 재미로 보는 운세예요",
              "brand": BRAND, "narration": ex["narration"]},
