@@ -1,0 +1,78 @@
+{
+ "date": "2026-10-12",
+ "kind": "birth",
+ "slug": "lucky-item",
+ "headline": [
+  "태어난 달로 보는",
+  "이번 주 행운 아이템"
+ ],
+ "say_intro": "태어난 달로 보는 이번 주 행운 아이템. 내 달을 찾아 봐요.",
+ "bg": "a cozy pastel flat lay of a teacup, a small notebook, dried flowers and a ribbon on a soft cream table",
+ "cells": [
+  {
+   "m": 1,
+   "text": "따뜻한 머그컵"
+  },
+  {
+   "m": 2,
+   "text": "새 노트 한 권"
+  },
+  {
+   "m": 3,
+   "text": "하얀 운동화"
+  },
+  {
+   "m": 4,
+   "text": "꽃무늬 손수건"
+  },
+  {
+   "m": 5,
+   "text": "좋아하는 향수"
+  },
+  {
+   "m": 6,
+   "text": "시원한 아이스티"
+  },
+  {
+   "m": 7,
+   "text": "파란 우산"
+  },
+  {
+   "m": 8,
+   "text": "작은 화분"
+  },
+  {
+   "m": 9,
+   "text": "노란 포스트잇"
+  },
+  {
+   "m": 10,
+   "text": "따끈한 군고구마"
+  },
+  {
+   "m": 11,
+   "text": "니트 장갑"
+  },
+  {
+   "m": 12,
+   "text": "반짝이는 귀걸이"
+  }
+ ],
+ "caption": "태어난 달로 보는 이번 주 행운 아이템 🍀 내 달을 찾아 봐요!\n친구 생일 달도 같이 찾아 주기",
+ "hashtags": [
+  "#태어난달",
+  "#생일월",
+  "#행운아이템",
+  "#이번주운세",
+  "#골라보세요"
+ ],
+ "bench": {
+  "keyword": "띠별 운세·사주",
+  "format": "태어난 달 표 한 장(내 것 찾기)",
+  "seen": [
+   "nightlettelife 년생 재물운 224만",
+   "cheon_unse 음력 생일 171만"
+  ],
+  "ours": "칸 문구 새로 씀 — 재미로"
+ }
+}
