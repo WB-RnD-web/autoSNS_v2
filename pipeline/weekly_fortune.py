@@ -40,6 +40,7 @@ ROOT = os.path.dirname(HERE)
 if HERE not in sys.path:
     sys.path.insert(0, HERE)
 
+import birth_basis  # noqa: E402
 import fortune_card as FC  # noqa: E402
 
 KST = dt.timezone(dt.timedelta(hours=9))
@@ -495,7 +496,8 @@ def description_for(plan: dict, chapters: str, daily_playlist_id: str | None = N
     desc = (f"{range_label(monday)}, 이번 주 12띠 운세를 띠마다 풀어 드려요.\n"
             "금전운 · 건강운 · 사람과 가족운 · 행운의 요일과 색 · 조심할 것\n\n"
             f"{plan.get('intro', '')}\n\n"
-            f"⏱ 목차\n{chapters}\n\n{daily}\n\n{DISCLAIMER}\n{CREDIT}\n\n{HASHTAGS}\n\n{marker(plan['week'])}")
+            f"⏱ 목차\n{chapters}\n\n{birth_basis.ddi_note()}\n\n{daily}\n\n{DISCLAIMER}\n{CREDIT}\n\n"
+            f"{HASHTAGS}\n\n{marker(plan['week'])}")
     return desc[:4900]
 
 

@@ -33,6 +33,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from fortune_card import ANIMALS, WEEKDAY, years_of  # noqa: E402
+import birth_basis  # noqa: E402
 from pulli_card import (CAT_BASE, EL_WORD, HOOK_TAIL, LINE_CAT, LINE_REL, REL,  # noqa: E402
                         ganzhi, josa, kst_today, reason, relation, sipsin)
 
@@ -101,7 +102,7 @@ def description(d: dt.date) -> str:
     """설명란 = 12띠 전부의 등급과 이유(메타데이터도 심사가 본다 — 날마다 내용이 다르다)."""
     g, tiers = ganzhi(d), build_tiers(d)
     lines = [f"오늘 띠별 운세 등급표 — {d.month}월 {d.day}일은 {g['name']}일({g['hanja']}日), "
-             f"{EL_WORD[g['el']]} 기운의 {g['animal']}날이에요.", ""]
+             f"{EL_WORD[g['el']]} 기운의 {g['animal']}날이에요.", "", birth_basis.ddi_note(), ""]
     for t in tiers:
         lines.append(f"[{t['label']} {t['stars']}] {t['basis']}")
         lines += [f"· {r['animal']}띠({'·'.join(f'{y % 100:02d}' for y in r['years'])}년생) — {reason(r, g)}."
@@ -128,6 +129,7 @@ def storyboard(d: dt.date) -> dict:
         "hook_title": "오늘 띠별 운세 등급표", "headline": t, "thumbnail_hook": HOOK + HOOK_TAIL,
         "scenes": [
             {"type": "tier", "pill": pill, "title": "오늘 띠별 운세 등급표", "tiers": scene_tiers,
+             "basis": birth_basis.SCREEN_DDI,
              "foot": f"대길 = 합 · 조심 = 충·원진·형 — {g['name']}일 일진 풀이, 재미로 보세요",
              "brand": BRAND, "narration": narration(d)},
         ],
