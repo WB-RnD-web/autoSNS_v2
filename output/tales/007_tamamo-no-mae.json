@@ -1,0 +1,519 @@
+{
+ "id": 7,
+ "slug": "tamamo-no-mae",
+ "look": "japan",
+ "title": "A Kitsune Was Sealed in This Stone. In 2022, It Split in Two",
+ "thumb": {
+  "text": "SHE'S OUT",
+  "img": "a beautiful court lady in layered Heian-era silk robes of pale gold and red with long straight black hair reaching the floor standing in front of a large black boulder bound with thick straw rope split in two on grey volcanic ground, a ghostly white fox with nine glowing tails rising from the crack behind her, her calm dark eyes looking at the viewer, sulfur mist, eerie"
+ },
+ "hook": "Japan's Killing Stone held a nine-tailed fox for centuries, the legend says. In March 2022, it was found split in two.",
+ "tags": [
+  "kitsune",
+  "tamamo no mae",
+  "nine tailed fox",
+  "sessho seki",
+  "killing stone",
+  "japanese folklore",
+  "japanese legend",
+  "fox spirit",
+  "nasu",
+  "daji",
+  "emperor toba",
+  "onmyoji",
+  "gumiho",
+  "yokai"
+ ],
+ "sources": [
+  "Nasu town / Tochigi tourism pages on Sessho-seki",
+  "Otogizoshi & Noh play 'Sessho-seki'",
+  "Matsuo Basho, Oku no Hosomichi (1689) — visit to the Sessho-seki"
+ ],
+ "scenes": [
+  {
+   "say": "In March 2022, hikers in the mountains of Nasu, Japan, found a famous stone broken clean in two. The sacred rope that bound it lay slack on the ground. And whatever was sealed inside was gone.",
+   "img": "a large black boulder bound with thick straw rope, split clean in two on grey volcanic ground, the rope lying slack on the rocks, sulfur steam drifting, overcast morning, eerie silence",
+   "fx": "fog",
+   "move": "in",
+   "look": "modern",
+   "key": "split"
+  },
+  {
+   "say": "The stone has a name. Sessho-seki. The Killing Stone. For centuries, people said a nine-tailed fox was locked inside it.",
+   "img": "a ghostly white fox with nine glowing white tails rising like smoke from the crack in a large black boulder bound with thick straw rope, grey dawn mist, cold light",
+   "fx": "fog",
+   "move": "up",
+   "hold": 0.8,
+   "look": "modern",
+   "note": "殺生石  sesshō-seki  =  the killing stone"
+  },
+  {
+   "say": "Don't look so worried, dear human. I know her. She's family. Well. Distant family.",
+   "gumi": "front",
+   "fx": "embers",
+   "move": "in",
+   "hold": 0.6
+  },
+  {
+   "say": "I'm Gumi. A gumiho, a Korean nine-tailed fox, a little over a thousand years old. I collect tales. The ones my kind whispered, and the ones yours whispered about us.",
+   "gumi": "bead",
+   "fx": "embers",
+   "move": "left"
+  },
+  {
+   "say": "This is Tale Number Seven. In Tale Five, I put her in the ring with me and my cousins. Tonight, she gets her whole story. Her name was Tamamo-no-Mae.",
+   "gumi": "wink",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "card": "TALE 007",
+   "sub": "Tamamo-no-Mae"
+  },
+  {
+   "say": "First, something you should know about Japan. There, foxes are called kitsune, and they are my cousins. And many of them aren't villains at all.",
+   "img": "a quiet Japanese shrine path at dusk lined with rows of vermilion torii gates, two white stone fox statues with red bibs guarding the steps, soft lantern light",
+   "fx": "dust",
+   "move": "right"
+  },
+  {
+   "say": "The white foxes at Inari shrines are messengers of Inari, the god of rice and harvest. People leave them offerings. Fried tofu, mostly. Very civilized.",
+   "img": "close-up of a white stone fox statue with a red bib at a Japanese shrine, a small plate of fried tofu offered at its feet, fallen autumn leaves, warm evening light",
+   "fx": "dust",
+   "move": "in",
+   "note": "稲荷  Inari  =  god of rice · foxes are his messengers"
+  },
+  {
+   "say": "In the old Japanese tales, a fox might be a loyal wife, a grateful friend, or a trickster who only wanted a good laugh. Clever, yes. Cruel, not usually.",
+   "img": "a red fox sitting on a mossy stone wall beside a thatched Japanese farmhouse at dusk, its head tilted with a sly expression, a farmer laughing in the doorway",
+   "fx": "dust",
+   "move": "left"
+  },
+  {
+   "say": "But every family has one relative nobody mentions at dinner. In Japan, that relative has nine tails. And she once came very close to the throne.",
+   "img": "a Heian-era Japanese palace at night seen across a moonlit garden pond, curved tiled roofs and paper lanterns, a faint fox-shaped shadow rippling on the water",
+   "fx": "fog",
+   "move": "out"
+  },
+  {
+   "say": "The old books set it in the twelfth century, in Kyoto, at the court of the retired Emperor Toba. A world of silk, poetry, and very long sleeves.",
+   "img": "a pale retired emperor in white silk robes and a tall black court cap seated on a raised dais in a Heian palace hall, courtiers in layered silk robes kneeling in rows, golden lamplight",
+   "fx": "dust",
+   "move": "left",
+   "key": "emperor"
+  },
+  {
+   "say": "In one version, the story begins with a baby. A little girl left alone beside a road, found by a childless couple who raised her as their own.",
+   "img": "an old Japanese couple in plain peasant clothes kneeling by a country roadside at dusk, lifting a wrapped baby girl from the tall grass, fireflies drifting around them",
+   "fx": "fireflies",
+   "move": "in"
+  },
+  {
+   "say": "She grew up impossibly fast, and impossibly clever. By eighteen she was serving at court. Poetry, music, history, the sutras, the stars. Ask her anything, and she knew.",
+   "img": "a beautiful court lady in layered Heian-era silk robes of pale gold and red with long straight black hair reaching the floor kneeling at a low writing desk, writing poetry with a brush while older court scholars watch in amazement, soft lamplight",
+   "fx": "dust",
+   "move": "right"
+  },
+  {
+   "say": "And she was beautiful. Not the kind of beautiful that makes people smile. The kind that makes a room go quiet.",
+   "img": "close-up of a beautiful court lady in layered Heian-era silk robes of pale gold and red with long straight black hair reaching the floor, half her face hidden behind a painted fan, calm dark eyes looking straight at the viewer, candlelight",
+   "fx": "dust",
+   "move": "in",
+   "key": "lady"
+  },
+  {
+   "say": "The retired emperor fell for her completely. Where he went, she went. And for a while, the whole court agreed she was the best thing that had ever happened to him.",
+   "img": "a pale retired emperor in white silk robes and a tall black court cap walking beside a beautiful court lady in layered Heian-era silk robes of pale gold and red with long straight black hair reaching the floor through a palace garden in spring, cherry blossoms falling around them, courtiers bowing at a distance",
+   "fx": "dust",
+   "move": "left"
+  },
+  {
+   "card": "I",
+   "sub": "The Lady Who Glowed"
+  },
+  {
+   "say": "One night, the palace held a banquet. Music, wine, poems passed from hand to hand. Then a sudden wind swept through the hall, and every lamp went out.",
+   "img": "a Heian palace banquet hall at night, courtiers in layered silk robes and musicians with lutes, a sudden gust of wind blowing out the paper lanterns, smoke curling into darkness",
+   "fx": "dust",
+   "move": "right"
+  },
+  {
+   "say": "In the dark, someone gasped. Because one person in the room was still lit. Her skin was shining. A soft, pale light, filling the whole hall.",
+   "img": "a beautiful court lady in layered Heian-era silk robes of pale gold and red with long straight black hair reaching the floor glowing with a soft pale light in a pitch-dark palace hall, the astonished silhouettes of courtiers around her",
+   "fx": "fireflies",
+   "move": "in",
+   "hold": 0.8,
+   "key": "glow"
+  },
+  {
+   "say": "The court wasn't frightened. They were enchanted. They gave her a new name. Tamamo-no-Mae. Tama means jewel. The jewel of the court.",
+   "img": "a beautiful court lady in layered Heian-era silk robes of pale gold and red with long straight black hair reaching the floor sitting serenely on a veranda under the moon, courtiers bowing to her in admiration, a faint glow around her",
+   "fx": "fireflies",
+   "move": "out",
+   "note": "玉藻前  Tamamo-no-Mae  ·  tama = jewel"
+  },
+  {
+   "say": "Poets wrote verses about her. Courtiers competed for one word from her. And the retired emperor kept her closer than ever, day and night.",
+   "img": "a pale retired emperor in white silk robes and a tall black court cap reading a poem aloud to a beautiful court lady in layered Heian-era silk robes of pale gold and red with long straight black hair reaching the floor in a lamplit palace chamber at night, painted screens with cranes behind them, intimate and warm",
+   "fx": "dust",
+   "move": "right"
+  },
+  {
+   "say": "Then the emperor fell ill.",
+   "img": "a pale retired emperor in white silk robes and a tall black court cap lying pale and ill on silk bedding in a dim palace room, a single lamp burning low",
+   "fx": "none",
+   "move": "in",
+   "hold": 0.6
+  },
+  {
+   "say": "Not all at once. Slowly. A fever that came and went. Weakness. Long sleepless nights. The court physicians tried every medicine they had, and he only grew worse.",
+   "img": "court physicians in dark robes kneeling around a pale retired emperor in white silk robes and a tall black court cap lying ill on silk bedding, bowls of herbal medicine and steam, worried faces, dim light",
+   "fx": "dust",
+   "move": "left"
+  },
+  {
+   "say": "Does this sound familiar, dear human? A beautiful companion. A man growing weaker every day, and never once thinking to send her away. If you heard Tale One, you know this song.",
+   "gumi": "wink",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "When medicine fails, a court calls an onmyoji. A diviner who reads the stars, the calendars, and the things that hide between them.",
+   "img": "an onmyoji diviner in a white hunting robe and a tall black lacquered cap kneeling before a divination board covered in star charts and symbols, candlelight, incense smoke",
+   "fx": "dust",
+   "move": "right",
+   "key": "onmyoji",
+   "note": "陰陽師  onmyōji  =  court diviner"
+  },
+  {
+   "say": "His name was Abe no Yasunari, of the famous Abe family of diviners. He studied the emperor's illness. He studied the court. And then, very carefully, he studied her.",
+   "img": "an onmyoji diviner in a white hunting robe and a tall black lacquered cap watching from behind a half-open bamboo blind as a beautiful court lady in layered Heian-era silk robes of pale gold and red with long straight black hair reaching the floor pours tea for a pale retired emperor in white silk robes and a tall black court cap, tense atmosphere, low lamplight",
+   "fx": "dust",
+   "move": "left"
+  },
+  {
+   "say": "He cast his lots. He read the signs. He counted the days since the illness began, and the days since she arrived. Every sign pointed to the same place.",
+   "img": "close-up of an old diviner's hands casting wooden divination sticks onto a lacquered table beside a star chart, candle flame trembling",
+   "fx": "dust",
+   "move": "down"
+  },
+  {
+   "say": "His answer was the kind you only whisper. The sickness wasn't inside the emperor. It was sitting beside him.",
+   "img": "extreme close-up of an old diviner's eyes widening in alarm, lit by a single candle, deep shadows",
+   "fx": "none",
+   "move": "in"
+  },
+  {
+   "say": "Her shadow had nine tails.",
+   "img": "a shadow on a paper sliding screen shaped like an elegant woman with nine long fox tails spreading behind her, lit by a single lantern, everything else pitch black",
+   "fx": "none",
+   "move": "in",
+   "hold": 1.2,
+   "key": "shadow"
+  },
+  {
+   "say": "In one version, Yasunari held a great purification ritual and had her read the prayers aloud. Halfway through, her voice faltered. Her face twisted. And the jewel of the court began to change.",
+   "img": "a beautiful court lady in layered Heian-era silk robes of pale gold and red with long straight black hair reaching the floor holding a prayer scroll before a roaring ritual fire in a palace courtyard at night, an onmyoji diviner in a white hunting robe and a tall black lacquered cap chanting with raised hands, her shadow behind her growing fox ears",
+   "fx": "embers",
+   "move": "up"
+  },
+  {
+   "say": "Where the lady had stood, there was a fox. White, or golden, depending on who tells it. Nine tails lashing the air. It burst out of the palace and ran into the night.",
+   "img": "a pure white fox with nine glowing white tails leaping from a palace veranda into the night, empty silk robes left behind on the floor, startled guards raising lanterns",
+   "fx": "embers",
+   "move": "out",
+   "key": "fox"
+  },
+  {
+   "say": "In other tellings, she simply vanished, and the emperor's fever began to lift. Either way, the court finally knew what had been sleeping beside its emperor.",
+   "img": "empty layered silk robes of pale gold and red lying on the floor of a moonlit palace room, a few white fox hairs on the wooden boards, silence",
+   "fx": "dust",
+   "move": "down"
+  },
+  {
+   "say": "Here's what impresses me. She never touched a liver. She never needed to. Her weapon was patience. Patience, and a lot of very good poetry. But she had one weakness. She ran east.",
+   "gumi": "front",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "card": "II",
+   "sub": "The Hunt on Nasu Plain"
+  },
+  {
+   "say": "The fox fled far to the east, to the wild plain of Nasu, in what is now Tochigi. Volcanic hills, sulfur springs, and grass taller than a man.",
+   "img": "a vast windswept grassy plain below smoking volcanic mountains in old Japan, tall pampas grass bending in the wind, grey sky",
+   "fx": "fog",
+   "move": "right",
+   "look": "japan"
+  },
+  {
+   "say": "And the stories say the trouble started again. Travelers didn't come home. Villagers whispered about a beautiful woman seen at dusk, out where no woman should be walking.",
+   "img": "far away on a windswept grassy plain at dusk, a beautiful court lady in layered Heian-era silk robes of pale gold and red with long straight black hair reaching the floor standing alone in the tall grass, a lone traveler on horseback stopping to stare at her",
+   "fx": "fog",
+   "move": "in"
+  },
+  {
+   "say": "The court sent two warriors. Miura-no-suke and Kazusa-no-suke, famous archers of the eastern lands, with a great company of riders behind them.",
+   "img": "two mounted samurai warriors in dark lacquered armor with longbows leading a column of riders across a misty plain at dawn, banners in the wind",
+   "fx": "dust",
+   "move": "left",
+   "key": "warriors"
+  },
+  {
+   "say": "For days they rode through the grass. Wind, cold rain, and the hiss of sulfur from the hills. Every rustle sounded like footsteps. Every shadow looked like a tail.",
+   "img": "riders in dark lacquered armor moving slowly through tall wet pampas grass in cold rain, volcanic steam on the hills behind them, tense and watchful",
+   "fx": "rain",
+   "move": "right"
+  },
+  {
+   "say": "The first hunt failed. A fox that has lived a thousand years knows every hollow in the grass. So the warriors went home, and they practiced.",
+   "img": "two glowing fox eyes watching from deep within tall dark grass at dusk, riders passing by in the distance, unaware",
+   "fx": "fog",
+   "move": "in"
+  },
+  {
+   "say": "In one version, they trained by chasing dogs on horseback with blunted arrows, because a running dog moves like a fox. Some say an old archery sport of the warrior class began that way.",
+   "img": "riders in dark lacquered armor galloping across a dusty fenced training ground at dawn, longbows drawn, dust clouds glowing in the low sun",
+   "fx": "dust",
+   "move": "right"
+  },
+  {
+   "say": "In another version, on the night before the final hunt, Miura-no-suke had a dream. A beautiful young woman knelt before him, weeping, and begged him to spare her life.",
+   "img": "a samurai asleep in a dark field tent, a ghostly pale image of a beautiful court lady in layered Heian-era silk robes of pale gold and red with long straight black hair reaching the floor kneeling beside him in tears, faint mist, dreamlike",
+   "fx": "fog",
+   "move": "in"
+  },
+  {
+   "say": "He said no.",
+   "img": "close-up of a warrior's eyes opening in the dark, hard and cold, a faint line of dawn light across his face",
+   "fx": "none",
+   "move": "in",
+   "hold": 0.8
+  },
+  {
+   "say": "At dawn, a fox with nine tails broke from the grass. Miura-no-suke's arrows found her. Kazusa-no-suke rode in with his sword and finished what the arrows began.",
+   "img": "two mounted samurai warriors in dark lacquered armor with longbows chasing a pure white fox with nine glowing white tails across a misty grassy plain at dawn, one warrior drawing his bow at full gallop",
+   "fx": "fog",
+   "move": "left",
+   "key": "hunt"
+  },
+  {
+   "say": "And here is the strangest part. The fox didn't leave a body behind. She left a stone.",
+   "img": "a pure white fox with nine glowing white tails curled up on grey volcanic ground, slowly hardening into a large black boulder bound with thick straw rope, mist rising around it",
+   "fx": "fog",
+   "move": "up",
+   "hold": 0.6
+  },
+  {
+   "say": "A great black rock, alone on the hillside. And everything that touched it died. Birds that landed on it fell. Insects lay in heaps around it. Travelers who rested in its shade never stood up.",
+   "img": "a large black boulder alone on a barren grey hillside, withered grass around it, a fallen bird on the rocks, yellow sulfur steam drifting, silent and deadly",
+   "fx": "fog",
+   "move": "in",
+   "key": "stone"
+  },
+  {
+   "say": "Her rage, the story says, had turned into poison. That's how the stone got its name. Sessho-seki. The stone that takes life.",
+   "img": "close-up of the rough surface of a black boulder with thin wisps of pale steam seeping from its cracks, dark background",
+   "fx": "none",
+   "move": "in"
+  },
+  {
+   "say": "The villages around Nasu learned to keep their children and their horses far from that hill. The grass around the stone turned grey. Even the birds took the long way around.",
+   "img": "a mother in plain peasant clothes pulling her small child away down a path, glancing back fearfully at a lone black boulder on a grey hill, crows circling far away, dusk",
+   "fx": "fog",
+   "move": "right"
+  },
+  {
+   "say": "For a long time, nobody dared go near it. Until a Buddhist monk named Genno came walking up the hill.",
+   "img": "an old Buddhist monk in grey robes with a wooden staff walking alone up a barren volcanic slope toward a lone black boulder, mist swirling",
+   "fx": "fog",
+   "move": "left"
+  },
+  {
+   "say": "In the old Noh play named after the stone, a woman appears and warns the monk to keep away. Then she admits the truth. She is the spirit inside it.",
+   "img": "a faint ghostly image of a beautiful court lady in layered Heian-era silk robes of pale gold and red with long straight black hair reaching the floor standing beside a lone black boulder on a misty hillside, facing an old Buddhist monk in grey robes with a wooden staff",
+   "fx": "fog",
+   "move": "right"
+  },
+  {
+   "say": "The monk prayed for her, and struck the stone. It split open, the fox spirit rose out of it, and she promised never to harm anyone again. Then she was gone.",
+   "img": "an old Buddhist monk in grey robes raising his wooden staff, a lone black boulder cracking open with white light, a pure white fox with nine glowing white tails rising from it like smoke",
+   "fx": "embers",
+   "move": "up"
+  },
+  {
+   "say": "Some say the broken pieces flew across Japan, landing in faraway provinces. But one great piece stayed right where it was, on that hill in Nasu.",
+   "img": "glowing black stone fragments flying through a night sky over the mountains and valleys of old Japan like falling stars",
+   "fx": "fireflies",
+   "move": "down"
+  },
+  {
+   "say": "Remember that, dear human. In the old story, the stone had already been broken once. So what was left inside the piece that stayed?",
+   "gumi": "bead",
+   "fx": "embers",
+   "move": "in",
+   "hold": 0.6
+  },
+  {
+   "card": "III",
+   "sub": "Three Empires and a Crack"
+  },
+  {
+   "say": "First, one more secret. In later tellings, Tamamo-no-Mae wasn't new at this. Japan was her third empire.",
+   "img": "three palaces from three ancient empires floating among clouds under a red moon, an Indian palace, a Chinese palace and a Japanese palace, a fox-shaped shadow passing over them",
+   "fx": "fog",
+   "move": "up",
+   "look": "myth"
+  },
+  {
+   "say": "In China, they said, she had been Daji, the beautiful consort blamed for the fall of the Shang dynasty, three thousand years ago. A king lost his kingdom while she smiled.",
+   "img": "an elegant consort in flowing crimson silk robes with a golden phoenix hairpin in her high-piled black hair standing on an ancient Chinese palace terrace at night, smiling faintly, a city burning in the distance below",
+   "fx": "embers",
+   "move": "in",
+   "look": "china",
+   "key": "daji"
+  },
+  {
+   "say": "Every time, the same pattern. A ruler at the height of his power. A woman too perfect to be real. And a kingdom that rots quietly from the inside, while everyone admires the view.",
+   "img": "an elegant consort in flowing crimson silk robes with a golden phoenix hairpin in her high-piled black hair pouring wine for a king on a golden throne in a vast ancient Chinese hall, while behind them the painted pillars crack and the lamps flicker out one by one",
+   "fx": "dust",
+   "move": "left",
+   "look": "china"
+  },
+  {
+   "say": "Before that, in India, she was the wife of a prince, and she made him cruel. And in one version, she slipped aboard a Japanese envoy's ship sailing home from China, disguised as a young girl.",
+   "img": "a wooden ship crossing a dark sea at night under a full moon, a small girl standing alone at the stern, her moonlit shadow on the deck showing fox ears and tails",
+   "fx": "fog",
+   "move": "right",
+   "look": "myth"
+  },
+  {
+   "say": "Same fox. Three empires. Centuries of the same trick. You have to admire her stamina.",
+   "gumi": "wink",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "And she never really left. Anime and games have borrowed Tamamo's nine tails again and again. Even the great fox sealed inside a boy in Naruto echoes the old fox legends of Japan.",
+   "img": "a huge silhouette of a nine-tailed fox made of glowing clouds looming over a modern Japanese city skyline at night, neon lights below",
+   "fx": "embers",
+   "move": "up",
+   "look": "modern"
+  },
+  {
+   "say": "Now, back to Nasu. The stone is still there, near the hot spring town of Nasu-Yumoto. A small field of grey rock, steam rising, and in the middle, a boulder wrapped in sacred rope.",
+   "img": "a barren field of grey volcanic rocks with rows of small stone statues and a wooden walkway, sulfur steam rising, a large black boulder bound with thick straw rope in the middle, cloudy day",
+   "fx": "fog",
+   "move": "left",
+   "look": "modern"
+  },
+  {
+   "say": "The air smells of sulfur. The poet Basho visited in 1689, and wrote that dead bees and butterflies lay so thick on the sand you couldn't see its color.",
+   "img": "close-up of grey volcanic sand covered with fallen bees and butterflies beside a black boulder, pale sulfur steam, morning light",
+   "fx": "dust",
+   "move": "in",
+   "look": "japan"
+  },
+  {
+   "say": "And that's the first real answer. The ground there leaks volcanic gas. In still air, it can gather low enough to kill a bird or an insect. The poison was real. It just wasn't a fox.",
+   "img": "volcanic vents steaming among grey rocks in a mountain valley, yellow sulfur crusts on the stones, a simple rope fence, overcast sky",
+   "fx": "fog",
+   "move": "right",
+   "look": "modern"
+  },
+  {
+   "say": "Then came March 2022. Photos of the broken stone spread across the internet. People joked, and half-joked, that the fox had finally been set free.",
+   "img": "a young woman in a winter coat sitting in a dark small apartment staring at her glowing phone screen with a worried face, blue light, rain on the window",
+   "fx": "rain",
+   "move": "in",
+   "look": "modern"
+  },
+  {
+   "say": "The plain answer is weathering. Cracks had reportedly been seen in the stone for years. Rain seeps in, water freezes, rock weakens. Stones break. Even famous ones.",
+   "img": "close-up of rainwater running into a deep crack in a black boulder, thin ice crystals at the edges, grey morning light",
+   "fx": "rain",
+   "move": "down",
+   "look": "modern"
+  },
+  {
+   "say": "Still. Of all the rocks on all the mountains of Japan, that was the one that chose to split.",
+   "img": "a large black boulder bound with thick straw rope split in two at dusk, the two halves leaning apart, thin fog curling out of the gap, a lone crow on a nearby rock",
+   "fx": "fog",
+   "move": "out",
+   "hold": 1.0,
+   "look": "modern"
+  },
+  {
+   "card": "TONIGHT'S ANSWER"
+  },
+  {
+   "say": "So, is she free? Here's what I think. A fox who waited a thousand years for a throne doesn't need a rock to break. If she wanted out, she'd have walked out long ago.",
+   "gumi": "front",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "I think she stays because people keep coming to see her. Every visitor, every photo, every story. That's a kind of power too. Believe me, I'd know.",
+   "gumi": "bead",
+   "fx": "embers",
+   "move": "left"
+  },
+  {
+   "say": "And honestly? A quiet hill, hot springs nearby, a rope of honor around your shoulders, and visitors every day? There are worse ways to spend retirement. That was Tale Number Seven.",
+   "gumi": "wink",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "Now it's your turn. If you were Miura-no-suke, and she begged you in your dream, would you have spared her? Tell me in the comments. I read every single one.",
+   "gumi": "front",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "In my next tale, we go home to Korea, and up into the sky. Joseon officials didn't believe in flying saucers. But in 1609, several towns sent the king the same report. Something round and burning, crossing the sky.",
+   "img": "a Joseon coastal town at dusk, villagers in white hanbok on a hillside pointing up at a bright fiery disc crossing the darkening sky above the mountains",
+   "fx": "embers",
+   "move": "up",
+   "look": "joseon"
+  },
+  {
+   "say": "Until then, if you ever find a stone wrapped in rope, don't touch it. And if it's already cracked, walk a little faster.",
+   "gumi": "wink",
+   "fx": "embers",
+   "move": "in",
+   "hold": 1.5
+  }
+ ],
+ "short": {
+  "title": "Tamamo-no-Mae vs Daji: Was It the Same Nine-Tailed Fox? #shorts #kitsune",
+  "hook": "ONE FOX, THREE EMPIRES?",
+  "lines": [
+   {
+    "say": "In 2022, a stone in Japan split in two. Legend says a nine-tailed fox was sealed inside.",
+    "scene": "split"
+   },
+   {
+    "say": "In Japan, she was Tamamo-no-Mae, the emperor's favorite. Until one night, in the dark, her skin began to glow.",
+    "scene": "glow"
+   },
+   {
+    "say": "But the old tellings say Japan wasn't her first empire.",
+    "scene": "shadow"
+   },
+   {
+    "say": "In China, she was Daji, the consort blamed for the fall of a dynasty.",
+    "scene": "daji"
+   },
+   {
+    "say": "Same smile. Same sick ruler. Same nine tails.",
+    "scene": "fox"
+   },
+   {
+    "say": "So was it really the same fox? I'll tell you what I think in the full tale. I'm Gumi.",
+    "gumi": "wink"
+   }
+  ]
+ }
+}
