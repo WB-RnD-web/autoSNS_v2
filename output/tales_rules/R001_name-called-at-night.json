@@ -1,0 +1,27 @@
+{
+ "id": 1,
+ "slug": "name-called-at-night",
+ "format": "rules",
+ "look": "modern",
+ "title": "If Something Calls Your Name at Night, Don't Answer #shorts",
+ "hook": "DON'T ANSWER",
+ "description_hook": "Grandparents in Korea and China still warn: the voice calling your name in the dark may not be a person.",
+ "lines": [
+  {"rule": 1, "text": "IF YOU HEAR YOUR NAME, DON'T ANSWER", "say": "If you hear your name in the dark tonight, don't answer. Not yet.",
+   "img": "a teenage girl sitting up in bed in a dark apartment bedroom at night, staring at the half-open door to a pitch-black hallway, cold blue moonlight"},
+  {"rule": 2, "text": "WAIT FOR THE THIRD CALL", "say": "Rule two. Wait. A real person will call again. They say a spirit won't wait.",
+   "img": "a narrow apartment hallway at night lit only by a green exit sign, empty, the far end swallowed in darkness"},
+  {"rule": 3, "text": "THEY KNOW YOUR NAME", "say": "Rule three. In Korea, the reapers come in threes. They carry a list of names.",
+   "img": "three tall figures in long black coats and wide black hats standing under a flickering streetlight on a rainy city street, faces hidden in shadow"},
+  {"rule": 4, "text": "LEAVE THREE BOWLS OF RICE", "say": "Rule four. At funerals, families leave them three bowls of rice, straw sandals and coins.",
+   "img": "three small bowls of white rice, straw sandals and coins on a low wooden tray outside a gate at night, candlelight, drifting mist"},
+  {"rule": 5, "text": "THE THIRD CALL IS MOM'S VOICE", "say": "Rule five. The third call comes. It's your mother's voice, from the hallway.",
+   "img": "a dark bedroom door slightly open, a thin strip of warm light behind it, pale fingers curled around the edge of the door frame"},
+  {"text": "MOM IS ASLEEP NEXT DOOR", "say": "But your mother is asleep in the next room. So… don't answer.",
+   "img": "a woman sleeping peacefully in a dim bedroom, while through the half-open door behind her the hallway is completely black"}
+ ],
+ "loop_back": "Rule five says to answer the third call, but the voice can't be Mom's — so the viewer is thrown back to rule one: don't answer.",
+ "gumi": {"react": "smug", "say": "Twice or three times, depends who you ask. Would you answer?"},
+ "source": "A widespread Korean and Chinese folk belief that spirits and reapers (jeoseung saja) call the living by name at night, and that answering lets them take your soul; versions differ on whether a spirit calls once, twice or three times. At traditional Korean funerals families set out saja-bap — three bowls of rice, straw sandals and coins — for the reapers.",
+ "tags": ["scary rules", "korean superstition", "jeoseung saja", "korean grim reaper", "saja bap", "dont answer at night", "chinese superstition", "asian horror", "creepy rules", "rule horror"]
+}
