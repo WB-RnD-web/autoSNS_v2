@@ -275,7 +275,7 @@ EPISODES = [
     {"id": "months", "scene": "gunghap", "card": "2027 좋은 달·조심할 달",
      "yt": "2027 정미년 띠별 좋은 달·조심할 달 | 12띠 전부 · 45~96년생",
      "cols": ("좋은 달", "조심할 달"),
-     "foot": "달은 양력 · 절기로 매달 4~8일께 바뀌어요 — 재미로 보세요",
+     "foot": birth_basis.SCREEN_CAL_MONTH + " — 재미로 보세요",
      "hook": LAMB + "sitting on a hanok wooden porch looking at a garden with a maple tree and a plum tree, "
                     "soft seasonal light, peaceful mood, no people"},
     {"id": "digit", "scene": "gunghap", "card": "끝자리로 보는 2027",

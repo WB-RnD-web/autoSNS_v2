@@ -301,7 +301,9 @@ CSS_TIER = """
 
 # ── 기준 한 줄(2026-10-08, birth_basis.py) — '띠는 입춘부터 · 그 전 생일은 앞 해 띠' · '음력 생일 달로' ──────────
 # 댓글 '월생 기준이 양력? 음력?' — 표마다 기준을 화면에 못박는다. 앞에 '기준' 딱지, 표 바로 아래(띠 순위 카드는 제목 아래).
-# 원래 발밑 글(foot)은 그 아래로 한 줄 내려간다. 900px 한 줄을 넘지 않게 글자 크기를 줄인다.
+# ★10/8 검토(화면 434가지 실측): 발밑 글을 밀어 내리면 쇼츠 제목 자리(y 1500~)에 들어갔다 → 등급표·궁합표는 표를 BASIS_H
+#   만큼 줄여 그 자리에 기준 줄을 넣고, 발밑 글은 원래 높이 그대로. 내 것 찾기 표(grid)는 제목 아래 빈자리(346~470)에 넣는다.
+# 900px 한 줄을 넘지 않게 글자 크기를 줄인다.
 BASIS_H = 46                     # 기준 줄 높이 + 틈 — 발밑 글이 이만큼 내려간다
 CSS_BASIS = """
 .basis{position:absolute;left:60px;width:900px;display:flex;align-items:center;gap:12px;white-space:nowrap;
@@ -326,11 +328,12 @@ def _em(s):
     return sum(0.56 if c.isdigit() else 0.3 if c in "·., " else 0.6 if c.isascii() else 1.0 for c in str(s)) or 1.0
 
 
-def tier_layout(tiers):
-    """등급 줄마다 (y, 높이, 칸 줄 수)와 칸 크기·글자 크기. 한 줄에 띠 두 칸."""
+def tier_layout(tiers, bottom=None):
+    """등급 줄마다 (y, 높이, 칸 줄 수)와 칸 크기·글자 크기. 한 줄에 띠 두 칸. bottom = 표 아래 끝(기본 TIER_BOTTOM)."""
+    bottom = TIER_BOTTOM if bottom is None else bottom
     lines = [max(1, (len(t.get("items", [])) + 1) // 2) for t in tiers]
     inner = sum(n - 1 for n in lines) * TIER_GAP
-    avail = TIER_BOTTOM - TIER_TOP - TIER_ROW_GAP * (len(tiers) - 1) - inner
+    avail = bottom - TIER_TOP - TIER_ROW_GAP * (len(tiers) - 1) - inner
     ch = min(TIER_CHIP_MAX, avail / max(1, sum(lines)))
     cw = (TIER_W - TIER_LABEL_W - TIER_GAP * 2) / 2
     rows, y = [], TIER_TOP
@@ -370,10 +373,10 @@ CSS_GUNGHAP = """
 """
 
 
-def gunghap_layout(rows):
-    """줄 높이와 글자 크기 — 열 너비를 넘지 않게 함께 줄인다."""
+def gunghap_layout(rows, bottom=None):
+    """줄 높이와 글자 크기 — 열 너비를 넘지 않게 함께 줄인다. bottom = 표 아래 끝(기본 GH_BOTTOM)."""
     n = max(1, len(rows))
-    rh = (GH_BOTTOM - GH_TOP - GH_GAP * (n - 1)) / n
+    rh = ((GH_BOTTOM if bottom is None else bottom) - GH_TOP - GH_GAP * (n - 1)) / n
     widths = (GH_COLS[1] - GH_COLS[0] - 24, GH_COLS[2] - GH_COLS[1] - 16, GH_W - GH_COLS[2] - 20)
     fa, fg, fb = min(44, rh * 0.48), min(40, rh * 0.44), min(36, rh * 0.40)
     fs = max(18, min(24, rh * 0.27))
@@ -722,7 +725,7 @@ def scene_html(i, sc, acc):
                 + basis_html(gid, sc.get("basis"), CARD_TOP - 50))     # 순위 카드는 아래가 꽉 차서 제목과 칸 사이에
     elif t == "gunghap":
         rows = sc.get("rows", [])
-        lay = gunghap_layout(rows)
+        lay = gunghap_layout(rows, GH_BOTTOM - (BASIS_H if sc.get("basis") else 0))
         rh = lay["rh"]
         cols = sc.get("cols", ["좋은 짝", "조심할 띠"])
         parts = [f'<div class="ghhead" style="left:{GH_X0 + 18}px;top:{GH_TOP - 42}px">{esc(sc.get("head", "내 띠"))}</div>',
@@ -743,13 +746,13 @@ def scene_html(i, sc, acc):
                 f'<div class="s" style="left:{GH_COLS[2]}px;top:{top2:.0f}px;font-size:{lay["fs"]}px">{esc(r.get("bad_line", ""))}</div></div>')
         foot_y = GH_TOP + len(rows) * (rh + GH_GAP) + 10
         bas = basis_html(gid, sc.get("basis"), foot_y - 4)
-        foot_y += BASIS_H if bas else 0
+        foot_y += BASIS_H if bas else 0                       # 표를 줄인 만큼이라 발밑 글은 원래 높이
         body = (f'<div class="gpill2"><span class="pill" id="{gid}-pill"><span class="dot"></span>{esc(sc.get("pill",""))}</span></div>'
                 f'<div class="ghtitle" id="{gid}-title">{esc(sc.get("title",""))}</div>' + "".join(parts) + bas
                 + f'<div class="ghfoot" style="top:{foot_y:.0f}px">{esc(sc.get("foot",""))}</div>')
     elif t == "tier":
         tiers = sc.get("tiers", [])
-        lay = tier_layout(tiers)
+        lay = tier_layout(tiers, TIER_BOTTOM - (BASIS_H if sc.get("basis") else 0))
         ch, cw = lay["ch"], lay["cw"]
         x_chip = TIER_X0 + TIER_LABEL_W + TIER_GAP
         parts = []
@@ -812,8 +815,7 @@ def scene_html(i, sc, acc):
                 f'<div class="gs" style="top:{ch * 0.12:.0f}px;font-size:{fs}px">{esc(c.get("small", ""))}</div>'
                 f'<div class="gn" style="bottom:{ch * 0.09:.0f}px;font-size:{fn}px">{esc(c.get("note", ""))}</div></div>')
         foot_y = (xy[-1][1] + ch + 22) if xy else GRID_BOTTOM
-        bas = basis_html(gid, sc.get("basis"), foot_y - 6)
-        foot_y += BASIS_H if bas else 0
+        bas = basis_html(gid, sc.get("basis"), GRID_TOP - 62)  # 제목(아래 끝 346)과 칸(470) 사이 — 표 크기는 그대로
         body = (f'<div class="gpill"><span class="pill" id="{gid}-pill"><span class="dot"></span>{esc(sc.get("pill",""))}</span></div>'
                 f'<div class="gtitle" id="{gid}-title"><span class="l1">{esc(sc.get("title",""))}</span>'
                 f'<span class="l2">{esc(sc.get("title2",""))}</span></div>' + "".join(cells) + bas

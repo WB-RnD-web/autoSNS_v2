@@ -216,7 +216,8 @@ def description(d: dt.date) -> str:
     th = theme_for(d)
     rows = build_rows(d, th)
     lines = [f"{th['yt']} — 내 띠를 찾으면 {th['cols'][0]}와 {th['cols'][1]}가 바로 보여요.", "",
-             birth_basis.ddi_note(*(birth_basis.GRAND if th["years"] == "grand" else birth_basis.ADULT)), ""]
+             birth_basis.ddi_note(birth_basis.ADULT[0],
+                                  birth_basis.GRAND[1] if th["years"] == "grand" else birth_basis.ADULT[1]), ""]
     for r in rows:
         g = " · ".join(f"{x['animal']}띠({x['rel']}{', ' + x['note'] if x.get('note') else ''})" for x in r["good"])
         bd = " · ".join(f"{x['animal']}띠({x['rel']})" for x in r["bad"])
@@ -245,7 +246,8 @@ def storyboard(d: dt.date) -> dict:
         "accent": ACCENT, "_min_total": 9.0,
         "hook_title": th["yt"], "headline": t, "thumbnail_hook": th["hook"] + HOOK_TAIL,
         "scenes": [{"type": "gunghap", "pill": ("12띠 전부 · 손주 08~25년생" if th["years"] == "grand" else "12띠 전부 · 45~96년생"), "title": th["card"],
-                    "cols": list(th["cols"]), "rows": scene_rows, "basis": birth_basis.SCREEN_DDI, "foot": foot,
+                    "cols": list(th["cols"]), "rows": scene_rows, "foot": foot,
+                    "basis": birth_basis.SCREEN_DDI_WIDE if th["years"] == "grand" else birth_basis.SCREEN_DDI,
                     "brand": BRAND,
                     "narration": narration(d, th)}],
         "platforms": {"youtube": {"title": f"{t} #shorts", "description": description(d)}},
