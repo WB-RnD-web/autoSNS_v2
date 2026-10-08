@@ -1,0 +1,63 @@
+{
+ "date": "2026-10-11",
+ "kind": "balance",
+ "slug": "season-food-power",
+ "headline": [
+  "밸런스 게임",
+  "셋 다 골라 봐요"
+ ],
+ "say_intro": "밸런스 게임, 셋 다 골라 봐요.",
+ "rounds": [
+  {
+   "a": {
+    "label": "평생 여름만",
+    "img": "a bright summer beach with a striped umbrella and a slice of watermelon"
+   },
+   "b": {
+    "label": "평생 겨울만",
+    "img": "a snowy cozy cabin with warm glowing windows and a small snowman"
+   },
+   "say": "평생 여름만 살기, 평생 겨울만 살기."
+  },
+  {
+   "a": {
+    "label": "라면 평생 끊기",
+    "img": "a steaming bowl of korean ramen noodles with a soft boiled egg and green onions"
+   },
+   "b": {
+    "label": "치킨 평생 끊기",
+    "img": "a basket of crispy golden fried chicken on a wooden table"
+   },
+   "say": "라면 평생 끊기, 치킨 평생 끊기."
+  },
+  {
+   "a": {
+    "label": "순간이동",
+    "img": "a glowing magical portal door standing on a city street at dusk"
+   },
+   "b": {
+    "label": "시간 멈추기",
+    "img": "a large vintage clock surrounded by frozen sparkling particles in the air"
+   },
+   "say": "순간이동 능력, 시간 멈추기 능력."
+  }
+ ],
+ "say_outro": "고른 거 댓글로 남겨 줘요.",
+ "outro_text": "나는 A·B·?",
+ "caption": "밸런스 게임 ⚖️ 셋 다 골라 봐요\n댓글에 AAB처럼 세 글자만 남겨 줘요!",
+ "hashtags": [
+  "#밸런스게임",
+  "#둘중하나",
+  "#골라보세요",
+  "#공감",
+  "#AI그림"
+ ],
+ "bench": {
+  "keyword": "밸런스 게임",
+  "format": "둘 중 하나 고르기 여러 판(밸런스 게임)",
+  "seen": [
+   "밸런스 게임 릴스 상위(검색) — 댓글 참여형"
+  ],
+  "ours": "질문·그림 새로 만듦"
+ }
+}
