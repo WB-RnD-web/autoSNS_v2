@@ -85,9 +85,24 @@ md = RU.meta(S, "https://www.youtube.com/@NineTailsTales")
 ck("설명에 출처·AI 고지·13+", S["source"] in md["description"] and "AI-generated" in md["description"] and "13+" in md["description"])
 ck("태그 15개 이하", len(md["tags"]) <= 15)
 import upload_rule as UR  # noqa: E402
-now = dt.datetime(2026, 10, 14, 12, 0, tzinfo=dt.timezone.utc)
-ck("예약: 같은 날 21:00 UTC", UR.publish_time(now) == "2026-10-14T21:00:00Z")
-ck("예약: 1시간 안이면 다음 날", UR.publish_time(now.replace(hour=20, minute=30)) == "2026-10-15T21:00:00Z")
+# 2026-10-09: 21:00 UTC(06:00 KST) 첫 편 5시간 반 0회 → 다른 쇼츠(13:00 UTC = 22:00 KST)와 같은 시각으로
+ck("카탈로그 공개 시각 13:00 UTC(= 22:00 KST)", cat["publish_utc"] == "13:00")
+ck("배정일 역산(day_of) = assigned 의 역", all(RU.assigned(RU.day_of(n))["n"] == n for n in (1, 5, len(rs))))
+d14 = dt.date(2026, 10, 14)
+up = dt.datetime(2026, 10, 14, 12, 20, tzinfo=dt.timezone.utc)      # 루틴 12:00 UTC → 업로드 12:20 무렵(10/8·10/9 실측)
+ck("RULES publishAt: 배정일 다음 날 13:00 UTC", UR.publish_time(up, day=d14) == "2026-10-15T13:00:00Z",
+   UR.publish_time(up, day=d14))
+ck("렌더가 일찍 끝나도 다음 날(편마다 한 칸 — 겹치지 않게)",
+   UR.publish_time(up.replace(hour=9), day=d14) == "2026-10-15T13:00:00Z")
+ck("그 칸이 지났거나 1시간 안이면(재실행) 지금 기준 다음 13:00 UTC",
+   UR.publish_time(dt.datetime(2026, 10, 15, 12, 30, tzinfo=dt.timezone.utc), day=d14) == "2026-10-16T13:00:00Z")
+ck("배정일 없이: 13:00 UTC 까지 1시간 넘게 남으면 그날", UR.publish_time(up.replace(hour=11)) == "2026-10-14T13:00:00Z")
+ck("배정일 없이: 1시간 안이면 다음 날", UR.publish_time(up) == "2026-10-15T13:00:00Z")
+ck("공개 시각은 언제나 13:00 UTC", all(UR.publish_time(up + dt.timedelta(hours=h), day=d14).endswith("T13:00:00Z")
+                                     for h in range(0, 72, 5)))
+_ur = open(UR.__file__, encoding="utf-8").read()
+ck("업로드가 배정일로 예약하고, 공개 시각·쇼츠 판정 조건을 ledger 에 남긴다",
+   'publish_time(day=RU.day_of(s["id"]))' in _ur and '"publish_at": at, "shorts": facts' in _ur)
 wf = open(os.path.join(os.path.dirname(os.path.dirname(HERE)), ".github", "workflows", "tales-rules.yml"), encoding="utf-8").read()
 ck("워크플로: routine/tales_rules 의 output/tales_rules 만 · 코드는 main", '"routine/tales_rules"' in wf
    and '"output/tales_rules/**"' in wf and "ref: main" in wf and "rules.py check" in wf)
@@ -105,6 +120,10 @@ if shutil.which("ffmpeg") or os.path.exists(r"C:\wbtmp\ffbin\ffmpeg.exe"):
         m = RR.render(ex_path, out_dir=os.path.join(tmp, "out"), work=os.path.join(tmp, "work"), mock=True)
         ck("가짜 렌더: 영상·첫 프레임·메타", os.path.exists(m["video"]) and os.path.exists(m["first"]) and m["mock"])
         ck("가짜 렌더: 40초 이하", m["sec"] <= RR.MAX_SEC, m["sec"])
+        import upload_tale as UT  # noqa: E402
+        fx_ = UT.shorts_facts(m["video"])
+        ck("쇼츠 판정 조건: 세로 1080×1920 · 3분 이하 · madeForKids=false",
+           fx_["vertical"] and fx_["le_3min"] and fx_["made_for_kids"] is False and (fx_["w"], fx_["h"]) == (1080, 1920), fx_)
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
 else:

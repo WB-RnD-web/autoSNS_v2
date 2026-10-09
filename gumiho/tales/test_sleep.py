@@ -169,5 +169,11 @@ with tempfile.TemporaryDirectory() as td:
     b = np.asarray(R.Painter({"shots": shots_, "total": 10.0, "dim": S.DIM}).frame(5.0)).mean()
     ck("수면판 화면은 본편보다 어둡다(dim)", b < a * 0.9, f"{b:.1f} vs {a:.1f}")
 
+print("── 꺼짐(2026-10-09 설화 금지) ──")
+ck("수면판 꺼짐 플래그", S.ENABLED is False)
+_r = subprocess.run([sys.executable, os.path.join(HERE, "sleep.py"), "due", "--today", "2026-10-20"],
+                    capture_output=True, text=True, encoding="utf-8", errors="replace")
+ck("due 는 아무것도 고르지 않는다(워크플로가 바로 끝난다)", _r.returncode == 0 and not _r.stdout.strip(), _r.stdout[:120])
+
 print(f"\n{'✅ 전부 통과' if not FAIL else f'❌ 실패 {FAIL}'}")
 sys.exit(1 if FAIL else 0)

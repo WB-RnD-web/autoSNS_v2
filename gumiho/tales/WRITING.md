@@ -1,189 +1,166 @@
-# Nine Tails Tales — how to write one episode
+# Nine Tails Tales — how to write one episode (explainer long-form, from Episode 027)
 
-You are writing **one** episode script for the English YouTube channel **Nine Tails Tales**
-(Korean urban legends, real places and mysteries, ghost stories and myths for viewers aged 13–34 worldwide —
-most of them Korean-culture fans; old myths are at most one episode in four).
-The narrator is **Gumi**, a 1,000-year-old Korean gumiho (nine-tailed fox). The exemplar is
-`gumiho/tales/scripts/001_gumiho.json` — read it first and match its voice, pacing and JSON shape.
+**Nine Tails Tales** is now an English **science & extreme-places explainer** channel. One long-form a week,
+published **Sunday 14:00 UTC (10:00 ET)**, 10–12 minutes. The daily Shorts (a separate pipeline) cut single
+items out of that week's episode and send viewers to it, so **the long-form is the destination**.
 
-The code enforces the hard rules (`python gumiho/tales/tales.py check <file>` must print ✅).
-This page is about making the episode *good*.
+Audience: overseas English speakers aged 20–39 (25–34 is 43%), 70% male, 73% US.
 
-## Which tale
-`python gumiho/tales/tales.py next --date <today, YYYY-MM-DD>` prints the one catalog entry for this
-week. Write that one — not another. Use its `facts` as the skeleton, respect its `careful` notes,
-and cite its `sources` in the `sources` field. If a detail differs between versions, say
-"in one version…" instead of inventing certainty. Never invent fake quotes, dates or statistics.
+**Why this format (research, 2026-10-09 — `C:\wbtmp\research1009\nt_topics`, `nt_gap`, `nt_formats`):**
+- "Most dangerous places" top-10 videos: median **871K** views, with **8 breakouts from small channels**.
+- Mariana Trench: a **20K-subscriber** channel got **2.8M** views.
+- The "Explained in 9 Minutes" series got **637K**.
+- MrUnnerving's "…You CANNOT Survive" got **666K**.
+- Our own Korean-folklore long-forms got **0–15 views**. The owner banned those topics on 2026-10-09.
 
-## Gumi's voice
-- First person, warm, sly, a little dangerous, dryly funny. She is *on the monsters' side*
-  and says so with a wink ("I suppose we finally got better publicity").
-- Speaks to the viewer as "dear human" occasionally (not every line).
-- Plain spoken English. Short sentences for suspense. No purple prose, no modern slang, no emojis.
-- She can have opinions and little asides, but the **tale** is the star — at least 60% of the
-  runtime is the story itself, told scene by scene with sensory detail.
-- PG-13: dread, not gore. Imply violence; never describe wounds, blood pooling, torture in detail.
+The exemplar is `gumiho/tales/scripts/027_places-you-cant-survive.json`. Read it first and match its
+voice, pacing and JSON shape. The code enforces the hard rules: `python gumiho/tales/tales.py check <file>`
+must print ✅. This page is about making the episode *good* and *honest*.
 
-## Structure (match 001)
-1. **Cold open** (scene 0–2): an image + one eerie, specific line that makes the viewer need the
-   answer. ≤45 words in scene 0. No greeting before the hook.
-2. **Gumi intro** (2–3 `gumi` scenes): "…This is Tale Number N." Keep under 30 seconds.
-3. `{"card": "TALE 00N", "sub": "<short tale name>"}` — this card also opens the first chapter.
-   **Never put two cards back to back** (the checker rejects it): 5 seconds of text-only screen is where viewers leave.
-4. **3–4 chapters**: the first starts right after the TALE card; the next ones open with `{"card": "I", "sub": "…"}` (then II, III…). Background/lore first,
-   then the tale proper with rising tension, then what it means / how Korea (or Japan/China) tells it today.
-5. **Ending**: Gumi's personal answer or reflection → **one question for the comments**
-   ("If you were that boy, would you have swallowed the bead? Tell me in the comments.") → teaser for **the next catalog entry** (say "in my next tale", never "next week" — some weeks we post daily)
-   (use its `angle`) → sign-off in one line (vary it; a callback to the cold open is best).
+## Which episode
+`python gumiho/tales/tales.py next --date <today, YYYY-MM-DD>` prints this week's catalog entry, or
+`{"none": true}`. If it prints `none`, write nothing. Write only the entry it gives.
+- `exemplar_ready: true` means a human already wrote this episode in `gumiho/tales/scripts/<file>`.
+  Copy that file unchanged.
+- `publish_at` is the Sunday slot. The upload code schedules it; you don't.
+- `teaser` is next week's episode. Use its `line` for the closing teaser and never invent a different one.
+  When next week isn't scheduled yet, `line` is just "A new one next Sunday." Say that and don't name a topic.
 
-## Evergreen — it must still work a year from now
-This channel lives on search and recommendations, not on today's feed. An episode should be able to
-pick up views months later.
-- No time-bound phrases: "this Halloween", "recently", "this year", "trending", "right now" (the checker rejects them).
-  Years stated as facts are fine ("the 1994 film", "in March 2022").
-- The title carries the searchable name people actually type (gumiho, dokkaebi, jangsanbeom, kitsune…) —
-  one of the first three `tags` must appear in the title (checked).
-- Mention dramas/films only as background, never as the hook — **except `behind` episodes** (below),
-  where a famous film or drama is the doorway. Even there, the folklore is the story.
-- Tie episodes together: a callback to an earlier tale where it fits, and the teaser for the next one.
+## Facts and sources (hard rule — YouTube "inauthentic content" policy)
+Every episode stands on **its own researched facts**. That is what separates it from mass-produced filler.
+- Use **only** the entry's `facts` for numbers, dates, depths, temperatures and percentages. The checker
+  compares every number above 12 with the entry's facts and rejects any it doesn't find there. That covers narration,
+  `odds`, `note`, the title, the thumbnail text, the hook and every Short's title, hook and lines.
+  If you need a number that isn't there, leave it out or describe it without a number ("colder than any freezer you own").
+- **Times are checked strictly** (checked): any number followed by a time unit ("3 minutes", "9 to 12 seconds",
+  "1,000 years") must appear in the facts with the same unit, even small numbers. Write times in digits. A spelled-out
+  time ("ninety seconds", "two weeks") is rejected unless that exact phrase is in the facts. Don't convert units
+  or compute new numbers. Say "moments" or "a while" instead.
+- Respect every `careful` note. Write "about" or "roughly" when the facts give a range.
+- Copy the entry's `sources` into the script's `sources` field: at least 3, each with publisher, title and URL
+  (checked). Every link must come from the entry's `sources` (checked). They go into the description word for word.
+- Every numbered segment card lists the sources for **that segment's** numbers in `src` (1–5 items copied from
+  `sources`, checked): `{"card": "#5", "sub": "Lut Desert, Iran", "src": ["NASA Earth Observatory — Iran's Lut Desert: https://…"]}`.
+  A Short cut from that segment shows those sources in its description.
+- Never invent quotes, studies, records, death tolls or **survival times**. No source tells you how long a person
+  "would last" somewhere, so never write one. A survival-odds line is a judgment built on the facts ("without a
+  pressure suit: none worth mentioning"), or it quotes a time the facts really give (for example "1 to 5 minutes of
+  useful consciousness", which is not the same as being alive).
+- **No real victims and no real people dramatized.** You may state a historical fact in one line
+  ("In 1960 a two-man submersible reached the bottom"). Never re-enact a real death or accident, never name
+  or depict casualties, never show a real person's face.
+- **No franchises and no borrowed universes:** no SCP, Backrooms, creepypasta, games or films as the subject
+  (checked).
 
-## Format (the entry's `format` field)
-Same narrator every week, **different shape** — so the channel never feels like the same video twice.
-- `tale` — one story told start to finish (the structure above).
-- `list` — a countdown ("7 Korean Superstitions…"). Cold open teases #1. Each item opens with a
-  card `{"card": "#7", "sub": "<item name>"}` followed by 4–8 scenes: a mini scene that *shows* it,
-  the real belief/fact, Gumi's comment. Get stranger as you count down; #1 is the scariest or most surprising.
-  Only the first 3 cards need `sub`s for chapters; give every item a `sub` anyway.
-- `urban` — a modern legend (school panics, internet creatures). Open on a "witness" moment,
-  framed as a rumor ("people swear…"), then: where it started, the older folklore underneath it,
-  how the panic spread, what's real vs. rumor, Gumi's verdict. Never present sightings as fact,
-  never name private people or private addresses.
-- `versus` — three contenders, 3–4 rounds as chapters (origins, powers, weaknesses, most famous case),
-  a comically biased verdict from Gumi, and a question for the comments ("who would YOU pick?").
-- `behind` — the real Korean folklore behind a famous film or drama (KPop Demon Hunters, Exhuma…).
-  Viewers aged 13–34 search for the culture behind what they just watched; the work is the doorway.
-  The title names the work and the folklore ("The Real Korean Legends Hidden in KPop Demon Hunters").
-  Cold open on the folklore, not the film: the oldest, strangest version of the thing the viewer
-  thinks they know. Then **3 chapters, one per element** (e.g. the reapers, the tiger and magpie,
-  the shamans): what the film shows in one line → the real tradition, told with a mini scene →
-  what the film changed or kept. End with Gumi's verdict and a comments question
-  ("Which one did you recognize?").
-  Rules: premise only — no plot spoilers past the first act; never quote the film; never depict its
-  characters, costumes or scenes in pictures (draw the folklore itself: Joseon reapers, a minhwa-style
-  tiger, a shaman's ritual); say the film "echoes" or "draws on" a tradition unless a source says the
-  creators stated it; never imply the channel is affiliated with the studio.
-- `mystery` — a real record or a real place that nobody has fully explained (a royal chronicle's
-  sky sighting, an abandoned building with a legend). Cold open on the record or the place itself.
-  Chapters: what was actually recorded or reported → the world it happened in → the explanations
-  (science first, then folklore and rumor) → what is still unexplained. Gumi gives her verdict and asks
-  the comments. Rules: never present the supernatural as fact; paraphrase records, never invent quotes,
-  names or numbers; no real victims, patients or private people named or depicted; no trespassing dares.
-- `pov` — the viewer is the main character. Second person, present tense ("You hear your name. It's your mother's voice. Your mother is at home."). Cold open puts YOU in the moment of danger; then rewind to how you got there. Gumi interrupts at each turning point (her own lines, past tense, slightly amused) to tell you what the real legend says happens to people who do what you're about to do — that's where the folklore, origins and versions go. Chapters follow your choices (e.g. The Voice → Don't Answer → The Thing in the Trees → If You Survive). Keep the rules of the legend exact; the 'you' story may be invented, the folklore may not. End by asking the comments what THEY would have done. Image prompts show the scene from the viewer's eye level, never a named person; never show 'you' as a specific face.
+## Banned topics (checked)
+No folklore of any kind, and no Korean, Japanese, Chinese or East Asian legends, myths, ghosts or monsters. No
+Joseon-era settings, gumiho, kitsune, foxes, hanbok, hanok, shamans, dokkaebi, kappa, oni, yokai or reapers, and no
+urban legends, in narration, pictures, titles or tags. The channel name stays; the old identity doesn't.
 
-## Make it hit (every format)
-- **Scene 0 is the scariest or strangest image of the episode**, not the calm beginning.
-- Plant **one shock beat around the middle**: a short line (≤8 words) that turns the story,
-  with `"hold": 1.0`–`1.5`, `"fx": "none"`, `"move": "in"` (001: "Your liver.").
-- End every chapter on an open question or a threat, so the next card feels like a cliffhanger.
-- Dread and suspense, never gore: the scariest thing is what the viewer imagines.
+## Gumi — the voice (voice only, never on screen)
+- Gumi is the host you **hear**: a dry, witty, very old narrator who has seen everything and is impressed by
+  almost nothing. Deadpan understatement, short sentences and one sharp joke per segment at most. The facts are the star.
+- Give a **brief intro line** in the first 5 scenes ("I'm Gumi. Today we're visiting ten places that would
+  very much like you dead."). The checker needs the name "Gumi" in the first 5 scenes. Keep the intro under 15 seconds.
+- She never talks about being a fox or about folklore. She is simply the narrator.
+- Address the viewer as "you". "Dear human" is allowed once per episode at most.
+- Plain spoken English, no slang that dates, no emojis. PG-13: describe what extreme conditions do to a body
+  in clinical, calm terms (pressure, cold, lack of oxygen). Never gore and never real victims.
+
+## Structure
+1. **Cold open (scene 0, the first 10 seconds):** the most extreme fact of the episode, with its number
+   (checked: scene 0 must contain a number, ≤45 words). No greeting before it.
+   Example: "Almost 11 kilometers down, the ocean presses on you with about 1,100 times the pressure at the surface."
+2. **Intro (1–2 scenes):** Gumi's one-line intro + the promise ("ten places, ranked from 'bad idea' to 'instant'").
+3. **Numbered segments:** at least 4 (checked). Each opens with a card that has a `sub`, which becomes a YouTube chapter:
+   - `places` / `ranked`: `{"card": "#10", "sub": "Lut Desert, Iran"}` … `#1`
+   - `zones`: `{"card": "ZONE 1", "sub": "The Sunlight Zone"}`
+   - `whatif`: `{"card": "8 MIN 20 S", "sub": "Earth Lets Go"}`
+   - `abandoned`: `{"card": "I", "sub": "The Fire Underground"}`
+   Inside a segment (4–8 scenes): where/what it is → the numbers → what it would do to *you* →
+   **the survival-odds line**. One scene per segment carries `"odds"` (checked: exactly one per segment, ≤34
+   characters, shown on screen as a red badge), and its `say` delivers the verdict out loud:
+   `{"say": "Survival odds: excellent, on the boardwalk.", "odds": "SURVIVAL ODDS: BOARDWALK ONLY", ...}`.
+   The badge must start with `SURVIVAL ODDS:`, `AWAKE FOR:` or `RISK:` (checked). Use `AWAKE FOR:` only with a time
+   the facts give ("AWAKE FOR: 1–5 MINUTES"). Every digit on a badge must be in the facts, and spelled-out numbers
+   are not allowed on badges (checked). Keep the spoken line recurring ("Survival odds: …") but fresh each time.
+4. **Mid-episode shock beat:** one short line (≤8 words) with `"hold": 1.0`, `"fx": "none"`, `"move": "in"`.
+5. **Closing (checked):** `{"card": "VERDICT", "sub": "Gumi's Verdict"}` in the last quarter → a scene whose
+   `say` contains "verdict" ("My verdict: …" — rank, compare, or a dry final judgment) → one real question
+   for the comments ("Which one would you last longest in?") → **next week's teaser** from `teaser`
+   in the last 3 scenes ("Next Sunday: …" — the word "next" is checked) → a one-line sign-off. A callback to the cold open works best.
+- Never put two cards back to back (checked). A text-only screen that lasts too long makes viewers leave.
+
+## Formats (the entry's `format`)
+- `places`: a countdown of N real places ("10 Places on Earth You Can't Survive"). Rank by how fast they
+  would end you: #10 is survivable for a while with gear, #1 is instant. Use real locations only.
+- `zones`: go down (or up) layer by layer: ocean zones, atmosphere layers, Earth's interior. Each zone covers its
+  depth or height range, light, temperature and pressure, then what lives there, then what it does to a human.
+- `whatif`: an impossible scenario played out on a clock ("What If the Sun Disappeared? Minute by Minute").
+  Segments are timestamps. Say once, plainly, that it can't really happen and why. Every timestamp
+  must rest on a cited fact. No made-up chain of events.
+- `ranked`: N things ranked by a single axis ("Every Way the Universe Could End, Ranked by How Bad It Feels").
+- `abandoned`: one real abandoned or uninhabitable place in depth ("This Town Has Been Burning Since 1962").
+  Cover what happened physically, why nobody lives there, what's left and what's still dangerous. Use public
+  records only, no residents' names and no private property shown as accessible. Never dare viewers to trespass.
 
 ## Length and scenes
-- **1,700–2,300 words** of narration (≈11–15 minutes). The checker allows 1,200–2,600.
-- **45–75 scenes.** One scene = one picture on screen for 6–20 seconds = **12–45 words**
-  (hard max 70). Split long passages into several scenes with different pictures.
-- `hold` (0–3 s) adds a pause after a line — use it after reveals (0.6–1.2).
-- `note` puts a small caption on screen: use it for Korean/Chinese/Japanese terms,
-  e.g. `"여우구슬  yeowoo guseul  =  the fox bead"`. At most ~5 per episode.
+- **1,450–1,750 words** of narration (≈10–12 minutes). The checker allows 1,400–1,900 and needs 8+ minutes for mid-roll ads.
+- **45–70 scenes** (checker 40–80). One scene = one picture for 6–20 seconds = **12–45 words** (hard max 70).
+- `hold` (0–3 s): a pause after a reveal (0.6–1.2).
+- `note`: a small caption for one key number or unit, e.g. `"10,935 m · 35,876 ft"` (at most ~6 per episode).
 
-## Look — when and where the pictures live (`look`, required from Tale 010)
-Our viewers are not Korean. Most of them meet these legends **today** — in an apartment elevator, a
-school at night, a hiking trail, a convenience store, a phone screen. So the pictures should feel like
-a horror film set in the present, not a museum of old Korea.
-- Set `"look"` at the top level of the script. Options:
-  `modern` (present day — **the default** for urban legends, superstitions, real places, internet rituals,
-  rules people still follow), `joseon` (the story itself happens in Joseon Korea), `japan`, `china`,
-  `myth` (afterlife, sky, gods — no era).
-- Even an old legend can open in the present: a modern hiker on Mount Jang hears the voice; then the
-  legend's origin is a flashback. Put `"look": "joseon"` (or `japan`/`china`) **on those scenes only**.
-- People in `modern` scenes wear ordinary present-day clothes. Hanbok, gat hats and hanok villages only
-  in scenes that are really set in the past.
-- Settings that travel well: apartments, elevators, subways, schools, hospitals, mountain trails,
-  convenience stores, rainy city streets at night, small seaside towns. Korea stays Korea (it is the
-  hook), but the frame should feel like a film any viewer has seen, not a history lesson.
-- Gumi's own portraits (`gumi`) stay as they are.
+## Evergreen
+It must still work a year from now. Don't write "this year", "recently", "right now" or "trending" (checked).
+Years stated as facts are fine ("in 1983"). The title carries the words people search for, and one of the first
+3 `tags` must appear in the title (checked).
 
 ## Pictures (`img`)
-- The renderer prepends a house style (anime film still, painterly, cinematic) plus the era from
-  `look`. Your prompt describes **subject, setting, time of day, light, mood** in one sentence. English only.
-- **Recurring characters**: write one fixed description and reuse it *verbatim* every time
-  (001 uses "a beautiful young woman in a pale jade hanbok with a red ribbon in her long black hair").
-- Scenes set in old Korea (`joseon`): hanbok, hanok, gat hats, Joseon villages, pine mountains. Never torii
-  gates, kimono or pagodas in a Korean tale (and vice versa for Japan/China episodes).
-- No words/letters/signs in pictures. No nudity, no gore, no real celebrities, no logos, no scenes
-  copied from films or dramas (mention a drama in narration; don't depict its actors).
-- Vary shot size: wide establishing → medium → close-up (eyes, hands, an object) → wide.
-- `gumi`: `front` | `bead` | `wink` — Gumi's own portraits. Use for her intro, asides and ending
-  (about 6–10 scenes). Never describe Gumi in an `img` prompt except as a silhouette.
-- `fx`: fog (mountains, night), embers (fire, danger, Gumi), snow, rain, fireflies (magic, night),
-  dust (interiors, calm), none (pure black close-ups).
-- `move`: in (tension, faces), out (reveals, endings), left/right (travel, landscapes), up (sky,
-  tall things, awe), down (falling, the ground, the underworld). Don't repeat the same move 3× in a row.
-- Give 5–7 story scenes a `key` ("girl", "scream"…) so the Short can reuse them.
+- Set `"look": "real"` at the top (checked). The renderer adds a photorealistic documentary-film style plus
+  "no text, no logos, no watermark". Your prompt gives **subject, setting, time of day, light, scale and mood**
+  in one English sentence.
+- **Realistic and scientifically accurate:** a real salt flat looks like a real salt flat, and a deep-sea animal
+  looks like the real species. Show scale with gear, vehicles or an anonymous figure seen from behind or in a suit.
+- **Every scene gets its own new picture.** Never reuse the same prompt twice in an episode (checked: no reused
+  stills). Don't copy famous photographs.
+- **Never draw Gumi, any fox, or anything fox-like** (checked). No Korean, Japanese or Chinese folklore motifs
+  (no hanbok, hanok, temples, shrines, lanterns as decoration). No words, letters or signs. No real people,
+  celebrities or victims, no logos, no flags of real organizations, no gore.
+- Vary shot size: wide establishing → medium → close-up (a gauge, frost on a visor, a cracked sensor) → wide.
+- `fx`: none (default for most realistic shots), dust (deserts, interiors), snow (polar), fog (mist, steam,
+  gas), embers (heat, fire, volcanoes), rain. Skip fireflies (fantasy).
+- `move`: in (tension), out (scale reveals), left/right (landscapes), up (height, sky), down (depth, falling).
+  Don't repeat the same move 3× in a row.
+- Give every segment's strongest 2–3 scenes a `key` ("trench-floor", "lut-heat"…) so its Short can reuse them.
 
 ## Title, thumbnail, tags
-- `title` (≤100 chars): a curiosity hook first, the searchable name second.
-  Patterns that work: "Korea's X Is Darker Than Japan's Y | The X Legend",
-  "Every Magistrate Who Slept Here Died by Morning | The Legend of Arang".
-  Use the catalog `title_idea` or improve it.
-  From Tale 010, prefer the two forms that are working for us and for the biggest channels in this niche:
-  a **rule** ("Never Play Bunshinsaba Alone — Korean Students Know Why") or a **dark truth**
-  ("The Dark Truth Behind Korea's Gonjiam Asylum"). Keep the searchable name in the title.
-- `thumb.text`: 2–4 punchy words in caps-friendly English ("NEVER KISS HER", "DON'T ANSWER").
-  `thumb.img`: the single most arresting image of the tale, a face or figure large in frame.
-- `hook`: one sentence for the description's first line.
-- `tags`: 10–15, include the creature/tale name in romanized Korean and English.
+- `title` (≤70 characters): the search phrase people really type, plus the payoff. Patterns that work:
+  "10 Places on Earth You Can't Survive — Explained", "The Deep Sea, Explained: Every Zone and What Lives There",
+  "What If the Sun Disappeared? Minute by Minute". Use the catalog `title_idea` unless you can clearly improve it.
+- `thumb.text`: 2–4 words ("YOU WON'T LAST", "8 MINUTES LEFT"). `thumb.img`: the most extreme image
+  of the episode, one clear subject, high contrast.
+- `hook`: one sentence for the first line of the description.
+- `tags`: 10–15 search phrases ("places you can't survive", "mariana trench", "deep sea explained"…).
+- Optional `badge`: the label on the thumbnail and Shorts (default `EXPLAINED`, `WHAT IF` for whatif).
 
-## The Short (`short`)
-- 5–8 lines, 70–130 words (35–55 s). Line 1 is the hook (a situation, not a greeting).
-- `hook`: 2–7 words (≤38 characters) shown in big letters at the top for the whole Short —
-  the question the viewer needs answered ("SHE ATE THEM ALL", "NEVER KISS HER ON THIS ROAD").
-  Viewers decide in the first second, often with sound off. The renderer uses the thumbnail
-  picture for line 1, so write line 1 to fit `thumb.img` (the scariest image of the tale).
-- Tell the setup and the turn; **do not reveal the ending** — the last line is Gumi
-  (`"gumi": "wink"`) sending viewers to the full tale.
-- Reuse pictures by `scene` key; `title` ≤100 chars ending with `#shorts`.
-
-## Extra Shorts (`shorts_extra`, required from tale 3)
-1–2 more Shorts from the same episode, same shape as `short` (lines, `hook`, `title`). Each one is a
-**different way in** — so we learn which angle and which first second works:
-- a different **angle**: the creepiest rule or fact, a 'did you know' twist, the scariest single moment,
-  or a question that splits the comments — not the same setup told again;
-- a different **first picture**: line 1 must be a `scene` (or `img`), never `gumi`, and not the scene
-  the main Short opens on (the checker compares them);
-- its own `hook` (required, 2–7 words) and its own `title`.
-Still never reveal the ending; the last line is Gumi sending viewers to the full tale.
-They are released after the episode is public (Tue and Thu), so they can link to it.
-
-### Korean Rules (from Tale 010: exactly 2 extra Shorts, at least one Short is a rule)
-Our first subscribers came from a rule Short: "Never Cut Your Nails at Night in Korea. Here's Why"
-(420 views in 4 hours) — while a story Short ("They Wished for a Daughter…") got 11. So at least one of
-the episode's three Shorts must be a **rule**:
-- `title` starts with **Never / Don't / If You / Always** and names Korea (or Japan/China for those
-  episodes): "Never Whistle at Night in Korea. Here's Why #shorts",
-  "If You Hear Your Name on Mount Jang, Don't Turn Around #shorts".
-- `hook` is the rule in 2–7 words ("NEVER WHISTLE AT NIGHT").
-- Line 1 shows someone about to break the rule, in a present-day setting; then the real belief and
-  where it comes from; then the turn; last line Gumi sends them to the full tale. The rule must be a real
-  belief or the real rule of the legend — never invent one.
-- The checker requires `look` and at least one rule title from Tale 010.
-
-**Update 2026-10-07 (from Tale 006):** a **versus** title counts too ("Gumiho vs Kitsune vs Huli Jing:
-Which Fox Is Scariest? #shorts" got 1,555 views in 11 hours, 41 likes — our best Short). Story-style Short
-titles ("They Wished for a Daughter. Then…") got 2–22 views. From Tale 006, including the sprint episodes
-(which have only the main Short), at least one Short title must be a **rule** or a **versus**:
-- sprint examples: Tale 006 "Never Play the Elevator Game Alone. Here's Why #shorts",
-  Tale 009 "If You Hear Your Mother Calling From the Mountain, Don't Answer #shorts".
-- versus = two or three real creatures, a real question in the title, the verdict only in the full tale.
+## Shorts attached to the episode (`short` + `shorts_extra`)
+1 main Short + 1–2 extra Shorts. **Each one is a single-item cut from ONE segment** of the episode
+(checked: all its `scene` keys come from one segment and it uses at least 2 of them). Examples:
+"How Long Would You Last at the Floor of the Mariana Trench? #shorts" (from the deep-sea episode),
+"How Long Would You Last in Everest's Death Zone? #shorts".
+- `title` must be a single-item question (checked): **How Long Would You Last/Survive…**, **Could You Survive…**,
+  **What Happens If/When…**, **What If…**, **Why Nobody/You Can't…**, **How Deep/Hot/Cold… Is…**, or a size/danger
+  comparison **A vs B**. End with `#shorts`.
+- `hook`: 2–7 words (≤38 characters), shown big at the top for the whole Short ("1–5 MINUTES AWAKE",
+  "WATER BOILS AT 37°C"). It is checked like narration: only fact numbers, and times only as the facts give them.
+- 5–8 lines, 70–130 words (35–55 s). Line 1 is the situation, not a greeting. Line 1 of the main Short is drawn
+  over the thumbnail picture. Extra Shorts open on their own scene, never the main Short's first scene (checked).
+- No `gumi` lines (checked). Every number comes from the facts, as in the episode.
+- Don't end with the answer to everything: give the item's verdict, then a last line that points to the full
+  episode ("Nine more places like this in the full video.").
+- The renderer adds a 3–5 s end card by itself. Gumi says "The full video is right below. Tap the link."
+  over **"FULL VIDEO ↓ / tap the link below"**, with an arrow down to the related-video link. Don't write that line yourself.
+- These Shorts are published **after** the episode (Mon / Wed / Fri 14:00 UTC), so the link works.
 
 ## Done
 Save as `output/tales/<NNN>_<slug>.json` (the `file` value from `next`), run the checker until ✅,

@@ -36,6 +36,9 @@ sys.path.insert(0, os.path.join(ROOT, "pipeline"))
 import render_tale as R  # noqa: E402
 import tales as T        # noqa: E402
 
+# ★2026-10-09 꺼짐: 수면판은 지난 설화 편을 다시 짓는다 — 사용자가 한국 설화·조선 주제를 금지했다(롱폼 0~15회).
+#   첫 편(10/26 예약 예정)도 만들지 않는다. 켜려면 설화가 아닌 편으로 spec 을 새로 쓰고 True 로(due·upload 가 이것만 본다).
+ENABLED = False
 SLEEP_DIR = os.path.join(HERE, "sleep")
 OUT = os.path.join(ROOT, "output", "gumiho", "tales")
 WORK = os.path.join(ROOT, "output", "gumiho", ".work")
@@ -609,6 +612,9 @@ def upload(path: str, out_dir: str = OUT, ledger: str = LEDGER, mode: str = "pri
     if rm.get("mock"):
         print("::error::mock 렌더(가짜 그림·목소리)는 올리지 않는다")
         return 2
+    if not ENABLED:
+        print("::error::수면판 꺼짐(sleep.ENABLED=False, 2026-10-09 설화 금지) — 올리지 않는다")
+        return 2
     led = load_ledger(ledger)
     done = led.get(st, {})
     if done.get("long"):
@@ -702,6 +708,9 @@ def main() -> int:
             bad += bool(errs)
         return 1 if bad else 0
     if a.cmd == "due":
+        if not ENABLED:                     # 워크플로는 할 일이 없다고 보고 1분 안에 끝난다
+            print("   · 수면판 꺼짐(sleep.ENABLED=False, 2026-10-09 설화 금지)", file=sys.stderr)
+            return 0
         today = dt.date.fromisoformat(a.today) if a.today else dt.datetime.now(dt.timezone.utc).date()
         led = load_ledger(a.ledger)
         for p in specs():

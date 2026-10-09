@@ -55,6 +55,12 @@ def assigned(date: dt.date, cat: dict | None = None) -> dict | None:
     return rs[k] if 0 <= k < len(rs) else None
 
 
+def day_of(n: int, cat: dict | None = None) -> dt.date:
+    """n 편의 배정일(assigned 의 역) — 업로드가 예약 공개일을 정할 때 쓴다."""
+    cat = cat or catalog()
+    return dt.date.fromisoformat(cat["start"]) + dt.timedelta(days=n - 1)
+
+
 def file_for(e: dict) -> str:
     return f"{OUT_DIR}/R{e['n']:03d}_{e['slug']}.json"
 

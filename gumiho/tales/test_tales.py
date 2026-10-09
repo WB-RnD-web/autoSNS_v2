@@ -30,7 +30,9 @@ def ck(name, cond, detail=""):
 
 
 SAMPLES = sorted(glob.glob(os.path.join(HERE, "scripts", "*.json")))
-S = T.load(SAMPLES[0])
+S = T.load(os.path.join(HERE, "scripts", "001_gumiho.json"))          # 설화편(예전 규칙 회귀)
+XP = os.path.join(HERE, "scripts", "027_places-you-cant-survive.json")  # 해설편 견본(2026-10-09~)
+X = T.load(XP)
 
 print("── 대본 검사 ──")
 for p in SAMPLES:
@@ -71,7 +73,8 @@ print("── 편성(날짜로 결정론적) ──")
 # 루틴은 매주 수요일(9/30 첫 실행) — 수요일마다 번호가 하나씩 올라야 한다(9/29 발견: start 가 목요일이면 9/30·10/7 이 같은 번호)
 ck("수 9/30 → 2편 · 토 10/3 → 2편", T.assigned_id("2026-09-30") == 2 and T.assigned_id("2026-10-03") == 2)
 # 10/4~10/10 은 1주 형식 실험(하루 한 편, 아래 sprint 검사) — 수 10/14 부터 다시 수요일마다 +1
-ck("수 10/14 → 10편 · 수 10/21 → 11편", T.assigned_id("2026-10-14") == 10 and T.assigned_id("2026-10-21") == 11)
+ck("10/10 부터 설화 편성 없음(10/14·10/21 은 해설편 또는 없음)",
+   T.assigned_id("2026-10-14") in (None, 27) and T.assigned_id("2026-10-21") == 28)
 cat = T.load(T.CATALOG)["tales"]
 ck("catalog 번호 1부터 연속·slug 중복 없음", [e["id"] for e in cat] == list(range(1, len(cat) + 1))
    and len({e["slug"] for e in cat}) == len(cat))
@@ -92,7 +95,7 @@ ck("쇼츠 설명에 본편 링크", "youtu.be/X" in T.meta(S, None, short_of="h
 print("── 목소리·타임라인(가짜) ──")
 with tempfile.TemporaryDirectory() as td:
     shots = R.plan(S)
-    texts = [x["say"] for x in shots if x["say"]] + [ln["say"] for ln in S["short"]["lines"]]
+    texts = [x["say"] for x in shots if x["say"]] + [ln["say"] for ln in S["short"]["lines"]] + [R.CTA_SAY]
     voices = R.synth(texts, os.path.join(td, "tts"), mock=True)
     total = R.timeline(shots, voices)
     ck("장면 시간이 이어진다", all(abs(a["start"] + a["dur"] - b["start"]) < 1e-2 for a, b in zip(shots, shots[1:])))
@@ -125,6 +128,27 @@ with tempfile.TemporaryDirectory() as td:
     ck(f"쇼츠 {R.SHORT_MAX}초 이하", SP["total"] <= R.SHORT_MAX, str(SP["total"]))
     spa = R.ShortPainter(SP, S)
     ck("쇼츠 프레임 1080×1920", spa.frame(SP["total"] / 2).size == (R.SW, R.SH))
+    # 끝맺음(2026-10-09): 설명란 링크는 안 눌린다 → 마지막 3~5초에 말+화면으로 '관련 동영상' 링크(채널 이름 아래)를 짚는다
+    end = SP["rows"][-1]
+    ck("쇼츠 끝맺음 장면이 들어간다(말 = 링크 안내)", bool(end.get("cta")) and end["say"] == R.CTA_SAY, str(end.get("say")))
+    cta_sec = SP["total"] - end["start"]
+    ck("끝맺음 3~5초", 3.0 <= cta_sec <= 5.0, f"{cta_sec:.2f}")
+    ck("끝맺음은 앞 그림·카메라를 끊김 없이 잇는다",
+       end["raw"] == SP["rows"][-2]["raw"] and end.get("cam") == SP["rows"][-2].get("cam") and end.get("cont"))
+
+    def _gold(a, y0, y1):
+        reg = a[y0:y1, R.CTA_ARROW_X - 5:R.CTA_ARROW_X + 5].astype(int)
+        return float(np.mean(np.all(np.abs(reg - np.array(R.GOLD)) < 40, axis=-1)))
+    f_cta = np.asarray(spa.frame(end["start"] + 1.5))
+    f_pre = np.asarray(spa.frame(end["start"] - 0.5))
+    ck("끝맺음 화면에 아래 화살표(그 전 줄엔 없다)", _gold(f_cta, 1400, 1455) > 0.6 and _gold(f_pre, 1400, 1455) < 0.2,
+       f"{_gold(f_cta, 1400, 1455):.2f} / {_gold(f_pre, 1400, 1455):.2f}")
+    ck("화살표 끝이 아래 UI(채널 이름·링크, y≈1580~)를 덮지 않는다",
+       R.CTA_ARROW_TIP <= 1550 and _gold(f_cta, R.CTA_ARROW_TIP + 10, 1600) < 0.1)
+    ck("끝맺음 카드는 오른쪽 버튼 열(x≥950)을 피한다", float(np.abs(f_cta[1200:1350, 960:].astype(int)
+                                                     - np.asarray(spa.frame(end["start"] - 0.5))[1200:1350, 960:]).mean()) < 8)
+    ck("cta=False 면 끝맺음 없음(예전 꼴)", not any(r.get("cta") for r in R.short_plan(S, shots, voices, td, cta=False)["rows"]))
+    ck("render 가 끝맺음 목소리를 같이 합성한다", "texts.append(CTA_SAY)" in open(R.__file__, encoding="utf-8").read())
     b = R.bed(R.SR * 20, 1)
     ck("배경음 20초·클리핑 없음", len(b) == R.SR * 20 and float(abs(b).max()) < 1.5)
     ck("이동 평균 길이 보존", len(R.movavg(np.ones(1000, dtype="float32"), 50)) == 1000)
@@ -150,7 +174,7 @@ ck("쇼츠 hook 짧으면 통과", not any("hook" in e for e in T.check(ok_, "x.
 ck("hook 없으면 썸네일 문구", R.short_hook(S) == S["thumb"]["text"].upper())
 fake = {x.get("key"): {"key": x.get("key"), "raw": f"/img/{x.get('key')}.png"} for x in S["scenes"] if x.get("key")}
 shots_ = list(fake.values())
-voices_ = {ln["say"]: "v.wav" for ln in S["short"]["lines"]}
+voices_ = {ln["say"]: "v.wav" for ln in S["short"]["lines"]} | {R.CTA_SAY: "v.wav"}
 _wd = R.wav_dur
 R.wav_dur = lambda _p: 3.0
 try:
@@ -169,7 +193,7 @@ S4["short"]["lines"][1]["img"] = new_img
 ck("쇼츠 전용 그림을 찾는다(본편에 있는 그림은 빼고)", R.short_only_prompts(S4, shots_) == [new_img], R.short_only_prompts(S4, shots_))
 R.wav_dur = lambda _p: 3.0
 try:
-    v4 = {ln["say"]: "v.wav" for ln in S4["short"]["lines"]}
+    v4 = {ln["say"]: "v.wav" for ln in S4["short"]["lines"]} | {R.CTA_SAY: "v.wav"}
     sp4 = R.short_plan(S4, shots_, v4, ".", thumb_raw="/img/THUMB.png", raw_map={new_img: "/img/NEW.png"})
     sp5 = R.short_plan(S4, shots_, v4, ".", thumb_raw="/img/THUMB.png")
     sp6 = R.short_plan(S4, shots_, v4, ".")
@@ -267,7 +291,8 @@ fake2 = {x.get("key"): {"key": x.get("key"), "raw": f"/img/{x.get('key')}.png"} 
 _wd2 = R.wav_dur
 R.wav_dur = lambda _p: 3.0
 try:
-    spx = R.short_plan(dict(S, short=ex), list(fake2.values()), {ln["say"]: "v.wav" for ln in ex["lines"]}, ".")
+    spx = R.short_plan(dict(S, short=ex), list(fake2.values()),
+                       {ln["say"]: "v.wav" for ln in ex["lines"]} | {R.CTA_SAY: "v.wav"}, ".")
 finally:
     R.wav_dur = _wd2
 ck("추가 쇼츠 첫 줄 = 자기 장면 그림(썸네일 아님)", spx["rows"][0]["raw"] == f"/img/{alt}.png", spx["rows"][0]["raw"])
@@ -293,6 +318,16 @@ ck("재생목록 이름 = 스튜디오 이름(바뀌면 새 목록이 생긴다)
 
 print("── 업로드 가드 ──")
 import upload_tale as U  # noqa: E402
+st_ = U.status_body("private", "2026-10-10T13:00:00Z")
+ck("업로드: madeForKids=false · 예약이면 비공개+publishAt", st_["selfDeclaredMadeForKids"] is False
+   and st_["privacyStatus"] == "private" and st_["publishAt"] == "2026-10-10T13:00:00Z" and U.MADE_FOR_KIDS is False)
+ck("insert 가 status_body 를 쓴다(기록과 같은 값)", "status = status_body(privacy, publish_at)" in open(U.__file__, encoding="utf-8").read())
+_pr = ("  Duration: 00:00:44.75, start: 0.000000, bitrate: 2215 kb/s\n"
+       "  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1080x1920, 2073 kb/s")
+ck("쇼츠 판정 조건 읽기(ffmpeg -i)", U.parse_probe(_pr) == (1080, 1920, 44.75), str(U.parse_probe(_pr)))
+_src = open(U.__file__, encoding="utf-8").read()
+ck("업로드 기록에 쇼츠 공개 시각·판정 조건(본 쇼츠·추가 쇼츠)",
+   _src.count('done.setdefault("shorts_meta", {})') == 2 and '"publish_at": s_at' in _src and '"publish_at": x_at' in _src)
 import datetime as dt  # noqa: E402
 sat = U.next_saturday_15utc(dt.datetime(2026, 10, 1, 3, 0, tzinfo=dt.timezone.utc))
 ck("예약: 다음 토요일 15:00 UTC", sat == "2026-10-03T15:00:00Z", sat)
@@ -303,15 +338,13 @@ print("── 1주 형식 실험(sprint, 2026-10-04~10) ──")
 import datetime as _dt  # noqa: E402
 import upload_tale as US  # noqa: E402
 sp = T.sprint()
-ids = [T.assigned_id(f"2026-10-{d:02d}") for d in range(4, 11)]
-ck("10/4~10/10 하루 한 편 = 3~9화", ids == list(range(3, 10)), ids)
-fmts = [T.entry(i).get("format", "tale") for i in ids]
+ids = [T.assigned_id(f"2026-10-{d:02d}") for d in range(4, 10)]
+ck("10/4~10/9 하루 한 편 = 3~8화(기록)", ids == list(range(3, 9)), ids)
+ck("스프린트 끝: 10/10 은 9화(설화)를 배정하지 않는다", T.assigned_id("2026-10-10") is None)
+fmts = [T.entry(i).get("format", "tale") for i in range(3, 10)]
 ck("스프린트 7편은 형식이 전부 다르다", len(set(fmts)) == 7, fmts)
 ck("스프린트 전: 10/3 = 2화(이미 씀), 9/30 = 2화", T.assigned_id("2026-10-03") == 2 and T.assigned_id("2026-09-30") == 2)
-ck("스프린트 뒤 재개 전(10/11~13)은 9화(이미 써서 루틴이 멈춘다)",
-   {T.assigned_id(f"2026-10-{d}") for d in (11, 12, 13)} == {9})
-ck("10/14(수)부터 다시 주 1편: 10화 · 10/21 11화 · 10/20 은 10화",
-   T.assigned_id("2026-10-14") == 10 and T.assigned_id("2026-10-21") == 11 and T.assigned_id("2026-10-20") == 10)
+ck("10/10·10/11 은 쓸 편 없음(설화 9·10화 대신 쉰다)", T.assigned_id("2026-10-10") is None and T.assigned_id("2026-10-11") is None)
 ck("수면판 1호(1~4화)의 3·4화는 그대로(미신·케데헌)",
    T.entry(3)["slug"] == "korean-superstitions" and T.entry(4)["slug"] == "kpop-demon-hunters-legends")
 ck("스프린트 편 날짜", T.sprint_day(3) == _dt.date(2026, 10, 4) and T.sprint_day(9) == _dt.date(2026, 10, 10)
@@ -329,10 +362,257 @@ ck("렌더가 늦으면 지금+2시간 정각(쇼츠도 본편보다 늦지 않�
 _mid = _dt.datetime(2026, 10, 4, 12, 30, tzinfo=_dt.timezone.utc)
 ck("쇼츠 시각만 지났으면 쇼츠만 민다", US.sprint_times(_dt.date(2026, 10, 4), _mid)
    == ("2026-10-04T15:00:00Z", "2026-10-04T14:00:00Z"))
-ck("pov 형식은 WRITING.md 에 설명이 있다", "- `pov`" in open(os.path.join(T.HERE, "WRITING.md"), encoding="utf-8").read())
+_w = open(os.path.join(T.HERE, "WRITING.md"), encoding="utf-8").read()
+ck("WRITING.md 에 해설편 형식 설명(places·zones·whatif·ranked·abandoned)", all(f"- `{f}`" in _w for f in T.EXPLAINER_FORMATS))
 ck("render·upload 가 스프린트 편 추가 쇼츠를 건너뛴다",
    "T.sprint_day(s[\"id\"])" in open(os.path.join(T.HERE, "render_tale.py"), encoding="utf-8").read()
    and "[] if day else" in open(os.path.join(T.HERE, "upload_tale.py"), encoding="utf-8").read())
+
+print("── 해설편 편성(2026-10-09 개편: 설화 금지 · 일요일 14:00 UTC) ──")
+import datetime as _d2  # noqa: E402
+import subprocess  # noqa: E402
+_cat = T.load(T.CATALOG)
+FOLK_REGIONS = {"KR", "JP", "CN", "EA"}
+ck("설화 편(지역 KR·JP·CN·EA)은 전부 retired 로 남아 있다(지우지 않는다)",
+   all(e.get("retired") for e in _cat["tales"] if e.get("region") in FOLK_REGIONS)
+   and len([e for e in _cat["tales"] if e.get("region") in FOLK_REGIONS]) == 26)
+_day, _bad = _d2.date(2026, 10, 10), []
+while _day <= _d2.date(2027, 3, 31):
+    _e = T.next_entry(_day.isoformat())
+    if _e and (_e.get("retired") or _e.get("region") in FOLK_REGIONS or _e.get("format") not in T.EXPLAINER_FORMATS):
+        _bad.append((_day.isoformat(), _e["id"]))
+    _day += _d2.timedelta(days=1)
+ck("10/10 ~ 2027-03-31 어느 날에도 설화 편이 배정되지 않는다", not _bad, str(_bad[:3]))
+_new = [e for e in _cat["tales"] if not e.get("retired")]
+ck("새 편 3개: 10/18·10/25·11/1", [e["date"] for e in _new] == ["2026-10-18", "2026-10-25", "2026-11-01"], str(_new))
+ck("새 편은 전부 일요일", all(_d2.date.fromisoformat(e["date"]).weekday() == 6 for e in _new))
+ck("공개 시각 = 그 일요일 14:00 UTC", [T.publish_at(e) for e in _new]
+   == ["2026-10-18T14:00:00Z", "2026-10-25T14:00:00Z", "2026-11-01T14:00:00Z"])
+ck("10/10~10/17 사이에 공개되는 편이 없다",
+   not [e for e in _new if "2026-10-10" <= e["date"] <= "2026-10-17"])
+ck("새 편 제목(카운트다운·심해·태양)", [e["title_idea"] for e in _new] == [
+    "10 Places on Earth You Can't Survive — Explained",
+    "The Deep Sea, Explained: Every Zone and What Lives There",
+    "What If the Sun Disappeared? Minute by Minute"])
+ck("새 편 형식은 해설편(places·zones·whatif)", [e["format"] for e in _new] == ["places", "zones", "whatif"])
+ck("새 편 facts 10개 이상·출처 3개 이상(모두 링크)", all(len(e["facts"]) >= 10 and len(e["sources"]) >= 3
+                                                and all("https://" in x for x in e["sources"]) for e in _new))
+ck("새 편 facts 에 숫자가 있다(편마다 조사한 수치)", all(sum(bool(T.NUM.search(f)) for f in e["facts"]) >= 8 for e in _new))
+ck("backlog 후보 6개(제목만)", len(_cat.get("backlog") or []) == 6 and all(isinstance(x, str) for x in _cat["backlog"]))
+ck("토요일(공개 하루 전) next → 그 주 편", T.next_entry("2026-10-17")["id"] == 27 and T.next_entry("2026-10-24")["id"] == 28
+   and T.next_entry("2026-10-31")["id"] == 29)
+ck("일요일 당일도 그 편 · 다음 날(월)은 다음 주 편", T.next_entry("2026-10-18")["id"] == 27 and T.next_entry("2026-10-19")["id"] == 28)
+ck("catalog 끝 뒤(11/2~)는 없음", T.next_entry("2026-11-02") is None)
+ck("날짜 없이 next 도 retired 를 고르지 않는다", T.next_entry(None) is None or not T.next_entry(None).get("retired"))
+_tp = os.path.join(HERE, "tales.py")
+_o = subprocess.run([sys.executable, _tp, "next", "--date", "2026-10-10"], capture_output=True, text=True, encoding="utf-8")
+ck("CLI next 10/10 → {\"none\": true}(루틴은 아무것도 안 쓴다)", _o.returncode == 0 and json.loads(_o.stdout).get("none") is True,
+   _o.stdout[:120])
+_o = subprocess.run([sys.executable, _tp, "next", "--date", "2026-10-17"], capture_output=True, text=True, encoding="utf-8")
+_j = json.loads(_o.stdout)
+ck("CLI next 10/17 → 027 · 공개 시각 · 다음 주 예고 · 견본 준비", _j.get("file") == "027_places-you-cant-survive.json"
+   and _j.get("publish_at") == "2026-10-18T14:00:00Z" and _j.get("teaser", {}).get("date") == "2026-10-25"
+   and _j["teaser"]["line"].startswith("Next Sunday: The Deep Sea") and _j.get("exemplar_ready") is True, _o.stdout[:200])
+_t29 = T.teaser_for(T.entry(29))
+ck("마지막 편(11/1) 예고는 편성 안 된 backlog 를 약속하지 않는다", _t29["title"] == "" and _t29["date"] is None
+   and _t29["line"] == "A new one next Sunday.", str(_t29))
+import upload_tale as UW  # noqa: E402
+_sat = _d2.datetime(2026, 10, 17, 3, 0, tzinfo=_d2.timezone.utc)
+ck("업로드 예약: 토요일에 올리면 일요일 14:00 UTC", UW.weekly_time("2026-10-18", _sat) == "2026-10-18T14:00:00Z")
+_late = _d2.datetime(2026, 10, 18, 13, 30, tzinfo=_d2.timezone.utc)
+ck("늦으면 한 주 미루지 않고 지금+2시간 정각", UW.weekly_time("2026-10-18", _late) == "2026-10-18T15:00:00Z")
+ck("해설편 본 쇼츠는 본편 하루 뒤(월) · 설화편은 하루 전", UW.main_short_at("2026-10-18T14:00:00Z", True) == "2026-10-19T14:00:00Z"
+   and UW.main_short_at("2026-10-10T15:00:00Z", False) == "2026-10-09T15:00:00Z")
+ck("추가 쇼츠: 일요일 본편 → 수·금", UW.extra_short_at("2026-10-18T14:00:00Z", 2) == "2026-10-21T14:00:00Z"
+   and UW.extra_short_at("2026-10-18T14:00:00Z", 3) == "2026-10-23T14:00:00Z")
+ck("AI 합성 고지(containsSyntheticMedia) — RULES 도 같은 status_body", UW.CONTAINS_SYNTHETIC_MEDIA is True
+   and UW.status_body("private", None)["containsSyntheticMedia"] is True)
+_us = open(UW.__file__, encoding="utf-8").read()
+ck("업로드가 retired 편을 막는다", "T.retired(s[\"id\"]) and not a.allow_retired" in _us)
+ck("해설편 재생목록 3개 = CHANNEL.md", all(v[0] in open(os.path.join(HERE, "CHANNEL.md"), encoding="utf-8").read()
+                                       for v in UW.EX_PLAYLISTS.values()) and len({v[0] for v in UW.EX_PLAYLISTS.values()}) == 3)
+_o = subprocess.run([sys.executable, _tp, "check", os.path.join(HERE, "scripts", "001_gumiho.json")],
+                    capture_output=True, text=True, encoding="utf-8")
+ck("CLI check: retired 편은 ❌(워크플로가 렌더 전에 멈춘다)", _o.returncode == 1 and "retired" in _o.stdout, _o.stdout[-160:])
+
+print("── 해설편 대본 검사 ──")
+ck("해설편 견본 통과", not T.check(X, XP), str(T.check(X, XP)[:4]))
+_st = T.stats(X)
+ck(f"견본 분량 10~12분(추정 {_st['est_min']}분 · {_st['words']}단어)", 9.6 <= _st["est_min"] <= 12.0)
+ck("explainer = 27화부터", T.explainer(X) and not T.explainer(S))
+
+
+def _bad(fn):
+    b = copy.deepcopy(X)
+    fn(b)
+    return T.check(b, XP)
+
+
+def _img_i(b):
+    return next(i for i, x in enumerate(b["scenes"]) if x.get("img"))
+
+
+ck("말에 설화 단어(gumiho) → 거부", any("금지 주제" in e for e in _bad(lambda b: b["scenes"][4].update(say=b["scenes"][4]["say"] + " Like a gumiho."))))
+ck("그림에 hanbok → 거부", any("금지 주제" in e for e in _bad(lambda b: b["scenes"][_img_i(b)].update(img=b["scenes"][_img_i(b)]["img"] + ", a woman in hanbok"))))
+ck("그림에 fox → 거부", any("여우" in e for e in _bad(lambda b: b["scenes"][_img_i(b)].update(img=b["scenes"][_img_i(b)]["img"] + ", a red fox watching"))))
+ck("제목에 Joseon → 거부", any("금지 주제" in e for e in _bad(lambda b: b.update(title="Joseon " + b["title"][:50]))))
+ck("태그에 korean folklore → 거부", any("금지 주제" in e for e in _bad(lambda b: b["tags"].append("korean folklore"))))
+ck("SCP·Backrooms → 거부", any("금지 주제" in e for e in _bad(lambda b: b["scenes"][4].update(say=b["scenes"][4]["say"] + " Like the Backrooms."))))
+ck("출처 없음 → 거부", any("출처" in e or "'sources' 없음" in e for e in _bad(lambda b: b.update(sources=[]))))
+ck("출처에 링크 없음 → 거부", any("링크" in e for e in _bad(lambda b: b.update(sources=["NASA", "NOAA", "USGS"]))))
+ck("구미 그림 장면 → 거부", any("구미를 그리지" in e for e in _bad(lambda b: b["scenes"].insert(2, {"say": "Hello there.", "gumi": "front"}))))
+ck("look 이 real 이 아니면 → 거부", any("real" in e for e in _bad(lambda b: b.update(look="modern"))))
+ck("catalog 에 없는 숫자 → 거부(지어낸 통계)", any("catalog facts 에 없는 숫자" in e
+                                         for e in _bad(lambda b: b["scenes"][4].update(say=b["scenes"][4]["say"] + " It is 4,321 meters deep."))))
+ck("작은 수(순위·셋)는 자유", not T.loose_numbers("Number 10. Three of 7 people.", set(), 27))
+ck("첫 장면에 숫자 없음 → 거부", any("첫 장면에 숫자" in e for e in _bad(lambda b: b["scenes"][0].update(say="This place is very hot and very dry and not friendly at all."))))
+
+
+def _no_odds(b):
+    k = next(i for i, x in enumerate(b["scenes"]) if x.get("odds"))
+    del b["scenes"][k]["odds"]
+
+
+ck("꼭지에 판정 띠(odds) 없음 → 거부", any("판정 띠" in e for e in _bad(_no_odds)))
+ck("VERDICT 카드 없음 → 거부", any("VERDICT" in e for e in _bad(lambda b: b.update(scenes=[x for x in b["scenes"] if str(x.get("card", "")).upper() != "VERDICT"]))))
+ck("다음 주 예고 없음 → 거부", any("예고" in e for e in _bad(lambda b: [x.update(say=x["say"].replace("Next", "Then").replace("next", "then")) for x in b["scenes"][-3:] if x.get("say")])))
+
+
+def _dup_img(b):
+    ims = [x for x in b["scenes"] if x.get("img")]
+    ims[1]["img"] = ims[0]["img"]
+
+
+ck("같은 그림 프롬프트 두 번(재사용 정지 화면) → 거부", any("새 그림" in e for e in _bad(_dup_img)))
+ck("쇼츠 제목이 한 꼭지 질문 꼴이 아니면 → 거부", any("제목 꼴" in e for e in _bad(lambda b: b["short"].update(title="Ten Scary Places #shorts"))))
+_seg = T.segments(X["scenes"])
+_keys = {x["key"]: _seg[i] for i, x in enumerate(X["scenes"]) if x.get("key")}
+
+
+def _two_seg(b):
+    own = {_keys[ln["scene"]] for ln in b["short"]["lines"] if ln.get("scene")}
+    other = next(k for k, v in _keys.items() if v not in own)
+    ln = next(ln for ln in b["short"]["lines"][1:] if ln.get("scene"))
+    ln["scene"] = other
+
+
+ck("쇼츠가 여러 꼭지 장면을 섞으면 → 거부(한 꼭지만)", any("여러 꼭지" in e for e in _bad(_two_seg)))
+ck("쇼츠에 구미 줄 → 거부", any("구미 그림 금지" in e for e in _bad(lambda b: b["short"]["lines"].__setitem__(-1, {"say": "Full video on my channel.", "gumi": "wink"}))))
+ck("한 꼭지 제목 판별", bool(T.SINGLE_ITEM.search("How Long Would You Last at the Floor of the Mariana Trench? #shorts"))
+   and bool(T.SINGLE_ITEM.search("Lut Desert vs Death Valley: Which Is Hotter? #shorts"))
+   and not T.SINGLE_ITEM.search("They Wished for a Daughter #shorts"))
+ck("본편 쇼츠 = 같은 꼭지 장면만(견본 쇼츠 전부)", all(len({_keys[ln["scene"]] for ln in sh["lines"] if ln.get("scene")}) == 1
+                                         for sh in [X["short"]] + X["shorts_extra"]))
+
+_X0 = T.load(XP)
+
+
+def _bad2(fn):
+    b = copy.deepcopy(_X0)
+    fn(b)
+    return T.check(b, XP)
+
+
+def _odds_i(b):
+    return next(i for i, x in enumerate(b["scenes"]) if x.get("odds"))
+
+
+print("── 리뷰 10/9: 검사 구멍 ──")
+ck("띠에 출처 없는 작은 수 시간('TIME YOU'D LAST: 10 SECONDS') → 거부",
+   any("odds" in e for e in _bad2(lambda b: b["scenes"][_odds_i(b)].update(odds="TIME YOU'D LAST: 10 SECONDS"))))
+ck("띠 이름이 SURVIVAL ODDS 라도 출처 없는 시간 → 거부",
+   any("시간" in e for e in _bad2(lambda b: b["scenes"][_odds_i(b)].update(odds="SURVIVAL ODDS: 10 SECONDS"))))
+ck("띠에 글자로 쓴 수 → 거부", any("글자로 쓴 수" in e for e in _bad2(lambda b: b["scenes"][_odds_i(b)].update(odds="SURVIVAL ODDS: TEN MINUTES"))))
+ck("말에 글자로 쓴 시간('ninety seconds') → 거부",
+   any("글자로 쓴 시간" in e for e in _bad2(lambda b: b["scenes"][4].update(say=b["scenes"][4]["say"] + " You'd last ninety seconds."))))
+ck("말에 출처 없는 작은 수 시간('2 hours') → 거부",
+   any("시간" in e and "2 hour" in e for e in _bad2(lambda b: b["scenes"][4].update(say=b["scenes"][4]["say"] + " You'd last 2 hours."))))
+ck("출처에 있는 시간('9 to 12 seconds')은 통과", not T.time_errs("x", "about 9 to 12 seconds of useful consciousness", T.entry(27)))
+ck("썸네일 문구 숫자 대조", any("숫자" in e for e in _bad2(lambda b: b["thumb"].update(text="4,321 METERS"))))
+ck("쇼츠 hook 숫자 대조", any("숫자" in e for e in _bad2(lambda b: b["short"].update(hook="999°C GROUND"))))
+ck("쇼츠 제목 숫자 대조", any("숫자" in e for e in _bad2(lambda b: b["shorts_extra"][0].update(
+    title="What Happens If You Go 99,000 Feet Up? #shorts"))))
+ck("catalog 에 없는 출처 링크 → 거부", any("catalog 출처에 없다" in e for e in _bad2(
+    lambda b: b["sources"].append("Some blog — Top 10 places: https://example.com/top10"))))
+
+
+def _no_src(b):
+    k = next(i for i, x in enumerate(b["scenes"]) if x.get("card") and x.get("src"))
+    del b["scenes"][k]["src"]
+
+
+ck("꼭지 카드 src 없음 → 거부", any("src" in e for e in _bad2(_no_src)))
+for _w in ("Japanese folklore", "kappa", "oni", "urban legend", "Chinese legends", "folklore"):
+    ck(f"금지어 '{_w}'(제목·태그·말) → 거부", any("금지 주제" in e for e in _bad2(lambda b, w=_w: b["tags"].append(w)))
+       and any("금지 주제" in e for e in _bad2(lambda b, w=_w: b["scenes"][4].update(say=b["scenes"][4]["say"] + f" Like {w}."))))
+ck("제목의 금지어 → 거부", any("금지 주제" in e for e in _bad2(lambda b: b.update(title="10 Yokai Places You Can't Survive"))))
+_w = open(os.path.join(T.HERE, "WRITING.md"), encoding="utf-8").read()
+ck("WRITING.md 예시에 살아남는 시간·'right now' 없음", "YOU'D LAST" not in _w and "Time you'd last" not in _w
+   and "pressure you feel right now" not in _w)
+ck("catalog 해설편 angle·facts 에 날짜 타는 말 없음", not any(T.DATED.search(e["angle"] + " ".join(e["facts"]))
+                                         for e in T.load(T.CATALOG)["tales"] if not e.get("retired")))
+_f27 = " ".join(T.entry(27)["facts"])
+ck("옐로스톤 시추공 = NPS(1967 · 238 °C · 332 m) · 출처에 NPS 페이지",
+   "238 °C" in _f27 and "332 m" in _f27 and "237" not in _f27 and "326" not in _f27
+   and any("vitalsigns/temps.htm" in x for x in T.entry(27)["sources"]))
+_y = next(x for x in X["scenes"] if "drill hole" in x.get("say", ""))
+ck("견본 대본도 238 °C · 332 m", "238" in _y["say"] and "332" in _y["say"], _y["say"])
+ck("견본 띠: 살아남는 시간 대신 AWAKE FOR", any(x.get("odds") == "AWAKE FOR: 1–5 MINUTES" for x in X["scenes"])
+   and not any("hours, for a prepared climber" in x.get("say", "") for x in X["scenes"]))
+
+print("── 해설편 메타·화면 ──")
+_md = T.meta(X, [i * 10.0 for i in range(len(X["scenes"]))], more=[("Ep", "https://youtu.be/E")])
+ck("설명: 출처 링크 전부·AI 합성 고지·일요일 안내", all(x in _md["description"] for x in X["sources"])
+   and "AI-generated" in _md["description"] and "Sunday" in _md["description"])
+ck("설명·태그에 설화 흔적 없음", not T.FOLKLORE.search(_md["description"]) and not any(T.FOLKLORE.search(x) for x in _md["tags"]))
+_chap = [ln for ln in _md["description"].splitlines() if ln[:2].isdigit() and ":" in ln[:6]]
+ck("챕터: 00:00 + 꼭지마다 + 판정", _chap[0].startswith("00:00") and any("#1 " in c for c in _chap)
+   and any("Verdict" in c for c in _chap), str(_chap[:3]))
+_smd = T.meta(X, None, short_of="https://youtu.be/L")
+ck("쇼츠 설명: 본편 링크 + 출처", "Full video: https://youtu.be/L" in _smd["short"]["description"]
+   and "Sources:" in _smd["short"]["description"] and all("youtu.be/L" in x["description"] for x in _smd["shorts_extra"]))
+ck("쇼츠 설명 출처 = 그 쇼츠가 자른 꼭지 출처(에베레스트·암스트롱·루트)",
+   "Matthews" in _smd["short"]["description"] and "Lut" not in _smd["short"]["description"]
+   and "UBC" in _smd["shorts_extra"][0]["description"] and "Matthews" not in _smd["shorts_extra"][0]["description"]
+   and "Lut" in _smd["shorts_extra"][1]["description"] and "Challenger" not in _smd["shorts_extra"][1]["description"])
+for _e in [e for e in T.load(T.CATALOG)["tales"] if not e.get("retired")]:
+    _fake = dict(X, id=_e["id"], sources=_e["sources"], hook="h" * 200)
+    _d = T.meta(_fake, [i * 10.0 for i in range(len(X["scenes"]))], more=[("A" * 90, "https://youtu.be/A")] * 4)["description"]
+    ck(f"{_e['id']}화 설명 5,000바이트 이하 · 출처 전부·AI 고지 남음", len(_d.encode("utf-8")) <= 5000
+       and all(x in _d for x in _e["sources"]) and "AI-generated" in _d, str(len(_d.encode("utf-8"))))
+ck("화풍: real 은 TALES_STYLE 과 무관하게 실사", "photorealistic" in R.look_prefix("real") and "anime" not in R.look_prefix("real")
+   and "no text" in R.look_prefix("real"))
+ck("띠 문구: 해설편 EXPLAINED · 설화편 KOREAN LEGEND", T.badge(X) == "EXPLAINED" and T.badge(S) == "KOREAN LEGEND")
+ck("쇼츠 끝맺음 문구(2026-10-09): FULL VIDEO ↓ / tap the link below", R.CTA_TOP == "FULL VIDEO ↓"
+   and R.CTA_TEXT == "tap the link below" and "link" in R.CTA_SAY.lower() and "tale" not in R.CTA_SAY.lower()
+   and "ENDING" not in R.CTA_TOP)
+import sleep as SL  # noqa: E402
+ck("수면판(설화 재편집) 꺼짐", SL.ENABLED is False)
+with tempfile.TemporaryDirectory() as tdx:
+    shx = R.plan(X)
+    texts = [x["say"] for x in shx if x["say"]] + [ln["say"] for sh in [X["short"]] + X["shorts_extra"] for ln in sh["lines"]] + [R.CTA_SAY]
+    vx = R.synth(texts, os.path.join(tdx, "tts"), mock=True)
+    tot = R.timeline(shx, vx)
+    ck(f"견본 타임라인 10~12.5분(가짜 목소리 {tot / 60:.1f}분)", 9.5 * 60 <= tot <= 12.5 * 60)
+    ix = R.make_images(X, shx, os.path.join(tdx, "img"), mock=True,
+                       extra_prompts=R.short_only_prompts(X, shx, X["shorts_extra"]))
+    pax = R.Painter({"shots": shx, "total": tot})
+    ko = next(k for k, x in enumerate(shx) if x.get("odds"))
+    fo = np.asarray(pax.frame(shx[ko]["start"] + shx[ko]["dur"] * 0.6)).astype(int)
+    fp = np.asarray(pax.frame(shx[ko]["start"] + 0.1)).astype(int)
+    _red = lambda a: float(np.mean((a[80:150, 90:400, 0] > 150) & (a[80:150, 90:400, 1] < 90)))  # noqa: E731
+    ck("판정 띠(odds)가 화면 왼쪽 위에 뜬다(장면 첫머리엔 없다)", _red(fo) > 0.2 and _red(fp) < 0.05, f"{_red(fo):.2f}/{_red(fp):.2f}")
+    R.thumbnail(X, ix["thumb_raw"], os.path.join(tdx, "t.jpg"))
+    th = np.asarray(R.Image.open(os.path.join(tdx, "t.jpg"))).astype(int)
+    ck("해설편 썸네일 1280×720 · 오른쪽 아래 구미 배지(빨간 원) 없음",
+       th.shape[:2] == (720, 1280) and float(np.mean((th[470:690, 1030:1250, 0] > 180) & (th[470:690, 1030:1250, 1] < 80))) < 0.2)
+    spx = R.short_plan(X, shx, vx, tdx, ix["thumb_raw"], ix["raw"])
+    ck(f"해설편 쇼츠 {spx['total']:.0f}초 ≤ {R.SHORT_MAX:.0f} · 끝맺음 있음", spx["total"] <= R.SHORT_MAX and spx["rows"][-1].get("cta"))
+    sppx = R.ShortPainter(spx, X)
+    endx = spx["rows"][-1]
+    fcx = np.asarray(sppx.frame(endx["start"] + 1.5)).astype(int)
+    _white = float(np.mean(np.all(fcx[1150:1290, 140:800] > 235, axis=-1)))
+    ck("끝맺음 카드에 글자(FULL VIDEO + 도형 ↓)", _white > 0.03, f"{_white:.3f}")
 
 print()
 if FAIL:

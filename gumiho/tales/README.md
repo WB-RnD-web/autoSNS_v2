@@ -14,6 +14,7 @@ tales.yml(Actions) ─ 대본 재검사 → render_tale.py → upload_tale.py(�
    └ 소리:   내레이션 + 코드로 만든 배경음(드론·바람·오음계) + 카드 효과음, -14 LUFS
 ```
 - 본편 10~15분(1,700~2,300단어) + 쇼츠 35~55초(본편 장면 재사용, 결말은 숨김).
+  쇼츠 끝 3~5초는 코드가 붙이는 끝맺음(말 + 카드 + 아래 화살표 → '관련 동영상' 링크, 2026-10-09 · render_tale.CTA_*).
 - 공개 방식: 레포 변수 `TALES_PUBLISH` = `private`(기본) | `scheduled`(다음 토요일 15:00 UTC, 쇼츠는 하루 전).
 - 루틴이 `claude/*` 로 잘못 밀면 orphan-rescue 가 `routine/tales` 로 옮긴다.
 
