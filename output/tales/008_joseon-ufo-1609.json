@@ -1,0 +1,526 @@
+{
+ "id": 8,
+ "slug": "joseon-ufo-1609",
+ "look": "joseon",
+ "title": "The 1609 Joseon UFO: What Korea's Royal Annals Really Recorded",
+ "thumb": {
+  "text": "FIRE IN THE SKY",
+  "img": "villagers in white hanbok and straw hats crowded in a Joseon street staring up in fear at a blazing round object trailing a long tail of fire and white smoke filling the sky above tiled hanok roofs, one man in the foreground with wide eyes lit orange by the glow, dusk, dramatic and eerie"
+ },
+ "hook": "In 1609, towns across Korea's Gangwon Province reported something round and burning in the sky, and the royal court wrote it down.",
+ "tags": [
+  "joseon ufo",
+  "1609 ufo",
+  "korean ufo",
+  "annals of the joseon dynasty",
+  "gwanghaegun",
+  "gangwon 1609",
+  "fireball",
+  "meteor",
+  "korean mystery",
+  "unexplained mystery",
+  "korean history",
+  "dokkaebi fire",
+  "ufo history",
+  "gumiho"
+ ],
+ "sources": [
+  "Annals of the Joseon Dynasty — Gwanghaegun Ilgi, 1609 (sillok.history.go.kr)",
+  "Korea JoongAng Daily / Korea Times features on the 1609 Gangwon sky record"
+ ],
+ "scenes": [
+  {
+   "say": "In 1609, something round and burning crossed the sky over Korea's east coast. Town after town saw it. Some heard it roar. And the royal court of Joseon wrote it all down.",
+   "img": "a blazing round object trailing a long tail of fire and white smoke streaking low over a Joseon coastal town of tiled hanok roofs at dusk, villagers in white hanbok frozen in the streets looking up, the sea dark behind, eerie orange glow",
+   "fx": "embers",
+   "move": "up",
+   "key": "sky"
+  },
+  {
+   "say": "Not in a ghost story. In the official annals of a king.",
+   "img": "close-up of an old bound Korean book lying open on a low lacquered desk, dense columns of brush-written characters too small to read, a single candle, the window behind glowing orange from a blazing round object trailing a long tail of fire and white smoke",
+   "fx": "dust",
+   "move": "in",
+   "hold": 0.8,
+   "key": "annals"
+  },
+  {
+   "say": "Don't look at me like that, dear human. It wasn't me. I don't fly. I don't even like heights.",
+   "gumi": "front",
+   "fx": "embers",
+   "move": "in",
+   "hold": 0.6
+  },
+  {
+   "say": "I'm Gumi. A gumiho, a Korean nine-tailed fox, a little over a thousand years old. I collect tales. Usually they have a monster in them. This one has something stranger. A paper trail.",
+   "gumi": "bead",
+   "fx": "embers",
+   "move": "left"
+  },
+  {
+   "say": "This is Tale Number Eight. No curse, no fox, no sealed stone like in Tale Seven. Just a sky, a royal record, and a question that is more than four hundred years old.",
+   "gumi": "wink",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "card": "TALE 008",
+   "sub": "What Was Recorded"
+  },
+  {
+   "say": "First, you need to know what kind of book this story lives in. The Annals of the Joseon Dynasty. Day by day, reign by reign, for roughly five centuries.",
+   "img": "a long wooden archive hall in a Joseon palace, rows of shelves holding stacks of bound books wrapped in cloth, dust floating in thin beams of morning light",
+   "fx": "dust",
+   "move": "right",
+   "note": "조선왕조실록  Joseon Wangjo Sillok  =  the Annals"
+  },
+  {
+   "say": "Royal historians followed the king and wrote down what happened. Meetings, arguments, floods, harvests, executions. Even the king himself was not supposed to read what they wrote about him.",
+   "img": "a royal historian in a dark green official robe and black gauze winged hat kneeling at the edge of a throne hall, brush in hand, writing quietly on paper while officials argue in the background, soft lantern light",
+   "fx": "dust",
+   "move": "in",
+   "key": "scribe"
+  },
+  {
+   "say": "So when something appears in these pages, it isn't a rumor told at a tavern. It's a report that traveled up through the government, landed on the king's desk, and was copied into history.",
+   "img": "a messenger on horseback galloping along a dirt road between rice paddies toward distant palace gates, carrying a sealed document, cloudy afternoon",
+   "fx": "dust",
+   "move": "right"
+  },
+  {
+   "say": "The reign belonged to a king named Gwanghaegun. And the year was his first full year on the throne. 1609.",
+   "img": "the empty throne of a Joseon king in a dim palace hall, a folding screen painted with a red sun, a white moon and five mountain peaks behind it, quiet and solemn",
+   "fx": "dust",
+   "move": "up",
+   "note": "광해군  Gwanghaegun  ·  1609"
+  },
+  {
+   "say": "That year, a report came in from Gangwon Province, the mountains and coast of Korea's far east.",
+   "img": "a wide view of the rugged pine mountains of Gangwon Province meeting the East Sea, small Joseon villages along the shore, morning mist",
+   "fx": "fog",
+   "move": "left"
+  },
+  {
+   "say": "The report said that on the same day, in several towns, people saw something in the sky. Places named in the record include Gangneung and Yangyang on the coast, and towns inland as well.",
+   "img": "a provincial official in a deep red robe and black gauze winged hat reading a stack of letters by lamplight in a provincial office, a map of mountains and coastline spread on the floor before him, worried expression",
+   "fx": "dust",
+   "move": "in",
+   "key": "governor"
+  },
+  {
+   "say": "Now, I won't put words in anyone's mouth. I'll tell you what the reports describe, in my own plain words. Because the details are the whole mystery.",
+   "img": "close-up of an old brush-written page under a magnifying lens of polished crystal, candlelight, the characters blurred and unreadable, a faint orange reflection on the lens",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "In one town, people described a shape like a round vessel, glowing, with fire about it, moving across the sky.",
+   "img": "villagers in white hanbok in a muddy Joseon market street pointing up at a blazing round object trailing a long tail of fire and white smoke, baskets dropped, a dog barking, pale daylight sky",
+   "fx": "embers",
+   "move": "up",
+   "key": "market"
+  },
+  {
+   "say": "Picture a woman at the well, rope in her hands. A child chasing a hen. A merchant counting coins. And above them, without a sound at first, the sky catches fire.",
+   "img": "a Joseon village well at midday, a woman in white hanbok holding a rope looking up in shock, a small child beside her pointing, an orange glow spilling across the courtyard from above",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "In another, it was more like a bright disc, a round light, shining as it passed. People stopped in the fields to watch it.",
+   "img": "farmers in straw hats standing in a golden rice paddy shading their eyes, looking up at a bright round disc of light in a pale blue sky, wide shot",
+   "fx": "dust",
+   "move": "up"
+  },
+  {
+   "say": "Some of the reports mention sound. A rumbling, a roar, like thunder rolling over the mountains, except the sky had no storm in it.",
+   "img": "a quiet Joseon mountain village under a clear sky, roof tiles trembling, a flock of crows bursting from pine trees, a faint streak of smoke high above",
+   "fx": "dust",
+   "move": "out"
+  },
+  {
+   "say": "And in at least one version of the record, the thing seems to rise, or hang, or leave a trail of something like smoke behind it.",
+   "img": "a long trail of white smoke curling and fading across a pale sky above pine ridges, a lonely figure on a hillside in white hanbok looking up",
+   "fx": "fog",
+   "move": "right"
+  },
+  {
+   "say": "Different towns. Different eyes. Different words. But the same day, and the same sky.",
+   "img": "a split view of three different Joseon villages, a coastal one, a valley one and a mountain one, all with tiny figures looking up at the same point in the sky",
+   "fx": "dust",
+   "move": "out"
+  },
+  {
+   "say": "The provincial office gathered these accounts, and sent them to the court. And in the capital, someone had to decide what it meant.",
+   "img": "a royal historian in a dark green official robe and black gauze winged hat unrolling a long letter in a palace corridor, his face lit by a lantern, reading with a frown, night",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "Because in Joseon, the sky was never just weather. The sky was a message.",
+   "img": "a vast starry night sky over the curved roofs of a Joseon palace, a faint red glow on the horizon, deep blue, ominous",
+   "fx": "fireflies",
+   "move": "up",
+   "hold": 0.8
+  },
+  {
+   "card": "I",
+   "sub": "The World of 1609"
+  },
+  {
+   "say": "Let me take you back. Not to the sky. To the ground. Because what people see in the sky depends on what they've just lived through.",
+   "gumi": "bead",
+   "fx": "embers",
+   "move": "left"
+  },
+  {
+   "say": "Only about ten years before, Korea had come out of a terrible war. Japanese armies had invaded in 1592, and for years the peninsula burned.",
+   "img": "a ruined Joseon town after war, collapsed hanok roofs, charred wooden beams, smoke rising into a grey sky, a single pine tree still standing",
+   "fx": "embers",
+   "move": "right"
+  },
+  {
+   "say": "People who had survived those years knew what fire looked like when it came from far away. They knew the sound of cannons echoing in the hills. They had learned to fear the horizon.",
+   "img": "an old Joseon soldier in a worn padded coat standing on a stone fortress wall at dusk, staring at distant smoke on the hills, a broken flag beside him",
+   "fx": "embers",
+   "move": "left"
+  },
+  {
+   "say": "Palaces had been destroyed. Fields were abandoned. Families were scattered. The country was still rebuilding when this new king took the throne.",
+   "img": "workers in white hanbok carrying timber to rebuild a burned palace gate, scaffolding of wooden poles, overcast morning, tired faces turned away",
+   "fx": "dust",
+   "move": "left"
+  },
+  {
+   "say": "And Gwanghaegun was not an easy king for his court. He was not the eldest son, and his mother was not the queen. Many officials whispered that he should not be king at all.",
+   "img": "a group of Joseon officials in dark robes and winged hats whispering together behind a red lacquered pillar, half in shadow, suspicious eyes",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "So picture it, dear human. A wounded country. A nervous court. A king with enemies in his own hall. And then, fire in the sky.",
+   "img": "a tense Joseon palace courtyard at dusk, officials in dark robes turning to look up at a blazing round object trailing a long tail of fire and white smoke above the curved palace roofs",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "Joseon was built on an old idea from China. Heaven gives a ruler the right to rule. And Heaven watches.",
+   "img": "a lone king in a red dragon robe standing in a palace courtyard at night, looking up at an immense starry sky, small and alone, solemn",
+   "fx": "fireflies",
+   "move": "up"
+  },
+  {
+   "say": "If the king was good, the seasons came on time. If he failed, Heaven would warn him. With droughts. Floods. Strange lights.",
+   "img": "a cracked dry rice field under a blazing white sun, a withered stalk in the foreground, an empty Joseon village on the horizon, heat haze",
+   "fx": "dust",
+   "move": "right"
+  },
+  {
+   "say": "Heaven was grading the king.",
+   "img": "extreme close-up of a blazing round object trailing a long tail of fire and white smoke reflected in a dark palace pond, ripples distorting it, black night",
+   "fx": "none",
+   "move": "in",
+   "hold": 1.2,
+   "key": "omen"
+  },
+  {
+   "say": "That's why Joseon had a whole government office for the sky. Astronomers watched the stars every night and reported anything unusual to the throne.",
+   "img": "astronomers in blue official robes on a stone observation platform at night, one looking through a bronze armillary sphere, another writing by a small lantern, a sky full of stars",
+   "fx": "fireflies",
+   "move": "up",
+   "note": "관상감  Gwansanggam  =  the Royal Observatory",
+   "key": "observatory"
+  },
+  {
+   "say": "Comets, eclipses, shooting stars, a ring around the sun. They were watched, measured and written down. Koreans even had a folk name for a comet. The broom star.",
+   "img": "a comet with a long pale tail sweeping across the night sky like a broom over dark mountain ridges, a tiny Joseon village with one lit window below",
+   "fx": "fireflies",
+   "move": "right",
+   "note": "빗자루별  bitjaru-byeol  =  broom star"
+  },
+  {
+   "say": "A broom sweeps things away. You can guess what a king thought when he saw one.",
+   "gumi": "wink",
+   "fx": "embers",
+   "move": "in",
+   "hold": 0.6
+  },
+  {
+   "say": "So when Gangwon's report arrived, nobody in the palace asked whether it was a visitor from another world. That idea didn't exist yet.",
+   "img": "a royal historian in a dark green official robe and black gauze winged hat and two senior officials leaning over a letter on a low table, candlelight, tense faces, night",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "They asked a far more dangerous question. What was Heaven trying to say about the king?",
+   "img": "the empty royal throne in darkness, a thin beam of orange light falling across it from a high window, dust in the air, foreboding",
+   "fx": "dust",
+   "move": "down",
+   "hold": 0.8
+  },
+  {
+   "card": "II",
+   "sub": "The Explanations"
+  },
+  {
+   "say": "Now, dear human, I've lived a very long time. And I've learned to ask the boring question first. What's the simplest thing that fits?",
+   "gumi": "front",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "Imagine a large meteor. Not a little shooting star, but a big chunk of rock from space, hitting the air so fast it burns.",
+   "img": "a huge fiery meteor entering the atmosphere high above the curving Korean coastline at dusk, glowing orange, breaking into pieces, clouds far below",
+   "fx": "embers",
+   "move": "down",
+   "key": "meteor"
+  },
+  {
+   "say": "Astronomers call the brightest ones fireballs. A big one can glow brighter than the full moon, and look round, because what you see is a ball of burning air around it.",
+   "img": "close view of a glowing round fireball wrapped in white hot air and a tail of fire, against a deep blue twilight sky, dramatic",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "It can be seen across a huge area at once. From a mountain town and a coastal town a long way apart. On the same day. At the same moment.",
+   "img": "a wide aerial view of Gangwon's mountains and coast with several tiny Joseon villages scattered across it, a blazing round object trailing a long tail of fire and white smoke crossing high above them all, golden evening light",
+   "fx": "dust",
+   "move": "right"
+  },
+  {
+   "say": "It can break apart and boom like thunder, a sound that arrives minutes after the light, rolling down the valleys.",
+   "img": "a Joseon farmer dropping his hoe in a valley field as he looks up, a broken trail of smoke high in the sky, birds scattering from the trees",
+   "fx": "dust",
+   "move": "up"
+  },
+  {
+   "say": "And it can leave a trail of smoke that hangs in the sky and twists in the wind, long after the fire is gone.",
+   "img": "a twisted silver smoke trail hanging in a pale afternoon sky above pine-covered mountains, slowly drifting, quiet and strange",
+   "fx": "fog",
+   "move": "left"
+  },
+  {
+   "say": "Round. Burning. Seen in many towns. Loud. Smoking. That's a very good match. Most scientists who look at the 1609 record think it was exactly that. A great fireball over Gangwon.",
+   "gumi": "bead",
+   "fx": "embers",
+   "move": "left"
+  },
+  {
+   "say": "But science wasn't how ordinary villagers explained the sky. They had other stories. And some of them I know very well.",
+   "img": "an old Korean grandmother in white hanbok telling a story to children around a small fire outside a thatched house at night, sparks rising",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "In Korean folklore, strange lights drifting in the hills at night were often called dokkaebi fire. The mischief of goblins, leading travelers off the path.",
+   "img": "small bluish flames floating among dark pine trees on a hillside at night, a lone traveler with a lantern stopping on the path, eerie",
+   "fx": "fireflies",
+   "move": "right",
+   "note": "도깨비불  dokkaebi-bul  =  goblin fire",
+   "key": "goblinfire"
+  },
+  {
+   "say": "And a great light rising from the mountains? Some would think of a dragon. In old tales, a serpent that waits long enough may finally rise to the sky as a dragon, in thunder and cloud.",
+   "img": "a long shadowy serpent shape rising out of storm clouds above a mountain lake, faint glow around it, lightning far away, awe and fear",
+   "fx": "fog",
+   "move": "up"
+  },
+  {
+   "say": "Fire in the sky, thunder with no storm. You can see why a frightened farmer might reach for those stories.",
+   "img": "a frightened Joseon farmer kneeling and bowing toward the sky in a field at dusk, a fading trail of smoke above the mountains",
+   "fx": "fog",
+   "move": "in"
+  },
+  {
+   "say": "And then, a few centuries later, came a new story.",
+   "img": "a modern night sky full of stars above the dark Gangwon mountains, a thin crescent moon, the lights of a small modern town below",
+   "fx": "fireflies",
+   "move": "up",
+   "look": "modern"
+  },
+  {
+   "say": "Today, UFO enthusiasts around the world like to call the 1609 entry Korea's oldest UFO report. A record of an unidentified flying object, written by a royal court, centuries before anyone said the word alien.",
+   "img": "a person in a hoodie seen from behind at a desk late at night, reading an old book about the sky beside a glowing laptop, posters of stars on the wall, blue light",
+   "fx": "dust",
+   "move": "in",
+   "look": "modern",
+   "key": "reader"
+  },
+  {
+   "say": "And honestly? In the most literal sense, it was unidentified. It was an object. It was flying. The court never named it.",
+   "img": "a modern stargazer seen from behind on a dark hilltop in the Gangwon mountains, a small telescope beside her, the Milky Way overhead",
+   "fx": "fireflies",
+   "move": "in",
+   "look": "modern"
+  },
+  {
+   "say": "But unidentified doesn't mean alien. It only means nobody at the time could say what it was. That is a much smaller claim. And a much more honest one.",
+   "img": "a lone figure standing on a modern seaside breakwater at night, looking up at a quiet starry sky, a lighthouse blinking in the distance",
+   "fx": "fog",
+   "move": "out",
+   "look": "modern"
+  },
+  {
+   "say": "So, a meteor. Case closed? Not quite. There are pieces of this record that still make my tails twitch.",
+   "img": "extreme close-up of a candle flame flickering beside a page of old brush-written characters, the edge of the page glowing faintly orange",
+   "fx": "none",
+   "move": "in",
+   "hold": 0.6
+  },
+  {
+   "card": "III",
+   "sub": "What's Still Unexplained"
+  },
+  {
+   "say": "The first problem is the words. The annals are written in classical Chinese, the way Joseon officials wrote. And every translator reads those old lines a little differently.",
+   "img": "a royal historian in a dark green official robe and black gauze winged hat grinding ink on an ink stone, a brush resting nearby, the page in front of him still blank, early morning light through paper windows",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "Was the shape a vessel, a jar, a basin, a disc? Did it move like a falling star, or does one version suggest it paused? Depending on who translates it, the story gets calmer, or much stranger.",
+   "img": "a blazing round object trailing a long tail of fire and white smoke hanging still above a mountain ridge at dusk, a small crowd of villagers in white hanbok on a hill watching in silence",
+   "fx": "fog",
+   "move": "out",
+   "key": "hover"
+  },
+  {
+   "say": "Enthusiasts point to those details and say no meteor behaves like that. Skeptics answer that frightened witnesses, retelling a fast event, often remember it as slower and closer than it was.",
+   "img": "two shadowy figures at a crossroads at night under a single lantern, one pointing at the sky, one shaking his head, silhouettes against a starry sky",
+   "fx": "dust",
+   "move": "left"
+  },
+  {
+   "say": "The second problem is time. These reports were gathered from different towns, written by different people, and sent to the capital. Every step was a chance for the story to grow.",
+   "img": "a chain of messengers on horseback passing a sealed letter from one to another on a winding mountain road, autumn leaves, long shadows",
+   "fx": "dust",
+   "move": "right"
+  },
+  {
+   "say": "And the third problem is the one nobody can fix. There's no rock. No crater anyone has tied to that day. No drawing. Only words on paper.",
+   "img": "an empty mountain clearing in Gangwon at dawn, scattered stones and pine needles, no sign of anything, mist drifting through, quiet and mysterious",
+   "fx": "fog",
+   "move": "out"
+  },
+  {
+   "say": "And remember, dear human, the court was not collecting these reports for us. It was collecting them for its own fears. What it chose to write down, and how, was already an answer to a question about the king.",
+   "img": "a royal historian in a dark green official robe and black gauze winged hat pausing with his brush above the page, glancing toward a closed door where the king's shadow falls across the paper screen, lamplight",
+   "fx": "dust",
+   "move": "left"
+  },
+  {
+   "say": "So here is what we really know. In 1609, many people across Gangwon saw something bright and fiery in the sky, and their government took them seriously enough to write it down.",
+   "img": "a royal historian in a dark green official robe and black gauze winged hat brushing the last line of a page by candlelight, the window behind him dark, his face calm and tired",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "Everything after that is reading. Reading the sky. Reading the record. And reading what people wanted it to mean.",
+   "img": "an open old book on a low desk with a single dried pine needle resting on the page, candle smoke curling upward, soft dark background",
+   "fx": "dust",
+   "move": "down"
+  },
+  {
+   "say": "Here's the part that gives me a chill. Remember what the court feared? That Heaven was warning the king?",
+   "gumi": "front",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "Gwanghaegun ruled for fifteen years. In 1623, his enemies at court rose up and overthrew him. He was sent into exile on an island, and he died far from the palace.",
+   "img": "a lonely exile's thatched hut on a windy island shore under grey clouds, waves crashing on black rocks, a single figure in plain white robes looking at the sea",
+   "fx": "rain",
+   "move": "left",
+   "key": "exile"
+  },
+  {
+   "say": "Because he was deposed, his records were not even called annals. They were called a diary. The Gwanghaegun Ilgi. The book that holds our fire in the sky is the record of a fallen king.",
+   "img": "a stack of old bound Korean books on a dusty shelf, one slightly pulled out, a beam of pale light falling across its plain cover, quiet archive",
+   "fx": "dust",
+   "move": "in",
+   "note": "광해군일기  Gwanghaegun Ilgi  =  Gwanghaegun's Diary"
+  },
+  {
+   "say": "Did the sky predict his fall? Of course not. A rock from space doesn't care who sits on a throne.",
+   "img": "a fiery meteor falling silently toward the sea far from any town, the Joseon coastline small and dark below, vast and indifferent",
+   "fx": "embers",
+   "move": "down"
+  },
+  {
+   "say": "But I'd bet every one of my tails that somebody, somewhere in that palace, remembered Gangwon's fire when the king fell.",
+   "gumi": "wink",
+   "fx": "embers",
+   "move": "in",
+   "hold": 0.6
+  },
+  {
+   "say": "So, my verdict, dear human. I think the towns of Gangwon saw a great fireball. One of the brightest things anyone in Gangwon would see in their whole lives.",
+   "gumi": "bead",
+   "fx": "embers",
+   "move": "left"
+  },
+  {
+   "say": "And I think the real wonder isn't the object. It's the people. Farmers who looked up instead of running. Officials who wrote it down. Historians who kept it for four hundred years.",
+   "img": "villagers in white hanbok standing together on a hill at dusk, all looking up at the fading smoke trail of a blazing round object trailing a long tail of fire and white smoke, a child holding an elder's hand",
+   "fx": "fog",
+   "move": "up"
+  },
+  {
+   "say": "Your phone could film it today in seconds. They had brush, ink, and a horse to carry the news. And still, it reached us.",
+   "img": "a modern smartphone held up toward a starry night sky over Korean mountains, its screen glowing, a hand seen from behind, no text on the screen",
+   "fx": "fireflies",
+   "move": "up",
+   "look": "modern"
+  },
+  {
+   "say": "Now you tell me. If you had been standing in Gangneung in 1609, watching that fire cross the sky, what would you have written to the king? Tell me in the comments.",
+   "gumi": "front",
+   "fx": "embers",
+   "move": "in"
+  },
+  {
+   "say": "In my next tale, it's your turn on the mountain. You're hiking Mount Jang alone at dusk, and you hear your mother call your name from the trees. But your mother is at home.",
+   "img": "a modern hiking trail on a forested mountain at dusk seen from eye level, tall dark trees closing in, a faint pale shape far back between the trunks, eerie silence",
+   "fx": "fog",
+   "move": "in",
+   "look": "modern"
+  },
+  {
+   "say": "Keep looking up, dear human. Just not for too long. Something up there might be writing about you.",
+   "gumi": "wink",
+   "fx": "embers",
+   "move": "out",
+   "hold": 1.0
+  }
+ ],
+ "short": {
+  "title": "If You Saw Fire in the Sky in Joseon Korea, You Had to Tell the King #shorts",
+  "hook": "FIRE IN THE SKY, 1609",
+  "lines": [
+   {
+    "say": "1609. Something round and burning crosses the sky over Korea's east coast. Town after town sees it.",
+    "scene": "sky"
+   },
+   {
+    "say": "In Joseon Korea, you didn't just stare. Strange lights in the sky were reported up to the royal court.",
+    "scene": "governor"
+   },
+   {
+    "say": "Because the sky wasn't weather. It was Heaven, judging the king.",
+    "scene": "omen"
+   },
+   {
+    "say": "The court kept a whole observatory just to watch for signs like this.",
+    "scene": "observatory"
+   },
+   {
+    "say": "And this one went into the royal annals. People call it Korea's oldest UFO report.",
+    "scene": "annals"
+   },
+   {
+    "say": "So what did they really see? I have a verdict. It's in the full tale. I'm Gumi.",
+    "gumi": "wink"
+   }
+  ]
+ }
+}
