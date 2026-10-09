@@ -1,0 +1,28 @@
+{
+ "id": 301,
+ "slug": "empty-mall-3am",
+ "format": "liminal",
+ "part": 1,
+ "look": "liminal",
+ "fiction": true,
+ "title": "RULES to Follow if You Wake Up in an Empty Mall at 3 A.M. #shorts",
+ "hook": "EMPTY MALL. 3 A.M.",
+ "description_hook": "You fell asleep on a mall bench. It's 3 A.M., every store is lit, and the music never stopped.",
+ "lines": [
+  {"rule": 1, "text": "RIDE ONLY THE DOWN ESCALATOR", "say": "Rule one. The escalators never stop. Only ride the one going down.",
+   "img": "an empty two-floor shopping mall at night, escalators running with no one on them, every storefront lit, glossy tiled floor reflecting the lights"},
+  {"rule": 2, "text": "IF THE MUSIC STOPS, FREEZE", "say": "Rule two. Soft music plays from the ceiling. If it stops, freeze until it starts again.",
+   "img": "close-up of a round ceiling speaker in a mall, soft warm light, blurry empty corridor below"},
+  {"rule": 3, "text": "DON'T LOOK AT THE MANNEQUINS TWICE", "say": "Rule three. Look at the mannequins once. Never twice.",
+   "img": "a lit clothing store window at night with three faceless white mannequins, one turned slightly toward the glass, empty mall reflected"},
+  {"rule": 4, "text": "DON'T EAT ANYTHING WARM", "say": "Rule four. The food court is open. Don't eat anything that is still warm.",
+   "img": "an empty food court at night, rows of tables and chairs, one tray with a steaming paper cup in the middle, counters lit and unattended"},
+  {"rule": 5, "text": "THE EXIT SIGNS LIE", "say": "Rule five. The exit signs point the wrong way. Walk away from the green light.",
+   "img": "a long empty mall corridor ending in darkness, a green glow on the floor, a dry fountain in the foreground"},
+  {"text": "THE BENCH IS WARM AGAIN", "say": "And if the speakers say the mall is closing… look down. Your bench is warm again.",
+   "img": "a single wooden mall bench under a skylight at night, empty, an indentation in the cushion as if someone just stood up"}
+ ],
+ "loop_back": "The last line puts the viewer back on the bench where they woke up — the start of rule one.",
+ "gumi": {"say": "Gumi here. Which rule would you break first? Be honest."},
+ "tags": ["liminal space", "liminal spaces", "empty mall", "3am", "creepy rules", "dreamcore", "weirdcore", "abandoned mall", "rules horror"]
+}

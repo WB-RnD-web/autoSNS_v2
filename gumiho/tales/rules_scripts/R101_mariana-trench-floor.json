@@ -1,0 +1,64 @@
+{
+ "id": 101,
+ "slug": "mariana-trench-floor",
+ "format": "survival",
+ "part": 1,
+ "look": "deep",
+ "title": "How Long Would You Last on the Floor of the Mariana Trench? Pt.1 #shorts",
+ "hook": "HOW LONG WOULD YOU LAST?",
+ "situation": "FLOOR OF THE MARIANA TRENCH",
+ "description_hook": "You wake up on the floor of the Mariana Trench, 10,935 meters down, with no submarine. The clock starts now.",
+ "beats": [
+  {
+   "t": "0:00",
+   "text": "10,935 M DOWN",
+   "src": 0,
+   "say": "Gumi here. You just woke up on the floor of the Mariana Trench. 10,935 meters down. No submarine.",
+   "img": "a lone human silhouette standing on the dark silty floor of the deepest ocean trench, a faint beam of light from far above, crushing darkness all around"
+  },
+  {
+   "t": "0:00",
+   "text": "ZERO SUNLIGHT",
+   "src": 3,
+   "say": "It is pitch black. Sunlight gave up at 1,000 meters. The water is 2.4 degrees Celsius.",
+   "img": "total darkness of the deep sea with a few faint bioluminescent specks, the last trace of light fading far overhead"
+  },
+  {
+   "t": "--:--",
+   "text": "16,000 PSI",
+   "src": 1,
+   "say": "Then the water hits. More than 16,000 PSI. That's about 8 tons on every square inch.",
+   "img": "extreme close-up of heavy deep ocean water pressing in, tiny particles of marine snow drifting through a narrow beam of light"
+  },
+  {
+   "t": "--:--",
+   "text": "1,000× THE PRESSURE",
+   "src": 2,
+   "say": "Over 1,000 times the pressure at the surface. The air in your lungs is squeezed to a thousandth of its size.",
+   "img": "a glowing x-ray style outline of human lungs collapsing under immense pressure, deep blue darkness around it"
+  }
+ ],
+ "gumi": {
+  "odds": "0%",
+  "say": "Gumi's odds: zero. A NOAA microphone lasted 23 days down here. You won't."
+ },
+ "teaser": "PT.2 TOMORROW: MARS, NO SUIT",
+ "sources": [
+  "https://oceanservice.noaa.gov/facts/oceandepth.html",
+  "https://www.noaa.gov/media-release/seven-miles-deep-ocean-is-still-noisy-place",
+  "https://www.rmg.co.uk/stories/ocean/challenger-deep-deepest-point-ocean",
+  "https://oceanservice.noaa.gov/facts/light_travel.html",
+  "https://www.pmel.noaa.gov/pubs/PDF/dzia4367/dzia4367.pdf"
+ ],
+ "tags": [
+  "mariana trench",
+  "challenger deep",
+  "deep sea",
+  "how long would you last",
+  "ocean pressure",
+  "deepest ocean",
+  "science",
+  "survival",
+  "ocean facts"
+ ]
+}
