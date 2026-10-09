@@ -61,6 +61,9 @@ STYLES = {
     "film": ("cinematic horror film still, ", "digital painting, moody low-key lighting, shallow depth of field, atmospheric, "),
 }
 STYLE_HEAD, STYLE_TAIL = STYLES.get(os.environ.get("TALES_STYLE", "anime"), STYLES["anime"])
+# 해설편(27화~, look=real): TALES_STYLE 과 상관없이 실사 다큐 화풍. 글자·로고·여우가 끼지 않게 꼬리에 못 박는다.
+REAL_HEAD = "cinematic documentary film still, photorealistic, "
+REAL_TAIL = "natural lighting, high detail, atmospheric, wide dynamic range, no text, no logos, no watermark, "
 
 
 def gumi_asset(pose: str, s: dict | None = None) -> str:
@@ -76,6 +79,8 @@ def look_prefix(look: str | None) -> str:
     """그림 프롬프트 앞에 붙는 화풍 + 시대. look 은 대본(또는 장면)의 'look' — tales.LOOKS 키."""
     if not look:
         return LOOK
+    if look == "real":
+        return REAL_HEAD + T.LOOKS["real"] + REAL_TAIL
     return STYLE_HEAD + T.LOOKS[look] + STYLE_TAIL
 ASSETS = os.path.join(GUMIHO, "assets", "tales")
 GOLD, RED, CREAM = (236, 196, 110), (214, 52, 40), (246, 238, 222)
@@ -85,9 +90,10 @@ SHORT_MAX = 90.0
 # 쇼츠 끝맺음(2026-10-09 조사): 쇼츠 설명란 링크는 2023-08-31부터 안 눌린다 → 본편 가는 길은 '관련 동영상' 링크뿐.
 #   YouTube 관련 동영상 가이드: 마지막 5초에 말과 화면으로 본편을 안내하라. 그 링크는 '채널 이름 아래'에 뜬다
 #   (support.google.com/youtube/answer/14075157) = 화면 아래 UI 안 → 화살표는 아래를 가리키고 그 UI 위에서 멈춘다.
-#   대본 마지막 줄(구미 윙크)은 "The full tale is on my channel" 류라 링크를 짚지 않는다 → 코드가 한 줄 붙인다.
-CTA_SAY = "Tap the link below, dear human."
-CTA_TOP, CTA_TEXT = "WANT THE ENDING?", "Full tale: tap the link below"
+#   대본 마지막 줄은 "The full video is on the channel" 류라 링크를 짚지 않는다 → 코드가 한 줄 붙인다.
+# 2026-10-09 개편: 쇼츠는 본편 한 꼭지 → 가는 곳은 '이야기 결말'이 아니라 본편 전체. ↓ 는 글꼴에 없을 수 있어 도형으로 그린다.
+CTA_SAY = "The full video is right below. Tap the link."
+CTA_TOP, CTA_TEXT = "FULL VIDEO ↓", "tap the link below"
 CTA_MIN = 3.0                             # 끝맺음 화면 최소(초) — 꼬리 0.9초를 더해 3.9~5초
 CTA_ARROW_X = 300                         # 링크 칩은 왼쪽 정렬(채널 이름 아래) — 화살표를 왼쪽으로
 CTA_ARROW_TIP = 1540                      # 아래 UI(채널 이름·링크·제목, 대략 y 1580~)를 덮지 않는 끝
@@ -208,7 +214,7 @@ def plan(s: dict) -> list[dict]:
             "card": x.get("card"), "sub": x.get("sub", ""), "note": x.get("note", ""),
             "fx": x.get("fx") or ("embers" if kind != "img" else "dust"),
             "move": "in" if kind == "card" else (x.get("move") or T.MOVES[i % len(T.MOVES)]),
-            "hold": float(x.get("hold", 0)), "key": x.get("key")})
+            "hold": float(x.get("hold", 0)), "key": x.get("key"), "odds": x.get("odds", "")})
     return shots
 
 
@@ -494,6 +500,18 @@ def note_band(text: str) -> Image.Image:
     return band
 
 
+def odds_band(text: str) -> Image.Image:
+    """해설편 꼭지마다 한 번: 왼쪽 위 판정 띠(빨간 바탕 · 흰 글자) — 'SURVIVAL ODDS: ZERO'."""
+    f = font("sans", 50)
+    tmp = ImageDraw.Draw(Image.new("RGB", (8, 8)))
+    tw = int(tmp.textlength(text.upper(), font=f))
+    band = Image.new("RGBA", (tw + 80, 96), (0, 0, 0, 0))
+    d = ImageDraw.Draw(band)
+    d.rounded_rectangle([0, 0, tw + 79, 95], 14, fill=RED + (235,), outline=(255, 255, 255, 230), width=3)
+    d.text((40, 14), text.upper(), font=f, fill=(255, 255, 255))
+    return band
+
+
 def ease(p: float) -> float:
     p = min(1.0, max(0.0, p))
     return 0.7 * p + 0.3 * (0.5 - 0.5 * math.cos(math.pi * p))
@@ -540,6 +558,7 @@ class Painter:
         self.vig = vignette(W, H)
         self._img: dict = {}
         self._note: dict = {}
+        self._odds: dict = {}
 
     def img(self, path: str) -> Image.Image:
         if path not in self._img:
@@ -564,6 +583,15 @@ class Painter:
             if a > 0:
                 m = band.getchannel("A").point(lambda v: int(v * a))
                 fr.paste(band.convert("RGB"), ((W - band.width) // 2, H - 190), m)
+        if x.get("odds"):                       # 말이 반쯤 지나서 떠올라 장면 끝까지
+            if k not in self._odds:
+                self._odds[k] = odds_band(x["odds"])
+            band = self._odds[k]
+            lt = t - x["start"]
+            a = min(1.0, max(0.0, (lt - 0.8) / 0.35)) * min(1.0, max(0.0, (x["dur"] - lt - 0.2) / 0.3))
+            if a > 0:
+                m = band.getchannel("A").point(lambda v: int(v * a))
+                fr.paste(band.convert("RGB"), (70, 64), m)
         return fr
 
     def frame(self, t: float) -> Image.Image:
@@ -705,7 +733,7 @@ def movavg(x, win: int):
     return ((c[b] - c[a]) / np.maximum(1, b - a)).astype("float32")
 
 
-def build_audio(shots: list[dict], total: float, out_m4a: str, wd: str, seed: int = 1):
+def build_audio(shots: list[dict], total: float, out_m4a: str, wd: str, seed: int = 1, plucks: bool = True):
     import numpy as np
     n = int(total * SR) + SR
     voice = np.zeros(n, dtype="float32")
@@ -716,7 +744,7 @@ def build_audio(shots: list[dict], total: float, out_m4a: str, wd: str, seed: in
             voice[a:a + len(v)] += v[: max(0, n - a)]
     act = np.abs(voice) > 1e-4
     vr = float(np.sqrt(np.mean(voice[act] ** 2))) if act.any() else 0.1
-    b = bed(n, seed)
+    b = bed(n, seed, plucks=plucks)
     b *= vr * 0.13 / (float(np.sqrt(np.mean(b ** 2))) + 1e-9)          # 말 사이 약 -18dB(9/29 1화 실측 -16dB → 조금 낮춤)
     # 덕킹: 말하는 동안 배경을 한 번 더 낮춘다(0.25초 창 → 부드럽게)
     win = int(SR * 0.25)
@@ -824,11 +852,14 @@ def thumbnail(s: dict, raw: str, out: str):
         d.text((56, y), ln, font=f, fill=col, stroke_width=max(6, size // 18), stroke_fill=(0, 0, 0))
         y += size * 1.02
     # 태그
-    tag = f"KOREAN LEGEND · TALE {s['id']:03d}"
+    tag = T.badge(s) if T.explainer(s) else f"KOREAN LEGEND · TALE {s['id']:03d}"
     ft = font("sans_bold", 34)
     tl = d.textlength(tag, font=ft)
     d.rounded_rectangle([50, 44, 50 + tl + 40, 100], 12, fill=RED)
     d.text((70, 50), tag, font=ft, fill=(255, 255, 255))
+    if T.explainer(s):                       # 해설편: 구미는 목소리만 — 여우 배지 없음
+        img.save(out, "JPEG", quality=92)
+        return out
     # 구미 배지(오른쪽 아래)
     g = Image.open(gumi_asset("wink", s)).convert("RGB")
     g = g.crop((g.width * 0.28, 0, g.width * 0.72, g.height * 0.64)).resize((210, 210), Image.LANCZOS)
@@ -950,17 +981,27 @@ class ShortPainter:
         오른쪽 버튼 열(좋아요·댓글, x≈950~)을 피해 가운데보다 왼쪽(CX)에 둔다."""
         a = min(1.0, max(0.0, lt / 0.25))
         cx, wmax, y_off = 470, 780, 1100
-        ft = next(font("sans", z) for z in (80, 72, 64, 56) if d.textlength(CTA_TOP, font=font("sans", z)) <= wmax)
+        top, arrow = (CTA_TOP[:-1].rstrip(), True) if CTA_TOP.endswith("↓") else (CTA_TOP, False)
+        aw = lambda f: (f.size * 0.62 + 18) if arrow else 0     # noqa: E731  도형 화살표 자리(글자 높이 비례)
+        ft = next(font("sans", z) for z in (80, 72, 64, 56)
+                  if d.textlength(top, font=font("sans", z)) + aw(font("sans", z)) <= wmax)
         fb = next(font("sans_bold", z) for z in (50, 46, 42, 38)
                   if d.textlength(CTA_TEXT, font=font("sans_bold", z)) <= wmax)
-        tw = max(d.textlength(CTA_TOP, font=ft), d.textlength(CTA_TEXT, font=fb))
+        top_w = d.textlength(top, font=ft) + aw(ft)
+        tw = max(top_w, d.textlength(CTA_TEXT, font=fb))
         lay = Image.new("RGBA", (SW, SH - y_off), (0, 0, 0, 0))
         g = ImageDraw.Draw(lay)
         y0 = 50 + round((1 - a) * 30)
         y1 = y0 + ft.size + fb.size + 86
         g.rounded_rectangle([cx - tw / 2 - 40, y0, cx + tw / 2 + 40, y1], 28, fill=(10, 6, 12, 210),
                             outline=GOLD + (255,), width=4)
-        g.text((cx - d.textlength(CTA_TOP, font=ft) / 2, y0 + 26), CTA_TOP, font=ft, fill=(255, 255, 255, 255))
+        g.text((cx - top_w / 2, y0 + 26), top, font=ft, fill=(255, 255, 255, 255))
+        if arrow:                                   # 'FULL VIDEO' 오른쪽의 작은 아래 화살표
+            hx = cx - top_w / 2 + d.textlength(top, font=ft) + 18 + ft.size * 0.31
+            hy0, hy1, hw = y0 + 26 + ft.size * 0.18, y0 + 26 + ft.size * 0.98, ft.size * 0.31
+            g.polygon([(hx - hw * 0.38, hy0), (hx + hw * 0.38, hy0), (hx + hw * 0.38, hy1 - hw),
+                       (hx + hw, hy1 - hw), (hx, hy1), (hx - hw, hy1 - hw), (hx - hw * 0.38, hy1 - hw)],
+                      fill=(255, 255, 255, 255))
         g.text((cx - d.textlength(CTA_TEXT, font=fb) / 2, y0 + 44 + ft.size), CTA_TEXT, font=fb, fill=GOLD + (255,))
         # 화살표: 살짝 위아래로 까딱이고, 끝은 CTA_ARROW_TIP 을 넘지 않는다
         tip = CTA_ARROW_TIP - y_off - 12 + round(12 * math.sin(2 * math.pi * 1.6 * lt))
@@ -993,7 +1034,7 @@ class ShortPainter:
         fr = ImageChops.multiply(fr, self.vig)
         d = ImageDraw.Draw(fr)
         # 위: 시리즈 표시 + 끝까지 떠 있는 두 줄 제목(소리 없이 넘겨 보는 사람도 첫 프레임에 읽는다)
-        top = "KOREAN LEGEND"
+        top = T.badge(self.s)
         tl = d.textlength(top, font=self.ftop)
         d.rounded_rectangle([(SW - tl) / 2 - 24, 150, (SW + tl) / 2 + 24, 206], 12, fill=RED)
         d.text(((SW - tl) / 2, 157), top, font=self.ftop, fill=(255, 255, 255))
@@ -1024,7 +1065,7 @@ class ShortPainter:
                        stroke_fill=(0, 0, 0))
                 y += 110
         if k == len(self.rows) - 1 and not r.get("cta"):
-            end = "Full tale on the channel"
+            end = "Full video on the channel" if T.explainer(self.s) else "Full tale on the channel"
             fe = font("sans_bold", 46)
             el = d.textlength(end, font=fe)
             d.rounded_rectangle([(SW - el) / 2 - 30, 1420, (SW + el) / 2 + 30, 1500], 16, fill=(12, 8, 12))
@@ -1113,7 +1154,7 @@ def render(path: str, out_dir: str, work: str, mock: bool = False, skip_short: b
     extras = [] if T.sprint_day(s["id"]) else (s.get("shorts_extra") or [])
     texts += [ln["say"] for ex in extras for ln in ex["lines"]]
     if not skip_short:
-        texts.append(CTA_SAY)                   # 쇼츠 끝맺음(모든 이야기 쇼츠에 본편이 있다)
+        texts.append(CTA_SAY)                   # 쇼츠 끝맺음(모든 쇼츠에 본편이 있다)
     voices = synth(texts, os.path.join(wd, "tts"), mock)
     total = timeline(shots, voices)
     print(f"   ⏱️ 본편 {total / 60:.1f}분 · 장면 {len(shots)}", flush=True)
@@ -1125,7 +1166,7 @@ def render(path: str, out_dir: str, work: str, mock: bool = False, skip_short: b
     silent = os.path.join(wd, "silent.mp4")
     render_video(P, wd, silent, procs)
     audio = os.path.join(wd, "audio.m4a")
-    build_audio(shots, total, audio, wd, seed=s["id"])
+    build_audio(shots, total, audio, wd, seed=s["id"], plucks=not T.explainer(s))   # 해설편: 동양 오음계 빼기
     mux(silent, audio, base + ".mp4")
     n_cues = build_srt(shots, base + ".srt")
     thumbnail(s, im["thumb_raw"], base + "_thumb.jpg")

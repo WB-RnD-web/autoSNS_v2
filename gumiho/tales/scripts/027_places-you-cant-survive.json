@@ -1,0 +1,584 @@
+{
+ "id": 27,
+ "slug": "places-you-cant-survive",
+ "format": "places",
+ "look": "real",
+ "title": "10 Places on Earth You Can't Survive — Explained",
+ "thumb": {
+  "text": "YOU WON'T LAST",
+  "img": "a lone mountaineer in a red down suit and oxygen mask standing on a narrow knife-edge snow ridge high above a sea of clouds, violent spindrift blowing off the summit, deep blue sky, dramatic and dangerous"
+ },
+ "hook": "Ten real places, ranked from 'you'd be fine with a plan' to 'you wouldn't finish this sentence' — with the real numbers behind each one.",
+ "tags": [
+  "places on earth you can't survive",
+  "most dangerous places on earth",
+  "explained",
+  "extreme places",
+  "challenger deep",
+  "everest death zone",
+  "armstrong limit",
+  "lut desert",
+  "death valley",
+  "dallol",
+  "kawah ijen",
+  "vostok station",
+  "lake natron",
+  "science explained",
+  "deadliest places"
+ ],
+ "sources": [
+  "WMO — World Weather & Climate Extremes (Death Valley, Vostok records): https://wmo.int/news/media-centre/wmo-verifies-3rd-and-4th-hottest-temperature-recorded-earth",
+  "NPS — Death Valley Weather: https://www.nps.gov/deva/learn/nature/weather-and-climate.htm",
+  "NASA Earth Observatory — Lake Natron, Tanzania: https://science.nasa.gov/earth/earth-observatory/lake-natron-tanzania-5465",
+  "Susetyo et al. (2025), Toxicology Reports — Kawah Ijen sulfur dioxide: https://pmc.ncbi.nlm.nih.gov/articles/PMC11780170/",
+  "USGS Yellowstone Volcano Observatory — How hot are Yellowstone's boiling waters?: https://www.usgs.gov/observatories/yvo/news/how-hot-are-yellowstones-boiling-waters-some-are-hotter-others",
+  "NPS — Norris Geyser Basin: https://nps.gov/yell/planyourvisit/norrisplan.htm",
+  "Belilla et al. (2019), Nature Ecology & Evolution — Dallol: https://pmc.ncbi.nlm.nih.gov/articles/PMC6837875/",
+  "NASA Earth Observatory — Iran's Lut Desert: https://science.nasa.gov/earth/earth-observatory/irans-lut-desert-153634",
+  "AGU — Coldest place on Earth is colder than scientists thought: https://news.agu.org/press-release/coldest-place-on-earth-is-colder-than-scientists-thought/",
+  "Matthews et al. (2020), iScience — Everest summit air pressure: https://pmc.ncbi.nlm.nih.gov/articles/PMC7756134/",
+  "Szymczak et al. (2021), Frontiers in Physiology — winter Everest weather: https://pmc.ncbi.nlm.nih.gov/articles/PMC8287323/",
+  "UBC ATSC 113 — Altitude and Pilot Physiology: https://www.eoas.ubc.ca/courses/atsc113/flying/met_concepts/02-met_concepts/02b-oxygen_physiology/index.html",
+  "NOAA Ocean Service — How deep is the ocean?: https://oceanservice.noaa.gov/facts/oceandepth.html",
+  "WHOI — Mariana Trench 2009: https://archives.whoi.edu/nereus/main/nereus/mariana-trench-2009.html"
+ ],
+ "scenes": [
+  {
+   "say": "Almost 11 kilometers down, the ocean presses on you with about 1,100 times the pressure at the surface. That's number one on today's list. We'll get there.",
+   "img": "a small white deep-sea submersible with bright lights hovering just above a flat grey silt floor in total darkness, particles drifting through the light beams, black water all around, extreme depth",
+   "fx": "none",
+   "move": "in",
+   "key": "deep-open"
+  },
+  {
+   "say": "I'm Gumi, your narrator. I've seen most of this planet, and I can tell you what the travel brochures won't: a lot of it does not want you there.",
+   "img": "aerial view at dawn of an endless cracked white salt flat with a single empty road crossing it, heat haze, pale orange sky",
+   "fx": "dust",
+   "move": "out"
+  },
+  {
+   "say": "Today, ten real places, ranked from 'you'd be fine with a plan' to 'you would not finish this sentence.' Every number comes from a real source, listed in the description.",
+   "img": "a lone hiker in a red jacket seen from behind standing at the rim of a huge steaming volcanic crater at dusk, yellow sulfur crust, drifting fumes",
+   "fx": "fog",
+   "move": "right"
+  },
+  {
+   "card": "#10",
+   "sub": "Death Valley, USA"
+  },
+  {
+   "say": "Number ten: Death Valley, California. On July 10, 1913, a thermometer at Furnace Creek read 134 degrees Fahrenheit, 56.7 Celsius. The World Meteorological Organization still lists it as the hottest air temperature ever recorded.",
+   "img": "a vast desert valley floor at midday under a white-hot sky, cracked salt crust stretching to bare brown mountains, shimmering heat haze",
+   "fx": "dust",
+   "move": "right",
+   "note": "56.7 °C · 134 °F",
+   "key": "dv-valley"
+  },
+  {
+   "say": "Some weather historians question that old reading. Fair enough. The ground doesn't need the debate. In July 1972, the ground at Furnace Creek hit 201 degrees Fahrenheit, about 94 Celsius.",
+   "img": "extreme close-up of cracked hexagonal salt crust on a desert floor in harsh noon sun, heat ripples rising from it",
+   "fx": "dust",
+   "move": "in",
+   "key": "dv-ground"
+  },
+  {
+   "say": "For scale, the park warns that touching a surface at 120 degrees Fahrenheit for more than five minutes can cause severe burns. The valley floor in summer goes far past that.",
+   "img": "a pair of bare hands hovering just above a cracked sunbaked desert surface, heat shimmer between them, harsh light",
+   "fx": "dust",
+   "move": "in"
+  },
+  {
+   "say": "July averages a high of 116 degrees. In 2001, the valley went 154 days in a row at 100 or more. The park's advice is short: drink at least a gallon of water a day.",
+   "img": "a row of sun-bleached desert hills at late afternoon, long shadows, a single gallon water jug standing on a rock in the foreground",
+   "fx": "dust",
+   "move": "left"
+  },
+  {
+   "say": "Survival odds: good. People live and work here. Bring water, shade and a car that starts. On foot in the summer lowlands, even the park says don't.",
+   "img": "a lone parked car on an empty two-lane desert highway shimmering in heat haze, bare mountains behind, no shade anywhere",
+   "fx": "dust",
+   "move": "out",
+   "odds": "SURVIVAL ODDS: GOOD, WITH WATER",
+   "key": "dv-car"
+  },
+  {
+   "card": "#9",
+   "sub": "Lake Natron, Tanzania"
+  },
+  {
+   "say": "Number nine: Lake Natron, in northern Tanzania. Its water can reach 60 degrees Celsius, 140 Fahrenheit, and the mud along its edges can reach 50.",
+   "img": "aerial view of a shallow East African soda lake with crusted salt flats and rust-red and pink shallows, volcanic mountain on the horizon, hazy midday light",
+   "fx": "none",
+   "move": "down",
+   "note": "up to 60 °C · 140 °F",
+   "key": "natron-aerial"
+  },
+  {
+   "say": "It's also strongly alkaline. Measurements put its pH somewhere between 9 and 11.5. NASA describes it as almost as alkaline as straight ammonia.",
+   "img": "close-up of a cracked white soda crust at the edge of a lake, thin pink water seeping between the plates, harsh sun",
+   "fx": "none",
+   "move": "in"
+  },
+  {
+   "say": "And yet this is the only breeding ground for the region's 2.5 million lesser flamingos. They are built for it. You are not.",
+   "img": "a huge flock of pink lesser flamingos standing in shallow reddish alkaline water at sunrise, mist over the lake",
+   "fx": "fog",
+   "move": "right",
+   "key": "natron-flamingos"
+  },
+  {
+   "say": "At its fullest, the lake covers about 875 square kilometers, about 600 meters above sea level. That's a great deal of very unfriendly water.",
+   "img": "a wide low-angle view across a flat shimmering soda lake to a distant volcano at golden hour, white salt crust in the foreground",
+   "fx": "none",
+   "move": "right"
+  },
+  {
+   "say": "Survival odds: fine on the shore. Wading out into hot, caustic water is how you find out why the flamingos have the place to themselves.",
+   "img": "a pair of hiking boots standing at the edge of a steaming pink soda lake shore, salt crust underfoot, flamingos far away",
+   "fx": "none",
+   "move": "out",
+   "odds": "SURVIVAL ODDS: STAY ON SHORE"
+  },
+  {
+   "card": "#8",
+   "sub": "Kawah Ijen, Indonesia"
+  },
+  {
+   "say": "Number eight: Kawah Ijen, a volcano in East Java, Indonesia. Inside its crater, at about 2,400 meters, sits a turquoise lake roughly 950 meters across and up to 200 meters deep.",
+   "img": "wide view into a huge volcanic crater with a milky turquoise acid lake at the bottom, steep grey walls, white fumes drifting across, early morning light",
+   "fx": "fog",
+   "move": "out",
+   "key": "ijen-lake"
+  },
+  {
+   "say": "Its water has a pH below 0.5. That is strong acid, sitting in the open, in a crater people hike into.",
+   "img": "close-up of milky turquoise acidic water lapping against yellow-crusted volcanic rocks, wisps of gas above the surface",
+   "fx": "fog",
+   "move": "in",
+   "key": "ijen-acid"
+  },
+  {
+   "say": "At night, sulfur gas here burns with blue flames at around 600 degrees Celsius. Beautiful. And every air sample scientists took in the crater carried more sulfur dioxide than the safety threshold they used.",
+   "img": "electric blue flames flowing like liquid over dark volcanic rock at night inside a crater, thick sulfur smoke glowing blue, long exposure",
+   "fx": "embers",
+   "move": "up",
+   "key": "ijen-blue"
+  },
+  {
+   "say": "The color is lovely. People photograph it constantly. It is also, chemically speaking, one of the least swimmable things you will ever see.",
+   "img": "a turquoise crater lake seen from high on the rim through thinning morning fumes, tiny distant figures on the shore path",
+   "fx": "fog",
+   "move": "out"
+  },
+  {
+   "say": "Survival odds: decent, for a short and well-equipped visit. People work in this crater every day. But the air is not on your side, and neither is the lake.",
+   "img": "a hiker in a gas mask and rain jacket seen from behind walking along a crater rim path through yellow sulfur smoke at dawn, turquoise lake far below",
+   "fx": "fog",
+   "move": "left",
+   "odds": "SURVIVAL ODDS: SHORT VISITS"
+  },
+  {
+   "card": "#7",
+   "sub": "Norris Geyser Basin, Yellowstone"
+  },
+  {
+   "say": "Number seven: Norris Geyser Basin, in Yellowstone National Park. The park's basins sit around 2,200 meters up, so water boils there at about 93 degrees Celsius, 199 Fahrenheit.",
+   "img": "a steaming geothermal basin at dawn, milky blue pools and orange mineral crust, white steam rising in cold air, a wooden boardwalk winding through it",
+   "fx": "fog",
+   "move": "right",
+   "key": "ys-basin"
+  },
+  {
+   "say": "That's just the water you can see. In the 1960s, a drill hole measured 237 degrees Celsius, 459 Fahrenheit, only 326 meters below the surface.",
+   "img": "cross-section style view of layered volcanic ground with glowing hot water channels deep below a thin surface crust, steam venting at the top, scientific illustration look",
+   "fx": "embers",
+   "move": "down",
+   "key": "ys-deep"
+  },
+  {
+   "say": "The real trap is the ground itself. The park warns that what looks solid can be just a thin crust with superheated water underneath.",
+   "img": "close-up of a thin pale mineral crust beside a boiling turquoise hot spring, small cracks with steam escaping, early morning",
+   "fx": "fog",
+   "move": "in",
+   "key": "ys-crust"
+  },
+  {
+   "say": "Oddly, the acid isn't the main danger. USGS scientists say many of these springs are about as acidic as orange juice. It's the heat that gets you.",
+   "img": "a deep clear blue hot spring with steam curling off its surface and white mineral edges, cold morning air",
+   "fx": "fog",
+   "move": "down"
+  },
+  {
+   "say": "Survival odds: excellent, on the boardwalk. Off it, you're betting everything on a crust you can't see through. The boardwalk exists for a reason.",
+   "img": "a long empty wooden boardwalk crossing a steaming geyser basin under a grey sky, warning posts along the edge, no people",
+   "fx": "fog",
+   "move": "out",
+   "odds": "SURVIVAL ODDS: BOARDWALK ONLY"
+  },
+  {
+   "card": "#6",
+   "sub": "Dallol, Ethiopia"
+  },
+  {
+   "say": "Number six: Dallol, in Ethiopia's Danakil Depression, about 120 meters below sea level. Even in January, the cool season, the air here reaches about 40 to 45 degrees Celsius.",
+   "img": "a surreal hydrothermal landscape of neon yellow, green and rust-orange salt terraces and small bubbling pools under a pale hazy sky, flat desert beyond",
+   "fx": "dust",
+   "move": "right",
+   "key": "dallol-field"
+  },
+  {
+   "say": "Then there are the pools. Bright green and yellow, up to 108 degrees Celsius, and 37 to 42 percent salt.",
+   "img": "close-up of a small acid-green hot pool ringed with yellow salt crust and crystal spikes, bubbling, harsh sunlight",
+   "fx": "fog",
+   "move": "in",
+   "key": "dallol-pool"
+  },
+  {
+   "say": "Their pH goes as low as minus 1.6. Not zero. Below zero. In 2019, a team of scientists sampled them and concluded that active microbial life is absent.",
+   "img": "a gloved hand holding a small sampling tube above a steaming neon-green acid pool, salt crust around it, scientific field work",
+   "fx": "none",
+   "move": "in",
+   "key": "dallol-tube"
+  },
+  {
+   "say": "To be fair, an earlier team claimed to have found life here. The 2019 study disagrees. Science is still arguing, which, honestly, is what science is for.",
+   "img": "a cluster of tiny salt chimneys and bubbling yellow pools seen from very close, crystals glinting, macro photography",
+   "fx": "none",
+   "move": "left"
+  },
+  {
+   "say": "Survival odds: you can walk this area in the cool season, carefully. The pools are another matter. Scientists went looking for life in them and came back empty-handed.",
+   "img": "wide shot of a lone figure in a sun hat and long sleeves walking between colorful salt formations at a careful distance from steaming pools",
+   "fx": "dust",
+   "move": "out",
+   "odds": "SURVIVAL ODDS: DON'T TOUCH"
+  },
+  {
+   "card": "#5",
+   "sub": "Lut Desert, Iran"
+  },
+  {
+   "say": "Number five: the Lut Desert, in southeastern Iran. Satellites watching it from 2002 to 2019 recorded a ground temperature of 80.8 degrees Celsius. About 177 Fahrenheit.",
+   "img": "towering wind-carved sand ridges in an empty dark desert under brutal midday sun, heat haze, no plants anywhere",
+   "fx": "dust",
+   "move": "left",
+   "note": "80.8 °C · ground, not air",
+   "key": "lut-ridges"
+  },
+  {
+   "say": "That ties it with the Sonoran Desert for the hottest land surface ever measured from space. An earlier study had the Lut at 70.7 degrees, and that was already a record.",
+   "img": "satellite view of a vast dark desert basin with long parallel ridges and pale sand seas, seen from orbit, thin clouds at the edges",
+   "fx": "none",
+   "move": "out",
+   "key": "lut-orbit"
+  },
+  {
+   "say": "The Lut is exactly the kind of place satellites were invented for. You get the measurement without sending anybody to stand there and hold the thermometer.",
+   "img": "a weather satellite in orbit above a dark desert region of Earth, sunlight glinting off its panels",
+   "fx": "none",
+   "move": "right"
+  },
+  {
+   "say": "Careful with the comparison, though. Weather stations measure air, about two meters above the ground. This is the ground itself. The surface you would be standing on.",
+   "img": "low close-up of black gravel and baked sand on a desert floor, shimmering heat distortion just above the surface",
+   "fx": "dust",
+   "move": "in",
+   "key": "lut-ground"
+  },
+  {
+   "say": "Survival odds: poor. No shade, no water, no reason to be there, and it stretches across about 7,000 square miles.",
+   "img": "an endless empty desert of dark gravel plains and distant sand ridges at noon, a hot white sky, total emptiness",
+   "fx": "dust",
+   "move": "right",
+   "odds": "SURVIVAL ODDS: POOR",
+   "key": "lut-empty"
+  },
+  {
+   "card": "#4",
+   "sub": "Vostok Station, Antarctica"
+  },
+  {
+   "say": "Number four: the high plateau of East Antarctica, more than 3,500 meters up. On July 21, 1983, Vostok Station recorded the lowest air temperature ever measured: minus 89.2 Celsius, minus 128.6 Fahrenheit.",
+   "img": "a small cluster of snow-buried research huts on a flat endless ice plateau under a dark polar sky, faint green aurora, drifting snow",
+   "fx": "snow",
+   "move": "out",
+   "note": "−89.2 °C · −128.6 °F",
+   "key": "vostok-base"
+  },
+  {
+   "say": "And remember, the station is more than 3,500 meters up. So on top of the cold, the air is thin. Antarctica likes to stack its problems.",
+   "img": "a lone weather mast coated in thick rime ice on a flat white plateau, low sun on the horizon, blowing snow",
+   "fx": "snow",
+   "move": "up"
+  },
+  {
+   "say": "Satellites later found something worse. In small hollows on the plateau, during the polar night, the snow surface dropped to about minus 98 Celsius. Minus 144 Fahrenheit.",
+   "img": "moonlit shallow hollows in a vast flat snow plateau at polar night, frost glittering, a black sky full of stars",
+   "fx": "snow",
+   "move": "left"
+  },
+  {
+   "say": "Researchers do spend winters at Vostok. Inside a heated station. Outside is the coldest air a thermometer has ever measured.",
+   "img": "warm yellow light glowing from a small frosted window of a research hut, blowing snow and deep blue polar darkness outside",
+   "fx": "snow",
+   "move": "in"
+  },
+  {
+   "say": "Survival odds: inside the station, fine. Outside in ordinary clothes, not long at all. I don't have a number for you. Nobody has volunteered to provide one.",
+   "img": "a frozen metal door handle covered in thick frost crystals on the outside of a polar station, blue night light",
+   "fx": "snow",
+   "move": "in",
+   "odds": "SURVIVAL ODDS: STAY INSIDE"
+  },
+  {
+   "card": "#3",
+   "sub": "Everest's Death Zone"
+  },
+  {
+   "say": "Number three: Mount Everest, above 8,000 meters. Climbers call it the death zone. At the summit, air pressure averages about 331 hectopascals. At sea level, it's 1,013. You get about a third.",
+   "img": "a lone mountaineer in a red down suit and oxygen mask on a narrow knife-edge snow ridge above a sea of clouds, spindrift blowing off the summit, deep blue sky",
+   "fx": "snow",
+   "move": "up",
+   "note": "summit ≈ 1/3 sea-level air pressure",
+   "key": "ev-ridge"
+  },
+  {
+   "say": "The air isn't low on oxygen, exactly. It's thin. Every breath simply holds less of everything. Fit climbers can take up only about 16.2 milliliters of oxygen per kilo per minute up there, against about 57 at sea level.",
+   "img": "close-up of frost-covered goggles and an oxygen mask on a climber's face, breath freezing in the air, harsh sunlight at extreme altitude",
+   "fx": "snow",
+   "move": "in",
+   "key": "ev-mask"
+  },
+  {
+   "say": "Climbers get through it by acclimatizing first and, usually, carrying bottled oxygen. Drop someone up there suddenly, and aviation tables give them roughly one to five minutes of useful consciousness.",
+   "img": "a line of tiny climbers with headlamps moving up a steep snow ridge before dawn, stars above, enormous dark mountain faces around them",
+   "fx": "snow",
+   "move": "right",
+   "key": "ev-line"
+  },
+  {
+   "say": "In winter it gets worse. On winter ascents, researchers recorded winds of 46 meters per second, a wind chill of minus 69, and exposed skin at risk of frostbite in about 3 minutes.",
+   "img": "a violent plume of snow blasting off a high summit ridge in winter, the sky dark blue, the mountain face in shadow",
+   "fx": "snow",
+   "move": "left"
+  },
+  {
+   "say": "Survival odds: hours, for a prepared climber on bottled oxygen. Minutes, for anyone else. The mountain does not grade on a curve.",
+   "img": "a single empty oxygen bottle half-buried in wind-packed snow on a high ridge, clouds far below, cold blue light",
+   "fx": "snow",
+   "move": "out",
+   "odds": "TIME YOU'D HAVE: 1–5 MINUTES",
+   "key": "ev-bottle"
+  },
+  {
+   "card": "#2",
+   "sub": "The Armstrong Limit"
+  },
+  {
+   "say": "Number two isn't on the map. It's straight up. About 19 kilometers above any spot on Earth, the air pressure is so low that water boils at 37 degrees Celsius. Body temperature.",
+   "img": "view from the edge of space: the curved blue rim of Earth against a black sky, a thin glowing layer of atmosphere, a high-altitude balloon far below",
+   "fx": "none",
+   "move": "up",
+   "note": "≈19 km · water boils at 37 °C",
+   "key": "arm-sky"
+  },
+  {
+   "say": "The danger up here isn't what's in the air. It's that there's almost nothing in it at all. The pressure is about 6.3 kilopascals.",
+   "img": "a thin bright line of atmosphere along the curve of the Earth at sunrise seen from very high altitude, black space above",
+   "fx": "none",
+   "move": "out"
+  },
+  {
+   "say": "It's called the Armstrong limit. Above it, any fluid exposed to the air, like the saliva on your tongue, starts to boil away.",
+   "img": "a glass of water in a sealed chamber boiling violently at low pressure, tiny bubbles erupting, cold laboratory lighting",
+   "fx": "none",
+   "move": "in",
+   "key": "arm-boil"
+  },
+  {
+   "say": "Your saliva would boil.",
+   "img": "extreme close-up of a pressure gauge needle dropping toward zero in dim red light",
+   "fx": "none",
+   "move": "in",
+   "hold": 1.2,
+   "key": "arm-gauge"
+  },
+  {
+   "say": "You wouldn't have long to notice. Aviation tables give about 9 to 12 seconds of useful consciousness at 50,000 feet, which is already lower than this.",
+   "img": "the cockpit window of a high-altitude aircraft showing a dark blue sky above and a curved horizon below, frost on the glass",
+   "fx": "none",
+   "move": "left",
+   "key": "arm-cockpit"
+  },
+  {
+   "say": "Survival odds: with a pressure suit, people go even higher. Without one, you're counting in seconds.",
+   "img": "a bulky white pressure suit helmet resting on a bench in a dim hangar, visor reflecting a sliver of blue sky",
+   "fx": "none",
+   "move": "out",
+   "odds": "TIME YOU'D HAVE: SECONDS",
+   "key": "arm-suit"
+  },
+  {
+   "card": "#1",
+   "sub": "The Challenger Deep"
+  },
+  {
+   "say": "Number one: the Challenger Deep, at the bottom of the Mariana Trench in the western Pacific. In 2020, submersible dives measured it at 10,935 meters. That's 35,876 feet.",
+   "img": "a deep-sea submersible descending through pitch-black water, its lights catching drifting marine snow, nothing else visible in any direction",
+   "fx": "none",
+   "move": "down",
+   "note": "10,935 m · 35,876 ft",
+   "key": "cd-descent"
+  },
+  {
+   "say": "Put Mount Everest down there, and its summit would still be more than 2 kilometers underwater.",
+   "img": "a dramatic scale comparison: a snowy mountain peak sunk inside a vast dark ocean trench, deep blue water far above the summit, documentary illustration",
+   "fx": "none",
+   "move": "up",
+   "key": "cd-scale"
+  },
+  {
+   "say": "The measurement is good to about 6 meters either way. Impressive, considering nobody can stand down there with a tape measure.",
+   "img": "a ship on a calm ocean surface sending a fan of sonar beams down into the dark water, scientific visualization, dusk",
+   "fx": "none",
+   "move": "down"
+  },
+  {
+   "say": "The water above you pushes with about 1,100 times the pressure at the surface. It's also dark, and close to freezing: a sensor near the floor measured about two and a half degrees.",
+   "img": "close-up of a scientific instrument on a metal frame resting on grey silt at the deep seafloor, lit by a single beam, fine sediment drifting",
+   "fx": "none",
+   "move": "in",
+   "key": "cd-floor"
+  },
+  {
+   "say": "Nothing about the human body is built for this. Every air space you have, your lungs, your sinuses, gets squeezed by almost seven miles of ocean.",
+   "img": "the thick round viewport of a deep submersible from inside, black water and a few glowing particles beyond the glass, condensation on the rim",
+   "fx": "none",
+   "move": "in",
+   "key": "cd-port"
+  },
+  {
+   "say": "Survival odds: zero, outside a hull built for full ocean depth. Everyone who has ever been down here came down inside one.",
+   "img": "a white deep-sea submersible resting on the silty floor of an ocean trench, its lights the only light for miles, wide shot",
+   "fx": "none",
+   "move": "out",
+   "odds": "SURVIVAL ODDS: ZERO",
+   "key": "cd-sub"
+  },
+  {
+   "card": "VERDICT",
+   "sub": "Gumi's Verdict"
+  },
+  {
+   "say": "My verdict: the deep is the only place on this list with no 'if.' Every other one gives you a condition. Water. A boardwalk. A heated hut. Bottled oxygen.",
+   "img": "a split view of four tiny survival objects arranged on dark slate: a water jug, a strip of boardwalk wood, a lit hut window, an oxygen bottle, soft studio light",
+   "fx": "none",
+   "move": "in"
+  },
+  {
+   "say": "The bottom of the ocean gives you nothing to negotiate with. That's why it's number one. And honestly, a little why I respect it.",
+   "img": "a calm black ocean surface at night under a full moon, small waves, nothing on the horizon",
+   "fx": "none",
+   "move": "out"
+  },
+  {
+   "say": "Now you: which of these ten would you last longest in? Tell me in the comments. Be honest. I can tell.",
+   "img": "a world map made of glowing points of light on a dark background, ten points marked brighter than the rest",
+   "fx": "none",
+   "move": "left"
+  },
+  {
+   "say": "Next Sunday, we go back to number one and take the long way down: the deep sea, zone by zone, and everything that lives there.",
+   "img": "a glowing anglerfish with its lure lit, drifting in pitch-black deep water, faint marine snow around it",
+   "fx": "none",
+   "move": "down"
+  },
+  {
+   "say": "Until then, stay on the boardwalk.",
+   "img": "an empty wooden boardwalk disappearing into thick white geothermal steam at dusk, warm last light",
+   "fx": "fog",
+   "move": "out",
+   "hold": 1.5
+  }
+ ],
+ "short": {
+  "title": "How Long Would You Last in Everest's Death Zone? #shorts",
+  "hook": "YOU'D HAVE MINUTES",
+  "lines": [
+   {
+    "say": "Above 8,000 meters on Mount Everest, there's a place climbers call the death zone. Here's how long you'd last.",
+    "scene": "ev-ridge"
+   },
+   {
+    "say": "At the summit, the air pressure is about a third of sea level. Every breath holds less of everything.",
+    "scene": "ev-mask"
+   },
+   {
+    "say": "Climbers survive it by acclimatizing first, and usually carrying bottled oxygen.",
+    "scene": "ev-line"
+   },
+   {
+    "say": "Drop someone up there suddenly, and aviation tables give them roughly one to five minutes of useful consciousness.",
+    "scene": "ev-bottle"
+   },
+   {
+    "say": "That's number three on my list of places you can't survive. Number one is much worse.",
+    "scene": "ev-mask"
+   }
+  ]
+ },
+ "shorts_extra": [
+  {
+   "title": "What Happens If You Go Above the Armstrong Limit? #shorts",
+   "hook": "WATER BOILS AT 37°C",
+   "lines": [
+    {
+     "say": "About 19 kilometers above the ground, anywhere on Earth, there's a line you do not want to cross without a suit.",
+     "scene": "arm-sky"
+    },
+    {
+     "say": "Above it, the air pressure is so low that water boils at 37 degrees Celsius. That's your body temperature.",
+     "scene": "arm-boil"
+    },
+    {
+     "say": "Any exposed fluid, like the saliva on your tongue, starts to boil away.",
+     "scene": "arm-gauge"
+    },
+    {
+     "say": "And at 50,000 feet, already below that line, aviation tables give you about 9 to 12 seconds of useful consciousness.",
+     "scene": "arm-cockpit"
+    },
+    {
+     "say": "It's called the Armstrong limit, and it's number two on my list. The full countdown is in the video below.",
+     "scene": "arm-suit"
+    }
+   ]
+  },
+  {
+   "title": "How Hot Is the Hottest Ground on Earth? #shorts",
+   "hook": "80.8°C ON THE GROUND",
+   "lines": [
+    {
+     "say": "This is the Lut Desert in Iran, and its ground has been measured hotter than almost anywhere on Earth.",
+     "scene": "lut-ridges"
+    },
+    {
+     "say": "Satellites watching it from 2002 to 2019 recorded a ground temperature of 80.8 degrees Celsius. About 177 Fahrenheit.",
+     "scene": "lut-orbit"
+    },
+    {
+     "say": "That's not the air. Weather stations measure air about two meters up. This is the surface you'd be standing on.",
+     "scene": "lut-ground"
+    },
+    {
+     "say": "It ties with the Sonoran Desert for the hottest land surface ever measured from space. No shade. No water.",
+     "scene": "lut-empty"
+    },
+    {
+     "say": "It's only number five on my list. Four places are worse, and they're in the full video.",
+     "scene": "lut-ridges"
+    }
+   ]
+  }
+ ]
+}

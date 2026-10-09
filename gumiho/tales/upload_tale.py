@@ -6,8 +6,12 @@
 
 공개 방식은 레포 변수 TALES_PUBLISH 로 정한다(워크플로가 넘긴다):
   private   (기본) 비공개로만 올린다 — 사람이 스튜디오에서 보고 공개
-  scheduled 비공개 + 예약 공개(다음 토요일 15:00 UTC = 미국 동부 오전 11시·한국 자정)
-올리지 않는 경우(코드로 막는다): mock 렌더 · 이미 올린 편(ledger) · 대본 검사 실패.
+  scheduled 비공개 + 예약 공개. 해설편(27화~)은 catalog date(일요일) 14:00 UTC = 미 동부 오전 10시,
+            본편에 붙은 쇼츠는 본편 ★뒤에(월·수·금 14:00 UTC — 쇼츠 끝맺음이 본편 링크를 짚으니 본편이 먼저 공개돼야 한다).
+            설화편(~26화, retired)은 예전 규칙(다음 토요일 15:00 UTC).
+올리지 않는 경우(코드로 막는다): mock 렌더 · 이미 올린 편(ledger) · 대본 검사 실패 · retired(설화) 편.
+AI 고지: status.containsSyntheticMedia = True(실사처럼 보이는 합성 화면 — 'altered or synthetic content').
+  status_body() 를 RULES 업로드(upload_rule.py → insert)도 그대로 쓴다.
 토큰: YT_TOKEN_NOVEL 이 가리키는 파일(워크플로가 시크릿 YT_TOKEN_JSON_GUMIHO 로 만든다).
 """
 from __future__ import annotations
@@ -33,6 +37,17 @@ LANGS = [x.strip() for x in os.environ.get("TALES_LANGS", "es,pt,id,ja,ko,de,fr,
 PLAYLIST = "Every Tale: Korean Folklore, Myths & Ghost Stories | Nine Tails Tales"
 PLAYLIST_DESC = ("Every tale Gumi, a 1,000-year-old gumiho (nine-tailed fox), has told so far, in order. "
                  "Korean folklore, Japanese and Chinese legends, monsters and ghost stories. A new tale every Saturday.")
+# 해설편 재생목록(2026-10-09) — ★gumiho/tales/CHANNEL.md 의 이름과 같아야 한다(스튜디오에서 바꾸면 여기도). format → (이름, 설명)
+EX_PLAYLISTS = {
+    "places": ("Places You Can't Survive — Explained",
+               "The most extreme places on Earth, explained with real numbers and real sources. New deep dive every Sunday."),
+    "zones": ("Every Zone, Explained — Deep Sea, Sky & Space",
+              "Go down (or up) one zone at a time and see what lives there and what would kill you. New every Sunday."),
+    "whatif": ("What If…? Minute by Minute",
+               "Impossible scenarios, played out with real physics, minute by minute. New every Sunday."),
+}
+EX_PLAYLISTS["abandoned"] = EX_PLAYLISTS["places"]
+EX_PLAYLISTS["ranked"] = EX_PLAYLISTS["whatif"]
 URL_RE = re.compile(r"https?://\S+|youtu\.be/\S+")
 
 
@@ -84,14 +99,36 @@ def sprint_times(day, now: dt.datetime | None = None) -> tuple[str, str]:
     return long_at.strftime(f), short_at.strftime(f)
 
 
+def weekly_time(day: str, now: dt.datetime | None = None, hhmm: str = "14:00") -> str:
+    """해설편 본편 예약: 그 편의 일요일 hhmm UTC. 렌더가 늦어 지났거나 1시간 안이면 지금+2시간 정각(한 주 미루지 않는다)."""
+    now = now or dt.datetime.now(dt.timezone.utc)
+    h, m = (int(x) for x in hhmm.split(":"))
+    d = dt.date.fromisoformat(day)
+    t = dt.datetime(d.year, d.month, d.day, h, m, tzinfo=dt.timezone.utc)
+    if t < now + dt.timedelta(hours=1):
+        t = (now + dt.timedelta(hours=2)).replace(minute=0, second=0, microsecond=0)
+    return t.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def main_short_at(publish_at: str | None, explainer: bool) -> str | None:
+    """본 쇼츠 예약: 설화편은 본편 하루 전(본편으로 끌어오기) · 해설편은 하루 뒤(끝맺음이 본편 링크를 짚는다)."""
+    if not publish_at:
+        return None
+    t = dt.datetime.strptime(publish_at, "%Y-%m-%dT%H:%M:%SZ") + dt.timedelta(days=1 if explainer else -1)
+    return t.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
 # 13+ 공포·설화 — 아동용(madeForKids)으로 잡히면 댓글·알림·맞춤 추천이 꺼진다. 아래 기록과 같은 값을 쓴다.
 MADE_FOR_KIDS = False
+# 실사처럼 보이는 AI 그림·목소리 → '변경되거나 합성된 콘텐츠' 고지(videos.insert status.containsSyntheticMedia, 2024-10~).
+#   쓰는 곳: status_body() → insert() — upload_tale(본편·쇼츠)·upload_rule(RULES 쇼츠)·sleep 모두 이 함수로 올린다.
+CONTAINS_SYNTHETIC_MEDIA = True
 SHORTS_MAX_SEC = 180            # 쇼츠 판정: 세로(또는 정사각) · 3분 이하(2024-10-15부터)
 
 
 def status_body(privacy: str, publish_at: str | None) -> dict:
     status = {"privacyStatus": "private" if publish_at else privacy, "selfDeclaredMadeForKids": MADE_FOR_KIDS,
-              "containsSyntheticMedia": True}
+              "containsSyntheticMedia": CONTAINS_SYNTHETIC_MEDIA}
     if publish_at:
         status["publishAt"] = publish_at
     return status
@@ -207,6 +244,7 @@ def main() -> int:
     ap.add_argument("--mode", default=os.environ.get("TALES_PUBLISH", "private"), choices=["private", "scheduled"])
     ap.add_argument("--publish-at", help="예약 공개 시각(UTC ISO) — 주면 mode 무시")
     ap.add_argument("--no-short", action="store_true")
+    ap.add_argument("--allow-retired", action="store_true", help="retired(설화) 편도 올린다 — 사람이 직접 할 때만")
     a = ap.parse_args()
 
     s = T.load(a.script)
@@ -229,15 +267,24 @@ def main() -> int:
         for k, v in json.load(f).items():
             led.setdefault(k, v)
     done = led.get(stem, {})
+    # 2026-10-09 설화 금지: retired 편은 새로 올리지 않는다(이미 올린 편의 남은 쇼츠도 — 다시 띄우지 않는다)
+    if T.retired(s["id"]) and not a.allow_retired:
+        print(f"::error::{stem} 은 retired(설화 편성 중단) — 올리지 않는다")
+        return 2
+    ex_ = T.explainer(s)
+    ent = T.entry(s["id"]) or {}
     publish_at = a.publish_at or (next_saturday_15utc() if a.mode == "scheduled" else None)
+    if ex_ and a.mode == "scheduled" and not a.publish_at and ent.get("date"):
+        publish_at = weekly_time(ent["date"], hhmm=T.weekly().get("publish_utc", "14:00"))
     day = T.sprint_day(s["id"])
     short_at = None
     if day and a.mode == "scheduled" and not a.publish_at:
         publish_at, short_at = sprint_times(day)
         print(f"   스프린트 편({day}) — 본편 {publish_at} · 쇼츠 {short_at} · 추가 쇼츠 없음")
     # 앞서 올린 편(최신순 4개)을 설명에 링크 — 새 편이 옛 편을, 옛 편 검색 유입이 새 편을 끌어 준다
+    # 해설편은 해설편끼리만 잇는다(설화편으로 보내지 않는다)
     more = [(v.get("title") or k, v["long"]) for k, v in sorted(led.items(), reverse=True)
-            if k != stem and v.get("long")]
+            if k != stem and v.get("long") and (not ex_ or (k[:3].isdigit() and int(k[:3]) >= T.NEW_FROM))]
     md = T.meta(s, rm.get("starts"), more=more)
 
     import upload_youtube_novel as U
@@ -254,7 +301,8 @@ def main() -> int:
         done["langs"] = localize(vid, md["title"], md["description"])
         # 비공개로 올려도 넣는다 — 공개로 바뀌는 순간 재생목록에 이미 있어야 한다(목록은 공개 영상만 보여 준다).
         try:
-            pid = U.ensure_playlist(yt, PLAYLIST, PLAYLIST_DESC, privacy="public")
+            pl, pd = EX_PLAYLISTS.get(s.get("format", ""), EX_PLAYLISTS["places"]) if ex_ else (PLAYLIST, PLAYLIST_DESC)
+            pid = U.ensure_playlist(yt, pl, pd, privacy="public")
             U.add_to_playlist(yt, pid, vid)
         except Exception as e:  # noqa: BLE001
             print(f"   ⚠️ 재생목록 실패(업로드는 성공): {e}")
@@ -265,10 +313,7 @@ def main() -> int:
     short = rm.get("short", {})
     if not a.no_short and short.get("video") and not done.get("short"):
         smd = T.meta(s, None, short_of=done["long"])["short"]
-        s_at = short_at
-        if publish_at and not s_at:                  # 쇼츠는 본편 하루 전에 풀어 본편으로 끌어온다
-            s_at = (dt.datetime.strptime(publish_at, "%Y-%m-%dT%H:%M:%SZ") - dt.timedelta(days=1)).strftime(
-                "%Y-%m-%dT%H:%M:%SZ")
+        s_at = short_at or main_short_at(publish_at, ex_)
         sid = insert(yt, short["video"], smd, "private", s_at)
         done["short"] = f"https://youtu.be/{sid}"
         # 0회 점검용(2026-10-09): 공개 시각 + 쇼츠 판정 조건
