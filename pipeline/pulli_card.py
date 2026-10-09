@@ -180,6 +180,14 @@ def is_bless_day(d: dt.date) -> bool:
 
 
 def theme_for(d: dt.date) -> dict:
+    """테마 = 날짜 순환. ★덕담표 기간 안(BLESS_FROM~BLESS_TO)만 '풀이형이 나간 날 수'로 돈다 —
+    격일이면 날짜 순환(6개)이 짝수 칸만 밟아 집안·귀인·자식 셋만 나온다(tables-v2 판정 10/22 이 기운다).
+    기간 첫 풀이형 날이 기간 직전까지의 순환을 이어받는다(10/10 자식 → 10/12 몸 → 10/14 집안 → 10/16 돈 …).
+    기간 밖은 예전 그대로(날짜)."""
+    if BLESS_FROM is not None and BLESS_FROM <= d <= BLESS_TO:
+        k = (BLESS_FROM - EPOCH).days + sum(not is_bless_day(BLESS_FROM + dt.timedelta(days=j))
+                                            for j in range((d - BLESS_FROM).days))
+        return THEMES[k % len(THEMES)]
     return THEMES[(d - EPOCH).days % len(THEMES)]
 
 
