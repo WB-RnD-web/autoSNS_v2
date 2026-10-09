@@ -153,6 +153,12 @@ miss12, held12 = verdict(runs("horoscope", list(range(6, 20)), 7, 37), retired=M
 check("꺼 둔 루틴은 누락으로 안 잡는다", len(miss12) == 0, f"{len(miss12)}건")
 check("보류 목록에 '루틴 끔'으로 남는다", any(h["topic"] == "horoscope" and "끔" in h["why"] for h in held12))
 check("기본 목록에 별자리가 있다", "horoscope" in M.RETIRED)
+check("10/7 끈 루틴(정치·국장·미장·AI·ASMR·수면 소리·드라마·옛 인스타)도 기본 목록에 있다",
+      all(t in M.RETIRED for t in ("politics", "politics_noon", "politics_aft", "stock", "stock_us", "ai_am", "ai_pm",
+                                   "asmr", "korea_sounds", "drama", "insta")))
+check("지금 도는 운세·인스타·구미호는 끈 목록에 없다",
+      not any(t in M.RETIRED for t in ("fortune", "fortune_name", "fortune_theme", "fortune_tier", "fortune_gunghap",
+                                       "fortune_newyear", "fortune_pulli", "insta_pick", "tales", "tales_rules", "pulse")))
 
 print("")
 if FAIL:
