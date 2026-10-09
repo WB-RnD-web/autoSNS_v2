@@ -412,6 +412,42 @@ CSS_GRID = """
 """
 
 
+# ── '출생연도로 보는 ○○ 나이' 표(2026-10-09, age_card.py) — 출생연도 36칸 3열 × 12줄, 칸 상자 없이 빽빽하게 ──────────
+# 경쟁 표(가화만사성·복담·행운백세)가 칸 없이 '60년생 74세'를 깐 한 장이다. 큰 글자가 어르신께 읽히도록 한 줄 80px.
+# 제목·알약·기준 줄은 grid 와 같은 자리(기준 줄 = 제목과 표 사이). 오른쪽 끝(x 960~)과 아래 22%(y 1500~)는 비운다.
+AGE_X0, AGE_W, AGE_TOP, AGE_BOTTOM = 60, 900, 470, 1440
+CSS_AGE = """
+.apill{position:absolute;left:60px;top:96px;}
+.atitle{position:absolute;left:60px;top:176px;width:900px;font-weight:900;font-size:76px;line-height:1.12;
+  letter-spacing:-2px;text-shadow:0 4px 24px rgba(0,0,0,.6);}
+.atitle .l1{color:#FFFFFF;display:block;white-space:nowrap;}
+.atitle .l2{color:var(--acc,#D97757);display:block;white-space:nowrap;}
+.apanel{position:absolute;border-radius:24px;background:rgba(10,8,8,.74);border:2px solid rgba(237,217,188,.14);}
+.arow{position:absolute;border-radius:12px;}
+.arow.z{background:rgba(237,217,188,.07);}
+.acell{position:absolute;display:flex;align-items:baseline;gap:10px;white-space:nowrap;line-height:1;}
+.acell .y{color:#FFFFFF;font-weight:800;letter-spacing:-1px;font-variant-numeric:tabular-nums;}
+.acell .a{color:var(--acc,#D97757);font-weight:900;letter-spacing:-1px;font-variant-numeric:tabular-nums;}
+.afoot{position:absolute;left:60px;width:900px;color:rgba(237,217,188,.72);font-weight:600;font-size:28px;}
+"""
+
+
+def age_layout(n, cols):
+    """칸 n개 · cols 열 → 줄 높이·글자 크기·[(x, y)…]. 출생연도와 나이가 한 칸(너비 900/cols)을 넘지 않게."""
+    cols = max(1, int(cols))
+    rows = max(1, -(-n // cols))
+    rh = (AGE_BOTTOM - AGE_TOP) / rows
+    cw = AGE_W / cols
+    fy = min(44, rh * 0.52)
+    fa = min(50, rh * 0.6)
+    # '60년생'(숫자 둘 + 한글 둘) + 틈 + '74세'(숫자 둘 + 한글 하나) — 칸 안쪽 여백 36px
+    k = (cw - 36) / (fy * (0.56 * 2 + 2) + 10 + fa * (0.56 * 2 + 1))
+    if k < 1:
+        fy, fa = fy * k, fa * k
+    xy = [(AGE_X0 + (i % cols) * cw, AGE_TOP + (i // cols) * rh) for i in range(n)]
+    return {"rows": rows, "rh": rh, "cw": cw, "fy": int(fy), "fa": int(fa), "xy": xy}
+
+
 # ── 소식 '10초 한 장' (2026-10-04, news_card.py) — 정치 찬반 · 주식 성적표 · AI 체크리스트 · 요점 ──────────
 # 위에서 아래로 흐르는 한 기둥(flex). 오른쪽 끝(x 960~)과 아래 22%(y 1500~)는 비운다.
 # ▲▼·✓·○× 는 글꼴마다 없을 수 있어 CSS 도형으로 그린다(리눅스 러너에서 네모로 나오지 않게).
@@ -820,6 +856,28 @@ def scene_html(i, sc, acc):
                 f'<div class="gtitle" id="{gid}-title"><span class="l1">{esc(sc.get("title",""))}</span>'
                 f'<span class="l2">{esc(sc.get("title2",""))}</span></div>' + "".join(cells) + bas
                 + f'<div class="gfoot" style="top:{foot_y:.0f}px">{esc(sc.get("foot",""))}</div>')
+    elif t == "agetable":
+        items = sc.get("cells", [])
+        lay = age_layout(len(items), sc.get("cols", 3))
+        rh, cw = lay["rh"], lay["cw"]
+        parts = [f'<div class="apanel" style="left:{AGE_X0 - 6}px;top:{AGE_TOP - 10}px;width:{AGE_W + 12}px;'
+                 f'height:{AGE_BOTTOM - AGE_TOP + 20}px"></div>']
+        for r in range(lay["rows"]):
+            z = " z" if r % 2 else ""
+            parts.append(f'<div class="arow{z}" id="{gid}-r{r}" style="left:{AGE_X0}px;top:{AGE_TOP + r * rh:.0f}px;'
+                         f'width:{AGE_W}px;height:{rh:.0f}px"></div>')
+        for k, c in enumerate(items):
+            x, y = lay["xy"][k]
+            top = y + (rh - max(lay["fy"], lay["fa"])) / 2
+            parts.append(f'<div class="acell" id="{gid}-c{k}" style="left:{x + 18:.0f}px;top:{top:.0f}px">'
+                         f'<span class="y" style="font-size:{lay["fy"]}px">{esc(c.get("label", ""))}</span>'
+                         f'<span class="a" style="font-size:{lay["fa"]}px">{esc(c.get("age", ""))}</span></div>')
+        foot_y = AGE_BOTTOM + 18                          # 각주 28px → 아래 끝 약 1492(쇼츠 제목 자리 1500 위)
+        body = (f'<div class="apill"><span class="pill" id="{gid}-pill"><span class="dot"></span>{esc(sc.get("pill",""))}</span></div>'
+                f'<div class="atitle" id="{gid}-title"><span class="l1">{esc(sc.get("title",""))}</span>'
+                f'<span class="l2">{esc(sc.get("title2",""))}</span></div>' + "".join(parts)
+                + basis_html(gid, sc.get("basis"), AGE_TOP - 62)
+                + f'<div class="afoot" style="top:{foot_y:.0f}px">{esc(sc.get("foot",""))}</div>')
     elif t == "news":
         body, sc["_n"] = news_html(gid, sc)
     elif t == "hook":
@@ -982,6 +1040,11 @@ def scene_js(i, sc, acc, bar_h=560, presenter=False):
         hi = [k for k, c in enumerate(sc.get("cells", [])) if c.get("hi")][:3]
         for j, k in enumerate(hi):
             out.append(f'tl.to("#{gid}-c{k}",{{scale:1.05,duration:0.22,ease:"sine.inOut",yoyo:true,repeat:1}},{S + 0.5 + j * 0.35:.2f});')
+    elif t == "agetable":
+        out.append(f'tl.fromTo("#{gid}-pill",{{scale:0.92}},{{scale:1,duration:0.35,ease:"back.out(2)",transformOrigin:"left center"}},{S:.2f});')
+        n_rows = -(-len(sc.get("cells", [])) // max(1, int(sc.get("cols", 3))))
+        for r in range(n_rows):
+            out.append(f'tl.to("#{gid}-r{r}",{{backgroundColor:"rgba(237,217,188,.22)",duration:0.16,yoyo:true,repeat:1}},{S + 0.5 + r * 0.14:.2f});')
     elif t == "news":
         # 한 장은 0초부터 전부 떠 있다(캡처·반복 재생용). 칸이 차례로 한 번씩 톡 — 정지 화면이 아니라는 신호.
         out.append(f'tl.fromTo("#{gid}-pill",{{scale:0.92}},{{scale:1,duration:0.35,ease:"back.out(2)",transformOrigin:"left center"}},{S:.2f});')
@@ -1050,6 +1113,8 @@ def build_html(scenes, total, acc="#D97757", bg=False, presenter=False):
         css += CSS_GUNGHAP
     if any(sc.get("type") == "news" for sc in scenes):
         css += CSS_NEWS
+    if any(sc.get("type") == "agetable" for sc in scenes):
+        css += CSS_AGE
     if any(sc.get("basis") for sc in scenes):
         css += CSS_BASIS
     parts = [scene_html(i, sc, acc) for i, sc in enumerate(scenes)]
@@ -1144,7 +1209,7 @@ def build_motion(spec, out_mp4, workdir, quality="standard"):
     os.environ["PATH"] = os.environ.get("PATH", "") + os.pathsep + os.path.dirname(FFMPEG)
     scenes = spec["scenes"]
     # 한 장 표는 화면 전체를 쓴다 → 진행자 자리 없음
-    pr_on = presenter_on(spec.get("topic", "")) and not any(sc.get("type") in ("card", "grid", "news", "tier", "gunghap") for sc in scenes)
+    pr_on = presenter_on(spec.get("topic", "")) and not any(sc.get("type") in ("card", "grid", "news", "tier", "gunghap", "agetable") for sc in scenes)
     duo = pr_on and os.environ.get("PRESENTER_DUO", "1") not in ("0", "false", "False")
     assign_speakers(scenes, duo=duo)
     if scenes and scenes[0].get("type") == "hook" and top_hook_on(spec.get("topic", "")):

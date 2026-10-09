@@ -14,6 +14,8 @@
     {"key": "daily", "label": "매일 운세 표", "title_prefix": "오늘 띠별 운세 1위~12위"},
     {"key": "name", "label": "이름 표", "title_re": "이름 한자 풀이"},
     {"key": "month", "label": "태어난 달 표", "title_prefix": "태어난 달로 보는"},
+    {"key": "lunar", "label": "음력 생일 끝자리 표", "title_prefix": "음력 생일 끝자리로 보는"},
+    {"key": "age", "label": "출생연도 나이 표", "title_prefix": "출생연도로 보는"},
     {"key": "year", "label": "해 끝자리 표", "title_prefix": "태어난 해 끝자리"},
     {"key": "surname", "label": "성씨 표", "title_prefix": "성씨로 보는"},
     {"key": "pulli", "label": "풀이형 표", "title_re": "[가-힣]{2}일 풀이 ·"},

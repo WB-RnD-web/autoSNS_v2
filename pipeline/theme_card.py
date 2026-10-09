@@ -24,6 +24,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from fortune_card import ANIMALS, WEEKDAY, _h, years_of  # noqa: E402
+import age_card  # noqa: E402
 import birth_basis  # noqa: E402
 
 TOPIC = "fortune_theme"
@@ -115,6 +116,16 @@ BANNED = ("치료", "완치", "처방", "복용", "수술", "진단", "약 ", "�
           "충격", "경악", "역대급", "대박", "무조건", "떼돈", "부적", "굿판", "굿을", "점집")
 
 
+# ★2026-10-11부터 쉬는 날엔 '출생연도로 보는 ○○ 나이' 표(age_card)가 같은 낮 12시 자리에 나간다 — 하루 편수는 그대로.
+#   10/9 시장 조사: 최근 30일 10만 회 넘은 운세 쇼츠 중 '출생연도·나이' 꼴이 137편(중앙 17만)으로 가장 많은데 우리는 0편.
+#   끄기 = AGE_FROM 을 None 으로(쉬는 날은 다시 건너뜀).
+AGE_FROM: dt.date | None = dt.date(2026, 10, 11)
+
+
+def is_age_day(d: dt.date) -> bool:
+    return AGE_FROM is not None and d >= AGE_FROM and not is_post_day(d)
+
+
 def is_post_day(d: dt.date) -> bool:
     return ALT_FROM is None or d < ALT_FROM or (d - ALT_FROM).days % 2 == 0
 
@@ -162,6 +173,8 @@ def description(d: dt.date, th: dict) -> str:
 
 
 def storyboard(d: dt.date) -> dict:
+    if is_age_day(d):
+        return age_card.storyboard(d, TOPIC)
     th = theme_for(d)
     pill = f"{d.month}월 {d.day}일 {WEEKDAY[d.weekday()]}요일 · 특집"
     narr = f"{yt_phrase(d, th)}입니다. 내 띠는 몇 위인지 확인하고, 댓글로 남겨 주세요."
@@ -183,6 +196,8 @@ def is_theme(sb: dict) -> bool:
 
 
 def meta(sb: dict) -> dict:
+    if age_card.is_age(sb):
+        return age_card.meta(sb)
     d = dt.date.fromisoformat(str(sb.get("date"))[:10])
     th = next((x for x in THEMES if x["id"] == sb.get("theme")), None) or theme_for(d)
     return {"title": title(d, th)[:95], "description": description(d, th)}
@@ -204,7 +219,7 @@ def main(argv=None) -> int:
     if a.cmd == "path":
         print(os.path.relpath(path_for(d)))
         return 0
-    if a.cmd == "make" and not (a.force or is_post_day(d)):
+    if a.cmd == "make" and not (a.force or is_post_day(d) or is_age_day(d)):
         print(f"{d}: 띠 테마 표 쉬는 날(이틀에 한 번, {ALT_FROM} 부터 짝수 번째 날) — 건너뜀")
         return 0
     sb = storyboard(d)
@@ -215,7 +230,7 @@ def main(argv=None) -> int:
     os.makedirs(os.path.dirname(os.path.abspath(out)), exist_ok=True)
     with open(out, "w", encoding="utf-8") as f:
         json.dump(sb, f, ensure_ascii=False, indent=1)
-    print(f"THEME={sb['theme']} · {sb['scenes'][0]['title']} · {out}")
+    print(f"THEME={sb['theme']} · {sb['scenes'][0]['title']} {sb['scenes'][0].get('title2', '')} · {out}")
     return 0
 
 

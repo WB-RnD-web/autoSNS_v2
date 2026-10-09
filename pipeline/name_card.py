@@ -43,10 +43,15 @@ EPOCH = dt.date(2026, 10, 2)
 KST = dt.timezone(dt.timedelta(hours=9))
 ACCENT = "#C9A227"
 BRAND = "왕별이 · 내 것 찾기"
-SLOTS = ("am", "pm", "year", "surname")
+SLOTS = ("am", "pm", "year", "surname", "lunar")
 ROTATE_FROM: dt.date | None = dt.date(2026, 10, 8)   # 이날부터 하루 한 칸(아래 순서로 4일 순환). None = 매일 네 칸
-ROTATION = ("am", "pm", "year", "surname")           # 10/8 이름 글자 · 10/9 태어난 달 · 10/10 해 끝자리 · 10/11 성씨 …
-SLOT_TIME = {"year": "아침 7시 40분", "am": "아침 9시 40분", "surname": "오후 1시 40분", "pm": "오후 3시 40분"}
+ROTATION = ("am", "pm", "year", "surname", "lunar")  # 10/8 이름 글자 · 10/9 태어난 달 · 10/10 해 끝자리 · 10/11 성씨 · 10/12 음력 생일 끝자리 …
+# ★2026-10-09 다섯째 칸 '음력 생일 끝자리' — 시장 조사: 최근 30일 10만 회 넘은 '음력 생일·생일 끝자리' 쇼츠 6편 이상
+#   (사주공감 '음력 생일 돈복 날짜' 50.7만 · 천년의지혜 '생일 끝자리 말년복' 13.5만). 따로 깨우지 않고 오후 3시 40분(pm) 트리거를
+#   그날만 빌려 쓴다 — 하루 편수 그대로, 같은 표는 5일에 한 번.
+LUNAR_HOST = "pm"
+SLOT_TIME = {"year": "아침 7시 40분", "am": "아침 9시 40분", "surname": "오후 1시 40분", "pm": "오후 3시 40분",
+             "lunar": "오후 3시 40분"}
 NAME_CELLS = 24                  # 4칸 × 6줄 — 한 화면에서 내 글자를 찾을 수 있는 크기
 LINE_MAX = 11                    # 제목 한 줄(76px) 한글 11자
 
@@ -129,12 +134,24 @@ def slot_of_day(d: dt.date) -> str | None:
     return ROTATION[(d - ROTATE_FROM).days % len(ROTATION)]
 
 
+def resolve_slot(d: dt.date, slot: str) -> str:
+    """트리거가 준 칸(시각으로 고른 것) → 그날 실제로 낼 칸. 음력 끝자리 날엔 15:40(pm) 트리거가 lunar 를 낸다."""
+    if slot == LUNAR_HOST and slot_of_day(d) == "lunar":
+        return "lunar"
+    return slot
+
+
 def is_slot_day(d: dt.date, slot: str) -> bool:
     day = slot_of_day(d)
     return day is None or day == slot
 
 
 def name_theme(d: dt.date) -> dict:
+    # ★순환(ROTATE_FROM~)에선 이름 칸이 len(ROTATION)일마다 온다 — 날짜로 고르면 칸 수(5)와 테마 수(5)가 맞물려
+    #   늘 같은 테마만 나온다(10/9 다섯째 칸 추가 때 테스트가 잡음). 그래서 '몇 번째 차례'로 돌린다. 10/8 첫 차례 = health.
+    if ROTATE_FROM is not None and d >= ROTATE_FROM:
+        turn = (d - ROTATE_FROM).days // len(ROTATION)
+        return NAME_THEMES[(turn + 1) % len(NAME_THEMES)]
     return NAME_THEMES[(d - EPOCH).days % len(NAME_THEMES)]
 
 
@@ -153,6 +170,23 @@ TIERS = {10: (("top", 3), ("mid", 4), ("low", 3)), 20: (("top", 4), ("mid", 10),
 
 def year_theme(d: dt.date) -> dict:
     return theme_card.THEMES[((d - EPOCH).days + 8) % len(theme_card.THEMES)]
+
+
+def lunar_theme(d: dt.date) -> dict:
+    return theme_card.THEMES[((d - EPOCH).days + 6) % len(theme_card.THEMES)]
+
+
+LUNAR_DIGITS = (1, 2, 3, 4, 5, 6, 7, 8, 9, 0)        # 찾기 쉽게 1·11·21일부터 · 0 = 10·20·30일(음력엔 31일이 없다)
+
+
+def lunar_days(n: int) -> str:
+    return "·".join(str(x) for x in range(1, 31) if x % 10 == n) + "일"
+
+
+def lunar_cells(d: dt.date, th: dict) -> list[dict]:
+    r = ranked(d, th, list(LUNAR_DIGITS), "lunar")
+    return [{"big": lunar_days(n), "small": f"{r[n][0]}위", "note": f"끝자리 {n} · {r[n][1]}", "hi": r[n][0] <= 3}
+            for n in LUNAR_DIGITS]
 
 
 def surname_theme(d: dt.date) -> dict:
@@ -215,15 +249,18 @@ def month_label(d: dt.date, th: dict) -> str:
 
 
 def title(d: dt.date, slot: str) -> str:
+    when = f"{d.month}월 {d.day}일"
     if slot == "am":
         th = name_theme(d)
-        return f"{th['yt']} | 이름 한자 풀이"
+        return f"{th['yt']} | {when} 이름 한자 풀이"
     if slot == "year":
-        return f"태어난 해 끝자리로 보는 {month_label(d, year_theme(d))} 순위 1위~10위 | 0년생~9년생 전부"
+        return f"태어난 해 끝자리로 보는 {month_label(d, year_theme(d))} 순위 1위~10위 | 0년생~9년생 전부 · {when}"
     if slot == "surname":
-        return f"성씨로 보는 {month_label(d, surname_theme(d))} 순위 1위~20위 | 김·이·박·최… 많은 성씨 20개"
+        return f"성씨로 보는 {month_label(d, surname_theme(d))} 순위 1위~20위 | 김·이·박·최… 성씨 20개 · {when}"
+    if slot == "lunar":
+        return f"음력 생일 끝자리로 보는 {month_label(d, lunar_theme(d))} 순위 1위~10위 | 1일~30일 전부 · {when}"
     th = month_theme(d)
-    return f"태어난 달로 보는 {month_label(d, th)} 순위 1위~12위 | 음력 1월생~12월생 전부"
+    return f"태어난 달로 보는 {month_label(d, th)} 순위 1위~12위 | 음력 1월생~12월생 전부 · {when}"
 
 
 def description(d: dt.date, slot: str) -> str:
@@ -236,6 +273,10 @@ def description(d: dt.date, slot: str) -> str:
         head = (f"태어난 해 끝자리로 보는 {month_label(d, year_theme(d))} 순위 — 0년생부터 9년생까지 한 장에 모았어요. "
                 "1954년생이면 4년생이에요. 내 끝자리는 몇 위인가요? 댓글로 남겨 주세요 🙏")
         tags = "#태어난해 #띠별운세 #운세 #shorts"
+    elif slot == "lunar":
+        head = (f"음력 생일 끝자리로 보는 {month_label(d, lunar_theme(d))} 순위 — 끝자리 1부터 0까지 한 장에 모았어요. "
+                "내 음력 생일 날짜 끝자리는 몇 위인가요? 댓글로 남겨 주세요 🙏")
+        tags = "#음력생일 #생일운세 #운세 #shorts"
     elif slot == "surname":
         head = (f"성씨로 보는 {month_label(d, surname_theme(d))} 순위 — 많은 성씨 20개를 한 장에 모았어요. "
                 "내 성씨는 몇 위인가요? 표에 없는 성씨는 댓글로 알려 주세요 🙏")
@@ -246,10 +287,10 @@ def description(d: dt.date, slot: str) -> str:
                 "내 생일 달은 몇 위인가요? 댓글로 남겨 주세요 🙏")
         tags = "#생일운세 #태어난달 #운세 #shorts"
     sched = " · ".join(f"{SLOT_TIME[k]} {lab}" for k, lab in
-                       (("year", "태어난 해"), ("am", "이름 글자"), ("surname", "성씨"), ("pm", "태어난 달")))
+                       (("year", "태어난 해"), ("am", "이름 글자"), ("surname", "성씨"), ("pm", "태어난 달·음력 생일 끝자리")))
     note = "한자 뜻은 사전의 새김을 따랐어요." if slot == "am" else "순위는 재미로 정한 것이에요."
     # 기준 안내(2026-10-08 댓글 '월생 기준이 양력? 음력?') — 해 끝자리 = 입춘 · 태어난 달 = 음력 생일 달
-    basis = {"year": birth_basis.year_note(), "pm": birth_basis.month_note()}.get(slot)
+    basis = {"year": birth_basis.year_note(), "pm": birth_basis.month_note(), "lunar": birth_basis.lunar_day_note()}.get(slot)
     return (f"{head}\n매일 {sched} 표가 올라와요.\n\n" + (f"{basis}\n\n" if basis else "")
             + f"※ 재미로 보는 풀이입니다. {note}\n\n{tags}")
 
@@ -272,6 +313,14 @@ def storyboard(d: dt.date, slot: str) -> dict:
                  "basis": birth_basis.SCREEN_YEAR,
                  "brand": BRAND, "narration": f"태어난 해 끝자리로 보는 {lab} 순위예요. 내 끝자리는 몇 위인지 찾아보세요."}
         hook, theme_id = th["hook"], f"year:{th['id']}"
+    elif slot == "lunar":
+        th = lunar_theme(d)
+        lab = month_label(d, th)
+        scene = {"type": "grid", "pill": pill, "title": "음력 생일 끝자리로 보는", "title2": f"{lab} 순위",
+                 "cols": 2, "cells": lunar_cells(d, th), "basis": birth_basis.SCREEN_LUNAR_DAY,
+                 "foot": "※ 음력엔 31일이 없어요 · 재미로 보는 운세", "brand": BRAND,
+                 "narration": f"음력 생일 끝자리로 보는 {lab} 순위예요. 내 음력 생일 날짜 끝자리를 찾아보세요."}
+        hook, theme_id = th["hook"], f"lunar:{th['id']}"
     elif slot == "surname":
         th = surname_theme(d)
         lab = month_label(d, th)
@@ -318,12 +367,13 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="내 것 찾기 표(해 끝자리·이름 글자·성씨·태어난 달) 스토리보드")
     ap.add_argument("cmd", choices=["show", "make", "path", "slot"])
     ap.add_argument("--date", help="YYYY-MM-DD (기본: 오늘 KST)")
-    ap.add_argument("--slot", choices=SLOTS, help="year=해 끝자리 · am=이름 글자 · surname=성씨 · pm=태어난 달 (기본: 지금 KST 시각)")
+    ap.add_argument("--slot", choices=SLOTS, help="year=해 끝자리 · am=이름 글자 · surname=성씨 · pm=태어난 달 · lunar=음력 생일 끝자리"
+                    "(pm 트리거가 그날 차례면 lunar 로 바뀐다 · 기본: 지금 KST 시각)")
     ap.add_argument("--out")
     ap.add_argument("--force", action="store_true", help="그날 칸이 아니어도 만든다(견본용)")
     a = ap.parse_args(argv)
     d = dt.date.fromisoformat(a.date) if a.date else kst_now().date()
-    slot = a.slot or slot_now()
+    slot = resolve_slot(d, a.slot or slot_now())
     if a.cmd == "slot":
         print(slot)
         return 0
