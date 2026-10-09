@@ -61,7 +61,8 @@ STYLES = {
     "film": ("cinematic horror film still, ", "digital painting, moody low-key lighting, shallow depth of field, atmospheric, "),
 }
 STYLE_HEAD, STYLE_TAIL = STYLES.get(os.environ.get("TALES_STYLE", "anime"), STYLES["anime"])
-# 해설편(27화~, look=real): TALES_STYLE 과 상관없이 실사 다큐 화풍. 글자·로고·여우가 끼지 않게 꼬리에 못 박는다.
+# 해설편(27화~, look=real): TALES_STYLE 과 상관없이 실사 다큐 화풍. 꼬리는 글자·로고·워터마크만 막는다.
+#   여우·구미는 프롬프트에 단어를 넣으면 오히려 그려지기 쉬워서 여기 쓰지 않고, 대본 검사(tales.FOX_IMG)가 막는다.
 REAL_HEAD = "cinematic documentary film still, photorealistic, "
 REAL_TAIL = "natural lighting, high detail, atmospheric, wide dynamic range, no text, no logos, no watermark, "
 

@@ -105,9 +105,10 @@ ODDS_MAX = 34                # 판정 띠 글자 수(화면 위 한 줄)
 SOURCES_MIN = 3
 VERDICT_CARD = "VERDICT"
 # 사용자 10/9: 한국 설화·조선은 '쓰레기 주제'. 구미·여우 그림 금지. 유튜브 '진정성 없는 콘텐츠' 정책 — 남의 세계관(SCP·백룸) 금지.
-FOLKLORE = re.compile(r"(?i)\b(gumiho|kumiho|gumi-?ho|nine[- ]tail(ed)?|kitsune|huli ?jing|hanbok|hanok|joseon|"
-                      r"korean (folklore|legend|myth\w*|ghost|folk ?tale|superstition\w*)|folk ?tale|dokkaebi|jeoseung|"
-                      r"mudang|shaman\w*|gat hat|yokai|yōkai|tamamo|daji|jiangshi|east asian (legend|folklore|myth\w*))\b")
+FOLKLORE = re.compile(r"(?i)\b(folklore|folk ?tales?|gumiho|kumiho|gumi-?ho|nine[- ]tail(ed)?|kitsune|huli ?jing|"
+                      r"hanbok|hanok|joseon|dokkaebi|jeoseung|mudang|shaman\w*|gat hat|yokai|yōkai|kappa|oni|tamamo|"
+                      r"daji|jiangshi|urban legends?|(korean|japanese|chinese|asian|east asian) (legends?|myths?|mythology|"
+                      r"ghosts?|monsters?|spirits?|superstitions?))\b")
 FOX_IMG = re.compile(r"(?i)\b(fox|foxes|vixen|fox-?like|nine tails)\b")    # 그림 프롬프트에서만(구미를 그리지 않는다)
 BANNED_TOPICS = re.compile(r"(?i)\b(scp|backrooms|creepypasta|slender ?man|five nights at freddy'?s|fnaf|"
                            r"skibidi|poppy playtime|siren head)\b")
@@ -117,6 +118,17 @@ SINGLE_ITEM = re.compile(r"(?i)^\s*(how long (would|could|can) you (last|survive
                          r"can never|will never)|how (deep|cold|hot|big|far|high|fast|dark|loud|toxic) is|"
                          r"what (you'?d|you would) see)\b|\bvs\.?\s")
 NUM = re.compile(r"\d[\d,]*(?:\.\d+)?")
+# 살아남는 시간·걸리는 시간은 작은 수라도 catalog 에 있는 '수 + 단위' 그대로만(리뷰 10/9: '10 SECONDS'·'ninety seconds' 통과)
+TIME_UNIT = r"(seconds?|secs?|minutes?|mins?|hours?|hrs?|days?|weeks?|months?|years?|decades?|centur(?:y|ies))"
+TIME_NUM = re.compile(r"(?i)(\d[\d,]*(?:\.\d+)?)((?:\s*(?:–|-|to|and|or)\s*\d[\d,]*(?:\.\d+)?)*)\s*(?:[a-z]+\s+)?"
+                      + TIME_UNIT + r"\b")
+NUM_WORDS = (r"(?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|"
+             r"seventeen|eighteen|nineteen|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|hundred|thousand|"
+             r"million|billion|dozen)")
+SPELLED_TIME = re.compile(r"(?i)\b" + NUM_WORDS + r"(?:[- ]" + NUM_WORDS + r")*(?:\s+[a-z]+)?\s+" + TIME_UNIT + r"\b")
+SPELLED = re.compile(r"(?i)\b" + NUM_WORDS + r"\b")
+# 판정 띠 이름 — 살아남는 시간처럼 읽히는 'TIME YOU'D LAST' 같은 이름은 쓰지 않는다(출처는 '의식이 버티는 시간'까지만 말한다)
+ODDS_LABELS = ("SURVIVAL ODDS", "AWAKE FOR", "RISK")
 FREE_NUM_MAX = 12            # 순위(#10)·'세 가지'처럼 작은 수는 자유. 그보다 큰 수는 catalog facts 에 있어야 한다
 EX_AI_NOTE = ("Visuals and narration are AI-generated (altered or synthetic content): the images are illustrations, "
               "not real footage. Every number is researched from the sources listed above.")
@@ -297,8 +309,52 @@ def fact_numbers(e: dict | None) -> set[str] | None:
     """catalog 편의 facts·angle·careful 에 적힌 숫자들(쉼표 뺀 꼴). 편이 없으면 None(대조 안 함)."""
     if not e:
         return None
-    txt = " ".join([e.get("title_idea", ""), e.get("angle", "")] + list(e.get("facts") or []) + list(e.get("careful") or []))
-    return {n.replace(",", "").rstrip(".") for n in NUM.findall(txt)}
+    return {n.replace(",", "").rstrip(".") for n in NUM.findall(fact_text(e))}
+
+
+def _unit(u: str) -> str:
+    u = u.lower()
+    for k, v in (("sec", "second"), ("min", "minute"), ("hour", "hour"), ("hr", "hour"), ("day", "day"),
+                 ("week", "week"), ("month", "month"), ("year", "year"), ("decade", "decade"), ("centur", "century")):
+        if u.startswith(k):
+            return v
+    return u
+
+
+def time_pairs(text: str) -> set[tuple[str, str]]:
+    """'1–2 minutes' · '9 to 12 seconds' · '4.6 billion years' → {(수, 단위)}."""
+    out = set()
+    for m in TIME_NUM.finditer(text or ""):
+        unit = _unit(m.group(3))
+        for n in [m.group(1)] + NUM.findall(m.group(2) or ""):
+            out.add((n.replace(",", "").rstrip("."), unit))
+    return out
+
+
+def fact_text(e: dict | None) -> str:
+    if not e:
+        return ""
+    return " ".join([e.get("title_idea", ""), e.get("angle", "")] + list(e.get("facts") or []) + list(e.get("careful") or []))
+
+
+def time_errs(lab: str, text: str, e: dict | None) -> list[str]:
+    """시간 주장(수 + 단위)은 catalog facts 에 같은 꼴로 있어야 한다. 글자로 쓴 수 + 단위('ninety seconds')도 같다."""
+    if not e:
+        return []
+    ft = fact_text(e)
+    errs = []
+    bad = sorted(f"{n} {u}" for n, u in time_pairs(text) - time_pairs(ft))
+    if bad:
+        errs.append(f"{lab}: 시간 {bad[:4]} 이 catalog facts 에 없다 — 출처에 있는 시간만(수 + 단위 그대로)")
+    low = " ".join(ft.lower().split())
+    for m in SPELLED_TIME.finditer(text or ""):
+        if " ".join(m.group(0).lower().split()) not in low:
+            errs.append(f"{lab}: 글자로 쓴 시간 {m.group(0)!r} — 숫자로 쓰고 catalog facts 에 있는 것만")
+    return errs
+
+
+def src_urls(xs) -> set[str]:
+    return {u.rstrip(").,") for x in (xs or []) for u in re.findall(r"https?://\S+", str(x))}
 
 
 def loose_numbers(text: str, known: set[str], tid: int) -> list[str]:
@@ -358,6 +414,12 @@ def explainer_errs(s: dict) -> list[str]:
     for j, x in enumerate(srcs):
         if not re.search(r"https?://\S+\.\S+", str(x)):
             errs.append(f"출처 {j}: 링크(https://…)가 없다 — 이름과 주소를 같이")
+    ent = entry(s["id"])
+    if ent:
+        extra_urls = src_urls(srcs) - src_urls(ent.get("sources"))
+        if extra_urls:
+            errs.append(f"출처 링크 {sorted(extra_urls)[:3]} 가 catalog 출처에 없다 — catalog 편의 sources 에서만 고른다")
+    mine = src_urls(srcs)
     # 콜드 오픈: 첫 장면에 가장 센 숫자(첫 10초)
     if sc and not NUM.search(sc[0].get("say", "")):
         errs.append("첫 장면에 숫자가 없다 — 가장 극단적인 사실(숫자)로 연다")
@@ -376,9 +438,28 @@ def explainer_errs(s: dict) -> list[str]:
         n_odds = sum(1 for i, x in enumerate(sc) if seg[i] == k and x.get("odds"))
         if n_odds != 1:
             errs.append(f"꼭지 '{cx['sub']}': 판정 띠(odds) {n_odds}개 — 꼭지마다 정확히 하나")
+        # 꼭지 출처: 그 꼭지의 숫자가 나온 페이지(쇼츠 설명란에 그 꼭지 것만 나간다)
+        cs = cx.get("src") or []
+        if not isinstance(cs, list) or not 1 <= len(cs) <= 5:
+            errs.append(f"꼭지 '{cx['sub']}': 카드에 src(이 꼭지 출처 1~5개, sources 중에서)가 없다")
+        elif src_urls(cs) - mine or len(src_urls(cs)) < len(cs):
+            errs.append(f"꼭지 '{cx['sub']}': src 는 대본 sources 에 있는 출처(링크 포함)만")
+    known_ = fact_numbers(ent)
     for i, x in enumerate(sc):
-        if x.get("odds") and (len(x["odds"]) > ODDS_MAX or not x.get("say")):
+        od = x.get("odds")
+        if not od:
+            continue
+        if len(od) > ODDS_MAX or not x.get("say"):
             errs.append(f"장면 {i}: odds 는 말이 있는 장면에 {ODDS_MAX}자 이하")
+        lab_, _, val = od.partition(":")
+        if lab_.strip().upper() not in ODDS_LABELS or not val.strip():
+            errs.append(f"장면 {i}: odds 는 '{' / '.join(ODDS_LABELS)}: …' 꼴 — 살아남는 시간처럼 읽히는 이름 금지")
+        if SPELLED.search(od):
+            errs.append(f"장면 {i}: odds 에 글자로 쓴 수 {SPELLED.search(od).group(0)!r} — 숫자로(catalog 에 있는 것만)")
+        if known_ is not None:
+            miss = [n for n in NUM.findall(od) if n.replace(",", "").rstrip(".") not in known_]
+            if miss:
+                errs.append(f"장면 {i}: odds 숫자 {miss} 가 catalog facts 에 없다(작은 수도)")
     if vi is None:
         errs.append(f"끝 판정 카드 {{'card': '{VERDICT_CARD}', 'sub': \"Gumi's Verdict\"}} 가 없다")
     else:
@@ -389,13 +470,18 @@ def explainer_errs(s: dict) -> list[str]:
     if not any(re.search(r"(?i)\bnext\b", x.get("say") or "") for x in sc[-3:]):
         errs.append("마지막 3장면 안에 다음 주 예고('Next Sunday, …')가 없다")
     # 숫자 대조 — catalog 편의 facts 에 없는 큰 수는 지어낸 것으로 본다
-    known = fact_numbers(entry(s["id"]))
+    known = known_
     if known is not None:
-        loose = []
-        for x in sc:
-            loose += loose_numbers(f"{x.get('say', '')} {x.get('odds', '')} {x.get('note', '')}", known, s["id"])
-        for sh_ in shorts:
-            loose += [n for ln in sh_.get("lines") or [] for n in loose_numbers(ln.get("say", ""), known, s["id"])]
+        loose = loose_numbers(f"{s['title']} {s['thumb'].get('text', '')} {s['hook']}", known, s["id"])
+        for i, x in enumerate(sc):
+            txt = f"{x.get('say', '')} {x.get('odds', '')} {x.get('note', '')}"
+            loose += loose_numbers(txt, known, s["id"])
+            errs += time_errs(f"장면 {i}", txt, ent)
+        for k, sh_ in enumerate(shorts, start=1):
+            txt = " ".join([sh_.get("title", ""), sh_.get("hook", "")] + [ln.get("say", "") for ln in sh_.get("lines") or []])
+            loose += loose_numbers(txt, known, s["id"])
+            errs += time_errs("쇼츠" if k == 1 else f"쇼츠{k}", txt, ent)
+        errs += time_errs("제목·썸네일", f"{s['title']} {s['thumb'].get('text', '')} {s['hook']}", ent)
         if loose:
             errs.append(f"catalog facts 에 없는 숫자 {sorted(set(loose))[:6]} — 조사한 사실의 숫자만 쓴다(없으면 빼거나 말로)")
     # 쇼츠: 본편 한 꼭지만 자른 것 — 쓰는 장면이 모두 한 꼭지 안 + 제목 꼴
@@ -502,6 +588,23 @@ def hashtags(tags: list[str], n: int = 3) -> str:
     return " ".join(f"#{h}" for h in out[:n])
 
 
+DESC_MAX_BYTES = 4900        # 유튜브 설명 한도 5,000바이트(—·• 는 3바이트)
+
+
+def short_sources(s: dict, sh_: dict) -> list[str]:
+    """쇼츠가 자른 꼭지의 출처(카드 src). 꼭지를 못 찾으면 대본 출처 앞 3개."""
+    sc = s.get("scenes") or []
+    seg = segments(sc)
+    key_seg = {x["key"]: seg[i] for i, x in enumerate(sc) if x.get("key")}
+    used = {key_seg.get(ln.get("scene")) for ln in sh_.get("lines") or [] if ln.get("scene")} - {None}
+    cards = [x for x in sc if x.get("card") and x.get("sub")]
+    if len(used) == 1:
+        k = used.pop()
+        if 0 <= k < len(cards) and cards[k].get("src"):
+            return list(cards[k]["src"])
+    return list(s.get("sources") or [])[:3]
+
+
 def ex_meta(s: dict, starts: list[float] | None = None, short_of: str | None = None,
             more: list[tuple[str, str]] | None = None) -> dict:
     """해설편 메타: 출처를 설명란에 그대로(정책: 편마다 조사한 사실) · AI 고지 · 설화 태그 없음."""
@@ -509,17 +612,22 @@ def ex_meta(s: dict, starts: list[float] | None = None, short_of: str | None = N
     src = "\n".join(f"• {x}" for x in s["sources"])
     chap = chapters(s, starts) if starts else ""
     more_txt = ("Watch next:\n" + "\n".join(f"▶ {t} — {u}" for t, u in more[:4]) + "\n\n") if more else ""
-    desc = (f"{s['hook']}\n\n"
-            + (f"{chap}\n\n" if chap else "")
-            + more_txt
-            + f"Sources:\n{src}\n\n{EX_ABOUT}\n\n{EX_AI_NOTE}\n\n" + hashtags(s["tags"]))
-    out = {"title": s["title"][:100], "description": desc[:4900], "tags": tags}
-    src3 = "\n".join(f"• {x}" for x in s["sources"][:3])
+    # 출처·AI 고지는 잘리지 않게 앞쪽에. 유튜브 설명은 5,000바이트까지 — 넘치면 '다음 영상'·소개·챕터 순으로 뺀다
+    parts = [f"{s['hook']}\n\n", f"{chap}\n\n" if chap else "", f"Sources:\n{src}\n\n", f"{EX_AI_NOTE}\n\n",
+             f"{EX_ABOUT}\n\n", more_txt, hashtags(s["tags"])]
+    for drop in (5, 4, 1):
+        if len("".join(parts).encode("utf-8")) <= DESC_MAX_BYTES:
+            break
+        parts[drop] = ""
+    desc = "".join(parts)
+    out = {"title": s["title"][:100], "description": desc, "tags": tags}
 
     def sd(sh_: dict) -> str:
+        own = short_sources(s, sh_)
         return (f"{sh_.get('desc') or s['hook']}\n\n"
                 + (f"Full video: {short_of}\n\n" if short_of else "Full video on the channel.\n\n")
-                + f"Sources:\n{src3}\n\n{EX_AI_NOTE}\n\n#shorts " + hashtags(s["tags"], 2))
+                + "Sources:\n" + "\n".join(f"• {x}" for x in own)
+                + f"\n\n{EX_AI_NOTE}\n\n#shorts " + hashtags(s["tags"], 2))
     out["short"] = {"title": s["short"]["title"][:100], "description": sd(s["short"]), "tags": tags[:15]}
     out["shorts_extra"] = [{"title": ex["title"][:100], "description": sd(ex), "tags": tags[:15]}
                            for ex in (s.get("shorts_extra") or []) if isinstance(ex, dict) and ex.get("title")]
@@ -650,9 +758,10 @@ def teaser_for(e: dict) -> dict:
     later = sorted((x for x in cat["tales"] if not x.get("retired") and x.get("date", "") > e.get("date", "")),
                    key=lambda x: x["date"])
     if later:
-        return {"title": later[0]["title_idea"], "angle": later[0].get("angle", ""), "date": later[0]["date"]}
-    bl = cat.get("backlog") or []
-    return {"title": bl[0], "angle": "", "date": None} if bl else {}
+        return {"title": later[0]["title_idea"], "angle": later[0].get("angle", ""), "date": later[0]["date"],
+                "line": f"Next Sunday: {later[0]['title_idea']}"}
+    # 다음 편이 아직 편성되지 않았다 — backlog 제목을 약속하면 안 나올 수도 있다(리뷰 10/9)
+    return {"title": "", "angle": "", "date": None, "line": "A new one next Sunday."}
 
 
 def main() -> int:

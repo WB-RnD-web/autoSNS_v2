@@ -412,7 +412,10 @@ _o = subprocess.run([sys.executable, _tp, "next", "--date", "2026-10-17"], captu
 _j = json.loads(_o.stdout)
 ck("CLI next 10/17 → 027 · 공개 시각 · 다음 주 예고 · 견본 준비", _j.get("file") == "027_places-you-cant-survive.json"
    and _j.get("publish_at") == "2026-10-18T14:00:00Z" and _j.get("teaser", {}).get("date") == "2026-10-25"
-   and _j.get("exemplar_ready") is True, _o.stdout[:200])
+   and _j["teaser"]["line"].startswith("Next Sunday: The Deep Sea") and _j.get("exemplar_ready") is True, _o.stdout[:200])
+_t29 = T.teaser_for(T.entry(29))
+ck("마지막 편(11/1) 예고는 편성 안 된 backlog 를 약속하지 않는다", _t29["title"] == "" and _t29["date"] is None
+   and _t29["line"] == "A new one next Sunday.", str(_t29))
 import upload_tale as UW  # noqa: E402
 _sat = _d2.datetime(2026, 10, 17, 3, 0, tzinfo=_d2.timezone.utc)
 ck("업로드 예약: 토요일에 올리면 일요일 14:00 UTC", UW.weekly_time("2026-10-18", _sat) == "2026-10-18T14:00:00Z")
@@ -501,6 +504,62 @@ ck("한 꼭지 제목 판별", bool(T.SINGLE_ITEM.search("How Long Would You Las
 ck("본편 쇼츠 = 같은 꼭지 장면만(견본 쇼츠 전부)", all(len({_keys[ln["scene"]] for ln in sh["lines"] if ln.get("scene")}) == 1
                                          for sh in [X["short"]] + X["shorts_extra"]))
 
+_X0 = T.load(XP)
+
+
+def _bad2(fn):
+    b = copy.deepcopy(_X0)
+    fn(b)
+    return T.check(b, XP)
+
+
+def _odds_i(b):
+    return next(i for i, x in enumerate(b["scenes"]) if x.get("odds"))
+
+
+print("── 리뷰 10/9: 검사 구멍 ──")
+ck("띠에 출처 없는 작은 수 시간('TIME YOU'D LAST: 10 SECONDS') → 거부",
+   any("odds" in e for e in _bad2(lambda b: b["scenes"][_odds_i(b)].update(odds="TIME YOU'D LAST: 10 SECONDS"))))
+ck("띠 이름이 SURVIVAL ODDS 라도 출처 없는 시간 → 거부",
+   any("시간" in e for e in _bad2(lambda b: b["scenes"][_odds_i(b)].update(odds="SURVIVAL ODDS: 10 SECONDS"))))
+ck("띠에 글자로 쓴 수 → 거부", any("글자로 쓴 수" in e for e in _bad2(lambda b: b["scenes"][_odds_i(b)].update(odds="SURVIVAL ODDS: TEN MINUTES"))))
+ck("말에 글자로 쓴 시간('ninety seconds') → 거부",
+   any("글자로 쓴 시간" in e for e in _bad2(lambda b: b["scenes"][4].update(say=b["scenes"][4]["say"] + " You'd last ninety seconds."))))
+ck("말에 출처 없는 작은 수 시간('2 hours') → 거부",
+   any("시간" in e and "2 hour" in e for e in _bad2(lambda b: b["scenes"][4].update(say=b["scenes"][4]["say"] + " You'd last 2 hours."))))
+ck("출처에 있는 시간('9 to 12 seconds')은 통과", not T.time_errs("x", "about 9 to 12 seconds of useful consciousness", T.entry(27)))
+ck("썸네일 문구 숫자 대조", any("숫자" in e for e in _bad2(lambda b: b["thumb"].update(text="4,321 METERS"))))
+ck("쇼츠 hook 숫자 대조", any("숫자" in e for e in _bad2(lambda b: b["short"].update(hook="999°C GROUND"))))
+ck("쇼츠 제목 숫자 대조", any("숫자" in e for e in _bad2(lambda b: b["shorts_extra"][0].update(
+    title="What Happens If You Go 99,000 Feet Up? #shorts"))))
+ck("catalog 에 없는 출처 링크 → 거부", any("catalog 출처에 없다" in e for e in _bad2(
+    lambda b: b["sources"].append("Some blog — Top 10 places: https://example.com/top10"))))
+
+
+def _no_src(b):
+    k = next(i for i, x in enumerate(b["scenes"]) if x.get("card") and x.get("src"))
+    del b["scenes"][k]["src"]
+
+
+ck("꼭지 카드 src 없음 → 거부", any("src" in e for e in _bad2(_no_src)))
+for _w in ("Japanese folklore", "kappa", "oni", "urban legend", "Chinese legends", "folklore"):
+    ck(f"금지어 '{_w}'(제목·태그·말) → 거부", any("금지 주제" in e for e in _bad2(lambda b, w=_w: b["tags"].append(w)))
+       and any("금지 주제" in e for e in _bad2(lambda b, w=_w: b["scenes"][4].update(say=b["scenes"][4]["say"] + f" Like {w}."))))
+ck("제목의 금지어 → 거부", any("금지 주제" in e for e in _bad2(lambda b: b.update(title="10 Yokai Places You Can't Survive"))))
+_w = open(os.path.join(T.HERE, "WRITING.md"), encoding="utf-8").read()
+ck("WRITING.md 예시에 살아남는 시간·'right now' 없음", "YOU'D LAST" not in _w and "Time you'd last" not in _w
+   and "pressure you feel right now" not in _w)
+ck("catalog 해설편 angle·facts 에 날짜 타는 말 없음", not any(T.DATED.search(e["angle"] + " ".join(e["facts"]))
+                                         for e in T.load(T.CATALOG)["tales"] if not e.get("retired")))
+_f27 = " ".join(T.entry(27)["facts"])
+ck("옐로스톤 시추공 = NPS(1967 · 238 °C · 332 m) · 출처에 NPS 페이지",
+   "238 °C" in _f27 and "332 m" in _f27 and "237" not in _f27 and "326" not in _f27
+   and any("vitalsigns/temps.htm" in x for x in T.entry(27)["sources"]))
+_y = next(x for x in X["scenes"] if "drill hole" in x.get("say", ""))
+ck("견본 대본도 238 °C · 332 m", "238" in _y["say"] and "332" in _y["say"], _y["say"])
+ck("견본 띠: 살아남는 시간 대신 AWAKE FOR", any(x.get("odds") == "AWAKE FOR: 1–5 MINUTES" for x in X["scenes"])
+   and not any("hours, for a prepared climber" in x.get("say", "") for x in X["scenes"]))
+
 print("── 해설편 메타·화면 ──")
 _md = T.meta(X, [i * 10.0 for i in range(len(X["scenes"]))], more=[("Ep", "https://youtu.be/E")])
 ck("설명: 출처 링크 전부·AI 합성 고지·일요일 안내", all(x in _md["description"] for x in X["sources"])
@@ -512,6 +571,15 @@ ck("챕터: 00:00 + 꼭지마다 + 판정", _chap[0].startswith("00:00") and any
 _smd = T.meta(X, None, short_of="https://youtu.be/L")
 ck("쇼츠 설명: 본편 링크 + 출처", "Full video: https://youtu.be/L" in _smd["short"]["description"]
    and "Sources:" in _smd["short"]["description"] and all("youtu.be/L" in x["description"] for x in _smd["shorts_extra"]))
+ck("쇼츠 설명 출처 = 그 쇼츠가 자른 꼭지 출처(에베레스트·암스트롱·루트)",
+   "Matthews" in _smd["short"]["description"] and "Lut" not in _smd["short"]["description"]
+   and "UBC" in _smd["shorts_extra"][0]["description"] and "Matthews" not in _smd["shorts_extra"][0]["description"]
+   and "Lut" in _smd["shorts_extra"][1]["description"] and "Challenger" not in _smd["shorts_extra"][1]["description"])
+for _e in [e for e in T.load(T.CATALOG)["tales"] if not e.get("retired")]:
+    _fake = dict(X, id=_e["id"], sources=_e["sources"], hook="h" * 200)
+    _d = T.meta(_fake, [i * 10.0 for i in range(len(X["scenes"]))], more=[("A" * 90, "https://youtu.be/A")] * 4)["description"]
+    ck(f"{_e['id']}화 설명 5,000바이트 이하 · 출처 전부·AI 고지 남음", len(_d.encode("utf-8")) <= 5000
+       and all(x in _d for x in _e["sources"]) and "AI-generated" in _d, str(len(_d.encode("utf-8"))))
 ck("화풍: real 은 TALES_STYLE 과 무관하게 실사", "photorealistic" in R.look_prefix("real") and "anime" not in R.look_prefix("real")
    and "no text" in R.look_prefix("real"))
 ck("띠 문구: 해설편 EXPLAINED · 설화편 KOREAN LEGEND", T.badge(X) == "EXPLAINED" and T.badge(S) == "KOREAN LEGEND")

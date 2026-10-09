@@ -27,20 +27,33 @@
   "deadliest places"
  ],
  "sources": [
-  "WMO — World Weather & Climate Extremes (Death Valley, Vostok records): https://wmo.int/news/media-centre/wmo-verifies-3rd-and-4th-hottest-temperature-recorded-earth",
+  "WMO — WMO verifies 3rd and 4th hottest temperature recorded on Earth (Death Valley 56.7 °C, 10 July 1913): https://wmo.int/news/media-centre/wmo-verifies-3rd-and-4th-hottest-temperature-recorded-earth",
   "NPS — Death Valley Weather: https://www.nps.gov/deva/learn/nature/weather-and-climate.htm",
-  "NASA Earth Observatory — Lake Natron, Tanzania: https://science.nasa.gov/earth/earth-observatory/lake-natron-tanzania-5465",
-  "Susetyo et al. (2025), Toxicology Reports — Kawah Ijen sulfur dioxide: https://pmc.ncbi.nlm.nih.gov/articles/PMC11780170/",
+  "NPS — Death Valley Safety: https://www.nps.gov/deva/planyourvisit/safety.htm",
+  "NPS — Death Valley, First Hot Week of 2017 (120 °F surfaces): https://www.nps.gov/deva/learn/news/first-hot-week-of-2017.htm",
+  "NASA Earth Observatory — Lake Natron, Tanzania (2002): https://science.nasa.gov/earth/earth-observatory/lake-natron-tanzania-3042/",
+  "NASA Earth Observatory — Lake Natron, Tanzania (2005): https://science.nasa.gov/earth/earth-observatory/lake-natron-tanzania-5465",
+  "Clarisse et al. (2019), Scientific Reports — Lake Natron area, altitude, pH: https://pmc.ncbi.nlm.nih.gov/articles/PMC6418304/",
+  "Susetyo et al. (2025), Toxicology Reports — Toxic natural pollution at Ijen crater volcano: https://pmc.ncbi.nlm.nih.gov/articles/PMC11780170/",
   "USGS Yellowstone Volcano Observatory — How hot are Yellowstone's boiling waters?: https://www.usgs.gov/observatories/yvo/news/how-hot-are-yellowstones-boiling-waters-some-are-hotter-others",
   "NPS — Norris Geyser Basin: https://nps.gov/yell/planyourvisit/norrisplan.htm",
+  "NPS — Yellowstone High Temperatures (Norris drill hole): https://home.nps.gov/features/yell/ofvec/exhibits/science/vitalsigns/temps.htm",
+  "NPS — Yellowstone Safety (thin crust): https://www.nps.gov/yell/planyourvisit/safety.htm",
+  "USGS Yellowstone Volcano Observatory — Beyond the bathroom (acidity akin to orange juice): https://www.usgs.gov/observatories/yvo/news/beyond-bathroom-top-visitor-questions-yellowstones-thermal-areas",
   "Belilla et al. (2019), Nature Ecology & Evolution — Dallol: https://pmc.ncbi.nlm.nih.gov/articles/PMC6837875/",
   "NASA Earth Observatory — Iran's Lut Desert: https://science.nasa.gov/earth/earth-observatory/irans-lut-desert-153634",
+  "NASA Earth Observatory — The Hottest Spot on Earth (70.7 °C, 2005): https://science.nasa.gov/earth/earth-observatory/the-hottest-spot-on-earth-77627",
+  "WMO — WMO verifies -69.6°C Greenland temperature as Northern hemisphere record (Vostok −89.2 °C): https://public.wmo.int/node/21084",
   "AGU — Coldest place on Earth is colder than scientists thought: https://news.agu.org/press-release/coldest-place-on-earth-is-colder-than-scientists-thought/",
-  "Matthews et al. (2020), iScience — Everest summit air pressure: https://pmc.ncbi.nlm.nih.gov/articles/PMC7756134/",
-  "Szymczak et al. (2021), Frontiers in Physiology — winter Everest weather: https://pmc.ncbi.nlm.nih.gov/articles/PMC8287323/",
+  "Matthews et al. (2020), iScience — Oxygen availability on Mount Everest: https://pmc.ncbi.nlm.nih.gov/articles/PMC7756134/",
+  "NOAA JetStream — Air Pressure (standard sea-level pressure): https://www.noaa.gov/jetstream/atmosphere/air-pressure",
+  "Szymczak et al. (2021), Frontiers in Physiology — Death Zone weather extremes: https://pmc.ncbi.nlm.nih.gov/articles/PMC8287323/",
   "UBC ATSC 113 — Altitude and Pilot Physiology: https://www.eoas.ubc.ca/courses/atsc113/flying/met_concepts/02-met_concepts/02b-oxygen_physiology/index.html",
   "NOAA Ocean Service — How deep is the ocean?: https://oceanservice.noaa.gov/facts/oceandepth.html",
-  "WHOI — Mariana Trench 2009: https://archives.whoi.edu/nereus/main/nereus/mariana-trench-2009.html"
+  "Greenaway et al. (2021), Deep-Sea Research I — revised depth of the Challenger Deep: https://repository.library.noaa.gov/view/noaa/33477",
+  "NOAA Fisheries — Mariana Trench Marine National Monument: https://www.fisheries.noaa.gov/pacific-islands/habitat-conservation/mariana-trench-marine-national-monument",
+  "WHOI — Mariana Trench 2009 (pressure): https://archives.whoi.edu/nereus/main/nereus/mariana-trench-2009.html",
+  "Dziak et al. (2017), Oceanography — Ambient Sound at Challenger Deep: https://tos.org/oceanography/article/ambient-sound-at-challenger-deep-mariana-trench"
  ],
  "scenes": [
   {
@@ -64,7 +77,13 @@
   },
   {
    "card": "#10",
-   "sub": "Death Valley, USA"
+   "sub": "Death Valley, USA",
+   "src": [
+    "WMO — WMO verifies 3rd and 4th hottest temperature recorded on Earth (Death Valley 56.7 °C, 10 July 1913): https://wmo.int/news/media-centre/wmo-verifies-3rd-and-4th-hottest-temperature-recorded-earth",
+    "NPS — Death Valley Weather: https://www.nps.gov/deva/learn/nature/weather-and-climate.htm",
+    "NPS — Death Valley Safety: https://www.nps.gov/deva/planyourvisit/safety.htm",
+    "NPS — Death Valley, First Hot Week of 2017 (120 °F surfaces): https://www.nps.gov/deva/learn/news/first-hot-week-of-2017.htm"
+   ]
   },
   {
    "say": "Number ten: Death Valley, California. On July 10, 1913, a thermometer at Furnace Creek read 134 degrees Fahrenheit, 56.7 Celsius. The World Meteorological Organization still lists it as the hottest air temperature ever recorded.",
@@ -75,14 +94,14 @@
    "key": "dv-valley"
   },
   {
-   "say": "Some weather historians question that old reading. Fair enough. The ground doesn't need the debate. In July 1972, the ground at Furnace Creek hit 201 degrees Fahrenheit, about 94 Celsius.",
+   "say": "Some weather historians question that old reading. Fair enough. The ground doesn't need the debate. In July 1972, the ground at Furnace Creek hit 201 degrees Fahrenheit.",
    "img": "extreme close-up of cracked hexagonal salt crust on a desert floor in harsh noon sun, heat ripples rising from it",
    "fx": "dust",
    "move": "in",
    "key": "dv-ground"
   },
   {
-   "say": "For scale, the park warns that touching a surface at 120 degrees Fahrenheit for more than five minutes can cause severe burns. The valley floor in summer goes far past that.",
+   "say": "For scale, the park warns that touching a surface at 120 degrees Fahrenheit for more than 5 minutes can cause severe burns. The valley floor in summer goes far past that.",
    "img": "a pair of bare hands hovering just above a cracked sunbaked desert surface, heat shimmer between them, harsh light",
    "fx": "dust",
    "move": "in"
@@ -94,7 +113,7 @@
    "move": "left"
   },
   {
-   "say": "Survival odds: good. People live and work here. Bring water, shade and a car that starts. On foot in the summer lowlands, even the park says don't.",
+   "say": "Survival odds: good, if you follow the park's rules. Bring water, shade and a car that starts. On foot in the summer lowlands, even the park says don't.",
    "img": "a lone parked car on an empty two-lane desert highway shimmering in heat haze, bare mountains behind, no shade anywhere",
    "fx": "dust",
    "move": "out",
@@ -103,7 +122,12 @@
   },
   {
    "card": "#9",
-   "sub": "Lake Natron, Tanzania"
+   "sub": "Lake Natron, Tanzania",
+   "src": [
+    "NASA Earth Observatory — Lake Natron, Tanzania (2002): https://science.nasa.gov/earth/earth-observatory/lake-natron-tanzania-3042/",
+    "NASA Earth Observatory — Lake Natron, Tanzania (2005): https://science.nasa.gov/earth/earth-observatory/lake-natron-tanzania-5465",
+    "Clarisse et al. (2019), Scientific Reports — Lake Natron area, altitude, pH: https://pmc.ncbi.nlm.nih.gov/articles/PMC6418304/"
+   ]
   },
   {
    "say": "Number nine: Lake Natron, in northern Tanzania. Its water can reach 60 degrees Celsius, 140 Fahrenheit, and the mud along its edges can reach 50.",
@@ -141,10 +165,13 @@
   },
   {
    "card": "#8",
-   "sub": "Kawah Ijen, Indonesia"
+   "sub": "Kawah Ijen, Indonesia",
+   "src": [
+    "Susetyo et al. (2025), Toxicology Reports — Toxic natural pollution at Ijen crater volcano: https://pmc.ncbi.nlm.nih.gov/articles/PMC11780170/"
+   ]
   },
   {
-   "say": "Number eight: Kawah Ijen, a volcano in East Java, Indonesia. Inside its crater, at about 2,400 meters, sits a turquoise lake roughly 950 meters across and up to 200 meters deep.",
+   "say": "Number eight: Kawah Ijen, a volcano in East Java, Indonesia. The volcano rises 2,443 meters, and in its crater sits a turquoise lake roughly 950 meters across and up to 200 meters deep.",
    "img": "wide view into a huge volcanic crater with a milky turquoise acid lake at the bottom, steep grey walls, white fumes drifting across, early morning light",
    "fx": "fog",
    "move": "out",
@@ -179,7 +206,14 @@
   },
   {
    "card": "#7",
-   "sub": "Norris Geyser Basin, Yellowstone"
+   "sub": "Norris Geyser Basin, Yellowstone",
+   "src": [
+    "USGS Yellowstone Volcano Observatory — How hot are Yellowstone's boiling waters?: https://www.usgs.gov/observatories/yvo/news/how-hot-are-yellowstones-boiling-waters-some-are-hotter-others",
+    "NPS — Norris Geyser Basin: https://nps.gov/yell/planyourvisit/norrisplan.htm",
+    "NPS — Yellowstone High Temperatures (Norris drill hole): https://home.nps.gov/features/yell/ofvec/exhibits/science/vitalsigns/temps.htm",
+    "NPS — Yellowstone Safety (thin crust): https://www.nps.gov/yell/planyourvisit/safety.htm",
+    "USGS Yellowstone Volcano Observatory — Beyond the bathroom (acidity akin to orange juice): https://www.usgs.gov/observatories/yvo/news/beyond-bathroom-top-visitor-questions-yellowstones-thermal-areas"
+   ]
   },
   {
    "say": "Number seven: Norris Geyser Basin, in Yellowstone National Park. The park's basins sit around 2,200 meters up, so water boils there at about 93 degrees Celsius, 199 Fahrenheit.",
@@ -189,7 +223,7 @@
    "key": "ys-basin"
   },
   {
-   "say": "That's just the water you can see. In the 1960s, a drill hole measured 237 degrees Celsius, 459 Fahrenheit, only 326 meters below the surface.",
+   "say": "That's just the water you can see. In 1967, a research drill hole at Norris measured 238 degrees Celsius, 460 Fahrenheit, only 332 meters below the surface.",
    "img": "cross-section style view of layered volcanic ground with glowing hot water channels deep below a thin surface crust, steam venting at the top, scientific illustration look",
    "fx": "embers",
    "move": "down",
@@ -203,7 +237,7 @@
    "key": "ys-crust"
   },
   {
-   "say": "Oddly, the acid isn't the main danger. USGS scientists say many of these springs are about as acidic as orange juice. It's the heat that gets you.",
+   "say": "Oddly, the acid isn't the main danger. USGS scientists say the acid here is relatively weak, akin to orange juice. It's the heat that gets you.",
    "img": "a deep clear blue hot spring with steam curling off its surface and white mineral edges, cold morning air",
    "fx": "fog",
    "move": "down"
@@ -217,10 +251,13 @@
   },
   {
    "card": "#6",
-   "sub": "Dallol, Ethiopia"
+   "sub": "Dallol, Ethiopia",
+   "src": [
+    "Belilla et al. (2019), Nature Ecology & Evolution — Dallol: https://pmc.ncbi.nlm.nih.gov/articles/PMC6837875/"
+   ]
   },
   {
-   "say": "Number six: Dallol, in Ethiopia's Danakil Depression, about 120 meters below sea level. Even in January, the cool season, the air here reaches about 40 to 45 degrees Celsius.",
+   "say": "Number six: Dallol, in Ethiopia's Danakil Depression, about 120 meters below sea level. Even in January, the cool season, the air can reach 40 to 45 degrees Celsius.",
    "img": "a surreal hydrothermal landscape of neon yellow, green and rust-orange salt terraces and small bubbling pools under a pale hazy sky, flat desert beyond",
    "fx": "dust",
    "move": "right",
@@ -241,13 +278,13 @@
    "key": "dallol-tube"
   },
   {
-   "say": "To be fair, an earlier team claimed to have found life here. The 2019 study disagrees. Science is still arguing, which, honestly, is what science is for.",
+   "say": "A negative pH sounds like a typo. It isn't. It means more acid than the everyday scale was built to describe, in water hot enough to boil.",
    "img": "a cluster of tiny salt chimneys and bubbling yellow pools seen from very close, crystals glinting, macro photography",
    "fx": "none",
    "move": "left"
   },
   {
-   "say": "Survival odds: you can walk this area in the cool season, carefully. The pools are another matter. Scientists went looking for life in them and came back empty-handed.",
+   "say": "Survival odds: scientists do work here in the cool season, carefully. The pools are another matter. They went looking for life in them and came back empty-handed.",
    "img": "wide shot of a lone figure in a sun hat and long sleeves walking between colorful salt formations at a careful distance from steaming pools",
    "fx": "dust",
    "move": "out",
@@ -255,7 +292,11 @@
   },
   {
    "card": "#5",
-   "sub": "Lut Desert, Iran"
+   "sub": "Lut Desert, Iran",
+   "src": [
+    "NASA Earth Observatory — Iran's Lut Desert: https://science.nasa.gov/earth/earth-observatory/irans-lut-desert-153634",
+    "NASA Earth Observatory — The Hottest Spot on Earth (70.7 °C, 2005): https://science.nasa.gov/earth/earth-observatory/the-hottest-spot-on-earth-77627"
+   ]
   },
   {
    "say": "Number five: the Lut Desert, in southeastern Iran. Satellites watching it from 2002 to 2019 recorded a ground temperature of 80.8 degrees Celsius. About 177 Fahrenheit.",
@@ -295,10 +336,14 @@
   },
   {
    "card": "#4",
-   "sub": "Vostok Station, Antarctica"
+   "sub": "Vostok Station, Antarctica",
+   "src": [
+    "WMO — WMO verifies -69.6°C Greenland temperature as Northern hemisphere record (Vostok −89.2 °C): https://public.wmo.int/node/21084",
+    "AGU — Coldest place on Earth is colder than scientists thought: https://news.agu.org/press-release/coldest-place-on-earth-is-colder-than-scientists-thought/"
+   ]
   },
   {
-   "say": "Number four: the high plateau of East Antarctica, more than 3,500 meters up. On July 21, 1983, Vostok Station recorded the lowest air temperature ever measured: minus 89.2 Celsius, minus 128.6 Fahrenheit.",
+   "say": "Number four: the high plateau of East Antarctica. On July 21, 1983, the Vostok weather station recorded the world's coldest temperature on record: minus 89.2 Celsius, minus 128.6 Fahrenheit.",
    "img": "a small cluster of snow-buried research huts on a flat endless ice plateau under a dark polar sky, faint green aurora, drifting snow",
    "fx": "snow",
    "move": "out",
@@ -306,7 +351,7 @@
    "key": "vostok-base"
   },
   {
-   "say": "And remember, the station is more than 3,500 meters up. So on top of the cold, the air is thin. Antarctica likes to stack its problems.",
+   "say": "And the high ridges of this plateau rise more than 3,500 meters. So on top of the cold, the air is thin. Antarctica likes to stack its problems.",
    "img": "a lone weather mast coated in thick rime ice on a flat white plateau, low sun on the horizon, blowing snow",
    "fx": "snow",
    "move": "up"
@@ -324,7 +369,7 @@
    "move": "in"
   },
   {
-   "say": "Survival odds: inside the station, fine. Outside in ordinary clothes, not long at all. I don't have a number for you. Nobody has volunteered to provide one.",
+   "say": "Survival odds: inside the station, fine. Outside, I don't have a number for you. Nobody has volunteered to provide one.",
    "img": "a frozen metal door handle covered in thick frost crystals on the outside of a polar station, blue night light",
    "fx": "snow",
    "move": "in",
@@ -332,7 +377,13 @@
   },
   {
    "card": "#3",
-   "sub": "Everest's Death Zone"
+   "sub": "Everest's Death Zone",
+   "src": [
+    "Szymczak et al. (2021), Frontiers in Physiology — Death Zone weather extremes: https://pmc.ncbi.nlm.nih.gov/articles/PMC8287323/",
+    "Matthews et al. (2020), iScience — Oxygen availability on Mount Everest: https://pmc.ncbi.nlm.nih.gov/articles/PMC7756134/",
+    "NOAA JetStream — Air Pressure (standard sea-level pressure): https://www.noaa.gov/jetstream/atmosphere/air-pressure",
+    "UBC ATSC 113 — Altitude and Pilot Physiology: https://www.eoas.ubc.ca/courses/atsc113/flying/met_concepts/02-met_concepts/02b-oxygen_physiology/index.html"
+   ]
   },
   {
    "say": "Number three: Mount Everest, above 8,000 meters. Climbers call it the death zone. At the summit, air pressure averages about 331 hectopascals. At sea level, it's 1,013. You get about a third.",
@@ -350,29 +401,32 @@
    "key": "ev-mask"
   },
   {
-   "say": "Climbers get through it by acclimatizing first and, usually, carrying bottled oxygen. Drop someone up there suddenly, and aviation tables give them roughly one to five minutes of useful consciousness.",
+   "say": "Climbers who reach the top have acclimatized first, and most carry bottled oxygen. Drop someone up there suddenly, and aviation tables give them roughly 1 to 5 minutes of useful consciousness.",
    "img": "a line of tiny climbers with headlamps moving up a steep snow ridge before dawn, stars above, enormous dark mountain faces around them",
    "fx": "snow",
    "move": "right",
    "key": "ev-line"
   },
   {
-   "say": "In winter it gets worse. On winter ascents, researchers recorded winds of 46 meters per second, a wind chill of minus 69, and exposed skin at risk of frostbite in about 3 minutes.",
+   "say": "In winter it gets worse. Across successful winter ascents, researchers found winds up to 46 meters per second, wind chill down to minus 69, and facial frostbite possible in about 3 minutes.",
    "img": "a violent plume of snow blasting off a high summit ridge in winter, the sky dark blue, the mountain face in shadow",
    "fx": "snow",
    "move": "left"
   },
   {
-   "say": "Survival odds: hours, for a prepared climber on bottled oxygen. Minutes, for anyone else. The mountain does not grade on a curve.",
+   "say": "Survival odds, if you were simply dropped up there: about 1 to 5 minutes of clear thinking, by the aviation tables. After that, you are no longer making the decisions. The mountain does not grade on a curve.",
    "img": "a single empty oxygen bottle half-buried in wind-packed snow on a high ridge, clouds far below, cold blue light",
    "fx": "snow",
    "move": "out",
-   "odds": "TIME YOU'D HAVE: 1–5 MINUTES",
+   "odds": "AWAKE FOR: 1–5 MINUTES",
    "key": "ev-bottle"
   },
   {
    "card": "#2",
-   "sub": "The Armstrong Limit"
+   "sub": "The Armstrong Limit",
+   "src": [
+    "UBC ATSC 113 — Altitude and Pilot Physiology: https://www.eoas.ubc.ca/courses/atsc113/flying/met_concepts/02-met_concepts/02b-oxygen_physiology/index.html"
+   ]
   },
   {
    "say": "Number two isn't on the map. It's straight up. About 19 kilometers above any spot on Earth, the air pressure is so low that water boils at 37 degrees Celsius. Body temperature.",
@@ -411,19 +465,26 @@
    "key": "arm-cockpit"
   },
   {
-   "say": "Survival odds: with a pressure suit, people go even higher. Without one, you're counting in seconds.",
+   "say": "Survival odds, without a pressure suit: none worth mentioning. The tables are already counting in seconds well below this line.",
    "img": "a bulky white pressure suit helmet resting on a bench in a dim hangar, visor reflecting a sliver of blue sky",
    "fx": "none",
    "move": "out",
-   "odds": "TIME YOU'D HAVE: SECONDS",
+   "odds": "SURVIVAL ODDS: NONE WITHOUT A SUIT",
    "key": "arm-suit"
   },
   {
    "card": "#1",
-   "sub": "The Challenger Deep"
+   "sub": "The Challenger Deep",
+   "src": [
+    "NOAA Ocean Service — How deep is the ocean?: https://oceanservice.noaa.gov/facts/oceandepth.html",
+    "Greenaway et al. (2021), Deep-Sea Research I — revised depth of the Challenger Deep: https://repository.library.noaa.gov/view/noaa/33477",
+    "NOAA Fisheries — Mariana Trench Marine National Monument: https://www.fisheries.noaa.gov/pacific-islands/habitat-conservation/mariana-trench-marine-national-monument",
+    "WHOI — Mariana Trench 2009 (pressure): https://archives.whoi.edu/nereus/main/nereus/mariana-trench-2009.html",
+    "Dziak et al. (2017), Oceanography — Ambient Sound at Challenger Deep: https://tos.org/oceanography/article/ambient-sound-at-challenger-deep-mariana-trench"
+   ]
   },
   {
-   "say": "Number one: the Challenger Deep, at the bottom of the Mariana Trench in the western Pacific. In 2020, submersible dives measured it at 10,935 meters. That's 35,876 feet.",
+   "say": "Number one: the Challenger Deep, at the bottom of the Mariana Trench in the western Pacific. Submersible dives measured it at 10,935 meters. That's 35,876 feet.",
    "img": "a deep-sea submersible descending through pitch-black water, its lights catching drifting marine snow, nothing else visible in any direction",
    "fx": "none",
    "move": "down",
@@ -431,7 +492,7 @@
    "key": "cd-descent"
   },
   {
-   "say": "Put Mount Everest down there, and its summit would still be more than 2 kilometers underwater.",
+   "say": "Put Mount Everest down there, and its summit would still be about 7,000 feet underwater.",
    "img": "a dramatic scale comparison: a snowy mountain peak sunk inside a vast dark ocean trench, deep blue water far above the summit, documentary illustration",
    "fx": "none",
    "move": "up",
@@ -451,14 +512,14 @@
    "key": "cd-floor"
   },
   {
-   "say": "Nothing about the human body is built for this. Every air space you have, your lungs, your sinuses, gets squeezed by almost seven miles of ocean.",
+   "say": "Nothing about the human body is built for this. Every air space you have, your lungs, your sinuses, gets squeezed by the whole ocean sitting on top of you.",
    "img": "the thick round viewport of a deep submersible from inside, black water and a few glowing particles beyond the glass, condensation on the rim",
    "fx": "none",
    "move": "in",
    "key": "cd-port"
   },
   {
-   "say": "Survival odds: zero, outside a hull built for full ocean depth. Everyone who has ever been down here came down inside one.",
+   "say": "Survival odds: zero, outside a hull built for full ocean depth. At 1,100 times the surface pressure, the ocean does not negotiate.",
    "img": "a white deep-sea submersible resting on the silty floor of an ocean trench, its lights the only light for miles, wide shot",
    "fx": "none",
    "move": "out",
@@ -503,10 +564,10 @@
  ],
  "short": {
   "title": "How Long Would You Last in Everest's Death Zone? #shorts",
-  "hook": "YOU'D HAVE MINUTES",
+  "hook": "1–5 MINUTES AWAKE",
   "lines": [
    {
-    "say": "Above 8,000 meters on Mount Everest, there's a place climbers call the death zone. Here's how long you'd last.",
+    "say": "Above 8,000 meters on Mount Everest, there's a place climbers call the death zone. Here's how long you'd stay clear-headed.",
     "scene": "ev-ridge"
    },
    {
@@ -514,11 +575,11 @@
     "scene": "ev-mask"
    },
    {
-    "say": "Climbers survive it by acclimatizing first, and usually carrying bottled oxygen.",
+    "say": "Climbers who reach the top acclimatize first, and most carry bottled oxygen.",
     "scene": "ev-line"
    },
    {
-    "say": "Drop someone up there suddenly, and aviation tables give them roughly one to five minutes of useful consciousness.",
+    "say": "Drop someone up there suddenly, and aviation tables give them roughly 1 to 5 minutes of useful consciousness.",
     "scene": "ev-bottle"
    },
    {

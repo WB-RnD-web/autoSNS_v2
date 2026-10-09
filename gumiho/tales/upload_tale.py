@@ -323,7 +323,8 @@ def main() -> int:
         localize(sid, smd["title"], smd["description"])
         led[stem] = done
         _save(a.ledger, led)
-    # 추가 쇼츠(2026-10-01) — 본편이 공개된 ★뒤에 푼다(화·목 15:00 UTC). 관련 동영상 연결은 공개 영상만 고를 수 있다.
+    # 추가 쇼츠 — 본편이 공개된 ★뒤에 푼다(본편 +3일·+5일 같은 시각: 해설편 일요일 → 수·금 14:00 UTC,
+    #   옛 설화편 토요일 → 화·목). 관련 동영상 연결은 공개 영상만 고를 수 있다.
     smeta = T.meta(s, None, short_of=done.get("long"))["shorts_extra"]
     for k, ex in enumerate([] if day else (rm.get("shorts_extra") or []), start=2):
         key = f"short{k}"
@@ -342,7 +343,7 @@ def main() -> int:
     return 0
 
 
-EXTRA_SHORT_DAYS = {2: 3, 3: 5}     # 본편(토) 뒤 +3일(화) · +5일(목)
+EXTRA_SHORT_DAYS = {2: 3, 3: 5}     # 본편 뒤 +3일 · +5일(해설편 일요일 → 수·금 · 옛 설화편 토요일 → 화·목)
 
 
 def extra_short_at(publish_at: str | None, k: int) -> str | None:
