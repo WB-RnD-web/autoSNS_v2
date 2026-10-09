@@ -5,6 +5,7 @@
 """
 from __future__ import annotations
 import datetime as dt
+import json
 import os
 import re
 import sys
@@ -70,6 +71,11 @@ for i in range(40):
             ok = [c["big"] for c in cells] == [f"{n}년생" for n in range(10)]
             ok &= sorted(int(c["small"][:-1]) for c in cells) == list(range(1, 11))
             ok &= sum(c["hi"] for c in cells) == 3 and all(int(c["small"][:-1]) <= 3 for c in cells if c["hi"])
+        elif slot == "lunar":
+            ok = [c["big"] for c in cells] == [N.lunar_days(n) for n in N.LUNAR_DIGITS] and len(cells) == 10
+            ok &= sorted(int(c["small"][:-1]) for c in cells) == list(range(1, 11))
+            ok &= sum(c["hi"] for c in cells) == 3 and all(int(c["small"][:-1]) <= 3 for c in cells if c["hi"])
+            ok &= "31" not in " ".join(c["big"] for c in cells)          # 음력엔 31일이 없다
         elif slot == "surname":
             ok = [c["big"] for c in cells] == sorted(f"{x}씨" for x in N.SURNAMES) and len(cells) == 20
             ok &= sorted(int(c["small"][:-1]) for c in cells) == list(range(1, 21))
@@ -113,14 +119,14 @@ ck("fortune_card 아침 표가 이 토픽을 가로채지 않는다", not FC.use
 ck("슬롯 자동: 7:40 year · 9:40 am · 13:40 surname · 15:40 pm",
    [N.slot_now(dt.datetime(2026, 10, 2, h, 40, tzinfo=N.KST)) for h in (7, 9, 13, 15)]
    == ["year", "am", "surname", "pm"])
-ck("네 슬롯 저장 경로가 서로 다르다(하루 네 편이 서로 막지 않게)",
-   len({N.path_for(d0, sl) for sl in N.SLOTS}) == 4)
+ck("다섯 칸 저장 경로가 서로 다르다(서로 막지 않게)",
+   len({N.path_for(d0, sl) for sl in N.SLOTS}) == len(N.SLOTS) == 5)
 import run_pipeline as RP  # noqa: E402
 ck("재생목록 '내 것 찾기'", RP.playlist_for(N.TOPIC) == (RP.NAME_PLAYLIST, RP.NAME_PLAYLIST_DESC))
 ck("카테고리 24(엔터테인먼트)", RP.category_for(N.TOPIC) == "24")
 
 print("── 화면(grid 장면)")
-for slot, n in (("am", N.NAME_CELLS), ("pm", 12), ("year", 10), ("surname", 20)):
+for slot, n in (("am", N.NAME_CELLS), ("pm", 12), ("year", 10), ("surname", 20), ("lunar", 10)):
     s = N.storyboard(d0, slot)
     sc = dict(s["scenes"][0], start=0, clip=9.0, _spk=0)
     html = M.build_html([sc], 9.0, acc=s["accent"], bg=False)
@@ -140,9 +146,9 @@ print("── 하루 한 칸 순환(10/8~, 10/7 진단) ──")
 import datetime as _dt  # noqa: E402
 import tempfile as _tf  # noqa: E402
 _d0 = _dt.date(2026, 10, 8)
-_week = [N.slot_of_day(_d0 + _dt.timedelta(days=k)) for k in range(8)]
-ck("10/8 이름 · 10/9 태어난 달 · 10/10 해 끝자리 · 10/11 성씨 · 4일마다 반복",
-   _week == ["am", "pm", "year", "surname"] * 2, _week)
+_week = [N.slot_of_day(_d0 + _dt.timedelta(days=k)) for k in range(10)]
+ck("10/8 이름 · 10/9 태어난 달 · 10/10 해 끝자리 · 10/11 성씨 · 10/12 음력 생일 끝자리 · 5일마다 반복",
+   _week == ["am", "pm", "year", "surname", "lunar"] * 2, _week)
 ck("10/7 까지는 네 칸 모두(순환 전)", N.slot_of_day(_dt.date(2026, 10, 7)) is None
    and all(N.is_slot_day(_dt.date(2026, 10, 7), s) for s in N.SLOTS))
 ck("하루에 정확히 한 칸만", all(sum(N.is_slot_day(_d0 + _dt.timedelta(days=k), s) for s in N.SLOTS) == 1 for k in range(28)))
@@ -158,6 +164,25 @@ with _tf.TemporaryDirectory() as _tmp:
     _p2 = os.path.join(_tmp, "y.json")
     N.main(["make", "--date", "2026-10-08", "--slot", "year", "--out", _p2, "--force"])
     ck("--force 면 그날 칸이 아니어도 쓴다(견본용)", os.path.exists(_p2))
+
+print("── 음력 생일 끝자리(10/9 시장 조사 · 15:40 트리거를 그날만 빌려 쓴다) ──")
+ck("음력 끝자리 날엔 15:40(pm) 트리거가 lunar 를 낸다 · 다른 날엔 그대로",
+   N.resolve_slot(_dt.date(2026, 10, 12), "pm") == "lunar" and N.resolve_slot(_dt.date(2026, 10, 13), "pm") == "pm"
+   and N.resolve_slot(_dt.date(2026, 10, 12), "am") == "am")
+with _tf.TemporaryDirectory() as _tmp:
+    _p = os.path.join(_tmp, "l.json")
+    N.main(["make", "--date", "2026-10-12", "--slot", "pm", "--out", _p])
+    _sb = json.load(open(_p, encoding="utf-8")) if os.path.exists(_p) else {}
+    ck("트리거 그대로(--slot pm) 10/12 엔 음력 끝자리 표가 써진다", _sb.get("slot") == "lunar"
+       and _sb["scenes"][0]["title"] == "음력 생일 끝자리로 보는", _sb.get("slot"))
+    ck("path 도 같은 칸을 가리킨다(트리거 'test -f' 가 맞는 파일을 본다)",
+       N.path_for(_dt.date(2026, 10, 12), N.resolve_slot(_dt.date(2026, 10, 12), "pm")).endswith("2026-10-12_fortune_name_lunar_storyboard.json"))
+_l = N.storyboard(_dt.date(2026, 10, 12), "lunar")
+ck("음력 끝자리 표: 기준 줄 · 설명란 안내 · 제목 앞머리(형식 집계)",
+   _l["scenes"][0].get("basis") and "음력에는 31일이 없어요" in _l["platforms"]["youtube"]["description"]
+   and N.title(_dt.date(2026, 10, 12), "lunar").startswith("음력 생일 끝자리로 보는"))
+ck("모든 칸 제목에 날짜(같은 테마가 돌아와도 제목이 똑같지 않게 — 재탕 편이 꺼졌다)",
+   all("10월 12일" in N.title(_dt.date(2026, 10, 12), sl) for sl in N.SLOTS))
 
 
 print(f"\n{'✅ 전부 통과' if not FAIL else f'❌ 실패 {FAIL}'}")
