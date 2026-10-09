@@ -591,6 +591,38 @@ def cover_of(pa: Painter, s: dict) -> Image.Image:
     return im.convert("RGB")
 
 
+TH_TILE = 1080                                            # 쓰레드 캐러셀 한 장(정사각) — 번호만 얹는다(결과 글은 답글 스포일러)
+TH_TABLE = (0, 40, W, 1390)                               # 쓰레드 태어난 달 표 = 제목+12칸만 4:5(1080×1350)로 자른다
+
+
+def threads_images(pa: Painter, s: dict, out_dir: str, stem: str) -> list[str]:
+    """쓰레드 2주 시험(10/11~10/24, pick_threads.py)에 붙일 그림 — pick·card 는 고르기 그림 4장(번호 배지),
+    birth 는 표 한 장. quiz·balance 는 글+투표라 그림이 없다. 같은 그림(그림 캐시)·같은 글꼴·색 토큰을 쓴다."""
+    out = []
+    if s["kind"] in ("pick", "card"):
+        for k, p in enumerate(pa.a["opts"]):
+            im = R.cover(Image.open(p).convert("RGB"), TH_TILE, TH_TILE).convert("RGBA")
+            badge(ImageDraw.Draw(im), 120, 120, 78, str(k + 1), NUM_BG[k], R.font("head", 96))
+            dst = os.path.join(out_dir, f"{stem}_th{k + 1}.jpg")
+            im.convert("RGB").save(dst, "JPEG", quality=90)
+            out.append(dst)
+    elif s["kind"] == "birth":
+        pa.frame(0.0)                                      # 표(반짝임 없는 바탕)를 캐시에 그린다
+        dst = os.path.join(out_dir, f"{stem}_th1.jpg")
+        pa.cache["birth"].convert("RGB").crop(TH_TABLE).save(dst, "JPEG", quality=90)
+        out.append(dst)
+    return out
+
+
+def _threads_images_safe(pa: Painter, s: dict, out_dir: str, stem: str) -> list[str]:
+    """쓰레드 그림이 실패해도 릴스 렌더·인스타 게시는 그대로 간다(쓰레드 단계가 '그림 없음'으로 멈춘다)."""
+    try:
+        return threads_images(pa, s, out_dir, stem)
+    except Exception as e:  # noqa: BLE001
+        print(f"::warning title=쓰레드 그림 실패::{str(e)[:200]} — 릴스는 그대로 렌더한다")
+        return []
+
+
 def render(path: str, out_dir: str, work: str, mock: bool = False) -> dict:
     s = load(path)
     errs = check(s)
@@ -623,7 +655,8 @@ def render(path: str, out_dir: str, work: str, mock: bool = False) -> dict:
         sh_im.paste(pa.frame(tt).resize((tw, th), LZ), ((i % 3) * tw, (i // 3) * th))
     sh_im.save(sheet, "JPEG", quality=85)
     meta = {"script": path, "date": s["date"], "kind": s["kind"], "slug": s["slug"], "video": out, "cover": cover,
-            "sheet": sheet, "seconds": total, "voice": how, "caption": caption_of(s)}
+            "sheet": sheet, "seconds": total, "voice": how, "caption": caption_of(s),
+            "threads_images": _threads_images_safe(pa, s, out_dir, stem)}
     with open(os.path.join(out_dir, f"{stem}_meta.json"), "w", encoding="utf-8") as f:
         json.dump(meta, f, ensure_ascii=False, indent=1)
     return meta

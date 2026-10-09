@@ -7,6 +7,9 @@ name: 인스타 오늘의 골라보기 — 대본 검사 → 그림·목소리(S
 #   ★대본을 믿지 않고 다시 검사한다(pick_reel.py check) · 하루 한 편(게시 ledger) · 꼴이 날짜와 다르면 올리지 않는다.
 # 게시: push 로 온 오늘 대본은 올린다(사용자 10/8 "매일 올려줘"). 막기 = 레포 변수 INSTA_PICK_PUBLISH=0.
 # ★돈 드는 호출 없음: Spark(그림·목소리) · Cloudinary 무료 · 퍼블릭 레포 Actions. 유튜브 홍보·링크 없음.
+# 쓰레드(@feeldragon3802) 2주 시험(10/10 승인): 인스타가 올라간 뒤 같은 대본으로 글 하나 + 내 답글 하나(insta/pick_threads.py).
+#   기간 10/11~10/24 KST 는 코드가 정한다(THREADS_FROM·THREADS_TO) · push 로 온 실행만 · 실패해도 인스타는 그대로(경고만).
+#   끄기 = 레포 변수 INSTA_PICK_THREADS=0. 클라우드 대타(19:50)도 routine/insta_pick push 라 같은 길로 돈다.
 
 on:
   push:
@@ -97,6 +100,7 @@ jobs:
         run: python insta/pick_reel.py render ${{ steps.pick.outputs.targets }} $([ "${{ github.event.inputs.mock }}" = "true" ] && echo --mock)
 
       - name: 게시(push 로 온 오늘 대본만 · INSTA_PICK_PUBLISH=0 이면 dry-run)
+        id: post
         if: steps.pick.outputs.targets != '' && github.event_name == 'push'
         env:
           INSTA_PICK_PUBLISH: ${{ vars.INSTA_PICK_PUBLISH || '1' }}
@@ -107,6 +111,36 @@ jobs:
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
         run: python insta/pick_plan.py post ${{ steps.pick.outputs.targets }}
 
+      # ── 쓰레드 2주 시험(10/11~10/24) — 인스타 게시가 성공한 뒤에만 · 실패해도 잡은 성공(인스타 ledger 캐시가 저장되게) ──
+      - name: 쓰레드 ledger 캐시(하루 한 번 — 다시 돌려도 두 번 안 올린다)
+        if: github.event_name == 'push'
+        uses: actions/cache@v4
+        with:
+          path: output/insta_pick_render/threads_posted.json
+          key: insta-pick-threads-ledger-${{ github.run_id }}
+          restore-keys: insta-pick-threads-ledger-
+
+      - name: 쓰레드 글 + 내 답글(기간·인스타 게시 여부는 코드가 다시 본다)
+        id: threads
+        if: steps.pick.outputs.targets != '' && github.event_name == 'push' && steps.post.outcome == 'success'
+        continue-on-error: true
+        env:
+          INSTA_PICK_THREADS: ${{ vars.INSTA_PICK_THREADS || '1' }}
+          CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
+          CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
+          CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+        run: |
+          python insta/test_pick_threads.py > /tmp/threads_test.log 2>&1 || { tail -30 /tmp/threads_test.log; exit 1; }
+          python insta/pick_threads.py post ${{ steps.pick.outputs.targets }}
+
+      - name: 쓰레드 실패 표시(인스타는 올라갔다 — 잡은 실패로 만들지 않는다)
+        if: steps.threads.outcome == 'failure'
+        run: |
+          echo "::warning title=쓰레드 게시 실패::인스타는 올라갔다 · 쓰레드 단계 로그 확인 — 다시 돌리면(re-run) 빠진 것만 올린다(ledger)"
+          echo "### ⚠️ 쓰레드 게시 실패 — 인스타는 올라감 · 'Re-run jobs' 로 빠진 글/답글만 다시 올릴 수 있다" >> "$GITHUB_STEP_SUMMARY"
+
       - name: 결과물(커버·한눈에 보기·메타·영상)
         if: always()
         uses: actions/upload-artifact@v4
@@ -116,6 +150,8 @@ jobs:
             output/insta_pick_render/*_cover.jpg
             output/insta_pick_render/*_sheet.jpg
             output/insta_pick_render/*_meta.json
+            output/insta_pick_render/*_th*.jpg
+            output/insta_pick_render/threads_posted.json
             output/insta_pick_render/*.mp4
           retention-days: 5
           if-no-files-found: warn
