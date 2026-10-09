@@ -2,11 +2,13 @@
 """Nine Tails RULES 쇼츠 업로드. ★기본은 비공개(private).
 
     python gumiho/tales/upload_rule.py output/tales_rules/R001_name-called-at-night.json
-    python gumiho/tales/upload_rule.py <script.json> --publish-at 2026-10-14T21:00:00Z
+    python gumiho/tales/upload_rule.py <script.json> --publish-at 2026-10-14T13:00:00Z
 
 공개 방식(레포 변수 RULES_PUBLISH, 없으면 TALES_PUBLISH 를 따른다 — 워크플로가 넘긴다):
   private   비공개로만 올린다
-  scheduled 비공개 + 예약 공개(매일 21:00 UTC = 미 동부 오후 5시 · 서부 오후 2시 — 미국 10대 하교 뒤)
+  scheduled 비공개 + 예약 공개(배정일 다음 날 13:00 UTC = 한국 22:00 · 미 동부 오전 9시 — publish_time)
+    2026-10-09: 21:00 UTC(06:00 KST) 공개 첫 편 FBrojHee6tA 가 5시간 반 0회, 13:00 UTC 공개 쇼츠는 수백~2천 회
+    → 비교가 되게 다른 쇼츠와 같은 13:00 UTC 로 맞춘다(공개 시각이 결정적이라는 공식 근거는 없다).
 올리지 않는 경우(코드로 막는다): mock 렌더 · 대본 검사 실패 · 이미 올린 편(ledger) · ★채널에 같은 제목이 이미 있음.
   (Actions 캐시는 브랜치마다 따로라 ledger 만 믿으면 두 번 올라간다 — 2026-10-03 제주 파도 영상 중복의 교훈)
 """
@@ -30,10 +32,19 @@ PLAYLIST_DESC = ("Korean, Japanese and Chinese legends turned into rules you mus
 CHANNEL_URL = "https://www.youtube.com/@NineTailsTales"
 
 
-def publish_time(now: dt.datetime | None = None, hhmm: str | None = None) -> str:
-    """다음 21:00 UTC(카탈로그 publish_utc). 1시간 안이면 다음 날."""
+def publish_time(now: dt.datetime | None = None, hhmm: str | None = None, day: dt.date | None = None) -> str:
+    """예약 공개 시각(UTC, 카탈로그 publish_utc = 13:00).
+
+    day(그 편 배정일)를 주면 그다음 날 hhmm. 루틴 12:00 UTC → 업로드 12:20 무렵(10/8·10/9 실측 12:20·12:22)이라
+      그날 13:00 은 40분 여유뿐 — Spark 대기열이 길면 넘겨 하루씩 밀리고 다음 편과 겹친다 → 늘 다음 날(편마다 한 칸).
+    그 시각이 지났거나 1시간 안이면(재실행·아주 늦은 렌더) 지금 기준 다음 hhmm.
+    """
     now = now or dt.datetime.now(dt.timezone.utc)
-    h, m = (int(x) for x in (hhmm or RU.catalog().get("publish_utc", "21:00")).split(":"))
+    h, m = (int(x) for x in (hhmm or RU.catalog().get("publish_utc", "13:00")).split(":"))
+    if day:
+        t = dt.datetime(day.year, day.month, day.day, h, m, tzinfo=dt.timezone.utc) + dt.timedelta(days=1)
+        if t >= now + dt.timedelta(hours=1):
+            return t.strftime("%Y-%m-%dT%H:%M:%SZ")
     t = now.replace(hour=h, minute=m, second=0, microsecond=0)
     if t < now + dt.timedelta(hours=1):
         t += dt.timedelta(days=1)
@@ -90,10 +101,12 @@ def main() -> int:
         led[stem] = {"short": f"https://youtu.be/{dup}", "title": md["title"], "found": True}
         _save(a.ledger, led)
         return 0
-    at = a.publish_at or (publish_time() if a.mode == "scheduled" else None)
+    at = a.publish_at or (publish_time(day=RU.day_of(s["id"])) if a.mode == "scheduled" else None)
+    facts = UT.shorts_facts(rm["video"])
     vid = UT.insert(yt, rm["video"], md, "private", at)
-    done = {"short": f"https://youtu.be/{vid}", "title": md["title"], "publish_at": at}
-    print(f"✅ RULES 쇼츠 {done['short']} · {'예약 ' + at if at else '비공개'}")
+    # 0회 점검용: 공개 시각 + 쇼츠 판정 조건(세로·3분 이하·madeForKids=false)을 ledger 에 남긴다(2026-10-09)
+    done = {"short": f"https://youtu.be/{vid}", "title": md["title"], "publish_at": at, "shorts": facts}
+    print(f"✅ RULES 쇼츠 {done['short']} · {'예약 ' + at if at else '비공개'} · {UT.facts_line(facts)}")
     led[stem] = done
     _save(a.ledger, led)
     done["langs"] = UT.localize(vid, md["title"], md["description"])

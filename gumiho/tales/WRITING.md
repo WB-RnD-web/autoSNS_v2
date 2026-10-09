@@ -151,6 +151,10 @@ a horror film set in the present, not a museum of old Korea.
   picture for line 1, so write line 1 to fit `thumb.img` (the scariest image of the tale).
 - Tell the setup and the turn; **do not reveal the ending** — the last line is Gumi
   (`"gumi": "wink"`) sending viewers to the full tale.
+- The renderer then adds a 3–5 s end card by itself (every Short, extras too): Gumi says
+  "Tap the link below, dear human." over "WANT THE ENDING? / Full tale: tap the link below" and an
+  arrow down to the related-video link (it sits under the channel name). So don't write the link
+  line yourself — end on the open question and "the full tale is on my channel".
 - Reuse pictures by `scene` key; `title` ≤100 chars ending with `#shorts`.
 
 ## Extra Shorts (`shorts_extra`, required from tale 3)

@@ -4,7 +4,8 @@ name: Nine Tails RULES — 규칙괴담 쇼츠 대본 검사 → 목소리·세�
 # 트리거: RULES 루틴이 routine/tales_rules(★누적 브랜치)에 output/tales_rules/R<NNN>_<slug>.json 을 push 하면 실행.
 #   ★대본을 믿지 않고 rules.py check 로 다시 검사한다 — 못 넘으면 렌더·업로드하지 않는다.
 #   routine/tales 와 경로·브랜치가 달라 tales.yml 과 겹치지 않는다(shorts.yml 은 output/news 만 본다).
-# 공개 방식: 레포 변수 RULES_PUBLISH(없으면 TALES_PUBLISH) — private | scheduled(매일 21:00 UTC 예약).
+# 공개 방식: 레포 변수 RULES_PUBLISH(없으면 TALES_PUBLISH) — private | scheduled(배정일 다음 날 13:00 UTC = 22:00 KST 예약.
+#   2026-10-09: 21:00 UTC 첫 편이 5시간 반 0회 → 다른 쇼츠와 같은 시각으로. upload_rule.publish_time).
 # ★Spark 는 공용 서버: 그림은 한 건씩·대기열 6 초과면 기다림. ★돈 드는 호출 없음.
 
 on:

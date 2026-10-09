@@ -17,6 +17,8 @@ import datetime as dt
 import json
 import os
 import re
+import shutil
+import subprocess
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -82,12 +84,56 @@ def sprint_times(day, now: dt.datetime | None = None) -> tuple[str, str]:
     return long_at.strftime(f), short_at.strftime(f)
 
 
-def insert(yt, video: str, md: dict, privacy: str, publish_at: str | None) -> str:
-    from googleapiclient.http import MediaFileUpload
-    status = {"privacyStatus": "private" if publish_at else privacy, "selfDeclaredMadeForKids": False,
+# 13+ 공포·설화 — 아동용(madeForKids)으로 잡히면 댓글·알림·맞춤 추천이 꺼진다. 아래 기록과 같은 값을 쓴다.
+MADE_FOR_KIDS = False
+SHORTS_MAX_SEC = 180            # 쇼츠 판정: 세로(또는 정사각) · 3분 이하(2024-10-15부터)
+
+
+def status_body(privacy: str, publish_at: str | None) -> dict:
+    status = {"privacyStatus": "private" if publish_at else privacy, "selfDeclaredMadeForKids": MADE_FOR_KIDS,
               "containsSyntheticMedia": True}
     if publish_at:
         status["publishAt"] = publish_at
+    return status
+
+
+def parse_probe(text: str) -> tuple[int, int, float]:
+    """ffmpeg -i 의 stderr → (너비, 높이, 초). 못 읽으면 0."""
+    d = re.search(r"Duration: (\d+):(\d+):([\d.]+)", text)
+    v = re.search(r"Video:.*?,\s*(\d{2,5})x(\d{2,5})[,\s\[]", text)
+    sec = int(d.group(1)) * 3600 + int(d.group(2)) * 60 + float(d.group(3)) if d else 0.0
+    w, h = (int(v.group(1)), int(v.group(2))) if v else (0, 0)
+    return w, h, round(sec, 2)
+
+
+def shorts_facts(video: str) -> dict:
+    """쇼츠 판정 조건 기록(2026-10-09: 첫 RULES 쇼츠가 5시간 반 0회 — 쇼츠로 안 잡혔는지 나중에 ledger 로 본다)."""
+    exe = shutil.which("ffmpeg")
+    if not exe:
+        try:
+            import imageio_ffmpeg  # type: ignore  # 로컬(render_tale.ffmpeg 와 같은 순서)
+            exe = imageio_ffmpeg.get_ffmpeg_exe()
+        except ImportError:
+            exe = "ffmpeg"
+    try:
+        r = subprocess.run([exe, "-hide_banner", "-i", video],
+                           capture_output=True, text=True, encoding="utf-8", errors="replace")
+        w, h, sec = parse_probe(r.stderr)
+    except OSError:
+        w, h, sec = 0, 0, 0.0
+    return {"w": w, "h": h, "sec": sec, "vertical": h >= w > 0, "le_3min": 0 < sec <= SHORTS_MAX_SEC,
+            "made_for_kids": MADE_FOR_KIDS}
+
+
+def facts_line(f: dict) -> str:
+    ok = f["vertical"] and f["le_3min"] and not f["made_for_kids"]
+    return (f"쇼츠 조건 {'✓' if ok else '✗'} {f['w']}x{f['h']} · {f['sec']}초 · "
+            f"madeForKids={str(f['made_for_kids']).lower()}")
+
+
+def insert(yt, video: str, md: dict, privacy: str, publish_at: str | None) -> str:
+    from googleapiclient.http import MediaFileUpload
+    status = status_body(privacy, publish_at)
     body = {"snippet": {"title": md["title"][:100], "description": md["description"][:4900], "tags": md["tags"],
                         "categoryId": CATEGORY, "defaultLanguage": "en", "defaultAudioLanguage": "en"},
             "status": status}
@@ -225,7 +271,10 @@ def main() -> int:
                 "%Y-%m-%dT%H:%M:%SZ")
         sid = insert(yt, short["video"], smd, "private", s_at)
         done["short"] = f"https://youtu.be/{sid}"
-        print(f"✅ 쇼츠 {done['short']}")
+        # 0회 점검용(2026-10-09): 공개 시각 + 쇼츠 판정 조건
+        f_ = shorts_facts(short["video"])
+        done.setdefault("shorts_meta", {})["short"] = {"publish_at": s_at, **f_}
+        print(f"✅ 쇼츠 {done['short']} · {'예약 ' + s_at if s_at else '비공개'} · {facts_line(f_)}")
         localize(sid, smd["title"], smd["description"])
         led[stem] = done
         _save(a.ledger, led)
@@ -238,7 +287,9 @@ def main() -> int:
         x_at = extra_short_at(publish_at, k)
         xid = insert(yt, ex["video"], smeta[k - 2], "private", x_at)
         done[key] = f"https://youtu.be/{xid}"
-        print(f"✅ 쇼츠{k} {done[key]} · {'예약 ' + x_at if x_at else '비공개'}")
+        f_ = shorts_facts(ex["video"])
+        done.setdefault("shorts_meta", {})[key] = {"publish_at": x_at, **f_}
+        print(f"✅ 쇼츠{k} {done[key]} · {'예약 ' + x_at if x_at else '비공개'} · {facts_line(f_)}")
         localize(xid, smeta[k - 2]["title"], smeta[k - 2]["description"])
         led[stem] = done
         _save(a.ledger, led)

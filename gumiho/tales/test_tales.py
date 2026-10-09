@@ -92,7 +92,7 @@ ck("쇼츠 설명에 본편 링크", "youtu.be/X" in T.meta(S, None, short_of="h
 print("── 목소리·타임라인(가짜) ──")
 with tempfile.TemporaryDirectory() as td:
     shots = R.plan(S)
-    texts = [x["say"] for x in shots if x["say"]] + [ln["say"] for ln in S["short"]["lines"]]
+    texts = [x["say"] for x in shots if x["say"]] + [ln["say"] for ln in S["short"]["lines"]] + [R.CTA_SAY]
     voices = R.synth(texts, os.path.join(td, "tts"), mock=True)
     total = R.timeline(shots, voices)
     ck("장면 시간이 이어진다", all(abs(a["start"] + a["dur"] - b["start"]) < 1e-2 for a, b in zip(shots, shots[1:])))
@@ -125,6 +125,27 @@ with tempfile.TemporaryDirectory() as td:
     ck(f"쇼츠 {R.SHORT_MAX}초 이하", SP["total"] <= R.SHORT_MAX, str(SP["total"]))
     spa = R.ShortPainter(SP, S)
     ck("쇼츠 프레임 1080×1920", spa.frame(SP["total"] / 2).size == (R.SW, R.SH))
+    # 끝맺음(2026-10-09): 설명란 링크는 안 눌린다 → 마지막 3~5초에 말+화면으로 '관련 동영상' 링크(채널 이름 아래)를 짚는다
+    end = SP["rows"][-1]
+    ck("쇼츠 끝맺음 장면이 들어간다(말 = 링크 안내)", bool(end.get("cta")) and end["say"] == R.CTA_SAY, str(end.get("say")))
+    cta_sec = SP["total"] - end["start"]
+    ck("끝맺음 3~5초", 3.0 <= cta_sec <= 5.0, f"{cta_sec:.2f}")
+    ck("끝맺음은 앞 그림·카메라를 끊김 없이 잇는다",
+       end["raw"] == SP["rows"][-2]["raw"] and end.get("cam") == SP["rows"][-2].get("cam") and end.get("cont"))
+
+    def _gold(a, y0, y1):
+        reg = a[y0:y1, R.CTA_ARROW_X - 5:R.CTA_ARROW_X + 5].astype(int)
+        return float(np.mean(np.all(np.abs(reg - np.array(R.GOLD)) < 40, axis=-1)))
+    f_cta = np.asarray(spa.frame(end["start"] + 1.5))
+    f_pre = np.asarray(spa.frame(end["start"] - 0.5))
+    ck("끝맺음 화면에 아래 화살표(그 전 줄엔 없다)", _gold(f_cta, 1400, 1455) > 0.6 and _gold(f_pre, 1400, 1455) < 0.2,
+       f"{_gold(f_cta, 1400, 1455):.2f} / {_gold(f_pre, 1400, 1455):.2f}")
+    ck("화살표 끝이 아래 UI(채널 이름·링크, y≈1580~)를 덮지 않는다",
+       R.CTA_ARROW_TIP <= 1550 and _gold(f_cta, R.CTA_ARROW_TIP + 10, 1600) < 0.1)
+    ck("끝맺음 카드는 오른쪽 버튼 열(x≥950)을 피한다", float(np.abs(f_cta[1200:1350, 960:].astype(int)
+                                                     - np.asarray(spa.frame(end["start"] - 0.5))[1200:1350, 960:]).mean()) < 8)
+    ck("cta=False 면 끝맺음 없음(예전 꼴)", not any(r.get("cta") for r in R.short_plan(S, shots, voices, td, cta=False)["rows"]))
+    ck("render 가 끝맺음 목소리를 같이 합성한다", "texts.append(CTA_SAY)" in open(R.__file__, encoding="utf-8").read())
     b = R.bed(R.SR * 20, 1)
     ck("배경음 20초·클리핑 없음", len(b) == R.SR * 20 and float(abs(b).max()) < 1.5)
     ck("이동 평균 길이 보존", len(R.movavg(np.ones(1000, dtype="float32"), 50)) == 1000)
@@ -150,7 +171,7 @@ ck("쇼츠 hook 짧으면 통과", not any("hook" in e for e in T.check(ok_, "x.
 ck("hook 없으면 썸네일 문구", R.short_hook(S) == S["thumb"]["text"].upper())
 fake = {x.get("key"): {"key": x.get("key"), "raw": f"/img/{x.get('key')}.png"} for x in S["scenes"] if x.get("key")}
 shots_ = list(fake.values())
-voices_ = {ln["say"]: "v.wav" for ln in S["short"]["lines"]}
+voices_ = {ln["say"]: "v.wav" for ln in S["short"]["lines"]} | {R.CTA_SAY: "v.wav"}
 _wd = R.wav_dur
 R.wav_dur = lambda _p: 3.0
 try:
@@ -169,7 +190,7 @@ S4["short"]["lines"][1]["img"] = new_img
 ck("쇼츠 전용 그림을 찾는다(본편에 있는 그림은 빼고)", R.short_only_prompts(S4, shots_) == [new_img], R.short_only_prompts(S4, shots_))
 R.wav_dur = lambda _p: 3.0
 try:
-    v4 = {ln["say"]: "v.wav" for ln in S4["short"]["lines"]}
+    v4 = {ln["say"]: "v.wav" for ln in S4["short"]["lines"]} | {R.CTA_SAY: "v.wav"}
     sp4 = R.short_plan(S4, shots_, v4, ".", thumb_raw="/img/THUMB.png", raw_map={new_img: "/img/NEW.png"})
     sp5 = R.short_plan(S4, shots_, v4, ".", thumb_raw="/img/THUMB.png")
     sp6 = R.short_plan(S4, shots_, v4, ".")
@@ -267,7 +288,8 @@ fake2 = {x.get("key"): {"key": x.get("key"), "raw": f"/img/{x.get('key')}.png"} 
 _wd2 = R.wav_dur
 R.wav_dur = lambda _p: 3.0
 try:
-    spx = R.short_plan(dict(S, short=ex), list(fake2.values()), {ln["say"]: "v.wav" for ln in ex["lines"]}, ".")
+    spx = R.short_plan(dict(S, short=ex), list(fake2.values()),
+                       {ln["say"]: "v.wav" for ln in ex["lines"]} | {R.CTA_SAY: "v.wav"}, ".")
 finally:
     R.wav_dur = _wd2
 ck("추가 쇼츠 첫 줄 = 자기 장면 그림(썸네일 아님)", spx["rows"][0]["raw"] == f"/img/{alt}.png", spx["rows"][0]["raw"])
@@ -293,6 +315,16 @@ ck("재생목록 이름 = 스튜디오 이름(바뀌면 새 목록이 생긴다)
 
 print("── 업로드 가드 ──")
 import upload_tale as U  # noqa: E402
+st_ = U.status_body("private", "2026-10-10T13:00:00Z")
+ck("업로드: madeForKids=false · 예약이면 비공개+publishAt", st_["selfDeclaredMadeForKids"] is False
+   and st_["privacyStatus"] == "private" and st_["publishAt"] == "2026-10-10T13:00:00Z" and U.MADE_FOR_KIDS is False)
+ck("insert 가 status_body 를 쓴다(기록과 같은 값)", "status = status_body(privacy, publish_at)" in open(U.__file__, encoding="utf-8").read())
+_pr = ("  Duration: 00:00:44.75, start: 0.000000, bitrate: 2215 kb/s\n"
+       "  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1080x1920, 2073 kb/s")
+ck("쇼츠 판정 조건 읽기(ffmpeg -i)", U.parse_probe(_pr) == (1080, 1920, 44.75), str(U.parse_probe(_pr)))
+_src = open(U.__file__, encoding="utf-8").read()
+ck("업로드 기록에 쇼츠 공개 시각·판정 조건(본 쇼츠·추가 쇼츠)",
+   _src.count('done.setdefault("shorts_meta", {})') == 2 and '"publish_at": s_at' in _src and '"publish_at": x_at' in _src)
 import datetime as dt  # noqa: E402
 sat = U.next_saturday_15utc(dt.datetime(2026, 10, 1, 3, 0, tzinfo=dt.timezone.utc))
 ck("예약: 다음 토요일 15:00 UTC", sat == "2026-10-03T15:00:00Z", sat)
