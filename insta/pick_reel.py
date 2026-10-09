@@ -16,6 +16,7 @@
 ★남의 것을 베끼지 않는다: 빌리는 건 '꼴'뿐. 그림은 매번 새로 그리고(Spark z-image), 문구는 새로 쓰고,
   소리는 코드로 만든 배경음 + 우리 목소리(Supertonic F1). 인스타는 남의 영상·음원을 살짝 바꾼 재게시를 추천에서 뺀다.
 화면은 파스텔(2030 인스타 테스트 계정의 밝은 결). 아래 약 25%(y 1480~)는 인스타 캡션·버튼 자리라 비운다.
+캡션·커버(10/9): 회차 '오늘의 골라보기 #N' · 보내기 한 줄 · 숫자 댓글 한 줄 · 해시태그 5개는 코드가 붙인다(caption_of·cover_of).
 
     python insta/pick_reel.py check <script.json> [...]
     python insta/pick_reel.py render <script.json> --out output/insta_pick_render [--mock]
@@ -23,10 +24,12 @@
 from __future__ import annotations
 
 import argparse
+import datetime as dt
 import hashlib
 import json
 import math
 import os
+import re
 import sys
 import time
 
@@ -34,6 +37,7 @@ from PIL import Image, ImageDraw, ImageFilter
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
+import pick_plan as P  # noqa: E402  (회차 번호 = 편성 시작일 기준)
 import render_reel as R  # noqa: E402  (글꼴·목소리·배경음·인코딩 도구를 같이 쓴다)
 
 W, H, FPS, SR = R.W, R.H, R.FPS, R.SR
@@ -47,6 +51,20 @@ STYLE = ("dreamy pastel storybook illustration, soft diffused light, one subject
 COUNT = 3
 BANNED = ("치료", "완치", "진단", "우울증", "투자", "주식", "코인", "로또", "대박", "무조건", "죽음", "사망", "저주",
           "팔로우", "링크", "DM", "정확도")
+# 캡션 고정 문구(10/9) — Mosseri 2025-01-22: 비팔로워 도달에 가장 무거운 신호는 '보내기(DM 공유)'.
+#   대본 작가(루틴)가 지시를 안 지켜서 코드가 꼴마다 붙인다. 대본 caption 의 비슷한 줄은 뺀다(겹치지 않게).
+SERIES = "오늘의 골라보기"
+SHARE = {"pick": "친구한테 보내서 뭐 골랐는지 물어봐요 💌", "card": "친구한테 보내서 몇 번 카드 골랐는지 물어봐요 💌",
+         "quiz": "친구한테 보내서 몇 개 맞히나 물어봐요 💌", "balance": "친구한테 보내서 뭐 골랐는지 물어봐요 💌",
+         "birth": "친구한테 보내서 그 친구 달도 찾아 줘요 💌"}
+# 숫자 하나만 쓰면 되는 댓글 — balance 는 영상 끝이 '세 글자'라 같은 말로(세 판 A·B)
+REPLY = {"pick": "몇 번? 숫자만 댓글로 남겨 줘요", "card": "몇 번? 숫자만 댓글로 남겨 줘요",
+         "quiz": "정답 몇 개 맞혔어요? 숫자만 댓글로", "balance": "A·B 세 글자만 댓글로 (예: ABA)",
+         "birth": "몇 월생? 숫자만 댓글로 남겨 줘요"}
+ASK_WORDS = ("댓글", "보내", "공유", "태그", "친구")     # 대본 caption 에서 이런 말이 든 줄(첫 줄 빼고)은 코드 문구와 겹친다
+HASHTAG_MAX = 5                                           # 인스타 2025-12-18부터 5개 제한 · 검색에만 돕고 도달은 안 늘린다
+_SERIES_RE = re.compile(SERIES + r"\s*#\d+\s*[·|:-]?\s*")
+_TAG_RE = re.compile(r"(?<!\S)#(?!\d+(?:\s|$))[^\s#]+")   # 본문 속 해시태그(숫자만인 #5 는 회차라 남긴다)
 
 
 def load(p: str) -> dict:
@@ -78,6 +96,11 @@ def check(s: dict) -> list[str]:
         errs.append("caption 없음")
     if not s.get("bench", {}).get("format"):
         errs.append("bench.format(어떤 바이럴 꼴을 빌렸는지) 없음")
+    try:                                                   # 회차 번호(#N)가 날짜로 정해진다 — 시작일 전은 #0 이하가 된다
+        if dt.date.fromisoformat(s.get("date", "")) < P.START:
+            errs.append(f"date 는 {P.START} 이후")
+    except (TypeError, ValueError):
+        errs.append("date 는 YYYY-MM-DD")
     if kind in ("pick", "card"):
         opts = s.get("options") or []
         if len(opts) != 4:
@@ -134,6 +157,18 @@ def check(s: dict) -> list[str]:
     if hits:
         errs.append(f"금지어 {hits}")
     return errs
+
+
+def warns(s: dict) -> list[str]:
+    """막지는 않고 알리기만 한다(10/9) — 렌더 때 코드가 알아서 고친다."""
+    out = []
+    tags = s.get("hashtags") or []
+    if len(tags) > HASHTAG_MAX:
+        out.append(f"hashtags {len(tags)}개 — 앞 {HASHTAG_MAX}개만 쓴다(인스타 5개 제한) · 빠지는 것 {tags[HASHTAG_MAX:]}")
+    lines = (s.get("caption") or "").strip().splitlines()[1:]
+    if any(w in ln for ln in lines for w in ASK_WORDS) or SERIES in (s.get("caption") or ""):
+        out.append("caption 의 댓글·보내기·회차 말은 코드가 붙인다 — 그 줄은 빼고 렌더한다")
+    return out
 
 
 # ── 그림 ──────────────────────────────────────────────
@@ -203,6 +238,7 @@ class Painter:
         self.f = {"head": F("head", 78), "head2": F("head", 62), "num": F("head", 58), "big": F("head", 84),
                   "line": F("bold", 50), "small": F("bold", 40), "chip": F("bold", 36)}
         self.cache: dict = {}
+        self.for_cover = False                             # 커버를 그릴 때만 True(cover_of) — 회차 라벨 자리를 비운다
 
     def seg_at(self, t: float) -> dict:
         for sg in self.segs:
@@ -258,7 +294,7 @@ class Painter:
                 ctext(d, 1405, self.s.get("outro_text", "몇 번 골랐어요?"), self.f["head2"], ACC)
             elif sg["dur"] - lt <= COUNT:
                 self.countdown(d, sg["dur"] - lt, 1385)
-            else:
+            elif not self.for_cover:                       # 커버는 이 자리에 회차 라벨(제목이 이미 '골라 봐요')
                 ctext(d, 1420, "하나 골라 보세요", self.f["line"], SUB)
             return im
         k = sg["k"]
@@ -501,8 +537,30 @@ def assets(s: dict, wd: str, mock: bool) -> dict:
     return a
 
 
+def series_label(s: dict) -> str:
+    return f"{SERIES} #{P.series_no(dt.date.fromisoformat(s['date']))}"
+
+
+def hashtags_of(s: dict) -> list[str]:
+    """앞 5개만(겹친 것 빼고) — 10/9: 인스타 2025-12-18부터 5개 제한."""
+    out: list[str] = []
+    for t in s.get("hashtags") or []:
+        if t and t not in out:
+            out.append(t)
+    return out[:HASHTAG_MAX]
+
+
+def _hook(caption: str) -> str:
+    """대본 caption 에서 코드가 붙이는 말(회차·댓글·보내기·본문 해시태그)을 뺀 나머지."""
+    text = _SERIES_RE.sub("", caption)
+    lines = [re.sub(r"\s{2,}", " ", _TAG_RE.sub("", ln)).rstrip() for ln in text.strip().splitlines()]
+    keep = lines[:1] + [ln for ln in lines[1:] if not any(w in ln for w in ASK_WORDS)]
+    return "\n".join(keep).strip()
+
+
 def caption_of(s: dict) -> str:
-    body = s["caption"].rstrip()
+    # 10/9: 첫 줄 앞에 회차('오늘의 골라보기 #N') · 끝에 보내기·숫자 댓글 두 줄 · 해시태그 5개 — 전부 코드가 강제한다
+    body = f"{series_label(s)} · {_hook(s['caption'])}"
     if s["kind"] in ("pick", "card"):
         body += "\n\n" + "\n".join(f"{k}번 {o['name']} — {o['result']}: {o['lines']}" for k, o in enumerate(s["options"], 1))
     elif s["kind"] == "quiz":
@@ -510,7 +568,27 @@ def caption_of(s: dict) -> str:
                                    for k, r in enumerate(s["rounds"], 1))
     elif s["kind"] == "birth":
         body += "\n\n" + "\n".join(f"{c['m']}월 — {c['text']}" for c in s["cells"])
-    return body + "\n\n" + " ".join(s.get("hashtags", []))
+    body += f"\n\n{SHARE[s['kind']]}\n{REPLY[s['kind']]}"
+    tags = hashtags_of(s)
+    return body + ("\n\n" + " ".join(tags) if tags else "")
+
+
+def cover_of(pa: Painter, s: dict) -> Image.Image:
+    """커버 = 첫 장면 + 작은 회차 라벨(10/9). 라벨은 그리드 3:4 가운데 자르기(y 240~1680)에도 남고
+    아래 25%(y 1440~, 캡션 자리)는 넘지 않게 y 1384~1432 에 둔다. 글꼴·색은 화면과 같은 토큰(bold · ACC)."""
+    pa.for_cover = True
+    try:
+        im = pa.frame(0.5 if s["kind"] != "birth" else 2.0).convert("RGBA")
+    finally:
+        pa.for_cover = False
+    d = ImageDraw.Draw(im)
+    text, f = series_label(s), R.font("bold", 32)
+    tw, (y0, y1) = R.tlen(d, text, f), (1384, 1432)
+    d.rounded_rectangle([W / 2 - tw / 2 - 26, y0, W / 2 + tw / 2 + 26, y1], (y1 - y0) // 2, fill=(255, 255, 255, 255),
+                        outline=ACC, width=3)
+    bb = f.getbbox(text)
+    ctext(d, y0 + (y1 - y0 - (bb[3] - bb[1])) / 2 - bb[1], text, f, ACC)
+    return im.convert("RGB")
 
 
 def render(path: str, out_dir: str, work: str, mock: bool = False) -> dict:
@@ -518,6 +596,8 @@ def render(path: str, out_dir: str, work: str, mock: bool = False) -> dict:
     errs = check(s)
     if errs:
         raise SystemExit("대본 검사 실패:\n  " + "\n  ".join(errs))
+    for w in warns(s):
+        print(f"⚠️ {w}")
     stem = f"{s['date']}_{s['kind']}_{s['slug']}"
     wd = os.path.join(work, stem)
     os.makedirs(wd, exist_ok=True)
@@ -534,7 +614,7 @@ def render(path: str, out_dir: str, work: str, mock: bool = False) -> dict:
     out = os.path.join(out_dir, f"{stem}.mp4")
     R.sh([R.ffmpeg(), "-y", "-loglevel", "error", "-i", silent, "-i", m4a, "-c:v", "copy", "-c:a", "copy", "-shortest", out])
     cover = os.path.join(out_dir, f"{stem}_cover.jpg")
-    pa.frame(0.5 if s["kind"] != "birth" else 2.0).save(cover, "JPEG", quality=90)
+    cover_of(pa, s).save(cover, "JPEG", quality=90)
     sheet = os.path.join(out_dir, f"{stem}_sheet.jpg")
     picks = [0.5] + [sg["start"] + sg["dur"] * f for sg in segs for f in ((0.35, 0.9) if sg["kind"] == "q" else (0.7,))]
     tw, th = 360, 640
@@ -560,8 +640,10 @@ def main() -> int:
     bad = 0
     for p in a.script:
         if a.cmd == "check":
-            errs = check(load(p))
-            print(f"{'✅' if not errs else '❌'} {p}" + ("" if not errs else "\n   " + "\n   ".join(errs)))
+            s = load(p)
+            errs, ws = check(s), warns(s)
+            print(f"{'✅' if not errs else '❌'} {p}" + ("" if not errs else "\n   " + "\n   ".join(errs))
+                  + "".join(f"\n   ⚠️ {w}" for w in ws))
             bad += bool(errs)
             continue
         meta = render(p, a.out, a.work, a.mock)

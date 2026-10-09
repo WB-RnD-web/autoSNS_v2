@@ -4,6 +4,7 @@
 편성(코드가 정한다 — 쓰는 쪽이 고르지 않는다):
   FORMATS 를 START 부터 하루씩 돌린다: 10/8 그림 고르기 → 10/9 상식 퀴즈 → 10/10 타로 카드 → 10/11 밸런스 게임
   → 10/12 태어난 달 표 → 10/13 그림 고르기 …  (같은 꼴은 5일에 한 번 — 왕별이 10/7 교훈: 같은 꼴 매일은 피드가 덜 퍼뜨린다)
+  회차 번호도 날짜로 정한다: 10/8 = '오늘의 골라보기 #1' (series_no)
 흐름:
   ① 로컬 예약 작업(insta-pick-daily, 매일 저녁) — 로컬 크롬으로 그 꼴의 요즘 뜨는 릴스를 몇 개 보고(하루 10건 안쪽),
      `next` 가 알려 준 꼴로 대본 JSON 을 새로 쓴다 → `pick_reel.py check` → routine/insta_pick 에 push
@@ -49,6 +50,11 @@ def kst_today() -> dt.date:
 
 def kind_for(d: dt.date) -> str:
     return FORMATS[(d - START).days % len(FORMATS)]
+
+
+def series_no(d: dt.date) -> int:
+    """'오늘의 골라보기 #N' — 10/8 이 #1. 10/9: 매일 이어지는 시리즈로 보이게(캡션 첫 줄·커버 라벨)."""
+    return (d - START).days + 1
 
 
 def scripts_on(d: dt.date, root: str = SCRIPTS) -> list[str]:
