@@ -1,0 +1,37 @@
+{
+  "date":"2026-10-10","topic":"fortune","privacy":"public",
+  "topic_keyword":"오늘의 띠별 운세","headline":"10월 10일 토요일 띠별 운세 TOP3",
+  "hook_title":"오늘 딱 한 띠만 막힘이 풀려요",
+  "accent":"#C9A24B",
+  "loop_line":"그 한 띠가 혹시 나일까요, 오늘 딱 한 띠만 흐름이 열립니다.",
+  "thumbnail_hook":"Close-up of a golden monkey emblem with glowing amber eyes, surrounded by gold-leaf auspicious clouds against a deep amethyst starry night, traditional Korean motif, no human face, no text in image",
+  "thumbnail_text":"97점 나온 띠",
+  "scenes":[
+    {"type":"hook","pill":"오늘의 운세","ghost":"FORTUNE","lines":["오늘","딱 한 띠만","막힘이 풀려요"],"highlight":"한 띠",
+     "brand":"일상공감뉴스 · 운세","narration":"오늘 열두 띠 중에서, 유독 한 띠만 흐름이 활짝 열립니다."},
+    {"type":"keypoint","label":"오늘 운 좋은 띠 · 3위부터","points":["3위 <b>돼지띠</b> — 작은 행운이 연달아","2위 <b>토끼띠</b> — 귀인이 먼저 연락해요"],
+     "brand":"일상공감뉴스 · 운세","narration":"3위는 돼지띠, 2위는 토끼띠이고, 1위는 잠시 뒤에 알려 드립니다."},
+    {"type":"stat","label":"행운 지수 1위 · 원숭이띠","prefix":"","suffix":"점","from":0,"to":97,"bar":true,
+     "sub":"1992 · 2004년생 — <b>재물운</b> 활짝",
+     "brand":"일상공감뉴스 · 운세","narration":"1위는 원숭이띠, 1992년생과 2004년생이라면 오늘 지수가 97점입니다."},
+    {"type":"keypoint","label":"1위 이유 · 오늘의 행운 팁","points":["일진과 <b>삼합</b>이 닿아 흐름이 열려요","행운의 색 <b>노랑</b> · 숫자 <b>9</b>","<b>개띠</b> — 오늘은 쉬어가면 오히려 이득"],
+     "brand":"일상공감뉴스 · 운세","narration":"일진과 삼합이 닿은 날이니, 중요한 결정은 오후로 미뤄 보셔도 좋겠습니다."},
+    {"type":"keypoint","label":"이번 주 행운의 로또 번호","points":["<b>3 · 8 · 17 · 25 · 31 · 39</b>","재미로 뽑아 본 번호예요 · 캡처해 두세요"],
+     "brand":"일상공감뉴스 · 운세","narration":"이번 주 행운의 로또 번호는, 3, 8, 17, 25, 31, 39입니다."},
+    {"type":"statement","text":"원숭이띠 vs 토끼띠, 오늘 누가 더 운 좋을까요?","highlight":"vs",
+     "brand":"일상공감뉴스 · 운세","narration":"원숭이띠와 토끼띠 중 누가 더 운 좋을지, 댓글에 골라 주세요."}
+  ],
+  "sources":["전통 띠 운세(명리) 기반","오늘의 일진 참고"],"credit":"재미로 보는 오늘의 운세 · 명리 일진 참고",
+  "platforms":{
+    "youtube":{"title":"오늘 딱 한 띠만 막힘이 풀려요 #shorts","description":"10월 10일 토요일 띠별 운세 TOP3\n※ 재미로 보는 운세입니다\n\n#오늘의운세 #띠별운세 #운세 #쇼츠 #shorts",
+      "localizations":{
+        "en":{"title":"Only One Zodiac Sign Gets Lucky Today #shorts","description":"Today's Korean zodiac fortune TOP 3.\n※ For entertainment only\n\n#zodiac #fortune #koreanzodiac #shorts"},
+        "ja":{"title":"今日たった一つの干支だけ運が開きます #shorts","description":"今日の干支別運勢TOP3です。\n※ 娯楽としてお楽しみください\n\n#干支 #運勢 #今日の運勢 #shorts"},
+        "zh-Hant":{"title":"今天只有一個生肖運勢全開 #shorts","description":"今日生肖運勢TOP3。\n※ 僅供娛樂參考\n\n#生肖 #運勢 #今日運勢 #shorts"}
+      }
+    },
+    "instagram":{"caption":"오늘 딱 한 띠만 막힘이 풀려요\n※ 재미로 보는 운세\n\n#오늘의운세 #띠별운세 #운세 #쇼츠 #shorts #릴스"},
+    "threads":{"text":"오늘 딱 한 띠만 막힘이 풀려요\n※ 재미로 보는 운세"}
+  },
+  "notes":"모션그래픽 6장면(로또 포함) · 단일 내레이터 · 배경음 없음 · 엔터테인먼트(재미) 운세 · MODE=daily."
+}
