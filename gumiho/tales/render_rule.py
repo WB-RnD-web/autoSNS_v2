@@ -6,7 +6,7 @@
 
 형식마다 화면(2026-10-09 새 라인업 — rules.py 머리말):
   survival  위: 'HOW LONG WOULD YOU LAST? · PT.N' + 상황 큰 글자(첫 1초) · 생존 시계(0:00 → 출처가 준 시각까지 굴러가거나,
-            출처에 시간이 없으면 INSTANT·SECONDS 같은 낱말) · 박자 카드(큰 글자 + 작은 출처) ·
+            출처가 단위만 주면 SECONDS·HOURS 같은 낱말, 시간이 없으면 --:--) · 박자 카드(큰 글자 + 작은 출처) ·
             끝: "GUMI'S ODDS 2%" 카드 + 다음 편 예고(글자만)
   compare   위: 'RANKED · PT.N' + 주제 · 지금 항목 이름·값 · 코드로 그린 막대(작은 것부터 쌓인다, log/linear) ·
             마지막 반전(막대가 표를 뚫고 나가거나 큰 글자) · 끝: 구미 판정 + 예고
@@ -51,10 +51,20 @@ SERIES = "NINE TAILS RULES"
 YELLOW = (255, 214, 64)
 FX_OF = {"deep": "dust", "space": "dust", "earth": "dust", "ancient": "dust", "liminal": "dust"}
 # 쇼츠 UI 피하기(2026-10-10 검수): 아래 22%(y > 1500) = 제목·채널 덮개, 오른쪽 x > 960 = 버튼 열.
-SAFE_X1, SAFE_Y1 = 960, 1500
+SAFE_X0, SAFE_X1, SAFE_Y1 = 60, 960, 1500
 CAP_BOTTOM = 1480              # 자막 아랫변
 SAFE_CX, SAFE_W = 510, 820     # 새 형식 글자 가운데(60–960 의 가운데)와 최대 폭 → x 100–920
 PANEL_W = 580                  # 생존 시계 상자 폭
+TEASER_W = 840                 # 예고·반전 글자 최대 폭(상자 여백 22px 더해도 x 60–960 안)
+
+
+def fit_width(d, text: str, sizes, width):
+    """주어진 크기들 중 폭 안에 드는 가장 큰 글꼴."""
+    for z in sizes:
+        f = R.font("sans_bold", z)
+        if d.textlength(text, font=f) <= width:
+            return f
+    return R.font("sans_bold", sizes[-1])
 
 
 def prefix_of(s: dict, ln: dict) -> str:
@@ -258,13 +268,18 @@ class Base:
         s_ = min(1.0, lt / POP) if lt >= 0 else 1.0
         return 1.0 + 0.25 * (1 - s_) ** 2 if s_ < 1 else 1.0          # 크게 → 제자리(튀어나옴)
 
-    @staticmethod
-    def paste_card(fr, card, y: int, sc: float):
+    def paste_card(self, fr, card, y: int, sc: float):
+        """카드 붙이기. 튀어나올 때(sc > 1)는 글자 가운데(cx)를 축으로 키운다. 새 형식은 x 60–960 밖을 잘라 낸다
+        (10/10 검수: 가운데 540 축으로 키우면 0.18초 동안 오른쪽 버튼 열 x > 960 을 넘었다)."""
         h = card.height
         if sc != 1.0:
             cw_, ch_ = int(SW * sc), int(h * sc)
-            card = card.resize((cw_, ch_), Image.Resampling.BILINEAR).crop(((cw_ - SW) // 2, (ch_ - h) // 2,
-                                                                            (cw_ - SW) // 2 + SW, (ch_ - h) // 2 + h))
+            left = int(self.cx * sc - self.cx)
+            card = card.resize((cw_, ch_), Image.Resampling.BILINEAR).crop((left, (ch_ - h) // 2, left + SW, (ch_ - h) // 2 + h))
+        if self.new:
+            m = Image.new("L", card.size, 0)
+            ImageDraw.Draw(m).rectangle([SAFE_X0, 0, SAFE_X1, h], fill=255)
+            card.putalpha(ImageChops.multiply(card.getchannel("A"), m))
         fr.paste(card, (0, y), card)
 
 
@@ -355,7 +370,8 @@ def shade_mask() -> Image.Image:
 class SurvivalPainter(Base):
     """How Long Would You Last — 상황 글자 · 생존 시계 · 박자 카드 · 끝 'GUMI'S ODDS'.
 
-    시계(2026-10-10): 출처가 준 시각만 숫자로 굴러간다(rules.clock_backed). 출처에 시간이 없으면 낱말(INSTANT …)이 뜬다.
+    시계(2026-10-10): catalog beat_ideas 의 시각 그대로 — 출처가 준 시각만 숫자로 굴러가고, 단위만 있으면 낱말(HOURS …),
+    출처에 시간이 없으면 --:--. 마지막이 --:-- 면 끝 화면에 시계를 내리고 구미의 확률만.
     """
 
     CARD_Y = 1000
@@ -373,6 +389,7 @@ class SurvivalPainter(Base):
         self.cell = max(d.textlength(c, font=self.fclock) for c in "0123456789")
         for r in self.rows:
             r["tlines"], r["ftext"] = self._fit(r["big"], (100, 92, 84, 76, 68), self.tw) if r["big"] else ([], None)
+            r["notime"] = r["t"] == RU.NO_TIME
             if r["word"]:
                 r["fword"] = next((R.font("sans", z) for z in (150, 124, 104, 88, 74, 62, 52)
                                    if d.textlength(r["t"], font=R.font("sans", z)) <= PANEL_W - 60), R.font("sans", 46))
@@ -383,8 +400,11 @@ class SurvivalPainter(Base):
         return next((x["sec"] for x in reversed(self.rows[:k]) if x["sec"] is not None), 0.0)
 
     def clock_value(self, k: int, lt: float) -> tuple[str, float]:
-        """(화면 글자, 순서용 값). 숫자 박자는 앞 숫자에서 굴러오고, 낱말 박자는 낱말 그대로."""
+        """(화면 글자, 순서용 값). 숫자 박자는 앞 숫자에서 굴러오고, 낱말 박자는 낱말 그대로,
+        출처 없는 박자(--:--)는 '--:--'(시간을 말하지 않는다 — 순서용 값은 앞 값 그대로)."""
         r = self.rows[k]
+        if r.get("notime"):
+            return RU.NO_TIME, max([self.clock_value(j, 99.0)[1] for j in range(k) if not self.rows[j].get("notime")] or [0.0])
         if r["word"]:
             return r["t"], float(RU.WORD_RANK[r["word"]])
         prev = self.last_number(k)
@@ -393,7 +413,7 @@ class SurvivalPainter(Base):
         return fmt_clock(v, r["t"]), v
 
     def draw_clock(self, d, text: str, y: int, color, f=None):
-        if f is not None:                                      # 낱말(INSTANT …)
+        if f is not None:                                      # 낱말(SECONDS·HOURS …)
             w_ = d.textlength(text, font=f)
             self.text(d, (self.cx - w_ / 2, y + (150 - f.size) * 0.55), text, f, color, 8, "clock")
             return
@@ -422,12 +442,16 @@ class SurvivalPainter(Base):
         # 생존 시계 — 출처가 준 시각까지 굴러가고, 끝(판정)에는 빨갛게 멈춘다
         end = t >= g["start"] - 0.05
         cy = max(y + 24, 490)
-        self.rect(d, [self.cx - PANEL_W / 2, cy, self.cx + PANEL_W / 2, cy + 214], 22, "clock", fill=(8, 8, 12),
-                  outline=(255, 70, 60) if end else YELLOW, width=5)
-        self.center(d, cy + 12, "CLOCK STOPPED" if end else "SURVIVAL CLOCK", self.flab, (220, 220, 220), 0, "clock")
-        label, _ = self.clock_value(k, lt)
-        pulse = k > 0 and (r["word"] and lt < 0.2 or SPIN <= lt < SPIN + 0.15)
-        self.draw_clock(d, label, cy + 44, (255, 70, 60) if end else ((255, 255, 255) if pulse else YELLOW), r.get("fword"))
+        # 끝: 마지막 박자에 출처 있는 시각이 있을 때만 'CLOCK STOPPED' — 없으면 시계를 내리고 구미의 확률(의견)만
+        show_clock = not (end and self.rows[-1].get("notime"))
+        if show_clock:
+            self.rect(d, [self.cx - PANEL_W / 2, cy, self.cx + PANEL_W / 2, cy + 214], 22, "clock", fill=(8, 8, 12),
+                      outline=(255, 70, 60) if end else (YELLOW if not r.get("notime") else (150, 150, 160)), width=5)
+            self.center(d, cy + 12, "CLOCK STOPPED" if end else "SURVIVAL CLOCK", self.flab, (220, 220, 220), 0, "clock")
+            label, _ = self.clock_value(k, lt)
+            pulse = k > 0 and (r["word"] and lt < 0.2 or SPIN <= lt < SPIN + 0.15)
+            col = (255, 70, 60) if end else ((150, 150, 160) if r.get("notime") else ((255, 255, 255) if pulse else YELLOW))
+            self.draw_clock(d, label, cy + 44, col, r.get("fword"))
         if not end and r["tlines"]:
             card = Image.new("RGBA", (SW, 420), (0, 0, 0, 0))
             cd = ImageDraw.Draw(card)
@@ -449,10 +473,11 @@ class SurvivalPainter(Base):
             self.center(d, 985 + (230 - f.size) * 0.4, od, f, (255, 255, 255), 12, "odds")
             tz = (self.s.get("teaser") or "").upper()
             if tz and t >= g["start"] + 0.6:
-                w_ = d.textlength(tz, font=self.ftz)
+                ft = fit_width(d, tz, (38, 34, 30, 26), TEASER_W)
+                w_ = d.textlength(tz, font=ft)
                 self.rect(d, [self.cx - w_ / 2 - 22, 1278, self.cx + w_ / 2 + 22, 1338], 14, "teaser", fill=(12, 12, 16),
                           outline=(255, 255, 255), width=2)
-                d.text((self.cx - w_ / 2, 1284), tz, font=self.ftz, fill=(255, 255, 255))
+                d.text((self.cx - w_ / 2, 1284 + (38 - ft.size) * 0.5), tz, font=ft, fill=(255, 255, 255))
         self.caption(d, t, r, lt)
         return fr
 
@@ -480,7 +505,7 @@ class ComparePainter(Base):
         self.badge_text = f"RANKED · PT.{s['part']}"
         d = ImageDraw.Draw(Image.new("RGB", (8, 8)))
         for r in self.rows:
-            r["tlines"], r["ftext"] = self._fit(r["big"], (84, 76, 68, 60), self.tw) if r["big"] else ([], None)
+            r["tlines"], r["ftext"] = self._fit(r["big"], (84, 76, 68, 60, 52, 46), TEASER_W) if r["big"] else ([], None)
             r["fname"] = next((R.font("sans", z) for z in (76, 68, 60, 54, 48) if d.textlength(r["text"], font=R.font("sans", z)) <= self.tw),
                               R.font("sans", 44))
 
@@ -527,10 +552,11 @@ class ComparePainter(Base):
         end = t >= g["start"] - 0.05
         tz = (self.s.get("teaser") or "").upper()
         if end and tz and t >= g["start"] + 0.4:
-            w_ = d.textlength(tz, font=self.ftz)
+            ft = fit_width(d, tz, (38, 34, 30, 26), TEASER_W)
+            w_ = d.textlength(tz, font=ft)
             self.rect(d, [self.cx - w_ / 2 - 22, y + 18, self.cx + w_ / 2 + 22, y + 78], 14, "teaser",
                       fill=(12, 12, 16, 235), outline=(255, 255, 255, 255), width=2)
-            d.text((self.cx - w_ / 2, y + 24), tz, font=self.ftz, fill=(255, 255, 255))
+            d.text((self.cx - w_ / 2, y + 24 + (38 - ft.size) * 0.5), tz, font=ft, fill=(255, 255, 255))
         # 지금 항목: 이름 + 값(반전이 값 없이 오면 큰 글자)
         pop = 1.0 + 0.2 * (1 - min(1.0, lt / POP)) ** 2 if 0 <= lt < POP else 1.0
         fn = self.capped(d, r["text"], int(r["fname"].size * pop))
@@ -620,10 +646,10 @@ def sample_times(P: dict) -> dict:
     return {"first": 0.05, "mid": round(P["total"] / 2, 2), "end": round(end, 2)}
 
 
-def render(path: str, out_dir: str = OUT, work: str | None = None, mock: bool = False) -> dict:
+def render(path: str, out_dir: str = OUT, work: str | None = None, mock: bool = False, allow_retired: bool = False) -> dict:
     import numpy as np
     s = json.load(open(path, encoding="utf-8"))
-    errs = RU.check(s)
+    errs = RU.check(s, allow_retired=allow_retired)          # 옛 설화 RULES(10/9 끝)는 --allow-retired 없이는 렌더하지 않는다
     if errs:
         raise SystemExit("대본 검사 실패:\n  " + "\n  ".join(errs))
     stem = RU.stem_of(s)
@@ -697,8 +723,9 @@ def main() -> int:
     ap.add_argument("--out", default=OUT)
     ap.add_argument("--work")
     ap.add_argument("--mock", action="store_true")
+    ap.add_argument("--allow-retired", action="store_true", help="옛 설화 RULES(10/9 끝)를 일부러 다시 렌더할 때만")
     a = ap.parse_args()
-    render(a.script, a.out, a.work, a.mock)
+    render(a.script, a.out, a.work, a.mock, a.allow_retired)
     return 0
 
 

@@ -39,7 +39,7 @@
    "value": 4.2,
    "label": "4.2 M",
    "src": 3,
-   "say": "Colossal squid. Only 4.2 meters, but 495 kilograms. The heaviest squid known.",
+   "say": "Colossal squid. This one measured 4.2 meters, after freezing.",
    "img": "a massive colossal squid with enormous eyes and thick hooked arms in the dark deep ocean, faint blue light from above"
   },
   {
@@ -64,14 +64,14 @@
    "label": "46 M",
    "twist": true,
    "src": 6,
-   "say": "But the longest? A giant siphonophore, about 46 meters. Longer than a blue whale, and it isn't one animal.",
+   "say": "But the longest? A giant siphonophore, an estimated 150 feet. Seemingly the longest animal ever recorded.",
    "img": "an extremely long glowing siphonophore colony spiraling through the black deep sea like a living rope, bioluminescent, vast"
   }
  ],
  "gumi": {
-  "say": "Gumi here. A chain of tiny clones wins. Which one scares you most?"
+  "say": "Gumi here. Which one would you never want to meet down there?"
  },
- "teaser": "PT.2 THURSDAY: BLACK HOLES",
+ "teaser": "PT.2 NEXT: BLACK HOLES",
  "sources": [
   "https://fishesoftexas.org/taxa/melanocetus-johnsonii",
   "https://www.mbari.org/animal/vampire-squid/",

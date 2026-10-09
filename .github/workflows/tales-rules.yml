@@ -96,11 +96,13 @@ jobs:
           echo "targets=$T" >> "$GITHUB_OUTPUT"
           echo "대상: '$T'"
 
-      - name: ledger 캐시
-        uses: actions/cache@v4
+      # ledger: 복원과 저장을 나눈다(10/10 검수 — actions/cache 하나로는 잡이 실패하면 저장 단계가 돌지 않아,
+      #   한 편이 실패한 날 먼저 올라간 다른 편의 기록을 잃고 다음 실행이 그 편을 또 올리려 했다).
+      - name: ledger 캐시 복원
+        uses: actions/cache/restore@v4
         with:
           path: output/gumiho/rules_ledger.json
-          key: rules-ledger-${{ github.run_id }}
+          key: rules-ledger-${{ github.run_id }}-${{ github.run_attempt }}
           restore-keys: rules-ledger-
 
       # 편마다 따로: rules.py check(같은 폴더의 다른 편과 그림 재사용까지) → 렌더. 통과한 편만 ok 목록에.
@@ -146,6 +148,13 @@ jobs:
             python gumiho/tales/upload_rule.py "$f" || { echo "::error::$f 업로드 실패"; fail=1; }
           done
           exit $fail
+
+      - name: ledger 캐시 저장(실패해도)
+        if: always() && hashFiles('output/gumiho/rules_ledger.json') != ''
+        uses: actions/cache/save@v4
+        with:
+          path: output/gumiho/rules_ledger.json
+          key: rules-ledger-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: 실패한 편이 있으면 빨간불
         if: steps.build.outputs.bad != ''

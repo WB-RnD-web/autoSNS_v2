@@ -7,7 +7,7 @@
 2026-10-09 사용자 결정: 한국 설화·조선 주제 금지('쓰레기 주제'). 타깃은 그대로 해외 영어권 20–39(Studio: 25–34 43%·
   남성 70%·미국 73%). 10/13–10/26 2주 시험(10/27 판정) — 새 쇼츠 라인업(shorts_catalog.json):
   A  survival  매일 20:00 UTC  "How Long Would You Last…? Pt.N" — 상황 큰 글자 + 0:00 시계 → 시각별 4–6 박자(실제 수치·출처) → "Gumi's odds: 2%"
-  B1 compare   격일 23:30 UTC  "… Ranked by Size Pt.N" — 실측값 막대 + 마지막 반전
+  B1 compare   격일 23:30 UTC  "… Ranked Pt.N" — 실측값 막대(크기·무게·깊이·속도) + 마지막 반전
   B2 liminal   격일 23:30 UTC  "RULES to Follow if You Wake Up in an Empty Mall at 3 A.M." — 분명한 창작, 번호 규칙 + 루프
   근거(C:\\wbtmp\\research1009): 'How Long You'd Last in Every Prehistoric Era' 구독 3.2만 채널 1,090만 · 위험한 곳 Top10 중앙값
   87만(작은 채널 돌파 8) · 마리아나 해구 구독 2만 채널 280만 · 리미널 구독 1.3만 채널 180만 · 크기 비교 Pt.1→3 330만→473만 ·
@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import difflib
 import glob
 import json
 import os
@@ -70,6 +71,7 @@ BEAT_SAY_MAX = 26
 BEAT_TEXT_MAX = 34          # 박자 큰 글자("1,086 BAR")
 SITUATION_MAX = 36          # 첫 1초 상황 글자("FLOOR OF THE MARIANA TRENCH")
 NAME_MAX, LABEL_MAX = 22, 18
+TWIST_TEXT_MAX = 40        # 값 없는 반전 큰 글자(화면 폭 안 — 10/10 검수)
 GUMI_MAX = 16
 SURVIVAL_TITLE = re.compile(r"(?i)^how long would you last\b")
 COMPARE_TITLE = re.compile(r"(?i)\b(ranked|by size)\b")
@@ -83,22 +85,42 @@ NUM = re.compile(r"\d[\d,]*(?:\.\d+)?")
 FACT_NUM = re.compile(r"(?i)(\d[\d,]*(?:\.\d+)?\s?(%|percent|°|degrees?|km|kilomet|met(er|re)s?\b|m\b|ft\b|feet|miles?|"
                       r"mph|kph|km/h|kg|tons?|years?|million|billion|people|deaths?)|\b\d{1,3}(,\d{3})+\b|\b\d{4,}\b)")
 CLOCK_TIME = re.compile(r"(?i)\b\d{1,2}(:\d{2})?\s?(a\.?m\.?|p\.?m\.?)")
-# 금지 주제(2026-10-09 사용자: 한국 설화·조선 금지) + 실존 피해자·인물 + 프랜차이즈 + SCP·Backrooms. 대본 모든 글자에 적용.
-BANNED_TOPICS = re.compile(
-    r"(?i)\b(korea\w*|joseon|goryeo|hanbok|hanok|gumiho|kumiho|dokkaebi|jeoseung|saja|gwishin|gwisin|jangsanbeom|"
-    r"folklore|folk tale|legend says|kitsune|yokai|huli ?jing|nine[- ]tailed|fox(es)?|"
-    r"scp|backrooms?|level 0|noclip\w*|poolrooms|"
-    r"victims?|true story|real footage|body was found|"
-    r"oceangate|titan submersible|titanic|dyatlov|akimov|toptunov|legasov|"
-    r"marvel|pok[eé]mon|minecraft|fortnite|roblox|star wars|star trek|jurassic (park|world)|godzilla|king kong|"
-    r"interstellar|gargantua|the meg|stranger things|squid game|five nights|fnaf|skibidi|disney|pixar|"
-    r"harry potter|game of thrones|lord of the rings|hbo)\b")
+# 금지 주제(2026-10-09 사용자: 한국 설화·조선 금지 · 10/10 검수: 일본·중국 설화·도시전설·프랜차이즈 추가).
+#   목록에 낱말을 더하면 된다 — 복수형(s·es)은 자동으로 잡는다. 대본 모든 글자에 적용.
+BANNED_WORDS = {
+    "korea/joseon/설화": ["korea", "korean", "joseon", "goryeo", "hanbok", "hanok", "gumiho", "kumiho", "dokkaebi",
+                         "jeoseung", "saja", "gwishin", "gwisin", "jangsanbeom", "japanese", "chinese", "folklore",
+                         "folk tale", "folktale", "legend", "urban legend", "legend says", "mythology",
+                         "shinto", "creepypasta", "kitsune", "yokai", "kappa", "oni", "huli jing", "hulijing",
+                         "nine-tailed", "nine tailed", "fox"],
+    "SCP·Backrooms": ["scp", "backroom", "level 0", "noclip", "noclipping", "poolroom"],
+    "실존 피해자·인물": ["victim", "true story", "real footage", "body was found", "oceangate", "titan submersible",
+                    "titanic", "dyatlov", "akimov", "toptunov", "legasov"],
+    "프랜차이즈": ["marvel", "pokemon", "pokémon", "minecraft", "fortnite", "roblox", "star wars", "star trek",
+              "jurassic park", "jurassic world", "godzilla", "king kong", "interstellar", "gargantua", "the meg",
+              "stranger things", "squid game", "five nights", "fnaf", "skibidi", "disney", "pixar", "harry potter",
+              "game of thrones", "lord of the rings", "hbo", "subnautica", "alien", "silent hill", "resident evil",
+              "slender man", "slenderman", "siren head", "netflix", "kisaragi", "kisaragi station", "the exit 8",
+              "exit 8"],
+}
+
+
+def _word_re(words: list[str]) -> re.Pattern:
+    alts = sorted({re.escape(w).replace(r"\ ", r"[\s-]+").replace(r"\-", r"[\s-]+") for w in words}, key=len, reverse=True)
+    return re.compile(r"(?i)(?<![a-z0-9])(?:" + "|".join(alts) + r")(?:e?s)?(?![a-z0-9])")
+
+
+BANNED_TOPICS = _word_re([w for ws in BANNED_WORDS.values() for w in ws])
 # 욕설·날짜 타는 말 — tales.py(롱폼, 다른 작업이 바꾸는 중)와 떼어 여기 둔다(새 형식만 이걸 쓴다)
 PROFANITY = re.compile(r"(?i)\b(fuck|shit|rape|porn|nude|naked|gore|dismember|suicide|decapitat)\w*")
 DATED = re.compile(r"(?i)\b(this (year|week|month|halloween|summer|winter|season)|last (week|month|year)|recently|"
                    r"right now|these days|currently|trending|as of today)\b")
-NO_FOX = re.compile(r"(?i)\b(gumi|fox\w*|vixen|kitsune|nine[- ]tail\w*|fox girl)\b")
+# 그림에 구미·여우 금지(10/10 검수: 우회 표현까지)
+NO_FOX = re.compile(r"(?i)(?<![a-z])(gumi|fox\w*|vixen\w*|kitsune\w*|vulpine|vulpes|nine[\s-]+tail\w*|"
+                    r"fluffy[\s-]+tails?|animal[\s-]+ears?|(girl|woman|lady)\s+with\s+(a\s+|an?\s+\w+\s+)?tails?|"
+                    r"silver[\s-]+haired\s+(anime\s+)?(girl|woman)|anime\s+girl\w*)(?![a-z])")
 IMG_TEXT = re.compile(r"(?i)\b(text|letters|words|sign that says|caption|logo|watermark)\b")
+URL = re.compile(r"(?i)(https?://|www\.|\b[a-z0-9-]+\.(com|org|gov|net|edu|io|co|ly|be|tv)\b)")
 REPUTABLE = re.compile(r"(?i)(\.gov|\.mil|\.edu|\.int|nasa|noaa|usgs|nps\.gov|esa\.int|britannica\.com|si\.edu|smithsonian|"
                        r"nature\.com|science\.org|pnas\.org|peerj\.com|agupubs|wiley\.com|springer|sciencedirect|"
                        r"cambridge\.org|oup\.com|nih\.gov|who\.int|wmo\.int|mbari\.org|schmidtocean\.org|"
@@ -179,7 +201,8 @@ def entry(n: int, sc: dict | None = None) -> dict | None:
 
 
 def teaser_idea(e: dict, sc: dict | None = None) -> str | None:
-    """다음 편 예고(화면 글자만, 목소리 없음) — 같은 시리즈 다음 편이 있을 때만. 매일(A)은 TOMORROW, 격일(B)은 요일."""
+    """다음 편 예고(화면 글자만, 목소리 없음) — 같은 시리즈 다음 편이 있을 때만. 매일(A)은 TOMORROW, 격일(B)은 NEXT.
+    (10/10 검수: 요일 'THURSDAY' 는 시간대마다 다르게 읽힌다 → NEXT)"""
     sc = sc or shorts()
     rs = sc[e["format"]]
     k = [x["n"] for x in rs].index(e["n"])
@@ -187,7 +210,7 @@ def teaser_idea(e: dict, sc: dict | None = None) -> str | None:
         return None
     nx = rs[k + 1]
     gap = (publish_date(nx, sc) - publish_date(e, sc)).days
-    when = "TOMORROW" if gap == 1 else publish_date(nx, sc).strftime("%A").upper()
+    when = "TOMORROW" if gap == 1 else "NEXT"
     return f"PT.{nx['part']} {when}: {nx['teaser']}"
 
 
@@ -222,8 +245,21 @@ def words(t: str) -> int:
 
 
 # ── 옛 형식 검사(rules·versus·pov) — 그대로 ─────────────
-def check_old(s: dict, cat: dict | None = None) -> list[str]:
+def retired(today: dt.date | None = None, cat: dict | None = None) -> bool:
+    """옛 설화 RULES(R001–R028)가 끝났는가 — until(2026-10-09) 다음 날부터. 오늘은 UTC 기준."""
     cat = cat or catalog()
+    today = today or dt.datetime.now(dt.timezone.utc).date()
+    return bool(cat.get("until")) and today > dt.date.fromisoformat(cat["until"])
+
+
+RETIRED_MSG = ("옛 설화 RULES(R001–R028)는 2026-10-09 로 끝났다(사용자 10/9: 한국 설화 금지) — "
+               "--allow-retired 없이는 검사·렌더·업로드하지 않는다")
+
+
+def check_old(s: dict, cat: dict | None = None, allow_retired: bool = False, today: dt.date | None = None) -> list[str]:
+    cat = cat or catalog()
+    if not allow_retired and retired(today, cat):
+        return [RETIRED_MSG]                 # 10/10 검수: 날짜가 지나도 옛 편이 검사를 통과해 올라갈 수 있었다
     errs: list[str] = []
     e = next((x for x in cat["rules"] if x["n"] == s.get("id")), None)
     if not e:
@@ -307,12 +343,117 @@ def clock_sec(label: str) -> float | None:
     return int(m.group(1)) * 86400 if m else None
 
 
-# 생존 시계(2026-10-10 검수: 마리아나 편 시계가 출처 없는 1:00 에서 멈췄다 — '생존 시간 지어내기 금지'):
-#   시각 꼴(0:12 · 3:00:00 · DAY 3)은 그 편 facts 에 같은 수 + 단위(second/minute/hour/day)가 있을 때만.
-#   출처에 시간이 없으면 낱말(INSTANT · SECONDS · MINUTES · HOURS · DAYS)로 — 순서(먼저 → 다음)만 보여 준다.
-WORD_T = re.compile(r"^(INSTANT|SECONDS|MINUTES|HOURS|DAYS|WEEKS)(\s+[A-Z][A-Z ]{0,17})?$")
-WORD_RANK = {"INSTANT": 0, "SECONDS": 1, "MINUTES": 60, "HOURS": 3600, "DAYS": 86400, "WEEKS": 604800}
-UNITS = (("second", 1), ("minute", 60), ("hour", 3600), ("day", 86400))
+# 생존 시계(2026-10-10 검수 두 번: ① 마리아나 편 시계가 출처 없는 1:00 에서 멈췄다 ② INSTANT 도 출처 없는 '죽기까지 시간'):
+#   대본의 t 는 catalog beat_ideas 의 t 와 글자 그대로 같아야 한다(루틴이 고르지 않는다). catalog 는 테스트가 지킨다:
+#   - 시각 꼴(0:12 · 3:00:00 · DAY 3)은 그 박자의 clock_fact 에 '같은 수 + 같은 단위'(12 seconds · 3 hours · 3 days)가 있을 때만
+#   - 낱말 SECONDS · MINUTES · HOURS · DAYS 는 clock_fact 에 그 단위가 있을 때만(꼬리 말 금지 — 'SECONDS NINETY' 안 됨)
+#   - 출처에 시간이 없으면 NO_TIME('--:--') — 시계가 시간을 말하지 않는다. 마지막 박자가 NO_TIME 이면 끝 화면에 시계가 없다
+NO_TIME = "--:--"
+WORD_T = re.compile(r"^(SECONDS|MINUTES|HOURS|DAYS)$")
+WORD_RANK = {"SECONDS": 1, "MINUTES": 60, "HOURS": 3600, "DAYS": 86400}
+WORD_UNIT = {"SECONDS": "s", "MINUTES": "min", "HOURS": "h", "DAYS": "d"}
+TIME_UNIT_SEC = {"s": 1, "min": 60, "h": 3600, "d": 86400}
+
+# 숫자 + 단위(10/10 검수: '23 SECONDS LEFT' 가 다른 fact 의 '23 days' 로 통과했다 → 단위까지 같아야 한다)
+UNIT_PATTERNS = [
+    (r"km/h|kph|kilomet(?:er|re)s? per hour", "km/h"), (r"km/s|kilomet(?:er|re)s? per second", "km/s"),
+    (r"m/s²|m/s2", "m/s2"), (r"m/s|met(?:er|re)s? per second", "m/s"), (r"mph|miles? per hour", "mph"),
+    (r"°\s?c|degrees? celsius|celsius", "c"), (r"°\s?f|degrees? fahrenheit|fahrenheit", "f"), (r"degrees?|°", "deg"),
+    (r"kpa", "kpa"), (r"mm\s?hg", "mmhg"), (r"millibars?|mb", "mb"), (r"psi", "psi"), (r"bars?", "bar"),
+    (r"atmospheres?|atm", "atm"), (r"millisieverts?|msv", "msv"),
+    (r"kilomet(?:er|re)s?|km", "km"), (r"centimet(?:er|re)s?|cm", "cm"), (r"millimet(?:er|re)s?|mm", "mm"),
+    (r"met(?:er|re)s?|m", "m"), (r"feet|foot|ft", "ft"), (r"miles?|mi", "mi"), (r"inch(?:es)?", "inch"),
+    (r"kilograms?|kg", "kg"), (r"tonnes?|tons?|t", "t"), (r"pounds?|lbs?", "lb"), (r"newtons?|n", "n"),
+    (r"seconds?|secs?", "s"), (r"minutes?|mins?", "min"), (r"hours?|hrs?", "h"), (r"days?", "d"),
+    (r"weeks?", "wk"), (r"months?", "mo"), (r"years?", "yr"),
+    (r"percent|%", "%"), (r"times|×|x", "x"),
+    (r"thousand", "thousand"), (r"million", "million"), (r"billion", "billion"),
+    (r"solar mass(?:es)?|suns?", "msun"), (r"light[\s-]years?", "ly"), (r"hectares?|ha", "ha"), (r"acres?", "acre"),
+    (r"lit(?:er|re)s?|l", "l"), (r"gallons?", "gal"), (r"cups?", "cup"), (r"kelvin|k", "k"),
+]
+_UNIT_RE = [(re.compile(r"(?i)(?:" + p + r")(?![a-z])"), u) for p, u in UNIT_PATTERNS]
+NUM_WORDS = {w: i for i, w in enumerate("zero one two three four five six seven eight nine ten eleven twelve thirteen "
+                                       "fourteen fifteen sixteen seventeen eighteen nineteen".split())}
+NUM_WORDS.update({w: 10 * (i + 2) for i, w in enumerate("twenty thirty forty fifty sixty seventy eighty ninety".split())})
+SCALE_WORDS = {"hundred": 100, "thousand": 1000}
+_NUMWORD_RE = re.compile(r"(?i)\b(?:(?:" + "|".join(list(NUM_WORDS) + list(SCALE_WORDS)) + r")(?:[\s-]+|\b))+")
+
+
+def spelled_to_digits(text: str) -> str:
+    """'ninety seconds' → '90 seconds', 'TEN SECONDS' → '10 SECONDS'(10/10 검수: 글자로 쓴 숫자가 검사를 비켜 갔다).
+    단위가 바로 뒤에 붙을 때만 바꾼다 — 'one or two breaths' 같은 말은 그대로."""
+    def conv(m):
+        ws = re.split(r"[\s-]+", m.group(0).strip())
+        total, cur, ok = 0, 0, False
+        for w in ws:
+            lw = w.lower()
+            if lw in NUM_WORDS:
+                cur += NUM_WORDS[lw]
+                ok = True
+            elif lw in SCALE_WORDS:
+                cur = (cur or 1) * SCALE_WORDS[lw]
+                if SCALE_WORDS[lw] >= 1000:
+                    total, cur = total + cur, 0
+                ok = True
+        if not ok:
+            return m.group(0)
+        rest = text[m.end():]
+        if not any(r.match(rest) for r, _ in _UNIT_RE):
+            return m.group(0)
+        return f"{total + cur} "
+    return _NUMWORD_RE.sub(conv, text or "")
+
+
+def _unit_at(text: str, pos: int) -> str | None:
+    rest = re.sub(r"^[\s-]{0,2}", "", text[pos:pos + 40])
+    for r, u in _UNIT_RE:
+        if r.match(rest):
+            return u
+    return None
+
+
+def num_units(text: str) -> list[tuple[float, str | None]]:
+    """글 속 (수, 단위) — '9-12 seconds' 는 9·12 둘 다 초, '600 to 900 meters' 는 둘 다 m."""
+    text = spelled_to_digits(text or "")
+    ms = list(NUM.finditer(text))
+    out: list[list] = []
+    for m in ms:
+        try:
+            v = float(m.group(0).replace(",", "").rstrip("."))
+        except ValueError:
+            continue
+        out.append([v, _unit_at(text, m.end()), m.end()])
+    for i in range(len(out) - 1, -1, -1):          # 범위의 앞 수는 뒤 수의 단위를 받는다
+        if out[i][1] is None and i + 1 < len(out):
+            gap = text[out[i][2]:ms[i + 1].start()] if i + 1 < len(ms) else ""
+            if re.fullmatch(r"\s*(?:-|–|to|and|or)\s*", gap or "x"):
+                out[i][1] = out[i + 1][1]
+    return [(v, u) for v, u, _ in out]
+
+
+def fact_pairs(e: dict) -> tuple[set, set]:
+    """catalog facts 의 (수, 단위) 묶음과 수 묶음."""
+    pairs, plain = set(), set()
+    for f in e.get("facts") or []:
+        for v, u in num_units(f["fact"]):
+            pairs.add((v, u))
+            plain.add(v)
+    return pairs, plain
+
+
+def unbacked_numbers(text: str, pairs: set, plain: set) -> list[str]:
+    """facts 에 없는 수(단위가 붙었으면 단위까지 같아야 한다)."""
+    bad = []
+    for v, u in num_units(text):
+        if u is None:
+            ok = v in plain
+        elif u == "deg":
+            ok = any(pv == v and pu in ("deg", "c", "f") for pv, pu in pairs)
+        else:
+            ok = (v, u) in pairs or (u in ("c", "f") and (v, "deg") in pairs)
+        if not ok:
+            bad.append(f"{v:g}{' ' + u if u else ''}")
+    return bad
 
 
 def clock_word(label: str) -> str | None:
@@ -321,45 +462,74 @@ def clock_word(label: str) -> str | None:
 
 
 def clock_lb(label: str) -> float | None:
-    """박자 시각의 아래 한계(초) — 순서 검사용. 낱말은 WORD_RANK."""
+    """박자 시각의 아래 한계(초) — 순서 검사용. NO_TIME 은 순서에서 빠진다(None 이 아니라 -1)."""
+    label = (label or "").strip()
+    if label == NO_TIME:
+        return -1.0
     w = clock_word(label)
     return float(WORD_RANK[w]) if w else clock_sec(label)
 
 
-def _num_vals(text: str) -> list[float]:
-    out = []
-    for x in NUM.findall(text or ""):
-        try:
-            out.append(float(x.replace(",", "").rstrip(".")))
-        except ValueError:
-            pass
-    return out
+def _has_pair(v: float, unit: str, facts: list[str]) -> bool:
+    for f in facts:
+        for x, u in num_units(f):
+            if u == unit and (x == v or round(x) == v):
+                return True
+    return False
 
 
 def clock_backed(label: str, facts: list[str]) -> bool:
-    """시각 꼴 박자가 facts 의 '수 + 단위'에 기대는가. 0:00(시작)은 늘 된다."""
+    """시각 꼴 박자가 facts 의 '같은 수 + 같은 단위'에 기대는가. 0:00(시작)은 늘 된다.
+    통째로(12 seconds · 3 hours · 30-minute · 1.5 minutes) 또는 0 아닌 자리마다(3 hours + 12.8 seconds → 3:00:13)."""
+    label = (label or "").strip()
     sec = clock_sec(label)
     if sec is None:
         return False
     if sec == 0:
         return True
+    if DAYS.match(label):
+        return _has_pair(sec / 86400, "d", facts)
+    for u, k in TIME_UNIT_SEC.items():
+        v = sec / k
+        if v >= 1 and v * 2 == int(v * 2) and _has_pair(v, u, facts):
+            return True
+    return all(_has_pair(v, u, facts) for v, u in _parts(label) if v)
 
-    def has(v: float, unit: str) -> bool:
-        for f in facts:
-            if unit not in f.lower():
-                continue
-            if any(abs(x - v) <= 0.05 * v + 1e-9 or round(x) == v for x in _num_vals(f)):
-                return True
-        return False
 
+def _parts(label: str) -> list[tuple[float, str]]:
+    sec = clock_sec(label) or 0
     if DAYS.match(label.strip()):
-        return has(sec / 86400, "day")
-    if any(has(sec / k, u) for u, k in UNITS if sec / k >= 1):
-        return True
+        return [(sec / 86400, "d")]
     h, rem = divmod(int(sec), 3600)
     m, ss = divmod(rem, 60)
-    parts = [(h, "hour"), (m, "minute"), (ss, "second")]
-    return all(has(v, u) for v, u in parts if v)
+    return [(h, "h"), (m, "min"), (ss, "s")]
+
+
+WORD_RE = {"SECONDS": r"seconds?", "MINUTES": r"minutes?", "HOURS": r"hours?", "DAYS": r"days?"}
+
+
+def beat_ok(b: dict, e: dict) -> bool:
+    """catalog beat_idea 의 시각이 그 박자의 clock_fact(없으면 fact)에 기대는가 — catalog 테스트가 14편 전부 본다.
+    자리가 여럿(3:00:13)이면 한 자리 이상은 clock_fact, 나머지는 그 편 facts 어디든."""
+    t = (b.get("t") or "").strip()
+    facts = [f["fact"] for f in e.get("facts") or []]
+    k = b.get("clock_fact", b.get("fact"))
+    cf = [facts[k]] if isinstance(k, int) and 0 <= k < len(facts) else []
+    if t in (NO_TIME, "0:00"):
+        return True
+    w = clock_word(t)
+    if w:
+        return bool(cf) and bool(re.search(rf"(?i)\b{WORD_RE[w]}\b", cf[0]))
+    if clock_sec(t) is None or not cf:
+        return False
+    if clock_backed(t, cf):
+        return True
+    ps = [(v, u) for v, u in _parts(t) if v]
+    return len(ps) > 1 and all(_has_pair(v, u, facts) for v, u in ps) and any(_has_pair(v, u, cf) for v, u in ps)
+
+
+def beat_labels(e: dict) -> list[str]:
+    return [b["t"] for b in e.get("beat_ideas") or [] if b.get("t") != "GUMI"]
 
 
 def nums(text: str) -> set[str]:
@@ -383,7 +553,23 @@ def all_text(s: dict) -> list[tuple[str, str]]:
 
 
 def _norm_img(p: str) -> str:
-    return re.sub(r"[^a-z0-9 ]", "", (p or "").lower()).strip()
+    """그림 프롬프트 비교용 — 소문자·문장부호 빼기·꾸밈 낱말(4k·cinematic …) 빼기."""
+    ws = re.sub(r"[^a-z0-9 ]", " ", (p or "").lower()).split()
+    return " ".join(w for w in ws if w not in IMG_FILLER)
+
+
+IMG_FILLER = {"4k", "8k", "hd", "uhd", "ultra", "highly", "detailed", "high", "detail", "photorealistic", "realistic",
+              "cinematic", "masterpiece", "best", "quality", "sharp", "focus", "the", "a", "an"}
+IMG_SIMILAR = 0.85          # 10/10 검수: 낱말 하나 바꾸기·', 4k' 붙이기로 같은 그림을 다시 쓰는 것을 막는다
+
+
+def img_similar(a: str, b: str) -> bool:
+    if not a or not b:
+        return False
+    if a == b:
+        return True
+    sm = difflib.SequenceMatcher(None, a, b)
+    return sm.real_quick_ratio() >= IMG_SIMILAR and sm.quick_ratio() >= IMG_SIMILAR and sm.ratio() >= IMG_SIMILAR
 
 
 def siblings(path: str) -> list[dict]:
@@ -398,6 +584,52 @@ def siblings(path: str) -> list[dict]:
         except (OSError, ValueError):
             pass
     return out
+
+
+ODDS_SAY = re.compile(r"(?i)\bodds\b\W{0,4}(?:(?:are|is)\s+)?(?P<lt>(?:less than|under|below)\s+)?(?P<n>\d+|"
+                      + "|".join(sorted(NUM_WORDS, key=len, reverse=True)) + r")\s*(?:%|percent)?")
+
+
+def _odds_val(odds: str) -> tuple[bool, int] | None:
+    m = ODDS.match(str(odds or ""))
+    if not m:
+        return None
+    g = m.group(1).replace(" ", "")
+    return (True, 1) if g.startswith("<") else (False, int(g))
+
+
+def gumi_numbers(g: dict) -> tuple[str, list[str]]:
+    """구미 한 줄에서 확률 말('Gumi's odds: two percent')을 떼어 낸 나머지 글 + 확률 오류.
+    확률은 판정이라 facts 검사에서 빠지지만, 그 한 마디뿐이다(10/10 검수: odds 50% 라고 50 을 다른 데 쓰면 안 된다)."""
+    say = g.get("say") or ""
+    errs = []
+    m = ODDS_SAY.search(say)
+    ov = _odds_val(g.get("odds"))
+    if m and ov:
+        n = m.group("n").lower()
+        spoken = int(n) if n.isdigit() else NUM_WORDS.get(n, -1)
+        if (bool(m.group("lt")), spoken) != ov:
+            errs.append(f"gumi.say: 말한 확률({m.group(0).strip()})이 odds {g.get('odds')!r} 와 다르다")
+        say = say[:m.start()] + say[m.end():]
+    return say, errs
+
+
+def label_value(label: str) -> tuple[float, str | None] | None:
+    """'4.3 MILLION SUNS' → (4.3e6, 'msun'), '12 CM' → (12, 'cm'), '60+ BILLION SUNS' → (6e10, 'msun')."""
+    m = re.match(r"\s*([\d][\d,]*(?:\.\d+)?)\+?\s*", label or "")
+    if not m:
+        return None
+    v = float(m.group(1).replace(",", ""))
+    rest = label[m.end():]
+    mm = re.match(r"(?i)(thousand|million|billion)\b\s*", rest)
+    if mm:
+        v *= {"thousand": 1e3, "million": 1e6, "billion": 1e9}[mm.group(1).lower()]
+        rest = rest[mm.end():]
+    return v, _unit_at(rest, 0)
+
+
+UNIT_CONV = {("cm", "m"): 0.01, ("mm", "m"): 0.001, ("km", "m"): 1000.0, ("ft", "m"): 0.3048, ("m", "km"): 0.001,
+             ("kg", "t"): 0.001, ("mph", "km/h"): 1.609344}
 
 
 def check_new(s: dict, sc: dict | None = None, others: list[dict] | None = None) -> list[str]:
@@ -430,23 +662,34 @@ def check_new(s: dict, sc: dict | None = None, others: list[dict] | None = None)
     hook = s.get("hook", "")
     if not hook or words(hook) > HOOK_WORDS or len(hook) > HOOK_CHARS:
         errs.append(f"hook(화면 위)은 2–{HOOK_WORDS}단어·{HOOK_CHARS}자 이하")
-    # 금지 주제·금지어·날짜 타는 말 — 대본의 모든 글자
+    # 금지 주제·금지어·날짜 타는 말·URL — 대본의 모든 글자(출처 sources 만 빼고)
     for where, t_ in all_text(s):
         m = BANNED_TOPICS.search(t_)
         if m:
-            errs.append(f"{where}: 금지 주제 {m.group(0)!r}(설화·한국·실존 피해자·프랜차이즈·SCP·Backrooms)")
+            errs.append(f"{where}: 금지 주제 {m.group(0)!r}(설화·한국·일본·중국·실존 피해자·프랜차이즈·SCP·Backrooms)")
         if PROFANITY.search(t_):
             errs.append(f"{where}: 금지어")
         m = DATED.search(t_)
         if m and where != "teaser":
             errs.append(f"{where}: 날짜 타는 말 {m.group(0)!r}")
+        m = URL.search(t_)
+        if m:
+            errs.append(f"{where}: 글에 URL/도메인 {m.group(0)!r} 금지 — 출처는 sources 에만(설명란에 코드가 붙인다)")
     # 출처 — catalog 의 출처에서만(지어낸 URL 금지)
     srcs = s.get("sources") or []
     allowed = set(e.get("sources") or [])
     for u in srcs:
         if not re.match(r"^https?://", u or "") or u not in allowed:
             errs.append(f"sources: {u!r} 는 catalog 출처가 아니다 — catalog sources 에서 그대로 옮긴다")
-    fact_nums = set().union(*[nums(f["fact"]) for f in e.get("facts") or []]) if e.get("facts") else set()
+    pairs, plain = fact_pairs(e)
+    factual = fmt in ("survival", "compare")
+    # 줄 밖 글자의 숫자도 facts 에서만(10/10 검수: 제목·hook·상황·설명 첫 줄·이름이 비어 있었다)
+    if factual:
+        for where in ("title", "hook", "situation", "description_hook"):
+            txt = re.sub(r"(?i)\bpt\.\s?\d+|#shorts", "", s.get(where) or "")
+            bad = unbacked_numbers(txt, pairs, plain)
+            if bad:
+                errs.append(f"{where}: 숫자 {', '.join(bad)} 가 catalog facts 에 없다(단위까지 같아야 한다)")
     ls = lines_of(s)
     imgs = []
     total = words((s.get("gumi") or {}).get("say", ""))
@@ -464,47 +707,45 @@ def check_new(s: dict, sc: dict | None = None, others: list[dict] | None = None)
             errs.append(f"줄 {i}: 그림 프롬프트에 글자·로고 말 금지(화면 글자는 코드가 쓴다)")
         imgs.append(_norm_img(img))
         # 숫자 → 출처 필수(창작 liminal 은 '사실처럼 보이는 숫자'만)
-        blob = f"{say} {text} {x.get('label') or ''}"
-        if fmt == "liminal":
-            need = bool(FACT_NUM.search(CLOCK_TIME.sub("", blob)))
-            got = nums(CLOCK_TIME.sub("", blob)) if need else set()
-        else:
-            got = nums(blob)
-            need = bool(got) or fmt in ("survival", "compare")   # survival·compare 는 줄마다 사실 한 개 = 출처 한 개
+        blob = f"{say} {text} {x.get('label') or ''} {x.get('name') or ''}"
         si = x.get("src")
-        if need:
-            if not srcs:
-                errs.append(f"줄 {i}: 숫자·사실이 있는데 sources 가 비었다 — 출처 없는 숫자는 못 올린다")
-            elif not isinstance(si, int) or not 0 <= si < len(srcs):
-                errs.append(f"줄 {i}: src(=sources 번호) 필수 — 지금 {si!r}")
-        stray = sorted(n for n in got if n not in fact_nums)
-        if stray and fmt != "liminal":
-            errs.append(f"줄 {i}: 숫자 {', '.join(stray)} 가 catalog facts 에 없다 — 숫자는 facts 에서만")
-        if fmt == "liminal" and got:
-            errs.append(f"줄 {i}: 창작(liminal)에 사실처럼 보이는 숫자 {', '.join(sorted(got))} — 빼거나 시각·층 번호로")
-    if len(set(imgs)) != len(imgs):
-        errs.append("같은 그림 프롬프트를 두 번 쓰지 않는다(편 안에서도)")
+        if fmt == "liminal":
+            m = FACT_NUM.search(CLOCK_TIME.sub("", spelled_to_digits(blob)))
+            if m:
+                errs.append(f"줄 {i}: 창작(liminal)에 사실처럼 보이는 숫자 {m.group(0)!r} — 빼거나 시각·층 번호로")
+            continue
+        if not srcs:
+            errs.append(f"줄 {i}: 숫자·사실이 있는데 sources 가 비었다 — 출처 없는 숫자는 못 올린다")
+        elif not isinstance(si, int) or not 0 <= si < len(srcs):
+            errs.append(f"줄 {i}: src(=sources 번호) 필수 — 지금 {si!r}")
+        bad = unbacked_numbers(blob, pairs, plain)
+        if bad:
+            errs.append(f"줄 {i}: 숫자 {', '.join(bad)} 가 catalog facts 에 없다 — 숫자는 facts 에서만(단위까지 같게)")
+    for i in range(len(imgs)):
+        if any(img_similar(imgs[i], imgs[j]) for j in range(i)):
+            errs.append(f"줄 {i}: 같은(거의 같은) 그림 프롬프트를 두 번 쓰지 않는다(편 안에서도)")
     if others:
-        seen = {_norm_img(x.get("img")) for o in others if o.get("id") != s.get("id") for x in lines_of(o)}
-        dup = [i for i, p in enumerate(imgs) if p in seen]
+        seen = [_norm_img(x.get("img")) for o in others if o.get("id") != s.get("id") for x in lines_of(o)]
+        dup = [i for i, p in enumerate(imgs) if any(img_similar(p, q) for q in seen)]
         if dup:
-            errs.append(f"줄 {dup}: 다른 편과 같은 그림 프롬프트 — 편마다 새 그림(재사용 금지)")
+            errs.append(f"줄 {dup}: 다른 편과 같은(거의 같은, ≥{IMG_SIMILAR:.0%}) 그림 프롬프트 — 편마다 새 그림(재사용 금지)")
     lo, hi = NEW_WORDS[fmt]
     if not lo <= total <= hi:
         errs.append(f"말 {total}단어 — {lo}–{hi}단어")
     g = s.get("gumi") or {}
     if not g.get("say") or words(g["say"]) > GUMI_MAX:
         errs.append(f"gumi.say — 구미(목소리만)의 판정 한 줄 {GUMI_MAX}단어 이하")
-    # 구미 한 줄의 숫자도 facts 에서만(확률 odds 는 판정이라 뺀다) — 비교('탐사선은 127분')는 여기로 온다
-    g_stray = sorted(n for n in nums(g.get("say", "")) - nums(str(g.get("odds", ""))) if n not in fact_nums)
-    if g_stray and fmt != "liminal":
-        errs.append(f"gumi.say: 숫자 {', '.join(g_stray)} 가 catalog facts 에 없다")
-    tz = s.get("teaser")
-    if tz is not None:
-        if fmt == "liminal":
-            errs.append("liminal 은 teaser 없음 — 끝 → 첫 장면 루프가 핵심")
-        elif f"PT.{e['part'] + 1}" not in tz.upper().replace(" ", "") or len(tz) > 44:
-            errs.append(f"teaser 는 44자 이하, 'Pt.{e['part'] + 1}' 를 담는다(rules.py next 의 teaser_idea)")
+    rest, g_errs = gumi_numbers(g)
+    errs += g_errs
+    if factual:
+        bad = unbacked_numbers(rest, pairs, plain)
+        if bad:
+            errs.append(f"gumi.say: 숫자 {', '.join(bad)} 가 catalog facts 에 없다(확률 한 마디만 예외)")
+    # 예고 — rules.py next 의 teaser_idea 와 글자 그대로(없으면 비운다)
+    want = teaser_idea(e, sc)
+    tz = s.get("teaser") or None
+    if tz != want:
+        errs.append(f"teaser 는 teaser_idea 그대로 — {want!r}" if want else "teaser 없음(teaser_idea 가 null — 마지막 편·liminal)")
     if fmt == "survival":
         errs += _check_survival(s, ls, g, e)
     elif fmt == "compare":
@@ -526,28 +767,33 @@ def _check_survival(s: dict, ls: list[dict], g: dict, e: dict) -> list[str]:
         errs.append(f"situation(첫 1초 큰 글자 — 'FLOOR OF THE MARIANA TRENCH') 필수·{SITUATION_MAX}자 이하")
     if not BEATS[0] <= len(ls) <= BEATS[1]:
         errs.append(f"beats {len(ls)}개 — {BEATS[0]}–{BEATS[1]}개")
-    facts = [f["fact"] for f in e.get("facts") or []]
+    # 시계는 catalog beat_ideas 그대로(10/10 검수: DAY 23·'SECONDS NINETY'·INSTANT→MINUTES 가 통과했다)
+    want = beat_labels(e)
+    got = [(x.get("t") or "").strip() for x in ls]
+    if got != want:
+        errs.append(f"박자 시각 {got} ≠ catalog beat_ideas {want} — 생존 시간은 지어내지 않는다(beat_ideas 의 t 를 그대로, 같은 개수)")
+    for i, b in enumerate(b for b in e.get("beat_ideas") or [] if b.get("t") != "GUMI"):
+        if not beat_ok(b, e):
+            errs.append(f"catalog beat_ideas {i}: 시각 {b.get('t')!r} 이 clock_fact 의 '수 + 단위'에 없다(catalog 를 고친다)")
     prev = -1.0
     for i, x in enumerate(ls):
         t = (x.get("t") or "").strip()
         lb = clock_lb(t)
         if lb is None:
-            errs.append(f"박자 {i}: t {t!r} — '0:12'·'3:00:00'·'DAY 3' 꼴 또는 낱말 INSTANT·SECONDS·MINUTES·HOURS·DAYS")
+            errs.append(f"박자 {i}: t {t!r} 꼴이 틀렸다 — '0:12'·'3:00:00'·'DAY 3'·{NO_TIME} 또는 SECONDS·MINUTES·HOURS·DAYS")
             continue
         if i == 0 and t != "0:00":
             errs.append("첫 박자는 t '0:00' — 첫 1초에 시계가 0:00")
-        if not clock_word(t) and not clock_backed(t, facts):
-            errs.append(f"박자 {i}: 시각 {t} 이 catalog facts 에 없다 — 생존 시간을 지어내지 않는다"
-                        f"(facts 에 '수 + second/minute/hour/day'가 있을 때만, 없으면 INSTANT·SECONDS·MINUTES 같은 낱말)")
-        if lb < prev:
-            errs.append(f"박자 {i}: 시계가 앞으로만 간다({t})")
-        prev = lb
+        if lb >= 0:
+            if lb < prev:
+                errs.append(f"박자 {i}: 시계가 앞으로만 간다({t})")
+            prev = lb
         if not x.get("text") or len(x["text"]) > BEAT_TEXT_MAX:
             errs.append(f"박자 {i}: text(큰 글자) 필수·{BEAT_TEXT_MAX}자 이하")
     if not ODDS.match(str(g.get("odds", ""))):
         errs.append("gumi.odds — '2%'·'0%'·'<1%' 꼴(끝 화면 \"Gumi's odds\")")
-    elif not re.search(r"(?i)\bodds\b", g.get("say", "")):
-        errs.append("gumi.say 에 'odds' — 끝 한 줄은 \"Gumi's odds: …\"")
+    elif not ODDS_SAY.search(g.get("say", "")):
+        errs.append("gumi.say 에 확률 — 끝 한 줄은 \"Gumi's odds: …\"")
     return errs
 
 
@@ -555,8 +801,9 @@ def _check_compare(s: dict, ls: list[dict]) -> list[str]:
     errs = []
     if s.get("scale") not in ("linear", "log"):
         errs.append("scale — linear | log(자릿수가 크게 다르면 log)")
-    if not s.get("unit"):
-        errs.append("unit 필수(막대 단위)")
+    unit = _unit_at(s.get("unit") or "", 0)
+    if not unit:
+        errs.append("unit 필수(막대 단위 — m · km · solar masses · tonnes · km/h …)")
     ranked = [x for x in ls if not x.get("twist")]
     if not ls or not ls[-1].get("twist") or len(ranked) != len(ls) - 1:
         errs.append("마지막 한 줄만 twist: true(반전)")
@@ -567,8 +814,8 @@ def _check_compare(s: dict, ls: list[dict]) -> list[str]:
         if not x.get("name") or len(x["name"]) > NAME_MAX:
             errs.append(f"항목 {i}: name 필수·{NAME_MAX}자 이하")
         if x.get("twist") and x.get("value") is None:
-            if not x.get("text"):
-                errs.append(f"항목 {i}: 값 없는 반전은 text(큰 글자) 필수")
+            if not x.get("text") or len(x["text"]) > TWIST_TEXT_MAX:
+                errs.append(f"항목 {i}: 값 없는 반전은 text(큰 글자) 필수·{TWIST_TEXT_MAX}자 이하")
             continue
         v = x.get("value")
         if not isinstance(v, (int, float)) or v <= 0:
@@ -576,6 +823,14 @@ def _check_compare(s: dict, ls: list[dict]) -> list[str]:
             continue
         if not x.get("label") or len(x["label"]) > LABEL_MAX:
             errs.append(f"항목 {i}: label('13 M') 필수·{LABEL_MAX}자 이하")
+        else:
+            # 막대 길이(value)와 읽는 값(label)이 같은 수인가(10/10 검수: value 130 이 '13 M' 로 그려졌다)
+            lv = label_value(x["label"])
+            k = 1.0 if lv and lv[1] == unit else UNIT_CONV.get((lv[1], unit)) if lv else None
+            if not lv or k is None:
+                errs.append(f"항목 {i}: label {x['label']!r} 의 단위가 unit {s.get('unit')!r} 와 맞지 않는다")
+            elif abs(lv[0] * k - v) > 0.05 * v + 1e-12:
+                errs.append(f"항목 {i}: value {v:g} ≠ label {x['label']!r} — 막대와 글자가 같은 값이어야 한다")
         if not x.get("twist"):
             vals.append(v)
     if vals != sorted(vals):
@@ -604,10 +859,11 @@ def _check_liminal(s: dict, ls: list[dict]) -> list[str]:
     return errs
 
 
-def check(s: dict, cat: dict | None = None, others: list[dict] | None = None) -> list[str]:
+def check(s: dict, cat: dict | None = None, others: list[dict] | None = None, allow_retired: bool = False,
+          today: dt.date | None = None) -> list[str]:
     if s.get("format") in NEW_FORMATS or (isinstance(s.get("id"), int) and s["id"] > 100):
         return check_new(s, others=others)
-    return check_old(s, cat)
+    return check_old(s, cat, allow_retired=allow_retired, today=today)
 
 
 # ── 메타(제목·설명·태그) ───────────────────────────────
@@ -617,9 +873,10 @@ DISCLOSURE_FACT = ("Visuals and narration are AI-generated (realistic, but not r
                    "sources above; the scenario is hypothetical — please don't try any of this. Host: Gumi (voice only).")
 DISCLOSURE_FICTION = ("This is FICTION — an original liminal-space story, not a real place or event. Visuals and narration "
                       "are AI-generated. Host: Gumi (voice only). 13+.")
-HASHTAGS = {"survival": "#shorts #howlongwouldyoulast #survival #science #space",
-            "compare": "#shorts #sizecomparison #ranked #science #space",
+HASHTAGS = {"survival": "#shorts #howlongwouldyoulast #survival #science",
+            "compare": "#shorts #sizecomparison #ranked #science",
             "liminal": "#shorts #liminalspace #liminal #rules #creepy"}
+LOOK_TAGS = {"deep": "#deepsea #ocean", "space": "#space", "earth": "#nature", "ancient": "#prehistoric", "liminal": ""}
 BASE_TAGS = {"survival": ["how long would you last", "survival", "science shorts", "nine tails tales"],
              "compare": ["size comparison", "ranked", "science shorts", "nine tails tales"],
              "liminal": ["liminal space", "liminal rules", "creepy rules", "nine tails tales"]}
@@ -644,7 +901,8 @@ def meta(s: dict, long_link: str | None = None) -> dict:
             lines += [f"Series: {pl[0]}"]
         if long_link:
             lines += [f"More from Gumi: {long_link}"]
-        lines += ["", DISCLOSURE_FICTION if fmt == "liminal" else DISCLOSURE_FACT, "", HASHTAGS[fmt]]
+        lines += ["", DISCLOSURE_FICTION if fmt == "liminal" else DISCLOSURE_FACT, "",
+                  (HASHTAGS[fmt] + " " + LOOK_TAGS.get(s.get("look"), "")).strip()]   # 깊은 바다 편에 #space 를 붙이지 않는다
         tags = list(dict.fromkeys((s.get("tags") or []) + BASE_TAGS[fmt]))
         return {"title": s["title"][:TITLE_MAX], "description": "\n".join(lines)[:4900], "tags": tags[:15]}
     lines = [s.get("description_hook") or s["hook"].capitalize() + ".", "",
@@ -674,6 +932,7 @@ def main() -> int:
     n.add_argument("--date", default=dt.date.today().isoformat())
     c = sub.add_parser("check")
     c.add_argument("files", nargs="+")
+    c.add_argument("--allow-retired", action="store_true", help="옛 설화 RULES(10/9 끝)를 일부러 다시 볼 때만 — 워크플로는 쓰지 않는다")
     a = ap.parse_args()
     if a.cmd == "next":
         es = on_date(dt.date.fromisoformat(a.date))
@@ -687,7 +946,7 @@ def main() -> int:
     bad = 0
     for f in a.files:
         with open(f, encoding="utf-8") as fh:
-            errs = check(json.load(fh), others=siblings(f))
+            errs = check(json.load(fh), others=siblings(f), allow_retired=a.allow_retired)
         print(("❌ " if errs else "✅ ") + f)
         for x in errs:
             print("   - " + x)
