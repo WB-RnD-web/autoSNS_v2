@@ -1,8 +1,13 @@
 #!/usr/bin/env python3
-"""Nine Tails RULES 쇼츠 업로드. ★기본은 비공개(private).
+"""Nine Tails 쇼츠 업로드(옛 RULES + 새 라인업 survival·compare·liminal). ★기본은 비공개(private).
 
-    python gumiho/tales/upload_rule.py output/tales_rules/R001_name-called-at-night.json
-    python gumiho/tales/upload_rule.py <script.json> --publish-at 2026-10-14T13:00:00Z
+    python gumiho/tales/upload_rule.py output/tales_rules/R101_mariana-trench-floor.json
+    python gumiho/tales/upload_rule.py <script.json> --publish-at 2026-10-13T20:00:00Z
+
+새 라인업(2026-10-13~, rules.py 머리말): 공개 시각은 편마다 — A survival 20:00 UTC(16:00 ET) · B compare/liminal 23:30 UTC
+  (19:30 ET), 배정일(=쓰는 날) 다음 날. 재생목록도 편마다(How Long Would You Last? · Ranked by Size · Liminal Rules).
+  실사 그림이라 'altered or synthetic content' 표시 — upload_tale.status_body 가 containsSyntheticMedia=true 를 넣는다
+  (그 함수는 롱폼과 같이 쓴다 — 여기서 고치지 않는다). madeForKids=false 도 거기서.
 
 공개 방식(레포 변수 RULES_PUBLISH, 없으면 TALES_PUBLISH 를 따른다 — 워크플로가 넘긴다):
   private   비공개로만 올린다
@@ -51,6 +56,15 @@ def publish_time(now: dt.datetime | None = None, hhmm: str | None = None, day: d
     return t.strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
+def when(s: dict, now: dt.datetime | None = None) -> str:
+    """대본 → 예약 공개 시각. 새 형식은 슬롯(A 20:00 · B 23:30 UTC), 옛 RULES 는 13:00 UTC — 둘 다 배정일 다음 날."""
+    if s.get("format") in RU.NEW_FORMATS:
+        sc = RU.shorts()
+        e = RU.entry(s["id"], sc)
+        return publish_time(now, hhmm=RU.slot_of(e, sc)[1], day=RU.assign_date(e, sc))
+    return publish_time(now, day=RU.day_of(s["id"]))
+
+
 def on_channel(yt, title: str) -> str | None:
     """채널 최근 업로드 50개 중 같은 제목이 있으면 그 영상 id(비공개·예약 포함 — 내 토큰이라 보인다)."""
     ch = yt.channels().list(part="contentDetails", mine=True).execute()["items"][0]
@@ -78,7 +92,7 @@ def main() -> int:
     if errs:
         print("::error::대본 검사 실패 — 올리지 않는다\n  " + "\n  ".join(errs))
         return 2
-    stem = f"R{s['id']:03d}_{s['slug']}"
+    stem = RU.stem_of(s)
     with open(os.path.join(a.renders, f"{stem}_meta.json"), encoding="utf-8") as f:
         rm = json.load(f)
     if rm.get("mock"):
@@ -101,17 +115,19 @@ def main() -> int:
         led[stem] = {"short": f"https://youtu.be/{dup}", "title": md["title"], "found": True}
         _save(a.ledger, led)
         return 0
-    at = a.publish_at or (publish_time(day=RU.day_of(s["id"])) if a.mode == "scheduled" else None)
+    at = a.publish_at or (when(s) if a.mode == "scheduled" else None)
     facts = UT.shorts_facts(rm["video"])
     vid = UT.insert(yt, rm["video"], md, "private", at)
     # 0회 점검용: 공개 시각 + 쇼츠 판정 조건(세로·3분 이하·madeForKids=false)을 ledger 에 남긴다(2026-10-09)
-    done = {"short": f"https://youtu.be/{vid}", "title": md["title"], "publish_at": at, "shorts": facts}
-    print(f"✅ RULES 쇼츠 {done['short']} · {'예약 ' + at if at else '비공개'} · {UT.facts_line(facts)}")
+    done = {"short": f"https://youtu.be/{vid}", "title": md["title"], "publish_at": at, "shorts": facts,
+            "format": s.get("format")}
+    print(f"✅ 쇼츠 {done['short']} · {'예약 ' + at if at else '비공개'} · {UT.facts_line(facts)}")
     led[stem] = done
     _save(a.ledger, led)
     done["langs"] = UT.localize(vid, md["title"], md["description"])
     try:
-        pid = U.ensure_playlist(yt, PLAYLIST, PLAYLIST_DESC, privacy="public")
+        name, desc = RU.playlist_for(s) or (PLAYLIST, PLAYLIST_DESC)     # 새 형식은 시리즈별 재생목록
+        pid = U.ensure_playlist(yt, name, desc, privacy="public")
         U.add_to_playlist(yt, pid, vid)
     except Exception as e:  # noqa: BLE001
         print(f"   ⚠️ 재생목록 실패(업로드는 성공): {e}")

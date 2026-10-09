@@ -1,11 +1,15 @@
 name: Nine Tails RULES — 규칙괴담 쇼츠 대본 검사 → 목소리·세로 그림(Spark) → 렌더 → 업로드
+# ★이름은 그대로 둔다 — tools/retry_no_runner 감시 목록이 이 이름을 본다(새 라인업도 같은 워크플로).
 
-# 2026-10-05 사용자: 'Nine Tails 를 어린 친구·청년용 도파민 쇼츠로' → 동아시아 규칙괴담 매일 쇼츠(gumiho/tales/rules.py).
-# 트리거: RULES 루틴이 routine/tales_rules(★누적 브랜치)에 output/tales_rules/R<NNN>_<slug>.json 을 push 하면 실행.
-#   ★대본을 믿지 않고 rules.py check 로 다시 검사한다 — 못 넘으면 렌더·업로드하지 않는다.
+# 2026-10-05 동아시아 규칙괴담 매일 쇼츠로 시작 → 2026-10-09 사용자: 한국 설화·조선 금지 → 새 라인업(10/13–10/26 시험):
+#   A survival(How Long Would You Last) 매일 20:00 UTC · B compare(Ranked)·liminal(Liminal Rules) 격일 23:30 UTC.
+# 트리거: 루틴이 routine/tales_rules(★누적 브랜치)에 output/tales_rules/R<NNN>_<slug>.json 을 push 하면 실행.
+#   ★하루에 대본 2편(A + B)이 한 push 로 온다 → 편마다 검사·렌더·업로드를 따로 돈다(한 편이 실패해도 다른 편은 올라간다,
+#   실패한 편이 있으면 마지막에 빨간불).
+#   ★대본을 믿지 않고 rules.py check 로 다시 검사한다(다른 편과 같은 그림·출처 없는 숫자·금지 주제) — 못 넘으면 렌더·업로드 안 함.
 #   routine/tales 와 경로·브랜치가 달라 tales.yml 과 겹치지 않는다(shorts.yml 은 output/news 만 본다).
-# 공개 방식: 레포 변수 RULES_PUBLISH(없으면 TALES_PUBLISH) — private | scheduled(배정일 다음 날 13:00 UTC = 22:00 KST 예약.
-#   2026-10-09: 21:00 UTC 첫 편이 5시간 반 0회 → 다른 쇼츠와 같은 시각으로. upload_rule.publish_time).
+# 공개 방식: 레포 변수 RULES_PUBLISH(없으면 TALES_PUBLISH) — private | scheduled(편마다 배정일 다음 날 슬롯 시각 예약 —
+#   upload_rule.when). 옛 RULES 는 13:00 UTC.
 # ★Spark 는 공용 서버: 그림은 한 건씩·대기열 6 초과면 기다림. ★돈 드는 호출 없음.
 
 on:
@@ -18,7 +22,7 @@ on:
     inputs:
       script:
         description: "대본 경로"
-        default: "gumiho/tales/rules_scripts/R001_name-called-at-night.json"
+        default: "gumiho/tales/rules_scripts/R101_mariana-trench-floor.json"
       upload:
         description: "업로드(공개 방식은 RULES_PUBLISH). 끄면 렌더만 — 결과는 아티팩트"
         type: boolean
@@ -34,8 +38,8 @@ permissions:
 jobs:
   run:
     runs-on: ubuntu-latest
-    # 30초 쇼츠: 목소리 ~1분 + 세로 그림 6–9장 ~6분(대기열 없을 때) + 프레임 ~2분 + 업로드
-    timeout-minutes: 60
+    # 쇼츠 2편: 편마다 목소리 ~1분 + 세로 그림 5–8장 ~6–10분(대기열 없을 때) + 프레임 ~2분 + 업로드
+    timeout-minutes: 100
     env:
       TZ: Asia/Seoul
       WBSPARK_BASE: ${{ vars.WBSPARK_BASE || 'https://wangbyul.com/wbSpark' }}
@@ -92,10 +96,6 @@ jobs:
           echo "targets=$T" >> "$GITHUB_OUTPUT"
           echo "대상: '$T'"
 
-      - name: 대본 검사
-        if: steps.pick.outputs.targets != ''
-        run: python gumiho/tales/rules.py check ${{ steps.pick.outputs.targets }}
-
       - name: ledger 캐시
         uses: actions/cache@v4
         with:
@@ -103,16 +103,30 @@ jobs:
           key: rules-ledger-${{ github.run_id }}
           restore-keys: rules-ledger-
 
-      - name: 렌더
+      # 편마다 따로: rules.py check(같은 폴더의 다른 편과 그림 재사용까지) → 렌더. 통과한 편만 ok 목록에.
+      - name: 대본 검사 · 렌더(편마다)
+        id: build
         if: steps.pick.outputs.targets != ''
+        env:
+          TARGETS: ${{ steps.pick.outputs.targets }}
         run: |
-          for f in ${{ steps.pick.outputs.targets }}; do
-            python gumiho/tales/render_rule.py "$f"
+          ok=""; bad=""
+          for f in $TARGETS; do
+            echo "── $f"
+            if python gumiho/tales/rules.py check "$f" && python gumiho/tales/render_rule.py "$f"; then
+              ok="$ok $f"
+            else
+              echo "::error::$f 검사·렌더 실패 — 이 편은 올리지 않는다(다른 편은 계속)"
+              bad="$bad $f"
+            fi
           done
+          echo "ok=$ok" >> "$GITHUB_OUTPUT"
+          echo "bad=$bad" >> "$GITHUB_OUTPUT"
+          echo "통과: '$ok' · 실패: '$bad'"
 
       - name: YouTube 자격증명(Nine Tails 채널 전용 토큰)
         id: cred
-        if: steps.pick.outputs.targets != '' && (github.event_name == 'push' || github.event.inputs.upload == 'true')
+        if: steps.build.outputs.ok != '' && (github.event_name == 'push' || github.event.inputs.upload == 'true')
         env:
           YT_TOKEN_JSON_GUMIHO: ${{ secrets.YT_TOKEN_JSON_GUMIHO }}
         run: |
@@ -120,22 +134,36 @@ jobs:
           if [ -z "$YT_TOKEN_JSON_GUMIHO" ]; then echo "::error::시크릿 YT_TOKEN_JSON_GUMIHO 없음"; exit 1; fi
           printf '%s' "$YT_TOKEN_JSON_GUMIHO" > pipeline/secrets/token_gumiho.json
 
-      - name: 업로드
+      - name: 업로드(편마다 — 공개 시각·재생목록은 upload_rule 이 편마다 정한다)
+        id: up
         if: steps.cred.outcome == 'success'
         env:
           YT_TOKEN_NOVEL: pipeline/secrets/token_gumiho.json
+          OK: ${{ steps.build.outputs.ok }}
         run: |
-          for f in ${{ steps.pick.outputs.targets }}; do
-            python gumiho/tales/upload_rule.py "$f"
+          fail=0
+          for f in $OK; do
+            python gumiho/tales/upload_rule.py "$f" || { echo "::error::$f 업로드 실패"; fail=1; }
           done
+          exit $fail
 
-      - name: 결과물(첫 프레임·메타 — 렌더만 한 경우 영상까지)
+      - name: 실패한 편이 있으면 빨간불
+        if: steps.build.outputs.bad != ''
+        env:
+          BAD: ${{ steps.build.outputs.bad }}
+        run: |
+          echo "::error::검사·렌더 실패: $BAD"
+          exit 1
+
+      - name: 결과물(첫·가운데·끝 프레임·메타 — 렌더만 한 경우 영상까지)
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: tales-rules-${{ github.run_number }}
           path: |
             output/gumiho/rules/*_first.jpg
+            output/gumiho/rules/*_mid.jpg
+            output/gumiho/rules/*_end.jpg
             output/gumiho/rules/*_meta.json
             output/gumiho/rules_ledger.json
             ${{ steps.cred.outcome != 'success' && 'output/gumiho/rules/*.mp4' || '' }}
