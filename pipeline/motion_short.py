@@ -448,6 +448,75 @@ def age_layout(n, cols):
     return {"rows": rows, "rh": rh, "cw": cw, "fy": int(fy), "fa": int(fa), "xy": xy}
 
 
+# ── '띠별 아침 덕담표'(2026-10-10, blessing_card.py) — 12띠 표 틀(두 칸 × 여섯 줄) 그대로, 칸마다 덕담 한 줄 ──────────
+# 순위 표(card)와 같은 자리·같은 칸 높이(178)·같은 글자(띠 58px · 출생연도 30px), 덕담 한 줄은 36px 이상(표의 한 줄 34px보다 크게).
+# 순위 동그라미·점수는 없다(순위가 아니다). ★오른쪽 칸 끝이 x 960 — 순위 표(982)보다 22px 안쪽(쇼츠 버튼 열을 비운다).
+# 색은 밝고 고운 쪽(크림 칸 · 짙은 글자) — '마음 편해지는' 결. 배경은 꽃 그림(키비주얼)이 있으면 옅은 막을 덮어 비치게,
+# 없으면 CSS 로 그린 분홍·살구 바탕 + 꽃잎 다섯 장 꽃(사진·외부 그림 없이 — 저작권 걱정 없음).
+BLESS_X0, BLESS_W, BLESS_TOP, BLESS_BOTTOM, BLESS_GAP = 60, 900, 360, 1498, 14
+BLESS_PAD = 24                      # 칸 안쪽 여백(왼쪽·오른쪽)
+BLESS_FN, BLESS_FY, BLESS_FL_MAX = 58, 30, 40
+# 꾸밈 꽃 — (x, y, 크기, 꽃잎 색, 돌림). 칸 밖 여백(왼쪽·오른쪽 끝·제목 옆·아래 22%)에 둔다 — 글자를 가리지 않는다.
+BLESS_FLOWERS = [(-60, -40, 230, "#F6B3C2", 10), (880, 36, 210, "#F9C9B0", 30), (968, 640, 150, "#F4A9BC", 5),
+                 (-56, 900, 140, "#F9C9B0", 40), (972, 1180, 130, "#F7BCCB", 20), (40, 1530, 220, "#F4A9BC", 15),
+                 (400, 1640, 170, "#F9C9B0", 50), (760, 1520, 240, "#F6B3C2", 25)]
+CSS_BLESS = """
+.bwrap{position:absolute;inset:0;}
+.bfloral{position:absolute;inset:0;background:
+  radial-gradient(ellipse at 14% 6%,rgba(255,206,220,.95) 0,rgba(255,206,220,0) 40%),
+  radial-gradient(ellipse at 94% 30%,rgba(255,226,196,.9) 0,rgba(255,226,196,0) 36%),
+  radial-gradient(ellipse at 6% 62%,rgba(252,210,222,.85) 0,rgba(252,210,222,0) 34%),
+  radial-gradient(ellipse at 88% 96%,rgba(255,214,228,.95) 0,rgba(255,214,228,0) 44%),
+  linear-gradient(180deg,#FFF4EF 0%,#FCE7E6 46%,#F9EEE4 100%);}
+/* 꽃 그림(키비주얼)이 깔렸으면 바탕을 옅게 — 그림이 비친다. 어두운 막(#scrim)도 밝은 막으로 바꾼다 */
+#scrim ~ .scene .bfloral{opacity:.40;}
+#scrim ~ .scene .bdeco{display:none;}      /* 그림에 꽃이 이미 있다 — CSS 꽃은 그림이 없을 때만 */
+#root #scrim{background:linear-gradient(180deg,rgba(255,246,241,.42) 0%,rgba(255,246,241,.16) 22%,
+  rgba(255,246,241,.16) 70%,rgba(255,246,241,.40) 100%);}
+.bfl{position:absolute;will-change:transform;}
+.bfl i{position:absolute;left:32%;top:0;width:36%;height:50%;border-radius:50%;transform-origin:50% 100%;opacity:.92;}
+.bfl b{position:absolute;left:39%;top:39%;width:22%;height:22%;border-radius:50%;background:#F6C85F;}
+.bpill{position:absolute;left:60px;top:94px;}
+.btitle{position:absolute;left:60px;top:186px;width:900px;height:118px;border-radius:30px;padding:0 26px;
+  display:flex;align-items:center;background:rgba(255,251,248,.92);box-shadow:0 8px 28px rgba(120,50,70,.14);
+  color:#45222E;font-weight:800;font-size:96px;letter-spacing:-3px;white-space:nowrap;line-height:1;}
+.btitle em{font-style:normal;color:var(--acc,#D97757);margin-left:.22em;}
+.bwrap .basis{width:auto;color:#55283A;text-shadow:none;background:rgba(255,251,248,.86);border-radius:12px;padding:3px 14px 3px 5px;}
+.bcell{position:absolute;border-radius:26px;background:rgba(255,252,249,.94);border:2px solid rgba(224,117,138,.30);
+  box-shadow:0 6px 20px rgba(110,45,60,.12);will-change:transform;}
+.bcell .nm{position:absolute;left:24px;top:14px;color:#3E1F2A;font-weight:800;letter-spacing:-1px;white-space:nowrap;line-height:1.1;}
+.bcell .yr{position:absolute;left:24px;top:86px;color:#7A4A57;font-weight:700;white-space:nowrap;line-height:1.1;
+  font-variant-numeric:tabular-nums;}
+.bcell .ln{position:absolute;left:24px;top:124px;color:#A8324F;font-weight:800;letter-spacing:-1px;white-space:nowrap;line-height:1.1;}
+.bcell .bfl{right:18px;top:18px;}
+.bwrap ~ .brand{color:rgba(110,45,60,.36);}
+"""
+
+
+def _bless_em(s):
+    """대략 글자 폭(em) — 한글 1 · 빈칸 0.4 · 숫자 0.56 · 가운뎃점 0.3 · 그 밖 영문 0.6(넉넉하게 잡는다)."""
+    return sum(0.4 if c == " " else 0.56 if c.isdigit() else 0.3 if c in "·.," else 0.6 if c.isascii() else 1.0
+               for c in str(s)) or 1.0
+
+
+def bless_layout(lines):
+    """12칸(두 칸 × 여섯 줄) → 칸 크기·[(x, y)…]·글자 크기. 덕담 한 줄은 그날 가장 긴 줄에 맞춰 한 크기로(최대 40px)."""
+    n = max(1, len(lines))
+    rows = -(-n // 2)
+    cw = (BLESS_W - BLESS_GAP) / 2
+    ch = (BLESS_BOTTOM - BLESS_TOP - BLESS_GAP * (rows - 1)) / rows
+    xy = [(BLESS_X0 + (k % 2) * (cw + BLESS_GAP), BLESS_TOP + (k // 2) * (ch + BLESS_GAP)) for k in range(n)]
+    fl = min([BLESS_FL_MAX] + [(cw - 2 * BLESS_PAD) / _bless_em(t) for t in lines])
+    return {"cw": cw, "ch": ch, "xy": xy, "fn": BLESS_FN, "fy": BLESS_FY, "fl": int(fl)}
+
+
+def _flower(size, color, rot, x=None, y=None):
+    """꽃잎 다섯 장 꽃(CSS 도형) — 글꼴에 꽃 문자가 없어도 그려진다."""
+    pos = f"left:{x}px;top:{y}px;" if x is not None else ""
+    petals = "".join(f'<i style="background:{color};transform:rotate({a}deg)"></i>' for a in (0, 72, 144, 216, 288))
+    return f'<div class="bfl" style="{pos}width:{size}px;height:{size}px;transform:rotate({rot}deg)">{petals}<b></b></div>'
+
+
 # ── 소식 '10초 한 장' (2026-10-04, news_card.py) — 정치 찬반 · 주식 성적표 · AI 체크리스트 · 요점 ──────────
 # 위에서 아래로 흐르는 한 기둥(flex). 오른쪽 끝(x 960~)과 아래 22%(y 1500~)는 비운다.
 # ▲▼·✓·○× 는 글꼴마다 없을 수 있어 CSS 도형으로 그린다(리눅스 러너에서 네모로 나오지 않게).
@@ -878,6 +947,30 @@ def scene_html(i, sc, acc):
                 f'<span class="l2">{esc(sc.get("title2",""))}</span></div>' + "".join(parts)
                 + basis_html(gid, sc.get("basis"), AGE_TOP - 62)
                 + f'<div class="afoot" style="top:{foot_y:.0f}px">{esc(sc.get("foot",""))}</div>')
+    elif t == "bless":
+        rows = sc.get("rows", [])
+        lay = bless_layout([r.get("line", "") for r in rows])
+        cw, ch = lay["cw"], lay["ch"]
+        deco = "".join(_flower(s, c, r, x, y) for x, y, s, c, r in BLESS_FLOWERS)
+        cells = []
+        for k, r in enumerate(rows):
+            x, y = lay["xy"][k]
+            yrs = "·".join(f"{v % 100:02d}" for v in r.get("years", [])) + "년생"
+            mini = _flower(52, ("#F4A9BC", "#F9C9B0")[k % 2], k * 17)
+            cells.append(
+                f'<div class="bcell" id="{gid}-c{k}" style="left:{x:.0f}px;top:{y:.0f}px;width:{cw:.0f}px;height:{ch:.0f}px">'
+                f'<div class="nm" style="font-size:{lay["fn"]}px">{esc(r.get("animal", ""))}띠</div>'
+                f'<div class="yr" style="font-size:{lay["fy"]}px">{esc(yrs)}</div>'
+                f'<div class="ln" style="font-size:{lay["fl"]}px">{esc(r.get("line", ""))}</div>{mini}</div>')
+        tt, hl = str(sc.get("title", "")), str(sc.get("hl", ""))
+        if hl and tt.endswith(hl):
+            th = f'{esc(tt[:-len(hl)].rstrip())}<em>{esc(hl)}</em>'
+        else:
+            th = esc(tt)
+        body = ('<div class="bwrap"><div class="bfloral"></div><div class="bdeco">' + deco + '</div>'
+                + f'<div class="bpill"><span class="pill" id="{gid}-pill"><span class="dot"></span>{esc(sc.get("pill",""))}</span></div>'
+                + f'<div class="btitle" id="{gid}-title">{th}</div>'
+                + basis_html(gid, sc.get("basis"), BLESS_TOP - 46) + "".join(cells) + "</div>")
     elif t == "news":
         body, sc["_n"] = news_html(gid, sc)
     elif t == "hook":
@@ -1045,6 +1138,12 @@ def scene_js(i, sc, acc, bar_h=560, presenter=False):
         n_rows = -(-len(sc.get("cells", [])) // max(1, int(sc.get("cols", 3))))
         for r in range(n_rows):
             out.append(f'tl.to("#{gid}-r{r}",{{backgroundColor:"rgba(237,217,188,.22)",duration:0.16,yoyo:true,repeat:1}},{S + 0.5 + r * 0.14:.2f});')
+    elif t == "bless":
+        # 덕담표는 0초부터 전부 떠 있다(찾기·캡처·반복 재생용). 칸이 쥐띠부터 차례로 살짝 숨 쉬고, 꽃은 천천히 돈다 — 차분하게.
+        out.append(f'tl.fromTo("#{gid}-pill",{{scale:0.92}},{{scale:1,duration:0.35,ease:"back.out(2)",transformOrigin:"left center"}},{S:.2f});')
+        for k in range(len(sc.get("rows", []))):
+            out.append(f'tl.to("#{gid}-c{k}",{{scale:1.03,duration:0.22,ease:"sine.inOut",yoyo:true,repeat:1}},{S + 0.5 + k * 0.28:.2f});')
+        out.append(f'tl.to("#{gid} .bfl",{{rotation:"+=24",duration:{sc["clip"]:.2f},ease:"none"}},{S:.2f});')
     elif t == "news":
         # 한 장은 0초부터 전부 떠 있다(캡처·반복 재생용). 칸이 차례로 한 번씩 톡 — 정지 화면이 아니라는 신호.
         out.append(f'tl.fromTo("#{gid}-pill",{{scale:0.92}},{{scale:1,duration:0.35,ease:"back.out(2)",transformOrigin:"left center"}},{S:.2f});')
@@ -1115,6 +1214,8 @@ def build_html(scenes, total, acc="#D97757", bg=False, presenter=False):
         css += CSS_NEWS
     if any(sc.get("type") == "agetable" for sc in scenes):
         css += CSS_AGE
+    if any(sc.get("type") == "bless" for sc in scenes):
+        css += CSS_BLESS
     if any(sc.get("basis") for sc in scenes):
         css += CSS_BASIS
     parts = [scene_html(i, sc, acc) for i, sc in enumerate(scenes)]
@@ -1209,7 +1310,7 @@ def build_motion(spec, out_mp4, workdir, quality="standard"):
     os.environ["PATH"] = os.environ.get("PATH", "") + os.pathsep + os.path.dirname(FFMPEG)
     scenes = spec["scenes"]
     # 한 장 표는 화면 전체를 쓴다 → 진행자 자리 없음
-    pr_on = presenter_on(spec.get("topic", "")) and not any(sc.get("type") in ("card", "grid", "news", "tier", "gunghap", "agetable") for sc in scenes)
+    pr_on = presenter_on(spec.get("topic", "")) and not any(sc.get("type") in ("card", "grid", "news", "tier", "gunghap", "bless", "agetable") for sc in scenes)
     duo = pr_on and os.environ.get("PRESENTER_DUO", "1") not in ("0", "false", "False")
     assign_speakers(scenes, duo=duo)
     if scenes and scenes[0].get("type") == "hook" and top_hook_on(spec.get("topic", "")):

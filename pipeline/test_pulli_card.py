@@ -48,7 +48,7 @@ texts = []
 combos = set()
 for d in days:
     rows = P.build_rows(d)
-    sb = P.storyboard(d)
+    sb = P.pulli_storyboard(d)          # 덕담표 날(10/11~10/23 격일)에도 풀이형 표 자체는 늘 만들 수 있어야 한다
     if sorted(r["animal"] for r in rows) != sorted(FC.ANIMALS) or [r["rank"] for r in rows] != list(range(1, 13)):
         bad.append((d, "띠·순위"))
     if any(a["score"] <= b["score"] for a, b in zip(rows, rows[1:])):
@@ -67,6 +67,13 @@ hits = sorted({w for w in BANNED for t in texts if w in t})
 ck("금지어 없음(의료·투자·겁주기)", not hits, hits)
 ck("60일 표가 서로 다르다(테마·1~3위 조합 50가지 이상 — '서로 바꿔 끼울 수 있는 영상'이 아니다)", len(combos) >= 50, len(combos))
 ck("같은 날짜면 같은 표", P.storyboard(days[0]) == P.storyboard(days[0]))
+
+print("── 덕담표 날(10/11~10/24 격일, blessing_card) ──")
+bless = [d for d in days if P.is_bless_day(d)]
+ck("덕담표 날 7편 · 그 밖의 날은 storyboard = 풀이형 표 그대로", len(bless) == 7
+   and all(P.storyboard(d) == P.pulli_storyboard(d) for d in days if d not in bless), bless)
+ck("덕담표 날은 같은 토픽·같은 파일 경로로 덕담표", all(P.storyboard(d)["topic"] == P.TOPIC
+   and P.storyboard(d)["theme"].startswith("bless:") for d in bless))
 
 print("── 스토리보드·메타 ──")
 sb = P.storyboard(dt.date(2026, 10, 8))
