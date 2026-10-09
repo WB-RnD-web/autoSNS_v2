@@ -160,6 +160,23 @@ check("지금 도는 운세·인스타·구미호는 끈 목록에 없다",
       not any(t in M.RETIRED for t in ("fortune", "fortune_name", "fortune_theme", "fortune_tier", "fortune_gunghap",
                                        "fortune_newyear", "fortune_pulli", "insta_pick", "tales", "tales_rules", "pulse")))
 
+print("\n── ⑬ 편성을 바꾼 루틴은 옛 리듬을 버리고 다시 배운다(10/10 Nine Tails 개편)")
+NOW13 = dt.datetime(2026, 10, 11, 11, 0, tzinfo=KST)      # 일요일 — 쇼츠 빈 날·롱폼은 토요일만
+old13 = runs("tales_rules", list(range(2, 9)), 21, 0, base=NOW13) + runs("tales", list(range(2, 9)), 10, 0, base=NOW13)
+hist13 = M.parse_runs({"workflow_runs": old13})
+miss13a, _ = M.judge(M.learn(hist13, NOW13, 28), NOW13, retired={})
+check("초기화 없으면 옛 매일 리듬으로 거짓 누락을 낸다(이 고장을 재현)", len(miss13a) >= 1, f"{len(miss13a)}건")
+kept = M.apply_reset(hist13)
+check("10/10 전 기록은 tales·tales_rules 에서 빠진다", len(kept) == 0, f"{len(kept)}건")
+miss13b, held13 = M.judge(M.learn(kept, NOW13, 28), NOW13, retired={})
+check("초기화 뒤엔 조용하다", len(miss13b) == 0, f"{len(miss13b)}건")
+other13 = runs("fortune_pulli", list(range(2, 9)), 10, 40, base=NOW13)
+check("다른 토픽 기록은 그대로 둔다", len(M.apply_reset(M.parse_runs({"workflow_runs": other13}))) == 7)
+new13 = runs("tales_rules", [0, 1, 2, 3, 4], 21, 0, base=dt.datetime(2026, 10, 17, 11, 0, tzinfo=KST))
+check("초기화 뒤 새 기록은 남는다(10/12~10/16)",
+      len(M.apply_reset(M.parse_runs({"workflow_runs": new13}))) == 5)
+check("초기화 목록은 구미호 두 줄만", set(M.RESET) == {"tales", "tales_rules"})
+
 print("")
 if FAIL:
     print(f"❌ 실패 {len(FAIL)}건: " + ", ".join(FAIL))

@@ -64,6 +64,16 @@ RETIRED = {"horoscope": "별자리 루틴 끔(2026-09-29)", "scp": "SCP 루틴 �
            "ai_pm": "AI 소식 루틴 끔(2026-10-07)", "asmr": "ASMR 루틴 끔(2026-10-07)",
            "korea_sounds": "Korea Sleep Sounds 루틴 끔(2026-10-07)", "drama": "사연 드라마 루틴 끔(2026-10-07)",
            "insta": "옛 인스타 제작기록 루틴 끔(2026-10-07 — 지금은 insta_pick)"}
+# 편성을 통째로 바꾼 루틴 — 이 날짜 전 이력은 버리고 새 리듬을 처음부터 배운다(표본이 MIN_SAMPLES 모일 때까지 조용).
+#   2026-10-10 Nine Tails 개편(#143): 옛 리듬(10/4~10/9 매일 실험)을 붙잡으면 롱폼 주 1회(토)·쇼츠 10/10~10/11 빈 날을
+#   '발행 누락'으로 빨갛게 띄운다. 끄는 게 아니라 다시 배우는 것 — 새 리듬이 서면 다시 감시한다.
+RESET = {"tales": dt.date(2026, 10, 10), "tales_rules": dt.date(2026, 10, 10)}
+
+
+def apply_reset(history: list[tuple[str, dt.datetime]], reset: dict | None = None) -> list[tuple[str, dt.datetime]]:
+    """RESET 날짜 전 기록을 그 토픽에서만 뺀다."""
+    reset = RESET if reset is None else reset
+    return [(t, w) for t, w in history if not (t in reset and w.date() < reset[t])]
 
 
 def parse_runs(payload: dict | list) -> list[tuple[str, dt.datetime]]:
@@ -214,7 +224,7 @@ def main() -> int:
         raw = sys.stdin.read() if src == "-" else open(src, encoding="utf-8").read()
         history += parse_runs(json.loads(raw))
     # 같은 실행이 페이지 경계에서 중복될 수 있다 — (토픽, 시각) 으로 접는다
-    history = sorted(set(history))
+    history = apply_reset(sorted(set(history)))
 
     now = (dt.datetime.fromisoformat(args.now).astimezone(KST) if args.now
            else dt.datetime.now(KST))
