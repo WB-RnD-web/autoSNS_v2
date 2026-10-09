@@ -1,0 +1,94 @@
+{
+ "date": "2026-10-10",
+ "topic": "fortune_name",
+ "slot": "year",
+ "theme": "year:grandkids",
+ "privacy": "public",
+ "accent": "#C9A227",
+ "_min_total": 9.0,
+ "hook_title": "손주 복 순위",
+ "headline": "태어난 해 끝자리로 보는 손주 복 순위 1위~10위 | 0년생~9년생 전부 · 10월 10일",
+ "thumbnail_hook": "colorful children's toys and a picture book on a warm Korean floor cushion in soft afternoon light, joyful cozy mood, no people, no text",
+ "scenes": [
+  {
+   "type": "grid",
+   "pill": "10월 10일 토요일 · 내 것 찾기",
+   "title": "태어난 해 끝자리로 보는",
+   "title2": "손주 복 순위",
+   "cols": 2,
+   "cells": [
+    {
+     "big": "0년생",
+     "small": "3위",
+     "note": "庚 · 기쁜 소식",
+     "hi": true
+    },
+    {
+     "big": "1년생",
+     "small": "7위",
+     "note": "辛 · 함께 나들이",
+     "hi": false
+    },
+    {
+     "big": "2년생",
+     "small": "4위",
+     "note": "壬 · 사진 한 장",
+     "hi": false
+    },
+    {
+     "big": "3년생",
+     "small": "9위",
+     "note": "癸 · 돌봄은 적당히",
+     "hi": false
+    },
+    {
+     "big": "4년생",
+     "small": "5위",
+     "note": "甲 · 소소한 기쁨",
+     "hi": false
+    },
+    {
+     "big": "5년생",
+     "small": "8위",
+     "note": "乙 · 기다려 주기",
+     "hi": false
+    },
+    {
+     "big": "6년생",
+     "small": "1위",
+     "note": "丙 · 손주 재롱 가득",
+     "hi": true
+    },
+    {
+     "big": "7년생",
+     "small": "2위",
+     "note": "丁 · 손주 자랑",
+     "hi": true
+    },
+    {
+     "big": "8년생",
+     "small": "6위",
+     "note": "戊 · 선물 고르는 재미",
+     "hi": false
+    },
+    {
+     "big": "9년생",
+     "small": "10위",
+     "note": "己 · 먼저 안부",
+     "hi": false
+    }
+   ],
+   "foot": "※ 끝자리: 1954년생 → 4년생 · 재미로 보는 운세",
+   "basis": "끝자리도 입춘 기준 · 양력 1월~2월 3일생은 앞 해",
+   "brand": "왕별이 · 내 것 찾기",
+   "narration": "태어난 해 끝자리로 보는 손주 복 순위예요. 내 끝자리는 몇 위인지 찾아보세요."
+  }
+ ],
+ "platforms": {
+  "youtube": {
+   "title": "태어난 해 끝자리로 보는 손주 복 순위 1위~10위 | 0년생~9년생 전부 · 10월 10일 #shorts",
+   "description": "태어난 해 끝자리로 보는 손주 복 순위 — 0년생부터 9년생까지 한 장에 모았어요. 1954년생이면 4년생이에요. 내 끝자리는 몇 위인가요? 댓글로 남겨 주세요 🙏\n매일 아침 7시 40분 태어난 해 · 아침 9시 40분 이름 글자 · 오후 1시 40분 성씨 · 오후 3시 40분 태어난 달·음력 생일 끝자리 표가 올라와요.\n\n📅 태어난 해 끝자리도 띠처럼 '입춘' 기준이에요\n· 양력 생일이 1월 1일~2월 3일이면 앞 해 끝자리로 보세요. 예) 1955년 1월 10일생 → 54년생, 끝자리 4로 보세요\n· 입춘이 2월 5일인 해(47·48·51·52·56·60·64·68·72·76·80·84년)는 2월 4일생도 앞 해 끝자리예요.\n· 음력 생일로 아시면 음력으로 태어난 해 끝자리 그대로예요(섣달 보름~정월 보름 생만 확인).\n\n※ 재미로 보는 풀이입니다. 순위는 재미로 정한 것이에요.\n\n#태어난해 #띠별운세 #운세 #shorts"
+  }
+ },
+ "notes": "내 것 찾기 표 · year:grandkids · name_card.py 가 만든 스토리보드(루틴은 실행 스위치만)"
+}
