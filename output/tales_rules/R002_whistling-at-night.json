@@ -1,0 +1,27 @@
+{
+ "id": 2,
+ "slug": "whistling-at-night",
+ "format": "rules",
+ "look": "modern",
+ "title": "Never Whistle at Night in Korea or Japan #shorts",
+ "hook": "DON'T WHISTLE",
+ "description_hook": "In Korea and Japan, one sound after dark is said to invite things into your house.",
+ "lines": [
+  {"rule": 1, "text": "NEVER WHISTLE AFTER DARK", "say": "Rule one. In Korea and Japan, never whistle after dark.",
+   "img": "a teenage girl at an open apartment window at night, lips pursed as if to whistle, the city below dark and silent, cold blue moonlight"},
+  {"rule": 2, "text": "THE SNAKES CAN HEAR IT", "say": "Rule two. In Korea, they say a whistle at night calls snakes into the house.",
+   "img": "a dark snake sliding slowly across the tiled floor of a modern apartment entryway at night, shoes by the door, a thin strip of hallway light"},
+  {"rule": 3, "text": "IT CALLS THEM INSIDE", "say": "Rule three. Not just snakes. Ghosts and bad spirits follow the sound in.",
+   "img": "a pale shadowy figure standing just inside a dim apartment living room at night, half hidden behind a curtain, faint moonlight from the balcony"},
+  {"rule": 4, "text": "IN JAPAN IT'S CALLED YOBUE", "say": "Rule four. In Japan, it's called yobue. In some regions, it calls the tengu. Or kidnappers.",
+   "img": "a narrow empty Japanese residential street at night, one flickering streetlight, a tall dark figure with a long nose silhouetted on a rooftop above"},
+  {"rule": 5, "text": "IT'S JUST A STORY…", "say": "Rule five. Your parents say it's just a story to keep you quiet at night.",
+   "img": "a mother tucking a child into bed in a dim modern bedroom, finger raised to her lips, the window behind them black"},
+  {"text": "THEN WHO'S WHISTLING?", "say": "So why is someone whistling outside your window tonight?",
+   "img": "a dark bedroom window seen from inside at night, curtains slightly parted, nothing visible outside but black trees and a faint pale shape"}
+ ],
+ "loop_back": "The last line plays a whistle outside the window — which throws the viewer straight back to rule one: never whistle after dark (not even to answer it).",
+ "gumi": {"react": "smug", "say": "I never whistle after dark. Have you ever tried it?"},
+ "source": "A common taboo in Korea and Japan: whistling at night is said to call snakes, ghosts or bad spirits; in Japan it is called yobue, and in some regions it is said to summon tengu or kidnappers. Parents in both countries still use it to keep children quiet at night.",
+ "tags": ["scary rules", "korean superstition", "japanese superstition", "yobue", "whistling at night", "dont whistle at night", "tengu", "asian horror", "creepy rules", "night taboo"]
+}
