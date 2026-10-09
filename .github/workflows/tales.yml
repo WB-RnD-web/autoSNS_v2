@@ -1,10 +1,12 @@
 name: Nine Tails Tales — 대본 검사 → 목소리·그림(Spark) → 본편·쇼츠 렌더 → 비공개 업로드
 
-# 새 채널(사용자 개인 채널, 영어 · 13~30세 해외). 왕별이와 무관 — 토큰이 따로다(YT_TOKEN_JSON_GUMIHO).
+# 새 채널(사용자 개인 채널, 영어 · 20~39세 해외). 왕별이와 무관 — 토큰이 따로다(YT_TOKEN_JSON_GUMIHO).
+# ★2026-10-09 개편: 27화부터 해설편(극한 장소·심해·what-if) 주 1편 — 루틴은 토요일에 쓰고, 일요일 14:00 UTC 공개.
 # 트리거: Tales 루틴이 routine/tales(★누적 브랜치)에 output/tales/NNN_slug.json 을 push 하면 실행.
 #   ★대본을 믿지 않고 gumiho/tales/tales.py check 로 다시 검사한다 — 못 넘으면 렌더·업로드하지 않는다.
 #   루틴이 claude/* 로 잘못 밀면 orphan-rescue.yml 이 routine/tales 로 옮긴다(WATCH 에 output/tales 추가).
-# 공개 방식(레포 변수 TALES_PUBLISH): private(기본 — 비공개로만) | scheduled(다음 토요일 15:00 UTC 예약 공개, 쇼츠는 하루 전)
+# 공개 방식(레포 변수 TALES_PUBLISH): private(기본 — 비공개로만) | scheduled(catalog date 일요일 14:00 UTC 예약 공개,
+#   붙은 쇼츠는 본편 뒤 월·수·금). retired(설화) 편은 '대본 검사'에서 멈춘다.
 # ★Spark 는 공용 서버: 그림은 한 건씩·대기열 6 초과면 기다림, 목소리는 동시 2건.
 # ★돈 드는 호출 없음: Spark · NVIDIA 무료 키(그림 폴백) · 퍼블릭 레포 Actions 뿐.
 
@@ -18,7 +20,7 @@ on:
     inputs:
       script:
         description: "대본 경로"
-        default: "gumiho/tales/scripts/001_gumiho.json"
+        default: "gumiho/tales/scripts/027_places-you-cant-survive.json"
       upload:
         description: "업로드(TALES_PUBLISH 방식). 끄면 렌더만 — 결과는 아티팩트"
         type: boolean

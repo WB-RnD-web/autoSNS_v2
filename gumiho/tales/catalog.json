@@ -1,6 +1,20 @@
 {
- "about": "Nine Tails Tales 편성표. 루틴은 `python gumiho/tales/tales.py next --date <오늘>` 이 준 한 편만 쓴다(날짜로 결정론적 배정). facts 는 확인된 뼈대, careful 은 단정하면 안 되는 것. format: tale(설화) · urban(현대 괴담) · list(카운트다운) · versus(대결) · behind(유명 작품 속 진짜 한국 — 작품은 입구, 이야기는 설화) · mystery(실제 기록·장소의 미스터리). ★2026-10-01 재편: 영어권 대형 공포 채널은 실화·실제 장소·인터넷 괴담이 주류이고, 옛 설화 '소개'는 채널 평균의 10~15%에 그친다 — 옛이야기는 4편에 1편 이하로 — 같은 틀이 연속되지 않게 섞는다. 지역: 한국이 기본, 3~4편마다 일본·중국(수요가 한국 주제의 5~50배 — 2026-09-29 조사). 10월(할로윈 달)은 가장 무서운 편을 앞에 둔다. ★2026-10-02 1주 형식 실험(sprint): 10/4~10/10 하루 한 편(3~9화), 10/14 부터 주 1편(10화~). pov = 2인칭(you) 이야기.",
+ "about": "Nine Tails Tales 편성표. ★2026-10-09 개편: 27화부터 해설편(극한 장소·심해·what-if — 실제 과학·장소를 실제 숫자로) 주 1편, 일요일 14:00 UTC(미 동부 10시) 공개, 10~12분. 루틴은 토요일에 `python gumiho/tales/tales.py next --date <오늘>` 이 준 한 편만 쓴다(그 주 일요일 편 — 없으면 none). facts 는 출처로 확인한 숫자(대본의 큰 숫자는 여기 있어야 검사 통과), careful 은 단정하면 안 되는 것, sources 는 설명란에 그대로 나간다. 1~26화(한국·동아시아 설화)는 retired — 지우지 않고 남기되 편성·렌더·업로드에서 뺀다. backlog = 다음 후보 제목. (예전 설명) Nine Tails Tales 편성표. 루틴은 `python gumiho/tales/tales.py next --date <오늘>` 이 준 한 편만 쓴다(날짜로 결정론적 배정). facts 는 확인된 뼈대, careful 은 단정하면 안 되는 것. format: tale(설화) · urban(현대 괴담) · list(카운트다운) · versus(대결) · behind(유명 작품 속 진짜 한국 — 작품은 입구, 이야기는 설화) · mystery(실제 기록·장소의 미스터리). ★2026-10-01 재편: 영어권 대형 공포 채널은 실화·실제 장소·인터넷 괴담이 주류이고, 옛 설화 '소개'는 채널 평균의 10~15%에 그친다 — 옛이야기는 4편에 1편 이하로 — 같은 틀이 연속되지 않게 섞는다. 지역: 한국이 기본, 3~4편마다 일본·중국(수요가 한국 주제의 5~50배 — 2026-09-29 조사). 10월(할로윈 달)은 가장 무서운 편을 앞에 둔다. ★2026-10-02 1주 형식 실험(sprint): 10/4~10/10 하루 한 편(3~9화), 10/14 부터 주 1편(10화~). pov = 2인칭(you) 이야기.",
  "start": "2026-09-30",
+ "weekly": {
+  "from": "2026-10-10",
+  "publish_utc": "14:00",
+  "window_days": 6,
+  "why": "2026-10-09 사용자: 주 1편 일요일 14:00 UTC. 편마다 date(일요일)가 있고, 그 6일 전~당일에 next 가 그 편을 준다 (루틴은 토요일 실행). 10/10~10/17 은 공개할 편이 없다(스프린트 끝 · 설화 9화 취소). 1주 형식 실험(sprint)은 10/9 로 끝."
+ },
+ "sprint": {
+  "from": "2026-10-04",
+  "to": "2026-10-10",
+  "first_id": 3,
+  "resume_from": "2026-10-14",
+  "why": "2026-10-02 사용자: '매일 새로운 주제·새로운 방식, 쇼츠랑 롱폼 1주일'. 7편 = 7형식(list·behind·versus·urban·tale(JP)·mystery·pov), 하루 한 편 15:00 UTC 공개 + 쇼츠 2시간 전, 추가 쇼츠 없음. 10/14(수)부터 다시 주 1편(10화).",
+  "ended": "2026-10-09 — 10/10(9화, 설화)은 취소. 아래 from~to 는 기록(sprint_day 가 3~9화 추가 쇼츠 예외에 쓴다)"
+ },
  "tales": [
   {
    "id": 1,
@@ -8,7 +22,8 @@
    "region": "KR",
    "title_idea": "Korea's Nine-Tailed Fox Is Darker Than Japan's Kitsune",
    "done": true,
-   "format": "tale"
+   "format": "tale",
+   "retired": "2026-10-09 사용자: 한국 설화·조선 주제 금지(롱폼 0~15회) — 편성에서 뺀다(기록으로 남김)"
   },
   {
    "id": 2,
@@ -33,7 +48,8 @@
    "sources": [
     "Encyclopedia of Korean Folk Culture — 여우누이: https://folkency.nfm.go.kr"
    ],
-   "format": "tale"
+   "format": "tale",
+   "retired": "2026-10-09 사용자: 한국 설화·조선 주제 금지(롱폼 0~15회) — 편성에서 뺀다(기록으로 남김)"
   },
   {
    "id": 3,
@@ -58,7 +74,8 @@
    "tie_in": "Evergreen; very shareable with viewers aged 13–30 (countdown format)",
    "sources": [
     "Encyclopedia of Korean Folk Culture — 손톱 먹은 들쥐, 금기어: https://folkency.nfm.go.kr"
-   ]
+   ],
+   "retired": "2026-10-09 사용자: 한국 설화·조선 주제 금지(롱폼 0~15회) — 편성에서 뺀다(기록으로 남김)"
   },
   {
    "id": 4,
@@ -89,7 +106,8 @@
     "Korea Herald (2025-08-27): KPop Demon Hunters becomes Netflix's most-watched film",
     "Encyclopedia of Korean Folk Culture — 저승사자, 사자밥, 차사본풀이: https://folkency.nfm.go.kr",
     "Encyclopedia of Korean Folk Culture — 까치호랑이(민화), 무당, 굿: https://folkency.nfm.go.kr"
-   ]
+   ],
+   "retired": "2026-10-09 사용자: 한국 설화·조선 주제 금지(롱폼 0~15회) — 편성에서 뺀다(기록으로 남김)"
   },
   {
    "id": 5,
@@ -113,7 +131,8 @@
     "Shanhaijing (Classic of Mountains and Seas)",
     "Encyclopedia of Korean Folk Culture — 구미호",
     "Otogizoshi — Tamamo-no-Mae"
-   ]
+   ],
+   "retired": "2026-10-09 사용자: 한국 설화·조선 주제 금지(롱폼 0~15회) — 편성에서 뺀다(기록으로 남김)"
   },
   {
    "id": 6,
@@ -138,7 +157,8 @@
    "sources": [
     "Wikipedia — Elevator game",
     "Creepypasta wiki / Know Your Meme — Elevator Game (origin claims)"
-   ]
+   ],
+   "retired": "2026-10-09 사용자: 한국 설화·조선 주제 금지(롱폼 0~15회) — 편성에서 뺀다(기록으로 남김)"
   },
   {
    "id": 7,
@@ -162,7 +182,8 @@
     "Nasu town / Tochigi tourism pages on Sessho-seki",
     "Otogizoshi & Noh play 'Sessho-seki'"
    ],
-   "format": "tale"
+   "format": "tale",
+   "retired": "2026-10-09 사용자: 한국 설화·조선 주제 금지(롱폼 0~15회) — 편성에서 뺀다(기록으로 남김)"
   },
   {
    "id": 8,
@@ -186,7 +207,8 @@
    "sources": [
     "Annals of the Joseon Dynasty — Gwanghaegun Ilgi, 1609 (sillok.history.go.kr)",
     "Korea JoongAng Daily / Korea Times features on the 1609 Gangwon sky record"
-   ]
+   ],
+   "retired": "2026-10-09 사용자: 한국 설화·조선 주제 금지(롱폼 0~15회) — 편성에서 뺀다(기록으로 남김)"
   },
   {
    "id": 9,
@@ -208,7 +230,8 @@
     "Film The Mimic (장산범, 2017)",
     "Encyclopedia of Korean Folk Culture — 해와 달이 된 오누이"
    ],
-   "format": "pov"
+   "format": "pov",
+   "retired": "2026-10-09 사용자: 한국 설화·조선 주제 금지(롱폼 0~15회) — 편성에서 뺀다(기록으로 남김)"
   },
   {
    "id": 10,
@@ -235,7 +258,8 @@
     "CNN Travel (2012): 7 of the freakiest places on the planet",
     "Coverage of the film Gonjiam: Haunted Asylum (2018) and the building's 2018 demolition (Korea Herald / Korea JoongAng Daily)"
    ],
-   "look": "modern"
+   "look": "modern",
+   "retired": "2026-10-09 사용자: 한국 설화·조선 주제 금지(롱폼 0~15회) — 편성에서 뺀다(기록으로 남김)"
   },
   {
    "id": 11,
@@ -259,7 +283,8 @@
     "Encyclopedia of Korean Folk Culture — 도깨비, 혹부리 영감: https://folkency.nfm.go.kr"
    ],
    "format": "tale",
-   "look": "joseon"
+   "look": "joseon",
+   "retired": "2026-10-09 사용자: 한국 설화·조선 주제 금지(롱폼 0~15회) — 편성에서 뺀다(기록으로 남김)"
   },
   {
    "id": 12,
@@ -288,7 +313,8 @@
     "Laurel Kendall, Shamans, Housewives, and Other Restless Spirits (1985)",
     "Korea JoongAng Daily / Yonhap coverage of Exhuma's box office (2024)"
    ],
-   "look": "modern"
+   "look": "modern",
+   "retired": "2026-10-09 사용자: 한국 설화·조선 주제 금지(롱폼 0~15회) — 편성에서 뺀다(기록으로 남김)"
   },
   {
    "id": 13,
@@ -312,7 +338,8 @@
    "sources": [
     "Michael Dylan Foster, 'The Question of the Slit-Mouthed Woman' (Asian Folklore Studies, 2007)"
    ],
-   "look": "modern"
+   "look": "modern",
+   "retired": "2026-10-09 사용자: 한국 설화·조선 주제 금지(롱폼 0~15회) — 편성에서 뺀다(기록으로 남김)"
   },
   {
    "id": 14,
@@ -336,7 +363,8 @@
     "Encyclopedia of Korean Folk Culture — 분신사바 / 학교 괴담: https://folkency.nfm.go.kr",
     "Film Bunshinsaba (분신사바, 2004)"
    ],
-   "look": "modern"
+   "look": "modern",
+   "retired": "2026-10-09 사용자: 한국 설화·조선 주제 금지(롱폼 0~15회) — 편성에서 뺀다(기록으로 남김)"
   },
   {
    "id": 15,
@@ -361,7 +389,8 @@
     "Miryang city tourism — Arang-gak"
    ],
    "format": "tale",
-   "look": "joseon"
+   "look": "joseon",
+   "retired": "2026-10-09 사용자: 한국 설화·조선 주제 금지(롱폼 0~15회) — 편성에서 뺀다(기록으로 남김)"
   },
   {
    "id": 16,
@@ -384,7 +413,8 @@
     "Encyclopedia of Korean Folk Culture — 학교괴담: https://folkency.nfm.go.kr",
     "Film Whispering Corridors (1998)"
    ],
-   "look": "modern"
+   "look": "modern",
+   "retired": "2026-10-09 사용자: 한국 설화·조선 주제 금지(롱폼 0~15회) — 편성에서 뺀다(기록으로 남김)"
   },
   {
    "id": 17,
@@ -408,7 +438,8 @@
    "sources": [
     "Encyclopedia of Korean Folk Culture — 처녀귀신, 몽달귀신, 물귀신: https://folkency.nfm.go.kr"
    ],
-   "format": "list"
+   "format": "list",
+   "retired": "2026-10-09 사용자: 한국 설화·조선 주제 금지(롱폼 0~15회) — 편성에서 뺀다(기록으로 남김)"
   },
   {
    "id": 18,
@@ -429,7 +460,8 @@
    "sources": [
     "Encyclopedia of Korean Culture — 장화홍련전: https://encykorea.aks.ac.kr"
    ],
-   "format": "tale"
+   "format": "tale",
+   "retired": "2026-10-09 사용자: 한국 설화·조선 주제 금지(롱폼 0~15회) — 편성에서 뺀다(기록으로 남김)"
   },
   {
    "id": 19,
@@ -451,7 +483,8 @@
    "tie_in": "Imugi appears in K-dramas (e.g., Tale of the Nine Tailed)",
    "sources": [
     "Encyclopedia of Korean Folk Culture — 불개, 이무기, 해태, 삼족오, 업: https://folkency.nfm.go.kr"
-   ]
+   ],
+   "retired": "2026-10-09 사용자: 한국 설화·조선 주제 금지(롱폼 0~15회) — 편성에서 뺀다(기록으로 남김)"
   },
   {
    "id": 20,
@@ -475,7 +508,8 @@
     "Fengshen Yanyi (Investiture of the Gods)",
     "Sima Qian, Records of the Grand Historian — Annals of Yin"
    ],
-   "format": "tale"
+   "format": "tale",
+   "retired": "2026-10-09 사용자: 한국 설화·조선 주제 금지(롱폼 0~15회) — 편성에서 뺀다(기록으로 남김)"
   },
   {
    "id": 21,
@@ -497,7 +531,8 @@
    "sources": [
     "Encyclopedia of Korean Folk Culture — 바리공주: https://folkency.nfm.go.kr"
    ],
-   "format": "tale"
+   "format": "tale",
+   "retired": "2026-10-09 사용자: 한국 설화·조선 주제 금지(롱폼 0~15회) — 편성에서 뺀다(기록으로 남김)"
   },
   {
    "id": 22,
@@ -520,7 +555,8 @@
    "sources": [
     "Encyclopedia of Korean Folk Culture — 저승사자",
     "Rakugo 'Shinigami' (San'yūtei Enchō, Meiji era)"
-   ]
+   ],
+   "retired": "2026-10-09 사용자: 한국 설화·조선 주제 금지(롱폼 0~15회) — 편성에서 뺀다(기록으로 남김)"
   },
   {
    "id": 23,
@@ -541,7 +577,8 @@
    "sources": [
     "Lafcadio Hearn, Kwaidan (1904) — public domain"
    ],
-   "format": "tale"
+   "format": "tale",
+   "retired": "2026-10-09 사용자: 한국 설화·조선 주제 금지(롱폼 0~15회) — 편성에서 뺀다(기록으로 남김)"
   },
   {
    "id": 24,
@@ -564,7 +601,8 @@
     "Encyclopedia of Korean Folk Culture — 불가살이",
     "Paul Fischer, A Kim Jong-Il Production (2015)"
    ],
-   "format": "tale"
+   "format": "tale",
+   "retired": "2026-10-09 사용자: 한국 설화·조선 주제 금지(롱폼 0~15회) — 편성에서 뺀다(기록으로 남김)"
   },
   {
    "id": 25,
@@ -586,7 +624,8 @@
     "Yuan Mei, Zi Bu Yu (18th c.) — jiangshi tales",
     "Mr. Vampire (1985)"
    ],
-   "format": "tale"
+   "format": "tale",
+   "retired": "2026-10-09 사용자: 한국 설화·조선 주제 금지(롱폼 0~15회) — 편성에서 뺀다(기록으로 남김)"
   },
   {
    "id": 26,
@@ -609,14 +648,253 @@
    "sources": [
     "Encyclopedia of Korean Folk Culture — 저승사자, 사자상, 차사본풀이: https://folkency.nfm.go.kr"
    ],
-   "format": "tale"
+   "format": "tale",
+   "retired": "2026-10-09 사용자: 한국 설화·조선 주제 금지(롱폼 0~15회) — 편성에서 뺀다(기록으로 남김)"
+  },
+  {
+   "id": 27,
+   "slug": "places-you-cant-survive",
+   "region": "GLOBAL",
+   "format": "places",
+   "date": "2026-10-18",
+   "look": "real",
+   "title_idea": "10 Places on Earth You Can't Survive — Explained",
+   "angle": "Ten real places ranked from 'you'd be fine with a plan' to 'you would not finish this sentence': Death Valley, Lake Natron, Kawah Ijen, Yellowstone's Norris basin, Dallol, the Lut Desert, Vostok, Everest's death zone, the Armstrong limit and the Challenger Deep.",
+   "facts": [
+    "#10 Death Valley: WMO — the hottest temperature ever recorded was 56.7 °C at Furnace Creek on 10 July 1913; 'some weather historians have questioned the accuracy of old temperature records'. NPS gives it as 134 °F",
+    "Death Valley (NPS): highest ground temperature 201 °F at Furnace Creek on 15 July 1972; July average high 116 °F; 154 consecutive days at 100 °F or above in the summer of 2001",
+    "Death Valley (NPS safety): drink at least one gallon of water a day; do not hike in the low elevations when it is hot; touching a 120 °F surface for more than 5 minutes can cause third-degree burns (NPS 2017)",
+    "#9 Lake Natron, Tanzania (NASA): water can reach 60 °C (140 °F); mud can reach 50 °C (122 °F); 'almost as alkaline as straight ammonia'; the only breeding area for the 2.5 million lesser flamingos that live in the valley",
+    "Lake Natron (Clarisse et al. 2019): reported pH 9 to 11.5; maximal surface area about 875 km²; about 600 m above sea level",
+    "#8 Kawah Ijen, East Java (Susetyo et al. 2025): volcano 2,443 m above sea level; crater lake area 45 ha, diameter 950 m, up to 200 m deep, pH below 0.5",
+    "Kawah Ijen: sulfur dioxide at all 32 sampling points (480 to 6,960 ppb) exceeded the EPA level the authors used (75 ppb); blue fire is sulfur gas burning at about 600 °C; tour guides, porters and sulfur miners are exposed every day",
+    "#7 Yellowstone: the geyser basins sit around 2,200 m (7,300 ft), where water boils at about 93 °C (200 °F) (USGS); at Norris, 199 °F at this elevation (NPS)",
+    "Yellowstone (NPS): in 1967 USGS recorded 460 °F (238 °C) at 1,089 feet (332 m) in a Norris research drill hole; ground that looks solid can be just a thin crust with superheated water below",
+    "Yellowstone (USGS): the acid concentration is relatively low — akin to orange juice — so the acidity doesn't burn on contact; the heat is the danger",
+    "#6 Dallol, Danakil Depression, Ethiopia (Belilla et al. 2019): about 120 m below sea level; in January the air rarely exceeded 40–45 °C; hot ponds up to 108 °C; 37–42% salt; pH down to −1.6; 'active microbial life is absent from polyextreme Dallol ponds'",
+    "#5 Lut Desert, Iran (NASA): MODIS land-surface temperature of 80.8 °C (177.4 °F, about 177 °F) for 2002–2019, tied with the Sonoran Desert as the hottest surface on Earth; stretches across 7,000 square miles; air temperatures are measured 1.5 to 2 m above the ground",
+    "Lut Desert (NASA 2012): an earlier study of 2003–2009 found 70.7 °C (159.3 °F) in 2005; the Lut was hottest in 5 of the 7 years",
+    "#4 Vostok, Antarctica (WMO): the world's coldest temperature record, −89.2 °C (−128.6 °F) on 21 July 1983, held by the high-altitude Vostok weather station",
+    "East Antarctic Plateau (AGU 2018): satellites measured about −98 °C (−144 °F) during the southern polar night, in small hollows 2 to 3 m deep, on a ridge more than 3,500 m (11,000 ft) above sea level",
+    "#3 Everest: the Death Zone is above 8,000 m (Szymczak et al. 2021); mean summit pressure 331 hPa (Matthews et al. 2020); standard sea-level pressure is 1013.25 hPa, about 1,013 (NOAA) — the summit has about a third",
+    "Everest summit (Matthews et al. 2020): about 16.2 mL of oxygen per kg per minute vs a sea-level VO2 max of about 57 for very fit mountaineers",
+    "Winter Everest ascents (Szymczak et al. 2021): highest wind 46 m/s; lowest wind chill −69 °C; shortest facial frostbite time about 3 minutes",
+    "Time of useful consciousness for sudden exposure (UBC): 3–5 minutes at 25,000 ft; 1–2 minutes at 30,000 ft; 9 to 12 seconds at 50,000 ft — the Everest summit lies between the first two rows",
+    "#2 Armstrong limit (UBC): 62,000 ft (about 19 km), pressure about 6.3 kPa, boiling point 37 °C — moisture in the lungs and saliva can boil at body temperature",
+    "#1 Challenger Deep: approximately 10,935 m (35,876 ft) (NOAA); 10,935 m ±6 m at 95% confidence (Greenaway et al. 2021); about 7,000 feet deeper than Mount Everest is tall, around 11,000 m (NOAA Fisheries)",
+    "Challenger Deep: pressures reach 1,100 times the pressure at the surface (WHOI); 2.45 °C measured at the seafloor by a sensor 25 m above it (Dziak et al. 2017)"
+   ],
+   "careful": [
+    "Death Valley's 1913 record is official (WMO) but questioned by some weather historians — say so; skip visitor-injury cases",
+    "Lut: ground-surface temperatures, not air — never compare 80.8 °C directly with an air record",
+    "Kawah Ijen: say 'acid', no battery-acid comparison; never feature individual miners",
+    "Yellowstone: the acidity is mild (USGS) — the danger is boiling water under thin crust; no death counts",
+    "Dallol: not finding life doesn't prove there is none",
+    "Vostok: −98 °C is a satellite snow-surface reading, not an air record; the station itself is below 3,500 m — the 'more than 3,500 m' figure is for the plateau ridge",
+    "Everest: useful consciousness times apply to sudden, unacclimatized exposure only — they are not survival times; say the air is thin, not 'low on oxygen'; no climber stories",
+    "Armstrong limit: don't say 'your blood boils' — only exposed fluids such as saliva",
+    "Challenger Deep: say air spaces are squeezed, not 'crushed'",
+    "No survival times anywhere — only the times the sources give; no real victims; Chernobyl and Snake Island left out"
+   ],
+   "sources": [
+    "WMO — WMO verifies 3rd and 4th hottest temperature recorded on Earth (Death Valley 56.7 °C, 10 July 1913): https://wmo.int/news/media-centre/wmo-verifies-3rd-and-4th-hottest-temperature-recorded-earth",
+    "NPS — Death Valley Weather: https://www.nps.gov/deva/learn/nature/weather-and-climate.htm",
+    "NPS — Death Valley Safety: https://www.nps.gov/deva/planyourvisit/safety.htm",
+    "NPS — Death Valley, First Hot Week of 2017 (120 °F surfaces): https://www.nps.gov/deva/learn/news/first-hot-week-of-2017.htm",
+    "NASA Earth Observatory — Lake Natron, Tanzania (2002): https://science.nasa.gov/earth/earth-observatory/lake-natron-tanzania-3042/",
+    "NASA Earth Observatory — Lake Natron, Tanzania (2005): https://science.nasa.gov/earth/earth-observatory/lake-natron-tanzania-5465",
+    "Clarisse et al. (2019), Scientific Reports — Lake Natron area, altitude, pH: https://pmc.ncbi.nlm.nih.gov/articles/PMC6418304/",
+    "Susetyo et al. (2025), Toxicology Reports — Toxic natural pollution at Ijen crater volcano: https://pmc.ncbi.nlm.nih.gov/articles/PMC11780170/",
+    "USGS Yellowstone Volcano Observatory — How hot are Yellowstone's boiling waters?: https://www.usgs.gov/observatories/yvo/news/how-hot-are-yellowstones-boiling-waters-some-are-hotter-others",
+    "NPS — Norris Geyser Basin: https://nps.gov/yell/planyourvisit/norrisplan.htm",
+    "NPS — Yellowstone High Temperatures (Norris drill hole): https://home.nps.gov/features/yell/ofvec/exhibits/science/vitalsigns/temps.htm",
+    "NPS — Yellowstone Safety (thin crust): https://www.nps.gov/yell/planyourvisit/safety.htm",
+    "USGS Yellowstone Volcano Observatory — Beyond the bathroom (acidity akin to orange juice): https://www.usgs.gov/observatories/yvo/news/beyond-bathroom-top-visitor-questions-yellowstones-thermal-areas",
+    "Belilla et al. (2019), Nature Ecology & Evolution — Dallol: https://pmc.ncbi.nlm.nih.gov/articles/PMC6837875/",
+    "NASA Earth Observatory — Iran's Lut Desert: https://science.nasa.gov/earth/earth-observatory/irans-lut-desert-153634",
+    "NASA Earth Observatory — The Hottest Spot on Earth (70.7 °C, 2005): https://science.nasa.gov/earth/earth-observatory/the-hottest-spot-on-earth-77627",
+    "WMO — WMO verifies -69.6°C Greenland temperature as Northern hemisphere record (Vostok −89.2 °C): https://public.wmo.int/node/21084",
+    "AGU — Coldest place on Earth is colder than scientists thought: https://news.agu.org/press-release/coldest-place-on-earth-is-colder-than-scientists-thought/",
+    "Matthews et al. (2020), iScience — Oxygen availability on Mount Everest: https://pmc.ncbi.nlm.nih.gov/articles/PMC7756134/",
+    "NOAA JetStream — Air Pressure (standard sea-level pressure): https://www.noaa.gov/jetstream/atmosphere/air-pressure",
+    "Szymczak et al. (2021), Frontiers in Physiology — Death Zone weather extremes: https://pmc.ncbi.nlm.nih.gov/articles/PMC8287323/",
+    "UBC ATSC 113 — Altitude and Pilot Physiology: https://www.eoas.ubc.ca/courses/atsc113/flying/met_concepts/02-met_concepts/02b-oxygen_physiology/index.html",
+    "NOAA Ocean Service — How deep is the ocean?: https://oceanservice.noaa.gov/facts/oceandepth.html",
+    "Greenaway et al. (2021), Deep-Sea Research I — revised depth of the Challenger Deep: https://repository.library.noaa.gov/view/noaa/33477",
+    "NOAA Fisheries — Mariana Trench Marine National Monument: https://www.fisheries.noaa.gov/pacific-islands/habitat-conservation/mariana-trench-marine-national-monument",
+    "WHOI — Mariana Trench 2009 (pressure): https://archives.whoi.edu/nereus/main/nereus/mariana-trench-2009.html",
+    "Dziak et al. (2017), Oceanography — Ambient Sound at Challenger Deep: https://tos.org/oceanography/article/ambient-sound-at-challenger-deep-mariana-trench"
+   ],
+   "shorts": [
+    "How Long Would You Last in Everest's Death Zone? (#3: a third of sea-level pressure, 1–5 minutes awake if dropped there)",
+    "What Happens If You Go Above the Armstrong Limit? (#2: water boils at 37 °C, 9–12 seconds at 50,000 ft)",
+    "How Hot Is the Hottest Ground on Earth? (#5 Lut Desert: 80.8 °C ground, not air)"
+   ]
+  },
+  {
+   "id": 28,
+   "slug": "deep-sea-zones",
+   "region": "GLOBAL",
+   "format": "zones",
+   "date": "2026-10-25",
+   "look": "real",
+   "title_idea": "The Deep Sea, Explained: Every Zone and What Lives There",
+   "angle": "Go down 10,935 meters, one zone at a time: where the light ends, where humans have to stop, what glows in the dark, and what lives under about a thousand times the air pressure at sea level.",
+   "facts": [
+    "Sunlight zone (epipelagic): the surface to 200 m (660 ft); light may be detected as far as 1,000 m down, but there is rarely any significant light beyond 200 m (NOAA); surface water ranges from 97 °F (36 °C) in the Persian Gulf to 28 °F (−2 °C) near the North Pole (NOAA JetStream)",
+    "Water pressure increases by one atmosphere for every 10 meters (32.8 feet) of depth (NOAA Ocean Exploration)",
+    "About half of Earth's oxygen comes from the ocean; Prochlorococcus, the smallest photosynthetic organism on Earth, produces up to 20% of the oxygen in the biosphere (NOAA)",
+    "Recreational scuba: depths up to 40 meters (130 feet) (NOAA); breath-hold divers have reached 214 m (2007), and by 40–50 m a full breath is squeezed to about residual lung volume (Frontiers in Physiology 2021)",
+    "Twilight zone (mesopelagic): 200 to 1,000 m (660–3,300 ft) (NOAA JetStream); below about 200 m the ocean averages only 4 °C (39 °F) (NOAA Ocean Exploration)",
+    "Many twilight-zone animals take part in the largest migration on the planet, rising to feed at night and sinking by day (WHOI, NOAA); lanternfish: 245+ species, about 2 to 30 cm long, about 60% of all deep-sea fish, about 600 million tons (WHOI)",
+    "Vampire squid: lives around 600–900 m, about 30 cm long, thrives in the oxygen minimum zone and eats marine snow (MBARI)",
+    "80 percent of the animals that live between 200 and 1,000 meters are bioluminescent (NOAA)",
+    "Human diving ends in the twilight zone: saturation divers have reached 534 m in the open sea and 701 m in hyperbaric chambers; the ultimate depth could be around 1,000 m (Medical Gas Research 2016)",
+    "Midnight zone (bathypelagic): 1,000–4,000 m (3,300–13,100 ft), completely devoid of light (NOAA); the temperature never strays far from 39 °F (4 °C), and the pressure at 4,000 m is over 5,850 pounds per square inch (NOAA JetStream)",
+    "Anglerfish: 300–4,000 m; the female's lure is a sac of glowing bacteria; males are dwarfs of a few cm; the largest females reach 1.2 m; more than 200 species (MBARI)",
+    "Giant squid: a photographed eye of about 27 cm with a 9 cm pupil; below 600 m it could detect sperm whales more than 120 m away (Nilsson et al. 2012, Current Biology)",
+    "Gulper eel: found at 1,600 to almost 10,000 feet, with a pouch-like throat and stomach it can quickly inflate (NOAA Sanctuaries)",
+    "Abyss (abyssopelagic): 4,000 to 6,000 m (13,100–19,700 ft) (NOAA JetStream); marine snow flakes grow to several centimeters and some fall for weeks before reaching the floor (NOAA)",
+    "MBARI's Station M, 4,000 m deep about 220 km off California, has been studied for over 20 years (MBARI)",
+    "Dumbo octopus (Grimpoteuthis) filmed at 5,760 m and 6,957 m in the Java Trench in 2019, extending the octopus depth record by 1,812 m; octopuses' potential seafloor habitat rises from 75% to 99% (Jamieson & Vecchione 2020)",
+    "Hadal zone (trenches): from 6,000 m (19,700 ft) to the very bottom (NOAA JetStream); at the bottom of the Mariana Trench the pressure is about eight tons per square inch, about a thousand times sea-level pressure (NOAA Ocean Exploration) — more than 16,000 psi (NOAA)",
+    "Deepest fish ever filmed: a snailfish at 8,336 m in the Izu-Ogasawara Trench (2022); deepest fish caught: 8,022 m in the Japan Trench (University of Western Australia)",
+    "Fish are predicted to hit a body-chemistry limit around 8,200 m; no fish has been found in the deepest part of the ocean, 8,400–11,000 m (Yancey et al. 2014, PNAS)",
+    "Amphipod Hirondellea gigas lives deeper than 8,000 m; specimens were collected at 10,897 m; it is more than 3 cm long and coats itself in an aluminum gel shield (Kobayashi et al. 2019, PLOS ONE)",
+    "Challenger Deep: approximately 10,935 m (35,876 ft) (NOAA); 10,935 m ±6 m (Greenaway et al. 2021); 2.45 °C measured at the seafloor (Dziak et al. 2017); the average ocean depth is about 3,682 m (12,080 ft) (NOAA)",
+    "On January 23, 1960, Jacques Piccard and U.S. Navy Lt. Don Walsh piloted the bathyscaph Trieste to the floor of the Challenger Deep (NOAA Ocean Exploration)",
+    "The water column makes up between 95 and 99 percent of the total livable volume of the planet (NOAA)",
+    "76% of observed animals in the water column off California, surface to 3,900 m, could make light (Martini & Haddock 2017, Scientific Reports — over 350,000 observations)",
+    "28.7% of the seafloor had been mapped with modern high-resolution sonar as of April 2026; explorers have seen less than 0.001% of the deep ocean seafloor (NOAA)",
+    "The ocean may hold 700,000 to 1 million species, roughly two-thirds not yet discovered or described (NOAA)"
+   ],
+   "careful": [
+    "Zone boundaries differ between NOAA pages (some start the abyss at 3,000 m) — say 'about'",
+    "The 76% glow figure is for water-column animals off California, not all ocean animals",
+    "6,957 m is in the hadal zone, not the abyss; the 8,336 m snailfish was filmed, not caught",
+    "The lanternfish 60% doesn't say whether it is by count or by weight — say 'about 60% of deep-sea fish'",
+    "Challenger Deep depth differs between NOAA pages (10,935 vs 10,994 m) — use 10,935 m",
+    "Hadal temperature varies by source (2.45 °C measured; 'just above freezing')",
+    "No survival times at any depth — only the depth limits the sources give; say air spaces are squeezed, not 'crushed'",
+    "Trieste: one line of fact, no dramatization, don't count how many people have been down since",
+    "The giant squid eye is one photographed specimen; giant squid aren't limited to one zone"
+   ],
+   "sources": [
+    "NOAA Ocean Service — How far does light travel in the ocean?: https://oceanservice.noaa.gov/facts/light_travel.html",
+    "NOAA JetStream — Layers of the Ocean: https://www.noaa.gov/jetstream/ocean/layers-of-ocean",
+    "NOAA Ocean Exploration — Wild and Bizarre Marine Life (pressure, 4 °C): https://oceanexplorer.noaa.gov/explainers/marine-life/",
+    "NOAA Ocean Exploration — What is the 'deep' ocean?: https://oceanexplorer.noaa.gov/ocean-fact/deep-ocean/",
+    "NOAA Ocean Service — How much oxygen comes from the ocean?: https://oceanservice.noaa.gov/facts/ocean-oxygen.html",
+    "NOAA Ocean Exploration — Technical Diving: https://oceanexplorer.noaa.gov/technology/technical/",
+    "Patrician et al. (2021), Frontiers in Physiology — Breath-hold diving: https://pmc.ncbi.nlm.nih.gov/articles/PMC8176094/",
+    "Medical Gas Research (2016) — ultimate depth for saturation divers: https://pmc.ncbi.nlm.nih.gov/articles/PMC5110125/",
+    "WHOI Oceanus — The largest migration on the planet: https://www.whoi.edu/oceanus/feature/daily-migration/",
+    "NOAA Ocean Exploration — Why do we explore the water column?: https://oceanexplorer.noaa.gov/ocean-fact/water-column/",
+    "WHOI Ocean Twilight Zone — Lanternfishes: https://twilightzone.whoi.edu/explore-the-otz/creature-features/lanternfishes/",
+    "MBARI — Vampire squid: https://www.mbari.org/animal/vampire-squid/",
+    "NOAA Ocean Exploration — What is bioluminescence?: https://oceanexplorer.noaa.gov/ocean-fact/bioluminescence/",
+    "MBARI — Deep-sea anglerfish: https://www.mbari.org/animal/deep-sea-anglerfish/",
+    "Nilsson et al. (2012), Current Biology — giant eyes of giant squid: https://fds.duke.edu/db/aas/CMAC/faculty/sjohnsen/publications/228552",
+    "NOAA Sanctuaries — Odd ocean critters (gulper eel): https://sanctuaries.noaa.gov/news/oct23/odd-ocean-critters.html",
+    "NOAA Ocean Service — What is marine snow?: https://oceanservice.noaa.gov/facts/marinesnow.html",
+    "MBARI — Feast and famine on the abyssal plain (Station M): https://www.mbari.org/news/feast-and-famine-on-the-abyssal-plain/",
+    "Jamieson & Vecchione (2020), Marine Biology — dumbo octopus depth record: https://repository.library.noaa.gov/view/noaa/29154",
+    "NOAA — Seven miles deep, the ocean is still a noisy place: https://www.noaa.gov/media-release/seven-miles-deep-ocean-is-still-noisy-place",
+    "University of Western Australia — world's deepest fish: https://www.uwa.edu.au/news/Article/2023/April/Scientists-break-new-record-after-finding-worlds-deepest-fish",
+    "Yancey et al. (2014), PNAS — fish depth limit: https://pmc.ncbi.nlm.nih.gov/articles/PMC3970477/",
+    "Kobayashi et al. (2019), PLOS ONE — the amphipod's aluminum shield: https://pmc.ncbi.nlm.nih.gov/articles/PMC6449124/",
+    "NOAA Ocean Service — How deep is the ocean?: https://oceanservice.noaa.gov/facts/oceandepth.html",
+    "Greenaway et al. (2021), Deep-Sea Research I — revised depth of the Challenger Deep: https://repository.library.noaa.gov/view/noaa/33477",
+    "Dziak et al. (2017), Oceanography — Ambient Sound at Challenger Deep: https://tos.org/oceanography/article/ambient-sound-at-challenger-deep-mariana-trench",
+    "NOAA Ocean Exploration — Soundings history (Trieste, 1960): https://oceanexplorer.noaa.gov/history/quotes-soundings/",
+    "Martini & Haddock (2017), Scientific Reports — bioluminescence: https://pmc.ncbi.nlm.nih.gov/articles/PMC5379559/",
+    "NOAA Ocean Exploration — How much of the ocean have we explored?: https://oceanexplorer.noaa.gov/facts/explored.html"
+   ],
+   "shorts": [
+    "Could You Survive the Floor of the Mariana Trench? (hadal: eight tons per square inch, 2.45 °C — no survival time exists without a hull)",
+    "What Happens to Fish Below 8,200 m? (hadal: snailfish filmed at 8,336 m, no fish found 8,400–11,000 m)",
+    "How Deep Can a Human Actually Go? (twilight: scuba 40 m, breath-hold 214 m, 534 m open sea, 701 m chamber)"
+   ]
+  },
+  {
+   "id": 29,
+   "slug": "what-if-the-sun-disappeared",
+   "region": "GLOBAL",
+   "format": "whatif",
+   "date": "2026-11-01",
+   "look": "real",
+   "badge": "WHAT IF",
+   "title_idea": "What If the Sun Disappeared? Minute by Minute",
+   "angle": "For 8 minutes and 20 seconds, nobody on Earth would notice anything. Then the sky goes black, Earth flies off in a straight line at about 67,000 mph, and a very long winter begins.",
+   "facts": [
+    "Thought experiment only: 'the sun can't really suddenly disappear' (physicist Christopher Baird, West Texas A&M); Earth would leave its orbit at the same time the light went out (Baird)",
+    "Sunlight takes about 8 minutes and 20 seconds to reach Earth (NASA Space Place)",
+    "Gravity and light travel at the same speed: gamma rays arrived only 1.7 seconds after the gravitational waves from a neutron-star merger over a hundred million light-years away (LIGO); the speeds differ by between −3×10⁻¹⁵ and +7×10⁻¹⁶ of the speed of light (LIGO/Virgo/Fermi/INTEGRAL 2017)",
+    "Sunlight takes 3.2 minutes to reach Mercury and about 6 minutes to reach Venus (NASA) — so they lose the Sun first",
+    "The Moon is 384,400 km (238,855 miles) from Earth on average, and light crosses that in 1.3 seconds (NASA) — the Moon goes dark moments after the Sun does",
+    "Earth's mean orbital speed is 29.78 km/s (NASA Earth fact sheet), about 67,000 miles per hour (NASA); without the Sun's pull it keeps that speed in a straight line",
+    "Sunlight takes 43 minutes to reach Jupiter and 80 minutes to reach Saturn (NASA), so those planets keep shining for a while after our own sky goes dark",
+    "On average Earth absorbs about 240 watts of sunlight per square meter (NASA); the heat flowing out of Earth's interior totals 47 terawatts (Davies & Davies 2010) — tiny by comparison",
+    "Within days to a week, Earth's surface would cool below the freezing point of salty water and the oceans would begin forming a complete ice cap (David Stevenson, Caltech); seawater freezes at about 28.4 °F (NOAA)",
+    "Photosynthesis stops at once. Plants hold about 450 of the roughly 550 gigatons of carbon in Earth's biomass — about 80% (Bar-On, Phillips & Milo, PNAS 2018)",
+    "Tree seedlings kept in darkness had all died after 12 weeks (Weber et al. 2018); big trees store sugar for a long time — redwoods regrew leaves from carbon captured 50 to 100 years earlier (Northern Arizona University)",
+    "In a year or so the surface would be below 200 degrees absolute (200 kelvin), roughly minus 100 Fahrenheit; life right at the surface would be extinguished on a time scale of years or less (Stevenson, Caltech)",
+    "The water in the deepest part of the oceans would freeze after 1,000 years; over several million years the atmosphere would freeze out as solid oxygen and nitrogen (Stevenson). Nitrogen freezes at about 63 kelvin and oxygen at about 54 kelvin (NIST)",
+    "The surface would finally settle around 30 degrees absolute (30 kelvin), approaching minus 400 Fahrenheit, over millions of years (Stevenson)",
+    "Hydrothermal vent ecosystems run on chemosynthesis, in the absence of sunlight (NOAA PMEL); bacteria living well beneath the surface might survive for a while, and a small number of people could survive a long time in a habitat drilled miles below the surface (Stevenson)",
+    "Earth would become a rogue planet. NASA: rogue planets outnumber star-bound worlds by about six to one; NASA's David Bennett estimates our galaxy holds 20 times more rogue planets than stars (2023)",
+    "The real Sun formed about 4.6 billion years ago and is a little less than halfway through its lifetime (NASA); in another 5 billion years it will become a red giant (NASA Space Place)"
+   ],
+   "careful": [
+    "Say once, plainly, that this cannot really happen — it is a physics thought experiment",
+    "Never say Earth 'keeps orbiting an empty point'; it keeps following its curve until the change arrives, then goes straight (Newton's first law)",
+    "No source gives a temperature for day 1 or week 1 — Stevenson's week figure is 'below the freezing point of salty water'",
+    "Don't claim big trees survive decades in the dark (the cold would kill them first); the redwood study only shows trees store sugar",
+    "Vent chemistry still needs oxygen dissolved in seawater (WHOI) — don't give vent life a survival time",
+    "No source dates the air freezing beyond 'several million years'",
+    "Rogue-planet ratios use different baselines (vs planets, vs stars) — give them as estimates",
+    "Don't compute new numbers (distances travelled, exact Moon or planet delays, Celsius conversions) — say 'moments', 'a while' instead",
+    "No real people dramatized; scientists may be named as sources in one line"
+   ],
+   "sources": [
+    "West Texas A&M (Christopher Baird) — What is the speed of gravity?: https://wtamu.edu/~cbaird/sq/mobile/2013/04/30/what-is-the-speed-of-gravity/index.html",
+    "NASA Space Place — All About the Sun: https://spaceplace.nasa.gov/all-about-the-sun/en/",
+    "LIGO — Science summary, GW170817 and GRB 170817A: https://www.ligo.org/science-summaries/GW170817GRB/",
+    "LIGO/Virgo/Fermi/INTEGRAL (2017), ApJL 848 L13 — speed of gravity: https://arxiv.org/abs/1710.05834",
+    "NASA — Mercury Facts: https://science.nasa.gov/mercury/facts/",
+    "NASA — Venus Facts: https://science.nasa.gov/venus/venus-facts/",
+    "NASA — Voyager 1: What Is a Light-Day? (Moon light time): https://science.nasa.gov/mission/voyager/voyager-1/voyager-1-what-is-a-light-day/",
+    "NASA NSSDC — Earth Fact Sheet: https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html",
+    "NASA — It's Surprisingly Hard to Go to the Sun: https://www.nasa.gov/solar-system/its-surprisingly-hard-to-go-to-the-sun/",
+    "NASA — Jupiter Facts: https://science.nasa.gov/jupiter/jupiter-facts/",
+    "NASA — Saturn Facts: https://science.nasa.gov/saturn/facts/",
+    "NASA — Climate and Earth's Energy Budget: https://science.nasa.gov/earth/earth-observatory/climate-and-earths-energy-budget",
+    "Davies & Davies (2010), Solid Earth — Earth's surface heat flux: https://se.copernicus.org/articles/1/5/2010/",
+    "Caltech — If the Sun ceased to exist right now, how long would mankind survive? (David Stevenson): https://experts.caltech.edu/news/caltech-question-month-if-sun-ceased-exist-right-now-how-long-would-mankind-survive-would",
+    "NOAA — Can the ocean freeze?: https://oceanservice.noaa.gov/facts/oceanfreeze.html",
+    "Harvard BioNumbers — total plant biomass (Bar-On et al., PNAS 2018): https://bionumbers.hms.harvard.edu/bionumber.aspx?id=115270",
+    "Weber et al. (2018) — tree seedlings in darkness (University of Basel): https://edoc.unibas.ch/64637",
+    "Northern Arizona University — coast redwoods' century-old carbon: https://in.nau.edu/news/coast-redwoods/",
+    "NIST Chemistry WebBook — Nitrogen: https://webbook.nist.gov/cgi/cbook.cgi?ID=C7727379&Mask=4",
+    "NIST Chemistry WebBook — Oxygen: https://webbook.nist.gov/cgi/cbook.cgi?ID=C7782447&Mask=4",
+    "NOAA PMEL — Chemosynthesis: https://www.pmel.noaa.gov/eoi/nemo/explorer/concepts/chemosynthesis.html",
+    "NASA — Roman Space Telescope: Rogue Planets: https://science.nasa.gov/mission/roman-space-telescope/rogue-planets/",
+    "NASA (2023) — New Study Reveals NASA's Roman Could Find 400 Earth-Mass Rogue Planets: https://www.nasa.gov/missions/roman-space-telescope/new-study-reveals-nasas-roman-could-find-400-earth-mass-rogue-planets/",
+    "NASA — Sun Facts: https://science.nasa.gov/sun/facts/"
+   ],
+   "shorts": [
+    "How Long Would You Last If the Sun Went Out? (1-year segment: below 200 kelvin, surface life gone in years or less)",
+    "What You'd See in the Sky After the Sun Vanished (8 min 20 s segment: Moon goes dark, Jupiter and Saturn keep shining)",
+    "What Happens to Earth When the Sun's Gravity Disappears? (8 min 20 s: straight line at about 67,000 mph)"
+   ]
   }
  ],
- "sprint": {
-  "from": "2026-10-04",
-  "to": "2026-10-10",
-  "first_id": 3,
-  "resume_from": "2026-10-14",
-  "why": "2026-10-02 사용자: '매일 새로운 주제·새로운 방식, 쇼츠랑 롱폼 1주일'. 7편 = 7형식(list·behind·versus·urban·tale(JP)·mystery·pov), 하루 한 편 15:00 UTC 공개 + 쇼츠 2시간 전, 추가 쇼츠 없음. 10/14(수)부터 다시 주 1편(10화)."
- }
+ "backlog": [
+  "Every Way the Universe Could End, Ranked by How Bad It Feels",
+  "This Town Has Been Burning Since 1962 (Centralia)",
+  "Why Nobody Lives in Picher, Oklahoma",
+  "The Atmosphere, Explained: Every Layer and What Would Kill You There",
+  "What If You Fell Into a Black Hole? Second by Second",
+  "How Long Would You Survive on Every Planet in the Solar System?"
+ ]
 }

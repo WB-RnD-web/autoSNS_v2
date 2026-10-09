@@ -1,0 +1,96 @@
+{
+ "id": 201,
+ "slug": "deep-sea-creatures-by-size",
+ "format": "compare",
+ "part": 1,
+ "look": "deep",
+ "title": "Deep Sea Creatures Ranked by Size Pt.1 #shorts",
+ "hook": "DEEP SEA CREATURES BY SIZE",
+ "description_hook": "From a 12-centimeter anglerfish to a 46-meter living rope: the deep sea, ranked by size.",
+ "unit": "m",
+ "scale": "linear",
+ "items": [
+  {
+   "name": "ANGLERFISH (FEMALE)",
+   "value": 0.12,
+   "label": "12 CM",
+   "src": 0,
+   "say": "Start small. A female black seadevil anglerfish: about 12 centimeters.",
+   "img": "a tiny black deep-sea anglerfish with a glowing lure above its mouth in total darkness, needle teeth, bioluminescent glow, macro shot"
+  },
+  {
+   "name": "VAMPIRE SQUID",
+   "value": 0.3,
+   "label": "30 CM",
+   "src": 1,
+   "say": "Vampire squid. About 30 centimeters, living 600 to 900 meters down.",
+   "img": "a deep red vampire squid with webbed arms spread like a cloak and glowing blue eyes, drifting in black water"
+  },
+  {
+   "name": "GIANT ISOPOD",
+   "value": 0.46,
+   "label": "46 CM",
+   "src": 2,
+   "say": "Giant isopod, a pill bug's deep-sea cousin. Up to 46 centimeters.",
+   "img": "a giant deep-sea isopod crawling over grey sediment on the ocean floor, armored segmented shell, lit by a submersible lamp"
+  },
+  {
+   "name": "COLOSSAL SQUID",
+   "value": 4.2,
+   "label": "4.2 M",
+   "src": 3,
+   "say": "Colossal squid. This one measured 4.2 meters, after freezing.",
+   "img": "a massive colossal squid with enormous eyes and thick hooked arms in the dark deep ocean, faint blue light from above"
+  },
+  {
+   "name": "GREENLAND SHARK",
+   "value": 6.4,
+   "label": "6.4 M",
+   "src": 4,
+   "say": "Greenland shark. About 6.4 meters.",
+   "img": "a huge slow Greenland shark gliding through dark icy water, pale clouded eyes, scarred grey skin"
+  },
+  {
+   "name": "GIANT SQUID",
+   "value": 13,
+   "label": "13 M",
+   "src": 5,
+   "say": "Giant squid. Up to 13 meters, tentacles included.",
+   "img": "a giant squid with two very long tentacles stretched out in deep blue darkness, seen from below, eerie scale"
+  },
+  {
+   "name": "GIANT SIPHONOPHORE",
+   "value": 46,
+   "label": "46 M",
+   "twist": true,
+   "src": 6,
+   "say": "But the longest? A giant siphonophore, an estimated 150 feet. Seemingly the longest animal ever recorded.",
+   "img": "an extremely long glowing siphonophore colony spiraling through the black deep sea like a living rope, bioluminescent, vast"
+  }
+ ],
+ "gumi": {
+  "say": "Gumi here. Which one would you never want to meet down there?"
+ },
+ "teaser": "PT.2 NEXT: BLACK HOLES",
+ "sources": [
+  "https://fishesoftexas.org/taxa/melanocetus-johnsonii",
+  "https://www.mbari.org/animal/vampire-squid/",
+  "https://oceanexplorer.noaa.gov/?p=13197",
+  "https://www.tepapa.govt.nz/discover-collections/read-watch-play/science/colossal-squid/colossal-squid-te-papa/how-big-colossal",
+  "https://www.floridamuseum.ufl.edu/discover-fish/species-profiles/greenland-shark/",
+  "https://collections.tepapa.govt.nz/topic/1240",
+  "https://schmidtocean.org/new-species-discovered-during-exploration-of-abyssal-deep-sea-canyons-off-ningaloo/",
+  "https://www.fisheries.noaa.gov/species/blue-whale"
+ ],
+ "tags": [
+  "deep sea",
+  "deep sea creatures",
+  "size comparison",
+  "ocean",
+  "giant squid",
+  "siphonophore",
+  "sea creatures",
+  "marine biology",
+  "scary ocean"
+ ]
+}

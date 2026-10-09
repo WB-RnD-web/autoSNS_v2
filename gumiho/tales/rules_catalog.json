@@ -1,7 +1,10 @@
 {
  "about": "Nine Tails RULES 쇼츠 편성표(2026-10-05 사용자: '어린 친구·청년 타깃, 도파민·자극성·중독성' → 동아시아 규칙괴담 매일 쇼츠). 루틴은 `python gumiho/tales/rules.py next --date <오늘>` 이 준 한 편만 쓴다(날짜로 결정론적 배정 — start 부터 하루 한 편, 목록 순서대로). format: rules(규칙 4–5개 + 어긋나는 마지막 규칙 → 처음으로 루프) · versus(괴물 대결, 설화 근거로 판정 + 댓글 투표) · pov(2인칭 '너' 생존). facts 는 확인된 뼈대(규칙은 반드시 여기서 — 지어내지 않는다), careful 은 단정하면 안 되는 것. 목록이 바닥나기 전에 주간 검토가 PR 로 채운다.",
  "start": "2026-10-08",
- "publish_utc": "21:00",
+ "until": "2026-10-09",
+ "until_note": "2026-10-09 사용자: 한국 설화·조선 주제 금지('쓰레기 주제') → 이 목록은 10/9 배정분(10/10 13:00 UTC 공개)까지만. 10/10부터는 shorts_catalog.json(How Long Would You Last · Ranked · Liminal Rules) — 10/10·10/11 은 빈 날.",
+ "publish_utc": "13:00",
+ "publish_note": "2026-10-09 조사: 21:00 UTC(06:00 KST) 공개 첫 편 FBrojHee6tA 가 5시간 반 0회, 13:00 UTC(22:00 KST) 공개 쇼츠는 수백~2천 회 → 비교가 되게 13:00 UTC 로(공개 시각이 결정적이라는 공식 근거는 없다). 루틴 12:00 UTC·업로드 12:20 무렵이라 배정일 다음 날 13:00 UTC(upload_rule.publish_time).",
  "rules": [
   {"n": 1, "slug": "name-called-at-night", "format": "rules", "region": "KR/CN", "look": "modern",
    "title_idea": "If Someone Calls Your Name Three Times at Night, Don't Answer",
