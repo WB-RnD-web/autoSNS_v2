@@ -88,6 +88,48 @@ with tempfile.TemporaryDirectory() as tmp:
     ck("결과 화면 아래 25%(y 1560~)는 비운다(인스타 캡션·버튼 자리)", diff < 8, diff)
     cap = K.caption_of(SAMPLES["quiz"])
     ck("캡션에 정답·해시태그가 들어간다(멈춰서 다시 보는 사람용)", "1번 문제 정답: 3개" in cap and "#상식퀴즈" in cap)
+    # 커버(10/9) — 회차 라벨은 넣고, 아래 25%(y 1440~ · 인스타 캡션 자리)는 여전히 비운다
+    for k, s in SAMPLES.items():
+        a = K.assets(s, tmp, True)
+        segs, _ = K.plan(s, {t: 1.0 for t in K.says_of(s)})
+        pa = K.Painter(s, a, segs)
+        cv = K.cover_of(pa, s)
+        fr = pa.frame(0.5 if k != "birth" else 2.0)
+        ref = fr if k == "birth" else base                  # birth 는 배경 그림이 깔려서 '라벨이 더한 것 없음'으로 본다
+        low = max(abs(p - q) for p, q in zip(cv.crop((0, 1440, K.W, K.H)).resize((54, 24)).tobytes(),
+                                               ref.crop((0, 1440, K.W, K.H)).resize((54, 24)).tobytes()))
+        band = max(abs(p - q) for p, q in zip(cv.crop((300, 1384, 780, 1432)).tobytes(), fr.crop((300, 1384, 780, 1432)).tobytes()))
+        ck(f"{k}: 커버 아래 25%(y 1440~)는 비어 있다 · 회차 라벨은 그 위에", cv.size == (K.W, K.H) and low < 8 and band > 60,
+           (low, band))
+
+print("── 캡션 고정 문구·해시태그·회차(10/9) ──")
+TAG = re.compile(r"(?<!\S)#(?!\d+(?:\s|$))\S+")              # 숫자만인 '#5' 는 회차 — 해시태그로 세지 않는다
+for k, s in SAMPLES.items():
+    cap = K.caption_of(s)
+    ck(f"{k}: 끝에 보내기 문구 + 숫자 댓글 문구(코드가 붙인다)", "친구한테 보내" in cap and K.REPLY[k] in cap
+       and cap.index(K.SHARE[k]) < cap.index(K.REPLY[k]) < cap.index(K.hashtags_of(s)[0]), cap[-160:])
+    ck(f"{k}: 숫자·한 글자로 끝나는 댓글 부탁(숫자만 · 세 글자만)", "숫자만" in K.REPLY[k] or "세 글자만" in K.REPLY[k])
+dup = json.loads(json.dumps(SAMPLES["pick"]))
+dup["caption"] += "\n몇 번 골랐는지 댓글로 남겨 줘요!\n친구 태그해서 같이 해 봐요"
+cap = K.caption_of(dup)
+ck("대본에 비슷한 말이 있으면 겹치지 않는다(댓글·친구 줄은 빼고 코드 문구만)", cap.count("댓글") == 1 and cap.count("친구") == 1
+   and "몇 번 골랐는지 댓글로" not in cap and any("caption" in w for w in K.warns(dup)), cap)
+many = dict(SAMPLES["pick"], hashtags=[f"#태그{c}" for c in "가나다라마바사아"])
+cap = K.caption_of(many)
+ck("해시태그 8개 → 캡션엔 앞 5개만 · check 는 막지 않고 경고만", TAG.findall(cap) == [f"#태그{c}" for c in "가나다라마"]
+   and not K.check(many) and any("hashtags" in w for w in K.warns(many)), (TAG.findall(cap), K.check(many), K.warns(many)))
+inline = dict(SAMPLES["quiz"], caption="3초 퀴즈 #상식 #두뇌 🧠 다 맞혀 봐요")
+ck("캡션 본문 해시태그도 빼서 전체 5개 이하", len(TAG.findall(K.caption_of(inline))) <= 5 and "#두뇌 " not in K.caption_of(inline))
+ck("모든 견본 캡션 해시태그 ≤ 5", all(len(TAG.findall(K.caption_of(s))) <= 5 for s in SAMPLES.values()))
+ck("회차 번호: 10/8 = #1 · 10/12 = #5 · 10/13 = #6", (P.series_no(dt.date(2026, 10, 8)), P.series_no(dt.date(2026, 10, 12)),
+                                                    P.series_no(dt.date(2026, 10, 13))) == (1, 5, 6))
+firsts = {k: K.caption_of(s).splitlines()[0] for k, s in SAMPLES.items()}
+ck("캡션 첫 줄 앞에 '오늘의 골라보기 #N'(날짜대로)", firsts["pick"].startswith("오늘의 골라보기 #1 · 끌리는")
+   and firsts["birth"].startswith("오늘의 골라보기 #5 · ") and firsts["quiz"].startswith("오늘의 골라보기 #2 · "), firsts)
+again = dict(SAMPLES["quiz"], caption="오늘의 골라보기 #9 · " + SAMPLES["quiz"]["caption"])
+ck("작가가 회차를 써도 한 번만(날짜 번호로)", K.caption_of(again).count("오늘의 골라보기") == 1
+   and K.caption_of(again).startswith("오늘의 골라보기 #2 · 3초"))
+ck("날짜가 시작일(10/8) 전이면 막는다(#0 방지)", any("date" in e for e in K.check(dict(SAMPLES["pick"], date="2026-10-07"))))
 
 print("── 편성 정보·게시 막기 ──")
 with tempfile.TemporaryDirectory() as tmp:
@@ -131,6 +173,9 @@ ck("실행기 못 잡으면 다시 돌리기 목록에 있다(retry-no-runner)",
 wr = open(os.path.join(HERE, "PICK_WRITING.md"), encoding="utf-8").read()
 ck("쓰는 법: 유튜브 홍보 금지 · 꼴은 코드가 · 사실만(퀴즈) · 베끼지 않기", "유튜브" in wr and "홍보" in wr
    and "코드가 정해요" in wr and "사실만" in wr and "새로 만들어요" in wr)
+ck("쓰는 법: 회차·보내기·숫자 댓글·해시태그 5개는 코드가 붙인다 · 작가는 같은 말 쓰지 않기",
+   "코드가 붙이는 것" in wr and "오늘의 골라보기 #N" in wr and "5개까지" in wr and "쓰지 않아요" in wr
+   and all(K.REPLY[k] in wr for k in ("pick", "quiz")))
 
 print(f"\n{'✅ 전부 통과' if not FAIL else f'❌ 실패 {FAIL}'}")
 sys.exit(1 if FAIL else 0)
