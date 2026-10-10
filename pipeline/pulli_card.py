@@ -17,6 +17,9 @@
     python pipeline/pulli_card.py show [--date 2026-10-07]     # 표·풀이 미리보기
     python pipeline/pulli_card.py make [--date …] --out <path> # 스토리보드 JSON
     python pipeline/pulli_card.py path [--date …]              # 오늘 파일 경로(output/news/…)
+
+★2026-10-11~10-24 이틀에 한 번(짝수 번째 날)은 같은 10:40 자리에 '띠별 아침 덕담표'(blessing_card)가 나간다.
+  루틴 명령은 그대로(path·make) — 날짜를 보고 이 파일이 blessing_card 로 넘긴다(theme_card → age_card 와 같은 방식).
 """
 from __future__ import annotations
 
@@ -35,6 +38,13 @@ EPOCH = dt.date(2026, 10, 7)          # 첫 편 — 테마 순환의 0번
 KST = dt.timezone(dt.timedelta(hours=9))
 ACCENT = "#C9A227"
 BRAND = "왕별이 · 오늘의 일진 풀이"
+# ★덕담표 2주 시험(2026-10-10 사용자 승인) — BLESS_FROM 부터 BLESS_TO 까지 짝수 번째 날(10/11·13·15·17·19·21·23, 7편)은
+#   풀이형 대신 '띠별 아침 덕담표'(blessing_card)가 같은 10:40 자리·같은 토픽으로 나간다. 하루 편수는 그대로.
+#   왜: 45개 채널 조사 — 경전·좋은 글만 있는 쇼츠는 가라앉고(반야심경 중앙 365회 · 성경 구절 226회 · 운세 채널의 좋은 글
+#   3,669 대 운세 90,911), '운세 틀 + 덕담'은 운세만큼 나간다(가화만사성 이름 글자 33.7만 · 말년 부부 출생년도 6.6만).
+#   판정 10/25(pulse_experiments 'blessing'). 끄기 = BLESS_FROM 을 None 으로(그날부터 매일 풀이형).
+BLESS_FROM: dt.date | None = dt.date(2026, 10, 11)
+BLESS_TO = dt.date(2026, 10, 24)
 
 STEMS = "갑을병정무기경신임계"
 STEMS_HJ = "甲乙丙丁戊己庚辛壬癸"
@@ -164,7 +174,20 @@ def sipsin(day_el: str, b: int) -> str:
     return "관성"
 
 
+def is_bless_day(d: dt.date) -> bool:
+    """덕담표 날 — BLESS_FROM ≤ d ≤ BLESS_TO 이고 BLESS_FROM 부터 짝수 번째 날. 그 밖은 늘 풀이형."""
+    return BLESS_FROM is not None and BLESS_FROM <= d <= BLESS_TO and (d - BLESS_FROM).days % 2 == 0
+
+
 def theme_for(d: dt.date) -> dict:
+    """테마 = 날짜 순환. ★덕담표 기간 안(BLESS_FROM~BLESS_TO)만 '풀이형이 나간 날 수'로 돈다 —
+    격일이면 날짜 순환(6개)이 짝수 칸만 밟아 집안·귀인·자식 셋만 나온다(tables-v2 판정 10/22 이 기운다).
+    기간 첫 풀이형 날이 기간 직전까지의 순환을 이어받는다(10/10 자식 → 10/12 몸 → 10/14 집안 → 10/16 돈 …).
+    기간 밖은 예전 그대로(날짜)."""
+    if BLESS_FROM is not None and BLESS_FROM <= d <= BLESS_TO:
+        k = (BLESS_FROM - EPOCH).days + sum(not is_bless_day(BLESS_FROM + dt.timedelta(days=j))
+                                            for j in range((d - BLESS_FROM).days))
+        return THEMES[k % len(THEMES)]
     return THEMES[(d - EPOCH).days % len(THEMES)]
 
 
@@ -278,6 +301,15 @@ HOOK_TAIL = ", no text, no letters, no signage, no logos"
 
 
 def storyboard(d: dt.date) -> dict:
+    """그날 10:40 스토리보드 — 덕담표 날이면 blessing_card, 아니면 풀이형 표."""
+    if is_bless_day(d):
+        import blessing_card  # 늦게 부른다 — blessing_card 가 이 파일의 일진·지지 관계를 쓴다(순환 import 방지)
+        return blessing_card.storyboard(d, TOPIC)
+    return pulli_storyboard(d)
+
+
+def pulli_storyboard(d: dt.date) -> dict:
+    """풀이형 표(tables-v2) — 덕담표 날에도 날짜만 주면 만든다(테스트·견본용)."""
     th, g = theme_for(d), ganzhi(d)
     rows = build_rows(d, th)
     ex = explain(d)
@@ -307,6 +339,9 @@ def is_pulli(sb: dict) -> bool:
 
 
 def meta(sb: dict) -> dict:
+    import blessing_card
+    if blessing_card.is_bless(sb):
+        return blessing_card.meta(sb)
     d = dt.date.fromisoformat(sb["date"])
     return {"title": title(d)[:95], "description": description(d)}
 
@@ -316,17 +351,21 @@ def path_for(d: dt.date, root: str | None = None) -> str:
     return os.path.join(root, "output", "news", f"{d.isoformat()}_{TOPIC}_storyboard.json")
 
 
-def main() -> int:
-    ap = argparse.ArgumentParser(description="풀이형 표")
+def main(argv=None) -> int:
+    ap = argparse.ArgumentParser(description="풀이형 표(덕담표 날엔 덕담표)")
     ap.add_argument("cmd", choices=["show", "make", "path"])
     ap.add_argument("--date")
     ap.add_argument("--out")
-    a = ap.parse_args()
+    a = ap.parse_args(argv)
     d = dt.date.fromisoformat(a.date) if a.date else kst_today()
     if a.cmd == "path":
         print(path_for(d))
         return 0
     sb = storyboard(d)
+    if a.cmd == "show" and is_bless_day(d):
+        import blessing_card
+        blessing_card.show(d)
+        return 0
     if a.cmd == "show":
         g = ganzhi(d)
         print(f"{d} {g['name']}일({g['hanja']}) · 테마 {sb['theme']} · {sb['platforms']['youtube']['title']}")

@@ -48,7 +48,7 @@ texts = []
 combos = set()
 for d in days:
     rows = P.build_rows(d)
-    sb = P.storyboard(d)
+    sb = P.pulli_storyboard(d)          # 덕담표 날(10/11~10/23 격일)에도 풀이형 표 자체는 늘 만들 수 있어야 한다
     if sorted(r["animal"] for r in rows) != sorted(FC.ANIMALS) or [r["rank"] for r in rows] != list(range(1, 13)):
         bad.append((d, "띠·순위"))
     if any(a["score"] <= b["score"] for a, b in zip(rows, rows[1:])):
@@ -68,6 +68,43 @@ ck("금지어 없음(의료·투자·겁주기)", not hits, hits)
 ck("60일 표가 서로 다르다(테마·1~3위 조합 50가지 이상 — '서로 바꿔 끼울 수 있는 영상'이 아니다)", len(combos) >= 50, len(combos))
 ck("같은 날짜면 같은 표", P.storyboard(days[0]) == P.storyboard(days[0]))
 
+print("── 덕담표 날(10/11~10/24 격일, blessing_card) ──")
+bless = [d for d in days if P.is_bless_day(d)]
+ck("덕담표 날 7편 · 그 밖의 날은 storyboard = 풀이형 표 그대로", len(bless) == 7
+   and all(P.storyboard(d) == P.pulli_storyboard(d) for d in days if d not in bless), bless)
+ck("덕담표 날은 같은 토픽·같은 파일 경로로 덕담표", all(P.storyboard(d)["topic"] == P.TOPIC
+   and P.storyboard(d)["theme"].startswith("bless:") for d in bless))
+
+print("── 덕담표 기간 풀이형 테마(격일이어도 6개가 다 돈다) ──")
+win = [dt.date(2026, 10, 12) + dt.timedelta(days=2 * k) for k in range(7)]      # 10/12·14·…·24 = 기간 안 풀이형 날
+ck("기간 안 풀이형 날 = 10/12·14·16·18·20·22·24", [d for d in (dt.date(2026, 10, 11) + dt.timedelta(days=k) for k in range(14))
+                                           if not P.is_bless_day(d)] == win)
+seq = [P.storyboard(d)["theme"] for d in win]
+ck("기간 안 풀이형 날에 테마 6개가 전부 나온다(날짜 순환이면 집안·귀인·자식 셋뿐이었다)",
+   set(seq) == {t["id"] for t in P.THEMES}, seq)
+ck("기간 안 풀이형 날 연속 6편마다 테마가 겹치지 않는다", all(len(set(seq[i:i + 6])) == 6 for i in range(len(seq) - 5)), seq)
+ck("기간 첫 풀이형 날이 직전 순환을 이어받는다(10/10 자식 → 10/12 몸 → 10/14 집안 → 10/16 돈)",
+   seq[:3] == ["body", "home", "money"], seq)
+# main(855aa8c, 덕담표 전) 의 theme_for 결과를 그대로 박아 둔다 — 기간 밖은 한 날짜도 바뀌면 안 된다
+MAIN_1001 = ["money", "helper", "work", "children", "body", "home", "money", "helper", "work", "children"]  # 10/1~10/10
+MAIN_1025 = ["money", "helper", "work", "children", "body", "home"] * 5                                   # 10/25~11/23
+ck("기간 밖 테마 = main 그대로(10/1~10/10)",
+   [P.theme_for(dt.date(2026, 10, 1) + dt.timedelta(days=k))["id"] for k in range(10)] == MAIN_1001)
+ck("기간 밖 테마 = main 그대로(10/25~11/23)",
+   [P.theme_for(dt.date(2026, 10, 25) + dt.timedelta(days=k))["id"] for k in range(30)] == MAIN_1025)
+ck("기간 밖 제목 = main 그대로(10/10 · 10/25 · 11/30)",
+   [P.title(dt.date(2026, 10, 10)), P.title(dt.date(2026, 10, 25)), P.title(dt.date(2026, 11, 30))] ==
+   ["오늘 자식 덕 보는 띠 순위 1위~12위 | 10월 10일 정사일 풀이 · 45~96년생 전부",
+    "오늘 돈 들어오는 띠 순위 1위~12위 | 10월 25일 임신일 풀이 · 45~96년생 전부",
+    "오늘 돈 들어오는 띠 순위 1위~12위 | 11월 30일 무신일 풀이 · 45~96년생 전부"])
+ck("기간 밖은 날짜 순환 공식 그대로(10/25~12/31)", all(P.theme_for(d) is P.THEMES[(d - P.EPOCH).days % 6]
+   for d in (dt.date(2026, 10, 25) + dt.timedelta(days=k) for k in range(68))))
+_bf = P.BLESS_FROM
+P.BLESS_FROM = None
+ck("덕담표를 끄면(BLESS_FROM = None) 기간 안도 날짜 순환", [P.theme_for(d)["id"] for d in win]
+   == [P.THEMES[(d - P.EPOCH).days % 6]["id"] for d in win])
+P.BLESS_FROM = _bf
+
 print("── 스토리보드·메타 ──")
 sb = P.storyboard(dt.date(2026, 10, 8))
 ck("토픽 fortune_pulli · 장면 = 표 + 풀이", sb["topic"] == "fortune_pulli" and [s["type"] for s in sb["scenes"]] == ["card", "news"])
@@ -81,6 +118,18 @@ ck("설명란: 12띠 이유 전부 · 순위 정한 방법 · 재미 고지", al
 ck("제목: 일진 이름 + 45~96년생", "을묘일 풀이" in P.title(dt.date(2026, 10, 8)) and P.title(dt.date(2026, 10, 8)).endswith("45~96년생 전부"))
 ck("배경 그림: 글자·간판 금지 꼬리", sb["thumbnail_hook"].endswith(P.HOOK_TAIL))
 ck("받침 조사: 용과·쥐와·호랑이와", P.josa("용", "과", "와") == "용과" and P.josa("쥐", "과", "와") == "쥐와" and P.josa("호랑이", "과", "와") == "호랑이와")
+
+print("── 화면 배치(쇼츠 버튼 열 x 960 · 제목 자리 y 1500) ──")
+import motion_short as M  # noqa: E402
+sc0 = dict(P.pulli_storyboard(dt.date(2026, 10, 12))["scenes"][0], start=0.0, clip=7.0)
+html0 = M.scene_html(0, sc0, P.ACCENT)
+boxes = [tuple(map(float, b)) for b in re.findall(
+    r'class="cell[^"]*"[^>]*left:([\d.]+)px;top:([\d.]+)px;width:([\d.]+)px;height:([\d.]+)px', html0)]
+ck("표 12칸 · 오른쪽 끝 960 이하 · 아래 끝 1500 이하", len(boxes) == 12 and max(x + w for x, _, w, _ in boxes) <= 960
+   and max(y + h for _, y, _, h in boxes) <= 1500, (max(x + w for x, _, w, _ in boxes), max(y + h for _, y, _, h in boxes)))
+fpx = {k: int(v) for k, v in re.findall(r"\.cell \.(rk|nm|sc|yr|ln)\{[^}]*?font-size:(\d+)px", M.CSS_CARD)}
+ck("글자 크기는 그대로(띠 58 · 점수 44 · 출생연도 30 · 한 줄 34 · 순위 36)",
+   fpx == {"rk": 36, "nm": 58, "sc": 44, "yr": 30, "ln": 34}, fpx)
 
 print("── 파이프라인 연결 ──")
 ck("아침 운세 표(fortune_card)가 풀이형 표를 덮어쓰지 않는다", not FC.use_card(sb))

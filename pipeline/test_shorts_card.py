@@ -85,7 +85,7 @@ ck("칸 12개", html.count('class="cell') == 12)
 ck("1~3위 칸 강조", html.count('class="cell top3"') == 3)
 xs = [M.card_cell_xy(k) for k in range(12)]
 ck("오른쪽 버튼 열·아래 제목 자리를 비운다",
-   all(x + M.CARD_W <= 1000 and y + M.CARD_H <= 1500 for x, y in xs), str(xs[-1]))
+   all(x + M.CARD_W <= 960 and y + M.CARD_H <= 1500 for x, y in xs), str(xs[-1]))   # 10/10: 1000 → 960(버튼 열)
 js = M.scene_js(0, sc, spec["accent"])
 ck("표는 0초부터 보인다(투명에서 시작하는 등장 없음)", "tl.from(" not in js and "opacity:0" not in js, js)
 page = M.build_html([sc], 7.0, spec["accent"])

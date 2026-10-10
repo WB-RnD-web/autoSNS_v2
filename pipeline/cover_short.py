@@ -75,6 +75,14 @@ TOPIC_STYLE_PROMPT = {
 }
 
 
+# 표 쇼츠가 토픽 그림체 대신 쓰는 그림체(스토리보드 thumbnail_style) — 2026-10-10 덕담표(blessing_card)의 고운 꽃 배경.
+#   운세 토픽 기본(치비 띠 동물)이면 꽃 배경이 아니라 마스코트가 나온다. 사진 말고 수채화 — 저작권 걱정 없는 생성 그림.
+CARD_STYLE_PROMPT = {
+    "flower": ("delicate watercolor illustration on warm cream paper, airy light pastel palette of blush pink, peach and "
+               "soft yellow, gentle diffused morning light, calm and soothing, plenty of empty space in the middle"),
+}
+
+
 def _topic_style(topic: str) -> str:
     t = (topic or "").strip().lower()
     for k in TOPIC_STYLE_PROMPT:
@@ -88,6 +96,8 @@ def _style_prompt(style: str) -> str:
         return TOPIC_STYLE_PROMPT.get(style[6:], NEWS_PRESET)
     if not style or style == "news":
         return NEWS_PRESET
+    if style in CARD_STYLE_PROMPT:
+        return CARD_STYLE_PROMPT[style]
     try:
         from thumbnail import PRESETS
         return PRESETS.get(style, NEWS_PRESET)
