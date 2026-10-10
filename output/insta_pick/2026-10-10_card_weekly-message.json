@@ -1,0 +1,63 @@
+{
+ "date": "2026-10-10",
+ "kind": "card",
+ "slug": "weekly-message",
+ "headline": [
+  "카드 한 장 골라 봐요",
+  "이번 주 나에게 올 일"
+ ],
+ "say_intro": "끌리는 카드 한 장을 골라 봐요.",
+ "options": [
+  {
+   "img": "the back of a mystical card with a navy blue and gold symmetrical crescent moon pattern",
+   "reveal_img": "a glowing golden sun rising over gentle green hills inside an ornate golden frame",
+   "name": "해 카드",
+   "result": "좋은 소식이 와요",
+   "lines": "기다리던 연락이 이번 주에 와요. 먼저 웃어 주면 더 빨라져요.",
+   "say": "1번 해 카드, 좋은 소식이 와요."
+  },
+  {
+   "img": "the back of a mystical card with a rose pink and gold star pattern",
+   "reveal_img": "two white swans facing each other on a calm lake under a pink sunset sky inside an ornate golden frame",
+   "name": "백조 카드",
+   "result": "인연이 가까워요",
+   "lines": "마음 맞는 사람이 생겨요. 오랜만에 안부를 먼저 물어봐요.",
+   "say": "2번 백조 카드, 인연이 가까워요."
+  },
+  {
+   "img": "the back of a mystical card with a mint green and gold leaf pattern",
+   "reveal_img": "a small green sprout growing from a clay pot with a tiny watering can beside it inside an ornate golden frame",
+   "name": "새싹 카드",
+   "result": "시작하면 돼요",
+   "lines": "미뤄 둔 일을 시작하기 딱 좋은 주예요. 오늘 10분만 해 봐요.",
+   "say": "3번 새싹 카드, 시작하면 돼요."
+  },
+  {
+   "img": "the back of a mystical card with a lavender and gold cloud pattern",
+   "reveal_img": "a cozy armchair by a rainy window with a cup of tea and a sleeping cat inside an ornate golden frame",
+   "name": "쉼표 카드",
+   "result": "잠깐 쉬어 가요",
+   "lines": "몸이 먼저 신호를 보내요. 이번 주말은 푹 자는 게 답이에요.",
+   "say": "4번 쉼표 카드, 잠깐 쉬어 가요."
+  }
+ ],
+ "say_outro": "몇 번 카드 골랐어요?",
+ "outro_text": "몇 번 골랐어요?",
+ "caption": "끌리는 카드 한 장만 골라 봐요 🃏 이번 주 나에게 올 일이에요.",
+ "hashtags": [
+  "#타로",
+  "#오늘의타로",
+  "#카드고르기",
+  "#골라보세요",
+  "#AI그림"
+ ],
+ "bench": {
+  "keyword": "타로",
+  "format": "뒤집힌 카드 고르기 → 카드별 메시지(타로 고르기)",
+  "seen": [
+   "love0asis 타로 리딩 135만",
+   "lure.tarot 리딩 129만"
+  ],
+  "ours": "카드 그림·메시지 새로 만듦 — 꼴만 빌림"
+ }
+}
