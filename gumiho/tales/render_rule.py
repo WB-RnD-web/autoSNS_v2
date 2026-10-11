@@ -5,10 +5,10 @@
     python gumiho/tales/render_rule.py gumiho/tales/rules_scripts/R101_mariana-trench-floor.json --mock   # 가짜 그림·목소리
 
 형식마다 화면(2026-10-09 새 라인업 — rules.py 머리말):
-  survival  위: 'HOW LONG WOULD YOU LAST? · PT.N' + 상황 큰 글자(첫 1초) · 생존 시계(0:00 → 출처가 준 시각까지 굴러가거나,
+  survival  위: 'HOW LONG WOULD YOU LAST?'(10/11: PT.N 뺌) + 상황 큰 글자(첫 1초) · 생존 시계(0:00 → 출처가 준 시각까지 굴러가거나,
             출처가 단위만 주면 SECONDS·HOURS 같은 낱말, 시간이 없으면 --:--) · 박자 카드(큰 글자 + 작은 출처) ·
             끝: "GUMI'S ODDS 2%" 카드 + 다음 편 예고(글자만)
-  compare   위: 'RANKED · PT.N' + 주제 · 지금 항목 이름·값 · 코드로 그린 막대(작은 것부터 쌓인다, log/linear) ·
+  compare   위: 'SIZE COMPARISON'·'COMPARISON'(10/11: PT.N 뺌) + 주제 · 지금 항목 이름·값 · 코드로 그린 막대(작은 것부터 쌓인다, log/linear) ·
             마지막 반전(막대가 표를 뚫고 나가거나 큰 글자) · 끝: 구미 판정 + 예고
   liminal   옛 규칙 화면 그대로(규칙 카드 튀어나옴·번쩍·흔들림) + 'FICTION' 표시 · 끝 → 첫 장면 루프
   rules·versus·pov(옛 설화, 10/9까지) 그대로 — 끝에 치비 구미
@@ -37,7 +37,8 @@ import rules as RU  # noqa: E402
 SW, SH = R.SW, R.SH
 FPS = int(os.environ.get("RULES_FPS", "30"))
 SR = R.SR
-GAP = 0.22                     # 줄 사이 쉼 — 짧게(도파민)
+GAP = 0.12                     # 줄 사이 쉼 — 짧게(10/11 벤치마킹: 이긴 쇼츠 말 빠르기 중앙값 195 WPM · 0.22 → 0.12)
+TEMPO_NEW = float(os.environ.get("RULES_TEMPO", "1.12"))   # 새 형식 목소리 빠르기(롱폼 이야기 0.97 과 따로) — 견본 134~185 WPM → ≈185~200
 POP = 0.18                     # 카드 튀어나오는 시간
 LOOP = 0.4                     # 끝 → 첫 장면 섞기(rules·liminal)
 END_HOLD = 1.3                 # survival·compare 끝 화면(판정·예고)이 머무는 시간
@@ -393,7 +394,7 @@ class SurvivalPainter(Base):
             if r["word"]:
                 r["fword"] = next((R.font("sans", z) for z in (150, 124, 104, 88, 74, 62, 52)
                                    if d.textlength(r["t"], font=R.font("sans", z)) <= PANEL_W - 60), R.font("sans", 46))
-        self.badge_text = f"HOW LONG WOULD YOU LAST? · PT.{s['part']}"
+        self.badge_text = "HOW LONG WOULD YOU LAST?"          # 10/11: PT.N 은 터진 뒤에만
         self.srcs = s.get("sources") or []
 
     def last_number(self, k: int) -> float:
@@ -502,7 +503,7 @@ class ComparePainter(Base):
         vals = [r["value"] for r in self.rows if not r["twist"] and r["value"]]
         self.vmin, self.vmax = min(vals), max(vals)
         self.srcs = s.get("sources") or []
-        self.badge_text = f"RANKED · PT.{s['part']}"
+        self.badge_text = "SIZE COMPARISON" if s.get("unit") in ("m", "km", "cm") else "COMPARISON"   # 10/11: PT.N 빼기
         d = ImageDraw.Draw(Image.new("RGB", (8, 8)))
         for r in self.rows:
             r["tlines"], r["ftext"] = self._fit(r["big"], (84, 76, 68, 60, 52, 46), TEASER_W) if r["big"] else ([], None)
@@ -623,7 +624,13 @@ def prepare(s: dict, wd: str, mock: bool) -> tuple[dict, object]:
     """목소리 · 그림 → (plan, painter). 테스트는 이걸로 프레임만 본다."""
     ls = RU.lines_of(s)
     texts = [ln["say"] for ln in ls] + [s["gumi"]["say"]]
-    voices = R.synth(texts, os.path.join(wd, "voice"), mock)
+    old = R.TEMPO
+    if s.get("format") in RU.NEW_FORMATS:
+        R.TEMPO = TEMPO_NEW                                  # synth 는 R.TEMPO 를 부를 때 읽는다(캐시 열쇠에도 들어간다)
+    try:
+        voices = R.synth(texts, os.path.join(wd, "voice"), mock)
+    finally:
+        R.TEMPO = old
     raws = []
     for i, ln in enumerate(ls):
         pre = prefix_of(s, ln)

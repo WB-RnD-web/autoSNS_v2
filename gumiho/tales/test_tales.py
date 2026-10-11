@@ -391,8 +391,8 @@ ck("공개 시각 = 그 일요일 14:00 UTC", [T.publish_at(e) for e in _new]
 ck("10/10~10/17 사이에 공개되는 편이 없다",
    not [e for e in _new if "2026-10-10" <= e["date"] <= "2026-10-17"])
 ck("새 편 제목(카운트다운·심해·태양)", [e["title_idea"] for e in _new] == [
-    "10 Places on Earth You Can't Survive — Explained",
-    "The Deep Sea, Explained: Every Zone and What Lives There",
+    "How Long You'd Last in the 10 Deadliest Places on Earth",      # 10/11 벤치마킹: 'you' 생존 꼴 ×71~×449
+    "How Long You'd Last in Every Zone of the Ocean",
     "What If the Sun Disappeared? Minute by Minute"])
 ck("새 편 형식은 해설편(places·zones·whatif)", [e["format"] for e in _new] == ["places", "zones", "whatif"])
 ck("새 편 facts 10개 이상·출처 3개 이상(모두 링크)", all(len(e["facts"]) >= 10 and len(e["sources"]) >= 3
@@ -412,7 +412,7 @@ _o = subprocess.run([sys.executable, _tp, "next", "--date", "2026-10-17"], captu
 _j = json.loads(_o.stdout)
 ck("CLI next 10/17 → 027 · 공개 시각 · 다음 주 예고 · 견본 준비", _j.get("file") == "027_places-you-cant-survive.json"
    and _j.get("publish_at") == "2026-10-18T14:00:00Z" and _j.get("teaser", {}).get("date") == "2026-10-25"
-   and _j["teaser"]["line"].startswith("Next Sunday: The Deep Sea") and _j.get("exemplar_ready") is True, _o.stdout[:200])
+   and _j["teaser"]["line"].startswith("Next Sunday: How Long You'd Last in Every Zone") and _j.get("exemplar_ready") is True, _o.stdout[:200])
 _t29 = T.teaser_for(T.entry(29))
 ck("마지막 편(11/1) 예고는 편성 안 된 backlog 를 약속하지 않는다", _t29["title"] == "" and _t29["date"] is None
    and _t29["line"] == "A new one next Sunday.", str(_t29))

@@ -107,7 +107,8 @@ ck("10/26부터(목록 끝) 쓰지 않는다 — 판정 10/27 뒤 채운다", RU
 first_lim = RU.on_date(D(2026, 10, 13))
 ck("10/13(쓰는 날) = Pt.2 survival + liminal Pt.1", [(e["format"], e["part"]) for e in first_lim] == [("survival", 2), ("liminal", 1)])
 ck("teaser_idea: 매일(A)은 TOMORROW, 격일(B)은 NEXT(요일은 시간대마다 달라 안 쓴다), liminal·마지막 편은 없음",
-   RU.teaser_idea(sv[0], sc).startswith("PT.2 TOMORROW: ") and RU.teaser_idea(cp[0], sc) == "PT.2 NEXT: BLACK HOLES"
+   RU.teaser_idea(sv[0], sc).startswith("TOMORROW: ") and RU.teaser_idea(cp[0], sc) == "NEXT: BLACK HOLES"
+   and not any("PT." in (RU.teaser_idea(e, sc) or "") for e in sv + cp)                 # 10/11: 번호는 터진 뒤에만
    and not any(w in (RU.teaser_idea(e, sc) or "") for e in cp for w in ("MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY",
                                                                      "FRIDAY", "SATURDAY", "SUNDAY"))
    and RU.teaser_idea(lm[0], sc) is None and RU.teaser_idea(sv[-1], sc) is None and RU.teaser_idea(cp[-1], sc) is None,
@@ -204,7 +205,7 @@ ck("글에 URL 거부(say)", has(errs_of(A, lambda s: s["beats"][1].update(say="
 ck("글에 URL 거부(description_hook · 도메인만)", has(errs_of(A, lambda s: s.update(description_hook="Sources at noaa.gov.")), "URL"))
 ck("compare: 값 글자도 facts 에서만", has(errs_of(B1, lambda s: s["items"][0].update(label="77 CM")), "facts 에 없다"))
 ck("liminal: 사실처럼 보이는 숫자(단위·%) 거부", has(errs_of(B2, lambda s: s["lines"][1].update(say="Rule two. 87% of people never leave.")), "숫자"))
-ck("liminal: 3 A.M.·RULE 번호는 괜찮다", not errs_of(B2, lambda s: s["lines"][1].update(say="Rule two. At 3 A.M. the music plays. If it stops, freeze until it starts again.")))
+ck("liminal: 3 A.M.·RULE 번호는 괜찮다", not errs_of(B2, lambda s: s["lines"][1].update(say="Rule two. At 3 A.M. the ceiling music stops. Freeze.")))
 
 print("── 대본 검사: 금지 주제·구미·그림 ──")
 for word, mut in (("korea", lambda s: s["beats"][0].update(say="In Korea the sea is deep.")),
@@ -305,7 +306,9 @@ ck("R103 의 23.5시간은 '하루 길이' — 시계 값이 아니다", "23:30:
 ck("시계 꼴이 틀리면 거부", has(errs_of(A, lambda s: s["beats"][1].update(t="soon")), "꼴"))
 ck("박자 3개면 거부(4–6)", has(errs_of(A, lambda s: s.update(beats=s["beats"][:3])), "beats"))
 ck("odds 없으면 거부", has(errs_of(A, lambda s: s["gumi"].pop("odds")), "odds"))
-ck("제목에 Pt.N 없으면 거부", has(errs_of(A, lambda s: s.update(title="How Long Would You Last in the Mariana Trench? #shorts")), "Pt."))
+ck("제목에 Pt.N 있으면 거부(10/11 벤치마킹: 번호는 터진 뒤에만)",
+   has(errs_of(A, lambda s: s.update(title="How Long Would You Last on the Floor of the Mariana Trench? Pt.1 #shorts")), "Pt."))
+ck("견본 세 편 제목에 Pt 없음", not any(RU.PART_TITLE.search(x["title"]) for x in (A, B1, B2)))
 ck("제목이 How Long Would You Last 가 아니면 거부", has(errs_of(A, lambda s: s.update(title="The Mariana Trench Pt.1 #shorts")), "How Long"))
 ck("teaser 는 다음 Pt", has(errs_of(A, lambda s: s.update(teaser="PT.5 TOMORROW: MARS")), "teaser"))
 ck("teaser 는 teaser_idea 글자 그대로(같은 Pt 라도 다르면 거부)", has(errs_of(A, lambda s: s.update(teaser="PT.2 TOMORROW: MARS!")), "teaser"))
@@ -316,7 +319,24 @@ print("── 대본 검사: compare · liminal ──")
 ck("compare: 작은 것 → 큰 것 순서가 아니면 거부", has(errs_of(B1, lambda s: s["items"].insert(0, s["items"].pop(2))), "오름차순"))
 ck("compare: 마지막 twist 없으면 거부", has(errs_of(B1, lambda s: s["items"][-1].pop("twist")), "twist"))
 ck("compare: scale 없으면 거부", has(errs_of(B1, lambda s: s.pop("scale")), "scale"))
-ck("compare: 제목에 Ranked/by Size", has(errs_of(B1, lambda s: s.update(title="Deep Sea Creatures Pt.1 #shorts")), "Ranked"))
+ck("compare: 제목은 'A vs B vs C | … Comparison'(Ranked 만으로는 거부)",
+   has(errs_of(B1, lambda s: s.update(title="Deep Sea Creatures Ranked by Size #shorts")), "vs"))
+ck("compare: 제목의 vs 이름이 items 에 없으면 거부", has(errs_of(B1, lambda s: s.update(
+    title="Anglerfish vs Blue Whale | Deep Sea Size Comparison #shorts")), "items 이름"))
+ck("compare: 소유격·the 는 같은 이름으로 본다", RU._name_key("The Saturn's Hexagon") == "saturn hexagon"
+   and RU.vs_sides("A vs. B vs C | X Comparison #shorts") == ["A", "B", "C"])
+
+print("── 첫 문장(10/11 벤치마킹 ①: 인트로 없이 제목 질문) ──")
+ck("survival 줄 0 이 'How long would you last' 로 시작하지 않으면 거부",
+   has(errs_of(A, lambda s: s["beats"][0].update(say="You just woke up on the floor of the Mariana Trench. 10,935 meters down.")), "How long"))
+ck("줄을 'Gumi here' 로 열면 거부(구미는 끝 판정에서만)",
+   has(errs_of(A, lambda s: s["beats"][0].update(say="Gumi here. How long would you last on the floor of the Mariana Trench?")), "Gumi"))
+ck("compare 줄 0 첫 문장이 질문이 아니면 거부",
+   has(errs_of(B1, lambda s: s["items"][0].update(say="Start small. A female black seadevil anglerfish: about 12 centimeters.")), "질문"))
+ck("liminal 줄 0 에 you 가 없으면 거부",
+   has(errs_of(B2, lambda s: s["lines"][0].update(say="Rule one. The escalators never stop. Only ride the one going down.")), "you"))
+ck("견본 세 편 첫 문장: 제목 질문 · 질문 · you", A["beats"][0]["say"].startswith("How long would you last")
+   and B1["items"][0]["say"].split("?")[0].startswith("How big") and B2["lines"][0]["say"].startswith("You "))
 ck("compare: 값 없는 반전 글자 길이 상한", has(errs_of(B1, lambda s: (s["items"][-1].pop("value"), s["items"][-1].pop("label"),
                                                   s["items"][-1].update(text="A VERY LONG TWIST LINE THAT WILL NOT FIT ON SCREEN"))), "반전"))
 ck("liminal: fiction 표시 필수", has(errs_of(B2, lambda s: s.pop("fiction")), "fiction"))

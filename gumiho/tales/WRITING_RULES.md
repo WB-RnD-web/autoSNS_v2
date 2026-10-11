@@ -5,8 +5,8 @@ You write the day's vertical Shorts for **Nine Tails Tales**, an English channel
 
 | slot | when (UTC / ET) | format | series | playlist |
 |---|---|---|---|---|
-| A | every day 20:00 / 16:00 | `survival` | "How Long Would You Last…? Pt.N" | How Long Would You Last? |
-| B | 10/13, 10/15, 10/17 … 23:30 / 19:30 | `compare` | "… Ranked Pt.N" | Ranked: Biggest, Heaviest, Fastest |
+| A | every day 20:00 / 16:00 | `survival` | "How Long Would You Last…?" | How Long Would You Last? |
+| B | 10/13, 10/15, 10/17 … 23:30 / 19:30 | `compare` | "A vs B vs C \| … Comparison" | Ranked: Biggest, Heaviest, Fastest |
 | B | 10/14, 10/16, 10/18 … 23:30 / 19:30 | `liminal` | "RULES to Follow if…" (fiction) | Liminal Rules |
 
 Dates above are **publish** days; you write each Short the day before (the routine runs at 12:00 UTC).
@@ -22,9 +22,22 @@ copy it unchanged.
 - Most-dangerous-places top-10 videos: median **871K**, with 8 small-channel breakouts.
 - A Mariana Trench Short from a **20K**-subscriber channel got **2.8M**.
 - A liminal-space Short from a **13K**-subscriber channel got **1.8M**.
-- A size-comparison series went Pt.1 → Pt.3 **3.3M → 4.73M** (parts build an audience).
 - On our own channel, the only Shorts the feed pushed were **versus** and **rules**.
 Our old East Asian folklore topics are **retired** (owner, 10/9). Nothing Korean/Joseon/folklore from now on.
+
+## What the winners do — copy it (benchmark 2026-10-11, C:\wbtmp\research1011\nt_bench)
+The checker enforces 1–3.
+1. **Open with the title question. No intro.** 0 of 76 narrated winner Shorts open with an intro; 35 open with a
+   question. Survival line 0 starts "How long would you last …?"; compare line 0's first sentence is a question;
+   liminal line 0 puts *you* there ("You wake up alone in a mall at 3 A.M."). Never start a line with "Gumi here" —
+   Gumi speaks only in the final verdict (`gumi.say`).
+2. **Compare titles are "A vs B vs C | … Comparison".** "vs" is in 54% of 1M+ size-comparison titles and 14% of
+   those under 100K; "Ranked" is in 1 of 35. Name famous extremes (the smallest, a famous middle, the biggest or
+   the twist) — every name must be an item on screen.
+3. **No part numbers.** Small winners almost never number parts (3% of 1M+ survival titles); series without a hit
+   shrank every part (×0.6 → ×0.1). We add "Pt.N" only after one Short takes off.
+4. **Fast, tight lines.** Winners speak about **195 words a minute**. The renderer speeds the voice up; you keep
+   lines short and concrete — one number, one consequence. End on a payoff, not a request.
 
 ## Get today's entries
 `python gumiho/tales/rules.py next --date <today, YYYY-MM-DD>` prints `{"entries": [...]}` — usually **two**
@@ -51,7 +64,7 @@ If it prints `"none": true`, write nothing. Use each entry's `format`, `part`, `
    Netflix, Kisaragi Station, The Exit 8. Present-day Western or space settings only. **Gumi is voice-only**: never
    draw Gumi, a fox, fox/animal ears, tails or an anime girl; never put her in `img`.
 
-## Format A — `survival` ("How Long Would You Last…? Pt.N"), 30–45 s (70–110 words)
+## Format A — `survival` ("How Long Would You Last…?"), 30–45 s (70–110 words)
 - `situation`: the place in big words, ≤36 chars (`"FLOOR OF THE MARIANA TRENCH"`). It is on screen from the
   first frame, with the survival clock at **0:00**.
 - `beats`: **one beat per `beat_ideas` entry (skip the `GUMI` one), in the same order, with the same `t`
@@ -68,14 +81,15 @@ If it prints `"none": true`, write nothing. Use each entry's `format`, `part`, `
     from `facts`.
 - `gumi`: `{"odds": "2%", "say": "Gumi's odds: two percent. …"}` — one line, ≤16 words, contains "odds".
   The spoken odds must match `odds`; that one phrase is the only number exempt from `facts`.
-  Optional: Gumi may open beat 0 ("Gumi here. You just woke up…").
-- `teaser`: `teaser_idea` copied **exactly** (on-screen only), e.g. `"PT.2 TOMORROW: MARS, NO SUIT"`; leave it out
+- Beat 0 `say` **starts with the title question**: "How long would you last on the floor of the Mariana Trench?
+  You just woke up 10,935 meters down. No submarine." No intro, no "Gumi here".
+- `teaser`: `teaser_idea` copied **exactly** (on-screen only), e.g. `"TOMORROW: MARS, NO SUIT"`; leave it out
   when `teaser_idea` is null (last part, liminal).
-- Title: `How Long Would You Last on the Floor of the Mariana Trench? Pt.1 #shorts` — starts "How Long Would You
-  Last", contains `Pt.N`.
+- Title: `How Long Would You Last on the Floor of the Mariana Trench? #shorts` — starts "How Long Would You
+  Last". **No "Pt.N".**
 - Total words 70–110 including Gumi.
 
-## Format B1 — `compare` ("… Ranked Pt.N" / "… by Size Pt.N"), 25–40 s (60–105 words)
+## Format B1 — `compare` ("A vs B vs C | … Comparison"), 25–40 s (60–105 words)
 - `hook`: the topic in big words (`"DEEP SEA CREATURES BY SIZE"`), on screen the whole time.
 - `unit`, `scale` (`log` when values span more than ~2 orders of magnitude, else `linear`).
 - `items`: 4–6 ranked items **smallest → largest**, then **one last item with `"twist": true`**:
@@ -84,15 +98,18 @@ If it prints `"none": true`, write nothing. Use each entry's `format`, `part`, `
   (the checker converts `label` into `unit`; `value` 130 on a "13 M" label fails). The twist either breaks the
   chart (value bigger than everything → the bar shoots off-screen) or has no value and a big `text` (≤40 chars).
   If the source gives a different unit (feet), say the source's number in `say` ("an estimated 150 feet").
-- `gumi.say` ≤16 words: a verdict or a question for the comments. `teaser` = `teaser_idea` exactly ("PT.2 NEXT: …").
-- Title contains "Ranked" or "by Size" and `Pt.N`. Total words 60–105.
+- Item 0 `say`: the **first sentence is a question** ("How big does life get in the deep sea? Start small: …").
+- `gumi.say` ≤16 words: a verdict or a question. `teaser` = `teaser_idea` exactly ("NEXT: BLACK HOLES").
+- Title: `Anglerfish vs Giant Squid vs Giant Siphonophore | Deep Sea Size Comparison #shorts` — start from the
+  catalog `title_idea`; every name before "|" must be one of your `items` names. **No "Pt.N".** Total words 60–105.
 
 ## Format B2 — `liminal` ("RULES to Follow if You Wake Up in an Empty Mall at 3 A.M."), 20–40 s (50–92 words)
 - **Clearly fiction** (`"fiction": true`; the screen shows FICTION and the description says so). Original
   rules for an ordinary, too-quiet, present-day Western place — fluorescent hum, wet floor signs, one door that
   wasn't there. Don't borrow known internet stories or games (no stations missing from the map, no hallway you
   must turn back in).
-- `lines` (5–8), numbered rules `"rule": 1, 2, 3…` (≥4), getting stranger. The **last rule bends an earlier one**
+- `lines` (5–8), numbered rules `"rule": 1, 2, 3…` (≥4), getting stranger. Line 0 `say` puts **you** in the
+  place first ("You wake up alone in a mall at 3 A.M. Rule one: …"). The **last rule bends an earlier one**
   so the viewer is pushed back to rule one; write how in `loop_back`. Line 0 has big `text` (≤48 chars).
 - No fact-like numbers (percentages, distances, years, counts of people). Times like "3 A.M." and floor/aisle
   numbers are fine. No sources needed.

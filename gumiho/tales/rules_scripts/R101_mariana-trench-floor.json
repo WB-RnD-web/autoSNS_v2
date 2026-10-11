@@ -4,7 +4,7 @@
  "format": "survival",
  "part": 1,
  "look": "deep",
- "title": "How Long Would You Last on the Floor of the Mariana Trench? Pt.1 #shorts",
+ "title": "How Long Would You Last on the Floor of the Mariana Trench? #shorts",
  "hook": "HOW LONG WOULD YOU LAST?",
  "situation": "FLOOR OF THE MARIANA TRENCH",
  "description_hook": "You wake up on the floor of the Mariana Trench, 10,935 meters down, with no submarine. The clock starts now.",
@@ -13,7 +13,7 @@
    "t": "0:00",
    "text": "10,935 M DOWN",
    "src": 0,
-   "say": "Gumi here. You just woke up on the floor of the Mariana Trench. 10,935 meters down. No submarine.",
+   "say": "How long would you last on the floor of the Mariana Trench? You just woke up 10,935 meters down. No submarine.",
    "img": "a lone human silhouette standing on the dark silty floor of the deepest ocean trench, a faint beam of light from far above, crushing darkness all around"
   },
   {
@@ -42,7 +42,7 @@
   "odds": "0%",
   "say": "Gumi's odds: zero. A NOAA microphone lasted 23 days down here. You won't."
  },
- "teaser": "PT.2 TOMORROW: MARS, NO SUIT",
+ "teaser": "TOMORROW: MARS, NO SUIT",
  "sources": [
   "https://oceanservice.noaa.gov/facts/oceandepth.html",
   "https://www.noaa.gov/media-release/seven-miles-deep-ocean-is-still-noisy-place",
