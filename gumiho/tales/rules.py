@@ -6,12 +6,17 @@
 
 2026-10-09 사용자 결정: 한국 설화·조선 주제 금지('쓰레기 주제'). 타깃은 그대로 해외 영어권 20–39(Studio: 25–34 43%·
   남성 70%·미국 73%). 10/13–10/26 2주 시험(10/27 판정) — 새 쇼츠 라인업(shorts_catalog.json):
-  A  survival  매일 20:00 UTC  "How Long Would You Last…? Pt.N" — 상황 큰 글자 + 0:00 시계 → 시각별 4–6 박자(실제 수치·출처) → "Gumi's odds: 2%"
-  B1 compare   격일 23:30 UTC  "… Ranked Pt.N" — 실측값 막대(크기·무게·깊이·속도) + 마지막 반전
+  A  survival  매일 20:00 UTC  "How Long Would You Last…?" — 첫 문장이 제목 질문 + 상황 큰 글자 + 0:00 시계 → 시각별 4–6 박자(실제 수치·출처) → "Gumi's odds: 2%"
+  B1 compare   격일 23:30 UTC  "A vs B vs C | … Comparison" — 첫 문장은 질문 · 실측값 막대(크기·무게·깊이·속도) + 마지막 반전
   B2 liminal   격일 23:30 UTC  "RULES to Follow if You Wake Up in an Empty Mall at 3 A.M." — 분명한 창작, 번호 규칙 + 루프
   근거(C:\\wbtmp\\research1009): 'How Long You'd Last in Every Prehistoric Era' 구독 3.2만 채널 1,090만 · 위험한 곳 Top10 중앙값
   87만(작은 채널 돌파 8) · 마리아나 해구 구독 2만 채널 280만 · 리미널 구독 1.3만 채널 180만 · 크기 비교 Pt.1→3 330만→473만 ·
   우리 쇼츠 중 피드가 민 건 versus·rules 뿐.
+★2026-10-11 벤치마킹(C:\\wbtmp\\research1011\\nt_bench · 사용자 "벤치마킹·따라하기 수단 방법 가리지 말고"):
+  ① 첫 문장 = 제목 질문(이긴 쇼츠 76편 중 인트로로 여는 것 0 · 질문으로 여는 것 35) — 구미는 끝 판정에서만 말한다
+  ② 비교 제목 = "A vs B vs C | … Comparison"(조회 100만+ 크기 비교 쇼츠 제목의 54%가 vs · 10만 미만은 14% · ranked 는 1/35)
+  ③ Pt.N 은 터진 뒤에만(작은 채널의 이긴 쇼츠 중 번호 붙은 것 3% · 히트 없이 이어 붙인 시리즈는 편마다 줄었다) → 제목·화면에서 뺀다
+  ④ 말 빠르기 ≈195 WPM(이긴 쇼츠 중앙값) — 우리 견본 134~185 → 새 형식은 목소리 ×RULES_TEMPO(1.12) · 줄 쉼 GAP 0.12
 정책(YouTube '진정성 없는 콘텐츠' — 이름만 바꾼 AI 템플릿 채널 16곳이 2026-01 삭제됐다):
   편마다 다른 수치·논리·출처 · 같은 그림(프롬프트) 재사용 금지 · 숫자 있는 줄은 출처(sources) 필수 · 숫자는 catalog facts 에서만 ·
   실존 피해자·실존 인물·프랜차이즈·SCP·Backrooms 금지 · 구미는 목소리만(그림에 구미·여우 금지).
@@ -74,7 +79,10 @@ NAME_MAX, LABEL_MAX = 22, 18
 TWIST_TEXT_MAX = 40        # 값 없는 반전 큰 글자(화면 폭 안 — 10/10 검수)
 GUMI_MAX = 16
 SURVIVAL_TITLE = re.compile(r"(?i)^how long would you last\b")
-COMPARE_TITLE = re.compile(r"(?i)\b(ranked|by size)\b")
+COMPARE_TITLE = re.compile(r"(?i)\bvs\.?\s.+\|.*\bcomparison\b")     # 10/11 벤치마킹 ②: "A vs B vs C | … Comparison"
+VS_SPLIT = re.compile(r"(?i)\s+vs\.?\s+")
+SURVIVAL_OPEN = re.compile(r"(?i)^how long would you last\b")             # 10/11 ①: 첫 문장 = 제목 질문
+GUMI_OPEN = re.compile(r"(?i)^\s*gumi\b")
 LIMINAL_TITLE = re.compile(r"(?i)\b(rules?|theory)\b")
 PART_TITLE = re.compile(r"(?i)\bpt\.\s?(\d+)\b")
 ODDS = re.compile(r"^(<\s?1|\d{1,3})%$")
@@ -211,7 +219,38 @@ def teaser_idea(e: dict, sc: dict | None = None) -> str | None:
     nx = rs[k + 1]
     gap = (publish_date(nx, sc) - publish_date(e, sc)).days
     when = "TOMORROW" if gap == 1 else "NEXT"
-    return f"PT.{nx['part']} {when}: {nx['teaser']}"
+    return f"{when}: {nx['teaser']}"                    # 10/11 ③: 'PT.N' 은 터진 뒤에만 — 지금은 번호 없이
+
+
+def _name_key(t: str) -> str:
+    """제목의 'Saturn's Hexagon' 과 items 의 'SATURN HEXAGON' 을 같게 본다(소유격·기호·the 빼고 소문자)."""
+    t = re.sub(r"(?i)'s\b", "", t or "").lower()
+    t = re.sub(r"[^a-z0-9* ]+", " ", t)
+    return " ".join(w for w in t.split() if w != "the")
+
+
+def vs_sides(title: str) -> list[str]:
+    """'A vs B vs C | Deep Sea Size Comparison #shorts' → ['A', 'B', 'C']."""
+    head = title.split("|")[0].replace("#shorts", "")
+    parts = [p.strip() for p in VS_SPLIT.split(head) if p.strip()]
+    return parts if len(parts) > 1 else []
+
+
+def hook_errors(s: dict, ls: list[dict]) -> list[str]:
+    """10/11 벤치마킹 ①: 이긴 쇼츠는 인트로 없이 제목 질문으로 연다 — 구미는 끝 판정(gumi.say)에서만."""
+    fmt, errs = s.get("format"), []
+    if not ls:
+        return errs
+    first = (ls[0].get("say") or "").strip()
+    if any(GUMI_OPEN.match(x.get("say") or "") for x in ls):
+        errs.append("줄을 'Gumi …' 로 열지 않는다 — 구미는 마지막 판정(gumi.say)에서만 말한다(인트로 없이 바로 질문)")
+    if fmt == "survival" and not SURVIVAL_OPEN.match(first):
+        errs.append("survival 줄 0 은 제목 질문으로 시작한다: 'How long would you last …?'")
+    if fmt == "compare" and "?" not in re.split(r"(?<=[.!?])\s", first)[0]:
+        errs.append("compare 줄 0 의 첫 문장은 질문으로('How big does life get in the deep sea?')")
+    if fmt == "liminal" and not re.search(r"(?i)\byou\b", first):
+        errs.append("liminal 줄 0 은 '너'(you)를 그 자리에 세운다('You wake up alone in a mall at 3 A.M. …')")
+    return errs
 
 
 def file_for(e: dict) -> str:
@@ -650,13 +689,18 @@ def check_new(s: dict, sc: dict | None = None, others: list[dict] | None = None)
     title = s.get("title", "")
     if not title.endswith("#shorts") or len(title) > TITLE_MAX:
         errs.append(f"title 은 {TITLE_MAX}자 이하, '#shorts' 로 끝난다")
-    pm = PART_TITLE.search(title)
-    if fmt in ("survival", "compare") and not (pm and int(pm.group(1)) == e["part"]):
-        errs.append(f"제목에 'Pt.{e['part']}' 가 있어야 한다(시리즈 번호)")
+    if PART_TITLE.search(title):
+        errs.append("제목에 'Pt.N' 을 붙이지 않는다 — 번호는 한 편이 터진 뒤에만(10/11 벤치마킹)")
     if fmt == "survival" and not SURVIVAL_TITLE.match(title):
         errs.append("survival 제목은 'How Long Would You Last …' 로 시작")
-    if fmt == "compare" and not COMPARE_TITLE.search(title):
-        errs.append("compare 제목에 'Ranked' 또는 'by Size'")
+    if fmt == "compare":
+        if not COMPARE_TITLE.search(title):
+            errs.append("compare 제목은 'A vs B vs C | … Comparison' 꼴(10/11 벤치마킹: 100만+ 크기 비교 제목의 54%가 vs)")
+        else:
+            names = [_name_key(x.get("name") or "") for x in (s.get("items") or [])]
+            for side in vs_sides(title):
+                if not any(_name_key(side) and _name_key(side) in nm for nm in names):
+                    errs.append(f"compare 제목의 {side!r} 가 items 이름에 없다 — 화면에 나오는 것만 제목에")
     if fmt == "liminal" and not LIMINAL_TITLE.search(title):
         errs.append("liminal 제목에 'Rules' 또는 'Theory'")
     hook = s.get("hook", "")
@@ -691,6 +735,7 @@ def check_new(s: dict, sc: dict | None = None, others: list[dict] | None = None)
             if bad:
                 errs.append(f"{where}: 숫자 {', '.join(bad)} 가 catalog facts 에 없다(단위까지 같아야 한다)")
     ls = lines_of(s)
+    errs += hook_errors(s, ls)
     imgs = []
     total = words((s.get("gumi") or {}).get("say", ""))
     for i, x in enumerate(ls):

@@ -4,7 +4,7 @@
  "format": "compare",
  "part": 1,
  "look": "deep",
- "title": "Deep Sea Creatures Ranked by Size Pt.1 #shorts",
+ "title": "Anglerfish vs Giant Squid vs Giant Siphonophore | Deep Sea Size Comparison #shorts",
  "hook": "DEEP SEA CREATURES BY SIZE",
  "description_hook": "From a 12-centimeter anglerfish to a 46-meter living rope: the deep sea, ranked by size.",
  "unit": "m",
@@ -15,7 +15,7 @@
    "value": 0.12,
    "label": "12 CM",
    "src": 0,
-   "say": "Start small. A female black seadevil anglerfish: about 12 centimeters.",
+   "say": "How big does life get in the deep sea? Start small: a female black seadevil anglerfish, about 12 centimeters.",
    "img": "a tiny black deep-sea anglerfish with a glowing lure above its mouth in total darkness, needle teeth, bioluminescent glow, macro shot"
   },
   {
@@ -71,7 +71,7 @@
  "gumi": {
   "say": "Gumi here. Which one would you never want to meet down there?"
  },
- "teaser": "PT.2 NEXT: BLACK HOLES",
+ "teaser": "NEXT: BLACK HOLES",
  "sources": [
   "https://fishesoftexas.org/taxa/melanocetus-johnsonii",
   "https://www.mbari.org/animal/vampire-squid/",

@@ -135,8 +135,11 @@ Years stated as facts are fine ("in 1983"). The title carries the words people s
 
 ## Title, thumbnail, tags
 - `title` (≤70 characters): the search phrase people really type, plus the payoff. Patterns that work:
-  "10 Places on Earth You Can't Survive — Explained", "The Deep Sea, Explained: Every Zone and What Lives There",
+  "How Long You'd Last in the 10 Deadliest Places on Earth", "How Long You'd Last in Every Zone of the Ocean",
   "What If the Sun Disappeared? Minute by Minute". Use the catalog `title_idea` unless you can clearly improve it.
+  Benchmark 2026-10-11: putting **you** in the title won big — "How Long You'd Last in Every Prehistoric Era"
+  11.1M (×449 its channel's median); the same Mariana Trench topic got 697K as "Could you survive…" vs 9.8K
+  without "you" (×71). Name a real place rather than a generic one (×25).
 - `thumb.text`: 2–4 words ("YOU WON'T LAST", "8 MINUTES LEFT"). `thumb.img`: the most extreme image
   of the episode, one clear subject, high contrast.
 - `hook`: one sentence for the first line of the description.
