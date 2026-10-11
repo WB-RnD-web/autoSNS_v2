@@ -16,6 +16,7 @@
 지키는 것: 주제 태그 하나(insta.topic_tag = 해시태그 첫 개) · 본문 '#'·채널 줄(CHANNELS_LINE)·유튜브·링크 없음 ·
   '댓글로 번호 남겨 줘' 같은 미끼 없음(Meta 는 참여 유도 미끼를 덜 퍼뜨린다 — 투표가 그 자리를 대신한다) ·
   투표 보기 2~4개·한 개 25자 · 글 500자 · 스포일러 10개까지(답글엔 이모지 없이 — offset 단위가 문서에 없다).
+★10/13부터 인스타는 하루 두 편(낮 a · 저녁 b — pick_plan) — 쓰레드는 저녁 편만 따라간다(시험 조건 그대로 · 10/25 판정).
 순서: 인스타 ledger 에 오늘 media_id 가 있어야(= 인스타가 실제로 올라간 뒤) → 글 → ledger 기록 → 답글 → ledger 기록.
   다시 돌려도 두 번 올리지 않는다(ledger: output/insta_pick_render/threads_posted.json · Actions 캐시).
   쓰레드가 실패해도 인스타는 그대로다(워크플로 continue-on-error + 경고).
@@ -194,6 +195,11 @@ def skip_reasons(s: dict, today: dt.date, ig_led: dict, env=None) -> list[str]:
         why.append("수동 실행(렌더만)")
     if s.get("date") != today.isoformat():
         why.append(f"오늘({today}) 대본이 아니다: {s.get('date')}")
+    try:
+        if P.slot_of(dt.date.fromisoformat(s.get("date") or ""), s.get("kind", "")) == "a":
+            why.append("낮 편은 쓰레드에 안 올린다 — 쓰레드 2주 시험은 저녁 편 하나로(10/25 판정까지 조건 그대로)")
+    except ValueError:
+        pass
     ig = ig_led.get(s.get("date") or "", {})
     if not ig.get("media_id"):
         why.append("인스타가 아직 안 올라갔다(인스타 ledger 에 오늘 media_id 없음)")
