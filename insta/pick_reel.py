@@ -4,19 +4,19 @@
 왜: 사용자 10/7 "유튜브 홍보는 아예 하지 말고 인스타 자체를 키우자 · 매일 바이럴을 찾아 벤치마킹해서 AI로 ·
   히트성 아이디어 몇 개를 로테이션으로". 로컬 크롬(@zerocrew.studio)으로 인스타 검색 상위를 잰 결과(10/7):
   심리테스트·성격테스트 517만~1,934만 · 상식 퀴즈 694만~1,407만 · 운세·사주·타로 135만~409만.
-  다섯 꼴 모두 ★보는 사람이 멈춰서 고르고★ 댓글에 번호를 남기는 꼴이다(왕별이 '내 것 찾기'와 같은 원리).
+  다섯 꼴 모두 ★보는 사람이 멈춰서 고르는★ 꼴이다(왕별이 '내 것 찾기'와 같은 원리).
 
 꼴(kind) — 편성은 pick_plan.py 가 날짜로 정한다:
   pick    그림 넷 중 하나 고르기 → 번호별 결과(그림 고르기형 심리테스트)
   card    뒤집힌 카드 넷 중 하나 → 앞면과 메시지(타로 고르기)
   quiz    상식 퀴즈 두세 문제 · 3초 세고 정답('이거 맞히면 상위 10%')
-  balance 밸런스 게임 세 판 · 둘 중 하나(댓글로 A·B)
+  balance 밸런스 게임 세 판 · 둘 중 하나(A·B)
   birth   태어난 달로 보는 표 한 장(12칸 · 내 달 찾기)
 
 ★남의 것을 베끼지 않는다: 빌리는 건 '꼴'뿐. 그림은 매번 새로 그리고(Spark z-image), 문구는 새로 쓰고,
   소리는 코드로 만든 배경음 + 우리 목소리(Supertonic F1). 인스타는 남의 영상·음원을 살짝 바꾼 재게시를 추천에서 뺀다.
 화면은 파스텔(2030 인스타 테스트 계정의 밝은 결). 아래 약 25%(y 1480~)는 인스타 캡션·버튼 자리라 비운다.
-캡션·커버(10/9): 회차 '오늘의 골라보기 #N' · 보내기 한 줄 · 숫자 댓글 한 줄 · 해시태그 5개는 코드가 붙인다(caption_of·cover_of).
+캡션·커버(10/9): 회차 '오늘의 골라보기 #N' · 열린 질문 한 줄(10/11) · 해시태그 5개는 코드가 붙인다(caption_of·cover_of).
 
     python insta/pick_reel.py check <script.json> [...]
     python insta/pick_reel.py render <script.json> --out output/insta_pick_render [--mock]
@@ -51,17 +51,17 @@ STYLE = ("dreamy pastel storybook illustration, soft diffused light, one subject
 COUNT = 3
 BANNED = ("치료", "완치", "진단", "우울증", "투자", "주식", "코인", "로또", "대박", "무조건", "죽음", "사망", "저주",
           "팔로우", "링크", "DM", "정확도")
-# 캡션 고정 문구(10/9) — Mosseri 2025-01-22: 비팔로워 도달에 가장 무거운 신호는 '보내기(DM 공유)'.
-#   대본 작가(루틴)가 지시를 안 지켜서 코드가 꼴마다 붙인다. 대본 caption 의 비슷한 줄은 뺀다(겹치지 않게).
+# 캡션 고정 문구 — 대본 작가(루틴)가 지시를 안 지켜서 코드가 꼴마다 붙인다. 대본 caption 의 비슷한 줄은 뺀다(겹치지 않게).
+# ★10/11: 10/9 의 '친구한테 보내서 물어봐요' + '몇 번? 숫자만 댓글로 남겨 줘요' 를 뺐다. 인스타(2024-06-02)는 참여를 대놓고
+#   부탁하는 게시물을 추천하지 않는다고 했고, 예가 바로 '특정 단어·숫자·이모지로 댓글 달기'였다. 열린 질문은 괜찮다고 했다.
+#   (socialmediatoday.com/news/instagram-says-using-certain-ctas-can-impact-post-reach/717732/) → 부탁 없는 열린 질문 한 줄만.
 SERIES = "오늘의 골라보기"
-SHARE = {"pick": "친구한테 보내서 뭐 골랐는지 물어봐요 💌", "card": "친구한테 보내서 몇 번 카드 골랐는지 물어봐요 💌",
-         "quiz": "친구한테 보내서 몇 개 맞히나 물어봐요 💌", "balance": "친구한테 보내서 뭐 골랐는지 물어봐요 💌",
-         "birth": "친구한테 보내서 그 친구 달도 찾아 줘요 💌"}
-# 숫자 하나만 쓰면 되는 댓글 — balance 는 영상 끝이 '세 글자'라 같은 말로(세 판 A·B)
-REPLY = {"pick": "몇 번? 숫자만 댓글로 남겨 줘요", "card": "몇 번? 숫자만 댓글로 남겨 줘요",
-         "quiz": "정답 몇 개 맞혔어요? 숫자만 댓글로", "balance": "A·B 세 글자만 댓글로 (예: ABA)",
-         "birth": "몇 월생? 숫자만 댓글로 남겨 줘요"}
-ASK_WORDS = ("댓글", "보내", "공유", "태그", "친구")     # 대본 caption 에서 이런 말이 든 줄(첫 줄 빼고)은 코드 문구와 겹친다
+ASK = {"pick": "어떤 그림이 제일 끌렸어요?", "card": "어떤 카드가 제일 끌렸어요?",
+       "quiz": "제일 헷갈렸던 문제는 뭐였어요?", "balance": "제일 고르기 어려웠던 판은 뭐였어요?",
+       "birth": "내 달 풀이, 맞는 것 같아요?"}
+ASK_WORDS = ("댓글", "보내", "공유", "태그", "친구")     # 대본 caption 에서 이런 말이 든 줄(첫 줄 빼고)은 뺀다(부탁 문구가 다시 끼지 않게)
+# 화면·목소리에 나오면 안 되는 부탁 말(10/11) — caption 은 위 ASK_WORDS 로 줄째 빼고, 나머지 글·말은 check 가 막는다
+ASK_BAN = ("댓글", "남겨 줘", "남겨줘", "보내 줘", "보내줘", "공유해", "태그해", "저장해")
 HASHTAG_MAX = 5                                           # 인스타 2025-12-18부터 5개 제한 · 검색에만 돕고 도달은 안 늘린다
 _SERIES_RE = re.compile(SERIES + r"\s*#\d+\s*[·|:-]?\s*")
 _TAG_RE = re.compile(r"(?<!\S)#(?!\d+(?:\s|$))[^\s#]+")   # 본문 속 해시태그(숫자만인 #5 는 회차라 남긴다)
@@ -156,6 +156,9 @@ def check(s: dict) -> list[str]:
     hits = sorted({w for w in BANNED for t in _texts(s) if w in t})
     if hits:
         errs.append(f"금지어 {hits}")
+    asks = sorted({w for w in ASK_BAN for t in _texts(dict(s, caption="")) if w in t})
+    if asks:
+        errs.append(f"댓글·보내기·저장 부탁 말 {asks} — 인스타는 참여를 대놓고 부탁하는 글을 추천하지 않는다(10/11). 열린 질문으로")
     return errs
 
 
@@ -377,7 +380,7 @@ class Painter:
         self.headline(d, 110, small=True)
         if sg["kind"] == "outro":
             ctext(d, 720, self.s.get("outro_text", "나는 A·B·?"), self.f["big"], ACC)
-            ctext(d, 850, "댓글로 세 글자만 남겨 줘요", self.f["line"], SUB)
+            ctext(d, 850, "너는 어느 쪽이었어요?", self.f["line"], SUB)
             return im
         intro = sg["kind"] == "intro"                         # ★첫 장면부터 1판 그림이 보인다
         k = 0 if intro else sg["k"]
@@ -538,7 +541,8 @@ def assets(s: dict, wd: str, mock: bool) -> dict:
 
 
 def series_label(s: dict) -> str:
-    return f"{SERIES} #{P.series_no(dt.date.fromisoformat(s['date']))}"
+    d = dt.date.fromisoformat(s["date"])
+    return f"{SERIES} #{P.series_no(d, P.slot_of(d, s.get('kind', '')))}"     # 10/13부터 하루 두 편 — 편 순서대로
 
 
 def hashtags_of(s: dict) -> list[str]:
@@ -551,7 +555,7 @@ def hashtags_of(s: dict) -> list[str]:
 
 
 def _hook(caption: str) -> str:
-    """대본 caption 에서 코드가 붙이는 말(회차·댓글·보내기·본문 해시태그)을 뺀 나머지."""
+    """대본 caption 에서 코드가 붙이는 말(회차·본문 해시태그)과 부탁 줄(댓글·보내기)을 뺀 나머지."""
     text = _SERIES_RE.sub("", caption)
     lines = [re.sub(r"\s{2,}", " ", _TAG_RE.sub("", ln)).rstrip() for ln in text.strip().splitlines()]
     keep = lines[:1] + [ln for ln in lines[1:] if not any(w in ln for w in ASK_WORDS)]
@@ -559,7 +563,7 @@ def _hook(caption: str) -> str:
 
 
 def caption_of(s: dict) -> str:
-    # 10/9: 첫 줄 앞에 회차('오늘의 골라보기 #N') · 끝에 보내기·숫자 댓글 두 줄 · 해시태그 5개 — 전부 코드가 강제한다
+    # 10/9: 첫 줄 앞에 회차('오늘의 골라보기 #N') · 해시태그 5개 — 코드가 강제한다 · 10/11: 끝 줄은 부탁 없는 열린 질문 하나
     body = f"{series_label(s)} · {_hook(s['caption'])}"
     if s["kind"] in ("pick", "card"):
         body += "\n\n" + "\n".join(f"{k}번 {o['name']} — {o['result']}: {o['lines']}" for k, o in enumerate(s["options"], 1))
@@ -568,7 +572,7 @@ def caption_of(s: dict) -> str:
                                    for k, r in enumerate(s["rounds"], 1))
     elif s["kind"] == "birth":
         body += "\n\n" + "\n".join(f"{c['m']}월 — {c['text']}" for c in s["cells"])
-    body += f"\n\n{SHARE[s['kind']]}\n{REPLY[s['kind']]}"
+    body += f"\n\n{ASK[s['kind']]}"
     tags = hashtags_of(s)
     return body + ("\n\n" + " ".join(tags) if tags else "")
 

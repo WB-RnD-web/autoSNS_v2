@@ -30,7 +30,7 @@ def ck(name, cond, detail=""):
 
 
 SAMPLES = {k: json.load(open(os.path.join(HERE, "samples", f"{v}.json"), encoding="utf-8")) for k, v in P.EXEMPLAR.items()}
-DAY = dt.date(2026, 10, 13)                         # 시험 기간 안의 아무 날(대본 날짜를 이 날로 바꿔 쓴다)
+DAY = dt.date(2026, 10, 12)                         # 시험 기간 안 · 하루 한 편이던 날(10/13부터 낮 편은 쓰레드에 안 가서)
 NOSLEEP = lambda _s: None  # noqa: E731
 CREDS = {"user_id": "{THREADS_USER_ID}", "token": "TEST"}
 
@@ -143,7 +143,7 @@ for k, pl in plans.items():
     texts = [pl["post"]["text"]] + ([pl["reply"]["text"]] if pl["reply"] else [])
     ck(f"{k}: 주제 태그 하나 = 해시태그 첫 개(# 없이) · 본문엔 # 없음", pl["topic_tag"] == I.topic_tag(s)
        == s["hashtags"][0].lstrip("#") and not any("#" in t for t in texts), pl["topic_tag"])
-    banned = [I.CHANNELS_LINE, "유튜브", "댓글로 번호", "댓글", K.SHARE[k], K.REPLY[k], "http", "오늘의 골라보기"]
+    banned = [I.CHANNELS_LINE, "유튜브", "댓글로 번호", "댓글", K.ASK[k], "http", "오늘의 골라보기"]
     ck(f"{k}: 채널 줄·유튜브·댓글 부탁·인스타 고정 문구 없음", not [w for t in texts for w in banned if w in t])
 bad = T.plan_of(today_of(SAMPLES["pick"]))
 bad["post"]["text"] += "\n" + I.CHANNELS_LINE
@@ -318,6 +318,23 @@ with tempfile.TemporaryDirectory() as tmp:
     http = T.FakeHTTP()
     rc = run(sp, paths, http)
     ck("쓰레드 그림이 없으면 막힘(1) · 호출 0", rc == 1 and not http.calls)
+
+print("── 하루 두 편(10/13~) — 쓰레드는 저녁 편만 ──")
+D2 = dt.date(2026, 10, 13)
+ka, kb = P.kind_for(D2, "a"), P.kind_for(D2, "b")
+with tempfile.TemporaryDirectory() as tmp:
+    sp, paths = setup(tmp, ka, D2)
+    led = {P.ledger_key(D2.isoformat(), "a"): {"media_id": "IGA", "kind": ka, "slug": SAMPLES[ka]["slug"]}}
+    json.dump(led, open(paths["ig_ledger"], "w", encoding="utf-8"))
+    http = T.FakeHTTP()
+    rc = run(sp, paths, http, d=D2)
+    why = T.skip_reasons(today_of(SAMPLES[ka], D2), D2, led, {})
+    ck(f"낮 편({ka}) → 쓰레드 안 올림(0 · 호출 0) · 까닭에 '낮 편'", rc == 0 and not http.calls and any("낮 편" in w for w in why), why)
+with tempfile.TemporaryDirectory() as tmp:
+    sp, paths = setup(tmp, kb, D2)                         # setup 이 인스타 ledger 를 날짜 열쇠(= 저녁 편)로 적는다
+    http = T.FakeHTTP()
+    rc = run(sp, paths, http, d=D2)
+    ck(f"저녁 편({kb}) → 쓰레드 올린다(본 글 게시 호출 있음)", rc == 0 and any(ep == "threads" for ep, _ in posts(http)), posts(http))
 
 print("── upload_threads 글 함수 ──")
 http = T.FakeHTTP()
