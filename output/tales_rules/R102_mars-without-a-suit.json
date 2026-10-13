@@ -1,0 +1,64 @@
+{
+ "id": 102,
+ "slug": "mars-without-a-suit",
+ "format": "survival",
+ "part": 2,
+ "look": "space",
+ "title": "How Long Would You Last on Mars Without a Spacesuit? #shorts",
+ "hook": "HOW LONG WOULD YOU LAST?",
+ "situation": "MARS, NO SPACESUIT",
+ "description_hook": "You step onto Mars with no spacesuit, into air at 0.6 percent of Earth's pressure. The clock starts now.",
+ "beats": [
+  {
+   "t": "0:00",
+   "text": "0.6% OF EARTH'S PRESSURE",
+   "src": 1,
+   "say": "How long would you last on Mars without a spacesuit? You step out. The air pressure is 0.6 percent of Earth's.",
+   "img": "a lone human silhouette seen from behind stepping onto rusty red Martian dust, thin pale butterscotch sky, distant crater rim on the horizon"
+  },
+  {
+   "t": "0:00",
+   "text": "0.16% OXYGEN",
+   "src": 0,
+   "say": "You try to breathe. The air is 95.1 percent carbon dioxide and only 0.16 percent oxygen. Nothing to breathe.",
+   "img": "a faint swirl of thin carbon dioxide haze drifting low over a barren red rocky plain, cold hazy daylight, empty and still"
+  },
+  {
+   "t": "--:--",
+   "text": "10× BELOW THE LIMIT",
+   "src": 2,
+   "say": "The pressure is 10 times below the Armstrong limit. The water on your tongue and eyes starts to vaporize.",
+   "img": "tiny droplets of water turning into wisps of vapor in the thin dry air above a dusty red Martian surface, harsh low sunlight"
+  },
+  {
+   "t": "0:12",
+   "text": "9-12 SECONDS",
+   "src": 3,
+   "say": "Like a pilot above 43,000 feet, your useful consciousness lasts about 9 to 12 seconds. Then the red world goes dark.",
+   "img": "a vast red Martian landscape fading into blurred darkness at the edges of vision, a small pale sun low in the dusty sky"
+  }
+ ],
+ "gumi": {
+  "odds": "0%",
+  "say": "Gumi's odds: zero. Minus 59 degrees and 0.67 millisieverts a day never even got their turn."
+ },
+ "teaser": "TOMORROW: THE AGE OF T. REX",
+ "sources": [
+  "https://nssdc.gsfc.nasa.gov/planetary/factsheet/marsfact.html",
+  "https://www.nasa.gov/news-release/mars-terraforming-not-possible-using-present-day-technology/",
+  "https://ntrs.nasa.gov/citations/19940007076",
+  "https://www.faa.gov/documentLibrary/media/Advisory_Circular/AC_61-107B_CHG_1.pdf",
+  "https://www.swri.org/press-release/swri-scientists-publish-first-radiation-measurements-surface-mars"
+ ],
+ "tags": [
+  "mars",
+  "how long would you last",
+  "mars without spacesuit",
+  "space survival",
+  "armstrong limit",
+  "planet mars",
+  "space facts",
+  "science",
+  "survival"
+ ]
+}
