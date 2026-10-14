@@ -32,8 +32,8 @@ print("── 편성(날짜로 돈다) ──")
 week = [P.kind_for(P.START + dt.timedelta(days=k)) for k in range(6)]
 ck("10/8 그림 고르기 → 퀴즈 → 타로 → 밸런스 → 태어난 달 → 다시 그림", week == ["pick", "quiz", "card", "balance", "birth", "pick"], week)
 seq = [(d, sl, P.kind_for(d, sl)) for d in (P.START + dt.timedelta(days=k) for k in range(20)) for sl in P.slots_on(d)]
-kinds = [k for _, _, k in seq]
-ck("편 순서로 이어 붙이면 다섯 편마다 한 바퀴(이어지는 다섯 편은 꼴이 전부 다르다)",
+kinds = [k for _, _, k in seq if k != P.SCI]              # sci 편(10/15~)은 골라보기 로테이션에서 빠진다
+ck("편 순서로 이어 붙이면 다섯 편마다 한 바퀴(이어지는 골라보기 다섯 편은 꼴이 전부 다르다)",
    all(len(set(kinds[i:i + 5])) == 5 for i in range(len(kinds) - 4)))
 ck("하루 두 편은 10/13부터 · 10/12까지는 저녁 편 하나", P.slots_on(dt.date(2026, 10, 12)) == ("b",)
    and P.slots_on(dt.date(2026, 10, 13)) == ("a", "b") and P.TWICE_FROM == dt.date(2026, 10, 13))
@@ -232,8 +232,235 @@ ck("쓰는 법: 유튜브 홍보 금지 · 꼴은 코드가 · 사실만(퀴즈)
    and "코드가 정해요" in wr and "사실만" in wr and "새로 만들어요" in wr)
 ck("쓰는 법: 회차·열린 질문·해시태그 5개는 코드가 붙인다 · 작가는 같은 말 쓰지 않기 · 부탁 금지",
    "코드가 붙이는 것" in wr and "오늘의 골라보기 #N" in wr and "5개까지" in wr and "쓰지 않아요" in wr
-   and all(K.ASK[k] in wr for k in K.ASK) and "부탁 금지" in wr)
+   and all(K.ASK[k] in wr for k in P.FORMATS) and "부탁 금지" in wr)
 ck("쓰는 법: 하루 두 편 · due false 면 끝 · 한 번에 한 편", "하루 두 편" in wr and "due: false" in wr and "한 번에 한 편" in wr)
+
+print("── sci 편성(10/15~10/28 · 하루 한 편 sci, 저녁·낮 번갈아) ──")
+D = lambda m, d: dt.date(2026, m, d)  # noqa: E731
+WIN = [P.SCI_FROM + dt.timedelta(days=k) for k in range(14)]
+ck("기간 10/15~10/28(양끝 포함 14일) · 항목 14개", (P.SCI_FROM, P.SCI_TO) == (D(10, 15), D(10, 28))
+   and (P.SCI_TO - P.SCI_FROM).days + 1 == 14 == len(P.SCI_ORDER))
+ck("sci 편은 10/15 저녁(b) → 10/16 낮(a) → 10/17 저녁 … 번갈아", [P.sci_slot(d) for d in WIN] == ["b", "a"] * 7,
+   [P.sci_slot(d) for d in WIN])
+ck("기간 밖(10/14·10/29)엔 sci 없음", P.sci_slot(D(10, 14)) is None and P.sci_slot(D(10, 29)) is None
+   and P.SCI not in [P.kind_for(d, sl) for d in (D(10, 14), D(10, 29)) for sl in P.slots_on(d)])
+ck("기간 안 날마다 한 편은 sci · 한 편은 골라보기(꼴이 다르다)",
+   all(sorted(P.kind_for(d, sl) == P.SCI for sl in P.slots_on(d)) == [False, True] for d in WIN))
+TABLE = {  # 날짜: (낮 a, 저녁 b) — 보고·판정용으로 못 박는다
+    D(10, 15): ("birth", "sci"), D(10, 16): ("sci", "pick"), D(10, 17): ("quiz", "sci"), D(10, 18): ("sci", "card"),
+    D(10, 19): ("balance", "sci"), D(10, 20): ("sci", "birth"), D(10, 21): ("pick", "sci"), D(10, 22): ("sci", "quiz"),
+    D(10, 23): ("card", "sci"), D(10, 24): ("sci", "balance"), D(10, 25): ("birth", "sci"), D(10, 26): ("sci", "pick"),
+    D(10, 27): ("quiz", "sci"), D(10, 28): ("sci", "card"), D(10, 29): ("balance", "birth")}
+got_t = {d: (P.kind_for(d, "a"), P.kind_for(d, "b")) for d in TABLE}
+ck("10/15~10/29 편성표 그대로", got_t == TABLE, {d.isoformat(): v for d, v in got_t.items() if v != TABLE[d]})
+PAST = [(D(10, 8), "b", "pick", 1), (D(10, 9), "b", "quiz", 2), (D(10, 10), "b", "card", 3), (D(10, 11), "b", "balance", 4),
+        (D(10, 12), "b", "birth", 5), (D(10, 13), "a", "pick", 6), (D(10, 13), "b", "quiz", 7), (D(10, 14), "a", "card", 8),
+        (D(10, 14), "b", "balance", 9)]
+ck("10/14 까지 꼴·회차는 그대로(이미 올린 편이 안 바뀐다)",
+   [(d, sl, P.kind_for(d, sl), P.series_no(d, sl)) for d, sl, _, _ in PAST] == PAST)
+allp = [(d, sl, P.kind_for(d, sl)) for d in (P.START + dt.timedelta(days=k) for k in range(40)) for sl in P.slots_on(d)]
+picks = [(d, sl, k) for d, sl, k in allp if k != P.SCI]
+ck("골라보기 로테이션은 sci 를 건너뛰고 한 꼴씩 그대로(겹침·빠짐 없음 · 11/16 까지)",
+   [k for _, _, k in picks] == [P.FORMATS[i % 5] for i in range(len(picks))])
+ck("회차(series_no)는 골라보기 편만 센다 — 1, 2, 3 … 빈틈 없이 · sci 는 None",
+   [P.series_no(d, sl) for d, sl, _ in picks] == list(range(1, len(picks) + 1))
+   and all(P.series_no(d, sl) is None for d, sl, k in allp if k == P.SCI))
+ck("10/15 낮 태어난 달 #10 · 10/16 저녁 그림 고르기 #11 · 10/29 낮 밸런스 #24 · 저녁 #25",
+   (P.series_no(D(10, 15), "a"), P.series_no(D(10, 16), "b"), P.series_no(D(10, 29), "a"), P.series_no(D(10, 29), "b"))
+   == (10, 11, 24, 25))
+ck("10/29 부터 다시 하루 골라보기 두 편", [P.kind_for(D(10, 30), sl) for sl in P.slots_on(D(10, 30))] == ["pick", "quiz"])
+ck("slot_of 는 기간 안에서도 하나로 정해진다(sci ↔ sci 편 · 골라보기 꼴 ↔ 그 편)",
+   all(P.slot_of(d, k) == sl for d, sl, k in allp) and all(P.slot_of(d, P.SCI) == P.sci_slot(d) for d in WIN))
+try:
+    P.post_index(D(10, 15), "b")
+    raised = False
+except ValueError:
+    raised = True
+ck("sci 편엔 골라보기 순번이 없다(post_index ValueError)", raised)
+ck("sci 내용 순서 = SCI_ORDER(10/15 마리아나 101 · 10/16 심해 생물 201 · 10/28 남극 106)",
+   [P.sci_n(d) for d in WIN] == list(P.SCI_ORDER) and P.sci_n(D(10, 14)) is None
+   and P.SCI_ORDER == (101, 201, 107, 102, 203, 104, 202, 105, 206, 109, 205, 103, 207, 106))
+ents = [P.sci_entry(n) for n in P.SCI_ORDER]
+ck("SCI_ORDER 항목이 전부 shorts_catalog 에 있고 survival·compare · facts·sources 가 있다",
+   all(e and e["format"] in ("survival", "compare") and e.get("facts") and e.get("sources") for e in ents)
+   and [e["format"] for e in ents][:3] == ["survival", "compare", "survival"])
+with tempfile.TemporaryDirectory() as tmp:
+    ni = P.next_info(D(10, 15), tmp, now=KST_AT(D(10, 15), 19))
+    ck("next 10/15 19시: sci · 저녁 편 · 101 마리아나 · 회차 없음 · SCI_WRITING · 견본 sci_mariana",
+       (ni["kind"], ni["slot"], ni["src_n"], ni["format"], ni["series_no"], ni["writing"], ni["exemplar"], ni["file"])
+       == ("sci", "b", 101, "survival", None, "insta/SCI_WRITING.md", "insta/samples/sci_mariana.json",
+           "output/insta_pick/2026-10-15_sci_<slug>.json"), {k: ni.get(k) for k in ("kind", "slot", "src_n", "file")})
+    e = ni["entry"]
+    ck("next: catalog 항목(n·format·title_idea·facts·sources·look·careful·beat_ideas) 그대로",
+       e["n"] == 101 and e["facts"] == P.sci_entry(101)["facts"] and e["sources"] == P.sci_entry(101)["sources"]
+       and all(k in e for k in ("format", "title_idea", "look", "careful", "beat_ideas")))
+    ni = P.next_info(D(10, 16), tmp, now=KST_AT(D(10, 16), 11))
+    ck("next 10/16 11시: sci · 낮 편 · 201 compare · items_idea·unit 있음", (ni["kind"], ni["slot"], ni["src_n"], ni["format"])
+       == ("sci", "a", 201, "compare") and "items_idea" in ni["entry"] and ni["entry"].get("unit") == "m", ni.get("src_n"))
+    ni = P.next_info(D(10, 15), tmp, now=KST_AT(D(10, 15), 11))
+    ck("next 10/15 11시: 낮 편은 골라보기(태어난 달 #10 · PICK_WRITING)", (ni["kind"], ni["slot"], ni["series_no"], ni["writing"])
+       == ("birth", "a", 10, "insta/PICK_WRITING.md"), ni.get("kind"))
+    SCI_S = json.load(open(os.path.join(HERE, "samples", "sci_mariana.json"), encoding="utf-8"))
+    d16 = D(10, 16)
+    pa_ = os.path.join(tmp, "2026-10-16_sci_deep-sea-size.json")
+    json.dump(dict(SCI_S, date="2026-10-16", src_n=201), open(pa_, "w", encoding="utf-8"), ensure_ascii=False)
+    ck("targets 10/16: 낮 sci 대본만 있으면 sci", P.latest_target(d16, tmp) == pa_)
+    pb_ = os.path.join(tmp, "2026-10-16_pick_door.json")
+    json.dump(dict(SAMPLES["pick"], date="2026-10-16"), open(pb_, "w", encoding="utf-8"), ensure_ascii=False)
+    ck("targets 10/16: 저녁 골라보기가 오면 그것(낮 sci 를 다시 집지 않는다)", P.latest_target(d16, tmp) == pb_)
+    ck("next 10/16 낮 sci: already_written", P.next_info(d16, tmp, now=KST_AT(d16, 11))["already_written"])
+    vid = os.path.join(tmp, "v.mp4")
+    open(vid, "wb").write(b"0")
+    meta = {"video": vid, "seconds": 30.0}
+    ck("게시: 10/15 sci 대본(저녁 편)은 막힘 없음 · 두 번은 막는다(날짜 열쇠)", P.blockers(SCI_S, meta, {}, D(10, 15)) == []
+       and any("이미" in b for b in P.blockers(SCI_S, meta, {"2026-10-15": {"media_id": "S"}}, D(10, 15))))
+    ck("게시: 10/15 낮 골라보기(태어난 달)를 올린 뒤에도 저녁 sci 는 올린다",
+       P.blockers(SCI_S, meta, {"2026-10-15a": {"media_id": "A"}}, D(10, 15)) == [])
+    ck("게시: sci 꼴이 아닌 날(10/14)의 sci 대본은 막는다", any("꼴" in b for b in P.blockers(dict(SCI_S, date="2026-10-14"), meta, {}, D(10, 14))))
+
+print("── sci 대본 검사 ──")
+SCI_S = json.load(open(os.path.join(HERE, "samples", "sci_mariana.json"), encoding="utf-8"))
+E201 = P.sci_entry(201)
+CMP = {"date": "2026-10-16", "kind": "sci", "src_n": 201, "slug": "deep-sea-size",
+       "hook": ["심해 생물 크기 순위", "끝판왕은?"], "say_intro": "심해에서 제일 긴 동물은 과연 몇 미터일까요?",
+       "beats": [{"big": "12cm", "sub": "심해아귀 암컷", "say": "심해아귀 암컷은 다 커도 12센티미터예요.", "src": 0, "value": 0.12,
+                  "img": "a small deep sea anglerfish with a glowing lure in pitch-black water"},
+                 {"big": "30cm", "sub": "흡혈오징어", "say": "흡혈오징어는 30센티미터, 수심 600에서 900미터에 살아요.", "src": 1,
+                  "value": 0.3, "img": "a deep red vampire squid drifting in dark water"},
+                 {"big": "46cm", "sub": "대왕구족충", "say": "쥐며느리 친척 대왕구족충은 46센티미터까지 자라요.", "src": 2,
+                  "value": 0.46, "img": "a giant isopod crawling on the dark seafloor"},
+                 {"big": "4.2m", "sub": "남극하트지느러미오징어", "say": "남극하트지느러미오징어 표본은 4.2미터였어요.", "src": 3,
+                  "value": 4.2, "img": "a colossal squid with huge eyes in deep dark water"},
+                 {"big": "6.4m", "sub": "그린란드상어", "say": "그린란드상어는 6.4미터까지 자라요.", "src": 4, "value": 6.4,
+                  "img": "a large slow greenland shark gliding in icy dark water"},
+                 {"big": "13m", "sub": "대왕오징어 암컷", "say": "대왕오징어 암컷은 긴 촉완까지 13미터예요.", "src": 5, "value": 13,
+                  "img": "a giant squid with long tentacles in the deep ocean darkness"}],
+       "verdict": {"big": "1위 거대관해파리", "say": "거대관해파리는 약 46미터로 추정돼요."},
+       "caption": "심해 생물 크기 순위, 끝판왕은? 🦑", "hashtags": ["#심해", "#심해생물", "#크기비교"],
+       "sources": E201["sources"], "bench": {"format": "크기 비교 순위"}}
+ck("견본 sci_mariana 통과 · 날짜의 sci 편 · src_n = 그날 항목", K.check(SCI_S) == [] and P.kind_for(D(10, 15), "b") == "sci"
+   and SCI_S["src_n"] == P.sci_n(D(10, 15)), K.check(SCI_S))
+ck("compare(201) 대본 통과(작은 것 → 큰 것 · value)", K.check(CMP) == [], K.check(CMP))
+
+
+def sci_bad(f, **kw):
+    x = json.loads(json.dumps(kw.pop("base", SCI_S)))
+    f(x)
+    return K.check(x)
+
+
+def _set(path, val):
+    def f(x):
+        o = x
+        for k in path[:-1]:
+            o = o[k]
+        o[path[-1]] = val
+    return f
+
+
+errs = sci_bad(_set(["beats", 0, "big"], "11,000m"))
+ck("facts 에 없는 숫자(11,000m)는 막는다", any("facts" in e and "11,000" in e for e in errs), errs)
+errs = sci_bad(_set(["beats", 2, "say"], "바닥의 물은 고작 3도예요."))
+ck("말(say) 속 숫자도 facts 에서만(3도 → 막음 · 2.4도 는 통과)", any("3" in e and "facts" in e for e in errs), errs)
+errs = sci_bad(_set(["verdict", "say"], "티타늄 마이크는 여기서 30일을 버텼어요."))
+ck("판정 말의 숫자도 facts 에서만(30일 → 막음) · 확률(0%)만 예외", any("verdict.say" in e for e in errs)
+   and not any("verdict.big" in e for e in K.check(SCI_S)), errs)
+ck("콤마·단위 무시 · 만·억은 million·billion 과 맞춰 본다(430만 = 4.3 million · 54억 = 5.4 billion)",
+   K.unbacked("430만 배 · 54억 배 · 4,300,000", K.fact_values(P.sci_entry(202))) == []
+   and K.unbacked("431만", K.fact_values(P.sci_entry(202))) == ["431만"])
+errs = sci_bad(_set(["beats", 1, "say"], "햇빛은 1,000미터 아래로 못 와요. 댓글로 남겨 줘요."))
+ck("부탁 말(댓글로 남겨 줘)은 막는다", any("부탁" in e for e in errs), errs)
+errs = sci_bad(_set(["src_n"], 102))
+ck("src_n 이 그날 항목(101)이 아니면 막는다", any("src_n" in e for e in errs), errs)
+errs = sci_bad(_set(["date"], "2026-10-14"))
+ck("sci 날이 아니면(10/14) 막는다", any("sci 편이 없는 날" in e for e in errs), errs)
+errs = sci_bad(lambda x: x["sources"].pop())
+ck("sources 를 catalog 그대로 옮기지 않으면 막는다", any("sources" in e for e in errs), errs)
+errs = sci_bad(_set(["beats", 0, "src"], 9))
+ck("src 번호가 sources 밖이면 막는다", any("src" in e for e in errs), errs)
+errs = sci_bad(_set(["hook"], ["마리아나 해구 바닥에서 살아남기", "몇 분?"]))
+ck("hook 줄 14자 넘으면 막는다", any("hook" in e for e in errs), errs)
+errs = sci_bad(_set(["say_intro"], "안녕하세요, 오늘은 마리아나 해구예요."))
+ck("say_intro 는 질문(?)으로 · 인사로 시작하면 막는다", sum("say_intro" in e for e in errs) == 2, errs)
+errs = sci_bad(lambda x: x["beats"].__delitem__(slice(3, None)))
+ck("박자 4개 미만은 막는다", any("beats" in e for e in errs), errs)
+errs = sci_bad(_set(["beats", 0, "img"], "a sign with text on the trench floor"))
+ck("그림에 글자(sign·text)는 막는다", any("img" in e for e in errs), errs)
+errs = sci_bad(_set(["beats", 0, "img"], "a close-up portrait of a diver's face on the seafloor"))
+ck("그림에 얼굴 클로즈업은 막는다", any("img" in e for e in errs), errs)
+errs = sci_bad(_set(["beats", 4, "say"], "압력에 몸이 피투성이가 돼요."))
+ck("잔혹 묘사는 막는다", any("잔혹" in e for e in errs), errs)
+errs = sci_bad(_set(["beats", 0, "sub"], "타이타닉보다 깊은 곳"))
+ck("프랜차이즈 이름은 막는다", any("프랜차이즈" in e for e in errs), errs)
+errs = sci_bad(_set(["beats", 0, "say"], "카메론이 내려간 수심 10,935미터예요."))
+ck("실존 인물은 막는다", any("실존" in e for e in errs), errs)
+errs = sci_bad(_set(["beats", 3, "value"], 0.2), base=CMP)
+ck("compare: 작은 것 → 큰 것 순서가 아니면 막는다", any("순서" in e for e in errs), errs)
+errs = sci_bad(lambda x: x["beats"][0].pop("value"), base=CMP)
+ck("compare: value 가 없으면 막는다", any("value" in e for e in errs), errs)
+errs = sci_bad(_set(["caption"], "마리아나 해구 바닥\n출처: NOAA"))
+ck("caption 은 한 줄(출처·질문은 코드가)", any("caption" in e for e in errs), errs)
+
+print("── sci 말·시간표·화면(가짜 그림) ──")
+ck("말: 단위·분수·소수를 한글 읽기로(1/1,000 → 천 분의 일 · 2.4°C → 이 점 사도 · PSI)",
+   K.sci_speech("1/1,000") == "천 분의 일" and K.sci_speech("2.4°C") == "이 점 사도"
+   and "피에스아이" in K.sci_speech("16,000 PSI") and K.sci_speech("10,935m") == "만구백삼십오미터",
+   [K.sci_speech(x) for x in ("1/1,000", "2.4°C", "16,000 PSI", "10,935m")])
+ck("목소리 빠르기: sci 만 ×1.1(다른 꼴은 R.TEMPO 그대로)", K.SCI_TEMPO == 1.1 and R.TEMPO == float(os.environ.get("INSTA_TEMPO", "1.0"))
+   and "tempo=SCI_TEMPO if sci else None" in open(os.path.join(HERE, "pick_reel.py"), encoding="utf-8").read())
+from PIL import ImageChops  # noqa: E402
+for name, s in (("survival(마리아나)", SCI_S), ("compare(심해 생물)", CMP)):
+    says = K.says_of(s)
+    dur = {t: 0.11 * len(t) for t in says}
+    segs, _ = K.plan(s, dur)
+    total = segs[-1]["start"] + segs[-1]["dur"]
+    gaps = all(abs(a["start"] + a["dur"] - b["start"]) < 1e-6 for a, b in zip(segs, segs[1:]))
+    said = {sg.get("say") for sg in segs} | {sg.get("say2") for sg in segs}
+    ck(f"sci {name}: 18~40초 · 장면 빈틈 없음 · 질문 → 박자 {len(s['beats'])} → 판정 · 말이 전부 나온다(끝 질문 포함)",
+       K.SCI_SEC[0] <= total <= K.SCI_SEC[1] and gaps and set(says) <= said
+       and [sg["kind"] for sg in segs] == ["intro"] + ["beat"] * len(s["beats"]) + ["verdict"]
+       and K.sci_speech(K.ask_of(s)) in said, (round(total, 1), gaps))
+    short = K.plan(s, {t: 0.02 * len(t) for t in says})[0]
+    ck(f"sci {name}: 말이 짧아도 18초 이상(끝 화면을 늘린다)", short[-1]["start"] + short[-1]["dur"] >= K.SCI_SEC[0] - 1e-6)
+with tempfile.TemporaryDirectory() as tmp:
+    for name, s in (("survival", SCI_S), ("compare", CMP)):
+        a = K.assets(s, tmp, True)
+        segs, _ = K.plan(s, {t: 0.11 * len(t) for t in K.says_of(s)})
+        pa = K.Painter(s, a, segs)
+        times = [0.0] + [sg["start"] + sg["dur"] * f for sg in segs for f in (0.01, 0.05, 0.5, 0.97)]
+        sizes, low, top, bars = True, [], [], []
+        for t in times:
+            fr, bg_ = pa.frame(t), pa.sci_bg(t).convert("RGB")
+            sizes &= fr.size == (K.W, K.H)
+            bb = ImageChops.difference(fr, bg_).getbbox()
+            low.append(bb[3] if bb else 0)                      # 그린 것의 아랫변
+            top.append(bool(ImageChops.difference(fr.crop((0, 230, K.W, 430)), bg_.crop((0, 230, K.W, 430))).getbbox()))
+            sg = pa.seg_at(t)
+            if sg["kind"] == "beat":
+                bars.append(bool(ImageChops.difference(fr.crop((0, 1196, K.W, 1440)), bg_.crop((0, 1196, K.W, 1440))).getbbox()))
+        ck(f"sci {name}: 장면 전부(질문·박자·판정 {len(times)}장) 1080×1920", sizes)
+        ck(f"sci {name}: 아래 25%(y 1440~)엔 아무것도 그리지 않는다(바탕 그림 그대로)", max(low) <= 1440, max(low))
+        ck(f"sci {name}: 훅 두 줄은 처음부터 끝까지 위에", all(top))
+        ck(f"sci {name}: 막대 띠는 compare 만(박자마다 y 1196~1440 사이에)", all(bars) if name == "compare" else not any(bars), bars)
+        cv = K.cover_of(pa, s)
+        ck(f"sci {name}: 커버 = 첫 프레임(회차 라벨 없음)", cv.size == (K.W, K.H)
+           and not ImageChops.difference(cv, pa.frame(0.0)).getbbox())
+cap = K.caption_of(SCI_S)
+lines = cap.split("\n")
+ck("sci 캡션: 훅 한 줄 → 출처(기관 이름) → 열린 질문 → 해시태그 · 회차 없음",
+   lines[0] == SCI_S["caption"] and "출처: NOAA · RMG" in cap and K.ASK["sci"]["survival"] in cap
+   and cap.index("출처:") < cap.index(K.ASK["sci"]["survival"]) < cap.index("#심해") and "오늘의 골라보기" not in cap, cap)
+ck("sci 캡션: 해시태그 ≤ 5 · 댓글·보내기 부탁 없음", len(TAG.findall(cap)) <= 5 and not any(w in cap for w in ("댓글", "보내서", "저장")))
+ck("sci 열린 질문은 형식마다(survival · compare)", K.ask_of(SCI_S) == "너라면 몇 초 버틸 것 같아요?"
+   and K.ask_of(CMP) == "제일 놀라운 건 뭐였어요?" and K.ASK["sci"]["compare"] in K.caption_of(CMP))
+ck("출처 이름: 도메인 → 기관(noaa.gov → NOAA · rmg.co.uk → RMG · 겹친 것 한 번)",
+   K.source_names(["https://oceanservice.noaa.gov/x", "https://www.noaa.gov/y", "https://www.rmg.co.uk/z"]) == ["NOAA", "RMG"]
+   and K.source_host("https://nssdc.gsfc.nasa.gov/a") == "nasa.gov")
+wr2 = open(os.path.join(HERE, "SCI_WRITING.md"), encoding="utf-8").read()
+ck("SCI_WRITING: 질문 먼저 · 숫자는 facts 에서만 · 부탁·잔혹·실존 인물·프랜차이즈 금지 · 열린 질문 두 개",
+   "질문" in wr2 and "facts" in wr2 and "부탁 금지" in wr2 and "잔혹" in wr2 and "실존 인물" in wr2 and "영화" in wr2
+   and K.ASK["sci"]["survival"] in wr2 and K.ASK["sci"]["compare"] in wr2 and "sci_mariana" in wr2)
+ck("PICK_WRITING: sci 날은 SCI_WRITING 을 따른다", "SCI_WRITING.md" in wr and "sci" in wr)
 
 print(f"\n{'✅ 전부 통과' if not FAIL else f'❌ 실패 {FAIL}'}")
 sys.exit(1 if FAIL else 0)
