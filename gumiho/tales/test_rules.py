@@ -106,8 +106,9 @@ ck("10/12(쓰는 날) = 10/13 공개 Pt.1 둘", [(e["format"], e["part"]) for e 
 ck("10/26부터(목록 끝) 쓰지 않는다 — 판정 10/27 뒤 채운다", RU.on_date(D(2026, 10, 26)) == [] and RU.on_date(D(2026, 11, 1)) == [])
 first_lim = RU.on_date(D(2026, 10, 13))
 ck("10/13(쓰는 날) = Pt.2 survival + liminal Pt.1", [(e["format"], e["part"]) for e in first_lim] == [("survival", 2), ("liminal", 1)])
-ck("teaser_idea: 매일(A)은 TOMORROW, 격일(B)은 NEXT(요일은 시간대마다 달라 안 쓴다), liminal·마지막 편은 없음",
-   RU.teaser_idea(sv[0], sc).startswith("TOMORROW: ") and RU.teaser_idea(cp[0], sc) == "NEXT: BLACK HOLES"
+ck("teaser_idea: 늘 NEXT(요일·TOMORROW 는 날짜를 탄다 — 10/14 에버그린), liminal·마지막 편은 없음",
+   RU.teaser_idea(sv[0], sc).startswith("NEXT: ") and RU.teaser_idea(cp[0], sc) == "NEXT: BLACK HOLES"
+   and not any("TOMORROW" in (RU.teaser_idea(e, sc) or "") for e in sv + cp)          # 10/14 에버그린
    and not any("PT." in (RU.teaser_idea(e, sc) or "") for e in sv + cp)                 # 10/11: 번호는 터진 뒤에만
    and not any(w in (RU.teaser_idea(e, sc) or "") for e in cp for w in ("MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY",
                                                                      "FRIDAY", "SATURDAY", "SUNDAY"))

@@ -86,8 +86,13 @@ def feed_title(title: str) -> bool:
 EXTRA_SHORTS_GLOBAL = (2, 2)
 THUMB_MAX_WORDS = 4
 # 몇 달 뒤에도 통해야 한다(역주행) — 날짜를 타는 말은 금지. 사실로 적는 연도(1994년 영화 등)는 괜찮다
+# 10/14 사용자: 구미호는 '그날그날 보는' 채널이 아니라 계속 돌고 역주행하는 에버그린 채널 → 몇 달 뒤에 봐도 맞는 말만.
+#   편성 약속(next Sunday·see you tomorrow·every Friday)도 날짜를 탄다(이야기 속 'tomorrow' 는 괜찮다).
+_DAYS = r"(sunday|monday|tuesday|wednesday|thursday|friday|saturday)"
 DATED = re.compile(r"(?i)\b(this (year|week|month|halloween|summer|winter|season)|last (week|month|year)|recently|"
-                   r"right now|these days|currently|trending|as of today)\b")
+                   r"right now|these days|currently|trending|as of today|"
+                   r"next (week|month|episode drops)|next " + _DAYS + r"|every " + _DAYS + r"|"
+                   r"(see you|come back|back) tomorrow|tomorrow'?s (episode|video|part|short))\b")
 BANNED = re.compile(r"(?i)\b(fuck|shit|rape|porn|nude|naked|gore|dismember|suicide|decapitat)\w*")
 
 AI_NOTE = ("Illustrations and the narrator's voice are AI-generated. Stories are researched from Korean folklore "
@@ -468,7 +473,7 @@ def explainer_errs(s: dict) -> list[str]:
         if not any("verdict" in (x.get("say") or "").lower() for x in sc[vi + 1:]):
             errs.append("VERDICT 카드 뒤에 구미의 판정 한 줄('My verdict: …')이 없다")
     if not any(re.search(r"(?i)\bnext\b", x.get("say") or "") for x in sc[-3:]):
-        errs.append("마지막 3장면 안에 다음 주 예고('Next Sunday, …')가 없다")
+        errs.append("마지막 3장면 안에 다음 편 예고('Up next: …')가 없다")
     # 숫자 대조 — catalog 편의 facts 에 없는 큰 수는 지어낸 것으로 본다
     known = known_
     if known is not None:
@@ -753,15 +758,16 @@ def next_entry(date: str | None = None) -> dict | None:
 
 
 def teaser_for(e: dict) -> dict:
-    """끝의 다음 주 예고용 — 다음 편(없으면 backlog 첫 줄). 루틴이 지어내지 않게 next 가 같이 준다."""
+    """끝의 다음 편 예고용 — 다음 편(없으면 시리즈 안내). 루틴이 지어내지 않게 next 가 같이 준다.
+    10/14 에버그린: 'Next Sunday' 는 몇 달 뒤 보는 사람에게 틀린 말 → 'Up next: <제목>'(재생목록 다음 편)."""
     cat = load(CATALOG)
     later = sorted((x for x in cat["tales"] if not x.get("retired") and x.get("date", "") > e.get("date", "")),
                    key=lambda x: x["date"])
     if later:
         return {"title": later[0]["title_idea"], "angle": later[0].get("angle", ""), "date": later[0]["date"],
-                "line": f"Next Sunday: {later[0]['title_idea']}"}
+                "line": f"Up next: {later[0]['title_idea']}"}
     # 다음 편이 아직 편성되지 않았다 — backlog 제목을 약속하면 안 나올 수도 있다(리뷰 10/9)
-    return {"title": "", "angle": "", "date": None, "line": "A new one next Sunday."}
+    return {"title": "", "angle": "", "date": None, "line": "Up next: more of these in the playlist."}
 
 
 def main() -> int:

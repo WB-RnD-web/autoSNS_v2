@@ -24,7 +24,10 @@ must print ✅. This page is about making the episode *good* and *honest*.
   Copy that file unchanged.
 - `publish_at` is the Sunday slot. The upload code schedules it; you don't.
 - `teaser` is next week's episode. Use its `line` for the closing teaser and never invent a different one.
-  When next week isn't scheduled yet, `line` is just "A new one next Sunday." Say that and don't name a topic.
+  When the next one isn't scheduled yet, `line` is "Up next: more of these in the playlist." Say that and don't name a topic.
+- **Evergreen (owner, 10/14):** this channel must still make sense to someone who finds it a year from now
+  (search, suggested, a late breakout). Never say "next Sunday", "this week", "see you tomorrow", "every Friday",
+  "recently" or "currently" (checked). Say "Up next".
 
 ## Facts and sources (hard rule — YouTube "inauthentic content" policy)
 Every episode stands on **its own researched facts**. That is what separates it from mass-produced filler.
@@ -87,8 +90,8 @@ urban legends, in narration, pictures, titles or tags. The channel name stays; t
 4. **Mid-episode shock beat:** one short line (≤8 words) with `"hold": 1.0`, `"fx": "none"`, `"move": "in"`.
 5. **Closing (checked):** `{"card": "VERDICT", "sub": "Gumi's Verdict"}` in the last quarter → a scene whose
    `say` contains "verdict" ("My verdict: …" — rank, compare, or a dry final judgment) → one real question
-   for the comments ("Which one would you last longest in?") → **next week's teaser** from `teaser`
-   in the last 3 scenes ("Next Sunday: …" — the word "next" is checked) → a one-line sign-off. A callback to the cold open works best.
+   for the comments ("Which one would you last longest in?") → **the next episode's teaser** from `teaser`
+   in the last 3 scenes ("Up next: …" — the word "next" is checked; never a weekday) → a one-line sign-off. A callback to the cold open works best.
 - Never put two cards back to back (checked). A text-only screen that lasts too long makes viewers leave.
 
 ## Formats (the entry's `format`)
