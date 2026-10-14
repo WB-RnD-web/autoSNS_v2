@@ -1,0 +1,65 @@
+{
+ "id": 103,
+ "slug": "cretaceous",
+ "format": "survival",
+ "part": 3,
+ "look": "ancient",
+ "title": "How Long Would You Last in the Age of T. Rex? #shorts",
+ "hook": "HOW LONG WOULD YOU LAST?",
+ "situation": "THE AGE OF T. REX",
+ "description_hook": "You wake up in the age of T. rex: a year has 372 days, and something 13 meters long has already seen you.",
+ "beats": [
+  {
+   "t": "0:00",
+   "text": "372-DAY YEAR",
+   "src": 3,
+   "say": "How long would you last in the age of T. rex? You wake up in a world where a year has 372 days.",
+   "img": "a lone human silhouette standing at the edge of a steaming prehistoric fern forest at dawn, giant conifers, hazy orange light, vertical frame"
+  },
+  {
+   "t": "0:00",
+   "text": "13 M LONG",
+   "src": 0,
+   "say": "Then the ferns move. Something 13 meters long is watching you. You are no longer the top of anything.",
+   "img": "the huge shadowy head of a tyrannosaur emerging between towering ferns, one amber eye catching the light, misty humid forest, low angle"
+  },
+  {
+   "t": "--:--",
+   "text": "ABOUT 12 MPH",
+   "src": 2,
+   "say": "Good news: it can probably only walk, about 12 miles per hour. Bad news: if it catches you, up to 34,522 newtons of bite.",
+   "img": "a massive tyrannosaur striding through a shallow river valley in late afternoon haze, heavy legs splashing water, seen from far behind"
+  },
+  {
+   "t": "--:--",
+   "text": "23.5-HOUR DAYS",
+   "src": 3,
+   "say": "And night comes early. A day here lasts only 23.5 hours. In the dark, something big is still awake.",
+   "img": "a dark prehistoric swamp under a huge rising moon, silhouettes of giant ferns, a faint massive shape moving between the trees"
+  }
+ ],
+ "gumi": {
+  "odds": "25%",
+  "say": "Gumi's odds: 25 percent. Stay still, stay quiet, and hope it already ate."
+ },
+ "teaser": "NEXT: EVEREST, NO OXYGEN",
+ "sources": [
+  "https://www.nature.com/articles/s41598-017-02161-w",
+  "https://peerj.com/articles/3420/",
+  "https://www.smithsonianmag.com/smart-news/fierce-t-rex-was-walker-not-sprinter-180964094/",
+  "https://news.agu.org/press-release/ancient-shell-shows-days-were-half-hour-shorter-70-million-years-ago/",
+  "https://science.nasa.gov/earth/deep-impact-and-the-mass-extinction-of-species-65-million-years-ago/",
+  "https://www.calacademy.org/explore-science/pinpointing-date-of-impact"
+ ],
+ "tags": [
+  "t rex",
+  "tyrannosaurus rex",
+  "dinosaurs",
+  "cretaceous",
+  "how long would you last",
+  "prehistoric",
+  "survival",
+  "science",
+  "dinosaur facts"
+ ]
+}

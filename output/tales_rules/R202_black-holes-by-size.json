@@ -1,0 +1,84 @@
+{
+ "id": 202,
+ "slug": "black-holes-by-size",
+ "format": "compare",
+ "part": 2,
+ "look": "space",
+ "title": "Cygnus X-1 vs Sagittarius A* vs TON 618 | Black Hole Mass Comparison #shorts",
+ "hook": "BLACK HOLES BY MASS",
+ "description_hook": "From a black hole of about 21 Suns to an estimated 60 billion: black holes, ranked by mass.",
+ "unit": "solar masses",
+ "scale": "log",
+ "items": [
+  {
+   "name": "CYGNUS X-1",
+   "value": 21,
+   "label": "21 SUNS",
+   "src": 0,
+   "say": "How heavy can a black hole get? Start with Cygnus X-1, the first one ever identified. About 21 times the mass of the Sun.",
+   "img": "a small black hole pulling a glowing stream of gas off a bright blue companion star, swirling orange accretion disk, deep starfield"
+  },
+  {
+   "name": "GAIA BH3",
+   "value": 33,
+   "label": "33 SUNS",
+   "src": 1,
+   "say": "Gaia BH3, the heaviest known stellar black hole in our galaxy: 33 Suns.",
+   "img": "a quiet dark black hole bending the light of a yellow star orbiting it, faint lensing ring, sparse starry background"
+  },
+  {
+   "name": "SAGITTARIUS A*",
+   "value": 4300000,
+   "label": "4.3 MILLION SUNS",
+   "src": 2,
+   "say": "Sagittarius A Star, at the center of the Milky Way. About 4.3 million Suns.",
+   "img": "the dense glowing core of a spiral galaxy with a dark shadow at its heart, crowded golden stars and dust lanes swirling around it"
+  },
+  {
+   "name": "M87*",
+   "value": 5400000000,
+   "label": "5.4 BILLION SUNS",
+   "src": 2,
+   "say": "M87 Star, the first black hole ever photographed. 5.4 billion Suns.",
+   "img": "a blurry glowing orange ring of light around a perfectly dark center, soft and hazy, floating in black space"
+  },
+  {
+   "name": "TON 618",
+   "value": 60000000000,
+   "label": "60+ BILLION SUNS",
+   "src": 2,
+   "say": "TON 618. Estimated at more than 60 billion Suns.",
+   "img": "a blinding quasar at the edge of the universe, an immense bright core with twin jets of light shooting into darkness"
+  },
+  {
+   "name": "EARTH AS A BLACK HOLE",
+   "twist": true,
+   "text": "EARTH: A BALL 2 CM ACROSS",
+   "src": 3,
+   "say": "Now crush Earth into a black hole. All of it, squeezed to a radius of 9 millimeters: a ball 2 centimeters across.",
+   "img": "a tiny dark marble-sized sphere floating in front of a distant blue planet glow, warped starlight bending around it"
+  }
+ ],
+ "gumi": {
+  "say": "Gumi's verdict: your whole planet would fit in your fist. Sleep well."
+ },
+ "teaser": "NEXT: THE DEEPEST HOLES",
+ "sources": [
+  "https://research-repository.uwa.edu.au/en/publications/cygnus-x-1-contains-a-21solar-mass-black-holeimplications-for-mas/",
+  "https://www.eso.org/public/news/eso2408/",
+  "https://svs.gsfc.nasa.gov/14335",
+  "https://www.einstein-online.info/en/?p=4213"
+ ],
+ "tags": [
+  "black holes",
+  "black hole size comparison",
+  "ton 618",
+  "sagittarius a",
+  "cygnus x-1",
+  "m87",
+  "space",
+  "astronomy",
+  "universe",
+  "mass comparison"
+ ]
+}
