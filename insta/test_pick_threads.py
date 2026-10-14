@@ -336,6 +336,74 @@ with tempfile.TemporaryDirectory() as tmp:
     rc = run(sp, paths, http, d=D2)
     ck(f"저녁 편({kb}) → 쓰레드 올린다(본 글 게시 호출 있음)", rc == 0 and any(ep == "threads" for ep, _ in posts(http)), posts(http))
 
+print("── sci 시험(10/15~10/28) — 쓰레드는 그날 골라보기 편만 ──")
+D15, D16 = dt.date(2026, 10, 15), dt.date(2026, 10, 16)
+SCI_S = json.load(open(os.path.join(HERE, "samples", "sci_mariana.json"), encoding="utf-8"))   # 10/15 저녁 sci
+ck("쓰레드 편: 골라보기 두 편인 날은 저녁(10/12·10/13) · sci 날은 sci 가 아닌 편(10/15 낮 · 10/16 저녁)",
+   (T.threads_slot(DAY), T.threads_slot(D2), T.threads_slot(D15), T.threads_slot(D16)) == ("b", "b", "a", "b"))
+ck("시험 기간 안 sci 날은 날마다 골라보기 편이 하나뿐이고 그 편이 쓰레드 편",
+   all(P.kind_for(d, T.threads_slot(d)) != P.SCI and [P.kind_for(d, sl) for sl in P.slots_on(d)].count(P.SCI) == 1
+       for d in (D15 + dt.timedelta(days=k) for k in range((T.THREADS_TO - D15).days + 1))))
+
+
+def setup_slot(tmp: str, s: dict, slot: str, ig: bool = True) -> tuple[str, dict]:
+    """대본 하나 + 인스타 ledger 를 그 편의 열쇠(P.ledger_key)로 적는다."""
+    sp = os.path.join(tmp, f"{s['date']}_{s['kind']}_{s['slug']}.json")
+    json.dump(s, open(sp, "w", encoding="utf-8"), ensure_ascii=False)
+    rd = os.path.join(tmp, "render")
+    os.makedirs(rd, exist_ok=True)
+    stem = f"{s['date']}_{s['kind']}_{s['slug']}"
+    imgs = []
+    for k in range(1, (T.plan_of(s)["post"]["images"] if s["kind"] != P.SCI else 0) + 1):
+        p = os.path.join(rd, f"{stem}_th{k}.jpg")
+        open(p, "wb").write(b"jpg")
+        imgs.append(p)
+    json.dump({"threads_images": imgs}, open(os.path.join(rd, f"{stem}_meta.json"), "w", encoding="utf-8"))
+    led_p = os.path.join(rd, "posted.json")
+    led = P.load_ledger(led_p)
+    if ig:
+        led[P.ledger_key(s["date"], slot)] = {"media_id": f"IG_{slot}", "kind": s["kind"], "slug": s["slug"]}
+    json.dump(led, open(led_p, "w", encoding="utf-8"))
+    return sp, {"renders": rd, "ledger": os.path.join(rd, "threads_posted.json"), "ig_ledger": led_p}
+
+
+with tempfile.TemporaryDirectory() as tmp:
+    ka15 = P.kind_for(D15, "a")                                  # 10/15 낮 = 태어난 달(골라보기) · 저녁 = sci
+    sa = today_of(SAMPLES[ka15], D15)
+    sp, paths = setup_slot(tmp, sa, "a")
+    http = T.FakeHTTP()
+    rc = run(sp, paths, http, d=D15)
+    led = json.load(open(paths["ledger"], encoding="utf-8")) if os.path.exists(paths["ledger"]) else {}
+    ck(f"10/15 낮 골라보기({ka15}) → 쓰레드 올린다(인스타 ledger 낮 열쇠 '2026-10-15a' · 쓰레드 ledger 는 날짜 열쇠)",
+       rc == 0 and any(ep == "threads_publish" for ep, _ in posts(http)) and list(led) == ["2026-10-15"]
+       and led["2026-10-15"]["kind"] == ka15, (rc, led))
+    sp2, _ = setup_slot(tmp, SCI_S, "b")                          # 같은 날 저녁 sci 가 인스타에 올라간 뒤
+    http2 = T.FakeHTTP()
+    rc2 = run(sp2, paths, http2, d=D15)
+    why = T.skip_reasons(SCI_S, D15, P.load_ledger(paths["ig_ledger"]), {})
+    ck("10/15 저녁 sci → 쓰레드 안 올림(0 · 호출 0 · 쓰레드 ledger 그대로) · 까닭에 'sci'",
+       rc2 == 0 and not http2.calls and json.load(open(paths["ledger"], encoding="utf-8")) == led
+       and any("sci" in w for w in why), why)
+with tempfile.TemporaryDirectory() as tmp:
+    sp, paths = setup_slot(tmp, SCI_S, "b")
+    http = T.FakeHTTP()
+    ck("sci 는 인스타에 올라갔어도(날짜 열쇠 media_id) 쓰레드엔 안 간다", run(sp, paths, http, d=D15) == 0 and not http.calls
+       and not os.path.exists(paths["ledger"]))
+with tempfile.TemporaryDirectory() as tmp:
+    sa = today_of(SAMPLES[P.kind_for(D15, "a")], D15)
+    sp, paths = setup_slot(tmp, sa, "a", ig=False)
+    json.dump({"2026-10-15": {"media_id": "IG_SCI", "kind": "sci", "slug": SCI_S["slug"]}}, open(paths["ig_ledger"], "w", encoding="utf-8"))
+    http = T.FakeHTTP()
+    why = T.skip_reasons(sa, D15, P.load_ledger(paths["ig_ledger"]), {})
+    ck("10/15 낮 골라보기: 인스타 ledger 에 저녁 sci(날짜 열쇠)만 있으면 안 올린다(sci media_id 를 빌리지 않는다)",
+       run(sp, paths, http, d=D15) == 0 and not http.calls and any("인스타가 아직" in w for w in why), why)
+with tempfile.TemporaryDirectory() as tmp:
+    kb16 = P.kind_for(D16, "b")                                  # 10/16 낮 = sci · 저녁 = 그림 고르기
+    sp, paths = setup_slot(tmp, today_of(SAMPLES[kb16], D16), "b")
+    http = T.FakeHTTP()
+    ck(f"10/16 저녁 골라보기({kb16}) → 쓰레드 올린다(sci 가 낮인 날)", run(sp, paths, http, d=D16) == 0
+       and any(ep == "threads_publish" for ep, _ in posts(http)))
+
 print("── upload_threads 글 함수 ──")
 http = T.FakeHTTP()
 tid = UT.publish_text("안녕", "심리테스트", poll=["가", "나"], http=http, sleep=NOSLEEP, **CREDS)

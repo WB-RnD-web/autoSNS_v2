@@ -1,22 +1,26 @@
 #!/usr/bin/env python3
-"""인스타 '오늘의 골라보기' 편성·게시 — 날짜·편(slot)으로 꼴을 정하고(로테이션), 편마다 한 번만 올린다 (2026-10-07).
+"""인스타 릴스 편성·게시 — 날짜·편(slot)으로 꼴을 정하고(로테이션), 편마다 한 번만 올린다 (2026-10-07).
 
 편성(코드가 정한다 — 쓰는 쪽이 고르지 않는다):
-  FORMATS 를 START 부터 한 편씩 돌린다: 10/8 그림 고르기 → 10/9 상식 퀴즈 → 10/10 타로 카드 → 10/11 밸런스 게임
+  '오늘의 골라보기' FORMATS 를 START 부터 한 편씩 돌린다: 10/8 그림 고르기 → 10/9 상식 퀴즈 → 10/10 타로 카드 → 10/11 밸런스 게임
   → 10/12 태어난 달 표 (여기까지 하루 한 편 = 저녁 편 b · 같은 꼴 연달아 금지 — 왕별이 10/7 교훈)
   ★10/11 사용자 "하루 2편 이상" → TWICE_FROM(10/13)부터 하루 두 편: 낮 편 a(12시대) · 저녁 편 b(7~8시대, 예전 그 자리).
-    로테이션은 끊기지 않고 이어진다: 10/13 a 그림 고르기 · b 상식 퀴즈 → 10/14 a 타로 · b 밸런스 → 10/15 a 태어난 달 · b 그림 …
-    (같은 날 두 편은 늘 다른 꼴 · 이어지는 두 편도 늘 다른 꼴 — 그래서 꼴만 보면 그날 어느 편인지 하나로 정해진다: slot_of)
-  회차 번호도 편 순서대로: 10/8 = '오늘의 골라보기 #1' · 10/12 = #5 · 10/13 낮 = #6 · 10/13 저녁 = #7 (series_no)
+    로테이션은 끊기지 않고 이어진다: 10/13 a 그림 고르기 · b 상식 퀴즈 → 10/14 a 타로 · b 밸런스 → 10/15 a 태어난 달 …
+  ★10/14 sci(도파민 과학 — 심해·우주·극한 생존) 2주 시험 SCI_FROM(10/15)~SCI_TO(10/28): 하루 두 편 중 한 편은 sci,
+    다른 편은 골라보기 다음 꼴. sci 편은 날마다 저녁·낮을 번갈아 든다(10/15 b · 10/16 a · 10/17 b … — 시간대 치우침 없이 비교).
+    골라보기 로테이션은 sci 를 건너뛰고 하루 한 꼴씩 그대로 이어진다(10/15 a 태어난 달 → 10/16 b 그림 고르기 → 10/17 a 퀴즈 …).
+    10/29부터는 다시 골라보기 두 편. sci 내용은 SCI_ORDER[k](k = 10/15부터 몇 번째 sci 편) = shorts_catalog 의 n.
+  (같은 날 두 편은 늘 다른 꼴 — 그래서 꼴만 보면 그날 어느 편인지 하나로 정해진다: slot_of)
+  회차 번호는 골라보기 편만 센다: 10/8 = '오늘의 골라보기 #1' · 10/12 = #5 · 10/13 낮 = #6 · 10/13 저녁 = #7 (series_no · sci 는 None)
   어느 편 차례인지(due_slot)도 코드가 정한다: KST NOON_UNTIL(16)시 전이면 낮 편, 뒤면 저녁 편.
-  쓰레드(pick_threads)는 저녁 편만 따라간다 — 쓰레드 2주 시험(10/11~10/24) 조건을 그대로 두려고.
+  쓰레드(pick_threads)는 그날 골라보기 편만 따라간다(sci 는 안 간다) — 쓰레드 2주 시험(10/11~10/24) 조건을 그대로 두려고.
 흐름:
   ① 대본 작가 — 클라우드 루틴(11:50 낮 편 · 19:50 저녁 편 대타) 또는 로컬 예약 작업(insta-pick-daily, 19:20 저녁 편, 크롬 서칭)이
-     `next` 가 알려 준 편·꼴로 대본 JSON 을 쓴다 → `pick_reel.py check` → routine/insta_pick 에 push
+     `next` 가 알려 준 편·꼴로 대본 JSON 을 쓴다(sci 는 `writing` = SCI_WRITING.md) → `pick_reel.py check` → routine/insta_pick 에 push
   ② insta-pick.yml(Actions) — 코드는 main, 대본은 routine/insta_pick 의 오늘 파일 중 가장 늦은 편 → 렌더 → `post` 로 인스타 릴스 게시
 게시 막기: 레포 변수 INSTA_PICK_PUBLISH=0 (기본: push 로 온 오늘 대본은 올린다 — 사용자 10/8 "매일 올려줘")
 
-    python insta/pick_plan.py next [--date 2026-10-13] [--slot a|b]   # 지금 차례인 편·꼴·파일 이름·견본·최근 주제
+    python insta/pick_plan.py next [--date 2026-10-13] [--slot a|b]   # 지금 차례인 편·꼴·파일 이름·견본·최근 주제(sci 는 catalog 항목)
     python insta/pick_plan.py targets [--date …]             # 오늘 대본 중 가장 늦은 편 하나(워크플로가 쓴다)
     python insta/pick_plan.py post <script.json>             # 렌더 결과를 게시(INSTA_PICK_PUBLISH=1 일 때만 실제로)
 """
@@ -46,11 +50,21 @@ RENDERS = os.path.join(ROOT, "output", "insta_pick_render")
 LEDGER = os.path.join(RENDERS, "posted.json")
 EXEMPLAR = {"pick": "pick_door", "card": "pick_card", "quiz": "pick_quiz", "balance": "pick_balance", "birth": "pick_birth"}
 LABEL = {"pick": "그림 고르기 심리테스트", "card": "타로 카드 고르기", "quiz": "상식 퀴즈", "balance": "밸런스 게임",
-         "birth": "태어난 달 표"}
+         "birth": "태어난 달 표", "sci": "도파민 과학(심해·우주·극한 생존)"}
+# ★10/14 sci 2주 시험 — 인스타 검색 '심해' 상위 릴스 620만·370만·225만·210만·190만(전부 과학 호기심 계정, 10/14)
+SCI = "sci"
+SCI_FROM = dt.date(2026, 10, 15)         # 첫날(KST) — 이날 저녁 편부터
+SCI_TO = dt.date(2026, 10, 28)           # 마지막 날(KST, 포함) · 14일 · 판정 뒤 늘리려면 코드로(PR)
+SCI_ORDER = (101, 201, 107, 102, 203, 104, 202, 105, 206, 109, 205, 103, 207, 106)   # k번째 sci 편 = shorts_catalog n
+SCI_EXEMPLAR = "insta/samples/sci_mariana.json"
+SCI_WRITING = "insta/SCI_WRITING.md"
+SHORTS = os.path.join(ROOT, "gumiho", "tales", "shorts_catalog.json")   # 영어 쇼츠 survival·compare — 출처 달린 사실(facts)
+SCI_ENTRY_KEYS = ("n", "format", "slug", "look", "title_idea", "facts", "sources", "careful", "beat_ideas", "items_idea",
+                  "situation", "odds_idea", "hook_idea", "unit", "scale", "twist_idea")
 # 그날 꼴의 서칭 키워드(로컬 크롬 · 인스타 검색 상위 조회수) — 쓰는 쪽이 참고만 한다
 KEYWORDS = {"pick": ["심리테스트", "성격테스트", "그림 고르기"], "card": ["타로", "타로 골라보세요", "오늘의 타로"],
             "quiz": ["상식 퀴즈", "넌센스 퀴즈", "퀴즈"], "balance": ["밸런스 게임", "둘 중 하나"],
-            "birth": ["태어난 달", "생일 운세", "탄생월"]}
+            "birth": ["태어난 달", "생일 운세", "탄생월"], "sci": ["심해", "우주 과학", "극한 생존"]}
 
 
 def kst_today() -> dt.date:
@@ -69,22 +83,62 @@ def _slot(d: dt.date, slot: str | None) -> str:
     return sl
 
 
+def sci_slot(d: dt.date) -> str | None:
+    """그날 sci 편 — SCI_FROM~SCI_TO 안에서만. 날마다 저녁·낮을 번갈아(10/15 b → 10/16 a → 10/17 b …). 밖이면 None."""
+    if not SCI_FROM <= d <= SCI_TO:
+        return None
+    return "b" if (d - SCI_FROM).days % 2 == 0 else "a"
+
+
+def sci_index(d: dt.date) -> int | None:
+    """몇 번째 sci 편인가(0 = 10/15) — sci 날이 아니면 None."""
+    return (d - SCI_FROM).days if sci_slot(d) else None
+
+
+def sci_n(d: dt.date) -> int | None:
+    """그날 sci 편이 쓸 shorts_catalog 항목 번호(SCI_ORDER) — sci 날이 아니면 None."""
+    k = sci_index(d)
+    return None if k is None else SCI_ORDER[k]
+
+
+def sci_entry(n: int, path: str = SHORTS) -> dict | None:
+    """shorts_catalog 의 survival·compare 항목(n) 그대로."""
+    with open(path, encoding="utf-8") as f:
+        cat = json.load(f)
+    return next((e for e in (cat.get("survival") or []) + (cat.get("compare") or []) if e.get("n") == n), None)
+
+
+def _sci_before(d: dt.date, sl: str) -> int:
+    """(d, sl) 편보다 먼저 올라가는 sci 편 수 — 골라보기 로테이션에서 뺀다."""
+    days = min(max(0, (d - SCI_FROM).days), (SCI_TO - SCI_FROM).days + 1)
+    ss = sci_slot(d)
+    return days + (1 if ss is not None and SLOTS.index(ss) < SLOTS.index(sl) else 0)
+
+
 def post_index(d: dt.date, slot: str | None = None) -> int:
-    """START 부터 몇 번째 편인가(0부터) — 하루 한 편이던 날들 뒤로 하루 두 편이 끊김 없이 이어진다."""
+    """골라보기 로테이션에서 몇 번째 편인가(0부터) — 하루 한 편이던 날들 뒤로 하루 두 편이 끊김 없이 이어지고,
+    sci 편(10/15~10/28)은 세지 않는다(그래서 로테이션이 건너뛰지도 겹치지도 않는다). sci 편을 물으면 ValueError."""
     sl = _slot(d, slot)
+    if sl == sci_slot(d):
+        raise ValueError(f"{d} {sl} 편은 sci — 골라보기 순번이 없다")
     if d < TWICE_FROM:
         return (d - START).days
-    return (TWICE_FROM - START).days + 2 * (d - TWICE_FROM).days + SLOTS.index(sl)
+    return (TWICE_FROM - START).days + 2 * (d - TWICE_FROM).days + SLOTS.index(sl) - _sci_before(d, sl)
 
 
 def kind_for(d: dt.date, slot: str | None = None) -> str:
-    """그날 그 편의 꼴. slot 을 안 주면 그날 첫 편."""
-    return FORMATS[post_index(d, slot) % len(FORMATS)]
+    """그날 그 편의 꼴(sci 또는 골라보기 꼴). slot 을 안 주면 그날 첫 편."""
+    sl = _slot(d, slot)
+    if sl == sci_slot(d):
+        return SCI
+    return FORMATS[post_index(d, sl) % len(FORMATS)]
 
 
-def series_no(d: dt.date, slot: str | None = None) -> int:
-    """'오늘의 골라보기 #N' — 10/8 이 #1, 편마다 하나씩 는다. 10/9: 매일 이어지는 시리즈로 보이게(캡션 첫 줄·커버 라벨)."""
-    return post_index(d, slot) + 1
+def series_no(d: dt.date, slot: str | None = None) -> int | None:
+    """'오늘의 골라보기 #N' — 10/8 이 #1, 골라보기 편마다 하나씩 는다(sci 편은 번호가 없다 → None).
+    10/9: 매일 이어지는 시리즈로 보이게(캡션 첫 줄·커버 라벨)."""
+    sl = _slot(d, slot)
+    return None if sl == sci_slot(d) else post_index(d, sl) + 1
 
 
 def slot_of(d: dt.date, kind: str) -> str | None:
@@ -101,7 +155,7 @@ def due_slot(d: dt.date, now: dt.datetime | None = None) -> str | None:
 
 
 def ledger_key(date: str, slot: str) -> str:
-    """게시 ledger 열쇠 — 저녁 편은 예전처럼 날짜 그대로(쓰레드가 이 열쇠만 본다), 낮 편은 날짜+'a'."""
+    """게시 ledger 열쇠 — 저녁 편은 예전처럼 날짜 그대로, 낮 편은 날짜+'a'. 쓰레드는 그날 골라보기 편의 열쇠로 찾는다."""
     return date if slot == "b" else f"{date}{slot}"
 
 
@@ -140,9 +194,12 @@ def recent(d: dt.date, root: str = SCRIPTS, n: int = 40, kind: str | None = None
             s = json.load(open(p, encoding="utf-8"))
         except Exception:  # noqa: BLE001
             continue
-        item = {"date": s.get("date"), "kind": s.get("kind"), "slug": s.get("slug"), "headline": " / ".join(s.get("headline", []))}
+        item = {"date": s.get("date"), "kind": s.get("kind"), "slug": s.get("slug"),
+                "headline": " / ".join(s.get("headline") or s.get("hook") or [])}
         if s.get("kind") == "quiz":
             item["questions"] = [r.get("q") for r in s.get("rounds", [])]
+        if s.get("kind") == SCI:
+            item["src_n"] = s.get("src_n")
         out.append(item)
         if len(out) >= n:
             break
@@ -156,10 +213,16 @@ def next_info(d: dt.date, root: str = SCRIPTS, slot: str | None = None, now: dt.
         return {"date": d.isoformat(), "due": False, "slot": sl, "already_written": False,
                 "why": f"{d} 에는 낮 편이 없다 — 하루 두 편은 {TWICE_FROM} 부터(그 전엔 저녁 편 하나)"}
     k = kind_for(d, sl)
-    return {"date": d.isoformat(), "due": True, "slot": sl, "slot_label": SLOT_LABEL[sl], "series_no": series_no(d, sl),
-            "kind": k, "label": LABEL[k], "file": f"output/insta_pick/{d.isoformat()}_{k}_<slug>.json",
-            "exemplar": f"insta/samples/{EXEMPLAR[k]}.json", "writing": "insta/PICK_WRITING.md",
-            "keywords": KEYWORDS[k], "already_written": bool(script_for(d, sl, root)), "recent": recent(d, root, kind=k)}
+    out = {"date": d.isoformat(), "due": True, "slot": sl, "slot_label": SLOT_LABEL[sl], "series_no": series_no(d, sl),
+           "kind": k, "label": LABEL[k], "file": f"output/insta_pick/{d.isoformat()}_{k}_<slug>.json",
+           "exemplar": f"insta/samples/{EXEMPLAR[k]}.json" if k != SCI else SCI_EXEMPLAR,
+           "writing": "insta/PICK_WRITING.md" if k != SCI else SCI_WRITING,
+           "keywords": KEYWORDS[k], "already_written": bool(script_for(d, sl, root)), "recent": recent(d, root, kind=k)}
+    if k == SCI:                                           # 무엇을 쓸지도 코드가 정한다 — 그날 catalog 항목 그대로(숫자는 facts 에서만)
+        e = sci_entry(sci_n(d)) or {}
+        out.update(src_n=e.get("n"), sci_no=sci_index(d) + 1, format=e.get("format"),
+                   entry={k_: e[k_] for k_ in SCI_ENTRY_KEYS if k_ in e})
+    return out
 
 
 # ── 게시 ──────────────────────────────────────────────
@@ -224,12 +287,12 @@ def post(path: str, renders: str = RENDERS, ledger: str = LEDGER, today: dt.date
                                       "seconds": meta["seconds"], "at": dt.datetime.now(KST).isoformat(timespec="seconds")}
     os.makedirs(os.path.dirname(ledger), exist_ok=True)
     json.dump(led, open(ledger, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-    print(f"✅ 인스타 '오늘의 골라보기' 게시: {stem} · media_id={mid}")
+    print(f"✅ 인스타 릴스 게시({LABEL.get(s['kind'], s['kind'])}): {stem} · media_id={mid}")
     return 0
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="인스타 '오늘의 골라보기' 편성·게시")
+    ap = argparse.ArgumentParser(description="인스타 릴스('오늘의 골라보기' · sci) 편성·게시")
     ap.add_argument("cmd", choices=["next", "targets", "post"])
     ap.add_argument("script", nargs="?")
     ap.add_argument("--date")

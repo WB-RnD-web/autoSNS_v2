@@ -3,12 +3,15 @@ name: 인스타 오늘의 골라보기 — 대본 검사 → 그림·목소리(S
 # 인스타 계정 '오늘의 골라보기'(@zerocrew.studio) — 보는 사람이 멈춰서 고르는 20초 릴스.
 #   ★10/13부터 하루 두 편(사용자 10/11 "하루 2편 이상"): 낮 편 a(클라우드 루틴 11:50) · 저녁 편 b(로컬 19:20 → 대타 19:50).
 # 꼴은 코드가 날짜로 정한다(insta/pick_plan.py: 그림 고르기 → 상식 퀴즈 → 타로 카드 → 밸런스 게임 → 태어난 달 표).
+#   ★10/15~10/28 sci(도파민 과학 — 심해·우주·극한 생존) 2주 시험: 날마다 한 편은 sci(저녁·낮 번갈아), 한 편은 골라보기.
+#     sci 도 같은 길로 돈다(대본 output/insta_pick/<날짜>_sci_<slug>.json → check → render → post) · 숫자는 catalog facts 에서만(check).
 # 트리거: 로컬 예약 작업(insta-pick-daily)이 routine/insta_pick 에 output/insta_pick/<날짜>_<kind>_<slug>.json 을 push.
 #   ★코드는 늘 main 에서, 대본은 routine/insta_pick 에서 오늘 파일 중 가장 늦은 편 하나만(pick_plan.py targets).
 #   ★대본을 믿지 않고 다시 검사한다(pick_reel.py check) · 편마다 한 번(게시 ledger) · 꼴이 그날 편들과 다르면 올리지 않는다.
 # 게시: push 로 온 오늘 대본은 올린다(사용자 10/8 "매일 올려줘"). 막기 = 레포 변수 INSTA_PICK_PUBLISH=0.
 # ★돈 드는 호출 없음: Spark(그림·목소리) · Cloudinary 무료 · 퍼블릭 레포 Actions. 유튜브 홍보·링크 없음.
-# 쓰레드(@feeldragon3802) 2주 시험(10/10 승인): 인스타 저녁 편이 올라간 뒤 같은 대본으로 글 하나 + 내 답글 하나(insta/pick_threads.py).
+# 쓰레드(@feeldragon3802) 2주 시험(10/10 승인): 그날 골라보기 편이 인스타에 올라간 뒤 같은 대본으로 글 하나 + 내 답글 하나(insta/pick_threads.py).
+#   sci 편은 쓰레드에 안 간다 · sci 날은 sci 가 아닌 골라보기 편(낮이든 저녁이든) · 골라보기 두 편인 날은 저녁 편.
 #   기간 10/11~10/24 KST 는 코드가 정한다(THREADS_FROM·THREADS_TO) · push 로 온 실행만 · 실패해도 인스타는 그대로(경고만).
 #   끄기 = 레포 변수 INSTA_PICK_THREADS=0. 클라우드 대타(19:50)도 routine/insta_pick push 라 같은 길로 돈다.
 
@@ -112,7 +115,7 @@ jobs:
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
         run: python insta/pick_plan.py post ${{ steps.pick.outputs.targets }}
 
-      # ── 쓰레드 2주 시험(10/11~10/24) — 인스타 게시가 성공한 뒤에만 · 실패해도 잡은 성공(인스타 ledger 캐시가 저장되게) ──
+      # ── 쓰레드 2주 시험(10/11~10/24) — 인스타 게시가 성공한 뒤에만 · 골라보기 편만(sci 는 코드가 건너뛴다) · 실패해도 잡은 성공 ──
       - name: 쓰레드 ledger 캐시(하루 한 번 — 다시 돌려도 두 번 안 올린다)
         if: github.event_name == 'push'
         uses: actions/cache@v4

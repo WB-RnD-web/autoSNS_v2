@@ -16,8 +16,12 @@
 지키는 것: 주제 태그 하나(insta.topic_tag = 해시태그 첫 개) · 본문 '#'·채널 줄(CHANNELS_LINE)·유튜브·링크 없음 ·
   '댓글로 번호 남겨 줘' 같은 미끼 없음(Meta 는 참여 유도 미끼를 덜 퍼뜨린다 — 투표가 그 자리를 대신한다) ·
   투표 보기 2~4개·한 개 25자 · 글 500자 · 스포일러 10개까지(답글엔 이모지 없이 — offset 단위가 문서에 없다).
-★10/13부터 인스타는 하루 두 편(낮 a · 저녁 b — pick_plan) — 쓰레드는 저녁 편만 따라간다(시험 조건 그대로 · 10/25 판정).
-순서: 인스타 ledger 에 오늘 media_id 가 있어야(= 인스타가 실제로 올라간 뒤) → 글 → ledger 기록 → 답글 → ledger 기록.
+★10/13부터 인스타는 하루 두 편(낮 a · 저녁 b — pick_plan) — 쓰레드는 그날 '골라보기' 편 하나만 따라간다(시험 조건 그대로 · 10/25 판정):
+  · sci(도파민 과학, 10/15~10/28) 편은 늘 건너뛴다 — 쓰레드 시험은 골라보기만.
+  · sci 날은 골라보기가 한 편뿐이라 그 편을 올린다(낮이든 저녁이든 — sci 가 저녁이면 낮 골라보기를).
+  · 골라보기가 두 편인 날(10/13·10/14, 10/29~)은 예전처럼 저녁 편(threads_slot).
+  인스타 ledger 는 그 편의 열쇠(P.ledger_key(날짜, 편))로 찾는다 · 쓰레드 ledger 는 날짜 열쇠 그대로(하루 한 번).
+순서: 인스타 ledger 에 그 편 media_id 가 있어야(= 인스타가 실제로 올라간 뒤) → 글 → ledger 기록 → 답글 → ledger 기록.
   다시 돌려도 두 번 올리지 않는다(ledger: output/insta_pick_render/threads_posted.json · Actions 캐시).
   쓰레드가 실패해도 인스타는 그대로다(워크플로 continue-on-error + 경고).
 끄기: 레포 변수 INSTA_PICK_THREADS=0 (끄기만 된다 — 기간 밖은 켤 수 없다).
@@ -98,6 +102,13 @@ def _plain(text: str) -> str:
 # ── 무엇을 올리나 ─────────────────────────────────────
 def in_window(d: dt.date) -> bool:
     return THREADS_FROM <= d <= THREADS_TO
+
+
+def threads_slot(d: dt.date) -> str | None:
+    """그날 쓰레드로 옮길 편 — 골라보기 편 중 마지막 편(sci 편은 빼고). sci 날은 골라보기가 하나라 그 편,
+    골라보기가 두 편인 날은 저녁 편(b) — 시험 조건(하루 한 글) 그대로."""
+    picks = [sl for sl in P.slots_on(d) if P.kind_for(d, sl) != P.SCI]
+    return picks[-1] if picks else None
 
 
 def _pick_no(s: dict, n: int) -> int:
@@ -195,14 +206,20 @@ def skip_reasons(s: dict, today: dt.date, ig_led: dict, env=None) -> list[str]:
         why.append("수동 실행(렌더만)")
     if s.get("date") != today.isoformat():
         why.append(f"오늘({today}) 대본이 아니다: {s.get('date')}")
-    try:
-        if P.slot_of(dt.date.fromisoformat(s.get("date") or ""), s.get("kind", "")) == "a":
-            why.append("낮 편은 쓰레드에 안 올린다 — 쓰레드 2주 시험은 저녁 편 하나로(10/25 판정까지 조건 그대로)")
-    except ValueError:
-        pass
-    ig = ig_led.get(s.get("date") or "", {})
+    sl = None
+    if s.get("kind") == P.SCI:
+        why.append("sci(도파민 과학) 편은 쓰레드에 안 올린다 — 쓰레드 2주 시험은 골라보기만(10/25 판정까지 조건 그대로)")
+    else:
+        try:
+            d = dt.date.fromisoformat(s.get("date") or "")
+            sl = P.slot_of(d, s.get("kind", ""))           # 그날 편성에 없는 꼴이면 None — 인스타 게시가 이미 막는다(blockers)
+            if sl is not None and sl != threads_slot(d):
+                why.append("낮 편은 쓰레드에 안 올린다 — 골라보기가 두 편인 날은 저녁 편 하나로(10/25 판정까지 조건 그대로)")
+        except ValueError:
+            pass
+    ig = ig_led.get(P.ledger_key(s.get("date") or "", sl or "b"), {})      # 그 편의 인스타 ledger 열쇠(낮 = 날짜+a)
     if not ig.get("media_id"):
-        why.append("인스타가 아직 안 올라갔다(인스타 ledger 에 오늘 media_id 없음)")
+        why.append("인스타가 아직 안 올라갔다(인스타 ledger 에 그 편 media_id 없음)")
     elif ig.get("slug") and ig.get("slug") != s.get("slug"):
         why.append(f"인스타에 올라간 대본({ig.get('slug')})과 다르다: {s.get('slug')}")
     return why
@@ -242,7 +259,7 @@ def post(path: str, renders: str = P.RENDERS, ledger: str = LEDGER, ig_ledger: s
         return 0
     pl = plan_of(s)
     led = P.load_ledger(ledger)
-    entry = led.get(s["date"]) or {}
+    entry = led.get(s["date"]) or {}                     # 쓰레드 ledger 는 날짜 열쇠 — 하루 한 번
     if entry.get("post_id") and (entry.get("reply_id") or not pl["reply"]):
         print(f"⏭️ 쓰레드 {s['date']} 는 이미 올렸다: post={entry['post_id']} reply={entry.get('reply_id') or '-'}")
         return 0

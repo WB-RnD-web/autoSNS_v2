@@ -229,12 +229,14 @@ def _edge(text: str, out_mp3: str) -> bool:
     return r.returncode == 0 and os.path.exists(out_mp3) and os.path.getsize(out_mp3) > 1000
 
 
-def synth(texts: list[str], wd: str, mock: bool = False) -> tuple[dict, str]:
-    """말 → wav(무음 제거·속도 적용, 44.1k 모노). Spark 공용이라 ★한 문장씩 차례로. 같은 문장은 캐시."""
+def synth(texts: list[str], wd: str, mock: bool = False, tempo: float | None = None) -> tuple[dict, str]:
+    """말 → wav(무음 제거·속도 적용, 44.1k 모노). Spark 공용이라 ★한 문장씩 차례로. 같은 문장은 캐시.
+    tempo: 이 호출만의 빠르기(안 주면 INSTA_TEMPO) — 인스타 sci 릴스만 ×1.1(pick_reel.SCI_TEMPO), 다른 꼴은 그대로."""
     os.makedirs(wd, exist_ok=True)
     got, used = {}, set()
+    tp = TEMPO if tempo is None else float(tempo)
     for text in dict.fromkeys(texts):
-        key = h16(TTS, VOICE, text, TEMPO, mock)
+        key = h16(TTS, VOICE, text, tp, mock)
         out = os.path.join(wd, f"v_{key}.wav")
         if os.path.exists(out) and os.path.getsize(out) > 1000:
             got[text] = out
@@ -257,7 +259,7 @@ def synth(texts: list[str], wd: str, mock: bool = False) -> tuple[dict, str]:
         if not ok:
             raise RuntimeError(f"목소리 합성 실패: {text[:30]}")
         used.add(how)
-        af = f"atempo={TEMPO}," if abs(TEMPO - 1) > 1e-3 and not mock else ""
+        af = f"atempo={tp}," if abs(tp - 1) > 1e-3 and not mock else ""
         sh([ffmpeg(), "-y", "-loglevel", "error", "-i", raw, "-af",
             f"{af}silenceremove=start_periods=1:start_threshold=-45dB,areverse,"
             f"silenceremove=start_periods=1:start_threshold=-45dB,areverse",
