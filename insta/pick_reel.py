@@ -37,7 +37,7 @@ import re
 import sys
 import time
 
-from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter
+from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter, ImageOps
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
@@ -83,11 +83,12 @@ SCI_SEC = (18.0, 40.0)                                    # 전체 길이 — �
 SCI_SPEEDUP = 1.15
 SCI_Y_MAX = 1430                                          # 그린 글자·막대의 아랫변 — 아래 25%(y 1440~)는 인스타 캡션·버튼 자리
 # 어두운 실사(파스텔 STYLE 을 쓰지 않는다) — gumiho/tales/rules.py LOOKS 와 같은 결, 더 어둡게
-SCI_LOOKS = {"deep": "photorealistic cinematic still, deep ocean, dark blue and black water, ",
-             "space": "photorealistic cinematic still, outer space, deep black sky, ",
+SCI_LOOKS = {"deep": "photorealistic cinematic still, deep ocean, glowing blue light and bioluminescence, ",
+             "space": "photorealistic cinematic still, outer space, glowing planets and stars, ",
              "earth": "photorealistic cinematic still, documentary nature photography, moody light, ",
              "ancient": "photorealistic cinematic still, prehistoric Earth, documentary, "}
-SCI_LOOK_TAIL = "dark cinematic mood, low-key dramatic lighting, deep shadows, high detail, vertical composition, "
+SCI_LOOK_TAIL = ("vivid dramatic lighting, one clear bright subject, rich color, high detail, vertical composition, "
+                 )  # 10/14 검수: low-key·deep shadows 로는 첫 화면이 거의 까맸다(피드에서 안 멈춘다)
 SCI_INTRO_TAG = {"survival": "실제 숫자로 알아봐요", "compare": "작은 것부터 순서대로"}
 _NUMS = re.compile(r"(\d[\d,]*(?:\.\d+)?)\s*(thousand|million|billion|trillion|만|억|조)?", re.I)
 _MULT = {"thousand": 1e3, "million": 1e6, "billion": 1e9, "trillion": 1e12, "만": 1e4, "억": 1e8, "조": 1e12}
@@ -648,9 +649,9 @@ class Painter:
         px = col.load()
         for y in range(H):                                   # 위(훅)·가운데(숫자)·아래(인스타 글) 어둡게
             top = 0.78 * max(0.0, 1 - y / 640) ** 1.4
-            mid = 0.36 * math.exp(-((y - 930) / 360) ** 2)
+            mid = 0.22 * math.exp(-((y - 930) / 360) ** 2)
             bot = 0.62 * max(0.0, (y - 1300) / (H - 1300))
-            px[0, y] = int(255 * (1 - max(top, mid, bot)) * 0.9)
+            px[0, y] = int(255 * (1 - max(top, mid, bot)))
         self.cache["sci_shade"] = Image.merge("RGB", [col.resize((W, H))] * 3)
         top = Image.new("RGBA", (W, 620), (0, 0, 0, 0))
         d = ImageDraw.Draw(top)
@@ -670,7 +671,7 @@ class Painter:
         key = ("sci_img", i, end)
         if key not in self.cache:
             im = R.cover(Image.open(self.a["beats"][i]).convert("RGB"), round(W * 1.1), round(H * 1.1))
-            im = ImageEnhance.Contrast(ImageEnhance.Brightness(im).enhance(0.86)).enhance(1.08)
+            im = ImageEnhance.Brightness(ImageOps.autocontrast(im, cutoff=1)).enhance(1.08)   # 10/14: 어두운 그림도 피드에서 보이게
             if end:                                          # 끝 판정: 흐리고 더 어둡게(글자가 주인공)
                 im = ImageEnhance.Brightness(im.filter(ImageFilter.GaussianBlur(14))).enhance(0.62)
             self.cache[key] = im
