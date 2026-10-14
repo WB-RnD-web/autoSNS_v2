@@ -64,6 +64,11 @@ If it prints `"none": true`, write nothing. Use each entry's `format`, `part`, `
    Netflix, Kisaragi Station, The Exit 8. Present-day Western or space settings only. **Gumi is voice-only**: never
    draw Gumi, a fox, fox/animal ears, tails or an anime girl; never put her in `img`.
 
+## Evergreen (owner, 2026-10-14)
+This channel is meant to keep circulating for months and break out late, not to be watched on the day.
+Nothing may go stale: no "tomorrow/next Sunday/this week/see you tomorrow/every Friday/recently/currently"
+anywhere (checked). The teaser is always "NEXT: …" (it means the next part in the playlist).
+
 ## Format A — `survival` ("How Long Would You Last…?"), 30–45 s (70–110 words)
 - `situation`: the place in big words, ≤36 chars (`"FLOOR OF THE MARIANA TRENCH"`). It is on screen from the
   first frame, with the survival clock at **0:00**.
@@ -83,7 +88,7 @@ If it prints `"none": true`, write nothing. Use each entry's `format`, `part`, `
   The spoken odds must match `odds`; that one phrase is the only number exempt from `facts`.
 - Beat 0 `say` **starts with the title question**: "How long would you last on the floor of the Mariana Trench?
   You just woke up 10,935 meters down. No submarine." No intro, no "Gumi here".
-- `teaser`: `teaser_idea` copied **exactly** (on-screen only), e.g. `"TOMORROW: MARS, NO SUIT"`; leave it out
+- `teaser`: `teaser_idea` copied **exactly** (on-screen only), e.g. `"NEXT: MARS, NO SUIT"`; leave it out
   when `teaser_idea` is null (last part, liminal).
 - Title: `How Long Would You Last on the Floor of the Mariana Trench? #shorts` — starts "How Long Would You
   Last". **No "Pt.N".**

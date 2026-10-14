@@ -412,10 +412,13 @@ _o = subprocess.run([sys.executable, _tp, "next", "--date", "2026-10-17"], captu
 _j = json.loads(_o.stdout)
 ck("CLI next 10/17 → 027 · 공개 시각 · 다음 주 예고 · 견본 준비", _j.get("file") == "027_places-you-cant-survive.json"
    and _j.get("publish_at") == "2026-10-18T14:00:00Z" and _j.get("teaser", {}).get("date") == "2026-10-25"
-   and _j["teaser"]["line"].startswith("Next Sunday: How Long You'd Last in Every Zone") and _j.get("exemplar_ready") is True, _o.stdout[:200])
+   and _j["teaser"]["line"].startswith("Up next: How Long You'd Last in Every Zone") and _j.get("exemplar_ready") is True, _o.stdout[:200])
 _t29 = T.teaser_for(T.entry(29))
 ck("마지막 편(11/1) 예고는 편성 안 된 backlog 를 약속하지 않는다", _t29["title"] == "" and _t29["date"] is None
-   and _t29["line"] == "A new one next Sunday.", str(_t29))
+   and _t29["line"] == "Up next: more of these in the playlist.", str(_t29))
+ck("에버그린(10/14): 편성 약속·날짜 타는 말은 막고 이야기 속 tomorrow 는 둔다",
+   all(T.DATED.search(x) for x in ("Next Sunday we go deeper", "See you tomorrow", "New one every Friday", "this week"))
+   and not T.DATED.search("Tomorrow, the teacher said, swallow the bead") and not T.DATED.search("Up next: the deep sea"))
 import upload_tale as UW  # noqa: E402
 _sat = _d2.datetime(2026, 10, 17, 3, 0, tzinfo=_d2.timezone.utc)
 ck("업로드 예약: 토요일에 올리면 일요일 14:00 UTC", UW.weekly_time("2026-10-18", _sat) == "2026-10-18T14:00:00Z")

@@ -121,8 +121,13 @@ def _word_re(words: list[str]) -> re.Pattern:
 BANNED_TOPICS = _word_re([w for ws in BANNED_WORDS.values() for w in ws])
 # 욕설·날짜 타는 말 — tales.py(롱폼, 다른 작업이 바꾸는 중)와 떼어 여기 둔다(새 형식만 이걸 쓴다)
 PROFANITY = re.compile(r"(?i)\b(fuck|shit|rape|porn|nude|naked|gore|dismember|suicide|decapitat)\w*")
+# 10/14 사용자: 구미호는 '그날그날 보는' 채널이 아니라 계속 돌고 역주행하는 에버그린 채널 → 몇 달 뒤에 봐도 맞는 말만.
+#   편성 약속(next Sunday·see you tomorrow·every Friday)도 날짜를 탄다(이야기 속 'tomorrow' 는 괜찮다).
+_DAYS = r"(sunday|monday|tuesday|wednesday|thursday|friday|saturday)"
 DATED = re.compile(r"(?i)\b(this (year|week|month|halloween|summer|winter|season)|last (week|month|year)|recently|"
-                   r"right now|these days|currently|trending|as of today)\b")
+                   r"right now|these days|currently|trending|as of today|"
+                   r"next (week|month|episode drops)|next " + _DAYS + r"|every " + _DAYS + r"|"
+                   r"(see you|come back|back) tomorrow|tomorrow'?s (episode|video|part|short))\b")
 # 그림에 구미·여우 금지(10/10 검수: 우회 표현까지)
 NO_FOX = re.compile(r"(?i)(?<![a-z])(gumi|fox\w*|vixen\w*|kitsune\w*|vulpine|vulpes|nine[\s-]+tail\w*|"
                     r"fluffy[\s-]+tails?|animal[\s-]+ears?|(girl|woman|lady)\s+with\s+(a\s+|an?\s+\w+\s+)?tails?|"
@@ -209,17 +214,15 @@ def entry(n: int, sc: dict | None = None) -> dict | None:
 
 
 def teaser_idea(e: dict, sc: dict | None = None) -> str | None:
-    """다음 편 예고(화면 글자만, 목소리 없음) — 같은 시리즈 다음 편이 있을 때만. 매일(A)은 TOMORROW, 격일(B)은 NEXT.
-    (10/10 검수: 요일 'THURSDAY' 는 시간대마다 다르게 읽힌다 → NEXT)"""
+    """다음 편 예고(화면 글자만, 목소리 없음) — 같은 시리즈 다음 편이 있을 때만. 늘 'NEXT: …'.
+    (10/10 검수: 요일은 시간대마다 다르게 읽힌다 · 10/14 에버그린: TOMORROW 도 몇 달 뒤엔 틀린 말 → NEXT 하나로)"""
     sc = sc or shorts()
     rs = sc[e["format"]]
     k = [x["n"] for x in rs].index(e["n"])
     if k + 1 >= len(rs) or e["format"] == "liminal":     # liminal 은 끝 → 첫 장면 루프가 핵심(예고가 루프를 끊는다)
         return None
     nx = rs[k + 1]
-    gap = (publish_date(nx, sc) - publish_date(e, sc)).days
-    when = "TOMORROW" if gap == 1 else "NEXT"
-    return f"{when}: {nx['teaser']}"                    # 10/11 ③: 'PT.N' 은 터진 뒤에만 — 지금은 번호 없이
+    return f"NEXT: {nx['teaser']}"                    # 10/11 ③: 'PT.N' 은 터진 뒤에만 — 지금은 번호 없이
 
 
 def _name_key(t: str) -> str:
@@ -714,7 +717,7 @@ def check_new(s: dict, sc: dict | None = None, others: list[dict] | None = None)
         if PROFANITY.search(t_):
             errs.append(f"{where}: 금지어")
         m = DATED.search(t_)
-        if m and where != "teaser":
+        if m:
             errs.append(f"{where}: 날짜 타는 말 {m.group(0)!r}")
         m = URL.search(t_)
         if m:
