@@ -1,0 +1,70 @@
+{
+ "id": 104,
+ "slug": "everest-death-zone",
+ "format": "survival",
+ "part": 4,
+ "look": "earth",
+ "title": "How Long Would You Last on Top of Everest Without Oxygen? #shorts",
+ "hook": "HOW LONG WOULD YOU LAST?",
+ "situation": "EVEREST SUMMIT, NO OXYGEN",
+ "description_hook": "You are teleported to the summit of Everest, 8,848.86 meters up, with no bottled oxygen and no time to acclimatize. The clock starts now.",
+ "beats": [
+  {
+   "t": "0:00",
+   "text": "1/3 THE OXYGEN",
+   "src": 0,
+   "say": "How long would you last on top of Everest without oxygen? You're at 8,848.86 meters. Each breath holds one-third the oxygen.",
+   "img": "a lone climber silhouette seen from behind on a narrow snowy summit ridge above a sea of clouds, deep blue thin sky, harsh bright sun"
+  },
+  {
+   "t": "0:00",
+   "text": "-36 °C, 160 KM/H WINDS",
+   "src": 0,
+   "say": "In January it averages -36 °C up here. Winds blow over 160 km/h. You breathe faster and get less.",
+   "img": "violent wind tearing a long plume of ice crystals off a jagged Himalayan peak, frozen rock and blue ice glittering in cold sunlight"
+  },
+  {
+   "t": "0:30",
+   "text": "30 SECONDS",
+   "src": 2,
+   "say": "Arrive this fast and the FAA says useful consciousness can go in 30 seconds. Not death. Just no clear thinking.",
+   "img": "a snowy mountain horizon tilting and blurring at the edges of vision, the bright white glare dimming into a dark tunnel"
+  },
+  {
+   "t": "1:30",
+   "text": "1.5 MINUTES",
+   "src": 2,
+   "say": "At 28,000 ft, the upper end is 1.5 minutes. Impairment starts at once.",
+   "img": "a steep icy slope dropping away below a bootprint trail in fresh snow, ropes fading into blowing spindrift, no one in sight"
+  },
+  {
+   "t": "3:00",
+   "text": "2.5-3 MINUTES",
+   "src": 2,
+   "say": "Slow onset gives 2.5 to 3 minutes. That's for a resting, unacclimatized person who can still act.",
+   "img": "a single ice axe planted upright in wind-packed summit snow at dusk, long blue shadows and a curved horizon of endless peaks"
+  }
+ ],
+ "gumi": {
+  "odds": "1%",
+  "say": "Gumi's odds: one percent. Real climbers acclimatize for weeks and usually bring bottled oxygen."
+ },
+ "teaser": "NEXT: VENUS",
+ "sources": [
+  "https://www.britannica.com/place/Mount-Everest",
+  "https://www.nejm.org/doi/full/10.1056/NEJMoa0801581",
+  "https://www.faa.gov/documentLibrary/media/Advisory_Circular/AC_61-107B_CHG_1.pdf"
+ ],
+ "tags": [
+  "mount everest",
+  "everest summit",
+  "how long would you last",
+  "no oxygen",
+  "high altitude",
+  "hypoxia",
+  "mountain survival",
+  "science",
+  "survival",
+  "everest facts"
+ ]
+}

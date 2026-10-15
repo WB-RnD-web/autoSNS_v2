@@ -1,0 +1,28 @@
+{
+ "id": 302,
+ "slug": "gas-station-3am",
+ "format": "liminal",
+ "part": 2,
+ "look": "liminal",
+ "fiction": true,
+ "title": "The 3 A.M. Gas Station Theory: 5 Rules You Must Follow #shorts",
+ "hook": "GAS STATION. 3 A.M.",
+ "description_hook": "You pull off an empty highway at 3 A.M. The gas station is open, the fridges hum, and its lights are the only lights for miles.",
+ "lines": [
+  {"rule": 1, "text": "PAY INSIDE. NEVER AT THE PUMP", "say": "You stop for gas on an empty highway at 3 A.M. Rule one: pay inside, never at the pump.",
+   "img": "a lonely gas station canopy glowing white under a pitch black sky, empty fuel pumps, an empty highway disappearing into the dark"},
+  {"rule": 2, "text": "COUNT THE CARS. TWICE.", "say": "Rule two. Count the cars at the pumps going in. Count again coming out.",
+   "img": "three dark parked cars beside fuel pumps under harsh canopy lights, no drivers anywhere, wet concrete reflecting the glow"},
+  {"rule": 3, "text": "THE COFFEE IS ALWAYS FRESH", "say": "Rule three. The coffee is always fresh. Nobody made it.",
+   "img": "a full glass coffee pot steaming on a warmer in an empty convenience store, humming drink fridges glowing in the background"},
+  {"rule": 4, "text": "DON'T WAIT FOR THE CLERK TO TURN", "say": "Rule four. If the clerk faces away, don't wait for him to turn around.",
+   "img": "a store clerk seen only from behind standing motionless at a counter, facing a back wall of shelves, cold fluorescent light"},
+  {"rule": 5, "text": "NEVER TAKE THE WOODEN KEY", "say": "Rule five. Never take the bathroom key on the wooden paddle.",
+   "img": "a single old metal key hanging from a worn wooden paddle on a hook by a dim side door, flickering light on cracked tiles"},
+  {"text": "IT'S 3 A.M. AGAIN", "say": "Drive away. The next station has the same name. And it's 3 A.M. again.",
+   "img": "the view through a car windshield at night, an empty highway ahead and a familiar glowing gas station canopy appearing in the distance"}
+ ],
+ "loop_back": "The last line sends the viewer to an identical station at 3 A.M., back to rule one: pay inside.",
+ "gumi": {"say": "So. Which rule would you break first?"},
+ "tags": ["liminal space", "liminal spaces", "gas station", "3am", "creepy rules", "rules horror", "dreamcore", "weirdcore", "night drive", "empty highway"]
+}
