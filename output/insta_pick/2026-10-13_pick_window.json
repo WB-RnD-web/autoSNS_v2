@@ -1,0 +1,56 @@
+{
+ "date": "2026-10-13",
+ "kind": "pick",
+ "slug": "window",
+ "headline": [
+  "창문 하나 골라 봐요",
+  "요즘 내 마음의 날씨"
+ ],
+ "say_intro": "마음에 드는 창문 하나를 골라 봐요.",
+ "options": [
+  {
+   "img": "a round wooden window with a soft golden sunrise and tiny birds flying over green hills, warm light",
+   "name": "아침 창문",
+   "result": "새 출발의 마음이에요",
+   "lines": "마음이 다시 가벼워지는 중이에요. 미뤄 둔 작은 시작 하나를 오늘 해 봐요.",
+   "say": "1번 아침 창문은, 새 출발의 마음이에요."
+  },
+  {
+   "img": "a square window with raindrops on the glass and a cozy yellow lamp glowing inside, soft blue evening",
+   "name": "비 오는 창문",
+   "result": "쉬고 싶은 마음이에요",
+   "lines": "조금 지쳐 있어요. 따뜻한 차 한 잔 마시며 천천히 쉬어 가요.",
+   "say": "2번 비 오는 창문은, 쉬고 싶은 마음이에요."
+  },
+  {
+   "img": "an arched window opening to a bright field of pink flowers under a clear sky, butterflies",
+   "name": "꽃밭 창문",
+   "result": "설레고 싶은 마음이에요",
+   "lines": "새로운 기분이 필요해요. 가 보고 싶던 곳 하나를 이번 주에 정해 봐요.",
+   "say": "3번 꽃밭 창문은, 설레고 싶은 마음이에요."
+  },
+  {
+   "img": "a tall window showing a deep navy night sky full of stars and a bright crescent moon, quiet mood",
+   "name": "별밤 창문",
+   "result": "혼자 있고 싶어요",
+   "lines": "머릿속을 정리하고 싶어요. 오늘 밤은 조용히 생각을 적어 봐요.",
+   "say": "4번 별밤 창문은, 혼자 있고 싶은 마음이에요."
+  }
+ ],
+ "say_outro": "몇 번 골랐어요?",
+ "outro_text": "몇 번 골랐어요?",
+ "caption": "마음에 드는 창문 하나만 골라 봐요 🪟 요즘 내 마음이 보여요.",
+ "hashtags": [
+  "#심리테스트",
+  "#성격테스트",
+  "#그림고르기",
+  "#오늘의테스트",
+  "#AI그림"
+ ],
+ "bench": {
+  "keyword": "심리테스트",
+  "format": "그림 넷 중 하나 고르기 → 번호별 결과(그림 고르기형 심리테스트)",
+  "seen": [],
+  "ours": "그림·문구는 새로 만든다 — 꼴만 빌림"
+ }
+}
