@@ -1,0 +1,66 @@
+{
+ "id": 106,
+ "slug": "antarctic-winter-no-shelter",
+ "format": "survival",
+ "part": 6,
+ "look": "earth",
+ "title": "How Long Would You Last in an Antarctic Winter With No Shelter? #shorts",
+ "hook": "HOW LONG WOULD YOU LAST?",
+ "situation": "ANTARCTIC WINTER, NO SHELTER",
+ "description_hook": "You are dropped on the Antarctic plateau in the dead of winter, where the coldest months average -40 to -70 °C, with no tent and no shelter. The clock starts now.",
+ "beats": [
+  {
+   "t": "0:00",
+   "text": "-40 TO -70 °C",
+   "src": 2,
+   "say": "How long would you last in an Antarctic winter with no shelter? You're dropped on the plateau. The coldest months average -40 to -70 °C.",
+   "img": "a lone human silhouette seen from behind on a flat endless ice plateau under a dark polar night sky, faint green aurora overhead, blue snow glowing in moonlight"
+  },
+  {
+   "t": "0:00",
+   "text": "17 MPH WIND",
+   "src": 2,
+   "say": "Then the wind. About 17 mph, steady. The wind chill drops right off the weather service chart.",
+   "img": "fierce wind driving a low river of snow across rippled ice ridges at night, sastrugi carved sharp, a pale moon behind blowing ice crystals"
+  },
+  {
+   "t": "5:00",
+   "text": "FROSTBITE IN 5 MINUTES",
+   "src": 3,
+   "say": "Any bare skin freezes in 5 minutes or less. Your face, your fingers. You stop feeling them.",
+   "img": "extreme close-up of a gloveless hand reaching into blowing polar snow, frost crystals forming on the knuckles, deep blue cold light"
+  },
+  {
+   "t": "--:--",
+   "text": "CORE BELOW 35 °C",
+   "src": 4,
+   "say": "Within hours, your core drops below 35 °C. That's hypothermia. Your thoughts slow down, and so does everything else.",
+   "img": "a dim glowing thermal-style outline of a human body curled up on the ice, its warm orange core fading into cold blue, endless dark plateau around it"
+  }
+ ],
+ "gumi": {
+  "odds": "0%",
+  "say": "Gumi's odds: zero. Vostok once hit -89.2 °C. And sunrise is 6 months away."
+ },
+ "teaser": "NEXT: INTO A BLACK HOLE",
+ "sources": [
+  "https://wmo.int/media/news/wmo-verifies-696degc-greenland-temperature-northern-hemisphere-record",
+  "https://nsidc.org/news-analyses/news-stories/new-study-explains-antarcticas-coldest-temperatures",
+  "https://www.britannica.com/place/Antarctica/Climate",
+  "https://www.weather.gov/safety/cold-wind-chill-chart",
+  "https://medlineplus.gov/ency/article/000038.htm",
+  "https://gml.noaa.gov/obop/spo/"
+ ],
+ "tags": [
+  "antarctica",
+  "antarctic winter",
+  "coldest place on earth",
+  "how long would you last",
+  "south pole",
+  "wind chill",
+  "hypothermia",
+  "frostbite",
+  "survival",
+  "science"
+ ]
+}

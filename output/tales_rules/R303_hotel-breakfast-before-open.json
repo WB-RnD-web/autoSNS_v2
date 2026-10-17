@@ -1,0 +1,64 @@
+{
+ "id": 303,
+ "slug": "hotel-breakfast-before-open",
+ "format": "liminal",
+ "part": 3,
+ "look": "liminal",
+ "fiction": true,
+ "title": "RULES for the Hotel Breakfast Room Before It Opens #shorts",
+ "hook": "HOTEL BREAKFAST. BEFORE SIX.",
+ "description_hook": "You couldn't sleep, so you went down early. The hotel breakfast room is fully set, every light is on, and nobody is there yet. A work of fiction.",
+ "lines": [
+  {
+   "rule": 1,
+   "text": "LET THE COFFEE FINISH POURING",
+   "say": "You go down to breakfast early. Nobody's here. Rule one: the coffee pours by itself. Let it finish.",
+   "img": "an empty hotel breakfast room at dawn, rows of set tables under bright ceiling lights, a coffee machine on the counter filling a white cup by itself, steam rising"
+  },
+  {
+   "rule": 2,
+   "text": "SKIP THE TABLE SET FOR YOU",
+   "say": "Rule two. Don't sit where a single place is already set.",
+   "img": "a small square table in an empty breakfast room with a single neatly set place, folded napkin, polished cutlery, a chair pulled out slightly, every other table bare"
+  },
+  {
+   "rule": 3,
+   "text": "STRANGE WEATHER? LEAVE THE ROOM",
+   "say": "Rule three. If the muted TV shows weather for a town you don't know, leave.",
+   "img": "a muted wall-mounted television glowing in an empty hotel dining room, its screen showing a blurred map of an unfamiliar coastline in soft colors, cereal dispensers below"
+  },
+  {
+   "rule": 4,
+   "text": "NEVER TAKE THE LAST WAFFLE",
+   "say": "Rule four. Never take the last waffle. It isn't yours.",
+   "img": "a lone golden waffle under a glass warmer lid on a stainless steel buffet counter, juice machines humming beside it, fluorescent light on empty trays"
+  },
+  {
+   "rule": 5,
+   "text": "DON'T SIGN THE GUEST BOOK",
+   "say": "Rule five. The guest book has today's date. Don't sign it.",
+   "img": "an open guest book with a pen resting in its spine on a hotel front counter, blank lined pages, a small brass bell beside it, empty lobby beyond"
+  },
+  {
+   "text": "IT'S STILL 5:59",
+   "say": "Breakfast starts at six. The clock says 5:59. It said that when you walked in. The coffee is pouring again.",
+   "img": "a plain round wall clock with no numerals above an empty breakfast buffet, the hands frozen just before the hour, pale dawn light at the windows"
+  }
+ ],
+ "loop_back": "The clock never moved, so it is still the moment you walked in: the coffee machine starts pouring again, which is rule one.",
+ "gumi": {
+  "say": "So. Which rule would you break first?"
+ },
+ "tags": [
+  "liminal space",
+  "liminal spaces",
+  "hotel breakfast",
+  "empty hotel",
+  "creepy rules",
+  "rules horror",
+  "dreamcore",
+  "weirdcore",
+  "early morning",
+  "fiction"
+ ]
+}
