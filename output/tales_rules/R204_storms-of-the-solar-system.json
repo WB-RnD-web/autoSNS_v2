@@ -1,0 +1,79 @@
+{
+ "id": 204,
+ "slug": "storms-of-the-solar-system",
+ "format": "compare",
+ "part": 4,
+ "look": "space",
+ "title": "Typhoon Tip vs Great Red Spot vs Saturn Hexagon | Storm Size Comparison #shorts",
+ "hook": "SOLAR SYSTEM STORMS BY SIZE",
+ "description_hook": "From Earth's biggest typhoon to a six-sided jet stream on Saturn: the solar system's storms, ranked by size.",
+ "unit": "km",
+ "scale": "linear",
+ "items": [
+  {
+   "name": "TYPHOON TIP (EARTH)",
+   "value": 2200,
+   "label": "2,200 KM",
+   "src": 0,
+   "say": "How big can a storm get? Start on Earth: Typhoon Tip, the largest on record, about 2,200 kilometers across.",
+   "img": "a colossal spiral tropical cyclone seen from orbit over a deep blue ocean, a sharp clear eye at its center, bright white cloud bands"
+  },
+  {
+   "name": "NEPTUNE DARK SPOT",
+   "value": 13000,
+   "label": "13,000 KM",
+   "src": 1,
+   "say": "Neptune's Great Dark Spot: about 13,000 by 6,600 kilometers. It has since disappeared.",
+   "img": "a dark oval storm on the face of a deep azure ice giant planet, wispy bright white clouds trailing beside it, black space behind"
+  },
+  {
+   "name": "GREAT RED SPOT",
+   "value": 16350,
+   "label": "16,350 KM",
+   "src": 2,
+   "say": "Jupiter's Great Red Spot: 16,350 kilometers wide in 2017. That's 1.3 times the width of Earth.",
+   "img": "a giant swirling brick-red oval vortex among cream and rust colored cloud belts on a gas giant, close orbital view"
+  },
+  {
+   "name": "SATURN HEXAGON",
+   "value": 30000,
+   "label": "30,000 KM",
+   "src": 3,
+   "say": "Saturn's north pole has a six-sided jet stream, about 30,000 kilometers across.",
+   "img": "a huge six-sided cloud pattern circling the north pole of a pale golden ringed planet, a dark vortex at its center, seen from directly above"
+  },
+  {
+   "name": "RED SPOT IN THE 1800S",
+   "value": 41000,
+   "label": "41,000 KM",
+   "twist": true,
+   "src": 4,
+   "say": "But in the late 1800s, the Red Spot was up to 25,500 miles long. About 41,000 kilometers. It's been shrinking ever since.",
+   "img": "an enormous elongated crimson storm stretching across most of a banded gas giant, glowing in soft sunlight, vintage telescope view feel"
+  }
+ ],
+ "gumi": {
+  "say": "Shrinking, sure. Yet Earth, 12,742 km wide, still fits inside it."
+ },
+ "teaser": "NEXT: BIGGEST LIVING THINGS",
+ "sources": [
+  "https://www.aoml.noaa.gov/hrd/tcfaq/E5.html",
+  "https://www.jpl.nasa.gov/images/pia02245-neptunes-blue-green-atmosphere/",
+  "https://www.jpl.nasa.gov/news/nasas-juno-spacecraft-spots-jupiters-great-red-spot",
+  "https://www.jpl.nasa.gov/news/nasas-cassini-spacecraft-obtains-best-views-of-saturn-hexagon/",
+  "https://science.nasa.gov/missions/hubble/hubble-shows-that-jupiters-great-red-spot-is-smaller-than-ever-seen-before",
+  "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html"
+ ],
+ "tags": [
+  "great red spot",
+  "jupiter",
+  "saturn hexagon",
+  "neptune",
+  "typhoon tip",
+  "biggest storms",
+  "size comparison",
+  "solar system",
+  "space",
+  "planets"
+ ]
+}

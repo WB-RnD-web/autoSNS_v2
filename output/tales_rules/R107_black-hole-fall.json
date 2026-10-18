@@ -1,0 +1,63 @@
+{
+ "id": 107,
+ "slug": "black-hole-fall",
+ "format": "survival",
+ "part": 7,
+ "look": "space",
+ "title": "How Long Would You Last Falling Into a Black Hole? #shorts",
+ "hook": "HOW LONG WOULD YOU LAST?",
+ "situation": "FALLING INTO A BLACK HOLE",
+ "description_hook": "In a spacesuit, you start falling toward a black hole of 4.3 million solar masses, following NASA's plunge simulation. The clock starts now.",
+ "beats": [
+  {
+   "t": "0:00",
+   "text": "640 MILLION KM OUT",
+   "src": 0,
+   "say": "How long would you last falling into a black hole? In a suit, you start 640 million kilometers out. It weighs 4.3 million solar masses.",
+   "img": "a lone astronaut silhouette seen from behind floating in deep space, facing a vast black sphere ringed by a thin glowing orange disk far ahead, cold starlight"
+  },
+  {
+   "t": "30:00",
+   "text": "ONE ORBIT: 30 MINUTES",
+   "src": 0,
+   "say": "You don't drop straight in. Gravity swings you around it. One orbit every 30 minutes, tighter each time.",
+   "img": "a curved trail of light spiraling inward around a dark gravitational well, a tiny spacesuited figure riding the bright arc, swirling hot gas below"
+  },
+  {
+   "t": "3:00:00",
+   "text": "25 MILLION KM HORIZON",
+   "src": 0,
+   "say": "About 3 hours in, you cross the event horizon, 25 million kilometers wide. You feel nothing special. There is no way back.",
+   "img": "the view looking down into a perfectly black edge filling the whole frame, starlight bent into a thin bright ring at the border, eerie calm"
+  },
+  {
+   "t": "3:00:13",
+   "text": "SPAGHETTIFIED",
+   "src": 0,
+   "say": "In NASA's simulation, 12.8 seconds later, the tides stretch you like spaghetti. The center is still 128,000 kilometers away.",
+   "img": "a glowing outline of a human figure stretched into a long thin ribbon of light, pulled down into absolute darkness, distorted stars around it"
+  }
+ ],
+ "gumi": {
+  "odds": "0%",
+  "say": "Gumi's odds: zero. A small one of 8 solar masses shreds you 400 km out."
+ },
+ "teaser": "NEXT: DEATH VALLEY IN JULY",
+ "sources": [
+  "https://science.nasa.gov/universe/black-holes/supermassive-black-holes/new-nasa-black-hole-visualization-takes-viewers-beyond-the-brink/",
+  "https://math.ucr.edu/home/baez/physics/Relativity/BlackHoles/fall_in.html",
+  "https://jila.colorado.edu/~ajsh/bh/dive.html"
+ ],
+ "tags": [
+  "black hole",
+  "event horizon",
+  "spaghettification",
+  "how long would you last",
+  "falling into a black hole",
+  "supermassive black hole",
+  "space",
+  "science",
+  "survival",
+  "astronomy"
+ ]
+}
