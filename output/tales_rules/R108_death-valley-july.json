@@ -1,0 +1,73 @@
+{
+ "id": 108,
+ "slug": "death-valley-july",
+ "format": "survival",
+ "part": 8,
+ "look": "earth",
+ "title": "How Long Would You Last in Death Valley in July Without Water? #shorts",
+ "hook": "HOW LONG WOULD YOU LAST?",
+ "situation": "DEATH VALLEY IN JULY, NO WATER",
+ "description_hook": "You are stranded in Death Valley on a July afternoon that averages 116 °F, with no water at all. The clock starts now.",
+ "beats": [
+  {
+   "t": "0:00",
+   "text": "116 °F IN THE SHADE",
+   "src": 0,
+   "say": "How long would you last in Death Valley in July without water? An average July afternoon is 116 °F. The ground can hit 201 °F.",
+   "img": "a lone human silhouette seen from behind on a cracked white salt flat under a blinding midday sun, heat shimmer rippling over distant bare mountains"
+  },
+  {
+   "t": "0:00",
+   "text": "1 GALLON A DAY. YOU HAVE NONE",
+   "src": 1,
+   "say": "The park says drink at least one gallon of water a day. You have none.",
+   "img": "an empty clear plastic water bottle lying on its side in pale desert sand, harsh overhead sunlight casting a short sharp shadow"
+  },
+  {
+   "t": "HOURS",
+   "text": "2 LITRES OF SWEAT AN HOUR",
+   "src": 2,
+   "say": "You walk for help. You sweat up to 2 litres an hour. Past about 5% fluid loss, your head pounds.",
+   "img": "a small figure from behind trudging along an empty desert road that vanishes into wavy heat haze, golden dunes on both sides"
+  },
+  {
+   "t": "HOURS",
+   "text": "8-10% FLUID LOST",
+   "src": 2,
+   "say": "At about 8-10% loss, you're weak, dizzy, and close to fainting.",
+   "img": "a tilted blurry view of rippled sand dunes and a white-hot sky, as if seen by someone about to collapse, colors washed out by glare"
+  },
+  {
+   "t": "HOURS",
+   "text": "CORE OVER 104 °F",
+   "src": 4,
+   "say": "Then heatstroke. Your core passes 104 °F and sweating may stop. It can hit 106 °F within 10 to 15 minutes.",
+   "img": "a glowing thermal-style outline of a human body slumped on a rocky desert slope, its core burning bright red against dark orange ground"
+  }
+ ],
+ "gumi": {
+  "odds": "2%",
+  "say": "Gumi's odds: two percent. This valley officially recorded 134 °F. Bring the gallon."
+ },
+ "teaser": "NEXT: JUPITER",
+ "sources": [
+  "https://www.nps.gov/deva/learn/nature/weather-and-climate.htm",
+  "https://www.nps.gov/deva/planyourvisit/safety.htm",
+  "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13140192/fullTextXML",
+  "https://medlineplus.gov/ency/article/000056.htm",
+  "https://www.cdc.gov/niosh/heat-stress/about/illnesses.html",
+  "https://www.nps.gov/deva/planyourvisit/weather.htm",
+  "https://www.scientificamerican.com/article/how-long-can-the-average/"
+ ],
+ "tags": [
+  "death valley",
+  "hottest place on earth",
+  "how long would you last",
+  "heatstroke",
+  "dehydration",
+  "desert survival",
+  "extreme heat",
+  "science",
+  "survival"
+ ]
+}

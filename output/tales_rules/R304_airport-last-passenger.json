@@ -1,0 +1,63 @@
+{
+ "id": 304,
+ "slug": "airport-last-passenger",
+ "format": "liminal",
+ "part": 4,
+ "look": "liminal",
+ "fiction": true,
+ "title": "RULES if You're the Last Person in the Airport at 3 A.M. #shorts",
+ "hook": "EMPTY AIRPORT. 3 A.M.",
+ "description_hook": "Your flight was cancelled and you fell asleep at the gate. Now the terminal is empty, and the boards show one flight. A work of fiction.",
+ "lines": [
+  {
+   "rule": 1,
+   "text": "STAY WHERE THE FLOOR IS CARPET",
+   "say": "You wake up alone at your gate at 3 A.M. Rule one: stay where the floor is carpet.",
+   "img": "an empty airport gate at night, rows of connected black seats on patterned carpet, rain streaking down huge dark windows, soft fluorescent light"
+  },
+  {
+   "rule": 2,
+   "text": "LET THE CLEANING CART PASS",
+   "say": "Rule two. The cleaning cart moves by itself. Let it pass.",
+   "img": "a lone janitor cleaning cart standing in the middle of a long glossy terminal corridor, no one pushing it, ceiling lights reflected in the polished floor"
+  },
+  {
+   "rule": 3,
+   "text": "NEVER WALK AGAINST THE WALKWAY",
+   "say": "Rule three. The moving walkway goes one way. Never walk against it.",
+   "img": "a long airport moving walkway running through an empty concourse at night, handrails gliding, the far end fading into dim blue light"
+  },
+  {
+   "rule": 4,
+   "text": "DON'T ANSWER YOUR NAME",
+   "say": "Rule four. If a boarding call says your name, don't answer.",
+   "img": "a round ceiling speaker above an empty boarding desk, a single lamp lit over the counter, blurred rows of seats behind it"
+  },
+  {
+   "rule": 5,
+   "text": "DON'T BOARD THE FLIGHT WITH NO DESTINATION",
+   "say": "Rule five. The board shows one flight. No destination. Don't board it.",
+   "img": "departure boards glowing amber in a dark empty terminal, every line blurred and unreadable, a closed jet bridge door beneath them"
+  },
+  {
+   "text": "YOUR FLIGHT IS CANCELLED",
+   "say": "Then the speaker says your flight is cancelled. Sit down. It's the start again.",
+   "img": "a single airport seat by a rain-covered window at night, a jacket folded on the armrest as if someone just fell asleep there, runway lights blurred outside"
+  }
+ ],
+ "loop_back": "The last line sends the viewer back to sleep in the gate seat where they woke up — the start of rule one.",
+ "gumi": {
+  "say": "So. Which rule would you break first?"
+ },
+ "tags": [
+  "liminal space",
+  "liminal spaces",
+  "empty airport",
+  "3am",
+  "creepy rules",
+  "rules horror",
+  "dreamcore",
+  "weirdcore",
+  "airport at night"
+ ]
+}
