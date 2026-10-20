@@ -17,9 +17,9 @@
   '댓글로 번호 남겨 줘' 같은 미끼 없음(Meta 는 참여 유도 미끼를 덜 퍼뜨린다 — 투표가 그 자리를 대신한다) ·
   투표 보기 2~4개·한 개 25자 · 글 500자 · 스포일러 10개까지(답글엔 이모지 없이 — offset 단위가 문서에 없다).
 ★10/13부터 인스타는 하루 두 편(낮 a · 저녁 b — pick_plan) — 쓰레드는 그날 '골라보기' 편 하나만 따라간다(시험 조건 그대로 · 10/25 판정):
-  · sci(도파민 과학, 10/15~10/28) 편은 늘 건너뛴다 — 쓰레드 시험은 골라보기만.
+  · sci(도파민 과학, 10/15~11/07)·병맛(bm, 10/25~11/07) 편은 늘 건너뛴다 — 쓰레드 시험은 골라보기만.
   · sci 날은 골라보기가 한 편뿐이라 그 편을 올린다(낮이든 저녁이든 — sci 가 저녁이면 낮 골라보기를).
-  · 골라보기가 두 편인 날(10/13·10/14, 10/29~)은 예전처럼 저녁 편(threads_slot).
+  · 골라보기가 두 편인 날(10/13·10/14, 11/08~)은 예전처럼 저녁 편(threads_slot) · sci·병맛만 있는 날(10/25~11/07)은 없음(None).
   인스타 ledger 는 그 편의 열쇠(P.ledger_key(날짜, 편))로 찾는다 · 쓰레드 ledger 는 날짜 열쇠 그대로(하루 한 번).
 순서: 인스타 ledger 에 그 편 media_id 가 있어야(= 인스타가 실제로 올라간 뒤) → 글 → ledger 기록 → 답글 → ledger 기록.
   다시 돌려도 두 번 올리지 않는다(ledger: output/insta_pick_render/threads_posted.json · Actions 캐시).
@@ -107,7 +107,7 @@ def in_window(d: dt.date) -> bool:
 def threads_slot(d: dt.date) -> str | None:
     """그날 쓰레드로 옮길 편 — 골라보기 편 중 마지막 편(sci 편은 빼고). sci 날은 골라보기가 하나라 그 편,
     골라보기가 두 편인 날은 저녁 편(b) — 시험 조건(하루 한 글) 그대로."""
-    picks = [sl for sl in P.slots_on(d) if P.kind_for(d, sl) != P.SCI]
+    picks = [sl for sl in P.slots_on(d) if P.is_pick(P.kind_for(d, sl))]   # sci·병맛(bm) 편은 뺀다
     return picks[-1] if picks else None
 
 
@@ -209,6 +209,8 @@ def skip_reasons(s: dict, today: dt.date, ig_led: dict, env=None) -> list[str]:
     sl = None
     if s.get("kind") == P.SCI:
         why.append("sci(도파민 과학) 편은 쓰레드에 안 올린다 — 쓰레드 2주 시험은 골라보기만(10/25 판정까지 조건 그대로)")
+    elif s.get("kind") in P.BM_KINDS:
+        why.append("병맛(bm) 편은 쓰레드에 안 올린다 — 쓰레드 2주 시험은 골라보기만(기간 안에서만)")
     else:
         try:
             d = dt.date.fromisoformat(s.get("date") or "")

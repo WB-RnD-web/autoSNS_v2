@@ -1,0 +1,91 @@
+{
+ "date": "2026-10-25",
+ "kind": "bm_paper",
+ "slug": "wombat-cube-poo",
+ "topic": "웜뱃 네모 똥",
+ "headline": [
+  "네모난 똥 싸는 동물",
+  "진짜 있음"
+ ],
+ "lines": [
+  {
+   "type": "hook",
+   "say": "네모난 똥 싸는 동물, 진짜 있음.",
+   "img": "a cute round wombat sitting on a mossy rock in a sunny green Australian forest, next to a small neat pile of brown cube-shaped droppings, bright daylight"
+  },
+  {
+   "type": "stamp",
+   "stamp": "2019 이그노벨 물리학상",
+   "say": "이거 연구해서 상까지 받음.",
+   "src": 0,
+   "img": "a cute wombat proudly standing on a sunny grassy hill, a plain shiny golden trophy cup beside it, bright blue sky"
+  },
+  {
+   "type": "beat",
+   "big": "풍선 투입",
+   "say": "장 속에 풍선 넣고 불어 봄. 진짜로.",
+   "sub": "장 속에 풍선 넣고 불어 봄. 진짜로.",
+   "src": 1,
+   "img": "a bright clean science lab table with a long colorful party balloon inflated inside a soft clear plastic tube, cheerful pastel lighting"
+  },
+  {
+   "type": "beat",
+   "big": "하루 100개",
+   "say": "하루 최대 100개. 한 개 2센티쯤.",
+   "sub": "하루 최대 100개 · 한 개 약 2cm",
+   "src": 2,
+   "img": "dozens of small neat brown cube-shaped droppings lined up in tidy rows on a flat sunny rock, a cute wombat peeking from behind the rock"
+  },
+  {
+   "type": "beat",
+   "say": "네모라서 바위 위에서도 잘 안 굴러감.",
+   "src": 2,
+   "img": "a single small brown cube-shaped dropping sitting perfectly still on top of a round boulder on a sunny hillside, a cute wombat looking at it calmly"
+  },
+  {
+   "type": "punch",
+   "say": "결론. 웜뱃은 똥으로 블록 쌓기 가능.",
+   "sub": "결론: 웜뱃은 똥으로 블록 쌓기 가능",
+   "img": "a cute wombat sitting proudly beside a small tidy tower of stacked brown cubes on a rock, bright sunny forest, toy block style"
+  }
+ ],
+ "facts": [
+  {
+   "fact": "The University of Tasmania researchers behind the wombat-poo study won the 2019 Ig Nobel Physics Prize.",
+   "src": 0
+  },
+  {
+   "fact": "To see how the gut makes the cubes, researchers inflated a piece of the last section of a wombat's intestine with a small balloon.",
+   "src": 1
+  },
+  {
+   "fact": "Bare-nosed wombats may poop up to 100 cubes a day; the cubes are about 2 centimeters in size.",
+   "src": 2
+  },
+  {
+   "fact": "Scientists suspect the cube shape lets wombats mark their territory on rocks and logs with poop that won't easily roll away.",
+   "src": 2
+  }
+ ],
+ "sources": [
+  "https://www.labonline.com.au/content/lab-business/news/wombat-poo-research-wins-2019-ig-nobel-prize-1567550402",
+  "https://physicsworld.com/a/biophysicists-strain-to-reveal-why-wombats-have-cube-shaped-poo/",
+  "https://www.smithsonianmag.com/smart-news/scientists-have-solved-mystery-how-wombats-poop-cubes-180976898/"
+ ],
+ "caption": "웜뱃 진짜 이럼ㅋㅋ",
+ "hashtags": [
+  "#웜뱃",
+  "#이그노벨상",
+  "#동물상식",
+  "#쓸데없는과학",
+  "#병맛"
+ ],
+ "bench": {
+  "format": "황당한 질문 + 진짜 숫자 정색 답(10/20 조사)",
+  "seen": [
+   "원리뷰 · 해파리에 쏘였을 때 오줌을 누면? · 632만(XiUnE-yhumI)",
+   "김블루 · 쇼츠 50편 13.6일 · 중앙값 121만",
+   "희본 · 정색 내레이션 요리 · 869만"
+  ]
+ }
+}

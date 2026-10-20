@@ -1,13 +1,14 @@
 # 인스타 sci(도파민 과학) — 대본 쓰는 법
 
-심해·우주·극한 생존을 **진짜 숫자로** 보여 주는 20~40초 릴스예요. 시험 기간은 10/15~10/28(하루 한 편).
+심해·우주·극한 생존을 **진짜 숫자로** 보여 주는 20~40초 릴스예요. 기간은 10/15~11/07(하루 한 편 · 10/20 연장).
 보는 사람이 첫 1초에 "어? 몇 분?" 하고 멈추고, 숫자가 터질 때마다 끝까지 보게 만드는 게 목표예요.
 골라보기가 아니라서 회차 번호(`오늘의 골라보기 #N`)는 없어요.
 
 ## 순서
 1. `python insta/pick_plan.py next` 가 `kind: sci` 를 주면 이 문서를 따라요. 편(slot)·항목(`src_n`)은 코드가 정해요 — 바꾸지 않아요.
    `due: false`·`already_written: true` 면 아무것도 하지 않고 끝내요.
-2. `entry` = 영어 쇼츠 `gumiho/tales/shorts_catalog.json` 의 그 항목이에요. **숫자는 `entry.facts` 에서만** 가져와요.
+2. `entry` = 영어 쇼츠 `gumiho/tales/shorts_catalog.json` 의 그 항목이에요(901번부터는 인스타 전용 `insta/sci_extra.json`).
+   **숫자는 `entry.facts` 에서만** 가져와요.
    `beat_ideas`·`items_idea` 는 순서·장면 참고, `careful` 은 꼭 지켜요(단정 금지·'약' 붙이기 등).
 3. 견본 `insta/samples/sci_mariana.json` 과 같은 모양으로 `file` 이름 그대로 써요.
 4. `python insta/pick_reel.py check <파일>` 이 ✅ 가 될 때까지 고쳐요.
