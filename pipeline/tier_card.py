@@ -18,6 +18,8 @@
   같은 시각·같은 시청자에서 두 형식을 비교한다. 루틴은 그대로 운세 대본을 올리고, 등급표 날엔 파이프라인이
   화면·제목·설명만 등급표로 바꾼다(날짜로 정한다 — 루틴 판단이 아니다). 월요일 '이번 주 운세'는 건드리지 않는다.
   판정 10/23(채널 맥박 tier-ab). 끄기: 레포 변수 FORTUNE_TIER=0 · 매일 등급표: FORTUNE_TIER=1
+  ★2026-10-27부터 06:13 의 화·토(12/8부터 화·금·토)는 '2027 신년운세 시리즈'(newyear_series.py)가 먼저 가져간다 —
+  등급표·매일 운세 표는 그 밖의 날(월 = 이번 주 운세 제외)에만 나간다. 순서는 run_pipeline.process 가 정한다.
 
     python pipeline/tier_card.py show [--date 2026-10-08]     # 등급표 미리보기
     python pipeline/tier_card.py make [--date …] --out <path> # 스토리보드 JSON

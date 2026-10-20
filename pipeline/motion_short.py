@@ -355,7 +355,8 @@ def tier_layout(tiers, bottom=None):
 
 
 # ── 띠 궁합표(2026-10-07, gunghap_card.py) — 12줄 × (내 띠 | 좋은 짝 | 조심할 띠) ──────────
-# 줄마다 두 줄 글자(이름/출생연도 · 짝/근거). 줄 이름은 기본 '<띠>띠', label 이 있으면 그것(신년 '끝자리 2' 등), 머리글은 head. 오른쪽 끝(x 960~)과 아래 22%(y 1460~)는 비운다.
+# 줄마다 두 줄 글자(이름/출생연도 · 짝/근거). 줄 이름은 기본 '<띠>띠', label 이 있으면 그것(신년 '끝자리 2' 등), 머리글은 head.
+# 이름 밑 작은 글자는 기본 출생연도('…년생'), sub 가 있으면 그것(신년 시리즈 '임인 · 호랑이띠'·'이른 봄' 등 — 2026-10-20). 오른쪽 끝(x 960~)과 아래 22%(y 1460~)는 비운다.
 GH_X0, GH_W, GH_TOP, GH_BOTTOM, GH_GAP = 60, 900, 352, 1430, 8
 GH_COLS = (0, 300, 630)          # 열 시작(줄 안 x) — 내 띠 · 좋은 짝 · 조심할 띠
 CSS_GUNGHAP = """
@@ -389,7 +390,7 @@ def gunghap_layout(rows, bottom=None):
         fa = min(fa, widths[0] / em(r.get("label") or r.get("animal", "") + "띠"))
         fg = min(fg, widths[1] / em(r.get("good", "")))
         fb = min(fb, widths[2] / em(r.get("bad", "")))
-        yrs = "·".join(f"{v % 100:02d}" for v in r.get("years", [])) + "년생"
+        yrs = r.get("sub") or "·".join(f"{v % 100:02d}" for v in r.get("years", [])) + "년생"
         fs = min(fs, (widths[0] - 16) / em_y(yrs), widths[1] / em(r.get("good_line", "")), widths[2] / em(r.get("bad_line", "")))
     return {"rh": rh, "fa": int(fa), "fg": int(fg), "fb": int(fb), "fs": int(fs)}
 
@@ -842,7 +843,7 @@ def scene_html(i, sc, acc):
             y = GH_TOP + k * (rh + GH_GAP)
             top1 = (rh - lay["fa"] - lay["fs"] - 6) / 2
             top2 = top1 + max(lay["fa"], lay["fg"], lay["fb"]) + 6
-            yrs = "·".join(f"{v % 100:02d}" for v in r.get("years", [])) + "년생"
+            yrs = r.get("sub") or "·".join(f"{v % 100:02d}" for v in r.get("years", [])) + "년생"
             parts.append(
                 f'<div class="ghrow" id="{gid}-r{k}" style="left:{GH_X0}px;top:{y:.0f}px;width:{GH_W}px;height:{rh:.0f}px">'
                 f'<div class="a" style="left:{GH_COLS[0] + 18}px;top:{top1:.0f}px;font-size:{lay["fa"]}px">{esc(r.get("label") or r.get("animal", "") + "띠")}</div>'
@@ -878,7 +879,7 @@ def scene_html(i, sc, acc):
                          f'<div class="K" style="font-size:{fK}px">{esc(smalls[ti])}</div></div>')
             items = tr.get("items", [])
             if not items:
-                parts.append(f'<div class="tnone" style="left:{x_chip}px;top:{y:.0f}px;height:{h:.0f}px;font-size:{lay["fl"]}px">오늘은 없어요</div>')
+                parts.append(f'<div class="tnone" style="left:{x_chip}px;top:{y:.0f}px;height:{h:.0f}px;font-size:{lay["fl"]}px">{esc(sc.get("none") or "오늘은 없어요")}</div>')
             for k, r in enumerate(items):
                 x = x_chip + (k % 2) * (cw + TIER_GAP)
                 yy = y + (k // 2) * (ch + TIER_GAP)
