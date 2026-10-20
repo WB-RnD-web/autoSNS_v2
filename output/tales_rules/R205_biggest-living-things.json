@@ -1,0 +1,77 @@
+{
+ "id": 205,
+ "slug": "biggest-living-things",
+ "format": "compare",
+ "part": 5,
+ "look": "earth",
+ "title": "Elephant vs Blue Whale vs Pando | Heaviest Living Things Comparison #shorts",
+ "hook": "BIGGEST LIVING THINGS",
+ "description_hook": "From a 10.9-tonne record elephant to a 5,900-tonne aspen, Earth's heaviest living things ranked by weight, plus one nobody can weigh.",
+ "unit": "tonnes",
+ "scale": "log",
+ "items": [
+  {
+   "name": "RECORD ELEPHANT",
+   "value": 10.9,
+   "label": "10.9 T",
+   "src": 0,
+   "say": "What's the heaviest living thing on Earth, by weight? Start with the record elephant: about 10.9 tonnes.",
+   "img": "a massive African savanna bull elephant with long curved tusks standing on dry golden grassland at sunset, dust in the air, low angle"
+  },
+  {
+   "name": "BLUE WHALE",
+   "value": 150,
+   "label": "150 T",
+   "src": 1,
+   "say": "An Antarctic blue whale. Up to 150 tonnes.",
+   "img": "an enormous blue whale gliding through clear sunlit ocean water seen from below, light rays across its long mottled back"
+  },
+  {
+   "name": "GENERAL SHERMAN TREE",
+   "value": 1270,
+   "label": "1,270 T",
+   "src": 2,
+   "say": "General Sherman, the biggest tree by volume. Its trunk alone weighs nearly 1,400 tons. About 1,270 tonnes.",
+   "img": "a colossal giant sequoia trunk with thick red furrowed bark rising out of a misty mountain forest, tiny hiker silhouette at its base for scale"
+  },
+  {
+   "name": "PANDO ASPEN",
+   "value": 5900,
+   "label": "5,900 T",
+   "src": 3,
+   "say": "Pando. Looks like a forest of more than 47,000 trunks. It's one aspen in Utah. An estimated 5,900 tonnes.",
+   "img": "a vast grove of identical white-barked aspen trees with glowing yellow autumn leaves covering a rolling hillside, aerial view"
+  },
+  {
+   "name": "HONEY FUNGUS",
+   "twist": true,
+   "text": "965 HECTARES UNDERGROUND",
+   "src": 4,
+   "say": "But one honey fungus in Oregon spreads underground across about 965 hectares. More than 20 times Pando's area. Nobody can weigh it.",
+   "img": "clusters of honey-colored mushrooms on a mossy conifer forest floor with dark root-like strands spreading through the soil below, cross-section view"
+  }
+ ],
+ "gumi": {
+  "say": "A tree that's a forest, and a fungus too big to weigh. Which one surprised you?"
+ },
+ "teaser": "NEXT: TALLEST MOUNTAINS",
+ "sources": [
+  "https://animals.sandiegozoo.org/animals/elephant",
+  "https://www.fisheries.noaa.gov/species/blue-whale",
+  "https://www.nps.gov/seki/learn/nature/sherman.htm",
+  "https://www.usu.edu/today/story/first-comprehensive-assessment-of-pando-aspen-clone-reveals-critical-threats",
+  "https://research.fs.usda.gov/treesearch/20135"
+ ],
+ "tags": [
+  "biggest living things",
+  "heaviest living thing",
+  "size comparison",
+  "blue whale",
+  "pando",
+  "general sherman",
+  "honey fungus",
+  "elephant",
+  "nature",
+  "science"
+ ]
+}

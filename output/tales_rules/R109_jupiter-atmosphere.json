@@ -1,0 +1,65 @@
+{
+ "id": 109,
+ "slug": "jupiter-atmosphere",
+ "format": "survival",
+ "part": 9,
+ "look": "space",
+ "title": "How Long Would You Last Falling Into Jupiter? #shorts",
+ "hook": "HOW LONG WOULD YOU LAST?",
+ "situation": "FALLING INTO JUPITER",
+ "description_hook": "You are dropped at Jupiter's cloud tops at -108 °C, with nothing solid below and no oxygen to breathe. The clock starts now.",
+ "beats": [
+  {
+   "t": "0:00",
+   "text": "-108 °C",
+   "src": 0,
+   "say": "How long would you last falling into Jupiter? You get dropped at the cloud tops. It's minus 108 degrees Celsius.",
+   "img": "a lone tiny human silhouette seen from behind tumbling above an endless sea of cream and rust colored cloud bands, a pale distant sun, freezing thin haze"
+  },
+  {
+   "t": "0:00",
+   "text": "2.36× YOUR WEIGHT",
+   "src": 0,
+   "say": "Gravity is 2.36 times Earth's. You're suddenly heavy. And there's no ground below. Jupiter has no true surface.",
+   "img": "looking straight down through layer after layer of swirling ochre clouds into a bottomless dark abyss, no horizon, vertical sense of falling"
+  },
+  {
+   "t": "0:00",
+   "text": "539 KM/H WINDS",
+   "src": 2,
+   "say": "Then the wind finds you. Up to 539 kilometers per hour, flinging you sideways through the clouds.",
+   "img": "violent streaks of white and orange storm clouds racing sideways past a small falling figure, motion blur, roaring turbulent sky"
+  },
+  {
+   "t": "--:--",
+   "text": "89.8% HYDROGEN",
+   "src": 1,
+   "say": "Now breathe. The air is 89.8% hydrogen. No oxygen at all. One or two breaths, and you're unconscious.",
+   "img": "a glowing outline of a human head and chest fading into soft blue gas, a faint final breath dissolving into dim amber haze"
+  }
+ ],
+ "gumi": {
+  "odds": "0%",
+  "say": "Gumi's odds: zero. NASA's probe lasted 58 minutes, down to 22.7 atmospheres. You won't."
+ },
+ "teaser": "NEXT: THE ICE AGE",
+ "sources": [
+  "https://nssdc.gsfc.nasa.gov/planetary/factsheet/jupiterfact.html",
+  "https://science.nasa.gov/jupiter/jupiter-facts/",
+  "https://www.csb.gov/assets/1/20/sb-nitrogen-6-11-03.pdf",
+  "https://science.nasa.gov/mission/galileo-jupiter-atmospheric-probe/",
+  "https://doi.org/10.1029/98JE01766"
+ ],
+ "tags": [
+  "jupiter",
+  "gas giant",
+  "falling into jupiter",
+  "how long would you last",
+  "jupiter atmosphere",
+  "galileo probe",
+  "space",
+  "science",
+  "survival",
+  "planets"
+ ]
+}
