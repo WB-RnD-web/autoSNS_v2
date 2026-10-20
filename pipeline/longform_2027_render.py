@@ -108,7 +108,7 @@ def draw_open(plan: dict, sp: dict, wd=None):
     x0, y0, x1, y1 = 160, 210, W - 160, 610
     d.rounded_rectangle([x0, y0, x1, y1], radius=48, fill=(250, 246, 236, 240))
     d.polygon([(x0 + 180, y1), (x0 + 260, y1), (x0 + 170, y1 + 70)], fill=(250, 246, 236, 240))
-    d.text((x0 + 56, y0 + 34), "여쭤 오신 질문", font=font(40), fill=(150, 110, 40))
+    d.text((x0 + 56, y0 + 34), "많이 궁금해하시는 질문", font=font(40), fill=(150, 110, 40))
     size, lines, lh = fit(d, f"“{plan['question']}”", x1 - x0 - 120, y1 - y0 - 140, 84, 52)
     yy = y0 + 104 + max(0, (y1 - y0 - 140 - len(lines) * lh) // 2)
     for ln in lines:
