@@ -32,6 +32,7 @@ import pulli_card
 import tier_card
 import gunghap_card
 import newyear_card
+import newyear_series
 import name_card
 import news_card
 import ledger as ledgermod
@@ -116,6 +117,7 @@ GUNGHAP_PLAYLIST = "띠 궁합표 | 내 띠의 찰떡 짝·조심할 띠"
 GUNGHAP_PLAYLIST_DESC = ("부부·친구·사돈·손주까지, 내 띠를 찾으면 잘 맞는 띠와 조심할 띠가 바로 보여요. "
                          "육합·삼합·충·원진 같은 전통 띠 궁합을 재미로 정리했어요. 45~96년생 전부.")
 # 2027 신년운세(2026-10-07, newyear_card.py) — 총운·재물운 등급표 · 좋은 달 · 해 끝자리 4편. ★제목 바꾸지 않는다(새 목록이 생긴다).
+#   2026-10-27~ 06:13 시리즈(newyear_series.py — 화·토, 12/8부터 화·금·토)도 같은 목록에 넣는다(토픽은 루틴 그대로 fortune).
 NEWYEAR_PLAYLIST = "2027 정미년 신년운세 | 띠별·태어난 해별"
 NEWYEAR_PLAYLIST_DESC = ("2027년 정미년(丁未年), 내 띠와 태어난 해로 보는 신년운세예요. 총운·재물운 등급과 좋은 달·조심할 달까지 "
                          "이유와 함께 정리했어요. 45~96년생 전부. 전통 명리 풀이를 재미로 정리한 운세예요.")
@@ -506,13 +508,19 @@ def process(sb_path, args, led):
     # ★카피 점검 — 렌더 전에 본다. 밋밋하면 경고만 뜨고 계속 간다.
     # 테마 표는 문구가 전부 코드(theme_card.THEMES)에서 나온다 — 뉴스 카피 규칙(hook 수치 등)과 맞지 않아 건너뛴다.
     if not (theme_card.is_theme(sb) or name_card.is_name(sb) or pulli_card.is_pulli(sb) or tier_card.is_tier(sb)
-            or gunghap_card.is_gunghap(sb) or newyear_card.is_newyear(sb)):
+            or gunghap_card.is_gunghap(sb) or newyear_card.is_newyear(sb) or newyear_series.use_slot(sb)):
         news_copy_check.report(sb)
     try:
         spec = resolve_spec(sb_path, sb, args)
         spec.setdefault("topic", sb.get("topic", ""))
         # 운세는 격일로 '12띠 한 장 표'(fortune_card) — 기존 형식과 A/B
-        if tier_card.use_ab(sb):
+        if newyear_series.use_slot(sb):
+            # 2027 신년운세 시리즈(2026-10-27~, 화·토 · 12/8부터 화·금·토) — 06:13 '오늘 운세' 대본 자리를 날짜로 바꾼다.
+            # 배경 묘사·커버 글자도 이 편 것으로(메모리 안에서만 — ledger 키는 그대로). 끄기: newyear_series.SERIES_FROM = None
+            ep = newyear_series.apply(sb)
+            spec = newyear_series.build_spec(sb)
+            print(f"   🗂️ 2027 신년운세 시리즈 ({ep['id']} · newyear_series)")
+        elif tier_card.use_ab(sb):
             # 운세 등급표 A/B(2026-10-09~22) — 06:13 매일 운세 자리에서 하루씩 등급표. 끄기: 레포 변수 FORTUNE_TIER=0
             spec = tier_card.build_spec(sb)
             print("   🗂️ 운세 등급표 (격일 A/B · tier_card)")
@@ -562,7 +570,14 @@ def process(sb_path, args, led):
         meta["localizations"] = yt_i18n.from_spec(sb) or None
     except Exception:  # noqa: BLE001
         meta["localizations"] = None
-    if tier_card.use_ab(sb):
+    if newyear_series.use_slot(sb):
+        # 시리즈 날 — 제목·설명(줄마다 근거)은 newyear_series 가 정한다. 재생목록은 2027 신년운세. 번역은 넣지 않는다.
+        sm = newyear_series.meta(sb)
+        credit = meta["description"][len(build_meta(sb, False)["description"]):]
+        meta["title"] = f"{sm['title']} #shorts"
+        meta["description"] = sm["description"] + credit
+        meta["localizations"] = None
+    elif tier_card.use_ab(sb):
         # 등급표 날 — 제목·설명(12띠 등급·이유)은 tier_card 가 정한다. 재생목록은 매일 운세 그대로(A/B 공정하게).
         tm = tier_card.meta(sb)
         credit = meta["description"][len(build_meta(sb, False)["description"]):]
@@ -630,7 +645,8 @@ def process(sb_path, args, led):
         try:
             vid = upload_with_retry(res["video"], meta)
             res["uploaded"] = f"https://youtu.be/{vid} ({meta['privacy']})"
-            pl = playlist_for(sb.get("topic", ""))
+            pl = ((NEWYEAR_PLAYLIST, NEWYEAR_PLAYLIST_DESC) if newyear_series.use_slot(sb)
+                  else playlist_for(sb.get("topic", "")))
             if pl and meta["privacy"] == "public":
                 add_playlist(vid, *pl)
             if led is not None:

@@ -143,13 +143,17 @@ ck("파일 경로 = output/news/<날짜>_fortune_newyear_storyboard.json",
    N.path_for(N.START, root="/repo").replace("\\", "/").endswith("output/news/2026-10-12_fortune_newyear_storyboard.json"))
 fm = json.load(open(os.path.join(os.path.dirname(HERE), "tools", "pulse_formats.json"), encoding="utf-8"))
 rules = fm["channels"]["wb"]["rules"]
+sys.path.insert(0, os.path.join(os.path.dirname(HERE), "tools"))
+import pulse as PU  # noqa: E402
+
 miss = []
-for e in N.EPISODES:
-    t = N.title(e) + " #shorts"
-    hit = next((r["key"] for r in rules if "title_re" in r and re.search(r["title_re"], t)
-                or "title_prefix" in r and t.startswith(r["title_prefix"])), None)
+for d, eid in posts:
+    t = N.title(N.episode_by_id(eid)) + " #shorts"
+    # ★실제 분류기로(2026-10-20 — 06시 시리즈 newyear_slot 규칙이 시각·날짜를 본다). 1차 묶음은 월·목 08:13 게시.
+    pub = dt.datetime(d.year, d.month, d.day, 8, 17, tzinfo=PU.KST).astimezone(dt.timezone.utc)
+    hit = PU.classify({"title": t, "pub": pub.strftime("%Y-%m-%dT%H:%M:%SZ"), "dur": 9}, rules)
     if hit != "newyear":
-        miss.append((e["id"], hit))
+        miss.append((eid, hit))
 ck("채널 맥박이 4편 모두 '신년운세'로 센다(등급표·해 끝자리 표보다 먼저)", not miss, miss)
 
 print()
