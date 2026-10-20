@@ -1,0 +1,291 @@
+{
+ "about": "인스타 병맛(bm) 2주 시험(10/25~11/07) 소재 — 날짜 순서대로 14편(pick_plan.BM_ORDER). 클라우드 작가 루틴은 웹을 못 보므로 사실·출처를 미리 확인해 둔다(2026-10-20, 출처는 직접 열어 본 것만). 숫자는 이 facts 에서만 · 대본 sources 는 그대로 복사. 꼴: ABBA ABBA ABBA AB(BM_FROM 부터 i%4 가 0·3 이면 paper).",
+ "entries": [
+  {
+   "n": 401, "format": "paper", "slug": "wombat-cube-poo", "topic": "웜뱃 네모 똥",
+   "premise": "네모난 똥 싸는 동물이 진짜 있고, 그걸 연구해서 이그노벨상까지 받음",
+   "stamp_idea": "2019 이그노벨 물리학상",
+   "punch_idea": "결론: 웜뱃은 똥으로 블록 쌓기 가능",
+   "facts": [
+    {"fact": "The University of Tasmania researchers behind the wombat-poo study won the 2019 Ig Nobel Physics Prize.", "src": 0},
+    {"fact": "The 2019 Ig Nobel prizes were whittled down from approximately 9,000 nominations.", "src": 0},
+    {"fact": "To see how the gut makes the cubes, researchers inflated a piece of the last section of a wombat's intestine with a small balloon.", "src": 1},
+    {"fact": "Bare-nosed wombats may poop up to 100 cubes a day; the cubes are about 2 centimeters in size.", "src": 2},
+    {"fact": "Scientists suspect the cube shape lets wombats mark their territory on rocks and logs with poop that won't easily roll away.", "src": 2}
+   ],
+   "sources": [
+    "https://www.labonline.com.au/content/lab-business/news/wombat-poo-research-wins-2019-ig-nobel-prize-1567550402",
+    "https://physicsworld.com/a/biophysicists-strain-to-reveal-why-wombats-have-cube-shaped-poo/",
+    "https://www.smithsonianmag.com/smart-news/scientists-have-solved-mystery-how-wombats-poop-cubes-180976898/"
+   ],
+   "careful": [
+    "'안 굴러가서 땅 표시용'은 과학자들의 추측(suspect) — '~인 듯'으로",
+    "풍선 실험은 웜뱃 장의 한 조각으로 한 것 — 살아 있는 동물에 했다고 하지 않기",
+    "연구자 이름은 쓰지 않기"
+   ]
+  },
+  {
+   "n": 402, "format": "animal", "slug": "penguin-subway", "topic": "펭귄 출근 지하철",
+   "animal": "a chubby emperor penguin with glossy black and white feathers and a soft yellow neck patch", "animal_ko": "펭귄",
+   "premise": "월요일 출근 지하철이 펭귄으로 꽉 참 — 펭귄은 원래 꽉 붙어 서고 다 같이 한 걸음씩 움직인다",
+   "quote_idea": "…저 다음 역에서 내려요.",
+   "punch_idea": "그 펭귄은, 종점까지 갔다.",
+   "facts": [
+    {"fact": "In emperor penguin huddles the density is approximately 21 penguins per square meter (per 1 m²).", "src": 0},
+    {"fact": "Every 30 to 60 seconds, all penguins in the huddle make small 5 to 10 cm steps that travel through the huddle as a wave.", "src": 0}
+   ],
+   "sources": ["https://pmc.ncbi.nlm.nih.gov/articles/PMC3106014/"],
+   "careful": [
+    "21마리는 허들(무리)의 대략 밀도 — '약'",
+    "30~60초는 허들 안에서 다 같이 걷는 간격",
+    "지하철 노선 이름·로고·역 이름 없이"
+   ]
+  },
+  {
+   "n": 403, "format": "animal", "slug": "raccoon-night-shift", "topic": "라쿤 편의점 야간 알바",
+   "animal": "a plump raccoon with a black eye mask, soft grey fur and a bushy ringed tail", "animal_ko": "라쿤",
+   "premise": "라쿤 편의점 야간 알바 — 손님(라쿤)이 산 솜사탕을 물에 담갔다가 없애 버림",
+   "quote_idea": "…씻었는데 없어졌어요.",
+   "punch_idea": "그날 밤 솜사탕은 하나도 안 팔렸다.",
+   "facts": [
+    {"fact": "Raccoons are nocturnal: they spend most daylight hours in trees and come down at night to search for food.", "src": 0},
+    {"fact": "Research has shown that food-dousing (dipping food in water) only occurs in raccoons raised in captivity; it has nothing to do with cleanliness or moistening the food.", "src": 0},
+    {"fact": "Raccoon paws contain highly developed nerves, and water actually makes their paws more sensitive.", "src": 0},
+    {"fact": "Raccoons weigh 10 to 30 pounds; records exist of raccoons weighing up to 40 pounds.", "src": 0},
+    {"fact": "Raccoon tails have 4 to 6 black rings.", "src": 1}
+   ],
+   "sources": [
+    "https://www.pa.gov/agencies/pgc/wildlife/discover-pa-wildlife/raccoon",
+    "https://www.nwf.org/Educational-Resources/Wildlife-Guide/Mammals/Raccoon"
+   ],
+   "careful": [
+    "물에 담그는 행동은 '사람이 기르는(잡혀 사는) 라쿤'에서 관찰 — '깨끗이 씻는 것'이 아니라고",
+    "라쿤 = 미국너구리(한국 너구리와 다른 동물) — 화면·말은 '라쿤'",
+    "쓰레기통 뒤지기·훔치기 장면 피하기"
+   ]
+  },
+  {
+   "n": 404, "format": "paper", "slug": "cat-is-liquid", "topic": "고양이 액체설",
+   "premise": "고양이는 고체일까 액체일까 — 물리학자가 진지하게 따져서 상까지 받음",
+   "stamp_idea": "2017 이그노벨 물리학상",
+   "punch_idea": "결론: 고양이는 시간만 주면 액체임",
+   "facts": [
+    {"fact": "The 2017 Ig Nobel Prize in Physics went to a study using fluid dynamics to probe the question 'Can a cat be both a solid and a liquid?'", "src": 0},
+    {"fact": "The paper 'On the rheology of cats' was published in the Rheology Bulletin in July 2014.", "src": 0},
+    {"fact": "A liquid is traditionally defined as a material that adapts its shape to fit a container; cats can adapt their shape to their container if we give them enough time.", "src": 1},
+    {"fact": "In rheology the relaxation time is divided by the observation time (the Deborah number): more than 1 means relatively solid, less than 1 means relatively liquid.", "src": 1}
+   ],
+   "sources": [
+    "https://www.ens-lyon.fr/en/node/350483",
+    "https://www.pbs.org/newshour/science/answering-the-question-that-won-me-the-ig-nobel-prize-are-cats-liquid"
+   ],
+   "careful": [
+    "'고양이는 액체'는 비유 — 시간을 주면 그릇 모양이 된다는 뜻",
+    "고양이를 좁은 곳에 억지로 넣는 장면·따라 하기 X",
+    "연구자 이름은 쓰지 않기"
+   ]
+  },
+  {
+   "n": 405, "format": "paper", "slug": "chicken-trex-protein", "topic": "닭은 티라노 친척",
+   "premise": "6800만 년 전 티라노 단백질을 요즘 동물과 비교했더니 제일 가까운 게 닭·타조",
+   "stamp_idea": "2008 Science 논문",
+   "punch_idea": "결론: 오늘 저녁 치킨은 공룡 친척임",
+   "facts": [
+    {"fact": "Scientists analysed a shred of 68-million-year-old Tyrannosaurus rex protein (collagen) along with that of 21 modern species; the work was published in Science (Harvard report of April 24, 2008).", "src": 0},
+    {"fact": "They had only 6 peptides, just 89 amino acids, from T. rex.", "src": 0},
+    {"fact": "T. rex grouped with birds (ostrich and chicken) better than any other organism studied, and better than modern reptiles such as alligators and green anole lizards.", "src": 0},
+    {"fact": "An earlier 2007 study used mass spectrometry to obtain protein sequences from bones of a 68-million-year-old T. rex.", "src": 1}
+   ],
+   "sources": [
+    "https://news.harvard.edu/gazette/story/2008/04/molecular-analysis-confirms-t-rexs-evolutionary-link-to-birds/",
+    "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:17431180%20AND%20SRC:MED&resultType=core&format=json"
+   ],
+   "careful": [
+    "'비교한 21종 가운데' 새(닭·타조)와 가장 가깝게 묶였다는 뜻 — '닭이 티라노 후손'이라고 단정 X",
+    "펩타이드 6개(아미노산 89개)뿐인 작은 조각이라 '더 자료가 있으면 바뀔 수 있다'",
+    "영화 이름(쥬라기 공원 등) X · 맛 이야기는 농담으로만"
+   ]
+  },
+  {
+   "n": 406, "format": "animal", "slug": "sloth-group-project", "topic": "나무늘보 조별과제",
+   "animal": "a shaggy brown three-toed sloth with a sleepy smile and long curved claws", "animal_ko": "나무늘보",
+   "premise": "조별과제 자료 조사 담당 나무늘보 — 1분에 2미터쯤, 일주일에 한 번 내려옴",
+   "quote_idea": "…지금 가고 있어요.",
+   "punch_idea": "발표는 다음 학기에 했다.",
+   "facts": [
+    {"fact": "The three-toed sloth has an average ground speed of 1.8 to 2.4 m (6 to 8 ft) per minute, and in the trees it can 'accelerate' to 4.6 m (15 ft) per minute.", "src": 0},
+    {"fact": "A three-toed sloth descends its tree weekly (about once every 7 days) to defecate.", "src": 1},
+    {"fact": "Sloths spend most of their time resting or eating in the forest canopy, and they eat algae that grow in their own fur.", "src": 1}
+   ],
+   "sources": [
+    "https://www.guinnessworldrecords.com/world-records/70459-slowest-mammal",
+    "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:24452028%20AND%20SRC:MED&resultType=core&format=json"
+   ],
+   "careful": [
+    "속도는 세발가락나무늘보 평균(땅 1.8~2.4 m/분, 나무 위 4.6 m/분) — '약'",
+    "일주일에 한 번 내려오는 건 화장실 때문 — 농담은 가볍게, 지저분한 묘사 X",
+    "게으름 비하 X — 에너지를 아끼는 생활"
+   ]
+  },
+  {
+   "n": 407, "format": "animal", "slug": "octopus-call-center", "topic": "문어 콜센터",
+   "animal": "a friendly orange octopus with eight curling arms and big round eyes", "animal_ko": "문어",
+   "premise": "문어 콜센터 상담원 — 팔 8개로 전화 8대를 동시에 받음, 심장도 3개",
+   "quote_idea": "…심장 하나는 아직 괜찮아요.",
+   "punch_idea": "그날 기다린 손님은 아무도 없었다.",
+   "facts": [
+    {"fact": "An octopus has 3 hearts: 2 pump blood to the gills and a third circulates the oxygenated blood through the rest of the body.", "src": 0},
+    {"fact": "Each of an octopus's 8 arms has its own brain, meaning it has 9 in total (NOAA's wording).", "src": 0}
+   ],
+   "sources": ["https://oceanservice.noaa.gov/news/feb26/undersea-creatures-valentines-day.html"],
+   "careful": [
+    "'뇌 9개'는 NOAA 표현(가운데 뇌 + 팔마다 신경 덩어리) — '뇌가 9개래' 정도로",
+    "먹물·피 묘사 X",
+    "상담원을 깎아내리는 말 X"
+   ]
+  },
+  {
+   "n": 408, "format": "paper", "slug": "pee-21-seconds", "topic": "오줌 21초 법칙",
+   "premise": "코끼리도 염소도 오줌 누는 시간은 비슷함 — 동물원에서 찍어서 재 봄",
+   "stamp_idea": "2015 이그노벨 물리학상",
+   "punch_idea": "결론: 화장실 줄은 덩치랑 상관없음",
+   "facts": [
+    {"fact": "Using high-speed video and flow-rate measurements at Zoo Atlanta, researchers found that all mammals above 3 kg empty their bladders over a nearly constant 21 ± 13 seconds.", "src": 0},
+    {"fact": "Larger animals have longer urethras and thus higher gravitational force and flow speed, so the urinary system scales up by a factor of 3,600 in volume without losing its function.", "src": 0},
+    {"fact": "Smaller mammals are limited by viscous and capillary forces, so their urine comes out as single drops.", "src": 0},
+    {"fact": "The study won the 2015 Ig Nobel Prize in Physics, for testing that nearly all mammals empty their bladders in about 21 seconds (plus or minus 13 seconds).", "src": 1}
+   ],
+   "sources": [
+    "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:24969420%20AND%20SRC:MED&resultType=core&format=json",
+    "https://en.wikipedia.org/wiki/List_of_Ig_Nobel_Prize_winners"
+   ],
+   "careful": [
+    "'3kg 넘는 포유류' · '약 21초(±13초)' — 정확히 21초가 아니다",
+    "그림은 동물만(사람 X) · 물줄기 클로즈업·지저분한 묘사 X",
+    "작은 동물은 방울로 나온다 — 그래서 '3kg 넘는'"
+   ]
+  },
+  {
+   "n": 409, "format": "paper", "slug": "dung-beetle-milky-way", "topic": "쇠똥구리 은하수 내비",
+   "premise": "쇠똥구리는 은하수를 보고 똥 공을 똑바로 굴림 — 연구팀이 작은 눈가리개까지 씌워 봄",
+   "stamp_idea": "2013 이그노벨 생물학·천문학상",
+   "punch_idea": "결론: 쇠똥구리는 똥 굴리면서 별 봄. 나보다 낭만 있음",
+   "facts": [
+    {"fact": "Dung beetles roll their dung balls along straight paths under a starlit sky but lose this ability under overcast conditions.", "src": 0},
+    {"fact": "In a planetarium the beetles oriented equally well under a full starlit sky as when only the Milky Way was shown; it is the first documented use of the Milky Way for orientation in the animal kingdom.", "src": 0},
+    {"fact": "In the outdoor test the beetles rolled from a dung pile to a ring with a radius of about 4 feet; with tiny blinders on their eyes their paths became much windier.", "src": 1},
+    {"fact": "With only 18 of the brightest stars switched on, their paths became significantly windier.", "src": 1},
+    {"fact": "The study won the 2013 Ig Nobel Prize in Biology and Astronomy.", "src": 2}
+   ],
+   "sources": [
+    "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:23352694%20AND%20SRC:MED&resultType=core&format=json",
+    "https://www.smithsonianmag.com/science-nature/african-dung-beetles-navigate-at-night-using-the-milky-way-5582232/",
+    "https://en.wikipedia.org/wiki/List_of_Ig_Nobel_Prize_winners"
+   ],
+   "careful": [
+    "'동물계에서 은하수를 길잡이로 쓴다는 첫 기록' — '별을 쓰는 첫 동물'은 아님(새·물범·사람도 쓴다)",
+    "똥 클로즈업 X — 공 굴리는 모습만, 밝은 밤하늘",
+    "연구자 이름은 쓰지 않기"
+   ]
+  },
+  {
+   "n": 410, "format": "animal", "slug": "sea-otter-hair-salon", "topic": "해달 미용실",
+   "animal": "a fluffy brown sea otter with thick fur, white whiskers and small round ears", "animal_ko": "해달",
+   "premise": "해달 미용실 원장 — 오늘 손님(해달) 털은 1제곱인치에 100만 가닥 넘음",
+   "quote_idea": "…오늘은 드라이만 할게요.",
+   "punch_idea": "커트는 다음 달로 미뤄졌다.",
+   "facts": [
+    {"fact": "Sea otters have the world's densest fur: at its thickest, more than 1 million hairs per square inch (per 1 square inch); a person has probably 100,000 hairs or less on the whole head.", "src": 0},
+    {"fact": "An otter's coat has pockets: loose skin under each forearm that it uses to stash prey during a dive.", "src": 0},
+    {"fact": "If dinner is a crab or clam, the otter may use a rock to crack it open.", "src": 0},
+    {"fact": "A sea otter eats about a quarter of its body weight each day.", "src": 0}
+   ],
+   "sources": ["https://www.montereybayaquarium.org/animals/animals-a-to-z/sea-otter"],
+   "careful": [
+    "'100만 가닥 넘게'는 가장 빽빽한 곳, '1제곱인치에' — 단위를 바꾸면 '약'",
+    "조개 깨는 장면은 가볍게(살·피 X)",
+    "미용실 간판·브랜드 X"
+   ]
+  },
+  {
+   "n": 411, "format": "animal", "slug": "koala-cafe", "topic": "코알라 카페 사장",
+   "animal": "a round grey koala with fluffy white ears and a big dark nose", "animal_ko": "코알라",
+   "premise": "코알라 카페 사장 — 하루 18~22시간 잠, 그래서 오늘도 '곧 오픈'",
+   "quote_idea": "…주문은 내일 받을게요.",
+   "punch_idea": "그 카페는 오늘도 '곧 오픈'이다.",
+   "facts": [
+    {"fact": "To conserve energy, koalas sleep 18 to 22 hours a day.", "src": 0},
+    {"fact": "Koalas don't get many calories from their eucalypt leaf diet, so they conserve energy by moving only occasionally.", "src": 0},
+    {"fact": "Eucalypt leaves have strong-smelling oils that make koalas smell a bit like menthol cough drops.", "src": 0}
+   ],
+   "sources": ["https://animals.sandiegozoo.org/animals/koala"],
+   "careful": [
+    "18~22시간 — '약', 정확한 시각을 지어내지 않기",
+    "게으름 비하 X — 먹이에 칼로리가 적어서 아끼는 것",
+    "코알라를 끌어안는 장면 X(애완동물이 아니다)"
+   ]
+  },
+  {
+   "n": 412, "format": "paper", "slug": "ducklings-wave-riding", "topic": "새끼 오리 줄서기",
+   "premise": "새끼 오리가 엄마 뒤에 줄 서서 헤엄치는 이유 — 엄마가 만든 물결을 타고 감",
+   "stamp_idea": "2022 이그노벨 물리학상",
+   "punch_idea": "결론: 셋째부터는 거의 공짜 탑승",
+   "facts": [
+    {"fact": "A duckling swimming at a 'sweet point' behind its mother is actually pushed forward by the mother's wave (wave-riding).", "src": 0},
+    {"fact": "The study was published in the Journal of Fluid Mechanics and announced by the University of Strathclyde on 6 October 2021.", "src": 0},
+    {"fact": "Starting from the third duckling (3rd in the line), the wave drag of each duckling gradually tends towards 0, and each one passes the wave energy on to the next.", "src": 1},
+    {"fact": "The work won the 2022 Ig Nobel Prize in Physics, for trying to understand how ducklings manage to swim in formation.", "src": 2}
+   ],
+   "sources": [
+    "https://www.strath.ac.uk/whystrathclyde/news/2021/ridingthewaveskeepsducksinarow/",
+    "https://strathprints.strath.ac.uk/78035/",
+    "https://en.wikipedia.org/wiki/List_of_Ig_Nobel_Prize_winners"
+   ],
+   "careful": [
+    "수학·수치 모델로 계산한 결과 — '계산해 보니'",
+    "'0이 된다'가 아니라 '0에 가까워진다'",
+    "연구자 이름은 쓰지 않기"
+   ]
+  },
+  {
+   "n": 413, "format": "paper", "slug": "rhino-upside-down", "topic": "거꾸로 나는 코뿔소",
+   "premise": "코뿔소를 헬기로 옮길 때 거꾸로 매다는 게 괜찮은지 진짜로 실험함",
+   "stamp_idea": "2021 이그노벨 교통상",
+   "punch_idea": "결론: 코뿔소는 거꾸로 날아도 괜찮음",
+   "facts": [
+    {"fact": "Captured black rhinoceroses have been moved by air by suspending them by their feet.", "src": 0},
+    {"fact": "12 wild black rhinoceroses (median weight 1,137 kg) were tested lying on their side and hanging by their feet from a crane, for about 10 minutes each.", "src": 0},
+    {"fact": "Hanging by the feet for 10 minutes did not impair lung function more than lying on the side, and slightly improved gas exchange.", "src": 0},
+    {"fact": "The study won the 2021 Ig Nobel Prize in Transportation, for determining by experiment whether it is safer to transport an airborne rhinoceros upside-down.", "src": 1}
+   ],
+   "sources": [
+    "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:33822147%20AND%20SRC:MED&resultType=core&format=json",
+    "https://en.wikipedia.org/wiki/List_of_Ig_Nobel_Prize_winners"
+   ],
+   "careful": [
+    "코뿔소는 잠든(마취) 상태로 옮긴다 — 약 이름·주사·바늘 장면 X",
+    "보호(이주)를 위한 일 — 괴롭히는 것처럼 보이게 X",
+    "'안전하다'고 단정 X — '옆으로 눕힌 것보다 나쁘지 않았다'"
+   ]
+  },
+  {
+   "n": 414, "format": "animal", "slug": "mantis-shrimp-delivery", "topic": "갯가재 택배 기사",
+   "animal": "a colorful peacock mantis shrimp with a bright green, orange and blue shell and big stalked eyes", "animal_ko": "갯가재",
+   "premise": "갯가재 택배 기사 — 노크 한 번이 초속 23미터, 문이 남아나지 않음",
+   "quote_idea": "…살살 두드렸는데요.",
+   "punch_idea": "그 아파트는 이제 문 없이 산다.",
+   "facts": [
+    {"fact": "The peacock mantis shrimp swings its club-shaped front leg at peak speeds of 23 meters per second (measured peaks ranged from 14 to 23 meters per second).", "src": 0},
+    {"fact": "The strike was filmed at 5,000 frames per second.", "src": 0},
+    {"fact": "Peak accelerations ranged from 6,300 to 8,000 times that of gravity.", "src": 0},
+    {"fact": "The blow yields force well over 100 times the mantis shrimp's body weight.", "src": 0}
+   ],
+   "sources": ["https://newsarchive.berkeley.edu/news/media/releases/2004/04/21_shrimp.shtml"],
+   "careful": [
+    "먹이(달팽이·게)를 부수는 장면 X — 부서지는 건 문·상자뿐",
+    "초속 23미터는 잰 것 가운데 최고 속도(14~23)",
+    "사람·동물이 다치는 장면 X"
+   ]
+  }
+ ]
+}

@@ -11,8 +11,9 @@
     골라보기 로테이션은 sci 를 건너뛰고 하루 한 꼴씩 그대로 이어진다(10/15 a 태어난 달 → 10/16 b 그림 고르기 → 10/17 a 퀴즈 …).
     sci 내용은 SCI_ORDER[k](k = 10/15부터 몇 번째 sci 편) = shorts_catalog 의 n(901~ 은 insta/sci_extra.json).
   ★10/20 sci 연장(SCI_TO 11/07) + 병맛(bm) 2주 시험 BM_FROM(10/25)~BM_TO(11/07): sci 가 아닌 편이 골라보기 대신 병맛이다.
-    꼴은 날마다 번갈아: BM_FROM 부터 짝수 날 bm_paper(A '이거 진짜 논문임') · 홀수 날 bm_animal(B '정색 동물 다큐') — 7편씩.
-    (sci 가 짝수 날 저녁이라 A 는 늘 낮 편, B 는 늘 저녁 편이 된다 — 판정 때 시간대 차이를 감안할 것.)
+    꼴은 ABBA ABBA ABBA AB: BM_FROM 부터 i 번째 날 i%4 가 0·3 이면 bm_paper(A '이거 진짜 논문임'), 1·2 면 bm_animal(B '정색 동물 다큐')
+    — 7편씩. sci 가 짝수 날 저녁이라 병맛은 짝수 날 낮·홀수 날 저녁 → A 낮 4·저녁 3, B 낮 3·저녁 4(시간대가 한쪽에 몰리지 않게).
+    무엇을 쓸지도 코드가 정한다: BM_ORDER[i] = insta/bm_catalog.json 의 n(사실·출처는 미리 확인 — 클라우드 작가는 웹을 못 본다).
     골라보기 로테이션은 그동안 쉬고, 11/08부터 다음 꼴로 이어진다(회차 series_no 도 골라보기만 이어서 센다 · bm·sci 는 None).
     11/08부터 다시 골라보기 두 편. 10/24 까지 꼴·회차·sci 순서는 그대로다(테스트가 못 박는다).
   (같은 날 두 편은 늘 다른 꼴 — 그래서 꼴만 보면 그날 어느 편인지 하나로 정해진다: slot_of)
@@ -72,7 +73,12 @@ SCI_EXTRA = os.path.join(HERE, "sci_extra.json")                         # 인�
 # ★10/20 병맛(bm) 2주 시험 — 골라보기 자리를 바꾼다(10/15~10/20 sci 중앙값 약 440 vs 골라보기 약 117 · 사용자 승인)
 BM_FROM = dt.date(2026, 10, 25)          # 첫날(KST)
 BM_TO = dt.date(2026, 11, 7)             # 마지막 날(KST, 포함) · 14일 = A 7편 + B 7편
-BM_KINDS = ("bm_paper", "bm_animal")     # BM_FROM 부터 짝수 날 A · 홀수 날 B
+BM_KINDS = ("bm_paper", "bm_animal")     # A · B — BM_FROM 부터 ABBA ABBA ABBA AB(bm_kind)
+BM_CATALOG = os.path.join(HERE, "bm_catalog.json")   # 병맛 14편 소재 — 사실(facts)·출처(sources)·주의(careful)를 미리 확인
+BM_ORDER = tuple(range(401, 415))        # i 번째 병맛 편 = bm_catalog 의 n(꼴은 entry format 과 같아야 한다 — 테스트)
+BM_FMT_KIND = {"paper": "bm_paper", "animal": "bm_animal"}
+BM_ENTRY_KEYS = ("n", "format", "slug", "topic", "animal", "animal_ko", "premise", "stamp_idea", "quote_idea", "punch_idea",
+                 "facts", "sources", "careful")
 BM_EXEMPLAR = {"bm_paper": "insta/samples/bm_paper_wombat.json", "bm_animal": "insta/samples/bm_animal_penguin.json"}
 BM_WRITING = "insta/BM_WRITING.md"
 BM_FORMAT = {"bm_paper": "A", "bm_animal": "B"}
@@ -137,10 +143,11 @@ def sci_entry(n: int, path: str = SHORTS, extra: str = SCI_EXTRA) -> dict | None
 
 
 def bm_kind(d: dt.date) -> str | None:
-    """그날 병맛 꼴 — BM_FROM~BM_TO 안에서만: BM_FROM 부터 짝수 날 bm_paper(A) · 홀수 날 bm_animal(B). 밖이면 None."""
+    """그날 병맛 꼴 — BM_FROM~BM_TO 안에서만: ABBA ABBA ABBA AB(i%4 가 0·3 이면 bm_paper, 1·2 면 bm_animal). 밖이면 None.
+    (10/20 사용자: 날마다 A/B 번갈면 A 는 늘 낮·B 는 늘 저녁이라 시간대와 꼴이 섞인다 → ABBA 로 둘 다 낮·저녁에 나간다)"""
     if not BM_FROM <= d <= BM_TO:
         return None
-    return BM_KINDS[(d - BM_FROM).days % 2]
+    return BM_KINDS[0] if (d - BM_FROM).days % 4 in (0, 3) else BM_KINDS[1]
 
 
 def bm_slot(d: dt.date) -> str | None:
@@ -153,6 +160,22 @@ def bm_slot(d: dt.date) -> str | None:
 def bm_index(d: dt.date) -> int | None:
     """몇 번째 병맛 편인가(0 = 10/25) — 병맛 날이 아니면 None."""
     return (d - BM_FROM).days if bm_kind(d) else None
+
+
+def bm_n(d: dt.date) -> int | None:
+    """그날 병맛 편이 쓸 bm_catalog 항목 번호(BM_ORDER) — 병맛 날이 아니면 None."""
+    k = bm_index(d)
+    return None if k is None else BM_ORDER[k]
+
+
+def bm_entry(n: int, path: str = BM_CATALOG) -> dict | None:
+    """bm_catalog 항목(n) 그대로."""
+    try:
+        with open(path, encoding="utf-8") as f:
+            cat = json.load(f)
+    except FileNotFoundError:
+        return None
+    return next((e for e in cat.get("entries") or [] if e.get("n") == n), None)
 
 
 def _window_before(d: dt.date, start: dt.date, end: dt.date) -> int:
@@ -301,9 +324,11 @@ def next_info(d: dt.date, root: str = SCRIPTS, slot: str | None = None, now: dt.
            "kind": k, "label": LABEL[k], "file": f"output/insta_pick/{d.isoformat()}_{k}_<slug>.json",
            "exemplar": exemplar, "writing": writing,
            "keywords": KEYWORDS[k], "already_written": bool(script_for(d, sl, root)), "recent": recent(d, root, kind=k)}
-    if k in BM_KINDS:                                      # 병맛: 몇 번째 편·형식(A/B)·길이 — 소재는 작가가 고른다(BM_WRITING)
+    if k in BM_KINDS:                                      # 병맛: 무엇을 쓸지도 코드가 — 그날 bm_catalog 항목 그대로(숫자는 facts 에서만)
+        e = bm_entry(bm_n(d)) or {}
         out.update(bm_no=bm_index(d) + 1, bm_total=(BM_TO - BM_FROM).days + 1, format=BM_FORMAT[k], series=BM_SERIES[k],
-                   length_sec=list(BM_SEC[k]))
+                   length_sec=list(BM_SEC[k]), bm_n=e.get("n"), src_n=e.get("n"),
+                   entry={k_: e[k_] for k_ in BM_ENTRY_KEYS if k_ in e})
     if k == SCI:                                           # 무엇을 쓸지도 코드가 정한다 — 그날 catalog 항목 그대로(숫자는 facts 에서만)
         e = sci_entry(sci_n(d)) or {}
         out.update(src_n=e.get("n"), sci_no=sci_index(d) + 1, format=e.get("format"),

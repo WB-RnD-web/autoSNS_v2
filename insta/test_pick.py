@@ -506,14 +506,18 @@ import bm_reel as B  # noqa: E402
 BMWIN = [P.BM_FROM + dt.timedelta(days=k) for k in range(14)]
 ck("기간 10/25~11/07(양끝 포함 14일) · 꼴 둘", (P.BM_FROM, P.BM_TO) == (D(10, 25), D(11, 7))
    and (P.BM_TO - P.BM_FROM).days + 1 == 14 and P.BM_KINDS == ("bm_paper", "bm_animal"))
-ck("꼴: 10/25 부터 짝수 날 bm_paper · 홀수 날 bm_animal → 7편씩", [P.bm_kind(d) for d in BMWIN] == ["bm_paper", "bm_animal"] * 7
+ck("꼴: 10/25 부터 ABBA ABBA ABBA AB(i%4 가 0·3 이면 A) → 7편씩",
+   "".join("A" if P.bm_kind(d) == "bm_paper" else "B" for d in BMWIN) == "ABBAABBAABBAAB"
    and [P.kind_for(d, sl) for d in BMWIN for sl in P.slots_on(d)].count("bm_paper") == 7
    and [P.kind_for(d, sl) for d in BMWIN for sl in P.slots_on(d)].count("bm_animal") == 7)
+split = {(k, sl): sum(1 for d in BMWIN if P.bm_kind(d) == k and P.bm_slot(d) == sl) for k in P.BM_KINDS for sl in P.SLOTS}
+ck("시간대가 꼴에 몰리지 않는다: A 낮 4·저녁 3 · B 낮 3·저녁 4", split == {("bm_paper", "a"): 4, ("bm_paper", "b"): 3,
+                                                          ("bm_animal", "a"): 3, ("bm_animal", "b"): 4}, split)
 BMTABLE = {  # 날짜: (낮 a, 저녁 b) — 보고·판정용
-    D(10, 25): ("bm_paper", "sci"), D(10, 26): ("sci", "bm_animal"), D(10, 27): ("bm_paper", "sci"),
-    D(10, 28): ("sci", "bm_animal"), D(10, 29): ("bm_paper", "sci"), D(10, 30): ("sci", "bm_animal"),
-    D(10, 31): ("bm_paper", "sci"), D(11, 1): ("sci", "bm_animal"), D(11, 2): ("bm_paper", "sci"),
-    D(11, 3): ("sci", "bm_animal"), D(11, 4): ("bm_paper", "sci"), D(11, 5): ("sci", "bm_animal"),
+    D(10, 25): ("bm_paper", "sci"), D(10, 26): ("sci", "bm_animal"), D(10, 27): ("bm_animal", "sci"),
+    D(10, 28): ("sci", "bm_paper"), D(10, 29): ("bm_paper", "sci"), D(10, 30): ("sci", "bm_animal"),
+    D(10, 31): ("bm_animal", "sci"), D(11, 1): ("sci", "bm_paper"), D(11, 2): ("bm_paper", "sci"),
+    D(11, 3): ("sci", "bm_animal"), D(11, 4): ("bm_animal", "sci"), D(11, 5): ("sci", "bm_paper"),
     D(11, 6): ("bm_paper", "sci"), D(11, 7): ("sci", "bm_animal"), D(11, 8): ("birth", "pick")}
 got_b = {d: (P.kind_for(d, "a"), P.kind_for(d, "b")) for d in BMTABLE}
 ck("10/25~11/08 편성표 그대로(병맛 = sci 가 아닌 편 · 11/08 골라보기 두 편)", got_b == BMTABLE,
@@ -547,6 +551,14 @@ with tempfile.TemporaryDirectory() as tmp:
     ck("next 10/26 19시: 병맛 B · 저녁 편 · 견본 bm_animal_penguin · 2/14 · 18~22초",
        (ni["kind"], ni["slot"], ni["writing"], ni["exemplar"], ni["format"], ni["bm_no"], ni["length_sec"])
        == ("bm_animal", "b", "insta/BM_WRITING.md", "insta/samples/bm_animal_penguin.json", "B", 2, [18.0, 22.0]), ni)
+    e401 = P.bm_entry(401)
+    ck("next 병맛: 그날 catalog 항목(bm_n·src_n 401 · facts·sources·careful·premise 그대로)",
+       (ni_a := P.next_info(D(10, 25), tmp, now=KST_AT(D(10, 25), 11)))["bm_n"] == ni_a["src_n"] == 401
+       and ni_a["entry"]["facts"] == e401["facts"] and ni_a["entry"]["sources"] == e401["sources"]
+       and all(k in ni_a["entry"] for k in ("careful", "premise", "punch_idea", "stamp_idea", "topic", "slug")), ni_a.get("bm_n"))
+    ni_b = P.next_info(D(11, 7), tmp, now=KST_AT(D(11, 7), 19))
+    ck("next 11/07 19시: 병맛 B 414 갯가재 · animal·quote_idea 가 entry 에", (ni_b["kind"], ni_b["slot"], ni_b["bm_n"])
+       == ("bm_animal", "b", 414) and ni_b["entry"]["animal_ko"] == "갯가재" and "quote_idea" in ni_b["entry"], ni_b.get("bm_n"))
     ck("next 10/26 11시: 그날 낮 편은 sci(103)", (P.next_info(D(10, 26), tmp, now=KST_AT(D(10, 26), 11))["kind"],
                                              P.next_info(D(10, 26), tmp, now=KST_AT(D(10, 26), 11))["src_n"]) == ("sci", 103))
     ck("견본 날짜의 꼴 = 견본 꼴(10/25 A · 10/26 B — 클라우드 루틴이 그대로 복사할 수 있다)",
@@ -567,6 +579,25 @@ with tempfile.TemporaryDirectory() as tmp:
     ck("게시: 10/25 병맛 A(낮 편)는 막힘 없음 · 두 번은 막는다(낮 열쇠 '2026-10-25a')", P.blockers(BM_A, meta, {}, D(10, 25)) == []
        and any("이미" in b for b in P.blockers(BM_A, meta, {"2026-10-25a": {"media_id": "A"}}, D(10, 25))))
     ck("게시: 병맛 꼴이 그날 꼴과 다르면 막는다(10/26 에 A)", any("꼴" in b for b in P.blockers(dict(BM_A, date="2026-10-26"), meta, {}, D(10, 26))))
+
+print("── 병맛 소재 catalog(insta/bm_catalog.json — 14편 · 출처 미리 확인) ──")
+BMCAT = json.load(open(os.path.join(HERE, "bm_catalog.json"), encoding="utf-8"))["entries"]
+ck("catalog 14편 · n = BM_ORDER(401~414) 순서 그대로", [e["n"] for e in BMCAT] == list(P.BM_ORDER) == list(range(401, 415)))
+ck("날마다 편성 꼴 = 그날 항목 format(ABBA: paper 7 · animal 7)",
+   all(P.BM_FMT_KIND[P.bm_entry(P.bm_n(d))["format"]] == P.bm_kind(d) for d in BMWIN)
+   and [e["format"] for e in BMCAT].count("paper") == 7 and [e["format"] for e in BMCAT].count("animal") == 7)
+ck("catalog 항목 검사 전부 통과(facts{fact,src}·https 출처 전부 쓰임·careful·premise·punch_idea·꼴별 필드)",
+   all(not B.entry_errs(e) for e in BMCAT), {e["n"]: B.entry_errs(e) for e in BMCAT if B.entry_errs(e)})
+anim = [e["animal_ko"] for e in BMCAT if e["format"] == "animal"]
+ck("B 동물은 모두 다르다 · 햄스터 없음 · 소재(topic·slug) 겹침 없음", len(set(anim)) == len(anim) == 7 and "햄스터" not in anim
+   and len({e["topic"] for e in BMCAT}) == len({e["slug"] for e in BMCAT}) == 14, anim)
+ck("10/25 웜뱃(401)·10/26 펭귄(402) = 견본과 같은 sources·topic·animal", P.bm_n(D(10, 25)) == 401 and P.bm_n(D(10, 26)) == 402
+   and BMCAT[0]["sources"] == json.load(open(os.path.join(HERE, "samples", "bm_paper_wombat.json"), encoding="utf-8"))["sources"]
+   and BMCAT[1]["animal"] == json.load(open(os.path.join(HERE, "samples", "bm_animal_penguin.json"), encoding="utf-8"))["animal"])
+low_cat = json.dumps(BMCAT, ensure_ascii=False).lower()
+ck("catalog 에 금지 소재 낱말 없음(브레인롯·캐릭터 IP·실존 인물·성적·외모 비하)",
+   not B._hits(B.BRAINROT + B.CHARACTERS + B.CELEBS + B.SEXUAL + B.BODY, [low_cat]), B._hits(B.BRAINROT + B.CHARACTERS + B.CELEBS
+                                                                                      + B.SEXUAL + B.BODY, [low_cat]))
 
 print("── 병맛 대본 검사 ──")
 ck("견본 A(웜뱃)·B(펭귄) 통과 · pick_reel.check 가 넘긴다", K.check(BM_A) == [] and K.check(BM_B) == [] and B.check(BM_A) == [],
@@ -589,13 +620,20 @@ def _line(i, key, val):
 CASES_BM = [
     ("facts 에 없는 숫자(하루 200개)는 막는다", BM_A, _line(3, "say", "하루 최대 200개. 한 개 2센티쯤."), "facts 에 없는 숫자"),
     ("만·억도 facts 와 맞춰 본다(100만 개 → 막음)", BM_A, _line(3, "big", "100만 개"), "facts 에 없는 숫자"),
-    ("캡션 숫자도 facts 에서만", BM_A, lambda x: x.update(caption="웜뱃 하루 300개ㅋㅋ"), "caption: facts"),
+    ("캡션 숫자도 facts 에서만", BM_A, lambda x: x.update(caption="웜뱃 하루 300개ㅋㅋ"), "caption: catalog"),
     ("첫 줄이 hook 이 아니면 막는다", BM_A, _line(0, "type", "beat"), "hook"),
     ("펀치라인이 없으면 막는다", BM_A, _line(5, "type", "beat"), "펀치라인"),
     ("도장(stamp)이 없으면 막는다", BM_A, _line(1, "type", "beat"), "도장"),
     ("숫자 든 줄에 src 가 없으면 막는다", BM_A, lambda x: x["lines"][3].pop("src"), "src"),
-    ("fact.src 가 sources 밖이면 막는다", BM_A, lambda x: x["facts"][0].update(src=9), "facts[0].src"),
-    ("안 쓰는 출처는 막는다", BM_A, lambda x: x["sources"].append("https://example.org/x"), "안 쓰는 출처"),
+    ("sources 를 catalog 그대로 옮기지 않으면 막는다(하나 더함)", BM_A, lambda x: x["sources"].append("https://example.org/x"),
+     "그대로"),
+    ("sources 순서가 다르면 막는다", BM_A, lambda x: x["sources"].reverse(), "그대로"),
+    ("src_n 이 그날 항목(401)이 아니면 막는다", BM_A, lambda x: x.update(src_n=404), "src_n"),
+    ("src_n 이 catalog 에 없으면 막는다", BM_A, lambda x: x.update(src_n=999), "bm_catalog"),
+    ("숫자는 catalog facts 에서만(대본에 facts 를 써도 소용없다)", BM_A, lambda x: x.update(
+        facts=[{"fact": "about 500 cubes", "src": 0}]) or x["lines"][3].update(big="하루 500개"), "facts 에 없는 숫자"),
+    ("topic 을 catalog 와 다르게 쓰면 막는다", BM_A, lambda x: x.update(topic="웜뱃 똥 이야기"), "topic"),
+    ("B animal 을 catalog 와 다르게 쓰면 막는다", BM_B, lambda x: x.update(animal_ko="황제펭귄"), "animal"),
     ("TTS 가 'ㅋㅋ'를 읽지 않게(say 에 ㅋㅋ → 막음)", BM_A, _line(0, "say", "네모난 똥 싸는 동물 진짜 있음ㅋㅋ"), "ㅋㅋ"),
     ("TTS 가 '킹받'을 읽지 않게", BM_A, _line(5, "say", "결론. 웜뱃 킹받네."), "킹받"),
     ("say 에 '띠용'(효과음 이름)도 막는다", BM_A, _line(5, "say", "결론. 띠용."), "띠용"),
@@ -737,7 +775,7 @@ ck("A 캡션 출처: labonline.com.au · physicsworld.com · smithsonianmag.com"
    in K.caption_of(BM_A), K.caption_of(BM_A))
 wb = open(os.path.join(HERE, "BM_WRITING.md"), encoding="utf-8").read()
 ck("BM_WRITING: 두 꼴·견본·facts·부탁 금지·브레인롯·animal 복사·띠용·0.5초 무음",
-   all(w in wb for w in ("bm_paper", "bm_animal", "bm_paper_wombat", "facts", "부탁", "브레인롯", "animal", "띠용", "0.5초",
+   all(w in wb for w in ("bm_paper", "bm_animal", "bm_paper_wombat", "bm_catalog.json", "src_n", "facts", "부탁", "브레인롯", "animal", "띠용", "0.5초",
                          "check", "due: false")))
 ck("PICK_WRITING: 병맛 날은 BM_WRITING 을 따른다 · next 의 writing", "BM_WRITING.md" in wr and "writing" in wr)
 

@@ -6,15 +6,17 @@
   사람 일을 하는 AI 동물이 가장 새 범주(상위 50 중 49%가 최근 30일 · 꿀잼식빵 705만). 브레인롯 캐릭터는 피한다
   (한국 중앙값 약 2.5천 · 22개+ 캐릭터 상표·저작권 소송). 움직이는 영상(AI 드라마·병맛 애니)은 정지 그림으로 못 한다.
 
-꼴(kind) — 날짜로 번갈아(pick_plan.bm_kind):
+꼴(kind) — 날짜로 ABBA ABBA ABBA AB(pick_plan.bm_kind) · 소재는 그날 bm_catalog 항목(pick_plan.bm_n):
   bm_paper  A '이거 진짜 논문임' 18~23초 · 무표정 여자 목소리(Supertonic F1) ~임/~함 반말
             0초부터 말 + 밝은 실사 황당 그림 + 노란 큰 제목(펀치 줌) → 코드가 그린 '도장' 카드(하얀 번쩍 + 쿵) →
             숫자 박자 2~3개 → 펀치라인 → 0.4초 멈춤·무음 → '띠용'(코드로 만든 소리) + 살짝 흔들림 → (다음: … 끝 카드)
   bm_animal B '정색 동물 다큐' 18~22초 · 동물 한 종이 사람 일을 한다(손님도 동물 · 사람은 안 그린다 · 같은 동물 묘사를 장면마다 복사)
             다큐 내레이션(F1, 정색) + 진짜 동물 사실 하나(출처·숫자 검사) → 사건 → 0.5초 무음 → 동물의 한마디는
             ★다른 목소리(edge-tts ko-KR-InJoonNeural, -10~-35%, 무료) 말풍선 → 펀치 → 끝 카드 + 띠용
-숫자: 화면·말·캡션의 모든 숫자는 그 대본 facts 에 있는 수만(콤마·단위 무시 · 만·억은 곱한 값도 — pick_reel 의 sci 검사 그대로).
-  facts 마다 src → sources(URL). 캡션 = 짧은 구어체 한 줄 + '출처: <도메인>' + 해시태그 5개까지(코드가 붙인다 · 회차 없음).
+무엇을 쓸지: 그날 insta/bm_catalog.json 항목(pick_plan.bm_n — sci 의 SCI_ORDER 와 같은 생각). 클라우드 작가는 웹을 못 보므로
+  사실(facts)·출처(sources)·주의(careful)는 catalog 에 미리 확인해 두고, 대본은 src_n·sources 를 그대로 옮긴다(check 가 막는다).
+숫자: 화면·말·캡션의 모든 숫자는 그 항목 facts 에 있는 수만(콤마·단위 무시 · 만·억은 곱한 값으로 — sci 검사와 같은 생각).
+  캡션 = 짧은 구어체 한 줄 + '출처: <도메인>' + 해시태그 5개까지(코드가 붙인다 · 회차 없음).
 화면: 1080×1920 · 그린 것은 모두 y ≤ BM_Y_MAX(1400) — 아래 25%(y 1440~)는 인스타 캡션·버튼 자리(흔들림 여유 포함).
   번쩍(flash)·흔들림(shake)은 화면 전체 효과라 바탕(bg_at)에도 같이 들어간다(테스트는 바탕과 다른 곳만 '그린 것'으로 본다).
 
@@ -134,8 +136,16 @@ def speech(text: str, who: str = "f1") -> str:
     return t if who == "quote" else re.sub(r"\s*…\s*", ", ", t).strip(" ,")
 
 
-def fact_pool(s: dict) -> list[float]:
-    return K.fact_values({"facts": [f for f in s.get("facts") or [] if isinstance(f, dict)]})
+def fact_pool(e: dict) -> list[float]:
+    """catalog 항목 facts 의 수 전부."""
+    return K.fact_values({"facts": [f for f in e.get("facts") or [] if isinstance(f, dict)]})
+
+
+def entry_of(s: dict) -> dict | None:
+    try:
+        return P.bm_entry(int(s.get("src_n")))
+    except (TypeError, ValueError):
+        return None
 
 
 def source_hosts(s: dict) -> list[str]:
@@ -162,6 +172,20 @@ def check(s: dict) -> list[str]:
         errs.append(f"{d} 는 병맛 편이 없는 날 — 병맛 시험은 {P.BM_FROM}~{P.BM_TO}")
     elif want != kind:
         errs.append(f"{d} 병맛 꼴은 {want} — 대본은 {kind}(꼴은 코드가 날짜로 정한다)")
+    want_n = P.bm_n(d)
+    if want_n is not None and s.get("src_n") != want_n:
+        errs.append(f"src_n 은 그날 편성 항목 {want_n} 이어야 한다(BM_ORDER · bm_catalog) — 대본은 {s.get('src_n')}")
+    e = entry_of(s)
+    if e is None:
+        return errs + [f"src_n {s.get('src_n')!r} 은 bm_catalog 항목이 아니다"]
+    if P.BM_FMT_KIND.get(e.get("format")) != kind:
+        errs.append(f"catalog {e['n']} 은 {e.get('format')} 꼴 — 대본 kind {kind} 와 다르다")
+    if s.get("sources") != e.get("sources"):
+        errs.append(f"sources 는 catalog {e['n']} 의 sources 를 그대로(순서까지) 옮긴다")
+    if s.get("topic") != e.get("topic"):
+        errs.append(f"topic 은 catalog {e['n']} 그대로: {e.get('topic')}")
+    if kind == ANIMAL and (s.get("animal") != e.get("animal") or s.get("animal_ko") != e.get("animal_ko")):
+        errs.append(f"animal·animal_ko 는 catalog {e['n']} 그대로(같은 동물 묘사를 모든 img 에 복사)")
     if not _SLUG.fullmatch(s.get("slug") or ""):
         errs.append("slug 는 영어 소문자·숫자·하이픈")
     topic = s.get("topic")
@@ -170,12 +194,11 @@ def check(s: dict) -> list[str]:
     hl = s.get("headline")
     if not (isinstance(hl, list) and len(hl) == 2 and all(isinstance(x, str) and 0 < len(x) <= HEAD_MAX for x in hl)):
         errs.append(f"headline 은 두 줄 · 줄마다 {HEAD_MAX}자 이내")
-    errs += _check_sources(s)
     ls = lines_of(s)
     if len(ls) != len(s.get("lines") or []) or not N_LINES[0] <= len(ls) <= N_LINES[1]:
         errs.append(f"lines 는 {N_LINES[0]}~{N_LINES[1]}줄(객체)")
     errs += _check_lines(s, kind, ls)
-    errs += _check_numbers(s)
+    errs += _check_numbers(s, e)
     errs += _check_words(s)
     cap = s.get("caption")
     if not isinstance(cap, str) or not cap.strip() or "\n" in cap.strip() or len(cap.strip()) > CAPTION_MAX:
@@ -204,28 +227,53 @@ def check(s: dict) -> list[str]:
     return errs
 
 
-def _check_sources(s: dict) -> list[str]:
+def entry_errs(e: dict) -> list[str]:
+    """bm_catalog 항목 검사(테스트가 14개 전부 돌린다) — facts{fact,src}·https 출처 전부 쓰임·careful·premise·punch_idea ·
+    paper 는 stamp_idea · animal 은 animal(영어, 사람 낱말·그림 금지어 없음)·animal_ko·quote_idea."""
     errs = []
-    srcs = s.get("sources")
-    if not (isinstance(srcs, list) and srcs and all(isinstance(u, str) and re.match(r"https?://[^\s/]+\.[^\s/]+", u)
+    n = e.get("n")
+    srcs = e.get("sources")
+    if not (isinstance(srcs, list) and srcs and all(isinstance(u, str) and re.match(r"https://[^\s/]+\.[^\s/]+", u)
                                                      for u in srcs)):
-        return ["sources 는 출처 URL(https://…) 목록 — 하나 이상"]
-    facts = s.get("facts")
+        return [f"{n}: sources 는 https URL 목록"]
+    facts = e.get("facts")
     if not (isinstance(facts, list) and facts):
-        return ["facts 는 [{fact, src}] 하나 이상 — 숫자는 여기서만"]
+        return [f"{n}: facts 없음"]
     used = set()
     for k, f in enumerate(facts):
+        src = f.get("src") if isinstance(f, dict) else None
         if not (isinstance(f, dict) and isinstance(f.get("fact"), str) and f["fact"].strip()):
-            errs.append(f"facts[{k}].fact 없음")
-            continue
-        src = f.get("src")
-        if not (isinstance(src, int) and not isinstance(src, bool) and 0 <= src < len(srcs)):
-            errs.append(f"facts[{k}].src 는 sources 번호(0~{len(srcs) - 1})")
+            errs.append(f"{n}: facts[{k}].fact 없음")
+        elif not (isinstance(src, int) and not isinstance(src, bool) and 0 <= src < len(srcs)):
+            errs.append(f"{n}: facts[{k}].src 는 sources 번호")
         else:
             used.add(src)
-    unused = [i for i in range(len(srcs)) if i not in used]
-    if unused and not errs:
-        errs.append(f"sources {unused} 를 쓰는 fact 가 없다 — 안 쓰는 출처는 뺀다")
+    if set(range(len(srcs))) - used:
+        errs.append(f"{n}: 안 쓰는 출처 {sorted(set(range(len(srcs))) - used)}")
+    for key in ("slug", "topic", "premise", "punch_idea"):
+        if not isinstance(e.get(key), str) or not e[key].strip():
+            errs.append(f"{n}: {key} 없음")
+    if not _SLUG.fullmatch(e.get("slug") or ""):
+        errs.append(f"{n}: slug 는 영어 소문자·하이픈")
+    if not isinstance(e.get("topic"), str) or not 0 < len(e["topic"]) <= TOPIC_MAX:
+        errs.append(f"{n}: topic 1~{TOPIC_MAX}자")
+    if not (isinstance(e.get("careful"), list) and e["careful"]):
+        errs.append(f"{n}: careful 없음")
+    if e.get("format") == "paper":
+        if not e.get("stamp_idea") or unbacked(e["stamp_idea"], fact_pool(e)):
+            errs.append(f"{n}: stamp_idea 없음 또는 facts 에 없는 숫자")
+        if len({v for v in fact_pool(e)}) < 2:
+            errs.append(f"{n}: 숫자 박자를 만들 숫자가 facts 에 2개 이상 있어야 한다")
+    elif e.get("format") == "animal":
+        a = e.get("animal")
+        if not isinstance(a, str) or not 12 <= len(a) <= 160 or _HANGUL.search(a) or HUMAN.search(a) or K.SCI_IMG_BAN.search(a):
+            errs.append(f"{n}: animal 은 영어 동물 묘사(사람 낱말·글자·얼굴 낱말 없이)")
+        if not isinstance(e.get("animal_ko"), str) or not 0 < len(e["animal_ko"]) <= 8:
+            errs.append(f"{n}: animal_ko 1~8자")
+        if not e.get("quote_idea"):
+            errs.append(f"{n}: quote_idea 없음")
+    else:
+        errs.append(f"{n}: format 은 paper|animal")
     return errs
 
 
@@ -334,13 +382,13 @@ def unbacked(text: str, pool: list[float]) -> list[str]:
     return out
 
 
-def _check_numbers(s: dict) -> list[str]:
-    pool = fact_pool(s)
+def _check_numbers(s: dict, e: dict) -> list[str]:
+    pool = fact_pool(e)
     errs = []
     for where, t in _texts(s):
         bad = unbacked(t, pool)
         if bad:
-            errs.append(f"{where}: facts 에 없는 숫자 {bad} — 숫자는 그 대본 facts 에서만")
+            errs.append(f"{where}: catalog {e['n']} facts 에 없는 숫자 {bad} — 숫자는 그 항목 facts 에서만")
     return errs
 
 

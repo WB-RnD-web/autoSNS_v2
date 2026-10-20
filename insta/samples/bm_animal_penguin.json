@@ -1,6 +1,7 @@
 {
  "date": "2026-10-26",
  "kind": "bm_animal",
+ "src_n": 402,
  "slug": "penguin-subway",
  "topic": "펭귄 출근 지하철",
  "animal": "a chubby emperor penguin with glossy black and white feathers and a soft yellow neck patch",
@@ -48,16 +49,6 @@
   }
  ],
  "end": "월요일은 계속된다.",
- "facts": [
-  {
-   "fact": "In emperor penguin huddles the density is approximately 21 penguins per square meter (per 1 m²).",
-   "src": 0
-  },
-  {
-   "fact": "Every 30 to 60 seconds, all penguins in the huddle make small 5 to 10 cm steps that travel through the huddle as a wave.",
-   "src": 0
-  }
- ],
  "sources": [
   "https://pmc.ncbi.nlm.nih.gov/articles/PMC3106014/"
  ],

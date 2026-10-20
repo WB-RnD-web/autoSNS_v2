@@ -1,6 +1,7 @@
 {
  "date": "2026-10-25",
  "kind": "bm_paper",
+ "src_n": 401,
  "slug": "wombat-cube-poo",
  "topic": "웜뱃 네모 똥",
  "headline": [
@@ -47,24 +48,6 @@
    "say": "결론. 웜뱃은 똥으로 블록 쌓기 가능.",
    "sub": "결론: 웜뱃은 똥으로 블록 쌓기 가능",
    "img": "a cute wombat sitting proudly beside a small tidy tower of stacked brown cubes on a rock, bright sunny forest, toy block style"
-  }
- ],
- "facts": [
-  {
-   "fact": "The University of Tasmania researchers behind the wombat-poo study won the 2019 Ig Nobel Physics Prize.",
-   "src": 0
-  },
-  {
-   "fact": "To see how the gut makes the cubes, researchers inflated a piece of the last section of a wombat's intestine with a small balloon.",
-   "src": 1
-  },
-  {
-   "fact": "Bare-nosed wombats may poop up to 100 cubes a day; the cubes are about 2 centimeters in size.",
-   "src": 2
-  },
-  {
-   "fact": "Scientists suspect the cube shape lets wombats mark their territory on rocks and logs with poop that won't easily roll away.",
-   "src": 2
   }
  ],
  "sources": [
