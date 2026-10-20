@@ -488,6 +488,25 @@ ck("orphan-rescue 트리거에 output/weekly_fortune", '"output/weekly_fortune/*
 ck("ledger·로그는 커밋하지 않는다", all(x in open(os.path.join(ROOT, ".gitignore"), encoding="utf-8").read()
                                   for x in ("/output/weekly_fortune_ledger.json", "/output/weekly_fortune_log.json")))
 
+print("── 11/2부터 '2027 정미년 깊이 보기'로 바뀐다(월요일 쇼츠는 그대로) ──")
+ck("STOP_FROM = 2026-11-02 · 그 주(W45)부터 week 는 STOPPED · 그 전 주(W44)는 그대로",
+   WF.STOP_FROM == dt.date(2026, 11, 2) and WF.week_text(at("2026-10-31T17:00")).startswith("STOPPED=yes")
+   and WF.week_text(at("2026-10-24T17:00")).startswith("WEEK=2026-W44"))
+_w45 = copy.deepcopy(SAMPLE)
+_w45["week"] = "2026-W45"
+ck("…W45 대본은 검사에서 거절(push·업로드 없음)", any("2027 정미년 깊이 보기" in e for e in
+                                            WF.check(_w45, "", now=at("2026-10-31T17:00"), history=[], strict=False)[0]))
+_w44 = copy.deepcopy(SAMPLE)
+_w44["week"] = "2026-W44"
+ck("…W44(10/26~11/1, 10/24 루틴)는 막지 않는다",
+   not any("깊이 보기" in e for e in WF.check(_w44, "", now=at("2026-10-24T17:00"), history=[], strict=False)[0]))
+ck("월요일 '이번 주 띠별 운세' 쇼츠는 주간 롱폼과 무관 — 매일 표(fortune_card)가 MODE=weekly 로 만든다",
+   FC.scope_of({"notes": "MODE=weekly"}) == "이번 주" and FC.use_card({"topic": "fortune", "date": "2026-11-09",
+                                                                   "notes": "MODE=weekly"}))
+import sal_frame  # noqa: E402
+ck("주간 롱폼 금지어: '삼재'는 조언 틀이면 통과 · 틀 없이 쓰면 걸린다",
+   not WF.ban_hits("날삼재는 마무리를 잘하면 복삼재로 바꿀 수 있어요.") and WF.ban_hits("이번 주는 삼재입니다."))
+
 print()
 if FAIL:
     print(f"❌ 실패 {FAIL}건")

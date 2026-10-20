@@ -474,7 +474,7 @@ def synth(texts: list[str], wd: str, voice: str = WF.VOICE, tts=None, clean: boo
 
     clean: 앞뒤 무음 자르기(ffmpeg). 기본은 진짜 목소리일 때만."""
     os.makedirs(wd, exist_ok=True)
-    mock = tts is None and os.environ.get("WEEKLY_MOCK_TTS") == "1"
+    mock = tts is None and (os.environ.get("WEEKLY_MOCK_TTS") == "1" or os.environ.get("LF27_MOCK") == "1")
     clean = (not mock) if clean is None else clean
     real = tts is None and not mock                  # 진짜 Spark — 대기열을 보고 한 건씩
     if tts is None:
@@ -521,23 +521,26 @@ def synth(texts: list[str], wd: str, voice: str = WF.VOICE, tts=None, clean: boo
 
 
 # ── 타임라인 ──────────────────────────────────────────────────
-def timeline(plan: dict, durs: dict) -> tuple[list[dict], list[dict], float]:
+def timeline(plan: dict, durs: dict, cfg=None) -> tuple[list[dict], list[dict], float]:
     """조각마다 시작·끝, 파트마다 시작(쉼 포함), 전체 길이 — 모두 ★최종(TEMPO 적용) 초.
 
-    durs: {글: 원본 길이(초)}. 반환 (조각들, 파트들, 전체)."""
+    durs: {글: 원본 길이(초)}. 반환 (조각들, 파트들, 전체).
+    cfg: 쉼·속도(TEMPO·LEAD·TAIL·GAP_PART·GAP_SECTION 속성) — 없으면 주간 운세 값(weekly_fortune 모듈).
+      2027 롱폼 시리즈(longform_2027.SPEC)가 같은 렌더러를 자기 길이 설정으로 쓴다."""
+    c_ = cfg or WF
     t, items, parts = 0.0, [], []
     for pi, p in enumerate(plan["parts"]):
         for ci, c in enumerate(p["chunks"]):
-            gap = WF.LEAD if (pi == 0 and ci == 0) else (WF.GAP_PART if ci == 0 else WF.GAP_SECTION)
+            gap = c_.LEAD if (pi == 0 and ci == 0) else (c_.GAP_PART if ci == 0 else c_.GAP_SECTION)
             show = t                                   # 화면은 쉼이 시작될 때 바뀐다(장 카드가 먼저 뜬다)
             if ci == 0:
-                parts.append({"id": p["id"], "title": p["title"], "card": show / WF.TEMPO})
+                parts.append({"id": p["id"], "title": p["title"], "card": show / c_.TEMPO})
             t += gap
             d = durs[c["text"]]
             items.append({"text": c["text"], "slide": c["slide"], "part": p["id"], "gap": gap,
-                          "show": show / WF.TEMPO, "start": t / WF.TEMPO, "end": (t + d) / WF.TEMPO})
+                          "show": show / c_.TEMPO, "start": t / c_.TEMPO, "end": (t + d) / c_.TEMPO})
             t += d
-    return items, parts, (t + WF.TAIL) / WF.TEMPO
+    return items, parts, (t + c_.TAIL) / c_.TEMPO
 
 
 def segments(items: list[dict], total: float) -> list[tuple[dict, float, float]]:
@@ -565,7 +568,8 @@ def chapters_text(parts: list[dict]) -> str:
 
 
 # ── 오디오 · 영상 ─────────────────────────────────────────────
-def build_audio(items: list[dict], wavs: dict, wd: str, out_m4a: str):
+def build_audio(items: list[dict], wavs: dict, wd: str, out_m4a: str, cfg=None):
+    c_ = cfg or WF                                     # 쉼·속도 설정(timeline 과 같다)
     sil: dict = {}
 
     def silence(sec):
@@ -582,9 +586,9 @@ def build_audio(items: list[dict], wavs: dict, wd: str, out_m4a: str):
             if it["gap"] > 0.01:
                 f.write(f"file '{os.path.abspath(silence(it['gap']))}'\n")
             f.write(f"file '{os.path.abspath(wavs[it['text']])}'\n")
-        f.write(f"file '{os.path.abspath(silence(WF.TAIL))}'\n")
+        f.write(f"file '{os.path.abspath(silence(c_.TAIL))}'\n")
     sh([FFMPEG, "-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", lst,
-        "-af", f"atempo={WF.TEMPO},loudnorm=I=-16:TP=-1.5:LRA=11", "-ar", str(SR), "-ac", "1",
+        "-af", f"atempo={c_.TEMPO},loudnorm=I=-16:TP=-1.5:LRA=11", "-ar", str(SR), "-ac", "1",
         "-c:a", "aac", "-b:a", "128k", out_m4a])
 
 

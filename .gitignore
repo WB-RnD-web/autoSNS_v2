@@ -12,6 +12,8 @@ output/renders/
 /output/ai_run_log.json
 /output/weekly_fortune_ledger.json
 /output/weekly_fortune_log.json
+/output/lf27_ledger.json
+/output/lf27_log.json
 /output/*.log
 *.mp4
 *.mov

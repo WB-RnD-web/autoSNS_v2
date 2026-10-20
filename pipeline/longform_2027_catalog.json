@@ -1,0 +1,6486 @@
+{
+ "about": "'2027 정미년 깊이 보기' 롱폼 16편 카탈로그 — pipeline/longform_2027.py 가 만든다(손으로 고치지 않는다: python pipeline/longform_2027.py catalog --write). 사실은 전통 명리 계산(재미로 보는 운세): 십이신살 = 띠의 삼합 그룹 지살부터 겁살·재살·천살·지살·년살·월살·망신살·장성살·반안살·역마살·육해살·화개살 · 삼재 = 역마·육해·화개 해(들·눌·날) · 대장군 사오미년 동쪽 · 삼살 해묘미년 서쪽 · 좋은 달은 절기로 나눈 양력 달(월건 · 1월 축 … 12월 자).",
+ "series": "2027 정미년 깊이 보기",
+ "playlist": "2027 정미년 깊이 보기",
+ "schedule": "2026-11-02부터 월·수·금 20:00 KST",
+ "branch": "routine/fortune_lf27",
+ "year": {
+  "year": 2027,
+  "pillar": "정미",
+  "pillar_hanja": "丁未",
+  "animal": "양",
+  "stem": "정(丁) — 불",
+  "branch": "미(未) — 흙 · 양",
+  "daejanggun": "동쪽",
+  "samsal": "서쪽",
+  "ipchun_2027": "02-04 10:46",
+  "hwangap_year": 1967,
+  "sinsal_by_group": {
+   "신자진": "천살",
+   "인오술": "반안살",
+   "사유축": "월살",
+   "해묘미": "화개살"
+  },
+  "samjae_2027": {
+   "신자진": "",
+   "인오술": "",
+   "사유축": "",
+   "해묘미": "날삼재"
+  },
+  "month_spans": {
+   "1": "1월 5일~2월 3일",
+   "2": "2월 4일~3월 5일",
+   "3": "3월 6일~4월 4일",
+   "4": "4월 5일~5월 5일",
+   "5": "5월 6일~6월 5일",
+   "6": "6월 6일~7월 6일",
+   "7": "7월 7일~8월 7일",
+   "8": "8월 8일~9월 7일",
+   "9": "9월 8일~10월 7일",
+   "10": "10월 8일~11월 7일",
+   "11": "11월 8일~12월 6일",
+   "12": "12월 7일~1월 5일"
+  },
+  "next_year": {
+   "year": 2028,
+   "pillar": "무신",
+   "samjae_starts": [
+    "호랑이",
+    "말",
+    "개"
+   ]
+  }
+ },
+ "sinsal_table_2027": [
+  {
+   "animal": "쥐",
+   "sinsal": "천살",
+   "samjae": "",
+   "rel": "정미년과 원진·해",
+   "advice": "몸 낮추고 겸손하게"
+  },
+  {
+   "animal": "소",
+   "sinsal": "월살",
+   "samjae": "",
+   "rel": "정미년과 충·형",
+   "advice": "준비·저축으로 채우기"
+  },
+  {
+   "animal": "호랑이",
+   "sinsal": "반안살",
+   "samjae": "",
+   "rel": "",
+   "advice": "자리 다지기 좋은 때"
+  },
+  {
+   "animal": "토끼",
+   "sinsal": "화개살",
+   "samjae": "날삼재",
+   "rel": "정미년과 삼합",
+   "advice": "배움·정리에 좋은 때"
+  },
+  {
+   "animal": "용",
+   "sinsal": "천살",
+   "samjae": "",
+   "rel": "",
+   "advice": "몸 낮추고 겸손하게"
+  },
+  {
+   "animal": "뱀",
+   "sinsal": "월살",
+   "samjae": "",
+   "rel": "",
+   "advice": "준비·저축으로 채우기"
+  },
+  {
+   "animal": "말",
+   "sinsal": "반안살",
+   "samjae": "",
+   "rel": "정미년과 육합",
+   "advice": "자리 다지기 좋은 때"
+  },
+  {
+   "animal": "양",
+   "sinsal": "화개살",
+   "samjae": "날삼재",
+   "rel": "내 띠의 해",
+   "advice": "배움·정리에 좋은 때"
+  },
+  {
+   "animal": "원숭이",
+   "sinsal": "천살",
+   "samjae": "",
+   "rel": "",
+   "advice": "몸 낮추고 겸손하게"
+  },
+  {
+   "animal": "닭",
+   "sinsal": "월살",
+   "samjae": "",
+   "rel": "",
+   "advice": "준비·저축으로 채우기"
+  },
+  {
+   "animal": "개",
+   "sinsal": "반안살",
+   "samjae": "",
+   "rel": "정미년과 형·파",
+   "advice": "자리 다지기 좋은 때"
+  },
+  {
+   "animal": "돼지",
+   "sinsal": "화개살",
+   "samjae": "날삼재",
+   "rel": "정미년과 삼합",
+   "advice": "배움·정리에 좋은 때"
+  }
+ ],
+ "episodes": [
+  {
+   "id": "E01",
+   "publish": "2026-11-02",
+   "weekday": "월",
+   "kind": "group",
+   "group": "신자진",
+   "animals": [
+    "원숭이",
+    "쥐",
+    "용"
+   ],
+   "sinsal": "천살",
+   "samjae": "",
+   "title": "2027년 천살 드는 띠 원숭이띠·쥐띠·용띠 | 꼭 지킬 3가지 · 출생연도별 풀이",
+   "search": "2027년 천살 드는 띠 원숭이띠·쥐띠·용띠",
+   "thumb": {
+    "big": "2027 천살",
+    "sub": "원숭이·쥐·용띠",
+    "pill": "꼭 지킬 3가지"
+   },
+   "angle": "천살은 하늘의 기운이 드는 해 — 몸을 낮추고 겸손하게, 윗사람·건강·마음 다스리기. 쥐띠는 원진까지, 용띠는 돕는 기운의 해라 같은 천살이라도 결이 다르다. 삼재는 이미 지나간 띠들(2022~2024).",
+   "qa_seeds": [
+    "천살이 든 해에는 이사나 큰 계약을 미뤄야 하나요?",
+    "쥐띠는 천살에 원진까지 겹친다는데 어떻게 지내면 좋을까요?",
+    "원숭이띠·쥐띠·용띠 부부라면 둘 다 천살인데 괜찮을까요?",
+    "양력 일월생인데 제 띠가 맞는지 헷갈려요."
+   ],
+   "next": "E02",
+   "next_title": "2027년 날삼재 드는 띠 돼지띠·토끼띠·양띠 | 복삼재로 바꾸는 법 · 출생연도별 풀이",
+   "publish_kst": "2026-11-02 20:00",
+   "chapters": [
+    {
+     "id": "c01",
+     "layout": "table",
+     "table": "sinsal12",
+     "title": "2027 정미년 12띠 신살 표 — 내 띠는 어디에"
+    },
+    {
+     "id": "c02",
+     "layout": "card",
+     "topic": "about",
+     "title": "천살이란 — 겁낼 것 없는 이유"
+    },
+    {
+     "id": "c03",
+     "layout": "years",
+     "animal": "원숭이",
+     "years": [
+      1932,
+      1944,
+      1956,
+      1968,
+      1980,
+      1992,
+      2004
+     ],
+     "title": "원숭이띠 출생연도별 풀이 (32·44·56·68·80·92·04년생)"
+    },
+    {
+     "id": "c04",
+     "layout": "years",
+     "animal": "쥐",
+     "years": [
+      1936,
+      1948,
+      1960,
+      1972,
+      1984,
+      1996,
+      2008
+     ],
+     "title": "쥐띠 출생연도별 풀이 (36·48·60·72·84·96·08년생)"
+    },
+    {
+     "id": "c05",
+     "layout": "years",
+     "animal": "용",
+     "years": [
+      1940,
+      1952,
+      1964,
+      1976,
+      1988,
+      2000
+     ],
+     "title": "용띠 출생연도별 풀이 (40·52·64·76·88·00년생)"
+    },
+    {
+     "id": "c06",
+     "layout": "card",
+     "topic": "tip1",
+     "title": "꼭 지킬 것 첫째"
+    },
+    {
+     "id": "c07",
+     "layout": "card",
+     "topic": "tip2",
+     "title": "꼭 지킬 것 둘째"
+    },
+    {
+     "id": "c08",
+     "layout": "card",
+     "topic": "tip3",
+     "title": "꼭 지킬 것 셋째"
+    },
+    {
+     "id": "c09",
+     "layout": "table",
+     "table": "months3",
+     "title": "좋은 달·조심할 달 — 세 띠 한눈에"
+    },
+    {
+     "id": "c10",
+     "layout": "qa",
+     "title": "자주 묻는 질문"
+    },
+    {
+     "id": "c11",
+     "layout": "lucky",
+     "title": "행운의 색·숫자·방향"
+    }
+   ],
+   "facts": {
+    "원숭이": {
+     "animal": "원숭이",
+     "branch": "신",
+     "element": "쇠",
+     "group": "신자진",
+     "group_animals": [
+      "원숭이",
+      "쥐",
+      "용"
+     ],
+     "sinsal_2027": "천살",
+     "sinsal_plain": "하늘의 기운이 드는 해",
+     "sinsal_advice": "몸을 낮추고 겸손하게, 큰 욕심보다 마음 다스리기",
+     "samjae_2027": "",
+     "samjae_plain": "",
+     "samjae_years": {
+      "last": [
+       2022,
+       2023,
+       2024
+      ],
+      "next": [
+       2034,
+       2035,
+       2036
+      ]
+     },
+     "relations_with_2027": [],
+     "relation_main": "",
+     "relation_plain": [],
+     "stem_ding_is": "관성",
+     "branch_mi_is": "인성",
+     "energy_plain": [
+      "정(丁) 불 → 나를 다잡는 기운(맡을 일이 늚)",
+      "미(未) 흙 → 나를 돕는 기운"
+     ],
+     "tier_total": "보통",
+     "tier_total_line": "맡은 일 많은 해",
+     "tier_money": "보통",
+     "tier_money_line": "꾸준히 모으는 해",
+     "months_good": [
+      5,
+      4,
+      12
+     ],
+     "months_good_why": [
+      "5월 육합",
+      "4월 삼합",
+      "12월 삼합"
+     ],
+     "months_caution": [
+      2,
+      3
+     ],
+     "months_caution_why": [
+      "2월 충",
+      "3월 원진"
+     ],
+     "months_money_good": [
+      5,
+      12,
+      11
+     ],
+     "months_money_caution": [
+      2,
+      8,
+      9
+     ],
+     "months_body_good": [
+      4,
+      1,
+      7
+     ],
+     "months_body_caution": [
+      2,
+      6,
+      3
+     ],
+     "months_trip_good": [
+      11,
+      12
+     ],
+     "health": {
+      "part": "목·기관지",
+      "why": "불이 쇠를 누름",
+      "habit": "목 따뜻하게",
+      "line": "환절기 목 감싸기"
+     },
+     "lucky": {
+      "colors": "검정·남색",
+      "numbers": "1·6",
+      "direction": "북쪽",
+      "tip": "북쪽 창 환기",
+      "element": "물",
+      "why": "물이 불을 식혀요"
+     },
+     "years": [
+      {
+       "year": 1932,
+       "yy": "32",
+       "age_2027": 95,
+       "hwangap": false,
+       "stem_god": "정재",
+       "good": "돈·인연",
+       "good_line": "합이 드는 해",
+       "caution": "정에 끌린 돈",
+       "caution_line": "빌려주기 조심",
+       "stem_note": "정임 천간합 — 돈과 인연이 붙는 해",
+       "decade": "1930년대"
+      },
+      {
+       "year": 1944,
+       "yy": "44",
+       "age_2027": 83,
+       "hwangap": false,
+       "stem_god": "상관",
+       "good": "재주·말솜씨",
+       "good_line": "솜씨 보일 해",
+       "caution": "말실수",
+       "caution_line": "한 번 더 생각",
+       "stem_note": "",
+       "decade": "1940년대"
+      },
+      {
+       "year": 1956,
+       "yy": "56",
+       "age_2027": 71,
+       "hwangap": false,
+       "stem_god": "겁재",
+       "good": "형제·동료",
+       "good_line": "함께하면 좋은 해",
+       "caution": "돈거래",
+       "caution_line": "같이 쓰는 돈 정리",
+       "stem_note": "",
+       "decade": "1950년대"
+      },
+      {
+       "year": 1968,
+       "yy": "68",
+       "age_2027": 59,
+       "hwangap": false,
+       "stem_god": "정인",
+       "good": "문서·도장",
+       "good_line": "도움 받는 해",
+       "caution": "미루기",
+       "caution_line": "때 놓치지 않기",
+       "stem_note": "",
+       "decade": "1960년대"
+      },
+      {
+       "year": 1980,
+       "yy": "80",
+       "age_2027": 47,
+       "hwangap": false,
+       "stem_god": "정관",
+       "good": "명예·자리",
+       "good_line": "체면이 서는 해",
+       "caution": "체면 지출",
+       "caution_line": "겉치레 줄이기",
+       "stem_note": "",
+       "decade": "1980년대"
+      },
+      {
+       "year": 1992,
+       "yy": "92",
+       "age_2027": 35,
+       "hwangap": false,
+       "stem_god": "정재",
+       "good": "돈·인연",
+       "good_line": "합이 드는 해",
+       "caution": "정에 끌린 돈",
+       "caution_line": "빌려주기 조심",
+       "stem_note": "정임 천간합 — 돈과 인연이 붙는 해",
+       "decade": "1990년대"
+      },
+      {
+       "year": 2004,
+       "yy": "04",
+       "age_2027": 23,
+       "hwangap": false,
+       "stem_god": "상관",
+       "good": "재주·말솜씨",
+       "good_line": "솜씨 보일 해",
+       "caution": "말실수",
+       "caution_line": "한 번 더 생각",
+       "stem_note": "",
+       "decade": "2000년대"
+      }
+     ]
+    },
+    "쥐": {
+     "animal": "쥐",
+     "branch": "자",
+     "element": "물",
+     "group": "신자진",
+     "group_animals": [
+      "원숭이",
+      "쥐",
+      "용"
+     ],
+     "sinsal_2027": "천살",
+     "sinsal_plain": "하늘의 기운이 드는 해",
+     "sinsal_advice": "몸을 낮추고 겸손하게, 큰 욕심보다 마음 다스리기",
+     "samjae_2027": "",
+     "samjae_plain": "",
+     "samjae_years": {
+      "last": [
+       2022,
+       2023,
+       2024
+      ],
+      "next": [
+       2034,
+       2035,
+       2036
+      ]
+     },
+     "relations_with_2027": [
+      "원진",
+      "해"
+     ],
+     "relation_main": "원진",
+     "relation_plain": [
+      "서운함이 쌓이기 쉬운 사이(원진) — 말 아끼기",
+      "작은 엇갈림(해) — 다시 확인하기"
+     ],
+     "stem_ding_is": "재성",
+     "branch_mi_is": "관성",
+     "energy_plain": [
+      "정(丁) 불 → 재물 기운",
+      "미(未) 흙 → 나를 다잡는 기운(맡을 일이 늚)"
+     ],
+     "tier_total": "조심",
+     "tier_total_line": "원진·말 아끼기",
+     "tier_money": "보통",
+     "tier_money_line": "재물 기운·원진",
+     "months_good": [
+      1,
+      4,
+      8
+     ],
+     "months_good_why": [
+      "1월 육합",
+      "4월 삼합",
+      "8월 삼합"
+     ],
+     "months_caution": [
+      6,
+      7,
+      3
+     ],
+     "months_caution_why": [
+      "6월 충",
+      "7월 원진",
+      "3월 형"
+     ],
+     "months_money_good": [
+      5,
+      1,
+      2
+     ],
+     "months_money_caution": [
+      6,
+      11,
+      12
+     ],
+     "months_body_good": [
+      8,
+      9,
+      11
+     ],
+     "months_body_caution": [
+      7,
+      6,
+      10
+     ],
+     "months_trip_good": [
+      2
+     ],
+     "health": {
+      "part": "허리·콩팥",
+      "why": "흙이 물을 누름",
+      "habit": "물 자주 마시기",
+      "line": "원진·마음 편히"
+     },
+     "lucky": {
+      "colors": "흰색·은색",
+      "numbers": "4·9",
+      "direction": "서쪽",
+      "tip": "서쪽으로 산책",
+      "element": "쇠",
+      "why": "쇠가 이어 줘요"
+     },
+     "years": [
+      {
+       "year": 1936,
+       "yy": "36",
+       "age_2027": 91,
+       "hwangap": false,
+       "stem_god": "겁재",
+       "good": "형제·동료",
+       "good_line": "함께하면 좋은 해",
+       "caution": "돈거래",
+       "caution_line": "같이 쓰는 돈 정리",
+       "stem_note": "",
+       "decade": "1930년대"
+      },
+      {
+       "year": 1948,
+       "yy": "48",
+       "age_2027": 79,
+       "hwangap": false,
+       "stem_god": "정인",
+       "good": "문서·도장",
+       "good_line": "도움 받는 해",
+       "caution": "미루기",
+       "caution_line": "때 놓치지 않기",
+       "stem_note": "",
+       "decade": "1940년대"
+      },
+      {
+       "year": 1960,
+       "yy": "60",
+       "age_2027": 67,
+       "hwangap": false,
+       "stem_god": "정관",
+       "good": "명예·자리",
+       "good_line": "체면이 서는 해",
+       "caution": "체면 지출",
+       "caution_line": "겉치레 줄이기",
+       "stem_note": "",
+       "decade": "1960년대"
+      },
+      {
+       "year": 1972,
+       "yy": "72",
+       "age_2027": 55,
+       "hwangap": false,
+       "stem_god": "정재",
+       "good": "돈·인연",
+       "good_line": "합이 드는 해",
+       "caution": "정에 끌린 돈",
+       "caution_line": "빌려주기 조심",
+       "stem_note": "정임 천간합 — 돈과 인연이 붙는 해",
+       "decade": "1970년대"
+      },
+      {
+       "year": 1984,
+       "yy": "84",
+       "age_2027": 43,
+       "hwangap": false,
+       "stem_god": "상관",
+       "good": "재주·말솜씨",
+       "good_line": "솜씨 보일 해",
+       "caution": "말실수",
+       "caution_line": "한 번 더 생각",
+       "stem_note": "",
+       "decade": "1980년대"
+      },
+      {
+       "year": 1996,
+       "yy": "96",
+       "age_2027": 31,
+       "hwangap": false,
+       "stem_god": "겁재",
+       "good": "형제·동료",
+       "good_line": "함께하면 좋은 해",
+       "caution": "돈거래",
+       "caution_line": "같이 쓰는 돈 정리",
+       "stem_note": "",
+       "decade": "1990년대"
+      },
+      {
+       "year": 2008,
+       "yy": "08",
+       "age_2027": 19,
+       "hwangap": false,
+       "stem_god": "정인",
+       "good": "문서·도장",
+       "good_line": "도움 받는 해",
+       "caution": "미루기",
+       "caution_line": "때 놓치지 않기",
+       "stem_note": "",
+       "decade": "2000년대"
+      }
+     ]
+    },
+    "용": {
+     "animal": "용",
+     "branch": "진",
+     "element": "흙",
+     "group": "신자진",
+     "group_animals": [
+      "원숭이",
+      "쥐",
+      "용"
+     ],
+     "sinsal_2027": "천살",
+     "sinsal_plain": "하늘의 기운이 드는 해",
+     "sinsal_advice": "몸을 낮추고 겸손하게, 큰 욕심보다 마음 다스리기",
+     "samjae_2027": "",
+     "samjae_plain": "",
+     "samjae_years": {
+      "last": [
+       2022,
+       2023,
+       2024
+      ],
+      "next": [
+       2034,
+       2035,
+       2036
+      ]
+     },
+     "relations_with_2027": [],
+     "relation_main": "",
+     "relation_plain": [],
+     "stem_ding_is": "인성",
+     "branch_mi_is": "비겁",
+     "energy_plain": [
+      "정(丁) 불 → 나를 돕는 기운",
+      "미(未) 흙 → 나와 같은 기운"
+     ],
+     "tier_total": "길",
+     "tier_total_line": "돕는 기운의 해",
+     "tier_money": "보통",
+     "tier_money_line": "씀씀이 챙길 해",
+     "months_good": [
+      9,
+      8,
+      12
+     ],
+     "months_good_why": [
+      "9월 육합",
+      "8월 삼합",
+      "12월 삼합"
+     ],
+     "months_caution": [
+      10,
+      11
+     ],
+     "months_caution_why": [
+      "10월 충",
+      "11월 원진"
+     ],
+     "months_money_good": [
+      9,
+      12,
+      8
+     ],
+     "months_money_caution": [
+      10,
+      1,
+      4
+     ],
+     "months_body_good": [
+      5,
+      6,
+      1
+     ],
+     "months_body_caution": [
+      10,
+      2,
+      3
+     ],
+     "months_trip_good": [
+      2,
+      8,
+      9
+     ],
+     "health": {
+      "part": "위장·소화",
+      "why": "흙 기운이 겹침",
+      "habit": "천천히 먹기",
+      "line": "배는 조금 덜 차게"
+     },
+     "lucky": {
+      "colors": "초록·연두",
+      "numbers": "3·8",
+      "direction": "동쪽",
+      "tip": "동쪽 창 열기",
+      "element": "나무",
+      "why": "나무가 흙을 풀어요"
+     },
+     "years": [
+      {
+       "year": 1940,
+       "yy": "40",
+       "age_2027": 87,
+       "hwangap": false,
+       "stem_god": "정관",
+       "good": "명예·자리",
+       "good_line": "체면이 서는 해",
+       "caution": "체면 지출",
+       "caution_line": "겉치레 줄이기",
+       "stem_note": "",
+       "decade": "1940년대"
+      },
+      {
+       "year": 1952,
+       "yy": "52",
+       "age_2027": 75,
+       "hwangap": false,
+       "stem_god": "정재",
+       "good": "돈·인연",
+       "good_line": "합이 드는 해",
+       "caution": "정에 끌린 돈",
+       "caution_line": "빌려주기 조심",
+       "stem_note": "정임 천간합 — 돈과 인연이 붙는 해",
+       "decade": "1950년대"
+      },
+      {
+       "year": 1964,
+       "yy": "64",
+       "age_2027": 63,
+       "hwangap": false,
+       "stem_god": "상관",
+       "good": "재주·말솜씨",
+       "good_line": "솜씨 보일 해",
+       "caution": "말실수",
+       "caution_line": "한 번 더 생각",
+       "stem_note": "",
+       "decade": "1960년대"
+      },
+      {
+       "year": 1976,
+       "yy": "76",
+       "age_2027": 51,
+       "hwangap": false,
+       "stem_god": "겁재",
+       "good": "형제·동료",
+       "good_line": "함께하면 좋은 해",
+       "caution": "돈거래",
+       "caution_line": "같이 쓰는 돈 정리",
+       "stem_note": "",
+       "decade": "1970년대"
+      },
+      {
+       "year": 1988,
+       "yy": "88",
+       "age_2027": 39,
+       "hwangap": false,
+       "stem_god": "정인",
+       "good": "문서·도장",
+       "good_line": "도움 받는 해",
+       "caution": "미루기",
+       "caution_line": "때 놓치지 않기",
+       "stem_note": "",
+       "decade": "1980년대"
+      },
+      {
+       "year": 2000,
+       "yy": "00",
+       "age_2027": 27,
+       "hwangap": false,
+       "stem_god": "정관",
+       "good": "명예·자리",
+       "good_line": "체면이 서는 해",
+       "caution": "체면 지출",
+       "caution_line": "겉치레 줄이기",
+       "stem_note": "",
+       "decade": "2000년대"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "E02",
+   "publish": "2026-11-04",
+   "weekday": "수",
+   "kind": "group",
+   "group": "해묘미",
+   "animals": [
+    "돼지",
+    "토끼",
+    "양"
+   ],
+   "sinsal": "화개살",
+   "samjae": "날삼재",
+   "title": "2027년 날삼재 드는 띠 돼지띠·토끼띠·양띠 | 복삼재로 바꾸는 법 · 출생연도별 풀이",
+   "search": "2027년 날삼재 드는 띠 돼지띠·토끼띠·양띠",
+   "thumb": {
+    "big": "2027 날삼재",
+    "sub": "돼지·토끼·양띠",
+    "pill": "복삼재로 바꾸는 법"
+   },
+   "angle": "2025년 들삼재부터 이어진 삼재가 나가는 해(날삼재) + 정미년의 화개살. 마무리를 잘하면 복삼재로 — 겁주지 말고 '정리·배움·마무리'로 푼다. 2027이 양띠 해라 양띠는 내 띠의 해까지 겹친다.",
+   "qa_seeds": [
+    "날삼재는 들삼재보다 조심할 게 적나요?",
+    "화개살이 든 해에는 이사나 큰 계약을 미뤄야 하나요?",
+    "돼지띠·토끼띠·양띠 부부라면 둘 다 화개살인데 괜찮을까요?",
+    "양력 일월생인데 제 띠가 맞는지 헷갈려요."
+   ],
+   "next": "E03",
+   "next_title": "2027년 반안살 드는 띠 호랑이띠·말띠·개띠 | 기운 살리는 3가지 · 출생연도별 풀이",
+   "publish_kst": "2026-11-04 20:00",
+   "chapters": [
+    {
+     "id": "c01",
+     "layout": "table",
+     "table": "sinsal12",
+     "title": "2027 정미년 12띠 신살 표 — 내 띠는 어디에"
+    },
+    {
+     "id": "c02",
+     "layout": "card",
+     "topic": "about",
+     "title": "화개살·날삼재이란 — 겁낼 것 없는 이유"
+    },
+    {
+     "id": "c03",
+     "layout": "years",
+     "animal": "돼지",
+     "years": [
+      1935,
+      1947,
+      1959,
+      1971,
+      1983,
+      1995,
+      2007
+     ],
+     "title": "돼지띠 출생연도별 풀이 (35·47·59·71·83·95·07년생)"
+    },
+    {
+     "id": "c04",
+     "layout": "years",
+     "animal": "토끼",
+     "years": [
+      1939,
+      1951,
+      1963,
+      1975,
+      1987,
+      1999
+     ],
+     "title": "토끼띠 출생연도별 풀이 (39·51·63·75·87·99년생)"
+    },
+    {
+     "id": "c05",
+     "layout": "years",
+     "animal": "양",
+     "years": [
+      1931,
+      1943,
+      1955,
+      1967,
+      1979,
+      1991,
+      2003
+     ],
+     "title": "양띠 출생연도별 풀이 (31·43·55·67·79·91·03년생)"
+    },
+    {
+     "id": "c06",
+     "layout": "card",
+     "topic": "tip1",
+     "title": "날삼재 잘 넘기는 법 첫째"
+    },
+    {
+     "id": "c07",
+     "layout": "card",
+     "topic": "tip2",
+     "title": "날삼재 잘 넘기는 법 둘째"
+    },
+    {
+     "id": "c08",
+     "layout": "card",
+     "topic": "tip3",
+     "title": "날삼재 잘 넘기는 법 셋째"
+    },
+    {
+     "id": "c09",
+     "layout": "table",
+     "table": "months3",
+     "title": "좋은 달·조심할 달 — 세 띠 한눈에"
+    },
+    {
+     "id": "c10",
+     "layout": "qa",
+     "title": "자주 묻는 질문"
+    },
+    {
+     "id": "c11",
+     "layout": "lucky",
+     "title": "행운의 색·숫자·방향"
+    }
+   ],
+   "facts": {
+    "돼지": {
+     "animal": "돼지",
+     "branch": "해",
+     "element": "물",
+     "group": "해묘미",
+     "group_animals": [
+      "돼지",
+      "토끼",
+      "양"
+     ],
+     "sinsal_2027": "화개살",
+     "sinsal_plain": "빛나는 덮개, 마음이 깊어지는 해",
+     "sinsal_advice": "배움·정리·신앙에 좋은 때 — 혼자 끙끙대지 않기",
+     "samjae_2027": "날삼재",
+     "samjae_plain": "삼재가 나가는 마지막 해",
+     "samjae_years": {
+      "now": [
+       2025,
+       2026,
+       2027
+      ],
+      "next": [
+       2037,
+       2038,
+       2039
+      ]
+     },
+     "relations_with_2027": [
+      "삼합"
+     ],
+     "relation_main": "삼합",
+     "relation_plain": [
+      "한 팀(해묘미 삼합)"
+     ],
+     "stem_ding_is": "재성",
+     "branch_mi_is": "관성",
+     "energy_plain": [
+      "정(丁) 불 → 재물 기운",
+      "미(未) 흙 → 나를 다잡는 기운(맡을 일이 늚)"
+     ],
+     "tier_total": "대길",
+     "tier_total_line": "해묘미 삼합",
+     "tier_money": "대길",
+     "tier_money_line": "재물 기운·삼합",
+     "months_good": [
+      2,
+      3,
+      7
+     ],
+     "months_good_why": [
+      "2월 육합",
+      "3월 삼합",
+      "7월 삼합"
+     ],
+     "months_caution": [
+      5,
+      4
+     ],
+     "months_caution_why": [
+      "5월 충",
+      "4월 원진"
+     ],
+     "months_money_good": [
+      2,
+      6,
+      3
+     ],
+     "months_money_caution": [
+      5,
+      11,
+      12
+     ],
+     "months_body_good": [
+      8,
+      9,
+      2
+     ],
+     "months_body_caution": [
+      4,
+      5,
+      1
+     ],
+     "months_trip_good": [
+      2,
+      3
+     ],
+     "health": {
+      "part": "허리·콩팥",
+      "why": "흙이 물을 누름",
+      "habit": "물 자주 마시기",
+      "line": "삼합·모여 걷기"
+     },
+     "lucky": {
+      "colors": "흰색·은색",
+      "numbers": "4·9",
+      "direction": "서쪽",
+      "tip": "서쪽으로 산책",
+      "element": "쇠",
+      "why": "쇠가 이어 줘요"
+     },
+     "years": [
+      {
+       "year": 1935,
+       "yy": "35",
+       "age_2027": 92,
+       "hwangap": false,
+       "stem_god": "식신",
+       "good": "먹을 복·자식",
+       "good_line": "넉넉한 해",
+       "caution": "늘어지기",
+       "caution_line": "자주 걷기",
+       "stem_note": "",
+       "decade": "1930년대"
+      },
+      {
+       "year": 1947,
+       "yy": "47",
+       "age_2027": 80,
+       "hwangap": false,
+       "stem_god": "비견",
+       "good": "친구·자신감",
+       "good_line": "친구가 힘인 해",
+       "caution": "혼자 결정",
+       "caution_line": "의논하고 정하기",
+       "stem_note": "",
+       "decade": "1940년대"
+      },
+      {
+       "year": 1959,
+       "yy": "59",
+       "age_2027": 68,
+       "hwangap": false,
+       "stem_god": "편인",
+       "good": "배움·취미",
+       "good_line": "배우기 좋은 해",
+       "caution": "걱정 많음",
+       "caution_line": "생각은 짧게",
+       "stem_note": "",
+       "decade": "1950년대"
+      },
+      {
+       "year": 1971,
+       "yy": "71",
+       "age_2027": 56,
+       "hwangap": false,
+       "stem_god": "편관",
+       "good": "결단·정리",
+       "good_line": "미룬 일 끝내기",
+       "caution": "무리한 일정",
+       "caution_line": "쉬어 가며 하기",
+       "stem_note": "",
+       "decade": "1970년대"
+      },
+      {
+       "year": 1983,
+       "yy": "83",
+       "age_2027": 44,
+       "hwangap": false,
+       "stem_god": "편재",
+       "good": "큰돈 흐름",
+       "good_line": "돈이 크게 도는 해",
+       "caution": "돈 약속",
+       "caution_line": "서명은 천천히",
+       "stem_note": "정계 천간충 — 서명·돈 약속은 천천히",
+       "decade": "1980년대"
+      },
+      {
+       "year": 1995,
+       "yy": "95",
+       "age_2027": 32,
+       "hwangap": false,
+       "stem_god": "식신",
+       "good": "먹을 복·자식",
+       "good_line": "넉넉한 해",
+       "caution": "늘어지기",
+       "caution_line": "자주 걷기",
+       "stem_note": "",
+       "decade": "1990년대"
+      },
+      {
+       "year": 2007,
+       "yy": "07",
+       "age_2027": 20,
+       "hwangap": false,
+       "stem_god": "비견",
+       "good": "친구·자신감",
+       "good_line": "친구가 힘인 해",
+       "caution": "혼자 결정",
+       "caution_line": "의논하고 정하기",
+       "stem_note": "",
+       "decade": "2000년대"
+      }
+     ]
+    },
+    "토끼": {
+     "animal": "토끼",
+     "branch": "묘",
+     "element": "나무",
+     "group": "해묘미",
+     "group_animals": [
+      "돼지",
+      "토끼",
+      "양"
+     ],
+     "sinsal_2027": "화개살",
+     "sinsal_plain": "빛나는 덮개, 마음이 깊어지는 해",
+     "sinsal_advice": "배움·정리·신앙에 좋은 때 — 혼자 끙끙대지 않기",
+     "samjae_2027": "날삼재",
+     "samjae_plain": "삼재가 나가는 마지막 해",
+     "samjae_years": {
+      "now": [
+       2025,
+       2026,
+       2027
+      ],
+      "next": [
+       2037,
+       2038,
+       2039
+      ]
+     },
+     "relations_with_2027": [
+      "삼합"
+     ],
+     "relation_main": "삼합",
+     "relation_plain": [
+      "한 팀(해묘미 삼합)"
+     ],
+     "stem_ding_is": "식상",
+     "branch_mi_is": "재성",
+     "energy_plain": [
+      "정(丁) 불 → 내가 베푸는 기운(재물을 낳음)",
+      "미(未) 흙 → 재물 기운"
+     ],
+     "tier_total": "대길",
+     "tier_total_line": "해묘미 삼합",
+     "tier_money": "대길",
+     "tier_money_line": "재물 기운·삼합",
+     "months_good": [
+      10,
+      7,
+      11
+     ],
+     "months_good_why": [
+      "10월 육합",
+      "7월 삼합",
+      "11월 삼합"
+     ],
+     "months_caution": [
+      9,
+      8,
+      12
+     ],
+     "months_caution_why": [
+      "9월 충",
+      "8월 원진",
+      "12월 형"
+     ],
+     "months_money_good": [
+      10,
+      7,
+      1
+     ],
+     "months_money_caution": [
+      9,
+      2,
+      3
+     ],
+     "months_body_good": [
+      11,
+      2,
+      3
+     ],
+     "months_body_caution": [
+      9,
+      8,
+      12
+     ],
+     "months_trip_good": [
+      5,
+      6
+     ],
+     "health": {
+      "part": "눈·피로",
+      "why": "불로 기운이 빠짐",
+      "habit": "일찍 자기",
+      "line": "삼합·모여 걷기"
+     },
+     "lucky": {
+      "colors": "검정·남색",
+      "numbers": "1·6",
+      "direction": "북쪽",
+      "tip": "북쪽 창 환기",
+      "element": "물",
+      "why": "물이 채워 줘요"
+     },
+     "years": [
+      {
+       "year": 1939,
+       "yy": "39",
+       "age_2027": 88,
+       "hwangap": false,
+       "stem_god": "편인",
+       "good": "배움·취미",
+       "good_line": "배우기 좋은 해",
+       "caution": "걱정 많음",
+       "caution_line": "생각은 짧게",
+       "stem_note": "",
+       "decade": "1930년대"
+      },
+      {
+       "year": 1951,
+       "yy": "51",
+       "age_2027": 76,
+       "hwangap": false,
+       "stem_god": "편관",
+       "good": "결단·정리",
+       "good_line": "미룬 일 끝내기",
+       "caution": "무리한 일정",
+       "caution_line": "쉬어 가며 하기",
+       "stem_note": "",
+       "decade": "1950년대"
+      },
+      {
+       "year": 1963,
+       "yy": "63",
+       "age_2027": 64,
+       "hwangap": false,
+       "stem_god": "편재",
+       "good": "큰돈 흐름",
+       "good_line": "돈이 크게 도는 해",
+       "caution": "돈 약속",
+       "caution_line": "서명은 천천히",
+       "stem_note": "정계 천간충 — 서명·돈 약속은 천천히",
+       "decade": "1960년대"
+      },
+      {
+       "year": 1975,
+       "yy": "75",
+       "age_2027": 52,
+       "hwangap": false,
+       "stem_god": "식신",
+       "good": "먹을 복·자식",
+       "good_line": "넉넉한 해",
+       "caution": "늘어지기",
+       "caution_line": "자주 걷기",
+       "stem_note": "",
+       "decade": "1970년대"
+      },
+      {
+       "year": 1987,
+       "yy": "87",
+       "age_2027": 40,
+       "hwangap": false,
+       "stem_god": "비견",
+       "good": "친구·자신감",
+       "good_line": "친구가 힘인 해",
+       "caution": "혼자 결정",
+       "caution_line": "의논하고 정하기",
+       "stem_note": "",
+       "decade": "1980년대"
+      },
+      {
+       "year": 1999,
+       "yy": "99",
+       "age_2027": 28,
+       "hwangap": false,
+       "stem_god": "편인",
+       "good": "배움·취미",
+       "good_line": "배우기 좋은 해",
+       "caution": "걱정 많음",
+       "caution_line": "생각은 짧게",
+       "stem_note": "",
+       "decade": "1990년대"
+      }
+     ]
+    },
+    "양": {
+     "animal": "양",
+     "branch": "미",
+     "element": "흙",
+     "group": "해묘미",
+     "group_animals": [
+      "돼지",
+      "토끼",
+      "양"
+     ],
+     "sinsal_2027": "화개살",
+     "sinsal_plain": "빛나는 덮개, 마음이 깊어지는 해",
+     "sinsal_advice": "배움·정리·신앙에 좋은 때 — 혼자 끙끙대지 않기",
+     "samjae_2027": "날삼재",
+     "samjae_plain": "삼재가 나가는 마지막 해",
+     "samjae_years": {
+      "now": [
+       2025,
+       2026,
+       2027
+      ],
+      "next": [
+       2037,
+       2038,
+       2039
+      ]
+     },
+     "relations_with_2027": [
+      "같은 띠"
+     ],
+     "relation_main": "같은 띠",
+     "relation_plain": [
+      "내 띠의 해 — 기운이 겹쳐요"
+     ],
+     "stem_ding_is": "인성",
+     "branch_mi_is": "비겁",
+     "energy_plain": [
+      "정(丁) 불 → 나를 돕는 기운",
+      "미(未) 흙 → 나와 같은 기운"
+     ],
+     "tier_total": "길",
+     "tier_total_line": "내 띠의 해",
+     "tier_money": "보통",
+     "tier_money_line": "씀씀이 챙길 해",
+     "months_good": [
+      6,
+      3,
+      11
+     ],
+     "months_good_why": [
+      "6월 육합",
+      "3월 삼합",
+      "11월 삼합"
+     ],
+     "months_caution": [
+      1,
+      12,
+      10
+     ],
+     "months_caution_why": [
+      "1월 충",
+      "12월 원진",
+      "10월 형"
+     ],
+     "months_money_good": [
+      11,
+      6,
+      8
+     ],
+     "months_money_caution": [
+      1,
+      4,
+      7
+     ],
+     "months_body_good": [
+      6,
+      5,
+      4
+     ],
+     "months_body_caution": [
+      1,
+      2,
+      10
+     ],
+     "months_trip_good": [
+      5,
+      8,
+      9
+     ],
+     "health": {
+      "part": "위장·소화",
+      "why": "흙 기운이 겹침",
+      "habit": "천천히 먹기",
+      "line": "내 띠의 해·천천히"
+     },
+     "lucky": {
+      "colors": "초록·연두",
+      "numbers": "3·8",
+      "direction": "동쪽",
+      "tip": "동쪽 창 열기",
+      "element": "나무",
+      "why": "나무가 흙을 풀어요"
+     },
+     "years": [
+      {
+       "year": 1931,
+       "yy": "31",
+       "age_2027": 96,
+       "hwangap": false,
+       "stem_god": "편관",
+       "good": "결단·정리",
+       "good_line": "미룬 일 끝내기",
+       "caution": "무리한 일정",
+       "caution_line": "쉬어 가며 하기",
+       "stem_note": "",
+       "decade": "1930년대"
+      },
+      {
+       "year": 1943,
+       "yy": "43",
+       "age_2027": 84,
+       "hwangap": false,
+       "stem_god": "편재",
+       "good": "큰돈 흐름",
+       "good_line": "돈이 크게 도는 해",
+       "caution": "돈 약속",
+       "caution_line": "서명은 천천히",
+       "stem_note": "정계 천간충 — 서명·돈 약속은 천천히",
+       "decade": "1940년대"
+      },
+      {
+       "year": 1955,
+       "yy": "55",
+       "age_2027": 72,
+       "hwangap": false,
+       "stem_god": "식신",
+       "good": "먹을 복·자식",
+       "good_line": "넉넉한 해",
+       "caution": "늘어지기",
+       "caution_line": "자주 걷기",
+       "stem_note": "",
+       "decade": "1950년대"
+      },
+      {
+       "year": 1967,
+       "yy": "67",
+       "age_2027": 60,
+       "hwangap": true,
+       "stem_god": "비견",
+       "good": "친구·자신감",
+       "good_line": "친구가 힘인 해",
+       "caution": "혼자 결정",
+       "caution_line": "의논하고 정하기",
+       "stem_note": "",
+       "decade": "1960년대"
+      },
+      {
+       "year": 1979,
+       "yy": "79",
+       "age_2027": 48,
+       "hwangap": false,
+       "stem_god": "편인",
+       "good": "배움·취미",
+       "good_line": "배우기 좋은 해",
+       "caution": "걱정 많음",
+       "caution_line": "생각은 짧게",
+       "stem_note": "",
+       "decade": "1970년대"
+      },
+      {
+       "year": 1991,
+       "yy": "91",
+       "age_2027": 36,
+       "hwangap": false,
+       "stem_god": "편관",
+       "good": "결단·정리",
+       "good_line": "미룬 일 끝내기",
+       "caution": "무리한 일정",
+       "caution_line": "쉬어 가며 하기",
+       "stem_note": "",
+       "decade": "1990년대"
+      },
+      {
+       "year": 2003,
+       "yy": "03",
+       "age_2027": 24,
+       "hwangap": false,
+       "stem_god": "편재",
+       "good": "큰돈 흐름",
+       "good_line": "돈이 크게 도는 해",
+       "caution": "돈 약속",
+       "caution_line": "서명은 천천히",
+       "stem_note": "정계 천간충 — 서명·돈 약속은 천천히",
+       "decade": "2000년대"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "E03",
+   "publish": "2026-11-06",
+   "weekday": "금",
+   "kind": "group",
+   "group": "인오술",
+   "animals": [
+    "호랑이",
+    "말",
+    "개"
+   ],
+   "sinsal": "반안살",
+   "samjae": "",
+   "title": "2027년 반안살 드는 띠 호랑이띠·말띠·개띠 | 기운 살리는 3가지 · 출생연도별 풀이",
+   "search": "2027년 반안살 드는 띠 호랑이띠·말띠·개띠",
+   "thumb": {
+    "big": "2027 반안살",
+    "sub": "호랑이·말·개띠",
+    "pill": "기운 살리는 3가지"
+   },
+   "angle": "반안살은 말 안장에 오르는 기운 — 자리·명예·안정. 말띠는 정미년과 육합까지, 개띠는 형이 겹치니 서두르지 않기. 내년(2028)이 이 세 띠의 들삼재라 '미리 준비'도 한 꼭지.",
+   "qa_seeds": [
+    "반안살이 든 해에는 이사나 큰 계약을 미뤄야 하나요?",
+    "개띠는 반안살에 형까지 겹친다는데 어떻게 지내면 좋을까요?",
+    "호랑이띠·말띠·개띠 부부라면 둘 다 반안살인데 괜찮을까요?",
+    "양력 일월생인데 제 띠가 맞는지 헷갈려요."
+   ],
+   "next": "E04",
+   "next_title": "2027년 월살 드는 띠 뱀띠·닭띠·소띠 | 조심할 달과 꼭 지킬 3가지 · 출생연도별 풀이",
+   "publish_kst": "2026-11-06 20:00",
+   "chapters": [
+    {
+     "id": "c01",
+     "layout": "table",
+     "table": "sinsal12",
+     "title": "2027 정미년 12띠 신살 표 — 내 띠는 어디에"
+    },
+    {
+     "id": "c02",
+     "layout": "card",
+     "topic": "about",
+     "title": "반안살이란 — 기운 살리는 해"
+    },
+    {
+     "id": "c03",
+     "layout": "years",
+     "animal": "호랑이",
+     "years": [
+      1938,
+      1950,
+      1962,
+      1974,
+      1986,
+      1998
+     ],
+     "title": "호랑이띠 출생연도별 풀이 (38·50·62·74·86·98년생)"
+    },
+    {
+     "id": "c04",
+     "layout": "years",
+     "animal": "말",
+     "years": [
+      1930,
+      1942,
+      1954,
+      1966,
+      1978,
+      1990,
+      2002
+     ],
+     "title": "말띠 출생연도별 풀이 (30·42·54·66·78·90·02년생)"
+    },
+    {
+     "id": "c05",
+     "layout": "years",
+     "animal": "개",
+     "years": [
+      1934,
+      1946,
+      1958,
+      1970,
+      1982,
+      1994,
+      2006
+     ],
+     "title": "개띠 출생연도별 풀이 (34·46·58·70·82·94·06년생)"
+    },
+    {
+     "id": "c06",
+     "layout": "card",
+     "topic": "tip1",
+     "title": "꼭 챙길 것 첫째"
+    },
+    {
+     "id": "c07",
+     "layout": "card",
+     "topic": "tip2",
+     "title": "꼭 챙길 것 둘째"
+    },
+    {
+     "id": "c08",
+     "layout": "card",
+     "topic": "tip3",
+     "title": "꼭 챙길 것 셋째"
+    },
+    {
+     "id": "c09",
+     "layout": "table",
+     "table": "months3",
+     "title": "좋은 달·조심할 달 — 세 띠 한눈에"
+    },
+    {
+     "id": "c10",
+     "layout": "qa",
+     "title": "자주 묻는 질문"
+    },
+    {
+     "id": "c11",
+     "layout": "lucky",
+     "title": "행운의 색·숫자·방향"
+    }
+   ],
+   "facts": {
+    "호랑이": {
+     "animal": "호랑이",
+     "branch": "인",
+     "element": "나무",
+     "group": "인오술",
+     "group_animals": [
+      "호랑이",
+      "말",
+      "개"
+     ],
+     "sinsal_2027": "반안살",
+     "sinsal_plain": "말 안장에 오르는 해",
+     "sinsal_advice": "자리를 다지고 명예를 챙기기 좋은 때 — 기운 살리는 해",
+     "samjae_2027": "",
+     "samjae_plain": "",
+     "samjae_years": {
+      "last": [
+       2016,
+       2017,
+       2018
+      ],
+      "next": [
+       2028,
+       2029,
+       2030
+      ]
+     },
+     "relations_with_2027": [],
+     "relation_main": "",
+     "relation_plain": [],
+     "stem_ding_is": "식상",
+     "branch_mi_is": "재성",
+     "energy_plain": [
+      "정(丁) 불 → 내가 베푸는 기운(재물을 낳음)",
+      "미(未) 흙 → 재물 기운"
+     ],
+     "tier_total": "보통",
+     "tier_total_line": "베풀수록 좋은 해",
+     "tier_money": "길",
+     "tier_money_line": "재물 기운 드는 해",
+     "months_good": [
+      11,
+      6,
+      10
+     ],
+     "months_good_why": [
+      "11월 육합",
+      "6월 삼합",
+      "10월 삼합"
+     ],
+     "months_caution": [
+      8,
+      9,
+      5
+     ],
+     "months_caution_why": [
+      "8월 충",
+      "9월 원진",
+      "5월 형"
+     ],
+     "months_money_good": [
+      10,
+      1,
+      4
+     ],
+     "months_money_caution": [
+      8,
+      2,
+      3
+     ],
+     "months_body_good": [
+      11,
+      12,
+      2
+     ],
+     "months_body_caution": [
+      8,
+      9,
+      5
+     ],
+     "months_trip_good": [
+      6
+     ],
+     "health": {
+      "part": "눈·피로",
+      "why": "불로 기운이 빠짐",
+      "habit": "일찍 자기",
+      "line": "눈 자주 쉬기"
+     },
+     "lucky": {
+      "colors": "검정·남색",
+      "numbers": "1·6",
+      "direction": "북쪽",
+      "tip": "북쪽 창 환기",
+      "element": "물",
+      "why": "물이 채워 줘요"
+     },
+     "years": [
+      {
+       "year": 1938,
+       "yy": "38",
+       "age_2027": 89,
+       "hwangap": false,
+       "stem_god": "정인",
+       "good": "문서·도장",
+       "good_line": "도움 받는 해",
+       "caution": "미루기",
+       "caution_line": "때 놓치지 않기",
+       "stem_note": "",
+       "decade": "1930년대"
+      },
+      {
+       "year": 1950,
+       "yy": "50",
+       "age_2027": 77,
+       "hwangap": false,
+       "stem_god": "정관",
+       "good": "명예·자리",
+       "good_line": "체면이 서는 해",
+       "caution": "체면 지출",
+       "caution_line": "겉치레 줄이기",
+       "stem_note": "",
+       "decade": "1950년대"
+      },
+      {
+       "year": 1962,
+       "yy": "62",
+       "age_2027": 65,
+       "hwangap": false,
+       "stem_god": "정재",
+       "good": "돈·인연",
+       "good_line": "합이 드는 해",
+       "caution": "정에 끌린 돈",
+       "caution_line": "빌려주기 조심",
+       "stem_note": "정임 천간합 — 돈과 인연이 붙는 해",
+       "decade": "1960년대"
+      },
+      {
+       "year": 1974,
+       "yy": "74",
+       "age_2027": 53,
+       "hwangap": false,
+       "stem_god": "상관",
+       "good": "재주·말솜씨",
+       "good_line": "솜씨 보일 해",
+       "caution": "말실수",
+       "caution_line": "한 번 더 생각",
+       "stem_note": "",
+       "decade": "1970년대"
+      },
+      {
+       "year": 1986,
+       "yy": "86",
+       "age_2027": 41,
+       "hwangap": false,
+       "stem_god": "겁재",
+       "good": "형제·동료",
+       "good_line": "함께하면 좋은 해",
+       "caution": "돈거래",
+       "caution_line": "같이 쓰는 돈 정리",
+       "stem_note": "",
+       "decade": "1980년대"
+      },
+      {
+       "year": 1998,
+       "yy": "98",
+       "age_2027": 29,
+       "hwangap": false,
+       "stem_god": "정인",
+       "good": "문서·도장",
+       "good_line": "도움 받는 해",
+       "caution": "미루기",
+       "caution_line": "때 놓치지 않기",
+       "stem_note": "",
+       "decade": "1990년대"
+      }
+     ]
+    },
+    "말": {
+     "animal": "말",
+     "branch": "오",
+     "element": "불",
+     "group": "인오술",
+     "group_animals": [
+      "호랑이",
+      "말",
+      "개"
+     ],
+     "sinsal_2027": "반안살",
+     "sinsal_plain": "말 안장에 오르는 해",
+     "sinsal_advice": "자리를 다지고 명예를 챙기기 좋은 때 — 기운 살리는 해",
+     "samjae_2027": "",
+     "samjae_plain": "",
+     "samjae_years": {
+      "last": [
+       2016,
+       2017,
+       2018
+      ],
+      "next": [
+       2028,
+       2029,
+       2030
+      ]
+     },
+     "relations_with_2027": [
+      "육합"
+     ],
+     "relation_main": "육합",
+     "relation_plain": [
+      "손발이 맞는 짝(육합)"
+     ],
+     "stem_ding_is": "비겁",
+     "branch_mi_is": "식상",
+     "energy_plain": [
+      "정(丁) 불 → 나와 같은 기운",
+      "미(未) 흙 → 내가 베푸는 기운(재물을 낳음)"
+     ],
+     "tier_total": "대길",
+     "tier_total_line": "정미년과 육합",
+     "tier_money": "길",
+     "tier_money_line": "정미년과 육합",
+     "months_good": [
+      7,
+      2,
+      10
+     ],
+     "months_good_why": [
+      "7월 육합",
+      "2월 삼합",
+      "10월 삼합"
+     ],
+     "months_caution": [
+      12,
+      1
+     ],
+     "months_caution_why": [
+      "12월 충",
+      "1월 원진"
+     ],
+     "months_money_good": [
+      7,
+      8,
+      9
+     ],
+     "months_money_caution": [
+      12,
+      5,
+      6
+     ],
+     "months_body_good": [
+      2,
+      3,
+      5
+     ],
+     "months_body_caution": [
+      12,
+      11,
+      1
+     ],
+     "months_trip_good": [
+      8,
+      1,
+      4
+     ],
+     "health": {
+      "part": "심장·열",
+      "why": "불 기운이 겹침",
+      "habit": "더울 땐 쉬기",
+      "line": "합·같이 걷기"
+     },
+     "lucky": {
+      "colors": "노랑·황토",
+      "numbers": "5·10",
+      "direction": "가운데",
+      "tip": "집 가운데 정리",
+      "element": "흙",
+      "why": "흙이 열을 덜어요"
+     },
+     "years": [
+      {
+       "year": 1930,
+       "yy": "30",
+       "age_2027": 97,
+       "hwangap": false,
+       "stem_god": "정관",
+       "good": "명예·자리",
+       "good_line": "체면이 서는 해",
+       "caution": "체면 지출",
+       "caution_line": "겉치레 줄이기",
+       "stem_note": "",
+       "decade": "1930년대"
+      },
+      {
+       "year": 1942,
+       "yy": "42",
+       "age_2027": 85,
+       "hwangap": false,
+       "stem_god": "정재",
+       "good": "돈·인연",
+       "good_line": "합이 드는 해",
+       "caution": "정에 끌린 돈",
+       "caution_line": "빌려주기 조심",
+       "stem_note": "정임 천간합 — 돈과 인연이 붙는 해",
+       "decade": "1940년대"
+      },
+      {
+       "year": 1954,
+       "yy": "54",
+       "age_2027": 73,
+       "hwangap": false,
+       "stem_god": "상관",
+       "good": "재주·말솜씨",
+       "good_line": "솜씨 보일 해",
+       "caution": "말실수",
+       "caution_line": "한 번 더 생각",
+       "stem_note": "",
+       "decade": "1950년대"
+      },
+      {
+       "year": 1966,
+       "yy": "66",
+       "age_2027": 61,
+       "hwangap": false,
+       "stem_god": "겁재",
+       "good": "형제·동료",
+       "good_line": "함께하면 좋은 해",
+       "caution": "돈거래",
+       "caution_line": "같이 쓰는 돈 정리",
+       "stem_note": "",
+       "decade": "1960년대"
+      },
+      {
+       "year": 1978,
+       "yy": "78",
+       "age_2027": 49,
+       "hwangap": false,
+       "stem_god": "정인",
+       "good": "문서·도장",
+       "good_line": "도움 받는 해",
+       "caution": "미루기",
+       "caution_line": "때 놓치지 않기",
+       "stem_note": "",
+       "decade": "1970년대"
+      },
+      {
+       "year": 1990,
+       "yy": "90",
+       "age_2027": 37,
+       "hwangap": false,
+       "stem_god": "정관",
+       "good": "명예·자리",
+       "good_line": "체면이 서는 해",
+       "caution": "체면 지출",
+       "caution_line": "겉치레 줄이기",
+       "stem_note": "",
+       "decade": "1990년대"
+      },
+      {
+       "year": 2002,
+       "yy": "02",
+       "age_2027": 25,
+       "hwangap": false,
+       "stem_god": "정재",
+       "good": "돈·인연",
+       "good_line": "합이 드는 해",
+       "caution": "정에 끌린 돈",
+       "caution_line": "빌려주기 조심",
+       "stem_note": "정임 천간합 — 돈과 인연이 붙는 해",
+       "decade": "2000년대"
+      }
+     ]
+    },
+    "개": {
+     "animal": "개",
+     "branch": "술",
+     "element": "흙",
+     "group": "인오술",
+     "group_animals": [
+      "호랑이",
+      "말",
+      "개"
+     ],
+     "sinsal_2027": "반안살",
+     "sinsal_plain": "말 안장에 오르는 해",
+     "sinsal_advice": "자리를 다지고 명예를 챙기기 좋은 때 — 기운 살리는 해",
+     "samjae_2027": "",
+     "samjae_plain": "",
+     "samjae_years": {
+      "last": [
+       2016,
+       2017,
+       2018
+      ],
+      "next": [
+       2028,
+       2029,
+       2030
+      ]
+     },
+     "relations_with_2027": [
+      "형",
+      "파"
+     ],
+     "relation_main": "형",
+     "relation_plain": [
+      "서두르면 엇나가는 사이(축술미 형) — 한 박자 쉬기",
+      "약속이 흔들리는 사이(파) — 약속 다시 확인"
+     ],
+     "stem_ding_is": "인성",
+     "branch_mi_is": "비겁",
+     "energy_plain": [
+      "정(丁) 불 → 나를 돕는 기운",
+      "미(未) 흙 → 나와 같은 기운"
+     ],
+     "tier_total": "조심",
+     "tier_total_line": "형·서두르지 않기",
+     "tier_money": "조심",
+     "tier_money_line": "형·돈 약속 조심",
+     "months_good": [
+      3,
+      2,
+      6
+     ],
+     "months_good_why": [
+      "3월 육합",
+      "2월 삼합",
+      "6월 삼합"
+     ],
+     "months_caution": [
+      4,
+      5,
+      1
+     ],
+     "months_caution_why": [
+      "4월 충",
+      "5월 원진",
+      "1월 형"
+     ],
+     "months_money_good": [
+      11,
+      12,
+      3
+     ],
+     "months_money_caution": [
+      4,
+      1,
+      7
+     ],
+     "months_body_good": [
+      6,
+      10
+     ],
+     "months_body_caution": [
+      4,
+      1,
+      5
+     ],
+     "months_trip_good": [
+      8,
+      9
+     ],
+     "health": {
+      "part": "위장·소화",
+      "why": "흙 기운이 겹침",
+      "habit": "천천히 먹기",
+      "line": "형·넘어짐 조심"
+     },
+     "lucky": {
+      "colors": "초록·연두",
+      "numbers": "3·8",
+      "direction": "동쪽",
+      "tip": "동쪽 창 열기",
+      "element": "나무",
+      "why": "나무가 흙을 풀어요"
+     },
+     "years": [
+      {
+       "year": 1934,
+       "yy": "34",
+       "age_2027": 93,
+       "hwangap": false,
+       "stem_god": "상관",
+       "good": "재주·말솜씨",
+       "good_line": "솜씨 보일 해",
+       "caution": "말실수",
+       "caution_line": "한 번 더 생각",
+       "stem_note": "",
+       "decade": "1930년대"
+      },
+      {
+       "year": 1946,
+       "yy": "46",
+       "age_2027": 81,
+       "hwangap": false,
+       "stem_god": "겁재",
+       "good": "형제·동료",
+       "good_line": "함께하면 좋은 해",
+       "caution": "돈거래",
+       "caution_line": "같이 쓰는 돈 정리",
+       "stem_note": "",
+       "decade": "1940년대"
+      },
+      {
+       "year": 1958,
+       "yy": "58",
+       "age_2027": 69,
+       "hwangap": false,
+       "stem_god": "정인",
+       "good": "문서·도장",
+       "good_line": "도움 받는 해",
+       "caution": "미루기",
+       "caution_line": "때 놓치지 않기",
+       "stem_note": "",
+       "decade": "1950년대"
+      },
+      {
+       "year": 1970,
+       "yy": "70",
+       "age_2027": 57,
+       "hwangap": false,
+       "stem_god": "정관",
+       "good": "명예·자리",
+       "good_line": "체면이 서는 해",
+       "caution": "체면 지출",
+       "caution_line": "겉치레 줄이기",
+       "stem_note": "",
+       "decade": "1970년대"
+      },
+      {
+       "year": 1982,
+       "yy": "82",
+       "age_2027": 45,
+       "hwangap": false,
+       "stem_god": "정재",
+       "good": "돈·인연",
+       "good_line": "합이 드는 해",
+       "caution": "정에 끌린 돈",
+       "caution_line": "빌려주기 조심",
+       "stem_note": "정임 천간합 — 돈과 인연이 붙는 해",
+       "decade": "1980년대"
+      },
+      {
+       "year": 1994,
+       "yy": "94",
+       "age_2027": 33,
+       "hwangap": false,
+       "stem_god": "상관",
+       "good": "재주·말솜씨",
+       "good_line": "솜씨 보일 해",
+       "caution": "말실수",
+       "caution_line": "한 번 더 생각",
+       "stem_note": "",
+       "decade": "1990년대"
+      },
+      {
+       "year": 2006,
+       "yy": "06",
+       "age_2027": 21,
+       "hwangap": false,
+       "stem_god": "겁재",
+       "good": "형제·동료",
+       "good_line": "함께하면 좋은 해",
+       "caution": "돈거래",
+       "caution_line": "같이 쓰는 돈 정리",
+       "stem_note": "",
+       "decade": "2000년대"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "E04",
+   "publish": "2026-11-09",
+   "weekday": "월",
+   "kind": "group",
+   "group": "사유축",
+   "animals": [
+    "뱀",
+    "닭",
+    "소"
+   ],
+   "sinsal": "월살",
+   "samjae": "",
+   "title": "2027년 월살 드는 띠 뱀띠·닭띠·소띠 | 조심할 달과 꼭 지킬 3가지 · 출생연도별 풀이",
+   "search": "2027년 월살 드는 띠 뱀띠·닭띠·소띠",
+   "thumb": {
+    "big": "2027 월살",
+    "sub": "뱀·닭·소띠",
+    "pill": "꼭 지킬 3가지"
+   },
+   "angle": "월살은 달빛이 마른 듯 쉬어 가는 기운 — 서두르지 말고 준비·저축. 소띠는 정미년과 충까지 겹치니 큰 결정은 천천히. 조심할 달을 달력처럼 짚어 준다.",
+   "qa_seeds": [
+    "월살이 든 해에는 이사나 큰 계약을 미뤄야 하나요?",
+    "소띠는 월살에 형까지 겹친다는데 어떻게 지내면 좋을까요?",
+    "소띠는 월살에 충까지 겹친다는데 어떻게 지내면 좋을까요?",
+    "뱀띠·닭띠·소띠 부부라면 둘 다 월살인데 괜찮을까요?",
+    "양력 일월생인데 제 띠가 맞는지 헷갈려요."
+   ],
+   "next": "E05",
+   "next_title": "2027년 양띠 운세 | 내 띠의 해 · 날삼재 잘 넘기는 법 · 출생연도별 풀이",
+   "publish_kst": "2026-11-09 20:00",
+   "chapters": [
+    {
+     "id": "c01",
+     "layout": "table",
+     "table": "sinsal12",
+     "title": "2027 정미년 12띠 신살 표 — 내 띠는 어디에"
+    },
+    {
+     "id": "c02",
+     "layout": "card",
+     "topic": "about",
+     "title": "월살이란 — 겁낼 것 없는 이유"
+    },
+    {
+     "id": "c03",
+     "layout": "years",
+     "animal": "뱀",
+     "years": [
+      1941,
+      1953,
+      1965,
+      1977,
+      1989,
+      2001
+     ],
+     "title": "뱀띠 출생연도별 풀이 (41·53·65·77·89·01년생)"
+    },
+    {
+     "id": "c04",
+     "layout": "years",
+     "animal": "닭",
+     "years": [
+      1933,
+      1945,
+      1957,
+      1969,
+      1981,
+      1993,
+      2005
+     ],
+     "title": "닭띠 출생연도별 풀이 (33·45·57·69·81·93·05년생)"
+    },
+    {
+     "id": "c05",
+     "layout": "years",
+     "animal": "소",
+     "years": [
+      1937,
+      1949,
+      1961,
+      1973,
+      1985,
+      1997,
+      2009
+     ],
+     "title": "소띠 출생연도별 풀이 (37·49·61·73·85·97·09년생)"
+    },
+    {
+     "id": "c06",
+     "layout": "card",
+     "topic": "tip1",
+     "title": "꼭 지킬 것 첫째"
+    },
+    {
+     "id": "c07",
+     "layout": "card",
+     "topic": "tip2",
+     "title": "꼭 지킬 것 둘째"
+    },
+    {
+     "id": "c08",
+     "layout": "card",
+     "topic": "tip3",
+     "title": "꼭 지킬 것 셋째"
+    },
+    {
+     "id": "c09",
+     "layout": "table",
+     "table": "months3",
+     "title": "좋은 달·조심할 달 — 세 띠 한눈에"
+    },
+    {
+     "id": "c10",
+     "layout": "qa",
+     "title": "자주 묻는 질문"
+    },
+    {
+     "id": "c11",
+     "layout": "lucky",
+     "title": "행운의 색·숫자·방향"
+    }
+   ],
+   "facts": {
+    "뱀": {
+     "animal": "뱀",
+     "branch": "사",
+     "element": "불",
+     "group": "사유축",
+     "group_animals": [
+      "뱀",
+      "닭",
+      "소"
+     ],
+     "sinsal_2027": "월살",
+     "sinsal_plain": "달빛이 마른 듯 쉬어 가는 해",
+     "sinsal_advice": "서두르지 말고 준비·저축으로 속을 채우기",
+     "samjae_2027": "",
+     "samjae_plain": "",
+     "samjae_years": {
+      "last": [
+       2019,
+       2020,
+       2021
+      ],
+      "next": [
+       2031,
+       2032,
+       2033
+      ]
+     },
+     "relations_with_2027": [],
+     "relation_main": "",
+     "relation_plain": [],
+     "stem_ding_is": "비겁",
+     "branch_mi_is": "식상",
+     "energy_plain": [
+      "정(丁) 불 → 나와 같은 기운",
+      "미(未) 흙 → 내가 베푸는 기운(재물을 낳음)"
+     ],
+     "tier_total": "길",
+     "tier_total_line": "같은 기운의 해",
+     "tier_money": "보통",
+     "tier_money_line": "베풀면 도는 해",
+     "months_good": [
+      8,
+      1,
+      9
+     ],
+     "months_good_why": [
+      "8월 육합",
+      "1월 삼합",
+      "9월 삼합"
+     ],
+     "months_caution": [
+      11,
+      10,
+      2
+     ],
+     "months_caution_why": [
+      "11월 충",
+      "10월 원진",
+      "2월 형"
+     ],
+     "months_money_good": [
+      8,
+      9,
+      1
+     ],
+     "months_money_caution": [
+      11,
+      5,
+      6
+     ],
+     "months_body_good": [
+      3,
+      5,
+      6
+     ],
+     "months_body_caution": [
+      11,
+      12,
+      2
+     ],
+     "months_trip_good": [
+      1,
+      4,
+      7
+     ],
+     "health": {
+      "part": "심장·열",
+      "why": "불 기운이 겹침",
+      "habit": "더울 땐 쉬기",
+      "line": "땀나면 바로 쉬기"
+     },
+     "lucky": {
+      "colors": "노랑·황토",
+      "numbers": "5·10",
+      "direction": "가운데",
+      "tip": "집 가운데 정리",
+      "element": "흙",
+      "why": "흙이 열을 덜어요"
+     },
+     "years": [
+      {
+       "year": 1941,
+       "yy": "41",
+       "age_2027": 86,
+       "hwangap": false,
+       "stem_god": "편관",
+       "good": "결단·정리",
+       "good_line": "미룬 일 끝내기",
+       "caution": "무리한 일정",
+       "caution_line": "쉬어 가며 하기",
+       "stem_note": "",
+       "decade": "1940년대"
+      },
+      {
+       "year": 1953,
+       "yy": "53",
+       "age_2027": 74,
+       "hwangap": false,
+       "stem_god": "편재",
+       "good": "큰돈 흐름",
+       "good_line": "돈이 크게 도는 해",
+       "caution": "돈 약속",
+       "caution_line": "서명은 천천히",
+       "stem_note": "정계 천간충 — 서명·돈 약속은 천천히",
+       "decade": "1950년대"
+      },
+      {
+       "year": 1965,
+       "yy": "65",
+       "age_2027": 62,
+       "hwangap": false,
+       "stem_god": "식신",
+       "good": "먹을 복·자식",
+       "good_line": "넉넉한 해",
+       "caution": "늘어지기",
+       "caution_line": "자주 걷기",
+       "stem_note": "",
+       "decade": "1960년대"
+      },
+      {
+       "year": 1977,
+       "yy": "77",
+       "age_2027": 50,
+       "hwangap": false,
+       "stem_god": "비견",
+       "good": "친구·자신감",
+       "good_line": "친구가 힘인 해",
+       "caution": "혼자 결정",
+       "caution_line": "의논하고 정하기",
+       "stem_note": "",
+       "decade": "1970년대"
+      },
+      {
+       "year": 1989,
+       "yy": "89",
+       "age_2027": 38,
+       "hwangap": false,
+       "stem_god": "편인",
+       "good": "배움·취미",
+       "good_line": "배우기 좋은 해",
+       "caution": "걱정 많음",
+       "caution_line": "생각은 짧게",
+       "stem_note": "",
+       "decade": "1980년대"
+      },
+      {
+       "year": 2001,
+       "yy": "01",
+       "age_2027": 26,
+       "hwangap": false,
+       "stem_god": "편관",
+       "good": "결단·정리",
+       "good_line": "미룬 일 끝내기",
+       "caution": "무리한 일정",
+       "caution_line": "쉬어 가며 하기",
+       "stem_note": "",
+       "decade": "2000년대"
+      }
+     ]
+    },
+    "닭": {
+     "animal": "닭",
+     "branch": "유",
+     "element": "쇠",
+     "group": "사유축",
+     "group_animals": [
+      "뱀",
+      "닭",
+      "소"
+     ],
+     "sinsal_2027": "월살",
+     "sinsal_plain": "달빛이 마른 듯 쉬어 가는 해",
+     "sinsal_advice": "서두르지 말고 준비·저축으로 속을 채우기",
+     "samjae_2027": "",
+     "samjae_plain": "",
+     "samjae_years": {
+      "last": [
+       2019,
+       2020,
+       2021
+      ],
+      "next": [
+       2031,
+       2032,
+       2033
+      ]
+     },
+     "relations_with_2027": [],
+     "relation_main": "",
+     "relation_plain": [],
+     "stem_ding_is": "관성",
+     "branch_mi_is": "인성",
+     "energy_plain": [
+      "정(丁) 불 → 나를 다잡는 기운(맡을 일이 늚)",
+      "미(未) 흙 → 나를 돕는 기운"
+     ],
+     "tier_total": "보통",
+     "tier_total_line": "맡은 일 많은 해",
+     "tier_money": "보통",
+     "tier_money_line": "꾸준히 모으는 해",
+     "months_good": [
+      4,
+      1,
+      5
+     ],
+     "months_good_why": [
+      "4월 육합",
+      "1월 삼합",
+      "5월 삼합"
+     ],
+     "months_caution": [
+      3,
+      2
+     ],
+     "months_caution_why": [
+      "3월 충",
+      "2월 원진"
+     ],
+     "months_money_good": [
+      4,
+      11,
+      12
+     ],
+     "months_money_caution": [
+      3,
+      8,
+      9
+     ],
+     "months_body_good": [
+      4,
+      1,
+      7
+     ],
+     "months_body_caution": [
+      3,
+      6,
+      2
+     ],
+     "months_trip_good": [
+      11,
+      12
+     ],
+     "health": {
+      "part": "목·기관지",
+      "why": "불이 쇠를 누름",
+      "habit": "목 따뜻하게",
+      "line": "환절기 목 감싸기"
+     },
+     "lucky": {
+      "colors": "검정·남색",
+      "numbers": "1·6",
+      "direction": "북쪽",
+      "tip": "북쪽 창 환기",
+      "element": "물",
+      "why": "물이 불을 식혀요"
+     },
+     "years": [
+      {
+       "year": 1933,
+       "yy": "33",
+       "age_2027": 94,
+       "hwangap": false,
+       "stem_god": "편재",
+       "good": "큰돈 흐름",
+       "good_line": "돈이 크게 도는 해",
+       "caution": "돈 약속",
+       "caution_line": "서명은 천천히",
+       "stem_note": "정계 천간충 — 서명·돈 약속은 천천히",
+       "decade": "1930년대"
+      },
+      {
+       "year": 1945,
+       "yy": "45",
+       "age_2027": 82,
+       "hwangap": false,
+       "stem_god": "식신",
+       "good": "먹을 복·자식",
+       "good_line": "넉넉한 해",
+       "caution": "늘어지기",
+       "caution_line": "자주 걷기",
+       "stem_note": "",
+       "decade": "1940년대"
+      },
+      {
+       "year": 1957,
+       "yy": "57",
+       "age_2027": 70,
+       "hwangap": false,
+       "stem_god": "비견",
+       "good": "친구·자신감",
+       "good_line": "친구가 힘인 해",
+       "caution": "혼자 결정",
+       "caution_line": "의논하고 정하기",
+       "stem_note": "",
+       "decade": "1950년대"
+      },
+      {
+       "year": 1969,
+       "yy": "69",
+       "age_2027": 58,
+       "hwangap": false,
+       "stem_god": "편인",
+       "good": "배움·취미",
+       "good_line": "배우기 좋은 해",
+       "caution": "걱정 많음",
+       "caution_line": "생각은 짧게",
+       "stem_note": "",
+       "decade": "1960년대"
+      },
+      {
+       "year": 1981,
+       "yy": "81",
+       "age_2027": 46,
+       "hwangap": false,
+       "stem_god": "편관",
+       "good": "결단·정리",
+       "good_line": "미룬 일 끝내기",
+       "caution": "무리한 일정",
+       "caution_line": "쉬어 가며 하기",
+       "stem_note": "",
+       "decade": "1980년대"
+      },
+      {
+       "year": 1993,
+       "yy": "93",
+       "age_2027": 34,
+       "hwangap": false,
+       "stem_god": "편재",
+       "good": "큰돈 흐름",
+       "good_line": "돈이 크게 도는 해",
+       "caution": "돈 약속",
+       "caution_line": "서명은 천천히",
+       "stem_note": "정계 천간충 — 서명·돈 약속은 천천히",
+       "decade": "1990년대"
+      },
+      {
+       "year": 2005,
+       "yy": "05",
+       "age_2027": 22,
+       "hwangap": false,
+       "stem_god": "식신",
+       "good": "먹을 복·자식",
+       "good_line": "넉넉한 해",
+       "caution": "늘어지기",
+       "caution_line": "자주 걷기",
+       "stem_note": "",
+       "decade": "2000년대"
+      }
+     ]
+    },
+    "소": {
+     "animal": "소",
+     "branch": "축",
+     "element": "흙",
+     "group": "사유축",
+     "group_animals": [
+      "뱀",
+      "닭",
+      "소"
+     ],
+     "sinsal_2027": "월살",
+     "sinsal_plain": "달빛이 마른 듯 쉬어 가는 해",
+     "sinsal_advice": "서두르지 말고 준비·저축으로 속을 채우기",
+     "samjae_2027": "",
+     "samjae_plain": "",
+     "samjae_years": {
+      "last": [
+       2019,
+       2020,
+       2021
+      ],
+      "next": [
+       2031,
+       2032,
+       2033
+      ]
+     },
+     "relations_with_2027": [
+      "충",
+      "형"
+     ],
+     "relation_main": "충",
+     "relation_plain": [
+      "정면으로 부딪히는 기운(충) — 큰 결정은 천천히",
+      "서두르면 엇나가는 사이(축술미 형) — 한 박자 쉬기"
+     ],
+     "stem_ding_is": "인성",
+     "branch_mi_is": "비겁",
+     "energy_plain": [
+      "정(丁) 불 → 나를 돕는 기운",
+      "미(未) 흙 → 나와 같은 기운"
+     ],
+     "tier_total": "조심",
+     "tier_total_line": "충·큰 결정은 천천히",
+     "tier_money": "조심",
+     "tier_money_line": "충·큰 지출 조심",
+     "months_good": [
+      12,
+      5,
+      9
+     ],
+     "months_good_why": [
+      "12월 육합",
+      "5월 삼합",
+      "9월 삼합"
+     ],
+     "months_caution": [
+      7,
+      6,
+      10
+     ],
+     "months_caution_why": [
+      "7월 충",
+      "6월 원진",
+      "10월 형"
+     ],
+     "months_money_good": [
+      12,
+      11,
+      9
+     ],
+     "months_money_caution": [
+      7,
+      1,
+      4
+     ],
+     "months_body_good": [
+      5,
+      1,
+      4
+     ],
+     "months_body_caution": [
+      7,
+      2,
+      3
+     ],
+     "months_trip_good": [
+      11,
+      8,
+      9
+     ],
+     "health": {
+      "part": "위장·소화",
+      "why": "흙 기운이 겹침",
+      "habit": "천천히 먹기",
+      "line": "충·운동은 가볍게"
+     },
+     "lucky": {
+      "colors": "초록·연두",
+      "numbers": "3·8",
+      "direction": "동쪽",
+      "tip": "동쪽 창 열기",
+      "element": "나무",
+      "why": "나무가 흙을 풀어요"
+     },
+     "years": [
+      {
+       "year": 1937,
+       "yy": "37",
+       "age_2027": 90,
+       "hwangap": false,
+       "stem_god": "비견",
+       "good": "친구·자신감",
+       "good_line": "친구가 힘인 해",
+       "caution": "혼자 결정",
+       "caution_line": "의논하고 정하기",
+       "stem_note": "",
+       "decade": "1930년대"
+      },
+      {
+       "year": 1949,
+       "yy": "49",
+       "age_2027": 78,
+       "hwangap": false,
+       "stem_god": "편인",
+       "good": "배움·취미",
+       "good_line": "배우기 좋은 해",
+       "caution": "걱정 많음",
+       "caution_line": "생각은 짧게",
+       "stem_note": "",
+       "decade": "1940년대"
+      },
+      {
+       "year": 1961,
+       "yy": "61",
+       "age_2027": 66,
+       "hwangap": false,
+       "stem_god": "편관",
+       "good": "결단·정리",
+       "good_line": "미룬 일 끝내기",
+       "caution": "무리한 일정",
+       "caution_line": "쉬어 가며 하기",
+       "stem_note": "",
+       "decade": "1960년대"
+      },
+      {
+       "year": 1973,
+       "yy": "73",
+       "age_2027": 54,
+       "hwangap": false,
+       "stem_god": "편재",
+       "good": "큰돈 흐름",
+       "good_line": "돈이 크게 도는 해",
+       "caution": "돈 약속",
+       "caution_line": "서명은 천천히",
+       "stem_note": "정계 천간충 — 서명·돈 약속은 천천히",
+       "decade": "1970년대"
+      },
+      {
+       "year": 1985,
+       "yy": "85",
+       "age_2027": 42,
+       "hwangap": false,
+       "stem_god": "식신",
+       "good": "먹을 복·자식",
+       "good_line": "넉넉한 해",
+       "caution": "늘어지기",
+       "caution_line": "자주 걷기",
+       "stem_note": "",
+       "decade": "1980년대"
+      },
+      {
+       "year": 1997,
+       "yy": "97",
+       "age_2027": 30,
+       "hwangap": false,
+       "stem_god": "비견",
+       "good": "친구·자신감",
+       "good_line": "친구가 힘인 해",
+       "caution": "혼자 결정",
+       "caution_line": "의논하고 정하기",
+       "stem_note": "",
+       "decade": "1990년대"
+      },
+      {
+       "year": 2009,
+       "yy": "09",
+       "age_2027": 18,
+       "hwangap": false,
+       "stem_god": "편인",
+       "good": "배움·취미",
+       "good_line": "배우기 좋은 해",
+       "caution": "걱정 많음",
+       "caution_line": "생각은 짧게",
+       "stem_note": "",
+       "decade": "2000년대"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "E05",
+   "publish": "2026-11-11",
+   "weekday": "수",
+   "kind": "single",
+   "group": "해묘미",
+   "animals": [
+    "양"
+   ],
+   "sinsal": "화개살",
+   "samjae": "날삼재",
+   "title": "2027년 양띠 운세 | 내 띠의 해 · 날삼재 잘 넘기는 법 · 출생연도별 풀이",
+   "search": "2027년 양띠 운세",
+   "thumb": {
+    "big": "2027 양띠",
+    "sub": "31~03년생",
+    "pill": "날삼재 잘 넘기는 법"
+   },
+   "angle": "양띠 단독 — 정미년과 같은 띠, 화개살·날삼재, 총운 길 · 재물 보통. 정(丁) 불은 나를 돕는 기운, 미(未) 흙은 나와 같은 기운. 좋은 달 3·6·11월 · 조심할 달 1·10·12월. 67년생은 올해 환갑(정미생이 다시 정미년).",
+   "qa_seeds": [
+    "올해 환갑인데 잔치는 언제 하면 좋을까요?",
+    "날삼재에 꼭 피해야 할 일이 있나요?",
+    "양띠는 올해 이사해도 괜찮을까요?",
+    "양띠 자녀가 올해 결혼하는데 날을 어떻게 볼까요?",
+    "31년생도 이 풀이가 맞나요?"
+   ],
+   "next": "E06",
+   "next_title": "2027년 말띠 운세 | 정미년과 육합 · 반안살 기운 살리는 법 · 출생연도별 풀이",
+   "publish_kst": "2026-11-11 20:00",
+   "chapters": [
+    {
+     "id": "c01",
+     "layout": "card",
+     "topic": "total",
+     "title": "2027 양띠 총운"
+    },
+    {
+     "id": "c02",
+     "layout": "card",
+     "topic": "sinsal",
+     "title": "화개살·날삼재 잘 넘기는 법"
+    },
+    {
+     "id": "c03",
+     "layout": "card",
+     "topic": "money",
+     "title": "재물운 — 돈이 도는 때와 지킬 것"
+    },
+    {
+     "id": "c04",
+     "layout": "card",
+     "topic": "health",
+     "title": "건강운 — 챙길 곳과 좋은 습관"
+    },
+    {
+     "id": "c05",
+     "layout": "card",
+     "topic": "family",
+     "title": "가정·자녀운"
+    },
+    {
+     "id": "c06",
+     "layout": "table",
+     "table": "people12",
+     "title": "올해 힘이 되는 띠·말 아낄 띠"
+    },
+    {
+     "id": "c07",
+     "layout": "table",
+     "table": "months1",
+     "title": "좋은 달·조심할 달"
+    },
+    {
+     "id": "c08",
+     "layout": "years",
+     "animal": "양",
+     "years": [
+      1931,
+      1943,
+      1955,
+      1967
+     ],
+     "title": "출생연도별 풀이 ① 31·43·55·67년생"
+    },
+    {
+     "id": "c09",
+     "layout": "years",
+     "animal": "양",
+     "years": [
+      1979,
+      1991,
+      2003
+     ],
+     "title": "출생연도별 풀이 ② 79·91·03년생"
+    },
+    {
+     "id": "c10",
+     "layout": "qa",
+     "title": "자주 묻는 질문"
+    },
+    {
+     "id": "c11",
+     "layout": "lucky",
+     "title": "행운의 색·숫자·방향"
+    }
+   ],
+   "facts": {
+    "양": {
+     "animal": "양",
+     "branch": "미",
+     "element": "흙",
+     "group": "해묘미",
+     "group_animals": [
+      "돼지",
+      "토끼",
+      "양"
+     ],
+     "sinsal_2027": "화개살",
+     "sinsal_plain": "빛나는 덮개, 마음이 깊어지는 해",
+     "sinsal_advice": "배움·정리·신앙에 좋은 때 — 혼자 끙끙대지 않기",
+     "samjae_2027": "날삼재",
+     "samjae_plain": "삼재가 나가는 마지막 해",
+     "samjae_years": {
+      "now": [
+       2025,
+       2026,
+       2027
+      ],
+      "next": [
+       2037,
+       2038,
+       2039
+      ]
+     },
+     "relations_with_2027": [
+      "같은 띠"
+     ],
+     "relation_main": "같은 띠",
+     "relation_plain": [
+      "내 띠의 해 — 기운이 겹쳐요"
+     ],
+     "stem_ding_is": "인성",
+     "branch_mi_is": "비겁",
+     "energy_plain": [
+      "정(丁) 불 → 나를 돕는 기운",
+      "미(未) 흙 → 나와 같은 기운"
+     ],
+     "tier_total": "길",
+     "tier_total_line": "내 띠의 해",
+     "tier_money": "보통",
+     "tier_money_line": "씀씀이 챙길 해",
+     "months_good": [
+      6,
+      3,
+      11
+     ],
+     "months_good_why": [
+      "6월 육합",
+      "3월 삼합",
+      "11월 삼합"
+     ],
+     "months_caution": [
+      1,
+      12,
+      10
+     ],
+     "months_caution_why": [
+      "1월 충",
+      "12월 원진",
+      "10월 형"
+     ],
+     "months_money_good": [
+      11,
+      6,
+      8
+     ],
+     "months_money_caution": [
+      1,
+      4,
+      7
+     ],
+     "months_body_good": [
+      6,
+      5,
+      4
+     ],
+     "months_body_caution": [
+      1,
+      2,
+      10
+     ],
+     "months_trip_good": [
+      5,
+      8,
+      9
+     ],
+     "health": {
+      "part": "위장·소화",
+      "why": "흙 기운이 겹침",
+      "habit": "천천히 먹기",
+      "line": "내 띠의 해·천천히"
+     },
+     "lucky": {
+      "colors": "초록·연두",
+      "numbers": "3·8",
+      "direction": "동쪽",
+      "tip": "동쪽 창 열기",
+      "element": "나무",
+      "why": "나무가 흙을 풀어요"
+     },
+     "years": [
+      {
+       "year": 1931,
+       "yy": "31",
+       "age_2027": 96,
+       "hwangap": false,
+       "stem_god": "편관",
+       "good": "결단·정리",
+       "good_line": "미룬 일 끝내기",
+       "caution": "무리한 일정",
+       "caution_line": "쉬어 가며 하기",
+       "stem_note": "",
+       "decade": "1930년대"
+      },
+      {
+       "year": 1943,
+       "yy": "43",
+       "age_2027": 84,
+       "hwangap": false,
+       "stem_god": "편재",
+       "good": "큰돈 흐름",
+       "good_line": "돈이 크게 도는 해",
+       "caution": "돈 약속",
+       "caution_line": "서명은 천천히",
+       "stem_note": "정계 천간충 — 서명·돈 약속은 천천히",
+       "decade": "1940년대"
+      },
+      {
+       "year": 1955,
+       "yy": "55",
+       "age_2027": 72,
+       "hwangap": false,
+       "stem_god": "식신",
+       "good": "먹을 복·자식",
+       "good_line": "넉넉한 해",
+       "caution": "늘어지기",
+       "caution_line": "자주 걷기",
+       "stem_note": "",
+       "decade": "1950년대"
+      },
+      {
+       "year": 1967,
+       "yy": "67",
+       "age_2027": 60,
+       "hwangap": true,
+       "stem_god": "비견",
+       "good": "친구·자신감",
+       "good_line": "친구가 힘인 해",
+       "caution": "혼자 결정",
+       "caution_line": "의논하고 정하기",
+       "stem_note": "",
+       "decade": "1960년대"
+      },
+      {
+       "year": 1979,
+       "yy": "79",
+       "age_2027": 48,
+       "hwangap": false,
+       "stem_god": "편인",
+       "good": "배움·취미",
+       "good_line": "배우기 좋은 해",
+       "caution": "걱정 많음",
+       "caution_line": "생각은 짧게",
+       "stem_note": "",
+       "decade": "1970년대"
+      },
+      {
+       "year": 1991,
+       "yy": "91",
+       "age_2027": 36,
+       "hwangap": false,
+       "stem_god": "편관",
+       "good": "결단·정리",
+       "good_line": "미룬 일 끝내기",
+       "caution": "무리한 일정",
+       "caution_line": "쉬어 가며 하기",
+       "stem_note": "",
+       "decade": "1990년대"
+      },
+      {
+       "year": 2003,
+       "yy": "03",
+       "age_2027": 24,
+       "hwangap": false,
+       "stem_god": "편재",
+       "good": "큰돈 흐름",
+       "good_line": "돈이 크게 도는 해",
+       "caution": "돈 약속",
+       "caution_line": "서명은 천천히",
+       "stem_note": "정계 천간충 — 서명·돈 약속은 천천히",
+       "decade": "2000년대"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "E06",
+   "publish": "2026-11-13",
+   "weekday": "금",
+   "kind": "single",
+   "group": "인오술",
+   "animals": [
+    "말"
+   ],
+   "sinsal": "반안살",
+   "samjae": "",
+   "title": "2027년 말띠 운세 | 정미년과 육합 · 반안살 기운 살리는 법 · 출생연도별 풀이",
+   "search": "2027년 말띠 운세",
+   "thumb": {
+    "big": "2027 말띠",
+    "sub": "30~02년생",
+    "pill": "반안살 기운 살리는 법"
+   },
+   "angle": "말띠 단독 — 정미년과 육합, 반안살, 총운 대길 · 재물 길. 정(丁) 불은 나와 같은 기운, 미(未) 흙은 내가 베푸는 기운(재물을 낳음). 좋은 달 2·7·10월 · 조심할 달 1·12월.",
+   "qa_seeds": [
+    "말띠는 올해 이사해도 괜찮을까요?",
+    "말띠 자녀가 올해 결혼하는데 날을 어떻게 볼까요?",
+    "30년생도 이 풀이가 맞나요?"
+   ],
+   "next": "E07",
+   "next_title": "2027년 소띠 운세 | 정미년과 충 · 월살 조심할 달과 지킬 것 · 출생연도별 풀이",
+   "publish_kst": "2026-11-13 20:00",
+   "chapters": [
+    {
+     "id": "c01",
+     "layout": "card",
+     "topic": "total",
+     "title": "2027 말띠 총운"
+    },
+    {
+     "id": "c02",
+     "layout": "card",
+     "topic": "sinsal",
+     "title": "반안살 기운 살리는 법"
+    },
+    {
+     "id": "c03",
+     "layout": "card",
+     "topic": "money",
+     "title": "재물운 — 돈이 도는 때와 지킬 것"
+    },
+    {
+     "id": "c04",
+     "layout": "card",
+     "topic": "health",
+     "title": "건강운 — 챙길 곳과 좋은 습관"
+    },
+    {
+     "id": "c05",
+     "layout": "card",
+     "topic": "family",
+     "title": "가정·자녀운"
+    },
+    {
+     "id": "c06",
+     "layout": "table",
+     "table": "people12",
+     "title": "올해 힘이 되는 띠·말 아낄 띠"
+    },
+    {
+     "id": "c07",
+     "layout": "table",
+     "table": "months1",
+     "title": "좋은 달·조심할 달"
+    },
+    {
+     "id": "c08",
+     "layout": "years",
+     "animal": "말",
+     "years": [
+      1930,
+      1942,
+      1954,
+      1966
+     ],
+     "title": "출생연도별 풀이 ① 30·42·54·66년생"
+    },
+    {
+     "id": "c09",
+     "layout": "years",
+     "animal": "말",
+     "years": [
+      1978,
+      1990,
+      2002
+     ],
+     "title": "출생연도별 풀이 ② 78·90·02년생"
+    },
+    {
+     "id": "c10",
+     "layout": "qa",
+     "title": "자주 묻는 질문"
+    },
+    {
+     "id": "c11",
+     "layout": "lucky",
+     "title": "행운의 색·숫자·방향"
+    }
+   ],
+   "facts": {
+    "말": {
+     "animal": "말",
+     "branch": "오",
+     "element": "불",
+     "group": "인오술",
+     "group_animals": [
+      "호랑이",
+      "말",
+      "개"
+     ],
+     "sinsal_2027": "반안살",
+     "sinsal_plain": "말 안장에 오르는 해",
+     "sinsal_advice": "자리를 다지고 명예를 챙기기 좋은 때 — 기운 살리는 해",
+     "samjae_2027": "",
+     "samjae_plain": "",
+     "samjae_years": {
+      "last": [
+       2016,
+       2017,
+       2018
+      ],
+      "next": [
+       2028,
+       2029,
+       2030
+      ]
+     },
+     "relations_with_2027": [
+      "육합"
+     ],
+     "relation_main": "육합",
+     "relation_plain": [
+      "손발이 맞는 짝(육합)"
+     ],
+     "stem_ding_is": "비겁",
+     "branch_mi_is": "식상",
+     "energy_plain": [
+      "정(丁) 불 → 나와 같은 기운",
+      "미(未) 흙 → 내가 베푸는 기운(재물을 낳음)"
+     ],
+     "tier_total": "대길",
+     "tier_total_line": "정미년과 육합",
+     "tier_money": "길",
+     "tier_money_line": "정미년과 육합",
+     "months_good": [
+      7,
+      2,
+      10
+     ],
+     "months_good_why": [
+      "7월 육합",
+      "2월 삼합",
+      "10월 삼합"
+     ],
+     "months_caution": [
+      12,
+      1
+     ],
+     "months_caution_why": [
+      "12월 충",
+      "1월 원진"
+     ],
+     "months_money_good": [
+      7,
+      8,
+      9
+     ],
+     "months_money_caution": [
+      12,
+      5,
+      6
+     ],
+     "months_body_good": [
+      2,
+      3,
+      5
+     ],
+     "months_body_caution": [
+      12,
+      11,
+      1
+     ],
+     "months_trip_good": [
+      8,
+      1,
+      4
+     ],
+     "health": {
+      "part": "심장·열",
+      "why": "불 기운이 겹침",
+      "habit": "더울 땐 쉬기",
+      "line": "합·같이 걷기"
+     },
+     "lucky": {
+      "colors": "노랑·황토",
+      "numbers": "5·10",
+      "direction": "가운데",
+      "tip": "집 가운데 정리",
+      "element": "흙",
+      "why": "흙이 열을 덜어요"
+     },
+     "years": [
+      {
+       "year": 1930,
+       "yy": "30",
+       "age_2027": 97,
+       "hwangap": false,
+       "stem_god": "정관",
+       "good": "명예·자리",
+       "good_line": "체면이 서는 해",
+       "caution": "체면 지출",
+       "caution_line": "겉치레 줄이기",
+       "stem_note": "",
+       "decade": "1930년대"
+      },
+      {
+       "year": 1942,
+       "yy": "42",
+       "age_2027": 85,
+       "hwangap": false,
+       "stem_god": "정재",
+       "good": "돈·인연",
+       "good_line": "합이 드는 해",
+       "caution": "정에 끌린 돈",
+       "caution_line": "빌려주기 조심",
+       "stem_note": "정임 천간합 — 돈과 인연이 붙는 해",
+       "decade": "1940년대"
+      },
+      {
+       "year": 1954,
+       "yy": "54",
+       "age_2027": 73,
+       "hwangap": false,
+       "stem_god": "상관",
+       "good": "재주·말솜씨",
+       "good_line": "솜씨 보일 해",
+       "caution": "말실수",
+       "caution_line": "한 번 더 생각",
+       "stem_note": "",
+       "decade": "1950년대"
+      },
+      {
+       "year": 1966,
+       "yy": "66",
+       "age_2027": 61,
+       "hwangap": false,
+       "stem_god": "겁재",
+       "good": "형제·동료",
+       "good_line": "함께하면 좋은 해",
+       "caution": "돈거래",
+       "caution_line": "같이 쓰는 돈 정리",
+       "stem_note": "",
+       "decade": "1960년대"
+      },
+      {
+       "year": 1978,
+       "yy": "78",
+       "age_2027": 49,
+       "hwangap": false,
+       "stem_god": "정인",
+       "good": "문서·도장",
+       "good_line": "도움 받는 해",
+       "caution": "미루기",
+       "caution_line": "때 놓치지 않기",
+       "stem_note": "",
+       "decade": "1970년대"
+      },
+      {
+       "year": 1990,
+       "yy": "90",
+       "age_2027": 37,
+       "hwangap": false,
+       "stem_god": "정관",
+       "good": "명예·자리",
+       "good_line": "체면이 서는 해",
+       "caution": "체면 지출",
+       "caution_line": "겉치레 줄이기",
+       "stem_note": "",
+       "decade": "1990년대"
+      },
+      {
+       "year": 2002,
+       "yy": "02",
+       "age_2027": 25,
+       "hwangap": false,
+       "stem_god": "정재",
+       "good": "돈·인연",
+       "good_line": "합이 드는 해",
+       "caution": "정에 끌린 돈",
+       "caution_line": "빌려주기 조심",
+       "stem_note": "정임 천간합 — 돈과 인연이 붙는 해",
+       "decade": "2000년대"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "E07",
+   "publish": "2026-11-16",
+   "weekday": "월",
+   "kind": "single",
+   "group": "사유축",
+   "animals": [
+    "소"
+   ],
+   "sinsal": "월살",
+   "samjae": "",
+   "title": "2027년 소띠 운세 | 정미년과 충 · 월살 조심할 달과 지킬 것 · 출생연도별 풀이",
+   "search": "2027년 소띠 운세",
+   "thumb": {
+    "big": "2027 소띠",
+    "sub": "37~09년생",
+    "pill": "월살 조심할 달과 지킬 것"
+   },
+   "angle": "소띠 단독 — 정미년과 충, 월살, 총운 조심 · 재물 조심. 정(丁) 불은 나를 돕는 기운, 미(未) 흙은 나와 같은 기운. 좋은 달 5·9·12월 · 조심할 달 6·7·10월.",
+   "qa_seeds": [
+    "정미년과 충이라는데 한 해 내내 조심해야 하나요?",
+    "소띠는 올해 이사해도 괜찮을까요?",
+    "소띠 자녀가 올해 결혼하는데 날을 어떻게 볼까요?",
+    "37년생도 이 풀이가 맞나요?"
+   ],
+   "next": "E08",
+   "next_title": "2027년 돼지띠 운세 | 해묘미 삼합 · 날삼재 마무리 잘하는 법 · 출생연도별 풀이",
+   "publish_kst": "2026-11-16 20:00",
+   "chapters": [
+    {
+     "id": "c01",
+     "layout": "card",
+     "topic": "total",
+     "title": "2027 소띠 총운"
+    },
+    {
+     "id": "c02",
+     "layout": "card",
+     "topic": "sinsal",
+     "title": "월살 — 조심할 점과 지킬 것"
+    },
+    {
+     "id": "c03",
+     "layout": "card",
+     "topic": "money",
+     "title": "재물운 — 돈이 도는 때와 지킬 것"
+    },
+    {
+     "id": "c04",
+     "layout": "card",
+     "topic": "health",
+     "title": "건강운 — 챙길 곳과 좋은 습관"
+    },
+    {
+     "id": "c05",
+     "layout": "card",
+     "topic": "family",
+     "title": "가정·자녀운"
+    },
+    {
+     "id": "c06",
+     "layout": "table",
+     "table": "people12",
+     "title": "올해 힘이 되는 띠·말 아낄 띠"
+    },
+    {
+     "id": "c07",
+     "layout": "table",
+     "table": "months1",
+     "title": "좋은 달·조심할 달"
+    },
+    {
+     "id": "c08",
+     "layout": "years",
+     "animal": "소",
+     "years": [
+      1937,
+      1949,
+      1961
+     ],
+     "title": "출생연도별 풀이 ① 37·49·61년생"
+    },
+    {
+     "id": "c09",
+     "layout": "years",
+     "animal": "소",
+     "years": [
+      1973,
+      1985,
+      1997,
+      2009
+     ],
+     "title": "출생연도별 풀이 ② 73·85·97·09년생"
+    },
+    {
+     "id": "c10",
+     "layout": "qa",
+     "title": "자주 묻는 질문"
+    },
+    {
+     "id": "c11",
+     "layout": "lucky",
+     "title": "행운의 색·숫자·방향"
+    }
+   ],
+   "facts": {
+    "소": {
+     "animal": "소",
+     "branch": "축",
+     "element": "흙",
+     "group": "사유축",
+     "group_animals": [
+      "뱀",
+      "닭",
+      "소"
+     ],
+     "sinsal_2027": "월살",
+     "sinsal_plain": "달빛이 마른 듯 쉬어 가는 해",
+     "sinsal_advice": "서두르지 말고 준비·저축으로 속을 채우기",
+     "samjae_2027": "",
+     "samjae_plain": "",
+     "samjae_years": {
+      "last": [
+       2019,
+       2020,
+       2021
+      ],
+      "next": [
+       2031,
+       2032,
+       2033
+      ]
+     },
+     "relations_with_2027": [
+      "충",
+      "형"
+     ],
+     "relation_main": "충",
+     "relation_plain": [
+      "정면으로 부딪히는 기운(충) — 큰 결정은 천천히",
+      "서두르면 엇나가는 사이(축술미 형) — 한 박자 쉬기"
+     ],
+     "stem_ding_is": "인성",
+     "branch_mi_is": "비겁",
+     "energy_plain": [
+      "정(丁) 불 → 나를 돕는 기운",
+      "미(未) 흙 → 나와 같은 기운"
+     ],
+     "tier_total": "조심",
+     "tier_total_line": "충·큰 결정은 천천히",
+     "tier_money": "조심",
+     "tier_money_line": "충·큰 지출 조심",
+     "months_good": [
+      12,
+      5,
+      9
+     ],
+     "months_good_why": [
+      "12월 육합",
+      "5월 삼합",
+      "9월 삼합"
+     ],
+     "months_caution": [
+      7,
+      6,
+      10
+     ],
+     "months_caution_why": [
+      "7월 충",
+      "6월 원진",
+      "10월 형"
+     ],
+     "months_money_good": [
+      12,
+      11,
+      9
+     ],
+     "months_money_caution": [
+      7,
+      1,
+      4
+     ],
+     "months_body_good": [
+      5,
+      1,
+      4
+     ],
+     "months_body_caution": [
+      7,
+      2,
+      3
+     ],
+     "months_trip_good": [
+      11,
+      8,
+      9
+     ],
+     "health": {
+      "part": "위장·소화",
+      "why": "흙 기운이 겹침",
+      "habit": "천천히 먹기",
+      "line": "충·운동은 가볍게"
+     },
+     "lucky": {
+      "colors": "초록·연두",
+      "numbers": "3·8",
+      "direction": "동쪽",
+      "tip": "동쪽 창 열기",
+      "element": "나무",
+      "why": "나무가 흙을 풀어요"
+     },
+     "years": [
+      {
+       "year": 1937,
+       "yy": "37",
+       "age_2027": 90,
+       "hwangap": false,
+       "stem_god": "비견",
+       "good": "친구·자신감",
+       "good_line": "친구가 힘인 해",
+       "caution": "혼자 결정",
+       "caution_line": "의논하고 정하기",
+       "stem_note": "",
+       "decade": "1930년대"
+      },
+      {
+       "year": 1949,
+       "yy": "49",
+       "age_2027": 78,
+       "hwangap": false,
+       "stem_god": "편인",
+       "good": "배움·취미",
+       "good_line": "배우기 좋은 해",
+       "caution": "걱정 많음",
+       "caution_line": "생각은 짧게",
+       "stem_note": "",
+       "decade": "1940년대"
+      },
+      {
+       "year": 1961,
+       "yy": "61",
+       "age_2027": 66,
+       "hwangap": false,
+       "stem_god": "편관",
+       "good": "결단·정리",
+       "good_line": "미룬 일 끝내기",
+       "caution": "무리한 일정",
+       "caution_line": "쉬어 가며 하기",
+       "stem_note": "",
+       "decade": "1960년대"
+      },
+      {
+       "year": 1973,
+       "yy": "73",
+       "age_2027": 54,
+       "hwangap": false,
+       "stem_god": "편재",
+       "good": "큰돈 흐름",
+       "good_line": "돈이 크게 도는 해",
+       "caution": "돈 약속",
+       "caution_line": "서명은 천천히",
+       "stem_note": "정계 천간충 — 서명·돈 약속은 천천히",
+       "decade": "1970년대"
+      },
+      {
+       "year": 1985,
+       "yy": "85",
+       "age_2027": 42,
+       "hwangap": false,
+       "stem_god": "식신",
+       "good": "먹을 복·자식",
+       "good_line": "넉넉한 해",
+       "caution": "늘어지기",
+       "caution_line": "자주 걷기",
+       "stem_note": "",
+       "decade": "1980년대"
+      },
+      {
+       "year": 1997,
+       "yy": "97",
+       "age_2027": 30,
+       "hwangap": false,
+       "stem_god": "비견",
+       "good": "친구·자신감",
+       "good_line": "친구가 힘인 해",
+       "caution": "혼자 결정",
+       "caution_line": "의논하고 정하기",
+       "stem_note": "",
+       "decade": "1990년대"
+      },
+      {
+       "year": 2009,
+       "yy": "09",
+       "age_2027": 18,
+       "hwangap": false,
+       "stem_god": "편인",
+       "good": "배움·취미",
+       "good_line": "배우기 좋은 해",
+       "caution": "걱정 많음",
+       "caution_line": "생각은 짧게",
+       "stem_note": "",
+       "decade": "2000년대"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "E08",
+   "publish": "2026-11-18",
+   "weekday": "수",
+   "kind": "single",
+   "group": "해묘미",
+   "animals": [
+    "돼지"
+   ],
+   "sinsal": "화개살",
+   "samjae": "날삼재",
+   "title": "2027년 돼지띠 운세 | 해묘미 삼합 · 날삼재 마무리 잘하는 법 · 출생연도별 풀이",
+   "search": "2027년 돼지띠 운세",
+   "thumb": {
+    "big": "2027 돼지띠",
+    "sub": "35~07년생",
+    "pill": "날삼재 마무리 잘하는 법"
+   },
+   "angle": "돼지띠 단독 — 정미년과 삼합, 화개살·날삼재, 총운 대길 · 재물 대길. 정(丁) 불은 재물 기운, 미(未) 흙은 나를 다잡는 기운(맡을 일이 늚). 좋은 달 2·3·7월 · 조심할 달 4·5월.",
+   "qa_seeds": [
+    "날삼재에 꼭 피해야 할 일이 있나요?",
+    "돼지띠는 올해 이사해도 괜찮을까요?",
+    "돼지띠 자녀가 올해 결혼하는데 날을 어떻게 볼까요?",
+    "35년생도 이 풀이가 맞나요?"
+   ],
+   "next": "E09",
+   "next_title": "2027년 쥐띠 운세 | 정미년과 원진 · 천살 잘 넘기는 법 · 출생연도별 풀이",
+   "publish_kst": "2026-11-18 20:00",
+   "chapters": [
+    {
+     "id": "c01",
+     "layout": "card",
+     "topic": "total",
+     "title": "2027 돼지띠 총운"
+    },
+    {
+     "id": "c02",
+     "layout": "card",
+     "topic": "sinsal",
+     "title": "화개살·날삼재 잘 넘기는 법"
+    },
+    {
+     "id": "c03",
+     "layout": "card",
+     "topic": "money",
+     "title": "재물운 — 돈이 도는 때와 지킬 것"
+    },
+    {
+     "id": "c04",
+     "layout": "card",
+     "topic": "health",
+     "title": "건강운 — 챙길 곳과 좋은 습관"
+    },
+    {
+     "id": "c05",
+     "layout": "card",
+     "topic": "family",
+     "title": "가정·자녀운"
+    },
+    {
+     "id": "c06",
+     "layout": "table",
+     "table": "people12",
+     "title": "올해 힘이 되는 띠·말 아낄 띠"
+    },
+    {
+     "id": "c07",
+     "layout": "table",
+     "table": "months1",
+     "title": "좋은 달·조심할 달"
+    },
+    {
+     "id": "c08",
+     "layout": "years",
+     "animal": "돼지",
+     "years": [
+      1935,
+      1947,
+      1959
+     ],
+     "title": "출생연도별 풀이 ① 35·47·59년생"
+    },
+    {
+     "id": "c09",
+     "layout": "years",
+     "animal": "돼지",
+     "years": [
+      1971,
+      1983,
+      1995,
+      2007
+     ],
+     "title": "출생연도별 풀이 ② 71·83·95·07년생"
+    },
+    {
+     "id": "c10",
+     "layout": "qa",
+     "title": "자주 묻는 질문"
+    },
+    {
+     "id": "c11",
+     "layout": "lucky",
+     "title": "행운의 색·숫자·방향"
+    }
+   ],
+   "facts": {
+    "돼지": {
+     "animal": "돼지",
+     "branch": "해",
+     "element": "물",
+     "group": "해묘미",
+     "group_animals": [
+      "돼지",
+      "토끼",
+      "양"
+     ],
+     "sinsal_2027": "화개살",
+     "sinsal_plain": "빛나는 덮개, 마음이 깊어지는 해",
+     "sinsal_advice": "배움·정리·신앙에 좋은 때 — 혼자 끙끙대지 않기",
+     "samjae_2027": "날삼재",
+     "samjae_plain": "삼재가 나가는 마지막 해",
+     "samjae_years": {
+      "now": [
+       2025,
+       2026,
+       2027
+      ],
+      "next": [
+       2037,
+       2038,
+       2039
+      ]
+     },
+     "relations_with_2027": [
+      "삼합"
+     ],
+     "relation_main": "삼합",
+     "relation_plain": [
+      "한 팀(해묘미 삼합)"
+     ],
+     "stem_ding_is": "재성",
+     "branch_mi_is": "관성",
+     "energy_plain": [
+      "정(丁) 불 → 재물 기운",
+      "미(未) 흙 → 나를 다잡는 기운(맡을 일이 늚)"
+     ],
+     "tier_total": "대길",
+     "tier_total_line": "해묘미 삼합",
+     "tier_money": "대길",
+     "tier_money_line": "재물 기운·삼합",
+     "months_good": [
+      2,
+      3,
+      7
+     ],
+     "months_good_why": [
+      "2월 육합",
+      "3월 삼합",
+      "7월 삼합"
+     ],
+     "months_caution": [
+      5,
+      4
+     ],
+     "months_caution_why": [
+      "5월 충",
+      "4월 원진"
+     ],
+     "months_money_good": [
+      2,
+      6,
+      3
+     ],
+     "months_money_caution": [
+      5,
+      11,
+      12
+     ],
+     "months_body_good": [
+      8,
+      9,
+      2
+     ],
+     "months_body_caution": [
+      4,
+      5,
+      1
+     ],
+     "months_trip_good": [
+      2,
+      3
+     ],
+     "health": {
+      "part": "허리·콩팥",
+      "why": "흙이 물을 누름",
+      "habit": "물 자주 마시기",
+      "line": "삼합·모여 걷기"
+     },
+     "lucky": {
+      "colors": "흰색·은색",
+      "numbers": "4·9",
+      "direction": "서쪽",
+      "tip": "서쪽으로 산책",
+      "element": "쇠",
+      "why": "쇠가 이어 줘요"
+     },
+     "years": [
+      {
+       "year": 1935,
+       "yy": "35",
+       "age_2027": 92,
+       "hwangap": false,
+       "stem_god": "식신",
+       "good": "먹을 복·자식",
+       "good_line": "넉넉한 해",
+       "caution": "늘어지기",
+       "caution_line": "자주 걷기",
+       "stem_note": "",
+       "decade": "1930년대"
+      },
+      {
+       "year": 1947,
+       "yy": "47",
+       "age_2027": 80,
+       "hwangap": false,
+       "stem_god": "비견",
+       "good": "친구·자신감",
+       "good_line": "친구가 힘인 해",
+       "caution": "혼자 결정",
+       "caution_line": "의논하고 정하기",
+       "stem_note": "",
+       "decade": "1940년대"
+      },
+      {
+       "year": 1959,
+       "yy": "59",
+       "age_2027": 68,
+       "hwangap": false,
+       "stem_god": "편인",
+       "good": "배움·취미",
+       "good_line": "배우기 좋은 해",
+       "caution": "걱정 많음",
+       "caution_line": "생각은 짧게",
+       "stem_note": "",
+       "decade": "1950년대"
+      },
+      {
+       "year": 1971,
+       "yy": "71",
+       "age_2027": 56,
+       "hwangap": false,
+       "stem_god": "편관",
+       "good": "결단·정리",
+       "good_line": "미룬 일 끝내기",
+       "caution": "무리한 일정",
+       "caution_line": "쉬어 가며 하기",
+       "stem_note": "",
+       "decade": "1970년대"
+      },
+      {
+       "year": 1983,
+       "yy": "83",
+       "age_2027": 44,
+       "hwangap": false,
+       "stem_god": "편재",
+       "good": "큰돈 흐름",
+       "good_line": "돈이 크게 도는 해",
+       "caution": "돈 약속",
+       "caution_line": "서명은 천천히",
+       "stem_note": "정계 천간충 — 서명·돈 약속은 천천히",
+       "decade": "1980년대"
+      },
+      {
+       "year": 1995,
+       "yy": "95",
+       "age_2027": 32,
+       "hwangap": false,
+       "stem_god": "식신",
+       "good": "먹을 복·자식",
+       "good_line": "넉넉한 해",
+       "caution": "늘어지기",
+       "caution_line": "자주 걷기",
+       "stem_note": "",
+       "decade": "1990년대"
+      },
+      {
+       "year": 2007,
+       "yy": "07",
+       "age_2027": 20,
+       "hwangap": false,
+       "stem_god": "비견",
+       "good": "친구·자신감",
+       "good_line": "친구가 힘인 해",
+       "caution": "혼자 결정",
+       "caution_line": "의논하고 정하기",
+       "stem_note": "",
+       "decade": "2000년대"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "E09",
+   "publish": "2026-11-20",
+   "weekday": "금",
+   "kind": "single",
+   "group": "신자진",
+   "animals": [
+    "쥐"
+   ],
+   "sinsal": "천살",
+   "samjae": "",
+   "title": "2027년 쥐띠 운세 | 정미년과 원진 · 천살 잘 넘기는 법 · 출생연도별 풀이",
+   "search": "2027년 쥐띠 운세",
+   "thumb": {
+    "big": "2027 쥐띠",
+    "sub": "36~08년생",
+    "pill": "천살 잘 넘기는 법"
+   },
+   "angle": "쥐띠 단독 — 정미년과 원진, 천살, 총운 조심 · 재물 보통. 정(丁) 불은 재물 기운, 미(未) 흙은 나를 다잡는 기운(맡을 일이 늚). 좋은 달 1·4·8월 · 조심할 달 3·6·7월.",
+   "qa_seeds": [
+    "정미년과 원진이라는데 한 해 내내 조심해야 하나요?",
+    "쥐띠는 올해 이사해도 괜찮을까요?",
+    "쥐띠 자녀가 올해 결혼하는데 날을 어떻게 볼까요?",
+    "36년생도 이 풀이가 맞나요?"
+   ],
+   "next": "E10",
+   "next_title": "2027년 토끼띠 운세 | 해묘미 삼합 · 날삼재 복삼재로 바꾸는 법 · 출생연도별 풀이",
+   "publish_kst": "2026-11-20 20:00",
+   "chapters": [
+    {
+     "id": "c01",
+     "layout": "card",
+     "topic": "total",
+     "title": "2027 쥐띠 총운"
+    },
+    {
+     "id": "c02",
+     "layout": "card",
+     "topic": "sinsal",
+     "title": "천살 잘 넘기는 법"
+    },
+    {
+     "id": "c03",
+     "layout": "card",
+     "topic": "money",
+     "title": "재물운 — 돈이 도는 때와 지킬 것"
+    },
+    {
+     "id": "c04",
+     "layout": "card",
+     "topic": "health",
+     "title": "건강운 — 챙길 곳과 좋은 습관"
+    },
+    {
+     "id": "c05",
+     "layout": "card",
+     "topic": "family",
+     "title": "가정·자녀운"
+    },
+    {
+     "id": "c06",
+     "layout": "table",
+     "table": "people12",
+     "title": "올해 힘이 되는 띠·말 아낄 띠"
+    },
+    {
+     "id": "c07",
+     "layout": "table",
+     "table": "months1",
+     "title": "좋은 달·조심할 달"
+    },
+    {
+     "id": "c08",
+     "layout": "years",
+     "animal": "쥐",
+     "years": [
+      1936,
+      1948,
+      1960
+     ],
+     "title": "출생연도별 풀이 ① 36·48·60년생"
+    },
+    {
+     "id": "c09",
+     "layout": "years",
+     "animal": "쥐",
+     "years": [
+      1972,
+      1984,
+      1996,
+      2008
+     ],
+     "title": "출생연도별 풀이 ② 72·84·96·08년생"
+    },
+    {
+     "id": "c10",
+     "layout": "qa",
+     "title": "자주 묻는 질문"
+    },
+    {
+     "id": "c11",
+     "layout": "lucky",
+     "title": "행운의 색·숫자·방향"
+    }
+   ],
+   "facts": {
+    "쥐": {
+     "animal": "쥐",
+     "branch": "자",
+     "element": "물",
+     "group": "신자진",
+     "group_animals": [
+      "원숭이",
+      "쥐",
+      "용"
+     ],
+     "sinsal_2027": "천살",
+     "sinsal_plain": "하늘의 기운이 드는 해",
+     "sinsal_advice": "몸을 낮추고 겸손하게, 큰 욕심보다 마음 다스리기",
+     "samjae_2027": "",
+     "samjae_plain": "",
+     "samjae_years": {
+      "last": [
+       2022,
+       2023,
+       2024
+      ],
+      "next": [
+       2034,
+       2035,
+       2036
+      ]
+     },
+     "relations_with_2027": [
+      "원진",
+      "해"
+     ],
+     "relation_main": "원진",
+     "relation_plain": [
+      "서운함이 쌓이기 쉬운 사이(원진) — 말 아끼기",
+      "작은 엇갈림(해) — 다시 확인하기"
+     ],
+     "stem_ding_is": "재성",
+     "branch_mi_is": "관성",
+     "energy_plain": [
+      "정(丁) 불 → 재물 기운",
+      "미(未) 흙 → 나를 다잡는 기운(맡을 일이 늚)"
+     ],
+     "tier_total": "조심",
+     "tier_total_line": "원진·말 아끼기",
+     "tier_money": "보통",
+     "tier_money_line": "재물 기운·원진",
+     "months_good": [
+      1,
+      4,
+      8
+     ],
+     "months_good_why": [
+      "1월 육합",
+      "4월 삼합",
+      "8월 삼합"
+     ],
+     "months_caution": [
+      6,
+      7,
+      3
+     ],
+     "months_caution_why": [
+      "6월 충",
+      "7월 원진",
+      "3월 형"
+     ],
+     "months_money_good": [
+      5,
+      1,
+      2
+     ],
+     "months_money_caution": [
+      6,
+      11,
+      12
+     ],
+     "months_body_good": [
+      8,
+      9,
+      11
+     ],
+     "months_body_caution": [
+      7,
+      6,
+      10
+     ],
+     "months_trip_good": [
+      2
+     ],
+     "health": {
+      "part": "허리·콩팥",
+      "why": "흙이 물을 누름",
+      "habit": "물 자주 마시기",
+      "line": "원진·마음 편히"
+     },
+     "lucky": {
+      "colors": "흰색·은색",
+      "numbers": "4·9",
+      "direction": "서쪽",
+      "tip": "서쪽으로 산책",
+      "element": "쇠",
+      "why": "쇠가 이어 줘요"
+     },
+     "years": [
+      {
+       "year": 1936,
+       "yy": "36",
+       "age_2027": 91,
+       "hwangap": false,
+       "stem_god": "겁재",
+       "good": "형제·동료",
+       "good_line": "함께하면 좋은 해",
+       "caution": "돈거래",
+       "caution_line": "같이 쓰는 돈 정리",
+       "stem_note": "",
+       "decade": "1930년대"
+      },
+      {
+       "year": 1948,
+       "yy": "48",
+       "age_2027": 79,
+       "hwangap": false,
+       "stem_god": "정인",
+       "good": "문서·도장",
+       "good_line": "도움 받는 해",
+       "caution": "미루기",
+       "caution_line": "때 놓치지 않기",
+       "stem_note": "",
+       "decade": "1940년대"
+      },
+      {
+       "year": 1960,
+       "yy": "60",
+       "age_2027": 67,
+       "hwangap": false,
+       "stem_god": "정관",
+       "good": "명예·자리",
+       "good_line": "체면이 서는 해",
+       "caution": "체면 지출",
+       "caution_line": "겉치레 줄이기",
+       "stem_note": "",
+       "decade": "1960년대"
+      },
+      {
+       "year": 1972,
+       "yy": "72",
+       "age_2027": 55,
+       "hwangap": false,
+       "stem_god": "정재",
+       "good": "돈·인연",
+       "good_line": "합이 드는 해",
+       "caution": "정에 끌린 돈",
+       "caution_line": "빌려주기 조심",
+       "stem_note": "정임 천간합 — 돈과 인연이 붙는 해",
+       "decade": "1970년대"
+      },
+      {
+       "year": 1984,
+       "yy": "84",
+       "age_2027": 43,
+       "hwangap": false,
+       "stem_god": "상관",
+       "good": "재주·말솜씨",
+       "good_line": "솜씨 보일 해",
+       "caution": "말실수",
+       "caution_line": "한 번 더 생각",
+       "stem_note": "",
+       "decade": "1980년대"
+      },
+      {
+       "year": 1996,
+       "yy": "96",
+       "age_2027": 31,
+       "hwangap": false,
+       "stem_god": "겁재",
+       "good": "형제·동료",
+       "good_line": "함께하면 좋은 해",
+       "caution": "돈거래",
+       "caution_line": "같이 쓰는 돈 정리",
+       "stem_note": "",
+       "decade": "1990년대"
+      },
+      {
+       "year": 2008,
+       "yy": "08",
+       "age_2027": 19,
+       "hwangap": false,
+       "stem_god": "정인",
+       "good": "문서·도장",
+       "good_line": "도움 받는 해",
+       "caution": "미루기",
+       "caution_line": "때 놓치지 않기",
+       "stem_note": "",
+       "decade": "2000년대"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "E10",
+   "publish": "2026-11-23",
+   "weekday": "월",
+   "kind": "single",
+   "group": "해묘미",
+   "animals": [
+    "토끼"
+   ],
+   "sinsal": "화개살",
+   "samjae": "날삼재",
+   "title": "2027년 토끼띠 운세 | 해묘미 삼합 · 날삼재 복삼재로 바꾸는 법 · 출생연도별 풀이",
+   "search": "2027년 토끼띠 운세",
+   "thumb": {
+    "big": "2027 토끼띠",
+    "sub": "39~99년생",
+    "pill": "날삼재 복삼재로 바꾸는 법"
+   },
+   "angle": "토끼띠 단독 — 정미년과 삼합, 화개살·날삼재, 총운 대길 · 재물 대길. 정(丁) 불은 내가 베푸는 기운(재물을 낳음), 미(未) 흙은 재물 기운. 좋은 달 7·10·11월 · 조심할 달 8·9·12월.",
+   "qa_seeds": [
+    "날삼재에 꼭 피해야 할 일이 있나요?",
+    "토끼띠는 올해 이사해도 괜찮을까요?",
+    "토끼띠 자녀가 올해 결혼하는데 날을 어떻게 볼까요?",
+    "39년생도 이 풀이가 맞나요?"
+   ],
+   "next": "E11",
+   "next_title": "2027년 개띠 운세 | 정미년과 형 · 반안살 자리 지키는 법 · 출생연도별 풀이",
+   "publish_kst": "2026-11-23 20:00",
+   "chapters": [
+    {
+     "id": "c01",
+     "layout": "card",
+     "topic": "total",
+     "title": "2027 토끼띠 총운"
+    },
+    {
+     "id": "c02",
+     "layout": "card",
+     "topic": "sinsal",
+     "title": "화개살·날삼재 잘 넘기는 법"
+    },
+    {
+     "id": "c03",
+     "layout": "card",
+     "topic": "money",
+     "title": "재물운 — 돈이 도는 때와 지킬 것"
+    },
+    {
+     "id": "c04",
+     "layout": "card",
+     "topic": "health",
+     "title": "건강운 — 챙길 곳과 좋은 습관"
+    },
+    {
+     "id": "c05",
+     "layout": "card",
+     "topic": "family",
+     "title": "가정·자녀운"
+    },
+    {
+     "id": "c06",
+     "layout": "table",
+     "table": "people12",
+     "title": "올해 힘이 되는 띠·말 아낄 띠"
+    },
+    {
+     "id": "c07",
+     "layout": "table",
+     "table": "months1",
+     "title": "좋은 달·조심할 달"
+    },
+    {
+     "id": "c08",
+     "layout": "years",
+     "animal": "토끼",
+     "years": [
+      1939,
+      1951,
+      1963
+     ],
+     "title": "출생연도별 풀이 ① 39·51·63년생"
+    },
+    {
+     "id": "c09",
+     "layout": "years",
+     "animal": "토끼",
+     "years": [
+      1975,
+      1987,
+      1999
+     ],
+     "title": "출생연도별 풀이 ② 75·87·99년생"
+    },
+    {
+     "id": "c10",
+     "layout": "qa",
+     "title": "자주 묻는 질문"
+    },
+    {
+     "id": "c11",
+     "layout": "lucky",
+     "title": "행운의 색·숫자·방향"
+    }
+   ],
+   "facts": {
+    "토끼": {
+     "animal": "토끼",
+     "branch": "묘",
+     "element": "나무",
+     "group": "해묘미",
+     "group_animals": [
+      "돼지",
+      "토끼",
+      "양"
+     ],
+     "sinsal_2027": "화개살",
+     "sinsal_plain": "빛나는 덮개, 마음이 깊어지는 해",
+     "sinsal_advice": "배움·정리·신앙에 좋은 때 — 혼자 끙끙대지 않기",
+     "samjae_2027": "날삼재",
+     "samjae_plain": "삼재가 나가는 마지막 해",
+     "samjae_years": {
+      "now": [
+       2025,
+       2026,
+       2027
+      ],
+      "next": [
+       2037,
+       2038,
+       2039
+      ]
+     },
+     "relations_with_2027": [
+      "삼합"
+     ],
+     "relation_main": "삼합",
+     "relation_plain": [
+      "한 팀(해묘미 삼합)"
+     ],
+     "stem_ding_is": "식상",
+     "branch_mi_is": "재성",
+     "energy_plain": [
+      "정(丁) 불 → 내가 베푸는 기운(재물을 낳음)",
+      "미(未) 흙 → 재물 기운"
+     ],
+     "tier_total": "대길",
+     "tier_total_line": "해묘미 삼합",
+     "tier_money": "대길",
+     "tier_money_line": "재물 기운·삼합",
+     "months_good": [
+      10,
+      7,
+      11
+     ],
+     "months_good_why": [
+      "10월 육합",
+      "7월 삼합",
+      "11월 삼합"
+     ],
+     "months_caution": [
+      9,
+      8,
+      12
+     ],
+     "months_caution_why": [
+      "9월 충",
+      "8월 원진",
+      "12월 형"
+     ],
+     "months_money_good": [
+      10,
+      7,
+      1
+     ],
+     "months_money_caution": [
+      9,
+      2,
+      3
+     ],
+     "months_body_good": [
+      11,
+      2,
+      3
+     ],
+     "months_body_caution": [
+      9,
+      8,
+      12
+     ],
+     "months_trip_good": [
+      5,
+      6
+     ],
+     "health": {
+      "part": "눈·피로",
+      "why": "불로 기운이 빠짐",
+      "habit": "일찍 자기",
+      "line": "삼합·모여 걷기"
+     },
+     "lucky": {
+      "colors": "검정·남색",
+      "numbers": "1·6",
+      "direction": "북쪽",
+      "tip": "북쪽 창 환기",
+      "element": "물",
+      "why": "물이 채워 줘요"
+     },
+     "years": [
+      {
+       "year": 1939,
+       "yy": "39",
+       "age_2027": 88,
+       "hwangap": false,
+       "stem_god": "편인",
+       "good": "배움·취미",
+       "good_line": "배우기 좋은 해",
+       "caution": "걱정 많음",
+       "caution_line": "생각은 짧게",
+       "stem_note": "",
+       "decade": "1930년대"
+      },
+      {
+       "year": 1951,
+       "yy": "51",
+       "age_2027": 76,
+       "hwangap": false,
+       "stem_god": "편관",
+       "good": "결단·정리",
+       "good_line": "미룬 일 끝내기",
+       "caution": "무리한 일정",
+       "caution_line": "쉬어 가며 하기",
+       "stem_note": "",
+       "decade": "1950년대"
+      },
+      {
+       "year": 1963,
+       "yy": "63",
+       "age_2027": 64,
+       "hwangap": false,
+       "stem_god": "편재",
+       "good": "큰돈 흐름",
+       "good_line": "돈이 크게 도는 해",
+       "caution": "돈 약속",
+       "caution_line": "서명은 천천히",
+       "stem_note": "정계 천간충 — 서명·돈 약속은 천천히",
+       "decade": "1960년대"
+      },
+      {
+       "year": 1975,
+       "yy": "75",
+       "age_2027": 52,
+       "hwangap": false,
+       "stem_god": "식신",
+       "good": "먹을 복·자식",
+       "good_line": "넉넉한 해",
+       "caution": "늘어지기",
+       "caution_line": "자주 걷기",
+       "stem_note": "",
+       "decade": "1970년대"
+      },
+      {
+       "year": 1987,
+       "yy": "87",
+       "age_2027": 40,
+       "hwangap": false,
+       "stem_god": "비견",
+       "good": "친구·자신감",
+       "good_line": "친구가 힘인 해",
+       "caution": "혼자 결정",
+       "caution_line": "의논하고 정하기",
+       "stem_note": "",
+       "decade": "1980년대"
+      },
+      {
+       "year": 1999,
+       "yy": "99",
+       "age_2027": 28,
+       "hwangap": false,
+       "stem_god": "편인",
+       "good": "배움·취미",
+       "good_line": "배우기 좋은 해",
+       "caution": "걱정 많음",
+       "caution_line": "생각은 짧게",
+       "stem_note": "",
+       "decade": "1990년대"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "E11",
+   "publish": "2026-11-25",
+   "weekday": "수",
+   "kind": "single",
+   "group": "인오술",
+   "animals": [
+    "개"
+   ],
+   "sinsal": "반안살",
+   "samjae": "",
+   "title": "2027년 개띠 운세 | 정미년과 형 · 반안살 자리 지키는 법 · 출생연도별 풀이",
+   "search": "2027년 개띠 운세",
+   "thumb": {
+    "big": "2027 개띠",
+    "sub": "34~06년생",
+    "pill": "반안살 자리 지키는 법"
+   },
+   "angle": "개띠 단독 — 정미년과 형, 반안살, 총운 조심 · 재물 조심. 정(丁) 불은 나를 돕는 기운, 미(未) 흙은 나와 같은 기운. 좋은 달 2·3·6월 · 조심할 달 1·4·5월.",
+   "qa_seeds": [
+    "정미년과 형이라는데 한 해 내내 조심해야 하나요?",
+    "개띠는 올해 이사해도 괜찮을까요?",
+    "개띠 자녀가 올해 결혼하는데 날을 어떻게 볼까요?",
+    "34년생도 이 풀이가 맞나요?"
+   ],
+   "next": "E12",
+   "next_title": "2027년 호랑이띠 운세 | 베풀수록 좋은 해 · 반안살 기운 키우는 법 · 출생연도별 풀이",
+   "publish_kst": "2026-11-25 20:00",
+   "chapters": [
+    {
+     "id": "c01",
+     "layout": "card",
+     "topic": "total",
+     "title": "2027 개띠 총운"
+    },
+    {
+     "id": "c02",
+     "layout": "card",
+     "topic": "sinsal",
+     "title": "반안살 기운 살리는 법"
+    },
+    {
+     "id": "c03",
+     "layout": "card",
+     "topic": "money",
+     "title": "재물운 — 돈이 도는 때와 지킬 것"
+    },
+    {
+     "id": "c04",
+     "layout": "card",
+     "topic": "health",
+     "title": "건강운 — 챙길 곳과 좋은 습관"
+    },
+    {
+     "id": "c05",
+     "layout": "card",
+     "topic": "family",
+     "title": "가정·자녀운"
+    },
+    {
+     "id": "c06",
+     "layout": "table",
+     "table": "people12",
+     "title": "올해 힘이 되는 띠·말 아낄 띠"
+    },
+    {
+     "id": "c07",
+     "layout": "table",
+     "table": "months1",
+     "title": "좋은 달·조심할 달"
+    },
+    {
+     "id": "c08",
+     "layout": "years",
+     "animal": "개",
+     "years": [
+      1934,
+      1946,
+      1958
+     ],
+     "title": "출생연도별 풀이 ① 34·46·58년생"
+    },
+    {
+     "id": "c09",
+     "layout": "years",
+     "animal": "개",
+     "years": [
+      1970,
+      1982,
+      1994,
+      2006
+     ],
+     "title": "출생연도별 풀이 ② 70·82·94·06년생"
+    },
+    {
+     "id": "c10",
+     "layout": "qa",
+     "title": "자주 묻는 질문"
+    },
+    {
+     "id": "c11",
+     "layout": "lucky",
+     "title": "행운의 색·숫자·방향"
+    }
+   ],
+   "facts": {
+    "개": {
+     "animal": "개",
+     "branch": "술",
+     "element": "흙",
+     "group": "인오술",
+     "group_animals": [
+      "호랑이",
+      "말",
+      "개"
+     ],
+     "sinsal_2027": "반안살",
+     "sinsal_plain": "말 안장에 오르는 해",
+     "sinsal_advice": "자리를 다지고 명예를 챙기기 좋은 때 — 기운 살리는 해",
+     "samjae_2027": "",
+     "samjae_plain": "",
+     "samjae_years": {
+      "last": [
+       2016,
+       2017,
+       2018
+      ],
+      "next": [
+       2028,
+       2029,
+       2030
+      ]
+     },
+     "relations_with_2027": [
+      "형",
+      "파"
+     ],
+     "relation_main": "형",
+     "relation_plain": [
+      "서두르면 엇나가는 사이(축술미 형) — 한 박자 쉬기",
+      "약속이 흔들리는 사이(파) — 약속 다시 확인"
+     ],
+     "stem_ding_is": "인성",
+     "branch_mi_is": "비겁",
+     "energy_plain": [
+      "정(丁) 불 → 나를 돕는 기운",
+      "미(未) 흙 → 나와 같은 기운"
+     ],
+     "tier_total": "조심",
+     "tier_total_line": "형·서두르지 않기",
+     "tier_money": "조심",
+     "tier_money_line": "형·돈 약속 조심",
+     "months_good": [
+      3,
+      2,
+      6
+     ],
+     "months_good_why": [
+      "3월 육합",
+      "2월 삼합",
+      "6월 삼합"
+     ],
+     "months_caution": [
+      4,
+      5,
+      1
+     ],
+     "months_caution_why": [
+      "4월 충",
+      "5월 원진",
+      "1월 형"
+     ],
+     "months_money_good": [
+      11,
+      12,
+      3
+     ],
+     "months_money_caution": [
+      4,
+      1,
+      7
+     ],
+     "months_body_good": [
+      6,
+      10
+     ],
+     "months_body_caution": [
+      4,
+      1,
+      5
+     ],
+     "months_trip_good": [
+      8,
+      9
+     ],
+     "health": {
+      "part": "위장·소화",
+      "why": "흙 기운이 겹침",
+      "habit": "천천히 먹기",
+      "line": "형·넘어짐 조심"
+     },
+     "lucky": {
+      "colors": "초록·연두",
+      "numbers": "3·8",
+      "direction": "동쪽",
+      "tip": "동쪽 창 열기",
+      "element": "나무",
+      "why": "나무가 흙을 풀어요"
+     },
+     "years": [
+      {
+       "year": 1934,
+       "yy": "34",
+       "age_2027": 93,
+       "hwangap": false,
+       "stem_god": "상관",
+       "good": "재주·말솜씨",
+       "good_line": "솜씨 보일 해",
+       "caution": "말실수",
+       "caution_line": "한 번 더 생각",
+       "stem_note": "",
+       "decade": "1930년대"
+      },
+      {
+       "year": 1946,
+       "yy": "46",
+       "age_2027": 81,
+       "hwangap": false,
+       "stem_god": "겁재",
+       "good": "형제·동료",
+       "good_line": "함께하면 좋은 해",
+       "caution": "돈거래",
+       "caution_line": "같이 쓰는 돈 정리",
+       "stem_note": "",
+       "decade": "1940년대"
+      },
+      {
+       "year": 1958,
+       "yy": "58",
+       "age_2027": 69,
+       "hwangap": false,
+       "stem_god": "정인",
+       "good": "문서·도장",
+       "good_line": "도움 받는 해",
+       "caution": "미루기",
+       "caution_line": "때 놓치지 않기",
+       "stem_note": "",
+       "decade": "1950년대"
+      },
+      {
+       "year": 1970,
+       "yy": "70",
+       "age_2027": 57,
+       "hwangap": false,
+       "stem_god": "정관",
+       "good": "명예·자리",
+       "good_line": "체면이 서는 해",
+       "caution": "체면 지출",
+       "caution_line": "겉치레 줄이기",
+       "stem_note": "",
+       "decade": "1970년대"
+      },
+      {
+       "year": 1982,
+       "yy": "82",
+       "age_2027": 45,
+       "hwangap": false,
+       "stem_god": "정재",
+       "good": "돈·인연",
+       "good_line": "합이 드는 해",
+       "caution": "정에 끌린 돈",
+       "caution_line": "빌려주기 조심",
+       "stem_note": "정임 천간합 — 돈과 인연이 붙는 해",
+       "decade": "1980년대"
+      },
+      {
+       "year": 1994,
+       "yy": "94",
+       "age_2027": 33,
+       "hwangap": false,
+       "stem_god": "상관",
+       "good": "재주·말솜씨",
+       "good_line": "솜씨 보일 해",
+       "caution": "말실수",
+       "caution_line": "한 번 더 생각",
+       "stem_note": "",
+       "decade": "1990년대"
+      },
+      {
+       "year": 2006,
+       "yy": "06",
+       "age_2027": 21,
+       "hwangap": false,
+       "stem_god": "겁재",
+       "good": "형제·동료",
+       "good_line": "함께하면 좋은 해",
+       "caution": "돈거래",
+       "caution_line": "같이 쓰는 돈 정리",
+       "stem_note": "",
+       "decade": "2000년대"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "E12",
+   "publish": "2026-11-27",
+   "weekday": "금",
+   "kind": "single",
+   "group": "인오술",
+   "animals": [
+    "호랑이"
+   ],
+   "sinsal": "반안살",
+   "samjae": "",
+   "title": "2027년 호랑이띠 운세 | 베풀수록 좋은 해 · 반안살 기운 키우는 법 · 출생연도별 풀이",
+   "search": "2027년 호랑이띠 운세",
+   "thumb": {
+    "big": "2027 호랑이띠",
+    "sub": "38~98년생",
+    "pill": "반안살 기운 키우는 법"
+   },
+   "angle": "호랑이띠 단독 — 정미년과 관계 없음, 반안살, 총운 보통 · 재물 길. 정(丁) 불은 내가 베푸는 기운(재물을 낳음), 미(未) 흙은 재물 기운. 좋은 달 6·10·11월 · 조심할 달 5·8·9월.",
+   "qa_seeds": [
+    "호랑이띠는 올해 이사해도 괜찮을까요?",
+    "호랑이띠 자녀가 올해 결혼하는데 날을 어떻게 볼까요?",
+    "38년생도 이 풀이가 맞나요?"
+   ],
+   "next": "E13",
+   "next_title": "2027년 용띠 운세 | 돕는 기운의 해 · 천살에 꼭 지킬 것 · 출생연도별 풀이",
+   "publish_kst": "2026-11-27 20:00",
+   "chapters": [
+    {
+     "id": "c01",
+     "layout": "card",
+     "topic": "total",
+     "title": "2027 호랑이띠 총운"
+    },
+    {
+     "id": "c02",
+     "layout": "card",
+     "topic": "sinsal",
+     "title": "반안살 기운 살리는 법"
+    },
+    {
+     "id": "c03",
+     "layout": "card",
+     "topic": "money",
+     "title": "재물운 — 돈이 도는 때와 지킬 것"
+    },
+    {
+     "id": "c04",
+     "layout": "card",
+     "topic": "health",
+     "title": "건강운 — 챙길 곳과 좋은 습관"
+    },
+    {
+     "id": "c05",
+     "layout": "card",
+     "topic": "family",
+     "title": "가정·자녀운"
+    },
+    {
+     "id": "c06",
+     "layout": "table",
+     "table": "people12",
+     "title": "올해 힘이 되는 띠·말 아낄 띠"
+    },
+    {
+     "id": "c07",
+     "layout": "table",
+     "table": "months1",
+     "title": "좋은 달·조심할 달"
+    },
+    {
+     "id": "c08",
+     "layout": "years",
+     "animal": "호랑이",
+     "years": [
+      1938,
+      1950,
+      1962
+     ],
+     "title": "출생연도별 풀이 ① 38·50·62년생"
+    },
+    {
+     "id": "c09",
+     "layout": "years",
+     "animal": "호랑이",
+     "years": [
+      1974,
+      1986,
+      1998
+     ],
+     "title": "출생연도별 풀이 ② 74·86·98년생"
+    },
+    {
+     "id": "c10",
+     "layout": "qa",
+     "title": "자주 묻는 질문"
+    },
+    {
+     "id": "c11",
+     "layout": "lucky",
+     "title": "행운의 색·숫자·방향"
+    }
+   ],
+   "facts": {
+    "호랑이": {
+     "animal": "호랑이",
+     "branch": "인",
+     "element": "나무",
+     "group": "인오술",
+     "group_animals": [
+      "호랑이",
+      "말",
+      "개"
+     ],
+     "sinsal_2027": "반안살",
+     "sinsal_plain": "말 안장에 오르는 해",
+     "sinsal_advice": "자리를 다지고 명예를 챙기기 좋은 때 — 기운 살리는 해",
+     "samjae_2027": "",
+     "samjae_plain": "",
+     "samjae_years": {
+      "last": [
+       2016,
+       2017,
+       2018
+      ],
+      "next": [
+       2028,
+       2029,
+       2030
+      ]
+     },
+     "relations_with_2027": [],
+     "relation_main": "",
+     "relation_plain": [],
+     "stem_ding_is": "식상",
+     "branch_mi_is": "재성",
+     "energy_plain": [
+      "정(丁) 불 → 내가 베푸는 기운(재물을 낳음)",
+      "미(未) 흙 → 재물 기운"
+     ],
+     "tier_total": "보통",
+     "tier_total_line": "베풀수록 좋은 해",
+     "tier_money": "길",
+     "tier_money_line": "재물 기운 드는 해",
+     "months_good": [
+      11,
+      6,
+      10
+     ],
+     "months_good_why": [
+      "11월 육합",
+      "6월 삼합",
+      "10월 삼합"
+     ],
+     "months_caution": [
+      8,
+      9,
+      5
+     ],
+     "months_caution_why": [
+      "8월 충",
+      "9월 원진",
+      "5월 형"
+     ],
+     "months_money_good": [
+      10,
+      1,
+      4
+     ],
+     "months_money_caution": [
+      8,
+      2,
+      3
+     ],
+     "months_body_good": [
+      11,
+      12,
+      2
+     ],
+     "months_body_caution": [
+      8,
+      9,
+      5
+     ],
+     "months_trip_good": [
+      6
+     ],
+     "health": {
+      "part": "눈·피로",
+      "why": "불로 기운이 빠짐",
+      "habit": "일찍 자기",
+      "line": "눈 자주 쉬기"
+     },
+     "lucky": {
+      "colors": "검정·남색",
+      "numbers": "1·6",
+      "direction": "북쪽",
+      "tip": "북쪽 창 환기",
+      "element": "물",
+      "why": "물이 채워 줘요"
+     },
+     "years": [
+      {
+       "year": 1938,
+       "yy": "38",
+       "age_2027": 89,
+       "hwangap": false,
+       "stem_god": "정인",
+       "good": "문서·도장",
+       "good_line": "도움 받는 해",
+       "caution": "미루기",
+       "caution_line": "때 놓치지 않기",
+       "stem_note": "",
+       "decade": "1930년대"
+      },
+      {
+       "year": 1950,
+       "yy": "50",
+       "age_2027": 77,
+       "hwangap": false,
+       "stem_god": "정관",
+       "good": "명예·자리",
+       "good_line": "체면이 서는 해",
+       "caution": "체면 지출",
+       "caution_line": "겉치레 줄이기",
+       "stem_note": "",
+       "decade": "1950년대"
+      },
+      {
+       "year": 1962,
+       "yy": "62",
+       "age_2027": 65,
+       "hwangap": false,
+       "stem_god": "정재",
+       "good": "돈·인연",
+       "good_line": "합이 드는 해",
+       "caution": "정에 끌린 돈",
+       "caution_line": "빌려주기 조심",
+       "stem_note": "정임 천간합 — 돈과 인연이 붙는 해",
+       "decade": "1960년대"
+      },
+      {
+       "year": 1974,
+       "yy": "74",
+       "age_2027": 53,
+       "hwangap": false,
+       "stem_god": "상관",
+       "good": "재주·말솜씨",
+       "good_line": "솜씨 보일 해",
+       "caution": "말실수",
+       "caution_line": "한 번 더 생각",
+       "stem_note": "",
+       "decade": "1970년대"
+      },
+      {
+       "year": 1986,
+       "yy": "86",
+       "age_2027": 41,
+       "hwangap": false,
+       "stem_god": "겁재",
+       "good": "형제·동료",
+       "good_line": "함께하면 좋은 해",
+       "caution": "돈거래",
+       "caution_line": "같이 쓰는 돈 정리",
+       "stem_note": "",
+       "decade": "1980년대"
+      },
+      {
+       "year": 1998,
+       "yy": "98",
+       "age_2027": 29,
+       "hwangap": false,
+       "stem_god": "정인",
+       "good": "문서·도장",
+       "good_line": "도움 받는 해",
+       "caution": "미루기",
+       "caution_line": "때 놓치지 않기",
+       "stem_note": "",
+       "decade": "1990년대"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "E13",
+   "publish": "2026-11-30",
+   "weekday": "월",
+   "kind": "single",
+   "group": "신자진",
+   "animals": [
+    "용"
+   ],
+   "sinsal": "천살",
+   "samjae": "",
+   "title": "2027년 용띠 운세 | 돕는 기운의 해 · 천살에 꼭 지킬 것 · 출생연도별 풀이",
+   "search": "2027년 용띠 운세",
+   "thumb": {
+    "big": "2027 용띠",
+    "sub": "40~00년생",
+    "pill": "천살에 꼭 지킬 것"
+   },
+   "angle": "용띠 단독 — 정미년과 관계 없음, 천살, 총운 길 · 재물 보통. 정(丁) 불은 나를 돕는 기운, 미(未) 흙은 나와 같은 기운. 좋은 달 8·9·12월 · 조심할 달 10·11월.",
+   "qa_seeds": [
+    "용띠는 올해 이사해도 괜찮을까요?",
+    "용띠 자녀가 올해 결혼하는데 날을 어떻게 볼까요?",
+    "40년생도 이 풀이가 맞나요?"
+   ],
+   "next": "E14",
+   "next_title": "2027년 원숭이띠 운세 | 맡은 일 많은 해 · 천살 겸손하게 넘기는 법 · 출생연도별 풀이",
+   "publish_kst": "2026-11-30 20:00",
+   "chapters": [
+    {
+     "id": "c01",
+     "layout": "card",
+     "topic": "total",
+     "title": "2027 용띠 총운"
+    },
+    {
+     "id": "c02",
+     "layout": "card",
+     "topic": "sinsal",
+     "title": "천살 잘 넘기는 법"
+    },
+    {
+     "id": "c03",
+     "layout": "card",
+     "topic": "money",
+     "title": "재물운 — 돈이 도는 때와 지킬 것"
+    },
+    {
+     "id": "c04",
+     "layout": "card",
+     "topic": "health",
+     "title": "건강운 — 챙길 곳과 좋은 습관"
+    },
+    {
+     "id": "c05",
+     "layout": "card",
+     "topic": "family",
+     "title": "가정·자녀운"
+    },
+    {
+     "id": "c06",
+     "layout": "table",
+     "table": "people12",
+     "title": "올해 힘이 되는 띠·말 아낄 띠"
+    },
+    {
+     "id": "c07",
+     "layout": "table",
+     "table": "months1",
+     "title": "좋은 달·조심할 달"
+    },
+    {
+     "id": "c08",
+     "layout": "years",
+     "animal": "용",
+     "years": [
+      1940,
+      1952,
+      1964
+     ],
+     "title": "출생연도별 풀이 ① 40·52·64년생"
+    },
+    {
+     "id": "c09",
+     "layout": "years",
+     "animal": "용",
+     "years": [
+      1976,
+      1988,
+      2000
+     ],
+     "title": "출생연도별 풀이 ② 76·88·00년생"
+    },
+    {
+     "id": "c10",
+     "layout": "qa",
+     "title": "자주 묻는 질문"
+    },
+    {
+     "id": "c11",
+     "layout": "lucky",
+     "title": "행운의 색·숫자·방향"
+    }
+   ],
+   "facts": {
+    "용": {
+     "animal": "용",
+     "branch": "진",
+     "element": "흙",
+     "group": "신자진",
+     "group_animals": [
+      "원숭이",
+      "쥐",
+      "용"
+     ],
+     "sinsal_2027": "천살",
+     "sinsal_plain": "하늘의 기운이 드는 해",
+     "sinsal_advice": "몸을 낮추고 겸손하게, 큰 욕심보다 마음 다스리기",
+     "samjae_2027": "",
+     "samjae_plain": "",
+     "samjae_years": {
+      "last": [
+       2022,
+       2023,
+       2024
+      ],
+      "next": [
+       2034,
+       2035,
+       2036
+      ]
+     },
+     "relations_with_2027": [],
+     "relation_main": "",
+     "relation_plain": [],
+     "stem_ding_is": "인성",
+     "branch_mi_is": "비겁",
+     "energy_plain": [
+      "정(丁) 불 → 나를 돕는 기운",
+      "미(未) 흙 → 나와 같은 기운"
+     ],
+     "tier_total": "길",
+     "tier_total_line": "돕는 기운의 해",
+     "tier_money": "보통",
+     "tier_money_line": "씀씀이 챙길 해",
+     "months_good": [
+      9,
+      8,
+      12
+     ],
+     "months_good_why": [
+      "9월 육합",
+      "8월 삼합",
+      "12월 삼합"
+     ],
+     "months_caution": [
+      10,
+      11
+     ],
+     "months_caution_why": [
+      "10월 충",
+      "11월 원진"
+     ],
+     "months_money_good": [
+      9,
+      12,
+      8
+     ],
+     "months_money_caution": [
+      10,
+      1,
+      4
+     ],
+     "months_body_good": [
+      5,
+      6,
+      1
+     ],
+     "months_body_caution": [
+      10,
+      2,
+      3
+     ],
+     "months_trip_good": [
+      2,
+      8,
+      9
+     ],
+     "health": {
+      "part": "위장·소화",
+      "why": "흙 기운이 겹침",
+      "habit": "천천히 먹기",
+      "line": "배는 조금 덜 차게"
+     },
+     "lucky": {
+      "colors": "초록·연두",
+      "numbers": "3·8",
+      "direction": "동쪽",
+      "tip": "동쪽 창 열기",
+      "element": "나무",
+      "why": "나무가 흙을 풀어요"
+     },
+     "years": [
+      {
+       "year": 1940,
+       "yy": "40",
+       "age_2027": 87,
+       "hwangap": false,
+       "stem_god": "정관",
+       "good": "명예·자리",
+       "good_line": "체면이 서는 해",
+       "caution": "체면 지출",
+       "caution_line": "겉치레 줄이기",
+       "stem_note": "",
+       "decade": "1940년대"
+      },
+      {
+       "year": 1952,
+       "yy": "52",
+       "age_2027": 75,
+       "hwangap": false,
+       "stem_god": "정재",
+       "good": "돈·인연",
+       "good_line": "합이 드는 해",
+       "caution": "정에 끌린 돈",
+       "caution_line": "빌려주기 조심",
+       "stem_note": "정임 천간합 — 돈과 인연이 붙는 해",
+       "decade": "1950년대"
+      },
+      {
+       "year": 1964,
+       "yy": "64",
+       "age_2027": 63,
+       "hwangap": false,
+       "stem_god": "상관",
+       "good": "재주·말솜씨",
+       "good_line": "솜씨 보일 해",
+       "caution": "말실수",
+       "caution_line": "한 번 더 생각",
+       "stem_note": "",
+       "decade": "1960년대"
+      },
+      {
+       "year": 1976,
+       "yy": "76",
+       "age_2027": 51,
+       "hwangap": false,
+       "stem_god": "겁재",
+       "good": "형제·동료",
+       "good_line": "함께하면 좋은 해",
+       "caution": "돈거래",
+       "caution_line": "같이 쓰는 돈 정리",
+       "stem_note": "",
+       "decade": "1970년대"
+      },
+      {
+       "year": 1988,
+       "yy": "88",
+       "age_2027": 39,
+       "hwangap": false,
+       "stem_god": "정인",
+       "good": "문서·도장",
+       "good_line": "도움 받는 해",
+       "caution": "미루기",
+       "caution_line": "때 놓치지 않기",
+       "stem_note": "",
+       "decade": "1980년대"
+      },
+      {
+       "year": 2000,
+       "yy": "00",
+       "age_2027": 27,
+       "hwangap": false,
+       "stem_god": "정관",
+       "good": "명예·자리",
+       "good_line": "체면이 서는 해",
+       "caution": "체면 지출",
+       "caution_line": "겉치레 줄이기",
+       "stem_note": "",
+       "decade": "2000년대"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "E14",
+   "publish": "2026-12-02",
+   "weekday": "수",
+   "kind": "single",
+   "group": "신자진",
+   "animals": [
+    "원숭이"
+   ],
+   "sinsal": "천살",
+   "samjae": "",
+   "title": "2027년 원숭이띠 운세 | 맡은 일 많은 해 · 천살 겸손하게 넘기는 법 · 출생연도별 풀이",
+   "search": "2027년 원숭이띠 운세",
+   "thumb": {
+    "big": "2027 원숭이띠",
+    "sub": "32~04년생",
+    "pill": "천살 겸손하게 넘기는 법"
+   },
+   "angle": "원숭이띠 단독 — 정미년과 관계 없음, 천살, 총운 보통 · 재물 보통. 정(丁) 불은 나를 다잡는 기운(맡을 일이 늚), 미(未) 흙은 나를 돕는 기운. 좋은 달 4·5·12월 · 조심할 달 2·3월.",
+   "qa_seeds": [
+    "원숭이띠는 올해 이사해도 괜찮을까요?",
+    "원숭이띠 자녀가 올해 결혼하는데 날을 어떻게 볼까요?",
+    "32년생도 이 풀이가 맞나요?"
+   ],
+   "next": "E15",
+   "next_title": "2027년 뱀띠 운세 | 같은 기운의 해 · 월살 잘 넘기는 법 · 출생연도별 풀이",
+   "publish_kst": "2026-12-02 20:00",
+   "chapters": [
+    {
+     "id": "c01",
+     "layout": "card",
+     "topic": "total",
+     "title": "2027 원숭이띠 총운"
+    },
+    {
+     "id": "c02",
+     "layout": "card",
+     "topic": "sinsal",
+     "title": "천살 잘 넘기는 법"
+    },
+    {
+     "id": "c03",
+     "layout": "card",
+     "topic": "money",
+     "title": "재물운 — 돈이 도는 때와 지킬 것"
+    },
+    {
+     "id": "c04",
+     "layout": "card",
+     "topic": "health",
+     "title": "건강운 — 챙길 곳과 좋은 습관"
+    },
+    {
+     "id": "c05",
+     "layout": "card",
+     "topic": "family",
+     "title": "가정·자녀운"
+    },
+    {
+     "id": "c06",
+     "layout": "table",
+     "table": "people12",
+     "title": "올해 힘이 되는 띠·말 아낄 띠"
+    },
+    {
+     "id": "c07",
+     "layout": "table",
+     "table": "months1",
+     "title": "좋은 달·조심할 달"
+    },
+    {
+     "id": "c08",
+     "layout": "years",
+     "animal": "원숭이",
+     "years": [
+      1932,
+      1944,
+      1956,
+      1968
+     ],
+     "title": "출생연도별 풀이 ① 32·44·56·68년생"
+    },
+    {
+     "id": "c09",
+     "layout": "years",
+     "animal": "원숭이",
+     "years": [
+      1980,
+      1992,
+      2004
+     ],
+     "title": "출생연도별 풀이 ② 80·92·04년생"
+    },
+    {
+     "id": "c10",
+     "layout": "qa",
+     "title": "자주 묻는 질문"
+    },
+    {
+     "id": "c11",
+     "layout": "lucky",
+     "title": "행운의 색·숫자·방향"
+    }
+   ],
+   "facts": {
+    "원숭이": {
+     "animal": "원숭이",
+     "branch": "신",
+     "element": "쇠",
+     "group": "신자진",
+     "group_animals": [
+      "원숭이",
+      "쥐",
+      "용"
+     ],
+     "sinsal_2027": "천살",
+     "sinsal_plain": "하늘의 기운이 드는 해",
+     "sinsal_advice": "몸을 낮추고 겸손하게, 큰 욕심보다 마음 다스리기",
+     "samjae_2027": "",
+     "samjae_plain": "",
+     "samjae_years": {
+      "last": [
+       2022,
+       2023,
+       2024
+      ],
+      "next": [
+       2034,
+       2035,
+       2036
+      ]
+     },
+     "relations_with_2027": [],
+     "relation_main": "",
+     "relation_plain": [],
+     "stem_ding_is": "관성",
+     "branch_mi_is": "인성",
+     "energy_plain": [
+      "정(丁) 불 → 나를 다잡는 기운(맡을 일이 늚)",
+      "미(未) 흙 → 나를 돕는 기운"
+     ],
+     "tier_total": "보통",
+     "tier_total_line": "맡은 일 많은 해",
+     "tier_money": "보통",
+     "tier_money_line": "꾸준히 모으는 해",
+     "months_good": [
+      5,
+      4,
+      12
+     ],
+     "months_good_why": [
+      "5월 육합",
+      "4월 삼합",
+      "12월 삼합"
+     ],
+     "months_caution": [
+      2,
+      3
+     ],
+     "months_caution_why": [
+      "2월 충",
+      "3월 원진"
+     ],
+     "months_money_good": [
+      5,
+      12,
+      11
+     ],
+     "months_money_caution": [
+      2,
+      8,
+      9
+     ],
+     "months_body_good": [
+      4,
+      1,
+      7
+     ],
+     "months_body_caution": [
+      2,
+      6,
+      3
+     ],
+     "months_trip_good": [
+      11,
+      12
+     ],
+     "health": {
+      "part": "목·기관지",
+      "why": "불이 쇠를 누름",
+      "habit": "목 따뜻하게",
+      "line": "환절기 목 감싸기"
+     },
+     "lucky": {
+      "colors": "검정·남색",
+      "numbers": "1·6",
+      "direction": "북쪽",
+      "tip": "북쪽 창 환기",
+      "element": "물",
+      "why": "물이 불을 식혀요"
+     },
+     "years": [
+      {
+       "year": 1932,
+       "yy": "32",
+       "age_2027": 95,
+       "hwangap": false,
+       "stem_god": "정재",
+       "good": "돈·인연",
+       "good_line": "합이 드는 해",
+       "caution": "정에 끌린 돈",
+       "caution_line": "빌려주기 조심",
+       "stem_note": "정임 천간합 — 돈과 인연이 붙는 해",
+       "decade": "1930년대"
+      },
+      {
+       "year": 1944,
+       "yy": "44",
+       "age_2027": 83,
+       "hwangap": false,
+       "stem_god": "상관",
+       "good": "재주·말솜씨",
+       "good_line": "솜씨 보일 해",
+       "caution": "말실수",
+       "caution_line": "한 번 더 생각",
+       "stem_note": "",
+       "decade": "1940년대"
+      },
+      {
+       "year": 1956,
+       "yy": "56",
+       "age_2027": 71,
+       "hwangap": false,
+       "stem_god": "겁재",
+       "good": "형제·동료",
+       "good_line": "함께하면 좋은 해",
+       "caution": "돈거래",
+       "caution_line": "같이 쓰는 돈 정리",
+       "stem_note": "",
+       "decade": "1950년대"
+      },
+      {
+       "year": 1968,
+       "yy": "68",
+       "age_2027": 59,
+       "hwangap": false,
+       "stem_god": "정인",
+       "good": "문서·도장",
+       "good_line": "도움 받는 해",
+       "caution": "미루기",
+       "caution_line": "때 놓치지 않기",
+       "stem_note": "",
+       "decade": "1960년대"
+      },
+      {
+       "year": 1980,
+       "yy": "80",
+       "age_2027": 47,
+       "hwangap": false,
+       "stem_god": "정관",
+       "good": "명예·자리",
+       "good_line": "체면이 서는 해",
+       "caution": "체면 지출",
+       "caution_line": "겉치레 줄이기",
+       "stem_note": "",
+       "decade": "1980년대"
+      },
+      {
+       "year": 1992,
+       "yy": "92",
+       "age_2027": 35,
+       "hwangap": false,
+       "stem_god": "정재",
+       "good": "돈·인연",
+       "good_line": "합이 드는 해",
+       "caution": "정에 끌린 돈",
+       "caution_line": "빌려주기 조심",
+       "stem_note": "정임 천간합 — 돈과 인연이 붙는 해",
+       "decade": "1990년대"
+      },
+      {
+       "year": 2004,
+       "yy": "04",
+       "age_2027": 23,
+       "hwangap": false,
+       "stem_god": "상관",
+       "good": "재주·말솜씨",
+       "good_line": "솜씨 보일 해",
+       "caution": "말실수",
+       "caution_line": "한 번 더 생각",
+       "stem_note": "",
+       "decade": "2000년대"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "E15",
+   "publish": "2026-12-04",
+   "weekday": "금",
+   "kind": "single",
+   "group": "사유축",
+   "animals": [
+    "뱀"
+   ],
+   "sinsal": "월살",
+   "samjae": "",
+   "title": "2027년 뱀띠 운세 | 같은 기운의 해 · 월살 잘 넘기는 법 · 출생연도별 풀이",
+   "search": "2027년 뱀띠 운세",
+   "thumb": {
+    "big": "2027 뱀띠",
+    "sub": "41~01년생",
+    "pill": "월살 잘 넘기는 법"
+   },
+   "angle": "뱀띠 단독 — 정미년과 관계 없음, 월살, 총운 길 · 재물 보통. 정(丁) 불은 나와 같은 기운, 미(未) 흙은 내가 베푸는 기운(재물을 낳음). 좋은 달 1·8·9월 · 조심할 달 2·10·11월.",
+   "qa_seeds": [
+    "뱀띠는 올해 이사해도 괜찮을까요?",
+    "뱀띠 자녀가 올해 결혼하는데 날을 어떻게 볼까요?",
+    "41년생도 이 풀이가 맞나요?"
+   ],
+   "next": "E16",
+   "next_title": "2027년 닭띠 운세 | 맡은 일 많은 해 · 월살 내실 다지는 법 · 출생연도별 풀이",
+   "publish_kst": "2026-12-04 20:00",
+   "chapters": [
+    {
+     "id": "c01",
+     "layout": "card",
+     "topic": "total",
+     "title": "2027 뱀띠 총운"
+    },
+    {
+     "id": "c02",
+     "layout": "card",
+     "topic": "sinsal",
+     "title": "월살 — 조심할 점과 지킬 것"
+    },
+    {
+     "id": "c03",
+     "layout": "card",
+     "topic": "money",
+     "title": "재물운 — 돈이 도는 때와 지킬 것"
+    },
+    {
+     "id": "c04",
+     "layout": "card",
+     "topic": "health",
+     "title": "건강운 — 챙길 곳과 좋은 습관"
+    },
+    {
+     "id": "c05",
+     "layout": "card",
+     "topic": "family",
+     "title": "가정·자녀운"
+    },
+    {
+     "id": "c06",
+     "layout": "table",
+     "table": "people12",
+     "title": "올해 힘이 되는 띠·말 아낄 띠"
+    },
+    {
+     "id": "c07",
+     "layout": "table",
+     "table": "months1",
+     "title": "좋은 달·조심할 달"
+    },
+    {
+     "id": "c08",
+     "layout": "years",
+     "animal": "뱀",
+     "years": [
+      1941,
+      1953,
+      1965
+     ],
+     "title": "출생연도별 풀이 ① 41·53·65년생"
+    },
+    {
+     "id": "c09",
+     "layout": "years",
+     "animal": "뱀",
+     "years": [
+      1977,
+      1989,
+      2001
+     ],
+     "title": "출생연도별 풀이 ② 77·89·01년생"
+    },
+    {
+     "id": "c10",
+     "layout": "qa",
+     "title": "자주 묻는 질문"
+    },
+    {
+     "id": "c11",
+     "layout": "lucky",
+     "title": "행운의 색·숫자·방향"
+    }
+   ],
+   "facts": {
+    "뱀": {
+     "animal": "뱀",
+     "branch": "사",
+     "element": "불",
+     "group": "사유축",
+     "group_animals": [
+      "뱀",
+      "닭",
+      "소"
+     ],
+     "sinsal_2027": "월살",
+     "sinsal_plain": "달빛이 마른 듯 쉬어 가는 해",
+     "sinsal_advice": "서두르지 말고 준비·저축으로 속을 채우기",
+     "samjae_2027": "",
+     "samjae_plain": "",
+     "samjae_years": {
+      "last": [
+       2019,
+       2020,
+       2021
+      ],
+      "next": [
+       2031,
+       2032,
+       2033
+      ]
+     },
+     "relations_with_2027": [],
+     "relation_main": "",
+     "relation_plain": [],
+     "stem_ding_is": "비겁",
+     "branch_mi_is": "식상",
+     "energy_plain": [
+      "정(丁) 불 → 나와 같은 기운",
+      "미(未) 흙 → 내가 베푸는 기운(재물을 낳음)"
+     ],
+     "tier_total": "길",
+     "tier_total_line": "같은 기운의 해",
+     "tier_money": "보통",
+     "tier_money_line": "베풀면 도는 해",
+     "months_good": [
+      8,
+      1,
+      9
+     ],
+     "months_good_why": [
+      "8월 육합",
+      "1월 삼합",
+      "9월 삼합"
+     ],
+     "months_caution": [
+      11,
+      10,
+      2
+     ],
+     "months_caution_why": [
+      "11월 충",
+      "10월 원진",
+      "2월 형"
+     ],
+     "months_money_good": [
+      8,
+      9,
+      1
+     ],
+     "months_money_caution": [
+      11,
+      5,
+      6
+     ],
+     "months_body_good": [
+      3,
+      5,
+      6
+     ],
+     "months_body_caution": [
+      11,
+      12,
+      2
+     ],
+     "months_trip_good": [
+      1,
+      4,
+      7
+     ],
+     "health": {
+      "part": "심장·열",
+      "why": "불 기운이 겹침",
+      "habit": "더울 땐 쉬기",
+      "line": "땀나면 바로 쉬기"
+     },
+     "lucky": {
+      "colors": "노랑·황토",
+      "numbers": "5·10",
+      "direction": "가운데",
+      "tip": "집 가운데 정리",
+      "element": "흙",
+      "why": "흙이 열을 덜어요"
+     },
+     "years": [
+      {
+       "year": 1941,
+       "yy": "41",
+       "age_2027": 86,
+       "hwangap": false,
+       "stem_god": "편관",
+       "good": "결단·정리",
+       "good_line": "미룬 일 끝내기",
+       "caution": "무리한 일정",
+       "caution_line": "쉬어 가며 하기",
+       "stem_note": "",
+       "decade": "1940년대"
+      },
+      {
+       "year": 1953,
+       "yy": "53",
+       "age_2027": 74,
+       "hwangap": false,
+       "stem_god": "편재",
+       "good": "큰돈 흐름",
+       "good_line": "돈이 크게 도는 해",
+       "caution": "돈 약속",
+       "caution_line": "서명은 천천히",
+       "stem_note": "정계 천간충 — 서명·돈 약속은 천천히",
+       "decade": "1950년대"
+      },
+      {
+       "year": 1965,
+       "yy": "65",
+       "age_2027": 62,
+       "hwangap": false,
+       "stem_god": "식신",
+       "good": "먹을 복·자식",
+       "good_line": "넉넉한 해",
+       "caution": "늘어지기",
+       "caution_line": "자주 걷기",
+       "stem_note": "",
+       "decade": "1960년대"
+      },
+      {
+       "year": 1977,
+       "yy": "77",
+       "age_2027": 50,
+       "hwangap": false,
+       "stem_god": "비견",
+       "good": "친구·자신감",
+       "good_line": "친구가 힘인 해",
+       "caution": "혼자 결정",
+       "caution_line": "의논하고 정하기",
+       "stem_note": "",
+       "decade": "1970년대"
+      },
+      {
+       "year": 1989,
+       "yy": "89",
+       "age_2027": 38,
+       "hwangap": false,
+       "stem_god": "편인",
+       "good": "배움·취미",
+       "good_line": "배우기 좋은 해",
+       "caution": "걱정 많음",
+       "caution_line": "생각은 짧게",
+       "stem_note": "",
+       "decade": "1980년대"
+      },
+      {
+       "year": 2001,
+       "yy": "01",
+       "age_2027": 26,
+       "hwangap": false,
+       "stem_god": "편관",
+       "good": "결단·정리",
+       "good_line": "미룬 일 끝내기",
+       "caution": "무리한 일정",
+       "caution_line": "쉬어 가며 하기",
+       "stem_note": "",
+       "decade": "2000년대"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "E16",
+   "publish": "2026-12-07",
+   "weekday": "월",
+   "kind": "single",
+   "group": "사유축",
+   "animals": [
+    "닭"
+   ],
+   "sinsal": "월살",
+   "samjae": "",
+   "title": "2027년 닭띠 운세 | 맡은 일 많은 해 · 월살 내실 다지는 법 · 출생연도별 풀이",
+   "search": "2027년 닭띠 운세",
+   "thumb": {
+    "big": "2027 닭띠",
+    "sub": "33~05년생",
+    "pill": "월살 내실 다지는 법"
+   },
+   "angle": "닭띠 단독 — 정미년과 관계 없음, 월살, 총운 보통 · 재물 보통. 정(丁) 불은 나를 다잡는 기운(맡을 일이 늚), 미(未) 흙은 나를 돕는 기운. 좋은 달 1·4·5월 · 조심할 달 2·3월.",
+   "qa_seeds": [
+    "닭띠는 올해 이사해도 괜찮을까요?",
+    "닭띠 자녀가 올해 결혼하는데 날을 어떻게 볼까요?",
+    "33년생도 이 풀이가 맞나요?"
+   ],
+   "next": null,
+   "next_title": null,
+   "publish_kst": "2026-12-07 20:00",
+   "chapters": [
+    {
+     "id": "c01",
+     "layout": "card",
+     "topic": "total",
+     "title": "2027 닭띠 총운"
+    },
+    {
+     "id": "c02",
+     "layout": "card",
+     "topic": "sinsal",
+     "title": "월살 — 조심할 점과 지킬 것"
+    },
+    {
+     "id": "c03",
+     "layout": "card",
+     "topic": "money",
+     "title": "재물운 — 돈이 도는 때와 지킬 것"
+    },
+    {
+     "id": "c04",
+     "layout": "card",
+     "topic": "health",
+     "title": "건강운 — 챙길 곳과 좋은 습관"
+    },
+    {
+     "id": "c05",
+     "layout": "card",
+     "topic": "family",
+     "title": "가정·자녀운"
+    },
+    {
+     "id": "c06",
+     "layout": "table",
+     "table": "people12",
+     "title": "올해 힘이 되는 띠·말 아낄 띠"
+    },
+    {
+     "id": "c07",
+     "layout": "table",
+     "table": "months1",
+     "title": "좋은 달·조심할 달"
+    },
+    {
+     "id": "c08",
+     "layout": "years",
+     "animal": "닭",
+     "years": [
+      1933,
+      1945,
+      1957,
+      1969
+     ],
+     "title": "출생연도별 풀이 ① 33·45·57·69년생"
+    },
+    {
+     "id": "c09",
+     "layout": "years",
+     "animal": "닭",
+     "years": [
+      1981,
+      1993,
+      2005
+     ],
+     "title": "출생연도별 풀이 ② 81·93·05년생"
+    },
+    {
+     "id": "c10",
+     "layout": "qa",
+     "title": "자주 묻는 질문"
+    },
+    {
+     "id": "c11",
+     "layout": "lucky",
+     "title": "행운의 색·숫자·방향"
+    }
+   ],
+   "facts": {
+    "닭": {
+     "animal": "닭",
+     "branch": "유",
+     "element": "쇠",
+     "group": "사유축",
+     "group_animals": [
+      "뱀",
+      "닭",
+      "소"
+     ],
+     "sinsal_2027": "월살",
+     "sinsal_plain": "달빛이 마른 듯 쉬어 가는 해",
+     "sinsal_advice": "서두르지 말고 준비·저축으로 속을 채우기",
+     "samjae_2027": "",
+     "samjae_plain": "",
+     "samjae_years": {
+      "last": [
+       2019,
+       2020,
+       2021
+      ],
+      "next": [
+       2031,
+       2032,
+       2033
+      ]
+     },
+     "relations_with_2027": [],
+     "relation_main": "",
+     "relation_plain": [],
+     "stem_ding_is": "관성",
+     "branch_mi_is": "인성",
+     "energy_plain": [
+      "정(丁) 불 → 나를 다잡는 기운(맡을 일이 늚)",
+      "미(未) 흙 → 나를 돕는 기운"
+     ],
+     "tier_total": "보통",
+     "tier_total_line": "맡은 일 많은 해",
+     "tier_money": "보통",
+     "tier_money_line": "꾸준히 모으는 해",
+     "months_good": [
+      4,
+      1,
+      5
+     ],
+     "months_good_why": [
+      "4월 육합",
+      "1월 삼합",
+      "5월 삼합"
+     ],
+     "months_caution": [
+      3,
+      2
+     ],
+     "months_caution_why": [
+      "3월 충",
+      "2월 원진"
+     ],
+     "months_money_good": [
+      4,
+      11,
+      12
+     ],
+     "months_money_caution": [
+      3,
+      8,
+      9
+     ],
+     "months_body_good": [
+      4,
+      1,
+      7
+     ],
+     "months_body_caution": [
+      3,
+      6,
+      2
+     ],
+     "months_trip_good": [
+      11,
+      12
+     ],
+     "health": {
+      "part": "목·기관지",
+      "why": "불이 쇠를 누름",
+      "habit": "목 따뜻하게",
+      "line": "환절기 목 감싸기"
+     },
+     "lucky": {
+      "colors": "검정·남색",
+      "numbers": "1·6",
+      "direction": "북쪽",
+      "tip": "북쪽 창 환기",
+      "element": "물",
+      "why": "물이 불을 식혀요"
+     },
+     "years": [
+      {
+       "year": 1933,
+       "yy": "33",
+       "age_2027": 94,
+       "hwangap": false,
+       "stem_god": "편재",
+       "good": "큰돈 흐름",
+       "good_line": "돈이 크게 도는 해",
+       "caution": "돈 약속",
+       "caution_line": "서명은 천천히",
+       "stem_note": "정계 천간충 — 서명·돈 약속은 천천히",
+       "decade": "1930년대"
+      },
+      {
+       "year": 1945,
+       "yy": "45",
+       "age_2027": 82,
+       "hwangap": false,
+       "stem_god": "식신",
+       "good": "먹을 복·자식",
+       "good_line": "넉넉한 해",
+       "caution": "늘어지기",
+       "caution_line": "자주 걷기",
+       "stem_note": "",
+       "decade": "1940년대"
+      },
+      {
+       "year": 1957,
+       "yy": "57",
+       "age_2027": 70,
+       "hwangap": false,
+       "stem_god": "비견",
+       "good": "친구·자신감",
+       "good_line": "친구가 힘인 해",
+       "caution": "혼자 결정",
+       "caution_line": "의논하고 정하기",
+       "stem_note": "",
+       "decade": "1950년대"
+      },
+      {
+       "year": 1969,
+       "yy": "69",
+       "age_2027": 58,
+       "hwangap": false,
+       "stem_god": "편인",
+       "good": "배움·취미",
+       "good_line": "배우기 좋은 해",
+       "caution": "걱정 많음",
+       "caution_line": "생각은 짧게",
+       "stem_note": "",
+       "decade": "1960년대"
+      },
+      {
+       "year": 1981,
+       "yy": "81",
+       "age_2027": 46,
+       "hwangap": false,
+       "stem_god": "편관",
+       "good": "결단·정리",
+       "good_line": "미룬 일 끝내기",
+       "caution": "무리한 일정",
+       "caution_line": "쉬어 가며 하기",
+       "stem_note": "",
+       "decade": "1980년대"
+      },
+      {
+       "year": 1993,
+       "yy": "93",
+       "age_2027": 34,
+       "hwangap": false,
+       "stem_god": "편재",
+       "good": "큰돈 흐름",
+       "good_line": "돈이 크게 도는 해",
+       "caution": "돈 약속",
+       "caution_line": "서명은 천천히",
+       "stem_note": "정계 천간충 — 서명·돈 약속은 천천히",
+       "decade": "1990년대"
+      },
+      {
+       "year": 2005,
+       "yy": "05",
+       "age_2027": 22,
+       "hwangap": false,
+       "stem_god": "식신",
+       "good": "먹을 복·자식",
+       "good_line": "넉넉한 해",
+       "caution": "늘어지기",
+       "caution_line": "자주 걷기",
+       "stem_note": "",
+       "decade": "2000년대"
+      }
+     ]
+    }
+   }
+  }
+ ]
+}
