@@ -404,6 +404,28 @@ with tempfile.TemporaryDirectory() as tmp:
     ck(f"10/16 저녁 골라보기({kb16}) → 쓰레드 올린다(sci 가 낮인 날)", run(sp, paths, http, d=D16) == 0
        and any(ep == "threads_publish" for ep, _ in posts(http)))
 
+print("── 병맛 시험(10/25~11/07) — 쓰레드는 병맛을 건너뛰고 골라보기만(제 기간 안에서만) ──")
+BM_A = json.load(open(os.path.join(HERE, "samples", "bm_paper_wombat.json"), encoding="utf-8"))   # 10/25 낮 병맛 A
+BM_B = json.load(open(os.path.join(HERE, "samples", "bm_animal_penguin.json"), encoding="utf-8"))  # 10/26 저녁 병맛 B
+BMDAYS = [P.BM_FROM + dt.timedelta(days=k) for k in range((P.BM_TO - P.BM_FROM).days + 1)]
+ck("쓰레드 편: 병맛 기간(sci + 병맛뿐인 날)엔 없음(None) · 11/08 골라보기 두 편 → 저녁 편",
+   all(T.threads_slot(d) is None for d in BMDAYS) and T.threads_slot(dt.date(2026, 11, 8)) == "b")
+ck("쓰레드 기간(10/11~10/24)과 병맛 기간은 겹치지 않는다 · 기간 안 쓰레드 편은 늘 골라보기 꼴",
+   T.THREADS_TO < P.BM_FROM and all(P.is_pick(P.kind_for(d, T.threads_slot(d)))
+                                    for d in (T.THREADS_FROM + dt.timedelta(days=k)
+                                              for k in range((T.THREADS_TO - T.THREADS_FROM).days + 1))))
+for s, sl in ((BM_A, "a"), (BM_B, "b")):
+    d = dt.date.fromisoformat(s["date"])
+    with tempfile.TemporaryDirectory() as tmp:
+        sp, paths = setup_slot(tmp, s, sl)
+        http = T.FakeHTTP()
+        why = T.skip_reasons(s, d, P.load_ledger(paths["ig_ledger"]), {})
+        ck(f"{s['kind']}({s['date']}) → 쓰레드 안 올림(0 · 호출 0 · ledger 없음) · 까닭에 '병맛'",
+           run(sp, paths, http, d=d) == 0 and not http.calls and not os.path.exists(paths["ledger"])
+           and any("병맛" in w for w in why), why)
+inwin = dict(BM_A, date="2026-10-20")                      # 기간 안 날짜로 와도(편성 밖이라 인스타도 막지만) 쓰레드는 꼴로 먼저 건너뛴다
+ck("병맛 대본은 쓰레드 기간 안 날짜여도 꼴로 건너뛴다", any("병맛" in w for w in T.skip_reasons(inwin, dt.date(2026, 10, 20), {}, {})))
+
 print("── upload_threads 글 함수 ──")
 http = T.FakeHTTP()
 tid = UT.publish_text("안녕", "심리테스트", poll=["가", "나"], http=http, sleep=NOSLEEP, **CREDS)

@@ -6,17 +6,24 @@
   → 10/12 태어난 달 표 (여기까지 하루 한 편 = 저녁 편 b · 같은 꼴 연달아 금지 — 왕별이 10/7 교훈)
   ★10/11 사용자 "하루 2편 이상" → TWICE_FROM(10/13)부터 하루 두 편: 낮 편 a(12시대) · 저녁 편 b(7~8시대, 예전 그 자리).
     로테이션은 끊기지 않고 이어진다: 10/13 a 그림 고르기 · b 상식 퀴즈 → 10/14 a 타로 · b 밸런스 → 10/15 a 태어난 달 …
-  ★10/14 sci(도파민 과학 — 심해·우주·극한 생존) 2주 시험 SCI_FROM(10/15)~SCI_TO(10/28): 하루 두 편 중 한 편은 sci,
+  ★10/14 sci(도파민 과학 — 심해·우주·극한 생존) 2주 시험 SCI_FROM(10/15)~SCI_TO(10/28 → ★10/20 11/07 연장): 하루 두 편 중 한 편은 sci,
     다른 편은 골라보기 다음 꼴. sci 편은 날마다 저녁·낮을 번갈아 든다(10/15 b · 10/16 a · 10/17 b … — 시간대 치우침 없이 비교).
     골라보기 로테이션은 sci 를 건너뛰고 하루 한 꼴씩 그대로 이어진다(10/15 a 태어난 달 → 10/16 b 그림 고르기 → 10/17 a 퀴즈 …).
-    10/29부터는 다시 골라보기 두 편. sci 내용은 SCI_ORDER[k](k = 10/15부터 몇 번째 sci 편) = shorts_catalog 의 n.
+    sci 내용은 SCI_ORDER[k](k = 10/15부터 몇 번째 sci 편) = shorts_catalog 의 n(901~ 은 insta/sci_extra.json).
+  ★10/20 sci 연장(SCI_TO 11/07) + 병맛(bm) 2주 시험 BM_FROM(10/25)~BM_TO(11/07): sci 가 아닌 편이 골라보기 대신 병맛이다.
+    꼴은 ABBA ABBA ABBA AB: BM_FROM 부터 i 번째 날 i%4 가 0·3 이면 bm_paper(A '이거 진짜 논문임'), 1·2 면 bm_animal(B '정색 동물 다큐')
+    — 7편씩. sci 가 짝수 날 저녁이라 병맛은 짝수 날 낮·홀수 날 저녁 → A 낮 4·저녁 3, B 낮 3·저녁 4(시간대가 한쪽에 몰리지 않게).
+    무엇을 쓸지도 코드가 정한다: BM_ORDER[i] = insta/bm_catalog.json 의 n(사실·출처는 미리 확인 — 클라우드 작가는 웹을 못 본다).
+    골라보기 로테이션은 그동안 쉬고, 11/08부터 다음 꼴로 이어진다(회차 series_no 도 골라보기만 이어서 센다 · bm·sci 는 None).
+    11/08부터 다시 골라보기 두 편. 10/24 까지 꼴·회차·sci 순서는 그대로다(테스트가 못 박는다).
   (같은 날 두 편은 늘 다른 꼴 — 그래서 꼴만 보면 그날 어느 편인지 하나로 정해진다: slot_of)
   회차 번호는 골라보기 편만 센다: 10/8 = '오늘의 골라보기 #1' · 10/12 = #5 · 10/13 낮 = #6 · 10/13 저녁 = #7 (series_no · sci 는 None)
   어느 편 차례인지(due_slot)도 코드가 정한다: KST NOON_UNTIL(16)시 전이면 낮 편, 뒤면 저녁 편.
-  쓰레드(pick_threads)는 그날 골라보기 편만 따라간다(sci 는 안 간다) — 쓰레드 2주 시험(10/11~10/24) 조건을 그대로 두려고.
+  쓰레드(pick_threads)는 그날 골라보기 편만 따라간다(sci·병맛은 안 간다) — 쓰레드 2주 시험(10/11~10/24) 조건을 그대로 두려고.
 흐름:
   ① 대본 작가 — 클라우드 루틴(11:50 낮 편 · 19:50 저녁 편 대타) 또는 로컬 예약 작업(insta-pick-daily, 19:20 저녁 편, 크롬 서칭)이
-     `next` 가 알려 준 편·꼴로 대본 JSON 을 쓴다(sci 는 `writing` = SCI_WRITING.md) → `pick_reel.py check` → routine/insta_pick 에 push
+     `next` 가 알려 준 편·꼴로 대본 JSON 을 쓴다(`writing` 파일을 따른다: 골라보기 PICK_WRITING · sci SCI_WRITING · 병맛 BM_WRITING)
+     → `pick_reel.py check` → routine/insta_pick 에 push
   ② insta-pick.yml(Actions) — 코드는 main, 대본은 routine/insta_pick 의 오늘 파일 중 가장 늦은 편 → 렌더 → `post` 로 인스타 릴스 게시
 게시 막기: 레포 변수 INSTA_PICK_PUBLISH=0 (기본: push 로 온 오늘 대본은 올린다 — 사용자 10/8 "매일 올려줘")
 
@@ -50,21 +57,41 @@ RENDERS = os.path.join(ROOT, "output", "insta_pick_render")
 LEDGER = os.path.join(RENDERS, "posted.json")
 EXEMPLAR = {"pick": "pick_door", "card": "pick_card", "quiz": "pick_quiz", "balance": "pick_balance", "birth": "pick_birth"}
 LABEL = {"pick": "그림 고르기 심리테스트", "card": "타로 카드 고르기", "quiz": "상식 퀴즈", "balance": "밸런스 게임",
-         "birth": "태어난 달 표", "sci": "도파민 과학(심해·우주·극한 생존)"}
+         "birth": "태어난 달 표", "sci": "도파민 과학(심해·우주·극한 생존)",
+         "bm_paper": "병맛 A — 이거 진짜 논문임(황당 연구 + 진짜 숫자)", "bm_animal": "병맛 B — 정색 동물 다큐(사람 일 하는 동물)"}
 # ★10/14 sci 2주 시험 — 인스타 검색 '심해' 상위 릴스 620만·370만·225만·210만·190만(전부 과학 호기심 계정, 10/14)
 SCI = "sci"
 SCI_FROM = dt.date(2026, 10, 15)         # 첫날(KST) — 이날 저녁 편부터
-SCI_TO = dt.date(2026, 10, 28)           # 마지막 날(KST, 포함) · 14일 · 판정 뒤 늘리려면 코드로(PR)
-SCI_ORDER = (101, 201, 107, 102, 203, 104, 202, 105, 206, 109, 205, 103, 207, 106)   # k번째 sci 편 = shorts_catalog n
+SCI_TO = dt.date(2026, 11, 7)            # 마지막 날(KST, 포함) · ★10/20 10/28 → 11/07 연장(24일) · 더 늘리려면 코드로(PR)
+# k번째 sci 편 = shorts_catalog n(앞 14개 = 10/15~10/28 그대로) · 10/29~ 안 쓴 catalog 7개 → sci_extra.json 3개(901~)
+SCI_ORDER = (101, 201, 107, 102, 203, 104, 202, 105, 206, 109, 205, 103, 207, 106,
+             108, 110, 111, 112, 113, 114, 204, 901, 902, 903)
 SCI_EXEMPLAR = "insta/samples/sci_mariana.json"
 SCI_WRITING = "insta/SCI_WRITING.md"
 SHORTS = os.path.join(ROOT, "gumiho", "tales", "shorts_catalog.json")   # 영어 쇼츠 survival·compare — 출처 달린 사실(facts)
+SCI_EXTRA = os.path.join(HERE, "sci_extra.json")                         # 인스타 sci 전용 추가 주제(n ≥ 901, 같은 모양)
+# ★10/20 병맛(bm) 2주 시험 — 골라보기 자리를 바꾼다(10/15~10/20 sci 중앙값 약 440 vs 골라보기 약 117 · 사용자 승인)
+BM_FROM = dt.date(2026, 10, 25)          # 첫날(KST)
+BM_TO = dt.date(2026, 11, 7)             # 마지막 날(KST, 포함) · 14일 = A 7편 + B 7편
+BM_KINDS = ("bm_paper", "bm_animal")     # A · B — BM_FROM 부터 ABBA ABBA ABBA AB(bm_kind)
+BM_CATALOG = os.path.join(HERE, "bm_catalog.json")   # 병맛 14편 소재 — 사실(facts)·출처(sources)·주의(careful)를 미리 확인
+BM_ORDER = tuple(range(401, 415))        # i 번째 병맛 편 = bm_catalog 의 n(꼴은 entry format 과 같아야 한다 — 테스트)
+BM_FMT_KIND = {"paper": "bm_paper", "animal": "bm_animal"}
+BM_ENTRY_KEYS = ("n", "format", "slug", "topic", "animal", "animal_ko", "premise", "stamp_idea", "quote_idea", "punch_idea",
+                 "facts", "sources", "careful")
+BM_EXEMPLAR = {"bm_paper": "insta/samples/bm_paper_wombat.json", "bm_animal": "insta/samples/bm_animal_penguin.json"}
+BM_WRITING = "insta/BM_WRITING.md"
+BM_FORMAT = {"bm_paper": "A", "bm_animal": "B"}
+BM_SERIES = {"bm_paper": "이거 진짜 논문임", "bm_animal": "정색 동물 다큐"}
+BM_SEC = {"bm_paper": (18.0, 23.0), "bm_animal": (18.0, 22.0)}   # 전체 길이(초) — 렌더가 맞춘다
+ALL_KINDS = FORMATS + (SCI,) + BM_KINDS
 SCI_ENTRY_KEYS = ("n", "format", "slug", "look", "title_idea", "facts", "sources", "careful", "beat_ideas", "items_idea",
                   "situation", "odds_idea", "hook_idea", "unit", "scale", "twist_idea")
 # 그날 꼴의 서칭 키워드(로컬 크롬 · 인스타 검색 상위 조회수) — 쓰는 쪽이 참고만 한다
 KEYWORDS = {"pick": ["심리테스트", "성격테스트", "그림 고르기"], "card": ["타로", "타로 골라보세요", "오늘의 타로"],
             "quiz": ["상식 퀴즈", "넌센스 퀴즈", "퀴즈"], "balance": ["밸런스 게임", "둘 중 하나"],
-            "birth": ["태어난 달", "생일 운세", "탄생월"], "sci": ["심해", "우주 과학", "극한 생존"]}
+            "birth": ["태어난 달", "생일 운세", "탄생월"], "sci": ["심해", "우주 과학", "극한 생존"],
+            "bm_paper": ["이그노벨상", "황당 연구", "쓸데없는 과학"], "bm_animal": ["동물 병맛", "AI 동물", "동물 다큐"]}
 
 
 def kst_today() -> dt.date:
@@ -101,44 +128,108 @@ def sci_n(d: dt.date) -> int | None:
     return None if k is None else SCI_ORDER[k]
 
 
-def sci_entry(n: int, path: str = SHORTS) -> dict | None:
-    """shorts_catalog 의 survival·compare 항목(n) 그대로."""
-    with open(path, encoding="utf-8") as f:
-        cat = json.load(f)
-    return next((e for e in (cat.get("survival") or []) + (cat.get("compare") or []) if e.get("n") == n), None)
+def sci_entry(n: int, path: str = SHORTS, extra: str = SCI_EXTRA) -> dict | None:
+    """sci 항목(n) 그대로 — shorts_catalog 의 survival·compare, 없으면 인스타 전용 sci_extra.json(901~)."""
+    for p in (path, extra):
+        try:
+            with open(p, encoding="utf-8") as f:
+                cat = json.load(f)
+        except FileNotFoundError:
+            continue
+        e = next((e for e in (cat.get("survival") or []) + (cat.get("compare") or []) if e.get("n") == n), None)
+        if e:
+            return e
+    return None
 
 
-def _sci_before(d: dt.date, sl: str) -> int:
-    """(d, sl) 편보다 먼저 올라가는 sci 편 수 — 골라보기 로테이션에서 뺀다."""
-    days = min(max(0, (d - SCI_FROM).days), (SCI_TO - SCI_FROM).days + 1)
-    ss = sci_slot(d)
-    return days + (1 if ss is not None and SLOTS.index(ss) < SLOTS.index(sl) else 0)
+def bm_kind(d: dt.date) -> str | None:
+    """그날 병맛 꼴 — BM_FROM~BM_TO 안에서만: ABBA ABBA ABBA AB(i%4 가 0·3 이면 bm_paper, 1·2 면 bm_animal). 밖이면 None.
+    (10/20 사용자: 날마다 A/B 번갈면 A 는 늘 낮·B 는 늘 저녁이라 시간대와 꼴이 섞인다 → ABBA 로 둘 다 낮·저녁에 나간다)"""
+    if not BM_FROM <= d <= BM_TO:
+        return None
+    return BM_KINDS[0] if (d - BM_FROM).days % 4 in (0, 3) else BM_KINDS[1]
+
+
+def bm_slot(d: dt.date) -> str | None:
+    """그날 병맛 편 — sci 가 아닌 편(병맛 기간엔 sci 가 날마다 있다). 병맛 날이 아니면 None."""
+    if bm_kind(d) is None:
+        return None
+    return next((sl for sl in slots_on(d) if sl != sci_slot(d)), None)
+
+
+def bm_index(d: dt.date) -> int | None:
+    """몇 번째 병맛 편인가(0 = 10/25) — 병맛 날이 아니면 None."""
+    return (d - BM_FROM).days if bm_kind(d) else None
+
+
+def bm_n(d: dt.date) -> int | None:
+    """그날 병맛 편이 쓸 bm_catalog 항목 번호(BM_ORDER) — 병맛 날이 아니면 None."""
+    k = bm_index(d)
+    return None if k is None else BM_ORDER[k]
+
+
+def bm_entry(n: int, path: str = BM_CATALOG) -> dict | None:
+    """bm_catalog 항목(n) 그대로."""
+    try:
+        with open(path, encoding="utf-8") as f:
+            cat = json.load(f)
+    except FileNotFoundError:
+        return None
+    return next((e for e in cat.get("entries") or [] if e.get("n") == n), None)
+
+
+def _window_before(d: dt.date, start: dt.date, end: dt.date) -> int:
+    """[start, end] 기간 중 d 보다 앞선 날 수."""
+    return min(max(0, (d - start).days), (end - start).days + 1)
+
+
+def _skipped_before(d: dt.date, sl: str) -> int:
+    """(d, sl) 편보다 먼저 올라가는 sci·병맛 편 수 — 골라보기 로테이션·회차에서 뺀다(둘 다 하루 한 편씩)."""
+    n = _window_before(d, SCI_FROM, SCI_TO) + _window_before(d, BM_FROM, BM_TO)
+    for x in (sci_slot(d), bm_slot(d)):
+        if x is not None and SLOTS.index(x) < SLOTS.index(sl):
+            n += 1
+    return n
+
+
+def _not_pick(d: dt.date, sl: str) -> str | None:
+    """그 편이 골라보기가 아니면 그 꼴(sci·병맛), 골라보기면 None."""
+    if sl == sci_slot(d):
+        return SCI
+    if sl == bm_slot(d):
+        return bm_kind(d)
+    return None
 
 
 def post_index(d: dt.date, slot: str | None = None) -> int:
     """골라보기 로테이션에서 몇 번째 편인가(0부터) — 하루 한 편이던 날들 뒤로 하루 두 편이 끊김 없이 이어지고,
-    sci 편(10/15~10/28)은 세지 않는다(그래서 로테이션이 건너뛰지도 겹치지도 않는다). sci 편을 물으면 ValueError."""
+    sci 편(10/15~11/07)·병맛 편(10/25~11/07)은 세지 않는다(그래서 로테이션이 건너뛰지도 겹치지도 않는다).
+    sci·병맛 편을 물으면 ValueError."""
     sl = _slot(d, slot)
-    if sl == sci_slot(d):
-        raise ValueError(f"{d} {sl} 편은 sci — 골라보기 순번이 없다")
+    other = _not_pick(d, sl)
+    if other:
+        raise ValueError(f"{d} {sl} 편은 {other} — 골라보기 순번이 없다")
     if d < TWICE_FROM:
         return (d - START).days
-    return (TWICE_FROM - START).days + 2 * (d - TWICE_FROM).days + SLOTS.index(sl) - _sci_before(d, sl)
+    return (TWICE_FROM - START).days + 2 * (d - TWICE_FROM).days + SLOTS.index(sl) - _skipped_before(d, sl)
 
 
 def kind_for(d: dt.date, slot: str | None = None) -> str:
-    """그날 그 편의 꼴(sci 또는 골라보기 꼴). slot 을 안 주면 그날 첫 편."""
+    """그날 그 편의 꼴(sci · 병맛 · 골라보기 꼴). slot 을 안 주면 그날 첫 편."""
     sl = _slot(d, slot)
-    if sl == sci_slot(d):
-        return SCI
-    return FORMATS[post_index(d, sl) % len(FORMATS)]
+    return _not_pick(d, sl) or FORMATS[post_index(d, sl) % len(FORMATS)]
+
+
+def is_pick(kind: str) -> bool:
+    """골라보기 꼴인가(회차·쓰레드 대상) — sci·병맛은 아니다."""
+    return kind in FORMATS
 
 
 def series_no(d: dt.date, slot: str | None = None) -> int | None:
-    """'오늘의 골라보기 #N' — 10/8 이 #1, 골라보기 편마다 하나씩 는다(sci 편은 번호가 없다 → None).
+    """'오늘의 골라보기 #N' — 10/8 이 #1, 골라보기 편마다 하나씩 는다(sci·병맛 편은 번호가 없다 → None).
     10/9: 매일 이어지는 시리즈로 보이게(캡션 첫 줄·커버 라벨)."""
     sl = _slot(d, slot)
-    return None if sl == sci_slot(d) else post_index(d, sl) + 1
+    return None if _not_pick(d, sl) else post_index(d, sl) + 1
 
 
 def slot_of(d: dt.date, kind: str) -> str | None:
@@ -160,7 +251,13 @@ def ledger_key(date: str, slot: str) -> str:
 
 
 def _kind_of_file(p: str) -> str:
-    parts = os.path.basename(p).split("_")
+    """파일 이름 '<날짜>_<kind>_<slug>.json' 의 kind — bm_paper·bm_animal 처럼 밑줄이 든 꼴도 알아본다."""
+    name = os.path.basename(p)
+    rest = name[11:] if len(name) > 11 and name[10] == "_" else ""
+    for k in sorted(ALL_KINDS, key=len, reverse=True):
+        if rest.startswith(k + "_"):
+            return k
+    parts = name.split("_")
     return parts[1] if len(parts) >= 3 else ""
 
 
@@ -200,6 +297,10 @@ def recent(d: dt.date, root: str = SCRIPTS, n: int = 40, kind: str | None = None
             item["questions"] = [r.get("q") for r in s.get("rounds", [])]
         if s.get("kind") == SCI:
             item["src_n"] = s.get("src_n")
+        if s.get("kind") in BM_KINDS:                       # 병맛: 같은 소재·같은 동물을 다시 쓰지 않게
+            item["topic"] = s.get("topic")
+            if s.get("animal_ko"):
+                item["animal"] = s.get("animal_ko")
         out.append(item)
         if len(out) >= n:
             break
@@ -213,11 +314,21 @@ def next_info(d: dt.date, root: str = SCRIPTS, slot: str | None = None, now: dt.
         return {"date": d.isoformat(), "due": False, "slot": sl, "already_written": False,
                 "why": f"{d} 에는 낮 편이 없다 — 하루 두 편은 {TWICE_FROM} 부터(그 전엔 저녁 편 하나)"}
     k = kind_for(d, sl)
+    if k == SCI:
+        exemplar, writing = SCI_EXEMPLAR, SCI_WRITING
+    elif k in BM_KINDS:
+        exemplar, writing = BM_EXEMPLAR[k], BM_WRITING
+    else:
+        exemplar, writing = f"insta/samples/{EXEMPLAR[k]}.json", "insta/PICK_WRITING.md"
     out = {"date": d.isoformat(), "due": True, "slot": sl, "slot_label": SLOT_LABEL[sl], "series_no": series_no(d, sl),
            "kind": k, "label": LABEL[k], "file": f"output/insta_pick/{d.isoformat()}_{k}_<slug>.json",
-           "exemplar": f"insta/samples/{EXEMPLAR[k]}.json" if k != SCI else SCI_EXEMPLAR,
-           "writing": "insta/PICK_WRITING.md" if k != SCI else SCI_WRITING,
+           "exemplar": exemplar, "writing": writing,
            "keywords": KEYWORDS[k], "already_written": bool(script_for(d, sl, root)), "recent": recent(d, root, kind=k)}
+    if k in BM_KINDS:                                      # 병맛: 무엇을 쓸지도 코드가 — 그날 bm_catalog 항목 그대로(숫자는 facts 에서만)
+        e = bm_entry(bm_n(d)) or {}
+        out.update(bm_no=bm_index(d) + 1, bm_total=(BM_TO - BM_FROM).days + 1, format=BM_FORMAT[k], series=BM_SERIES[k],
+                   length_sec=list(BM_SEC[k]), bm_n=e.get("n"), src_n=e.get("n"),
+                   entry={k_: e[k_] for k_ in BM_ENTRY_KEYS if k_ in e})
     if k == SCI:                                           # 무엇을 쓸지도 코드가 정한다 — 그날 catalog 항목 그대로(숫자는 facts 에서만)
         e = sci_entry(sci_n(d)) or {}
         out.update(src_n=e.get("n"), sci_no=sci_index(d) + 1, format=e.get("format"),
@@ -292,7 +403,7 @@ def post(path: str, renders: str = RENDERS, ledger: str = LEDGER, today: dt.date
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="인스타 릴스('오늘의 골라보기' · sci) 편성·게시")
+    ap = argparse.ArgumentParser(description="인스타 릴스('오늘의 골라보기' · sci · 병맛) 편성·게시")
     ap.add_argument("cmd", choices=["next", "targets", "post"])
     ap.add_argument("script", nargs="?")
     ap.add_argument("--date")

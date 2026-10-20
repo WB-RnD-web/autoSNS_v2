@@ -1,0 +1,189 @@
+{
+ "about": "인스타 sci(도파민 과학) 전용 추가 주제 — shorts_catalog.json(구미호 영어 쇼츠)의 survival·compare 항목과 같은 모양(n ≥ 901). 구미호 쇼츠에는 쓰지 않는다(두 채널 섞지 않기). pick_plan.sci_entry 가 shorts_catalog 다음으로 여기서 찾는다. 숫자는 facts 에만 · 출처는 기관·논문 원문에서 확인(2026-10-20).",
+ "survival": [
+  {
+   "n": 901,
+   "slug": "inside-a-tornado",
+   "format": "survival",
+   "look": "earth",
+   "title_idea": "How Long Would You Last Inside a Tornado?",
+   "situation": "INSIDE A TORNADO",
+   "teaser": "INSIDE A TORNADO",
+   "sources": [
+    "https://www.nssl.noaa.gov/education/svrwx101/tornadoes/faq/",
+    "https://www.nssl.noaa.gov/education/svrwx101/tornadoes/",
+    "https://www.spc.noaa.gov/efscale/",
+    "https://www.weather.gov/safety/tornado-during"
+   ],
+   "facts": [
+    {
+     "fact": "Tornadic wind speeds are generally believed to reach as high as 300 mph (about 480 km/h, converted) in the most violent tornadoes, enough to make automobiles airborne.",
+     "src": 0
+    },
+    {
+     "fact": "The strongest tornado wind measured by mobile Doppler radar above ground level was 318 mph (about 512 km/h, converted).",
+     "src": 0
+    },
+    {
+     "fact": "A typical tornado travels at around 10-20 mph (about 16-32 km/h, converted); movement ranges from almost stationary to more than 60 mph (about 97 km/h, converted).",
+     "src": 0
+    },
+    {
+     "fact": "The time a tornado stays on the ground ranges from an instant to several hours; the average is about 5 minutes.",
+     "src": 0
+    },
+    {
+     "fact": "The biggest threat to living creatures from tornadoes is flying debris and being tossed about in the wind; the old idea that low pressure makes buildings 'explode' is no longer believed to be true.",
+     "src": 0
+    },
+    {
+     "fact": "About 1,200 tornadoes hit the U.S. each year.",
+     "src": 1
+    },
+    {
+     "fact": "Engineers say many homes are rated to withstand winds to 100 mph (about 160 km/h, converted).",
+     "src": 2
+    },
+    {
+     "fact": "In a tornado warning, go to a basement, safe room or an interior room away from windows; sheds, mobile homes and tents are not safe.",
+     "src": 3
+    }
+   ],
+   "beat_ideas": [
+    {"t": "0:00", "what": "the wall of wind arrives: the most violent tornadoes reach about 480 km/h", "fact": 0},
+    {"t": "0:00", "what": "the strongest wind ever measured by radar: 512 km/h", "fact": 1},
+    {"t": "--:--", "what": "many houses are built for about 160 km/h: three times less", "fact": 6},
+    {"t": "--:--", "what": "the danger is not the pressure but what flies in the wind (debris), cars can go airborne", "fact": 4},
+    {"t": "5:00", "what": "an average tornado stays on the ground about 5 minutes", "fact": 3},
+    {"t": "GUMI", "what": "verdict line: the way to 'last' is a basement or an interior room away from windows", "fact": 7}
+   ],
+   "odds_idea": null,
+   "careful": [
+    "No source gives a survival time inside a tornado: no clock, the verdict is the shelter rule (basement, interior room, away from windows)",
+    "300 mph is an estimate for the most violent tornadoes: say 'up to about'",
+    "Don't name real tornado events, dates or towns (real victims)",
+    "No injuries or bodies: say 'flying debris' and 'cars can fly', nothing more",
+    "km/h values are converted from mph: say 'about'"
+   ]
+  },
+  {
+   "n": 902,
+   "slug": "edge-of-a-lava-lake",
+   "format": "survival",
+   "look": "earth",
+   "title_idea": "How Long Would You Last at the Edge of a Lava Lake?",
+   "situation": "THE EDGE OF A LAVA LAKE",
+   "teaser": "A LAVA LAKE",
+   "sources": [
+    "https://www.usgs.gov/news/volcano-watch-why-2018-lava-still-so-hot",
+    "https://www.usgs.gov/observatories/hvo/news/volcano-watch-lava-lakes-kilauea-then-and-now",
+    "https://www.usgs.gov/observatories/hvo/news/volcano-watch-kilaueas-summit-lava-lake-continues-be-quietly-remarkable",
+    "https://www.usgs.gov/programs/VHP/volcanic-gases-can-be-harmful-health-vegetation-and-infrastructure"
+   ],
+   "facts": [
+    {
+     "fact": "Lava erupts from Kilauea (Hawaii) at a temperature of 1,150 °C (2,100 °F).",
+     "src": 0
+    },
+    {
+     "fact": "Lava-lake crust counts as solid only below 850 °C (1,560 °F); between 850 and 1,070 °C it is semi-solid, and basalt can stay molten as low as 750-850 °C.",
+     "src": 0
+    },
+    {
+     "fact": "On April 1, 2021 the active part of the lava lake in Kilauea's Halemaumau crater was 224 m (735 ft) deep.",
+     "src": 1
+    },
+    {
+     "fact": "In the 1959 Kilauea Iki lava lake the crust kept breaking up: within seconds, or at most a minute, a major crack would form and blocks of crust slid under into the molten lava.",
+     "src": 1
+    },
+    {
+     "fact": "The 1959 Kilauea Iki eruption had 17 episodes of lava fountains in about 5 weeks.",
+     "src": 1
+    },
+    {
+     "fact": "During the 2022 lava-lake eruption, Kilauea's summit released about 1,900 tonnes of sulfur dioxide per day.",
+     "src": 2
+    },
+    {
+     "fact": "Sulfur dioxide is a colorless gas with a pungent odor that irritates the skin and the eyes, nose and throat; at Kilauea it makes volcanic smog (vog).",
+     "src": 3
+    }
+   ],
+   "beat_ideas": [
+    {"t": "0:00", "what": "the glowing lake in front of you: lava at 1,150 °C", "fact": 0},
+    {"t": "0:00", "what": "it is deep: 224 m of molten rock in the active part (2021)", "fact": 2},
+    {"t": "--:--", "what": "the dark crust looks like ground, but 'solid' still means under 850 °C", "fact": 1},
+    {"t": "--:--", "what": "and it does not stay put: within seconds or a minute a big crack opens", "fact": 3},
+    {"t": "--:--", "what": "the air: about 1,900 tonnes of sulfur dioxide a day, stinging eyes, nose and throat", "fact": 5},
+    {"t": "GUMI", "what": "verdict line: lava lakes are watched from a distance, from the crater rim", "fact": 6}
+   ],
+   "odds_idea": null,
+   "careful": [
+    "Stand at the edge only: never describe falling in or a body burning (no gore)",
+    "No source gives a time for the heat at the edge: no clock",
+    "Lake depth and gas numbers are for a specific date (2021, 2022): say '그때'",
+    "No real people or accidents"
+   ]
+  }
+ ],
+ "compare": [
+  {
+   "n": 903,
+   "slug": "deepest-diving-animals",
+   "format": "compare",
+   "look": "deep",
+   "title_idea": "Emperor Penguin vs Leatherback vs Cuvier's Beaked Whale | Deepest Dive Comparison",
+   "hook_idea": "DEEPEST DIVERS BY DEPTH",
+   "teaser": "DEEPEST DIVERS",
+   "unit": "m",
+   "scale": "linear",
+   "sources": [
+    "https://link.springer.com/article/10.1007/s00300-006-0168-8",
+    "https://oceanservice.noaa.gov/facts/light_travel.html",
+    "https://www.fisheries.noaa.gov/species/leatherback-turtle",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3966784/"
+   ],
+   "facts": [
+    {
+     "fact": "The deepest dive measured for an emperor penguin was 564 m; the longest emperor penguin dive lasted 21.8 minutes (a different dive and a different bird).",
+     "src": 0
+    },
+    {
+     "fact": "Below 1,000 meters no sunlight gets through at all (the aphotic zone).",
+     "src": 1
+    },
+    {
+     "fact": "The leatherback turtle's deepest recorded dive reached nearly 4,000 feet (about 1,200 meters, converted), deeper than any other turtle; it can stay down for up to 85 minutes.",
+     "src": 2
+    },
+    {
+     "fact": "Before 2014 the mammal dive records were 2,388 m and 120 minutes, both by southern elephant seals.",
+     "src": 3
+    },
+    {
+     "fact": "Tagged Cuvier's beaked whales dove to 2,992 m and stayed down 137.5 minutes, both new mammalian dive records (2014 study).",
+     "src": 3
+    },
+    {
+     "fact": "Their usual deep dives averaged 1,401 m and 67.4 minutes.",
+     "src": 3
+    }
+   ],
+   "items_idea": [
+    {"name": "EMPEROR PENGUIN", "value": 564, "label": "564 M", "fact": 0},
+    {"name": "SUNLIGHT ENDS", "value": 1000, "label": "1,000 M", "fact": 1},
+    {"name": "LEATHERBACK TURTLE", "value": 1200, "label": "1,200 M", "fact": 2},
+    {"name": "SOUTHERN ELEPHANT SEAL", "value": 2388, "label": "2,388 M", "fact": 3},
+    {"name": "CUVIER'S BEAKED WHALE", "value": 2992, "label": "2,992 M", "fact": 4}
+   ],
+   "twist_idea": "CUVIER'S BEAKED WHALE held one breath for 137.5 minutes: over two hours in the dark.",
+   "careful": [
+    "Depths are the deepest recorded dives, not usual ones (usual beaked-whale deep dive: 1,401 m)",
+    "1,200 m for the leatherback is converted from 'nearly 4,000 feet': say 'about'",
+    "'Sunlight ends' is not an animal: label it as the line where light stops",
+    "No people (free divers, submarines): animals only"
+   ]
+  }
+ ]
+}

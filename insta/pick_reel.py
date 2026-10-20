@@ -12,10 +12,11 @@
   quiz    상식 퀴즈 두세 문제 · 3초 세고 정답('이거 맞히면 상위 10%')
   balance 밸런스 게임 세 판 · 둘 중 하나(A·B)
   birth   태어난 달로 보는 표 한 장(12칸 · 내 달 찾기)
-  sci     ★10/14 도파민 과학(심해·우주·극한 생존 · 2주 시험 10/15~10/28) — 골라보기가 아니다(회차 번호 없음).
+  sci     ★10/14 도파민 과학(심해·우주·극한 생존 · 10/15~11/07) — 골라보기가 아니다(회차 번호 없음).
           영어 쇼츠 shorts_catalog(survival·compare)의 출처 달린 facts 를 한국어로: 질문 훅 → 큰 숫자 박자 4~6개 → 판정.
           화면은 어두운 실사 그림 꽉 차게(천천히 다가감) · 위 훅 두 줄 · 가운데 노란 큰 숫자 + 흰 설명 ·
           compare 는 아래에 로그 막대 띠 · 끝 판정 + 열린 질문. 숫자는 그 항목 facts 에 있는 것만(check 가 막는다).
+  bm_paper·bm_animal ★10/20 병맛 2주 시험(10/25~11/07, 골라보기 자리) — 검사·렌더·캡션은 bm_reel.py 가 한다(여기서 넘긴다).
 
 ★남의 것을 베끼지 않는다: 빌리는 건 '꼴'뿐. 그림은 매번 새로 그리고(Spark z-image), 문구는 새로 쓰고,
   소리는 코드로 만든 배경음 + 우리 목소리(Supertonic F1). 인스타는 남의 영상·음원을 살짝 바꾼 재게시를 추천에서 뺀다.
@@ -48,7 +49,7 @@ W, H, FPS, SR = R.W, R.H, R.FPS, R.SR
 LZ = getattr(Image, "Resampling", Image).LANCZOS
 BIL = getattr(Image, "Resampling", Image).BILINEAR
 EXTENT = getattr(Image, "Transform", Image).EXTENT
-KINDS = ("pick", "card", "quiz", "balance", "birth", "sci")
+KINDS = ("pick", "card", "quiz", "balance", "birth", "sci") + P.BM_KINDS
 BG_TOP, BG_BOT = (246, 238, 255), (255, 236, 228)
 INK, SUB, ACC, OK = (40, 32, 58), (110, 98, 130), (124, 92, 230), (46, 170, 110)
 NUM_BG = [(255, 140, 140), (255, 186, 110), (110, 200, 160), (120, 160, 255)]
@@ -156,6 +157,8 @@ def check(s: dict) -> list[str]:
         return [f"kind 는 {KINDS}"]
     if kind == "sci":
         return check_sci(s) + _word_errs(s)
+    if kind in P.BM_KINDS:                                 # 병맛 — 검사 규칙은 bm_reel(금지어·부탁 말 포함)
+        return _bm().check(s)
     if not (isinstance(s.get("headline"), list) and len(s["headline"]) == 2 and all(0 < len(x) <= 14 for x in s["headline"])):
         errs.append("headline 은 두 줄 · 줄마다 14자 이내")
     if not s.get("say_intro") or len(s["say_intro"]) > 50:
@@ -381,8 +384,16 @@ def check_sci(s: dict) -> list[str]:
     return errs
 
 
+def _bm():
+    """병맛 모듈(bm_reel 이 이 모듈을 가져다 쓰므로 늦게 부른다)."""
+    import bm_reel
+    return bm_reel
+
+
 def warns(s: dict) -> list[str]:
     """막지는 않고 알리기만 한다(10/9) — 렌더 때 코드가 알아서 고친다."""
+    if s.get("kind") in P.BM_KINDS:
+        return _bm().warns(s)
     out = []
     tags = s.get("hashtags") or []
     if len(tags) > HASHTAG_MAX:
@@ -1012,6 +1023,8 @@ def source_names(sources: list[str]) -> list[str]:
 
 def caption_of(s: dict) -> str:
     # 10/9: 첫 줄 앞에 회차('오늘의 골라보기 #N') · 해시태그 5개 — 코드가 강제한다 · 10/11: 끝 줄은 부탁 없는 열린 질문 하나
+    if s.get("kind") in P.BM_KINDS:                        # 병맛: 구어체 한 줄 + 출처 도메인 + 해시태그(회차·질문 없음)
+        return _bm().caption_of(s)
     if s["kind"] == "sci":                                 # sci: 회차 없음 · 훅 한 줄 · 출처 · 열린 질문 · 해시태그 5개
         hook = (_hook(s.get("caption") or "").splitlines() or [" ".join(s.get("hook") or [])])[0]
         names = source_names(s.get("sources") or [])
@@ -1086,6 +1099,8 @@ def _threads_images_safe(pa: Painter, s: dict, out_dir: str, stem: str) -> list[
 
 def render(path: str, out_dir: str, work: str, mock: bool = False) -> dict:
     s = load(path)
+    if s.get("kind") in P.BM_KINDS:                        # 병맛 — 시간표·소리·화면이 달라 bm_reel 이 렌더한다(메타 모양은 같다)
+        return _bm().render(path, out_dir, work, mock)
     errs = check(s)
     if errs:
         raise SystemExit("대본 검사 실패:\n  " + "\n  ".join(errs))
@@ -1136,7 +1151,7 @@ def render(path: str, out_dir: str, work: str, mock: bool = False) -> dict:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="인스타 릴스('오늘의 골라보기' · sci) 검사·렌더")
+    ap = argparse.ArgumentParser(description="인스타 릴스('오늘의 골라보기' · sci · 병맛) 검사·렌더")
     ap.add_argument("cmd", choices=["check", "render"])
     ap.add_argument("script", nargs="+")
     ap.add_argument("--out", default=os.path.join(R.ROOT, "output", "insta_pick_render"))
