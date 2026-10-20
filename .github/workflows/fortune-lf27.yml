@@ -1,0 +1,50 @@
+name: 2027 정미년 깊이 보기 롱폼 (routine/fortune_lf27 push → main 의 fortune-lf27-run.yml)
+
+# 트리거: 2027 롱폼 루틴(월·수·토 10:00 KST)이 데이터 브랜치 routine/fortune_lf27 에
+#   output/fortune_lf27/E01_2026-11-02.json 같은 대본 한 장을 올리면(main + 대본 한 장 · 강제 push) 실행.
+#   렌더 30~45분(목소리 한 건씩 · 배경 그림은 동시에) → 그 편의 날 20:00 KST 예약 공개(월·수·금).
+#   루틴이 claude/* 로 잘못 밀면 orphan-rescue.yml 이 경로(output/fortune_lf27/)로 routine/fortune_lf27 에 옮긴다.
+#
+# ⚠️ push 트리거는 ★push 된 브랜치의 사본이 실행된다 → 여기엔 로직을 두지 않고 실제 일은 @main 고정으로 부른다
+#    (weekly-fortune.yml · ai-news.yml 과 같은 구조). 코드는 main, 대본만 데이터 브랜치에서.
+# ⚠️ shorts.yml 은 "!routine/fortune_lf27" 로 이 브랜치를 빼고, 경로도 output/news 가 아니다 — 두 번 올라가지 않는다.
+#    06:13 매일 운세 브랜치 routine/fortune 과는 이름이 다르다(정확히 이 브랜치만).
+# 수동 실행 기본값 = 견본(docs/samples/longform_2027_E01.json) · 업로드 없음 · 비공개 · 앞 파트만(upto)
+#   → 영상·썸네일·설명(meta)을 아티팩트로 3일 보관한다(머지 후 눈으로 확인).
+
+on:
+  push:
+    branches:
+      - "routine/fortune_lf27"
+    paths:
+      - "output/fortune_lf27/**"
+  workflow_dispatch:
+    inputs:
+      script:
+        description: "대본 경로 — 레포 파일(docs/samples/…) 또는 routine/fortune_lf27 의 output/fortune_lf27/E01_2026-11-02.json"
+        default: "docs/samples/longform_2027_E01.json"
+      no_upload:
+        description: "업로드 없이 렌더만(검증) — 영상·썸네일·설명을 아티팩트로 3일 보관"
+        type: boolean
+        default: true
+      force_private:
+        description: "비공개로 업로드(테스트)"
+        type: boolean
+        default: true
+      upto:
+        description: "앞 파트 n 개만 렌더(0 = 전부 · 시험 렌더는 4 쯤)"
+        default: "0"
+
+permissions:
+  contents: read
+
+jobs:
+  run:
+    uses: WB-RnD-web/autoSNS_v2/.github/workflows/fortune-lf27-run.yml@main
+    with:
+      script: ${{ github.event.inputs.script || '' }}
+      no_upload: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.no_upload == 'true' }}
+      force_private: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.force_private == 'true' }}
+      upto: ${{ github.event.inputs.upto || '0' }}
+      manual: ${{ github.event_name == 'workflow_dispatch' }}
+    secrets: inherit

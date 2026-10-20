@@ -191,7 +191,20 @@ def add_weekly_link(meta: dict, topic: str) -> str | None:
     try:
         import upload_youtube_novel as N
         import weekly_fortune
-        vid = weekly_fortune.latest_public_video(N.get_service())
+        yt = N.get_service()
+        # ★2026-11-02 첫 편 공개 뒤로는 주간 롱폼 대신 '2027 정미년 깊이 보기'(longform_2027.py)의 최신 공개 편으로 보낸다.
+        #   그 재생목록에 공개 편이 아직 없으면(첫 편 공개 전·조회 실패) 예전처럼 주간 롱폼.
+        try:
+            import longform_2027 as LF
+            if LF.link_series():
+                svid = weekly_fortune.latest_public_video(yt, title=LF.PLAYLIST)
+                if svid:
+                    meta["description"] = LF.append_link(meta["description"], svid)
+                    print(f"   🔗 2027 정미년 깊이 보기 링크: https://youtu.be/{svid}")
+                    return svid
+        except Exception as e:  # noqa: BLE001
+            print(f"   (2027 롱폼 링크 건너뜀: {str(e)[:120]})")
+        vid = weekly_fortune.latest_public_video(yt)
     except Exception as e:  # noqa: BLE001
         print(f"   (주간 운세 링크 건너뜀: {str(e)[:120]})")
         return None

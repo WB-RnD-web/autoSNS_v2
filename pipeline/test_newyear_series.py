@@ -206,7 +206,10 @@ for e in S.EPISODES:
         bad.append((e["id"], "설명란 근거·재미 고지"))
 ck("제목 95자 · 말 80자 · 칸 한 줄 10자 · 설명란에 정한 방법과 '재미로'", not bad, bad[:4])
 hits = sorted({w for w in BANNED for x in texts if w in x})
-ck("금지어 없음('삼재'·'대박'·'투자'·'고혈압'·'부동산' …)", not hits, hits)
+ck("금지어 없음('대박'·'투자'·'고혈압'·'부동산' …)", not hits, hits)
+import sal_frame  # noqa: E402
+sal = [v for x in texts for v in sal_frame.violations(x, unit="whole" if len(x) < 60 else "sentence")]
+ck("살·삼재 낱말은 조언 틀 안에서만(sal_frame · 10/20 '삼재 조언형')", not sal, sal[:3])
 jar = sorted({w for w in S.JARGON + ("에스급", "씨급") for x in screen if w in x})
 ck("제목·말·화면에 영문 등급·십신·신살 이름이 없다(근거 용어는 설명란에만)", not jar, jar)
 han = sorted({c for x in screen for c in x if "一" <= c <= "鿿"})

@@ -90,7 +90,10 @@ for d, eid in posts:
               sc["title"], sc["pill"]]
 ck("제목 95자 · 내레이션 80자 · 칸 한 줄 10자", not bad, bad[:3])
 hits = sorted({w for w in BANNED for t in texts if w in t})
-ck("금지어 없음('삼재'·'대박'·'투자' 포함)", not hits, hits)
+ck("금지어 없음('대박'·'투자' 포함)", not hits, hits)
+import sal_frame  # noqa: E402
+sal = [v for t in texts for v in sal_frame.violations(t, unit="whole" if len(t) < 60 else "sentence")]
+ck("살·삼재 낱말은 조언 틀 안에서만(sal_frame · 10/20 '삼재 조언형')", not sal, sal[:3])
 ck("제목마다 '정미년'(채널 맥박이 신년운세로 센다)", all("정미년" in N.title(e) for e in N.EPISODES))
 nar = N.narration(N.EPISODES[0])
 ck("내레이션: 우리말 등급(대길) · 조심 띠는 조언으로(어르신 눈높이 10/7)", "대길은 말, 돼지, 토끼띠" in nar

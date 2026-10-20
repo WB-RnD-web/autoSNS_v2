@@ -19,6 +19,9 @@ on:
       - "!routine/ai_*"
       # ★주간 띠별 운세(routine/weekly_fortune)는 weekly-fortune.yml 이 처리한다(경로도 output/weekly_fortune 로 다르다).
       - "!routine/weekly_*"
+      # ★2027 정미년 깊이 보기 롱폼(routine/fortune_lf27)은 fortune-lf27.yml 이 처리한다(경로 output/fortune_lf27).
+      #   루틴이 main + 대본 한 장으로 강제 push 해서 main 의 변경이 diff 에 섞일 수 있다 — 여기서는 아예 뺀다.
+      - "!routine/fortune_lf27"
       - main              # (선택) main 에 storyboard 가 올라오면도 처리
     paths:
       - "output/news/**_storyboard.json"

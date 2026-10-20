@@ -21,6 +21,7 @@ on:
       - "AI 소식 쇼츠 (routine/ai_am·ai_pm push → main 의 ai-news-run.yml)"
       - "AI 소식 피드 — 기사 원문 → data/ai-news-feed"
       - "주간 띠별 운세 풀이 (routine/weekly_fortune push → main 의 weekly-fortune-run.yml)"
+      - "2027 정미년 깊이 보기 롱폼 (routine/fortune_lf27 push → main 의 fortune-lf27-run.yml)"
       - "사연 쇼츠(실사 AI) — 하루 한 편 · 14편 2주 시험"
       - "사연(sayeon) 라디오 → 낭독 오디오북(16:9) → 유튜브(+재생목록)"
       - "사연 오디오드라마 — 대본 검사 → 여러 목소리 합성 → 장면 그림 → 롱폼 업로드"

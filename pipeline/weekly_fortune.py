@@ -54,6 +54,12 @@ NAME_RE = re.compile(r"^(\d{4}-\d{2}-\d{2})_weekly_fortune\.json$")
 WEEK_RE = re.compile(r"^(\d{4})-W(\d{2})$")
 SAMPLE = os.path.join(ROOT, "docs", "samples", "weekly_fortune_sample.json")
 
+# ★2026-11-02(월)부터 주간 롱폼은 '2027 정미년 깊이 보기'(longform_2027.py · 월·수·금 20:00 · 16편)가 대신한다
+#   (사용자 10/20 '롱폼도 ㄱㄱ' — 이 롱폼은 254 → 101 → 47회로 꺼졌다). 월요일 06:13 '이번 주 띠별 운세' 쇼츠는
+#   06:13 루틴(routine/fortune · MODE=weekly)이 fortune_card 로 만든다 — 이 롱폼에서 잘라 내는 게 아니라서 그대로 나간다.
+#   그 주 월요일이 STOP_FROM 이상이면 week 는 STOPPED=yes 를 찍고 check·push 는 거절한다(루틴을 안 꺼도 올라가지 않는다).
+#   마지막 편 = 10/24(토) 루틴 → 10/25(일) 08:00 공개(10/26~11/1 주). 다시 켜기: None.
+STOP_FROM: dt.date | None = dt.date(2026, 11, 2)
 MARKER = "주간 띠별 운세"              # 설명란 끝 줄 '주간 띠별 운세 2026-W41' — 유튜브 쪽 중복 판정
 PLAYLIST = os.environ.get("WEEKLY_PLAYLIST") or "주간 띠별 운세"
 PLAYLIST_DESC = ("매주 일요일 저녁, 다음 한 주의 띠별 운세를 쥐띠부터 돼지띠까지 풀어 드려요. "
@@ -111,7 +117,7 @@ BAN = {
     "자극적인 말": ("충격", "경악", "역대급", "미쳤", "소름", "헉", "대박", "패닉", "폭망", "무조건",
                   "인생역전", "떼돈", "벼락부자"),
     "겁주는 말": ("죽음", "죽는", "죽을", "사망", "급사", "횡사", "객사", "파산", "망한다", "망합니다", "망해요",
-                "망할", "쫄딱", "재앙", "저주", "흉사", "삼재", "큰일 납", "큰일 나", "사고가 납", "사고가 나",
+                "망할", "쫄딱", "재앙", "저주", "흉사", "큰일 납", "큰일 나", "사고가 납", "사고가 나",
                 "사고 납", "불행이 닥", "액운이 닥", "이혼", "사기당", "배신당"),
     "의료 조언": ("치료", "완치", "처방", "복용", "약을 끊", "약 끊", "약을 줄", "약 줄이", "병원에 가지",
                 "병원 갈 필요", "수술", "항암", "진단", "당뇨", "고혈압", "혈압약", "영양제", "건강식품",
@@ -236,6 +242,8 @@ def norm_day(v) -> str:
 
 
 def ban_hits(text: str) -> list[str]:
+    """금지어 + 살·삼재 조언 틀(2026-10-20 — '삼재'는 BAN 에서 빼고 sal_frame 이 문장마다 본다)."""
+    import sal_frame
     out = []
     for group, words in BAN.items():
         hit = [w for w in words if w in text]
@@ -243,6 +251,7 @@ def ban_hits(text: str) -> list[str]:
             hit.append("암")
         if hit:
             out.append(f"{group}: {', '.join(hit)}")
+    out += [f"살·삼재: {v}" for v in sal_frame.violations(text)]
     return out
 
 
@@ -341,6 +350,9 @@ def check(sc, path: str = "", now: dt.datetime | None = None, history: list | No
     if not monday:
         bad(f"week {week!r} — '2026-W41' 처럼 ISO 주 번호여야 한다(week 명령의 WEEK)")
     else:
+        if STOP_FROM and monday >= STOP_FROM:
+            bad(f"week {week}({monday.isoformat()}~) — 주간 롱폼은 {STOP_FROM.isoformat()}부터 '2027 정미년 깊이 보기'"
+                "(longform_2027.py)로 바뀌었다. 이 루틴은 쓰지 않고 끝낸다(월요일 '이번 주 띠별 운세' 쇼츠는 그대로 나간다)")
         want = target_monday(now)
         if monday != want:
             (bad if strict else warns.append)(
@@ -689,6 +701,10 @@ def week_text(now: dt.datetime | None = None, taken: bool = False) -> str:
     name = file_name(monday)
     out_dir = os.path.join(tempfile.gettempdir(), "weekly_fortune")      # 레포 밖 — 세션 브랜치에 커밋될 일이 없다
     os.makedirs(out_dir, exist_ok=True)
+    if STOP_FROM and monday >= STOP_FROM:
+        return "\n".join(["STOPPED=yes", f"WEEK={wk}", f"MONDAY={monday.isoformat()}",
+                          f"주간 롱폼은 {STOP_FROM.isoformat()}부터 '2027 정미년 깊이 보기'(longform_2027.py)로 바뀌었다 — "
+                          "대본을 쓰지 말고 그대로 끝낸다(월요일 '이번 주 띠별 운세' 쇼츠는 06:13 루틴이 그대로 낸다)."])
     lines = [f"WEEK={wk}", f"MONDAY={monday.isoformat()}", f"RANGE={range_label(monday)}",
              f"FILE={OUT_DIR}/{name}", f"WRITE_TO={os.path.join(out_dir, name)}", f"BRANCH={BRANCH}",
              f"TAKEN={'yes' if taken else 'no'}", "",
