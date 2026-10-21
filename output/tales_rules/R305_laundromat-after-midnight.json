@@ -1,0 +1,63 @@
+{
+ "id": 305,
+ "slug": "laundromat-after-midnight",
+ "format": "liminal",
+ "part": 5,
+ "look": "liminal",
+ "fiction": true,
+ "title": "RULES for the 24-Hour Laundromat After Midnight #shorts",
+ "hook": "LAUNDROMAT. AFTER MIDNIGHT.",
+ "description_hook": "It's the only laundromat open after midnight. One light flickers, and one dryer is already running. A work of fiction.",
+ "lines": [
+  {
+   "rule": 1,
+   "text": "NEVER OPEN A DRYER YOU DIDN'T START",
+   "say": "You walk into the only laundromat open after midnight. Rule one: never open a dryer you didn't start.",
+   "img": "an empty laundromat at night, long rows of front-loading washers under harsh fluorescent tubes, one dryer at the end spinning with a soft glow, plastic chairs along the wall"
+  },
+  {
+   "rule": 2,
+   "text": "IF EVERY MACHINE STOPS, DON'T MOVE",
+   "say": "Rule two. If every machine stops at once, don't move.",
+   "img": "a silent row of round washing machine doors in a dim laundromat, every drum perfectly still, one fluorescent tube overhead flickering half dark"
+  },
+  {
+   "rule": 3,
+   "text": "IGNORE THE EXTRA COIN",
+   "say": "Rule three. The change machine gives one coin too many. Don't spend it.",
+   "img": "close-up of a metal coin tray on a wall-mounted change machine in a laundromat at night, a small pile of coins catching cold light, blurred machines behind"
+  },
+  {
+   "rule": 4,
+   "text": "DON'T FOLD CLOTHES YOU DON'T RECOGNIZE",
+   "say": "Rule four. Don't fold clothes you don't recognize.",
+   "img": "a white folding table in an empty laundromat holding a neat warm pile of unfamiliar clothes, a plastic basket beside it, flickering light above"
+  },
+  {
+   "rule": 5,
+   "text": "KEEP YOUR BACK TO THE WINDOW",
+   "say": "Rule five. Keep your back to the window. Whatever is tapping, it isn't rain.",
+   "img": "a large laundromat window at night looking out on a dark empty street, a single streetlight, faint smudges on the glass, a plastic chair facing away from it"
+  },
+  {
+   "text": "THE CLOTHES INSIDE ARE YOURS",
+   "say": "Then your dryer stops. Inside are the clothes you're wearing. You never started this one. Start again.",
+   "img": "an open dryer door in a dim laundromat, folded clothes tumbling out identical to a jacket hanging on a nearby chair, the drum glowing warm, no one in sight"
+  }
+ ],
+ "loop_back": "The last line reveals the viewer opened a dryer they didn't start, breaking rule one, so they must start again from rule one.",
+ "gumi": {
+  "say": "So. Are you sure you started that dryer?"
+ },
+ "tags": [
+  "liminal space",
+  "liminal spaces",
+  "laundromat",
+  "laundromat at night",
+  "creepy rules",
+  "rules horror",
+  "after midnight",
+  "dreamcore",
+  "weirdcore"
+ ]
+}

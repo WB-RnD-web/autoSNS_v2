@@ -1,0 +1,65 @@
+{
+ "id": 110,
+ "slug": "ice-age",
+ "format": "survival",
+ "part": 10,
+ "look": "ancient",
+ "title": "How Long Would You Last in the Last Ice Age? #shorts",
+ "hook": "HOW LONG WOULD YOU LAST?",
+ "situation": "20,000 YEARS AGO: ICE AGE",
+ "description_hook": "You wake up 20,000 years ago, at the coldest point of the last Ice Age, with no coat, no fire and a woolly mammoth for a neighbor.",
+ "beats": [
+  {
+   "t": "0:00",
+   "text": "6.1 °C COLDER",
+   "src": 0,
+   "say": "How long would you last in the last Ice Age? You wake up on a planet 6.1 degrees Celsius colder on average. Here, it's worse.",
+   "img": "a lone human silhouette seen from behind on a windswept frozen tundra under a pale low sun, frost-covered grass and distant white hills, breath-fogging cold, vertical frame"
+  },
+  {
+   "t": "0:00",
+   "text": "SEA 125 M LOWER",
+   "src": 1,
+   "say": "The sea is 125 meters lower. You're standing on future seafloor. No coat. No fire.",
+   "img": "a vast exposed coastal plain stretching toward a far-off grey ocean, dry seabed ridges and scattered boulders, cold overcast light, tiny figure in the center"
+  },
+  {
+   "t": "--:--",
+   "text": "3.7 M MAMMOTH",
+   "src": 3,
+   "say": "Up north, the ice is about 3 km thick. Right beside you, a woolly mammoth 3.7 meters tall. It doesn't notice you.",
+   "img": "a towering woolly mammoth with long curved tusks and shaggy brown fur walking across a snowy steppe, a colossal wall of glacier ice glowing blue on the horizon, low angle"
+  },
+  {
+   "t": "--:--",
+   "text": "HUMAN FOOTPRINTS",
+   "src": 4,
+   "say": "Then: fresh human footprints in the mud. People live here, next to giant ground sloths and dire wolves. Follow them.",
+   "img": "a trail of bare human footprints pressed into wet pale mud beside a shallow lake, huge clawed animal tracks crossing them, misty morning light"
+  }
+ ],
+ "gumi": {
+  "odds": "70%",
+  "say": "Gumi's odds: 70 percent. People lived through this. Find them before the wolves do."
+ },
+ "teaser": "NEXT: TITAN, NO SUIT",
+ "sources": [
+  "https://www.nature.com/articles/s41586-020-2617-x",
+  "https://pubs.usgs.gov/fs/fs2-00/",
+  "https://www.britannica.com/place/Laurentide-Ice-Sheet",
+  "https://www.britannica.com/animal/woolly-mammoth",
+  "https://www.nps.gov/whsa/learn/nature/fossilized-footprints.htm",
+  "https://humanorigins.si.edu/evidence/human-fossils/species/homo-sapiens"
+ ],
+ "tags": [
+  "ice age",
+  "last glacial maximum",
+  "woolly mammoth",
+  "how long would you last",
+  "prehistoric",
+  "survival",
+  "science",
+  "dire wolf",
+  "ice age facts"
+ ]
+}
