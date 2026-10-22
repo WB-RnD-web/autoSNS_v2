@@ -1,0 +1,64 @@
+{
+ "id": 111,
+ "slug": "titan-no-suit",
+ "format": "survival",
+ "part": 11,
+ "look": "space",
+ "title": "How Long Would You Last on Titan Without a Spacesuit? #shorts",
+ "hook": "HOW LONG WOULD YOU LAST?",
+ "situation": "TITAN, NO SPACESUIT",
+ "description_hook": "You wake up on Saturn's moon Titan with no spacesuit. The pressure is fine. The air is the problem.",
+ "beats": [
+  {
+   "t": "0:00",
+   "text": "-179 °C, 60% MORE PRESSURE",
+   "src": 0,
+   "say": "How long would you last on Titan without a spacesuit? The air pressure is 60 percent above Earth's. Your blood won't boil. It's -179 °C.",
+   "img": "a lone human silhouette without a helmet standing on a hazy orange plain of an icy moon, thick golden fog, a dim pale sun barely visible"
+  },
+  {
+   "t": "0:00",
+   "text": "1/7TH YOUR WEIGHT",
+   "src": 1,
+   "say": "You weigh 1/7th of what you do at home, in air four times denser. Every step floats. Then you breathe in.",
+   "img": "a figure seen from behind in a slow floating leap above frozen pebbles, dense amber sky pressing low over a dark horizon"
+  },
+  {
+   "t": "SECONDS",
+   "text": "ONE OR TWO BREATHS",
+   "src": 2,
+   "say": "That breath is nitrogen and methane. No oxygen at all. One or two breaths like that, and you collapse.",
+   "img": "swirling orange haze closing in around a dark head-and-shoulders silhouette, cold mist curling in front of it, eerie stillness"
+  },
+  {
+   "t": "0:40",
+   "text": "COMA IN UNDER 40 SECONDS",
+   "src": 2,
+   "say": "With even 4 to 6 percent oxygen, a person falls into a coma in under 40 seconds. Titan gives you none.",
+   "img": "a field of vision blurring and fading to black over a hazy orange horizon, frost crystals creeping in from the edges"
+  }
+ ],
+ "gumi": {
+  "odds": "0%",
+  "say": "Gumi's odds: zero. A probe called Huygens kept working there for 1 hour 10 minutes."
+ },
+ "teaser": "NEXT: LOST AT SEA",
+ "sources": [
+  "https://science.nasa.gov/saturn/moons/titan/facts/",
+  "https://science.nasa.gov/solar-system/why-is-nasa-sending-dragonfly-to-titan-here-are-five-reasons/",
+  "https://www.csb.gov/assets/1/20/sb-nitrogen-6-11-03.pdf",
+  "https://www.esa.int/Enabling_Support/Operations/Cassini-Huygens_operations",
+  "https://science.nasa.gov/resource/scientist-for-a-day-option-2-titan/"
+ ],
+ "tags": [
+  "titan",
+  "saturn moon",
+  "how long would you last",
+  "space survival",
+  "no spacesuit",
+  "huygens probe",
+  "space facts",
+  "science",
+  "survival"
+ ]
+}

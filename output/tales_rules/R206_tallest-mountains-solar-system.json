@@ -1,0 +1,85 @@
+{
+ "id": 206,
+ "slug": "tallest-mountains-solar-system",
+ "format": "compare",
+ "part": 6,
+ "look": "space",
+ "title": "Everest vs Mauna Kea vs Olympus Mons | Mountain Size Comparison #shorts",
+ "hook": "TALLEST MOUNTAINS IN SPACE",
+ "description_hook": "From Everest to a volcano on Mars about 22 km high: the tallest mountains in the solar system, measured different ways.",
+ "unit": "km",
+ "scale": "linear",
+ "items": [
+  {
+   "name": "MOUNT EVEREST",
+   "value": 8.848,
+   "label": "8.8 KM",
+   "src": 0,
+   "say": "How tall do mountains get in space? Measured different ways, but start with Everest: 8,848 meters.",
+   "img": "a towering snow-covered Himalayan summit at dawn with a long plume of wind-blown snow streaming off its sharp peak"
+  },
+  {
+   "name": "MAUNA KEA (FULL)",
+   "value": 10.21,
+   "label": "10.2 KM",
+   "src": 0,
+   "say": "Mauna Kea, from the seafloor: more than 10,210 meters.",
+   "img": "a broad volcanic mountain rising out of a dark blue ocean, half its slope visible underwater in a split above-and-below view"
+  },
+  {
+   "name": "MAXWELL MONTES",
+   "value": 11.5,
+   "label": "11.5 KM",
+   "src": 1,
+   "say": "Maxwell Montes on Venus: 11.5 kilometers.",
+   "img": "a jagged mountain range under a thick yellow-orange cloud ceiling on a scorching rocky planet, heat shimmer over the plains"
+  },
+  {
+   "name": "VESTA PEAK",
+   "value": 15,
+   "label": "15 KM",
+   "src": 2,
+   "say": "A peak on the asteroid Vesta: about 15 kilometers.",
+   "img": "a lone central mountain rising from the floor of an enormous crater on a small grey asteroid, black starry sky, harsh sunlight"
+  },
+  {
+   "name": "OLYMPUS MONS",
+   "value": 22,
+   "label": "22 KM",
+   "src": 3,
+   "say": "Olympus Mons on Mars, the largest volcano in the solar system: about 22 kilometers.",
+   "img": "a gigantic gently sloping shield volcano on a rusty red plain with a wide collapsed caldera at its top, thin pink sky"
+  },
+  {
+   "name": "OLYMPUS MONS' BASE",
+   "twist": true,
+   "text": "BASE THE SIZE OF ARIZONA",
+   "src": 4,
+   "say": "But height isn't the scary part. Its base covers an area as large as Arizona.",
+   "img": "an orbital view of a colossal red volcano whose base spreads out like a continent, cliffs ringing its edge, curved planet horizon"
+  }
+ ],
+ "gumi": {
+  "say": "Gumi's verdict: Everest is a hill with good marketing. Which one would you climb?"
+ },
+ "teaser": "NEXT: THE FASTEST THINGS",
+ "sources": [
+  "https://oceanservice.noaa.gov/facts/highestpoint.html",
+  "https://science.nasa.gov/photojournal/venus-lakshmi-planum-and-maxwell-montes",
+  "https://science.nasa.gov/photojournal/impressive-mountain-tops-on-vesta",
+  "https://www.esa.int/Science_Exploration/Space_Science/Mars_Express/Olympus_Mons_-_the_caldera_in_close-up",
+  "https://science.nasa.gov/mars/facts/"
+ ],
+ "tags": [
+  "olympus mons",
+  "mount everest",
+  "mauna kea",
+  "tallest mountains",
+  "size comparison",
+  "solar system",
+  "mars",
+  "venus",
+  "space facts",
+  "science"
+ ]
+}
