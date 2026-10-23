@@ -1,0 +1,2304 @@
+{
+ "date": "2026-10-24",
+ "generated": "2026-10-23T22:37+00:00",
+ "data_at": "2026-10-23T22:00+00:00",
+ "radar_at": "2026-10-23T22:09+00:00",
+ "radar_age_h": 0.5,
+ "channels": {
+  "wb": {
+   "key": "wb",
+   "name": "왕별이",
+   "id": "UCBmHETsvCsvT0xOb99Yx19Q",
+   "basis": "channel",
+   "series": [
+    {
+     "d": "2026-10-07",
+     "views": 319817,
+     "hours": 23.0
+    },
+    {
+     "d": "2026-10-08",
+     "views": 157342,
+     "hours": 24.0
+    },
+    {
+     "d": "2026-10-09",
+     "views": 66792,
+     "hours": 24.0
+    },
+    {
+     "d": "2026-10-10",
+     "views": 33926,
+     "hours": 24.0
+    },
+    {
+     "d": "2026-10-11",
+     "views": 38498,
+     "hours": 23.0
+    },
+    {
+     "d": "2026-10-12",
+     "views": 76276,
+     "hours": 24.0
+    },
+    {
+     "d": "2026-10-13",
+     "views": 36162,
+     "hours": 27.0
+    },
+    {
+     "d": "2026-10-14",
+     "views": 89056,
+     "hours": 22.0
+    },
+    {
+     "d": "2026-10-15",
+     "views": 51641,
+     "hours": 23.0
+    },
+    {
+     "d": "2026-10-16",
+     "views": 44680,
+     "hours": 24.0
+    },
+    {
+     "d": "2026-10-17",
+     "views": 155490,
+     "hours": 24.0
+    },
+    {
+     "d": "2026-10-18",
+     "views": 90902,
+     "hours": 23.0
+    },
+    {
+     "d": "2026-10-19",
+     "views": 57869,
+     "hours": 24.0
+    },
+    {
+     "d": "2026-10-20",
+     "views": 45272,
+     "hours": 25.0
+    },
+    {
+     "d": "2026-10-21",
+     "views": 63676,
+     "hours": 24.0
+    },
+    {
+     "d": "2026-10-22",
+     "views": 32492,
+     "hours": 24.0
+    },
+    {
+     "d": "2026-10-23",
+     "views": 184194,
+     "hours": 24.0
+    },
+    {
+     "d": "2026-10-24",
+     "views": 91994,
+     "hours": 24.0
+    }
+   ],
+   "series_videos": [
+    {
+     "d": "2026-10-04",
+     "views": 73721
+    },
+    {
+     "d": "2026-10-05",
+     "views": 186810
+    },
+    {
+     "d": "2026-10-06",
+     "views": 322519
+    },
+    {
+     "d": "2026-10-07",
+     "views": 176228
+    },
+    {
+     "d": "2026-10-08",
+     "views": 68132
+    },
+    {
+     "d": "2026-10-09",
+     "views": 49322
+    },
+    {
+     "d": "2026-10-10",
+     "views": 60936
+    },
+    {
+     "d": "2026-10-11",
+     "views": 47267
+    },
+    {
+     "d": "2026-10-12",
+     "views": 46561
+    },
+    {
+     "d": "2026-10-13",
+     "views": 70808
+    },
+    {
+     "d": "2026-10-14",
+     "views": 69840
+    },
+    {
+     "d": "2026-10-15",
+     "views": 33402
+    },
+    {
+     "d": "2026-10-16",
+     "views": 140989
+    },
+    {
+     "d": "2026-10-17",
+     "views": 88771
+    },
+    {
+     "d": "2026-10-18",
+     "views": 65671
+    },
+    {
+     "d": "2026-10-19",
+     "views": 53013
+    },
+    {
+     "d": "2026-10-20",
+     "views": 73429
+    },
+    {
+     "d": "2026-10-21",
+     "views": 89500
+    },
+    {
+     "d": "2026-10-22",
+     "views": 74320
+    },
+    {
+     "d": "2026-10-23",
+     "views": 98673
+    },
+    {
+     "d": "2026-10-24",
+     "views": 115207
+    }
+   ],
+   "today": 91994,
+   "today_d": "2026-10-24",
+   "trend": {
+    "state": "up",
+    "streak": 2,
+    "today": "up",
+    "days": 18
+   },
+   "window": {
+    "k": 7,
+    "cur": 80914,
+    "prev": 70258,
+    "ratio": 1.15
+   },
+   "peak": {
+    "d": "2026-10-07",
+    "views": 319817
+   },
+   "vs_peak": 0.29,
+   "subs": {
+    "now": 1040,
+    "d1": 41,
+    "d7": 182,
+    "days": 8
+   },
+   "formats": [
+    {
+     "key": "scp",
+     "label": "SCP",
+     "n7": 0,
+     "med24": null,
+     "n24": 0,
+     "prev24": null,
+     "nprev": 0,
+     "base24": null,
+     "nbase": 0
+    },
+    {
+     "key": "asmr",
+     "label": "ASMR·수면(롱)",
+     "n7": 0,
+     "med24": null,
+     "n24": 0,
+     "prev24": null,
+     "nprev": 0,
+     "base24": 3,
+     "nbase": 5
+    },
+    {
+     "key": "weekly",
+     "label": "주간 운세(롱)",
+     "n7": 1,
+     "med24": 40,
+     "n24": 1,
+     "prev24": 28,
+     "nprev": 1,
+     "base24": 28,
+     "nbase": 3
+    },
+    {
+     "key": "saeyeon_long",
+     "label": "사연(롱)",
+     "n7": 0,
+     "med24": null,
+     "n24": 0,
+     "prev24": null,
+     "nprev": 0,
+     "base24": 0,
+     "nbase": 1
+    },
+    {
+     "key": "newyear",
+     "label": "2027 신년운세 표",
+     "n7": 1,
+     "med24": 4653,
+     "n24": 1,
+     "prev24": 29581,
+     "nprev": 2,
+     "base24": 18456,
+     "nbase": 3
+    },
+    {
+     "key": "daily",
+     "label": "매일 운세 표",
+     "n7": 5,
+     "med24": 11177,
+     "n24": 3,
+     "prev24": 8390,
+     "nprev": 3,
+     "base24": 8387,
+     "nbase": 13
+    },
+    {
+     "key": "name",
+     "label": "이름 표",
+     "n7": 2,
+     "med24": 10305,
+     "n24": 1,
+     "prev24": 9266,
+     "nprev": 1,
+     "base24": 10488,
+     "nbase": 9
+    },
+    {
+     "key": "month",
+     "label": "태어난 달 표",
+     "n7": 1,
+     "med24": 20309,
+     "n24": 1,
+     "prev24": 15530,
+     "nprev": 2,
+     "base24": 17612,
+     "nbase": 9
+    },
+    {
+     "key": "lunar",
+     "label": "음력 생일 끝자리 표",
+     "n7": 2,
+     "med24": 12373,
+     "n24": 2,
+     "prev24": 8712,
+     "nprev": 1,
+     "base24": 10425,
+     "nbase": 3
+    },
+    {
+     "key": "age",
+     "label": "출생연도 나이 표",
+     "n7": 4,
+     "med24": 9473,
+     "n24": 3,
+     "prev24": 11525,
+     "nprev": 3,
+     "base24": 11055,
+     "nbase": 6
+    },
+    {
+     "key": "year",
+     "label": "해 끝자리 표",
+     "n7": 1,
+     "med24": 12181,
+     "n24": 1,
+     "prev24": 23183,
+     "nprev": 2,
+     "base24": 16879,
+     "nbase": 6
+    },
+    {
+     "key": "surname",
+     "label": "성씨 표",
+     "n7": 1,
+     "med24": 16987,
+     "n24": 2,
+     "prev24": 634,
+     "nprev": 1,
+     "base24": 7517,
+     "nbase": 7
+    },
+    {
+     "key": "bless",
+     "label": "띠별 아침 덕담표",
+     "n7": 4,
+     "med24": 2925,
+     "n24": 3,
+     "prev24": 3930,
+     "nprev": 3,
+     "base24": 3639,
+     "nbase": 6
+    },
+    {
+     "key": "pulli",
+     "label": "풀이형 표",
+     "n7": 2,
+     "med24": 3914,
+     "n24": 3,
+     "prev24": 3529,
+     "nprev": 4,
+     "base24": 3529,
+     "nbase": 10
+    },
+    {
+     "key": "tier",
+     "label": "운세 등급표",
+     "n7": 2,
+     "med24": 10379,
+     "n24": 2,
+     "prev24": 15793,
+     "nprev": 3,
+     "base24": 10827,
+     "nbase": 6
+    },
+    {
+     "key": "gunghap",
+     "label": "띠 궁합표",
+     "n7": 2,
+     "med24": 2988,
+     "n24": 1,
+     "prev24": 3301,
+     "nprev": 2,
+     "base24": 2988,
+     "nbase": 3
+    },
+    {
+     "key": "theme",
+     "label": "띠 테마 표",
+     "n7": 3,
+     "med24": 13962,
+     "n24": 3,
+     "prev24": 9208,
+     "nprev": 3,
+     "base24": 11585,
+     "nbase": 14
+    },
+    {
+     "key": "weekly_short",
+     "label": "주간 운세 쇼츠",
+     "n7": 1,
+     "med24": 34706,
+     "n24": 1,
+     "prev24": 12923,
+     "nprev": 1,
+     "base24": 34706,
+     "nbase": 3
+    },
+    {
+     "key": "saeyeon_short",
+     "label": "사연 쇼츠",
+     "n7": 0,
+     "med24": null,
+     "n24": 0,
+     "prev24": null,
+     "nprev": 0,
+     "base24": 1354,
+     "nbase": 4
+    },
+    {
+     "key": "ai",
+     "label": "AI 소식",
+     "n7": 0,
+     "med24": null,
+     "n24": 0,
+     "prev24": null,
+     "nprev": 0,
+     "base24": 116,
+     "nbase": 10
+    },
+    {
+     "key": "oldf",
+     "label": "옛 운세·별자리 쇼츠",
+     "n7": 0,
+     "med24": null,
+     "n24": 0,
+     "prev24": null,
+     "nprev": 0,
+     "base24": 380,
+     "nbase": 1
+    },
+    {
+     "key": "us",
+     "label": "미장",
+     "n7": 0,
+     "med24": null,
+     "n24": 0,
+     "prev24": null,
+     "nprev": 0,
+     "base24": 49,
+     "nbase": 4
+    },
+    {
+     "key": "kr",
+     "label": "국장",
+     "n7": 0,
+     "med24": null,
+     "n24": 0,
+     "prev24": null,
+     "nprev": 0,
+     "base24": 84,
+     "nbase": 3
+    },
+    {
+     "key": "pol",
+     "label": "정치",
+     "n7": 0,
+     "med24": null,
+     "n24": 0,
+     "prev24": null,
+     "nprev": 0,
+     "base24": 169,
+     "nbase": 16
+    },
+    {
+     "key": "etc_short",
+     "label": "기타 쇼츠",
+     "n7": 0,
+     "med24": null,
+     "n24": 0,
+     "prev24": null,
+     "nprev": 0,
+     "base24": 25,
+     "nbase": 3
+    }
+   ],
+   "drivers": [
+    {
+     "key": "theme",
+     "label": "띠 테마 표",
+     "gain": 32979,
+     "share": 0.286,
+     "n": 14
+    },
+    {
+     "key": "daily",
+     "label": "매일 운세 표",
+     "gain": 29288,
+     "share": 0.254,
+     "n": 15
+    },
+    {
+     "key": "age",
+     "label": "출생연도 나이 표",
+     "gain": 26991,
+     "share": 0.234,
+     "n": 7
+    },
+    {
+     "key": "newyear",
+     "label": "2027 신년운세 표",
+     "gain": 5844,
+     "share": 0.051,
+     "n": 3
+    },
+    {
+     "key": "name",
+     "label": "이름 표",
+     "gain": 5024,
+     "share": 0.044,
+     "n": 10
+    },
+    {
+     "key": "lunar",
+     "label": "음력 생일 끝자리 표",
+     "gain": 4538,
+     "share": 0.039,
+     "n": 3
+    },
+    {
+     "key": "bless",
+     "label": "띠별 아침 덕담표",
+     "gain": 3267,
+     "share": 0.028,
+     "n": 7
+    },
+    {
+     "key": "gunghap",
+     "label": "띠 궁합표",
+     "gain": 2985,
+     "share": 0.026,
+     "n": 4
+    }
+   ],
+   "movers": [
+    {
+     "id": "sjfuw9K_WTM",
+     "title": "친구 복 많은 띠 순위 1위~12위 | 10월 22일 · 45~96년생 전부 #shorts",
+     "fmt": "띠 테마 표",
+     "gain": 32490,
+     "views": 70652,
+     "age_d": 1.8
+    },
+    {
+     "id": "QCYwwSmC0f8",
+     "title": "출생연도로 보는 체면이 서는 나이 | 50~85년생 전부 · 10월 23일 #shorts",
+     "fmt": "출생연도 나이 표",
+     "gain": 25343,
+     "views": 25343,
+     "age_d": 0.8
+    },
+    {
+     "id": "kAXe-H-TjN8",
+     "title": "오늘 띠별 운세 1위~12위 | 10월 23일 금요일 · 45~96년생 전부 #shorts",
+     "fmt": "매일 운세 표",
+     "gain": 17538,
+     "views": 17538,
+     "age_d": 0.9
+    },
+    {
+     "id": "pAbYQilKSeo",
+     "title": "오늘 띠별 운세 1위~12위 | 10월 22일 목요일 · 45~96년생 전부 #shorts",
+     "fmt": "매일 운세 표",
+     "gain": 11002,
+     "views": 22274,
+     "age_d": 2.0
+    },
+    {
+     "id": "NDo5Nu2B2RE",
+     "title": "태어난 해 끝자리로 보는 2027 정미년 운세 | 0~9 전부 · 45~96년생 #shorts",
+     "fmt": "2027 신년운세 표",
+     "gain": 4797,
+     "views": 9175,
+     "age_d": 1.9
+    },
+    {
+     "id": "tf5yMGsS0Jc",
+     "title": "이름에 이 글자 있으면 말년이 편안해요 | 10월 23일 이름 한자 풀이 #shorts",
+     "fmt": "이름 표",
+     "gain": 4696,
+     "views": 4696,
+     "age_d": 0.9
+    }
+   ],
+   "new": [
+    {
+     "id": "ws7Mie47nDs",
+     "title": "오늘 띠별 운세 1위~12위 | 10월 24일 토요일 · 45~96년생 전부 #shorts",
+     "fmt": "매일 운세 표",
+     "age_h": 1,
+     "views": 538,
+     "expect": 149,
+     "ratio": 3.61
+    },
+    {
+     "id": "JeKZU0r9ofI",
+     "title": "사돈·며느리·사위 띠 궁합표 | 내 띠의 잘 맞는 띠·부딪히는 띠 · 45~96년생 전부 #shorts",
+     "fmt": "띠 궁합표",
+     "age_h": 13,
+     "views": 1832,
+     "expect": 2314,
+     "ratio": 0.79
+    },
+    {
+     "id": "QCYwwSmC0f8",
+     "title": "출생연도로 보는 체면이 서는 나이 | 50~85년생 전부 · 10월 23일 #shorts",
+     "fmt": "출생연도 나이 표",
+     "age_h": 19,
+     "views": 25343,
+     "expect": 9906,
+     "ratio": 2.56
+    },
+    {
+     "id": "AL3TUMqWJJI",
+     "title": "띠별 아침 덕담 | 오늘 아침, 띠별로 드리는 한마디 · 10월 23일 · 45~96년생 전부 #shorts",
+     "fmt": "띠별 아침 덕담표",
+     "age_h": 20,
+     "views": 3076,
+     "expect": 3503,
+     "ratio": 0.88
+    },
+    {
+     "id": "tf5yMGsS0Jc",
+     "title": "이름에 이 글자 있으면 말년이 편안해요 | 10월 23일 이름 한자 풀이 #shorts",
+     "fmt": "이름 표",
+     "age_h": 20,
+     "views": 4696,
+     "expect": 9463,
+     "ratio": 0.5
+    },
+    {
+     "id": "kAXe-H-TjN8",
+     "title": "오늘 띠별 운세 1위~12위 | 10월 23일 금요일 · 45~96년생 전부 #shorts",
+     "fmt": "매일 운세 표",
+     "age_h": 21,
+     "views": 17538,
+     "expect": 7844,
+     "ratio": 2.24
+    }
+   ],
+   "uploads": {
+    "2026-10-11": 5,
+    "2026-10-12": 5,
+    "2026-10-13": 5,
+    "2026-10-14": 4,
+    "2026-10-15": 5,
+    "2026-10-16": 3,
+    "2026-10-17": 4,
+    "2026-10-18": 4,
+    "2026-10-19": 4,
+    "2026-10-20": 5,
+    "2026-10-21": 4,
+    "2026-10-22": 5,
+    "2026-10-23": 5,
+    "2026-10-24": 1
+   },
+   "uploads_7d": 32,
+   "last_pub_h": 1
+  },
+  "nt": {
+   "key": "nt",
+   "name": "Nine Tails Tales",
+   "id": "UCoPIsIO_ximUdyh-n_-rIfQ",
+   "basis": "channel",
+   "series": [
+    {
+     "d": "2026-10-07",
+     "views": 26,
+     "hours": 23.0
+    },
+    {
+     "d": "2026-10-08",
+     "views": 10,
+     "hours": 24.0
+    },
+    {
+     "d": "2026-10-09",
+     "views": 3148,
+     "hours": 24.0
+    },
+    {
+     "d": "2026-10-10",
+     "views": 361,
+     "hours": 24.0
+    },
+    {
+     "d": "2026-10-11",
+     "views": 282,
+     "hours": 23.0
+    },
+    {
+     "d": "2026-10-12",
+     "views": 1265,
+     "hours": 24.0
+    },
+    {
+     "d": "2026-10-13",
+     "views": 24,
+     "hours": 27.0
+    },
+    {
+     "d": "2026-10-14",
+     "views": 60,
+     "hours": 22.0
+    },
+    {
+     "d": "2026-10-15",
+     "views": 10,
+     "hours": 23.0
+    },
+    {
+     "d": "2026-10-16",
+     "views": 281,
+     "hours": 24.0
+    },
+    {
+     "d": "2026-10-17",
+     "views": 194,
+     "hours": 24.0
+    },
+    {
+     "d": "2026-10-18",
+     "views": 222,
+     "hours": 23.0
+    },
+    {
+     "d": "2026-10-19",
+     "views": 1465,
+     "hours": 24.0
+    },
+    {
+     "d": "2026-10-20",
+     "views": 19,
+     "hours": 25.0
+    },
+    {
+     "d": "2026-10-21",
+     "views": 346,
+     "hours": 24.0
+    },
+    {
+     "d": "2026-10-22",
+     "views": 30,
+     "hours": 24.0
+    },
+    {
+     "d": "2026-10-23",
+     "views": 990,
+     "hours": 24.0
+    },
+    {
+     "d": "2026-10-24",
+     "views": 0,
+     "hours": 24.0
+    }
+   ],
+   "series_videos": [
+    {
+     "d": "2026-10-04",
+     "views": 7
+    },
+    {
+     "d": "2026-10-05",
+     "views": 444
+    },
+    {
+     "d": "2026-10-06",
+     "views": 31
+    },
+    {
+     "d": "2026-10-07",
+     "views": 1658
+    },
+    {
+     "d": "2026-10-08",
+     "views": 1674
+    },
+    {
+     "d": "2026-10-09",
+     "views": 1039
+    },
+    {
+     "d": "2026-10-10",
+     "views": 402
+    },
+    {
+     "d": "2026-10-11",
+     "views": 353
+    },
+    {
+     "d": "2026-10-12",
+     "views": 40
+    },
+    {
+     "d": "2026-10-13",
+     "views": 45
+    },
+    {
+     "d": "2026-10-14",
+     "views": 122
+    },
+    {
+     "d": "2026-10-15",
+     "views": 327
+    },
+    {
+     "d": "2026-10-16",
+     "views": 135
+    },
+    {
+     "d": "2026-10-17",
+     "views": 279
+    },
+    {
+     "d": "2026-10-18",
+     "views": 1369
+    },
+    {
+     "d": "2026-10-19",
+     "views": 111
+    },
+    {
+     "d": "2026-10-20",
+     "views": 350
+    },
+    {
+     "d": "2026-10-21",
+     "views": 240
+    },
+    {
+     "d": "2026-10-22",
+     "views": 326
+    },
+    {
+     "d": "2026-10-23",
+     "views": 451
+    },
+    {
+     "d": "2026-10-24",
+     "views": 129
+    }
+   ],
+   "today": 0,
+   "today_d": "2026-10-24",
+   "trend": {
+    "state": "down",
+    "streak": 1,
+    "today": "down",
+    "days": 18
+   },
+   "window": {
+    "k": 7,
+    "cur": 439,
+    "prev": 302,
+    "ratio": 1.45
+   },
+   "peak": {
+    "d": "2026-10-09",
+    "views": 3148
+   },
+   "vs_peak": 0.0,
+   "subs": {
+    "now": 23,
+    "d1": 2,
+    "d7": 4,
+    "days": 8
+   },
+   "formats": [
+    {
+     "key": "episode",
+     "label": "본편(롱)",
+     "n7": 1,
+     "med24": 6,
+     "n24": 1,
+     "prev24": 0,
+     "nprev": 1,
+     "base24": 1,
+     "nbase": 10
+    },
+    {
+     "key": "versus",
+     "label": "대결 쇼츠",
+     "n7": 3,
+     "med24": 65,
+     "n24": 4,
+     "prev24": 175,
+     "nprev": 1,
+     "base24": 175,
+     "nbase": 7
+    },
+    {
+     "key": "rules",
+     "label": "규칙형 쇼츠",
+     "n7": 0,
+     "med24": null,
+     "n24": 0,
+     "prev24": 110,
+     "nprev": 2,
+     "base24": 49,
+     "nbase": 8
+    },
+    {
+     "key": "story_short",
+     "label": "이야기 쇼츠",
+     "n7": 15,
+     "med24": 89,
+     "n24": 11,
+     "prev24": 116,
+     "nprev": 4,
+     "base24": 83,
+     "nbase": 19
+    }
+   ],
+   "drivers": [
+    {
+     "key": "story_short",
+     "label": "이야기 쇼츠",
+     "gain": 106,
+     "share": 0.822,
+     "n": 24
+    },
+    {
+     "key": "episode",
+     "label": "본편(롱)",
+     "gain": 15,
+     "share": 0.116,
+     "n": 10
+    },
+    {
+     "key": "versus",
+     "label": "대결 쇼츠",
+     "gain": 8,
+     "share": 0.062,
+     "n": 7
+    }
+   ],
+   "movers": [
+    {
+     "id": "xKDJcSkEh_U",
+     "title": "How Hot Is the Hottest Ground on Earth? #shorts",
+     "fmt": "이야기 쇼츠",
+     "gain": 36,
+     "views": 36,
+     "age_d": 0.3
+    },
+    {
+     "id": "Ehyuq90wtBE",
+     "title": "RULES for the 24-Hour Laundromat After Midnight #shorts",
+     "fmt": "이야기 쇼츠",
+     "gain": 27,
+     "views": 27,
+     "age_d": 0.9
+    },
+    {
+     "id": "1fb9lgjeSCI",
+     "title": "What Happens If You Go Above the Armstrong Limit? #shorts",
+     "fmt": "이야기 쇼츠",
+     "gain": 15,
+     "views": 91,
+     "age_d": 2.3
+    },
+    {
+     "id": "AEEZMwOKiFQ",
+     "title": "How Long Would You Last in the Last Ice Age? #shorts",
+     "fmt": "이야기 쇼츠",
+     "gain": 13,
+     "views": 73,
+     "age_d": 1.1
+    },
+    {
+     "id": "DG9L2tYQI1g",
+     "title": "How Long Would You Last on Titan Without a Spacesuit? #shorts",
+     "fmt": "이야기 쇼츠",
+     "gain": 7,
+     "views": 7,
+     "age_d": 0.1
+    },
+    {
+     "id": "PvrQu44wQwg",
+     "title": "Gumiho vs Kitsune vs Huli Jing: Which Fox Is Scariest? #shorts #gumiho",
+     "fmt": "대결 쇼츠",
+     "gain": 6,
+     "views": 2358,
+     "age_d": 17.4
+    }
+   ],
+   "new": [
+    {
+     "id": "DG9L2tYQI1g",
+     "title": "How Long Would You Last on Titan Without a Spacesuit? #shorts",
+     "fmt": "이야기 쇼츠",
+     "age_h": 2,
+     "views": 7,
+     "expect": 62,
+     "ratio": 0.11
+    },
+    {
+     "id": "xKDJcSkEh_U",
+     "title": "How Hot Is the Hottest Ground on Earth? #shorts",
+     "fmt": "이야기 쇼츠",
+     "age_h": 8,
+     "views": 36,
+     "expect": 72,
+     "ratio": 0.5
+    },
+    {
+     "id": "fQjDBbZykoQ",
+     "title": "RULES if the Parking Garage Has a Level That Isn't on the Sign #shorts",
+     "fmt": "이야기 쇼츠",
+     "age_h": 10,
+     "views": 0,
+     "expect": 75,
+     "ratio": 0.0
+    },
+    {
+     "id": "v42Q4OYew5s",
+     "title": "How Long Would You Last Lost at Sea on a Raft? #shorts",
+     "fmt": "이야기 쇼츠",
+     "age_h": 10,
+     "views": 0,
+     "expect": 75,
+     "ratio": 0.0
+    },
+    {
+     "id": "Ehyuq90wtBE",
+     "title": "RULES for the 24-Hour Laundromat After Midnight #shorts",
+     "fmt": "이야기 쇼츠",
+     "age_h": 22,
+     "views": 27,
+     "expect": 83,
+     "ratio": 0.33
+    },
+    {
+     "id": "AEEZMwOKiFQ",
+     "title": "How Long Would You Last in the Last Ice Age? #shorts",
+     "fmt": "이야기 쇼츠",
+     "age_h": 26,
+     "views": 73,
+     "expect": 86,
+     "ratio": 0.84
+    },
+    {
+     "id": "sAz7NWSa0PY",
+     "title": "Everest vs Mauna Kea vs Olympus Mons | Mountain Size Comparison #shorts",
+     "fmt": "대결 쇼츠",
+     "age_h": 34,
+     "views": 0,
+     "expect": 227,
+     "ratio": 0.0
+    }
+   ],
+   "uploads": {
+    "2026-10-07": 4,
+    "2026-10-08": 2,
+    "2026-10-09": 5,
+    "2026-10-14": 2,
+    "2026-10-15": 2,
+    "2026-10-16": 2,
+    "2026-10-17": 2,
+    "2026-10-18": 1,
+    "2026-10-19": 3,
+    "2026-10-20": 2,
+    "2026-10-21": 3,
+    "2026-10-22": 3,
+    "2026-10-23": 5,
+    "2026-10-24": 1
+   },
+   "uploads_7d": 19,
+   "last_pub_h": 2
+  }
+ },
+ "experiments": [
+  {
+   "id": "ai-slots",
+   "ch": "wb",
+   "title": "AI 소식 오전(10:07)·저녁(19:07) 두 번",
+   "start": "2026-09-30",
+   "judge": "2026-10-08",
+   "criterion": "저녁 편 48시간 조회가 오전 편의 절반 미만이면 저녁 편을 끈다",
+   "owner": "local:judge-ai-slots-1008",
+   "status": "stopped",
+   "days_left": -16,
+   "started": true,
+   "nums": [
+    {
+     "fmt": "AI 소식",
+     "n7": 0,
+     "med24": null,
+     "base24": 116
+    }
+   ]
+  },
+  {
+   "id": "stocks-trial",
+   "ch": "wb",
+   "title": "국장·미장 2주 재시험(10/4부터 '10초 한 장' 카드)",
+   "start": "2026-10-01",
+   "judge": "2026-10-14",
+   "criterion": "각각 편당 조회 중앙값 300 이상 · 계속 시청함 20% 이상 — 못 넘는 쪽은 끈다",
+   "owner": "local:judge-stocks-1014",
+   "status": "stopped",
+   "days_left": -10,
+   "started": true,
+   "nums": [
+    {
+     "fmt": "국장",
+     "n7": 0,
+     "med24": null,
+     "base24": 84
+    },
+    {
+     "fmt": "미장",
+     "n7": 0,
+     "med24": null,
+     "base24": 49
+    }
+   ]
+  },
+  {
+   "id": "saeyeon-shorts",
+   "ch": "wb",
+   "title": "사연 쇼츠 14편(매일 13:07)",
+   "start": "2026-10-03",
+   "judge": "2026-10-17",
+   "criterion": "사연 쇼츠 중앙값 ÷ 전체 쇼츠 중앙값: 2배 이상 확대 · 1~2배 손질 · 1배 미만 중단",
+   "owner": "local:judge-saeyeon-1017",
+   "status": "stopped",
+   "days_left": -7,
+   "started": true,
+   "nums": [
+    {
+     "fmt": "사연 쇼츠",
+     "n7": 0,
+     "med24": null,
+     "base24": 1354
+    }
+   ]
+  },
+  {
+   "id": "tables",
+   "ch": "wb",
+   "title": "표 쇼츠(매일 운세·띠 테마·태어난 달·이름·해 끝자리·성씨)",
+   "start": "2026-09-30",
+   "judge": "ongoing",
+   "criterion": "식는 중 = 최근 2편 중앙값이 이전 중앙값의 절반 미만(이전 300 이상). 식으면 주제 교체를 제안",
+   "owner": "pulse",
+   "status": "running",
+   "days_left": null,
+   "started": true,
+   "nums": [
+    {
+     "fmt": "매일 운세 표",
+     "n7": 5,
+     "med24": 11177,
+     "base24": 8387
+    },
+    {
+     "fmt": "띠 테마 표",
+     "n7": 3,
+     "med24": 13962,
+     "base24": 11585
+    },
+    {
+     "fmt": "태어난 달 표",
+     "n7": 1,
+     "med24": 20309,
+     "base24": 17612
+    },
+    {
+     "fmt": "이름 표",
+     "n7": 2,
+     "med24": 10305,
+     "base24": 10488
+    },
+    {
+     "fmt": "해 끝자리 표",
+     "n7": 1,
+     "med24": 12181,
+     "base24": 16879
+    },
+    {
+     "fmt": "성씨 표",
+     "n7": 1,
+     "med24": 16987,
+     "base24": 7517
+    }
+   ]
+  },
+  {
+   "id": "ypp-wb",
+   "ch": "wb",
+   "title": "왕별이 수익화 — 광고 수익 기준(구독 1,000 + 유효 Shorts 90일 1,000만) 넘고 한 번에 승인",
+   "start": "2026-10-05",
+   "judge": "2027-01-31",
+   "criterion": "유효 하루 11.1만 이상을 유지(지금 약 4.5만) · 신청 전 표 쇼츠를 풀이형으로 전환 · 2027-02-01 전에 승인",
+   "owner": "pulse",
+   "status": "running",
+   "days_left": 99,
+   "started": true,
+   "nums": [
+    {
+     "fmt": "매일 운세 표",
+     "n7": 5,
+     "med24": 11177,
+     "base24": 8387
+    },
+    {
+     "fmt": "띠 테마 표",
+     "n7": 3,
+     "med24": 13962,
+     "base24": 11585
+    },
+    {
+     "fmt": "태어난 달 표",
+     "n7": 1,
+     "med24": 20309,
+     "base24": 17612
+    },
+    {
+     "fmt": "이름 표",
+     "n7": 2,
+     "med24": 10305,
+     "base24": 10488
+    },
+    {
+     "fmt": "해 끝자리 표",
+     "n7": 1,
+     "med24": 12181,
+     "base24": 16879
+    },
+    {
+     "fmt": "성씨 표",
+     "n7": 1,
+     "med24": 16987,
+     "base24": 7517
+    }
+   ]
+  },
+  {
+   "id": "tables-v2",
+   "ch": "wb",
+   "title": "풀이형 표(오늘 일진의 합·충 근거) — 10:40 새 시간대에 먼저 시험(pulli_card)",
+   "start": "2026-10-06",
+   "judge": "2026-10-22",
+   "criterion": "(내가 정함) 풀이형의 첫 24시간 중앙값이 같은 기간 기존 표의 70% 이상이면 기존 표 시간대도 순서대로 전환 · 50% 미만이면 구성 다시",
+   "owner": "pulse",
+   "status": "scheduled",
+   "days_left": -2,
+   "started": true,
+   "nums": [
+    {
+     "fmt": "풀이형 표",
+     "n7": 2,
+     "med24": 3914,
+     "base24": 3529
+    },
+    {
+     "fmt": "띠 테마 표",
+     "n7": 3,
+     "med24": 13962,
+     "base24": 11585
+    },
+    {
+     "fmt": "태어난 달 표",
+     "n7": 1,
+     "med24": 20309,
+     "base24": 17612
+    },
+    {
+     "fmt": "이름 표",
+     "n7": 2,
+     "med24": 10305,
+     "base24": 10488
+    },
+    {
+     "fmt": "해 끝자리 표",
+     "n7": 1,
+     "med24": 12181,
+     "base24": 16879
+    },
+    {
+     "fmt": "성씨 표",
+     "n7": 1,
+     "med24": 16987,
+     "base24": 7517
+    },
+    {
+     "fmt": "매일 운세 표",
+     "n7": 5,
+     "med24": 11177,
+     "base24": 8387
+    }
+   ]
+  },
+  {
+   "id": "tier-ab",
+   "ch": "wb",
+   "title": "운세 등급표(S·A·B·C 티어표) — 06:13 매일 운세 자리에서 격일 A/B(tier_card)",
+   "start": "2026-10-09",
+   "judge": "2026-10-23",
+   "criterion": "(내가 정함) 등급표 첫 24시간 중앙값이 같은 기간 1~12위 매일 운세 표 이상이면 06:13 을 등급표로 바꾸고 다른 표 자리로 넓힌다 · 70~100%면 손질 후 한 번 더 · 70% 미만이면 접는다",
+   "owner": "pulse",
+   "status": "scheduled",
+   "days_left": -1,
+   "started": true,
+   "nums": [
+    {
+     "fmt": "운세 등급표",
+     "n7": 2,
+     "med24": 10379,
+     "base24": 10827
+    },
+    {
+     "fmt": "매일 운세 표",
+     "n7": 5,
+     "med24": 11177,
+     "base24": 8387
+    }
+   ]
+  },
+  {
+   "id": "gunghap-series",
+   "ch": "wb",
+   "title": "띠 궁합표 6편 시리즈(부부·친구·재물·귀인·사돈·손주, 화·금 18:13, gunghap_card)",
+   "start": "2026-10-09",
+   "judge": "2026-10-30",
+   "criterion": "(내가 정함) 6편 첫 24시간 중앙값이 같은 기간 다른 표(이름·태어난 달·해 끝자리·띠 테마·성씨) 중앙값의 70% 이상이면 새 묶음을 채워 계속 · 50% 미만이면 접는다",
+   "owner": "pulse",
+   "status": "scheduled",
+   "days_left": 6,
+   "started": true,
+   "nums": [
+    {
+     "fmt": "띠 궁합표",
+     "n7": 2,
+     "med24": 2988,
+     "base24": 2988
+    },
+    {
+     "fmt": "이름 표",
+     "n7": 2,
+     "med24": 10305,
+     "base24": 10488
+    },
+    {
+     "fmt": "태어난 달 표",
+     "n7": 1,
+     "med24": 20309,
+     "base24": 17612
+    },
+    {
+     "fmt": "해 끝자리 표",
+     "n7": 1,
+     "med24": 12181,
+     "base24": 16879
+    },
+    {
+     "fmt": "띠 테마 표",
+     "n7": 3,
+     "med24": 13962,
+     "base24": 11585
+    },
+    {
+     "fmt": "성씨 표",
+     "n7": 1,
+     "med24": 16987,
+     "base24": 7517
+    }
+   ]
+  },
+  {
+   "id": "age-table",
+   "ch": "wb",
+   "title": "출생연도로 보는 ○○ 나이 표(띠 테마 쉬는 날 낮 12시, age_card · 10/9 시장 조사: 최근 30일 10만+ 137편)",
+   "start": "2026-10-11",
+   "judge": "2026-10-25",
+   "criterion": "(내가 정함) 7편 첫 24시간 중앙값이 같은 기간 다른 표 중앙값의 100% 이상이면 다른 약한 칸(성씨·해 끝자리)도 나이 표로 바꾼다 · 70~100%면 손질 · 70% 미만이면 접는다. 유효 조회 비율도 함께 본다",
+   "owner": "pulse",
+   "status": "scheduled",
+   "days_left": 1,
+   "started": true,
+   "nums": [
+    {
+     "fmt": "출생연도 나이 표",
+     "n7": 4,
+     "med24": 9473,
+     "base24": 11055
+    },
+    {
+     "fmt": "띠 테마 표",
+     "n7": 3,
+     "med24": 13962,
+     "base24": 11585
+    },
+    {
+     "fmt": "이름 표",
+     "n7": 2,
+     "med24": 10305,
+     "base24": 10488
+    },
+    {
+     "fmt": "태어난 달 표",
+     "n7": 1,
+     "med24": 20309,
+     "base24": 17612
+    },
+    {
+     "fmt": "해 끝자리 표",
+     "n7": 1,
+     "med24": 12181,
+     "base24": 16879
+    },
+    {
+     "fmt": "성씨 표",
+     "n7": 1,
+     "med24": 16987,
+     "base24": 7517
+    }
+   ]
+  },
+  {
+   "id": "blessing",
+   "ch": "wb",
+   "title": "띠별 아침 덕담표(12띠 표 + 칸마다 덕담 한 줄 · 꽃 배경) — 10:40 풀이형 자리 격일 7편(10/11~10/23, blessing_card · 10/10 45개 채널 조사: '운세 틀 + 덕담'은 운세만큼, 좋은 글·경전만은 가라앉음)",
+   "start": "2026-10-11",
+   "judge": "2026-10-25",
+   "criterion": "(내가 정함) 덕담표 7편 첫 24시간 중앙값을 ① 같은 10:40 자리 풀이형 표(번갈아 나간 날, 10/12~10/24) 중앙값 ② 같은 기간 채널 운세 표 전체 중앙값과 비교 — 풀이형 이상이면 유지하고 더 내는 안(다른 자리·주제)을 제안 · 풀이형의 50~100%면 문구·배경 손질 후 한 번 더 · 50% 미만이면 접는다(10/25부터 매일 풀이형 — pulli_card.BLESS_TO 가 이미 끝을 정했다)",
+   "owner": "pulse",
+   "status": "scheduled",
+   "days_left": 1,
+   "started": true,
+   "nums": [
+    {
+     "fmt": "띠별 아침 덕담표",
+     "n7": 4,
+     "med24": 2925,
+     "base24": 3639
+    },
+    {
+     "fmt": "풀이형 표",
+     "n7": 2,
+     "med24": 3914,
+     "base24": 3529
+    },
+    {
+     "fmt": "매일 운세 표",
+     "n7": 5,
+     "med24": 11177,
+     "base24": 8387
+    },
+    {
+     "fmt": "띠 테마 표",
+     "n7": 3,
+     "med24": 13962,
+     "base24": 11585
+    },
+    {
+     "fmt": "출생연도 나이 표",
+     "n7": 4,
+     "med24": 9473,
+     "base24": 11055
+    },
+    {
+     "fmt": "이름 표",
+     "n7": 2,
+     "med24": 10305,
+     "base24": 10488
+    },
+    {
+     "fmt": "태어난 달 표",
+     "n7": 1,
+     "med24": 20309,
+     "base24": 17612
+    },
+    {
+     "fmt": "해 끝자리 표",
+     "n7": 1,
+     "med24": 12181,
+     "base24": 16879
+    },
+    {
+     "fmt": "성씨 표",
+     "n7": 1,
+     "med24": 16987,
+     "base24": 7517
+    },
+    {
+     "fmt": "음력 생일 끝자리 표",
+     "n7": 2,
+     "med24": 12373,
+     "base24": 10425
+    },
+    {
+     "fmt": "운세 등급표",
+     "n7": 2,
+     "med24": 10379,
+     "base24": 10827
+    },
+    {
+     "fmt": "띠 궁합표",
+     "n7": 2,
+     "med24": 2988,
+     "base24": 2988
+    },
+    {
+     "fmt": "2027 신년운세 표",
+     "n7": 1,
+     "med24": 4653,
+     "base24": 18456
+    }
+   ]
+  },
+  {
+   "id": "lunar-digit",
+   "ch": "wb",
+   "title": "음력 생일 끝자리 표(내 것 찾기 다섯째 칸, 5일에 한 번 오후 3시 40분, name_card lunar · 10/9 시장 조사)",
+   "start": "2026-10-12",
+   "judge": "2026-11-02",
+   "criterion": "(내가 정함) 5편 첫 24시간 중앙값이 같은 기간 태어난 달 표 중앙값의 100% 이상이면 칸을 늘린다 · 70% 미만이면 접는다",
+   "owner": "pulse",
+   "status": "scheduled",
+   "days_left": 9,
+   "started": true,
+   "nums": [
+    {
+     "fmt": "음력 생일 끝자리 표",
+     "n7": 2,
+     "med24": 12373,
+     "base24": 10425
+    },
+    {
+     "fmt": "태어난 달 표",
+     "n7": 1,
+     "med24": 20309,
+     "base24": 17612
+    },
+    {
+     "fmt": "이름 표",
+     "n7": 2,
+     "med24": 10305,
+     "base24": 10488
+    },
+    {
+     "fmt": "해 끝자리 표",
+     "n7": 1,
+     "med24": 12181,
+     "base24": 16879
+    },
+    {
+     "fmt": "성씨 표",
+     "n7": 1,
+     "med24": 16987,
+     "base24": 7517
+    }
+   ]
+  },
+  {
+   "id": "newyear-probe",
+   "ch": "wb",
+   "title": "2027 정미년 신년운세 표 4편(총운·재물운 등급표·좋은 달·해 끝자리, 월·목 08:13, newyear_card)",
+   "start": "2026-10-12",
+   "judge": "2026-10-26",
+   "criterion": "(내가 정함) 4편 첫 24시간 중앙값이 같은 기간 다른 표(이름·태어난 달·해 끝자리·띠 테마·성씨) 중앙값의 100% 이상이면 12~1월 본편성(띠별 단독 12편·롱폼)을 앞당겨 만든다 · 70~100%면 잘 된 편의 꼴로만 채운다 · 70% 미만이면 11/20 원래 계획대로",
+   "owner": "pulse",
+   "status": "scheduled",
+   "days_left": 2,
+   "started": true,
+   "nums": [
+    {
+     "fmt": "2027 신년운세 표",
+     "n7": 1,
+     "med24": 4653,
+     "base24": 18456
+    },
+    {
+     "fmt": "이름 표",
+     "n7": 2,
+     "med24": 10305,
+     "base24": 10488
+    },
+    {
+     "fmt": "태어난 달 표",
+     "n7": 1,
+     "med24": 20309,
+     "base24": 17612
+    },
+    {
+     "fmt": "해 끝자리 표",
+     "n7": 1,
+     "med24": 12181,
+     "base24": 16879
+    },
+    {
+     "fmt": "띠 테마 표",
+     "n7": 3,
+     "med24": 13962,
+     "base24": 11585
+    },
+    {
+     "fmt": "성씨 표",
+     "n7": 1,
+     "med24": 16987,
+     "base24": 7517
+    }
+   ]
+  },
+  {
+   "id": "newyear-slot",
+   "ch": "wb",
+   "title": "06:13 매일 운세 자리 → 2027 신년운세 시리즈(화·토, 12/8부터 화·금·토 · newyear_series · 10/20 사용자 승인 '2번 ㄱㄱ')",
+   "start": "2026-10-27",
+   "judge": "2026-11-25",
+   "criterion": "(내가 정함) 같은 06:13 자리에서 시리즈(newyear_slot) 첫 24시간 중앙값 ÷ 같은 기간 매일 운세 표(daily — 등급표로 바뀌었으면 tier) 중앙값: 1.5배 이상이면 그대로 + 12/8 금요일 추가 유지 · 1~1.5배면 화·토만(CADENCE 둘째 줄 삭제) · 1배 미만이면 접는다(SERIES_FROM = None). 목록은 2027-01-02 편까지 — 1월 편은 판정 뒤 채운다",
+   "owner": "pulse",
+   "status": "scheduled",
+   "days_left": 32,
+   "started": false,
+   "nums": [
+    {
+     "fmt": "매일 운세 표",
+     "n7": 5,
+     "med24": 11177,
+     "base24": 8387
+    },
+    {
+     "fmt": "운세 등급표",
+     "n7": 2,
+     "med24": 10379,
+     "base24": 10827
+    },
+    {
+     "fmt": "2027 신년운세 표",
+     "n7": 1,
+     "med24": 4653,
+     "base24": 18456
+    }
+   ]
+  },
+  {
+   "id": "table-rotation",
+   "ch": "wb",
+   "title": "같은 표 반복 줄이기 — 내 것 찾기 4칸 하루 한 칸 순환 · 띠 테마 격일(10/7 진단, name_card ROTATION · theme_card ALT_FROM)",
+   "start": "2026-10-08",
+   "judge": "2026-10-15",
+   "criterion": "(내가 정함) 10/8~10/14 내 것 찾기·띠 테마 편당 첫 24시간 중앙값이 10/6 오후~10/7 같은 형식 편들의 2배 이상이면 유지 · 그대로면 편수만 준 것이니 원인을 채널 전체 쪽(새 모양 3개 성적과 함께)으로 보고 롱폼·검색 비중을 키운다 · 하루 총조회가 10/7보다 20% 넘게 줄면 되돌림 검토",
+   "owner": "pulse",
+   "status": "scheduled",
+   "days_left": -9,
+   "started": true,
+   "nums": [
+    {
+     "fmt": "이름 표",
+     "n7": 2,
+     "med24": 10305,
+     "base24": 10488
+    },
+    {
+     "fmt": "태어난 달 표",
+     "n7": 1,
+     "med24": 20309,
+     "base24": 17612
+    },
+    {
+     "fmt": "해 끝자리 표",
+     "n7": 1,
+     "med24": 12181,
+     "base24": 16879
+    },
+    {
+     "fmt": "성씨 표",
+     "n7": 1,
+     "med24": 16987,
+     "base24": 7517
+    },
+    {
+     "fmt": "띠 테마 표",
+     "n7": 3,
+     "med24": 13962,
+     "base24": 11585
+    }
+   ]
+  },
+  {
+   "id": "threads-ab",
+   "ch": "wb",
+   "title": "쓰레드: 카드 묶음 그대로 vs 짧은 1인칭 글 + 이미지 한 장(A/B 4편씩)",
+   "start": "2026-10-07",
+   "judge": "2026-10-21",
+   "criterion": "(내가 정함) 글 쪽 조회 중앙값이 카드 쪽의 3배 이상이면 글을 기본으로 · 답글 수도 비교 — 숫자는 쓰레드 인사이트(크롬)",
+   "owner": "local",
+   "status": "running",
+   "days_left": -3,
+   "started": true,
+   "nums": []
+  },
+  {
+   "id": "insta-reels",
+   "ch": "wb",
+   "title": "인스타 운영 기록 릴스(첫 1초 실측 숫자 강제 · 10/7~)",
+   "start": "2026-10-07",
+   "judge": "2026-11-14",
+   "criterion": "(내가 정함) 다섯 중 셋 이상이면 계속: 추천 자격 정상 · 비팔로워 조회 중앙값 300↑ · 첫 3초 이탈 65%↓ · 도달 대비 공유 0.5%↑ · 팔로워 100↑. 못 넘으면 릴스 접고 유튜브로",
+   "owner": "local",
+   "status": "running",
+   "days_left": 21,
+   "started": true,
+   "nums": []
+  },
+  {
+   "id": "weekly-fortune-long",
+   "ch": "wb",
+   "title": "주간 띠별 운세 롱폼(일 20:00) + 표 쇼츠 '관련 동영상' 연결",
+   "start": "2026-10-04",
+   "judge": "2026-10-26",
+   "criterion": "(내가 정함) 4편의 7일 조회 중앙값 300 이상이면 유지, 아니면 길이·제목 손질",
+   "owner": "pulse",
+   "status": "running",
+   "days_left": 2,
+   "started": true,
+   "nums": [
+    {
+     "fmt": "주간 운세(롱)",
+     "n7": 1,
+     "med24": 40,
+     "base24": 28
+    }
+   ]
+  },
+  {
+   "id": "lf27-series",
+   "ch": "wb",
+   "title": "2027 정미년 깊이 보기 롱폼 16편(11/2~12/7 월·수·금 20:00 · 주간 롱폼 대체)",
+   "start": "2026-11-02",
+   "judge": "2026-11-16",
+   "criterion": "(내가 정함) 첫 6편 7일 조회 중앙값이 옛 주간 롱폼(254·101·47 → 중앙 101)의 3배(300) 이상이고 평균 시청 4분 이상이면 12~1월 2기(모음편 60~100분 · 띠별 2편째) 편성 — 못 넘으면 제목·썸네일을 질문형·출생연도 나열 꼴로 손질",
+   "owner": "pulse",
+   "status": "scheduled",
+   "days_left": 23,
+   "started": false,
+   "nums": []
+  },
+  {
+   "id": "wb-split",
+   "ch": "wb",
+   "title": "ASMR·수면 사운드 채널 분리 결정",
+   "start": "2026-09-29",
+   "judge": "2026-10-26",
+   "criterion": "해외 시청 비중·주간 시청시간 속도로 결정(스튜디오 숫자 필요)",
+   "owner": "local",
+   "status": "stopped",
+   "days_left": 2,
+   "started": true,
+   "nums": [
+    {
+     "fmt": "ASMR·수면(롱)",
+     "n7": 0,
+     "med24": null,
+     "base24": 3
+    }
+   ]
+  },
+  {
+   "id": "tales-sprint",
+   "ch": "nt",
+   "title": "Nine Tails 7형식 1주 실험(3~9화, 10/4~10/10)",
+   "start": "2026-10-04",
+   "judge": "2026-10-13",
+   "criterion": "형식별 7일 조회·쇼츠 반응 비교 → 이긴 형식 위주로 편성",
+   "owner": "local:judge-tales-sprint-1013",
+   "status": "running",
+   "days_left": -11,
+   "started": true,
+   "nums": [
+    {
+     "fmt": "본편(롱)",
+     "n7": 1,
+     "med24": 6,
+     "base24": 1
+    },
+    {
+     "fmt": "규칙형 쇼츠",
+     "n7": 0,
+     "med24": null,
+     "base24": 49
+    },
+    {
+     "fmt": "이야기 쇼츠",
+     "n7": 15,
+     "med24": 89,
+     "base24": 83
+    }
+   ]
+  },
+  {
+   "id": "tales-global-look",
+   "ch": "nt",
+   "title": "10화부터 현대·글로벌 화풍 + 후드티 구미",
+   "start": "2026-10-14",
+   "judge": "2026-10-28",
+   "criterion": "(내가 정함) 10~11화 쇼츠 7일 조회 중앙값이 3~9화 쇼츠 중앙값 이상이면 유지",
+   "owner": "local:check-tales-global-1014",
+   "status": "scheduled",
+   "days_left": 4,
+   "started": true,
+   "nums": [
+    {
+     "fmt": "본편(롱)",
+     "n7": 1,
+     "med24": 6,
+     "base24": 1
+    },
+    {
+     "fmt": "규칙형 쇼츠",
+     "n7": 0,
+     "med24": null,
+     "base24": 49
+    },
+    {
+     "fmt": "이야기 쇼츠",
+     "n7": 15,
+     "med24": 89,
+     "base24": 83
+    }
+   ]
+  },
+  {
+   "id": "tales-rules",
+   "ch": "nt",
+   "title": "RULES 규칙괴담 매일 쇼츠(21:00 UTC, 28편 · 10/9 조사로 13:00 UTC=22:00 KST·배정일 다음 날로, 머지 뒤 편부터) — 10/7 점검으로 10/14 → 10/8 앞당김(피드가 미는 건 규칙·대결 쇼츠뿐)",
+   "start": "2026-10-08",
+   "judge": "2026-11-05",
+   "criterion": "(내가 정함) 7일 조회 1,000 이상이 5편 이상이거나 1만 이상이 한 편 → 계속·카탈로그 보충, 아니면 형식 재검토. 카탈로그는 11/4 에 바닥난다(주간 검토가 그 전에 채운다)",
+   "owner": "pulse",
+   "status": "scheduled",
+   "days_left": 12,
+   "started": true,
+   "nums": [
+    {
+     "fmt": "규칙형 쇼츠",
+     "n7": 0,
+     "med24": null,
+     "base24": 49
+    },
+    {
+     "fmt": "대결 쇼츠",
+     "n7": 3,
+     "med24": 65,
+     "base24": 175
+    }
+   ]
+  },
+  {
+   "id": "tales-sleep",
+   "ch": "nt",
+   "title": "수면판 1호(10/26 공개)",
+   "start": "2026-10-26",
+   "judge": "2026-11-09",
+   "criterion": "(내가 정함) 2주 조회 300 이상이면 월 1회 유지",
+   "owner": "pulse",
+   "status": "scheduled",
+   "days_left": 16,
+   "started": false,
+   "nums": []
+  },
+  {
+   "id": "nt-overall",
+   "ch": "nt",
+   "title": "Nine Tails 종합 판정",
+   "start": "2026-10-01",
+   "judge": "2026-11-14",
+   "criterion": "주간 시청 100시간 목표(10/1 계획 B) · 구독 추세",
+   "owner": "pulse",
+   "status": "running",
+   "days_left": 21,
+   "started": true,
+   "nums": []
+  }
+ ],
+ "trends": {
+  "rows": [
+   {
+    "niche": "사연 쇼츠(왕별이 13:07)",
+    "tag": "자식·효도",
+    "label": "떡상",
+    "med": 1.71,
+    "prev": 1.06,
+    "n": 28,
+    "hit": 0.43
+   },
+   {
+    "niche": "주식 시황(왕별이)",
+    "tag": "환율·달러",
+    "label": "떡상",
+    "med": 1.43,
+    "prev": 1.14,
+    "n": 28,
+    "hit": 0.39
+   },
+   {
+    "niche": "Sleep sounds (왕별이 ASMR)",
+    "tag": "village",
+    "label": "떡상",
+    "med": 1.27,
+    "prev": 0.87,
+    "n": 20,
+    "hit": 0.35
+   },
+   {
+    "niche": "사연 쇼츠(왕별이 13:07)",
+    "tag": "노인 무시",
+    "label": "떡상",
+    "med": 1.23,
+    "prev": 0.84,
+    "n": 28,
+    "hit": 0.39
+   },
+   {
+    "niche": "사연 쇼츠(왕별이 13:07)",
+    "tag": "부부",
+    "label": "떡상",
+    "med": 1.1,
+    "prev": 0.67,
+    "n": 13,
+    "hit": 0.23
+   },
+   {
+    "niche": "Sleep sounds (왕별이 ASMR)",
+    "tag": "ghibli·anime",
+    "label": "떡상",
+    "med": 1.0,
+    "prev": 0.59,
+    "n": 19,
+    "hit": 0.37
+   },
+   {
+    "niche": "운세(왕별이)",
+    "tag": "꿈해몽",
+    "label": "강세",
+    "med": 2.3,
+    "prev": 3.78,
+    "n": 5,
+    "hit": 0.6
+   },
+   {
+    "niche": "운세(왕별이)",
+    "tag": "건강·수명",
+    "label": "식는 중",
+    "med": 1.46,
+    "prev": 1.9,
+    "n": 8,
+    "hit": 0.25
+   },
+   {
+    "niche": "사연 쇼츠(왕별이 13:07)",
+    "tag": "시댁·며느리",
+    "label": "식는 중",
+    "med": 1.17,
+    "prev": 1.65,
+    "n": 30,
+    "hit": 0.37
+   },
+   {
+    "niche": "Horror stories (Nine Tails)",
+    "tag": "home·house",
+    "label": "식는 중",
+    "med": 0.97,
+    "prev": 1.25,
+    "n": 5,
+    "hit": 0.2
+   },
+   {
+    "niche": "AI 소식(왕별이)",
+    "tag": "새 모델",
+    "label": "식는 중",
+    "med": 0.86,
+    "prev": 1.15,
+    "n": 11,
+    "hit": 0.18
+   },
+   {
+    "niche": "사연 쇼츠(왕별이 13:07)",
+    "tag": "돈·유산",
+    "label": "식는 중",
+    "med": 0.81,
+    "prev": 1.26,
+    "n": 4,
+    "hit": 0.25
+   },
+   {
+    "niche": "시니어 생활·건강(왕별이 시청층)",
+    "tag": "노후 돈",
+    "label": "식는 중",
+    "med": 0.79,
+    "prev": 1.05,
+    "n": 83,
+    "hit": 0.14
+   },
+   {
+    "niche": "시니어 생활·건강(왕별이 시청층)",
+    "tag": "뇌·치매",
+    "label": "식는 중",
+    "med": 0.72,
+    "prev": 1.19,
+    "n": 18,
+    "hit": 0.33
+   },
+   {
+    "niche": "AI 소식(왕별이)",
+    "tag": "빅테크",
+    "label": "식는 중",
+    "med": 0.71,
+    "prev": 1.31,
+    "n": 24,
+    "hit": 0.25
+   },
+   {
+    "niche": "Asian folklore & myth (Nine Tails 본편)",
+    "tag": "explained·origin",
+    "label": "식는 중",
+    "med": 0.7,
+    "prev": 1.2,
+    "n": 3,
+    "hit": 0.0
+   }
+  ],
+  "hits": [
+   {
+    "niche": "정치 쇼츠(왕별이)",
+    "ch": "정치폭격",
+    "title": "푸틴 절친이 한국 특보 됐다?! #shorts",
+    "ratio": 389.87,
+    "views": 755748,
+    "id": "6rk309QAgdk"
+   },
+   {
+    "niche": "AI 소식(왕별이)",
+    "ch": "연합뉴스경제TV",
+    "title": "\"이게...정말 자동차야?\" 테슬라 로드스터, 9년만에 공개",
+    "ratio": 229.01,
+    "views": 1125882,
+    "id": "dBxN--FJ770"
+   },
+   {
+    "niche": "Sleep sounds (왕별이 ASMR)",
+    "ch": "Through Ghibli Window",
+    "title": "90s Indian Village Life🌾 | Ghibli Inspired Rajasthani Story #shorts #ghibli #villagelife #",
+    "ratio": 228.52,
+    "views": 505145,
+    "id": "6wVwNp_JYQs"
+   },
+   {
+    "niche": "AI 소식(왕별이)",
+    "ch": "연합뉴스경제TV",
+    "title": "누리호 우주로 날아올랐다…위성 15기 싣고 정상 비행",
+    "ratio": 157.38,
+    "views": 790486,
+    "id": "1guedUNgSDc"
+   },
+   {
+    "niche": "AI 소식(왕별이)",
+    "ch": "연합뉴스경제TV",
+    "title": "국내증시 폭락...삼성전자 차트에서 정말 위험한 신호 나왔습니다 (이진우) | 인포맥스라이브 261015",
+    "ratio": 117.7,
+    "views": 583196,
+    "id": "BL-eOQg6Cmk"
+   },
+   {
+    "niche": "시니어 생활·건강(왕별이 시청층)",
+    "ch": "인생생활백서",
+    "title": "한의사가 감탄한 숨은 보약 #쇼츠 #시니어 #인생생활백서",
+    "ratio": 114.66,
+    "views": 1336395,
+    "id": "Wqv5A5Lc8pI"
+   },
+   {
+    "niche": "AI 소식(왕별이)",
+    "ch": "연합뉴스경제TV",
+    "title": "싸다고 매수하면 위험한 이유. 조급할 필요 없습니다. (이진우) | 저녁7시 인포맥스라이브",
+    "ratio": 86.34,
+    "views": 443363,
+    "id": "21aZWU34Rd8"
+   },
+   {
+    "niche": "AI 소식(왕별이)",
+    "ch": "연합뉴스경제TV",
+    "title": "가장 돈 벌기 쉬운 장 옵니다. 급락은 싸게 살 기회 (박세익) | 저녁7시 인포맥스라이브",
+    "ratio": 65.76,
+    "views": 353037,
+    "id": "Rqk5j_inJj0"
+   }
+  ]
+ },
+ "ypp": {
+  "wb": {
+   "name": "왕별이",
+   "ratio": 0.345,
+   "valid": 606447,
+   "plays_after": 1636079,
+   "gap": true,
+   "pace": 27915,
+   "subs": 1040,
+   "srate": 26.0,
+   "hours": 565,
+   "checked": "2026-10-05",
+   "data_date": "2026-09-30",
+   "deadline": "2027-01-31",
+   "days_left": 99,
+   "tiers": [
+    {
+     "key": "fan",
+     "label": "팬 후원(멤버십·Supers·Shopping)",
+     "subs": 1040,
+     "subs_need": 500,
+     "subs_eta": 0,
+     "valid": 606447,
+     "valid_need": 3000000,
+     "valid_eta": null,
+     "pace_need": 33333,
+     "cap": 2512380,
+     "hours": 565,
+     "hours_need": 3000,
+     "ready": false,
+     "eta": null,
+     "eta_date": null,
+     "valid_eta_date": null
+    },
+    {
+     "key": "ads",
+     "label": "광고 수익(보기 페이지·Shorts 피드 광고)",
+     "subs": 1040,
+     "subs_need": 1000,
+     "subs_eta": 0,
+     "valid": 606447,
+     "valid_need": 10000000,
+     "valid_eta": null,
+     "pace_need": 111111,
+     "cap": 2512380,
+     "hours": 565,
+     "hours_need": 4000,
+     "ready": false,
+     "eta": null,
+     "eta_date": null,
+     "valid_eta_date": null
+    }
+   ]
+  }
+ },
+ "pred_scored": [
+  {
+   "text": "왕별이 내일 채널 하루 조회 12만 이하(오늘 18.4만은 밀린 몫이 한꺼번에 잡힌 것 — 영상 합 9.9만 근처로 내려온다)",
+   "metric": "views:wb",
+   "op": "<=",
+   "value": 120000,
+   "actual": 91994,
+   "ok": true
+  },
+  {
+   "text": "왕별이 내일 구독자 1,020 이상(하루 +21 이상 — 1,000 돌파)",
+   "metric": "subs:wb",
+   "op": ">=",
+   "value": 1020,
+   "actual": 1040,
+   "ok": true
+  },
+  {
+   "text": "왕별이 내일 띠 테마 비중 30% 이하(오늘 39.7%는 '친구 복' 한 편 덕이라 식는다)",
+   "metric": "share:wb:theme",
+   "op": "<=",
+   "value": 0.3,
+   "actual": 0.286,
+   "ok": true
+  }
+ ],
+ "flags": [
+  {
+   "id": "FMT_COLD:wb:ai",
+   "level": "warn",
+   "text": "왕별이 'AI 소식' 최근 3편 첫 24시간이 모두 30일 중앙값(116)의 절반 미만 (42, 13, 24)",
+   "days": 15
+  },
+  {
+   "id": "YPP_PACE:wb:ads",
+   "level": "warn",
+   "text": "왕별이 '광고 수익(보기 페이지·Shorts 피드 광고)': 지금 속도(유효 하루 2.8만)로는 90일 합이 최대 251만 — 1,000만 에는 유효 하루 11.1만(조회수로 약 32.2만) 필요",
+   "days": 15
+  },
+  {
+   "id": "YPP_PACE:wb:fan",
+   "level": "warn",
+   "text": "왕별이 '팬 후원(멤버십·Supers·Shopping)': 지금 속도(유효 하루 2.8만)로는 90일 합이 최대 251만 — 300만 에는 유효 하루 3.3만(조회수로 약 9.7만) 필요",
+   "days": 15
+  },
+  {
+   "id": "EXP_DUE:table-rotation",
+   "level": "warn",
+   "text": "실험 '같은 표 반복 줄이기 — 내 것 찾기 4칸 하루 한 칸 순환 · 띠 테마 격일(10/7 진단, name_card ROTATION · theme_card ALT_FROM)' 판정일 2026-10-15 지남 — 판정하고 pulse_experiments.json 을 닫을 것",
+   "days": 11
+  },
+  {
+   "id": "EXP_DUE:tables-v2",
+   "level": "warn",
+   "text": "실험 '풀이형 표(오늘 일진의 합·충 근거) — 10:40 새 시간대에 먼저 시험(pulli_card)' 판정일 2026-10-22 지남 — 판정하고 pulse_experiments.json 을 닫을 것",
+   "days": 4
+  },
+  {
+   "id": "EXP_DUE:tier-ab",
+   "level": "warn",
+   "text": "실험 '운세 등급표(S·A·B·C 티어표) — 06:13 매일 운세 자리에서 격일 A/B(tier_card)' 판정일 2026-10-23 지남 — 판정하고 pulse_experiments.json 을 닫을 것",
+   "days": 3
+  },
+  {
+   "id": "FMT_HOT:wb:theme",
+   "level": "good",
+   "text": "왕별이 '띠 테마 표' 첫 24시간 4.6만 — 30일 중앙값(1.2만)의 ×4.0",
+   "days": 1
+  },
+  {
+   "id": "EXP_DUE:age-table",
+   "level": "info",
+   "text": "실험 '출생연도로 보는 ○○ 나이 표(띠 테마 쉬는 날 낮 12시, age_card · 10/9 시장 조사: 최근 30일 10만+ 137편)' 판정 내일 (pulse)",
+   "days": 1
+  },
+  {
+   "id": "EXP_DUE:blessing",
+   "level": "info",
+   "text": "실험 '띠별 아침 덕담표(12띠 표 + 칸마다 덕담 한 줄 · 꽃 배경) — 10:40 풀이형 자리 격일 7편(10/11~10/23, blessing_card · 10/10 45개 채널 조사: '운세 틀 + 덕담'은 운세만큼, 좋은 글·경전만은 가라앉음)' 판정 내일 (pulse)",
+   "days": 1
+  }
+ ],
+ "history": [
+  {
+   "date": "2026-10-17",
+   "summary": "왕별이 하루 15.5만 — 어제 '숫자가 늦게 잡혔다'는 해석이 맞았고, 이번엔 매일 운세(1.7만)·성씨 표(17시간 1.6만, 예상의 15배)·풀이형 표(20시간 1.2만, 예상의 3.7배)가 고르게 끌었습니다. 수익화 속도는 유효 하루 2.6만으로 조금 올랐지만 광고 기준(11.1만)의 2할 남짓 그대로이고, 구독 858이라 1,000까지 약 7일. 풀이형 새 편이 처음으로 크게 나간 것이 오늘 가장 좋은 신호입니다.",
+   "views": {
+    "wb": 155490,
+    "nt": 194
+   }
+  },
+  {
+   "date": "2026-10-18",
+   "summary": "왕별이 하루 9.1만으로 어제 예측(12만 이하)대로 내려왔고, 3일째 오름세지만 수익화 속도는 유효 하루 2.7만 — 광고 기준(11.1만)의 4분의 1, 팬 후원 기준(3.3만)의 81%입니다. 구독 872라 1,000까지 약 7일, 막힌 것은 여전히 쇼츠 속도 하나. Nine Tails 는 어제 올린 새 영상 6편(롱폼 포함)이 18~19시간째 조회 0이라 공개 상태부터 확인이 필요합니다.",
+   "views": {
+    "wb": 90902,
+    "nt": 222
+   }
+  },
+  {
+   "date": "2026-10-19",
+   "summary": "왕별이 하루 5.8만으로 내려왔고(어제 예측 7.5만 이상은 빗나감), 수익화 속도는 유효 하루 2.8만 — 팬 후원 기준(3.3만)의 84%, 광고 기준(11.1만)의 25%로 그대로입니다. 구독 888이라 1,000까지 약 6일, 막힌 것은 쇼츠 속도 하나. Nine Tails 의 '조회 0' 새 영상들은 예약 공개였던 것으로 보여(남극 쇼츠 공개 1시간 64회) 걱정은 덜었습니다.",
+   "views": {
+    "wb": 57869,
+    "nt": 1465
+   }
+  },
+  {
+   "date": "2026-10-20",
+   "summary": "왕별이 채널 숫자는 4.6만(22시간분)으로 내려왔지만 영상별 합은 8.0만이라 또 늦게 잡힌 것으로 보입니다 — 오늘은 월요일 주간 운세 쇼츠(22시간 3.5만)가 조회의 절반(47%)을 끌었습니다. 수익화 속도는 유효 하루 2.6만으로 조금 내려가 팬 후원 기준(3.3만)의 79%, 광고 기준(11.1만)의 24%. 구독 914(+28)라 1,000까지 약 5일, 막힌 것은 여전히 쇼츠 속도 하나입니다.",
+   "views": {
+    "wb": 46426,
+    "nt": 22
+   }
+  },
+  {
+   "date": "2026-10-21",
+   "summary": "왕별이 수익화 속도는 유효 하루 2.5만으로 조금 더 내려가 팬 후원 기준(3.3만)의 75%, 광고 기준(11.1만)의 23%입니다 — 막힌 것은 여전히 쇼츠 속도 하나. 구독 938(+23)이라 1,000까지 약 3일. 내일 풀이형 표 판정은 매일 운세 표 대비 62%로 '전환(70%)'과 '구성 다시(50%)' 사이 경계라, 전환은 늦추지 않고 구성을 손보는 쪽으로 봅니다.",
+   "views": {
+    "wb": 63676,
+    "nt": 346
+   }
+  },
+  {
+   "date": "2026-10-22",
+   "summary": "풀이형 표 판정: 첫 24시간 중앙값 3,914로 기존 표(매일 운세 16,689 등)의 절반도 안 돼 '구성 다시' — 전환은 유지하고 10/25 매일 시작 전 구성을 손봐야 합니다(실험 닫기 PR 1개). 수익화 속도는 유효 하루 2.4만(팬 후원 기준의 73%, 광고의 22%), 구독 963.",
+   "views": {
+    "wb": 32492,
+    "nt": 30
+   }
+  },
+  {
+   "date": "2026-10-23",
+   "summary": "왕별이 구독 999 — 광고 수익 기준(1,000)까지 1명, 내일이면 넘습니다. 남은 벽은 쇼츠 속도 하나: 유효 하루 3.1만으로 팬 후원 기준(3.3만)의 93%까지 올라왔지만 광고 기준(11.1만)엔 28%. 오늘 등급표 판정은 '이김'이지만 06:13 자리가 10/27 신년운세(같은 등급표 꼴)로 넘어가 실험만 닫습니다(실험 닫기 PR 1개 — 어제 것까지 묶음, 사람이 열어 주셔야 함).",
+   "views": {
+    "wb": 184194,
+    "nt": 990
+   }
+  }
+ ]
+}
