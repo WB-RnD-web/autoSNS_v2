@@ -1,0 +1,63 @@
+{
+ "id": 306,
+ "slug": "parking-garage-missing-level",
+ "format": "liminal",
+ "part": 6,
+ "look": "liminal",
+ "fiction": true,
+ "title": "RULES if the Parking Garage Has a Level That Isn't on the Sign #shorts",
+ "hook": "THE LEVEL WITH NO NUMBER",
+ "description_hook": "You parked on level 3. The elevator opens on a level with no number, and your car is the only one there. A work of fiction.",
+ "lines": [
+  {
+   "rule": 1,
+   "text": "DON'T TAKE THE ELEVATOR TWICE",
+   "say": "You parked on level 3. The elevator opens on a level with no number. Rule one: never ride it twice in a row.",
+   "img": "an underground concrete parking level at night under orange sodium lights, a single dark sedan parked alone between painted pillars, open steel elevator doors in the foreground"
+  },
+  {
+   "rule": 2,
+   "text": "COUNT THE STAIRS BOTH WAYS",
+   "say": "Rule two. The stairwell has one extra floor going down. Don't take it.",
+   "img": "a narrow concrete stairwell descending into darkness, flickering wall lamp, metal handrail glistening with damp, one landing deeper than it should be"
+  },
+  {
+   "rule": 3,
+   "text": "IF YOUR CAR CHIRPS, DON'T ANSWER",
+   "say": "Rule three. If your car chirps, it wasn't your remote.",
+   "img": "close-up of a car's headlights blinking softly in an empty garage, wet puddle on the concrete reflecting the amber glow, deep shadows behind"
+  },
+  {
+   "rule": 4,
+   "text": "FOLLOW THE FLOOR ARROWS",
+   "say": "Rule four. Follow the floor arrows, never the signs.",
+   "img": "faded white arrows painted on a damp concrete floor curving between thick pillars, sodium light pooling on the ground, the far end lost in darkness"
+  },
+  {
+   "rule": 5,
+   "text": "WAIT FOR THE MACHINE TO SAY GOODNIGHT",
+   "say": "Rule five. Don't drive out until the ticket machine says goodnight.",
+   "img": "a lone ticket machine glowing beside a lowered exit barrier in an empty garage at night, soft hum of fluorescent light, puddles reflecting its screen"
+  },
+  {
+   "text": "THE GATE SAYS LEVEL 3",
+   "say": "When the barrier lifts, the sign says level 3. Where you parked.",
+   "img": "an exit barrier arm rising slowly in a dim concrete garage, headlights shining into a ramp that curves back down into orange-lit darkness"
+  }
+ ],
+ "loop_back": "The exit gate is on level 3, where you parked — so you are back at the start, before the elevator in rule one.",
+ "gumi": {
+  "say": "So. Which rule would you break first?"
+ },
+ "tags": [
+  "liminal space",
+  "liminal spaces",
+  "parking garage",
+  "creepy rules",
+  "rules horror",
+  "dreamcore",
+  "weirdcore",
+  "underground garage",
+  "fiction"
+ ]
+}

@@ -1,0 +1,64 @@
+{
+ "id": 112,
+ "slug": "lost-at-sea-raft",
+ "format": "survival",
+ "part": 12,
+ "look": "deep",
+ "title": "How Long Would You Last Lost at Sea on a Raft? #shorts",
+ "hook": "HOW LONG WOULD YOU LAST?",
+ "situation": "ADRIFT ON A RAFT, NO WATER",
+ "description_hook": "You're adrift on a small raft in a tropical sea, with no shade and not one drop of fresh water. The clock starts now.",
+ "beats": [
+  {
+   "t": "0:00",
+   "text": "30°C SEA. NO SHADE.",
+   "src": 0,
+   "say": "How long would you last lost at sea on a raft? Tropical water, about 30°C. No shade. No fresh water. Nothing on the horizon.",
+   "img": "a small orange inflatable life raft alone in the middle of a flat turquoise tropical ocean, harsh midday sun overhead, empty horizon in every direction"
+  },
+  {
+   "t": "15:00",
+   "text": "UV DAMAGE IN 15 MIN",
+   "src": 1,
+   "say": "After 15 minutes, the sun is already damaging your skin. And the water around you bounces it right back up.",
+   "img": "blinding sunlight glittering off rippling ocean water around the edge of a rubber raft, a bare sunburned forearm resting on the side"
+  },
+  {
+   "t": "--:--",
+   "text": "3.5% SALT",
+   "src": 3,
+   "say": "You need about 1 litre of water a day. Seawater is 3.5 percent salt. Drink it, and you pee out more than you drank.",
+   "img": "a cupped pair of hands lifting clear seawater over the side of a raft, sparkling droplets falling back into the deep blue ocean"
+  },
+  {
+   "t": "DAY 3",
+   "text": "15–20% BODY WATER GONE",
+   "src": 4,
+   "say": "Lose 15 to 20 percent of your body water and it kills you. In this heat, that can take as little as 3 days.",
+   "img": "an empty raft drifting under a blood-red sunset over a glassy calm sea, long shadows on the water, no land anywhere"
+  }
+ ],
+ "gumi": {
+  "odds": "5%",
+  "say": "Gumi's odds: five percent. Water everywhere, and not one drop is yours."
+ },
+ "teaser": "NEXT: THE SUN'S CORONA",
+ "sources": [
+  "https://oceanexplorer.noaa.gov/facts/temp-vary.html",
+  "https://www.cdc.gov/cancer/skin/resources/files/sun-safety.txt",
+  "https://oceanservice.noaa.gov/facts/whysalty.html",
+  "https://oceanservice.noaa.gov/facts/drinksw.html",
+  "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13140192/fullTextXML"
+ ],
+ "tags": [
+  "lost at sea",
+  "how long would you last",
+  "life raft",
+  "survival",
+  "dehydration",
+  "drinking seawater",
+  "ocean survival",
+  "science",
+  "castaway"
+ ]
+}
