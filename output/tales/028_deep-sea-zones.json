@@ -1,0 +1,633 @@
+{
+ "id": 28,
+ "slug": "deep-sea-zones",
+ "format": "zones",
+ "look": "real",
+ "title": "How Long You'd Last in Every Zone of the Ocean",
+ "thumb": {
+  "text": "10,935 M DOWN",
+  "img": "a small white deep-sea submersible with blazing lights hovering above the black floor of the deepest ocean trench, a single anglerfish glowing at the edge of the beam, extreme contrast"
+ },
+ "hook": "Go down 10,935 meters, one zone at a time: where the light ends, where humans have to stop, what glows in the dark, and what lives under about a thousand times the air pressure at sea level.",
+ "tags": [
+  "zone of the ocean",
+  "how long would you last",
+  "zones of the ocean",
+  "deep sea explained",
+  "mariana trench",
+  "challenger deep",
+  "ocean zones",
+  "twilight zone ocean",
+  "midnight zone",
+  "hadal zone",
+  "anglerfish",
+  "deepest fish",
+  "vampire squid",
+  "deep sea creatures",
+  "science explained"
+ ],
+ "sources": [
+  "NOAA Ocean Service — How far does light travel in the ocean?: https://oceanservice.noaa.gov/facts/light_travel.html",
+  "NOAA JetStream — Layers of the Ocean: https://www.noaa.gov/jetstream/ocean/layers-of-ocean",
+  "NOAA Ocean Exploration — Wild and Bizarre Marine Life (pressure, 4 °C): https://oceanexplorer.noaa.gov/explainers/marine-life/",
+  "NOAA Ocean Exploration — What is the 'deep' ocean?: https://oceanexplorer.noaa.gov/ocean-fact/deep-ocean/",
+  "NOAA Ocean Service — How much oxygen comes from the ocean?: https://oceanservice.noaa.gov/facts/ocean-oxygen.html",
+  "NOAA Ocean Exploration — Technical Diving: https://oceanexplorer.noaa.gov/technology/technical/",
+  "Patrician et al. (2021), Frontiers in Physiology — Breath-hold diving: https://pmc.ncbi.nlm.nih.gov/articles/PMC8176094/",
+  "Medical Gas Research (2016) — ultimate depth for saturation divers: https://pmc.ncbi.nlm.nih.gov/articles/PMC5110125/",
+  "WHOI Oceanus — The largest migration on the planet: https://www.whoi.edu/oceanus/feature/daily-migration/",
+  "NOAA Ocean Exploration — Why do we explore the water column?: https://oceanexplorer.noaa.gov/ocean-fact/water-column/",
+  "WHOI Ocean Twilight Zone — Lanternfishes: https://twilightzone.whoi.edu/explore-the-otz/creature-features/lanternfishes/",
+  "MBARI — Vampire squid: https://www.mbari.org/animal/vampire-squid/",
+  "NOAA Ocean Exploration — What is bioluminescence?: https://oceanexplorer.noaa.gov/ocean-fact/bioluminescence/",
+  "MBARI — Deep-sea anglerfish: https://www.mbari.org/animal/deep-sea-anglerfish/",
+  "Nilsson et al. (2012), Current Biology — giant eyes of giant squid: https://fds.duke.edu/db/aas/CMAC/faculty/sjohnsen/publications/228552",
+  "NOAA Sanctuaries — Odd ocean critters (gulper eel): https://sanctuaries.noaa.gov/news/oct23/odd-ocean-critters.html",
+  "NOAA Ocean Service — What is marine snow?: https://oceanservice.noaa.gov/facts/marinesnow.html",
+  "MBARI — Feast and famine on the abyssal plain (Station M): https://www.mbari.org/news/feast-and-famine-on-the-abyssal-plain/",
+  "Jamieson & Vecchione (2020), Marine Biology — dumbo octopus depth record: https://repository.library.noaa.gov/view/noaa/29154",
+  "NOAA — Seven miles deep, the ocean is still a noisy place: https://www.noaa.gov/media-release/seven-miles-deep-ocean-is-still-noisy-place",
+  "University of Western Australia — world's deepest fish: https://www.uwa.edu.au/news/Article/2023/April/Scientists-break-new-record-after-finding-worlds-deepest-fish",
+  "Yancey et al. (2014), PNAS — fish depth limit: https://pmc.ncbi.nlm.nih.gov/articles/PMC3970477/",
+  "Kobayashi et al. (2019), PLOS ONE — the amphipod's aluminum shield: https://pmc.ncbi.nlm.nih.gov/articles/PMC6449124/",
+  "NOAA Ocean Service — How deep is the ocean?: https://oceanservice.noaa.gov/facts/oceandepth.html",
+  "Greenaway et al. (2021), Deep-Sea Research I — revised depth of the Challenger Deep: https://repository.library.noaa.gov/view/noaa/33477",
+  "Dziak et al. (2017), Oceanography — Ambient Sound at Challenger Deep: https://tos.org/oceanography/article/ambient-sound-at-challenger-deep-mariana-trench",
+  "NOAA Ocean Exploration — Soundings history (Trieste, 1960): https://oceanexplorer.noaa.gov/history/quotes-soundings/",
+  "Martini & Haddock (2017), Scientific Reports — bioluminescence: https://pmc.ncbi.nlm.nih.gov/articles/PMC5379559/",
+  "NOAA Ocean Exploration — How much of the ocean have we explored?: https://oceanexplorer.noaa.gov/facts/explored.html"
+ ],
+ "scenes": [
+  {
+   "say": "At the bottom of the Challenger Deep, 10,935 meters down, the water pushes on you with about a thousand times the air pressure at sea level. Eight tons on every square inch. That's where we're going.",
+   "img": "a small white deep-sea submersible with powerful lights hovering above a flat grey silt floor in total darkness, particles drifting through the beams, black water all around",
+   "fx": "none",
+   "move": "down",
+   "key": "deep-open"
+  },
+  {
+   "say": "I'm Gumi, your narrator. I've watched the ocean keep its secrets for a very long time, and I've made my peace with it. You haven't. That's why you're here.",
+   "img": "a calm deep-blue open ocean seen from just below the surface, sunbeams slanting down into darkness, no land in sight",
+   "fx": "none",
+   "move": "out"
+  },
+  {
+   "say": "Today we sink, one zone at a time, from warm surface water to the floor of the deepest trench. At every stop: the light, the cold, the pressure, who lives there, and what it would do to you.",
+   "img": "an underwater view looking straight down from bright turquoise surface water into a gradient of deep blue and then black",
+   "fx": "none",
+   "move": "down"
+  },
+  {
+   "say": "One rule before we leave. Water pressure goes up by one atmosphere for every 10 meters of depth. Keep that rule in your pocket. It does all the work today.",
+   "img": "close-up of a brass analog depth gauge on a diver's wrist underwater, needle partway around the dial, blue light",
+   "fx": "none",
+   "move": "in",
+   "note": "+1 atm every 10 m · 32.8 ft"
+  },
+  {
+   "card": "ZONE 1",
+   "sub": "The Sunlight Zone",
+   "src": [
+    "NOAA Ocean Service — How far does light travel in the ocean?: https://oceanservice.noaa.gov/facts/light_travel.html",
+    "NOAA JetStream — Layers of the Ocean: https://www.noaa.gov/jetstream/ocean/layers-of-ocean",
+    "NOAA Ocean Service — How much oxygen comes from the ocean?: https://oceanservice.noaa.gov/facts/ocean-oxygen.html",
+    "NOAA Ocean Exploration — Technical Diving: https://oceanexplorer.noaa.gov/technology/technical/"
+   ]
+  },
+  {
+   "say": "Zone one: the sunlight zone. It runs from the surface down to 200 meters, about 660 feet. Light can be detected as far as 1,000 meters down, but below 200 there's rarely any significant light at all.",
+   "img": "sunlight streaming through the surface of a clear tropical ocean in long rays, a small school of silver fish in the upper water, wide shot",
+   "fx": "none",
+   "move": "down",
+   "note": "0–200 m · 660 ft",
+   "key": "sun-surface"
+  },
+  {
+   "say": "Up here, the water can be almost anything. It reaches 97 degrees Fahrenheit, 36 Celsius, in the Persian Gulf, and drops to 28 degrees, about minus 2 Celsius, near the North Pole.",
+   "img": "a split horizon of calm hazy hot gulf water at noon on one side and dark icy Arctic sea with floating ice floes on the other, aerial view",
+   "fx": "none",
+   "move": "right"
+  },
+  {
+   "say": "This thin bright layer quietly runs the planet. About half of Earth's oxygen comes from the ocean. Prochlorococcus, the smallest photosynthetic organism on Earth, produces up to 20 percent of the oxygen in the biosphere.",
+   "img": "microscope view of countless tiny green photosynthetic cells glowing softly against a dark background, scientific imaging style",
+   "fx": "none",
+   "move": "in",
+   "key": "sun-plankton"
+  },
+  {
+   "say": "So, a few of the breaths you've taken today were made by something you will never see. You're welcome to send a note. It won't read it.",
+   "img": "a sea surface at sunrise glittering with light, tiny green specks of plankton suspended in the water just below, close macro shot",
+   "fx": "none",
+   "move": "left"
+  },
+  {
+   "say": "Recreational scuba stops at 40 meters, about 130 feet. That's the deepest most people ever go on purpose, and it's still well inside the friendly part of the ocean.",
+   "img": "a scuba diver seen from behind in a black wetsuit hovering beside a coral wall in clear blue water, bubbles rising, sunlight above",
+   "fx": "none",
+   "move": "out",
+   "key": "sun-scuba"
+  },
+  {
+   "say": "Survival odds: fine near the top, with a mask, a buddy and a boat nearby. The sunlight zone is the only part of the ocean that was ever really yours.",
+   "img": "a small dive boat floating on bright calm blue water seen from below, its hull silhouetted against the sunny surface",
+   "fx": "none",
+   "move": "up",
+   "odds": "SURVIVAL ODDS: FINE, NEAR THE TOP"
+  },
+  {
+   "card": "ZONE 2",
+   "sub": "The Twilight Zone",
+   "src": [
+    "NOAA JetStream — Layers of the Ocean: https://www.noaa.gov/jetstream/ocean/layers-of-ocean",
+    "NOAA Ocean Exploration — Wild and Bizarre Marine Life (pressure, 4 °C): https://oceanexplorer.noaa.gov/explainers/marine-life/",
+    "WHOI Oceanus — The largest migration on the planet: https://www.whoi.edu/oceanus/feature/daily-migration/",
+    "WHOI Ocean Twilight Zone — Lanternfishes: https://twilightzone.whoi.edu/explore-the-otz/creature-features/lanternfishes/",
+    "NOAA Ocean Exploration — What is bioluminescence?: https://oceanexplorer.noaa.gov/ocean-fact/bioluminescence/"
+   ]
+  },
+  {
+   "say": "Zone two: the twilight zone, from 200 to 1,000 meters, about 660 to 3,300 feet. The sunlight fades to a blue smudge and then to nothing. Below about 200 meters, the ocean averages just 4 degrees Celsius, 39 Fahrenheit.",
+   "img": "dim deep-blue water fading into black below, a faint last glow of blue light from far above, a few drifting particles",
+   "fx": "none",
+   "move": "down",
+   "note": "200–1,000 m · 4 °C",
+   "key": "tw-blue"
+  },
+  {
+   "say": "Every night, many animals down here do something enormous. They rise toward the surface to feed in the dark, then sink back down by day. It's called the largest migration on the planet.",
+   "img": "a dense cloud of small deep-sea fish and shrimp rising through dark blue water at night, silhouettes against a faint moonlit surface",
+   "fx": "none",
+   "move": "up",
+   "key": "tw-migrate"
+  },
+  {
+   "say": "A big share of that crowd is lanternfish. More than 245 species, about 2 to 30 centimeters long. They make up about 60 percent of deep-sea fish, roughly 600 million tons of them.",
+   "img": "close-up of a small silver lanternfish with rows of tiny blue glowing photophores along its belly, black background, scientific photography",
+   "fx": "none",
+   "move": "in",
+   "key": "tw-lantern"
+  },
+  {
+   "say": "And most of them glow. About 80 percent of the animals that live between 200 and 1,000 meters are bioluminescent. In a place the sun gave up on, they brought their own light.",
+   "img": "dozens of small blue and green bioluminescent points scattered in pitch-dark water, a translucent jellyfish glowing faintly among them",
+   "fx": "none",
+   "move": "right"
+  },
+  {
+   "say": "For you, this is where the ocean stops being a swimming pool. It's cold, it's dim, and the pressure keeps adding up, one atmosphere every 10 meters, with no breaks.",
+   "img": "a diver's gloved hand holding a dive light pointing down into dark blue water, the beam fading out before it reaches anything",
+   "fx": "none",
+   "move": "in"
+  },
+  {
+   "say": "Survival odds: you can visit the top of the twilight zone with serious training. You can't stay. And humans run out of depth surprisingly fast.",
+   "img": "a lone diver's light seen from far below, a small bright point in a vast dark blue water column",
+   "fx": "none",
+   "move": "out",
+   "odds": "SURVIVAL ODDS: VISIT, DON'T STAY"
+  },
+  {
+   "card": "534 M",
+   "sub": "Where Human Divers Stop",
+   "src": [
+    "NOAA Ocean Exploration — Technical Diving: https://oceanexplorer.noaa.gov/technology/technical/",
+    "Patrician et al. (2021), Frontiers in Physiology — Breath-hold diving: https://pmc.ncbi.nlm.nih.gov/articles/PMC8176094/",
+    "Medical Gas Research (2016) — ultimate depth for saturation divers: https://pmc.ncbi.nlm.nih.gov/articles/PMC5110125/",
+    "MBARI — Vampire squid: https://www.mbari.org/animal/vampire-squid/"
+   ]
+  },
+  {
+   "say": "So how deep can a human body actually go? Start with one breath. Breath-hold divers have reached 214 meters, in 2007. No tank. Just lungs.",
+   "img": "a freediver in a sleek black suit and long fins descending head-first along a vertical guide rope into deep blue water, seen from behind",
+   "fx": "none",
+   "move": "down",
+   "key": "lim-breath"
+  },
+  {
+   "say": "It isn't comfortable. By 40 to 50 meters, a full breath of air is squeezed down to about residual lung volume, the small amount your lungs can never push out. The air spaces simply get smaller.",
+   "img": "close-up of a freediver's chest and nose clip in deep blue water, the body tucked and streamlined along a rope, dim light",
+   "fx": "none",
+   "move": "in"
+  },
+  {
+   "say": "Add breathing gas, time and a lot of engineering, and you get saturation diving. Saturation divers have reached 534 meters in the open sea, and 701 meters inside hyperbaric chambers.",
+   "img": "a heavy commercial diving bell hanging from cables below a support ship in dark water, a diver in a hard helmet seen from behind beside it",
+   "fx": "none",
+   "move": "down",
+   "note": "534 m open sea · 701 m chamber",
+   "key": "lim-sat"
+  },
+  {
+   "say": "Researchers think the ultimate depth for a human diver could be around 1,000 meters. That's the bottom edge of the twilight zone. The ocean's average depth is about 3,682 meters.",
+   "img": "the interior of a cylindrical steel hyperbaric chamber with round portholes and pressure gauges on the walls, empty bunks, cool white light",
+   "fx": "none",
+   "move": "in",
+   "key": "lim-edge"
+  },
+  {
+   "say": "Just below the deepest open-sea dive lives the vampire squid, around 600 to 900 meters down. It's about 30 centimeters long, thrives in the oxygen minimum zone, and eats marine snow.",
+   "img": "a deep red vampire squid with webbed arms spread like an umbrella drifting in black water, large blue eyes, scientific deep-sea photography",
+   "fx": "none",
+   "move": "right",
+   "key": "lim-squid"
+  },
+  {
+   "say": "Despite the name, it lives on drifting crumbs. Nothing about it is frightening, except how comfortable it is somewhere you could never go.",
+   "img": "the vampire squid curled into a tight dark ball in the beam of a submersible light, fine white particles falling around it",
+   "fx": "none",
+   "move": "in"
+  },
+  {
+   "say": "Survival odds: this is where the human story ends. Everything below this line, you only ever see through a window.",
+   "img": "a thick round acrylic viewport of a submersible from inside, dark blue water beyond the glass, a few lit particles",
+   "fx": "none",
+   "move": "out",
+   "odds": "RISK: HUMANS STOP HERE"
+  },
+  {
+   "card": "ZONE 3",
+   "sub": "The Midnight Zone",
+   "src": [
+    "NOAA JetStream — Layers of the Ocean: https://www.noaa.gov/jetstream/ocean/layers-of-ocean",
+    "MBARI — Deep-sea anglerfish: https://www.mbari.org/animal/deep-sea-anglerfish/",
+    "Nilsson et al. (2012), Current Biology — giant eyes of giant squid: https://fds.duke.edu/db/aas/CMAC/faculty/sjohnsen/publications/228552",
+    "NOAA Sanctuaries — Odd ocean critters (gulper eel): https://sanctuaries.noaa.gov/news/oct23/odd-ocean-critters.html",
+    "Martini & Haddock (2017), Scientific Reports — bioluminescence: https://pmc.ncbi.nlm.nih.gov/articles/PMC5379559/"
+   ]
+  },
+  {
+   "say": "Zone three: the midnight zone, from 1,000 to 4,000 meters, about 3,300 to 13,100 feet. It is completely devoid of light.",
+   "img": "total darkness of the deep ocean broken only by a single small bioluminescent glow in the distance, vast and empty",
+   "fx": "none",
+   "move": "down",
+   "note": "1,000–4,000 m · 13,100 ft",
+   "key": "mid-black"
+  },
+  {
+   "say": "Here, the sun is just a rumor.",
+   "img": "pitch-black water with a faint drifting glowing jellyfish far away, almost nothing visible",
+   "fx": "none",
+   "move": "in",
+   "hold": 1.0
+  },
+  {
+   "say": "The temperature never strays far from 4 degrees Celsius, 39 Fahrenheit. At 4,000 meters, the pressure is over 5,850 pounds per square inch. Your car tires run at a tiny fraction of that.",
+   "img": "close-up of a scratched steel pressure housing of a deep-sea instrument under a work light, frost-cold condensation on its surface",
+   "fx": "none",
+   "move": "in",
+   "key": "mid-gauge"
+  },
+  {
+   "say": "Light down here comes from animals. Off California, from the surface to 3,900 meters, 76 percent of the animals observed in the water column could make light. That's from more than 350,000 observations.",
+   "img": "a swirl of blue bioluminescent sparks trailing behind a small deep-sea animal moving through black water, long exposure look",
+   "fx": "none",
+   "move": "left"
+  },
+  {
+   "say": "The famous resident is the anglerfish, found from 300 to 4,000 meters. The female's lure is a sac of glowing bacteria. In the dark, a light means food. That's the whole trick.",
+   "img": "a female deep-sea anglerfish with a glowing lure dangling in front of its open jaws full of needle teeth, black background, realistic",
+   "fx": "none",
+   "move": "in",
+   "key": "mid-angler"
+  },
+  {
+   "say": "There are more than 200 species. The largest females reach 1.2 meters. The males are dwarfs, just a few centimeters long. It is not a balanced relationship.",
+   "img": "a large dark anglerfish female drifting in black water beside a much smaller pale male, scale contrast, deep-sea photography",
+   "fx": "none",
+   "move": "right"
+  },
+  {
+   "say": "Giant squid wander more than one zone, but this is where their eyes earn their keep. One photographed eye measured about 27 centimeters, with a 9-centimeter pupil.",
+   "img": "extreme close-up of an enormous giant squid eye, dark pupil and silvery skin, faint light reflecting on its surface",
+   "fx": "none",
+   "move": "in",
+   "key": "mid-squid"
+  },
+  {
+   "say": "Below 600 meters, an eye like that could detect sperm whales more than 120 meters away. Down here, seeing your predator first is the whole game.",
+   "img": "a sperm whale's dark silhouette diving through black water far away, faint blue glow of disturbed plankton around it",
+   "fx": "none",
+   "move": "out"
+  },
+  {
+   "say": "And the gulper eel, found from 1,600 to almost 10,000 feet, with a pouch-like throat and stomach it can quickly inflate. When meals are rare, you don't waste one.",
+   "img": "a black gulper eel with a huge balloon-like open mouth and a long thin whip tail in dark water, deep-sea photography",
+   "fx": "none",
+   "move": "left",
+   "key": "mid-gulper"
+  },
+  {
+   "say": "Survival odds: none, outside a hull. Total darkness, refrigerator cold, and thousands of pounds on every square inch of you.",
+   "img": "a yellow deep-sea robotic vehicle descending through black water, lights on, cables trailing above, wide shot",
+   "fx": "none",
+   "move": "down",
+   "odds": "SURVIVAL ODDS: HULL REQUIRED"
+  },
+  {
+   "card": "ZONE 4",
+   "sub": "The Abyss",
+   "src": [
+    "NOAA JetStream — Layers of the Ocean: https://www.noaa.gov/jetstream/ocean/layers-of-ocean",
+    "NOAA Ocean Service — What is marine snow?: https://oceanservice.noaa.gov/facts/marinesnow.html",
+    "MBARI — Feast and famine on the abyssal plain (Station M): https://www.mbari.org/news/feast-and-famine-on-the-abyssal-plain/",
+    "Jamieson & Vecchione (2020), Marine Biology — dumbo octopus depth record: https://repository.library.noaa.gov/view/noaa/29154",
+    "NOAA Ocean Service — How deep is the ocean?: https://oceanservice.noaa.gov/facts/oceandepth.html"
+   ]
+  },
+  {
+   "say": "Zone four: the abyss, from about 4,000 to 6,000 meters, roughly 13,100 to 19,700 feet. Some charts start it a little shallower. The water doesn't read charts.",
+   "img": "a vast flat abyssal plain of soft grey sediment lit by submersible lights, scattered small burrows and tracks, darkness at the edges",
+   "fx": "none",
+   "move": "right",
+   "note": "4,000–6,000 m · 19,700 ft",
+   "key": "aby-plain"
+  },
+  {
+   "say": "The average depth of the whole ocean is about 3,682 meters, or 12,080 feet. So by the time you reach the abyss, you're already deeper than average.",
+   "img": "a sea cucumber crawling slowly across grey abyssal mud in a pool of light, sediment trail behind it",
+   "fx": "none",
+   "move": "left"
+  },
+  {
+   "say": "Food arrives from above as marine snow. The flakes grow to several centimeters, and some fall for weeks before they reach the floor. Dinner here is always late.",
+   "img": "white flakes of marine snow drifting down through a beam of light in black water toward a muddy seafloor, slow and quiet",
+   "fx": "none",
+   "move": "down",
+   "key": "aby-snow"
+  },
+  {
+   "say": "Scientists have watched that slow delivery for a long time. MBARI's Station M sits 4,000 meters deep, about 220 kilometers off California, and it has been studied for over 20 years.",
+   "img": "a steel-frame scientific instrument tripod with cameras and sensors standing alone on the abyssal seafloor, lit by a single lamp",
+   "fx": "none",
+   "move": "in",
+   "key": "aby-station"
+  },
+  {
+   "say": "And octopuses went deeper than anyone expected. In 2019, dumbo octopuses were filmed at 5,760 meters in the Java Trench, and at 6,957 meters, which is already hadal depth.",
+   "img": "a pale pink dumbo octopus with two ear-like fins hovering just above a grey seafloor, webbed arms spread, deep-sea photography",
+   "fx": "none",
+   "move": "in",
+   "key": "aby-dumbo"
+  },
+  {
+   "say": "That extended the octopus depth record by 1,812 meters. It means octopuses could live on about 99 percent of the seafloor, up from 75. The ear-like flaps are fins. It's swimming, not listening.",
+   "img": "a dumbo octopus gliding away into darkness with its fins outstretched, soft light from above, small particles drifting",
+   "fx": "none",
+   "move": "out"
+  },
+  {
+   "say": "Survival odds: none worth discussing. At this depth, even a thick steel hull is doing serious work, and you are not made of steel.",
+   "img": "a spherical titanium pressure hull of a deep submersible on a ship's deck at dusk, heavy bolts and thick walls, wet metal",
+   "fx": "none",
+   "move": "in",
+   "odds": "SURVIVAL ODDS: NONE WITHOUT A HULL"
+  },
+  {
+   "card": "ZONE 5",
+   "sub": "The Hadal Zone",
+   "src": [
+    "NOAA JetStream — Layers of the Ocean: https://www.noaa.gov/jetstream/ocean/layers-of-ocean",
+    "University of Western Australia — world's deepest fish: https://www.uwa.edu.au/news/Article/2023/April/Scientists-break-new-record-after-finding-worlds-deepest-fish",
+    "Yancey et al. (2014), PNAS — fish depth limit: https://pmc.ncbi.nlm.nih.gov/articles/PMC3970477/",
+    "Kobayashi et al. (2019), PLOS ONE — the amphipod's aluminum shield: https://pmc.ncbi.nlm.nih.gov/articles/PMC6449124/"
+   ]
+  },
+  {
+   "say": "Zone five: the hadal zone. It starts around 6,000 meters, about 19,700 feet, and runs to the very bottom, inside deep trenches cut into the seafloor.",
+   "img": "a dramatic steep trench wall of dark rock dropping into total blackness, lit partly by a submersible's lights from above",
+   "fx": "none",
+   "move": "down",
+   "key": "had-trench"
+  },
+  {
+   "say": "Fish make it surprisingly far. The deepest fish ever filmed is a snailfish, seen at 8,336 meters in the Izu-Ogasawara Trench in 2022. The deepest fish ever caught came from 8,022 meters in the Japan Trench.",
+   "img": "a small pale translucent snailfish hovering near a baited camera frame on dark trench sediment, soft light, deep-sea photography",
+   "fx": "none",
+   "move": "in",
+   "note": "filmed at 8,336 m",
+   "key": "had-snail"
+  },
+  {
+   "say": "And then they stop. Scientists predict that fish hit a body-chemistry limit around 8,200 meters. Their cells can only adjust to pressure so far.",
+   "img": "a lone snailfish swimming away into darkness above a deep trench floor, its body glowing faintly in the camera light",
+   "fx": "none",
+   "move": "out"
+  },
+  {
+   "say": "In the deepest part of the ocean, from 8,400 to 11,000 meters, no fish has ever been found. Not one.",
+   "img": "an empty grey trench floor in a pool of light with nothing moving, black water all around, silent and bare",
+   "fx": "none",
+   "move": "in",
+   "note": "no fish: 8,400–11,000 m",
+   "key": "had-empty"
+  },
+  {
+   "say": "Something smaller took the job. The amphipod Hirondellea gigas lives deeper than 8,000 meters, and specimens were collected at 10,897. It's more than 3 centimeters long and coats itself in an aluminum gel shield.",
+   "img": "a swarm of small pale shrimp-like amphipods crowding around a bait bag on dark trench sediment, close-up, scientific photography",
+   "fx": "none",
+   "move": "in",
+   "key": "had-amphipod"
+  },
+  {
+   "say": "A crustacean wrapped in aluminum, at the bottom of the world. You couldn't design that. Nobody did.",
+   "img": "extreme close-up of a single translucent amphipod with a faint metallic sheen on its shell, black background",
+   "fx": "none",
+   "move": "right"
+  },
+  {
+   "say": "Survival odds: not even fish manage it. Down here, you'd be outranked by a 3-centimeter crustacean in foil.",
+   "img": "a deep-sea lander frame with cameras sinking past a dark trench wall, lights glowing, wide shot",
+   "fx": "none",
+   "move": "down",
+   "odds": "SURVIVAL ODDS: NOT EVEN FISH"
+  },
+  {
+   "card": "THE FLOOR",
+   "sub": "Challenger Deep",
+   "src": [
+    "NOAA Ocean Exploration — Wild and Bizarre Marine Life (pressure, 4 °C): https://oceanexplorer.noaa.gov/explainers/marine-life/",
+    "NOAA Ocean Service — How deep is the ocean?: https://oceanservice.noaa.gov/facts/oceandepth.html",
+    "Greenaway et al. (2021), Deep-Sea Research I — revised depth of the Challenger Deep: https://repository.library.noaa.gov/view/noaa/33477",
+    "Dziak et al. (2017), Oceanography — Ambient Sound at Challenger Deep: https://tos.org/oceanography/article/ambient-sound-at-challenger-deep-mariana-trench",
+    "NOAA Ocean Exploration — Soundings history (Trieste, 1960): https://oceanexplorer.noaa.gov/history/quotes-soundings/"
+   ]
+  },
+  {
+   "say": "Finally, the floor. The Challenger Deep, in the Mariana Trench, is approximately 10,935 meters deep, 35,876 feet, measured to within about 6 meters.",
+   "img": "the soft flat grey sediment floor of the deepest ocean trench lit by a single submersible lamp, utter blackness beyond",
+   "fx": "none",
+   "move": "down",
+   "note": "10,935 m · 35,876 ft",
+   "key": "cd-floor"
+  },
+  {
+   "say": "The pressure here is about eight tons per square inch. That's about a thousand times the pressure at sea level, every one of those 10-meter steps, added up.",
+   "img": "close-up of a thick titanium bolt and flange on a deep-sea pressure sphere, water droplets beaded on the metal, cold light",
+   "fx": "none",
+   "move": "in",
+   "key": "cd-gauge"
+  },
+  {
+   "say": "It's cold, but not frozen. A sensor on the seafloor measured 2.45 degrees Celsius. Just above freezing, in complete darkness, under nearly 11 kilometers of water.",
+   "img": "a small instrument package with a hydrophone resting on fine grey trench sediment, a tiny status light on, darkness all around",
+   "fx": "none",
+   "move": "left",
+   "key": "cd-sensor"
+  },
+  {
+   "say": "On January 23, 1960, Jacques Piccard and U.S. Navy Lieutenant Don Walsh piloted the bathyscaph Trieste to the floor of the Challenger Deep.",
+   "img": "a vintage grey bathyscaph with a large float hull and small sphere underneath floating on a calm open ocean at dawn, no people visible",
+   "fx": "none",
+   "move": "right"
+  },
+  {
+   "say": "For your body, the problem is simple. Every air space you own, your lungs, your sinuses, your middle ears, gets squeezed by the entire ocean above you.",
+   "img": "the inside of a cramped deep submersible sphere with glowing control panels and a small viewport showing black water, empty seat",
+   "fx": "none",
+   "move": "in",
+   "key": "cd-port"
+  },
+  {
+   "say": "Survival odds: zero, outside a hull built for full ocean depth. Down here, the ocean doesn't bargain.",
+   "img": "a white deep submersible resting on the silty floor of the deepest trench, its lights the only light for miles, wide shot",
+   "fx": "none",
+   "move": "out",
+   "odds": "SURVIVAL ODDS: ZERO",
+   "key": "cd-sub"
+  },
+  {
+   "card": "VERDICT",
+   "sub": "Gumi's Verdict"
+  },
+  {
+   "say": "My verdict: you were built for the top 40 meters of an ocean that goes down 10,935. Everything below that is a guest pass, and engineers print every single one.",
+   "img": "a diver on the bright sunlit surface looking down into an endless blue drop-off that fades to black, wide shot",
+   "fx": "none",
+   "move": "down"
+  },
+  {
+   "say": "And we've barely looked. The water column makes up between 95 and 99 percent of the livable volume of the planet. Explorers have seen less than 0.001 percent of the deep seafloor.",
+   "img": "a research ship on a dark ocean at night with a single work light shining down into the water, vast emptiness around",
+   "fx": "none",
+   "move": "out"
+  },
+  {
+   "say": "As of April 2026, only 28.7 percent of the seafloor had been mapped with modern high-resolution sonar. The ocean may hold 700,000 to 1 million species, and roughly two-thirds haven't been described.",
+   "img": "a colorful multibeam sonar map of a deep ocean trench and seafloor ridges on a monitor in a dim ship lab, close-up",
+   "fx": "none",
+   "move": "in"
+  },
+  {
+   "say": "So, my question for you: which zone would you most want to see with your own eyes, from behind very thick glass? Tell me in the comments.",
+   "img": "a person seen from behind sitting at a large submersible viewport looking out at glowing deep-sea creatures in the dark",
+   "fx": "none",
+   "move": "left"
+  },
+  {
+   "say": "Up next: What If the Sun Disappeared? Minute by Minute. After today, you know exactly how much of the ocean would notice first.",
+   "img": "a sunset over a calm open ocean with the sun just touching the horizon, long golden light across the water",
+   "fx": "none",
+   "move": "up"
+  },
+  {
+   "say": "Until then, stay in the shallow end.",
+   "img": "gentle turquoise shallow water over white sand in bright sunlight, small ripples casting light patterns on the bottom",
+   "fx": "none",
+   "move": "out",
+   "hold": 1.5
+  }
+ ],
+ "short": {
+  "title": "Could You Survive the Floor of the Mariana Trench? #shorts",
+  "hook": "EIGHT TONS PER SQUARE INCH",
+  "lines": [
+   {
+    "say": "This is the floor of the Challenger Deep, in the Mariana Trench. About 10,935 meters straight down.",
+    "scene": "cd-floor"
+   },
+   {
+    "say": "The pressure here is about eight tons per square inch. That's around a thousand times the pressure at sea level.",
+    "scene": "cd-gauge"
+   },
+   {
+    "say": "It's dark, and it's cold. A sensor on the seafloor measured 2.45 degrees Celsius, just above freezing.",
+    "scene": "cd-sensor"
+   },
+   {
+    "say": "Every air space in your body, your lungs, your sinuses, your middle ears, would be squeezed by the whole ocean above you.",
+    "scene": "cd-port"
+   },
+   {
+    "say": "Survival odds: zero, outside a hull built for full ocean depth.",
+    "scene": "cd-sub"
+   },
+   {
+    "say": "That's the last stop of a trip through every zone of the ocean. The full dive is in the video.",
+    "scene": "cd-floor"
+   }
+  ]
+ },
+ "shorts_extra": [
+  {
+   "title": "What Happens to Fish Below 8,200 Meters? #shorts",
+   "hook": "NO FISH BELOW 8,400 M",
+   "lines": [
+    {
+     "say": "Deep in the ocean's trenches, fish keep going down, farther than you'd think.",
+     "scene": "had-trench"
+    },
+    {
+     "say": "A snailfish was filmed at 8,336 meters in the Izu-Ogasawara Trench. The deepest fish ever caught came from 8,022 meters.",
+     "scene": "had-snail"
+    },
+    {
+     "say": "But scientists predict fish hit a body-chemistry limit around 8,200 meters. Their cells can only adjust to pressure so far.",
+     "scene": "had-snail"
+    },
+    {
+     "say": "From 8,400 to 11,000 meters, the deepest part of the ocean, no fish has ever been found.",
+     "scene": "had-empty"
+    },
+    {
+     "say": "Something smaller lives there instead: an amphipod, more than 3 centimeters long, coated in an aluminum gel shield.",
+     "scene": "had-amphipod"
+    },
+    {
+     "say": "That's zone five of the ocean. The rest of the dive is in the full video.",
+     "scene": "had-trench"
+    }
+   ]
+  },
+  {
+   "title": "Could You Survive a Dive to 534 Meters? #shorts",
+   "hook": "534 M IN THE OPEN SEA",
+   "lines": [
+    {
+     "say": "Recreational scuba stops at 40 meters. So how far down can a human body really go?",
+     "scene": "lim-breath"
+    },
+    {
+     "say": "On one breath, divers have reached 214 meters. By 40 to 50 meters, a full breath is already squeezed to about residual lung volume.",
+     "scene": "lim-breath"
+    },
+    {
+     "say": "With gas, time and heavy engineering, saturation divers have reached 534 meters in the open sea, and 701 meters in hyperbaric chambers.",
+     "scene": "lim-sat"
+    },
+    {
+     "say": "Researchers think the ultimate depth could be around 1,000 meters. That's where the twilight zone ends.",
+     "scene": "lim-edge"
+    },
+    {
+     "say": "Just below the deepest open-sea dive, the vampire squid lives at around 600 to 900 meters, perfectly comfortable.",
+     "scene": "lim-squid"
+    },
+    {
+     "say": "So yes, with a lot of help. Everything deeper, you only see through a window. The full dive is in the video.",
+     "scene": "lim-edge"
+    }
+   ]
+  }
+ ]
+}
