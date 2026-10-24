@@ -11,6 +11,9 @@
     python gumiho/tales/tales.py check gumiho/tales/scripts/027_places-you-cant-survive.json
     python gumiho/tales/tales.py next --date 2026-10-17   # 그 주(일요일 공개)의 편 — 없으면 {"none": true}. 루틴은 이것만 쓴다
 
+★2026-10-25 채우기(tools/REFILL.md#nt_longform): catalog 끝에 붙이는 편은 date 대신 from 을 적는다 — schedule 이 from 이후
+  첫 일요일(앞 편 뒤)로 정한다. 앞 편 날짜는 안 바뀐다 · facts 는 {fact, src, evidence} 도 받는다(fact_text).
+
 scene 한 칸:
   {"say": "내레이션(영어)", "img": "그림 프롬프트(영어)", "fx": "fog", "move": "in", "hold": 0.8, "note": "화면 주석", "key": "짧은 이름"}
   {"say": "...", "gumi": "front|bead|wink"}       # 구미 본인 그림(assets/tales)
@@ -337,9 +340,11 @@ def time_pairs(text: str) -> set[tuple[str, str]]:
 
 
 def fact_text(e: dict | None) -> str:
+    """catalog 편의 글 — facts 는 글(첫 편들) 또는 {fact, src, evidence}(★10/25~ 채우기 — tools/REFILL.md) 둘 다 받는다."""
     if not e:
         return ""
-    return " ".join([e.get("title_idea", ""), e.get("angle", "")] + list(e.get("facts") or []) + list(e.get("careful") or []))
+    facts = [f if isinstance(f, str) else (f.get("fact") or "") for f in e.get("facts") or [] if isinstance(f, (str, dict))]
+    return " ".join([e.get("title_idea", ""), e.get("angle", "")] + facts + list(e.get("careful") or []))
 
 
 def time_errs(lab: str, text: str, e: dict | None) -> list[str]:
@@ -687,6 +692,30 @@ def weekly() -> dict:
     return load(CATALOG).get("weekly") or {}
 
 
+def schedule(cat: dict | None = None) -> list[dict]:
+    """편성된 편 전부(retired 빼고, 공개일 순) — 편마다 date(일요일).
+    date 가 적힌 편(27~29화)은 그대로. ★from 만 적힌 편(10/25~ 채우기 — tools/REFILL.md#nt_longform)은 목록 순서대로
+    max(from, 앞 편 다음 날) 이후 첫 일요일 — 앞 편 날짜는 안 바뀌고, 사이가 비어도 된다(그 주는 쉰다)."""
+    import datetime as dt
+    cat = cat or load(CATALOG)
+    out, prev = [], None
+    for e in cat["tales"]:
+        if e.get("retired"):
+            continue
+        if e.get("date"):
+            d = dt.date.fromisoformat(e["date"])
+        elif isinstance(e.get("from"), str):
+            d = dt.date.fromisoformat(e["from"])
+            if prev and d <= prev:
+                d = prev + dt.timedelta(days=1)
+            d += dt.timedelta(days=(6 - d.weekday()) % 7)
+        else:
+            continue                                     # 날짜도 from 도 없으면 편성 안 함(backlog 와 같다)
+        out.append(dict(e, date=d.isoformat()))
+        prev = d if prev is None or d > prev else prev
+    return sorted(out, key=lambda x: x["date"])
+
+
 def publish_at(e: dict) -> str:
     """편의 예약 공개 시각(UTC ISO) — 일요일 14:00 UTC(미 동부 10:00)."""
     return f"{e['date']}T{weekly().get('publish_utc', '14:00')}:00Z"
@@ -697,9 +726,7 @@ def weekly_entry(d) -> dict | None:
     retired(설화) 편은 절대 고르지 않는다. 없으면 None(그 주는 쉰다 — 10/10~10/17 처럼)."""
     import datetime as dt
     win = int(weekly().get("window_days", 6))
-    for e in load(CATALOG)["tales"]:
-        if e.get("retired") or not e.get("date"):
-            continue
+    for e in schedule():
         p = dt.date.fromisoformat(e["date"])
         if p - dt.timedelta(days=win) <= d <= p:
             return e
@@ -709,7 +736,7 @@ def weekly_entry(d) -> dict | None:
 def last_date():
     """편성된(date 있는 · retired 아닌) 마지막 편의 공개일(일) — 없으면 None. tools/runway.py 가 부른다."""
     import datetime as dt
-    ds = [dt.date.fromisoformat(e["date"]) for e in load(CATALOG)["tales"] if e.get("date") and not e.get("retired")]
+    ds = [dt.date.fromisoformat(e["date"]) for e in schedule()]
     return max(ds) if ds else None
 
 
@@ -736,7 +763,8 @@ def assigned_id(date: str) -> int | None:
 
 
 def entry(tale_id: int | None) -> dict | None:
-    return next((e for e in load(CATALOG)["tales"] if e["id"] == tale_id), None)
+    """catalog 편 — 편성된 편이면 date(from 으로 정한 일요일 포함)가 채워져 있다."""
+    return next((e for e in schedule() if e["id"] == tale_id), None) or         next((e for e in load(CATALOG)["tales"] if e["id"] == tale_id), None)
 
 
 def retired(tale_id: int) -> bool:
@@ -767,9 +795,7 @@ def next_entry(date: str | None = None) -> dict | None:
 def teaser_for(e: dict) -> dict:
     """끝의 다음 편 예고용 — 다음 편(없으면 시리즈 안내). 루틴이 지어내지 않게 next 가 같이 준다.
     10/14 에버그린: 'Next Sunday' 는 몇 달 뒤 보는 사람에게 틀린 말 → 'Up next: <제목>'(재생목록 다음 편)."""
-    cat = load(CATALOG)
-    later = sorted((x for x in cat["tales"] if not x.get("retired") and x.get("date", "") > e.get("date", "")),
-                   key=lambda x: x["date"])
+    later = [x for x in schedule() if x["date"] > (e.get("date") or "")]
     if later:
         return {"title": later[0]["title_idea"], "angle": later[0].get("angle", ""), "date": later[0]["date"],
                 "line": f"Up next: {later[0]['title_idea']}"}

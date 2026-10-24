@@ -965,9 +965,9 @@ def stub(n, frm, series=None, slug=None):
     """시험용 가짜 항목(파일에 안 남는다) — entry_errs 를 통과하는 모양 · 숫자는 facts 에."""
     e = {"n": n, "slug": slug or f"stub-{n}", "format": "survival", "look": "earth", "title_idea": f"Stub {n}",
          "situation": "STUB", "teaser": "STUB", "sources": [f"https://example.org/stub-{n}-a", f"https://example.org/stub-{n}-b"],
-         "facts": [{"fact": "Stub: the magnetron makes waves at 2.45 GHz.", "src": 0},
-                   {"fact": "Stub: the waves bounce off the metal walls.", "src": 0},
-                   {"fact": "Stub: the turntable turns about 5 times a minute.", "src": 1}],
+         "facts": [{"fact": "Stub: the magnetron makes waves at 2.45 GHz.", "src": 0, "evidence": "stub 2.45 GHz"},
+                   {"fact": "Stub: the waves bounce off the metal walls.", "src": 0, "evidence": "stub walls"},
+                   {"fact": "Stub: the turntable turns about 5 times a minute.", "src": 1, "evidence": "stub 5 times"}],
          "beat_ideas": [{"t": "--:--", "what": "waves at 2.45 GHz", "fact": 0, "view": "cutaway"},
                         {"t": "--:--", "what": "waves bounce off the walls", "fact": 1, "view": "cutaway"},
                         {"t": "--:--", "what": "turntable turns 5 times a minute", "fact": 2, "view": "cutaway"}],
@@ -1147,8 +1147,10 @@ with pools(teardown=TD):
     ck("'파인애플'의 애플은 상표가 아니다 · 보통 sci 대본엔 뜯어보기 금지를 안 건다", K.brand_hits(["파인애플 단면"]) == []
        and K.brand_hits(["애플 이어폰", "a Dyson fan"]) == ["dyson", "애플"]
        and not any("뜯어보기" in e for e in xbad(_set(["verdict", "say"], "그래서 안전해요."))))
-ck("catalog 항목 검사(entry_errs): 시험용 항목 통과 · from 없음 · 상표 · facts 에 없는 숫자 · series 없음을 잡는다",
+ck("catalog 항목 검사(entry_errs): 시험용 항목 통과 · from 없음 · evidence 없음 · 상표 · facts 에 없는 숫자 · series 없음을 잡는다",
    K.entry_errs(TD[0]) == [] and any("from" in e for e in K.entry_errs(stub(951, None, "teardown")))
+   and any("evidence" in e for e in K.entry_errs(dict(TD[0], facts=[{k: v for k, v in f.items() if k != "evidence"}
+                                                                    for f in TD[0]["facts"]])))
    and any("상표" in e for e in K.entry_errs(dict(TD[0], title_idea="Inside a Dyson Fan")))
    and any("facts 에 없다" in e for e in K.entry_errs(dict(TD[0], beat_ideas=[dict(TD[0]["beat_ideas"][0], what="9 GHz")] * 3)))
    and any("series" in e for e in K.entry_errs({k: v for k, v in TD[0].items() if k != "series"} | {"n": 960})))

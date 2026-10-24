@@ -52,10 +52,23 @@ ck("배정일 역산(day_of) = assigned 의 역", all(RU.assigned(RU.day_of(n))[
 print("── 새 라인업 catalog(shorts_catalog.json) ──")
 sc = RU.shorts()
 sv, cp, lm = sc["survival"], sc["compare"], sc["liminal"]
-ck("A survival 14 · B compare 7 · liminal 7", (len(sv), len(cp), len(lm)) == (14, 7, 7), (len(sv), len(cp), len(lm)))
+# ★10/25 채우기(tools/REFILL.md#nt_shorts): 첫 묶음(10/13~10/26 공개 28편) 뒤로 from 단 편을 붙일 수 있다 — 첫 묶음만 못 박는다
+FIRST = {"survival": list(range(101, 115)), "compare": list(range(201, 208)), "liminal": list(range(301, 308))}
+sc1 = dict(sc, **{f: [e for e in sc[f] if e["n"] in FIRST[f]] for f in RU.NEW_FORMATS})
+ck("첫 묶음: A survival 14 · B compare 7 · liminal 7 — 목록 맨 앞에 그 순서 그대로",
+   all([e["n"] for e in sc[f]][:len(FIRST[f])] == FIRST[f] for f in RU.NEW_FORMATS), {f: len(sc[f]) for f in RU.NEW_FORMATS})
 allx = sv + cp + lm
-ck("id 가 겹치지 않고 옛 id(≤100)와도 안 겹친다", len({e["n"] for e in allx}) == 28 and min(e["n"] for e in allx) > 100)
-ck("slug 가 겹치지 않는다(옛 목록 포함)", len({e["slug"] for e in allx} | {r["slug"] for r in rs}) == 28 + len(rs))
+ck("id 가 겹치지 않고 옛 id(≤100)와도 안 겹친다", len({e["n"] for e in allx}) == len(allx) and min(e["n"] for e in allx) > 100)
+ck("slug 가 겹치지 않는다(옛 목록 포함)", len({e["slug"] for e in allx} | {r["slug"] for r in rs}) == len(allx) + len(rs))
+ck("번호대: survival 1xx · compare 2xx · liminal 3xx", all(100 * (k + 1) < e["n"] < 100 * (k + 2)
+                                                         for k, f in enumerate(RU.NEW_FORMATS) for e in sc[f]))
+added = [e for f in RU.NEW_FORMATS for e in sc[f] if e["n"] not in FIRST[f]]
+ck("붙인 편(첫 묶음 뒤)은 전부 from(YYYY-MM-DD) · from 단 편 뒤에 from 없는 편이 오지 않는다",
+   all(RU._from(e) for e in added) and all(not (RU._from(a) and not RU._from(b))
+                                           for f in RU.NEW_FORMATS for a, b in zip(sc[f], sc[f][1:])), [e["n"] for e in added])
+ck("붙인 survival·compare 편: fact 마다 evidence(출처 원문 문장) — 숫자는 출처를 열어 확인(REFILL.md 사실 규칙)",
+   all(isinstance(fx.get("evidence"), str) and fx["evidence"].strip() for e in added if e["format"] != "liminal"
+       for fx in e["facts"]), [e["n"] for e in added if any(not fx.get("evidence") for fx in e.get("facts", []))])
 ck("format 이 시리즈와 같다", all(e["format"] == f for f in RU.NEW_FORMATS for e in sc[f]))
 ck("Pt 번호가 시리즈마다 1부터 차례로", all([e["part"] for e in sc[f]] == list(range(1, len(sc[f]) + 1)) for f in RU.NEW_FORMATS))
 ck("look 은 rules.LOOKS", all(e["look"] in RU.LOOKS for e in allx))
@@ -99,11 +112,12 @@ for k, pd in enumerate(days):
         print("     ", pd, fm, ats)
     seen += [e["n"] for e in es]
 ck("10/13–10/26 공개: 날마다 A survival + B(짝수 날 compare · 홀수 날 liminal), 20:00 · 23:30 UTC", ok_sched)
-ck("28편이 한 번씩 다 쓰인다", sorted(seen) == sorted(e["n"] for e in allx))
-ck("파일 이름이 편마다 다르다", len({RU.file_for(e) for e in allx}) == 28)
+ck("첫 묶음 28편이 한 번씩 다 쓰인다(편을 붙여도 이 날짜들은 그대로)", sorted(seen) == sorted(n for f in FIRST.values() for n in f))
+ck("파일 이름이 편마다 다르다", len({RU.file_for(e) for e in allx}) == len(allx))
 ck("10/12(쓰는 날) = 10/13 공개 Pt.1 둘", [(e["format"], e["part"]) for e in RU.on_date(D(2026, 10, 12))]
    == [("survival", 1), ("compare", 1)])
-ck("10/26부터(목록 끝) 쓰지 않는다 — 판정 10/27 뒤 채운다", RU.on_date(D(2026, 10, 26)) == [] and RU.on_date(D(2026, 11, 1)) == [])
+ck("첫 묶음만이면 10/26부터(목록 끝) 쓰지 않는다 — 판정 10/27 뒤 채운다",
+   RU.new_on(D(2026, 10, 26), sc1) == [] and RU.new_on(D(2026, 11, 1), sc1) == [])
 first_lim = RU.on_date(D(2026, 10, 13))
 ck("10/13(쓰는 날) = Pt.2 survival + liminal Pt.1", [(e["format"], e["part"]) for e in first_lim] == [("survival", 2), ("liminal", 1)])
 ck("teaser_idea: 늘 NEXT(요일·TOMORROW 는 날짜를 탄다 — 10/14 에버그린), liminal·마지막 편은 없음",
@@ -114,6 +128,35 @@ ck("teaser_idea: 늘 NEXT(요일·TOMORROW 는 날짜를 탄다 — 10/14 에버
                                                                      "FRIDAY", "SATURDAY", "SUNDAY"))
    and RU.teaser_idea(lm[0], sc) is None and RU.teaser_idea(sv[-1], sc) is None and RU.teaser_idea(cp[-1], sc) is None,
    (RU.teaser_idea(sv[0], sc), RU.teaser_idea(cp[0], sc)))
+print("── 채우기(from) — 끝에 붙여도 앞 날짜는 그대로 · A 매일 + B 하루 한 편(compare 짝수 날 · liminal 홀수 날) ──")
+
+
+def _add(base, f, n, frm):
+    e = copy.deepcopy(base[f][-1])
+    e.update(n=n, slug=f"refill-{n}", part=len(base[f]) + 1, **({"from": frm} if frm else {}))
+    base[f].append(e)
+
+
+sc2 = copy.deepcopy(sc1)
+for f, n0 in (("survival", 115), ("compare", 208), ("liminal", 308)):
+    _add(sc2, f, n0, "2026-11-02")
+    _add(sc2, f, n0 + 1, "2026-11-02")
+pd1, pd2 = RU.publish_dates(sc1), RU.publish_dates(sc2)
+ck("첫 묶음 공개일 28개는 붙인 뒤에도 하나도 안 바뀐다", all(pd2[n] == d for n, d in pd1.items()))
+new = {n: pd2[n] for n in (115, 116, 208, 209, 308, 309)}
+ck("from 11/02: survival 11/02·11/03 · compare 11/02(짝수 날)·11/04 · liminal 11/03(홀수 날)·11/05 — 10/27~11/01 은 비어도 된다",
+   new == {115: D(2026, 11, 2), 116: D(2026, 11, 3), 208: D(2026, 11, 2), 209: D(2026, 11, 4), 308: D(2026, 11, 3),
+           309: D(2026, 11, 5)}, new)
+b_days = sorted(d for n, d in pd2.items() if n >= 200)
+ck("B 자리는 하루 한 편(compare·liminal 이 같은 날 겹치지 않는다) · 쓰는 날 = 공개 전날",
+   len(b_days) == len(set(b_days)) and [e["n"] for e in RU.new_on(D(2026, 11, 1), sc2)] == [115, 208]
+   and RU.new_on(D(2026, 10, 31), sc2) == [], [e["n"] for e in RU.new_on(D(2026, 11, 1), sc2)])
+sc3 = copy.deepcopy(sc2)
+_add(sc3, "survival", 117, "2026-11-01")                 # from 이 앞 편보다 이르면 앞 편 다음 날부터(겹치지 않는다)
+ck("from 이 앞 편보다 이르면 앞 편 다음 날 · 앞 편들은 그대로", RU.publish_dates(sc3)[117] == D(2026, 11, 4)
+   and all(RU.publish_dates(sc3)[n] == d for n, d in pd2.items()))
+ck("last_publish: 형식마다 마지막 공개일(붙인 편까지)", RU.last_publish(sc2) == {"survival": D(2026, 11, 3),
+                                                                     "compare": D(2026, 11, 4), "liminal": D(2026, 11, 5)})
 out = subprocess.run([sys.executable, os.path.join(HERE, "rules.py"), "next", "--date", "2026-10-12"], capture_output=True,
                      text=True, encoding="utf-8", env={**os.environ, "PYTHONIOENCODING": "utf-8"})
 nx = json.loads(out.stdout)

@@ -460,7 +460,8 @@ def runway_status(today: dt.date, warn: int = RUNWAY_WARN) -> tuple[list, list]:
     for r in lows:
         out.append({"id": r["id"], "ch": r["ch"], "name": r["name"], "limit": r["limit"], "days_left": r["days_left"],
                     "left": r["left"], "last": r["last"].isoformat() if r["last"] else None,
-                    "judge": r["judge"].isoformat() if r.get("judge") else None, "refill": r["refill"]})
+                    "judge": r["judge"].isoformat() if r.get("judge") else None, "refill": r["refill"],
+                    "refill_doc": r.get("refill_doc")})
         level = "info" if r["limit"] == "trial" else "bad" if r["days_left"] <= 3 else "warn"
         flags.append({"id": f"RUNWAY:{r['id']}", "level": level,
                       "text": f"재고 {r['days_left']}일 — {RW.line(r)} → 채우기: {r['refill']}"[:320]})
@@ -824,7 +825,8 @@ def report_md(P: dict, F: dict) -> str:
     if P.get("runway"):
         o += [f"## 콘텐츠 재고 — {RUNWAY_WARN}일 안에 바닥나는 줄기(tools/runway.py)", ""] + [
             f"- {r['ch']} · {r['name']}: {r['days_left']}일 남음(마지막 {r['last'] or '—'}"
-            + (f" · 판정 {r['judge']}" if r.get("judge") else "") + f") — 채우기: {r['refill']}" for r in P["runway"]] + [""]
+            + (f" · 판정 {r['judge']}" if r.get("judge") else "") + f") — 채우기: {r['refill']}"
+            + (f" → {r['refill_doc']}" if r.get("refill_doc") else "") for r in P["runway"]] + [""]
     o += ["## 방향 점검", ""] + [f"- {x['topic']}: **{x['verdict']}** — {x['why']}" for x in F["direction"]] + [""]
     o += ["## 트렌드", ""] + [f"- {x}" for x in F["trends"]] + [""]
     if F.get("actions"):

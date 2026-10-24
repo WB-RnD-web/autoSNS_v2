@@ -117,21 +117,73 @@ ck("출생연도 천간: 32·92년생(임) = 정임합 · 쥐띠 72년생(임) =
 
 print("── 2. 편성(월·수·금 20:00 · 날짜로 정한다) ──")
 E = LF.EPISODES
-ck("16편 · 첫 편 2026-11-02(월) · 마지막 12-07(월)", len(E) == 16 and E[0]["publish"] == "2026-11-02"
-   and E[-1]["publish"] == "2026-12-07", [e["publish"] for e in E])
-ck("…모두 월·수·금 · 날짜가 겹치지 않고 하루도 건너뛰지 않는다",
+E16 = E[:LF.FIRST_N]                                      # ★10/25 채우기: E17~ 이 longform_2027_more.json 으로 붙을 수 있다
+ck("첫 16편 · 첫 편 2026-11-02(월) · E16 12-07(월)", len(E16) == 16 and E[0]["publish"] == "2026-11-02"
+   and E16[-1]["publish"] == "2026-12-07" and E16[-1]["id"] == "E16", [e["publish"] for e in E16])
+ck("…모두 월·수·금 · 날짜가 겹치지 않고 첫 16편은 하루도 건너뛰지 않는다 · 이어 가는 편은 from 이후·앞 편 뒤",
    all(dt.date.fromisoformat(e["publish"]).weekday() in (0, 2, 4) for e in E)
-   and [e["publish"] for e in E] == [d.isoformat() for d in LF._schedule_dates(16)]
-   and len({e["publish"] for e in E}) == 16)
+   and [e["publish"] for e in E16] == [d.isoformat() for d in LF._schedule_dates(16)]
+   and [e["publish"] for e in E] == sorted({e["publish"] for e in E}) and all(e["publish"] >= e["from"] for e in E[16:])
+   and [e["id"] for e in E] == [f"E{k:02d}" for k in range(1, len(E) + 1)])
 ck("A 묶음 4편: 천살(신자진) → 화개살·날삼재(해묘미) → 반안살(인오술) → 월살(사유축)",
    [(e["group"], e["sinsal"]) for e in E[:4]] == [("신자진", "천살"), ("해묘미", "화개살"), ("인오술", "반안살"),
                                                    ("사유축", "월살")] and E[1]["samjae"] == "날삼재")
-ck("B 띠 단독 12편: 양띠부터 · 12띠 한 번씩", [e["animals"][0] for e in E[4:]][0] == "양"
-   and sorted(e["animals"][0] for e in E[4:]) == sorted(ANIMALS) and all(e["kind"] == "single" for e in E[4:]))
+ck("B 띠 단독 12편: 양띠부터 · 12띠 한 번씩", [e["animals"][0] for e in E16[4:]][0] == "양"
+   and sorted(e["animals"][0] for e in E16[4:]) == sorted(ANIMALS) and all(e["kind"] == "single" for e in E16[4:]))
 ck("공개 시각 = 그날 20:00 KST(11:00Z) · 이미 지났으면 None(바로 공개)",
    LF.publish_at(E[0], at("2026-10-31T10:00")) == "2026-11-02T11:00:00Z"
    and LF.publish_at(E[0], at("2026-11-02T19:55")) is None)
 ck("파일 이름 = E01_2026-11-02.json", LF.file_name(E[0]) == "E01_2026-11-02.json")
+
+print("── 2b. 이어 가는 편(E17~ · longform_2027_more.json · from) — 앞 16편 날짜는 그대로 ──")
+_specs = LF.more_specs()
+ck("지금 이어 가는 편 명세는 전부 검사 통과(틀리면 편성에서 빠진다) · 편성된 수 = 명세 수",
+   all(not LF.more_errs(sp, [f"E{k:02d}" for k in range(1, 17 + i)]) for i, sp in enumerate(_specs))
+   and len(E) == 16 + len(_specs), [LF.more_errs(sp, [e["id"] for e in E[:16 + i]]) for i, sp in enumerate(_specs)])
+_e5 = E16[4]
+_last = dt.date.fromisoformat(E[-1]["publish"])
+_sp = {"id": f"E{len(E) + 1:02d}", "from": (_last + dt.timedelta(days=12)).isoformat(), "animals": _e5["animals"],
+       "title": "2027년 양띠 재물운 깊이 보기 | 돈이 도는 달과 지킬 것 · 출생연도별 풀이",
+       "thumb": {"big": "2027 양띠", "sub": "재물운", "pill": "돈이 도는 달"},
+       "angle": "양띠 재물만 깊게 — 앞 편(총운)과 달리 돈 흐름·달별 재물·지킬 것을 차근차근",
+       "chapters": _e5["chapters"], "qa_seeds": _e5["qa_seeds"][:3]}
+_sp2 = dict(_sp, id=f"E{len(E) + 2:02d}", title=_sp["title"].replace("재물운", "건강운"), **{"from": E[0]["publish"]})
+_bad = dict(_sp, id="E99", chapters=_e5["chapters"][:3], title="양띠 이야기")
+_tmp = tempfile.mkdtemp()
+_mp = os.path.join(_tmp, "more.json")
+with open(_mp, "w", encoding="utf-8") as f:
+    json.dump({"episodes": _specs + [_sp, _sp2, _bad]}, f, ensure_ascii=False)
+_real_more = LF.MORE_PATH
+LF.MORE_PATH = _mp
+_eps = LF.episodes()
+LF.MORE_PATH = _real_more
+
+
+def _next_post(d):
+    while d.weekday() not in LF.POST_DAYS:
+        d += dt.timedelta(days=1)
+    return d
+
+
+_d17 = _next_post(_last + dt.timedelta(days=12))
+ck("붙인 편: from 이후 첫 월·수·금 · 다음 편은 from 이 일러도 앞 편 다음 월·수·금 · 앞 편들 날짜·id 그대로 · 사이가 비어도 된다",
+   [(e["id"], e["publish"]) for e in _eps[:len(E)]] == [(e["id"], e["publish"]) for e in E]
+   and [(e["id"], e["publish"]) for e in _eps[len(E):]] == [(_sp["id"], _d17.isoformat()),
+                                                            (_sp2["id"], _next_post(_d17 + dt.timedelta(days=1)).isoformat())],
+   [(e["id"], e["publish"]) for e in _eps[len(E) - 1:]])
+ck("붙인 편: 앞 마지막 편 → 다음 편 고리 · 출생연도 장 채움 · 장마다 배경 · kind single(띠 하나)",
+   _eps[len(E) - 1]["next"] == _sp["id"] and _eps[-1]["next"] is None and _eps[len(E)]["kind"] == "single"
+   and len(_eps[len(E)]["scenes"]) == len(_eps[len(E)]["chapters"]) and _eps[len(E)]["from"] == _sp["from"])
+ck("틀린 명세(번호·장 3개·제목)는 편성하지 않고 더 이상 붙지 않는다 · more_errs 가 이유를 낸다",
+   len(_eps) == len(E) + 2 and any("id 는" in x for x in LF.more_errs(_bad, [e["id"] for e in _eps]))
+   and any("chapters" in x for x in LF.more_errs(_bad, [e["id"] for e in _eps]))
+   and any("title" in x for x in LF.more_errs(_bad, [e["id"] for e in _eps])))
+ck("명세 검사: 출생연도 장이 띠의 해를 다 덮지 않으면 · from 없으면 · 없는 표면 막는다",
+   any("출생연도" in x for x in LF.more_errs(dict(_sp, chapters=[c for c in _e5["chapters"] if c["layout"] != "years"]),
+                                            [e["id"] for e in E]))
+   and any("from" in x for x in LF.more_errs({k: v for k, v in _sp.items() if k != "from"}, [e["id"] for e in E]))
+   and any("table" in x for x in LF.more_errs(dict(_sp, chapters=_e5["chapters"][:-1] + [dict(_e5["chapters"][-1], layout="table",
+                                                                                         table="x")]), [e["id"] for e in E])))
 
 print("── 3. 카탈로그 ──")
 with open(LF.CATALOG_PATH, encoding="utf-8") as f:
@@ -156,12 +208,13 @@ ck("편마다 꼴 4가지 이상(표·카드·출생연도·질문·행운)", al
 titles = [e["title"] for e in E]
 ck("제목: 검색어가 앞('2027년 …띠') · 100자 이내 · 서로 다르다 · 한자 없음",
    all(t.startswith("2027년 ") and "띠" in t.split(" | ")[0] and len(t) <= 100 for t in titles)
-   and len(set(titles)) == 16 and not any(LF.HANJA.search(t) for t in titles), titles)
+   and len(set(titles)) == len(E) and not any(LF.HANJA.search(t) for t in titles), titles)
 ck("제목의 살·삼재는 조언 틀 안에서만(sal_frame)", not [v for t in titles for v in SF.violations(t, unit="whole")],
    [v for t in titles for v in SF.violations(t, unit="whole")][:2])
 ck("제목·썸네일에 금지어·영문 등급 없음", not [h for e in E for x in (e["title"], *e["thumb"].values())
                                         for h in LF.ban_hits(x)])
-ck("다음 편 고리: E01→E02 … E16 은 끝", [e["next"] for e in E] == [f"E{k:02d}" for k in range(2, 17)] + [None])
+ck("다음 편 고리: E01→E02 … 마지막 편은 끝(이어 가는 편이 있으면 E16→E17)",
+   [e["next"] for e in E] == [f"E{k:02d}" for k in range(2, len(E) + 1)] + [None])
 ck("배경 장면: 장마다 하나 · 사람·글자·축제 없는 장면(긍정형 묘사)",
    all(len(e["scenes"]) == len(e["chapters"]) for e in E) and "no people" in LF.STYLE
    and not any(re.search(r"(?i)festival|new year|lantern|lucky|text|letter|sign", s) for s in LF.SCENES + (LF.LAMB,)))
@@ -285,7 +338,7 @@ ck("10/29(목) = 아직 없음 · 10/31(토) = E01 · 11/2(월) E01 올린 뒤 =
 ck("…한 번 놓치면 다음 회차에 둘(MORE=1): 토 회차를 놓친 월 10시 = E01·E02",
    nxt("2026-11-02T10:00") == ["E01", "E02"])
 ck("…공개 3시간 안이면 쓰지 않는다 · 마지막 편 뒤엔 없음",
-   nxt("2026-11-02T18:00") == ["E02"] and nxt("2026-12-07T10:00", "E16") == [])
+   nxt("2026-11-02T18:00") == ["E02"] and all(x > "E16" for x in nxt("2026-12-07T10:00", "E16")))
 txt = LF.next_text(at("2026-10-31T10:00"), root=tempfile.mkdtemp())
 ck("next 출력: EPISODE·PUBLISH·FILE·WRITE_TO·READY(견본)·사실·뼈대",
    all(k in txt for k in ("EPISODE=E01", "PUBLISH=2026-11-02 20:00 KST", "FILE=output/fortune_lf27/E01_2026-11-02.json",
@@ -334,7 +387,7 @@ for ep in E:
                    sp.get("step"), sp.get("hwangap"), len(ep["animals"]), ep["next"] is None)
             if key not in shot:
                 shot[key] = (plan, sp)
-ck("16편 모두 뼈대를 채우면 렌더 계획이 만들어진다(시작 · 장 · 예고)", okall)
+ck("모든 편(이어 가는 편 포함) 뼈대를 채우면 렌더 계획이 만들어진다(시작 · 장 · 예고)", okall)
 kinds = {k[0] for k in shot}
 tables = {k[1] for k in shot if k[0] == "table"}
 ck("화면 꼴: 시작·카드·표·출생연도·질문·행운·다음 편 — 표 4가지(신살 12띠·세 띠 달·한 띠 달력·사람)",

@@ -13,6 +13,8 @@
 
 편성: 화·금 18:13 KST(GUNGHAP_DAYS) — 날짜로 묶음을 정한다(루틴 판단이 아니다).
   ★6편 시리즈로 끝난다(묶음마다 한 번 — 같은 표를 다시 올리지 않는다). 그 뒤는 성적을 보고 새 묶음을 PR 로 채운다.
+  ★10/25 채우기(tools/REFILL.md#wb_gunghap): THEMES 끝에 붙이는 묶음은 from 을 단다 — schedule 이 from 이후 첫 화·금부터
+  잇는다(앞 편 날짜는 안 바뀐다).
 
     python pipeline/gunghap_card.py show [--date 2026-10-09]
     python pipeline/gunghap_card.py make [--date …] --out <path>   # 편성일이 아니면 아무것도 안 쓴다(종료 코드 0)
@@ -156,24 +158,36 @@ ONE = {"육합": "육합·찰떡 짝", "충": "충·정면 충돌", "원진": "�
        "인성": "인성·돕는 기운", "관성": "관성·누르는 기운", "충(재물)": "충·재물 다툼"}
 
 
+def schedule() -> list[tuple[dt.date, dict]]:
+    """(편성일, 묶음) 전부 — THEMES 순서대로 화·금에 하나씩.
+    from 없는 묶음(첫 6편)은 START 부터 이어지는 화·금 · ★from 있는 묶음(10/25~ 채우기 — tools/REFILL.md#wb_gunghap)은
+    max(from, 앞 편 다음 날) 이후 첫 화·금. 그래서 끝에 붙인 묶음은 앞 날짜를 안 바꾸고, 사이가 비어도 된다(그동안 안 나간다)."""
+    out, prev = [], None
+    for th in THEMES:
+        d = START if prev is None else prev + dt.timedelta(days=1)
+        if th.get("from"):
+            d = max(d, dt.date.fromisoformat(th["from"]))
+        while d.weekday() not in GUNGHAP_DAYS:
+            d += dt.timedelta(days=1)
+        out.append((d, th))
+        prev = d
+    return out
+
+
 def is_post_day(d: dt.date) -> bool:
-    """화·금 · START 부터 · 6편 시리즈 안(목록이 바닥나면 쓰지 않는다 — 채워 넣을 때까지)."""
-    return d >= START and d.weekday() in GUNGHAP_DAYS and post_index(d) < len(THEMES)
+    """화·금 · 그날 편성된 묶음이 있을 때만(목록이 바닥나면 쓰지 않는다 — 채워 넣을 때까지)."""
+    return any(x == d for x, _ in schedule())
 
 
 def post_index(d: dt.date) -> int:
-    """START 부터 몇 번째 편인가(편성일만 센다)."""
-    return sum(1 for k in range((d - START).days) if (START + dt.timedelta(days=k)).weekday() in GUNGHAP_DAYS)
+    """d 전에 나간(편성된) 편 수 — 그날 편이면 그 편이 몇 번째인가(0부터)."""
+    return sum(1 for x, _ in schedule() if x < d)
 
 
 def last_day() -> dt.date | None:
     """시리즈 마지막 편성일(목록 THEMES 가 바닥나는 날) — tools/runway.py 가 부른다."""
-    d, last = START, None
-    while post_index(d) < len(THEMES):
-        if is_post_day(d):
-            last = d
-        d += dt.timedelta(days=1)
-    return last
+    s = schedule()
+    return s[-1][0] if s else None
 
 
 def theme_for(d: dt.date) -> dict:

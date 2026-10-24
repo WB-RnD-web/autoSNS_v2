@@ -35,6 +35,9 @@ KST = dt.timezone(dt.timedelta(hours=9))
 WARN_DAYS = 14
 LIMITS = {"open": "끝없음", "catalog": "목록", "end": "끝 날짜", "trial": "시험", "off": "꺼짐", "error": "확인 실패"}
 CHANNELS = ("왕별이", "Nine Tails", "인스타")
+# ★10/25 채울 수 있는 줄기(주간 채우기 루틴 — tools/REFILL.md · 검사 tools/refill_check.py). 절 앵커 = 줄기 id
+REFILL_DOC = "tools/REFILL.md"
+REFILLABLE = ("nt_shorts", "nt_longform", "wb_gunghap", "wb_lf27", "insta_sci", "insta_teardown")
 WEEKDAY = "월화수목금토일"
 
 
@@ -82,7 +85,7 @@ def wangbyul(today: dt.date) -> list[dict]:
     g_last = gh.last_day()
     out.append(_row(ch, "wb_gunghap", f"띠 궁합표(화·금 18:13 · {len(gh.THEMES)}편 시리즈)", "catalog", g_last,
                     _count(today, g_last, gh.is_post_day),
-                    refill="pipeline/gunghap_card.py THEMES 끝에 새 묶음(성적 보고 PR — 같은 표 다시 안 올린다)"))
+                    refill="pipeline/gunghap_card.py THEMES 끝에 새 묶음 + from(같은 표 다시 안 올린다)"))
     n_last = nc.last_day()
     out.append(_row(ch, "wb_newyear_card", f"2027 신년운세 1차 묶음(월·목 · {len(nc.EPISODES)}편)", "catalog", n_last,
                     _count(today, n_last, nc.is_post_day), ended="06:13 신년운세 시리즈(newyear_series)가 이어받음"))
@@ -92,10 +95,10 @@ def wangbyul(today: dt.date) -> list[dict]:
                     refill="pipeline/newyear_series.py EPISODES 끝에 새 편(같은 꼴 연달아 X) — 바닥나면 06:13 은 매일 운세로",
                     note="판정 pulse_experiments 'newyear-slot'"))
     eps = [dt.date.fromisoformat(e["publish"]) for e in lf.EPISODES]
-    out.append(_row(ch, "wb_lf27", f"롱폼 '2027 정미년 깊이 보기'(월·수·금 20:00 · {len(eps)}편 고정)", "catalog", lf.last_day(),
+    out.append(_row(ch, "wb_lf27", f"롱폼 '2027 정미년 깊이 보기'(월·수·금 20:00 · {len(eps)}편 — E17~ 이어 붙이기)", "catalog", lf.last_day(),
                     sum(d >= today for d in eps),
-                    refill="뒤를 이을 롱폼 편성이 없다 — 새 시리즈(또는 주간 롱폼 weekly_fortune.STOP_FROM 되돌리기)를 PR 로",
-                    note="이게 끝나면 왕별이 롱폼 0편(주간 롱폼은 11/02 부터 꺼짐)"))
+                    refill="pipeline/longform_2027_more.json 에 이어 가는 편(E17~ · from · 월·수·금) → catalog --write",
+                    note="이어 가는 편이 없으면 끝난 뒤 왕별이 롱폼 0편(주간 롱폼은 11/02 부터 꺼짐)"))
     w_last = wf.last_day()
     out.append(_row(ch, "wb_weekly_lf", "주간 띠별 운세 롱폼(일 08:00)", "end" if w_last else "open", w_last,
                     int(bool(w_last and w_last >= today)) if w_last else None,
@@ -122,15 +125,15 @@ def nine_tails(today: dt.date) -> list[dict]:
     detail = " · ".join(f"{f} {d:%m/%d}" for f, d in lasts.items() if d)
     out = [_row(ch, "nt_shorts", "영어 쇼츠(survival 매일 · compare/liminal 격일 — shorts_catalog)", "trial",
                 max((d for d in lasts.values() if d), default=None), sum(d >= today for d in pub), judge=judge,
-                refill="gumiho/tales/shorts_catalog.json 형식별 목록 끝에 — 공개일은 목록 위치로 first_publish 부터 센다"
-                       "(rules.publish_date) · 바닥난 뒤 붙이면 지난 날짜가 되니 마지막 날 전에 붙이거나 first_publish·offset 을 옮길 것",
+                refill="gumiho/tales/shorts_catalog.json 형식별 목록 끝에 + from(A 매일 · B compare/liminal 번갈아) — "
+                       "판정이 '계속'일 때만 머지",
                 note=f"마지막 공개 {detail} · 쓰는 날은 하루 전")]
     cat = T.load(T.CATALOG)
     dated = [dt.date.fromisoformat(e["date"]) for e in cat["tales"] if e.get("date") and not e.get("retired")]
     backlog = cat.get("backlog") or []
     out.append(_row(ch, "nt_longform", "해설 롱폼(주 1편 일 14:00 UTC — catalog.json tales)", "catalog", T.last_date(),
                     sum(d >= today for d in dated),
-                    refill="gumiho/tales/catalog.json tales 에 편 추가(date = 일요일 · facts·sources·careful)",
+                    refill="gumiho/tales/catalog.json tales 끝에 편 + from(일요일은 코드가 정한다 · facts 마다 evidence)",
                     note=f"backlog 제목 {len(backlog)}개(제목만 — 사실·출처를 채워야 편성된다)" if backlog else ""))
     enabled = _const(os.path.join(ROOT, "gumiho", "tales", "sleep.py"), "ENABLED")
     out.append(_row(ch, "nt_sleep", "수면판 Sleep Edition(지난 편을 다시 지은 1시간)", "open" if enabled else "off",
@@ -160,6 +163,8 @@ def collect(today: dt.date) -> list[dict]:
             rows.append(_row(ch, f"{ch}_error", f"{ch} 편성 읽기", "error", note=f"{type(e).__name__}: {e}"[:200]))
     for r in rows:
         r["today"] = today
+        r["refillable"] = r["id"] in REFILLABLE
+        r["refill_doc"] = f"{REFILL_DOC}#{r['id']}" if r["refillable"] else None
         if r["limit"] in ("open", "off", "error"):
             r["days_left"] = None
         else:
@@ -209,7 +214,7 @@ def text(rows: list[dict], today: dt.date, warn: int = WARN_DAYS) -> str:
             if r["ended"]:
                 o.append(f"       끝(대체): {r['ended']}")
             elif r["limit"] not in ("open",) and r["refill"]:
-                o.append(f"       채우기: {r['refill']}")
+                o.append(f"       채우기: {r['refill']}" + (f" → {r['refill_doc']}" if r["refill_doc"] else ""))
             if r["note"] and r["limit"] != "error":
                 o.append(f"       참고: {r['note']}")
         o.append("")

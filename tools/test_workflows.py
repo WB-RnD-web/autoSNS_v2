@@ -109,7 +109,8 @@ for _br in ("routine/ai_am", "routine/ai_pm"):
     ck(f"접은 누적 브랜치 {_br} 에 반응하는 push 워크플로가 없다", not reacting(_br), str(reacting(_br)))
 
 print("\n── 3. 데이터·PR 브랜치 push 는 아무 워크플로도 깨우지 않는다 ──")
-for _br in ("data/trend-radar", "data/ai-news-feed", "data/anything", "pulse/2026-10-24-sample"):
+# ★10/25 주간 채우기 루틴(tools/REFILL.md)은 refill/<줄기>-<날짜> 브랜치로 PR 을 연다 — 업로드가 깨면 안 된다
+for _br in ("data/trend-radar", "data/ai-news-feed", "data/anything", "pulse/2026-10-24-sample", "refill/insta_sci-20261101"):
     ck(f"{_br} 에 반응하는 push 워크플로가 없다(업로드가 깨어나지 않게)", not reacting(_br), str(reacting(_br)))
 
 print("\n── 4. 쓰기 권한은 데이터 브랜치·맥박 PR 브랜치 워크플로에만 ──")

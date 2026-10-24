@@ -21,6 +21,8 @@
   편마다 다른 수치·논리·출처 · 같은 그림(프롬프트) 재사용 금지 · 숫자 있는 줄은 출처(sources) 필수 · 숫자는 catalog facts 에서만 ·
   실존 피해자·실존 인물·프랜차이즈·SCP·Backrooms 금지 · 구미는 목소리만(그림에 구미·여우 금지).
 옛 동아시아 규칙괴담(rules_catalog.json)은 남겨 두되 10/9 배정분까지만(until) — 10/10부터 설화는 편성되지 않는다.
+★2026-10-25 채우기(tools/REFILL.md#nt_shorts): 목록 끝에 붙이는 편은 from(첫 공개 가능일)을 단다 — publish_dates 가
+  from 부터 그 형식 자리(A 매일 · B compare 짝수 날/liminal 홀수 날)에 놓는다. 앞 편 날짜는 안 바뀐다.
 """
 from __future__ import annotations
 
@@ -171,15 +173,42 @@ def day_of(n: int, cat: dict | None = None) -> dt.date:
     return dt.date.fromisoformat(cat["start"]) + dt.timedelta(days=n - 1)
 
 
-def publish_date(e: dict, sc: dict | None = None) -> dt.date:
-    """새 편의 공개일. A(survival)는 매일, B 는 compare(짝수 날)·liminal(홀수 날)이 번갈아 — first_publish 부터 센다."""
+def _from(e: dict) -> dt.date | None:
+    try:
+        return dt.date.fromisoformat(e["from"]) if isinstance(e.get("from"), str) else None
+    except ValueError:
+        return None
+
+
+def publish_dates(sc: dict | None = None) -> dict[int, dt.date]:
+    """새 편 공개일 전부 {n: 날짜} — 형식마다 목록 순서대로 걷는다.
+      · from 없는 편(첫 묶음 10/13~10/26) = 예전 그대로 first_publish + offset + k × every(목록 위치).
+      · ★from 있는 편(10/25~ 채우기 — tools/REFILL.md) = max(from, 앞 편 다음 날)부터 그 형식 자리인 첫날:
+        survival 은 매일(A 20:00), compare 는 first_publish 기준 짝수 날 · liminal 은 홀수 날(B 23:30 — 하루 한 편).
+        그래서 끝에 붙인 편은 앞 날짜를 하나도 안 바꾼다 · 마지막 편과 from 사이가 비어도 된다(그동안은 안 나간다)."""
     sc = sc or shorts()
     p0 = dt.date.fromisoformat(sc["first_publish"])
-    fmt = e["format"]
-    k = [x["n"] for x in sc[fmt]].index(e["n"])
-    ser = sc["series"][fmt]
-    step = ser.get("every", 1)
-    return p0 + dt.timedelta(days=ser.get("offset", 0) + k * step)
+    out: dict[int, dt.date] = {}
+    for fmt in NEW_FORMATS:
+        ser = sc["series"][fmt]
+        step, off = ser.get("every", 1), ser.get("offset", 0)
+        prev = None
+        for k, e in enumerate(sc.get(fmt) or []):
+            f = _from(e)
+            if f is None:
+                d = p0 + dt.timedelta(days=off + k * step)
+            else:
+                d = max(f, prev + dt.timedelta(days=1)) if prev else f
+                while (d - p0).days % step != off % step:
+                    d += dt.timedelta(days=1)
+            out[e["n"]] = d
+            prev = d
+    return out
+
+
+def publish_date(e: dict, sc: dict | None = None) -> dt.date:
+    """새 편의 공개일(publish_dates). A(survival)는 매일, B 는 compare(짝수 날)·liminal(홀수 날)이 번갈아."""
+    return publish_dates(sc)[e["n"]]
 
 
 def assign_date(e: dict, sc: dict | None = None) -> dt.date:
@@ -205,12 +234,15 @@ def nominal_publish_at(e: dict, sc: dict | None = None) -> str:
 def last_publish(sc: dict | None = None) -> dict[str, dt.date | None]:
     """새 라인업 형식마다 마지막 공개일(목록 끝 편의 publish_date) — 목록이 비면 None. tools/runway.py 가 부른다."""
     sc = sc or shorts()
-    return {f: (publish_date(sc[f][-1], sc) if sc.get(f) else None) for f in NEW_FORMATS}
+    pd = publish_dates(sc)
+    return {f: (max(pd[e["n"]] for e in sc[f]) if sc.get(f) else None) for f in NEW_FORMATS}
 
 
 def new_on(date: dt.date, sc: dict | None = None) -> list[dict]:
     sc = sc or shorts()
-    out = [e for f in NEW_FORMATS for e in sc[f] if assign_date(e, sc) == date]
+    ahead = dt.timedelta(days=sc.get("write_ahead_days", 1))
+    pd = publish_dates(sc)
+    out = [e for f in NEW_FORMATS for e in sc[f] if pd[e["n"]] - ahead == date]
     return sorted(out, key=lambda e: slot_of(e, sc))
 
 

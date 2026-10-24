@@ -13,6 +13,7 @@ import datetime as dt
 import io
 import json
 import os
+import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -98,6 +99,27 @@ ck("2027-03-01: 깊이 보기·신년 시리즈는 끝(0일) → 경고 · 매�
    and {"wb_lf27", "wb_newyear_series"} <= {r["id"] for r in RW.low(list(far.values()))} and far["wb_daily"]["days_left"] is None)
 ck("--warn 을 바꾸면 경고 범위가 바뀐다(60일 → 깊이 보기도)", "wb_lf27" in {r["id"] for r in RW.low(rows, 60)})
 
+print("── 채우기(REFILL.md · refill_check) ──")
+ck("채울 수 있는 줄기 = NT 쇼츠·NT 해설 롱폼·띠 궁합표·깊이 보기·인스타 sci·뜯어보기 · refill_doc = REFILL.md#<id>",
+   {r["id"] for r in rows if r["refillable"]} == set(RW.REFILLABLE) == {"nt_shorts", "nt_longform", "wb_gunghap", "wb_lf27",
+                                                                         "insta_sci", "insta_teardown"}
+   and all(r["refill_doc"] == f"tools/REFILL.md#{r['id']}" for r in rows if r["refillable"])
+   and all(r["refill_doc"] is None for r in rows if not r["refillable"]))
+doc = open(os.path.join(RW.ROOT, "tools", "REFILL.md"), encoding="utf-8").read()
+ck("REFILL.md: 줄기마다 앵커(<a id=…>) · 파일 · 배치 크기(28·2·6·12·14·10)",
+   all(f'<a id="{i}"></a>' in doc for i in RW.REFILLABLE)
+   and all(f in doc for f in ("gumiho/tales/shorts_catalog.json", "gumiho/tales/catalog.json", "pipeline/gunghap_card.py",
+                              "pipeline/longform_2027_more.json", "insta/sci_extra.json", "insta/teardown_catalog.json"))
+   and all(re.search(rf"\| `{i}` \|[^\n]*\| {n}", doc) for i, n in (("nt_shorts", "28편"), ("nt_longform", "2편"),
+                                                                     ("wb_gunghap", "6묶음"), ("wb_lf27", "12편"),
+                                                                     ("insta_sci", "14편"), ("insta_teardown", "10편"))))
+ck("REFILL.md: from(다음 날·바닥났으면 내일) · 사실 규칙(evidence·기관 출처·상표 X) · 검사·전체 테스트 · 브랜치·PR · 하지 말 것",
+   all(w in doc for w in ("from", "다음 날", "내일", "evidence", "기관", "상표", "python tools/refill_check.py",
+                          "bash tools/run_tests.sh", "refill/<줄기 id>-<YYYYMMDD>", "시험 중인 줄기(NT 쇼츠·bm)는 판정이 '계속'일 때만 머지",
+                          "routine/*", ".github/", "유료", "끝에만")))
+ck("REFILL.md 가 가리키는 쓰는 법 문서가 다 있다", all(os.path.exists(os.path.join(RW.ROOT, p)) for p in re.findall(
+    r"`((?:gumiho/tales|insta|pipeline)/[A-Z_0-9]+\.md)`", doc)) and len(re.findall(r"`((?:gumiho/tales|insta|pipeline)/[A-Z_0-9]+\.md)`", doc)) >= 4)
+
 print("── 출력(글·JSON) · 한 줄기가 깨져도 ──")
 txt = RW.text(rows, TODAY)
 ck("글: 날짜(KST)·세 채널·경고 표시·채우는 곳", "2026-10-25(일) KST" in txt and all(f"[{c}]" in txt for c in RW.CHANNELS)
@@ -106,7 +128,8 @@ buf = io.StringIO()
 with contextlib.redirect_stdout(buf):
     rc = RW.main(["--date", "2026-10-25", "--json"])
 js = json.loads(buf.getvalue())
-ck("--json: 날짜·줄기·경고 id · 날짜는 문자열", rc == 0 and js["date"] == "2026-10-25" and {s["id"] for s in js["streams"]} == WANT
+ck("--json: 날짜·줄기·경고 id · 날짜는 문자열 · 채우기(refillable·refill_doc)", rc == 0 and js["date"] == "2026-10-25"
+   and {s["id"] for s in js["streams"]} == WANT and all("refillable" in s and "refill_doc" in s for s in js["streams"])
    and set(js["low"]) == {r["id"] for r in lw} and all(s["last"] is None or isinstance(s["last"], str) for s in js["streams"]))
 buf = io.StringIO()
 with contextlib.redirect_stdout(buf):

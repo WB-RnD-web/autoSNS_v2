@@ -382,8 +382,11 @@ def entry_errs(e: dict) -> list[str]:
     hits = sorted({w for w in SCI_GORE + SCI_PEOPLE + SCI_FRANCHISE if w.lower() in low})
     if hits:
         errs.append(f"facts 에 잔혹·실존 인물·프랜차이즈 낱말 {hits}")
-    if isinstance(n, int) and n >= P.SCI_OPEN_N0 and P._date_or_none(e.get("from")) is None:
-        errs.append("from(쓸 수 있는 첫날 YYYY-MM-DD — 붙이는 날 다음 날 이후) 필요 — 없으면 편성되지 않는다")
+    if isinstance(n, int) and n >= P.SCI_OPEN_N0:          # 열린 항목(904~ · 951~) — 채우기 규칙(tools/REFILL.md)
+        if P._date_or_none(e.get("from")) is None:
+            errs.append("from(쓸 수 있는 첫날 YYYY-MM-DD — 붙이는 날 다음 날 이후) 필요 — 없으면 편성되지 않는다")
+        if facts and not all(isinstance(f, dict) and isinstance(f.get("evidence"), str) and f["evidence"].strip() for f in facts):
+            errs.append("facts 마다 evidence(출처를 열어 옮긴 원문 문장) 필요")
     if td:
         if not (isinstance(n, int) and n >= P.TEARDOWN_N0) or e.get("series") != P.TEARDOWN:
             errs.append(f"뜯어보기 항목은 n {P.TEARDOWN_N0}~ · series '{P.TEARDOWN}'")
