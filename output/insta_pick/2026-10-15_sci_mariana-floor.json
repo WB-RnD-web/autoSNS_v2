@@ -1,0 +1,79 @@
+{
+ "date": "2026-10-15",
+ "kind": "sci",
+ "src_n": 101,
+ "slug": "mariana-floor",
+ "hook": [
+  "마리아나 해구 바닥",
+  "몇 분 버틸까?"
+ ],
+ "say_intro": "마리아나 해구 바닥에 떨어지면, 몇 분이나 버틸 수 있을까요?",
+ "beats": [
+  {
+   "big": "10,935m",
+   "sub": "바다에서 가장 깊은 곳",
+   "say": "여기는 수심 10,935미터, 바다에서 가장 깊은 곳이에요.",
+   "img": "the pitch-black floor of the deepest ocean trench, fine grey silt seafloor stretching into darkness, drifting marine snow caught in one faint beam of light",
+   "src": 0
+  },
+  {
+   "big": "1,000m",
+   "sub": "햇빛은 여기서 끝나요",
+   "say": "햇빛은 1,000미터 아래로 못 내려와요. 여긴 완전한 어둠이에요.",
+   "img": "looking straight down into the endless dark abyss of the open ocean, sunlight fading from deep blue to total black, tiny drifting particles",
+   "src": 4
+  },
+  {
+   "big": "2.4°C",
+   "sub": "바닥에 깔린 물의 온도",
+   "say": "바닥의 물은 고작 2.4도예요.",
+   "img": "ice-cold deep sea water over a grey silt seafloor, cold blue tint, a small round metal probe resting on the sediment, faint light",
+   "src": 5
+  },
+  {
+   "big": "16,000 PSI",
+   "sub": "1제곱인치마다 약 8톤",
+   "say": "수압은 16,000 PSI. 1제곱인치마다 약 8톤이 눌러요.",
+   "img": "a heavy titanium deep-sea instrument sphere resting on the dark seafloor, rim-lit by a dim blue glow, immense crushing darkness above",
+   "src": 1
+  },
+  {
+   "big": "1,000배",
+   "sub": "해수면 기압의 1,000배 넘게",
+   "say": "해수면보다 1,000배 넘는 압력이 온몸을 눌러요.",
+   "img": "an empty plain plastic bottle crushed flat by water pressure lying on the deep seafloor, dim blue light, drifting particles",
+   "src": 2
+  },
+  {
+   "big": "1/1,000",
+   "sub": "폐 속 공기가 줄어드는 크기",
+   "say": "폐 속 공기는 1,000분의 1 크기로 쪼그라들어요.",
+   "img": "a small white balloon shrunk into a tiny wrinkled ball deep underwater, dark blue water, a single dramatic beam of light from above",
+   "src": 3
+  }
+ ],
+ "verdict": {
+  "big": "생존 확률 0%",
+  "say": "티타늄 마이크는 여기서 23일을 버텼어요."
+ },
+ "caption": "마리아나 해구 바닥, 몇 분 버틸까? 🌊",
+ "hashtags": [
+  "#심해",
+  "#마리아나해구",
+  "#과학상식",
+  "#바다",
+  "#생존"
+ ],
+ "sources": [
+  "https://oceanservice.noaa.gov/facts/oceandepth.html",
+  "https://www.noaa.gov/media-release/seven-miles-deep-ocean-is-still-noisy-place",
+  "https://www.rmg.co.uk/stories/ocean/challenger-deep-deepest-point-ocean",
+  "https://oceanservice.noaa.gov/facts/pressure.html",
+  "https://oceanservice.noaa.gov/facts/light_travel.html",
+  "https://www.pmel.noaa.gov/pubs/PDF/dzia4367/dzia4367.pdf"
+ ],
+ "bench": {
+  "format": "심해 과학 호기심 릴스 — 질문 훅 → 큰 숫자 박자 → 판정(인스타 검색 '심해' 상위 620만·370만·225만·210만·190만, 10/14)",
+  "seen": []
+ }
+}

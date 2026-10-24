@@ -1,0 +1,67 @@
+{
+ "date": "2026-10-17",
+ "kind": "sci",
+ "src_n": 107,
+ "slug": "black-hole-fall",
+ "hook": ["블랙홀에 빠지면", "몇 초 버틸까?"],
+ "say_intro": "우주복을 입고 블랙홀에 빠지면, 몇 초나 버틸 수 있을까요?",
+ "beats": [
+  {
+   "big": "430만배",
+   "sub": "태양 질량의 거대 블랙홀",
+   "say": "NASA 시뮬레이션 속 블랙홀은 태양 430만 개 질량이에요.",
+   "img": "a giant black sphere ringed by a glowing orange accretion disk against deep black space, distant stars, cinematic",
+   "src": 0
+  },
+  {
+   "big": "3시간",
+   "sub": "사건의 지평선까지 떨어지는 시간",
+   "say": "지평선까지 떨어지는 데 약 3시간이 걸려요.",
+   "img": "a lone astronaut-less small probe drifting toward a huge dark void with a bright glowing ring of light, black space",
+   "src": 0
+  },
+  {
+   "big": "2,500만km",
+   "sub": "사건의 지평선 지름",
+   "say": "지평선의 폭은 약 2,500만 킬로미터예요. 넘어도 아무 느낌이 없어요.",
+   "img": "the edge of a vast black circle swallowing starlight, bent glowing rings of light around it, deep space",
+   "src": 0
+  },
+  {
+   "big": "12.8초",
+   "sub": "지평선을 넘은 뒤 버틴 시간",
+   "say": "NASA 시뮬레이션에서는 지평선을 넘고 12.8초 뒤 끝나요.",
+   "img": "streaks of stretched light spiralling into a pitch black centre, warped space, dark red and orange glow",
+   "src": 0
+  },
+  {
+   "big": "128,000km",
+   "sub": "중심까지 남은 거리",
+   "say": "그때도 중심까지는 128,000킬로미터가 남아 있었어요.",
+   "img": "a far-away tiny point of light at the end of a dark funnel of warped space, black background",
+   "src": 0
+  },
+  {
+   "big": "400km",
+   "sub": "작은 블랙홀은 여기서 이미 위험",
+   "say": "태양 8개 질량의 작은 블랙홀은 중심에서 400킬로미터 밖부터 위험해요.",
+   "img": "a small dense black sphere with a thin glowing ring of light in empty dark space, stars stretched around it",
+   "src": 1
+  }
+ ],
+ "verdict": {
+  "big": "생존 확률 0%",
+  "say": "작은 블랙홀은 들어가기도 전에 끝나요."
+ },
+ "caption": "블랙홀에 빠지면 몇 초 버틸까? 🕳️",
+ "hashtags": ["#블랙홀", "#우주", "#과학상식", "#NASA", "#생존"],
+ "sources": [
+  "https://science.nasa.gov/universe/black-holes/supermassive-black-holes/new-nasa-black-hole-visualization-takes-viewers-beyond-the-brink/",
+  "https://math.ucr.edu/home/baez/physics/Relativity/BlackHoles/fall_in.html",
+  "https://jila.colorado.edu/~ajsh/bh/dive.html"
+ ],
+ "bench": {
+  "format": "우주 과학 생존 릴스 — 질문 훅 → 큰 숫자 박자 → 판정",
+  "seen": []
+ }
+}

@@ -1,0 +1,25 @@
+{
+ "date": "2026-10-20",
+ "kind": "birth",
+ "slug": "fit-hobby",
+ "headline": ["태어난 달로 보는", "나한테 어울리는 취미"],
+ "say_intro": "태어난 달로 보는 나한테 어울리는 취미. 내 달을 찾아 봐요.",
+ "bg": "a cozy pastel flat lay of a sketchbook, colored pencils, a small camera, a knitting yarn ball and a potted plant on a soft lavender table",
+ "cells": [
+  {"m": 1, "text": "그림 그리기"},
+  {"m": 2, "text": "동네 산책"},
+  {"m": 3, "text": "필름 사진 찍기"},
+  {"m": 4, "text": "보드게임"},
+  {"m": 5, "text": "베이킹"},
+  {"m": 6, "text": "러닝"},
+  {"m": 7, "text": "캠핑"},
+  {"m": 8, "text": "뜨개질"},
+  {"m": 9, "text": "독서 모임"},
+  {"m": 10, "text": "영화 보기"},
+  {"m": 11, "text": "기타 치기"},
+  {"m": 12, "text": "다이어리 꾸미기"}
+ ],
+ "caption": "태어난 달로 보는 나한테 어울리는 취미 🎨 내 달을 찾아 봐요!",
+ "hashtags": ["#태어난달", "#생일월", "#취미추천", "#재미로보는", "#골라보세요"],
+ "bench": {"format": "태어난 달 표 한 장(내 것 찾기)", "seen": [], "ours": "칸 문구 새로 씀 — 재미로"}
+}
