@@ -706,6 +706,13 @@ def weekly_entry(d) -> dict | None:
     return None
 
 
+def last_date():
+    """편성된(date 있는 · retired 아닌) 마지막 편의 공개일(일) — 없으면 None. tools/runway.py 가 부른다."""
+    import datetime as dt
+    ds = [dt.date.fromisoformat(e["date"]) for e in load(CATALOG)["tales"] if e.get("date") and not e.get("retired")]
+    return max(ds) if ds else None
+
+
 def assigned_id(date: str) -> int | None:
     """날짜 → 편 번호. ★2026-10-10 부터는 weekly_entry(일요일 편, 없으면 None).
     그 전(기록용): catalog.start(수요일)부터 7일마다 +1 · 스프린트(10/4~10/9) 하루 한 편."""

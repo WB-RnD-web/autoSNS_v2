@@ -1,0 +1,1301 @@
+{
+ "about": "인스타 sci '과학으로 뜯어보는 물건'(teardown) 주제 — 11/09 주부터 화·금 sci 자리(pick_plan open_plan · 이 순서로 한 번씩). sci_extra.json 과 같은 모양(n·slug·format·look·title_idea·sources·facts{fact,src}·beat_ideas·careful) + 뜯어보기 아이디어(topic_ko·hook_idea·why_idea·steps·result_idea·mechanism_refs · facts[].evidence = 출처 원문 문장). 숫자는 facts 에만(환산값 포함 — 화면엔 '24.5억 번'처럼) · 출처는 기관·논문·데이터시트 원문에서 확인(2026-10-25). 상표·모델 이름 X · '직접 열어 보세요' X · 안전·건강 단정 X(SCI_WRITING '뜯어보기'). 새 항목은 끝에 붙이고(n 961~) from 을 붙이는 날 다음 날 이후로 — 지난 편성이 안 바뀐다.",
+ "entries": [
+  {
+   "n": 951,
+   "series": "teardown",
+   "from": "2026-11-09",
+   "slug": "microwave-oven",
+   "format": "teardown",
+   "look": "object",
+   "topic_ko": "전자레인지",
+   "topic_en": "Microwave oven",
+   "title_idea": "전자레인지는 정말 속부터 익힐까?",
+   "teaser": "INSIDE A MICROWAVE OVEN",
+   "hook_idea": [
+    "전자레인지 전자파",
+    "속까지 못 간다고?"
+   ],
+   "why_idea": "왜 겉부터 데워질까요?",
+   "steps": [
+    "마그네트론이 1초에 24.5억 번 출렁이는 2,450MHz 전자파를 만들어요",
+    "금속 벽과 문 망(구멍 약 1mm)이 파장 12cm 전자파를 안에 가둬 튕겨요",
+    "물 분자가 흔들리며 열이 나요 — 물이면 겉 1.4cm에서 63%가 흡수돼요"
+   ],
+   "result_idea": "전자파는 겉 약 2.5~3.8cm까지만. 그 안쪽은 열이 전해져 익어요",
+   "sources": [
+    "https://hyperphysics.gsu.edu/hbase/Waves/mwoven.html",
+    "https://www.pubs.ext.vt.edu/content/pubs_ext_vt_edu/en/FST/FST-324/FST-324.html",
+    "https://www.britannica.com/technology/microwave-oven",
+    "https://www.fda.gov/radiation-emitting-products/resources-you-radiation-emitting-products/microwave-ovens"
+   ],
+   "facts": [
+    {
+     "fact": "Modern microwave ovens operate at a frequency of 2,450 MHz (about 2.45 billion cycles in 1 second, converted); the microwaves are produced by a device called a magnetron.",
+     "src": 0,
+     "evidence": "Modern microwave ovens operate at the frequency 2,450 MHz."
+    },
+    {
+     "fact": "At 2,450 MHz the wavelength of microwave-oven radiation is about 12 cm.",
+     "src": 0,
+     "evidence": "the wavelength of microwave oven radiation is about 12 cm"
+    },
+    {
+     "fact": "The holes in the metal screen on the oven door are about 1 mm in diameter, compared to a 120 mm (12 cm) microwave wavelength, so the microwaves can't get out while visible light can.",
+     "src": 0,
+     "evidence": "the holes in the metal screen on the microwave oven door are about 1 mm in diameter compared to a 120 mm wavelength for the microwaves"
+    },
+    {
+     "fact": "For water at 25 °C, the penetration depth at which 63% of the microwave power has been absorbed is about 1.4 cm.",
+     "src": 0,
+     "evidence": "representing the absorption of 63% of the microwave power. For water at 25°C, this penetration depth is approximately 1.4 cm"
+    },
+    {
+     "fact": "Microwaves do not cook food from the inside out: they travel only about 1 to 1½ inches (about 2.5-3.8 cm, converted) into food, and the rest of the food is cooked by the heat generated.",
+     "src": 1,
+     "evidence": "the electromagnetic waves only travel to a depth of about 1 to 1 ½ inches into the food"
+    },
+    {
+     "fact": "Microwave ovens generate radiation at about 2,450 megahertz with a magnetron; the microwaves are absorbed by water, fats, sugars and certain other molecules, whose vibrations produce heat.",
+     "src": 2,
+     "evidence": "Microwave ovens generate radiation at a frequency of about 2,450 megahertz by means of a magnetron"
+    },
+    {
+     "fact": "A federal standard limits leakage to 5 milliwatts (mW) per square centimeter at about 2 inches (about 5 cm, converted) from the oven surface, over the oven's lifetime.",
+     "src": 3,
+     "evidence": "to 5 milliwatts (mW) of microwave radiation per square centimeter at approximately 2 inches from the oven surface"
+    }
+   ],
+   "mechanism_refs": [
+    {
+     "note": "Microwaves are absorbed by water, fats and sugars, whose vibrations produce heat (heating occurs inside the food layer the waves reach)",
+     "src": 2,
+     "evidence": "The microwaves are absorbed by water, fats, sugars, and certain other molecules, whose consequent vibrations produce heat"
+    },
+    {
+     "note": "Moist outer layers absorb most of the radiation before it reaches inner sections",
+     "src": 2,
+     "evidence": "moist outer layers tend to absorb most of the radiation before it can reach inner sections"
+    },
+    {
+     "note": "Metal walls reflect/block microwaves",
+     "src": 2,
+     "evidence": "the metal blocks out the microwaves"
+    }
+   ],
+   "beat_ideas": [
+    {
+     "beat": "hook",
+     "view": "cutaway",
+     "img": "a microwave oven sliced open like a cake, a bowl of soup inside, soft glowing wavy energy lines filling the metal box",
+     "label": "전자파",
+     "fact": 0
+    },
+    {
+     "beat": "why",
+     "view": "cutaway",
+     "img": "a thick round meat patty cut in half on a plate, the outer ring glowing hot orange and the center still pale and cool",
+     "label": "아직 찬 속",
+     "fact": 4
+    },
+    {
+     "beat": "step1",
+     "view": "cutaway",
+     "img": "a microwave oven with a quarter wedge cut away, a small metal cylinder device glowing in the center of the side wall, wavy beams going into the cooking box",
+     "label": "마그네트론",
+     "fact": 0
+    },
+    {
+     "beat": "step2",
+     "view": "cutaway",
+     "img": "a microwave oven door sliced open, a thin metal mesh with tiny round holes in the center between two glass panes, long waves bouncing back from it",
+     "label": "구멍 약 1mm",
+     "fact": 2
+    },
+    {
+     "beat": "step3",
+     "view": "cutaway",
+     "img": "a glass of water sliced in half, tiny water molecules near the surface spinning and glowing warm, the deeper water calm and blue",
+     "label": "물 분자",
+     "fact": 3
+    },
+    {
+     "beat": "result",
+     "view": "cutaway",
+     "img": "a potato sliced in half, a warm glowing outer layer and soft heat arrows flowing slowly toward the center",
+     "label": "열이 안으로",
+     "fact": 4
+    }
+   ],
+   "careful": [
+    "Hook is myth-busting ('not from the inside out', VT Extension): keep it as correcting a common belief, never 'the center never cooks'",
+    "2.5~3.8cm is converted from '1 to 1½ inches'; 1.4cm/63% is for pure water at 25°C — food differs: always '약'",
+    "Write '24.5억 번' (= 2.45 billion) and '2,450MHz' so the number check matches facts",
+    "Don't say microwaves are safe or dangerous; the 5 mW leakage limit is a rule, not a health verdict — better to leave it off screen",
+    "Don't tell viewers to open the oven, run it empty, put metal inside or test anything",
+    "Magnetron is a generic part name — no brands"
+   ],
+   "checked": "2026-10-25"
+  },
+  {
+   "n": 952,
+   "series": "teardown",
+   "from": "2026-11-09",
+   "slug": "induction-cooktop",
+   "format": "teardown",
+   "look": "object",
+   "topic_ko": "인덕션 레인지",
+   "topic_en": "Induction cooktop",
+   "title_idea": "불꽃도 없는데 냄비만 뜨거운 이유",
+   "teaser": "INSIDE AN INDUCTION COOKTOP",
+   "hook_idea": [
+    "불꽃이 없는데",
+    "냄비만 뜨겁다?"
+   ],
+   "why_idea": "왜 냄비만 뜨거울까요?",
+   "steps": [
+    "유리판 밑 구리 코일에 1초에 2만~4만 번 방향이 바뀌는 전류가 흘러요",
+    "출렁이는 자기장이 쇠 냄비 바닥에 소용돌이 전류(맴돌이 전류)를 일으켜요",
+    "냄비 바닥이 스스로 뜨거워져요 — 에너지의 약 85%가 냄비로 가요"
+   ],
+   "result_idea": "가스는 약 32%, 인덕션은 약 85%. 효율이 약 3배예요",
+   "sources": [
+    "https://www.energystar.gov/about/2021_residential_induction_cooking_tops",
+    "https://www.infineon.com/dgdl/Infineon-AN2014_01_Reverse_Conducting_IGBT-ApplicationNotes-v03_01-EN.pdf"
+   ],
+   "facts": [
+    {
+     "fact": "Conventional cooktops use gas or resistance heating elements that transfer energy with efficiencies of about 32% and 75-80% respectively.",
+     "src": 0,
+     "evidence": "Conventional residential cooking tops typically employ gas or resistance heating elements to transfer energy with efficiencies of approximately 32% and 75-80% respectively."
+    },
+    {
+     "fact": "In an induction cooktop an electromagnetic coil makes a magnetic field; compatible cookware is warmed internally, transferring energy with about 85% efficiency.",
+     "src": 0,
+     "evidence": "compatible cookware is warmed internally, transferring energy with approximately 85% efficiency"
+    },
+    {
+     "fact": "Induction cooktops are about 3 times more efficient than gas and about 5-10% more efficient than electric resistance units.",
+     "src": 0,
+     "evidence": "about 5-10% more efficient than conventional electric resistance units and about 3 times more efficient than gas"
+    },
+    {
+     "fact": "Household induction cookers use operating frequencies of 20 kHz to 40 kHz at the highest power rating (20,000-40,000 cycles in 1 second, converted).",
+     "src": 1,
+     "evidence": "today’s household cookers utilize, for the highest power rating, operation frequencies of 20 kHz to 40 kHz"
+    },
+    {
+     "fact": "A frequency between 20 kHz and 75 kHz is enough to give heating power up to 4 kW in most ferromagnetic (iron-based) pans.",
+     "src": 1,
+     "evidence": "a range of frequency between 20 kHz and 75 kHz is sufficient to guarantee heating power up to 4 kW for most ferromagnetic materials"
+    },
+    {
+     "fact": "Non-ferromagnetic pans such as aluminium need a higher frequency and a stronger magnetic field, raising the range up to 100 kHz.",
+     "src": 1,
+     "evidence": "higher frequency and higher magnetic field strength are usually needed, thus increasing the frequency range up to 100 kHz"
+    }
+   ],
+   "mechanism_refs": [
+    {
+     "note": "The oscillating field induces a current in the pan bottom that flows in closed circles: eddy currents",
+     "src": 1,
+     "evidence": "This current flows in closed circles that are perpendicular to the magnetic field and therefore is usually called “eddy currents.”"
+    },
+    {
+     "note": "In iron pans, magnetic hysteresis adds heat",
+     "src": 1,
+     "evidence": "the oscillating magnetic field produces losses because of magnetic hysteresis"
+    },
+    {
+     "note": "The cookware itself is the heat source; less heat is lost to the air",
+     "src": 0,
+     "evidence": "because the source of heat is the cookware itself, the cooking top surface remains cool to the touch and less heat is lost to the surrounding air"
+    }
+   ],
+   "beat_ideas": [
+    {
+     "beat": "hook",
+     "view": "cutaway",
+     "img": "an induction cooktop sliced open like a cake, a steel pot on top with its base glowing hot orange, no flame anywhere",
+     "label": "불꽃 없음",
+     "fact": 1
+    },
+    {
+     "beat": "why",
+     "view": "cutaway",
+     "img": "a steel pot on a flat black glass cooktop, the pot base glowing orange while the glass around it stays dark",
+     "label": "냄비 바닥",
+     "fact": 1
+    },
+    {
+     "beat": "step1",
+     "view": "cutaway",
+     "img": "an induction cooktop with a quarter wedge cut away, a flat spiral copper coil under the glass in the center",
+     "label": "구리 코일",
+     "fact": 3
+    },
+    {
+     "beat": "step2",
+     "view": "cutaway",
+     "img": "a steel pot base sliced open, swirling circular glowing currents inside the metal, curved magnetic field lines rising from a coil below",
+     "label": "맴돌이 전류",
+     "fact": null
+    },
+    {
+     "beat": "step3",
+     "view": "cutaway",
+     "img": "a steel pot cut in half with water boiling inside, the heat glowing only in the metal base",
+     "label": "바닥이 발열",
+     "fact": 1
+    },
+    {
+     "beat": "result",
+     "view": "cutaway",
+     "img": "a gas burner and an induction cooktop sliced open side by side, the gas flame spreading heat into the air, the induction heat staying in the pot",
+     "label": "약 3배",
+     "fact": 2
+    }
+   ],
+   "careful": [
+    "Never say the glass 'doesn't get hot': the hot pot warms it. Say '유리판을 직접 데우지 않아요'",
+    "Efficiency numbers are ENERGY STAR estimates: always '약'",
+    "Write '2만~4만 번' (= 20,000-40,000) to match facts; 20-40 kHz is the high-power household range in one chip maker's note — say '보통'",
+    "The Infineon note oddly lists cast iron as non-ferromagnetic — if pans come up, mention only aluminium",
+    "No 'safer than gas' / indoor-air / health claims; no hands touching the cooktop in images"
+   ],
+   "checked": "2026-10-25"
+  },
+  {
+   "n": 953,
+   "series": "teardown",
+   "from": "2026-11-09",
+   "slug": "wireless-phone-charging",
+   "format": "teardown",
+   "look": "object",
+   "topic_ko": "무선충전 패드",
+   "topic_en": "Wireless phone charging pad",
+   "title_idea": "선도 없는데 전기가 건너가는 방법",
+   "teaser": "INSIDE A WIRELESS CHARGER",
+   "hook_idea": [
+    "선이 없는데",
+    "전기가 건너간다?"
+   ],
+   "why_idea": "왜 올려만 둬도 될까요?",
+   "steps": [
+    "충전 패드 코일에 1초에 11만~20.5만 번 바뀌는 전류가 흘러 자기장이 생겨요",
+    "몇 mm 위 폰 코일이 그 자기장 일부를 받아 전압이 생겨요(결합 0.3~0.6)",
+    "칩이 교류를 직류로 바꾸고(최고 93%), 폰은 초당 2킬로비트 신호로 '더·덜·그만'을 보내요"
+   ],
+   "result_idea": "최신 표준은 25W — 0%에서 50%까지 약 30분이에요",
+   "sources": [
+    "https://www.wirelesspowerconsortium.com/knowledge-base/magnetic-induction/how-qi-works/",
+    "https://www.wirelesspowerconsortium.com/media/vlxiylny/how-it-works.pptx",
+    "https://www.wirelesspowerconsortium.com/knowledge-base/magnetic-induction/coupling-factor/",
+    "https://www.ti.com/lit/ds/symlink/bq500212a.pdf",
+    "https://www.ti.com/lit/ds/symlink/bq51013b.pdf",
+    "https://www.wirelesspowerconsortium.com/qi/"
+   ],
+   "facts": [
+    {
+     "fact": "The original wireless-charging design delivers up to 5W by magnetic induction, a loosely coupled transformer working at a short distance of a few mm.",
+     "src": 1,
+     "evidence": "Up to 5W of power delivery More power at later versions Power transfer via magnetic induction Loosely coupled transformer At short distance (few mm)"
+    },
+    {
+     "fact": "Typical coupling factors between the charger coil and the phone coil are 0.3 to 0.6 (1 would mean all the magnetic flux reaches the receiver coil).",
+     "src": 2,
+     "evidence": "Coupling factors in the range of 0.3 to 0.6 are typical."
+    },
+    {
+     "fact": "In a common charger design the coil's resonant frequency is fixed at 100 kHz and power is regulated by changing the operating frequency between 110 kHz and 205 kHz (110,000-205,000 cycles in 1 second, converted); the higher the frequency, the lower the power.",
+     "src": 3,
+     "evidence": "the resonant frequency point is fixed at 100 kHz. Power transfer is regulated by changing the operating frequency between 110 kHz to 205 kHz."
+    },
+    {
+     "fact": "The phone sends control messages back to the charger by load modulation at a speed of 2 Kbit/s, so the charger can adapt the power.",
+     "src": 1,
+     "evidence": "Communication (Data-Format) Speed: 2 Kbit/s"
+    },
+    {
+     "fact": "A receiver chip in the phone turns the coil's AC into DC with up to 93% overall peak AC-DC efficiency.",
+     "src": 4,
+     "evidence": "93% Overall peak AC-DC efficiency"
+    },
+    {
+     "fact": "The newest 25W version of the standard can charge a smartphone battery from 0 to 50% in about 30 minutes.",
+     "src": 5,
+     "evidence": "can safely charge a smartphone battery from 0 to 50% in about 30 minutes"
+    },
+    {
+     "fact": "The 25W version delivers nearly 70% more charging power than the earlier 15W version.",
+     "src": 5,
+     "evidence": "delivering nearly 70% more charging power"
+    },
+    {
+     "fact": "The standard was first launched in 2010, and over 13,000 certified products are on the market.",
+     "src": 5,
+     "evidence": "Initially launched in 2010, there are over 13,000 Qi Certified products in the market today"
+    }
+   ],
+   "mechanism_refs": [
+    {
+     "note": "AC in the transmitter coil makes a magnetic field that induces a voltage in the receiver coil",
+     "src": 0,
+     "evidence": "An alternating current in the transmitter coil generates a magnetic field which induces a voltage in the receiver coil."
+    },
+    {
+     "note": "The phone must be able to shut down the transmitter when the battery is full, so it sends control signals",
+     "src": 0,
+     "evidence": "the phone must be able to shut down the transmitter when the battery is full"
+    }
+   ],
+   "beat_ideas": [
+    {
+     "beat": "hook",
+     "view": "cutaway",
+     "img": "a smartphone lying on a round charging pad, both sliced open like a cake, two flat copper coils facing each other across a small gap",
+     "label": "코일 두 개",
+     "fact": 0
+    },
+    {
+     "beat": "why",
+     "view": "cutaway",
+     "img": "a smartphone hovering a few millimeters above a round charging pad, glowing magnetic field loops between them",
+     "label": "몇 mm 틈",
+     "fact": 0
+    },
+    {
+     "beat": "step1",
+     "view": "cutaway",
+     "img": "a round charging pad with a quarter wedge cut away, a flat spiral copper coil glowing in the center",
+     "label": "송신 코일",
+     "fact": 2
+    },
+    {
+     "beat": "step2",
+     "view": "cutaway",
+     "img": "a smartphone sliced open from the back, a thin flat copper coil glowing in the center with magnetic field lines passing through it",
+     "label": "수신 코일",
+     "fact": 1
+    },
+    {
+     "beat": "step3",
+     "view": "cutaway",
+     "img": "a smartphone cut open from the back, a tiny chip next to the coil and the battery, small glowing pulses going back down to the pad",
+     "label": "제어 칩",
+     "fact": 3
+    },
+    {
+     "beat": "result",
+     "view": "cutaway",
+     "img": "a smartphone battery cut open, glowing exactly half full",
+     "label": "50%까지",
+     "fact": 5
+    }
+   ],
+   "careful": [
+    "Don't name the standard's trademark or show its mark on screen: say '무선충전 국제 표준'",
+    "100 kHz / 110~205kHz come from one common charger chip for an older version of the standard: say '흔한 방식'",
+    "Write '11만~20.5만 번' (= 110,000-205,000) so the number check matches",
+    "Coupling 0.3~0.6 is not an efficiency: never turn it into '30~60%만 전달' or '손실 40%'",
+    "The source says 'safely charge' — don't repeat safety claims; 0→50% in about 30 min is the standard body's claim for the newest version, not every phone",
+    "Don't suggest putting coins/metal on pads or opening phones"
+   ],
+   "checked": "2026-10-25"
+  },
+  {
+   "n": 954,
+   "series": "teardown",
+   "from": "2026-11-09",
+   "slug": "power-bank-battery",
+   "format": "teardown",
+   "look": "object",
+   "topic_ko": "보조배터리(리튬이온 전지)",
+   "topic_en": "Power bank (lithium-ion cells)",
+   "title_idea": "보조배터리 속 0.025mm 벽의 정체",
+   "teaser": "INSIDE A POWER BANK",
+   "hook_idea": [
+    "보조배터리 속 벽",
+    "0.025mm라고?"
+   ],
+   "why_idea": "왜 이 벽이 중요할까요?",
+   "steps": [
+    "충전하면 리튬 이온이 음극 탄소층 사이에 숨어요 — 바깥 전자 1개를 내준 이온이에요",
+    "쓸 때 이온은 분리막 구멍(약 40%)을 지나고, 전자는 바깥 회로로 돌아 약 4V를 내요",
+    "너무 뜨거워 130°C 가까이 되면 분리막 속 층이 녹아 구멍을 막아요"
+   ],
+   "result_idea": "비행기엔 100Wh 이하만, 짐칸 말고 기내에 들고 타요",
+   "sources": [
+    "https://www.nobelprize.org/prizes/chemistry/2019/popular-information/",
+    "https://publikationen.bibliothek.kit.edu/1000162410/157161045",
+    "https://www.faa.gov/hazmat/packsafe/lithium-batteries"
+   ],
+   "facts": [
+    {
+     "fact": "A lithium-ion battery with lithium-cobalt oxide in the cathode produces about four volts (4 V).",
+     "src": 0,
+     "evidence": "produces a remarkable four volts"
+    },
+    {
+     "fact": "Lithium has just one (1) electron in its outer electron shell; it readily gives it up, forming a positively charged lithium ion.",
+     "src": 0,
+     "evidence": "It has just one electron in its outer electron shell"
+    },
+    {
+     "fact": "The first lithium-ion batteries went on sale in 1991.",
+     "src": 0,
+     "evidence": "In 1991, a major Japanese electronics company started selling the first lithium-ion batteries"
+    },
+    {
+     "fact": "In consumer-electronics batteries the separator membrane between the electrodes is generally below 25 μm thick (0.025 mm, converted).",
+     "src": 1,
+     "evidence": "The separator thickness for the consumer electronics market is generally set below 25 μm to minimize both cost and size"
+    },
+    {
+     "fact": "Common PE and PP separators have a porosity of around 40%.",
+     "src": 1,
+     "evidence": "The porosity of PE and PP separators is calculated to be around 40%"
+    },
+    {
+     "fact": "In a trilayer separator, when the cell temperature nears the melting point of PE (130 °C), the inner PE layer melts and closes its pores, stopping ion transport between the electrodes.",
+     "src": 1,
+     "evidence": "when the cell temperature becomes close to the melting point of PE (130 ◦C), the inner PE layer melts down, converting the porous layer into a nonporous structure"
+    },
+    {
+     "fact": "US airline rules limit passengers' lithium-ion batteries to 100 watt hours (Wh) per battery, and spare batteries including power banks must be in carry-on baggage only.",
+     "src": 2,
+     "evidence": "Lithium ion (rechargeable) batteries are limited to a rating of 100 watt hours (Wh) per battery."
+    },
+    {
+     "fact": "With airline approval, passengers may carry up to two spare larger lithium-ion batteries of 101-160 Wh.",
+     "src": 2,
+     "evidence": "passengers may also carry up to two spare larger lithium ion batteries (exceeding 101–160 Wh)"
+    }
+   ],
+   "mechanism_refs": [
+    {
+     "note": "Lithium ions flow back and forth between the electrodes, giving a long life",
+     "src": 0,
+     "evidence": "the lithium ions flow back and forth between the electrodes"
+    },
+    {
+     "note": "Lithium ions can be held between the molecular layers of graphite (carbon)",
+     "src": 0,
+     "evidence": "lithium ions could be intercalated in the molecular layers in graphite"
+    },
+    {
+     "note": "Spare lithium batteries and power banks go in carry-on baggage only",
+     "src": 2,
+     "evidence": "must be carried in carry-on baggage only"
+    }
+   ],
+   "beat_ideas": [
+    {
+     "beat": "hook",
+     "view": "cutaway",
+     "img": "a portable power bank sliced open like a cake, rows of cylindrical cells inside, one cell cut open showing thin rolled layers",
+     "label": "얇은 분리막",
+     "fact": 3
+    },
+    {
+     "beat": "why",
+     "view": "cutaway",
+     "img": "one cylindrical battery cell sliced open lengthwise, tightly rolled thin layers like a jelly roll",
+     "label": "돌돌 만 층",
+     "fact": 3
+    },
+    {
+     "beat": "step1",
+     "view": "cutaway",
+     "img": "a cutaway battery layer stack, small glowing balls sliding in between stacked dark carbon sheets",
+     "label": "탄소 층",
+     "fact": 1
+    },
+    {
+     "beat": "step2",
+     "view": "cutaway",
+     "img": "a cutaway battery layer stack, a thin white porous film in the middle with small glowing balls passing through its tiny pores, a wire loop outside carrying a current",
+     "label": "분리막 구멍",
+     "fact": 4
+    },
+    {
+     "beat": "step3",
+     "view": "cutaway",
+     "img": "a cutaway thin three-layer film, the middle layer melting smooth and sealing its tiny pores",
+     "label": "녹아서 막힘",
+     "fact": 5
+    },
+    {
+     "beat": "result",
+     "view": "scene",
+     "img": "a small power bank resting inside an open carry-on bag on an airplane seat",
+     "label": "기내 휴대",
+     "fact": 6
+    }
+   ],
+   "careful": [
+    "Never tell viewers to open, puncture, heat or modify a battery; the cutaway is illustration only",
+    "Don't call batteries dangerous or safe; the 130°C shutdown layer is one design (trilayer), not in every cell — say '이런 분리막은'",
+    "'Below 25 μm' is a typical upper bound: say '0.025mm 이하' / '약'",
+    "100Wh and carry-on only are US FAA rules; Korean rules are similar but separate — say '항공 규정'",
+    "4V: say '약 4V' (no other voltage numbers — they aren't in facts)",
+    "No fire, smoke or explosion imagery; no real incidents"
+   ],
+   "checked": "2026-10-25"
+  },
+  {
+   "n": 955,
+   "series": "teardown",
+   "from": "2026-11-09",
+   "slug": "hepa-air-purifier",
+   "format": "teardown",
+   "look": "object",
+   "topic_ko": "공기청정기 HEPA 필터",
+   "topic_en": "Air purifier HEPA filter",
+   "title_idea": "공기청정기가 제일 못 잡는 먼지 크기",
+   "teaser": "INSIDE A HEPA FILTER",
+   "hook_idea": [
+    "제일 잡기 힘든 먼지",
+    "제일 작은 게 아니다?"
+   ],
+   "why_idea": "왜 작은 먼지가 더 잘 잡혀요?",
+   "steps": [
+    "0.5mm 두께 필터 속에 굵기 2~500nm 유리섬유가 수백 겹 쌓여 있어요",
+    "큰 먼지는 공기 길이 휠 때 못 따라가 섬유에 박혀 붙어요",
+    "아주 작은 먼지는 공기 분자에 치여 지그재그 — 5nm까지 섬유에 걸려요"
+   ],
+   "result_idea": "빠져나가기 제일 쉬운 건 약 0.3μm. 그래도 99.97%를 잡아요",
+   "sources": [
+    "https://www.epa.gov/indoor-air-quality-iaq/what-hepa-filter",
+    "https://ntrs.nasa.gov/api/citations/20170005166/downloads/20170005166.pdf"
+   ],
+   "facts": [
+    {
+     "fact": "A HEPA filter can theoretically remove at least 99.97% of dust, pollen, mold, bacteria and other airborne particles with a size of 0.3 microns (µm).",
+     "src": 0,
+     "evidence": "This type of air filter can theoretically remove at least 99.97% of dust, pollen, mold, bacteria, and other airborne particles with a size of 0.3 microns (µm)."
+    },
+    {
+     "fact": "The 0.3-micron specification is the worst case, the most penetrating particle size (MPPS); particles that are larger or smaller are trapped with even higher efficiency.",
+     "src": 0,
+     "evidence": "The diameter specification of 0.3 microns corresponds to the worst case; the most penetrating particle size (MPPS). Particles that are larger or smaller are trapped with even higher efficiency."
+    },
+    {
+     "fact": "For typical HEPA filters the most penetrating particle size varies from 200 to 300 nm (0.2-0.3 µm, converted), depending on flow rate.",
+     "src": 1,
+     "evidence": "The MPPS for typical HEPA filters varies from 200 to 300 nm, depending on flow rate."
+    },
+    {
+     "fact": "HEPA filter media is usually made with borosilicate (glass) microfibers with diameters from 2 to 500 nm.",
+     "src": 1,
+     "evidence": "High-efficiency particulate air (HEPA) filter media is usually made with borosilicate microfibers with diameters from 2 to 500 nm."
+    },
+    {
+     "fact": "A typical HEPA media is under 0.508 mm (about 0.5 mm, converted) thick, yet holds several hundred layers of fibers.",
+     "src": 1,
+     "evidence": "A typical HEPA media is usually under 0.508 mm (0.020 in) thick."
+    },
+    {
+     "fact": "Large particles are caught mainly by inertial impaction, and adhesion forces between small particles (<10 µm) and fiber surfaces keep collected particles on the fibers.",
+     "src": 1,
+     "evidence": "Adhesion forces (Van der Waals, electrostatics, and capillary) between small particles (<10 µm) and the fiber surfaces ensures collected particles stay on the fibers."
+    },
+    {
+     "fact": "Very small particles are knocked off the airflow path by molecular collisions (Brownian motion) and touch fibers; data indicate this capture theory holds for particles down to 5 nm in diameter.",
+     "src": 1,
+     "evidence": "this theory of filtration holds true for particulate matter down to 5 nm in diameter"
+    }
+   ],
+   "mechanism_refs": [
+    {
+     "note": "Media has several hundred fiber layers, so open spaces in one layer are covered by the layers behind",
+     "src": 1,
+     "evidence": "the media is comprised of several hundred layers of fibers"
+    },
+    {
+     "note": "Three main capture mechanisms: inertial impaction, interception, diffusion",
+     "src": 1,
+     "evidence": "three basic flow-related capturing mechanisms known as the inertial impaction, interception, and diffusion mechanisms"
+    },
+    {
+     "note": "Very small particles move by Brownian motion, knocked by molecular collisions",
+     "src": 1,
+     "evidence": "very small diameter particles, as shown in the bottom streamline, are more susceptible to Brownian motion"
+    }
+   ],
+   "beat_ideas": [
+    {
+     "beat": "hook",
+     "view": "cutaway",
+     "img": "an air purifier sliced open like a cake, a thick pleated white filter folded like an accordion in the center",
+     "label": "주름 필터",
+     "fact": 0
+    },
+    {
+     "beat": "why",
+     "view": "cutaway",
+     "img": "a pleated filter sheet cut open, a big dust ball, a medium speck and a tiny speck flying toward a mesh of thin fibers",
+     "label": "세 가지 먼지",
+     "fact": 1
+    },
+    {
+     "beat": "step1",
+     "view": "cutaway",
+     "img": "a very thin white filter sheet sliced open showing hundreds of stacked layers of fine glass fibers crossing each other",
+     "label": "유리섬유 층",
+     "fact": 3
+    },
+    {
+     "beat": "step2",
+     "view": "cutaway",
+     "img": "a single fiber in the center with airflow lines bending around it, a large dust particle going straight and crashing into the fiber",
+     "label": "관성 충돌",
+     "fact": 5
+    },
+    {
+     "beat": "step3",
+     "view": "cutaway",
+     "img": "a single fiber in the center with a tiny particle zigzagging on a random path until it touches the fiber surface",
+     "label": "지그재그",
+     "fact": 6
+    },
+    {
+     "beat": "result",
+     "view": "cutaway",
+     "img": "a pleated filter cut open, almost all glowing particles stuck on the fibers and one tiny speck slipping through",
+     "label": "약 0.3μm",
+     "fact": 1
+    }
+   ],
+   "careful": [
+    "99.97% is the HEPA definition ('theoretically', EPA) — not a promise for every purifier, room or fan speed",
+    "No health claims (allergy, virus, disease, '깨끗한 공기 = 건강'); EPA's list mentions bacteria — don't turn it into protection claims",
+    "EPA says 0.3 µm; NASA says MPPS 200-300 nm depending on flow — say '약 0.3μm'",
+    "0.5mm is converted from 0.508 mm: say '약 0.5mm'",
+    "No brand or 'true HEPA'-style marketing words"
+   ],
+   "checked": "2026-10-25"
+  },
+  {
+   "n": 956,
+   "series": "teardown",
+   "from": "2026-11-09",
+   "slug": "refrigerator",
+   "format": "teardown",
+   "look": "object",
+   "topic_ko": "냉장고",
+   "topic_en": "Refrigerator (refrigerant cycle)",
+   "title_idea": "냉장고 속 액체는 영하에서 끓는다",
+   "teaser": "INSIDE A REFRIGERATOR",
+   "hook_idea": [
+    "냉장고 속 액체",
+    "영하 11도에 끓는다?"
+   ],
+   "why_idea": "끓는데 왜 차가워져요?",
+   "steps": [
+    "냉동실 벽 속 관에서 냉매가 끓으며 안쪽 열을 빼앗아요(보통 공기압이면 영하 11도쯤에 끓어요)",
+    "압축기가 그 기체를 꽉 눌러 뜨겁게 만들어요 — 냉매는 회로 하나에 최대 150g이에요",
+    "뒤·아래 응축기 관이 그 열을 방으로 버리고, 냉매는 다시 액체가 돼요"
+   ],
+   "result_idea": "그래서 안은 4도 아래, 냉동실은 영하 18도예요",
+   "sources": [
+    "https://webbook.nist.gov/cgi/cbook.cgi?ID=C75285&Mask=4",
+    "https://hyperphysics.gsu.edu/hbase/thermo/refrig.html",
+    "https://www.govinfo.gov/content/pkg/FR-2018-08-08/html/2018-16773.htm",
+    "https://www.epa.gov/snap/substitutes-household-refrigerators-and-freezers",
+    "https://basc.pnnl.gov/diy-guides/check-refrigerator-temperature"
+   ],
+   "facts": [
+    {
+     "fact": "Isobutane (also listed as R 600a) has an average boiling point of 262 K at normal pressure (about -11 °C, converted).",
+     "src": 0,
+     "evidence": "T boil 262. ± 2. K"
+    },
+    {
+     "fact": "A 2018 EPA rule adopts a standard limiting each separate refrigerant circuit of a household refrigerator (compressor, condenser, evaporator and piping) to 150 grams (5.3 ounces) of flammable refrigerant; the earlier limit was 57 grams.",
+     "src": 2,
+     "evidence": "limits the charge size for each separate refrigerant circuit (i.e., compressor, condenser, evaporator, and refrigerant piping) to 150 grams (5.3 ounces)"
+    },
+    {
+     "fact": "EPA lists R-600a (isobutane) as acceptable, with use conditions, for new household refrigerators and freezers, with a global warming potential (GWP) of 3.",
+     "src": 3,
+     "evidence": "R-600a (Isobutane) N 0 3 A3"
+    },
+    {
+     "fact": "The older refrigerant HFC-134a has a GWP of 1,430 and is unacceptable in new household refrigerators as of January 1, 2021.",
+     "src": 3,
+     "evidence": "HFC-134a R/N 0 1,430 A1"
+    },
+    {
+     "fact": "Refrigerator temperatures should be kept below 40 °F (4 °C) and freezer temperatures at 0 °F (-18 °C) or lower.",
+     "src": 4,
+     "evidence": "refrigerator temperatures should be kept below 40°F (4°C). To ensure food quality, freezer temperatures should be kept at 0°F (-18°C) or lower."
+    }
+   ],
+   "mechanism_refs": [
+    {
+     "note": "Refrigerant liquid evaporates and extracts energy from the cold area, then is compressed and condenses in the hot area, dumping its heat",
+     "src": 1,
+     "evidence": "a refrigerant liquid is forced to evaporate and extract energy from the cold area. Then it is compressed and forced to condense in the hot area, dumping its heat of vaporization into the hot area."
+    },
+    {
+     "note": "The area behind a running refrigerator is warmer than the room: it exhausts the heat it took",
+     "src": 1,
+     "evidence": "The refrigerator is taking energy from the freezing compartment, making it colder, and exhausting that heat to the room"
+    },
+    {
+     "note": "Condenser coils sit on the bottom or back and release the fridge's heat",
+     "src": 4,
+     "evidence": "The condenser coils, which are located on the bottom or back of your fridge"
+    }
+   ],
+   "beat_ideas": [
+    {
+     "beat": "hook",
+     "view": "cutaway",
+     "img": "a refrigerator sliced open like a cake, thin copper tubes running inside the back wall with a pale glowing liquid bubbling inside them",
+     "label": "끓는 냉매",
+     "fact": 0
+    },
+    {
+     "beat": "why",
+     "view": "cutaway",
+     "img": "a refrigerator with a quarter wedge cut away, frosty blue cold air inside and warm orange air glowing at the back",
+     "label": "뒤는 따뜻",
+     "fact": null
+    },
+    {
+     "beat": "step1",
+     "view": "cutaway",
+     "img": "a thin metal tube inside a freezer wall cut open, liquid boiling into bubbles and pulling blue cold out of the surrounding air",
+     "label": "증발기",
+     "fact": 0
+    },
+    {
+     "beat": "step2",
+     "view": "cutaway",
+     "img": "a small round black compressor at the bottom back of a refrigerator sliced open, a piston squeezing glowing hot gas",
+     "label": "압축기",
+     "fact": 1
+    },
+    {
+     "beat": "step3",
+     "view": "cutaway",
+     "img": "the back of a refrigerator with a zigzag black tube grid glowing warm orange in the center, heat waves rising into the room",
+     "label": "응축기 관",
+     "fact": null
+    },
+    {
+     "beat": "result",
+     "view": "cutaway",
+     "img": "a refrigerator sliced open like a cake, the fresh food section pale blue, the freezer section frosty white",
+     "label": "영하 18도",
+     "fact": 4
+    }
+   ],
+   "careful": [
+    "Refrigerant type varies by model; isobutane is one common choice — say '많이 쓰는 냉매 이소부탄' never 'every fridge'",
+    "-11°C is the boiling point at normal air pressure; in the evaporator the pressure is lower, so the real tube temperature differs — keep '보통 공기압이면'",
+    "150 g is the US (EPA/UL) per-circuit maximum, not what a given fridge holds: say '최대'",
+    "Don't make flammability scary; don't tell viewers to touch the back coils or open the sealed system",
+    "4°C / -18°C are recommended settings (PNNL), not guarantees"
+   ],
+   "checked": "2026-10-25"
+  },
+  {
+   "n": 957,
+   "series": "teardown",
+   "from": "2026-11-09",
+   "slug": "dishwasher",
+   "format": "teardown",
+   "look": "object",
+   "topic_ko": "식기세척기",
+   "topic_en": "Dishwasher",
+   "title_idea": "식기세척기가 손설거지보다 물을 덜 쓰는 이유",
+   "teaser": "INSIDE A DISHWASHER",
+   "hook_idea": [
+    "식기세척기 물 12L",
+    "손보다 적다고?"
+   ],
+   "why_idea": "왜 물이 덜 들까요?",
+   "steps": [
+    "바닥에 물을 약 12L만 받아 모아요",
+    "히터가 그 물을 약 60도까지 데워요",
+    "펌프가 물을 걸러 가며 회전 팔 분사구로 세게 뿌려요"
+   ],
+   "result_idea": "손설거지보다 1년에 물 약 31,800L를 아껴요",
+   "sources": [
+    "https://www.energystar.gov/products/dishwashers",
+    "https://www.energystar.gov/products/dishwashers/key_product_criteria"
+   ],
+   "facts": [
+    {
+     "fact": "A standard-size ENERGY STAR certified dishwasher may use at most 3.2 gallons of water per cycle (about 12 liters, converted).",
+     "src": 1,
+     "evidence": "≤ 3.2 gallons/cycle"
+    },
+    {
+     "fact": "Certified dishwashers boost water temperatures to 140 degrees (°F; about 60 °C, converted).",
+     "src": 0,
+     "evidence": "they boost water temperatures to 140 degrees"
+    },
+    {
+     "fact": "A new certified dishwasher uses less than half as much energy as washing dishes by hand and saves 8,400 gallons of water each year (about 31,800 liters in 1 year, converted).",
+     "src": 0,
+     "evidence": "uses less than half as much energy as washing dishes by hand and saves 8,400 gallons of water each year"
+    },
+    {
+     "fact": "Using a certified dishwasher can save over 230 hours of personal time a year, almost 10 days.",
+     "src": 0,
+     "evidence": "can save you over 230 hours of personal time over the course of a year. That's almost 10 days!"
+    }
+   ],
+   "mechanism_refs": [
+    {
+     "note": "A soil sensor detects whether the water coming off the dishes is dirty or clean",
+     "src": 0,
+     "evidence": "the dishwasher has a soil-sensor and is able to detect if the water coming off the dishes is dirty or clean"
+    },
+    {
+     "note": "Certified models use soil sensors, improved water filtration and more efficient jets to cut water and energy use",
+     "src": 0,
+     "evidence": "new ENERGY STAR certified models include several innovations like soil sensors, improved water filtration, more efficient jets, and dish rack designs that reduce energy and water consumption"
+    }
+   ],
+   "beat_ideas": [
+    {
+     "beat": "hook",
+     "view": "cutaway",
+     "img": "a dishwasher sliced open like a cake, plates standing in racks, a small shallow pool of water at the bottom",
+     "label": "바닥 물",
+     "fact": 0
+    },
+    {
+     "beat": "why",
+     "view": "cutaway",
+     "img": "a dishwasher with a quarter wedge cut away, water jets spraying up from below onto plates",
+     "label": "적은 물",
+     "fact": 0
+    },
+    {
+     "beat": "step1",
+     "view": "cutaway",
+     "img": "the bottom of a dishwasher tub sliced open, a shallow pool of water collecting in a small round basin in the center",
+     "label": "물 약 12L",
+     "fact": 0
+    },
+    {
+     "beat": "step2",
+     "view": "cutaway",
+     "img": "the bottom of a dishwasher cut open, a glowing heating element under shallow water",
+     "label": "히터",
+     "fact": 1
+    },
+    {
+     "beat": "step3",
+     "view": "cutaway",
+     "img": "a dishwasher sliced open, a pump at the bottom pushing water up through a filter into spinning spray arms with fanned jets",
+     "label": "회전 팔",
+     "fact": null
+    },
+    {
+     "beat": "result",
+     "view": "cutaway",
+     "img": "a dishwasher sliced open with a small glowing pool of water inside, next to a huge transparent water tank",
+     "label": "1년 31,800L",
+     "fact": 2
+    }
+   ],
+   "careful": [
+    "3.2 gallons is the ENERGY STAR maximum for standard-size models (US): say '약 12L 이하'",
+    "8,400 gallons/year vs hand washing is ENERGY STAR's estimate and depends on how people hand-wash: '약'",
+    "140 degrees on the page is °F: convert to about 60°C, never write '140도'",
+    "Write '31,800L' (not '3만 1,800L') so the number check matches",
+    "Don't repeat 'disinfection / better cleaning' as a health claim",
+    "Sources don't give the arm count or say the same water is reused: say only '물을 걸러 가며 분사구로 뿌린다'"
+   ],
+   "checked": "2026-10-25"
+  },
+  {
+   "n": 958,
+   "series": "teardown",
+   "from": "2026-11-09",
+   "slug": "led-bulb",
+   "format": "teardown",
+   "look": "object",
+   "topic_ko": "LED 전구",
+   "topic_en": "LED light bulb",
+   "title_idea": "하얀 LED 전구의 속은 파랗다",
+   "teaser": "INSIDE AN LED BULB",
+   "hook_idea": [
+    "하얀 LED 전구",
+    "사실 파란 빛?"
+   ],
+   "why_idea": "왜 파란 빛일까요?",
+   "steps": [
+    "백열등은 에너지 90%가 열 — LED 칩은 전자와 '구멍'이 만나 전기를 바로 빛으로 바꿔요",
+    "질화갈륨 칩이 파란 빛을 내요 — 30년 동안 못 만들던 색이에요",
+    "겉의 형광체가 파란 빛 일부를 빨강·초록으로 바꾸고, 섞이면 흰빛이에요"
+   ],
+   "result_idea": "백열등은 1,000시간, LED는 100,000시간까지 가요",
+   "sources": [
+    "https://www.nobelprize.org/prizes/physics/2014/popular-information/",
+    "https://www.energy.gov/sites/prod/files/guide_to_energy_efficient_lighting.pdf"
+   ],
+   "facts": [
+    {
+     "fact": "Incandescent bulbs tend to last 1,000 hours, fluorescent lamps around 10,000 hours, and LEDs can last for 100,000 hours (100 times the incandescent figure, converted).",
+     "src": 0,
+     "evidence": "Incandescent bulbs tend to last 1,000 hours, as heat destroys the filament, while fluorescent lamps usually last around 10,000 hours. LEDs can last for 100,000 hours"
+    },
+    {
+     "fact": "The most recent LED efficiency record is just over 300 lumen/watt, compared to 16 for regular light bulbs and close to 70 for fluorescent lamps.",
+     "src": 0,
+     "evidence": "The most recent record is just over 300 lumen/watt, which can be compared to 16 for regular light bulbs and close to 70 for fluorescent lamps."
+    },
+    {
+     "fact": "About one fourth (1/4) of world electricity consumption is used for lighting.",
+     "src": 0,
+     "evidence": "about one fourth of world electricity consumption is used for lighting purposes"
+    },
+    {
+     "fact": "Bright blue light remained a challenge for three decades (about 30 years, converted) until it was made with gallium nitride.",
+     "src": 0,
+     "evidence": "blue light remained a challenge for three decades"
+    },
+    {
+     "fact": "Incandescent bulbs waste 90% of their energy as heat.",
+     "src": 1,
+     "evidence": "Incandescent bulbs are based on old technology and waste 90% of their energy as heat."
+    },
+    {
+     "fact": "LEDs use at least 75 percent less energy than incandescent bulbs and last 25 times longer.",
+     "src": 1,
+     "evidence": "LEDs use at least 75 percent less energy than incandescent bulbs"
+    }
+   ],
+   "mechanism_refs": [
+    {
+     "note": "LED layers: an n-type layer with extra electrons and a p-type layer with extra holes; they recombine in the active layer and make light",
+     "src": 0,
+     "evidence": "When electrons and holes meet they recombine and light is create"
+    },
+    {
+     "note": "White light can be made by blue light exciting a phosphor that shines red and green",
+     "src": 0,
+     "evidence": "One way is to use blue light to excite a phosphor so that it shines in red and green. When all colours come together, white light is produced."
+    },
+    {
+     "note": "In an LED electricity is directly converted into photons",
+     "src": 0,
+     "evidence": "In the LED, electricity is directly converted into light particles, photons"
+    }
+   ],
+   "beat_ideas": [
+    {
+     "beat": "hook",
+     "view": "cutaway",
+     "img": "an LED light bulb sliced open like a cake, a tiny glowing blue chip in the center under a yellow coating",
+     "label": "파란 칩",
+     "fact": 3
+    },
+    {
+     "beat": "why",
+     "view": "cutaway",
+     "img": "a white glowing LED bulb with a quarter wedge cut away, the inside glowing deep blue",
+     "label": "속은 파랑",
+     "fact": null
+    },
+    {
+     "beat": "step1",
+     "view": "cutaway",
+     "img": "a tiny semiconductor chip sliced open, two stacked layers with small glowing particles meeting in a thin bright middle layer",
+     "label": "발광층",
+     "fact": 4
+    },
+    {
+     "beat": "step2",
+     "view": "cutaway",
+     "img": "a tiny square crystal chip glowing intense blue on a small metal base in the center",
+     "label": "질화갈륨 칩",
+     "fact": 3
+    },
+    {
+     "beat": "step3",
+     "view": "cutaway",
+     "img": "a tiny blue glowing chip under a dome of yellow powder coating, blue light turning into red and green light that mixes into white",
+     "label": "형광체",
+     "fact": null
+    },
+    {
+     "beat": "result",
+     "view": "cutaway",
+     "img": "an old filament bulb and an LED bulb sliced open side by side, the filament glowing hot orange and the LED chip cool and bright",
+     "label": "100배 오래",
+     "fact": 0
+    }
+   ],
+   "careful": [
+    "100,000 hours is 'can last' (Nobel page); DOE says 25 times longer — say '최대'",
+    "Don't say LEDs make no heat (the DOE guide's 'virtually no heat' is too strong; chips still need heat sinks) — only compare the incandescent 90% heat",
+    "No eye-health / blue-light-hazard claims",
+    "No laureate or company names on screen (real-person rule) — just '발명에 30년'",
+    "'파란 빛 + 형광체' is one of two white-LED methods (the other mixes red, green and blue chips) — say '흔한 방식'"
+   ],
+   "checked": "2026-10-25"
+  },
+  {
+   "n": 959,
+   "series": "teardown",
+   "from": "2026-11-09",
+   "slug": "quartz-watch",
+   "format": "teardown",
+   "look": "object",
+   "topic_ko": "쿼츠(전자) 손목시계",
+   "topic_en": "Quartz wristwatch",
+   "title_idea": "시계 속 수정은 1초에 32,768번 떤다",
+   "teaser": "INSIDE A QUARTZ WATCH",
+   "hook_idea": [
+    "시계 속 작은 돌",
+    "1초에 32,768번?"
+   ],
+   "why_idea": "왜 그렇게 많이 떨까요?",
+   "steps": [
+    "전지 전기를 걸면 수정이 살짝 휘어요 — 1880년대에 알려진 압전 효과예요",
+    "작은 수정 조각이 1초에 32,768번 떨며 박자를 만들어요",
+    "칩이 그 수를 반으로 15번 나누면 딱 1초 — 모터가 초침을 한 칸 밀어요"
+   ],
+   "result_idea": "싼 시계도 하루 오차가 보통 0.5초 안이에요",
+   "sources": [
+    "https://www.itc.gov.hk/en/quality/scl/met_user/time/tf3.html",
+    "https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=908250"
+   ],
+   "facts": [
+    {
+     "fact": "Nearly every quartz watch contains a quartz crystal oscillator at a nominal frequency of 32,768 Hz (32,768 vibrations in 1 second).",
+     "src": 0,
+     "evidence": "Nearly every quartz watch contains a quartz crystal oscillator at nominal frequency of 32768 Hz as a frequency reference."
+    },
+    {
+     "fact": "The 32,768 Hz frequency (2^15 Hz) became the standard for the quartz watch industry.",
+     "src": 1,
+     "evidence": "the 32768 Hz frequency became the standard for the quartz watch industry"
+    },
+    {
+     "fact": "The movement that set this standard used a 15-stage divider circuit: halving 32,768 fifteen (15) times gives 1 pulse per second (converted).",
+     "src": 1,
+     "evidence": "included a 15-stage CMOS divider circuit"
+    },
+    {
+     "fact": "Dividing the quartz frequency down to 1 Hz and using a stepper motor to move the hands became standard practice.",
+     "src": 1,
+     "evidence": "dividing to 1 Hz and using a stepper motor became standard practice"
+    },
+    {
+     "fact": "Even the least expensive quartz watches are usually accurate to within 0.5 s per day.",
+     "src": 1,
+     "evidence": "even the least expensive quartz watches are usually accurate to within 0.5 s per day"
+    },
+    {
+     "fact": "Piezoelectricity (a charge from pressure) was shown in 1880; in 1881 its inverse effect was shown: an electrical charge applied to a crystal makes it strain and change its shape.",
+     "src": 1,
+     "evidence": "In 1881, based on a theoretical suggestion by the French mathematician Gabriel Lippman, the Curies demonstrated that piezoelectricity had an inverse"
+    }
+   ],
+   "mechanism_refs": [
+    {
+     "note": "Inverse piezoelectric effect: applying charge makes the crystal strain and change shape",
+     "src": 1,
+     "evidence": "if an electrical charge was applied to the crystal, it would physically strain and change its shape"
+    },
+    {
+     "note": "The frequency had to be a power of two to get a one-second pulse at the end of the divider chain",
+     "src": 1,
+     "evidence": "the oscillator frequency had to be a power of two in order to produce a pulse with a period of one second at the end of the divider chain"
+    }
+   ],
+   "beat_ideas": [
+    {
+     "beat": "hook",
+     "view": "cutaway",
+     "img": "a wristwatch sliced open like a cake, a tiny silver capsule in the center holding a small quartz crystal",
+     "label": "수정 진동자",
+     "fact": 0
+    },
+    {
+     "beat": "why",
+     "view": "cutaway",
+     "img": "a tiny two-pronged quartz crystal glowing and vibrating, motion blur on its prongs",
+     "label": "떨리는 수정",
+     "fact": 0
+    },
+    {
+     "beat": "step1",
+     "view": "cutaway",
+     "img": "a tiny clear quartz crystal between two thin metal plates, gently bending as a small spark of electricity flows",
+     "label": "압전 효과",
+     "fact": 5
+    },
+    {
+     "beat": "step2",
+     "view": "cutaway",
+     "img": "a tiny two-pronged quartz crystal inside a cut-open metal capsule, prongs vibrating very fast",
+     "label": "1초 32,768번",
+     "fact": 0
+    },
+    {
+     "beat": "step3",
+     "view": "cutaway",
+     "img": "a wristwatch with a quarter wedge cut away, a tiny chip, a small coil motor and gears turning the second hand",
+     "label": "스텝 모터",
+     "fact": 3
+    },
+    {
+     "beat": "result",
+     "view": "cutaway",
+     "img": "a wristwatch cut open, gears and a coin battery inside, the second hand moving one tick",
+     "label": "하루 0.5초",
+     "fact": 4
+    }
+   ],
+   "careful": [
+    "No watch brands, model names or inventor names on screen (the NIST paper names several)",
+    "0.5 s/day is 'usually' for the cheapest quartz watches: say '보통'",
+    "Write '32,768번' exactly (not '3만 2,768번') so the number check matches",
+    "The two-prong tuning-fork shape is only mentioned for an early model in the sources; if unsure say '작은 수정 조각' (the image can still show the common two-prong shape)",
+    "'돌' in the hook is playful — quartz is a crystal (수정); say so in the why line"
+   ],
+   "checked": "2026-10-25"
+  },
+  {
+   "n": 960,
+   "series": "teardown",
+   "from": "2026-11-09",
+   "slug": "noise-cancelling-earbuds",
+   "format": "teardown",
+   "look": "object",
+   "topic_ko": "노이즈캔슬링 이어폰",
+   "topic_en": "Noise-cancelling earbuds",
+   "title_idea": "소리를 더했는데 더 조용해지는 이유",
+   "teaser": "INSIDE NOISE-CANCELLING EARBUDS",
+   "hook_idea": [
+    "소리를 더했는데",
+    "더 조용해진다?"
+   ],
+   "why_idea": "왜 조용해질까요?",
+   "steps": [
+    "바깥 마이크가 소음을 먼저 들어요 — 3kHz까지 잡아 최대 약 25dB 줄여요",
+    "칩이 소음을 위아래로 뒤집은 '반대 소리'를 만들어, 소음이 귀에 닿기 전에 스피커로 내보내요",
+    "귓속 마이크가 남은 소리를 다시 듣고 고쳐요 — 1kHz까지, 100Hz 아래 저음에 특히 강해요"
+   ],
+   "result_idea": "둘을 같이 쓰면 20Hz~3kHz에서 30dB 넘게 줄여요",
+   "sources": [
+    "https://www.eenewseurope.com/en/white_papers/active-noise-cancellation-trends-concepts-and-technical-challenges/",
+    "https://www.hsu-hh.de/ant/wp-content/uploads/sites/699/2019/01/Hybrid-Active-Noise-Control-Structures_-A-Short-Overview-Rivera-Nowak-Zoelzer.pdf",
+    "https://www.hsu-hh.de/ant/wp-content/uploads/sites/699/2018/08/ICSV25_full_paper_Rivera_Papantoni_Zoelzer.pdf"
+   ],
+   "facts": [
+    {
+     "fact": "Feed-forward noise cancelling, with a microphone on the outside, can cancel noise up to 3 kHz with properly designed acoustics.",
+     "src": 0,
+     "evidence": "Such systems can cancel noise up to 3 kHz with properly designed acoustics."
+    },
+    {
+     "fact": "Feed-forward systems show peak noise reduction of typically up to 25 dB.",
+     "src": 0,
+     "evidence": "feed-forward systems show superior peak performances (typically up to 25 dB)"
+    },
+    {
+     "fact": "Feedback systems, with the microphone inside next to the speaker, usually perform better at low frequencies (<100 Hz) and typically work up to 1 kHz.",
+     "src": 0,
+     "evidence": "Feedback systems usually have better low frequency performance (<100 Hz) but do not reach the bandwidth of feed-forward systems. Typically feed-back systems can work up to 1 kHz"
+    },
+    {
+     "fact": "Hybrid systems combining both reach the best noise-cancelling performance levels (>30 dB).",
+     "src": 0,
+     "evidence": "It allows you to achieve best ANC performance levels (>30 dB) and widest bandwidth."
+    },
+    {
+     "fact": "Hybrid systems typically work from 20 Hz up to 3 kHz and use two microphones per channel.",
+     "src": 0,
+     "evidence": "These systems typically show superior ANC performance from 20 Hz up to 3 kHz"
+    },
+    {
+     "fact": "A feedback controller effectively attenuates low frequencies up to 1 kHz.",
+     "src": 2,
+     "evidence": "it effectively attenuates low frequencies up to 1 kHz"
+    }
+   ],
+   "mechanism_refs": [
+    {
+     "note": "The control signal is digitally sign-inverted and fed to the speaker; an error microphone measures what is left",
+     "src": 1,
+     "evidence": "is digitally sign-inverted, fed to the speaker and measured again by the error microphone"
+    },
+    {
+     "note": "Causality: controller delay plus speaker-path delay must be no longer than the noise's own acoustic delay",
+     "src": 1,
+     "evidence": "the digital delay of the controller Wf(z) plus the acoustical delay of S(z) has to be smaller or equal to the acoustic delay of P (z)"
+    },
+    {
+     "note": "In feedback systems the microphone and speaker sit inside the ear capsule",
+     "src": 0,
+     "evidence": "The ANC microphone and the speaker are located inside the ear capsule"
+    }
+   ],
+   "beat_ideas": [
+    {
+     "beat": "hook",
+     "view": "cutaway",
+     "img": "a wireless earbud sliced open like a cake, a tiny round speaker, two tiny microphones and a small chip inside",
+     "label": "마이크 두 개",
+     "fact": 4
+    },
+    {
+     "beat": "why",
+     "view": "scene",
+     "img": "two glowing sound waves drawn as ribbons, one the upside-down mirror of the other, merging into a flat calm line",
+     "label": "소리+반대소리",
+     "fact": null
+    },
+    {
+     "beat": "step1",
+     "view": "cutaway",
+     "img": "a wireless earbud with a quarter wedge cut away, a tiny microphone on the outer shell catching incoming wavy sound",
+     "label": "바깥 마이크",
+     "fact": 0
+    },
+    {
+     "beat": "step2",
+     "view": "cutaway",
+     "img": "a tiny chip inside a cut-open earbud sending a flipped wave to a small round speaker",
+     "label": "계산 칩",
+     "fact": null
+    },
+    {
+     "beat": "step3",
+     "view": "cutaway",
+     "img": "a wireless earbud sliced open inside a clear ear canal model, a tiny inner microphone right next to the speaker",
+     "label": "귓속 마이크",
+     "fact": 2
+    },
+    {
+     "beat": "result",
+     "view": "cutaway",
+     "img": "a wireless earbud cut open, calm flat sound waves inside while rough waves stay outside",
+     "label": "30dB 넘게",
+     "fact": 3
+    }
+   ],
+   "careful": [
+    "dB values are typical figures from one noise-cancelling chip maker's white paper about headsets (not a test of any earbud): say '최대 약', '보통'",
+    "No hearing-health claims (protects ears, prevents hearing loss) and no volume advice",
+    "The anti-noise is the noise signal flipped (sign-inverted) — don't say it 'erases all sound'; voices and high pitches stay more",
+    "Don't explain dB as percent (30dB is not '30% quieter')",
+    "'Before the noise reaches the ear' paraphrases the delay rule in the HSU paper — keep it qualitative (no µs numbers; none are in facts)",
+    "No brand names, no ear close-ups of real people"
+   ],
+   "checked": "2026-10-25"
+  }
+ ]
+}

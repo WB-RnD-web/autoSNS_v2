@@ -242,8 +242,9 @@ ck("기간 10/15~11/07(양끝 포함 24일) · 항목 24개", (P.SCI_FROM, P.SCI
    and (P.SCI_TO - P.SCI_FROM).days + 1 == 24 == len(P.SCI_ORDER))
 ck("sci 편은 10/15 저녁(b) → 10/16 낮(a) → 10/17 저녁 … 번갈아(11/07 낮까지)", [P.sci_slot(d) for d in WIN] == ["b", "a"] * 12,
    [P.sci_slot(d) for d in WIN])
-ck("기간 밖(10/14·11/08)엔 sci 없음", P.sci_slot(D(10, 14)) is None and P.sci_slot(D(11, 8)) is None
-   and P.SCI not in [P.kind_for(d, sl) for d in (D(10, 14), D(11, 8)) for sl in P.slots_on(d)])
+with P.only_order():                          # ★10/25 sci 는 11/08 뒤로도 이어진다(open_plan) — 여기는 '항목이 바닥난 뒤'를 못 박는다
+    ck("기간 밖(10/14 · 항목이 바닥난 11/08)엔 sci 없음", P.sci_slot(D(10, 14)) is None and P.sci_slot(D(11, 8)) is None
+       and P.SCI not in [P.kind_for(d, sl) for d in (D(10, 14), D(11, 8)) for sl in P.slots_on(d)])
 ck("기간 안 날마다 한 편은 sci · 한 편은 골라보기(꼴이 다르다)",
    all(sorted(P.kind_for(d, sl) == P.SCI for sl in P.slots_on(d)) == [False, True] for d in WIN))
 TABLE = {  # 날짜: (낮 a, 저녁 b) — 보고·판정용으로 못 박는다(10/24 까지는 이미 정해진 과거 · 바뀌면 안 된다)
@@ -264,11 +265,13 @@ ck("골라보기 로테이션은 sci·병맛을 건너뛰고 한 꼴씩 그대�
 ck("회차(series_no)는 골라보기 편만 센다 — 1, 2, 3 … 빈틈 없이 · sci·병맛은 None",
    [P.series_no(d, sl) for d, sl, _ in picks] == list(range(1, len(picks) + 1))
    and all(P.series_no(d, sl) is None for d, sl, k in allp if not P.is_pick(k)))
-ck("10/15 낮 태어난 달 #10 · 10/16 저녁 그림 고르기 #11 · 10/24 저녁 밸런스 #19 · 11/08 낮 #20 · 저녁 #21",
-   (P.series_no(D(10, 15), "a"), P.series_no(D(10, 16), "b"), P.series_no(D(10, 24), "b"), P.series_no(D(11, 8), "a"),
-    P.series_no(D(11, 8), "b")) == (10, 11, 19, 20, 21))
-ck("11/08 부터 다시 하루 골라보기 두 편 — 10/24 밸런스 다음 꼴(태어난 달)부터", [P.kind_for(D(11, 8), sl) for sl in P.slots_on(D(11, 8))]
-   == ["birth", "pick"] and [P.kind_for(D(11, 9), sl) for sl in P.slots_on(D(11, 9))] == ["quiz", "card"])
+with P.only_order():
+    ck("10/15 낮 태어난 달 #10 · 10/16 저녁 그림 고르기 #11 · 10/24 저녁 밸런스 #19 · (항목이 바닥나면) 11/08 낮 #20 · 저녁 #21",
+       (P.series_no(D(10, 15), "a"), P.series_no(D(10, 16), "b"), P.series_no(D(10, 24), "b"), P.series_no(D(11, 8), "a"),
+        P.series_no(D(11, 8), "b")) == (10, 11, 19, 20, 21))
+    ck("항목이 바닥나면 11/08 부터 다시 하루 골라보기 두 편 — 10/24 밸런스 다음 꼴(태어난 달)부터",
+       [P.kind_for(D(11, 8), sl) for sl in P.slots_on(D(11, 8))] == ["birth", "pick"]
+       and [P.kind_for(D(11, 9), sl) for sl in P.slots_on(D(11, 9))] == ["quiz", "card"])
 ck("slot_of 는 기간 안에서도 하나로 정해진다(sci ↔ sci 편 · 골라보기 꼴 ↔ 그 편)",
    all(P.slot_of(d, k) == sl for d, sl, k in allp) and all(P.slot_of(d, P.SCI) == P.sci_slot(d) for d in WIN))
 try:
@@ -278,7 +281,8 @@ except ValueError:
     raised = True
 ck("sci 편엔 골라보기 순번이 없다(post_index ValueError)", raised)
 ck("sci 내용 순서 = SCI_ORDER(10/15 마리아나 101 · 10/28 남극 106 그대로 → 10/29~ 안 쓴 catalog 7개 → 901~903)",
-   [P.sci_n(d) for d in WIN] == list(P.SCI_ORDER) and P.sci_n(D(10, 14)) is None and P.sci_n(D(11, 8)) is None
+   [P.sci_n(d) for d in WIN] == list(P.SCI_ORDER) and P.sci_n(D(10, 14)) is None
+   and (P.sci_n(D(11, 8)) is None or P.sci_n(D(11, 8)) not in P.SCI_ORDER)
    and P.SCI_ORDER[:14] == (101, 201, 107, 102, 203, 104, 202, 105, 206, 109, 205, 103, 207, 106)
    and P.SCI_ORDER[14:] == (108, 110, 111, 112, 113, 114, 204, 901, 902, 903))
 ck("10/24 까지 sci 순서 그대로(이미 올린 편) · 10/25 205 · 10/29 108 · 11/07 903",
@@ -471,8 +475,9 @@ EXTRA = json.load(open(os.path.join(HERE, "sci_extra.json"), encoding="utf-8"))
 CAT = json.load(open(P.SHORTS, encoding="utf-8"))
 xs = (EXTRA.get("survival") or []) + (EXTRA.get("compare") or [])
 cat_ns = {e["n"] for e in (CAT.get("survival") or []) + (CAT.get("compare") or [])}
-ck("sci_extra: 3개 · n ≥ 901 · catalog 와 번호 안 겹침 · SCI_ORDER 끝 셋", sorted(e["n"] for e in xs) == [901, 902, 903]
-   and not cat_ns & {e["n"] for e in xs} and P.SCI_ORDER[-3:] == (901, 902, 903))
+ck("sci_extra: n ≥ 901 · 901~903 = SCI_ORDER 끝 셋 · 새 항목은 904~950 · 번호 안 겹침(catalog·서로)",
+   {901, 902, 903} <= {e["n"] for e in xs} and all(901 <= e["n"] <= 903 or P.SCI_OPEN_N0 <= e["n"] < P.TEARDOWN_N0 for e in xs)
+   and not cat_ns & {e["n"] for e in xs} and len({e["n"] for e in xs}) == len(xs) and P.SCI_ORDER[-3:] == (901, 902, 903))
 
 
 def _entry_ok(e: dict) -> bool:
@@ -687,8 +692,9 @@ BMTABLE = {  # 날짜: (낮 a, 저녁 b) — 보고·판정용
     D(10, 31): ("bm_animal", "sci"), D(11, 1): ("sci", "bm_paper"), D(11, 2): ("bm_paper", "sci"),
     D(11, 3): ("sci", "bm_animal"), D(11, 4): ("bm_animal", "sci"), D(11, 5): ("sci", "bm_paper"),
     D(11, 6): ("bm_paper", "sci"), D(11, 7): ("sci", "bm_animal"), D(11, 8): ("birth", "pick")}
-got_b = {d: (P.kind_for(d, "a"), P.kind_for(d, "b")) for d in BMTABLE}
-ck("10/25~11/08 편성표 그대로(병맛 = sci 가 아닌 편 · 11/08 골라보기 두 편)", got_b == BMTABLE,
+with P.only_order():                          # 11/08 은 sci 항목이 바닥났을 때 — 열린 항목이 있으면 그날 한 편은 sci(따로 본다)
+    got_b = {d: (P.kind_for(d, "a"), P.kind_for(d, "b")) for d in BMTABLE}
+ck("10/25~11/08 편성표 그대로(병맛 = sci 가 아닌 편 · 항목이 바닥나면 11/08 골라보기 두 편)", got_b == BMTABLE,
    {d.isoformat(): v for d, v in got_b.items() if v != BMTABLE[d]})
 ck("기간 밖(10/24·11/08)엔 병맛 없음 · 10/24 이전 꼴은 골라보기·sci 뿐", P.bm_kind(D(10, 24)) is None and P.bm_kind(D(11, 8)) is None
    and all(P.kind_for(d, sl) in P.FORMATS + (P.SCI,) for d, sl, _ in allp if d <= D(10, 24)))
@@ -946,6 +952,224 @@ ck("BM_WRITING: 두 꼴·견본·facts·부탁 금지·브레인롯·animal 복�
    all(w in wb for w in ("bm_paper", "bm_animal", "bm_paper_wombat", "bm_catalog.json", "src_n", "facts", "부탁", "브레인롯", "animal", "띠용", "0.5초",
                          "check", "due: false")))
 ck("PICK_WRITING: 병맛 날은 BM_WRITING 을 따른다 · next 의 writing", "BM_WRITING.md" in wr and "writing" in wr)
+
+print("── sci 끝없이(open_plan · 11/08~) · 뜯어보기(11/10~ 화·금) ──")
+import contextlib  # noqa: E402
+import copy  # noqa: E402
+
+EXTRA_REAL = json.load(open(P.SCI_EXTRA, encoding="utf-8"))
+SHORTS_REAL = json.load(open(P.SHORTS, encoding="utf-8"))
+
+
+def stub(n, frm, series=None, slug=None):
+    """시험용 가짜 항목(파일에 안 남는다) — entry_errs 를 통과하는 모양 · 숫자는 facts 에."""
+    e = {"n": n, "slug": slug or f"stub-{n}", "format": "survival", "look": "earth", "title_idea": f"Stub {n}",
+         "situation": "STUB", "teaser": "STUB", "sources": [f"https://example.org/stub-{n}-a", f"https://example.org/stub-{n}-b"],
+         "facts": [{"fact": "Stub: the magnetron makes waves at 2.45 GHz.", "src": 0},
+                   {"fact": "Stub: the waves bounce off the metal walls.", "src": 0},
+                   {"fact": "Stub: the turntable turns about 5 times a minute.", "src": 1}],
+         "beat_ideas": [{"t": "--:--", "what": "waves at 2.45 GHz", "fact": 0, "view": "cutaway"},
+                        {"t": "--:--", "what": "waves bounce off the walls", "fact": 1, "view": "cutaway"},
+                        {"t": "--:--", "what": "turntable turns 5 times a minute", "fact": 2, "view": "cutaway"}],
+         "odds_idea": None, "careful": ["stub — 시험용"]}
+    if frm:
+        e["from"] = frm
+    if series:
+        e["series"] = series
+    return e
+
+
+@contextlib.contextmanager
+def pools(extra=(), teardown=None, shorts=()):
+    """열린 항목만 바꿔 끼운다 — extra(sci_extra 에 더할 것) · teardown(뜯어보기 catalog, None = 파일 없음) · shorts(insta_from 단 것)."""
+    with tempfile.TemporaryDirectory() as td:
+        ex = copy.deepcopy(EXTRA_REAL)
+        ex["survival"] = [e for e in ex["survival"] if e["n"] in P.SCI_ORDER] + list(extra)
+        ex["compare"] = [e for e in ex["compare"] if e["n"] in P.SCI_ORDER]
+        sh = copy.deepcopy(SHORTS_REAL)
+        sh["survival"] = [e for e in sh["survival"] if e["n"] in P.SCI_ORDER] + list(shorts)
+        sh["compare"] = [e for e in sh["compare"] if e["n"] in P.SCI_ORDER]
+        paths = {"extra": os.path.join(td, "x.json"), "shorts": os.path.join(td, "s.json"), "teardown": os.path.join(td, "t.json")}
+        json.dump(ex, open(paths["extra"], "w", encoding="utf-8"), ensure_ascii=False)
+        json.dump(sh, open(paths["shorts"], "w", encoding="utf-8"), ensure_ascii=False)
+        if teardown is not None:
+            json.dump({"about": "stub", "survival": list(teardown)}, open(paths["teardown"], "w", encoding="utf-8"), ensure_ascii=False)
+        with P.catalogs(**paths):
+            yield
+
+
+DAYS = [P.SCI_FROM + dt.timedelta(days=k) for k in range(90)]          # 10/15 ~ 1/12
+
+
+def table():
+    return {d: tuple(P.kind_for(d, sl) for sl in P.slots_on(d)) for d in DAYS}
+
+
+def picks_ok():
+    """골라보기 로테이션·회차가 끊기지도 겹치지도 않는다(sci 가 끊겼다 이어져도)."""
+    pk = [(d, sl, P.kind_for(d, sl)) for d in (P.START + dt.timedelta(days=k) for k in range(120)) for sl in P.slots_on(d)]
+    pk = [(d, sl, k) for d, sl, k in pk if P.is_pick(k)]
+    return ([k for _, _, k in pk] == [P.FORMATS[i % 5] for i in range(len(pk))]
+            and [P.series_no(d, sl) for d, sl, _ in pk] == list(range(1, len(pk) + 1)))
+
+
+def sci_ns():
+    return [P.sci_n(d) for d in DAYS if P.sci_n(d) is not None]
+
+
+ck("SCI_TO 는 끝이 아니다: 열린 편성은 SCI_OPEN_FROM(11/08)부터 · 뜯어보기는 11/09 주 화·금 · 번호 904~ · 951~",
+   P.SCI_OPEN_FROM == D(11, 8) and P.TEARDOWN_FROM == D(11, 9) and P.TEARDOWN_DAYS == (1, 4)
+   and P.SCI_OPEN_N0 == 904 and P.TEARDOWN_N0 == 951 and P.TEARDOWN_SERIES == "과학으로 뜯어보는 물건")
+with pools():
+    base = table()
+    ck("열린 항목이 없으면: 11/08 부터 sci 없음 = 예전 SCI_TO 뒤 그대로(골라보기 두 편) · open_plan 빈 것",
+       P.open_plan() == {} and all(P.SCI not in base[d] and len(base[d]) == 2 for d in DAYS if d > P.SCI_TO)
+       and base[D(11, 8)] == ("birth", "pick"), base[D(11, 8)])
+    rw = {r["id"]: r for r in P.runway(D(10, 25))}
+    ck("runway(10/25): sci 마지막 11/07 · 14편(오늘 포함) · 뜯어보기 0 · 병맛 시험 11/07(판정 11/08) · 골라보기 끝없음",
+       (rw["insta_sci"]["last"], rw["insta_sci"]["left"], rw["insta_teardown"]["last"], rw["insta_teardown"]["left"],
+        rw["insta_bm"]["last"], rw["insta_bm"]["judge"], rw["insta_pick"]["limit"])
+       == (D(11, 7), 14, None, 0, D(11, 7), D(11, 8), "open"), rw)
+    ck("runway(11/20 · 바닥난 뒤): sci 남은 0 · 채우는 곳 sci_extra.json · from 은 다음 날 이후",
+       P.runway(D(11, 20))[1]["left"] == 0 and "sci_extra.json" in P.runway(D(11, 20))[1]["refill"]
+       and "2026-11-21" in P.runway(D(11, 20))[1]["refill"])
+with pools(extra=[stub(904, "2026-10-26"), stub(905, "2026-11-01"), stub(906, "2026-11-20")]):
+    t = table()
+    ck("열린 항목 셋: 11/08 904(저녁) · 11/09 905(낮) · 906 은 from 11/20 부터(그 사이는 골라보기 두 편)",
+       [(d, P.sci_n(d), P.sci_slot(d)) for d in P.open_plan()] == [(D(11, 8), 904, "b"), (D(11, 9), 905, "a"), (D(11, 20), 906, "b")]
+       and all(P.SCI not in t[d] for d in DAYS if D(11, 10) <= d <= D(11, 19)), sorted(P.open_plan().items()))
+    ck("sci 자리는 날짜로 번갈아(끊겼다 이어져도) · 하루 sci 는 많아야 한 편 · slot_of 는 하나로",
+       all(P.sci_slot(d) == ("b" if (d - P.SCI_FROM).days % 2 == 0 else "a") for d in P.open_plan())
+       and all(t[d].count(P.SCI) <= 1 for d in DAYS) and all(P.slot_of(d, k) == sl for d in DAYS
+                                                             for sl, k in zip(P.slots_on(d), t[d])))
+    ck("src_n 은 한 번씩만(SCI_ORDER 24 + 열린 3 · 겹침 없음) · sci_no 는 이어 센다(11/08 = 25번째)",
+       len(sci_ns()) == len(set(sci_ns())) == 27 and P.sci_index(D(11, 8)) == 24 and P.sci_index(D(11, 20)) == 26)
+    ck("골라보기 로테이션·회차는 sci 가 끊겼다 이어져도 빈틈·겹침 없음(1/12 까지)", picks_ok())
+    ck("11/07 까지(SCI_ORDER · 병맛 · 회차)는 열린 항목이 있어도 그대로", all(t[d] == base[d] for d in DAYS if d <= P.SCI_TO))
+    rw = {r["id"]: r for r in P.runway(D(10, 25))}
+    ck("runway: sci 마지막 = 열린 항목 마지막 날(11/20) · 17편", (rw["insta_sci"]["last"], rw["insta_sci"]["left"]) == (D(11, 20), 17), rw["insta_sci"])
+    ck("바닥나면(11/21~) 다시 골라보기 두 편 · runway 0", all(P.SCI not in t[d] for d in DAYS if d > D(11, 20))
+       and P.runway(D(11, 21))[1]["left"] == 0)
+    with tempfile.TemporaryDirectory() as tmp:
+        ni = P.next_info(D(11, 8), tmp, now=KST_AT(D(11, 8), 19))
+        ck("next 11/08 19시: sci 904 · entry 그대로 · sci_no 25 · 속이 보이는 과학(xray 견본) · 회차 없음",
+           (ni["kind"], ni["slot"], ni["src_n"], ni["sci_no"], ni["series"], ni["exemplar"], ni["series_no"])
+           == ("sci", "b", 904, 25, "속이 보이는 과학", P.SCI_XRAY_EXEMPLAR, None) and ni["entry"]["facts"] == stub(904, "")["facts"], ni)
+        ni = P.next_info(D(11, 8), tmp, now=KST_AT(D(11, 8), 11))
+        ck("next 11/08 11시: 낮 편은 골라보기(태어난 달 #20)", (ni["kind"], ni["series_no"]) == ("birth", 20), ni.get("kind"))
+before = None
+with pools(extra=[stub(904, "2026-10-26"), stub(905, "2026-11-01")]):
+    before = table()
+with pools(extra=[stub(904, "2026-10-26"), stub(905, "2026-11-01"), stub(906, "2026-11-25")]):
+    after = table()
+ck("지난 편성은 안 바뀐다: 바닥난 뒤(11/10~) 붙인 항목이 from(11/25)을 달면 그 전 날 편성·회차는 그대로 · 11/25 부터 sci",
+   all(before[d] == after[d] for d in DAYS if d < D(11, 25)) and P.SCI in after[D(11, 25)] and P.SCI not in before[D(11, 25)])
+with pools(extra=[stub(904, None), stub(905, "2026-11-08")], shorts=[dict(stub(115, None), insta_from="2026-11-09"),
+                                                                   stub(116, None)]):
+    un = P.open_pools()["unscheduled"]
+    ck("from 없는 항목(904)은 편성 안 함 · shorts_catalog 는 insta_from 단 것(115)만 · 안 단 것(116)은 '안 씀'으로 남는다",
+       [P.open_plan()[d][1] for d in sorted(P.open_plan())] == [905, 115] and un == {"no_from": [904], "shorts_unused": [116]}, un)
+    ck("runway 가 알린다: from 없는 항목 · shorts 안 쓴 항목", "904" in P.runway(D(10, 25))[1]["note"]
+       and "insta_from" in P.runway(D(10, 25))[1]["note"], P.runway(D(10, 25))[1]["note"])
+    ck("SCI_ORDER 항목은 from 을 달아도 다시 안 쓴다(반복 없음)", 101 not in [n for _, n in P.open_plan().values()])
+
+TD = [stub(951, "2026-11-09", "teardown", "microwave-inside"), stub(952, "2026-11-09", "teardown", "fridge-inside")]
+with pools(teardown=TD):
+    plan = P.open_plan()
+    ck("뜯어보기만(보통 sci 없음): 11/10(화) 951 저녁 · 11/13(금) 952 낮 — 화·금만 · 다른 날은 골라보기 두 편",
+       sorted((d, x, P.sci_slot(d)) for d, x in plan.items()) == [(D(11, 10), ("teardown", 951), "b"), (D(11, 13), ("teardown", 952), "a")]
+       and P.is_teardown_day(D(11, 10)) and P.is_teardown_day(D(11, 13)) and not P.is_teardown_day(D(11, 9))
+       and not P.is_teardown_day(D(11, 6)), plan)
+    ck("뜯어보기 편도 kind sci · series teardown · teardown_index 0·1 · sci_entry 가 teardown_catalog 도 찾는다",
+       P.kind_for(D(11, 10), "b") == P.SCI and P.sci_series(D(11, 10)) == P.TEARDOWN and P.teardown_index(D(11, 13)) == 1
+       and P.sci_entry(951)["slug"] == "microwave-inside" and P.is_teardown_entry(P.sci_entry(951)))
+    ck("뜯어보기가 바닥나면(11/17 화) 그날도 보통 sci → 그것도 없으면 골라보기 두 편",
+       P.sci_slot(D(11, 17)) is None and len(table()[D(11, 17)]) == 2)
+    with tempfile.TemporaryDirectory() as tmp:
+        ni = P.next_info(D(11, 10), tmp, now=KST_AT(D(11, 10), 19))
+        ck("next 11/10 19시: sci 951 · series '과학으로 뜯어보는 물건' · series_id teardown · 1번째 · entry.series · SCI_WRITING · xray 견본",
+           (ni["kind"], ni["src_n"], ni["series"], ni["series_id"], ni["teardown_no"], ni["entry"].get("series"), ni["writing"],
+            ni["exemplar"]) == ("sci", 951, "과학으로 뜯어보는 물건", "teardown", 1, "teardown", "insta/SCI_WRITING.md",
+                                P.SCI_XRAY_EXEMPLAR) and "cutaway" in ni["views_hint"] and ni["keywords"] == list(P.TEARDOWN_KEYWORDS), ni)
+    rw = {r["id"]: r for r in P.runway(D(10, 25))}
+    ck("runway: 뜯어보기 마지막 11/13 · 2편 · 보통 sci 는 11/07", (rw["insta_teardown"]["last"], rw["insta_teardown"]["left"],
+                                                     rw["insta_sci"]["last"]) == (D(11, 13), 2, D(11, 7)), rw["insta_teardown"])
+REG = [stub(n, "2026-11-08") for n in range(904, 910)]
+with pools(extra=REG, teardown=TD[:1]):
+    seq = [(d, P.open_plan()[d]) for d in sorted(P.open_plan())]
+    ck("보통 sci + 뜯어보기: 11/08 904 · 11/09 905 · 11/10(화) 뜯어보기 951 · 11/11 906 · 11/12 907 · 11/13(금 · 뜯어보기 바닥) 보통 908 · 11/14 909",
+       seq == [(D(11, 8), ("sci", 904)), (D(11, 9), ("sci", 905)), (D(11, 10), ("teardown", 951)), (D(11, 11), ("sci", 906)),
+               (D(11, 12), ("sci", 907)), (D(11, 13), ("sci", 908)), (D(11, 14), ("sci", 909))], seq)
+    ck("뜯어보기는 화·금에만 · 보통 sci 는 다른 날(뜯어보기가 있을 때) · 반복 없음 · 골라보기 빈틈 없음",
+       all(d.weekday() in P.TEARDOWN_DAYS for d, (k, _) in seq if k == "teardown") and len(sci_ns()) == len(set(sci_ns())) and picks_ok())
+with pools(extra=REG[:3]):
+    ck("뜯어보기 catalog 가 없으면(파일 없음) 화·금도 보통 sci — 11/10 은 906", P.sci_series(D(11, 10)) == P.SCI and P.sci_n(D(11, 10)) == 906
+       and P.open_pools()[P.TEARDOWN] == [])
+bm_ref = {d: (P.bm_kind(d), P.bm_slot(d), P.bm_n(d)) for d in BMWIN}
+with pools(extra=REG, teardown=TD):
+    bm_t = {d: (P.bm_kind(d), P.bm_slot(d), P.bm_n(d)) for d in BMWIN}
+    ck("병맛 시험은 그대로(10/25~11/07 · ABBA · 401~414 · 11/08 끝)", bm_t == bm_ref
+       and "".join("A" if P.bm_kind(d) == "bm_paper" else "B" for d in BMWIN) == "ABBAABBAABBAAB"
+       and [P.bm_n(d) for d in BMWIN] == list(P.BM_ORDER) and P.bm_kind(D(11, 8)) is None and P.BM_TO == D(11, 7))
+    ck("SCI_XRAY_FROM 그대로(10/25~ 속이 보이는 과학 · 뜯어보기도 그 모양)", P.SCI_XRAY_FROM == D(10, 25) and P.sci_xray(D(11, 10)))
+
+print("── 뜯어보기 대본 검사(속이 보이는 과학 모양 + 상표·따라 하기·안전 단정 금지) ──")
+TDS = {"date": "2026-11-10", "kind": "sci", "src_n": 951, "slug": "microwave-inside",
+       "hook": ["전자레인지 속", "뭐가 돌아갈까?"], "say_intro": "전자레인지 문을 닫으면, 안에선 무슨 일이 생길까요?",
+       "why": {"sub": "부품 셋이 같이 일해요", "say": "왜 데워질까요?", "view": "cutaway",
+               "img": "a kitchen microwave oven with the outer shell cut open to reveal the inner parts"},
+       "beats": [{"big": "2.45GHz", "sub": "전파를 만드는 곳", "say": "마그네트론이 2.45기가헤르츠 전파를 만들어요.", "src": 0,
+                  "view": "cutaway", "img": "a microwave oven cut open showing a small cylindrical magnetron at the side",
+                  "label": "마그네트론", "pin": [0.5, 0.45]},
+                 {"big": "반사", "sub": "금속 벽", "say": "전파는 금속 벽에 부딪히며 안을 돌아요.", "src": 0, "view": "cutaway",
+                  "img": "a microwave oven sliced open like a cake showing glowing waves bouncing between metal walls"},
+                 {"big": "분당 5바퀴", "sub": "돌림판", "say": "돌림판은 분당 5바퀴쯤 돌아요.", "src": 1, "view": "cutaway",
+                  "img": "a microwave oven cut open showing a round glass turntable with a bowl in the center",
+                  "label": "돌림판", "pin": [0.5, 0.6]}],
+       "verdict": {"big": "골고루 데움", "say": "그래서 음식이 골고루 데워져요."},
+       "caption": "전자레인지 속, 뭐가 돌아갈까? 🔬", "hashtags": ["#과학으로뜯어보는물건", "#작동원리"],
+       "sources": TD[0]["sources"], "bench": {"format": "3D 단면 해설 — 대조 훅 → 왜? → 원인 3단계 → 결과"}}
+with pools(teardown=TD):
+    ck("뜯어보기 대본(11/10 · 951) 통과 · 첫 장면 칩은 '과학으로 뜯어보는 물건' · 끝 질문은 부품", K.check(TDS) == []
+       and X.series_of(TDS) == P.TEARDOWN_SERIES and K.ask_of(TDS) == K.ASK["sci"]["teardown"] == "어느 부품이 제일 의외였어요?"
+       and K.ASK["sci"]["teardown"] in K.caption_of(TDS) and X.series_of(XS) == X.SERIES, K.check(TDS))
+    for name, f, want in [
+        ("상표 이름(한글)은 막는다", _set(["say_intro"], "삼성 전자레인지 문을 닫으면, 안에선 무슨 일이 생길까요?"), "상표"),
+        ("상표 이름(그림 묘사 · 영어)도 막는다", _set(["why", "img"], "a samsung microwave oven with the outer shell cut open"), "상표"),
+        ("'직접 열어 보세요'는 막는다", _set(["verdict", "say"], "궁금하면 직접 열어 보세요."), "따라 하게"),
+        ("안전·건강 단정은 막는다", _set(["verdict", "say"], "그래서 전자레인지는 안전해요."), "안전"),
+        ("숫자는 그 항목 facts 에서만(3GHz → 막음)", _set(["beats", 0, "big"], "3GHz"), "facts"),
+        ("src_n 이 그날 뜯어보기 항목이 아니면 막는다", _set(["src_n"], 952), "src_n")]:
+        x = json.loads(json.dumps(TDS))
+        f(x)
+        errs = K.check(x)
+        ck(name, any(want in e for e in errs), errs)
+    ck("'파인애플'의 애플은 상표가 아니다 · 보통 sci 대본엔 뜯어보기 금지를 안 건다", K.brand_hits(["파인애플 단면"]) == []
+       and K.brand_hits(["애플 이어폰", "a Dyson fan"]) == ["dyson", "애플"]
+       and not any("뜯어보기" in e for e in xbad(_set(["verdict", "say"], "그래서 안전해요."))))
+ck("catalog 항목 검사(entry_errs): 시험용 항목 통과 · from 없음 · 상표 · facts 에 없는 숫자 · series 없음을 잡는다",
+   K.entry_errs(TD[0]) == [] and any("from" in e for e in K.entry_errs(stub(951, None, "teardown")))
+   and any("상표" in e for e in K.entry_errs(dict(TD[0], title_idea="Inside a Dyson Fan")))
+   and any("facts 에 없다" in e for e in K.entry_errs(dict(TD[0], beat_ideas=[dict(TD[0]["beat_ideas"][0], what="9 GHz")] * 3)))
+   and any("series" in e for e in K.entry_errs({k: v for k, v in TD[0].items() if k != "series"} | {"n": 960})))
+
+print("── 지금 catalog(sci_extra 904~ · teardown_catalog) — 모양·출처·from·반복 없음 ──")
+OPEN_X = [e for e in P.catalog_entries(EXTRA_REAL) if e["n"] not in P.SCI_ORDER]
+TD_REAL = P.catalog_entries(P._read(P.TEARDOWN_CATALOG))
+ck("sci_extra 의 새 항목(904~)은 전부 catalog 검사 통과(from 포함)", all(K.entry_errs(e) == [] for e in OPEN_X),
+   {e["n"]: K.entry_errs(e) for e in OPEN_X if K.entry_errs(e)})
+ck("teardown_catalog(없어도 된다): 항목마다 검사 통과 · n 951~ · series teardown · from ≥ 11/09 · slug·n 겹침 없음",
+   all(K.entry_errs(e) == [] and P._date_or_none(e.get("from")) >= P.TEARDOWN_FROM for e in TD_REAL)
+   and len({e["n"] for e in TD_REAL}) == len({e["slug"] for e in TD_REAL}) == len(TD_REAL),
+   {e.get("n"): K.entry_errs(e) for e in TD_REAL if K.entry_errs(e)})
+live = [P.sci_n(d) for d in (P.SCI_FROM + dt.timedelta(days=k) for k in range(400)) if P.sci_n(d) is not None]
+ck("지금 catalog 로 400일: src_n 반복 없음 · 편성 안 된 항목 없음(from 빠짐) · 골라보기 빈틈 없음",
+   len(live) == len(set(live)) and P.open_pools()["unscheduled"]["no_from"] == [] and picks_ok(),
+   P.open_pools()["unscheduled"])
+wsci = open(os.path.join(HERE, "SCI_WRITING.md"), encoding="utf-8").read()
+ck("SCI_WRITING: 뜯어보기 — 상표·모델 금지 · 직접 열어 보세요 금지 · 안전·건강 단정 금지 · 숫자는 facts · label 은 부품 · from",
+   all(w in wsci for w in ("과학으로 뜯어보는 물건", "teardown_catalog.json", "상표·모델 이름 금지", "직접 열어 보세요", "안전·건강 단정 금지",
+                           "facts", "부품 이름", "cutaway", "from")))
 
 print(f"\n{'✅ 전부 통과' if not FAIL else f'❌ 실패 {FAIL}'}")
 sys.exit(1 if FAIL else 0)

@@ -146,6 +146,17 @@ def target_monday(now: dt.datetime | None = None) -> dt.date:
     return t - dt.timedelta(days=t.weekday())
 
 
+def last_day() -> dt.date | None:
+    """마지막 주간 롱폼 공개일(일) — STOP_FROM 앞 주 월요일의 전날(publish_at 과 같은 '월요일 전날'). 끄지 않았으면 None.
+    tools/runway.py 가 부른다."""
+    if not STOP_FROM:
+        return None
+    monday = STOP_FROM - dt.timedelta(days=STOP_FROM.weekday())
+    if monday >= STOP_FROM:
+        monday -= dt.timedelta(days=7)
+    return monday - dt.timedelta(days=1)
+
+
 def week_key(monday: dt.date) -> str:
     y, w, _ = monday.isocalendar()
     return f"{y}-W{w:02d}"

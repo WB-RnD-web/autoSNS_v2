@@ -544,6 +544,11 @@ def episode(eid: str) -> dict:
     return BY_ID[eid]
 
 
+def last_day() -> dt.date:
+    """시리즈 마지막 편 공개일(E16) — tools/runway.py 가 부른다."""
+    return dt.date.fromisoformat(EPISODES[-1]["publish"])
+
+
 def publish_dt(ep: dict) -> dt.datetime:
     h, m = (int(x) for x in PUBLISH_HHMM.split(":"))
     return dt.datetime.combine(dt.date.fromisoformat(ep["publish"]), dt.time(h, m), tzinfo=KST)

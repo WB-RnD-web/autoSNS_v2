@@ -408,8 +408,9 @@ print("── 병맛 시험(10/25~11/07) — 쓰레드는 병맛을 건너뛰고
 BM_A = json.load(open(os.path.join(HERE, "samples", "bm_paper_wombat.json"), encoding="utf-8"))   # 10/25 낮 병맛 A
 BM_B = json.load(open(os.path.join(HERE, "samples", "bm_animal_penguin.json"), encoding="utf-8"))  # 10/26 저녁 병맛 B
 BMDAYS = [P.BM_FROM + dt.timedelta(days=k) for k in range((P.BM_TO - P.BM_FROM).days + 1)]
-ck("쓰레드 편: 병맛 기간(sci + 병맛뿐인 날)엔 없음(None) · 11/08 골라보기 두 편 → 저녁 편",
-   all(T.threads_slot(d) is None for d in BMDAYS) and T.threads_slot(dt.date(2026, 11, 8)) == "b")
+with P.only_order():                          # ★10/25 sci 가 11/08 뒤로 이어질 수 있다 — 여기는 항목이 바닥난 경우를 본다
+    ck("쓰레드 편: 병맛 기간(sci + 병맛뿐인 날)엔 없음(None) · (sci 항목이 바닥나면) 11/08 골라보기 두 편 → 저녁 편",
+       all(T.threads_slot(d) is None for d in BMDAYS) and T.threads_slot(dt.date(2026, 11, 8)) == "b")
 ck("쓰레드 기간(10/11~10/24)과 병맛 기간은 겹치지 않는다 · 기간 안 쓰레드 편은 늘 골라보기 꼴",
    T.THREADS_TO < P.BM_FROM and all(P.is_pick(P.kind_for(d, T.threads_slot(d)))
                                     for d in (T.THREADS_FROM + dt.timedelta(days=k)

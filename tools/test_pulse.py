@@ -180,6 +180,31 @@ with tempfile.TemporaryDirectory() as td:
     P2 = PU.build(radar, os.path.join(td, "out2"), DAY, now=NOW + dt.timedelta(hours=40))
     ck("데이터가 30시간 넘게 묵으면 DATA_STALE", any(f["id"] == "DATA_STALE" for f in P2["flags"]))
 
+    print("── 콘텐츠 재고(runway — 14일 안에 바닥나는 줄기) ──")
+    import runway as RW  # noqa: E402
+    want = RW.low(RW.collect(dt.date(2026, 10, 21)), PU.RUNWAY_WARN)
+    rfl = {f["id"]: f for f in P["flags"] if f["id"].startswith("RUNWAY")}
+    ck("build: pulse.json 에 runway(14일 안 줄기) · 줄기마다 신호 RUNWAY:<id>", PU.RUNWAY_WARN == 14
+       and [r["id"] for r in P["runway"]] == [r["id"] for r in want] and set(rfl) == {f"RUNWAY:{r['id']}" for r in want}
+       and len(want) > 0, (sorted(rfl), [r["id"] for r in want]))
+    lv = {r["id"]: rfl[f"RUNWAY:{r['id']}"]["level"] for r in want}
+    ck("신호 세기: 시험 = info · 3일 안 = bad · 그 밖 warn · 문구에 남은 날·채우는 곳",
+       all(lv[r["id"]] == ("info" if r["limit"] == "trial" else "bad" if r["days_left"] <= 3 else "warn") for r in want)
+       and all("일" in rfl[f"RUNWAY:{r['id']}"]["text"] and "채우기" in rfl[f"RUNWAY:{r['id']}"]["text"] for r in want), lv)
+    ck("runway 는 JSON 그대로(날짜는 문자열) · 일부러 끝낸 줄기는 없다",
+       json.loads(json.dumps(P["runway"])) == P["runway"] and not {"wb_weekly_lf", "nt_sleep", "wb_newyear_card"} & {r["id"] for r in P["runway"]})
+    real_rw = sys.modules["runway"]
+
+    class _Broken:
+        @staticmethod
+        def collect(_d):
+            raise RuntimeError("재고 도구가 깨졌다")
+    sys.modules["runway"] = _Broken
+    rw_b, rf_b = PU.runway_status(dt.date(2026, 10, 21))
+    sys.modules["runway"] = real_rw
+    ck("재고 도구가 깨져도 맥박은 돈다(빈 목록 + RUNWAY_ERR info)", rw_b == [] and [f["id"] for f in rf_b] == ["RUNWAY_ERR"]
+       and rf_b[0]["level"] == "info", rf_b)
+
     print("── 실험 달력 ──")
     exps = {x["id"]: x for x in P["experiments"]}
     ck("남은 날 계산", exps["saeyeon-shorts"]["days_left"] == (dt.date(2026, 10, 17) - dt.date(2026, 10, 21)).days)
@@ -299,6 +324,9 @@ with tempfile.TemporaryDirectory() as td:
     PU.save(os.path.join(day, "fill.json"), good_pr)
     ck("check: 통과하면 report.md·page.html 생성", not PU.check(day) and os.path.exists(os.path.join(day, "page.html")))
     page = open(os.path.join(day, "page.html"), encoding="utf-8").read()
+    rep_md = open(os.path.join(day, "report.md"), encoding="utf-8").read()
+    ck("보고서·페이지: 콘텐츠 재고(14일 안에 바닥) 칸 · 줄기마다 채우는 곳", "## 콘텐츠 재고" in rep_md and "콘텐츠 재고" in page
+       and all(r["refill"][:20] in rep_md for r in P["runway"]))
     ck("페이지: 제목 '채널 맥박' 이 맨 앞 · 다크 모드 토큰 · 비교 링크",
        page.startswith("<title>채널 맥박</title>") and 'prefers-color-scheme:dark' in page and ':root[data-theme="dark"]' in page
        and "compare/main...pulse/2026-10-21-pol-slot-check" in page)

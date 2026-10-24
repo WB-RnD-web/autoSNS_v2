@@ -54,6 +54,7 @@ VERDICTS = ("맞다", "틀리다", "아직 모름")
 WHO = ("pr", "local", "user", "watch")
 OPS = (">=", "<=")
 TREND_LABELS = {"떡상": 0, "강세": 1, "식는 중": 2, "끝물": 3}
+RUNWAY_WARN = 14         # 콘텐츠 재고(tools/runway.py)가 이 날 수 안에 바닥나는 줄기를 신호로(RUNWAY:<id>) — 10/25 사용자 "계속 돌게"
 WEEKDAY = "월화수목금토일"
 
 
@@ -444,6 +445,31 @@ def exp_status(today: dt.date, chans: dict) -> tuple[list, list]:
     return rows, flags
 
 
+def runway_status(today: dt.date, warn: int = RUNWAY_WARN) -> tuple[list, list]:
+    """콘텐츠 재고(tools/runway.py) — warn 일 안에 바닥나는 줄기와 신호 RUNWAY:<id>(시험 = info · 3일 안 = bad · 그 밖 warn).
+    목록·끝 날짜가 바닥나면 줄기가 에러 없이 조용히 멈춘다 — 그 전에 채우라고 매일 띄운다. 재고 도구가 깨져도 맥박은 돈다."""
+    try:
+        if HERE not in sys.path:
+            sys.path.insert(0, HERE)
+        import runway as RW
+        rows = RW.collect(today)
+        lows = RW.low(rows, warn)
+    except Exception as ex:  # noqa: BLE001
+        return [], [{"id": "RUNWAY_ERR", "level": "info", "text": f"콘텐츠 재고(tools/runway.py)를 못 읽었다 — {type(ex).__name__}: {ex}"[:240]}]
+    out, flags = [], []
+    for r in lows:
+        out.append({"id": r["id"], "ch": r["ch"], "name": r["name"], "limit": r["limit"], "days_left": r["days_left"],
+                    "left": r["left"], "last": r["last"].isoformat() if r["last"] else None,
+                    "judge": r["judge"].isoformat() if r.get("judge") else None, "refill": r["refill"]})
+        level = "info" if r["limit"] == "trial" else "bad" if r["days_left"] <= 3 else "warn"
+        flags.append({"id": f"RUNWAY:{r['id']}", "level": level,
+                      "text": f"재고 {r['days_left']}일 — {RW.line(r)} → 채우기: {r['refill']}"[:320]})
+    for r in rows:
+        if r["limit"] == "error":
+            flags.append({"id": f"RUNWAY_ERR:{r['ch']}", "level": "info", "text": f"콘텐츠 재고 {r['ch']} 확인 실패 — {r['note']}"[:240]})
+    return out, flags
+
+
 def load_ypp(override_dir: str | None = None) -> dict:
     """수익화 목표·스튜디오 보정값(tools/pulse_ypp.json). override_dir/studio.json(로컬 작업이 data/ypp 에 넣는다)의
     채널별 값이 더 새로우면(checked) 그것을 쓴다."""
@@ -615,12 +641,14 @@ def build(radar_dir: str, out_root: str, day: str | None = None, now: dt.datetim
     flags += ef
     ypp, yf = ypp_status(load_ypp(ypp_dir), chans, dt.date.fromisoformat(day))
     flags += yf
+    runway, rf = runway_status(dt.date.fromisoformat(day))
+    flags += rf
     hist_dirs = prev_dirs(out_root, day)
     history = [h for h in (load(os.path.join(d, "pulse.json")) for d in hist_dirs) if h]
     P = {"date": day, "generated": now.isoformat(timespec="minutes"), "data_at": at.isoformat(timespec="minutes"),
          "radar_at": radar_t.isoformat(timespec="minutes"), "radar_age_h": round(age_h, 1),
          "channels": {k: {x: y for x, y in c.items() if not x.startswith("_")} for k, c in chans.items()},
-         "experiments": exps, "trends": radar_trends(trends), "ypp": ypp}
+         "experiments": exps, "trends": radar_trends(trends), "ypp": ypp, "runway": runway}
     prev_fill = load(os.path.join(out_root, (dt.date.fromisoformat(day) - dt.timedelta(days=1)).isoformat(), "fill.json"))
     P["pred_scored"] = score(P, prev_fill)
     misses = sum(p["ok"] is False for p in P["pred_scored"])
@@ -793,6 +821,10 @@ def report_md(P: dict, F: dict) -> str:
         o.append("")
     if P["flags"]:
         o += ["## 신호", ""] + [f"- **{f['id']}** ({f['days']}일째) {f['text']} → {F['flags'].get(f['id'], '')}" for f in P["flags"]] + [""]
+    if P.get("runway"):
+        o += [f"## 콘텐츠 재고 — {RUNWAY_WARN}일 안에 바닥나는 줄기(tools/runway.py)", ""] + [
+            f"- {r['ch']} · {r['name']}: {r['days_left']}일 남음(마지막 {r['last'] or '—'}"
+            + (f" · 판정 {r['judge']}" if r.get("judge") else "") + f") — 채우기: {r['refill']}" for r in P["runway"]] + [""]
     o += ["## 방향 점검", ""] + [f"- {x['topic']}: **{x['verdict']}** — {x['why']}" for x in F["direction"]] + [""]
     o += ["## 트렌드", ""] + [f"- {x}" for x in F["trends"]] + [""]
     if F.get("actions"):
@@ -967,6 +999,11 @@ def page_html(P: dict, F: dict) -> str:
             f'<div class="flag"><span class="dot {col[f["level"]]}"></span><div><p>{e(f["text"])} '
             f'<span class="muted small num">{e(f["id"])} · {f["days"]}일째</span></p>'
             f'<p class="resp">→ {e(F["flags"].get(f["id"], ""))}</p></div></div>' for f in P["flags"]) + "</div></section>")
+    if P.get("runway"):
+        out.append(f'<section class="panel"><h2>콘텐츠 재고 — {RUNWAY_WARN}일 안에 바닥</h2><ul class="plain">' + "".join(
+            f'<li><span class="tag {"warn" if r["limit"] == "trial" else "down"}">{r["days_left"]}일</span>{e(r["ch"])} · {e(r["name"])} '
+            f'<span class="muted small">마지막 {e(r["last"] or "—")}{" · 판정 " + e(r["judge"]) if r.get("judge") else ""} · 채우기: {e(r["refill"])}</span></li>'
+            for r in P["runway"]) + '</ul><span class="muted small">python tools/runway.py — 목록·끝 날짜가 바닥나면 줄기는 에러 없이 멈춘다</span></section>')
     vc = {"맞다": "up", "틀리다": "down", "아직 모름": "flat"}
     out.append('<section class="panel"><h2>방향 점검</h2><div class="scroll"><table><tr><th>무엇</th><th>판정</th><th>왜</th></tr>' + "".join(
         f'<tr><td>{e(x["topic"])}</td><td><span class="chip {vc[x["verdict"]]}">{e(x["verdict"])}</span></td><td>{e(x["why"])}</td></tr>'

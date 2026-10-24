@@ -166,6 +166,16 @@ def post_index(d: dt.date) -> int:
     return sum(1 for k in range((d - START).days) if (START + dt.timedelta(days=k)).weekday() in GUNGHAP_DAYS)
 
 
+def last_day() -> dt.date | None:
+    """시리즈 마지막 편성일(목록 THEMES 가 바닥나는 날) — tools/runway.py 가 부른다."""
+    d, last = START, None
+    while post_index(d) < len(THEMES):
+        if is_post_day(d):
+            last = d
+        d += dt.timedelta(days=1)
+    return last
+
+
 def theme_for(d: dt.date) -> dict:
     """그날의 묶음. 편성일이 아닌 날(견본)은 가장 가까운 다음 편성일의 묶음, 시리즈가 끝났으면 마지막 묶음."""
     return THEMES[min(post_index(d), len(THEMES) - 1)]

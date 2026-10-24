@@ -146,6 +146,26 @@ def number_texts(s: dict) -> list[tuple[str, str]]:
     return [(w, t) for w, t in out if isinstance(t, str)]
 
 
+def teardown_errs(s: dict) -> list[str]:
+    """'과학으로 뜯어보는 물건' 대본만 더 보는 것(SCI_WRITING '뜯어보기') — 상표·모델 이름 · 따라 하게 하는 말 · 안전·건강 단정."""
+    texts = K._texts(s) + imgs_of(s)
+    low = [t.lower() for t in texts]
+    errs = []
+    hits = K.brand_hits(texts)
+    if hits:
+        errs.append(f"뜯어보기: 상표·모델 이름 금지 {hits} — '전자레인지'·'무선 이어폰'처럼 물건 이름으로")
+    for name, words in (("따라 하게 하는 말('직접 열어 보세요')", K.TEARDOWN_DIY), ("안전·건강 단정", K.TEARDOWN_CLAIMS)):
+        hits = sorted({w for w in words for t in low if w.lower() in t})
+        if hits:
+            errs.append(f"뜯어보기: {name} 금지 {hits}")
+    return errs
+
+
+def series_of(s: dict) -> str:
+    """화면 첫 장면 칩의 시리즈 이름 — 뜯어보기 항목이면 '과학으로 뜯어보는 물건', 아니면 '속이 보이는 과학'."""
+    return P.TEARDOWN_SERIES if P.is_teardown_entry(K.sci_entry_of(s)) else SERIES
+
+
 def imgs_of(s: dict) -> list[str]:
     objs = [s.get("why")] + list(s.get("beats") or []) + [s.get("verdict")]
     return [o.get("img") for o in objs if isinstance(o, dict) and isinstance(o.get("img"), str)]
@@ -163,12 +183,12 @@ def check(s: dict) -> list[str]:
         errs.append(f"{d} 는 '속이 보이는 과학' 전 — {P.SCI_XRAY_FROM} 부터(그 전 날짜는 옛 모양)")
     want = P.sci_n(d)
     if want is None:
-        errs.append(f"{d} 는 sci 편이 없는 날 — sci 시험은 {P.SCI_FROM}~{P.SCI_TO}")
+        errs.append(f"{d} 는 sci 편이 없는 날 — sci 는 {P.SCI_FROM}~{P.SCI_TO}(SCI_ORDER) · 그 뒤는 항목이 남은 날만(open_plan)")
     elif s.get("src_n") != want:
-        errs.append(f"src_n 은 그날 편성 항목 {want} 이어야 한다(SCI_ORDER) — 대본은 {s.get('src_n')}")
+        errs.append(f"src_n 은 그날 편성 항목 {want} 이어야 한다(SCI_ORDER·open_plan) — 대본은 {s.get('src_n')}")
     e = K.sci_entry_of(s)
     if e is None:
-        return errs + [f"src_n {s.get('src_n')!r} 은 shorts_catalog survival·compare 항목이 아니다"]
+        return errs + [f"src_n {s.get('src_n')!r} 은 sci 항목이 아니다(shorts_catalog·sci_extra·teardown_catalog)"]
     if not _SLUG.fullmatch(s.get("slug") or ""):
         errs.append("slug 는 영어 소문자·숫자·하이픈")
     hook = s.get("hook")
@@ -247,6 +267,8 @@ def check(s: dict) -> list[str]:
         hits = sorted({w for w in words for t in low if w.lower() in t})
         if hits:
             errs.append(f"{name} 금지 {hits}")
+    if P.is_teardown_entry(e):                            # ★11/10~ 뜯어보기: 상표·모델 X · '직접 열어 보세요' X · 안전·건강 단정 X
+        errs += teardown_errs(s)
     if not errs:                                          # 길이 어림 — 20~35초(렌더가 말 빠르기·끝 화면으로 맞춘다)
         segs, _ = plan(s, est_durations(s))
         total = segs[-1]["start"] + segs[-1]["dur"]
@@ -555,7 +577,7 @@ class Painter:
         hook, hy = self._hook(kind == "intro")
         im.alpha_composite(hook, (int((W - hook.width) / 2), hy))
         if kind == "intro":
-            self._chip(d, 0, hy + hook.height + 18, SERIES, R.font("bold", 40), fg=YEL, center=True)
+            self._chip(d, 0, hy + hook.height + 18, series_of(self.s), R.font("bold", 40), fg=YEL, center=True)
             return im.convert("RGB")
         if kind == "why":
             self._progress(d, None, 0)

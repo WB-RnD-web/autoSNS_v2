@@ -202,6 +202,12 @@ def nominal_publish_at(e: dict, sc: dict | None = None) -> str:
     return dt.datetime(d.year, d.month, d.day, h, m, tzinfo=dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
+def last_publish(sc: dict | None = None) -> dict[str, dt.date | None]:
+    """새 라인업 형식마다 마지막 공개일(목록 끝 편의 publish_date) — 목록이 비면 None. tools/runway.py 가 부른다."""
+    sc = sc or shorts()
+    return {f: (publish_date(sc[f][-1], sc) if sc.get(f) else None) for f in NEW_FORMATS}
+
+
 def new_on(date: dt.date, sc: dict | None = None) -> list[dict]:
     sc = sc or shorts()
     out = [e for f in NEW_FORMATS for e in sc[f] if assign_date(e, sc) == date]
