@@ -109,9 +109,16 @@ for _br in ("routine/ai_am", "routine/ai_pm"):
     ck(f"접은 누적 브랜치 {_br} 에 반응하는 push 워크플로가 없다", not reacting(_br), str(reacting(_br)))
 
 print("\n── 3. 데이터·PR 브랜치 push 는 아무 워크플로도 깨우지 않는다 ──")
-# ★10/25 주간 채우기 루틴(tools/REFILL.md)은 refill/<줄기>-<날짜> 브랜치로 PR 을 연다 — 업로드가 깨면 안 된다
-for _br in ("data/trend-radar", "data/ai-news-feed", "data/anything", "pulse/2026-10-24-sample", "refill/insta_sci-20261101"):
+for _br in ("data/trend-radar", "data/ai-news-feed", "data/anything", "pulse/2026-10-24-sample"):
     ck(f"{_br} 에 반응하는 push 워크플로가 없다(업로드가 깨어나지 않게)", not reacting(_br), str(reacting(_br)))
+# ★10/25 주간 채우기 루틴(tools/REFILL.md)은 refill/<줄기>-<날짜> 브랜치를 올린다 — 깨는 건 검사·PR(refill-pr.yml) 하나뿐,
+#   업로드 워크플로가 깨면 안 된다. refill-pr.yml 은 읽기 권한 + PR 열기만(push·업로드·비밀 없음).
+ck("refill/insta_sci-20261101 에 반응하는 push 워크플로는 refill-pr.yml 하나",
+   reacting("refill/insta_sci-20261101") == ["refill-pr.yml"], str(reacting("refill/insta_sci-20261101")))
+_rp = flows.get("refill-pr.yml", "")
+ck("refill-pr.yml: 읽기 권한 + PR 쓰기만 · secrets 안 씀 · 채우기 검사·전체 테스트 뒤에 PR",
+   re.search(r"(?m)^\s*contents:\s*read", _rp) is not None and "pull-requests: write" in _rp and "secrets." not in _rp
+   and _rp.find("tools/refill_check.py") < _rp.find("tools/run_tests.sh") < _rp.find("gh pr create"), "")
 
 print("\n── 4. 쓰기 권한은 데이터 브랜치·맥박 PR 브랜치 워크플로에만 ──")
 # 쓰기 권한은 '데이터 브랜치에 고아 커밋을 미는' 워크플로(트렌드 레이더, 2026-10-01 #112)와

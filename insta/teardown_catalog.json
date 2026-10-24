@@ -154,14 +154,13 @@
    ],
    "why_idea": "왜 냄비만 뜨거울까요?",
    "steps": [
-    "유리판 밑 구리 코일에 1초에 2만~4만 번 방향이 바뀌는 전류가 흘러요",
+    "유리판 밑 구리 코일에 방향이 아주 빠르게 바뀌는 전류가 흘러요",
     "출렁이는 자기장이 쇠 냄비 바닥에 소용돌이 전류(맴돌이 전류)를 일으켜요",
     "냄비 바닥이 스스로 뜨거워져요 — 에너지의 약 85%가 냄비로 가요"
    ],
    "result_idea": "가스는 약 32%, 인덕션은 약 85%. 효율이 약 3배예요",
    "sources": [
-    "https://www.energystar.gov/about/2021_residential_induction_cooking_tops",
-    "https://www.infineon.com/dgdl/Infineon-AN2014_01_Reverse_Conducting_IGBT-ApplicationNotes-v03_01-EN.pdf"
+    "https://www.energystar.gov/about/2021_residential_induction_cooking_tops"
    ],
    "facts": [
     {
@@ -178,34 +177,9 @@
      "fact": "Induction cooktops are about 3 times more efficient than gas and about 5-10% more efficient than electric resistance units.",
      "src": 0,
      "evidence": "about 5-10% more efficient than conventional electric resistance units and about 3 times more efficient than gas"
-    },
-    {
-     "fact": "Household induction cookers use operating frequencies of 20 kHz to 40 kHz at the highest power rating (20,000-40,000 cycles in 1 second, converted).",
-     "src": 1,
-     "evidence": "today’s household cookers utilize, for the highest power rating, operation frequencies of 20 kHz to 40 kHz"
-    },
-    {
-     "fact": "A frequency between 20 kHz and 75 kHz is enough to give heating power up to 4 kW in most ferromagnetic (iron-based) pans.",
-     "src": 1,
-     "evidence": "a range of frequency between 20 kHz and 75 kHz is sufficient to guarantee heating power up to 4 kW for most ferromagnetic materials"
-    },
-    {
-     "fact": "Non-ferromagnetic pans such as aluminium need a higher frequency and a stronger magnetic field, raising the range up to 100 kHz.",
-     "src": 1,
-     "evidence": "higher frequency and higher magnetic field strength are usually needed, thus increasing the frequency range up to 100 kHz"
     }
    ],
    "mechanism_refs": [
-    {
-     "note": "The oscillating field induces a current in the pan bottom that flows in closed circles: eddy currents",
-     "src": 1,
-     "evidence": "This current flows in closed circles that are perpendicular to the magnetic field and therefore is usually called “eddy currents.”"
-    },
-    {
-     "note": "In iron pans, magnetic hysteresis adds heat",
-     "src": 1,
-     "evidence": "the oscillating magnetic field produces losses because of magnetic hysteresis"
-    },
     {
      "note": "The cookware itself is the heat source; less heat is lost to the air",
      "src": 0,
@@ -231,15 +205,13 @@
      "beat": "step1",
      "view": "cutaway",
      "img": "an induction cooktop with a quarter wedge cut away, a flat spiral copper coil under the glass in the center",
-     "label": "구리 코일",
-     "fact": 3
+     "label": "구리 코일"
     },
     {
      "beat": "step2",
      "view": "cutaway",
      "img": "a steel pot base sliced open, swirling circular glowing currents inside the metal, curved magnetic field lines rising from a coil below",
-     "label": "맴돌이 전류",
-     "fact": null
+     "label": "맴돌이 전류"
     },
     {
      "beat": "step3",
@@ -259,8 +231,6 @@
    "careful": [
     "Never say the glass 'doesn't get hot': the hot pot warms it. Say '유리판을 직접 데우지 않아요'",
     "Efficiency numbers are ENERGY STAR estimates: always '약'",
-    "Write '2만~4만 번' (= 20,000-40,000) to match facts; 20-40 kHz is the high-power household range in one chip maker's note — say '보통'",
-    "The Infineon note oddly lists cast iron as non-ferromagnetic — if pans come up, mention only aluminium",
     "No 'safer than gas' / indoor-air / health claims; no hands touching the cooktop in images"
    ],
    "checked": "2026-10-25"
@@ -282,17 +252,15 @@
    ],
    "why_idea": "왜 올려만 둬도 될까요?",
    "steps": [
-    "충전 패드 코일에 1초에 11만~20.5만 번 바뀌는 전류가 흘러 자기장이 생겨요",
+    "충전 패드 코일에 방향이 빠르게 바뀌는 전류가 흘러 자기장이 생겨요",
     "몇 mm 위 폰 코일이 그 자기장 일부를 받아 전압이 생겨요(결합 0.3~0.6)",
-    "칩이 교류를 직류로 바꾸고(최고 93%), 폰은 초당 2킬로비트 신호로 '더·덜·그만'을 보내요"
+    "칩이 교류를 직류로 바꾸고, 폰은 초당 2킬로비트 신호로 '더·덜·그만'을 보내요"
    ],
    "result_idea": "최신 표준은 25W — 0%에서 50%까지 약 30분이에요",
    "sources": [
     "https://www.wirelesspowerconsortium.com/knowledge-base/magnetic-induction/how-qi-works/",
     "https://www.wirelesspowerconsortium.com/media/vlxiylny/how-it-works.pptx",
     "https://www.wirelesspowerconsortium.com/knowledge-base/magnetic-induction/coupling-factor/",
-    "https://www.ti.com/lit/ds/symlink/bq500212a.pdf",
-    "https://www.ti.com/lit/ds/symlink/bq51013b.pdf",
     "https://www.wirelesspowerconsortium.com/qi/"
    ],
    "facts": [
@@ -307,33 +275,23 @@
      "evidence": "Coupling factors in the range of 0.3 to 0.6 are typical."
     },
     {
-     "fact": "In a common charger design the coil's resonant frequency is fixed at 100 kHz and power is regulated by changing the operating frequency between 110 kHz and 205 kHz (110,000-205,000 cycles in 1 second, converted); the higher the frequency, the lower the power.",
-     "src": 3,
-     "evidence": "the resonant frequency point is fixed at 100 kHz. Power transfer is regulated by changing the operating frequency between 110 kHz to 205 kHz."
-    },
-    {
      "fact": "The phone sends control messages back to the charger by load modulation at a speed of 2 Kbit/s, so the charger can adapt the power.",
      "src": 1,
      "evidence": "Communication (Data-Format) Speed: 2 Kbit/s"
     },
     {
-     "fact": "A receiver chip in the phone turns the coil's AC into DC with up to 93% overall peak AC-DC efficiency.",
-     "src": 4,
-     "evidence": "93% Overall peak AC-DC efficiency"
-    },
-    {
      "fact": "The newest 25W version of the standard can charge a smartphone battery from 0 to 50% in about 30 minutes.",
-     "src": 5,
+     "src": 3,
      "evidence": "can safely charge a smartphone battery from 0 to 50% in about 30 minutes"
     },
     {
      "fact": "The 25W version delivers nearly 70% more charging power than the earlier 15W version.",
-     "src": 5,
+     "src": 3,
      "evidence": "delivering nearly 70% more charging power"
     },
     {
      "fact": "The standard was first launched in 2010, and over 13,000 certified products are on the market.",
-     "src": 5,
+     "src": 3,
      "evidence": "Initially launched in 2010, there are over 13,000 Qi Certified products in the market today"
     }
    ],
@@ -368,8 +326,7 @@
      "beat": "step1",
      "view": "cutaway",
      "img": "a round charging pad with a quarter wedge cut away, a flat spiral copper coil glowing in the center",
-     "label": "송신 코일",
-     "fact": 2
+     "label": "송신 코일"
     },
     {
      "beat": "step2",
@@ -383,20 +340,18 @@
      "view": "cutaway",
      "img": "a smartphone cut open from the back, a tiny chip next to the coil and the battery, small glowing pulses going back down to the pad",
      "label": "제어 칩",
-     "fact": 3
+     "fact": 2
     },
     {
      "beat": "result",
      "view": "cutaway",
      "img": "a smartphone battery cut open, glowing exactly half full",
      "label": "50%까지",
-     "fact": 5
+     "fact": 3
     }
    ],
    "careful": [
     "Don't name the standard's trademark or show its mark on screen: say '무선충전 국제 표준'",
-    "100 kHz / 110~205kHz come from one common charger chip for an older version of the standard: say '흔한 방식'",
-    "Write '11만~20.5만 번' (= 110,000-205,000) so the number check matches",
     "Coupling 0.3~0.6 is not an efficiency: never turn it into '30~60%만 전달' or '손실 40%'",
     "The source says 'safely charge' — don't repeat safety claims; 0→50% in about 30 min is the standard body's claim for the newest version, not every phone",
     "Don't suggest putting coins/metal on pads or opening phones"

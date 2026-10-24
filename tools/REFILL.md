@@ -14,8 +14,13 @@
    여러 줄기가 급하면 남은 날이 적은 것부터, 줄기마다 브랜치·PR 을 따로.
 3. 그 줄기 절(`refill_doc` = 이 문서의 `#<줄기 id>`)대로 **끝에만** 붙인다 — 배치 크기만큼.
 4. `python tools/refill_check.py` → ✅ 가 날 때까지 고친다(새 항목 from · 지난 편성 그대로 · 사실 근거 · 금지어).
-5. `bash tools/run_tests.sh` — **언제나 전체**. 하나라도 ❌ 면 고친다.
-6. 커밋 → `git push origin refill/<줄기 id>-<YYYYMMDD>` → 아래 템플릿으로 PR.
+5. 그 줄기의 테스트(각 절의 '테스트')를 돌린다. 될 수 있으면 `bash tools/run_tests.sh` 전체도(렌더 테스트처럼 이 환경에 없는
+   도구가 필요한 것만 실패하면 괜찮다 — 전체는 6번 뒤 GitHub 이 다시 돌린다).
+6. 커밋 — **제목 줄 = PR 제목, 본문 = PR 본문**(아래 템플릿 그대로) → `git push origin refill/<줄기 id>-<YYYYMMDD>`.
+   push 하면 GitHub(`.github/workflows/refill-pr.yml`)이 채우기 검사 + 전체 테스트를 돌리고 **통과할 때만 PR 을 연다**.
+   PR 은 직접 열지 않는다. 15분쯤 뒤
+   `curl -s "https://api.github.com/repos/WB-RnD-web/autoSNS_v2/actions/workflows/refill-pr.yml/runs?branch=<브랜치>&per_page=1"`
+   로 결과(conclusion)만 한 번 보고, 실패면 보고에 적는다(고치기는 다음 실행에서).
 
 ## 공통 규칙
 
@@ -62,6 +67,7 @@
 <a id="nt_shorts"></a>
 ## Nine Tails 영어 쇼츠 — `gumiho/tales/shorts_catalog.json`
 
+- 테스트: `python gumiho/tales/test_rules.py` · `python insta/test_pick.py`(인스타가 같은 catalog 를 읽는다)
 - 자리: A `survival` 매일 20:00 UTC · B `compare`(first_publish 기준 짝수 날)·`liminal`(홀수 날) 23:30 UTC — 하루 두 편.
   세 형식 모두 같은 from 이면 코드(`rules.publish_dates`)가 알아서 번갈아 놓는다. 쓰는 날 = 공개 전날.
 - **시험 줄기**: 판정일은 이 파일의 `judge`. 판정이 '계속'일 때만 머지(아니면 PR 을 닫는다).
@@ -84,6 +90,7 @@ liminal(창작)은 `premise`·`setting`·`seeds`(4개 이상)·`twist_idea`·`ca
 <a id="nt_longform"></a>
 ## Nine Tails 해설 롱폼 — `gumiho/tales/catalog.json` → `tales`
 
+- 테스트: `python gumiho/tales/test_tales.py`
 - 자리: 주 1편 일요일 14:00 UTC. **`date` 는 적지 않는다** — `from` 만 적으면 `tales.schedule` 이 from 이후 첫 일요일(앞 편 뒤)로 정한다.
 - 번호: `id` = 마지막 편 + 1(30~). slug 겹침 X. `region: "GLOBAL"`. 배치 2편.
 - `format` 은 해설편(`places`·`zones`·`whatif`·`ranked`·`abandoned`) — 같은 format 4편 넘게 연속 X. 설화·한국·일본·중국 주제 금지.
@@ -101,6 +108,7 @@ liminal(창작)은 `premise`·`setting`·`seeds`(4개 이상)·`twist_idea`·`ca
 <a id="wb_gunghap"></a>
 ## 띠 궁합표 — `pipeline/gunghap_card.py` → `THEMES`
 
+- 테스트: `python pipeline/test_gunghap_card.py`
 - 자리: 화·금 18:13 KST. 끝에 붙인 묶음은 `schedule` 이 from 이후 첫 화·금부터(앞 묶음 다음) 놓는다. 배치 6묶음.
 - 번호: `id` = 영어 소문자 한 낱말(겹침 X). 묶음 하나 = 함수 하나(`_<id>(b)` → `([(짝 띠 번호, 관계 이름)…], [(조심할 띠 번호, 관계 이름)…])`)
   + `THEMES` 끝의 dict. 관계는 이 파일의 전통 지지 관계 도우미만 쓴다(`pair_of(YUKHAP|WONJIN, b)` · `samhap_mates` · `chung` ·
@@ -125,6 +133,7 @@ THEMES.append({"id": "siblings", "card": "형제·자매 궁합표", "yt": "형�
 <a id="wb_lf27"></a>
 ## 2027 정미년 깊이 보기 이어 가기 — `pipeline/longform_2027_more.json`
 
+- 테스트: `python pipeline/test_longform_2027.py`
 - 자리: 월·수·금 20:00 KST. E01~E16(11/02~12/07)은 코드가 정한 편 — 그 뒤로 `episodes` 에 E17~ 을 적으면
   from 이후 첫 월·수·금부터(앞 편 다음) 이어진다. 배치 12편. **적은 뒤** `python pipeline/longform_2027.py catalog --write`
   (커밋된 `longform_2027_catalog.json` 이 코드 출력과 같아야 테스트가 통과한다).
@@ -149,6 +158,7 @@ THEMES.append({"id": "siblings", "card": "형제·자매 궁합표", "yt": "형�
 <a id="insta_sci"></a>
 ## 인스타 sci(도파민 과학 · 속이 보이는 과학) — `insta/sci_extra.json`
 
+- 테스트: `python insta/test_pick.py`
 - 자리: 하루 한 편, 저녁·낮 번갈아(11/08~ 은 항목이 남은 날만 — `pick_plan.open_plan`). 화·금은 뜯어보기가 먼저 쓴다.
   배치 14편. `from` 이 없는 항목은 편성되지 않는다.
 - 번호: `n` 904~950(앞 번호 + 1). `survival` 또는 `compare` 목록 끝에. 모양은 901~903 과 같다 + fact 마다 `evidence`.
@@ -166,6 +176,7 @@ THEMES.append({"id": "siblings", "card": "형제·자매 궁합표", "yt": "형�
 <a id="insta_teardown"></a>
 ## 과학으로 뜯어보는 물건(teardown) — `insta/teardown_catalog.json` → `entries`
 
+- 테스트: `python insta/test_pick.py`
 - 자리: 화·금 sci 자리(11/09 주~). 배치 10편(5주). 비거나 바닥나면 그날은 보통 sci.
 - 번호: `n` 961~(앞 번호 + 1). `"series": "teardown"` · `"format": "teardown"` · `"look": "object"` · `from`.
 - 모양: 951~960 과 같다 — `topic_ko`·`topic_en`·`title_idea`·`teaser`·`hook_idea`(두 줄)·`why_idea`·`steps`(세 박자)·
@@ -200,7 +211,7 @@ THEMES.append({"id": "siblings", "card": "형제·자매 궁합표", "yt": "형�
 
 ## 검사
 - python tools/refill_check.py ✅(출력 붙이기)
-- bash tools/run_tests.sh ✅
+- 그 줄기 테스트 ✅ · 전체 테스트는 refill-pr.yml 이 PR 을 열기 전에 다시 돌렸다
 
 ## 머지
 - 시험 중인 줄기(NT 쇼츠·bm)는 판정이 '계속'일 때만 머지
