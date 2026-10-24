@@ -1,0 +1,84 @@
+{
+ "id": 207,
+ "slug": "fastest-things-ranked",
+ "format": "compare",
+ "part": 7,
+ "look": "space",
+ "title": "Voyager 1 vs Parker Solar Probe vs Light | Speed Comparison #shorts",
+ "hook": "FASTEST THINGS, RANKED",
+ "description_hook": "From Voyager 1 at about 61,000 km/h to light at about 1.08 billion km/h: the fastest things, ranked.",
+ "unit": "km/h",
+ "scale": "log",
+ "items": [
+  {
+   "name": "VOYAGER 1",
+   "value": 61000,
+   "label": "61,000 KM/H",
+   "src": 0,
+   "say": "How fast can anything really go? Start with Voyager 1, leaving the solar system at about 61,000 km/h.",
+   "img": "a small lonely space probe with a large white dish antenna drifting through the deep black emptiness beyond the planets, a faint distant star behind it"
+  },
+  {
+   "name": "EARTH AROUND THE SUN",
+   "value": 107000,
+   "label": "107,000 KM/H",
+   "src": 1,
+   "say": "Earth itself. You're circling the Sun at about 107,000 km/h, sitting still.",
+   "img": "the blue Earth seen from space sweeping along its orbit, a bright Sun far off to one side, a faint curved motion trail behind it"
+  },
+  {
+   "name": "PARKER SOLAR PROBE",
+   "value": 700000,
+   "label": "700,000 KM/H",
+   "src": 2,
+   "say": "Parker Solar Probe, the fastest human-made object: about 700,000 km/h.",
+   "img": "a compact spacecraft behind a dark round heat shield skimming close past a blazing solar surface, streaks of hot plasma flowing by"
+  },
+  {
+   "name": "SUN AROUND GALAXY",
+   "value": 720000,
+   "label": "720,000 KM/H",
+   "src": 3,
+   "say": "But the whole solar system circles the galaxy at about 720,000 km/h. One lap takes about 230 million years.",
+   "img": "a vast spiral galaxy seen from above with a single tiny glowing star marked by a soft halo far out in one of its arms"
+  },
+  {
+   "name": "LIGHT",
+   "value": 1080000000,
+   "label": "1.08 BILLION KM/H",
+   "src": 4,
+   "say": "Light. About 1.08 billion km/h. Off the chart.",
+   "img": "a single razor-thin beam of pure white light shooting straight through black space, stars blurred into streaks along its path"
+  },
+  {
+   "name": "SUNLIGHT",
+   "twist": true,
+   "text": "SUNLIGHT IS ABOUT 8 MINUTES OLD",
+   "src": 5,
+   "say": "And even light is slow. Sunlight needs about 8 minutes to reach you. The Sun you see is the past.",
+   "img": "warm golden sunlight pouring through a gap in clouds over a quiet empty field at sunset, a lone figure from behind looking up at the Sun"
+  }
+ ],
+ "gumi": {
+  "say": "Gumi's verdict: you're already faster than Voyager. Just by sitting there."
+ },
+ "sources": [
+  "https://science.nasa.gov/mission/voyager/voyager-1/",
+  "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html",
+  "https://science.nasa.gov/mission/parker-solar-probe/",
+  "https://science.nasa.gov/sun/facts/",
+  "https://physics.nist.gov/cgi-bin/cuu/Value?c",
+  "https://ssd.jpl.nasa.gov/astro_par.html"
+ ],
+ "tags": [
+  "speed comparison",
+  "fastest things",
+  "speed of light",
+  "parker solar probe",
+  "voyager 1",
+  "solar system",
+  "space facts",
+  "science",
+  "how fast"
+ ]
+}

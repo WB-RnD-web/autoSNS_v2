@@ -1,0 +1,73 @@
+{
+ "id": 113,
+ "slug": "sun-corona",
+ "format": "survival",
+ "part": 13,
+ "look": "space",
+ "title": "How Long Would You Last Inside the Sun's Corona? #shorts",
+ "hook": "HOW LONG WOULD YOU LAST?",
+ "situation": "INSIDE THE SUN'S CORONA",
+ "description_hook": "You're floating 6.1 million km from the Sun's surface, inside a corona of 2 million °C, with no suit. The clock starts now.",
+ "beats": [
+  {
+   "t": "0:00",
+   "text": "2 MILLION °C",
+   "src": 1,
+   "say": "How long would you last inside the Sun's corona? You're 6.1 million km from the surface. The gas around you is 2 million °C.",
+   "img": "a tiny human silhouette floating in black space before a gigantic glowing solar surface, wispy white coronal streamers curling outward all around"
+  },
+  {
+   "t": "0:00",
+   "text": "10 MILLION× THINNER",
+   "src": 2,
+   "say": "But it's 10 million times thinner than the surface. Too thin to burn you. The light is the problem.",
+   "img": "faint pearly strands of thin plasma drifting through dark space near the Sun, a few scattered glowing particles, soft eerie glow"
+  },
+  {
+   "t": "--:--",
+   "text": "475× BRIGHTER",
+   "src": 3,
+   "say": "Sunlight here is about 475 times brighter than on Earth. Your skin takes the full blast.",
+   "img": "a blinding wall of white sunlight flooding the frame, a dark outstretched hand silhouetted against the overwhelming glare"
+  },
+  {
+   "t": "0:11",
+   "text": "9–11 SECONDS",
+   "src": 4,
+   "say": "And there's no air. After about 9 to 11 seconds, you black out. The water on your tongue starts to boil.",
+   "img": "a lone figure in plain clothes drifting limp in empty space, back to the camera, a huge orange solar disk filling the background"
+  },
+  {
+   "t": "1:00",
+   "text": "1 MINUTE",
+   "src": 5,
+   "say": "Within 1 minute, your blood stops circulating. The Sun doesn't even notice.",
+   "img": "a vast churning solar surface with a towering looping prominence, seen from close orbit, no trace of anything human in sight"
+  }
+ ],
+ "gumi": {
+  "odds": "0%",
+  "say": "Gumi's odds: zero. Parker zips past at 692,000 km/h, behind a shield rated to 1,377 °C."
+ },
+ "teaser": "NEXT: NEPTUNE",
+ "sources": [
+  "https://science.nasa.gov/blogs/parker-solar-probe/2024/12/20/parker-solar-probe-begins-record-setting-closest-approach-to-the-sun/",
+  "https://science.nasa.gov/sun/facts/",
+  "https://spaceplace.nasa.gov/sun-corona/en/",
+  "https://physics.aps.org/articles/v14/176",
+  "https://www.nasa.gov/wp-content/uploads/2023/05/dressing-for-altitude-nov-2017.pdf",
+  "https://science.nasa.gov/mission/parker-solar-probe/",
+  "https://science.nasa.gov/missions/parker-solar-probe/10-things-to-know-about-parker-solar-probe/"
+ ],
+ "tags": [
+  "sun",
+  "solar corona",
+  "how long would you last",
+  "parker solar probe",
+  "space",
+  "survival",
+  "vacuum of space",
+  "space facts",
+  "science"
+ ]
+}
