@@ -16,6 +16,7 @@
     무엇을 쓸지도 코드가 정한다: BM_ORDER[i] = insta/bm_catalog.json 의 n(사실·출처는 미리 확인 — 클라우드 작가는 웹을 못 본다).
     골라보기 로테이션은 그동안 쉬고, 11/08부터 다음 꼴로 이어진다(회차 series_no 도 골라보기만 이어서 센다 · bm·sci 는 None).
     11/08부터 다시 골라보기 두 편. 10/24 까지 꼴·회차·sci 순서는 그대로다(테스트가 못 박는다).
+  ★10/24 sci 모양 바꿈 SCI_XRAY_FROM(10/25 저녁)~: '속이 보이는 과학'(투시·단면 3D + 원인 3단계) — 주제·편성은 그대로(sci_xray).
   (같은 날 두 편은 늘 다른 꼴 — 그래서 꼴만 보면 그날 어느 편인지 하나로 정해진다: slot_of)
   회차 번호는 골라보기 편만 센다: 10/8 = '오늘의 골라보기 #1' · 10/12 = #5 · 10/13 낮 = #6 · 10/13 저녁 = #7 (series_no · sci 는 None)
   어느 편 차례인지(due_slot)도 코드가 정한다: KST NOON_UNTIL(16)시 전이면 낮 편, 뒤면 저녁 편.
@@ -68,6 +69,14 @@ SCI_ORDER = (101, 201, 107, 102, 203, 104, 202, 105, 206, 109, 205, 103, 207, 10
              108, 110, 111, 112, 113, 114, 204, 901, 902, 903)
 SCI_EXEMPLAR = "insta/samples/sci_mariana.json"
 SCI_WRITING = "insta/SCI_WRITING.md"
+# ★10/24 sci → '속이 보이는 과학'(사용자 승인 10/24) — 벤치마크: so.thats.how 'Dishwasher' 3D 단면 808만 · 해외 건강 쇼츠
+#   투명 피부 3D 사람(첫 달 1,000만, 0~6초 대조 훅 → '왜?' → 원인 3단계 → 결과). 이날부터 sci 대본은 훅 → 왜? → 박자 정확히 3개
+#   (1/3·2/3·3/3) → 판정, 박자마다 view(xray 투시 · cutaway 단면 · scene)로 그린다(검사·렌더 insta/sci_xray.py).
+#   주제·편성(SCI_ORDER·sci_slot)은 그대로 · 이 날짜 전 대본은 옛 모양(박자 4~6개 · 어두운 실사) 그대로 검사·렌더한다.
+SCI_XRAY_FROM = dt.date(2026, 10, 25)    # 10/25 저녁 sci 편부터
+SCI_XRAY_EXEMPLAR = "insta/samples/sci_xray_heaviest-life.json"   # 10/25 저녁 편(205) 실제 견본 — 그날은 그대로 복사해도 된다
+SCI_XRAY_VIEWS = ("xray", "cutaway", "scene")   # 투시(몸속 뼈·장기) · 단면(기계·행성·바다 층을 잘라 연 모습) · 그냥 장면(대체)
+SCI_XRAY_SEC = (20.0, 35.0)              # 전체 길이(초) — 렌더가 맞춘다(길면 말을 조금 빠르게 · 짧으면 끝 화면을 늘린다)
 SHORTS = os.path.join(ROOT, "gumiho", "tales", "shorts_catalog.json")   # 영어 쇼츠 survival·compare — 출처 달린 사실(facts)
 SCI_EXTRA = os.path.join(HERE, "sci_extra.json")                         # 인스타 sci 전용 추가 주제(n ≥ 901, 같은 모양)
 # ★10/20 병맛(bm) 2주 시험 — 골라보기 자리를 바꾼다(10/15~10/20 sci 중앙값 약 440 vs 골라보기 약 117 · 사용자 승인)
@@ -126,6 +135,11 @@ def sci_n(d: dt.date) -> int | None:
     """그날 sci 편이 쓸 shorts_catalog 항목 번호(SCI_ORDER) — sci 날이 아니면 None."""
     k = sci_index(d)
     return None if k is None else SCI_ORDER[k]
+
+
+def sci_xray(d: dt.date) -> bool:
+    """그날 sci 편이 '속이 보이는 과학' 모양인가 — SCI_XRAY_FROM(10/25) 부터. 그 전 날짜는 옛 모양 그대로."""
+    return d >= SCI_XRAY_FROM
 
 
 def sci_entry(n: int, path: str = SHORTS, extra: str = SCI_EXTRA) -> dict | None:
@@ -315,7 +329,7 @@ def next_info(d: dt.date, root: str = SCRIPTS, slot: str | None = None, now: dt.
                 "why": f"{d} 에는 낮 편이 없다 — 하루 두 편은 {TWICE_FROM} 부터(그 전엔 저녁 편 하나)"}
     k = kind_for(d, sl)
     if k == SCI:
-        exemplar, writing = SCI_EXEMPLAR, SCI_WRITING
+        exemplar, writing = (SCI_XRAY_EXEMPLAR if sci_xray(d) else SCI_EXEMPLAR), SCI_WRITING
     elif k in BM_KINDS:
         exemplar, writing = BM_EXEMPLAR[k], BM_WRITING
     else:
@@ -333,6 +347,9 @@ def next_info(d: dt.date, root: str = SCRIPTS, slot: str | None = None, now: dt.
         e = sci_entry(sci_n(d)) or {}
         out.update(src_n=e.get("n"), sci_no=sci_index(d) + 1, format=e.get("format"),
                    entry={k_: e[k_] for k_ in SCI_ENTRY_KEYS if k_ in e})
+        if sci_xray(d):                                    # ★10/25~ '속이 보이는 과학' — 모양은 check 가 막는다(SCI_WRITING)
+            out.update(series="속이 보이는 과학", length_sec=list(SCI_XRAY_SEC), views=list(SCI_XRAY_VIEWS),
+                       structure="hook(대조·충격 질문) → why(왜?) → beats 정확히 3개(1/3·2/3·3/3, 박자마다 view) → verdict(결과)")
     return out
 
 
