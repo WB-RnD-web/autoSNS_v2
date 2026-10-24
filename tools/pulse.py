@@ -324,6 +324,7 @@ def analyze_channel(key: str, spec: dict, reg: dict, chans: dict, at: dt.datetim
         "last_pub_h": round((at - last_pub).total_seconds() / 3600) if last_pub else None,
         "_m24": {v: views_at(recs[v], 1.0) for v in recs}, "_fk": fk, "_age": age, "_fby": fby,
         "_main": main, "_cs": cs,
+        "_recs": recs,
     }
 
 
@@ -362,6 +363,59 @@ def channel_flags(c: dict) -> list[dict]:
     return out
 
 
+ARMS = {"outro": "outro"}        # 실험 arms 이름 → 날짜로 arm 을 정하는 pipeline 모듈(arm(date) -> 'on'|'off'|None)
+
+
+def _pipeline_mod(name: str):
+    """pipeline/<name>.py 를 sys.path 를 건드리지 않고 불러온다(이름이 tools 쪽과 섞이지 않게)."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location(f"wb_{name}", os.path.join(ROOT, "pipeline", f"{name}.py"))
+    m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m)
+    return m
+
+
+def arm_split(e: dict, c: dict) -> dict:
+    """실험의 arms 가 'outro' 면(표 쇼츠 끝인사 A/B · pipeline/outro.py) formats 에 든 영상을 게시일(KST)로 on/off 로 나눈다.
+    arm 마다 편 수·형식별 편 수·첫 48시간 조회·첫 48시간 댓글 ÷ 조회 1천 회(c1k48 — 레이더 댓글 스냅숏 cmts 가 있을 때)·
+    지금까지 댓글 ÷ 조회 1천 회(c1k_now). 평균 시청 비율은 스튜디오 숫자라 여기 없다."""
+    if e.get("arms") not in ARMS:                    # 실험 달력(분석 루틴도 PR 로 고친다)이 아무 모듈이나 부르지 못하게
+        return {}
+    arm_of = _pipeline_mod(ARMS[e["arms"]]).arm
+    fk = c.get("_fk", {})
+    out = {}
+    for v, r in (c.get("_recs") or {}).items():
+        if fk.get(v) not in e.get("formats", []):
+            continue
+        a = arm_of(dt.date.fromisoformat(kst_day(parse_t(r["pub"]))))
+        if a is None:
+            continue
+        g = out.setdefault(a, {"n": 0, "fmts": {}, "n48": 0, "views48": 0.0, "cmts48": 0.0, "views": 0, "cmts": 0, "_v48": []})
+        g["n"] += 1
+        g["fmts"][fk[v]] = g["fmts"].get(fk[v], 0) + 1
+        g["views"] += latest(r)
+        g["cmts"] += int(r.get("comments", 0) or 0)
+        v48 = views_at(r, 2.0)
+        c48 = views_at({"pub": r["pub"], "views": r["cmts"]}, 2.0) if r.get("cmts") else None
+        if v48 is not None:
+            g["_v48"].append(v48)
+        if v48 is not None and c48 is not None:
+            g["n48"] += 1
+            g["views48"] += v48
+            g["cmts48"] += c48
+    for g in out.values():
+        g["med48"] = rnd(med(g.pop("_v48")))
+        g["c1k48"] = round(1000 * g["cmts48"] / g["views48"], 2) if g["views48"] else None
+        g["c1k_now"] = round(1000 * g["cmts"] / g["views"], 2) if g["views"] else None
+        g["views48"], g["cmts48"] = round(g["views48"]), round(g["cmts48"], 1)
+    on, off = out.get("on", {}), out.get("off", {})
+    if on.get("c1k48") and off.get("c1k48"):
+        out["c1k48_ratio"] = round(on["c1k48"] / off["c1k48"], 2)
+    if on.get("c1k_now") and off.get("c1k_now"):
+        out["c1k_now_ratio"] = round(on["c1k_now"] / off["c1k_now"], 2)
+    return out
+
+
 def exp_status(today: dt.date, chans: dict) -> tuple[list, list]:
     rows, flags = [], []
     for e in load(EXPERIMENTS, {"experiments": []})["experiments"]:
@@ -378,6 +432,8 @@ def exp_status(today: dt.date, chans: dict) -> tuple[list, list]:
                     nums.append({"fmt": f["label"], "n7": f["n7"], "med24": f["med24"], "base24": f["base24"]})
         rows.append({k: e[k] for k in ("id", "ch", "title", "start", "judge", "criterion", "owner", "status")}
                     | {"days_left": left, "started": started, "nums": nums})
+        if e.get("arms") and c and started:
+            rows[-1]["arms"] = arm_split(e, c)
         if left is not None and e["status"] in ("running", "scheduled") and started:
             if 0 <= left <= 1:
                 flags.append({"id": f"EXP_DUE:{e['id']}", "level": "info",

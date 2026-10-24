@@ -161,6 +161,8 @@ def collect(reg: dict, cfg: dict, yt, at: dt.datetime | None = None) -> dict:
         r.update({"title": d["title"], "pub": d["pub"], "dur": d["dur"], "likes": d["likes"], "comments": d["comments"],
                   "niche": niche})
         r["views"][key] = d["views"]
+        # 댓글 수도 스냅숏으로(2026-10-24) — 채널 맥박이 '첫 48시간 댓글 ÷ 조회'를 잰다(표 쇼츠 끝인사 A/B · pipeline/outro.py)
+        r.setdefault("cmts", {})[key] = d["comments"]
     dropped = [v for v, r in reg.items() if age_days(r, at) > KEEP_DAYS]
     for v in dropped:
         del reg[v]

@@ -520,6 +520,136 @@ def _flower(size, color, rot, x=None, y=None):
     return f'<div class="bfl" style="{pos}width:{size}px;height:{size}px;transform:rotate({rot}deg)">{petals}<b></b></div>'
 
 
+# ── 표 쇼츠 끝인사(2026-10-24, outro.py) — '오늘의 덕담 한마디' + '띠 남기시면 덕담 드려요' ──────────
+# 표가 끝난 뒤 2.0~2.5초. 표(마지막 장면)는 그대로 둔 채 그 위에 옅은 막 + 가운데 판 하나 — 배경·색은 표와 같다(음악 없음).
+# 판은 x 60~960 · y 약 580~1220 — 쇼츠 오른쪽 버튼 열(x 960~)·아래 제목 자리(y 1460~)·위 검색 줄을 비운다.
+# 목소리: 두 문장(덕담 → 초대)을 따로 읽혀 앞뒤 무음을 잘라 붙인다. Supertonic 은 앞뒤에 0.4~0.6초씩 무음이 있어
+#   그대로 이으면 4초가 넘는다(10/25 실측). 그래도 2.5초를 넘으면 조금(최대 OUTRO_TEMPO_MAX 배) 빠르게 — 그 이상은 더 빠르게 하지 않고
+#   끝인사를 그만큼 늘린다(목소리를 자르지 않는다).
+OUTRO_MIN, OUTRO_MAX = 2.0, 2.5      # 끝인사 길이(초)
+OUTRO_LEAD, OUTRO_TAIL, OUTRO_GAP = 0.08, 0.08, 0.08   # 목소리 앞 · 뒤 여유 · 두 문장 사이
+OUTRO_TEMPO_MAX = 1.18               # 넘칠 때만 · 10/25 실측 76줄은 대개 1.00~1.07배(합성할 때마다 ±0.15초 흔들려 최악 1.16배)
+OUTRO_BOX = 820                      # 판 안 글자 폭(판 900 − 안쪽 여백 40 × 2)
+OUTRO_F1_MAX, OUTRO_F1_SPLIT, OUTRO_F2 = 128, 108, 72   # 큰 글자 최대 · 이보다 작아지면 두 줄로 · 둘째 줄
+CSS_OUTRO = """
+#outro{position:absolute;inset:0;z-index:55;opacity:0;pointer-events:none;}
+#outro .ov{position:absolute;inset:0;background:rgba(10,8,8,.80);}
+#outro .opanel{position:absolute;left:60px;width:900px;border-radius:40px;padding:52px 40px 58px;text-align:center;
+  background:rgba(18,14,12,.94);border:4px solid var(--acc,#D97757);box-shadow:0 18px 60px rgba(0,0,0,.5);will-change:transform;}
+#outro .olab{display:inline-block;background:var(--acc,#D97757);color:#0A0808;font-weight:800;font-size:44px;letter-spacing:1px;
+  padding:12px 34px;border-radius:999px;line-height:1.1;}
+#outro .o1{color:#FFFFFF;font-weight:900;letter-spacing:-2px;line-height:1.14;margin-top:34px;white-space:nowrap;}
+#outro .o1 span{display:block;}
+#outro .o2{color:var(--acc,#D97757);font-weight:800;letter-spacing:-1px;line-height:1.15;margin-top:38px;white-space:nowrap;
+  will-change:transform;}
+#outro .bfl{position:absolute;will-change:transform;}
+#outro .bfl i{position:absolute;left:32%;top:0;width:36%;height:50%;border-radius:50%;transform-origin:50% 100%;opacity:.92;}
+#outro .bfl b{position:absolute;left:39%;top:39%;width:22%;height:22%;border-radius:50%;background:#F6C85F;}
+#outro.light .ov{background:rgba(255,247,242,.86);}
+#outro.light .opanel{background:rgba(255,252,249,.97);border-color:rgba(224,117,138,.55);box-shadow:0 14px 44px rgba(110,45,60,.18);}
+#outro.light .o1{color:#3E1F2A;}
+#outro.light .o2{color:#A8324F;}
+"""
+
+
+def _outro_em(s):
+    """대략 글자 폭(em) — 한글 1 · 빈칸·쉼표 0.35 · 숫자 0.56 · 그 밖 영문 0.6."""
+    return sum(0.35 if c in " ,." else 0.56 if c.isdigit() else 0.6 if c.isascii() else 1.0 for c in str(s)) or 1.0
+
+
+OUTRO_AUX = ("보세요", "봐요")          # '가 보세요'·'해 봐요'는 한 덩어리 — 그 앞에서 끊지 않는다
+
+
+def outro_split(text):
+    """큰 글자 한 줄 → (줄들, 글자 크기). 한 줄로 OUTRO_F1_SPLIT px 를 못 지키면 두 줄로 나눈다.
+    끊는 곳: 쉼표 뒤('입동, / 든든히 드세요') → 아니면 끝 말 앞('따끈한 차 / 드세요' · '꽃구경 / 가 보세요') —
+    둘째 줄이 늘 '하세요' 말로 끝나 뜻이 갈리지 않는다. 그래도 글자가 작아지면 두 줄 길이가 고른 곳에서."""
+    text = str(text or "").strip()
+    one = min(OUTRO_F1_MAX, OUTRO_BOX / _outro_em(text))
+    if one >= OUTRO_F1_SPLIT or " " not in text:
+        return [text], int(one)
+    cuts = [k for k, c in enumerate(text) if c == " "]
+    size = lambda k: OUTRO_BOX / max(_outro_em(text[:k]), _outro_em(text[k + 1:]))  # noqa: E731
+    words = text.split(" ")
+    w = len(words) - 1
+    if words[w] in OUTRO_AUX and w >= 2 and words[w - 1][-1] in "아어여가해켜와":    # '쬐어 보세요'(○) · '한번 보세요'(✕)
+        w -= 1
+    tail = cuts[w - 1]                                        # 끝 말(덩어리) 앞 빈칸
+    pref = [k for k in cuts if text[k - 1] == ","] + [tail]
+    best = next((k for k in pref if size(k) >= OUTRO_F1_SPLIT), max(cuts, key=size))
+    lines = [text[:best].strip(), text[best + 1:].strip()]
+    return lines, int(min(OUTRO_F1_MAX, OUTRO_BOX / max(_outro_em(x) for x in lines)))
+
+
+def outro_timing(durs):
+    """문장별 말소리 길이(무음 자른 뒤) → (빠르기, 목소리 길이, 끝인사 길이). 길이는 OUTRO_MIN~OUTRO_MAX 를 지키고,
+    빠르기가 OUTRO_TEMPO_MAX 에 닿아도 넘치면 그만큼 길어진다(목소리를 자르지 않는다)."""
+    speech = sum(durs) + OUTRO_GAP * max(0, len(durs) - 1)
+    room = OUTRO_MAX - OUTRO_LEAD - OUTRO_TAIL
+    tempo = 1.0 if speech <= room else min(OUTRO_TEMPO_MAX, speech / room)
+    vo = speech / tempo
+    return round(tempo, 3), round(vo, 3), round(max(OUTRO_MIN, OUTRO_LEAD + vo + OUTRO_TAIL), 2)
+
+
+def outro_html(o, light=False):
+    lines, f1 = outro_split(o.get("line1", ""))
+    f2 = int(min(OUTRO_F2, OUTRO_BOX / _outro_em(o.get("line2", ""))))
+    h = 52 + 58 + 70 + 34 + len(lines) * f1 * 1.14 + 38 + f2 * 1.15          # 판 높이(안쪽 여백 · 알약 · 두 글자)
+    top = int(max(520, 900 - h / 2))                                          # 가운데 900 — 아래 끝이 1250 을 넘지 않게
+    c1, c2 = ("#F4A9BC", "#F9C9B0")
+    deco = _flower(86, c1, 12, -26, -30) + _flower(70, c2, 40, 812, -24)    # 오른쪽 꽃도 x 960(버튼 열) 안쪽
+    o1 = "".join(f"<span>{esc(x)}</span>" for x in lines)
+    return (f'<div id="outro" class="{"light" if light else "dark"}"><div class="ov"></div>'
+            f'<div class="opanel" style="top:{top}px">{deco}<div class="olab">{esc(o.get("label", ""))}</div>'
+            f'<div class="o1" style="font-size:{f1}px">{o1}</div>'
+            f'<div class="o2" style="font-size:{f2}px">{esc(o.get("line2", ""))}</div></div></div>\n')
+
+
+def outro_js(o):
+    S, dur = float(o["start"]), float(o["dur"])
+    t2 = float(o.get("t2", 1.0))                    # 둘째 문장(초대)을 읽기 시작하는 때(끝인사 시작부터)
+    return "\n".join([
+        f'tl.fromTo("#outro",{{opacity:0}},{{opacity:1,duration:0.22,ease:"power1.out"}},{S:.2f});',
+        f'tl.fromTo("#outro .opanel",{{scale:0.94,y:30}},{{scale:1,y:0,duration:0.38,ease:"back.out(1.7)"}},{S:.2f});',
+        f'tl.to("#outro .o2",{{scale:1.06,duration:0.2,ease:"sine.inOut",yoyo:true,repeat:1}},{S + t2:.2f});',
+        f'tl.to("#outro .bfl",{{rotation:"+=30",duration:{dur:.2f},ease:"none"}},{S:.2f});',
+    ])
+
+
+def _trim_silence(src, dst):
+    """앞뒤 무음을 자른다(가운데 쉼은 그대로) · 모노 44.1kHz wav."""
+    sh([FFMPEG, "-y", "-i", src, "-af",
+        "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.03,areverse,"
+        "silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.06,areverse,"
+        "aresample=44100,aformat=sample_fmts=s16:channel_layouts=mono", dst])
+    return dst
+
+
+def outro_audio(o, workdir):
+    """끝인사 목소리 — 문장마다 합성 → 무음 자르기 → 틈(OUTRO_GAP)을 두고 이어 붙이고 필요하면 조금 빠르게."""
+    spk = SPEAKERS["byeolha"]
+    parts = []
+    for k, text in enumerate(o.get("vo") or []):
+        raw = synth_vo(text, os.path.join(workdir, f"vo_outro{k}"), voice=spk["voice"], preset=spk["preset"])
+        parts.append(_trim_silence(raw, os.path.join(workdir, f"vo_outro{k}_trim.wav")))
+    if not parts:
+        return None
+    durs = [probe_dur(p) for p in parts]
+    tempo, _, dur = outro_timing(durs)
+    ins, chain = [], []
+    for k, p in enumerate(parts):
+        ins += ["-i", p]
+        chain.append(f"[{k}]apad=pad_dur={OUTRO_GAP if k < len(parts) - 1 else 0}[p{k}]")
+    fc = (";".join(chain) + ";" + "".join(f"[p{k}]" for k in range(len(parts)))
+          + f"concat=n={len(parts)}:v=0:a=1[c];[c]atempo={tempo:.3f}[o]")
+    out = os.path.join(workdir, "vo_outro.wav")
+    sh([FFMPEG, "-y", *ins, "-filter_complex", fc, "-map", "[o]", out])
+    vo = probe_dur(out)
+    dur = max(dur, round(OUTRO_LEAD + vo + OUTRO_TAIL, 2))       # 실제 길이로 한 번 더 — 목소리가 잘리지 않게
+    return {"vo": out, "vo_dur": round(vo, 2), "tempo": tempo, "dur": dur,
+            "t2": round(OUTRO_LEAD + (durs[0] + OUTRO_GAP) / tempo, 2) if len(durs) > 1 else OUTRO_LEAD}
+
+
 # ── 소식 '10초 한 장' (2026-10-04, news_card.py) — 정치 찬반 · 주식 성적표 · AI 체크리스트 · 요점 ──────────
 # 위에서 아래로 흐르는 한 기둥(flex). 오른쪽 끝(x 960~)과 아래 22%(y 1500~)는 비운다.
 # ▲▼·✓·○× 는 글꼴마다 없을 수 있어 CSS 도형으로 그린다(리눅스 러너에서 네모로 나오지 않게).
@@ -1201,7 +1331,7 @@ def scene_js(i, sc, acc, bar_h=560, presenter=False):
     return "\n".join(out)
 
 
-def build_html(scenes, total, acc="#D97757", bg=False, presenter=False):
+def build_html(scenes, total, acc="#D97757", bg=False, presenter=False, outro=None):
     css = f":root{{--acc:{acc};}}\n" + CSS.replace("#D97757", "var(--acc,#D97757)")
     if any(sc.get("_top") for sc in scenes):
         css += CSS_TOP
@@ -1230,6 +1360,12 @@ def build_html(scenes, total, acc="#D97757", bg=False, presenter=False):
         css += CSS_PRESENTER
         pr_html = presenter_html(scenes[0].get("brand", "일상공감뉴스") if scenes else "일상공감뉴스")
         js += "\n" + presenter_js(scenes, total)
+    out_html = ""
+    if outro:
+        # 표 쇼츠 끝인사 — 덕담표(밝은 꽃 바탕) 뒤면 밝은 판, 그 밖(어두운 표)은 어두운 판
+        css += CSS_OUTRO
+        out_html = outro_html(outro, light=bool(scenes) and scenes[-1].get("type") == "bless")
+        js += "\n" + outro_js(outro)
     bg_html = ""
     if bg:
         css += CSS_BG
@@ -1248,7 +1384,7 @@ def build_html(scenes, total, acc="#D97757", bg=False, presenter=False):
 <body>
 <div id="root" data-composition-id="main" data-start="0" data-duration="{total:.2f}" data-width="1080" data-height="1920">
 {bg_html}{''.join(parts)}
-{pr_html}<div id="progbase"></div><div id="prog"></div>
+{pr_html}{out_html}<div id="progbase"></div><div id="prog"></div>
 <div id="fade"></div>
 </div>
 <script>
@@ -1336,11 +1472,25 @@ def build_motion(spec, out_mp4, workdir, quality="standard"):
     if total < min_total:
         scenes[-1]["clip"] = round(min_total - scenes[-1]["start"], 2)
         total = round(min_total, 2)
+    # ②' 표 쇼츠 끝인사(outro.py) — 표가 다 끝난 뒤(최소 길이까지 머문 뒤)에 붙인다. 목소리가 안 되면 끝인사 없이 간다.
+    outro = None
+    if spec.get("_outro"):
+        try:
+            outro_html(spec["_outro"])                       # 글 배치가 깨지면 여기서 걸러 끝인사 없이 간다
+            oa = outro_audio(spec["_outro"], workdir)
+        except Exception as e:  # noqa: BLE001
+            sys.stderr.write(f"[warn] 끝인사 목소리 실패 → 끝인사 없이: {e}\n")
+            oa = None
+        if oa:
+            outro = dict(spec["_outro"], start=total, **oa)
+            total = round(total + oa["dur"], 2)
+            scenes[-1]["clip"] = round(total - scenes[-1]["start"], 2)    # 표는 끝인사 밑에 그대로 깔린다
+    spec["_outro_applied"] = outro
     # ③ HTML
     has_bg = _stage_bg(spec.get("_bg"))
     with open(os.path.join(PROJ, "index.html"), "w", encoding="utf-8") as f:
         acc = spec.get("accent") or topic_accent(spec.get("topic", ""))
-        f.write(build_html(scenes, total, acc, bg=has_bg, presenter=pr_on))
+        f.write(build_html(scenes, total, acc, bg=has_bg, presenter=pr_on, outro=outro))
     why = "" if pr_on or not presenter_on() else f" (토픽 {spec.get('topic', '')!r} 은 진행자 제외 — PRESENTER_TOPICS)"
     print(f"   🎙️ 진행자: {'별이·별하 번갈아' if duo else ('별하' if pr_on else '없음')}{why} · 목소리 {VO_BACKEND}")
     # ④ render
@@ -1355,14 +1505,20 @@ def build_motion(spec, out_mp4, workdir, quality="standard"):
         ins += ["-i", sc["_vo"]]
         ms = int((sc["start"] + 0.3) * 1000)
         filt.append(f"[{i}]adelay={ms}|{ms}[a{i}]"); labs.append(f"[a{i}]")
-    fc = ";".join(filt) + ";" + "".join(labs) + f"amix=inputs={len(scenes)}:normalize=0,apad[a]"
+    if outro:
+        i = len(scenes)
+        ins += ["-i", outro["vo"]]
+        ms = int((outro["start"] + OUTRO_LEAD) * 1000)
+        filt.append(f"[{i}]adelay={ms}|{ms}[a{i}]"); labs.append(f"[a{i}]")
+    fc = ";".join(filt) + ";" + "".join(labs) + f"amix=inputs={len(labs)}:normalize=0,apad[a]"
     vo = os.path.join(workdir, "votrack.m4a")
     sh([FFMPEG, "-y", *ins, "-filter_complex", fc, "-map", "[a]", "-t", f"{total:.2f}",
         "-c:a", "aac", "-b:a", "192k", vo])
     os.makedirs(os.path.dirname(out_mp4) or ".", exist_ok=True)
     sh([FFMPEG, "-y", "-i", silent, "-i", vo, "-map", "0:v", "-map", "1:a",
         "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", out_mp4])
-    print(f"✅ {out_mp4}  ({total:.1f}s, {len(scenes)} scenes)")
+    ot = f", 끝인사 {outro['dur']:.1f}s · 빠르기 ×{outro['tempo']:.2f}" if outro else ""
+    print(f"✅ {out_mp4}  ({total:.1f}s, {len(scenes)} scenes{ot})")
     return out_mp4
 
 

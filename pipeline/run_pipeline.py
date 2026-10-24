@@ -39,6 +39,7 @@ import ledger as ledgermod
 import ai_news
 import motion_short
 import news_copy_check
+import outro
 import upload_youtube
 from upload_from_storyboard import build_meta
 
@@ -544,6 +545,16 @@ def process(sb_path, args, led):
             # 정치·주식·AI 소식은 '10초 한 장'(2026-10-04) — 루틴 대본에서 뽑는다. 끄기: 레포 변수 NEWS_CARD=0
             spec = news_card.build_spec(sb)
             print(f"   🗂️ 소식 한 장 ({spec['scenes'][0].get('layout')} · news_card)")
+        # 표 쇼츠 끝인사(2026-10-24, outro.py) — '오늘의 덕담 한마디' + '띠 남기시면 덕담 드려요'. 날짜가 켤지 정한다
+        #   (10/26~11/8 A/B · 그 뒤 outro.OUTRO_DEFAULT). 그날 표 쇼츠 전부 같이 — 실제로 붙었는지는 렌더러가 spec 에 남긴다.
+        try:
+            ob = outro.for_storyboard(sb, spec)
+        except Exception as e:  # noqa: BLE001 — 끝인사 때문에 표 쇼츠가 안 나가면 안 된다
+            print(f"::warning title=끝인사 건너뜀::{str(e)[:200]}")
+            ob = None
+        if ob:
+            spec["_outro"] = ob
+            print(f"   🙏 끝인사: '{ob['line1']}' · {ob['line2']} (outro {ob['date']})")
         suffix = f"_{sb.get('topic','')}" if sb.get("topic") else ""
         if sb.get("slot"):
             suffix += f"_{sb['slot']}"          # 하루 여러 편(AI 소식 am·pm) — 파일이 서로 덮지 않게
@@ -552,6 +563,8 @@ def process(sb_path, args, led):
         config.ensure_dirs()
         _prepare_bg(sb, spec, wd)
         res["video"] = motion_short.build_motion(spec, out_mp4, wd, quality=args.quality)
+        if outro.is_table(sb, spec):
+            res["outro"] = bool(spec.get("_outro_applied"))
     except Exception as e:  # noqa: BLE001
         res["error"] = f"render: {e}"
         return res
@@ -646,6 +659,9 @@ def process(sb_path, args, led):
         meta["title"] = f"{nm['title']} #shorts"
         meta["description"] = nm["description"] + credit
         meta["localizations"] = None
+    if res.get("outro"):
+        # 끝인사가 붙은 편만 설명란에도 같은 초대 한 줄(첫 문단 아래 — 나머지 글은 그대로). 없는 날은 손대지 않는다(A/B).
+        meta["description"] = outro.with_line(meta["description"])
     print(f"   업로드 메타: title='{meta['title']}' privacy={meta['privacy']} "
           f"AI표시={meta['synthetic']} 번역={list(meta['localizations'] or [])}")
     if args.dry_run_upload:
@@ -663,8 +679,10 @@ def process(sb_path, args, led):
             if pl and meta["privacy"] == "public":
                 add_playlist(vid, *pl)
             if led is not None:
-                ledgermod.mark(led, sb, vid, meta["privacy"], time.time(), args.ledger_path,
-                               extra={"ai": ai_news.entry(sb)} if is_ai else None)
+                extra = {"ai": ai_news.entry(sb)} if is_ai else {}
+                if "outro" in res:
+                    extra["outro"] = res["outro"]          # 끝인사가 실제로 붙었나(채널 맥박은 게시일로 outro.arm 을 본다)
+                ledgermod.mark(led, sb, vid, meta["privacy"], time.time(), args.ledger_path, extra=extra or None)
         except Exception as e:  # noqa: BLE001
             res["error"] = f"upload: {e}"
     else:
