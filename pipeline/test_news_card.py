@@ -113,7 +113,7 @@ ck("run_pipeline 이 한 장으로 바꾼다", "news_card.use(sb)" in src and "n
 import ai_news as A  # noqa: E402
 ck("AI 길이 검사: 한 장(11초)은 통과 · 60초는 탈락", A.check_duration(11.2) is None and A.check_duration(60.2))
 wf = {n: open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".github", "workflows", n), encoding="utf-8").read()
-      for n in ("shorts.yml", "ai-news-run.yml")}
+      for n in ("shorts.yml",)}
 ck("워크플로가 레포 변수 NEWS_CARD 를 넘긴다(끄기 스위치)", all("NEWS_CARD: ${{ vars.NEWS_CARD" in t for t in wf.values()))
 
 print()

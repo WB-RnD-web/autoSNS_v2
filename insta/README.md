@@ -1,5 +1,9 @@
 # 인스타·쓰레드 릴스·카드 — 0원으로 AI 유튜브 채널을 굴리는 실제 기록
 
+> 2026-10-24: 이 옛 파이프라인(routine/insta → insta.yml)은 접었다 — insta.yml 과 orphan-rescue 의 output/insta 이송을 지웠다.
+> 지금 인스타는 `insta-pick.yml`(오늘의 골라보기)이다. insta.py·render_reel.py·stats.py 는 그쪽이 같이 쓰므로 남겼다
+> (post_reel.py·render_cards.py 는 test_insta.py 가 함께 검사하고 있어 아직 그대로다).
+
 인스타 계정(예전엔 왕별이 뉴스 쇼츠 크로스포스트)을 **한국어 가이드형 운영 기록**으로 바꾼다. 두 채널(왕별이·Nine Tails Tales)을
 굴리며 실제로 잰 숫자만, 따라 할 수 있게. 홍보는 프로필·캡션 마지막 줄에만(코드가 붙인다).
 

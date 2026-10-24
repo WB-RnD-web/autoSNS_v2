@@ -2,6 +2,9 @@
 # -*- coding: utf-8 -*-
 """AI 소식 쇼츠(하루 두 번 · 오전/저녁) — 루틴 대본을 ★코드로 검사한다.
 
+★2026-10-24: AI 소식은 접었다(루틴 10/7 끔) — ai-news*.yml·ai_news_feed.py·test_ai_news.py 는 지웠다.
+  이 파일은 run_pipeline·run_weekly_fortune·run_longform_2027 이 아직 import 해서(is_ai·recent_uploads 등) 남긴다.
+
 2026-09-30. 왕별이 쇼츠에 'AI 소식' 토픽(topic=ai)을 더한다. 하루 2편(slot=am·pm),
 같은 영상을 인스타(@zerocrew.studio)·쓰레드에도 올린다.
 

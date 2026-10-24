@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-"""오디오 언어·태그 보존 회귀 테스트.
+"""오디오 언어·태그 보존 · 번역 폴백(yt_i18n) 회귀 테스트.
 
     python pipeline/test_audio_lang.py
 
 2026-09-30: yt_i18n.localize 가 snippet 을 덮어쓰며 defaultAudioLanguage 를 빼먹어 한국어 쇼츠·SCP 가
 '오디오 언어 영어(en-US)'가 됐고(쇼츠 0~183회), 업로드 직후 태그가 비어 있을 때 태그도 지웠다.
+2026-10-24: ASMR·일회성 되돌리기(fix_audio_lang)를 지우며 그 검사는 뺐다 — 남은 건 공용 yt_i18n 검사뿐이다
+  (번역 폴백 절은 지운 test_asmr_i18n.py 에서 옮겼다 — upload_tale 이 translate_meta 를 쓴다).
 """
 from __future__ import annotations
 import os
@@ -12,8 +14,6 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import yt_i18n as I  # noqa: E402
-import fix_audio_lang as F  # noqa: E402
-import run_asmr as A  # noqa: E402
 
 FAIL = 0
 
@@ -43,28 +43,42 @@ ck("아무것도 없어도 오디오 언어를 비워 보내지 않는다", bool
 ck("영어 채널(구미)은 읽은 en 유지", I.snippet_for_update({**bare, "defaultAudioLanguage": "en"}, audio_lang="ko")[
     "defaultAudioLanguage"] == "en")
 
-print("── 되돌리기 대상 ──")
-ck("한국어 쇼츠 → ko", F.target({"title": "총장은 남는데 검찰청만 사라진다 #shorts"}) == "ko")
-ck("SCP 한국어 → ko", F.target({"title": "SCP-682 불사의 파충류 — 산성 격리실 녹취 [SCP-682]"}) == "ko")
-ck("ASMR 은 건드리지 않음", F.target({"title": "🌧️ 창가에 부딪히는 빗소리 ASMR 3시간"}) is None)
-ck("영어 제목은 건드리지 않음", F.target({"title": "Korea Sleep Sounds — Rain on Hanok Roof 8 Hours"}) is None)
-
-print("── 잘못 들어간 값만 고친다 ──")
-ck("en-US 로 잘못 들어간 한국어 영상 → ko", F.needs_fix({"title": "괴담라디오 1화", "defaultAudioLanguage": "en-US"}) == "ko")
-ck("비어 있는 옛 영상은 기본으로 건너뜀(쿼터)", F.needs_fix({"title": "오늘 운세 #shorts"}) is None)
-ck("--include-unset 이면 비어 있는 것도", F.needs_fix({"title": "오늘 운세 #shorts"}, include_unset=True) == "ko")
-ck("이미 ko 면 건너뜀", F.needs_fix({"title": "오늘 운세 #shorts", "defaultAudioLanguage": "ko"}) is None)
-
-print("── ASMR 오디오 언어 ──")
-ck("말소리 없는 ASMR → en(비우면 채널 기본 ko 가 들어간다 · zxx 는 400)", A.audio_language({"narration_text": ""}) == "en")
+print("── 말소리 없는 영상의 오디오 언어 ──")
 ck("소리 영상(audio_lang='')은 번역 때도 오디오 언어를 채우지 않음",
    "defaultAudioLanguage" not in I.snippet_for_update({"title": "Rain 8 Hours"}, audio_lang=""))
 ck("이미 들어 있는 값은 그대로", I.snippet_for_update({"title": "x", "defaultAudioLanguage": "en-US"}, audio_lang="")["defaultAudioLanguage"] == "en-US")
 ck("audio_lang 을 안 주면 예전처럼 기본값", bool(I.snippet_for_update({"title": "x"}).get("defaultAudioLanguage")))
 _here = os.path.dirname(os.path.abspath(__file__))
 ck("코드 어디에도 'zxx' 값을 싣지 않는다", all('"zxx"' not in open(os.path.join(_here, f), encoding="utf-8").read()
-                                          for f in ("run_asmr.py", "upload_youtube_novel.py", "yt_i18n.py")))
-ck("나레이션 있으면 ko", A.audio_language({"narration_text": "편안한 밤 되세요"}) == "ko")
+                                          for f in ("upload_youtube_novel.py", "yt_i18n.py")))
+
+# ── 번역 폴백(Spark gemma) — 루틴 번역·Claude 키가 없어도 영어가 빠지지 않게 ──
+print("── 번역 폴백(Spark gemma) ──")
+calls = []
+_orig = (I._claude, I._spark_llm)
+_env = {k: os.environ.get(k) for k in ("ANTHROPIC_API_KEY", "I18N_SPARK")}
+try:
+    I._claude = lambda s, u, m=4000: calls.append("claude") or None
+    I._spark_llm = lambda s, u, timeout_sec=300: calls.append("spark") or '{"en":{"title":"T","description":"D"}}'
+    os.environ.pop("ANTHROPIC_API_KEY", None)
+    os.environ.pop("I18N_SPARK", None)
+    ck("키가 없으면 Spark 로 번역한다", I.translate_meta("제목", "설명", ["en"]) == {"en": {"title": "T", "description": "D"}}
+       and calls == ["spark"], str(calls))
+    calls.clear()
+    os.environ["ANTHROPIC_API_KEY"] = "x"
+    I._llm("s", "u")
+    ck("키가 있으면 Claude 먼저, 실패하면 Spark", calls == ["claude", "spark"], str(calls))
+    del os.environ["ANTHROPIC_API_KEY"]
+    os.environ["I18N_SPARK"] = "0"
+    calls.clear()
+    ck("I18N_SPARK=0 이면 Spark 도 안 부른다", I._llm("s", "u") is None and calls == [], str(calls))
+finally:
+    I._claude, I._spark_llm = _orig
+    for k, v in _env.items():
+        if v is None:
+            os.environ.pop(k, None)
+        else:
+            os.environ[k] = v
 
 print()
 if FAIL:

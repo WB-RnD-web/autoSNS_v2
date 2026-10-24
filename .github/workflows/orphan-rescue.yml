@@ -22,7 +22,6 @@ on:
       - "output/news/**_storyboard.json"
       - "output/scp/**.json"
       - "output/tales/**.json"   # Nine Tails Tales 대본 → routine/tales
-      - "output/insta/**.json"   # 인스타 릴스 대본 → routine/insta
       - "output/weekly_fortune/**.json"   # 주간 띠별 운세 대본 → routine/weekly_fortune
       - "output/fortune_lf27/**.json"     # 2027 정미년 깊이 보기 롱폼 대본 → routine/fortune_lf27
       - "output/tales_rules/**.json"      # Nine Tails RULES 대본 → routine/tales_rules

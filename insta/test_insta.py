@@ -19,7 +19,6 @@ import tempfile
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
-sys.path.insert(0, os.path.join(ROOT, "tools"))
 import insta as I          # noqa: E402
 import post_reel as PR     # noqa: E402
 import render_cards as RC  # noqa: E402
@@ -414,21 +413,12 @@ with tempfile.TemporaryDirectory() as td:
     ck("기록한 편은 다시 올리지 않는다", has(PR.blockers(G, GUIDE_P, {}, PR.load_ledger(lp, pp), I._date(G["date"]),
                                                 need=()), "이미 올린"))
 
-with open(os.path.join(ROOT, ".github", "workflows", "insta.yml"), encoding="utf-8") as f:
-    wf = f.read()
-ck("insta.yml: 카드 렌더 + 형식 변수(기본 auto) + 카드 결과물",
-   "insta/render_cards.py" in wf and "INSTA_IG_FORMAT: ${{ vars.INSTA_IG_FORMAT || 'auto' }}" in wf
-   and "INSTA_THREADS_FORMAT: ${{ vars.INSTA_THREADS_FORMAT || 'auto' }}" in wf and "_card[0-9][0-9].jpg" in wf)
+# insta.yml(옛 제작기록 릴스·카드 워크플로)은 2026-10-24 에 지웠다 — 그 연결 검사도 같이 뺐다.
 sample_cards = sorted(glob.glob(os.path.join(HERE, "samples", "cards", "*.jpg")))
 ck(f"견본 카드 {len(sample_cards)}장(insta/samples/cards) — 1080×1350",
    RC.MIN_SLIDES <= len(sample_cards) <= RC.MAX_SLIDES and not PR.card_problems({"cards": sample_cards}))
 
-print("── 미아 감시·복구 · 왕별이 크로스포스트 끔 ──")
-import find_orphan_storyboards as FO  # noqa: E402
-ck("미아 감시가 output/insta 를 본다", "output/insta/*.json" in FO.WATCH)
-ck("미아 복구 목적지 = routine/insta", FO.guess_topic("output/insta/2026-10-05_claude-routine-rules.json") == "insta")
-with open(os.path.join(ROOT, ".github", "workflows", "orphan-rescue.yml"), encoding="utf-8") as f:
-    ck("orphan-rescue 트리거에 output/insta", "output/insta/**.json" in f.read())
+print("── 왕별이 크로스포스트 끔 ──")
 with open(os.path.join(ROOT, "pipeline", "run_pipeline.py"), encoding="utf-8") as f:
     src = f.read()
 ck("왕별이 쇼츠 → 인스타 크로스포스트는 SOCIAL_CROSSPOST 뒤에(기본 끔)",
