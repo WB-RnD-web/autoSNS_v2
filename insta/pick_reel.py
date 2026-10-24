@@ -16,6 +16,8 @@
           영어 쇼츠 shorts_catalog(survival·compare)의 출처 달린 facts 를 한국어로: 질문 훅 → 큰 숫자 박자 4~6개 → 판정.
           화면은 어두운 실사 그림 꽉 차게(천천히 다가감) · 위 훅 두 줄 · 가운데 노란 큰 숫자 + 흰 설명 ·
           compare 는 아래에 로그 막대 띠 · 끝 판정 + 열린 질문. 숫자는 그 항목 facts 에 있는 것만(check 가 막는다).
+          ★10/24 SCI_XRAY_FROM(10/25 저녁)~ '속이 보이는 과학': 훅 → 왜? → 원인 3단계(1/3·2/3·3/3) → 결과, 박자마다
+          투시(xray)·단면(cutaway) 3D 그림 + 코드가 그린 한글 이름표 — 검사·렌더는 sci_xray.py(그 전 날짜는 위 옛 모양 그대로).
   bm_paper·bm_animal ★10/20 병맛 2주 시험(10/25~11/07, 골라보기 자리) — 검사·렌더·캡션은 bm_reel.py 가 한다(여기서 넘긴다).
 
 ★남의 것을 베끼지 않는다: 빌리는 건 '꼴'뿐. 그림은 매번 새로 그리고(Spark z-image), 문구는 새로 쓰고,
@@ -144,10 +146,12 @@ def _texts(s: dict) -> list[str]:
                 *r.get("choices", []), (r.get("a") or {}).get("label", ""), (r.get("b") or {}).get("label", "")]
     out += [c.get("text", "") for c in s.get("cells", [])]
     out += list(s.get("hook") or [])                      # sci
+    why = s.get("why") if isinstance(s.get("why"), dict) else {}   # ★10/25~ 속이 보이는 과학: '왜?' 박자 · 그림 위 이름표(label)
+    out += [why.get(k, "") for k in ("sub", "say", "label")]
     for b in s.get("beats") or []:
-        out += [b.get(k, "") for k in ("big", "sub", "say")]
-    out += [(s.get("verdict") or {}).get(k, "") for k in ("big", "say")]
-    return out
+        out += [b.get(k, "") for k in ("big", "sub", "say", "label")]
+    out += [(s.get("verdict") or {}).get(k, "") for k in ("big", "say", "label")]
+    return [t for t in out if isinstance(t, str)]
 
 
 def check(s: dict) -> list[str]:
@@ -155,8 +159,8 @@ def check(s: dict) -> list[str]:
     kind = s.get("kind")
     if kind not in KINDS:
         return [f"kind 는 {KINDS}"]
-    if kind == "sci":
-        return check_sci(s) + _word_errs(s)
+    if kind == "sci":                                      # ★10/25~ '속이 보이는 과학'은 sci_xray 가 검사한다(그 전 날짜는 옛 모양)
+        return (_xray().check(s) if is_xray(s) else check_sci(s)) + _word_errs(s)
     if kind in P.BM_KINDS:                                 # 병맛 — 검사 규칙은 bm_reel(금지어·부탁 말 포함)
         return _bm().check(s)
     if not (isinstance(s.get("headline"), list) and len(s["headline"]) == 2 and all(0 < len(x) <= 14 for x in s["headline"])):
@@ -388,6 +392,20 @@ def _bm():
     """병맛 모듈(bm_reel 이 이 모듈을 가져다 쓰므로 늦게 부른다)."""
     import bm_reel
     return bm_reel
+
+
+def _xray():
+    """sci '속이 보이는 과학' 모듈(sci_xray 가 이 모듈을 가져다 쓰므로 늦게 부른다)."""
+    import sci_xray
+    return sci_xray
+
+
+def is_xray(s: dict) -> bool:
+    """이 sci 대본이 '속이 보이는 과학' 모양인가 — 날짜(P.SCI_XRAY_FROM, 10/25)로만 정한다. 날짜가 이상하면 False(옛 검사가 막는다)."""
+    try:
+        return s.get("kind") == "sci" and P.sci_xray(dt.date.fromisoformat(s.get("date", "")))
+    except (TypeError, ValueError):
+        return False
 
 
 def warns(s: dict) -> list[str]:
@@ -1101,6 +1119,8 @@ def render(path: str, out_dir: str, work: str, mock: bool = False) -> dict:
     s = load(path)
     if s.get("kind") in P.BM_KINDS:                        # 병맛 — 시간표·소리·화면이 달라 bm_reel 이 렌더한다(메타 모양은 같다)
         return _bm().render(path, out_dir, work, mock)
+    if is_xray(s):                                         # ★10/25~ sci '속이 보이는 과학'(투시·단면 3D) — sci_xray 가 렌더한다
+        return _xray().render(path, out_dir, work, mock)
     errs = check(s)
     if errs:
         raise SystemExit("대본 검사 실패:\n  " + "\n  ".join(errs))

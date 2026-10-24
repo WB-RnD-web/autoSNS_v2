@@ -501,6 +501,174 @@ with tempfile.TemporaryDirectory() as tmp:
     ck("next 11/05 11시: sci 낮 편 · 901 · entry 는 sci_extra 그대로", (ni["kind"], ni["slot"], ni["src_n"], ni["format"])
        == ("sci", "a", 901, "survival") and ni["entry"]["facts"] == P.sci_entry(901)["facts"], ni.get("src_n"))
 
+print("── sci '속이 보이는 과학'(10/25 저녁~ · 투시·단면 + 원인 3단계) ──")
+import sci_xray as X  # noqa: E402
+from PIL import Image, ImageOps  # noqa: E402
+XS = json.load(open(os.path.join(HERE, "samples", "sci_xray_heaviest-life.json"), encoding="utf-8"))
+ck("날짜로 갈린다: SCI_XRAY_FROM 10/25 · 10/24 까지 옛 모양 · 주제·편성(SCI_ORDER·sci_slot)은 그대로",
+   P.SCI_XRAY_FROM == D(10, 25) and not P.sci_xray(D(10, 24)) and P.sci_xray(D(10, 25)) and P.sci_xray(D(11, 7))
+   and P.sci_slot(D(10, 25)) == "b" and P.sci_n(D(10, 25)) == 205 and P.SCI_XRAY_VIEWS == ("xray", "cutaway", "scene"))
+with tempfile.TemporaryDirectory() as tmp:
+    ni = P.next_info(D(10, 25), tmp, now=KST_AT(D(10, 25), 19))
+    ck("next 10/25 19시: sci 205 · 견본 sci_xray_heaviest-life · SCI_WRITING · 속이 보이는 과학 · 20~35초 · view 셋",
+       (ni["kind"], ni["slot"], ni["src_n"], ni["exemplar"], ni["writing"], ni["series"], ni["length_sec"], ni["views"])
+       == ("sci", "b", 205, P.SCI_XRAY_EXEMPLAR, "insta/SCI_WRITING.md", "속이 보이는 과학", [20.0, 35.0],
+           ["xray", "cutaway", "scene"]) and P.SCI_XRAY_EXEMPLAR == "insta/samples/sci_xray_heaviest-life.json"
+       and "why" in ni["structure"] and "3" in ni["structure"], {k: ni.get(k) for k in ("kind", "exemplar", "series")})
+    ni = P.next_info(D(10, 26), tmp, now=KST_AT(D(10, 26), 11))
+    ck("next 10/26 11시(103): 새 견본·새 모양 그대로", (ni["kind"], ni["src_n"], ni["exemplar"]) == ("sci", 103, P.SCI_XRAY_EXEMPLAR))
+    ni = P.next_info(D(10, 24), tmp, now=KST_AT(D(10, 24), 11))
+    ck("next 10/24 11시(옛 모양): 견본 sci_mariana · series 없음", (ni["kind"], ni["exemplar"], "series" in ni)
+       == ("sci", "insta/samples/sci_mariana.json", False), ni.get("exemplar"))
+ck("견본 = 10/25 저녁 sci 편 그대로(날짜·꼴·편·src_n·sources — 루틴이 그날 그대로 복사할 수 있다)",
+   XS["date"] == "2026-10-25" and XS["kind"] == P.kind_for(D(10, 25), "b") == "sci" and P.slot_of(D(10, 25), "sci") == "b"
+   and XS["src_n"] == P.sci_n(D(10, 25)) and XS["sources"] == P.sci_entry(205)["sources"])
+ck("견본 통과 · '속이 보이는 과학'으로 검사된다(is_xray) · 경고 없음", K.check(XS) == [] and K.is_xray(XS) and K.warns(XS) == [],
+   K.check(XS))
+ck("견본 모양: 훅 → why → 박자 3(view 투시·단면) → 결과 · 이름표 셋 이상", len(XS["beats"]) == 3 and XS["why"]["view"] in X.VIEWS
+   and all(b["view"] in ("xray", "cutaway") for b in XS["beats"]) and sum(bool(o.get("label")) for o in XS["beats"] + [XS["verdict"]]) >= 3
+   and XS["hook"][1].endswith("?"))
+SURV = {"date": "2026-10-28", "kind": "sci", "src_n": 106, "slug": "antarctic-night",
+        "hook": ["영하 70도 남극 밤", "몸속에선 무슨 일?"], "say_intro": "지붕도 없이 남극 겨울밤에 서 있으면, 몸속에선 무슨 일이 생길까요?",
+        "why": {"sub": "열이 빠져나가는 길이 셋", "say": "왜 못 버틸까요?", "view": "xray",
+                "img": "a smooth featureless mannequin-like human figure standing on an icy plain in light snowfall"},
+        "beats": [{"big": "영하 70도", "sub": "겨울 평균 기온", "say": "내륙의 겨울은 평균 영하 40도에서 70도예요.", "src": 2, "view": "cutaway",
+                   "img": "a thick slab of Antarctic ice sheet sliced open like a cake, a tiny research hut on top"},
+                  {"big": "5분", "sub": "드러난 피부가 얼어요", "say": "바람이 불면 드러난 피부는 5분 안에 얼 수 있어요.", "src": 3, "view": "xray",
+                   "img": "a smooth featureless mannequin-like human hand with glowing finger bones in icy wind",
+                   "label": "손가락뼈", "pin": [0.5, 0.45]},
+                  {"big": "35°C", "sub": "이 아래면 저체온증", "say": "몸속 온도가 35도 아래로 내려가면 저체온증이에요.", "src": 4, "view": "xray",
+                   "img": "a smooth featureless mannequin-like human figure with a softly glowing heart in the center of the chest",
+                   "label": "심장", "pin": [0.5, 0.4]}],
+        "verdict": {"big": "생존 확률 0%", "say": "해는 6개월 뒤에야 다시 떠요."},
+        "caption": "영하 70도 남극 밤, 몸속에선? 🧊", "hashtags": ["#속이보이는과학", "#남극"],
+        "sources": P.sci_entry(106)["sources"], "bench": {"format": "투명 피부 3D — 대조 훅 → 왜? → 원인 3단계 → 결과"}}
+ck("survival(106 남극) 대본 통과 — 결과 그림이 없으면 3단계 그림을 잇는다 · 열린 질문은 생존 꼴", K.check(SURV) == []
+   and K.ask_of(SURV) == K.ASK["sci"]["survival"] and X.plan(SURV, X.est_durations(SURV))[0][-1]["img"] == 2, K.check(SURV))
+
+
+def xbad(f, base=None):
+    x = json.loads(json.dumps(base or XS))
+    f(x)
+    return K.check(x)
+
+
+CASES_X = [
+    ("훅 둘째 줄이 질문(?)이 아니면 막는다", _set(["hook", 1], "이게 꼴찌다"), "hook 둘째 줄"),
+    ("훅 줄 14자 넘으면 막는다", _set(["hook", 0], "기록상 제일 무거운 코끼리 10.9톤"), "hook 은 두 줄"),
+    ("'왜?' 박자가 없으면 막는다", lambda x: x.pop("why"), "why("),
+    ("why.say 에 '왜' 가 없으면 막는다", _set(["why", "say"], "더 무거운 게 셋이에요."), "why.say"),
+    ("why.say 20자 넘으면 막는다", _set(["why", "say"], "왜냐고요? 코끼리보다 훨씬 더 무거운 게 셋이나 있어요."), "why.say"),
+    ("박자가 2개면 막는다(정확히 3)", lambda x: x["beats"].pop(), "정확히 3개"),
+    ("박자가 4개면 막는다(정확히 3)", lambda x: x["beats"].append(dict(x["beats"][2])), "정확히 3개"),
+    ("view 가 없으면 막는다", lambda x: x["beats"][0].pop("view"), "view 는"),
+    ("view 가 셋 밖이면 막는다", _set(["beats", 1, "view"], "photo"), "view 는"),
+    ("scene 이 둘이면 막는다(속을 보여 줘야)", lambda x: [b.update(view="scene") for b in x["beats"][:2]], "scene"),
+    ("이름표 10자 넘으면 막는다", _set(["beats", 0, "label"], "아주 긴 이름표 열한 글자"), "label"),
+    ("pin 이 0.1~0.85 밖이면 막는다", _set(["beats", 0, "pin"], [0.5, 0.95]), "pin 은 [x, y]"),
+    ("pin 이 두 수가 아니면 막는다", _set(["beats", 0, "pin"], [0.5]), "pin 은 [x, y]"),
+    ("label 없이 pin 만 쓰면 막는다", lambda x: x["beats"][0].pop("label"), "pin 은 label 과 같이"),
+    ("이름표 숫자도 facts 에서만(2,000톤 → 막음)", _set(["beats", 2, "label"], "2,000톤"), "facts"),
+    ("why 숫자도 facts 에서만", _set(["why", "sub"], "더 무거운 게 7개"), "why.sub"),
+    ("img 는 영어로(한글 → 막음)", _set(["beats", 0, "img"], "투명한 고래 몸속 갈비뼈가 보이는 모습"), "영어로"),
+    ("그림에 글자(text)는 막는다", _set(["beats", 1, "img"], "a sequoia trunk cross-section with text on it"), "img 에"),
+    ("why 그림의 잔혹 묘사(blood)도 막는다", _set(["why", "img"], "a huge elephant with blood vessels and organs inside"), "잔혹"),
+    ("부탁 말(댓글)은 why 에서도 막는다", _set(["why", "sub"], "댓글로 남겨 줘요"), "부탁"),
+    ("compare: 작은 것 → 큰 것이 아니면 막는다", _set(["beats", 2, "value"], 150), "순서"),
+    ("결과가 없으면 막는다", lambda x: x.pop("verdict"), "verdict("),
+    ("결과 img 를 쓰면 view 도", lambda x: x["verdict"].pop("view"), "verdict view"),
+    ("src_n 이 그날 항목(205)이 아니면 막는다", _set(["src_n"], 103), "src_n"),
+    ("sources 를 그대로 옮기지 않으면 막는다", lambda x: x["sources"].pop(), "sources"),
+    ("말이 너무 길면 길이 어림이 막는다(35초)", lambda x: [b.update(say="가" * 45) for b in x["beats"]]
+     and x.update(say_intro="나" * 49 + "?") or x["verdict"].update(say="다" * 40), "길이 어림"),
+]
+for name, f, want in CASES_X:
+    errs = xbad(f)
+    ck(name, any(want in e for e in errs), errs)
+ck("날짜가 가른다: 옛 모양(마리아나 · 박자 6)을 10/25 로 쓰면 새 검사가 막는다(why·박자 3)",
+   any("why(" in e for e in xbad(lambda x: x.update(date="2026-10-25", src_n=205), SCI_S))
+   and any("정확히 3개" in e for e in xbad(lambda x: x.update(date="2026-10-25", src_n=205), SCI_S)))
+ck("날짜가 가른다: 새 모양을 10/24 로 쓰면 옛 검사(박자 4~6)로 막힌다 · is_xray False",
+   any("beats 는 4~6개" in e for e in xbad(lambda x: x.update(date="2026-10-24", src_n=109)))
+   and not K.is_xray(dict(XS, date="2026-10-24")) and not K.is_xray(dict(XS, date="x")))
+ck("옛 견본(10/15 마리아나)은 그대로 통과(옛 날짜는 옛 규칙)", K.check(SCI_S) == [] and not K.is_xray(SCI_S))
+
+says = X.says_of(XS)
+segs, ticks = X.plan(XS, {t: 0.11 * len(t) for t in says})
+total = segs[-1]["start"] + segs[-1]["dur"]
+said = {sg.get("say") for sg in segs} | {sg.get("say2") for sg in segs}
+ck("시간표: 훅(0.0초부터 말) → 왜? → 1/3·2/3·3/3 → 결과 · 빈틈 없음 · 말 전부(끝 질문 포함) · 20~35초",
+   [sg["kind"] for sg in segs] == ["intro", "why", "step", "step", "step", "verdict"] and segs[0]["at"] == 0.0
+   and all(abs(a["start"] + a["dur"] - b["start"]) < 1e-6 for a, b in zip(segs, segs[1:])) and set(says) <= said
+   and K.sci_speech(K.ask_of(XS)) in said and X.SEC[0] <= total <= X.SEC[1] and len(ticks) == 5, round(total, 1))
+ck("훅과 '왜?' 는 한 그림(why) · 박자마다 제 그림 · 결과는 결과 그림", [sg["img"] for sg in segs] == ["why", "why", 0, 1, 2, "verdict"]
+   and segs[0]["img_g"] == segs[1]["img_g"])
+short = X.plan(XS, {t: 0.02 * len(t) for t in says})[0]
+ck("말이 짧아도 20초 이상(끝 화면을 늘린다)", short[-1]["start"] + short[-1]["dur"] >= X.SEC[0] - 1e-6)
+est = X.plan(XS, X.est_durations(XS))[0]
+ck("길이 어림(CPS) 20~35초 · 훅은 0~6초 안쪽", X.SEC[0] <= est[-1]["start"] + est[-1]["dur"] <= X.SEC[1] and est[1]["start"] <= 6.5,
+   (round(est[-1]["start"] + est[-1]["dur"], 1), est[1]["start"]))
+ck("그림 화풍: view 마다 코드가 앞뒤를 붙인다(단면 · 투시 '유리처럼' · 밝은 단색 배경) · 정사각",
+   X.prompt_of(XS["beats"][1]).startswith("clean 3D cutaway cross-section illustration, ")
+   and "outer shell cut open" in X.prompt_of(XS["beats"][1]) and "clear like glass" in X.prompt_of(XS["why"])
+   and all("plain light grey-blue gradient background" in X.prompt_of({"img": "x" * 20, "view": v}) for v in X.VIEWS)
+   and X.ASPECT == "1:1" and not any(K.SCI_IMG_BAN.search(h + t) for h, t in X.VIEW_STYLE.values()))
+with tempfile.TemporaryDirectory() as tmp:
+    a = X.assets(XS, tmp, True)
+    ck("그림: why · 박자 셋 · 결과 = 5장(가짜)", sorted(map(str, a["imgs"])) == ["0", "1", "2", "verdict", "why"])
+    segs, _ = X.plan(XS, {t: 0.11 * len(t) for t in X.says_of(XS)})
+    pa = X.Painter(XS, a, segs)
+    times = [0.0] + [sg["start"] + sg["dur"] * f for sg in segs for f in (0.02, 0.5, 0.97)]
+    sizes, low, top = True, [], []
+    for t in times:
+        fr, bg_ = pa.frame(t), pa.bg_at(t).convert("RGB")
+        sizes &= fr.size == (K.W, K.H)
+        bb = ImageChops.difference(fr, bg_).getbbox()
+        low.append(bb[3] if bb else 0)
+        top.append(bool(ImageChops.difference(fr.crop((0, 150, K.W, 300)), bg_.crop((0, 150, K.W, 300))).getbbox()))
+    ck(f"화면 전부({len(times)}장) 1080×1920 · 아래 25%(y 1440~)엔 아무것도 그리지 않는다 · 훅은 처음부터 끝까지 위에",
+       sizes and max(low) <= 1440 and all(top), max(low))
+
+    def drawn(t, box):
+        return bool(ImageChops.difference(pa.frame(t).crop(box), pa.bg_at(t).convert("RGB").crop(box)).getbbox())
+    mid = {sg["kind"] + str(sg.get("k", "")): sg["start"] + sg["dur"] * 0.8 for sg in segs}
+    seen = {}
+    _prog, _badge = pa._progress, pa._badge
+    pa._progress = lambda d, cur, done: seen.setdefault(pa.cur, []).append(("prog", cur, done)) or _prog(d, cur, done)
+    pa._badge = lambda d, text: seen.setdefault(pa.cur, []).append(("badge", text)) or _badge(d, text)
+    for k_, t_ in mid.items():
+        pa.cur = k_
+        pa.frame(t_)
+    pa._progress, pa._badge = _prog, _badge
+    ck("단계 배지(1/3·2/3·3/3 · 결과)는 박자·결과에만 · 1→2→3 진행 표시(지금 단계·지난 단계)는 왜?·박자·결과에(첫 장면엔 없음)",
+       seen == {"why": [("prog", None, 0)], "step0": [("prog", 0, 0), ("badge", "1/3")], "step1": [("prog", 1, 1), ("badge", "2/3")],
+                "step2": [("prog", 2, 2), ("badge", "3/3")], "verdict": [("prog", None, 3), ("badge", "결과")]}
+       and all(drawn(mid[k], X.BADGE_BOX) for k in ("step0", "verdict")) and not drawn(mid["why"], X.BADGE_BOX), seen)
+    sg0 = segs[2]
+    t_on = sg0["start"] + X.LABEL_AT + X.LABEL_IN + 0.05
+    px, py = pa.pin_xy(sg0, t_on, XS["beats"][0]["pin"])
+    box = (int(px) - 10, int(py) - 10, int(px) + 10, int(py) + 10)
+    ck("이름표: 박자 시작엔 없고(LABEL_AT 뒤) 선이 pin 자리를 가리킨다 · 칩은 오른쪽 버튼 열(x 960~) 앞",
+       not drawn(sg0["start"] + 0.1, box) and drawn(t_on, box) and not drawn(t_on, (962, 600, K.W, 1440)))
+    dark = Image.new("RGB", (64, 64), (40, 40, 50))
+    ck("첫 화면이 밝다(평균 밝기 ≥ 110 — 10/14 어두운 sci 교훈) · 어두운 그림은 끌어올린다",
+       X.first_frame_brightness(pa) >= 110 and sum(ImageOps.grayscale(X.brighten(dark)).getdata()) / 4096 >= X.BRIGHT_MIN - 12,
+       round(X.first_frame_brightness(pa), 1))
+    st = X.sheet_times(segs)
+    ck("확인용 프레임: 첫 프레임 + 장면마다(결과는 열린 질문 뒤)", st[0] == 0.0 and len(st) == len(segs) + 1
+       and st[-1] > segs[-1]["start"] + segs[-1]["ask_at"])
+cap = K.caption_of(XS)
+ck("캡션: 훅 한 줄 → 출처(기관) → 열린 질문(compare) → 해시태그 ≤ 5 · 부탁 없음", cap.split("\n")[0] == XS["caption"]
+   and "출처: San Diego Zoo · NOAA · NPS · USU 외" in cap and K.ASK["sci"]["compare"] in cap and len(TAG.findall(cap)) <= 5
+   and not any(w in cap for w in ("댓글", "보내서", "저장")), cap)
+src_ = open(os.path.join(HERE, "pick_reel.py"), encoding="utf-8").read()
+ck("pick_reel 이 날짜로 넘긴다(check·render 둘 다 is_xray → sci_xray)", "_xray().check(s) if is_xray(s) else check_sci(s)" in src_
+   and "if is_xray(s):" in src_ and "return _xray().render(path, out_dir, work, mock)" in src_)
+wx = open(os.path.join(HERE, "SCI_WRITING.md"), encoding="utf-8").read()
+ck("SCI_WRITING: 속이 보이는 과학 · 훅 → 왜? → 3단계 → 결과 · view 셋 · label·pin · 새 견본 · 10/25 복사 · 숫자는 facts",
+   all(w in wx for w in ("속이 보이는 과학", "왜", "정확히 3개", "1/3", "xray", "cutaway", "scene", "label", "pin",
+                         "sci_xray_heaviest-life.json", "10/25", "facts", "check", "due: false", "부탁 금지")))
+
 print("── 병맛 편성(10/25~11/07 · 골라보기 자리 · A/B 번갈아) ──")
 import bm_reel as B  # noqa: E402
 BMWIN = [P.BM_FROM + dt.timedelta(days=k) for k in range(14)]
