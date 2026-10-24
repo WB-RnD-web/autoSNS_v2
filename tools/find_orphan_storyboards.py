@@ -32,12 +32,13 @@ import subprocess
 import sys
 
 # 루틴이 만들어 커밋하는 산출물의 경로 모양. ★토픽 이름은 안 쓴다.
-WATCH = ("output/news/*_storyboard.json", "output/scp/*.json", "output/tales/*.json", "output/insta/*.json",
+WATCH = ("output/news/*_storyboard.json", "output/scp/*.json", "output/tales/*.json",
          "output/weekly_fortune/*.json",
          # 2026-10-20: 2027 정미년 깊이 보기 롱폼 대본(→ routine/fortune_lf27)
          "output/fortune_lf27/*.json",
          # 2026-10-05: Nine Tails RULES 대본(→ routine/tales_rules)·채널 맥박 보고서(→ routine/pulse)
          "output/tales_rules/*.json", "output/pulse/*")
+# 2026-10-24: output/insta/(옛 인스타 제작기록 — insta.yml 삭제, 지금은 insta-pick.yml)는 뺐다.
 # 이 브랜치들에 있으면 정상이다(워크플로 트리거가 걸리는 곳).
 HOME = ("main", "routine/*")
 DATE_RE = re.compile(r"(\d{4}-\d{2}-\d{2})")

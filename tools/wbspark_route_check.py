@@ -42,7 +42,7 @@ import urllib.request
 
 DEFAULT_BASE = "https://wangbyul.com/wbSpark"
 
-# 접미사가 붙지 않은 순수 그림 프롬프트. 프로브(wbspark-probe.yml) 테스트 A 와 같은 문장이라
+# 접미사가 붙지 않은 순수 그림 프롬프트. 프로브(wbspark-probe.yml — 2026-10-24 삭제) 테스트 A 와 같은 문장이라
 # 거기서 확인된 "이건 z-image 로 간다" 를 기준선으로 그대로 쓸 수 있다.
 BASE_PROMPT = "a red apple on a white table, studio lighting"
 
@@ -54,9 +54,7 @@ FALLBACK_SUFFIX = ", no text, no letters, no watermark"
 CALL_SITES = (
     "pipeline/thumbnail.py:40        (TECH)",
     "pipeline/cover_short.py:37      (TECH)",
-    "pipeline/scp_shorts_render.py:446",
-    "pipeline/novel_render.py:245",
-    "pipeline/story_render.py:509",
+    # scp_shorts_render·novel_render·story_render 는 2026-10-24 에 지웠다(SCP·소설·라디오 접음).
 )
 
 
