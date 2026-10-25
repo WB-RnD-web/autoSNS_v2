@@ -63,36 +63,52 @@ def with_evidence(facts):
 
 
 BASE = tree("base")
+EXPECT = {"wb_gunghap": ["refill-test"], "insta_teardown": []}   # good_tree 가 나머지를 채운다
 
 
 def good_tree(name: str) -> str:
     """지금 쪽 — 여섯 줄기 모두에 규칙대로 채운다(from ≥ 내일 · 끝에 붙임 · 사실마다 evidence)."""
     t = tree(name)
     sc = jload(t, "gumiho", "tales", "shorts_catalog.json")
+    # ★번호·from 은 지금 catalog 끝 기준(진짜 채우기가 먼저 붙어 있어도 겹치지 않게 — 10/25 refill PR 이 깨진 일)
     e = copy.deepcopy(sc["survival"][-1])
-    e.update(n=115, slug="refill-survival-115", part=len(sc["survival"]) + 1, facts=with_evidence(e["facts"]), **{"from": "2026-11-02"})
+    n = max(x["n"] for x in sc["survival"]) + 1
+    e.update(n=n, slug=f"refill-survival-{n}", part=len(sc["survival"]) + 1, facts=with_evidence(e["facts"]),
+             **{"from": max(["2026-11-02", *[x.get("from", "") for k in ("survival", "compare", "liminal") for x in sc.get(k, [])]])})
     sc["survival"].append(e)
+    EXPECT["nt_shorts"] = [n]
     jsave(sc, t, "gumiho", "tales", "shorts_catalog.json")
     cat = jload(t, "gumiho", "tales", "catalog.json")
     x = {k: v for k, v in copy.deepcopy(cat["tales"][-1]).items() if k != "date"}
-    x.update(id=cat["tales"][-1]["id"] + 1, slug="refill-longform", facts=with_evidence(x["facts"]), sources=[
-        "https://www.noaa.gov/jetstream/ocean/layers-of-ocean"], **{"from": "2026-11-03"})
+    x.update(id=cat["tales"][-1]["id"] + 1, slug="refill-longform",
+             facts=[dict(f, src=0) for f in with_evidence(x["facts"])],   # 출처를 하나로 바꾸니 src 도 0 으로
+             sources=["https://www.noaa.gov/jetstream/ocean/layers-of-ocean"],
+             **{"from": max(["2026-11-03", *[t.get("from", "") for t in cat["tales"]]])})
     cat["tales"].append(x)
+    EXPECT["nt_longform"] = [x["id"]]
     jsave(cat, t, "gumiho", "tales", "catalog.json")
     with open(os.path.join(t, "pipeline", "gunghap_card.py"), "a", encoding="utf-8") as f:
         f.write('\nTHEMES.append(dict(THEMES[0], id="refill-test", **{"from": "2026-11-05"}))\n')
     sys.path.insert(0, os.path.join(ROOT, "pipeline"))
     import longform_2027 as LF
     e5 = LF.EPISODES[4]
-    jsave({"episodes": [{"id": "E17", "from": "2026-12-09", "animals": e5["animals"],
+    _mp = os.path.join(t, "pipeline", "longform_2027_more.json")
+    more = jload(t, "pipeline", "longform_2027_more.json") if os.path.exists(_mp) else {"episodes": []}
+    _eid = f"E{17 + len(more['episodes'])}"
+    more["episodes"].append({"id": _eid, "from": max(["2026-12-09", *[m.get("from", "") for m in more["episodes"]]]), "animals": e5["animals"],
                          "title": "2027년 양띠 재물운 깊이 보기 | 돈이 도는 달과 지킬 것 · 출생연도별 풀이",
                          "thumb": {"big": "2027 양띠", "sub": "재물운", "pill": "돈이 도는 달"},
                          "angle": "양띠 재물만 깊게 — 앞 편(총운)과 달리 돈 흐름·달별 재물·지킬 것을 차근차근",
-                         "chapters": e5["chapters"], "qa_seeds": e5["qa_seeds"][:3]}]}, t, "pipeline", "longform_2027_more.json")
+                         "chapters": e5["chapters"], "qa_seeds": e5["qa_seeds"][:3]})
+    jsave(more, t, "pipeline", "longform_2027_more.json")
+    EXPECT["wb_lf27"] = [_eid]
     ex = jload(t, "insta", "sci_extra.json")
     s = copy.deepcopy(ex["survival"][0])
-    s.update(n=904, slug="refill-sci-904", facts=with_evidence(s["facts"]), **{"from": "2026-11-08"})
+    sn = max([x["n"] for k in ("survival", "compare") for x in ex.get(k, [])] + [903]) + 1
+    s.update(n=sn, slug=f"refill-sci-{sn}", facts=with_evidence(s["facts"]),
+             **{"from": max(["2026-11-08", *[x.get("from", "") for k in ("survival", "compare") for x in ex.get(k, [])]])})
     ex["survival"].append(s)
+    EXPECT["insta_sci"] = [sn]
     jsave(ex, t, "insta", "sci_extra.json")
     return t
 
@@ -105,9 +121,8 @@ print("── 잘 채운 것은 통과 ──")
 GOOD = good_tree("good")
 r = run(GOOD)
 ck("여섯 줄기 채우기(끝에 붙임 · from ≥ 내일 · evidence) → 통과", r["ok"], RC.text(r))
-ck("새 항목을 줄기마다 알아본다", {s: v["new"] for s, v in r["streams"].items()} == {
-    "nt_shorts": [115], "nt_longform": [30], "wb_gunghap": ["refill-test"], "wb_lf27": ["E17"], "insta_sci": [904],
-    "insta_teardown": []}, {s: v["new"] for s, v in r["streams"].items()})
+ck("새 항목을 줄기마다 알아본다", {s: v["new"] for s, v in r["streams"].items()} == EXPECT,
+   ({s: v["new"] for s, v in r["streams"].items()}, EXPECT))
 ck("같은 트리끼리는 새 항목 0 · 통과", RC.run(TODAY, 60, base_root=BASE, root=BASE)["ok"])
 
 
@@ -148,7 +163,9 @@ bad("인스타 새 항목의 숫자가 facts 에 없다(entry_errs)", edit_json(
 
 
 def swap(c):
-    c["survival"][-3], c["survival"][-2] = c["survival"][-2], c["survival"][-3]
+    # 113·114 를 번호로 찾아 바꾼다(끝자리 기준이면 진짜 채우기가 붙은 뒤 엉뚱한 편을 바꾼다)
+    i, j = (next(k for k, e in enumerate(c["survival"]) if e["n"] == n) for n in (113, 114))
+    c["survival"][i], c["survival"][j] = c["survival"][j], c["survival"][i]
 
 
 r_sw = bad("순서를 바꿔 지난 편성이 달라졌다(113·114)", edit_json(SC, swap), "정해진 편성이 바뀌었다")
@@ -171,8 +188,11 @@ js = json.loads(out.getvalue())
 ck("--json · 통과면 종료 코드 0 · 비교 창 = 14일 전 ~ 60일 뒤", rc == 0 and js["ok"] and js["window"] == ["2026-10-11", "2026-12-24"])
 out = io.StringIO()
 with contextlib.redirect_stdout(out):
-    rc = RC.main(["--date", "2026-11-04", "--base-root", BASE, "--root", GOOD])
-ck("기준 날짜가 늦으면(11/04) 그 전 from(11/02·11/03)은 막힌다 · 종료 코드 1", rc == 1 and "내일" in out.getvalue(), out.getvalue()[-400:])
+    # 가장 이른 새 from 날을 기준 날짜로 → 그 from 은 '내일 이후'가 아니라 막혀야 한다(catalog 에 진짜 채우기가 붙어 있어도)
+    _froms = [e.get("from") for e in (
+        jload(GOOD, "gumiho", "tales", "shorts_catalog.json")["survival"][-1:] + jload(GOOD, "gumiho", "tales", "catalog.json")["tales"][-1:])]
+    rc = RC.main(["--date", min(_froms), "--base-root", BASE, "--root", GOOD])
+ck("기준 날짜가 늦으면 그 전·그날 from 은 막힌다 · 종료 코드 1", rc == 1 and "내일" in out.getvalue(), out.getvalue()[-400:])
 out = io.StringIO()
 with contextlib.redirect_stdout(out):
     rc = RC.main(["--base", "no-such-ref-xyz", "--date", "2026-10-25"])

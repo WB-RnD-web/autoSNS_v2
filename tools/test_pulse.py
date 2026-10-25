@@ -155,6 +155,27 @@ with tempfile.TemporaryDirectory() as td:
         {"text": "왕별이 하루 1천 이상", "metric": "views:wb", "op": ">=", "value": 1000},
         {"text": "왕별이 하루 10억 이상", "metric": "views:wb", "op": ">=", "value": 1e9},
         {"text": "NT 구독자", "metric": "subs:nt", "op": ">=", "value": 1}]})
+    # ★재고(runway)는 진짜 catalog 대신 정해진 가짜 줄기로 본다 — 채우기가 붙으면 10/21 기준 '바닥나는 줄기'가 사라져
+    #   시험이 깨졌다(10/25 첫 자동 채우기). 시험 = info · 3일 안 = bad · 그 밖 warn 세 가지를 하나씩 둔다.
+    import types as _types  # noqa: E402
+    _fake_rw = _types.ModuleType("runway")
+    _rows = [
+        {"id": "nt_shorts", "ch": "nt", "name": "영어 쇼츠", "limit": "trial", "days_left": 1, "left": 4,
+         "last": dt.date(2026, 10, 22), "judge": dt.date(2026, 10, 27), "refill": "gumiho/tales/shorts_catalog.json 끝에 + from",
+         "refill_doc": "tools/REFILL.md#nt_shorts", "note": ""},
+        {"id": "wb_gunghap", "ch": "wb", "name": "띠 궁합표", "limit": "catalog", "days_left": 2, "left": 1,
+         "last": dt.date(2026, 10, 23), "judge": None, "refill": "pipeline/gunghap_card.py THEMES 끝에 + from",
+         "refill_doc": "tools/REFILL.md#wb_gunghap", "note": ""},
+        {"id": "insta_sci", "ch": "ig", "name": "인스타 sci", "limit": "catalog", "days_left": 10, "left": 10,
+         "last": dt.date(2026, 10, 31), "judge": None, "refill": "insta/sci_extra.json 끝에 + from",
+         "refill_doc": "tools/REFILL.md#insta_sci", "note": ""},
+        {"id": "wb_daily", "ch": "wb", "name": "매일 운세", "limit": "open", "days_left": None, "left": None,
+         "last": None, "judge": None, "refill": "", "refill_doc": None, "note": ""},
+    ]
+    _fake_rw.collect = lambda today: [dict(r) for r in _rows]
+    _fake_rw.low = lambda rows, warn: [r for r in rows if r["days_left"] is not None and r["days_left"] < warn]
+    _fake_rw.line = lambda r: f"{r['name']} · 마지막 {r['last']} · {r['days_left']}일 남음"
+    sys.modules["runway"] = _fake_rw
     P = PU.build(radar, out, DAY, now=NOW)
     wbc, ntc = P["channels"]["wb"], P["channels"]["nt"]
     fl = {f["id"]: f for f in P["flags"]}
