@@ -163,7 +163,9 @@ bad("인스타 새 항목의 숫자가 facts 에 없다(entry_errs)", edit_json(
 
 
 def swap(c):
-    c["survival"][-3], c["survival"][-2] = c["survival"][-2], c["survival"][-3]
+    # 113·114 를 번호로 찾아 바꾼다(끝자리 기준이면 진짜 채우기가 붙은 뒤 엉뚱한 편을 바꾼다)
+    i, j = (next(k for k, e in enumerate(c["survival"]) if e["n"] == n) for n in (113, 114))
+    c["survival"][i], c["survival"][j] = c["survival"][j], c["survival"][i]
 
 
 r_sw = bad("순서를 바꿔 지난 편성이 달라졌다(113·114)", edit_json(SC, swap), "정해진 편성이 바뀌었다")
