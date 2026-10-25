@@ -428,6 +428,7 @@ ck("붙인 편(30화~)은 from 만(date 는 코드가 정한다) · 번호는 �
                for f in e["facts"]) for e in _added)
    and [e["id"] for e in _cat["tales"]] == sorted(e["id"] for e in _cat["tales"]), [e["id"] for e in _added])
 _stub = copy.deepcopy(_cat)
+_stub["tales"] = [e for e in _stub["tales"] if e["id"] <= 29]   # ★진짜 채우기(30화~)가 붙어 있어도 첫 묶음 기준으로 본다
 _base = [(e["id"], e["date"]) for e in T.schedule(_stub)]
 _x = copy.deepcopy(_new[-1])
 for k, frm in ((30, "2026-11-10"), (31, "2026-11-10"), (32, "2026-11-12")):
