@@ -383,8 +383,9 @@ while _day <= _d2.date(2027, 3, 31):
         _bad.append((_day.isoformat(), _e["id"]))
     _day += _d2.timedelta(days=1)
 ck("10/10 ~ 2027-03-31 어느 날에도 설화 편이 배정되지 않는다", not _bad, str(_bad[:3]))
-_new = [e for e in _cat["tales"] if not e.get("retired")]
-ck("새 편 3개: 10/18·10/25·11/1", [e["date"] for e in _new] == ["2026-10-18", "2026-10-25", "2026-11-01"], str(_new))
+_all_new = [e for e in _cat["tales"] if not e.get("retired")]
+_new = [e for e in _all_new if e["id"] in (27, 28, 29)]          # ★10/25 채우기 전 첫 세 편 — 뒤로 from 단 편이 붙을 수 있다
+ck("첫 새 편 3개: 10/18·10/25·11/1", [e["date"] for e in _new] == ["2026-10-18", "2026-10-25", "2026-11-01"], str(_new))
 ck("새 편은 전부 일요일", all(_d2.date.fromisoformat(e["date"]).weekday() == 6 for e in _new))
 ck("공개 시각 = 그 일요일 14:00 UTC", [T.publish_at(e) for e in _new]
    == ["2026-10-18T14:00:00Z", "2026-10-25T14:00:00Z", "2026-11-01T14:00:00Z"])
@@ -398,11 +399,12 @@ ck("새 편 형식은 해설편(places·zones·whatif)", [e["format"] for e in _
 ck("새 편 facts 10개 이상·출처 3개 이상(모두 링크)", all(len(e["facts"]) >= 10 and len(e["sources"]) >= 3
                                                 and all("https://" in x for x in e["sources"]) for e in _new))
 ck("새 편 facts 에 숫자가 있다(편마다 조사한 수치)", all(sum(bool(T.NUM.search(f)) for f in e["facts"]) >= 8 for e in _new))
-ck("backlog 후보 6개(제목만)", len(_cat.get("backlog") or []) == 6 and all(isinstance(x, str) for x in _cat["backlog"]))
+ck("backlog 후보는 제목만(채우기가 골라 쓰면 빠진다)", all(isinstance(x, str) for x in _cat.get("backlog") or []))
 ck("토요일(공개 하루 전) next → 그 주 편", T.next_entry("2026-10-17")["id"] == 27 and T.next_entry("2026-10-24")["id"] == 28
    and T.next_entry("2026-10-31")["id"] == 29)
 ck("일요일 당일도 그 편 · 다음 날(월)은 다음 주 편", T.next_entry("2026-10-18")["id"] == 27 and T.next_entry("2026-10-19")["id"] == 28)
-ck("catalog 끝 뒤(11/2~)는 없음", T.next_entry("2026-11-02") is None)
+ck("catalog 끝 뒤는 없음(첫 세 편뿐이면 11/2~ · 붙인 편이 있으면 그 뒤)",
+   T.next_entry((T.last_date() + _d2.timedelta(days=1)).isoformat()) is None and T.last_date() >= _d2.date(2026, 11, 1))
 ck("날짜 없이 next 도 retired 를 고르지 않는다", T.next_entry(None) is None or not T.next_entry(None).get("retired"))
 _tp = os.path.join(HERE, "tales.py")
 _o = subprocess.run([sys.executable, _tp, "next", "--date", "2026-10-10"], capture_output=True, text=True, encoding="utf-8")
@@ -413,9 +415,28 @@ _j = json.loads(_o.stdout)
 ck("CLI next 10/17 → 027 · 공개 시각 · 다음 주 예고 · 견본 준비", _j.get("file") == "027_places-you-cant-survive.json"
    and _j.get("publish_at") == "2026-10-18T14:00:00Z" and _j.get("teaser", {}).get("date") == "2026-10-25"
    and _j["teaser"]["line"].startswith("Up next: How Long You'd Last in Every Zone") and _j.get("exemplar_ready") is True, _o.stdout[:200])
-_t29 = T.teaser_for(T.entry(29))
-ck("마지막 편(11/1) 예고는 편성 안 된 backlog 를 약속하지 않는다", _t29["title"] == "" and _t29["date"] is None
-   and _t29["line"] == "Up next: more of these in the playlist.", str(_t29))
+_tl = T.teaser_for(T.entry(T.schedule()[-1]["id"]))
+ck("마지막 편 예고는 편성 안 된 backlog 를 약속하지 않는다", _tl["title"] == "" and _tl["date"] is None
+   and _tl["line"] == "Up next: more of these in the playlist.", str(_tl))
+
+print("── 채우기(from) — 끝에 붙여도 앞 날짜는 그대로 · 일요일 하나씩 ──")
+_added = [e for e in _all_new if e["id"] > 29]
+ck("붙인 편(30화~)은 from 만(date 는 코드가 정한다) · 번호는 앞 편 다음 · 해설편 형식 · fact 마다 {fact, src, evidence}",
+   all(e.get("from") and not e.get("date") and e["format"] in T.EXPLAINER_FORMATS and len(e.get("sources") or []) >= 3
+       and len(e["facts"]) >= 10
+       and all(isinstance(f, dict) and f.get("evidence") and isinstance(f.get("src"), int) and 0 <= f["src"] < len(e["sources"])
+               for f in e["facts"]) for e in _added)
+   and [e["id"] for e in _cat["tales"]] == sorted(e["id"] for e in _cat["tales"]), [e["id"] for e in _added])
+_stub = copy.deepcopy(_cat)
+_base = [(e["id"], e["date"]) for e in T.schedule(_stub)]
+_x = copy.deepcopy(_new[-1])
+for k, frm in ((30, "2026-11-10"), (31, "2026-11-10"), (32, "2026-11-12")):
+    _stub["tales"].append({**{kk: v for kk, v in _x.items() if kk != "date"}, "id": k, "slug": f"refill-{k}", "from": frm,
+                           "facts": [{"fact": "Stub 1,234 m", "src": 0, "evidence": "1,234 m"}]})
+_sch = {e["id"]: e["date"] for e in T.schedule(_stub)}
+ck("from 11/10(화) → 11/15(일) · 다음 편 11/22 · from 이 앞 편보다 이르면 다음 일요일(11/29) · 27~29화 날짜 그대로 · 11/8 은 비어도 된다",
+   all(_sch[i] == d for i, d in _base) and (_sch[30], _sch[31], _sch[32]) == ("2026-11-15", "2026-11-22", "2026-11-29"), _sch)
+ck("dict facts 도 숫자 대조에 쓴다(fact_text)", "1,234" in T.fact_text(_stub["tales"][-1]))
 ck("에버그린(10/14): 편성 약속·날짜 타는 말은 막고 이야기 속 tomorrow 는 둔다",
    all(T.DATED.search(x) for x in ("Next Sunday we go deeper", "See you tomorrow", "New one every Friday", "this week"))
    and not T.DATED.search("Tomorrow, the teacher said, swallow the bead") and not T.DATED.search("Up next: the deep sea"))
@@ -552,7 +573,8 @@ ck("제목의 금지어 → 거부", any("금지 주제" in e for e in _bad2(lam
 _w = open(os.path.join(T.HERE, "WRITING.md"), encoding="utf-8").read()
 ck("WRITING.md 예시에 살아남는 시간·'right now' 없음", "YOU'D LAST" not in _w and "Time you'd last" not in _w
    and "pressure you feel right now" not in _w)
-ck("catalog 해설편 angle·facts 에 날짜 타는 말 없음", not any(T.DATED.search(e["angle"] + " ".join(e["facts"]))
+ck("catalog 해설편 angle·facts 에 날짜 타는 말 없음", not any(T.DATED.search(e["angle"] + " ".join(
+    f if isinstance(f, str) else f.get("fact", "") for f in e["facts"]))
                                          for e in T.load(T.CATALOG)["tales"] if not e.get("retired")))
 _f27 = " ".join(T.entry(27)["facts"])
 ck("옐로스톤 시추공 = NPS(1967 · 238 °C · 332 m) · 출처에 NPS 페이지",

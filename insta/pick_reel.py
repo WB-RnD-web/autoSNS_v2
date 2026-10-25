@@ -68,7 +68,8 @@ SERIES = "오늘의 골라보기"
 ASK = {"pick": "어떤 그림이 제일 끌렸어요?", "card": "어떤 카드가 제일 끌렸어요?",
        "quiz": "제일 헷갈렸던 문제는 뭐였어요?", "balance": "제일 고르기 어려웠던 판은 뭐였어요?",
        "birth": "내 달 풀이, 맞는 것 같아요?",
-       "sci": {"survival": "너라면 몇 초 버틸 것 같아요?", "compare": "제일 놀라운 건 뭐였어요?"}}   # sci 는 catalog 형식마다
+       "sci": {"survival": "너라면 몇 초 버틸 것 같아요?", "compare": "제일 놀라운 건 뭐였어요?",   # sci 는 catalog 형식마다
+               "teardown": "어느 부품이 제일 의외였어요?"}}                                       # ★11/10~ 뜯어보기(물건)
 ASK_WORDS = ("댓글", "보내", "공유", "태그", "친구")     # 대본 caption 에서 이런 말이 든 줄(첫 줄 빼고)은 뺀다(부탁 문구가 다시 끼지 않게)
 # 화면·목소리에 나오면 안 되는 부탁 말(10/11) — caption 은 위 ASK_WORDS 로 줄째 빼고, 나머지 글·말은 check 가 막는다
 ASK_BAN = ("댓글", "남겨 줘", "남겨줘", "보내 줘", "보내줘", "공유해", "태그해", "저장해")
@@ -108,6 +109,32 @@ SCI_FRANCHISE = ("타이타닉", "쥬라기 공원", "쥬라기 월드", "쥐라
                  "마션", "트랜스포머", "해리포터", "스폰지밥", "titanic", "jurassic park", "jurassic world", "interstellar",
                  "star wars", "marvel", "godzilla", "king kong", "pokemon", "pokémon", "disney", "pixar", "nemo",
                  "armageddon", "the martian", "transformers", "harry potter", "spongebob")
+# ★11/10~ 뜯어보기(과학으로 뜯어보는 물건 · teardown 항목): 상표·모델 이름 X · '직접 열어 보세요' X · 안전·건강 단정 X
+#   (SCI_WRITING '뜯어보기' · 대본 글 + 그림 묘사 · catalog 검사도 같은 목록). 영어는 낱말 단위, 한글은 글자 그대로 찾는다.
+SCI_BRANDS_EN = ("samsung", "lg", "iphone", "ipad", "macbook", "airpods", "dyson", "philips", "sony", "panasonic", "bosch",
+                 "whirlpool", "tesla", "xiaomi", "nintendo", "playstation", "xbox", "canon", "nikon", "gopro", "braun",
+                 "gillette", "nespresso", "keurig", "ikea", "nike", "adidas", "lego", "casio", "rolex", "seiko", "intel",
+                 "nvidia", "qualcomm", "google", "microsoft", "huawei", "bic", "zippo", "duracell", "energizer", "thermos",
+                 "kitchenaid", "miele", "electrolux", "toshiba", "hitachi", "cuckoo", "coway", "velcro", "tupperware")
+SCI_BRANDS_KO = ("삼성", "엘지", "애플", "아이폰", "아이패드", "맥북", "에어팟", "갤럭시", "다이슨", "필립스", "소니", "파나소닉",
+                 "보쉬", "테슬라", "샤오미", "닌텐도", "플레이스테이션", "엑스박스", "캐논", "니콘", "고프로", "질레트", "네스프레소",
+                 "이케아", "나이키", "아디다스", "레고", "카시오", "롤렉스", "인텔", "구글", "마이크로소프트", "화웨이", "쿠쿠",
+                 "코웨이", "위니아", "듀라셀", "에너자이저", "써모스", "일렉트로룩스", "도시바", "히타치", "벨크로", "타파웨어")
+_BRAND_EN = re.compile(r"(?i)(?<![a-z0-9])(" + "|".join(SCI_BRANDS_EN) + r")(?![a-z0-9])")
+_BRAND_KO = re.compile(r"(?<![가-힣])(" + "|".join(SCI_BRANDS_KO) + r")")      # '파인애플' 의 애플은 아니다(앞이 한글이면 뺀다)
+TEARDOWN_DIY = ("직접 열어", "직접 뜯어", "직접 분해", "분해해 보", "뜯어 보세요", "뜯어 봐요", "열어 보세요", "열어 봐요",
+                "따라 해 보", "집에서 해 보", "open it yourself", "take it apart")
+TEARDOWN_CLAIMS = ("안전해요", "안전합니다", "안전하니", "무해", "해롭지 않", "해가 없", "몸에 좋", "건강에 좋", "몸에 나쁘",
+                   "건강에 나쁘", "걱정 없어요", "걱정 안 해도", "perfectly safe", "harmless")
+
+
+def brand_hits(texts: list[str]) -> list[str]:
+    """글 속 상표·모델 이름(SCI_BRANDS_EN 낱말 · SCI_BRANDS_KO — 앞 글자가 한글이 아닐 때)."""
+    hits = {m.group(1).lower() for t in texts for m in _BRAND_EN.finditer(t or "")}
+    hits |= {m.group(1) for t in texts for m in _BRAND_KO.finditer(t or "")}
+    return sorted(hits)
+
+
 # 그림: 글자 없는 장면 · 얼굴 클로즈업 없음 — 낱말 자체를 막는다(쓰는 법: 'plain dark water' 같은 긍정형으로)
 SCI_IMG_BAN = re.compile(r"(?i)\b(text|letters?|words?|captions?|logos?|watermarks?|typography|signs?|labels?|"
                          r"faces?|facial|portraits?|selfies?|headshots?|close-?up of (?:a |the )?(?:man|woman|person|diver|astronaut))\b")
@@ -119,7 +146,11 @@ SRC_NAME = {"noaa": "NOAA", "nasa": "NASA", "rmg": "RMG", "faa": "FAA", "swri": 
             "calacademy": "Cal Academy", "nationalgeographic": "National Geographic", "scientificamerican": "Scientific American",
             "fishesoftexas": "Fishes of Texas", "tepapa": "Te Papa", "ufl": "Florida Museum",
             "schmidtocean": "Schmidt Ocean", "harmony": "Harmony Gold", "sandiegozoo": "San Diego Zoo",
-            "einstein-online": "Einstein Online", "nssdc": "NASA"}
+            "einstein-online": "Einstein Online", "nssdc": "NASA",
+            # ★11/10~ 뜯어보기(teardown_catalog) 출처
+            "energystar": "ENERGY STAR", "energy": "DOE", "nobelprize": "Nobel Prize", "govinfo": "GovInfo", "pnnl": "PNNL",
+            "wirelesspowerconsortium": "WPC", "eenewseurope": "eeNews Europe", "hsu-hh": "HSU Hamburg", "gsu": "HyperPhysics",
+            "vt": "Virginia Tech", "kit": "KIT", "itc": "HK ITC", "infineon": "Infineon", "ti": "TI"}
 SRC_MAX = 4                                               # 캡션 출처 줄에 이름 몇 개까지(넘으면 '외')
 ACC_SCI = R.ACCENT                                        # sci 큰 숫자 노랑(render_reel 과 같은 토큰)
 # 말로 읽을 때만(화면 글자는 그대로) — 단위·분수·영하를 한글로 바꾼 뒤 insta.to_speech(숫자 한글 읽기)
@@ -278,6 +309,101 @@ def unbacked(text: str, pool: list[float]) -> list[str]:
     return [raw for raw, vs in _vals(text) if not any(_backed(v, pool) for v in vs)]
 
 
+def _strs(v) -> list[str]:
+    """글 하나 또는 글 목록 → 글 목록(hook_idea 는 두 줄 목록일 수 있다)."""
+    if isinstance(v, str):
+        return [v]
+    return [x for x in v if isinstance(x, str)] if isinstance(v, list) else []
+
+
+def entry_errs(e: dict) -> list[str]:
+    """sci catalog 항목 검사(sci_extra 904~ · teardown_catalog 951~ — 클라우드 작가는 웹을 못 보니 숫자·출처를 여기서 미리 막는다).
+    모양(format·look·title_idea·slug·facts{fact,src}·sources 전부 쓰임·careful) · 아이디어(beat_ideas·hook_idea·steps·why/result_idea)의
+    숫자는 facts 에 · 그림 묘사는 글자·얼굴 없이 · 잔혹·실존 인물·프랜차이즈 X · 열린 항목은 from(쓸 수 있는 첫날) ·
+    뜯어보기(951~)는 series teardown · 상표·모델 이름 X(글·그림·출처 도메인) · 따라 하게 하는 말·안전·건강 단정 X."""
+    errs: list[str] = []
+    n = e.get("n")
+    td = P.is_teardown_entry(e)
+    srcs = e.get("sources") or []
+    facts = e.get("facts") or []
+    if e.get("format") not in ("survival", "compare") + (("teardown",) if td else ()):
+        errs.append("format 은 survival·compare" + (" · teardown" if td else ""))
+    if e.get("look") not in tuple(SCI_LOOKS) + (("object",) if td else ()):
+        errs.append(f"look 은 {tuple(SCI_LOOKS)} 중 하나" + (" · object" if td else ""))
+    if not e.get("title_idea") or not _SLUG.fullmatch(e.get("slug") or ""):
+        errs.append("title_idea·slug(영어 소문자·하이픈) 필요")
+    if not srcs or not all(isinstance(u, str) and u.startswith("https://") for u in srcs):
+        errs.append("sources 는 https 주소 하나 이상")
+    if not e.get("careful"):
+        errs.append("careful(단정하면 안 되는 것) 필요")
+    if not facts or not all(isinstance(f, dict) and isinstance(f.get("fact"), str) and isinstance(f.get("src"), int)
+                            and not isinstance(f.get("src"), bool) and 0 <= f["src"] < len(srcs) for f in facts):
+        errs.append("facts 는 {fact, src(sources 번호)} 목록")
+    mech = [m for m in e.get("mechanism_refs") or [] if isinstance(m, dict)]
+    for k, m in enumerate(e.get("mechanism_refs") or []):
+        if not (isinstance(m, dict) and isinstance(m.get("src"), int) and 0 <= m["src"] < len(srcs)):
+            errs.append(f"mechanism_refs[{k}].src 는 sources 번호")
+    if facts and all(isinstance(f, dict) and isinstance(f.get("src"), int) for f in facts) and             {f["src"] for f in facts} | {m.get("src") for m in mech} != set(range(len(srcs))):
+        errs.append("sources 마다 facts(또는 원리 근거 mechanism_refs)가 하나 이상(안 쓰는 출처 X)")
+    pool = fact_values(e)
+    beats = e.get("beat_ideas") or []
+    if e.get("format") == "compare":
+        vals = [x.get("value") for x in e.get("items_idea") or [] if isinstance(x, dict)]
+        if not e.get("unit") or len(vals) < 4 or vals != sorted(vals) or not all(
+                isinstance(v, (int, float)) and _backed(float(v), pool) for v in vals):
+            errs.append("compare: unit · items_idea 값 4개 이상 오름차순 · 값은 facts 에")
+    elif len(beats) < 3:
+        errs.append("beat_ideas 3개 이상")
+    ideas: list[tuple[str, str]] = []                      # (어디, 글) — 숫자는 facts 에서만
+    imgs: list[tuple[str, str]] = []
+    for k, b in enumerate(beats):
+        if not isinstance(b, dict) or not any(isinstance(b.get(f), str) for f in ("what", "label", "img")):
+            errs.append(f"beat_ideas[{k}] 는 {{what 또는 label·img, fact}}")
+            continue
+        fi = b.get("fact")
+        if not (fi is None or (isinstance(fi, int) and not isinstance(fi, bool) and 0 <= fi < len(facts))):
+            errs.append(f"beat_ideas[{k}].fact 는 facts 번호(또는 null)")
+        ideas += [(f"beat_ideas[{k}].{f}", b[f]) for f in ("what", "label") if isinstance(b.get(f), str)]
+        if isinstance(b.get("img"), str):
+            imgs.append((f"beat_ideas[{k}].img", b["img"]))
+        if b.get("view") is not None and b["view"] not in P.SCI_XRAY_VIEWS:
+            errs.append(f"beat_ideas[{k}].view 는 {P.SCI_XRAY_VIEWS} 중 하나")
+    for f in ("hook_idea", "situation", "twist_idea", "why_idea", "result_idea", "steps"):
+        ideas += [(f, t) for t in _strs(e.get(f))]
+    for where, t in ideas:
+        bad = unbacked(t, pool)
+        if bad:
+            errs.append(f"{where} 숫자 {bad} 가 facts 에 없다")
+    for where, t in imgs:
+        m = SCI_IMG_BAN.search(t)
+        if m or re.search(r"[가-힣]", t):
+            errs.append(f"{where}: 그림 묘사는 영어로 · 글자·얼굴 낱말 X ({m.group(0) if m else '한글'})")
+    low = " ".join(x.get("fact", "") for x in facts if isinstance(x, dict)).lower()
+    hits = sorted({w for w in SCI_GORE + SCI_PEOPLE + SCI_FRANCHISE if w.lower() in low})
+    if hits:
+        errs.append(f"facts 에 잔혹·실존 인물·프랜차이즈 낱말 {hits}")
+    if isinstance(n, int) and n >= P.SCI_OPEN_N0:          # 열린 항목(904~ · 951~) — 채우기 규칙(tools/REFILL.md)
+        if P._date_or_none(e.get("from")) is None:
+            errs.append("from(쓸 수 있는 첫날 YYYY-MM-DD — 붙이는 날 다음 날 이후) 필요 — 없으면 편성되지 않는다")
+        if facts and not all(isinstance(f, dict) and isinstance(f.get("evidence"), str) and f["evidence"].strip() for f in facts):
+            errs.append("facts 마다 evidence(출처를 열어 옮긴 원문 문장) 필요")
+    if td:
+        if not (isinstance(n, int) and n >= P.TEARDOWN_N0) or e.get("series") != P.TEARDOWN:
+            errs.append(f"뜯어보기 항목은 n {P.TEARDOWN_N0}~ · series '{P.TEARDOWN}'")
+        texts = [t for f in ("title_idea", "topic_ko", "topic_en", "teaser") for t in _strs(e.get(f))]
+        texts += [t for _, t in ideas + imgs] + [x.get("fact", "") for x in facts if isinstance(x, dict)]
+        texts += [m.get("note", "") for m in e.get("mechanism_refs") or [] if isinstance(m, dict)]
+        hits = brand_hits(texts + [source_host(u) for u in srcs if isinstance(u, str)])
+        if hits:
+            errs.append(f"뜯어보기: 상표·모델 이름 {hits}(글·그림·출처 도메인 — 캡션 '출처:' 에 나간다) — 물건 이름으로")
+        low = [t.lower() for _, t in ideas]
+        for name, words in (("따라 하게 하는 말", TEARDOWN_DIY), ("안전·건강 단정", TEARDOWN_CLAIMS)):
+            hits = sorted({w for w in words for t in low if w.lower() in t})
+            if hits:
+                errs.append(f"뜯어보기: {name} {hits}")
+    return errs
+
+
 def sci_entry_of(s: dict) -> dict | None:
     try:
         return P.sci_entry(int(s.get("src_n")))
@@ -290,9 +416,11 @@ def sci_format(s: dict) -> str:
 
 
 def ask_of(s: dict) -> str:
-    """끝 열린 질문(코드가 붙인다) — sci 는 catalog 형식마다(생존 · 비교)."""
+    """끝 열린 질문(코드가 붙인다) — sci 는 catalog 형식마다(생존 · 비교), 뜯어보기(teardown 항목)는 그것대로."""
     a = ASK[s["kind"]]
-    return a[sci_format(s)] if isinstance(a, dict) else a
+    if not isinstance(a, dict):
+        return a
+    return a["teardown"] if P.is_teardown_entry(sci_entry_of(s)) else a[sci_format(s)]
 
 
 def _sci_number_texts(s: dict) -> list[tuple[str, str]]:
@@ -315,12 +443,12 @@ def check_sci(s: dict) -> list[str]:
         return ["date 는 YYYY-MM-DD"]
     want = P.sci_n(d)
     if want is None:
-        errs.append(f"{d} 는 sci 편이 없는 날 — sci 시험은 {P.SCI_FROM}~{P.SCI_TO}")
+        errs.append(f"{d} 는 sci 편이 없는 날 — sci 는 {P.SCI_FROM}~{P.SCI_TO}(SCI_ORDER) · 그 뒤는 항목이 남은 날만(open_plan)")
     elif s.get("src_n") != want:
-        errs.append(f"src_n 은 그날 편성 항목 {want} 이어야 한다(SCI_ORDER) — 대본은 {s.get('src_n')}")
+        errs.append(f"src_n 은 그날 편성 항목 {want} 이어야 한다(SCI_ORDER·open_plan) — 대본은 {s.get('src_n')}")
     e = sci_entry_of(s)
     if e is None:
-        return errs + [f"src_n {s.get('src_n')!r} 은 shorts_catalog survival·compare 항목이 아니다"]
+        return errs + [f"src_n {s.get('src_n')!r} 은 sci 항목이 아니다(shorts_catalog·sci_extra·teardown_catalog)"]
     if not _SLUG.fullmatch(s.get("slug") or ""):
         errs.append("slug 는 영어 소문자·숫자·하이픈")
     hook = s.get("hook")

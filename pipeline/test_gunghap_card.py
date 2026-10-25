@@ -58,15 +58,51 @@ ck("손주 묶음: 짝의 출생연도는 2008~2025 아이 해", all(2008 <= y <
 
 print("── 6편 시리즈 편성 ──")
 days = [d0 + dt.timedelta(days=k) for k in range(40)]
-posts = [(d, G.theme_for(d)["id"]) for d in days if G.is_post_day(d)]
-ck("화·금 · 10/9 부터 6편 · 그 뒤로는 쓰지 않는다", [d.isoformat() for d, _ in posts] ==
+FIRST6 = ["couple", "friends", "money", "helper", "inlaw", "grand"]
+posts = [(d, G.theme_for(d)["id"]) for d in days if G.is_post_day(d)][:6]
+ck("화·금 · 10/9 부터 첫 6편(묶음을 붙여도 이 날짜는 그대로)", [d.isoformat() for d, _ in posts] ==
    ["2026-10-09", "2026-10-13", "2026-10-16", "2026-10-20", "2026-10-23", "2026-10-27"], posts)
-ck("6편 묶음이 전부 다르다(같은 표를 다시 올리지 않는다)", len({t for _, t in posts}) == 6 == len(G.THEMES))
+ck("첫 6편 묶음이 전부 다르다 · 묶음 id 는 전부 겹치지 않는다(같은 표를 다시 올리지 않는다)",
+   [t for _, t in posts] == FIRST6 and [th["id"] for th in G.THEMES][:6] == FIRST6
+   and len({th["id"] for th in G.THEMES}) == len(G.THEMES))
 ck("첫 편은 부부, 셋째는 재물", posts[0][1] == "couple" and posts[2][1] == "money")
+ck("붙인 묶음(7번째~)은 전부 from(YYYY-MM-DD) · 편성일은 from 이후 화·금 · 앞 편보다 뒤",
+   all(th.get("from") for th in G.THEMES[6:]) and all(d >= dt.date.fromisoformat(th["from"]) and d.weekday() in G.GUNGHAP_DAYS
+                                                     for d, th in G.schedule()[6:])
+   and [d for d, _ in G.schedule()] == sorted({d for d, _ in G.schedule()}))
+
+_tables = [json.dumps([(r["animal"], [x["animal"] for x in r["good"]], [x["animal"] for x in r["bad"]]) for r in G.build_rows(d0, th)]
+                      + [th["years"]], ensure_ascii=False) for th in G.THEMES]
+ck("묶음마다 표가 다르다(좋은 짝·조심할 띠·출생연도 기준 — 같은 표를 이름만 바꿔 다시 올리지 않는다)",
+   len(set(_tables)) == len(G.THEMES))
+
+print("── 채우기(from) — 끝에 붙여도 앞 날짜는 그대로 · 화·금 ──")
+_real = list(G.THEMES)
+_base = [(d, th["id"]) for d, th in G.schedule()]
+_f = _base[-1][0] + dt.timedelta(days=9)                 # 마지막 편 뒤 9일(사이가 비어도 된다)
+
+
+def _next_post(d):
+    while d.weekday() not in G.GUNGHAP_DAYS:
+        d += dt.timedelta(days=1)
+    return d
+
+
+G.THEMES[:] = _real + [dict(_real[0], id="stub-a", **{"from": _f.isoformat()}), dict(_real[1], id="stub-b", **{"from": _f.isoformat()}),
+                       dict(_real[2], id="stub-c", **{"from": (_f - dt.timedelta(days=5)).isoformat()})]
+_new = [(d, th["id"]) for d, th in G.schedule()]
+_ok_last = (G.last_day(), G.is_post_day(_new[-1][0]))
+G.THEMES[:] = _real
+_a = _next_post(_f)
+_b = _next_post(_a + dt.timedelta(days=1))
+_c = _next_post(_b + dt.timedelta(days=1))
+ck("붙인 묶음: from 이후 첫 화·금 · 다음은 그다음 화·금 · from 이 앞 편보다 이르면 앞 편 다음 화·금 · 앞 편 날짜는 그대로 · 사이가 비어도 된다",
+   _new[:len(_base)] == _base and _new[len(_base):] == [(_a, "stub-a"), (_b, "stub-b"), (_c, "stub-c")]
+   and _ok_last == (_c, True), _new[len(_base):])
 
 print("── 문구 ──")
 bad, texts = [], []
-for d, _ in posts:
+for d, _ in G.schedule():                                # 붙인 묶음까지 전부(제목 길이·칸 글자·금지어)
     sb = G.storyboard(d)
     sc = sb["scenes"][0]
     if len(G.title(d)) > 95 or len(sc["narration"]) > 80:
@@ -83,7 +119,8 @@ ck("설명란: 12띠 전부(출생연도·짝·근거) · 정한 방법 · 재�
 ck("제목: '궁합표 |' 꼴 · 45~96년생", G.title(d0) == "부부 띠 궁합표 | 내 띠의 찰떡 짝·조심할 띠 · 45~96년생 전부")
 ck("내레이션: 예시 두 띠 · 찾아보라는 말", G.narration(d0) == "부부 띠 궁합표예요. 쥐띠의 찰떡 짝은 소띠, 호랑이띠는 돼지띠예요. 내 띠도 찾아보세요.",
    G.narration(d0))
-ck("편성일이 아니면 make 가 아무것도 안 쓴다", not G.is_post_day(dt.date(2026, 10, 10)) and not G.is_post_day(dt.date(2026, 10, 30)))
+ck("편성일이 아니면 make 가 아무것도 안 쓴다(화·금이 아닌 날 · 묶음이 없는 화·금)", not G.is_post_day(dt.date(2026, 10, 10))
+   and not G.is_post_day(dt.date(2026, 10, 29)) and not any(G.is_post_day(_base[-1][0] + dt.timedelta(days=k)) for k in range(1, 30)))
 
 print("── 화면(motion_short) ──")
 sb = G.storyboard(d0)

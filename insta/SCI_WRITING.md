@@ -7,7 +7,8 @@
 ## 순서
 1. `python insta/pick_plan.py next` 가 `kind: sci` 를 주면 이 문서를 따라요. 편(slot)·항목(`src_n`)은 코드가 정해요 — 바꾸지 않아요.
    `due: false`·`already_written: true` 면 아무것도 하지 않고 끝내요.
-2. `entry` = `gumiho/tales/shorts_catalog.json` 의 그 항목(901번부터는 `insta/sci_extra.json`). **숫자는 `entry.facts` 에서만.**
+2. `entry` = `gumiho/tales/shorts_catalog.json` 의 그 항목(901번부터는 `insta/sci_extra.json`, 951번부터는 `insta/teardown_catalog.json`).
+   **숫자는 `entry.facts` 에서만.**
    `beat_ideas`·`items_idea` 는 참고, `careful` 은 꼭 지켜요(단정 금지·'약' 붙이기 등).
 3. `exemplar`(견본 `insta/samples/sci_xray_heaviest-life.json`)와 같은 모양으로 `file` 이름 그대로 써요.
    10/25 저녁(205)은 견본 날짜라 그대로 복사해도 돼요.
@@ -47,3 +48,18 @@
 - **부탁 금지**: 댓글·저장·공유·팔로우·"끝까지 봐 줘" X. 끝 열린 질문은 코드가 붙여요
   (생존 `너라면 몇 초 버틸 것 같아요?` · 비교 `제일 놀라운 건 뭐였어요?`).
 - **잔혹 묘사 금지**(피·시신·터진다 X — 투시 그림도 뼈·장기까지, 상처 X) · **실제 희생자·실존 인물 금지** · **영화·만화 이름 금지**.
+
+## 뜯어보기 — '과학으로 뜯어보는 물건'(11/10~ 화·금)
+`next` 가 `series: "과학으로 뜯어보는 물건"` 을 주는 날이에요(`entry.series: "teardown"` · 951번~ `insta/teardown_catalog.json`).
+모양·검사는 위와 똑같아요(훅 → 왜? → 3단계 → 결과). 대상만 **생활 물건**이에요(전자레인지·냉장고·무선 이어폰 같은 것).
+- 세 박자는 **물건이 일하는 순서**(들어온 힘 → 부품 → 결과)로, 그림은 **`cutaway` 단면**이 기본이에요 — 겉을 잘라 연 물건 하나, 가운데.
+- `entry` 의 `hook_idea`·`why_idea`·`steps`(세 박자)·`result_idea`·`beat_ideas`(그림 `img`·이름표 `label`)는 참고예요 —
+  숫자는 이미 facts 와 맞춰 뒀어요(`24.5억 번`·`11만~20.5만 번`·`31,800L` 처럼 facts 의 환산값 그대로 써요).
+- `label` 은 **부품 이름**이에요(`마그네트론`·`압축기` — 10자). 꾸밈말보다 "이게 뭐예요"를 짚어요.
+- **상표·모델 이름 금지** — 회사·제품 이름 X, 물건 이름으로만(`전자레인지`·`무선 이어폰`). 그림에도 로고 X.
+- **"직접 열어 보세요" 금지** — 뜯어 보라·따라 해 보라는 말 X(전기·고압 부품이 있어요). 끝은 원리로 맺어요.
+- **안전·건강 단정 금지** — "안전해요"·"몸에 좋아요"·"해롭지 않아요" X. facts 에 있는 사실만, `careful` 을 지켜요.
+- 숫자는 똑같이 **entry.facts 에서만**. 끝 열린 질문은 코드가 붙여요(`어느 부품이 제일 의외였어요?`).
+- 상표·따라 하게 하는 말·안전·건강 단정은 `check` 가 막아요.
+- 항목 채우기(사람·주간 검토): `insta/teardown_catalog.json` 끝에 붙이고(n 951~, `series: "teardown"`), `from` 은
+  **붙이는 날 다음 날 이후**로 — 그래야 지난 편성이 안 바뀌어요. 바닥나면 화·금도 보통 sci 가 나가요(`python tools/runway.py`).

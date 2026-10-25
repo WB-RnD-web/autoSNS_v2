@@ -17,6 +17,14 @@
     골라보기 로테이션은 그동안 쉬고, 11/08부터 다음 꼴로 이어진다(회차 series_no 도 골라보기만 이어서 센다 · bm·sci 는 None).
     11/08부터 다시 골라보기 두 편. 10/24 까지 꼴·회차·sci 순서는 그대로다(테스트가 못 박는다).
   ★10/24 sci 모양 바꿈 SCI_XRAY_FROM(10/25 저녁)~: '속이 보이는 과학'(투시·단면 3D + 원인 3단계) — 주제·편성은 그대로(sci_xray).
+  ★10/25 sci 끝없이(사용자 "잘 되는 건 단발로 끝내지 말고 계속 돌게"): SCI_TO 는 더 이상 끝이 아니다 — 11/08(SCI_OPEN_FROM)부터도
+    sci 는 같은 자리(날마다 저녁·낮 번갈아)로, 안 쓴 항목이 남아 있는 동안 이어진다(open_plan · src_n 은 한 번씩만).
+    항목 = insta/sci_extra.json 의 SCI_ORDER 밖 항목(904~) + shorts_catalog 의 insta_from 단 항목, (from, n) 순서.
+    바닥나면 그날은 11/08 처럼 골라보기 두 편(runway 0 — tools/runway.py · 맥박이 14일 전부터 알린다).
+    ★11/09~ '과학으로 뜯어보는 물건'(teardown — 생활 물건을 cutaway 단면으로): 화·금 sci 자리는 insta/teardown_catalog.json
+    항목(951~ · 주 2편), 다른 날은 보통 sci. 뜯어보기 항목이 없거나 바닥나면 그날도 보통 sci(그것도 없으면 골라보기).
+    ★새 항목은 끝에 붙이고 from(쓸 수 있는 첫날)을 '붙이는 날 다음 날 이후'로 단다 — 그래야 지난 날 편성(회차·src_n)이 안 바뀐다
+    (from 없는 열린 항목은 편성하지 않는다 · test_pick 이 막는다).
   (같은 날 두 편은 늘 다른 꼴 — 그래서 꼴만 보면 그날 어느 편인지 하나로 정해진다: slot_of)
   회차 번호는 골라보기 편만 센다: 10/8 = '오늘의 골라보기 #1' · 10/12 = #5 · 10/13 낮 = #6 · 10/13 저녁 = #7 (series_no · sci 는 None)
   어느 편 차례인지(due_slot)도 코드가 정한다: KST NOON_UNTIL(16)시 전이면 낮 편, 뒤면 저녁 편.
@@ -35,11 +43,14 @@
 from __future__ import annotations
 
 import argparse
+import bisect
+import contextlib
 import datetime as dt
 import glob
 import json
 import os
 import sys
+import tempfile
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -63,7 +74,7 @@ LABEL = {"pick": "그림 고르기 심리테스트", "card": "타로 카드 고�
 # ★10/14 sci 2주 시험 — 인스타 검색 '심해' 상위 릴스 620만·370만·225만·210만·190만(전부 과학 호기심 계정, 10/14)
 SCI = "sci"
 SCI_FROM = dt.date(2026, 10, 15)         # 첫날(KST) — 이날 저녁 편부터
-SCI_TO = dt.date(2026, 11, 7)            # 마지막 날(KST, 포함) · ★10/20 10/28 → 11/07 연장(24일) · 더 늘리려면 코드로(PR)
+SCI_TO = dt.date(2026, 11, 7)            # SCI_ORDER 마지막 날(KST, 포함) · ★10/20 10/28 → 11/07 연장(24일) · ★10/25 끝이 아니다 — 뒤는 open_plan
 # k번째 sci 편 = shorts_catalog n(앞 14개 = 10/15~10/28 그대로) · 10/29~ 안 쓴 catalog 7개 → sci_extra.json 3개(901~)
 SCI_ORDER = (101, 201, 107, 102, 203, 104, 202, 105, 206, 109, 205, 103, 207, 106,
              108, 110, 111, 112, 113, 114, 204, 901, 902, 903)
@@ -79,6 +90,16 @@ SCI_XRAY_VIEWS = ("xray", "cutaway", "scene")   # 투시(몸속 뼈·장기) · 
 SCI_XRAY_SEC = (20.0, 35.0)              # 전체 길이(초) — 렌더가 맞춘다(길면 말을 조금 빠르게 · 짧으면 끝 화면을 늘린다)
 SHORTS = os.path.join(ROOT, "gumiho", "tales", "shorts_catalog.json")   # 영어 쇼츠 survival·compare — 출처 달린 사실(facts)
 SCI_EXTRA = os.path.join(HERE, "sci_extra.json")                         # 인스타 sci 전용 추가 주제(n ≥ 901, 같은 모양)
+# ★10/25 끝없는 sci(open_plan) — SCI_TO 다음 날부터 안 쓴 항목이 남아 있는 동안 같은 자리로 이어진다
+SCI_OPEN_FROM = SCI_TO + dt.timedelta(days=1)                            # 11/08
+SCI_OPEN_N0 = 904                                                        # 새 sci_extra 항목 번호(904~950)
+TEARDOWN = "teardown"                                                    # 항목 series 값 · open_plan 의 줄기 이름
+TEARDOWN_SERIES = "과학으로 뜯어보는 물건"
+TEARDOWN_FROM = dt.date(2026, 11, 9)                                     # 이 주부터 화·금(첫 편 11/10 화)
+TEARDOWN_DAYS = (1, 4)                                                   # 화·금(월=0)
+TEARDOWN_CATALOG = os.path.join(HERE, "teardown_catalog.json")           # sci_extra 와 같은 모양 · n 951~ · cutaway 로 속을 연다
+TEARDOWN_N0 = 951
+OPEN_MAX_DAYS = 3660                                                     # 편성 걷기 상한(from 을 먼 미래로 잘못 단 항목이 있어도 끝난다)
 # ★10/20 병맛(bm) 2주 시험 — 골라보기 자리를 바꾼다(10/15~10/20 sci 중앙값 약 440 vs 골라보기 약 117 · 사용자 승인)
 BM_FROM = dt.date(2026, 10, 25)          # 첫날(KST)
 BM_TO = dt.date(2026, 11, 7)             # 마지막 날(KST, 포함) · 14일 = A 7편 + B 7편
@@ -95,12 +116,14 @@ BM_SERIES = {"bm_paper": "이거 진짜 논문임", "bm_animal": "정색 동물 
 BM_SEC = {"bm_paper": (18.0, 23.0), "bm_animal": (18.0, 22.0)}   # 전체 길이(초) — 렌더가 맞춘다
 ALL_KINDS = FORMATS + (SCI,) + BM_KINDS
 SCI_ENTRY_KEYS = ("n", "format", "slug", "look", "title_idea", "facts", "sources", "careful", "beat_ideas", "items_idea",
-                  "situation", "odds_idea", "hook_idea", "unit", "scale", "twist_idea")
+                  "situation", "odds_idea", "hook_idea", "unit", "scale", "twist_idea",
+                  "series", "topic_ko", "topic_en", "why_idea", "steps", "result_idea", "mechanism_refs")   # 뒤 줄 = 뜯어보기 항목
 # 그날 꼴의 서칭 키워드(로컬 크롬 · 인스타 검색 상위 조회수) — 쓰는 쪽이 참고만 한다
 KEYWORDS = {"pick": ["심리테스트", "성격테스트", "그림 고르기"], "card": ["타로", "타로 골라보세요", "오늘의 타로"],
             "quiz": ["상식 퀴즈", "넌센스 퀴즈", "퀴즈"], "balance": ["밸런스 게임", "둘 중 하나"],
             "birth": ["태어난 달", "생일 운세", "탄생월"], "sci": ["심해", "우주 과학", "극한 생존"],
             "bm_paper": ["이그노벨상", "황당 연구", "쓸데없는 과학"], "bm_animal": ["동물 병맛", "AI 동물", "동물 다큐"]}
+TEARDOWN_KEYWORDS = ("작동 원리", "단면", "속 구조")
 
 
 def kst_today() -> dt.date:
@@ -119,22 +142,182 @@ def _slot(d: dt.date, slot: str | None) -> str:
     return sl
 
 
+def _read(path: str) -> dict:
+    """catalog JSON — 파일이 없으면 빈 것(뜯어보기 catalog 가 아직 없어도 편성은 돈다)."""
+    try:
+        with open(path, encoding="utf-8") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return {}
+
+
+def catalog_entries(cat: dict) -> list[dict]:
+    """catalog 의 항목 전부 — survival·compare(sci_extra·shorts_catalog 모양), entries 도 받는다."""
+    return [e for k in ("survival", "compare", "entries") for e in (cat.get(k) or []) if isinstance(e, dict)]
+
+
+def _date_or_none(v) -> dt.date | None:
+    try:
+        return dt.date.fromisoformat(v) if isinstance(v, str) else None
+    except ValueError:
+        return None
+
+
+def open_pools() -> dict:
+    """끝없는 sci 의 항목 줄(SCI_TO 뒤) — {"sci": [(from, n)…], "teardown": [(from, n)…], "unscheduled": {…}}.
+    보통 sci = sci_extra 의 SCI_ORDER 밖 항목(from 필수) + shorts_catalog 의 insta_from 단 항목(구미호 쇼츠 것은 달아야만 쓴다).
+    뜯어보기 = teardown_catalog 항목(from 필수). 줄마다 (from, n) 순서 · 같은 n 은 한 번만 · SCI_ORDER 는 다시 안 쓴다.
+    from 이 없거나 날짜가 아니면 편성하지 않고 unscheduled 에 남긴다(runway 가 알린다)."""
+    used = set(SCI_ORDER)
+    pools: dict = {SCI: [], TEARDOWN: [], "unscheduled": {"no_from": [], "shorts_unused": []}}
+    for e in catalog_entries(_read(SHORTS)):
+        n = e.get("n")
+        if n in used or not isinstance(n, int):
+            continue
+        f = _date_or_none(e.get("insta_from"))
+        if f:
+            pools[SCI].append((max(f, SCI_OPEN_FROM), n))
+            used.add(n)
+        elif e.get("format") in ("survival", "compare"):
+            pools["unscheduled"]["shorts_unused"].append(n)
+    for key, path, start in ((SCI, SCI_EXTRA, SCI_OPEN_FROM), (TEARDOWN, TEARDOWN_CATALOG, TEARDOWN_FROM)):
+        for e in catalog_entries(_read(path)):
+            n = e.get("n")
+            if n in used or not isinstance(n, int):
+                continue
+            f = _date_or_none(e.get("from"))
+            if f is None:
+                pools["unscheduled"]["no_from"].append(n)
+                continue
+            pools[key].append((max(f, start), n))
+            used.add(n)
+    pools[SCI].sort()
+    pools[TEARDOWN].sort()
+    return pools
+
+
+def is_teardown_day(d: dt.date) -> bool:
+    """뜯어보기 자리인 날 — TEARDOWN_FROM 부터 화·금(항목이 남았는지는 보지 않는다 · open_plan 이 본다)."""
+    return d >= TEARDOWN_FROM and d.weekday() in TEARDOWN_DAYS
+
+
+_PLAN: dict = {}
+
+
+def _stamp(p: str) -> tuple:
+    try:
+        st = os.stat(p)
+        return p, st.st_mtime_ns, st.st_size
+    except OSError:
+        return p, None, None
+
+
+def reload() -> None:
+    """catalog 를 다시 읽게(테스트가 catalog 경로를 바꾼 뒤 부른다)."""
+    _PLAN.clear()
+
+
+def open_plan() -> dict[dt.date, tuple[str, int]]:
+    """SCI_TO 다음 날(11/08)부터 sci 자리에 나가는 것 — {날짜: (줄기 "sci"|"teardown", n)}.
+    날마다 걷는다: 뜯어보기 날(화·금)이고 쓸 수 있는(from ≤ 그날) 뜯어보기 항목이 있으면 그것, 아니면 쓸 수 있는 보통 sci 항목,
+    둘 다 없으면 그날은 sci 가 없다(골라보기 두 편). 항목이 다 쓰이면 끝 — 그래서 dict 에 없는 날 = sci 없는 날."""
+    key = tuple(_stamp(p) for p in (SHORTS, SCI_EXTRA, TEARDOWN_CATALOG))
+    if _PLAN.get("key") == key:
+        return _PLAN["plan"]
+    pools = open_pools()
+    reg, td = pools[SCI], pools[TEARDOWN]
+    plan: dict[dt.date, tuple[str, int]] = {}
+    d, ri, ti = SCI_OPEN_FROM, 0, 0
+    end = SCI_OPEN_FROM + dt.timedelta(days=OPEN_MAX_DAYS)
+    while (ri < len(reg) or ti < len(td)) and d <= end:
+        if is_teardown_day(d) and ti < len(td) and td[ti][0] <= d:
+            plan[d] = (TEARDOWN, td[ti][1])
+            ti += 1
+        elif ri < len(reg) and reg[ri][0] <= d:
+            plan[d] = (SCI, reg[ri][1])
+            ri += 1
+        d += dt.timedelta(days=1)
+    _PLAN.update(key=key, plan=plan, days=sorted(plan), pools=pools)
+    return plan
+
+
+@contextlib.contextmanager
+def catalogs(extra: str | None = None, teardown: str | None = None, shorts: str | None = None):
+    """catalog 경로를 잠깐 바꾼다(테스트·미리보기) — 끝나면 되돌리고 다시 읽는다."""
+    global SCI_EXTRA, TEARDOWN_CATALOG, SHORTS
+    saved = SCI_EXTRA, TEARDOWN_CATALOG, SHORTS
+    SCI_EXTRA, TEARDOWN_CATALOG, SHORTS = extra or SCI_EXTRA, teardown or TEARDOWN_CATALOG, shorts or SHORTS
+    reload()
+    try:
+        yield
+    finally:
+        SCI_EXTRA, TEARDOWN_CATALOG, SHORTS = saved
+        reload()
+
+
+@contextlib.contextmanager
+def only_order():
+    """열린 항목 없이 — SCI_ORDER(11/07 까지)만 남긴 catalog 로. 'catalog 가 바닥난 뒤'(11/08~ 골라보기 두 편)를 못 박는
+    테스트가 쓴다 — 그래서 catalog 를 채워도 그 테스트는 깨지지 않는다."""
+    with tempfile.TemporaryDirectory() as td:
+        paths = []
+        for name, src in (("sci_extra.json", SCI_EXTRA), ("shorts_catalog.json", SHORTS)):
+            cat = _read(src)
+            for k in ("survival", "compare", "entries"):
+                if isinstance(cat.get(k), list):
+                    cat[k] = [e for e in cat[k] if e.get("n") in SCI_ORDER or not (e.get("from") or e.get("insta_from"))]
+                    for e in cat[k]:
+                        e.pop("insta_from", None)
+            p = os.path.join(td, name)
+            with open(p, "w", encoding="utf-8") as f:
+                json.dump(cat, f, ensure_ascii=False)
+            paths.append(p)
+        with catalogs(extra=paths[0], shorts=paths[1], teardown=os.path.join(td, "none.json")):
+            yield
+
+
+def _open_days() -> list[dt.date]:
+    open_plan()
+    return _PLAN["days"]
+
+
 def sci_slot(d: dt.date) -> str | None:
-    """그날 sci 편 — SCI_FROM~SCI_TO 안에서만. 날마다 저녁·낮을 번갈아(10/15 b → 10/16 a → 10/17 b …). 밖이면 None."""
-    if not SCI_FROM <= d <= SCI_TO:
+    """그날 sci 편 — SCI_FROM~SCI_TO(SCI_ORDER) 와 그 뒤 open_plan 의 날. 날마다 저녁·낮을 번갈아
+    (10/15 b → 10/16 a → 10/17 b … 11/08 b · 11/09 a … — 항목이 끊긴 날이 있어도 번갈이는 날짜로 이어진다). 없으면 None."""
+    if not (SCI_FROM <= d <= SCI_TO or (d > SCI_TO and d in open_plan())):
         return None
     return "b" if (d - SCI_FROM).days % 2 == 0 else "a"
 
 
 def sci_index(d: dt.date) -> int | None:
-    """몇 번째 sci 편인가(0 = 10/15) — sci 날이 아니면 None."""
-    return (d - SCI_FROM).days if sci_slot(d) else None
+    """몇 번째 sci 편인가(0 = 10/15 · 뜯어보기 편도 센다) — sci 날이 아니면 None."""
+    if sci_slot(d) is None:
+        return None
+    if d <= SCI_TO:
+        return (d - SCI_FROM).days
+    return (SCI_TO - SCI_FROM).days + 1 + bisect.bisect_left(_open_days(), d)
 
 
 def sci_n(d: dt.date) -> int | None:
-    """그날 sci 편이 쓸 shorts_catalog 항목 번호(SCI_ORDER) — sci 날이 아니면 None."""
-    k = sci_index(d)
-    return None if k is None else SCI_ORDER[k]
+    """그날 sci 편이 쓸 항목 번호 — 11/07 까지 SCI_ORDER, 그 뒤 open_plan. sci 날이 아니면 None."""
+    if sci_slot(d) is None:
+        return None
+    return SCI_ORDER[(d - SCI_FROM).days] if d <= SCI_TO else open_plan()[d][1]
+
+
+def sci_series(d: dt.date) -> str | None:
+    """그날 sci 편의 줄기 — 'teardown'(과학으로 뜯어보는 물건) · 'sci'(보통) · sci 날이 아니면 None."""
+    if sci_slot(d) is None:
+        return None
+    return SCI if d <= SCI_TO else open_plan()[d][0]
+
+
+def teardown_index(d: dt.date) -> int | None:
+    """몇 번째 뜯어보기 편인가(0 = 첫 편) — 뜯어보기 날이 아니면 None."""
+    if sci_series(d) != TEARDOWN:
+        return None
+    plan = open_plan()
+    return sum(1 for x in _open_days() if x < d and plan[x][0] == TEARDOWN)
 
 
 def sci_xray(d: dt.date) -> bool:
@@ -142,18 +325,19 @@ def sci_xray(d: dt.date) -> bool:
     return d >= SCI_XRAY_FROM
 
 
-def sci_entry(n: int, path: str = SHORTS, extra: str = SCI_EXTRA) -> dict | None:
-    """sci 항목(n) 그대로 — shorts_catalog 의 survival·compare, 없으면 인스타 전용 sci_extra.json(901~)."""
-    for p in (path, extra):
-        try:
-            with open(p, encoding="utf-8") as f:
-                cat = json.load(f)
-        except FileNotFoundError:
-            continue
-        e = next((e for e in (cat.get("survival") or []) + (cat.get("compare") or []) if e.get("n") == n), None)
+def sci_entry(n: int, path: str | None = None, extra: str | None = None, teardown: str | None = None) -> dict | None:
+    """sci 항목(n) 그대로 — shorts_catalog 의 survival·compare, 없으면 인스타 전용 sci_extra.json(901~),
+    그다음 teardown_catalog.json(951~ · series 'teardown')."""
+    for p in (path or SHORTS, extra or SCI_EXTRA, teardown or TEARDOWN_CATALOG):
+        e = next((e for e in catalog_entries(_read(p)) if e.get("n") == n), None)
         if e:
             return e
     return None
+
+
+def is_teardown_entry(e: dict | None) -> bool:
+    """뜯어보기 항목인가 — series 'teardown' 이거나 번호가 951~(teardown_catalog)."""
+    return bool(e) and (e.get("series") == TEARDOWN or (isinstance(e.get("n"), int) and e["n"] >= TEARDOWN_N0))
 
 
 def bm_kind(d: dt.date) -> str | None:
@@ -198,8 +382,10 @@ def _window_before(d: dt.date, start: dt.date, end: dt.date) -> int:
 
 
 def _skipped_before(d: dt.date, sl: str) -> int:
-    """(d, sl) 편보다 먼저 올라가는 sci·병맛 편 수 — 골라보기 로테이션·회차에서 뺀다(둘 다 하루 한 편씩)."""
-    n = _window_before(d, SCI_FROM, SCI_TO) + _window_before(d, BM_FROM, BM_TO)
+    """(d, sl) 편보다 먼저 올라가는 sci·병맛 편 수 — 골라보기 로테이션·회차에서 뺀다(둘 다 하루 한 편씩).
+    sci 는 SCI_ORDER 기간 + 그 뒤 open_plan 의 날(뜯어보기 포함)."""
+    n = (_window_before(d, SCI_FROM, SCI_TO) + bisect.bisect_left(_open_days(), d)
+         + _window_before(d, BM_FROM, BM_TO))
     for x in (sci_slot(d), bm_slot(d)):
         if x is not None and SLOTS.index(x) < SLOTS.index(sl):
             n += 1
@@ -217,7 +403,7 @@ def _not_pick(d: dt.date, sl: str) -> str | None:
 
 def post_index(d: dt.date, slot: str | None = None) -> int:
     """골라보기 로테이션에서 몇 번째 편인가(0부터) — 하루 한 편이던 날들 뒤로 하루 두 편이 끊김 없이 이어지고,
-    sci 편(10/15~11/07)·병맛 편(10/25~11/07)은 세지 않는다(그래서 로테이션이 건너뛰지도 겹치지도 않는다).
+    sci 편(10/15~11/07 · 그 뒤 open_plan 의 날)·병맛 편(10/25~11/07)은 세지 않는다(그래서 로테이션이 건너뛰지도 겹치지도 않는다).
     sci·병맛 편을 물으면 ValueError."""
     sl = _slot(d, slot)
     other = _not_pick(d, sl)
@@ -350,7 +536,50 @@ def next_info(d: dt.date, root: str = SCRIPTS, slot: str | None = None, now: dt.
         if sci_xray(d):                                    # ★10/25~ '속이 보이는 과학' — 모양은 check 가 막는다(SCI_WRITING)
             out.update(series="속이 보이는 과학", length_sec=list(SCI_XRAY_SEC), views=list(SCI_XRAY_VIEWS),
                        structure="hook(대조·충격 질문) → why(왜?) → beats 정확히 3개(1/3·2/3·3/3, 박자마다 view) → verdict(결과)")
+        if sci_series(d) == TEARDOWN:                      # ★11/10~ 화·금 '과학으로 뜯어보는 물건' — 같은 모양(sci_xray), 대상은 생활 물건
+            out.update(series=TEARDOWN_SERIES, series_id=TEARDOWN, teardown_no=teardown_index(d) + 1,
+                       label=f"{TEARDOWN_SERIES}(생활 물건을 단면으로)", keywords=list(TEARDOWN_KEYWORDS),
+                       views_hint="cutaway 중심 — 물건 겉을 잘라 연 단면에 부품을 label 로(SCI_WRITING '뜯어보기')")
     return out
+
+
+# ── 재고(runway) — tools/runway.py 가 부른다 ─────────────────
+def runway(today: dt.date) -> list[dict]:
+    """인스타 줄기마다 남은 것 — {id, name, limit(open·catalog·trial), last(마지막 날 | None), left(오늘 포함 남은 편 | None),
+    refill(채우는 곳), note}. 날짜 셈은 이 파일의 편성 함수(sci_n·open_plan·bm_kind) 그대로."""
+    plan = open_plan()
+    pools = _PLAN["pools"]
+    reg = [SCI_FROM + dt.timedelta(days=k) for k in range((SCI_TO - SCI_FROM).days + 1)]
+    reg += [d for d in _open_days() if plan[d][0] == SCI]
+    td = [d for d in _open_days() if plan[d][0] == TEARDOWN]
+    bm = [BM_FROM + dt.timedelta(days=k) for k in range((BM_TO - BM_FROM).days + 1)]
+    un = pools["unscheduled"]
+    note = []
+    if un["no_from"]:
+        note.append(f"from 없는 항목 {sorted(un['no_from'])} 은 편성 안 됨(from 을 달 것)")
+    if un["shorts_unused"]:
+        note.append(f"shorts_catalog 안 쓴 survival·compare {len(un['shorts_unused'])}개 — insta_from 을 달면 sci 로 이어진다")
+    nxt = max(today + dt.timedelta(days=1), SCI_OPEN_FROM).isoformat()
+    nxt_td = max(today + dt.timedelta(days=1), TEARDOWN_FROM).isoformat()
+    n_sci = max([n for n in (e.get("n") for e in catalog_entries(_read(SCI_EXTRA))) if isinstance(n, int)
+                 and SCI_OPEN_N0 <= n < TEARDOWN_N0] + [SCI_OPEN_N0 - 1]) + 1
+    n_td = max([n for n in (e.get("n") for e in catalog_entries(_read(TEARDOWN_CATALOG))) if isinstance(n, int)]
+               + [TEARDOWN_N0 - 1]) + 1
+    return [
+        {"id": "insta_pick", "name": "인스타 '오늘의 골라보기'(그림·퀴즈·타로·밸런스·태어난 달)", "limit": "open", "last": None,
+         "left": None, "refill": "없음 — FORMATS 날짜 순환(BM 기간 10/25~11/07 엔 병맛이 자리를 쓴다)"},
+        {"id": "insta_sci", "name": "인스타 sci(도파민 과학 · 속이 보이는 과학)", "limit": "catalog", "last": max(reg),
+         "left": sum(d >= today for d in reg),
+         "refill": f"insta/sci_extra.json 끝에 survival·compare 항목(n {n_sci}~, facts·sources 확인, from ≥ {nxt})",
+         "note": " · ".join(note)},
+        {"id": "insta_teardown", "name": f"인스타 '{TEARDOWN_SERIES}'(화·금, {TEARDOWN_FROM:%m/%d} 주부터)", "limit": "catalog",
+         "last": max(td) if td else None, "left": sum(d >= today for d in td),
+         "refill": f"insta/teardown_catalog.json 끝에 항목(n {n_td}~, series teardown, cutaway, from ≥ {nxt_td})",
+         "note": "" if td else "catalog 가 비었다 — 화·금도 보통 sci(그것도 없으면 골라보기)"},
+        {"id": "insta_bm", "name": "인스타 병맛(이거 진짜 논문임 · 정색 동물 다큐) 2주 시험", "limit": "trial", "last": BM_TO,
+         "left": sum(d >= today for d in bm), "judge": BM_TO + dt.timedelta(days=1),
+         "refill": "판정 뒤 이어 가려면 insta/bm_catalog.json 항목 + pick_plan BM_TO·BM_ORDER(코드 PR)"},
+    ]
 
 
 # ── 게시 ──────────────────────────────────────────────

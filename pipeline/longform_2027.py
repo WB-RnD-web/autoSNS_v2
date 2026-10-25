@@ -34,6 +34,8 @@
 
 글쓰기 안내: pipeline/LONGFORM_2027_WRITING.md · 견본(E01, 실제 첫 편): docs/samples/longform_2027_E01.json
 데이터 브랜치: routine/fortune_lf27 (output/fortune_lf27/E01_2026-11-02.json) → .github/workflows/fortune-lf27.yml(코드는 main).
+★2026-10-25 이어 가는 편(E17~): pipeline/longform_2027_more.json 에 명세 + from 을 적으면 E16 뒤로 같은 월·수·금에 이어진다
+  (앞 16편 날짜는 안 바뀐다 · 명세 검사 more_errs · 채우는 법 tools/REFILL.md#wb_lf27 · 적은 뒤 catalog --write).
 """
 from __future__ import annotations
 
@@ -72,6 +74,12 @@ BRANCH = "routine/fortune_lf27"         # 데이터 브랜치(루틴이 main + �
 OUT_DIR = "output/fortune_lf27"
 NAME_RE = re.compile(r"^(E\d{2})_(\d{4}-\d{2}-\d{2})\.json$")
 CATALOG_PATH = os.path.join(HERE, "longform_2027_catalog.json")
+# ★10/25 이어 가는 편(채우기 — tools/REFILL.md#wb_lf27): E17~ 를 이 파일에 적으면 E16(12/07) 뒤로 같은 월·수·금에 이어진다
+#   (from 이후 첫 월·수·금부터 · 앞 16편 날짜는 안 바뀐다 · 사이가 비어도 된다). 장은 지금 있는 꼴(card·table·years·qa·lucky)만.
+MORE_PATH = os.path.join(HERE, "longform_2027_more.json")
+MORE_LAYOUTS = ("card", "table", "years", "qa", "lucky")
+MORE_TABLES = ("sinsal12", "months3", "months1", "people12")
+FIRST_N = 16                             # 첫 묶음(E01~E16) — 날짜·내용이 코드로 정해진 편
 SAMPLE = os.path.join(ROOT, "docs", "samples", "longform_2027_E01.json")
 MARKER = SERIES                          # 설명란 끝 줄 '2027 정미년 깊이 보기 E01' — 유튜브 쪽 중복 판정
 CATEGORY = "24"
@@ -525,6 +533,14 @@ def episodes() -> list[dict]:
                     "search": title.split(" | ")[0],
                     "thumb": {"big": f"2027 {a}띠", "sub": f"{yy(ys[0])}~{yy(ys[-1])}년생", "pill": sal},
                     "angle": angle, "chapters": _chapters_single(a, f), "qa_seeds": _qa_seeds_single(a, f)})
+    for sp in more_specs():                              # ★E17~ 이어 가는 편 — from 이후 첫 월·수·금, 앞 편 다음 날부터
+        if more_errs(sp, [e["id"] for e in eps]):
+            continue                                     # 틀린 편은 편성하지 않는다(test_longform_2027 이 막는다)
+        d = max(dt.date.fromisoformat(sp["from"]), dates[-1] + dt.timedelta(days=1))
+        while d.weekday() not in POST_DAYS:
+            d += dt.timedelta(days=1)
+        dates.append(d)
+        eps.append(more_episode(sp))
     for k, ep in enumerate(eps):
         ep["publish"] = dates[k].isoformat()
         ep["weekday"] = "월화수목금토일"[dates[k].weekday()]
@@ -534,14 +550,102 @@ def episodes() -> list[dict]:
     return eps
 
 
-EPISODES = episodes()
-BY_ID = {e["id"]: e for e in EPISODES}
+def more_specs(path: str | None = None) -> list[dict]:
+    """이어 가는 편 명세(longform_2027_more.json episodes) — 파일이 없으면 빈 목록."""
+    try:
+        with open(path or MORE_PATH, encoding="utf-8") as f:
+            data = json.load(f)
+    except FileNotFoundError:
+        return []
+    return [x for x in data.get("episodes") or [] if isinstance(x, dict)]
+
+
+def more_errs(sp: dict, before: list[str]) -> list[str]:
+    """이어 가는 편 명세 검사 — id 는 앞 편 다음 번호(E17, E18 …) · from 날짜 · 띠 · 제목('2027년 …띠' · 100자 · 금지어 없음 ·
+    살은 조언 틀 안) · 썸네일 big·sub·pill · angle · 장(10개 이상 · 꼴은 MORE_LAYOUTS · 표는 MORE_TABLES · id 겹침 없음 ·
+    출생연도 장이 그 편 띠의 1930~2009년생을 빠짐없이) · qa_seeds 3~5개."""
+    errs = []
+    want = f"E{len(before) + 1:02d}"
+    if sp.get("id") != want:
+        errs.append(f"id 는 {want}(앞 편 다음 번호)")
+    try:
+        dt.date.fromisoformat(sp.get("from") or "")
+    except ValueError:
+        errs.append("from(YYYY-MM-DD — 쓸 수 있는 첫날) 필요")
+    animals = sp.get("animals")
+    if not (isinstance(animals, list) and animals and all(a in ANIMALS for a in animals) and len(set(animals)) == len(animals)):
+        errs.append(f"animals 는 {ANIMALS} 중 하나 이상(겹침 없이)")
+        animals = []
+    t = sp.get("title") or ""
+    if not (t.startswith("2027년 ") and "띠" in t.split(" | ")[0] and len(t) <= 100) or ban_hits(t) or HANJA.search(t):
+        errs.append("title: '2027년 …띠 …' 로 시작 · 100자 이내 · 금지어·한자 없음")
+    elif sal_frame.violations(t, unit="whole"):
+        errs.append("title: 살·삼재 낱말은 조언 틀 안에서만(sal_frame)")
+    th = sp.get("thumb")
+    if not (isinstance(th, dict) and all(isinstance(th.get(k), str) and th[k] for k in ("big", "sub", "pill"))
+            and not any(ban_hits(v) for v in th.values())):
+        errs.append("thumb: {big, sub, pill} 글 · 금지어 없음")
+    if not isinstance(sp.get("angle"), str) or len(sp["angle"]) < 20:
+        errs.append("angle(이 편이 앞 편들과 무엇이 다른지) 20자 이상")
+    chs = sp.get("chapters")
+    if not isinstance(chs, list) or len(chs) < SPEC.chapters_min:
+        errs.append(f"chapters {SPEC.chapters_min}개 이상")
+        chs = []
+    ids = [c.get("id") for c in chs if isinstance(c, dict)]
+    if len(ids) != len(chs) or len(set(ids)) != len(ids) or not all(re.fullmatch(r"c\d{2}", str(i)) for i in ids):
+        errs.append("chapters[].id 는 c01·c02 … 겹침 없이")
+    covered = []
+    for c in chs:
+        if not isinstance(c, dict):
+            continue
+        lay = c.get("layout")
+        if lay not in MORE_LAYOUTS or not isinstance(c.get("title"), str) or not c["title"] or ban_hits(c["title"]):
+            errs.append(f"chapters {c.get('id')}: layout 은 {MORE_LAYOUTS} · title 글(금지어 없음)")
+        if lay == "table" and c.get("table") not in MORE_TABLES:
+            errs.append(f"chapters {c.get('id')}: table 은 {MORE_TABLES}")
+        if lay == "years":
+            ys = c.get("years") or ddi_years(c.get("animal", ""))
+            if c.get("animal") not in animals or not set(ys) <= set(ddi_years(c.get("animal", ""))):
+                errs.append(f"chapters {c.get('id')}: years 장은 그 편 띠(animal)의 출생연도만")
+            covered += ys
+    if animals and sorted(covered) != sorted(y for a in animals for y in ddi_years(a)):
+        errs.append("출생연도 장(years)이 그 편 띠의 1930~2009년생을 빠짐없이 한 번씩 덮어야 한다")
+    if len({c.get("layout") for c in chs if isinstance(c, dict)}) < 4:
+        errs.append("장 꼴이 4가지 이상(표·카드·출생연도·질문·행운)")
+    qa = sp.get("qa_seeds")
+    if not (isinstance(qa, list) and 3 <= len(qa) <= 5 and all(isinstance(q, str) and q for q in qa)):
+        errs.append("qa_seeds 3~5개")
+    return errs
+
+
+def more_episode(sp: dict) -> dict:
+    """명세 → 편(publish·scenes·next 는 episodes 가 채운다). group·sinsal·samjae 를 안 주면 첫 띠의 2027 사실로."""
+    a0 = sp["animals"][0]
+    f = ddi_facts(a0)
+    chs = []
+    for c in sp["chapters"]:
+        c = dict(c)
+        if c["layout"] == "years" and not c.get("years"):
+            c["years"] = ddi_years(c["animal"])
+        chs.append(c)
+    return {"id": sp["id"], "from": sp["from"], "kind": sp.get("kind") or ("group" if len(sp["animals"]) > 1 else "single"),
+            "group": sp.get("group") or f["group"], "animals": list(sp["animals"]),
+            "sinsal": sp.get("sinsal") or f["sinsal_2027"], "samjae": sp.get("samjae", f["samjae_2027"] if len(sp["animals"]) == 1 else ""),
+            "title": sp["title"], "search": sp.get("search") or sp["title"].split(" | ")[0], "thumb": dict(sp["thumb"]),
+            "angle": sp["angle"], "chapters": chs, "qa_seeds": list(sp["qa_seeds"])}
+
+
 
 
 def episode(eid: str) -> dict:
     if eid not in BY_ID:
         raise KeyError(f"편 {eid!r} 없음 — E01~E{len(EPISODES):02d}")
     return BY_ID[eid]
+
+
+def last_day() -> dt.date:
+    """시리즈 마지막 편 공개일(E16) — tools/runway.py 가 부른다."""
+    return dt.date.fromisoformat(EPISODES[-1]["publish"])
 
 
 def publish_dt(ep: dict) -> dt.datetime:
@@ -1257,6 +1361,8 @@ def build_catalog() -> dict:
     for ep in EPISODES:
         e = {k: ep[k] for k in ("id", "publish", "weekday", "kind", "group", "animals", "sinsal", "samjae", "title",
                                 "search", "thumb", "angle", "qa_seeds", "next", "next_title")}
+        if ep.get("from"):                                # 이어 가는 편(E17~)만 — 첫 16편 카탈로그는 그대로
+            e["from"] = ep["from"]
         e["publish_kst"] = f"{ep['publish']} {PUBLISH_HHMM}"
         e["chapters"] = [{k: v for k, v in c.items()} for c in ep["chapters"]]
         e["facts"] = ep_facts(ep)
@@ -1285,6 +1391,11 @@ def schedule_text() -> str:
     for ep in EPISODES:
         lines.append(f"{ep['id']}  {ep['publish']}({ep['weekday']}) {PUBLISH_HHMM}  {ep['title']}")
     return "\n".join(lines)
+
+
+# 편성은 모듈 끝에서 만든다 — 이어 가는 편 검사(more_errs)가 아래쪽 ban_hits·HANJA 를 쓴다(10/25)
+EPISODES = episodes()
+BY_ID = {e["id"]: e for e in EPISODES}
 
 
 def main() -> int:

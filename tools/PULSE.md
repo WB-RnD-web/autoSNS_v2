@@ -58,6 +58,10 @@
   data/trend-radar 의 `report.md` 에 분야별 전체 표가 있다. 우리 시청자와 맞는 분야만 말한다.
 - **실험**(`experiments`) = 판정 달력. `owner` 가 `local:*` 면 사용자 PC 작업이 스튜디오 숫자로 판정한다 →
   너는 판정하지 말고 "지금까지 숫자"만 말한다. `owner` 가 `pulse` 면 판정일에 네가 판정한다.
+- **콘텐츠 재고**(`runway` · 신호 `RUNWAY:<줄기>`) = 14일 안에 목록·끝 날짜가 바닥나는 줄기(tools/runway.py). 바닥나면 그 줄기는
+  에러 없이 조용히 멈춘다. 잘 되는 줄기면 `actions` 에 "무엇을 어디에 채울지"(`refill`)를 적는다 — 사실·출처가 필요한 항목
+  (sci·뜯어보기·해설 롱폼)은 웹 확인이 필요하니 `who: user` 나 `local` 로. 시험(`info`)은 판정일에 이어 갈지 정한다.
+  채우는 법·검사는 `tools/REFILL.md`(주간 채우기 루틴)·`tools/refill_check.py` — 너는 catalog 를 직접 채우지 않는다.
 
 ## 근거와 추측
 

@@ -1,0 +1,61 @@
+name: 콘텐츠 채우기 PR — refill/** 검사 → 통과하면 PR
+
+# 주간 채우기 루틴(tools/REFILL.md)이 refill/<줄기>-<YYYYMMDD> 브랜치를 올리면 여기서
+#   ① 채우기 검사(지난 편성 그대로 · 새 항목 from · 사실 근거 · 금지어) ② 전체 오프라인 테스트를 돌리고
+#   ③ 둘 다 통과할 때만 main 으로 PR 을 연다. 머지는 사람이 한다.
+# 렌더·업로드·push 는 하지 않는다(쓰기 권한 없음 — PR 만 연다). 2026-10-25 사용자: "잘 되는 루틴은 끝나지 않고 계속 돌게".
+# PR 제목·본문 = 그 브랜치 마지막 커밋의 제목 줄·본문(루틴이 REFILL.md 템플릿대로 쓴다).
+
+on:
+  push:
+    branches:
+      - "refill/**"
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: refill-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      TZ: Asia/Seoul
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # refill_check 가 origin/main 과 편성을 맞춰 본다
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 준비(테스트에 필요한 것만)
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-cjk >/dev/null
+          python -m pip install -q -r pipeline/requirements.txt numpy pillow google-api-python-client google-auth
+
+      - name: 채우기 검사
+        run: python tools/refill_check.py
+
+      - name: 전체 테스트
+        run: bash tools/run_tests.sh
+
+      - name: PR 열기(이미 열려 있으면 그대로)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          BR="${GITHUB_REF_NAME}"
+          if [ -n "$(gh pr list --head "$BR" --state open --json number -q '.[].number')" ]; then
+            echo "::notice::$BR 에 열린 PR 이 이미 있다"; exit 0
+          fi
+          TITLE=$(git log -1 --format=%s)
+          git log -1 --format=%b > "$RUNNER_TEMP/body.md"
+          gh pr create --base main --head "$BR" --title "$TITLE" --body-file "$RUNNER_TEMP/body.md"
+          echo "PR 을 열었다: $BR" >> "$GITHUB_STEP_SUMMARY"
