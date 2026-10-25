@@ -887,11 +887,250 @@
     "What You'd See in the Sky After the Sun Vanished (8 min 20 s segment: Moon goes dark, Jupiter and Saturn keep shining)",
     "What Happens to Earth When the Sun's Gravity Disappears? (8 min 20 s: straight line at about 67,000 mph)"
    ]
+  },
+  {
+   "id": 30,
+   "slug": "universe-endings-ranked",
+   "region": "GLOBAL",
+   "format": "ranked",
+   "look": "real",
+   "from": "2026-11-02",
+   "badge": "RANKED",
+   "title_idea": "Every Way the Universe Could End, Ranked by How Bad It Feels",
+   "angle": "The universe is about 13.8 billion years old and approximately 68.3 to 70% dark energy, and what that dark energy does next decides how everything ends. Ranked from the gentlest to the most violent: the Sun turning red giant around 10–11 billion years of age, an Andromeda collision that has only a 2% chance in the next 5 billion years, the slow cold fade, the Big Crunch, the Big Rip and vacuum decay — each one clearly labeled as the hypothesis it is.",
+   "facts": [
+    {
+     "fact": "The universe began with the big bang some 13.8 billion years ago (NASA)",
+     "src": 0,
+     "evidence": "Some 13.8 billion years ago, the universe began with a rapid expansion we call the big bang."
+    },
+    {
+     "fact": "Approximately 68.3 to 70% of the universe is dark energy, and it is making the expansion accelerate (NASA)",
+     "src": 0,
+     "evidence": "But we do know that it exists, it’s making the universe expand at an accelerating rate, and approximately 68.3 to 70% of the universe is dark energy."
+    },
+    {
+     "fact": "Nine billion years after the universe began, its expansion started to speed up, driven by dark energy (NASA)",
+     "src": 0,
+     "evidence": "Nine billion years after the universe began, its expansion started to speed up, driven by an unknown force that scientists have named dark energy"
+    },
+    {
+     "fact": "Normal matter — stars, galaxies, planets, you — is just 4.9% of the mass/energy density of the universe (ESA Planck)",
+     "src": 1,
+     "evidence": "Normal matter that makes up stars and galaxies contributes just 4.9% of the mass/energy density of the Universe."
+    },
+    {
+     "fact": "Heat death / slow fade (hypothesis): if dark energy stays constant, the universe keeps expanding forever, and in many billions of years only a tiny fraction of the known galaxies will be observable (NASA Chandra)",
+     "src": 2,
+     "evidence": "If so, the Universe is expected to continue expanding forever, so that in many billions of years only a tiny fraction of the known galaxies will be observable."
+    },
+    {
+     "fact": "Big Rip (hypothesis): dark energy would grow until galaxies, stars, planets and eventually atoms are torn apart; a Big Crunch would be the universe collapsing on itself; a constant dark energy would rule both out (NASA Chandra)",
+     "src": 2,
+     "evidence": "These include the \"Big Rip,\" where dark energy increases until galaxies, stars, planets and eventually atoms are eventually torn apart."
+    },
+    {
+     "fact": "Big Rip timeline, in the paper's example phantom-energy case: the Milky Way gets stripped roughly 60 million years before the Big Rip, after galaxy clusters have already been pulled apart (Caldwell, Kamionkowski & Weinberg)",
+     "src": 3,
+     "evidence": "the Milky Way will get stripped roughly 60 million years before the Big Rip"
+    },
+    {
+     "fact": "Vacuum decay (hypothesis): the first complete calculation of the lifetime of our universe in the Standard Model gives 10^139 years (Andreassen, Frost & Schwartz)",
+     "src": 4,
+     "evidence": "With these problems solved, we produce the first complete calculation of the lifetime of our universe: 10^139 years."
+    },
+    {
+     "fact": "Vacuum decay: with 95% confidence, the same authors expect our universe to last more than 10^58 years",
+     "src": 4,
+     "evidence": "With 95% confidence, we expect our universe to last more than 10^58 years."
+    },
+    {
+     "fact": "Proton decay has never been seen: the Super-Kamiokande detector sets the proton's lifetime (for the p→e+π0 decay) at more than 1.6 × 10^34 years, at 90% confidence",
+     "src": 5,
+     "evidence": "Lower limits on the proton lifetime are set at $\\tau/B(p \\rightarrow e^{+} \\pi^{0}) > 1.6 \\times 10^{34}$ years and $\\tau/B(p \\rightarrow \\mu^{+} \\pi^{0}) > 7.7 \\times 10^{33}$ years at 90% confidence level."
+    },
+    {
+     "fact": "The Sun reaches its maximum temperature at about 8 billion years of age, then cools and swells into a red giant at around 10–11 billion years of age, ending as a white dwarf (ESA Gaia)",
+     "src": 6,
+     "evidence": "From this work, it becomes clear that our Sun will reach a maximum temperature at approximately 8 billion years of age, then it will cool down and increase in size, becoming a red giant star around 10–11 billion years of age."
+    },
+    {
+     "fact": "The long-held prediction: the Milky Way collides with the Andromeda galaxy in 4.5 billion years (Durham University)",
+     "src": 7,
+     "evidence": "New research has cast doubt on the long-held theory that our galaxy, the Milky Way, will collide with its largest neighbour, the Andromeda galaxy, in 4.5 billion years-time."
+    },
+    {
+     "fact": "New simulations with Hubble and Gaia data: only a 2% probability that the two galaxies collide in the next 5 billion years (Durham University)",
+     "src": 7,
+     "evidence": "They found that there is only a 2% probability that the galaxies will collide in the next 5 billion years, contrary to the previous belief that a collision was a certainty within that timeframe."
+    },
+    {
+     "fact": "If the Milky Way and Andromeda do collide and merge, it would most likely happen in 7 to 8 billion years' time (Durham University)",
+     "src": 7,
+     "evidence": "If the Milky Way and Andromeda are to collide and merge, the researchers found that it would most likely happen in 7 to 8 billion years’ time, significantly later than previously predicted."
+    },
+    {
+     "fact": "The last lights: some low-mass red dwarfs, with a third of the Sun's mass, may live up to about 14 trillion years (NASA)",
+     "src": 8,
+     "evidence": "Scientists think some low-mass red dwarfs, those with just a third of the Sun’s mass, have life spans longer than the current age of the universe, up to about 14 trillion years."
+    },
+    {
+     "fact": "DESI survey results hint that the impact of dark energy may be weakening over time — the kind of change that would reopen slower or collapsing endings (Ohio State University)",
+     "src": 9,
+     "evidence": "New results from the Dark Energy Spectroscopic Instrument (DESI) collaboration, one of the most extensive surveys of the cosmos ever conducted, reveal that the impact of dark energy may be weakening over time — and the standard model of how the universe works may need an update."
+    }
+   ],
+   "careful": [
+    "Every universe ending is a hypothesis: heat death, Big Crunch, Big Rip and vacuum decay depend on what dark energy and the Higgs field really do — say 'if', 'could', 'one model'",
+    "The Big Rip's 60 million years is for the paper's example case w = −3/2, not a prediction; measurements so far are close to a constant dark energy",
+    "The 10^139-year vacuum-decay lifetime depends on the top quark mass and other measured values; give it as a calculation, not a countdown",
+    "Proton decay has never been observed — 1.6 × 10^34 years is a lower limit, not a measured lifetime",
+    "Gaia's 8 and 10–11 billion years are the Sun's age at those stages, not years from now; don't subtract to make a new number",
+    "The Andromeda collision is no longer a certainty: say 'the old prediction' for 4.5 billion years and give the 2% and 7 to 8 billion years as simulation results",
+    "Dark energy's share differs by source (NASA 68.3 to 70%); use 'approximately 68.3 to 70%' and don't mix in other figures",
+    "The DESI result is a hint, not a confirmed discovery; don't say dark energy is proven to be weakening",
+    "No fear-mongering: none of these endings can affect anyone alive; don't compute dates or 'time left' figures that no source gives"
+   ],
+   "sources": [
+    "NASA — Dark Energy: https://science.nasa.gov/dark-energy/",
+    "ESA — Planck reveals an almost perfect Universe: https://www.esa.int/Science_Exploration/Space_Science/Planck/Planck_reveals_an_almost_perfect_Universe",
+    "NASA Chandra X-ray Center (Harvard) — Chandra Opens New Line of Investigation on Dark Energy: https://chandra.harvard.edu/press/04_releases/press_051804.html",
+    "Caldwell, Kamionkowski & Weinberg (2003), Physical Review Letters, arXiv — Phantom Energy and Cosmic Doomsday: https://arxiv.org/html/astro-ph/0302506",
+    "Andreassen, Frost & Schwartz (2018), arXiv — Scale Invariant Instantons and the Complete Lifetime of the Standard Model: https://arxiv.org/abs/1707.08124",
+    "Super-Kamiokande Collaboration (2017), Physical Review D, arXiv — Search for Proton Decay via p→e+π0 and p→μ+π0: https://arxiv.org/abs/1610.03597",
+    "ESA — Gaia reveals the past and future of the Sun: https://www.esa.int/Science_Exploration/Space_Science/Gaia/Gaia_reveals_the_past_and_future_of_the_Sun",
+    "Durham University — New study casts doubt on the likelihood of Milky Way collision with Andromeda: https://dur.ac.uk/news-events/latest-news/2025/06/new-study-casts-doubt-on-the-likelihood-of-milky-way-collision-with-andromeda/",
+    "NASA — Star Types: https://science.nasa.gov/universe/stars/types/",
+    "The Ohio State University — New DESI results strengthen hints that dark energy may evolve: https://news.osu.edu/new-desi-results-strengthen-hints-that-dark-energy-may-evolve"
+   ],
+   "shorts": [
+    "What Happens If the Universe Ends in a Big Rip? (Big Rip segment: the Milky Way stripped roughly 60 million years before the end — example case only)",
+    "Will the Milky Way Really Crash Into Andromeda? (Andromeda segment: long-held 4.5 billion years, only a 2% chance in the next 5 billion years, 7 to 8 billion years if it happens)",
+    "What If Empty Space Itself Collapsed? (vacuum decay segment: 10^139 years calculated, more than 10^58 years at 95% confidence)"
+   ]
+  },
+  {
+   "id": 31,
+   "slug": "centralia-mine-fire",
+   "region": "GLOBAL",
+   "format": "abandoned",
+   "look": "real",
+   "from": "2026-11-02",
+   "badge": "ABANDONED",
+   "title_idea": "This Town Has Been Burning Since 1962 (Centralia)",
+   "angle": "In May 1962 a fire reached the coal under Centralia, Pennsylvania, and it never went out: it burns about 46–69 m down, creeps 3–7 m a year, and heats the surface soil past 80 °C. A town of 1,100 people became a population of five owners, Route 61 cracked, and putting the fire out was priced at $663 million — so it is monitored and left to burn.",
+   "facts": [
+    {
+     "fact": "The fire has been burning in the abandoned deep mine workings of the Buck Mountain Coal Bed since May 1962; it reportedly began as a controlled burn of trash in an abandoned strip pit (PA DEP)",
+     "src": 0,
+     "evidence": "The Centralia Mine Fire has been burning in the abandoned deep mine workings of the Buck Mountain Coal Bed since May 1962."
+    },
+    {
+     "fact": "On August 9, 1962, mines near Centralia were permanently closed when carbon monoxide from the fire was detected underground (Penn State)",
+     "src": 2,
+     "evidence": "On August 9, 1962, mines near Centralia were permanently closed when carbon monoxide, a byproduct of the fire, was detected underground."
+    },
+    {
+     "fact": "A federal study estimated that $663 million would be needed to put the fire out (PA DEP chronology, OSM study)",
+     "src": 1,
+     "evidence": "OSM study estimates that $663 million is required to extinguish fire."
+    },
+    {
+     "fact": "Route 61, a vital transportation link, suffered severe subsidence damage from the fire (PA DEP chronology)",
+     "src": 1,
+     "evidence": "A vital transportation link, Route 61, suffers severe subsidence damage from fire."
+    },
+    {
+     "fact": "Congress appropriated $42 million for the voluntary purchase and relocation of homes and businesses threatened by noxious gases and subsidence (PA DEP chronology)",
+     "src": 1,
+     "evidence": "U.S. Congress appropriates $42 million for voluntary acquisition and relocation of impacted businesses and residences due to dangers caused by fire (i.e. noxious gases & subsidence)."
+    },
+    {
+     "fact": "Population of 1,100 and 545 families and businesses in 1962; by 2013, a population of five owners (PA DEP chronology)",
+     "src": 1,
+     "evidence": "1962 Population of 1,100 545 families and businesses 2013 Population of five owners"
+    },
+    {
+     "fact": "In 1992 the state condemned all the properties in the town through eminent domain, after many residents had been bought out and relocated through the 1980s (University of Oregon)",
+     "src": 9,
+     "evidence": "Many residents were bought out and relocated through the 1980’s, and in 1992 the state condemned all the properties in the town through eminent domain."
+    },
+    {
+     "fact": "The fire burns an estimated 46–69 m below the surface, depending on the depth of the coal bed (about 150 to 230 ft, converted) (ISME Journal)",
+     "src": 3,
+     "evidence": "Depending on the depth of the coal bed, it burns at an estimated 46-69 m below the surface ( Nolter and Vice, 2004 ; Elick, 2011 )."
+    },
+    {
+     "fact": "The fire keeps spreading slowly through the underground coal seams, about 3–7 m per year (ISME Journal)",
+     "src": 3,
+     "evidence": "continues to spread slowly (3–7 m per year, Elick, 2011 ) through underground coal seams"
+    },
+    {
+     "fact": "Surface soil temperatures above the fire can exceed 80 °C, leaving dead vegetation that traces its path underground (ISME Journal)",
+     "src": 3,
+     "evidence": "The surface soil temperatures can exceed 80 °C, scarring the landscape with dead vegetation that reveals the fire's subsurface trajectory."
+    },
+    {
+     "fact": "For coal to burn it needs at least 150 °F, more than 3% oxygen (air has 21%) and more than 20% coal particles by volume (OSMRE)",
+     "src": 4,
+     "evidence": "For coal to burn it must have a temperature of at least 150 degrees Fahrenheit, greater than 3% oxygen (21% oxygen in the air we breathe), and greater than 20% coal particles by volume."
+    },
+    {
+     "fact": "Relocation was the chosen 'treatment': once people are moved out, the fire is monitored and left to burn — in Centralia's case for more than 50 years (OSMRE)",
+     "src": 4,
+     "evidence": "As in the case of Centralia, the fire has been burning more than 50 years."
+    },
+    {
+     "fact": "A federal three-dimensional model of the mines under and around Centralia digitized 15 coal seams to map the fire's progression and potential future burn areas (OSMRE)",
+     "src": 5,
+     "evidence": "15 coal seams were digitized and modeled, instantly showing the complexity of the local geology."
+    },
+    {
+     "fact": "Carbon monoxide, the gas that closed the mines, is Immediately Dangerous to Life or Health at 1,200 ppm (NIOSH)",
+     "src": 6,
+     "evidence": "The revised IDLH for carbon monoxide is 1,200 ppm based on acute inhalation toxicity data in humans"
+    },
+    {
+     "fact": "Scientists study the soil microbes above a mine fire that has been burning for more than 60 years (Michigan State University)",
+     "src": 7,
+     "evidence": "Michigan State University researchers have provided new answers to that question by analyzing soil microbes near a mine fire that’s been burning for more than 60 years."
+    },
+    {
+     "fact": "Because the fire started in the hinge of an anticline between two synclines, it spread in four directions; subsidence and toxic gas venting destroyed large sections of the community (Penn State, GSA Reviews in Engineering Geology)",
+     "src": 8,
+     "evidence": "Because the Centralia fire started in the hinge zone of an anticline separating two synclines in the Western Middle Field, it spread in four directions."
+    }
+   ],
+   "careful": [
+    "No residents' names, no faces, no re-enactment of anyone being hurt — the town is the subject, people appear only as numbers from public records",
+    "Never suggest visiting: PA DEP warns the area is extremely dangerous (gases, sudden ground collapse) and strongly discourages anyone from going there; don't show private property or the closed road as accessible",
+    "No official source gives an end date for the fire — don't use '250 years' or any other duration; say 'no one can say when it will stop'",
+    "The 80 °C figure is surface soil (ISME); no verified source here gives the fire's core temperature — don't invent one",
+    "Depth and spread figures come from one study (46–69 m down, 3–7 m per year); other public figures for area and depth differ — say 'about' and cite",
+    "The cost to extinguish differs slightly between sources ($663 million DEP/OSM, about $660 million Penn State) — use $663 million",
+    "'More than 50 years' (OSMRE) and 'more than 60 years' (MSU, 2024) depend on when they were written — prefer 'since 1962'",
+    "Carbon monoxide's 1,200 ppm is a workplace danger threshold, not a reading measured in Centralia",
+    "The fire's cause is 'reportedly' a trash burn in a strip pit — say so; don't blame anyone"
+   ],
+   "sources": [
+    "Pennsylvania DEP — Centralia Mine Fire Resources: https://www.pa.gov/agencies/dep/programs-and-services/mining/abandoned-mine-reclamation/aml-program-information/centralia-mine-fire-resources",
+    "Pennsylvania DEP — A Brief History of the Centralia Mine Fire (Chronology): https://www.pa.gov/agencies/dep/programs-and-services/mining/abandoned-mine-reclamation/aml-program-information/centralia-mine-fire-resources/chronology",
+    "Penn State University Libraries, Pennsylvania Center for the Book — Inferno: The Centralia Mine Fire: https://pabook.libraries.psu.edu/literary-cultural-heritage-map-pa/feature-articles/inferno-centralia-mine-fire",
+    "Lee et al. (2017), The ISME Journal — Divergent extremes but convergent recovery of soil communities to an ongoing subterranean coal mine fire: https://www.nature.com/articles/ismej20171",
+    "U.S. Office of Surface Mining Reclamation and Enforcement — Coal Mine Fires and Burning Refuse: https://www.osmre.gov/programs/mine-fires",
+    "U.S. Office of Surface Mining Reclamation and Enforcement — Centralia Project: https://osmre.gov/node/1251",
+    "CDC NIOSH — Carbon monoxide, Immediately Dangerous to Life or Health (IDLH) value: https://www.cdc.gov/niosh/idlh/630080.html",
+    "Michigan State University — MSU finds insights in microbes near Centralia mine fire: https://msutoday.msu.edu/news/2024/03/msu-finds-insights-in-microbes-near-centralia-mine",
+    "Penn State (GSA Reviews in Engineering Geology, 2007) — Comparison of Pennsylvania anthracite mine fires: Centralia and Laurel Run: https://pure.psu.edu/en/publications/comparison-of-pennsylvania-anthracite-mine-fires-centralia-and-la/",
+    "University of Oregon, Fuller Initiative for Productive Landscapes — Centralia, PA [Coal]: https://fuller.uoregon.edu/centralia/"
+   ],
+   "shorts": [
+    "Why Nobody Lives in Centralia Anymore (relocation segment: population 1,100 in 1962, $42 million relocation, five owners in 2013)",
+    "How Hot Is the Ground Above the Centralia Fire? (fire segment: surface soil above 80 °C, fire 46–69 m down, spreading 3–7 m per year)"
+   ]
   }
  ],
  "backlog": [
-  "Every Way the Universe Could End, Ranked by How Bad It Feels",
-  "This Town Has Been Burning Since 1962 (Centralia)",
   "Why Nobody Lives in Picher, Oklahoma",
   "The Atmosphere, Explained: Every Layer and What Would Kill You There",
   "What If You Fell Into a Black Hole? Second by Second",
