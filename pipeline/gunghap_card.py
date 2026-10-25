@@ -31,8 +31,8 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from fortune_card import ANIMALS, years_of  # noqa: E402
 import birth_basis  # noqa: E402
-from pulli_card import (BRANCH_EL, CTL, EL_WORD, GEN, HOOK_TAIL, SAMHAP, WONJIN, YUKHAP, josa,  # noqa: E402
-                        kst_today)
+from pulli_card import (BRANCH_EL, CTL, EL_WORD, GEN, HAE, HOOK_TAIL, HYEONG, PA, SAMHAP, WONJIN, YUKHAP,  # noqa: E402
+                        josa, kst_today)
 
 TOPIC = "fortune_gunghap"
 ACCENT = "#E8657A"
@@ -155,7 +155,86 @@ THEMES = [
 
 # 표 한 줄 이유(10자 이내)
 ONE = {"육합": "육합·찰떡 짝", "충": "충·정면 충돌", "원진": "원진·서운함", "재성": "재성·재물 기운",
-       "인성": "인성·돕는 기운", "관성": "관성·누르는 기운", "충(재물)": "충·재물 다툼"}
+       "인성": "인성·돕는 기운", "관성": "관성·누르는 기운", "충(재물)": "충·재물 다툼",
+       "해": "해·손해 보는 짝", "파": "파·틀어짐", "비겁": "비겁·같은 기운", "식상": "식상·정 주는 기운",
+       "형": "형·말 엇갈림"}
+
+
+# ── 10/25 채우기(tools/REFILL.md#wb_gunghap) — 6묶음 · from 2026-10-28(10/30 금~) ──
+def _siblings(b):
+    """형제·자매 궁합 — 삼합(한 팀)을 좋게, 해(서로 손해)를 조심할 짝으로."""
+    mates, nm = samhap_mates(b)
+    return [(x, f"{nm} 삼합") for x in mates], [(pair_of(HAE, b), "해")]
+
+
+def _coworker(b):
+    """직장 동료 궁합 — 손발이 맞는 육합을 좋게, 서운함이 쌓이는 원진을 조심할 짝으로."""
+    return [(pair_of(YUKHAP, b), "육합")], [(pair_of(WONJIN, b), "원진")]
+
+
+def _club(b):
+    """모임·취미 궁합 — 오행이 같은 띠(비겁)를 좋게, 약속이 틀어지는 파를 조심할 짝으로(파인 띠는 좋은 쪽에서 뺀다)."""
+    p = pair_of(PA, b)
+    return [(x, "비겁") for x in _by_el(BRANCH_EL[b], b) if x != p], [(p, "파")]
+
+
+def _children(b):
+    """부모·자녀 궁합 — 내 오행이 살려 주는 기운(식상)의 띠를 정 주는 띠로, 정면으로 부딪히는 충을 조심할 띠로."""
+    c = chung(b)
+    return [(x, "식상") for x in _by_el(GEN[BRANCH_EL[b]], b) if x != c], [(c, "충")]
+
+
+def _dating(b):
+    """연애·썸 궁합 — 육합과 삼합 셋을 설레는 띠로(오행이 서로 살리는 짝 앞), 원진·해를 애태우는 띠로."""
+    mates, nm = samhap_mates(b)
+    good = [(pair_of(YUKHAP, b), "육합")] + [(x, f"{nm} 삼합") for x in mates]
+    good.sort(key=lambda g: (not sangsaeng(b, g[0]), g[1] != "육합", g[0]))
+    w, h = pair_of(WONJIN, b), pair_of(HAE, b)
+    return good, [(w, "원진")] + ([(h, "해")] if h != w else [])
+
+
+def _mentor(b):
+    """선후배·스승 궁합 — 나를 살리는 기운(인성)의 띠를 이끌어 주는 띠로, 형(말이 엇갈림)을 조심할 띠로.
+    형이 없는 띠(진·오·유·해 — 자형)는 충을 조심할 띠로 둔다."""
+    me = BRANCH_EL[b]
+    hy = sorted(x for g in HYEONG if b in g for x in g if x != b)
+    bad = [(x, "형") for x in hy] or [(chung(b), "충")]
+    gen_me = next(e for e, t in GEN.items() if t == me)
+    return [(x, "인성") for x in _by_el(gen_me, b) if x not in hy], bad
+
+
+THEMES += [
+    {"id": "siblings", "card": "형제·자매 궁합표", "yt": "형제·자매 띠 궁합표", "cols": ("한 팀 되는 띠", "손해 보는 띠"),
+     "fn": _siblings, "years": "self", "from": "2026-10-28",
+     "why": "형제·자매는 셋이 한 팀이 되는 삼합을 좋게, 서로 손해를 보기 쉬운 해(害)를 조심할 짝으로 봤어요",
+     "hook": "a Korean hanok veranda in soft morning light with several pairs of rubber shoes lined up on the stone step "
+             "and a basket of tangerines on the wooden floor, warm family mood, no people"},
+    {"id": "coworker", "card": "직장 동료 궁합표", "yt": "직장 동료 띠 궁합표", "cols": ("손발 맞는 띠", "서운해지는 띠"),
+     "fn": _coworker, "years": "self", "from": "2026-10-28",
+     "why": "함께 일하는 사이는 손발이 맞는 육합을 좋게, 말없이 서운함이 쌓이는 원진을 조심할 짝으로 봤어요",
+     "hook": "a tidy office desk by a window at sunrise with two mugs of coffee, a potted plant and neatly stacked folders, "
+             "calm teamwork mood, no people"},
+    {"id": "club", "card": "모임·취미 궁합표", "yt": "모임·취미 친구 띠 궁합표", "cols": ("기운이 같은 띠", "틀어지는 띠"),
+     "fn": _club, "years": "self", "from": "2026-10-28",
+     "why": "모임·취미 친구는 띠의 오행이 같은 비겁(같은 기운)을 좋게, 약속이 틀어지기 쉬운 파(破)를 조심할 짝으로 봤어요",
+     "hook": "a mountain trail rest spot in autumn with hiking poles leaning on a wooden bench, thermos cups and "
+             "maple leaves around, cheerful outing mood, no people"},
+    {"id": "children", "card": "부모·자녀 궁합표", "yt": "부모·자녀 띠 궁합표", "cols": ("정 주는 띠", "부딪히는 띠"),
+     "fn": _children, "years": "self", "from": "2026-10-28",
+     "why": "내 띠의 오행이 살려 주는 기운(식상)의 띠를 정을 쏟는 자녀 띠로, 정면으로 부딪히는 충을 조심할 띠로 봤어요",
+     "hook": "a Korean kitchen table with a warm bowl of rice and side dishes set out under a soft pendant lamp, "
+             "a lunch box wrapped in cloth beside it, caring family mood, no people"},
+    {"id": "dating", "card": "연애·썸 궁합표", "yt": "연애·썸 띠 궁합표", "cols": ("설레는 띠", "애태우는 띠"),
+     "fn": _dating, "years": "self", "from": "2026-10-28",
+     "why": "연애는 육합·삼합을 설레는 띠로(오행이 서로 살리는 짝을 앞에), 서운함이 쌓이는 원진과 손해 보기 쉬운 해를 애태우는 띠로 봤어요",
+     "hook": "a riverside park bench at dusk with two paper cups of warm tea and a bouquet of cosmos flowers, "
+             "string lights glowing softly, romantic mood, no people"},
+    {"id": "mentor", "card": "선후배·스승 궁합표", "yt": "선후배·스승 띠 궁합표", "cols": ("이끌어 주는 띠", "말 엇갈리는 띠"),
+     "fn": _mentor, "years": "self", "from": "2026-10-28",
+     "why": "나를 살려 주는 기운(인성)의 띠를 이끌어 주는 띠로, 말이 엇갈리기 쉬운 형(刑)을 조심할 띠로 봤어요(형이 없는 띠는 충)",
+     "hook": "a quiet Korean study room with a low desk, an open book, a brush and inkstone beside a paper window "
+             "with afternoon light, respectful learning mood, no people"},
+]
 
 
 def schedule() -> list[tuple[dt.date, dict]]:
