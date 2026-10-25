@@ -1,0 +1,28 @@
+{
+ "id": 307,
+ "slug": "grocery-store-after-midnight",
+ "format": "liminal",
+ "part": 7,
+ "look": "liminal",
+ "fiction": true,
+ "title": "RULES for the 24-Hour Grocery Store After Midnight #shorts",
+ "hook": "GROCERY STORE. AFTER MIDNIGHT.",
+ "description_hook": "You stop for milk after midnight. The store is open, the music is on, and the only other sound is the freezers.",
+ "lines": [
+  {"rule": 1, "text": "NEVER HUM ALONG", "say": "You stop for milk after midnight. Rule one: if the intercom plays a song you've never heard, keep shopping. Don't hum along.",
+   "img": "a huge brightly lit suburban grocery store at night seen from the entrance, long empty aisles under fluorescent tubes, polished floor reflecting the light"},
+  {"rule": 2, "text": "SKIP THE DARK AISLES", "say": "Rule two. Skip any aisle where the lights are off.",
+   "img": "one grocery aisle sunk in darkness between two fully lit aisles, shelves fading into shadow, an abandoned shopping cart at its mouth"},
+  {"rule": 3, "text": "DON'T WIPE THE FOG", "say": "Rule three. When a freezer door fogs up, someone is standing behind you. Don't wipe it.",
+   "img": "close-up of a glass freezer door clouded with fog in a quiet supermarket, cold blue light inside, a vague dark shape blurred in the reflection"},
+  {"rule": 4, "text": "AVOID THE BEEPING CHECKOUT", "say": "Rule four. Never use the self-checkout that is already beeping.",
+   "img": "a row of unattended self-checkout machines at night, one screen glowing brighter than the rest, empty bagging area, harsh overhead light"},
+  {"rule": 5, "text": "PAY A CASHIER YOU SAW WALK IN", "say": "Rule five. Only pay a cashier you saw walk in.",
+   "img": "a single staffed checkout lane seen from far away, a cashier silhouette from behind under a lone lamp, the dark empty parking lot beyond the glass doors"},
+  {"text": "CHECK YOUR RECEIPT", "say": "Last rule: check your receipt. The milk is already on it. Rung up before you walked in.",
+   "img": "a long curled paper receipt lying on a checkout belt beside a carton of milk, cold fluorescent light, empty store blurred behind"}
+ ],
+ "loop_back": "The receipt says you were already rung up before you arrived, so the cashier saw someone walk in before you — rule five bends, and the viewer is sent back to the doors and rule one.",
+ "gumi": {"say": "So. Who rang up your milk?"},
+ "tags": ["liminal space", "liminal spaces", "grocery store", "after midnight", "creepy rules", "rules horror", "dreamcore", "weirdcore", "24 hour store", "night shift"]
+}

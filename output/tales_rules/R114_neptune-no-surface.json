@@ -1,0 +1,63 @@
+{
+ "id": 114,
+ "slug": "neptune-no-surface",
+ "format": "survival",
+ "part": 14,
+ "look": "space",
+ "title": "How Long Would You Last Falling Into Neptune? #shorts",
+ "hook": "HOW LONG WOULD YOU LAST?",
+ "situation": "FALLING INTO NEPTUNE",
+ "description_hook": "You drop into Neptune's cloud tops at -201 °C, with nothing to land on and no oxygen to breathe. The clock starts now.",
+ "beats": [
+  {
+   "t": "0:00",
+   "text": "-201 °C",
+   "src": 1,
+   "say": "How long would you last falling into Neptune? You drop into the cloud tops. It's minus 201 degrees Celsius.",
+   "img": "a tiny human silhouette tumbling into a vast deep-blue sea of clouds on an ice giant planet, faint distant sunlight, freezing haze"
+  },
+  {
+   "t": "0:00",
+   "text": "1.12× EARTH GRAVITY",
+   "src": 1,
+   "say": "Gravity is 1.12 times Earth's, so you feel almost normal. But there's no solid surface. Nothing to stand on. You just keep falling.",
+   "img": "looking straight down through endless layers of pale blue cloud on a gas giant, no ground in sight, a lone falling figure small in the center"
+  },
+  {
+   "t": "0:00",
+   "text": "2,000 KM/H WINDS",
+   "src": 0,
+   "say": "Then the wind grabs you. More than 2,000 kilometers per hour up here at cloud level. You spin like a leaf.",
+   "img": "violent streaks of white methane clouds racing across a cobalt blue planetary atmosphere, a small dark figure caught and spinning in the jet stream"
+  },
+  {
+   "t": "--:--",
+   "text": "NO OXYGEN",
+   "src": 2,
+   "say": "You gasp. The air is mostly hydrogen and helium. No oxygen at all. One or two breaths, and you're out.",
+   "img": "a dim blue haze of thin cold gas with the outline of a person drifting unconscious, darkness gathering at the edges of the frame"
+  }
+ ],
+ "gumi": {
+  "odds": "0%",
+  "say": "Gumi's odds: zero. Scientists think below you: over 1,000 bars and hot, icy fluid."
+ },
+ "teaser": "NEXT: THE MOON, NO SUIT",
+ "sources": [
+  "https://science.nasa.gov/neptune/neptune-facts/",
+  "https://nssdc.gsfc.nasa.gov/planetary/factsheet/neptunefact.html",
+  "https://www.csb.gov/assets/1/20/sb-nitrogen-6-11-03.pdf"
+ ],
+ "tags": [
+  "neptune",
+  "how long would you last",
+  "ice giant",
+  "space facts",
+  "planets",
+  "solar system",
+  "survival",
+  "science",
+  "outer space",
+  "astronomy"
+ ]
+}
