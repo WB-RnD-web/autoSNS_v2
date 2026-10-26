@@ -125,6 +125,892 @@
     "Lake depth and gas numbers are for a specific date (2021, 2022): say '그때'",
     "No real people or accidents"
    ]
+  },
+  {
+   "n": 904,
+   "slug": "inside-a-giant-hail-supercell",
+   "format": "survival",
+   "look": "earth",
+   "from": "2026-11-08",
+   "title_idea": "How Long Would You Last Inside a Giant-Hail Supercell?",
+   "situation": "INSIDE A GIANT HAIL SUPERCELL",
+   "teaser": "GIANT HAIL STORM",
+   "sources": [
+    "https://www.nssl.noaa.gov/education/svrwx101/hail/",
+    "https://www.noaa.gov/jetstream/hail",
+    "https://www.weather.gov/spotterguide/supercell1",
+    "https://www.weather.gov/safety/thunderstorm-during",
+    "https://www.weather.gov/safety/thunderstorm"
+   ],
+   "facts": [
+    {
+     "fact": "Updrafts in a supercell can reach speeds of more than 100 mph (160 km/h), enough to support very large hail up to grapefruit size.",
+     "src": 2,
+     "evidence": "Updrafts in supercell can attain speeds more than 100 mph (160 km/h). Such velocities are able to support the formation of very large hail up to size of grapefruit."
+    },
+    {
+     "fact": "To hold up softball-size hail (4 1/2 inches, 11.4 cm), an updraft of about 103 mph (166 km/h) is needed.",
+     "src": 1,
+     "evidence": "softball 4 1/2 11.4 103 166"
+    },
+    {
+     "fact": "The largest hailstone recovered in the United States had a diameter of 8 inches (about 20 cm, converted) and weighed 1 lb 15 oz (about 0.88 kg, converted).",
+     "src": 0,
+     "evidence": "The largest hailstone recovered in the United States fell in Vivian, South Dakota, on June 23, 2010, with a diameter of 8 inches and a circumference of 18.62 inches. It weighed 1 lb 15 oz."
+    },
+    {
+     "fact": "Hail falls when it becomes heavy enough to overcome the strength of the thunderstorm updraft and is pulled toward the earth by gravity.",
+     "src": 0,
+     "evidence": "Hail falls when it becomes heavy enough to overcome the strength of the thunderstorm updraft and is pulled toward the earth by gravity."
+    },
+    {
+     "fact": "In the strongest supercells, hailstones 2 to 4 inches across are expected to fall at 44 to 72 mph (about 71-116 km/h, converted).",
+     "src": 0,
+     "evidence": "In the strongest supercells that produce some of the largest hail one might expect to see (2-inches to 4-inches in diameter), the expected fall speed is between 44 and 72 mph."
+    },
+    {
+     "fact": "Very large hailstones, more than 4 inches across, can fall at over 100 mph (about 160 km/h, converted).",
+     "src": 0,
+     "evidence": "However, it is possible for very large hailstones (diameters exceeding 4-inches) to fall at over 100 mph."
+    },
+    {
+     "fact": "Some severe thunderstorms can produce hail larger than softballs or winds over 100 mph.",
+     "src": 4,
+     "evidence": "Some severe thunderstorms can produce hail larger than softballs or winds over 100 mph"
+    },
+    {
+     "fact": "If severe thunderstorms are approaching while you are outside, go inside a sturdy building immediately; sheds and storage facilities are not safe.",
+     "src": 3,
+     "evidence": "Go inside a sturdy building immediately if severe thunderstorms are approaching. Sheds and storage facilities are not safe."
+    }
+   ],
+   "beat_ideas": [
+    {
+     "t": "0:00",
+     "what": "inside the storm the updraft blows upward at more than 160 km/h, holding ice in the air",
+     "fact": 0
+    },
+    {
+     "t": "--:--",
+     "what": "a softball-size stone (11.4 cm) needs an updraft of about 166 km/h to stay up",
+     "fact": 1
+    },
+    {
+     "t": "--:--",
+     "what": "the stone keeps growing until it is too heavy for the updraft, then gravity wins",
+     "fact": 3
+    },
+    {
+     "t": "--:--",
+     "what": "the biggest stone found in the U.S.: about 20 cm across, about 0.88 kg",
+     "fact": 2
+    },
+    {
+     "t": "--:--",
+     "what": "stones bigger than a softball can hit the ground at over 160 km/h",
+     "fact": 5
+    },
+    {
+     "t": "GUMI",
+     "what": "verdict line: no clock, the way to 'last' is getting inside a sturdy building, sheds are not safe",
+     "fact": 7
+    }
+   ],
+   "odds_idea": null,
+   "careful": [
+    "No source gives a survival time inside a hail storm: no clock, the verdict is the shelter rule (sturdy building, not sheds)",
+    "Fall speeds are estimates with much uncertainty (shape, melting, orientation): say 'about' / 'can'",
+    "The 8-inch stone is the U.S. record (largest recovered in the United States), not a world record",
+    "Updraft speeds in the size table are approximate",
+    "km/h, cm and kg values marked 'converted' are converted: say 'about'",
+    "Don't name real storms, towns or dates; no injuries, just 'large hail is dangerous in the open'"
+   ]
+  },
+  {
+   "n": 906,
+   "slug": "standing-on-a-comet",
+   "format": "survival",
+   "look": "space",
+   "from": "2026-11-08",
+   "title_idea": "How Long Would You Last Standing on a Comet?",
+   "situation": "STANDING ON A COMET",
+   "teaser": "ON A COMET",
+   "sources": [
+    "https://www.esa.int/Science_Exploration/Space_Science/Rosetta/Frequently_asked_questions",
+    "https://www.esa.int/Science_Exploration/Space_Science/Rosetta/Getting_to_know_Rosetta_s_comet",
+    "https://sci.esa.int/web/rosetta/-/54426-rosetta-measures-comet-temperature",
+    "https://www.jpl.nasa.gov/news/rosetta-comet-pouring-more-water-into-space/",
+    "https://www.esa.int/Science_Exploration/Space_Science/Rosetta/Three_touchdowns_for_Rosetta_s_lander"
+   ],
+   "facts": [
+    {
+     "fact": "Comet 67P/Churyumov-Gerasimenko is so small that its gravitational pull is several hundred thousand times weaker than on Earth.",
+     "src": 0,
+     "evidence": "Comet 67P/Churyumov-Gerasimenko is so small that its gravitational pull is several hundred thousand times weaker than on Earth."
+    },
+    {
+     "fact": "The comet has two lobes: the small lobe measures 2.6 x 2.3 x 1.8 km and the large lobe 4.1 x 3.3 x 1.8 km.",
+     "src": 1,
+     "evidence": "the small lobe measures 2.6 × 2.3 × 1.8 km and the large lobe 4.1 × 3.3 × 1.8 km."
+    },
+    {
+     "fact": "Rosetta's radio science instrument measured the comet's mass at 10 billion tonnes, giving a density of only 470 kg per cubic metre.",
+     "src": 1,
+     "evidence": "the Radio Science Instrument has measured its mass to be 10 billion tonnes, yielding a density of 470 kg/m"
+    },
+    {
+     "fact": "The comet has a very high porosity of 70-80%: its inside is likely weakly bonded ice-dust clumps with small void spaces between them.",
+     "src": 1,
+     "evidence": "the comet has a very high porosity of 70-80%, with the interior structure likely comprising weakly bonded ice-dust clumps with small void spaces between them."
+    },
+    {
+     "fact": "Rosetta measured an average surface temperature of -70°C on the comet, which suggests the surface is mostly dust rather than ice.",
+     "src": 2,
+     "evidence": "revealed an average surface temperature of -70°C. This implies the surface is predominantly covered in dust rather than ice, which would yield a lower temperature."
+    },
+    {
+     "fact": "The 2.5-mile-wide (4-kilometer) comet was releasing the equivalent of 40 ounces (1.2 liters) of water into space every second at the end of August 2014.",
+     "src": 3,
+     "evidence": "The 2.5-mile-wide (4-kilometer) comet was releasing the earthly equivalent of 40 ounces (1.2 liters) of water into space every second at the end of August 2014."
+    },
+    {
+     "fact": "After its first touchdown, Rosetta's lander lifted off the surface again for 1 hour 50 minutes, travelling about 1 km at a speed of 38 cm/s (about 1.4 km/h, converted).",
+     "src": 4,
+     "evidence": "the lander lifted from the surface again - for 1 hour 50 minutes. During that time, it travelled about 1 km at a speed of 38 cm/s."
+    }
+   ],
+   "beat_ideas": [
+    {
+     "t": "0:00",
+     "what": "you land on a dusty, dark mountain only 4 km wide, drifting through space",
+     "fact": 5
+    },
+    {
+     "t": "0:00",
+     "what": "the ground is cold: an average surface of -70°C",
+     "fact": 4
+    },
+    {
+     "t": "--:--",
+     "what": "gravity is several hundred thousand times weaker than on Earth: you barely weigh anything",
+     "fact": 0
+    },
+    {
+     "t": "--:--",
+     "what": "a 'touchdown' can turn into a 1 hour 50 minute hop: the lander floated about 1 km at 38 cm/s",
+     "fact": 6
+    },
+    {
+     "t": "--:--",
+     "what": "the ground under your feet is 70-80% empty space, and the comet breathes out 1.2 liters of water every second",
+     "fact": 3
+    },
+    {
+     "t": "GUMI",
+     "what": "verdict line: with no air and almost no gravity, the only way to stay is anchored, in a sealed suit",
+     "fact": 0
+    }
+   ],
+   "odds_idea": null,
+   "careful": [
+    "No source here gives an escape velocity or a survival time: no clock, say 'you could float away' only as an idea, not a number",
+    "-70°C is an average surface temperature from early Rosetta observations, before closest approach to the Sun: say '평균' and '그때'",
+    "Water rate (1.2 liters per second) is for the end of August 2014 and grew later: say '그때'",
+    "The lander hop is a spacecraft, not a person; do not name mission scientists",
+    "1.4 km/h is converted from 38 cm/s: say 'about'"
+   ]
+  },
+  {
+   "n": 907,
+   "slug": "path-of-a-pyroclastic-flow",
+   "format": "survival",
+   "look": "earth",
+   "from": "2026-11-08",
+   "title_idea": "How Long Would You Last in the Path of a Pyroclastic Flow?",
+   "situation": "IN THE PATH OF A PYROCLASTIC FLOW",
+   "teaser": "PYROCLASTIC FLOW",
+   "sources": [
+    "https://www.usgs.gov/programs/VHP/pyroclastic-flows-move-fast-and-destroy-everything-their-path",
+    "https://volcanoes.usgs.gov/vsc/glossary/pyroclastic_flow.html",
+    "https://www.usgs.gov/media/images/pyroclastic-flow-aug-7-1980-eruption-stretches-moun",
+    "https://pubs.usgs.gov/gip/msh/pyroclastic.html",
+    "https://volcanoes.usgs.gov/vsc/glossary/pyroclastic_surge.html"
+   ],
+   "facts": [
+    {
+     "fact": "A pyroclastic flow is a hot (typically >800 °C), chaotic mixture of rock fragments, gas, and ash that travels rapidly away from a volcanic vent or collapsing flow front.",
+     "src": 1,
+     "evidence": "a hot (typically >800 °C), chaotic mixture of rock fragments, gas, and ash that travels rapidly (tens of meters per second) away from a volcanic vent or collapsing flow front."
+    },
+    {
+     "fact": "Pyroclastic flows carry rock fragments from ash to boulders across the ground at speeds typically greater than 80 km per hour (50 mph).",
+     "src": 0,
+     "evidence": "rock fragments ranging in size from ash to boulders that travel across the ground at speeds typically greater than 80 km per hour (50 mph)"
+    },
+    {
+     "fact": "Pyroclastic flows typically move at speeds of over 60 miles per hour (100 kilometers/hour) and reach temperatures of over 800 degrees Fahrenheit (400 degrees Celsius).",
+     "src": 2,
+     "evidence": "Pyroclastic flows typically move at speeds of over 60 miles per hour (100 kilometers/hour) and reach temperatures of over 800 degrees Fahrenheit (400 degrees Celsius)."
+    },
+    {
+     "fact": "Depending on the volume of material, the proportion of solids to gas, temperature and slope, pyroclastic flows can travel at velocities as great as 450 miles an hour (about 725 km/h, converted).",
+     "src": 3,
+     "evidence": "Depending on the volume of material, proportion of solids to gas, temperature, and slope gradient, the flows can travel at velocities as great as 450 miles an hour."
+    },
+    {
+     "fact": "The rocks and gas inside pyroclastic flows are generally between 200°C and 700°C (390-1300°F), hot enough to ignite fires and melt snow and ice.",
+     "src": 0,
+     "evidence": "The extreme temperatures of rocks and gas inside pyroclastic flows, generally between 200°C and 700°C (390-1300°F), can ignite fires and melt snow and ice."
+    },
+    {
+     "fact": "Even relatively small pyroclastic flows that move less than 5 km (3 mi) from a volcano can destroy buildings, forests, and farmland.",
+     "src": 0,
+     "evidence": "Pyroclastic flows vary considerably in size and speed, but even relatively small flows that move less than 5 km (3 mi) from a volcano can destroy buildings, forests, and farmland."
+    },
+    {
+     "fact": "Pyroclastic surges are ground-hugging clouds of ash, rock, and volcanic gas that move at hurricane velocities and have temperatures of several hundred degrees Celsius.",
+     "src": 4,
+     "evidence": "ground-hugging clouds of ash , rock, and volcanic gas that move at hurricane velocities and have temperatures of several hundred degrees Celsius."
+    },
+    {
+     "fact": "USGS advice: heed evacuation warnings if a volcano is known to be active.",
+     "src": 0,
+     "evidence": "Heed evacuation warnings if a volcano is known to be active."
+    }
+   ],
+   "beat_ideas": [
+    {
+     "t": "0:00",
+     "what": "a hot cloud of rock, gas and ash rushes down the slope, hugging the ground",
+     "fact": 0
+    },
+    {
+     "t": "--:--",
+     "what": "its speed: typically more than 80 km/h, faster than any car on a mountain road",
+     "fact": 1
+    },
+    {
+     "t": "--:--",
+     "what": "the fastest flows can reach about 725 km/h",
+     "fact": 3
+    },
+    {
+     "t": "--:--",
+     "what": "inside: rock and gas generally 200 to 700°C, enough to start fires and melt snow",
+     "fact": 4
+    },
+    {
+     "t": "--:--",
+     "what": "even a small flow, going less than 5 km, can flatten buildings and forests",
+     "fact": 5
+    },
+    {
+     "t": "GUMI",
+     "what": "verdict line: there is no clock to beat, the only way to 'last' is distance: leave when evacuation warnings come",
+     "fact": 7
+    }
+   ],
+   "odds_idea": null,
+   "careful": [
+    "No survival time and no odds: the verdict is distance and evacuation, never 'you could outrun it'",
+    "USGS pages give different temperature figures (200-700°C for rocks and gas inside; over 400°C; typically >800 °C): say 'hundreds of degrees' or quote one range with its source wording",
+    "Speeds vary a lot: 'typically over 80 km/h'; 450 mph is an upper limit ('as great as'), and 725 km/h is converted: say 'about'",
+    "Don't name real eruptions, volcanoes or places with casualties; no burns or injuries described",
+    "Keep it neutral: buildings and forests, not people"
+   ]
+  },
+  {
+   "n": 909,
+   "slug": "surface-of-a-neutron-star",
+   "format": "survival",
+   "look": "space",
+   "from": "2026-11-08",
+   "title_idea": "How Long Would You Last on the Surface of a Neutron Star?",
+   "situation": "ON THE SURFACE OF A NEUTRON STAR",
+   "teaser": "A NEUTRON STAR",
+   "sources": [
+    "https://svs.gsfc.nasa.gov/cgi-bin/details.cgi?aid=11260",
+    "https://www.esa.int/Science_Exploration/Space_Science/Neutron_stars_pulsars_and_magnetars",
+    "https://chandra.si.edu/press/09_releases/press_110409.html",
+    "https://chandra.harvard.edu/photo/2009/cassio/",
+    "https://public.nrao.edu/news/astronomers-discover-fastest-spinning-pulsar/"
+   ],
+   "facts": [
+    {
+     "fact": "A neutron star is the densest object astronomers can observe directly, crushing half a million times Earth's mass into a sphere about 12 miles (about 19 km, converted) across, similar in size to Manhattan Island.",
+     "src": 0,
+     "evidence": "A neutron star is the densest object astronomers can observe directly, crushing half a million times Earth's mass into a sphere about 12 miles across, or similar in size to Manhattan Island"
+    },
+    {
+     "fact": "Neutron stars are so dense that a sugar-cube-sized piece of neutron star material would weigh as much as all of the people on Earth.",
+     "src": 1,
+     "evidence": "Neutron stars are so dense that a sugar-cube-sized object of neutron star material would weigh as much as all of the people on Earth!"
+    },
+    {
+     "fact": "On the Cassiopeia A neutron star, the carbon atmosphere is only about 4 inches (about 10 cm, converted) thick, because it is compressed by a surface gravity 100 billion times stronger than on Earth.",
+     "src": 2,
+     "evidence": "The researchers calculate that the carbon atmosphere is only about 4 inches thick, because it has been compressed by a surface gravity that is 100 billion times stronger than on Earth."
+    },
+    {
+     "fact": "That thin atmosphere has a density similar to diamond and a pressure more than ten times that found at the center of the Earth.",
+     "src": 3,
+     "evidence": "has a density similar to diamond and a pressure more than ten times that found at the center of the Earth."
+    },
+    {
+     "fact": "The atmosphere's temperature is estimated to be almost two million degrees.",
+     "src": 3,
+     "evidence": "The temperature is estimated to be almost two million degrees, much hotter than the Earth's atmosphere."
+    },
+    {
+     "fact": "One pulsar (a spinning neutron star) spins 716 times per second (716 Hz), beating the previous record of 642 Hz; the fastest kitchen blenders reach 250-500 Hz.",
+     "src": 4,
+     "evidence": "The newly-discovered pulsar is spinning 716 times per second, or at 716 Hertz (Hz), readily beating the previous record of 642 Hz from a pulsar discovered in 1982. For reference, the fastest speeds of common kitchen blenders are 250-500 Hz."
+    },
+    {
+     "fact": "Magnetars, the most magnetic neutron stars, have fields of about 100 thousand million tesla, a thousand times more than an ordinary neutron star; Earth's field is some tens of a millionth of a tesla.",
+     "src": 1,
+     "evidence": "Their magnetic field strength is about 100 thousand million tesla, a thousand times more than an 'ordinary' neutron star. By comparison, Earth's magnetic field strength is some tens of a millionth of a tesla."
+    },
+    {
+     "fact": "Most data-storage media can be erased by a magnetic field of just one thousandth of a tesla.",
+     "src": 1,
+     "evidence": "Most media used for data storage can be erased if they are exposed to a magnetic field of one thousandth of a tesla."
+    }
+   ],
+   "beat_ideas": [
+    {
+     "t": "0:00",
+     "what": "a star squeezed into a city: half a million Earths of mass in a ball about 19 km across",
+     "fact": 0
+    },
+    {
+     "t": "0:00",
+     "what": "one sugar cube of it weighs as much as every person on Earth",
+     "fact": 1
+    },
+    {
+     "t": "--:--",
+     "what": "gravity 100 billion times Earth's: the whole atmosphere is squashed to about 10 cm",
+     "fact": 2
+    },
+    {
+     "t": "--:--",
+     "what": "and that thin air is almost two million degrees",
+     "fact": 4
+    },
+    {
+     "t": "--:--",
+     "what": "the ground can spin 716 times a second, faster than a blender at 500 Hz",
+     "fact": 5
+    },
+    {
+     "t": "GUMI",
+     "what": "verdict line: a magnetar's field is 100 thousand million tesla, when one thousandth of a tesla already wipes stored data: nothing made of atoms like ours holds together here",
+     "fact": 6
+    }
+   ],
+   "odds_idea": "0%",
+   "careful": [
+    "Sizes differ by source and by star (about 12 to 14 miles): say '약' and 'a city-sized ball'",
+    "100 billion times gravity, 4 inches and two million degrees are for the Cassiopeia A neutron star: say '한 중성자별에서'",
+    "716 times per second is one pulsar (a record when announced, one of the fastest known), not every neutron star",
+    "The magnetar field is for magnetars, not ordinary neutron stars",
+    "No source gives a survival time: no clock; describe in neutral terms (squashed flat, not bodies)",
+    "19 km and 10 cm are converted: say 'about'"
+   ]
+  },
+  {
+   "n": 910,
+   "slug": "off-the-boardwalk-geyser-basin",
+   "format": "survival",
+   "look": "earth",
+   "from": "2026-11-08",
+   "title_idea": "How Long Would You Last Off the Boardwalk in a Geyser Basin?",
+   "situation": "OFF THE BOARDWALK IN A GEYSER BASIN",
+   "teaser": "OFF THE BOARDWALK",
+   "sources": [
+    "https://www.nps.gov/yell/planyourvisit/safety.htm",
+    "https://www.nps.gov/yell/learn/nature/hydrothermal-features.htm",
+    "https://www.nps.gov/yell/planyourvisit/norrisplan.htm",
+    "https://www.usgs.gov/observatories/yvo/news/probability-hydrothermal-explosions-yellowstone"
+   ],
+   "facts": [
+    {
+     "fact": "The ground surrounding thermal features may look solid, but it can be just a thin crust with super-heated water below.",
+     "src": 0,
+     "evidence": "The ground surrounding these features may look solid, but it can be just a thin crust with super-heated water below."
+    },
+    {
+     "fact": "Yellowstone has more than 10,000 hydrothermal features.",
+     "src": 1,
+     "evidence": "Great Fountain Geyser is one of more than 10,000 hydrothermal features in Yellowstone."
+    },
+    {
+     "fact": "In Yellowstone the surface boiling point of water is 199°F (93°C), and the deepest circulating water of the hydrothermal system can exceed it.",
+     "src": 1,
+     "evidence": "The deepest circulating water of the system can exceed the surface boiling point of water (199°F/93°C)."
+    },
+    {
+     "fact": "Steam vents (fumaroles) are often superheated, with temperatures as high as 280°F (138°C).",
+     "src": 1,
+     "evidence": "Steam vents are often superheated, with temperatures as high as 280°F (138°C)."
+    },
+    {
+     "fact": "During an eruption of the park's best-known geyser, the water temperature at the vent has been measured at 204°F (95.6°C).",
+     "src": 1,
+     "evidence": "During an eruption, the water temperature at the vent has been measured at 204°F (95.6C)."
+    },
+    {
+     "fact": "The highest temperature recorded in any Yellowstone geothermal area was 459°F (237°C), measured in a scientific drill hole just 1,087 feet (326 meters) below the surface.",
+     "src": 2,
+     "evidence": "The highest temperature yet recorded in any geothermal area in Yellowstone was measured in a scientific drill hole at Norris: 459°F (237°C) just 1,087 feet (326 meters) below the surface!"
+    },
+    {
+     "fact": "Small hydrothermal explosions that create craters only a meter (a few feet) across or less probably happen annually to a few times per year.",
+     "src": 3,
+     "evidence": "Small hydrothermal explosions that create craters only a meter (a few feet) across or less probably happen annually to a few times per year."
+    },
+    {
+     "fact": "Always walk on boardwalks and designated trails in thermal areas, and don't touch thermal features or runoff.",
+     "src": 0,
+     "evidence": "Always walk on boardwalks and designated trails. Keep children close and do not let them run on boardwalks. Don't touch thermal features or runoff"
+    }
+   ],
+   "beat_ideas": [
+    {
+     "t": "0:00",
+     "what": "one step off the boardwalk: the ground looks solid but can be a thin crust over super-heated water",
+     "fact": 0
+    },
+    {
+     "t": "--:--",
+     "what": "around you: more than 10,000 hot springs, geysers, mudpots and steam vents",
+     "fact": 1
+    },
+    {
+     "t": "--:--",
+     "what": "up here water boils at 93°C, and the deep water below goes past that",
+     "fact": 2
+    },
+    {
+     "t": "--:--",
+     "what": "geyser water at the vent measured 95.6°C, steam vents up to 138°C",
+     "fact": 4
+    },
+    {
+     "t": "--:--",
+     "what": "just 326 meters down, a drill hole measured 237°C",
+     "fact": 5
+    },
+    {
+     "t": "GUMI",
+     "what": "verdict line: no clock, the only way to 'last' is never leaving the boardwalk",
+     "fact": 7
+    }
+   ],
+   "odds_idea": null,
+   "careful": [
+    "No survival time: the verdict is the rule (stay on boardwalks and trails), not a number of seconds",
+    "199°F/93°C is the boiling point at Yellowstone's elevation, not at sea level",
+    "Temperatures are measured values at specific features or a drill hole: say 'measured', 'up to'",
+    "The thin crust is 'can be', not every patch of ground",
+    "No burns or injuries described; don't name real visitors or incidents; don't tell viewers to go touch or test the water"
+   ]
+  },
+  {
+   "n": 912,
+   "slug": "caught-in-a-dust-storm",
+   "format": "survival",
+   "look": "earth",
+   "from": "2026-11-08",
+   "title_idea": "How Long Would You Last Inside a Desert Dust Storm?",
+   "situation": "CAUGHT INSIDE A DESERT DUST STORM",
+   "teaser": "A HABOOB",
+   "sources": [
+    "https://www.weather.gov/safety/wind-dust-storm",
+    "https://www.weather.gov/psr/Jul52011",
+    "https://www.weather.gov/media/psr/Dust/2020/1_Rogers_Dust_Storm_Presentation_DustWorkshop2020.pdf",
+    "https://earthobservatory.nasa.gov/images/51285/dust-storm-in-phoenix",
+    "https://experts.arizona.edu/en/publications/revisiting-haboobs-in-the-southwestern-united-states-an-observati/",
+    "https://www.epa.gov/criteria-air-pollutants/naaqs-table"
+   ],
+   "facts": [
+    {
+     "fact": "In a radar study of Arizona dust storms, the median dust storm depth was 5600 ft (about 1,700 m, converted).",
+     "src": 2,
+     "evidence": "Median depth: 5600 ft."
+    },
+    {
+     "fact": "In one large Arizona dust storm, Doppler radar showed widespread winds of more than 40 to 50 mph (60 to 80 km/h) as the dust cloud rolled forward.",
+     "src": 1,
+     "evidence": "Doppler radar data indicated widespread winds in excess of 40 to 50 MPH (60 to 80 KPH) as the cloud rolled northwest."
+    },
+    {
+     "fact": "Blinding, choking dust can cut visibility to near zero in just one to two minutes, which can lead to chain collisions on roads.",
+     "src": 1,
+     "evidence": "Blinding, choking dust can reduce visibility to near zero in just one to two minutes, causing accidents that may involve chain collisions, creating massive pileups."
+    },
+    {
+     "fact": "Dust storms usually last only 10 to 30 minutes, though dusty conditions may remain for some time afterward.",
+     "src": 1,
+     "evidence": "Dust storms usually last only 10 to 30 minutes, though dusty conditions may remain for some time afterward."
+    },
+    {
+     "fact": "A dust storm that hit Phoenix, Arizona in 2011 was a mile high (about 1.6 km, converted) and nearly 100 miles wide (about 160 km, converted).",
+     "src": 3,
+     "evidence": "Just before 7:30 p.m. July 5, 2011, a mile-high, nearly 100-mile-wide dust storm roared through Phoenix, Arizona."
+    },
+    {
+     "fact": "In that haboob, peak hourly PM10 dust levels at monitoring stations near Phoenix reached 1974 micrograms per cubic meter (and 907 for finer PM2.5 particles).",
+     "src": 4,
+     "evidence": "This resulted in peak hourly PM 10 and PM 2.5 concentrations of 1974μgm -3 and 907μgm -3 at US EPA stations near Phoenix."
+    },
+    {
+     "fact": "For comparison, the U.S. 24-hour air-quality standard for PM10 particles is 150 micrograms per cubic meter.",
+     "src": 5,
+     "evidence": "PM 10 primary and secondary 24 hours 150 μg/m 3"
+    },
+    {
+     "fact": "If dense dust blows across or toward a road, pull the vehicle off the pavement as far as possible, stop, turn off the lights, set the emergency brake and take your foot off the brake pedal so the tail lights are not lit.",
+     "src": 0,
+     "evidence": "If dense dust is observed blowing across or approaching a roadway, pull your vehicle off the pavement as far as possible, stop, turn off lights, set the emergency brake, take your foot off of the brake pedal to be sure the tail lights are not illuminated."
+    }
+   ],
+   "beat_ideas": [
+    {
+     "t": "0:00",
+     "what": "a brown wall rolls across the desert: a typical dust storm is about 1,700 m tall",
+     "fact": 0
+    },
+    {
+     "t": "0:00",
+     "what": "behind it, winds of 60 to 80 km/h push the dust forward",
+     "fact": 1
+    },
+    {
+     "t": "--:--",
+     "what": "visibility falls to near zero in just one to two minutes: you cannot see the road",
+     "fact": 2
+    },
+    {
+     "t": "--:--",
+     "what": "the air: peak dust reached 1974 micrograms per cubic meter, while the daily standard is 150",
+     "fact": 5
+    },
+    {
+     "t": "--:--",
+     "what": "the good news: most dust storms pass in 10 to 30 minutes",
+     "fact": 3
+    },
+    {
+     "t": "GUMI",
+     "what": "verdict line: pull off the road, lights off, foot off the brake, and wait it out",
+     "fact": 7
+    }
+   ],
+   "odds_idea": null,
+   "careful": [
+    "No source gives a survival time inside a dust storm: no clock, the verdict is the pull-over rule (off the pavement, lights off, foot off the brake)",
+    "5600 ft is a median from one radar study of Arizona storms, not every storm; 1,700 m and 1.6 km / 160 km are converted: say 'about'",
+    "60 to 80 km/h, 1974 micrograms and the mile-high size are from one large 2011 storm: say '한 번은' / '그때', do not present as typical",
+    "1974 is a dust concentration (micrograms per cubic meter), not a year",
+    "The 150 standard is a U.S. 24-hour average, the 1974 value is a peak hourly reading: do not compute or state a ratio",
+    "Do not name the storm's date or city on screen, and no crashes or injured people: say 'chain collisions are possible' at most"
+   ]
+  },
+  {
+   "n": 913,
+   "slug": "enceladus-geyser-plumes",
+   "format": "survival",
+   "look": "space",
+   "from": "2026-11-08",
+   "title_idea": "How Long Would You Last at the Geysers of Enceladus?",
+   "situation": "AT THE GEYSERS OF ENCELADUS",
+   "teaser": "ENCELADUS GEYSERS",
+   "sources": [
+    "https://science.nasa.gov/saturn/moons/enceladus/hydrothermal-activity/",
+    "https://www.jpl.nasa.gov/news/cassini-finds-plethora-of-plumes-hotspots-at-enceladus",
+    "https://www.jpl.nasa.gov/news/nasa-space-assets-detect-ocean-inside-saturn-moon/",
+    "https://www.jpl.nasa.gov/news/enceladus-jets-surprises-in-starlight/"
+   ],
+   "facts": [
+    {
+     "fact": "On Saturn's moon Enceladus, warm salt water, gases and minerals erupt through fractures in the miles-thick ice shell and blast through the surface at 800 miles (1,300 kilometers) per hour into space.",
+     "src": 0,
+     "evidence": "Warm salt water, gases and minerals erupt through those fractures in the miles-thick ice shell and blast through the surface at 800 miles (1,300 kilometers) per hour into space."
+    },
+    {
+     "fact": "Cassini has shown that more than 90 percent of the material in the plume is water vapor.",
+     "src": 3,
+     "evidence": "Cassini has shown that more than 90 percent of the material in the plume is water vapor."
+    },
+    {
+     "fact": "The ground around the tiger-stripe fractures is a numbing 50 kelvin (-370 °F) (about -223 °C, converted).",
+     "src": 1,
+     "evidence": "they're a cozy oasis compared to the numbing 50 kelvin (-370 Fahrenheit) of their surroundings"
+    },
+    {
+     "fact": "Along one fracture, peak temperatures exceed 180 kelvin (minus 135 °F) and may be higher than 200 kelvin (minus 100 °F), warmed by the rising water vapor that drives the jets.",
+     "src": 1,
+     "evidence": "peak temperatures along Baghdad Sulcus exceed 180 kelvin (minus 135 degrees Fahrenheit), and may be higher than 200 kelvin (minus 100 degrees Fahrenheit). These warm temperatures probably result from heating of the fracture flanks by the warm, upwelling water vapor that propels the ice-particle jets"
+    },
+    {
+     "fact": "Gravity measurements suggest an ocean about 6 miles (10 kilometers) deep beneath an ice shell about 19 to 25 miles (30 to 40 kilometers) thick.",
+     "src": 2,
+     "evidence": "The gravity measurements suggest a large, possibly regional, ocean about 6 miles (10 kilometers) deep, beneath an ice shell about 19 to 25 miles (30 to 40 kilometers) thick."
+    },
+    {
+     "fact": "Tiny silica grains in the plume suggest the ocean water was exposed to temperatures of at least 90 degrees Celsius, like hydrothermal vents on Earth's sea floor.",
+     "src": 0,
+     "evidence": "if they were exposed to temperatures of at least 90 degrees Celsius"
+    },
+    {
+     "fact": "On its final close flyby in October 2015, Cassini flew through the plume at just 30 miles (49 kilometers) above the surface.",
+     "src": 0,
+     "evidence": "Cassini flew through the plume at just 30 miles (49 kilometers) above the surface in October 2015"
+    }
+   ],
+   "beat_ideas": [
+    {
+     "t": "0:00",
+     "what": "you stand at a crack in the ice and it erupts: spray blasting out at 1,300 km/h",
+     "fact": 0
+    },
+    {
+     "t": "0:00",
+     "what": "the ground around you is about -223 °C",
+     "fact": 2
+    },
+    {
+     "t": "--:--",
+     "what": "the jet is more than 90 percent water vapor, freezing into ice grains as it flies into space",
+     "fact": 1
+    },
+    {
+     "t": "--:--",
+     "what": "right at the crack it is 'warm': over 180 kelvin, still far below freezing",
+     "fact": 3
+    },
+    {
+     "t": "--:--",
+     "what": "under your feet: 30 to 40 km of ice, then an ocean about 10 km deep",
+     "fact": 4
+    },
+    {
+     "t": "GUMI",
+     "what": "verdict line: the spray is watched from above, the way the spacecraft flew through it at 49 km",
+     "fact": 6
+    }
+   ],
+   "odds_idea": null,
+   "careful": [
+    "Ice-shell and ocean depths are 2014 gravity-based estimates (and may vary by region): say '약'",
+    "-223 °C is converted from 50 kelvin: say 'about'",
+    "'At least 90 °C' is an inference from silica grains, not a direct measurement of the ocean",
+    "No source gives a survival time at the plume: no clock",
+    "Do not name scientists; the flyby is a spacecraft, not a person"
+   ]
+  },
+  {
+   "n": 915,
+   "slug": "on-the-beach-when-a-tsunami-arrives",
+   "format": "survival",
+   "look": "earth",
+   "from": "2026-11-08",
+   "title_idea": "How Long Would You Last on a Beach When a Tsunami Arrives?",
+   "situation": "ON THE BEACH WHEN A TSUNAMI HITS",
+   "teaser": "TSUNAMI ARRIVES",
+   "sources": [
+    "https://www.weather.gov/safety/tsunami-about",
+    "https://www.noaa.gov/jetstream/tsunamis/tsunami-propagation",
+    "https://www.weather.gov/safety/tsunami-during",
+    "https://www.noaa.gov/education/resource-collections/ocean-coasts/tsunamis"
+   ],
+   "facts": [
+    {
+     "fact": "In the deep ocean, tsunamis can move as fast as a jet plane, over 500 mph (800 km/h), and can cross entire oceans in less than a day.",
+     "src": 1,
+     "evidence": "In the deep ocean, tsunamis can move as fast as a jet plane, over 500 mph (800 km/h), and can cross entire oceans in less than a day."
+    },
+    {
+     "fact": "Because its wavelength can be hundreds of miles, a tsunami is barely noticeable in the deep ocean and rarely more than three feet (one meter) high.",
+     "src": 1,
+     "evidence": "Because of a tsunami's long wavelengths, which can be hundreds of miles, a tsunami is barely noticeable in the deep ocean and rarely more than three feet (one meter) high."
+    },
+    {
+     "fact": "In 15,000 feet (4,600 meters) of water, a tsunami's speed works out to almost 475 mph (765 km/h).",
+     "src": 1,
+     "evidence": "In 15,000 feet (4,600 meters) of water, this works out to almost 475 mph (765 km/h)."
+    },
+    {
+     "fact": "Entering shallow water near land, tsunamis slow to approximately 20 or 30 mph (about 32 to 48 km/h, converted), still faster than a person can run.",
+     "src": 0,
+     "evidence": "As the waves enter shallow water near land, they slow to approximately 20 or 30 mph. That is still faster than a person can run."
+    },
+    {
+     "fact": "Most tsunamis are less than 10 feet high (about 3 m, converted), but in extreme cases they can exceed 100 feet (about 30 m, converted).",
+     "src": 0,
+     "evidence": "Most tsunamis are less than 10 feet high, but in extreme cases, can exceed 100 feet."
+    },
+    {
+     "fact": "The time between tsunami waves ranges from five minutes to two hours, and the first wave to reach the shore may not be the largest.",
+     "src": 0,
+     "evidence": "The time between waves ranges from five minutes to two hours. The first wave to reach the shore may not be the largest or the most damaging."
+    },
+    {
+     "fact": "Just six inches (about 15 cm, converted) of fast-moving water can knock adults off their feet, and twelve inches (about 30 cm, converted) can carry away a small car.",
+     "src": 3,
+     "evidence": "Just six inches of fast-moving water can knock adults off their feet, and twelve inches can carry away a small car."
+    },
+    {
+     "fact": "If you are on the beach and feel an earthquake, no matter how big or how long, move quickly off the beach to high ground or inland, away from the water.",
+     "src": 2,
+     "evidence": "If you are on the beach or near the water and feel an earthquake—no matter how big or how long it lasts—move quickly off the beach to high ground or inland (away from the water) as soon as you can do so safely."
+    }
+   ],
+   "beat_ideas": [
+    {
+     "t": "0:00",
+     "what": "far out at sea the wave moves as fast as a jet plane: over 800 km/h",
+     "fact": 0
+    },
+    {
+     "t": "--:--",
+     "what": "but out there it is rarely more than a meter high, ships barely notice it",
+     "fact": 1
+    },
+    {
+     "t": "--:--",
+     "what": "near the beach it slows to about 32 to 48 km/h: still faster than you can run",
+     "fact": 3
+    },
+    {
+     "t": "--:--",
+     "what": "most are under about 3 m, extreme ones over about 30 m",
+     "fact": 4
+    },
+    {
+     "t": "--:--",
+     "what": "about 15 cm of fast-moving water can knock an adult off their feet",
+     "fact": 6
+    },
+    {
+     "t": "--:--",
+     "what": "waves keep coming minutes to hours apart, and the first is not always the biggest",
+     "fact": 5
+    },
+    {
+     "t": "GUMI",
+     "what": "verdict line: no clock, the way to 'last' is leaving the beach for high ground or inland right away",
+     "fact": 7
+    }
+   ],
+   "odds_idea": null,
+   "careful": [
+    "No survival time: the verdict is to move off the beach to high ground or inland, never 'you could outswim it'",
+    "Speeds depend on water depth: 'over 500 mph' and 'almost 475 mph in 15,000 feet' are examples, not one fixed speed",
+    "km/h, m and cm values marked 'converted' are converted from mph, feet and inches: say 'about'",
+    "Wave heights vary hugely by place; 'most under 10 feet' and 'over 100 feet in extreme cases' are general figures",
+    "Don't name real tsunamis, dates or places with casualties; no injuries described"
+   ]
+  },
+  {
+   "n": 916,
+   "slug": "caught-in-an-avalanche",
+   "format": "survival",
+   "look": "earth",
+   "from": "2026-11-08",
+   "title_idea": "How Long Would You Last Caught in an Avalanche?",
+   "situation": "CAUGHT IN A SNOW AVALANCHE",
+   "teaser": "AVALANCHE",
+   "sources": [
+    "https://dem.utah.gov/avalanche-hazard",
+    "https://www.weather.gov/safety/winter-avalanche",
+    "https://ioem.idaho.gov/wp-content/uploads/2018/12/ID-SHMP-Chapter-3.4-Avalanche.pdf",
+    "https://arc.lib.montana.edu/snow-science/item/2783"
+   ],
+   "facts": [
+    {
+     "fact": "Slab avalanches can reach 60-80 mph (about 97-129 km/h, converted) within five seconds.",
+     "src": 0,
+     "evidence": "Slab avalanches can reach 60-80 mph within five seconds."
+    },
+    {
+     "fact": "Avalanches generally occur on slopes steeper than 30 degrees.",
+     "src": 1,
+     "evidence": "avalanche generally occur on slopes steeper than 30 degrees"
+    },
+    {
+     "fact": "In 90 percent of avalanche incidents, the slide is triggered by the person caught or someone in their own party.",
+     "src": 1,
+     "evidence": "In 90 percent of avalanche incidents, the snow slides are triggered by the victim or someone in the victim's party."
+    },
+    {
+     "fact": "When avalanche snow stops in the runout zone it hardens quickly; even light, powdery dry snow can form concrete-like masses, and people are rarely able to dig themselves out of even very shallow burials.",
+     "src": 2,
+     "evidence": "When avalanche material is deposited in the runout zone, it tends to harden quickly. Even very light avalanches of powdery, dry snow can form concrete-like masses after being \"worked\" by the mechanical forces involved in the slide."
+    },
+    {
+     "fact": "Survival rates plummet after about 10 to 15 minutes under the snow, which is why each person carries a transceiver, a shovel and a probe and partners practise rescue.",
+     "src": 1,
+     "evidence": "avalanche survival rates plummet after about 10 to 15 minutes"
+    },
+    {
+     "fact": "North American statistics suggest a completely buried person has a 50-percent chance of survival if rescued within 30 minutes, with a rapid decline after that.",
+     "src": 2,
+     "evidence": "North American statistics suggest that a completely buried victim has a 50-percent chance of survival if rescued within 30 minutes, with a rapid decline thereafter."
+    },
+    {
+     "fact": "A study of completely buried people in Austria and Switzerland found overall survival of 56%, with a second drop in survival to 25-28% at about 35 minutes of burial.",
+     "src": 3,
+     "evidence": "Overall survival was 56% (Austria 59%; Switzerland 52%; p=0.065). The survival curves were similar and showed a rapid initial drop in survival probability and a second drop to 25-28% at ca. 35 min burial"
+    },
+    {
+     "fact": "People buried with an air pocket were more likely to survive, especially if buried for more than 15 minutes.",
+     "src": 3,
+     "evidence": "Victims with an airpocket were more likely to survive, especially if buried >15 min."
+    }
+   ],
+   "beat_ideas": [
+    {
+     "t": "0:00",
+     "what": "a slope steeper than 30 degrees cracks, and in five seconds the snow is moving 97-129 km/h",
+     "fact": 0
+    },
+    {
+     "t": "0:00",
+     "what": "most slides (90 percent) are set off by the people on the slope themselves",
+     "fact": 2
+    },
+    {
+     "t": "--:--",
+     "what": "when it stops, the snow sets hard like concrete: you can't dig yourself out",
+     "fact": 3
+    },
+    {
+     "t": "--:--",
+     "what": "the clock: survival drops fast after about 10 to 15 minutes",
+     "fact": 4
+    },
+    {
+     "t": "--:--",
+     "what": "an air pocket in front of the face buys time, especially past 15 minutes",
+     "fact": 7
+    },
+    {
+     "t": "GUMI",
+     "what": "verdict line: the real answer is prevention and partners: check the forecast, carry transceiver, shovel and probe, practise rescue",
+     "fact": 4
+    }
+   ],
+   "odds_idea": null,
+   "careful": [
+    "Survival percentages come from different studies and regions (North America, Austria/Switzerland): say '한 연구에서'",
+    "60-80 mph is for slab (dry) avalanches; km/h is converted: say 'about'",
+    "No real accidents, places of accidents or people; no injuries, describe danger neutrally (buried, hard snow, little air)",
+    "Verdict is prevention and rescue gear (forecast, transceiver, shovel, probe), not a survival percentage",
+    "Do not tell viewers they can 'swim out' or dig themselves out: sources say this is rarely possible"
+   ]
   }
  ],
  "compare": [
@@ -183,6 +1069,499 @@
     "1,200 m for the leatherback is converted from 'nearly 4,000 feet': say 'about'",
     "'Sunlight ends' is not an animal: label it as the line where light stops",
     "No people (free divers, submarines): animals only"
+   ]
+  },
+  {
+   "n": 905,
+   "slug": "longest-living-animals",
+   "format": "compare",
+   "look": "deep",
+   "from": "2026-11-08",
+   "title_idea": "Tortoise vs Bowhead Whale vs Greenland Shark vs Black Coral | Lifespan Comparison",
+   "hook_idea": "LONGEST-LIVING ANIMALS BY AGE",
+   "teaser": "OLDEST ANIMALS",
+   "unit": "years",
+   "scale": "log",
+   "sources": [
+    "https://nationalzoo.si.edu/animals/aldabra-tortoise",
+    "https://www.fisheries.noaa.gov/species/bowhead-whale",
+    "https://oceanservice.noaa.gov/facts/greenland-shark.html",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10646442/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC2663997/"
+   ],
+   "facts": [
+    {
+     "fact": "Aldabra tortoises can reach sizes of up to 550 pounds (about 250 kg, converted) and ages of up to 150 years.",
+     "src": 0,
+     "evidence": "Aldabra tortoises can reach sizes of up to 550 pounds and ages of up to 150 years old."
+    },
+    {
+     "fact": "Stone harpoon tips recovered from bowhead whales show that bowheads live well over 100 years.",
+     "src": 1,
+     "evidence": "Based on the recovery of stone harpoon tips from harvested bowheads, it is evident that bowhead whales live well over 100 years."
+    },
+    {
+     "fact": "Newer age-estimation techniques suggest bowhead whales may live to be over 200 years old.",
+     "src": 1,
+     "evidence": "However, new techniques allow for more precise estimation of bowhead whale age, and studies suggest they may live to be over 200 years old."
+    },
+    {
+     "fact": "Scientists estimate the Greenland shark lives at least 250 years.",
+     "src": 2,
+     "evidence": "Scientists estimate the Greenland shark lives at least 250 years"
+    },
+    {
+     "fact": "Carbon dating of proteins in the eyes put the largest Greenland shark studied, a 5-meter female, at between 272 and 512 years old.",
+     "src": 2,
+     "evidence": "The largest shark they found, a 5-meter female, was between 272 and 512 years old according to their estimates."
+    },
+    {
+     "fact": "The ocean quahog clam has a recorded maximum life span of 507 years, the longest-lived non-colonial animal known so far.",
+     "src": 3,
+     "evidence": "with a recorded maximum life span of 507 years ( Butler et al. 2013 ), this species is the longest-lived noncolonial metazoan known so far."
+    },
+    {
+     "fact": "Radiocarbon dating of deep-sea corals found the longest-lived gold coral (Gerardia) and black coral (Leiopathes) colonies were 2,742 years and 4,265 years old.",
+     "src": 4,
+     "evidence": "The longest-lived Gerardia sp. and Leiopathes sp. specimens were 2,742 years and 4,265 years, respectively."
+    },
+    {
+     "fact": "These deep-sea coral skeletons grow outward as slowly as 4 to 35 micrometers per year.",
+     "src": 4,
+     "evidence": "show that radial growth rates are as low as 4 to 35 μm year"
+    },
+    {
+     "fact": "The living coral polyps are only a few years old, but they have been continuously replaced for centuries to millennia while building the colony's skeleton.",
+     "src": 4,
+     "evidence": "Based on 14 C, the living polyps are only a few years old, or at least their carbon is, but they have been continuously replaced for centuries to millennia while accreting their underlying proteinaceous skeleton."
+    }
+   ],
+   "items_idea": [
+    {
+     "name": "ALDABRA TORTOISE",
+     "value": 150,
+     "label": "150 YEARS",
+     "fact": 0
+    },
+    {
+     "name": "BOWHEAD WHALE",
+     "value": 200,
+     "label": "200+ YEARS",
+     "fact": 2
+    },
+    {
+     "name": "GREENLAND SHARK",
+     "value": 272,
+     "label": "272-512 YEARS",
+     "fact": 4
+    },
+    {
+     "name": "OCEAN QUAHOG CLAM",
+     "value": 507,
+     "label": "507 YEARS",
+     "fact": 5
+    },
+    {
+     "name": "BLACK CORAL COLONY",
+     "value": 4265,
+     "label": "4,265 YEARS",
+     "fact": 6
+    }
+   ],
+   "twist_idea": "The black coral colony is 4,265 years old, yet each living polyp is only a few years old: the colony keeps replacing them while its skeleton grows as slowly as 4 to 35 micrometers a year.",
+   "careful": [
+    "All ages are estimates (radiocarbon, eye-lens dating, growth rings, harpoon tips), not birth records: say 'about' / '추정'",
+    "Greenland shark: 272 to 512 years is a wide estimate range for one shark; NOAA's general figure is 'at least 250 years': never say exactly 272 or '400 years'",
+    "Bowhead 'over 200 years' is what studies suggest, not a measured record",
+    "507 years is the maximum recorded for one individual clam, not a typical clam lifespan",
+    "The 4,265 and 2,742 figures are for coral colonies (many polyps over time), not one individual animal: label it 'colony'",
+    "150 years for the tortoise is an upper age, and 550 pounds is converted to about 250 kg: say 'about'",
+    "No people's ages or named individual animals on screen"
+   ]
+  },
+  {
+   "n": 908,
+   "slug": "biggest-earthquakes-by-magnitude",
+   "format": "compare",
+   "look": "earth",
+   "from": "2026-11-08",
+   "title_idea": "Alaska vs Kamchatka vs Chile | Biggest Earthquake Magnitude Comparison",
+   "hook_idea": "THE BIGGEST EARTHQUAKES EVER MEASURED",
+   "teaser": "BIGGEST QUAKES",
+   "unit": "magnitude",
+   "scale": "linear",
+   "sources": [
+    "https://www.usgs.gov/programs/earthquake-hazards/earthquake-facts-earthquake-fantasy",
+    "https://www.usgs.gov/programs/earthquake-hazards/science/20-largest-earthquakes-world",
+    "https://www.usgs.gov/programs/earthquake-hazards/earthquake-magnitude-energy-release-and-shaking-intensity"
+   ],
+   "facts": [
+    {
+     "fact": "The San Andreas Fault is 800 miles long and only about 10-12 miles deep, so earthquakes larger than magnitude 8.3 there are extremely unlikely.",
+     "src": 0,
+     "evidence": "The San Andreas Fault is 800 miles long and only about 10-12 miles deep, so that earthquakes larger than magnitude 8.3 are extremely unlikely."
+    },
+    {
+     "fact": "USGS lists a magnitude 8.7 earthquake at the Rat Islands, Aleutian Islands, Alaska, on 1965-02-04.",
+     "src": 1,
+     "evidence": "8.7 Rat Islands, Aleutian Islands, Alaska Rat Islands Earthquake 1965-02-04"
+    },
+    {
+     "fact": "USGS lists a magnitude 9.0 earthquake off the east coast of the Kamchatka Peninsula, Russia, on 1952-11-04.",
+     "src": 1,
+     "evidence": "9.0 Off the East Coast of the Kamchatka Peninsula, Russia Kamchatka, Russia 1952-11-04"
+    },
+    {
+     "fact": "USGS lists the 1964 earthquake in Southern Alaska at magnitude 9.2, recorded on 1964-03-28.",
+     "src": 1,
+     "evidence": "9.2 Southern Alaska 1964 Great Alaska Earthquake, Prince William Sound Earthquake, Good Friday Earthquake 1964-03-28"
+    },
+    {
+     "fact": "The largest earthquake ever recorded by seismic instruments was a magnitude 9.5 earthquake in Chile on May 22, 1960.",
+     "src": 0,
+     "evidence": "The largest earthquake ever recorded by seismic instruments anywhere on the earth was a magnitude 9.5 earthquake in Chile on May 22, 1960."
+    },
+    {
+     "fact": "That Chile earthquake happened on a fault almost 1,000 miles long (about 1,600 km, converted) and 150 miles wide (about 240 km, converted).",
+     "src": 0,
+     "evidence": "That earthquake occurred on a fault that is almost 1,000 miles long and 150 miles wide, dipping into the earth at a shallow angle."
+    },
+    {
+     "fact": "Each whole-number step in magnitude means a tenfold increase in measured amplitude but 32 times more energy release.",
+     "src": 2,
+     "evidence": "While each whole number increase in magnitude represents a tenfold increase in the measured amplitude, it represents an 32 times more energy release"
+    },
+    {
+     "fact": "The magnitude scale is open-ended, but Earth's size sets a limit: a magnitude 12 earthquake would require a fault larger than the earth itself.",
+     "src": 0,
+     "evidence": "A magnitude 12 earthquake would require a fault larger than the earth itself."
+    }
+   ],
+   "items_idea": [
+    {
+     "name": "RAT ISLANDS, ALASKA 1965",
+     "value": 8.7,
+     "label": "M 8.7",
+     "fact": 1
+    },
+    {
+     "name": "KAMCHATKA 1952",
+     "value": 9.0,
+     "label": "M 9.0",
+     "fact": 2
+    },
+    {
+     "name": "SOUTHERN ALASKA 1964",
+     "value": 9.2,
+     "label": "M 9.2",
+     "fact": 3
+    },
+    {
+     "name": "CHILE 1960",
+     "value": 9.5,
+     "label": "M 9.5",
+     "fact": 4
+    }
+   ],
+   "twist_idea": "One magnitude step looks small but means 32 times more energy, and a magnitude 12 would need a fault larger than the earth itself.",
+   "careful": [
+    "Sizes only: say nothing about casualties, damage or people affected",
+    "'Largest ever recorded' means recorded by seismic instruments (since about 1900), not the largest ever possible",
+    "The magnitude bars look close, but the scale is logarithmic: one step = 32 times more energy (a USGS rounded figure)",
+    "1,600 km and 240 km are converted from miles: say 'about'",
+    "The San Andreas 8.3 fact is a USGS 'extremely unlikely' limit, not a real quake: never show it as one"
+   ]
+  },
+  {
+   "n": 911,
+   "slug": "biggest-wingspans-ever",
+   "format": "compare",
+   "look": "ancient",
+   "from": "2026-11-08",
+   "title_idea": "Condor vs Albatross vs Argentavis vs Quetzalcoatlus | Biggest Wingspan Comparison",
+   "hook_idea": "THE BIGGEST WINGS THAT EVER FLEW",
+   "teaser": "BIGGEST WINGS",
+   "unit": "m",
+   "scale": "linear",
+   "sources": [
+    "https://www.nps.gov/articles/california-condor.htm",
+    "https://faculty.ucr.edu/~chappell/INW/birds1/wanderer.shtml",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC1941455/",
+    "https://www.nhm.ac.uk/discover/news/2021/december/largest-ever-flying-animal-behaved-like-giant-heron.html"
+   ],
+   "facts": [
+    {
+     "fact": "California condors have a wingspan of 9.5 feet (3 meters), at least 2 feet longer than the next largest bird in their region, the golden eagle.",
+     "src": 0,
+     "evidence": "California condors have a wingspan of 9.5 feet (3 meters)- at least 2 feet longer than the next largest bird in the region (the golden eagle)."
+    },
+    {
+     "fact": "The wandering albatross is the largest flying bird by wingspan, maybe up to 3.5 meters in large males.",
+     "src": 1,
+     "evidence": "The wandering albatross holds the honor of being the largest flying bird in terms of wingspan (maybe up to 3.5 meters in large males)."
+    },
+    {
+     "fact": "The pterosaur Quetzalcoatlus lawsoni had a wingspan of around 4.5 metres and was found in rocks about 69 million years old.",
+     "src": 3,
+     "evidence": "As opposed to its larger relative, this species had a wingspan of around 4.5 metres long and was found in rocks dated to around 69 million years ago."
+    },
+    {
+     "fact": "A study reconstruction gave the extinct giant bird Argentavis a wing span of 7 m and a wing area of 8 m2.",
+     "src": 2,
+     "evidence": "This procedure gave Argentavis a wing span of 7 m and a wing area of 8 m 2 ( 1 )."
+    },
+    {
+     "fact": "Argentavis lived about 6 million years ago in what is now Argentina.",
+     "src": 2,
+     "evidence": "Approximately 6 million years ago, in what is now Argentina, an enormous bird ranged across the region from the Andes Mountains to the pampas."
+    },
+    {
+     "fact": "Quetzalcoatlus northropi, the largest-ever flying animal, had a wingspan of around 11 metres.",
+     "src": 3,
+     "evidence": "Quetzalcoatlus northropi had a wingspan of around 11 metres, which meant it had to jump into the air to take off."
+    },
+    {
+     "fact": "Its 11-metre-long wings meant it would have had to jump up to 2.5 metres into the air before flapping into the sky.",
+     "src": 3,
+     "evidence": "Researchers have found that its 11-metre-long wings meant it would have had to jump up to 2.5 metres into the"
+    },
+    {
+     "fact": "Quetzalcoatlus had a wingspan more than 50% greater than Argentavis, making it the largest known flying creature.",
+     "src": 2,
+     "evidence": "another pterosaur, Quetzalcoatlus , had a wingspan >50% greater than Argentavis , making Quetzalcoatlus the largest known flying creature."
+    }
+   ],
+   "items_idea": [
+    {
+     "name": "CALIFORNIA CONDOR",
+     "value": 3,
+     "label": "3 M",
+     "fact": 0
+    },
+    {
+     "name": "WANDERING ALBATROSS",
+     "value": 3.5,
+     "label": "3.5 M",
+     "fact": 1
+    },
+    {
+     "name": "QUETZALCOATLUS LAWSONI",
+     "value": 4.5,
+     "label": "4.5 M",
+     "fact": 2
+    },
+    {
+     "name": "ARGENTAVIS",
+     "value": 7,
+     "label": "7 M",
+     "fact": 3
+    },
+    {
+     "name": "QUETZALCOATLUS NORTHROPI",
+     "value": 11,
+     "label": "11 M",
+     "fact": 5
+    }
+   ],
+   "twist_idea": "With 11-metre wings the giant pterosaur could not just flap off: it had to jump up to 2.5 metres into the air first.",
+   "careful": [
+    "Extinct wingspans (Argentavis 7 m, Quetzalcoatlus about 11 m and 4.5 m) are estimates from fossils, not measurements: say 'about' or 'estimated'",
+    "3.5 m for the albatross is a 'maybe up to' figure for large males, not a typical bird",
+    "Pterosaurs were flying reptiles, not birds and not dinosaurs",
+    "Argentavis is the largest known flying bird of its kind in this list; do not call it the largest flier ever (Quetzalcoatlus is bigger)"
+   ]
+  },
+  {
+   "n": 914,
+   "slug": "fastest-animals-by-top-speed",
+   "format": "compare",
+   "look": "earth",
+   "from": "2026-11-08",
+   "title_idea": "Pronghorn vs Cheetah vs Free-Tailed Bat vs Peregrine Falcon | Top Speed Comparison",
+   "hook_idea": "FASTEST ANIMALS BY TOP SPEED",
+   "teaser": "FASTEST ANIMALS",
+   "unit": "km/h",
+   "scale": "linear",
+   "sources": [
+    "https://nationalzoo.si.edu/animals/cheetah",
+    "https://www.nps.gov/yell/learn/nature/pronghorn.htm",
+    "https://www.nps.gov/miss/learn/nature/birdspere.htm",
+    "https://home.nps.gov/zion/learn/nature/peregrinefalcon.htm",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC5180116/"
+   ],
+   "facts": [
+    {
+     "fact": "A cheetah's top speed averages between 60 and 70 miles per hour (96 and 112 km/h) and can be held for only about 300 yards (274 meters).",
+     "src": 0,
+     "evidence": "That top speed averages between 60 and 70 miles per hour (96 and 112 kilometer per hour) and can be maintained for only about 300 yards (274 meters)."
+    },
+    {
+     "fact": "Cheetahs can accelerate from zero to 45 miles per hour (zero to 72 km/h) in just 2.5 seconds.",
+     "src": 0,
+     "evidence": "Cheetahs can accelerate from zero to 45 miles per hour (zero to 72 kilometers per hour) in just 2.5 seconds."
+    },
+    {
+     "fact": "Pronghorn can sustain sprints of 45-50 mph (about 72-80 km/h, converted).",
+     "src": 1,
+     "evidence": "Pronghorn can sustain sprints of 45–50 mph."
+    },
+    {
+     "fact": "When it stoops (dives on prey), a peregrine falcon may reach speeds of up to 200 mph (about 320 km/h, converted).",
+     "src": 2,
+     "evidence": "When it stoops--dives on prey--a peregrine may reach speeds of up to 200 mph."
+    },
+    {
+     "fact": "A peregrine only occasionally reaches top speed; most of its dives are closer to 100 mph (about 160 km/h, converted).",
+     "src": 2,
+     "evidence": "As a result, this speedy bird only occasionally reaches top speed; most dives are closer to 100 mph."
+    },
+    {
+     "fact": "In ordinary flight, a peregrine's constant travel speed is 25-34 mph (about 40-55 km/h, converted).",
+     "src": 3,
+     "evidence": "Constant travel speed for this bird ranges between 25-34 mph."
+    },
+    {
+     "fact": "A park service page reports the fastest peregrine dive ever recorded as 242 mph or 389 km/h.",
+     "src": 3,
+     "evidence": "The fastest ever recorded reached 242 mph or 389 km/h!"
+    },
+    {
+     "fact": "Airplane tracking of Brazilian free-tailed bats found individual maximum ground speeds of 27.2 to 44.5 m/s (about 98 to 160 km/h, converted) during brief bursts.",
+     "src": 4,
+     "evidence": "Individual maximum ground speeds were achieved during brief periods within single track segments and ranged from 27.2 to 44.5 m s"
+    }
+   ],
+   "items_idea": [
+    {
+     "name": "PRONGHORN",
+     "value": 80,
+     "label": "80 KM/H",
+     "fact": 2
+    },
+    {
+     "name": "CHEETAH",
+     "value": 112,
+     "label": "112 KM/H",
+     "fact": 0
+    },
+    {
+     "name": "FREE-TAILED BAT",
+     "value": 160,
+     "label": "160 KM/H",
+     "fact": 7
+    },
+    {
+     "name": "PEREGRINE FALCON DIVE",
+     "value": 320,
+     "label": "320 KM/H",
+     "fact": 3
+    }
+   ],
+   "twist_idea": "The cheetah hits 112 km/h but only for about 274 meters, while the pronghorn can sustain 72-80 km/h: and most peregrine dives are closer to 160 km/h, not 320.",
+   "careful": [
+    "Every speed is an estimate or a best measurement, not a fixed number: say 'up to about' / '최대 약'",
+    "Pronghorn 80 km/h, falcon 320 km/h and 160 km/h, bat 98-160 km/h are converted from mph or m/s: say 'about'",
+    "Cheetah 96-112 km/h is an average top-speed range and lasts only about 274 m; pronghorn's 72-80 km/h is a sustained sprint: they are measured differently",
+    "The peregrine's 320 km/h is a diving speed helped by gravity, not level flight (level travel speed is about 40-55 km/h); compare it as 'dive'",
+    "Bat speeds are ground speeds from tracking and may include wind help: do not call it 'airspeed' or a definitive bat record",
+    "The 389 km/h peregrine 'fastest ever recorded' is one park page's figure with no measurement details: do not use it as a headline number",
+    "No humans and no vehicles: animals only"
+   ]
+  },
+  {
+   "n": 917,
+   "slug": "tallest-trees-on-earth",
+   "format": "compare",
+   "look": "earth",
+   "from": "2026-11-08",
+   "title_idea": "Giant Sequoia vs Mountain Ash vs Coast Redwood | Tallest Tree Comparison",
+   "hook_idea": "THE TALLEST LIVING THINGS ON EARTH",
+   "teaser": "TALLEST TREES",
+   "unit": "m",
+   "scale": "linear",
+   "sources": [
+    "https://home.nps.gov/muwo/planyourvisit/english.htm",
+    "https://www.nps.gov/seki/planyourvisit/sequoiagroves.htm",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12370954/",
+    "https://www.nps.gov/redw/faqs.htm",
+    "https://www.nps.gov/seki/learn/news/fact-sheet.htm"
+   ],
+   "facts": [
+    {
+     "fact": "In Muir Woods the tallest coast redwood is over 258 feet (about 78.6 m, converted), about the height of a 23-story building.",
+     "src": 0,
+     "evidence": "In Muir Woods, the tallest is over 258 feet—about the height of a 23-story building."
+    },
+    {
+     "fact": "The Boole Tree, a giant sequoia, is 269 feet (82 m) tall and is the largest tree in America's national forests.",
+     "src": 1,
+     "evidence": "The most noted sequoia spared by the loggers is the 269-foot (82 m) tall Boole Tree. It is the largest tree in America's national forests"
+    },
+    {
+     "fact": "The General Sherman Tree, the largest tree, is 274.9 ft tall (about 83.8 m, converted) with a volume of 52,508 cubic ft.",
+     "src": 4,
+     "evidence": "Largest tree: General Sherman Tree (274.9 ft. tall: 52,508 cubic ft./volume)"
+    },
+    {
+     "fact": "Mountain ash (Eucalyptus regnans) is the tallest flowering plant in the world; living individuals reach heights of 100 meters.",
+     "src": 2,
+     "evidence": "These forests are dominated by mountain ash ( E. regnans ), the tallest angiosperm ( i.e ., flowering plant) in the world. Living individuals reach heights of 100 meters"
+    },
+    {
+     "fact": "The current tallest known tree is a coast redwood 379 feet tall (about 115.5 m, converted) in the Redwood Creek watershed.",
+     "src": 3,
+     "evidence": "The current tallest known tree is 379 feet in the Redwood Creek watershed"
+    },
+    {
+     "fact": "Coast redwoods are the tallest living things on Earth; the giant sequoia grows larger in bulk but shorter than the coast redwood.",
+     "src": 0,
+     "evidence": "grows larger in bulk but shorter than the coast redwood."
+    },
+    {
+     "fact": "A redwood's roots grow only 10 to 13 feet deep (about 3 to 4 m, converted) and spread nearly 100 feet.",
+     "src": 0,
+     "evidence": "A redwood's roots grow 10 to 13 feet deep and spread nearly 100 feet."
+    }
+   ],
+   "items_idea": [
+    {
+     "name": "TALLEST MUIR WOODS REDWOOD",
+     "value": 78.6,
+     "label": "78.6 M",
+     "fact": 0
+    },
+    {
+     "name": "BOOLE TREE (GIANT SEQUOIA)",
+     "value": 82,
+     "label": "82 M",
+     "fact": 1
+    },
+    {
+     "name": "GENERAL SHERMAN (GIANT SEQUOIA)",
+     "value": 83.8,
+     "label": "83.8 M",
+     "fact": 2
+    },
+    {
+     "name": "MOUNTAIN ASH",
+     "value": 100,
+     "label": "100 M",
+     "fact": 3
+    },
+    {
+     "name": "TALLEST COAST REDWOOD",
+     "value": 115.5,
+     "label": "115.5 M",
+     "fact": 4
+    }
+   ],
+   "twist_idea": "The tallest living thing on Earth stands on roots only 10 to 13 feet deep.",
+   "careful": [
+    "78.6 m, 83.8 m and 115.5 m are converted from feet: say 'about'",
+    "'Tallest known' can change as new trees are measured; the NPS says the tallest tree changes over time",
+    "100 m for mountain ash is a rounded 'reach heights of' figure, not one measured tree",
+    "General Sherman is the largest tree by volume, not the tallest; giant sequoias are bulkier but shorter than coast redwoods",
+    "Do not give the exact location of the tallest redwood"
    ]
   }
  ]
