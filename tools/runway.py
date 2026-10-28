@@ -38,6 +38,10 @@ CHANNELS = ("왕별이", "Nine Tails", "인스타")
 # ★10/25 채울 수 있는 줄기(주간 채우기 루틴 — tools/REFILL.md · 검사 tools/refill_check.py). 절 앵커 = 줄기 id
 REFILL_DOC = "tools/REFILL.md"
 REFILLABLE = ("nt_shorts", "nt_longform", "wb_gunghap", "wb_lf27", "insta_sci", "insta_teardown")
+# ★10/28 Nine Tails 쉬기 — 10/27 판정 '가망 없음'(34편 중 1만 0편 · 편당 중앙값 74회). 쇼츠·롱폼 루틴 2개를 껐다.
+#   이 값이 있으면 두 줄기는 '꺼짐'이다 → 재고 경고(RUNWAY)도 채우기 루틴도 건드리지 않는다.
+#   다시 열 때: "" 로 비우고 루틴 두 개(쇼츠 trig_011mZ…·롱폼 trig_01A1oU…)를 켠다.
+NT_PAUSED = "10/27 판정 '가망 없음' → 10/28부터 쉬는 중(쇼츠·롱폼 루틴 꺼짐)"
 WEEKDAY = "월화수목금토일"
 
 
@@ -123,16 +127,19 @@ def nine_tails(today: dt.date) -> list[dict]:
     pub = [R.publish_date(e, sc) for f in R.NEW_FORMATS for e in sc.get(f) or []]
     judge = dt.date.fromisoformat(sc["judge"]) if sc.get("judge") else None
     detail = " · ".join(f"{f} {d:%m/%d}" for f, d in lasts.items() if d)
-    out = [_row(ch, "nt_shorts", "영어 쇼츠(survival 매일 · compare/liminal 격일 — shorts_catalog)", "trial",
+    out = [_row(ch, "nt_shorts", "영어 쇼츠(survival 매일 · compare/liminal 격일 — shorts_catalog)",
+                "off" if NT_PAUSED else "trial",
                 max((d for d in lasts.values() if d), default=None), sum(d >= today for d in pub), judge=judge,
+                ended=NT_PAUSED,
                 refill="gumiho/tales/shorts_catalog.json 형식별 목록 끝에 + from(A 매일 · B compare/liminal 번갈아) — "
                        "판정이 '계속'일 때만 머지",
                 note=f"마지막 공개 {detail} · 쓰는 날은 하루 전")]
     cat = T.load(T.CATALOG)
     dated = [dt.date.fromisoformat(e["date"]) for e in cat["tales"] if e.get("date") and not e.get("retired")]
     backlog = cat.get("backlog") or []
-    out.append(_row(ch, "nt_longform", "해설 롱폼(주 1편 일 14:00 UTC — catalog.json tales)", "catalog", T.last_date(),
-                    sum(d >= today for d in dated),
+    out.append(_row(ch, "nt_longform", "해설 롱폼(주 1편 일 14:00 UTC — catalog.json tales)",
+                    "off" if NT_PAUSED else "catalog", T.last_date(),
+                    sum(d >= today for d in dated), ended=NT_PAUSED,
                     refill="gumiho/tales/catalog.json tales 끝에 편 + from(일요일은 코드가 정한다 · facts 마다 evidence)",
                     note=f"backlog 제목 {len(backlog)}개(제목만 — 사실·출처를 채워야 편성된다)" if backlog else ""))
     enabled = _const(os.path.join(ROOT, "gumiho", "tales", "sleep.py"), "ENABLED")

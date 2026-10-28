@@ -69,12 +69,16 @@ ck("주간 롱폼: STOP_FROM 앞 주 월요일의 전날(10/25 일) · 일부러
 ck("신년운세 1차 묶음: newyear_card.last_day() · 끝(대체)", by["wb_newyear_card"]["last"] == NC.last_day() and by["wb_newyear_card"]["ended"])
 sc = R.shorts()
 nt = by["nt_shorts"]
-ck("영어 쇼츠: 시험 · 마지막 = rules.publish_date(형식마다 끝 편)의 가장 늦은 날 · 판정 = shorts_catalog judge",
-   nt["limit"] == "trial" and nt["last"] == max(R.publish_date(sc[f][-1], sc) for f in R.NEW_FORMATS)
+ck("영어 쇼츠: 시험(쉬는 중이면 꺼짐) · 마지막 = rules.publish_date(형식마다 끝 편)의 가장 늦은 날 · 판정 = shorts_catalog judge",
+   nt["limit"] == ("off" if RW.NT_PAUSED else "trial") and nt["last"] == max(R.publish_date(sc[f][-1], sc) for f in R.NEW_FORMATS)
    and nt["judge"] == dt.date.fromisoformat(sc["judge"]), nt)
 ck("해설 롱폼: 마지막 = tales.last_date() · 남은 편 = 그 뒤 편성된 편", by["nt_longform"]["last"] == T.last_date()
    and by["nt_longform"]["left"] == sum(1 for e in T.load(T.CATALOG)["tales"]
                                         if e.get("date") and not e.get("retired") and e["date"] >= TODAY.isoformat()))
+ck("Nine Tails 쉬는 중(NT_PAUSED)이면 쇼츠·롱폼은 꺼짐 · 끝 사유 표시 · 재고 경고에 안 뜬다",
+   not RW.NT_PAUSED or (all(by[i]["limit"] == "off" and by[i]["ended"] == RW.NT_PAUSED and by[i]["days_left"] is None
+                            for i in ("nt_shorts", "nt_longform"))
+                        and not {"nt_shorts", "nt_longform"} & {r["id"] for r in RW.low(rows)}))
 ck("수면판: sleep.ENABLED 를 실행 없이 읽는다(렌더러를 안 끌고 온다) · 꺼짐이면 경고 안 함",
    (by["nt_sleep"]["limit"] == "off") == (RW._const(os.path.join(RW.ROOT, "gumiho", "tales", "sleep.py"), "ENABLED") is False)
    and "render_tale" not in sys.modules)

@@ -44,14 +44,14 @@
   {"id": "wb-split", "ch": "wb", "title": "ASMR·수면 사운드 채널 분리 결정", "start": "2026-09-29", "judge": "2026-10-26",
    "criterion": "해외 시청 비중·주간 시청시간 속도로 결정(스튜디오 숫자 필요)", "formats": ["asmr"], "owner": "local", "status": "stopped", "stopped": "2026-10-07 — 왕별이 운세 전문으로 좁힘(사용자 결정 · 수익화 심사 대비) · ASMR·영어 8시간 사운드 루틴 끔"},
   {"id": "tales-sprint", "ch": "nt", "title": "Nine Tails 7형식 1주 실험(3~9화, 10/4~10/10)", "start": "2026-10-04", "judge": "2026-10-13",
-   "criterion": "형식별 7일 조회·쇼츠 반응 비교 → 이긴 형식 위주로 편성", "formats": ["episode", "rules", "story_short"], "owner": "local:judge-tales-sprint-1013", "status": "running"},
+   "criterion": "형식별 7일 조회·쇼츠 반응 비교 → 이긴 형식 위주로 편성", "formats": ["episode", "rules", "story_short"], "owner": "local:judge-tales-sprint-1013", "status": "stopped", "stopped": "2026-10-28 — 10/27 판정 '가망 없음'(시험 34편 중 1만 0편 · 편당 중앙값 74회 · 비교 쇼츠 중앙 207회) → Nine Tails 쉬기(쇼츠·롱폼 루틴 꺼짐, 사용자 '맘대로 해봐'). 올린 영상은 그대로 둔다"},
   {"id": "tales-global-look", "ch": "nt", "title": "10화부터 현대·글로벌 화풍 + 후드티 구미", "start": "2026-10-14", "judge": "2026-10-28",
-   "criterion": "(내가 정함) 10~11화 쇼츠 7일 조회 중앙값이 3~9화 쇼츠 중앙값 이상이면 유지", "formats": ["episode", "rules", "story_short"], "owner": "local:check-tales-global-1014", "status": "scheduled"},
+   "criterion": "(내가 정함) 10~11화 쇼츠 7일 조회 중앙값이 3~9화 쇼츠 중앙값 이상이면 유지", "formats": ["episode", "rules", "story_short"], "owner": "local:check-tales-global-1014", "status": "stopped", "stopped": "2026-10-28 — 10/27 판정 '가망 없음'(시험 34편 중 1만 0편 · 편당 중앙값 74회 · 비교 쇼츠 중앙 207회) → Nine Tails 쉬기(쇼츠·롱폼 루틴 꺼짐, 사용자 '맘대로 해봐'). 올린 영상은 그대로 둔다"},
   {"id": "tales-rules", "ch": "nt", "title": "RULES 규칙괴담 매일 쇼츠(21:00 UTC, 28편 · 10/9 조사로 13:00 UTC=22:00 KST·배정일 다음 날로, 머지 뒤 편부터) — 10/7 점검으로 10/14 → 10/8 앞당김(피드가 미는 건 규칙·대결 쇼츠뿐)", "start": "2026-10-08", "judge": "2026-11-05",
-   "criterion": "(내가 정함) 7일 조회 1,000 이상이 5편 이상이거나 1만 이상이 한 편 → 계속·카탈로그 보충, 아니면 형식 재검토. 카탈로그는 11/4 에 바닥난다(주간 검토가 그 전에 채운다)", "formats": ["rules", "versus", "pov"], "owner": "pulse", "status": "scheduled"},
+   "criterion": "(내가 정함) 7일 조회 1,000 이상이 5편 이상이거나 1만 이상이 한 편 → 계속·카탈로그 보충, 아니면 형식 재검토. 카탈로그는 11/4 에 바닥난다(주간 검토가 그 전에 채운다)", "formats": ["rules", "versus", "pov"], "owner": "pulse", "status": "stopped", "stopped": "2026-10-28 — 10/27 판정 '가망 없음'(시험 34편 중 1만 0편 · 편당 중앙값 74회 · 비교 쇼츠 중앙 207회) → Nine Tails 쉬기(쇼츠·롱폼 루틴 꺼짐, 사용자 '맘대로 해봐'). 올린 영상은 그대로 둔다"},
   {"id": "tales-sleep", "ch": "nt", "title": "수면판 1호(10/26 공개)", "start": "2026-10-26", "judge": "2026-11-09",
-   "criterion": "(내가 정함) 2주 조회 300 이상이면 월 1회 유지", "formats": ["sleep"], "owner": "pulse", "status": "scheduled"},
+   "criterion": "(내가 정함) 2주 조회 300 이상이면 월 1회 유지", "formats": ["sleep"], "owner": "pulse", "status": "stopped", "stopped": "2026-10-28 — 10/27 판정 '가망 없음'(시험 34편 중 1만 0편 · 편당 중앙값 74회 · 비교 쇼츠 중앙 207회) → Nine Tails 쉬기(쇼츠·롱폼 루틴 꺼짐, 사용자 '맘대로 해봐'). 올린 영상은 그대로 둔다"},
   {"id": "nt-overall", "ch": "nt", "title": "Nine Tails 종합 판정", "start": "2026-10-01", "judge": "2026-11-14",
-   "criterion": "주간 시청 100시간 목표(10/1 계획 B) · 구독 추세", "formats": [], "owner": "pulse", "status": "running"}
+   "criterion": "주간 시청 100시간 목표(10/1 계획 B) · 구독 추세", "formats": [], "owner": "pulse", "status": "stopped", "stopped": "2026-10-28 — 10/27 판정 '가망 없음'(시험 34편 중 1만 0편 · 편당 중앙값 74회 · 비교 쇼츠 중앙 207회) → Nine Tails 쉬기(쇼츠·롱폼 루틴 꺼짐, 사용자 '맘대로 해봐'). 올린 영상은 그대로 둔다"}
  ]
 }
