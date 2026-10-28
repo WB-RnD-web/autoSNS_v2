@@ -1,0 +1,63 @@
+{
+ "id": 115,
+ "slug": "moon-no-suit",
+ "format": "survival",
+ "part": 15,
+ "look": "space",
+ "title": "How Long Would You Last on the Moon Without a Spacesuit? #shorts",
+ "hook": "HOW LONG WOULD YOU LAST?",
+ "situation": "ON THE MOON, NO SUIT",
+ "description_hook": "You step onto the Moon in full Sun with no spacesuit. No air, wild temperatures, and the clock starts now.",
+ "beats": [
+  {
+   "t": "0:00",
+   "text": "ABOUT 127 °C",
+   "src": 0,
+   "say": "How long would you last on the Moon without a spacesuit? You step out into full Sun. The ground is about 127 degrees Celsius.",
+   "img": "a lone human silhouette in plain clothes standing on bright grey lunar dust under a harsh white sun, pitch black sky above, long sharp shadow"
+  },
+  {
+   "t": "0:00",
+   "text": "ONE-SIXTH YOUR WEIGHT",
+   "src": 0,
+   "say": "You weigh one-sixth of what you do on Earth. Every step turns into a slow, floating bounce.",
+   "img": "a small figure seen from behind mid-leap above a cratered lunar plain, a puff of fine dust hanging below its feet, black starless sky"
+  },
+  {
+   "t": "--:--",
+   "text": "NOTHING TO BREATHE",
+   "src": 0,
+   "say": "Now take a breath. There is no air here, only a thin exosphere. Nothing fills your lungs.",
+   "img": "an empty silent lunar horizon with the blue Earth hanging low in a black sky, no haze at all, razor sharp crater edges"
+  },
+  {
+   "t": "--:--",
+   "text": "1369 µSv A DAY",
+   "src": 2,
+   "say": "And cosmic rays keep falling: about 1369 microsieverts a day, 2.6 times the dose inside the space station. Slow, but relentless.",
+   "img": "faint streaks of cosmic rays raining down through the darkness onto a barren grey crater floor, glowing particle trails, cold eerie light"
+  }
+ ],
+ "gumi": {
+  "odds": "0%",
+  "say": "Gumi's odds: zero. Step into shadow and it plummets to about minus 173 degrees Celsius."
+ },
+ "teaser": "NEXT: A BLACK SMOKER",
+ "sources": [
+  "https://science.nasa.gov/moon/facts/",
+  "https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html",
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC7518862/"
+ ],
+ "tags": [
+  "moon",
+  "how long would you last",
+  "space",
+  "no spacesuit",
+  "lunar surface",
+  "space radiation",
+  "survival",
+  "science",
+  "space facts",
+  "astronomy"
+ ]
+}
