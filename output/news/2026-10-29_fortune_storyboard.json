@@ -1,0 +1,36 @@
+{
+  "date":"2026-10-29","topic":"fortune","privacy":"public",
+  "topic_keyword":"오늘의 띠별 운세","headline":"10월 29일 목요일 띠별 운세 TOP3",
+  "hook_title":"오늘 세 띠만 문이 열립니다","accent":"#C9A24B",
+  "loop_line":"그 한 띠가 바로 당신일지 모릅니다",
+  "thumbnail_hook":"Close-up of a golden monkey zodiac emblem with intricate engraved fur texture, glowing amber eyes, drifting golden auspicious clouds against an amethyst starry night sky, traditional Korean motif, no human face, no text in image",
+  "thumbnail_text":"93점 나온 띠",
+  "scenes":[
+    {"type":"hook","pill":"띠별 운세","ghost":"FORTUNE","lines":["오늘","딱 한 띠만","문이 열려요"],"highlight":"딱 한 띠",
+     "brand":"일상공감뉴스 · 운세","narration":"열두 띠 중에서 오늘은 유독 한 띠에게 흐름이 크게 열립니다."},
+    {"type":"keypoint","label":"오늘 운 좋은 띠 · 3위부터","points":["3위 <b>소띠</b> — 미뤄 둔 일이 풀려요","2위 <b>쥐띠</b> — 귀인이 먼저 연락해요"],
+     "brand":"일상공감뉴스 · 운세","narration":"3위는 소띠, 2위는 쥐띠이고, 1위는 잠시 뒤에 공개하겠습니다."},
+    {"type":"stat","label":"행운 지수 1위 · 원숭이띠","prefix":"","suffix":"점","from":0,"to":93,"bar":true,
+     "sub":"<b>1980</b> · <b>1992</b> · <b>2004</b>년생 해당",
+     "brand":"일상공감뉴스 · 운세","narration":"1위는 원숭이띠, 80년생과 92년생, 04년생이라면 오늘 93점이 나왔습니다."},
+    {"type":"keypoint","label":"오늘의 행운 팁","points":["행운의 색 <b>노랑</b> · 숫자 <b>9</b>","큰 결정은 <b>오후 3시</b> 이후에","<b>개띠</b> — 속도만 줄이면 오히려 이득"],
+     "brand":"일상공감뉴스 · 운세","narration":"그래서 오늘은 중요한 결정을 오후 세 시 이후로 미뤄 보시면 좋겠습니다."},
+    {"type":"keypoint","label":"이번 주 행운의 로또 번호","points":["<b>15 · 17 · 34 · 35 · 37 · 45</b>","재미로 뽑아 본 번호예요 · 캡처해 두세요"],
+     "brand":"일상공감뉴스 · 운세","narration":"이번 주 행운의 번호는, 15, 17, 34, 35, 37, 45입니다. 캡처해 두세요."},
+    {"type":"statement","text":"당신 띠는 몇 위였나요?","highlight":"몇 위",
+     "brand":"일상공감뉴스 · 운세","narration":"당신의 띠는 몇 위였는지 댓글에 띠만 적어 주세요. 재미로 보는 운세입니다."}
+  ],
+  "sources":["전통 띠 운세(명리) 기반","상강 이후 절기 흐름 참고"],"credit":"재미로 보는 오늘의 운세 · 명리 일진 참고",
+  "platforms":{
+    "youtube":{"title":"오늘 세 띠만 문이 열립니다 #shorts","description":"10월 29일 목요일 띠별 운세 TOP3\n※ 재미로 보는 운세입니다\n\n#오늘의운세 #띠별운세 #운세 #쇼츠 #shorts",
+      "localizations":{
+        "en":{"title":"Only 3 Zodiac Signs Get Lucky Today #shorts","description":"Today's Korean zodiac fortune TOP 3.\n※ For entertainment only\n\n#zodiac #fortune #shorts"},
+        "ja":{"title":"今日、運が開くのはたった3つの干支です #shorts","description":"10月29日の干支別運勢TOP3です。\n※ 娯楽としてお楽しみください\n\n#運勢 #干支 #shorts"},
+        "zh-Hant":{"title":"今天只有三個生肖大開運 #shorts","description":"10月29日生肖運勢TOP3。\n※ 僅供娛樂參考\n\n#生肖運勢 #運勢 #shorts"}
+      }
+    },
+    "instagram":{"caption":"오늘 세 띠만 문이 열립니다\n※ 재미로 보는 운세\n\n#오늘의운세 #띠별운세 #운세 #쇼츠 #shorts #릴스"},
+    "threads":{"text":"오늘 세 띠만 문이 열립니다\n※ 재미로 보는 운세"}
+  },
+  "notes":"모션그래픽 6장면(로또 포함) · 단일 내레이터 · 배경음 없음 · 엔터테인먼트(재미) 운세 · MODE=daily."
+}
