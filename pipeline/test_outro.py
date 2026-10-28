@@ -300,6 +300,11 @@ R.upload_with_retry = fake_upload
 R.has_credentials = lambda: True
 R.add_weekly_link = lambda meta, topic: None
 R.add_playlist = lambda *a, **kw: None
+# ★시계를 대본 날 아침으로 고정한다 — day_for 는 max(대본 날, 오늘)이라, 실제 시계로 돌리면
+#   10/27 부터 10/26 대본도 '오늘(끄는 날)'로 잡혀 테스트가 깨졌다(전체 테스트를 거치는 채우기·맥박 PR 이 막힘).
+_for_sb = O.for_storyboard
+O.for_storyboard = lambda sb, spec=None, now=None: _for_sb(
+    sb, spec, now or dt.datetime.fromisoformat(sb["date"] + "T05:00:00").replace(tzinfo=k))
 with tempfile.TemporaryDirectory() as tmp:
     led_path = os.path.join(tmp, "ledger.json")
     for d in (AB0, D(2026, 10, 27)):
@@ -322,6 +327,7 @@ with tempfile.TemporaryDirectory() as tmp:
             ck("끄는 날(10/27 나이 표): 끝인사 없음 · 설명란 손대지 않음 · ledger outro=False",
                "_outro" not in got["spec"] and res.get("outro") is False and O.DESC_LINE not in got["meta"]["description"]
                and led[f"{d}_{sb['topic']}"].get("outro") is False, res)
+O.for_storyboard = _for_sb
 rp = open(os.path.join(HERE, "run_pipeline.py"), encoding="utf-8").read()
 proc = rp[rp.index("def process("):]
 ck("run_pipeline: 장면을 정한 뒤 · 렌더 전에 끝인사 · 설명란 한 줄은 표별 제목/설명을 다 정한 뒤",
