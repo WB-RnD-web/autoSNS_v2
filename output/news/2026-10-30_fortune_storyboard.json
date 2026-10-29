@@ -1,0 +1,39 @@
+{
+  "date":"2026-10-30","topic":"fortune","privacy":"public",
+  "topic_keyword":"금요일 띠별 운세","headline":"10월 30일 금요일 띠별 운세와 행운 번호",
+  "hook_title":"평소 조용하던 띠가 2배 뜹니다",
+  "accent":"#C9A24B",
+  "loop_line":"그 한 띠가 오늘 열두 번째가 아닙니다",
+  "thumbnail_hook":"Golden horse zodiac emblem silhouette galloping above drifting golden auspicious clouds at dawn, amethyst and amber sky, traditional Korean motif, no human face, no text in image",
+  "thumbnail_text":"96점 나온 띠",
+  "scenes":[
+    {"type":"hook","pill":"금요일 운세","ghost":"FORTUNE","lines":["평소엔","조용하던 띠","오늘 2배"],"highlight":"2배",
+     "brand":"일상공감뉴스 · 운세","narration":"평소 조용하던 한 띠가 오늘은 운이 크게 올라옵니다."},
+    {"type":"keypoint","label":"오늘 운 좋은 띠 · 3위부터","points":["3위 <b>양띠</b> — 부탁이 쉽게 통해요","2위 <b>뱀띠</b> — 작은 돈이 새로 들어와요"],
+     "brand":"일상공감뉴스 · 운세","narration":"3위는 양띠, 2위는 뱀띠이고, 1위는 잠시 뒤에 공개합니다."},
+    {"type":"stat","label":"행운 지수 1위 · 말띠","prefix":"","suffix":"점","from":0,"to":96,"bar":true,
+     "sub":"<b>1978</b> · <b>1990</b> · <b>2002</b>년생 해당",
+     "brand":"일상공감뉴스 · 운세","narration":"1위는 말띠, 78년생과 90년생, 2002년생이라면 오늘 96점이 나왔습니다."},
+    {"type":"gauge","label":"말띠 인맥운","unit":"배","from":1,"to":2,"sub":"평소 대비 <b>2배</b> — 불 기운이 맞물려요",
+     "brand":"일상공감뉴스 · 운세","narration":"오늘 흐름이 말띠의 기운과 맞물려 인맥운이 평소보다 두 배 열립니다."},
+    {"type":"keypoint","label":"오늘의 행운 팁","points":["행운의 색 <b>빨강</b> · 숫자 <b>7</b>","연락은 <b>오전</b>, 결정은 오후에","<b>쥐띠</b> — 속도만 줄이면 오히려 이득"],
+     "brand":"일상공감뉴스 · 운세","narration":"그래서 오늘은 미뤄 둔 연락을 오전에 먼저 해 보시면 좋겠습니다."},
+    {"type":"keypoint","label":"이번 주 행운의 로또 번호","points":["<b>13 · 15 · 30 · 35 · 38 · 39</b>","재미로 뽑아 본 번호예요 · 캡처해 두세요"],
+     "brand":"일상공감뉴스 · 운세","narration":"이번 주 행운의 번호는, 13, 15, 30, 35, 38, 39입니다. 캡처해 두세요."},
+    {"type":"statement","text":"말띠 vs 쥐띠, 당신은?","highlight":"당신은",
+     "brand":"일상공감뉴스 · 운세","narration":"재미로 보는 운세입니다. 말띠인지 쥐띠인지, 댓글에 띠를 적어 주세요."}
+  ],
+  "sources":["전통 띠 운세(명리) 기반","오늘의 일진 참고"],"credit":"재미로 보는 오늘의 운세 · 명리 일진 참고",
+  "platforms":{
+    "youtube":{"title":"평소 조용하던 띠가 2배 뜹니다 #shorts","description":"10월 30일 금요일 띠별 운세와 행운 번호\n※ 재미로 보는 운세입니다\n\n#오늘의운세 #띠별운세 #운세 #쇼츠 #shorts",
+      "localizations":{
+        "en":{"title":"The Quiet Zodiac Sign That Doubles Up Today #shorts","description":"Friday, Oct 30 zodiac fortune and lucky numbers.\n※ For entertainment only\n\n#zodiac #fortune #horoscope #shorts"},
+        "ja":{"title":"普段は静かな干支が今日は2倍の運気です #shorts","description":"10月30日金曜日の干支別運勢とラッキーナンバーです。\n※ 娯楽としてお楽しみください\n\n#運勢 #干支 #shorts"},
+        "zh-Hant":{"title":"平常低調的生肖，今天運勢翻倍 #shorts","description":"10月30日星期五生肖運勢與幸運號碼。\n※ 僅供娛樂參考\n\n#生肖運勢 #運勢 #shorts"}
+      }
+    },
+    "instagram":{"caption":"평소 조용하던 띠가 2배 뜹니다\n※ 재미로 보는 운세\n\n#오늘의운세 #띠별운세 #운세 #쇼츠 #shorts #릴스"},
+    "threads":{"text":"평소 조용하던 띠가 2배 뜹니다\n※ 재미로 보는 운세"}
+  },
+  "notes":"모션그래픽 7장면(로또 포함) · 단일 내레이터 · 배경음 없음 · 엔터테인먼트(재미) 운세 · MODE=daily."
+}
