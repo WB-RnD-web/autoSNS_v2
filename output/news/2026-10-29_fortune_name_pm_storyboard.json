@@ -1,0 +1,106 @@
+{
+ "date": "2026-10-29",
+ "topic": "fortune_name",
+ "slot": "pm",
+ "theme": "month:home",
+ "privacy": "public",
+ "accent": "#C9A227",
+ "_min_total": 9.0,
+ "hook_title": "10월 집안 평안 순위",
+ "headline": "태어난 달로 보는 10월 집안 평안 순위 1위~12위 | 음력 1월생~12월생 전부 · 10월 29일",
+ "thumbnail_hook": "warm Korean home kitchen in the evening with a pot of stew and rice bowls on the table, soft lamp light, peaceful family mood, no people, no text",
+ "scenes": [
+  {
+   "type": "grid",
+   "pill": "10월 29일 목요일 · 내 것 찾기",
+   "title": "음력 생일 달로 보는",
+   "title2": "10월 집안 평안 순위",
+   "cols": 2,
+   "cells": [
+    {
+     "big": "1월생",
+     "small": "3위",
+     "note": "평안한 집",
+     "hi": true
+    },
+    {
+     "big": "2월생",
+     "small": "1위",
+     "note": "웃음꽃 활짝",
+     "hi": true
+    },
+    {
+     "big": "3월생",
+     "small": "5위",
+     "note": "소소한 대화",
+     "hi": false
+    },
+    {
+     "big": "4월생",
+     "small": "10위",
+     "note": "문단속 꼼꼼",
+     "hi": false
+    },
+    {
+     "big": "5월생",
+     "small": "2위",
+     "note": "가족이 한마음",
+     "hi": true
+    },
+    {
+     "big": "6월생",
+     "small": "8위",
+     "note": "대청소 운",
+     "hi": false
+    },
+    {
+     "big": "7월생",
+     "small": "12위",
+     "note": "살림 점검",
+     "hi": false
+    },
+    {
+     "big": "8월생",
+     "small": "7위",
+     "note": "화분 하나",
+     "hi": false
+    },
+    {
+     "big": "9월생",
+     "small": "11위",
+     "note": "서운함 풀기",
+     "hi": false
+    },
+    {
+     "big": "10월생",
+     "small": "6위",
+     "note": "따뜻한 저녁",
+     "hi": false
+    },
+    {
+     "big": "11월생",
+     "small": "9위",
+     "note": "지출 정리",
+     "hi": false
+    },
+    {
+     "big": "12월생",
+     "small": "4위",
+     "note": "정리하면 복",
+     "hi": false
+    }
+   ],
+   "basis": "양력 생일은 음력으로 바꿔 보세요 · 윤달생은 그 달로",
+   "foot": "※ 재미로 보는 운세",
+   "brand": "왕별이 · 내 것 찾기",
+   "narration": "태어난 달로 보는 10월 집안 평안 순위예요. 음력 생일 달로 내 순위를 찾아보세요."
+  }
+ ],
+ "platforms": {
+  "youtube": {
+   "title": "태어난 달로 보는 10월 집안 평안 순위 1위~12위 | 음력 1월생~12월생 전부 · 10월 29일 #shorts",
+   "description": "태어난 달로 보는 10월 집안 평안 순위 — 음력 1월생부터 12월생까지 한 장에 모았어요. 내 생일 달은 몇 위인가요? 댓글로 남겨 주세요 🙏\n매일 아침 7시 40분 태어난 해 · 아침 9시 40분 이름 글자 · 오후 1시 40분 성씨 · 오후 3시 40분 태어난 달·음력 생일 끝자리 표가 올라와요.\n\n📅 '태어난 달'은 음력 생일 달이에요\n· 음력 생일 달로 찾아보세요. 예) 음력 3월 15일생 → 3월생\n· 윤달에 태어나셨으면 보통 그 달로 봐요. 예) 윤4월생 → 4월생\n· 양력 생일만 아시면 휴대폰 달력에서 음력으로 바꿔 보시면 돼요.\n\n※ 재미로 보는 풀이입니다. 순위는 재미로 정한 것이에요.\n\n#생일운세 #태어난달 #운세 #shorts"
+  }
+ },
+ "notes": "내 것 찾기 표 · month:home · name_card.py 가 만든 스토리보드(루틴은 실행 스위치만)"
+}
