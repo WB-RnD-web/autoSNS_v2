@@ -320,6 +320,33 @@ def teardown_index(d: dt.date) -> int | None:
     return sum(1 for x in _open_days() if x < d and plan[x][0] == TEARDOWN)
 
 
+XRAY_SERIES = "속이 보이는 과학"          # sci_xray 첫 장면 칩 이름(10/25~)
+
+
+def xray_no(d: dt.date) -> int | None:
+    """'속이 보이는 과학' 몇 번째 편인가(1 = 10/25 · 뜯어보기 편은 빼고 센다) — 그 모양 sci 날이 아니면 None."""
+    if not sci_xray(d) or sci_series(d) in (None, TEARDOWN):
+        return None
+    plan = open_plan() if d > SCI_TO else {}
+    n = 0
+    for k in range((d - SCI_XRAY_FROM).days + 1):
+        x = SCI_XRAY_FROM + dt.timedelta(days=k)
+        if x <= SCI_TO or (x in plan and plan[x][0] != TEARDOWN):     # SCI_FROM~SCI_TO 는 매일 sci
+            n += 1
+    return n
+
+
+def sci_label(d: dt.date) -> str | None:
+    """회차 붙은 줄기 이름 — '속이 보이는 과학 #N' · '과학으로 뜯어보는 물건 #K'. 첫 장면 칩·커버·캡션 첫 줄.
+    ★10/30 사용자 '조회를 팔로우로' — 인스타는 대놓고 부탁하는 글을 덜 밀어서(2024-06, '팔로우' 는 금지어) 부탁 대신 회차를 붙여
+    다음 편을 기다리게 한다. 그 모양 sci 날(SCI_XRAY_FROM~)이 아니면 None."""
+    if not sci_xray(d) or sci_slot(d) is None:
+        return None
+    if sci_series(d) == TEARDOWN:
+        return f"{TEARDOWN_SERIES} #{teardown_index(d) + 1}"
+    return f"{XRAY_SERIES} #{xray_no(d)}"
+
+
 def sci_xray(d: dt.date) -> bool:
     """그날 sci 편이 '속이 보이는 과학' 모양인가 — SCI_XRAY_FROM(10/25) 부터. 그 전 날짜는 옛 모양 그대로."""
     return d >= SCI_XRAY_FROM
