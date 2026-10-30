@@ -1171,11 +1171,13 @@ def caption_of(s: dict) -> str:
     # 10/9: 첫 줄 앞에 회차('오늘의 골라보기 #N') · 해시태그 5개 — 코드가 강제한다 · 10/11: 끝 줄은 부탁 없는 열린 질문 하나
     if s.get("kind") in P.BM_KINDS:                        # 병맛: 구어체 한 줄 + 출처 도메인 + 해시태그(회차·질문 없음)
         return _bm().caption_of(s)
-    if s["kind"] == "sci":                                 # sci: 회차 없음 · 훅 한 줄 · 출처 · 열린 질문 · 해시태그 5개
+    if s["kind"] == "sci":                                 # sci: 훅 한 줄 · 출처 · 열린 질문 · 해시태그 5개
         hook = (_hook(s.get("caption") or "").splitlines() or [" ".join(s.get("hook") or [])])[0]
         names = source_names(s.get("sources") or [])
         src = " · ".join(names[:SRC_MAX]) + (" 외" if len(names) > SRC_MAX else "")
         tags = hashtags_of(s)
+        lab = P.sci_label(dt.date.fromisoformat(s["date"])) if s.get("date") else None   # ★10/30 '속이 보이는 과학 #6' 회차
+        hook = f"{lab} · {hook}" if lab and lab not in hook else hook
         return f"{hook}\n\n출처: {src}\n\n{ask_of(s)}" + ("\n\n" + " ".join(tags) if tags else "")
     body = f"{series_label(s)} · {_hook(s['caption'])}"
     if s["kind"] in ("pick", "card"):

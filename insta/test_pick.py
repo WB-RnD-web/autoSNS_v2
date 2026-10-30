@@ -663,9 +663,14 @@ with tempfile.TemporaryDirectory() as tmp:
     ck("확인용 프레임: 첫 프레임 + 장면마다(결과는 열린 질문 뒤)", st[0] == 0.0 and len(st) == len(segs) + 1
        and st[-1] > segs[-1]["start"] + segs[-1]["ask_at"])
 cap = K.caption_of(XS)
-ck("캡션: 훅 한 줄 → 출처(기관) → 열린 질문(compare) → 해시태그 ≤ 5 · 부탁 없음", cap.split("\n")[0] == XS["caption"]
+ck("캡션: 회차 · 훅 한 줄 → 출처(기관) → 열린 질문(compare) → 해시태그 ≤ 5 · 부탁 없음",
+   cap.split("\n")[0] == "속이 보이는 과학 #1 · " + XS["caption"]
    and "출처: San Diego Zoo · NOAA · NPS · USU 외" in cap and K.ASK["sci"]["compare"] in cap and len(TAG.findall(cap)) <= 5
-   and not any(w in cap for w in ("댓글", "보내서", "저장")), cap)
+   and not any(w in cap for w in ("댓글", "보내서", "저장", "팔로우")), cap)
+ck("★10/30 회차: 속이 보이는 과학 10/25 = #1 · 10/30 = #6 · 11/07 = #14 · 그 전 날짜는 회차 없음(옛 모양)",
+   (P.xray_no(D(10, 25)), P.xray_no(D(10, 30)), P.xray_no(D(11, 7))) == (1, 6, 14) and P.sci_label(D(10, 24)) is None
+   and P.sci_label(D(10, 30)) == "속이 보이는 과학 #6" and X.series_of(dict(XS, date="2026-10-30")) == "속이 보이는 과학 #6",
+   (P.xray_no(D(10, 25)), P.xray_no(D(10, 30)), P.xray_no(D(11, 7))))
 src_ = open(os.path.join(HERE, "pick_reel.py"), encoding="utf-8").read()
 ck("pick_reel 이 날짜로 넘긴다(check·render 둘 다 is_xray → sci_xray)", "_xray().check(s) if is_xray(s) else check_sci(s)" in src_
    and "if is_xray(s):" in src_ and "return _xray().render(path, out_dir, work, mock)" in src_)
@@ -1131,8 +1136,9 @@ TDS = {"date": "2026-11-10", "kind": "sci", "src_n": 951, "slug": "microwave-ins
        "sources": TD[0]["sources"], "bench": {"format": "3D 단면 해설 — 대조 훅 → 왜? → 원인 3단계 → 결과"}}
 with pools(teardown=TD):
     ck("뜯어보기 대본(11/10 · 951) 통과 · 첫 장면 칩은 '과학으로 뜯어보는 물건' · 끝 질문은 부품", K.check(TDS) == []
-       and X.series_of(TDS) == P.TEARDOWN_SERIES and K.ask_of(TDS) == K.ASK["sci"]["teardown"] == "어느 부품이 제일 의외였어요?"
-       and K.ASK["sci"]["teardown"] in K.caption_of(TDS) and X.series_of(XS) == X.SERIES, K.check(TDS))
+       and X.series_of(TDS) == P.TEARDOWN_SERIES + " #1" and K.ask_of(TDS) == K.ASK["sci"]["teardown"] == "어느 부품이 제일 의외였어요?"
+       and K.ASK["sci"]["teardown"] in K.caption_of(TDS) and X.series_of(XS) == X.SERIES + " #1"
+       and K.caption_of(TDS).startswith(P.TEARDOWN_SERIES + " #1 · "), K.check(TDS))
     for name, f, want in [
         ("상표 이름(한글)은 막는다", _set(["say_intro"], "삼성 전자레인지 문을 닫으면, 안에선 무슨 일이 생길까요?"), "상표"),
         ("상표 이름(그림 묘사 · 영어)도 막는다", _set(["why", "img"], "a samsung microwave oven with the outer shell cut open"), "상표"),

@@ -57,7 +57,7 @@ SEC = P.SCI_XRAY_SEC                                      # (20, 35)
 TEMPO = K.SCI_TEMPO                                       # 1.1 — 옛 sci 와 같은 빠르기
 SPEEDUP = 1.15
 CPS = 6.4                                                 # 길이 어림 = 읽는 글자(insta.speech_len)/초 — F1 5.9 × 1.1(sci 빠르기) 쯤
-SERIES = "속이 보이는 과학"
+SERIES = P.XRAY_SERIES
 _HANGUL = re.compile(r"[가-힣ㄱ-ㅎㅏ-ㅣ]")
 _SLUG = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 
@@ -162,8 +162,13 @@ def teardown_errs(s: dict) -> list[str]:
 
 
 def series_of(s: dict) -> str:
-    """화면 첫 장면 칩의 시리즈 이름 — 뜯어보기 항목이면 '과학으로 뜯어보는 물건', 아니면 '속이 보이는 과학'."""
-    return P.TEARDOWN_SERIES if P.is_teardown_entry(K.sci_entry_of(s)) else SERIES
+    """화면 첫 장면 칩의 시리즈 이름 — 뜯어보기 항목이면 '과학으로 뜯어보는 물건', 아니면 '속이 보이는 과학'.
+    ★10/30 회차를 붙인다('속이 보이는 과학 #6') — 날짜로 센다(pick_plan.sci_label). 날짜가 없으면 이름만."""
+    try:
+        lab = P.sci_label(dt.date.fromisoformat(s.get("date") or ""))
+    except ValueError:
+        lab = None
+    return lab or (P.TEARDOWN_SERIES if P.is_teardown_entry(K.sci_entry_of(s)) else SERIES)
 
 
 def imgs_of(s: dict) -> list[str]:

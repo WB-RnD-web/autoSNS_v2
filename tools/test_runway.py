@@ -59,6 +59,9 @@ g = by["wb_gunghap"]
 ck("띠 궁합표: 마지막 = gunghap_card.last_day() — 편성일이고 그 뒤로는 편성일이 없다 · 남은 편 = 편성일 수",
    g["last"] == G.last_day() and G.is_post_day(g["last"]) and not any(G.is_post_day(g["last"] + dt.timedelta(days=k)) for k in range(1, 60))
    and g["left"] == sum(G.is_post_day(TODAY + dt.timedelta(days=k)) for k in range(60)), g)
+ck("띠 궁합표 접음(GUNGHAP_STOPPED)이면 꺼짐 · 끝 사유 · 재고 경고에 안 뜬다",
+   not RW.GUNGHAP_STOPPED or (g["limit"] == "off" and g["ended"] == RW.GUNGHAP_STOPPED and g["days_left"] is None
+                              and "wb_gunghap" not in {r["id"] for r in RW.low(rows)}), g)
 ns = by["wb_newyear_series"]
 ck("신년운세 시리즈: 마지막 = newyear_series.last_day() · 남은 편 = schedule 의 오늘 이후", ns["last"] == NS.last_day()
    and ns["left"] == sum(d >= TODAY for d, _ in NS.schedule(D(12, 31, 2027))), ns)

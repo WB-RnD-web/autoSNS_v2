@@ -42,6 +42,9 @@ REFILLABLE = ("nt_shorts", "nt_longform", "wb_gunghap", "wb_lf27", "insta_sci", 
 #   이 값이 있으면 두 줄기는 '꺼짐'이다 → 재고 경고(RUNWAY)도 채우기 루틴도 건드리지 않는다.
 #   다시 열 때: "" 로 비우고 루틴 두 개(쇼츠 trig_011mZ…·롱폼 trig_01A1oU…)를 켠다.
 NT_PAUSED = "10/27 판정 '가망 없음' → 10/28부터 쉬는 중(쇼츠·롱폼 루틴 꺼짐)"
+# ★10/30 띠 궁합표 접기 — 판정(첫 24시간 중앙값 2,757 · 다른 표의 24% < 50%)대로 트리거를 껐다. 목록(6묶음)은 남아 있다.
+#   값이 있으면 '꺼짐' → 재고 경고·채우기 루틴이 안 건드린다. 다시 열 때 "" + 트리거(trig_015YjTm…) 켜기.
+GUNGHAP_STOPPED = "10/30 판정 '접는다'(다른 표의 24%) → 트리거 꺼짐"
 WEEKDAY = "월화수목금토일"
 
 
@@ -87,8 +90,9 @@ def wangbyul(today: dt.date) -> list[dict]:
              refill="없음 — 날짜 순환", note=f"덕담표(blessing_card)는 {pu.BLESS_TO:%m/%d} 로 끝"),
     ]
     g_last = gh.last_day()
-    out.append(_row(ch, "wb_gunghap", f"띠 궁합표(화·금 18:13 · {len(gh.THEMES)}편 시리즈)", "catalog", g_last,
-                    _count(today, g_last, gh.is_post_day),
+    out.append(_row(ch, "wb_gunghap", f"띠 궁합표(화·금 18:13 · {len(gh.THEMES)}편 시리즈)",
+                    "off" if GUNGHAP_STOPPED else "catalog", g_last,
+                    _count(today, g_last, gh.is_post_day), ended=GUNGHAP_STOPPED,
                     refill="pipeline/gunghap_card.py THEMES 끝에 새 묶음 + from(같은 표 다시 안 올린다)"))
     n_last = nc.last_day()
     out.append(_row(ch, "wb_newyear_card", f"2027 신년운세 1차 묶음(월·목 · {len(nc.EPISODES)}편)", "catalog", n_last,
