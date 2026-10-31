@@ -52,6 +52,12 @@ PR 을 낼 때만(위 PR 조건을 전부 만족할 때) fill.pr 를 채우고 p
 - path 는 tools/pulse_experiments.json · tools/pulse_formats.json 만. 그 밖의 변경은 actions 에 local 로 적는다.
 - old 는 붙어 있는 파일 내용을 글자 그대로(들여쓰기 포함) 옮긴다. 테스트·pr.patch 만들기는 코드가 한다.
 - 코드가 돌린 검사에서 오류가 나면 오류 목록을 보내 줄 테니, 고쳐서 ★JSON 전체를 다시 낸다.
+
+검사기(pulse.py check)의 개수·길이 제한 — 넘으면 다시 써야 한다(10/31 시험 두 번 다 evidence·guess 길이로 걸렸다):
+- summary 10~240자 · channels.<ch>.state 2~80자 · evidence ★1~4개, 각 5~220자(숫자 필수) · guess ★0~3개, 각 5~220자
+- direction 1~6개 {topic ≤40, verdict, why ≤260} · trends 1~5개, 각 5~220자 · flags 대응 각 2~200자(오늘 플래그 전부, 그 밖은 없이)
+- actions 0~5개 {what ≤160, who, when ≤30} · predictions 1~3개 · fill.json 전체 12,000자 이하
+- 긴 근거는 쪼개지 말고 줄인다. 넷을 넘으면 덜 중요한 것을 버린다.
 """
 
 
