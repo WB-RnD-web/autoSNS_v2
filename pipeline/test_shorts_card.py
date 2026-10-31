@@ -92,6 +92,41 @@ page = M.build_html([sc], 7.0, spec["accent"])
 ck("표 CSS 가 붙는다", ".cell{" in page and ".topband" not in page)
 ck("최소 길이 7초", spec["_min_total"] == 7.0)
 
+print("── 06:13 매일 운세 스토리보드를 코드로(fortune_card.make · 2026-10-31) ──")
+import json as _json      # noqa: E402
+import tempfile as _tf    # noqa: E402
+import newyear_series as _NS   # noqa: E402
+import pulli_card as _P   # noqa: E402
+ck("MODE: 1일 = 월간 · 월요일 = 주간 · 그 밖 = 오늘(예전 루틴 규칙)",
+   [FC.mode_of(dt.date(2026, 11, d)) for d in (1, 2, 3)] == ["monthly", "weekly", "daily"]
+   and FC.mode_of(dt.date(2027, 2, 1)) == "monthly")
+_bad = []
+for _k in range(60):
+    _d = dt.date(2026, 11, 1) + dt.timedelta(days=_k)
+    _sb = FC.make_storyboard(_d)
+    _top, _s1 = FC.top_from_storyboard(_sb)
+    _base = _d if _d.day != 1 and _d.weekday() != 0 else (_d.replace(day=1) if _d.day == 1 else _d)
+    _b = _P.ganzhi(_base)["branch"]
+    _rels = {_P.relation(_b, FC.ANIMALS.index(a))[0] for a in _top}
+    if not (len(_top) == 3 and len(set(_top)) == 3 and _s1 and 88 <= _s1 <= 97 and _rels <= {"육합", "삼합"}
+            and FC.use_card(_sb) and FC.scope_of(_sb) == {"daily": "오늘", "weekly": "이번 주", "monthly": "이번 달"}[FC.mode_of(_d)]
+            and len(_sb["thumbnail_text"]) <= 14 and "no text" in _sb["thumbnail_hook"]):
+        _bad.append((str(_d), _top, _s1, _rels))
+ck("60일: 표가 1~3위 셋·1위 점수(88~97)를 읽는다 · 셋 다 그날 일진과 육합·삼합 · 범위(오늘/주/달) 맞음", not _bad, str(_bad[:3]))
+_sb = FC.make_storyboard(dt.date(2026, 10, 31))
+ck("10/31 무인일(호랑이의 날): 1~3위 = 돼지(육합)·말·개(인오술 삼합)", sorted(FC.top_from_storyboard(_sb)[0]) == sorted(["돼지", "말", "개"]))
+ck("같은 날짜면 늘 같은 스토리보드", FC.make_storyboard(dt.date(2026, 11, 5)) == FC.make_storyboard(dt.date(2026, 11, 5)))
+ck("화·토는 여전히 신년 시리즈가 자리를 가져간다(newyear_series.use_slot)",
+   _NS.use_slot(FC.make_storyboard(dt.date(2026, 11, 3))) and not _NS.use_slot(FC.make_storyboard(dt.date(2026, 11, 4))))
+ck("파일 이름 = output/news/<날짜>_fortune_storyboard.json(shorts.yml 경로·ledger 키 그대로)",
+   FC.path_for(dt.date(2026, 11, 4)).replace("\\", "/").endswith("output/news/2026-11-04_fortune_storyboard.json")
+   and _sb["topic"] == "fortune" and _sb["date"] == "2026-10-31")
+with _tf.TemporaryDirectory() as _td:
+    _out = os.path.join(_td, "x.json")
+    FC.main(["make", "--date", "2026-11-04", "--out", _out])
+    with open(_out, encoding="utf-8") as _f:
+        ck("make 명령이 파일을 쓴다", _json.load(_f) == FC.make_storyboard(dt.date(2026, 11, 4)))
+
 print("── 뉴스 첫 화면 헤드라인 ──")
 ck("정치는 켠다", M.top_hook_on("politics") and M.top_hook_on("stock_us"))
 ck("운세·별자리는 끈다", not M.top_hook_on("fortune") and not M.top_hook_on("horoscope"))
