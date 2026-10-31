@@ -115,6 +115,9 @@ for _br in ("data/trend-radar", "data/ai-news-feed", "data/anything", "pulse/202
 #   업로드 워크플로가 깨면 안 된다. refill-pr.yml 은 읽기 권한 + PR 열기만(push·업로드·비밀 없음).
 ck("refill/insta_sci-20261101 에 반응하는 push 워크플로는 refill-pr.yml 하나",
    reacting("refill/insta_sci-20261101") == ["refill-pr.yml"], str(reacting("refill/insta_sci-20261101")))
+# 맥박 API 판 머지 전 시험 브랜치(api-test/pulse) — 깨는 건 pulse-api.yml 하나(업로드 워크플로 아님).
+ck("api-test/pulse 에 반응하는 push 워크플로는 pulse-api.yml 하나",
+   reacting("api-test/pulse") == ["pulse-api.yml"], str(reacting("api-test/pulse")))
 _rp = flows.get("refill-pr.yml", "")
 ck("refill-pr.yml: 읽기 권한 + PR 쓰기만 · secrets 안 씀 · 채우기 검사·전체 테스트 뒤에 PR",
    re.search(r"(?m)^\s*contents:\s*read", _rp) is not None and "pull-requests: write" in _rp and "secrets." not in _rp
@@ -123,9 +126,10 @@ ck("refill-pr.yml: 읽기 권한 + PR 쓰기만 · secrets 안 씀 · 채우기 
 print("\n── 4. 쓰기 권한은 데이터 브랜치·맥박 PR 브랜치 워크플로에만 ──")
 # 쓰기 권한은 '데이터 브랜치에 고아 커밋을 미는' 워크플로(트렌드 레이더, 2026-10-01 #112)와
 #   채널 맥박(pulse.yml — 분석 루틴이 제안한 개선 PR 브랜치 pulse/<날짜>-<slug> 만 push, 2026-10-05)에만.
-WRITERS = {"trend-radar.yml": "data/trend-radar", "pulse.yml": "refs/heads/$BR"}
+# 맥박 API 판(pulse-api.yml, 2026-10-31)은 비교 기간 동안 data/pulse-api 에만 쓴다.
+WRITERS = {"trend-radar.yml": "data/trend-radar", "pulse.yml": "refs/heads/$BR", "pulse-api.yml": "data/pulse-api"}
 _w = sorted(n for n, t in flows.items() if re.search(r"(?m)^\s*contents:\s*write", t))
-ck("contents: write 는 WRITERS(트렌드 레이더·맥박 PR 브랜치)에만", _w == sorted(WRITERS), str(_w))
+ck("contents: write 는 WRITERS(트렌드 레이더·맥박 PR 브랜치·맥박 API 판)에만", _w == sorted(WRITERS), str(_w))
 for _wf, _br in WRITERS.items():
     _t = flows.get(_wf, "")
     _p = [ln for ln in _t.splitlines() if "git" in ln and " push" in ln and not ln.strip().startswith("#")]
