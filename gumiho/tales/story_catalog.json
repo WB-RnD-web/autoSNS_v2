@@ -1974,7 +1974,7 @@
     },
     {
      "say": "And he steps off.",
-     "edit": "He falls away from the gondola in a sitting position, tiny against the cloud layer far below, seen from the gondola edge looking down.",
+     "edit": "Seen from above, he tumbles alone through empty open sky in a sitting position, arms spread, a vast layer of white clouds far below him and nothing around him.",
      "move": "punch",
      "fx": "none",
      "sfx": "whoosh"
@@ -2004,7 +2004,7 @@
     },
     {
      "say": "His main parachute opens around {17,500 feet,|seventeen thousand five hundred feet,}",
-     "edit": "His large main parachute blooms open above him in bright sunlight, clouds below.",
+     "edit": "He hangs alone in the open sky from the harness lines of a large round main parachute that has just bloomed open above him, legs dangling, clouds below.",
      "move": "tilt_up",
      "fx": "none",
      "sfx": "whoosh"
