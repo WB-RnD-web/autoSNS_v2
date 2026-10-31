@@ -1,0 +1,771 @@
+{
+ "about": "인스타 밤 편(c) '위험한 진짜 이유' — 크림 카드(프로필 줄 + 굵은 두 줄 제목 '…가 위험한 / 진짜 이유') · 가운데 동물 실사 AI 그림(5B 로 앞 1.4초 움직임) · 헛짚기 한 줄 → 끝 무렵 귀엽고 해롭지 않은 진짜 사실 한 줄 + 덧붙임 + 출처 줄. 날짜 순서는 pick_plan.c_plan(11/08 이 첫 장 · 이틀에 한 편). 작가는 사실·숫자를 이 facts 에서만 — facts 마다 원문 문장(evidence)을 2026-10-31 직접 열어 확인했다. 그림이 실제 종과 다를 수 있으면 image_note — 코드가 캡션 AI 표시 줄에 밝힌다. 새 항목은 끝에만 + from(붙이는 날 다음 날 이후). 번호 601~700.",
+ "entries": [
+  {
+   "n": 601,
+   "slug": "jellyfish-sleep",
+   "from": "2026-11-08",
+   "animal_ko": "해파리",
+   "title": [
+    "해파리가 위험한",
+    "진짜 이유"
+   ],
+   "image": "Photoreal close-up photo of a single softly glowing translucent jellyfish drifting in calm deep blue water, delicate trailing tentacles, gentle floating particles, soft light from above, clean dark blue background, centered subject with space around it, 3:2 landscape",
+   "motion": "The jellyfish bell pulses slowly and its tentacles sway gently, static camera, very subtle movement",
+   "tease_idea": "독침 때문에…?",
+   "payoff_idea": "뇌가 없는데 잠은 꼬박꼬박 잔다",
+   "aside_idea": "밤엔 몸 박동이 3분의 1쯤 줄어듦",
+   "facts": [
+    {
+     "fact": "The upside-down jellyfish Cassiopea has no brain and spends essentially its entire life sitting upside down on the ocean floor, pulsing every few seconds.",
+     "src": 0,
+     "evidence": "Cassiopea is brainless, spineless, and spends essentially its entire life sitting upside down on the ocean floor, pulsating every few seconds."
+    },
+    {
+     "fact": "At night the jellyfish pulsed only about 39 times per minute, compared to about 58 times per minute during the day (about 1/3 fewer pulses, converted).",
+     "src": 0,
+     "evidence": "They discovered that the jellyfish go through periods of inactivity at night, only pulsing about 39 times per minute, compared to about 58 times per minute during the day."
+    },
+    {
+     "fact": "In the sleep-like state, a jellyfish whose platform was pulled away floated in the water for up to five seconds before 'waking up' and reorienting itself (an alert one swims to the bottom immediately).",
+     "src": 0,
+     "evidence": "But the jellyfish in a sleep state floated in the water for up to five seconds before \"waking up\" and reorienting itself."
+    },
+    {
+     "fact": "When kept awake at night, Cassiopea showed decreased activity and reduced responsiveness to a stimulus the following day.",
+     "src": 1,
+     "evidence": "When deprived of nighttime quiescence, Cassiopea exhibited decreased activity and reduced responsiveness to a sensory stimulus during the subsequent day, consistent with homeostatic regulation of the quiescent state."
+    },
+    {
+     "fact": "The quiet state was seen at night across consecutive days and nights and is rapidly reversible.",
+     "src": 1,
+     "evidence": "Monitoring of Cassiopea pulsing activity for consecutive days and nights revealed behavioral quiescence at night that is rapidly reversible, as well as a delayed response to stimulation in the quiescent state."
+    }
+   ],
+   "sources": [
+    "https://www.caltech.edu/about/news/surprising-ancient-behavior-jellyfish-79701",
+    "https://authors.library.caltech.edu/81662"
+   ],
+   "source_label": "Current Biology 2017 · 칼텍 연구",
+   "careful": [
+    "The paper calls it a 'sleep-like state', shown in lab studies of the upside-down jellyfish Cassiopea only; don't claim all jellyfish are proven to sleep.",
+    "'3분의 1' is computed from about 58 → 39 pulses per minute (about 33% fewer); the press release gives the two rates, not the fraction.",
+    "Paper DOI: 10.1016/j.cub.2017.08.014."
+   ],
+   "image_note": "화면은 일반 해파리, 연구 대상은 거꾸로해파리"
+  },
+  {
+   "n": 602,
+   "slug": "sea-otter-pocket",
+   "from": "2026-11-08",
+   "animal_ko": "해달",
+   "title": [
+    "해달이 위험한",
+    "진짜 이유"
+   ],
+   "image": "Photoreal photo of a fluffy sea otter floating on its back in calm blue-green water, front paws resting on its chest, wet whiskers and dense fur detail, soft daylight, simple blurred water background, 3:2 landscape",
+   "motion": "The otter bobs gently on small ripples and blinks slowly, static camera, very subtle movement",
+   "tease_idea": "날카로운 이빨 때문에…?",
+   "payoff_idea": "앞발 밑에 먹이 주머니가 있다",
+   "aside_idea": "하루에 몸무게 4분의 1쯤 먹는다",
+   "facts": [
+    {
+     "fact": "A sea otter's coat has pockets: loose skin under each forearm that it uses to stash prey during a dive, which leaves its paws free to hunt for more.",
+     "src": 0,
+     "evidence": "An otter's coat has pockets—loose skin under each forearm they use to stash prey during a dive, which leaves their paws free to hunt for more."
+    },
+    {
+     "fact": "A single sea otter eats about a quarter of its body weight each day (about 1/4, converted).",
+     "src": 0,
+     "evidence": "Otters stay warm thanks to their high metabolism and hefty appetite to match—a single sea otter eats about a quarter of their body weight each day."
+    },
+    {
+     "fact": "Sea otters have the world's densest fur, more than a million hairs per square inch (about 155,000 per square centimetre, converted).",
+     "src": 0,
+     "evidence": "To stay warm in chilly ocean waters, they have the world's densest fur—at its thickest, this two-layer fur is made up of more than a million hairs per square inch."
+    },
+    {
+     "fact": "If dinner is a crab or clam, the otter may use a rock to crack open its prey.",
+     "src": 0,
+     "evidence": "(And if dinner is a crab or clam, the otter may use a rock to crack open its prey.)"
+    }
+   ],
+   "sources": [
+    "https://www.montereybayaquarium.org/animals/animals-a-to-z/sea-otter"
+   ],
+   "source_label": "몬터레이베이 아쿠아리움",
+   "careful": [
+    "The 'pocket' is a fold of loose skin under each forearm, not a true pouch; the source says it is for stashing prey during dives — don't claim it holds a 'favourite rock'.",
+    "Holding hands while sleeping is relatively rare — don't present it as a general fact."
+   ],
+   "image_note": ""
+  },
+  {
+   "n": 603,
+   "slug": "octopus-three-hearts",
+   "from": "2026-11-08",
+   "animal_ko": "문어",
+   "title": [
+    "문어가 위험한",
+    "진짜 이유"
+   ],
+   "image": "Photoreal photo of a single reddish-orange octopus resting on smooth pale sand, large curious eyes, arms curled softly around it, clear shallow blue water, simple clean background, 3:2 landscape",
+   "motion": "The octopus breathes slowly and its arm tips curl gently, static camera, very subtle movement",
+   "tease_idea": "먹물 때문에…?",
+   "payoff_idea": "심장이 세 개, 피는 파란색",
+   "aside_idea": "헤엄칠 땐 심장 하나가 멈춘다",
+   "facts": [
+    {
+     "fact": "Giant Pacific octopuses have blue blood, eight arms and three hearts.",
+     "src": 0,
+     "evidence": "Giant Pacific octopuses have blue blood, eight arms and three hearts!"
+    },
+    {
+     "fact": "Two of the three hearts move blood past the gills, where it releases carbon dioxide and gains oxygen.",
+     "src": 1,
+     "evidence": "Two of the hearts work exclusively to move blood past the animal’s gills, where it releases carbon dioxide and gains oxygen."
+    },
+    {
+     "fact": "The third heart circulates the oxygen-rich blood to the organs and muscles.",
+     "src": 1,
+     "evidence": "Then, the third heart circulates that oxygen-rich blood to the organs and muscles, giving them energy."
+    },
+    {
+     "fact": "That third heart actually stops beating when the octopus swims, which helps explain why octopuses tend to crawl rather than swim.",
+     "src": 1,
+     "evidence": "But the latter heart actually stops beating when the octopus swims, explaining the species’ penchant for crawling rather than swimming, which exhausts them."
+    },
+    {
+     "fact": "Octopus blood uses a copper-containing protein (hemocyanin) instead of iron-based hemoglobin, and the copper makes it appear blue.",
+     "src": 1,
+     "evidence": "Whereas our iron-rich blood is red when it meets oxygen, the copper in octopus blood makes it appear blue."
+    }
+   ],
+   "sources": [
+    "https://www.seattleaquarium.org/animals/giant-pacific-octopus/",
+    "https://www.smithsonianmag.com/science-nature/ten-wild-facts-about-octopuses-they-have-three-hearts-big-brains-and-blue-blood-7625828/"
+   ],
+   "source_label": "시애틀 아쿠아리움 · 스미소니언 매거진",
+   "careful": [
+    "Keep the swimming-heart line qualitative ('멈춘다'); no timing or numbers are given.",
+    "Avoid the 'arms have neurons/brains' angle — already used on the account."
+   ],
+   "image_note": ""
+  },
+  {
+   "n": 604,
+   "slug": "rat-tickle-laugh",
+   "from": "2026-11-08",
+   "animal_ko": "쥐",
+   "title": [
+    "쥐가 위험한",
+    "진짜 이유"
+   ],
+   "image": "Photoreal close-up photo of a cute young rat with soft white and light brown fur sitting upright on a plain cream blanket, bright dark eyes, pink nose and long whiskers, soft window light, simple background, 3:2 landscape",
+   "motion": "The rat twitches its nose and whiskers and tilts its head slightly, static camera, very subtle movement",
+   "tease_idea": "병을 옮겨서…?",
+   "payoff_idea": "간지럼 태우면 웃는다",
+   "aside_idea": "배랑 발바닥이 제일 간지럼 탄다",
+   "facts": [
+    {
+     "fact": "Earlier work showed that young rats respond to tickling by humans with 50 kHz ultrasonic 'laughter-calls'.",
+     "src": 0,
+     "evidence": "Earlier work had shown that young rats respond with 50 kHz ultrasonic “laughter-calls” to tickling by humans."
+    },
+    {
+     "fact": "In the newer study the rats reacted enthusiastically to tickling and emitted numerous calls.",
+     "src": 0,
+     "evidence": "In the novel study rats also reacted enthusiastically to the tickling: they emitted numerous calls."
+    },
+    {
+     "fact": "Judged by their calls, rats were most ticklish on the belly and underneath their feet.",
+     "src": 0,
+     "evidence": "As judged by their calls, rats were most ticklish on the belly and underneath their feet."
+    },
+    {
+     "fact": "Rats often performed unsolicited 'joy jumps' after tickling.",
+     "src": 0,
+     "evidence": "Rats often performed unsolicited joy jumps (Freudensprünge) after tickling, a behavior that can be seen in joyful subjects in various mammalian species."
+    },
+    {
+     "fact": "Making rats anxious reduced ticklishness and suppressed the calls.",
+     "src": 0,
+     "evidence": "Making rats anxious – which reduces ticklishness ¬– also reduced the activity in these cells and suppressed the calls."
+    }
+   ],
+   "sources": [
+    "https://idw-online.de/en/news662997"
+   ],
+   "source_label": "Science 2016 · 베를린 훔볼트대",
+   "careful": [
+    "The 'laugh' is an ultrasonic (50 kHz) call, too high for people to hear directly; 'laughter' is the researchers' analogy — hedge if needed ('웃음소리 같은 소리').",
+    "Anxious rats called less — don't imply every rat always laughs.",
+    "Source is Humboldt-Universität zu Berlin's press release (via idw); paper: Science 2016, 'Neural correlates of ticklishness in the rat somatosensory cortex'."
+   ],
+   "image_note": ""
+  },
+  {
+   "n": 605,
+   "slug": "bumblebee-ball-play",
+   "from": "2026-11-08",
+   "animal_ko": "호박벌",
+   "title": [
+    "호박벌이 위험한",
+    "진짜 이유"
+   ],
+   "image": "Photoreal macro photo of a single fluffy bumblebee standing next to a tiny round wooden ball on a smooth pale surface, soft natural light, shallow depth of field, simple clean background, 3:2 landscape",
+   "motion": "The bumblebee shifts its legs and its wings flutter faintly, static camera, very subtle movement",
+   "tease_idea": "침에 쏘여서…?",
+   "payoff_idea": "보상이 없어도 공놀이를 한다",
+   "aside_idea": "공을 117번이나 굴린 벌도 있었다",
+   "facts": [
+    {
+     "fact": "In experiments, bumblebees went out of their way to roll wooden balls repeatedly despite there being no apparent incentive.",
+     "src": 0,
+     "evidence": "The team of researchers set up numerous experiments to test their hypothesis, which showed that bumble bees went out of their way to roll wooden balls repeatedly despite there being no apparent incentive for doing so."
+    },
+    {
+     "fact": "Individual bees rolled balls between 1 and 117 times over the experiment.",
+     "src": 0,
+     "evidence": "Individual bees rolled balls between 1 and, impressively, 117 times over the experiment."
+    },
+    {
+     "fact": "Younger bees rolled more balls than older bees, and male bees rolled them for longer than females.",
+     "src": 0,
+     "evidence": "The study also found that younger bees rolled more balls than older bees, mirroring human behaviour of young children and other juvenile mammals and birds being the most playful, and that male bees rolled them for longer than their female counterparts."
+    },
+    {
+     "fact": "The bees were not trained and got no food for rolling; it was voluntary and spontaneous, akin to play.",
+     "src": 0,
+     "evidence": "The new research showed the bees rolling balls repeatedly without being trained and without receiving any food for doing so - it was voluntary and spontaneous - therefore akin to play behaviour as seen in other animals."
+    }
+   ],
+   "sources": [
+    "https://www.qmul.ac.uk/news/latest-news/2022/se/first-ever-study-shows-bumble-bees-play.html"
+   ],
+   "source_label": "Animal Behaviour 2022 · 런던 퀸메리대",
+   "careful": [
+    "'호박벌' is used as the familiar Korean name for bumblebees; the study used lab bumblebees (뒤영벌류), not honeybees.",
+    "'Play' is the researchers' interpretation of voluntary ball-rolling in a lab arena; small wooden balls, not real footballs."
+   ],
+   "image_note": ""
+  },
+  {
+   "n": 606,
+   "slug": "dolphin-name-whistle",
+   "from": "2026-11-08",
+   "animal_ko": "돌고래",
+   "title": [
+    "돌고래가 위험한",
+    "진짜 이유"
+   ],
+   "image": "Photoreal photo of a single friendly bottlenose dolphin with its head above calm turquoise water, glossy grey skin, gentle smiling mouth line, soft sunlight, simple sea and sky background, 3:2 landscape",
+   "motion": "The dolphin bobs gently and small ripples spread around it, static camera, very subtle movement",
+   "tease_idea": "이빨이 많아서…?",
+   "payoff_idea": "자기 '이름' 휘파람에 대답한다",
+   "aside_idea": "'이름'은 각자 익혀 만든 휘파람",
+   "facts": [
+    {
+     "fact": "Bottlenose dolphins develop their own unique identity signal, the signature whistle.",
+     "src": 0,
+     "evidence": "Bottlenose dolphins develop their own unique identity signal, the signature whistle."
+    },
+    {
+     "fact": "Wild bottlenose dolphins respond to hearing a copy of their own signature whistle by calling back.",
+     "src": 0,
+     "evidence": "Here, we show that wild bottlenose dolphins respond to hearing a copy of their own signature whistle by calling back."
+    },
+    {
+     "fact": "They did not respond to whistles that were not their own signature.",
+     "src": 0,
+     "evidence": "Animals did not respond to whistles that were not their own signature."
+    },
+    {
+     "fact": "A signature whistle is a learned, individually distinctive whistle that broadcasts the identity of its owner.",
+     "src": 0,
+     "evidence": "A signature whistle is a learned, individually distinctive whistle type in a dolphin’s repertoire that broadcasts the identity of the whistle owner (16)."
+    }
+   ],
+   "sources": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC3740840/"
+   ],
+   "source_label": "PNAS 2013 · 야생 큰돌고래 연구",
+   "careful": [
+    "'Name' is an analogy: the study shows dolphins answer copies of their own signature whistle; it is not human-like language.",
+    "Shown in wild bottlenose dolphins (큰돌고래); don't generalise to every dolphin species."
+   ],
+   "image_note": ""
+  },
+  {
+   "n": 607,
+   "slug": "flamingo-color-drain",
+   "from": "2026-11-08",
+   "animal_ko": "홍학",
+   "title": [
+    "홍학이 위험한",
+    "진짜 이유"
+   ],
+   "image": "Photoreal photo of a single pink flamingo standing in calm shallow water, elegant curved neck, soft pastel morning light, smooth reflections, simple blurred background, 3:2 landscape",
+   "motion": "The flamingo tilts its head slightly and the water ripples softly, static camera, very subtle movement",
+   "tease_idea": "부리가 무서워서…?",
+   "payoff_idea": "새끼 키우다 분홍색이 빠진다",
+   "aside_idea": "아기 땐 회색 솜털, 테니스공만 하다",
+   "facts": [
+    {
+     "fact": "As flamingo parents feed their chicks crop milk, they are drained of colour so much that their plumage turns pale pink or white.",
+     "src": 0,
+     "evidence": "As the parents feed their chicks the crop milk, they are drained of their color—so much so that their plumage turns a pale pink or white!"
+    },
+    {
+     "fact": "Parents gain the colour back as the chicks become independent and feed themselves.",
+     "src": 0,
+     "evidence": "The parents gain this color back eventually as the chicks become independent and eat on their own."
+    },
+    {
+     "fact": "The pink or reddish colour comes from carotenoid pigments in the algae and small crustaceans they eat.",
+     "src": 0,
+     "evidence": "The flamingo’s pink or reddish color comes from the rich sources of carotenoid pigments (like the pigments of carrots) in the algae and small crustaceans the birds eat."
+    },
+    {
+     "fact": "At hatching, a flamingo chick has gray down feathers and is the size of a tennis ball.",
+     "src": 0,
+     "evidence": "At hatching, a flamingo chick has gray down feathers and is the size of a tennis ball."
+    },
+    {
+     "fact": "Both males and females can feed the chick crop milk.",
+     "src": 0,
+     "evidence": "Both males and females can feed the chick this way, and even flamingos that are not the parents can act as foster-feeders."
+    }
+   ],
+   "sources": [
+    "https://animals.sandiegozoo.org/animals/flamingo"
+   ],
+   "source_label": "샌디에이고 동물원",
+   "careful": [
+    "The colour loss is temporary — parents regain it once chicks feed themselves; don't say they turn white forever.",
+    "'Crop milk' comes from the parents' upper digestive tract — keep wording gentle ('새끼에게 먹이를 주느라')."
+   ],
+   "image_note": ""
+  },
+  {
+   "n": 608,
+   "slug": "polar-bear-clear-fur",
+   "from": "2026-11-08",
+   "animal_ko": "북극곰",
+   "title": [
+    "북극곰이 위험한",
+    "진짜 이유"
+   ],
+   "image": "Photoreal photo of a fluffy polar bear cub lying on clean white snow, chin resting on its front paws, soft overcast light, simple pale blue background, 3:2 landscape",
+   "motion": "The cub blinks slowly and its fur stirs in a light breeze, static camera, very subtle movement",
+   "tease_idea": "발톱이 날카로워서…?",
+   "payoff_idea": "하얀 털이 사실은 투명하다",
+   "aside_idea": "발바닥에도 털이 있어서 안 미끄러진다",
+   "facts": [
+    {
+     "fact": "Even though polar bears look white, their hair is really made of clear, hollow tubes filled with air.",
+     "src": 0,
+     "evidence": "Even though polar bears look white, their hair is really made of clear, hollow tubes filled with air."
+    },
+    {
+     "fact": "Stiff fur on the sole of each foot keeps polar bears from slipping on the ice.",
+     "src": 0,
+     "evidence": "Stiff fur on the sole of each foot keeps polar bears from slipping on the ice."
+    },
+    {
+     "fact": "Diet oils, sun oxidation or residue can make the 'white' fur look cream or yellow.",
+     "src": 0,
+     "evidence": "Oils from their diet, oxidation from the sun, or residue on their fur can cause their “white” fur to appear cream colored or yellow."
+    },
+    {
+     "fact": "Cubs weigh just over a pound (0.5 kg) at birth and are born hairless with their eyes closed.",
+     "src": 0,
+     "evidence": "Cubs weigh just over a pound (0.5 kilograms) when born and are hairless and have their eyes closed at birth."
+    }
+   ],
+   "sources": [
+    "https://animals.sandiegozoo.org/animals/polar-bear"
+   ],
+   "source_label": "샌디에이고 동물원",
+   "careful": [
+    "Polar bears are genuinely dangerous wild predators — the joke must not suggest they are safe to approach.",
+    "Don't add the popular 'hairs work like fibre optics' or 'black skin' lines — not in this source (the fibre-optic idea is disputed)."
+   ],
+   "image_note": ""
+  },
+  {
+   "n": 609,
+   "slug": "panda-bamboo-hours",
+   "from": "2026-11-08",
+   "animal_ko": "판다",
+   "title": [
+    "판다가 위험한",
+    "진짜 이유"
+   ],
+   "image": "Photoreal photo of a giant panda sitting and holding a green bamboo stalk with both paws, chewing contentedly, soft green bamboo forest blur behind, gentle daylight, 3:2 landscape",
+   "motion": "The panda chews slowly and its ears twitch slightly, static camera, very subtle movement",
+   "tease_idea": "곰이라서…?",
+   "payoff_idea": "하루 최소 12시간 대나무를 먹는다",
+   "aside_idea": "가짜 엄지로 대나무를 꽉 쥔다",
+   "facts": [
+    {
+     "fact": "Giant pandas spend at least 12 hours each day eating bamboo.",
+     "src": 0,
+     "evidence": "They spend at least 12 hours each day eating bamboo."
+    },
+    {
+     "fact": "About 99% of a giant panda's diet is bamboo.",
+     "src": 0,
+     "evidence": "Giant pandas have also been known to eat grasses, bulbs, fruits, some insects, and even rodents and carrion—but about 99% of their diet is bamboo."
+    },
+    {
+     "fact": "They grasp bamboo stalks using five digits plus an enlarged wrist bone called a 'pseudo-thumb'.",
+     "src": 0,
+     "evidence": "They grasp bamboo stalks using their five digits and an enlarged wrist bone called a “pseudo-thumb.”"
+    },
+    {
+     "fact": "Pandas can eat 25 types of bamboo but usually eat only the 4 or 5 kinds that grow in their home range.",
+     "src": 0,
+     "evidence": "Giant pandas can eat 25 different types of bamboo, but they usually eat only the 4 or 5 kinds that grow in their home range."
+    }
+   ],
+   "sources": [
+    "https://animals.sandiegozoo.org/animals/giant-panda"
+   ],
+   "source_label": "샌디에이고 동물원",
+   "careful": [
+    "Say '대나무를 먹는다', not '대나무만' — bamboo is about 99% of the diet, not 100%.",
+    "The pseudo-thumb is an enlarged wrist bone, not a real thumb — '가짜 엄지' is fine."
+   ],
+   "image_note": ""
+  },
+  {
+   "n": 610,
+   "slug": "snow-leopard-tail-blanket",
+   "from": "2026-11-08",
+   "animal_ko": "눈표범",
+   "title": [
+    "눈표범이 위험한",
+    "진짜 이유"
+   ],
+   "image": "Photoreal photo of a snow leopard curled up on a smooth grey rock, its long thick spotted tail wrapped around its body and face like a blanket, soft snowy light, simple pale mountain background, 3:2 landscape",
+   "motion": "The snow leopard breathes slowly and the tail tip twitches gently, static camera, very subtle movement",
+   "tease_idea": "날카로운 이빨 때문에…?",
+   "payoff_idea": "긴 꼬리를 담요처럼 두른다",
+   "aside_idea": "꼬리가 몸길이만큼 길 때도 있다",
+   "facts": [
+    {
+     "fact": "The snow leopard's long, thick tail acts as a built-in comforter when the cat wraps it around its body for added warmth.",
+     "src": 0,
+     "evidence": "The snow leopard's long, thick, and luxurious tail acts as a built-in comforter when the cat wraps it around its body for added warmth."
+    },
+    {
+     "fact": "The tail also helps with balance and is sometimes as long as the cat's body.",
+     "src": 0,
+     "evidence": "The snow leopard's incredibly long, thick, and beautiful tail also helps with balance and is sometimes as long as the cat's body!"
+    },
+    {
+     "fact": "Tail length is 31 to 39 inches (80 to 100 centimeters).",
+     "src": 0,
+     "evidence": "Tail length: 31 to 39 inches (80 to 100 centimeters)"
+    }
+   ],
+   "sources": [
+    "https://animals.sandiegozoo.org/animals/snow-leopard"
+   ],
+   "source_label": "샌디에이고 동물원",
+   "careful": [
+    "The source says the tail is wrapped around the body for warmth; it doesn't say 'only when sleeping' — keep '두른다', or hedge '자면서 두르기도'.",
+    "Snow leopards are wild big cats; the joke is about the cosy tail, not tameness."
+   ],
+   "image_note": ""
+  },
+  {
+   "n": 611,
+   "slug": "crocodile-mouth-taxi",
+   "from": "2026-11-08",
+   "animal_ko": "악어",
+   "title": [
+    "악어가 위험한",
+    "진짜 이유"
+   ],
+   "image": "Photoreal photo of a calm mother crocodile resting at the edge of a quiet river with several tiny baby crocodiles sitting on her back and head, soft warm light, simple blurred green background, 3:2 landscape",
+   "motion": "The baby crocodiles shift slightly and the water ripples softly, static camera, very subtle movement",
+   "tease_idea": "무는 힘 때문에…?",
+   "payoff_idea": "새끼를 입에 넣어 물까지 데려다준다",
+   "aside_idea": "새끼는 알 속에서부터 엄마를 부른다",
+   "facts": [
+    {
+     "fact": "After the young hatch, the crocodilian mother carries them to the water in her mouth and then guards them for most of their first year.",
+     "src": 0,
+     "evidence": "After the young have hatched, the mother carries them to the water in her mouth and then guards them for most of the first year of their lives."
+    },
+    {
+     "fact": "Babies ready to hatch make grunting or barking noises from inside the egg.",
+     "src": 0,
+     "evidence": "When the babies are ready to hatch, they make grunting or barking noises from inside the egg and use a short little tooth on the end of their snout, called an “egg tooth,” to start breaking out of the leathery shell."
+    },
+    {
+     "fact": "Crocs can hear their young calling from inside their eggshells.",
+     "src": 0,
+     "evidence": "Crocs can even hear their young calling from inside their eggshells."
+    },
+    {
+     "fact": "Sometimes the babies ride on their mother's back.",
+     "src": 0,
+     "evidence": "Although they know how to swim from the time they hatch, sometimes the babies get to ride on Mom’s back, too."
+    },
+    {
+     "fact": "Crocodilian moms take really good care of their hatchlings.",
+     "src": 0,
+     "evidence": "For such ancient, fierce-looking animals, crocodilian moms take really good care of their hatchlings."
+    }
+   ],
+   "sources": [
+    "https://animals.sandiegozoo.org/animals/crocodilian"
+   ],
+   "source_label": "샌디에이고 동물원",
+   "careful": [
+    "The source describes crocodilians (crocodiles, alligators, caimans) in general; behaviour varies by species — keep it general ('악어 엄마는').",
+    "Crocodiles are genuinely dangerous; nothing should suggest approaching them.",
+    "Image shows babies riding on her back (supported); avoid babies inside open jaws, which can look like eating."
+   ],
+   "image_note": ""
+  },
+  {
+   "n": 612,
+   "slug": "goat-accent",
+   "from": "2026-11-08",
+   "animal_ko": "염소",
+   "title": [
+    "염소가 위험한",
+    "진짜 이유"
+   ],
+   "image": "Photoreal photo of three fluffy baby goats standing close together on soft green grass, curious faces and floppy ears, soft afternoon light, simple blurred green background, 3:2 landscape",
+   "motion": "The baby goats flick their ears and one tilts its head, static camera, very subtle movement",
+   "tease_idea": "뿔로 들이받아서…?",
+   "payoff_idea": "친구 따라 울음 '사투리'가 생긴다",
+   "aside_idea": "같이 클수록 울음소리가 더 닮아간다",
+   "facts": [
+    {
+     "fact": "Goat kids modify their calls according to their social surroundings, developing similar 'accents'.",
+     "src": 0,
+     "evidence": "This suggests that goat kids modify their calls according their social surroundings, developing similar ‘accents’."
+    },
+    {
+     "fact": "Calls of kids raised in the same social group were similar to each other and became more similar as the kids grew older.",
+     "src": 0,
+     "evidence": "But the calls of kids raised in the same social groups were also similar to each other, and became more similar as the kids grew older."
+    },
+    {
+     "fact": "Kids were recorded at one week old and at five weeks old, when they form same-age social groups called crèches.",
+     "src": 0,
+     "evidence": "They were recorded during two socially and ecologically distinct periods: at one week old, when they typically stay hidden from predators with their siblings; and at five weeks old, when they form social groups with animals of the same age, known as ‘crèches’."
+    },
+    {
+     "fact": "The study used four groups of pygmy goats who were all full or half siblings.",
+     "src": 0,
+     "evidence": "The team studied four groups of pygmy goats, who were all full or half siblings."
+    }
+   ],
+   "sources": [
+    "https://www.qmul.ac.uk/sbbs/news/items/youve-got-to-be-kidding-me.html"
+   ],
+   "source_label": "Animal Behaviour 2012 · 런던 퀸메리대",
+   "careful": [
+    "'Accent/사투리' is the researchers' analogy for calls converging within a group, not a human-like dialect.",
+    "Study on pygmy goat kids; related kids also sounded alike (genes matter too)."
+   ],
+   "image_note": ""
+  },
+  {
+   "n": 613,
+   "slug": "gorilla-food-humming",
+   "from": "2026-11-08",
+   "animal_ko": "고릴라",
+   "title": [
+    "고릴라가 위험한",
+    "진짜 이유"
+   ],
+   "image": "Photoreal photo of a calm western lowland gorilla sitting in soft green forest, holding leafy greens near its mouth, gentle expression, soft dappled light, simple blurred jungle background, 3:2 landscape",
+   "motion": "The gorilla chews slowly and blinks, static camera, very subtle movement",
+   "tease_idea": "힘이 세서…?",
+   "payoff_idea": "밥 먹을 때 흥얼흥얼 노래한다",
+   "aside_idea": "흥얼거림은 먹을 때만, 그것도 특정 음식에만",
+   "facts": [
+    {
+     "fact": "Gorillas produce food-associated vocalizations that researchers call 'singing' or 'humming'.",
+     "src": 0,
+     "evidence": "Only anecdotal evidence exists of eastern (Gorilla beringei) and western gorillas (Gorilla gorilla) producing food-associated vocalizations, termed singing or humming."
+    },
+    {
+     "fact": "In wild western lowland gorillas, these calls occurred only during feeding, only for specific foods, and usually just one individual called per group feeding session.",
+     "src": 0,
+     "evidence": "Our results show that (a) food-associated call production occurs only during feeding and not in other contexts; (b) calling is not uniformly distributed across age and sex classes; (c) calls are only produced during feeding on specific foods; and (d) normally just one individual gives calls during group feeding sessions, however, certain food types elicit simultaneous calling of two or more individuals."
+    },
+    {
+     "fact": "Humming in gorillas has been described as a sign of contentment during feeding.",
+     "src": 0,
+     "evidence": "humming in gorillas has also been described as a sign of contentment during feeding and possibly resting situations (however Fossey [1972] subsumed a number of close calls, including humming, together as belch vocalizations and it is unclear which of those is used during resting) or as a general signal of emotional well-being in a captive gorilla [29]."
+    },
+    {
+     "fact": "In western lowland gorillas, adult males generally vocalize more than females.",
+     "src": 0,
+     "evidence": "It has to be noted that in western lowland gorillas the vocalizing rate of adult males in general is higher than that of females [27] which may help explain our results."
+    }
+   ],
+   "sources": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC4766192/"
+   ],
+   "source_label": "PLOS ONE 2016 · 야생 고릴라 연구",
+   "careful": [
+    "'Singing/humming' are researchers' terms for soft food calls; not every gorilla does it every meal (calling differs by age and sex).",
+    "Don't say it happens because food is 'tasty' — the study links calls to specific foods; 'contentment' is a description from earlier reports."
+   ],
+   "image_note": ""
+  },
+  {
+   "n": 614,
+   "slug": "greenland-shark-slow-grow",
+   "from": "2026-11-08",
+   "animal_ko": "그린란드상어",
+   "title": [
+    "그린란드상어가 위험한",
+    "진짜 이유"
+   ],
+   "image": "Photoreal underwater photo of a single large, slow, grey-brown deep-sea shark with a rounded snout and small eyes gliding through dim cold blue water, soft light from above, simple dark background, 3:2 landscape",
+   "motion": "The shark glides forward very slowly and its tail sways gently, static camera, very subtle movement",
+   "tease_idea": "이빨 때문에…?",
+   "payoff_idea": "어른 되는 데 약 150년 걸린다",
+   "aside_idea": "1년에 약 1cm씩 자란다",
+   "facts": [
+    {
+     "fact": "Results published in Science suggest Greenland sharks can live for nearly three hundred years and reach sexual maturity at about 150 years old.",
+     "src": 0,
+     "evidence": "The results, published in the 12 August issue of Science, suggest the sharks can live for nearly three hundred years, and they reach sexual maturity at 150 years old."
+    },
+    {
+     "fact": "Their growth rate is extremely slow, about one centimeter per year (about 1 cm, converted).",
+     "src": 0,
+     "evidence": "The biology of the Greenland shark is poorly understood, yet their extremely slow growth rates, at about one centimeter per year, hint that these animals live exceptionally long lives."
+    },
+    {
+     "fact": "The analysis suggests an average lifespan of at least 272 years.",
+     "src": 0,
+     "evidence": "Their analysis suggests an average lifespan of at least 272 years for the sharks."
+    },
+    {
+     "fact": "With 95% certainty the oldest shark in the study was between 272 and 512 years old.",
+     "src": 0,
+     "evidence": "\"What we can say is that with 95% certainty the oldest shark was between 272 and 512 years old,\" he said."
+    },
+    {
+     "fact": "Since females reach maturity at lengths over 400 cm, they could become mature at 156 years old.",
+     "src": 0,
+     "evidence": "What's more, since previous reports suggest that females of this species reach sexual maturity at lengths greater than 400 centimeters, they could become mature at 156 years old, the scientists say."
+    }
+   ],
+   "sources": [
+    "https://www.aaas.org/news/greenland-sharks-are-longest-living-vertebrates"
+   ],
+   "source_label": "Science 2016 · 미국과학진흥회 소식",
+   "careful": [
+    "Ages are radiocarbon estimates with wide uncertainty (oldest shark 272–512 years); keep '약' on 150 and don't state an exact maximum age.",
+    "Maturity ~150 years is estimated for females from body length."
+   ],
+   "image_note": "화면은 AI가 그린 상어라 실제 그린란드상어와 다를 수 있음"
+  },
+  {
+   "n": 615,
+   "slug": "peacock-spider-dance",
+   "from": "2026-11-08",
+   "animal_ko": "공작거미",
+   "title": [
+    "공작거미가 위험한",
+    "진짜 이유"
+   ],
+   "image": "Photoreal macro photo of a tiny colorful male peacock spider standing on a smooth green leaf, its bright blue and red patterned abdomen raised like a little fan, big shiny front eyes, soft natural light, simple blurred green background, 3:2 landscape",
+   "motion": "The spider lifts its legs slightly and sways its colorful fan, static camera, very subtle movement",
+   "tease_idea": "독이 있어서…?",
+   "payoff_idea": "짝 앞에서 다리 흔들며 춤춘다",
+   "aside_idea": "다 큰 수컷도 몸길이 약 4mm",
+   "facts": [
+    {
+     "fact": "To attract a mate, the male peacock spider waves his third legs and raises and expands his abdomen in a miniature mating dance.",
+     "src": 0,
+     "evidence": "In order to attract a mate, the male Peacock Spider waves his third legs and raises and expands his abdomen in a miniature mating dance – a little bit like a Peacock shaking his tail feathers!"
+    },
+    {
+     "fact": "The spider grows to a maximum length of 0.5 cm for females and 0.4 cm for males (about 4 mm for males, converted).",
+     "src": 0,
+     "evidence": "This tiny spider grows up to a maximum length of 0.5cm for females, and 0.4cm for males."
+    },
+    {
+     "fact": "The male's abdomen has two red crescents around a central red spot on a blue background.",
+     "src": 0,
+     "evidence": "He has two red symmetrical crescents that surround a central red spot on a blue background."
+    },
+    {
+     "fact": "They are common in bushland and gardens but very hard to spot because they are so small.",
+     "src": 0,
+     "evidence": "These spiders are common in bushland areas and domestic gardens, but are very hard to spot due to their size."
+    }
+   ],
+   "sources": [
+    "https://museum.wa.gov.au/explore/articles/meet-common-peacock-spider"
+   ],
+   "source_label": "서호주 박물관",
+   "careful": [
+    "Facts are for the common peacock spider (Australia); ordinary spiders don't do this dance.",
+    "Don't claim they are harmless to people — the source doesn't say; the joke is the dance."
+   ],
+   "image_note": "화면은 AI 그림이라 실제 공작거미 무늬와 다를 수 있음"
+  },
+  {
+   "n": 616,
+   "slug": "elephant-feet-listen",
+   "from": "2026-11-08",
+   "animal_ko": "코끼리",
+   "title": [
+    "코끼리가 위험한",
+    "진짜 이유"
+   ],
+   "image": "Photoreal photo of a gentle African elephant standing on dry golden grassland, ears relaxed, trunk resting near the ground, soft warm evening light, simple hazy background, 3:2 landscape",
+   "motion": "The elephant shifts its weight slightly and its ears move gently, static camera, very subtle movement",
+   "tease_idea": "덩치가 커서…?",
+   "payoff_idea": "멀리 있는 친구 소식을 발로 듣는다",
+   "aside_idea": "땅 울림을 들을 땐 까치발을 들기도 한다",
+   "facts": [
+    {
+     "fact": "Wild herds of elephants communicate with each other by listening with their feet to vibrations in the ground.",
+     "src": 0,
+     "evidence": "In the vast expanse of African grasslands, wild herds of migrating elephants have learned to communicate with each other by listening with their feet to vibrations in the ground."
+    },
+    {
+     "fact": "When elephants stomp and rumble as a predator approaches, distant elephants can get the news by feeling the ground ripple through their feet or trunk.",
+     "src": 0,
+     "evidence": "Past studies by O'Connell-Rodwell and colleagues have shown that when African elephants stomp and rumble as a predator approaches, other distant elephants can get the news by feeling the ground ripple through their feet or trunk."
+    },
+    {
+     "fact": "Elephants 'listening' this way would lean forward up on tiptoes, sometimes raising one foot in the air.",
+     "src": 0,
+     "evidence": "Each enormous beast would lean forward up on tiptoes, sometimes raising one foot in the air."
+    },
+    {
+     "fact": "In playback tests, elephants at a waterhole responded only to familiar seismic alarm calls, not unfamiliar ones.",
+     "src": 0,
+     "evidence": "'The elephants at the watering hole responded only to the familiar calls,' O'Connell-Rodwell said."
+    }
+   ],
+   "sources": [
+    "https://med.stanford.edu/news/all-news/2007/05/caller-id-in-the-wild-elephants-hear-underground.html"
+   ],
+   "source_label": "스탠퍼드 의대 뉴스 2007",
+   "careful": [
+    "'친구 소식' = alarm calls from other/familiar elephants; the study shows they tell familiar herds' calls from unfamiliar ones, not that they know each friend by name.",
+    "The source says vibrations are felt through 'feet or trunk' — don't claim feet are the only route."
+   ],
+   "image_note": ""
+  }
+ ]
+}

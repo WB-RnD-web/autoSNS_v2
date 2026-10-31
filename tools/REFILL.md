@@ -193,6 +193,9 @@ THEMES.append({"id": "siblings", "card": "형제·자매 궁합표", "yt": "형�
 - 끝없음(날짜 순환·매일 루틴): 06:13 매일 운세 · 띠 테마/나이 표 · 내 것 찾기 · 풀이형 표 · 인스타 골라보기.
 - 꺼짐·일부러 끝냄: 수면판(설화 금지로 꺼짐) · 신년운세 1차 묶음(시리즈가 이어받음) · 주간 롱폼(깊이 보기가 대신).
 - 사람과 정하는 것: 06:13 신년운세 시리즈(편 설계 — 코드 PR) · 인스타 병맛 시험(판정 11/08 — 이어 가려면 `BM_TO`·`BM_ORDER` 코드 PR).
+- 아직 이 루틴 밖(refill_check 미지원): 인스타 밤 편 `insta_worker`(`insta/worker_catalog.json` · `insta/WORKER_WRITING.md`)·
+  `insta_danger`(`insta/danger_catalog.json` · `insta/DANGER_WRITING.md`) — 2026-11-08 시작, 16편씩(12/08·12/09 까지).
+  채울 땐 같은 사실 규칙(evidence·기관 출처) + 끝에만 + from, 번호 worker 517~ · danger 617~ (`python insta/test_bc.py`).
   이런 줄기가 바닥나면 PR 대신 맥박 보고서 `actions` 에 남긴다.
 
 ## PR 템플릿

@@ -7,6 +7,10 @@ name: 인스타 오늘의 골라보기 — 대본 검사 → 그림·목소리(S
 #     sci 도 같은 길로 돈다(대본 output/insta_pick/<날짜>_sci_<slug>.json → check → render → post) · 숫자는 catalog facts 에서만(check).
 #   ★10/25~11/07 병맛(bm_paper·bm_animal) 2주 시험: 골라보기 자리에 병맛(insta/bm_reel.py — 같은 check·render·post 길 ·
 #     동물 한마디 목소리는 edge-tts InJoon, 막히면 Supertonic M1). 골라보기는 11/08부터 이어진다.
+#   ★11/08~ 밤 편 c(21:20 · 밤 편 작가가 next --slot c 로 쓴다): '위험한 진짜 이유'(danger) ↔ '심해 직장인'(worker) 하루씩 번갈아.
+#     같은 길(output/insta_pick/<날짜>_danger|worker_<slug>.json → check → render → post) · targets 는 오늘 가장 늦은 편(a < b < c) ·
+#     게시 ledger 열쇠 날짜+c · 쓰레드는 안 간다. 검사·렌더 insta/worker_reel.py · danger_reel.py — 목소리 없이 글 + 코드로 만든 피아노.
+#     worker 는 캐릭터 기준 그림 → Spark from_job 편집(qwen-image-edit, 장면마다 서버 약 150초)이라 다른 편보다 오래 걸린다(timeout 50분).
 # 트리거: 로컬 예약 작업(insta-pick-daily)이 routine/insta_pick 에 output/insta_pick/<날짜>_<kind>_<slug>.json 을 push.
 #   ★코드는 늘 main 에서, 대본은 routine/insta_pick 에서 오늘 파일 중 가장 늦은 편 하나만(pick_plan.py targets).
 #   ★대본을 믿지 않고 다시 검사한다(pick_reel.py check) · 편마다 한 번(게시 ledger) · 꼴이 그날 편들과 다르면 올리지 않는다.
@@ -43,7 +47,7 @@ permissions:
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 50    # ★10/31 30 → 50: 밤 편 worker 는 Spark 편집 두 번(대기 포함 장면마다 3~6분)
     env:
       TZ: Asia/Seoul
       PYTHONIOENCODING: utf-8

@@ -1,0 +1,32 @@
+{
+ "date": "2026-11-08",
+ "kind": "danger",
+ "src_n": 601,
+ "slug": "jellyfish-sleep",
+ "card_no": 1,
+ "title": [
+  "해파리가 위험한",
+  "진짜 이유"
+ ],
+ "image": "a small round translucent moon jellyfish drifting peacefully in dark deep blue water at night, softly glowing pale lavender bell, delicate short tentacles, tiny floating particles, dreamy sleepy calm mood, aquarium photography, cute",
+ "motion": "the jellyfish slowly pulses, gentle water shimmer, static camera, very subtle movement",
+ "tease": "독침 때문에…?",
+ "payoff": "뇌가 없는데 잠은 꼬박꼬박 잔다",
+ "aside": "밤엔 몸 박동이 3분의 1쯤 줄어듦",
+ "sources": [
+  "https://www.caltech.edu/about/news/surprising-ancient-behavior-jellyfish-79701",
+  "https://authors.library.caltech.edu/81662"
+ ],
+ "caption": "해파리, 뇌도 없으면서 잠은 잘 잠",
+ "question": "뇌가 없어도 잠은 자야 한다면, 잠은 왜 자는 걸까요?",
+ "hashtags": [
+  "#해파리",
+  "#동물상식",
+  "#바다생물",
+  "#수면",
+  "#위험한이유"
+ ],
+ "bench": {
+  "format": "카드형 반전 '~가 위험한 이유'(뭘보냥 '전기장판이 위험한 이유' 이틀 585만 · 10/31)"
+ }
+}
