@@ -1,0 +1,153 @@
+{
+ "date": "2026-10-31",
+ "topic": "fortune_name",
+ "slot": "surname",
+ "theme": "surname:home",
+ "privacy": "public",
+ "accent": "#C9A227",
+ "_min_total": 9.0,
+ "hook_title": "10월 집안 평안 순위",
+ "headline": "성씨로 보는 10월 집안 평안 순위 1위~20위 | 김·이·박·최… 성씨 20개 · 10월 31일",
+ "thumbnail_hook": "warm Korean home kitchen in the evening with a pot of stew and rice bowls on the table, soft lamp light, peaceful family mood, no people, no text",
+ "scenes": [
+  {
+   "type": "grid",
+   "pill": "10월 31일 토요일 · 내 것 찾기",
+   "title": "성씨로 보는",
+   "title2": "10월 집안 평안 순위",
+   "cols": 4,
+   "cells": [
+    {
+     "big": "강씨",
+     "small": "15위",
+     "note": "살림 점검",
+     "hi": false
+    },
+    {
+     "big": "권씨",
+     "small": "4위",
+     "note": "가족이 한마음",
+     "hi": false
+    },
+    {
+     "big": "김씨",
+     "small": "18위",
+     "note": "문단속 꼼꼼",
+     "hi": false
+    },
+    {
+     "big": "박씨",
+     "small": "19위",
+     "note": "서운함 풀기",
+     "hi": false
+    },
+    {
+     "big": "서씨",
+     "small": "20위",
+     "note": "살림 점검",
+     "hi": false
+    },
+    {
+     "big": "송씨",
+     "small": "13위",
+     "note": "가족 식사",
+     "hi": false
+    },
+    {
+     "big": "신씨",
+     "small": "8위",
+     "note": "대청소 운",
+     "hi": false
+    },
+    {
+     "big": "안씨",
+     "small": "10위",
+     "note": "화분 하나",
+     "hi": false
+    },
+    {
+     "big": "오씨",
+     "small": "1위",
+     "note": "집안이 화목",
+     "hi": true
+    },
+    {
+     "big": "윤씨",
+     "small": "16위",
+     "note": "큰소리 금물",
+     "hi": false
+    },
+    {
+     "big": "이씨",
+     "small": "11위",
+     "note": "소소한 대화",
+     "hi": false
+    },
+    {
+     "big": "임씨",
+     "small": "2위",
+     "note": "웃음꽃 활짝",
+     "hi": true
+    },
+    {
+     "big": "장씨",
+     "small": "3위",
+     "note": "평안한 집",
+     "hi": true
+    },
+    {
+     "big": "전씨",
+     "small": "12위",
+     "note": "정리하면 복",
+     "hi": false
+    },
+    {
+     "big": "정씨",
+     "small": "5위",
+     "note": "소소한 대화",
+     "hi": false
+    },
+    {
+     "big": "조씨",
+     "small": "17위",
+     "note": "지출 정리",
+     "hi": false
+    },
+    {
+     "big": "최씨",
+     "small": "6위",
+     "note": "정리하면 복",
+     "hi": false
+    },
+    {
+     "big": "한씨",
+     "small": "7위",
+     "note": "가족 식사",
+     "hi": false
+    },
+    {
+     "big": "홍씨",
+     "small": "9위",
+     "note": "따뜻한 저녁",
+     "hi": false
+    },
+    {
+     "big": "황씨",
+     "small": "14위",
+     "note": "대청소 운",
+     "hi": false
+    }
+   ],
+   "foot": "※ 많은 성씨 20개 · 재미로 보는 운세",
+   "brand": "왕별이 · 내 것 찾기",
+   "narration": "성씨로 보는 10월 집안 평안 순위예요. 내 성씨는 몇 위인지 찾아보세요."
+  }
+ ],
+ "platforms": {
+  "youtube": {
+   "title": "성씨로 보는 10월 집안 평안 순위 1위~20위 | 김·이·박·최… 성씨 20개 · 10월 31일 #shorts",
+   "description": "성씨로 보는 10월 집안 평안 순위 — 많은 성씨 20개를 한 장에 모았어요. 내 성씨는 몇 위인가요? 표에 없는 성씨는 댓글로 알려 주세요 🙏\n매일 아침 7시 40분 태어난 해 · 아침 9시 40분 이름 글자 · 오후 1시 40분 성씨 · 오후 3시 40분 태어난 달·음력 생일 끝자리 표가 올라와요.\n\n※ 재미로 보는 풀이입니다. 순위는 재미로 정한 것이에요.\n\n#성씨 #성씨운세 #운세 #shorts"
+  }
+ },
+ "notes": "내 것 찾기 표 · surname:home · name_card.py 가 만든 스토리보드(루틴은 실행 스위치만)"
+}
