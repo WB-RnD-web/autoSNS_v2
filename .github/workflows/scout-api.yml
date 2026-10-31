@@ -1,0 +1,105 @@
+name: 웹 정찰(API) — 지금 뜨는 주제·소재 후보 찾기(data/scout)
+
+# 2026-10-31 사용자: "api key 로 매일매일 새로운 아이디어, 최신 유행, 최신 컨텐츠, 지금 핫한 소스를 찾아서 매일 돌면 어때?"
+#   트렌드 레이더(숫자)가 끝나면 tools/scout_api.py 가 Claude API + 웹 검색(12번)·읽기(6번)로 바깥 흐름을 찾는다.
+#   결과는 data/scout/<날짜>.json — 보고서가 아니다(10/11 '정기 보고 불필요'): 맥박 API 판(pulse-api.yml)이 이걸 읽고
+#   trends·actions 에 반영한다(이 워크플로가 끝나면 맥박이 돈다). 소재 후보는 사실마다 출처 링크가 있는 것만.
+# 비용: <날짜>_api.json 에 토큰·검색 횟수·달러(하루 0.5~1달러 추정). 크레딧이 바닥나면 거절될 뿐 돈은 안 나간다.
+# 같은 날 두 번째부터는 건너뛴다. ⚠️ main·routine/* 에는 아무것도 올리지 않는다 — data/scout 에 고아 커밋 하나로 강제.
+# 시험: api-test/scout 브랜치에 올리면 그 브랜치 코드로 한 번 돈다(업로드 워크플로는 이 브랜치를 안 본다).
+
+on:
+  workflow_run:
+    workflows: ["트렌드 레이더 — 참고 채널·우리 채널 조회수 → 주제별 떡상·끝물(data/trend-radar)"]
+    types: [completed]
+  schedule:
+    - cron: "40 0 * * *"     # 09:40 KST 예비(레이더가 늦거나 실패한 날)
+  workflow_dispatch:
+  push:
+    branches:
+      - "api-test/scout"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scout-api
+  cancel-in-progress: false
+
+jobs:
+  scout:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      TZ: Asia/Seoul
+      PYTHONIOENCODING: utf-8
+      DATA_BRANCH: data/scout
+      SCOUT_MODEL: ${{ vars.SCOUT_MODEL || 'claude-opus-5-5' }}
+      SCOUT_EFFORT: ${{ vars.SCOUT_EFFORT || 'high' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'push' && github.ref || 'main' }}
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 의존성
+        run: python -m pip install -q anthropic
+
+      - name: 테스트(오프라인)
+        run: python tools/test_scout_api.py
+
+      - name: 오늘·데이터 받기
+        id: prep
+        run: |
+          set -euo pipefail
+          DAY=$(date +%F)
+          echo "day=$DAY" >> "$GITHUB_OUTPUT"
+          W="$RUNNER_TEMP/w"
+          mkdir -p "$W/scout" "$RUNNER_TEMP/radar"
+          if git fetch -q --no-tags --depth=1 origin "+refs/heads/$DATA_BRANCH:refs/remotes/origin/$DATA_BRANCH"; then
+            git archive "origin/$DATA_BRANCH" | tar -x -C "$W/scout"
+          fi
+          if [ -f "$W/scout/$DAY.json" ] && [ "${{ github.event_name }}" != "push" ]; then
+            echo "skip=1" >> "$GITHUB_OUTPUT"
+            echo "::notice::오늘($DAY)은 이미 찾았다 — 건너뛴다"
+            exit 0
+          fi
+          git fetch -q --no-tags --depth=1 origin data/trend-radar
+          git archive FETCH_HEAD | tar -x -C "$RUNNER_TEMP/radar"
+
+      - name: 찾기(Claude API + 웹 검색)
+        if: steps.prep.outputs.skip != '1'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          set -euo pipefail
+          if [ -z "$ANTHROPIC_API_KEY" ]; then echo "::error::시크릿 ANTHROPIC_API_KEY 없음"; exit 1; fi
+          python tools/scout_api.py write --day "${{ steps.prep.outputs.day }}" --radar "$RUNNER_TEMP/radar" --out "$RUNNER_TEMP/w/scout"
+
+      - name: data/scout 에 올리기(고아 커밋 하나 · 강제)
+        if: steps.prep.outputs.skip != '1'
+        run: |
+          set -euo pipefail
+          DAY="${{ steps.prep.outputs.day }}"
+          W="$RUNNER_TEMP/w"
+          {
+            echo "# data/scout — 자동 생성(손대지 않는다)"
+            echo
+            echo "- 만든 곳: .github/workflows/scout-api.yml (main) · tools/scout_api.py — 매일 웹 검색으로 찾은 바깥 흐름(hot)·소재 후보(candidates)"
+            echo "- <날짜>.json 은 맥박 API 판이 읽는다 · <날짜>_api.json = 모델·시도·토큰·검색 횟수·달러"
+            echo "- 마지막 생성: $(date '+%F %H:%M') KST · run ${GITHUB_RUN_ID}"
+          } > "$W/scout/README.md"
+          export GIT_INDEX_FILE="$RUNNER_TEMP/scout.index"
+          export GIT_AUTHOR_NAME="scout-api" GIT_AUTHOR_EMAIL="41898282+github-actions[bot]@users.noreply.github.com"
+          export GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME" GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
+          REPO="$GITHUB_WORKSPACE/.git"
+          ( cd "$W/scout" && git --git-dir="$REPO" --work-tree=. add -A -f . )
+          TREE=$(git --git-dir="$REPO" write-tree)
+          COMMIT=$(git --git-dir="$REPO" commit-tree "$TREE" -m "data: 웹 정찰 $DAY")
+          git --git-dir="$REPO" push -f origin "$COMMIT:refs/heads/$DATA_BRANCH"
+          { echo '```json'; cat "$W/scout/${DAY}_api.json"; echo '```'; } >> "$GITHUB_STEP_SUMMARY" || true

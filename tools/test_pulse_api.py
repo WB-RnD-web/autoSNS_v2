@@ -160,6 +160,16 @@ with tempfile.TemporaryDirectory() as td:
     info = PA.write("2026-10-31", out_root, radar, client=fc, checker=checker, root=td)
     ck("pr 이 있는데 pr_edits 가 없으면 오류로 돌려보낸다", info["ok"] and info["tries"] == 2
        and "pr_edits 가 비었다" in fc.calls[-1]["messages"][-1]["content"])
+    _sf = os.path.join(td, "scout.json")
+    with open(_sf, "w", encoding="utf-8") as f:
+        json.dump({"date": "2026-10-31", "note": "정찰 총평", "hot": [{"market": "kr", "topic": "정찰 주제 표시", "fit": ["insta_danger"],
+                   "evidence": [{"title": "t", "url": "https://x.example.com/a"}]}], "candidates": []}, f, ensure_ascii=False)
+    os.environ["SCOUT_FILE"] = _sf
+    _um = PA.user_message("2026-10-31", out_root, radar, td)
+    os.environ.pop("SCOUT_FILE")
+    ck("웹 정찰(SCOUT_FILE)이 있으면 사용자 메시지 끝에 붙는다", "웹 정찰" in _um and "정찰 주제 표시" in _um
+       and "https://x.example.com/a" in _um and "웹 정찰" not in PA.user_message("2026-10-31", out_root, radar, td))
+    ck("API 절에 웹 정찰 쓰는 법(trends·actions 만 · evidence 금지)", "웹 정찰" in PA.API_NOTE and "evidence 에는 쓰지 않는다" in PA.API_NOTE)
 
 print()
 if FAIL:
