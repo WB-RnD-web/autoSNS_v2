@@ -1,0 +1,163 @@
+name: Nine Tails Story — 3D 실화·what-if 쇼츠(카탈로그) → 그림(Spark)·목소리 → 렌더 → 비공개 + 예약 공개
+
+# 2026-11 재개(10/31 사용자 '2차 견본 수준으로 재개'). 대본은 gumiho/tales/story_catalog.json 에 미리 다 있다 —
+#   루틴도 LLM 도 없다. 공개는 월·수·금 22:00 KST(13:00 UTC) 예약 공개(publishAt), 첫 편 11/4(수).
+# 하루 세 번 깨서 할 일(due)을 본다: 공개 전날~당일(공개 30분 전까지) 아직 안 올린 편. 없으면 1분 안에 끝난다.
+#   01:00 KST(본 실행) · 03:30 KST(예비) · 10:00 KST(마지막 예비). GitHub 예약은 몇 시간씩 늦는다 —
+#   ★05:45~08:00 KST(아침 업로드 루틴)에 걸리면 Spark 를 쓰지 않고 멈춘다(story_reel 종료 코드 75) → 다음 예비가 잇는다.
+#   받은 그림은 Actions 캐시(nt-story-work-<id>-)에 남아 이어 받는다.
+# ★두 번 올리지 않는다: ① ledger(Actions 캐시 nt-story-ledger-) ② 렌더 전에 유튜브 설명란 표식 'Nine Tails Tales · Story NNN'
+#   ③ upload 가 올리기 직전에 한 번 더. ★5B 영상 클립은 쓰지 않는다(깨짐 0 이 먼저 — 정지 그림 + 카메라만).
+# 공개 방식: 레포 변수 NT_STORY_PUBLISH — scheduled(기본: 비공개 + publishAt) | private(비공개로만).
+# ★돈 드는 호출 없음: Spark(공용) · edge-tts · 퍼블릭 레포 Actions. 쓰기 권한 없음(아무것도 push 하지 않는다).
+
+on:
+  schedule:
+    - cron: "0 16 * * *"        # 01:00 KST
+    - cron: "30 18 * * *"       # 03:30 KST 예비
+    - cron: "0 1 * * *"         # 10:00 KST 마지막 예비(공개 12시간 전)
+  workflow_dispatch:
+    inputs:
+      episode:
+        description: "편 id(비우면 due 판정)"
+        default: ""
+      upload:
+        description: "업로드(NT_STORY_PUBLISH 방식). 끄면 렌더만 — 결과(영상 포함)는 아티팩트"
+        type: boolean
+        default: false
+
+concurrency:
+  group: nt-story
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    # 그림 15~20장(인물 컷 qwen 편집 ~2.5분씩 ≈ 30~45분, 대기열 없을 때) + 프레임 ~3분 + 업로드
+    timeout-minutes: 150
+    env:
+      TZ: Asia/Seoul
+      WBSPARK_BASE: ${{ vars.WBSPARK_BASE || 'https://wangbyul.com/wbSpark' }}
+      WBSPARK_TOKEN: ${{ secrets.WBSPARK_TOKEN }}
+      NT_STORY_PUBLISH: ${{ vars.NT_STORY_PUBLISH || 'scheduled' }}
+      TALES_LANGS: ${{ vars.TALES_LANGS || 'es,pt,id,ja,ko,de,fr,vi' }}
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: pipeline/requirements.txt
+
+      - name: ledger 복원
+        uses: actions/cache/restore@v4
+        with:
+          path: output/gumiho/story_ledger.json
+          key: nt-story-ledger-${{ github.run_id }}
+          restore-keys: nt-story-ledger-
+
+      - name: 할 일 고르기
+        id: pick
+        run: |
+          set -e
+          if [ -n "${{ github.event.inputs.episode }}" ]; then
+            E="${{ github.event.inputs.episode }}"
+          else
+            E=$(python gumiho/tales/story.py due | head -1)
+          fi
+          echo "episode=$E" >> "$GITHUB_OUTPUT"
+          echo "대상: '${E:-없음}'"
+
+      - name: 시스템 의존성
+        if: steps.pick.outputs.episode != ''
+        run: |
+          sudo apt-get update && sudo apt-get install -y ffmpeg fonts-noto-core fonts-noto-extra
+          python -m pip install -r pipeline/requirements.txt numpy pillow
+
+      - name: 테스트(오프라인) · 카탈로그 검사
+        if: steps.pick.outputs.episode != ''
+        run: |
+          python gumiho/tales/test_story.py
+          python gumiho/tales/story.py check
+
+      - name: YouTube 자격증명(Nine Tails 채널 전용 토큰)
+        id: cred
+        if: steps.pick.outputs.episode != '' && (github.event_name == 'schedule' || github.event.inputs.upload == 'true')
+        env:
+          YT_TOKEN_JSON_GUMIHO: ${{ secrets.YT_TOKEN_JSON_GUMIHO }}
+        run: |
+          mkdir -p pipeline/secrets
+          if [ -z "$YT_TOKEN_JSON_GUMIHO" ]; then echo "::error::시크릿 YT_TOKEN_JSON_GUMIHO 없음"; exit 1; fi
+          printf '%s' "$YT_TOKEN_JSON_GUMIHO" > pipeline/secrets/token_gumiho.json
+
+      - name: 유튜브에 이미 있나(렌더 전에)
+        id: seen
+        if: steps.cred.outcome == 'success'
+        env:
+          YT_TOKEN_NOVEL: pipeline/secrets/token_gumiho.json
+        run: |
+          if python gumiho/tales/story.py seen "${{ steps.pick.outputs.episode }}"; then
+            echo "skip=1" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: 받아 둔 그림 복원(이어 받기)
+        if: steps.pick.outputs.episode != '' && steps.seen.outputs.skip != '1'
+        uses: actions/cache/restore@v4
+        with:
+          path: output/nt_story/.work
+          key: nt-story-work-${{ steps.pick.outputs.episode }}-${{ github.run_id }}
+          restore-keys: nt-story-work-${{ steps.pick.outputs.episode }}-
+
+      # 75 = 05:45~08:00 KST 라 Spark 를 멈췄다(다음 예비 실행이 잇는다) — 실패가 아니다
+      - name: 렌더
+        id: render
+        if: steps.pick.outputs.episode != '' && steps.seen.outputs.skip != '1'
+        run: |
+          set +e
+          python gumiho/tales/story_reel.py "${{ steps.pick.outputs.episode }}" --procs 4
+          rc=$?
+          if [ $rc -eq 75 ]; then echo "quiet=1" >> "$GITHUB_OUTPUT"; exit 0; fi
+          exit $rc
+
+      - name: 업로드
+        if: steps.cred.outcome == 'success' && steps.seen.outputs.skip != '1' && steps.render.outputs.quiet != '1'
+        env:
+          YT_TOKEN_NOVEL: pipeline/secrets/token_gumiho.json
+        run: python gumiho/tales/story.py upload "${{ steps.pick.outputs.episode }}"
+
+      # 올라간 건 올라간 거다 — 잡이 실패해도 ledger 는 남긴다(다음 실행이 두 번 올리지 않게)
+      - name: ledger 저장
+        if: always() && hashFiles('output/gumiho/story_ledger.json') != ''
+        uses: actions/cache/save@v4
+        with:
+          path: output/gumiho/story_ledger.json
+          key: nt-story-ledger-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: 받은 그림 저장(중간에 멈춰도 다음 실행이 잇게)
+        if: always() && steps.pick.outputs.episode != '' && hashFiles('output/nt_story/.work/**/assets.json') != ''
+        uses: actions/cache/save@v4
+        with:
+          path: output/nt_story/.work
+          key: nt-story-work-${{ steps.pick.outputs.episode }}-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: 결과물(1초 시트·첫 2초·자막·메타 — 렌더만 한 경우 영상까지)
+        if: always() && steps.pick.outputs.episode != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: nt-story-${{ github.run_number }}
+          path: |
+            output/nt_story/*_sheet.jpg
+            output/nt_story/*_first2s.jpg
+            output/nt_story/*.srt
+            output/nt_story/*_meta.json
+            output/gumiho/story_ledger.json
+            ${{ steps.cred.outcome != 'success' && 'output/nt_story/*.mp4' || '' }}
+          retention-days: 5
+          if-no-files-found: warn

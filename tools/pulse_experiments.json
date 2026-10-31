@@ -54,6 +54,8 @@
   {"id": "tales-sleep", "ch": "nt", "title": "수면판 1호(10/26 공개)", "start": "2026-10-26", "judge": "2026-11-09",
    "criterion": "(내가 정함) 2주 조회 300 이상이면 월 1회 유지", "formats": ["sleep"], "owner": "pulse", "status": "stopped", "stopped": "2026-10-28 — 10/27 판정 '가망 없음'(시험 34편 중 1만 0편 · 편당 중앙값 74회 · 비교 쇼츠 중앙 207회) → Nine Tails 쉬기(쇼츠·롱폼 루틴 꺼짐, 사용자 '맘대로 해봐'). 올린 영상은 그대로 둔다"},
   {"id": "nt-overall", "ch": "nt", "title": "Nine Tails 종합 판정", "start": "2026-10-01", "judge": "2026-11-14",
-   "criterion": "주간 시청 100시간 목표(10/1 계획 B) · 구독 추세", "formats": [], "owner": "pulse", "status": "stopped", "stopped": "2026-10-28 — 10/27 판정 '가망 없음'(시험 34편 중 1만 0편 · 편당 중앙값 74회 · 비교 쇼츠 중앙 207회) → Nine Tails 쉬기(쇼츠·롱폼 루틴 꺼짐, 사용자 '맘대로 해봐'). 올린 영상은 그대로 둔다"}
+   "criterion": "주간 시청 100시간 목표(10/1 계획 B) · 구독 추세", "formats": [], "owner": "pulse", "status": "stopped", "stopped": "2026-10-28 — 10/27 판정 '가망 없음'(시험 34편 중 1만 0편 · 편당 중앙값 74회 · 비교 쇼츠 중앙 207회) → Nine Tails 쉬기(쇼츠·롱폼 루틴 꺼짐, 사용자 '맘대로 해봐'). 올린 영상은 그대로 둔다"},
+  {"id": "nt-relaunch-3d", "ch": "nt", "title": "Nine Tails 재개 — 얼굴 없는 3D 실화·what-if 쇼츠 12편(11/4~11/30 월·수·금 22:00 KST, story_catalog · nt-story.yml · 10/31 사용자 '2차 견본 수준으로 재개')", "start": "2026-11-04", "judge": "2026-12-02",
+   "criterion": "(내가 정함) ① 12편(story3d)의 7일 조회 중앙값(12/02 기준 7일이 안 된 편은 그때까지 조회 — 맥박 med24·n7 과 함께 본다)이 쉬기 전 NT 쇼츠 중앙값 74회(10/27 판정, 34편)보다 높은가 ② 11/4~12/02 구독자가 늘었나. 둘 다 넘으면 계속(story_catalog 끝에 4주 분량 채우기) · ①만 넘으면 제목·첫 장면 손질 후 4주 더 · ①을 못 넘으면 접는다(nt-story.yml 예약 끔). 장비가 좋아지면(Wan-Animate 등) 품질을 올리는 건 판정과 따로", "formats": ["story3d", "story_short", "rules", "versus", "pov"], "owner": "pulse", "status": "scheduled"}
  ]
 }

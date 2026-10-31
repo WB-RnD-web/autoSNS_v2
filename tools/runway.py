@@ -40,8 +40,9 @@ REFILL_DOC = "tools/REFILL.md"
 REFILLABLE = ("nt_shorts", "nt_longform", "wb_gunghap", "wb_lf27", "insta_sci", "insta_teardown")
 # ★10/28 Nine Tails 쉬기 — 10/27 판정 '가망 없음'(34편 중 1만 0편 · 편당 중앙값 74회). 쇼츠·롱폼 루틴 2개를 껐다.
 #   이 값이 있으면 두 줄기는 '꺼짐'이다 → 재고 경고(RUNWAY)도 채우기 루틴도 건드리지 않는다.
-#   다시 열 때: "" 로 비우고 루틴 두 개(쇼츠 trig_011mZ…·롱폼 trig_01A1oU…)를 켠다.
-NT_PAUSED = "10/27 판정 '가망 없음' → 10/28부터 쉬는 중(쇼츠·롱폼 루틴 꺼짐)"
+# ★11/01 재개는 새 줄기 nt_story(3D 실화·what-if 쇼츠, 월·수·금 22:00 — gumiho/tales/story_catalog.json)로 한다.
+#   옛 쇼츠·롱폼 루틴은 꺼진 그대로 — 이 값은 그 둘의 끝 사유다(비우면 옛 줄기가 다시 '시험·목록'으로 보인다).
+NT_PAUSED = "10/27 판정 '가망 없음' → 옛 쇼츠·롱폼 루틴은 꺼진 그대로 · 11/4부터 3D 실화·what-if 쇼츠(nt_story)가 이어받음"
 # ★10/30 띠 궁합표 접기 — 판정(첫 24시간 중앙값 2,757 · 다른 표의 24% < 50%)대로 트리거를 껐다. 목록(6묶음)은 남아 있다.
 #   값이 있으면 '꺼짐' → 재고 경고·채우기 루틴이 안 건드린다. 다시 열 때 "" + 트리거(trig_015YjTm…) 켜기.
 GUNGHAP_STOPPED = "10/30 판정 '접는다'(다른 표의 24%) → 트리거 꺼짐"
@@ -146,6 +147,13 @@ def nine_tails(today: dt.date) -> list[dict]:
                     sum(d >= today for d in dated), ended=NT_PAUSED,
                     refill="gumiho/tales/catalog.json tales 끝에 편 + from(일요일은 코드가 정한다 · facts 마다 evidence)",
                     note=f"backlog 제목 {len(backlog)}개(제목만 — 사실·출처를 채워야 편성된다)" if backlog else ""))
+    S = _mod("story")
+    s_last = S.last_date()
+    out.append(_row(ch, "nt_story", "3D 실화·what-if 쇼츠(월·수·금 22:00 KST 예약 공개 — story_catalog)", "catalog", s_last,
+                    S.left(today), judge=dt.date(2026, 12, 2),
+                    refill="gumiho/tales/story_catalog.json episodes 끝에 편 + from(월·수·금 · 사실마다 연 출처 · 마네킹) — "
+                           "python gumiho/tales/story.py check",
+                    note="판정 pulse_experiments 'nt-relaunch-3d'(12/02) · 렌더는 공개 당일 01:00/03:30/10:00 KST(nt-story.yml)"))
     enabled = _const(os.path.join(ROOT, "gumiho", "tales", "sleep.py"), "ENABLED")
     out.append(_row(ch, "nt_sleep", "수면판 Sleep Edition(지난 편을 다시 지은 1시간)", "open" if enabled else "off",
                     ended="" if enabled else "10/09 설화 금지로 꺼짐(sleep.ENABLED) — 켜려면 설화 아닌 편으로 spec 을 새로",

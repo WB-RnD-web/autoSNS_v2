@@ -1,0 +1,3194 @@
+{
+ "about": "Nine Tails Tales 3D 실화·what-if 쇼츠 카탈로그(2026-11 재개). 월·수·금 22:00 KST 공개, 편마다 from = 공개일. 검사·편성은 gumiho/tales/story.py, 렌더는 story_reel.py. ★끝에만 붙인다(id·from 순서). 사실(facts)은 실제로 연 출처(sources) 번호를 단다 · 사람은 얼굴 없는 마네킹으로만 · say 의 '{보이는 글|읽는 말}' 은 숫자·날짜 읽기용.",
+ "episodes": [
+  {
+   "id": 1,
+   "slug": "helmet-filled-with-water",
+   "from": "2026-11-04",
+   "format": "story",
+   "title": "The Astronaut Whose Helmet Filled With Water",
+   "description": "July 2013, outside the International Space Station: 44 minutes into a spacewalk, cold water started leaking into astronaut Luca Parmitano's helmet. Then the sun set. This is how he got back without being able to see, guided only by his safety cable.",
+   "tags": [
+    "luca parmitano",
+    "spacewalk",
+    "iss",
+    "nasa",
+    "astronaut",
+    "space"
+   ],
+   "music": "space",
+   "style_tail": ", cold blue and white palette with warm sun glints, epic movie still",
+   "grade": {
+    "contrast": 1.08,
+    "saturation": 0.95,
+    "tint": [
+     0.97,
+     1.0,
+     1.05
+    ]
+   },
+   "character": {
+    "prompt": "an adult human figure with realistic proportions rendered as a smooth featureless matte white mannequin with a blank egg-shaped head and no facial features, wearing a bulky plain white spacesuit with a clear bubble helmet, floating outside a space station above Earth, full body, three-quarter view",
+    "seed": 811
+   },
+   "shots": [
+    {
+     "say": "Water was crawling over his eyes,",
+     "edit": "Extreme close-up of the helmet: the clear helmet is half filled with water, the waterline cuts across the blank egg-shaped head, bubbles and droplets inside, harsh sunlight, black space and a sliver of Earth behind.",
+     "move": "hook",
+     "fx": "float",
+     "sfx": "hit"
+    },
+    {
+     "say": "and he was outside the space station.",
+     "edit": "Extreme wide shot: the same astronaut is tiny, clinging to the long metal truss of the space station, huge golden solar panels, the curved blue Earth far below, black space.",
+     "move": "pull_out",
+     "fx": "float",
+     "sfx": "whoosh"
+    },
+    {
+     "say": "{July 2013.|July, twenty thirteen.} Astronaut Luca Parmitano,",
+     "edit": "Low-angle medium shot: the astronaut grips a handrail on the outside of the space station, Earth curving behind, bright sunlight.",
+     "move": "pan_right",
+     "fx": "float"
+    },
+    {
+     "say": "on a routine spacewalk.",
+     "edit": "Wide shot: two identical faceless astronauts in the same white spacesuits work on the exterior of the space station with tethered tools, golden solar panels, Earth below.",
+     "move": "drift_left",
+     "fx": "float"
+    },
+    {
+     "say": "{44|Forty-four} minutes in, he felt water on the back of his head.",
+     "edit": "Close-up from behind the helmet: glistening beads of water collect at the back of the helmet around the blank head, soft blue light.",
+     "move": "push_in",
+     "fx": "float",
+     "sfx": "drip"
+    },
+    {
+     "say": "Everyone assumed his drink bag was leaking.",
+     "prompt": "a dim mission control room with rows of glowing monitors, smooth featureless matte white mannequin figures with blank egg-shaped heads wearing headsets seen from behind, a large wall screen showing a live view of an astronaut above Earth",
+     "move": "pan_left",
+     "fx": "dust"
+    },
+    {
+     "say": "It wasn't.",
+     "prompt": "macro shot of a perfect floating sphere of water in zero gravity against darkness, tiny air bubbles inside it, light refracting through it",
+     "move": "punch",
+     "fx": "float",
+     "sfx": "hit"
+    },
+    {
+     "say": "The water was cold, and it tasted like metal.",
+     "reuse": 6,
+     "move": "drift_right",
+     "fx": "float",
+     "focus": [
+      0.45,
+      0.5,
+      1.25
+     ]
+    },
+    {
+     "say": "It was coming from the suit's own cooling system.",
+     "prompt": "x-ray cutaway visualization of a white spacesuit backpack life support system, glowing blue coolant tubes, a small fan pump and water separator leaking water from a clogged part, dark background",
+     "move": "orbit",
+     "fx": "dust"
+    },
+    {
+     "say": "It covered his eyes. His ears. His nose.",
+     "reuse": 0,
+     "move": "push_in",
+     "fx": "float",
+     "sfx": "water",
+     "focus": [
+      0.5,
+      0.42,
+      1.2
+     ]
+    },
+    {
+     "say": "Mission Control called the spacewalk off.",
+     "reuse": 5,
+     "move": "push_in",
+     "fx": "dust",
+     "sfx": "alarm",
+     "focus": [
+      0.5,
+      0.5,
+      1.08
+     ],
+     "tint": [
+      1.3,
+      0.75,
+      0.7
+     ]
+    },
+    {
+     "say": "Then the sun went down.",
+     "edit": "Orbital sunset: the astronaut floats weightless in the foreground as a dark silhouette, a thin glowing band of orange and deep blue on Earth's horizon behind him, a solar panel silhouette.",
+     "move": "pan_left",
+     "fx": "float",
+     "sfx": "boom"
+    },
+    {
+     "say": "Total darkness.",
+     "edit": "Night in orbit, almost total darkness: only the astronaut's small headlamp beam lights a metal handrail on the station, everything else is black.",
+     "move": "push_in",
+     "fx": "dust"
+    },
+    {
+     "say": "He couldn't even see the handrails in front of him.",
+     "reuse": 12,
+     "move": "drift_right",
+     "fx": "float",
+     "focus": [
+      0.45,
+      0.55,
+      1.25
+     ],
+     "tint": [
+      1.7,
+      1.7,
+      1.8
+     ]
+    },
+    {
+     "say": "His radio was drowning too.",
+     "reuse": 4,
+     "move": "push_in",
+     "fx": "float",
+     "sfx": "radio",
+     "focus": [
+      0.52,
+      0.45,
+      1.25
+     ]
+    },
+    {
+     "say": "He was alone.",
+     "edit": "Extreme wide shot: the astronaut is a tiny lone figure floating in black space high above the dark night side of Earth, city lights far below.",
+     "move": "pull_out",
+     "fx": "float"
+    },
+    {
+     "say": "So he followed the only thing he could feel:",
+     "edit": "Close-up of the astronaut's white glove gripping a thin steel safety tether cable in darkness, a headlamp glint on the metal.",
+     "move": "push_in",
+     "fx": "float"
+    },
+    {
+     "say": "his safety cable, pulling him back.",
+     "edit": "Wide shot at night outside the space station: a thin tether cable runs along the hull toward a small glowing open airlock hatch, the astronaut pulls himself along it hand over hand.",
+     "move": "push_in",
+     "fx": "float",
+     "sfx": "whoosh"
+    },
+    {
+     "say": "His last resort? Open a valve by his ear",
+     "edit": "Close-up of the side of the helmet: the astronaut's gloved fingers reach for a small metal valve on the side of the helmet, dramatic rim light, black space.",
+     "move": "push_in",
+     "fx": "float"
+    },
+    {
+     "say": "and dump the water into space.",
+     "edit": "A burst of water vapor flashes into glittering ice crystals as it vents from the side of the astronaut's helmet into black space, sunlight catching the crystals.",
+     "move": "pull_out",
+     "fx": "float",
+     "sfx": "hiss"
+    },
+    {
+     "say": "He made it to the airlock with his eyes closed.",
+     "reuse": 17,
+     "move": "push_in",
+     "fx": "float",
+     "focus": [
+      0.5,
+      0.42,
+      1.25
+     ]
+    },
+    {
+     "say": "They found about {1.5 liters|one and a half liters} of water in his helmet.",
+     "prompt": "inside a space station module, a white spacesuit helmet resting on a panel with a large wobbling ball of water floating out of it, smooth featureless matte white mannequin figures with blank egg-shaped heads as crew members standing around it, cool interior light",
+     "move": "orbit",
+     "fx": "float"
+    },
+    {
+     "say": "And the worst part?",
+     "edit": "The same spacesuit, empty, hanging in a dim locker on the space station, lit by a single cold light, ominous.",
+     "move": "push_in",
+     "fx": "dust",
+     "sfx": "boom"
+    },
+    {
+     "say": "The same suit had leaked a week earlier.",
+     "reuse": 22,
+     "move": "push_in",
+     "fx": "float",
+     "focus": [
+      0.5,
+      0.32,
+      1.35
+     ]
+    },
+    {
+     "say": "No one dug deeper.",
+     "prompt": "smooth featureless matte white mannequin figures with blank egg-shaped heads as engineers walking away from an empty white spacesuit standing on a stand in a dim hangar, a single spotlight",
+     "move": "drift_left",
+     "fx": "dust"
+    },
+    {
+     "say": "Until the water was crawling over his eyes...",
+     "reuse": 0,
+     "move": "loop_end",
+     "fx": "float"
+    }
+   ],
+   "facts": [
+    {
+     "claim": "July 16 2013",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "water felt 44 min in",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "drink-bag assumption",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "cold, 'funny or metallic' taste",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "cooling loop (fan pump separator) as source",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "water covered eyes, ears, nose",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "spacewalk ended 23 min after first report",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "orbital night on the way back",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "wet comm cap",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "about 1.5 liters total",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "EVA 22 leak a week earlier",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "sun set while he was upside down",
+     "src": [
+      1
+     ]
+    },
+    {
+     "claim": "could not see the handrails",
+     "src": [
+      1
+     ]
+    },
+    {
+     "claim": "'I'm alone'",
+     "src": [
+      1
+     ]
+    },
+    {
+     "claim": "safety-cable recoil guided him",
+     "src": [
+      1
+     ]
+    },
+    {
+     "claim": "safety valve near his left ear as last resort",
+     "src": [
+      1
+     ]
+    },
+    {
+     "claim": "entered airlock with eyes closed",
+     "src": [
+      1
+     ]
+    },
+    {
+     "claim": "Mishap board: water after EVA 22 'was not investigated further'",
+     "src": [
+      2
+     ]
+    },
+    {
+     "claim": "drink-bag belief",
+     "src": [
+      2
+     ]
+    }
+   ],
+   "sources": [
+    {
+     "title": "NASA History - 10 Years Ago: EVA 23, How a High-Visibility Close Call Cut Short a Spacewalk",
+     "url": "https://www.nasa.gov/history/10-years-ago-eva-23-how-a-high-visibility-close-call-cut-short-a-spacewalk/",
+     "used": "July 16 2013; water felt 44 min in; drink-bag assumption; cold, 'funny or metallic' taste; cooling loop (fan pump separator) as source; water covered eyes, ears, nose; spacewalk ended 23 min after first report; orbital night on the way back; wet comm cap; about 1.5 liters total; EVA 22 leak a week earlier"
+    },
+    {
+     "title": "Luca Parmitano (ESA blog) - EVA 23: exploring the frontier",
+     "url": "https://blogs.esa.int/luca-parmitano/2013/08/20/eva-23-exploring-the-frontier/",
+     "used": "sun set while he was upside down; could not see the handrails; 'I'm alone'; safety-cable recoil guided him; safety valve near his left ear as last resort; entered airlock with eyes closed"
+    },
+    {
+     "title": "Universe Today - Spacesuit Leak Mishap: Why It Took NASA 23 Minutes To Send Astronaut To Safety",
+     "url": "https://universetoday.com/109763/spacesuit-leak-mishap-why-it-took-nasa-23-minutes-to-send-astronaut-to-safety",
+     "used": "Mishap board: water after EVA 22 'was not investigated further'; drink-bag belief"
+    }
+   ],
+   "careful": "Real person (Luca Parmitano): only facts from NASA's history article and his own ESA blog. Shown only as a faceless mannequin astronaut. No claim that he nearly died beyond what NASA calls a close call."
+  },
+  {
+   "id": 2,
+   "slug": "struck-by-lightning-seven-times",
+   "from": "2026-11-06",
+   "format": "story",
+   "title": "The Man Lightning Struck Seven Times",
+   "description": "Park ranger Roy Sullivan was struck by lightning seven times between 1942 and 1977, a Guinness World Record. Toenail, eyebrows, shoulder, hair (three times)... and after the seventh, he still had to fight a bear for his fish.",
+   "tags": [
+    "roy sullivan",
+    "lightning",
+    "guinness world records",
+    "park ranger",
+    "shenandoah"
+   ],
+   "music": "storm",
+   "style_tail": ", stormy teal and electric white palette, 1970s Appalachian setting, epic movie still",
+   "grade": {
+    "contrast": 1.1,
+    "saturation": 0.92,
+    "tint": [
+     0.98,
+     1.0,
+     1.04
+    ]
+   },
+   "character": {
+    "prompt": "an adult human figure with realistic proportions rendered as a smooth featureless matte white mannequin with a blank egg-shaped head and no facial features, dressed as a 1970s park ranger in a khaki uniform shirt, khaki trousers, brown boots and a flat-brimmed campaign hat, standing on a forest trail, full body, three-quarter view",
+    "seed": 812
+   },
+   "shots": [
+    {
+     "say": "Lightning hits him right on the top of the head.",
+     "edit": "He stands knee deep in a mountain stream at night holding a fishing rod while a blinding white lightning bolt strikes the top of his hat from a black storm sky, sparks and crackling electricity, rain.",
+     "move": "hook",
+     "fx": "rain",
+     "sfx": "thunder",
+     "flash": [
+      0.2
+     ]
+    },
+    {
+     "say": "His hair catches fire.",
+     "edit": "Close-up from behind and slightly above: the top of his campaign hat is scorched and smoking with small flames and glowing embers rising into the rain, dark storm.",
+     "move": "push_in",
+     "fx": "embers",
+     "sfx": "fire"
+    },
+    {
+     "say": "And this... is the seventh time.",
+     "prompt": "seven jagged lightning bolts striking at once across a black storm sky over forested Appalachian mountains, epic extreme wide shot",
+     "move": "pull_out",
+     "fx": "rain",
+     "sfx": "thunder",
+     "flash": [
+      0.15
+     ]
+    },
+    {
+     "say": "Roy Sullivan was a park ranger",
+     "edit": "Seen from behind, he stands on a rocky mountain overlook, layers of blue ridge mountains in haze, golden hour.",
+     "move": "drift_right",
+     "fx": "dust"
+    },
+    {
+     "say": "in Shenandoah National Park.",
+     "prompt": "aerial view of the Blue Ridge Mountains with a winding scenic road through autumn forest, mist in the valleys, golden light",
+     "move": "pan_right",
+     "fx": "dust"
+    },
+    {
+     "say": "Strike one, {1942.|nineteen forty-two.}",
+     "prompt": "a wooden fire lookout tower on a mountain peak engulfed in flames during a thunderstorm at night, lightning in the sky",
+     "move": "push_in",
+     "fx": "embers",
+     "sfx": "thunder",
+     "flash": [
+      0.1
+     ]
+    },
+    {
+     "say": "He runs from a burning fire tower, and a bolt takes his big toenail.",
+     "edit": "He sprints away from a burning wooden fire lookout tower as a lightning bolt hits the ground right at his feet, sparks flying, rain, dynamic motion.",
+     "move": "pan_left",
+     "fx": "rain",
+     "sfx": "zap",
+     "flash": [
+      0.3
+     ]
+    },
+    {
+     "say": "{1969:|Nineteen sixty-nine:} lightning comes through his truck window",
+     "prompt": "a vintage 1960s pickup truck on a mountain road at night, a lightning bolt striking through the open driver window, the cab interior lit blue-white",
+     "move": "push_in",
+     "fx": "rain",
+     "sfx": "thunder",
+     "flash": [
+      0.25
+     ]
+    },
+    {
+     "say": "and burns off his eyebrows.",
+     "reuse": 7,
+     "move": "drift_left",
+     "fx": "smoke",
+     "focus": [
+      0.42,
+      0.5,
+      1.3
+     ],
+     "tint": [
+      0.82,
+      0.84,
+      0.92
+     ]
+    },
+    {
+     "say": "{1970:|Nineteen seventy:} his own front yard. It sears his shoulder.",
+     "edit": "In the front yard of a small rural house at dusk, a lightning arc jumps from a power transformer on a wooden pole to his shoulder, sparks.",
+     "move": "push_in",
+     "fx": "rain",
+     "sfx": "zap",
+     "flash": [
+      0.2
+     ]
+    },
+    {
+     "say": "{1972:|Nineteen seventy-two:} inside a ranger station. His hair catches fire.",
+     "edit": "Inside a rustic wooden ranger station during a storm, a halo of electric sparks crackles around his hat, the window flashing white.",
+     "move": "push_in",
+     "fx": "embers",
+     "sfx": "zap",
+     "flash": [
+      0.2
+     ]
+    },
+    {
+     "say": "After that, he kept a can of water in his truck.",
+     "prompt": "a dented metal water can on the bench seat of a vintage pickup truck, rain streaking the windshield, moody light",
+     "move": "drift_right",
+     "fx": "dust"
+    },
+    {
+     "say": "{1973:|Nineteen seventy-three:} hair on fire. Again.",
+     "reuse": 1,
+     "move": "push_in",
+     "fx": "embers",
+     "sfx": "thunder",
+     "focus": [
+      0.55,
+      0.45,
+      1.2
+     ],
+     "flash": [
+      0.15
+     ]
+    },
+    {
+     "say": "{1976:|Nineteen seventy-six:} he swears a cloud is following him.",
+     "edit": "Tiny on a forest trail, he looks up at a huge dark swirling storm cloud hanging low over the trees, ominous.",
+     "move": "push_in",
+     "fx": "dust",
+     "sfx": "rumble"
+    },
+    {
+     "say": "He runs.",
+     "edit": "He runs down a muddy forest trail away from the storm, rain, dynamic low angle.",
+     "move": "punch",
+     "fx": "rain",
+     "sfx": "whoosh"
+    },
+    {
+     "say": "It gets him anyway.",
+     "edit": "A lightning bolt strikes him as he runs on the forest trail, blinding flash, sparks, rain.",
+     "move": "shake",
+     "fx": "rain",
+     "sfx": "thunder",
+     "flash": [
+      0.05
+     ]
+    },
+    {
+     "say": "Guinness puts the odds of being struck even once at about {1 in 10,000.|one in ten thousand.}",
+     "prompt": "top-down view of thousands of tiny glowing featureless mannequin figures standing in a dark field at night, one single figure lit by a thin lightning bolt from above",
+     "move": "pull_out",
+     "fx": "dust"
+    },
+    {
+     "say": "People started avoiding him.",
+     "edit": "He stands alone under a dark sky while a group of identical faceless mannequin coworkers in ranger uniforms walk away from him.",
+     "move": "drift_left",
+     "fx": "rain"
+    },
+    {
+     "say": "In one storm, his own chief ranger walked away: \"I'll see you later.\"",
+     "reuse": 17,
+     "move": "drift_right",
+     "fx": "rain",
+     "focus": [
+      0.5,
+      0.5,
+      1.2
+     ]
+    },
+    {
+     "say": "And that day in {1977?|nineteen seventy-seven?}",
+     "prompt": "a mountain stream right after a storm, steam rising off the rocks, a fishing rod lying on the bank, golden light breaking through clouds",
+     "move": "drift_right",
+     "fx": "dust"
+    },
+    {
+     "say": "After the seventh strike, a bear tried to steal his trout.",
+     "edit": "By a mountain stream after rain, a black bear wades in and reaches for a trout hanging on his fishing line while he stands behind it.",
+     "move": "push_in",
+     "fx": "dust"
+    },
+    {
+     "say": "He hit it with a branch.",
+     "edit": "He swings a tree branch at a black bear beside the stream, splashing water, dramatic action.",
+     "move": "punch",
+     "fx": "dust",
+     "sfx": "hit"
+    },
+    {
+     "say": "So what do you do after six lightning strikes?",
+     "reuse": 19,
+     "move": "push_in",
+     "fx": "rain",
+     "sfx": "rumble",
+     "tint": [
+      0.8,
+      0.85,
+      0.98
+     ]
+    },
+    {
+     "say": "You go fishing.",
+     "reuse": 0,
+     "move": "loop_end",
+     "fx": "rain"
+    }
+   ],
+   "facts": [
+    {
+     "claim": "record: most lightning strikes survived",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "1942 lost big toenail fleeing burning watchtower",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "1969 eyebrows",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "1970 shoulder",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "1972 hair on fire",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "1973 hair again",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "1976 ankle/hair",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "1977 fishing, chest and stomach",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "odds of being struck once in an 80-year lifetime about 1 in 10,000",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "Shenandoah National Park ranger",
+     "src": [
+      1
+     ]
+    },
+    {
+     "claim": "1942 fire lookout tower",
+     "src": [
+      1
+     ]
+    },
+    {
+     "claim": "1969 bolt through open truck window",
+     "src": [
+      1
+     ]
+    },
+    {
+     "claim": "1970 front yard via transformer to left shoulder",
+     "src": [
+      1
+     ]
+    },
+    {
+     "claim": "1972 ranger station, hair on fire, afterwards kept a can of water in his truck",
+     "src": [
+      1
+     ]
+    },
+    {
+     "claim": "1973 hair on fire",
+     "src": [
+      1
+     ]
+    },
+    {
+     "claim": "1976 believed a cloud was following him, ran, struck anyway",
+     "src": [
+      1
+     ]
+    },
+    {
+     "claim": "1977 fishing, top of head",
+     "src": [
+      1
+     ]
+    },
+    {
+     "claim": "then hit a bear stealing his trout with a tree branch",
+     "src": [
+      1
+     ]
+    },
+    {
+     "claim": "people avoided him",
+     "src": [
+      1
+     ]
+    },
+    {
+     "claim": "chief ranger: 'I'll see you later'",
+     "src": [
+      1
+     ]
+    }
+   ],
+   "sources": [
+    {
+     "title": "Guinness World Records - Incredible story of man who survived being struck by lightning seven times",
+     "url": "https://www.guinnessworldrecords.com/news/2023/1/incredible-story-of-man-who-survived-being-struck-by-lightning-seven-times-733932",
+     "used": "record: most lightning strikes survived; 1942 lost big toenail fleeing burning watchtower; 1969 eyebrows; 1970 shoulder; 1972 hair on fire; 1973 hair again; 1976 ankle/hair; 1977 fishing, chest and stomach; odds of being struck once in an 80-year lifetime about 1 in 10,000"
+    },
+    {
+     "title": "Wikipedia - Roy Sullivan",
+     "url": "https://en.wikipedia.org/wiki/Roy_Sullivan",
+     "used": "Shenandoah National Park ranger; 1942 fire lookout tower; 1969 bolt through open truck window; 1970 front yard via transformer to left shoulder; 1972 ranger station, hair on fire, afterwards kept a can of water in his truck; 1973 hair on fire; 1976 believed a cloud was following him, ran, struck anyway; 1977 fishing, top of head; then hit a bear stealing his trout with a tree branch; people avoided him; chief ranger: 'I'll see you later'"
+    }
+   ],
+   "careful": "Real person (Roy Sullivan): Guinness/Wikipedia facts only. His death (1983) is not mentioned. Faceless mannequin ranger. The odds line uses Guinness's 1-in-10,000 figure only (no invented multi-strike odds)."
+  },
+  {
+   "id": 3,
+   "slug": "plane-door-at-35000-feet",
+   "from": "2026-11-09",
+   "format": "whatif",
+   "title": "What If You Opened a Plane Door at 35,000 Feet?",
+   "description": "Could a passenger really open an airliner door mid-flight? At cruise, cabin pressure jams the plug door shut with more than 20,000 pounds of force. But in 2023 one passenger did open an exit door, at 700 feet. Here's the physics.",
+   "tags": [
+    "airplane",
+    "aviation",
+    "plane door",
+    "cabin pressure",
+    "physics"
+   ],
+   "music": "tension",
+   "style_tail": ", warm sunset amber and deep blue palette, generic modern airliner with plain white livery, epic movie still",
+   "grade": {
+    "contrast": 1.07,
+    "saturation": 1.0,
+    "tint": [
+     1.02,
+     1.0,
+     0.98
+    ]
+   },
+   "shots": [
+    {
+     "say": "You grab the emergency exit handle at {35,000 feet,|thirty-five thousand feet,} and pull.",
+     "prompt": "close-up: a smooth featureless white mannequin hand firmly gripping the red emergency exit door handle inside an airliner cabin, the small door window beside it shows clouds far below at sunset, tense dramatic light",
+     "move": "hook",
+     "fx": "dust",
+     "sfx": "wind"
+    },
+    {
+     "say": "Nothing happens.",
+     "prompt": "an airliner emergency exit door seen from inside, sealed tight in its frame, a smooth white mannequin hand on the half-raised red handle, warm cabin light, the wing visible through the small window",
+     "move": "punch",
+     "fx": "dust",
+     "sfx": "thud"
+    },
+    {
+     "say": "It's not the lock. It's the air.",
+     "prompt": "cutaway visualization of an airliner fuselage in flight above clouds, glowing blue arrows of air pressure pushing outward on the cabin walls and doors from inside, 3D technical render",
+     "move": "orbit",
+     "fx": "dust",
+     "sfx": "whoosh"
+    },
+    {
+     "say": "At cruising altitude, the cabin air pushes",
+     "prompt": "a modern airliner cruising high above a sea of clouds at sunset, seen from the side, contrails",
+     "move": "pan_right",
+     "fx": "none"
+    },
+    {
+     "say": "about {8.5 pounds|eight and a half pounds} harder on every square inch",
+     "prompt": "3D visualization: an airliner door seen from inside, thousands of tiny glowing blue air particles packed densely on the cabin side pushing against it, only a few sparse particles outside, dark background",
+     "move": "push_in",
+     "fx": "dust"
+    },
+    {
+     "say": "than the air outside.",
+     "reuse": 3,
+     "move": "drift_left",
+     "fx": "snow",
+     "focus": [
+      0.6,
+      0.42,
+      1.25
+     ]
+    },
+    {
+     "say": "And the door is a plug.",
+     "prompt": "3D technical cutaway of an airliner plug door that is larger than its frame, wedged into the opening from the inside like a drain stopper, glowing outline, dark background",
+     "move": "orbit",
+     "fx": "dust"
+    },
+    {
+     "say": "It has to move inward before it can open.",
+     "reuse": 6,
+     "move": "orbit",
+     "fx": "dust",
+     "focus": [
+      0.5,
+      0.5,
+      1.2
+     ]
+    },
+    {
+     "say": "So you're not pulling a handle.",
+     "reuse": 0,
+     "move": "push_in",
+     "fx": "dust",
+     "focus": [
+      0.45,
+      0.5,
+      1.25
+     ]
+    },
+    {
+     "say": "You're pulling against more than {20,000 pounds.|twenty thousand pounds.}",
+     "prompt": "surreal visualization of a gigantic stack of black steel weight plates pressing against the outside of an airliner door in the sky, clouds below, cinematic",
+     "move": "pull_out",
+     "fx": "dust",
+     "sfx": "boom"
+    },
+    {
+     "say": "About ten tons.",
+     "reuse": 9,
+     "move": "tilt_up",
+     "fx": "dust"
+    },
+    {
+     "say": "But it has been opened.",
+     "prompt": "an airliner emergency exit door forced partly open in flight, a blinding strip of daylight and the ground visible through the gap, wind",
+     "move": "push_in",
+     "fx": "debris",
+     "sfx": "wind"
+    },
+    {
+     "say": "{May 2023.|May, twenty twenty-three.}",
+     "prompt": "an airliner on final approach descending over a city at midday, landing gear down, haze",
+     "move": "drift_right",
+     "fx": "none"
+    },
+    {
+     "say": "An Asiana jet, {700 feet|seven hundred feet} above Daegu.",
+     "prompt": "view through an airliner window during low final approach: rooftops, roads and the start of a runway close below, bright daylight",
+     "move": "pan_left",
+     "fx": "none"
+    },
+    {
+     "say": "A passenger forces the exit door partly open.",
+     "prompt": "inside an airliner cabin, an emergency exit door in the left cabin wall pushed partly open with a blinding gap of daylight sky, napkins and papers blowing through the air, smooth featureless matte white mannequin figures with blank egg-shaped heads as passengers leaning away from the door in their seats",
+     "move": "push_in",
+     "fx": "debris",
+     "sfx": "wind"
+    },
+    {
+     "say": "Wind blasts through the cabin.",
+     "reuse": 14,
+     "move": "shake",
+     "fx": "debris",
+     "sfx": "wind",
+     "focus": [
+      0.5,
+      0.5,
+      1.2
+     ]
+    },
+    {
+     "say": "Twelve people go to the hospital.",
+     "prompt": "flashing red and blue emergency lights reflecting on wet tarmac beside a parked airliner at dusk, the emergency vehicles out of focus far in the background",
+     "move": "drift_left",
+     "fx": "none",
+     "sfx": "siren"
+    },
+    {
+     "say": "The plane lands safely.",
+     "reuse": 12,
+     "move": "pan_right",
+     "fx": "none",
+     "focus": [
+      0.5,
+      0.55,
+      1.15
+     ]
+    },
+    {
+     "say": "Near the ground, the pressure difference almost vanishes.",
+     "reuse": 2,
+     "move": "pull_out",
+     "fx": "dust",
+     "tint": [
+      0.85,
+      0.9,
+      1.0
+     ]
+    },
+    {
+     "say": "And up high? In {2024,|twenty twenty-four,} a door plug blew out of an Alaska Airlines jet",
+     "prompt": "a gaping rectangular hole torn in the side of an airliner fuselage in flight, cabin lights visible inside, clouds below, dramatic",
+     "move": "push_in",
+     "fx": "debris",
+     "sfx": "boom"
+    },
+    {
+     "say": "at almost {15,000 feet.|fifteen thousand feet.}",
+     "prompt": "view from inside an airliner cabin toward a large rectangular hole torn in the cabin wall next to a row of empty seats, bright sky and clouds through the hole, torn insulation around the edges, oxygen masks dangling",
+     "move": "shake",
+     "fx": "debris",
+     "sfx": "wind"
+    },
+    {
+     "say": "Headrests, a tray table, wall panels, gone.",
+     "prompt": "a folding tray table and two small headrest cushions tumbling through open sky with clouds far below, motion blur, an airliner flying away in the distance",
+     "move": "pull_out",
+     "fx": "debris",
+     "sfx": "whoosh"
+    },
+    {
+     "say": "Everyone survived.",
+     "prompt": "smooth featureless matte white mannequin figures with blank egg-shaped heads as airline passengers sitting calmly in their seats wearing small yellow plastic oxygen mask cups on clear tubes, cabin in daylight",
+     "move": "drift_right",
+     "fx": "dust"
+    },
+    {
+     "say": "At {35,000 feet,|thirty-five thousand feet,} after a sudden decompression,",
+     "prompt": "small yellow plastic oxygen mask cups on clear tubes dropping from open ceiling panels above rows of airliner seats, swinging, a light fog in the cabin air",
+     "move": "push_in",
+     "fx": "snow",
+     "sfx": "hiss"
+    },
+    {
+     "say": "you'd have maybe {15 to 30 seconds|fifteen to thirty seconds} of useful consciousness.",
+     "prompt": "a blurry tunnel-vision view of an airliner cabin aisle with darkening edges, one yellow oxygen mask dangling in sharp focus",
+     "move": "push_in",
+     "fx": "none",
+     "sfx": "heartbeat"
+    },
+    {
+     "say": "That's why the masks drop.",
+     "reuse": 23,
+     "move": "drift_left",
+     "fx": "dust",
+     "focus": [
+      0.5,
+      0.36,
+      1.3
+     ]
+    },
+    {
+     "say": "So. You're in the exit row, at {35,000 feet...|thirty-five thousand feet...}",
+     "reuse": 0,
+     "move": "loop_end",
+     "fx": "dust"
+    }
+   ],
+   "facts": [
+    {
+     "claim": "pilot Duke Armitage: 'more than 20,000 pounds of force' at typical cruise",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "Patrick Smith: door is a plug held by interior pressure, almost all exits open inward",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "differential about 8.6 psi on a typical airliner at cruise",
+     "src": [
+      1
+     ]
+    },
+    {
+     "claim": "plug exits must move inward first",
+     "src": [
+      2
+     ]
+    },
+    {
+     "claim": "near 700 ft the pressure difference is much smaller",
+     "src": [
+      2
+     ]
+    },
+    {
+     "claim": "May 26 2023, Asiana A321 Jeju-Daegu, about 700 ft, door partially opened, wind into cabin, 12 taken to hospital, landed safely",
+     "src": [
+      3
+     ]
+    },
+    {
+     "claim": "Jan 5 2024, 737-9, left mid exit door plug separated at about 14,830 ft, rapid depressurization",
+     "src": [
+      4
+     ]
+    },
+    {
+     "claim": "tray table, two headrests, interior panels missing",
+     "src": [
+      4
+     ]
+    },
+    {
+     "claim": "171 passengers + 6 crew, minor injuries only, landed safely",
+     "src": [
+      4
+     ]
+    },
+    {
+     "claim": "FL350: 30-60 s, 15-30 s after rapid decompression",
+     "src": [
+      5
+     ]
+    }
+   ],
+   "sources": [
+    {
+     "title": "SmarterTravel - Is It Possible to Open the Door on a Plane Mid Flight?",
+     "url": "https://www.smartertravel.com/is-it-possible-to-open-emergency-exit-mid-flight/",
+     "used": "pilot Duke Armitage: 'more than 20,000 pounds of force' at typical cruise; Patrick Smith: door is a plug held by interior pressure, almost all exits open inward"
+    },
+    {
+     "title": "MigFlug - Why Airplane Cabins Are Pressurised to 6,000 Feet",
+     "url": "https://migflug.com/jetflights/why-airplane-cabins-are-pressurised-to-6000-feet-not-sea-level/",
+     "used": "differential about 8.6 psi on a typical airliner at cruise"
+    },
+    {
+     "title": "AFAR - A Passenger Opened an Airplane Door Mid-Flight. How Was That Possible?",
+     "url": "https://www.afar.com/magazine/is-it-possible-to-open-an-airplane-door-mid-flight",
+     "used": "plug exits must move inward first; near 700 ft the pressure difference is much smaller"
+    },
+    {
+     "title": "CBS News - Asiana Airlines passenger arrested after opening door",
+     "url": "https://www.cbsnews.com/news/plane-door-open-south-korea-asiana-airlines-passenger-arrested",
+     "used": "May 26 2023, Asiana A321 Jeju-Daegu, about 700 ft, door partially opened, wind into cabin, 12 taken to hospital, landed safely"
+    },
+    {
+     "title": "NTSB - DCA24MA063 Alaska Airlines Flight 1282",
+     "url": "https://www.ntsb.gov/investigations/Pages/DCA24MA063.aspx",
+     "used": "Jan 5 2024, 737-9, left mid exit door plug separated at about 14,830 ft, rapid depressurization; tray table, two headrests, interior panels missing; 171 passengers + 6 crew, minor injuries only, landed safely"
+    },
+    {
+     "title": "Wikipedia - Time of useful consciousness (FAA averages)",
+     "url": "https://en.wikipedia.org/wiki/Time_of_useful_consciousness",
+     "used": "FL350: 30-60 s, 15-30 s after rapid decompression"
+    }
+   ],
+   "careful": "Asiana 2023 and Alaska 1282 are real incidents: no passenger is identified or shown, no airline logos, generic white airliners. Injuries stated only as the official counts."
+  },
+  {
+   "id": 4,
+   "slug": "outrun-a-tsunami",
+   "from": "2026-11-11",
+   "format": "whatif",
+   "title": "Could You Really Outrun a Tsunami?",
+   "description": "A tsunami crosses the deep ocean as fast as a jet and still hits the beach at the speed of a car. The fastest human ever measured hit 27.8 mph. So can you outrun one? In 2004 a 10-year-old girl showed the real answer.",
+   "tags": [
+    "tsunami",
+    "ocean",
+    "survival",
+    "natural disaster",
+    "tilly smith"
+   ],
+   "music": "ocean",
+   "style_tail": ", tropical turquoise and ominous grey palette, epic movie still",
+   "grade": {
+    "contrast": 1.06,
+    "saturation": 1.0,
+    "tint": [
+     0.99,
+     1.0,
+     1.02
+    ]
+   },
+   "shots": [
+    {
+     "say": "The sea just pulled back.",
+     "prompt": "the ocean has retreated hundreds of meters from a tropical beach, an exposed coral reef seabed with tide pools, stranded fish and small boats lying on their sides on the wet sand, the water line is a thin band far away at the horizon, a few smooth featureless matte white mannequin figures with blank egg-shaped heads as tourists standing on the exposed seabed looking out to sea, stormy sky",
+     "move": "hook",
+     "fx": "spray",
+     "sfx": "suck"
+    },
+    {
+     "say": "Wet sand where the waves used to be.",
+     "prompt": "close-up of a fish lying on wet sand and pebbles exposed to the open air where the sea used to be, small tide pools and coral, a small boat lying on its side on the sand behind, overcast sky",
+     "move": "push_in",
+     "fx": "spray"
+    },
+    {
+     "say": "People walk out to look.",
+     "prompt": "smooth featureless matte white mannequin figures with blank egg-shaped heads wearing casual summer clothes, t-shirts and shorts as tourists walking out across the exposed wet seabed toward the far-away waterline, seen from behind, eerie calm",
+     "move": "drift_right",
+     "fx": "spray"
+    },
+    {
+     "say": "Don't.",
+     "prompt": "a huge dark wave rising across the whole horizon behind smooth featureless matte white mannequin figures with blank egg-shaped heads wearing casual summer clothes, t-shirts and shorts standing on the exposed seabed, seen from behind, ominous dark sky",
+     "move": "punch",
+     "fx": "spray",
+     "sfx": "boom"
+    },
+    {
+     "say": "In the deep ocean, a tsunami moves as fast as a jet plane.",
+     "prompt": "aerial view of a vast dark ocean with a long faint swell line racing across it, a jet airliner flying high above leaving a contrail, dramatic light",
+     "move": "pan_right",
+     "fx": "none",
+     "sfx": "whoosh"
+    },
+    {
+     "say": "Over {500 miles an hour.|five hundred miles an hour.}",
+     "prompt": "3D visualization of a glowing tsunami wave front spreading across the ocean of a dark globe, lines of energy, dark background",
+     "move": "orbit",
+     "fx": "dust"
+    },
+    {
+     "say": "Near shore it slows down,",
+     "prompt": "a huge wave rising taller as it approaches a tropical coastline, seen from the side at water level, single continuous scene",
+     "move": "push_in",
+     "fx": "dust"
+    },
+    {
+     "say": "to about {20 or 30.|twenty or thirty.}",
+     "prompt": "a towering wave rolling toward a beach town, cars on a coastal road in front of it, wide shot, overcast",
+     "move": "pull_out",
+     "fx": "spray",
+     "sfx": "rumble"
+    },
+    {
+     "say": "The speed of a car.",
+     "reuse": 7,
+     "move": "pan_left",
+     "fx": "spray",
+     "sfx": "whoosh",
+     "focus": [
+      0.5,
+      0.62,
+      1.25
+     ]
+    },
+    {
+     "say": "The fastest human ever measured, Usain Bolt,",
+     "prompt": "a smooth featureless white mannequin sprinter exploding out of the starting blocks on a running track at night under stadium floodlights, backlit",
+     "move": "push_in",
+     "fx": "dust"
+    },
+    {
+     "say": "hit {27.8.|twenty-seven point eight.}",
+     "reuse": 9,
+     "move": "pan_right",
+     "fx": "dust",
+     "sfx": "whoosh",
+     "focus": [
+      0.5,
+      0.5,
+      1.2
+     ]
+    },
+    {
+     "say": "For a moment. On a perfect track.",
+     "prompt": "an empty red running track with white lane lines under stadium floodlights at night, low angle, wet surface reflections",
+     "move": "drift_left",
+     "fx": "dust"
+    },
+    {
+     "say": "You're on soft sand. In flip-flops.",
+     "prompt": "close-up of the feet of a smooth white mannequin figure in flip-flops sinking into soft sand while running, sand flying, low angle",
+     "move": "shake",
+     "fx": "spray"
+    },
+    {
+     "say": "And a tsunami isn't one wave.",
+     "prompt": "aerial view of several huge wave lines rolling toward a coastline one after another, overcast",
+     "move": "push_in",
+     "fx": "none"
+    },
+    {
+     "say": "The first may not be the biggest, and the danger can last for hours.",
+     "prompt": "aerial drone shot looking down at a single flooded coastal street, brown water rushing between houses and palm trees, debris floating, overcast, one continuous scene",
+     "move": "pan_left",
+     "fx": "spray",
+     "sfx": "rumble"
+    },
+    {
+     "say": "So no, you can't outrun it.",
+     "prompt": "a lone smooth featureless white mannequin figure sprinting across the sand toward the camera, a gigantic breaking wave towering right behind it, spray filling the air",
+     "move": "shake",
+     "fx": "spray",
+     "sfx": "boom"
+    },
+    {
+     "say": "But in {2004,|two thousand four,} a ten-year-old girl on a beach in Thailand didn't try to.",
+     "prompt": "a small child-sized smooth featureless white mannequin figure with a ponytail wearing a yellow summer dress, seen from behind, standing at the edge of a sunny tropical resort beach looking at the strange sea, palm trees, morning light",
+     "move": "push_in",
+     "fx": "dust"
+    },
+    {
+     "say": "Tilly Smith saw the water frothing, like beer,",
+     "prompt": "close-up of strange bubbling white froth fizzing on the sea surface at the shoreline, like beer foam, bright sunlight",
+     "move": "push_in",
+     "fx": "spray",
+     "sfx": "fizz"
+    },
+    {
+     "say": "and remembered a geography lesson from two weeks earlier.",
+     "prompt": "a school classroom with a projector screen showing an old black and white film of an ocean wave, smooth featureless matte white mannequin figures with blank egg-shaped heads as children seen from behind, warm light",
+     "move": "drift_right",
+     "fx": "dust"
+    },
+    {
+     "say": "She warned her parents.",
+     "reuse": 16,
+     "move": "push_in",
+     "fx": "dust",
+     "focus": [
+      0.5,
+      0.55,
+      1.2
+     ]
+    },
+    {
+     "say": "Her father got security to clear the beach.",
+     "prompt": "smooth featureless matte white mannequin figures with blank egg-shaped heads wearing casual summer clothes, t-shirts and shorts as tourists hurrying off a sunny beach carrying towels, one figure in a security guard uniform waving them away from the water, palm trees",
+     "move": "pan_left",
+     "fx": "dust"
+    },
+    {
+     "say": "About a hundred people moved to the second floor of a hotel.",
+     "prompt": "smooth featureless matte white mannequin figures with blank egg-shaped heads wearing casual summer clothes, t-shirts and shorts gathered on the second floor balcony of a beach resort hotel looking toward the sea, seen from behind",
+     "move": "pull_out",
+     "fx": "dust"
+    },
+    {
+     "say": "Then a {30-foot|thirty-foot} wave hit.",
+     "prompt": "a thirty foot wave crashing onto a beach resort lined with palm trees, spray exploding, seen from a hotel balcony",
+     "move": "shake",
+     "fx": "spray",
+     "sfx": "crash"
+    },
+    {
+     "say": "No deaths were reported on that beach.",
+     "prompt": "a calm beach after the wave, scattered debris, sun breaking through clouds, hopeful light",
+     "move": "drift_right",
+     "fx": "dust"
+    },
+    {
+     "say": "You don't outrun a tsunami. You out-start it.",
+     "prompt": "smooth featureless matte white mannequin figures with blank egg-shaped heads as a family running up a road away from the coast toward green hills, seen from behind, morning light",
+     "move": "push_in",
+     "fx": "dust",
+     "sfx": "whoosh"
+    },
+    {
+     "say": "So if you ever see the sea just... pull back...",
+     "reuse": 0,
+     "move": "loop_end",
+     "fx": "spray"
+    }
+   ],
+   "facts": [
+    {
+     "claim": "deep ocean: as fast as a jet plane, over 500 mph",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "at the shore most tsunamis slow to the speed of a car, about 20-30 mph",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "natural warnings: ocean drains away like a very low tide",
+     "src": [
+      1
+     ]
+    },
+    {
+     "claim": "don't wait for official warning",
+     "src": [
+      1
+     ]
+    },
+    {
+     "claim": "first wave may not be the last or largest",
+     "src": [
+      1
+     ]
+    },
+    {
+     "claim": "danger may last hours or days",
+     "src": [
+      1
+     ]
+    },
+    {
+     "claim": "Usain Bolt record 44.72 km/h (27.78 mph), 2009 World Championships",
+     "src": [
+      2
+     ]
+    },
+    {
+     "claim": "age 10",
+     "src": [
+      3
+     ]
+    },
+    {
+     "claim": "Mai Khao Beach, Phuket, Thailand, 2004",
+     "src": [
+      3
+     ]
+    },
+    {
+     "claim": "froth 'like you get on a beer'",
+     "src": [
+      3
+     ]
+    },
+    {
+     "claim": "geography lesson two weeks before",
+     "src": [
+      3
+     ]
+    },
+    {
+     "claim": "father convinced a security guard",
+     "src": [
+      3
+     ]
+    },
+    {
+     "claim": "about 100 people evacuated to second storey of a hotel",
+     "src": [
+      3
+     ]
+    },
+    {
+     "claim": "~9 m (30 ft) wave",
+     "src": [
+      3
+     ]
+    },
+    {
+     "claim": "no reported fatalities on that beach",
+     "src": [
+      3
+     ]
+    }
+   ],
+   "sources": [
+    {
+     "title": "NOAA JetStream - Tsunami propagation",
+     "url": "https://www.noaa.gov/jetstream/tsunamis/tsunami-propagation",
+     "used": "deep ocean: as fast as a jet plane, over 500 mph; at the shore most tsunamis slow to the speed of a car, about 20-30 mph"
+    },
+    {
+     "title": "NWS - Tsunami safety: during",
+     "url": "https://www.weather.gov/safety/tsunami-during",
+     "used": "natural warnings: ocean drains away like a very low tide; don't wait for official warning; first wave may not be the last or largest; danger may last hours or days"
+    },
+    {
+     "title": "Wikipedia - Footspeed",
+     "url": "https://en.wikipedia.org/wiki/Footspeed",
+     "used": "Usain Bolt record 44.72 km/h (27.78 mph), 2009 World Championships"
+    },
+    {
+     "title": "Wikipedia - Tilly Smith",
+     "url": "https://en.wikipedia.org/wiki/Tilly_Smith",
+     "used": "age 10; Mai Khao Beach, Phuket, Thailand, 2004; froth 'like you get on a beer'; geography lesson two weeks before; father convinced a security guard; about 100 people evacuated to second storey of a hotel; ~9 m (30 ft) wave; no reported fatalities on that beach"
+    }
+   ],
+   "careful": "2004 tsunami killed many people: show no victims, only empty flooded streets and anonymous faceless figures fleeing. Tilly Smith (then 10, now an adult) is shown only as a faceless child-sized mannequin seen from behind; only the widely reported facts from Wikipedia."
+  },
+  {
+   "id": 5,
+   "slug": "apollo-13-duct-tape-filter",
+   "from": "2026-11-13",
+   "format": "story",
+   "title": "The Astronauts Who Fixed Their Air With Duct Tape",
+   "description": "April 1970: an oxygen tank explodes on the way to the Moon, and Apollo 13's crew retreats into a lunar module built for two people for two days. Then the carbon dioxide starts building up, and the spare filters are the wrong shape.",
+   "tags": [
+    "apollo 13",
+    "nasa",
+    "space history",
+    "duct tape",
+    "astronauts"
+   ],
+   "music": "space",
+   "style_tail": ", cold blue cabin light and warm amber warning lights, 1970s NASA hardware, epic movie still",
+   "grade": {
+    "contrast": 1.06
+   },
+   "character": {
+    "prompt": "an adult human figure with realistic proportions rendered as a smooth featureless matte white mannequin with a blank egg-shaped head and no facial features, wearing a bulky plain white 1970s spacesuit without a helmet, inside a cramped dim spacecraft cabin lit by small panel lights, full body, three-quarter view",
+    "seed": 905
+   },
+   "shots": [
+    {
+     "say": "The air was slowly poisoning them,",
+     "edit": "Three identical faceless mannequin astronauts in the same white suits huddle in the cramped, frosty cabin of a lunar module, an amber warning light glowing on the panel beside them.",
+     "move": "hook",
+     "fx": "float",
+     "sfx": "alarm"
+    },
+    {
+     "say": "and they were more than {200,000 miles|two hundred thousand miles} from home.",
+     "prompt": "a tiny Apollo-era spacecraft with a spidery lunar module attached, drifting in black space, the small blue Earth far behind it",
+     "move": "pull_out",
+     "fx": "float",
+     "sfx": "whoosh"
+    },
+    {
+     "say": "{April 1970.|April, nineteen seventy.} Apollo 13 is on its way to the Moon,",
+     "prompt": "a white Apollo-era spacecraft flying toward a huge grey Moon, sunlight on its hull",
+     "move": "push_in",
+     "fx": "float"
+    },
+    {
+     "say": "when an oxygen tank explodes.",
+     "prompt": "a burst of white gas and debris blasting out of the side of a cylindrical spacecraft service module in space, sunlight catching the cloud",
+     "move": "punch",
+     "fx": "debris",
+     "sfx": "boom",
+     "flash": [
+      0.05
+     ]
+    },
+    {
+     "say": "The main ship starts dying.",
+     "prompt": "the interior of an Apollo command module going dark, rows of switches and dim dials, cold blue light",
+     "move": "push_in",
+     "fx": "dust"
+    },
+    {
+     "say": "So they crawl into the lunar module, a lifeboat built for two men for two days.",
+     "edit": "Seen from inside the lunar module, the astronaut floats head first through a narrow round tunnel hatch into the cramped cabin.",
+     "move": "push_in",
+     "fx": "float"
+    },
+    {
+     "say": "Now it has to keep three alive for four.",
+     "reuse": 0,
+     "focus": [
+      0.5,
+      0.5,
+      1.2
+     ],
+     "move": "drift_right"
+    },
+    {
+     "say": "Then a warning light: carbon dioxide.",
+     "prompt": "close-up of a single amber warning lamp glowing on a 1970s spacecraft control panel full of toggle switches, condensation on the metal",
+     "move": "push_in",
+     "fx": "dust",
+     "sfx": "alarm"
+    },
+    {
+     "say": "Every breath they let out is filling the cabin.",
+     "edit": "Close-up of the astronaut floating in the dim cabin, breathing out a faint cloud of vapor in the cold air.",
+     "move": "push_in",
+     "fx": "float"
+    },
+    {
+     "say": "The filters that clean the air are running out.",
+     "prompt": "a round metal lithium hydroxide filter canister floating in a dim spacecraft cabin, cold light",
+     "move": "drift_left",
+     "fx": "float"
+    },
+    {
+     "say": "There are spare filters in the main ship,",
+     "prompt": "a square metal filter canister floating next to a round opening in a spacecraft panel, cold light, close-up",
+     "move": "push_in",
+     "fx": "float"
+    },
+    {
+     "say": "but they're square, and the holes are round.",
+     "prompt": "3D visualization of a square block hovering in front of a round hole that it cannot fit through, glowing outline, dark background",
+     "move": "punch",
+     "fx": "dust",
+     "sfx": "thud"
+    },
+    {
+     "say": "A square peg in a round hole.",
+     "reuse": 11,
+     "focus": [
+      0.5,
+      0.5,
+      1.2
+     ],
+     "move": "push_in"
+    },
+    {
+     "say": "Engineers can only use what's on board:",
+     "prompt": "a 1970s mission control room with rows of glowing consoles, smooth featureless matte white mannequin figures with blank egg-shaped heads as engineers in white shirts gathered around a table, warm light",
+     "move": "pan_right",
+     "fx": "dust"
+    },
+    {
+     "say": "plastic bags, cardboard, and duct tape.",
+     "prompt": "on a metal table: a roll of grey duct tape, clear plastic bags, a piece of cardboard and a coiled hose, dramatic top light",
+     "move": "push_in",
+     "fx": "dust"
+    },
+    {
+     "say": "They read the steps up to the crew for about an hour.",
+     "reuse": 13,
+     "focus": [
+      0.5,
+      0.5,
+      1.15
+     ],
+     "move": "drift_left",
+     "sfx": "radio"
+    },
+    {
+     "say": "The cabin has dropped to {38 degrees Fahrenheit.|thirty-eight degrees Fahrenheit.}",
+     "edit": "The astronaut floats in the cabin, frost and condensation covering the walls and windows around him, breath fogging.",
+     "move": "push_in",
+     "fx": "snow"
+    },
+    {
+     "say": "They tape together a box of plastic and cardboard,",
+     "edit": "Close-up of the astronaut's hands wrapping grey duct tape around a makeshift box of cardboard and plastic attached to a square canister and a hose.",
+     "move": "push_in",
+     "fx": "float"
+    },
+    {
+     "say": "and the carbon dioxide starts to fall.",
+     "prompt": "close-up of an analog gauge needle on a 1970s spacecraft panel sweeping downward, soft relieved light",
+     "move": "push_in",
+     "fx": "dust",
+     "sfx": "hiss"
+    },
+    {
+     "say": "Water is cut to six ounces a day each.",
+     "prompt": "a small clear water pouch floating in a cold spacecraft cabin, a few droplets drifting beside it",
+     "move": "drift_right",
+     "fx": "float"
+    },
+    {
+     "say": "On {April 17,|April seventeenth,} they splash down in the Pacific.",
+     "prompt": "a cone-shaped space capsule hanging under three huge orange and white parachutes above a blue ocean, sunlight",
+     "move": "tilt_up",
+     "fx": "none",
+     "sfx": "whoosh"
+    },
+    {
+     "say": "All three alive.",
+     "prompt": "a space capsule floating on calm blue ocean waves next to an inflatable raft, bright morning light",
+     "move": "pull_out",
+     "fx": "spray"
+    },
+    {
+     "say": "Saved by tape, plastic, and cardboard.",
+     "reuse": 14,
+     "focus": [
+      0.5,
+      0.5,
+      1.2
+     ],
+     "move": "drift_left"
+    },
+    {
+     "say": "For four days, the air was slowly poisoning them.",
+     "reuse": 0,
+     "move": "loop_end"
+    }
+   ],
+   "facts": [
+    {
+     "claim": "Oxygen tank 2 failed on April 13-14, 1970, about 210,000 miles from Earth",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "The lunar module was designed to support two men for two days; it had to keep three alive about four days",
+     "src": [
+      1,
+      0
+     ]
+    },
+    {
+     "claim": "Square command-module canisters did not fit the round lunar-module openings",
+     "src": [
+      1
+     ]
+    },
+    {
+     "claim": "The fix used plastic bags, cardboard and tape (Wikipedia: plastic covers from manuals and duct tape); the procedure was read up over about an hour; CO2 began dropping",
+     "src": [
+      1,
+      0
+     ]
+    },
+    {
+     "claim": "Cabin dropped to 38°F; water cut to six ounces per person per day; splashdown April 17, 1970",
+     "src": [
+      1,
+      0
+     ]
+    }
+   ],
+   "sources": [
+    {
+     "title": "NASA - Apollo 13 mission details",
+     "url": "https://www.nasa.gov/missions/apollo/apollo-13-mission-details/",
+     "used": "LM two men for two days → three men four days; square vs round canisters; plastic bags, cardboard, tape; 38°F; six ounces of water a day; splashdown April 17 1970"
+    },
+    {
+     "title": "Wikipedia - Apollo 13",
+     "url": "https://en.wikipedia.org/wiki/Apollo_13",
+     "used": "oxygen tank 2 failure April 13/14 1970; about 210,000 mi from Earth; lunar module as lifeboat; adapter read up over about an hour; CO2 began dropping"
+    }
+   ],
+   "careful": "Real people (Lovell, Swigert, Haise) are not named and shown only as identical faceless mannequin astronauts. No invented dialogue. The famous 'dump everything on the table' scene is from the 1995 film, so it is not claimed."
+  },
+  {
+   "id": 6,
+   "slug": "quicksand-swallow-you",
+   "from": "2026-11-16",
+   "format": "whatif",
+   "title": "Could Quicksand Really Swallow You Whole?",
+   "description": "Movies say quicksand pulls you under until you vanish. In 2005 physicists rebuilt quicksand in the lab to find out. It can't swallow you, but it can still trap you, and the real danger is something else.",
+   "tags": [
+    "quicksand",
+    "myth busting",
+    "physics",
+    "survival",
+    "what if"
+   ],
+   "music": "tension",
+   "style_tail": ", overcast silver light on wet sand, epic movie still",
+   "grade": {
+    "contrast": 1.05,
+    "saturation": 0.95
+   },
+   "character": {
+    "prompt": "an adult human figure with realistic proportions rendered as a smooth featureless matte white mannequin with a blank egg-shaped head and no facial features, dressed as a hiker in a grey t-shirt, khaki shorts and hiking boots with a small backpack, standing on a wet tidal sand flat near a river delta, full body, three-quarter view",
+    "seed": 906
+   },
+   "shots": [
+    {
+     "say": "You step onto wet sand, and it swallows your legs.",
+     "edit": "The hiker has sunk up to the knees in glistening wet quicksand on a tidal flat, arms out for balance, ripples spreading around the legs.",
+     "move": "hook",
+     "fx": "none",
+     "sfx": "suck"
+    },
+    {
+     "say": "Movies say you'll keep sinking until you vanish.",
+     "prompt": "a lone backpack lying on smooth glistening quicksand, ripples around it, eerie overcast light",
+     "move": "push_in",
+     "fx": "none"
+    },
+    {
+     "say": "Physicists tested it.",
+     "prompt": "a laboratory bench with a clear glass container of wet grey sand under bright lab lights, glass beakers around it",
+     "move": "drift_right",
+     "fx": "dust"
+    },
+    {
+     "say": "In 2005, Daniel Bonn's team rebuilt quicksand in the lab,",
+     "reuse": 2,
+     "focus": [
+      0.5,
+      0.55,
+      1.2
+     ],
+     "move": "push_in"
+    },
+    {
+     "say": "from a sample taken near a salt lake in Iran:",
+     "prompt": "a vast white salt lake under a pale sky with wet sandy shores and distant brown hills, wide shot",
+     "move": "pan_right",
+     "fx": "none"
+    },
+    {
+     "say": "fine sand, clay and salt water.",
+     "prompt": "macro shot of wet grains of fine sand and grey clay glistening with salt water",
+     "move": "push_in",
+     "fx": "none"
+    },
+    {
+     "say": "Then they dropped in beads as dense as a human body.",
+     "prompt": "small metal beads dropping into a glass container of wet grey sand in a laboratory, splash of sand, macro",
+     "move": "push_in",
+     "fx": "none",
+     "sfx": "drip"
+    },
+    {
+     "say": "The beads sank, but never more than halfway.",
+     "prompt": "cross-section 3D visualization of a sphere half sunk in sand and stuck, the top half above the surface, glowing outline",
+     "move": "push_in",
+     "fx": "none"
+    },
+    {
+     "say": "Because quicksand is denser than you are.",
+     "reuse": 7,
+     "focus": [
+      0.5,
+      0.5,
+      1.2
+     ],
+     "move": "drift_left"
+    },
+    {
+     "say": "You'd stop around your waist.",
+     "edit": "The hiker is stuck in the quicksand up to the waist, no longer sinking, hands resting on the surface.",
+     "move": "push_in",
+     "fx": "none"
+    },
+    {
+     "say": "So it can't pull you under.",
+     "reuse": 9,
+     "focus": [
+      0.5,
+      0.45,
+      1.15
+     ],
+     "move": "pull_out"
+    },
+    {
+     "say": "But getting out is the real trap.",
+     "edit": "Close-up of the hiker's leg and boot buried in thick wet sand, the sand gripping around the knee.",
+     "move": "push_in",
+     "fx": "none"
+    },
+    {
+     "say": "Pulling one foot out takes about the force needed to lift a medium-sized car.",
+     "prompt": "surreal visualization of a small car hanging from a single rope that disappears into wet sand, dramatic light",
+     "move": "tilt_up",
+     "fx": "dust",
+     "sfx": "thud"
+    },
+    {
+     "say": "Yank too hard, Bonn warned, and you could pull a person apart.",
+     "edit": "Two identical faceless mannequin hikers pull the stuck hiker's arms from the firm sand at the edge, straining.",
+     "move": "push_in",
+     "fx": "none"
+    },
+    {
+     "say": "The trick is to wiggle your legs slowly,",
+     "reuse": 11,
+     "focus": [
+      0.5,
+      0.5,
+      1.2
+     ],
+     "move": "drift_right"
+    },
+    {
+     "say": "so water seeps in around them, and the sand lets go.",
+     "prompt": "macro shot of seawater seeping into a gap in wet sand around a buried boot, glistening",
+     "move": "push_in",
+     "fx": "none",
+     "sfx": "water"
+    },
+    {
+     "say": "So what's actually dangerous?",
+     "reuse": 1,
+     "focus": [
+      0.5,
+      0.5,
+      1.2
+     ],
+     "move": "push_in"
+    },
+    {
+     "say": "Quicksand often forms near the sea and big river deltas.",
+     "prompt": "aerial view of a wide river delta meeting the sea, shining wet sand flats and channels, overcast",
+     "move": "pan_left",
+     "fx": "none"
+    },
+    {
+     "say": "Get stuck out there, and the tide comes in.",
+     "edit": "Wide shot: the hiker is stuck to the waist far out on the sand flat while a line of incoming sea water creeps toward them.",
+     "move": "pull_out",
+     "fx": "spray",
+     "sfx": "rumble"
+    },
+    {
+     "say": "Quicksand won't swallow you. The ocean might.",
+     "prompt": "incoming tide water flooding across a shining wet sand flat, low angle, grey sky",
+     "move": "push_in",
+     "fx": "spray"
+    },
+    {
+     "say": "So remember that, the next time you step onto wet sand.",
+     "reuse": 0,
+     "move": "loop_end"
+    }
+   ],
+   "facts": [
+    {
+     "claim": "2005 Nature study (Khaldoun, Eiser, Wegdam, Bonn): sample from near Namak Lake, Iran; fine sand, clay, salt water",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "Beads matching human density sank no more than halfway; complete sinking effectively impossible",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "Humans are less dense than quicksand and sink roughly to the waist",
+     "src": [
+      1
+     ]
+    },
+    {
+     "claim": "Pulling a foot out takes about the force to lift a medium-size car; pulling hard could pull you into two pieces; wiggle slowly to let water in",
+     "src": [
+      1,
+      0
+     ]
+    },
+    {
+     "claim": "Quicksand forms near river deltas / the sea; the real danger is getting stuck when high tide comes up",
+     "src": [
+      0,
+      1
+     ]
+    }
+   ],
+   "sources": [
+    {
+     "title": "Nature news (2005) - Quicksand can't suck you under",
+     "url": "https://www.nature.com/news/2005/050926/full/news050926-9.html",
+     "used": "Namak Lake sample; beads as dense as a human never more than halfway; force of lifting a car; deltas; tide quote"
+    },
+    {
+     "title": "National Geographic - Quicksand Science: Why It Traps, How to Escape",
+     "url": "https://www.nationalgeographic.com/science/article/quicksand-science-why-it-traps-how-to-escape/",
+     "used": "less dense → sink to the waist; 'into two pieces'; wiggle slowly so water loosens the sand; danger near the sea"
+    }
+   ],
+   "careful": "Daniel Bonn is named as the researcher (public study). No one shown drowning; the hiker is a faceless mannequin."
+  },
+  {
+   "id": 7,
+   "slug": "jump-from-19-miles-up",
+   "from": "2026-11-18",
+   "format": "story",
+   "title": "The Man Who Jumped From 19 Miles Up",
+   "description": "August 16, 1960: Joseph Kittinger rode an open balloon gondola to 102,800 feet over New Mexico, with a glove that had already failed, and then he stepped off.",
+   "tags": [
+    "joseph kittinger",
+    "excelsior",
+    "skydiving",
+    "space jump",
+    "aviation history"
+   ],
+   "music": "space",
+   "style_tail": ", deep blue-black upper sky, bright sun, thin curved horizon, epic movie still",
+   "grade": {
+    "contrast": 1.07,
+    "saturation": 0.95
+   },
+   "character": {
+    "prompt": "an adult human figure with realistic proportions rendered as a smooth featureless matte white mannequin with a blank egg-shaped head and no facial features, wearing a bulky 1960s silver-grey high-altitude pressure suit with a parachute pack and a clear-visor helmet, standing in a small open aluminum gondola with thin metal railings high above the clouds, full body, three-quarter view",
+    "seed": 907
+   },
+   "shots": [
+    {
+     "say": "He steps off the edge, {19 miles|nineteen miles} above the Earth.",
+     "edit": "He stands on the step at the open edge of the balloon gondola, about to step off, the curved Earth far below and a black sky above.",
+     "move": "hook",
+     "fx": "none",
+     "sfx": "wind"
+    },
+    {
+     "say": "{August 16, 1960.|August sixteenth, nineteen sixty.} Air Force pilot Joseph Kittinger",
+     "prompt": "a very tall thin translucent plastic helium research balloon, shaped like a long teardrop, rising at dawn above a desert, a tiny open metal gondola hanging far beneath it",
+     "move": "tilt_up",
+     "fx": "none"
+    },
+    {
+     "say": "rides an open gondola up to {102,800 feet.|one hundred two thousand eight hundred feet.}",
+     "edit": "Wide shot: he sits in the small open gondola hanging under the balloon, high above a layer of clouds, the sky turning dark.",
+     "move": "pull_out",
+     "fx": "none"
+    },
+    {
+     "say": "On the way up, his right glove fails.",
+     "edit": "Close-up of his right gloved hand inside the gondola, the glove looking puffy and strained compared with the left.",
+     "move": "push_in",
+     "fx": "none"
+    },
+    {
+     "say": "His hand swells to about twice its normal size.",
+     "reuse": 3,
+     "focus": [
+      0.5,
+      0.5,
+      1.25
+     ],
+     "move": "push_in"
+    },
+    {
+     "say": "He keeps climbing anyway.",
+     "prompt": "view from below of a huge thin translucent plastic helium research balloon against a deep blue-black sky, sunlight glowing through the plastic",
+     "move": "tilt_up",
+     "fx": "none"
+    },
+    {
+     "say": "Up there, it gets as cold as {-94°F.|minus ninety-four degrees Fahrenheit.}",
+     "edit": "He sits still in the gondola in bright sunlight against the black sky, a thin layer of frost on the gondola rails.",
+     "move": "push_in",
+     "fx": "snow"
+    },
+    {
+     "say": "He radios down: \"There is a hostile sky above me.\"",
+     "prompt": "view from 19 miles up in the stratosphere: the curved blue horizon of Earth with white clouds far below and a black sky above, bright sun",
+     "move": "tilt_up",
+     "fx": "none",
+     "sfx": "radio"
+    },
+    {
+     "say": "At the edge, he says, \"Lord, take care of me now.\"",
+     "reuse": 0,
+     "focus": [
+      0.5,
+      0.45,
+      1.2
+     ],
+     "move": "push_in"
+    },
+    {
+     "say": "And he steps off.",
+     "edit": "He falls away from the gondola in a sitting position, tiny against the cloud layer far below, seen from the gondola edge looking down.",
+     "move": "punch",
+     "fx": "none",
+     "sfx": "whoosh"
+    },
+    {
+     "say": "A small drogue chute keeps him from spinning.",
+     "edit": "He falls belly down high above the clouds with a small drogue parachute streaming behind him on a line.",
+     "move": "drift_right",
+     "fx": "none"
+    },
+    {
+     "say": "He falls for {4 minutes 36 seconds,|four minutes and thirty-six seconds,}",
+     "reuse": 10,
+     "focus": [
+      0.5,
+      0.5,
+      1.2
+     ],
+     "move": "pull_out"
+    },
+    {
+     "say": "hitting {614 mph.|six hundred fourteen miles an hour.}",
+     "prompt": "streaks of thin cloud rushing past at extreme speed, motion blur, curved horizon far below",
+     "move": "push_in",
+     "fx": "debris",
+     "sfx": "wind"
+    },
+    {
+     "say": "His main parachute opens around {17,500 feet,|seventeen thousand five hundred feet,}",
+     "edit": "His large main parachute blooms open above him in bright sunlight, clouds below.",
+     "move": "tilt_up",
+     "fx": "none",
+     "sfx": "whoosh"
+    },
+    {
+     "say": "and about eight minutes later, he's standing in the New Mexico desert.",
+     "edit": "He stands on pale desert sand beside a collapsed parachute, mountains in the distance, warm afternoon light.",
+     "move": "pull_out",
+     "fx": "dust"
+    },
+    {
+     "say": "His records stood for 52 years,",
+     "prompt": "an empty open balloon gondola resting on a museum floor under a spotlight, dark hall",
+     "move": "push_in",
+     "fx": "dust"
+    },
+    {
+     "say": "until Felix Baumgartner broke them in 2012.",
+     "prompt": "a very tall thin translucent plastic helium research balloon rising at sunrise above a desert, wide shot, epic",
+     "move": "tilt_up",
+     "fx": "none"
+    },
+    {
+     "say": "All of it with a swollen hand,",
+     "reuse": 3,
+     "focus": [
+      0.5,
+      0.5,
+      1.2
+     ],
+     "move": "drift_left"
+    },
+    {
+     "say": "and nothing below him but the Earth, as he steps off the edge.",
+     "reuse": 0,
+     "move": "loop_end"
+    }
+   ],
+   "facts": [
+    {
+     "claim": "Excelsior III jump on August 16, 1960 from 102,800 ft over New Mexico (≈19.5 miles)",
+     "src": [
+      0,
+      1
+     ]
+    },
+    {
+     "claim": "Right glove pressurization failed on the ascent; hand swelled to about twice normal size; he continued",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "Lowest temperature -94°F; told controllers 'There is a hostile sky above me'",
+     "src": [
+      1
+     ]
+    },
+    {
+     "claim": "'Lord, take care of me now'; drogue for stabilization; freefall 4 min 36 s; top speed 614 mph",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "Main chute opened at about 17,500 ft; on the ground about eight minutes later; records stood until Baumgartner in 2012",
+     "src": [
+      1,
+      0
+     ]
+    }
+   ],
+   "sources": [
+    {
+     "title": "Wikipedia - Joseph Kittinger",
+     "url": "https://en.wikipedia.org/wiki/Joseph_Kittinger",
+     "used": "date, 102,800 ft, right glove failure / hand twice its size, 'Lord, take care of me now', drogue, 4 min 36 s, 614 mph, records until 2012"
+    },
+    {
+     "title": "Smithsonian National Air and Space Museum - Long, Lonely Leap",
+     "url": "https://airandspace.si.edu/stories/editorial/long-lonely-leap",
+     "used": "102,800 ft; main chute at 17,500 ft; ground about eight minutes later; -94°F; 'There is a hostile sky above me'"
+    }
+   ],
+   "careful": "Real people (Kittinger, Baumgartner): only public record facts. Faceless mannequin in a generic pressure suit, no insignia."
+  },
+  {
+   "id": 8,
+   "slug": "eye-of-a-hurricane",
+   "from": "2026-11-20",
+   "format": "whatif",
+   "title": "What If You Stood in the Eye of a Hurricane?",
+   "description": "In the middle of a hurricane, the wind can suddenly stop and the sky can clear. It feels like the storm is over. NOAA says it is only half over.",
+   "tags": [
+    "hurricane",
+    "eye of the storm",
+    "weather",
+    "noaa",
+    "what if"
+   ],
+   "music": "storm",
+   "style_tail": ", stormy teal and grey palette, epic movie still",
+   "grade": {
+    "contrast": 1.07,
+    "saturation": 0.95
+   },
+   "shots": [
+    {
+     "say": "The wind stops. The sun comes out.",
+     "prompt": "view from a wrecked coastal street looking straight up into the eye of a hurricane: a calm circle of blue sky surrounded by a towering wall of dark clouds, one of the smooth featureless matte white mannequin figures with blank egg-shaped heads standing in the street looking up",
+     "move": "hook",
+     "fx": "dust",
+     "sfx": "wind"
+    },
+    {
+     "say": "But you're standing in the middle of a hurricane.",
+     "prompt": "satellite view from orbit of a huge hurricane spiral over a dark blue ocean with a clear round eye in the center",
+     "move": "pull_out",
+     "fx": "none",
+     "sfx": "whoosh"
+    },
+    {
+     "say": "This is the eye.",
+     "reuse": 1,
+     "focus": [
+      0.5,
+      0.5,
+      1.4
+     ],
+     "move": "push_in"
+    },
+    {
+     "say": "It's usually {20 to 40 miles|twenty to forty miles} across.",
+     "prompt": "aerial view from a plane flying inside a hurricane eye: a huge round stadium of towering cloud walls around calm sea",
+     "move": "pan_right",
+     "fx": "none"
+    },
+    {
+     "say": "Winds here usually stay under {15 miles an hour.|fifteen miles an hour.}",
+     "prompt": "calm palm trees barely moving on a wrecked street under a patch of blue sky, debris on the ground, eerie quiet",
+     "move": "drift_left",
+     "fx": "dust"
+    },
+    {
+     "say": "Sinking air clears a pocket of sky in the middle.",
+     "prompt": "3D cross-section visualization of a hurricane showing air sinking in the central eye and spiraling up in the surrounding cloud wall, glowing arrows, dark background",
+     "move": "push_in",
+     "fx": "none"
+    },
+    {
+     "say": "All around you is the eyewall:",
+     "reuse": 3,
+     "focus": [
+      0.5,
+      0.5,
+      1.2
+     ],
+     "move": "pan_left"
+    },
+    {
+     "say": "a ring of towering thunderstorms",
+     "prompt": "a massive dark wall of thunderstorm clouds towering from the sea up into the sky, lightning inside it, low angle",
+     "move": "tilt_up",
+     "fx": "rain",
+     "sfx": "thunder",
+     "flash": [
+      0.2
+     ]
+    },
+    {
+     "say": "with the strongest winds of the whole storm.",
+     "prompt": "palm trees bent almost flat by violent wind and sideways rain on a flooded coastal road, spray flying",
+     "move": "push_in",
+     "fx": "rain",
+     "sfx": "wind"
+    },
+    {
+     "say": "A storm only counts as a hurricane at {74 miles an hour.|seventy-four miles an hour.}",
+     "reuse": 8,
+     "focus": [
+      0.5,
+      0.5,
+      1.2
+     ],
+     "move": "drift_right"
+    },
+    {
+     "say": "So when the calm arrives, it feels like it's over.",
+     "reuse": 4,
+     "focus": [
+      0.5,
+      0.5,
+      1.15
+     ],
+     "move": "push_in"
+    },
+    {
+     "say": "It isn't.",
+     "reuse": 7,
+     "focus": [
+      0.5,
+      0.45,
+      1.25
+     ],
+     "move": "punch",
+     "sfx": "boom"
+    },
+    {
+     "say": "NOAA warns the storm is only half over.",
+     "prompt": "a calm flooded street with debris under a clear patch of sky, the dark cloud wall rising again at the end of the street",
+     "move": "push_in",
+     "fx": "dust"
+    },
+    {
+     "say": "When the eye moves on, the eyewall hits again,",
+     "prompt": "a towering dark cloud wall sweeping across a coastal town, rain curtains and spray, smooth featureless matte white mannequin figures with blank egg-shaped heads running toward a doorway",
+     "move": "push_in",
+     "fx": "rain",
+     "sfx": "rumble"
+    },
+    {
+     "say": "with winds from the opposite direction.",
+     "prompt": "3D visualization of a hurricane passing over a small town, glowing arrows showing the wind blowing one way before the eye and the opposite way after it",
+     "move": "pan_right",
+     "fx": "none"
+    },
+    {
+     "say": "That sudden switch is what makes the calm so dangerous.",
+     "reuse": 8,
+     "focus": [
+      0.5,
+      0.5,
+      1.25
+     ],
+     "move": "push_in",
+     "sfx": "wind"
+    },
+    {
+     "say": "So stay inside, even when it looks like the storm has passed,",
+     "prompt": "a dim living room with taped windows during a storm, a flashlight on the table, rain streaking the glass",
+     "move": "drift_left",
+     "fx": "none"
+    },
+    {
+     "say": "because the second half is coming the moment the wind stops.",
+     "reuse": 0,
+     "move": "loop_end"
+    }
+   ],
+   "facts": [
+    {
+     "claim": "The eye is typically 20-40 miles across; winds usually do not exceed 15 mph; sinking air makes a pocket of clear air",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "The eyewall is a ring of tall thunderstorms with usually the strongest winds",
+     "src": [
+      0,
+      1
+     ]
+    },
+    {
+     "claim": "Hurricane = maximum sustained winds of 74 mph or more",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "When the eye passes, winds go from nearly calm back to very strong, from the opposite direction; 'the storm is only half over'",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "NHC definitions of eye (light-wind center) and eyewall (ring of cumulonimbus around the eye)",
+     "src": [
+      1
+     ]
+    }
+   ],
+   "sources": [
+    {
+     "title": "NOAA JetStream - Tropical cyclone structure",
+     "url": "https://www.noaa.gov/jetstream/tropical/tropical-cyclone-introduction/tropical-cyclone-structure",
+     "used": "eye 20-40 miles, winds under 15 mph, clear pocket of sinking air, eyewall strongest winds, 74 mph, storm only half over, winds return from opposite direction"
+    },
+    {
+     "title": "National Hurricane Center - Glossary",
+     "url": "https://www.nhc.noaa.gov/aboutgloss.shtml",
+     "used": "definitions of eye and eyewall"
+    }
+   ],
+   "careful": "Generic town, no real storm named or dated; no victims; the few people are faceless mannequins seeking shelter."
+  },
+  {
+   "id": 9,
+   "slug": "hit-by-a-meteorite",
+   "from": "2026-11-23",
+   "format": "story",
+   "title": "The Woman Who Was Hit by a Meteorite",
+   "description": "November 30, 1954, Sylacauga, Alabama: a rock from space came through Ann Hodges' roof, bounced off her radio and hit her while she napped on the couch. Then came the fight over who owned it.",
+   "tags": [
+    "meteorite",
+    "ann hodges",
+    "space rock",
+    "sylacauga",
+    "true story"
+   ],
+   "music": "space",
+   "style_tail": ", warm 1950s afternoon light, epic movie still",
+   "grade": {
+    "contrast": 1.05,
+    "saturation": 1.0,
+    "tint": [
+     1.03,
+     1.0,
+     0.97
+    ]
+   },
+   "character": {
+    "prompt": "an adult human figure with realistic proportions rendered as a smooth featureless matte white mannequin with a blank egg-shaped head and no facial features, dressed as a 1950s American housewife in a simple floral house dress and slippers, in a modest 1950s living room with a wooden console radio and a couch, full body, three-quarter view",
+    "seed": 909
+   },
+   "shots": [
+    {
+     "say": "A rock from space just smashed through her roof.",
+     "edit": "She lies asleep on the couch as a glowing dark rock bursts through the ceiling above her in a shower of plaster dust and splinters.",
+     "move": "hook",
+     "fx": "dust",
+     "sfx": "crash",
+     "flash": [
+      0.05
+     ]
+    },
+    {
+     "say": "{November 30, 1954.|November thirtieth, nineteen fifty-four.} Sylacauga, Alabama.",
+     "prompt": "a small white wooden house on a quiet 1950s Alabama street, bare trees, clear afternoon sky",
+     "move": "push_in",
+     "fx": "none"
+    },
+    {
+     "say": "Ann Hodges is taking a nap on her couch.",
+     "edit": "She lies asleep on the couch under a knitted blanket, soft afternoon light through the window.",
+     "move": "drift_right",
+     "fx": "dust"
+    },
+    {
+     "say": "Outside, people see a fireball in the sky and hear an explosion.",
+     "prompt": "a bright fireball with a glowing trail streaking across a blue afternoon sky over small-town rooftops",
+     "move": "pan_right",
+     "fx": "none",
+     "sfx": "boom",
+     "flash": [
+      0.1
+     ]
+    },
+    {
+     "say": "A grapefruit-sized rock punches through the roof and ceiling,",
+     "prompt": "a jagged hole torn in a wooden house roof, splinters and dust in the air, seen from below inside the attic",
+     "move": "push_in",
+     "fx": "dust",
+     "sfx": "crash"
+    },
+    {
+     "say": "bounces off a big wooden console radio,",
+     "prompt": "a 1950s wooden console radio with a fresh dent and scattered plaster dust, a dark rock tumbling past it, close-up",
+     "move": "push_in",
+     "fx": "dust",
+     "sfx": "thud"
+    },
+    {
+     "say": "and slams into her hip.",
+     "reuse": 0,
+     "focus": [
+      0.5,
+      0.55,
+      1.25
+     ],
+     "move": "punch",
+     "sfx": "hit"
+    },
+    {
+     "say": "It weighs about {8.5 pounds.|eight and a half pounds.}",
+     "prompt": "a dark fusion-crusted meteorite the size of a grapefruit resting on a wooden floor among plaster dust, dramatic side light",
+     "move": "push_in",
+     "fx": "dust"
+    },
+    {
+     "say": "Her hip and hand swell up, but the doctor finds no serious damage,",
+     "edit": "She sits on the couch holding her side while a faceless mannequin doctor in a white coat with a medical bag examines her.",
+     "move": "drift_left",
+     "fx": "none"
+    },
+    {
+     "say": "just a huge bruise.",
+     "reuse": 8,
+     "focus": [
+      0.45,
+      0.55,
+      1.25
+     ],
+     "move": "push_in"
+    },
+    {
+     "say": "She's the first documented person to survive being hit by a meteorite.",
+     "reuse": 7,
+     "focus": [
+      0.5,
+      0.5,
+      1.2
+     ],
+     "move": "pull_out"
+    },
+    {
+     "say": "Then the fight starts.",
+     "prompt": "a 1950s small-town courthouse with white columns on a grey afternoon",
+     "move": "push_in",
+     "fx": "none",
+     "sfx": "boom"
+    },
+    {
+     "say": "Her landlord sues for the rock,",
+     "prompt": "two smooth featureless matte white mannequin figures with blank egg-shaped heads in 1950s clothes arguing across a wooden table with a dark meteorite between them, warm lamp light",
+     "move": "drift_right",
+     "fx": "none"
+    },
+    {
+     "say": "claiming meteorites belong to whoever owns the land.",
+     "reuse": 12,
+     "focus": [
+      0.5,
+      0.55,
+      1.2
+     ],
+     "move": "push_in"
+    },
+    {
+     "say": "The Air Force takes it away to identify it.",
+     "prompt": "a dark meteorite inside an open metal case on a table in a 1950s military laboratory, fluorescent light",
+     "move": "push_in",
+     "fx": "none"
+    },
+    {
+     "say": "By the time it comes back, the excitement is gone.",
+     "prompt": "a quiet empty 1950s living room in late evening light, a dark rock sitting alone on the coffee table",
+     "move": "drift_left",
+     "fx": "dust"
+    },
+    {
+     "say": "In 1956, it goes to the Alabama Museum of Natural History,",
+     "prompt": "a dark meteorite displayed on a pedestal under a glass case in a museum hall, soft spotlight",
+     "move": "push_in",
+     "fx": "dust"
+    },
+    {
+     "say": "where it's still on display today.",
+     "reuse": 16,
+     "focus": [
+      0.5,
+      0.5,
+      1.2
+     ],
+     "move": "pull_out"
+    },
+    {
+     "say": "All because one afternoon, a rock from space smashed through her roof.",
+     "reuse": 0,
+     "move": "loop_end"
+    }
+   ],
+   "facts": [
+    {
+     "claim": "November 30, 1954 near Sylacauga, Alabama; she was napping on her couch; witnesses saw a fireball and heard an explosion",
+     "src": [
+      0,
+      1
+     ]
+    },
+    {
+     "claim": "The grapefruit-sized meteorite came through the roof and ceiling, hit a console radio and her hip; about 8.5 lb",
+     "src": [
+      0,
+      1
+     ]
+    },
+    {
+     "claim": "Hip and hand swollen, no serious damage per the physician; large bruise",
+     "src": [
+      0,
+      1
+     ]
+    },
+    {
+     "claim": "First documented person struck by a meteorite who survived",
+     "src": [
+      1
+     ]
+    },
+    {
+     "claim": "Landlord sued citing that meteorites belong to the landowner; the Air Force took it to confirm it; public interest faded; went to the Alabama Museum of Natural History in 1956, on permanent display",
+     "src": [
+      0,
+      1
+     ]
+    }
+   ],
+   "sources": [
+    {
+     "title": "Encyclopedia of Alabama - Hodges Meteorite Strike (Sylacauga Aerolite)",
+     "url": "https://encyclopediaofalabama.org/article/hodges-meteorite-strike-sylacauga-aerolite/",
+     "used": "date and place, fireball and explosion, roof-ceiling-radio-hip, about 8.5 lb, no serious damage, landlord suit, donated 1956, permanent display"
+    },
+    {
+     "title": "Wikipedia - Hodges meteorite",
+     "url": "https://en.wikipedia.org/wiki/Hodges_meteorite",
+     "used": "napping on couch, bruise, first documented person struck who survived, Air Force confirmation, interest faded"
+    }
+   ],
+   "careful": "Real person (Ann Hodges): only public facts; the landlord is not named; faceless mannequins. The disputed sale-vs-donation detail is avoided ('it goes to the museum')."
+  },
+  {
+   "id": 10,
+   "slug": "fall-into-a-black-hole",
+   "from": "2026-11-25",
+   "format": "whatif",
+   "title": "What If You Fell Into a Black Hole?",
+   "description": "Which black hole you fall into changes everything. A NASA supercomputer simulation shows what a plunge into a supermassive black hole would look like, and what an observer far away would see instead.",
+   "tags": [
+    "black hole",
+    "nasa",
+    "space",
+    "astrophysics",
+    "what if"
+   ],
+   "music": "space",
+   "style_tail": ", glowing orange and gold accretion disk light against deep black space, epic movie still",
+   "grade": {
+    "contrast": 1.08,
+    "saturation": 1.0
+   },
+   "character": {
+    "prompt": "an adult human figure with realistic proportions rendered as a smooth featureless matte white mannequin with a blank egg-shaped head and no facial features, wearing a sleek modern white spacesuit with a clear helmet, floating in deep space with a faint glowing ring of light in the distance, full body, three-quarter view",
+    "seed": 910
+   },
+   "shots": [
+    {
+     "say": "You're falling toward a black hole, and you can't stop.",
+     "edit": "Seen from behind, the astronaut is a tiny figure drifting toward an enormous black hole surrounded by a blazing ring of orange and gold light.",
+     "move": "hook",
+     "fx": "float",
+     "sfx": "rumble"
+    },
+    {
+     "say": "Which one you fall into changes everything.",
+     "prompt": "two black holes side by side in space, one small with a tight bright ring, one gigantic with a vast glowing disk, 3D visualization",
+     "move": "pull_out",
+     "fx": "float"
+    },
+    {
+     "say": "A small one, left behind when a giant star explodes,",
+     "prompt": "a massive star exploding in a brilliant supernova in deep space, shock waves of glowing gas",
+     "move": "push_in",
+     "fx": "none",
+     "sfx": "boom",
+     "flash": [
+      0.05
+     ]
+    },
+    {
+     "say": "has a tiny edge and brutal tidal forces.",
+     "prompt": "3D visualization of a small black hole with a tight bright ring of light and warped starlight around it, dark background",
+     "move": "push_in",
+     "fx": "float"
+    },
+    {
+     "say": "You'd be stretched like a noodle before you even reached the edge.",
+     "prompt": "3D visualization of a long thin stretched streak of glowing matter spiraling into a small black hole, motion blur",
+     "move": "push_in",
+     "fx": "float"
+    },
+    {
+     "say": "Scientists really call it spaghettification.",
+     "reuse": 4,
+     "focus": [
+      0.5,
+      0.5,
+      1.2
+     ],
+     "move": "drift_left"
+    },
+    {
+     "say": "But NASA's Jeremy Schnittman says, if you have the choice, pick a supermassive one,",
+     "prompt": "a gigantic black hole with a vast glowing orange accretion disk bending light around it, epic wide shot",
+     "move": "pull_out",
+     "fx": "float"
+    },
+    {
+     "say": "like the one at our galaxy's center, {4.3 million|four point three million} times the Sun's mass.",
+     "prompt": "the glowing core of the Milky Way galaxy seen from far away, dense golden star clouds and dark dust lanes",
+     "move": "push_in",
+     "fx": "float"
+    },
+    {
+     "say": "Its edge, the event horizon, is about {16 million miles|sixteen million miles} across.",
+     "reuse": 6,
+     "focus": [
+      0.5,
+      0.5,
+      1.2
+     ],
+     "move": "push_in"
+    },
+    {
+     "say": "In NASA's simulation, the fall from {400 million miles|four hundred million miles} out takes about three hours.",
+     "edit": "The astronaut drifts past swirling streams of glowing gas, the black hole growing huge ahead.",
+     "move": "push_in",
+     "fx": "float"
+    },
+    {
+     "say": "Then you cross the event horizon.",
+     "edit": "The astronaut is a dark silhouette in front of a wall of pure black edged by a thin bright ring of light, reaching out toward it.",
+     "move": "push_in",
+     "fx": "float",
+     "sfx": "whoosh"
+    },
+    {
+     "say": "From here, nothing can escape. Not even light.",
+     "prompt": "absolute darkness with a thin warped ring of light at the edge of view, beams of light bending inward and vanishing",
+     "move": "pull_out",
+     "fx": "none"
+    },
+    {
+     "say": "And {12.8 seconds|twelve point eight seconds} later, spaghettification.",
+     "reuse": 4,
+     "focus": [
+      0.5,
+      0.45,
+      1.3
+     ],
+     "move": "punch",
+     "sfx": "hit"
+    },
+    {
+     "say": "But to someone watching from far away, you never cross.",
+     "prompt": "a distant spaceship window looking out at a huge black hole, a tiny frozen speck of light hanging at the edge of its dark disk",
+     "move": "push_in",
+     "fx": "float"
+    },
+    {
+     "say": "You just seem to slow down and freeze at the edge.",
+     "reuse": 13,
+     "focus": [
+      0.55,
+      0.45,
+      1.3
+     ],
+     "move": "push_in"
+    },
+    {
+     "say": "And if you only swing close and come back,",
+     "edit": "The astronaut floats beside a spaceship, the giant black hole and its glowing disk filling the sky behind them.",
+     "move": "drift_right",
+     "fx": "float"
+    },
+    {
+     "say": "NASA's math says you'd return {36 minutes|thirty-six minutes} younger than your crew.",
+     "prompt": "inside a spaceship, smooth featureless matte white mannequin figures with blank egg-shaped heads as crew members in white suits standing around a glowing clock display, warm light",
+     "move": "push_in",
+     "fx": "dust"
+    },
+    {
+     "say": "So choose carefully, because you're falling toward a black hole.",
+     "reuse": 0,
+     "move": "loop_end"
+    }
+   ],
+   "facts": [
+    {
+     "claim": "Stellar-mass black holes form from exploding massive stars; smaller event horizons and stronger tidal forces can tear objects apart before the horizon",
+     "src": [
+      0,
+      1
+     ]
+    },
+    {
+     "claim": "'Spaghettification' is a real term; objects stretched like a noodle",
+     "src": [
+      1
+     ]
+    },
+    {
+     "claim": "Schnittman: 'If you have the choice, you want to fall into a supermassive black hole'; simulated black hole 4.3 million solar masses, event horizon about 16 million miles across",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "Camera starts nearly 400 million miles away; about 3 hours to the horizon; 12.8 seconds after crossing to spaghettification; outside observer sees it freeze short of the horizon",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "Nothing, not even light, escapes the event horizon; orbiting scenario returns 36 minutes younger",
+     "src": [
+      1,
+      0
+     ]
+    }
+   ],
+   "sources": [
+    {
+     "title": "NASA Goddard via EurekAlert - New NASA black hole visualization takes viewers beyond the brink",
+     "url": "https://www.eurekalert.org/news-releases/1043682",
+     "used": "Schnittman quote, 4.3 million suns, 16 million miles, 400 million miles, 3 hours, 12.8 seconds, freeze at the horizon, 36 minutes younger, stellar-mass tidal forces"
+    },
+    {
+     "title": "NASA Science - Black Holes",
+     "url": "https://science.nasa.gov/universe/black-holes/",
+     "used": "event horizon, nothing not even light escapes, spaghettification as a real term, stellar-mass formation"
+    }
+   ],
+   "careful": "Jeremy Schnittman is a real NASA scientist: only his published quote. All numbers are from NASA's simulation release."
+  },
+  {
+   "id": 11,
+   "slug": "survived-titanic-and-sisters",
+   "from": "2026-11-27",
+   "format": "story",
+   "title": "The Woman Who Survived the Titanic and Its Sister Ships",
+   "description": "Violet Jessop worked on all three Olympic-class liners: she was aboard the Olympic when it hit a warship, the Titanic when it sank, and the hospital ship Britannic when it went down in 1916.",
+   "tags": [
+    "violet jessop",
+    "titanic",
+    "britannic",
+    "olympic",
+    "true story"
+   ],
+   "music": "ocean",
+   "style_tail": ", cold grey Atlantic light, early 1900s ocean liners, epic movie still",
+   "grade": {
+    "contrast": 1.06,
+    "saturation": 0.9,
+    "tint": [
+     0.98,
+     1.0,
+     1.03
+    ]
+   },
+   "character": {
+    "prompt": "an adult human figure with realistic proportions rendered as a smooth featureless matte white mannequin with a blank egg-shaped head and no facial features, dressed as a 1910s ocean liner stewardess in a long dark dress, white apron and small white cap, standing on the deck of a large early 1900s ocean liner, full body, three-quarter view",
+    "seed": 911
+   },
+   "shots": [
+    {
+     "say": "She's in a lifeboat, and the ship's propeller is pulling it in.",
+     "edit": "She sits in a small wooden lifeboat on rough grey water while the gigantic bronze propeller of a tilted ocean liner rises out of the sea right behind the boat.",
+     "move": "hook",
+     "fx": "spray",
+     "sfx": "rumble"
+    },
+    {
+     "say": "Her name is Violet Jessop,",
+     "edit": "Medium shot: she stands on the deck of the ocean liner in her stewardess uniform, grey sea and sky behind her.",
+     "move": "push_in",
+     "fx": "none"
+    },
+    {
+     "say": "and this is the third disaster she's lived through.",
+     "reuse": 0,
+     "focus": [
+      0.5,
+      0.5,
+      1.2
+     ],
+     "move": "pull_out"
+    },
+    {
+     "say": "In 1911, she's a stewardess on the Olympic",
+     "prompt": "a giant early 1900s four-funnel ocean liner leaving a harbor, plain black hull and white upper decks, grey morning",
+     "move": "pan_right",
+     "fx": "none"
+    },
+    {
+     "say": "when it collides with a warship, H M S Hawke.",
+     "prompt": "the steel bow of a grey early 1900s warship crashing into the side of a huge ocean liner, sea spray, dramatic",
+     "move": "punch",
+     "fx": "spray",
+     "sfx": "crash"
+    },
+    {
+     "say": "Nobody dies, and the ship makes it back to port.",
+     "reuse": 3,
+     "focus": [
+      0.5,
+      0.5,
+      1.15
+     ],
+     "move": "drift_left"
+    },
+    {
+     "say": "A year later, she's moved to the Olympic's sister ship:",
+     "edit": "She walks along a grand early 1900s ocean liner corridor with polished wood panels and brass lamps.",
+     "move": "drift_right",
+     "fx": "dust"
+    },
+    {
+     "say": "the Titanic.",
+     "prompt": "a giant four-funnel ocean liner sailing on a calm dark sea at night, lights glowing in rows of portholes, starry sky",
+     "move": "push_in",
+     "fx": "none",
+     "sfx": "boom"
+    },
+    {
+     "say": "{April 1912.|April, nineteen twelve.} It hits an iceberg and sinks in about two hours and forty minutes.",
+     "prompt": "a huge iceberg looming in the dark beside the lit hull of an ocean liner on a still night sea",
+     "move": "tilt_up",
+     "fx": "snow"
+    },
+    {
+     "say": "She's ordered into lifeboat 16.",
+     "edit": "She sits in a wooden lifeboat being lowered down the side of the huge lit ship at night on ropes, other faceless mannequin passengers around her.",
+     "move": "pull_out",
+     "fx": "snow"
+    },
+    {
+     "say": "As it's lowered, an officer hands her a baby to look after.",
+     "edit": "Close-up: she holds a small bundled baby blanket carefully in her arms in the lifeboat at night, lantern light.",
+     "move": "push_in",
+     "fx": "snow"
+    },
+    {
+     "say": "A rescue ship, the Carpathia, takes the survivors to New York.",
+     "prompt": "a single-funnel early 1900s steamship on a calm sea at dawn, small lifeboats rowing toward it",
+     "move": "pan_left",
+     "fx": "none"
+    },
+    {
+     "say": "Then comes World War One.",
+     "prompt": "an early 1900s ocean liner painted white with a green stripe and large red crosses on its hull, a hospital ship on a blue sea",
+     "move": "push_in",
+     "fx": "none"
+    },
+    {
+     "say": "She serves as a nurse on the third sister ship, Britannic, now a hospital ship.",
+     "edit": "She stands on the deck of the white hospital ship in a nurse's uniform with a red cross armband, blue Aegean sea behind.",
+     "move": "drift_right",
+     "fx": "none"
+    },
+    {
+     "say": "In 1916, it hits a mine and sinks in under an hour.",
+     "prompt": "a white hospital ship listing to one side on a blue sea, a column of spray rising from its hull, lifeboats in the water",
+     "move": "push_in",
+     "fx": "spray",
+     "sfx": "boom",
+     "flash": [
+      0.05
+     ]
+    },
+    {
+     "say": "Lifeboats are being dragged toward its spinning propellers.",
+     "reuse": 0,
+     "focus": [
+      0.5,
+      0.45,
+      1.25
+     ],
+     "move": "push_in"
+    },
+    {
+     "say": "So she jumps into the sea.",
+     "edit": "She leaps from the side of the lifeboat into the rough grey water, spray around her, the giant propeller blurred in the background.",
+     "move": "punch",
+     "fx": "spray",
+     "sfx": "water"
+    },
+    {
+     "say": "She hits her head hard, and survives.",
+     "prompt": "calm grey sea with floating wooden debris and a lifeboat in the distance under breaking clouds, soft light",
+     "move": "pull_out",
+     "fx": "spray"
+    },
+    {
+     "say": "She kept working at sea for years and lived to 83.",
+     "edit": "She stands on the sunny deck of a 1920s cruise liner in a stewardess uniform, calm blue sea behind her.",
+     "move": "drift_left",
+     "fx": "none"
+    },
+    {
+     "say": "They called her Miss Unsinkable.",
+     "reuse": 1,
+     "focus": [
+      0.5,
+      0.45,
+      1.2
+     ],
+     "move": "push_in"
+    },
+    {
+     "say": "She'd survived two already, when that propeller started pulling her lifeboat in.",
+     "reuse": 0,
+     "move": "loop_end"
+    }
+   ],
+   "facts": [
+    {
+     "claim": "Stewardess on RMS Olympic during its 1911 collision with HMS Hawke; no fatalities; ship returned to port",
+     "src": [
+      0,
+      1
+     ]
+    },
+    {
+     "claim": "Transferred to Titanic; it hit an iceberg 14 April 1912 and sank about 2 h 40 min later; lifeboat 16; an officer handed her a baby; Carpathia took survivors to New York",
+     "src": [
+      0,
+      1
+     ]
+    },
+    {
+     "claim": "WWI nurse on hospital ship Britannic; 1916 mine; sank within about 55 minutes",
+     "src": [
+      0,
+      1
+     ]
+    },
+    {
+     "claim": "Jumped from her lifeboat to avoid the propellers; survived a serious head injury",
+     "src": [
+      0,
+      1
+     ]
+    },
+    {
+     "claim": "Returned to sea work, died in 1971 aged 83; known as 'Miss Unsinkable'",
+     "src": [
+      0,
+      1
+     ]
+    }
+   ],
+   "sources": [
+    {
+     "title": "Wikipedia - Violet Jessop",
+     "url": "https://en.wikipedia.org/wiki/Violet_Jessop",
+     "used": "Olympic-Hawke 1911, Titanic timeline, lifeboat 16, baby, Carpathia, Britannic within 55 minutes, jumped, head injury, later career, died aged 83, 'Miss Unsinkable'"
+    },
+    {
+     "title": "History (UK) - Unsinkable Violet Jessop",
+     "url": "https://history.co.uk/articles/unsinkable-violet-jessop",
+     "used": "Olympic collision a year before Titanic, baby in the lifeboat, Britannic propeller dragged boats, she jumped, serious head injury"
+    }
+   ],
+   "careful": "Many people died on Titanic and 30 on Britannic: no bodies or victims shown, no gore; the exact Britannic date differs between sources so only the year is said. Faceless mannequin, no real likeness, no White Star livery."
+  },
+  {
+   "id": 12,
+   "slug": "lie-flat-in-lightning",
+   "from": "2026-11-30",
+   "format": "whatif",
+   "title": "What If You Lay Flat When Lightning Strikes?",
+   "description": "Caught outside in a thunderstorm, lots of people drop flat on the ground to make themselves small. The National Weather Service says that's a myth, and so are a few other things you've probably heard.",
+   "tags": [
+    "lightning",
+    "lightning safety",
+    "myths",
+    "weather",
+    "what if"
+   ],
+   "music": "storm",
+   "style_tail": ", stormy teal and electric white palette, epic movie still",
+   "grade": {
+    "contrast": 1.08,
+    "saturation": 0.92
+   },
+   "character": {
+    "prompt": "an adult human figure with realistic proportions rendered as a smooth featureless matte white mannequin with a blank egg-shaped head and no facial features, dressed as a hiker in a red rain jacket, dark trousers and hiking boots, standing in an open grassy field under a dark thunderstorm sky, full body, three-quarter view",
+    "seed": 912
+   },
+   "shots": [
+    {
+     "say": "Lightning's cracking all around you, so you drop flat on the ground.",
+     "edit": "He lies face down flat in the wet grass of the open field while jagged lightning bolts strike the hills around him under a black sky, rain.",
+     "move": "hook",
+     "fx": "rain",
+     "sfx": "thunder",
+     "flash": [
+      0.15
+     ]
+    },
+    {
+     "say": "It feels safer. Lower. Smaller.",
+     "reuse": 0,
+     "focus": [
+      0.5,
+      0.6,
+      1.25
+     ],
+     "move": "push_in"
+    },
+    {
+     "say": "The National Weather Service calls that a myth.",
+     "prompt": "a dark thunderstorm sky with a single bright lightning bolt over an empty open field, wide shot",
+     "move": "tilt_up",
+     "fx": "rain",
+     "sfx": "thunder",
+     "flash": [
+      0.2
+     ]
+    },
+    {
+     "say": "Lying flat raises your chance of getting hit by deadly ground current.",
+     "prompt": "3D visualization of a lightning strike hitting a field with glowing branching currents spreading out across the ground in every direction",
+     "move": "push_in",
+     "fx": "none",
+     "sfx": "zap"
+    },
+    {
+     "say": "What about crouching?",
+     "edit": "He crouches low in the open field with his hands over his head as rain pours down and lightning flashes on the horizon.",
+     "move": "push_in",
+     "fx": "rain"
+    },
+    {
+     "say": "The Weather Service says crouching doesn't make you safer either.",
+     "reuse": 4,
+     "focus": [
+      0.5,
+      0.5,
+      1.2
+     ],
+     "move": "drift_left"
+    },
+    {
+     "say": "Hiding under a tree?",
+     "edit": "He stands under a lone tall tree in the middle of the field, sheltering from the pouring rain.",
+     "move": "push_in",
+     "fx": "rain"
+    },
+    {
+     "say": "That's the second leading cause of lightning casualties.",
+     "prompt": "a lightning bolt striking a lone tall tree in an open field, sparks and bark flying, rain",
+     "move": "punch",
+     "fx": "rain",
+     "sfx": "thunder",
+     "flash": [
+      0.05
+     ]
+    },
+    {
+     "say": "And if the storm still looks far away?",
+     "prompt": "a sunny blue sky over a field with a dark thunderstorm far away on the horizon",
+     "move": "pan_right",
+     "fx": "none"
+    },
+    {
+     "say": "Lightning can strike more than {10 miles|ten miles} from a storm.",
+     "prompt": "a thin bolt of lightning shooting out of a distant storm cloud and striking far away under a mostly clear sky",
+     "move": "push_in",
+     "fx": "none",
+     "sfx": "zap",
+     "flash": [
+      0.1
+     ]
+    },
+    {
+     "say": "They're called bolts from the blue.",
+     "reuse": 9,
+     "focus": [
+      0.5,
+      0.5,
+      1.2
+     ],
+     "move": "drift_left"
+    },
+    {
+     "say": "Lightning never strikes the same place twice? Also wrong.",
+     "prompt": "a tall skyscraper with an antenna spire at night, lightning striking the spire, dark city below",
+     "move": "tilt_up",
+     "fx": "rain",
+     "sfx": "thunder",
+     "flash": [
+      0.1
+     ]
+    },
+    {
+     "say": "The Empire State Building gets hit about {23 times|twenty-three times} a year.",
+     "reuse": 11,
+     "focus": [
+      0.5,
+      0.4,
+      1.25
+     ],
+     "move": "push_in"
+    },
+    {
+     "say": "So what actually works?",
+     "prompt": "a sturdy brick house with warm lit windows at the edge of a stormy field, rain",
+     "move": "push_in",
+     "fx": "rain"
+    },
+    {
+     "say": "Get inside a real building, or a hard-top car with the windows up.",
+     "edit": "He runs across the wet field toward a parked hard-top car, rain pouring, lightning in the distance.",
+     "move": "pan_left",
+     "fx": "rain",
+     "sfx": "whoosh"
+    },
+    {
+     "say": "No place outside is safe.",
+     "reuse": 2,
+     "focus": [
+      0.5,
+      0.5,
+      1.2
+     ],
+     "move": "pull_out"
+    },
+    {
+     "say": "Then wait {30 minutes|thirty minutes} after the last thunder.",
+     "edit": "He sits inside the car looking out through the rain-streaked windshield at the storm moving away over the field.",
+     "move": "drift_right",
+     "fx": "rain"
+    },
+    {
+     "say": "Because next time lightning's cracking all around you, don't just drop flat on the ground.",
+     "reuse": 0,
+     "move": "loop_end"
+    }
+   ],
+   "facts": [
+    {
+     "claim": "Myth: lie flat; fact: it increases the chance of being affected by deadly ground current",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "Crouching doesn't make you safer outdoors; under a tree is the second leading cause of lightning casualties",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "Lightning can strike more than 10 miles from a storm ('bolts from the blue' 10-15 miles)",
+     "src": [
+      1,
+      0
+     ]
+    },
+    {
+     "claim": "Lightning often strikes the same place; Empire State Building about 23 times a year",
+     "src": [
+      0
+     ]
+    },
+    {
+     "claim": "Safe shelters: buildings and hard-top vehicles with windows up; never lie flat; no place outside is safe; wait 30 minutes after the last thunder",
+     "src": [
+      1,
+      2
+     ]
+    }
+   ],
+   "sources": [
+    {
+     "title": "National Weather Service - Lightning Myths",
+     "url": "https://www.weather.gov/safety/lightning-myths",
+     "used": "lying flat & ground current, crouching, tree = second leading cause, bolts from the blue 10-15 miles, Empire State Building 23 times a year"
+    },
+    {
+     "title": "CDC - Lightning safety",
+     "url": "https://www.cdc.gov/lightning/safety/index.html",
+     "used": "never lie flat, safe shelters incl. hard-top vehicles with windows up, more than 10 miles, 30 minutes after"
+    },
+    {
+     "title": "National Weather Service - Lightning safety outdoors",
+     "url": "https://www.weather.gov/safety/lightning-outdoors",
+     "used": "you are NOT safe outside; only safe action is a building or vehicle; wait 30 minutes after the last thunder"
+    }
+   ],
+   "careful": "Safety advice is quoted from NWS/CDC only. No one is shown being struck; the hiker is a faceless mannequin."
+  }
+ ]
+}

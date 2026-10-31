@@ -117,6 +117,8 @@ for want, args in [
     ("versus", (nt, "Dokkaebi vs Kappa: Who Wins? #shorts", "2026-10-19T06:00")),
     ("pov", (nt, "POV: Something White Is Wiggling in the Rice Field #shorts", "2026-10-20T06:00")),
     ("story_short", (nt, "They Wished for a Daughter. Then the Cow Spoke", "2026-10-03T22:00")),
+    ("story3d", (nt, "The Astronaut Whose Helmet Filled With Water", "2026-11-04T22:00", 58)),
+    ("story3d", (nt, "Could You Survive a Tsunami? vs the Fastest Man", "2026-11-11T22:00", 59)),
     ("episode", (nt, "Korea's Nine-Tailed Fox Is Darker Than Japan's", "2026-10-04T00:00", 900)),
     ("sleep", (nt, "Korean Folk Tales for Sleep · Rain", "2026-10-26T10:00", 7200)),
 ]:

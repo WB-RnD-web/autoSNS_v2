@@ -148,6 +148,12 @@ _others = [n for n, t in flows.items() if n not in WRITERS
 # orphan-rescue.yml 은 예외 — GITHUB_TOKEN 은 읽기 권한이고, 미아 산출물을 PAT 으로 routine/* 에 되돌린다(그게 할 일이다).
 ck("그 밖에 git push 하는 워크플로는 orphan-rescue.yml(PAT · routine/* 되돌리기)뿐", _others == ["orphan-rescue.yml"], str(_others))
 
+# ★2026-11 Nine Tails Story(nt-story.yml): 예약으로만 깨고(push 없음) 읽기 권한 — 업로드 ledger 는 Actions 캐시.
+_ns = flows.get("nt-story.yml", "")
+ck("nt-story.yml: push 트리거 없음(예약·수동) · 읽기 권한 · 할 일은 story.py due · 5B 영상 잡 없음",
+   trig.get("nt-story.yml") is None and re.search(r"(?m)^\s*contents:\s*read", _ns) is not None
+   and "gumiho/tales/story.py due" in _ns and '"type": "video"' not in _ns, "")
+
 print("\n── 5. 워크플로가 부르는 파일이 레포에 있다 ──")
 _miss = []
 for n, t in flows.items():

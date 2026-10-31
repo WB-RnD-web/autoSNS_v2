@@ -1,6 +1,18 @@
 # Nine Tails Tales (개인 채널 → 영어 해설·생존 채널)
 
 채널: https://www.youtube.com/@NineTailsTales (구 Gumiho Games, UCoPIsIO_ximUdyh-n_-rIfQ) · 왕별이와 무관.
+
+## ★2026-11 재개: 얼굴 없는 3D 실화·what-if 쇼츠(이게 지금 도는 유일한 줄기)
+10/27 판정 '가망 없음'으로 쉬던 채널을 10/31 사용자 결정('2차 견본 수준으로 재개')으로 다시 연다. 아래 옛 롱폼·쇼츠 루틴은 꺼진 그대로다.
+- 대본: `story_catalog.json` — 미리 다 써 둔다(루틴·LLM 없음). 편마다 공개일 `from`(월·수·금) · 제목·설명 · 장면(말 + 그림) ·
+  사실(facts, 실제로 연 출처 번호) · 출처(sources) · 조심할 점(careful). 사람은 얼굴 없는 마네킹으로만(검사가 막는다).
+- 검사·편성·업로드: `story.py`(check · plan · due · seen · upload) · 렌더: `story_reel.py`(Spark 그림 + qwen 편집으로 인물 유지 ·
+  느린 밀기/패닝 · 카라오케 자막 · edge-tts Andrew · -15 LUFS). ★5B 영상 클립·패럴랙스는 쓰지 않는다(깨짐 0 이 먼저).
+- 워크플로 `nt-story.yml`: 01:00·03:30·10:00 KST 에 깨서 공개 전날~당일 편을 렌더 → 비공개 + 22:00 KST 예약 공개.
+  05:45~08:00 KST 는 Spark 를 쓰지 않는다(다음 예비가 잇는다). ledger 캐시 + 설명란 표식으로 두 번 안 올린다.
+- 판정: `tools/pulse_experiments.json` 'nt-relaunch-3d'(12/02). 편을 더할 땐 카탈로그 끝에 붙이고 `python gumiho/tales/story.py check`.
+
+## (옛) 2026-10 구성 — 꺼짐
 ★2026-10-09 개편: 사용자가 한국 설화·조선 주제를 금지했다. 20~39세 해외 시청자. 구미는 화면에 나오지 않고 목소리로만 진행한다.
 - 롱폼: 해설편 주 1편(극한 장소·심해 구역별·what-if) — 27화부터, 일요일 14:00 UTC. 설화 1~26화는 `retired`(올리지 않음).
 - 쇼츠: A 'How Long Would You Last…? Pt.N' 매일 20:00 UTC · B 'Ranked'·'Liminal Rules' 격일 23:30 UTC(10/13~10/26 시험, 10/27 판정).
