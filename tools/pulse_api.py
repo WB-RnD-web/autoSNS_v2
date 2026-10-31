@@ -4,7 +4,7 @@
 왜: 분석 루틴(Opus, 매일 07:30)은 구독의 ★주간 한도를 쓴다. 한도가 바닥나면 업로드 루틴까지 같이 멈춘다.
   Max 계정에 따로 붙는 월 200달러 API 크레딧(결제 수단 없음 · 조직 월 한도 200달러 → 넘으면 멈출 뿐 돈이 안 나간다)으로 옮긴다.
   숫자는 그대로 tools/pulse.py build 가 내고, 여기서는 해석만 받는다. 규칙은 tools/PULSE.md 그대로, 검사기도 같다(pulse.py check).
-흐름: PULSE.md + 오늘 pulse.json + 레이더 report.md + 지난 3일 fill.json·플래그 + 최근 커밋 → Claude → fill.json
+흐름: PULSE.md + 오늘 pulse.json + 레이더 report.md + 지난 3일 fill.json·플래그 + 최근 커밋(+ 웹 정찰 data/scout) → Claude → fill.json
   (+ pr_edits → pr.patch). 검사 오류가 나면 그 오류를 붙여 다시 묻는다(최대 3번).
 PR: 지난 맥박 PR 4개(#154·#159·#164·#167)가 전부 tools/pulse_experiments.json 만 고쳤다 → 고칠 수 있는 파일을 EDITABLE 로
   묶고, 파일을 통째로 보여 준 뒤 '정확한 문자열 바꾸기'만 받는다. 테스트는 여기서 돌린다(루틴이 하던 '직접 돌려 통과').
@@ -58,6 +58,10 @@ PR 을 낼 때만(위 PR 조건을 전부 만족할 때) fill.pr 를 채우고 p
 - direction 1~6개 {topic ≤40, verdict, why ≤260} · trends 1~5개, 각 5~220자 · flags 대응 각 2~200자(오늘 플래그 전부, 그 밖은 없이)
 - actions 0~5개 {what ≤160, who, when ≤30} · predictions 1~3개 · fill.json 전체 12,000자 이하
 - 긴 근거는 쪼개지 말고 줄인다. 넷을 넘으면 덜 중요한 것을 버린다.
+
+웹 정찰(있으면 사용자 메시지 끝): 웹 검색으로 찾은 바깥 흐름이다. ★trends·actions 에만 참고로 쓴다(우리 시청자와 맞는 것만,
+링크가 있는 것만). evidence 에는 쓰지 않는다(evidence 는 pulse.json·report.md 숫자만). 소재 후보가 바닥나 가는 줄기(RUNWAY)에
+맞으면 actions 에 '어느 후보를 어느 catalog 에' 한 줄로 적는다.
 """
 
 
@@ -99,6 +103,10 @@ def user_message(day: str, out_root: str, radar_dir: str, root: str = ROOT) -> s
     for p in EDITABLE:
         parts.append(f"\n## {p}(PR 로 고칠 수 있는 파일 — 원문 그대로)\n```\n" + _read(os.path.join(root, p)) + "\n```")
     parts.append("\n## 최근 4일 커밋(main)\n" + _git_log(root))
+    scout = os.environ.get("SCOUT_FILE")              # 웹 정찰(scout_api · data/scout) — 있으면 바깥 흐름으로 붙인다
+    if scout and os.path.exists(scout):
+        import scout_api
+        parts.append("\n## 웹 정찰(data/scout — 웹 검색으로 찾은 바깥 흐름 · 링크 있음)\n" + scout_api.brief(scout))
     return "\n".join(parts)
 
 
