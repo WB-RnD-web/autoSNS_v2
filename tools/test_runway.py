@@ -37,8 +37,9 @@ by = {r["id"]: r for r in rows}
 
 print("── 줄기 목록 ──")
 WANT = {"wb_daily", "wb_theme", "wb_name", "wb_pulli", "wb_gunghap", "wb_newyear_card", "wb_newyear_series", "wb_lf27",
-        "wb_weekly_lf", "nt_shorts", "nt_longform", "nt_sleep", "insta_pick", "insta_sci", "insta_teardown", "insta_bm"}
-ck("세 채널 줄기 전부(왕별이 9 · Nine Tails 3 · 인스타 4) · 확인 실패 없음", set(by) == WANT
+        "wb_weekly_lf", "nt_shorts", "nt_longform", "nt_sleep", "insta_pick", "insta_sci", "insta_teardown", "insta_bm",
+        "insta_worker", "insta_danger"}                    # ★10/31 밤 편(c) 두 줄기 — '심해 직장인' · '위험한 진짜 이유'
+ck("세 채널 줄기 전부(왕별이 9 · Nine Tails 3 · 인스타 6) · 확인 실패 없음", set(by) == WANT
    and not any(r["limit"] == "error" for r in rows), sorted(set(by) ^ WANT) or [r["note"] for r in rows if r["limit"] == "error"])
 ck("한계 종류는 다섯 중 하나 · 채널 이름", all(r["limit"] in RW.LIMITS for r in rows) and all(r["ch"] in RW.CHANNELS for r in rows))
 ck("끝없음: 매일 운세·띠 테마·내 것 찾기·풀이형·골라보기 (마지막 날·남은 날 없음)",
@@ -105,6 +106,12 @@ ck("2027-03-01: 깊이 보기·신년 시리즈는 끝(0일) → 경고 · 매�
    far["wb_lf27"]["days_left"] == 0 and far["wb_newyear_series"]["days_left"] == 0
    and {"wb_lf27", "wb_newyear_series"} <= {r["id"] for r in RW.low(list(far.values()))} and far["wb_daily"]["days_left"] is None)
 ck("--warn 을 바꾸면 경고 범위가 바뀐다(60일 → 깊이 보기도)", "wb_lf27" in {r["id"] for r in RW.low(rows, 60)})
+
+_cp = P.c_plan()
+ck("밤 편 두 줄기: 목록(catalog) · 마지막 = c_plan 의 그 꼴 마지막 날 · 남은 편 = 그 꼴 날 수 · 채우는 곳 = 그 catalog",
+   all(by[i]["limit"] == "catalog" and by[i]["last"] == max(d for d, (k, _) in _cp.items() if k == kd)
+       and by[i]["left"] == sum(1 for d, (k, _) in _cp.items() if k == kd and d >= TODAY) and f"insta/{kd}_catalog.json" in by[i]["refill"]
+       for i, kd in (("insta_worker", "worker"), ("insta_danger", "danger"))), [by["insta_worker"], by["insta_danger"]])
 
 print("── 채우기(REFILL.md · refill_check) ──")
 ck("채울 수 있는 줄기 = NT 쇼츠·NT 해설 롱폼·띠 궁합표·깊이 보기·인스타 sci·뜯어보기 · refill_doc = REFILL.md#<id>",

@@ -211,6 +211,8 @@ def skip_reasons(s: dict, today: dt.date, ig_led: dict, env=None) -> list[str]:
         why.append("sci(도파민 과학) 편은 쓰레드에 안 올린다 — 쓰레드 2주 시험은 골라보기만(10/25 판정까지 조건 그대로)")
     elif s.get("kind") in P.BM_KINDS:
         why.append("병맛(bm) 편은 쓰레드에 안 올린다 — 쓰레드 2주 시험은 골라보기만(기간 안에서만)")
+    elif s.get("kind") in P.C_KINDS:
+        why.append("밤 편(심해 직장인·위험한 진짜 이유)은 쓰레드에 안 올린다 — 쓰레드는 골라보기만")
     else:
         try:
             d = dt.date.fromisoformat(s.get("date") or "")

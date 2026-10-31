@@ -1,0 +1,928 @@
+{
+ "about": "인스타 밤 편(c) '심해 직장인' — 블롭피시 회사원 캐릭터 + 한국 직장 공감 한 줄 + 끝 '진짜 과학' 한 장(블롭피시 또는 그 화 카메오 심해 동료의 사실). 날짜 순서는 pick_plan.c_plan((from, n) 순서 · 11/08 부터 이틀에 한 편, 11/09 가 1화). 작가(API · 웹 못 봄)는 사실·숫자를 이 facts 에서만 쓴다 — facts 마다 원문 문장(evidence)을 2026-10-31 직접 열어 확인했다. 새 항목은 끝에만 붙이고 from 을 붙이는 날 다음 날 이후로(지난 날 편성이 안 바뀐다). 번호 501~600.",
+ "character": {
+  "about": "'블롭 대리' — 분홍 젤리 블롭피시 회사원(처진 큰 코 · 시무룩한 입 · 작은 남색 넥타이 · 파란 목줄 흰 사원증 · 다리 없이 꼬리지느러미). 기준 그림 = master_prompt + master_seed(z-image-turbo, 늘 같은 그림) → 장면마다 그 그림을 from_job 으로 넘겨 qwen-image-edit 가 '같은 캐릭터, 장면만 바꾸기'(keep_prefix + 대본 scene). ★'pink chubby cute character' 만 쓰면 잔망루피가 나온다(10/31 실측 — IP 위험) → fish · tail fin · no legs 를 빼지 않는다.",
+  "master_prompt": "an adorable 3D cartoon blobfish, the famous droopy deep-sea fish: a soft melting gelatinous pink head, a big fat bulbous nose drooping down over a wide sad frowning mouth, saggy jowls, tiny black bead eyes with heavy tired eyelids, glossy wet pale salmon-pink jelly skin, a tapered fish body ending in a small tail fin instead of legs, little pectoral fins as arms, wearing a tiny navy necktie and a blue lanyard with a white rectangular ID card hanging on its chest, floating in mid-air in front of a plain soft pastel blue studio background, front view, whole body visible, centered, Pixar style 3D animation render, soft cinematic lighting, high detail",
+  "master_seed": 22,
+  "master_size": [
+   768,
+   1344
+  ],
+  "keep_prefix": "Keep the exact same blobfish character from the image: same droopy bulbous nose, same sad frowning mouth, same glossy pale salmon-pink jelly skin, same tiny navy necktie, same blue lanyard with the white ID card, same body proportions and tail fin. ",
+  "fallback_prefix": "an adorable 3D cartoon blobfish office worker fish: a soft melting gelatinous pink head, a big fat bulbous nose drooping over a wide sad frowning mouth, tiny black bead eyes, glossy pale salmon-pink jelly skin, a tapered fish body with a small tail fin instead of legs, little pectoral fins as arms, a tiny navy necktie and a blue lanyard with a white ID card, ",
+  "style_tail": " Pixar style 3D animation, cinematic, soft light, high detail."
+ },
+ "entries": [
+  {
+   "n": 501,
+   "slug": "monday-9am",
+   "from": "2026-11-08",
+   "title_idea": "월요일 아침 녹아내린 블롭피시",
+   "subtitle_idea": "월요일 아침 9시",
+   "situation": "월요일 아침, 출근하자마자 얼굴부터 녹아내리는 순간.",
+   "line_idea": "출근만 하면 얼굴이 녹아요",
+   "scene_ideas": [
+    "Monday morning in a bright open-plan office, the blobfish office worker slumped at its desk right after arriving, its jelly face drooping even more than usual, a paper coffee cup beside the keyboard, softly blurred coworkers in the far background, cool morning light from big windows",
+    "Close-up of the blobfish office worker resting its chin on the desk, cheeks spreading out like melting pudding, eyes half-closed, lanyard ID card squished under its chin, a monitor glowing softly behind it, gentle comedic Monday mood"
+   ],
+   "cameo": null,
+   "fact_topic": "블롭피시가 녹아 보이는 진짜 이유",
+   "fact_idea": {
+    "head": "블롭피시도\n집에선 멀쩡해요",
+    "body": "600~1,200m 깊은 바다에선 평범한 물고기 모양이에요. 물 밖에선 물이 받쳐 주던 힘이 사라져 몸이 처져요."
+   },
+   "gauge": [
+    600,
+    1200
+   ],
+   "facts": [
+    {
+     "fact": "The blobfish Psychrolutes marcidus is a bathydemersal (near-bottom) deep-water fish with a depth range of 600–1,200 m.",
+     "src": 1,
+     "evidence": "Marine; bathydemersal; depth range 600 - 1200 m (Ref. 9563). Deep-water; 33°S - 50°S, 136°E - 155°E"
+    },
+    {
+     "fact": "Photographed in their natural deep-sea environment, blobfish look more like 'tadpoles on steroids' than a melted blob.",
+     "src": 0,
+     "evidence": "Photographed in their proper environment, blobfish are more like tadpoles on steroids, sometimes with striking patterns and frills."
+    },
+    {
+     "fact": "The melted look in air is NOT caused by the loss of pressure; it happens because the support given by water is removed.",
+     "src": 0,
+     "evidence": "Their comedic melting in air isn’t because of the loss of pressure, although the cold and pressure at depth likely keeps the gel firmer, but because the support given by water has been removed."
+    },
+    {
+     "fact": "Out of water, gravity pulls the gel layer just under the skin downward, which makes the drooping 'melted' face.",
+     "src": 0,
+     "evidence": "Gravity then takes over causing the gel-layer just under the skin to make its way down."
+    }
+   ],
+   "sources": [
+    "https://blog.tepapa.govt.nz/2024/09/09/the-blob-blog/",
+    "https://www.fishbase.se/summary/Psychrolutes-marcidus.html"
+   ],
+   "source_label": "Te Papa(뉴질랜드 국립박물관) 2024 · FishBase",
+   "careful": [
+    "'수압이 사라져서 녹는다'고 쓰면 안 됨 — Te Papa는 압력 손실 때문이 아니라 물의 받침이 사라져서라고 명시.",
+    "600~1,200m는 FishBase의 Psychrolutes marcidus(호주 고유종) 범위. 유명한 'Mr Blobby' 사진 개체는 Te Papa 기준 Psychrolutes microporos이고 그물 작업 깊이는 1013–1340m였음 — 종 이름을 화면에 쓸 땐 섞지 말 것.",
+    "'tadpoles on steroids(근육질 올챙이)'는 비유 — '심해에선 평범한 물고기 모양' 정도로 순화."
+   ]
+  },
+  {
+   "n": 502,
+   "slug": "3pm-power-saving",
+   "from": "2026-11-08",
+   "title_idea": "오후 3시 절전 모드 블롭피시",
+   "subtitle_idea": "오후 3시",
+   "situation": "점심 먹고 오후 3시, 졸음이 몰려와 몸이 절전 모드로 들어가는 순간.",
+   "line_idea": "오후 3시, 절전 모드 들어갑니다",
+   "scene_ideas": [
+    "Mid-afternoon in a sunny office, the blobfish office worker drifting slightly above its office chair with eyes half-closed in a sleepy power-saving mode, desk lamp dimmed, warm golden afternoon light, softly blurred coworkers far in the background",
+    "The blobfish office worker dozing and gently floating over its desk while the anglerfish team leader at the next desk (round dark brown-grey body, huge wide mouth with tiny pointy teeth, small eyes, a thin stalk on its head ending in a glowing yellow light bulb) leans over in surprise, its glowing bulb lighting the blobfish's sleepy face in warm yellow light, cozy comedic mood"
+   ],
+   "cameo": {
+    "animal_ko": "심해 아귀",
+    "animal_en": "deep-sea anglerfish",
+    "role_ko": "옆자리 팀장님",
+    "look": "round dark brown-grey body, huge wide mouth with tiny pointy teeth, small eyes, a thin stalk on its head ending in a glowing yellow light bulb"
+   },
+   "fact_topic": "블롭피시 젤리 몸의 부력",
+   "fact_idea": {
+    "head": "블롭피시 몸은\n거의 바닷물 젤리",
+    "body": "몸 대부분이 바닷물과 밀도가 거의 같은 투명한 젤이라 뜨는 데 도움이 돼요. 바닥 위를 힘들이지 않고 헤엄친 모습도 찍혔어요."
+   },
+   "facts": [
+    {
+     "fact": "Most of a blobfish's body is a clear gel almost the same density as the surrounding seawater.",
+     "src": 0,
+     "evidence": "Most of its body is a clear gel almost the same density as the water around it."
+    },
+    {
+     "fact": "This gel helps the blobfish with buoyancy control in the ocean.",
+     "src": 0,
+     "evidence": "This gel helps with buoyancy control in the ocean."
+    },
+    {
+     "fact": "One blobfish filmed off New Zealand was swimming effortlessly off the bottom, rowing with its big pectoral fins.",
+     "src": 0,
+     "evidence": "One specimen filmed off New Zealand was swimming effortlessly off the bottom, sculling its enormous pectoral fins, appearing to row its way through the sea."
+    }
+   ],
+   "sources": [
+    "https://blog.tepapa.govt.nz/2024/09/09/the-blob-blog/"
+   ],
+   "source_label": "Te Papa(뉴질랜드 국립박물관) 2024",
+   "careful": [
+    "'힘들이지 않고 헤엄쳤다'는 뉴질랜드 앞바다에서 촬영된 한 개체의 묘사 — '블롭피시는 에너지를 거의 안 쓴다' 같은 일반화·수치화 금지.",
+    "'부력 조절에 도움' 수준으로만 — '젤 덕분에 가만히 떠 있다'고 단정하지 말 것.",
+    "카메오 심해 아귀는 사실 카드와 무관한 등장 — 아귀 사실을 덧붙이지 말 것(508편에서 다룸)."
+   ]
+  },
+  {
+   "n": 503,
+   "slug": "commute-rush-lanternfish",
+   "from": "2026-11-08",
+   "title_idea": "출근길 지옥철의 블롭피시",
+   "subtitle_idea": "아침 8시 출근길",
+   "situation": "아침 출근 시간, 꽉 찬 지하철에 끼어 납작해진 채 가는 순간.",
+   "line_idea": "출근길 지하철, 오늘도 납작해졌어요",
+   "scene_ideas": [
+    "Morning rush hour inside a packed underground train car, the blobfish office worker squeezed among softly blurred commuters in the background, clutching a hanging strap with one tiny fin, its jelly cheeks squished flat, cool bluish carriage lights, sleepy but determined mood",
+    "The same crowded train car, the blobfish office worker pressed cheek to cheek with a lanternfish coworker (small slender silvery-blue fish with big round shiny eyes and rows of tiny glowing blue-green dots along its belly and sides), both hanging onto the same strap, the tiny glowing dots casting soft blue-green light on the blobfish's face, funny shared-commute mood"
+   ],
+   "cameo": {
+    "animal_ko": "샛비늘치",
+    "animal_en": "lanternfish",
+    "role_ko": "같은 층 신입 사원",
+    "look": "small slender silvery-blue fish with big round shiny eyes and rows of tiny glowing blue-green dots along its belly and sides"
+   },
+   "fact_topic": "샛비늘치의 매일 수직 이동(출퇴근)",
+   "fact_idea": {
+    "head": "샛비늘치도\n매일 출퇴근해요",
+    "body": "대부분 밤마다 수면 쪽으로 올라갔다가 해 뜰 무렵 깊은 곳으로 돌아가요. 1950년대엔 음파탐지기에 해저로 잡혔대요."
+   },
+   "facts": [
+    {
+     "fact": "Most lanternfish species make a nightly journey up to the ocean surface, following zooplankton (their main food).",
+     "src": 0,
+     "evidence": "Most species of lanternfish make a nightly journey to the ocean surface, following zooplankton, their favorite snack."
+    },
+    {
+     "fact": "By sunrise, lanternfish return to the depths, regulating their buoyancy with gas-filled swim bladders.",
+     "src": 0,
+     "evidence": "By sunrise, they return to the depths, regulating their buoyancy with gas-filled swim bladders."
+    },
+    {
+     "fact": "When scientists in the 1950s measured ocean depth with new sonar, the sea floor seemed to rise at night across the globe.",
+     "src": 0,
+     "evidence": "When scientists in the 1950s tried to measure ocean depth using newly-developed sonar technology, the entire sea floor seemed to rise at night across the globe."
+    },
+    {
+     "fact": "That 'false bottom' turned out to be sonar bouncing off millions of small gas-filled fish, mostly lanternfish, during their night migration.",
+     "src": 0,
+     "evidence": "After years of confusion, researchers finally realized that this “false bottom” was actually caused by sonar bouncing off millions of small, gas-filled fish—mostly lanternfish—during their nocturnal migration."
+    },
+    {
+     "fact": "This daily up-and-down movement of twilight-zone animals (diel vertical migration) is described as the largest migration of animal life on Earth.",
+     "src": 1,
+     "evidence": "This phenomenon is called the Diel Vertical Migration, and is the largest migration of animal life on earth."
+    },
+    {
+     "fact": "Lanternfish are estimated to account for 60% of all deep-sea fish, about 600 million tons of biomass worldwide.",
+     "src": 0,
+     "evidence": "Whatever their secret is, they’re doing something right: lanternfish account for 60% of all deep-sea fish, totalling about 600 million tons of biomass across the world’s oceans."
+    }
+   ],
+   "sources": [
+    "https://www.whoi.edu/ocean-learning-hub/ocean-facts/lanternfishes/",
+    "https://twilightzone.whoi.edu/explore-the-otz/migration/"
+   ],
+   "source_label": "WHOI(우즈홀 해양연구소)",
+   "careful": [
+    "'지구에서 가장 큰 이동'은 샛비늘치만이 아니라 박광층 동물 전체(물고기·연체동물·갑각류 등)의 일일 수직 이동을 가리키는 말.",
+    "'모든' 샛비늘치가 아니라 '대부분의 종'이 이동함.",
+    "'60%·6억 톤'은 추정치 — 쓰려면 '약', '추정' 붙이기.",
+    "실제 방향은 '밤에 위로, 해 뜰 무렵 아래로' — 사람의 아침 출근과 방향이 반대라는 점을 틀리게 쓰지 말 것."
+   ]
+  },
+  {
+   "n": 504,
+   "slug": "overtime-sos-crown-jelly",
+   "from": "2026-11-08",
+   "title_idea": "야근하다 SOS 치는 블롭피시",
+   "subtitle_idea": "밤 10시 야근",
+   "situation": "밤늦게 사무실에 혼자 남아 야근하다가 누가 좀 도와줬으면 싶은 순간.",
+   "line_idea": "밤 10시, 누가 저 좀 구해 주세요",
+   "scene_ideas": [
+    "Late night in an almost empty dark office, only one desk lamp still on, the blobfish office worker alone at its desk surrounded by tall stacks of paper folders, deep navy darkness outside the windows, tired and lonely mood",
+    "The blobfish office worker looking up hopefully as a deep-sea crown jelly coworker (small bright red dome-shaped jellyfish with a crown-like ridged bell, short tentacles around the rim and one extra-long trailing tentacle, flashing a spinning ring of brilliant blue light) floats beside the desk, the swirling blue glow lighting up the dark office like a friendly alarm, comforting late-night mood"
+   ],
+   "cameo": {
+    "animal_ko": "아톨라 해파리(심해 왕관해파리)",
+    "animal_en": "deep-sea crown jelly (Atolla)",
+    "role_ko": "옆 팀 야근 메이트",
+    "look": "small bright red dome-shaped jellyfish with a crown-like ridged bell, short tentacles around the rim and one extra-long trailing tentacle, flashing a spinning ring of brilliant blue light"
+   },
+   "fact_topic": "아톨라 해파리의 '도난 경보' 빛",
+   "fact_idea": {
+    "head": "해파리 동료는\n빛으로 SOS 쳐요",
+    "body": "붙잡히면 파란 빛을 바람개비처럼 번쩍여요. 더 큰 포식자를 불러 위기를 넘기는 '도난 경보'로 여겨져요."
+   },
+   "facts": [
+    {
+     "fact": "When its red camouflage fails, the deep-sea crown jelly (Atolla) 'sounds the alarm' with pinwheels of brilliant blue bioluminescence.",
+     "src": 0,
+     "evidence": "If Atolla’s crimson camouflage does not work, this jelly sounds the alarm with pinwheels of brilliant blue bioluminescence."
+    },
+    {
+     "fact": "The burst of light disorients predators and acts like a burglar alarm that tells larger predators something interesting is happening.",
+     "src": 0,
+     "evidence": "A burst of light in the dark water not only disorients predators but it also acts like a burglar alarm telling larger predators there is something interesting happening here."
+    },
+    {
+     "fact": "The display is believed to work as a last-ditch 'scream' for help when the jelly is caught by a predator.",
+     "src": 1,
+     "evidence": "This display, known as a bioluminescent burglar alarm, consists of a propagated wave of light that pinwheels around the surface of the bell and is believed to function as a last ditch “scream” for help when the jelly is caught in the clutches of a predator."
+    },
+    {
+     "fact": "Its bright red bell helps keep it hidden, because in the deep sea red appears black.",
+     "src": 0,
+     "evidence": "The bright red bell helps keep Atolla hidden—in the deep sea, red appears black."
+    },
+    {
+     "fact": "Deep-sea crown jellies live at about 500–5,000 m depth and grow to a maximum of about 15 cm.",
+     "src": 0,
+     "evidence": "Maximum Size 15 cm (6 inches) Depth 500–5,000 m"
+    }
+   ],
+   "sources": [
+    "https://www.mbari.org/animal/deep-sea-crown-jelly/",
+    "https://oceanexplorer.noaa.gov/expedition-feature/19biolum-background-medusa/"
+   ],
+   "source_label": "MBARI · 미국 해양대기청(NOAA)",
+   "careful": [
+    "'더 큰 포식자를 불러 공격자를 쫓는다'는 '여겨지는(believed)' 기능 — '반드시 구조된다'처럼 단정 금지.",
+    "'빨간색이 심해에선 검게 보인다'는 위장 설명 — 빛이 거의 없는 환경이라서라는 맥락 유지.",
+    "깊이·크기는 MBARI 안내 범위(아톨라 속 여러 종) — 한 종의 정확한 값처럼 쓰지 말 것."
+   ]
+  },
+  {
+   "n": 505,
+   "slug": "payday-wait-giant-isopod",
+   "from": "2026-11-08",
+   "title_idea": "월급날만 기다리는 블롭피시",
+   "subtitle_idea": "월급날 일주일 전",
+   "situation": "월급날을 며칠 앞두고 통장이 거의 바닥난 순간.",
+   "line_idea": "월급날까지 버티는 중이에요",
+   "scene_ideas": [
+    "Late afternoon at the office, the blobfish office worker sitting at its desk staring sadly at an almost empty open wallet next to a single small rice ball, soft warm light, wistful but funny mood, softly blurred coworkers far in the background",
+    "In the office break room, a giant isopod coworker (big rounded pale lilac-grey armored body made of overlapping shell plates like a giant pill bug, seven pairs of short legs, two long antennae, big dark shiny eyes) sits calmly beside the blobfish office worker with a perfectly relaxed, patient expression, an untouched lunch box in front of it, while the blobfish looks at it in awe, warm fluorescent light, cozy comedic mood"
+   ],
+   "cameo": {
+    "animal_ko": "대왕구족충(심해 등각류)",
+    "animal_en": "deep-sea giant isopod",
+    "role_ko": "재무팀 과장님",
+    "look": "big rounded pale lilac-grey armored body made of overlapping shell plates like a giant pill bug, seven pairs of short legs, two long antennae, big dark shiny eyes"
+   },
+   "fact_topic": "대왕구족충의 초장기 단식",
+   "fact_idea": {
+    "head": "구족충 과장님은\n한 끼로 오래 버텨요",
+    "body": "5년 넘게 먹지 않고 버틴 것으로 유명해요. 잘 늘어나는 위에 먹이를 담아 두고 기초대사량을 크게 낮춘대요."
+   },
+   "facts": [
+    {
+     "fact": "The deep-sea supergiant isopod is renowned for surviving over 5 years without food.",
+     "src": 0,
+     "evidence": "The deep-sea supergiant isopod is renowned for surviving over 5 years without food, which is a crucial adaptive trait for megafauna inhabiting extreme environments."
+    },
+    {
+     "fact": "Its strategy combines a distended, food-retentive stomach (allowing occasional huge meals) with a markedly reduced basal metabolic rate.",
+     "src": 0,
+     "evidence": "Here, morphological, physiological, and genomic comparisons of deep-sea isopods reveal a dual adaptive strategy underlying this trait: a distended, food-retentive stomach that enables episodic hyperphagia and a markedly reduced basal metabolic rate (BMR)."
+    },
+    {
+     "fact": "A key part of this is an energy-metabolism gene (ND1) that the isopods' ancestors acquired from microbes long ago.",
+     "src": 0,
+     "evidence": "Notably, central to this adaptation is the ancient horizontal acquisition of the microbial energy metabolism-related gene ND1, which thereafter achieved significant dosage enhancement via post-transfer duplication and ultra-high expression that is specifically regulated by histone acetylation at its promoter."
+    }
+   ],
+   "sources": [
+    "https://pubmed.ncbi.nlm.nih.gov/42248139/"
+   ],
+   "source_label": "학술지 Cell 2026",
+   "careful": [
+    "'5년 넘게'는 논문 초록이 '그렇게 알려져 있다(renowned)'고 쓴 표현 — 사육 개체 사례로 알려진 것이고, 이 논문이 5년을 직접 측정한 건 아님.",
+    "흔히 인용되는 일본 수족관 개체(2009년~2014년)의 날짜·수족관 이름은 기관 원문으로 확인하지 못해 뺐음 — 화면에 날짜·장소를 쓰지 말 것. 그 개체의 끝(폐사)도 언급 금지.",
+    "논문 대상은 Bathynomus jamesi·B. doederleini(초대형 등각류) — '모든 구족충'으로 일반화 주의.",
+    "'한 끼로 오래'는 '가끔 몰아 먹고(episodic hyperphagia) 오래 버틴다'를 쉽게 푼 말 — 몇 끼·며칠 같은 수치는 없음.",
+    "사람이 굶거나 끼니를 거르는 것과 연결하지 말 것(다이어트 메시지 금지)."
+   ]
+  },
+  {
+   "n": 506,
+   "slug": "retirement-age-greenland-shark",
+   "from": "2026-11-08",
+   "title_idea": "정년이 궁금한 블롭피시",
+   "subtitle_idea": "점심 후 멍때리기",
+   "situation": "점심 먹고 멍하니 정년까지 몇 년 남았는지 세어 보는 순간.",
+   "line_idea": "정년까지 몇 년 남았더라…",
+   "scene_ideas": [
+    "A quiet office corner after lunch, the blobfish office worker sitting at its desk counting on its tiny fins with a dreamy faraway look, a small potted plant and a mug beside it, soft afternoon light, daydreaming mood",
+    "The blobfish office worker looking up in astonishment at a Greenland shark senior coworker (large chubby slow-looking grey-brown shark with a short rounded snout, tiny pale eyes, small fins, a calm gentle closed-mouth smile and a wise old-timer air) calmly sipping tea at a big old wooden desk with a vintage brass lamp and old framed photos, gentle slow mood, warm amber light"
+   ],
+   "cameo": {
+    "animal_ko": "그린란드상어",
+    "animal_en": "Greenland shark",
+    "role_ko": "최고참 부장님",
+    "look": "large chubby slow-looking grey-brown shark with a short rounded snout, tiny pale eyes, small fins, a calm gentle closed-mouth smile and a wise old-timer air"
+   },
+   "fact_topic": "그린란드상어의 추정 수명",
+   "fact_idea": {
+    "head": "그린란드상어 부장님\n최소 272살 추정",
+    "body": "눈 수정체 연대 측정으로 적어도 272년을 사는 것으로 추정됐어요. 가장 큰 개체는 392±120살로 추정돼요."
+   },
+   "facts": [
+    {
+     "fact": "Radiocarbon dating of the eye lens nuclei of 28 female Greenland sharks indicated a life span of at least 272 years (an estimate).",
+     "src": 0,
+     "evidence": "Radiocarbon dating of eye lens nuclei from 28 female Greenland sharks (81 to 502 cm in total length) revealed a life span of at least 272 years."
+    },
+    {
+     "fact": "The largest shark studied (502 cm) was estimated to be 392 ± 120 years old, and age at sexual maturity was estimated at least 156 ± 22 years.",
+     "src": 0,
+     "evidence": "The age ranges of prebomb sharks (reported as midpoint and extent of the 95.4% probability range) revealed the age at sexual maturity to be at least 156 ± 22 years, and the largest animal (502 cm) to be 392 ± 120 years old."
+    },
+    {
+     "fact": "The authors conclude the Greenland shark is the longest-lived vertebrate known.",
+     "src": 0,
+     "evidence": "Our results show that the Greenland shark is the longest-lived vertebrate known, and they raise concerns about species conservation."
+    }
+   ],
+   "sources": [
+    "https://pubmed.ncbi.nlm.nih.gov/27516602/"
+   ],
+   "source_label": "학술지 Science 2016",
+   "careful": [
+    "모든 나이는 추정치 — '최소 272살로 추정', '392±120살로 추정'처럼 반드시 '추정' 붙이기.",
+    "'512살'은 초록에 없는 계산값(392+120) — 쓰지 말 것.",
+    "암컷 28마리 표본 기준. '척추동물 중 가장 오래 산다'는 '알려진 것 중'.",
+    "어른(성숙)이 되는 나이 '최소 156±22년'도 추정 — 쓰려면 '어른이 되는 데만 150년 넘게(추정)'처럼 순화."
+   ]
+  },
+  {
+   "n": 507,
+   "slug": "invisible-in-meeting-barreleye",
+   "from": "2026-11-08",
+   "title_idea": "회의 때 투명해지는 블롭피시",
+   "subtitle_idea": "오전 회의 시간",
+   "situation": "회의에서 의견을 내려고 손을 들어도 아무도 알아채지 못하는 순간.",
+   "line_idea": "저 아까부터 여기 있었는데요",
+   "scene_ideas": [
+    "A meeting room with a long white table, softly blurred coworkers gathered at the far end, the blobfish office worker sitting quietly in the corner seat and raising one tiny fin, nobody noticing, pale fluorescent light, awkward but cute mood",
+    "Two-shot at the corner of the meeting table, the blobfish office worker sitting next to a barreleye coworker (small dark brown fish with a completely clear see-through dome over the top of its head like a glass bubble, two glowing green tube-shaped eyes inside the clear dome, big flat fins), the clear dome almost invisible against the bright room, its green tube eyes rolling sideways to look at the blobfish, both sharing a quiet knowing glance, soft light"
+   ],
+   "cameo": {
+    "animal_ko": "배럴아이",
+    "animal_en": "barreleye fish (Macropinna microstoma)",
+    "role_ko": "회의실 구석 동기",
+    "look": "small dark brown fish with a completely clear see-through dome over the top of its head like a glass bubble, two glowing green tube-shaped eyes inside the clear dome, big flat fins"
+   },
+   "fact_topic": "배럴아이의 투명한 머리",
+   "fact_idea": {
+    "head": "배럴아이는\n머리가 투명해요",
+    "body": "머리 위를 액체로 찬 투명한 덮개가 감싸고, 그 안의 통 모양 눈이 위나 앞으로 돌아가요. 600~800m에서 관찰됐어요."
+   },
+   "gauge": [
+    600,
+    800
+   ],
+   "facts": [
+    {
+     "fact": "The barreleye has extremely light-sensitive tubular eyes that can rotate within a transparent, fluid-filled shield on its head.",
+     "src": 0,
+     "evidence": "The barreleye (Macropinna microstoma) has extremely light-sensitive eyes that can rotate within a transparent, fluid-filled shield on its head."
+    },
+    {
+     "fact": "Its eyes point upward when it looks for food overhead and point forward when it is feeding.",
+     "src": 0,
+     "evidence": "The eyes point upward (as shown here) when the fish is looking for food overhead. They point forward when the fish is feeding."
+    },
+    {
+     "fact": "Robot-submarine (ROV) cameras off Central California typically showed barreleyes hanging motionless at depths of 600 to 800 m.",
+     "src": 0,
+     "evidence": "At depths of 600 to 800 meters (2,000 to 2,600 feet) below the surface, the ROV cameras typically showed these fish hanging motionless in the water, their eyes glowing a vivid green in the ROV’s bright lights."
+    },
+    {
+     "fact": "Most older drawings don't show the clear shield, probably because this fragile structure was destroyed when fish were brought up in nets.",
+     "src": 0,
+     "evidence": "Most existing descriptions and illustrations of this fish do not show its fluid-filled shield, probably because this fragile structure was destroyed when the fish were brought up from the deep in nets."
+    }
+   ],
+   "sources": [
+    "https://www.mbari.org/news/researchers-solve-mystery-of-deep-sea-fish-with-tubular-eyes-and-transparent-head/"
+   ],
+   "source_label": "MBARI(몬터레이만 해양연구소)",
+   "careful": [
+    "600~800m는 캘리포니아 중부 앞바다 ROV 관찰 깊이 — 서식 깊이 전체 범위처럼 쓰지 말 것.",
+    "머리 위 초록 '통 모양'이 눈이고, 얼굴 앞 두 점은 콧구멍(nares) — '눈이 머리 속에 있다' 정도로 정확히.",
+    "투명 덮개가 쏘는 해파리 촉수로부터 눈을 보호한다는 건 연구자들의 추측(speculate)."
+   ]
+  },
+  {
+   "n": 508,
+   "slug": "boss-desk-light-anglerfish",
+   "from": "2026-11-08",
+   "title_idea": "팀장님 퇴근만 기다리는 블롭피시",
+   "subtitle_idea": "저녁 7시 퇴근각",
+   "situation": "퇴근 시간이 지났는데 팀장님 자리 불이 아직 켜져 있어 눈치 보는 순간.",
+   "line_idea": "팀장님 자리 불이 아직 켜져 있어요",
+   "scene_ideas": [
+    "Evening in the office, most desks already dark, the blobfish office worker with its bag packed, peeking over a low partition toward the one desk that is still lit, hesitant to leave first, dusk light fading outside the windows",
+    "At the lit desk, the anglerfish team leader (round dark brown-grey body, huge wide mouth with tiny pointy teeth, small eyes, a thin stalk on its head ending in a glowing yellow light bulb) still working, its glowing bulb the only light on the desk, the blobfish office worker standing politely nearby holding its bag, warm yellow glow on both faces, gentle comedic mood"
+   ],
+   "cameo": {
+    "animal_ko": "심해 아귀",
+    "animal_en": "deep-sea anglerfish",
+    "role_ko": "옆자리 팀장님",
+    "look": "round dark brown-grey body, huge wide mouth with tiny pointy teeth, small eyes, a thin stalk on its head ending in a glowing yellow light bulb"
+   },
+   "fact_topic": "심해 아귀 불빛의 정체",
+   "fact_idea": {
+    "head": "팀장님 조명의 정체는\n세균이에요",
+    "body": "심해 아귀 머리 낚싯대 끝 주머니(에스카)엔 빛을 내는 세균이 살아요. 새까만 피부는 빛을 흡수해 몸을 숨겨요."
+   },
+   "facts": [
+    {
+     "fact": "The first ray of a deep-sea anglerfish's dorsal fin is modified into a filament like a fishing pole.",
+     "src": 0,
+     "evidence": "The first ray of an anglerfish’s dorsal fin is modified into a filament like a fishing pole."
+    },
+    {
+     "fact": "At the tip of that 'fishing pole' is a sac of glowing bacteria, called an esca.",
+     "src": 0,
+     "evidence": "At the tip is a sac of glowing bacteria, called an esca."
+    },
+    {
+     "fact": "Each species has its own rod and lure; some even have multiple lures.",
+     "src": 0,
+     "evidence": "Each species has a unique rod and lure—some have simple lures, some have elaborate ones, and some even have multiple lures."
+    },
+    {
+     "fact": "Its dark skin absorbs light, an ultra-black camouflage that helps hide it.",
+     "src": 0,
+     "evidence": "Their dark skin absorbs light, an ultra-black camouflage that helps mask their presence."
+    },
+    {
+     "fact": "Seafloor anglerfishes do not use luminescence (glowing light) to fish for food.",
+     "src": 0,
+     "evidence": "But seafloor anglers do not use luminescence to fish for food."
+    },
+    {
+     "fact": "Goosefishes (family Lophiidae) are seafloor anglers whose speckled coloration helps them blend into the sandy seafloor on the continental shelf.",
+     "src": 0,
+     "evidence": "Frogfishes (family Antennariidae) have vibrant colors to camouflage among the corals on tropical reefs, while speckled coloration helps goosefishes (family Lophiidae) blend into the sandy seafloor on the continental shelf."
+    },
+    {
+     "fact": "Deep-sea anglerfishes live at about 300–4,000 m depth.",
+     "src": 0,
+     "evidence": "Depth 300–4,000 m"
+    }
+   ],
+   "sources": [
+    "https://www.mbari.org/animal/deep-sea-anglerfish/"
+   ],
+   "source_label": "MBARI(몬터레이만 해양연구소)",
+   "careful": [
+    "빛나는 세균 미끼는 '심해' 아귀(초롱아귀류) 이야기 — 한국에서 먹는 아귀(아귀과, 얕은 바닥)는 빛나는 미끼를 쓰지 않음. 화면엔 '심해 아귀'로.",
+    "'전구'는 만화 표현일 뿐 — 실제로는 세균이 사는 주머니.",
+    "수컷 기생 이야기 등 다른 사실은 카탈로그에 없으니 쓰지 말 것."
+   ]
+  },
+  {
+   "n": 509,
+   "slug": "snack-crumbs-vampire-squid",
+   "from": "2026-11-08",
+   "title_idea": "탕비실 부스러기 줍는 블롭피시",
+   "subtitle_idea": "오후 4시 탕비실",
+   "situation": "출출한 오후, 탕비실 과자가 다 떨어지고 부스러기만 남은 걸 발견한 순간.",
+   "line_idea": "과자 부스러기도 소중한 오후예요",
+   "scene_ideas": [
+    "Office pantry corner with a snack basket and a water dispenser, the blobfish office worker carefully gathering tiny cookie crumbs from the counter with its fins, delighted expression, soft warm light",
+    "In the same pantry, a vampire squid senior coworker (small deep red-purple squid shaped like a soft rounded football, big round blue eyes, two little ear-like fins on top, eight arms joined by a dark cape-like web, two long thin threads trailing from its body) drifting calmly beside the counter, one long thin thread stretched out to catch falling crumbs from an open snack bag, the blobfish office worker watching with admiration, cozy dim lighting"
+   ],
+   "cameo": {
+    "animal_ko": "흡혈오징어",
+    "animal_en": "vampire squid",
+    "role_ko": "탕비실 단골 선배",
+    "look": "small deep red-purple squid shaped like a soft rounded football, big round blue eyes, two little ear-like fins on top, eight arms joined by a dark cape-like web, two long thin threads trailing from its body"
+   },
+   "fact_topic": "흡혈오징어의 식사, 바다눈",
+   "fact_idea": {
+    "head": "흡혈오징어는\n부스러기 미식가",
+    "body": "이름과 달리 사냥 대신 몸길이 최대 8배 실을 뻗어, 위에서 떨어지는 '바다눈'(유기물 부스러기)을 받아 먹어요."
+   },
+   "facts": [
+    {
+     "fact": "Unlike octopuses and squids that eat live prey, the vampire squid uses two thread-like filaments to catch bits of organic debris sinking from above.",
+     "src": 0,
+     "evidence": "A new paper by MBARI Postdoctoral Fellow Henk-Jan Hoving and Senior Scientist Bruce Robison shows for the first time that, unlike its relatives the octopuses and squids, which eat live prey, the vampire squid uses two thread-like filaments to capture bits of organic debris that sink down from the ocean surface into the deep sea."
+    },
+    {
+     "fact": "Vampire squids eat mostly 'marine snow', a mixture of sinking remains, droppings and mucus.",
+     "src": 0,
+     "evidence": "In a recent article in the Proceedings of the Royal Society B: Biological Sciences, Hoving and Robison show that vampire squids eat mostly “marine snow”—a mixture of dead bodies, poop, and snot."
+    },
+    {
+     "fact": "Each filament can be up to eight (8, converted) times as long as the animal's body, extended like a fishing line.",
+     "src": 0,
+     "evidence": "The videos showed that vampire squids often drift motionless in the water, extending one of their thin filaments—up to eight times as long as the animal’s body—like a fishing line."
+    },
+    {
+     "fact": "The vampire squid is a soft-bodied, passive animal about the size, shape and color of a football.",
+     "src": 0,
+     "evidence": "In reality, the vampire squid is a soft-bodied, passive creature, about the size, shape, and color of a football."
+    },
+    {
+     "fact": "It lives in the deep waters of all the world's ocean basins, at depths with almost no oxygen but relatively few predators.",
+     "src": 0,
+     "evidence": "A “living fossil,” it inhabits the deep waters of all the world’s ocean basins at depths where there is almost no oxygen, but also relatively few predators."
+    }
+   ],
+   "sources": [
+    "https://www.mbari.org/news/mbari-researchers-discover-what-vampire-squids-eat-its-not-what-you-think/"
+   ],
+   "source_label": "MBARI(몬터레이만 해양연구소)",
+   "careful": [
+    "'바다눈'의 실제 내용물(사체·배설물·점액)을 과자 비유와 직접 연결하지 말 것 — '유기물 부스러기'로 순화.",
+    "'8배'는 최대치(up to) — '최대'를 꼭 붙이기.",
+    "'football'은 미식축구공 크기 비유 — 축구공으로 바꾸지 말 것.",
+    "'흡혈'이라는 이름과 달리 피를 빨지 않음 — 피·공포 이미지로 연출하지 말 것."
+   ]
+  },
+  {
+   "n": 510,
+   "slug": "carpool-senior-sea-pig",
+   "from": "2026-11-08",
+   "title_idea": "선배 카풀 얻어 타는 블롭피시",
+   "subtitle_idea": "저녁 6시 퇴근길",
+   "situation": "퇴근길, 지친 몸으로 서 있는데 선배가 태워 주겠다고 하는 순간.",
+   "line_idea": "선배가 퇴근길에 태워 준대요",
+   "scene_ideas": [
+    "After work at dusk in front of the office building, the blobfish office worker standing alone at the curb holding its bag, tired droopy shoulders, gentle evening light, softly blurred passers-by in the background",
+    "A sea pig senior coworker (plump translucent pale pink sea cucumber shaped like a little pig, several pairs of long thin stilt-like legs underneath, a few soft feelers sticking up from its back like ears, tiny frilly tentacles around its mouth) giving the blobfish office worker a ride on its back, the blobfish sitting happily on top as they slowly stroll along a quiet evening street, warm streetlight glow, heartwarming mood"
+   ],
+   "cameo": {
+    "animal_ko": "바다돼지(해삼류)",
+    "animal_en": "sea pig (Scotoplanes)",
+    "role_ko": "카풀해 주는 선배",
+    "look": "plump translucent pale pink sea cucumber shaped like a little pig, several pairs of long thin stilt-like legs underneath, a few soft feelers sticking up from its back like ears, tiny frilly tentacles around its mouth"
+   },
+   "fact_topic": "바다돼지와 어린 킹크랩의 동행",
+   "fact_idea": {
+    "head": "바다돼지 선배는\n어린 게를 태워 줘요",
+    "body": "약 2,600마리를 살펴보니 거의 4분의 1이 어린 킹크랩을 등에 태우거나 배 밑에 품고 있었어요."
+   },
+   "facts": [
+    {
+     "fact": "Reviewing deep-sea video near Monterey Bay, researchers examined about 2,600 sea cucumbers (the study's hosts were Scotoplanes sea pigs) and found that almost one quarter (1/4, converted) of them carried crabs.",
+     "src": 0,
+     "evidence": "All in all, the researchers examined about 2,600 sea cucumbers and found that almost one quarter of them carried crabs."
+    },
+    {
+     "fact": "Small juvenile king crabs were seen riding on the backs or clinging to the bellies of many sea pigs.",
+     "src": 0,
+     "evidence": "During their ROV dives, the researchers were amused to see small crabs riding on the backs or clinging to the bellies of many sea pigs."
+    },
+    {
+     "fact": "Virtually all (96%) of the juvenile king crabs seen in deep muddy-bottom areas were clinging to sea pigs.",
+     "src": 0,
+     "evidence": "The researchers were surprised to discover that virtually all (96 percent) of the juvenile Neolithodes crabs they saw in deep muddy-bottom areas were clinging to sea pigs."
+    },
+    {
+     "fact": "Researchers speculate that riding on sea pigs may help the young crabs evade predators.",
+     "src": 0,
+     "evidence": "The researchers speculate that this may help the young crabs evade predators."
+    },
+    {
+     "fact": "Why sea pigs give rides to these 'hitchhiking' juvenile king crabs is still a puzzle, with no clear benefit to the sea pigs.",
+     "src": 1,
+     "evidence": "One of the most puzzling remains why they sometimes give rides to “hitchhiking” juvenile king crabs, without any clear benefit to the sea pigs."
+    },
+    {
+     "fact": "Sea pigs use long, stilt-like tube feet to hold their bodies above the soft mud.",
+     "src": 1,
+     "evidence": "Unlike most sea cucumbers, which have stumpy tube feet tucked beneath their bodies, sea pigs use their long, stilt-like tube feet to suspend their bodies above the soft mud."
+    },
+    {
+     "fact": "Sea pigs live at about 1,000–6,000 m depth and grow to a maximum of about 17 cm.",
+     "src": 1,
+     "evidence": "Maximum Size 17 cm (6.5 inches) Depth 1,000–6,000 m"
+    }
+   ],
+   "sources": [
+    "https://www.mbari.org/news/young-king-crabs-found-hitchhiking-on-sea-pigs/",
+    "https://www.mbari.org/animal/sea-pig/"
+   ],
+   "source_label": "MBARI(몬터레이만 해양연구소)",
+   "careful": [
+    "몬터레이만 앞바다 관찰 결과 — 전 세계 바다돼지가 다 그렇다고 일반화 금지.",
+    "게가 숨으려고 탄다는 건 연구자들의 추측(speculate), 바다돼지가 얻는 이득은 불분명 — '친절해서 태워 준다'는 건 의인화 농담일 뿐.",
+    "기사 원문은 'about 2,600 sea cucumbers'(이 연구의 숙주 해삼은 바다돼지 Scotoplanes) — '약' 붙이고, 영상으로 살펴본 수라는 점 유지.",
+    "1,000–6,000m 깊이는 MBARI 동물 페이지 표의 범위(문장 아님): 'Depth 1,000–6,000 m'."
+   ]
+  },
+  {
+   "n": 511,
+   "slug": "elevator-ear-pressure",
+   "from": "2026-11-08",
+   "title_idea": "엘리베이터에서 귀 막힌 블롭피시",
+   "subtitle_idea": "아침 엘리베이터",
+   "situation": "고층 사무실로 올라가는 엘리베이터에서 귀가 먹먹해지는 순간.",
+   "line_idea": "엘리베이터만 타면 귀가 먹먹해요",
+   "scene_ideas": [
+    "Inside a crowded office elevator in the morning, the blobfish office worker standing among softly blurred coworkers in the background, pinching its droopy nose and puffing out its cheeks with eyes squeezed shut, cool metallic light",
+    "The blobfish office worker stepping out of the elevator into a bright lobby looking totally relaxed and calm, one fin raised casually as if this little pressure is nothing, soft blue watery light shimmering across the lobby floor"
+   ],
+   "cameo": null,
+   "fact_topic": "깊이에 따라 커지는 수압",
+   "fact_idea": {
+    "head": "블롭피시 집은\n압력이 훨씬 세요",
+    "body": "바다는 약 10m 내려갈 때마다 압력이 1기압씩 늘어요. 블롭피시는 600~1,200m 깊이에 살아요."
+   },
+   "gauge": [
+    600,
+    1200
+   ],
+   "facts": [
+    {
+     "fact": "When you dive down into the ocean, you can feel an increase of pressure on your eardrums.",
+     "src": 0,
+     "evidence": "You can feel an increase of pressure on your eardrums."
+    },
+    {
+     "fact": "For every 33 feet (10.06 m; about 10 m, rounded) you go down in the ocean, the pressure increases by one atmosphere (1 atm, converted).",
+     "src": 0,
+     "evidence": "For every 33 feet (10.06 meters) you go down, the pressure increases by one atmosphere."
+    },
+    {
+     "fact": "The blobfish Psychrolutes marcidus lives at a depth range of 600–1,200 m.",
+     "src": 1,
+     "evidence": "Marine; bathydemersal; depth range 600 - 1200 m (Ref. 9563). Deep-water; 33°S - 50°S, 136°E - 155°E"
+    }
+   ],
+   "sources": [
+    "https://oceanservice.noaa.gov/facts/pressure.html",
+    "https://www.fishbase.se/summary/Psychrolutes-marcidus.html"
+   ],
+   "source_label": "미국 해양대기청(NOAA) · FishBase",
+   "careful": [
+    "블롭피시 집의 기압(예: 몇십~백몇십 기압)을 계산해서 쓰지 말 것 — 출처에 없는 숫자.",
+    "'약 10m'는 10.06m(33피트)를 반올림한 값.",
+    "엘리베이터 귀 먹먹함은 공기 압력 변화, 바닷속은 물의 압력 — 같은 현상처럼 단정하지 말고 비유로만.",
+    "'수압 때문에 녹는다'와 연결 금지(501 참고 — 녹아 보이는 건 물 밖 중력 때문)."
+   ]
+  },
+  {
+   "n": 512,
+   "slug": "aircon-cold-office",
+   "from": "2026-11-08",
+   "title_idea": "에어컨 바람이 반가운 블롭피시",
+   "subtitle_idea": "한여름 사무실",
+   "situation": "사무실 에어컨이 너무 세서 다들 담요를 덮는데 혼자만 신난 순간.",
+   "line_idea": "에어컨 덕분에 얼굴이 덜 녹아요",
+   "scene_ideas": [
+    "Summer office with the air conditioner blasting cold air, softly blurred coworkers in the background wrapped in cardigans and blankets, the blobfish office worker at its desk right under the cold vent looking happy and refreshed, cool blue light",
+    "Close-up of the blobfish office worker enjoying the chilly breeze from the vent with eyes closed, its jelly face looking a little firmer and perkier than usual, tiny frost sparkles drifting around, cheerful mood"
+   ],
+   "cameo": null,
+   "fact_topic": "블롭피시 고향의 수온",
+   "fact_idea": {
+    "head": "블롭피시 고향은\n원래 추워요",
+    "body": "약 200m보다 깊은 바다는 평균 4℃예요. 이 차가움과 압력이 몸의 젤을 더 단단하게 잡아 주는 것으로 보여요."
+   },
+   "facts": [
+    {
+     "fact": "The deep ocean (below about 200 m depth) is cold, with an average temperature of only 4°C (39°F).",
+     "src": 0,
+     "evidence": "Therefore, the deep ocean (below about 200 meters depth) is cold, with an average temperature of only 4°C (39°F)."
+    },
+    {
+     "fact": "The cold and pressure at depth likely keep the blobfish's body gel firmer.",
+     "src": 1,
+     "evidence": "Their comedic melting in air isn’t because of the loss of pressure, although the cold and pressure at depth likely keeps the gel firmer, but because the support given by water has been removed."
+    },
+    {
+     "fact": "The blobfish Psychrolutes marcidus lives at a depth range of 600–1,200 m, so its home lies within that cold deep ocean.",
+     "src": 2,
+     "evidence": "Marine; bathydemersal; depth range 600 - 1200 m (Ref. 9563). Deep-water; 33°S - 50°S, 136°E - 155°E"
+    }
+   ],
+   "sources": [
+    "https://oceanexplorer.noaa.gov/ocean-fact/temp-vary/",
+    "https://blog.tepapa.govt.nz/2024/09/09/the-blob-blog/",
+    "https://www.fishbase.se/summary/Psychrolutes-marcidus.html"
+   ],
+   "source_label": "NOAA · Te Papa · FishBase",
+   "careful": [
+    "4℃는 깊은 바다(약 200m 아래) 전체의 평균 — 블롭피시 서식지에서 잰 값이 아님.",
+    "'젤을 더 단단하게'는 Te Papa의 'likely(아마도)' — '~로 보여요'처럼 가능성으로.",
+    "물 밖에서 처지는 건 중력 때문(온도 때문 아님) — '에어컨이 진짜로 녹는 걸 막는다'는 건 농담 대사일 뿐, 사실 카드에서 단정 금지."
+   ]
+  },
+  {
+   "n": 513,
+   "slug": "team-dinner-anything-blobfish",
+   "from": "2026-11-08",
+   "title_idea": "회식 메뉴 고민 없는 블롭피시",
+   "subtitle_idea": "금요일 회식",
+   "situation": "회식 메뉴를 정하자는데 다들 '아무거나'라고만 하는 순간.",
+   "line_idea": "회식 메뉴요? 전 정말 아무거나요",
+   "scene_ideas": [
+    "A lively team dinner at a Korean barbecue restaurant, a grill in the middle of the table, softly blurred coworkers around the table in the background, the blobfish office worker smiling and nodding easily as many dishes arrive, warm orange restaurant light",
+    "Close-up of the blobfish office worker happily opening its big mouth wide for a lettuce wrap, many small side dishes around it, cheerful satisfied mood, warm cozy light"
+   ],
+   "cameo": null,
+   "fact_topic": "블롭피시의 식성",
+   "fact_idea": {
+    "head": "블롭피시는\n메뉴 고민이 없어요",
+    "body": "커다란 입에 들어가는 건 뭐든 먹어요. 심해 말미잘까지요. 이빨은 씹기보다 붙잡는 데 써요."
+   },
+   "facts": [
+    {
+     "fact": "Blobfish have enormous mouths, and anything that fits in will be eaten, even deep-water warty sea anemones.",
+     "src": 0,
+     "evidence": "The enormous mouths mean that anything that fits in will be eaten, even deep-water warty sea anemones."
+    },
+    {
+     "fact": "Both jaws carry a broad band of small sandpaper-like teeth, used more for gripping than chewing.",
+     "src": 0,
+     "evidence": "Both jaws are equipped with a broad band of small teeth similar in appearance to coarse sandpaper, more for gripping than chewing."
+    },
+    {
+     "fact": "In the deep ocean, you have to take whatever food you can get.",
+     "src": 0,
+     "evidence": "In the deep ocean, you have to take whatever you can get."
+    }
+   ],
+   "sources": [
+    "https://blog.tepapa.govt.nz/2024/09/09/the-blob-blog/"
+   ],
+   "source_label": "Te Papa(뉴질랜드 국립박물관) 2024",
+   "careful": [
+    "박물관 큐레이터의 일반 설명 — 위 내용물을 정량 분석한 연구 수치가 아님('주식은 ~' 같은 단정 금지).",
+    "블롭피시류(여러 종) 전반의 설명 — 특정 종 이야기로 좁히지 말 것.",
+    "'말미잘까지'는 '심해 사마귀말미잘(warty sea anemones)' — 다른 먹이를 지어내지 말 것."
+   ]
+  },
+  {
+   "n": 514,
+   "slug": "dry-eyes-colossal-squid",
+   "from": "2026-11-08",
+   "title_idea": "모니터에 눈이 뻑뻑한 블롭피시",
+   "subtitle_idea": "오후 5시 모니터",
+   "situation": "하루 종일 모니터만 보다가 눈이 뻑뻑해진 순간.",
+   "line_idea": "모니터를 너무 봐서 눈이 뻑뻑해요",
+   "scene_ideas": [
+    "Late afternoon at the desk, the blobfish office worker leaning close to its glowing monitor, eyes red and squinting, rubbing one eye with a tiny fin, a small bottle of eye drops on the desk, dim office light",
+    "The blobfish office worker turning to see a colossal squid coworker (huge deep red squid with a long body, eight thick arms and two long tentacles, enormous round shiny eyes each as big as a soccer ball, a soft glowing strip on each eyeball) at the next desk, its giant eyes wide open, calm and bright, softly lighting its desk like headlamps, the blobfish staring in amazement, cool blue office light"
+   ],
+   "cameo": {
+    "animal_ko": "콜로설 오징어(남극하트지느러미오징어)",
+    "animal_en": "colossal squid",
+    "role_ko": "옆 팀 기획자",
+    "look": "huge deep red squid with a long body, eight thick arms and two long tentacles, enormous round shiny eyes each as big as a soccer ball, a soft glowing strip on each eyeball"
+   },
+   "fact_topic": "콜로설 오징어의 거대한 눈",
+   "fact_idea": {
+    "head": "옆 팀 오징어 눈은\n축구공만 해요",
+    "body": "지금까지 연구된 동물 눈 중 가장 커요. 지름 약 27cm에, 눈알마다 헤드라이트 같은 발광기관이 있어요."
+   },
+   "facts": [
+    {
+     "fact": "The colossal squid has the largest animal eyes ever studied.",
+     "src": 0,
+     "evidence": "The colossal squid has the largest animal eyes ever studied."
+    },
+    {
+     "fact": "In a living colossal squid the eyes measure about 27 cm across, about the size of a soccer ball.",
+     "src": 0,
+     "evidence": "In a living colossal squid they measure about 27 cm across — about the size of a soccer ball."
+    },
+    {
+     "fact": "The colossal squid has light organs, one on each eyeball.",
+     "src": 0,
+     "evidence": "The colossal squid, like many squid, has light organs — one on each eyeball."
+    },
+    {
+     "fact": "These light organs (photophores) are used like headlights.",
+     "src": 0,
+     "evidence": "The light organs, or photophores, are used like headlights."
+    },
+    {
+     "fact": "Colossal squid live at about 1,000 m below the surface, where sunlight does not reach.",
+     "src": 0,
+     "evidence": "Colossal squid live in very deep waters in the ocean, at about 1,000 metres below the sea surface, where sunlight does not penetrate."
+    }
+   ],
+   "sources": [
+    "https://www.tepapa.govt.nz/digital-museum/explore-digital-museum/colossal-squid/anatomy-colossal-squid/eyes-colossal-squid"
+   ],
+   "source_label": "Te Papa(뉴질랜드 국립박물관)",
+   "careful": [
+    "같은 Te Papa 페이지의 다른 사진 설명엔 '지름 약 30cm'도 있음 — 숫자보다 '축구공만 한'이 안전하고, 숫자를 쓰면 '약 27cm'.",
+    "'연구된 동물 눈 중 가장 크다'(ever studied) — '역사상 가장 큰 눈'은 Te Papa도 'possibly(아마)'로만 씀.",
+    "대왕오징어(giant squid)와 다른 종 — 이름 섞지 말 것."
+   ]
+  },
+  {
+   "n": 515,
+   "slug": "deadline-teamwork-siphonophore",
+   "from": "2026-11-08",
+   "title_idea": "마감 전날 한 몸 되는 블롭피시 팀",
+   "subtitle_idea": "마감 하루 전",
+   "situation": "마감 전날 밤, 팀 전체가 각자 맡은 일을 나눠 붙잡고 달리는 순간.",
+   "line_idea": "마감 전날엔 우리 팀이 한 몸이에요",
+   "scene_ideas": [
+    "The night before a big deadline, a busy office with papers everywhere, the blobfish office worker working frantically at its desk next to several empty coffee cups, softly blurred coworkers rushing in the background, tense but energetic mood",
+    "A long siphonophore coworker (long glassy see-through chain-like jelly colony, a row of small clear bell-shaped swimming parts at the front followed by a long string of tiny orange and red bead-like parts, glowing faintly blue) stretching across several desks, each little part of its chain busy with a different task, passing papers, holding a pen, stapling documents, while the blobfish office worker joins in at the end of the chain, warm determined teamwork mood"
+   ],
+   "cameo": {
+    "animal_ko": "관해파리(사이포노포어)",
+    "animal_en": "siphonophore",
+    "role_ko": "프로젝트 TF팀",
+    "look": "long glassy see-through chain-like jelly colony, a row of small clear bell-shaped swimming parts at the front followed by a long string of tiny orange and red bead-like parts, glowing faintly blue"
+   },
+   "fact_topic": "관해파리 군체의 분업",
+   "fact_idea": {
+    "head": "관해파리는\n한 몸인 팀이에요",
+    "body": "작은 개체(조이드)들이 이어 붙은 군체로, 먹이 잡기·소화·헤엄 등 각자 맡은 일이 있어요. 기록상 가장 긴 건 47m래요."
+   },
+   "facts": [
+    {
+     "fact": "Each siphonophore is a colony of individual parts called zooids, produced as it grows and staying connected together.",
+     "src": 0,
+     "evidence": "Each siphonophore is actually a colony of individual parts, called “zooids”, which are produced as the siphonophore grows, and stay connected together."
+    },
+    {
+     "fact": "Each zooid has a distinct job: some catch prey, others digest it, and others reproduce, swim, or keep the colony upright.",
+     "src": 0,
+     "evidence": "Each zooid has a distinct job in this colony: some catch prey, while others digest it, and still others reproduce, swim, and keep the colony upright."
+    },
+    {
+     "fact": "The largest siphonophore ever recorded measured 15 m (49 ft) in diameter and 47 m (154 ft) long.",
+     "src": 0,
+     "evidence": "largest ever recorded measured 15 m (49 ft) in diameter and 47 m (154 ft) long"
+    },
+    {
+     "fact": "Deep-water siphonophores are often dark orange or red and are bioluminescent.",
+     "src": 0,
+     "evidence": "Deep water species are often dark orange or red in color, and are bioluminescent— glowing green, blue, and sometimes red—a function that likely attracts prey."
+    }
+   ],
+   "sources": [
+    "https://www.whoi.edu/ocean-learning-hub/ocean-facts/siphonophore/"
+   ],
+   "source_label": "WHOI(우즈홀 해양연구소)",
+   "careful": [
+    "47m는 '지금까지 기록된 가장 큰 개체' — 보통 크기처럼 쓰지 말 것.",
+    "관해파리엔 독침이 강한 고깔해파리(작은부레관해파리)도 포함 — '만져 보고 싶다' 류 표현 금지.",
+    "'각자 맡은 일'은 개체(조이드)마다 기능이 다르다는 뜻 — '서로 대화한다' 같은 의인화 사실화 금지."
+   ]
+  },
+  {
+   "n": 516,
+   "slug": "day-off-flapjack-octopus",
+   "from": "2026-11-08",
+   "title_idea": "연차 날 납작 누운 블롭피시",
+   "subtitle_idea": "평일 연차 날",
+   "situation": "평일에 연차를 내고 침대에 하루 종일 납작하게 누워 있는 순간.",
+   "line_idea": "연차 날엔 납작하게 누워만 있을래요",
+   "scene_ideas": [
+    "A cozy small studio apartment on a weekday morning, sunlight through thin curtains, the blobfish office worker lying flat on a soft bed under a fluffy blanket, its tiny navy necktie and lanyard hung on a wall hook, completely relaxed, peaceful mood",
+    "On a fluffy rug next to the bed, a flapjack octopus coworker (small round flat orange octopus shaped like a fluffy pancake, two little ear-like fins on top of its head, big sleepy eyes, short webbed arms spread out like a skirt) lying completely flat and relaxed while the blobfish office worker lounges beside it, warm morning sunbeam, lazy happy day-off mood"
+   ],
+   "cameo": {
+    "animal_ko": "플랩잭 문어",
+    "animal_en": "flapjack octopus (Opisthoteuthis)",
+    "role_ko": "같이 연차 낸 동기",
+    "look": "small round flat orange octopus shaped like a fluffy pancake, two little ear-like fins on top of its head, big sleepy eyes, short webbed arms spread out like a skirt"
+   },
+   "fact_topic": "플랩잭 문어의 팬케이크 휴식",
+   "fact_idea": {
+    "head": "플랩잭 문어는\n팬케이크처럼 쉬어요",
+    "body": "진흙 바닥에 납작하게 쉬다가 놀라면 지느러미를 파닥여 헤엄쳐요. 안전해지면 낙하산처럼 내려앉아요."
+   },
+   "facts": [
+    {
+     "fact": "Robot submarines often spot the flapjack octopus resting on the mud, its orange body resembling a flat, fluffy pancake.",
+     "src": 0,
+     "evidence": "MBARI’s robotic submersibles often spot this little octopus resting on the mud, its orange body resembling a flat, fluffy pancake."
+    },
+    {
+     "fact": "When startled, it swims away by flapping its stubby fins, pulsing its webbed arms, jetting water through its funnel, or all three at once.",
+     "src": 0,
+     "evidence": "When startled by a predator, a flapjack octopus perks up and swims to safety by flapping its stubby fins, pulsing its webbed arms, pushing water through its funnel for jet propulsion—or all three at once."
+    },
+    {
+     "fact": "When the coast is clear, it stretches its webbed arms and parachutes back to the seafloor.",
+     "src": 0,
+     "evidence": "When the coast is clear, it stretches its webbed arms and parachutes back to the seafloor."
+    },
+    {
+     "fact": "Flapjack octopuses live on and near the seafloor at about 130–2,350 m and grow up to about 50 cm.",
+     "src": 0,
+     "evidence": "Maximum Size 50 cm (20 inches) Depth 130–2,350 m"
+    }
+   ],
+   "sources": [
+    "https://www.mbari.org/animal/flapjack-octopus/"
+   ],
+   "source_label": "MBARI(몬터레이만 해양연구소)",
+   "careful": [
+    "몬터레이만의 플랩잭 문어는 '새로운 종일 수도 있다(might be)'는 단계 — 종 이름 단정 금지.",
+    "덤보문어(Grimpoteuthis)와 혼동 주의 — 같은 무리처럼 쓰지 말 것.",
+    "'놀라면'의 원인은 포식자(predator) — 무섭게 묘사하지 말고 '깜짝 놀라면' 정도로."
+   ]
+  }
+ ]
+}

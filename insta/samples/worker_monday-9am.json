@@ -1,0 +1,43 @@
+{
+ "date": "2026-11-09",
+ "kind": "worker",
+ "src_n": 501,
+ "slug": "monday-9am",
+ "episode": 1,
+ "subtitle": "월요일 아침 9시",
+ "shots": [
+  {
+   "scene": "the blobfish floats inside a crowded morning commuter train car on a Monday, squeezed between tired commuters in dark winter padded coats holding hand straps, it holds a small paper coffee cup in its fin, exhausted melting expression, cool morning light from the windows",
+   "move": "in"
+  },
+  {
+   "scene": "the blobfish floats in front of an office building security gate in the morning, a round wall clock behind it shows nine o'clock, office workers in coats walking past softly blurred, the blobfish looks even more melted and exhausted",
+   "move": "out"
+  }
+ ],
+ "line": "출근만 하면 얼굴이 녹아요",
+ "fact": {
+  "head": "블롭피시도\n집에선 멀쩡해요",
+  "body": "수심 600~1,200m에선\n평범한 물고기 모습이에요.\n흐물흐물한 얼굴은\n물 밖으로 끌려 나와 처진 것.",
+  "hl": [
+   "600~1,200m",
+   "평범한 물고기"
+  ]
+ },
+ "sources": [
+  "https://blog.tepapa.govt.nz/2024/09/09/the-blob-blog/",
+  "https://www.fishbase.se/summary/Psychrolutes-marcidus.html"
+ ],
+ "caption": "블롭피시 얼굴, 사실 '출근 얼굴'이었다",
+ "question": "여러분 출근 얼굴은 몇 시에 제일 녹나요?",
+ "hashtags": [
+  "#블롭피시",
+  "#심해직장인",
+  "#직장인공감",
+  "#바다생물",
+  "#월요병"
+ ],
+ "bench": {
+  "format": "AI 동물 캐릭터 + 공감 한 줄(꾸이꾸이 김꾸이 '꿈꾸던 어른이 되었나요?' 1,700만 · 10/31)"
+ }
+}

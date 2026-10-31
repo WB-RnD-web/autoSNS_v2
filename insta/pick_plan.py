@@ -25,9 +25,16 @@
     항목(951~ · 주 2편), 다른 날은 보통 sci. 뜯어보기 항목이 없거나 바닥나면 그날도 보통 sci(그것도 없으면 골라보기).
     ★새 항목은 끝에 붙이고 from(쓸 수 있는 첫날)을 '붙이는 날 다음 날 이후'로 단다 — 그래야 지난 날 편성(회차·src_n)이 안 바뀐다
     (from 없는 열린 항목은 편성하지 않는다 · test_pick 이 막는다).
-  (같은 날 두 편은 늘 다른 꼴 — 그래서 꼴만 보면 그날 어느 편인지 하나로 정해진다: slot_of)
+  ★10/31 밤 편 c(21:20 KST · C_FROM 11/08~): a·b 는 그대로 두고 세 번째 편을 더한다(사용자 "영상 숫자 늘리는 건 상관없어").
+    꼴은 날마다 번갈아: 11/08 danger('위험한 진짜 이유' 카드 · insta/danger_catalog.json n 601~) → 11/09 worker('심해 직장인'
+    캐릭터 · insta/worker_catalog.json n 501~) → 11/10 danger … ((d - C_FROM) 짝수 = danger). 무엇을 쓸지도 코드가 정한다:
+    그 꼴 catalog 의 (from, n) 순서로 하나씩(c_plan · src_n 한 번씩) — 그날 꼴 항목이 바닥나면 그날은 밤 편이 없다(다른 꼴로 바꾸지 않는다).
+    ★c 는 slots_on(a·b)에 넣지 않는다 — 골라보기 로테이션·회차·sci·병맛·쓰레드(골라보기만)·11/07 까지 편성이 하나도 안 바뀐다.
+    그날 편 전부는 day_slots(a·b + 있으면 c). 검사·렌더는 worker_reel.py · danger_reel.py(공용 bc_kit.py).
+  (같은 날 편들은 늘 다른 꼴 — 그래서 꼴만 보면 그날 어느 편인지 하나로 정해진다: slot_of)
   회차 번호는 골라보기 편만 센다: 10/8 = '오늘의 골라보기 #1' · 10/12 = #5 · 10/13 낮 = #6 · 10/13 저녁 = #7 (series_no · sci 는 None)
-  어느 편 차례인지(due_slot)도 코드가 정한다: KST NOON_UNTIL(16)시 전이면 낮 편, 뒤면 저녁 편.
+  어느 편 차례인지(due_slot)도 코드가 정한다: KST NOON_UNTIL(16)시 전이면 낮 편, 뒤면 저녁 편, NIGHT_FROM(21)시부터는 밤 편(c 가
+  있는 날만 · 없으면 저녁 편). 밤 편 작가(API 작가 · Actions)는 `next --slot c` 로 명시해 부른다.
   쓰레드(pick_threads)는 그날 골라보기 편만 따라간다(sci·병맛은 안 간다) — 쓰레드 2주 시험(10/11~10/24) 조건을 그대로 두려고.
 흐름:
   ① 대본 작가 — 클라우드 루틴(11:50 낮 편 · 19:50 저녁 편 대타) 또는 로컬 예약 작업(insta-pick-daily, 19:20 저녁 편, 크롬 서칭)이
@@ -36,7 +43,7 @@
   ② insta-pick.yml(Actions) — 코드는 main, 대본은 routine/insta_pick 의 오늘 파일 중 가장 늦은 편 → 렌더 → `post` 로 인스타 릴스 게시
 게시 막기: 레포 변수 INSTA_PICK_PUBLISH=0 (기본: push 로 온 오늘 대본은 올린다 — 사용자 10/8 "매일 올려줘")
 
-    python insta/pick_plan.py next [--date 2026-10-13] [--slot a|b]   # 지금 차례인 편·꼴·파일 이름·견본·최근 주제(sci 는 catalog 항목)
+    python insta/pick_plan.py next [--date 2026-10-13] [--slot a|b|c] # 지금 차례인 편·꼴·파일 이름·견본·최근 주제(sci·밤 편은 catalog 항목)
     python insta/pick_plan.py targets [--date …]             # 오늘 대본 중 가장 늦은 편 하나(워크플로가 쓴다)
     python insta/pick_plan.py post <script.json>             # 렌더 결과를 게시(INSTA_PICK_PUBLISH=1 일 때만 실제로)
 """
@@ -60,9 +67,12 @@ sys.path.insert(0, os.path.join(ROOT, "pipeline"))
 FORMATS = ("pick", "quiz", "card", "balance", "birth")
 START = dt.date(2026, 10, 8)
 TWICE_FROM = dt.date(2026, 10, 13)       # 10/11 사용자 "하루 2편 이상" — 이날부터 낮(a)·저녁(b) 두 편
-SLOTS = ("a", "b")
-SLOT_LABEL = {"a": "낮 편(12시대)", "b": "저녁 편(7~8시대)"}
+SLOTS = ("a", "b")                       # 골라보기·sci·병맛이 도는 두 편(로테이션·회차 셈은 이 둘만)
+C_SLOT = "c"                             # ★10/31 밤 편(21:20) — '심해 직장인'·'위험한 진짜 이유'만 · 11/08 부터
+ALL_SLOTS = SLOTS + (C_SLOT,)
+SLOT_LABEL = {"a": "낮 편(12시대)", "b": "저녁 편(7~8시대)", "c": "밤 편(21시대)"}
 NOON_UNTIL = 16                          # KST 이 시각 전에 부르면 낮 편 차례, 뒤면 저녁 편 차례
+NIGHT_FROM = 21                          # KST 이 시각부터는 밤 편 차례(밤 편이 있는 날만)
 KST = dt.timezone(dt.timedelta(hours=9))
 SCRIPTS = os.path.join(ROOT, "output", "insta_pick")
 RENDERS = os.path.join(ROOT, "output", "insta_pick_render")
@@ -70,7 +80,9 @@ LEDGER = os.path.join(RENDERS, "posted.json")
 EXEMPLAR = {"pick": "pick_door", "card": "pick_card", "quiz": "pick_quiz", "balance": "pick_balance", "birth": "pick_birth"}
 LABEL = {"pick": "그림 고르기 심리테스트", "card": "타로 카드 고르기", "quiz": "상식 퀴즈", "balance": "밸런스 게임",
          "birth": "태어난 달 표", "sci": "도파민 과학(심해·우주·극한 생존)",
-         "bm_paper": "병맛 A — 이거 진짜 논문임(황당 연구 + 진짜 숫자)", "bm_animal": "병맛 B — 정색 동물 다큐(사람 일 하는 동물)"}
+         "bm_paper": "병맛 A — 이거 진짜 논문임(황당 연구 + 진짜 숫자)", "bm_animal": "병맛 B — 정색 동물 다큐(사람 일 하는 동물)",
+         "worker": "심해 직장인(블롭피시 캐릭터 + 공감 한 줄 + 진짜 과학 한 장)",
+         "danger": "위험한 진짜 이유(크림 카드 · 무서운 제목 → 귀여운 진짜 사실)"}
 # ★10/14 sci 2주 시험 — 인스타 검색 '심해' 상위 릴스 620만·370만·225만·210만·190만(전부 과학 호기심 계정, 10/14)
 SCI = "sci"
 SCI_FROM = dt.date(2026, 10, 15)         # 첫날(KST) — 이날 저녁 편부터
@@ -114,7 +126,17 @@ BM_WRITING = "insta/BM_WRITING.md"
 BM_FORMAT = {"bm_paper": "A", "bm_animal": "B"}
 BM_SERIES = {"bm_paper": "이거 진짜 논문임", "bm_animal": "정색 동물 다큐"}
 BM_SEC = {"bm_paper": (18.0, 23.0), "bm_animal": (18.0, 22.0)}   # 전체 길이(초) — 렌더가 맞춘다
-ALL_KINDS = FORMATS + (SCI,) + BM_KINDS
+# ★10/31 밤 편(c) 두 꼴 — 날마다 번갈아(C_FROM 이 danger). 사실·출처·주의는 catalog 에 미리 확인(작가는 웹을 못 본다)
+C_FROM = dt.date(2026, 11, 8)
+WORKER, DANGER = "worker", "danger"
+C_KINDS = (DANGER, WORKER)               # (d - C_FROM).days % 2 → 0 danger · 1 worker
+C_CATALOG = {WORKER: os.path.join(HERE, "worker_catalog.json"), DANGER: os.path.join(HERE, "danger_catalog.json")}
+C_N0 = {WORKER: 501, DANGER: 601}        # 번호 칸: worker 501~600 · danger 601~700
+C_SERIES = {WORKER: "심해 직장인", DANGER: "위험한 진짜 이유"}
+C_EXEMPLAR = {WORKER: "insta/samples/worker_monday-9am.json", DANGER: "insta/samples/danger_jellyfish-sleep.json"}
+C_WRITING = {WORKER: "insta/WORKER_WRITING.md", DANGER: "insta/DANGER_WRITING.md"}
+C_SEC = {WORKER: (15.0, 18.0), DANGER: (13.0, 15.0)}     # 전체 길이(초) — 렌더가 정한다(대본은 글만)
+ALL_KINDS = FORMATS + (SCI,) + BM_KINDS + C_KINDS
 SCI_ENTRY_KEYS = ("n", "format", "slug", "look", "title_idea", "facts", "sources", "careful", "beat_ideas", "items_idea",
                   "situation", "odds_idea", "hook_idea", "unit", "scale", "twist_idea",
                   "series", "topic_ko", "topic_en", "why_idea", "steps", "result_idea", "mechanism_refs")   # 뒤 줄 = 뜯어보기 항목
@@ -122,7 +144,8 @@ SCI_ENTRY_KEYS = ("n", "format", "slug", "look", "title_idea", "facts", "sources
 KEYWORDS = {"pick": ["심리테스트", "성격테스트", "그림 고르기"], "card": ["타로", "타로 골라보세요", "오늘의 타로"],
             "quiz": ["상식 퀴즈", "넌센스 퀴즈", "퀴즈"], "balance": ["밸런스 게임", "둘 중 하나"],
             "birth": ["태어난 달", "생일 운세", "탄생월"], "sci": ["심해", "우주 과학", "극한 생존"],
-            "bm_paper": ["이그노벨상", "황당 연구", "쓸데없는 과학"], "bm_animal": ["동물 병맛", "AI 동물", "동물 다큐"]}
+            "bm_paper": ["이그노벨상", "황당 연구", "쓸데없는 과학"], "bm_animal": ["동물 병맛", "AI 동물", "동물 다큐"],
+            "worker": ["직장인 공감", "심해 생물", "블롭피시"], "danger": ["위험한 이유", "동물 상식", "귀여운 동물"]}
 TEARDOWN_KEYWORDS = ("작동 원리", "단면", "속 구조")
 
 
@@ -131,14 +154,20 @@ def kst_today() -> dt.date:
 
 
 def slots_on(d: dt.date) -> tuple[str, ...]:
-    """그날 편들 — TWICE_FROM 전에는 저녁 편 하나(b), 뒤로는 낮·저녁 두 편."""
+    """그날 a·b 편들(골라보기·sci·병맛이 도는 자리) — TWICE_FROM 전에는 저녁 편 하나(b), 뒤로는 낮·저녁 두 편.
+    ★밤 편 c 는 여기 없다(로테이션·회차·쓰레드·refill 편성표가 그대로) — 그날 편 전부는 day_slots."""
     return SLOTS if d >= TWICE_FROM else ("b",)
+
+
+def day_slots(d: dt.date) -> tuple[str, ...]:
+    """그날 편 전부 — a·b(slots_on) + 밤 편 c(C_FROM 부터 · 그날 꼴 catalog 항목이 있는 날만). 늦은 편이 뒤(a < b < c)."""
+    return slots_on(d) + ((C_SLOT,) if d in c_plan() else ())
 
 
 def _slot(d: dt.date, slot: str | None) -> str:
     sl = slot or slots_on(d)[0]
-    if sl not in slots_on(d):
-        raise ValueError(f"{d} 에는 {sl} 편이 없다(그날 편: {slots_on(d)})")
+    if sl not in day_slots(d):
+        raise ValueError(f"{d} 에는 {sl} 편이 없다(그날 편: {day_slots(d)})")
     return sl
 
 
@@ -215,6 +244,7 @@ def _stamp(p: str) -> tuple:
 def reload() -> None:
     """catalog 를 다시 읽게(테스트가 catalog 경로를 바꾼 뒤 부른다)."""
     _PLAN.clear()
+    _CPLAN.clear()
 
 
 def open_plan() -> dict[dt.date, tuple[str, int]]:
@@ -403,6 +433,118 @@ def bm_entry(n: int, path: str = BM_CATALOG) -> dict | None:
     return next((e for e in cat.get("entries") or [] if e.get("n") == n), None)
 
 
+# ── 밤 편(c) — 심해 직장인 · 위험한 진짜 이유 ─────────────────
+_CPLAN: dict = {}
+
+
+def c_catalog(kind: str) -> dict:
+    """밤 편 catalog 통째(worker 는 character 묘사도 여기) — 파일이 없으면 빈 것."""
+    return _read(C_CATALOG[kind])
+
+
+def c_entries(kind: str) -> list[dict]:
+    return [e for e in (c_catalog(kind).get("entries") or []) if isinstance(e, dict)]
+
+
+def c_pools() -> dict:
+    """꼴마다 (from, n) 순서 — from 이 없거나 날짜가 아니면 편성하지 않는다(unscheduled · runway 가 알린다). 같은 n 은 한 번만."""
+    pools: dict = {k: [] for k in C_KINDS}
+    pools["unscheduled"] = []
+    for k in C_KINDS:
+        seen: set = set()
+        for e in c_entries(k):
+            n = e.get("n")
+            if c_kind_of_n(n) != k or n in seen:              # 번호 칸이 다른 꼴이면(501~ worker · 601~ danger) 편성하지 않는다
+                continue
+            f = _date_or_none(e.get("from"))
+            if f is None:
+                pools["unscheduled"].append(n)
+                continue
+            pools[k].append((max(f, C_FROM), n))
+            seen.add(n)
+        pools[k].sort()
+    return pools
+
+
+def c_day_kind(d: dt.date) -> str | None:
+    """그날 밤 편 차례인 꼴(catalog 와 상관없이 날짜로) — C_FROM 전이면 None."""
+    return None if d < C_FROM else C_KINDS[(d - C_FROM).days % 2]
+
+
+def c_plan() -> dict[dt.date, tuple[str, int]]:
+    """밤 편 편성 — {날짜: (꼴, n)}. 날마다 걷는다: 그날 꼴(c_day_kind)의 다음 항목이 쓸 수 있으면(from ≤ 그날) 그것,
+    아니면 그날은 밤 편이 없다(다른 꼴로 바꾸지 않는다 — 번갈이가 날짜로 고정). 새 항목은 끝에 + from 을 '붙이는 날 다음 날
+    이후'로 — 그래야 지난 날 편성이 안 바뀐다."""
+    key = tuple(_stamp(C_CATALOG[k]) for k in C_KINDS)
+    if _CPLAN.get("key") == key:
+        return _CPLAN["plan"]
+    pools = c_pools()
+    idx = {k: 0 for k in C_KINDS}
+    plan: dict[dt.date, tuple[str, int]] = {}
+    d, end = C_FROM, C_FROM + dt.timedelta(days=OPEN_MAX_DAYS)
+    while any(idx[k] < len(pools[k]) for k in C_KINDS) and d <= end:
+        k = c_day_kind(d)
+        if idx[k] < len(pools[k]) and pools[k][idx[k]][0] <= d:
+            plan[d] = (k, pools[k][idx[k]][1])
+            idx[k] += 1
+        d += dt.timedelta(days=1)
+    _CPLAN.update(key=key, plan=plan, pools=pools)
+    return plan
+
+
+@contextlib.contextmanager
+def c_catalogs(worker: str | None = None, danger: str | None = None):
+    """밤 편 catalog 경로를 잠깐 바꾼다(테스트) — 끝나면 되돌린다."""
+    saved = dict(C_CATALOG)
+    C_CATALOG.update({k: v for k, v in ((WORKER, worker), (DANGER, danger)) if v})
+    reload()
+    try:
+        yield
+    finally:
+        C_CATALOG.clear()
+        C_CATALOG.update(saved)
+        reload()
+
+
+def c_kind(d: dt.date) -> str | None:
+    """그날 밤 편 꼴 — 밤 편이 없는 날이면 None."""
+    return c_plan().get(d, (None, None))[0]
+
+
+def c_n(d: dt.date) -> int | None:
+    """그날 밤 편이 쓸 catalog 항목 번호 — 없는 날이면 None."""
+    return c_plan().get(d, (None, None))[1]
+
+
+def c_no(d: dt.date) -> int | None:
+    """그 꼴 몇 번째 편인가(1부터 — '심해 직장인 N화' · '위험한 진짜 이유 #N'). 밤 편이 없는 날이면 None."""
+    k = c_kind(d)
+    if k is None:
+        return None
+    return sum(1 for x, (kk, _) in c_plan().items() if kk == k and x <= d)
+
+
+def worker_no(d: dt.date) -> int | None:
+    return c_no(d) if c_kind(d) == WORKER else None
+
+
+def danger_no(d: dt.date) -> int | None:
+    return c_no(d) if c_kind(d) == DANGER else None
+
+
+def c_kind_of_n(n) -> str | None:
+    """번호 칸으로 꼴 — worker 501~600 · danger 601~700."""
+    if not isinstance(n, int) or isinstance(n, bool):
+        return None
+    return next((k for k in C_KINDS if C_N0[k] <= n < C_N0[k] + 100), None)
+
+
+def c_entry(n) -> dict | None:
+    """밤 편 catalog 항목(n) 그대로."""
+    k = c_kind_of_n(n)
+    return next((e for e in c_entries(k) if e.get("n") == n), None) if k else None
+
+
 def _window_before(d: dt.date, start: dt.date, end: dt.date) -> int:
     """[start, end] 기간 중 d 보다 앞선 날 수."""
     return min(max(0, (d - start).days), (end - start).days + 1)
@@ -420,7 +562,9 @@ def _skipped_before(d: dt.date, sl: str) -> int:
 
 
 def _not_pick(d: dt.date, sl: str) -> str | None:
-    """그 편이 골라보기가 아니면 그 꼴(sci·병맛), 골라보기면 None."""
+    """그 편이 골라보기가 아니면 그 꼴(sci·병맛·밤 편), 골라보기면 None."""
+    if sl == C_SLOT:
+        return c_kind(d)
     if sl == sci_slot(d):
         return SCI
     if sl == bm_slot(d):
@@ -460,20 +604,24 @@ def series_no(d: dt.date, slot: str | None = None) -> int | None:
 
 
 def slot_of(d: dt.date, kind: str) -> str | None:
-    """그날 그 꼴은 어느 편인가 — 같은 날 두 편은 꼴이 늘 달라서 하나로 정해진다. 그날 꼴이 아니면 None."""
-    return next((sl for sl in slots_on(d) if kind_for(d, sl) == kind), None)
+    """그날 그 꼴은 어느 편인가 — 같은 날 편들은 꼴이 늘 달라서 하나로 정해진다(밤 편 꼴도). 그날 꼴이 아니면 None."""
+    return next((sl for sl in day_slots(d) if kind_for(d, sl) == kind), None)
 
 
 def due_slot(d: dt.date, now: dt.datetime | None = None) -> str | None:
-    """지금 쓸 차례인 편 — NOON_UNTIL 시 전이면 낮 편(없는 날이면 None = 쓸 차례 아님), 뒤면 저녁 편."""
+    """지금 쓸 차례인 편 — NOON_UNTIL 시 전이면 낮 편(없는 날이면 None = 쓸 차례 아님), NIGHT_FROM 시부터는 밤 편
+    (그날 밤 편이 있을 때만), 그 사이는 저녁 편."""
     now = now or dt.datetime.now(KST)
-    if now.astimezone(KST).hour < NOON_UNTIL:
+    h = now.astimezone(KST).hour
+    if h < NOON_UNTIL:
         return "a" if "a" in slots_on(d) else None
+    if h >= NIGHT_FROM and C_SLOT in day_slots(d):
+        return C_SLOT
     return "b"
 
 
 def ledger_key(date: str, slot: str) -> str:
-    """게시 ledger 열쇠 — 저녁 편은 예전처럼 날짜 그대로, 낮 편은 날짜+'a'. 쓰레드는 그날 골라보기 편의 열쇠로 찾는다."""
+    """게시 ledger 열쇠 — 저녁 편은 예전처럼 날짜 그대로, 낮·밤 편은 날짜+'a'·'c'. 쓰레드는 그날 골라보기 편의 열쇠로 찾는다."""
     return date if slot == "b" else f"{date}{slot}"
 
 
@@ -499,8 +647,8 @@ def script_for(d: dt.date, slot: str, root: str = SCRIPTS) -> str | None:
 
 
 def latest_target(d: dt.date, root: str = SCRIPTS) -> str | None:
-    """워크플로가 처리할 오늘 대본 — 있는 편 중 가장 늦은 편(저녁 push 때 낮 대본을 다시 집지 않게)."""
-    for sl in reversed(slots_on(d)):
+    """워크플로가 처리할 오늘 대본 — 있는 편 중 가장 늦은 편(a < b < c — 저녁·밤 push 때 앞 대본을 다시 집지 않게)."""
+    for sl in reversed(day_slots(d)):
         p = script_for(d, sl, root)
         if p:
             return p
@@ -524,6 +672,8 @@ def recent(d: dt.date, root: str = SCRIPTS, n: int = 40, kind: str | None = None
             item["questions"] = [r.get("q") for r in s.get("rounds", [])]
         if s.get("kind") == SCI:
             item["src_n"] = s.get("src_n")
+        if s.get("kind") in C_KINDS:                        # 밤 편: 항목 번호(같은 항목을 다시 쓰지 않게)
+            item["src_n"] = s.get("src_n")
         if s.get("kind") in BM_KINDS:                       # 병맛: 같은 소재·같은 동물을 다시 쓰지 않게
             item["topic"] = s.get("topic")
             if s.get("animal_ko"):
@@ -537,11 +687,14 @@ def recent(d: dt.date, root: str = SCRIPTS, n: int = 40, kind: str | None = None
 def next_info(d: dt.date, root: str = SCRIPTS, slot: str | None = None, now: dt.datetime | None = None) -> dict:
     """지금 쓸 편 — slot 을 안 주면 due_slot(시각)으로. 쓸 차례가 아니면 due: false(아무것도 쓰지 않는다)."""
     sl = slot or due_slot(d, now)
-    if sl is None or sl not in slots_on(d):
-        return {"date": d.isoformat(), "due": False, "slot": sl, "already_written": False,
-                "why": f"{d} 에는 낮 편이 없다 — 하루 두 편은 {TWICE_FROM} 부터(그 전엔 저녁 편 하나)"}
+    if sl is None or sl not in day_slots(d):
+        why = (f"{d} 에는 밤 편이 없다 — 밤 편은 {C_FROM} 부터 · 그날 꼴({c_day_kind(d)}) catalog 항목이 남아 있는 날만"
+               if sl == C_SLOT else f"{d} 에는 낮 편이 없다 — 하루 두 편은 {TWICE_FROM} 부터(그 전엔 저녁 편 하나)")
+        return {"date": d.isoformat(), "due": False, "slot": sl, "already_written": False, "why": why}
     k = kind_for(d, sl)
-    if k == SCI:
+    if k in C_KINDS:
+        exemplar, writing = C_EXEMPLAR[k], C_WRITING[k]
+    elif k == SCI:
         exemplar, writing = (SCI_XRAY_EXEMPLAR if sci_xray(d) else SCI_EXEMPLAR), SCI_WRITING
     elif k in BM_KINDS:
         exemplar, writing = BM_EXEMPLAR[k], BM_WRITING
@@ -551,6 +704,13 @@ def next_info(d: dt.date, root: str = SCRIPTS, slot: str | None = None, now: dt.
            "kind": k, "label": LABEL[k], "file": f"output/insta_pick/{d.isoformat()}_{k}_<slug>.json",
            "exemplar": exemplar, "writing": writing,
            "keywords": KEYWORDS[k], "already_written": bool(script_for(d, sl, root)), "recent": recent(d, root, kind=k)}
+    if k in C_KINDS:                                       # 밤 편: 무엇을 쓸지도 코드가 — 그날 catalog 항목 그대로(숫자는 facts 에서만)
+        e = c_entry(c_n(d)) or {}
+        out.update(src_n=e.get("n"), series=C_SERIES[k], length_sec=list(C_SEC[k]), post_time="21:20 KST", entry=e)
+        if k == WORKER:
+            out.update(episode=c_no(d), character=(c_catalog(WORKER).get("character") or {}).get("about"))
+        else:
+            out.update(card_no=c_no(d))
     if k in BM_KINDS:                                      # 병맛: 무엇을 쓸지도 코드가 — 그날 bm_catalog 항목 그대로(숫자는 facts 에서만)
         e = bm_entry(bm_n(d)) or {}
         out.update(bm_no=bm_index(d) + 1, bm_total=(BM_TO - BM_FROM).days + 1, format=BM_FORMAT[k], series=BM_SERIES[k],
@@ -592,6 +752,17 @@ def runway(today: dt.date) -> list[dict]:
                  and SCI_OPEN_N0 <= n < TEARDOWN_N0] + [SCI_OPEN_N0 - 1]) + 1
     n_td = max([n for n in (e.get("n") for e in catalog_entries(_read(TEARDOWN_CATALOG))) if isinstance(n, int)]
                + [TEARDOWN_N0 - 1]) + 1
+    cp = c_plan()
+    cpools = _CPLAN["pools"]
+    crows = []
+    for k, id_ in ((WORKER, "insta_worker"), (DANGER, "insta_danger")):
+        days = [d for d, (kk, _) in cp.items() if kk == k]
+        n_next = max([n for _, n in cpools[k]] + [n for n in cpools["unscheduled"] if c_kind_of_n(n) == k] + [C_N0[k] - 1]) + 1
+        crows.append({"id": id_, "name": f"인스타 밤 편 '{C_SERIES[k]}'(21:20 · 이틀에 한 편 · {C_FROM:%m/%d}~)", "limit": "catalog",
+                      "last": max(days) if days else None, "left": sum(d >= today for d in days),
+                      "refill": f"insta/{os.path.basename(C_CATALOG[k])} 끝에 항목(n {n_next}~, facts·sources·evidence 확인, "
+                                f"from ≥ {max(today + dt.timedelta(days=1), C_FROM).isoformat()})",
+                      "note": "" if days else "catalog 가 비었다 — 그 꼴 날엔 밤 편이 없다"})
     return [
         {"id": "insta_pick", "name": "인스타 '오늘의 골라보기'(그림·퀴즈·타로·밸런스·태어난 달)", "limit": "open", "last": None,
          "left": None, "refill": "없음 — FORMATS 날짜 순환(BM 기간 10/25~11/07 엔 병맛이 자리를 쓴다)"},
@@ -606,7 +777,7 @@ def runway(today: dt.date) -> list[dict]:
         {"id": "insta_bm", "name": "인스타 병맛(이거 진짜 논문임 · 정색 동물 다큐) 2주 시험", "limit": "trial", "last": BM_TO,
          "left": sum(d >= today for d in bm), "judge": BM_TO + dt.timedelta(days=1),
          "refill": "판정 뒤 이어 가려면 insta/bm_catalog.json 항목 + pick_plan BM_TO·BM_ORDER(코드 PR)"},
-    ]
+    ] + crows
 
 
 # ── 게시 ──────────────────────────────────────────────
@@ -626,7 +797,7 @@ def blockers(s: dict, meta: dict | None, led: dict, today: dt.date) -> list[str]
         d = dt.date.fromisoformat(s["date"])
         sl = slot_of(d, s.get("kind", ""))
         if sl is None:
-            bad.append(f"오늘 꼴은 {[kind_for(d, x) for x in slots_on(d)]} — 대본은 {s.get('kind')}")
+            bad.append(f"오늘 꼴은 {[kind_for(d, x) for x in day_slots(d)]} — 대본은 {s.get('kind')}")
     key = ledger_key(s.get("date", ""), sl or "b")
     if sl and key in led:
         bad.append(f"{s.get('date')} {SLOT_LABEL[sl]}은 이미 올렸다: {led[key].get('media_id')}")
@@ -676,11 +847,11 @@ def post(path: str, renders: str = RENDERS, ledger: str = LEDGER, today: dt.date
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="인스타 릴스('오늘의 골라보기' · sci · 병맛) 편성·게시")
+    ap = argparse.ArgumentParser(description="인스타 릴스('오늘의 골라보기' · sci · 병맛 · 밤 편) 편성·게시")
     ap.add_argument("cmd", choices=["next", "targets", "post"])
     ap.add_argument("script", nargs="?")
     ap.add_argument("--date")
-    ap.add_argument("--slot", choices=SLOTS, help="next: 이 편으로(안 주면 지금 시각으로 정한다)")
+    ap.add_argument("--slot", choices=ALL_SLOTS, help="next: 이 편으로(안 주면 지금 시각으로 정한다 · 밤 편 작가는 c)")
     ap.add_argument("--root", default=SCRIPTS)
     a = ap.parse_args()
     d = dt.date.fromisoformat(a.date) if a.date else kst_today()
