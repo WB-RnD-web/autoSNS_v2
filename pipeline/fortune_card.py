@@ -13,7 +13,10 @@
 데이터: 루틴 스토리보드에는 1~3위만 있다 → 그대로 쓰고, 4~12위·점수·한 줄은 날짜 해시로 정한다
   (같은 날짜면 늘 같은 표). 재미로 보는 운세라는 고지는 설명란에 넣는다.
 
+  ★2026-10-31부터 스토리보드도 코드가 쓴다(make — 1~3위 = 일진과 육합·삼합). 루틴은 실행 스위치만.
+
     python fortune_card.py <storyboard.json>     # 표 데이터 미리보기
+    python fortune_card.py make [--date …] [--out …]   # 06:13 운세 스토리보드(output/news/<날짜>_fortune_storyboard.json)
 """
 from __future__ import annotations
 import datetime as dt
@@ -173,8 +176,111 @@ def meta(sb: dict) -> dict:
     return {"title": title[:95], "description": desc}
 
 
+# ── 06:13 매일 운세 스토리보드를 코드로(2026-10-31) ─────────────────────────────────
+# 왜: 운세 루틴이 매일 18KB 프롬프트로 7장면 대본·번역을 썼지만, 영상은 위 build_spec(1~3위 띠·1위 점수만 읽는다)·
+#   newyear_series(화·토)가 만들고 대본 본문은 버려졌다 — 루틴이 구독 주간 한도만 썼다. 이제 다른 표처럼 코드가 쓰고
+#   루틴은 실행 스위치만 한다(theme_card make 와 같은 꼴).
+# 1~3위: 그날 일진의 띠와 육합 1 + 삼합 2(풀이형 표·등급표와 같은 계산 → 같은 날 표끼리 말이 엇갈리지 않는다), 순서·점수는 날짜 해시.
+# 주간(월요일)·월간(1일)은 예전 루틴처럼 notes 의 MODE 로만 드러난다(scope_of) — 기준 날은 그 주 월요일·그달 1일의 일진.
+ANIMAL_EN = ["rat", "ox", "tiger", "rabbit", "dragon", "snake", "horse", "goat", "monkey", "rooster", "dog", "pig"]
+BG_SHOTS = [   # 키비주얼·커버 배경(cover_short.build_bg) — 날마다 구도를 바꾼다(같은 구도 연달아 금지 · 예전 루틴 규칙)
+    "a golden {a} emblem in front view, traditional Korean auspicious clouds, deep amethyst starry night",
+    "close-up of a golden {a} emblem's glowing amber eye, fine engraved texture, soft bokeh, deep amethyst night",
+    "silhouette of a golden {a} standing on auspicious clouds at dawn, warm light rays, calm majestic mood",
+    "still life of gold coins and a red Korean lucky pouch beside a small golden {a} figurine, warm lamp light",
+    "a golden {a} emblem over a quiet Korean hanok roof under a starry sky, soft moonlight, peaceful lucky mood",
+    "a golden {a} constellation drawn in stars over misty mountains at dawn, serene auspicious mood",
+]
+MODE_PILL = {"daily": "오늘의 운세", "weekly": "이번 주 운세", "monthly": "이번 달 운세"}
+MODE_GHOST = {"daily": "FORTUNE", "weekly": "WEEKLY", "monthly": "MONTHLY"}
+
+
+def mode_of(d: dt.date) -> str:
+    """예전 루틴 규칙 그대로: 1일 = 월간, (1일이 아닌) 월요일 = 주간, 그 밖 = 오늘."""
+    return "monthly" if d.day == 1 else ("weekly" if d.weekday() == 0 else "daily")
+
+
+def top3(d: dt.date) -> list[tuple[str, str]]:
+    """[(띠, 이유)] 1위부터 — 일진의 띠와 육합 1 + 삼합 2."""
+    import pulli_card as P
+    g = P.ganzhi(d)
+    b = g["branch"]
+    mates = [(x, "육합") for p in P.YUKHAP if b in p for x in p if x != b]
+    mates += [(x, f"{nm} 삼합") for grp, nm in P.SAMHAP if b in grp for x in grp if x != b]
+    mates.sort(key=lambda m: _h(d, "top", m[0]))
+    day = f"{g['name']}({g['hanja']})일 {g['animal']}의 날"
+    return [(ANIMALS[x], f"{day}과 {rel}") for x, rel in mates[:3]]
+
+
+def path_for(d: dt.date, root: str | None = None) -> str:
+    import os
+    root = root or os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "output", "news")
+    return os.path.join(root, f"{d.isoformat()}_fortune_storyboard.json")
+
+
+def make_storyboard(d: dt.date) -> dict:
+    mode = mode_of(d)
+    scope = {"daily": "오늘", "weekly": "이번 주", "monthly": "이번 달"}[mode]
+    base = d if mode == "daily" else (d.replace(day=1) if mode == "monthly" else d - dt.timedelta(days=d.weekday()))
+    (a1, why1), (a2, _), (a3, _) = top3(base)
+    s1 = 88 + _h(d, "s1") % 10
+    ys = [y for y in years_of(a1) if 1950 <= y <= 1990][-3:]
+    brand = "일상공감뉴스 · 운세"
+    hook = f"{scope} 1위는 {a1}띠"
+    head = f"{d.month}월 {d.day}일 {scope} 띠별 운세 순위"
+    return {
+        "date": d.isoformat(), "topic": "fortune", "privacy": "public",
+        "topic_keyword": f"{scope} 띠별 운세", "headline": head, "hook_title": hook, "accent": "#C9A24B",
+        "thumbnail_hook": BG_SHOTS[_h(d, "bg") % len(BG_SHOTS)].format(a=ANIMAL_EN[ANIMALS.index(a1)])
+        + ", no human face, no text in image",
+        "thumbnail_text": f"{scope} 1위 {a1}띠",
+        "scenes": [
+            {"type": "hook", "pill": MODE_PILL[mode], "ghost": MODE_GHOST[mode], "lines": [scope, "딱 한 띠만", "운이 열려요"],
+             "highlight": "딱 한 띠", "brand": brand, "narration": f"{scope}, 열두 띠 가운데 한 띠의 흐름이 유독 좋습니다."},
+            {"type": "keypoint", "label": f"{scope} 운 좋은 띠 · 3위부터", "points": [f"3위 <b>{a3}띠</b>", f"2위 <b>{a2}띠</b>"],
+             "brand": brand, "narration": f"3위는 {a3}띠, 2위는 {a2}띠입니다."},
+            {"type": "stat", "label": f"행운 지수 1위 · {a1}띠", "prefix": "", "suffix": "점", "from": 0, "to": s1, "bar": True,
+             "sub": " · ".join(map(str, ys)) + f"년생 <b>{a1}띠</b>", "brand": brand,
+             "narration": f"1위는 {a1}띠, {why1}이라 지수가 {s1}점입니다."},
+            {"type": "statement", "text": "내 띠는 몇 위였나요?", "highlight": "몇 위", "brand": brand,
+             "narration": "내 띠는 몇 위였는지 확인해 보세요. 재미로 보는 운세였습니다."},
+        ],
+        "sources": ["전통 띠 운세(명리) — 일진과 띠의 육합·삼합"], "credit": f"재미로 보는 운세 · {why1}",
+        "platforms": {"youtube": {"title": f"{hook} #shorts",
+                                  "description": "\n".join([head, "※ 재미로 보는 운세입니다", "",
+                                                            "#오늘의운세 #띠별운세 #운세 #shorts"])}},
+        "notes": f"MODE={mode} · fortune_card.make 가 쓴 스토리보드(코드 · 1~3위 = {why1.split('과 ')[0]}과 육합·삼합) — 영상은 build_spec",
+    }
+
+
+def main(argv=None) -> int:
+    import argparse
+    import os
+    argv = sys.argv[1:] if argv is None else argv
+    if argv and argv[0] not in ("make", "path"):          # 예전 쓰임: fortune_card.py <storyboard.json> 미리보기
+        with open(argv[0], encoding="utf-8") as f:
+            _sb = json.load(f)
+        print(json.dumps({"use_card": use_card(_sb), "meta": meta(_sb), "spec": build_spec(_sb)},
+                         ensure_ascii=False, indent=1))
+        return 0
+    ap = argparse.ArgumentParser(description="06:13 매일 운세 스토리보드(코드)")
+    ap.add_argument("cmd", choices=["make", "path"])
+    ap.add_argument("--date")
+    ap.add_argument("--out")
+    a = ap.parse_args(argv)
+    d = dt.date.fromisoformat(a.date) if a.date else dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).date()
+    out = a.out or path_for(d)
+    if a.cmd == "path":
+        print(out)
+        return 0
+    sb = make_storyboard(d)
+    os.makedirs(os.path.dirname(out) or ".", exist_ok=True)
+    with open(out, "w", encoding="utf-8") as f:
+        json.dump(sb, f, ensure_ascii=False, indent=1)
+    top, s1 = top_from_storyboard(sb)
+    print(f"{out} · {scope_of(sb)} · 1~3위 {top} · {s1}점")
+    return 0
+
+
 if __name__ == "__main__":
-    with open(sys.argv[1], encoding="utf-8") as f:
-        _sb = json.load(f)
-    print(json.dumps({"use_card": use_card(_sb), "meta": meta(_sb), "spec": build_spec(_sb)},
-                     ensure_ascii=False, indent=1))
+    sys.exit(main())
