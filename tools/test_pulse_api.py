@@ -42,7 +42,8 @@ class FakeStream:
 
     def get_final_message(self):
         return SimpleNamespace(stop_reason="end_turn", content=[SimpleNamespace(type="text", text=self.text)],
-                               usage=SimpleNamespace(input_tokens=1000, output_tokens=200))
+                               usage=SimpleNamespace(input_tokens=1000, output_tokens=200,
+                                                     cache_creation_input_tokens=0, cache_read_input_tokens=500))
 
 
 class FakeClient:
@@ -142,11 +143,15 @@ with tempfile.TemporaryDirectory() as td:
        and "읽을 수 없다" in last[4]["content"], json.dumps(last, ensure_ascii=False)[:400])
     first = fc.calls[0]
     ck("system = PULSE.md + API 절", "채널 맥박" in first["system"] and "이번 실행 방식(API)" in first["system"])
-    um = first["messages"][0]["content"]
+    blk = first["messages"][0]["content"][0]
+    ck("자료 덩어리는 캐시에 올린다(다시 물을 때 싸게)", blk.get("cache_control") == {"type": "ephemeral"})
+    um = blk["text"]
     ck("사용자 메시지: 오늘 pulse.json·레이더·지난 fill·실험 파일이 다 들어간다",
        "F:2026-10-31" in um and "레이더 보고서 표시" in um and "지난 요약 2026-10-30" in um and '"id": "a"' in um)
     with open(os.path.join(out_root, "2026-10-31", "api.json"), encoding="utf-8") as f:
-        ck("api.json: 토큰·달러를 남긴다", json.load(f)["input_tokens"] == 3000)
+        _j = json.load(f)
+    ck("api.json: 토큰·달러·시도별 오류를 남긴다", _j["tokens"]["input"] == 3000 and _j["tokens"]["cache_read"] == 1500
+       and _j["history"] == [["summary 가 이상하다"], ["출력을 읽을 수 없다: JSON 객체가 없다"], []], str(_j))
     fc = FakeClient(['{"fill": {"summary": "x", "pr": null}}'] * PA.TRIES)
     info = PA.write("2026-10-31", out_root, radar, client=fc, checker=lambda d: ["늘 실패"], root=td)
     ck("끝까지 실패하면 ok=False(워크플로가 실패로 끝난다)", not info["ok"] and info["tries"] == PA.TRIES)

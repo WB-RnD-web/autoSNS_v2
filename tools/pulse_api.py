@@ -8,7 +8,8 @@
   (+ pr_edits → pr.patch). 검사 오류가 나면 그 오류를 붙여 다시 묻는다(최대 3번).
 PR: 지난 맥박 PR 4개(#154·#159·#164·#167)가 전부 tools/pulse_experiments.json 만 고쳤다 → 고칠 수 있는 파일을 EDITABLE 로
   묶고, 파일을 통째로 보여 준 뒤 '정확한 문자열 바꾸기'만 받는다. 테스트는 여기서 돌린다(루틴이 하던 '직접 돌려 통과').
-비용(추정): Opus 5.5 입력 약 6만·출력 약 1.5만 토큰 → 하루 0.5달러 안팎(api.json 에 실제 토큰·달러를 남긴다).
+비용: 10/31 첫 시험 = 자료 약 7.4만 토큰 × 2번(검사 오류로 한 번 더) + 출력 1.9만 → 0.97달러. 그 뒤 자료를 캐시에 올려
+  다시 묻는 값을 줄였다. 실제 토큰·달러·시도별 오류는 <날짜>/api.json 에 남는다.
 
     python tools/pulse_api.py write --day 2026-10-31 --dir output/pulse --radar /tmp/radar
 """
@@ -28,7 +29,8 @@ import pulse as PU  # noqa: E402
 
 MODEL = os.environ.get("PULSE_MODEL", "claude-opus-5-5")
 EFFORT = os.environ.get("PULSE_EFFORT", "high")
-PRICE = {"claude-opus-5-5": (4.0, 20.0), "claude-sonnet-5-5": (2.0, 10.0)}   # 달러 / 100만 토큰(입력, 출력)
+# 달러 / 100만 토큰(입력, 출력, 캐시 읽기) — 캐시 쓰기는 입력의 1.25배
+PRICE = {"claude-opus-5-5": (4.0, 20.0, 0.20), "claude-sonnet-5-5": (2.0, 10.0, 0.20)}
 EDITABLE = ("tools/pulse_experiments.json", "tools/pulse_formats.json")
 TRIES = 3
 PREV_DAYS = 3
@@ -184,13 +186,17 @@ def write(day: str, out_root: str, radar_dir: str, client=None, checker=None, ro
         client = anthropic.Anthropic()
     checker = checker or PU.check
     system = system_prompt(root)
-    messages = [{"role": "user", "content": user_message(day, out_root, radar_dir, root)}]
-    tok_in = tok_out = 0
+    # 자료 덩어리(7만 토큰 안팎)를 캐시에 올린다 — 검사 오류로 다시 물을 때 같은 자료를 1/20 값에 다시 읽는다
+    messages = [{"role": "user", "content": [{"type": "text", "text": user_message(day, out_root, radar_dir, root),
+                                              "cache_control": {"type": "ephemeral"}}]}]
+    tok = {"input": 0, "cache_write": 0, "cache_read": 0, "output": 0}
     errs: list[str] = []
+    history: list[list[str]] = []
     for n in range(1, TRIES + 1):
         text, usage = ask(client, system, messages)
-        tok_in += getattr(usage, "input_tokens", 0) or 0
-        tok_out += getattr(usage, "output_tokens", 0) or 0
+        for k, f in (("input", "input_tokens"), ("cache_write", "cache_creation_input_tokens"),
+                     ("cache_read", "cache_read_input_tokens"), ("output", "output_tokens")):
+            tok[k] += getattr(usage, f, 0) or 0
         patch = os.path.join(day_dir, "pr.patch")
         if os.path.exists(patch):
             os.remove(patch)
@@ -202,6 +208,7 @@ def write(day: str, out_root: str, radar_dir: str, client=None, checker=None, ro
             errs = errs or checker(day_dir)
         except (ValueError, KeyError) as e:
             errs = [f"출력을 읽을 수 없다: {e}"]
+        history.append(errs)
         print(f"   시도 {n}: " + ("✅ 통과" if not errs else f"오류 {len(errs)}개"))
         if not errs:
             break
@@ -210,9 +217,11 @@ def write(day: str, out_root: str, radar_dir: str, client=None, checker=None, ro
         messages += [{"role": "assistant", "content": text},
                      {"role": "user", "content": "코드가 돌린 검사에서 오류가 났다. 고쳐서 JSON 전체를 다시 내라.\n"
                                                  + "\n".join(f"- {x}" for x in errs)}]
-    pi, po = PRICE.get(MODEL, PRICE["claude-opus-5-5"])
-    info = {"model": MODEL, "effort": EFFORT, "tries": n, "ok": not errs, "input_tokens": tok_in, "output_tokens": tok_out,
-            "usd": round(tok_in / 1e6 * pi + tok_out / 1e6 * po, 3), "errors": errs}
+    pi, po, pc = PRICE.get(MODEL, PRICE["claude-opus-5-5"])
+    usd = (tok["input"] * pi + tok["cache_write"] * pi * 1.25 + tok["cache_read"] * pc + tok["output"] * po) / 1e6
+    # history = 시도마다 검사 오류(다시 묻게 만든 이유 — 자주 나는 오류는 API_NOTE 에 미리 적어 시도를 줄인다)
+    info = {"model": MODEL, "effort": EFFORT, "tries": n, "ok": not errs, "tokens": tok, "usd": round(usd, 3),
+            "errors": errs, "history": history}
     with open(os.path.join(day_dir, "api.json"), "w", encoding="utf-8") as f:
         json.dump(info, f, ensure_ascii=False, indent=1)
     return info
@@ -227,8 +236,9 @@ def main() -> int:
     w.add_argument("--radar", required=True)
     a = ap.parse_args()
     info = write(a.day, a.dir, a.radar)
-    print(f"🧾 {info['model']} · 시도 {info['tries']} · 입력 {info['input_tokens']:,} · 출력 {info['output_tokens']:,} 토큰"
-          f" · 약 {info['usd']}달러")
+    t = info["tokens"]
+    print(f"🧾 {info['model']} · 시도 {info['tries']} · 입력 {t['input']:,}(캐시 쓰기 {t['cache_write']:,} · 읽기 {t['cache_read']:,})"
+          f" · 출력 {t['output']:,} 토큰 · 약 {info['usd']}달러")
     return 0 if info["ok"] else 1
 
 
