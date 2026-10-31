@@ -1,0 +1,63 @@
+{
+ "date": "2026-10-14",
+ "kind": "card",
+ "slug": "worry-answer",
+ "headline": [
+  "카드 한 장 골라 봐요",
+  "요즘 고민의 답"
+ ],
+ "say_intro": "요즘 고민 하나 떠올리고, 카드 한 장 골라 봐요.",
+ "options": [
+  {
+   "img": "the back of a mystical card with a deep teal and gold compass pattern",
+   "reveal_img": "a small wooden boat setting sail on a calm turquoise sea at sunrise inside an ornate golden frame",
+   "name": "돛단배 카드",
+   "result": "가도 괜찮아요",
+   "lines": "마음은 이미 정해져 있어요. 첫걸음만 떼면 바람이 밀어 줘요.",
+   "say": "1번 돛단배 카드, 가도 괜찮아요."
+  },
+  {
+   "img": "the back of a mystical card with a burgundy and gold hourglass pattern",
+   "reveal_img": "a round full moon reflected on a still forest lake at night with fireflies inside an ornate golden frame",
+   "name": "보름달 카드",
+   "result": "조금만 기다려요",
+   "lines": "답이 차오르는 중이에요. 이번 주는 서두르지 않는 게 이겨요.",
+   "say": "2번 보름달 카드, 조금만 기다려요."
+  },
+  {
+   "img": "the back of a mystical card with a sunny yellow and gold key pattern",
+   "reveal_img": "an old brass key resting on an open letter beside a lit candle on a wooden desk inside an ornate golden frame",
+   "name": "열쇠 카드",
+   "result": "물어보면 풀려요",
+   "lines": "혼자 끙끙대던 일이에요. 믿는 사람한테 한마디만 털어놔 봐요.",
+   "say": "3번 열쇠 카드, 물어보면 풀려요."
+  },
+  {
+   "img": "the back of a mystical card with a sky blue and gold feather pattern",
+   "reveal_img": "a single white feather floating down over a soft meadow of wildflowers inside an ornate golden frame",
+   "name": "깃털 카드",
+   "result": "내려놔도 돼요",
+   "lines": "생각보다 큰일이 아니에요. 오늘은 걱정 대신 일찍 자요.",
+   "say": "4번 깃털 카드, 내려놔도 돼요."
+  }
+ ],
+ "say_outro": "몇 번 카드가 내 답 같아요?",
+ "outro_text": "몇 번 골랐어요?",
+ "caption": "고민 하나 떠올리고 카드 한 장만 골라 봐요 🔮",
+ "hashtags": [
+  "#타로",
+  "#오늘의타로",
+  "#카드고르기",
+  "#골라보세요",
+  "#AI그림"
+ ],
+ "bench": {
+  "keyword": "오늘의 타로",
+  "format": "고민·선택에 대한 카드 고르기 → 카드별 답",
+  "seen": [
+   "soultalk.official · 지금 내가 해야 할 선택 타로 · 1.3만",
+   "kimeunjung.reading · 그 사람 다시 연락 올까 카드 · 2,586"
+  ],
+  "ours": "주제 방향(고민의 답)만 빌림 — 카드 그림·메시지 새로 만듦"
+ }
+}

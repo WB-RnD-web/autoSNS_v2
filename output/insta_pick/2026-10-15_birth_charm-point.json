@@ -1,0 +1,32 @@
+{
+ "date": "2026-10-15",
+ "kind": "birth",
+ "slug": "charm-point",
+ "headline": [
+  "태어난 달로 보는",
+  "내 숨은 매력 포인트"
+ ],
+ "say_intro": "태어난 달로 보는 내 숨은 매력 포인트. 내 달을 찾아 봐요.",
+ "bg": "a soft pastel scene of a small mirror, a bouquet of wildflowers, a glass of lemonade and a ribbon on a warm peach table",
+ "cells": [
+  {"m": 1, "text": "차분한 목소리"},
+  {"m": 2, "text": "눈웃음"},
+  {"m": 3, "text": "빠른 눈치"},
+  {"m": 4, "text": "엉뚱한 유머"},
+  {"m": 5, "text": "다정한 말투"},
+  {"m": 6, "text": "반짝이는 눈빛"},
+  {"m": 7, "text": "듬직한 어깨"},
+  {"m": 8, "text": "센스 있는 옷"},
+  {"m": 9, "text": "잘 들어주는 귀"},
+  {"m": 10, "text": "또렷한 생각"},
+  {"m": 11, "text": "따뜻한 손"},
+  {"m": 12, "text": "환한 웃음소리"}
+ ],
+ "caption": "태어난 달로 보는 내 숨은 매력 포인트 ✨ 내 달을 찾아 봐요!",
+ "hashtags": ["#태어난달", "#생일월", "#매력포인트", "#재미로보는", "#골라보세요"],
+ "bench": {
+  "format": "태어난 달 표 한 장(내 것 찾기)",
+  "seen": [],
+  "ours": "칸 문구 새로 씀 — 재미로"
+ }
+}

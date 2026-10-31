@@ -1,0 +1,61 @@
+{
+ "date": "2026-10-24",
+ "kind": "balance",
+ "slug": "cozy-day-choices",
+ "headline": [
+  "밸런스 게임",
+  "오늘은 어느 쪽이에요"
+ ],
+ "say_intro": "밸런스 게임, 오늘은 어느 쪽이에요.",
+ "rounds": [
+  {
+   "a": {
+    "label": "비 오는 날 집콕",
+    "img": "a cozy room with a window showing gentle rain, a blanket and a warm mug on a sofa"
+   },
+   "b": {
+    "label": "맑은 날 산책",
+    "img": "a sunny park path with green trees and fallen golden leaves under a blue sky"
+   },
+   "say": "비 오는 날 집에서 쉬기, 맑은 날 밖에서 걷기."
+  },
+  {
+   "a": {
+    "label": "떡볶이 매일",
+    "img": "a bowl of red spicy tteokbokki with fish cakes and a sprinkle of sesame seeds"
+   },
+   "b": {
+    "label": "피자 매일",
+    "img": "a whole cheesy pizza with melted cheese on a wooden board"
+   },
+   "say": "떡볶이만 매일 먹기, 피자만 매일 먹기."
+  },
+  {
+   "a": {
+    "label": "하루 25시간",
+    "img": "a large friendly clock with one extra hour glowing softly on its face"
+   },
+   "b": {
+    "label": "주 3일 휴일",
+    "img": "a calendar-like wall with three bright sunny days highlighted next to a relaxing hammock"
+   },
+   "say": "하루가 25시간이 되기, 일주일에 사흘 쉬기."
+  }
+ ],
+ "say_outro": "너는 어느 쪽이었어요?",
+ "outro_text": "나는 A·B·?",
+ "caption": "밸런스 게임 ⚖️ 오늘은 어느 쪽이에요",
+ "hashtags": [
+  "#밸런스게임",
+  "#둘중하나",
+  "#골라보세요",
+  "#공감",
+  "#AI그림"
+ ],
+ "bench": {
+  "keyword": "밸런스 게임",
+  "format": "둘 중 하나 고르기 여러 판(밸런스 게임)",
+  "seen": [],
+  "ours": "질문·그림 새로 만듦"
+ }
+}
