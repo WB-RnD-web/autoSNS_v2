@@ -1,0 +1,66 @@
+{
+ "date": "2026-11-01",
+ "topic": "fortune",
+ "privacy": "public",
+ "topic_keyword": "이번 달 띠별 운세",
+ "headline": "11월 1일 이번 달 띠별 운세 순위",
+ "hook_title": "이번 달 1위는 양띠",
+ "accent": "#C9A24B",
+ "thumbnail_hook": "a golden goat emblem in front view, traditional Korean auspicious clouds, deep amethyst starry night, no human face, no text in image",
+ "thumbnail_text": "이번 달 1위 양띠",
+ "scenes": [
+  {
+   "type": "hook",
+   "pill": "이번 달 운세",
+   "ghost": "MONTHLY",
+   "lines": [
+    "이번 달",
+    "딱 한 띠만",
+    "운이 열려요"
+   ],
+   "highlight": "딱 한 띠",
+   "brand": "일상공감뉴스 · 운세",
+   "narration": "이번 달, 열두 띠 가운데 한 띠의 흐름이 유독 좋습니다."
+  },
+  {
+   "type": "keypoint",
+   "label": "이번 달 운 좋은 띠 · 3위부터",
+   "points": [
+    "3위 <b>개띠</b>",
+    "2위 <b>돼지띠</b>"
+   ],
+   "brand": "일상공감뉴스 · 운세",
+   "narration": "3위는 개띠, 2위는 돼지띠입니다."
+  },
+  {
+   "type": "stat",
+   "label": "행운 지수 1위 · 양띠",
+   "prefix": "",
+   "suffix": "점",
+   "from": 0,
+   "to": 94,
+   "bar": true,
+   "sub": "1955 · 1967 · 1979년생 <b>양띠</b>",
+   "brand": "일상공감뉴스 · 운세",
+   "narration": "1위는 양띠, 기묘(己卯)일 토끼의 날과 해묘미 삼합이라 지수가 94점입니다."
+  },
+  {
+   "type": "statement",
+   "text": "내 띠는 몇 위였나요?",
+   "highlight": "몇 위",
+   "brand": "일상공감뉴스 · 운세",
+   "narration": "내 띠는 몇 위였는지 확인해 보세요. 재미로 보는 운세였습니다."
+  }
+ ],
+ "sources": [
+  "전통 띠 운세(명리) — 일진과 띠의 육합·삼합"
+ ],
+ "credit": "재미로 보는 운세 · 기묘(己卯)일 토끼의 날과 해묘미 삼합",
+ "platforms": {
+  "youtube": {
+   "title": "이번 달 1위는 양띠 #shorts",
+   "description": "11월 1일 이번 달 띠별 운세 순위\n※ 재미로 보는 운세입니다\n\n#오늘의운세 #띠별운세 #운세 #shorts"
+  }
+ },
+ "notes": "MODE=monthly · fortune_card.make 가 쓴 스토리보드(코드 · 1~3위 = 기묘(己卯)일 토끼의 날과 육합·삼합) — 영상은 build_spec"
+}
