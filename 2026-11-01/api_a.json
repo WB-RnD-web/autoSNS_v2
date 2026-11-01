@@ -1,0 +1,25 @@
+{
+ "date": "2026-11-01",
+ "slot": "a",
+ "kind": "sci",
+ "model": "claude-opus-5-5",
+ "ok": true,
+ "file": "2026-11-01_sci_lost-at-sea-raft.json",
+ "sample": null,
+ "effort": "high",
+ "tries": 2,
+ "tokens": {
+  "input": 1258,
+  "cache_write": 10918,
+  "cache_read": 10918,
+  "output": 5751
+ },
+ "usd": 0.177,
+ "errors": [],
+ "history": [
+  [
+   "say_intro 1~50자 · 물음표(?)로 끝나는 질문"
+  ],
+  []
+ ]
+}

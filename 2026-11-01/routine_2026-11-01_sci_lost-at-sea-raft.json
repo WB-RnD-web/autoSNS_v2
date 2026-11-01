@@ -1,0 +1,67 @@
+{
+ "date": "2026-11-01",
+ "kind": "sci",
+ "src_n": 112,
+ "slug": "lost-at-sea-raft",
+ "hook": ["바다 한가운데 뗏목", "물 없이 버티면?"],
+ "say_intro": "바다 한가운데 뗏목 위, 마실 물이 없다면 얼마나 버틸까요?",
+ "why": {
+  "sub": "바닷물은 마실수록 손해예요",
+  "say": "왜 물을 못 마실까요?",
+  "img": "a small orange life raft floating alone on a calm tropical sea under a bright sun, ocean sliced open like a cake beneath it",
+  "view": "cutaway"
+ },
+ "beats": [
+  {
+   "big": "15분",
+   "sub": "물에 반사된 자외선",
+   "say": "그늘이 없어요. 물에 반사된 자외선이 15분이면 피부를 상하게 해요.",
+   "img": "a smooth featureless mannequin-like human figure sitting on a small raft in bright sun, glowing skin layers and bones visible inside",
+   "view": "xray",
+   "label": "피부",
+   "pin": [0.5, 0.45],
+   "src": 1
+  },
+  {
+   "big": "소금 3.5%",
+   "sub": "바닷물 무게의 일부예요",
+   "say": "바닷물 무게의 약 3.5%가 소금이에요. 콩팥은 이보다 싱거운 오줌만 만들어요.",
+   "img": "a quarter wedge cut away from a block of sea water, white salt crystals glowing inside the water",
+   "view": "cutaway",
+   "label": "녹은 소금",
+   "pin": [0.5, 0.5],
+   "src": 2
+  },
+  {
+   "big": "마신 것보다 더",
+   "sub": "소금을 빼려면 물이 더 나가요",
+   "say": "소금을 내보내려면 마신 물보다 더 많은 물을 오줌으로 써야 해요.",
+   "img": "a smooth featureless mannequin-like human figure with glowing kidneys in the center of the lower back",
+   "view": "xray",
+   "label": "콩팥",
+   "pin": [0.5, 0.5],
+   "src": 3
+  }
+ ],
+ "verdict": {
+  "big": "생존 확률 5%",
+  "say": "몸의 물이 15~20% 줄면 빠르면 3일 만에 위험해질 수 있어요.",
+  "img": "a small orange life raft alone on a tropical sea at noon, water sliced open like a cake beneath it",
+  "view": "cutaway",
+  "label": "뗏목",
+  "pin": [0.5, 0.4]
+ },
+ "caption": "바다 한가운데 뗏목에서 물 없이 버티면? 🌊",
+ "hashtags": ["#속이보이는과학", "#과학상식", "#바다", "#생존", "#뗏목"],
+ "sources": [
+  "https://oceanexplorer.noaa.gov/facts/temp-vary.html",
+  "https://www.cdc.gov/cancer/skin/resources/files/sun-safety.txt",
+  "https://oceanservice.noaa.gov/facts/whysalty.html",
+  "https://oceanservice.noaa.gov/facts/drinksw.html",
+  "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13140192/fullTextXML"
+ ],
+ "bench": {
+  "format": "투시·단면 3D 해설 — 대조 훅 → 왜? → 원인 3단계 → 결과(so.thats.how 'Dishwasher' 3D 단면 808만 · 해외 건강 쇼츠 투명 피부 3D 첫 달 1,000만 · 사용자 10/24)",
+  "seen": []
+ }
+}
