@@ -366,8 +366,13 @@ def make_assets(ep: dict, wd: str, mock: bool = False) -> dict:
             time.sleep(20)
         raise RuntimeError("기준 그림 실패")
 
+    A.setdefault("override", {})
     for i, sh_ in enumerate(ep["shots"]):
         if "reuse" in sh_:
+            continue
+        ov = A["override"].get(str(i))
+        if ov and os.path.exists(ov):              # 검수가 다시 그린 그림(이어 받기에도 유지)
+            A["img"][str(i)] = ov
             continue
         if sh_.get("edit"):
             key = h16("edit", ep["character"]["prompt"], ep["character"]["seed"], sh_["edit"])
@@ -404,7 +409,39 @@ def make_assets(ep: dict, wd: str, mock: bool = False) -> dict:
         A["img"][str(i)] = png
         save()
     save()
+    A["_ref"] = ref
     return A
+
+
+def redraw_fn(ep: dict, A: dict, wd: str):
+    """검수가 고친 프롬프트로 한 컷을 다시 그린다(편집 컷은 기준 그림에서 편집) → 새 그림 경로 · 실패면 None."""
+    def redraw(i: int, text: str) -> str | None:
+        sh_ = ep["shots"][i]
+        png = os.path.join(wd, f"img_{i:02d}_qa_{h16(text)}.png")
+        if not os.path.exists(png):
+            if sh_.get("edit"):
+                ch = ep["character"]
+                jid, d, _ = spark_job({"type": "image", "prompt": STYLE + ch["prompt"] + ep.get("style_tail", ""),
+                                       "width": IMG_W, "height": IMG_H, "no_llm": True, "model": "z-image-turbo",
+                                       "seed": ch["seed"]}, timeout=900)
+                if d.get("status") != "done":
+                    return None
+                body = {"type": "image", "from_job": jid, "edit": EDIT_PREFIX + text, "prompt": text, "upscale": "x2",
+                        "no_llm": True}
+            else:
+                body = {"type": "image", "prompt": STYLE + text + sh_.get("tail", ep.get("style_tail", "")),
+                        "width": IMG_W, "height": IMG_H, "no_llm": True, "model": "z-image-turbo",
+                        "seed": int(h16(text)[:8], 16) % 2147483647}
+            jid, d, t = spark_job(body)
+            if d.get("status") != "done" or not spark_fetch(jid, png):
+                return None
+            A["spark"].append({"shot": i, "type": "qa_redraw", "server_s": d.get("elapsed")})
+            log(f"{ep['id']} 검수 다시 그림 {i:02d} · {t}s")
+        A["override"][str(i)] = png
+        json.dump({k: v for k, v in A.items() if not k.startswith("_")},
+                  open(os.path.join(wd, "assets.json"), "w", encoding="utf-8"), indent=1)
+        return png
+    return redraw
 
 
 # ── 시간표·자막 ─────────────────────────────────────────
@@ -942,6 +979,13 @@ def render(ep: dict, out_dir: str = ST.OUT, work: str = ST.WORK, mock: bool = Fa
     V = make_voice(ep, wd, mock)
     log(f"{st} 목소리 {V['dur']:.1f}s")
     A = make_assets(ep, wd, mock)
+    A.pop("_ref", None)
+    qa = {"skipped": "mock"} if mock else None
+    if not mock:
+        import story_qa
+        qa = story_qa.run(ep, A, redraw_fn(ep, A, wd))
+        log(f"{st} 그림 검수: " + (qa.get("skipped") or f"걸림 {list(qa['flagged'])} · 고침 {qa['fixed']} · 남음 {qa['failed']}"
+                                  f"{' · 막음(트렌드)' if qa['block'] else ''} · {qa['usd']}달러"))
     T = build_timeline(ep, V)
     base = os.path.join(out_dir, st)
     silent, m4a = os.path.join(wd, "silent.mp4"), os.path.join(wd, "audio.m4a")
@@ -953,10 +997,14 @@ def render(ep: dict, out_dir: str = ST.OUT, work: str = ST.WORK, mock: bool = Fa
     first2s(base + ".mp4", base + "_first2s.jpg")
     sheet_1s(base + ".mp4", base + "_sheet.jpg")
     sp = A.get("spark", [])
+    with open(base + "_qa.json", "w", encoding="utf-8") as f:
+        json.dump(qa, f, ensure_ascii=False, indent=1)
     res = {"id": ep["id"], "slug": ep["slug"], "video": base + ".mp4", "srt": base + ".srt",
            "sheet": base + "_sheet.jpg", "first2s": base + "_first2s.jpg", "sec": round(T["total"], 2), "mock": mock,
            "spark_server_s": round(sum(x.get("server_s") or 0 for x in sp)), "images": len(A["img"]),
-           "edits": sum(1 for x in sp if x.get("type") == "edit"), "render_s": round(time.time() - t0)}
+           "edits": sum(1 for x in sp if x.get("type") == "edit"), "render_s": round(time.time() - t0),
+           "kind": ep.get("kind", "catalog"), "qa": base + "_qa.json", "qa_block": bool(qa.get("block")),
+           "qa_failed": qa.get("failed", []), "qa_fixed": qa.get("fixed", []), "qa_usd": qa.get("usd", 0)}
     with open(base + "_meta.json", "w", encoding="utf-8") as f:
         json.dump(res, f, ensure_ascii=False, indent=1)
     log(f"✅ {base}.mp4 · {res['sec']}s · Spark {res['spark_server_s']}s · {res['render_s']}s")
@@ -965,13 +1013,13 @@ def render(ep: dict, out_dir: str = ST.OUT, work: str = ST.WORK, mock: bool = Fa
 
 def main() -> int:
     ap = argparse.ArgumentParser(description="Nine Tails 3D 실화·what-if 쇼츠 렌더")
-    ap.add_argument("episode", help="story_catalog.json 의 id 또는 slug")
+    ap.add_argument("episode", help="카탈로그 id·slug 또는 편 키(트렌드 편: trend_<쓴 날>_<slug>)")
     ap.add_argument("--mock", action="store_true")
     ap.add_argument("--out", default=ST.OUT)
     ap.add_argument("--work", default=ST.WORK)
     ap.add_argument("--procs", type=int)
     a = ap.parse_args()
-    ep = ST.find(a.episode)
+    ep = ST.find(a.episode, trends=ST.load_trends())
     errs = ST.check_episode(ep)
     if errs:
         print("::error::카탈로그 검사 실패 — 렌더하지 않는다\n  " + "\n  ".join(errs))

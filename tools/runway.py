@@ -154,6 +154,9 @@ def nine_tails(today: dt.date) -> list[dict]:
                     refill="gumiho/tales/story_catalog.json episodes 끝에 편 + from(월·수·금 · 사실마다 연 출처 · 마네킹) — "
                            "python gumiho/tales/story.py check",
                     note="판정 pulse_experiments 'nt-relaunch-3d'(12/02) · 렌더는 공개 당일 01:00/03:30/10:00 KST(nt-story.yml)"))
+    out.append(_row(ch, "nt_trend", "매일 트렌드 편(화·목·토·일 21:30 KST — Claude API 가 그날 쓴다 · data/nt-trend)", "open",
+                    refill="없음 — nt-trend-api.yml(trend_api.py)이 매일 한 편(빈 자리가 없거나 맞는 게 없으면 skip)",
+                    note="끄기: 레포 변수 NT_TREND=0 · 판정은 nt-relaunch-3d 에서 카탈로그 편과 비교"))
     enabled = _const(os.path.join(ROOT, "gumiho", "tales", "sleep.py"), "ENABLED")
     out.append(_row(ch, "nt_sleep", "수면판 Sleep Edition(지난 편을 다시 지은 1시간)", "open" if enabled else "off",
                     ended="" if enabled else "10/09 설화 금지로 꺼짐(sleep.ENABLED) — 켜려면 설화 아닌 편으로 spec 을 새로",

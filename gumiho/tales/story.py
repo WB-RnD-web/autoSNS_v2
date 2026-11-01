@@ -38,6 +38,14 @@ DAYS = (0, 2, 4)                      # 월·수·금
 SLOT_UTC = (13, 0)                    # 22:00 KST
 QUIET = ((5, 45), (8, 0))             # KST — 아침 업로드 루틴이 Spark 를 쓴다
 LATE_DAYS = 2                         # 공개일을 놓쳤으면 이틀까지는 늦게라도(지금+2시간) 올린다
+# ★11/01 매일 트렌드 편(trend_api.py — Claude API 가 그날 뜨는 것을 우리 꼴로): 카탈로그 사이 날(화·목·토·일)에 21:30 KST.
+#   data/nt-trend/<쓴 날>.json 을 읽기 전용으로 받아 편성에 합친다. 카탈로그 편과 id·표식·ledger 키가 겹치지 않는다
+#   (id = 쓴 날 YYYYMMDD · 표식 'Trend <쓴 날>' · 키 'trend_<쓴 날>_<slug>'). 맥박이 따로 세게 시각도 다르다(story3d_trend).
+TREND_DIR = os.environ.get("NT_TREND_DIR") or os.path.join(ROOT, "output", "nt_trend")
+TREND_START = dt.date(2026, 11, 5)    # 첫 트렌드 공개(목) — 첫 화(11/4 카탈로그) 다음 날
+TREND_DAYS = (1, 3, 5, 6)             # 화·목·토·일
+TREND_SLOT_UTC = (12, 30)             # 21:30 KST
+TREND_AHEAD = 2                       # 쓴 날 +1~+2일 안에 빈 자리가 없으면 그날은 쓰지 않는다(묵은 트렌드가 쌓이지 않게)
 PLAYLIST = "True Stories & What Ifs | Nine Tails Tales"
 PLAYLIST_DESC = ("Short true stories and what-if questions, retold as faceless 3D reconstructions. "
                  "Every fact is sourced in the description.")
@@ -72,20 +80,61 @@ def episodes(cat: dict | None = None) -> list[dict]:
     return sorted((cat or load())["episodes"], key=lambda e: e["from"])
 
 
-def find(key, cat: dict | None = None) -> dict:
-    for e in episodes(cat):
-        if str(e["id"]) == str(key).lstrip("0") or e["slug"] == key or stem(e) == key:
+def is_trend(e: dict) -> bool:
+    return e.get("kind") == "trend"
+
+
+def load_trends(dir_: str | None = None, quiet_errors: bool = False) -> list[dict]:
+    """data/nt-trend 의 트렌드 편(건너뛴 날·검사 실패는 뺀다)."""
+    import glob
+    out = []
+    for p in sorted(glob.glob(os.path.join(dir_ or TREND_DIR, "20??-??-??.json"))):
+        try:
+            with open(p, encoding="utf-8") as f:
+                e = json.load(f)
+        except (OSError, ValueError):
+            continue
+        if not isinstance(e, dict) or e.get("skip") or not is_trend(e):
+            continue
+        errs = check_episode(e)
+        if errs:
+            if not quiet_errors:
+                print(f"   ✗ 트렌드 편 {os.path.basename(p)} 검사 실패 — 편성에서 뺀다: {errs[:2]}", file=sys.stderr)
+            continue
+        out.append(e)
+    return out
+
+
+def schedule(cat: dict | None = None, trends: list[dict] | None = None) -> list[dict]:
+    """카탈로그(월·수·금 22:00) + 트렌드(화·목·토·일 21:30) — 공개 시각 순."""
+    return sorted(episodes(cat) + list(trends or []), key=slot)
+
+
+def find(key, cat: dict | None = None, trends: list[dict] | None = None) -> dict:
+    key = str(key)
+    for e in schedule(cat, trends):
+        if stem(e) == key or e["slug"] == key or (not is_trend(e) and str(e["id"]) == key.lstrip("0")):
             return e
-    raise KeyError(f"카탈로그에 없는 편: {key}")
+    raise KeyError(f"편성에 없는 편: {key}")
 
 
 def stem(e: dict) -> str:
-    return f"{e['id']:03d}_{e['slug']}"
+    return f"trend_{e['written']}_{e['slug']}" if is_trend(e) else f"{e['id']:03d}_{e['slug']}"
 
 
 def marker(e: dict) -> str:
     """설명란 끝 표식 — ledger 캐시가 날아가도 유튜브에서 같은 편을 찾는다."""
-    return f"Nine Tails Tales · Story {e['id']:03d}"
+    return f"Nine Tails Tales · Trend {e['written']}" if is_trend(e) else f"Nine Tails Tales · Story {e['id']:03d}"
+
+
+def trend_slot(written: dt.date, taken: set) -> dt.date | None:
+    """D일에 쓴 트렌드 편의 공개일 = D+1 이후(첫 트렌드일 전이면 그날부터) 비어 있는 첫 화·목·토·일.
+    TREND_AHEAD 일보다 멀면 None(그날은 쓰지 않는다). 첫 트렌드일 전에 쓴 편은 첫 주(TREND_START+3일) 안이면 받는다."""
+    d = max(written + dt.timedelta(days=1), TREND_START)
+    while d.weekday() not in TREND_DAYS or d in taken:
+        d += dt.timedelta(days=1)
+    limit = max(written + dt.timedelta(days=TREND_AHEAD), TREND_START + dt.timedelta(days=3))
+    return d if d <= limit else None
 
 
 def spoken(e: dict) -> str:
@@ -107,12 +156,26 @@ def check_episode(e: dict) -> list[str]:
         bad("slug 는 소문자·숫자·하이픈")
     try:
         d = dt.date.fromisoformat(e["from"])
-        if d.weekday() not in DAYS:
-            bad(f"from {d} 은 월·수·금이 아니다")
-        if d < START:
-            bad(f"from {d} 은 첫 공개일 {START} 전")
+        if is_trend(e):
+            w = dt.date.fromisoformat(str(e.get("written", "")))
+            if d.weekday() not in TREND_DAYS or d < TREND_START or d <= w:
+                bad(f"트렌드 편 from {d} 은 {TREND_START} 이후 화·목·토·일 · 쓴 날({w}) 뒤")
+            if e["id"] != int(w.strftime("%Y%m%d")):
+                bad("트렌드 편 id 는 쓴 날 YYYYMMDD")
+            tr = e.get("trend") or {}
+            ev = tr.get("evidence") or []
+            if not str(tr.get("why_now", "")).strip() or not str(tr.get("pattern", "")).strip() or not 1 <= len(ev) <= 3 \
+                    or any(not str(x.get("url", "")).startswith("https://") for x in ev):
+                bad("trend: why_now · pattern · evidence 1~3개(https url)")
+        else:
+            if d.weekday() not in DAYS:
+                bad(f"from {d} 은 월·수·금이 아니다")
+            if d < START:
+                bad(f"from {d} 은 첫 공개일 {START} 전")
+            if not isinstance(e["id"], int) or not 1 <= e["id"] <= 999:
+                bad("카탈로그 id 는 1~999(트렌드 편 id 와 안 겹치게)")
     except ValueError:
-        bad(f"from 날짜 형식 {e['from']}")
+        bad(f"from·written 날짜 형식 {e['from']} / {e.get('written')}")
     if e["format"] not in FORMATS:
         bad(f"format 은 {FORMATS}")
     if e["music"] not in MUSIC:
@@ -212,7 +275,7 @@ def check(cat: dict | None = None) -> list[str]:
 # ── 편성 ────────────────────────────────────────────────
 def slot(e: dict) -> dt.datetime:
     d = dt.date.fromisoformat(e["from"])
-    return dt.datetime(d.year, d.month, d.day, *SLOT_UTC, tzinfo=dt.timezone.utc)
+    return dt.datetime(d.year, d.month, d.day, *(TREND_SLOT_UTC if is_trend(e) else SLOT_UTC), tzinfo=dt.timezone.utc)
 
 
 def last_date(cat: dict | None = None) -> dt.date | None:
@@ -247,11 +310,13 @@ def save_ledger(led: dict, path: str = LEDGER):
         json.dump(led, f, ensure_ascii=False, indent=1)
 
 
-def due(now: dt.datetime, led: dict, cat: dict | None = None) -> tuple[dict | None, str]:
-    """지금 만들 편 — 아직 안 올렸고 · 공개일 전날~당일(공개 30분 전까지) · 놓쳤으면 LATE_DAYS 일까지. 이른 편 먼저."""
+def due(now: dt.datetime, led: dict, cat: dict | None = None, trends: list[dict] | None = None) -> tuple[dict | None, str]:
+    """지금 만들 편 — 아직 안 올렸고 · 공개일 전날~당일(공개 30분 전까지) · 놓쳤으면 LATE_DAYS 일까지. 이른 편 먼저.
+    카탈로그와 트렌드 편을 공개 시각 순으로 함께 본다(검수에 걸려 안 올린 트렌드 편 = skipped 도 끝난 것)."""
     today = now.astimezone(KST).date()
-    for e in episodes(cat):
-        if led.get(stem(e), {}).get("short"):
+    for e in schedule(cat, trends):
+        rec = led.get(stem(e), {})
+        if rec.get("short") or rec.get("skipped"):
             continue
         d = dt.date.fromisoformat(e["from"])
         if today < d - dt.timedelta(days=1):
@@ -295,10 +360,10 @@ def on_youtube(yt, mark: str) -> str | None:
     return None
 
 
-def upload(key, out_dir: str = OUT, ledger: str = LEDGER, mode: str = "scheduled") -> int:
+def upload(key, out_dir: str = OUT, ledger: str = LEDGER, mode: str = "scheduled", trends: list[dict] | None = None) -> int:
     sys.path.insert(0, HERE)
     sys.path.insert(0, os.path.join(ROOT, "pipeline"))
-    e = find(key)
+    e = find(key, trends=load_trends() if trends is None else trends)
     errs = check_episode(e)
     if errs:
         print("::error::카탈로그 검사 실패 — 올리지 않는다\n  " + "\n  ".join(errs))
@@ -312,6 +377,11 @@ def upload(key, out_dir: str = OUT, ledger: str = LEDGER, mode: str = "scheduled
     led = load_ledger(ledger)
     if led.get(st, {}).get("short"):
         print(f"⏭️ 이미 올림: {led[st]['short']}")
+        return 0
+    if rm.get("qa_block"):                  # 트렌드 편이 그림 검수에서 두 번 걸렸다 — 올리지 않고 사유를 남긴다
+        led[st] = {"skipped": f"그림 검수 실패: {rm.get('qa_failed')}", "title": e["title"]}
+        save_ledger(led, ledger)
+        print(f"::warning::{st} 그림 검수 실패({rm.get('qa_failed')}) — 올리지 않는다(트렌드 편)")
         return 0
     import upload_tale as UT
     import upload_youtube_novel as U
@@ -327,7 +397,8 @@ def upload(key, out_dir: str = OUT, ledger: str = LEDGER, mode: str = "scheduled
     facts = UT.shorts_facts(rm["video"])
     print(f"   {UT.facts_line(facts)}")
     vid = UT.insert(yt, rm["video"], md, "private", at)     # status_body: containsSyntheticMedia=True · publishAt
-    done = {"short": f"https://youtu.be/{vid}", "title": md["title"], "publish_at": at, "shorts": facts}
+    done = {"short": f"https://youtu.be/{vid}", "title": md["title"], "publish_at": at, "shorts": facts,
+            "kind": e.get("kind", "catalog"), "qa": {k: rm.get(k) for k in ("qa_failed", "qa_fixed", "qa_usd") if k in rm}}
     led[st] = done
     save_ledger(led, ledger)
     print(f"✅ {st} {done['short']} · {'예약 ' + at if at else '비공개'}")
@@ -346,11 +417,11 @@ def upload(key, out_dir: str = OUT, ledger: str = LEDGER, mode: str = "scheduled
 
 
 # ── CLI ─────────────────────────────────────────────────
-def plan_text(cat: dict | None = None) -> str:
+def plan_text(cat: dict | None = None, trends: list[dict] | None = None) -> str:
     rows = []
-    for e in episodes(cat):
+    for e in schedule(cat, trends):
         d = dt.date.fromisoformat(e["from"])
-        rows.append(f"{d:%m/%d}({'월화수목금토일'[d.weekday()]}) 22:00 KST · {e['id']:03d} [{e['format']}] {e['title']} · "
+        rows.append(f"{d:%m/%d}({'월화수목금토일'[d.weekday()]}) {slot(e).astimezone(KST):%H:%M} KST · {stem(e)} [{e['format']}] {e['title']} · "
                     f"출처 {len(e['sources'])} · {len(spoken(e).split())}단어")
     return "\n".join(rows)
 
@@ -358,11 +429,14 @@ def plan_text(cat: dict | None = None) -> str:
 def main() -> int:
     ap = argparse.ArgumentParser(description="Nine Tails 3D 실화·what-if 쇼츠")
     sub = ap.add_subparsers(dest="cmd", required=True)
+    ap.add_argument("--trend-dir", default=TREND_DIR, help="data/nt-trend 를 받은 폴더(읽기 전용)")
     sub.add_parser("check")
     sub.add_parser("plan")
     d = sub.add_parser("due")
     d.add_argument("--now")
     d.add_argument("--ledger", default=LEDGER)
+    ts = sub.add_parser("trend-slot", help="D일에 쓸 트렌드 편의 공개일(빈 자리가 없으면 빈 줄)")
+    ts.add_argument("--day", required=True)
     s = sub.add_parser("seen")
     s.add_argument("episode")
     s.add_argument("--ledger", default=LEDGER)
@@ -380,25 +454,30 @@ def main() -> int:
         for x in errs:
             print(f"   ✗ {x}")
         return 1 if errs else 0
+    trends = load_trends(a.trend_dir)
     if a.cmd == "plan":
-        print(plan_text())
+        print(plan_text(trends=trends))
+        return 0
+    if a.cmd == "trend-slot":
+        d = trend_slot(dt.date.fromisoformat(a.day), {dt.date.fromisoformat(e["from"]) for e in trends})
+        print(d.isoformat() if d else "")
         return 0
     if a.cmd == "due":
         now = dt.datetime.fromisoformat(a.now) if a.now else dt.datetime.now(dt.timezone.utc)
         if now.tzinfo is None:
             now = now.replace(tzinfo=KST)
-        e, why = due(now, load_ledger(a.ledger))
+        e, why = due(now, load_ledger(a.ledger), trends=trends)
         print(f"   · {why}", file=sys.stderr)
         if e and quiet(now):
             print("   · 05:45~08:00 KST — Spark 를 쓰지 않는다(다음 예비 실행이 만든다)", file=sys.stderr)
             return 0
         if e:
-            print(e["id"])
+            print(stem(e))
         return 0
     if a.cmd == "seen":
         sys.path.insert(0, os.path.join(ROOT, "pipeline"))
         import upload_youtube_novel as U
-        e = find(a.episode)
+        e = find(a.episode, trends=trends)
         url = on_youtube(U.get_service(), marker(e))
         if not url:
             print(f"   유튜브에 '{marker(e)}' 없음 — 만든다")
@@ -409,7 +488,7 @@ def main() -> int:
         print(f"⏭️ 이미 올라가 있다: {url}")
         return 0
     if a.cmd == "upload":
-        return upload(a.episode, a.out, a.ledger, a.mode)
+        return upload(a.episode, a.out, a.ledger, a.mode, trends=trends)
     return 1
 
 

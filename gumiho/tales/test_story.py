@@ -217,6 +217,120 @@ ck("읽기 권한만(push 없음) · ledger 는 실패해도 저장 · 받은 �
 ck("렌더 전 유튜브 표식 확인(seen) · 테스트·카탈로그 검사 먼저", wf.find("story.py seen") < wf.find("story_reel.py")
    and wf.find("test_story.py") < wf.find("story_reel.py"))
 
+print("── 9. 트렌드 편 편성(data/nt-trend) ──")
+TR = copy.deepcopy(eps[8])
+TR.update({"id": 20261101, "kind": "trend", "written": "2026-11-01", "from": "2026-11-05", "slug": "rescuer-sixteen-people",
+           "title": "The Rescuer Who Pulled 16 People From a Black Ocean",
+           "trend": {"why_now": "viral rescue", "pattern": "cold open", "evidence": [{"title": "v", "url": "https://n.example/v"}]}})
+ck("트렌드 편 검사 통과 · 카탈로그 규칙과 다른 날(목)·시각(21:30 KST)", ST.check_episode(TR) == []
+   and ST.slot(TR).astimezone(ST.KST).strftime("%a %H:%M") == "Thu 21:30", ST.check_episode(TR))
+ck("트렌드 편은 화·목·토·일만 · 쓴 날 뒤 · id = 쓴 날", any("화·목·토·일" in x for x in ST.check_episode(dict(TR, **{"from": "2026-11-06"})))
+   and any("쓴 날" in x for x in ST.check_episode(dict(TR, written="2026-11-05")))
+   and any("YYYYMMDD" in x for x in ST.check_episode(dict(TR, id=5))))
+ck("카탈로그 id 는 999 이하(트렌드 id 와 안 겹친다)", any("1~999" in x for x in ST.check_episode(dict(eps[0], id=20261101))))
+sch = ST.schedule(cat, [TR])
+nov = [(e["from"], ST.is_trend(e)) for e in sch if e["from"] <= "2026-11-10"]
+ck("11/4~11/10: 수 카탈로그 → 목 트렌드 → 금 카탈로그 → 월 카탈로그(트렌드 한 편만 있을 때)",
+   nov == [("2026-11-04", False), ("2026-11-05", True), ("2026-11-06", False), ("2026-11-09", False)], nov)
+ck("키·표식이 카탈로그와 다르다(ledger·유튜브 표식·캐시 키)", ST.stem(TR) == "trend_2026-11-01_rescuer-sixteen-people"
+   and ST.marker(TR) == "Nine Tails Tales · Trend 2026-11-01" and not any(ST.marker(TR) in ST.marker(e) or ST.marker(e) in ST.marker(TR)
+                                                                         for e in eps))
+ck("캐시 접두어가 서로를 삼키지 않는다(nt-story-work-<키>-)", not any(
+    (f"nt-story-work-{ST.stem(a)}-").startswith(f"nt-story-work-{ST.stem(b)}-") for a in sch for b in sch if a is not b))
+led_c = {ST.stem(e1): {"short": "u"}}
+ck("11/4 03:30: 1편을 올렸으면 다음은 목요일 트렌드 편(11/4 부터 렌더 창)", (ST.due(kst("2026-11-04T03:30"), led_c, cat, [TR])[0] or {})
+   .get("kind") == "trend")
+ck("검수에 걸려 안 올린 트렌드 편(skipped)은 끝난 것으로 본다", (ST.due(kst("2026-11-05T01:00"), dict(led_c, **{ST.stem(TR): {"skipped": "qa"}}),
+                                                       cat, [TR])[0] or {}).get("id") == e2["id"])
+ck("find: 키로 트렌드 편 · 숫자로는 카탈로그만", ST.find(ST.stem(TR), cat, [TR]) is TR and ST.find("1", cat, [TR])["id"] == 1)
+with tempfile.TemporaryDirectory() as td:
+    json.dump(TR, open(os.path.join(td, "2026-11-01.json"), "w", encoding="utf-8"))
+    json.dump({"date": "2026-11-02", "skip": "nothing fits"}, open(os.path.join(td, "2026-11-02.json"), "w", encoding="utf-8"))
+    json.dump(dict(TR, slug="Bad Slug"), open(os.path.join(td, "2026-11-03.json"), "w", encoding="utf-8"))
+    got = ST.load_trends(td, quiet_errors=True)
+    ck("load_trends: 검사 통과한 편만(skip·실패 제외)", [ST.stem(e) for e in got] == [ST.stem(TR)])
+    out = os.path.join(td, "out")
+    os.makedirs(out)
+    json.dump({"video": "x.mp4", "srt": "x.srt", "mock": False, "qa_block": True, "qa_failed": [3]},
+              open(os.path.join(out, f"{ST.stem(TR)}_meta.json"), "w", encoding="utf-8"))
+    lp = os.path.join(td, "led.json")
+    rc = ST.upload(ST.stem(TR), out, lp, trends=[TR])
+    ck("검수에 두 번 걸린 트렌드 편은 올리지 않고 ledger 에 사유(skipped)", rc == 0 and "검수" in ST.load_ledger(lp)[ST.stem(TR)]["skipped"])
+
+print("── 10. 그림 검수(가짜 응답) ──")
+import story_qa as QA  # noqa: E402
+
+
+class FakeQA:
+    def __init__(self, answers):
+        self.answers, self.calls = list(answers), []
+        self.messages = SimpleNamespace(create=self._create)
+
+    def _create(self, **kw):
+        self.calls.append(kw)
+        a = self.answers.pop(0)
+        if isinstance(a, Exception):
+            raise a
+        return SimpleNamespace(content=[SimpleNamespace(type="text", text=json.dumps(a))],
+                               usage=SimpleNamespace(input_tokens=5000, output_tokens=400))
+
+
+from types import SimpleNamespace  # noqa: E402
+if HAVE_PIL:
+    from PIL import Image
+    with tempfile.TemporaryDirectory() as td:
+        def mk(name):
+            p = os.path.join(td, name)
+            Image.new("RGB", (288, 512), (40, 80, 120)).save(p)
+            return p
+        ep_c = eps[6]
+        own = [i for i, s in enumerate(ep_c["shots"]) if "reuse" not in s]
+
+        def assets():
+            return {"img": {str(i): mk(f"i{i}.png") for i in own}, "spark": []}
+        redraws = []
+
+        def redraw(i, text):
+            redraws.append((i, text))
+            return mk(f"r{i}.png")
+        bad1, bad2 = own[1], own[3]
+        first = {"shots": [{"shot": i, "ok": i not in (bad1, bad2), "issues": ["mismatch: hot-air balloon"] if i in (bad1, bad2) else [],
+                            "fix": "a tall thin translucent helium research balloon" if i == bad1 else "a phone with text"} for i in own]}
+        A = assets()
+        fq = FakeQA([first, {"shots": [{"shot": bad1, "ok": True}, {"shot": bad2, "ok": False, "issues": ["text"]}]}])
+        qa = QA.run(ep_c, A, redraw, client=fq)
+        ck("걸린 컷만 다시 그린다 · 고친 프롬프트 사용 · 금지어(phone·text) 든 고침은 원래 프롬프트로",
+           [i for i, _ in redraws] == [bad1, bad2] and redraws[0][1].startswith("a tall thin")
+           and redraws[1][1] == (ep_c["shots"][bad2].get("prompt") or ep_c["shots"][bad2].get("edit")), redraws)
+        ck("두 번째 검수는 다시 그린 컷만 보낸다 · 축소 JPEG + 보여 줘야 할 것", len(fq.calls) == 2
+           and sum(1 for c in fq.calls[1]["messages"][0]["content"] if c["type"] == "image") == 2
+           and fq.calls[0]["messages"][0]["content"][2]["source"]["media_type"] == "image/jpeg")
+        ck("카탈로그 편: 고친 컷은 새 그림 · 남은 컷은 가까운 통과 컷 그림으로 바꿔 올린다(막지 않는다)",
+           qa["fixed"] == [bad1] and qa["failed"] == [bad2] and not qa["block"] and A["img"][str(bad1)].endswith(f"r{bad1}.png")
+           and qa["replaced"] == {str(bad2): QA.nearest_ok(bad2, [i for i in own if i != bad2])}, qa)
+        ck("비용 기록(토큰·달러)", qa["tokens"]["calls"] == 2 and qa["usd"] > 0)
+        redraws.clear()
+        qa_t = QA.run(dict(TR, shots=ep_c["shots"], character=ep_c.get("character")), assets(), redraw,
+                      client=FakeQA([first, {"shots": [{"shot": bad1, "ok": True}, {"shot": bad2, "ok": False}]}]))
+        ck("트렌드 편: 다시 그려도 걸리면 막는다(qa block)", qa_t["block"] and qa_t["failed"] == [bad2])
+        qa_e = QA.run(ep_c, assets(), redraw, client=FakeQA([RuntimeError("overloaded")]))
+        ck("API 오류면 검수 없이 그대로(막지 않는다)", "skipped" in qa_e and not qa_e["block"] and not qa_e["failed"])
+        old = os.environ.pop("ANTHROPIC_API_KEY", None)
+        qa_k = QA.run(ep_c, assets(), redraw)
+        if old is not None:
+            os.environ["ANTHROPIC_API_KEY"] = old
+        ck("키가 없으면 검수 없이 그대로", "ANTHROPIC_API_KEY" in qa_k.get("skipped", "") and not qa_k["block"])
+        part = QA.parse('```json\n{"shots": [{"shot": 0, "ok": false, "issues": ["gore"], "fix": "x"}]}\n```', {0, 1})
+        ck("답 파싱: 코드펜스 OK · 답 없는 컷은 통과로", not part[0]["ok"] and part[1]["ok"] and part[1].get("unanswered"))
+        ck("검수 지시문: 대본 불일치·녹음·글자·잔혹·실제 얼굴 · 부정어 없는 고친 프롬프트", all(
+            w in QA.SYSTEM for w in ("mismatch", "distortion", "text", "gore", "face", "negations")))
+wf2 = open(os.path.join(ROOT, ".github", "workflows", "nt-story.yml"), encoding="utf-8").read()
+ck("nt-story.yml: data/nt-trend 를 읽기만 · NT_TREND_DIR · 렌더에 ANTHROPIC_API_KEY · qa.json 아티팩트",
+   "origin data/nt-trend" in wf2 and "NT_TREND_DIR: output/nt_trend" in wf2 and "ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}" in wf2
+   and "*_qa.json" in wf2 and not [ln for ln in wf2.splitlines() if not ln.strip().startswith("#") and "git" in ln
+                                   and " push" in ln.split(" #")[0]])
+
+
 print()
 if FAIL:
     print(f"❌ 실패 {FAIL}건")
