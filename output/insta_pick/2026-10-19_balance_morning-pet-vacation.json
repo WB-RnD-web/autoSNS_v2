@@ -1,0 +1,61 @@
+{
+ "date": "2026-10-19",
+ "kind": "balance",
+ "slug": "morning-pet-vacation",
+ "headline": [
+  "밸런스 게임",
+  "이번엔 어느 쪽이에요"
+ ],
+ "say_intro": "밸런스 게임, 이번엔 어느 쪽이에요?",
+ "rounds": [
+  {
+   "a": {
+    "label": "평생 아침형",
+    "img": "a bright sunrise over a quiet hill with a steaming mug on a wooden fence"
+   },
+   "b": {
+    "label": "평생 올빼미형",
+    "img": "a dark city window at night with a glowing desk lamp and a crescent moon"
+   },
+   "say": "평생 아침형 인간, 평생 올빼미형 인간."
+  },
+  {
+   "a": {
+    "label": "말하는 고양이",
+    "img": "a fluffy cat sitting on a sofa with a tiny speech bubble shape floating above"
+   },
+   "b": {
+    "label": "말하는 강아지",
+    "img": "a happy golden dog sitting on a rug with a tiny speech bubble shape floating above"
+   },
+   "say": "말하는 고양이, 말하는 강아지."
+  },
+  {
+   "a": {
+    "label": "방학 두 배",
+    "img": "a sunny beach chair with a cold drink and a calendar page flying in the breeze"
+   },
+   "b": {
+    "label": "용돈 두 배",
+    "img": "a cute piggy bank overflowing with shiny golden coins on a pastel table"
+   },
+   "say": "방학이 두 배로 길어지기, 용돈이 두 배로 오르기."
+  }
+ ],
+ "say_outro": "너는 어느 쪽이었어요?",
+ "outro_text": "나는 A·B·?",
+ "caption": "밸런스 게임 ⚖️ 이번엔 어느 쪽이에요",
+ "hashtags": [
+  "#밸런스게임",
+  "#둘중하나",
+  "#골라보세요",
+  "#공감",
+  "#AI그림"
+ ],
+ "bench": {
+  "keyword": "밸런스 게임",
+  "format": "둘 중 하나 고르기 여러 판(밸런스 게임)",
+  "seen": [],
+  "ours": "질문·그림 새로 만듦"
+ }
+}

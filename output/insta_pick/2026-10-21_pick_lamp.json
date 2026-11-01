@@ -1,0 +1,56 @@
+{
+ "date": "2026-10-21",
+ "kind": "pick",
+ "slug": "lamp",
+ "headline": [
+  "조명 하나 골라 봐요",
+  "요즘 내 마음의 불빛"
+ ],
+ "say_intro": "끌리는 조명 하나를 골라 봐요.",
+ "options": [
+  {
+   "img": "a warm yellow table lamp with a round cloth shade glowing softly on a wooden desk, plain cream background",
+   "name": "노란 스탠드",
+   "result": "집중하고 싶어요",
+   "lines": "해야 할 일이 머릿속에서 맴돌아요. 오늘 딱 한 가지만 끝내 봐요.",
+   "say": "1번 노란 스탠드는, 집중하고 싶은 마음이에요."
+  },
+  {
+   "img": "a string of tiny golden fairy lights hanging in a gentle curve over a soft pink wall, simple scene",
+   "name": "꼬마전구",
+   "result": "설레고 싶어요",
+   "lines": "작은 즐거움이 고파요. 좋아하는 노래를 틀고 퇴근길을 돌아가 봐요.",
+   "say": "2번 꼬마전구는, 설레고 싶은 마음이에요."
+  },
+  {
+   "img": "a blue glowing moon shaped night light sitting on a bedside shelf with a dark navy background, simple scene",
+   "name": "달 무드등",
+   "result": "쉬고 싶어요",
+   "lines": "생각보다 많이 지쳐 있어요. 오늘은 일찍 불 끄고 푹 자 봐요.",
+   "say": "3번 달 무드등은, 쉬고 싶은 마음이에요."
+  },
+  {
+   "img": "a red paper lantern glowing warmly with a soft orange halo against a dark green leafy background, simple scene",
+   "name": "붉은 등불",
+   "result": "시작하고 싶어요",
+   "lines": "마음은 이미 정했어요. 미뤄 둔 그 일의 첫 단계를 오늘 해 봐요.",
+   "say": "4번 붉은 등불은, 시작하고 싶은 마음이에요."
+  }
+ ],
+ "say_outro": "몇 번 골랐어요?",
+ "outro_text": "몇 번 골랐어요?",
+ "caption": "끌리는 조명 하나만 골라 봐요 💡 요즘 내 마음이 보여요.",
+ "hashtags": [
+  "#심리테스트",
+  "#성격테스트",
+  "#골라보세요",
+  "#오늘의테스트",
+  "#AI그림"
+ ],
+ "bench": {
+  "keyword": "심리테스트",
+  "format": "그림 넷 중 하나 고르기 → 번호별 결과(그림 고르기형 심리테스트)",
+  "seen": [],
+  "ours": "그림·문구는 새로 만든다 — 꼴만 빌림"
+ }
+}
