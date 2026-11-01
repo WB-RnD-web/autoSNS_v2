@@ -122,6 +122,13 @@ def stem(e: dict) -> str:
     return f"trend_{e['written']}_{e['slug']}" if is_trend(e) else f"{e['id']:03d}_{e['slug']}"
 
 
+def cache_keys(key, trends: list[dict] | None = None) -> tuple[str, str]:
+    """워크플로 캐시 이름 — (stem, 옛 이름). due 는 stem 을 내니 수동 실행도 stem 으로 맞춘다.
+    옛 이름: 카탈로그 편 id 숫자. 11/01 1화 렌더 시험(run 41254007355)이 'nt-story-work-1-' 로 그림을 남겼다."""
+    e = find(key, trends=trends)
+    return stem(e), ("" if is_trend(e) else str(e["id"]))
+
+
 def marker(e: dict) -> str:
     """설명란 끝 표식 — ledger 캐시가 날아가도 유튜브에서 같은 편을 찾는다."""
     return f"Nine Tails Tales · Trend {e['written']}" if is_trend(e) else f"Nine Tails Tales · Story {e['id']:03d}"
@@ -437,6 +444,8 @@ def main() -> int:
     d.add_argument("--ledger", default=LEDGER)
     ts = sub.add_parser("trend-slot", help="D일에 쓸 트렌드 편의 공개일(빈 자리가 없으면 빈 줄)")
     ts.add_argument("--day", required=True)
+    k = sub.add_parser("key", help="캐시 이름: stem 한 줄 + 옛 이름 한 줄(트렌드 편은 빈 줄)")
+    k.add_argument("episode")
     s = sub.add_parser("seen")
     s.add_argument("episode")
     s.add_argument("--ledger", default=LEDGER)
@@ -473,6 +482,10 @@ def main() -> int:
             return 0
         if e:
             print(stem(e))
+        return 0
+    if a.cmd == "key":
+        for k in cache_keys(a.episode, trends=trends):
+            print(k)
         return 0
     if a.cmd == "seen":
         sys.path.insert(0, os.path.join(ROOT, "pipeline"))

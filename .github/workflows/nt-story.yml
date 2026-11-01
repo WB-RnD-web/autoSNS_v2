@@ -82,7 +82,15 @@ jobs:
           else
             E=$(python gumiho/tales/story.py due | head -1)
           fi
+          L=""
+          if [ -n "$E" ]; then
+            # 캐시 이름은 늘 stem(수동 실행에 '1' 을 넣어도 due 와 같은 이름) · 옛 이름 = 카탈로그 id 숫자
+            K=$(python gumiho/tales/story.py key "$E")
+            E=$(echo "$K" | sed -n 1p)
+            L=$(echo "$K" | sed -n 2p)
+          fi
           echo "episode=$E" >> "$GITHUB_OUTPUT"
+          echo "legacy=$L" >> "$GITHUB_OUTPUT"
           echo "대상: '${E:-없음}'"
 
       - name: 시스템 의존성
@@ -123,7 +131,9 @@ jobs:
         with:
           path: output/nt_story/.work
           key: nt-story-work-${{ steps.pick.outputs.episode }}-${{ github.run_id }}
-          restore-keys: nt-story-work-${{ steps.pick.outputs.episode }}-
+          restore-keys: |
+            nt-story-work-${{ steps.pick.outputs.episode }}-
+            nt-story-work-${{ steps.pick.outputs.legacy || 'none' }}-
 
       # 75 = 05:45~08:00 KST 라 Spark 를 멈췄다(다음 예비 실행이 잇는다) — 실패가 아니다
       - name: 렌더(그림 → 비전 검수 → 화면·소리)
