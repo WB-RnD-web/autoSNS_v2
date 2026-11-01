@@ -1,0 +1,331 @@
+{
+ "slug": "deep-sea-rocks-started-smoking",
+ "format": "story",
+ "title": "They Pulled Rocks From the Deep Sea. Then the Rocks Started Smoking.",
+ "description": "In 2022, a robot sub collected 57 rocks from Escanaba Trough, 3,300 meters down off northern California. Back in a USGS lab, two of them heated past 100°C and combusted on their own. The cause was an unstable iron sulfide called marcasite.",
+ "tags": [
+  "deep sea",
+  "spontaneous combustion",
+  "marcasite",
+  "escanaba trough",
+  "ocean science"
+ ],
+ "music": "tension",
+ "style_tail": ", cold deep-sea blue and sterile white laboratory light, cinematic 3D render, epic movie still",
+ "grade": {
+  "contrast": 1.08,
+  "saturation": 0.95,
+  "tint": [
+   0.97,
+   1.0,
+   1.04
+  ]
+ },
+ "character": {
+  "prompt": "an adult human figure with realistic proportions rendered as a smooth featureless matte white mannequin with a blank egg-shaped head and no facial features, wearing a white lab coat, clear safety glasses and blue nitrile gloves, standing at a stainless steel laboratory bench covered with dark metallic rock samples, full body, three-quarter view",
+  "seed": 2211
+ },
+ "shots": [
+  {
+   "say": "This rock from the bottom of the ocean just started smoking.",
+   "edit": "The researcher holds a freshly broken dark metallic rock above the steel bench as thick grey smoke curls up from the cracked surface, harsh overhead lab light.",
+   "move": "hook",
+   "fx": "smoke",
+   "sfx": "hiss",
+   "flash": [
+    0.05
+   ]
+  },
+  {
+   "say": "It came from Escanaba Trough, {3,300 meters|thirty-three hundred meters} deep.",
+   "prompt": "a vast dark deep-sea valley floor covered in soft sediment and rusty metallic rock mounds, shimmering hot water rising from small vents, faint blue light from above",
+   "move": "push_in",
+   "fx": "float",
+   "sfx": "rumble"
+  },
+  {
+   "say": "Almost {200 miles|two hundred miles} off California, two tectonic plates pull apart.",
+   "prompt": "a dramatic cutaway view of the deep Pacific seafloor splitting along a long rift valley, two huge rock plates drifting apart with glowing magma deep below",
+   "move": "pan_right",
+   "fx": "float",
+   "sfx": "rumble"
+  },
+  {
+   "say": "Hot fluids rise, and metals like copper, zinc and iron turn to rock.",
+   "prompt": "a tall hydrothermal vent chimney of brassy metallic rock pouring dark shimmering hot water into the cold deep sea, mineral crusts glinting in a spotlight",
+   "move": "tilt_up",
+   "fx": "float",
+   "sfx": "water"
+  },
+  {
+   "say": "In {2022,|twenty twenty-two,} a robot sub called Jason goes down.",
+   "prompt": "a large boxy white remotely operated underwater vehicle with bright floodlights and steel manipulator claws descending through deep dark blue water, a thick tether cable trailing upward",
+   "move": "push_in",
+   "fx": "float",
+   "sfx": "whoosh"
+  },
+  {
+   "say": "Its robotic claws collect {57|fifty-seven} rock samples.",
+   "prompt": "close-up of a steel robotic claw gripping a rusty dark metallic rock on the seafloor, silt swirling in the floodlight",
+   "move": "push_in",
+   "fx": "dust",
+   "sfx": "thud"
+  },
+  {
+   "say": "Most are loaded with metal sulfides.",
+   "prompt": "macro close-up of a broken rock surface packed with glittering brassy gold metallic crystals, dramatic side light on a dark background",
+   "move": "drift_right",
+   "fx": "none"
+  },
+  {
+   "say": "Back in the lab, the samples are freeze-dried.",
+   "edit": "The researcher slides a tray of dark rock samples into a stainless steel freeze-dryer chamber, cold frosty vapor spilling out.",
+   "move": "drift_left",
+   "fx": "smoke"
+  },
+  {
+   "say": "Two are broken by hand to fit a crusher.",
+   "edit": "The researcher snaps a dark metallic rock apart in gloved hands above an open steel crushing vessel, small fragments falling.",
+   "move": "push_in",
+   "fx": "debris",
+   "sfx": "crash"
+  },
+  {
+   "say": "Before the machine even starts, they heat up and smoke.",
+   "reuse": 0,
+   "focus": [
+    0.5,
+    0.42,
+    1.3
+   ],
+   "move": "punch",
+   "sfx": "hiss",
+   "flash": [
+    0.1
+   ]
+  },
+  {
+   "say": "The temperature shoots past {100 degrees Celsius,|one hundred degrees Celsius,}",
+   "prompt": "a pile of crushed dark metallic rock fragments on a steel lab tray, heavy grey smoke and wavy heat shimmer rising, dim laboratory",
+   "move": "push_in",
+   "fx": "smoke",
+   "sfx": "hiss"
+  },
+  {
+   "say": "hotter than boiling water.",
+   "reuse": 10,
+   "focus": [
+    0.5,
+    0.55,
+    1.25
+   ],
+   "move": "push_in"
+  },
+  {
+   "say": "When it's over, the original samples are completely oxidized.",
+   "prompt": "a small heap of crumbly rusty orange-brown powder on a steel lab tray, thin wisps of smoke, quiet dim laboratory",
+   "move": "pull_out",
+   "fx": "dust"
+  },
+  {
+   "say": "So what made them do it?",
+   "edit": "The researcher leans over a microscope at the bench, a small rusty sample under the lens, blue screen light.",
+   "move": "drift_right",
+   "fx": "none"
+  },
+  {
+   "say": "Not tar or oil hidden inside.",
+   "reuse": 13,
+   "focus": [
+    0.55,
+    0.45,
+    1.25
+   ],
+   "move": "push_in"
+  },
+  {
+   "say": "It's mostly marcasite, an iron sulfide made of incredibly tiny crystals.",
+   "prompt": "an extreme microscopic view of dense sharp blade-shaped brassy metallic crystals, glittering like a miniature city, deep shadows",
+   "move": "orbit",
+   "fx": "float"
+  },
+  {
+   "say": "And it's especially unstable around oxygen.",
+   "reuse": 15,
+   "focus": [
+    0.5,
+    0.5,
+    1.3
+   ],
+   "move": "push_in",
+   "sfx": "fizz"
+  },
+  {
+   "say": "Crush it, and fresh surfaces meet the air.",
+   "prompt": "macro shot of brassy metallic crystals cracking apart into sparkling fragments and fine dust, dark background",
+   "move": "shake",
+   "fx": "debris",
+   "sfx": "crash"
+  },
+  {
+   "say": "It reacts, and that heat drives even more heat.",
+   "reuse": 10,
+   "focus": [
+    0.45,
+    0.5,
+    1.35
+   ],
+   "move": "push_in",
+   "sfx": "heartbeat"
+  },
+  {
+   "say": "Scientists warn this could start sudden fires on ships",
+   "prompt": "a large industrial ship at sea at night, a cargo hold full of dark wet ore with grey smoke rising under deck floodlights, rough dark water",
+   "move": "pull_out",
+   "fx": "smoke",
+   "sfx": "alarm",
+   "flash": [
+    0.1
+   ]
+  },
+  {
+   "say": "if these deep-sea deposits are ever mined.",
+   "reuse": 19,
+   "focus": [
+    0.5,
+    0.6,
+    1.2
+   ],
+   "move": "drift_left"
+  },
+  {
+   "say": "Not every rock down there will do this.",
+   "reuse": 1,
+   "focus": [
+    0.5,
+    0.5,
+    1.2
+   ],
+   "move": "drift_right"
+  },
+  {
+   "say": "But bring up the wrong one, and it can start smoking in your hands.",
+   "reuse": 0,
+   "move": "loop_end"
+  }
+ ],
+ "facts": [
+  {
+   "claim": "Samples came from Escanaba Trough, 3,300 meters deep, almost 200 miles off northern California, at the divergence of two tectonic plates",
+   "src": [
+    2
+   ]
+  },
+  {
+   "claim": "Hydrothermal fluids release metals that precipitate; deposits rich in copper, zinc and iron",
+   "src": [
+    0,
+    1
+   ]
+  },
+  {
+   "claim": "2022 expedition; ROV Jason collected 57 hydrothermal rock samples; most contained metal sulfides as a major mineral",
+   "src": [
+    0,
+    2,
+    3
+   ]
+  },
+  {
+   "claim": "Samples were freeze-dried; the two reactive samples generated noticeable heat and smoke when broken by hand to fit a crushing vessel, before the mechanical crusher started",
+   "src": [
+    3
+   ]
+  },
+  {
+   "claim": "Two samples spontaneously combusted; temperatures above 100 °C (212 °F, past the boiling point of water); original samples completely oxidized",
+   "src": [
+    0,
+    3,
+    4
+   ]
+  },
+  {
+   "claim": "Tar and petroleum ruled out; combusting rocks mostly nanocrystalline marcasite, an iron sulfide especially unstable in the presence of oxygen",
+   "src": [
+    0,
+    1,
+    3
+   ]
+  },
+  {
+   "claim": "Crushing supplies energy to start oxidation, fresh surfaces meet air, oxidation leads to self-heating and further self-heating",
+   "src": [
+    0,
+    1,
+    4
+   ]
+  },
+  {
+   "claim": "Paper: potential to cause rapid onset fires on ships; relevant if SMS deposits are ever mined; not all such deposits will combust",
+   "src": [
+    0,
+    1,
+    3
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "ScienceAlert - Scientists Collected Deep-Sea Rocks. They Spontaneously Caught Fire in The Lab. (2026-10-11)",
+   "url": "https://www.sciencealert.com/scientists-collected-deep-sea-rocks-they-spontaneously-caught-fire-in-the-lab",
+   "used": "2022 samples, above 100 °C, completely oxidized, 57 samples via ROV, most metal sulfides, copper/zinc/iron, tar and petroleum ruled out, marcasite unstable with oxygen, crushing starts oxidation and self-heating, fires on ships quote"
+  },
+  {
+   "title": "USGS - Deep-sea sulfide minerals can spontaneously heat and combust when exposed to air (2026-10-07)",
+   "url": "https://www.usgs.gov/programs/cmhrp/news/deep-sea-sulfide-minerals-can-spontaneously-heat-and-combust-when-exposed-air",
+   "used": "hydrothermal origin of the deposits, nanocrystalline marcasite, further self-heating, hazard if ever mined, not all deposits will combust"
+  },
+  {
+   "title": "USGS - USGS Leads Research Expedition to Deep-sea Escanaba Trough (2022-05-19)",
+   "url": "https://www.usgs.gov/centers/pcmsc/news/usgs-leads-research-expedition-deep-sea-escanaba-trough",
+   "used": "2022 expedition, ROV Jason, almost 200 miles off northern California, 3,300 meters deep, divergence of two tectonic plates"
+  },
+  {
+   "title": "The Northern Miner - Seabed rocks catch fire during lab tests (2026-10-16)",
+   "url": "https://www.northernminer.com/regulatory-issues/seabed-rocks-catch-fire-during-lab-tests/1003895804/",
+   "used": "two of 57, freeze-dried, broken by hand to fit a crushing vessel, heat and smoke before the mechanical crusher started, exceeded 100 C, not petroleum, fires on ships"
+  },
+  {
+   "title": "Nature World News - Deep-Sea Rocks Collected Off Northern California Spontaneously Combusted in a USGS Lab (2026-10-15)",
+   "url": "https://www.natureworldnews.com/articles/73545/20261015/deep-sea-rocks-collected-off-northern-california-spontaneously-combusted-usgs-lab-hazard.htm",
+   "used": "100 °C = 212 °F, past the boiling point of water; crushing exposes fresh surfaces to air"
+  }
+ ],
+ "careful": "No real person is named or shown. The lab worker is a generic, unnamed researcher mannequin. The ROV shots now say 'manipulator claws' and 'robotic claw' instead of 'arms', so they can't be read as a person. The sources describe heat, smoke, combustion and full oxidation but not open flames, so the visuals show only smoke and heat shimmer. The ship-fire shot illustrates the scientists' warning and is not shown as a real event. Deep-sea mining comes up only neutrally ('if ever mined'), with no policy or company angle. The lab event gets no date of its own. The Coast Guard swimmer rescue from the scout list was skipped: the main source would not load, 11 people are still missing, and the story is tied to immigration.",
+ "trend": {
+  "why_now": "A USGS-led study in Scientific Reports came out on 2026-09-28, and USGS put out a release on 2026-10-07. Between 2026-10-11 and 2026-10-16, ScienceAlert, Nature World News and The Northern Miner all ran stories about deep-sea rocks combusting in a lab, so it is within the last 30 days. It's a strange, true deep-sea story with a disaster angle, which suits the channel.",
+  "pattern": "The title follows ScienceAlert's two-sentence headline: a calm setup, then the twist. The hook opens on the twist (a smoking rock in someone's hands), goes back to the seafloor, explains the cause, and loops back to the opening shot.",
+  "evidence": [
+   {
+    "title": "Scientists Collected Deep-Sea Rocks. They Spontaneously Caught Fire in The Lab.",
+    "url": "https://www.sciencealert.com/scientists-collected-deep-sea-rocks-they-spontaneously-caught-fire-in-the-lab",
+    "date": "2026-10-11"
+   },
+   {
+    "title": "Deep-Sea Rocks Collected Off Northern California Spontaneously Combusted in a USGS Lab",
+    "url": "https://www.natureworldnews.com/articles/73545/20261015/deep-sea-rocks-collected-off-northern-california-spontaneously-combusted-usgs-lab-hazard.htm",
+    "date": "2026-10-15"
+   },
+   {
+    "title": "Seabed rocks catch fire during lab tests",
+    "url": "https://www.northernminer.com/regulatory-issues/seabed-rocks-catch-fire-during-lab-tests/1003895804/",
+    "date": "2026-10-16"
+   }
+  ]
+ },
+ "id": 20261101,
+ "kind": "trend",
+ "written": "2026-11-01",
+ "from": "2026-11-05"
+}
