@@ -1,0 +1,69 @@
+{
+ "date": "2026-10-29",
+ "kind": "bm_paper",
+ "src_n": 405,
+ "slug": "chicken-trex-protein",
+ "topic": "닭은 티라노 친척",
+ "headline": [
+  "닭은 티라노랑",
+  "친척일까"
+ ],
+ "lines": [
+  {
+   "type": "hook",
+   "say": "티라노사우루스랑 제일 닮은 동물, 마당에 있음.",
+   "img": "a plain white chicken standing proudly on a sunny green farm yard, bright blue sky, wooden fence in the background"
+  },
+  {
+   "type": "stamp",
+   "stamp": "2008 Science 논문",
+   "say": "2008년에 과학 학술지에 실린 얘기임.",
+   "src": 0,
+   "img": "a bright tidy desk with a plain open science magazine and a magnifying glass, soft daylight, clean pastel background"
+  },
+  {
+   "type": "beat",
+   "big": "68백만 년",
+   "say": "약 68백만 년 전 티라노 단백질 조각을 분석함.",
+   "sub": "약 68백만 년 전 티라노 단백질 조각 분석",
+   "src": 0,
+   "img": "a large pale fossil bone resting on a soft cloth in a bright clean lab, a small magnifying glass beside it, cheerful pastel lighting"
+  },
+  {
+   "type": "beat",
+   "big": "21종 비교",
+   "say": "요즘 동물 21종이랑 비교해 봄.",
+   "sub": "요즘 동물 21종과 비교",
+   "src": 0,
+   "img": "a neat row of cute farm and zoo animals standing together on a sunny green lawn, a chicken and an ostrich at the front, bright daylight"
+  },
+  {
+   "type": "beat",
+   "say": "닭이랑 타조가 악어보다 가깝게 묶였음.",
+   "src": 0,
+   "img": "a chicken and an ostrich standing side by side on a sunny field, a small crocodile resting on the grass far behind them, bright blue sky"
+  },
+  {
+   "type": "punch",
+   "say": "결론. 오늘 저녁 치킨은 공룡 친척임.",
+   "sub": "결론: 오늘 저녁 치킨은 공룡 친척임",
+   "img": "a plain white chicken standing next to a small friendly toy dinosaur on a sunny green hill, bright cheerful daylight"
+  }
+ ],
+ "sources": [
+  "https://news.harvard.edu/gazette/story/2008/04/molecular-analysis-confirms-t-rexs-evolutionary-link-to-birds/",
+  "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:17431180%20AND%20SRC:MED&resultType=core&format=json"
+ ],
+ "caption": "닭이 티라노랑 제일 가깝다니ㅋㅋ",
+ "hashtags": [
+  "#티라노사우루스",
+  "#공룡",
+  "#동물상식",
+  "#쓸데없는과학",
+  "#병맛"
+ ],
+ "bench": {
+  "format": "황당한 질문 + 진짜 숫자 정색 답(10/20 조사)",
+  "seen": []
+ }
+}

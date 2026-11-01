@@ -1,0 +1,60 @@
+{
+ "date": "2026-10-23",
+ "kind": "card",
+ "slug": "guardian-card",
+ "headline": [
+  "카드 한 장 골라 봐요",
+  "요즘 나를 지켜 주는 것"
+ ],
+ "say_intro": "끌리는 카드 한 장을 골라 봐요.",
+ "options": [
+  {
+   "img": "the back of a mystical card with a deep teal and gold wave pattern",
+   "reveal_img": "a small glowing lantern hanging on a branch in a dark quiet forest inside an ornate golden frame",
+   "name": "등불 카드",
+   "result": "길이 보여요",
+   "lines": "헷갈리던 일이 차근차근 풀려요. 오늘은 한 걸음만 가 봐요.",
+   "say": "1번 등불 카드, 길이 보여요."
+  },
+  {
+   "img": "the back of a mystical card with a coral orange and gold flower pattern",
+   "reveal_img": "a cozy knitted blanket and a steaming cup on a wooden table inside an ornate golden frame",
+   "name": "담요 카드",
+   "result": "마음이 따뜻해져요",
+   "lines": "곁에 있는 사람이 든든한 힘이 돼요. 고마운 마음을 한 번 전해 봐요.",
+   "say": "2번 담요 카드, 마음이 따뜻해져요."
+  },
+  {
+   "img": "the back of a mystical card with a violet and gold diamond pattern",
+   "reveal_img": "a sturdy stone bridge over a calm river at dawn inside an ornate golden frame",
+   "name": "다리 카드",
+   "result": "건너갈 수 있어요",
+   "lines": "고민하던 일이 생각보다 가벼워요. 일단 건너 보면 알게 돼요.",
+   "say": "3번 다리 카드, 건너갈 수 있어요."
+  },
+  {
+   "img": "the back of a mystical card with a forest green and gold spiral pattern",
+   "reveal_img": "a small bird perched on a blooming branch under a bright blue sky inside an ornate golden frame",
+   "name": "작은 새 카드",
+   "result": "가벼워져요",
+   "lines": "무거운 생각을 잠깐 내려놓아도 괜찮아요. 오늘은 좋아하는 노래를 들어 봐요.",
+   "say": "4번 작은 새 카드, 가벼워져요."
+  }
+ ],
+ "say_outro": "몇 번 카드 골랐어요?",
+ "outro_text": "몇 번 골랐어요?",
+ "caption": "끌리는 카드 한 장만 골라 봐요 🃏 요즘 나를 지켜 주는 건 뭘까요.",
+ "hashtags": [
+  "#타로",
+  "#오늘의타로",
+  "#카드고르기",
+  "#골라보세요",
+  "#AI그림"
+ ],
+ "bench": {
+  "keyword": "타로",
+  "format": "뒤집힌 카드 고르기 → 카드별 메시지(타로 고르기)",
+  "seen": [],
+  "ours": "카드 그림·메시지 새로 만듦 — 꼴만 빌림"
+ }
+}

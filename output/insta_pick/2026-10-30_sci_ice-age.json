@@ -1,0 +1,84 @@
+{
+ "date": "2026-10-30",
+ "kind": "sci",
+ "src_n": 110,
+ "slug": "ice-age",
+ "hook": [
+  "20,000년 전 빙하기",
+  "맨몸으로 몇 분 버틸까?"
+ ],
+ "say_intro": "약 20,000년 전, 지구는 지금보다 훨씬 추웠어요. 맨몸으로 서면 몇 분이나 버틸까요?",
+ "why": {
+  "sub": "온 세상이 얼음으로 덮였어요",
+  "say": "왜 그렇게 위험할까요?",
+  "img": "a smooth featureless mannequin-like human figure standing on a frozen plain, glowing bones and organs visible inside the body, pale ice around",
+  "view": "xray"
+ },
+ "beats": [
+  {
+   "big": "평균 6.1도 낮음",
+   "sub": "지구 전체 평균 기온",
+   "say": "빙하기 절정엔 지구 평균이 지금보다 6.1도 낮았어요. 지역에 따라 더 추웠고요.",
+   "img": "a globe of the Earth sliced open like a cake, icy blue layers on the outside and a thin glowing warm core inside",
+   "view": "cutaway",
+   "label": "얼어붙은 지구",
+   "pin": [
+    0.5,
+    0.5
+   ],
+   "src": 0
+  },
+  {
+   "big": "얼음 3km 두께",
+   "sub": "북미 대륙 빙상 · 가장 두꺼울 때",
+   "say": "북미 빙상은 가장 두꺼울 때 3km가 넘었어요. 바다도 125m나 낮아졌고요.",
+   "img": "a huge block of ice sheet sliced open like a cake showing thick layered blue ice above dark rock, a quarter wedge cut away",
+   "view": "cutaway",
+   "label": "두꺼운 얼음",
+   "pin": [
+    0.5,
+    0.45
+   ],
+   "src": 2
+  },
+  {
+   "big": "키 3.7m 매머드",
+   "sub": "그 옆을 걷는 사람들",
+   "say": "키 3.7m 털매머드가 살던 땅이에요. 사람들도 그 추위를 살아 냈어요.",
+   "img": "a giant woolly mammoth standing side view on a snowy plain, big ribcage and thick fur layers cut open to show the inside",
+   "view": "xray",
+   "label": "두꺼운 털가죽",
+   "pin": [
+    0.5,
+    0.5
+   ],
+   "src": 3
+  }
+ ],
+ "verdict": {
+  "big": "생존 확률 70%",
+  "say": "맨몸이면 위험하지만, 사람들은 그 시대를 지나 살아남았어요.",
+  "img": "a wide frozen plain with huge ice sheet wall in the distance, a tiny lone dark figure standing in the snow",
+  "view": "scene"
+ },
+ "caption": "20,000년 전 빙하기, 맨몸으로 몇 분 버틸까? 🧊",
+ "hashtags": [
+  "#속이보이는과학",
+  "#과학상식",
+  "#빙하기",
+  "#극한생존",
+  "#매머드"
+ ],
+ "sources": [
+  "https://www.nature.com/articles/s41586-020-2617-x",
+  "https://pubs.usgs.gov/fs/fs2-00/",
+  "https://www.britannica.com/place/Laurentide-Ice-Sheet",
+  "https://www.britannica.com/animal/woolly-mammoth",
+  "https://www.nps.gov/whsa/learn/nature/fossilized-footprints.htm",
+  "https://humanorigins.si.edu/evidence/human-fossils/species/homo-sapiens"
+ ],
+ "bench": {
+  "format": "투시·단면 3D 해설 — 대조 훅 → 왜? → 원인 3단계 → 결과(so.thats.how 'Dishwasher' 3D 단면 808만 · 해외 건강 쇼츠 투명 피부 3D 첫 달 1,000만 · 사용자 10/24)",
+  "seen": []
+ }
+}

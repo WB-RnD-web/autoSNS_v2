@@ -1,0 +1,61 @@
+{
+ "date": "2026-10-14",
+ "kind": "balance",
+ "slug": "money-time-memory",
+ "headline": [
+  "밸런스 게임",
+  "진짜 어려운 세 판"
+ ],
+ "say_intro": "밸런스 게임, 진짜 어려운 세 판이에요.",
+ "rounds": [
+  {
+   "a": {
+    "label": "주 4일 출근",
+    "img": "a calm sunny home desk with a small calendar and a cup of coffee by a window"
+   },
+   "b": {
+    "label": "월급 1.5배",
+    "img": "a neat stack of gold coins and a growing green plant on a wooden table"
+   },
+   "say": "주 4일 출근, 월급 1.5배."
+  },
+  {
+   "a": {
+    "label": "바다 앞 작은 집",
+    "img": "a tiny white cottage facing a calm blue ocean at sunset"
+   },
+   "b": {
+    "label": "도심 넓은 집",
+    "img": "a spacious modern apartment with tall windows overlooking glowing city lights at night"
+   },
+   "say": "바다 앞 작은 집, 도심 넓은 집."
+  },
+  {
+   "a": {
+    "label": "과거로 하루",
+    "img": "an old film camera and faded photographs scattered on a warm wooden table"
+   },
+   "b": {
+    "label": "미래 하루 엿보기",
+    "img": "a glowing crystal ball on a dark table with soft starry light swirling inside"
+   },
+   "say": "과거로 하루 돌아가기, 미래 하루 엿보기."
+  }
+ ],
+ "say_outro": "너는 어느 쪽이었어요?",
+ "outro_text": "나는 A·B·?",
+ "caption": "밸런스 게임 ⚖️ 셋 다 골라 봐요",
+ "hashtags": [
+  "#밸런스게임",
+  "#둘중하나",
+  "#골라보세요",
+  "#공감",
+  "#AI그림"
+ ],
+ "bench": {
+  "keyword": "밸런스 게임",
+  "format": "둘 중 하나 고르기 여러 판(밸런스 게임)",
+  "seen": [],
+  "ours": "검색 API 404로 서칭 못 함 — 견본 꼴만 참고, 질문·그림 새로 만듦"
+ }
+}

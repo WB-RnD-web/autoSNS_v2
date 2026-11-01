@@ -1,0 +1,67 @@
+{
+ "date": "2026-10-31",
+ "kind": "bm_animal",
+ "src_n": 407,
+ "slug": "octopus-call-center",
+ "topic": "문어 콜센터",
+ "animal": "a friendly orange octopus with eight curling arms and big round eyes",
+ "animal_ko": "문어",
+ "headline": [
+  "문어 콜센터",
+  "전화 8대 동시에"
+ ],
+ "lines": [
+  {
+   "type": "hook",
+   "say": "오전 아홉 시. 문어 상담원의 하루가 시작된다.",
+   "img": "a friendly orange octopus with eight curling arms and big round eyes, wearing a headset, sitting at a bright tidy desk in a sunny open office filled with other octopuses, plain white walls, plain desks"
+  },
+  {
+   "type": "fact",
+   "big": "팔 8개",
+   "say": "팔은 8개. 전화도 8대를 동시에 받는다.",
+   "sub": "팔 8개로 전화 8대 동시에",
+   "src": 0,
+   "img": "a friendly orange octopus with eight curling arms and big round eyes, each of its eight arms holding a different plain telephone receiver, bright office, plain white walls"
+  },
+  {
+   "type": "fact",
+   "big": "뇌 9개·심장 3개",
+   "say": "뇌가 9개래. 심장은 3개. 이 일에 딱 맞는 몸이다.",
+   "sub": "뇌 9개래 (NOAA 표현) · 심장 3개",
+   "src": 0,
+   "img": "a friendly orange octopus with eight curling arms and big round eyes with a small glowing dot on each arm and one on the head, bright office, plain white walls"
+  },
+  {
+   "type": "incident",
+   "say": "그런데 오늘. 전화가 한꺼번에 울린다.",
+   "img": "a friendly orange octopus with eight curling arms and big round eyes surrounded by eight ringing plain telephones on a desk, arms spread wide, bright office, plain white walls"
+  },
+  {
+   "type": "quote",
+   "say": "…심장 하나는 아직 괜찮아요.",
+   "rate": -25
+  },
+  {
+   "type": "punch",
+   "say": "그날 기다린 손님은 아무도 없었다.",
+   "img": "a friendly orange octopus with eight curling arms and big round eyes sitting alone at its desk in an empty bright office with telephones all quiet, calm golden evening light through plain windows"
+  }
+ ],
+ "end": "상담은 계속된다.",
+ "sources": [
+  "https://oceanservice.noaa.gov/news/feb26/undersea-creatures-valentines-day.html"
+ ],
+ "caption": "문어 상담원 심장 하나 남음",
+ "hashtags": [
+  "#문어",
+  "#동물다큐",
+  "#콜센터",
+  "#동물상식",
+  "#병맛"
+ ],
+ "bench": {
+  "format": "사람 일 하는 AI 동물 + 정색 다큐 내레이션(10/20 조사)",
+  "seen": []
+ }
+}

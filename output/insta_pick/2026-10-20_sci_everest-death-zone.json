@@ -1,0 +1,64 @@
+{
+ "date": "2026-10-20",
+ "kind": "sci",
+ "src_n": 104,
+ "slug": "everest-death-zone",
+ "hook": ["에베레스트 정상", "산소 없이 몇 분?"],
+ "say_intro": "산소통 없이 에베레스트 꼭대기에 서면, 몇 분이나 움직일 수 있을까요?",
+ "beats": [
+  {
+   "big": "8,848.86m",
+   "sub": "세계에서 가장 높은 정상",
+   "say": "여기는 해발 8,848.86미터, 에베레스트 정상이에요.",
+   "img": "the sharp snow-covered summit of a huge Himalayan peak at dusk, wind-blown snow streaming off the ridge, thin dark-blue sky above the clouds",
+   "src": 0
+  },
+  {
+   "big": "1/3",
+   "sub": "해수면 대비 숨 쉴 산소",
+   "say": "마실 수 있는 산소는 해수면의 3분의 1뿐이에요.",
+   "img": "icy thin air over a snowy mountain ridge, faint breath vapor drifting in freezing light, deep blue sky fading to near black",
+   "src": 0
+  },
+  {
+   "big": "253mmHg",
+   "sub": "해수면은 760mmHg",
+   "say": "정상의 기압은 약 253밀리미터수은주. 해수면은 760이에요.",
+   "img": "a lone metal pressure gauge half buried in snow on a windswept mountain ridge, cold blue light, drifting snow crystals",
+   "src": 1
+  },
+  {
+   "big": "영하 36도",
+   "sub": "1월 평균, 최저 영하 60도",
+   "say": "1월 평균 기온은 영하 36도, 더 내려가면 영하 60도예요.",
+   "img": "frozen rock and thick ice crust on a summit ridge, frost crystals on dark stone, pale cold twilight, blowing snow",
+   "src": 0
+  },
+  {
+   "big": "시속 160km",
+   "sub": "쉬지 않고 부는 바람",
+   "say": "바람은 쉬지 않고 시속 160킬로미터 넘게 몰아쳐요.",
+   "img": "violent wind whipping a long plume of snow off a narrow summit ridge, grey-blue storm sky, no people",
+   "src": 0
+  },
+  {
+   "big": "30초~3분",
+   "sub": "행동할 수 있는 시간",
+   "say": "갑자기 이 높이에 서면 판단하고 움직일 수 있는 시간은 30초에서 3분이에요.",
+   "img": "an hourglass of fine snow standing on a rocky mountain summit, thin icy air, cold dim light, blowing powder snow",
+   "src": 2
+  }
+ ],
+ "verdict": {
+  "big": "버틸 시간 3분 안팎",
+  "say": "실제 등반가는 몇 주 적응하고 산소통을 써요."
+ },
+ "caption": "에베레스트 정상에서 산소 없이, 몇 분 버틸까? 🏔️",
+ "hashtags": ["#에베레스트", "#과학상식", "#극한", "#생존", "#산"],
+ "sources": [
+  "https://www.britannica.com/place/Mount-Everest",
+  "https://www.nejm.org/doi/full/10.1056/NEJMoa0801581",
+  "https://www.faa.gov/documentLibrary/media/Advisory_Circular/AC_61-107B_CHG_1.pdf"
+ ],
+ "bench": {"format": "극한 생존 과학 호기심 릴스 — 질문 훅 → 큰 숫자 박자 → 판정", "seen": []}
+}
