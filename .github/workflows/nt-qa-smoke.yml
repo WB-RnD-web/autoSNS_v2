@@ -1,0 +1,26 @@
+name: (시험) NT 비전 검수 한 번 — api-test/nt-trend 전용
+
+on:
+  push:
+    branches:
+      - "api-test/nt-trend"
+
+permissions:
+  contents: read
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -q anthropic pillow
+      - name: 검수 시험(틀린 그림 4장 · 고친 그림 4장)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python qa_smoke/run.py
