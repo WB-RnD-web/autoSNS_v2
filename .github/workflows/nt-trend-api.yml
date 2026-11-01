@@ -1,0 +1,107 @@
+name: Nine Tails 트렌드 편(API) — 지금 뜨는 것을 3D 실화·what-if 한 편으로(data/nt-trend)
+
+# 2026-11-01 사용자: "대성하려면 매일 트렌드와 히트성을 찾아 따라 하는 형태가 최고". 웹 정찰(scout-api)이 끝나면
+#   gumiho/tales/trend_api.py 가 레이더(Nine Tails 칸)·정찰·이미 쓴 소재를 보고 Claude API + 웹 검색·읽기로 한 편을 쓴다
+#   (story_catalog 스키마 · 사실마다 실제로 연 출처 · 맞는 게 없으면 skip). 공개일은 코드가 정한다(화·목·토·일 21:30 KST —
+#   story.trend_slot, 빈 자리가 없으면 API 를 부르지 않는다). 렌더·업로드는 nt-story.yml 이 data/nt-trend 를 읽어서 한다.
+# 비용: <날짜>_api.json 에 토큰·검색·달러(하루 약 1달러 추정). 크레딧이 바닥나면 거절될 뿐 돈은 안 나간다.
+# 같은 날 두 번째부터는 건너뛴다. ⚠️ main·routine/* 에는 아무것도 올리지 않는다 — data/nt-trend 에 고아 커밋 하나로 강제.
+# 끄기: 레포 변수 NT_TREND=0. 시험: api-test/nt-trend 에 올리면 그 브랜치 코드로 한 번 돈다(업로드 워크플로는 안 본다).
+
+on:
+  workflow_run:
+    workflows: ["웹 정찰(API) — 지금 뜨는 주제·소재 후보 찾기(data/scout)"]
+    types: [completed]
+  schedule:
+    - cron: "20 2 * * *"     # 11:20 KST 예비(정찰이 늦거나 실패한 날)
+  workflow_dispatch:
+  push:
+    branches:
+      - "api-test/nt-trend"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nt-trend-api
+  cancel-in-progress: false
+
+jobs:
+  trend:
+    if: (vars.NT_TREND || '1') != '0' && (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success')
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      TZ: Asia/Seoul
+      PYTHONIOENCODING: utf-8
+      DATA_BRANCH: data/nt-trend
+      NT_TREND_MODEL: ${{ vars.NT_TREND_MODEL || 'claude-opus-5-5' }}
+      NT_TREND_EFFORT: ${{ vars.NT_TREND_EFFORT || 'high' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'push' && github.ref || 'main' }}
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 의존성
+        run: python -m pip install -q anthropic
+
+      - name: 테스트(오프라인)
+        run: python gumiho/tales/test_trend_api.py
+
+      - name: 오늘·데이터 받기
+        id: prep
+        run: |
+          set -euo pipefail
+          DAY=$(date +%F)
+          echo "day=$DAY" >> "$GITHUB_OUTPUT"
+          W="$RUNNER_TEMP/w"
+          mkdir -p "$W/trend" "$RUNNER_TEMP/radar" "$RUNNER_TEMP/scout"
+          if git fetch -q --no-tags --depth=1 origin "+refs/heads/$DATA_BRANCH:refs/remotes/origin/$DATA_BRANCH"; then
+            git archive "origin/$DATA_BRANCH" | tar -x -C "$W/trend"
+          fi
+          if [ -f "$W/trend/$DAY.json" ] && [ "${{ github.event_name }}" != "push" ]; then
+            echo "skip=1" >> "$GITHUB_OUTPUT"
+            echo "::notice::오늘($DAY)은 이미 썼다 — 건너뛴다"
+            exit 0
+          fi
+          git fetch -q --no-tags --depth=1 origin data/trend-radar && git archive FETCH_HEAD | tar -x -C "$RUNNER_TEMP/radar" || true
+          git fetch -q --no-tags --depth=1 origin data/scout && git archive FETCH_HEAD | tar -x -C "$RUNNER_TEMP/scout" || true
+
+      - name: 쓰기(Claude API + 웹 검색)
+        if: steps.prep.outputs.skip != '1'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          set -euo pipefail
+          if [ -z "$ANTHROPIC_API_KEY" ]; then echo "::error::시크릿 ANTHROPIC_API_KEY 없음"; exit 1; fi
+          python gumiho/tales/trend_api.py write --day "${{ steps.prep.outputs.day }}" --radar "$RUNNER_TEMP/radar" \
+            --scout "$RUNNER_TEMP/scout" --trend "$RUNNER_TEMP/w/trend"
+
+      - name: data/nt-trend 에 올리기(고아 커밋 하나 · 강제)
+        if: steps.prep.outputs.skip != '1'
+        run: |
+          set -euo pipefail
+          DAY="${{ steps.prep.outputs.day }}"
+          W="$RUNNER_TEMP/w"
+          {
+            echo "# data/nt-trend — 자동 생성(손대지 않는다)"
+            echo
+            echo "- 만든 곳: .github/workflows/nt-trend-api.yml (main) · gumiho/tales/trend_api.py — 매일 트렌드 편 한 편(또는 skip)"
+            echo "- <쓴 날>.json = story_catalog 스키마의 편(kind trend · from = 공개일 21:30 KST) · nt-story.yml 이 읽어 렌더·업로드"
+            echo "- <쓴 날>_api.json = 모델·시도·토큰·검색·달러"
+            echo "- 마지막 생성: $(date '+%F %H:%M') KST · run ${GITHUB_RUN_ID}"
+          } > "$W/trend/README.md"
+          export GIT_INDEX_FILE="$RUNNER_TEMP/trend.index"
+          export GIT_AUTHOR_NAME="nt-trend-api" GIT_AUTHOR_EMAIL="41898282+github-actions[bot]@users.noreply.github.com"
+          export GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME" GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
+          REPO="$GITHUB_WORKSPACE/.git"
+          ( cd "$W/trend" && git --git-dir="$REPO" --work-tree=. add -A -f . )
+          TREE=$(git --git-dir="$REPO" write-tree)
+          COMMIT=$(git --git-dir="$REPO" commit-tree "$TREE" -m "data: Nine Tails 트렌드 편 $DAY")
+          git --git-dir="$REPO" push -f origin "$COMMIT:refs/heads/$DATA_BRANCH"
+          { echo '```json'; cat "$W/trend/${DAY}_api.json"; echo '```'; } >> "$GITHUB_STEP_SUMMARY" || true

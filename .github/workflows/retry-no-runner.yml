@@ -30,6 +30,7 @@ on:
       - "채널 맥박(API) — 루틴 대신 Claude API 로 해석 쓰기 · 지금은 나란히 비교(data/pulse-api)"
       - "인스타 대본(API) — 루틴 대신 Claude API 로 쓰기 · 지금은 나란히 비교(data/insta-api)"
       - "웹 정찰(API) — 지금 뜨는 주제·소재 후보 찾기(data/scout)"
+      - "Nine Tails 트렌드 편(API) — 지금 뜨는 것을 3D 실화·what-if 한 편으로(data/nt-trend)"
       - "콘텐츠 채우기 PR — refill/** 검사 → 통과하면 PR"
       - "미아 산출물 자동 복구 (claude/* → routine/*)"
       - "발행 감시 (엉뚱한 브랜치로 갔나 · 아예 안 만들어졌나)"

@@ -118,6 +118,8 @@ for want, args in [
     ("pov", (nt, "POV: Something White Is Wiggling in the Rice Field #shorts", "2026-10-20T06:00")),
     ("story_short", (nt, "They Wished for a Daughter. Then the Cow Spoke", "2026-10-03T22:00")),
     ("story3d", (nt, "The Astronaut Whose Helmet Filled With Water", "2026-11-04T22:00", 58)),
+    ("story3d_trend", (nt, "The Rescuer Who Pulled 16 People From a Black Ocean", "2026-11-05T21:30", 61)),
+    ("story3d", (nt, "The Man Lightning Struck Seven Times", "2026-11-06T22:01", 62)),
     ("story3d", (nt, "Could You Survive a Tsunami? vs the Fastest Man", "2026-11-11T22:00", 59)),
     ("episode", (nt, "Korea's Nine-Tailed Fox Is Darker Than Japan's", "2026-10-04T00:00", 900)),
     ("sleep", (nt, "Korean Folk Tales for Sleep · Rain", "2026-10-26T10:00", 7200)),

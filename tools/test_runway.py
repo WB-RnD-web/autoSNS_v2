@@ -37,9 +37,9 @@ by = {r["id"]: r for r in rows}
 
 print("── 줄기 목록 ──")
 WANT = {"wb_daily", "wb_theme", "wb_name", "wb_pulli", "wb_gunghap", "wb_newyear_card", "wb_newyear_series", "wb_lf27",
-        "wb_weekly_lf", "nt_shorts", "nt_longform", "nt_story", "nt_sleep", "insta_pick", "insta_sci", "insta_teardown", "insta_bm",
+        "wb_weekly_lf", "nt_shorts", "nt_longform", "nt_story", "nt_trend", "nt_sleep", "insta_pick", "insta_sci", "insta_teardown", "insta_bm",
         "insta_worker", "insta_danger"}                    # ★10/31 밤 편(c) 두 줄기 — '심해 직장인' · '위험한 진짜 이유'
-ck("세 채널 줄기 전부(왕별이 9 · Nine Tails 4 · 인스타 6) · 확인 실패 없음", set(by) == WANT
+ck("세 채널 줄기 전부(왕별이 9 · Nine Tails 5 · 인스타 6) · 확인 실패 없음", set(by) == WANT
    and not any(r["limit"] == "error" for r in rows), sorted(set(by) ^ WANT) or [r["note"] for r in rows if r["limit"] == "error"])
 ck("한계 종류는 다섯 중 하나 · 채널 이름", all(r["limit"] in RW.LIMITS for r in rows) and all(r["ch"] in RW.CHANNELS for r in rows))
 ck("끝없음: 매일 운세·띠 테마·내 것 찾기·풀이형·골라보기 (마지막 날·남은 날 없음)",
@@ -85,6 +85,8 @@ ck("3D 실화·what-if 쇼츠(nt_story): 목록 · 마지막 = story.last_date()
    and by["nt_story"]["left"] == ST.left(TODAY) and by["nt_story"]["judge"] == D(12, 2)
    and "story_catalog.json" in by["nt_story"]["refill"] and not by["nt_story"]["ended"])
 _late = {r["id"]: r for r in RW.collect(ST.last_date() - dt.timedelta(days=3))}
+ck("매일 트렌드 편(nt_trend)은 끝없음(그날 API 가 쓴다) · 끄는 법 표시", by["nt_trend"]["limit"] == "open"
+   and by["nt_trend"]["days_left"] is None and "NT_TREND=0" in by["nt_trend"]["note"])
 ck("nt_story 는 목록이 바닥나기 전에 재고 경고(RUNWAY)에 뜬다", "nt_story" in {r["id"] for r in RW.low(list(_late.values()))})
 ck("Nine Tails 쉬는 중(NT_PAUSED)이면 쇼츠·롱폼은 꺼짐 · 끝 사유 표시 · 재고 경고에 안 뜬다",
    not RW.NT_PAUSED or (all(by[i]["limit"] == "off" and by[i]["ended"] == RW.NT_PAUSED and by[i]["days_left"] is None

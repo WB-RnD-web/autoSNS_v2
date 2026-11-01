@@ -120,6 +120,10 @@ ck("api-test/pulse 에 반응하는 push 워크플로는 pulse-api.yml 하나",
    reacting("api-test/pulse") == ["pulse-api.yml"], str(reacting("api-test/pulse")))
 ck("api-test/insta 에 반응하는 push 워크플로는 insta-api.yml 하나",
    reacting("api-test/insta") == ["insta-api.yml"], str(reacting("api-test/insta")))
+ck("api-test/nt-trend 에 반응하는 push 워크플로는 nt-trend-api.yml 하나",
+   reacting("api-test/nt-trend") == ["nt-trend-api.yml"], str(reacting("api-test/nt-trend")))
+ck("data/nt-trend 에 반응하는 push 워크플로가 없다(트렌드 편이 올라가도 업로드가 바로 깨지 않는다)",
+   not reacting("data/nt-trend"), str(reacting("data/nt-trend")))
 ck("api-test/scout 에 반응하는 push 워크플로는 scout-api.yml 하나",
    reacting("api-test/scout") == ["scout-api.yml"], str(reacting("api-test/scout")))
 _rp = flows.get("refill-pr.yml", "")
@@ -133,10 +137,11 @@ print("\n── 4. 쓰기 권한은 데이터 브랜치·맥박 PR 브랜치 워
 # 맥박 API 판(pulse-api.yml, 2026-10-31)은 비교 기간 동안 data/pulse-api 에만 쓴다.
 # 인스타 대본 API 판(insta-api.yml, 2026-10-31)도 비교 기간 동안 data/insta-api 에만 쓴다.
 # 웹 정찰(scout-api.yml, 2026-10-31)은 data/scout 에만 쓴다.
+# Nine Tails 트렌드 편(nt-trend-api.yml, 2026-11-01)은 data/nt-trend 에만 쓴다(nt-story.yml 은 읽기만).
 WRITERS = {"trend-radar.yml": "data/trend-radar", "pulse.yml": "refs/heads/$BR", "pulse-api.yml": "data/pulse-api",
-           "insta-api.yml": "data/insta-api", "scout-api.yml": "data/scout"}
+           "insta-api.yml": "data/insta-api", "scout-api.yml": "data/scout", "nt-trend-api.yml": "data/nt-trend"}
 _w = sorted(n for n, t in flows.items() if re.search(r"(?m)^\s*contents:\s*write", t))
-ck("contents: write 는 WRITERS(트렌드 레이더·맥박 PR 브랜치·맥박·인스타 API 판·웹 정찰)에만", _w == sorted(WRITERS), str(_w))
+ck("contents: write 는 WRITERS(트렌드 레이더·맥박 PR 브랜치·맥박·인스타 API 판·웹 정찰·NT 트렌드 편)에만", _w == sorted(WRITERS), str(_w))
 for _wf, _br in WRITERS.items():
     _t = flows.get(_wf, "")
     _p = [ln for ln in _t.splitlines() if "git" in ln and " push" in ln and not ln.strip().startswith("#")]
