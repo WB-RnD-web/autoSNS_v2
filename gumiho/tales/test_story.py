@@ -330,6 +330,11 @@ ck("nt-story.yml: data/nt-trend 를 읽기만 · NT_TREND_DIR · 렌더에 ANTHR
    and "*_qa.json" in wf2 and not [ln for ln in wf2.splitlines() if not ln.strip().startswith("#") and "git" in ln
                                    and " push" in ln.split(" #")[0]])
 
+ck("캐시 이름: 수동 실행에 '1' 을 넣어도 due 와 같은 stem · 옛 이름은 카탈로그 id 숫자(11/01 시험 렌더 그림 잇기)",
+   ST.cache_keys("1") == (ST.stem(ST.find("1")), "1") and ST.cache_keys(ST.stem(ST.find("1"))) == (ST.stem(ST.find("1")), "1"))
+ck("nt-story.yml: 캐시는 stem 으로 · 옛 이름(legacy)도 이어 받기 후보",
+   "story.py key" in wf2 and "nt-story-work-${{ steps.pick.outputs.legacy || 'none' }}-" in wf2)
+
 
 print()
 if FAIL:
