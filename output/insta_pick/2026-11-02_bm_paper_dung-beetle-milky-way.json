@@ -1,0 +1,30 @@
+{
+ "date": "2026-11-02",
+ "kind": "bm_paper",
+ "src_n": 409,
+ "slug": "dung-beetle-milky-way",
+ "topic": "쇠똥구리 은하수 내비",
+ "headline": ["쇠똥구리는 은하수 보고", "똥 굴림 진짜임"],
+ "lines": [
+  {"type": "hook", "say": "쇠똥구리는 은하수 보고 똥 굴림. 진짜임.",
+   "img": "a small dark beetle rolling a round ball along a sandy path under a bright night sky full of stars and a glowing Milky Way, soft starlight"},
+  {"type": "stamp", "stamp": "2013 이그노벨 천문학상", "say": "이거 연구해서 2013년에 상까지 받음.", "sub": "이거 연구해서 2013년에 상까지 받음", "src": 2,
+   "img": "a small beetle standing proudly next to a plain shiny golden trophy cup on a sandy ground under a starry night sky"},
+  {"type": "beat", "big": "눈가리개", "say": "작은 눈가리개까지 씌워 봄. 진짜로.", "src": 1,
+   "img": "a small beetle wearing a tiny plain black blindfold on its head, standing on bright sandy ground in daylight, soft pastel lighting"},
+  {"type": "beat", "big": "별 18개만", "say": "밝은 별 18개만 켰더니 길이 꼬임.", "sub": "밝은 별 18개만 켰더니 길이 꼬임", "src": 1,
+   "img": "a planetarium dome with only a few bright dots of stars lit on a dark ceiling, a small beetle rolling a ball in a wobbly winding path on a flat floor below"},
+  {"type": "beat", "say": "은하수를 길잡이로 쓴 첫 기록이래.", "src": 0,
+   "img": "a small beetle rolling a ball in a perfectly straight line on sand under a glowing Milky Way, calm clear night"},
+  {"type": "punch", "say": "결론. 쇠똥구리는 똥 굴리면서 별 봄. 나보다 낭만 있음.", "sub": "결론: 쇠똥구리는 똥 굴리면서 별 봄. 나보다 낭만 있음",
+   "img": "a small beetle sitting on top of its ball looking up at a dreamy starry sky and glowing Milky Way, bright warm colors"}
+ ],
+ "sources": [
+  "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:23352694%20AND%20SRC:MED&resultType=core&format=json",
+  "https://www.smithsonianmag.com/science-nature/african-dung-beetles-navigate-at-night-using-the-milky-way-5582232/",
+  "https://en.wikipedia.org/wiki/List_of_Ig_Nobel_Prize_winners"
+ ],
+ "caption": "쇠똥구리 낭만 미쳤음ㅋㅋ",
+ "hashtags": ["#쇠똥구리", "#이그노벨상", "#동물상식", "#쓸데없는과학", "#병맛"],
+ "bench": {"format": "황당한 질문 + 진짜 숫자 정색 답(10/20 조사)", "seen": []}
+}

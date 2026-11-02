@@ -1,0 +1,69 @@
+{
+ "date": "2026-10-24",
+ "kind": "sci",
+ "src_n": 109,
+ "slug": "jupiter-atmosphere",
+ "hook": ["목성에 떨어지면", "몇 분 버틸까?"],
+ "say_intro": "목성 구름 위에 떨어지면, 몇 분이나 버틸 수 있을까요?",
+ "beats": [
+  {
+   "big": "영하 108도",
+   "sub": "구름 꼭대기의 온도",
+   "say": "구름 꼭대기는 영하 108도예요.",
+   "img": "the top of giant banded orange and cream gas planet clouds seen from just above, vast swirling storm layers stretching to the horizon, cold pale light",
+   "src": 0
+  },
+  {
+   "big": "2.36배",
+   "sub": "지구보다 센 중력",
+   "say": "몸무게가 2.36배로 느껴져요. 발 디딜 땅은 없고요.",
+   "img": "an endless ocean of thick swirling gas clouds with no solid ground anywhere, dim amber glow from below, heavy dark atmosphere",
+   "src": 0
+  },
+  {
+   "big": "539km/h",
+   "sub": "적도 바람의 최대 속도",
+   "say": "적도에서는 바람이 시속 539킬로미터까지 불어요.",
+   "img": "violent streaks of cream and rust coloured cloud bands torn sideways by extreme wind, fast motion blur, dramatic dark sky",
+   "src": 1
+  },
+  {
+   "big": "89.8%",
+   "sub": "공기의 대부분은 수소",
+   "say": "공기의 89.8%는 수소예요. 숨 쉴 산소는 없어요.",
+   "img": "a thin hazy layer of pale gas glowing faintly in dark space, a single empty glass flask floating in front of swirling clouds",
+   "src": 0
+  },
+  {
+   "big": "58분",
+   "sub": "탐사선이 버틴 시간",
+   "say": "1995년 갈릴레오 탐사선은 58분 동안 신호를 보냈어요.",
+   "img": "a small white parachute carrying a round metal science probe drifting down through dense orange gas clouds, dim light",
+   "src": 3
+  },
+  {
+   "big": "22.7기압",
+   "sub": "탐사선이 마지막에 만난 압력",
+   "say": "22.7기압에 약 156도까지 올라가고서야 신호가 끊겼어요.",
+   "img": "a dented metal probe sinking into dark glowing red-orange dense gas, heat haze, deep murky atmosphere",
+   "src": 4
+  }
+ ],
+ "verdict": {
+  "big": "생존 확률 0%",
+  "say": "목성에는 밟고 설 표면이 없어요."
+ },
+ "caption": "목성에 떨어지면 몇 분 버틸까? 🪐",
+ "hashtags": ["#우주", "#목성", "#과학상식", "#행성", "#생존"],
+ "sources": [
+  "https://nssdc.gsfc.nasa.gov/planetary/factsheet/jupiterfact.html",
+  "https://science.nasa.gov/jupiter/jupiter-facts/",
+  "https://www.csb.gov/assets/1/20/sb-nitrogen-6-11-03.pdf",
+  "https://science.nasa.gov/mission/galileo-jupiter-atmospheric-probe/",
+  "https://doi.org/10.1029/98JE01766"
+ ],
+ "bench": {
+  "format": "우주 과학 호기심 릴스 — 질문 훅 → 큰 숫자 박자 → 판정",
+  "seen": []
+ }
+}

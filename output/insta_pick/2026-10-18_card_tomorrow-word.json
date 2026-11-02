@@ -1,0 +1,46 @@
+{
+ "date": "2026-10-18",
+ "kind": "card",
+ "slug": "tomorrow-word",
+ "headline": ["카드 한 장 골라 봐요", "내일의 나에게 한마디"],
+ "say_intro": "끌리는 카드 한 장을 골라 봐요.",
+ "options": [
+  {
+   "img": "the back of a mystical card with a deep purple and gold symmetrical star pattern",
+   "reveal_img": "a small lantern glowing warmly on a quiet forest path at dusk inside an ornate golden frame",
+   "name": "등불 카드",
+   "result": "천천히 가도 돼요",
+   "lines": "앞이 안 보여도 한 걸음 앞은 보여요. 내일은 속도보다 방향이에요.",
+   "say": "1번 등불 카드, 천천히 가도 돼요."
+  },
+  {
+   "img": "the back of a mystical card with a coral orange and gold sun ray pattern",
+   "reveal_img": "a colorful kite flying high in a bright blue sky over a green field inside an ornate golden frame",
+   "name": "연 카드",
+   "result": "가볍게 던져 봐요",
+   "lines": "고민하던 걸 내일 한 번 가볍게 시도해 봐요. 바람이 도와줘요.",
+   "say": "2번 연 카드, 가볍게 던져 봐요."
+  },
+  {
+   "img": "the back of a mystical card with a teal and gold wave pattern",
+   "reveal_img": "a small wooden boat resting on a calm turquoise sea at sunrise inside an ornate golden frame",
+   "name": "배 카드",
+   "result": "흐름을 믿어 봐요",
+   "lines": "애쓰지 않아도 풀리는 하루예요. 일정 하나는 비워 둬요.",
+   "say": "3번 배 카드, 흐름을 믿어 봐요."
+  },
+  {
+   "img": "the back of a mystical card with a soft pink and gold flower pattern",
+   "reveal_img": "a warm cup of cocoa with a folded blanket on a sunny windowsill inside an ornate golden frame",
+   "name": "코코아 카드",
+   "result": "나를 챙겨 줘요",
+   "lines": "내일은 나한테 다정한 날이에요. 좋아하는 간식 하나 챙겨요.",
+   "say": "4번 코코아 카드, 나를 챙겨 줘요."
+  }
+ ],
+ "say_outro": "몇 번 카드 골랐어요?",
+ "outro_text": "몇 번 골랐어요?",
+ "caption": "끌리는 카드 한 장만 골라 봐요 🃏 내일의 나에게 필요한 한마디예요.",
+ "hashtags": ["#타로", "#오늘의타로", "#카드고르기", "#골라보세요", "#AI그림"],
+ "bench": {"keyword": "타로", "format": "뒤집힌 카드 고르기 → 카드별 메시지(타로 고르기)", "seen": [], "ours": "카드 그림·메시지 새로 만듦 — 꼴만 빌림"}
+}

@@ -1,0 +1,67 @@
+{
+ "date": "2026-10-28",
+ "kind": "bm_paper",
+ "src_n": 404,
+ "slug": "cat-is-liquid",
+ "topic": "고양이 액체설",
+ "headline": [
+  "고양이는 고체일까",
+  "액체일까"
+ ],
+ "lines": [
+  {
+   "type": "hook",
+   "say": "고양이는 액체인가. 이걸 진지하게 따진 사람이 있음.",
+   "img": "a fluffy cat curled up perfectly inside a round glass bowl on a sunny wooden kitchen table, bright daylight"
+  },
+  {
+   "type": "stamp",
+   "stamp": "2017 이그노벨 물리학상",
+   "say": "물리학자가 따졌고, 상까지 받음.",
+   "src": 0,
+   "img": "a cute cat sitting proudly on a sunny windowsill, a plain shiny golden trophy cup beside it, bright blue sky outside"
+  },
+  {
+   "type": "beat",
+   "big": "2014년 논문",
+   "say": "논문 제목은 고양이의 유동학. 2014년에 나왔음.",
+   "sub": "논문 제목: 고양이의 유동학 · 2014년",
+   "src": 0,
+   "img": "a bright tidy desk with a plain open notebook and a pencil, a calm cat sitting beside it like a tiny professor, soft daylight"
+  },
+  {
+   "type": "beat",
+   "say": "액체는 그릇 모양에 맞춰 변하는 물질임.",
+   "src": 1,
+   "img": "clear water filling a round glass jar on a sunny table, a small cat watching it curiously, bright pastel light"
+  },
+  {
+   "type": "beat",
+   "say": "고양이도 시간만 주면 그릇 모양이 됨.",
+   "src": 1,
+   "img": "a cat settled snugly into a small square cardboard box so that it fills every corner, plain brown box, sunny living room floor"
+  },
+  {
+   "type": "punch",
+   "say": "결론. 고양이는 시간만 주면 액체임.",
+   "sub": "결론: 고양이는 시간만 주면 액체임",
+   "img": "a cat spread out like a soft puddle over a round cushion in warm sunlight, bright cozy room, plain white walls"
+  }
+ ],
+ "sources": [
+  "https://www.ens-lyon.fr/en/node/350483",
+  "https://www.pbs.org/newshour/science/answering-the-question-that-won-me-the-ig-nobel-prize-are-cats-liquid"
+ ],
+ "caption": "고양이는 액체였다ㅋㅋ",
+ "hashtags": [
+  "#고양이",
+  "#이그노벨상",
+  "#동물상식",
+  "#쓸데없는과학",
+  "#병맛"
+ ],
+ "bench": {
+  "format": "황당한 질문 + 진짜 숫자 정색 답(10/20 조사)",
+  "seen": []
+ }
+}
