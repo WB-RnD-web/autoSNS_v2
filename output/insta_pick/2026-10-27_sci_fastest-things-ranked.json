@@ -1,0 +1,67 @@
+{
+ "date": "2026-10-27",
+ "kind": "sci",
+ "src_n": 207,
+ "slug": "fastest-things-ranked",
+ "hook": ["시속 61,000km", "이게 느린 편이라고?"],
+ "say_intro": "보이저 1호는 시속 약 61,000km로 태양계를 떠나요. 그런데 이게 느린 편이라고요?",
+ "why": {
+  "sub": "더 빠른 게 셋이나 있어요",
+  "say": "왜냐고요? 더 빠른 게 있어요.",
+  "img": "a small space probe with a big dish antenna flying in deep space, cut open to show its inner parts",
+  "view": "cutaway"
+ },
+ "beats": [
+  {
+   "big": "107,000km/h",
+   "sub": "태양 둘레를 도는 지구",
+   "say": "지구는 태양 둘레를 시속 약 107,000km로 돌아요.",
+   "img": "planet Earth cut open like a cake with a quarter wedge cut away, glowing orbit ring around it",
+   "view": "cutaway",
+   "label": "지구",
+   "pin": [0.5, 0.5],
+   "src": 1,
+   "value": 107000
+  },
+  {
+   "big": "700,000km/h",
+   "sub": "파커 태양 탐사선",
+   "say": "파커 탐사선은 가장 가까울 때 시속 약 700,000km예요.",
+   "img": "a small probe with a flat heat shield flying near a glowing sun, sliced open to show inner instruments",
+   "view": "cutaway",
+   "label": "열 방패",
+   "pin": [0.5, 0.35],
+   "src": 2,
+   "value": 700000
+  },
+  {
+   "big": "10.8억km/h",
+   "sub": "빛 · 1.08 billion",
+   "say": "빛은 시속 약 10.8억km로 달려요. 압도적이에요.",
+   "img": "a single bright beam of light streaking across dark space leaving a long glowing trail",
+   "view": "scene",
+   "src": 4,
+   "value": 1080000000
+  }
+ ],
+ "verdict": {
+  "big": "빛이 압도적 1위",
+  "say": "그래도 햇빛이 지구까지 오는 데 약 8분 걸려요.",
+  "img": "a glowing sun on the left, Earth on the right, a beam of light crossing the space between them",
+  "view": "scene"
+ },
+ "caption": "시속 61,000km가 느린 편이라고? 🚀",
+ "hashtags": ["#속이보이는과학", "#과학상식", "#보이저1호", "#빛의속도", "#우주"],
+ "sources": [
+  "https://science.nasa.gov/mission/voyager/voyager-1/",
+  "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html",
+  "https://science.nasa.gov/mission/parker-solar-probe/",
+  "https://science.nasa.gov/sun/facts/",
+  "https://physics.nist.gov/cgi-bin/cuu/Value?c",
+  "https://ssd.jpl.nasa.gov/astro_par.html"
+ ],
+ "bench": {
+  "format": "투시·단면 3D 해설 — 대조 훅 → 왜? → 원인 3단계 → 결과(so.thats.how 'Dishwasher' 3D 단면 808만 · 해외 건강 쇼츠 투명 피부 3D 첫 달 1,000만 · 사용자 10/24)",
+  "seen": []
+ }
+}

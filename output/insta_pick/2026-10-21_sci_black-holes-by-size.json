@@ -1,0 +1,28 @@
+{
+ "date": "2026-10-21",
+ "kind": "sci",
+ "src_n": 202,
+ "slug": "black-holes-by-size",
+ "hook": ["블랙홀 크기 순위", "1등은 태양 몇 개?"],
+ "say_intro": "블랙홀 중에 제일 무거운 건 태양 몇 개만큼일까요?",
+ "beats": [
+  {"big": "태양 21개", "sub": "처음 확인된 블랙홀, 백조자리 X-1", "say": "처음 확인된 블랙홀은 질량이 태양 약 21개만큼이에요.", "img": "a small dark sphere ringed by a thin glowing orange disk of gas, deep black space with faint stars, cinematic", "src": 0, "value": 21},
+  {"big": "태양 33개", "sub": "우리 은하 최대 항성 블랙홀", "say": "약 2,000광년 밖 가이아 BH3는 태양 33개 질량이에요.", "img": "a dark round void bending starlight around its edge, scattered stars stretched into arcs, deep space", "src": 1, "value": 33},
+  {"big": "태양 430만 개", "sub": "우리 은하 중심, 궁수자리 A*", "say": "우리 은하 한가운데엔 태양 430만 개 질량이 있어요.", "img": "the bright dense center of a spiral galaxy with a tiny black core, swirling golden stars, dark space", "src": 2, "value": 4300000},
+  {"big": "태양 54억 개", "sub": "최초로 촬영된 블랙홀, M87*", "say": "사진으로 찍힌 첫 블랙홀은 태양 54억 개 질량이에요.", "img": "a giant glowing orange ring of hot gas around a perfectly round black center, deep space", "src": 2, "value": 5400000000},
+  {"big": "태양 600억 개", "sub": "가장 무거운 축, TON 618", "say": "TON 618은 태양 600억 개가 넘는 걸로 추정돼요.", "img": "an enormous blazing quasar glare with a vast black core at its center, jets of light across dark space", "src": 2, "value": 60000000000}
+ ],
+ "verdict": {
+  "big": "지구는 지름 2cm",
+  "say": "지구가 블랙홀이 되려면 반지름 약 9밀리미터까지 눌려야 해요."
+ },
+ "caption": "블랙홀 크기 순위, 1등은 태양 600억 개? 🕳️",
+ "hashtags": ["#블랙홀", "#우주", "#과학상식", "#천문학", "#신기한사실"],
+ "sources": [
+  "https://research-repository.uwa.edu.au/en/publications/cygnus-x-1-contains-a-21solar-mass-black-holeimplications-for-mas/",
+  "https://www.eso.org/public/news/eso2408/",
+  "https://svs.gsfc.nasa.gov/14335",
+  "https://www.einstein-online.info/en/?p=4213"
+ ],
+ "bench": {"format": "우주 블랙홀 질량 비교 릴스 — 질문 훅 → 작은 것에서 큰 것 순서 → 반전 판정", "seen": []}
+}

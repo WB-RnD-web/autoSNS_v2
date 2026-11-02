@@ -1,0 +1,33 @@
+{
+ "date": "2026-10-16",
+ "kind": "sci",
+ "src_n": 201,
+ "slug": "deep-sea-creatures-by-size",
+ "hook": ["심해 생물 크기", "누가 제일 클까?"],
+ "say_intro": "심해 생물 크기를 작은 순서로 세워 보면, 제일 큰 건 누구일까요?",
+ "beats": [
+  {"big": "12cm", "sub": "심해아귀 암컷, 약 12cm", "say": "심해아귀 암컷은 약 12센티미터예요.", "img": "a small dark anglerfish with a faint glowing lure drifting in pitch-black deep ocean water, dramatic rim light", "src": 0, "value": 0.12},
+  {"big": "30cm", "sub": "흡혈오징어, 약 30cm", "say": "흡혈오징어는 약 30센티미터까지 자라요.", "img": "a deep red cephalopod with webbed arms floating in black deep water, soft blue glow, drifting particles", "src": 1, "value": 0.3},
+  {"big": "46cm", "sub": "자이언트 등각류, 약 46cm", "say": "자이언트 등각류는 약 46센티미터까지 커요.", "img": "a large pale armored crustacean resting on grey silt of the deep seafloor, dim blue light", "src": 2, "value": 0.46},
+  {"big": "4.2m", "sub": "남극하트오징어, 4.2m", "say": "남극하트오징어 표본은 4.2미터였어요.", "img": "a huge squid silhouette gliding through dark open ocean, faint beam of light from above, marine snow", "src": 3, "value": 4.2},
+  {"big": "6.4m", "sub": "그린란드상어, 약 6.4m", "say": "그린란드상어는 약 6.4미터까지 자라요.", "img": "a massive grey shark swimming slowly in cold dark deep water, dim blue light, drifting particles", "src": 4, "value": 6.4},
+  {"big": "13m", "sub": "대왕오징어 암컷, 약 13m", "say": "대왕오징어 암컷은 긴 촉완까지 약 13미터예요.", "img": "an enormous squid with long trailing tentacles in the black deep ocean, single beam of light from above", "src": 5, "value": 13}
+ ],
+ "verdict": {
+  "big": "1위 거대관해파리",
+  "say": "추정 150피트. 가장 긴 동물로 보여요."
+ },
+ "caption": "심해 생물 크기, 누가 제일 클까? 🦑",
+ "hashtags": ["#심해", "#과학상식", "#바다", "#심해생물", "#신기한사실"],
+ "sources": [
+  "https://fishesoftexas.org/taxa/melanocetus-johnsonii",
+  "https://www.mbari.org/animal/vampire-squid/",
+  "https://oceanexplorer.noaa.gov/?p=13197",
+  "https://www.tepapa.govt.nz/discover-collections/read-watch-play/science/colossal-squid/colossal-squid-te-papa/how-big-colossal",
+  "https://www.floridamuseum.ufl.edu/discover-fish/species-profiles/greenland-shark/",
+  "https://collections.tepapa.govt.nz/topic/1240",
+  "https://schmidtocean.org/new-species-discovered-during-exploration-of-abyssal-deep-sea-canyons-off-ningaloo/",
+  "https://www.fisheries.noaa.gov/species/blue-whale"
+ ],
+ "bench": {"format": "심해 생물 크기 비교 릴스 — 질문 훅 → 작은 것부터 큰 숫자 박자 → 1위 판정", "seen": []}
+}

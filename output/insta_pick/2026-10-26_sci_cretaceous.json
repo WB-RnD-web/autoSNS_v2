@@ -1,0 +1,82 @@
+{
+ "date": "2026-10-26",
+ "kind": "sci",
+ "src_n": 103,
+ "slug": "cretaceous",
+ "hook": [
+  "공룡 시대 한복판",
+  "몇 분 버틸까?"
+ ],
+ "say_intro": "눈앞에 티라노사우루스가 있다면 얼마나 버틸까요?",
+ "why": {
+  "sub": "걷기만 해도 무서운 상대예요",
+  "say": "왜 위험할까요?",
+  "img": "a huge predatory theropod dinosaur seen from the side in a prehistoric forest, big skull and rows of teeth, strong ribcage inside",
+  "view": "xray"
+ },
+ "beats": [
+  {
+   "big": "길이 13m",
+   "sub": "티라노사우루스",
+   "say": "눈앞의 티라노사우루스는 길이가 약 13미터예요.",
+   "img": "a giant tyrannosaurus skeleton inside a translucent body seen from the side, long tail and huge skull",
+   "view": "xray",
+   "label": "거대한 두개골",
+   "pin": [
+    0.25,
+    0.35
+   ],
+   "src": 0
+  },
+  {
+   "big": "시속 약 20km",
+   "sub": "아마 걷기만 했어요",
+   "say": "달리진 못하고 걷기만 했을 가능성이 커요. 시속 약 20km예요.",
+   "img": "a large dinosaur hind leg with thick leg bones glowing inside, walking stride on soil",
+   "view": "xray",
+   "label": "다리뼈",
+   "pin": [
+    0.5,
+    0.6
+   ],
+   "src": 2
+  },
+  {
+   "big": "최대 34,522N",
+   "sub": "무는 힘 · 추정치",
+   "say": "하지만 무는 힘은 최대 34,522뉴턴으로 추정돼요.",
+   "img": "a dinosaur jaw sliced open like a cake, huge teeth and thick jaw bone inside",
+   "view": "cutaway",
+   "label": "턱뼈",
+   "pin": [
+    0.5,
+    0.5
+   ],
+   "src": 0
+  }
+ ],
+ "verdict": {
+  "big": "생존 확률 25%",
+  "say": "여긴 하루가 23.5시간, 한 해가 372일인 세상이에요."
+ },
+ "caption": "공룡 시대에 떨어지면 몇 분 버틸까? 🦖",
+ "hashtags": [
+  "#속이보이는과학",
+  "#과학상식",
+  "#티라노사우루스",
+  "#공룡",
+  "#생존"
+ ],
+ "sources": [
+  "https://www.nature.com/articles/s41598-017-02161-w",
+  "https://peerj.com/articles/3420/",
+  "https://www.smithsonianmag.com/smart-news/fierce-t-rex-was-walker-not-sprinter-180964094/",
+  "https://news.agu.org/press-release/ancient-shell-shows-days-were-half-hour-shorter-70-million-years-ago/",
+  "https://science.nasa.gov/earth/deep-impact-and-the-mass-extinction-of-species-65-million-years-ago/",
+  "https://www.calacademy.org/explore-science/pinpointing-date-of-impact"
+ ],
+ "bench": {
+  "format": "투시·단면 3D 해설 — 대조 훅 → 왜? → 원인 3단계 → 결과",
+  "seen": []
+ }
+}
