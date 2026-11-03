@@ -1,0 +1,29 @@
+{
+ "date": "2026-10-23",
+ "kind": "sci",
+ "src_n": 206,
+ "slug": "tallest-mountains-solar-system",
+ "hook": ["태양계 산 높이 순위", "제일 높은 산은?"],
+ "say_intro": "태양계에서 제일 높은 산은 몇 킬로미터일까요?",
+ "beats": [
+  {"big": "8.8km", "sub": "에베레스트, 해발 기준", "say": "에베레스트 정상은 해발 약 8.8킬로미터예요.", "img": "a lone snow-covered mountain peak under a dark blue sky above the clouds, cold light, cinematic", "src": 0, "value": 8.848},
+  {"big": "10.2km", "sub": "마우나케아, 바닥부터 재면", "say": "바다 밑 바닥부터 재면 마우나케아가 10.2킬로미터 넘어요.", "img": "a huge dark volcano rising from the ocean with its lower slopes under deep blue water, dramatic light", "src": 0, "value": 10.21},
+  {"big": "11.5km", "sub": "금성의 맥스웰 몬테스", "say": "금성 최고봉 맥스웰 몬테스는 높이 11.5킬로미터예요.", "img": "a rugged mountain ridge on a hot orange hazy alien planet, thick yellow clouds, cinematic", "src": 1, "value": 11.5},
+  {"big": "15km", "sub": "소행성 베스타의 산", "say": "소행성 베스타엔 분화구 바닥에서 약 15킬로미터 솟은 산이 있어요.", "img": "a towering grey peak rising from the floor of a giant crater on a rocky asteroid, black sky with stars", "src": 2, "value": 15},
+  {"big": "22km", "sub": "화성의 올림포스 산", "say": "화성 올림포스 산은 평균 고도가 약 22킬로미터예요.", "img": "a colossal gently sloping red volcano with a wide summit crater on a dusty Mars horizon, pale pink sky", "src": 3, "value": 22}
+ ],
+ "verdict": {
+  "big": "애리조나만 한 밑면",
+  "say": "올림포스 산의 밑면은 미국 애리조나주만큼 넓어요."
+ },
+ "caption": "태양계에서 제일 높은 산, 몇 km일까? 🏔️",
+ "hashtags": ["#우주", "#태양계", "#과학상식", "#화성", "#신기한사실"],
+ "sources": [
+  "https://oceanservice.noaa.gov/facts/highestpoint.html",
+  "https://science.nasa.gov/photojournal/venus-lakshmi-planum-and-maxwell-montes",
+  "https://science.nasa.gov/photojournal/impressive-mountain-tops-on-vesta",
+  "https://www.esa.int/Science_Exploration/Space_Science/Mars_Express/Olympus_Mons_-_the_caldera_in_close-up",
+  "https://science.nasa.gov/mars/facts/"
+ ],
+ "bench": {"format": "우주 산 높이 비교 릴스 — 질문 훅 → 작은 것에서 큰 것 순서 → 반전 판정", "seen": []}
+}

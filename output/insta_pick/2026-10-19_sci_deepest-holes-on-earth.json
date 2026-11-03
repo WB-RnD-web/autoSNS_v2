@@ -1,0 +1,29 @@
+{
+ "date": "2026-10-19",
+ "kind": "sci",
+ "src_n": 203,
+ "slug": "deepest-holes-on-earth",
+ "hook": ["지구에서 가장 깊은", "구멍은 어디일까?"],
+ "say_intro": "지구에서 사람이 판 가장 깊은 구멍은 얼마나 깊을까요?",
+ "beats": [
+  {"big": "1.2km", "sub": "가장 깊은 노천 광산, 빙엄 캐니언", "say": "미국 유타의 구리 광산은 깊이 1.2킬로미터가 넘어요.", "img": "a vast terraced open-pit mine seen from above, huge stepped rock walls descending into shadow, dusty haze", "src": 0, "value": 1200},
+  {"big": "2,212m", "sub": "가장 깊은 동굴 중 하나", "say": "코카서스의 동굴은 2,212미터까지 내려간 기록이 있어요.", "img": "a narrow dark cave shaft descending endlessly, wet rock walls lit by a single faint beam, mist", "src": 1, "value": 2212},
+  {"big": "3,740m", "sub": "가장 깊은 광산, 음포넹", "say": "남아프리카 금광은 지하 3,740미터까지 파고 들어가요.", "img": "a rough rock tunnel deep underground with glowing work lamps fading into darkness, dust in the air", "src": 2, "value": 3740},
+  {"big": "10,935m", "sub": "바다에서 가장 깊은 곳", "say": "바다에서 가장 깊은 챌린저 해연은 10,935미터예요.", "img": "the pitch-black floor of the deepest ocean trench, fine grey silt, drifting marine snow in one faint beam of light", "src": 3, "value": 10935},
+  {"big": "12,262m", "sub": "사람이 판 가장 깊은 구멍", "say": "러시아 콜라 시추공은 곧장 아래로 12,262미터예요.", "img": "a small drilling rig standing alone on a snowy northern plain at dusk, steel tower, cold blue light", "src": 4, "value": 12262}
+ ],
+ "verdict": {
+  "big": "폭은 고작 23cm",
+  "say": "가장 깊은 구멍은 머리도 안 들어가는 폭이에요."
+ },
+ "caption": "지구에서 가장 깊은 구멍, 폭이 고작 23cm? 🕳️",
+ "hashtags": ["#지구", "#과학상식", "#콜라시추공", "#심해", "#신기한사실"],
+ "sources": [
+  "https://www.earthdata.nasa.gov/news/worldview-image-archive/bingham-canyon-mine-usa",
+  "https://www.nationalgeographic.com/adventure/article/flood-escape-deepest-cave-veryovkina-abkhazia",
+  "https://www.harmony.co.za/operations/south-africa/underground/mponeng",
+  "https://oceanservice.noaa.gov/facts/oceandepth.html",
+  "https://www.scientificamerican.com/article/how-deep-is-the-deepest-hole-in-the-world"
+ ],
+ "bench": {"format": "지구 깊이 비교 릴스 — 질문 훅 → 작은 것에서 큰 것 순서 → 반전 판정", "seen": []}
+}
