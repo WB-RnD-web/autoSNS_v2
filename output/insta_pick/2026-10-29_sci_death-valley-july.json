@@ -1,0 +1,85 @@
+{
+ "date": "2026-10-29",
+ "kind": "sci",
+ "src_n": 108,
+ "slug": "death-valley-july",
+ "hook": [
+  "지면 온도 94도",
+  "물 없이 몇 시간 버틸까?"
+ ],
+ "say_intro": "데스밸리 땅 위는 94도까지 찍혔어요. 물 없이 걸으면 몸은 어떻게 될까요?",
+ "why": {
+  "sub": "땀은 계속 나가는데 물은 없어요",
+  "say": "왜 오래 못 버틸까요?",
+  "img": "a smooth featureless mannequin-like human figure standing on cracked dry desert salt flat under a blazing sun, glowing bones and organs visible inside the body",
+  "view": "xray"
+ },
+ "beats": [
+  {
+   "big": "낮 평균 47도",
+   "sub": "한여름 평균 최고기온",
+   "say": "한여름 낮 평균 최고기온은 47도, 땅 위는 94도까지 올랐어요.",
+   "img": "a thick slab of cracked desert ground sliced open like a cake showing hot glowing layers, a tiny dark figure standing on top",
+   "view": "cutaway",
+   "label": "달궈진 땅",
+   "pin": [
+    0.5,
+    0.6
+   ],
+   "src": 1
+  },
+  {
+   "big": "시간당 2리터",
+   "sub": "일할 때 땀 손실 최대",
+   "say": "걸으면 땀이 시간당 최대 2리터. 체중 8~10%가 빠지면 어지러워요.",
+   "img": "a smooth featureless mannequin-like human figure walking, translucent glass-like skin, glowing blue water level draining inside the torso",
+   "view": "xray",
+   "label": "줄어드는 수분",
+   "pin": [
+    0.5,
+    0.5
+   ],
+   "src": 3
+  },
+  {
+   "big": "체온 40도 넘음",
+   "sub": "열사병 기준",
+   "say": "체온이 40도를 넘으면 열사병이에요. 땀도 멈출 수 있어요.",
+   "img": "a smooth featureless mannequin-like human figure kneeling, glass-like transparent torso with glowing red-hot heart and brain in the center",
+   "view": "xray",
+   "label": "달아오른 몸",
+   "pin": [
+    0.5,
+    0.4
+   ],
+   "src": 4
+  }
+ ],
+ "verdict": {
+  "big": "생존 확률 2%",
+  "say": "극한 더위에서 움직이면 몇 시간 만에 탈수와 과열로 위험해질 수 있어요.",
+  "img": "a wide empty desert valley under a harsh white sun, a tiny lone dark figure far away",
+  "view": "scene"
+ },
+ "caption": "지면 94도, 물 없이 몇 시간 버틸까? 🔥",
+ "hashtags": [
+  "#속이보이는과학",
+  "#과학상식",
+  "#데스밸리",
+  "#극한생존",
+  "#열사병"
+ ],
+ "sources": [
+  "https://www.nps.gov/deva/learn/nature/weather-and-climate.htm",
+  "https://www.nps.gov/deva/planyourvisit/safety.htm",
+  "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13140192/fullTextXML",
+  "https://medlineplus.gov/ency/article/000056.htm",
+  "https://www.cdc.gov/niosh/heat-stress/about/illnesses.html",
+  "https://www.nps.gov/deva/planyourvisit/weather.htm",
+  "https://www.scientificamerican.com/article/how-long-can-the-average/"
+ ],
+ "bench": {
+  "format": "투시·단면 3D 해설 — 대조 훅 → 왜? → 원인 3단계 → 결과(so.thats.how 'Dishwasher' 3D 단면 808만 · 해외 건강 쇼츠 투명 피부 3D 첫 달 1,000만 · 사용자 10/24)",
+  "seen": []
+ }
+}
