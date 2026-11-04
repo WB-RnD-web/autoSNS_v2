@@ -1,0 +1,23 @@
+{
+ "date": "2026-10-27",
+ "kind": "bm_animal",
+ "src_n": 403,
+ "slug": "raccoon-night-shift",
+ "topic": "라쿤 편의점 야간 알바",
+ "animal": "a plump raccoon with a black eye mask, soft grey fur and a bushy ringed tail",
+ "animal_ko": "라쿤",
+ "headline": ["라쿤 야간 알바", "솜사탕 사건"],
+ "lines": [
+  {"type":"hook","say":"새벽 두 시. 라쿤의 편의점 야간 알바가 시작된다.","img":"a bright clean convenience store interior at night with a plain counter, behind the counter a plump raccoon with a black eye mask, soft grey fur and a bushy ringed tail wearing a plain green apron, plain white walls"},
+  {"type":"fact","big":"4~6개","say":"라쿤의 꼬리 줄무늬는 4개에서 6개.","sub":"꼬리 줄무늬는 4~6개","src":1,"img":"close view of the bushy ringed tail of a plump raccoon with a black eye mask, soft grey fur and a bushy ringed tail swaying behind a plain store counter, plain white walls"},
+  {"type":"fact","say":"라쿤은 야행성이라, 밤이 제일 바쁘다.","sub":"라쿤은 야행성","src":0,"img":"a plump raccoon with a black eye mask, soft grey fur and a bushy ringed tail stocking plain colorful snack boxes on a bright store shelf at night, plain white walls"},
+  {"type":"incident","say":"그때 손님이 솜사탕을 샀다. 그리고 물그릇에 담갔다.","sub":"솜사탕을 물그릇에 퐁당","img":"a plump raccoon with a black eye mask, soft grey fur and a bushy ringed tail standing at the counter dipping a fluffy pink cotton candy into a clear water bowl, the pink fluff dissolving in the water, bright store light"},
+  {"type":"quote","say":"…씻었는데 없어졌어요.","rate":-25},
+  {"type":"punch","say":"그날 밤 솜사탕은 하나도 안 팔렸다.","img":"a plump raccoon with a black eye mask, soft grey fur and a bushy ringed tail sitting behind a plain store counter looking at an empty paper cone and a bowl of pink water, calm quiet night light"}
+ ],
+ "end": "야간 알바는 계속된다.",
+ "sources": ["https://www.pa.gov/agencies/pgc/wildlife/discover-pa-wildlife/raccoon","https://www.nwf.org/Educational-Resources/Wildlife-Guide/Mammals/Raccoon"],
+ "caption": "씻었는데 없어졌대 솜사탕이",
+ "hashtags": ["#라쿤","#동물다큐","#야간알바","#동물상식","#병맛"],
+ "bench": {"format":"사람 일 하는 AI 동물 + 정색 다큐 내레이션(10/20 조사)","seen":[]}
+}

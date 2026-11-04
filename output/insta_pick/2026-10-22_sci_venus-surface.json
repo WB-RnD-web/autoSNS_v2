@@ -1,0 +1,67 @@
+{
+ "date": "2026-10-22",
+ "kind": "sci",
+ "src_n": 105,
+ "slug": "venus-surface",
+ "hook": ["금성 표면에 서면", "몇 분 버틸까?"],
+ "say_intro": "금성 표면에 내리면, 몇 분이나 버틸 수 있을까요?",
+ "beats": [
+  {
+   "big": "92바",
+   "sub": "지구의 약 93배 압력",
+   "say": "금성 표면 압력은 92바예요. 지구의 약 93배죠.",
+   "img": "a barren orange-brown rocky plain on a hostile planet under thick dense yellowish clouds, dim heavy light, jagged volcanic rocks",
+   "src": 0
+  },
+  {
+   "big": "3,000피트",
+   "sub": "그 넘는 물속과 같은 힘",
+   "say": "3,000피트가 넘는 물속에서 받는 힘과 같아요.",
+   "img": "thick swirling sulfur-yellow clouds pressing down over a dim rocky horizon, heavy hazy atmosphere, orange glow",
+   "src": 1
+  },
+  {
+   "big": "1/92",
+   "sub": "몸속 공기가 줄어드는 크기",
+   "say": "몸속 공기 공간은 92분의 1 크기로 쪼그라들어요.",
+   "img": "a small white balloon shrunk into a tiny wrinkled ball in a dim orange hazy atmosphere, dramatic side light",
+   "src": 0
+  },
+  {
+   "big": "464°C",
+   "sub": "납도 녹는 온도",
+   "say": "평균 기온은 약 464도. 납도 녹는 뜨거움이에요.",
+   "img": "a lump of grey metal melting into a glowing puddle on dark volcanic rock, intense orange heat shimmer, hazy sky",
+   "src": 1
+  },
+  {
+   "big": "96.5%",
+   "sub": "공기 대부분이 이산화탄소",
+   "say": "공기의 96.5%가 이산화탄소예요. 숨 쉴 공기가 없어요.",
+   "img": "dense heavy gas swirling low over a cracked rocky ground, thick amber haze, dim sunless sky",
+   "src": 0
+  },
+  {
+   "big": "127분",
+   "sub": "가장 오래 버틴 착륙선",
+   "say": "소련의 베네라 13호 착륙선은 2시간 7분, 127분을 버텼어요.",
+   "img": "a small battered metal landing probe sitting on a rocky orange plain under thick amber clouds, dim heavy light",
+   "src": 2
+  }
+ ],
+ "verdict": {
+  "big": "생존 확률 0%",
+  "say": "해가 지려면 117일을 기다려야 해요."
+ },
+ "caption": "금성 표면에 서면, 몇 분 버틸까? 🔥",
+ "hashtags": ["#금성", "#우주", "#과학상식", "#행성", "#생존"],
+ "sources": [
+  "https://nssdc.gsfc.nasa.gov/planetary/factsheet/venusfact.html",
+  "https://science.nasa.gov/venus/venus-facts/",
+  "https://nssdc.gsfc.nasa.gov/imgcat/html/object_page/v13_vg261_262.html"
+ ],
+ "bench": {
+  "format": "우주 과학 호기심 릴스 — 질문 훅 → 큰 숫자 박자 → 판정",
+  "seen": []
+ }
+}

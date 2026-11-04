@@ -1,0 +1,67 @@
+{
+ "date": "2026-10-30",
+ "kind": "bm_animal",
+ "src_n": 406,
+ "slug": "sloth-group-project",
+ "topic": "나무늘보 조별과제",
+ "animal": "a shaggy brown three-toed sloth with a sleepy smile and long curved claws",
+ "animal_ko": "나무늘보",
+ "headline": [
+  "조별과제 자료조사",
+  "나무늘보 담당"
+ ],
+ "lines": [
+  {
+   "type": "hook",
+   "say": "조별과제 마감 당일. 자료 조사 담당 나무늘보가 출발한다.",
+   "img": "a bright cozy forest clearing with a tree trunk, a shaggy brown three-toed sloth with a sleepy smile and long curved claws hugging the trunk and slowly reaching one arm out, soft daylight, plain green leaves"
+  },
+  {
+   "type": "fact",
+   "big": "1.8~2.4미터",
+   "say": "평균 속도는 분당 약 1.8에서 2.4미터.",
+   "sub": "땅에선 분당 약 1.8~2.4미터",
+   "src": 0,
+   "img": "a bright forest floor with plain dirt path, a shaggy brown three-toed sloth with a sleepy smile and long curved claws crawling slowly forward on the ground, soft daylight"
+  },
+  {
+   "type": "fact",
+   "big": "7일",
+   "say": "그마저도 나무에서 내려오는 건 약 7일에 한 번.",
+   "sub": "나무에서 내려오는 건 약 7일에 한 번",
+   "src": 1,
+   "img": "a tall tree in a bright forest, a shaggy brown three-toed sloth with a sleepy smile and long curved claws climbing down the trunk very slowly, soft daylight, plain green leaves"
+  },
+  {
+   "type": "incident",
+   "say": "팀원들이 묻는다. 자료는 어디까지 왔어요.",
+   "img": "a bright forest clearing, a shaggy brown three-toed sloth with a sleepy smile and long curved claws hanging from a low branch, soft golden light, plain green leaves"
+  },
+  {
+   "type": "quote",
+   "say": "…지금 가고 있어요.",
+   "rate": -30
+  },
+  {
+   "type": "punch",
+   "say": "발표는 다음 학기에 했다.",
+   "img": "a shaggy brown three-toed sloth with a sleepy smile and long curved claws sitting calmly on a tree branch in warm evening light, plain green leaves, peaceful forest"
+  }
+ ],
+ "end": "에너지는 아껴 쓰는 중.",
+ "sources": [
+  "https://www.guinnessworldrecords.com/world-records/70459-slowest-mammal",
+  "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:24452028%20AND%20SRC:MED&resultType=core&format=json"
+ ],
+ "caption": "나무늘보 조별과제 만나면 이럼",
+ "hashtags": [
+  "#나무늘보",
+  "#동물다큐",
+  "#조별과제",
+  "#동물상식",
+  "#병맛"
+ ],
+ "bench": {
+  "format": "사람 일 하는 AI 동물 + 정색 다큐 내레이션"
+ }
+}
