@@ -1,0 +1,66 @@
+{
+ "date": "2026-11-04",
+ "kind": "sci",
+ "src_n": 204,
+ "slug": "storms-of-the-solar-system",
+ "hook": ["태풍 팁 2,200km", "행성 폭풍은 얼마나?"],
+ "say_intro": "지구 최대 태풍은 약 2,200킬로미터였어요. 그럼 행성 폭풍은 얼마나 클까요?",
+ "why": {
+  "sub": "지구 태풍은 상대도 안 돼요",
+  "say": "왜 이렇게 차이 날까요?",
+  "img": "a glowing planet cut open like a cake showing swirling storm layers inside",
+  "view": "cutaway"
+ },
+ "beats": [
+  {
+   "big": "약 2,200km",
+   "sub": "지구 최대 태풍 팁 · 강풍 범위",
+   "say": "1979년 태풍 팁은 강풍 범위가 약 2,200킬로미터였어요.",
+   "img": "a huge hurricane spiral over a blue ocean planet, a quarter wedge cut away showing the calm eye and rising clouds inside",
+   "view": "cutaway",
+   "label": "태풍의 눈",
+   "pin": [0.5, 0.5],
+   "src": 0,
+   "value": 2200
+  },
+  {
+   "big": "16,350km",
+   "sub": "목성 대적점 · 2017년",
+   "say": "목성 대적점은 폭이 16,350킬로미터, 지구의 1.3배예요.",
+   "img": "Jupiter with its giant red oval storm in the center, sliced open like a cake showing swirling cloud layers",
+   "view": "cutaway",
+   "label": "대적점",
+   "pin": [0.5, 0.5],
+   "src": 2,
+   "value": 16350
+  },
+  {
+   "big": "약 30,000km",
+   "sub": "토성 북극 육각형 제트",
+   "say": "토성 북극의 육각형 제트기류는 지름이 약 30,000킬로미터예요.",
+   "img": "Saturn's north pole seen from above with a giant six-sided hexagon of clouds, a wedge cut away showing the layers below",
+   "view": "cutaway",
+   "label": "육각형",
+   "pin": [0.5, 0.45],
+   "src": 3,
+   "value": 30000
+  }
+ ],
+ "verdict": {
+  "big": "지구가 쏙 들어가요",
+  "say": "1800년대 대적점은 길이 약 41,000km. 지금도 지구가 들어가요.",
+  "img": "a huge red oval storm on Jupiter with a small blue Earth fitting inside it",
+  "view": "scene"
+ },
+ "caption": "지구 최대 태풍도 행성 폭풍 앞에선 작아요 🌀",
+ "hashtags": ["#속이보이는과학", "#과학상식", "#목성", "#토성", "#우주"],
+ "sources": [
+  "https://www.aoml.noaa.gov/hrd/tcfaq/E5.html",
+  "https://www.jpl.nasa.gov/images/pia02245-neptunes-blue-green-atmosphere/",
+  "https://www.jpl.nasa.gov/news/nasas-juno-spacecraft-spots-jupiters-great-red-spot",
+  "https://www.jpl.nasa.gov/news/nasas-cassini-spacecraft-obtains-best-views-of-saturn-hexagon/",
+  "https://science.nasa.gov/missions/hubble/hubble-shows-that-jupiters-great-red-spot-is-smaller-than-ever-seen-before",
+  "https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html"
+ ],
+ "bench": {"format": "투시·단면 3D 해설 — 대조 훅 → 왜? → 원인 3단계 → 결과(크기 비교)", "seen": []}
+}

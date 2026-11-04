@@ -1,0 +1,69 @@
+{
+ "date": "2026-11-02",
+ "kind": "sci",
+ "src_n": 113,
+ "slug": "sun-corona",
+ "hook": ["태양 코로나 200만도", "우주복 없이 서면?"],
+ "say_intro": "태양 코로나는 200만도. 우주복 없이 들어가면 몇 초 버틸까요?",
+ "why": {
+  "sub": "뜨거운 가스 때문이 아니에요",
+  "say": "왜 못 버틸까요?",
+  "img": "a smooth featureless mannequin-like human figure floating in space near a blazing sun, glowing lungs in the center of the chest",
+  "view": "xray"
+ },
+ "beats": [
+  {
+   "big": "1,000만 배 희박",
+   "sub": "열을 나를 입자가 적어요",
+   "say": "코로나는 태양 표면보다 약 1,000만 배 희박해서 열이 잘 안 전해져요.",
+   "img": "a quarter wedge cut away from a glowing sun showing a thin pale halo of sparse particles around a bright surface",
+   "view": "cutaway",
+   "label": "희박한 코로나",
+   "pin": [0.5, 0.35],
+   "src": 2
+  },
+  {
+   "big": "햇빛 475배",
+   "sub": "지구 궤도보다 훨씬 눈부셔요",
+   "say": "파커 탐사선이 가장 가까울 때 태양은 지구 궤도보다 약 475배 밝아요.",
+   "img": "a small space probe with a round heat shield facing a huge blazing sun, probe body sliced open like a cake",
+   "view": "cutaway",
+   "label": "탐사선",
+   "pin": [0.5, 0.5],
+   "src": 3
+  },
+  {
+   "big": "9~11초",
+   "sub": "진공에서 의식이 먼저 끊겨요",
+   "say": "진공에선 약 9~11초만 의식이 남고, 혀의 물이 끓기 시작해요.",
+   "img": "a smooth featureless mannequin-like human figure in empty space with glowing lungs and veins visible inside",
+   "view": "xray",
+   "label": "폐",
+   "pin": [0.5, 0.42],
+   "src": 4
+  }
+ ],
+ "verdict": {
+  "big": "생존 확률 0%",
+  "say": "그래도 파커 탐사선은 시속 692,000km로 코로나를 지나갔어요.",
+  "img": "a small space probe flying past a huge glowing sun with a thick round carbon heat shield, shield sliced open like a cake",
+  "view": "cutaway",
+  "label": "열 방패",
+  "pin": [0.5, 0.5]
+ },
+ "caption": "태양 코로나에 우주복 없이 서면? 200만도 ☀️",
+ "hashtags": ["#속이보이는과학", "#과학상식", "#태양", "#코로나", "#우주"],
+ "sources": [
+  "https://science.nasa.gov/blogs/parker-solar-probe/2024/12/20/parker-solar-probe-begins-record-setting-closest-approach-to-the-sun/",
+  "https://science.nasa.gov/sun/facts/",
+  "https://spaceplace.nasa.gov/sun-corona/en/",
+  "https://physics.aps.org/articles/v14/176",
+  "https://www.nasa.gov/wp-content/uploads/2023/05/dressing-for-altitude-nov-2017.pdf",
+  "https://science.nasa.gov/mission/parker-solar-probe/",
+  "https://science.nasa.gov/missions/parker-solar-probe/10-things-to-know-about-parker-solar-probe/"
+ ],
+ "bench": {
+  "format": "투시·단면 3D 해설 — 대조 훅 → 왜? → 원인 3단계 → 결과(so.thats.how 'Dishwasher' 3D 단면 808만 · 해외 건강 쇼츠 투명 피부 3D 첫 달 1,000만 · 사용자 10/24)",
+  "seen": []
+ }
+}

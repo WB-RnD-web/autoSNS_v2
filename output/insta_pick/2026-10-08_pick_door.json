@@ -1,0 +1,60 @@
+{
+ "date": "2026-10-08",
+ "kind": "pick",
+ "slug": "door",
+ "headline": [
+  "끌리는 문 하나 골라 봐요",
+  "지금 나한테 필요한 것"
+ ],
+ "say_intro": "끌리는 문 하나를 골라 봐요.",
+ "options": [
+  {
+   "img": "an old cozy wooden cottage door with a small warm lantern glowing beside it and green ivy leaves",
+   "name": "나무 문",
+   "result": "쉼이 필요해요",
+   "lines": "요즘 너무 달렸어요. 이번 주엔 아무것도 안 하는 하루를 꼭 넣어 봐요.",
+   "say": "1번 나무 문은, 지금 쉼이 필요해요."
+  },
+  {
+   "img": "a round garden arch door covered in pink and peach flowers with two small butterflies",
+   "name": "꽃 문",
+   "result": "설렘이 필요해요",
+   "lines": "같은 하루가 반복돼서 지쳤어요. 처음 가 보는 카페 하나면 충분해요.",
+   "say": "2번 꽃 문은, 설렘이 필요해요."
+  },
+  {
+   "img": "a white wooden door standing open on a sandy beach with a calm turquoise sea and soft clouds behind it",
+   "name": "바다 문",
+   "result": "정리가 필요해요",
+   "lines": "머릿속이 꽉 찼어요. 미뤄 둔 생각 딱 하나만 오늘 끝내 봐요.",
+   "say": "3번 바다 문은, 정리가 필요해요."
+  },
+  {
+   "img": "a deep purple door decorated with tiny glowing stars and a crescent moon shaped golden handle",
+   "name": "별빛 문",
+   "result": "용기가 필요해요",
+   "lines": "하고 싶은 건 이미 정해져 있어요. 망설이던 그 연락, 오늘 해 봐요.",
+   "say": "4번 별빛 문은, 용기가 필요해요."
+  }
+ ],
+ "say_outro": "몇 번 골랐어요?",
+ "outro_text": "몇 번 골랐어요?",
+ "caption": "끌리는 문 하나만 골라 봐요 🚪 지금 나한테 필요한 게 보여요.\n몇 번 골랐는지 댓글로 남겨 줘요!",
+ "hashtags": [
+  "#심리테스트",
+  "#성격테스트",
+  "#골라보세요",
+  "#오늘의테스트",
+  "#힐링",
+  "#AI그림"
+ ],
+ "bench": {
+  "keyword": "심리테스트",
+  "format": "그림 넷 중 하나 고르기 → 번호별 결과(그림 고르기형 심리테스트)",
+  "seen": [
+   "mindpicklab 그림 속 강아지 정신연령 테스트 948만",
+   "silhouette_e_ 빵 고르기 성격 867만"
+  ],
+  "ours": "그림·문구는 새로 만든다 — 꼴만 빌림"
+ }
+}
