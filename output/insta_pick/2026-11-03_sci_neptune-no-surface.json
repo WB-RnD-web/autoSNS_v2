@@ -1,0 +1,86 @@
+{
+ "date": "2026-11-03",
+ "kind": "sci",
+ "src_n": 114,
+ "slug": "neptune-no-surface",
+ "hook": [
+  "영하 201도 바람 속",
+  "해왕성에 떨어지면?"
+ ],
+ "say_intro": "해왕성 구름 위는 영하 201도. 맨몸으로 떨어지면 어떻게 될까요?",
+ "why": {
+  "sub": "발 디딜 땅이 없어요",
+  "say": "왜 못 버틸까요?",
+  "img": "a smooth featureless mannequin-like human figure falling through pale blue clouds of a giant blue planet, glowing lungs in the center of the chest",
+  "view": "xray"
+ },
+ "beats": [
+  {
+   "big": "영하 201도",
+   "sub": "무게는 지구의 1.12배",
+   "say": "구름 높이는 영하 201도, 중력은 1.12배예요. 땅은 없어요.",
+   "img": "a giant blue planet with a quarter wedge cut away showing layers of thick clouds and no solid ground",
+   "view": "cutaway",
+   "label": "단단한 땅 없음",
+   "pin": [
+    0.5,
+    0.5
+   ],
+   "src": 1
+  },
+  {
+   "big": "시속 2,000km",
+   "sub": "구름 높이의 바람",
+   "say": "바람은 시속 2,000km가 넘게 휘몰아쳐요.",
+   "img": "swirling pale blue storm bands on a giant blue planet with a huge dark oval storm, planet sliced open like a cake",
+   "view": "cutaway",
+   "label": "거대한 폭풍",
+   "pin": [
+    0.5,
+    0.4
+   ],
+   "src": 0
+  },
+  {
+   "big": "숨 한두 번",
+   "sub": "수소 80%, 헬륨 19%",
+   "say": "산소 없는 가스는 한두 번 숨에 의식을 잃게 해요.",
+   "img": "a smooth featureless mannequin-like human figure with glowing lungs and veins visible inside, surrounded by pale blue gas",
+   "view": "xray",
+   "label": "폐",
+   "pin": [
+    0.5,
+    0.42
+   ],
+   "src": 2
+  }
+ ],
+ "verdict": {
+  "big": "생존 확률 0%",
+  "say": "아래는 1,000bar 넘는 뜨거운 유체라고 봐요.",
+  "img": "a giant blue planet sliced open like a cake showing dense glowing fluid layers deep inside",
+  "view": "cutaway",
+  "label": "뜨거운 유체",
+  "pin": [
+   0.5,
+   0.6
+  ]
+ },
+ "caption": "해왕성 구름 위에 떨어지면? 영하 201도 🪐",
+ "hashtags": [
+  "#속이보이는과학",
+  "#과학상식",
+  "#해왕성",
+  "#우주",
+  "#극한생존"
+ ],
+ "sources": [
+  "https://science.nasa.gov/neptune/neptune-facts/",
+  "https://nssdc.gsfc.nasa.gov/planetary/factsheet/neptunefact.html",
+  "https://www.csb.gov/assets/1/20/sb-nitrogen-6-11-03.pdf"
+ ],
+ "bench": {
+  "format": "투시·단면 3D 해설 — 대조 훅 → 왜? → 원인 3단계 → 결과(so.thats.how 'Dishwasher' 3D 단면 808만 · 해외 건강 쇼츠 투명 피부 3D 첫 달 1,000만 · 사용자 10/24)",
+  "seen": []
+ }
+}
