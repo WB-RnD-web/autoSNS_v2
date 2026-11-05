@@ -1,0 +1,23 @@
+{
+ "date": "2026-11-03",
+ "kind": "bm_animal",
+ "src_n": 410,
+ "slug": "sea-otter-hair-salon",
+ "topic": "해달 미용실",
+ "animal": "a fluffy brown sea otter with thick fur, white whiskers and small round ears",
+ "animal_ko": "해달",
+ "headline": ["해달 미용실 원장", "오늘 손님도 해달"],
+ "lines": [
+  {"type":"hook","say":"오후 세 시. 해달 미용실에 첫 손님이 들어온다.","img":"a bright cozy salon interior with a chair and a big plain mirror, a sea otter customer sitting in the chair and a fluffy brown sea otter with thick fur, white whiskers and small round ears as the stylist standing behind it, plain white walls, soft daylight"},
+  {"type":"fact","big":"100만 가닥","say":"해달의 털은 1제곱인치에 100만 가닥이 넘는다.","sub":"가장 빽빽한 곳은 1제곱인치에 100만 가닥 넘게","src":0,"img":"a close view of a fluffy brown sea otter with thick fur, white whiskers and small round ears running a small plain comb through thick dense fluffy brown fur of a customer sea otter, bright salon, plain white walls"},
+  {"type":"fact","say":"사람 머리카락은 통틀어도 10만 가닥 정도다.","sub":"사람은 머리 전체가 10만 가닥 이하","src":0,"img":"a fluffy brown sea otter with thick fur, white whiskers and small round ears holding a plain comb up to the light looking thoughtful, next to a chair with a very fluffy sea otter customer, plain white walls"},
+  {"type":"incident","say":"원장은 빗을 든 채 한참 동안 멈춰 있다.","img":"a fluffy brown sea otter with thick fur, white whiskers and small round ears standing frozen holding a plain comb above the huge fluffy fur of a customer sea otter, a tall pile of fur around them, bright salon, plain white walls"},
+  {"type":"quote","say":"…오늘은 드라이만 할게요.","rate":-25},
+  {"type":"punch","say":"커트는 다음 달로 미뤄졌다.","img":"a sea otter customer with perfectly fluffy dry fur smiling in a plain mirror, a fluffy brown sea otter with thick fur, white whiskers and small round ears waving goodbye at a plain door, warm golden light"}
+ ],
+ "end": "예약은 한 달 뒤.",
+ "sources": ["https://www.montereybayaquarium.org/animals/animals-a-to-z/sea-otter"],
+ "caption": "원장님 그냥 드라이만 하시는 거 맞죠",
+ "hashtags": ["#해달","#동물다큐","#미용실","#동물상식","#병맛"],
+ "bench": {"format":"사람 일 하는 AI 동물 + 정색 다큐 내레이션(10/20 조사)","seen":[]}
+}

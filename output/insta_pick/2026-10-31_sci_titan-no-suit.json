@@ -1,0 +1,67 @@
+{
+ "date": "2026-10-31",
+ "kind": "sci",
+ "src_n": 111,
+ "slug": "titan-no-suit",
+ "hook": ["영하 179도", "우주복 없이 서면?"],
+ "say_intro": "영하 179도 타이탄, 우주복 없이 서면 몇 초 버틸까요?",
+ "why": {
+  "sub": "추위보다 먼저 닥치는 게 있어요",
+  "say": "왜 못 버틸까요?",
+  "img": "a smooth featureless mannequin-like human figure standing on an orange hazy moon surface, glowing lungs in the center of the chest",
+  "view": "xray"
+ },
+ "beats": [
+  {
+   "big": "압력 60% 더",
+   "sub": "지구보다 높아서 피는 안 끓어요",
+   "say": "기압이 지구보다 약 60% 높아서, 우주복 압력 걱정은 없어요.",
+   "img": "a smooth featureless mannequin-like human figure standing on an orange hazy moon surface, glowing veins and bones visible inside",
+   "view": "xray",
+   "label": "뼈와 혈관",
+   "pin": [0.5, 0.5],
+   "src": 0
+  },
+  {
+   "big": "산소 없음",
+   "sub": "공기는 질소 95% · 메탄 5%",
+   "say": "공기는 질소 95%, 메탄 5%. 지구 공기의 21%인 산소가 없어요.",
+   "img": "a quarter wedge cut away from a thick orange hazy atmosphere around a small moon, layers of nitrogen haze inside",
+   "view": "cutaway",
+   "label": "질소 공기",
+   "pin": [0.5, 0.5],
+   "src": 0
+  },
+  {
+   "big": "숨 한두 번",
+   "sub": "산소 없는 공기는 정신을 잃게 해요",
+   "say": "산소 없는 공기는 한두 번 숨만 쉬어도 의식을 잃을 수 있어요.",
+   "img": "a smooth featureless mannequin-like human figure with glowing lungs in the center of the chest, lungs filled with orange haze",
+   "view": "xray",
+   "label": "폐",
+   "pin": [0.5, 0.45],
+   "src": 2
+  }
+ ],
+ "verdict": {
+  "big": "생존 확률 0%",
+  "say": "그래도 탐사선 하위헌스는 1시간 10분 동안 이 땅에서 일했어요.",
+  "img": "a small space probe resting on an orange hazy moon surface, ground sliced open like a cake beneath it",
+  "view": "cutaway",
+  "label": "하위헌스",
+  "pin": [0.5, 0.5]
+ },
+ "caption": "타이탄에 우주복 없이 서면? 영하 179도 🪐",
+ "hashtags": ["#속이보이는과학", "#과학상식", "#타이탄", "#토성", "#우주"],
+ "sources": [
+  "https://science.nasa.gov/saturn/moons/titan/facts/",
+  "https://science.nasa.gov/solar-system/why-is-nasa-sending-dragonfly-to-titan-here-are-five-reasons/",
+  "https://www.csb.gov/assets/1/20/sb-nitrogen-6-11-03.pdf",
+  "https://www.esa.int/Enabling_Support/Operations/Cassini-Huygens_operations",
+  "https://science.nasa.gov/resource/scientist-for-a-day-option-2-titan/"
+ ],
+ "bench": {
+  "format": "투시·단면 3D 해설 — 대조 훅 → 왜? → 원인 3단계 → 결과(so.thats.how 'Dishwasher' 3D 단면 808만 · 해외 건강 쇼츠 투명 피부 3D 첫 달 1,000만 · 사용자 10/24)",
+  "seen": []
+ }
+}

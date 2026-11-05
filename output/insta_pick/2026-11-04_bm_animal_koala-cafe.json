@@ -1,0 +1,23 @@
+{
+ "date": "2026-11-04",
+ "kind": "bm_animal",
+ "src_n": 411,
+ "slug": "koala-cafe",
+ "topic": "코알라 카페 사장",
+ "animal": "a round grey koala with fluffy white ears and a big dark nose",
+ "animal_ko": "코알라",
+ "headline": ["코알라 카페 사장", "오늘도 곧 오픈"],
+ "lines": [
+  {"type":"hook","say":"아침 아홉 시. 코알라 카페의 오픈 시간이다.","img":"a bright cozy cafe interior with a wooden counter and plain white walls, a round grey koala with fluffy white ears and a big dark nose sitting behind the counter, soft morning daylight"},
+  {"type":"fact","big":"18~22시간","say":"코알라는 하루에 18시간에서 22시간을 잔다.","sub":"하루 18~22시간 수면","src":0,"img":"a round grey koala with fluffy white ears and a big dark nose curled up asleep on a wooden cafe counter next to a plain coffee machine, plain white walls, soft daylight"},
+  {"type":"fact","say":"유칼립투스 잎은 열량이 적어서, 아끼려고 가끔만 움직인다.","sub":"열량이 적어서 가끔만 움직임","src":0,"img":"a round grey koala with fluffy white ears and a big dark nose holding a green eucalyptus leaf next to a plain cafe cup, bright cafe, plain white walls"},
+  {"type":"incident","say":"첫 손님이 줄을 서 있다. 사장은 아직 꿈속이다.","img":"a line of fluffy koalas waiting at a bright cafe counter, a round grey koala with fluffy white ears and a big dark nose sleeping behind the counter, plain white walls, soft daylight"},
+  {"type":"quote","say":"…주문은 내일 받을게요.","rate":-25},
+  {"type":"punch","say":"그 카페는 오늘도 곧 오픈이다.","img":"a round grey koala with fluffy white ears and a big dark nose asleep on the cafe counter, empty bright cafe, warm golden evening light through plain windows"}
+ ],
+ "end": "내일도 곧 오픈.",
+ "sources": ["https://animals.sandiegozoo.org/animals/koala"],
+ "caption": "사장님 일어나세요 손님 왔어요",
+ "hashtags": ["#코알라","#동물다큐","#카페","#동물상식","#병맛"],
+ "bench": {"format":"사람 일 하는 AI 동물 + 정색 다큐 내레이션(10/20 조사)","seen":[]}
+}

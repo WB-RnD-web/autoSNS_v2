@@ -1,0 +1,89 @@
+{
+ "date": "2026-11-05",
+ "kind": "sci",
+ "src_n": 901,
+ "slug": "inside-a-tornado",
+ "hook": [
+  "시속 약 480km 바람",
+  "토네이도 속에선?"
+ ],
+ "say_intro": "가장 센 토네이도는 시속 약 480km. 그 한가운데 서 있으면 어떻게 될까요?",
+ "why": {
+  "sub": "바람보다 날아오는 게 문제예요",
+  "say": "왜 버티기 어려울까요?",
+  "img": "a smooth featureless mannequin-like human figure standing in the center of a huge dark funnel cloud, glowing skeleton visible inside",
+  "view": "xray"
+ },
+ "beats": [
+  {
+   "big": "시속 약 480km",
+   "sub": "가장 센 토네이도 추정",
+   "say": "가장 센 토네이도는 시속 약 480km까지 불어요. 자동차도 떠올라요.",
+   "img": "a giant dark tornado funnel with a quarter wedge cut away showing fast spiraling winds inside and a small car lifted in the air",
+   "view": "cutaway",
+   "label": "소용돌이 바람",
+   "pin": [
+    0.5,
+    0.45
+   ],
+   "src": 0,
+   "value": 480
+  },
+  {
+   "big": "시속 약 160km",
+   "sub": "보통 집이 견디는 바람",
+   "say": "많은 집이 견디도록 만든 바람은 시속 약 160km. 세 배나 차이 나요.",
+   "img": "a small house sliced open like a cake in front of a huge tornado funnel, plain wooden frame visible inside",
+   "view": "cutaway",
+   "label": "집의 뼈대",
+   "pin": [
+    0.5,
+    0.55
+   ],
+   "src": 2,
+   "value": 160
+  },
+  {
+   "big": "날아오는 파편",
+   "sub": "가장 큰 위협",
+   "say": "제일 위험한 건 기압이 아니라 바람에 날아오는 파편이에요.",
+   "img": "a smooth featureless mannequin-like human figure with glowing skeleton inside, small boards and pieces flying through windy air around it",
+   "view": "xray",
+   "label": "뼈",
+   "pin": [
+    0.5,
+    0.45
+   ],
+   "src": 0
+  }
+ ],
+ "verdict": {
+  "big": "답은 지하실",
+  "say": "지하실이나 창문 없는 안쪽 방이 답이에요. 천막은 안전하지 않아요.",
+  "img": "a house sliced open like a cake showing a sturdy basement room underground below the floor, tornado funnel outside",
+  "view": "cutaway",
+  "label": "지하실",
+  "pin": [
+    0.5,
+    0.7
+  ]
+ },
+ "caption": "토네이도 속에 서 있으면? 시속 약 480km 🌪️",
+ "hashtags": [
+  "#속이보이는과학",
+  "#과학상식",
+  "#토네이도",
+  "#자연재해",
+  "#극한생존"
+ ],
+ "sources": [
+  "https://www.nssl.noaa.gov/education/svrwx101/tornadoes/faq/",
+  "https://www.nssl.noaa.gov/education/svrwx101/tornadoes/",
+  "https://www.spc.noaa.gov/efscale/",
+  "https://www.weather.gov/safety/tornado-during"
+ ],
+ "bench": {
+  "format": "투시·단면 3D 해설 — 대조 훅 → 왜? → 원인 3단계 → 결과(so.thats.how 'Dishwasher' 3D 단면 808만 · 해외 건강 쇼츠 투명 피부 3D 첫 달 1,000만 · 사용자 10/24)",
+  "seen": []
+ }
+}
