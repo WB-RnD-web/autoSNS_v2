@@ -1,0 +1,69 @@
+{
+ "date": "2026-11-04",
+ "kind": "bm_animal",
+ "src_n": 411,
+ "slug": "koala-cafe",
+ "topic": "코알라 카페 사장",
+ "animal": "a round grey koala with fluffy white ears and a big dark nose",
+ "animal_ko": "코알라",
+ "headline": [
+  "코알라 카페 사장님",
+  "오늘도 곧 오픈"
+ ],
+ "lines": [
+  {
+   "type": "hook",
+   "say": "멘톨 사탕 냄새 나는 카페. 사장님은 코알라다.",
+   "sub": "멘톨 사탕 냄새 나는 카페 · 사장님은 코알라",
+   "src": 0,
+   "img": "a cozy bright cafe interior with a plain wooden counter and fresh eucalyptus branches in plain vases, behind the counter a round grey koala with fluffy white ears and a big dark nose wearing a small plain apron, dozing upright, plain white walls, soft morning daylight"
+  },
+  {
+   "type": "fact",
+   "big": "18~22시간",
+   "say": "코알라는 하루 약 18시간에서 22시간을 잔다.",
+   "sub": "하루 약 18~22시간 잠",
+   "src": 0,
+   "img": "behind a plain wooden cafe counter, a round grey koala with fluffy white ears and a big dark nose fast asleep sitting upright against a eucalyptus branch, plain white walls, soft warm light"
+  },
+  {
+   "type": "fact",
+   "big": "칼로리 적음",
+   "say": "유칼립투스 잎은 칼로리가 적다. 그래서 아낀다.",
+   "sub": "잎에 칼로리가 적어서 가끔만 움직임",
+   "src": 0,
+   "img": "a plain wooden cafe counter with a bowl of fresh eucalyptus leaves, a round grey koala with fluffy white ears and a big dark nose slowly reaching one paw toward the leaves, plain white walls, bright soft daylight"
+  },
+  {
+   "type": "incident",
+   "say": "드디어 첫 손님. 사장님 눈이 반쯤 떠졌다.",
+   "img": "a smaller grey koala standing politely in front of a plain wooden cafe counter, behind it a round grey koala with fluffy white ears and a big dark nose with eyes half open, bright cafe with plain white walls"
+  },
+  {
+   "type": "quote",
+   "say": "…주문은 내일 받을게요.",
+   "rate": -30
+  },
+  {
+   "type": "punch",
+   "say": "그 카페는, 오늘도 곧 오픈이다.",
+   "img": "a round grey koala with fluffy white ears and a big dark nose asleep on the plain wooden counter of a quiet bright cafe, a few other grey koalas waiting patiently on plain wooden chairs, calm golden evening light through plain windows"
+  }
+ ],
+ "end": "에너지 절약 영업 중.",
+ "sources": [
+  "https://animals.sandiegozoo.org/animals/koala"
+ ],
+ "caption": "곧 오픈 카페 아직도 기다리는 중임ㅋㅋ",
+ "hashtags": [
+  "#코알라",
+  "#동물다큐",
+  "#동물상식",
+  "#카페사장",
+  "#병맛"
+ ],
+ "bench": {
+  "format": "사람 일 하는 AI 동물 + 정색 다큐 내레이션",
+  "seen": []
+ }
+}

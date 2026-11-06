@@ -1,0 +1,72 @@
+{
+ "date": "2026-11-02",
+ "kind": "bm_paper",
+ "src_n": 409,
+ "slug": "dung-beetle-milky-way",
+ "topic": "쇠똥구리 은하수 내비",
+ "headline": [
+  "똥 굴리는 벌레가",
+  "은하수 보고 길 찾음"
+ ],
+ "lines": [
+  {
+   "type": "hook",
+   "say": "쇠똥구리, 은하수 보고 길 찾음. 진짜임.",
+   "img": "a small shiny black dung beetle pushing a round brown ball across smooth sand under a vivid starry night sky with a bright glowing Milky Way, cheerful moonlit scene"
+  },
+  {
+   "type": "stamp",
+   "stamp": "2013 이그노벨상",
+   "say": "이 연구로 2013년에 상 받음.",
+   "src": 2,
+   "img": "a small shiny black dung beetle standing proudly on a sandy dune next to a plain shiny golden trophy cup, bright starry night sky with the Milky Way overhead"
+  },
+  {
+   "type": "beat",
+   "big": "눈가리개 장착",
+   "say": "연구팀이 쇠똥구리한테 작은 눈가리개 씌움.",
+   "sub": "연구팀이 쇠똥구리한테 작은 눈가리개 씌움",
+   "src": 1,
+   "img": "a small shiny black dung beetle wearing a tiny soft fabric cap over its eyes, pushing a round brown ball along a wobbly zigzag path in the sand, bright starry night sky"
+  },
+  {
+   "type": "beat",
+   "big": "별 18개만",
+   "say": "제일 밝은 별 18개만 켜 줬더니 또 헤맴.",
+   "sub": "제일 밝은 별 18개만 켜 줌 → 또 헤맴",
+   "src": 1,
+   "img": "inside a dark round planetarium dome with only a few bright stars glowing on the ceiling, a small shiny black dung beetle rolling a round ball in a winding loop on a plain sandy floor"
+  },
+  {
+   "type": "beat",
+   "big": "은하수만 켬",
+   "say": "은하수만 보여 주니까 다시 똑바로 감.",
+   "sub": "은하수만 보여 주니까 다시 똑바로 감",
+   "src": 0,
+   "img": "inside a planetarium dome glowing with a bright band of the Milky Way, a small shiny black dung beetle rolling a round ball in a perfectly straight line across a plain sandy floor"
+  },
+  {
+   "type": "punch",
+   "say": "쇠똥구리는 똥 굴리면서 별 봄. 나보다 낭만 있음.",
+   "sub": "결론: 쇠똥구리는 똥 굴리면서 별 봄. 나보다 낭만 있음",
+   "img": "a small shiny black dung beetle sitting on top of its round ball on a quiet sand dune, gazing up at a breathtaking bright Milky Way, dreamy peaceful night"
+  }
+ ],
+ "sources": [
+  "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:23352694%20AND%20SRC:MED&resultType=core&format=json",
+  "https://www.smithsonianmag.com/science-nature/african-dung-beetles-navigate-at-night-using-the-milky-way-5582232/",
+  "https://en.wikipedia.org/wiki/List_of_Ig_Nobel_Prize_winners"
+ ],
+ "caption": "쇠똥구리가 나보다 낭만 있음ㅋㅋ",
+ "hashtags": [
+  "#쇠똥구리",
+  "#이그노벨상",
+  "#은하수",
+  "#쓸데없는과학",
+  "#병맛"
+ ],
+ "bench": {
+  "format": "황당 연구 + 진짜 숫자 정색 답",
+  "seen": []
+ }
+}

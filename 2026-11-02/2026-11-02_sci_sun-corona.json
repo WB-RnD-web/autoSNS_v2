@@ -1,0 +1,82 @@
+{
+ "date": "2026-11-02",
+ "kind": "sci",
+ "src_n": 113,
+ "slug": "sun-corona",
+ "hook": [
+  "태양 코로나 200만 도",
+  "범인은 열이 아니라고?"
+ ],
+ "say_intro": "태양 610만 km 앞, 코로나는 200만 도. 그런데 범인은 열이 아니라고요?",
+ "why": {
+  "sub": "코로나는 아주 묽어요",
+  "say": "왜 열이 아닐까요?",
+  "img": "the Sun sliced open like a cake with a quarter wedge cut away, glowing layers inside, a thin wispy glowing halo of gas around it",
+  "view": "cutaway"
+ },
+ "beats": [
+  {
+   "big": "1,000만 배 묽음",
+   "sub": "표면보다 훨씬 묽은 가스",
+   "say": "코로나는 표면보다 1,000만 배 묽어요. 열을 실어 올 알갱이가 적어요.",
+   "img": "a thin glowing gas shell around a bright sphere cut open like a cake, only a few scattered tiny glowing particles floating inside the shell",
+   "view": "cutaway",
+   "label": "듬성듬성 입자",
+   "pin": [
+    0.5,
+    0.3
+   ],
+   "src": 2
+  },
+  {
+   "big": "햇빛 475배",
+   "sub": "지구 궤도보다 475배 밝아요",
+   "say": "진짜 문제는 빛이에요. 지구에서보다 475배 밝아요.",
+   "img": "a smooth featureless mannequin-like human figure made of clear glass standing in intensely bright white light, skeleton and organs visible inside, the whole body glowing hot in the center",
+   "view": "xray",
+   "label": "온몸에 빛",
+   "src": 3
+  },
+  {
+   "big": "약 9~11초",
+   "sub": "진공 속 의식이 버티는 시간",
+   "say": "게다가 진공이에요. 약 9~11초면 정신을 잃고 혀 위 물이 끓어요.",
+   "img": "a smooth featureless mannequin-like human head and neck made of clear glass floating in dark space, the brain glowing in the center",
+   "view": "xray",
+   "label": "뇌",
+   "src": 4
+  }
+ ],
+ "verdict": {
+  "big": "생존 확률 0%",
+  "say": "1분이면 순환도 멈춰요. 탐사선은 1,377도 방패로 버텨요.",
+  "img": "a small space probe hiding behind a thick round heat shield, the shield cut open showing layered carbon foam inside, a giant glowing sun beside it",
+  "view": "cutaway",
+  "label": "열 방패",
+  "pin": [
+   0.5,
+   0.5
+  ]
+ },
+ "caption": "태양 코로나 200만 도, 범인은 열이 아니라고? ☀️",
+ "hashtags": [
+  "#속이보이는과학",
+  "#과학상식",
+  "#태양",
+  "#태양코로나",
+  "#우주과학"
+ ],
+ "sources": [
+  "https://science.nasa.gov/blogs/parker-solar-probe/2024/12/20/parker-solar-probe-begins-record-setting-closest-approach-to-the-sun/",
+  "https://science.nasa.gov/sun/facts/",
+  "https://spaceplace.nasa.gov/sun-corona/en/",
+  "https://physics.aps.org/articles/v14/176",
+  "https://www.nasa.gov/wp-content/uploads/2023/05/dressing-for-altitude-nov-2017.pdf",
+  "https://science.nasa.gov/mission/parker-solar-probe/",
+  "https://science.nasa.gov/missions/parker-solar-probe/10-things-to-know-about-parker-solar-probe/"
+ ],
+ "bench": {
+  "format": "투시·단면 3D 해설 — 대조 훅 → 왜? → 원인 3단계 → 결과(so.thats.how 'Dishwasher' 3D 단면 808만 · 해외 건강 쇼츠 투명 피부 3D 첫 달 1,000만 · 사용자 10/24)",
+  "seen": []
+ }
+}

@@ -1,0 +1,87 @@
+{
+ "date": "2026-11-06",
+ "kind": "sci",
+ "src_n": 902,
+ "slug": "edge-of-a-lava-lake",
+ "hook": [
+  "용암 1,150도",
+  "가장자리에 서면?"
+ ],
+ "say_intro": "용암 호수 가장자리에 서면? 킬라우에아 용암은 1,150도인데 버틸 수 있을까요?",
+ "why": {
+  "sub": "땅도 공기도 함정이에요",
+  "say": "왜 위험할까요?",
+  "img": "a volcanic crater sliced open like a cake, a glowing orange lava lake filling the deep bowl in the center",
+  "view": "cutaway"
+ },
+ "beats": [
+  {
+   "big": "850도 미만",
+   "sub": "이 온도 아래여야 '고체'",
+   "say": "검은 껍질이 땅처럼 보여도, 850도 아래여야 고체로 쳐요.",
+   "img": "a lava lake sliced open like a cake, a thin dark cooled crust floating on top of thick bright orange molten rock",
+   "view": "cutaway",
+   "label": "검은 껍질",
+   "pin": [
+    0.5,
+    0.35
+   ],
+   "src": 0
+  },
+  {
+   "big": "몇 초 만에 쩍",
+   "sub": "껍질이 갈라져 밑으로 쏙",
+   "say": "1959년엔 몇 초 만에 금이 가고, 껍질이 용암 밑으로 미끄러졌어요.",
+   "img": "a lava lake sliced open like a cake, a big crack splitting the dark crust in the center, crust plates tilting and sliding down into glowing orange molten rock",
+   "view": "cutaway",
+   "label": "갈라진 틈",
+   "pin": [
+    0.5,
+    0.4
+   ],
+   "src": 1
+  },
+  {
+   "big": "하루 1,900톤",
+   "sub": "그때 뿜던 이산화황 · 2022",
+   "say": "그때 이산화황이 하루 약 1,900톤. 눈과 코, 목이 따가워요.",
+   "img": "a smooth featureless mannequin-like human figure standing, transparent glass-like body, nasal passage and throat glowing softly in the upper body, thin pale yellow haze drifting around",
+   "view": "xray",
+   "label": "코와 목",
+   "pin": [
+    0.5,
+    0.25
+   ],
+   "src": 2
+  }
+ ],
+ "verdict": {
+  "big": "멀리서만 봐요",
+  "say": "그래서 용암 호수는 분화구 가장자리 위에서 지켜봐요.",
+  "img": "a wide volcanic crater sliced open like a cake, a small glowing lava lake deep at the bottom, the high rocky crater rim far above it",
+  "view": "cutaway",
+  "label": "분화구 가장자리",
+  "pin": [
+   0.5,
+   0.2
+  ]
+ },
+ "caption": "용암 1,150도, 그 가장자리에 서면? 🌋",
+ "hashtags": [
+  "#속이보이는과학",
+  "#과학상식",
+  "#용암",
+  "#화산",
+  "#킬라우에아"
+ ],
+ "sources": [
+  "https://www.usgs.gov/news/volcano-watch-why-2018-lava-still-so-hot",
+  "https://www.usgs.gov/observatories/hvo/news/volcano-watch-lava-lakes-kilauea-then-and-now",
+  "https://www.usgs.gov/observatories/hvo/news/volcano-watch-kilaueas-summit-lava-lake-continues-be-quietly-remarkable",
+  "https://www.usgs.gov/programs/VHP/volcanic-gases-can-be-harmful-health-vegetation-and-infrastructure"
+ ],
+ "bench": {
+  "format": "투시·단면 3D 해설 — 대조 훅 → 왜? → 원인 3단계 → 결과(so.thats.how 'Dishwasher' 3D 단면 808만 · 해외 건강 쇼츠 투명 피부 3D 첫 달 1,000만 · 사용자 10/24)",
+  "seen": []
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "date": "2026-11-02",
+ "slot": "a",
+ "kind": "bm_paper",
+ "model": "claude-opus-5-5",
+ "ok": true,
+ "file": "2026-11-02_bm_paper_dung-beetle-milky-way.json",
+ "sample": null,
+ "effort": "high",
+ "tries": 1,
+ "tokens": {
+  "input": 4,
+  "cache_write": 9529,
+  "cache_read": 0,
+  "output": 3208
+ },
+ "usd": 0.112,
+ "errors": [],
+ "history": [
+  []
+ ]
+}

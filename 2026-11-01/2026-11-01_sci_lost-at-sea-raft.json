@@ -1,0 +1,72 @@
+{
+ "date": "2026-11-01",
+ "kind": "sci",
+ "src_n": 112,
+ "slug": "lost-at-sea-raft",
+ "hook": [
+  "사방이 바닷물인데",
+  "며칠 버틸 수 있을까?"
+ ],
+ "say_intro": "약 30도 열대 바다, 마실 물 없이 뗏목에서 며칠 버틸까요?",
+ "why": {
+  "sub": "햇볕·소금·탈수가 몰려와요",
+  "say": "왜 버티기 힘들까요?",
+  "img": "a smooth featureless mannequin-like human figure sitting alone on a small inflatable raft on open tropical sea, translucent glass-like body with glowing veins and organs inside",
+  "view": "xray"
+ },
+ "beats": [
+  {
+   "big": "15분",
+   "sub": "자외선이 피부를 상하게 해요",
+   "say": "빠르면 15분, 자외선이 피부를 상하게 해요. 물에 반사까지 돼요.",
+   "img": "a smooth featureless mannequin-like human figure lying on a small raft under strong sunlight, translucent glass-like body with a glowing outer skin layer over the shoulders in the center",
+   "view": "xray",
+   "label": "피부",
+   "src": 1
+  },
+  {
+   "big": "3.5%",
+   "sub": "바닷물 무게의 약 3.5%가 소금",
+   "say": "바닷물은 무게의 약 3.5%가 소금이에요. 갈증을 못 풀어요.",
+   "img": "a block of ocean water with a quarter wedge cut away, tiny white salt crystals dissolved throughout the clear blue water in the center",
+   "view": "cutaway",
+   "label": "녹은 소금",
+   "src": 2
+  },
+  {
+   "big": "하루 1L",
+   "sub": "필요한데 바닷물은 오히려 손해",
+   "say": "하루 약 1L가 필요한데, 바닷물을 마시면 콩팥이 더 많이 내보내요.",
+   "img": "a smooth featureless mannequin-like human figure seen from the back, translucent glass-like body with two glowing kidneys in the center of the lower back",
+   "view": "xray",
+   "label": "콩팥",
+   "src": 3
+  }
+ ],
+ "verdict": {
+  "big": "빠르면 3일",
+  "say": "몸속 물 15~20%를 잃으면 위험해요. 더운 곳은 빠르면 3일.",
+  "img": "a smooth featureless mannequin-like human figure curled up on a small raft, translucent glass-like body with dim faded glowing veins and shrunken organs in the center",
+  "view": "xray",
+  "label": "몸속 물"
+ },
+ "caption": "사방이 바닷물인데 며칠 버틸까? 🌊",
+ "hashtags": [
+  "#속이보이는과학",
+  "#과학상식",
+  "#극한생존",
+  "#바닷물",
+  "#표류"
+ ],
+ "sources": [
+  "https://oceanexplorer.noaa.gov/facts/temp-vary.html",
+  "https://www.cdc.gov/cancer/skin/resources/files/sun-safety.txt",
+  "https://oceanservice.noaa.gov/facts/whysalty.html",
+  "https://oceanservice.noaa.gov/facts/drinksw.html",
+  "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13140192/fullTextXML"
+ ],
+ "bench": {
+  "format": "투시·단면 3D 해설 — 대조 훅 → 왜? → 원인 3단계 → 결과(so.thats.how 'Dishwasher' 3D 단면 808만 · 해외 건강 쇼츠 투명 피부 3D 첫 달 1,000만 · 사용자 10/24)",
+  "seen": []
+ }
+}

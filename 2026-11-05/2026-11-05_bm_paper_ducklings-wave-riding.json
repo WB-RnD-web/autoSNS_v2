@@ -1,0 +1,71 @@
+{
+ "date": "2026-11-05",
+ "kind": "bm_paper",
+ "src_n": 412,
+ "slug": "ducklings-wave-riding",
+ "topic": "새끼 오리 줄서기",
+ "headline": [
+  "새끼 오리 줄 서는 이유",
+  "물결 타는 중임"
+ ],
+ "lines": [
+  {
+   "type": "hook",
+   "say": "새끼 오리가 줄 서는 이유, 논문 있음.",
+   "img": "a mother duck swimming on a calm sunny pond followed by a neat single-file line of fluffy yellow ducklings, gentle ripples, bright daylight, green reeds"
+  },
+  {
+   "type": "stamp",
+   "stamp": "2022 이그노벨 물리학상",
+   "say": "이걸로 2022년에 상까지 탔음.",
+   "src": 2,
+   "img": "a fluffy yellow duckling standing proudly on a small wooden dock beside a plain shiny golden trophy cup, sunny pond, bright blue sky"
+  },
+  {
+   "type": "beat",
+   "big": "물결 타기",
+   "say": "엄마 뒤 딱 좋은 자리. 엄마 물결이 밀어 줌.",
+   "sub": "엄마 뒤 딱 좋은 자리 · 엄마 물결이 앞으로 밀어 줌",
+   "src": 0,
+   "img": "close view of a single fluffy yellow duckling gliding right behind its mother duck on clear water, smooth curved wave ripples spreading from the mother, sunny pond"
+  },
+  {
+   "type": "beat",
+   "big": "3번째부터 0",
+   "say": "계산해 보니 3번째부터 물결 저항이 0에 가까워짐.",
+   "sub": "계산해 보니 3번째부터 물결 저항 → 0에 가까워짐",
+   "src": 1,
+   "img": "a tidy line of fluffy yellow ducklings swimming behind a mother duck on a glassy sunny pond, soft pastel glowing wave lines connecting each duckling, cheerful diagram style"
+  },
+  {
+   "type": "beat",
+   "say": "받은 물결은 뒤 동생한테 그대로 넘김.",
+   "src": 1,
+   "img": "two fluffy yellow ducklings swimming one behind the other on a bright pond, a gentle ripple passing from the front duckling to the back one, calm sunny water"
+  },
+  {
+   "type": "punch",
+   "say": "결론. 3번째부터는 거의 공짜 탑승.",
+   "sub": "결론: 3번째부터는 거의 공짜 탑승",
+   "src": 1,
+   "img": "a relaxed fluffy yellow duckling floating effortlessly at the back of a long duckling line behind a mother duck, eyes half closed, sunny calm pond, cozy cheerful mood"
+  }
+ ],
+ "sources": [
+  "https://www.strath.ac.uk/whystrathclyde/news/2021/ridingthewaveskeepsducksinarow/",
+  "https://strathprints.strath.ac.uk/78035/",
+  "https://en.wikipedia.org/wiki/List_of_Ig_Nobel_Prize_winners"
+ ],
+ "caption": "새끼 오리들 사실 무임승차 중이었음ㅋㅋ",
+ "hashtags": [
+  "#새끼오리",
+  "#이그노벨상",
+  "#동물상식",
+  "#쓸데없는과학",
+  "#병맛"
+ ],
+ "bench": {
+  "format": "황당한 연구 + 진짜 숫자 정색 답(이거 진짜 논문임)",
+  "seen": []
+ }
+}

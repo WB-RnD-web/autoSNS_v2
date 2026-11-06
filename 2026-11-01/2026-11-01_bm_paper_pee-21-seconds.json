@@ -1,0 +1,70 @@
+{
+ "date": "2026-11-01",
+ "kind": "bm_paper",
+ "src_n": 408,
+ "slug": "pee-21-seconds",
+ "topic": "오줌 21초 법칙",
+ "headline": [
+  "코끼리도 염소도",
+  "오줌은 약 21초"
+ ],
+ "lines": [
+  {
+   "type": "hook",
+   "say": "코끼리도 염소도 오줌 누는 시간 비슷함.",
+   "img": "a calm grey elephant and a small white goat standing side by side in a sunny zoo enclosure with green grass and plain wooden fences, bright cheerful daylight"
+  },
+  {
+   "type": "stamp",
+   "stamp": "2015 이그노벨 물리학상",
+   "say": "동물원 가서 찍고 재 봄. 상까지 받음.",
+   "src": 1,
+   "img": "a cute grey elephant standing proudly on a sunny grassy hill beside a plain shiny golden trophy cup, bright blue sky"
+  },
+  {
+   "type": "beat",
+   "big": "약 21초",
+   "say": "3킬로 넘는 포유류는 거의 다 약 21초 걸림.",
+   "sub": "3kg 넘는 포유류 = 약 21초 (앞뒤 13초 차이)",
+   "src": 0,
+   "img": "an elephant, a cow, a goat and a dog standing politely in a neat line on a sunny grass field, a plain sand hourglass on a wooden stump in front of them, bright cheerful daylight"
+  },
+  {
+   "type": "beat",
+   "big": "부피 3,600배",
+   "say": "부피 3600배여도 관이 길어서 더 세게 나옴.",
+   "sub": "부피 3,600배 차이여도 → 관이 길어서 더 세게 나옴",
+   "src": 0,
+   "img": "a huge grey elephant and a tiny white goat standing next to each other on a sunny meadow, comically different in size, soft bright lighting"
+  },
+  {
+   "type": "beat",
+   "say": "3킬로 안 되는 작은 동물은 한 방울씩 떨어짐.",
+   "sub": "3kg 안 되는 작은 동물은 한 방울씩",
+   "src": 0,
+   "img": "a tiny brown mouse sitting on a green leaf beside a single round clear water droplet in a sunny garden, soft bright lighting"
+  },
+  {
+   "type": "punch",
+   "say": "결론. 화장실 줄은 덩치랑 상관없음.",
+   "sub": "결론: 화장실 줄은 덩치랑 상관없음",
+   "img": "an elephant, a goat and a dog waiting calmly in a tidy line in front of a small plain wooden hut with a plain unmarked wooden door, sunny green park, bright daylight"
+  }
+ ],
+ "sources": [
+  "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:24969420%20AND%20SRC:MED&resultType=core&format=json",
+  "https://en.wikipedia.org/wiki/List_of_Ig_Nobel_Prize_winners"
+ ],
+ "caption": "코끼리랑 염소가 같은 줄 서는 이유ㅋㅋ 진짜 논문임",
+ "hashtags": [
+  "#이그노벨상",
+  "#쓸데없는과학",
+  "#동물상식",
+  "#코끼리",
+  "#병맛"
+ ],
+ "bench": {
+  "format": "황당한 질문 + 진짜 숫자 정색 답",
+  "seen": []
+ }
+}

@@ -1,0 +1,27 @@
+{
+ "date": "2026-11-04",
+ "slot": "a",
+ "kind": "bm_animal",
+ "model": "claude-opus-5-5",
+ "ok": true,
+ "file": "2026-11-04_bm_animal_koala-cafe.json",
+ "sample": null,
+ "effort": "high",
+ "tries": 2,
+ "tokens": {
+  "input": 1397,
+  "cache_write": 9095,
+  "cache_read": 9095,
+  "output": 5382
+ },
+ "usd": 0.161,
+ "errors": [],
+ "history": [
+  [
+   "6번 줄 img 에 'customers' — 사람은 안 그린다(손님·승객도 그 동물로: 'penguins')",
+   "caption: catalog 411 facts 에 없는 숫자 ['3'] — 숫자는 그 항목 facts 에서만",
+   "end(끝 카드 한 줄)는 1~16자"
+  ],
+  []
+ ]
+}

@@ -1,0 +1,80 @@
+{
+ "date": "2026-10-31",
+ "kind": "sci",
+ "src_n": 111,
+ "slug": "titan-no-suit",
+ "hook": [
+  "영하 179도 타이탄",
+  "우주복 없이 몇 초?"
+ ],
+ "say_intro": "영하 179도 타이탄, 우주복 없이 서면 몇 초 버틸까요?",
+ "why": {
+  "sub": "공기는 지구보다 4배 진해요",
+  "say": "그런데 왜 못 버틸까요?",
+  "img": "a smooth featureless mannequin-like human figure standing, glass-clear body with lungs and heart glowing inside the chest",
+  "view": "xray"
+ },
+ "beats": [
+  {
+   "big": "질소 95%",
+   "sub": "나머지 약 5%는 메탄",
+   "say": "공기는 질소 약 95%, 메탄 약 5%예요. 메탄이 범인은 아니에요.",
+   "img": "a tall column of thick orange hazy air above frozen icy ground, sliced open like a cake, countless tiny glowing gas particles packed inside the column",
+   "view": "cutaway",
+   "label": "질소·메탄",
+   "pin": [
+    0.5,
+    0.45
+   ],
+   "src": 0
+  },
+  {
+   "big": "지구는 산소 21%",
+   "sub": "타이탄엔 산소가 없어요",
+   "say": "지구 공기의 21%가 산소예요. 타이탄엔 그 산소가 없어요.",
+   "img": "a smooth featureless mannequin-like human figure standing, glass-clear chest with two lungs glowing in the center of the chest",
+   "view": "xray",
+   "label": "폐",
+   "src": 1
+  },
+  {
+   "big": "숨 한두 번",
+   "sub": "산소 4~6%여도 40초 안에 혼수",
+   "say": "산소 없는 기체는 숨 한두 번에도 의식을 잃게 할 수 있어요.",
+   "img": "a smooth featureless mannequin-like human head and shoulders, glass-clear skull with the brain glowing dim in the center",
+   "view": "xray",
+   "label": "뇌",
+   "src": 2
+  }
+ ],
+ "verdict": {
+  "big": "생존 확률 0%",
+  "say": "2005년 착륙한 탐사선은 땅 위에서 1시간 10분 일했어요.",
+  "img": "a small round landing probe resting on frozen icy pebbly ground under thick orange haze, its shell sliced open like a cake showing instruments inside",
+  "view": "cutaway",
+  "label": "탐사선",
+  "pin": [
+   0.5,
+   0.55
+  ]
+ },
+ "caption": "영하 179도 타이탄, 우주복 없이 몇 초? 🪐",
+ "hashtags": [
+  "#속이보이는과학",
+  "#과학상식",
+  "#타이탄",
+  "#토성",
+  "#우주"
+ ],
+ "sources": [
+  "https://science.nasa.gov/saturn/moons/titan/facts/",
+  "https://science.nasa.gov/solar-system/why-is-nasa-sending-dragonfly-to-titan-here-are-five-reasons/",
+  "https://www.csb.gov/assets/1/20/sb-nitrogen-6-11-03.pdf",
+  "https://www.esa.int/Enabling_Support/Operations/Cassini-Huygens_operations",
+  "https://science.nasa.gov/resource/scientist-for-a-day-option-2-titan/"
+ ],
+ "bench": {
+  "format": "투시·단면 3D 해설 — 대조 훅 → 왜? → 원인 3단계 → 결과(so.thats.how 'Dishwasher' 3D 단면 808만 · 해외 건강 쇼츠 투명 피부 3D 첫 달 1,000만 · 사용자 10/24)",
+  "seen": []
+ }
+}

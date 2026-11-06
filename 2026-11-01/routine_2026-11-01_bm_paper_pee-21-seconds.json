@@ -1,0 +1,23 @@
+{
+ "date": "2026-11-01",
+ "kind": "bm_paper",
+ "src_n": 408,
+ "slug": "pee-21-seconds",
+ "topic": "오줌 21초 법칙",
+ "headline": ["코끼리도 염소도", "오줌 시간 똑같음"],
+ "lines": [
+  {"type": "hook", "say": "코끼리랑 염소, 오줌 누는 시간이 거의 같음.", "img": "a big gray elephant and a small goat standing side by side on a sunny green zoo lawn, bright daylight, plain blue sky"},
+  {"type": "stamp", "stamp": "2015 이그노벨 물리학상", "say": "이거 동물원에서 재서 상까지 받음.", "src": 1, "img": "a plain shiny golden trophy cup on a grassy zoo lawn with a goat and an elephant standing calmly behind it, bright sunny day"},
+  {"type": "beat", "big": "21초", "say": "3kg 넘는 포유류는 약 21초면 끝남.", "sub": "3kg 넘는 포유류는 약 21초(±13초)", "src": 0, "img": "a bright round stopwatch on a wooden fence at a sunny zoo, a relaxed goat standing in the background"},
+  {"type": "beat", "big": "3,600배", "say": "크기가 3,600배 차이 나도 똑같이 작동함.", "sub": "부피 3,600배 차이에도 똑같이 작동", "src": 0, "img": "a tiny goat standing next to a huge elephant on a sunny grassy field, playful toy-like proportions, bright blue sky"},
+  {"type": "beat", "say": "작은 동물은 물줄기가 안 되고 방울로 나옴.", "src": 0, "img": "a very small cute mouse sitting on a sunny green leaf, bright daylight, soft focus background"},
+  {"type": "punch", "say": "결론. 줄 서는 시간은 덩치랑 상관없음.", "sub": "결론: 화장실 줄은 덩치랑 상관없음", "img": "an elephant and a goat standing calmly in a neat line on a sunny path at a zoo, plain white fence, bright daylight"}
+ ],
+ "sources": [
+  "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:24969420%20AND%20SRC:MED&resultType=core&format=json",
+  "https://en.wikipedia.org/wiki/List_of_Ig_Nobel_Prize_winners"
+ ],
+ "caption": "코끼리도 염소도 똑같다는 게 진짜임ㅋㅋ",
+ "hashtags": ["#이그노벨상", "#동물상식", "#쓸데없는과학", "#코끼리", "#병맛"],
+ "bench": {"format": "황당한 질문 + 진짜 숫자 정색 답(10/20 조사)", "seen": []}
+}

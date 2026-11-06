@@ -1,0 +1,74 @@
+{
+ "date": "2026-11-03",
+ "kind": "sci",
+ "src_n": 114,
+ "slug": "neptune-no-surface",
+ "hook": [
+  "영하 201도",
+  "해왕성에 떨어지면?"
+ ],
+ "say_intro": "영하 201도 해왕성에 떨어지면 몇 초 버틸까요?",
+ "why": {
+  "sub": "밟을 땅도, 산소도 없어요",
+  "say": "왜 못 버틸까요?",
+  "img": "the blue planet Neptune with a quarter wedge cut away, a thin pale blue cloud layer on the outside and a thick glowing dense fluid layer inside",
+  "view": "cutaway"
+ },
+ "beats": [
+  {
+   "big": "영하 201도",
+   "sub": "구름층 온도 · 중력 1.12배",
+   "say": "구름층은 영하 201도. 중력은 지구의 1.12배라 그대로 떨어져요.",
+   "img": "a smooth featureless mannequin-like human figure made of clear glass, covered in white frost crystals, skeleton and lungs glowing pale blue in the center of the chest",
+   "view": "xray",
+   "label": "얼어붙는 몸",
+   "src": 1
+  },
+  {
+   "big": "시속 2,000km",
+   "sub": "구름층 바람 · 밟을 땅 없음",
+   "say": "단단한 땅은 없어요. 구름층엔 시속 2,000km 넘는 바람이 불어요.",
+   "img": "a tiny smooth mannequin-like figure tumbling through huge swirling streaks of deep blue clouds, wind bands curving around it",
+   "view": "scene",
+   "label": "구름층 바람",
+   "src": 0
+  },
+  {
+   "big": "수소 약 80%",
+   "sub": "헬륨 19% · 산소는 없음",
+   "say": "수소 약 80%, 산소는 없어요. 한두 숨이면 정신을 잃을 수 있어요.",
+   "img": "a smooth featureless mannequin-like human figure made of clear glass, two lungs glowing faint blue in the center of the chest, pale gas swirling around it",
+   "view": "xray",
+   "label": "산소 없는 폐",
+   "src": 1
+  }
+ ],
+ "verdict": {
+  "big": "생존 확률 0%",
+  "say": "과학자들은 그 아래가 1,000바 넘는 뜨거운 얼음 액체라고 봐요.",
+  "img": "the planet Neptune sliced open like a cake, thin blue cloud layer on top, beneath it a vast glowing hot dense fluid layer filling most of the inside",
+  "view": "cutaway",
+  "label": "뜨거운 얼음 액체",
+  "pin": [
+   0.5,
+   0.6
+  ]
+ },
+ "caption": "영하 201도 해왕성에 떨어지면? 🌀",
+ "hashtags": [
+  "#속이보이는과학",
+  "#과학상식",
+  "#해왕성",
+  "#우주과학",
+  "#극한생존"
+ ],
+ "sources": [
+  "https://science.nasa.gov/neptune/neptune-facts/",
+  "https://nssdc.gsfc.nasa.gov/planetary/factsheet/neptunefact.html",
+  "https://www.csb.gov/assets/1/20/sb-nitrogen-6-11-03.pdf"
+ ],
+ "bench": {
+  "format": "투시·단면 3D 해설 — 대조 훅 → 왜? → 원인 3단계 → 결과(so.thats.how 'Dishwasher' 3D 단면 808만 · 해외 건강 쇼츠 투명 피부 3D 첫 달 1,000만 · 사용자 10/24)",
+  "seen": []
+ }
+}
