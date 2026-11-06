@@ -1,0 +1,88 @@
+{
+ "date": "2026-11-06",
+ "kind": "sci",
+ "src_n": 902,
+ "slug": "edge-of-a-lava-lake",
+ "hook": [
+  "용암 1,150도",
+  "호수 가장자리에선?"
+ ],
+ "say_intro": "하와이 킬라우에아 용암은 1,150도. 그 호수 가장자리에 서 있으면 어떨까요?",
+ "why": {
+  "sub": "뜨거운 것만이 문제가 아니에요",
+  "say": "왜 가까이 못 갈까요?",
+  "img": "a smooth featureless mannequin-like human figure standing far back at the rim of a huge glowing lava lake inside a volcano crater, glowing skeleton visible inside",
+  "view": "xray"
+ },
+ "beats": [
+  {
+   "big": "깊이 224m",
+   "sub": "킬라우에아 · 2021년 활동 구역",
+   "say": "그때 활동 중인 구역은 깊이가 224m, 전부 녹은 바위였어요.",
+   "img": "a volcano crater lava lake sliced open like a cake showing deep glowing molten rock below a thin dark crust",
+   "view": "cutaway",
+   "label": "녹은 바위",
+   "pin": [
+    0.5,
+    0.6
+   ],
+   "src": 1,
+   "value": 224
+  },
+  {
+   "big": "850도 아래만 고체",
+   "sub": "까만 껍질도 땅이 아니에요",
+   "say": "까만 껍질은 땅처럼 보여도 850도 아래일 때만 고체예요.",
+   "img": "a close cross-section of dark cracked crust floating on glowing lava, a quarter wedge cut away",
+   "view": "cutaway",
+   "label": "얇은 껍질",
+   "pin": [
+    0.5,
+    0.35
+   ],
+   "src": 0
+  },
+  {
+   "big": "1분 안에 갈라짐",
+   "sub": "1959년 킬라우에아 이키",
+   "say": "1959년엔 몇 초에서 길어야 1분 안에 큰 균열이 생겼어요.",
+   "img": "a dark lava crust with a large glowing crack opening across it, blocks of crust sliding into molten lava, top view cutaway",
+   "view": "cutaway",
+   "label": "큰 균열",
+   "pin": [
+    0.5,
+    0.5
+   ],
+   "src": 1
+  }
+ ],
+ "verdict": {
+  "big": "멀리서 지켜봐요",
+  "say": "하루 1,900톤 넘는 이산화황도 따가워요. 멀리서 봐요.",
+  "img": "a volcano crater cut away like a cake, a lava lake glowing inside, a small safe viewing rim far above",
+  "view": "cutaway",
+  "label": "분화구 가장자리",
+  "pin": [
+   0.5,
+   0.3
+  ]
+ },
+ "caption": "용암호수 가장자리에 서면? 1,150도 🌋",
+ "hashtags": [
+  "#속이보이는과학",
+  "#과학상식",
+  "#용암",
+  "#화산",
+  "#극한생존"
+ ],
+ "sources": [
+  "https://www.usgs.gov/news/volcano-watch-why-2018-lava-still-so-hot",
+  "https://www.usgs.gov/observatories/hvo/news/volcano-watch-lava-lakes-kilauea-then-and-now",
+  "https://www.usgs.gov/observatories/hvo/news/volcano-watch-kilaueas-summit-lava-lake-continues-be-quietly-remarkable",
+  "https://www.usgs.gov/programs/VHP/volcanic-gases-can-be-harmful-health-vegetation-and-infrastructure"
+ ],
+ "bench": {
+  "format": "투시·단면 3D 해설 — 대조 훅 → 왜? → 원인 3단계 → 결과(so.thats.how 'Dishwasher' 3D 단면 808만 · 해외 건강 쇼츠 투명 피부 3D 첫 달 1,000만 · 사용자 10/24)",
+  "seen": []
+ }
+}

@@ -1,0 +1,75 @@
+{
+ "date": "2026-10-28",
+ "kind": "sci",
+ "src_n": 106,
+ "slug": "antarctic-winter",
+ "hook": [
+  "영하 89.2도",
+  "맨몸으로 몇 분 버틸까?"
+ ],
+ "say_intro": "남극 보스토크 기록은 영하 89.2도. 집 없이 겨울을 맞으면 몸은 어떻게 될까요?",
+ "why": {
+  "sub": "추위에 바람까지 겹쳐요",
+  "say": "왜 못 버티냐고요?",
+  "img": "a smooth featureless mannequin-like human figure standing on a vast white icy plateau, glowing bones and organs visible inside the body",
+  "view": "xray"
+ },
+ "beats": [
+  {
+   "big": "영하 40~70도",
+   "sub": "내륙 한겨울 평균 기온",
+   "say": "남극 내륙의 한겨울 평균은 영하 40도에서 70도예요.",
+   "img": "a thick slab of Antarctic ice plateau sliced open like a cake showing deep frozen layers, a tiny dark figure standing on top",
+   "view": "cutaway",
+   "label": "얼어붙은 땅",
+   "pin": [0.5, 0.6],
+   "src": 2
+  },
+  {
+   "big": "5분",
+   "sub": "드러난 피부가 어는 시간",
+   "say": "여기에 바람이 불면 체감온도는 기상청 표 밖이에요. 맨살은 5분이면 얼어요.",
+   "img": "a smooth featureless mannequin-like human figure with a bare hand, translucent glass-like skin, the hand glowing icy blue inside with bones visible",
+   "view": "xray",
+   "label": "얼어 가는 손",
+   "pin": [0.5, 0.5],
+   "src": 3
+  },
+  {
+   "big": "35도 아래",
+   "sub": "저체온증 기준 체온",
+   "say": "몸속 온도가 35도 아래로 떨어지면 저체온증이에요. 몇 시간 안에 닥쳐요.",
+   "img": "a smooth featureless mannequin-like human figure curled up, glass-like transparent torso with glowing blue-cold heart and lungs in the center of the chest",
+   "view": "xray",
+   "label": "식어 가는 심장",
+   "pin": [0.5, 0.45],
+   "src": 4
+  }
+ ],
+ "verdict": {
+  "big": "생존 확률 0%",
+  "say": "게다가 겨울엔 해가 6개월 동안 안 떠요. 집 없이는 불가능해요.",
+  "img": "a wide frozen Antarctic plateau at polar night under a starry sky, a tiny lone dark figure far away",
+  "view": "scene"
+ },
+ "caption": "영하 89.2도, 집 없이 몇 분 버틸까? 🧊",
+ "hashtags": [
+  "#속이보이는과학",
+  "#과학상식",
+  "#남극",
+  "#극한생존",
+  "#저체온증"
+ ],
+ "sources": [
+  "https://wmo.int/media/news/wmo-verifies-696degc-greenland-temperature-northern-hemisphere-record",
+  "https://nsidc.org/news-analyses/news-stories/new-study-explains-antarcticas-coldest-temperatures",
+  "https://www.britannica.com/place/Antarctica/Climate",
+  "https://www.weather.gov/safety/cold-wind-chill-chart",
+  "https://medlineplus.gov/ency/article/000038.htm",
+  "https://gml.noaa.gov/obop/spo/"
+ ],
+ "bench": {
+  "format": "투시·단면 3D 해설 — 대조 훅 → 왜? → 원인 3단계 → 결과(so.thats.how 'Dishwasher' 3D 단면 808만 · 해외 건강 쇼츠 투명 피부 3D 첫 달 1,000만 · 사용자 10/24)",
+  "seen": []
+ }
+}

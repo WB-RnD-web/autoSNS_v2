@@ -1,0 +1,91 @@
+{
+ "date": "2026-10-25",
+ "kind": "sci",
+ "src_n": 205,
+ "slug": "heaviest-life",
+ "hook": [
+  "코끼리 10.9톤",
+  "이게 꼴찌라고?"
+ ],
+ "say_intro": "기록상 제일 무거운 코끼리는 10.9톤. 그런데 무게 순위 꼴찌라고요?",
+ "why": {
+  "sub": "더 무거운 게 셋 있어요",
+  "say": "왜냐고요? 더 무거운 게 셋이에요.",
+  "img": "a huge African elephant bull standing side view, big ribcage and heart inside",
+  "view": "xray"
+ },
+ "beats": [
+  {
+   "big": "150톤",
+   "sub": "남극 흰긴수염고래",
+   "say": "남극 흰긴수염고래는 150톤까지 나가요.",
+   "img": "a giant long slender whale seen from the side with small flippers, long spine and huge ribcage inside",
+   "view": "xray",
+   "label": "갈비뼈",
+   "pin": [
+    0.52,
+    0.53
+   ],
+   "src": 1,
+   "value": 150
+  },
+  {
+   "big": "1,270톤",
+   "sub": "셔먼 나무 · 줄기만",
+   "say": "거대 세쿼이아 셔먼 나무는 줄기만 약 1,270톤이에요.",
+   "img": "a giant sequoia tree trunk cut horizontally in the middle, the upper section lifted and floating above the lower section, showing the large round cross-section full of growth rings",
+   "view": "cutaway",
+   "label": "꽉 찬 나이테",
+   "pin": [
+    0.5,
+    0.3
+   ],
+   "src": 2,
+   "value": 1270
+  },
+  {
+   "big": "5,900톤",
+   "sub": "판도 사시나무 · 추정치",
+   "say": "줄기 47,000개 넘게, 뿌리는 하나. 판도는 약 5,900톤 한 그루예요.",
+   "img": "a thick block of soil sliced open like a cake, many thin white aspen trunks on top all growing from one single thick glowing root network underground",
+   "view": "cutaway",
+   "label": "뿌리는 하나",
+   "pin": [
+    0.5,
+    0.62
+   ],
+   "src": 3,
+   "value": 5900
+  }
+ ],
+ "verdict": {
+  "big": "무게 1위 판도",
+  "say": "그런데 땅속 버섯 하나는 약 965헥타르, 무게를 잴 수도 없어요.",
+  "img": "a wide block of forest soil sliced open like a cake, small round green trees on top, inside the soil a vast glowing white thread network spreading through the whole block",
+  "view": "cutaway",
+  "label": "버섯 균사",
+  "pin": [
+   0.5,
+   0.6
+  ]
+ },
+ "caption": "코끼리 10.9톤이 무게 순위 꼴찌라고? 🌲",
+ "hashtags": [
+  "#속이보이는과학",
+  "#과학상식",
+  "#판도",
+  "#흰긴수염고래",
+  "#세쿼이아"
+ ],
+ "sources": [
+  "https://animals.sandiegozoo.org/animals/elephant",
+  "https://www.fisheries.noaa.gov/species/blue-whale",
+  "https://www.nps.gov/seki/learn/nature/sherman.htm",
+  "https://www.usu.edu/today/story/first-comprehensive-assessment-of-pando-aspen-clone-reveals-critical-threats",
+  "https://research.fs.usda.gov/treesearch/20135"
+ ],
+ "bench": {
+  "format": "투시·단면 3D 해설 — 대조 훅 → 왜? → 원인 3단계 → 결과(so.thats.how 'Dishwasher' 3D 단면 808만 · 해외 건강 쇼츠 투명 피부 3D 첫 달 1,000만 · 사용자 10/24)",
+  "seen": []
+ }
+}
