@@ -1,0 +1,29 @@
+{
+ "date": "2026-11-06",
+ "kind": "bm_paper",
+ "src_n": 413,
+ "slug": "rhino-upside-down",
+ "topic": "거꾸로 나는 코뿔소",
+ "headline": ["코뿔소를 거꾸로", "매달면 어떻게 됨?"],
+ "lines": [
+  {"type": "hook", "say": "코뿔소를 거꾸로 매달면 어떻게 되는지, 진짜 실험함.",
+   "img": "a big grey rhinoceros hanging upside down by its feet from a yellow crane in a sunny open African savanna, calm scene, bright daylight"},
+  {"type": "stamp", "stamp": "2021 이그노벨 교통상", "say": "이거 연구해서 상까지 받음.", "src": 1,
+   "img": "a rhinoceros standing on a sunny grassy plain next to a plain shiny golden trophy cup, bright blue sky"},
+  {"type": "beat", "big": "12마리", "say": "야생 검은코뿔소 12마리로 해 봄.", "sub": "야생 검은코뿔소 12마리", "src": 0,
+   "img": "a group of twelve grey rhinoceroses standing together on a sunny savanna, bright daylight, wide shot"},
+  {"type": "beat", "big": "1,137kg", "say": "중간 몸무게가 약 1,137kg. 크레인이 고생함.", "sub": "중간 몸무게 약 1,137kg", "src": 0,
+   "img": "a strong yellow crane lifting a heavy grey rhinoceros by its feet over a sunny savanna, bright daylight"},
+  {"type": "beat", "big": "10분", "say": "거꾸로 약 10분. 옆으로 눕힌 것보다 나쁘지 않았음.", "sub": "거꾸로 약 10분 · 옆으로 눕힌 것보다 나쁘지 않음", "src": 0,
+   "img": "a rhinoceros hanging upside down calmly beside a rhinoceros lying on its side on soft grass, sunny savanna, bright daylight"},
+  {"type": "punch", "say": "결론. 코뿔소는 거꾸로 날아도 괜찮음.", "sub": "결론: 코뿔소는 거꾸로 날아도 괜찮음",
+   "img": "a rhinoceros flying upside down under a helicopter above a bright blue sky and green savanna, cheerful toy-like style"}
+ ],
+ "sources": [
+  "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:33822147%20AND%20SRC:MED&resultType=core&format=json",
+  "https://en.wikipedia.org/wiki/List_of_Ig_Nobel_Prize_winners"
+ ],
+ "caption": "코뿔소 거꾸로 매단 논문 진짜 있음ㅋㅋ",
+ "hashtags": ["#코뿔소", "#이그노벨상", "#동물상식", "#쓸데없는과학", "#병맛"],
+ "bench": {"format": "황당한 질문 + 진짜 숫자 정색 답(10/20 조사)", "seen": []}
+}
