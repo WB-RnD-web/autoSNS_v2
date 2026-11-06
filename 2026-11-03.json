@@ -1,0 +1,309 @@
+{
+ "date": "2026-11-03",
+ "hot": [
+  {
+   "topic": "입동(11월 7일 무렵) 한파 예보와 김장철이 겹치며 '겨울 시작' 이야기가 많아짐",
+   "market": "kr",
+   "where": "날씨 유튜브와 신문 기사(김장·배춧값·입동 화보)",
+   "evidence": [
+    {
+     "title": "이번 주 후반 전형적인 서고동저 기압배치로 입동 한파 - YouTube",
+     "url": "https://www.youtube.com/watch?v=CPKyFrZjJxQ",
+     "date": "2026-11-02"
+    },
+    {
+     "title": "\"배춧값 내려도 김장은 번거로워\"…편의성에 지갑 여는 소비자들",
+     "url": "https://jnilbo.com/news/articleView.html?idxno=90000078712",
+     "date": "2026-11-02"
+    },
+    {
+     "title": "[화보] 입동 앞두고 감 맛보는 직박구리 - 중부일보",
+     "url": "https://www.joongboo.com/news/articleView.html?idxno=363741251",
+     "date": "2026-11-03"
+    }
+   ],
+   "why_now": "이번 주 후반이 입동이고 한파 예보와 김장철 기사가 같은 주에 몰려 있습니다. 해마다 돌아오는 절기 화제이며, 올해만의 새로운 유행은 아닙니다.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "'입동부터 달라지는 띠별 겨울 첫 달 운' 표를 만듭니다. 명리에서는 입동부터 해월(亥月)로 봅니다. 이 근거는 내부 명리 자료로 확인해야 합니다."
+  },
+  {
+   "topic": "2027 정미년 신년운세 글·영상이 일주별·띠별로 미리 쏟아지는 중",
+   "market": "kr",
+   "where": "운세 블로그·사주 사이트·유튜브",
+   "evidence": [
+    {
+     "title": "기사일주 2027년 운세 : 정미년 편인운, 십이운성 제왕과 남녀 차이",
+     "url": "https://www.hongsimdang.kr/blog/2027%20%EC%9D%BC%EC%A3%BC%EB%B3%84%20%EC%9A%B4%EC%84%B8/%EA%B8%B0%EC",
+     "date": "2026-10-27"
+    },
+    {
+     "title": "2027년도 삼재띠",
+     "url": "https://superkts.com/cal/samj/year/2027",
+     "date": "2026-09-01"
+    }
+   ],
+   "why_now": "연말을 앞두고 2027 신년운세 선점 글이 늘고 있습니다. 다만 근거는 7일 전 글 1개이고 삼재 페이지는 두 달 전 것이라, 늘 찾는 주제가 철을 맞은 것에 가깝습니다.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "2027 날삼재 띠(토끼·양·돼지)를 출생연도 표로 만듭니다. 겁주지 않고 '삼재가 나가는 해'라는 담담한 말투로 씁니다."
+  },
+  {
+   "topic": "심해 검은아귀가 대낮 수면에 나타난 영상 이야기가 국내 피드 기사로 다시 퍼짐",
+   "market": "kr",
+   "where": "포털·피드형 기사(viewus 등)",
+   "evidence": [
+    {
+     "title": "심해에 사는 검은아귀가 수면 가까이 나타났다…실제 촬영 영상에 담긴 모습",
+     "url": "https://feed.viewus.co.kr/ai/article/353921/",
+     "date": "2026-11-03"
+    },
+    {
+     "title": "바닷속에서 검은 물체를 발견한 연구진…가까이 다가가자 드러난 충격적인 정체",
+     "url": "https://feed.viewus.co.kr/ai/article/353931/",
+     "date": "2026-11-03"
+    }
+   ],
+   "why_now": "기사는 오늘 나왔지만 사건 자체는 2025년 1월 일입니다. 새 뉴스가 아니라 '심해어' 소재가 국내 피드에서 계속 다시 소비된다는 신호로만 봐야 합니다.",
+   "fit": [
+    "insta_sci"
+   ],
+   "idea": "'심해어가 수면에 올라오면 몸속에서 생기는 일'을 단면으로 보여 줍니다. 아귀 직장인 편(boss-desk-light-anglerfish)과 겹치지 않게 수압·몸 구조 쪽으로만 갑니다."
+  },
+  {
+   "topic": "90년 가까이 기록이 끊겼던 '독 있는 귀요미' 방카슬로로리스 재확인",
+   "market": "kr",
+   "where": "동물 전문 매체 기사",
+   "evidence": [
+    {
+     "title": "90년 가까이 사라진 줄 알았는데…사람들 집 주변에서 발견된 동물의 정체",
+     "url": "https://m.animalplanet.co.kr/contents/?artNo=61918",
+     "date": "2026-10-22"
+    }
+   ],
+   "why_now": "최근 발표된 연구로 섬 곳곳에 아직 살고 있다는 사실이 확인됐습니다. 귀여운 얼굴에 독이 있다는 반전 덕에 퍼지는 중입니다.",
+   "fit": [
+    "insta_danger"
+   ],
+   "idea": "'이 귀여운 원숭이가 팔을 들면 위험한 진짜 이유' 카드입니다. 사실 확인을 더 한 뒤에 후보로 올립니다."
+  },
+  {
+   "topic": "구조에 실패한 NASA 스위프트 우주망원경이 몇 주 안에 지구로 떨어질 예정",
+   "market": "us",
+   "where": "우주 뉴스 매체(Space.com)",
+   "evidence": [
+    {
+     "title": "NASA ends Swift space telescope mission after failed rescue attempt",
+     "url": "https://www.space.com/space-exploration/missions/nasa-ends-swift-space-telescope-mission-after-failed-rescue-attempt",
+     "date": "2026-10-26"
+    }
+   ],
+   "why_now": "10월 26일에 임무 종료가 발표됐고, 앞으로 몇 주 안에 재진입할 예정이라 화제가 이어질 수 있습니다.",
+   "fit": [
+    "insta_sci"
+   ],
+   "idea": "'22년 일한 우주망원경이 떨어지는 과정'을 위성 단면과 대기 재진입 순서로 보여 줍니다."
+  },
+  {
+   "topic": "'티라노보다 사람한테 더 위험한' 호랑이만 한 공룡, 스피노사우루스는 대부분 물속 생활",
+   "market": "us",
+   "where": "과학 뉴스(ScienceDaily 등)",
+   "evidence": [
+    {
+     "title": "A Forgotten Fossil Reveals a Fearsome Dinosaur With Giant Claws",
+     "url": "https://www.sciencedaily.com/releases/2026/10/261014015457.htm",
+     "date": "2026-10-14"
+    },
+    {
+     "title": "New Evidence Suggests Spinosaurus Spent Most of Its Life Underwater",
+     "url": "https://www.sciencedaily.com/releases/2026/10/261024221956.htm",
+     "date": "2026-10-25"
+    }
+   ],
+   "why_now": "10월 중순과 말에 나온 새 연구입니다. 우리 Nine Tails에서 가장 잘 된 편이 T. rex 생존 what-if라 시청자와 바로 맞닿아 있습니다.",
+   "fit": [
+    "nt_story"
+   ],
+   "idea": "'T. rex는 당신을 무시하지만 이 공룡은 쫓아온다' 45~60초 what-if입니다."
+  },
+  {
+   "topic": "'무서운 동물'의 반전 연구: 산호 킬러 불가사리가 산호를 돕고, 독 도롱뇽이 자외선에 빛남",
+   "market": "us",
+   "where": "과학 뉴스(ScienceDaily)",
+   "evidence": [
+    {
+     "title": "The Great Barrier Reef's Most Notorious Coral Killer May Actually Be Helping It",
+     "url": "https://www.sciencedaily.com/releases/2026/10/261030002957.htm",
+     "date": "2026-11-01"
+    },
+    {
+     "title": "Fire Salamanders Have a Secret Glow",
+     "url": "https://www.sciencedaily.com/releases/2026/10/261027063707.htm",
+     "date": "2026-10-28"
+    },
+    {
+     "title": "Nature News -- ScienceDaily",
+     "url": "https://www.sciencedaily.com/news/plants_animals/nature/",
+     "date": "2026-11-02"
+    }
+   ],
+   "why_now": "둘 다 최근 1주 안에 나온 연구입니다. 같은 주에 '거미도 꿈을 꿀까', '꿀벌이 다른 벌을 괴롭힌다' 같은 동물 반전 연구가 함께 올라왔습니다.",
+   "fit": [
+    "insta_danger"
+   ],
+   "idea": "무서운 제목으로 시작해서 '사실은…' 반전 사실 한 장으로 끝내는 카드 2편입니다."
+  },
+  {
+   "topic": "바다 밑 실험실에서 5일 살며 우주 임무를 연습한 '아쿠아노트' 체험기",
+   "market": "us",
+   "where": "우주 뉴스 매체(Space.com) 연재",
+   "evidence": [
+    {
+     "title": "Analog astronauts: How living underwater can prepare humans for space missions",
+     "url": "https://www.space.com/space-exploration/missions/analog-astronauts-how-living-underwater-can-prepare-humans-for-space-missions",
+     "date": "2026-10-26"
+    }
+   ],
+   "why_now": "10월 말부터 체험 연재가 이어지는 중입니다. 다만 크게 퍼진 흔적은 아직 없고, 심해와 우주를 한 번에 잇는 소재라 고른 것입니다.",
+   "fit": [
+    "insta_sci"
+   ],
+   "idea": "'바닷속에서 우주 연습을 하는 이유'를 해저 실험실 단면도로 보여 줍니다."
+  }
+ ],
+ "candidates": [
+  {
+   "line": "insta_danger",
+   "title_idea": "산호초 킬러 불가사리가 '위험한' 진짜 이유",
+   "facts": [
+    {
+     "fact": "악마불가사리(crown-of-thorns starfish)는 독이 든 날카로운 가시로 덮여 있고 산호를 먹어 치우는 것으로 유명하다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/10/261030002957.htm"
+    },
+    {
+     "fact": "그레이트배리어리프에서는 1960년대 이후 약 15년마다 한 번씩, 모두 네 번 큰 대발생이 있었다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/10/261030002957.htm"
+    },
+    {
+     "fact": "시드니대 연구에서 관찰한 먹이 활동의 거의 75%는 산호 군체 전체를 없애지 않고 살아 있는 산호 조직을 남겼다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/10/261030002957.htm"
+    },
+    {
+     "fact": "빨리 자라는 우세한 산호를 먹어서 느리게 자라는 산호가 살아남을 틈을 만들고, 산호 다양성을 높일 수 있다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/10/261030002957.htm"
+    }
+   ],
+   "careful": "'개체 수가 조절될 때' 그렇다는 조건부 결과입니다. 대발생 때는 여전히 큰 피해를 준다는 점도 함께 적어야 합니다. 가시의 독은 진짜이니 '사실 무해하다'고 쓰면 안 됩니다."
+  },
+  {
+   "line": "insta_danger",
+   "title_idea": "독 도롱뇽이 어둠 속에서 빛나는 진짜 이유",
+   "facts": [
+    {
+     "fact": "유럽의 검정·노랑 무늬 불도롱뇽은 자외선을 받으면 초록색과 청록색으로 빛난다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/10/261027063707.htm"
+    },
+    {
+     "fact": "빛은 주로 피부의 샘과 그 샘에서 나오는 분비물에서 나온다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/10/261027063707.htm"
+    },
+    {
+     "fact": "분비물은 몸에서 나온 뒤에도 24시간 넘게 빛을 낸다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/10/261027063707.htm"
+    },
+    {
+     "fact": "세계자연보전연맹(IUCN)은 불도롱뇽을 '취약' 종으로 분류한다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/10/261027063707.htm"
+    }
+   ],
+   "careful": "빛나는 이유(기능)는 기사에서 확정되지 않았으니 단정하면 안 됩니다. 실제로 독성 분비물이 있으니 만지라는 식의 연출도 피합니다."
+  },
+  {
+   "line": "nt_story",
+   "title_idea": "A T. rex Would Ignore You. This Dinosaur Would Chase You.",
+   "facts": [
+    {
+     "fact": "거의 100년 동안 박물관 서랍에 묻혀 있던 와이트섬 화석이 새 육식공룡 인빅티벨라트릭스 아메리나(Invictibellatrix amberina)로 밝혀졌다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/10/261014015457.htm"
+    },
+    {
+     "fact": "이 공룡은 약 1억 2천만 년 전 지금의 영국에 살았고, 큰 호랑이만 한 몸에 커다란 굽은 발톱이 있었다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/10/261014015457.htm"
+    },
+    {
+     "fact": "발톱 길이는 약 10~20cm였을 수 있다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/10/261014015457.htm"
+    },
+    {
+     "fact": "연구자는 사람이 이 공룡 몸무게의 약 3분의 1이라 딱 맞는 먹잇감이었을 것이고, T. rex는 사람이 너무 작아 신경 쓰지 않았을 것이라고 말했다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/10/261014015457.htm"
+    }
+   ],
+   "careful": "'더 위험했을 것'은 연구자의 추정이라 가정형으로 써야 합니다. 발톱 길이도 '~였을 수 있다'로 씁니다."
+  },
+  {
+   "line": "insta_sci",
+   "title_idea": "22년 일한 우주망원경이 지구로 떨어지는 과정",
+   "facts": [
+    {
+     "fact": "NASA 스위프트 관측위성은 2004년 11월 지구 궤도에 올라갔다.",
+     "source_url": "https://www.space.com/space-exploration/missions/nasa-ends-swift-space-telescope-mission-after-failed-rescue-attempt"
+    },
+    {
+     "fact": "Katalyst가 NASA의 3천만 달러짜리 스위프트 구조 계약을 따냈고, 구조선 LINK는 7월 3일에 발사됐다.",
+     "source_url": "https://www.space.com/space-exploration/missions/nasa-ends-swift-space-telescope-mission-after-failed-rescue-attempt"
+    },
+    {
+     "fact": "구조선이 스위프트와 만나는 데 실패해 NASA는 임무를 공식 종료했다.",
+     "source_url": "https://www.space.com/space-exploration/missions/nasa-ends-swift-space-telescope-mission-after-failed-rescue-attempt"
+    },
+    {
+     "fact": "스위프트는 앞으로 몇 주 안에 지구로 떨어질 것으로 예상된다.",
+     "source_url": "https://www.space.com/space-exploration/missions/nasa-ends-swift-space-telescope-mission-after-failed-rescue-attempt"
+    }
+   ],
+   "careful": "떨어지는 날짜·장소나 파편 위험은 기사에 없으니 지어내지 않습니다. 재진입 원리를 설명하려면 출처를 따로 확인해야 합니다."
+  },
+  {
+   "line": "insta_sci",
+   "title_idea": "바다 밑 6.7m 실험실에서 우주인 연습을 하는 이유",
+   "facts": [
+    {
+     "fact": "줄스 해저 실험실(Jules' Undersea Lab)은 미국 플로리다 키라고 근처 수심 약 6.7m(22피트)에 있는 연구 기지다.",
+     "source_url": "https://www.space.com/space-exploration/missions/analog-astronauts-how-living-underwater-can-prepare-humans-for-space-missions"
+    },
+    {
+     "fact": "이 기지는 스쿠버 다이빙으로만 드나들 수 있다.",
+     "source_url": "https://www.space.com/space-exploration/missions/analog-astronauts-how-living-underwater-can-prepare-humans-for-space-missions"
+    },
+    {
+     "fact": "'아쿠아노트'가 되려면 이른바 포화 상태로 물속에서 최소 24시간을 지내야 한다.",
+     "source_url": "https://www.space.com/space-exploration/missions/analog-astronauts-how-living-underwater-can-prepare-humans-for-space-missions"
+    },
+    {
+     "fact": "SEA STAR 대원들은 아쿠아노트로 5일 동안 물속에서 살았다.",
+     "source_url": "https://www.space.com/space-exploration/missions/analog-astronauts-how-living-underwater-can-prepare-humans-for-space-missions"
+    }
+   ],
+   "careful": "포화 잠수 때 몸에서 일어나는 일(질소·감압)은 이 기사에 없으니, 쓰려면 출처를 따로 확인해야 합니다."
+  },
+  {
+   "line": "wb_table",
+   "title_idea": "2027 정미년 날삼재 띠 출생연도 표 | 삼재가 나가는 해, 토끼·양·돼지띠",
+   "facts": [
+    {
+     "fact": "2027년은 양띠 해인 정미(丁未)년이다.",
+     "source_url": "https://superkts.com/cal/samj/year/2027"
+    },
+    {
+     "fact": "2027년 정미년은 날삼재이며 토끼띠·양띠·돼지띠가 해당된다.",
+     "source_url": "https://superkts.com/cal/samj/year/2027"
+    }
+   ],
+   "careful": "삼재는 민속 믿음이라 화를 단정하지 않습니다. 겁주지 말고 '나가는 해'의 담담한 덕담으로 씁니다. 신년운세 시리즈(newyear_series)에 삼재 편이 이미 있는지 먼저 확인해야 합니다."
+  }
+ ],
+ "note": "한국 쪽은 입동·김장 같은 절기와 2027 신년운세 선점 말고는 55세 이상 시청층에 맞는 새 유행을 못 찾았습니다. 과학·동물은 ScienceDaily와 Space.com의 최근 1~2주 연구에서 반전형 소재를 건졌습니다. 검색 한도에 일찍 걸려 영어권 viral true story와 what-if 쪽은 거의 확인하지 못했으니, 다음 회차에서 먼저 보충해야 합니다."
+}

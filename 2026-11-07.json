@@ -1,0 +1,261 @@
+{
+ "date": "2026-11-07",
+ "hot": [
+  {
+   "topic": "보이저 1호가 11월 18일 지구에서 '1광일' 거리에 닿는다(빛으로 하루, 명령 한 번 주고받는 데 48시간)",
+   "market": "us",
+   "where": "과학 기사(ScienceDaily·NASA)와 한국 천문 기사(NASA 11월 밤하늘 안내 소개)",
+   "evidence": [
+    {
+     "title": "NASA's Voyager 1 is about to reach a historic one-light-day milestone",
+     "url": "https://www.sciencedaily.com/releases/2026/11/261103003152.htm",
+     "date": "2026-11-03"
+    },
+    {
+     "title": "November's Night Sky Notes: Light-Day Away - NASA Science",
+     "url": "https://science.nasa.gov/solar-system/skywatching/night-sky-network/novembers-night-sky-notes-light-day-away/",
+     "date": ""
+    },
+    {
+     "title": "유성우·화성·목성·슈퍼문…NASA가 꼽은 11월 밤하늘 관측 포인트",
+     "url": "https://www.e-science.co.kr/news/articleView.html?idxno=138813",
+     "date": ""
+    }
+   ],
+   "why_now": "11/18이라는 날짜가 정해진 이정표라 기사가 지금 쌓이고 있다. 당일까지 11일 남아서 미리 올리고 당일에 한 번 더 올릴 수 있다.",
+   "fit": [
+    "insta_sci",
+    "nt_story"
+   ],
+   "idea": "'보이저에 안녕이라고 보내면 답장은 이틀 뒤' — 빛이 지구에서 보이저까지 가는 길을 한 줄로 그려 보여 주는 20초."
+  },
+  {
+   "topic": "NASA 스위프트 우주망원경(1.5톤)이 구조 실패 뒤 11/4 수마트라 위 대기권으로 들어와 불탔다",
+   "market": "kr",
+   "where": "KBS 유튜브 '잇슈 SNS', NASA 블로그, space.com, SNS에 퍼진 재진입 영상",
+   "evidence": [
+    {
+     "title": "구조 실패한 1.5톤 짜리 우주망원경…오늘(4일) 중 지구로 추락 [잇슈 SNS] / KBS 2026.11.04.",
+     "url": "https://www.youtube.com/watch?v=iNvk3JHSpzk",
+     "date": "2026-11-04"
+    },
+    {
+     "title": "NASA's Swift Observatory Re-Entered Atmosphere - NASA Science",
+     "url": "https://science.nasa.gov/blogs/swift/2026/11/02/nasas-swift-observatory-to-re-enter-atmosphere/",
+     "date": "2026-11-04"
+    },
+    {
+     "title": "NASA's Swift space telescope crashes back to Earth after failed rescue attempt",
+     "url": "https://www.space.com/space-exploration/missions/nasa-swift-space-telescope-crashes-to-earth",
+     "date": "2026-11-05"
+    }
+   ],
+   "why_now": "사흘 전 일이고 한국 방송 쇼츠로도 나왔다. 불붙은 재진입 영상이 SNS에 돌고 있다(아직 따로 확인되지는 않음).",
+   "fit": [
+    "insta_sci",
+    "nt_story"
+   ],
+   "idea": "'우주망원경은 왜 떨어지면 거의 다 타 버릴까' — 공기와 부딪쳐 달궈지는 과정을 단면으로 보여 주는 20~30초."
+  },
+  {
+   "topic": "오늘(11/7) 입동, 영하권 추위와 한파주의보, 김장철 시작",
+   "market": "kr",
+   "where": "날씨·생활 기사(아시아경제·금강일보 등)와 절기 블로그",
+   "evidence": [
+    {
+     "title": "[날씨] 입동 아침 강한 바람에 영하권 추위…곳곳 한파주의보",
+     "url": "https://view.asiae.co.kr/article/2026110620260615132",
+     "date": "2026-11-06"
+    },
+    {
+     "title": "올해 '입동' 날짜 언제?... 주말부터 기온 '뚝', 입동 뜻은",
+     "url": "https://www.ggilbo.com/news/articleView.html?idxno=1191476",
+     "date": ""
+    }
+   ],
+   "why_now": "오늘이 절기 당일이고 첫 영하권 추위가 겹쳤다. 해마다 오는 절기지만 55세 이상 시청자에게는 김장·겨울 채비와 바로 이어지는 화제다.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "명리에서 입동은 해월(亥月)이 시작되는 때다. 이걸 근거로 '입동부터 겨울 복이 드는 띠' 12띠 표를 어르신 말투로."
+  },
+  {
+   "topic": "11월 밤하늘: 15~16일 화성·목성 1.2도 근접, 17~18일 사자자리 유성우, 24일 슈퍼문",
+   "market": "kr",
+   "where": "한국 과학 기사(NASA 'What's Up' 11월호 소개)",
+   "evidence": [
+    {
+     "title": "유성우·화성·목성·슈퍼문…NASA가 꼽은 11월 밤하늘 관측 포인트",
+     "url": "https://www.e-science.co.kr/news/articleView.html?idxno=138813",
+     "date": ""
+    }
+   ],
+   "why_now": "이달 안에 날짜가 정해진 천문 일정이 줄지어 있다. 슈퍼문(24일)은 보름달 소원 풍습과 이어져 어르신들도 관심을 가질 만하다.",
+   "fit": [
+    "insta_sci",
+    "wb_table"
+   ],
+   "idea": "인스타는 '화성과 목성이 붙어 보여도 실제로는 얼마나 떨어져 있나'. 왕별이는 '11월 24일 큰 보름달 아래 소원 비는 띠' 표(천문 사실과 운세 풀이는 나눠서)."
+  },
+  {
+   "topic": "아르헨티나 심해 협곡 표본에서 2주 만에 신종 57종이 확인됐다(바이럴된 '뚱이 불가사리'는 신종이 아니었음)",
+   "market": "us",
+   "where": "환경 과학 기사(Mongabay). 2025년 생중계 때 '뚱이 불가사리'가 SNS에서 바이럴됐다",
+   "evidence": [
+    {
+     "title": "'Patrick' sea star went viral, but Argentine deep-sea canyon held 57 new species",
+     "url": "https://news.mongabay.com/2026/10/patrick-sea-star-went-viral-but-argentine-deep-sea-canyon-held-57-new-species/",
+     "date": ""
+    }
+   ],
+   "why_now": "10월 중순쯤 기사로 약 3주 전이라 30일 안에 든다. 예전에 바이럴된 캐릭터가 다시 언급돼서 젊은 층이 알아보기 쉽다.",
+   "fit": [
+    "insta_worker",
+    "insta_sci"
+   ],
+   "idea": "심해 직장인: '서류 10%만 봤는데 지원자 전원 합격' — 요각류 신종 이야기를 신입 대량 입사 공감으로."
+  },
+  {
+   "topic": "남태평양에서 작은 배로 몇 달 표류한 5명(아이 2명 포함)이 3,000마일 넘게 떨어진 곳에서 구조됐다",
+   "market": "us",
+   "where": "미국 주요 언론 기사(워싱턴포스트)",
+   "evidence": [
+    {
+     "title": "Five rescued from small boat after months adrift in Pacific - The Washington Post",
+     "url": "https://washingtonpost.com/world/2026/11/03/five-rescued-small-boat-after-months-adrift-pacific",
+     "date": "2026-11-03"
+    }
+   ],
+   "why_now": "나흘 전에 나온 실제 생존 실화다. 영어권 짧은 실화 쇼츠의 survival 흐름과 꼴이 맞는다.",
+   "fit": [
+    "nt_story"
+   ],
+   "idea": "얼굴 없는 3D: 6m(20피트) 배가 지도 위로 3,000마일을 떠가는 경로 + 수색이 10일 만에 끝났다는 숫자로 긴장감 주는 60초."
+  }
+ ],
+ "candidates": [
+  {
+   "line": "insta_sci",
+   "title_idea": "보이저 1호에 '안녕'을 보내면 답장은 이틀 뒤에 온다",
+   "facts": [
+    {
+     "fact": "보이저 1호는 11월 18일 지구에서 1광일 거리에 닿고, 그러면 가장 단순한 명령도 주고받는 데 48시간이 걸린다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261103003152.htm"
+    },
+    {
+     "fact": "1광일은 빛이 지구와 탐사선 사이를 가는 데 꼬박 24시간이 걸리는 거리다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261103003152.htm"
+    },
+    {
+     "fact": "NASA에 따르면 보이저 1호는 발사 49년 만인 2026년 11월 18일 태양에서 16.1 billion miles(161억 마일) 떨어진 1광일 지점을 지난다.",
+     "source_url": "https://science.nasa.gov/solar-system/skywatching/night-sky-network/novembers-night-sky-notes-light-day-away/"
+    },
+    {
+     "fact": "1광일 선을 넘어도 보이저 1호나 그 주변에 물리적으로 달라지는 것은 없다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261103003152.htm"
+    }
+   ],
+   "careful": "'인류가 가장 멀리 간 곳'은 NASA 표현대로만 쓴다. 전력 문제를 두고 '곧 죽는다' 같은 단정은 하지 않는다."
+  },
+  {
+   "line": "insta_sci",
+   "title_idea": "22년 일한 우주망원경이 하늘에서 불타 사라진 날",
+   "facts": [
+    {
+     "fact": "1,450kg(3,200파운드)짜리 스위프트 망원경은 11월 4일 오전 7시 39분(미 동부시간) 수마트라 북부 상공에서 대기권에 다시 들어왔다.",
+     "source_url": "https://www.space.com/space-exploration/missions/nasa-swift-space-telescope-crashes-to-earth"
+    },
+    {
+     "fact": "스위프트는 망원경 3대로 우주에서 가장 강한 폭발을 관측하려고 만든 첫 다파장 관측소였고, 발사 후 거의 22년 만에 대기권으로 들어왔다.",
+     "source_url": "https://science.nasa.gov/blogs/swift/2026/11/02/nasas-swift-observatory-to-re-enter-atmosphere/"
+    },
+    {
+     "fact": "NASA는 기체 대부분이 대기 중에 타 버리고 일부 부품만 남았을 수 있다고 봤다.",
+     "source_url": "https://science.nasa.gov/blogs/swift/2026/11/02/nasas-swift-observatory-to-re-enter-atmosphere/"
+    },
+    {
+     "fact": "스위프트는 민간 우주선이 더 높은 궤도로 밀어 올리기로 했던 때로부터 석 달 뒤에 떨어졌다.",
+     "source_url": "https://www.space.com/space-exploration/missions/nasa-swift-space-telescope-crashes-to-earth"
+    }
+   ],
+   "careful": "SNS의 재진입 영상은 따로 확인되지 않았으니 실제 장면처럼 쓰지 않는다. 잔해 위험을 부풀려 겁주지 않는다."
+  },
+  {
+   "line": "insta_worker",
+   "title_idea": "서류 10%만 봤는데 지원자 전원 합격 — 심해 신입 57명 대량 입사",
+   "facts": [
+    {
+     "fact": "연구팀은 아르헨티나 마르델플라타 해저 협곡 표본에서 2주 만에 신종 57종과 새 속(屬) 5개를 확인했다.",
+     "source_url": "https://news.mongabay.com/2026/10/patrick-sea-star-went-viral-but-argentine-deep-sea-canyon-held-57-new-species/"
+    },
+    {
+     "fact": "요각류 표본은 10%만 살펴봤는데 본 표본이 모두 신종이었고, 그렇게 신종 20종과 새 속 1개가 나왔다.",
+     "source_url": "https://news.mongabay.com/2026/10/patrick-sea-star-went-viral-but-argentine-deep-sea-canyon-held-57-new-species/"
+    },
+    {
+     "fact": "뿔 같은 부속지가 두드러진 심해 해삼 하나는 북유럽 신화의 신 이름을 따 'Loki'라는 별명이 붙었다.",
+     "source_url": "https://news.mongabay.com/2026/10/patrick-sea-star-went-viral-but-argentine-deep-sea-canyon-held-57-new-species/"
+    },
+    {
+     "fact": "바이럴된 '패트릭(뚱이)' 불가사리는 신종이 아닌 것으로 확인돼 심해 서식지에 그대로 두었다.",
+     "source_url": "https://news.mongabay.com/2026/10/patrick-sea-star-went-viral-but-argentine-deep-sea-canyon-held-57-new-species/"
+    }
+   ],
+   "careful": "'Loki'는 별명이라 정식 학명처럼 쓰지 않는다. 캐릭터 '뚱이' 그림은 직접 쓰지 않는다(저작권)."
+  },
+  {
+   "line": "nt_story",
+   "title_idea": "They Drifted 3,000 Miles in a 20-Foot Boat — and Were Found",
+   "facts": [
+    {
+     "fact": "9명이 탄 20피트(약 6m) 배가 7월 30일 미크로네시아 루오섬에 닿지 못해 실종 신고됐다.",
+     "source_url": "https://washingtonpost.com/world/2026/11/03/five-rescued-small-boat-after-months-adrift-pacific"
+    },
+    {
+     "fact": "미 해안경비대는 약 25,000제곱해리를 수색하다 10일 만에 수색을 멈췄다.",
+     "source_url": "https://washingtonpost.com/world/2026/11/03/five-rescued-small-boat-after-months-adrift-pacific"
+    },
+    {
+     "fact": "아이 2명과 어른 3명이 마지막 목격 지점에서 3,000마일 넘게 떨어진 남태평양에서 일요일에 구조됐다.",
+     "source_url": "https://washingtonpost.com/world/2026/11/03/five-rescued-small-boat-after-months-adrift-pacific"
+    }
+   ],
+   "careful": "실제로 지금 벌어진 사고다. 나머지 4명의 행방이나 표류 중 있었던 일은 추측하거나 지어내지 않는다. 실명과 피해자 얼굴은 쓰지 않는다(마네킹). 보도가 더 나오면 사실을 다시 확인한다."
+  },
+  {
+   "line": "wb_table",
+   "title_idea": "입동부터 겨울 복 들어오는 띠 순위 1위~12위 | 11월 7일 입동 · 45~96년생 전부",
+   "facts": [
+    {
+     "fact": "입동은 24절기 가운데 열아홉 번째 절기로, 태양 황경이 225도에 이르는 양력 11월 7일이나 8일 무렵에 온다.",
+     "source_url": "https://www.ggilbo.com/news/articleView.html?idxno=1191476"
+    },
+    {
+     "fact": "입동 전후 5일 안에 담근 김장이 맛있다는 이야기가 전해진다.",
+     "source_url": "https://www.ggilbo.com/news/articleView.html?idxno=1191476"
+    },
+    {
+     "fact": "기상청에 따르면 7일 아침 최저기온은 -6도에서 5도로, 6일보다 5~10도쯤 낮다.",
+     "source_url": "https://view.asiae.co.kr/article/2026110620260615132"
+    }
+   ],
+   "careful": "김장 이야기는 '전해진다'로만 쓴다. 띠 순위는 명리 풀이(해월 시작)라고 밝히고, 추위·건강은 단정하거나 겁주지 않는다."
+  },
+  {
+   "line": "wb_table",
+   "title_idea": "손주 수능 날 덕담 한마디, 띠별로 골라 드립니다 | 11월 19일 수능 · 45~96년생",
+   "facts": [
+    {
+     "fact": "2027학년도 수능은 2026년 11월 19일(목)에 치르고, 예비소집일은 하루 전인 11월 18일(수)이다.",
+     "source_url": "https://kbthink.com/life/leisure/2027-csat-guide.html"
+    },
+    {
+     "fact": "수험생은 시험 당일 오전 8시 10분까지 시험실에 들어가야 한다.",
+     "source_url": "https://kbthink.com/life/leisure/2027-csat-guide.html"
+    }
+   ],
+   "careful": "합격·점수를 보장하거나 단정하지 않는다(덕담과 응원으로만). 해마다 오는 행사라 '지금 뜬다'고 하지 않고 시기 맞춤 편으로 둔다."
+  }
+ ],
+ "note": "한국 쪽은 오늘 입동·한파와 11/19 수능, 11월 천문 일정(보이저 1광일 11/18·슈퍼문 11/24)처럼 날짜가 정해진 화제가 가장 쓸 만했다. 영어 쪽은 스위프트 재진입과 태평양 표류 구조가 새 소식이다. 릴스·쇼츠 밈 검색은 옷 기사나 오래된 결산 글만 나와서 근거로 쓰지 않았고, insta_danger에 쓸 30일 안의 새 동물 연구는 검색 예산 안에서 찾지 못해 후보를 0개로 두었다."
+}
