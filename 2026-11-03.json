@@ -1,0 +1,305 @@
+{
+ "slug": "dinosaur-that-would-chase-you",
+ "format": "whatif",
+ "title": "A T. Rex Would Ignore You. This Dinosaur Would Chase You.",
+ "description": "A skull fragment sat in a London museum drawer for nearly 100 years. In October 2026 scientists named it Invictibellatrix amberina, a tiger-sized, long-clawed T. rex cousin from the Isle of Wight. Its lead researcher says that for humans it would have been more dangerous than a T. rex.",
+ "tags": [
+  "invictibellatrix",
+  "new dinosaur",
+  "t rex",
+  "megaraptor",
+  "what if",
+  "isle of wight",
+  "dinosaur discovery"
+ ],
+ "music": "tension",
+ "style_tail": ", lush Early Cretaceous floodplain with giant ferns and conifers, humid golden haze, epic movie still",
+ "grade": {
+  "contrast": 1.08,
+  "saturation": 1.02,
+  "tint": [
+   1.02,
+   1.0,
+   0.96
+  ]
+ },
+ "character": {
+  "prompt": "an adult human figure with realistic proportions rendered as a smooth featureless matte white mannequin with a blank egg-shaped head and no facial features, dressed as a modern hiker in a green t-shirt, khaki shorts, hiking boots and a small backpack, standing in a prehistoric fern floodplain with tall conifers, full body, three-quarter view",
+  "seed": 1120
+ },
+ "shots": [
+  {
+   "say": "To this dinosaur, you're perfectly sized prey. And it's already running.",
+   "edit": "He sprints through tall ferns toward the camera while a feathered tiger-sized two-legged dinosaur with strong front limbs and huge curved claws charges close behind him, ferns whipping apart.",
+   "move": "hook",
+   "fx": "debris",
+   "sfx": "whoosh",
+   "flash": [
+    0.05
+   ]
+  },
+  {
+   "say": "A T. rex wouldn't even bother with you.",
+   "edit": "He stands tiny in the foreground of a misty clearing while a colossal Tyrannosaurus rex strides past behind him, its head turned toward the distant horizon.",
+   "move": "tilt_up",
+   "fx": "dust",
+   "sfx": "rumble"
+  },
+  {
+   "say": "Too small. Not worth it.",
+   "reuse": 1,
+   "focus": [
+    0.5,
+    0.7,
+    1.3
+   ],
+   "move": "push_in"
+  },
+  {
+   "say": "But this one, scientists say, definitely would have chased you.",
+   "prompt": "a feathered two-legged predatory dinosaur with a narrow snout crouching low among ferns, huge curved claws on its long front limbs, eyes locked forward, low angle",
+   "move": "push_in",
+   "fx": "none",
+   "sfx": "heartbeat"
+  },
+  {
+   "say": "Meet Invictibellatrix amberina.",
+   "prompt": "a feathered tiger-sized two-legged predatory dinosaur with a narrow snout, strong front limbs and huge curved claws, standing on a riverbank at golden hour, full body side view",
+   "move": "orbit",
+   "fx": "dust",
+   "sfx": "boom",
+   "flash": [
+    0.1
+   ]
+  },
+  {
+   "say": "About {120 million|a hundred and twenty million} years ago, it hunted on what's now England's Isle of Wight.",
+   "prompt": "an aerial view of a warm prehistoric floodplain with winding rivers, giant ferns and distant long-necked sauropods under a hazy sky",
+   "move": "pull_out",
+   "fx": "none"
+  },
+  {
+   "say": "Scientists estimate it was the size of a large tiger,",
+   "reuse": 4,
+   "focus": [
+    0.5,
+    0.55,
+    1.15
+   ],
+   "move": "drift_right"
+  },
+  {
+   "say": "{10 to 13 feet|ten to thirteen feet} long, and about as tall as you.",
+   "edit": "He stands beside the feathered dinosaur in a fern clearing, the top of his head level with the dinosaur's head, its long tail stretching far behind it.",
+   "move": "pan_right",
+   "fx": "dust"
+  },
+  {
+   "say": "Instead of giant jaws, it grabbed prey with strong arms and huge curved claws,",
+   "prompt": "a close-up of a feathered dinosaur front limb with three huge curved dark claws reaching forward, dramatic side light, ferns blurred behind",
+   "move": "push_in",
+   "fx": "none",
+   "sfx": "whoosh"
+  },
+  {
+   "say": "maybe {4 to 8 inches|four to eight inches} long.",
+   "reuse": 8,
+   "focus": [
+    0.55,
+    0.5,
+    1.35
+   ],
+   "move": "punch",
+   "sfx": "hit"
+  },
+  {
+   "say": "It ate small dinosaurs, lizards and mammals, a bit like a hyena today.",
+   "prompt": "a feathered predatory dinosaur stalking a tiny furry mammal through ferns at dusk, low angle",
+   "move": "drift_left",
+   "fx": "dust"
+  },
+  {
+   "say": "And you'd weigh about a third of what it did.",
+   "edit": "He freezes beside a fallen log as the feathered dinosaur leans in from the ferns, its curved claws raised.",
+   "move": "push_in",
+   "fx": "none",
+   "sfx": "heartbeat"
+  },
+  {
+   "say": "Too small for a T. rex. Just right for this.",
+   "reuse": 11,
+   "focus": [
+    0.45,
+    0.5,
+    1.3
+   ],
+   "move": "shake",
+   "sfx": "thud"
+  },
+  {
+   "say": "Good news: humans never actually met it.",
+   "prompt": "a calm empty prehistoric riverbank at sunset, giant ferns swaying, warm orange light",
+   "move": "drift_right",
+   "fx": "float"
+  },
+  {
+   "say": "The wild part? Its fossil, a piece of its skull,",
+   "prompt": "a small brown fossil bone fragment resting on cotton wool inside an old wooden museum drawer, dusty warm lamp light, close-up",
+   "move": "push_in",
+   "fx": "dust"
+  },
+  {
+   "say": "sat in a London museum drawer for nearly {100|a hundred} years.",
+   "prompt": "rows of old wooden specimen drawers in a dim grand museum storeroom, one drawer pulled open, dust floating in a beam of light",
+   "move": "pan_left",
+   "fx": "dust",
+   "sfx": "drip"
+  },
+  {
+   "say": "Then CT scans showed it was a species nobody had ever named.",
+   "prompt": "a smooth featureless matte white mannequin in a lab coat placing a small brown fossil bone fragment into a CT scanner, cool blue laboratory light",
+   "move": "push_in",
+   "fx": "none",
+   "sfx": "zap",
+   "flash": [
+    0.2
+   ]
+  },
+  {
+   "say": "Its name means unconquered female warrior.",
+   "reuse": 4,
+   "focus": [
+    0.5,
+    0.4,
+    1.25
+   ],
+   "move": "tilt_up",
+   "sfx": "boom"
+  },
+  {
+   "say": "And its later relatives grew claws up to {14 inches|fourteen inches} long.",
+   "prompt": "a towering feathered megaraptor dinosaur with enormous curved claws on its front limbs on a dusty plain, dramatic storm light, low angle",
+   "move": "push_in",
+   "fx": "debris",
+   "sfx": "rumble"
+  },
+  {
+   "say": "So a T. rex would ignore you. But this one? It's already running.",
+   "reuse": 0,
+   "move": "loop_end"
+  }
+ ],
+ "facts": [
+  {
+   "claim": "Invictibellatrix amberina, a new megaraptoran dinosaur identified from a fossil found on the Isle of Wight, lived around 120 million years ago; published in Royal Society Open Science",
+   "src": [
+    0,
+    1,
+    2
+   ]
+  },
+  {
+   "claim": "Lead researcher: for humans it would have been more dangerous than a T. rex; we would have been perfectly sized prey, about a third of their body weight; they definitely would have chased us; a T. rex would not have bothered as we would have been too small",
+   "src": [
+    0,
+    1
+   ]
+  },
+  {
+   "claim": "About the size of a large tiger; 3-4 m (10 to 13 feet) long and just over 1.5 m tall, about as tall as a human (almost 5 feet / about 5 feet); likely had feathers",
+   "src": [
+    0,
+    1,
+    2
+   ]
+  },
+  {
+   "claim": "Megaraptorans had relatively narrow skulls, powerful arms and huge curved claws to seize prey rather than relying mainly on massive jaws; its claws might have been about 10-20 cm (4-8 inches)",
+   "src": [
+    0,
+    2
+   ]
+  },
+  {
+   "claim": "It would have eaten small dinosaurs, lizards and mammals, a role in the food chain similar to the hyena today",
+   "src": [
+    0
+   ]
+  },
+  {
+   "claim": "Humans never encountered these dinosaurs",
+   "src": [
+    0
+   ]
+  },
+  {
+   "claim": "The fossil is part of the rear of the skull; the Natural History Museum in London acquired it in 1924, and it sat in a drawer for nearly 100 years",
+   "src": [
+    0,
+    1,
+    2
+   ]
+  },
+  {
+   "claim": "CT scans and anatomical comparisons indicated a previously unidentified dinosaur",
+   "src": [
+    0
+   ]
+  },
+  {
+   "claim": "The name translates to 'unconquered female warrior'",
+   "src": [
+    0
+   ]
+  },
+  {
+   "claim": "Some later megaraptorans developed claws up to 35 cm (14 inches) long",
+   "src": [
+    0
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "ScienceDaily (University College London) - A forgotten fossil reveals a fearsome dinosaur with giant claws",
+   "url": "https://www.sciencedaily.com/releases/2026/10/261014015457.htm",
+   "used": "around 120 million years ago, Isle of Wight, Royal Society Open Science, size of a large tiger, 3-4 m long, just over 1.5 m and about as tall as a human, likely feathers, 10-20 cm claws, narrow skulls, powerful arms and curved claws instead of massive jaws, diet and hyena comparison, Morrison quote (more dangerous than T. rex, a third of body weight, would have chased us, T. rex would not have bothered), humans never encountered them, rear of the skull, acquired 1924, drawer for nearly 100 years, CT scans, name meaning, later claws up to 35 cm (14 in)"
+  },
+  {
+   "title": "CBS News - New dinosaur species, a T. rex cousin that \"would have chased us,\" identified from fossil found 100 years ago",
+   "url": "https://www.cbsnews.com/news/new-dinosaur-species-invictibellatrix-amberina-fossil-overlooked-100-years/",
+   "used": "between 10 and 13 feet long and almost 5 feet tall, drawer at the Natural History Museum in London for nearly 100 years since 1924, a third of body weight and chase quotes, chunk of the back of a skull, Royal Society Open Science"
+  },
+  {
+   "title": "EarthSky - New dinosaur species identified from fossil stashed in drawer for a century",
+   "url": "https://earthsky.org/earth/new-dinosaur-species-invictibellatrix-amberina/",
+   "used": "about 5 feet (1.5 m) tall, 10-13 feet (3-4 m) long, claws about 4-8 inches (10-20 cm), came to the Natural History Museum in 1924, drawer for nearly 100 years, Royal Society Open Science"
+  }
+ ],
+ "careful": "What-if framing: the chase is clearly hypothetical, and the script says humans never met it. Size and claw lengths are given as estimates ('scientists estimate', 'maybe'). The researcher and the fossil collector are not named or shown. No blood or injury is shown. The 'you' hiker and the lab worker are faceless mannequins. Image prompts describe the fossil as a 'bone fragment' and the animal's 'front limbs'.",
+ "trend": {
+  "why_now": "Invictibellatrix amberina was announced October 14, 2026 under 'would have chased us / more dangerous than a T. rex' headlines (CBS, ScienceDaily), and outlets are still covering it: EarthSky published October 19 and updated October 25, and Earth.com ran it November 1. Our best-performing Short ever is the T. rex survival what-if (11.4x), so this is a direct follow-up for the same audience.",
+  "pattern": "This follows the news hook 'more dangerous to humans than a T. rex / would have chased us' and the setup of our own T. rex what-if hit. The viewer is prey in the first second, then gets sized against the animal, then comes the twist that the fossil sat in a drawer for a century. The title is a contrast pair: 'X would ignore you. This would chase you.'",
+  "evidence": [
+   {
+    "title": "CBS News - New dinosaur species, a T. rex cousin that \"would have chased us\"",
+    "url": "https://www.cbsnews.com/news/new-dinosaur-species-invictibellatrix-amberina-fossil-overlooked-100-years/",
+    "date": "2026-10-14"
+   },
+   {
+    "title": "EarthSky - New dinosaur species identified from fossil stashed in drawer for a century",
+    "url": "https://earthsky.org/earth/new-dinosaur-species-invictibellatrix-amberina/",
+    "date": "2026-10-19"
+   },
+   {
+    "title": "Earth.com - A fossil sat in a London museum drawer for nearly 100 years before scientists realized it was a new dinosaur",
+    "url": "https://www.earth.com/animals/a-fossil-sat-in-a-london-museum-drawer-for-nearly-100-years-before-scientists-realized-it-was-a-new-dinosaur/",
+    "date": "2026-11-01"
+   }
+  ]
+ },
+ "id": 20261103,
+ "kind": "trend",
+ "written": "2026-11-03",
+ "from": "2026-11-08"
+}

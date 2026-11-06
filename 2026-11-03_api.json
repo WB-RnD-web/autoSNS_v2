@@ -1,0 +1,33 @@
+{
+ "date": "2026-11-03",
+ "model": "claude-opus-5-5",
+ "effort": "high",
+ "tokens": {
+  "input": 4675,
+  "cache_write": 58940,
+  "cache_read": 382912,
+  "output": 21223,
+  "web_search": 3,
+  "web_fetch": 12
+ },
+ "usd": 0.844,
+ "ok": true,
+ "tries": 2,
+ "slot": "2026-11-08",
+ "errors": [],
+ "history": [
+  [
+   "20261103:dinosaur-that-would-chase-you 장면 3: 그림 금지어 'skull'(글자 깨짐·상표·잔혹)",
+   "20261103:dinosaur-that-would-chase-you 장면 3: 사람이 나오면 'mannequin'(얼굴 없는 3D) — 'arms'",
+   "20261103:dinosaur-that-would-chase-you 장면 4: 그림 금지어 'skull'(글자 깨짐·상표·잔혹)",
+   "20261103:dinosaur-that-would-chase-you 장면 4: 사람이 나오면 'mannequin'(얼굴 없는 3D) — 'arms'",
+   "20261103:dinosaur-that-would-chase-you 장면 8: 사람이 나오면 'mannequin'(얼굴 없는 3D) — 'arm'",
+   "20261103:dinosaur-that-would-chase-you 장면 14: 그림 금지어 'skull'(글자 깨짐·상표·잔혹)",
+   "20261103:dinosaur-that-would-chase-you 장면 16: 그림 금지어 'skull'(글자 깨짐·상표·잔혹)",
+   "20261103:dinosaur-that-would-chase-you 장면 18: 사람이 나오면 'mannequin'(얼굴 없는 3D) — 'hand'"
+  ],
+  []
+ ],
+ "fetched": 4,
+ "skip": false
+}

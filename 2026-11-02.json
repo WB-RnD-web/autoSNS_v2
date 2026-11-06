@@ -1,0 +1,339 @@
+{
+ "slug": "doomsday-friday-november-13-2026",
+ "format": "story",
+ "title": "Scientists Picked the Day Humanity Ends: November 13, 2026",
+ "description": "November 4, 1960: the journal Science published 'Doomsday: Friday, 13 November, A.D. 2026'. Heinz von Foerster's population curve raced to infinity on that date, and for about 30 years it beat most forecasts. Here's what broke it.",
+ "tags": [
+  "doomsday",
+  "november 13 2026",
+  "heinz von foerster",
+  "population",
+  "science history",
+  "true story"
+ ],
+ "music": "tension",
+ "style_tail": ", moody cinematic lighting, cold blue and amber tones, epic movie still",
+ "grade": {
+  "contrast": 1.08,
+  "saturation": 0.95,
+  "tint": [
+   0.98,
+   1.0,
+   1.04
+  ]
+ },
+ "character": {
+  "prompt": "an adult human figure with realistic proportions rendered as a smooth featureless matte white mannequin with a blank egg-shaped head and no facial features, dressed as a 1960 university physicist in a dark grey suit, white shirt and thin tie, standing in a 1960 university laboratory with a large blank chalkboard, wooden desks and brass instruments, full body, three-quarter view",
+  "seed": 1113
+ },
+ "shots": [
+  {
+   "say": "A famous science journal once printed the date humanity ends.",
+   "edit": "He stands before a huge chalkboard where a single bright chalk curve shoots straight up toward the ceiling, chalk dust swirling in hard lamp light.",
+   "move": "hook",
+   "fx": "dust",
+   "sfx": "boom",
+   "flash": [
+    0.05
+   ]
+  },
+  {
+   "say": "{Friday, November 13, 2026.|Friday, November thirteenth, twenty twenty-six.}",
+   "prompt": "a vast modern city skyline at dawn under heavy storm clouds, a single beam of light breaking through, aerial view",
+   "move": "push_in",
+   "fx": "none",
+   "sfx": "rumble"
+  },
+  {
+   "say": "The paper came out on {November 4, 1960,|November fourth, nineteen sixty,} in the journal Science.",
+   "prompt": "a stack of plain bound scientific journals on a polished wooden desk beside a brass desk lamp and a fountain pen, 1960 study at night",
+   "move": "drift_right",
+   "fx": "dust"
+  },
+  {
+   "say": "Physicist Heinz von Foerster wrote it with two of his students.",
+   "edit": "He leans over a wooden desk covered in papers with two smooth featureless matte white mannequin students in 1960 clothes beside him, warm lamp light.",
+   "move": "drift_left",
+   "fx": "none"
+  },
+  {
+   "say": "They gathered {24|twenty-four} estimates of world population, stretching back {2,000|two thousand} years,",
+   "prompt": "old leather ledgers, rolled parchment scrolls and ancient maps spread across a long wooden table, warm candle and lamp light, close-up",
+   "move": "pan_right",
+   "fx": "dust"
+  },
+  {
+   "say": "and fit one curve through them all.",
+   "prompt": "a single glowing orange line rising across a dark blue grid, bending steeper and steeper toward the top edge, minimal abstract graph",
+   "move": "push_in",
+   "fx": "none",
+   "sfx": "whoosh"
+  },
+  {
+   "say": "Faster than exponential. Every doubling comes sooner than the last,",
+   "reuse": 5,
+   "focus": [
+    0.6,
+    0.4,
+    1.25
+   ],
+   "move": "tilt_up"
+  },
+  {
+   "say": "until the line hits a vertical wall.",
+   "reuse": 5,
+   "focus": [
+    0.75,
+    0.2,
+    1.5
+   ],
+   "move": "punch",
+   "sfx": "hit",
+   "flash": [
+    0.05
+   ]
+  },
+  {
+   "say": "Their logic: more people, more teamwork and invention, even faster growth.",
+   "prompt": "a crowd of smooth featureless matte white mannequin figures in 1960 work clothes building a huge bridge together, cranes and steel beams, golden hour",
+   "move": "pan_left",
+   "fx": "dust"
+  },
+  {
+   "say": "And their warning? Future generations wouldn't starve. They'd be squeezed to death.",
+   "prompt": "an endless crowd of smooth featureless matte white mannequin figures packed shoulder to shoulder filling a giant city square to the horizon, aerial view, overcast light",
+   "move": "pull_out",
+   "fx": "none",
+   "sfx": "heartbeat"
+  },
+  {
+   "say": "It made headlines. Experts called it absurd.",
+   "prompt": "piles of sealed envelopes and crumpled papers heaped on a wooden desk under a harsh desk lamp, a vintage typewriter in the background",
+   "move": "push_in",
+   "fx": "dust",
+   "sfx": "thud"
+  },
+  {
+   "say": "But for about {30|thirty} years, the curve beat most professional forecasts.",
+   "reuse": 5,
+   "focus": [
+    0.45,
+    0.55,
+    1.2
+   ],
+   "move": "drift_right"
+  },
+  {
+   "say": "Then, around {1993,|nineteen ninety-three,} the real population started falling behind it.",
+   "prompt": "two glowing lines on a dark blue grid, one orange line shooting straight up and one cool white line peeling away and leveling off below it, minimal abstract graph",
+   "move": "pan_right",
+   "fx": "none",
+   "sfx": "whoosh"
+  },
+  {
+   "say": "Today, the global birth rate is slightly less than half what it was in {1960.|nineteen sixty.}",
+   "reuse": 12,
+   "focus": [
+    0.65,
+    0.6,
+    1.3
+   ],
+   "move": "push_in"
+  },
+  {
+   "say": "We're around {8.3 billion|eight point three billion} people,",
+   "prompt": "planet Earth seen from orbit at night, city lights glowing across the continents, thin blue atmosphere",
+   "move": "orbit",
+   "fx": "float"
+  },
+  {
+   "say": "and the UN projects a peak around {10.3 billion|ten point three billion} in the mid-2080s.",
+   "reuse": 14,
+   "focus": [
+    0.5,
+    0.5,
+    1.2
+   ],
+   "move": "pull_out"
+  },
+  {
+   "say": "Not infinity.",
+   "reuse": 12,
+   "focus": [
+    0.7,
+    0.65,
+    1.4
+   ],
+   "move": "punch",
+   "sfx": "hit"
+  },
+  {
+   "say": "One last twist: November {13|thirteenth} was von Foerster's own birthday.",
+   "edit": "He sits alone at his desk in the empty laboratory at night beside a small cake with a single lit candle, the chalk curve glowing faintly on the chalkboard behind him.",
+   "move": "push_in",
+   "fx": "dust"
+  },
+  {
+   "say": "And at one point in his life, he was a stage magician.",
+   "edit": "He stands on a small vintage theater stage in a single spotlight, fanning a deck of playing cards toward a dark audience, red velvet curtains behind him.",
+   "move": "drift_left",
+   "fx": "smoke",
+   "sfx": "whoosh"
+  },
+  {
+   "say": "So when the date arrives, expect an ordinary Friday, even though",
+   "reuse": 0,
+   "move": "loop_end"
+  }
+ ],
+ "facts": [
+  {
+   "claim": "The paper 'Doomsday: Friday, 13 November, A.D. 2026' appeared in Science on November 4, 1960",
+   "src": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "claim": "Authors were Heinz von Foerster (physicist, cybernetics pioneer) and his students Patricia M. Mora and Lawrence W. Amiot",
+   "src": [
+    0,
+    1,
+    2
+   ]
+  },
+  {
+   "claim": "They used 24 estimates of world population spanning about 2,000 years and projected population would approach infinity on November 13, 2026",
+   "src": [
+    0,
+    1,
+    2
+   ]
+  },
+  {
+   "claim": "Hyperbolic growth: each doubling takes less time than the last, so the line reaches a vertical wall at a specific date; faster than exponential",
+   "src": [
+    0,
+    1
+   ]
+  },
+  {
+   "claim": "Reasoning that more people bring more cooperation and innovation, allowing even faster growth",
+   "src": [
+    0,
+    1,
+    2
+   ]
+  },
+  {
+   "claim": "The paper said descendants would not starve but would be 'squeezed to death'",
+   "src": [
+    0,
+    1,
+    2
+   ]
+  },
+  {
+   "claim": "It drew wide public attention (Time, New York Times); mathematicians and demographers attacked it in letters, calling it absurd",
+   "src": [
+    0,
+    1
+   ]
+  },
+  {
+   "claim": "Its projections beat most professional forecasts for about 30 years (1970s-1980s); around 1993 the global population began falling behind the forecasts",
+   "src": [
+    0,
+    1
+   ]
+  },
+  {
+   "claim": "Today the global birth rate is slightly less than half the 1960 rate",
+   "src": [
+    0
+   ]
+  },
+  {
+   "claim": "Global population now around 8.3 billion; UN projects a peak around 10.3 billion in the mid-2080s",
+   "src": [
+    2,
+    3
+   ]
+  },
+  {
+   "claim": "Von Foerster was born November 13, 1911",
+   "src": [
+    4
+   ]
+  },
+  {
+   "claim": "He was at one point in his life a stage magician / known for his interest in magic",
+   "src": [
+    0,
+    4
+   ]
+  },
+  {
+   "claim": "No scientific reason to treat November 13, 2026 as a real doomsday; it is a mathematical singularity of the model",
+   "src": [
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Gizmodo (The Conversation, Alan MacEachern) - Scientists Once Calculated the Date of Doomsday—and It's Next Month",
+   "url": "https://gizmodo.com/scientists-once-calculated-the-date-of-doomsday-and-its-next-month-2000820261",
+   "used": "authors and students, 24 estimates over 2,000 years, squeezed to death, Time/NYT attention, critics called it absurd, beat demographers in 1970s-80s, falling behind around 1993, birth rate slightly less than half of 1960, stage magician"
+  },
+  {
+   "title": "Nature World News - A 1960 Science Paper Set Doomsday for Friday, Nov. 13, 2026, and Its Population Math Held Up for Three Decades",
+   "url": "https://www.natureworldnews.com/articles/73588/20261021/1960-science-paper-set-doomsday-friday-nov-13-2026-its-population-math-held-three-decades.htm",
+   "used": "Nov 4, 1960 publication, hyperbolic growth each doubling sooner and vertical wall, beat forecasts for about 30 years, called absurd, cooperation and innovation reasoning, no real threat"
+  },
+  {
+   "title": "The Sunday Guardian - Could the World Really End on November 13, 2026?",
+   "url": "https://sundayguardianlive.com/trending/could-the-world-really-end-on-november-13-2026-what-a-1960-scientists-study-predicted-about-humanity-314815/",
+   "used": "Nov 4, 1960 in Science, three authors, 24 estimates over about 2,000 years, approach infinity Nov 13 2026, cooperation and innovation, around 8.3 billion today, UN peak about 10.3 billion mid-2080s, not a real doomsday date"
+  },
+  {
+   "title": "StackUmbrella - 13 November 2026 Doomsday Prediction: Fact Check",
+   "url": "https://www.stackumbrella.com/informative/13-november-2026-doomsday-prediction-fact-check-12740750",
+   "used": "mathematical singularity not a scheduled apocalypse, UN WPP 2024 peak around 10.3 billion in the mid-2080s"
+  },
+  {
+   "title": "Wikipedia - Heinz von Foerster",
+   "url": "https://en.wikipedia.org/wiki/Heinz_von_Foerster",
+   "used": "born November 13, 1911 in Vienna; known for interest in magic; 1960 Doomsday equation in Science"
+  }
+ ],
+ "careful": "Real people (Heinz von Foerster and his two students) are shown only as faceless mannequins, with public facts only. The students are not named in the narration. The video makes clear this was a model that failed, not a real doomsday prediction. The birthday is stated only as a fact; there is no claim that he picked the date because of it. Policy angles are left out on purpose: the paper's birth-rate recommendation, the court and pesticide citations, and the causes of falling birth rates. 'Squeezed to death' is a paraphrase of the paper's warning, and no gore is shown.",
+ "trend": {
+  "why_now": "The 1960 paper 'Doomsday: Friday, 13 November, A.D. 2026' is going around again because that date is almost here. Fact-check and explainer articles ran from Oct 1 to Oct 31, and interest should peak just before Nov 13, which is six days after this episode goes out.",
+  "pattern": "Follows the viral 'scientists once calculated the date of doomsday and it's next month' angle. The hook reveals the date, then sets up the real paper, then turns on the creepy fact that it was accurate for 30 years, then returns things to normal. The title states the date, countdown style, so it still works before and after Friday.",
+  "evidence": [
+   {
+    "title": "Scientists Once Calculated the Date of Doomsday—and It's Next Month",
+    "url": "https://gizmodo.com/scientists-once-calculated-the-date-of-doomsday-and-its-next-month-2000820261",
+    "date": "2026-10-01"
+   },
+   {
+    "title": "A 1960 Science Paper Set Doomsday for Friday, Nov. 13, 2026, and Its Population Math Held Up for Three Decades",
+    "url": "https://www.natureworldnews.com/articles/73588/20261021/1960-science-paper-set-doomsday-friday-nov-13-2026-its-population-math-held-three-decades.htm",
+    "date": "2026-10-21"
+   },
+   {
+    "title": "Could the World Really End on November 13, 2026? What a 1960 Scientists' Study Predicted About Humanity",
+    "url": "https://sundayguardianlive.com/trending/could-the-world-really-end-on-november-13-2026-what-a-1960-scientists-study-predicted-about-humanity-314815/",
+    "date": "2026-10-31"
+   }
+  ]
+ },
+ "id": 20261102,
+ "kind": "trend",
+ "written": "2026-11-02",
+ "from": "2026-11-07"
+}
