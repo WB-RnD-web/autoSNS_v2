@@ -1,0 +1,20 @@
+{
+ "s01": {
+  "status": 404,
+  "sec": 0.2,
+  "content_type": "text/plain; charset=utf-8",
+  "error": "404 page not found\n"
+ },
+ "s04": {
+  "status": 404,
+  "sec": 0.1,
+  "content_type": "text/plain; charset=utf-8",
+  "error": "404 page not found\n"
+ },
+ "s09": {
+  "status": 404,
+  "sec": 0.2,
+  "content_type": "text/plain; charset=utf-8",
+  "error": "404 page not found\n"
+ }
+}
