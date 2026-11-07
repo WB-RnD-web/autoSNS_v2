@@ -1,4 +1,4 @@
-name: Meow Remix 견본 올리기(일회성) — 유튜브 예약 + 인스타 릴스·쓰레드
+name: Meow Remix 견본 올리기(일회성) — 유튜브 다시(인스타·쓰레드는 첫 실행이 올림)
 
 # meow-sample/* 브랜치에 push 하면 그 브랜치의 렌더(output/meow)를 올린다. 사람이 PC 에서 렌더하고
 # 눈으로 확인한 견본만 이 브랜치에 넣는다. 매일 도는 워크플로가 아니다(main 에 들어가지 않는다).
@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: meow-sample
+  group: meow-sample-yt
   cancel-in-progress: false
 
 jobs:
@@ -38,23 +38,3 @@ jobs:
         run: python meow/post.py youtube meow/concepts/2026-11-07_samples.json --gap-min 45
       - if: always()
         run: rm -rf pipeline/secrets
-
-  social:
-    runs-on: ubuntu-latest
-    timeout-minutes: 340
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-      - run: python -m pip install -r pipeline/requirements.txt
-      - name: 인스타 릴스 + 쓰레드(30분 간격)
-        env:
-          CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
-          CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
-          CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
-          IG_USER_ID: ${{ secrets.IG_USER_ID }}
-          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
-          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
-          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
-        run: python meow/post.py social meow/concepts/2026-11-07_samples.json --gap-min 30

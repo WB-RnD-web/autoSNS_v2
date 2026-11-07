@@ -96,7 +96,8 @@ def youtube(doc: dict, gap_min: int) -> int:
     for c, at in zip(todo, times):
         v, md = video_of(c), yt_meta(doc, c)
         body = {"snippet": {"title": md["title"], "description": md["description"], "tags": md["tags"],
-                            "categoryId": CATEGORY, "defaultLanguage": "en", "defaultAudioLanguage": "zxx"},
+                            "categoryId": CATEGORY, "defaultLanguage": "en"},
+                # 오디오 언어는 넣지 않는다 — 말소리 없는 영상이라고 'zxx' 를 넣으면 400 INVALID_REQUEST_METADATA(10/01·11/07 두 번)
                 "status": UT.status_body("private", at)}
         try:
             req = yt.videos().insert(part="snippet,status", body=body,
