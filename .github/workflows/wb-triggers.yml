@@ -1,0 +1,105 @@
+name: 왕별이 표 트리거(루틴 대신) — 코드로 스토리보드 → routine/* push → 쇼츠 렌더·업로드
+
+# 2026-11-07: 클라우드 루틴 4개(운세·풀이형·내 것 찾기·띠별 테마)가 하던 일을 그대로 옮겼다.
+#   그 루틴들은 '실행 스위치'였다 — 대본은 코드(pipeline/*_card.py make)가 만들고 루틴은 push 만 했다.
+#   루틴은 구독 주간 한도를 써서, 한도가 바닥나면 왕별이 업로드도 같이 멈췄다. 여기서는 한도를 안 쓴다.
+# ★push 는 GH_PAT 로 한다 — GITHUB_TOKEN 으로 push 하면 shorts.yml(push 트리거)이 깨어나지 않는다(orphan-rescue.yml 과 같은 이유).
+# 같은 날 같은 파일이 원격에 이미 있으면 다시 push 하지 않는다(루틴과 겹치는 날·cron 이 두 번 도는 날 중복 업로드 방지).
+# 끄기: 레포 변수 WB_TRIGGERS=0.
+on:
+  schedule:
+    - cron: "0 21 * * *"     # 06:00 KST 운세(오늘의 띠 표)          — 옛 루틴 trig_0149sZF2…
+    - cron: "40 22 * * *"    # 07:40 KST 내 것 찾기 · 해 끝자리(year)   — 옛 루틴 trig_018otuZX…
+    - cron: "40 0 * * *"     # 09:40 KST 내 것 찾기 · 이름 글자(am)
+    - cron: "40 1 * * *"     # 10:40 KST 풀이형 표                    — 옛 루틴 trig_01B6fx3S…
+    - cron: "0 3 * * *"      # 12:00 KST 띠별 테마 표(이틀에 한 번)      — 옛 루틴 trig_01XPKrmN…
+    - cron: "40 4 * * *"     # 13:40 KST 내 것 찾기 · 성씨(surname)
+    - cron: "40 6 * * *"     # 15:40 KST 내 것 찾기 · 태어난 달(pm) — 음력 끝자리 날엔 lunar
+  workflow_dispatch:
+    inputs:
+      which:
+        description: "무엇을 깨울까"
+        type: choice
+        options: [fortune, name_year, name_am, name_surname, name_pm, pulli, theme]
+      dry:
+        description: "push 하지 않고 만들기만(검증)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: wb-triggers-${{ github.event.schedule || inputs.which }}
+  cancel-in-progress: false
+
+jobs:
+  trigger:
+    if: (vars.WB_TRIGGERS || '1') != '0'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      TZ: Asia/Seoul
+      PYTHONUTF8: "1"
+    steps:
+      - name: 무엇을 깨우나
+        id: w
+        env:
+          SCHED: ${{ github.event.schedule }}
+          WHICH: ${{ inputs.which }}
+        run: |
+          W="$WHICH"
+          case "$SCHED" in
+            "0 21 * * *")  W=fortune ;;
+            "40 22 * * *") W=name_year ;;
+            "40 0 * * *")  W=name_am ;;
+            "40 1 * * *")  W=pulli ;;
+            "0 3 * * *")   W=theme ;;
+            "40 4 * * *")  W=name_surname ;;
+            "40 6 * * *")  W=name_pm ;;
+          esac
+          if [ -z "$W" ]; then echo "::error::어느 트리거인지 모름(schedule='$SCHED')"; exit 1; fi
+          echo "which=$W" >> "$GITHUB_OUTPUT"
+          echo "깨우는 것: $W (KST $(date '+%F %H:%M'))"
+
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_PAT || github.token }}
+          persist-credentials: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: python -m pip install -q pillow numpy
+
+      - name: 스토리보드 만들기(코드) → routine/* push
+        env:
+          WHICH: ${{ steps.w.outputs.which }}
+          DRY: ${{ inputs.dry && '1' || '' }}
+          PAT: ${{ secrets.GH_PAT }}
+        run: |
+          set -euo pipefail
+          if [ -z "$PAT" ] && [ -z "$DRY" ]; then
+            echo "::error::GH_PAT 시크릿이 없다 — GITHUB_TOKEN 으로 push 하면 쇼츠 워크플로가 안 깨어나 조용히 멈춘다. 멈춘다."
+            exit 1
+          fi
+          python3 tools/wb_trigger.py "$WHICH" --env "$RUNNER_TEMP/t.env"
+          . "$RUNNER_TEMP/t.env"            # BRANCH · FILE(비면 오늘 건너뜀) · MSG · WHO
+          if [ -z "${FILE:-}" ]; then echo "오늘은 건너뜀"; exit 0; fi
+          git fetch -q origin "$BRANCH" || true
+          if git cat-file -e "origin/$BRANCH:$FILE" 2>/dev/null; then
+            echo "⏭️ origin/$BRANCH 에 $FILE 이 이미 있다 — 다시 push 하지 않는다(중복 업로드 방지)"
+            exit 0
+          fi
+          git checkout -q -B "$BRANCH" origin/main      # 만든 파일(추적 안 됨)은 그대로 남는다
+          git add -f "$FILE"
+          git -c user.name="$WHO" -c user.email="$WHO@users.noreply.github.com" commit -q -m "$MSG"
+          if git rev-parse -q --verify "origin/$BRANCH" >/dev/null; then
+            git -c user.name="$WHO" -c user.email="$WHO@users.noreply.github.com" merge -s ours --no-edit "origin/$BRANCH"
+          fi
+          if [ -n "$DRY" ]; then echo "dry — push 안 함: $BRANCH $FILE"; git show --stat HEAD | head -5; exit 0; fi
+          git push origin "$BRANCH"
+          [ "$(git ls-remote origin "refs/heads/$BRANCH" | cut -f1)" = "$(git rev-parse HEAD)" ] || { echo "::error::push 확인 실패"; exit 1; }
+          echo "✅ $BRANCH ← $FILE"
