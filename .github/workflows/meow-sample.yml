@@ -1,7 +1,7 @@
-name: Meow Remix 견본 올리기(일회성) — 유튜브 다시(인스타·쓰레드는 첫 실행이 올림)
+name: Meow Remix 견본 멈추기(일회성) — 인스타·쓰레드 게시 중단 + 남은 유튜브 예약 취소
 
-# meow-sample/* 브랜치에 push 하면 그 브랜치의 렌더(output/meow)를 올린다. 사람이 PC 에서 렌더하고
-# 눈으로 확인한 견본만 이 브랜치에 넣는다. 매일 도는 워크플로가 아니다(main 에 들어가지 않는다).
+# 11/07 사용자: 화질이 낮아 남은 견본은 멈춘다. 같은 concurrency 그룹(meow-sample)에 cancel-in-progress 로
+# 들어가서 30분 간격으로 게시하던 첫 실행(social)을 취소하고, 아직 공개 전인 유튜브 견본은 예약만 빼서 비공개로 둔다.
 on:
   push:
     branches: ["meow-sample/**"]
@@ -10,21 +10,19 @@ permissions:
   contents: read
 
 concurrency:
-  group: meow-sample-yt
-  cancel-in-progress: false
+  group: meow-sample
+  cancel-in-progress: true
 
 jobs:
-  youtube:
+  hold:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
       - run: python -m pip install -r pipeline/requirements.txt
-      - name: 검사
-        run: python meow/render.py check meow/concepts/2026-11-07_samples.json
       - name: YouTube 자격증명(같은 채널 — 옛 Nine Tails 토큰)
         env:
           YT_TOKEN_JSON_GUMIHO: ${{ secrets.YT_TOKEN_JSON_GUMIHO }}
@@ -32,9 +30,9 @@ jobs:
           mkdir -p pipeline/secrets
           if [ -z "$YT_TOKEN_JSON_GUMIHO" ]; then echo "::error::시크릿 YT_TOKEN_JSON_GUMIHO 없음"; exit 1; fi
           printf '%s' "$YT_TOKEN_JSON_GUMIHO" > pipeline/secrets/token_gumiho.json
-      - name: 유튜브(비공개 + 45분 간격 예약 공개)
+      - name: 남은 유튜브 견본 예약 취소(비공개 유지)
         env:
           YT_TOKEN_NOVEL: pipeline/secrets/token_gumiho.json
-        run: python meow/post.py youtube meow/concepts/2026-11-07_samples.json --gap-min 45
+        run: python meow/hold_samples.py
       - if: always()
         run: rm -rf pipeline/secrets
