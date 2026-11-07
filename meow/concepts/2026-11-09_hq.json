@@ -1,0 +1,125 @@
+{
+  "_note": "14B 비교 견본 3편(11/07 기획 · 11/09 스파크 14B 열 시험 뒤 렌더). 11/07 s01·s04·s09 와 같은 소재를 5초 컷 2개로 — 늘리지 않는다. main 에 들어가도 업로드는 사람이 정할 때만.",
+  "date": "2026-11-09",
+  "concepts": [
+    {
+      "id": "h01",
+      "slug": "bungeoppang-kittens",
+      "format": "morph",
+      "track": "fluffing-a-duck.mp3",
+      "seed": 41017,
+      "caption": "Winter street snack... wait for it",
+      "title": "Korean Winter Street Snack Turns Into Kittens 🐟🐱",
+      "en_line": "Came for a winter street snack. Left with kittens.",
+      "ko_line": "붕어빵 사러 갔다가 심장 녹음 🐟🐱",
+      "tags": [
+        "cat",
+        "kitten",
+        "bungeoppang",
+        "korean street food",
+        "food to kitten",
+        "ai cat"
+      ],
+      "hashtags": [
+        "#고양이",
+        "#붕어빵",
+        "#겨울간식",
+        "#cat",
+        "#kitten",
+        "#catsofinstagram"
+      ],
+      "engine": "14b",
+      "shots": [
+        {
+          "image": "Photorealistic close-up of golden fish-shaped bungeoppang pastries in black cast-iron molds on a street food grill at night, one pastry in the middle has two tiny fluffy orange kitten ears poking out of the baked dough, steam rising, warm orange light, falling snowflakes, vertical composition",
+          "motion": "Steam keeps rising from the hot fish-shaped pastries on the grill and light snow drifts down in the warm orange light. The two tiny fluffy kitten ears on the middle pastry twitch twice, then the whole pastry wiggles gently as if something inside is waking up. Everything else stays still. Photorealistic, smooth natural motion, static camera."
+        },
+        {
+          "image": "Photorealistic tiny golden-brown kitten curled up in the shape of a fish pastry, fur that looks like baked golden dough, lying in a black cast-iron fish-shaped mold on a street food grill at night, steam rising, warm orange light, falling snowflakes, vertical composition",
+          "motion": "The tiny golden-brown kitten with fur like baked dough slowly opens its big round eyes, lifts its head, blinks, then stretches its little front paws over the edge of the cast-iron mold and looks around curiously. Steam keeps rising and light snow falls. The kitten keeps the same body shape the whole time. Photorealistic, smooth natural motion, static camera.",
+          "xfade": 0.6
+        }
+      ],
+      "cover_shot": 2
+    },
+    {
+      "id": "h04",
+      "slug": "disco-cat",
+      "format": "dance",
+      "track": "funkorama.mp3",
+      "seed": 74419,
+      "caption": "When the beat drops",
+      "title": "He Waited All Week for This Beat Drop 🕺🐱",
+      "en_line": "He has been practicing this all week.",
+      "ko_line": "일주일 내내 연습한 거래요 🕺",
+      "tags": [
+        "cat",
+        "dancing cat",
+        "disco",
+        "cat dance",
+        "funny cat",
+        "ai cat"
+      ],
+      "hashtags": [
+        "#고양이",
+        "#춤추는고양이",
+        "#디스코",
+        "#cat",
+        "#catdance",
+        "#catsofinstagram"
+      ],
+      "engine": "14b",
+      "shots": [
+        {
+          "image": "Photorealistic gray British shorthair cat standing upright on its hind legs in the middle of a neon-lit disco dance floor, wearing tiny round sunglasses, colorful disco ball light spots, full body visible, vertical composition",
+          "motion": "The gray British shorthair cat in tiny round sunglasses stands upright on its hind legs and dances to an upbeat funk song: it sways its hips side to side, pumps one front paw up and down to the beat and bobs its head. Colorful disco light spots sweep across the floor. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+        },
+        {
+          "image": "Photorealistic gray British shorthair cat standing upright on its hind legs on a neon-lit disco dance floor, wearing tiny round sunglasses, both front paws raised, colorful disco ball light spots, full body visible, vertical composition",
+          "motion": "The gray British shorthair cat in tiny round sunglasses waves both front paws in the air to the beat, turns a little to one side, then strikes a pose pointing one paw at the camera. Colorful disco lights sweep across the floor. The cat stays fully in frame. Photorealistic, smooth natural motion, static camera."
+        }
+      ],
+      "cover_shot": 1
+    },
+    {
+      "id": "h09",
+      "slug": "first-snow-kitten",
+      "format": "meme",
+      "track": "investigations.mp3",
+      "seed": 39911,
+      "caption": "First snow ever",
+      "title": "Kitten Sees Snow for the Very First Time ❄️🐱",
+      "en_line": "The sky is falling and it is cold.",
+      "ko_line": "입동이라 첫눈 본 아기 고양이 ❄️",
+      "tags": [
+        "cat",
+        "kitten",
+        "first snow",
+        "winter",
+        "cute cat",
+        "ai cat"
+      ],
+      "hashtags": [
+        "#고양이",
+        "#첫눈",
+        "#입동",
+        "#cat",
+        "#kitten",
+        "#catsofinstagram"
+      ],
+      "engine": "14b",
+      "shots": [
+        {
+          "image": "Photorealistic tiny calico kitten sitting on a white windowsill inside a cozy house, watching big soft snowflakes fall outside the window, warm indoor light, snowy garden outside, vertical composition",
+          "motion": "The tiny calico kitten watches the first snow falling outside the window. Its head follows one falling snowflake, its ears twitch, it lifts one front paw and gently taps the cold window glass, then looks back at the snow with wide curious eyes. Big soft snowflakes drift down outside. Photorealistic, soft light, smooth natural motion, static camera."
+        },
+        {
+          "image": "Photorealistic tiny calico kitten in fresh snow looking up at falling snowflakes with its mouth open, soft daylight, snowy garden, vertical composition",
+          "motion": "The tiny calico kitten sits in fresh snow and looks up at the falling snowflakes, then opens its mouth and tries to catch a snowflake, blinks in surprise and shakes its head a little. Snowflakes keep falling. Photorealistic, soft daylight, smooth natural motion, static camera.",
+          "xfade": 0.5
+        }
+      ],
+      "cover_shot": 1
+    }
+  ]
+}
