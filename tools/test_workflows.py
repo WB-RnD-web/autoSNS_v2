@@ -151,7 +151,17 @@ _others = [n for n, t in flows.items() if n not in WRITERS
            and [ln for ln in t.splitlines() if re.search(r"\bgit\b.*\spush\b", ln.split(" #")[0])
                 and not ln.strip().startswith("#")]]
 # orphan-rescue.yml 은 예외 — GITHUB_TOKEN 은 읽기 권한이고, 미아 산출물을 PAT 으로 routine/* 에 되돌린다(그게 할 일이다).
-ck("그 밖에 git push 하는 워크플로는 orphan-rescue.yml(PAT · routine/* 되돌리기)뿐", _others == ["orphan-rescue.yml"], str(_others))
+# ★2026-11-07 wb-triggers.yml · lf27-api.yml — 옛 클라우드 루틴이 하던 routine/* push 를 옮겼다(GITHUB_TOKEN 은 읽기, push 는 PAT).
+PAT_PUSHERS = {"orphan-rescue.yml", "wb-triggers.yml", "lf27-api.yml"}
+ck("그 밖에 git push 하는 워크플로는 PAT 으로 routine/* 에 미는 셋뿐(되돌리기·표 트리거·롱폼 API)",
+   sorted(_others) == sorted(PAT_PUSHERS), str(_others))
+for _wf in ("wb-triggers.yml", "lf27-api.yml"):
+    _t = flows.get(_wf, "")
+    _p = [ln for ln in _t.splitlines() if re.search(r"\bgit\b.*\spush\b", ln.split(" #")[0]) and not ln.strip().startswith("#")]
+    ck(f"…{_wf}: 읽기 권한 · push 는 PAT · main 이 아니라 routine/* 로만 · 강제 push 없음",
+       re.search(r"(?m)^\s*contents:\s*read", _t) is not None and "secrets.GH_PAT" in _t
+       and all("main" not in ln and "-f" not in ln.split() and "--force" not in ln for ln in _p)
+       and ("routine/" in _t), str(_p))
 
 # ★2026-11 Nine Tails Story(nt-story.yml): 예약으로만 깨고(push 없음) 읽기 권한 — 업로드 ledger 는 Actions 캐시.
 _ns = flows.get("nt-story.yml", "")
