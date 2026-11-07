@@ -1,0 +1,60 @@
+name: Meow Remix 견본 올리기(일회성) — 유튜브 예약 + 인스타 릴스·쓰레드
+
+# meow-sample/* 브랜치에 push 하면 그 브랜치의 렌더(output/meow)를 올린다. 사람이 PC 에서 렌더하고
+# 눈으로 확인한 견본만 이 브랜치에 넣는다. 매일 도는 워크플로가 아니다(main 에 들어가지 않는다).
+on:
+  push:
+    branches: ["meow-sample/**"]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: meow-sample
+  cancel-in-progress: false
+
+jobs:
+  youtube:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install -r pipeline/requirements.txt
+      - name: 검사
+        run: python meow/render.py check meow/concepts/2026-11-07_samples.json
+      - name: YouTube 자격증명(같은 채널 — 옛 Nine Tails 토큰)
+        env:
+          YT_TOKEN_JSON_GUMIHO: ${{ secrets.YT_TOKEN_JSON_GUMIHO }}
+        run: |
+          mkdir -p pipeline/secrets
+          if [ -z "$YT_TOKEN_JSON_GUMIHO" ]; then echo "::error::시크릿 YT_TOKEN_JSON_GUMIHO 없음"; exit 1; fi
+          printf '%s' "$YT_TOKEN_JSON_GUMIHO" > pipeline/secrets/token_gumiho.json
+      - name: 유튜브(비공개 + 45분 간격 예약 공개)
+        env:
+          YT_TOKEN_NOVEL: pipeline/secrets/token_gumiho.json
+        run: python meow/post.py youtube meow/concepts/2026-11-07_samples.json --gap-min 45
+      - if: always()
+        run: rm -rf pipeline/secrets
+
+  social:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install -r pipeline/requirements.txt
+      - name: 인스타 릴스 + 쓰레드(30분 간격)
+        env:
+          CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
+          CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
+          CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+        run: python meow/post.py social meow/concepts/2026-11-07_samples.json --gap-min 30
