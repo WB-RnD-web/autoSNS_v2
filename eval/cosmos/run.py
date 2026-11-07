@@ -18,7 +18,12 @@ import zipfile
 import requests
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-URL = "https://ai.api.nvidia.com/v1/cosmos/nvidia/cosmos3-nano"
+# 문서·스펙의 주소(ai.api)는 11/07 에 404 — 스펙의 nvcfFunctionId 로 NVCF 를 직접 부르는 길을 차례로 시험한다
+FUNC = "d09cd49d-d7f2-4361-928f-ea22af707249"
+URLS = ["https://ai.api.nvidia.com/v1/cosmos/nvidia/cosmos3-nano",
+        f"https://api.nvcf.nvidia.com/v2/nvcf/pexec/functions/{FUNC}",
+        f"https://{FUNC}.invocation.api.nvcf.nvidia.com/v1/infer"]
+URL = URLS[0]
 STATUS = "https://api.nvcf.nvidia.com/v2/nvcf/pexec/status/{}"
 NEG = ("text, letters, watermark, logo, human hands, people, extra legs, extra paws, deformed body, "
        "stretched body, melting, blurry, flickering, camera shake, low quality")
@@ -70,10 +75,27 @@ def call(key: str, body: dict) -> tuple[requests.Response, float]:
     return r, time.time() - t0
 
 
+def pick_url(key: str) -> str | None:
+    """빈 요청(검사에서 422 가 나야 정상)으로 살아 있는 주소를 고른다 — 영상은 만들지 않는다."""
+    global URL
+    for u in URLS:
+        r = requests.post(u, headers={"Authorization": f"Bearer {key}", "Accept": "application/json",
+                                      "Content-Type": "application/json"},
+                          json={"model_mode": "image2video"}, timeout=120, allow_redirects=False)
+        print(f"   주소 시험 {u} → HTTP {r.status_code} {r.text[:200]!r}", flush=True)
+        if r.status_code not in (404, 405) and r.status_code < 500:
+            URL = u
+            return u
+    return None
+
+
 def main() -> int:
     key = os.environ.get("NVIDIA_API_KEY", "")
     if not key:
         print("::error::NVIDIA_API_KEY 없음")
+        return 1
+    if not pick_url(key):
+        print("::error::살아 있는 주소 없음")
         return 1
     out = os.path.join(HERE, "out")
     os.makedirs(out, exist_ok=True)
