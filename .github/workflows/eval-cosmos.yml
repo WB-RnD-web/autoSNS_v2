@@ -1,0 +1,39 @@
+name: cosmos3-nano 화질 평가(일회성 · 업로드 없음)
+
+# eval/cosmos3-* 브랜치에서만 돈다(main 에 넣지 않는다). build.nvidia.com 무료 체험 엔드포인트는 약관상
+# 평가용만 되므로 결과는 이 브랜치에 커밋해 사람이 비교해 보는 데만 쓴다.
+on:
+  push:
+    branches: ["eval/cosmos3-**"]
+    paths: ["eval/cosmos/in/**", "eval/cosmos/run.py", ".github/workflows/eval-cosmos.yml"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: eval-cosmos
+  cancel-in-progress: false
+
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install requests
+      - name: cosmos3-nano image2video 3편
+        env:
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+        run: python eval/cosmos/run.py
+      - name: 결과를 이 브랜치에 커밋
+        if: always()
+        run: |
+          [ -d eval/cosmos/out ] || exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f eval/cosmos/out
+          git commit -m "cosmos3-nano 평가 결과" || exit 0
+          git push origin "HEAD:${GITHUB_REF_NAME}"
