@@ -1,0 +1,16 @@
+{
+  "_note": "Kevin MacLeod (incompetech.com) 곡을 60초로 잘라 -14 LUFS 로 맞춘 것. CC BY 4.0 — 올릴 때마다 설명·캡션에 credit 줄을 그대로 붙인다(빼면 라이선스 위반).",
+  "license": "Licensed under Creative Commons: By Attribution 4.0 License http://creativecommons.org/licenses/by/4.0/",
+  "tracks": [
+    {"file": "fluffing-a-duck.mp3", "title": "Fluffing a Duck", "moods": ["cute", "morph"], "start": 0.0},
+    {"file": "merry-go.mp3", "title": "Merry Go", "moods": ["cute", "morph"], "start": 0.0},
+    {"file": "monkeys-spinning-monkeys.mp3", "title": "Monkeys Spinning Monkeys", "moods": ["cute", "silly"], "start": 0.0},
+    {"file": "funkorama.mp3", "title": "Funkorama", "moods": ["dance"], "start": 0.0},
+    {"file": "kool-kats.mp3", "title": "Kool Kats", "moods": ["dance", "cool"], "start": 0.0},
+    {"file": "hep-cats.mp3", "title": "Hep Cats", "moods": ["dance", "cool"], "start": 0.0},
+    {"file": "pixel-peeker-polka-faster.mp3", "title": "Pixel Peeker Polka - faster", "moods": ["game", "silly"], "start": 0.0},
+    {"file": "run-amok.mp3", "title": "Run Amok", "moods": ["chaos", "silly"], "start": 0.0},
+    {"file": "sneaky-snitch.mp3", "title": "Sneaky Snitch", "moods": ["sneaky"], "start": 0.0},
+    {"file": "investigations.mp3", "title": "Investigations", "moods": ["sneaky", "curious"], "start": 0.0}
+  ]
+}

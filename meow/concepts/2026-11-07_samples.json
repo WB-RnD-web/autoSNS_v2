@@ -1,0 +1,514 @@
+{
+  "_note": "Meow Remix 첫 견본 10편(2026-11-07, 사람이 쓴 것). 형식: morph(음식→아기 고양이) · dance · meme · game. 그림 프롬프트는 글자·실존 인물·상표·게임 캐릭터 없이. motion 은 5B i2v 가 2초 안에 할 수 있는 동작만.",
+  "date": "2026-11-07",
+  "concepts": [
+    {
+      "id": "s01",
+      "slug": "bungeoppang-kittens",
+      "format": "morph",
+      "track": "fluffing-a-duck.mp3",
+      "seed": 41017,
+      "caption": "Winter street snack... wait for it",
+      "title": "Korean Winter Street Snack Turns Into Kittens 🐟🐱",
+      "en_line": "Came for a winter street snack. Left with kittens.",
+      "ko_line": "붕어빵 사러 갔다가 심장 녹음 🐟🐱",
+      "tags": [
+        "cat",
+        "kitten",
+        "bungeoppang",
+        "korean street food",
+        "food to kitten",
+        "ai cat"
+      ],
+      "hashtags": [
+        "#고양이",
+        "#붕어빵",
+        "#겨울간식",
+        "#cat",
+        "#kitten",
+        "#catsofinstagram"
+      ],
+      "shots": [
+        {
+          "image": "Photorealistic close-up of a Korean street food cart grill at night in winter, rows of golden fish-shaped bungeoppang pastries in black cast-iron molds, steam rising, warm orange light, falling snowflakes, blurred city lights in the background, vertical composition",
+          "motion": "steam rises from the hot fish-shaped pastries, light snow falls, static camera, smooth motion"
+        },
+        {
+          "image": "Photorealistic close-up of golden fish-shaped bungeoppang pastries in black cast-iron molds on a street food grill at night, one pastry in the middle has two tiny fluffy orange kitten ears poking out of the baked dough, steam rising, warm orange light, falling snowflakes, vertical composition",
+          "motion": "the tiny kitten ears on the pastry twitch, steam rises, static camera, smooth motion",
+          "xfade": 0.5
+        },
+        {
+          "image": "Photorealistic tiny golden-brown kitten curled up in the shape of a fish pastry, fur that looks like baked golden dough, lying in a black cast-iron fish-shaped mold on a street food grill at night, steam rising, warm orange light, falling snowflakes, vertical composition",
+          "motion": "the pastry kitten slowly opens its eyes and lifts its head, steam rises, static camera, smooth natural motion",
+          "xfade": 0.5
+        },
+        {
+          "image": "Photorealistic row of four tiny golden-brown kittens with fur like baked dough, each lying in its own black cast-iron fish-shaped mold on a street food grill at night, steam rising, warm orange light, falling snowflakes, vertical composition",
+          "motion": "the pastry kittens wiggle and stretch their tiny paws, steam rises, static camera, smooth motion"
+        },
+        {
+          "image": "Photorealistic brown paper snack bag on a snowy street food cart counter at night, three tiny golden-brown kittens with fur like baked dough peeking out of the bag, steam, warm orange light, falling snowflakes, blurred city lights, vertical composition",
+          "motion": "the kittens peek out of the paper bag and look around, light snow falls, static camera, smooth motion"
+        },
+        {
+          "image": "Photorealistic extreme close-up of a tiny golden-brown kitten with fur like baked dough sitting in a black cast-iron fish-shaped mold, big round shiny eyes looking straight at the camera, steam, warm orange light, vertical composition",
+          "motion": "the pastry kitten tilts its head and blinks slowly at the camera, static camera, smooth natural motion"
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "slug": "croissant-kitten",
+      "format": "morph",
+      "track": "merry-go.mp3",
+      "seed": 52231,
+      "caption": "This croissant is still asleep",
+      "title": "The Croissant That Didn't Want to Wake Up 🥐🐱",
+      "en_line": "Five more minutes, said the croissant.",
+      "ko_line": "5분만 더… 하는 크루아상 🥐",
+      "tags": [
+        "cat",
+        "kitten",
+        "croissant",
+        "food to kitten",
+        "cute cat",
+        "ai cat"
+      ],
+      "hashtags": [
+        "#고양이",
+        "#크루아상",
+        "#빵",
+        "#cat",
+        "#kitten",
+        "#catsofinstagram"
+      ],
+      "shots": [
+        {
+          "image": "Photorealistic close-up of a golden flaky croissant on a white plate on a wooden bakery table, morning sunlight from a window, pastry crumbs, cozy bakery background, shallow depth of field, vertical composition",
+          "motion": "soft morning light flickers, a few crumbs settle, static camera, very subtle movement"
+        },
+        {
+          "image": "Photorealistic close-up of a golden flaky croissant on a white plate on a wooden bakery table, the croissant has two tiny fluffy orange kitten ears and a small kitten nose, morning sunlight, pastry crumbs, shallow depth of field, vertical composition",
+          "motion": "the tiny ears on the croissant twitch, static camera, smooth motion",
+          "xfade": 0.5
+        },
+        {
+          "image": "Photorealistic tiny fluffy orange tabby kitten whose fur looks like golden flaky croissant pastry layers, curled up asleep in a croissant shape on a white bakery plate, pastry crumbs around, warm morning window light, shallow depth of field, vertical composition",
+          "motion": "the croissant kitten breathes slowly in its sleep and its ear twitches, static camera, smooth natural motion",
+          "xfade": 0.5
+        },
+        {
+          "image": "Photorealistic tiny fluffy orange tabby kitten whose fur looks like golden flaky croissant pastry layers, curled up on a white bakery plate, eyes half open, pastry crumbs around, warm morning window light, vertical composition",
+          "motion": "the croissant kitten slowly opens its eyes and blinks sleepily, static camera, smooth natural motion"
+        },
+        {
+          "image": "Photorealistic tiny fluffy orange tabby kitten whose fur looks like golden flaky croissant pastry layers, stretching its front paws forward on a white bakery plate, pastry crumbs, warm morning window light, vertical composition",
+          "motion": "the croissant kitten stretches its front paws and arches its back, crumbs fall, static camera, smooth motion"
+        },
+        {
+          "image": "Photorealistic metal bakery tray with six tiny fluffy orange kittens whose fur looks like golden croissant pastry, all curled up in croissant shapes, warm bakery light, vertical composition",
+          "motion": "the croissant kittens wiggle and one lifts its head sleepily, static camera, smooth motion"
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "slug": "pumpkin-pie-kitten",
+      "format": "morph",
+      "track": "monkeys-spinning-monkeys.mp3",
+      "seed": 63377,
+      "caption": "Thanksgiving pie went wrong",
+      "title": "This Pumpkin Pie Came Out a Little Different 🥧🐱",
+      "en_line": "Someone tell grandma the pie is purring.",
+      "ko_line": "호박파이 구웠는데 고양이가 나옴 🥧",
+      "tags": [
+        "cat",
+        "kitten",
+        "pumpkin pie",
+        "thanksgiving",
+        "food to kitten",
+        "ai cat"
+      ],
+      "hashtags": [
+        "#고양이",
+        "#호박파이",
+        "#추수감사절",
+        "#cat",
+        "#kitten",
+        "#catsofinstagram"
+      ],
+      "shots": [
+        {
+          "image": "Photorealistic whole pumpkin pie with a golden crust on a rustic wooden table, autumn leaves and small pumpkins around, warm candle light, cozy Thanksgiving kitchen, shallow depth of field, vertical composition",
+          "motion": "candle light flickers, a faint wisp of steam rises from the pie, static camera, very subtle movement"
+        },
+        {
+          "image": "Photorealistic whole pumpkin pie with a golden crust on a rustic wooden table, two tiny orange kitten ears poking up from the middle of the pie filling, autumn leaves and small pumpkins around, warm candle light, vertical composition",
+          "motion": "the tiny kitten ears in the pie twitch, candle light flickers, static camera, smooth motion",
+          "xfade": 0.5
+        },
+        {
+          "image": "Photorealistic tiny orange tabby kitten curled up inside a pie dish, its fur the color of pumpkin pie filling with a golden crust-colored edge, rustic wooden table, autumn leaves, warm candle light, vertical composition",
+          "motion": "the kitten in the pie dish lifts its head and looks around, static camera, smooth natural motion",
+          "xfade": 0.5
+        },
+        {
+          "image": "Photorealistic tiny orange tabby kitten sitting in a pie dish with a small dollop of whipped cream on its nose, rustic wooden table, autumn leaves, warm candle light, vertical composition",
+          "motion": "the kitten licks the whipped cream off its nose, static camera, smooth natural motion"
+        },
+        {
+          "image": "Photorealistic top-down view of a wire cooling rack on a rustic wooden table with four tiny orange kittens each curled up in its own small pie tin, golden crust colors, autumn leaves around, warm light, vertical composition",
+          "motion": "the kittens in the pie tins wiggle their ears and one lifts its head, static camera, smooth motion"
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "slug": "disco-cat",
+      "format": "dance",
+      "track": "funkorama.mp3",
+      "seed": 74419,
+      "caption": "When the beat drops",
+      "title": "He Waited All Week for This Beat Drop 🕺🐱",
+      "en_line": "He has been practicing this all week.",
+      "ko_line": "일주일 내내 연습한 거래요 🕺",
+      "tags": [
+        "cat",
+        "dancing cat",
+        "disco",
+        "cat dance",
+        "funny cat",
+        "ai cat"
+      ],
+      "hashtags": [
+        "#고양이",
+        "#춤추는고양이",
+        "#디스코",
+        "#cat",
+        "#catdance",
+        "#catsofinstagram"
+      ],
+      "shots": [
+        {
+          "image": "Photorealistic gray British shorthair cat standing upright on its hind legs in the middle of a neon-lit disco dance floor, wearing tiny round sunglasses, colorful disco ball light spots, full body visible, vertical composition",
+          "motion": "the cat stands still and slowly lowers its head, disco lights move, static camera, smooth motion",
+          "sec": 0.9
+        },
+        {
+          "image": "Photorealistic gray British shorthair cat standing upright on its hind legs on a neon-lit disco dance floor, wearing tiny round sunglasses, one front paw raised high toward the disco ball, colorful light spots, full body visible, vertical composition",
+          "motion": "the cat thrusts its paw up and down to the beat, disco lights move, static camera, smooth motion"
+        },
+        {
+          "image": "Photorealistic gray British shorthair cat standing upright on its hind legs on a neon-lit disco dance floor, wearing tiny round sunglasses, swaying its hips, colorful disco ball light spots, full body visible, vertical composition",
+          "motion": "the cat sways its hips side to side and raises one front paw in a dance move to the beat, static camera, smooth motion"
+        },
+        {
+          "image": "Photorealistic gray British shorthair cat standing upright on its hind legs on a neon-lit disco dance floor, wearing tiny round sunglasses, both front paws raised, colorful disco ball light spots, full body visible, vertical composition",
+          "motion": "the cat waves both front paws in the air and bobs its head to the beat, static camera, smooth motion"
+        },
+        {
+          "image": "Photorealistic gray British shorthair cat standing upright on its hind legs on a neon-lit disco dance floor, wearing tiny round sunglasses, pointing one front paw straight at the camera, colorful light spots, vertical composition",
+          "motion": "the cat points its paw at the camera and nods, disco lights move, static camera, smooth motion"
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "slug": "office-cat-6pm",
+      "format": "meme",
+      "track": "kool-kats.mp3",
+      "seed": 85561,
+      "caption": "Me at 5:59 PM vs 6:00 PM",
+      "title": "Me at 5:59 PM vs 6:00 PM 🐱💼",
+      "en_line": "Clocked out. Spiritually and physically.",
+      "ko_line": "5시 59분의 나 vs 6시의 나 💼",
+      "tags": [
+        "cat",
+        "office cat",
+        "work meme",
+        "funny cat",
+        "cat dance",
+        "ai cat"
+      ],
+      "hashtags": [
+        "#고양이",
+        "#직장인",
+        "#퇴근",
+        "#cat",
+        "#officecat",
+        "#catsofinstagram"
+      ],
+      "shots": [
+        {
+          "image": "Photorealistic orange tabby cat sitting on an office chair at a desk with an open laptop, slumped and bored, chin resting on the desk, cold blue fluorescent office light, papers and coffee mug, vertical composition",
+          "motion": "the bored cat blinks slowly and sighs, static camera, very subtle movement"
+        },
+        {
+          "image": "Photorealistic orange tabby cat at an office desk with an open laptop, one paw lazily on the keyboard, half-closed eyes, cold blue fluorescent office light, vertical composition",
+          "motion": "the cat lazily taps the keyboard with one paw and yawns, static camera, smooth motion"
+        },
+        {
+          "image": "Photorealistic orange tabby cat at an office desk, suddenly wide awake with big eyes and ears up, warm golden sunset light flooding through the office window, vertical composition",
+          "motion": "the cat's ears perk up and its eyes go wide, warm light glows, static camera, smooth motion",
+          "xfade": 0.3
+        },
+        {
+          "image": "Photorealistic orange tabby cat standing upright on its hind legs on top of an office desk, wearing a tiny loosened necktie, dancing joyfully, warm golden sunset light through the window, papers flying, vertical composition",
+          "motion": "the cat dances on the desk, swinging its paws to the beat, papers flutter, static camera, smooth motion"
+        },
+        {
+          "image": "Photorealistic orange tabby cat standing upright in an office doorway wearing a tiny loosened necktie and a tiny backpack, warm golden sunset light, vertical composition",
+          "motion": "the cat waves one paw goodbye and turns toward the door, static camera, smooth motion"
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "slug": "chef-cat-pancakes",
+      "format": "meme",
+      "track": "sneaky-snitch.mp3",
+      "seed": 96683,
+      "caption": "Chef said no tasting. Chef lied.",
+      "title": "Chef Said No Tasting. Chef Lied. 🥞🐱",
+      "en_line": "Quality control is a very important job.",
+      "ko_line": "셰프는 간 보는 중이에요 (진짜임) 🥞",
+      "tags": [
+        "cat",
+        "chef cat",
+        "cooking cat",
+        "pancakes",
+        "funny cat",
+        "ai cat"
+      ],
+      "hashtags": [
+        "#고양이",
+        "#요리하는고양이",
+        "#팬케이크",
+        "#cat",
+        "#chefcat",
+        "#catsofinstagram"
+      ],
+      "shots": [
+        {
+          "image": "Photorealistic fluffy white cat wearing a tiny white chef hat, standing on its hind legs at a cozy kitchen counter, holding a small whisk over a bowl of pancake batter, warm morning light, vertical composition",
+          "motion": "the chef cat whisks the batter in the bowl with its paws, static camera, smooth motion"
+        },
+        {
+          "image": "Photorealistic fluffy white cat wearing a tiny white chef hat at a cozy kitchen stove, a small frying pan with a golden pancake, warm morning light, vertical composition",
+          "motion": "the chef cat watches the pancake sizzle and nods proudly, steam rises, static camera, smooth motion"
+        },
+        {
+          "image": "Photorealistic fluffy white cat wearing a tiny white chef hat, alone in a cozy empty kitchen, looking sideways suspiciously with narrowed eyes, a tall stack of golden pancakes with butter on the counter in front of it, warm morning light, vertical composition",
+          "motion": "the chef cat slowly glances to the left with narrowed eyes, static camera, smooth natural motion"
+        },
+        {
+          "image": "Photorealistic fluffy white cat wearing a tiny white chef hat leaning toward a tall stack of golden pancakes with melting butter and syrup, tongue out, cozy kitchen, warm morning light, vertical composition",
+          "motion": "the chef cat sneakily licks the syrup on the pancakes, static camera, smooth natural motion"
+        },
+        {
+          "image": "Photorealistic fluffy white cat wearing a tiny white chef hat sitting next to a stack of pancakes, a little syrup on its whiskers, looking innocently at the camera, cozy kitchen, warm light, vertical composition",
+          "motion": "the chef cat licks its lips and blinks innocently at the camera, static camera, smooth natural motion"
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "slug": "kitten-claw-machine",
+      "format": "game",
+      "track": "pixel-peeker-polka-faster.mp3",
+      "seed": 17729,
+      "caption": "This claw machine is rigged (cutely)",
+      "title": "The Cutest Rigged Claw Machine Ever 🕹️🐱",
+      "en_line": "Zero wins. Zero regrets.",
+      "ko_line": "이 인형뽑기는 절대 못 뽑음 🕹️",
+      "tags": [
+        "cat",
+        "kitten",
+        "claw machine",
+        "arcade",
+        "cute cat",
+        "ai cat"
+      ],
+      "hashtags": [
+        "#고양이",
+        "#인형뽑기",
+        "#아기고양이",
+        "#cat",
+        "#kitten",
+        "#catsofinstagram"
+      ],
+      "shots": [
+        {
+          "image": "Photorealistic arcade claw machine glowing with pink and blue neon lights, the glass box filled with many fluffy kittens of different colors instead of plush toys, a metal claw hanging at the top, dark arcade background, vertical composition",
+          "motion": "the neon lights glow and pulse, the kittens inside move slightly, static camera, smooth motion"
+        },
+        {
+          "image": "Photorealistic view through the glass of an arcade claw machine, a pile of fluffy kittens of different colors looking up at a shiny metal claw above them, pink and blue neon light, vertical composition",
+          "motion": "the metal claw slowly lowers toward the kittens, the kittens look up, static camera, smooth motion"
+        },
+        {
+          "image": "Photorealistic close-up inside an arcade claw machine, a fluffy gray kitten sitting on top of other kittens, holding on to the metal claw with both front paws, pink and blue neon light, vertical composition",
+          "motion": "the gray kitten bats at the metal claw with its paws, static camera, smooth motion"
+        },
+        {
+          "image": "Photorealistic close-up inside an arcade claw machine, a fluffy calico kitten pressing its paw against the glass and looking at the camera, other kittens behind it, pink and blue neon light, vertical composition",
+          "motion": "the kitten presses its paw on the glass and meows at the camera, static camera, smooth natural motion"
+        },
+        {
+          "image": "Photorealistic fluffy orange kitten popping its head out of the prize chute flap at the bottom of an arcade claw machine, pink and blue neon light, vertical composition",
+          "motion": "the kitten pushes its head out through the prize flap and looks around, static camera, smooth motion"
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "slug": "gamer-cat",
+      "format": "game",
+      "track": "run-amok.mp3",
+      "seed": 28871,
+      "caption": "One more game, I promise",
+      "title": "One More Game, I Promise 🎮🐱",
+      "en_line": "It is 3 AM and he said one more game.",
+      "ko_line": "딱 한 판만 더 하는 고양이 🎮",
+      "tags": [
+        "cat",
+        "gamer cat",
+        "gaming",
+        "funny cat",
+        "ai cat"
+      ],
+      "hashtags": [
+        "#고양이",
+        "#게임",
+        "#게이머",
+        "#cat",
+        "#gamercat",
+        "#catsofinstagram"
+      ],
+      "shots": [
+        {
+          "image": "Photorealistic black cat wearing a small gaming headset, sitting on a gaming chair in a dark bedroom lit by purple and cyan LED strips, face lit by monitor glow, focused stare, keyboard in front, vertical composition",
+          "motion": "the black cat stares intensely forward, LED lights pulse, static camera, very subtle movement"
+        },
+        {
+          "image": "Photorealistic black cat wearing a small gaming headset, both front paws on a glowing RGB keyboard, dark room lit by purple and cyan LED strips, intense eyes, vertical composition",
+          "motion": "the black cat mashes the keyboard rapidly with both paws, LED lights pulse, static camera, smooth motion"
+        },
+        {
+          "image": "Photorealistic black cat wearing a small gaming headset, ears flattened back and mouth open in a dramatic hiss, dark room lit by purple and cyan LED strips, vertical composition",
+          "motion": "the black cat hisses dramatically with its ears flat, static camera, smooth motion",
+          "xfade": 0.2
+        },
+        {
+          "image": "Photorealistic black cat wearing a small gaming headset standing up on a gaming chair with both front paws raised in victory, dark room lit by purple and cyan LED strips, vertical composition",
+          "motion": "the black cat slowly raises both front paws in victory, static camera, smooth natural motion"
+        },
+        {
+          "image": "Photorealistic black cat wearing a small gaming headset spinning slightly on a gaming chair, happy squinting eyes, dark room lit by purple and cyan LED strips, vertical composition",
+          "motion": "the happy black cat sways on the chair and bobs its head, static camera, smooth motion",
+          "sec": 1.0
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "slug": "first-snow-kitten",
+      "format": "meme",
+      "track": "investigations.mp3",
+      "seed": 39911,
+      "caption": "First snow ever",
+      "title": "Kitten Sees Snow for the Very First Time ❄️🐱",
+      "en_line": "The sky is falling and it is cold.",
+      "ko_line": "입동이라 첫눈 본 아기 고양이 ❄️",
+      "tags": [
+        "cat",
+        "kitten",
+        "first snow",
+        "winter",
+        "cute cat",
+        "ai cat"
+      ],
+      "hashtags": [
+        "#고양이",
+        "#첫눈",
+        "#입동",
+        "#cat",
+        "#kitten",
+        "#catsofinstagram"
+      ],
+      "shots": [
+        {
+          "image": "Photorealistic tiny calico kitten sitting on a windowsill inside a cozy house, looking out of the window at falling snow, warm indoor light, snowy garden outside, vertical composition",
+          "motion": "the kitten watches the falling snow and its head follows a snowflake, static camera, smooth natural motion"
+        },
+        {
+          "image": "Photorealistic tiny calico kitten standing at an open door on a snowy wooden porch, looking down at fresh white snow, snowflakes falling, soft daylight, vertical composition",
+          "motion": "the kitten carefully steps one paw toward the snow, snowflakes fall, static camera, smooth motion"
+        },
+        {
+          "image": "Photorealistic tiny calico kitten on a snowy wooden porch shaking one front paw in the air after touching cold snow, surprised face, snowflakes falling, soft daylight, vertical composition",
+          "motion": "the kitten shakes its cold paw quickly, snowflakes fall, static camera, smooth natural motion"
+        },
+        {
+          "image": "Photorealistic tiny calico kitten in fresh snow looking up at falling snowflakes with its mouth open, soft daylight, snowy garden, vertical composition",
+          "motion": "the kitten looks up and tries to catch a snowflake with its mouth, static camera, smooth natural motion"
+        },
+        {
+          "image": "Photorealistic extreme close-up of a tiny calico kitten face with a single snowflake on its pink nose, crossed eyes looking at the snowflake, soft daylight, vertical composition",
+          "motion": "the kitten goes cross-eyed at the snowflake on its nose and sneezes softly, static camera, smooth natural motion"
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "slug": "gym-cat",
+      "format": "meme",
+      "track": "hep-cats.mp3",
+      "seed": 40057,
+      "caption": "Leg day? Never heard of it",
+      "title": "Gym Cat Skips Leg Day Again 💪🐱",
+      "en_line": "Upper body only. Every single day.",
+      "ko_line": "하체는 안 하는 헬스 고양이 💪",
+      "tags": [
+        "cat",
+        "gym cat",
+        "workout",
+        "funny cat",
+        "ai cat"
+      ],
+      "hashtags": [
+        "#고양이",
+        "#헬스",
+        "#운동",
+        "#cat",
+        "#gymcat",
+        "#catsofinstagram"
+      ],
+      "shots": [
+        {
+          "image": "Photorealistic big fluffy Maine Coon cat wearing a tiny red sweatband on its head, sitting on a gym bench holding two tiny dumbbells, modern gym with mirrors and dramatic lighting, vertical composition",
+          "motion": "the cat lifts the tiny dumbbells up and down with its front paws, static camera, smooth motion"
+        },
+        {
+          "image": "Photorealistic big fluffy Maine Coon cat wearing a tiny red sweatband, standing upright on its hind legs flexing both front legs like a bodybuilder, modern gym with dramatic lighting, vertical composition",
+          "motion": "the cat flexes its front legs and puffs out its chest proudly, static camera, smooth motion"
+        },
+        {
+          "image": "Photorealistic big fluffy Maine Coon cat wearing a tiny red sweatband, lying flat on a gym bench doing a tiny barbell bench press, modern gym with dramatic lighting, vertical composition",
+          "motion": "the cat pushes the tiny barbell up and down, static camera, smooth motion",
+          "sec": 0.8
+        },
+        {
+          "image": "Photorealistic big fluffy Maine Coon cat wearing a tiny red sweatband, sitting next to a leg press machine and looking away from it dismissively, modern gym, dramatic lighting, vertical composition",
+          "motion": "the cat looks at the leg press machine and turns its head away, static camera, smooth natural motion"
+        },
+        {
+          "image": "Photorealistic big fluffy Maine Coon cat wearing a tiny red sweatband, standing in front of a gym mirror flexing its front legs, reflection visible, dramatic lighting, vertical composition",
+          "motion": "the cat flexes in front of the mirror and nods at itself, static camera, smooth motion",
+          "sec": 1.0
+        }
+      ]
+    }
+  ]
+}
