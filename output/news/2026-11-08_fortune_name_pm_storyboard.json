@@ -1,0 +1,106 @@
+{
+ "date": "2026-11-08",
+ "topic": "fortune_name",
+ "slot": "pm",
+ "theme": "month:friends",
+ "privacy": "public",
+ "accent": "#C9A227",
+ "_min_total": 9.0,
+ "hook_title": "친구 복 순위",
+ "headline": "태어난 달로 보는 친구 복 순위 1위~12위 | 음력 1월생~12월생 전부 · 11월 8일",
+ "thumbnail_hook": "a cozy Korean tea house table set for friends with several teacups and sweets, warm lantern light, friendly mood, no people, no text",
+ "scenes": [
+  {
+   "type": "grid",
+   "pill": "11월 8일 일요일 · 내 것 찾기",
+   "title": "음력 생일 달로 보는",
+   "title2": "친구 복 순위",
+   "cols": 2,
+   "cells": [
+    {
+     "big": "1월생",
+     "small": "7위",
+     "note": "함께 나들이",
+     "hi": false
+    },
+    {
+     "big": "2월생",
+     "small": "12위",
+     "note": "먼저 연락",
+     "hi": false
+    },
+    {
+     "big": "3월생",
+     "small": "9위",
+     "note": "약속 지키기",
+     "hi": false
+    },
+    {
+     "big": "4월생",
+     "small": "11위",
+     "note": "험담은 쉬어요",
+     "hi": false
+    },
+    {
+     "big": "5월생",
+     "small": "4위",
+     "note": "정 나누기",
+     "hi": false
+    },
+    {
+     "big": "6월생",
+     "small": "6위",
+     "note": "동창 소식",
+     "hi": false
+    },
+    {
+     "big": "7월생",
+     "small": "5위",
+     "note": "차 한잔 약속",
+     "hi": false
+    },
+    {
+     "big": "8월생",
+     "small": "1위",
+     "note": "모임에 웃음",
+     "hi": true
+    },
+    {
+     "big": "9월생",
+     "small": "8위",
+     "note": "안부 한 통",
+     "hi": false
+    },
+    {
+     "big": "10월생",
+     "small": "10위",
+     "note": "말 한마디 조심",
+     "hi": false
+    },
+    {
+     "big": "11월생",
+     "small": "2위",
+     "note": "반가운 연락",
+     "hi": true
+    },
+    {
+     "big": "12월생",
+     "small": "3위",
+     "note": "친구가 찾아와요",
+     "hi": true
+    }
+   ],
+   "basis": "양력 생일은 음력으로 바꿔 보세요 · 윤달생은 그 달로",
+   "foot": "※ 재미로 보는 운세",
+   "brand": "왕별이 · 내 것 찾기",
+   "narration": "태어난 달로 보는 친구 복 순위예요. 음력 생일 달로 내 순위를 찾아보세요."
+  }
+ ],
+ "platforms": {
+  "youtube": {
+   "title": "태어난 달로 보는 친구 복 순위 1위~12위 | 음력 1월생~12월생 전부 · 11월 8일 #shorts",
+   "description": "태어난 달로 보는 친구 복 순위 — 음력 1월생부터 12월생까지 한 장에 모았어요. 내 생일 달은 몇 위인가요? 댓글로 남겨 주세요 🙏\n매일 아침 7시 40분 태어난 해 · 아침 9시 40분 이름 글자 · 오후 1시 40분 성씨 · 오후 3시 40분 태어난 달·음력 생일 끝자리 표가 올라와요.\n\n📅 '태어난 달'은 음력 생일 달이에요\n· 음력 생일 달로 찾아보세요. 예) 음력 3월 15일생 → 3월생\n· 윤달에 태어나셨으면 보통 그 달로 봐요. 예) 윤4월생 → 4월생\n· 양력 생일만 아시면 휴대폰 달력에서 음력으로 바꿔 보시면 돼요.\n\n※ 재미로 보는 풀이입니다. 순위는 재미로 정한 것이에요.\n\n#생일운세 #태어난달 #운세 #shorts"
+  }
+ },
+ "notes": "내 것 찾기 표 · month:friends · name_card.py 가 만든 스토리보드(루틴은 실행 스위치만)"
+}
