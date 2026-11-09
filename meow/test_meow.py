@@ -485,6 +485,10 @@ info = PA.write(dt.date(2026, 11, 12), pdir, client=_Client(["x", "y", "z"]))
 sk = R.load(os.path.join(pdir, "2026-11-12.json"))
 ck("API: 세 번 다 못 넘으면 그날은 skip(틀린 편을 만들지 않는다)", not info["ok"] and sk["concepts"] == [] and "skip" in sk)
 
+ck("매일판 인스타 캡션 = 한국어·영어 한 줄 · 해시태그 · 음악 credit · AI 표시 · 2200자 안 / 쓰레드 500자 안",
+   all(x in P.ig_caption(good) for x in (good["ko_line"], good["en_line"], "#cat", "CC BY 4.0", "AI"))
+   and len(P.ig_caption(good)) <= 2200 and len(P.threads_text(good)) <= 500 and "Kevin MacLeod" in P.threads_text(good))
+
 # ── 매일판 공개 시각 · 다른 채널 막기 ──
 utc = dt.timezone.utc
 ck("매일판 공개 = 기획 날짜 10:00 KST(= 01:00 UTC)", P.slot_at("2026-11-10", "10:00") == dt.datetime(2026, 11, 10, 1, 0, tzinfo=utc))

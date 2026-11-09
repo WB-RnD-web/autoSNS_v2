@@ -1,0 +1,113 @@
+name: Meow Remix 인스타·쓰레드 — 그날 고양이 쇼츠를 릴스·쓰레드에(18:00 KST)
+
+# 2026-11-09 사용자: "인스타·쓰레드에도 올려줘". meow-daily.yml 이 새벽에 만든 그날 편(완성본은 Actions 캐시
+#   meow-out-<stem>-)을 저녁에 인스타 릴스(@zerocrew.studio · 'Meow Remix | 고양이')와 쓰레드에 올린다(meow/post.py social —
+#   Cloudinary 로 잠깐 호스팅 → 게시 → 지움). 캡션 = ko_line · en_line · 해시태그 · 음악 credit(CC BY 4.0 — 빼면 안 된다) · AI 표시.
+# 기존 인스타 편성(insta-pick.yml — 낮 a · 저녁 b · 밤 c)은 그대로다. 이 편은 그 사이(18:00)에 하나 더.
+# ★두 번 올리지 않는다: 게시 ledger(output/meow/posted.json · Actions 캐시 meow-posted-) — 인스타·쓰레드 따로 적는다.
+# 그날 편이 없으면(기획 skip · 검수에 막힘 · 렌더 실패) 아무것도 안 하고 끝난다.
+# 시각: 18:00 KST 본 실행 · 20:40 KST 예비(GitHub 예약이 빠지거나 늦은 날 — 이미 올렸으면 건너뛴다).
+# 끄기: 레포 변수 MEOW_SOCIAL=0. 돈 드는 호출 없음(Cloudinary 무료 · Graph API · 퍼블릭 레포 Actions).
+
+on:
+  schedule:
+    - cron: "0 9 * * *"         # 18:00 KST
+    - cron: "40 11 * * *"       # 20:40 KST 예비
+  workflow_dispatch:
+    inputs:
+      day:
+        description: "기획 날짜 YYYY-MM-DD(KST · 비우면 오늘)"
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: meow-social
+  cancel-in-progress: false
+
+jobs:
+  post:
+    if: (vars.MEOW_SOCIAL || '1') != '0'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      TZ: Asia/Seoul
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: pipeline/requirements.txt
+
+      - name: 오늘 편 고르기(data/meow · 읽기 전용)
+        id: pick
+        run: |
+          set -euo pipefail
+          DAY="${{ github.event.inputs.day }}"
+          [ -n "$DAY" ] || DAY=$(date +%F)
+          mkdir -p output/meow_plan
+          git fetch -q --no-tags --depth=1 origin data/meow && git archive FETCH_HEAD | tar -x -C output/meow_plan \
+            || echo "(data/meow 없음)"
+          F="output/meow_plan/$DAY.json"
+          if [ ! -f "$F" ]; then echo "::notice::$DAY 기획 없음 — 올릴 것 없음"; exit 0; fi
+          STEM=$(python -c "import json,sys; d=json.load(open(sys.argv[1],encoding='utf-8')); cs=d.get('concepts') or []; print(cs[0]['id']+'_'+cs[0]['slug'] if cs else '')" "$F")
+          if [ -z "$STEM" ]; then echo "::notice::$DAY 은 건너뛴 날"; exit 0; fi
+          echo "doc=$F" >> "$GITHUB_OUTPUT"
+          echo "stem=$STEM" >> "$GITHUB_OUTPUT"
+          echo "대상: $DAY $STEM"
+
+      # 경로 목록은 meow-daily.yml 의 '완성본 저장'과 똑같아야 캐시가 열린다(test_workflows 가 본다)
+      - name: 완성본 받기(meow-daily 캐시)
+        id: out
+        if: steps.pick.outputs.stem != ''
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            output/meow/${{ steps.pick.outputs.stem }}.mp4
+            output/meow/${{ steps.pick.outputs.stem }}_cover.jpg
+            output/meow/${{ steps.pick.outputs.stem }}_meta.json
+          key: meow-out-${{ steps.pick.outputs.stem }}-none
+          restore-keys: meow-out-${{ steps.pick.outputs.stem }}-
+
+      - name: 게시 ledger 복원
+        if: steps.out.outputs.cache-matched-key != ''
+        uses: actions/cache/restore@v4
+        with:
+          path: output/meow/posted.json
+          key: meow-posted-${{ github.run_id }}
+          restore-keys: meow-posted-
+
+      - name: 의존성
+        if: steps.out.outputs.cache-matched-key != ''
+        run: python -m pip install -r pipeline/requirements.txt
+
+      - name: 인스타 릴스 + 쓰레드
+        id: post
+        if: steps.out.outputs.cache-matched-key != ''
+        env:
+          CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
+          CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
+          CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+        run: python meow/post.py social "${{ steps.pick.outputs.doc }}" --gap-min 0
+
+      - name: 완성본 없음
+        if: steps.pick.outputs.stem != '' && steps.out.outputs.cache-matched-key == ''
+        run: echo "::warning::${{ steps.pick.outputs.stem }} 완성본 캐시가 없다(렌더 실패·검수에 막힘·아직 안 끝남) — 올리지 않는다"
+
+      # 올라간 건 올라간 거다 — 실패해도 ledger 는 남긴다(예비 실행이 두 번 올리지 않게)
+      - name: 게시 ledger 저장
+        if: always() && hashFiles('output/meow/posted.json') != ''
+        uses: actions/cache/save@v4
+        with:
+          path: output/meow/posted.json
+          key: meow-posted-${{ github.run_id }}-${{ github.run_attempt }}
