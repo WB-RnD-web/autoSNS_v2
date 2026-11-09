@@ -165,15 +165,25 @@ def _job(body: dict, out: str | None, timeout: int = 1500) -> dict:
     jid = r.json()["job_id"]
     t0 = time.time()
     while time.time() - t0 < timeout:
-        d = requests.get(f"{base}/jobs/{jid}", headers=headers, timeout=30).json()
-        if d["status"] == "done":
+        try:
+            g = requests.get(f"{base}/jobs/{jid}", headers=headers, timeout=30)
+            d = g.json() if g.ok else {}
+        except (requests.RequestException, ValueError):   # 게이트웨이가 다시 켜지는 몇 초 — 쉬고 다시 본다
+            time.sleep(10)
+            continue
+        if g.status_code == 404 or (g.ok and "status" not in d):
+            # 게이트웨이가 다시 켜지면 진행 중이던 작업이 사라진다(11/09 18시 첫눈 컷2) — 다시 넣을 일
+            raise SparkJobError(f"Spark {body['type']} {jid} 작업이 사라짐(게이트웨이 재시작?) HTTP {g.status_code}")
+        if d.get("status") == "done":
             if out:
-                b = requests.get(f"{base}/jobs/{jid}/file", headers=headers, timeout=300).content
-                with open(out + ".part", "wb") as f:
-                    f.write(b)
+                f = requests.get(f"{base}/jobs/{jid}/file", headers=headers, timeout=300)
+                if f.status_code != 200:
+                    raise SparkJobError(f"Spark {body['type']} {jid} 결과 받기 실패 HTTP {f.status_code}")
+                with open(out + ".part", "wb") as fh:
+                    fh.write(f.content)
                 os.replace(out + ".part", out)
             return {**d, "job_id": jid}
-        if d["status"] in ("error", "failed"):
+        if d.get("status") in ("error", "failed"):
             raise SparkJobError(f"Spark 오류 {body['type']}: {d.get('error')}")
         time.sleep(4)                  # running(HD 는 기다림·식힘 포함)·hold·queued 는 그냥 기다린다
     raise TimeoutError(f"Spark {body['type']} {jid} 시간 초과")
@@ -241,7 +251,7 @@ def gen(c: dict) -> list[str]:
             os.replace(raw + ".tmp", raw)
             _save(raw.replace(".mp4", ".json"), info)
             print(f"   {stem(c)} 컷{i} {info.get('width')}×{info.get('height')} {info.get('fps')}fps "
-                  f"{info.get('duration_sec')}초 · 서버 {info.get('took_sec')}초", flush=True)
+                  f"{info.get('duration_sec')}초 · 서버 {info.get('elapsed')}초", flush=True)
         else:
             body = {"type": "video", "prompt": s["motion"], "fast": True, "length": 49, "fps": 16, "mp4": True,
                     "no_llm": True}

@@ -16,6 +16,8 @@ sys.path.insert(0, HERE)
 import post as P  # noqa: E402
 import render as R  # noqa: E402
 
+REAL_JOB = R._job                  # 아래에서 가짜로 바꾸기 전에 진짜를 잡아 둔다
+
 fails = 0
 
 
@@ -130,6 +132,60 @@ try:
 except RuntimeError:
     pass
 ck("거절(HTTP 400)은 다시 보내지 않는다", n[0] == 1)
+
+# _job: 게이트웨이가 다시 켜져 작업이 사라지면(404·status 없음) 다시 넣을 오류로 · 잠깐 끊김은 기다린다
+class FakeResp:
+    def __init__(self, code, js=None, content=b""):
+        self.status_code, self._js, self.content, self.ok = code, js, content, code < 400
+
+    def json(self):
+        if self._js is None:
+            raise ValueError("no json")
+        return self._js
+
+
+class FakeReq:
+    class RequestException(Exception):
+        pass
+
+    def __init__(self, gets):
+        self.gets = list(gets)
+
+    def post(self, *a, **k):
+        return FakeResp(200, {"job_id": "jx"})
+
+    def get(self, url, **k):
+        g = self.gets.pop(0)
+        if isinstance(g, Exception):
+            raise g
+        return g
+
+
+real_spark, real_sleep = R._spark, R.time.sleep
+R._job = REAL_JOB
+R.time.sleep = lambda s: None
+for name, gets in [("404", [FakeResp(404, {"detail": "not found"})]), ("status 없음", [FakeResp(200, {"detail": "x"})])]:
+    R._spark = lambda gets=gets: (FakeReq(gets), "http://x", {})
+    try:
+        R._job({"type": "video"}, None)
+        lost = False
+    except R.SparkJobError as e:
+        lost = "사라짐" in str(e)
+    ck(f"작업이 사라지면({name}) 다시 넣을 오류(SparkJobError)", lost)
+fq = FakeReq([FakeReq.RequestException("reset"), FakeResp(502, None), FakeResp(200, {"status": "running"}),
+              FakeResp(200, {"status": "done", "model": "m"}), FakeResp(200, None, b"MP4")])
+R._spark = lambda: (fq, "http://x", {})
+outp = os.path.join(tmp, "o.mp4")
+info = R._job({"type": "video"}, outp)
+ck("잠깐 끊김·502 는 기다렸다가 받는다", info["model"] == "m" and open(outp, "rb").read() == b"MP4")
+R._spark = lambda: (FakeReq([FakeResp(200, {"status": "done"}), FakeResp(409, {"detail": "not yet"})]), "http://x", {})
+try:
+    R._job({"type": "video"}, outp + "2")
+    bad = True
+except R.SparkJobError:
+    bad = os.path.exists(outp + "2")
+ck("결과 받기가 200 이 아니면 오류 글을 mp4 로 저장하지 않는다", not bad)
+R._spark, R.time.sleep = real_spark, real_sleep
 
 # gen: 응답이 5B 면 첫 컷에서 멈추고, 14B 면 클립·응답을 남긴다(Spark 없이 가짜 _job)
 calls = []
