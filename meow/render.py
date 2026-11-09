@@ -3,8 +3,8 @@
 엔진 두 가지(기획 파일의 "engine", 없으면 5b):
 - 5b  : 한 편 = 컷 4~7개. 컷마다 z-image 세로 그림 → 5B i2v 2초 → 앞 1.4초 × 1.2배 느리게.
         (5B 는 앞 1초가 제일 깨끗하고 끝으로 갈수록 뭉개진다 — 11/07 견본이 이것. 버벅임·깨짐으로 불합격)
-- 14b : 한 편 = 컷 1~3개. 컷마다 그림 → Wan 2.2 I2V-14B 720×1280·81장(16fps, 약 5초)을 늘리지 않고 그대로.
-        후처리 스위치(MEOW_VIDEO_POST=1)를 켜면 video_post 로 SeedVR2 업스케일(필요할 때만) + RIFE ×2(32fps).
+- 14b : 한 편 = 컷 1~3개. 컷마다 720×1280 그림 → 스파크 "영상 HD"(hd:true) 한 번 = 720×1280·32fps·5초 완성본.
+        서버 안에서 I2V-14B 480×832·81장 → SeedVR2 로 720 → RIFE ×2 를 이어 돌린다(11/09 열림). 늘리지 않고 그대로 쓴다.
 'xfade' 가 있는 컷은 앞 컷과 겹쳐 녹아들게 이어 붙인다(음식 → 고양이 변신).
 
     python meow/render.py gen   meow/concepts/<file>.json [--only s01,s02]   # Spark 그림·클립(캐시)
@@ -13,9 +13,9 @@
 
 gen 은 이미 받은 클립을 건너뛴다(중간에 끊겨도 다시 돌리면 이어서). 05:45~08:00 KST 에는 Spark 를 쓰지 않는다.
 
-14B 판단은 응답 model 로 한다 — 열 시험(11/09) 전에는 "i2v-14b" 를 보내도 서버가 5B 로 돌리고
-model=wan2.2-ti2v-5b-i2v 로 답한다(스파크 담당자 11/07). 그러면 첫 컷에서 멈춘다(5B 81장은 몸이 늘어난다).
-video_post 는 아직 서버에 없다(「알 수 없는 type」) — 열렸다고 하면 MEOW_VIDEO_POST=1.
+14B 판단은 응답 model 로 한다 — hd 없이 그림을 주면 서버는 5B 로 만든다(10/02 열 사고 뒤). 응답 model 에
+14b 가 없으면 첫 컷에서 멈춘다(5B 81장은 몸이 늘어난다). HD 한 편 약 13분(생성 3·식힘 5·키우기/보간 4),
+GPU 가 다른 일 중이면 최대 약 1시간 기다린다. 95°C 에 닿으면 status=error → 잠시 뒤 다시 요청(최대 2번).
 """
 from __future__ import annotations
 
@@ -41,16 +41,14 @@ W, H, FPS = 1080, 1920, 30
 SHOT_SRC = 1.4                     # 5B 클립 2.04초 중 앞 1.4초만 — 1.5초를 넘으면 몸이 늘어나는 일이 잦다(11/07 견본 실측)
 SLOW = 1.2                         # 살짝 느리게(1.4초 → 1.68초) — 귀여운 동작은 느린 쪽이 잘 읽힌다
 # src = 컷마다 클립에서 쓰는 길이(초) · slow = 늘리는 배수 · fps = 완성 영상 fps · shots = 컷 수 범위
-# 14b: 81장 ÷ 16fps = 5.06초 → 5초. 32fps = RIFE ×2 그대로(30 으로 맞추면 16장마다 한 장씩 버려져 튄다).
-#      후처리가 꺼져 있으면 16fps 를 정확히 두 번씩 보여 준다(30 으로 맞추면 고르지 않게 겹친다 — 11/07 버벅임 원인).
+# 14b: HD 완성본 161장 ÷ 32fps = 5.03초 → 5초. 32fps 그대로(30 으로 맞추면 16장마다 한 장씩 버려져 튄다 — 11/07 버벅임 원인).
 ENGINES = {"5b": {"src": SHOT_SRC, "slow": SLOW, "fps": FPS, "shots": (4, 7)},
            "14b": {"src": 5.0, "slow": 1.0, "fps": 32, "shots": (1, 3)}}
 CAP_SIZE = 72
 IMG_W, IMG_H = 768, 1344           # 5b 그림(5B 가 넓이 640×640 안으로 줄인다)
-V14_W, V14_H, V14_LEN = 720, 1280, 81   # 14b — 16의 배수 · 그림도 같은 크기로 뽑아 비율이 안 틀어지게
-V14_MODEL = os.environ.get("MEOW_VIDEO_MODEL") or "i2v-14b"
-V14_SPEED = os.environ.get("MEOW_SPEED") or "fast"     # fast = 4스텝(서버 기본·열 적음) | quality = 20스텝
-POST_H = 1280                      # video_post 업스케일 목표 높이(세로 720p) — 클립이 이보다 낮을 때만 SeedVR2
+V14_W, V14_H = 720, 1280           # 14b 그림 = 완성본 크기(세로 0.8 미만 → 서버가 480×832 로 만들어 720×1280 으로)
+HD_TIMEOUT = 5400                  # 한 컷 13분 + GPU 기다림 최대 약 1시간
+HD_RETRY, HD_RETRY_WAIT = 2, 300   # 열 안전장치로 멈추면(status=error) 5분 쉬고 다시
 FORMATS = {"morph", "dance", "meme", "game"}
 # 그림 프롬프트에 들어가면 안 되는 것 — 글자(깨진 글자가 나온다)·실존 인물·상표·게임 캐릭터
 BANNED = re.compile(r"\b(text|letters|logo|sign|caption|subtitle|phone|smartphone|minecraft|mario|pokemon|pikachu|"
@@ -154,6 +152,10 @@ def _spark():
     return requests, wbspark._base(), wbspark._headers()
 
 
+class SparkJobError(RuntimeError):
+    """접수된 작업이 서버에서 실패(status=error/failed) — 거절(HTTP 4xx)과 달리 다시 해 볼 만하다."""
+
+
 def _job(body: dict, out: str | None, timeout: int = 1500) -> dict:
     """작업을 넣고 끝날 때까지 기다린다 → 마지막 상태(job_id · 서버가 실제로 쓴 model·크기·길이…)."""
     requests, base, headers = _spark()
@@ -172,8 +174,8 @@ def _job(body: dict, out: str | None, timeout: int = 1500) -> dict:
                 os.replace(out + ".part", out)
             return {**d, "job_id": jid}
         if d["status"] in ("error", "failed"):
-            raise RuntimeError(f"Spark 오류 {body['type']}: {d.get('error')}")
-        time.sleep(4)                  # 'hold'(식히는 중)·queued 는 그냥 기다린다
+            raise SparkJobError(f"Spark 오류 {body['type']}: {d.get('error')}")
+        time.sleep(4)                  # running(HD 는 기다림·식힘 포함)·hold·queued 는 그냥 기다린다
     raise TimeoutError(f"Spark {body['type']} {jid} 시간 초과")
 
 
@@ -182,32 +184,27 @@ def quiet_hours(now: dt.datetime | None = None) -> bool:
     return dt.time(5, 45) <= t < dt.time(8, 0)
 
 
-def video_post_on() -> bool:
-    return os.environ.get("MEOW_VIDEO_POST") == "1"
-
-
 def is_14b(info: dict) -> bool:
     return "14b" in str(info.get("model", "")).lower()
 
 
-def v14_body(png: str, motion: str, seed: int) -> dict:
+def hd_body(png: str, motion: str, seed: int) -> dict:
+    """스파크 영상 HD — 문서에 있는 키만(오타·모르는 키는 접수 때 400)."""
     with open(png, "rb") as f:
         img = base64.b64encode(f.read()).decode()
-    return {"type": "video", "model": V14_MODEL, "image": img, "prompt": motion, "width": V14_W, "height": V14_H,
-            "length": V14_LEN, "speed": V14_SPEED, "seed": seed, "format": "mp4", "no_llm": True}
+    return {"type": "video", "hd": True, "prompt": motion, "image": img, "seed": seed}
 
 
-def post_body(raw_info: dict, raw_mp4: str | None) -> dict | None:
-    """업스케일은 클립이 세로 720p 보다 낮을 때만(14B 가 640급까지만 열리는 경우) · 보간은 늘 ×2."""
-    body = {"type": "video_post", "interpolate": "rife", "multiplier": 2}
-    if int(raw_info.get("height") or 0) < POST_H:
-        body.update({"upscale": "seedvr2", "target_height": POST_H})
-    if raw_mp4:                        # 결과는 1시간 뒤 서버에서 지워진다 — 캐시된 클립은 파일째 보낸다
-        with open(raw_mp4, "rb") as f:
-            body["video"] = base64.b64encode(f.read()).decode()
-    else:
-        body["from_job"] = raw_info["job_id"]
-    return body
+def hd_job(body: dict, out: str, sleep=time.sleep) -> dict:
+    for k in range(HD_RETRY + 1):
+        try:
+            return _job(body, out, timeout=HD_TIMEOUT)
+        except SparkJobError as e:
+            if k == HD_RETRY:
+                raise
+            print(f"   {e} — {HD_RETRY_WAIT // 60}분 쉬고 다시({k + 1}/{HD_RETRY})", flush=True)
+            sleep(HD_RETRY_WAIT)
+    raise AssertionError
 
 
 def _save(path: str, info: dict) -> None:
@@ -216,12 +213,8 @@ def _save(path: str, info: dict) -> None:
 
 
 def clip_path(c: dict, i: int) -> str:
-    """build 가 쓸 컷 i 의 클립 — 14b 는 후처리본이 있으면 그것, 없으면 원본."""
-    d = os.path.join(WORK, stem(c))
-    if engine(c) == "5b":
-        return os.path.join(d, f"shot{i}.mp4")
-    post = os.path.join(d, f"shot{i}_post.mp4")
-    return post if os.path.exists(post) else os.path.join(d, f"shot{i}_raw.mp4")
+    """build 가 쓸 컷 i 의 클립."""
+    return os.path.join(WORK, stem(c), f"shot{i}.mp4" if engine(c) == "5b" else f"shot{i}_raw.mp4")
 
 
 def gen(c: dict) -> list[str]:
@@ -230,41 +223,34 @@ def gen(c: dict) -> list[str]:
     v14 = engine(c) == "14b"
     for i, s in enumerate(c["shots"], 1):
         png = os.path.join(d, f"shot{i}.png")
-        raw = os.path.join(d, f"shot{i}_raw.mp4" if v14 else f"shot{i}.mp4")
-        post = os.path.join(d, f"shot{i}_post.mp4")
-        need_post = v14 and video_post_on() and not os.path.exists(post)
-        if os.path.exists(raw) and not need_post:
+        raw = clip_path(c, i)
+        if os.path.exists(raw):
             continue
         if quiet_hours():
             raise SystemExit("05:45~08:00 KST — Spark 쓰지 않는 시간")
-        t0, fresh, img_job = time.time(), None, None
+        t0, img_job = time.time(), None
         if not os.path.exists(png):
             w, h = (V14_W, V14_H) if v14 else (IMG_W, IMG_H)
             img_job = _job({"type": "image", "prompt": s["image"], "width": w, "height": h,
                             "no_llm": True, "seed": c["seed"] + i}, png)["job_id"]
-        if not os.path.exists(raw):
-            if v14:
-                info = _job(v14_body(png, s["motion"], c["seed"] + i), raw + ".tmp", timeout=3600)
-                if not is_14b(info):
-                    os.replace(raw + ".tmp", os.path.join(d, f"shot{i}_not14b.mp4"))
-                    raise SystemExit(f"{stem(c)} 컷{i}: 14B 아직 안 열림(응답 model={info.get('model')}) — 열린 뒤 다시")
-                os.replace(raw + ".tmp", raw)
-                _save(raw.replace(".mp4", ".json"), info)
-                fresh = info
+        if v14:
+            info = hd_job(hd_body(png, s["motion"], c["seed"] + i), raw + ".tmp")
+            if not is_14b(info):
+                os.replace(raw + ".tmp", os.path.join(d, f"shot{i}_not14b.mp4"))
+                raise SystemExit(f"{stem(c)} 컷{i}: 14B 아님(응답 model={info.get('model')}) — 멈춤")
+            os.replace(raw + ".tmp", raw)
+            _save(raw.replace(".mp4", ".json"), info)
+            print(f"   {stem(c)} 컷{i} {info.get('width')}×{info.get('height')} {info.get('fps')}fps "
+                  f"{info.get('duration_sec')}초 · 서버 {info.get('took_sec')}초", flush=True)
+        else:
+            body = {"type": "video", "prompt": s["motion"], "fast": True, "length": 49, "fps": 16, "mp4": True,
+                    "no_llm": True}
+            if img_job:
+                body["from_job"] = img_job
             else:
-                body = {"type": "video", "prompt": s["motion"], "fast": True, "length": 49, "fps": 16, "mp4": True,
-                        "no_llm": True}
-                if img_job:
-                    body["from_job"] = img_job
-                else:
-                    with open(png, "rb") as f:
-                        body["image"] = base64.b64encode(f.read()).decode()
-                _job(body, raw)
-        if need_post:
-            info = fresh or load(raw.replace(".mp4", ".json"))
-            pi = _job(post_body(info, None if fresh else raw), post + ".tmp", timeout=3600)
-            os.replace(post + ".tmp", post)
-            _save(post.replace(".mp4", ".json"), pi)
+                with open(png, "rb") as f:
+                    body["image"] = base64.b64encode(f.read()).decode()
+            _job(body, raw)
         print(f"   {stem(c)} 컷{i} {round(time.time() - t0)}초", flush=True)
     return [clip_path(c, i) for i in range(1, len(c["shots"]) + 1)]
 
@@ -331,9 +317,6 @@ def build(c: dict) -> dict:
     miss = [p for p in clips if not os.path.exists(p)]
     if miss:
         raise SystemExit(f"{stem(c)}: 클립 없음 {len(miss)}개 — gen 먼저")
-    raw_only = [os.path.basename(p) for p in clips if p.endswith("_raw.mp4")]
-    if raw_only:
-        print(f"   {stem(c)}: 후처리 없는 16fps 원본으로 조립 {raw_only}", flush=True)
     os.makedirs(OUT, exist_ok=True)
     shutil.copyfile(font_path(), os.path.join(d, "font.ttf"))
     for k, line in enumerate(wrap(c["caption"])):

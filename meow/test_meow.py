@@ -81,22 +81,57 @@ tmp = tempfile.mkdtemp()
 png = os.path.join(tmp, "a.png")
 with open(png, "wb") as f:
     f.write(b"\x89PNG fake")
-b = R.v14_body(png, "the kitten blinks, static camera", 7)
-ck("14B 요청 = model i2v-14b · 720×1280 · 81장 · mp4 · 글 손질 없음 · 그림 base64",
-   b["type"] == "video" and b["model"] == "i2v-14b" and (b["width"], b["height"], b["length"]) == (720, 1280, 81)
-   and b["format"] == "mp4" and b["no_llm"] is True and b["speed"] in ("fast", "quality")
-   and base64.b64decode(b["image"]) == b"\x89PNG fake", str({k: v for k, v in b.items() if k != "image"}))
-ck("14B 판단은 응답 model 로(5B 로 돌면 아님)", R.is_14b({"model": "Wan2.2-I2V-A14B"}) and not R.is_14b(
+b = R.hd_body(png, "the kitten blinks, static camera", 7)
+ck("HD 요청 = type video · hd true · 움직임 글 · seed · 그림 base64 (문서에 없는 키 없음)",
+   set(b) == {"type", "hd", "prompt", "image", "seed"} and b["type"] == "video" and b["hd"] is True
+   and b["seed"] == 7 and base64.b64decode(b["image"]) == b"\x89PNG fake", str({k: v for k, v in b.items() if k != "image"}))
+ck("14B 판단은 응답 model 로(HD 이름엔 14b · 5B 로 돌면 아님)", R.is_14b(
+    {"model": "wan2.2-i2v-14b-lightx2v4+seedvr2-3b+rife4.26"}) and not R.is_14b(
     {"model": "wan2.2-ti2v-5b-i2v"}) and not R.is_14b({}))
-pb = R.post_body({"job_id": "j1", "height": 1280}, None)
-ck("후처리: 720p 면 RIFE ×2 만 · from_job", pb == {"type": "video_post", "interpolate": "rife", "multiplier": 2,
-                                                  "from_job": "j1"}, str(pb))
-pb = R.post_body({"job_id": "j1", "height": 1024}, png)
-ck("후처리: 640급이면 SeedVR2 로 1280 까지 · 캐시된 클립은 파일째", pb.get("upscale") == "seedvr2"
-   and pb.get("target_height") == 1280 and "from_job" not in pb and "video" in pb)
-ck("후처리 스위치는 기본 꺼짐(서버에 아직 없음)", os.environ.get("MEOW_VIDEO_POST") == "1" or not R.video_post_on())
 
-# gen: 응답이 5B 면 첫 컷에서 멈추고, 14B 면 원본·응답을 남긴다(Spark 없이 가짜 _job)
+# 열 안전장치로 멈추면 쉬고 다시 · 횟수를 넘기면 포기 · 거절(4xx)은 다시 안 한다
+n, slept = [0], []
+
+
+def flaky(fails_before_ok):
+    def job(body, out, timeout=1500):
+        n[0] += 1
+        ck_t.append(timeout)
+        if n[0] <= fails_before_ok:
+            raise R.SparkJobError("Spark 오류 video: 95C")
+        return {"status": "done", "model": "x-14b"}
+    return job
+
+
+ck_t = []
+R._job = flaky(2)
+ok = R.hd_job({}, "x", sleep=slept.append)
+ck("95°C 로 두 번 멈춰도 쉬고 다시 해서 받는다 · 한 컷 기다림 90분", ok["status"] == "done" and n[0] == 3
+   and slept == [R.HD_RETRY_WAIT] * 2 and set(ck_t) == {R.HD_TIMEOUT} and R.HD_TIMEOUT >= 4800)
+n[0], slept[:] = 0, []
+R._job = flaky(9)
+try:
+    R.hd_job({}, "x", sleep=slept.append)
+    gave_up = False
+except R.SparkJobError:
+    gave_up = True
+ck("세 번 다 멈추면 포기(무한 반복 없음)", gave_up and n[0] == R.HD_RETRY + 1)
+
+
+def reject(body, out, timeout=1500):
+    n[0] += 1
+    raise RuntimeError("Spark video 거절 HTTP 400")
+
+
+n[0] = 0
+R._job = reject
+try:
+    R.hd_job({}, "x", sleep=slept.append)
+except RuntimeError:
+    pass
+ck("거절(HTTP 400)은 다시 보내지 않는다", n[0] == 1)
+
+# gen: 응답이 5B 면 첫 컷에서 멈추고, 14B 면 클립·응답을 남긴다(Spark 없이 가짜 _job)
 calls = []
 
 
@@ -107,7 +142,7 @@ def fake_job(model):
             with open(out, "wb") as f:
                 f.write(b"x")
         return {"status": "done", "job_id": f"j{len(calls)}", "model": model if body["type"] == "video" else "z-image",
-                "height": 1280}
+                "height": 1280, "fps": 32}
     return job
 
 
@@ -118,24 +153,20 @@ try:
     R.gen(cg)
     stopped = False
 except SystemExit as e:
-    stopped = "14B 아직 안 열림" in str(e)
+    stopped = "14B 아님" in str(e)
 d = os.path.join(tmp, "t1_t")
-ck("5B 로 돌면 첫 컷에서 멈추고 14B 원본으로 남기지 않는다", stopped and not os.path.exists(os.path.join(d, "shot1_raw.mp4"))
+ck("5B 로 돌면 첫 컷에서 멈추고 14B 클립으로 남기지 않는다", stopped and not os.path.exists(os.path.join(d, "shot1_raw.mp4"))
    and os.path.exists(os.path.join(d, "shot1_not14b.mp4")) and len(calls) == 2)
-os.environ.pop("MEOW_VIDEO_POST", None)
 calls.clear()
-R._job = fake_job("wan2.2-i2v-a14b")
+R._job = fake_job("wan2.2-i2v-14b-lightx2v4+seedvr2-3b+rife4.26")
 R.gen(cg)
-ck("14B 면 컷마다 원본+응답 json · 그림은 다시 안 뽑는다(캐시)", all(os.path.exists(os.path.join(d, f"shot{i}_raw{x}"))
-   for i in (1, 2) for x in (".mp4", ".json")) and [b["type"] for b in calls] == ["video", "image", "video"], str(
-    [b["type"] for b in calls]))
+ck("14B 면 컷마다 클립+응답 json · 그림은 다시 안 뽑는다(캐시) · 모든 영상 요청이 hd", all(
+    os.path.exists(os.path.join(d, f"shot{i}_raw{x}")) for i in (1, 2) for x in (".mp4", ".json"))
+   and [b["type"] for b in calls] == ["video", "image", "video"] and all(b.get("hd") for b in calls if b["type"] == "video"),
+   str([b["type"] for b in calls]))
 calls.clear()
-os.environ["MEOW_VIDEO_POST"] = "1"
 R.gen(cg)
-os.environ.pop("MEOW_VIDEO_POST")
-ck("스위치를 켜면 캐시된 원본에 후처리만(파일째) · build 는 후처리본을 쓴다",
-   [b["type"] for b in calls] == ["video_post", "video_post"] and all("video" in b for b in calls)
-   and R.clip_path(cg, 1).endswith("shot1_post.mp4"))
+ck("다시 돌리면 받은 클립은 건너뛴다 · build 는 그 클립을 쓴다", calls == [] and R.clip_path(cg, 1).endswith("shot1_raw.mp4"))
 
 # ── 올라갈 글 ──
 doc = R.load(sorted(glob.glob(os.path.join(HERE, "concepts", "*.json")))[0])
