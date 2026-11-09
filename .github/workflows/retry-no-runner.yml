@@ -35,6 +35,8 @@ on:
       - "미아 산출물 자동 복구 (claude/* → routine/*)"
       - "발행 감시 (엉뚱한 브랜치로 갔나 · 아예 안 만들어졌나)"
       - "IG/Threads 장기토큰 자동 갱신"
+      - "왕별이 표 트리거(루틴 대신) — 코드로 스토리보드 → routine/* push → 쇼츠 렌더·업로드"
+      - "2027 정미년 롱폼 대본(API) — 루틴 대신 Claude API 로 쓰기 → routine/fortune_lf27"
     types: [completed]
 
 permissions:
