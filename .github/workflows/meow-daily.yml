@@ -8,6 +8,7 @@ name: Meow Remix 매일 쇼츠 — 기획(Claude API) → 그림·HD 영상(Spar
 #            → HD 클립 2개(스파크 hd:true · 한 개 약 16분) → 영상 검수 → 조립(음악·자막) → 유튜브 비공개 + 예약 공개.
 #            검수에 걸린 그림은 한 번 다시 그리고, 걸린 클립은 한 번 다시 만든다. 그래도 걸리면 그날은 올리지 않는다.
 # 시각(KST): 00:40 본 실행 · 03:00 예비 · 08:10 마지막 예비. 공개는 그날 MEOW_SLOT_KST(기본 10:00 = 미국 동부 밤 8시).
+#   ★11/09 사용자 "인스타·쓰레드에도 올려줘": 완성본을 캐시(meow-out-<stem>-)에 두면 meow-social.yml 이 18:00 KST 에 올린다.
 #   ★05:45~08:00 KST(아침 업로드 루틴 몫)에는 Spark 를 쓰지 않는다(종료 코드 75 → 다음 예비가 잇는다).
 #   받은 그림·클립은 Actions 캐시(meow-work-<stem>-)에 남아 다음 실행이 이어 받는다.
 # ★두 번 올리지 않는다: 렌더 전에 유튜브 설명란 표식('Meow Remix · <날짜> <id>')을 보고, 올리기 직전에 한 번 더 본다.
@@ -229,6 +230,19 @@ jobs:
         env:
           YT_TOKEN_NOVEL: pipeline/secrets/token_gumiho.json
         run: python meow/post.py youtube "${{ steps.pick.outputs.doc }}" --slot-kst "$MEOW_SLOT_KST"
+
+      # 저녁 인스타·쓰레드 게시(meow-social.yml)가 이 캐시를 꺼내 쓴다 — 경로 목록이 두 파일에서 똑같아야 열린다
+      - name: 완성본 저장(저녁에 인스타·쓰레드로)
+        if: >-
+          steps.render.outcome == 'success' && steps.render.outputs.quiet != '1' && steps.render.outputs.blocked != '1'
+          && hashFiles(format('output/meow/{0}.mp4', steps.pick.outputs.stem)) != ''
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            output/meow/${{ steps.pick.outputs.stem }}.mp4
+            output/meow/${{ steps.pick.outputs.stem }}_cover.jpg
+            output/meow/${{ steps.pick.outputs.stem }}_meta.json
+          key: meow-out-${{ steps.pick.outputs.stem }}-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: 받은 그림·클립 저장(중간에 멈춰도 다음 실행이 잇게)
         if: always() && steps.pick.outputs.stem != '' && hashFiles(format('output/meow/.work/{0}/*.png', steps.pick.outputs.stem)) != ''

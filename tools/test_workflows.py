@@ -186,6 +186,25 @@ ck("meow-daily.yml: 맨 위 읽기 · 쓰기는 기획 잡만 · 업로드는 �
    and "rc -eq 75" in _render and "rc -eq 3" in _render
    and not [ln for ln in _render.splitlines() if re.search(r"\bgit\b.*\spush\b", ln)], "")
 
+# ★2026-11-09 사용자 "인스타·쓰레드에도 올려줘" — meow-social.yml 은 예약·수동으로만 깨고 읽기 권한 · 완성본은
+#   meow-daily 의 캐시에서 꺼낸다(actions/cache 는 경로 목록이 같아야 열린다 — 두 파일의 목록이 똑같은지 본다).
+_ms = flows.get("meow-social.yml", "")
+
+
+def _out_paths(t):
+    m = re.search(r"path: \|\n((?:\s+output/meow/\$\{\{ steps\.pick\.outputs\.stem \}\}[^\n]*\n)+)", t)
+    return [x.strip() for x in m.group(1).splitlines()] if m else None
+
+
+ck("meow-social.yml: push 트리거 없음 · 읽기 권한 · post.py social 하나 · 게시 ledger 캐시 · 유튜브 토큰 안 씀",
+   trig.get("meow-social.yml") is None and re.search(r"(?m)^permissions:\n  contents: read", _ms) is not None
+   and "contents: write" not in _ms and "python meow/post.py social" in _ms and "meow-posted-" in _ms
+   and "YT_TOKEN" not in _ms, "")
+ck("완성본 캐시 경로가 meow-daily(저장)와 meow-social(받기)에서 똑같다 · 열쇠 앞머리 meow-out-",
+   _out_paths(_mw) is not None and _out_paths(_mw) == _out_paths(_ms) and len(_out_paths(_ms)) == 3
+   and "key: meow-out-${{ steps.pick.outputs.stem }}-${{ github.run_id }}" in _mw
+   and "restore-keys: meow-out-${{ steps.pick.outputs.stem }}-" in _ms, f"{_out_paths(_mw)} vs {_out_paths(_ms)}")
+
 print("\n── 5. 워크플로가 부르는 파일이 레포에 있다 ──")
 _miss = []
 for n, t in flows.items():
