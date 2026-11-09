@@ -1,0 +1,67 @@
+{
+ "date": "2026-11-09",
+ "concepts": [
+  {
+   "slug": "hoppang-kitten",
+   "track": "merry-go.mp3",
+   "caption": "Wait… this bun has ears",
+   "title": "This Steamed Bun Was a Little Too Fluffy ☁️🐱",
+   "en_line": "Fresh from the steamer, still warm and still a little sleepy.",
+   "ko_line": "호빵 먹으려다 눈 마주침 🥟",
+   "tags": [
+    "cat",
+    "ai cat",
+    "kitten",
+    "steamed bun",
+    "hoppang",
+    "food turns into cat",
+    "cute kitten",
+    "winter snack",
+    "cozy"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#호빵",
+    "#겨울간식",
+    "#cat",
+    "#kitten",
+    "#aicat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic round bamboo steamer basket with its lid off on a warm wooden kitchen table, holding four soft round white Korean steamed buns with smooth glossy cream-white dough, gentle steam rising, the bun at the front centre has two tiny cream-white kitten ears with pale pink insides peeking from its top, cosy winter kitchen with warm golden lamp light and a softly blurred frosty window behind, close-up, vertical composition",
+     "motion": "Soft white steam rises slowly from the warm steamed buns in the bamboo steamer. The two tiny cream-white kitten ears on the front-centre bun twitch once, and the bun gives one tiny sleepy wiggle in place. The bun keeps its round shape and everything stays fully in frame, with no legs and nothing new appearing. Warm lamp light glows softly. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same tiny cream-white steamed-bun kitten with the same fur pattern, face and eye color. The front-centre bun with the tiny ears is now a tiny round kitten curled up in the exact same spot in the bamboo steamer, its fluffy fur soft cream-white and smooth like warm steamed bun dough with a faint golden blush on its back, pale pink nose, light blue eyes half-open as it is just waking up, small paws tucked in. The other three steamed buns, the steam, the wooden table and the cosy warm kitchen stay the same. Photorealistic, vertical composition.",
+     "motion": "The tiny cream-white kitten in the bamboo steamer slowly opens its light blue eyes, blinks sleepily twice, lifts its head a little and tilts it with curiosity, then stretches one small front paw forward over the edge of the steamer with its mouth closed. Soft steam keeps rising around the other buns. The kitten stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.6
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Ipdong (start of winter) has just passed in Korea, which is when warm steamed buns (hoppang) start showing up in convenience-store steamers. 'Food turning into cats' AI clips are still a steady discovery topic on TikTok.",
+    "pattern": "cosy food close-up with a small hidden hint (tiny ears), then the reveal: the snack is a sleepy kitten that looks like it, waking up in the same spot",
+    "evidence": [
+     {
+      "title": "Food Turning into Cats Animation",
+      "url": "https://www.tiktok.com/discover/food-turning-into-cats-animation"
+     },
+     {
+      "title": "Ai Cat Food",
+      "url": "https://www.tiktok.com/discover/ai-cat-food"
+     },
+     {
+      "title": "Hoppang",
+      "url": "https://en.wikipedia.org/wiki/Hoppang"
+     }
+    ]
+   },
+   "id": "m261109",
+   "format": "morph",
+   "engine": "14b",
+   "seed": 69017
+  }
+ ]
+}
