@@ -273,6 +273,7 @@ jobs:
             output/meow_plan/${{ env.DAY }}*.json
           retention-days: 7
           if-no-files-found: warn
+          include-hidden-files: true      # 그림·검수(qa.json)는 .work 아래 — 기본값이면 빠진다(11/09 시험)
 
       - if: always()
         run: rm -rf pipeline/secrets

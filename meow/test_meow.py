@@ -56,6 +56,13 @@ ck("motion 에 static camera 가 없으면 잡는다", any("static camera" in x 
 ck("모르는 음악을 잡는다", any("음악" in x for x in R.check_concept({**bad, "track": "nope.mp3"})))
 ck("자막 세 줄은 막는다", any("두 줄" in x for x in R.check_concept({**bad, "caption": "a very long caption that will " * 3})))
 
+ck("자막 두 줄은 길이를 맞춘다(마지막 한 단어만 넘기지 않는다)",
+   R.wrap("Wait… this bun has ears") == ["Wait…", "this bun has ears"] and R.wrap("Leg day? Never heard of it")
+   == ["Leg day?", "Never heard of it"] and R.wrap("Me at 5:59 PM vs 6:00 PM") == ["Me at 5:59 PM", "vs 6:00 PM"],
+   str([R.wrap("Wait… this bun has ears"), R.wrap("Me at 5:59 PM vs 6:00 PM")]))
+ck("한 줄에 들어가면 한 줄 · 빈 자막은 빈 목록", R.wrap("When the beat drops") == ["When the beat drops"] and R.wrap("") == [])
+ck("두 줄로 안 되면 세 줄(검사가 막는다)", len(R.wrap("a very long caption that will not fit in two short lines")) > 2)
+
 # ── 조립 계획 ──
 c = {"shots": [{}, {"xfade": 0.5}, {}, {"sec": 0.9}]}
 p = R.plan(c)
