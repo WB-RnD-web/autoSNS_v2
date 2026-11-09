@@ -1,0 +1,44 @@
+{
+  "_note": "plan_api.py 가 모델에게 보여 주는 매일판 예시(스키마). 11/09 HD 견본 h09 + 2컷째를 1컷 그림 편집(edit)으로 바꾼 것 — 편집 결과는 11/09 실측(같은 삼색이). id·format·engine·seed 는 코드가 넣는다.",
+  "concept": {
+    "slug": "first-snow-kitten",
+    "track": "investigations.mp3",
+    "caption": "First snow ever",
+    "title": "Kitten Sees Snow for the Very First Time ❄️🐱",
+    "en_line": "The sky is falling and it is cold.",
+    "ko_line": "입동이라 첫눈 본 아기 고양이 ❄️",
+    "tags": [
+      "cat",
+      "kitten",
+      "first snow",
+      "winter",
+      "cute cat",
+      "ai cat"
+    ],
+    "hashtags": [
+      "#고양이",
+      "#첫눈",
+      "#입동",
+      "#cat",
+      "#kitten",
+      "#catsofinstagram"
+    ],
+    "shots": [
+      {
+        "image": "Photorealistic tiny calico kitten sitting on a white windowsill inside a cozy house, watching big soft snowflakes fall outside the window, warm indoor light, snowy garden outside, vertical composition",
+        "motion": "The tiny calico kitten watches the first snow falling outside the window. Its head follows one falling snowflake, its ears twitch, it lifts one front paw and gently taps the cold window glass, then looks back at the snow with wide curious eyes. Big soft snowflakes drift down outside. Photorealistic, soft light, smooth natural motion, static camera."
+      },
+      {
+        "edit": "Keep exactly the same tiny calico kitten with the same fur pattern, face and eye color. Move the kitten outdoors: it now sits in fresh white snow in a snowy garden, looking up at big soft falling snowflakes with its mouth slightly open, soft daylight. Photorealistic, vertical composition.",
+        "motion": "The tiny calico kitten sits in fresh snow and looks up at the falling snowflakes, then reaches up with one front paw to catch a snowflake, blinks in surprise and shakes its head a little. Snowflakes keep falling. Photorealistic, soft daylight, smooth natural motion, static camera.",
+        "xfade": 0.5
+      }
+    ],
+    "cover_shot": 1,
+    "trend": {
+      "why_now": "First snow is falling across the northern hemisphere in early November; 'pet sees snow for the first time' clips trend every year.",
+      "pattern": "first-time reaction: calm curiosity indoors, then the surprise moment outside",
+      "evidence": []
+    }
+  }
+}

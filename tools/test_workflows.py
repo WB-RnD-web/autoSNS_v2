@@ -124,6 +124,10 @@ ck("api-test/nt-trend 에 반응하는 push 워크플로는 nt-trend-api.yml 하
    reacting("api-test/nt-trend") == ["nt-trend-api.yml"], str(reacting("api-test/nt-trend")))
 ck("data/nt-trend 에 반응하는 push 워크플로가 없다(트렌드 편이 올라가도 업로드가 바로 깨지 않는다)",
    not reacting("data/nt-trend"), str(reacting("data/nt-trend")))
+ck("api-test/meow 에 반응하는 push 워크플로는 meow-daily.yml 하나(기획·렌더 시험 — 업로드 없음)",
+   reacting("api-test/meow") == ["meow-daily.yml"], str(reacting("api-test/meow")))
+for _br in ("data/meow", "data/meow-test"):
+    ck(f"{_br} 에 반응하는 push 워크플로가 없다(기획이 올라가도 업로드가 바로 깨지 않는다)", not reacting(_br), str(reacting(_br)))
 ck("api-test/scout 에 반응하는 push 워크플로는 scout-api.yml 하나",
    reacting("api-test/scout") == ["scout-api.yml"], str(reacting("api-test/scout")))
 _rp = flows.get("refill-pr.yml", "")
@@ -138,8 +142,10 @@ print("\n── 4. 쓰기 권한은 데이터 브랜치·맥박 PR 브랜치 워
 # 인스타 대본 API 판(insta-api.yml, 2026-10-31)도 비교 기간 동안 data/insta-api 에만 쓴다.
 # 웹 정찰(scout-api.yml, 2026-10-31)은 data/scout 에만 쓴다.
 # Nine Tails 트렌드 편(nt-trend-api.yml, 2026-11-01)은 data/nt-trend 에만 쓴다(nt-story.yml 은 읽기만).
+# ★2026-11-09 Meow Remix 매일 쇼츠(meow-daily.yml)는 기획 잡만 data/meow(시험 data/meow-test)에 쓴다 — 렌더·업로드 잡은 읽기.
 WRITERS = {"trend-radar.yml": "data/trend-radar", "pulse.yml": "refs/heads/$BR", "pulse-api.yml": "data/pulse-api",
-           "insta-api.yml": "data/insta-api", "scout-api.yml": "data/scout", "nt-trend-api.yml": "data/nt-trend"}
+           "insta-api.yml": "data/insta-api", "scout-api.yml": "data/scout", "nt-trend-api.yml": "data/nt-trend",
+           "meow-daily.yml": "data/meow"}
 _w = sorted(n for n, t in flows.items() if re.search(r"(?m)^\s*contents:\s*write", t))
 ck("contents: write 는 WRITERS(트렌드 레이더·맥박 PR 브랜치·맥박·인스타 API 판·웹 정찰·NT 트렌드 편)에만", _w == sorted(WRITERS), str(_w))
 for _wf, _br in WRITERS.items():
@@ -168,6 +174,17 @@ _ns = flows.get("nt-story.yml", "")
 ck("nt-story.yml: push 트리거 없음(예약·수동) · 읽기 권한 · 할 일은 story.py due · 5B 영상 잡 없음",
    trig.get("nt-story.yml") is None and re.search(r"(?m)^\s*contents:\s*read", _ns) is not None
    and "gumiho/tales/story.py due" in _ns and '"type": "video"' not in _ns, "")
+
+# ★2026-11-09 Meow Remix 매일 쇼츠: 업로드는 예약 실행(또는 수동 upload 켬)만 · api-test/meow 시험은 렌더만 ·
+#   쓰기 권한은 기획 잡에만(맨 위는 읽기) · 렌더 잡은 기획을 읽기만 · 유튜브 토큰은 Meow Remix(옛 Nine Tails) 것.
+_mw = flows.get("meow-daily.yml", "")
+_render = _mw.split("\n  render:", 1)[-1]
+ck("meow-daily.yml: 맨 위 읽기 · 쓰기는 기획 잡만 · 업로드는 예약/수동 upload 만 · 고양이 채널 토큰 · 조용한 시간·검수 막힘은 실패 아님",
+   re.search(r"(?m)^permissions:\n  contents: read", _mw) is not None and "contents: write" not in _render
+   and "UPLOAD: ${{ github.event_name == 'schedule' || github.event.inputs.upload == 'true' }}" in _mw
+   and "env.UPLOAD == 'true'" in _render and "YT_TOKEN_JSON_GUMIHO" in _render and "YT_TOKEN_JSON_NOVEL" not in _mw
+   and "rc -eq 75" in _render and "rc -eq 3" in _render
+   and not [ln for ln in _render.splitlines() if re.search(r"\bgit\b.*\spush\b", ln)], "")
 
 print("\n── 5. 워크플로가 부르는 파일이 레포에 있다 ──")
 _miss = []

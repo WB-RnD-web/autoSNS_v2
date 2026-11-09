@@ -6,16 +6,19 @@
 - 14b : 한 편 = 컷 1~3개. 컷마다 720×1280 그림 → 스파크 "영상 HD"(hd:true) 한 번 = 720×1280·32fps·5초 완성본.
         서버 안에서 I2V-14B 480×832·81장 → SeedVR2 로 720 → RIFE ×2 를 이어 돌린다(11/09 열림). 늘리지 않고 그대로 쓴다.
 'xfade' 가 있는 컷은 앞 컷과 겹쳐 녹아들게 이어 붙인다(음식 → 고양이 변신).
+컷 그림은 "image"(새로 그림) 또는 "edit"(앞 컷 그림을 Qwen-Image-Edit 로 고쳐 만듦 — "from" 컷, 기본 1) 중 하나.
+  ★11/09 HD 견본 첫눈 편: 컷마다 따로 그리니 2컷째 고양이 무늬가 바뀌었다 → 매일판은 2컷째를 edit 로(같은 고양이).
 
-    python meow/render.py gen   meow/concepts/<file>.json [--only s01,s02]   # Spark 그림·클립(캐시)
+    python meow/render.py gen   meow/concepts/<file>.json [--only s01,s02]   # Spark 그림 전부 → 클립(캐시)
     python meow/render.py build meow/concepts/<file>.json [--only s01]       # ffmpeg 조립 → output/meow
     python meow/render.py check meow/concepts/<file>.json                     # 오프라인 검사
 
-gen 은 이미 받은 클립을 건너뛴다(중간에 끊겨도 다시 돌리면 이어서). 05:45~08:00 KST 에는 Spark 를 쓰지 않는다.
+gen 은 이미 받은 그림·클립을 건너뛴다(중간에 끊겨도 다시 돌리면 이어서). 05:45~08:00 KST 에는 Spark 를 쓰지 않는다
+(HD 클립은 20분 전부터 새로 넣지 않는다) — 종료 코드 75(워크플로는 다음 예비 실행에 맡긴다).
 
 14B 판단은 응답 model 로 한다 — hd 없이 그림을 주면 서버는 5B 로 만든다(10/02 열 사고 뒤). 응답 model 에
 14b 가 없으면 첫 컷에서 멈춘다(5B 81장은 몸이 늘어난다). HD 한 편 약 13분(생성 3·식힘 5·키우기/보간 4),
-GPU 가 다른 일 중이면 최대 약 1시간 기다린다. 95°C 에 닿으면 status=error → 잠시 뒤 다시 요청(최대 2번).
+GPU 가 다른 일 중이면 최대 약 1시간 기다린다(11/09 저녁 식힘을 늘려 한 편 약 16분). 95°C 에 닿으면 status=error → 잠시 뒤 다시 요청(최대 2번).
 """
 from __future__ import annotations
 
@@ -122,7 +125,11 @@ def check_concept(c: dict) -> list[str]:
     if len(c["title"]) > 90:
         errs.append(f"{cid}: 제목이 길다")
     for i, s in enumerate(c["shots"]):
-        for k in ("image", "motion"):
+        if bool(s.get("image")) == bool(s.get("edit")):
+            errs.append(f"{cid} 컷{i + 1}: 그림은 image 또는 edit 중 하나만")
+        if s.get("edit") and not 1 <= int(s.get("from", 1)) <= i:
+            errs.append(f"{cid} 컷{i + 1}: edit 는 앞 컷 그림에서(from 1~{i}) — 첫 컷은 image")
+        for k in ("image", "edit", "motion"):
             for w in sorted({x.lower() for x in BANNED.findall(s.get(k, ""))}):
                 errs.append(f"{cid} 컷{i + 1}: '{w}' 금지어({k})")
         if "static camera" not in s.get("motion", ""):
@@ -189,9 +196,26 @@ def _job(body: dict, out: str | None, timeout: int = 1500) -> dict:
     raise TimeoutError(f"Spark {body['type']} {jid} 시간 초과")
 
 
-def quiet_hours(now: dt.datetime | None = None) -> bool:
-    t = (now or dt.datetime.now(KST)).astimezone(KST).time()
-    return dt.time(5, 45) <= t < dt.time(8, 0)
+def quiet_hours(now: dt.datetime | None = None, ahead_min: int = 0) -> bool:
+    """05:45~08:00 KST(아침 업로드 루틴 몫) — ahead_min 분 안에 그 시간에 들어가도 참(긴 HD 를 새로 넣지 않게)."""
+    now = (now or dt.datetime.now(KST)).astimezone(KST)
+    for t in {now, now + dt.timedelta(minutes=ahead_min)}:
+        if dt.time(5, 45) <= t.time() < dt.time(8, 0):
+            return True
+    return now.time() < dt.time(5, 45) and (now + dt.timedelta(minutes=ahead_min)).time() >= dt.time(8, 0)
+
+
+class QuietHours(SystemExit):
+    """Spark 를 쓰지 않는 시간 — 종료 코드 75(실패가 아니다: 다음 실행이 받은 그림·클립부터 잇는다)."""
+
+    def __init__(self):
+        super().__init__(75)
+
+
+def _guard(ahead_min: int = 0) -> None:
+    if quiet_hours(ahead_min=ahead_min):
+        print("⏸️ 05:45~08:00 KST — Spark 쓰지 않는 시간(다음 실행이 잇는다)", flush=True)
+        raise QuietHours()
 
 
 def is_14b(info: dict) -> bool:
@@ -227,24 +251,78 @@ def clip_path(c: dict, i: int) -> str:
     return os.path.join(WORK, stem(c), f"shot{i}.mp4" if engine(c) == "5b" else f"shot{i}_raw.mp4")
 
 
-def gen(c: dict) -> list[str]:
+def shot_png(c: dict, i: int) -> str:
+    return os.path.join(WORK, stem(c), f"shot{i}.png")
+
+
+def img_size(c: dict) -> tuple[int, int]:
+    return (V14_W, V14_H) if engine(c) == "14b" else (IMG_W, IMG_H)
+
+
+def image_body(c: dict, i: int, s: dict) -> dict:
+    """컷 i(1부터) 그림 요청 — edit 면 앞 컷 그림 + 지시문(Qwen-Image-Edit-2511 · 구도·크기는 원본을 따른다)."""
+    seed = int(s.get("seed", c["seed"] + i))
+    if s.get("edit"):
+        with open(shot_png(c, int(s.get("from", 1))), "rb") as f:
+            img = base64.b64encode(f.read()).decode()
+        return {"type": "image", "image": img, "edit": s["edit"], "prompt": s["edit"], "seed": seed}
+    w, h = img_size(c)
+    return {"type": "image", "prompt": s["image"], "width": w, "height": h, "no_llm": True, "seed": seed}
+
+
+def img_job(body: dict, out: str, tries: int = 3, wait: int = 30, sleep=time.sleep) -> dict:
+    for k in range(tries):
+        try:
+            return _job(body, out, timeout=900)
+        except (SparkJobError, TimeoutError) as e:
+            if k == tries - 1:
+                raise
+            print(f"   그림 {e} — {wait}초 쉬고 다시", flush=True)
+            sleep(wait)
+    raise AssertionError
+
+
+def fit_image(src: str, dst: str, w: int, h: int) -> None:
+    """편집 결과는 원본 비율을 16 배수로 맞춘 크기(11/09 실측 720×1280 → 752×1392) — 컷 크기로 채워 가운데 자른다."""
+    subprocess.run([ffmpeg(), "-v", "error", "-y", "-i", src, "-vf",
+                    f"scale={w}:{h}:force_original_aspect_ratio=increase:flags=lanczos,crop={w}:{h}", dst], check=True)
+
+
+def images(c: dict) -> list[str]:
+    """컷 그림 전부(편집 컷의 원본이 먼저 있어야 한다 — 순서대로). 이미 있는 그림은 건너뛴다."""
+    os.makedirs(os.path.join(WORK, stem(c)), exist_ok=True)
+    for i, s in enumerate(c["shots"], 1):
+        png = shot_png(c, i)
+        if os.path.exists(png):
+            continue
+        _guard(5)
+        t0 = time.time()
+        if s.get("edit"):
+            tmp = png[:-4] + "_edit.png"
+            info = img_job(image_body(c, i, s), tmp)
+            fit_image(tmp, png, *img_size(c))
+        else:
+            info = img_job(image_body(c, i, s), png)
+        print(f"   {stem(c)} 그림{i} {info.get('model')} {info.get('width')}×{info.get('height')} · "
+              f"{round(time.time() - t0)}초", flush=True)
+    return [shot_png(c, i) for i in range(1, len(c["shots"]) + 1)]
+
+
+def clips(c: dict) -> list[str]:
     d = os.path.join(WORK, stem(c))
-    os.makedirs(d, exist_ok=True)
     v14 = engine(c) == "14b"
     for i, s in enumerate(c["shots"], 1):
-        png = os.path.join(d, f"shot{i}.png")
+        png = shot_png(c, i)
         raw = clip_path(c, i)
         if os.path.exists(raw):
             continue
-        if quiet_hours():
-            raise SystemExit("05:45~08:00 KST — Spark 쓰지 않는 시간")
-        t0, img_job = time.time(), None
         if not os.path.exists(png):
-            w, h = (V14_W, V14_H) if v14 else (IMG_W, IMG_H)
-            img_job = _job({"type": "image", "prompt": s["image"], "width": w, "height": h,
-                            "no_llm": True, "seed": c["seed"] + i}, png)["job_id"]
+            raise SystemExit(f"{stem(c)} 컷{i}: 그림 없음 — images 먼저")
+        _guard(20 if v14 else 3)
+        t0 = time.time()
+        vseed = int(s.get("vseed", c["seed"] + i))
         if v14:
-            info = hd_job(hd_body(png, s["motion"], c["seed"] + i), raw + ".tmp")
+            info = hd_job(hd_body(png, s["motion"], vseed), raw + ".tmp")
             if not is_14b(info):
                 os.replace(raw + ".tmp", os.path.join(d, f"shot{i}_not14b.mp4"))
                 raise SystemExit(f"{stem(c)} 컷{i}: 14B 아님(응답 model={info.get('model')}) — 멈춤")
@@ -253,16 +331,17 @@ def gen(c: dict) -> list[str]:
             print(f"   {stem(c)} 컷{i} {info.get('width')}×{info.get('height')} {info.get('fps')}fps "
                   f"{info.get('duration_sec')}초 · 서버 {info.get('elapsed')}초", flush=True)
         else:
-            body = {"type": "video", "prompt": s["motion"], "fast": True, "length": 49, "fps": 16, "mp4": True,
-                    "no_llm": True}
-            if img_job:
-                body["from_job"] = img_job
-            else:
-                with open(png, "rb") as f:
-                    body["image"] = base64.b64encode(f.read()).decode()
-            _job(body, raw)
+            with open(png, "rb") as f:
+                img = base64.b64encode(f.read()).decode()
+            _job({"type": "video", "prompt": s["motion"], "fast": True, "length": 49, "fps": 16, "mp4": True,
+                  "no_llm": True, "image": img}, raw)
         print(f"   {stem(c)} 컷{i} {round(time.time() - t0)}초", flush=True)
     return [clip_path(c, i) for i in range(1, len(c["shots"]) + 1)]
+
+
+def gen(c: dict) -> list[str]:
+    images(c)
+    return clips(c)
 
 
 # ── 조립 ───────────────────────────────────────────────
@@ -313,8 +392,26 @@ def filtergraph(c: dict, n_inputs: int) -> str:
     return ";".join(parts)
 
 
+def _pretendard() -> str | None:
+    """견본과 같은 Pretendard ExtraBold — 레포의 woff2 를 fontTools 로 ttf 로(인스타 렌더와 같은 캐시 폴더)."""
+    dst = os.path.join(ROOT, "output", "insta_render", ".fonts", "Pretendard-ExtraBold.ttf")
+    if os.path.exists(dst):
+        return dst
+    src = os.path.join(ROOT, "pipeline", "motion", "assets", "fonts", "Pretendard-ExtraBold.woff2")
+    try:
+        from fontTools.ttLib import TTFont  # woff2 는 brotli 가 있어야 풀린다
+        os.makedirs(os.path.dirname(dst), exist_ok=True)
+        f = TTFont(src)
+        f.flavor = None
+        f.save(dst)
+        return dst
+    except Exception as e:  # noqa: BLE001
+        print(f"   ⚠️ Pretendard 변환 실패(대체 글꼴): {str(e)[:100]}")
+        return None
+
+
 def font_path() -> str:
-    for p in (os.environ.get("MEOW_FONT"), os.path.join(ROOT, "output", "insta_render", ".fonts", "Pretendard-ExtraBold.ttf"),
+    for p in (os.environ.get("MEOW_FONT"), _pretendard(),
               "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", "C:/Windows/Fonts/arialbd.ttf"):
         if p and os.path.exists(p):
             return p
@@ -378,7 +475,10 @@ def main() -> int:
         if only and c["id"] not in only:
             continue
         if a.cmd == "gen":
-            gen(c)
+            try:
+                gen(c)
+            except QuietHours:
+                return 75
             print(f"✅ {stem(c)} 클립 {len(c['shots'])}개", flush=True)
         else:
             m = build(c)

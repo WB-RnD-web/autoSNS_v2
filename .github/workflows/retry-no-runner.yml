@@ -37,6 +37,7 @@ on:
       - "IG/Threads 장기토큰 자동 갱신"
       - "왕별이 표 트리거(루틴 대신) — 코드로 스토리보드 → routine/* push → 쇼츠 렌더·업로드"
       - "2027 정미년 롱폼 대본(API) — 루틴 대신 Claude API 로 쓰기 → routine/fortune_lf27"
+      - "Meow Remix 매일 쇼츠 — 기획(Claude API) → 그림·HD 영상(Spark) → 검수 → 유튜브 예약 공개"
     types: [completed]
 
 permissions:

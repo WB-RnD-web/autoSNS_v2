@@ -2,6 +2,8 @@
 
     python meow/post.py text    <concepts.json>                    # 올라갈 글만 본다(오프라인)
     python meow/post.py youtube <concepts.json> [--gap-min 45]      # 비공개 + 예약 공개(편마다 gap 간격)
+    python meow/post.py youtube <날짜>.json --slot-kst 10:00         # 매일판: 그 날짜 10:00 KST 공개(지났으면 20분 뒤)
+    python meow/post.py seen    <날짜>.json                          # 이미 다 올라갔으면 0 · 남았으면 10
     python meow/post.py social  <concepts.json> [--gap-min 30]      # 인스타 릴스 + 쓰레드(편마다 gap 쉬고)
 
 영상은 output/meow/<id>_<slug>.mp4 (render.py build). 유튜브 토큰은 YT_TOKEN_NOVEL 경로(워크플로가 시크릿을 파일로 쓴다),
@@ -23,6 +25,8 @@ sys.path.insert(0, HERE)
 import render as R  # noqa: E402
 
 CATEGORY = "15"            # Pets & Animals
+NOT_YET = 10               # seen: 아직 안 올라감(오류 1 과 구별 — 다른 채널 토큰이면 렌더 전에 멈춘다)
+CHANNEL_HANDLE = os.environ.get("MEOW_CHANNEL_HANDLE", "@meowremixcats").lower()
 POSTED = os.path.join(R.OUT, "posted.json")
 
 
@@ -62,10 +66,45 @@ def video_of(c: dict) -> dict:
     return {"video": base + ".mp4", "cover": base + "_cover.jpg", "sec": m["sec"]}
 
 
-def publish_times(n: int, gap_min: int, now: dt.datetime | None = None) -> list[str]:
+def slot_at(day: str, hhmm: str) -> dt.datetime:
+    """기획 날짜 + 'HH:MM'(KST) → UTC 시각(매일판 공개 시각)."""
+    h, m = (int(x) for x in hhmm.split(":"))
+    return dt.datetime.combine(dt.date.fromisoformat(day), dt.time(h, m), R.KST).astimezone(dt.timezone.utc)
+
+
+def publish_times(n: int, gap_min: int, now: dt.datetime | None = None, first_at: dt.datetime | None = None) -> list[str]:
+    """첫 편 = first_at(매일판 공개 시각) — 이미 지났거나 없으면 20분 뒤 · 그다음은 gap 간격."""
     now = (now or dt.datetime.now(dt.timezone.utc)).astimezone(dt.timezone.utc)
-    first = (now + dt.timedelta(minutes=20)).replace(second=0, microsecond=0)
+    first = now + dt.timedelta(minutes=20)
+    if first_at is not None and first_at > first:
+        first = first_at.astimezone(dt.timezone.utc)
+    first = first.replace(second=0, microsecond=0)
     return [(first + dt.timedelta(minutes=gap_min * k)).strftime("%Y-%m-%dT%H:%M:%SZ") for k in range(n)]
+
+
+def uploaded_text(yt) -> str:
+    """채널 최근 업로드 50편의 설명(비공개·예약 포함 — 주인 토큰) — 표식(MARK)으로 두 번 올리기를 막는다.
+    ★토큰 파일이 없으면 업로더가 왕별이 토큰으로 넘어간다 — 핸들이 고양이 채널이 아니면 멈춘다."""
+    ch = yt.channels().list(part="contentDetails,snippet", mine=True).execute()["items"][0]
+    handle, title = str(ch["snippet"].get("customUrl", "")).lower(), ch["snippet"]["title"]
+    print(f"채널: {title} ({handle})")
+    if handle != CHANNEL_HANDLE and title not in ("Meow Remix", "Nine Tails Tales"):   # 이름 바꾸기 전·후
+        raise SystemExit(f"❌ 다른 채널 토큰({title} {handle}) — 고양이 채널({CHANNEL_HANDLE})에만 올린다")
+    up = ch["contentDetails"]["relatedPlaylists"]["uploads"]
+    return " ".join(it["snippet"].get("description", "") for it in
+                    yt.playlistItems().list(part="snippet", playlistId=up, maxResults=50).execute().get("items", []))
+
+
+def seen(doc: dict) -> int:
+    """기획의 편이 전부 이미 올라가 있으면 0(렌더하지 않아도 된다) · 남았으면 10 · 오류(다른 채널 등)는 1."""
+    if not doc.get("concepts"):
+        return 0
+    sys.path.insert(0, os.path.join(ROOT, "pipeline"))
+    import upload_youtube_novel as U
+    text = uploaded_text(U.get_service())
+    left = [R.stem(c) for c in doc["concepts"] if mark(doc, c) not in text]
+    print(f"이미 올라감: {len(doc['concepts']) - len(left)}편 · 남음: {left or '없음'}")
+    return NOT_YET if left else 0
 
 
 def _ledger() -> dict:
@@ -78,21 +117,17 @@ def _save(led: dict):
         json.dump(led, f, ensure_ascii=False, indent=1)
 
 
-def youtube(doc: dict, gap_min: int) -> int:
+def youtube(doc: dict, gap_min: int, slot_kst: str | None = None) -> int:
     sys.path.insert(0, os.path.join(ROOT, "pipeline"))
     sys.path.insert(0, os.path.join(ROOT, "gumiho", "tales"))
     import upload_tale as UT                # status_body: 비공개 + publishAt + containsSyntheticMedia
     import upload_youtube_novel as U
     from googleapiclient.http import MediaFileUpload
     yt = U.get_service()
-    ch = yt.channels().list(part="contentDetails,snippet", mine=True).execute()["items"][0]
-    print(f"채널: {ch['snippet']['title']}")
-    up = ch["contentDetails"]["relatedPlaylists"]["uploads"]
-    seen = " ".join(it["snippet"].get("description", "") for it in
-                    yt.playlistItems().list(part="snippet", playlistId=up, maxResults=50).execute().get("items", []))
+    seen_text = uploaded_text(yt)
     led, fails = _ledger(), 0
-    todo = [c for c in doc["concepts"] if mark(doc, c) not in seen]
-    times = publish_times(len(todo), gap_min)
+    todo = [c for c in doc["concepts"] if mark(doc, c) not in seen_text]
+    times = publish_times(len(todo), gap_min, first_at=slot_at(doc["date"], slot_kst) if slot_kst else None)
     for c, at in zip(todo, times):
         v, md = video_of(c), yt_meta(doc, c)
         body = {"snippet": {"title": md["title"], "description": md["description"], "tags": md["tags"],
@@ -163,22 +198,26 @@ def social(doc: dict, gap_min: int) -> int:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["text", "youtube", "social"])
+    ap.add_argument("cmd", choices=["text", "youtube", "social", "seen"])
     ap.add_argument("concepts")
     ap.add_argument("--gap-min", type=int, default=None)
+    ap.add_argument("--slot-kst", default=None, help="매일판: 기획 날짜의 이 시각(KST HH:MM)에 공개 — 지났으면 20분 뒤")
     a = ap.parse_args()
     doc = R.load(a.concepts)
+    doc.setdefault("concepts", [])
     errs = R.check(doc)
     if errs:
         print("❌ 검사 실패\n  " + "\n  ".join(errs))
         return 1
+    if a.cmd == "seen":
+        return seen(doc)
     if a.cmd == "text":
         for c in doc["concepts"]:
             md = yt_meta(doc, c)
             print(f"===== {R.stem(c)}\n[YT] {md['title']}\n{md['description']}\n[IG]\n{ig_caption(c)}\n[TH]\n{threads_text(c)}\n")
         return 0
     if a.cmd == "youtube":
-        return youtube(doc, 45 if a.gap_min is None else a.gap_min)
+        return youtube(doc, 45 if a.gap_min is None else a.gap_min, a.slot_kst)
     return social(doc, 30 if a.gap_min is None else a.gap_min)
 
 
