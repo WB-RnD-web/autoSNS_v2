@@ -90,7 +90,23 @@ def eng(c: dict) -> dict:
 
 
 def wrap(text: str, width: int = 20) -> list[str]:
-    words, lines, cur = text.split(), [], ""
+    """자막 줄 나누기. 두 줄이면 길이를 맞춘다 — 앞에서부터 꽉 채우면 'Wait… this bun has / ears' 처럼
+    마지막 한 단어만 넘어간다(11/09 매일판 시험). 두 줄로 안 되면 앞에서부터 채운다(검사가 세 줄을 막는다)."""
+    words = text.split()
+    if len(" ".join(words)) <= width:
+        return [" ".join(words)] if words else []
+    best, score = None, None
+    for k in range(1, len(words)):
+        a, b = " ".join(words[:k]), " ".join(words[k:])
+        if len(a) > width or len(b) > width:
+            continue
+        # 긴 줄이 짧을수록 · 문장부호 뒤에서 끊으면 덤('Leg day? / Never heard of it') · 같으면 윗줄이 긴 쪽
+        sc = max(len(a), len(b)) - (6 if a[-1] in ".?!,…" else 0)
+        if score is None or sc <= score:
+            best, score = (a, b), sc
+    if best:
+        return list(best)
+    lines, cur = [], ""
     for w in words:
         if cur and len(cur) + 1 + len(w) > width:
             lines.append(cur)
