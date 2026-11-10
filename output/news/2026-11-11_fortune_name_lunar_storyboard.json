@@ -1,0 +1,94 @@
+{
+ "date": "2026-11-11",
+ "topic": "fortune_name",
+ "slot": "lunar",
+ "theme": "lunar:lateluck",
+ "privacy": "public",
+ "accent": "#C9A227",
+ "_min_total": 9.0,
+ "hook_title": "말년 복 순위",
+ "headline": "음력 생일 끝자리로 보는 말년 복 순위 1위~10위 | 1일~30일 전부 · 11월 11일",
+ "thumbnail_hook": "peaceful Korean hanok courtyard in autumn afternoon, persimmon tree, warm sunlight, calm and abundant mood, no people, no text",
+ "scenes": [
+  {
+   "type": "grid",
+   "pill": "11월 11일 수요일 · 내 것 찾기",
+   "title": "음력 생일 끝자리로 보는",
+   "title2": "말년 복 순위",
+   "cols": 2,
+   "cells": [
+    {
+     "big": "1·11·21일",
+     "small": "10위",
+     "note": "끝자리 1 · 천천히 가요",
+     "hi": false
+    },
+    {
+     "big": "2·12·22일",
+     "small": "9위",
+     "note": "끝자리 2 · 욕심 내려놓기",
+     "hi": false
+    },
+    {
+     "big": "3·13·23일",
+     "small": "3위",
+     "note": "끝자리 3 · 웃을 일 많아요",
+     "hi": true
+    },
+    {
+     "big": "4·14·24일",
+     "small": "7위",
+     "note": "끝자리 4 · 작은 행복",
+     "hi": false
+    },
+    {
+     "big": "5·15·25일",
+     "small": "5위",
+     "note": "끝자리 5 · 여유가 생겨요",
+     "hi": false
+    },
+    {
+     "big": "6·16·26일",
+     "small": "8위",
+     "note": "끝자리 6 · 무리는 금물",
+     "hi": false
+    },
+    {
+     "big": "7·17·27일",
+     "small": "4위",
+     "note": "끝자리 7 · 차곡차곡 쌓여요",
+     "hi": false
+    },
+    {
+     "big": "8·18·28일",
+     "small": "1위",
+     "note": "끝자리 8 · 편안한 노후",
+     "hi": true
+    },
+    {
+     "big": "9·19·29일",
+     "small": "2위",
+     "note": "끝자리 9 · 든든한 곳간",
+     "hi": true
+    },
+    {
+     "big": "10·20·30일",
+     "small": "6위",
+     "note": "끝자리 0 · 꾸준함이 복",
+     "hi": false
+    }
+   ],
+   "basis": "음력 생일 날짜 끝자리 · 예) 음력 3월 17일생 → 7",
+   "foot": "※ 음력엔 31일이 없어요 · 재미로 보는 운세",
+   "brand": "왕별이 · 내 것 찾기",
+   "narration": "음력 생일 끝자리로 보는 말년 복 순위예요. 내 음력 생일 날짜 끝자리를 찾아보세요."
+  }
+ ],
+ "platforms": {
+  "youtube": {
+   "title": "음력 생일 끝자리로 보는 말년 복 순위 1위~10위 | 1일~30일 전부 · 11월 11일 #shorts",
+   "description": "음력 생일 끝자리로 보는 말년 복 순위 — 끝자리 1부터 0까지 한 장에 모았어요. 내 음력 생일 날짜 끝자리는 몇 위인가요? 댓글로 남겨 주세요 🙏\n매일 아침 7시 40분 태어난 해 · 아침 9시 40분 이름 글자 · 오후 1시 40분 성씨 · 오후 3시 40분 태어난 달·음력 생일 끝자리 표가 올라와요.\n\n📅 '음력 생일 끝자리'는 음력 생일 날짜의 끝자리예요\n· 예) 음력 3월 17일생 → 7 · 음력 8월 20일생 → 0\n· 음력에는 31일이 없어요. 한 달이 29일이나 30일이에요.\n· 양력 생일만 아시면 휴대폰 달력에서 음력으로 바꿔 보시면 돼요.\n\n※ 재미로 보는 풀이입니다. 순위는 재미로 정한 것이에요.\n\n#음력생일 #생일운세 #운세 #shorts"
+  }
+ },
+ "notes": "내 것 찾기 표 · lunar:lateluck · name_card.py 가 만든 스토리보드(루틴은 실행 스위치만)"
+}
