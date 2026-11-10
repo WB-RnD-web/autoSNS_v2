@@ -411,6 +411,27 @@ ck("동작을 줄인 세 번째가 통과하면 그날 편은 나간다(0)", D.r
    and log.count("clip1") == 3, f"{cl_calls} {log}")
 
 
+# 11/10 처럼 예전 규칙(두 번이면 막음)으로 막힌 편: 다시 돌리면 걸린 클립만 단순한 움직임으로 한 번 더
+old_c = one("d6")["concepts"][0]
+mk_images(old_c)
+mk_clips(old_c)
+D.save_state(old_c, {"fixes": {"2": {"vseed": 500 + 2 + D.BUMP}}, "stills": {"shots": []}, "clips_bad": [2],
+                     "clips": {"clips": [{"clip": 2, "ok": False, "issues": ["extra limb"]}]},
+                     "clips2": {"clips": [{"clip": 2, "ok": False, "issues": ["extra limb"]}]}, "blocked": "클립2: extra limb"})
+cl_calls.clear()
+log.clear()
+Q.review_clips = lambda c, which=None, cl=None: (cl_calls.append(which) or
+                                                {"clips": [{"clip": i, "ok": True, "issues": []} for i in which or [1, 2]]})
+code = D.render(one("d6"))
+st = D.load_state(old_c)
+ck("예전 규칙으로 막힌 편도 다시 돌리면 걸린 클립만 단순한 움직임으로 한 번 더 → 통과하면 나간다(0)",
+   code == 0 and log == ["clip2"] and cl_calls == [[2]] and "blocked" not in st and st["clips_calm"] == [2]
+   and st["fixes"]["2"]["motion"] == D.CALM_MOTION and st["fixes"]["2"]["vseed"] == 500 + 2 + 2 * D.BUMP,
+   f"{code} {log} {cl_calls} {st}")
+log.clear()
+ck("세 번째까지 해 본 막힌 편은 그대로 3(다시 안 만든다)", D.render(one("d2")) == 3 and log == [])
+
+
 def quiet_clips(c):
     raise R.QuietHours()
 

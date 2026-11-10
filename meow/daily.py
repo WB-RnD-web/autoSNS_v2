@@ -13,6 +13,7 @@
   · 그림: 걸린 컷은 검수가 준 fix 글·새 seed 로 한 번 다시 그린다(그 컷에서 편집한 컷도 다시). 그래도 걸리면 영상 검수에 맡긴다.
   · 영상: 걸린 클립은 새 seed 로 한 번 다시 만든다(HD 약 16분). 또 걸리면 동작을 줄인 글(CALM_MOTION)로 마지막 한 번
     (11/10 첫 편이 두 번 걸려 하루를 놓쳤다). 그래도 걸리면 그날은 올리지 않는다(종료 코드 3).
+    예전 규칙(두 번이면 막음)으로 막힌 편도 다시 돌리면 이 마지막 한 번을 탄다(수동 실행 day=그날 · upload 켜기).
 """
 from __future__ import annotations
 
@@ -94,6 +95,11 @@ def fix_stills(c: dict, st: dict, bad: list[dict]) -> None:
             _rm(R.clip_path(c, j))
 
 
+def calm_left(st: dict) -> list[dict]:
+    """두 번째 영상 검수에 걸렸는데 아직 '단순한 움직임' 시도를 안 한 클립들."""
+    return [] if "clips_calm" in st else Q.flagged(st.get("clips2"), "clips")
+
+
 def render(doc: dict, qa: bool = True) -> int:
     if doc.get("skip") or not doc.get("concepts"):
         print(f"⏭️ {doc.get('date')} 기획 없음: {doc.get('skip', '편 없음')}")
@@ -106,8 +112,13 @@ def render(doc: dict, qa: bool = True) -> int:
     st = load_state(c)
     apply_fixes(c, st)
     if st.get("blocked"):
-        print(f"⛔ {R.stem(c)} 이미 검수에서 막힘: {st['blocked']}")
-        return 3
+        if qa and calm_left(st):
+            # 11/10 이전 규칙(두 번 걸리면 막음)으로 막힌 날 — 세 번째(단순한 움직임) 기회를 준다(사용자: "꾸준함이 중요")
+            print(f"   {R.stem(c)} 예전 규칙으로 막힌 편 — 단순한 움직임으로 한 번 더 해 본다", flush=True)
+            st.pop("blocked")
+        else:
+            print(f"⛔ {R.stem(c)} 이미 검수에서 막힘: {st['blocked']}")
+            return 3
     try:
         R.images(c)
         if qa and "stills" not in st:
@@ -145,17 +156,17 @@ def render(doc: dict, qa: bool = True) -> int:
             apply_fixes(c, st)
             R.clips(c)
         if qa and st.get("clips_bad") and "clips2" not in st:
-            res = Q.review_clips(c, st["clips_bad"])
-            st["clips2"] = res or {"skipped": "API 실패"}
-            left = Q.flagged(res, "clips")
-            if left:
-                # 마지막 한 번: 동작을 줄인 글 + 새 seed(그날을 버리기 전에)
-                print(f"   영상 검수 두 번째: 클립 {[r['clip'] for r in left]} — 단순한 움직임으로 한 번 더", flush=True)
-                for r in left:
-                    fx = st["fixes"].setdefault(str(r["clip"]), {})
-                    fx.update(motion=CALM_MOTION, vseed=c["seed"] + r["clip"] + 2 * BUMP)
-                    _rm(R.clip_path(c, r["clip"]))
-                st["clips_calm"] = [r["clip"] for r in left]
+            st["clips2"] = Q.review_clips(c, st["clips_bad"]) or {"skipped": "API 실패"}
+            save_state(c, st)
+        left = calm_left(st) if qa else []
+        if left:
+            # 마지막 한 번: 동작을 줄인 글 + 새 seed(그날을 버리기 전에)
+            print(f"   영상 검수 두 번째: 클립 {[r['clip'] for r in left]} — 단순한 움직임으로 한 번 더", flush=True)
+            for r in left:
+                fx = st["fixes"].setdefault(str(r["clip"]), {})
+                fx.update(motion=CALM_MOTION, vseed=c["seed"] + r["clip"] + 2 * BUMP)
+                _rm(R.clip_path(c, r["clip"]))
+            st["clips_calm"] = [r["clip"] for r in left]
             save_state(c, st)
             apply_fixes(c, st)
             R.clips(c)
