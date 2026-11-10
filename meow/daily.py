@@ -5,12 +5,14 @@
 여기서는 render.py 를 차례로 부르고 검수 결과·고친 것을 작업 폴더의 qa.json 에 남긴다(예비 실행이 이어 받는다).
 
     python meow/daily.py render <날짜>.json [--no-qa]
-      종료 코드 0 = 완성(output/meow/<stem>.mp4) · 3 = 검수에 두 번 걸려 그날은 안 올림 · 75 = 05:45~08:00 KST(다음 실행이 잇는다)
+      종료 코드 0 = 완성(output/meow/<stem>.mp4) · 3 = 검수에 세 번 걸려 그날은 안 올림
+                · 75 = 05:45~08:00 KST 이거나 스파크가 꺼짐(정전 등) — 다음 실행이 받은 그림·클립부터 잇는다
     python meow/daily.py day                     # 오늘(KST) 날짜
 
 검수 규칙(qa_api.py — 키가 없거나 API 가 실패하면 검수 없이 간다):
   · 그림: 걸린 컷은 검수가 준 fix 글·새 seed 로 한 번 다시 그린다(그 컷에서 편집한 컷도 다시). 그래도 걸리면 영상 검수에 맡긴다.
-  · 영상: 걸린 클립은 새 seed 로 한 번 다시 만든다(HD 약 16분). 그래도 걸리면 그날은 올리지 않는다(종료 코드 3).
+  · 영상: 걸린 클립은 새 seed 로 한 번 다시 만든다(HD 약 16분). 또 걸리면 동작을 줄인 글(CALM_MOTION)로 마지막 한 번
+    (11/10 첫 편이 두 번 걸려 하루를 놓쳤다). 그래도 걸리면 그날은 올리지 않는다(종료 코드 3).
 """
 from __future__ import annotations
 
@@ -26,6 +28,10 @@ import qa_api as Q  # noqa: E402
 import render as R  # noqa: E402
 
 BUMP = 1000                     # 다시 만들 때 seed 를 이만큼 옮긴다
+# 두 번 걸린 클립의 마지막 시도 — 동작을 줄이면 몸이 덜 무너진다(11/10 첫 편: 앞발 뻗기에서 '다리 하나 더'가 두 번).
+CALM_MOTION = ("Very small, gentle movement only: the cat keeps the same pose in the same place, blinks slowly, its ears "
+               "twitch and it tilts its head a little. Soft background motion continues. The body keeps its exact shape "
+               "with four normal legs and stays fully in frame. Photorealistic, smooth natural motion, static camera.")
 
 
 def today(now: dt.datetime | None = None) -> str:
@@ -53,6 +59,8 @@ def apply_fixes(c: dict, st: dict) -> None:
         s = c["shots"][int(k) - 1]
         if fx.get("text"):
             s["edit" if s.get("edit") else "image"] = fx["text"]
+        if fx.get("motion"):
+            s["motion"] = fx["motion"]
         for key in ("seed", "vseed"):
             if fx.get(key) is not None:
                 s[key] = fx[key]
@@ -141,16 +149,31 @@ def render(doc: dict, qa: bool = True) -> int:
             st["clips2"] = res or {"skipped": "API 실패"}
             left = Q.flagged(res, "clips")
             if left:
+                # 마지막 한 번: 동작을 줄인 글 + 새 seed(그날을 버리기 전에)
+                print(f"   영상 검수 두 번째: 클립 {[r['clip'] for r in left]} — 단순한 움직임으로 한 번 더", flush=True)
+                for r in left:
+                    fx = st["fixes"].setdefault(str(r["clip"]), {})
+                    fx.update(motion=CALM_MOTION, vseed=c["seed"] + r["clip"] + 2 * BUMP)
+                    _rm(R.clip_path(c, r["clip"]))
+                st["clips_calm"] = [r["clip"] for r in left]
+            save_state(c, st)
+            apply_fixes(c, st)
+            R.clips(c)
+        if qa and st.get("clips_calm") and "clips3" not in st:
+            res = Q.review_clips(c, st["clips_calm"])
+            st["clips3"] = res or {"skipped": "API 실패"}
+            left = Q.flagged(res, "clips")
+            if left:
                 st["blocked"] = " | ".join(f"클립{r['clip']}: " + "; ".join(r["issues"]) for r in left)[:600]
             save_state(c, st)
             if left:
-                print(f"⛔ {R.stem(c)} 다시 만들어도 검수에 걸림 — 오늘은 올리지 않는다: {st['blocked']}")
+                print(f"⛔ {R.stem(c)} 세 번 만들어도 검수에 걸림 — 오늘은 올리지 않는다: {st['blocked']}")
                 return 3
     except R.QuietHours:
         save_state(c, st)
         return 75
     m = R.build(c)
-    usd = sum(float((st.get(k) or {}).get("usd") or 0) for k in ("stills", "stills2", "clips", "clips2"))
+    usd = sum(float((st.get(k) or {}).get("usd") or 0) for k in ("stills", "stills2", "clips", "clips2", "clips3"))
     print(f"✅ {m['stem']} {m['sec']}초 → {m['video']} · 검수 약 {usd:.3f}달러")
     return 0
 

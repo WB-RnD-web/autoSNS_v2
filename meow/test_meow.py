@@ -194,6 +194,34 @@ try:
 except R.SparkJobError:
     bad = os.path.exists(outp + "2")
 ck("결과 받기가 200 이 아니면 오류 글을 mp4 로 저장하지 않는다", not bad)
+class DownReq(FakeReq):
+    def __init__(self, gets, post_exc=None, post_code=200):
+        super().__init__(gets)
+        self.post_exc, self.post_code = post_exc, post_code
+
+    def post(self, *a, **k):
+        if self.post_exc:
+            raise self.post_exc
+        return FakeResp(self.post_code, {"job_id": "jx"})
+
+
+for name, fr in [("접수 연결 끊김", DownReq([], post_exc=FakeReq.RequestException("refused"))),
+                 ("게이트웨이 503", DownReq([], post_code=503))]:
+    R._spark = lambda fr=fr: (fr, "http://x", {})
+    try:
+        R._job({"type": "video"}, None)
+        down = None
+    except R.SparkDown as e:
+        down = e
+    ck(f"스파크가 꺼져 있으면({name}) SparkDown(종료 코드 75 · 조용한 시간과 같은 처리)",
+       down is not None and down.code == 75 and isinstance(down, R.QuietHours))
+R._spark = lambda: (DownReq([FakeReq.RequestException("reset")] * 3), "http://x", {})
+try:
+    R._job({"type": "video"}, None, down_after=0)
+    down = False
+except R.SparkDown:
+    down = True
+ck("작업을 넣은 뒤 계속 안 닿으면(down_after 동안) SparkDown — 잠깐 끊김은 위에서처럼 기다린다", down)
 R._spark, R.time.sleep = real_spark, real_sleep
 
 # gen: 응답이 5B 면 첫 컷에서 멈추고, 14B 면 클립·응답을 남긴다(Spark 없이 가짜 _job)
@@ -356,11 +384,31 @@ ck("그림 검수에 걸린 1컷은 fix 글·새 seed 로 다시 · 그 그림�
    st["fixes"]["1"]["text"] == "a calico kitten with four legs" and st["fixes"]["1"]["seed"] == 500 + 1 + D.BUMP
    and st["fixes"]["2"]["seed"] == 500 + 2 + D.BUMP and log.count("draw1") == 2 and log.count("draw2") == 2
    and len(st_calls) == 2 and redrawn == "a calico kitten with four legs|1501", str(st))
-ck("영상 검수에 걸린 클립은 새 seed 로 한 번 다시 · 그래도 걸리면 그날은 안 올린다(3)",
-   code == 3 and "blocked" in st and cl_calls == [None, [2]] and log.count("clip2") == 2 and log.count("clip1") == 1
-   and st["fixes"]["2"]["vseed"] == 500 + 2 + D.BUMP, f"{code} {cl_calls} {log}")
+ck("영상 검수에 걸린 클립은 새 seed 로 다시 → 또 걸리면 동작을 줄여 마지막 한 번 → 그래도 걸리면 그날은 안 올린다(3)",
+   code == 3 and "blocked" in st and cl_calls == [None, [2], [2]] and log.count("clip2") == 3 and log.count("clip1") == 1
+   and st["fixes"]["2"]["vseed"] == 500 + 2 + 2 * D.BUMP and st["fixes"]["2"]["motion"] == D.CALM_MOTION
+   and st["clips_calm"] == [2], f"{code} {cl_calls} {log}")
+ck("마지막 한 번의 움직임 글도 검사 통과(static camera·금지어 없음)",
+   R.check_concept({**okE, "shots": [okE["shots"][0], {**okE["shots"][1], "motion": D.CALM_MOTION}]}) == [])
 log.clear()
 ck("막힌 편은 다시 돌려도 바로 3(스파크·API 안 씀)", D.render(one("d2")) == 3 and log == [])
+
+
+cl_calls.clear()
+
+
+def rc_third_ok(c, which=None, cl=None):
+    cl_calls.append(which)
+    bad = len(cl_calls) < 3                      # 처음·두 번째는 클립 1 이 걸리고, 동작을 줄인 세 번째는 통과
+    return {"clips": [{"clip": i, "ok": not (bad and i == 1), "issues": ["extra limb"] if bad and i == 1 else []}
+                      for i in which or [1, 2]], "usd": 0.01}
+
+
+Q.review_stills, Q.review_clips = (lambda c, cl=None: {"shots": [{"shot": i, "ok": True, "issues": [], "fix": ""}
+                                                                  for i in (1, 2)]}), rc_third_ok
+log.clear()
+ck("동작을 줄인 세 번째가 통과하면 그날 편은 나간다(0)", D.render(one("d4")) == 0 and cl_calls == [None, [1], [1]]
+   and log.count("clip1") == 3, f"{cl_calls} {log}")
 
 
 def quiet_clips(c):
@@ -373,6 +421,15 @@ ck("조용한 시간에 걸리면 75 · 받은 그림은 남는다", D.render(on
 R.clips = mk_clips
 log.clear()
 ck("다음 실행이 받은 그림부터 이어서 완성(0)", D.render(one("d3")) == 0 and log == ["clip1", "clip2"], str(log))
+
+
+def down_clips(c):
+    raise R.SparkDown("시험")
+
+
+R.clips = down_clips
+ck("스파크가 꺼져 있으면(정전) 75 — 실패가 아니라 다음 실행이 잇는다", D.render(one("d5")) == 75)
+R.clips = mk_clips
 ck("기획이 skip 이면 아무것도 안 한다(0)", D.render({"date": "2026-11-11", "skip": "검사 실패", "concepts": []}) == 0)
 ck("편집 원본을 다시 그리면 그 그림을 쓰는 편집 컷도 다시(이어서 편집한 것까지)",
    D.dependents({"shots": [{"image": "a"}, {"edit": "b"}, {"edit": "c", "from": 2}, {"image": "d"}]}, 1) == [2, 3])
