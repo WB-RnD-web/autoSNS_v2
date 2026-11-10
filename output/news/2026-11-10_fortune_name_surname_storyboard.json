@@ -1,0 +1,153 @@
+{
+ "date": "2026-11-10",
+ "topic": "fortune_name",
+ "slot": "surname",
+ "theme": "surname:friends",
+ "privacy": "public",
+ "accent": "#C9A227",
+ "_min_total": 9.0,
+ "hook_title": "친구 복 순위",
+ "headline": "성씨로 보는 친구 복 순위 1위~20위 | 김·이·박·최… 성씨 20개 · 11월 10일",
+ "thumbnail_hook": "a cozy Korean tea house table set for friends with several teacups and sweets, warm lantern light, friendly mood, no people, no text",
+ "scenes": [
+  {
+   "type": "grid",
+   "pill": "11월 10일 화요일 · 내 것 찾기",
+   "title": "성씨로 보는",
+   "title2": "친구 복 순위",
+   "cols": 4,
+   "cells": [
+    {
+     "big": "강씨",
+     "small": "5위",
+     "note": "차 한잔 약속",
+     "hi": false
+    },
+    {
+     "big": "권씨",
+     "small": "18위",
+     "note": "돈거래 금물",
+     "hi": false
+    },
+    {
+     "big": "김씨",
+     "small": "10위",
+     "note": "옛 추억",
+     "hi": false
+    },
+    {
+     "big": "박씨",
+     "small": "2위",
+     "note": "모임에 웃음",
+     "hi": true
+    },
+    {
+     "big": "서씨",
+     "small": "15위",
+     "note": "먼저 연락",
+     "hi": false
+    },
+    {
+     "big": "송씨",
+     "small": "12위",
+     "note": "정 나누기",
+     "hi": false
+    },
+    {
+     "big": "신씨",
+     "small": "1위",
+     "note": "든든한 벗",
+     "hi": true
+    },
+    {
+     "big": "안씨",
+     "small": "14위",
+     "note": "안부 한 통",
+     "hi": false
+    },
+    {
+     "big": "오씨",
+     "small": "16위",
+     "note": "험담은 쉬어요",
+     "hi": false
+    },
+    {
+     "big": "윤씨",
+     "small": "19위",
+     "note": "약속 지키기",
+     "hi": false
+    },
+    {
+     "big": "이씨",
+     "small": "20위",
+     "note": "먼저 연락",
+     "hi": false
+    },
+    {
+     "big": "임씨",
+     "small": "7위",
+     "note": "동창 소식",
+     "hi": false
+    },
+    {
+     "big": "장씨",
+     "small": "8위",
+     "note": "안부 한 통",
+     "hi": false
+    },
+    {
+     "big": "전씨",
+     "small": "4위",
+     "note": "반가운 연락",
+     "hi": false
+    },
+    {
+     "big": "정씨",
+     "small": "11위",
+     "note": "차 한잔 약속",
+     "hi": false
+    },
+    {
+     "big": "조씨",
+     "small": "6위",
+     "note": "정 나누기",
+     "hi": false
+    },
+    {
+     "big": "최씨",
+     "small": "9위",
+     "note": "함께 나들이",
+     "hi": false
+    },
+    {
+     "big": "한씨",
+     "small": "17위",
+     "note": "말 한마디 조심",
+     "hi": false
+    },
+    {
+     "big": "홍씨",
+     "small": "3위",
+     "note": "친구가 찾아와요",
+     "hi": true
+    },
+    {
+     "big": "황씨",
+     "small": "13위",
+     "note": "동창 소식",
+     "hi": false
+    }
+   ],
+   "foot": "※ 많은 성씨 20개 · 재미로 보는 운세",
+   "brand": "왕별이 · 내 것 찾기",
+   "narration": "성씨로 보는 친구 복 순위예요. 내 성씨는 몇 위인지 찾아보세요."
+  }
+ ],
+ "platforms": {
+  "youtube": {
+   "title": "성씨로 보는 친구 복 순위 1위~20위 | 김·이·박·최… 성씨 20개 · 11월 10일 #shorts",
+   "description": "성씨로 보는 친구 복 순위 — 많은 성씨 20개를 한 장에 모았어요. 내 성씨는 몇 위인가요? 표에 없는 성씨는 댓글로 알려 주세요 🙏\n매일 아침 7시 40분 태어난 해 · 아침 9시 40분 이름 글자 · 오후 1시 40분 성씨 · 오후 3시 40분 태어난 달·음력 생일 끝자리 표가 올라와요.\n\n※ 재미로 보는 풀이입니다. 순위는 재미로 정한 것이에요.\n\n#성씨 #성씨운세 #운세 #shorts"
+  }
+ },
+ "notes": "내 것 찾기 표 · surname:friends · name_card.py 가 만든 스토리보드(루틴은 실행 스위치만)"
+}
