@@ -6,8 +6,12 @@ name: Meow Remix 매일 쇼츠 — 기획(Claude API) → 그림·HD 영상(Spar
 #            꼴은 요일로 코드가 정한다(월·목 변신 · 화·토 밈 · 수·일 춤 · 금 게임) · 같은 날 두 번째 실행부터는 건너뛴다.
 #   render : meow/daily.py — 1컷 그림(z-image) → 2컷 그림 = 1컷 그림 편집(qwen-image-edit · 같은 고양이) → 그림 검수(비전)
 #            → HD 클립 2개(스파크 hd:true · 한 개 약 16분) → 영상 검수 → 조립(음악·자막) → 유튜브 비공개 + 예약 공개.
-#            검수에 걸린 그림은 한 번 다시 그리고, 걸린 클립은 한 번 다시 만든다. 그래도 걸리면 그날은 올리지 않는다.
-# 시각(KST): 00:40 본 실행 · 03:00 예비 · 08:10 마지막 예비. 공개는 그날 MEOW_SLOT_KST(기본 10:00 = 미국 동부 밤 8시).
+#            검수에 걸린 그림은 한 번 다시 그리고, 걸린 클립은 한 번 다시 만든다. 또 걸리면 동작을 줄여 마지막 한 번,
+#            그래도 걸리면 그날은 올리지 않는다.
+# 시각(KST): 00:40 본 실행 + 예비 여섯 번(02:40·04:40·08:10·10:10·12:40·14:40). 공개는 그날 MEOW_SLOT_KST(기본 10:00 = 미국
+#   동부 밤 8시) — 늦게 끝나면 20분 뒤 공개. ★11/10 실측: GitHub 예약이 3~8시간 늦게 돈다(00:40 → 08:50 시작) — 예비를 낮까지
+#   여러 번 둔다. 이미 올렸거나 막힌 날은 몇 분 만에 끝난다. 스파크가 꺼져 있으면(정전 · 11/18 09~12시 예고) 종료 코드 75 로
+#   멈추고 다음 예비가 받은 그림·클립부터 잇는다.
 #   ★11/09 사용자 "인스타·쓰레드에도 올려줘": 완성본을 캐시(meow-out-<stem>-)에 두면 meow-social.yml 이 18:00 KST 에 올린다.
 #   ★05:45~08:00 KST(아침 업로드 루틴 몫)에는 Spark 를 쓰지 않는다(종료 코드 75 → 다음 예비가 잇는다).
 #   받은 그림·클립은 Actions 캐시(meow-work-<stem>-)에 남아 다음 실행이 이어 받는다.
@@ -20,8 +24,12 @@ name: Meow Remix 매일 쇼츠 — 기획(Claude API) → 그림·HD 영상(Spar
 on:
   schedule:
     - cron: "40 15 * * *"       # 00:40 KST 본 실행
-    - cron: "0 18 * * *"        # 03:00 KST 예비
-    - cron: "10 23 * * *"       # 08:10 KST 마지막 예비(공개 10:00 전)
+    - cron: "40 17 * * *"       # 02:40 KST 예비
+    - cron: "40 19 * * *"       # 04:40 KST 예비
+    - cron: "10 23 * * *"       # 08:10 KST 예비(조용한 시간 뒤)
+    - cron: "10 1 * * *"        # 10:10 KST 예비
+    - cron: "40 3 * * *"        # 12:40 KST 예비(11/18 09~12시 정전 뒤)
+    - cron: "40 5 * * *"        # 14:40 KST 마지막 예비
   workflow_dispatch:
     inputs:
       day:
@@ -166,17 +174,9 @@ jobs:
           echo "stem=$STEM" >> "$GITHUB_OUTPUT"
           echo "대상: $DAY $STEM"
 
-      - name: 시스템 의존성
+      - name: 파이썬 의존성
         if: steps.pick.outputs.doc != ''
-        run: |
-          sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu-core
-          python -m pip install -r pipeline/requirements.txt fonttools brotli
-
-      - name: 테스트(오프라인) · 기획 검사
-        if: steps.pick.outputs.doc != ''
-        run: |
-          python meow/test_meow.py
-          python meow/render.py check "${{ steps.pick.outputs.doc }}"
+        run: python -m pip install -r pipeline/requirements.txt fonttools brotli
 
       - name: YouTube 자격증명(Meow Remix 채널 — 옛 Nine Tails 토큰)
         id: cred
@@ -201,6 +201,17 @@ jobs:
           [ $rc -eq 10 ] && exit 0
           exit $rc            # 다른 채널 토큰·API 오류 — 렌더(스파크 30분)도 하지 않는다
 
+      # 이미 올린 날(예비 실행)은 여기까지 — ffmpeg 설치·테스트·렌더를 건너뛴다
+      - name: 시스템 의존성(ffmpeg)
+        if: steps.pick.outputs.doc != '' && steps.seen.outputs.skip != '1'
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu-core
+
+      - name: 테스트(오프라인) · 기획 검사
+        if: steps.pick.outputs.doc != '' && steps.seen.outputs.skip != '1'
+        run: |
+          python meow/test_meow.py
+          python meow/render.py check "${{ steps.pick.outputs.doc }}"
+
       - name: 받아 둔 그림·클립 복원(이어 받기)
         if: steps.pick.outputs.doc != '' && steps.seen.outputs.skip != '1'
         uses: actions/cache/restore@v4
@@ -209,7 +220,7 @@ jobs:
           key: meow-work-${{ steps.pick.outputs.stem }}-${{ github.run_id }}
           restore-keys: meow-work-${{ steps.pick.outputs.stem }}-
 
-      # 75 = 05:45~08:00 KST 라 Spark 를 멈췄다(다음 예비가 잇는다) · 3 = 검수에 두 번 걸려 오늘은 안 올린다 — 둘 다 실패가 아니다
+      # 75 = 05:45~08:00 KST 이거나 스파크가 꺼져 멈췄다(다음 예비가 잇는다) · 3 = 검수에 세 번 걸려 오늘은 안 올린다 — 둘 다 실패가 아니다
       - name: 렌더(그림 → 검수 → HD 클립 → 검수 → 조립)
         id: render
         if: steps.pick.outputs.doc != '' && steps.seen.outputs.skip != '1'
@@ -219,8 +230,8 @@ jobs:
           set +e
           python meow/daily.py render "${{ steps.pick.outputs.doc }}"
           rc=$?
-          if [ $rc -eq 75 ]; then echo "quiet=1" >> "$GITHUB_OUTPUT"; exit 0; fi
-          if [ $rc -eq 3 ]; then echo "blocked=1" >> "$GITHUB_OUTPUT"; echo "::warning::검수에 두 번 걸려 오늘은 올리지 않는다"; exit 0; fi
+          if [ $rc -eq 75 ]; then echo "quiet=1" >> "$GITHUB_OUTPUT"; echo "::notice::스파크 쉼(조용한 시간·꺼짐) — 다음 예비가 잇는다"; exit 0; fi
+          if [ $rc -eq 3 ]; then echo "blocked=1" >> "$GITHUB_OUTPUT"; echo "::warning::검수에 세 번 걸려 오늘은 올리지 않는다"; exit 0; fi
           exit $rc
 
       - name: 유튜브(비공개 + 예약 공개)

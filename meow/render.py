@@ -179,21 +179,34 @@ class SparkJobError(RuntimeError):
     """접수된 작업이 서버에서 실패(status=error/failed) — 거절(HTTP 4xx)과 달리 다시 해 볼 만하다."""
 
 
-def _job(body: dict, out: str | None, timeout: int = 1500) -> dict:
-    """작업을 넣고 끝날 때까지 기다린다 → 마지막 상태(job_id · 서버가 실제로 쓴 model·크기·길이…)."""
+DOWN_AFTER = 600                   # 게이트웨이가 이만큼(초) 내내 안 닿으면 '스파크 꺼짐'(정전·재부팅) — 다음 실행에 맡긴다
+
+
+def _job(body: dict, out: str | None, timeout: int = 1500, down_after: int = DOWN_AFTER) -> dict:
+    """작업을 넣고 끝날 때까지 기다린다 → 마지막 상태(job_id · 서버가 실제로 쓴 model·크기·길이…).
+    스파크에 아예 안 닿으면(접수 실패 · 10분 내내 끊김) SparkDown — 실패가 아니라 다음 실행이 잇는다(11/18 정전 대비)."""
     requests, base, headers = _spark()
-    r = requests.post(f"{base}/jobs", json=body, headers=headers, timeout=120)
+    try:
+        r = requests.post(f"{base}/jobs", json=body, headers=headers, timeout=120)
+    except requests.RequestException as e:
+        raise SparkDown(f"Spark 접수 안 됨: {str(e)[:150]}") from None
+    if r.status_code in (502, 503, 504):
+        raise SparkDown(f"Spark 게이트웨이 HTTP {r.status_code}")
     if r.status_code >= 400:
         raise RuntimeError(f"Spark {body['type']} 거절 HTTP {r.status_code}: {r.text[:300]}")
     jid = r.json()["job_id"]
-    t0 = time.time()
+    t0, lost = time.time(), None
     while time.time() - t0 < timeout:
         try:
             g = requests.get(f"{base}/jobs/{jid}", headers=headers, timeout=30)
             d = g.json() if g.ok else {}
         except (requests.RequestException, ValueError):   # 게이트웨이가 다시 켜지는 몇 초 — 쉬고 다시 본다
+            lost = lost or time.time()
+            if time.time() - lost >= down_after:
+                raise SparkDown(f"Spark {body['type']} {jid} — {down_after // 60}분 내내 안 닿음") from None
             time.sleep(10)
             continue
+        lost = None
         if g.status_code == 404 or (g.ok and "status" not in d):
             # 게이트웨이가 다시 켜지면 진행 중이던 작업이 사라진다(11/09 18시 첫눈 컷2) — 다시 넣을 일
             raise SparkJobError(f"Spark {body['type']} {jid} 작업이 사라짐(게이트웨이 재시작?) HTTP {g.status_code}")
@@ -226,6 +239,15 @@ class QuietHours(SystemExit):
 
     def __init__(self):
         super().__init__(75)
+
+
+class SparkDown(QuietHours):
+    """스파크에 닿지 않는다(정전·재부팅 · 11/18 09~12시 정전 예고) — 조용한 시간과 같이 75로 끝내고 다음 실행이 잇는다."""
+
+    def __init__(self, why: str = ""):
+        super().__init__()
+        self.why = why
+        print(f"⏸️ 스파크 꺼짐 — {why} (다음 실행이 잇는다)", flush=True)
 
 
 def _guard(ahead_min: int = 0) -> None:

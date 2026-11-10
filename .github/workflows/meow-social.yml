@@ -6,13 +6,14 @@ name: Meow Remix 인스타·쓰레드 — 그날 고양이 쇼츠를 릴스·쓰
 # 기존 인스타 편성(insta-pick.yml — 낮 a · 저녁 b · 밤 c)은 그대로다. 이 편은 그 사이(18:00)에 하나 더.
 # ★두 번 올리지 않는다: 게시 ledger(output/meow/posted.json · Actions 캐시 meow-posted-) — 인스타·쓰레드 따로 적는다.
 # 그날 편이 없으면(기획 skip · 검수에 막힘 · 렌더 실패) 아무것도 안 하고 끝난다.
-# 시각: 18:00 KST 본 실행 · 20:40 KST 예비(GitHub 예약이 빠지거나 늦은 날 — 이미 올렸으면 건너뛴다).
+# 시각: 18:00 KST 본 실행 · 20:40·22:40 KST 예비(GitHub 예약이 빠지거나 늦은 날 — 이미 올렸으면 건너뛴다).
 # 끄기: 레포 변수 MEOW_SOCIAL=0. 돈 드는 호출 없음(Cloudinary 무료 · Graph API · 퍼블릭 레포 Actions).
 
 on:
   schedule:
     - cron: "0 9 * * *"         # 18:00 KST
     - cron: "40 11 * * *"       # 20:40 KST 예비
+    - cron: "40 13 * * *"       # 22:40 KST 마지막 예비(GitHub 예약이 몇 시간씩 늦는 날 · 렌더가 늦게 끝난 날)
   workflow_dispatch:
     inputs:
       day:
