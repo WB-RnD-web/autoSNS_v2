@@ -6,22 +6,29 @@ name: Meow Remix 인스타·쓰레드 — 그날 고양이 쇼츠를 릴스·쓰
 # 기존 인스타 편성(insta-pick.yml — 낮 a · 저녁 b · 밤 c)은 그대로다. 이 편은 그 사이(18:00)에 하나 더.
 # ★두 번 올리지 않는다: 게시 ledger(output/meow/posted.json · Actions 캐시 meow-posted-) — 인스타·쓰레드 따로 적는다.
 # 그날 편이 없으면(기획 skip · 검수에 막힘 · 렌더 실패) 아무것도 안 하고 끝난다.
-# 시각: 18:00 KST 본 실행 · 20:40·22:40 KST 예비(GitHub 예약이 빠지거나 늦은 날 — 이미 올렸으면 건너뛴다).
+# ★11/13 고침: 18:00 예약이 8시간 늦게(다음 날 01~06시) 돌아 '오늘' 기획만 보다가 11/11~13 세 편을 하나도 못 올렸다.
+#   → 매일판(meow-daily)이 끝나면 바로 깬다(workflow_run) + 예약은 예비로만. 날짜를 '오늘'로 묶지 않고 post.py pick 이
+#   최근 3일 편 a(매일 변신) 중 완성본 캐시가 있고 아직 안 올린 것을 새것부터 하나 고른다. 인스타는 하루 1편 꼴 —
+#   마지막 게시 뒤 3시간 안이면 쉰다(놓친 편 따라잡기도 몰아 올리지 않게). 편 b·c 는 유튜브에만.
 # 끄기: 레포 변수 MEOW_SOCIAL=0. 돈 드는 호출 없음(Cloudinary 무료 · Graph API · 퍼블릭 레포 Actions).
 
 on:
+  workflow_run:
+    workflows: ["Meow Remix 매일 쇼츠 — 기획(Claude API) → 그림·HD 영상(Spark) → 검수 → 유튜브 예약 공개"]
+    types: [completed]
   schedule:
-    - cron: "0 9 * * *"         # 18:00 KST
+    - cron: "0 9 * * *"         # 18:00 KST 예비
     - cron: "40 11 * * *"       # 20:40 KST 예비
-    - cron: "40 13 * * *"       # 22:40 KST 마지막 예비(GitHub 예약이 몇 시간씩 늦는 날 · 렌더가 늦게 끝난 날)
+    - cron: "40 13 * * *"       # 22:40 KST 예비
   workflow_dispatch:
     inputs:
       day:
-        description: "기획 날짜 YYYY-MM-DD(KST · 비우면 오늘)"
+        description: "이 날짜 편 a 를 올리기 YYYY-MM-DD(KST · 비우면 최근 3일에서 알아서 고른다)"
         default: ""
 
 permissions:
   contents: read
+  actions: read                # 완성본 캐시가 있는지 본다(post.py pick → GitHub API)
 
 concurrency:
   group: meow-social
@@ -29,7 +36,8 @@ concurrency:
 
 jobs:
   post:
-    if: (vars.MEOW_SOCIAL || '1') != '0'
+    # 시험(api-test/meow push)으로 돈 매일판 뒤에는 깨지 않는다
+    if: (vars.MEOW_SOCIAL || '1') != '0' && (github.event_name != 'workflow_run' || github.event.workflow_run.event != 'push')
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
@@ -46,22 +54,35 @@ jobs:
           cache: "pip"
           cache-dependency-path: pipeline/requirements.txt
 
-      - name: 오늘 편 고르기(data/meow · 읽기 전용)
+      - name: 게시 ledger 복원
+        uses: actions/cache/restore@v4
+        with:
+          path: output/meow/posted.json
+          key: meow-posted-${{ github.run_id }}
+          restore-keys: meow-posted-
+
+      - name: 올릴 편 고르기(최근 3일 편 a · 새것부터 · 완성본 있는 것 · data/meow 읽기 전용)
         id: pick
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          DAY="${{ github.event.inputs.day }}"
-          [ -n "$DAY" ] || DAY=$(date +%F)
           mkdir -p output/meow_plan
           git fetch -q --no-tags --depth=1 origin data/meow && git archive FETCH_HEAD | tar -x -C output/meow_plan \
             || echo "(data/meow 없음)"
-          F="output/meow_plan/$DAY.json"
-          if [ ! -f "$F" ]; then echo "::notice::$DAY 기획 없음 — 올릴 것 없음"; exit 0; fi
+          DAY="${{ github.event.inputs.day }}"
+          if [ -n "$DAY" ]; then
+            F="output/meow_plan/$DAY.json"
+            [ -f "$F" ] || { echo "::notice::$DAY 기획 없음 — 올릴 것 없음"; exit 0; }
+          else
+            F=$(python meow/post.py pick output/meow_plan --days 3 --min-gap-h 3)
+          fi
+          if [ -z "$F" ]; then echo "올릴 편 없음"; exit 0; fi
           STEM=$(python -c "import json,sys; d=json.load(open(sys.argv[1],encoding='utf-8')); cs=d.get('concepts') or []; print(cs[0]['id']+'_'+cs[0]['slug'] if cs else '')" "$F")
-          if [ -z "$STEM" ]; then echo "::notice::$DAY 은 건너뛴 날"; exit 0; fi
+          if [ -z "$STEM" ]; then echo "::notice::$F 은 건너뛴 날"; exit 0; fi
           echo "doc=$F" >> "$GITHUB_OUTPUT"
           echo "stem=$STEM" >> "$GITHUB_OUTPUT"
-          echo "대상: $DAY $STEM"
+          echo "대상: $F $STEM"
 
       # 경로 목록은 meow-daily.yml 의 '완성본 저장'과 똑같아야 캐시가 열린다(test_workflows 가 본다)
       - name: 완성본 받기(meow-daily 캐시)
@@ -75,14 +96,6 @@ jobs:
             output/meow/${{ steps.pick.outputs.stem }}_meta.json
           key: meow-out-${{ steps.pick.outputs.stem }}-none
           restore-keys: meow-out-${{ steps.pick.outputs.stem }}-
-
-      - name: 게시 ledger 복원
-        if: steps.out.outputs.cache-matched-key != ''
-        uses: actions/cache/restore@v4
-        with:
-          path: output/meow/posted.json
-          key: meow-posted-${{ github.run_id }}
-          restore-keys: meow-posted-
 
       - name: 의존성
         if: steps.out.outputs.cache-matched-key != ''
@@ -107,7 +120,7 @@ jobs:
 
       # 올라간 건 올라간 거다 — 실패해도 ledger 는 남긴다(예비 실행이 두 번 올리지 않게)
       - name: 게시 ledger 저장
-        if: always() && hashFiles('output/meow/posted.json') != ''
+        if: always() && steps.post.outcome != 'skipped' && hashFiles('output/meow/posted.json') != ''
         uses: actions/cache/save@v4
         with:
           path: output/meow/posted.json

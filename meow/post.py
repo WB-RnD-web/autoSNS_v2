@@ -5,6 +5,7 @@
     python meow/post.py youtube <날짜>.json --slot-kst 10:00         # 매일판: 그 날짜 10:00 KST 공개(지났으면 20분 뒤)
     python meow/post.py seen    <날짜>.json                          # 이미 다 올라갔으면 0 · 남았으면 10
     python meow/post.py social  <concepts.json> [--gap-min 30]      # 인스타 릴스 + 쓰레드(편마다 gap 쉬고)
+    python meow/post.py pick    <data/meow 폴더> [--days 3 --min-gap-h 3]   # 인스타·쓰레드에 올릴 편 하나(경로) — 없으면 빈 줄
 
 영상은 output/meow/<id>_<slug>.mp4 (render.py build). 유튜브 토큰은 YT_TOKEN_NOVEL 경로(워크플로가 시크릿을 파일로 쓴다),
 인스타·쓰레드·Cloudinary 는 각 업로더가 환경변수에서 읽는다 — 여기서 토큰을 읽거나 찍지 않는다.
@@ -18,6 +19,8 @@ import json
 import os
 import sys
 import time
+import urllib.parse
+import urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -188,6 +191,8 @@ def social(doc: dict, gap_min: int) -> int:
             except (Exception, SystemExit) as e:  # noqa: BLE001
                 fails += 1
                 print(f"::warning::{st} 쓰레드 실패: {str(e)[:300]}")
+        if got.get("ig") or got.get("threads"):
+            got.setdefault("at", dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"))
         led[st] = got
         _save(led)
         HV.cleanup(pid, resource_type="video")
@@ -196,13 +201,66 @@ def social(doc: dict, gap_min: int) -> int:
     return 1 if fails else 0
 
 
+def pick(plans: str, led: dict, days: int = 3, min_gap_h: float = 3, now: dt.datetime | None = None,
+         has_out=lambda stem: True) -> tuple[str | None, str]:
+    """인스타·쓰레드에 올릴 편 하나 → (기획 파일 경로 | None, 까닭).
+    ★11/11~13 0편 사고: 18:00 예약이 8시간 늦게(다음 날 새벽) 돌아 '오늘' 기획만 보다가 아무것도 안 올렸다.
+    → 날짜를 '오늘'로 묶지 않는다: 최근 days 일의 편 a(<날짜>.json · 매일 변신) 중 완성본(캐시)이 있고 아직 안 올린 것,
+      새것부터. 인스타는 하루 1편 꼴로 — 마지막 게시 뒤 min_gap_h 시간 안이면 쉰다(놓친 편 따라잡기도 몰아 올리지 않게)."""
+    now = (now or dt.datetime.now(dt.timezone.utc)).astimezone(dt.timezone.utc)
+    last = [dt.datetime.fromisoformat(v["at"].replace("Z", "+00:00")) for v in led.values()
+            if isinstance(v, dict) and v.get("at")]
+    if last and now - max(last) < dt.timedelta(hours=min_gap_h):
+        return None, f"마지막 게시({max(last):%m-%d %H:%M} UTC) 뒤 {min_gap_h}시간이 안 됐다"
+    today = now.astimezone(R.KST).date()
+    for k in range(days):
+        p = os.path.join(plans, f"{today - dt.timedelta(days=k)}.json")
+        if not os.path.exists(p):
+            continue
+        cs = R.load(p).get("concepts") or []
+        if not cs:
+            continue
+        st = R.stem(cs[0])
+        got = led.get(st, {})
+        if got.get("ig") and got.get("threads"):
+            continue
+        if not has_out(st):
+            continue
+        return p, f"{st} (인스타 {'✓' if got.get('ig') else '·'} 쓰레드 {'✓' if got.get('threads') else '·'})"
+    return None, f"최근 {days}일 편 a 중 올릴 것 없음(다 올렸거나 완성본이 아직 없다)"
+
+
+def out_cache_exists(stem: str) -> bool:
+    """meow-daily 가 저장한 완성본 캐시(meow-out-<stem>-)가 있나 — GitHub API(GITHUB_TOKEN · actions: read).
+    토큰이 없으면(로컬) 있다고 본다."""
+    tok, repo = os.environ.get("GITHUB_TOKEN"), os.environ.get("GITHUB_REPOSITORY")
+    if not tok or not repo:
+        return True
+    q = urllib.parse.urlencode({"key": f"meow-out-{stem}-", "per_page": 1})
+    req = urllib.request.Request(f"https://api.github.com/repos/{repo}/actions/caches?{q}",
+                                 headers={"Authorization": f"Bearer {tok}", "Accept": "application/vnd.github+json"})
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            return json.load(r).get("total_count", 0) > 0
+    except Exception as e:  # noqa: BLE001 — 못 보면 있다고 치고 넘긴다(캐시 받기에서 없으면 경고로 끝난다)
+        print(f"(캐시 목록을 못 봤다: {str(e)[:120]})", file=sys.stderr)
+        return True
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["text", "youtube", "social", "seen"])
-    ap.add_argument("concepts")
+    ap.add_argument("cmd", choices=["text", "youtube", "social", "seen", "pick"])
+    ap.add_argument("concepts", help="기획 파일(pick 은 data/meow 폴더)")
     ap.add_argument("--gap-min", type=int, default=None)
     ap.add_argument("--slot-kst", default=None, help="매일판: 기획 날짜의 이 시각(KST HH:MM)에 공개 — 지났으면 20분 뒤")
+    ap.add_argument("--days", type=int, default=3)
+    ap.add_argument("--min-gap-h", type=float, default=3)
     a = ap.parse_args()
+    if a.cmd == "pick":
+        p, why = pick(a.concepts, _ledger(), a.days, a.min_gap_h, has_out=out_cache_exists)
+        print(why, file=sys.stderr)
+        print(p or "")
+        return 0
     doc = R.load(a.concepts)
     doc.setdefault("concepts", [])
     errs = R.check(doc)

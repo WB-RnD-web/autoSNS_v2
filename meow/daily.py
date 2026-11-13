@@ -4,7 +4,7 @@
 기획은 plan_api.py 가 data/meow/<날짜>.json 에 쓴다(편 하나 · 2컷째는 1컷 그림을 edit = 같은 고양이).
 여기서는 render.py 를 차례로 부르고 검수 결과·고친 것을 작업 폴더의 qa.json 에 남긴다(예비 실행이 이어 받는다).
 
-    python meow/daily.py render <날짜>.json [--no-qa]
+    python meow/daily.py render <날짜>.json [--no-qa] [--wait-quiet 120]
       종료 코드 0 = 완성(output/meow/<stem>.mp4) · 3 = 검수에 세 번 걸려 그날은 안 올림
                 · 75 = 05:45~08:00 KST 이거나 스파크가 꺼짐(정전 등) — 다음 실행이 받은 그림·클립부터 잇는다
     python meow/daily.py day                     # 오늘(KST) 날짜
@@ -100,7 +100,7 @@ def calm_left(st: dict) -> list[dict]:
     return [] if "clips_calm" in st else Q.flagged(st.get("clips2"), "clips")
 
 
-def render(doc: dict, qa: bool = True) -> int:
+def render(doc: dict, qa: bool = True, wait_quiet: int = 0) -> int:
     if doc.get("skip") or not doc.get("concepts"):
         print(f"⏭️ {doc.get('date')} 기획 없음: {doc.get('skip', '편 없음')}")
         return 0
@@ -120,6 +120,8 @@ def render(doc: dict, qa: bool = True) -> int:
             print(f"⛔ {R.stem(c)} 이미 검수에서 막힘: {st['blocked']}")
             return 3
     try:
+        if wait_quiet:
+            R.wait_quiet(wait_quiet)          # 06~07시에 시작한 실행은 08:00 에 바로 잇는다(다음 예비를 기다리지 않게)
         R.images(c)
         if qa and "stills" not in st:
             res = Q.review_stills(c)
@@ -195,12 +197,13 @@ def main() -> int:
     r = sub.add_parser("render")
     r.add_argument("doc")
     r.add_argument("--no-qa", action="store_true")
+    r.add_argument("--wait-quiet", type=int, default=0, help="조용한 시간이 이 분 안에 끝나면 기다렸다 시작")
     sub.add_parser("day")
     a = ap.parse_args()
     if a.cmd == "day":
         print(today())
         return 0
-    return render(R.load(a.doc), qa=not a.no_qa)
+    return render(R.load(a.doc), qa=not a.no_qa, wait_quiet=a.wait_quiet)
 
 
 if __name__ == "__main__":
