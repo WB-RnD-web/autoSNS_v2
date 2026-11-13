@@ -200,6 +200,14 @@ ck("meow-social.yml: push 트리거 없음 · 읽기 권한 · post.py social �
    trig.get("meow-social.yml") is None and re.search(r"(?m)^permissions:\n  contents: read", _ms) is not None
    and "contents: write" not in _ms and "python meow/post.py social" in _ms and "meow-posted-" in _ms
    and "YT_TOKEN" not in _ms, "")
+_mw_name = re.search(r"(?m)^name:\s*(.+)$", _mw).group(1).strip()
+ck("meow-social.yml: 매일판이 끝나면 바로 깬다(workflow_run — 이름이 meow-daily.yml 의 name 과 똑같다) · 시험 push 뒤엔 안 깬다 · "
+   "날짜를 '오늘'로 묶지 않고 post.py pick 이 고른다(11/11~13 0편 사고) · 캐시 보기는 actions: read",
+   f'workflows: ["{_mw_name}"]' in _ms and "github.event.workflow_run.event != 'push'" in _ms
+   and "python meow/post.py pick" in _ms and "actions: read" in _ms and "date +%F" not in _ms, _mw_name)
+ck("meow-daily.yml: 편 a·b·c 를 matrix 로 하나씩(max-parallel 1 — 스파크 GPU 하나) · 조용한 시간이 곧 끝나면 기다린다",
+   "max-parallel: 1" in _render and "slot: [a, b, c]" in _render and "--wait-quiet" in _render
+   and 'plan_api.py write --day' in _mw and '--slot "$S"' in _mw, "")
 ck("완성본 캐시 경로가 meow-daily(저장)와 meow-social(받기)에서 똑같다 · 열쇠 앞머리 meow-out-",
    _out_paths(_mw) is not None and _out_paths(_mw) == _out_paths(_ms) and len(_out_paths(_ms)) == 3
    and "key: meow-out-${{ steps.pick.outputs.stem }}-${{ github.run_id }}" in _mw

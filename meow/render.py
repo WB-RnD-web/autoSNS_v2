@@ -250,6 +250,21 @@ class SparkDown(QuietHours):
         print(f"⏸️ 스파크 꺼짐 — {why} (다음 실행이 잇는다)", flush=True)
 
 
+def wait_quiet(max_min: int, now: dt.datetime | None = None, sleep=time.sleep) -> bool:
+    """조용한 시간(05:45~08:00 KST)이고 08:00 까지 max_min 분 안이면 기다렸다가 돌아온다(참).
+    GitHub 예약이 몇 시간씩 늦어 06~07시에 시작한 실행이 75로 끝나면 다음 예비는 낮에야 돈다(11/11~13 실측) — 그래서 기다린다."""
+    now = (now or dt.datetime.now(KST)).astimezone(KST)
+    if not quiet_hours(now, ahead_min=20):
+        return False
+    end = dt.datetime.combine(now.date(), dt.time(8, 0), KST)
+    wait = (end - now).total_seconds()
+    if wait <= 0 or wait > max_min * 60:
+        return False
+    print(f"⏳ 조용한 시간 — 08:00 KST 까지 {int(wait // 60)}분 기다렸다가 바로 시작", flush=True)
+    sleep(wait + 30)
+    return True
+
+
 def _guard(ahead_min: int = 0) -> None:
     if quiet_hours(ahead_min=ahead_min):
         print("⏸️ 05:45~08:00 KST — Spark 쓰지 않는 시간(다음 실행이 잇는다)", flush=True)

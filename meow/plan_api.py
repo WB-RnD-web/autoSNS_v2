@@ -7,8 +7,10 @@
   ④ 검사(render.check_concept + 아래 check)를 못 넘으면 오류를 붙여 다시(최대 3번) — 그래도 안 되면 그날은 skip.
 결과: <날짜>.json = {"date", "concepts": [편 하나]}(render.py·post.py 가 그대로 읽는 모양) 또는 {"date", "skip", "concepts": []}
       <날짜>_api.json = 모델·시도·토큰·검색·달러. 크레딧이 바닥나면 API 가 거절할 뿐 돈은 안 나간다(결제 수단 없음).
+★11/13 하루 세 편(사용자 "빈도가 너무 낮다" → "ㄱㄱㄱ"): 편(slot) a·b·c — a = 매일 변신(견본 중 유일하게 846회 나온 꼴),
+  b·c = 밈·춤·게임을 요일로 돌린다. 파일은 a = <날짜>.json(예전 그대로) · b = <날짜>-b.json · c = <날짜>-c.json.
 
-    python meow/plan_api.py write --day 2026-11-10 --dir /tmp/data-meow
+    python meow/plan_api.py write --day 2026-11-10 --dir /tmp/data-meow [--slot b]
 """
 from __future__ import annotations
 
@@ -32,8 +34,9 @@ SEARCH_USD = 0.01
 MAX_SEARCH, MAX_FETCH = 6, 3
 TRIES = 3
 
-# 월=0 … 일=6. 변신(morph)이 고양이 AI 쇼츠의 간판이라 주 2번.
-FORMAT_BY_WEEKDAY = {0: "morph", 1: "meme", 2: "dance", 3: "morph", 4: "game", 5: "meme", 6: "dance"}
+SLOTS = ("a", "b", "c")
+# a 는 매일 변신(morph) — 고양이 AI 쇼츠의 간판이고 견본 중 혼자 846회(11/13). b·c 는 나머지 셋을 요일로 돌린다(월=0 … 일=6).
+ROTATION = ("meme", "dance", "game")
 FORMAT_INFO = {
     "morph": "A food or object turns into a kitten. Shot 1: the food in a cosy real setting with only a small kitten hint "
              "(two tiny ears or a tail tip) on one piece. Shot 2 (edit of shot 1): that one piece is now a tiny kitten whose "
@@ -50,7 +53,7 @@ MOODS_BY_FORMAT = {"morph": {"cute", "morph"}, "dance": {"dance", "cool"}, "meme
 EXAMPLE = os.path.join(HERE, "example_daily.json")
 CONCEPTS = os.path.join(HERE, "concepts")
 
-WRITER = """You plan one YouTube Short per day for "Meow Remix" (@MeowRemixCats): photorealistic AI cat videos with
+WRITER = """You plan one of today's YouTube Shorts for "Meow Remix" (@MeowRemixCats): photorealistic AI cat videos with
 music only (no voice, no script). Each Short is two 5-second shots (about 10 seconds): an image model draws shot 1, an
 image-edit model makes shot 2 from the shot 1 picture (so it stays the same cat), and an image-to-video model animates each.
 
@@ -92,8 +95,15 @@ URLs only from your searches. Do not set id, format, engine or seed. If the code
 whole JSON again."""
 
 
-def fmt_of(day: dt.date) -> str:
-    return FORMAT_BY_WEEKDAY[day.weekday()]
+def fmt_of(day: dt.date, slot: str = "a") -> str:
+    if slot == "a":
+        return "morph"
+    return ROTATION[(day.weekday() + SLOTS.index(slot) - 1) % len(ROTATION)]
+
+
+def doc_name(day: dt.date, slot: str = "a") -> str:
+    """편 a 는 예전 이름(<날짜>.json) 그대로 — post.py·인스타·지난 기록이 그대로 읽는다."""
+    return day.isoformat() + ("" if slot == "a" else f"-{slot}")
 
 
 def tracks_for(fmt: str) -> list[str]:
@@ -101,18 +111,20 @@ def tracks_for(fmt: str) -> list[str]:
     return [f for f, t in R.tracks().items() if want is None or want & set(t.get("moods", []))]
 
 
-def concept_id(day: dt.date) -> str:
-    return "m" + day.strftime("%y%m%d")
+def concept_id(day: dt.date, slot: str = "a") -> str:
+    return "m" + day.strftime("%y%m%d") + ("" if slot == "a" else slot)
 
 
-def seed_of(day: dt.date) -> int:
-    return int(hashlib.sha1(day.isoformat().encode()).hexdigest()[:6], 16) % 90000 + 10000
+def seed_of(day: dt.date, slot: str = "a") -> int:
+    key = day.isoformat() if slot == "a" else f"{day.isoformat()}-{slot}"
+    return int(hashlib.sha1(key.encode()).hexdigest()[:6], 16) % 90000 + 10000
 
 
 def history(data_dir: str) -> list[dict]:
     """지금까지 쓴 편(data/meow 의 날짜 파일 + 레포의 견본 기획) — 오래된 것부터."""
     rows = []
-    for p in sorted(glob.glob(os.path.join(CONCEPTS, "*.json"))) + sorted(glob.glob(os.path.join(data_dir, "20??-??-??.json"))):
+    days = glob.glob(os.path.join(data_dir, "20??-??-??.json")) + glob.glob(os.path.join(data_dir, "20??-??-??-?.json"))
+    for p in sorted(glob.glob(os.path.join(CONCEPTS, "*.json"))) + sorted(days):
         try:
             d = R.load(p)
         except Exception:  # noqa: BLE001
@@ -124,27 +136,36 @@ def history(data_dir: str) -> list[dict]:
     return rows
 
 
-def yesterday_track(data_dir: str, day: dt.date) -> str | None:
-    p = os.path.join(data_dir, f"{day - dt.timedelta(days=1)}.json")
+def _track_of(data_dir: str, name: str) -> str | None:
     try:
-        cs = R.load(p).get("concepts") or []
+        cs = R.load(os.path.join(data_dir, name + ".json")).get("concepts") or []
     except Exception:  # noqa: BLE001
         return None
     return cs[0].get("track") if cs else None
 
 
-def user_message(day: dt.date, data_dir: str) -> str:
-    fmt = fmt_of(day)
+def avoid_tracks(data_dir: str, day: dt.date, slot: str = "a") -> list[str]:
+    """쓰면 안 되는 곡 = 어제 같은 편의 곡 + 오늘 앞 편들의 곡(하루 세 편이 같은 음악으로 들리지 않게)."""
+    names = [doc_name(day - dt.timedelta(days=1), slot)] + [doc_name(day, s) for s in SLOTS[:SLOTS.index(slot)]]
+    return [t for t in dict.fromkeys(_track_of(data_dir, n) for n in names) if t]
+
+
+def user_message(day: dt.date, data_dir: str, slot: str = "a") -> str:
+    fmt = fmt_of(day, slot)
     hist = history(data_dir)
-    recent = [h for h in hist if h["date"] and h["date"] < day.isoformat()][-7:]
+    recent = [h for h in hist if h["date"] and h["date"] < day.isoformat()][-10:]
+    today = [h for h in hist if h["date"] == day.isoformat()]
     tr = R.tracks()
-    yt = yesterday_track(data_dir, day)
+    av = avoid_tracks(data_dir, day, slot)
     return "\n".join([
-        f"# Today (KST) {day.isoformat()} ({day.strftime('%A')}) — format: {fmt}", FORMAT_INFO[fmt], "",
+        f"# Today (KST) {day.isoformat()} ({day.strftime('%A')}) — Short {slot} of {len(SLOTS)} — format: {fmt}",
+        FORMAT_INFO[fmt], "",
         "## Allowed tracks today (file — title — moods)",
         *[f"- {f} — {tr[f]['title']} — {', '.join(tr[f].get('moods', []))}" for f in tracks_for(fmt)],
-        f"Yesterday's track (do not use): {yt or '(none)'}",
+        f"Tracks already used (do not use): {', '.join(av) or '(none)'}",
         "\n## Example (schema: copy the keys, not the idea)\n" + json.dumps(R.load(EXAMPLE)["concept"], ensure_ascii=False),
+        "\n## Today's other Shorts (make this one clearly different: another cat, setting and idea)",
+        *([f"- {h['format']} · {h['title']} · {h['track']} · {h['cat']}" for h in today] or ["- (none yet)"]),
         "\n## Recent days (vary the cat, the setting and the music)",
         *[f"- {h['date']} {h['format']} · {h['title']} · {h['track']} · {h['cat']}" for h in recent],
         "\n## Used ideas (off limits: slug / title)",
@@ -168,18 +189,18 @@ def norm(u: str) -> str:
     return re.sub(r"^http://", "https://", u).lower()
 
 
-def finalize(c: dict, day: dt.date) -> dict:
+def finalize(c: dict, day: dt.date, slot: str = "a") -> dict:
     """코드가 정하는 칸(모델이 넣어도 덮어쓴다)."""
     c = dict(c)
-    c.update({"id": concept_id(day), "format": fmt_of(day), "engine": "14b", "seed": seed_of(day)})
+    c.update({"id": concept_id(day, slot), "format": fmt_of(day, slot), "engine": "14b", "seed": seed_of(day, slot)})
     return c
 
 
-def check(c: dict, day: dt.date, data_dir: str, seen: set) -> list[str]:
+def check(c: dict, day: dt.date, data_dir: str, seen: set, slot: str = "a") -> list[str]:
     errs = R.check_concept(c)
     if errs:
         return errs
-    fmt, sh = fmt_of(day), c["shots"]
+    fmt, sh = fmt_of(day, slot), c["shots"]
     if len(sh) != 2:
         errs.append("컷은 정확히 2개(5초 + 5초)")
     else:
@@ -194,8 +215,8 @@ def check(c: dict, day: dt.date, data_dir: str, seen: set) -> list[str]:
             errs.append("morph 는 shots[1] 에 xfade(0.6)")
     if c["track"] not in tracks_for(fmt):
         errs.append(f"track 은 오늘({fmt}) 허용 곡 중 하나: {tracks_for(fmt)}")
-    if c["track"] == yesterday_track(data_dir, day):
-        errs.append("track 이 어제와 같다")
+    if c["track"] in avoid_tracks(data_dir, day, slot):
+        errs.append("track 이 어제 같은 편이나 오늘 앞 편과 같다")
     if len(c["caption"]) > 40:
         errs.append(f"caption {len(c['caption'])}자 > 40")
     if len(c["title"]) > 70 or "#" in c["title"]:
@@ -278,14 +299,15 @@ def _save(path: str, obj: dict) -> None:
         json.dump(obj, f, ensure_ascii=False, indent=1)
 
 
-def write(day: dt.date, data_dir: str, client=None) -> dict:
+def write(day: dt.date, data_dir: str, client=None, slot: str = "a") -> dict:
     os.makedirs(data_dir, exist_ok=True)
     tok = {"input": 0, "cache_write": 0, "cache_read": 0, "output": 0, "web_search": 0, "web_fetch": 0}
-    info = {"date": day.isoformat(), "format": fmt_of(day), "model": MODEL, "effort": EFFORT, "tokens": tok}
+    info = {"date": day.isoformat(), "slot": slot, "format": fmt_of(day, slot), "model": MODEL, "effort": EFFORT,
+            "tokens": tok}
     if client is None:
         import anthropic
         client = anthropic.Anthropic()
-    messages = [{"role": "user", "content": [{"type": "text", "text": user_message(day, data_dir),
+    messages = [{"role": "user", "content": [{"type": "text", "text": user_message(day, data_dir, slot),
                                               "cache_control": {"type": "ephemeral"}}]}]
     seen: set = set()
     errs: list[str] = []
@@ -295,8 +317,8 @@ def write(day: dt.date, data_dir: str, client=None) -> dict:
     for n in range(1, TRIES + 1):
         text = ask(client, messages, tok, seen)
         try:
-            concept = finalize(parse(text), day)
-            errs = check(concept, day, data_dir, seen)
+            concept = finalize(parse(text), day, slot)
+            errs = check(concept, day, data_dir, seen, slot)
         except (ValueError, KeyError, TypeError, AttributeError) as e:
             errs = [f"출력을 읽을 수 없다: {e}"]
         history_.append(errs)
@@ -312,13 +334,13 @@ def write(day: dt.date, data_dir: str, client=None) -> dict:
         doc = {"date": day.isoformat(), "skip": "검사 실패: " + " | ".join(errs)[:800], "concepts": []}
     else:
         doc = {"date": day.isoformat(), "concepts": [concept]}
-    _save(os.path.join(data_dir, f"{day.isoformat()}.json"), doc)
+    _save(os.path.join(data_dir, doc_name(day, slot) + ".json"), doc)
     pi, po, pc = PRICE.get(MODEL, PRICE["claude-opus-5-5"])
     usd = (tok["input"] * pi + tok["cache_write"] * pi * 1.25 + tok["cache_read"] * pc + tok["output"] * po) / 1e6 \
         + tok["web_search"] * SEARCH_USD
     info.update({"ok": not errs, "tries": n, "usd": round(usd, 3), "errors": errs, "history": history_,
                  "slug": (concept or {}).get("slug") if not errs else None})
-    _save(os.path.join(data_dir, f"{day.isoformat()}_api.json"), info)
+    _save(os.path.join(data_dir, doc_name(day, slot) + "_api.json"), info)
     return info
 
 
@@ -328,17 +350,19 @@ def main() -> int:
     w = sub.add_parser("write")
     w.add_argument("--day", required=True)
     w.add_argument("--dir", required=True)
+    w.add_argument("--slot", default="a", choices=SLOTS)
     p = sub.add_parser("prompt")                      # API 없이 모델에게 갈 글만 본다
     p.add_argument("--day", required=True)
     p.add_argument("--dir", required=True)
+    p.add_argument("--slot", default="a", choices=SLOTS)
     a = ap.parse_args()
     day = dt.date.fromisoformat(a.day)
     if a.cmd == "prompt":
-        print(WRITER + "\n\n=====\n" + user_message(day, a.dir))
+        print(WRITER + "\n\n=====\n" + user_message(day, a.dir, a.slot))
         return 0
-    info = write(day, a.dir)
+    info = write(day, a.dir, slot=a.slot)
     t = info["tokens"]
-    print(f"🐱 {info['model']} · {info['date']} {info['format']} · 시도 {info['tries']} · 검색 {t['web_search']} · "
+    print(f"🐱 {info['model']} · {info['date']} 편 {a.slot} {info['format']} · 시도 {info['tries']} · 검색 {t['web_search']} · "
           f"읽기 {t['web_fetch']} · 출력 {t['output']:,} 토큰 · 약 {info['usd']}달러 · {info.get('slug') or '건너뜀'}")
     return 0                       # 검사 실패도 그날 skip 으로 남겼다 — 같은 날 다시 돌며 돈을 쓰지 않게 올리기까지 간다
 

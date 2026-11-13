@@ -476,37 +476,44 @@ import types  # noqa: E402
 
 import plan_api as PA  # noqa: E402
 
-ck("꼴은 요일로(11/9 월 변신 · 11/10 화 밈 · 11/11 수 춤 · 11/13 금 게임)",
-   [PA.fmt_of(dt.date(2026, 11, d)) for d in (9, 10, 11, 13)] == ["morph", "meme", "dance", "game"])
+_wk = [dt.date(2026, 11, d) for d in range(9, 16)]
+ck("하루 세 편: 편 a 는 매일 변신 · b·c 는 밈·춤·게임을 요일로 — 하루 세 편이 다 다른 꼴",
+   [PA.fmt_of(d) for d in _wk] == ["morph"] * 7 and all(len({PA.fmt_of(d, x) for x in PA.SLOTS}) == 3 for d in _wk)
+   and {PA.fmt_of(d, x) for d in _wk for x in "bc"} == set(PA.ROTATION), str([[PA.fmt_of(d, x) for x in PA.SLOTS] for d in _wk]))
+ck("파일·id: 편 a 는 예전 그대로(<날짜>.json · m261110) · b·c 는 -b·-c",
+   PA.doc_name(dt.date(2026, 11, 10)) == "2026-11-10" and PA.doc_name(dt.date(2026, 11, 10), "c") == "2026-11-10-c"
+   and PA.concept_id(dt.date(2026, 11, 10), "b") == "m261110b"
+   and len({PA.seed_of(dt.date(2026, 11, 10), x) for x in PA.SLOTS}) == 3)
 ck("변신 날 음악은 cute·morph 곡만 · 밈 날은 전부", "funkorama.mp3" not in PA.tracks_for("morph")
    and "fluffing-a-duck.mp3" in PA.tracks_for("morph") and set(PA.tracks_for("meme")) == set(T))
 ck("id·seed 는 날짜로(다시 돌려도 같다)", PA.concept_id(dt.date(2026, 11, 10)) == "m261110"
    and PA.seed_of(dt.date(2026, 11, 10)) == PA.seed_of(dt.date(2026, 11, 10)) and 10000 <= PA.seed_of(dt.date(2026, 11, 10)) < 100000)
 pdir = tempfile.mkdtemp()
 ex = R.load(PA.EXAMPLE)["concept"]
-tue, mon = dt.date(2026, 11, 10), dt.date(2026, 11, 9)
+tue, mon = dt.date(2026, 11, 12), dt.date(2026, 11, 9)      # 이름은 예전 그대로 — tue = 11/12(목) 편 b = 밈
+SB = "b"
 fresh = {**copy.deepcopy(ex), "slug": "kitten-first-umbrella", "title": "Kitten Meets Her First Umbrella ☔🐱"}
-good = PA.finalize(fresh, tue)
+good = PA.finalize(fresh, tue, SB)
 ck("예시를 새 소재로 바꾼 편은 매일판 검사 통과 · 코드가 id·꼴·engine·seed 를 넣는다",
-   PA.check(good, tue, pdir, set()) == [] and good["id"] == "m261110" and good["format"] == "meme" and good["engine"] == "14b",
-   str(PA.check(good, tue, pdir, set())))
-ck("예시 그대로(이미 쓴 소재)는 막는다", any("이미 쓴" in x for x in PA.check(PA.finalize(ex, tue), tue, pdir, set())))
+   PA.check(good, tue, pdir, set(), SB) == [] and good["id"] == "m261112b" and good["format"] == "meme"
+   and good["engine"] == "14b", str(PA.check(good, tue, pdir, set(), SB)))
+ck("예시 그대로(이미 쓴 소재)는 막는다", any("이미 쓴" in x for x in PA.check(PA.finalize(ex, tue, SB), tue, pdir, set(), SB)))
 
 
-def errs_of(day=tue, seen=frozenset(), **kw):
+def errs_of(day=tue, seen=frozenset(), slot=SB, **kw):
     c = copy.deepcopy(good)
     for k, v in kw.items():
         if k == "shot2":
             c["shots"][1] = v
         else:
             c[k] = v
-    return " ".join(PA.check(PA.finalize(c, day), day, pdir, set(seen)))
+    return " ".join(PA.check(PA.finalize(c, day, slot), day, pdir, set(seen), slot))
 
 
 s2 = good["shots"][1]
 ck("2컷째가 image 면 막는다(같은 고양이 = edit)", "edit" in errs_of(shot2={"image": "a kitten in snow", "motion": s2["motion"]}))
 ck("edit 는 'Keep exactly the same' 로 시작", "Keep exactly" in errs_of(shot2={**s2, "edit": "Move the kitten outside."}))
-ck("변신 날 춤 곡은 막는다", "허용 곡" in errs_of(day=mon, track="funkorama.mp3"))
+ck("변신 편(a)에 춤 곡은 막는다", "허용 곡" in errs_of(day=mon, slot="a", track="funkorama.mp3"))
 _e = errs_of(caption="This caption is definitely far too long ok")
 ck("자막 40자·두 줄 넘으면 막는다", "caption" in _e or "자막" in _e, _e)
 ck("ko_line 은 한국어", "ko_line" in errs_of(ko_line="first snow"))
@@ -514,14 +521,14 @@ ck("hashtags 에 #cat 없으면 막는다", "hashtags" in errs_of(hashtags=["#�
 ev = {"why_now": "x", "pattern": "y", "evidence": [{"title": "t", "url": "https://example.com/a"}]}
 ck("검색에 없던 근거 주소는 막는다 · 검색에 나온 주소는 된다", "evidence" in errs_of(trend=ev)
    and "evidence" not in errs_of(trend=ev, seen={"https://example.com/a"}))
-with open(os.path.join(pdir, "2026-11-09.json"), "w", encoding="utf-8") as fh:
-    json.dump({"date": "2026-11-09", "concepts": [{**good, "slug": "yday", "title": "Y", "track": "investigations.mp3"}]}, fh)
-ck("어제와 같은 곡은 막는다", "어제" in errs_of(track="investigations.mp3"))
-ck("어제 편 소재는 '이미 쓴' 목록에 들어간다", any(h["slug"] == "yday" for h in PA.history(pdir)))
-um = PA.user_message(tue, pdir)
-ck("모델에게 가는 글 = 오늘 꼴·허용 곡·어제 곡·예시·이미 쓴 소재", "format: meme" in um
-   and "Yesterday's track (do not use): investigations.mp3" in um and "first-snow-kitten" in um
-   and '"edit": "Keep exactly the same' in um)
+with open(os.path.join(pdir, "2026-11-11-b.json"), "w", encoding="utf-8") as fh:
+    json.dump({"date": "2026-11-11", "concepts": [{**good, "slug": "yday", "title": "Y", "track": "investigations.mp3"}]}, fh)
+ck("어제 같은 편(b)과 같은 곡은 막는다", "어제" in errs_of(track="investigations.mp3"))
+ck("어제 편 b 소재도 '이미 쓴' 목록에 들어간다", any(h["slug"] == "yday" for h in PA.history(pdir)))
+um = PA.user_message(tue, pdir, SB)
+ck("모델에게 가는 글 = 오늘 꼴·허용 곡·쓴 곡·예시·이미 쓴 소재", "format: meme" in um and "Short b of 3" in um
+   and "Tracks already used (do not use): investigations.mp3" in um and "first-snow-kitten" in um
+   and '"edit": "Keep exactly the same' in um, um[:300])
 
 
 class _Msg:
@@ -559,11 +566,15 @@ class _Client:
 out_c = {k: v for k, v in good.items() if k not in ("id", "format", "engine", "seed")}
 out_c["track"] = "merry-go.mp3"
 fc = _Client(["not json", json.dumps(out_c, ensure_ascii=False)])
-info = PA.write(tue, pdir, client=fc)
-saved = R.load(os.path.join(pdir, "2026-11-10.json"))
-ck("API: 읽기 실패면 오류를 붙여 다시 → 통과한 편을 저장(render.py 가 읽는 모양)", info["ok"] and info["tries"] == 2
-   and saved["concepts"][0]["id"] == "m261110" and R.check(saved) == [] and "code checks failed" in str(fc.calls[1]["messages"][-1])
-   and os.path.exists(os.path.join(pdir, "2026-11-10_api.json")) and info["usd"] > 0, str(info))
+info = PA.write(tue, pdir, client=fc, slot=SB)
+saved = R.load(os.path.join(pdir, "2026-11-12-b.json"))
+ck("API: 읽기 실패면 오류를 붙여 다시 → 통과한 편을 저장(render.py 가 읽는 모양) · 편 b 는 -b 파일", info["ok"] and info["tries"] == 2
+   and saved["concepts"][0]["id"] == "m261112b" and R.check(saved) == [] and "code checks failed" in str(fc.calls[1]["messages"][-1])
+   and os.path.exists(os.path.join(pdir, "2026-11-12-b_api.json")) and info["usd"] > 0, str(info))
+um_c = PA.user_message(tue, pdir, "c")
+ck("편 c 는 오늘 앞 편(b)의 곡을 못 쓰고 그 편을 보고 다르게 쓴다", "merry-go.mp3" in PA.avoid_tracks(pdir, tue, "c")
+   and "Kitten Meets Her First Umbrella" in um_c.split("## Today's other Shorts")[1].split("##")[0]
+   and "앞 편" in errs_of(slot="c", track="merry-go.mp3"))
 ck("API: 웹 검색·읽기 도구 · effort 설정", {t["name"] for t in fc.calls[0]["tools"]} == {"web_search", "web_fetch"}
    and fc.calls[0]["extra_body"]["output_config"]["effort"] == PA.EFFORT)
 info = PA.write(dt.date(2026, 11, 12), pdir, client=_Client(["x", "y", "z"]))
@@ -573,6 +584,39 @@ ck("API: 세 번 다 못 넘으면 그날은 skip(틀린 편을 만들지 않는
 ck("매일판 인스타 캡션 = 한국어·영어 한 줄 · 해시태그 · 음악 credit · AI 표시 · 2200자 안 / 쓰레드 500자 안",
    all(x in P.ig_caption(good) for x in (good["ko_line"], good["en_line"], "#cat", "CC BY 4.0", "AI"))
    and len(P.ig_caption(good)) <= 2200 and len(P.threads_text(good)) <= 500 and "Kevin MacLeod" in P.threads_text(good))
+
+# ── 조용한 시간이 곧 끝나면 기다렸다 바로(06~07시에 시작한 실행) ──
+_kst = lambda h, m: dt.datetime(2026, 11, 13, h, m, tzinfo=R.KST)  # noqa: E731
+_slept, _stub = [], R.quiet_hours
+R.quiet_hours = REAL_QUIET
+ck("06:30 에 시작하면 08:00 까지(약 90분) 기다렸다 바로 시작",
+   R.wait_quiet(120, _kst(6, 30), sleep=_slept.append) is True and 5400 <= _slept[-1] <= 5460, str(_slept))
+ck("조용한 시간이 아니면(09:00) · 너무 오래 남았으면(05:30 → 150분) 기다리지 않는다",
+   R.wait_quiet(120, _kst(9, 0), sleep=_slept.append) is False and R.wait_quiet(120, _kst(5, 30), sleep=_slept.append) is False
+   and len(_slept) == 1)
+R.quiet_hours = _stub
+
+# ── 인스타·쓰레드에 올릴 편 고르기(post.py pick) — 11/11~13 0편 사고 ──
+qdir = tempfile.mkdtemp()
+for _d, _id, _sl in (("2026-11-11", "m261111", "pepero"), ("2026-11-12", "m261112", "buns"), ("2026-11-13", "m261113", "chess")):
+    with open(os.path.join(qdir, f"{_d}.json"), "w", encoding="utf-8") as fh:
+        json.dump({"date": _d, "concepts": [{**good, "id": _id, "slug": _sl}]}, fh)
+with open(os.path.join(qdir, "2026-11-13-b.json"), "w", encoding="utf-8") as fh:
+    json.dump({"date": "2026-11-13", "concepts": [{**good, "id": "m261113b", "slug": "bee"}]}, fh)
+_now = dt.datetime(2026, 11, 13, 4, 0, tzinfo=dt.timezone.utc)          # 13:00 KST
+_p, _why = P.pick(qdir, {}, now=_now)
+ck("날짜가 넘어가도 최근 3일 편 a 중 안 올린 것을 새것부터(편 b·c 는 유튜브만)",
+   _p and _p.endswith("2026-11-13.json"), f"{_p} {_why}")
+_p, _ = P.pick(qdir, {}, now=_now, has_out=lambda st: st != "m261113_chess")
+ck("오늘 편 완성본이 아직 없으면 놓친 어제 편부터 따라잡는다", _p and _p.endswith("2026-11-12.json"), str(_p))
+_led = {"m261113_chess": {"ig": "1", "threads": "2", "at": "2026-11-13T02:30:00Z"}}
+ck("마지막 게시 뒤 3시간 안이면 쉰다(몰아 올리지 않게)", P.pick(qdir, _led, now=_now)[0] is None)
+_p, _ = P.pick(qdir, _led, now=_now + dt.timedelta(hours=2))
+ck("3시간 지나면 다음 안 올린 편(어제 것)", _p and _p.endswith("2026-11-12.json"), str(_p))
+ck("최근 3일 밖(11/16 에 11/13 이전)은 고르지 않는다",
+   P.pick(qdir, {}, now=dt.datetime(2026, 11, 16, 4, 0, tzinfo=dt.timezone.utc))[0] is None)
+ck("인스타만 올라가고 쓰레드가 실패한 편은 다시 고른다(쓰레드만 마저)",
+   (P.pick(qdir, {"m261113_chess": {"ig": "1"}}, now=_now)[0] or "").endswith("2026-11-13.json"))
 
 # ── 매일판 공개 시각 · 다른 채널 막기 ──
 utc = dt.timezone.utc
