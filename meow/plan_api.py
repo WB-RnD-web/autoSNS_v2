@@ -11,6 +11,8 @@
   파일은 a = <날짜>.json(예전 그대로) · b = <날짜>-b.json · c = <날짜>-c.json …
 ★11/14 하루 최대 12편(사용자 "API 크레딧 월 160~180달러 정도 쓰게"): 편 a~l. 실제 편 수는 워크플로 변수 MEOW_SLOTS.
   b 부터는 밈·춤·게임·변신을 요일로 돌린다. 꼴마다 곡이 3~10곡뿐이라 겹침 규칙은 오래된 것부터 풀고 바로 앞 편과는 끝까지 다르게.
+★11/14 틀 자동 조정(tuner.py): 기획 폴더에 mix.json 이 있으면 꼴은 그 비율대로(편 a = 비율이 가장 큰 꼴) · 미리 보기
+  켬/끔(concept "tease")도 코드가 정한다. 없거나 MEOW_AUTOTUNE=0 이면 위의 예전 방식.
 
     python meow/plan_api.py write --day 2026-11-10 --dir /tmp/data-meow [--slot b]
 """
@@ -29,6 +31,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import render as R  # noqa: E402
 import analyst as AN  # noqa: E402 — 분석 담당(11/14): 새 채널 최근 쇼츠 성적
+import tuner as TU  # noqa: E402 — ★11/14 틀 자동 조정: 꼴 비율·미리 보기 켬/끔(mix.json)
 
 MODEL = os.environ.get("MEOW_PLAN_MODEL", "claude-opus-5-5")
 EFFORT = os.environ.get("MEOW_PLAN_EFFORT", "high")
@@ -57,7 +60,7 @@ MOODS_BY_FORMAT = {"morph": {"cute", "morph"}, "dance": {"dance", "cool"}, "meme
 EXAMPLE = os.path.join(HERE, "example_daily.json")
 CONCEPTS = os.path.join(HERE, "concepts")
 
-WRITER = """You plan one of today's YouTube Shorts for "Meow Remix" (@MeowRemixCats): photorealistic AI cat videos with
+WRITER = """You plan one of today's YouTube Shorts for "Meow Remix TV" (@meowremixtv): photorealistic AI cat videos with
 music only (no voice, no script). Each Short is two 5-second shots (about 10 seconds): an image model draws shot 1, an
 image-edit model makes shot 2 from the shot 1 picture (so it stays the same cat), and an image-to-video model animates each.
 
@@ -100,7 +103,11 @@ URLs only from your searches. Do not set id, format, engine or seed. If the code
 whole JSON again."""
 
 
-def fmt_of(day: dt.date, slot: str = "a") -> str:
+def fmt_of(day: dt.date, slot: str = "a", data_dir: str | None = None) -> str:
+    """★11/14 기획 폴더에 mix.json(틀 자동 조정)이 있으면 그 비율대로 · 없거나 MEOW_AUTOTUNE=0 이면 예전(a 변신 · 요일 순환)."""
+    p = TU.plan_for(data_dir, day, slot, SLOTS)
+    if p:
+        return p["format"]
     i = SLOTS.index(slot)
     return "morph" if i == 0 else CYCLE[(day.weekday() + i - 1) % len(CYCLE)]
 
@@ -154,14 +161,14 @@ def avoid_tracks(data_dir: str, day: dt.date, slot: str = "a") -> list[str]:
     names = [doc_name(day - dt.timedelta(days=1), slot)] + [doc_name(day, s) for s in SLOTS[:SLOTS.index(slot)]]
     raw = [t for t in (_track_of(data_dir, n) for n in names) if t]
     out = list(dict.fromkeys(reversed(raw)))[::-1]        # 겹치면 가장 최근 자리만 남긴다(오래된 → 최근)
-    allowed = set(tracks_for(fmt_of(day, slot)))
+    allowed = set(tracks_for(fmt_of(day, slot, data_dir)))
     while len(out) > 1 and not (allowed - set(out)):
         out.pop(0)
     return out
 
 
 def user_message(day: dt.date, data_dir: str, slot: str = "a") -> str:
-    fmt = fmt_of(day, slot)
+    fmt = fmt_of(day, slot, data_dir)
     hist = history(data_dir)
     recent = [h for h in hist if h["date"] and h["date"] < day.isoformat()][-10:]
     today = [h for h in hist if h["date"] == day.isoformat()]
@@ -200,10 +207,14 @@ def norm(u: str) -> str:
     return re.sub(r"^http://", "https://", u).lower()
 
 
-def finalize(c: dict, day: dt.date, slot: str = "a") -> dict:
-    """코드가 정하는 칸(모델이 넣어도 덮어쓴다)."""
+def finalize(c: dict, day: dt.date, slot: str = "a", data_dir: str | None = None) -> dict:
+    """코드가 정하는 칸(모델이 넣어도 덮어쓴다) — ★11/14 틀 자동 조정이 켜져 있으면 tease(미리 보기 A/B)도 코드가 정한다."""
     c = dict(c)
-    c.update({"id": concept_id(day, slot), "format": fmt_of(day, slot), "engine": "14b", "seed": seed_of(day, slot)})
+    c.pop("tease", None)
+    c.update({"id": concept_id(day, slot), "format": fmt_of(day, slot, data_dir), "engine": "14b", "seed": seed_of(day, slot)})
+    p = TU.plan_for(data_dir, day, slot, SLOTS)
+    if p:
+        c["tease"] = p["tease"]
     return c
 
 
@@ -211,7 +222,7 @@ def check(c: dict, day: dt.date, data_dir: str, seen: set, slot: str = "a") -> l
     errs = R.check_concept(c)
     if errs:
         return errs
-    fmt, sh = fmt_of(day, slot), c["shots"]
+    fmt, sh = fmt_of(day, slot, data_dir), c["shots"]
     if len(sh) != 2:
         errs.append("컷은 정확히 2개(5초 + 5초)")
     else:
@@ -313,7 +324,7 @@ def _save(path: str, obj: dict) -> None:
 def write(day: dt.date, data_dir: str, client=None, slot: str = "a") -> dict:
     os.makedirs(data_dir, exist_ok=True)
     tok = {"input": 0, "cache_write": 0, "cache_read": 0, "output": 0, "web_search": 0, "web_fetch": 0}
-    info = {"date": day.isoformat(), "slot": slot, "format": fmt_of(day, slot), "model": MODEL, "effort": EFFORT,
+    info = {"date": day.isoformat(), "slot": slot, "format": fmt_of(day, slot, data_dir), "model": MODEL, "effort": EFFORT,
             "tokens": tok}
     if client is None:
         import anthropic
@@ -328,7 +339,7 @@ def write(day: dt.date, data_dir: str, client=None, slot: str = "a") -> dict:
     for n in range(1, TRIES + 1):
         text = ask(client, messages, tok, seen)
         try:
-            concept = finalize(parse(text), day, slot)
+            concept = finalize(parse(text), day, slot, data_dir)
             errs = check(concept, day, data_dir, seen, slot)
         except (ValueError, KeyError, TypeError, AttributeError) as e:
             errs = [f"출력을 읽을 수 없다: {e}"]
