@@ -158,9 +158,19 @@ _others = [n for n, t in flows.items() if n not in WRITERS
                 and not ln.strip().startswith("#")]]
 # orphan-rescue.yml 은 예외 — GITHUB_TOKEN 은 읽기 권한이고, 미아 산출물을 PAT 으로 routine/* 에 되돌린다(그게 할 일이다).
 # ★2026-11-07 wb-triggers.yml · lf27-api.yml — 옛 클라우드 루틴이 하던 routine/* push 를 옮겼다(GITHUB_TOKEN 은 읽기, push 는 PAT).
-PAT_PUSHERS = {"orphan-rescue.yml", "wb-triggers.yml", "lf27-api.yml"}
-ck("그 밖에 git push 하는 워크플로는 PAT 으로 routine/* 에 미는 셋뿐(되돌리기·표 트리거·롱폼 API)",
+# ★2026-11-14 refill-api.yml — 옛 채우기 루틴이 하던 refill/<줄기>-<날짜> push 를 옮겼다(PR 은 refill-pr.yml 이 연다).
+PAT_PUSHERS = {"orphan-rescue.yml", "wb-triggers.yml", "lf27-api.yml", "refill-api.yml"}
+ck("그 밖에 git push 하는 워크플로는 PAT 으로 미는 넷뿐(되돌리기·표 트리거·롱폼 API → routine/* · 채우기 API → refill/*)",
    sorted(_others) == sorted(PAT_PUSHERS), str(_others))
+_ra = flows.get("refill-api.yml", "")
+_rp_l = [ln for ln in _ra.splitlines() if re.search(r"\bgit\b.*\spush\b", ln.split(" #")[0]) and not ln.strip().startswith("#")]
+ck("…refill-api.yml: 읽기 권한 · push 는 PAT 으로 refill/<줄기>-<날짜> 하나만(routine/*·main X · 강제 X) · "
+   "API 키는 쓰기 단계에만 · 열린 채우기 PR 이 있으면 쉰다 · 끄기 변수",
+   re.search(r"(?m)^\s*contents:\s*read", _ra) is not None and "contents: write" not in _ra and "secrets.GH_PAT" in _ra
+   and len(_rp_l) == 1 and '"$BRANCH"' in _rp_l[0] and 'case "$BRANCH" in refill/*)' in _ra
+   and "routine/" not in _ra and all("main" not in ln and "-f" not in ln.split() and "--force" not in ln for ln in _rp_l)
+   and _ra.count("secrets.ANTHROPIC_API_KEY") == 1 and "tools/refill_api.py fill" in _ra and "gh pr list" in _ra
+   and "vars.REFILL_API" in _ra and trig.get("refill-api.yml") is None, str(_rp_l))
 for _wf in ("wb-triggers.yml", "lf27-api.yml"):
     _t = flows.get(_wf, "")
     _p = [ln for ln in _t.splitlines() if re.search(r"\bgit\b.*\spush\b", ln.split(" #")[0]) and not ln.strip().startswith("#")]
