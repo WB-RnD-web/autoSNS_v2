@@ -1,0 +1,285 @@
+{
+ "date": "2026-11-14",
+ "hot": [
+  {
+   "topic": "2027학년도 수능(11/19 목) 바로 앞 — 수험생 집안의 응원·마음 쓰임",
+   "market": "kr",
+   "where": "기사(지역 교육청 보도·수능 안내 글)",
+   "evidence": [
+    {
+     "title": "대구지역 2027학년도 수능 19일 일제히 치러져…51개 시험장 921개 시험실 '실시'",
+     "url": "https://www.mhns.co.kr/news/articleView.html?idxno=768958",
+     "date": "2026-11-14"
+    },
+    {
+     "title": "2026 수능 날짜 혼동 해결｜2027학년도 11월 19일 시험·입실시간·준비물 확인",
+     "url": "https://www.make2t.kr/2026/11/2026-2027-csat-date-guide.html",
+     "date": "2026-11-09"
+    }
+   ],
+   "why_now": "수능이 5일 뒤(11/19)라 이번 주 기사가 몰린다. 해마다 이맘때 반복되는 행사다.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "손주가 수능을 보는 어르신을 위한 '띠별 응원 한마디 표'. 합격 예언은 하지 않는다."
+  },
+  {
+   "topic": "올해 김장 언제 하나 — 지역별 김장 적기, 입동 김장 풍속",
+   "market": "kr",
+   "where": "기사(생활정보), 지역 김장 나눔 행사 기사",
+   "evidence": [
+    {
+     "title": "올해 김장 시기 언제?…'지역별' 김장 담그면 좋을 시점, 한눈에 정리",
+     "url": "https://www.wikitree.co.kr/articles/1174354",
+     "date": "2026-11-14"
+    },
+    {
+     "title": "[비건뉴스] 입동 김장과 겨울채비…옛 금기는 지역마다 달랐다",
+     "url": "https://www.vegannews.co.kr/news/article.html?no=401613",
+     "date": "2026-11-08"
+    }
+   ],
+   "why_now": "입동(11/7)이 지났고 김장철이 시작됐다. 트렌드 레이더에서도 사연 쇼츠 '김장 배추 100포기'가 40.9배를 냈다. 해마다 돌아오는 철 주제다.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "'12월 김장 날 잡기 — 띠별로 보는 좋은 날' 표. 일진은 명리로 풀고, 날씨 적기는 기상청 기준을 함께 단다."
+  },
+  {
+   "topic": "사자자리 유성우 11/17 밤~18 새벽 극대",
+   "market": "kr",
+   "where": "기사(과학·생활)",
+   "evidence": [
+    {
+     "title": "[비건뉴스] 사자자리 유성우 18일 극대…관측은 해 뜨기 전",
+     "url": "https://www.vegannews.co.kr/news/article.html?no=402465",
+     "date": "2026-11-10"
+    },
+    {
+     "title": "사자자리 유성우 극대기 관측 시기 '이 시간'이 골든타임 이라고?",
+     "url": "https://www.gukjenews.com/news/articleView.html?idxno=3746252",
+     "date": "2026-11-09"
+    }
+   ],
+   "why_now": "3일 뒤가 극대라 관측 안내 기사가 막 나오고 있다. 공개 시점이 11/17 이전이어야 의미가 있다.",
+   "fit": [
+    "insta_sci"
+   ],
+   "idea": "'별똥별 하나를 열어 보면' — 혜성이 흘린 부스러기가 대기에 부딪혀 빛나는 과정을 단면 그림으로."
+  },
+  {
+   "topic": "깡충거미가 사람처럼 렘수면 비슷한 잠을 잔다(PNAS)",
+   "market": "us",
+   "where": "과학 기사(ScienceDaily·Science·ABC), 여러 매체로 퍼짐",
+   "evidence": [
+    {
+     "title": "Do spiders dream? Scientists just found a surprising clue",
+     "url": "https://www.sciencedaily.com/releases/2026/10/261026225555.htm",
+     "date": "2026-10-27"
+    },
+    {
+     "title": "Scientists video REM-like sleep in Australian jumping spider species - ABC News",
+     "url": "https://www.abc.net.au/news/science/2026-10-27/jumping-spider-rem-sleep/107309370",
+     "date": "2026-10-27"
+    },
+    {
+     "title": "Do Spiders Dream? Scientists Discover Their Sleep Is Strangely Similar to Ours",
+     "url": "https://www.zmescience.com/science/news-science/do-spiders-dream/",
+     "date": "2026-10-28"
+    }
+   ],
+   "why_now": "10/26 PNAS 논문 이후 3주째 해설 기사가 이어진다. SciTechDaily 기사(약 10일 전)까지 나왔다.",
+   "fit": [
+    "insta_danger",
+    "nt_story"
+   ],
+   "idea": "'밤마다 거꾸로 매달려 눈을 파르르 떤다?' → 진짜 이유는 꿈 같은 잠일지도."
+  },
+  {
+   "topic": "속이 비치는 머리의 심해어 배럴아이, 4K 영상(MBARI)",
+   "market": "us",
+   "where": "과학 기사, 바이럴 뉴스(Yahoo·FOX Weather·인도 매체)",
+   "evidence": [
+    {
+     "title": "Rarely seen deep-sea barreleye fish filmed in 4K",
+     "url": "https://phys.org/news/2026-10-rarely-deep-sea-barreleye-fish.html",
+     "date": "2026-10-29"
+    },
+    {
+     "title": "Deep-Sea Scientists Capture Extraordinary 4K Footage of a Fish With a See-Through Head",
+     "url": "https://scitechdaily.com/deep-sea-scientists-capture-extraordinary-4k-footage-of-a-fish-with-a-see-through-head/",
+     "date": "2026-11-11"
+    }
+   ],
+   "why_now": "MBARI가 약 40년 동안 11번째로 만난 장면이다. 공개 2주가 지났는데도 재보도가 계속된다(Yahoo 11/13).",
+   "fit": [
+    "insta_sci",
+    "insta_worker"
+   ],
+   "idea": "배럴아이는 이미 쓴 소재(invisible-in-meeting-barreleye)라 새 편은 만들지 않는다. 심해 줄기가 지금 관심을 받는다는 신호로만 본다."
+  },
+  {
+   "topic": "호주 숲에서 6일간 길을 잃었다 구조된 17세",
+   "market": "us",
+   "where": "바이럴 뉴스(AOL·Bored Panda·LADbible), 경찰 헬기 영상",
+   "evidence": [
+    {
+     "title": "Boy found alive after 6 days lost in wilderness: \"Grounded for life\"",
+     "url": "https://www.aol.com/articles/boy-found-alive-6-days-115235000.html",
+     "date": "2026-11-12"
+    },
+    {
+     "title": "Police helicopter captures moment missing 17-year-old in found after six days in bushland",
+     "url": "https://www.ladbible.com/news/world-news/australia-victoria-missing-teen-rescued-six-days-bushland-camping-trip-157029-20261112",
+     "date": "2026-11-12"
+    }
+   ],
+   "why_now": "11/12 구조된 뒤 '한자리에서 기다렸다'는 생존 요령이 화제가 됐다.",
+   "fit": [
+    "nt_story"
+   ],
+   "idea": "본인 이야기는 재연하지 않는다(미성년자·자폐 당사자). 'What if you got lost in the woods — why staying put works'처럼 일반 생존 과학 what-if로만 쓴다."
+  },
+  {
+   "topic": "NASA 스위프트 망원경, 22년 만에 대기권 재진입",
+   "market": "us",
+   "where": "우주 기사(NASA·Sky & Telescope·SatNews)",
+   "evidence": [
+    {
+     "title": "NASA's Swift Observatory Re-Entered Atmosphere - NASA Science",
+     "url": "https://science.nasa.gov/blogs/swift/2026/11/02/nasas-swift-observatory-to-re-enter-atmosphere/",
+     "date": "2026-11-04"
+    },
+    {
+     "title": "Swift Observatory Ends Mission, Reenters Earth's Atmosphere - Sky & Telescope",
+     "url": "https://skyandtelescope.org/astronomy-news/swift-observatory-ends-reenters-the-earths-atmosphere/",
+     "date": "2026-11-05"
+    }
+   ],
+   "why_now": "11/4 재진입했다. 태양 활동 극대기 때문에 대기가 부풀어 끌려 내려왔다는 사연이 '실화' 꼴에 맞는다.",
+   "fit": [
+    "nt_story",
+    "insta_sci"
+   ],
+   "idea": "'The Sun pulled a telescope out of the sky' — 얼굴 없는 3D 실화 60초."
+  }
+ ],
+ "candidates": [
+  {
+   "line": "insta_danger",
+   "title_idea": "밤마다 거꾸로 매달려 눈알이 파르르… 이 거미가 위험한 진짜 이유",
+   "facts": [
+    {
+     "fact": "독일 본 대학 연구진은 깡충거미(Portia fimbriata)가 렘수면과 비슷한 단계를 거치며, 이때 눈을 움직이고 근육을 씰룩인다는 것을 발견했다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/10/261026225555.htm"
+    },
+    {
+     "fact": "이 거미는 밤에 작은 거미줄에 거꾸로 매달린 뚜렷한 자세로 쉰다.",
+     "source_url": "https://www.abc.net.au/news/science/2026-10-27/jumping-spider-rem-sleep/107309370"
+    },
+    {
+     "fact": "거미들은 하룻밤에 약 11번, 한 번에 약 83초씩 렘 비슷한 상태에 들어갔다.",
+     "source_url": "https://www.zmescience.com/science/news-science/do-spiders-dream/"
+    },
+    {
+     "fact": "잠을 방해받은 뒤에는 렘 비슷한 잠이 평균 9.4분에서 16.9분으로 80% 가까이 늘었다.",
+     "source_url": "https://www.zmescience.com/science/news-science/do-spiders-dream/"
+    },
+    {
+     "fact": "연구진은 렘 비슷한 움직임만으로 거미가 꿈을 꾸는지는 알 수 없다고 강조했다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/10/261026225555.htm"
+    }
+   ],
+   "careful": "'거미도 꿈을 꾼다'고 단정하지 않는다. '꿈 같은 잠일지도'까지만 쓴다. 거미 공포를 키우지 말고 귀여운 쪽으로 마무리한다."
+  },
+  {
+   "line": "insta_sci",
+   "title_idea": "별똥별 하나를 열어 보면 — 11/17 밤 사자자리 유성우의 정체",
+   "facts": [
+    {
+     "fact": "2026년 사자자리 유성우는 18일 오전 8시 45분에 극대지만, 한국에서는 해가 뜬 뒤라 17일 밤~18일 새벽, 달이 진 뒤 해 뜨기 전이 관측 적기다.",
+     "source_url": "https://www.vegannews.co.kr/news/article.html?no=402465"
+    },
+    {
+     "fact": "한국천문연구원이 적은 극대 때 ZHR은 15이며, 실제로 눈에 보이는 유성 수는 이보다 적을 수 있다.",
+     "source_url": "https://www.vegannews.co.kr/news/article.html?no=402465"
+    },
+    {
+     "fact": "유성이 사자자리 쪽에서 뻗어 나오는 것처럼 보여 이런 이름이 붙었고, 올해는 11월 6일부터 30일까지 활동한다.",
+     "source_url": "https://www.gukjenews.com/news/articleView.html?idxno=3746252"
+    },
+    {
+     "fact": "사자자리 유성우는 템펠-터틀 혜성이 태양 가까이 지나가며 궤도에 남긴 잔해 때문에 생긴다.",
+     "source_url": "https://www.kasi.re.kr/kor/publication/post/newsMaterial/2046"
+    }
+   ],
+   "careful": "'별이 쏟아진다'는 과장은 쓰지 않는다(시간당 15개 안팎, 실제로는 더 적음). from 은 11/15~11/16이어야 한다. 천문연 페이지는 옛 예보 글이라 원인 설명에만 쓴다."
+  },
+  {
+   "line": "nt_story",
+   "title_idea": "The Sun Pulled a NASA Telescope Out of the Sky",
+   "facts": [
+    {
+     "fact": "NASA 스위프트 관측소는 발사 약 22년 만인 2026년 11월 4일(수) 인도네시아 북수마트라 상공에서 대기권에 재진입했다.",
+     "source_url": "https://science.nasa.gov/blogs/swift/2026/11/02/nasas-swift-observatory-to-re-enter-atmosphere/"
+    },
+    {
+     "fact": "스위프트는 망원경 3대로 우주에서 가장 강력한 폭발을 연구하도록 설계됐고, NASA는 대부분 타 버리되 일부 부품은 남았을 수 있다고 밝혔다.",
+     "source_url": "https://science.nasa.gov/blogs/swift/2026/11/02/nasas-swift-observatory-to-re-enter-atmosphere/"
+    },
+    {
+     "fact": "재진입은 11월 4일 12:39 UT(±1분)에 동남아 밤하늘에서 일어났고, 말레이시아의 목격담이 이와 잘 맞는다.",
+     "source_url": "https://skyandtelescope.org/astronomy-news/swift-observatory-ends-reenters-the-earths-atmosphere/"
+    },
+    {
+     "fact": "태양 활동 극대기에 지구 상층 대기가 부풀면서 공기 저항이 커져, 1,500kg 관측소가 600km 궤도에서 275km 아래로 끌려 내려왔다.",
+     "source_url": "https://satnews.com/2026/11/01/nasas-swift-observatory-expected-to-burn-up-in-atmospheric-reentry-following-failed-commercial-rescue/"
+    }
+   ],
+   "careful": "SatNews의 숫자(1,500kg·600km→275km)는 쓰기 전에 NASA나 위키로 한 번 더 확인한다. 잔해 피해는 단정하지 않는다."
+  },
+  {
+   "line": "wb_table",
+   "title_idea": "12월 김장 날 잡기 — 띠별로 보는 좋은 날 | 45~96년생 전부",
+   "facts": [
+    {
+     "fact": "기상청이 보는 김장 적기 조건은 일최저기온 0도 이하, 일평균기온 4도 이하다.",
+     "source_url": "https://www.wikitree.co.kr/articles/1174354"
+    },
+    {
+     "fact": "평년 김장 적기는 전주 12월 3일, 광주 12월 11일, 강릉 12월 12일, 목포 12월 25일이다.",
+     "source_url": "https://www.wikitree.co.kr/articles/1174354"
+    },
+    {
+     "fact": "2026년 김장 시기는 평년과 비슷하거나 조금 늦게 시작할 것으로 예상된다.",
+     "source_url": "https://www.wikitree.co.kr/articles/1174354"
+    },
+    {
+     "fact": "2026년 입동은 11월 7일 오후 6시 52분이었고, 경기도 의왕에는 입동날 김치를 담그거나 무·배추에 손대지 않는 지역 금기가 기록돼 있다.",
+     "source_url": "https://www.vegannews.co.kr/news/article.html?no=401613"
+    }
+   ],
+   "careful": "지역 금기를 전국 공통처럼 쓰지 않는다. 날짜는 명리 일진 풀이라고 밝히고, 날씨 적기는 기상청 기준을 따로 적는다. 겁주는 말투는 쓰지 않는다."
+  },
+  {
+   "line": "wb_table",
+   "title_idea": "수능 보는 손주 둔 띠별 응원 한마디 | 11월 19일 목요일 · 45~96년생 전부",
+   "facts": [
+    {
+     "fact": "2027학년도 수능은 2026년 11월 19일(목)에 치른다.",
+     "source_url": "https://xn--9g4b36ak8x.com/guide/suneung-2027/"
+    },
+    {
+     "fact": "수험생은 오전 8시 10분까지 입실해야 하고, 시험은 오전 8시 40분부터 오후 5시 45분까지다.",
+     "source_url": "https://www.mhns.co.kr/news/articleView.html?idxno=768958"
+    },
+    {
+     "fact": "수능 성적은 2026년 12월 11일(금)에 통지된다.",
+     "source_url": "https://xn--9g4b36ak8x.com/guide/suneung-2027/"
+    }
+   ],
+   "careful": "합격·점수는 단정하지 않는다. 어르신이 건넬 마음가짐과 응원만 다룬다. 공개는 11/16~11/18 사이."
+  }
+ ],
+ "note": "한국 쇼츠·릴스 유행 검색으로는 최근 30일 안의 근거가 거의 잡히지 않았다(대부분 오래된 글). 그래서 한국 쪽은 수능·김장·유성우 같은 철 행사가 중심이다. 영어 쪽은 거미 렘수면, 배럴아이 4K, 스위프트 재진입이 근거가 확실하다. 재고가 급한 insta_sci는 유성우 편이 11/17 전에 나가야 쓸모가 있다."
+}

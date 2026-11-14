@@ -1,0 +1,300 @@
+{
+ "date": "2026-11-12",
+ "hot": [
+  {
+   "topic": "2027학년도 수능 D-7(11/19) — 지금 수능 제도로 보는 마지막 시험이라 N수생이 크게 몰림",
+   "market": "kr",
+   "where": "언론 기사(교육·유통 기사가 한꺼번에 나옴)",
+   "evidence": [
+    {
+     "title": "수능 D-7 현행 체제 마지막 시험⋯ 새 공부보다 오답 정리 집중 - 충청타임즈",
+     "url": "http://www.cctimes.kr/news/articleView.html?idxno=936761",
+     "date": "2026-11-11"
+    },
+    {
+     "title": "수능 D-7, 아는 문제도 놓친다…'실수'부터 잡아라 - 이투데이",
+     "url": "https://www.etoday.co.kr/news/view/2647155",
+     "date": "2026-11-12"
+    },
+    {
+     "title": "\"수능 D-7 준비물 한눈에\"…광주신세계, 수험생 용품 마케팅",
+     "url": "https://view.asiae.co.kr/article/2026111114375059862",
+     "date": "2026-11-11"
+    }
+   ],
+   "why_now": "시험이 일주일 뒤(11/19)라 기사가 매일 나옴. 55세 이상 시청자에게는 손주·자녀가 수능을 보는 시기라 남의 일이 아님",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "'수능 보는 손주에게 건네는 띠별 응원 한마디' 표(합격·점수 운세는 빼고 덕담만)"
+  },
+  {
+   "topic": "사자자리 유성우 11월 17일 밤~18일 새벽 극대",
+   "market": "kr",
+   "where": "언론 과학·생활 기사(관측 시간 안내)",
+   "evidence": [
+    {
+     "title": "사자자리 유성우 극대기 관측 시기 '이 시간'이 골든타임 이라고? - 국제뉴스",
+     "url": "https://www.gukjenews.com/news/articleView.html?idxno=3746252",
+     "date": "2026-11-09"
+    },
+    {
+     "title": "[비건뉴스] 사자자리 유성우 18일 극대…관측은 해 뜨기 전",
+     "url": "https://www.vegannews.co.kr/news/article.html?no=402465",
+     "date": "2026-11-10"
+    },
+    {
+     "title": "유성우·화성·목성·슈퍼문…NASA가 꼽은 11월 밤하늘 관측 포인트 - 이코노미사이언스",
+     "url": "https://www.e-science.co.kr/news/articleView.html?idxno=138813",
+     "date": "2026-11-04"
+    }
+   ],
+   "why_now": "극대가 엿새 뒤라 관측 안내 기사가 몰리는 때. 극대 전날까지만 시의성이 있음",
+   "fit": [
+    "insta_sci"
+   ],
+   "idea": "'별똥별 속을 열어 보면' — 혜성이 흘린 먼지 알갱이가 초속 70km로 대기에 부딪혀 타는 장면 단면(11/16~17 공개)"
+  },
+  {
+   "topic": "Leonid meteor shower 2026 — peak night 17/18 Nov, no Moon glare",
+   "market": "us",
+   "where": "영어권 천문 매체·연감 사이트",
+   "evidence": [
+    {
+     "title": "One of autumn's best meteor showers is visible right now. Here's how to see it (BBC Sky at Night)",
+     "url": "https://www.skyatnightmagazine.com/advice/skills/leonid-meteor-shower-when-how-see",
+     "date": "2026-11-04"
+    },
+    {
+     "title": "Leonid Meteor Shower 2026: Peak Date, Viewing Tips, and Forecast",
+     "url": "https://www.farmersalmanac.com/when-leonid-meteor-shower",
+     "date": "2026-11-06"
+    }
+   ],
+   "why_now": "극대가 다음 주이고 올해는 극대 무렵 자정쯤 달이 져서 관측 조건이 좋다는 기사가 나옴",
+   "fit": [
+    "nt_story",
+    "insta_sci"
+   ],
+   "idea": "Nine Tails 재개 후보 what-if: 'What if a shooting star were the size of a sand grain going 70 km/s?'(45~60초 3D)"
+  },
+  {
+   "topic": "아르헨티나 심해 협곡 신종 57종 — 생중계로 유명해진 '패트릭 불가사리'는 정작 신종이 아님",
+   "market": "us",
+   "where": "영어권 과학·환경 기사, 심해 신종 소식이 이어짐",
+   "evidence": [
+    {
+     "title": "'Patrick' sea star went viral, but Argentine deep-sea canyon held 57 new species - Mongabay",
+     "url": "https://news.mongabay.com/2026/10/patrick-sea-star-went-viral-but-argentine-deep-sea-canyon-held-57-new-species/",
+     "date": "2026-10-13"
+    },
+    {
+     "title": "DNA and underwater footage reveal two new species of deep-sea siphonophores - phys.org",
+     "url": "https://phys.org/news/2026-10-dna-underwater-footage-reveal-species.html",
+     "date": "2026-10-23"
+    },
+    {
+     "title": "10 Real Species That Look Absolutely Fake - Listverse",
+     "url": "https://listverse.com/2026/11/11/10-real-species-that-look-absolutely-fake/",
+     "date": "2026-11-11"
+    }
+   ],
+   "why_now": "심해 신종 발표가 10월 중순부터 계속 나오고, '진짜 같지 않은 실제 생물' 목록 글도 어제 올라옴. Mongabay 기사는 딱 30일째라 신선도는 경계선",
+   "fit": [
+    "insta_worker",
+    "insta_sci"
+   ],
+   "idea": "심해 직장인: '회사에서 유명해졌는데 정작 본인만 모름' — 생중계 스타 불가사리 + 표본 90%는 아직 안 열어 본 미결 서류"
+  },
+  {
+   "topic": "홍해 동굴 입구에서 신종 망둑어 발견 — 이름이 '저승 뱃사공(카론)'",
+   "market": "us",
+   "where": "영어권 과학 뉴스(earth.com·Pensoft 보도자료)",
+   "evidence": [
+    {
+     "title": "Scientists found two tiny new fish species deep in the Red Sea (earth.com)",
+     "url": "https://earth.com/animals/trimma-charon-goby-red-sea-cave",
+     "date": "2026-11-10"
+    }
+   ],
+   "why_now": "이틀 전 나온 신종 기사. 무서운 이름과 손톱만 한 크기의 차이가 커서 반전형 카드에 바로 쓸 수 있음",
+   "fit": [
+    "insta_danger"
+   ],
+   "idea": "'저승 뱃사공 이름을 가진 물고기가 위험한 진짜 이유' → 꼬리에 금화 같은 점이 있어서(뱃삯 동전)"
+  },
+  {
+   "topic": "김장철 — 김장 시기·절임배추 값·김장 의향 조사",
+   "market": "kr",
+   "where": "정부·연구원 자료, 생활 블로그, 시니어 사연 쇼츠(트렌드 레이더 '김장 배추 100포기' 31.9배)",
+   "evidence": [
+    {
+     "title": "KREI Repository: 2026년 소비자 김장 의향 및 주요 채소류 공급 전망",
+     "url": "https://repository.krei.re.kr/handle/2018.oak/33456",
+     "date": "2026-11-06"
+    },
+    {
+     "title": "농림축산식품부 2026년 김장재료 수급안정 대책 발표 … 실속 김장 가이드 - TILNOTE",
+     "url": "https://tilnote.io/en/pages/6aee9ebc71520b85f8d34ede",
+     "date": "2026-11-08"
+    }
+   ],
+   "why_now": "11월 중순이 김장 시작 시기라 해마다 이때 뜨는 철 주제(상시 계절 주제). 우리 쪽 트렌드 레이더에서도 김장 사연이 대박",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "'이번 달 김장하기 좋은 날' 일진 표(풀이형 표 테마 하나로 · 날짜만 고르고 손맛·운 단정은 하지 않음)"
+  },
+  {
+   "topic": "2026 동지(12/22 화 · 중동지) 팥죽 미리보기 글이 올라오기 시작",
+   "market": "kr",
+   "where": "생활 블로그·정보 사이트",
+   "evidence": [
+    {
+     "title": "2026년 동지 날짜 12월 22일｜중동지 팥죽 먹는 이유·새알심 풍습",
+     "url": "https://www.make2t.kr/2026/11/2026-winter-solstice-dongji-red-bean-porridge.html",
+     "date": "2026-11-08"
+    },
+    {
+     "title": "동지 뜻과 2026 동지 시간, 2026 동지 날짜 12월 22일 … 작은설 풍습",
+     "url": "https://www.yugacrew.com/crewletter/dongji-meaning-time-2026",
+     "date": "2026-11-05"
+    }
+   ],
+   "why_now": "아직 40일 남은 해마다 오는 절기라 '지금 터진' 주제는 아님. 블로그들이 미리 정리하기 시작한 단계라 12월 편성을 미리 잡아 두기 좋음",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "'작은설 동지, 띠별로 새해 맞을 준비' 표(12월 셋째 주 · 2027 신년운세 시리즈로 넘어가는 다리)"
+  }
+ ],
+ "candidates": [
+  {
+   "line": "insta_sci",
+   "title_idea": "별똥별을 열어 보면: 모래알 하나가 초속 70km",
+   "facts": [
+    {
+     "fact": "사자자리 유성우는 템펠-터틀 혜성이 지나간 자리에 남긴 먼지 알갱이가 지구 대기와 부딪치며 타오르는 현상이다.",
+     "source_url": "https://www.gukjenews.com/news/articleView.html?idxno=3746252"
+    },
+    {
+     "fact": "올해 사자자리 유성우는 11월 6일부터 30일까지 활동하고, 한국천문연구원 천문력에 따르면 극대는 11월 18일이다.",
+     "source_url": "https://www.gukjenews.com/news/articleView.html?idxno=3746252"
+    },
+    {
+     "fact": "극대 때 이론상 시간당 유성 수(ZHR)는 약 15개이고, 실제로 보이는 유성은 보통 이보다 적다.",
+     "source_url": "https://www.gukjenews.com/news/articleView.html?idxno=3746252"
+    },
+    {
+     "fact": "사자자리 유성은 하늘에서 가장 빠른 유성으로, 유성체가 초속 70km(70km/s)로 움직인다.",
+     "source_url": "https://www.skyatnightmagazine.com/advice/skills/leonid-meteor-shower-when-how-see"
+    }
+   ],
+   "careful": "'별똥별 비가 쏟아진다' 같은 과장 금지(시간당 약 15개는 이상적인 조건 기준). 11/17 전에 공개해야 의미가 있음"
+  },
+  {
+   "line": "insta_worker",
+   "title_idea": "회사에서 유명해졌는데 본인만 모름 — 심해 불가사리 편",
+   "facts": [
+    {
+     "fact": "2025년 아르헨티나 마르델플라타 협곡 탐사 생중계를 400만 명(more than 4 million) 넘게 봤고, 많은 사람이 만화 캐릭터를 닮은 주황색 불가사리를 보러 왔다.",
+     "source_url": "https://news.mongabay.com/2026/10/patrick-sea-star-went-viral-but-argentine-deep-sea-canyon-held-57-new-species/"
+    },
+    {
+     "fact": "그 불가사리는 신종이 아니라고 판정되어 원래 있던 심해 자리에 그대로 두고 왔다.",
+     "source_url": "https://news.mongabay.com/2026/10/patrick-sea-star-went-viral-but-argentine-deep-sea-canyon-held-57-new-species/"
+    },
+    {
+     "fact": "분류학자들은 이 협곡 표본에서 2주 만에 신종 57종과 새 속 5개를 찾았다.",
+     "source_url": "https://news.mongabay.com/2026/10/patrick-sea-star-went-viral-but-argentine-deep-sea-canyon-held-57-new-species/"
+    },
+    {
+     "fact": "요각류 표본은 10%만 살펴봤는데 살펴본 것마다 신종이었고, 표본 90%는 아직 살펴보지 않았다.",
+     "source_url": "https://news.mongabay.com/2026/10/patrick-sea-star-went-viral-but-argentine-deep-sea-canyon-held-57-new-species/"
+    }
+   ],
+   "careful": "만화 캐릭터 이름·그림은 쓰지 않는다(저작권). '발견(discovered)'일 뿐 정식 기재 논문은 아직이라 '신종 확정'으로 단정하지 않는다"
+  },
+  {
+   "line": "insta_sci",
+   "title_idea": "뿔 달린 심해 해삼 '로키' — 2,577m 진흙 위에서 사는 몸",
+   "facts": [
+    {
+     "fact": "뿔 같은 돌기 두 개가 달린 심해 해삼에게 북유럽 신화의 뿔 달린 신 이름을 따서 '로키'라는 별명이 붙었다.",
+     "source_url": "https://news.mongabay.com/2026/10/patrick-sea-star-went-viral-but-argentine-deep-sea-canyon-held-57-new-species/"
+    },
+    {
+     "fact": "로키(Peniagone sp.)는 해수면 아래 2,577m에 산다.",
+     "source_url": "https://news.mongabay.com/2026/10/patrick-sea-star-went-viral-but-argentine-deep-sea-canyon-held-57-new-species/"
+    },
+    {
+     "fact": "이 협곡은 3,500m 넘게 깊어지며, 따뜻한 브라질 해류와 차갑고 영양분 많은 말비나스 해류가 만나는 곳이다.",
+     "source_url": "https://news.mongabay.com/2026/10/patrick-sea-star-went-viral-but-argentine-deep-sea-canyon-held-57-new-species/"
+    }
+   ],
+   "careful": "같은 출처의 심해 직장인 편과 공개 간격을 둔다. 몸속 구조는 이 페이지에 없으니 단면 내용은 따로 출처를 확인한 뒤에만 넣는다"
+  },
+  {
+   "line": "insta_danger",
+   "title_idea": "'저승 뱃사공' 이름을 가진 물고기가 위험한 진짜 이유",
+   "facts": [
+    {
+     "fact": "새로 이름 붙은 망둑어 Trimma charon은 그리스 신화에서 동전을 받고 죽은 사람을 강 건너로 실어 나르는 뱃사공 카론의 이름을 땄다.",
+     "source_url": "https://earth.com/animals/trimma-charon-goby-red-sea-cave"
+    },
+    {
+     "fact": "꼬리지느러미 대부분을 덮은 금빛 점이 작은 금화처럼 보여서 이런 이름이 붙었다.",
+     "source_url": "https://earth.com/animals/trimma-charon-goby-red-sea-cave"
+    },
+    {
+     "fact": "몸길이가 1인치(under an inch)도 안 되며, 사진에 찍힌 표본은 12.1mm다.",
+     "source_url": "https://earth.com/animals/trimma-charon-goby-red-sea-cave"
+    },
+    {
+     "fact": "사우디아라비아 앞바다 홍해 동굴 입구, 약 30m(98 feet) 깊이에서 잡힌 두 마리가 지금까지 알려진 유일한 표본이다.",
+     "source_url": "https://earth.com/animals/trimma-charon-goby-red-sea-cave"
+    }
+   ],
+   "careful": "30m라 '심해'라고 부르지 않는다. 죽음·저승 이야기는 이름 유래 한 줄로만 짧게"
+  },
+  {
+   "line": "wb_table",
+   "title_idea": "2027년 삼재가 나가는 띠 — 돼지띠·토끼띠·양띠 날삼재 출생연도 표",
+   "facts": [
+    {
+     "fact": "돼지·토끼·양띠는 2025년 뱀해에 들삼재, 2026년 말해에 눌삼재를 지나 2027년 양해에 삼재가 나가는 날삼재를 맞는다.",
+     "source_url": "https://www.durumisaju.com/stories/saeun-2027"
+    },
+    {
+     "fact": "2027년은 정미년(丁未年)이며 정미는 같은 불이라도 2026년 병오보다 크기가 줄고 방향이 안으로 도는 해로 풀이된다.",
+     "source_url": "https://www.durumisaju.com/stories/saeun-2027"
+    },
+    {
+     "fact": "2027년 未와의 관계로 보면 말띠는 육합, 소띠는 충에 해당한다.",
+     "source_url": "https://xn--vf4b15gb4ctvu.com/guide/2027-ttibyeol-unse"
+    }
+   ],
+   "careful": "출처 날짜가 30일을 넘어 '유행'이 아니라 상시 주제다. 신년운세 시리즈(newyear_series)에 삼재 편이 이미 있는지 먼저 확인할 것. 겁주기 금지 — '나가는 해'로 밝게, 간지에는 좋고 나쁨이 없다는 쪽으로"
+  },
+  {
+   "line": "wb_table",
+   "title_idea": "수능 보는 손주에게 — 띠별로 건네면 좋은 응원 한마디 표(11월 19일)",
+   "facts": [
+    {
+     "fact": "2027학년도 대학수학능력시험은 11월 19일에 치러진다.",
+     "source_url": "http://www.cctimes.kr/news/articleView.html?idxno=936761"
+    },
+    {
+     "fact": "올해 수능은 현행 수능 체제로 치르는 마지막 시험이며, 2028학년도부터는 문·이과 통합 시험으로 바뀐다.",
+     "source_url": "http://www.cctimes.kr/news/articleView.html?idxno=936761"
+    },
+    {
+     "fact": "졸업생 응시자는 17만3706명으로 23년 만에 가장 많다.",
+     "source_url": "http://www.cctimes.kr/news/articleView.html?idxno=936761"
+    }
+   ],
+   "careful": "합격·점수·'붙는 띠' 단정 금지. 손주를 응원하는 덕담 표로만. 11/18까지 공개해야 의미가 있음"
+  }
+ ],
+ "note": "한국 쪽 '요즘 유행 쇼츠/릴스' 검색은 패션 반바지 기사와 10대 밈만 잡혀서 쓸 게 없었다. 그래서 날짜가 정해진 행사(수능 11/19, 사자자리 유성우 11/18, 김장, 동지)와 지난 한 달 사이 심해 신종 소식 위주로 골랐다. 영어 쪽 viral true story·what-if는 검색 한도에 걸려 확인하지 못해 Nine Tails는 유성우 what-if 아이디어 하나만 hot에 올렸고, 사실 확인용 fetch도 도중에 막혀 김장 쪽은 출처를 열어 보지 못해 후보에서 뺐다."
+}

@@ -1,0 +1,276 @@
+{
+ "date": "2026-11-05",
+ "hot": [
+  {
+   "topic": "보이저 1호가 11/18 인류 탐사선 처음으로 지구에서 1광일 거리에 닿음 (11월 밤하늘 사자자리 유성우·슈퍼문과 같이 다뤄짐)",
+   "market": "kr",
+   "where": "국내 과학 기사 (NASA 11월 'What's Up' 인용)",
+   "evidence": [
+    {
+     "title": "보이저 1호, 18일 인류 첫 1광일 거리 도달 (재경일보)",
+     "url": "https://news.jkn.co.kr/post/1068416",
+     "date": "2026-11-05"
+    },
+    {
+     "title": "유성우·화성·목성·슈퍼문…NASA가 꼽은 11월 밤하늘 관측 포인트 (이코노미사이언스)",
+     "url": "https://www.e-science.co.kr/news/articleView.html?idxno=138813",
+     "date": "2026-11-05"
+    }
+   ],
+   "why_now": "11/18 한국 시간 저녁에 1광일을 넘는다. 기사가 지금 막 나오기 시작했고 NASA가 카운트다운 시계도 열었다. 17~18일 사자자리 유성우, 24일 슈퍼문이 같은 달에 몰려 있다.",
+   "fit": [
+    "insta_sci"
+   ],
+   "idea": "보이저 1호 몸속을 열어 플루토늄 전지가 해마다 약 4W씩 줄어드는 걸 보여 주고, '안녕' 한마디에 답이 오기까지 이틀 걸린다는 걸 보여 주는 20~35초"
+  },
+  {
+   "topic": "Voyager 1 crosses one light-day from Earth on Nov 18",
+   "market": "us",
+   "where": "NASA·ScienceDaily·과학 매체 기사",
+   "evidence": [
+    {
+     "title": "November's Night Sky Notes: Light-Day Away - NASA Science",
+     "url": "https://science.nasa.gov/solar-system/skywatching/night-sky-network/novembers-night-sky-notes-light-day-away/",
+     "date": "2026-11-01"
+    },
+    {
+     "title": "NASA's Voyager 1 is about to reach a historic one-light-day milestone (ScienceDaily)",
+     "url": "https://www.sciencedaily.com/releases/2026/11/261103003152.htm",
+     "date": "2026-11-03"
+    },
+    {
+     "title": "NASA's Voyager 1 probe is about to reach a distance of 1 light-day (Sky at Night)",
+     "url": "https://www.skyatnightmagazine.com/news/nasa-voyager-1-light-day-milestone",
+     "date": "2026-11-05"
+    }
+   ],
+   "why_now": "영어권 과학 매체가 11/18을 앞두고 일제히 다루는 중이다. 10/20 통신이 48시간 끊겼다 돌아온 일도 같이 언급된다.",
+   "fit": [
+    "nt_story"
+   ],
+   "idea": "What if you were riding Voyager 1 at one light-day? — 48시간 걸리는 왕복 통신, 줄어드는 전력, 골든 레코드를 얼굴 없는 3D what-if로 45~75초"
+  },
+  {
+   "topic": "26살 회색물범 '다비드'가 낙엽 위를 뒹구는 영상이 사흘 만에 1천만 회",
+   "market": "kr",
+   "where": "동물원 인스타 영상 → 국내외 기사·유튜브 쇼츠로 퍼짐",
+   "evidence": [
+    {
+     "title": "촉촉한 맨몸으로 '낙엽 샤워'...'1천만 스타'된 물범 (인사이트)",
+     "url": "https://insight.co.kr/news/580579",
+     "date": "2026-11-05"
+    },
+    {
+     "title": "WATCH — Meet Dawid, the seal going viral for rolling around in leaves (CBC Kids News)",
+     "url": "https://www.cbc.ca/kidsnews/post/watch-meet-dawid-the-seal-going-viral-for-rolling-around-in-leaves",
+     "date": "2026-11-01"
+    },
+    {
+     "title": "Gray seal rolls in fall leaves to gear up for fall (weather.com)",
+     "url": "https://weather.com/2026/10/27/news/trending/video/fall-cute-animal-seal-zoo-leaves",
+     "date": "2026-10-27"
+    }
+   ],
+   "why_now": "10월 말 올라온 영상이 'AI 아니냐'는 논란까지 붙으며 퍼졌고, 국내 기사는 오늘 나왔다. 가을 낙엽 철이라 계절감도 맞다.",
+   "fit": [
+    "insta_danger"
+   ],
+   "idea": "'물범이 낙엽에 뒹구는 위험한 진짜 이유' → 실제로는 야생 습성이자 동물원의 매일 건강 훈련이라는 귀여운 사실"
+  },
+  {
+   "topic": "2027학년도 수능 11/19(D-14), 합격 기원 상품·응원 열기",
+   "market": "kr",
+   "where": "유통·생활 기사",
+   "evidence": [
+    {
+     "title": "2027 수능 날짜·시간표ㅣ준비물부터 반입 금지 물품까지 (KB Think)",
+     "url": "https://kbthink.com/life/leisure/2027-csat-guide.html",
+     "date": "2026-11-03"
+    },
+    {
+     "title": "\"합격 기운 팍팍\"... 수능 앞두고 인기 끌고 있는 스타벅스 '행운템' (인사이트)",
+     "url": "https://www.insight.co.kr/news/580540",
+     "date": "2026-11-04"
+    },
+    {
+     "title": "'빼빼로→수능' 대목 릴레이… 유통가 고객 잡기 나섰다 (파이낸셜뉴스)",
+     "url": "https://www.fnnews.com/news/202610271836122699",
+     "date": "2026-10-27"
+    }
+   ],
+   "why_now": "수능이 2주 남아 손주·자녀 응원 이야기가 집집마다 나오는 때다. 트렌드 레이더에서도 시니어 '자식·관계'가 떡상(1.93)이다.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "'수능 앞둔 손주에게 좋은 기운 전하는 띠' 표. 합격 단정 없이 응원·덕담 말투로"
+  },
+  {
+   "topic": "입동 11/7(토) 18시 52분, 겨울 채비·김장 시작",
+   "market": "kr",
+   "where": "생활 기사·지역 포토뉴스",
+   "evidence": [
+    {
+     "title": "[생활꿀팁] 입동은 11월 7일 토요일 18시 52분 (위키트리)",
+     "url": "https://www.wikitree.co.kr/articles/1171578",
+     "date": "2026-11-05"
+    },
+    {
+     "title": "[비건뉴스] 2026년 입동 11월 7일…겨울 절기 첫머리",
+     "url": "https://www.vegannews.co.kr/news/article.html?no=399250",
+     "date": "2026-11-03"
+    },
+    {
+     "title": "입동 앞두고 김장 (충청일보)",
+     "url": "https://www.ccdailynews.com/news/articleView.html?idxno=2449738",
+     "date": "2026-11-05"
+    }
+   ],
+   "why_now": "이번 주 토요일이 겨울 첫 절기다. 55세 이상이 챙기는 절기와 김장철이 겹친다. 음력 시월 초하루도 이틀 뒤다.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "'입동에 집안 복 들어오는 띠' 표. 절기 시각(18:52)과 음력 날짜를 실제 근거로 쓰고, 운 풀이는 명리 근거로"
+  },
+  {
+   "topic": "2027 정미년 신년운세 검색·글 증가 (상시 + 연말 수요)",
+   "market": "kr",
+   "where": "사주 블로그·운세 사이트·유튜브",
+   "evidence": [
+    {
+     "title": "기사일주 2027년 운세 : 정미년 편인운 (홍심당)",
+     "url": "https://www.hongsimdang.kr/blog/2027%20%EC%9D%BC%EC%A3%BC%EB%B3%84%20%EC%9A%B4%EC%84%B8/%EA%B8%B0%EC%82%AC%EC%9D%BC%EC%A3%BC",
+     "date": "2026-10-27"
+    },
+    {
+     "title": "11월 5일 띠별 운세 공개, 쥐띠·호랑이띠는 '대박' (위키트리)",
+     "url": "https://www.wikitree.co.kr/articles/1171840",
+     "date": "2026-11-05"
+    }
+   ],
+   "why_now": "솔직히 말하면 상시 인기 주제라 '지금 갑자기 뜬다'는 근거는 약하다. 다만 연말로 갈수록 신년운세 글이 늘고, 우리 '2027 재물운 등급표'가 11.8배를 낸 점이 근거다.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "신년운세 시리즈에서 재물운 표의 꼴은 유지하고, 주제를 건강 단정 없는 '집안 평안'이나 '자식 복'으로 바꿔 이어 가기"
+  },
+  {
+   "topic": "까마귀 지능 목격담 커뮤니티 글 화제",
+   "market": "kr",
+   "where": "커뮤니티(에펨코리아 포텐)",
+   "evidence": [
+    {
+     "title": "보면 볼수록 신기한 생물 까마귀 증언 ㄷㄷㄷ (에펨코리아)",
+     "url": "https://fmkorea.com/best/10515720287",
+     "date": "2026-11-04"
+    }
+   ],
+   "why_now": "어제 포텐에 오른 글 하나뿐이라 근거가 약하다. 10~20대 커뮤니티에서 까마귀·까치 이야기가 반응을 얻는다는 정도의 신호로만 본다.",
+   "fit": [
+    "insta_danger"
+   ],
+   "idea": "'까마귀가 사람 얼굴을 기억하는 위험한 이유' 꼴. 단, 사실은 따로 출처를 확인한 뒤에만 쓸 것"
+  }
+ ],
+ "candidates": [
+  {
+   "line": "insta_sci",
+   "title_idea": "49년째 날아가는 보이저 1호 몸속 — 전기는 어디서 날까",
+   "facts": [
+    {
+     "fact": "NASA는 보이저 1호가 한국시간 11월 18일 오후 7시 16분에 지구에서 1광일 거리에 이른다고 밝혔다.",
+     "source_url": "https://news.jkn.co.kr/post/1068416"
+    },
+    {
+     "fact": "1광일은 빛이 진공에서 24시간 동안 가는 거리로, 약 259억206만㎞이다.",
+     "source_url": "https://news.jkn.co.kr/post/1068416"
+    },
+    {
+     "fact": "보이저 1호는 플루토늄-238을 연료로 쓰는 방사성동위원소 열전 발전기(RTG) 3기로 전력을 얻는다. 발사 초기 470~475W였던 전력이 매년 약 4W씩 줄고 있다.",
+     "source_url": "https://news.jkn.co.kr/post/1068416"
+    },
+    {
+     "fact": "1광일을 넘으면 지구와 보이저 1호가 가장 간단한 신호를 한 번 주고받는 데도 48시간이 걸린다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261103003152.htm"
+    }
+   ],
+   "careful": "1광일을 넘어도 탐사선이나 주변에 물리적 변화는 없다(ScienceDaily). '경계를 뚫는다' 같은 과장은 피할 것. 통신 2036년 유지는 '계획'이라고 쓸 것"
+  },
+  {
+   "line": "nt_story",
+   "title_idea": "What If You Rode Voyager 1 to One Light-Day From Earth?",
+   "facts": [
+    {
+     "fact": "NASA에 따르면 보이저 1호는 2026년 11월 18일, 발사 49년 만에 1광일 지점을 넘는다. 그때 태양에서의 거리는 161억 마일(16.1 billion miles)이다.",
+     "source_url": "https://science.nasa.gov/solar-system/skywatching/night-sky-network/novembers-night-sky-notes-light-day-away/"
+    },
+    {
+     "fact": "10월 20일 보이저 1호는 예상치 못한 48시간 통신 중단 뒤에 지구와 다시 연락이 닿았다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261103003152.htm"
+    },
+    {
+     "fact": "9월 초 보이저 팀은 보이저 1호의 장치 3개를 전기를 덜 먹는 대체 장치로 바꿨다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261103003152.htm"
+    },
+    {
+     "fact": "보이저 1호 외벽에는 지구 문명을 기록한 '골든 레코드'가 붙어 있다.",
+     "source_url": "https://news.jkn.co.kr/post/1068416"
+    }
+   ],
+   "careful": "what-if 장면(사람이 탄다는 가정)과 실제 사실을 화면에서 분명히 나눌 것. 통신 중단 원인은 NASA가 아직 조사 중이라 원인을 단정하지 말 것"
+  },
+  {
+   "line": "insta_danger",
+   "title_idea": "물범이 낙엽에 온몸을 비비는 위험한 진짜 이유",
+   "facts": [
+    {
+     "fact": "다비드는 폴란드 포드뎀비체 근처 보리세프 동물원에 사는 26살 발트해 회색물범이다.",
+     "source_url": "https://www.cbc.ca/kidsnews/post/watch-meet-dawid-the-seal-going-viral-for-rolling-around-in-leaves"
+    },
+    {
+     "fact": "땅에서 몸을 구르는 것은 야생 회색물범에게서도 보이는 자연스러운 행동이다.",
+     "source_url": "https://www.cbc.ca/kidsnews/post/watch-meet-dawid-the-seal-going-viral-for-rolling-around-in-leaves"
+    },
+    {
+     "fact": "보리세프 동물원 웹사이트에 따르면 이 구르기는 다비드가 매일 받는 의료 훈련의 일부다.",
+     "source_url": "https://www.cbc.ca/kidsnews/post/watch-meet-dawid-the-seal-going-viral-for-rolling-around-in-leaves"
+    },
+    {
+     "fact": "회색물범 전 세계 개체 수의 절반 이상이 캐나다에 산다.",
+     "source_url": "https://insight.co.kr/news/580579"
+    }
+   ],
+   "careful": "조회수는 매체마다 700만~1,000만으로 다르니 숫자를 쓰려면 출처를 함께 밝힐 것. 실제 동물원 영상은 베끼지 말고 그림으로 다시 그릴 것"
+  },
+  {
+   "line": "wb_table",
+   "title_idea": "입동 맞아 집안에 복 들어오는 띠 순위 1위~12위 | 11월 7일 · 45~96년생 전부",
+   "facts": [
+    {
+     "fact": "2026년 입동은 11월 7일 토요일 18시 52분이고, 음력으로는 9월 28일이다(한국천문연구원 절기 자료).",
+     "source_url": "https://www.wikitree.co.kr/articles/1171578"
+    },
+    {
+     "fact": "입동은 24절기 가운데 겨울의 시작을 알리는 절기이고, 날짜는 우주항공청 '2026년 월력요항'에 실려 있다.",
+     "source_url": "https://www.vegannews.co.kr/news/article.html?no=399250"
+    }
+   ],
+   "careful": "순위·풀이는 명리 근거로만 쓸 것. 겨울 건강을 단정하는 말이나 겁주는 말은 쓰지 말 것"
+  },
+  {
+   "line": "wb_table",
+   "title_idea": "수능 앞둔 손주에게 좋은 기운 전하는 띠 | 11월 19일 수능 · 45~96년생 전부",
+   "facts": [
+    {
+     "fact": "2027학년도 수능은 2026년 11월 19일(목)에 치르고, 예비소집일은 11월 18일(수), 성적 통지일은 12월 11일(금)이다.",
+     "source_url": "https://kbthink.com/life/leisure/2027-csat-guide.html"
+    },
+    {
+     "fact": "수험생은 시험 당일 오전 8시 10분까지 시험실에 들어가야 한다.",
+     "source_url": "https://kbthink.com/life/leisure/2027-csat-guide.html"
+    }
+   ],
+   "careful": "합격·점수를 보장하는 말 금지. 응원·덕담 말투로만 쓸 것"
+  }
+ ],
+ "note": "한국 쪽은 보이저 1광일(11/18), 수능(11/19), 입동(11/7)처럼 날짜가 박힌 화제가 뚜렷하고, 동물은 낙엽 물범 하나가 국내외에서 실제로 퍼졌다. 영어 쪽은 검색 한도에 걸려 보이저 말고는 확인한 흐름이 적다. 최근 심해 뉴스는 30일 안의 것을 찾지 못해 넣지 않았고, 까마귀는 커뮤니티 글 하나뿐이라 약한 신호다."
+}

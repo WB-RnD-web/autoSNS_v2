@@ -1,0 +1,273 @@
+{
+ "date": "2026-11-11",
+ "hot": [
+  {
+   "topic": "2027학년도 수능이 11/19(목)로 8일 남음. 손주 수능을 앞둔 집에서 응원·덕담 이야기가 많아지는 때",
+   "market": "kr",
+   "where": "포털 기사·생활 정보 블로그(수능 시간표·준비물 글이 계속 새로 올라옴)",
+   "evidence": [
+    {
+     "title": "2027 수능 날짜·시간표ㅣ준비물부터 반입 금지 물품까지",
+     "url": "https://kbthink.com/life/leisure/2027-csat-guide.html",
+     "date": "2026-11-03"
+    },
+    {
+     "title": "2027학년도 수능 시간표｜11월 19일 교시별 입실·시험 시간 정리",
+     "url": "https://foxcg.com/2027-csat-schedule/",
+     "date": "2026-11-08"
+    }
+   ],
+   "why_now": "해마다 돌아오는 일정이지만 시험이 일주일 남짓 남아 관심이 가장 높을 때다(상시 계절 주제)",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "'수능 앞둔 손주에게 건네기 좋은 덕담, 띠별로' 표. 합격·점수는 단정하지 않고 마음을 북돋는 말로만"
+  },
+  {
+   "topic": "서울 첫눈이 11/8 내림. 작년보다 26일, 평년보다 12일 빠름",
+   "market": "kr",
+   "where": "일간지·경제지 기사",
+   "evidence": [
+    {
+     "title": "서울 '첫눈'…작년보다 26일 빨라 - 머니투데이",
+     "url": "https://www.mt.co.kr/society/2026/11/08/2026110811135460309",
+     "date": "2026-11-08"
+    },
+    {
+     "title": "아니 벌써? 서울에 '첫눈' 내렸다···작년보다 26일 빨라 - 경향신문",
+     "url": "https://khan.co.kr/article/202611081323001",
+     "date": "2026-11-08"
+    }
+   ],
+   "why_now": "첫눈이 한 달 가까이 일찍 와서 겨울 채비·김장철 이야기로 이어지는 때다",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "'겨울 문턱, 띠별로 챙기면 좋은 마음가짐' 표. 첫눈은 겁주지 않고 반가운 소식으로 시작"
+  },
+  {
+   "topic": "사자자리 유성우가 11/17 밤~18 새벽에 절정. 관측 적기 안내 기사가 잇따름",
+   "market": "kr",
+   "where": "기사(천문연 천문력 인용)",
+   "evidence": [
+    {
+     "title": "[비건뉴스] 사자자리 유성우 18일 극대…관측은 해 뜨기 전",
+     "url": "https://www.vegannews.co.kr/news/article.html?no=402465",
+     "date": "2026-11-10"
+    },
+    {
+     "title": "사자자리 유성우 극대기 관측 시기 '이 시간'이 골든타임 이라고?",
+     "url": "https://www.gukjenews.com/news/articleView.html?idxno=3746252",
+     "date": "2026-11-09"
+    }
+   ],
+   "why_now": "일주일 뒤가 절정이라 미리 알려 주는 기사가 지금 나오고 있다",
+   "fit": [
+    "insta_sci"
+   ],
+   "idea": "'별똥별 속을 열어 보면 혜성이 흘린 먼지 한 알'. 단면 카드 20~35초"
+  },
+  {
+   "topic": "NASA 11월 하늘 일정: 11/17 보이저 1호 '빛의 하루(Light-Day)' 거리 기념, 11/24부터 슈퍼문 3연속",
+   "market": "us",
+   "where": "ScienceDaily·NASA JPL 하늘 보기 안내",
+   "evidence": [
+    {
+     "title": "Don't miss: Meteor showers, fireballs, and a supermoon light up November's night sky",
+     "url": "https://www.sciencedaily.com/releases/2026/11/261105224547.htm",
+     "date": "2026-11-06"
+    }
+   ],
+   "why_now": "보이저 1호 기념일이 11/17, 슈퍼문이 11/24로 둘 다 2주 안에 온다",
+   "fit": [
+    "insta_sci",
+    "nt_story"
+   ],
+   "idea": "Nine Tails 재개 편 '빛이 꼬박 하루 걸려 닿는 곳에 있는 탐사선' what-if, 인스타는 '보이저 속을 열어 보면'"
+  },
+  {
+   "topic": "심해 신종 발견 소식이 몰림: 트리니다드토바고 추정 신종 20종, 홍해 '저승 뱃사공' 이름 붙은 망둑어, 아르헨티나 협곡 57종",
+   "market": "us",
+   "where": "과학 뉴스(EurekAlert·Mongabay·해양 매체)",
+   "evidence": [
+    {
+     "title": "Deep-Sea Discoveries off Trinidad and Tobago: 20 Suspected New Species",
+     "url": "https://www.allatsea.net/trinidad-tobago-deep-sea-new-species/",
+     "date": "2026-11-07"
+    },
+    {
+     "title": "New species of pygmygoby discovered at the edge of the Red Sea's unexplored deep reefs",
+     "url": "https://www.eurekalert.org/news-releases/1150472",
+     "date": "2026-11-04"
+    },
+    {
+     "title": "'Patrick' sea star went viral, but Argentine deep-sea canyon held 57 new species",
+     "url": "https://news.mongabay.com/2026/10/patrick-sea-star-went-viral-but-argentine-deep-sea-canyon-held-57-new-species/",
+     "date": "2026-10-14"
+    }
+   ],
+   "why_now": "최근 한 달 사이 심해 탐사 결과 발표가 연달아 나왔다",
+   "fit": [
+    "insta_worker",
+    "insta_danger",
+    "insta_sci"
+   ],
+   "idea": "심해 직장인: '화제는 패트릭이 다 가져가고 신입 57명은 조용히 입사'. 위험한 진짜 이유: '저승 뱃사공 물고기'의 진짜 모습"
+  },
+  {
+   "topic": "'심슨이 11/30 인터넷 종말을 예언했다'는 영상이 퍼지고, 언론이 사실 확인에 나섬",
+   "market": "us",
+   "where": "숏폼 영상 → 영국 온라인 매체 사실 확인 기사",
+   "evidence": [
+    {
+     "title": "The Simpsons' November 30 Internet Shutdown Prediction Goes Viral as Millions Fear a World Without Wi-Fi",
+     "url": "https://www.ibtimes.co.uk/simpsons-november-30-internet-shutdown-prediction-goes-viral-millions-fear-world-without-wi-fi-1830975",
+     "date": "2026-11-10"
+    }
+   ],
+   "why_now": "11/30 날짜를 내건 바이럴이 지금 돌고 있다. 예언은 근거가 없어 꾸며낸 내용으로 다뤄야 한다",
+   "fit": [
+    "nt_story"
+   ],
+   "idea": "'What if the internet went dark for one day?' 예언은 사실이 아니라고 먼저 밝히고, 실제 인터넷이 어떻게 이어져 있는지로 푸는 what-if"
+  },
+  {
+   "topic": "태양 흑점군 AR4566이 지구 정면을 바라보며 큰 플레어 가능성",
+   "market": "us",
+   "where": "EarthSky 태양 소식(매일 갱신)",
+   "evidence": [
+    {
+     "title": "Sun news: Powerful sunspot region facing Earth",
+     "url": "https://earthsky.org/sun/sun-news-activity-solar-flare-cme-aurora-updates/",
+     "date": "2026-11-10"
+    }
+   ],
+   "why_now": "11/10 기준 가장 크고 불안정한 흑점군이 지구 쪽을 보고 있다. 실제 오로라·플레어는 아직 정해지지 않았다",
+   "fit": [
+    "insta_sci"
+   ],
+   "idea": "'태양 표면 속을 열어 보면 흑점은 자기장이 엉킨 매듭'. 일어날지도 모르는 일을 일어날 것처럼 말하지 않기"
+  }
+ ],
+ "candidates": [
+  {
+   "line": "insta_danger",
+   "title_idea": "저승 뱃사공 이름을 받은 물고기, 진짜 정체는?",
+   "facts": [
+    {
+     "fact": "홍해 북부의 가파른 산호초 비탈, 동굴 입구에서 새 망둑어 종(Trimma charon)이 기재됐다.",
+     "source_url": "https://www.eurekalert.org/news-releases/1150472"
+    },
+    {
+     "fact": "이 이름은 그리스 신화에서 죽은 이를 강 건너 저승으로 실어 나르던 뱃사공 카론에서 따왔다.",
+     "source_url": "https://www.eurekalert.org/news-releases/1150472"
+    },
+    {
+     "fact": "가장 눈에 띄는 특징은 꼬리지느러미에 흩어진 금빛 점이다.",
+     "source_url": "https://www.eurekalert.org/news-releases/1150472"
+    },
+    {
+     "fact": "연구팀은 이 종이 아직 거의 탐사되지 않은 수심 30m 아래 '중광층' 산호초에 더 흔할 것으로 짐작한다.",
+     "source_url": "https://www.eurekalert.org/news-releases/1150472"
+    }
+   ],
+   "careful": "더 흔하다는 건 연구팀의 추정이므로 단정하지 않는다. 크기 수치는 페이지에서 확인하지 못해 쓰지 않는다"
+  },
+  {
+   "line": "insta_worker",
+   "title_idea": "화제는 패트릭이 다 가져갔다… 신입 57명은 조용히 입사",
+   "facts": [
+    {
+     "fact": "과학자들은 아르헨티나 마르델플라타 협곡에서 단 2주 만에 해양 신종 57종과 새 속 5개를 찾아냈다.",
+     "source_url": "https://news.mongabay.com/2026/10/patrick-sea-star-went-viral-but-argentine-deep-sea-canyon-held-57-new-species/"
+    },
+    {
+     "fact": "화제가 된 불가사리 '패트릭'은 알고 보니 신종이 아니었다.",
+     "source_url": "https://news.mongabay.com/2026/10/patrick-sea-star-went-viral-but-argentine-deep-sea-canyon-held-57-new-species/"
+    },
+    {
+     "fact": "뿔처럼 생긴 돌기가 두드러진 심해 해삼에는 북유럽 신화의 신 이름을 딴 '로키'라는 별명이 붙었다.",
+     "source_url": "https://news.mongabay.com/2026/10/patrick-sea-star-went-viral-but-argentine-deep-sea-canyon-held-57-new-species/"
+    },
+    {
+     "fact": "신종 가운데에는 극피동물 22종, 요각류 20종, 산호·바다조름 14종이 있었다.",
+     "source_url": "https://news.mongabay.com/2026/10/patrick-sea-star-went-viral-but-argentine-deep-sea-canyon-held-57-new-species/"
+    }
+   ],
+   "careful": "이 종들은 '발견'됐을 뿐 아직 정식 '기재' 전이다. '정식 신종 확정'이라고 쓰지 않는다"
+  },
+  {
+   "line": "insta_sci",
+   "title_idea": "0.001%만 본 바다 밑, 쥐가오리가 가라앉은 자리에서 생긴 일",
+   "facts": [
+    {
+     "fact": "트리니다드토바고 주도 탐사팀이 처음 보는 해저 4,376제곱마일을 지도로 그리고, 추정 신종 20종을 찾았다.",
+     "source_url": "https://www.allatsea.net/trinidad-tobago-deep-sea-new-species/"
+    },
+    {
+     "fact": "트리니다드토바고 심해 영역 가운데 지금까지 탐사된 곳은 0.001%도 안 된다.",
+     "source_url": "https://www.allatsea.net/trinidad-tobago-deep-sea-new-species/"
+    },
+    {
+     "fact": "탐사팀은 수심 3,363피트에서 죽은 쥐가오리가 가라앉은 드문 '만타 폴'을 만났다.",
+     "source_url": "https://www.allatsea.net/trinidad-tobago-deep-sea-new-species/"
+    },
+    {
+     "fact": "냉용수·열수 생태계도 25곳 찾았다.",
+     "source_url": "https://www.allatsea.net/trinidad-tobago-deep-sea-new-species/"
+    }
+   ],
+   "careful": "'추정(suspected) 신종'임을 그대로 표기한다. 탐사는 7월에 했고, 기사는 11/7에 나왔다"
+  },
+  {
+   "line": "insta_sci",
+   "title_idea": "별똥별 속을 열어 보면, 혜성이 흘린 먼지 한 알",
+   "facts": [
+    {
+     "fact": "사자자리 유성우는 템펠-터틀 혜성이 지나간 자리에 남긴 먼지 알갱이들이 지구로 들어오면서 생긴다.",
+     "source_url": "https://www.gukjenews.com/news/articleView.html?idxno=3746252"
+    },
+    {
+     "fact": "올해 사자자리 유성우는 11월 6일부터 30일까지 활동하고, 천문연 천문력 기준 극대는 11월 18일이다.",
+     "source_url": "https://www.gukjenews.com/news/articleView.html?idxno=3746252"
+    },
+    {
+     "fact": "18일에는 달이 오전 0시 1분에 지고 해가 오전 7시 15분에 떠서, 그 사이가 실제 관측 적기다.",
+     "source_url": "https://www.vegannews.co.kr/news/article.html?no=402465"
+    }
+   ],
+   "careful": "극대 시각은 자료마다 다르다(IMO 18일 08:45, 마슬로프 18일 01시 무렵). 한 시각만 단정하지 않는다"
+  },
+  {
+   "line": "nt_story",
+   "title_idea": "The Probe So Far Away, Light Takes a Whole Day to Reach It",
+   "facts": [
+    {
+     "fact": "NASA는 11월 17일 'Shine Bright for Voyager's Light-Day' 행사로 보이저 1호의 역사적인 거리 이정표를 기념한다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261105224547.htm"
+    },
+    {
+     "fact": "11월 24일 보름 슈퍼문이 뜨고, 이것으로 세 번 연속 슈퍼문이 시작된다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261105224547.htm"
+    }
+   ],
+   "careful": "보이저 1호의 정확한 거리(km)와 '빛으로 하루'의 뜻은 이 페이지에 수치가 없다. 공개 전에 NASA 원문에서 숫자를 확인한 뒤에만 쓴다"
+  },
+  {
+   "line": "wb_table",
+   "title_idea": "수능 앞둔 손주에게 건네기 좋은 덕담, 띠별로 | 11월 19일",
+   "facts": [
+    {
+     "fact": "2027학년도 수능은 2026년 11월 19일(목)에 시행되고, 예비소집은 하루 전인 11월 18일(수)이다.",
+     "source_url": "https://kbthink.com/life/leisure/2027-csat-guide.html"
+    },
+    {
+     "fact": "수험생은 시험 당일 오전 8시 10분까지 시험실에 들어가야 한다.",
+     "source_url": "https://kbthink.com/life/leisure/2027-csat-guide.html"
+    }
+   ],
+   "careful": "합격·점수·'대박' 단정을 하지 않는다. 손주를 응원하는 어르신 덕담 말투로 쓰고, 겁주기·등급 말투는 금지. 명리 근거는 그날 일진을 우리 만세력으로 따로 확인한다"
+  }
+ ],
+ "note": "한국 쪽 숏폼·릴스 유행은 검색에 거의 잡히지 않았다. 그래서 수능·첫눈·유성우처럼 날짜가 분명한 생활·하늘 이슈를 골랐다. 영어 쪽은 심해 신종 발표와 11월 하늘 일정(보이저 1호, 슈퍼문)이 가장 쓸 만했다. 레이더의 '말년·노후' 상승은 웹 근거를 따로 열어 보지 못해 hot에서 뺐다. 검색 도구 한도에 걸려 보이저 거리 수치와 수능 당일 일진은 추가 확인을 못 했다."
+}

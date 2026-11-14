@@ -1,0 +1,292 @@
+{
+ "date": "2026-11-10",
+ "hot": [
+  {
+   "topic": "'2026년 11월 13일(금) 지구 종말설': 1960년 사이언스 논문의 인구 공식이 SNS에서 다시 돌고 있다",
+   "market": "kr",
+   "where": "스레드·더쿠 같은 커뮤니티와 SNS에서 퍼졌고, 주간경향이 팩트체크 기사를 냈다",
+   "evidence": [
+    {
+     "title": "“11월 13일 세계 종말, 비행기 타지 마라”…과학자들의 경고는 사실일까 - 주간경향",
+     "url": "https://weekly.khan.co.kr/article/202611011334001",
+     "date": "2026-11-01"
+    },
+    {
+     "title": "2026년 11월 13일 지구 멸망설은 ... 1960년 학술지 《사이언스》에 게재된 실제 논문에서 유래한 수학적 추정치 (스레드)",
+     "url": "https://www.threads.com/@funnylearny.official/post/Dd2XRxIE6jp/2026%EB%85%84-11%EC%9B%94-13%EC%9D%BC-%EC%A7%80%EA%B5%AC-",
+     "date": ""
+    }
+   ],
+   "why_now": "논문 속 날짜가 사흘 뒤(11/13 금)라 지금 확산 중이다. 날이 지나면 바로 식는 시한부 화제다.",
+   "fit": [
+    "insta_sci"
+   ],
+   "idea": "'종말의 날'이 아니라 '공식이 터지는 날'. 인구 그래프가 하늘로 치솟는 곡선을 열어 보여 주는 20~30초 카드. 11/11~12 공개."
+  },
+  {
+   "topic": "Viral 'world ends November 13, 2026' claim: the real story is a 1960 Science paper on population math",
+   "market": "us",
+   "where": "소셜미디어에서 퍼졌고, 영어권 뉴스 사이트가 팩트체크 기사를 냈다",
+   "evidence": [
+    {
+     "title": "Will the World End on November 13, 2026? Here Is the Truth - Sakshi Post",
+     "url": "https://www.sakshipost.com/news/national/will-world-end-november-13-2026-here-truth-483098",
+     "date": "2026-11-09"
+    }
+   ],
+   "why_now": "날짜가 이번 주 금요일이다. 태양 폭풍 이야기까지 엮이면서 영어권에서도 지금 퍼지고 있다.",
+   "fit": [
+    "nt_story"
+   ],
+   "idea": "What if the 1960 doomsday formula were right? 공식대로 인구가 계속 늘었다면 어땠을지 45~60초 3D what-if로. 목요일(11/12) 21:30 트렌드 편 자리에 맞다."
+  },
+  {
+   "topic": "NASA가 2024년 이후 처음으로 달·화성 탐사 우주비행사 후보를 뽑는다(연봉 약 2억2천만 원, 12/3 마감)",
+   "market": "kr",
+   "where": "국내 기사(아시아경제가 뉴욕포스트 보도를 인용)",
+   "evidence": [
+    {
+     "title": "\"달에서 일할 인재 찾습니다\"…NASA, '연봉 2억원대' 우주비행사 채용 나섰다 - 아시아경제",
+     "url": "https://view.asiae.co.kr/article/2026111009440758747",
+     "date": "2026-11-10"
+    }
+   ],
+   "why_now": "오늘 나온 기사다. 모집 마감(12/3)까지 계속 이야기될 거리다.",
+   "fit": [
+    "insta_sci",
+    "nt_story"
+   ],
+   "idea": "'달 기지 신입 채용 공고'를 열어 보면: 2년 훈련 속에 뭐가 들었나(우주 유영·달 지질학·제트기)를 단면처럼 보여 주기."
+  },
+  {
+   "topic": "심해 3,200m에서 나온 '황금 알'의 정체는 거대 말미잘이 바위에 붙으려고 남긴 껍질",
+   "market": "us",
+   "where": "BBC Wildlife(Discover Wildlife) 기사. 영어권 과학·동물 매체",
+   "evidence": [
+    {
+     "title": "Deep-sea robot discovers mysterious golden orb 3,200m deep in the ocean – Discover Wildlife",
+     "url": "https://www.discoverwildlife.com/animal-facts/marine-animals/the-deep-sea-golden-orb",
+     "date": "2026-11-05"
+    }
+   ],
+   "why_now": "2023년에 발견돼 3년 동안 정체를 몰랐는데, 이번에 정체가 풀렸다는 기사가 5일 전에 나왔다.",
+   "fit": [
+    "insta_danger",
+    "insta_sci",
+    "insta_worker"
+   ],
+   "idea": "'공포영화의 첫 장면 같다던 심해 황금 알' → 진짜는 말미잘이 벗어 둔 '발판'. 무서운 제목 뒤에 귀여운 진짜가 나오는 꼴에 딱 맞다."
+  },
+  {
+   "topic": "틱톡 'Zombie Outbreak Survival Stories': 2인칭으로 하루씩 넘어가는 생존 연재 꼴",
+   "market": "us",
+   "where": "틱톡. 주간 트렌드 정리(New Engen) 11월 3위",
+   "evidence": [
+    {
+     "title": "TikTok Trends: November 2026 | Updated Weekly - New Engen",
+     "url": "https://newengen.com/insights/tiktok-trends/",
+     "date": "2026-11-05"
+    }
+   ],
+   "why_now": "11월 첫 주 틱톡 상위 트렌드다. 'Day 1. You're stuck in…'처럼 익숙한 장소에서 시작해, 끝에 선택지를 주는 연재 구조가 유행이다.",
+   "fit": [
+    "nt_story"
+   ],
+   "idea": "좀비 대신 실화 생존(조난·고립)을 'Day 1, Day 2…' 2인칭 3D what-if로. 구조만 참고하고 남의 영상은 베끼지 않는다."
+  },
+  {
+   "topic": "입동 추위와 김장철: 괴산김장축제에 약 17만 명, 김장경연대회 화제",
+   "market": "kr",
+   "where": "지역·생활 기사. 시니어 사연 쇼츠 대박에도 '김장 배추 100포기' 사연이 있다(트렌드 레이더)",
+   "evidence": [
+    {
+     "title": "[오늘 날씨] 입동과 함께 찾아온 겨울…서울 올가을 최강 추위 - 머니투데이",
+     "url": "https://www.mt.co.kr/society/2026/11/07/2026110617265215243",
+     "date": "2026-11-07"
+    },
+    {
+     "title": "'RED하게 세상을 버무리다'… '2026 괴산김장축제', 약 17만명 찾아 성황리 폐막 - 파이낸셜경제",
+     "url": "https://www.fnewstv.com/news/newsview.php?ncode=1065567981255854",
+     "date": "2026-11-09"
+    },
+    {
+     "title": "‘2026 대한민국 김장경연대회’ 백춘석씨 대상 - 굿모닝충청",
+     "url": "https://www.goodmorningcc.com/news/articleView.html?idxno=455378",
+     "date": "2026-11-08"
+    }
+   ],
+   "why_now": "11/7 입동에 올가을 들어 가장 추웠고, 김장 축제·대회 기사가 이번 주에 몰렸다. 해마다 돌아오는 계절 화제다.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "'김장철 집안에 웃음꽃 피는 띠 순위' 표. 레이더 대박 영상('11월 집안에 웃음꽃 피는 띠' 9.4배)의 주제 결과 잘 맞는다."
+  },
+  {
+   "topic": "2027학년도 수능이 11월 19일(목): 손주 수능을 앞둔 시기",
+   "market": "kr",
+   "where": "생활·정책 기사",
+   "evidence": [
+    {
+     "title": "2026 수능 날짜·시간표, 미리 확인하세요 - 위키트리",
+     "url": "https://www.wikitree.co.kr/articles/1173061",
+     "date": "2026-11-10"
+    }
+   ],
+   "why_now": "9일 남았다. 해마다 이맘때 오는 행사라 갑자기 뜬 유행은 아니다.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "'수능 앞둔 손주에게 힘이 되어 주는 띠' 표. 합격·점수 이야기는 빼고, 응원·덕담 쪽으로."
+  },
+  {
+   "topic": "2027 정미년(붉은 양의 해) 신년운세 검색 시즌",
+   "market": "kr",
+   "where": "운세 블로그·사이트(일주별·띠별 2027 운세 글이 쌓이는 중)",
+   "evidence": [
+    {
+     "title": "기사일주 2027년 운세 : 정미년 편인운, 십이운성 제왕과 남녀 차이 - 홍심당",
+     "url": "https://www.hongsimdang.kr/blog/2027%20%EC%9D%BC%EC%A3%BC%EB%B3%84%20%EC%9A%B4%EC%84%B8/%EA%B8%B0%EC%82%AC%EC%9D%BC%EC%A3%BC",
+     "date": "2026-10-27"
+    }
+   ],
+   "why_now": "해마다 연말이면 오는 상시 인기 주제다. 이번 주에 특별히 터진 근거는 없다. 레이더에서 연·월 운세 0.98배, 출생연도·나이 0.95배로 평소 수준이다.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "지금 하고 있는 신년운세 시리즈를 그대로 이어 간다. 새로 띄울 소재로 보지는 않는다."
+  }
+ ],
+ "candidates": [
+  {
+   "line": "insta_sci",
+   "title_idea": "11월 13일 지구 종말? 사실은 '공식이 터지는 날'",
+   "facts": [
+    {
+     "fact": "1960년 11월 4일 과학저널 사이언스에 'Doomsday: Friday, 13 November, A.D. 2026'이라는 논문이 실렸다.",
+     "source_url": "https://www.sakshipost.com/news/national/will-world-end-november-13-2026-here-truth-483098"
+    },
+    {
+     "fact": "물리학자 하인츠 폰 푀르스터와 연구자 패트리샤 모라, 로렌스 애미엇이 서기 원년부터 1958년까지의 세계 인구 추정치 24개를 분석했다.",
+     "source_url": "https://www.sakshipost.com/news/national/will-world-end-november-13-2026-here-truth-483098"
+    },
+    {
+     "fact": "과거 인구 증가 추세가 그대로 이어진다고 가정하면 2026년 11월 13일에 세계 인구가 수학적으로 무한대에 가까워진다는 계산이었다.",
+     "source_url": "https://weekly.khan.co.kr/article/202611011334001"
+    },
+    {
+     "fact": "실제로 지구 멸망을 예언한 논문은 아니고, 당시 논문은 태양 폭발과 지구 종말을 연결하지도 않았다.",
+     "source_url": "https://weekly.khan.co.kr/article/202611011334001"
+    }
+   ],
+   "careful": "공포를 부추기지 않는다(진짜 종말처럼 보이는 썸네일 금지). '근거 없음'은 팩트체크 기사 표현 안에서만 쓴다. 날짜가 지나면 못 쓰니 11/11~12에 공개한다."
+  },
+  {
+   "line": "nt_story",
+   "title_idea": "What If the 1960 'Doomsday Equation' Was Right?",
+   "facts": [
+    {
+     "fact": "1960년 논문의 모델은 인구 증가율이 시간이 갈수록 커지는 '쌍곡선 성장'을 가정했고, 그 추세가 바뀌지 않으면 2026년 11월 13일에 인구가 무한대에 이른다고 계산했다.",
+     "source_url": "https://www.sakshipost.com/news/national/will-world-end-november-13-2026-here-truth-483098"
+    },
+    {
+     "fact": "기사는 지구가 2026년 11월 13일에 끝난다는 과학적 근거는 없다고 밝힌다.",
+     "source_url": "https://www.sakshipost.com/news/national/will-world-end-november-13-2026-here-truth-483098"
+    },
+    {
+     "fact": "SNS에서는 이 날짜를 태양 플레어·코로나 질량 방출과 엮는 주장도 돌고 있다.",
+     "source_url": "https://www.sakshipost.com/news/national/will-world-end-november-13-2026-here-truth-483098"
+    }
+   ],
+   "careful": "what-if라는 것을 분명히 밝힌다(가짜 실화 금지). 종말 단정이나 겁주기는 하지 않는다. 트렌드 편(목 11/12 21:30)에 쓰면 날짜가 맞는다."
+  },
+  {
+   "line": "insta_danger",
+   "title_idea": "심해 3,200m에서 나온 '황금 알'이 위험한 진짜 이유",
+   "facts": [
+    {
+     "fact": "2023년 가을 NOAA 탐사선 오케아노스 익스플로러가 알래스카만 탐사 중, 무인 잠수정 딥 디스커버러로 수심 3,200m 워커 해산에서 금빛 덩어리를 발견했다.",
+     "source_url": "https://www.discoverwildlife.com/animal-facts/marine-animals/the-deep-sea-golden-orb"
+    },
+    {
+     "fact": "영상을 보던 연구팀은 공포영화가 이렇게 시작한다며 농담을 했다.",
+     "source_url": "https://www.discoverwildlife.com/animal-facts/marine-animals/the-deep-sea-golden-orb"
+    },
+    {
+     "fact": "덩어리는 지름 약 10cm에 한쪽에 큰 구멍이 있었고, 입·내장·근육 같은 동물의 특징이 없었다.",
+     "source_url": "https://www.discoverwildlife.com/animal-facts/marine-animals/the-deep-sea-golden-orb"
+    },
+    {
+     "fact": "전자현미경으로 보니 키틴질로 되어 있었고 자포동물의 쏘는 세포가 덮여 있었다.",
+     "source_url": "https://www.discoverwildlife.com/animal-facts/marine-animals/the-deep-sea-golden-orb"
+    },
+    {
+     "fact": "유전체 분석 결과 촉수가 2m에 이르는 심해 거대 말미잘 Relicanthus daphneae의 것이었고, 말미잘이 바위에 붙을 때 쓰는 큐티클로 결론 났다.",
+     "source_url": "https://www.discoverwildlife.com/animal-facts/marine-animals/the-deep-sea-golden-orb"
+    }
+   ],
+   "careful": "'신종 생물'이라고 하지 않는다(정체는 이미 알려진 말미잘의 큐티클). 숫자는 기사에 적힌 그대로(3,200m·10cm·2m) 쓴다."
+  },
+  {
+   "line": "insta_sci",
+   "title_idea": "달에서 일할 신입 뽑습니다: 우주비행사 2년 훈련 속을 열어 보면",
+   "facts": [
+    {
+     "fact": "NASA가 우주비행사 후보를 뽑는 것은 2024년 이후 처음이고, 당시에는 8,000명 넘는 지원자 가운데 10명이 뽑혔다.",
+     "source_url": "https://view.asiae.co.kr/article/2026111009440758747"
+    },
+    {
+     "fact": "연봉은 16만4,395달러(약 2억2,000만 원)이고, 지원서는 미국 동부시간 12월 3일 오후 11시 59분까지 받는다.",
+     "source_url": "https://view.asiae.co.kr/article/2026111009440758747"
+    },
+    {
+     "fact": "뽑힌 사람은 2년 동안 집중 훈련을 받으며 달 지질학, 우주 유영, 고성능 제트기 조종 등을 익힌다.",
+     "source_url": "https://view.asiae.co.kr/article/2026111009440758747"
+    },
+    {
+     "fact": "1950년대 중반 이후 NASA가 뽑은 우주비행사 훈련생은 모두 370명이고, 이번에 뽑힌 사람은 현역 32명과 합류한다.",
+     "source_url": "https://view.asiae.co.kr/article/2026111009440758747"
+    }
+   ],
+   "careful": "지원 자격이 미국 시민권자라는 점을 같이 밝힌다(한국 시청자에게 지원을 권하는 것처럼 보이지 않게). 원화 연봉은 기사 환산값이다."
+  },
+  {
+   "line": "wb_table",
+   "title_idea": "김장철 집안에 웃음꽃 피는 띠 순위 1위~12위 | 45~96년생 전부",
+   "facts": [
+    {
+     "fact": "입동인 11월 7일 서울 아침 기온은 영하 1도, 체감온도는 영하 5도 안팎으로 올가을 들어 가장 추운 날이었다.",
+     "source_url": "https://www.mt.co.kr/society/2026/11/07/2026110617265215243"
+    },
+    {
+     "fact": "11월 5일부터 8일까지 열린 2026 괴산김장축제에 약 17만 명이 찾았다.",
+     "source_url": "https://www.fnewstv.com/news/newsview.php?ncode=1065567981255854"
+    },
+    {
+     "fact": "축제의 '원스톱 김장담그기'와 '드라이브스루 김장'은 사전 예약 단계에서 1,001팀이 신청해 일찍 마감됐다.",
+     "source_url": "https://www.fnewstv.com/news/newsview.php?ncode=1065567981255854"
+    }
+   ],
+   "careful": "순위의 근거는 명리(일진·띠)로 따로 세운다. 기사 사실은 계절감 한 줄에만 쓴다. 건강·추위 관련 단정은 하지 않는다. 대회 수상자 실명은 쓰지 않는다."
+  },
+  {
+   "line": "wb_table",
+   "title_idea": "수능 앞둔 손주에게 힘이 되어 주는 띠 | 11월 19일 수능 · 45~96년생 전부",
+   "facts": [
+    {
+     "fact": "2027학년도 수능은 11월 19일 목요일 오전 8시 40분부터 오후 5시 45분까지 치러진다(일반 수험생 기준).",
+     "source_url": "https://www.wikitree.co.kr/articles/1173061"
+    },
+    {
+     "fact": "수능 날 공공기관·금융기관·50인 이상 기업체 등은 출근 시간이 오전 9시에서 10시로 늦춰진다.",
+     "source_url": "https://www.wikitree.co.kr/articles/1173061"
+    },
+    {
+     "fact": "영어 듣기평가가 있는 오후 1시 10분부터 1시 35분까지는 항공기와 헬리콥터 이착륙 시간이 조정된다.",
+     "source_url": "https://www.wikitree.co.kr/articles/1173061"
+    }
+   ],
+   "careful": "합격·점수·운을 보장하는 말은 하지 않는다. 응원·덕담 꼴로만. 어르신 말투로 쓰고 등급이나 겁주는 표현은 쓰지 않는다."
+  }
+ ],
+ "note": "오늘은 '11/13 종말설'이 한국·영어권에 동시에 퍼져 있어, 인스타 sci와 Nine Tails 트렌드 편에 바로 쓸 수 있는 가장 강한 시한부 소재다(11/12까지). 검색 한도가 도중에 막혀 사실 확인 검색·추가 페치를 하지 못했다. 그래서 왕별이 쪽은 계절 화제(입동·김장·수능)만 기사 근거로 골랐고, 10~20대 릴스 밈은 날짜가 확인된 근거가 없어 넣지 않았다."
+}

@@ -1,0 +1,270 @@
+{
+ "date": "2026-11-09",
+ "hot": [
+  {
+   "topic": "보이저 1호가 지구에서 '빛으로 하루(1광일)' 거리에 처음 닿는다(11/17~18)",
+   "market": "kr",
+   "where": "국내 과학 기사, NASA 공식 행사 페이지, ScienceDaily",
+   "evidence": [
+    {
+     "title": "유성우·화성·목성·슈퍼문…NASA가 꼽은 11월 밤하늘 관측 포인트",
+     "url": "https://www.e-science.co.kr/news/articleView.html?idxno=138813",
+     "date": "2026-11-04"
+    },
+    {
+     "title": "Shine Bright for Voyager's Light-Day - NASA Science",
+     "url": "https://science.nasa.gov/mission/voyager/voyager-1/shine-bright-for-voyagers-light-day/",
+     "date": "2026-11-04"
+    },
+    {
+     "title": "NASA's Voyager 1 is about to reach a historic one-light-day milestone",
+     "url": "https://www.sciencedaily.com/releases/2026/11/261103003152.htm",
+     "date": "2026-11-03"
+    }
+   ],
+   "why_now": "사람이 만든 물체가 처음으로 1광일 거리에 닿는 날이 8~9일 뒤다. NASA가 17일에 기념 행사를 연다. 10월에 48시간 동안 연락이 끊긴 일도 함께 기사에 났다.",
+   "fit": [
+    "insta_sci",
+    "nt_story"
+   ],
+   "idea": "인스타는 '문자 한 통 보내면 답이 이틀 뒤에 오는 거리'를 단면 카드로 보여 준다. Nine Tails는 'What if you texted Voyager 1?'로 만든다."
+  },
+  {
+   "topic": "11월 밤하늘: 24일 슈퍼문(12월·1월까지 세 번 연속), 15~16일 화성·목성 근접, 17~18일 사자자리 유성우",
+   "market": "kr",
+   "where": "국내 과학·생활 기사(NASA 11월 안내를 옮긴 기사)",
+   "evidence": [
+    {
+     "title": "유성우·화성·목성·슈퍼문…NASA가 꼽은 11월 밤하늘 관측 포인트",
+     "url": "https://www.e-science.co.kr/news/articleView.html?idxno=138813",
+     "date": "2026-11-04"
+    },
+    {
+     "title": "[김상문의 달빛愛] \"가을 끝자락, 슈퍼문 뜬다\"",
+     "url": "https://www.mediapen.com/news/view/1134976",
+     "date": "2026-11-05"
+    }
+   ],
+   "why_now": "이달 안에 관측 일정이 몰려 있어서 날짜를 맞춘 소재로 쓸 수 있다. 보름달은 어르신 시청자에게도 친숙한 소재다.",
+   "fit": [
+    "insta_sci",
+    "wb_table"
+   ],
+   "idea": "인스타는 '슈퍼문은 왜 더 커 보일까'를 타원 궤도 단면으로 보여 준다. 왕별이는 11/24 보름달 날에 맞춘 띠 테마 표로 한다."
+  },
+  {
+   "topic": "2년만 쓰려고 만든 NASA 스위프트 망원경이 22년 가까이 일하고 인도네시아 상공으로 떨어졌다",
+   "market": "us",
+   "where": "ScienceDaily 등 영어권 과학 뉴스",
+   "evidence": [
+    {
+     "title": "NASA's Swift telescope falls to Earth after nearly 22 years in space",
+     "url": "https://www.sciencedaily.com/releases/2026/11/261105224545.htm",
+     "date": "2026-11-06"
+    }
+   ],
+   "why_now": "이번 주 수요일에 대기권으로 다시 들어왔다. 계획보다 열 배 넘게 오래 일했다는 이야기가 실화형으로 쓰기 좋다.",
+   "fit": [
+    "nt_story",
+    "insta_sci"
+   ],
+   "idea": "얼굴 없는 3D로 'The telescope that refused to retire' 실화를 만든다(45~60초)."
+  },
+  {
+   "topic": "아르헨티나 심해 협곡에서 신종 57종이 나왔다. 뿔 달린 해삼 'Loki'와 '뚱이(Patrick) 불가사리'가 화제",
+   "market": "us",
+   "where": "환경·과학 기사(Mongabay). 탐사 생중계를 400만 명 넘게 봤다",
+   "evidence": [
+    {
+     "title": "'Patrick' sea star went viral, but Argentine deep-sea canyon held 57 new species",
+     "url": "https://news.mongabay.com/2026/10/patrick-sea-star-went-viral-but-argentine-deep-sea-canyon-held-57-new-species/",
+     "date": "2026-10-13"
+    }
+   ],
+   "why_now": "10월 중순 발표라 30일 안쪽이지만 끝물에 가깝다. 생중계로 이미 친숙해진 캐릭터 같은 생물이 있어서 쓰기 쉽다.",
+   "fit": [
+    "insta_worker",
+    "insta_danger"
+   ],
+   "idea": "심해 직장인 편: '자기가 유명해진 줄 모르는 스타 동료 Patrick'. 위험한 진짜 이유 편: '뿔 달린 심해 악마?'의 정체는 해삼."
+  },
+  {
+   "topic": "오늘(11/9)이 음력 10월 1일이라 띠별 운세 기사에 음력 날짜가 함께 실렸다",
+   "market": "kr",
+   "where": "신문 '오늘의 운세' 띠별·나이별 기사",
+   "evidence": [
+    {
+     "title": "[오늘의 운세] 11월 9일 月(음력 10월 1일) 띠별 운세 - 한국금융신문",
+     "url": "https://www.fntimes.com/html/view.php?ud=202611090359193906c1c16452b0_18",
+     "date": "2026-11-09"
+    },
+    {
+     "title": "[오늘의 띠별 운세] 11월 9일 나이별 총운",
+     "url": "https://www.topstarnews.net/news/articleView.html?idxno=16271414",
+     "date": "2026-11-09"
+    }
+   ],
+   "why_now": "음력 달이 바뀌는 날이다. 띠별 운세 기사는 날마다 나오는 상시 소재라 '유행'이라기보다 계절 신호로 본다.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "'음력 시월 첫 주 집안이 편안한 띠' 같은 띠 테마 표에 음력 날짜를 적는다."
+  },
+  {
+   "topic": "2027학년도 수능이 11월 19일(목)로 열흘 남았다",
+   "market": "kr",
+   "where": "입시 기사·수능 시간표 정리 페이지",
+   "evidence": [
+    {
+     "title": "2027학년도 수능 시간표｜11월 19일 교시별 입실·시험 시간 정리",
+     "url": "https://foxcg.com/2027-csat-schedule",
+     "date": "2026-11-06"
+    }
+   ],
+   "why_now": "수능 주간이 다가와서 손주를 둔 55세 이상 시청자도 관심을 가질 시기다.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "'수능 날 손주에게 따뜻한 말 건네기 좋은 띠' 표를 수능 전날 낸다. 합격을 약속하는 말은 쓰지 않는다."
+  },
+  {
+   "topic": "김장철을 앞두고 배추·쪽파값이 반토막 났고, 전통시장 김장 장보기 행사가 열린다",
+   "market": "kr",
+   "where": "사회·지역 기사",
+   "evidence": [
+    {
+     "title": "김장철 앞두고 배추·쪽파값 반토막…밭 갈아엎는 전남산지",
+     "url": "https://www.seoul.co.kr/news/society/2026/11/06/20261106500020",
+     "date": "2026-11-06"
+    },
+    {
+     "title": "인천시, 김장철 맞아 20개 전통시장서 '장 보러 가는 날' 연다",
+     "url": "https://www.joongdo.co.kr/web/view.php?key=20261108010002450",
+     "date": "2026-11-08"
+    }
+   ],
+   "why_now": "11월 김장철이 시작돼 왕별이 시청층의 생활 화제다. 트렌드 레이더의 사연 쇼츠에서도 김장 사연이 22.4배를 냈다.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "'김장하는 날 손맛 좋고 화목한 띠' 띠 테마 표를 만든다. 가격 얘기는 넣지 않는다."
+  }
+ ],
+ "candidates": [
+  {
+   "line": "insta_sci",
+   "title_idea": "문자 하나 보내면 답장이 이틀 뒤에 오는 곳: 보이저 1호 '빛으로 하루' 거리",
+   "facts": [
+    {
+     "fact": "보이저 1호는 11월 18일에 지구에서 1광일 거리에 닿고, 그러면 가장 간단한 왕복 통신에도 48시간이 걸린다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261103003152.htm"
+    },
+    {
+     "fact": "1광일은 빛이 24시간 동안 가는 거리로 약 259억 km이며, 1977년에 발사된 보이저 1호가 사람이 만든 물체로는 처음 이 거리에 닿는다.",
+     "source_url": "https://www.e-science.co.kr/news/articleView.html?idxno=138813"
+    },
+    {
+     "fact": "보이저는 플루토늄 붕괴열로 전기를 만들며, 탐사선마다 전력이 해마다 약 4와트씩 줄어든다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261103003152.htm"
+    },
+    {
+     "fact": "보이저 1호는 연락이 끊긴 지 약 48시간 만인 10월 20일에 신호가 다시 잡혔고, 그때 지구에서 약 240억 km 떨어져 있었다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261103003152.htm"
+    }
+   ],
+   "careful": "도달일이 한국 기사엔 17일, ScienceDaily엔 18일로 나온다(시간대 차이). 날짜는 '11월 17~18일'로 쓴다. 연락 두절 원인은 아직 밝혀지지 않았으니 단정하지 않는다."
+  },
+  {
+   "line": "nt_story",
+   "title_idea": "Built to Last 2 Years. It Worked for 22. (NASA Swift's last fall)",
+   "facts": [
+    {
+     "fact": "NASA 스위프트 망원경은 2004년에 발사됐고 원래 2년만 쓸 계획이었지만 22년 가까이 일했다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261105224545.htm"
+    },
+    {
+     "fact": "미 우주군은 스위프트가 수요일 오전 7시 39분(미국 동부시)에 인도네시아 북수마트라 상공으로 대기권에 들어왔다고 확인했다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261105224545.htm"
+    },
+    {
+     "fact": "NASA는 기체 대부분이 타 없어질 것으로 봤지만 일부 부품은 재진입 열을 견뎠을 수 있다고 인정했다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261105224545.htm"
+    },
+    {
+     "fact": "스위프트는 무거운 별이 무너지거나 중성자별이 합쳐질 때 생기는 감마선 폭발을 조사하려고 만들어졌다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261105224545.htm"
+    }
+   ],
+   "careful": "잔해가 사람이나 마을에 떨어졌다는 식의 지어낸 장면은 넣지 않는다. 장면은 의인화한 마네킹·3D 연출이라고 분명히 한다."
+  },
+  {
+   "line": "insta_worker",
+   "title_idea": "심해 직장인: 자기가 회사 스타인 줄 모르는 동료, 불가사리 Patrick",
+   "facts": [
+    {
+     "fact": "2025년 7~8월 아르헨티나 마르델플라타 해저 협곡 탐사 생중계를 400만 명 넘게 봤고, 만화 속 뚱이(Patrick)를 닮은 주황 불가사리가 인기를 끌었다.",
+     "source_url": "https://news.mongabay.com/2026/10/patrick-sea-star-went-viral-but-argentine-deep-sea-canyon-held-57-new-species/"
+    },
+    {
+     "fact": "Patrick은 신종이 아니었고, 과학자들은 그 불가사리를 그 자리에 그대로 두고 왔다.",
+     "source_url": "https://news.mongabay.com/2026/10/patrick-sea-star-went-viral-but-argentine-deep-sea-canyon-held-57-new-species/"
+    },
+    {
+     "fact": "분류학자 20명이 2주 동안 표본을 살펴 신종 57종과 새 속 5개를 찾았다.",
+     "source_url": "https://news.mongabay.com/2026/10/patrick-sea-star-went-viral-but-argentine-deep-sea-canyon-held-57-new-species/"
+    }
+   ],
+   "careful": "Patrick의 정확한 종 이름과 수심은 이 페이지에 없으니 지어내지 않는다. 만화 캐릭터 그림을 그대로 쓰지 말고 '닮았다'는 말까지만 한다."
+  },
+  {
+   "line": "insta_danger",
+   "title_idea": "수심 2,577m의 '뿔 달린 악마'의 정체",
+   "facts": [
+    {
+     "fact": "뿔처럼 생긴 돌기가 두 개 달린 해삼이 수심 2,577m 바닥에 살며, 과학자들은 뿔 달린 북유럽 신화의 장난꾸러기 신 이름을 따 'Loki'라고 불렀다.",
+     "source_url": "https://news.mongabay.com/2026/10/patrick-sea-star-went-viral-but-argentine-deep-sea-canyon-held-57-new-species/"
+    },
+    {
+     "fact": "Loki(Peniagone 속)는 이 협곡에서 찾은 신종 57종 가운데 하나이고, 새로 나온 해삼 종은 최대 10종이다.",
+     "source_url": "https://news.mongabay.com/2026/10/patrick-sea-star-went-viral-but-argentine-deep-sea-canyon-held-57-new-species/"
+    },
+    {
+     "fact": "작은 갑각류 요각류는 표본의 10%만 살펴봤는데, 살펴본 표본이 모두 신종이었다.",
+     "source_url": "https://news.mongabay.com/2026/10/patrick-sea-star-went-viral-but-argentine-deep-sea-canyon-held-57-new-species/"
+    }
+   ],
+   "careful": "'발견(discovered)'은 됐지만 아직 정식 기재(described)는 안 됐다. '신종 확정'이라고 단정하지 않는다. 이미 쓴 바다돼지(carpool-senior-sea-pig)와 다른 해삼임을 밝힌다."
+  },
+  {
+   "line": "wb_table",
+   "title_idea": "수능 날 손주에게 따뜻한 말 건네기 좋은 띠 | 11월 18일 · 45~96년생 전부",
+   "facts": [
+    {
+     "fact": "2027학년도 수능은 2026년 11월 19일(목)에 치른다.",
+     "source_url": "https://foxcg.com/2027-csat-schedule"
+    },
+    {
+     "fact": "2026년 11월 9일은 음력 10월 1일이다.",
+     "source_url": "https://www.fntimes.com/html/view.php?ud=202611090359193906c1c16452b0_18"
+    }
+   ],
+   "careful": "합격·점수를 약속하는 말은 금지한다. 응원·덕담 쪽으로 쓰고, 순위나 겁주는 말은 넣지 않는다."
+  },
+  {
+   "line": "wb_table",
+   "title_idea": "슈퍼문 뜨는 날 집안에 복이 드는 띠 | 11월 24일 · 45~96년생 전부",
+   "facts": [
+    {
+     "fact": "11월 24일에 슈퍼문이 뜨고, NASA는 12월과 내년 1월까지 세 번 연속 슈퍼문이 이어질 것으로 봤다.",
+     "source_url": "https://www.e-science.co.kr/news/articleView.html?idxno=138813"
+    },
+    {
+     "fact": "슈퍼문은 달이 지구에 비교적 가까울 때 보름달이 떠서 평소보다 조금 더 크고 밝게 보이는 것이다.",
+     "source_url": "https://www.e-science.co.kr/news/articleView.html?idxno=138813"
+    }
+   ],
+   "careful": "'올해 가장 큰 달'이라는 말은 출처에 없으니 쓰지 않는다. 날짜는 NASA(미국 태평양 시간) 기준이니 한국 날짜는 한 번 더 확인한다."
+  }
+ ],
+ "note": "한국 쪽은 검색에 잡히는 쇼츠·릴스 유행 근거가 거의 없었다(패션·지난 글뿐). 대신 날짜가 정해진 화제(음력 10월 시작, 수능 11/19, 김장철, 11/24 슈퍼문)를 왕별이용으로 골랐다. 우주·심해는 보이저 1광일(11/17~18)이 이달 가장 강한 소재다. 검색·열람 한도에 걸려 영어 쪽 바이럴 실화·what-if와 상달 풍속은 다 확인하지 못했다(스위프트 재진입 하나만 실화 후보로 넣음)."
+}
