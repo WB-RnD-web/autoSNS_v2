@@ -1,0 +1,23 @@
+{
+ "date": "2026-11-14",
+ "slot": "h",
+ "format": "morph",
+ "model": "claude-opus-5-5",
+ "effort": "high",
+ "tokens": {
+  "input": 12,
+  "cache_write": 15105,
+  "cache_read": 50067,
+  "output": 3833,
+  "web_search": 6,
+  "web_fetch": 0
+ },
+ "ok": true,
+ "tries": 1,
+ "usd": 0.222,
+ "errors": [],
+ "history": [
+  []
+ ],
+ "slug": "hotteok-kitten-wakes-up"
+}

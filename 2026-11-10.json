@@ -1,0 +1,61 @@
+{
+ "date": "2026-11-10",
+ "concepts": [
+  {
+   "slug": "christmas-already-cat",
+   "track": "sneaky-snitch.mp3",
+   "caption": "Me the second Halloween ends",
+   "title": "Halloween Ended 5 Minutes Ago and He's Already Ready 🎄🐱",
+   "en_line": "The pumpkins are out, the tinsel is in, and nobody gets a say.",
+   "ko_line": "할로윈 끝나자마자 바로 크리스마스 모드 들어감 🎄",
+   "tags": [
+    "cat",
+    "ai cat",
+    "christmas cat",
+    "ragdoll cat",
+    "cat meme",
+    "holiday season",
+    "funny cat",
+    "cozy"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#크리스마스",
+    "#냥스타그램",
+    "#cat",
+    "#christmascat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic fluffy Ragdoll cat with a cream-white body, seal-brown face mask, brown ears and tail, white front paws and bright sapphire-blue eyes, sitting on a cosy beige rug in a warm living room next to two carved jack-o'-lantern pumpkins and a few scattered orange autumn leaves, a small open cardboard box beside it with shiny red and gold Christmas baubles and silver tinsel peeking out, soft warm evening lamp light, the whole cat fully in frame and clearly visible, vertical composition",
+     "motion": "The fluffy Ragdoll cat sits calmly beside the jack-o'-lantern pumpkins, glances at them, then slowly turns its head toward the open box of shiny Christmas baubles, its ears perk up, its blue eyes widen, and it lifts one white front paw and gently taps the silver tinsel. The tinsel shimmers softly in the lamp light. The cat stays fully in frame with four normal legs and keeps its mouth closed. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same fluffy Ragdoll cat with the same fur pattern, face and eye color. Now the cat wears a small red Santa hat with white trim and sits proudly under a fully decorated Christmas tree glowing with warm fairy lights and red and gold baubles, with a few plain wrapped gift boxes with ribbons beside it, in the same cosy living room with the pumpkins gone, the whole cat fully in frame and clearly visible. Photorealistic, vertical composition.",
+     "motion": "The Ragdoll cat in the little Santa hat sits under the glowing Christmas tree, sways its head gently from side to side to the beat, blinks slowly with a satisfied look, then reaches up with one white front paw and softly bats a hanging red bauble, which swings a little. The fairy lights twinkle warmly. The cat stays fully in frame with four normal legs and keeps its mouth closed. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Early November is when the internet declares holiday season officially open the moment Halloween ends. This week's TikTok trend roundups list the annual holiday kickoff, and cat meme feeds are already full of Christmas-tree cats.",
+    "pattern": "before/after punchline: the cat side-eyes the leftover Halloween pumpkins and sneaks a look at the ornament box (setup), then cuts to the same cat fully moved into Christmas mode in a Santa hat under the glowing tree (payoff). Relatable 'too early for Christmas? never' meme line.",
+    "evidence": [
+     {
+      "title": "TikTok Trends: November 2026",
+      "url": "https://newengen.com/insights/tiktok-trends/"
+     },
+     {
+      "title": "A Holiday Surprise of Merry Cat Memes and Tweets to Give Feline Fanatics the Gift of Giggles",
+      "url": "https://cheezburger.com/47334917/a-holiday-surprise-of-merry-cat-memes-and-tweets-to-give-feline-fanatics-the-gift-of-giggles"
+     }
+    ]
+   },
+   "id": "m261110",
+   "format": "meme",
+   "engine": "14b",
+   "seed": 75243
+  }
+ ]
+}

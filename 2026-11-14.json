@@ -1,0 +1,54 @@
+{
+ "date": "2026-11-14",
+ "concepts": [
+  {
+   "slug": "tangerine-basket-kitten",
+   "track": "fluffing-a-duck.mp3",
+   "caption": "This tangerine purrs",
+   "title": "This Tangerine Has Tiny Ears 🍊🐱",
+   "en_line": "Went to peel a tangerine and woke up a kitten instead.",
+   "ko_line": "귤 까먹으려다가 아기 고양이 깨움 🍊",
+   "tags": [
+    "cat",
+    "ai cat",
+    "kitten",
+    "tangerine",
+    "mandarin",
+    "winter snack",
+    "cute cat",
+    "cozy winter",
+    "food morph"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#귤",
+    "#겨울간식",
+    "#cat",
+    "#kitten",
+    "#aicat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic close-up of a round woven wicker basket piled with about eight glossy bright orange tangerines, some with small fresh green leaves, sitting on a low wooden table on top of a soft beige quilted winter blanket in a cosy room, warm golden lamp light, a plain white ceramic mug with gentle steam beside the basket, soft blurred window with a blue winter evening outside. The tangerine at the front centre of the basket has two tiny fluffy bright orange kitten ears with pale pink insides peeking up from its top, as if a kitten is curled up asleep inside it. Vertical composition, the whole basket fully in frame and clearly visible, shallow depth of field.",
+     "motion": "Calm cosy scene: soft steam rises slowly from the white mug and the warm lamp light glows gently. The two tiny fluffy orange kitten ears on the front tangerine twitch once, then the left ear flicks a little again, as if the kitten is dreaming. All the tangerines stay still in the basket. The tangerine kitten stays fully in frame, curled up with its four normal legs tucked out of sight. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same tangerine kitten from shot 1 with the same fur pattern, face and eye color, and keep the same wicker basket, tangerines, mug, blanket and warm lamp light. The front centre tangerine with the two tiny ears is now, in the very same spot, a tiny round kitten curled up among the other tangerines, the same size as a tangerine: its fluffy fur is bright tangerine orange with a soft dimpled peel-like texture, a cream-white chest, a small fresh green tangerine leaf resting on top of its head between its ears, a pink nose, and round bright green eyes just opening sleepily, mouth closed. Photorealistic, vertical composition.",
+     "motion": "The tiny tangerine-orange kitten slowly wakes up in the basket: it lifts its round head, blinks its bright green eyes sleepily twice, stretches its two front paws forward a little over the neighbouring tangerine, then tilts its head and looks up curiously with its mouth closed. The green leaf stays on its head. Soft steam keeps rising from the mug and the lamp light glows warmly. The kitten stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.6
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Mid-November is the start of tangerine season in Korea and across East Asia, and a basket of mandarins on a warm blanket is the classic cosy winter-at-home picture. This is an evergreen seasonal idea: no web search was run, so there is no current trend evidence.",
+    "pattern": "hide-and-reveal food morph: a calm cosy food still life with one tiny ear hint, then the cute wake-up reveal in the same spot; the title teases the odd detail ('has tiny ears')",
+    "evidence": []
+   },
+   "id": "m261114",
+   "format": "morph",
+   "engine": "14b",
+   "seed": 86323
+  }
+ ]
+}

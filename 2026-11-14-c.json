@@ -1,0 +1,61 @@
+{
+ "date": "2026-11-14",
+ "concepts": [
+  {
+   "slug": "fancy-bed-vs-box-persian",
+   "track": "monkeys-spinning-monkeys.mp3",
+   "caption": "$60 bed vs. free box",
+   "title": "Bought Him a Fancy Bed, He Picked the Box Instead 📦🐱",
+   "en_line": "The bed was soft and very expensive, but the box was the right size.",
+   "ko_line": "비싼 침대 사줬더니 결국 택배 상자로 감 📦",
+   "tags": [
+    "cat",
+    "ai cat",
+    "cat meme",
+    "cat in a box",
+    "if i fits i sits",
+    "persian cat",
+    "funny cat",
+    "cat bed"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#냥스타그램",
+    "#택배상자",
+    "#cat",
+    "#catmeme",
+    "#ifitsisits"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic fluffy pure-white Persian cat with long silky snow-white fur, a round flat face, a small pink nose, small rounded ears and big round copper-orange eyes, sitting on a light wooden living room floor next to a brand-new plush round cream-colored cat bed with a soft fluffy rim, looking at the bed with a calm unimpressed expression, a small plain brown cardboard box with open flaps and blank sides sitting on the floor just beside the bed, cozy warm afternoon light from a window, a soft beige rug and a green houseplant softly blurred in the background, the whole cat fully in frame and clearly visible, vertical composition",
+     "motion": "The fluffy white Persian cat sits on the wooden floor and looks down at the plush new cat bed, gives one slow unimpressed blink, then slowly turns its head toward the small plain cardboard box beside it and stares at the box, its long tail swishing gently once across the floor. Soft dust motes drift in the warm window light. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same fluffy pure-white Persian cat with the same fur pattern, face and eye color. The cat is now squeezed happily inside the small plain brown cardboard box with blank sides, its long white fur puffing out over all four edges of the box, only its round face, ears and chest showing above the rim, eyes half-closed in total contentment, while the plush cream cat bed sits empty right beside the box. Same cozy living room, same warm afternoon window light. Photorealistic, vertical composition.",
+     "motion": "The fluffy white Persian cat sits squeezed inside the small cardboard box, gives a slow happy blink, wiggles its shoulders a little to settle deeper into the box, and its ears twitch while its fluffy fur sways softly over the box edges. The empty plush cat bed stays still beside it. The cat stays fully in frame with four normal legs tucked inside the box. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Cat-in-a-box memes are getting attention again right now: Cheezburger's trending list includes a roundup of cats sitting in boxes dated November 11, 2026. Mid-November is also peak online-shopping season, with 11.11 and Black Friday orders arriving, so a lot of homes have delivery boxes lying around and this joke is very relatable.",
+    "pattern": "Relatable pet-owner meme in two beats: an expensive gift gets an unimpressed stare (setup), then the cat picks the cheap box that's too small (punchline). The title uses the 'Bought X, he chose Y' pattern.",
+    "evidence": [
+     {
+      "title": "25 Cat Memes to Bring Back Childhood Magic and Simpler Days - I Can Has Cheezburger? (trending: 23 Cats Bringing Pure Meowtivation to the Art of Sitting in Boxes, November 11, 2026)",
+      "url": "https://cheezburger.com/47248133/25-cat-memes-to-bring-back-childhood-magic-and-simpler-days"
+     },
+     {
+      "title": "25 Funniest Cat Memes and Tweets for Feline Fanatics (November 2, 2026) - I Can Has Cheezburger?",
+      "url": "https://cheezburger.com/47270661/25-funniest-cat-memes-and-tweets-for-feline-fanatics-november-2-2026"
+     }
+    ]
+   },
+   "id": "m261114c",
+   "format": "meme",
+   "engine": "14b",
+   "seed": 46022
+  }
+ ]
+}

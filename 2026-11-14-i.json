@@ -1,0 +1,61 @@
+{
+ "date": "2026-11-14",
+ "concepts": [
+  {
+   "slug": "robot-vacuum-rider-siberian",
+   "track": "hep-cats.mp3",
+   "caption": "Me walking up to my Saturday chores",
+   "title": "The Vacuum Came for Him. Now He Drives It 🤖🐱",
+   "en_line": "He did not run from the vacuum, he simply promoted himself to driver.",
+   "ko_line": "토요일 청소는 내가 접수했다옹 😎",
+   "tags": [
+    "cat",
+    "ai cat",
+    "cat meme",
+    "robot vacuum cat",
+    "siberian cat",
+    "funny cat",
+    "saturday chores",
+    "unbothered cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#로봇청소기",
+    "#주말",
+    "#cat",
+    "#catmeme",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic fluffy Siberian cat with a thick brown mackerel tabby coat, a white bib, white front paws, a bushy striped tail and bright green eyes, sitting upright and calm on a soft beige rug in a sunny minimalist living room, face to face with a plain matte white round robot vacuum with smooth unmarked surfaces resting on the floor in front of it, warm morning sunlight from a large window, potted plant in the background, the whole cat and the robot vacuum fully in frame, vertical composition",
+     "motion": "The fluffy Siberian cat sits calmly facing the round robot vacuum. The robot vacuum slowly rolls a little closer and stops. The cat does not flinch: it slowly tilts its head, blinks once, then lifts one white front paw and gently taps the top of the vacuum. Dust motes float in the warm sunbeam. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same fluffy Siberian cat with the same brown mackerel tabby fur pattern, white bib, white paws, face and green eye color. Show the next moment: the cat now sits loafed comfortably on top of the same plain white round robot vacuum on the beige rug, paws tucked in, eyes half closed, looking proud and relaxed like it is driving, same sunny living room. Photorealistic, vertical composition.",
+     "motion": "The robot vacuum glides slowly and smoothly forward a short distance across the rug carrying the loafed Siberian cat on top. The cat sways gently to the beat, blinks slowly with a proud, relaxed face and twitches one ear. Sunlight and floating dust motes shimmer in the background. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "It's Saturday cleaning day, and November 2026's comeback meme 'What's up brah?' is all about a small, unbothered guy calmly walking up to an enemy way too big for him and never flinching.",
+    "pattern": "Unbothered face-off: a small cat stares down a big everyday 'villain' (the vacuum), and the punchline is that he takes it over instead of running away",
+    "evidence": [
+     {
+      "title": "Top Trending Memes on Social Media (November 2026)",
+      "url": "https://napoleoncat.com/blog/trending-memes/"
+     },
+     {
+      "title": "24 Funniest Feline Memes to Get You Warmed Up for the Week (November 9, 2026)",
+      "url": "https://cheezburger.com/47340293/24-funniest-feline-memes-to-get-you-warmed-up-for-the-week-november-9-2026"
+     }
+    ]
+   },
+   "id": "m261114i",
+   "format": "meme",
+   "engine": "14b",
+   "seed": 92484
+  }
+ ]
+}

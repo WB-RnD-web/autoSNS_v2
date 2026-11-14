@@ -1,0 +1,71 @@
+{
+ "date": "2026-11-14",
+ "concepts": [
+  {
+   "slug": "hotteok-kitten-wakes-up",
+   "track": "fluffing-a-duck.mp3",
+   "caption": "Wait… that hotteok just moved",
+   "title": "One Warm Hotteok Woke Up From Its Nap 🥞🐱",
+   "en_line": "Fresh off the pan, sweet, toasty and suddenly very sleepy.",
+   "ko_line": "갓 구운 호떡 하나가 기지개 켰어요 🥞",
+   "tags": [
+    "cat",
+    "ai cat",
+    "kitten",
+    "hotteok",
+    "korean street food",
+    "winter snack",
+    "food turns into cat",
+    "cute kitten",
+    "cozy"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#호떡",
+    "#겨울간식",
+    "#cat",
+    "#kitten",
+    "#aicat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic close-up of a round speckled cream stoneware plate on a warm wooden kitchen table, holding five freshly made Korean hotteok sweet pancakes, each flat and round with a crisp glossy golden-brown surface, darker toasted edges and a few shiny drops of brown sugar syrup and small seeds on top; on the front hotteok two tiny soft golden-brown kitten ears with pale cream inner fur peek up from the top edge, the only kitten hint in the scene; thin wisps of steam rising, a small ceramic dish of cinnamon sugar beside the plate, softly blurred cosy kitchen with warm evening lamp light, vertical composition",
+     "motion": "Thin wisps of steam rise slowly from the warm hotteok. The two tiny golden-brown kitten ears on the front hotteok twitch once, then turn slightly toward the camera, while the plate and the other pancakes stay still. The hidden kitten stays fully in frame with four normal legs tucked out of sight. Warm lamp light glows softly. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same tiny golden-brown kitten ears from shot 1 with the same fur pattern, face and eye color. In the same spot on the same plate, the front hotteok is now a tiny kitten curled into a flat round pancake shape, its short soft fur crisp golden-brown with darker toasted-brown edges around its back, a pale cream belly and paws, and a few tiny darker speckles like seeds on its back; it is just waking up, head slightly raised, with sleepy half-open honey-amber eyes and a small pink nose. The other four hotteok, the cinnamon sugar dish, the steam and the cosy kitchen with warm lamp light stay the same. Photorealistic, vertical composition.",
+     "motion": "The tiny golden-brown hotteok kitten slowly lifts its head from its curled pancake pose, blinks its honey-amber eyes sleepily, twitches its ears, then stretches one small cream front paw forward onto the plate and gently tilts its head toward the camera, mouth closed. Soft steam keeps rising from the other hotteok. The kitten stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.6
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Mid-November is when hotteok season begins in Korea. Food and travel sites this month put it with bungeoppang and roasted chestnuts as the classic warm winter street snacks, and the AI cat-and-food genre keeps growing on Shorts.",
+    "pattern": "spot-the-odd-one morph: a cosy plate of a seasonal treat with one tiny ear hint, then that piece turns into a matching kitten that sleepily wakes up",
+    "evidence": [
+     {
+      "title": "Korean winter street food: Warm treats to find in Seoul and Busan - AsiaOne",
+      "url": "https://www.asiaone.com/lifestyle/winter-street-food-seoul-busan"
+     },
+     {
+      "title": "Seoul in Winter 2026: Things to Do, Snow, Festivals & 5-Day Itinerary - Seoul Tourism Guide",
+      "url": "https://www.seoultourism.org/seoul-in-winter/"
+     },
+     {
+      "title": "Where to Eat Hotteok in Seoul: 4 Sweet and Savory Stops",
+      "url": "https://www.tastekoreanfood.com/ktrend/where-to-eat-hotteok-in-seoul"
+     },
+     {
+      "title": "How to Create an AI Cat Cooking Video - An Easy Guide",
+      "url": "https://dreamina.capcut.com/resource/cat-cooking"
+     }
+    ]
+   },
+   "id": "m261114h",
+   "format": "morph",
+   "engine": "14b",
+   "seed": 96438
+  }
+ ]
+}

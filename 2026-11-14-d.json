@@ -1,0 +1,66 @@
+{
+ "date": "2026-11-14",
+ "concepts": [
+  {
+   "slug": "roasted-chestnut-kitten",
+   "track": "merry-go.mp3",
+   "caption": "One of these chestnuts is purring",
+   "title": "This Roasted Chestnut Started Purring 🌰🐱",
+   "en_line": "We bought a bag of warm roasted chestnuts and one of them woke up.",
+   "ko_line": "군밤 사왔는데 하나가 야옹했어요 🌰",
+   "tags": [
+    "cat",
+    "ai cat",
+    "kitten",
+    "roasted chestnuts",
+    "food turns into kitten",
+    "winter snack",
+    "cute kitten",
+    "cozy"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#군밤",
+    "#겨울간식",
+    "#cat",
+    "#kitten",
+    "#aicat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic close-up of a shallow cream ceramic bowl filled with about ten freshly roasted chestnuts on a warm wooden kitchen table beside a frosty window at dusk, glossy reddish-brown shells with pale tan bases, some with a cross-cut top split open to show golden insides, soft warm lamp light, gentle wisps of steam rising, a folded checkered linen napkin next to the bowl; the round chestnut at the front centre has two tiny fluffy reddish-brown kitten ears with pale cream insides poking up from its top, the whole bowl fully in frame, vertical composition",
+     "motion": "Gentle wisps of steam rise slowly from the bowl of roasted chestnuts in the warm lamp light. The two tiny kitten ears on the front chestnut twitch once, then turn slightly toward the camera and settle again. The hidden kitten stays fully in frame with four normal legs tucked out of sight under its chestnut shape, and nothing new appears. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same tiny chestnut kitten with the same fur pattern, face and eye color: the kitten with glossy reddish-brown fur like a roasted chestnut shell, a pale cream-tan chest and chin like the chestnut base, tiny fluffy reddish-brown ears with pale cream insides and big round amber eyes. The round chestnut with ears at the front centre of the cream ceramic bowl is now this tiny round kitten curled up in the same spot among the other roasted chestnuts, just waking up with sleepy half-open amber eyes, its small front paws resting on a chestnut, same wooden table, frosty window, checkered napkin, warm lamp light and soft steam. Photorealistic, vertical composition.",
+     "motion": "The tiny reddish-brown chestnut kitten slowly opens its sleepy amber eyes, blinks twice, tilts its head and gently taps the chestnut next to it with one small front paw, then snuggles back down among the chestnuts. Soft steam drifts up in the warm lamp light. The kitten stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.6
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "It's mid-November, so roasted chestnuts are a seasonal treat in Korea (Seoul street snack season next to hotteok) and in the West, where fresh 2026 chestnuts are being roasted every weekend this month. AI cat clips that put cats into everyday food and job scenes are also spreading fast on Shorts, Reels and TikTok.",
+    "pattern": "spot-the-kitten morph: a cosy seasonal snack with one piece hiding tiny ears, then the reveal of a sleepy kitten whose fur matches the food, waking up in the same spot",
+    "evidence": [
+     {
+      "title": "Your feed is suddenly full of AI cat videos — here's why they're going viral right now",
+      "url": "https://tech.yahoo.com/ai/articles/feed-suddenly-full-ai-cat-142209489.html"
+     },
+     {
+      "title": "South Korea in November 2026: Seoul weather, autumn leaves & festivals",
+      "url": "https://www.designerjourneys.com/blog/korea-in-november-best-time-to-visit-seoul/"
+     },
+     {
+      "title": "Roasted Chestnuts at Marchesi Vineyards",
+      "url": "https://www.oregonwinepress.com/event-detail?eventTitle=roasted-chestnuts-at-marchesi-vineyards--1794643200--27612"
+     }
+    ]
+   },
+   "id": "m261114d",
+   "format": "morph",
+   "engine": "14b",
+   "seed": 10644
+  }
+ ]
+}

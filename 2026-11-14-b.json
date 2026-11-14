@@ -1,0 +1,52 @@
+{
+ "date": "2026-11-14",
+ "concepts": [
+  {
+   "slug": "ring-toss-prize-thief-bengal",
+   "track": "sneaky-snitch.mp3",
+   "caption": "Lost the game. Took the prize.",
+   "title": "Lost the Ring Toss, Kept the Prize Anyway 🐟🐱",
+   "en_line": "He missed every single ring, so he went straight to the prize shelf instead.",
+   "ko_line": "링 던지기는 졌지만 상품은 내 거다냥 🐟",
+   "tags": [
+    "cat",
+    "ai cat",
+    "bengal cat",
+    "ring toss",
+    "carnival game",
+    "funny cat",
+    "sneaky cat",
+    "cute cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#벵갈고양이",
+    "#냥스타그램",
+    "#cat",
+    "#bengalcat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic young Bengal cat with a short glossy golden-orange coat covered in dark chocolate-brown rosette spots, a creamy white belly and chin, dark-ringed tail, black-rimmed bright green eyes and a pink-brown nose, sitting upright on the wooden counter of a cosy carnival ring toss booth at night, a few colourful plastic rings lying by its front paws, neat rows of plain clear and green glass bottles behind it, warm glowing string lights overhead, soft plush toy prizes hanging on the back wall, the whole cat fully in frame and clearly visible, vertical composition",
+     "motion": "The Bengal cat sits on the ring toss counter and stares at the rows of glass bottles. It tilts its head and gently taps one plastic ring with a front paw, so the ring slides a few centimetres across the counter, then the cat looks at the bottles again and blinks slowly. The string lights twinkle softly overhead. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same young Bengal cat with the same fur pattern, face and eye color. It is now lying comfortably on the top prize shelf of the same carnival ring toss booth, both front paws wrapped around a giant soft light-blue plush fish toy that is bigger than the cat, with a calm, proud, half-closed-eye look, warm glowing string lights and the rows of glass bottles softly blurred below. Photorealistic, vertical composition.",
+     "motion": "The Bengal cat lies on the prize shelf hugging the giant plush fish. It snuggles its cheek into the plush, slowly blinks, then glances left and right sneakily while its tail tip swishes gently. The string lights twinkle softly in the background. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Evergreen idea: I hit the search limit before finding a current cat or game trend that fits. Cosy night fairs and winter markets start opening in mid-November, and 'lost the game, still got the prize' is a joke people relate to all year.",
+    "pattern": "game fail turned into a win: a serious attempt at the booth, then a smug sneaky payoff with the biggest prize",
+    "evidence": []
+   },
+   "id": "m261114b",
+   "format": "game",
+   "engine": "14b",
+   "seed": 74803
+  }
+ ]
+}

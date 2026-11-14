@@ -1,0 +1,52 @@
+{
+ "date": "2026-11-13",
+ "concepts": [
+  {
+   "slug": "bowling-strike-scottish-fold",
+   "track": "run-amok.mp3",
+   "caption": "Forgot the ball. Became the ball.",
+   "title": "Forgot the Bowling Ball So He Became the Ball 🎳🐱",
+   "en_line": "No ball, no problem: one chubby cat, ten pins, one perfect strike.",
+   "ko_line": "공 없으면 내가 공이지 뭐 🎳",
+   "tags": [
+    "cat",
+    "ai cat",
+    "bowling cat",
+    "scottish fold",
+    "funny cat",
+    "cute cat",
+    "strike",
+    "cat games"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#볼링",
+    "#스코티시폴드",
+    "#cat",
+    "#bowlingcat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic chubby silver tabby Scottish Fold cat with small folded ears, a classic swirl pattern of black stripes on a silver-grey coat, a white chin, and big round amber-copper eyes, crouching low in a ready-to-pounce pose at the start of a shiny polished wooden bowling lane, ten plain glossy white bowling pins standing in a neat triangle far behind it at the end of the lane, retro bowling alley with soft pink and teal neon glow on the walls, warm reflections on the lane, the cat fully in frame and clearly visible, vertical composition",
+     "motion": "The chubby silver tabby Scottish Fold cat crouches on the bowling lane, wiggles its hips side to side, its tail swishes, its eyes lock on the pins far away, then it does a small pounce in place and lands softly back in the same spot. The neon lights glow and flicker gently on the walls. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same chubby silver tabby Scottish Fold cat with the same fur pattern, face and eye color. Show the strike moment: the cat now lies stretched out on its side on the polished wooden lane at the end of the bowling alley, surrounded by all ten plain glossy white bowling pins knocked over around it, the cat looking at the camera with a proud, satisfied half-closed eye expression and its mouth closed, same retro bowling alley with soft pink and teal neon glow. Photorealistic, vertical composition.",
+     "motion": "The chubby silver tabby Scottish Fold cat lies proudly among the fallen bowling pins, gives one slow satisfied blink, lifts one front paw and gently taps a fallen pin so it rolls a little, then rests its head back down. The neon lights glow softly and pulse gently in the background. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Evergreen pick: I couldn't check current trends today. Pet 'game win' payoffs and 'cat knocks things over' moments always work well.",
+    "pattern": "game setup with a big build-up (wiggle, aim, pounce), then a cut to the win: the cat itself is the strike",
+    "evidence": []
+   },
+   "id": "m261113c",
+   "format": "game",
+   "engine": "14b",
+   "seed": 77304
+  }
+ ]
+}

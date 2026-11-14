@@ -1,0 +1,23 @@
+{
+ "date": "2026-11-13",
+ "slot": "b",
+ "format": "dance",
+ "model": "claude-opus-5-5",
+ "effort": "high",
+ "tokens": {
+  "input": 10,
+  "cache_write": 12373,
+  "cache_read": 33538,
+  "output": 3614,
+  "web_search": 6,
+  "web_fetch": 0
+ },
+ "ok": true,
+ "tries": 1,
+ "usd": 0.201,
+ "errors": [],
+ "history": [
+  []
+ ],
+ "slug": "friday-13th-lucky-black-cat-dance"
+}

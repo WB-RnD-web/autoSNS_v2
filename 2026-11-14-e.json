@@ -1,0 +1,57 @@
+{
+ "date": "2026-11-14",
+ "concepts": [
+  {
+   "slug": "saturday-blanket-loaf-tortie",
+   "track": "kool-kats.mp3",
+   "caption": "My Saturday plans: become a loaf",
+   "title": "Big Saturday Plans: Turn Into a Blanket Loaf 🧶🐱",
+   "en_line": "It is drizzly, the blanket is warm, and today's only job is staying a perfect loaf.",
+   "ko_line": "토요일 계획: 이불 속에서 식빵 굽기 🍞",
+   "tags": [
+    "cat",
+    "ai cat",
+    "cat meme",
+    "lazy saturday",
+    "cat loaf",
+    "cozy cat",
+    "weekend mood",
+    "tortoiseshell cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#주말",
+    "#집콕",
+    "#cat",
+    "#catmemes",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic tortoiseshell domestic shorthair cat with a mottled coat of black and warm orange patches with small cream flecks, a split face with an orange blaze down the nose, and bright green eyes, sitting in a neat loaf pose with all paws tucked under its body on a soft grey sofa, a folded chunky cream knitted blanket beside it, a large window behind with light drizzle on the glass and a soft grey November sky, warm golden lamp light, cozy quiet living room, the cat fully in frame and clearly visible in the center, vertical composition",
+     "motion": "The tortoiseshell cat sits in a neat loaf on the grey sofa, slowly turns its head to look at the drizzle on the window, ears twitch, gives a long slow blink and settles its body a little lower with paws tucked under. Raindrops slide gently down the window glass and the lamp light glows warmly. The cat stays fully in frame with four normal legs tucked under its body. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same tortoiseshell domestic shorthair cat with the same fur pattern, face and eye color. The cat is now snugly wrapped in the chunky cream knitted blanket like a cozy burrito on the same grey sofa, only its round face and the tips of its two front paws peeking out, eyes half-closed in sleepy contentment, a small white mug of steaming tea on a wooden side table next to the sofa, drizzle on the window behind, warm lamp light. Photorealistic, vertical composition.",
+     "motion": "The tortoiseshell cat wrapped in the cream knitted blanket slowly blinks with sleepy content eyes, gives a small happy head tilt and nuzzles its chin a little deeper into the blanket while its front paw tips knead softly. Thin steam curls up from the tea mug and raindrops slide down the window. The cat stays fully in frame with four normal legs hidden under the blanket. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Mid-November brings grey, chilly weekends, and cozy 'loafed cat' memes are getting shared in this month's cat meme roundups; a relatable 'lazy Saturday' beat fits a Saturday upload.",
+    "pattern": "relatable meme setup to punchline: a cat watching the gloomy weather in a loaf, then the punchline where it's fully wrapped up as a blanket burrito; 'Big plans: [doing nothing]' title",
+    "evidence": [
+     {
+      "title": "25 Funniest Cat Memes and Tweets for Feline Fanatics (November 2, 2026) - I Can Has Cheezburger?",
+      "url": "https://cheezburger.com/47270661/25-funniest-cat-memes-and-tweets-for-feline-fanatics-november-2-2026"
+     }
+    ]
+   },
+   "id": "m261114e",
+   "format": "meme",
+   "engine": "14b",
+   "seed": 87825
+  }
+ ]
+}

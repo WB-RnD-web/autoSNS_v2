@@ -1,0 +1,52 @@
+{
+ "date": "2026-11-12",
+ "concepts": [
+  {
+   "slug": "steamed-bun-kitten",
+   "track": "merry-go.mp3",
+   "caption": "Wait… one of these buns has ears",
+   "title": "One of These Steamed Buns Is Not a Bun ☁️🐱",
+   "en_line": "Fresh from the steamer and still a little sleepy.",
+   "ko_line": "겨울엔 역시 찐빵… 근데 하나가 눈을 떴다 🐱",
+   "tags": [
+    "cat",
+    "ai cat",
+    "kitten",
+    "steamed bun",
+    "food morph",
+    "winter snack",
+    "cute kitten",
+    "cozy"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#찐빵",
+    "#겨울간식",
+    "#cat",
+    "#kitten",
+    "#aicat"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic close-up of a round bamboo steamer on a warm wooden kitchen table, filled with six soft round fluffy white steamed buns with smooth glossy tops, gentle white steam rising, warm cozy evening light, a small ceramic teapot softly blurred in the background. The front centre bun has only a tiny hint of a kitten: two small cream-white kitten ears with soft pink insides poking up from its top. The whole steamer and all the buns fully in frame, vertical composition",
+     "motion": "Soft white steam slowly rises and curls above the bamboo steamer. The two tiny cream-white kitten ears on the front centre bun twitch once, then turn slightly toward the camera, while the other buns stay still. The kitten bun stays fully in frame in the same round bun shape, with its four normal legs tucked out of sight underneath. Photorealistic, warm light, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same tiny cream-white kitten from the front centre bun with the same fur pattern, face and eye color. That one bun is now a tiny round fluffy kitten curled up in the same spot in the bamboo steamer. Its cream-white fur is soft, smooth and slightly glossy like a fresh steamed bun, with pink inner ears, a small pink nose and pale blue eyes half open as it wakes up. The other five buns, the steam and the cosy wooden kitchen stay unchanged. Photorealistic, vertical composition.",
+     "motion": "The tiny cream-white bun kitten slowly opens its pale blue eyes, blinks sleepily, lifts its head a little and tilts it to one side, then gently stretches one small front paw forward onto the next bun. Soft steam keeps rising around it. The kitten stays fully in frame in the steamer with four normal legs, mouth closed. Photorealistic, warm light, smooth natural motion, static camera.",
+     "xfade": 0.6
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "In mid-November it gets cold and steamed buns become the classic warm winter snack in Korea and across East Asia. Cosy 'food that's secretly a kitten' morphs are evergreen and easy to share.",
+    "pattern": "spot-the-odd-one-out hook: a normal tray of food with one tiny hint (ears), then the reveal as that piece wakes up as a sleepy kitten in the same spot",
+    "evidence": []
+   },
+   "id": "m261112",
+   "format": "morph",
+   "engine": "14b",
+   "seed": 78267
+  }
+ ]
+}
