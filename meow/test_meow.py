@@ -477,25 +477,27 @@ import types  # noqa: E402
 import plan_api as PA  # noqa: E402
 
 _wk = [dt.date(2026, 11, d) for d in range(9, 16)]
-ck("하루 세 편: 편 a 는 매일 변신 · b·c 는 밈·춤·게임을 요일로 — 하루 세 편이 다 다른 꼴",
-   [PA.fmt_of(d) for d in _wk] == ["morph"] * 7 and all(len({PA.fmt_of(d, x) for x in PA.SLOTS}) == 3 for d in _wk)
-   and {PA.fmt_of(d, x) for d in _wk for x in "bc"} == set(PA.ROTATION), str([[PA.fmt_of(d, x) for x in PA.SLOTS] for d in _wk]))
+ck("하루 최대 12편: 편 a 는 매일 변신 · b 부터는 밈·춤·게임·변신을 요일로 — 바로 이웃한 편은 꼴이 다르다 · 넷 다 나온다",
+   [PA.fmt_of(d) for d in _wk] == ["morph"] * 7 and len(PA.SLOTS) == 12
+   and all(PA.fmt_of(d, x) != PA.fmt_of(d, y) for d in _wk for x, y in zip(PA.SLOTS[1:], PA.SLOTS[2:]))
+   and all({PA.fmt_of(d, x) for x in PA.SLOTS} == set(PA.CYCLE) for d in _wk),
+   str([[PA.fmt_of(d, x) for x in PA.SLOTS] for d in _wk]))
 ck("파일·id: 편 a 는 예전 그대로(<날짜>.json · m261110) · b·c 는 -b·-c",
    PA.doc_name(dt.date(2026, 11, 10)) == "2026-11-10" and PA.doc_name(dt.date(2026, 11, 10), "c") == "2026-11-10-c"
    and PA.concept_id(dt.date(2026, 11, 10), "b") == "m261110b"
-   and len({PA.seed_of(dt.date(2026, 11, 10), x) for x in PA.SLOTS}) == 3)
+   and len({PA.seed_of(dt.date(2026, 11, 10), x) for x in PA.SLOTS}) == len(PA.SLOTS))
 ck("변신 날 음악은 cute·morph 곡만 · 밈 날은 전부", "funkorama.mp3" not in PA.tracks_for("morph")
    and "fluffing-a-duck.mp3" in PA.tracks_for("morph") and set(PA.tracks_for("meme")) == set(T))
 ck("id·seed 는 날짜로(다시 돌려도 같다)", PA.concept_id(dt.date(2026, 11, 10)) == "m261110"
    and PA.seed_of(dt.date(2026, 11, 10)) == PA.seed_of(dt.date(2026, 11, 10)) and 10000 <= PA.seed_of(dt.date(2026, 11, 10)) < 100000)
 pdir = tempfile.mkdtemp()
 ex = R.load(PA.EXAMPLE)["concept"]
-tue, mon = dt.date(2026, 11, 12), dt.date(2026, 11, 9)      # 이름은 예전 그대로 — tue = 11/12(목) 편 b = 밈
+tue, mon = dt.date(2026, 11, 13), dt.date(2026, 11, 9)      # 이름은 예전 그대로 — tue = 11/13(금) 편 b = 밈
 SB = "b"
 fresh = {**copy.deepcopy(ex), "slug": "kitten-first-umbrella", "title": "Kitten Meets Her First Umbrella ☔🐱"}
 good = PA.finalize(fresh, tue, SB)
 ck("예시를 새 소재로 바꾼 편은 매일판 검사 통과 · 코드가 id·꼴·engine·seed 를 넣는다",
-   PA.check(good, tue, pdir, set(), SB) == [] and good["id"] == "m261112b" and good["format"] == "meme"
+   PA.check(good, tue, pdir, set(), SB) == [] and good["id"] == "m261113b" and good["format"] == "meme"
    and good["engine"] == "14b", str(PA.check(good, tue, pdir, set(), SB)))
 ck("예시 그대로(이미 쓴 소재)는 막는다", any("이미 쓴" in x for x in PA.check(PA.finalize(ex, tue, SB), tue, pdir, set(), SB)))
 
@@ -521,12 +523,12 @@ ck("hashtags 에 #cat 없으면 막는다", "hashtags" in errs_of(hashtags=["#�
 ev = {"why_now": "x", "pattern": "y", "evidence": [{"title": "t", "url": "https://example.com/a"}]}
 ck("검색에 없던 근거 주소는 막는다 · 검색에 나온 주소는 된다", "evidence" in errs_of(trend=ev)
    and "evidence" not in errs_of(trend=ev, seen={"https://example.com/a"}))
-with open(os.path.join(pdir, "2026-11-11-b.json"), "w", encoding="utf-8") as fh:
-    json.dump({"date": "2026-11-11", "concepts": [{**good, "slug": "yday", "title": "Y", "track": "investigations.mp3"}]}, fh)
+with open(os.path.join(pdir, "2026-11-12-b.json"), "w", encoding="utf-8") as fh:
+    json.dump({"date": "2026-11-12", "concepts": [{**good, "slug": "yday", "title": "Y", "track": "investigations.mp3"}]}, fh)
 ck("어제 같은 편(b)과 같은 곡은 막는다", "어제" in errs_of(track="investigations.mp3"))
 ck("어제 편 b 소재도 '이미 쓴' 목록에 들어간다", any(h["slug"] == "yday" for h in PA.history(pdir)))
 um = PA.user_message(tue, pdir, SB)
-ck("모델에게 가는 글 = 오늘 꼴·허용 곡·쓴 곡·예시·이미 쓴 소재", "format: meme" in um and "Short b of 3" in um
+ck("모델에게 가는 글 = 오늘 꼴·허용 곡·쓴 곡·예시·이미 쓴 소재", "format: meme" in um and "Short #2 of the day" in um
    and "Tracks already used (do not use): investigations.mp3" in um and "first-snow-kitten" in um
    and '"edit": "Keep exactly the same' in um, um[:300])
 
@@ -567,10 +569,10 @@ out_c = {k: v for k, v in good.items() if k not in ("id", "format", "engine", "s
 out_c["track"] = "merry-go.mp3"
 fc = _Client(["not json", json.dumps(out_c, ensure_ascii=False)])
 info = PA.write(tue, pdir, client=fc, slot=SB)
-saved = R.load(os.path.join(pdir, "2026-11-12-b.json"))
+saved = R.load(os.path.join(pdir, "2026-11-13-b.json"))
 ck("API: 읽기 실패면 오류를 붙여 다시 → 통과한 편을 저장(render.py 가 읽는 모양) · 편 b 는 -b 파일", info["ok"] and info["tries"] == 2
-   and saved["concepts"][0]["id"] == "m261112b" and R.check(saved) == [] and "code checks failed" in str(fc.calls[1]["messages"][-1])
-   and os.path.exists(os.path.join(pdir, "2026-11-12-b_api.json")) and info["usd"] > 0, str(info))
+   and saved["concepts"][0]["id"] == "m261113b" and R.check(saved) == [] and "code checks failed" in str(fc.calls[1]["messages"][-1])
+   and os.path.exists(os.path.join(pdir, "2026-11-13-b_api.json")) and info["usd"] > 0, str(info))
 um_c = PA.user_message(tue, pdir, "c")
 ck("편 c 는 오늘 앞 편(b)의 곡을 못 쓰고 그 편을 보고 다르게 쓴다", "merry-go.mp3" in PA.avoid_tracks(pdir, tue, "c")
    and "Kitten Meets Her First Umbrella" in um_c.split("## Today's other Shorts")[1].split("##")[0]
@@ -584,6 +586,17 @@ ck("API: 세 번 다 못 넘으면 그날은 skip(틀린 편을 만들지 않는
 ck("매일판 인스타 캡션 = 한국어·영어 한 줄 · 해시태그 · 음악 credit · AI 표시 · 2200자 안 / 쓰레드 500자 안",
    all(x in P.ig_caption(good) for x in (good["ko_line"], good["en_line"], "#cat", "CC BY 4.0", "AI"))
    and len(P.ig_caption(good)) <= 2200 and len(P.threads_text(good)) <= 500 and "Kevin MacLeod" in P.threads_text(good))
+
+# 하루 편이 많아 그 꼴 곡이 동나면 오래된 겹침부터 풀어 한 곡은 남긴다 — 바로 앞 편 곡은 끝까지 피한다
+mdir = tempfile.mkdtemp()
+_m16 = dt.date(2026, 11, 16)                              # 월: a 변신 · b 밈 · c 춤 · d 게임 · e 변신
+for _s, _t in zip("abcd", ["fluffing-a-duck.mp3", "merry-go.mp3", "funkorama.mp3", "monkeys-spinning-monkeys.mp3"]):
+    with open(os.path.join(mdir, PA.doc_name(_m16, _s) + ".json"), "w", encoding="utf-8") as fh:
+        json.dump({"date": "2026-11-16", "concepts": [{**good, "id": "x" + _s, "slug": "s" + _s, "track": _t}]}, fh)
+_av = PA.avoid_tracks(mdir, _m16, "e")
+ck("변신 곡 3곡을 앞 편들이 다 썼으면 가장 오래된 것(a 의 곡)은 풀고 · 바로 앞 편(d) 곡은 그대로 피한다",
+   PA.fmt_of(_m16, "e") == "morph" and "fluffing-a-duck.mp3" not in _av and "monkeys-spinning-monkeys.mp3" in _av
+   and set(PA.tracks_for("morph")) - set(_av), str(_av))
 
 # ── 조용한 시간이 곧 끝나면 기다렸다 바로(06~07시에 시작한 실행) ──
 _kst = lambda h, m: dt.datetime(2026, 11, 13, h, m, tzinfo=R.KST)  # noqa: E731
@@ -620,7 +633,9 @@ ck("인스타만 올라가고 쓰레드가 실패한 편은 다시 고른다(쓰
 
 # ── 매일판 공개 시각 · 다른 채널 막기 ──
 utc = dt.timezone.utc
-ck("매일판 공개 = 기획 날짜 10:00 KST(= 01:00 UTC)", P.slot_at("2026-11-10", "10:00") == dt.datetime(2026, 11, 10, 1, 0, tzinfo=utc))
+ck("매일판 공개 = 기획 날짜 10:00 KST(= 01:00 UTC) · '32:00' 은 다음 날 08:00 KST(하루 12편의 끝 편)",
+   P.slot_at("2026-11-10", "10:00") == dt.datetime(2026, 11, 10, 1, 0, tzinfo=utc)
+   and P.slot_at("2026-11-10", "32:00") == dt.datetime(2026, 11, 10, 23, 0, tzinfo=utc))
 ck("공개 시각이 아직이면 그 시각 · 지났으면 20분 뒤",
    P.publish_times(1, 45, dt.datetime(2026, 11, 9, 16, 0, tzinfo=utc), P.slot_at("2026-11-10", "10:00")) == ["2026-11-10T01:00:00Z"]
    and P.publish_times(1, 45, dt.datetime(2026, 11, 10, 2, 0, tzinfo=utc), P.slot_at("2026-11-10", "10:00"))

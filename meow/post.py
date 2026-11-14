@@ -70,9 +70,10 @@ def video_of(c: dict) -> dict:
 
 
 def slot_at(day: str, hhmm: str) -> dt.datetime:
-    """기획 날짜 + 'HH:MM'(KST) → UTC 시각(매일판 공개 시각)."""
+    """기획 날짜 + 'HH:MM'(KST) → UTC 시각(매일판 공개 시각). 하루 12편이면 끝 편은 다음 날 새벽 — '32:00' = 다음 날 08:00."""
     h, m = (int(x) for x in hhmm.split(":"))
-    return dt.datetime.combine(dt.date.fromisoformat(day), dt.time(h, m), R.KST).astimezone(dt.timezone.utc)
+    base = dt.datetime.combine(dt.date.fromisoformat(day), dt.time(0, 0), R.KST)
+    return (base + dt.timedelta(hours=h, minutes=m)).astimezone(dt.timezone.utc)
 
 
 def publish_times(n: int, gap_min: int, now: dt.datetime | None = None, first_at: dt.datetime | None = None) -> list[str]:
