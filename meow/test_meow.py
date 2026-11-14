@@ -103,8 +103,9 @@ def _clip(name, colors):
 
 
 _a, _b, _s = _clip("a.mp4", ["black", "black"]), _clip("b.mp4", ["black", "white"]), _clip("s.mp4", ["black", "black"])
-ck("가장 다른 순간(1초에 하얗게)이 가운데 오게 자른다 · 클립 끝을 넘지 않는다",
-   R.tease_at(_a, _b, 2.0, 1.0) == 0.6, str(R.tease_at(_a, _b, 2.0, 1.0)))
+ck("가장 다른 순간(1초에 하얗게)부터 자른다 · 클립 끝을 넘으면 당긴다(1.6초 클립 → 0.8)",
+   R.tease_at(_a, _b, 2.0, 1.0) == 1.0 and R.tease_at(_a, _b, 1.6, 1.0) == 0.8,
+   str([R.tease_at(_a, _b, 2.0, 1.0), R.tease_at(_a, _b, 1.6, 1.0)]))
 ck("첫 화면과 다를 게 없으면(정지) 미리 보기를 끈다", R.tease_at(_a, _s, 2.0, 1.0) is None)
 ok14 = {**bad, "engine": "14b", "shots": [{"image": "a kitten", "motion": "the kitten blinks, static camera"}] * 2}
 ck("14b 견본 모양은 검사 통과", R.check_concept(ok14) == [], str(R.check_concept(ok14)))

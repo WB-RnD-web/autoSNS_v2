@@ -431,7 +431,7 @@ def _gray(path: str, sec: float, fps: int = 8, w: int = 32, h: int = 56) -> list
 
 
 def tease_at(first_clip: str, last_clip: str, src: float, slow: float, fps: int = 8) -> float | None:
-    """마지막 컷 안에서 영상 첫 화면과 가장 다른 순간 — 그 순간이 가운데 오게 자를 시작 초(원본 클립 기준).
+    """마지막 컷 안에서 영상 첫 화면과 가장 다른 순간 — 그 순간부터 자를 시작 초(원본 클립 기준 · 끝을 넘으면 당긴다).
     차이가 TEASE_MIN_DIFF 보다 작으면 None(미리 볼 게 없다)."""
     ref = _gray(first_clip, 0.2, fps)[:1]
     fr = _gray(last_clip, src, fps)
@@ -442,8 +442,8 @@ def tease_at(first_clip: str, last_clip: str, src: float, slow: float, fps: int 
     k = max(range(len(diffs)), key=diffs.__getitem__)
     if diffs[k] < TEASE_MIN_DIFF:
         return None
-    span = TEASE / slow
-    return round(min(max(k / fps - span / 2, 0.0), max(src - span, 0.0)), 3)
+    span = TEASE / slow          # 그 순간부터(가운데로 자르면 앞 절반이 아직 안 바뀐 화면 — 11/14 합성 클립 실측)
+    return round(min(k / fps, max(src - span, 0.0)), 3)
 
 
 def filtergraph(c: dict, n_inputs: int, tease_start: float | None = None) -> str:
