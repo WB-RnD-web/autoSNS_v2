@@ -112,6 +112,20 @@ jobs:
           fi
           echo "todo=$TODO" >> "$GITHUB_OUTPUT"
 
+      # ★11/14 분석 담당 — 새 채널 최근 쇼츠 성적(평균 시청 %·쇼츠 피드 비중)을 읽어 stats.json → 기획이 본다.
+      #   읽기만 · 실패해도 기획은 그대로(성적 없이) · 토큰 파일은 쓰고 바로 지운다.
+      - name: 분석 담당(유튜브 통계 읽기)
+        if: steps.prep.outputs.skip != '1'
+        env:
+          YT_TOKEN_JSON_MEOW: ${{ secrets.YT_TOKEN_JSON_MEOW }}
+        run: |
+          if [ -z "$YT_TOKEN_JSON_MEOW" ]; then echo "::warning::YT_TOKEN_JSON_MEOW 없음 — 성적 없이 기획"; exit 0; fi
+          python -m pip install -q google-api-python-client google-auth
+          T="$RUNNER_TEMP/token_meow.json"
+          printf '%s' "$YT_TOKEN_JSON_MEOW" > "$T"
+          python meow/analyst.py pull --dir "$RUNNER_TEMP/plan" --token "$T" || echo "::warning::성적 읽기 실패 — 성적 없이 기획"
+          rm -f "$T"
+
       - name: 기획(Claude API + 웹 검색)
         if: steps.prep.outputs.skip != '1'
         env:
