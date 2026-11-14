@@ -213,21 +213,21 @@ jobs:
         if: steps.pick.outputs.doc != ''
         run: python -m pip install -r pipeline/requirements.txt fonttools brotli
 
-      - name: YouTube 자격증명(Meow Remix 채널 — 옛 Nine Tails 토큰)
+      - name: YouTube 자격증명(새 고양이 채널 — 11/14 옮김 · 옛 채널 토큰은 쓰지 않는다)
         id: cred
         if: steps.pick.outputs.doc != '' && env.UPLOAD == 'true'
         env:
-          YT_TOKEN_JSON_GUMIHO: ${{ secrets.YT_TOKEN_JSON_GUMIHO }}
+          YT_TOKEN_JSON_MEOW: ${{ secrets.YT_TOKEN_JSON_MEOW }}
         run: |
           mkdir -p pipeline/secrets
-          if [ -z "$YT_TOKEN_JSON_GUMIHO" ]; then echo "::error::시크릿 YT_TOKEN_JSON_GUMIHO 없음"; exit 1; fi
-          printf '%s' "$YT_TOKEN_JSON_GUMIHO" > pipeline/secrets/token_gumiho.json
+          if [ -z "$YT_TOKEN_JSON_MEOW" ]; then echo "::error::시크릿 YT_TOKEN_JSON_MEOW 없음(새 채널 토큰)"; exit 1; fi
+          printf '%s' "$YT_TOKEN_JSON_MEOW" > pipeline/secrets/token_meow.json
 
       - name: 유튜브에 이미 있나(렌더 전에)
         id: seen
         if: steps.cred.outcome == 'success'
         env:
-          YT_TOKEN_NOVEL: pipeline/secrets/token_gumiho.json
+          YT_TOKEN_NOVEL: pipeline/secrets/token_meow.json
         run: |
           set +e
           python meow/post.py seen "${{ steps.pick.outputs.doc }}"
@@ -275,7 +275,7 @@ jobs:
           steps.cred.outcome == 'success' && steps.seen.outputs.skip != '1' && steps.render.outcome == 'success'
           && steps.render.outputs.quiet != '1' && steps.render.outputs.blocked != '1'
         env:
-          YT_TOKEN_NOVEL: pipeline/secrets/token_gumiho.json
+          YT_TOKEN_NOVEL: pipeline/secrets/token_meow.json
         run: python meow/post.py youtube "${{ steps.pick.outputs.doc }}" --slot-kst "${{ steps.pick.outputs.at }}"
 
       # 인스타·쓰레드 게시(meow-social.yml)가 이 캐시를 꺼내 쓴다 — 경로 목록이 두 파일에서 똑같아야 열린다

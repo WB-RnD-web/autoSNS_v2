@@ -29,7 +29,11 @@ import render as R  # noqa: E402
 
 CATEGORY = "15"            # Pets & Animals
 NOT_YET = 10               # seen: 아직 안 올라감(오류 1 과 구별 — 다른 채널 토큰이면 렌더 전에 멈춘다)
-CHANNEL_HANDLE = os.environ.get("MEOW_CHANNEL_HANDLE", "@meowremixcats").lower()
+# ★11/14 고양이 전용 새 채널로 옮긴다(사용자 '새 채널로 가자') — 옛 채널(과학 쇼츠 Nine Tails Tales 를 이름만 바꾼 것)은
+#   쇼츠 피드가 고양이 편을 거의 안 띄웠다(11/10~14 편당 0~17회 · 대부분 검색). 업로드는 채널 id 로만 허락한다.
+OLD_CHANNEL_ID = "UCoPIsIO_ximUdyh-n_-rIfQ"      # 옛 채널 — 더 올리지 않는다
+NEW_CHANNEL_ID = "UCl54PPBYv9IMGp4IG-J8Nqw"      # ★11/14 만든 새 채널 Meow Remix TV(@meowremixtv)
+CHANNEL_ID = os.environ.get("MEOW_CHANNEL_ID") or NEW_CHANNEL_ID
 POSTED = os.path.join(R.OUT, "posted.json")
 
 
@@ -90,10 +94,12 @@ def uploaded_text(yt) -> str:
     """채널 최근 업로드 50편의 설명(비공개·예약 포함 — 주인 토큰) — 표식(MARK)으로 두 번 올리기를 막는다.
     ★토큰 파일이 없으면 업로더가 왕별이 토큰으로 넘어간다 — 핸들이 고양이 채널이 아니면 멈춘다."""
     ch = yt.channels().list(part="contentDetails,snippet", mine=True).execute()["items"][0]
-    handle, title = str(ch["snippet"].get("customUrl", "")).lower(), ch["snippet"]["title"]
-    print(f"채널: {title} ({handle})")
-    if handle != CHANNEL_HANDLE and title not in ("Meow Remix", "Nine Tails Tales"):   # 이름 바꾸기 전·후
-        raise SystemExit(f"❌ 다른 채널 토큰({title} {handle}) — 고양이 채널({CHANNEL_HANDLE})에만 올린다")
+    cid, handle, title = ch.get("id", ""), str(ch["snippet"].get("customUrl", "")).lower(), ch["snippet"]["title"]
+    print(f"채널: {title} ({handle} · {cid})")
+    if not CHANNEL_ID:
+        raise SystemExit("❌ 새 고양이 채널 id(NEW_CHANNEL_ID)가 아직 없다 — 아무 데도 올리지 않는다")
+    if cid == OLD_CHANNEL_ID or cid != CHANNEL_ID:
+        raise SystemExit(f"❌ 다른 채널 토큰({title} {handle} {cid}) — 새 고양이 채널({CHANNEL_ID})에만 올린다")
     up = ch["contentDetails"]["relatedPlaylists"]["uploads"]
     return " ".join(it["snippet"].get("description", "") for it in
                     yt.playlistItems().list(part="snippet", playlistId=up, maxResults=50).execute().get("items", []))

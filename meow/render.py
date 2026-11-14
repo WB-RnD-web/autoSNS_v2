@@ -48,6 +48,12 @@ SLOW = 1.2                         # 살짝 느리게(1.4초 → 1.68초) — �
 ENGINES = {"5b": {"src": SHOT_SRC, "slow": SLOW, "fps": FPS, "shots": (4, 7)},
            "14b": {"src": 5.0, "slow": 1.0, "fps": 32, "shots": (1, 3)}}
 CAP_SIZE = 72
+# ★11/14 첫 1초(사용자 '첫 1초도 고쳐줘') — 11/7 호박파이: 쇼츠 피드에서 본 사람의 69.9% 가 넘겼다(계속 시청 30.1%).
+#   영상이 거의 멈춘 그림으로 시작하고 변신·반전은 두 번째 컷(4.5초쯤)에야 나온다. → 마지막 컷에서 '영상 첫 화면과
+#   가장 다른 순간'을 코드가 찾아 TEASE 초만큼 맨 앞에 먼저 보여 주고(결말 미리 보기) 본편으로 돌아간다.
+#   concept 에 "tease": false 면 끈다. 처음 화면과 차이가 TEASE_MIN_DIFF(0~255 평균)보다 작으면 미리 볼 게 없어 끈다.
+TEASE = 0.8
+TEASE_MIN_DIFF = 3.0
 IMG_W, IMG_H = 768, 1344           # 5b 그림(5B 가 넓이 640×640 안으로 줄인다)
 V14_W, V14_H = 720, 1280           # 14b 그림 = 완성본 크기(세로 0.8 미만 → 서버가 480×832 로 만들어 720×1280 으로)
 HD_TIMEOUT = 5400                  # 한 컷 13분 + GPU 기다림 최대 약 1시간
@@ -411,11 +417,37 @@ def plan(c: dict) -> list[dict]:
 
 
 def total(c: dict) -> float:
+    """본편 길이(결말 미리 보기 TEASE 는 빼고 — build 가 더한다)."""
     p = plan(c)
     return round(p[-1]["start"] + p[-1]["dur"], 3)
 
 
-def filtergraph(c: dict, n_inputs: int) -> str:
+def _gray(path: str, sec: float, fps: int = 8, w: int = 32, h: int = 56) -> list[bytes]:
+    """클립 앞 sec 초를 fps 장씩 작은 흑백으로(비교용)."""
+    r = subprocess.run([ffmpeg(), "-v", "error", "-t", str(sec), "-i", path, "-vf", f"fps={fps},scale={w}:{h},format=gray",
+                        "-f", "rawvideo", "-"], capture_output=True, check=True)
+    n, b = w * h, r.stdout
+    return [b[i:i + n] for i in range(0, len(b) - n + 1, n)]
+
+
+def tease_at(first_clip: str, last_clip: str, src: float, slow: float, fps: int = 8) -> float | None:
+    """마지막 컷 안에서 영상 첫 화면과 가장 다른 순간 — 그 순간부터 자를 시작 초(원본 클립 기준 · 끝을 넘으면 당긴다).
+    차이가 TEASE_MIN_DIFF 보다 작으면 None(미리 볼 게 없다)."""
+    ref = _gray(first_clip, 0.2, fps)[:1]
+    fr = _gray(last_clip, src, fps)
+    if not ref or not fr:
+        return None
+    r0 = ref[0]
+    diffs = [sum(abs(a - b) for a, b in zip(r0, f)) / len(f) for f in fr]
+    k = max(range(len(diffs)), key=diffs.__getitem__)
+    if diffs[k] < TEASE_MIN_DIFF:
+        return None
+    span = TEASE / slow          # 그 순간부터(가운데로 자르면 앞 절반이 아직 안 바뀐 화면 — 11/14 합성 클립 실측)
+    return round(min(k / fps, max(src - span, 0.0)), 3)
+
+
+def filtergraph(c: dict, n_inputs: int, tease_start: float | None = None) -> str:
+    """tease_start 가 있으면 입력 len(shots) 번 = 마지막 컷 클립 한 번 더(결말 미리 보기) · 음악은 늘 맨 끝 입력."""
     e, p = eng(c), plan(c)
     slow, fps = e["slow"], e["fps"]
     parts = []
@@ -434,6 +466,12 @@ def filtergraph(c: dict, n_inputs: int) -> str:
             parts.append(f"[{acc}][v{i}]concat=n=2:v=1:a=0,settb=1/{fps}[{nxt}]")
         acc = nxt
     tl = total(c)
+    if tease_start is not None:
+        k, src = len(p), round(TEASE / slow, 3)
+        parts.append(f"[{k}:v]trim={tease_start}:{round(tease_start + src, 3)},setpts=(PTS-STARTPTS)*{slow},fps={fps},"
+                     f"scale=-2:{H}:flags=lanczos,crop={W}:{H},setsar=1,format=yuv420p,settb=1/{fps}[vt]")
+        parts.append(f"[vt][{acc}]concat=n=2:v=1:a=0,settb=1/{fps}[vtz]")
+        acc, tl = "vtz", round(tl + TEASE, 3)
     # 자막은 줄마다 drawtext 하나 — 한 번에 그리면 줄이 가운데로 안 모인다
     n = len(wrap(c["caption"]))
     dts = [f"drawtext=fontfile=font.ttf:textfile=cap{k}.txt:fontsize={CAP_SIZE}:fontcolor=white:borderw=8:"
@@ -488,12 +526,21 @@ def build(c: dict) -> dict:
     cmd = [ffmpeg(), "-v", "error", "-y"]
     for p in clips:
         cmd += ["-i", os.path.abspath(p)]
+    ts = None
+    if c.get("tease", True):
+        last = c["shots"][-1]
+        try:
+            ts = tease_at(clips[0], clips[-1], float(last.get("sec") or eng(c)["src"]), eng(c)["slow"])
+        except (subprocess.CalledProcessError, OSError) as e:
+            print(f"   결말 미리 보기 건너뜀: {e}", flush=True)
+    if ts is not None:
+        cmd += ["-i", os.path.abspath(clips[-1])]
     cmd += ["-ss", str(t.get("start", 0)), "-i", os.path.join(MUSIC, c["track"])]
-    cmd += ["-filter_complex", filtergraph(c, len(clips) + 1), "-map", "[vout]", "-map", "[aout]",
+    cmd += ["-filter_complex", filtergraph(c, len(clips) + (ts is not None) + 1, ts), "-map", "[vout]", "-map", "[aout]",
             "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-profile:v", "high", "-pix_fmt", "yuv420p", "-r", str(fps),
             "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", video]
     subprocess.run(cmd, check=True, cwd=d)
-    tl = total(c)
+    tl = round(total(c) + (TEASE if ts is not None else 0), 3)
     # 표지 = 고른 컷의 원본 그림(움직이기 전이라 제일 깨끗하다) · 글자 없이 — 인스타 격자에서 잘리지 않게
     k = int(c.get("cover_shot") or len(c["shots"]))
     cover = video.replace(".mp4", "_cover.jpg")
@@ -503,7 +550,7 @@ def build(c: dict) -> dict:
     subprocess.run([ffmpeg(), "-v", "error", "-y", "-i", video, "-vf",
                     f"fps=2,scale=270:-1,tile={int(tl * 2) + 1}x1", "-frames:v", "1", sheet], check=True)
     meta = {"id": c["id"], "slug": c["slug"], "stem": stem(c), "video": video, "cover": cover, "sheet": sheet,
-            "sec": tl, "track": c["track"], "credit": credit(c["track"]), "engine": engine(c)}
+            "sec": tl, "track": c["track"], "credit": credit(c["track"]), "engine": engine(c), "tease": ts}
     with open(video.replace(".mp4", "_meta.json"), "w", encoding="utf-8") as f:
         json.dump(meta, f, ensure_ascii=False, indent=1)
     return meta

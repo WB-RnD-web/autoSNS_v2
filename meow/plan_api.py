@@ -88,6 +88,7 @@ Shot 2 "edit" (made from the shot 1 picture)
 "motion" (both shots, for the image-to-video model)
 - One simple continuous action that fits 5 seconds (blink, look around, paw tap, head tilt, sway to the beat, stretch,
   pounce in place). Background motion is welcome (steam, snow, lights, leaves).
+- The action starts right away in the very first frame — no slow build-up or still opening (viewers swipe in 1 second).
 - Keep the body shape: no yawning or wide-open mouth, no fast spins, no leaving the frame, nothing appearing from nowhere.
 - Always say the cat stays fully in frame with four normal legs and end with "Photorealistic, smooth natural motion,
   static camera."
