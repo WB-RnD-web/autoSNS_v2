@@ -77,8 +77,8 @@ class _YA:
     def query(self, **k):
         self.calls.append(k)
         if k["dimensions"] == "video":
-            ids = k["filters"].split("==")[1].split(",")
-            return _Ex({"rows": [[v, *M[v][:5]] for v in ids if v in M]})
+            assert "filters" not in k and k["maxResults"] <= 200 and k["sort"] == "-views"
+            return _Ex({"rows": [[v, *M[v][:5]] for v in M] + [["vOther", 999, 50.0, 5.0, 0, 0]]})
         v = k["filters"].split("==")[1]
         return _Ex({"rows": [["SHORTS", M[v][5]], ["YT_SEARCH", M[v][0] - M[v][5]]]})
 
@@ -99,9 +99,9 @@ ck("숫자: 평균 시청 % · 쇼츠 피드 비중(SHORTS / 전체) · 기획�
    by["v1"]["avg_pct"] == 92.0 and by["v1"]["feed_share"] == 0.75 and by["v1"]["format"] == "morph"
    and by["v2"]["caption"] == "Me at 5:59 PM vs 6:00 PM" and by["v4"].get("format") is None, by["v1"])
 ck("stats.json 으로 저장 · 다시 읽힌다", AN.load(d)["channel"] == P.CHANNEL_ID and len(AN.load(d)["videos"]) == 5)
-ck("통계는 채널 내 것만(ids=channel==MINE) · 영상 묶음은 한 번 · 트래픽은 영상마다",
+ck("통계는 채널 내 것만(ids=channel==MINE) · 상위 영상 보고서 한 번(우리 영상만 고른다) · 트래픽은 영상마다",
    all(c["ids"] == "channel==MINE" for c in ya.calls) and sum(c["dimensions"] == "video" for c in ya.calls) == 1
-   and sum(c["dimensions"] == "insightTrafficSourceType" for c in ya.calls) == 5)
+   and sum(c["dimensions"] == "insightTrafficSourceType" for c in ya.calls) == 5 and "vOther" not in by)
 try:
     AN.pull(d, "unused", now=NOW, yt=_YT("UCoPIsIO_ximUdyh-n_-rIfQ"), ya=_YA())
     wrong = False

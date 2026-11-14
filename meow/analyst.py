@@ -74,11 +74,16 @@ def metrics(ya, videos: list[str], start: str, end: str) -> dict[str, dict]:
     out: dict[str, dict] = {}
     if not videos:
         return out
+    # 채널 상위 영상 보고서(dimensions=video · sort · maxResults ≤ 200) — 11/14 진짜 토큰으로 열리는 것 확인한 꼴.
+    #   영상 목록 거르기(filters=video==a,b)는 아직 확인 못 해서 쓰지 않고, 받은 줄에서 우리 영상만 고른다.
+    want = set(videos)
     r = ya.reports().query(ids="channel==MINE", startDate=start, endDate=end, dimensions="video",
                            metrics="views,averageViewPercentage,averageViewDuration,likes,subscribersGained",
-                           filters="video==" + ",".join(videos), sort="-views", maxResults=200).execute()
+                           sort="-views", maxResults=200).execute()
     for row in r.get("rows") or []:
         vid, views, pct, sec, likes, subs = row[:6]
+        if vid not in want:
+            continue
         out[vid] = {"views": int(views), "avg_pct": round(float(pct), 1), "avg_sec": round(float(sec), 1),
                     "likes": int(likes), "subs": int(subs), "feed_views": 0}
     for vid in out:
