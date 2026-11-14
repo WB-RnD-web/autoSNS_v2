@@ -1,0 +1,20 @@
+{
+ "model": "claude-opus-5-5",
+ "effort": "high",
+ "tries": 2,
+ "ok": true,
+ "tokens": {
+  "input": 4711,
+  "cache_write": 77431,
+  "cache_read": 77431,
+  "output": 17453
+ },
+ "usd": 0.771,
+ "errors": [],
+ "history": [
+  [
+   "출력을 읽을 수 없다: Extra data: line 1 column 5303 (char 5302)"
+  ],
+  []
+ ]
+}
