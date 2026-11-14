@@ -1,0 +1,95 @@
+name: 콘텐츠 채우기(API) — 목록이 바닥나기 전에 Claude API 가 다음 편 명세를 써서 refill/** push → refill-pr.yml 이 검사·PR
+
+# 2026-11-14: 클라우드 루틴 '콘텐츠 재고 채우기'(trig_0112Nu…, 11/13 끔)를 옮겼다(tools/refill_api.py).
+#   매일 runway 를 보고, API 로 채우는 줄기(지금 wb_lf27 — 왕별이 롱폼 '2027 정미년 깊이 보기')의 남은 날이
+#   21일보다 적을 때만 API 를 부른다. 그 줄기 refill PR 이 열려 있으면 쉰다(머지 기다림).
+#   push 는 GH_PAT — GITHUB_TOKEN 으로 밀면 refill-pr.yml 이 안 깨어난다. 업로드는 없다: refill/** 에 깨는 건
+#   refill-pr.yml(채우기 검사·전체 테스트·PR)뿐이고 머지는 사람이 한다.
+# 끄기: 레포 변수 REFILL_API=0. 모델: REFILL_MODEL(기본 claude-opus-5-5).
+on:
+  schedule:
+    - cron: "50 2 * * *"     # 11:50 KST 매일 — 채울 게 없으면 API 를 안 부르고 끝난다
+  workflow_dispatch:
+    inputs:
+      stream:
+        description: "줄기 id(비우면 runway 로 고른다 · 적으면 남은 날과 상관없이 채운다)"
+        default: ""
+      dry:
+        description: "push 하지 않고 쓰기·검사만"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+  pull-requests: read
+
+concurrency:
+  group: refill-api
+  cancel-in-progress: false
+
+jobs:
+  fill:
+    if: (vars.REFILL_API || '1') != '0'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      TZ: Asia/Seoul
+      PYTHONUTF8: "1"
+      PYTHONIOENCODING: utf-8
+      REFILL_MODEL: ${{ vars.REFILL_MODEL || 'claude-opus-5-5' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # refill_check 가 origin/main 과 편성을 맞춰 본다
+          token: ${{ secrets.GH_PAT || github.token }}
+          persist-credentials: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 준비
+        run: python -m pip install -q anthropic -r pipeline/requirements.txt numpy pillow google-api-python-client google-auth
+
+      - name: 고르기(남은 날 · 열린 PR · 오늘 브랜치)
+        id: pick
+        env:
+          GH_TOKEN: ${{ github.token }}
+          STREAM_IN: ${{ inputs.stream }}
+        run: |
+          set -euo pipefail
+          S="${STREAM_IN:-}"
+          if [ -z "$S" ]; then S=$(python tools/refill_api.py plan | head -n 1); fi
+          if [ -n "$S" ] && ! printf '%s' "$S" | grep -Eq '^[a-z0-9_]+$'; then echo "::error::줄기 id 가 이상하다: $S"; exit 1; fi
+          if [ -n "$S" ]; then
+            OPEN=$(gh pr list --state open --limit 100 --json headRefName -q '.[].headRefName' | grep -c "^refill/$S-" || true)
+            if [ "${OPEN:-0}" != "0" ]; then echo "::notice::$S 채우기 PR 이 열려 있다 — 머지를 기다린다"; S=""; fi
+          fi
+          if [ -n "$S" ] && git ls-remote --exit-code --heads origin "refill/$S-$(date +%Y%m%d)" >/dev/null; then
+            echo "::notice::refill/$S-$(date +%Y%m%d) 가 이미 있다 — 오늘은 더 쓰지 않는다"; S=""
+          fi
+          [ -n "$S" ] || echo "채울 줄기 없음(남은 날 넉넉 · 또는 PR 대기)" >> "$GITHUB_STEP_SUMMARY"
+          echo "stream=$S" >> "$GITHUB_OUTPUT"
+
+      - name: 쓰기 → 검사 → push(refill/<줄기>-<날짜>)
+        if: steps.pick.outputs.stream != ''
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          PAT: ${{ secrets.GH_PAT }}
+          DRY: ${{ inputs.dry && '1' || '' }}
+          S: ${{ steps.pick.outputs.stream }}
+        run: |
+          set -euo pipefail
+          if [ -z "$PAT" ] && [ -z "$DRY" ]; then echo "::error::GH_PAT 시크릿이 없다 — 멈춘다"; exit 1; fi
+          git fetch -q origin
+          git checkout -q --detach origin/main
+          python tools/refill_api.py fill "$S" --env "$RUNNER_TEMP/refill.env" --msg "$RUNNER_TEMP/refill.msg"
+          . "$RUNNER_TEMP/refill.env"          # BRANCH · COUNT · FILES
+          case "$BRANCH" in refill/*) ;; *) echo "::error::브랜치 이름이 refill/ 로 시작하지 않는다: $BRANCH"; exit 1;; esac
+          git checkout -q -b "$BRANCH"
+          git add $FILES
+          git -c user.name="콘텐츠 채우기 API" -c user.email="refill-api@users.noreply.github.com" commit -q -F "$RUNNER_TEMP/refill.msg"
+          git show --stat --format='%s' HEAD | head -n 20
+          if [ -n "$DRY" ]; then echo "dry — push 안 함: $BRANCH(${COUNT}편)"; cat "$RUNNER_TEMP/refill.msg" >> "$GITHUB_STEP_SUMMARY"; exit 0; fi
+          git push origin "$BRANCH"
+          echo "✅ $BRANCH(${COUNT}편) → refill-pr.yml 이 검사·전체 테스트 뒤 PR 을 연다" >> "$GITHUB_STEP_SUMMARY"

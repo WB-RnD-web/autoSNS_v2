@@ -39,6 +39,7 @@ on:
       - "2027 정미년 롱폼 대본(API) — 루틴 대신 Claude API 로 쓰기 → routine/fortune_lf27"
       - "Meow Remix 매일 쇼츠 — 기획(Claude API) → 그림·HD 영상(Spark) → 검수 → 유튜브 예약 공개"
       - "Meow Remix 인스타·쓰레드 — 그날 고양이 쇼츠를 릴스·쓰레드에(18:00 KST)"
+      - "콘텐츠 채우기(API) — 목록이 바닥나기 전에 Claude API 가 다음 편 명세를 써서 refill/** push → refill-pr.yml 이 검사·PR"
     types: [completed]
 
 permissions:
