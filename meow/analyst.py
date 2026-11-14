@@ -46,25 +46,34 @@ def plans(data_dir: str) -> dict[str, dict]:
         for c in d.get("concepts") or []:
             if c.get("id"):
                 out[c["id"]] = {"format": c.get("format", ""), "caption": c.get("caption", ""), "title": c.get("title", ""),
-                                "slug": c.get("slug", ""), "track": c.get("track", "")}
+                                "slug": c.get("slug", ""), "track": c.get("track", ""),
+                                "tease": c.get("tease")}     # ★11/14 미리 보기 A/B(tuner) — 없으면 None(A/B 전)
     return out
 
 
-def uploads(yt, channel_id: str, n: int = 50) -> list[dict]:
-    """최근 업로드 n편 중 표식이 있는 공개 영상 — [{id, video, published}]."""
+def uploads(yt, channel_id: str, n: int = 100) -> list[dict]:
+    """최근 업로드 n편 중 표식이 있는 공개 영상 — [{id, video, published}].
+    하루 12편이면 50편은 나흘 치뿐 → 두 쪽(100편 ≈ 8일)까지 읽는다(★11/14 틀 자동 조정이 2일 넘은 편을 쓴다)."""
     ch = yt.channels().list(part="contentDetails", mine=True).execute()["items"][0]
     if ch.get("id") != channel_id:
         raise SystemExit(f"❌ 토큰 채널({ch.get('id')})이 고양이 채널({channel_id})이 아니다")
     up = ch["contentDetails"]["relatedPlaylists"]["uploads"]
-    items = yt.playlistItems().list(part="snippet,contentDetails", playlistId=up, maxResults=n).execute().get("items", [])
+    items, page = [], None
+    while len(items) < n:
+        kw = {"pageToken": page} if page else {}
+        r = yt.playlistItems().list(part="snippet,contentDetails", playlistId=up, maxResults=50, **kw).execute()
+        items += r.get("items", [])
+        page = r.get("nextPageToken")
+        if not page:
+            break
     by = {}
-    for it in items:
+    for it in items[:n]:
         m = MARK.search(it["snippet"].get("description", ""))
         if m:
             by[it["contentDetails"]["videoId"]] = m.group(2)
-    if not by:
-        return []
-    vids = yt.videos().list(part="status,snippet", id=",".join(by), maxResults=50).execute().get("items", [])
+    ids, vids = list(by), []
+    for i in range(0, len(ids), 50):                    # videos.list 는 한 번에 50개까지
+        vids += yt.videos().list(part="status,snippet", id=",".join(ids[i:i + 50]), maxResults=50).execute().get("items", [])
     return [{"id": by[v["id"]], "video": v["id"], "published": v["snippet"].get("publishedAt", "")}
             for v in vids if v.get("status", {}).get("privacyStatus") == "public"]
 
@@ -128,8 +137,15 @@ def lessons(stats: dict | None, now: dt.datetime | None = None) -> list[str]:
            "Newest first. avg viewed = average % of the Short watched (over 100% means people replayed it); "
            "feed = share of views that came from the Shorts feed (the feed only keeps showing Shorts people don't swipe away).",
            "Do more of what the ★ Shorts did in their first second (the opening image, motion and caption) and less of what the ✗ ones did."]
-    for v in vids[:SHOW]:
-        tag = " ★ held viewers" if v["video"] in best else " ✗ lost viewers" if v["video"] in worst else ""
+    # 하루 12편이면 최근 20편은 거의 다 '아직 이르다' → 순위 낸 편을 먼저 다 보이고, 피드가 안 받아 준 편·어린 편은 몇 편만
+    old = [v for v in vids if _age_h(v, now) >= JUDGE_AGE_H]
+    low = [v for v in old if v.get("views", 0) < JUDGE_MIN_VIEWS]
+    kids = [v for v in vids if _age_h(v, now) < JUDGE_AGE_H]
+    keep = {v["video"] for v in judge[:SHOW] + low[:6] + kids[:6]}
+    low_ids = {v["video"] for v in low}
+    for v in [v for v in vids if v["video"] in keep]:
+        tag = (" ★ held viewers" if v["video"] in best else " ✗ lost viewers" if v["video"] in worst else
+               f" ✗ the feed skipped it (under {JUDGE_MIN_VIEWS} views after 2 days)" if v["video"] in low_ids else "")
         young = " (under 2 days old — too early)" if _age_h(v, now) < JUDGE_AGE_H else ""
         out.append(f"- {v.get('published', '')[:10]} {v.get('format', '?')} · caption \"{v.get('caption', '')}\" · "
                    f"{v.get('title', '')} · {v.get('views', 0)} views · avg viewed {v.get('avg_pct', 0)}% · "

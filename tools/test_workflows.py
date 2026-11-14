@@ -224,6 +224,15 @@ _plan = _mw.split("\n  render:", 1)[0]
 ck("★11/14 분석 담당: 기획 잡이 기획 전에 새 채널 성적을 읽는다(meow/analyst.py pull) · 토큰 없거나 실패해도 기획은 그대로 · 토큰 파일은 지운다",
    "meow/analyst.py pull" in _plan and _plan.find("meow/analyst.py pull") < _plan.find("meow/plan_api.py write")
    and "성적 없이 기획" in _plan and 'rm -f "$T"' in _plan and "secrets.YT_TOKEN_JSON_MEOW" in _plan, "")
+_i = {k: _plan.find(k) for k in ("meow/analyst.py pull", "meow/tuner.py tune", "meow/notes.py write", "meow/plan_api.py write")}
+ck("★11/14 틀 자동 조정·정리 노트: 성적 읽기 → 틀 조정 → 노트 → 기획 순서 · 둘 다 실패해도 기획은 간다 · 스위치 MEOW_AUTOTUNE·MEOW_NOTES "
+   "· 노트만 API 키를 받는다(틀 조정은 코드만)",
+   all(v > 0 for v in _i.values()) and _i["meow/analyst.py pull"] < _i["meow/tuner.py tune"] < _i["meow/notes.py write"]
+   < _i["meow/plan_api.py write"] and "틀 조정 실패 — 어제 비율 그대로" in _plan and "정리 노트 실패 — 기획은 그대로" in _plan
+   and "MEOW_AUTOTUNE: ${{ vars.MEOW_AUTOTUNE || '1' }}" in _plan and "env.MEOW_AUTOTUNE != '0'" in _plan
+   and "(vars.MEOW_NOTES || '1') != '0'" in _plan
+   and "ANTHROPIC_API_KEY" not in _plan[_plan.find("name: 틀 조정"):_plan.find("name: 정리 노트")]
+   and "ANTHROPIC_API_KEY" in _plan[_plan.find("name: 정리 노트"):_plan.find("name: 기획(Claude API")], str(_i))
 ck("완성본 캐시 경로가 meow-daily(저장)와 meow-social(받기)에서 똑같다 · 열쇠 앞머리 meow-out-",
    _out_paths(_mw) is not None and _out_paths(_mw) == _out_paths(_ms) and len(_out_paths(_ms)) == 3
    and "key: meow-out-${{ steps.pick.outputs.stem }}-${{ github.run_id }}" in _mw

@@ -3,7 +3,7 @@ name: Meow Remix 매일 쇼츠 — 기획(Claude API) → 그림·HD 영상(Spar
 # 2026-11-09 사용자: HD 견본 3편(5초 컷 2개 · 720×1280·32fps)을 보고 "괜찮네 매일 쇼츠 PR 진행해줘".
 # 하루 한 편(약 10초 · 음악만):
 #   plan   : meow/plan_api.py 가 Claude API + 웹 검색으로 그날 편을 쓴다 → data/meow/<날짜>.json(고아 커밋 하나 · 강제).
-#            꼴은 요일로 코드가 정한다(월·목 변신 · 화·토 밈 · 수·일 춤 · 금 게임) · 같은 날 두 번째 실행부터는 건너뛴다.
+#            꼴은 코드가 정한다(★11/14 틀 자동 조정 meow/tuner.py → mix.json 비율 · 끄면 예전 요일 순환) · 같은 날 두 번째 실행부터는 건너뛴다.
 #   render : meow/daily.py — 1컷 그림(z-image) → 2컷 그림 = 1컷 그림 편집(qwen-image-edit · 같은 고양이) → 그림 검수(비전)
 #            → HD 클립 2개(스파크 hd:true · 한 개 약 16분) → 영상 검수 → 조립(음악·자막) → 유튜브 비공개 + 예약 공개.
 #            검수에 걸린 그림은 한 번 다시 그리고, 걸린 클립은 한 번 다시 만든다. 또 걸리면 동작을 줄여 마지막 한 번,
@@ -26,7 +26,7 @@ name: Meow Remix 매일 쇼츠 — 기획(Claude API) → 그림·HD 영상(Spar
 #   ★05:45~08:00 KST(아침 업로드 루틴 몫)에는 Spark 를 쓰지 않는다(종료 코드 75 → 다음 예비가 잇는다).
 #   받은 그림·클립은 Actions 캐시(meow-work-<stem>-)에 남아 다음 실행이 이어 받는다.
 # ★두 번 올리지 않는다: 렌더 전에 유튜브 설명란 표식('Meow Remix · <날짜> <id>')을 보고, 올리기 직전에 한 번 더 본다.
-# ★다른 채널에 올리지 않는다: post.py 가 토큰의 채널 핸들(@meowremixcats)을 확인한다.
+# ★다른 채널에 올리지 않는다: post.py 가 토큰의 채널 id(새 채널 Meow Remix TV · 옛 채널 id 는 막음)를 확인한다.
 # 끄기: 레포 변수 MEOW_DAILY=0. 시험: api-test/meow 에 올리면 그 브랜치 코드로 기획(data/meow-test)·렌더만 — 업로드 없음,
 #   영상은 아티팩트. 수동 실행은 렌더만(upload 를 켜야 올린다).
 # 비용: Claude API 크레딧(기획 약 0.5달러·검수 몇 센트 — <날짜>_api.json·qa.json) · Spark(공용) · 퍼블릭 레포 Actions. 결제 수단 없음.
@@ -76,6 +76,7 @@ jobs:
       MEOW_PLAN_MODEL: ${{ vars.MEOW_PLAN_MODEL || 'claude-opus-5-5' }}
       MEOW_PLAN_EFFORT: ${{ vars.MEOW_PLAN_EFFORT || 'high' }}
       MEOW_SLOTS: ${{ vars.MEOW_SLOTS || 'a b c d e f g h i j k l' }}      # 하루 편 수 줄이기: 'a b c' 등(렌더 matrix 는 없는 편을 건너뛴다)
+      MEOW_AUTOTUNE: ${{ vars.MEOW_AUTOTUNE || '1' }}     # ★11/14 틀 자동 조정 — 0 이면 mix.json 을 안 보고 예전 요일 순환
     steps:
       - uses: actions/checkout@v4
         with:
@@ -126,6 +127,27 @@ jobs:
           python meow/analyst.py pull --dir "$RUNNER_TEMP/plan" --token "$T" || echo "::warning::성적 읽기 실패 — 성적 없이 기획"
           rm -f "$T"
 
+      # ★11/14 틀 자동 조정(2단계 · 사용자 "응 그렇게 해줘") — 성적으로 꼴 비율·결말 미리 보기 켬/끔 비율을 하루 한 번 고친다.
+      #   API 안 씀(코드). 안전장치도 코드: 꼴마다 최소 15% · 하루 10%p 넘게 안 움직임 · 편이 모자라거나 성적이 묵었으면 그대로.
+      #   실패해도 기획은 어제 비율(mix.json)로 간다. 끄기: 레포 변수 MEOW_AUTOTUNE=0.
+      - name: 틀 조정(꼴 비율 · 미리 보기 A/B)
+        if: steps.prep.outputs.skip != '1' && env.MEOW_AUTOTUNE != '0'
+        run: |
+          python meow/tuner.py tune --dir "$RUNNER_TEMP/plan" --day "${{ steps.prep.outputs.day }}" > "$RUNNER_TEMP/tune.txt" \
+            || echo "::warning::틀 조정 실패 — 어제 비율 그대로"
+          tee -a "$GITHUB_STEP_SUMMARY" < "$RUNNER_TEMP/tune.txt"
+
+      # ★11/14 정리 노트 — 근거(코드가 센 숫자) + 해석(API) 한 장을 data/meow 의 notes/ 에 쌓는다. 알림·보고서 없음(저장만).
+      #   2일 넘은 편이 없으면 API 를 안 부른다. 실패해도 기획은 그대로. 끄기: 레포 변수 MEOW_NOTES=0.
+      - name: 정리 노트(저장만)
+        if: steps.prep.outputs.skip != '1' && (vars.MEOW_NOTES || '1') != '0'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          MEOW_NOTE_MODEL: ${{ vars.MEOW_NOTE_MODEL || 'claude-opus-5-5' }}
+        run: |
+          python meow/notes.py write --dir "$RUNNER_TEMP/plan" --day "${{ steps.prep.outputs.day }}" \
+            || echo "::warning::정리 노트 실패 — 기획은 그대로"
+
       - name: 기획(Claude API + 웹 검색)
         if: steps.prep.outputs.skip != '1'
         env:
@@ -151,6 +173,9 @@ jobs:
             echo "- 만든 곳: .github/workflows/meow-daily.yml · meow/plan_api.py — Meow Remix 매일 한 편 기획"
             echo "- <날짜>.json = render.py·post.py 가 읽는 기획(편 하나 · 5초 컷 2개 · 2컷째는 1컷 그림 편집) 또는 skip"
             echo "- <날짜>_api.json = 모델·꼴·시도·토큰·검색·달러"
+            echo "- stats.json = 분석 담당(meow/analyst.py) — 새 채널 최근 쇼츠 성적"
+            echo "- mix.json = 틀 자동 조정(meow/tuner.py) — 오늘 꼴 비율·미리 보기 끄는 편 비율·이유·지난 기록"
+            echo "- notes/<날짜>.md = 정리 노트(meow/notes.py) — 근거(숫자) + 해석(API · 추측 포함)"
             echo "- 마지막 생성: $(date '+%F %H:%M') KST · run ${GITHUB_RUN_ID}"
           } > "$W/README.md"
           export GIT_INDEX_FILE="$RUNNER_TEMP/plan.index"
