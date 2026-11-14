@@ -7,8 +7,10 @@
   ④ 검사(render.check_concept + 아래 check)를 못 넘으면 오류를 붙여 다시(최대 3번) — 그래도 안 되면 그날은 skip.
 결과: <날짜>.json = {"date", "concepts": [편 하나]}(render.py·post.py 가 그대로 읽는 모양) 또는 {"date", "skip", "concepts": []}
       <날짜>_api.json = 모델·시도·토큰·검색·달러. 크레딧이 바닥나면 API 가 거절할 뿐 돈은 안 나간다(결제 수단 없음).
-★11/13 하루 세 편(사용자 "빈도가 너무 낮다" → "ㄱㄱㄱ"): 편(slot) a·b·c — a = 매일 변신(견본 중 유일하게 846회 나온 꼴),
-  b·c = 밈·춤·게임을 요일로 돌린다. 파일은 a = <날짜>.json(예전 그대로) · b = <날짜>-b.json · c = <날짜>-c.json.
+★11/13 하루 세 편(사용자 "빈도가 너무 낮다" → "ㄱㄱㄱ"): 편(slot) a·b·c — a = 매일 변신(견본 중 유일하게 846회 나온 꼴).
+  파일은 a = <날짜>.json(예전 그대로) · b = <날짜>-b.json · c = <날짜>-c.json …
+★11/14 하루 최대 12편(사용자 "API 크레딧 월 160~180달러 정도 쓰게"): 편 a~l. 실제 편 수는 워크플로 변수 MEOW_SLOTS.
+  b 부터는 밈·춤·게임·변신을 요일로 돌린다. 꼴마다 곡이 3~10곡뿐이라 겹침 규칙은 오래된 것부터 풀고 바로 앞 편과는 끝까지 다르게.
 
     python meow/plan_api.py write --day 2026-11-10 --dir /tmp/data-meow [--slot b]
 """
@@ -34,9 +36,10 @@ SEARCH_USD = 0.01
 MAX_SEARCH, MAX_FETCH = 6, 3
 TRIES = 3
 
-SLOTS = ("a", "b", "c")
-# a 는 매일 변신(morph) — 고양이 AI 쇼츠의 간판이고 견본 중 혼자 846회(11/13). b·c 는 나머지 셋을 요일로 돌린다(월=0 … 일=6).
-ROTATION = ("meme", "dance", "game")
+SLOTS = tuple("abcdefghijkl")          # 하루 최대 12편 — 실제로 쓰는 편은 워크플로 변수 MEOW_SLOTS(기본 12편)
+# a 는 매일 변신(morph) — 고양이 AI 쇼츠의 간판이고 견본 중 혼자 846회(11/13). b 부터는 넷을 요일로 돌린다(월=0 … 일=6).
+CYCLE = ("meme", "dance", "game", "morph")
+USED_MAX = 300                           # 모델에게 보내는 '이미 쓴 소재' 줄 수(하루 12편이면 한 달이 360줄)
 FORMAT_INFO = {
     "morph": "A food or object turns into a kitten. Shot 1: the food in a cosy real setting with only a small kitten hint "
              "(two tiny ears or a tail tip) on one piece. Shot 2 (edit of shot 1): that one piece is now a tiny kitten whose "
@@ -96,9 +99,8 @@ whole JSON again."""
 
 
 def fmt_of(day: dt.date, slot: str = "a") -> str:
-    if slot == "a":
-        return "morph"
-    return ROTATION[(day.weekday() + SLOTS.index(slot) - 1) % len(ROTATION)]
+    i = SLOTS.index(slot)
+    return "morph" if i == 0 else CYCLE[(day.weekday() + i - 1) % len(CYCLE)]
 
 
 def doc_name(day: dt.date, slot: str = "a") -> str:
@@ -145,9 +147,15 @@ def _track_of(data_dir: str, name: str) -> str | None:
 
 
 def avoid_tracks(data_dir: str, day: dt.date, slot: str = "a") -> list[str]:
-    """쓰면 안 되는 곡 = 어제 같은 편의 곡 + 오늘 앞 편들의 곡(하루 세 편이 같은 음악으로 들리지 않게)."""
+    """쓰면 안 되는 곡 = 어제 같은 편의 곡 + 오늘 앞 편들의 곡(같은 음악이 이어지지 않게).
+    하루 편이 많으면 그 꼴 곡(3~10곡)이 동난다 → 오래된 것부터 풀어 한 곡은 남긴다(바로 앞 편 곡은 끝까지 피한다)."""
     names = [doc_name(day - dt.timedelta(days=1), slot)] + [doc_name(day, s) for s in SLOTS[:SLOTS.index(slot)]]
-    return [t for t in dict.fromkeys(_track_of(data_dir, n) for n in names) if t]
+    raw = [t for t in (_track_of(data_dir, n) for n in names) if t]
+    out = list(dict.fromkeys(reversed(raw)))[::-1]        # 겹치면 가장 최근 자리만 남긴다(오래된 → 최근)
+    allowed = set(tracks_for(fmt_of(day, slot)))
+    while len(out) > 1 and not (allowed - set(out)):
+        out.pop(0)
+    return out
 
 
 def user_message(day: dt.date, data_dir: str, slot: str = "a") -> str:
@@ -158,7 +166,7 @@ def user_message(day: dt.date, data_dir: str, slot: str = "a") -> str:
     tr = R.tracks()
     av = avoid_tracks(data_dir, day, slot)
     return "\n".join([
-        f"# Today (KST) {day.isoformat()} ({day.strftime('%A')}) — Short {slot} of {len(SLOTS)} — format: {fmt}",
+        f"# Today (KST) {day.isoformat()} ({day.strftime('%A')}) — Short #{SLOTS.index(slot) + 1} of the day — format: {fmt}",
         FORMAT_INFO[fmt], "",
         "## Allowed tracks today (file — title — moods)",
         *[f"- {f} — {tr[f]['title']} — {', '.join(tr[f].get('moods', []))}" for f in tracks_for(fmt)],
@@ -169,7 +177,7 @@ def user_message(day: dt.date, data_dir: str, slot: str = "a") -> str:
         "\n## Recent days (vary the cat, the setting and the music)",
         *[f"- {h['date']} {h['format']} · {h['title']} · {h['track']} · {h['cat']}" for h in recent],
         "\n## Used ideas (off limits: slug / title)",
-        *[f"- {h['slug']} / {h['title']}" for h in hist],
+        *[f"- {h['slug']} / {h['title']}" for h in hist[-USED_MAX:]],
     ])
 
 

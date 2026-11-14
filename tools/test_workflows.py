@@ -206,7 +206,9 @@ ck("meow-social.yml: 매일판이 끝나면 바로 깬다(workflow_run — 이�
    f'workflows: ["{_mw_name}"]' in _ms and "github.event.workflow_run.event != 'push'" in _ms
    and "python meow/post.py pick" in _ms and "actions: read" in _ms and "date +%F" not in _ms, _mw_name)
 ck("meow-daily.yml: 편 a·b·c 를 matrix 로 하나씩(max-parallel 1 — 스파크 GPU 하나) · 조용한 시간이 곧 끝나면 기다린다",
-   "max-parallel: 1" in _render and "slot: [a, b, c]" in _render and "--wait-quiet" in _render
+   "max-parallel: 1" in _render and "slot: [a, b, c, d, e, f, g, h, i, j, k, l]" in _render and "--wait-quiet" in _render
+   and _mw.count("vars.MEOW_SLOTS || 'a b c d e f g h i j k l'") == 2 and "matrix.slot == 'a'" in _render
+   and "steps.yt.outcome != 'success'" in _render
    and 'plan_api.py write --day' in _mw and '--slot "$S"' in _mw, "")
 ck("완성본 캐시 경로가 meow-daily(저장)와 meow-social(받기)에서 똑같다 · 열쇠 앞머리 meow-out-",
    _out_paths(_mw) is not None and _out_paths(_mw) == _out_paths(_ms) and len(_out_paths(_ms)) == 3
