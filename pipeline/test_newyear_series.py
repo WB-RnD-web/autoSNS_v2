@@ -237,6 +237,19 @@ ck("배경 묘사: 붉은 목도리 양 · 사람 없음 · 글자 금지 꼬리
 ck("끝자리 말: 숫자 읽는 소리로 조사('2, 4, 5는' · '0, 4, 8은')",
    "2, 4, 5는" in S.narration(S.episode_by_id("d_money")) and "0, 4, 8은" in S.narration(S.episode_by_id("d_helper")))
 
+# ★11/14 타고난 돈 성향 × 2027 재물 — 등급은 재물운 등급표(newyear_card)와 같은 셈 · 조언은 등급에 맞춰
+_mr = S.money_temper_rows()
+_mt = {r["animal"]: r["tier"] for r in NY.money_items()}
+ck("돈 성향 편: 12띠 순서 · 성향 12가지 · 등급 = 2027 재물운 등급표와 같다 · 대길·길은 키우는 조언, 보통·조심은 지키는 조언",
+   [r["animal"] for r in _mr] == list(FC.ANIMALS) and len({r["good"] for r in _mr}) == 12
+   and all(r["tier"] == _mt[r["animal"]] for r in _mr)
+   and all(r["bad_line"] == S.MONEY_TEMPER[r["animal"]][2 if r["tier"] in ("S", "A") else 3] for r in _mr)
+   and {r["tier"] for r in _mr} >= {"S", "B"}, [(r["animal"], r["tier"], r["bad_line"]) for r in _mr])
+_sch = dict((e, d) for d, e in S.schedule(D(2027, 1, 31)))
+ck("돈 성향 편은 11/24(화) 06:13 · 이미 나간 편(11/14 귀인운까지)의 날짜는 그대로",
+   _sch.get("r_money") == D(2026, 11, 24) and _sch.get("d_helper") == D(2026, 11, 14) and _sch.get("r_health") == D(2026, 11, 17),
+   _sch.get("r_money"))
+
 print("── 화면(motion_short) ──")
 for e in S.EPISODES:
     sc = dict(scenes[e["id"]], start=0.0, dur=9.0, clip=9.0)
