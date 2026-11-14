@@ -220,6 +220,10 @@ ck("meow-daily.yml: 편 a·b·c 를 matrix 로 하나씩(max-parallel 1 — 스�
    and _mw.count("vars.MEOW_SLOTS || 'a b c d e f g h i j k l'") == 2 and "matrix.slot == 'a'" in _render
    and "steps.yt.outcome != 'success'" in _render
    and 'plan_api.py write --day' in _mw and '--slot "$S"' in _mw, "")
+_plan = _mw.split("\n  render:", 1)[0]
+ck("★11/14 분석 담당: 기획 잡이 기획 전에 새 채널 성적을 읽는다(meow/analyst.py pull) · 토큰 없거나 실패해도 기획은 그대로 · 토큰 파일은 지운다",
+   "meow/analyst.py pull" in _plan and _plan.find("meow/analyst.py pull") < _plan.find("meow/plan_api.py write")
+   and "성적 없이 기획" in _plan and 'rm -f "$T"' in _plan and "secrets.YT_TOKEN_JSON_MEOW" in _plan, "")
 ck("완성본 캐시 경로가 meow-daily(저장)와 meow-social(받기)에서 똑같다 · 열쇠 앞머리 meow-out-",
    _out_paths(_mw) is not None and _out_paths(_mw) == _out_paths(_ms) and len(_out_paths(_ms)) == 3
    and "key: meow-out-${{ steps.pick.outputs.stem }}-${{ github.run_id }}" in _mw

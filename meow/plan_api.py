@@ -28,6 +28,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import render as R  # noqa: E402
+import analyst as AN  # noqa: E402 — 분석 담당(11/14): 새 채널 최근 쇼츠 성적
 
 MODEL = os.environ.get("MEOW_PLAN_MODEL", "claude-opus-5-5")
 EFFORT = os.environ.get("MEOW_PLAN_EFFORT", "high")
@@ -179,6 +180,7 @@ def user_message(day: dt.date, data_dir: str, slot: str = "a") -> str:
         *[f"- {h['date']} {h['format']} · {h['title']} · {h['track']} · {h['cat']}" for h in recent],
         "\n## Used ideas (off limits: slug / title)",
         *[f"- {h['slug']} / {h['title']}" for h in hist[-USED_MAX:]],
+        *AN.lessons(AN.load(data_dir)),          # ★11/14 분석 담당 — 새 채널 최근 쇼츠 성적(stats.json 이 있을 때만)
     ])
 
 
