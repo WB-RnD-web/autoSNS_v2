@@ -10,6 +10,7 @@ import glob
 import json
 import os
 import sys
+import subprocess
 import tempfile
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -80,6 +81,31 @@ p = R.plan(c14)
 ck("14b 컷 = 5초 그대로(늘리지 않음)", p[0]["dur"] == 5.0 and p[1]["start"] == 4.4, str(p))
 fg = R.filtergraph({**c14, "caption": "First snow ever", "track": "funkorama.mp3"}, 3)
 ck("14b 는 32fps(RIFE ×2 그대로·16fps 는 정확히 두 번씩)", "fps=32" in fg and "settb=1/32" in fg and "*1.0," in fg)
+
+# ── ★11/14 첫 1초: 결말 미리 보기(마지막 컷에서 첫 화면과 가장 다른 순간을 맨 앞에) ──
+fgt = R.filtergraph({**c14, "caption": "First snow ever", "track": "funkorama.mp3"}, 4, 1.6)
+ck("미리 보기: 입력 2번(마지막 컷 한 번 더)을 1.6초부터 TEASE 만큼 잘라 본편 앞에 붙이고 · 음악은 입력 3번 · 길이 = 본편 + TEASE",
+   "[2:v]trim=1.6:2.4," in fgt and "[vt][a1]concat=n=2" in fgt and "[3:a]atrim=0:" + str(round(R.total(c14) + R.TEASE, 3)) in fgt
+   and fgt.index("[vtz]drawtext") > fgt.index("[vt][a1]"), fgt[-700:])
+_td = tempfile.mkdtemp()
+
+
+def _clip(name, colors):
+    """색이 바뀌는 시험 클립(색마다 1초 · 64×112)."""
+    out = os.path.join(_td, name)
+    ins = []
+    for col in colors:
+        ins += ["-f", "lavfi", "-i", f"color=c={col}:s=64x112:d=1:r=16"]
+    subprocess.run([R.ffmpeg(), "-v", "error", "-y", *ins, "-filter_complex",
+                    "".join(f"[{k}:v]" for k in range(len(colors))) + f"concat=n={len(colors)}:v=1:a=0,format=yuv420p[v]",
+                    "-map", "[v]", out], check=True)
+    return out
+
+
+_a, _b, _s = _clip("a.mp4", ["black", "black"]), _clip("b.mp4", ["black", "white"]), _clip("s.mp4", ["black", "black"])
+ck("가장 다른 순간(1초에 하얗게)이 가운데 오게 자른다 · 클립 끝을 넘지 않는다",
+   R.tease_at(_a, _b, 2.0, 1.0) == 0.6, str(R.tease_at(_a, _b, 2.0, 1.0)))
+ck("첫 화면과 다를 게 없으면(정지) 미리 보기를 끈다", R.tease_at(_a, _s, 2.0, 1.0) is None)
 ok14 = {**bad, "engine": "14b", "shots": [{"image": "a kitten", "motion": "the kitten blinks, static camera"}] * 2}
 ck("14b 견본 모양은 검사 통과", R.check_concept(ok14) == [], str(R.check_concept(ok14)))
 ck("14b 는 컷 1~3개", any("컷 4개" in x for x in R.check_concept({**ok14, "shots": ok14["shots"] * 2})))
@@ -651,14 +677,14 @@ class _Ex:
 
 
 class _YT:
-    def __init__(self, title, handle):
-        self.t, self.h = title, handle
+    def __init__(self, title, handle, cid="UCnew"):
+        self.t, self.h, self.c = title, handle, cid
 
     def channels(self):
         return self
 
     def list(self, **k):
-        return _Ex({"items": [{"snippet": {"title": self.t, "customUrl": self.h},
+        return _Ex({"items": [{"id": self.c, "snippet": {"title": self.t, "customUrl": self.h},
                                "contentDetails": {"relatedPlaylists": {"uploads": "UU1"}}}]})
 
     def playlistItems(self):
@@ -671,8 +697,24 @@ try:
 except SystemExit:
     wrong_ok = False
 ck("토큰이 다른 채널(왕별이)이면 멈춘다", not wrong_ok)
-ck("고양이 채널(이름 바꾸기 전 Nine Tails Tales 포함)이면 최근 업로드 설명을 읽는다",
-   "m261110" in P.uploaded_text(_YT("Nine Tails Tales", "@meowremixcats")) and "m261110" in P.uploaded_text(_YT("Meow Remix", "@x")))
+_cid = P.CHANNEL_ID
+
+
+def _stops(yt):
+    try:
+        P.uploaded_text(yt)
+        return False
+    except SystemExit:
+        return True
+
+
+P.CHANNEL_ID = "UCnew"
+ck("★11/14 새 고양이 채널(id)이면 최근 업로드 설명을 읽는다 · 옛 채널(이름이 같아도)·다른 채널이면 멈춘다",
+   "m261110" in P.uploaded_text(_YT("Meow Remix Cats", "@x", "UCnew"))
+   and _stops(_YT("Meow Remix Cats", "@meowremixcats", P.OLD_CHANNEL_ID)) and _stops(_YT("Meow Remix", "@x", "UCother")))
+P.CHANNEL_ID = ""
+ck("새 채널 id 가 비어 있으면 아무 데도 안 올린다", _stops(_YT("Meow Remix Cats", "@x", "UCnew")))
+P.CHANNEL_ID = _cid
 ck("seen: 남았으면 10(오류 1 과 구별)", P.NOT_YET == 10)
 
 

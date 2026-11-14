@@ -182,7 +182,7 @@ _render = _mw.split("\n  render:", 1)[-1]
 ck("meow-daily.yml: 맨 위 읽기 · 쓰기는 기획 잡만 · 업로드는 예약/수동 upload 만 · 고양이 채널 토큰 · 조용한 시간·검수 막힘은 실패 아님",
    re.search(r"(?m)^permissions:\n  contents: read", _mw) is not None and "contents: write" not in _render
    and "UPLOAD: ${{ github.event_name == 'schedule' || github.event.inputs.upload == 'true' }}" in _mw
-   and "env.UPLOAD == 'true'" in _render and "YT_TOKEN_JSON_GUMIHO" in _render and "YT_TOKEN_JSON_NOVEL" not in _mw
+   and "env.UPLOAD == 'true'" in _render and "YT_TOKEN_JSON_MEOW" in _render and "YT_TOKEN_JSON_GUMIHO" not in _mw and "YT_TOKEN_JSON_NOVEL" not in _mw
    and "rc -eq 75" in _render and "rc -eq 3" in _render
    and not [ln for ln in _render.splitlines() if re.search(r"\bgit\b.*\spush\b", ln)], "")
 
