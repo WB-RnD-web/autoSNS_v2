@@ -15,12 +15,13 @@ on:
     - cron: "0 3 * * *"      # 12:00 KST 띠별 테마 표(이틀에 한 번)      — 옛 루틴 trig_01XPKrmN…
     - cron: "40 4 * * *"     # 13:40 KST 내 것 찾기 · 성씨(surname)
     - cron: "40 6 * * *"     # 15:40 KST 내 것 찾기 · 태어난 달(pm) — 음력 끝자리 날엔 lunar
+    - cron: "40 8 * * *"     # 17:40 KST 말년 지혜 표(2026-11-17~11-30 2주 시험 · wisdom_card) — 편 없는 날은 건너뜀
   workflow_dispatch:
     inputs:
       which:
         description: "무엇을 깨울까"
         type: choice
-        options: [fortune, name_year, name_am, name_surname, name_pm, pulli, theme]
+        options: [fortune, name_year, name_am, name_surname, name_pm, pulli, theme, wisdom]
       dry:
         description: "push 하지 않고 만들기만(검증)"
         type: boolean
@@ -57,6 +58,7 @@ jobs:
             "0 3 * * *")   W=theme ;;
             "40 4 * * *")  W=name_surname ;;
             "40 6 * * *")  W=name_pm ;;
+            "40 8 * * *")  W=wisdom ;;
           esac
           if [ -z "$W" ]; then echo "::error::어느 트리거인지 모름(schedule='$SCHED')"; exit 1; fi
           echo "which=$W" >> "$GITHUB_OUTPUT"

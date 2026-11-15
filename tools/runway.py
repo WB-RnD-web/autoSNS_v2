@@ -108,6 +108,10 @@ def wangbyul(today: dt.date) -> list[dict]:
                     sum(d >= today for d in eps),
                     refill="pipeline/longform_2027_more.json 에 이어 가는 편(E17~ · from · 월·수·금) → catalog --write",
                     note="이어 가는 편이 없으면 끝난 뒤 왕별이 롱폼 0편(주간 롱폼은 11/02 부터 꺼짐)"))
+    wi = _mod("wisdom_card")
+    out.append(_row(ch, "wb_wisdom", f"17:40 말년 지혜 표 2주 시험(wisdom_card · {len(wi.EPISODES)}편 · 운세 표에 더해 하루 한 편)",
+                    "trial", wi.last_day(), _count(today, wi.last_day(), wi.is_post_day), judge=wi.JUDGE,
+                    refill="pipeline/wisdom_card.py EPISODES 끝에 date 를 단 편 — 판정(pulse_experiments 'wisdom-trial')이 '계속'일 때만"))
     w_last = wf.last_day()
     out.append(_row(ch, "wb_weekly_lf", "주간 띠별 운세 롱폼(일 08:00)", "end" if w_last else "open", w_last,
                     int(bool(w_last and w_last >= today)) if w_last else None,

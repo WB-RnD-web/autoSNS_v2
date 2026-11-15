@@ -1,0 +1,53 @@
+{
+ "date": "2026-11-17",
+ "topic": "wisdom",
+ "theme": "wisdom:couple_words",
+ "privacy": "public",
+ "accent": "#2E7D6B",
+ "_min_total": 10.0,
+ "hook_title": "오래가는 부부가 자주 하는 말",
+ "headline": "오래가는 부부가 자주 하는 말 5가지 | 말년 지혜 #오래가는부부 #부부공감 #황혼부부",
+ "thumbnail_hook": "two warm teacups side by side on a low wooden table by a sunny hanok paper window, autumn light, calm mood, no people, no text, no letters, no signage, no logos",
+ "thumbnail_style": "hanji",
+ "scenes": [
+  {
+   "type": "wisdom",
+   "pill": "50·60·70대 공감 · 말년 지혜",
+   "title": "오래가는 부부가",
+   "title2": "자주 하는 말",
+   "tone": "do",
+   "items": [
+    {
+     "big": "\"고마워요\"",
+     "small": "작은 일에도 먼저 건네요"
+    },
+    {
+     "big": "\"당신 덕분이야\"",
+     "small": "좋은 일은 공을 돌려요"
+    },
+    {
+     "big": "\"밥은 먹었어요?\"",
+     "small": "짧은 안부가 곧 마음이에요"
+    },
+    {
+     "big": "\"내가 미안해\"",
+     "small": "먼저 하는 쪽이 이겨요"
+    },
+    {
+     "big": "\"오늘 고생했어요\"",
+     "small": "하루 끝에 건네는 한마디"
+    }
+   ],
+   "foot": "※ 어르신들 이야기를 모아 정리했어요 · 집집마다 사정은 다를 수 있어요",
+   "brand": "왕별이 · 말년 지혜",
+   "narration": "오래가는 부부가 자주 하는 말, 다섯 가지예요. 몇 번이 제일 와닿으세요? 댓글로 번호를 남겨 주세요."
+  }
+ ],
+ "platforms": {
+  "youtube": {
+   "title": "오래가는 부부가 자주 하는 말 5가지 | 말년 지혜 #오래가는부부 #부부공감 #황혼부부 #shorts",
+   "description": "오래가는 부부가 자주 하는 말, 다섯 가지를 한 장에 모았어요. 몇 번이 제일 와닿으세요? 댓글로 번호를 남겨 주세요 🙏\n\n1. 고마워요 — 밥상·설거지 같은 작은 일에 건넨 고맙다는 말이 쌓여 정이 돼요.\n2. 당신 덕분이야 — 잘된 일의 공을 배우자에게 돌리면, 다음에도 서로 돕고 싶어져요.\n3. 밥은 먹었어요? — 오래 산 부부일수록 짧은 안부 한마디가 '당신을 생각한다'는 뜻이 돼요.\n4. 내가 미안해 — 다툰 뒤 먼저 사과하는 건 지는 게 아니라 집안의 평화를 지키는 일이에요.\n5. 오늘 고생했어요 — 하루를 마치며 서로의 수고를 알아주면 잠자리가 편해져요.\n\n※ 왕별이가 어르신들 이야기를 모아 정리한 생활 지혜예요. 집집마다 사정은 다를 수 있어요.\n\n#오래가는부부 #부부공감 #황혼부부 #말년지혜 #인생지혜 #시니어공감 #50대 #60대 #70대 #shorts"
+  }
+ },
+ "notes": "말년 지혜 표 · wisdom:couple_words · wisdom_card.py 가 만든 스토리보드(11/17~11/30 2주 시험 · 17:40)"
+}

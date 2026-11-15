@@ -2,7 +2,7 @@
 
     python tools/wb_trigger.py <which> --env <파일> [--date YYYY-MM-DD]
 
-which: fortune · pulli · theme · name_year · name_am · name_surname · name_pm
+which: fortune · pulli · theme · name_year · name_am · name_surname · name_pm · wisdom
 스토리보드를 레포 안 경로(FILE)에 만들고, 워크플로가 읽을 BRANCH·FILE·MSG·WHO 를 --env 파일에 쓴다.
 그날 차례가 아니면(띠별 테마 쉬는 날 · 내 것 찾기 하루 한 칸 순환) FILE 을 비워 둔다 = 건너뜀.
 "내 것 찾기" 칸은 cron 이 어느 줄로 깨웠는지로 정한다(루틴은 시각으로 골랐다 — Actions 는 cron 이 늦게 돌 수 있어서).
@@ -28,6 +28,8 @@ SPECS = {
     "name_am": ("routine/fortune_name", "name-trigger", "pipeline/name_card.py", "am", "chore: 내 것 찾기 표 {d} {s}"),
     "name_surname": ("routine/fortune_name", "name-trigger", "pipeline/name_card.py", "surname", "chore: 내 것 찾기 표 {d} {s}"),
     "name_pm": ("routine/fortune_name", "name-trigger", "pipeline/name_card.py", "pm", "chore: 내 것 찾기 표 {d} {s}"),
+    # 2026-11-15 말년 지혜 표(11/17~11/30 2주 시험 · 17:40) — 운세 표에 더해 하루 한 편. 편이 없는 날은 make 가 안 쓴다 = 건너뜀
+    "wisdom": ("routine/wisdom", "wisdom-trigger", "pipeline/wisdom_card.py", None, "chore: 말년 지혜 표 {d}"),
 }
 
 
