@@ -1,15 +1,19 @@
-name: Meow Remix 인스타·쓰레드 — 그날 고양이 쇼츠를 릴스·쓰레드에(18:00 KST)
+name: Meow Remix 인스타·쓰레드 — 고양이 쇼츠 모든 편을 릴스·쓰레드에(약 2시간 간격)
 
 # 2026-11-09 사용자: "인스타·쓰레드에도 올려줘". meow-daily.yml 이 새벽에 만든 그날 편(완성본은 Actions 캐시
 #   meow-out-<stem>-)을 저녁에 인스타 릴스(@zerocrew.studio · 'Meow Remix | 고양이')와 쓰레드에 올린다(meow/post.py social —
 #   Cloudinary 로 잠깐 호스팅 → 게시 → 지움). 캡션 = ko_line · en_line · 해시태그 · 음악 credit(CC BY 4.0 — 빼면 안 된다) · AI 표시.
-# 기존 인스타 편성(insta-pick.yml — 낮 a · 저녁 b · 밤 c)은 그대로다. 이 편은 그 사이(18:00)에 하나 더.
+# 옛 인스타 편성(insta-pick.yml — 낮 a · 저녁 b · 밤 c)은 11/06 뒤로 돌지 않는다 — 지금 인스타·쓰레드는 고양이 편만.
 # ★두 번 올리지 않는다: 게시 ledger(output/meow/posted.json · Actions 캐시 meow-posted-) — 인스타·쓰레드 따로 적는다.
 # 그날 편이 없으면(기획 skip · 검수에 막힘 · 렌더 실패) 아무것도 안 하고 끝난다.
 # ★11/13 고침: 18:00 예약이 8시간 늦게(다음 날 01~06시) 돌아 '오늘' 기획만 보다가 11/11~13 세 편을 하나도 못 올렸다.
 #   → 매일판(meow-daily)이 끝나면 바로 깬다(workflow_run) + 예약은 예비로만. 날짜를 '오늘'로 묶지 않고 post.py pick 이
 #   최근 3일 편 a(매일 변신) 중 완성본 캐시가 있고 아직 안 올린 것을 새것부터 하나 고른다. 인스타는 하루 1편 꼴 —
 #   마지막 게시 뒤 3시간 안이면 쉰다(놓친 편 따라잡기도 몰아 올리지 않게). 편 b·c 는 유튜브에만.
+# ★11/15 사용자 "새 채널 영상들이 인스타나 쓰레드로도 가야 하는 거 아냐?" → 편 a 만이 아니라 모든 편(MEOW_SOCIAL_SLOTS).
+#   한 번 깰 때 한 편 · 마지막 게시 뒤 1.75시간 안이면 쉰다 → 매시 예약과 맞물려 약 2시간 간격(하루 최대 12편) ·
+#   순서 = 유튜브 공개 순서(최근 2일 · 오래된 날부터 · 편 a → b → c …). 예전처럼 편 a 만 = 레포 변수 MEOW_SOCIAL_SLOTS='a'.
+#   한도: 인스타 API 게시 하루 수십 편 · 쓰레드 250편 — 12편은 그 안. Cloudinary 는 올리고 바로 지운다(무료 한도 안).
 # 끄기: 레포 변수 MEOW_SOCIAL=0. 돈 드는 호출 없음(Cloudinary 무료 · Graph API · 퍼블릭 레포 Actions).
 
 on:
@@ -17,13 +21,11 @@ on:
     workflows: ["Meow Remix 매일 쇼츠 — 기획(Claude API) → 그림·HD 영상(Spark) → 검수 → 유튜브 예약 공개"]
     types: [completed]
   schedule:
-    - cron: "0 9 * * *"         # 18:00 KST 예비
-    - cron: "40 11 * * *"       # 20:40 KST 예비
-    - cron: "40 13 * * *"       # 22:40 KST 예비
+    - cron: "20 * * * *"        # ★11/15 매시 — 올릴 편이 없거나 간격이 안 됐으면 1분 안에 끝난다
   workflow_dispatch:
     inputs:
       day:
-        description: "이 날짜 편 a 를 올리기 YYYY-MM-DD(KST · 비우면 최근 3일에서 알아서 고른다)"
+        description: "이 기획을 올리기 — YYYY-MM-DD(편 a) · YYYY-MM-DD-b(편 b) …(KST · 비우면 최근 2일에서 알아서 고른다)"
         default: ""
 
 permissions:
@@ -61,10 +63,11 @@ jobs:
           key: meow-posted-${{ github.run_id }}
           restore-keys: meow-posted-
 
-      - name: 올릴 편 고르기(최근 3일 편 a · 새것부터 · 완성본 있는 것 · data/meow 읽기 전용)
+      - name: 올릴 편 고르기(최근 2일 모든 편 · 유튜브 공개 순서 · 완성본 있는 것 · data/meow 읽기 전용)
         id: pick
         env:
           GITHUB_TOKEN: ${{ github.token }}
+          MEOW_SOCIAL_SLOTS: ${{ vars.MEOW_SOCIAL_SLOTS || 'a b c d e f g h i j k l' }}
         run: |
           set -euo pipefail
           mkdir -p output/meow_plan
@@ -75,7 +78,7 @@ jobs:
             F="output/meow_plan/$DAY.json"
             [ -f "$F" ] || { echo "::notice::$DAY 기획 없음 — 올릴 것 없음"; exit 0; }
           else
-            F=$(python meow/post.py pick output/meow_plan --days 3 --min-gap-h 3)
+            F=$(python meow/post.py pick output/meow_plan --days 2 --min-gap-h 1.75 --slots "$MEOW_SOCIAL_SLOTS")
           fi
           if [ -z "$F" ]; then echo "올릴 편 없음"; exit 0; fi
           STEM=$(python -c "import json,sys; d=json.load(open(sys.argv[1],encoding='utf-8')); cs=d.get('concepts') or []; print(cs[0]['id']+'_'+cs[0]['slug'] if cs else '')" "$F")
