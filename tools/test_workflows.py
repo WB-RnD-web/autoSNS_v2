@@ -217,7 +217,7 @@ ck("meow-social.yml: 매일판이 끝나면 바로 깬다(workflow_run — 이�
    and "python meow/post.py pick" in _ms and "actions: read" in _ms and "date +%F" not in _ms, _mw_name)
 ck("meow-daily.yml: 편 a·b·c 를 matrix 로 하나씩(max-parallel 1 — 스파크 GPU 하나) · 조용한 시간이 곧 끝나면 기다린다",
    "max-parallel: 1" in _render and "slot: [a, b, c, d, e, f, g, h, i, j, k, l]" in _render and "--wait-quiet" in _render
-   and _mw.count("vars.MEOW_SLOTS || 'a b c d e f g h i j k l'") == 2 and "matrix.slot == 'a'" in _render
+   and _mw.count("vars.MEOW_SLOTS || 'a b c d e f g h i j k l'") == 2 and "matrix.slot == 'a'" not in _render
    and "steps.yt.outcome != 'success'" in _render
    and 'plan_api.py write --day' in _mw and '--slot "$S"' in _mw, "")
 _plan = _mw.split("\n  render:", 1)[0]
@@ -233,6 +233,13 @@ ck("★11/14 틀 자동 조정·정리 노트: 성적 읽기 → 틀 조정 → 
    and "(vars.MEOW_NOTES || '1') != '0'" in _plan
    and "ANTHROPIC_API_KEY" not in _plan[_plan.find("name: 틀 조정"):_plan.find("name: 정리 노트")]
    and "ANTHROPIC_API_KEY" in _plan[_plan.find("name: 정리 노트"):_plan.find("name: 기획(Claude API")], str(_i))
+_save_out = _render[_render.find("name: 완성본 저장"):_render.find("name: 받은 그림")]
+ck("★11/15 모든 편이 인스타·쓰레드로: 완성본은 편마다 저장 · 유튜브가 막혀도(always · 렌더 성공만) · "
+   "social 은 매시 깨고 MEOW_SOCIAL_SLOTS(기본 모든 편)를 pick 에 넘긴다 · 약 2시간 간격",
+   _save_out and "always() && steps.render.outcome == 'success'" in _save_out and "matrix.slot" not in _save_out
+   and "steps.yt" not in _save_out and 'cron: "20 * * * *"' in _ms
+   and "MEOW_SOCIAL_SLOTS: ${{ vars.MEOW_SOCIAL_SLOTS || 'a b c d e f g h i j k l' }}" in _ms
+   and '--days 2 --min-gap-h 1.75 --slots "$MEOW_SOCIAL_SLOTS"' in _ms, _save_out[:200])
 ck("완성본 캐시 경로가 meow-daily(저장)와 meow-social(받기)에서 똑같다 · 열쇠 앞머리 meow-out-",
    _out_paths(_mw) is not None and _out_paths(_mw) == _out_paths(_ms) and len(_out_paths(_ms)) == 3
    and "key: meow-out-${{ steps.pick.outputs.stem }}-${{ github.run_id }}" in _mw

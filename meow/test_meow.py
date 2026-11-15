@@ -645,18 +645,28 @@ with open(os.path.join(qdir, "2026-11-13-b.json"), "w", encoding="utf-8") as fh:
     json.dump({"date": "2026-11-13", "concepts": [{**good, "id": "m261113b", "slug": "bee"}]}, fh)
 _now = dt.datetime(2026, 11, 13, 4, 0, tzinfo=dt.timezone.utc)          # 13:00 KST
 _p, _why = P.pick(qdir, {}, now=_now)
-ck("날짜가 넘어가도 최근 3일 편 a 중 안 올린 것을 새것부터(편 b·c 는 유튜브만)",
-   _p and _p.endswith("2026-11-13.json"), f"{_p} {_why}")
-_p, _ = P.pick(qdir, {}, now=_now, has_out=lambda st: st != "m261113_chess")
-ck("오늘 편 완성본이 아직 없으면 놓친 어제 편부터 따라잡는다", _p and _p.endswith("2026-11-12.json"), str(_p))
-_led = {"m261113_chess": {"ig": "1", "threads": "2", "at": "2026-11-13T02:30:00Z"}}
-ck("마지막 게시 뒤 3시간 안이면 쉰다(몰아 올리지 않게)", P.pick(qdir, _led, now=_now)[0] is None)
-_p, _ = P.pick(qdir, _led, now=_now + dt.timedelta(hours=2))
-ck("3시간 지나면 다음 안 올린 편(어제 것)", _p and _p.endswith("2026-11-12.json"), str(_p))
-ck("최근 3일 밖(11/16 에 11/13 이전)은 고르지 않는다",
+ck("★11/15 최근 2일(어제·오늘) 편 중 안 올린 것을 유튜브 공개 순서로 — 오래된 날부터(11/11 은 창 밖)",
+   _p and _p.endswith("2026-11-12.json"), f"{_p} {_why}")
+_old = {"m261112_buns": {"ig": "1", "threads": "2", "at": "2026-11-12T20:00:00Z"}}
+_p, _ = P.pick(qdir, _old, now=_now)
+ck("어제 편을 올렸으면 오늘 편 a", _p and _p.endswith("2026-11-13.json"), str(_p))
+_old["m261113_chess"] = {"ig": "3", "threads": "4", "at": "2026-11-13T00:00:00Z"}
+_p, _ = P.pick(qdir, _old, now=_now)
+ck("★11/15 편 a 다음은 같은 날 편 b(편 a 만 가던 것 고침)", _p and _p.endswith("2026-11-13-b.json"), str(_p))
+ck("--slots 'a' 면 예전처럼 편 a 만(편 b 는 고르지 않는다)", P.pick(qdir, _old, now=_now, slots="a")[0] is None)
+_p, _ = P.pick(qdir, {}, now=_now, has_out=lambda st: st != "m261112_buns")
+ck("완성본이 없는 편(렌더 실패·검수에 막힘)은 건너뛰고 다음 편", _p and _p.endswith("2026-11-13.json"), str(_p))
+_led = {"m261112_buns": {"ig": "1", "threads": "2", "at": "2026-11-13T02:30:00Z"}}
+ck("마지막 게시 뒤 1.75시간 안이면 쉰다(몰아 올리지 않게)", P.pick(qdir, _led, now=_now)[0] is None)
+_p, _ = P.pick(qdir, _led, now=_now + dt.timedelta(hours=0.5))
+ck("1.75시간 지나면(매시 예약의 두 번째 = 약 2시간 간격) 다음 안 올린 편", _p and _p.endswith("2026-11-13.json"), str(_p))
+ck("최근 2일 밖(11/16 에 11/14 이전)은 고르지 않는다",
    P.pick(qdir, {}, now=dt.datetime(2026, 11, 16, 4, 0, tzinfo=dt.timezone.utc))[0] is None)
 ck("인스타만 올라가고 쓰레드가 실패한 편은 다시 고른다(쓰레드만 마저)",
-   (P.pick(qdir, {"m261113_chess": {"ig": "1"}}, now=_now)[0] or "").endswith("2026-11-13.json"))
+   (P.pick(qdir, {"m261112_buns": {"ig": "1"}}, now=_now)[0] or "").endswith("2026-11-12.json"))
+ck("편 이름: a = <날짜>.json · b~ = <날짜>-b.json(meow-daily 와 같다) · 편 목록 = matrix",
+   P.plan_name("2026-11-13", "a") == "2026-11-13.json" and P.plan_name("2026-11-13", "l") == "2026-11-13-l.json"
+   and P.SLOTS.split() == list("abcdefghijkl"))
 
 # ── 매일판 공개 시각 · 다른 채널 막기 ──
 utc = dt.timezone.utc
