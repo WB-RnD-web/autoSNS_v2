@@ -34,6 +34,7 @@ import gunghap_card
 import newyear_card
 import newyear_series
 import name_card
+import wisdom_card
 import news_card
 import ledger as ledgermod
 import ai_news
@@ -81,7 +82,7 @@ def is_paused(sb: dict) -> bool:
 
 
 # 그림체 토픽(운세 캐릭터·별자리 천체 일러스트)은 누가 봐도 그림이라 표시 대상이 아니다.
-ILLUSTRATED_TOPICS = ("fortune", "horoscope", "zodiac", "star", "luck", "love")
+ILLUSTRATED_TOPICS = ("fortune", "horoscope", "zodiac", "star", "luck", "love", "wisdom")   # wisdom = 한지 그림 배경
 
 
 def synthetic_label(sb: dict, spec: dict) -> bool | None:
@@ -122,6 +123,10 @@ GUNGHAP_PLAYLIST_DESC = ("부부·친구·사돈·손주까지, 내 띠를 찾�
 NEWYEAR_PLAYLIST = "2027 정미년 신년운세 | 띠별·태어난 해별"
 NEWYEAR_PLAYLIST_DESC = ("2027년 정미년(丁未年), 내 띠와 태어난 해로 보는 신년운세예요. 총운·재물운 등급과 좋은 달·조심할 달까지 "
                          "이유와 함께 정리했어요. 45~96년생 전부. 전통 명리 풀이를 재미로 정리한 운세예요.")
+# 말년 지혜 표(2026-11-17~11-30 2주 시험, wisdom_card.py) — 운세가 아니다(토픽 wisdom · 인물·블로그 22). ★제목 바꾸지 않는다(새 목록이 생긴다).
+WISDOM_PLAYLIST = "말년 지혜 | 자식·부부·노후 이야기 다섯 줄"
+WISDOM_PLAYLIST_DESC = ("부부가 자주 하는 말, 자식이 찾아오는 부모의 말버릇, 노후에 돈이 새는 습관… 어르신들 이야기를 "
+                        "다섯 줄로 모아 한 장에 정리했어요. 몇 번이 제일 와닿으세요?")
 AI_PLAYLIST = "AI 소식 | 매일 오전·저녁, 쉽게 듣는 AI 뉴스"
 AI_PLAYLIST_DESC = ("오늘 AI 세상에서 바뀐 것, 그리고 그게 내 일자리·돈·안전에 뭘 뜻하는지. "
                     "어려운 말은 쉽게 풀고, 출처는 설명란에 적어요.")
@@ -135,6 +140,8 @@ def category_for(topic: str) -> str:
     t = str(topic or "").lower()
     if t.startswith(FORTUNE_TOPICS):
         return "24"
+    if t == wisdom_card.TOPIC:
+        return "22"                       # 인물·블로그 — 생활 지혜(운세·뉴스가 아니다)
     if ai_news.is_ai(t):
         return "28"
     return "25"
@@ -155,6 +162,8 @@ def playlist_for(topic: str) -> tuple[str, str] | None:
         return NEWYEAR_PLAYLIST, NEWYEAR_PLAYLIST_DESC
     if t == name_card.TOPIC:
         return NAME_PLAYLIST, NAME_PLAYLIST_DESC
+    if t == wisdom_card.TOPIC:
+        return WISDOM_PLAYLIST, WISDOM_PLAYLIST_DESC
     if t.startswith(FORTUNE_TOPICS):
         return FORTUNE_PLAYLIST, FORTUNE_PLAYLIST_DESC
     if ai_news.is_ai(t):
@@ -522,7 +531,8 @@ def process(sb_path, args, led):
     # ★카피 점검 — 렌더 전에 본다. 밋밋하면 경고만 뜨고 계속 간다.
     # 테마 표는 문구가 전부 코드(theme_card.THEMES)에서 나온다 — 뉴스 카피 규칙(hook 수치 등)과 맞지 않아 건너뛴다.
     if not (theme_card.is_theme(sb) or name_card.is_name(sb) or pulli_card.is_pulli(sb) or tier_card.is_tier(sb)
-            or gunghap_card.is_gunghap(sb) or newyear_card.is_newyear(sb) or newyear_series.use_slot(sb)):
+            or gunghap_card.is_gunghap(sb) or newyear_card.is_newyear(sb) or newyear_series.use_slot(sb)
+            or wisdom_card.is_wisdom(sb)):
         news_copy_check.report(sb)
     try:
         spec = resolve_spec(sb_path, sb, args)
@@ -658,6 +668,14 @@ def process(sb_path, args, led):
         credit = meta["description"][len(build_meta(sb, False)["description"]):]
         meta["title"] = f"{nm['title']} #shorts"
         meta["description"] = nm["description"] + credit
+        meta["localizations"] = None
+    if wisdom_card.is_wisdom(sb):
+        # 말년 지혜 표 — 제목·설명(다섯 줄마다 왜 그런지)·태그는 wisdom_card 가 정한다(목소리 출처 줄은 유지). 번역은 넣지 않는다.
+        wm = wisdom_card.meta(sb)
+        credit = meta["description"][len(build_meta(sb, False)["description"]):]
+        meta["title"] = f"{wm['title']} #shorts"
+        meta["description"] = wm["description"] + credit
+        meta["tags"] = wm["tags"]
         meta["localizations"] = None
     if res.get("outro"):
         # 끝인사가 붙은 편만 설명란에도 같은 초대 한 줄(첫 문단 아래 — 나머지 글은 그대로). 없는 날은 손대지 않는다(A/B).

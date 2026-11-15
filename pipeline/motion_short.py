@@ -520,6 +520,61 @@ def _flower(size, color, rot, x=None, y=None):
     return f'<div class="bfl" style="{pos}width:{size}px;height:{size}px;transform:rotate({rot}deg)">{petals}<b></b></div>'
 
 
+# ── '말년 지혜 표'(2026-11-15, wisdom_card.py) — 제목 두 줄 + 번호 다섯 줄(큰 글자 한 줄 + 작은 글자 한 줄) ──────────
+# 시니어 생활·공감 쇼츠(오늘의 건강명언·마음의 건강)가 쓰는 '한 장 목록' 꼴. 밝은 한지 바탕 · 먹색 글자 · 청록 번호.
+# 큰 글자는 다섯 줄 중 가장 긴 줄에 맞춰 한 크기(최대 66px · 어르신 눈높이 — 덕담표 한 줄 40px보다 크게).
+# 오른쪽 끝(x 960~)과 아래(y 1460~ 쇼츠 제목 자리)는 비운다. tone 'dont'(아끼면 좋은 말·새는 습관)는 번호가 붉은 흙빛.
+WIS_X0, WIS_W, WIS_TOP, WIS_BOTTOM, WIS_GAP = 60, 900, 452, 1404, 18
+WIS_BADGE, WIS_PAD = 92, 24             # 번호 동그라미 지름 · 칸 안쪽 여백
+WIS_TEXT_X = WIS_PAD + WIS_BADGE + 26   # 글자 시작(칸 안 x)
+WIS_FB_MAX, WIS_FS_MAX = 66, 38         # 큰 글자 · 작은 글자 최대
+WIS_T1_MAX, WIS_T2_MAX = 78, 92         # 제목 첫 줄 · 둘째 줄 최대
+CSS_WISDOM = """
+.wwrap{position:absolute;inset:0;}
+.wpaper{position:absolute;inset:0;background:
+  radial-gradient(ellipse at 12% 4%,rgba(214,232,222,.9) 0,rgba(214,232,222,0) 42%),
+  radial-gradient(ellipse at 92% 92%,rgba(236,222,198,.95) 0,rgba(236,222,198,0) 46%),
+  linear-gradient(180deg,#FBF6EC 0%,#F5EEDF 52%,#F2E8D6 100%);}
+/* 배경 그림(키비주얼)이 깔렸으면 바탕을 옅게 — 그림이 비친다. 어두운 막(#scrim)도 밝은 막으로 바꾼다 */
+#scrim ~ .scene .wpaper{opacity:.55;}
+#root #scrim{background:linear-gradient(180deg,rgba(251,246,236,.50) 0%,rgba(251,246,236,.22) 24%,
+  rgba(251,246,236,.22) 72%,rgba(251,246,236,.46) 100%);}
+.wpill{position:absolute;left:60px;top:94px;}
+.wtitle{position:absolute;left:60px;top:176px;width:900px;box-sizing:border-box;border-radius:30px;padding:20px 26px 24px;
+  background:rgba(255,253,248,.93);box-shadow:0 8px 28px rgba(70,55,30,.14);}
+.wtitle .l1{display:block;color:#2B2722;font-weight:800;letter-spacing:-2px;white-space:nowrap;line-height:1.12;}
+.wtitle .l2{display:block;color:var(--acc,#2E7D6B);font-weight:900;letter-spacing:-3px;white-space:nowrap;line-height:1.1;}
+.witem{position:absolute;border-radius:26px;background:rgba(255,253,248,.95);border:2px solid rgba(46,125,107,.22);
+  box-shadow:0 6px 20px rgba(70,55,30,.12);will-change:transform;}
+.witem .no{position:absolute;border-radius:50%;background:var(--acc,#2E7D6B);color:#FFFFFF;font-weight:900;
+  display:flex;align-items:center;justify-content:center;line-height:1;font-variant-numeric:tabular-nums;}
+.witem .wbig{position:absolute;color:#2B2722;font-weight:900;letter-spacing:-1.5px;white-space:nowrap;line-height:1.1;}
+.witem .wsm{position:absolute;color:#6E5B45;font-weight:700;letter-spacing:-.5px;white-space:nowrap;line-height:1.15;}
+.wfoot{position:absolute;left:60px;width:900px;color:rgba(80,64,44,.78);font-weight:700;font-size:26px;white-space:nowrap;}
+.wwrap ~ .brand{color:rgba(70,55,30,.40);}
+"""
+
+
+def _wis_em(s):
+    """대략 글자 폭(em) — 한글 1 · 빈칸 0.36 · 숫자 0.56 · 따옴표·가운뎃점·쉼표 0.32 · 그 밖 영문 0.62(넉넉하게)."""
+    return sum(0.36 if c == " " else 0.56 if c.isdigit() else 0.32 if c in "\"'·.,?!…" else 0.62 if c.isascii() else 1.0
+               for c in str(s)) or 1.0
+
+
+def wisdom_layout(items, title="", title2=""):
+    """다섯 줄 → 칸 높이·[y…]·글자 크기. 큰·작은 글자는 그날 가장 긴 줄에 맞춰 한 크기, 제목도 두 줄 각각 칸 폭에 맞춘다."""
+    n = max(1, len(items))
+    rh = (WIS_BOTTOM - WIS_TOP - WIS_GAP * (n - 1)) / n
+    room = WIS_W - WIS_TEXT_X - WIS_PAD
+    fb = min([WIS_FB_MAX, rh * 0.38] + [room / _wis_em(it.get("big", "")) for it in items])
+    fs = min([WIS_FS_MAX, rh * 0.22] + [room / _wis_em(it.get("small", "")) for it in items])
+    troom = WIS_W - 52
+    f1 = min(WIS_T1_MAX, troom / _wis_em(title))
+    f2 = min(WIS_T2_MAX, troom / _wis_em(title2))
+    ys = [WIS_TOP + k * (rh + WIS_GAP) for k in range(n)]
+    return {"rh": rh, "ys": ys, "fb": int(fb), "fs": int(fs), "f1": int(f1), "f2": int(f2), "room": room}
+
+
 # ── 표 쇼츠 끝인사(2026-10-24, outro.py) — '오늘의 덕담 한마디' + '띠 남기시면 덕담 드려요' ──────────
 # 표가 끝난 뒤 2.0~2.5초. 표(마지막 장면)는 그대로 둔 채 그 위에 옅은 막 + 가운데 판 하나 — 배경·색은 표와 같다(음악 없음).
 # 판은 x 60~960 · y 약 580~1220 — 쇼츠 오른쪽 버튼 열(x 960~)·아래 제목 자리(y 1460~)·위 검색 줄을 비운다.
@@ -1104,6 +1159,28 @@ def scene_html(i, sc, acc):
                 + f'<div class="bpill"><span class="pill" id="{gid}-pill"><span class="dot"></span>{esc(sc.get("pill",""))}</span></div>'
                 + f'<div class="btitle" id="{gid}-title">{th}</div>'
                 + basis_html(gid, sc.get("basis"), BLESS_TOP - 46) + "".join(cells) + "</div>")
+    elif t == "wisdom":
+        items = sc.get("items", [])
+        lay = wisdom_layout(items, sc.get("title", ""), sc.get("title2", ""))
+        rh, fb, fs = lay["rh"], lay["fb"], lay["fs"]
+        no_col = "#B4533C" if sc.get("tone") == "dont" else "var(--acc,#2E7D6B)"
+        rows_html = []
+        for k, it in enumerate(items):
+            y = lay["ys"][k]
+            gap = (rh - fb * 1.1 - fs * 1.15) / 3                # 위·사이·아래 같은 틈
+            rows_html.append(
+                f'<div class="witem" id="{gid}-c{k}" style="left:{WIS_X0}px;top:{y:.0f}px;width:{WIS_W}px;height:{rh:.0f}px">'
+                f'<div class="no" style="left:{WIS_PAD}px;top:{(rh - WIS_BADGE) / 2:.0f}px;width:{WIS_BADGE}px;height:{WIS_BADGE}px;'
+                f'font-size:{int(WIS_BADGE * 0.56)}px;background:{no_col}">{k + 1}</div>'
+                f'<div class="wbig" style="left:{WIS_TEXT_X}px;top:{gap:.0f}px;font-size:{fb}px">{esc(it.get("big", ""))}</div>'
+                f'<div class="wsm" style="left:{WIS_TEXT_X}px;top:{gap * 2 + fb * 1.1:.0f}px;font-size:{fs}px">{esc(it.get("small", ""))}</div></div>')
+        foot_y = lay["ys"][-1] + rh + 22 if items else WIS_BOTTOM + 22
+        body = ('<div class="wwrap"><div class="wpaper"></div>'
+                + f'<div class="wpill"><span class="pill" id="{gid}-pill"><span class="dot"></span>{esc(sc.get("pill",""))}</span></div>'
+                + f'<div class="wtitle" id="{gid}-title"><span class="l1" style="font-size:{lay["f1"]}px">{esc(sc.get("title",""))}</span>'
+                + f'<span class="l2" style="font-size:{lay["f2"]}px">{esc(sc.get("title2",""))}</span></div>'
+                + "".join(rows_html)
+                + f'<div class="wfoot" style="top:{foot_y:.0f}px">{esc(sc.get("foot",""))}</div></div>')
     elif t == "news":
         body, sc["_n"] = news_html(gid, sc)
     elif t == "hook":
@@ -1277,6 +1354,12 @@ def scene_js(i, sc, acc, bar_h=560, presenter=False):
         for k in range(len(sc.get("rows", []))):
             out.append(f'tl.to("#{gid}-c{k}",{{scale:1.03,duration:0.22,ease:"sine.inOut",yoyo:true,repeat:1}},{S + 0.5 + k * 0.28:.2f});')
         out.append(f'tl.to("#{gid} .bfl",{{rotation:"+=24",duration:{sc["clip"]:.2f},ease:"none"}},{S:.2f});')
+    elif t == "wisdom":
+        # 말년 지혜 표는 0초부터 전부 떠 있다(피드 첫 화면·반복 재생용). 1번부터 차례로 번호가 톡, 칸이 살짝 숨 쉰다 — 차분하게.
+        out.append(f'tl.fromTo("#{gid}-pill",{{scale:0.92}},{{scale:1,duration:0.35,ease:"back.out(2)",transformOrigin:"left center"}},{S:.2f});')
+        for k in range(len(sc.get("items", []))):
+            out.append(f'tl.to("#{gid}-c{k} .no",{{scale:1.14,duration:0.2,ease:"sine.inOut",yoyo:true,repeat:1}},{S + 0.5 + k * 0.5:.2f});')
+            out.append(f'tl.to("#{gid}-c{k}",{{scale:1.02,duration:0.24,ease:"sine.inOut",yoyo:true,repeat:1}},{S + 0.5 + k * 0.5:.2f});')
     elif t == "news":
         # 한 장은 0초부터 전부 떠 있다(캡처·반복 재생용). 칸이 차례로 한 번씩 톡 — 정지 화면이 아니라는 신호.
         out.append(f'tl.fromTo("#{gid}-pill",{{scale:0.92}},{{scale:1,duration:0.35,ease:"back.out(2)",transformOrigin:"left center"}},{S:.2f});')
@@ -1349,6 +1432,8 @@ def build_html(scenes, total, acc="#D97757", bg=False, presenter=False, outro=No
         css += CSS_AGE
     if any(sc.get("type") == "bless" for sc in scenes):
         css += CSS_BLESS
+    if any(sc.get("type") == "wisdom" for sc in scenes):
+        css += CSS_WISDOM
     if any(sc.get("basis") for sc in scenes):
         css += CSS_BASIS
     parts = [scene_html(i, sc, acc) for i, sc in enumerate(scenes)]
@@ -1449,7 +1534,7 @@ def build_motion(spec, out_mp4, workdir, quality="standard"):
     os.environ["PATH"] = os.environ.get("PATH", "") + os.pathsep + os.path.dirname(FFMPEG)
     scenes = spec["scenes"]
     # 한 장 표는 화면 전체를 쓴다 → 진행자 자리 없음
-    pr_on = presenter_on(spec.get("topic", "")) and not any(sc.get("type") in ("card", "grid", "news", "tier", "gunghap", "bless", "agetable") for sc in scenes)
+    pr_on = presenter_on(spec.get("topic", "")) and not any(sc.get("type") in ("card", "grid", "news", "tier", "gunghap", "bless", "agetable", "wisdom") for sc in scenes)
     duo = pr_on and os.environ.get("PRESENTER_DUO", "1") not in ("0", "false", "False")
     assign_speakers(scenes, duo=duo)
     if scenes and scenes[0].get("type") == "hook" and top_hook_on(spec.get("topic", "")):

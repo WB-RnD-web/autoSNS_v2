@@ -99,7 +99,7 @@ ck("표가 오른쪽 버튼 열(x 960)·아래 22%(y 1500) 안 침범", right <=
 ck("글자 크기: 출생연도 34px · 나이 40px 이상(어르신 눈높이)", lay["fy"] >= 34 and lay["fa"] >= 40, (lay["fy"], lay["fa"]))
 ck("한 칸에 '60년생 74세'가 들어간다",
    lay["fy"] * (0.56 * 2 + 2) + 10 + lay["fa"] * (0.56 * 2 + 1) <= lay["cw"] - 36 + 1)
-ck("진행자는 나이 표에 서지 않는다", '"agetable")' in open(M.__file__, encoding="utf-8").read().split("pr_on = presenter_on", 1)[1][:260])
+ck("진행자는 나이 표에 서지 않는다", '"agetable"' in open(M.__file__, encoding="utf-8").read().split("pr_on = presenter_on", 1)[1].splitlines()[0])
 
 print("── 채널 맥박 형식")
 import pulse as PU  # noqa: E402

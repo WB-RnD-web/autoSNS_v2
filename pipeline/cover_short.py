@@ -80,6 +80,9 @@ TOPIC_STYLE_PROMPT = {
 CARD_STYLE_PROMPT = {
     "flower": ("delicate watercolor illustration on warm cream paper, airy light pastel palette of blush pink, peach and "
                "soft yellow, gentle diffused morning light, calm and soothing, plenty of empty space in the middle"),
+    # 2026-11-15 말년 지혜 표(wisdom_card) — 한지 위 옅은 수묵·수채(밝은 바탕에 먹색 글자가 얹힌다)
+    "hanji": ("soft Korean ink-wash and pale watercolor illustration on warm cream hanji paper, muted earthy palette of "
+              "beige, sage green and warm brown, gentle natural light, calm and dignified, plenty of empty space in the middle"),
 }
 
 

@@ -37,9 +37,9 @@ by = {r["id"]: r for r in rows}
 
 print("── 줄기 목록 ──")
 WANT = {"wb_daily", "wb_theme", "wb_name", "wb_pulli", "wb_gunghap", "wb_newyear_card", "wb_newyear_series", "wb_lf27",
-        "wb_weekly_lf", "nt_shorts", "nt_longform", "nt_story", "nt_trend", "nt_sleep", "insta_pick", "insta_sci", "insta_teardown", "insta_bm",
+        "wb_weekly_lf", "wb_wisdom", "nt_shorts", "nt_longform", "nt_story", "nt_trend", "nt_sleep", "insta_pick", "insta_sci", "insta_teardown", "insta_bm",
         "insta_worker", "insta_danger"}                    # ★10/31 밤 편(c) 두 줄기 — '심해 직장인' · '위험한 진짜 이유'
-ck("세 채널 줄기 전부(왕별이 9 · Nine Tails 5 · 인스타 6) · 확인 실패 없음", set(by) == WANT
+ck("세 채널 줄기 전부(왕별이 10 · Nine Tails 5 · 인스타 6) · 확인 실패 없음", set(by) == WANT
    and not any(r["limit"] == "error" for r in rows), sorted(set(by) ^ WANT) or [r["note"] for r in rows if r["limit"] == "error"])
 ck("한계 종류는 다섯 중 하나 · 채널 이름", all(r["limit"] in RW.LIMITS for r in rows) and all(r["ch"] in RW.CHANNELS for r in rows))
 ck("끝없음: 매일 운세·띠 테마·내 것 찾기·풀이형·골라보기 (마지막 날·남은 날 없음)",
@@ -70,6 +70,11 @@ ck("깊이 보기 롱폼: 16편 · 마지막 12/07(코드 상수) = longform_202
    and by["wb_lf27"]["left"] == 16 and len(L.EPISODES) == 16)
 ck("주간 롱폼: STOP_FROM 앞 주 월요일의 전날(10/25 일) · 일부러 끝냄(대체 표시)", by["wb_weekly_lf"]["last"] == W.last_day() == D(10, 25)
    and by["wb_weekly_lf"]["ended"] and W.publish_at(D(10, 26), now=dt.datetime(2026, 10, 1, tzinfo=RW.KST)).startswith("2026-10-24T23:00"))
+import wisdom_card as WI  # noqa: E402
+wi = by["wb_wisdom"]
+ck("말년 지혜 표(2주 시험): 시험 · 마지막 = wisdom_card.last_day()(11/30) · 남은 편 14(10/25 기준) · 판정 12/02",
+   wi["limit"] == "trial" and wi["last"] == WI.last_day() == D(11, 30) and wi["left"] == 14 and wi["judge"] == D(12, 2)
+   and not wi["ended"] and "EPISODES" in wi["refill"], wi)
 ck("신년운세 1차 묶음: newyear_card.last_day() · 끝(대체)", by["wb_newyear_card"]["last"] == NC.last_day() and by["wb_newyear_card"]["ended"])
 sc = R.shorts()
 nt = by["nt_shorts"]

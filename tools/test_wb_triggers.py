@@ -34,12 +34,14 @@ def read(p: str) -> str:
 wf = read(".github/workflows/wb-triggers.yml")
 crons = re.findall(r'- cron: "([^"]+)"', wf)
 mapped = dict(re.findall(r'"([0-9* ,]+)"\)\s+W=(\w+)', wf))
-ck("cron 7줄이 전부 case 에 있다", sorted(crons) == sorted(mapped), f"{crons} vs {mapped}")
+ck("cron 줄이 전부 case 에 있다", sorted(crons) == sorted(mapped), f"{crons} vs {mapped}")
 ck("case 가 고른 이름이 전부 SPECS 에 있다", set(mapped.values()) <= set(T.SPECS), str(set(mapped.values()) - set(T.SPECS)))
-ck("SPECS 7개가 전부 어느 cron 에 걸린다", set(T.SPECS) == set(mapped.values()))
+ck("SPECS 가 전부 어느 cron 에 걸린다", set(T.SPECS) == set(mapped.values()))
 ck("수동 실행 선택지 = SPECS", set(re.search(r"options: \[([^\]]+)\]", wf).group(1).replace(" ", "").split(",")) == set(T.SPECS))
 ck("옛 루틴 시각 그대로(운세 21:00 · 풀이형 01:40 · 테마 03:00 UTC)",
    mapped.get("0 21 * * *") == "fortune" and mapped.get("40 1 * * *") == "pulli" and mapped.get("0 3 * * *") == "theme")
+ck("말년 지혜 표: 17:40 KST(08:40 UTC) → routine/wisdom · wisdom_card(2026-11-15)",
+   mapped.get("40 8 * * *") == "wisdom" and T.SPECS["wisdom"][:3] == ("routine/wisdom", "wisdom-trigger", "pipeline/wisdom_card.py"))
 ck("push 는 GH_PAT(GITHUB_TOKEN 이면 쇼츠가 안 깨어난다)", "token: ${{ secrets.GH_PAT" in wf)
 ck("강제 push 없음", not re.search(r"push\s+(-f|--force)", wf))
 ck("이미 원격에 있으면 다시 push 하지 않는다", "git cat-file -e" in wf)
