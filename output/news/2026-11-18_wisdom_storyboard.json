@@ -1,0 +1,53 @@
+{
+ "date": "2026-11-18",
+ "topic": "wisdom",
+ "theme": "wisdom:exam_grandchild",
+ "privacy": "public",
+ "accent": "#2E7D6B",
+ "_min_total": 10.0,
+ "hook_title": "수능 보는 손주에게 힘이 되는 한마디",
+ "headline": "수능 보는 손주에게 힘이 되는 한마디 5가지 | 말년 지혜 #수능응원 #손주사랑 #할머니할아버지",
+ "thumbnail_hook": "a warm lunch box wrapped in a soft cloth on a wooden table at dawn, a small thermos beside it, gentle hopeful light, no people, no text, no letters, no signage, no logos",
+ "thumbnail_style": "hanji",
+ "scenes": [
+  {
+   "type": "wisdom",
+   "pill": "50·60·70대 공감 · 말년 지혜",
+   "title": "수능 보는 손주에게",
+   "title2": "힘이 되는 한마디",
+   "tone": "do",
+   "items": [
+    {
+     "big": "\"넌 이미 잘했어\"",
+     "small": "결과보다 애쓴 날들을 봐요"
+    },
+    {
+     "big": "\"떨리는 건 당연해\"",
+     "small": "떨리는 마음을 알아줘요"
+    },
+    {
+     "big": "\"아는 것부터 차분히\"",
+     "small": "부담 대신 차분한 응원"
+    },
+    {
+     "big": "\"끝나면 맛있는 거 먹자\"",
+     "small": "즐거운 약속 하나"
+    },
+    {
+     "big": "\"우린 늘 네 편이야\"",
+     "small": "든든한 내 편이 있어요"
+    }
+   ],
+   "foot": "※ 어르신들 이야기를 모아 정리했어요 · 집집마다 사정은 다를 수 있어요",
+   "brand": "왕별이 · 말년 지혜",
+   "narration": "수능 보는 손주에게 힘이 되는 한마디, 다섯 가지예요. 몇 번이 제일 와닿으세요? 댓글로 번호를 남겨 주세요."
+  }
+ ],
+ "platforms": {
+  "youtube": {
+   "title": "수능 보는 손주에게 힘이 되는 한마디 5가지 | 말년 지혜 #수능응원 #손주사랑 #할머니할아버지 #shorts",
+   "description": "수능 보는 손주에게 힘이 되는 한마디, 다섯 가지를 한 장에 모았어요. 몇 번이 제일 와닿으세요? 댓글로 번호를 남겨 주세요 🙏\n\n1. 넌 이미 잘했어 — 점수 얘기 대신 그동안 애쓴 날들을 알아주면 마음이 놓여요.\n2. 떨리는 건 당연해 — 괜찮다고 다그치기보다 떨리는 게 당연하다고 해 주면 오히려 차분해져요.\n3. 아는 것부터 차분히 — '꼭 잘 봐라'보다 '아는 것부터 차분히'가 시험장에서 떠오르는 말이에요.\n4. 끝나면 맛있는 거 먹자 — 시험 뒤 즐거운 약속이 있으면 긴 하루를 버틸 힘이 돼요.\n5. 우린 늘 네 편이야 — 어떤 결과든 네 편이라는 말은 손주가 오래 기억하는 한마디예요.\n\n※ 왕별이가 어르신들 이야기를 모아 정리한 생활 지혜예요. 집집마다 사정은 다를 수 있어요.\n\n#수능응원 #손주사랑 #할머니할아버지 #말년지혜 #인생지혜 #시니어공감 #50대 #60대 #70대 #shorts"
+  }
+ },
+ "notes": "말년 지혜 표 · wisdom:exam_grandchild · wisdom_card.py 가 만든 스토리보드(11/17~11/30 2주 시험 · 17:40)"
+}
