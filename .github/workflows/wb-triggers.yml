@@ -5,17 +5,21 @@ name: 왕별이 표 트리거(루틴 대신) — 코드로 스토리보드 → r
 #   루틴은 구독 주간 한도를 써서, 한도가 바닥나면 왕별이 업로드도 같이 멈췄다. 여기서는 한도를 안 쓴다.
 # ★push 는 GH_PAT 로 한다 — GITHUB_TOKEN 으로 push 하면 shorts.yml(push 트리거)이 깨어나지 않는다(orphan-rescue.yml 과 같은 이유).
 # 같은 날 같은 파일이 원격에 이미 있으면 다시 push 하지 않는다(루틴과 겹치는 날·cron 이 두 번 도는 날 중복 업로드 방지).
+# ★2026-11-18 미리 만들고 예약 공개 — cron 은 공개 시각보다 12시간 먼저 깨운다(tools/wb_trigger.py SLOT_KST · LEAD_H).
+#   GitHub 예약이 6~10시간씩 늦게 돌아 표가 새벽에 올라갔다. 이제 늦게 돌아도 정한 시각에 공개된다(비공개 + 예약 공개).
+#   어느 편인지는 '깨운 cron 이 맡은 공개 시각'으로 정한다 — 늦게 돌아도 날짜가 밀리지 않는다.
 # 끄기: 레포 변수 WB_TRIGGERS=0.
 on:
   schedule:
-    - cron: "0 21 * * *"     # 06:00 KST 운세(오늘의 띠 표)          — 옛 루틴 trig_0149sZF2…
-    - cron: "40 22 * * *"    # 07:40 KST 내 것 찾기 · 해 끝자리(year)   — 옛 루틴 trig_018otuZX…
-    - cron: "40 0 * * *"     # 09:40 KST 내 것 찾기 · 이름 글자(am)
-    - cron: "40 1 * * *"     # 10:40 KST 풀이형 표                    — 옛 루틴 trig_01B6fx3S…
-    - cron: "0 3 * * *"      # 12:00 KST 띠별 테마 표(이틀에 한 번)      — 옛 루틴 trig_01XPKrmN…
-    - cron: "40 4 * * *"     # 13:40 KST 내 것 찾기 · 성씨(surname)
-    - cron: "40 6 * * *"     # 15:40 KST 내 것 찾기 · 태어난 달(pm) — 음력 끝자리 날엔 lunar
-    - cron: "40 8 * * *"     # 17:40 KST 말년 지혜 표(2026-11-17~11-30 2주 시험 · wisdom_card) — 편 없는 날은 건너뜀
+    # 깨우는 시각(UTC) = 공개 시각(KST) − 12시간 · 정각은 붐벼서 06:00·12:00 편은 7분 뒤에 깨운다
+    - cron: "7 9 * * *"      # 전날 18:07 KST → 06:00 KST 운세(오늘의 띠 표)          — 옛 루틴 trig_0149sZF2…
+    - cron: "40 10 * * *"    # 전날 19:40 KST → 07:40 KST 내 것 찾기 · 해 끝자리(year)   — 옛 루틴 trig_018otuZX…
+    - cron: "40 12 * * *"    # 전날 21:40 KST → 09:40 KST 내 것 찾기 · 이름 글자(am)
+    - cron: "40 13 * * *"    # 전날 22:40 KST → 10:40 KST 풀이형 표                    — 옛 루틴 trig_01B6fx3S…
+    - cron: "7 15 * * *"     # 00:07 KST → 12:00 KST 띠별 테마 표(이틀에 한 번)          — 옛 루틴 trig_01XPKrmN…
+    - cron: "40 16 * * *"    # 01:40 KST → 13:40 KST 내 것 찾기 · 성씨(surname)
+    - cron: "40 18 * * *"    # 03:40 KST → 15:40 KST 내 것 찾기 · 태어난 달(pm) — 음력 끝자리 날엔 lunar
+    - cron: "40 20 * * *"    # 05:40 KST → 17:40 KST 말년 지혜 표(2026-11-17~11-30 2주 시험 · wisdom_card) — 편 없는 날은 건너뜀
   workflow_dispatch:
     inputs:
       which:
@@ -51,6 +55,15 @@ jobs:
         run: |
           W="$WHICH"
           case "$SCHED" in
+            "7 9 * * *")   W=fortune ;;
+            "40 10 * * *") W=name_year ;;
+            "40 12 * * *") W=name_am ;;
+            "40 13 * * *") W=pulli ;;
+            "7 15 * * *")  W=theme ;;
+            "40 16 * * *") W=name_surname ;;
+            "40 18 * * *") W=name_pm ;;
+            "40 20 * * *") W=wisdom ;;
+            # 옛 시각(2026-11-18 머지 전) — 그 전에 깨어 줄 서 있다 늦게 도착한 실행도 맞는 편을 만든다(편은 target 이 정한다)
             "0 21 * * *")  W=fortune ;;
             "40 22 * * *") W=name_year ;;
             "40 0 * * *")  W=name_am ;;

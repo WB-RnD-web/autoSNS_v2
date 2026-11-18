@@ -48,7 +48,7 @@ def get_service():
 
 def upload(video: str, title: str, description: str, privacy: str = "private",
            tags: list[str] | None = None, localizations: dict | None = None,
-           synthetic: bool | None = None, category: str = "25") -> str:
+           synthetic: bool | None = None, category: str = "25", publish_at: str | None = None) -> str:
     from googleapiclient.http import MediaFileUpload
     yt = get_service()
     tags = tags or ["뉴스", "이슈", "쇼츠", "shorts"]
@@ -65,6 +65,10 @@ def upload(video: str, title: str, description: str, privacy: str = "private",
     # 사실적인 합성은 공개 의무, 표시 자체는 도달에 영향 없음). 호출측이 토픽을 보고 정한다.
     if synthetic is not None:
         body["status"]["containsSyntheticMedia"] = bool(synthetic)
+    # ★2026-11-18 예약 공개(UTC RFC3339) — 유튜브는 비공개일 때만 publishAt 을 받는다
+    if publish_at:
+        body["status"]["privacyStatus"] = "private"
+        body["status"]["publishAt"] = publish_at
 
     def _req():
         return yt.videos().insert(part="snippet,status", body=body,
@@ -84,7 +88,8 @@ def upload(video: str, title: str, description: str, privacy: str = "private",
         if status:
             print(f"   업로드 {int(status.progress() * 100)}%")
     vid = resp["id"]
-    print(f"✅ YouTube 업로드 완료: https://youtu.be/{vid} (privacy={privacy})")
+    print(f"✅ YouTube 업로드 완료: https://youtu.be/{vid} (privacy={body['status']['privacyStatus']}"
+          + (f" · 예약 공개 {publish_at}" if publish_at else "") + ")")
     # ★제목·설명 현지화(50 units) — best-effort. 자막 트랙(400/언어)은 뉴스 쇼츠엔 안 건다.
     #   이 토큰(youtube.upload)은 videos.update 권한이 없어서, yt_i18n 이 같은 채널의
     #   token_novel.json(youtube 스코프)을 찾아 쓴다. 없으면 조용히 스킵.
