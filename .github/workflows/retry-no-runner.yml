@@ -53,8 +53,11 @@ concurrency:
 jobs:
   retry:
     # 실패가 아니면 잡 자체가 건너뛰어진다(실행기를 쓰지 않는다)
+    # ★2026-11-18 2027 롱폼은 제한 시간에 끊긴 실행(cancelled)도 판정에 올린다(판정 스크립트의 TIMEOUT_RETRY)
     if: >-
-      github.event.workflow_run.conclusion == 'failure'
+      (github.event.workflow_run.conclusion == 'failure'
+       || (github.event.workflow_run.conclusion == 'cancelled'
+           && startsWith(github.event.workflow_run.name, '2027 정미년 깊이 보기 롱폼')))
       && github.event.workflow_run.run_attempt < 3
       && (vars.RETRY_NO_RUNNER || '1') != '0'
     runs-on: ubuntu-latest

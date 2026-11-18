@@ -48,7 +48,10 @@ jobs:
     runs-on: ubuntu-latest
     # 실측(10/20 로컬 앞 4파트): 목소리 조각당 ~10초 · 배경 한 장 ~40초(동시) · 영상 인코딩은 길이의 1/5쯤.
     #   한 편(13분 · 조각 ~65 · 장 13) ≈ 목소리·그림 12~20분 + 영상 5~8분 + 업로드 3분. Spark 대기열이 길면 늘어난다.
-    timeout-minutes: 75
+    # ★2026-11-18 75 → 170분: 11/7·11/9·11/16 세 번 75분에 끊겨 11/9·11/11·11/18 편이 안 올라갔다
+    #   (고양이 매일판 12편이 Spark 를 오래 써서 그림이 줄을 섰다 — 'wbSpark 타임아웃(600s, status=queued)').
+    #   그래도 끊기면 retry-no-runner.yml 이 다시 돌린다(이미 올렸는지는 ledger·유튜브 표식으로 다시 본다).
+    timeout-minutes: 170
     env:
       TZ: Asia/Seoul
       WBSPARK_BASE: ${{ vars.WBSPARK_BASE || 'https://wangbyul.com/wbSpark' }}
@@ -190,7 +193,7 @@ jobs:
           if-no-files-found: warn
 
       # 모음편(60~100분) 대비 — 목소리를 다시 합성하지 않게 공개 편의 영상·오디오·목차·설명을 남긴다
-      #   (60분을 새로 합성하면 목소리만 ~60분 → 75분 제한을 넘는다. 남긴 영상을 이어 붙이면 몇 분이면 된다)
+      #   (60분을 새로 합성하면 목소리만 ~60분 → Spark 가 밀리면 제한 시간을 넘는다. 남긴 영상을 이어 붙이면 몇 분이면 된다)
       - name: 모음편용 보관(90일)
         if: success() && !inputs.manual && steps.pick.outputs.files != ''
         uses: actions/upload-artifact@v4

@@ -16,6 +16,8 @@ git·API 호출은 하지 않는다(워크플로 retry-no-runner.yml 이 한다)
   ② 성공하지 못한 잡이 ★전부 '실행기 없음'이다 — runner_id 가 0/없음이고, 단계가 하나도 안 돌았다.
      단계가 하나라도 돌았으면 건드리지 않는다. 업로드가 이미 됐을 수 있다(같은 영상이 두 번 올라간다).
   ③ 시도 횟수가 MAX_ATTEMPT 보다 작다 — 실행기 장애가 길어도 다시 돌리기는 두 번까지만.
+  ★예외(2026-11-18) — TIMEOUT_RETRY 의 워크플로(2027 롱폼)는 제한 시간에 끊긴 실행(결론 cancelled)도 다시 돌린다.
+     올리기 전에 '이미 올렸나'를 스스로 다시 보는 워크플로만 넣는다.
 
 사용:
   python tools/retry_no_runner.py --event "$GITHUB_EVENT_PATH" --jobs jobs.json
@@ -32,6 +34,29 @@ import sys
 MAX_ATTEMPT = 3          # 첫 시도 + 다시 돌리기 두 번
 DONE_OK = ("success", "skipped", "neutral")
 
+# ★2026-11-18 제한 시간에 끊긴 실행도 다시 돌리는 워크플로 → 그 잡의 제한 시간(분, timeout-minutes 와 같다).
+#   2027 롱폼은 Spark 가 밀리면 제한 시간에 끊겼다(11/7·11/9·11/16 — 그 편들이 안 올라갔다).
+#   다시 돌려도 두 번 올라가지 않는다 — run_longform_2027 이 올리기 전에 ledger 와 유튜브 설명란 표식으로 다시 본다.
+#   사람이 누른 취소와는 잡이 돈 시간으로 가른다(제한 시간 가까이 돌다 끊긴 잡만).
+TIMEOUT_RETRY = {"2027 정미년 깊이 보기 롱폼 (routine/fortune_lf27 push → main 의 fortune-lf27-run.yml)": 170}
+TIMEOUT_SLACK = 3        # 분 — 제한 시간에서 이만큼 모자라도 '시간에 끊김'으로 본다
+
+
+def minutes_run(job: dict) -> float | None:
+    import datetime as dt
+    a, b = job.get("started_at"), job.get("completed_at")
+    if not a or not b:
+        return None
+    p = lambda s: dt.datetime.fromisoformat(str(s).replace("Z", "+00:00"))  # noqa: E731
+    return (p(b) - p(a)).total_seconds() / 60
+
+
+def timed_out(job: dict, limit: int) -> bool:
+    """실행기를 받아 단계가 돌다가 제한 시간 가까이에서 취소된 잡."""
+    m = minutes_run(job)
+    return (job.get("conclusion") == "cancelled" and not no_runner(job) and m is not None
+            and m >= limit - TIMEOUT_SLACK)
+
 
 def no_runner(job: dict) -> bool:
     """실행기를 받은 적이 없는 잡 — 단계가 하나도 안 돌았다."""
@@ -40,6 +65,15 @@ def no_runner(job: dict) -> bool:
 
 def should_retry(run: dict, jobs: list[dict]) -> tuple[bool, str]:
     concl = run.get("conclusion")
+    limit = TIMEOUT_RETRY.get(run.get("name") or "")
+    if limit and concl in ("cancelled", "failure"):
+        attempt = int(run.get("run_attempt") or 1)
+        cut = [j for j in jobs if timed_out(j, limit)]
+        if cut and attempt >= MAX_ATTEMPT:
+            return False, f"제한 시간에 끊겼지만 이미 {attempt}번째 시도 — 더 돌리지 않는다(상한 {MAX_ATTEMPT})"
+        if cut:
+            return True, (f"제한 시간({limit}분)에 끊긴 잡 {len(cut)}개({', '.join(j.get('name', '?') for j in cut)}) — "
+                          f"{attempt + 1}번째 시도로 다시 돌린다(이미 올렸는지는 실행이 ledger·유튜브 표식으로 다시 본다)")
     if concl != "failure":
         return False, f"결론이 {concl} — failure 만 본다(사람이 누른 취소는 그대로 둔다)"
     attempt = int(run.get("run_attempt") or 1)

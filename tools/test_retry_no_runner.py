@@ -68,6 +68,24 @@ ok, why = R.should_retry(run(attempt=3), [NO_RUNNER_1006])
 check("3번째 시도까지 실패하면 → 멈춘다(상한)", not ok and "상한" in why, why)
 check("잡 목록이 비면 → 안 돌린다", not R.should_retry(run(), [])[0])
 
+print("── 제한 시간에 끊긴 2027 롱폼(2026-11-16 E08) ──")
+LF = "2027 정미년 깊이 보기 롱폼 (routine/fortune_lf27 push → main 의 fortune-lf27-run.yml)"
+CUT_1116 = {"name": "run / build-and-upload", "status": "completed", "conclusion": "cancelled",
+            "runner_id": 1000002345, "runner_name": "GitHub Actions 1000002345",
+            "started_at": "2026-11-16T08:00:05Z", "completed_at": "2026-11-16T10:50:11Z",
+            "steps": [{"name": f"s{i}", "conclusion": "success"} for i in range(8)] + [{"name": "검사 → 렌더 → 업로드", "conclusion": "cancelled"}]}
+lf = lambda concl="cancelled", attempt=1: dict(run(concl, attempt), name=LF, head_branch="routine/fortune_lf27")  # noqa: E731
+ok, why = R.should_retry(lf(), [CUT_1116])
+check("롱폼이 제한 시간(170분)에 끊겼으면 → 다시 돌린다", ok and "제한 시간" in why, why)
+check("…사람이 누른 취소(5분 만에 cancelled)는 → 안 돌린다",
+      not R.should_retry(lf(), [dict(CUT_1116, completed_at="2026-11-16T08:05:00Z")])[0])
+check("…세 번째 시도까지 끊기면 → 더 안 돌린다", not R.should_retry(lf(attempt=3), [CUT_1116])[0])
+check("…다른 워크플로(쇼츠)가 오래 돌다 cancelled 면 → 그대로(업로드됐을 수 있다)",
+      not R.should_retry(run("cancelled"), [CUT_1116])[0])
+check("…제한 시간 = fortune-lf27-run.yml timeout-minutes",
+      R.TIMEOUT_RETRY[LF] == int(re.search(r"timeout-minutes:\s*(\d+)", open(os.path.join(ROOT, ".github", "workflows",
+                                                                                         "fortune-lf27-run.yml"), encoding="utf-8").read()).group(1)))
+
 print("── 명령줄 ──")
 with tempfile.TemporaryDirectory() as td:
     ev, jb, out = (os.path.join(td, n) for n in ("event.json", "jobs.json", "out.txt"))
@@ -124,6 +142,9 @@ check("권한: actions write · contents read 뿐", "actions: write" in me and "
 check("실패 · 시도 3 미만일 때만 잡이 뜬다 · 레포 변수로 끈다",
       "conclusion == 'failure'" in me and "run_attempt < 3" in me and "(vars.RETRY_NO_RUNNER || '1') != '0'" in me)
 check("…상한이 코드와 같다", R.MAX_ATTEMPT == 3)
+check("2027 롱폼만 cancelled 도 판정에 올린다(이름 앞머리 = TIMEOUT_RETRY 이름)",
+      "conclusion == 'cancelled'" in me and "startsWith(github.event.workflow_run.name, '2027 정미년 깊이 보기 롱폼')" in me
+      and all(n.startswith("2027 정미년 깊이 보기 롱폼") and n in listed for n in R.TIMEOUT_RETRY))
 body = me[re.search(r"^jobs:", me, re.M).start():]
 check("그 시도의 잡을 읽고 → 판정 스크립트 → 성공한 잡은 놔두고 실패한 잡만 다시",
       "/attempts/$ATTEMPT/jobs" in body and "tools/retry_no_runner.py" in body and "/rerun-failed-jobs" in body

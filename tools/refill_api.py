@@ -32,6 +32,9 @@ KST = dt.timezone(dt.timedelta(hours=9))
 MODEL = os.environ.get("REFILL_MODEL", "claude-opus-5-5")
 EFFORT = os.environ.get("REFILL_EFFORT", "high")
 TRIES = 3
+# ★2026-11-17 첫 자동 실행이 "출력이 max_tokens 에서 잘렸다"로 멈췄다 — 12편 명세 + 생각(effort high)이 32,000 을 넘었다.
+#   Opus 5.5 는 출력 128K 까지 된다. 쓴 만큼만 값이 든다(한도를 올려도 값은 그대로).
+MAX_TOKENS = int(os.environ.get("REFILL_MAX_TOKENS", "128000"))
 LEAD = 21            # 남은 날이 이보다 적으면 채운다 — runway 경고(14일)보다 일주일 먼저(사람이 머지할 틈)
 PRICE = {"claude-opus-5-5": (4.0, 20.0, 0.20), "claude-sonnet-5-5": (2.0, 10.0, 0.20)}   # 입력·출력·캐시 읽기($/M)
 STREAMS = {
@@ -224,7 +227,7 @@ def extract_json(text: str):
 
 
 def ask(client, system, messages):
-    with client.messages.stream(model=MODEL, max_tokens=32000, system=system, messages=messages,
+    with client.messages.stream(model=MODEL, max_tokens=MAX_TOKENS, system=system, messages=messages,
                                 extra_body={"output_config": {"effort": EFFORT}}) as s:
         msg = s.get_final_message()
     if msg.stop_reason == "refusal":

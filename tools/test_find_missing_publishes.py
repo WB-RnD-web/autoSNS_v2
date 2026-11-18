@@ -156,9 +156,15 @@ check("기본 목록에 별자리가 있다", "horoscope" in M.RETIRED)
 check("10/7 끈 루틴(정치·국장·미장·AI·ASMR·수면 소리·드라마·옛 인스타)도 기본 목록에 있다",
       all(t in M.RETIRED for t in ("politics", "politics_noon", "politics_aft", "stock", "stock_us", "ai_am", "ai_pm",
                                    "asmr", "korea_sounds", "drama", "insta")))
-check("지금 도는 운세·인스타·구미호는 끈 목록에 없다",
+check("지금 도는 운세·구미호는 끈 목록에 없다",
       not any(t in M.RETIRED for t in ("fortune", "fortune_name", "fortune_theme", "fortune_tier", "fortune_gunghap",
-                                       "fortune_newyear", "fortune_pulli", "insta_pick", "tales", "tales_rules", "pulse")))
+                                       "fortune_newyear", "fortune_pulli", "wisdom", "tales", "tales_rules")))
+check("11/18 거짓 경보 정리: 인스타 골라보기(11/06 끔)·맥박 루틴(11/13 pulse-api 로)은 끈 목록에 있다",
+      "insta_pick" in M.RETIRED and "pulse" in M.RETIRED)
+_oc = open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".github", "workflows",
+                        "orphan-check.yml"), encoding="utf-8").read()
+check("발행 감시는 10시간 기다려 준다(GitHub 예약이 6~10시간 늦다) · 코드 기본값은 그대로 2시간",
+      "--grace-hours 10" in _oc and M.GRACE_HOURS == 2.0)
 
 print("\n── ⑬ 편성을 바꾼 루틴은 옛 리듬을 버리고 다시 배운다(10/10 Nine Tails 개편)")
 NOW13 = dt.datetime(2026, 10, 11, 11, 0, tzinfo=KST)      # 일요일 — 쇼츠 빈 날·롱폼은 토요일만
