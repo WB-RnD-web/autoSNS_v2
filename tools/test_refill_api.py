@@ -167,6 +167,11 @@ finally:
     shutil.rmtree(cur, ignore_errors=True)
     shutil.rmtree(base, ignore_errors=True)
 
+# ★2026-11-17 첫 자동 실행이 '출력이 max_tokens 에서 잘렸다'로 멈췄다(12편 + 생각 > 32,000) — Opus 5.5 출력 한도 128K
+_src = open(RA.__file__, encoding="utf-8").read()
+ck("답 길이 한도: 기본 128,000(REFILL_MAX_TOKENS 로 바꾼다) · ask 가 그 값을 쓴다",
+   RA.MAX_TOKENS == 128000 and "max_tokens=MAX_TOKENS" in _src and "max_tokens=32000" not in _src, RA.MAX_TOKENS)
+
 print()
 if FAIL:
     print(f"❌ 실패 {FAIL}건")

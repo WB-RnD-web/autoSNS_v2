@@ -76,7 +76,8 @@ jobs:
         id: missing
         continue-on-error: true
         run: |
-          python3 tools/find_missing_publishes.py \
+          # ★2026-11-18 --grace-hours 10: GitHub 예약이 6~10시간씩 늦다 — 늦게 도는 건 누락이 아니다(거짓 경보였다)
+          python3 tools/find_missing_publishes.py --grace-hours 10 \
             --runs "$RUNNER_TEMP/runs_1.json" "$RUNNER_TEMP/runs_2.json"
 
       # 둘 다 돌린 뒤에 판정한다 — 한쪽만 보고 끊으면 나머지가 가려진다
