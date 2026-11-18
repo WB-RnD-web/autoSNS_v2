@@ -233,6 +233,30 @@ def is_quota_error(e: BaseException) -> bool:
     return any(r in str(e) for r in QUOTA_REASONS)
 
 
+# ★2026-11-18 예약 공개 — 왕별이 표 트리거(tools/wb_trigger.py)가 스토리보드에 공개 시각(publish_at, KST)을 적는다.
+#   GitHub 예약이 6~10시간 늦어 표가 새벽에 올라갔다 → 12시간 먼저 만들고, 그 시각이 아직 안 왔으면 비공개 + 예약 공개.
+#   이미 지났거나 이만큼 안쪽이면 바로 공개(예전과 같다).
+PUBLISH_MIN_LEAD = dt.timedelta(minutes=15)
+
+
+def publish_at_for(sb: dict, now: dt.datetime | None = None) -> str | None:
+    """스토리보드 publish_at 이 지금보다 15분 넘게 뒤면 유튜브 예약 공개 시각(UTC RFC3339). 아니면 None(바로 공개)."""
+    raw = str(sb.get("publish_at") or "").strip()
+    if not raw:
+        return None
+    try:
+        when = dt.datetime.fromisoformat(raw.replace("Z", "+00:00"))
+    except ValueError:
+        print(f"   ⚠️ publish_at 을 못 읽음({raw!r}) — 바로 공개")
+        return None
+    if when.tzinfo is None:
+        when = when.replace(tzinfo=dt.timezone(dt.timedelta(hours=9)))
+    now = now or dt.datetime.now(dt.timezone.utc)
+    if when <= now + PUBLISH_MIN_LEAD:
+        return None
+    return when.astimezone(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
 def upload_with_retry(video, meta, retries=2):
     last = None
     for attempt in range(1, retries + 2):
@@ -242,7 +266,8 @@ def upload_with_retry(video, meta, retries=2):
                                          meta["privacy"], tags=meta["tags"],
                                          localizations=meta.get("localizations"),
                                          synthetic=meta.get("synthetic"),
-                                         category=meta.get("category", "25"))
+                                         category=meta.get("category", "25"),
+                                         publish_at=meta.get("publish_at"))
         except Exception as e:  # noqa: BLE001
             last = e
             if is_quota_error(e):
@@ -677,6 +702,11 @@ def process(sb_path, args, led):
         meta["description"] = wm["description"] + credit
         meta["tags"] = wm["tags"]
         meta["localizations"] = None
+    # 예약 공개(위 publish_at_for) — 손으로 돌린 비공개 시험(force_private)은 예약하지 않는다
+    at = None if args.force_private else publish_at_for(sb)
+    if at and meta["privacy"] == "public":
+        meta["privacy"], meta["publish_at"] = "private", at
+        print(f"   ⏰ 예약 공개: {sb.get('publish_at')} KST(그때까지 비공개)")
     if res.get("outro"):
         # 끝인사가 붙은 편만 설명란에도 같은 초대 한 줄(첫 문단 아래 — 나머지 글은 그대로). 없는 날은 손대지 않는다(A/B).
         meta["description"] = outro.with_line(meta["description"])
@@ -694,12 +724,14 @@ def process(sb_path, args, led):
             res["uploaded"] = f"https://youtu.be/{vid} ({meta['privacy']})"
             pl = ((NEWYEAR_PLAYLIST, NEWYEAR_PLAYLIST_DESC) if newyear_series.use_slot(sb)
                   else playlist_for(sb.get("topic", "")))
-            if pl and meta["privacy"] == "public":
+            if pl and (meta["privacy"] == "public" or meta.get("publish_at")):     # 예약 공개 편도(공개되면 목록에 보인다)
                 add_playlist(vid, *pl)
             if led is not None:
                 extra = {"ai": ai_news.entry(sb)} if is_ai else {}
                 if "outro" in res:
                     extra["outro"] = res["outro"]          # 끝인사가 실제로 붙었나(채널 맥박은 게시일로 outro.arm 을 본다)
+                if meta.get("publish_at"):
+                    extra["publish_at"] = meta["publish_at"]
                 ledgermod.mark(led, sb, vid, meta["privacy"], time.time(), args.ledger_path, extra=extra or None)
         except Exception as e:  # noqa: BLE001
             res["error"] = f"upload: {e}"
