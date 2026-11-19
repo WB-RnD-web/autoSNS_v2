@@ -63,6 +63,12 @@ ck("자막 두 줄은 길이를 맞춘다(마지막 한 단어만 넘기지 않�
    str([R.wrap("Wait… this bun has ears"), R.wrap("Me at 5:59 PM vs 6:00 PM")]))
 ck("한 줄에 들어가면 한 줄 · 빈 자막은 빈 목록", R.wrap("When the beat drops") == ["When the beat drops"] and R.wrap("") == [])
 ck("두 줄로 안 되면 세 줄(검사가 막는다)", len(R.wrap("a very long caption that will not fit in two short lines")) > 2)
+ck("화면 자막에서 이모지 빼기(글꼴에 없어 네모로 나온다 · 11/19)",
+   R.wrap("The big tree just lit up 🎄") == ["The big tree just lit", "up"] or R.wrap("The big tree just lit up 🎄") == ["The big tree", "just lit up"],
+   str(R.wrap("The big tree just lit up 🎄")))
+ck("이모지만 빼고 글자·문장부호는 그대로", R.screen_text("Slap fight finals 🥊") == "Slap fight finals"
+   and R.screen_text("Last-minute ⚽ penalty") == "Last-minute penalty" and R.screen_text("Wait… 5:59 PM?!") == "Wait… 5:59 PM?!"
+   and R.screen_text("❤️ love") == "love", R.screen_text("❤️ love"))
 
 # ── 조립 계획 ──
 c = {"shots": [{}, {"xfade": 0.5}, {}, {"sec": 0.9}]}
