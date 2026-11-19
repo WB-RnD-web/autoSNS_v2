@@ -1,0 +1,54 @@
+{
+ "date": "2026-11-19",
+ "topic": "wisdom",
+ "theme": "wisdom:children_visit",
+ "privacy": "public",
+ "accent": "#2E7D6B",
+ "_min_total": 10.0,
+ "hook_title": "자식이 자주 찾아오는 부모의 말버릇",
+ "headline": "자식이 자주 찾아오는 부모의 말버릇 5가지 | 말년 지혜 #부모자식관계 #자식연락 #부모의지혜",
+ "thumbnail_hook": "a cozy Korean living room at golden hour, an open front door with shoes neatly arranged, warm welcoming light, no people, no text, no letters, no signage, no logos",
+ "thumbnail_style": "hanji",
+ "scenes": [
+  {
+   "type": "wisdom",
+   "pill": "50·60·70대 공감 · 말년 지혜",
+   "title": "자식이 자주 찾아오는",
+   "title2": "부모의 말버릇",
+   "tone": "do",
+   "items": [
+    {
+     "big": "\"와 줘서 고맙다\"",
+     "small": "온 것만으로 반겨 줘요"
+    },
+    {
+     "big": "\"바쁘면 괜찮다\"",
+     "small": "미안한 마음을 덜어 줘요"
+    },
+    {
+     "big": "\"네 생각대로 해라\"",
+     "small": "다 큰 자식은 믿어 줘요"
+    },
+    {
+     "big": "\"잘하고 있다\"",
+     "small": "칭찬은 나이 들어도 좋아요"
+    },
+    {
+     "big": "\"또 와라, 기다릴게\"",
+     "small": "문을 열어 두는 말"
+    }
+   ],
+   "foot": "※ 어르신들 이야기를 모아 정리했어요 · 집집마다 사정은 다를 수 있어요",
+   "brand": "왕별이 · 말년 지혜",
+   "narration": "자식이 자주 찾아오는 부모의 말버릇, 다섯 가지예요. 몇 번이 제일 와닿으세요? 댓글로 번호를 남겨 주세요."
+  }
+ ],
+ "platforms": {
+  "youtube": {
+   "title": "자식이 자주 찾아오는 부모의 말버릇 5가지 | 말년 지혜 #부모자식관계 #자식연락 #부모의지혜 #shorts",
+   "description": "자식이 자주 찾아오는 부모의 말버릇, 다섯 가지를 한 장에 모았어요. 몇 번이 제일 와닿으세요? 댓글로 번호를 남겨 주세요 🙏\n\n1. 와 줘서 고맙다 — 늦게 왔다는 말보다 와 줘서 고맙다는 말이 다음 걸음을 부르죠.\n2. 바쁘면 괜찮다 — 못 와서 미안한 자식에게 괜찮다고 하면, 오히려 더 자주 오고 싶어져요.\n3. 네 생각대로 해라 — 결정을 믿어 주는 부모 앞에서 자식은 고민을 더 털어놓아요.\n4. 잘하고 있다 — 어른이 된 자식도 부모의 칭찬 한마디에 힘을 얻어요.\n5. 또 와라, 기다릴게 — 헤어질 때 다음을 기다린다는 말이 다음 방문의 약속이 돼요.\n\n※ 왕별이가 어르신들 이야기를 모아 정리한 생활 지혜예요. 집집마다 사정은 다를 수 있어요.\n\n#부모자식관계 #자식연락 #부모의지혜 #말년지혜 #인생지혜 #시니어공감 #50대 #60대 #70대 #shorts"
+  }
+ },
+ "notes": "말년 지혜 표 · wisdom:children_visit · wisdom_card.py 가 만든 스토리보드(11/17~11/30 2주 시험 · 17:40)",
+ "publish_at": "2026-11-19T17:40+09:00"
+}
