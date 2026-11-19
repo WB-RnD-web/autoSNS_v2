@@ -185,8 +185,12 @@ def render(doc: dict, qa: bool = True, wait_quiet: int = 0) -> int:
     except R.QuietHours:
         save_state(c, st)
         return 75
-    m = R.build(c)
-    usd = sum(float((st.get(k) or {}).get("usd") or 0) for k in ("stills", "stills2", "clips", "clips2", "clips3"))
+    if R.fx_on(c) and R.beat_shots(c) and "beats" not in st:
+        # ★11/19 효과음을 그 순간에 — 클립이 확정된 뒤 한 번만(다시 돌아도 같은 자리) · 실패하면 움직임으로 대신
+        st["beats"] = (Q.find_beats(c) if qa else None) or {"skipped": "검수 끔·키 없음·API 실패 → 움직임"}
+        save_state(c, st)
+    m = R.build(c, beats=(st.get("beats") or {}).get("beats"))
+    usd = sum(float((st.get(k) or {}).get("usd") or 0) for k in ("stills", "stills2", "clips", "clips2", "clips3", "beats"))
     print(f"✅ {m['stem']} {m['sec']}초 → {m['video']} · 검수 약 {usd:.3f}달러")
     return 0
 

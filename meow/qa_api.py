@@ -50,6 +50,16 @@ Flag a clip (ok=false) only for problems a viewer would clearly notice in motion
 Motion blur, small softness and a pose that differs from the prompt are fine.
 Return only JSON: {"clips": [{"clip": <number>, "ok": true|false, "issues": ["melting: ..."]}]}"""
 
+# ★11/19 효과음 타이밍 — 기획이 컷마다 적은 순간(beat)을 완성 클립에서 찾는다. 움직임만 보면 '발이 볼에 닿는' 순간 대신
+#   '넘어지는' 큰 움직임을 고른다(11/19 견본 실측) → 화면을 보고 고르게 한다. 0.4초 간격 12장(0.2~4.6초).
+BEAT_N, BEAT_T0, BEAT_DT = 12, 0.2, 0.4
+BEATS = """You time sound effects for a photorealistic AI cat YouTube Short. Each 5-second clip is shown as one grid of 12
+frames in time order: top row frames 1-6 left to right, then bottom row frames 7-12, one frame every 0.4 seconds
+(frame 1 = 0.2 s, frame 12 = 4.6 s). Each clip comes with the moment its sound belongs to. For each clip pick the frame
+where that moment happens: the first frame where it is clearly happening (the paw touching, the landing, the jump at its
+fastest, the pose being struck). If the moment never clearly happens, pick the frame with the biggest action.
+Return only JSON: {"beats": [{"clip": <number>, "frame": <1-12>}]}"""
+
 
 def jpeg_b64(src: str, out: str, vf: str) -> str:
     subprocess.run([R.ffmpeg(), "-v", "error", "-y", "-i", src, "-vf", vf, "-frames:v", "1", "-q:v", "4", out], check=True)
@@ -64,6 +74,65 @@ def still_b64(png: str) -> str:
 def strip_b64(clip: str, n: int = 6) -> str:
     """클립 5초에서 고르게 n 장 → 가로 띠 한 장."""
     return jpeg_b64(clip, clip[:-4] + "_qa.jpg", f"fps={n / 5.2:.3f},scale=240:-2,tile={n}x1")
+
+
+def beat_grid_b64(clip: str) -> str:
+    """클립을 0.2초부터 0.4초 간격 12장 → 6×2 격자 한 장."""
+    out = clip[:-4] + "_beat.jpg"
+    subprocess.run([R.ffmpeg(), "-v", "error", "-y", "-ss", str(BEAT_T0), "-i", clip, "-vf",
+                    f"fps={1 / BEAT_DT:g},scale=200:-2,tile=6x2", "-frames:v", "1", "-q:v", "4", out], check=True)
+    with open(out, "rb") as f:
+        return base64.b64encode(f.read()).decode()
+
+
+def frame_sec(frame: int) -> float:
+    return round(BEAT_T0 + BEAT_DT * (int(frame) - 1), 3)
+
+
+def parse_beats(text: str, asked: set) -> dict[str, float]:
+    t = re.sub(r"^```(?:json)?\s*|\s*```$", "", (text or "").strip(), flags=re.S)
+    a, b = t.find("{"), t.rfind("}")
+    if a < 0 or b < a:
+        raise ValueError("순간 찾기 답에 JSON 이 없다")
+    out = {}
+    for r in json.loads(t[a:b + 1]).get("beats", []):
+        try:
+            n, f = int(r.get("clip")), int(r.get("frame"))
+        except (TypeError, ValueError):
+            continue
+        if n in asked and 1 <= f <= BEAT_N:
+            out[str(n)] = frame_sec(f)
+    missing = asked - {int(k) for k in out}
+    if missing:
+        raise ValueError(f"순간 찾기 답에 {sorted(missing)} 이 없다")
+    return out
+
+
+def find_beats(c: dict, cl=None) -> dict | None:
+    """효과음·hit 컷의 순간 → {"beats": {"1": 초}, "usd"} · 그런 컷이 없거나 키 없음·실패면 None(→ 움직임으로 대신)."""
+    which = R.beat_shots(c)
+    if not which:
+        return None
+    cl = cl or client()
+    if cl is None:
+        return None
+    content = [{"type": "text", "text": f"Short: {c['title']}\nClips to time: {which}"}]
+    for i in which:
+        s = c["shots"][i - 1]
+        content.append({"type": "text", "text": f"Clip {i} — moment: {s.get('beat')}\nWhat happens in the clip: {s['motion']}"})
+        content.append({"type": "image", "source": {"type": "base64", "media_type": "image/jpeg",
+                                                    "data": beat_grid_b64(R.clip_path(c, i))}})
+    try:
+        msg = cl.messages.create(model=MODEL, max_tokens=2000, system=BEATS, messages=[{"role": "user", "content": content}],
+                                 extra_body={"output_config": {"effort": EFFORT}})
+        text = "".join(b.text for b in msg.content if getattr(b, "type", "") == "text")
+        pi, po = PRICE.get(MODEL, PRICE["claude-opus-5-5"])
+        u = msg.usage
+        usd = ((getattr(u, "input_tokens", 0) or 0) * pi + (getattr(u, "output_tokens", 0) or 0) * po) / 1e6
+        return {"beats": parse_beats(text, set(which)), "model": MODEL, "usd": round(usd, 4)}
+    except Exception as e:  # noqa: BLE001
+        print(f"   ⚠️ 순간 찾기 실패(움직임으로 대신): {str(e)[:200]}")
+        return None
 
 
 def client():

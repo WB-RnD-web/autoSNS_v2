@@ -386,7 +386,9 @@ def one(cid):
     return {"date": "2026-11-10", "concepts": [copy.deepcopy({**base, "id": cid})]}
 
 
-R.images, R.clips, R.build = mk_images, mk_clips, (lambda c: {"stem": R.stem(c), "sec": 9.5, "video": "v.mp4"})
+built = []
+R.images, R.clips, R.build = mk_images, mk_clips, (lambda c, beats=None: built.append(beats) or
+                                                   {"stem": R.stem(c), "sec": 9.5, "video": "v.mp4"})
 Q.review_stills, Q.review_clips = (lambda c, cl=None: None), (lambda c, which=None, cl=None: None)
 ck("검수 키가 없으면 검수 없이 완성(0)", D.render(one("d1")) == 0 and log == ["draw1", "draw2", "clip1", "clip2"], str(log))
 
@@ -487,6 +489,24 @@ R.clips = mk_clips
 ck("기획이 skip 이면 아무것도 안 한다(0)", D.render({"date": "2026-11-11", "skip": "검사 실패", "concepts": []}) == 0)
 ck("편집 원본을 다시 그리면 그 그림을 쓰는 편집 컷도 다시(이어서 편집한 것까지)",
    D.dependents({"shots": [{"image": "a"}, {"edit": "b"}, {"edit": "c", "from": 2}, {"image": "d"}]}, 1) == [2, 3])
+# ★11/19 효과 편: 검수가 끝난 뒤 순간 찾기(비전) 한 번 → build(beats=) · 다시 돌아도 다시 안 묻는다 · 실패면 None(움직임)
+fxb = {**base, "shots": [base["shots"][0], {**base["shots"][1], "sfx": ["slap"], "beat": "the paw lands", "hit": True}]}
+asked_beats = []
+real_fb = Q.find_beats
+Q.find_beats = lambda c, cl=None: asked_beats.append(R.beat_shots(c)) or {"beats": {"2": 1.4}, "usd": 0.01}
+built.clear()
+_d = {"date": "2026-11-10", "concepts": [copy.deepcopy({**fxb, "id": "fx1"})]}
+_r1 = D.render(_d)
+_r2 = D.render(_d)
+ck("효과 편: 순간 찾기(컷 2만) → build(beats={'2': 1.4}) · 두 번째 실행은 저장된 순간을 그대로", _r1 == 0 and _r2 == 0
+   and asked_beats == [[2]] and built == [{"2": 1.4}, {"2": 1.4}], str([asked_beats, built]))
+Q.find_beats = lambda c, cl=None: None
+built.clear()
+_d = {"date": "2026-11-10", "concepts": [copy.deepcopy({**fxb, "id": "fx2"})]}
+ck("순간 찾기 실패면 beats 없이 build(움직임으로 대신)", D.render(_d) == 0 and built == [None], str(built))
+built.clear()
+ck("효과 없는 편은 순간 찾기를 안 부른다", D.render(one("fx3")) == 0 and built == [None] and asked_beats == [[2]])
+Q.find_beats = real_fb
 R.images, R.clips, R.build, Q.review_stills, Q.review_clips = real_fns
 
 rows = Q.parse('```json\n{"shots":[{"shot":1,"ok":false,"issues":["text: logo"],"fix":"x"},{"shot":2,"ok":true}]}\n```',
@@ -734,6 +754,123 @@ ck("새 채널 id 가 비어 있으면 아무 데도 안 올린다", _stops(_YT(
 P.CHANNEL_ID = _cid
 ck("seen: 남았으면 10(오류 1 과 구별)", P.NOT_YET == 10)
 
+
+# ── ★11/19 효과(효과음·순간·hit·컷 자막) ──
+LIB = R.sfx_lib()
+ck("효과음 파일이 전부 있고 · 출처마다 작성자·라이선스·주소 · CC0 아니면 CC BY 4.0 만",
+   all(os.path.exists(os.path.join(R.SFX_DIR, x["file"])) for x in list(LIB["sounds"].values()) + list(LIB["ambience"].values()))
+   and set(LIB["sources"]) == {x["file"] for x in list(LIB["sounds"].values()) + list(LIB["ambience"].values())}
+   and all(v["author"] and v["url"].startswith("https://opengameart.org/") and v["license"] in ("CC0", "CC BY 4.0")
+           for v in LIB["sources"].values()))
+fxc = {**okE, "id": "f1", "slug": "f", "format": "game", "title": "T", "seed": 1, "caption": "Slap fight finals",
+       "en_line": "a", "ko_line": "가", "hashtags": ["#cat"], "tags": ["cat"],
+       "track": "funkorama.mp3", "ambience": "crowd",
+       "shots": [{**okE["shots"][0], "sfx": ["whoosh"], "beat": "the swing passes"},
+                 {**okE["shots"][1], "sfx": ["slap", "punch"], "beat": "the paw lands", "hit": True, "caption": "ONE PAW. 🥊"}]}
+ck("효과 편 모양은 검사 통과", R.check_concept(fxc) == [], str(R.check_concept(fxc)))
+
+
+def fx_errs(**kw):
+    c = copy.deepcopy(fxc)
+    for k, v in kw.items():
+        if k.startswith("s"):
+            c["shots"][int(k[1:]) - 1].update(v)
+        else:
+            c[k] = v
+    return " ".join(R.check_concept(c))
+
+
+ck("모르는 효과음·3개 이상·beat 없는 효과음·hit 두 컷·첫 컷 caption·25자 컷 자막·모르는 배경 소리는 막는다",
+   "모르는 sfx" in fx_errs(s1={"sfx": ["boing"]}) and "0~2개" in fx_errs(s1={"sfx": ["slap", "punch", "thud"]})
+   and "beat" in fx_errs(s1={"beat": ""}) and "hit 는 한 컷만" in fx_errs(s1={"hit": True})
+   and "컷1" in fx_errs(s1={"caption": "x"}) and "컷 caption" in fx_errs(s2={"caption": "x" * 25})
+   and "ambience" in fx_errs(ambience="rain"))
+ck("효과 판단: 효과 칸이 하나라도 있으면 켬 · MEOW_FX=0 이면 끔 · 예전 편은 끔",
+   R.fx_on(fxc) and not R.fx_on(okE) and R.beat_shots(fxc) == [1, 2])
+os.environ["MEOW_FX"] = "0"
+ck("MEOW_FX=0 이면 효과·표기 없음(예전 조립)", not R.fx_on(fxc) and R.sfx_credit(fxc) == "")
+os.environ.pop("MEOW_FX")
+ev = R.fx_events(fxc, {1: 2.0, 2: 0.5}, R.TEASE)
+p14 = R.plan(fxc)
+ck("효과음 시각 = 미리 보기 0.8 + 컷 시작 + 순간 − lead(휙은 0.15초 먼저) · 배경 소리는 0초",
+   ev[0] == ("crowd.mp3", 0.0, 0.22) and ev[1] == ("whoosh.wav", round(0.8 + 2.0 - 0.15, 3), 0.9)
+   and ev[2] == ("slap.wav", round(0.8 + p14[1]["start"] + 0.5, 3), 1.0) and ev[3][0] == "punch.wav", str(ev))
+fgx = R.filtergraph(fxc, 2 + 1 + 1 + len(ev), 1.6, {1: 2.0, 2: 0.5}, ev)
+ck("효과 조립: 음악은 미리 보기 다음 입력(3번)·반으로 줄임 · 효과음은 4번부터 adelay · 모두 섞고 리미터",
+   "[3:a]atrim=0:" in fgx and f"volume={R.FX_MUSIC_VOL}" in fgx and "[4:a]aformat" in fgx and "adelay=2650:all=1" in fgx
+   and f"amix=inputs={len(ev) + 1}" in fgx and "alimiter" in fgx, fgx[-900:])
+ck("hit 컷(2)만 줌인·흔들림·번쩍 — 순간 0.5초에", fgx.count("eval=frame,crop=") == 1 and "[1:v]" in fgx.split("eq=brightness")[0]
+   .rsplit(";", 1)[-1] and "between(t\\,0.5\\,0.58)" in fgx, fgx[:1500])
+ck("hit 컷은 앞 컷과 겹치지 않고 바로 자른다(xfade 무시) · hit 아닌 컷은 예전처럼 겹친다",
+   p14[1]["xfade"] == 0 and p14[1]["start"] == p14[0]["dur"] and "[v0][v1]concat" in fgx
+   and R.plan({**fxc, "shots": [fxc["shots"][0], {**fxc["shots"][1], "hit": False, "xfade": 0.5}]})[1]["xfade"] == 0.5, str(p14))
+cps = R.captions(fxc, R.TEASE)
+ck("자막: 편 caption 은 0초~컷2 시작 · 컷2 자막(이모지 빼고)은 그다음부터 노란색",
+   cps[0]["start"] == 0.0 and cps[0]["end"] == round(0.8 + p14[1]["start"], 3) and cps[1]["lines"] == ["ONE PAW."]
+   and cps[1]["beat"] and cps[1]["end"] is None and "enable='lt(t" in fgx and "enable='gte(t" in fgx
+   and R.SHOT_CAP_COLOR in fgx, str(cps))
+ck("CC BY 소리(관중)를 쓰면 설명란·인스타·쓰레드에 표기 · CC0 만 쓰면 표기 없음",
+   "Gregor Quendel" in R.sfx_credit(fxc) and "Gregor Quendel" in P.yt_meta({"date": "2026-11-19"}, fxc)["description"]
+   and "Gregor Quendel" in P.ig_caption({**fxc, "ko_line": "가", "en_line": "a", "hashtags": ["#cat"]})
+   and R.sfx_credit({**fxc, "ambience": None}) == "", R.sfx_credit(fxc))
+
+# 순간 찾기(비전) — 가짜 클라이언트
+import qa_api as Q  # noqa: E402,F811
+
+
+class _Msg:
+    def __init__(self, text):
+        self.content = [types.SimpleNamespace(type="text", text=text)]
+        self.usage = types.SimpleNamespace(input_tokens=3000, output_tokens=50)
+
+
+class _Cl:
+    def __init__(self, text):
+        self.text, self.sent = text, []
+        self.messages = types.SimpleNamespace(create=self.create)
+
+    def create(self, **kw):
+        self.sent.append(kw)
+        return _Msg(self.text)
+
+
+ck("격자 칸 → 초(1칸 = 0.2초 · 12칸 = 4.6초)", Q.frame_sec(1) == 0.2 and Q.frame_sec(12) == 4.6)
+_fd = tempfile.mkdtemp()
+R.WORK = _fd
+fcl = {**fxc, "id": "q1"}
+os.makedirs(os.path.join(_fd, R.stem(fcl)), exist_ok=True)
+for _i in (1, 2):
+    subprocess.run([R.ffmpeg(), "-v", "error", "-y", "-f", "lavfi", "-i", "testsrc=s=72x128:d=5:r=16", "-pix_fmt", "yuv420p",
+                    R.clip_path(fcl, _i)], check=True)
+cl = _Cl('{"beats": [{"clip": 1, "frame": 4}, {"clip": 2, "frame": 1}]}')
+res = Q.find_beats(fcl, cl)
+ck("순간 찾기: 효과 컷마다 12칸 격자 한 장 + 순간 설명 → {'1': 1.4, '2': 0.2}",
+   res and res["beats"] == {"1": 1.4, "2": 0.2} and len([b for b in cl.sent[0]["messages"][0]["content"]
+                                                         if b["type"] == "image"]) == 2
+   and "the paw lands" in json.dumps(cl.sent[0]["messages"][0]["content"]), str(res))
+ck("답에 컷이 빠지거나 칸이 범위 밖이면 None(움직임으로 대신)",
+   Q.find_beats(fcl, _Cl('{"beats": [{"clip": 1, "frame": 4}]}')) is None
+   and Q.find_beats(fcl, _Cl('{"beats": [{"clip": 1, "frame": 13}, {"clip": 2, "frame": 1}]}')) is None)
+ck("효과 컷이 없으면 묻지 않는다", Q.find_beats({**okE, "id": "q2", "slug": "q", "title": "T"}, _Cl("{}")) is None)
+
+# 진짜 ffmpeg 로 효과 편 조립(짧은 시험 클립 · 미리 보기 · 효과음 · hit · 컷 자막) — 그래프가 실제로 도는지
+fb = {**fcl, "shots": [{**fcl["shots"][0], "sec": 1.5}, {**fcl["shots"][1], "sec": 1.5}]}
+for _i in (1, 2):
+    subprocess.run([R.ffmpeg(), "-v", "error", "-y", "-f", "lavfi", "-i", "color=c=gray:s=72x128", "-frames:v", "1",
+                    R.shot_png(fb, _i)], check=True)
+_out = R.OUT
+R.OUT = tempfile.mkdtemp()
+try:
+    m = R.build(fb, beats={"1": 0.6, "2": 0.4})
+    okb = os.path.getsize(m["video"]) > 0 and m["fx"]["beats"] == {"1": 0.6, "2": 0.4} and m["fx"]["beat_src"] == "vision"
+    r = subprocess.run([R.ffmpeg(), "-i", m["video"]], capture_output=True, text=True, encoding="utf-8", errors="replace").stderr
+    okb = okb and "Audio:" in r and "1080x1920" in r
+    m2 = R.build(fb)
+    okb = okb and m2["fx"]["beat_src"] == "motion" and set(m2["fx"]["beats"]) == {"1", "2"}
+except (subprocess.CalledProcessError, SystemExit, OSError) as e:
+    okb, r = False, str(e)
+ck("진짜 조립: 효과음·hit·컷 자막 편이 1080×1920 + 소리로 나온다 · 순간이 없으면 움직임으로", okb, r[-600:])
+R.OUT = _out
 
 # ── 올라갈 글 ──
 doc = R.load(sorted(glob.glob(os.path.join(HERE, "concepts", "*.json")))[0])

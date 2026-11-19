@@ -1,0 +1,29 @@
+{
+  "_note": "★11/19 효과음(사용자: 효과판이 더 낫다). OpenGameArt.org 에서 받아 앞 무음을 자르고 최고 -1dB 로 맞춘 것. 기획이 컷마다 sfx 이름을 고르고, render 가 그 컷의 순간(beat)에 얹는다. CC BY 는 설명란에 표기(credit).",
+  "sounds": {
+    "whoosh": {"file": "whoosh.wav", "vol": 0.9, "lead": 0.15, "use": "a fast swing, jump, dash or spin"},
+    "swish":  {"file": "swish.wav",  "vol": 0.8, "lead": 0.08, "use": "a quick small move: a paw swipe or a head turn"},
+    "slap":   {"file": "slap.wav",   "vol": 1.0, "lead": 0.0,  "use": "a light paw tap, boop or slap landing"},
+    "punch":  {"file": "punch.wav",  "vol": 0.8, "lead": 0.0,  "use": "a big impact"},
+    "thud":   {"file": "thud.wav",   "vol": 1.0, "lead": 0.0,  "use": "something or someone lands or falls"},
+    "bell":   {"file": "bell.wav",   "vol": 0.7, "lead": 0.0,  "use": "a ding: a win, an idea, a round starting"},
+    "cheer":  {"file": "cheer.mp3",  "vol": 0.45, "lead": 0.0, "use": "a crowd cheering at the win (only with an audience)"},
+    "clap":   {"file": "clap.wav",   "vol": 0.6, "lead": 0.0,  "use": "applause"},
+    "meow":   {"file": "meow.wav",   "vol": 1.0, "lead": 0.0,  "use": "one cute meow as the cat reacts"}
+  },
+  "ambience": {
+    "crowd": {"file": "crowd.mp3", "vol": 0.22, "use": "arena, stadium, stage or party with an audience"}
+  },
+  "sources": {
+    "whoosh.wav": {"from": "swish-7.wav (slowed ×0.5)", "title": "Swishes Sound Pack", "author": "artisticdude", "license": "CC0", "url": "https://opengameart.org/content/swishes-sound-pack"},
+    "swish.wav":  {"from": "swish-9.wav", "title": "Swishes Sound Pack", "author": "artisticdude", "license": "CC0", "url": "https://opengameart.org/content/swishes-sound-pack"},
+    "slap.wav":   {"from": "hit11", "title": "37 hits/punches", "author": "qubodup", "license": "CC0", "url": "https://opengameart.org/content/37-hitspunches"},
+    "punch.wav":  {"from": "hit34", "title": "37 hits/punches", "author": "qubodup", "license": "CC0", "url": "https://opengameart.org/content/37-hitspunches"},
+    "thud.wav":   {"from": "hit20 (pitched down, low-passed)", "title": "37 hits/punches", "author": "qubodup", "license": "CC0", "url": "https://opengameart.org/content/37-hitspunches"},
+    "bell.wav":   {"from": "pleasing-bell.wav", "title": "Pleasing Bell Sound Effect", "author": "Spring Spring", "license": "CC0", "url": "https://opengameart.org/node/86163"},
+    "meow.wav":   {"from": "Meow.ogg", "title": "Meow", "author": "IgnasD", "license": "CC0", "url": "https://opengameart.org/content/meow"},
+    "clap.wav":   {"from": "Well Done CCBY3.ogg (relicensed CC0 2024-10)", "title": "Well Done", "author": "qubodup", "license": "CC0", "url": "https://opengameart.org/content/well-done"},
+    "cheer.mp3":  {"from": "04 - Strong cheering - II - Short (5.0-10.0s)", "title": "Free Crowd Cheering Sounds", "author": "Gregor Quendel", "license": "CC BY 4.0", "url": "https://opengameart.org/content/free-crowd-cheering-sounds"},
+    "crowd.mp3":  {"from": "10 - Ambience (5-25s)", "title": "Free Crowd Cheering Sounds", "author": "Gregor Quendel", "license": "CC BY 4.0", "url": "https://opengameart.org/content/free-crowd-cheering-sounds"}
+  }
+}
