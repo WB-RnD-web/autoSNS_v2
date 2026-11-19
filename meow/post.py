@@ -49,19 +49,21 @@ def music_short(c: dict) -> str:
 def yt_meta(doc: dict, c: dict) -> dict:
     en_tags = [h for h in c["hashtags"] if h.isascii() and "instagram" not in h]
     desc = "\n".join([c["en_line"], "", " ".join(en_tags + ["#shorts", "#aicat"]), "",
-                      R.credit(c["track"]), "AI-generated video: the cats and scenes are not real footage.", "",
+                      R.credit(c["track"]), *([R.sfx_credit(c)] if R.sfx_credit(c) else []),
+                      "AI-generated video: the cats and scenes are not real footage.", "",
                       mark(doc, c)])
     return {"title": c["title"][:100], "description": desc, "tags": c["tags"][:15]}
 
 
 def ig_caption(c: dict) -> str:
     return "\n".join([c["ko_line"], c["en_line"], "", " ".join(c["hashtags"]), "", music_short(c),
-                      "AI로 만든 영상이에요."])
+                      *([R.sfx_credit(c, short=True)] if R.sfx_credit(c) else []), "AI로 만든 영상이에요."])
 
 
 def threads_text(c: dict) -> str:
     t = R.tracks()[c["track"]]
-    return "\n".join([c["ko_line"], c["en_line"], "", f'🎵 "{t["title"]}" Kevin MacLeod · CC BY 4.0', "AI로 만든 영상"])
+    return "\n".join([c["ko_line"], c["en_line"], "", f'🎵 "{t["title"]}" Kevin MacLeod · CC BY 4.0',
+                      *([R.sfx_credit(c, short=True)] if R.sfx_credit(c) else []), "AI로 만든 영상"])
 
 
 def video_of(c: dict) -> dict:

@@ -214,6 +214,7 @@ jobs:
       MEOW_SLOTS: ${{ vars.MEOW_SLOTS || 'a b c d e f g h i j k l' }}
       MEOW_SLOT_KST: ${{ vars.MEOW_SLOT_KST || '10:00' }}     # 편 a 공개(미국 동부 밤 8시) — 나머지는 24시간을 편 수로 나눈 간격
       MEOW_QA_MODEL: ${{ vars.MEOW_QA_MODEL || 'claude-opus-5-5' }}
+      MEOW_FX: ${{ vars.MEOW_FX || '1' }}      # ★11/19 효과음·hit·컷 자막 — 0 이면 예전 조립(음악만·자막 하나)
       UPLOAD: ${{ github.event_name == 'schedule' || github.event.inputs.upload == 'true' }}
     steps:
       - uses: actions/checkout@v4

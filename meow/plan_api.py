@@ -97,10 +97,21 @@ Shot 2 "edit" (made from the shot 1 picture)
 - Always say the cat stays fully in frame with four normal legs and end with "Photorealistic, smooth natural motion,
   static camera."
 
+Sound and beats (the finished Short gets sound effects and an edit punch — viewers said it felt flat without them)
+- For each shot pick "sfx": a list of 0-2 names from the sound list for what visibly happens in that shot, and write
+  "beat": a short description of the exact visible moment the sound belongs to (e.g. "the paw lands on the ball", "the
+  kitten pops out of the bun"). The code finds that moment in the finished clip and plays the sound there. Use at least
+  one sound in the Short.
+- "hit": true on the one shot with the biggest moment (an impact, a pounce landing, the reveal, the win): the edit punches
+  in, flashes and shakes there. At most one shot; it needs a beat.
+- Shot 2 may have its own "caption": a short punchline in English (at most 24 characters, no emoji) that replaces the
+  hook on screen when shot 2 starts.
+- "ambience": "crowd" only when the scene has an audience (arena, stadium, stage, party); otherwise leave it out.
+
 Output: one JSON object only (no code fences) with the keys of the example: slug, track, caption, title, en_line, ko_line,
-tags, hashtags, shots (exactly 2), cover_shot (1 or 2), trend {"why_now", "pattern", "evidence": [{"title", "url"}]} with
-URLs only from your searches. Do not set id, format, engine or seed. If the code returns errors, fix them and return the
-whole JSON again."""
+tags, hashtags, shots (exactly 2, each with sfx and beat when it has a sound), cover_shot (1 or 2), trend {"why_now",
+"pattern", "evidence": [{"title", "url"}]} with URLs only from your searches. Do not set id, format, engine or seed. If
+the code returns errors, fix them and return the whole JSON again."""
 
 
 def fmt_of(day: dt.date, slot: str = "a", data_dir: str | None = None) -> str:
@@ -181,6 +192,9 @@ def user_message(day: dt.date, data_dir: str, slot: str = "a") -> str:
         *[f"- {f} — {tr[f]['title']} — {', '.join(tr[f].get('moods', []))}" for f in tracks_for(fmt)],
         f"Tracks already used (do not use): {', '.join(av) or '(none)'}",
         "\n## Example (schema: copy the keys, not the idea)\n" + json.dumps(R.load(EXAMPLE)["concept"], ensure_ascii=False),
+        "\n## Sound list (sfx name — when to use)",
+        *[f"- {n} — {x['use']}" for n, x in R.sfx_lib()["sounds"].items()],
+        *[f"- ambience {n} — {x['use']}" for n, x in R.sfx_lib()["ambience"].items()],
         "\n## Today's other Shorts (make this one clearly different: another cat, setting and idea)",
         *([f"- {h['format']} · {h['title']} · {h['track']} · {h['cat']}" for h in today] or ["- (none yet)"]),
         "\n## Recent days (vary the cat, the setting and the music)",
@@ -253,6 +267,8 @@ def check(c: dict, day: dt.date, data_dir: str, seen: set, slot: str = "a") -> l
         errs.append("hashtags 4~8개 · # 로 시작 · 띄어쓰기 없이 · #cat 포함")
     if c.get("cover_shot") not in (1, 2):
         errs.append("cover_shot 은 1 또는 2")
+    if not any(s.get("sfx") for s in sh):                # ★11/19 효과음 없는 편은 '밋밋하다' — 한 컷은 소리가 있어야
+        errs.append("sfx 가 하나도 없다 — 적어도 한 컷에 소리(sfx + beat)")
     taken = {h["slug"] for h in history(data_dir)} | {h["title"].lower() for h in history(data_dir)}
     if c["slug"] in taken or c["title"].lower() in taken:
         errs.append("이미 쓴 slug·제목이다")

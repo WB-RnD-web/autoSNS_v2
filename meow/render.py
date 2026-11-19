@@ -59,6 +59,15 @@ V14_W, V14_H = 720, 1280           # 14b 그림 = 완성본 크기(세로 0.8 �
 HD_TIMEOUT = 5400                  # 한 컷 13분 + GPU 기다림 최대 약 1시간
 HD_RETRY, HD_RETRY_WAIT = 2, 300   # 열 안전장치로 멈추면(status=error) 5분 쉬고 다시
 FORMATS = {"morph", "dance", "meme", "game"}
+# ★11/19 효과(사용자: '이펙트가 안 느껴진다' → 효과판 견본이 '더 낫다'): 기획이 컷마다 효과음(sfx)·그 순간(beat)·강조(hit)·
+#   컷 자막(caption)을 정하면, 조립이 그 순간에 효과음을 얹고 hit 컷은 줌인·번쩍·흔들림을 넣는다. 끄기: MEOW_FX=0(예전 그대로).
+SFX_DIR = os.path.join(HERE, "sfx")
+FX_MUSIC_VOL = 0.5                 # 효과음이 있으면 음악을 반쯤 줄인다(효과음이 묻히지 않게 — 11/19 효과판)
+SHOT_CAP_MAX = 24                  # 컷 자막(펀치라인) 글자 수
+SHOT_CAP_COLOR = "0xFFE14D"        # 컷 자막은 노란색 · 조금 크게(첫 자막과 구분)
+HIT_ZOOM, HIT_ZOOM_SEC = 0.15, 0.5     # hit: 그 순간 1.15배로 확 당겼다가 0.5초에 걸쳐 돌아온다
+HIT_SHAKE_SEC, HIT_SHAKE_PX = 0.3, 18  # 흔들림(가로 18px · 세로 12px)
+HIT_FLASH_SEC = 0.08                   # 흰 번쩍
 # 그림 프롬프트에 들어가면 안 되는 것 — 글자(깨진 글자가 나온다)·실존 인물·상표·게임 캐릭터
 BANNED = re.compile(r"\b(text|letters|logo|sign|caption|subtitle|phone|smartphone|minecraft|mario|pokemon|pikachu|"
                     r"fortnite|roblox|sonic|zelda|disney|marvel|starbucks|mcdonald|nike|taylor swift|elon)\b", re.I)
@@ -135,6 +144,69 @@ def wrap(text: str, width: int = 20) -> list[str]:
     return lines
 
 
+def sfx_lib() -> dict:
+    return load(os.path.join(SFX_DIR, "sfx.json"))
+
+
+def fx_on(c: dict) -> bool:
+    """이 편에 효과가 있나(효과음·hit·컷 자막·배경 소리 중 하나라도) — MEOW_FX=0 이면 늘 아니다(예전 조립 그대로)."""
+    if os.environ.get("MEOW_FX", "1") == "0":
+        return False
+    return bool(c.get("ambience")) or any(s.get("sfx") or s.get("hit") or s.get("caption") for s in c.get("shots") or [])
+
+
+def beat_shots(c: dict) -> list[int]:
+    """순간(beat)을 찾아야 하는 컷(1부터) — 효과음이나 hit 가 있는 컷."""
+    return [i for i, s in enumerate(c.get("shots") or [], 1) if s.get("sfx") or s.get("hit")]
+
+
+def sfx_files(c: dict) -> set[str]:
+    lib = sfx_lib()
+    out = {lib["sounds"][n]["file"] for s in c.get("shots") or [] for n in s.get("sfx") or [] if n in lib["sounds"]}
+    if c.get("ambience") in lib["ambience"]:
+        out.add(lib["ambience"][c["ambience"]]["file"])
+    return out
+
+
+def sfx_credit(c: dict, short: bool = False) -> str:
+    """CC BY 효과음을 썼으면 표기 한 줄(CC0 은 표기 의무 없음) · 안 썼으면 빈 글."""
+    if not fx_on(c):
+        return ""
+    src = sfx_lib()["sources"]
+    by = sorted({(v["title"], v["author"], v["license"]) for f, v in src.items() if f in sfx_files(c) and v["license"] != "CC0"})
+    if short:
+        return " · ".join(f"🔊 {a} · {lic}" for _, a, lic in by)
+    return " · ".join(f'Sound: "{t}" {a} (opengameart.org). Licensed under Creative Commons: By Attribution 4.0 License '
+                      f"http://creativecommons.org/licenses/by/4.0/" if lic == "CC BY 4.0" else f'Sound: "{t}" {a}. {lic}'
+                      for t, a, lic in by)
+
+
+def check_fx(c: dict) -> list[str]:
+    errs, cid, lib, hits = [], c.get("id", "?"), sfx_lib(), 0
+    for i, s in enumerate(c["shots"]):
+        fx = s.get("sfx") or []
+        if not isinstance(fx, list) or len(fx) > 2:
+            errs.append(f"{cid} 컷{i + 1}: sfx 는 0~2개 목록")
+            fx = []
+        for n in fx:
+            if n not in lib["sounds"]:
+                errs.append(f"{cid} 컷{i + 1}: 모르는 sfx '{n}'({'/'.join(lib['sounds'])})")
+        if (fx or s.get("hit")) and not str(s.get("beat") or "").strip():
+            errs.append(f"{cid} 컷{i + 1}: sfx·hit 가 있으면 beat(그 순간 설명)가 있어야 한다")
+        hits += bool(s.get("hit"))
+        if s.get("caption") is not None:
+            t = screen_text(str(s["caption"]))
+            if i == 0:
+                errs.append(f"{cid} 컷1: 첫 컷 자막은 편의 caption — 컷 caption 은 둘째 컷부터")
+            elif not t or len(t) > SHOT_CAP_MAX or len(wrap(t)) > 2:
+                errs.append(f"{cid} 컷{i + 1}: 컷 caption 은 1~{SHOT_CAP_MAX}자(이모지 빼고)")
+    if hits > 1:
+        errs.append(f"{cid}: hit 는 한 컷만")
+    if c.get("ambience") and c["ambience"] not in lib["ambience"]:
+        errs.append(f"{cid}: 모르는 ambience '{c['ambience']}'({'/'.join(lib['ambience'])})")
+    return errs
+
+
 def check_concept(c: dict) -> list[str]:
     errs, cid = [], c.get("id", "?")
     for k in ("id", "slug", "format", "track", "seed", "caption", "title", "en_line", "ko_line", "shots"):
@@ -171,7 +243,7 @@ def check_concept(c: dict) -> list[str]:
             errs.append(f"{cid} 컷{i + 1}: xfade 는 둘째 컷부터 0.1~0.8초")
         if s.get("sec") and float(s["sec"]) > eng(c)["src"]:
             errs.append(f"{cid} 컷{i + 1}: sec {s['sec']} > 클립 {eng(c)['src']}초")
-    return errs
+    return errs + check_fx(c)
 
 
 def check(doc: dict) -> list[str]:
@@ -418,8 +490,10 @@ def gen(c: dict) -> list[str]:
 def plan(c: dict) -> list[dict]:
     """컷마다 쓸 길이·앞 컷과 겹칠 길이·영상 안 시작 시각."""
     e, rows, t = eng(c), [], 0.0
+    on = fx_on(c)
     for i, s in enumerate(c["shots"]):
-        x = float(s.get("xfade") or 0) if i else 0.0
+        # ★11/19 hit 컷은 겹치지 않고 바로 자른다 — 겹치는 동안 번쩍·줌이 오면 두 화면이 뒤섞여 흐려진다(견본 실측)
+        x = float(s.get("xfade") or 0) if i and not (on and s.get("hit")) else 0.0
         dur = round(float(s.get("sec") or e["src"]) * e["slow"], 3)
         start = t - x
         rows.append({"dur": dur, "xfade": x, "start": round(start, 3)})
@@ -457,16 +531,86 @@ def tease_at(first_clip: str, last_clip: str, src: float, slow: float, fps: int 
     return round(min(k / fps, max(src - span, 0.0)), 3)
 
 
-def filtergraph(c: dict, n_inputs: int, tease_start: float | None = None) -> str:
-    """tease_start 가 있으면 입력 len(shots) 번 = 마지막 컷 클립 한 번 더(결말 미리 보기) · 음악은 늘 맨 끝 입력."""
+def motion_peak(clip: str, src: float, fps: int = 16) -> float:
+    """클립에서 화면이 가장 크게 바뀌는 순간(초) — 순간 찾기(비전)가 없을 때 대신 쓴다. 앞 0.2초는 뺀다."""
+    fr = _gray(clip, src, fps)
+    d = [sum(abs(a - b) for a, b in zip(fr[k], fr[k - 1])) / len(fr[k]) for k in range(1, len(fr))]
+    if not d:
+        return 0.0
+    sm = [sum(d[max(0, k - 1):k + 2]) / len(d[max(0, k - 1):k + 2]) for k in range(len(d))]
+    lo = min(len(sm) - 1, int(0.2 * fps))
+    k = max(range(lo, len(sm)), key=sm.__getitem__)
+    return round((k + 1) / fps, 3)
+
+
+def beat_times(c: dict, clips: list[str], beats: dict | None = None) -> dict[int, float]:
+    """컷(1부터) → 클립 안 순간(초). beats(비전이 찾은 것 · {"1": 초})가 없으면 움직임이 가장 큰 순간."""
+    e, out = eng(c), {}
+    for i in beat_shots(c):
+        src = float(c["shots"][i - 1].get("sec") or e["src"])
+        t = (beats or {}).get(str(i))
+        if t is None:
+            try:
+                t = motion_peak(clips[i - 1], src)
+            except (subprocess.CalledProcessError, OSError, IndexError):
+                t = src / 2
+        out[i] = round(min(max(float(t), 0.0), max(src - 0.05, 0.0)), 3)
+    return out
+
+
+def fx_events(c: dict, bt: dict[int, float], t0: float = 0.0) -> list[tuple[str, float, float]]:
+    """효과음 (파일, 영상 안 시각, 크기) — 컷 순간에서 lead 만큼 먼저(휙은 동작 직전에) · 배경 소리는 0초부터."""
+    lib, p, slow, ev = sfx_lib(), plan(c), eng(c)["slow"], []
+    if c.get("ambience") in lib["ambience"]:
+        a = lib["ambience"][c["ambience"]]
+        ev.append((a["file"], 0.0, float(a["vol"])))
+    for i, s in enumerate(c["shots"], 1):
+        for n in s.get("sfx") or []:
+            x = lib["sounds"][n]
+            at = t0 + p[i - 1]["start"] + bt.get(i, 0.0) * slow - float(x.get("lead", 0))
+            ev.append((x["file"], round(max(at, 0.0), 3), float(x["vol"])))
+    return ev
+
+
+def _hit(t: float) -> str:
+    """hit 컷(1080×1920 이 된 뒤)에 붙이는 줌인·흔들림·번쩍 — t = 컷 안 시각(초). 흔들리는 동안엔 늘 1.06배 넘게 당겨져 있어
+    가장자리가 비지 않는다(흔들림 0.3초 < 줌 0.5초)."""
+    z = f"(1+{HIT_ZOOM}*if(between(t\\,{t}\\,{round(t + HIT_ZOOM_SEC, 3)})\\,1-(t-{t})/{HIT_ZOOM_SEC}\\,0))"
+    sh = f"between(t\\,{t}\\,{round(t + HIT_SHAKE_SEC, 3)})"
+    return (f"scale=w='{W}*{z}':h=-2:eval=frame,"
+            f"crop={W}:{H}:x='(in_w-{W})/2+if({sh}\\,{HIT_SHAKE_PX}*sin(t*90)\\,0)':"
+            f"y='(in_h-{H})/2+if({sh}\\,{int(HIT_SHAKE_PX * 2 / 3)}*cos(t*110)\\,0)',"
+            f"eq=brightness='if(between(t\\,{t}\\,{round(t + HIT_FLASH_SEC, 3)})\\,0.45\\,0)':eval=frame,")
+
+
+def captions(c: dict, t0: float = 0.0) -> list[dict]:
+    """화면 자막 목록 — 편 caption 은 처음부터, 컷 caption 이 있으면 그 컷 시작부터 바꾼다(노란색 · 조금 크게)."""
+    p, out = plan(c), []
+    rows = [(0.0, c["caption"], False)]
+    if fx_on(c):
+        rows += [(t0 + p[i]["start"], s["caption"], True) for i, s in enumerate(c["shots"]) if i and s.get("caption")]
+    for k, (st, text, beat) in enumerate(rows):
+        end = rows[k + 1][0] if k + 1 < len(rows) else None
+        out.append({"start": round(st, 3), "end": None if end is None else round(end, 3), "lines": wrap(text),
+                    "beat": beat, "key": "cap" if k == 0 else f"cap_s{k}_"})
+    return out
+
+
+def filtergraph(c: dict, n_inputs: int, tease_start: float | None = None, bt: dict[int, float] | None = None,
+                events: list | None = None) -> str:
+    """tease_start 가 있으면 입력 len(shots) 번 = 마지막 컷 클립 한 번 더(결말 미리 보기) · 음악은 그다음 입력
+    (★11/19 효과음 events 가 있으면 음악 뒤에 효과음 입력이 차례로 — 없으면 음악이 맨 끝 입력 그대로)."""
     e, p = eng(c), plan(c)
     slow, fps = e["slow"], e["fps"]
+    on = fx_on(c)
+    hit_i = next((i for i, s in enumerate(c["shots"], 1) if s.get("hit")), None) if on else None
     parts = []
     for i, r in enumerate(p):
         # 세로 클립 → 1080x1920: 높이를 맞춰 키운 뒤 가로를 가운데로 자른다
         src = round(r["dur"] / slow, 3)
+        fx = _hit(round((bt or {}).get(i + 1, 0.0) * slow, 3)) if hit_i == i + 1 else ""
         parts.append(f"[{i}:v]trim=0:{src},setpts=(PTS-STARTPTS)*{slow},fps={fps},"
-                     f"scale=-2:{H}:flags=lanczos,crop={W}:{H},setsar=1,format=yuv420p,settb=1/{fps}[v{i}]")
+                     f"scale=-2:{H}:flags=lanczos,crop={W}:{H},{fx}setsar=1,format=yuv420p,settb=1/{fps}[v{i}]")
     acc = "v0"
     for i in range(1, len(p)):
         r, nxt = p[i], f"a{i}"
@@ -483,14 +627,37 @@ def filtergraph(c: dict, n_inputs: int, tease_start: float | None = None) -> str
                      f"scale=-2:{H}:flags=lanczos,crop={W}:{H},setsar=1,format=yuv420p,settb=1/{fps}[vt]")
         parts.append(f"[vt][{acc}]concat=n=2:v=1:a=0,settb=1/{fps}[vtz]")
         acc, tl = "vtz", round(tl + TEASE, 3)
-    # 자막은 줄마다 drawtext 하나 — 한 번에 그리면 줄이 가운데로 안 모인다
-    n = len(wrap(c["caption"]))
-    dts = [f"drawtext=fontfile=font.ttf:textfile=cap{k}.txt:fontsize={CAP_SIZE}:fontcolor=white:borderw=8:"
-           f"bordercolor=black:x=(w-text_w)/2:y={int(H * 0.10 + k * CAP_SIZE * 1.25)}" for k in range(n)]
+    # 자막은 줄마다 drawtext 하나 — 한 번에 그리면 줄이 가운데로 안 모인다 · ★11/19 컷 자막은 그 컷부터(enable)
+    dts = []
+    for cp in captions(c, TEASE if tease_start is not None else 0.0):
+        size = int(CAP_SIZE * 1.15) if cp["beat"] else CAP_SIZE
+        color = SHOT_CAP_COLOR if cp["beat"] else "white"
+        if cp["end"] is not None and cp["start"] > 0:
+            when = f":enable='between(t\\,{cp['start']}\\,{cp['end']})'"
+        elif cp["end"] is not None:
+            when = f":enable='lt(t\\,{cp['end']})'"
+        elif cp["start"] > 0:
+            when = f":enable='gte(t\\,{cp['start']})'"
+        else:
+            when = ""
+        for k in range(len(cp["lines"])):
+            name = f"{cp['key']}{k}.txt"
+            dts.append(f"drawtext=fontfile=font.ttf:textfile={name}:fontsize={size}:fontcolor={color}:borderw=8:"
+                       f"bordercolor=black:x=(w-text_w)/2:y={int(H * 0.10 + k * size * 1.25)}{when}")
     parts.append(f"[{acc}]" + ",".join(dts) + ",format=yuv420p[vout]")
-    a = n_inputs - 1
-    parts.append(f"[{a}:a]atrim=0:{tl},asetpts=PTS-STARTPTS,afade=t=in:d=0.05,"
-                 f"afade=t=out:st={max(tl - 0.7, 0)}:d=0.7[aout]")
+    ev = events or []
+    a = n_inputs - 1 - len(ev)
+    if not ev:
+        parts.append(f"[{a}:a]atrim=0:{tl},asetpts=PTS-STARTPTS,afade=t=in:d=0.05,"
+                     f"afade=t=out:st={max(tl - 0.7, 0)}:d=0.7[aout]")
+        return ";".join(parts)
+    parts.append(f"[{a}:a]atrim=0:{tl},asetpts=PTS-STARTPTS,volume={FX_MUSIC_VOL},afade=t=in:d=0.05,"
+                 f"afade=t=out:st={max(tl - 0.7, 0)}:d=0.7[m]")
+    for k, (_f, at, vol) in enumerate(ev):
+        parts.append(f"[{a + 1 + k}:a]aformat=sample_rates=44100:channel_layouts=stereo,volume={vol},"
+                     f"adelay={int(round(at * 1000))}:all=1,apad=whole_dur={tl}[x{k}]")
+    parts.append("[m]" + "".join(f"[x{k}]" for k in range(len(ev))) +
+                 f"amix=inputs={len(ev) + 1}:normalize=0:duration=first,alimiter=limit=0.95[aout]")
     return ";".join(parts)
 
 
@@ -520,7 +687,8 @@ def font_path() -> str:
     raise SystemExit("자막 글꼴 없음(MEOW_FONT)")
 
 
-def build(c: dict) -> dict:
+def build(c: dict, beats: dict | None = None) -> dict:
+    """beats = 비전이 찾은 컷 순간({"1": 초} · qa_api.find_beats) — 없으면 움직임이 가장 큰 순간."""
     d = os.path.join(WORK, stem(c))
     clips = [clip_path(c, i) for i in range(1, len(c["shots"]) + 1)]
     miss = [p for p in clips if not os.path.exists(p)]
@@ -528,9 +696,10 @@ def build(c: dict) -> dict:
         raise SystemExit(f"{stem(c)}: 클립 없음 {len(miss)}개 — gen 먼저")
     os.makedirs(OUT, exist_ok=True)
     shutil.copyfile(font_path(), os.path.join(d, "font.ttf"))
-    for k, line in enumerate(wrap(c["caption"])):
-        with open(os.path.join(d, f"cap{k}.txt"), "w", encoding="utf-8", newline="\n") as f:
-            f.write(line)
+    for cp in captions(c):
+        for k, line in enumerate(cp["lines"]):
+            with open(os.path.join(d, f"{cp['key']}{k}.txt"), "w", encoding="utf-8", newline="\n") as f:
+                f.write(line)
     t = tracks()[c["track"]]
     fps = eng(c)["fps"]
     video = os.path.abspath(os.path.join(OUT, f"{stem(c)}.mp4"))
@@ -547,7 +716,14 @@ def build(c: dict) -> dict:
     if ts is not None:
         cmd += ["-i", os.path.abspath(clips[-1])]
     cmd += ["-ss", str(t.get("start", 0)), "-i", os.path.join(MUSIC, c["track"])]
-    cmd += ["-filter_complex", filtergraph(c, len(clips) + (ts is not None) + 1, ts), "-map", "[vout]", "-map", "[aout]",
+    bt, ev = {}, []
+    if fx_on(c):
+        bt = beat_times(c, clips, beats)
+        ev = fx_events(c, bt, TEASE if ts is not None else 0.0)
+        for f_, _at, _v in ev:
+            cmd += ["-i", os.path.join(SFX_DIR, f_)]
+    n_in = len(clips) + (ts is not None) + 1 + len(ev)
+    cmd += ["-filter_complex", filtergraph(c, n_in, ts, bt, ev), "-map", "[vout]", "-map", "[aout]",
             "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-profile:v", "high", "-pix_fmt", "yuv420p", "-r", str(fps),
             "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", video]
     subprocess.run(cmd, check=True, cwd=d)
@@ -561,7 +737,9 @@ def build(c: dict) -> dict:
     subprocess.run([ffmpeg(), "-v", "error", "-y", "-i", video, "-vf",
                     f"fps=2,scale=270:-1,tile={int(tl * 2) + 1}x1", "-frames:v", "1", sheet], check=True)
     meta = {"id": c["id"], "slug": c["slug"], "stem": stem(c), "video": video, "cover": cover, "sheet": sheet,
-            "sec": tl, "track": c["track"], "credit": credit(c["track"]), "engine": engine(c), "tease": ts}
+            "sec": tl, "track": c["track"], "credit": credit(c["track"]), "engine": engine(c), "tease": ts,
+            "fx": {"beats": {str(k): v for k, v in bt.items()}, "sounds": [[f_, at] for f_, at, _v in ev],
+                   "beat_src": "vision" if beats else "motion", "sfx_credit": sfx_credit(c)} if fx_on(c) else None}
     with open(video.replace(".mp4", "_meta.json"), "w", encoding="utf-8") as f:
         json.dump(meta, f, ensure_ascii=False, indent=1)
     return meta
