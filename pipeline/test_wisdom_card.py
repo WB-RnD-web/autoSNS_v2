@@ -38,8 +38,18 @@ DAYS = [D(2026, 11, 17) + dt.timedelta(days=k) for k in range(14)]
 
 print("── 편성(날짜 그대로 · 2주 14편)")
 dates = [W._d(e["date"]) for e in W.EPISODES]
-ck("14편 · 11/17~11/30 하루 한 편 · 날짜 겹침 없음", dates == DAYS, dates)
-ck("first_day·last_day·JUDGE(11/30 뒤 · 12/02)", W.first_day() == DAYS[0] and W.last_day() == DAYS[-1] and W.JUDGE == D(2026, 12, 2))
+SPECIAL = {"2026-12-22": "동지", "2026-12-24": "연말", "2026-12-31": "송년", "2027-01-01": "새해", "2027-02-06": "설 연휴",
+           "2027-02-07": "설날"}
+ck("시험 14편 · 11/17~11/30 하루 한 편 · TRIAL 은 이 14편(판정은 이것만)", dates[:14] == DAYS
+   and [W._d(e["date"]) for e in W.TRIAL] == DAYS, dates)
+ck("★11/19 특별한 날 6편: 동지(12/22 KST)·연말 모임(12/24)·송년(12/31)·새해(1/1)·설 연휴(2/6)·설날(2027-02-07 KST)",
+   {e["date"]: e.get("special") for e in W.EPISODES if e.get("special")} == SPECIAL and len(W.EPISODES) == 20)
+ck("날짜 겹침 없음 · 날짜 순서대로", len(set(dates)) == len(dates) and dates == sorted(dates))
+ck("first_day·last_day·JUDGE(시험 끝 11/30 뒤 · 12/02)", W.first_day() == DAYS[0] and W.last_day() == D(2027, 2, 7)
+   and W.JUDGE == D(2026, 12, 2))
+ck("특별한 날 사이의 날·설 뒤는 편성일이 아니다(12/23 · 2/8)", not W.is_post_day(D(2026, 12, 23)) and not W.is_post_day(D(2027, 2, 8)))
+ck("특별한 날에 종교 말 없음(성탄 대신 연말 가족 모임)", not any(w in " ".join(str(x) for e in W.EPISODES for x in e["items"])
+                                              for w in ("성탄", "크리스마스", "교회", "성당", "부처님", "하나님")))
 ck("그 밖의 날은 편성일이 아니다(11/16 · 12/01)", not W.is_post_day(D(2026, 11, 16)) and not W.is_post_day(D(2026, 12, 1)))
 ck("id 겹침 없음", len({e["id"] for e in W.EPISODES}) == len(W.EPISODES))
 ck("수능 응원 편은 수능(11/19) 전날 17:40 — 시험 끝난 뒤에 나가지 않는다",
@@ -68,14 +78,15 @@ ck("배경 그림: 사람·글자 없음 꼬리 · 사진 아님", all(W.storybo
                                          and "no people" in e["hook"] and "photo" not in e["hook"] for e in W.EPISODES))
 
 print("── 스토리보드(CI 에서 LLM 안 씀)")
-sbs = {d: W.storyboard(d) for d in DAYS}
+ALL = [W._d(e["date"]) for e in W.EPISODES]
+sbs = {d: W.storyboard(d) for d in ALL}
 sb = sbs[DAYS[0]]
 ck("토픽 wisdom · 장면 하나(wisdom) · 다섯 줄 · 10초 이상 머문다 · 공개",
    sb["topic"] == "wisdom" and [s["type"] for s in sb["scenes"]] == ["wisdom"] and len(sb["scenes"][0]["items"]) == 5
    and sb["_min_total"] >= 10 and sb["privacy"] == "public")
 ck("제목: '| 말년 지혜' 가 늘 들어간다 · 95자 안 · 날짜 없음(오래 검색되게) · 편마다 다르다",
    all("| 말년 지혜" in W.title(e) and len(W.title(e) + " #shorts") <= 100 and not re.search(r"\d+월 \d+일", W.title(e))
-       for e in W.EPISODES) and len({W.title(e) for e in W.EPISODES}) == 14, [W.title(e) for e in W.EPISODES])
+       for e in W.EPISODES) and len({W.title(e) for e in W.EPISODES}) == len(W.EPISODES), [W.title(e) for e in W.EPISODES])
 ck("설명란: 다섯 줄 전부 '번호. 큰 글자 — 왜' · 댓글 부탁 · 고지 · 공통 태그",
    all(all(f"{k}. " in W.description(e) and it[2] in W.description(e) for k, it in enumerate(e["items"], 1))
        and "댓글로 번호" in W.description(e) and "집집마다" in W.description(e) and "#말년지혜" in W.description(e)
@@ -85,7 +96,7 @@ ck("말(내레이션): 제목 + '다섯 가지예요' + 댓글 부탁 · 짧다(
    [len(W.narration(e)) for e in W.EPISODES])
 dont = [e for e in W.EPISODES if e["tone"] == "dont"]
 ck("'아끼면 좋은 말'·'새는 습관' 편은 번호 색이 다르다(tone dont → 붉은 흙빛)",
-   {e["id"] for e in dont} == {"money_leak", "children_dont"} and all(sbs[W._d(e["date"])]["accent"] == W.DONT for e in dont)
+   {e["id"] for e in dont} == {"money_leak", "children_dont", "seollal_dont"} and all(sbs[W._d(e["date"])]["accent"] == W.DONT for e in dont)
    and all(sbs[W._d(e["date"])]["accent"] == W.ACCENT for e in W.EPISODES if e["tone"] == "do"))
 m = W.meta(sb)
 ck("meta: 제목·설명·태그(뉴스 기본 태그 아님)", m["title"] == W.title(W.EPISODES[0]) and m["description"] == W.description(W.EPISODES[0])
@@ -93,7 +104,7 @@ ck("meta: 제목·설명·태그(뉴스 기본 태그 아님)", m["title"] == W.
 
 print("── 화면(wisdom)")
 ok, info = True, []
-for d in DAYS:
+for d in ALL:
     sc = dict(sbs[d]["scenes"][0], start=0.0, clip=W.MIN_TOTAL)
     lay = M.wisdom_layout(sc["items"], sc["title"], sc["title2"])
     html = M.build_html([sc], W.MIN_TOTAL, sbs[d]["accent"], bg=True)
@@ -108,7 +119,9 @@ for d in DAYS:
     ok &= (len(boxes) == 5 and right <= 960 and bottom <= 1420 and fits and tfit and lay["fb"] >= 56 and lay["fs"] >= 32
            and lay["f2"] >= 64 and tb <= M.WIS_TOP - 8)
     info.append((d.isoformat(), right, bottom, lay["fb"], lay["fs"], lay["f1"], lay["f2"], round(tb)))
-ck("다섯 칸이 오른쪽 버튼 열(x 960)·아래 쇼츠 제목 자리(y 1420) 안 · 글자가 칸 안 · 큰 글자 56px 이상 · 제목 칸이 첫 칸 위(14편)", ok, info)
+ck("다섯 칸이 오른쪽 버튼 열(x 960)·아래 쇼츠 제목 자리(y 1420) 안 · 글자가 칸 안 · 큰 글자 56px 이상 · 제목 칸이 첫 칸 위(20편)", ok, info)
+ck("특별한 날은 알약에 그날 이름 · 시험 편은 기본 알약", sbs[D(2026, 12, 22)]["scenes"][0]["pill"] == "동지 · 말년 지혜"
+   and sbs[DAYS[0]]["scenes"][0]["pill"] == W.PILL)
 sc = dict(sb["scenes"][0], start=0.0, clip=W.MIN_TOTAL)
 html = M.build_html([sc], W.MIN_TOTAL, sb["accent"], bg=False)
 ck("제목 두 줄 · 번호 1~5 · 한지 바탕 · 발밑 고지 · 순위·점수·띠 없음",

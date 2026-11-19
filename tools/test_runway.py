@@ -72,8 +72,9 @@ ck("주간 롱폼: STOP_FROM 앞 주 월요일의 전날(10/25 일) · 일부러
    and by["wb_weekly_lf"]["ended"] and W.publish_at(D(10, 26), now=dt.datetime(2026, 10, 1, tzinfo=RW.KST)).startswith("2026-10-24T23:00"))
 import wisdom_card as WI  # noqa: E402
 wi = by["wb_wisdom"]
-ck("말년 지혜 표(2주 시험): 시험 · 마지막 = wisdom_card.last_day()(11/30) · 남은 편 14(10/25 기준) · 판정 12/02",
-   wi["limit"] == "trial" and wi["last"] == WI.last_day() == D(11, 30) and wi["left"] == 14 and wi["judge"] == D(12, 2)
+ck("말년 지혜 표(2주 시험 + 특별한 날): 시험 · 마지막 = wisdom_card.last_day()(설날 2027-02-07) · 남은 편 = 전부(10/25 기준) · 판정 12/02",
+   wi["limit"] == "trial" and wi["last"] == WI.last_day() == D(2, 7, 2027) and wi["left"] == len(WI.EPISODES) == 20
+   and wi["judge"] == D(12, 2)
    and not wi["ended"] and "EPISODES" in wi["refill"], wi)
 ck("신년운세 1차 묶음: newyear_card.last_day() · 끝(대체)", by["wb_newyear_card"]["last"] == NC.last_day() and by["wb_newyear_card"]["ended"])
 sc = R.shorts()

@@ -20,6 +20,7 @@
 
 편성: EPISODES 의 date 그대로(하루 한 편). 그 밖의 날 make 는 아무것도 안 쓴다(종료 코드 0 = 건너뜀).
   ★이어 가려면(판정이 '계속'일 때만) EPISODES 끝에 date 를 단 편을 붙인다 — 앞 편 날짜는 안 바뀐다.
+  ★11/19 특별한 날(special — 동지·연말·송년·새해·설 연휴·설날)은 시험과 따로 그날에만 나간다. 판정은 TRIAL(14편)만 본다.
 
     python pipeline/wisdom_card.py show [--date 2026-11-17]
     python pipeline/wisdom_card.py make [--date …] --out <path>
@@ -199,7 +200,72 @@ EPISODES = [
          ("화목한 형제 사이", "무엇보다 큰 유산이에요", "형제가 사이좋게 지내도록 다독여 주는 것이 가장 큰 유산이에요."),
          ("고맙다는 편지 한 통", "오래 꺼내 읽는 선물", "고마웠다는 편지 한 통은 자식이 두고두고 꺼내 읽어요."),
      ]},
+    # ★2026-11-19 특별한 날 달력(사용자 "수능날 같은 특별한 날에 위로·공감되는 것") — 시험(11/17~11/30)과 따로, 그날에만 17:40.
+    #   special = 화면 알약에 쓰는 그날 이름. 동지 = 2026-12-22(KST 로 12/22 05:50 — 12/21 20:50 UTC) ·
+    #   설날 = 2027-02-07(그믐 합삭이 2/6 15:56 UTC = 2/7 00:56 KST — 중국은 2/6) · 연휴 2/6~2/9.
+    #   종교 말은 넣지 않는다(성탄 대신 '연말 가족 모임'). 판정(12/2)이 '접는다'여도 이 날들은 따로 정한다(빼려면 여기서 지운다).
+    {"id": "dongji_porridge", "date": "2026-12-22", "special": "동지", "l1": "동짓날", "l2": "팥죽 나누며 하는 말", "tone": "do",
+     "tags": ["#동지", "#동지팥죽", "#겨울나기"],
+     "hook": "a steaming bowl of red bean porridge with small rice cake balls on a low wooden table in a warm hanok room, winter evening light, no people",
+     "items": [
+         ("\"한 그릇 같이 들자\"", "팥죽은 나눌수록 따뜻해요", "동지 팥죽은 이웃과 나눠 먹던 음식이라, 같이 먹자는 말에 정이 담겨요."),
+         ("\"긴 밤 잘 보내요\"", "가장 긴 밤에 건네는 안부", "일 년 중 밤이 가장 긴 날이라, 잘 보내라는 안부 한마디가 따뜻하게 들려요."),
+         ("\"이제 해가 길어진대\"", "내일부터 낮이 길어져요", "동지가 지나면 낮이 조금씩 길어져요. 좋은 날이 온다는 말로 들려 마음이 밝아져요."),
+         ("\"새알심 나이만큼 먹어\"", "웃음 나는 옛말 한마디", "새알심을 나이만큼 먹는다는 옛말은 식구들을 한바탕 웃게 하는 이야기예요."),
+         ("\"올해도 고생 많았어\"", "한 해 끝자락의 인사", "동지는 한 해 끝자락이라, 올 한 해 수고했다는 말이 잘 어울려요."),
+     ]},
+    {"id": "yearend_family", "date": "2026-12-24", "special": "연말", "l1": "연말 가족 모임에서", "l2": "듣고 싶은 말", "tone": "do",
+     "tags": ["#연말모임", "#가족모임", "#연말인사"],
+     "hook": "a cozy Korean living room with warm string lights and a small pine branch, a low table set with fruit and tea, winter evening, no people",
+     "items": [
+         ("\"와 줘서 반갑다\"", "모인 것만으로 고마워요", "바쁜 연말에 모인 것만으로도 고맙다는 말이 모임을 따뜻하게 열어요."),
+         ("\"올해 제일 좋았던 일은?\"", "좋은 이야기부터 꺼내요", "좋았던 일부터 물으면 식탁에 웃음이 먼저 돌아요."),
+         ("\"다들 별일 없어 다행이다\"", "무탈함에 감사해요", "별일 없이 한 해를 보낸 것만으로도 감사하다는 말이 서로를 다독여요."),
+         ("\"내년엔 더 자주 보자\"", "다음 만남을 약속해요", "헤어질 때 다음을 약속하면 모임이 아쉬움 대신 기대로 끝나요."),
+         ("\"사진 한 장 찍자\"", "오늘을 남겨요", "다 같이 찍은 사진 한 장이 오래도록 꺼내 보는 추억이 돼요."),
+     ]},
+    {"id": "yearend_self", "date": "2026-12-31", "special": "송년", "l1": "한 해를 보내며", "l2": "나에게 건네는 말", "tone": "do",
+     "tags": ["#송년", "#한해마무리", "#나에게하는말"],
+     "hook": "a quiet window view of a snowy Korean village at dusk on the last day of the year, a cup of tea on the sill, calm reflective mood, no people",
+     "items": [
+         ("\"올해도 잘 버텼다\"", "버틴 것도 장한 일이에요", "한 해를 무사히 지나온 것만으로도 스스로를 칭찬할 만해요."),
+         ("\"고마운 사람이 많았네\"", "고마운 얼굴 떠올리기", "고마웠던 사람을 하나씩 떠올리면 한 해가 넉넉하게 느껴져요."),
+         ("\"아쉬운 건 내려놓자\"", "새해엔 가볍게 시작해요", "아쉬운 일을 한 해 끝에 내려놓으면 새해를 가벼운 마음으로 맞을 수 있어요."),
+         ("\"그래도 웃은 날이 많았지\"", "좋았던 날을 세어 봐요", "힘든 날보다 웃은 날을 세어 보면 한 해가 다르게 보여요."),
+         ("\"내년에도 천천히 가자\"", "서두르지 않아도 돼요", "새해 목표보다 천천히 가자는 다짐이 마음을 편하게 해요."),
+     ]},
+    {"id": "newyear_blessing", "date": "2027-01-01", "special": "새해", "l1": "새해 첫날", "l2": "자식·손주에게 건네는 덕담", "tone": "do",
+     "tags": ["#새해덕담", "#새해인사", "#덕담"],
+     "hook": "the first sunrise of the new year over a calm sea with a small traditional Korean pavilion on a hill, warm golden light, hopeful mood, no people",
+     "items": [
+         ("\"올해도 네 편이야\"", "든든한 응원 한마디", "새해 첫날 들은 응원 한마디는 일 년 내내 힘이 돼요."),
+         ("\"밥 잘 챙겨 먹어라\"", "가장 오래된 사랑 표현", "밥 챙기라는 당부는 어른이 건넬 수 있는 가장 따뜻한 걱정이에요."),
+         ("\"하고 싶은 거 해 봐라\"", "도전을 믿어 줘요", "하고 싶은 일을 해 보라는 말은 자식·손주가 오래 기억하는 덕담이에요."),
+         ("\"자주 웃으며 살자\"", "웃음이 복을 불러요", "새해 첫 덕담으로 웃자는 말이 가장 부담 없이 따뜻해요."),
+         ("\"너희가 있어 행복하다\"", "마음을 그대로 전해요", "쑥스러워도 새해 첫날만큼은 마음을 그대로 말해 주면 좋아요."),
+     ]},
+    {"id": "seollal_dont", "date": "2027-02-06", "special": "설 연휴", "l1": "설에 모인 가족에게", "l2": "아끼면 좋은 말", "tone": "dont",
+     "tags": ["#설날", "#명절잔소리", "#가족모임"],
+     "hook": "a warm Korean family home during Lunar New Year with a low table of traditional dishes and rice cake soup, soft afternoon light, no people",
+     "items": [
+         ("\"취직은 했니\"", "물어보지 않아도 돼요", "일자리 이야기는 묻지 않아도 자식이 먼저 꺼낼 때가 와요."),
+         ("\"살 좀 빼야겠다\"", "생김새 말은 아껴요", "명절에 들은 몸매 이야기는 오래 마음에 남아요."),
+         ("\"누구네는 집 샀다더라\"", "견주는 말은 아껴요", "남의 집 소식과 견주는 말은 반가운 자리를 금세 식혀요."),
+         ("\"용돈은 얼마 줄 거니\"", "돈 이야기는 조용히", "명절 용돈 이야기는 서로 부담이 되니 조용히 넘기는 게 좋아요."),
+         ("\"너는 늘 그 모양이냐\"", "탓은 내려놓아요", "지난 일을 꺼내 탓하면 명절이 다툼으로 끝나기 쉬워요."),
+     ]},
+    {"id": "seollal_blessing", "date": "2027-02-07", "special": "설날", "l1": "설날 세배 받을 때", "l2": "건네면 좋은 덕담", "tone": "do",
+     "tags": ["#세배", "#설날덕담", "#설날인사"],
+     "hook": "a bright Korean hanok room on Lunar New Year morning with a folding screen and a low table with fruit and rice cakes, warm light, no people",
+     "items": [
+         ("\"쑥쑥 씩씩하게 크거라\"", "아이에게는 이 한마디", "아이에게는 공부 얘기보다 씩씩하게 크라는 덕담이 더 기억에 남아요."),
+         ("\"하는 일 술술 풀려라\"", "일하는 자식에게", "일하는 자식에게는 잘 풀리라는 응원이 가장 반가운 덕담이에요."),
+         ("\"둘이 서로 아껴라\"", "부부가 된 자식에게", "부부가 된 자식에게는 서로 아끼라는 말이 오래 남는 덕담이에요."),
+         ("\"새해 복 많이 받아라\"", "모두에게 건네는 첫마디", "세배를 받으며 건네는 첫마디는 역시 복 많이 받으라는 말이에요."),
+         ("\"얼굴 보니 좋구나\"", "만난 기쁨부터 말해요", "덕담보다 먼저, 얼굴 보니 좋다는 말이 세배 자리를 따뜻하게 해요."),
+     ]},
 ]
+TRIAL = [e for e in EPISODES if not e.get("special")]      # 2주 시험 14편(11/17~11/30) — 판정은 이것만 본다
 
 
 def _d(s: str) -> dt.date:
@@ -257,7 +323,8 @@ def description(ep: dict) -> str:
 
 
 def scene(ep: dict) -> dict:
-    return {"type": "wisdom", "pill": PILL, "title": ep["l1"], "title2": ep["l2"], "tone": ep.get("tone", "do"),
+    pill = f"{ep['special']} · {MARK}" if ep.get("special") else PILL     # 특별한 날은 알약에 그날 이름
+    return {"type": "wisdom", "pill": pill, "title": ep["l1"], "title2": ep["l2"], "tone": ep.get("tone", "do"),
             "items": [{"big": big, "small": small} for big, small, _why in ep["items"]],
             "foot": FOOT, "brand": BRAND, "narration": narration(ep)}
 
