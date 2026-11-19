@@ -95,10 +95,21 @@ def eng(c: dict) -> dict:
     return ENGINES[engine(c)]
 
 
+# ★11/19 자막 글꼴(Pretendard)에 이모지가 없어 'The big tree just lit up 🎄' 의 🎄 가 네모(□)로 그려졌다.
+#   화면 자막에서만 그림 글자를 뺀다(유튜브 제목·설명의 이모지는 그대로 — 거기선 제대로 보인다).
+EMOJI = re.compile("[\U0001F000-\U0001FAFF\u2600-\u27BF\u2B00-\u2BFF\u2300-\u23FF\uFE0E\uFE0F\u200D\u20E3]")
+
+
+def screen_text(text: str) -> str:
+    """화면에 그릴 자막 — 이모지를 빼고 빈칸을 하나로."""
+    return " ".join(EMOJI.sub(" ", text).split())
+
+
 def wrap(text: str, width: int = 20) -> list[str]:
     """자막 줄 나누기. 두 줄이면 길이를 맞춘다 — 앞에서부터 꽉 채우면 'Wait… this bun has / ears' 처럼
-    마지막 한 단어만 넘어간다(11/09 매일판 시험). 두 줄로 안 되면 앞에서부터 채운다(검사가 세 줄을 막는다)."""
-    words = text.split()
+    마지막 한 단어만 넘어간다(11/09 매일판 시험). 두 줄로 안 되면 앞에서부터 채운다(검사가 세 줄을 막는다).
+    이모지는 글꼴에 없어 네모로 나오므로 먼저 뺀다(screen_text)."""
+    words = screen_text(text).split()
     if len(" ".join(words)) <= width:
         return [" ".join(words)] if words else []
     best, score = None, None
