@@ -1,0 +1,59 @@
+{
+ "date": "2026-11-18",
+ "concepts": [
+  {
+   "slug": "wednesday-halfway-cat-tree-ocicat",
+   "track": "fluffing-a-duck.mp3",
+   "caption": "Wednesday: halfway is far enough",
+   "title": "Wednesday Means Halfway There. He Stopped Right There 🐪🐱",
+   "en_line": "Halfway up the week, halfway up the cat tree, and that's plenty.",
+   "ko_line": "수요일엔 딱 절반까지만 올라가는 거야 🐾",
+   "tags": [
+    "cat",
+    "ai cat",
+    "cat meme",
+    "wednesday",
+    "hump day",
+    "ocicat",
+    "cat tree",
+    "funny cat",
+    "relatable"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#수요일",
+    "#직장인공감",
+    "#cat",
+    "#catmeme",
+    "#humpday"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical full-body shot of an athletic Ocicat with a short glossy tawny-gold coat covered in dark chocolate-brown thumbprint spots, dark tabby stripes on its forehead and cheeks, and large bright green-gold eyes. The cat climbs a tall beige carpeted cat tree in a bright cozy living room, gripping the round post with all four paws just below a round middle platform and looking up toward the top platform high above. Soft morning sunlight comes through a window, plain warm cream walls, golden dust specks in the sunbeam. The whole cat is fully in frame and clearly visible, vertical composition.",
+     "motion": "From the very first frame the Ocicat climbs with quick, determined paw steps up the carpeted post and hops neatly onto the round middle platform, then looks up at the top platform high above while its ears flick. Golden dust specks drift in the sunbeam. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same athletic Ocicat with the short tawny-gold coat and dark chocolate-brown thumbprint spots, with the same fur pattern, face and eye color. Now the cat lies flat on its belly across the round middle platform of the same beige carpeted cat tree, completely sprawled and relaxed, both front paws dangling over the edge, chin resting on the platform, eyes half-closed and mouth closed, the empty top platform still high above it, in the same sunny cozy living room. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the sprawled Ocicat slowly blinks, glances up at the top platform for a second, then lowers its chin back onto the platform with a contented look. Its dangling front paws sway gently and the tip of its tail flicks. Its mouth stays closed. Golden dust specks float in the sunbeam. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Today is Wednesday, the middle of the week, so a 'halfway there' joke fits the day. Relatable cat memes are being posted widely in mid-November 2026, including a 'not on the counter' loophole post like ones we've already made.",
+    "pattern": "weekday-mood meme: an eager start (climbing hard) and then the punchline (gives up halfway and naps), with the caption as the meme line",
+    "evidence": [
+     {
+      "title": "26 Fabulous Festive Cat Memes to Welcome the Holiday Season Early (November 16, 2026) - I Can Has Cheezburger?",
+      "url": "https://cheezburger.com/47350021/26-fabulous-festive-cat-memes-to-welcome-the-holiday-season-early-november-16-2026"
+     }
+    ]
+   },
+   "id": "m261118b",
+   "format": "meme",
+   "engine": "14b",
+   "seed": 50329,
+   "tease": false
+  }
+ ]
+}

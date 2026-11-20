@@ -1,0 +1,56 @@
+{
+ "date": "2026-11-16",
+ "concepts": [
+  {
+   "slug": "dried-persimmon-kitten-wakes-up",
+   "track": "fluffing-a-duck.mp3",
+   "caption": "Wait… that persimmon just moved",
+   "title": "Drying Persimmons for Winter… One Woke Up 🧡🐱",
+   "en_line": "We left the persimmons out to dry in the autumn sun, and one of them woke up instead.",
+   "ko_line": "호랑이도 무서워한 곶감, 알고 보니 아기 고양이였어요 🧡",
+   "tags": [
+    "cat",
+    "ai cat",
+    "kitten",
+    "dried persimmon",
+    "persimmon",
+    "autumn",
+    "korean food",
+    "cute kitten",
+    "food kitten",
+    "morph"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#곶감",
+    "#아기고양이",
+    "#늦가을",
+    "#cat",
+    "#kitten",
+    "#aicat"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic cozy close-up of a round flat woven bamboo tray resting on the warm honey-brown wooden floor of a traditional Korean hanok veranda, holding nine round flattened dried persimmons in three neat rows, each deep amber-orange with a soft powdery white frost bloom and a small dark green-brown stem on top. Late autumn afternoon sunlight falls across the tray in a warm golden beam, with softly blurred golden ginkgo trees behind. The persimmon in the center of the front row has two tiny soft amber-orange kitten ears with fluffy pale cream tips peeking up beside its stem, as if a kitten is curled up asleep in its shape. Shallow depth of field, warm cozy tones, vertical composition.",
+     "motion": "From the very first frame the two tiny amber-orange kitten ears on the center persimmon twitch, flick once and swivel toward the sunlight, then twitch again as if hearing something. The other persimmons stay perfectly still on the bamboo tray while golden ginkgo leaves drift down softly outside and tiny dust motes float in the sunbeam. The hidden kitten stays fully in frame in the same spot on the tray, its four normal legs tucked out of sight under the persimmon shape. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same tiny amber-orange persimmon kitten from shot 1 with the same fur pattern, face and eye color, and keep the same bamboo tray, the other eight dried persimmons, the wooden hanok veranda and the golden afternoon sunlight. The persimmon in the center of the front row is now a tiny round curled-up kitten in exactly the same spot and about the same size as the persimmons: short plush deep amber-orange fur with a soft powdery white frost dusting on the tips, the same two little ears with fluffy pale cream tips, a tiny dark green-brown tuft on top of its head like a persimmon stem, big round amber-gold eyes half open as it wakes up, a small pink nose, mouth closed, tiny paws tucked under its chest. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the tiny persimmon kitten blinks its sleepy amber-gold eyes fully open, lifts its little head, stretches both front paws forward on the bamboo tray in a small gentle stretch, then tilts its head and looks up at the camera with its ears twitching, mouth closed. Golden ginkgo leaves keep drifting down outside and dust motes float in the warm sunbeam. The kitten stays fully in frame on the tray with four normal legs, among the other still persimmons. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.6
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Mid-November is when dried persimmons (gotgam) are made in Korea, sun-drying on hanok verandas under golden ginkgo trees, so this cosy late-autumn food is in season. There's also the Korean folk tale about the tiger that was scared of gotgam. My trend searches didn't turn up any cat Shorts from the last 7 to 30 days, so this uses the evergreen food-turns-into-kitten idea.",
+    "pattern": "spot the difference morph: a calm, pretty tray of food where one piece's ears twitch in the first second, then the reveal as that piece wakes up as a tiny kitten whose fur looks like the food",
+    "evidence": []
+   },
+   "id": "m261116",
+   "format": "morph",
+   "engine": "14b",
+   "seed": 82460,
+   "tease": false
+  }
+ ]
+}

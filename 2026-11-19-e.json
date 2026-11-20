@@ -1,0 +1,63 @@
+{
+ "date": "2026-11-19",
+ "concepts": [
+  {
+   "slug": "christmas-lights-box-dance-khao-manee",
+   "track": "hep-cats.mp3",
+   "caption": "She found the lights first",
+   "title": "Opened the Christmas Lights Box. She Opened the Dance Floor 🎄🐱",
+   "en_line": "The decorations came out of storage and so did her best moves.",
+   "ko_line": "트리 장식 꺼내자마자 댄스파티 시작함 🎄",
+   "tags": [
+    "cat",
+    "ai cat",
+    "dancing cat",
+    "cat dance",
+    "christmas cat",
+    "christmas lights",
+    "white cat",
+    "odd eyed cat",
+    "funny cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#크리스마스",
+    "#냥스타그램",
+    "#cat",
+    "#catdance",
+    "#christmascat"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical full-body shot of a slender Khao Manee cat with a short, sleek, pure snow-white coat, a pink nose, pink inner ears and striking odd eyes: the left eye bright sapphire blue and the right eye warm golden amber. The cat stands upright on its hind legs in the middle of a soft cream rug in a cozy living room at evening, mid-dance with both front paws raised at chest height and its body leaning playfully to one side. A strand of glowing warm-white fairy lights hangs loosely over its shoulders like a soft scarf. Beside it on the floor sits a plain open cardboard box spilling more fairy lights and shiny plain red baubles, and behind it stands a bare green Christmas tree with warm golden bokeh lights in the background. The whole cat, from ears to tail, is fully in frame and clearly visible in the center, vertical composition",
+     "motion": "From the very first frame the white odd-eyed cat is already dancing on its hind legs: it steps side to side to the beat, bopping its raised front paws up and down one after the other while its head bobs in rhythm and its tail sways. The fairy lights over its shoulders twinkle softly and the background bokeh lights shimmer. The cat stays fully in frame in the center of the rug with four normal legs, mouth closed. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same slender Khao Manee cat with the same fur pattern, face and eye color (pure snow-white short coat, pink nose, left eye sapphire blue, right eye golden amber), with the same strand of glowing warm-white fairy lights draped loosely over its shoulders. In the same cozy living room on the same cream rug beside the open box of fairy lights and red baubles, the cat now strikes a proud final dance pose: standing tall on its hind legs, both front paws raised high above its head, chin lifted, eyes half-closed with a confident satisfied look, the bare Christmas tree behind it now glowing a little brighter. The whole cat is fully in frame. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the white odd-eyed cat holds its final pose on its hind legs with both front paws up high, giving a little shoulder shimmy to the beat, then a slow proud head tilt and one satisfied blink. The fairy lights on its shoulders and the tree lights twinkle warmly. The cat stays fully in frame in the same spot with four normal legs, mouth closed. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 1,
+   "trend": {
+    "why_now": "AI cat dance videos are a top search this month, with cats dancing upright to a beat from a single photo. Mid-November is also when TikTok says the holiday music season has officially started and people begin decorating for Christmas.",
+    "pattern": "Upright cat already mid-dance in the first frame, with a relatable seasonal moment (unboxing the Christmas lights) and a short 'she found it first' caption. Shot 2 ends on a big confident final pose that's easy to replay.",
+    "evidence": [
+     {
+      "title": "AI Cat Dance: Make Your Cat Do the Viral Memes From 1 Photo",
+      "url": "https://www.atlascloud.ai/blog/tips/ai-cat-dance"
+     },
+     {
+      "title": "TikTok Trends: November 2026",
+      "url": "https://newengen.com/insights/tiktok-trends/"
+     }
+    ]
+   },
+   "id": "m261119e",
+   "format": "dance",
+   "engine": "14b",
+   "seed": 32884,
+   "tease": false
+  }
+ ]
+}

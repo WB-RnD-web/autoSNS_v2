@@ -1,0 +1,58 @@
+{
+ "date": "2026-11-16",
+ "concepts": [
+  {
+   "slug": "technically-not-on-counter-chartreux-bowl",
+   "track": "run-amok.mp3",
+   "caption": "Technically not on the counter",
+   "title": "Rule Was No Cats on the Counter. He Sat in a Bowl 🥣🐱",
+   "en_line": "The rule said no cats on the counter, and it never said a word about the bowl.",
+   "ko_line": "조리대 금지라며? 그릇은 괜찮잖아 🥣",
+   "tags": [
+    "cat",
+    "ai cat",
+    "cat meme",
+    "funny cat",
+    "cat logic",
+    "chartreux",
+    "kitchen cat",
+    "cute cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#냥스타그램",
+    "#집사일상",
+    "#cat",
+    "#catmemes",
+    "#aicat"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic chunky Chartreux cat with a dense woolly solid blue-grey coat, a round face with full cheeks, small rounded ears and big round bright copper-orange eyes, sitting upright on a pale wooden kitchen floor right in front of a white kitchen cabinet, looking up toward the edge of a white marble countertop above it, the whole cat clearly visible, bright minimalist Scandinavian kitchen, soft morning sunlight from the side, vertical composition",
+     "motion": "Right from the first frame the chunky blue-grey Chartreux cat stares up at the marble countertop, tilts its head to one side, twitches its ears forward and wiggles its back hips as if measuring the jump, while its tail swishes slowly side to side on the floor. It stays seated on the floor the whole time, fully in frame with four normal legs. Soft morning sunlight. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same chunky Chartreux cat with the same fur pattern, face and eye color. The cat now sits snugly inside a large round empty wooden mixing bowl resting on top of the white marble kitchen countertop, its round body filling the bowl, front paws resting on the bowl's rim, looking straight ahead with a calm, smug, half-closed-eye expression, the bowl and the whole cat clearly visible, same bright minimalist kitchen with soft morning sunlight. Photorealistic, vertical composition.",
+     "motion": "Right from the first frame the chunky blue-grey Chartreux cat sitting in the wooden bowl gives a slow, smug blink, taps the bowl's rim twice with one front paw, then wiggles a little deeper into the bowl while the tip of its tail flicks over the rim. Its mouth stays closed, and it stays inside the bowl, fully in frame with four normal legs. Soft morning sunlight. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Today's (Nov 16, 2026) roundup of trending cat memes includes a cat 'loophole' joke about what counts as being on the counter. The house-rule-vs-cat-logic meme is very relatable for cat owners and is going around right now.",
+    "pattern": "relatable rule vs. cat logic: beat 1 the cat stares at the forbidden counter, beat 2 the punchline is the same cat sitting smugly on the counter, but in a bowl, so it's 'technically' fine",
+    "evidence": [
+     {
+      "title": "26 Fabulous Festive Cat Memes to Welcome the Holiday Season Early (November 16, 2026) - I Can Has Cheezburger?",
+      "url": "https://cheezburger.com/47350021/26-fabulous-festive-cat-memes-to-welcome-the-holiday-season-early-november-16-2026"
+     }
+    ]
+   },
+   "id": "m261116g",
+   "format": "meme",
+   "engine": "14b",
+   "seed": 27843,
+   "tease": true
+  }
+ ]
+}

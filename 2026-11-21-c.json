@@ -1,0 +1,64 @@
+{
+ "date": "2026-11-21",
+ "concepts": [
+  {
+   "slug": "rice-cooker-song-dance-chinchilla-persian",
+   "track": "funkorama.mp3",
+   "caption": "When the rice cooker plays its song",
+   "title": "The Rice Cooker Played Its Song. She Played Along 🍚🐱",
+   "en_line": "Saturday lunch is ready and so are her dance moves.",
+   "ko_line": "취사 완료 노래 나오자마자 춤추는 냥이 🍚",
+   "tags": [
+    "cat",
+    "ai cat",
+    "dancing cat",
+    "rice cooker",
+    "kitchen cat",
+    "persian cat",
+    "funny cat",
+    "cute cat",
+    "cat dance"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#냥스타그램",
+    "#밥솥",
+    "#cat",
+    "#dancingcat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical composition, eye-level full-body shot of a fluffy silver shaded Chinchilla Persian cat with a long white coat tipped in soft silver, a flat sweet face, a black-lined nose and large bright emerald-green eyes, standing upright on its hind legs on a clean light wooden kitchen counter right next to a smooth plain white rice cooker with a blank rounded lid, a soft wisp of steam rising from the rice cooker vent, front paws raised at chest height mid-dance, cozy warm Korean home kitchen with soft afternoon light and blurred cream cabinets behind, the whole cat clearly visible from ears to tail",
+     "motion": "From the very first frame the fluffy silver Chinchilla Persian cat is already dancing on its hind legs beside the rice cooker: it sways its hips side to side to the beat, bobs its head left and right and bounces both raised front paws up and down in rhythm, its long fur swinging with every move. Soft steam keeps puffing up from the rice cooker vent. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "swish"
+     ],
+     "beat": "the cat bobs its head sharply to one side on the beat"
+    },
+    {
+     "edit": "Keep exactly the same fluffy silver shaded Chinchilla Persian cat with the same fur pattern, face and eye color. Same kitchen counter beside the same plain white rice cooker: the cat now stands tall on its hind legs in a proud final dance pose with both front paws thrown high above its head, chin up and eyes bright, while a big fluffy cloud of white steam bursts up from the rice cooker vent behind it, warm afternoon light. Photorealistic, vertical composition.",
+     "motion": "From the very first frame a big puff of white steam bursts up from the rice cooker vent as the fluffy silver Persian cat throws both front paws high into the air in its final pose, then holds it proudly with a small bounce and a slow happy blink while the steam drifts up and fades. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "whoosh",
+      "meow"
+     ],
+     "beat": "the steam bursts up as the cat throws both front paws high into the air",
+     "hit": true,
+     "caption": "The steam was the drop"
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "It's a cold late-November Saturday and lunch is on. The rice cooker's little 'rice is done' tune is a cosy sound almost every Korean home knows. Our hits this week were dance Shorts where a home sound sets off the dance (kettle whistle, spa towel hat), so this keeps that idea in a new kitchen moment.",
+    "pattern": "a household sound acts as the beat: the cat is already dancing in the first frame, then strikes a final pose on the steam 'drop'",
+    "evidence": []
+   },
+   "id": "m261121c",
+   "format": "dance",
+   "engine": "14b",
+   "seed": 12953,
+   "tease": false
+  }
+ ]
+}

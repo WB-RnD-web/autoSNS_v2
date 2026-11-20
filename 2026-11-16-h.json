@@ -1,0 +1,59 @@
+{
+ "date": "2026-11-16",
+ "concepts": [
+  {
+   "slug": "kettle-whistle-beat-drop-tonkinese",
+   "track": "hep-cats.mp3",
+   "caption": "Kettle whistled. Beat dropped.",
+   "title": "The Kettle Whistled and She Heard a Beat Drop 🫖🐱",
+   "en_line": "Cold Monday morning, warm kitchen, and one cat who treats the kettle like a DJ.",
+   "ko_line": "주전자 삐— 소리에 바로 리듬 타는 냥이 🫖",
+   "tags": [
+    "cat",
+    "ai cat",
+    "dancing cat",
+    "cat dance",
+    "tonkinese cat",
+    "cozy kitchen",
+    "winter morning",
+    "funny cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#춤추는고양이",
+    "#월요일",
+    "#cat",
+    "#catdance",
+    "#aicat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic slim, athletic Tonkinese cat with a short silky warm champagne-beige coat, soft chocolate-brown points on its ears, face mask, paws and tail, and bright aqua-turquoise eyes, standing upright on its hind legs on a warm honey-colored wooden kitchen floor, both front paws raised mid-dance at chest height, cheerful bright expression. Behind it a cozy winter kitchen: a shiny round copper kettle on a small stove puffing a soft cloud of white steam, a frosty window with pale morning light, a few green potted herbs on the windowsill, warm golden lamp light. The whole cat fully in frame and clearly visible, centered, vertical composition",
+     "motion": "From the very first frame the Tonkinese cat is already dancing upright on its hind legs: it bounces to the beat, swaying its hips left and right, waving both front paws up and down in rhythm and bobbing its head with each beat, its tail swinging along. White steam keeps puffing from the copper kettle behind it and drifts upward. The cat stays fully in frame with four normal legs and its mouth closed. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same slim Tonkinese cat with the same fur pattern, face and eye color. Same cozy winter kitchen with the steaming copper kettle and frosty window: the cat now strikes a confident final dance pose standing on its hind legs, one front paw raised high in the air, the other front paw resting on its hip, chest proud, head tilted slightly, eyes half-closed with a satisfied look, a bigger puff of white steam rising from the kettle behind it. The whole cat fully in frame. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the Tonkinese cat holds its final pose on its hind legs and grooves in place: it bobs its head to the beat, gives a little hip sway, lowers its raised front paw slightly and pumps it back up twice, then gives one slow, pleased blink. Steam keeps rising from the copper kettle and drifts across the warm light. The cat stays fully in frame with four normal legs and its mouth closed. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 1,
+   "trend": {
+    "why_now": "Upright dancing AI cats are a live trend in November 2026 (a dancing cat meme and a clapping cat meme), and cold mid-November mornings make a cosy steaming-kettle kitchen a relatable seasonal beat for a Monday.",
+    "pattern": "relatable trigger to instant groove: an everyday sound (kettle) works as the beat drop, the cat is mid-dance from frame one, then finishes with a confident final pose; our own cat and setting, not a copy of any template",
+    "evidence": [
+     {
+      "title": "AI Cat Dance: Make Your Cat Do the Viral Memes From 1 Photo",
+      "url": "https://www.atlascloud.ai/blog/tips/ai-cat-dance"
+     }
+    ]
+   },
+   "id": "m261116h",
+   "format": "dance",
+   "engine": "14b",
+   "seed": 74037,
+   "tease": false
+  }
+ ]
+}

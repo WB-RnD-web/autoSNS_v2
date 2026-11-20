@@ -1,0 +1,62 @@
+{
+ "date": "2026-11-16",
+ "concepts": [
+  {
+   "slug": "injeolmi-rice-cake-kitten-wakes-up",
+   "track": "fluffing-a-duck.mp3",
+   "caption": "Wait… one rice cake just moved",
+   "title": "Sticky Rice Cakes for Exam Luck… One Started Purring 🍡🐱",
+   "en_line": "I picked the fluffiest rice cake for good luck, and it blinked back at me.",
+   "ko_line": "합격 기원 인절미 하나가 눈을 떴어요 🐱",
+   "tags": [
+    "cat",
+    "ai cat",
+    "kitten",
+    "injeolmi",
+    "rice cake",
+    "korean dessert",
+    "food transformation",
+    "cute kitten"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#인절미",
+    "#수능",
+    "#cat",
+    "#kitten",
+    "#aicat"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic cozy close-up of a small round dark walnut-wood tray on a low wooden floor table in a warm Korean home, holding eight soft rectangular injeolmi rice cakes evenly coated in fine golden roasted soybean powder, a small soft pile of loose powder on the tray, a plain pale celadon cup of hot barley tea with gentle steam beside the tray, warm golden afternoon window light, shallow depth of field. On the rice cake in the front center, two tiny soft triangle kitten ears covered in the same golden-beige soybean-powder fur peek up from the top, very subtle. The whole tray clearly in frame, vertical composition.",
+     "motion": "Right from the first frame, the two tiny golden-beige ears on the front center rice cake twitch, then turn to one side and twitch again, and a few specks of soybean powder drift off them. The rice cake keeps its shape and nothing else on the tray moves. Soft steam rises steadily from the barley tea. The tiny kitten ears stay fully in frame on the same rice cake. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same tiny golden-beige soybean-powder kitten from shot 1 with the same fur pattern, face and eye color. Turn the front center rice cake with the two tiny ears into a tiny fluffy kitten curled up in the same spot and at the same size, its short soft fur golden-beige like roasted soybean powder with a fine dusting of powder on top, a pale cream chest, a pale pink nose, big round warm amber eyes just opening sleepily, and tiny paws tucked under its body. Keep the walnut tray, the other seven rice cakes, the barley tea cup with steam and the warm afternoon light exactly the same. Photorealistic, vertical composition.",
+     "motion": "Right from the first frame, the tiny golden-beige kitten blinks its amber eyes open, lifts its head with a small curious head tilt, and stretches both front paws forward across the tray as a light puff of soybean powder drifts off its fur, then tucks its paws back in and blinks slowly. Its mouth stays closed. Steam keeps rising from the barley tea. The kitten stays in the same spot, fully in frame, with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.6
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Korea's college entrance exam season is in mid-November, when families give sticky rice cakes for luck. AI cat Shorts are also big right now: CapCut cat templates have hundreds of thousands of uses, and AI cats doing human things like cooking are spreading as a short-video trend.",
+    "pattern": "food-to-kitten morph: a cosy, believable plate of food with a tiny hidden hint (ears twitch in the first second), then the payoff where one piece is a kitten made of that food waking up; the caption makes viewers look for the moving piece",
+    "evidence": [
+     {
+      "title": "AI Cat Dance: Make Your Cat Do the Viral Memes From 1 Photo",
+      "url": "https://www.atlascloud.ai/blog/tips/ai-cat-dance"
+     },
+     {
+      "title": "How to Create an AI Cat Cooking Video - An Easy Guide",
+      "url": "https://dreamina.capcut.com/resource/cat-cooking"
+     }
+    ]
+   },
+   "id": "m261116j",
+   "format": "morph",
+   "engine": "14b",
+   "seed": 25837,
+   "tease": false
+  }
+ ]
+}

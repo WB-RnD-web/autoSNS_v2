@@ -1,0 +1,60 @@
+{
+ "date": "2026-11-18",
+ "concepts": [
+  {
+   "slug": "christmas-brownie-sugar-shake-kitten",
+   "track": "merry-go.mp3",
+   "caption": "Wait… that brownie just twitched",
+   "title": "Dusted the Christmas Brownies. One Shook It Off 🍫🐱",
+   "en_line": "Nine fudgy brownies got a snowy sugar dusting, and one of them would rather be a kitten.",
+   "ko_line": "슈가파우더 뿌렸더니 브라우니 하나가 털고 일어남 🍫",
+   "tags": [
+    "cat",
+    "ai cat",
+    "kitten",
+    "brownie",
+    "christmas baking",
+    "food morph",
+    "cute cat",
+    "holiday dessert",
+    "chocolate kitten"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#브라우니",
+    "#크리스마스베이킹",
+    "#cat",
+    "#aicat",
+    "#kitten",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic cozy close-up from a slightly high angle, vertical composition, of a parchment-lined square metal baking tray on a warm wooden kitchen counter, holding nine freshly cut fudgy dark chocolate brownie squares in a neat three-by-three grid, each with a crackly glossy top and a light snowy dusting of white powdered sugar. On the centre brownie only, two tiny rounded kitten ears poke up from the top, covered in short glossy solid dark chocolate-brown fur with a light dusting of powdered sugar, so they blend into the brownie. A fine flurry of powdered sugar drifts down through the air. A softly blurred background of warm golden fairy lights and a small sprig of green pine on the counter, cosy evening kitchen light, rich chocolate and cream tones, the whole tray clearly visible in frame.",
+     "motion": "From the very first frame the two tiny chocolate-brown ears on the centre brownie twitch, flick once to the side, then twitch again as a fine flurry of powdered sugar keeps drifting down onto the tray. The rest of the brownies stay still and the fairy lights twinkle softly in the blurred background. Only the two tiny ears show, and they stay fully in frame; no legs, body or other parts appear. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same tiny chocolate-brown kitten with the same fur pattern, face and eye color, and the same tray, brownies, lighting and background. The centre brownie with the two tiny ears is now a tiny kitten curled into a soft square loaf in exactly the same spot and the same size as a brownie, with short glossy solid dark chocolate-brown fur the exact colour of the fudgy brownies, a light snowy dusting of white powdered sugar on its head and back, bright amber-gold eyes, a small pink nose and four tiny paws tucked under its chest. It is just waking up, eyes half open, lifting its head a little among the eight other powdered-sugar brownies. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the tiny chocolate-brown kitten lifts its head from its brownie spot, blinks its amber-gold eyes fully open, gives a small gentle head shake that puffs a little powdered sugar off its ears, then tilts its head toward the camera with a soft curious look, mouth closed. A light flurry of powdered sugar drifts down and the fairy lights twinkle softly behind. The kitten stays in its spot on the tray, fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.6
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Holiday baking season has started: the 'Christmas decorations are going up' Reels trend this week includes a Christmas brownie tutorial with 247K plays, and powdered-sugar 'snow' on brownies is a classic look for this time of year.",
+    "pattern": "hidden-in-plain-sight morph: a neat, cosy tray of seasonal treats where one piece has a tiny hint that moves in the very first second, then the payoff where that piece is a kitten waking up and shaking off the 'snow'",
+    "evidence": [
+     {
+      "title": "Instagram Reels Trends: Trending Audio This Week (2026) — Christmas brownie tutorial in the holiday decor Reels trend",
+      "url": "https://www.socialpilot.co/blog/instagram-reels-trends"
+     }
+    ]
+   },
+   "id": "m261118i",
+   "format": "morph",
+   "engine": "14b",
+   "seed": 74744,
+   "tease": false
+  }
+ ]
+}

@@ -1,0 +1,67 @@
+{
+ "date": "2026-11-17",
+ "concepts": [
+  {
+   "slug": "gyeranppang-egg-bread-kitten-wakes-up",
+   "track": "merry-go.mp3",
+   "caption": "Look closer at the middle egg bread",
+   "title": "Bought Hot Egg Bread on a Cold Night… One Blinked Back 🥚🐱",
+   "en_line": "Three warm egg breads came off the stall on a frosty night, and the middle one opened its eyes.",
+   "ko_line": "추운 밤에 계란빵 샀는데 하나가 눈 떴음 🥚",
+   "tags": [
+    "cat",
+    "ai cat",
+    "kitten",
+    "egg bread",
+    "gyeranppang",
+    "korean street food",
+    "winter snack",
+    "cute kitten",
+    "food to kitten"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#계란빵",
+    "#겨울간식",
+    "#cat",
+    "#aicat",
+    "#kitten"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic cozy close-up of a small plain brown kraft-paper tray resting on a warm worn wooden counter of a little winter street-food stall at night, holding three fresh Korean egg breads (gyeranppang): small oval fluffy golden-brown loaves, each topped with a whole baked egg with a glossy soft golden yolk, thin wisps of steam rising from them. On the middle loaf, two tiny soft triangular kitten ears covered in golden-brown fur with cream-white tips and pale pink insides poke up from the top edge of the crust just behind the egg, and a tiny fluffy golden-brown tail tip curls out from its side. Behind, softly blurred warm round bulb lights glow against a deep blue winter night with a few light snowflakes drifting. The tray and all three loaves fully in frame and centered, vertical composition.",
+     "motion": "From the very first frame the two tiny golden kitten ears on the middle egg bread twitch quickly, then twitch again, and the tiny golden tail tip gives a small curl and flick while the loaf stays in place. Warm steam keeps rising from all three egg breads, soft snowflakes drift past the blurred warm bulb lights behind. The tray and loaves stay fully in frame. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same tiny golden-brown and cream kitten with the same fur pattern, face and eye color. The middle egg bread is now a tiny fluffy kitten curled up in the same spot on the kraft-paper tray, the size of the loaf, with the same golden-brown ears with cream-white tips: its soft fur on the back is warm toasted golden-brown like the bread crust, fading to a creamy white face, chest and paws, with a small round pale golden-yellow patch on top of its head like the baked egg yolk, round honey-amber eyes just opening, small pink nose, tail curled around its body. The two other egg breads stay exactly the same on each side with gentle steam rising, same wooden counter, same blurred warm bulb lights and soft snowflakes in the blue winter night. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the tiny golden-brown and cream kitten slowly blinks its honey-amber eyes awake, lifts its head, gives a small curious head tilt toward the steaming egg bread beside it, and gently stretches one front paw forward onto the paper tray with its mouth closed. Its ears twitch, steam rises from the other two egg breads, snowflakes drift past the warm blurred lights. The kitten stays fully in frame on the tray with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.6
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Mid-November is peak Korean winter street-snack season (warm egg bread, bungeoppang, hotteok are all in the news), and cosy AI pet clips are being reported as a big feel-good trend this month. Egg bread is a new food for our morph series.",
+    "pattern": "food-to-kitten morph: a cosy, steaming seasonal snack with a tiny ear hint as the 'look closer' hook, then the reveal where one piece is a sleepy kitten in the same spot whose fur matches the food",
+    "evidence": [
+     {
+      "title": "Korean winter street food: Warm treats to find in Seoul and Busan, Lifestyle News - AsiaOne",
+      "url": "https://www.asiaone.com/lifestyle/winter-street-food-seoul-busan"
+     },
+     {
+      "title": "Bungeoppang Season in Korea 2026: Why Everyone Is Hunting for Fish-Shaped Pastries, and How to Find One (붕세권 Guide)",
+      "url": "https://zuzukorea.travel/latest-trends/bungeoppang-season-korea-2026/"
+     },
+     {
+      "title": "Paws and prompts: How AI-generated pet videos tap into China's \"emotional economy\" - BELT AND ROAD PORTAL",
+      "url": "https://eng.yidaiyilu.gov.cn/p/0C69ADFL.html"
+     }
+    ]
+   },
+   "id": "m261117",
+   "format": "morph",
+   "engine": "14b",
+   "seed": 14306,
+   "tease": false
+  }
+ ]
+}

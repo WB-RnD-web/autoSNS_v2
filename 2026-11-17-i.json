@@ -1,0 +1,67 @@
+{
+ "date": "2026-11-17",
+ "concepts": [
+  {
+   "slug": "hodugwaja-walnut-cake-kitten-wakes-up",
+   "track": "merry-go.mp3",
+   "caption": "Look closer. One walnut cake has ears",
+   "title": "Grabbed Warm Walnut Cakes for the Road. One Stretched 🤎🐱",
+   "en_line": "The warmest little walnut cake in the bowl turned out to be a sleepy kitten.",
+   "ko_line": "따끈한 호두과자 하나가 기지개 켬 🤎",
+   "tags": [
+    "cat",
+    "ai cat",
+    "kitten",
+    "walnut cake",
+    "hodugwaja",
+    "korean street food",
+    "winter snack",
+    "food morph",
+    "cute cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#호두과자",
+    "#겨울간식",
+    "#cat",
+    "#aicat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic cozy close-up, vertical composition, of a small shallow cream-white enamel bowl on a dark walnut-wood table beside a frosty window on a cold evening, filled with about ten freshly baked Korean walnut cakes: small round golden-brown walnut-shaped cakes with a glossy, finely ridged surface, soft wisps of steam rising from them. The cake in the front center of the bowl has two tiny soft golden-brown kitten ears with pale pink insides and fine fluffy fur peeking from its top, and a tiny fluffy golden-brown tail tip curled along its side. Warm amber lamp light, soft blurred warm glow in the background, frost on the window glass, shallow depth of field.",
+     "motion": "From the very first frame the two tiny kitten ears on the front walnut cake twitch, turn toward the camera and twitch again, and the little tail tip curls and uncurls once, while the cake gently rises and falls as if breathing. Soft steam keeps drifting up from the warm walnut cakes. The tiny kitten hiding in the cake stays fully in frame in the same spot, curled with four normal legs tucked out of sight. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same tiny golden-brown kitten hidden in the front walnut cake with the same fur pattern, face and eye color. In the same spot in the same enamel bowl, that one walnut cake is now a tiny round kitten the size of the cakes, curled up like the cake, with soft fluffy golden-brown fur and darker warm-brown curving stripes that look like the ridges of a walnut cake, a cream-colored chest, a pink nose, the same tiny ears with pale pink insides and bright amber eyes just opening sleepily. The other walnut cakes, the dark wooden table, the frosty window, the warm amber lamp light and the rising steam stay the same. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the tiny walnut-cake kitten lifts its head from its curled pose, blinks its amber eyes slowly with its mouth closed, twitches its ears, then stretches one small front paw forward onto the neighbouring walnut cake and gently kneads it. Soft steam keeps rising from the warm cakes. The kitten stays fully in frame in the same spot with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.6
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Mid-November is warm-snack season in Korea, and Seoul and Busan street food stalls are back with hot winter treats. Korean viewers are also posting their 'first one of the season' snack pics right now. On top of that, cosy AI pet videos are spreading widely this month.",
+    "pattern": "spot-the-difference food morph: cosy steaming snack with a tiny pair of ears to find, then the sleepy reveal when that one piece wakes up, stretches and kneads. Caption tells viewers to look closer.",
+    "evidence": [
+     {
+      "title": "Korean winter street food: Warm treats to find in Seoul and Busan, Lifestyle News - AsiaOne",
+      "url": "https://www.asiaone.com/lifestyle/winter-street-food-seoul-busan"
+     },
+     {
+      "title": "Bungeoppang Season in Korea 2026: Why Everyone Is Hunting for Fish-Shaped Pastries, and How to Find One (붕세권 Guide)",
+      "url": "https://zuzukorea.travel/latest-trends/bungeoppang-season-korea-2026/"
+     },
+     {
+      "title": "Paws and prompts: How AI-generated pet videos tap into China's \"emotional economy\" - BELT AND ROAD PORTAL",
+      "url": "https://eng.yidaiyilu.gov.cn/p/0C69ADFL.html"
+     }
+    ]
+   },
+   "id": "m261117i",
+   "format": "morph",
+   "engine": "14b",
+   "seed": 42886,
+   "tease": true
+  }
+ ]
+}

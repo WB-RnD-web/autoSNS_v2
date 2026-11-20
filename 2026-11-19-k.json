@@ -1,0 +1,60 @@
+{
+ "date": "2026-11-19",
+ "concepts": [
+  {
+   "slug": "winter-static-puffball-dilute-calico",
+   "track": "run-amok.mp3",
+   "caption": "Winter static season has begun",
+   "title": "Rubbed on One Fleece Blanket. Winter Static Did the Rest ⚡🐱",
+   "en_line": "One cozy rub on the fleece blanket and the dry winter air turned her into a dandelion.",
+   "ko_line": "겨울 정전기 시즌 시작… 담요에 한 번 비볐을 뿐인데 ⚡",
+   "tags": [
+    "cat",
+    "ai cat",
+    "static electricity",
+    "winter static",
+    "fluffy cat",
+    "funny cat",
+    "cat meme",
+    "calico cat",
+    "winter"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#정전기",
+    "#겨울",
+    "#cat",
+    "#catmeme",
+    "#냥스타그램",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical full-body shot at eye level of a fluffy medium-longhair dilute calico cat with soft blue-grey and pale peach patches on her back and head, a white chest, white belly and four white paws, round copper-gold eyes and a pink nose, her coat sleek and smooth, lying on her side on a thick cream-colored fleece blanket spread over a sofa in a cozy living room, warm lamp light, soft dry winter afternoon light from a window, the cat fully in frame and clearly visible, simple uncluttered background, vertical composition",
+     "motion": "Right from the first frame the dilute calico cat happily rubs her cheek and side back and forth against the soft fleece blanket in quick cozy wiggles, her paws kneading the air gently, and a few thin strands of her fur begin to lift and float slightly with static. Tiny bits of fleece fuzz drift in the warm lamp light. The cat stays fully in frame with four normal legs, mouth closed. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same fluffy dilute calico cat with the same fur pattern, face and eye color. She now sits upright on the same cream fleece blanket facing the camera, and her whole coat is puffed out with static electricity in every direction like a round fluffy dandelion, wispy strands standing straight up on her head, cheeks and tail, her copper-gold eyes wide and round in surprise, mouth closed, a few tiny cream fleece fuzz bits clinging to her fur, same cozy living room with warm lamp light. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the puffed-up dilute calico cat sits frozen in surprise, blinks twice, looks down at her own puffy chest and then back up at the camera, while her static-raised fur strands gently waver and float in the air and her fluffy tail swishes once. Tiny fleece fuzz bits drift softly. The cat stays fully in frame with four normal legs, mouth closed. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Mid-November brings dry, heated indoor air in Korea and across the northern hemisphere, so static shocks from blankets and sweaters are a relatable daily moment. Holiday and winter cat-meme roundups are also running right now (Cheezburger, Nov 16, 2026).",
+    "pattern": "relatable seasonal meme in two beats: an innocent cozy action, then the static-puffball punchline. The caption names the season ('___ season has begun').",
+    "evidence": [
+     {
+      "title": "26 Fabulous Festive Cat Memes to Welcome the Holiday Season Early (November 16, 2026) - I Can Has Cheezburger?",
+      "url": "https://cheezburger.com/47350021/26-fabulous-festive-cat-memes-to-welcome-the-holiday-season-early-november-16-2026"
+     }
+    ]
+   },
+   "id": "m261119k",
+   "format": "meme",
+   "engine": "14b",
+   "seed": 29516,
+   "tease": true
+  }
+ ]
+}

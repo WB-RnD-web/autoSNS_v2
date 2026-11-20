@@ -1,0 +1,70 @@
+{
+ "date": "2026-11-20",
+ "concepts": [
+  {
+   "slug": "winter-fair-strength-test-munchkin",
+   "track": "monkeys-spinning-monkeys.mp3",
+   "caption": "4 kg cat vs. the strength tester",
+   "title": "Strength Test at the Winter Fair: 4 kg of Pure Power 🔔🐱",
+   "en_line": "Nobody believed in the short legs, but the bell did.",
+   "ko_line": "4kg 냥이의 풀파워 한 방 🔔",
+   "tags": [
+    "cat",
+    "ai cat",
+    "munchkin cat",
+    "funny cat",
+    "cute cat",
+    "carnival game",
+    "winter fair",
+    "strength tester",
+    "cat pounce"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#먼치킨",
+    "#겨울축제",
+    "#cat",
+    "#munchkincat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical composition, eye-level full-body shot of a short-legged Munchkin cat with a short cream-and-white coat, soft orange tabby stripes on its head and back, a white chest and white paws, and big round amber eyes, crouched in a low pounce pose on a round red rubber strike pad at the base of a tall carnival high-striker tower made of red-and-white painted wood with plain stripes, at an outdoor winter fair at dusk, warm string lights glowing in the soft-focus background, light snow on the wooden ground, the cat fully in frame and clearly visible",
+     "motion": "From the very first frame the Munchkin cat is already crouched low on the red strike pad with its rear end wiggling, then it springs a short hop straight up in place and lands with all four paws firmly on the pad, ears forward and eyes focused. Warm string lights twinkle and a few snowflakes drift in the background. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "thud"
+     ],
+     "beat": "the cat lands with all four paws on the red strike pad"
+    },
+    {
+     "edit": "Keep exactly the same short-legged Munchkin cat with the cream-and-white coat, soft orange tabby stripes on its head and back, white chest and paws, with the same fur pattern, face and eye color. Show the moment of the win: the cat now sits upright and proud on the red strike pad, chest puffed out, looking up toward the top of the red-and-white high-striker tower, where the round puck touches a shiny brass bell, and the tower's bulb lights glow bright gold, outdoor winter fair at dusk with warm string lights and light falling snow. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the bulb lights on the tower flash bright gold as the Munchkin cat snaps its head up toward the ringing brass bell, its ears perk up, it puffs its chest, blinks proudly and gives one small satisfied tail swish. The lights keep blinking and snowflakes drift down. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5,
+     "sfx": [
+      "bell",
+      "meow"
+     ],
+     "beat": "the tower lights flash gold as the cat snaps its head up toward the bell",
+     "hit": true,
+     "caption": "4 kg of pure power"
+    }
+   ],
+   "cover_shot": 1,
+   "trend": {
+    "why_now": "A pet-and-owner pounce game went viral this week (Siberian kitten lunging at his owner, 2.6M views in four days), and winter fairs with carnival games open in late November.",
+    "pattern": "underdog pounce payoff: a tiny cat's all-in pounce lands and wins big, with a hook that sets up the size vs. challenge contrast",
+    "evidence": [
+     {
+      "title": "Woman And Her Cat Take Turns Scaring Each Other, And Their Little Game Is Absolutely Hilarious",
+      "url": "https://www.yahoo.com/lifestyle/articles/woman-her-cat-turns-scaring-165850388.html"
+     }
+    ]
+   },
+   "id": "m261120b",
+   "format": "game",
+   "engine": "14b",
+   "seed": 73164,
+   "tease": true
+  }
+ ]
+}

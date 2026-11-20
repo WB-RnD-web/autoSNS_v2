@@ -1,0 +1,58 @@
+{
+ "date": "2026-11-16",
+ "concepts": [
+  {
+   "slug": "foosball-goalie-loophole-egyptian-mau",
+   "track": "investigations.mp3",
+   "caption": "Down 0-9. New goalie strategy:",
+   "title": "Foosball Goalie Discovered a Loophole ⚽🐱",
+   "en_line": "If you can't stop the ball, just become the wall.",
+   "ko_line": "지고 있을 땐 그냥 골대를 막아버리면 됨 😼",
+   "tags": [
+    "cat",
+    "ai cat",
+    "foosball",
+    "table football",
+    "egyptian mau",
+    "funny cat",
+    "cat goalie",
+    "game night"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#테이블축구",
+    "#냥스타그램",
+    "#cat",
+    "#aicat",
+    "#funnycat"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical shot of a sleek silver spotted Egyptian Mau cat with a short shiny silver coat covered in distinct round black spots, a black-banded tail, thin dark tabby lines on its forehead and large bright gooseberry-green eyes, crouched alert at the goal end of a small wooden tabletop foosball table, front paws resting on the green felt right in front of the goal opening, a small white ball rolling toward it across the green felt pitch, rows of simple rounded wooden peg players on shiny metal rods painted plain solid red and plain solid blue, cosy game room with warm lamp light and a softly blurred background, the whole cat fully in frame and clearly visible",
+     "motion": "From the very first frame the silver spotted Egyptian Mau tracks the small white ball rolling toward its goal with wide green eyes and swats it back with a quick front paw tap, then taps it again as the ball bounces back, ears pointed forward and tail tip flicking. The wooden peg players on their rods wobble slightly and warm lamp light glows in the background. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same silver spotted Egyptian Mau cat with the same fur pattern, face and eye color. The cat now lies stretched out sideways on the green felt directly across its goal opening, its body completely blocking the goal, the small white ball resting against its belly, chin raised with a smug half-closed-eyes look, on the same wooden foosball table with plain red and blue wooden peg players in the same warm lamp-lit game room. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the Egyptian Mau lies across the goal and gives a slow smug blink, then calmly nudges the white ball away with one front paw while its black-banded tail swishes gently over the table edge. The wooden peg players on their rods wobble slightly. The cat stays lying in place, fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "In November 2026 AI cat clips are taking off when the cat does one clear, human-like 'win' move (the clapping-cat and AI cat dance templates). Indoor game nights are also picking up as the weather gets cold.",
+    "pattern": "underdog tension (losing badly, paw-saving shots) followed by a cheeky loophole win beat with a smug blink; the caption sets up the score and the title promises the payoff",
+    "evidence": [
+     {
+      "title": "AI Cat Dance: Make Your Cat Do the Viral Memes From 1 Photo",
+      "url": "https://www.atlascloud.ai/blog/tips/ai-cat-dance"
+     }
+    ]
+   },
+   "id": "m261116e",
+   "format": "game",
+   "engine": "14b",
+   "seed": 23823,
+   "tease": false
+  }
+ ]
+}

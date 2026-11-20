@@ -1,0 +1,58 @@
+{
+ "date": "2026-11-16",
+ "concepts": [
+  {
+   "slug": "domino-one-tap-clap-snowshoe",
+   "track": "pixel-peeker-polka-faster.mp3",
+   "caption": "3 hours of dominoes. 1 paw tap.",
+   "title": "Three Hours of Dominoes, One Paw Tap, Zero Regrets 👏🐱",
+   "en_line": "He set up the whole run, tapped the first one and clapped for himself.",
+   "ko_line": "도미노 세 시간 세팅, 냥펀치 한 방에 끝 👏",
+   "tags": [
+    "cat",
+    "ai cat",
+    "domino cat",
+    "dominoes",
+    "clapping cat",
+    "snowshoe cat",
+    "funny cat",
+    "cute cat",
+    "cat game"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#도미노",
+    "#냥스타그램",
+    "#cat",
+    "#aicat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical shot of a slim Snowshoe cat with a short smooth creamy-fawn body coat, dark seal-brown points on its ears, face mask and tail, a white inverted-V marking on its muzzle, four bright white mitten paws and vivid sky-blue eyes, sitting upright on a warm honey-colored wooden living room floor right behind the first block of a long winding line of standing colorful plain wooden domino blocks in red, yellow, blue and green that curves away into the background, one white front paw raised just above the first domino, eyes locked on it, soft warm lamp light, cozy blurred living room background, the whole cat fully in frame and clearly visible",
+     "motion": "From the very first frame the Snowshoe cat taps the first domino with its raised white front paw, and the colorful dominoes start falling one after another in a smooth chain reaction that curves away into the background. The cat's head follows the falling line with wide blue eyes and its ears perk forward, then it sits up tall and proud. The cat stays fully in frame with four normal legs and its mouth closed. Soft warm lamp light. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same Snowshoe cat with the same fur pattern, face and eye color. Same warm wooden living room floor, but now every colorful domino in the long winding line lies flat, all toppled in a neat curving trail behind the cat. The cat sits upright in the same spot looking proud and pleased, both white mitten front paws lifted together in front of its chest as if about to clap, mouth closed, soft warm lamp light. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the Snowshoe cat claps its two white front paws together softly and steadily to the beat, bobbing its head a little, blinking slowly with a proud, satisfied look while the toppled colorful dominoes lie still behind it. Warm lamp light glows gently. The cat stays fully in frame with four normal legs and its mouth closed. Photorealistic, smooth natural motion, static camera."
+    }
+   ],
+   "cover_shot": 1,
+   "trend": {
+    "why_now": "The Black Cat Clapping meme has been everywhere for the last few weeks, so a cat clapping for its own win is a recognisable payoff. Domino runs are also a reliable satisfying watch, and we're posting on a Monday after people spent the weekend on hobbies.",
+    "pattern": "satisfying setup into payoff: one paw tap starts a chain reaction in the first second, then the same cat claps proudly for its own win (we borrow the clapping beat with our own cat and scene)",
+    "evidence": [
+     {
+      "title": "Black Cat Clapping | Know Your Meme",
+      "url": "https://knowyourmeme.com/memes/black-cat-clapping"
+     }
+    ]
+   },
+   "id": "m261116i",
+   "format": "game",
+   "engine": "14b",
+   "seed": 18311,
+   "tease": false
+  }
+ ]
+}

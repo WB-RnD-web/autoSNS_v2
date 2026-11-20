@@ -1,0 +1,77 @@
+{
+ "date": "2026-11-21",
+ "concepts": [
+  {
+   "slug": "prize-wheel-giant-fish-bicolor-manx",
+   "track": "pixel-peeker-polka-faster.mp3",
+   "caption": "Lucky spin or pure skill?",
+   "title": "Spun the Prize Wheel Once. Won a Fish Bigger Than Him 🎡🐱",
+   "en_line": "One paw swipe, one golden spin, and the biggest plush fish at the winter fair went home with the smallest player.",
+   "ko_line": "딱 한 번 돌렸는데 자기보다 큰 물고기 인형 당첨 🐟",
+   "tags": [
+    "cat",
+    "ai cat",
+    "prize wheel",
+    "carnival game",
+    "winter fair",
+    "manx cat",
+    "funny cat",
+    "cute cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#냥스타그램",
+    "#겨울축제",
+    "#cat",
+    "#aicat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical composition, eye-level full-body shot of a chunky round-faced tailless Manx cat with a rounded rump and a short dense bicolor coat: solid blue-grey on its ears, head cap and back, crisp white muzzle, chest, belly and all four paws, and big round copper-orange eyes. The cat sits on a polished honey-colored wooden carnival booth counter right beside a large upright wooden prize wheel, one front paw resting on the wheel rim. The wheel is painted in plain wedge segments of cherry red, sunny yellow, teal and cream with one shiny gold wedge, round wooden pegs around the rim and a small red leather pointer flap at the top. Cozy indoor winter fair at night, warm golden string lights glowing softly in the bokeh background, a few soft plush toys hanging on the booth's wooden back wall, plain unpatterned surfaces, the whole cat clearly visible.",
+     "motion": "In the very first frame the Manx cat swipes the wheel rim with one front paw and the big prize wheel starts spinning fast; the colorful wedges blur past while the cat's head and big copper eyes follow them round, ears pointed forward, then it leans in and gives the slowing wheel one more quick paw tap. Warm string lights twinkle softly in the background. The cat stays seated on the counter, fully in frame with four normal legs and its mouth closed. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "swish"
+     ],
+     "beat": "the cat's paw swipes the wheel rim and the wheel starts spinning"
+    },
+    {
+     "edit": "Keep exactly the same chunky tailless blue-and-white bicolor Manx cat with the same fur pattern, face and eye color. The prize wheel behind it has now stopped with the shiny gold wedge right under the red pointer flap at the top, and small gold confetti pieces drift in the air. On the counter right in front of the cat lies a giant soft plush fish toy in bright blue and sunny yellow, about twice the cat's length, and the cat crouches low with its front paws on the edge of the plush, eyes wide and delighted, ready to pounce. Same cozy winter fair booth with warm golden string lights. Photorealistic, vertical composition.",
+     "motion": "In the very first frame the Manx cat is already springing forward: it pounces in place onto the giant plush fish, lands on top of it and hugs it tight with both front paws, then rubs its cheek against the soft plush with happy half-closed eyes. Gold confetti keeps drifting down and the string lights twinkle; the prize wheel stays still. The cat stays fully in frame with four normal legs and its mouth closed. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5,
+     "sfx": [
+      "bell",
+      "thud"
+     ],
+     "beat": "the cat lands on the giant plush fish and hugs it",
+     "hit": true,
+     "caption": "Jackpot: one big fish"
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Winter fairs and Christmas markets are opening in late November, and short clips of cats that seem to play and beat games are circulating right now. AI kitten Shorts are getting millions of views this month, and our own question-hook game Short (pinball) has been our best performer.",
+    "pattern": "question hook (luck or skill?) + action in the very first frame -> one decisive win beat with a prize bigger than the cat; game-show style payoff with confetti and a bell",
+    "evidence": [
+     {
+      "title": "Cat Plays Temple Run? Adorable Feline 'Controls' Game on iPad!",
+      "url": "https://www.snapchat.com/@top50daily/spotlight/W7_EDlXWTBiXAEEniNoMPwAAYdGp1dHlleGttAaGjh2a-AaGjhtULAAAAAA"
+     },
+     {
+      "title": "Dip On Em Dance AI: Do the Viral Duo Dance From 2 Photos",
+      "url": "https://makeviral.ai/templates/dip-on-em-dance-ai-trend"
+     },
+     {
+      "title": "YouTube Shorts Trends November 2026: What's Actually Going Viral Right Now",
+      "url": "https://www.anijam.ai/blog/youtube-shorts-trends/"
+     }
+    ]
+   },
+   "id": "m261121d",
+   "format": "game",
+   "engine": "14b",
+   "seed": 75672,
+   "tease": false
+  }
+ ]
+}

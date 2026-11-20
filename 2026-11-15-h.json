@@ -1,0 +1,59 @@
+{
+ "date": "2026-11-15",
+ "concepts": [
+  {
+   "slug": "thanksgiving-eat-light-turkey-exotic-shorthair",
+   "track": "investigations.mp3",
+   "caption": "Me: I'll eat light this Thanksgiving",
+   "title": "Said He'd Eat Light This Thanksgiving. Then the Turkey Arrived 🦃🐱",
+   "en_line": "The salad plan lasted right up until the turkey came out of the oven.",
+   "ko_line": "다이어트는 칠면조 보기 전까지만 🦃",
+   "tags": [
+    "cat",
+    "ai cat",
+    "thanksgiving",
+    "thanksgiving cat",
+    "cat meme",
+    "funny cat",
+    "diet meme",
+    "exotic shorthair",
+    "roast turkey"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#추수감사절",
+    "#다이어트",
+    "#cat",
+    "#catmeme",
+    "#thanksgiving",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic chunky cream-and-white bicolor Exotic Shorthair cat with a dense plush short coat, a pale cream back, head and ears, a pure white chest, muzzle and front paws, a round flat face with small folded-forward ears and big round copper-orange eyes, sitting upright on a wooden dining chair at a cozy autumn dinner table, a large plain white plate in front of it holding one single small green lettuce leaf, a cream linen tablecloth, small orange pumpkins and a lit candle in the soft background, warm golden evening light, the whole cat clearly visible and fully in frame, vertical composition",
+     "motion": "From the very first frame the cream-and-white Exotic Shorthair cat reaches out one white front paw and pokes the single lettuce leaf on the big white plate, then looks down at it with an unimpressed face, slowly blinks and turns its head a little to the side. Its ears twitch and the candle flame flickers softly in the background. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same chunky cream-and-white bicolor Exotic Shorthair cat with the same fur pattern, face and eye color. Same chair and same cozy autumn dinner table, but the single lettuce leaf is gone and a big golden-brown roast turkey on a large white platter with roasted carrots and potatoes now sits right in front of the cat, with gentle steam rising from it, while the cat leans forward with wide delighted eyes and its mouth closed. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the cream-and-white Exotic Shorthair cat leans toward the steaming roast turkey with big wide eyes, sniffs the air eagerly, licks its nose once with a tiny tongue and wiggles happily on the chair while its tail swishes behind it. Soft steam rises from the turkey and the candle flickers. The cat stays fully in frame with four normal legs and its mouth stays closed. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Thanksgiving is less than two weeks away (Nov 26), and on Nov 14 Cheezburger published a Thanksgiving cat-meme roundup. 'Just one more bite' holiday-food jokes come back every November.",
+    "pattern": "relatable 'Me: good intentions' caption, then a punchline where the food wins (one lettuce leaf vs. a whole roast turkey), with a paw-poke in the very first second",
+    "evidence": [
+     {
+      "title": "Thanksgiving cat memes for cat pawrents wanting to celebrate the Holidays with their furbabies - I Can Has Cheezburger?",
+      "url": "https://cheezburger.com/47389701/thanksgiving-cat-memes-for-cat-pawrents-wanting-to-celebrate-the-holidays-with-their-furbabies"
+     }
+    ]
+   },
+   "id": "m261115h",
+   "format": "meme",
+   "engine": "14b",
+   "seed": 94223
+  }
+ ]
+}

@@ -1,0 +1,53 @@
+{
+ "date": "2026-11-19",
+ "concepts": [
+  {
+   "slug": "capsule-machine-ten-same-fish-burmese",
+   "track": "investigations.mp3",
+   "caption": "One more pull. This one's the rare one",
+   "title": "Tried the Capsule Machine 10 Times. Got the Same Fish 10 Times 🐟🐱",
+   "en_line": "Ten pulls, ten identical fish, and he is absolutely not trying an eleventh time (he is).",
+   "ko_line": "열 번 뽑았는데 열 번 다 똑같은 물고기 🐟",
+   "tags": [
+    "cat",
+    "ai cat",
+    "capsule toy machine",
+    "gacha",
+    "funny cat",
+    "burmese cat",
+    "cute cat",
+    "arcade cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#뽑기",
+    "#가챠",
+    "#cat",
+    "#aicat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical composition of a compact, muscular champagne Burmese cat with a short satin-glossy warm honey-beige coat, a slightly darker milk-chocolate face mask and ears, a round head and big round golden-yellow eyes, sitting upright on a low wooden bench in a cozy toy shop corner, right next to a tabletop capsule toy machine with a clear round dome full of colorful round plastic capsules on a glossy plain red metal base with a big shiny silver turning knob, the cat's right front paw resting on the silver knob, the cat fully in frame and clearly visible, warm soft string lights glowing in the blurred background, shelves of plain soft plush toys behind, warm evening light",
+     "motion": "From the very first frame the champagne Burmese cat pushes the big silver knob around with its right front paw in one smooth turn, the colorful capsules inside the clear dome jiggle and shuffle, and the cat leans its head closer to the dome with wide golden eyes and ears pointing forward, its tail tip flicking with excitement. Warm string lights twinkle softly in the background. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same compact champagne Burmese cat with the same fur pattern, face and eye color. The cat now sits on the same wooden bench next to the same capsule toy machine, surrounded by about ten opened clear plastic capsule halves and ten identical small blue knitted fish toys spread around its front paws, and the cat looks straight at the camera with a flat, unimpressed expression and half-lidded golden eyes, mouth closed. Same cozy toy shop corner with warm soft string lights in the blurred background. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the champagne Burmese cat looks down at the pile of identical blue knitted fish toys, then slowly lifts its head back to the camera with one long unimpressed blink, then gives the nearest fish toy a small paw tap that nudges it a little across the bench, its ears turning slightly sideways. Warm string lights twinkle softly in the background. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Evergreen: the 'one more pull, it'll be the rare one' feeling from capsule-toy and gacha pulls is something viewers everywhere get, and capsule-toy shops are well known to the Korean audience. Search was unavailable, so this isn't backed by trend data from the last 7-30 days.",
+    "pattern": "hopeful build-up (the paw turns the knob, eyes wide), then a deadpan fail: a pile of identical duplicates and a slow unimpressed blink at the camera",
+    "evidence": []
+   },
+   "id": "m261119b",
+   "format": "game",
+   "engine": "14b",
+   "seed": 54429,
+   "tease": true
+  }
+ ]
+}

@@ -1,0 +1,66 @@
+{
+ "date": "2026-11-14",
+ "concepts": [
+  {
+   "slug": "kimjang-cabbage-dance-siamese",
+   "track": "kool-kats.mp3",
+   "caption": "When the kimjang cabbages arrive",
+   "title": "Kimjang Day Dance Break: 100 Cabbages, One Cat 🥬🐱",
+   "en_line": "Kimchi-making day is here, and someone is very excited about the cabbages.",
+   "ko_line": "김장하는 날 배추 보고 신난 냥이 🥬",
+   "tags": [
+    "cat",
+    "ai cat",
+    "dancing cat",
+    "cat dance",
+    "kimjang",
+    "siamese cat",
+    "kimchi",
+    "funny cat",
+    "cute cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#김장",
+    "#김장철",
+    "#cat",
+    "#dancingcat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic slim seal point Siamese cat with a smooth short cream-colored body coat, a dark seal-brown face mask, dark seal-brown ears, legs, paws and tail, and bright almond-shaped sapphire-blue eyes, standing upright on its hind legs with both front paws raised happily in a dance pose on a warm wooden porch of a traditional Korean house courtyard in late autumn, behind it a big pile of fresh whole green napa cabbages and white Korean radishes in large round red basins next to dark brown clay onggi jars, golden late-afternoon sunlight, a few yellow ginkgo leaves on the ground, the whole cat fully in frame and clearly visible in the center, vertical composition",
+     "motion": "The seal point Siamese cat stands on its hind legs on the wooden porch and dances to the beat: it sways its body left and right in rhythm, bobs its head, and lifts its front paws up and down one after the other, its tail swishing happily behind it. A few yellow ginkgo leaves drift down in the golden sunlight. The cat stays fully in frame with four normal legs the whole time. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same slim seal point Siamese cat with the same fur pattern, face and eye color. Same Korean courtyard porch, same cabbage pile, red basins and clay onggi jars, same golden late-afternoon light. Now the cat strikes its final dance pose: it stands upright on its hind legs on top of the pile of green napa cabbages, one front paw raised high in the air and the other resting on its chest, chin up, looking proud and pleased, the whole cat fully in frame. Photorealistic, vertical composition.",
+     "motion": "The seal point Siamese cat holds its proud final pose on top of the napa cabbage pile, with one front paw raised high. It sways gently to the last beat, slowly blinks its blue eyes, gives a small satisfied head tilt and lowers its raised paw softly to its chest. Yellow ginkgo leaves keep drifting down in the warm light. The cat stays fully in frame with four normal legs the whole time. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 1,
+   "trend": {
+    "why_now": "Mid-November is kimjang season, when Korean families make winter kimchi together. Cabbage prices and kimjang events are in the news right now, which makes it a cosy, seasonal hook for Korean Instagram that global viewers will also find charming. Dancing AI cats are also one of the strongest AI pet formats in November 2026.",
+    "pattern": "Upright cat dance to a catchy beat in a seasonal, culturally specific setting, then a proud final pose on the cabbage pile as the payoff. The title formula is 'seasonal moment + dance break + funny number'.",
+    "evidence": [
+     {
+      "title": "AI Cat Dance: Make Your Cat Do the Viral Memes From 1 Photo",
+      "url": "https://www.atlascloud.ai/blog/tips/ai-cat-dance"
+     },
+     {
+      "title": "Government Pours Record 64 Billion Won into Kimjang Season, Offering Up to 50% Discounts",
+      "url": "https://news.sbs.co.kr/english/article.do?news_id=N1008827717"
+     },
+     {
+      "title": "Kimjang DC 2026: Experience Kimjang & Korean Culture Tickets, Sunday, November 15 • 1 PM",
+      "url": "https://www.eventbrite.com/e/kimjang-dc-2026-experience-kimjang-korean-culture-tickets-2003629835775"
+     }
+    ]
+   },
+   "id": "m261114j",
+   "format": "dance",
+   "engine": "14b",
+   "seed": 71117
+  }
+ ]
+}

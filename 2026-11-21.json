@@ -1,0 +1,69 @@
+{
+ "date": "2026-11-21",
+ "concepts": [
+  {
+   "slug": "hot-cocoa-mini-muffin-kitten-wakes-up",
+   "track": "fluffing-a-duck.mp3",
+   "caption": "Spot the muffin that isn't one",
+   "title": "Baked Hot Cocoa Mini Muffins. One Rose a Little Too Much 🧁🐱",
+   "en_line": "Twelve hot cocoa mini muffins cooled on the counter, and one of them rose with ears and a tail.",
+   "ko_line": "핫코코아 머핀 구웠는데 하나가 눈을 떴어 🧁",
+   "tags": [
+    "cat",
+    "ai cat",
+    "kitten",
+    "cute cat",
+    "hot cocoa muffins",
+    "holiday baking",
+    "food turns into cat",
+    "cat morph"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#홈베이킹",
+    "#머핀",
+    "#cat",
+    "#kitten",
+    "#aicat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic cozy close-up from a slightly high angle, vertical composition, of a dark metal twelve-cup mini muffin tin on a warm wooden kitchen counter, filled with freshly baked hot cocoa mini muffins in plain brown paper cups, each with a domed dark chocolate-brown top and a few soft toasted white mini marshmallows, thin wisps of steam rising. The muffin in the centre of the tin has two tiny fluffy chocolate-brown kitten ears with cream-white fluffy tips poking up from its domed top, and a tiny fluffy chocolate-brown tail tip curled over the edge of its paper cup. Warm golden evening kitchen light, soft warm fairy-light bokeh in the dark background, the whole tin fully in frame and clearly visible.",
+     "motion": "From the very first frame the two tiny fluffy ears on the centre muffin twitch and swivel, and the little tail tip curled over the paper cup flicks once, while thin wisps of steam keep rising from all the warm muffins and the fairy lights twinkle softly behind. The muffin with the tiny ears stays fully in frame and keeps its shape, with only the ears and tail tip showing, no legs appearing. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "swish"
+     ],
+     "beat": "the tiny ears on the centre muffin twitch and the tail tip flicks"
+    },
+    {
+     "edit": "Keep exactly the same tiny chocolate-brown fluffy kitten with cream-white ear tips from shot 1 with the same fur pattern, face and eye color. The centre mini muffin is now a tiny kitten curled up in the same brown paper cup in the same spot of the same muffin tin, slightly bigger than the muffins around it: its fluffy fur is deep chocolate-brown like the cocoa muffin tops, with soft cream-white fluffy tufts on its head and back like toasted mini marshmallows, warm amber eyes half open as it wakes up, tiny pink nose, the same chocolate-brown tail curled over the edge of the paper cup. The other eleven muffins, the wooden counter, rising steam and warm fairy-light bokeh stay the same. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the tiny chocolate-brown kitten lifts its head from its curled position in the paper cup and opens its warm amber eyes, blinks twice with a sleepy look, rests both tiny front paws on the rim of its paper cup and tilts its head curiously, its mouth closed. Thin steam keeps rising from the other muffins and the fairy lights twinkle softly behind. The kitten stays fully in frame in its paper cup with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.6,
+     "sfx": [
+      "meow"
+     ],
+     "beat": "the kitten lifts its head out of the muffin cup and opens its eyes",
+     "hit": true,
+     "caption": "Baked a bonus kitten"
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "November 2026 food trend roundups highlight holiday baking and festive cocoa flavours, including hot cocoa mini muffins and baking advent calendars, so cosy holiday bakes are what people want to see this weekend.",
+    "pattern": "spot-the-odd-one hook: a tray of the same cosy holiday bake with one tiny clue (ears, tail tip), then the reveal where that piece wakes up as a kitten whose fur looks just like the bake",
+    "evidence": [
+     {
+      "title": "Top 100 Food Trends in November: From Protein-Rich Meat Sticks to Birthday Cake Empanadas",
+      "url": "https://www.trendhunter.com/slideshow/november-2026-food"
+     }
+    ]
+   },
+   "id": "m261121",
+   "format": "morph",
+   "engine": "14b",
+   "seed": 56924,
+   "tease": false
+  }
+ ]
+}

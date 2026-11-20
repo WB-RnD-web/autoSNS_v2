@@ -1,0 +1,67 @@
+{
+ "date": "2026-11-17",
+ "concepts": [
+  {
+   "slug": "only-tuesday-tie-desk-brown-tabby",
+   "track": "monkeys-spinning-monkeys.mp3",
+   "caption": "Me realizing it's only Tuesday",
+   "title": "It's Only Tuesday and He's Already Done 👔🐱",
+   "en_line": "He put on the tie, he poured the tea, and it's still only Tuesday.",
+   "ko_line": "아직 화요일이라니… 벌써 퇴근하고 싶다냥 👔",
+   "tags": [
+    "cat",
+    "ai cat",
+    "cat meme",
+    "tuesday mood",
+    "office cat",
+    "cat in a tie",
+    "funny cat",
+    "work meme"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#화요일",
+    "#직장인밈",
+    "#cat",
+    "#catmeme",
+    "#tuesdaymood",
+    "#냥스타그램"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical shot of a sturdy brown mackerel tabby American Shorthair cat with a short dense coat of warm brown and black narrow stripes, a crisp white chest bib and white front paws, round bright green eyes and a broad cheeky face, wearing a small loose navy-blue knitted necktie. The cat sits upright on a wooden chair behind a small tidy wooden desk in a cosy home study, fully in frame from ears to paws, next to a tall stack of plain blank white paper and a plain white mug of tea with gentle steam rising, a warm desk lamp glowing, soft grey rainy November daylight from a window behind, vertical composition",
+     "motion": "From the very first frame the brown tabby cat in the navy tie turns its head from the tall paper stack to look straight at the camera with a flat, unimpressed stare. Its ears tilt out sideways, it does one slow tired blink, and its shoulders sink down in a small sigh while its tail flicks once over the chair. Soft steam keeps rising from the tea mug and rain drips softly down the window behind. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same brown mackerel tabby American Shorthair cat with the same fur pattern, face and eye color, and the same small navy-blue knitted necktie, now slightly crooked. Same cosy home study and same small wooden desk with the steaming white mug and warm desk lamp. The cat now lies flat on its belly across the top of the stack of plain blank white paper, chin resting on the paper and both white front paws stretched forward and dangling over the edge of the desk, looking at the camera with half-closed, done-with-everything eyes, the whole cat fully in frame. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the brown tabby cat lies flat across the paper stack and lets one white front paw slowly swing over the edge of the desk, gives a long slow blink at the camera, then wiggles its chin a little deeper into the paper as its tail flops down once behind it. Its ears droop sideways. Steam keeps curling up from the tea mug and rain keeps running down the window. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Mid-November cat meme roundups are full of cold-week, workweek-mood posts, and a viral post this week joked that a cat in a tie looks like he really has a job and doesn't like it. Today is a Tuesday, which fits the 'it's only Tuesday?' joke.",
+    "pattern": "relatable workweek meme: the cat starts out dressed for the job with a flat stare, then gives up and lies flat on the desk; the caption is the 'me when' line",
+    "evidence": [
+     {
+      "title": "24 Of The Funniest Posts About Cats And Dogs This Week (Nov. 7-13)",
+      "url": "https://www.yahoo.com/entertainment/articles/24-funniest-posts-cats-dogs-213637984.html"
+     },
+     {
+      "title": "24 Funniest Feline Memes to Get You Warmed Up for the Week (November 9, 2026) - I Can Has Cheezburger?",
+      "url": "https://cheezburger.com/47340293/24-funniest-feline-memes-to-get-you-warmed-up-for-the-week-november-9-2026"
+     },
+     {
+      "title": "26 Fabulous Festive Cat Memes to Welcome the Holiday Season Early (November 16, 2026) - I Can Has Cheezburger?",
+      "url": "https://cheezburger.com/47350021/26-fabulous-festive-cat-memes-to-welcome-the-holiday-season-early-november-16-2026"
+     }
+    ]
+   },
+   "id": "m261117b",
+   "format": "meme",
+   "engine": "14b",
+   "seed": 95496,
+   "tease": false
+  }
+ ]
+}

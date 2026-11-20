@@ -1,0 +1,23 @@
+{
+ "date": "2026-11-15",
+ "slot": "b",
+ "format": "game",
+ "model": "claude-opus-5-5",
+ "effort": "high",
+ "tokens": {
+  "input": 12,
+  "cache_write": 15866,
+  "cache_read": 51244,
+  "output": 4283,
+  "web_search": 6,
+  "web_fetch": 0
+ },
+ "ok": true,
+ "tries": 1,
+ "usd": 0.235,
+ "errors": [],
+ "history": [
+  []
+ ],
+ "slug": "duck-pond-pick-all-tuxedo"
+}

@@ -1,0 +1,58 @@
+{
+ "date": "2026-11-19",
+ "concepts": [
+  {
+   "slug": "beanie-pom-pom-kitten-wakes-up",
+   "track": "fluffing-a-duck.mp3",
+   "caption": "Don't look away from the pom-pom",
+   "title": "Wore My Winter Beanie for the First Time. The Pom-Pom Blinked 👀🐱",
+   "en_line": "The fluffiest part of my winter hat turned out to be a sleepy kitten.",
+   "ko_line": "올겨울 첫 비니 꺼냈는데 방울이 눈을 떴다 🥹",
+   "tags": [
+    "cat",
+    "ai cat",
+    "kitten",
+    "pom pom kitten",
+    "winter beanie",
+    "cute kitten",
+    "cozy winter",
+    "transformation"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#아기고양이",
+    "#겨울비니",
+    "#cat",
+    "#kitten",
+    "#aicat"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic cozy close-up at eye level, vertical composition, of a chunky cable-knit cranberry-red wool beanie resting on a light oak wooden bench beside a frosty window, soft snowflakes falling outside, warm golden lamp light and softly blurred warm fairy-light bokeh in the background. On top of the beanie sits one big round fluffy pom-pom of long soft silver-grey fur with cream-white tips; two tiny triangular silver-grey kitten ears with pale pink insides peek out of the top of the pom-pom, and a tiny fluffy silver-grey tail tip curls out at its side. The whole beanie and pom-pom are centered and fully in frame, sharp focus on the pom-pom, shallow depth of field.",
+     "motion": "From the very first frame the two tiny kitten ears on the fluffy silver-grey pom-pom twitch, the pom-pom gives a soft little wiggle like a breath, and the tiny tail tip flicks once and curls back. The red beanie stays still on the wooden bench. The tiny kitten stays fully in frame, curled up inside the round pom-pom with its four normal legs tucked away out of sight. Soft snowflakes drift down outside the frosty window and the fairy lights twinkle gently. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same tiny fluffy silver-grey pom-pom kitten from shot 1 with the same fur pattern, face and eye color. The fluffy pom-pom on top of the cranberry-red cable-knit beanie is now a tiny round kitten in the exact same spot: long soft silver-grey fur with cream-white tips that looks just like the pom-pom fur, the same two tiny ears with pale pink insides, the same fluffy tail curled around its body, big round copper-amber eyes half open as if just waking up, a tiny pink nose, mouth closed, four small paws resting on the knit top of the beanie. Same light oak bench, same frosty window with falling snow, same warm lamp light and fairy-light bokeh. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the tiny silver-grey pom-pom kitten on top of the red beanie is already blinking awake: it blinks its sleepy copper-amber eyes twice, lifts its head with a small curious head tilt toward the camera, then gently kneads one tiny front paw on the soft knit while its fluffy fur sways softly. Mouth stays closed. The kitten stays fully in frame on top of the beanie with four normal legs. Snowflakes keep falling outside the window and the fairy lights twinkle. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.6
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Mid-to-late November brings the first real cold days across the northern hemisphere and in Korea, so winter beanies come out of the closet. 'Food or object turns into a tiny cat' transformation clips are still a popular short-video format.",
+    "pattern": "hidden-kitten morph: a cosy everyday winter object with a tiny ear hint that moves in the first second, then the reveal as a sleepy kitten whose fur matches the object waking up in the same spot",
+    "evidence": [
+     {
+      "title": "Food Turning into Cats Animation",
+      "url": "https://www.tiktok.com/discover/food-turning-into-cats-animation"
+     }
+    ]
+   },
+   "id": "m261119g",
+   "format": "morph",
+   "engine": "14b",
+   "seed": 84535,
+   "tease": false
+  }
+ ]
+}

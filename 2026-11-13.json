@@ -1,0 +1,53 @@
+{
+ "date": "2026-11-13",
+ "concepts": [
+  {
+   "slug": "chess-sore-loser-cat",
+   "track": "pixel-peeker-polka-faster.mp3",
+   "caption": "Me losing at board game night",
+   "title": "When You're Losing at Chess, Just Lie on the Board ♟️🐱",
+   "en_line": "If nobody can see the board, nobody can lose.",
+   "ko_line": "질 것 같으면 그냥 판 위에 드러눕기 ♟️",
+   "tags": [
+    "cat",
+    "ai cat",
+    "tuxedo cat",
+    "chess cat",
+    "board game",
+    "sore loser",
+    "funny cat",
+    "cute cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#턱시도고양이",
+    "#보드게임",
+    "#cat",
+    "#chess",
+    "#funnycat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic tuxedo cat with a glossy black coat, a white chest, a white muzzle, four white front and back paws, a pink nose and bright green eyes, sitting upright on a low wooden coffee table behind a classic wooden chessboard with carved light and dark wooden chess pieces in mid-game. The cat stares down at the pieces with a serious, focused face. Cosy living room at night, warm golden lamp light, a soft knitted blanket on a sofa in the blurred background, the whole cat fully in frame and clearly visible, vertical composition",
+     "motion": "The tuxedo cat stares at the chessboard in deep concentration, slowly tilts its head to one side, then lifts one white front paw and gently taps a small wooden pawn so it wobbles in place, and looks at it with narrowed green eyes. The warm lamp light glows softly. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same tuxedo cat with the same fur pattern, face and eye color. Show the next moment: the cat now lies stretched out on its side right across the wooden chessboard on the same coffee table, covering most of the squares, with several carved wooden chess pieces toppled over around its body, its green eyes half-closed with a calm, smug look, front white paws relaxed over the edge of the board. Same cosy living room at night with warm golden lamp light. Photorealistic, vertical composition.",
+     "motion": "The tuxedo cat lies across the chessboard among the toppled wooden pieces, gives a slow, satisfied blink, swishes its black tail lazily, and nudges one fallen chess piece a little with its white front paw. The warm lamp light glows softly. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Evergreen pick, because the live trend search failed today. Mid-November means long, cold nights and cosy board game evenings indoors, and 'cat lies on whatever you're playing' is a sore-loser beat everyone knows.",
+    "pattern": "game build-up then a fail beat: a serious, focused cat studying its move, then it 'wins' by lying down on the whole board; the relatable sore-loser title is told from the viewer's side ('When you're losing...')",
+    "evidence": []
+   },
+   "id": "m261113",
+   "format": "game",
+   "engine": "14b",
+   "seed": 58608
+  }
+ ]
+}

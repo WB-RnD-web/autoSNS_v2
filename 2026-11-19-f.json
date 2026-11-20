@@ -1,0 +1,63 @@
+{
+ "date": "2026-11-19",
+ "concepts": [
+  {
+   "slug": "player-two-paws-at-you-black-smoke-maine-coon",
+   "track": "sneaky-snitch.mp3",
+   "caption": "*paws at you* hop on, player 2",
+   "title": "Nobody Joined as Player 2, So He Played Both Sides 🕹️🐱",
+   "en_line": "He asked nicely three times, then he found a way to be both players.",
+   "ko_line": "플레이어2 기다리다 지쳐서 혼자 2인용 하는 중 🕹️",
+   "tags": [
+    "cat",
+    "ai cat",
+    "arcade cat",
+    "gaming cat",
+    "maine coon",
+    "player 2",
+    "paws at you",
+    "funny cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#오락실",
+    "#냥스타그램",
+    "#cat",
+    "#aicat",
+    "#gamercat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical composition, eye-level view of a big fluffy black smoke Maine Coon cat with a long shaggy jet-black coat, a pale silver undercoat showing at the neck ruff and chest, tall lynx-tipped ears with silver ear tufts, a full black plumed tail and large round amber-gold eyes. The cat sits fully in frame on the wide wooden control deck of a vintage two-player arcade cabinet, facing the camera, between two red ball-top joysticks and rows of glossy round buttons in red, yellow and blue. The cat holds one front paw raised toward the camera. Beside the cabinet stands an empty padded red stool. Behind the cat is a dim cosy retro arcade with soft blurry pink, teal and violet neon glow, warm and inviting. One simple setting, the cat clearly lit and sharp.",
+     "motion": "Right from the very first frame, the black smoke Maine Coon reaches its raised front paw straight toward the camera in a soft patting motion, pulls it back and pats toward the camera again, then tilts its head with hopeful wide amber eyes and pats once more. Its ear tufts twitch and its fluffy tail sways gently. The colourful buttons glow softly and the blurry neon lights in the background slowly pulse. The cat stays fully in frame with four normal legs, mouth closed. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same big fluffy black smoke Maine Coon cat with the same fur pattern, face and eye color, with its silver undercoat ruff, lynx-tipped ears with silver tufts and large amber-gold eyes. Same retro arcade cabinet and same dim neon arcade. Now the cat stands on the wide wooden control deck with its body centered between the two red ball-top joysticks, one front paw resting on each joystick, playing both sides at once. Its chest is puffed out proudly, eyes half-closed in smug satisfaction, mouth closed. The round buttons glow bright and a strip of warm golden lights along the cabinet edge shines in celebration. The empty red stool is still beside it. Photorealistic, vertical composition.",
+     "motion": "Right from the very first frame, the black smoke Maine Coon wiggles the left joystick and the right joystick with alternating paws in a quick happy rhythm, as if playing both players at once. The golden light strip flashes and the colourful buttons blink in celebration, and the cat lifts its chin proudly and gives one slow satisfied blink. Its fluffy tail swishes behind it. The cat stays fully in frame with four normal legs, mouth closed. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 1,
+   "trend": {
+    "why_now": "The 'paws at you' meme (an AI-edited snow leopard pawing at the viewer, usually captioned as an invitation to hop on a game) took off on X, TikTok and Instagram from late October 2026 and is still being remixed this month. Cat-arcade videos are also popular right now.",
+    "pattern": "direct-to-camera hook: the cat paws at the viewer to invite them to play from the very first frame, then the win beat when nobody joins and he plays both sides himself. Our own cat, arcade and punchline, not the snow leopard image.",
+    "evidence": [
+     {
+      "title": "Snow Leopard Paws at You | Know Your Meme",
+      "url": "https://knowyourmeme.com/memes/snow-leopard-paws-at-you"
+     },
+     {
+      "title": "I Made an Arcade for My Cats... - YouTube",
+      "url": "https://www.youtube.com/watch?v=ccYfuXAjFQA"
+     }
+    ]
+   },
+   "id": "m261119f",
+   "format": "game",
+   "engine": "14b",
+   "seed": 67870,
+   "tease": false
+  }
+ ]
+}

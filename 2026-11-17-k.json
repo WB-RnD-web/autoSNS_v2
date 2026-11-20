@@ -1,0 +1,68 @@
+{
+ "date": "2026-11-17",
+ "concepts": [
+  {
+   "slug": "turkey-cheese-board-victory-dance-turkish-angora",
+   "track": "kool-kats.mp3",
+   "caption": "Turkey cheese board done. Dance break",
+   "title": "Made a Turkey Out of Cheese, So She Did a Victory Dance 🧀🦃",
+   "en_line": "She built a whole turkey out of cheese and the beat took care of the rest.",
+   "ko_line": "치즈로 칠면조 완성하고 신난 냥이 🧀",
+   "tags": [
+    "cat",
+    "ai cat",
+    "dancing cat",
+    "cat dance",
+    "thanksgiving",
+    "turkey cheese board",
+    "charcuterie board",
+    "turkish angora",
+    "funny cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#댄스고양이",
+    "#추수감사절",
+    "#cat",
+    "#dancingcat",
+    "#thanksgiving",
+    "#aicat"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical full-body shot of a slim, elegant Turkish Angora cat with a long silky pure white coat, a fluffy white plumed tail, large pointed ears with soft pink insides, a pink nose and odd eyes: one bright sapphire-blue eye and one golden-amber eye. The cat stands upright on its hind legs on a wide rustic wooden farmhouse table in a cozy warm kitchen, both front paws raised at chest height in a happy dance pose, body facing the camera, mouth closed. Beside the cat sits a large round wooden board arranged as a turkey: a round cheese ball body with a small pear for the head, surrounded by fanned-out rows of sliced orange cheddar, pale white cheese, round crackers and purple grapes forming colorful tail feathers. Warm glowing string lights and a few small orange pumpkins in the softly blurred background, golden evening light. The whole cat fully in frame with space around it, vertical composition.",
+     "motion": "From the very first frame the white Turkish Angora cat is already dancing upright on its hind legs beside the turkey cheese board: it sways its hips side to side to the beat, bobs its head and pumps its raised front paws up and down in rhythm, its plumed tail swishing. Mouth closed, happy bright eyes. Warm string lights twinkle softly in the background and the cheese board stays still. The cat stays fully in frame on the table with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same slim white Turkish Angora cat with the same fur pattern, face and eye color, one sapphire-blue eye and one golden-amber eye. Same cozy kitchen, same rustic wooden table and same turkey-shaped cheese board beside it. Now the cat strikes a proud final pose: standing tall on its hind legs, one front paw stretched out toward the cheese board as if presenting it, the other front paw raised high, chin up, eyes half-closed in a satisfied look, mouth closed, plumed tail curled up behind it. Warm string lights and small pumpkins in the softly blurred background. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the white Turkish Angora cat holds its proud presenting pose and bounces to the beat: it dips gently and pops back up twice, tilts its head toward the turkey cheese board, then slowly blinks at the camera with a satisfied look while its plumed tail swishes. Mouth closed, the cheese board stays untouched. String lights twinkle in the background. The cat stays fully in frame on the table with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 1,
+   "trend": {
+    "why_now": "Thanksgiving is nine days away, and November trend trackers list turkey-shaped cheese boards coming back as a seasonal food format. AI cat dance clips (the dancing cat and clapping cat memes) are still among the biggest pet formats this month.",
+    "pattern": "Seasonal food reveal plus an AI cat dance: the cat is already grooving next to the finished turkey cheese board in the very first frame, then ends on a proud 'ta-da' pose that shows the board off. The title follows a 'did X, so she did Y' pattern.",
+    "evidence": [
+     {
+      "title": "TikTok Trends: November 2026",
+      "url": "https://newengen.com/insights/tiktok-trends/"
+     },
+     {
+      "title": "Instagram Trends: November 2026 — Updated Weekly",
+      "url": "https://newengen.com/insights/instagram-trends/"
+     },
+     {
+      "title": "AI Cat Dance: Make Your Cat Do the Viral Memes From 1 Photo",
+      "url": "https://www.atlascloud.ai/blog/tips/ai-cat-dance"
+     }
+    ]
+   },
+   "id": "m261117k",
+   "format": "dance",
+   "engine": "14b",
+   "seed": 53020,
+   "tease": true
+  }
+ ]
+}

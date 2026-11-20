@@ -1,0 +1,65 @@
+{
+ "date": "2026-11-14",
+ "concepts": [
+  {
+   "slug": "solo-pajama-dance-abyssinian",
+   "track": "funkorama.mp3",
+   "caption": "No duo partner? Dancing solo.",
+   "title": "No Dance Partner? He Does the Pajama Dance Solo 🎄🐱",
+   "en_line": "Everyone else has a duo partner for the pajama dance, so he does both parts himself.",
+   "ko_line": "짝꿍 없어도 혼자 잠옷 댄스 완벽 소화 🎄",
+   "tags": [
+    "cat",
+    "ai cat",
+    "dancing cat",
+    "cat dance",
+    "christmas pajama dance",
+    "abyssinian cat",
+    "funny cat",
+    "cozy christmas"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#잠옷댄스",
+    "#크리스마스",
+    "#cat",
+    "#catdance",
+    "#aicat"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic slender Abyssinian cat with a short warm ruddy-cinnamon ticked coat, a lighter cream chest and chin, large upright pointed ears, dark eyeliner-like rims around big almond-shaped bright green-gold eyes, and a long thin tail, wearing a tiny red-and-green tartan flannel pajama top with small white buttons. The cat stands upright on its hind legs in the middle of a soft cream knitted rug in a cosy living room, front paws held out to the sides mid-dance with hips tilted to one side, looking at the viewer. Behind it is a decorated Christmas tree with warm golden fairy lights and a glowing brick fireplace, warm evening light. The whole cat is fully in frame from ears to back paws, vertical composition",
+     "motion": "The Abyssinian cat in the tartan pajama top stays standing on its hind legs on the rug and sways its hips side to side to the beat, rolling its front paws in small circles in front of its chest, with a small head bob on each beat and the tail swishing behind it. The fairy lights on the Christmas tree twinkle softly and the fireplace flickers. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same slender Abyssinian cat with the same ruddy-cinnamon ticked fur pattern, face and green-gold eye color, wearing the same red-and-green tartan flannel pajama top with white buttons. The cat is in the same cosy living room on the same cream knitted rug in front of the twinkling Christmas tree and glowing fireplace, now striking the final pose: standing tall on its hind legs with both front paws raised high above its head, chin lifted proudly, eyes half-closed with a confident look, tail curled up behind it. The whole cat is fully in frame. Photorealistic, vertical composition.",
+     "motion": "The Abyssinian cat holds its final pose on its hind legs with both front paws raised high, gives two small proud bounces to the beat, then slowly blinks and gives a little head tilt toward the viewer while its tail sways gently. The Christmas tree lights twinkle and the fireplace glows warmly. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 1,
+   "trend": {
+    "why_now": "Mid-November is when the Christmas pajama dance (a two-person routine) spreads on TikTok, and AI cat dance clips are the big pet format right now. A cat with no duo partner doing the routine alone on a Saturday night is the relatable joke.",
+    "pattern": "dance meme, pet version: cosy holiday pajamas, hip sways and rolling arms to the beat, then a proud final pose with paws up; title pattern 'No X? He does Y anyway'",
+    "evidence": [
+     {
+      "title": "Christmas Dance AI: Do the TikTok Christmas Dance Trend",
+      "url": "https://www.makeviral.ai/templates/christmas-dance-ai-trend"
+     },
+     {
+      "title": "AI Cat Dance: Make Your Cat Do the Viral Memes From 1 Photo",
+      "url": "https://www.atlascloud.ai/blog/tips/ai-cat-dance"
+     },
+     {
+      "title": "TikTok Trends on November 13, 2026: AI Meme Chart",
+      "url": "https://viralremix.org/tiktok-trends/2026-11-13"
+     }
+    ]
+   },
+   "id": "m261114f",
+   "format": "dance",
+   "engine": "14b",
+   "seed": 20682
+  }
+ ]
+}

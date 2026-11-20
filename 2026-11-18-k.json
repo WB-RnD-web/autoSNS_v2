@@ -1,0 +1,67 @@
+{
+ "date": "2026-11-18",
+ "concepts": [
+  {
+   "slug": "holiday-latte-hip-sway-oriental-shorthair",
+   "track": "funkorama.mp3",
+   "caption": "Holiday drink season just started",
+   "title": "Holiday Drinks Are Back. Her Hips Got the Memo ☕🐱",
+   "en_line": "The first holiday latte of the year landed on the counter, and her hips started dancing before she even took a sip.",
+   "ko_line": "홀리데이 음료 시즌 시작되자마자 골반부터 신난 고양이 ☕",
+   "tags": [
+    "cat",
+    "ai cat",
+    "dancing cat",
+    "holiday drinks",
+    "latte",
+    "cozy cafe",
+    "oriental shorthair",
+    "funny cat",
+    "cat dance"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#cat",
+    "#고양이댄스",
+    "#홀리데이",
+    "#catsofinstagram",
+    "#aicat"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical full-body shot of a slim, elegant blue-cream tortoiseshell Oriental Shorthair cat with a short sleek coat of soft blue-grey mottled with warm cream patches, a long wedge-shaped face, very large upright ears and bright almond-shaped emerald-green eyes, standing upright on its hind legs on a warm wooden cafe counter with both front paws raised at chest height as if dancing. Beside the cat sits a plain cream ceramic mug topped with a swirl of whipped cream and red and green sprinkles, with a little steam rising. Behind it is a cozy cafe at evening with warm golden string lights, a few pine branches and soft bokeh. The cat is fully in frame and clearly visible, centered, warm cozy lighting, vertical composition",
+     "motion": "From the very first frame the blue-cream Oriental Shorthair cat is already dancing on its hind legs, swaying its hips side to side to the beat with both front paws raised and bobbing its head in rhythm, its big ears twitching on each beat. Steam curls up from the whipped-cream mug and the golden string lights twinkle softly behind it. The cat stays fully in frame with four normal legs, mouth closed. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same slim blue-cream tortoiseshell Oriental Shorthair cat with the same fur pattern, face and eye color. Same cozy cafe counter, same whipped-cream mug with red and green sprinkles and the same warm string lights. The cat is now striking a proud disco final pose on its hind legs: one front paw pointed straight up high toward the string lights, the other front paw resting on its hip, chin lifted, eyes half-closed with a confident satisfied expression, mouth closed. The cat is fully in frame and clearly visible. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the blue-cream Oriental Shorthair cat does a disco point to the beat on its hind legs, moving its raised front paw from high up to down toward the mug and back up again, while its hips bounce and its head nods, then it holds the proud pose with a slow, satisfied blink. Steam rises from the mug and the string lights twinkle. The cat stays fully in frame with four normal legs, mouth closed. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 1,
+   "trend": {
+    "why_now": "Mid-November feeds are turning cosy and festive, and holiday drink season (red cups, sugar cookie lattes) is trending this week. AI pet dance clips are also one of the biggest AI formats in November 2026. We put the two together with our own character: a cat dancing next to a plain, unbranded holiday latte.",
+    "pattern": "Relatable seasonal trigger (the first holiday drink of the year) that sets off a dance right away: hips swaying in frame 1, then a confident disco-point final pose. The title follows the 'X is back. Y got the memo' pattern.",
+    "evidence": [
+     {
+      "title": "TikTok Trends: November 2026",
+      "url": "https://newengen.com/insights/tiktok-trends/"
+     },
+     {
+      "title": "Trending TikTok Sounds & Viral Trends in November 2026",
+      "url": "https://www.socialpilot.co/blog/tiktok-trends"
+     },
+     {
+      "title": "AI Cat Dance: Make Your Cat Do the Viral Memes From 1 Photo",
+      "url": "https://www.atlascloud.ai/blog/tips/ai-cat-dance"
+     }
+    ]
+   },
+   "id": "m261118k",
+   "format": "dance",
+   "engine": "14b",
+   "seed": 82575,
+   "tease": true
+  }
+ ]
+}

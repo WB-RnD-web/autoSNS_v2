@@ -1,0 +1,26 @@
+{
+ "date": "2026-11-15",
+ "slot": "d",
+ "format": "meme",
+ "model": "claude-opus-5-5",
+ "effort": "high",
+ "tokens": {
+  "input": 1515,
+  "cache_write": 15636,
+  "cache_read": 79287,
+  "output": 5790,
+  "web_search": 6,
+  "web_fetch": 0
+ },
+ "ok": true,
+ "tries": 2,
+ "usd": 0.276,
+ "errors": [],
+ "history": [
+  [
+   "m261115d 컷1: xfade 는 둘째 컷부터 0.1~0.8초"
+  ],
+  []
+ ],
+ "slug": "exam-week-paper-balls-ginger-british-shorthair"
+}

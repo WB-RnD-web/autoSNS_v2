@@ -1,0 +1,68 @@
+{
+ "date": "2026-11-19",
+ "concepts": [
+  {
+   "slug": "suneung-last-five-minutes-belly-up-bicolor",
+   "track": "monkeys-spinning-monkeys.mp3",
+   "caption": "Me in the last 5 min of the exam",
+   "title": "Last 5 Minutes of the Big Exam vs. the Second It Ended 📝🐱",
+   "en_line": "Pencils down, paws up: the exam is finally over.",
+   "ko_line": "수능 끝난 순간, 수험생 모두 수고했어 😹",
+   "tags": [
+    "cat",
+    "ai cat",
+    "exam meme",
+    "exam day",
+    "suneung",
+    "student life",
+    "funny cat",
+    "relatable meme",
+    "cute cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#수능",
+    "#수험생",
+    "#cat",
+    "#catmemes",
+    "#funnycat",
+    "#시험끝"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical composition, eye-level shot of a chubby grey-and-white bicolor domestic shorthair cat with a soft short coat. It has a white chest, a white muzzle, four white paws, a solid smoky-grey back and grey patches over both ears that meet in a grey cap, a pink nose and round bright green eyes. The cat sits upright behind a wooden school desk in an empty, sunlit classroom. Its whole body is in frame and clearly visible, with wide intense eyes and ears pointed forward, staring down at a plain blank white sheet of paper. A yellow pencil and a small white eraser lie next to its front paw. Behind it are rows of empty wooden chairs, softly blurred, and tall windows with orange autumn trees outside. Soft afternoon light.",
+     "motion": "From the very first frame the grey-and-white cat stares hard at the blank paper. Its green eyes dart quickly left and right, its ears twitch, and it taps the yellow pencil twice in a hurry with one white front paw. Its tail flicks nervously behind the desk. Orange autumn leaves drift past the classroom window. The cat stays seated and fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same chubby grey-and-white bicolor domestic shorthair cat with the same fur pattern, face and eye color. The exam is over. The cat now lies on its back across the top of the same wooden school desk, belly up and fully relaxed. All four white paws float loosely in the air and its eyes are half-closed in a blissful, content expression. The pencil, eraser and paper are pushed to the edge of the desk. Warm golden sunset light streams through the tall classroom windows, with orange autumn trees outside. The whole cat is visible on the desk. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the grey-and-white cat wiggles happily on its back on top of the desk. It gently paddles its front paws in the air and sways its body slowly from side to side, then gives one slow, content blink. Golden dust specks float in the sunset light and a few autumn leaves drift past the window. The cat stays on the desk, fully in frame, with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Today, Thursday 19 November 2026 (KST), is Suneung day. Korea's national college entrance exam runs from 08:40 to 17:45, flights stop for the English listening test and offices open late, so Korean feeds are full of exam-day and 'it's finally over' content. The tense last minutes of an exam followed by the moment it ends is something viewers everywhere recognise.",
+    "pattern": "Before and after meme. The hook is a tense cat with darting eyes and frantic pencil taps in the last minutes of an exam. The punchline is the same cat flopped belly-up on the desk in golden light the second it ends. The title uses the 'X vs. the second Y' pattern.",
+    "evidence": [
+     {
+      "title": "Suneung 2026 (Nov 19): The Day Korea Goes Quiet",
+      "url": "https://kelkorean.com/suneung/"
+     },
+     {
+      "title": "What Is the Suneung? Korea's College Entrance Exam Explained",
+      "url": "https://www.stargatekorea.net/what-is-the-suneung/"
+     },
+     {
+      "title": "South Korea Shuts Down for Suneung 2026 College Entrance Exam - Dainik Jagran English",
+      "url": "https://english.dainikjagranmpcg.com/international/south-korea-shuts-down-parts-of-daily-life-for-one/article-44869"
+     }
+    ]
+   },
+   "id": "m261119d",
+   "format": "meme",
+   "engine": "14b",
+   "seed": 83128,
+   "tease": true
+  }
+ ]
+}

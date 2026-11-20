@@ -1,0 +1,60 @@
+{
+ "date": "2026-11-18",
+ "concepts": [
+  {
+   "slug": "sunset-5pm-bedtime-balinese",
+   "track": "sneaky-snitch.mp3",
+   "caption": "Winter at 5 PM: it's bedtime now",
+   "title": "Sun Set at 4:59 PM. He Was in Bed by 5:00 🌙🐱",
+   "en_line": "When it gets dark at 5, a cat's night routine starts right away.",
+   "ko_line": "5시에 해 지면… 이제 잘 시간이지 🌙",
+   "tags": [
+    "cat",
+    "ai cat",
+    "cat meme",
+    "winter",
+    "early sunset",
+    "bedtime",
+    "cozy cat",
+    "balinese cat",
+    "funny cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#겨울",
+    "#퇴근각",
+    "#cat",
+    "#catmeme",
+    "#cozy",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical full-body shot of a slender Balinese cat with a long silky cream-white coat, dark seal-brown points on its face mask, ears, legs and plume-like tail, and bright sapphire-blue almond-shaped eyes, sitting upright on a wide wooden windowsill in a cozy living room, one front paw resting on the window glass. Outside the window the early evening sky is already deep dark blue, with soft glowing streetlights and bare winter trees. Warm golden table-lamp glow inside. The cat is fully in frame and clearly visible, vertical composition",
+     "motion": "From the very first frame the Balinese cat taps the window glass twice with one front paw, turns its head to look back into the room with a slow, unimpressed blink, then looks back out at the dark sky as its ears twitch. Streetlights glow softly outside and a few dry leaves drift past the window. The cat stays fully in frame with four normal legs and its mouth closed. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same slender Balinese cat with the same fur pattern, face and eye color. The cat now lies in a neat loaf inside a round fluffy cream cat bed on the floor of the same cozy living room, a small soft knitted grey blanket draped over its back, chin and both front paws resting on the blanket edge, eyes half-closed and sleepy. The dark blue evening sky is visible through the window behind it, warm golden lamp glow. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the Balinese cat snuggles deeper into the fluffy bed, tucks its chin onto its front paws and slowly blinks with heavy sleepy eyes while its plume tail curls around the edge of the bed and its ears relax. The warm lamp glow flickers gently. The cat stays fully in frame with four normal legs and its mouth closed. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Mid-November means sunsets before 5 PM across the northern hemisphere after the clocks went back. This week's cat meme roundups are full of cosy, holiday-season-came-early jokes, and 'it's dark so it's bedtime' is a relatable winter meme every year.",
+    "pattern": "relatable seasonal meme: the cat looks unimpressed at the dark sky at 5 PM, then the punchline is the cat already tucked into bed; meme-line caption plus a 'by 5:00' title pattern",
+    "evidence": [
+     {
+      "title": "26 Fabulous Festive Cat Memes to Welcome the Holiday Season Early (November 16, 2026) - I Can Has Cheezburger?",
+      "url": "https://cheezburger.com/47350021/26-fabulous-festive-cat-memes-to-welcome-the-holiday-season-early-november-16-2026"
+     }
+    ]
+   },
+   "id": "m261118j",
+   "format": "meme",
+   "engine": "14b",
+   "seed": 54587,
+   "tease": false
+  }
+ ]
+}

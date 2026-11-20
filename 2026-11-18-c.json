@@ -1,0 +1,53 @@
+{
+ "date": "2026-11-18",
+ "concepts": [
+  {
+   "slug": "jigsaw-last-piece-under-ragamuffin",
+   "track": "investigations.mp3",
+   "caption": "Where's the last piece?",
+   "title": "999 Pieces Done. The Last One Was Under Him All Along 🧩🐱",
+   "en_line": "He searched the whole table for the last piece, and it was right under him.",
+   "ko_line": "999조각 다 맞췄는데 마지막 조각 범인이 너였냥 🧩",
+   "tags": [
+    "cat",
+    "ai cat",
+    "jigsaw puzzle",
+    "funny cat",
+    "cute cat",
+    "ragamuffin",
+    "cozy cat",
+    "missing puzzle piece"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#퍼즐",
+    "#냥스타그램",
+    "#cat",
+    "#funnycat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical full-body shot of a fluffy Ragamuffin cat with a long plush cream-and-white bicolor coat, a bright white chest, white front paws and a white muzzle, soft cream ears and a cream mask around big round golden-green eyes, sitting on a low wooden coffee table beside a nearly finished jigsaw puzzle of a plain autumn forest with orange and red trees, one single empty puzzle-shaped gap near the center showing the wooden table underneath, a few empty puzzle box halves in plain brown cardboard, a cozy living room with a warm table lamp and a softly glowing fireplace in the background, the cat fully in frame and clearly visible, warm evening light, vertical composition",
+     "motion": "From the very first frame the fluffy cream-and-white Ragamuffin cat is already leaning over the puzzle, staring at the empty gap, then quickly turns its head left and right searching the table, ears swiveling, and gently taps the empty gap once with one white front paw before tilting its head in confusion. The fireplace glow flickers softly in the background. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same fluffy Ragamuffin cat with the long plush cream-and-white bicolor coat, white chest, white paws, cream mask and big round golden-green eyes, with the same fur pattern, face and eye color. The cat has just stood up from where it was sitting on the edge of the puzzle, and the one missing autumn-forest puzzle piece is now clearly visible lying on the table right where the cat had been sitting, next to the empty gap. The cat looks down at the piece with wide surprised eyes and perked ears, same coffee table, same cozy living room with a warm lamp and glowing fireplace. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the fluffy cream-and-white Ragamuffin cat is already looking down at the lost puzzle piece with wide eyes, then gently pushes it with one white front paw toward the empty gap, looks up toward the camera with an innocent face and gives a slow proud blink. The fireplace glow flickers softly in the background. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 1,
+   "trend": {
+    "why_now": "Evergreen: mid-November evenings get cold and dark, so cosy indoor puzzle nights feel seasonal, and the joke of losing the last piece only to find it under the cat works everywhere. No current trend could be confirmed today because the search limit was reached.",
+    "pattern": "relatable search-then-reveal: the cat searches in confusion from the first frame, then the twist shows he was sitting on the missing piece and he finishes the puzzle as if it were his idea",
+    "evidence": []
+   },
+   "id": "m261118c",
+   "format": "game",
+   "engine": "14b",
+   "seed": 89171,
+   "tease": true
+  }
+ ]
+}

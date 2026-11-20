@@ -1,0 +1,58 @@
+{
+ "date": "2026-11-18",
+ "concepts": [
+  {
+   "slug": "early-gift-wrapping-self-wrapped-orange-tabby",
+   "track": "run-amok.mp3",
+   "caption": "Gift wrapping is going great so far",
+   "title": "Started Wrapping Gifts Early. Wrapped Exactly One 🎁🐱",
+   "en_line": "He started wrapping gifts early this year and wrapped exactly one: himself.",
+   "ko_line": "선물 포장 일찍 시작했는데 포장된 건 고양이 하나뿐 🎁",
+   "tags": [
+    "cat",
+    "ai cat",
+    "orange cat",
+    "gift wrapping",
+    "christmas cat",
+    "holiday meme",
+    "funny cat",
+    "cat meme"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#선물포장",
+    "#크리스마스",
+    "#cat",
+    "#orangecat",
+    "#catmemes"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical full-body shot of a chunky orange tabby American Shorthair cat with a short dense coat in bright ginger with bold dark-orange classic swirl tabby markings, a white chest and white front paws, a round face and big amber-green eyes. The cat sits on a warm honey-colored wooden floor in a cosy living room, right next to an open empty square cardboard gift box, a half-unrolled roll of plain solid red wrapping paper and a loose spool of shiny gold satin ribbon. One front paw is raised over the gold ribbon. Soft warm golden fairy-light bokeh glows in the blurred background. The whole cat is fully in frame and clearly visible, centered, warm evening light, vertical composition.",
+     "motion": "Right from the first frame, the orange tabby cat bats the shiny gold ribbon with its raised front paw, the ribbon wiggles and bounces on the floor, the cat taps it twice more with quick playful paw taps, then looks up toward the camera with wide amber-green eyes and a little head tilt. The fairy lights twinkle softly in the blurred background. The cat stays seated and fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same chunky orange tabby American Shorthair cat with the same fur pattern, face and eye color. Now the cat sits snugly inside the open square gift box, with the plain solid red wrapping paper loosely draped around the outside of the box and the gold satin ribbon tied loosely around the box, a big shiny gold bow sits on top of the cat's head, and the cat looks straight ahead with a proud, satisfied face. Same cosy living room, warm wooden floor, soft golden fairy-light bokeh in the background, the whole cat and box fully in frame. Photorealistic, vertical composition.",
+     "motion": "Right from the first frame, the orange tabby cat sitting in the gift box gives a slow proud blink, tilts its head to one side so the gold bow on its head wobbles gently, then sways its head slightly side to side to the beat with its mouth closed. The fairy lights twinkle softly in the background. The cat stays inside the box and fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Mid-November is when the holiday season starts early online: cat meme roundups this week are already themed on welcoming the festive season, and gift-wrapping chaos is a top relatable pre-holiday beat.",
+    "pattern": "relatable 'plan vs reality' meme: an earnest start (playing with the wrapping supplies) followed by the punchline where the cat becomes the only wrapped gift, with an ironic 'going great' caption",
+    "evidence": [
+     {
+      "title": "26 Fabulous Festive Cat Memes to Welcome the Holiday Season Early (November 16, 2026) - I Can Has Cheezburger?",
+      "url": "https://cheezburger.com/47350021/26-fabulous-festive-cat-memes-to-welcome-the-holiday-season-early-november-16-2026"
+     }
+    ]
+   },
+   "id": "m261118f",
+   "format": "meme",
+   "engine": "14b",
+   "seed": 61804,
+   "tease": false
+  }
+ ]
+}

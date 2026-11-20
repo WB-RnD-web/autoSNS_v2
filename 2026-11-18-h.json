@@ -1,0 +1,53 @@
+{
+ "date": "2026-11-18",
+ "concepts": [
+  {
+   "slug": "ping-pong-fluffy-wall-british-longhair",
+   "track": "pixel-peeker-polka-faster.mp3",
+   "caption": "Couldn't return one serve. New plan:",
+   "title": "Couldn't Return a Single Serve, So He Became the Wall 🏓🐱",
+   "en_line": "He can't miss the ball if the ball can't get past him.",
+   "ko_line": "서브 하나도 못 받더니 그냥 벽이 돼버림 🏓",
+   "tags": [
+    "cat",
+    "ai cat",
+    "ping pong cat",
+    "table tennis",
+    "funny cat",
+    "british longhair",
+    "cat games",
+    "cute cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#탁구",
+    "#냥스타그램",
+    "#cat",
+    "#catsofinstagram",
+    "#funnycats"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical full-body shot of a fluffy British Longhair cat with a long, dense, plush lilac coat (soft pinkish-grey, one solid colour with no markings), a round chubby face, small rounded ears and big round copper-orange eyes. The cat sits upright on the near end of a plain green table tennis table with white edge lines and a low dark net across the middle. One front paw is raised, and a small plain white ping pong ball hangs in mid-air just in front of it. The setting is a cozy rec room at night with warm string lights softly blurred behind. The view looks slightly down from the end of the table, with the whole cat clearly in frame, vertical composition",
+     "motion": "From the very first frame, the fluffy lilac British Longhair cat swats at the small white ping pong ball in front of it and just misses. The ball bounces once on the table beside its paw and rolls away behind it. The cat turns its head to follow the ball with its ears flicking, then looks back at the net with wide, round, surprised copper eyes. Warm string lights twinkle softly in the background. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same fluffy lilac British Longhair cat with the same fur pattern, face and eye color. Show the next moment: the cat now lies stretched out on its side across the near end of the same green table tennis table. Its plush body and fluffy tail cover the whole width of the table edge like a soft furry wall. Its head is raised, and its copper-orange eyes look calmly and proudly toward the net. One small plain white ping pong ball rests on the table just in front of its fluffy chest. Keep the same cozy rec room with warm string lights softly blurred behind, and keep the whole cat clearly in frame. Photorealistic, vertical composition.",
+     "motion": "From the very first frame, the small white ping pong ball rolls gently into the fluffy lilac British Longhair cat's chest and bounces softly back toward the net. The cat stays lying across the table like a wall, slowly blinks with a satisfied look, gives a small tail flick and settles its chin a little higher. Warm string lights twinkle softly in the background. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Evergreen idea: I couldn't confirm a current cat or arcade trend this time because the web search hit its limit after one query, and that query only found a film character, which we can't use. 'Can't win, so change the rules' cat clips work in any season, and ping pong is a new game for the channel.",
+    "pattern": "fail-then-loophole: misses the ball in the first second, then a smug win in shot 2 by blocking the whole table with his fluffy body",
+    "evidence": []
+   },
+   "id": "m261118h",
+   "format": "game",
+   "engine": "14b",
+   "seed": 27120,
+   "tease": true
+  }
+ ]
+}

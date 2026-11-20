@@ -1,0 +1,62 @@
+{
+ "date": "2026-11-15",
+ "concepts": [
+  {
+   "slug": "air-hockey-cant-watch-ragdoll",
+   "track": "pixel-peeker-polka-faster.mp3",
+   "caption": "Air hockey final. Fully locked in.",
+   "title": "Air Hockey Final: He Couldn't Even Watch 🙈🐱",
+   "en_line": "He guarded that goal with his whole heart, then the puck slipped past and he simply could not look.",
+   "ko_line": "에어하키 결승전… 차마 못 보겠다냥 🙈",
+   "tags": [
+    "cat",
+    "ai cat",
+    "ragdoll cat",
+    "air hockey",
+    "arcade",
+    "funny cat",
+    "cat fail",
+    "cute cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#에어하키",
+    "#오락실",
+    "#cat",
+    "#aicat",
+    "#catsofinstagram",
+    "#고양이스타그램"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic fluffy blue bicolor Ragdoll cat with a semi-long silky coat, soft blue-gray ears and mask split by a white inverted V on the face, a fluffy white chest and white front paws, a plush blue-gray tail and deep sapphire-blue eyes, crouched in a focused hunting pose at one end of a small air hockey table, front paws planted on the smooth white playing surface dotted with tiny air holes, a round red puck gliding toward it across the table, a red plastic mallet resting beside it, glossy blue table rails, cozy retro arcade behind it softly blurred with warm pink, purple and teal neon glow, the cat fully in frame and clearly visible, vertical composition",
+     "motion": "From the very first frame the blue bicolor Ragdoll cat's head snaps left and right, eyes locked on the red puck gliding back and forth across the table, then it gives a quick tap with one white front paw at the puck while staying crouched in place, ears forward, fluffy tail flicking. Neon lights in the background softly pulse and twinkle. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same fluffy blue bicolor Ragdoll cat with the same fur pattern, face and eye color. Same air hockey table in the same retro arcade with warm pink, purple and teal neon glow: the red puck now rests inside the goal slot right next to the cat, and the cat sits upright at its end of the table with one white front paw raised over its eyes as if it cannot bear to look, ears slightly tilted back, a dramatic defeated pose, the cat fully in frame and clearly visible. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the blue bicolor Ragdoll cat slowly lowers its white paw from its eyes to peek at the red puck sitting in its goal, blinks once, then lifts the paw back over its eyes and droops its head a little, fluffy tail swishing slowly on the table. Neon lights in the background keep softly twinkling. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "AI pet clips where an animal tries a human task with confidence and then hits a fail beat it 'can't look' at (such as the Dog Coffee Fail trend added on 4 Nov 2026) and AI cat reaction memes like Black Cat Clapping are going around right now. A cosy indoor arcade also suits a mid-November Sunday.",
+    "pattern": "confident hook into the fail beat: second one shows a locked-in cat tracking the puck, shot 2 shows the defeat with a relatable 'I can't watch' paw over the eyes",
+    "evidence": [
+     {
+      "title": "AI Pet Trends: Put Your Cat or Dog in the Viral Video",
+      "url": "https://jumponthetrend.app/trends/pets/"
+     },
+     {
+      "title": "Black Cat Clapping",
+      "url": "https://knowyourmeme.com/memes/black-cat-clapping"
+     }
+    ]
+   },
+   "id": "m261115f",
+   "format": "game",
+   "engine": "14b",
+   "seed": 40138
+  }
+ ]
+}

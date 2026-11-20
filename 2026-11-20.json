@@ -1,0 +1,76 @@
+{
+ "date": "2026-11-20",
+ "concepts": [
+  {
+   "slug": "butter-tteok-kitten-wakes-up",
+   "track": "merry-go.mp3",
+   "caption": "One of these is breathing",
+   "title": "Baked the Viral Butter Tteok. One Piece Had Ears 🧈🐱",
+   "en_line": "Crispy edges, a chewy middle, and one very sleepy kitten fresh from the oven.",
+   "ko_line": "버터떡 구웠는데 하나가 눈 떴어요 🧈",
+   "tags": [
+    "cat",
+    "ai cat",
+    "kitten",
+    "butter tteok",
+    "korean dessert",
+    "food morph",
+    "cute kitten",
+    "rice cake"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#버터떡",
+    "#아기고양이",
+    "#cat",
+    "#kitten",
+    "#aicat"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic cozy close-up at eye level, vertical composition, of a small dark baking tray on a warm wooden cafe table holding six freshly baked Korean butter rice cakes: small square chewy cakes with golden-brown caramelized crispy edges and pale buttery cream-gold tops, glossy with melted butter, soft wisps of steam rising. On the center-front cake, two tiny triangular fluffy cream-colored kitten ears with toasted golden-brown tips poke up clearly from the top, and a short fluffy cream tail tip with a toasted-brown end curls along its front edge. Warm afternoon window light, softly blurred cozy cafe background with a ceramic mug and a linen cloth.",
+     "motion": "From the very first frame the two tiny cream kitten ears on the center-front butter rice cake twitch and swivel, then the little tail tip flicks once along its edge, while soft steam keeps rising from all the warm rice cakes. The tray and the other cakes stay still. The tiny kitten stays fully in frame inside its rice cake shape, with four normal legs tucked out of sight. Photorealistic, warm light, smooth natural motion, static camera.",
+     "sfx": [
+      "swish"
+     ],
+     "beat": "the little tail tip flicks along the edge of the front rice cake"
+    },
+    {
+     "edit": "Keep exactly the same tiny cream-and-toasted-gold kitten hinted in the center-front butter rice cake with the same fur pattern, face and eye color. Keep the same baking tray, wooden table, warm window light and the other five butter rice cakes unchanged. The center-front rice cake is now a tiny loaf-shaped kitten curled into the same square shape in the same spot: short plush fur in pale buttery cream on top with toasted golden-brown fur along its edges, ears, paws and tail tip, a faint glossy butter sheen, big round amber-gold eyes half-open and sleepy, small pink nose, front paws tucked under, soft steam around it. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the tiny butter-cream kitten lifts its head, blinks its big amber-gold eyes fully open, wiggles its toasted-tipped ears, stretches one small front paw forward to touch the tray, then looks up at the camera with a gentle head tilt. Soft steam keeps rising from the warm rice cakes around it. The kitten stays fully in frame in the same spot with four normal legs and its mouth closed. Photorealistic, warm light, smooth natural motion, static camera.",
+     "xfade": 0.6,
+     "sfx": [
+      "meow"
+     ],
+     "beat": "the kitten blinks its eyes fully open and looks up at the camera",
+     "hit": true,
+     "caption": "Freshly baked kitten"
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Butter tteok (butter rice cake) is described as 2026's hottest Korean bakery dessert, the one that replaced the Dubai chewy cookie craze. Now that it's cold enough for warm cafe snacks, a steaming fresh tray fits the season. Animal clips stay one of the most reliable evergreen formats on Shorts.",
+    "pattern": "spot-the-odd-one morph: a challenge hook asks viewers to find the one cake that's alive, the ears twitch in the first second, then the reveal shows the cake is a kitten that wakes up and looks at the camera",
+    "evidence": [
+     {
+      "title": "Butter Tteok (버터떡) in Korea: 2026's Hottest Dessert Trend, Explained",
+      "url": "https://zuzukorea.travel/food/butter-tteok-korea-guide/"
+     },
+     {
+      "title": "2026 Korea Dessert Trends: From Dubai Chewy Cookies to Butter Rice Cakes, Ube, and Modern Tteok",
+      "url": "https://www.haniseoul.com/travels/korea/korean-trend-food-guide"
+     },
+     {
+      "title": "YouTube Shorts Trends November 2026: What's Actually Going Viral Right Now",
+      "url": "https://www.anijam.ai/blog/youtube-shorts-trends/"
+     }
+    ]
+   },
+   "id": "m261120",
+   "format": "morph",
+   "engine": "14b",
+   "seed": 65062,
+   "tease": true
+  }
+ ]
+}

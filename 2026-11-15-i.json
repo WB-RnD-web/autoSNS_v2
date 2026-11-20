@@ -1,0 +1,62 @@
+{
+ "date": "2026-11-15",
+ "concepts": [
+  {
+   "slug": "warm-laundry-shoulder-bounce-calico-maine-coon",
+   "track": "funkorama.mp3",
+   "caption": "When the laundry is still warm",
+   "title": "Warm Laundry Just Dropped. She Had to Dance 🧺🐱",
+   "en_line": "Fresh out of the dryer, still toasty, and the beat just dropped.",
+   "ko_line": "빨래 갓 꺼냈는데 따끈해서 신난 냥이 🧺",
+   "tags": [
+    "cat",
+    "ai cat",
+    "dancing cat",
+    "maine coon",
+    "calico cat",
+    "laundry day",
+    "funny cat",
+    "cute cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#빨래하는날",
+    "#냥스타그램",
+    "#cat",
+    "#dancingcat",
+    "#mainecoon",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic fluffy calico Maine Coon cat with a long shaggy coat, a bright white chest ruff, white belly and white paws, large distinct patches of warm orange and deep black on its back, head and fluffy tail, tall lynx-like ear tufts, and big bright green eyes, standing upright on its hind legs in a cozy sunlit home laundry room, front paws raised at chest height mid-dance, next to a round wicker laundry basket piled high with fluffy freshly dried white and pale blue towels, warm wooden floor, soft golden afternoon sunlight from a side window with tiny glowing dust motes in the air, the whole cat fully in frame and clearly visible, vertical composition",
+     "motion": "From the very first frame the calico Maine Coon is already dancing on its hind legs, bouncing its shoulders up and down to the beat, bent front paws pumping in rhythm at chest height while its head bobs side to side and its fluffy tail sways. It does a small happy bounce in place and keeps bouncing its shoulders to the beat. Tiny dust motes glow and drift in the warm sunbeam. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same fluffy calico Maine Coon cat with the same fur pattern, face and eye color. In the same sunlit laundry room, the cat now stands upright on its hind legs inside the round wicker laundry basket on top of the fluffy freshly dried white and pale blue towels, both front paws raised up high in a proud final dance pose, eyes half-closed in bliss, mouth closed, one soft white towel loosely draped over its back, warm golden afternoon light and glowing dust motes, the whole cat and basket fully in frame. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the calico Maine Coon stands in the laundry basket on the warm towels and claps its front paws together to the beat, bobbing its head and bouncing its shoulders with each clap, ear tufts wiggling and its fluffy tail swaying behind it. The soft towel on its back shifts gently with the movement. Dust motes keep drifting in the sunbeam. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 1,
+   "trend": {
+    "why_now": "In mid-November, AI dancing-cat clips are still running in two forms: cats that spring up and dance to the beat, and the newer clapping cat. On TikTok right now, a shoulder-bounce freestyle is being copied by families and AI dancers, and cosy everyday moments are the top mood. We use our own laundry-day setting instead of copying a meme.",
+    "pattern": "The dance starts in the first frame with a shoulder bounce, set in a relatable cosy moment (pulling warm laundry out of the dryer). It ends on the cat's own clapping beat inside the warm basket.",
+    "evidence": [
+     {
+      "title": "AI Cat Dance: Make Your Cat Do the Viral Memes From 1 Photo",
+      "url": "https://www.atlascloud.ai/blog/tips/ai-cat-dance"
+     },
+     {
+      "title": "TikTok Trends: November 2026",
+      "url": "https://newengen.com/insights/tiktok-trends/"
+     }
+    ]
+   },
+   "id": "m261115i",
+   "format": "dance",
+   "engine": "14b",
+   "seed": 59162
+  }
+ ]
+}

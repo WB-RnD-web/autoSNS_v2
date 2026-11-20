@@ -1,0 +1,52 @@
+{
+ "date": "2026-11-15",
+ "concepts": [
+  {
+   "slug": "arcade-hoops-ball-avalanche-devon-rex",
+   "track": "run-amok.mp3",
+   "caption": "Last ball. He's locked in.",
+   "title": "Arcade Hoops: Zero Points, Full Confidence 🏀🐱",
+   "en_line": "He aimed for the hoop, and every ball came back to say hi.",
+   "ko_line": "마지막 공 던졌는데 공이 전부 나한테 돌아옴 🏀",
+   "tags": [
+    "cat",
+    "ai cat",
+    "devon rex",
+    "arcade",
+    "basketball",
+    "funny cat",
+    "cute cat",
+    "game cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#오락실",
+    "#cat",
+    "#arcade",
+    "#funnycat",
+    "#냥스타그램"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic slim Devon Rex cat with a short soft wavy fawn-cream coat, a white chest and white front paws, very large wide-set ears, a small pointed face and big round amber-gold eyes, crouching low on the padded ramp of a mini arcade basketball game in a cozy retro arcade at night, one small plain orange rubber ball under its front paws, a simple round red hoop with a white net on a plain blank backboard above it, colorful soft neon glow in pink and blue around the machine, the whole cat fully in frame and clearly visible, vertical composition",
+     "motion": "From the very first frame the Devon Rex cat is crouched low on the ramp with its eyes locked on the hoop, wiggling its back end like it is about to pounce, then it taps the small orange ball forward with one front paw and the ball rolls a little up the ramp while its big ears point forward. The pink and blue neon lights blink softly around the machine. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same slim Devon Rex cat with the short wavy fawn-cream coat, white chest and white front paws, very large ears and big round amber-gold eyes, with the same fur pattern, face and eye color. The cat now sits at the bottom of the same arcade basketball ramp, half buried in a big pile of small plain orange rubber balls that all rolled back down, one ball resting on top of its head between its big ears, wide surprised eyes, mouth closed, the round red hoop with its white net still empty above, same pink and blue neon glow, the whole cat fully in frame. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the Devon Rex cat sits stunned in the pile of orange balls, blinking slowly while the ball on top of its head wobbles. It tilts its head to one side and then gently pats one ball in front of it with a front paw. The balls around it shift a little and the neon lights flicker softly. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Evergreen idea: a Sunday trip to the arcade and a carnival-style miss with everyone's last-try energy. My trend searches didn't turn up anything current enough to use, so evidence is left empty.",
+    "pattern": "focused build-up, then the fail beat: the cat looks totally locked in, then sits stunned under the balls that all rolled back, with one ball on its head",
+    "evidence": []
+   },
+   "id": "m261115j",
+   "format": "game",
+   "engine": "14b",
+   "seed": 26935
+  }
+ ]
+}

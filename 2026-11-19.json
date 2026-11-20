@@ -1,0 +1,59 @@
+{
+ "date": "2026-11-19",
+ "concepts": [
+  {
+   "slug": "milk-bread-cat-loaf-kitten-wakes-up",
+   "track": "fluffing-a-duck.mp3",
+   "caption": "Look closely at the smallest loaf",
+   "title": "Baked Four Milk Bread Loaves. One Was a Cat Loaf 🍞🐱",
+   "en_line": "The smallest loaf came out of the oven, woke up, and decided to stay a loaf.",
+   "ko_line": "진짜 식빵 사이에서 식빵 굽는 아기 고양이 🍞",
+   "tags": [
+    "cat",
+    "ai cat",
+    "kitten",
+    "cat loaf",
+    "milk bread",
+    "bread kitten",
+    "cute cat",
+    "baking",
+    "cozy"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#식빵굽기",
+    "#cat",
+    "#catloaf",
+    "#kitten",
+    "#aicat"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic cozy close-up from a slightly high angle, vertical composition, of a black metal cooling rack on a warm wooden kitchen counter holding four freshly baked Japanese milk bread loaves with glossy golden-brown domed tops and soft cream-white sides. The smallest loaf sits front and center, and on its golden top are two tiny triangular kitten ears made of the same golden-brown bread crust. Thin wisps of steam rise from the warm loaves, soft morning window light, blurred cream kitchen tiles and a linen cloth in the background, all loaves fully in frame and clearly visible",
+     "motion": "From the very first frame, the two tiny golden crust ears on the smallest loaf twitch quickly, then twitch again and turn slightly toward the camera, while thin wisps of steam keep rising from all the warm loaves. The loaves keep their shape and stay fully in frame; nothing else moves. Photorealistic, warm morning light, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same cooling rack, wooden counter, warm morning light and the three larger golden milk bread loaves with the same crust colors. Turn only the smallest front loaf with the tiny ears into a tiny fluffy kitten in the same spot and the same loaf pose with its paws tucked under. The kitten's back and head have golden-brown fur like baked crust and its sides, chest and face have soft cream-white fur like fresh bread. It has big round amber eyes, a small pink nose and the same two little triangular ears, its eyes half open as if just waking up, and steam drifts around it. Photorealistic, vertical composition.",
+     "motion": "From the very first frame, the tiny golden-and-cream kitten in loaf pose blinks sleepily, lifts its head a little, and its ears twitch. It gently pushes one tiny front paw out from under its chest, stretches it forward on the rack, then tucks it back in and settles happily with soft slow blinks. Steam keeps rising from the bread loaves beside it. The kitten keeps its mouth closed, stays fully in frame with four normal legs and stays in the same spot. Photorealistic, warm morning light, smooth natural motion, static camera.",
+     "xfade": 0.6
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Holiday baking season is starting in late November, and cozy AI pet videos are booming right now: a Nov 17 news report covers AI cats becoming popular comfort content. 'Cat loaf' (식빵 굽기 in Korean) is an evergreen meme that both global and Korean viewers get right away.",
+    "pattern": "hidden-in-plain-sight morph: one cozy food scene with one piece that's slightly off (twitching ears from the first frame), then the reveal of a kitten that is literally a 'cat loaf', with a pun that works in both English and Korean",
+    "evidence": [
+     {
+      "title": "Paws and prompts: How AI-generated pet videos tap into China's 'emotional economy'",
+      "url": "https://www.theborneopost.com/2026/11/17/paws-and-prompts-how-ai-generated-pet-videos-tap-into-chinas-emotional-economy/"
+     }
+    ]
+   },
+   "id": "m261119",
+   "format": "morph",
+   "engine": "14b",
+   "seed": 25665,
+   "tease": true
+  }
+ ]
+}

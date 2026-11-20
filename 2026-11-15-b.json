@@ -1,0 +1,53 @@
+{
+ "date": "2026-11-15",
+ "concepts": [
+  {
+   "slug": "duck-pond-pick-all-tuxedo",
+   "track": "run-amok.mp3",
+   "caption": "Rule: pick ONE duck.",
+   "title": "The Duck Pond Said Pick One. He Picked All of Them 🦆🐱",
+   "en_line": "One duck per player, but nobody said how many paws.",
+   "ko_line": "오리 하나만 고르랬는데 전부 데려옴 🦆",
+   "tags": [
+    "cat",
+    "ai cat",
+    "tuxedo cat",
+    "funny cat",
+    "carnival game",
+    "duck pond",
+    "rubber duck",
+    "cute cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#냥스타그램",
+    "#오리낚시",
+    "#cat",
+    "#funnycat",
+    "#aicat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic black-and-white tuxedo cat with a short glossy jet-black coat, a crisp white chest bib, a white muzzle with a neat white stripe up the nose, four white front and back paws, long white whiskers and bright yellow-green eyes, sitting on a warm wooden ledge of a small cosy carnival game booth beside a round shallow light-blue water trough with about twelve bright yellow rubber ducks floating on the water, one white front paw already reaching out over the water toward the nearest duck, red-and-white striped canopy fabric above, softly blurred warm string lights in the background, evening glow, the whole cat fully in frame and clearly visible, vertical composition",
+     "motion": "From the very first frame the tuxedo cat is already swiping one white front paw across the water, scooping toward the nearest yellow rubber duck with quick playful taps while its yellow-green eyes stay locked on the ducks and its ears point forward. The rubber ducks bob and drift in small ripples, and the warm string lights twinkle softly in the background. The cat stays seated on the ledge, fully in frame with four normal legs, mouth closed. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same black-and-white tuxedo cat with the same fur pattern, face and eye color. Show the win moment: the cat now sits proudly on the same wooden ledge hugging a big heap of bright yellow rubber ducks piled against its white chest, one small yellow rubber duck balanced on top of its head, the light-blue water trough beside it now completely empty, its yellow-green eyes half-closed in a smug satisfied look, same red-and-white striped canopy and warm blurred string lights behind, the whole cat fully in frame. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the tuxedo cat sways its head side to side to the beat while hugging its pile of rubber ducks, giving a slow proud blink; the little duck on its head wobbles but stays on, and its black tail flicks behind it. The warm string lights twinkle in the background and the empty water gently ripples. The cat stays seated, fully in frame with four normal legs, mouth closed. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Weekend fair and family outing moment on a Sunday. The 'rules vs cat' joke, where the cat obeys the rule's wording but breaks its spirit, works all year in cat Shorts. This one uses a new game that hasn't been on the channel yet and a different cat.",
+    "pattern": "game hook: the rule is the on-screen caption, the paw is already scooping in the first second, then the smug win with every prize hugged to its chest",
+    "evidence": []
+   },
+   "id": "m261115b",
+   "format": "game",
+   "engine": "14b",
+   "seed": 16593
+  }
+ ]
+}

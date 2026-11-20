@@ -1,0 +1,14 @@
+{
+ "date": "2026-11-20",
+ "old": 37,
+ "api": {
+  "model": "claude-opus-5-5",
+  "effort": "medium",
+  "tokens": {
+   "input": 14114,
+   "output": 4995,
+   "cache_read": 0
+  },
+  "usd": 0.1564
+ }
+}

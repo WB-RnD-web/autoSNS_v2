@@ -1,0 +1,52 @@
+{
+ "date": "2026-11-13",
+ "concepts": [
+  {
+   "slug": "friday-13th-lucky-black-cat-dance",
+   "track": "hep-cats.mp3",
+   "caption": "Friday the 13th? Lucky me.",
+   "title": "Black Cat Has the Best Luck on Friday the 13th 🍀🐈‍⬛",
+   "en_line": "They say black cats are bad luck, but this one is too busy dancing to care.",
+   "ko_line": "13일의 금요일인데 완전 럭키비키잖아 🍀",
+   "tags": [
+    "cat",
+    "ai cat",
+    "black cat",
+    "friday the 13th",
+    "dancing cat",
+    "cat dance",
+    "lucky cat",
+    "cute cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#검은고양이",
+    "#13일의금요일",
+    "#cat",
+    "#blackcat",
+    "#catdance"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic sleek black Bombay cat with a short glossy jet-black coat, a solid black nose, round bright copper-amber eyes and a long black tail, standing upright on its hind legs in the middle of a cozy rooftop terrace at night, front paws raised at chest height like dancing, warm golden fairy lights strung overhead lighting up its shiny fur, potted green plants and a wooden bench around it, soft blurred city lights in the background, the whole cat fully in frame and clearly visible in the center, vertical composition",
+     "motion": "The sleek black Bombay cat stands upright on its hind legs and sways its hips from side to side to the beat, bobbing its raised front paws up and down and nodding its head in rhythm, its tail swaying behind it. The warm fairy lights twinkle softly overhead and the city lights shimmer in the background. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same sleek black Bombay cat with the same fur pattern, face and eye color. On the same cozy rooftop terrace with the same warm golden fairy lights, potted plants and blurred city lights, the cat now strikes a proud final dance pose: standing tall on its hind legs, both front paws raised high above its head, chest out, tail curled up, looking at the camera with a confident happy face and closed mouth, the whole cat fully in frame. Photorealistic, vertical composition.",
+     "motion": "The sleek black Bombay cat holds its final dance pose on its hind legs with both front paws raised high, gives a small proud head tilt, blinks slowly at the camera and swishes its curled tail from side to side. The fairy lights twinkle brighter overhead. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 1,
+   "trend": {
+    "why_now": "Today, Friday 13 November 2026, is a Friday the 13th. Every year that date brings back the 'black cats are bad luck' superstition, and posts flipping it into 'black cats are lucky' do well. It is also a Friday, so a 'weekend starts now' dance fits the day.",
+    "pattern": "flip a superstition: the supposedly 'unlucky' black cat turns out to have the best night ever. Shot 1 is a confident groove to the beat, and shot 2 ends on a big proud final pose",
+    "evidence": []
+   },
+   "id": "m261113b",
+   "format": "dance",
+   "engine": "14b",
+   "seed": 80135
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "date": "2026-11-18",
+ "concepts": [
+  {
+   "slug": "ski-lodge-turnaround-dance-pixie-bob",
+   "track": "hep-cats.mp3",
+   "caption": "Wait till she turns around",
+   "title": "Ski Season Opened. She Skipped the Slopes for the Lodge Party 🎿🐱",
+   "en_line": "First snow on the slopes, first dance in the lodge, and she saved the best move for the turnaround.",
+   "ko_line": "스키장 개장했는데 슬로프는 핑계고 댄스가 본업 🎿",
+   "tags": [
+    "cat",
+    "ai cat",
+    "dancing cat",
+    "cat dance",
+    "ski season",
+    "ski lodge",
+    "winter",
+    "pixie-bob",
+    "funny cat",
+    "cute cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#스키시즌",
+    "#춤추는고양이",
+    "#cat",
+    "#catdance",
+    "#aicat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical full-body shot of a sturdy Pixie-bob cat with a medium-long warm brown spotted tabby coat, dark brown spots and ticking, a cream-white chin and chest, small lynx-like tufts on the ear tips, gooseberry-green eyes and a short fluffy bobbed tail, wearing a tiny knitted red-and-cream beanie with a pompom. The cat stands upright on its hind legs in the middle of a cozy wooden ski lodge, its back half turned to the camera with its head looking back over its shoulder straight at the viewer so its face and green eyes are clearly visible, front paws raised at shoulder height in a dance pose. Warm log walls, a glowing stone fireplace on one side, warm string lights along the beams, a big window behind showing snowy slopes and soft falling snow, polished wooden floor. The whole cat fully in frame with space around it, warm cozy evening light, vertical composition",
+     "motion": "From the very first frame the Pixie-bob cat is already dancing on its hind legs with its back half turned to the camera, swaying its hips left and right to the beat and shimmying its shoulders, its short bobbed tail wiggling, while it keeps glancing back over its shoulder at the viewer with a cheeky look and its pompom beanie bounces. The fireplace flickers, the string lights twinkle and snow keeps falling outside the window. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same Pixie-bob cat with the same fur pattern, face and eye color, the same warm brown spotted tabby coat, cream-white chin, ear tufts, short bobbed tail and the same tiny knitted red-and-cream pompom beanie. In the same cozy wooden ski lodge, the cat has now turned around fully to face the camera and strikes a confident final dance pose standing upright on its hind legs: one front paw pointing high up toward the ceiling, the other front paw resting on its hip, chin lifted, eyes half-closed in a cool proud look. Same fireplace, string lights and snowy window with falling snow behind, the whole cat fully in frame. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the Pixie-bob cat holds its final dance pose facing the camera, bobbing its head to the beat and pumping its raised paw up toward the ceiling in time with the music, while its bobbed tail wiggles and it gives one slow cool blink. The fireplace flickers, the string lights twinkle and snow keeps falling outside the window. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "AI cat dance clips are hot again this month. Upright dancing kittens in costumes and the late-October 'Suave' format, where a small kitten turns around to shake its hips, are still spreading. On top of that, ski season is opening across the northern hemisphere in mid-to-late November, so a cosy ski-lodge dance party feels seasonal.",
+    "pattern": "turnaround reveal: start with her back to the camera and her hips already moving, with a cheeky look over the shoulder, then pay off with a confident front-facing final pose; the caption builds suspense ('wait till…')",
+    "evidence": [
+     {
+      "title": "AI Cat Dance: Make Your Cat Do the Viral Memes From 1 Photo",
+      "url": "https://www.atlascloud.ai/blog/tips/ai-cat-dance"
+     },
+     {
+      "title": "Suave Cat Dance AI: Put Your Cats in the 3 Kittens Meme",
+      "url": "https://www.makeviral.ai/templates/suave-cat-dance-ai"
+     },
+     {
+      "title": "Best ways to make the Suave Cat Dance video with your own cat (2026) - DEV Community",
+      "url": "https://dev.to/yining_lin_5ee8680314309e/best-ways-to-make-the-suave-cat-dance-video-with-your-own-cat-2026-10l8"
+     }
+    ]
+   },
+   "id": "m261118g",
+   "format": "dance",
+   "engine": "14b",
+   "seed": 56048,
+   "tease": false
+  }
+ ]
+}
