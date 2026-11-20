@@ -1,0 +1,54 @@
+{
+ "date": "2026-11-20",
+ "topic": "wisdom",
+ "theme": "wisdom:people_gather",
+ "privacy": "public",
+ "accent": "#2E7D6B",
+ "_min_total": 10.0,
+ "hook_title": "말년에 사람이 모이는 사람",
+ "headline": "말년에 사람이 모이는 사람의 습관 5가지 | 말년 지혜 #인간관계 #말년복 #좋은사람",
+ "thumbnail_hook": "a quiet Korean village alley in autumn with a low stone wall and persimmon tree, warm afternoon sun, friendly mood, no people, no text, no letters, no signage, no logos",
+ "thumbnail_style": "hanji",
+ "scenes": [
+  {
+   "type": "wisdom",
+   "pill": "50·60·70대 공감 · 말년 지혜",
+   "title": "말년에 사람이",
+   "title2": "모이는 사람",
+   "tone": "do",
+   "items": [
+    {
+     "big": "먼저 웃으며 인사해요",
+     "small": "인사가 정의 시작이에요"
+    },
+    {
+     "big": "남의 말을 옮기지 않아요",
+     "small": "믿음이 차곡차곡 쌓여요"
+    },
+    {
+     "big": "작은 것도 나눠요",
+     "small": "귤 하나도 정이에요"
+    },
+    {
+     "big": "자랑보다 칭찬을 해요",
+     "small": "남을 높이면 내가 빛나요"
+    },
+    {
+     "big": "약속 시간을 지켜요",
+     "small": "작은 약속이 큰 믿음"
+    }
+   ],
+   "foot": "※ 어르신들 이야기를 모아 정리했어요 · 집집마다 사정은 다를 수 있어요",
+   "brand": "왕별이 · 말년 지혜",
+   "narration": "말년에 사람이 모이는 사람의 습관, 다섯 가지예요. 몇 번이 제일 와닿으세요? 댓글로 번호를 남겨 주세요."
+  }
+ ],
+ "platforms": {
+  "youtube": {
+   "title": "말년에 사람이 모이는 사람의 습관 5가지 | 말년 지혜 #인간관계 #말년복 #좋은사람 #shorts",
+   "description": "말년에 사람이 모이는 사람의 습관, 다섯 가지를 한 장에 모았어요. 몇 번이 제일 와닿으세요? 댓글로 번호를 남겨 주세요 🙏\n\n1. 먼저 웃으며 인사해요 — 먼저 건네는 인사 한마디가 이웃과의 정을 여는 첫걸음이에요.\n2. 남의 말을 옮기지 않아요 — 들은 말을 옮기지 않는 사람에게는 사람들이 마음을 터놓아요.\n3. 작은 것도 나눠요 — 귤 하나, 떡 한 조각을 나누는 사람 곁에 사람이 모여요.\n4. 자랑보다 칭찬을 해요 — 내 자랑보다 남을 칭찬하는 사람과 이야기하면 즐거워요.\n5. 약속 시간을 지켜요 — 시간을 지키는 사람은 나이 들수록 더 믿음직해 보여요.\n\n※ 왕별이가 어르신들 이야기를 모아 정리한 생활 지혜예요. 집집마다 사정은 다를 수 있어요.\n\n#인간관계 #말년복 #좋은사람 #말년지혜 #인생지혜 #시니어공감 #50대 #60대 #70대 #shorts"
+  }
+ },
+ "notes": "말년 지혜 표 · wisdom:people_gather · wisdom_card.py 가 만든 스토리보드(11/17~11/30 2주 시험 · 17:40)",
+ "publish_at": "2026-11-20T17:40+09:00"
+}
