@@ -1,0 +1,17 @@
+{
+ "model": "claude-opus-5-5",
+ "effort": "high",
+ "tries": 1,
+ "ok": true,
+ "tokens": {
+  "input": 4,
+  "cache_write": 78238,
+  "cache_read": 0,
+  "output": 15887
+ },
+ "usd": 0.709,
+ "errors": [],
+ "history": [
+  []
+ ]
+}
