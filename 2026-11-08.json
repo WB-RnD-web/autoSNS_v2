@@ -1,0 +1,273 @@
+{
+ "date": "2026-11-08",
+ "hot": [
+  {
+   "topic": "입동(11/7)이 지나고 김장·겨울 채비 철이 시작됨. 다음 절기 소설은 11/22",
+   "market": "kr",
+   "where": "생활·절기 블로그와 기사(시니어·시골살이 쪽)",
+   "evidence": [
+    {
+     "title": "2026년 11월 7일, 입동(立冬)입니다. 겨울을 앞두고 텃밭과 시골집에서 챙겨야 할 일",
+     "url": "https://www.ib612.com/2026/11/2026-ipdong-winter-farm-preparation.html",
+     "date": "2026-11-06"
+    },
+    {
+     "title": "2026 입동 날짜와 풍습: 11월 7일 18시 52분, 김장·상달 고사·겨울 채비 정리 - 행운연구소",
+     "url": "https://luckyday.cyberbabarian.com/ipdong-2026-date-customs-gimjang-winter-prep/",
+     "date": "2026-11-06"
+    }
+   ],
+   "why_now": "입동이 어제(11/7 18:52)였음. 11/22 소설까지 2주 동안 김장·겨울 채비 이야기가 몰림. 해마다 돌아오는 절기 화제임",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "'입동 지나 김장·겨울 채비 복 있는 띠 순위 1~12위' 표(띠 테마 표 순환에 한 번 끼움)"
+  },
+  {
+   "topic": "2027학년도 수능 11/19(목). 오늘 기준 D-11",
+   "market": "kr",
+   "where": "입시 기사·정리 블로그",
+   "evidence": [
+    {
+     "title": "2027학년도 수능 날짜·시간표·준비물 총정리｜2026년 11월 19일 시험부터 성적 발표까지",
+     "url": "https://gnhong.com/7210",
+     "date": "2026-10-18"
+    },
+    {
+     "title": "[2027학년도 대입 전략] 올해 수능 11월 19일 실시…마지막 통합 수능",
+     "url": "https://sgsg.hankyung.com/article/2026022790951",
+     "date": ""
+    }
+   ],
+   "why_now": "수능이 11일 남음. 수능 날짜는 정해져 있고 해마다 이맘때 손주 수능 이야기가 집안 화제가 됨(검색으로 화제가 커지는 걸 직접 본 건 아님)",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "'손주 수능 앞두고 덕담이 잘 통하는 띠' 표. 합격·점수 단정은 하지 않음"
+  },
+  {
+   "topic": "매일 '띠별 운세' 기사가 꾸준히 나옴(나이별 총운 꼴)",
+   "market": "kr",
+   "where": "포털 뉴스(아주경제·톱스타뉴스·이데일리 등 매일 연재)",
+   "evidence": [
+    {
+     "title": "[오늘의 띠별 운세] 11월 8일 나이별 총운…뜻은 굳게, 실행은 유연하게",
+     "url": "https://www.topstarnews.net/news/articleView.html?idxno=16270885",
+     "date": "2026-11-08"
+    },
+    {
+     "title": "[오늘의 운세] 띠별 운세-11월 7일",
+     "url": "https://www.ajunews.com/view/20261106135333567",
+     "date": "2026-11-06"
+    }
+   ],
+   "why_now": "새로 뜬 건 아니고 늘 인기 있는 꼴임. 다만 11월에 들어서며 기사 연재가 매일 이어지고 있음",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "지금 꼴 그대로(띠×출생연도 나이 표) 유지. 기사들처럼 '나이별' 칸을 앞에 두는 꼴이 계속 통함"
+  },
+  {
+   "topic": "'못생긴 반려동물 콘테스트': 완벽한 미모 대신 굴욕 사진 모음이 인기",
+   "market": "kr",
+   "where": "유튜브(침착맨 채널 10/27 영상) → 기사로 번짐",
+   "evidence": [
+    {
+     "title": "“못생기면 더 귀여워♥”... 집사들 경쟁 불붙은 ‘못생긴 반려동물 콘테스트’ (영상)",
+     "url": "https://insight.co.kr/news/580466",
+     "date": "2026-11-04"
+    }
+   ],
+   "why_now": "10/27에 영상이 올라왔고 11/4에 기사가 나며 퍼지는 중. 10~20대 사이에서 '못생겨서 귀엽다'는 정서가 통하고 있음",
+   "fit": [
+    "insta_worker",
+    "insta_danger"
+   ],
+   "idea": "블롭피시 '심해 직장인'이 '못생긴 동물' 하면 늘 1위로 꼽히는 처지를 직장 공감으로 풂(콘테스트 영상 자체를 베끼지는 않음)"
+  },
+  {
+   "topic": "로먼 우주망원경(8월 말 발사)이 암흑에너지·외계행성을 찾는다는 이야기와 한국 천문학이 함께할 기회",
+   "market": "kr",
+   "where": "과학 기사",
+   "evidence": [
+    {
+     "title": "[사이언스 스코프]우주의 비밀 좇는 로먼…한국 천문학에도 새로운 기회",
+     "url": "https://view.asiae.co.kr/article/2026110520380043380",
+     "date": "2026-11-08"
+    },
+    {
+     "title": "허블보다 100배 시야각 '로먼 우주망원경' 발사",
+     "url": "https://www.ytn.co.kr/_ln/0105_202609010402462004",
+     "date": "2026-09-01"
+    }
+   ],
+   "why_now": "오늘(11/8) 해설 기사가 나옴. 발사는 두 달 전이라 떠들썩한 화제는 아님",
+   "fit": [
+    "insta_sci"
+   ],
+   "idea": "'허블과 로먼의 시야를 한 장에 겹쳐 보기' 비교 카드. 다만 '몇 배 넓다'는 숫자가 기사마다 달라서(100배·200배) 확인 전에는 쓰지 않음"
+  },
+  {
+   "topic": "알래스카만 수심 3,200m '황금 구슬'의 정체가 밝혀짐: 거대 심해 말미잘이 몸을 붙였던 껍질(큐티클)",
+   "market": "us",
+   "where": "영어 야생동물 매체(BBC Wildlife). 11/1이 '국제 심해저의 날'이라 심해 화제가 이어지는 중",
+   "evidence": [
+    {
+     "title": "Deep-sea robot discovers mysterious golden orb 3,200m deep in the ocean",
+     "url": "https://www.discoverwildlife.com/animal-facts/marine-animals/the-deep-sea-golden-orb",
+     "date": "2026-11-05"
+    },
+    {
+     "title": "International Day of the Deep Seabed 2026",
+     "url": "https://www.genevaenvironmentnetwork.org/events/international-day-of-the-deep-seabed-2026/",
+     "date": "2026-10-21"
+    }
+   ],
+   "why_now": "11/5에 정체를 풀어 주는 기사가 나왔고, 11/1 국제 심해저의 날(2026 주제 '1,000 Reasons to: Discover')과 시기가 겹침. 발견 자체는 2023년임",
+   "fit": [
+    "insta_sci",
+    "insta_worker",
+    "nt_story"
+   ],
+   "idea": "'수심 3,200m에서 찾은 황금 덩어리, 속을 열어 보니' 단면 카드: 키틴 → 자포 → DNA → 말미잘 껍질 순서로 정체를 밝힘"
+  },
+  {
+   "topic": "깡충거미도 렘(REM)수면 비슷한 잠을 잔다: 눈 움직임·근육 경련이 나타나고, 못 잔 잠은 몰아서 잠",
+   "market": "us",
+   "where": "과학 뉴스(ScienceDaily·phys.org·본 대학 보도자료). X·Ground News 등으로 퍼짐",
+   "evidence": [
+    {
+     "title": "How deeply do spiders sleep? — University of Bonn",
+     "url": "https://www.uni-bonn.de/en/news/221-2026",
+     "date": "2026-10-28"
+    },
+    {
+     "title": "Two distinct sleep stages emerge in jumping spider, including a REM-like state",
+     "url": "https://phys.org/news/2026-10-distinct-stages-emerge-spider-rem.html",
+     "date": "2026-10-27"
+    },
+    {
+     "title": "Do spiders dream? Scientists just found a surprising clue",
+     "url": "https://www.sciencedaily.com/releases/2026/10/261026225555.htm",
+     "date": "2026-10-26"
+    }
+   ],
+   "why_now": "10월 말 PNAS 논문이 나왔고 '거미도 꿈을 꿀까' 제목으로 2주째 다시 퍼지는 중",
+   "fit": [
+    "insta_danger",
+    "nt_story"
+   ],
+   "idea": "'밤마다 다리를 떠는 거미, 위험한 진짜 이유' → 알고 보니 렘수면 비슷한 잠꼬대"
+  },
+  {
+   "topic": "이번 주 과학 화제: 빠르게 도는 블랙홀이 둘로 쪼개질 수도 있다는 가설, 1억 1,500만 년 된 공룡 피, 산 채로는 아무도 본 적 없는 해마 닮은 생물",
+   "market": "us",
+   "where": "과학 뉴스 모음(ScienceDaily 머리기사)",
+   "evidence": [
+    {
+     "title": "Top Science News -- ScienceDaily",
+     "url": "https://www.sciencedaily.com/news/top/science/",
+     "date": "2026-11-07"
+    },
+    {
+     "title": "Animals News -- ScienceDaily",
+     "url": "https://www.sciencedaily.com/news/plants_animals/animals/",
+     "date": "2026-11-08"
+    }
+   ],
+   "why_now": "11/2~11/6에 나온 연구 소식들. 목록 페이지만 확인했고 원문은 아직 열지 않음",
+   "fit": [
+    "nt_story",
+    "insta_sci"
+   ],
+   "idea": "'블랙홀이 둘로 갈라진다면?' what-if 45~75초. 원문을 확인한 뒤에야 후보로 올림"
+  }
+ ],
+ "candidates": [
+  {
+   "line": "insta_sci",
+   "title_idea": "수심 3,200m 황금 덩어리, 속을 열어 보니 정체는?",
+   "facts": [
+    {
+     "fact": "2023년 가을 NOAA의 탐사선 오케아노스 익스플로러호가 알래스카만에서 원격 잠수정 'Deep Discoverer'로 수심 252m~4262m 바다를 19번 잠수했다.",
+     "source_url": "https://www.discoverwildlife.com/animal-facts/marine-animals/the-deep-sea-golden-orb"
+    },
+    {
+     "fact": "수심 3200m 해저 화산 '워커 해산'에서 바위에 붙은 반짝이는 황금색 덩어리를 발견했고, 크기는 약 10cm에 한쪽에 큰 구멍이 있었다.",
+     "source_url": "https://www.discoverwildlife.com/animal-facts/marine-animals/the-deep-sea-golden-orb"
+    },
+    {
+     "fact": "입·내장·근육처럼 동물이라 할 만한 부분이 하나도 없었는데, 전자현미경으로 보니 조직이 키틴으로 되어 있었고 자포동물의 쏘는 세포(spirocyst)로 덮여 있었다.",
+     "source_url": "https://www.discoverwildlife.com/animal-facts/marine-animals/the-deep-sea-golden-orb"
+    },
+    {
+     "fact": "전체 유전체 분석에서 촉수가 2m에 이르는 거대 심해 말미잘 Relicanthus daphneae의 유전물질이 많이 나왔다.",
+     "source_url": "https://www.discoverwildlife.com/animal-facts/marine-animals/the-deep-sea-golden-orb"
+    },
+    {
+     "fact": "과학자들은 이 덩어리를 말미잘이 바위에 몸을 붙일 때 쓰는 큐티클(껍질)이라고 결론 내렸다.",
+     "source_url": "https://www.discoverwildlife.com/animal-facts/marine-animals/the-deep-sea-golden-orb"
+    }
+   ],
+   "careful": "발견은 2023년이고 정체 기사는 2026-11-05에 나옴. '외계 생명체'·'정체불명 괴생물' 같은 낚시 제목은 쓰지 않음"
+  },
+  {
+   "line": "insta_danger",
+   "title_idea": "밤마다 다리를 떠는 거미, 위험한 진짜 이유",
+   "facts": [
+    {
+     "fact": "독일 본 대학 연구진이 호주 깡충거미 Portia fimbriata가 실제로 자는지, 수면 단계가 나뉘는지 조사했다.",
+     "source_url": "https://www.uni-bonn.de/en/news/221-2026"
+    },
+    {
+     "fact": "이 거미는 뚜렷이 구별되는 두 단계로 잠을 잤고, 그중 하나는 눈 움직임과 근육 경련이 나타나는 렘수면 비슷한 상태였다.",
+     "source_url": "https://www.uni-bonn.de/en/news/221-2026"
+    },
+    {
+     "fact": "연구진은 밤에 적외선 카메라로 자세를 기록했고, 소리 자극에 반응하는 시간을 재서 정말 자는 상태인지 확인했다.",
+     "source_url": "https://phys.org/news/2026-10-distinct-stages-emerge-spider-rem.html"
+    },
+    {
+     "fact": "잠을 방해받은 거미는 나중에 못 잔 잠을 몰아서 잤지만, 뇌 활동은 측정하지 않았다.",
+     "source_url": "https://phys.org/news/2026-10-distinct-stages-emerge-spider-rem.html"
+    }
+   ],
+   "careful": "'거미가 꿈을 꾼다'고 단정하지 않음. '렘수면 비슷한 상태'와 '꿈일 수도'까지만 씀. 뇌파는 재지 않았다는 점을 밝힘"
+  },
+  {
+   "line": "wb_table",
+   "title_idea": "입동 지나 김장·겨울 채비 복 있는 띠 순위 1위~12위 | 45~96년생 전부",
+   "facts": [
+    {
+     "fact": "2026년 입동은 11월 7일 토요일이고, 한국천문연구원 달력 자료 기준 절입 시각은 오후 6시 52분이다.",
+     "source_url": "https://www.ib612.com/2026/11/2026-ipdong-winter-farm-preparation.html"
+    },
+    {
+     "fact": "입동은 24절기 중 열아홉 번째 절기이고, 다음 절기 소설은 11월 22일이다.",
+     "source_url": "https://www.ib612.com/2026/11/2026-ipdong-winter-farm-preparation.html"
+    },
+    {
+     "fact": "2026년 입동은 음력 9월 28일이고, 입동 무렵 대표 풍습으로 김장이 꼽힌다.",
+     "source_url": "https://luckyday.cyberbabarian.com/ipdong-2026-date-customs-gimjang-winter-prep/"
+    }
+   ],
+   "careful": "띠 순위는 명리 풀이일 뿐이라고 부드럽게 밝힘. 겨울 건강·한파 관련 건강 단정과 겁주기는 하지 않음"
+  },
+  {
+   "line": "wb_table",
+   "title_idea": "손주 수능(11/19) 앞두고 덕담이 잘 통하는 띠 | 45~96년생 전부",
+   "facts": [
+    {
+     "fact": "2027학년도 수능은 2026년 11월 19일에 치른다.",
+     "source_url": "https://gnhong.com/7210"
+    },
+    {
+     "fact": "올해(2027학년도) 수능은 11월 19일에 치르며, 마지막 통합 수능으로 소개됐다.",
+     "source_url": "https://sgsg.hankyung.com/article/2026022790951"
+    }
+   ],
+   "careful": "합격·점수 보장이나 단정은 하지 않고 응원·덕담 말투로만 씀. 수험생(10대)을 주인공으로 내세우지 않고 조부모 입장에서 풂"
+  }
+ ],
+ "note": "국내는 운세·절기(입동·김장)·수능 쪽이 확실하게 잡혔고, 해외는 심해 황금 구슬과 거미 렘수면 두 가지가 사실까지 확인돼 인스타 후보로 바로 쓸 수 있음. 검색 도구가 호출 한도에 걸려 영어 검색을 7번이 아닌 5번만 했고 확인용 검색도 남기지 못함. 그래서 Nine Tails용 실화·what-if 후보는 0개이고, 블랙홀·로먼 숫자는 다음에 원문을 확인해야 함."
+}

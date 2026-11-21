@@ -1,0 +1,327 @@
+{
+ "date": "2026-11-18",
+ "hot": [
+  {
+   "topic": "내일(11/19) 2027학년도 수능, 지금 수능 체제로 치르는 마지막 시험이라 N수생이 크게 늘었다는 화제",
+   "market": "kr",
+   "where": "종합 기사(문화일보·위키트리), 수능 전날·당일 출근 시간 조정 기사",
+   "evidence": [
+    {
+     "title": "現수능 마지막 시험…'N수생' 강세 보일까",
+     "url": "https://www.munhwa.com/article/11631471",
+     "date": "2026-11-16"
+    },
+    {
+     "title": "내일 수능날, 출근 시간·출근길 대중교통 대수는?",
+     "url": "https://www.wikitree.co.kr/articles/1167714",
+     "date": "2026-11-18"
+    }
+   ],
+   "why_now": "수능 하루 전이다. 2028학년도부터 선택과목이 없어져 이번이 지금 체제의 마지막 수능이라 기사가 몰렸다. 수험생 손주를 둔 55세 이상 할머니·할아버지도 관심을 가질 날이다.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "'수험생 손주에게 따뜻한 말 건네기 좋은 띠' 응원 표(합격 보장·등수 표현 없이 덕담 말투로)"
+  },
+  {
+   "topic": "올해 김장 비용이 2020년대 들어 가장 적고, 중부 지방 김장 적기는 11월 하순",
+   "market": "kr",
+   "where": "경제·생활 기사(연합뉴스 받은 파이낸셜뉴스·세계일보)",
+   "evidence": [
+    {
+     "title": "올해 4인 가족 김장비용 28만8천원…2020년대 들어 '최저'",
+     "url": "https://www.fnnews.com/news/202611160701209048",
+     "date": "2026-11-16"
+    },
+    {
+     "title": "배추값 하락에 올해 김장비용 '뚝'…4인 가족 기준 28만8500원",
+     "url": "https://www.segye.com/newsView/20261116501842",
+     "date": "2026-11-16"
+    }
+   ],
+   "why_now": "11/16 한국물가정보 조사가 발표됐고 김장 적기(중부 11월 하순~12월 초)가 바로 코앞이다. 트렌드 레이더의 사연 쇼츠 대박 영상에도 김장 배추 사연(39배)이 있다.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "'김장하는 날 손발 잘 맞는 띠 짝꿍 표'(삼합·육합 근거, 집안 화목 말투)"
+  },
+  {
+   "topic": "2027년 정미년은 '붉은 양의 해'(천간 丁이 화 기운이라 붉은색), 양띠 출생연도별 색이 다르다는 설명",
+   "market": "kr",
+   "where": "사주·띠 정보 사이트, 나무위키·위키백과 2027년 문서(연말 신년운세 검색)",
+   "evidence": [
+    {
+     "title": "2027년은 무슨 띠? 정미년(丁未) 양띠 — 붉은 양의 해 · 어흥사주",
+     "url": "https://xn--vf4b15gb4ctvu.com/new-year-zodiac",
+     "date": ""
+    },
+    {
+     "title": "2027년 - 나무위키",
+     "url": "https://namu.wiki/w/2027%EB%85%84",
+     "date": ""
+    }
+   ],
+   "why_now": "솔직히 이번 주에 갑자기 뜬 유행은 아니다. 연말마다 검색이 늘어나는 상시 주제다. 다만 신년운세 시리즈가 1/5까지 이어지니 지금이 가장 쓸모 있는 시기다.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "'같은 양띠라도 색이 다릅니다: 43·55·67·79년생 양띠 색 표'(67년생은 태어난 해와 같은 정미년을 다시 맞는다는 점을 짚기)"
+  },
+  {
+   "topic": "심해 망간단괴(돌) 하나 속에 동물 245마리, 단괴 244개에서 미세동물 4,139마리 확인",
+   "market": "kr",
+   "where": "과학 기사(FAM타임스·ScienceDaily), 심해 채굴 논쟁과 묶여 퍼짐",
+   "evidence": [
+    {
+     "title": "심해 단괴 하나에 245마리…진흙과는 다른 생태계 — FAM타임스",
+     "url": "https://www.famtimes.co.kr/news/articleView.html?idxno=705021",
+     "date": "2026-11-17"
+    },
+    {
+     "title": "Hidden ecosystem: Scientists discover 245 animals living inside a single deep-sea rock",
+     "url": "https://www.sciencedaily.com/releases/2026/11/261114202133.htm",
+     "date": "2026-11-16"
+    }
+   ],
+   "why_now": "11/16 Scientific Reports 논문 보도가 나왔고, 한국어 기사는 11/17에 나왔다. 돌을 쪼개 속을 보는 장면이라 '속이 보이는 과학' 꼴에 딱 맞는다.",
+   "fit": [
+    "insta_sci"
+   ],
+   "idea": "주먹만 한 검은 돌을 단면으로 쪼개면 1mm도 안 되는 동물 아파트가 나온다(20~30초)"
+  },
+  {
+   "topic": "AI로 만든 가짜 동물 영상이 쏟아져서 진짜 천재견까지 'AI 아니냐'는 의심을 받는다",
+   "market": "kr",
+   "where": "기사(헤럴드경제), 쇼츠·릴스 댓글 문화",
+   "evidence": [
+    {
+     "title": "\"조작 방송같아\"…진짜 천재견도 의심받는 'AI 가짜 동물' 쏟아져 [개묘한 연구]",
+     "url": "https://biz.heraldcorp.com/article/10939964",
+     "date": "2026-11-18"
+    }
+   ],
+   "why_now": "오늘 나온 기사다. 10~20대 피드에 AI 동물 영상이 넘쳐서 '진짜 사실인가'가 관심사가 됐다. 논문과 출처가 붙은 동물 사실의 가치가 올라간다.",
+   "fit": [
+    "insta_danger"
+   ],
+   "idea": "'위험한 진짜 이유' 카드에 논문 이름을 작게 박아 '진짜 연구'임을 보여 주는 꼴을 유지·강화(문구로 참여를 부탁하지 않음)"
+  },
+  {
+   "topic": "새 동물 연구 두 건이 퍼짐: 까마귀는 사람보다 결정이 2배 빠르다, 고양이는 사람이 있을 때만 해결해 달라고 운다",
+   "market": "us",
+   "where": "과학 뉴스(ScienceDaily·ScienceAlert·Gizmodo)",
+   "evidence": [
+    {
+     "title": "Crows can make decisions twice as fast as humans, scientists discover",
+     "url": "https://www.sciencedaily.com/releases/2026/11/261111005850.htm",
+     "date": "2026-11-12"
+    },
+    {
+     "title": "Science Has Finally Shown That Your Cat Meows to Demand That You Fix Their World",
+     "url": "https://www.sciencealert.com/science-has-finally-shown-that-your-cat-meows-to-demand-that-you-fix-their-world",
+     "date": "2026-11-11"
+    },
+    {
+     "title": "Cats Really Do Meow at Us To Get Our Attention",
+     "url": "https://gizmodo.com/heres-why-your-cat-meows-so-much-at-you-2000840450",
+     "date": "2026-11-17"
+    }
+   ],
+   "why_now": "Science·Animal Behaviour 논문이 11/11~12에 나왔고, 11/17에도 다른 매체가 다시 받아 썼다. 무서운 제목을 귀여운 사실로 뒤집기 좋은 재료다.",
+   "fit": [
+    "insta_danger"
+   ],
+   "idea": "'까마귀랑 눈싸움하면 안 되는 진짜 이유' / '고양이가 집사 앞에서만 우는 위험한 진짜 이유'"
+  },
+  {
+   "topic": "'11월 17일 전 세계 정전' 루머가 전 세계로 퍼졌지만 사실이 아니었다(미국 FEMA 정기 경보 시험이 시작점)",
+   "market": "us",
+   "where": "팩트체크 기사(France 24·Portugal News·UKNIP), SNS 전반",
+   "evidence": [
+    {
+     "title": "November 17 blackout hoax: How a conspiracy theory went viral around the world",
+     "url": "https://www.france24.com/en/tv-shows/truth-or-fake/20261116-november-17-blackout-hoax-how-a-conspiracy-theory-went-viral-around-the-world",
+     "date": "2026-11-16"
+    },
+    {
+     "title": "Rumours of worldwide blackout spread online - The Portugal News",
+     "url": "https://www.theportugalnews.com/news/2026-11-17/rumours-of-worldwide-blackout-spread-online/1117561",
+     "date": "2026-11-17"
+    },
+    {
+     "title": "Simpsons blackout 17 November 2026: viral claim is false",
+     "url": "https://uknip.co.uk/news/uk/uk-news/simpsons-global-blackout-17-november-2026-fact-check/",
+     "date": "2026-11-17"
+    }
+   ],
+   "why_now": "어제(11/17)가 바로 그 날이었고 팩트체크 기사가 쏟아지는 중이다. 영어권 13~30세가 SNS에서 직접 본 소문이다.",
+   "fit": [
+    "nt_story"
+   ],
+   "idea": "'The global blackout that never happened': 정기 경보 시험 하나가 세계적 루머가 되기까지를 얼굴 없는 3D 실화로(공포 조장 없이 사실 확인으로 끝내기)"
+  },
+  {
+   "topic": "ESA 탐사선 Hera가 소행성 두 개 주위를 '네모 궤도'로, 곤충이 기어가는 속도로 돈다",
+   "market": "us",
+   "where": "과학 뉴스(ScienceDaily, ESA 보도)",
+   "evidence": [
+    {
+     "title": "ESA's Hera spacecraft is flying rectangles around NASA's asteroid crash site",
+     "url": "https://sciencedaily.com/releases/2026/11/261115085545.htm",
+     "date": "2026-11-17"
+    }
+   ],
+   "why_now": "Hera가 도착해 첫 관측 단계를 시작했다는 11/17 보도다. 다음 달에는 더 가까이 가는 단계가 예고돼 있어 뒤이을 소식도 있다.",
+   "fit": [
+    "insta_sci",
+    "nt_story"
+   ],
+   "idea": "중력이 지구의 20만분의 1인 소행성 옆에서는 왜 동그랗게 못 돌고 네모로 도는지 궤도를 그려 보여 주기"
+  }
+ ],
+ "candidates": [
+  {
+   "line": "insta_sci",
+   "title_idea": "평범한 돌을 쪼갰더니 245마리가 살고 있었다",
+   "facts": [
+    {
+     "fact": "연구진은 중앙 태평양 클라리온-클리퍼턴 해역의 다금속 단괴 244개에서 동물 4,139마리를 찾아냈다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261114202133.htm"
+    },
+    {
+     "fact": "단괴 하나에 평균 17마리가 살았고, 가장 붐빈 단괴 하나에는 245마리가 있었다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261114202133.htm"
+    },
+    {
+     "fact": "단괴는 철·망간 산화물로 된 주먹만 한 검은 덩어리로, 100만 년에 몇 mm 정도만 자란다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261114202133.htm"
+    },
+    {
+     "fact": "단괴는 수심 4,000~6,000m 바닥에 있고, 안쪽 틈은 1mm보다 작은 동물이 살 만큼 크다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261114202133.htm"
+    },
+    {
+     "fact": "단괴 속 선충 수는 주변 퇴적물의 약 10%, 요각류는 약 25% 수준이었다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261114202133.htm"
+    }
+   ],
+   "careful": "'신종 발견'이라고 쓰지 않는다(이 기사는 개체 수와 군집 차이에 관한 연구다). 심해 채굴은 찬반 정치 구도 없이 '다시 생기려면 수백만 년 걸린다'는 사실만 쓴다."
+  },
+  {
+   "line": "insta_sci",
+   "title_idea": "소행성 옆에서는 동그랗게 돌 수 없다: 네모로 나는 탐사선",
+   "facts": [
+    {
+     "fact": "큰 소행성 디디모스는 폭이 약 780m이고 중력은 지구보다 약 4만 배 약하다.",
+     "source_url": "https://sciencedaily.com/releases/2026/11/261115085545.htm"
+    },
+    {
+     "fact": "작은 소행성 디모르포스는 폭이 151m이고 중력은 지구보다 약 20만 배 약하다.",
+     "source_url": "https://sciencedaily.com/releases/2026/11/261115085545.htm"
+    },
+    {
+     "fact": "Hera는 초속 약 12cm, 곤충이 빠르게 기어가는 정도의 속도로 움직인다.",
+     "source_url": "https://sciencedaily.com/releases/2026/11/261115085545.htm"
+    },
+    {
+     "fact": "Hera는 3일과 4일 간격을 번갈아 엔진을 켜서 방향을 90도 바꾸고, 그렇게 생긴 '네모 궤도'로 소행성에서 약 25~30km 거리를 유지한다.",
+     "source_url": "https://sciencedaily.com/releases/2026/11/261115085545.htm"
+    },
+    {
+     "fact": "엔진 분사에 실패하면 Hera는 소행성 쪽이 아니라 바깥쪽으로 떠밀려 가도록 설계돼 충돌 위험을 줄인다.",
+     "source_url": "https://sciencedaily.com/releases/2026/11/261115085545.htm"
+    }
+   ],
+   "careful": "탈출 속도나 '점프하면 우주로 날아간다' 같은 수치는 이 출처에 없으니 쓰지 않는다."
+  },
+  {
+   "line": "insta_danger",
+   "title_idea": "까마귀랑 눈싸움하면 안 되는 진짜 이유",
+   "facts": [
+    {
+     "fact": "튀빙겐대 연구에서 까마귀는 움직이는 점들의 방향을 평균 235밀리초 만에 판단해, 사람과 원숭이보다 2배 빨랐다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261111005850.htm"
+    },
+    {
+     "fact": "실험에는 송장까마귀 두 마리가 참여했고, 신호가 분명할 때 정확도는 거의 100%였다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261111005850.htm"
+    },
+    {
+     "fact": "점이 나타난 지 70밀리초 만에 까마귀 뇌세포가 이미 두 방향을 구분하는 활동을 보였다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261111005850.htm"
+    }
+   ],
+   "careful": "실험 대상이 두 마리뿐이고 '시각 판단' 과제에 한정된 결과다. '까마귀가 사람보다 똑똑하다'고 단정하지 않는다."
+  },
+  {
+   "line": "insta_danger",
+   "title_idea": "고양이가 집사 앞에서만 우는 위험한 진짜 이유",
+   "facts": [
+    {
+     "fact": "브라질 상파울루대 연구진이 반려묘 38마리에게 구멍 뚫린 상자에 든 간식을 줘서, 냄새는 나지만 꺼낼 수 없게 했다.",
+     "source_url": "https://www.sciencealert.com/science-has-finally-shown-that-your-cat-meows-to-demand-that-you-fix-their-world"
+    },
+    {
+     "fact": "사람이 있을 때 울음은 86번, 고양이 혼자일 때는 20번 기록됐다.",
+     "source_url": "https://www.sciencealert.com/science-has-finally-shown-that-your-cat-meows-to-demand-that-you-fix-their-world"
+    },
+    {
+     "fact": "통계 분석에서 사람이 방에 있을 때 고양이가 울 확률(오즈)은 16배 넘게 높았다.",
+     "source_url": "https://www.sciencealert.com/science-has-finally-shown-that-your-cat-meows-to-demand-that-you-fix-their-world"
+    },
+    {
+     "fact": "사람이 없을 때 고양이는 가만히 서서 문 쪽을 바라보는 시간이 더 길었다.",
+     "source_url": "https://www.sciencealert.com/science-has-finally-shown-that-your-cat-meows-to-demand-that-you-fix-their-world"
+    }
+   ],
+   "careful": "'16배'는 울 확률의 오즈비다. '16배 더 많이 운다'로 바꿔 쓰지 않는다(실제 횟수는 86 대 20). 'cat-is-liquid'와는 다른 소재다."
+  },
+  {
+   "line": "wb_table",
+   "title_idea": "같은 양띠라도 색이 다릅니다: 43·55·67·79년생 양띠 색 표(2027 붉은 양의 해)",
+   "facts": [
+    {
+     "fact": "2027년은 육십갑자로 정미년(丁未) 양띠이고, 천간 정(丁)이 화 기운이라 '붉은 양의 해'라고 부른다.",
+     "source_url": "https://xn--vf4b15gb4ctvu.com/new-year-zodiac"
+    },
+    {
+     "fact": "1967년생은 2027년과 같은 정미년(붉은 양)생이다.",
+     "source_url": "https://xn--vf4b15gb4ctvu.com/new-year-zodiac"
+    },
+    {
+     "fact": "1955년생은 을미년(푸른 양), 1943년생은 계미년(검은 양), 1979년생은 기미년(노란 양)생이다.",
+     "source_url": "https://xn--vf4b15gb4ctvu.com/new-year-zodiac"
+    },
+    {
+     "fact": "띠가 바뀌는 기준은 1월 1일이 아니라 입춘이다.",
+     "source_url": "https://xn--vf4b15gb4ctvu.com/new-year-zodiac"
+    }
+   ],
+   "careful": "색에 따라 좋고 나쁨을 매기지 않는다(등급 말투 금지). 1~2월생은 입춘 기준으로 띠가 다를 수 있다고 한 줄 덧붙인다. 신년운세 시리즈에 같은 꼴의 편이 이미 있는지 확인한다."
+  },
+  {
+   "line": "nt_story",
+   "title_idea": "The Global Blackout That Never Happened (Nov 17)",
+   "facts": [
+    {
+     "fact": "11월 17일에 전기·인터넷·은행이 한꺼번에 끊기는 세계 정전이 온다는 주장이 SNS에 퍼졌지만, 계획된 세계 정전의 증거는 없었다.",
+     "source_url": "https://www.france24.com/en/tv-shows/truth-or-fake/20261116-november-17-blackout-hoax-how-a-conspiracy-theory-went-viral-around-the-world"
+    },
+    {
+     "fact": "날짜의 출처는 미국 연방재난관리청(FEMA)이 11월 17일로 잡아 둔 전국 비상경보 시스템 정기 시험이었다.",
+     "source_url": "https://www.france24.com/en/tv-shows/truth-or-fake/20261116-november-17-blackout-hoax-how-a-conspiracy-theory-went-viral-around-the-world"
+    },
+    {
+     "fact": "2023년 '심슨 가족' 에피소드에 마을이 정전되고 11월 17일이 표시된 장면이 있다는 클립이 퍼지며 소문에 힘이 실렸다.",
+     "source_url": "https://www.france24.com/en/tv-shows/truth-or-fake/20261116-november-17-blackout-hoax-how-a-conspiracy-theory-went-viral-around-the-world"
+    },
+    {
+     "fact": "암호화폐 계정들과 EU 대비 권고에 대한 잘못된 주장도 루머를 키웠다.",
+     "source_url": "https://www.france24.com/en/tv-shows/truth-or-fake/20261116-november-17-blackout-hoax-how-a-conspiracy-theory-went-viral-around-the-world"
+    }
+   ],
+   "careful": "'심슨이 예언했다'를 사실처럼 연출하지 않고 루머가 퍼진 경로를 보여 주는 실화로 다룬다. 공포를 키우지 않고 '정기 시험이었다'로 끝맺는다. 실존 인물이나 특정 계정을 지목하지 않는다."
+  }
+ ],
+ "note": "한국 쪽에서 왕별이가 바로 쓸 만한 흐름은 내일 수능, 김장 적기·비용 최저, 연말 상시 주제인 '붉은 양의 해'다. 인스타와 Nine Tails에는 이번 주 논문 보도(심해 단괴 245마리, Hera 네모 궤도, 까마귀 235ms, 고양이 울음 16배)와 11/17 정전 루머가 신선하다. 재고가 급한 insta_sci(8일 남음)와 nt_story(12일 남음)부터 채우길 권한다. 인스타·틱톡 안쪽 밈은 검색에 거의 안 잡혀 hot에서 뺐다."
+}

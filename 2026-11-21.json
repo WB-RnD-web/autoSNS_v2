@@ -1,0 +1,324 @@
+{
+ "date": "2026-11-21",
+ "hot": [
+  {
+   "topic": "보이저 1호가 사람이 만든 물체로는 처음으로 지구에서 '1광일' 떨어진 곳에 닿음(49년 만)",
+   "market": "kr",
+   "where": "국내 종합지·방송 뉴스(경향·MBC 뉴스데스크·VOA 한국어)",
+   "evidence": [
+    {
+     "title": "보이저 1호, 49년 만에 '1광일 거리' 통과…우주개척사 '한 획' - 경향신문",
+     "url": "https://www.khan.co.kr/article/202611182034005",
+     "date": "2026-11-18"
+    },
+    {
+     "title": "'창백한 푸른 점' 찍은 보이저 1호‥인류 최초 1광일 도달",
+     "url": "https://imnews.imbc.com/replay/2026/nwdesk/article/6866723_37004.html",
+     "date": "2026-11-19"
+    },
+    {
+     "title": "NASA 보이저 1호, 인류 최초로 지구에서 '1광일' 거리 도달…발사 49년 만의 기록",
+     "url": "https://www.voakorea.com/a/nasa-voyager-111926/8225707.html",
+     "date": "2026-11-19"
+    }
+   ],
+   "why_now": "11/18에 기록을 세웠고, 지상파 메인뉴스까지 다룬 사흘 안 된 우주 뉴스다.",
+   "fit": [
+    "insta_sci",
+    "nt_story"
+   ],
+   "idea": "빛도 꼬박 하루 걸리는 거리를 49년 동안 혼자 날아간 기계를 열어 본다. 속도·거리를 일상 단위로 바꿔서 보여 준다(20~35초)."
+  },
+  {
+   "topic": "심해 망간단괴 돌 하나 속에 미세 동물이 최대 245마리 산다는 연구",
+   "market": "kr",
+   "where": "국내 과학 기사 + 해외 ScienceDaily",
+   "evidence": [
+    {
+     "title": "심해 단괴 하나에 245마리…진흙과는 다른 생태계 — FAM타임스",
+     "url": "https://www.famtimes.co.kr/news/articleView.html?idxno=705021",
+     "date": "2026-11-17"
+    },
+    {
+     "title": "Hidden ecosystem: Scientists discover 245 animals living inside a single deep-sea rock",
+     "url": "https://www.sciencedaily.com/releases/2026/11/261114202133.htm",
+     "date": "2026-11-16"
+    }
+   ],
+   "why_now": "11/16~17에 나온 새 연구다. 심해 채굴 이야기와 맞물려 국내 기사로도 퍼졌다.",
+   "fit": [
+    "insta_sci",
+    "insta_worker"
+   ],
+   "idea": "'그냥 돌멩이' 단면을 열면 그 속이 동물들이 모여 사는 아파트다. 속이 보이는 과학 꼴에 딱 맞는다."
+  },
+  {
+   "topic": "수능 끝나자 10대가 알바 시장으로 몰림(수능 후 지원 450% 증가)",
+   "market": "kr",
+   "where": "경제·지역 뉴스(한국경제·뉴스1)",
+   "evidence": [
+    {
+     "title": "\"수능 끝나자마자 몰린다\"…수험생들 '꽂힌 곳' 어디길래",
+     "url": "https://www.hankyung.com/article/202611197181g",
+     "date": "2026-11-19"
+    },
+    {
+     "title": "\"수능 끝! 이제 놀자\"…부산 서면 거리로 쏟아진 수험생들 - 뉴스1",
+     "url": "https://www.news1.kr/local/busan-gyeongnam/6360232",
+     "date": "2026-11-20"
+    }
+   ],
+   "why_now": "수능(11/19) 직후 해마다 돌아오는 시즌이다. 인스타 10~20대에게 '첫 알바·첫 출근' 공감 소재가 바로 지금 열려 있다.",
+   "fit": [
+    "insta_worker"
+   ],
+   "idea": "심해 직장인 블롭피시 팀에 '첫 알바 신입'이 들어오는 편. 신입 동료는 실제 심해 생물로 하고, 진짜 과학 한 장을 붙인다."
+  },
+  {
+   "topic": "11월 밤하늘: 사자자리 유성우가 지나갔고 24일 슈퍼문이 남음",
+   "market": "kr",
+   "where": "과학·생활 기사(NASA 11월 관측 안내 소개)",
+   "evidence": [
+    {
+     "title": "유성우·화성·목성·슈퍼문…NASA가 꼽은 11월 밤하늘 관측 포인트 - 이코노미사이언스",
+     "url": "https://www.e-science.co.kr/news/articleView.html?idxno=138813",
+     "date": "2026-11-04"
+    },
+    {
+     "title": "[비건뉴스] 사자자리 유성우 18일 극대…관측은 해 뜨기 전",
+     "url": "https://www.vegannews.co.kr/news/article.html?no=402465",
+     "date": "2026-11-10"
+    }
+   ],
+   "why_now": "유성우 극대(17~18일)는 지났다. 남은 화제는 24일 슈퍼문 하나라 짧게 쓰는 시즌 소재다. 기사의 날짜는 미국 태평양 표준시 기준이라고 적혀 있다.",
+   "fit": [
+    "insta_sci"
+   ],
+   "idea": "'슈퍼문은 정말 커질까' — 달과 지구의 거리를 단면도로 보여 주는 짧은 편. 날짜는 한국 시각으로 다시 확인한 뒤에 쓴다."
+  },
+  {
+   "topic": "2027 정미년 = '붉은 양의 해' 미리보기 글이 늘어남",
+   "market": "kr",
+   "where": "사주·운세 사이트 블로그. 유튜브 운세 쪽은 트렌드 레이더상 이름·성씨, 관상이 떡상",
+   "evidence": [
+    {
+     "title": "2027년은 무슨 띠? 정미년(丁未) 양띠 — 붉은 양의 해 · 어흥사주",
+     "url": "https://xn--vf4b15gb4ctvu.com/new-year-zodiac",
+     "date": "2026-10-23"
+    }
+   ],
+   "why_now": "솔직히 연말이면 늘 오는 신년운세 수요이고, 이번 주에 새로 터진 화제는 아니다. 30일 안 근거 페이지도 1개뿐이다. 트렌드 레이더의 이름·성씨(1.23배), 관상(대박 비율 43%) 상승이 더 지금다운 신호다.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "신년운세 시리즈를 이어 가되, 떡상 중인 '이름 한 글자' 꼴과 붙인 정미년 표를 생각해 볼 만하다. 명리 근거만 쓰고 단정은 하지 않는다."
+  },
+  {
+   "topic": "심해 로봇이 찾은 '이상한 숲'(같은 방향을 보는 유리해면)·'황금 구슬' 정체",
+   "market": "us",
+   "where": "BBC Wildlife(Discover Wildlife) 기사, NOAA 탐사 영상 재확산",
+   "evidence": [
+    {
+     "title": "Deep sea robot discovered bizarre 'forest' full of eerie animals 2,442 metres deep, astonishing scientists",
+     "url": "https://www.discoverwildlife.com/animal-facts/marine-animals/forest-of-weird",
+     "date": "2026-11-13"
+    },
+    {
+     "title": "Deep-sea robot discovers mysterious golden orb 3,200m deep in the ocean",
+     "url": "https://www.discoverwildlife.com/animal-facts/marine-animals/the-deep-sea-golden-orb",
+     "date": "2026-11-05"
+    }
+   ],
+   "why_now": "11월에 기사 두 편이 잇따라 나왔다. 다만 탐사 자체는 더 전일 수 있어서 '이번 주 발견'으로 단정할 수는 없다.",
+   "fit": [
+    "insta_sci",
+    "insta_worker"
+   ],
+   "idea": "나무 없는 숲에서 모두 해류 쪽을 보고 서 있는 유리해면을 '조회 시간에 같은 방향 보는 신입들'로 그린다."
+  },
+  {
+   "topic": "실제 생존 실화: 바다에 떨어져 약 9시간 버틴 크루즈 승무원, 숲에서 6일 버틴 17세",
+   "market": "us",
+   "where": "미국·호주 뉴스(ABC News, AOL 재게재)",
+   "evidence": [
+    {
+     "title": "Fishermen rescue Royal Caribbean crew member who went overboard off California coast",
+     "url": "https://abcnews.com/US/fishermen-rescue-royal-caribbean-crew-member-overboard-off/story?id=137970512",
+     "date": "2026-11-09"
+    },
+    {
+     "title": "Teen Who Survived Six Days Lost In The Australian Bush Shares The Simple Tactic That Saved His Life",
+     "url": "https://www.aol.com/articles/teen-survived-six-days-lost-103245000.html",
+     "date": "2026-11-13"
+    }
+   ],
+   "why_now": "11월 6~12일에 일어난 일이라 2주가 안 됐다. 결말이 '살았다'인 생존 실화라 Nine Tails 재개 꼴(짧은 실화)에 맞는다.",
+   "fit": [
+    "nt_story"
+   ],
+   "idea": "얼굴 없는 마네킹 3D로 '버틴 방법 하나'(바다에 등 대고 떠 있기, 한자리에서 기다리기)만 정확히 보여 주는 45~75초 편."
+  },
+  {
+   "topic": "심해 '해삼(sea pig)' 피부 밑에 사는 정체불명의 박테리아",
+   "market": "us",
+   "where": "ScienceDaily(도쿄대 발표)",
+   "evidence": [
+    {
+     "title": "Something strange is living beneath the skin of deep-sea pigs",
+     "url": "https://www.sciencedaily.com/releases/2026/11/261118065512.htm",
+     "date": "2026-11-19"
+    }
+   ],
+   "why_now": "11/19에 나온 새 연구다. 다만 sea pig는 이미 심해 직장인 편(carpool-senior-sea-pig)에 나왔으니 sci 쪽으로만 본다.",
+   "fit": [
+    "insta_sci"
+   ],
+   "idea": "sea pig 몸벽 단면을 열면 그 안에 아주 작은 세입자 박테리아가 산다. 세부 수치는 원문으로 확인한 뒤에 쓴다."
+  }
+ ],
+ "candidates": [
+  {
+   "line": "insta_sci",
+   "title_idea": "빛도 하루 걸리는 곳에 49년 걸려 도착한 기계",
+   "facts": [
+    {
+     "fact": "NASA에 따르면 보이저 1호는 18일 오전 5시16분7초(한국시간 18일 오후 7시16분7초)에 지구와 거리가 1광일인 지점을 지났다.",
+     "source_url": "https://www.khan.co.kr/article/202611182034005"
+    },
+    {
+     "fact": "1광일은 빛 속도로 24시간 걸리는 거리로, 259억㎞다.",
+     "source_url": "https://www.khan.co.kr/article/202611182034005"
+    },
+    {
+     "fact": "지구와 태양 사이(1억5000만㎞)는 빛 속도로 8분20초 걸리고, 보이저 1호의 현재 비행속도는 시속 6만㎞다.",
+     "source_url": "https://www.khan.co.kr/article/202611182034005"
+    },
+    {
+     "fact": "보이저 1호는 1977년 9월5일 발사됐고, 동체에 '골든 레코드'가 붙어 있다.",
+     "source_url": "https://www.khan.co.kr/article/202611182034005"
+    },
+    {
+     "fact": "보이저 1호가 오르트 구름에 닿기까지는 앞으로 약 300년이 더 걸릴 것으로 예상된다.",
+     "source_url": "https://www.voakorea.com/a/nasa-voyager-111926/8225707.html"
+    }
+   ],
+   "careful": "통과 시각은 미국 시각과 한국 시각을 구분해서 쓴다. 외계인을 만난다는 식의 과장은 하지 않는다."
+  },
+  {
+   "line": "insta_sci",
+   "title_idea": "돌멩이 하나 쪼개 보니 245마리가 살고 있었다",
+   "facts": [
+    {
+     "fact": "독일 브레멘대 MARUM 연구진이 중앙 태평양 심해 단괴 244개에서 미세 동물 4,139마리를 확인했다.",
+     "source_url": "https://www.famtimes.co.kr/news/articleView.html?idxno=705021"
+    },
+    {
+     "fact": "단괴 하나에서 가장 많이 확인된 개체 수는 245마리였다.",
+     "source_url": "https://www.famtimes.co.kr/news/articleView.html?idxno=705021"
+    },
+    {
+     "fact": "단괴에는 니켈·코발트·구리 같은 금속이 들어 있어 심해 광물 채굴 대상으로 꼽힌다.",
+     "source_url": "https://www.famtimes.co.kr/news/articleView.html?idxno=705021"
+    },
+    {
+     "fact": "연구진은 이 작은 서식지가 심해 채굴로 위협받을 수 있다고 우려했다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261114202133.htm"
+    }
+   ],
+   "careful": "245마리는 단괴 하나에서 나온 최대치다(평균이 아님). 미세 동물이라 눈에 보이는 크기로 그리지 않는다. 채굴 찬반은 단정하지 않는다."
+  },
+  {
+   "line": "insta_worker",
+   "title_idea": "알바 첫날, 신입들이 다 같은 방향만 보는 이유(심해 유리해면 편)",
+   "facts": [
+    {
+     "fact": "알바몬 운영사 웍스피어 분석에서 '수능 후 30일' 동안 2007년생 회원의 알바 지원 건수가 '수능 전 30일'보다 450% 늘었다.",
+     "source_url": "https://www.hankyung.com/article/202611197181g"
+    },
+    {
+     "fact": "NOAA 탐사 로봇 Deep Discoverer가 거의 유리해면으로만 이뤄진 군락을 만났는데, 해면들이 모두 해류 방향으로 줄지어 있었다.",
+     "source_url": "https://www.discoverwildlife.com/animal-facts/marine-animals/forest-of-weird"
+    },
+    {
+     "fact": "나무 없이 해면만 있는 이 군락은 '이상한 숲(Forest of the Weird)'이라는 별명이 붙었고, 기사 제목에 나온 깊이는 2,442m다.",
+     "source_url": "https://www.discoverwildlife.com/animal-facts/marine-animals/forest-of-weird"
+    },
+    {
+     "fact": "NOAA 수산청은 이 해면 하나가 영화 E.T. 속 외계인의 큰 눈을 떠올리게 한다고 했다.",
+     "source_url": "https://www.discoverwildlife.com/animal-facts/marine-animals/forest-of-weird"
+    }
+   ],
+   "careful": "E.T.는 비유 언급만 하고 캐릭터 이미지는 쓰지 않는다. 해류를 향하는 이유는 기사에 나온 '해류 방향으로 정렬'까지만 쓰고 원인은 단정하지 않는다."
+  },
+  {
+   "line": "insta_danger",
+   "title_idea": "태어나자마자 높은 나무에서 뛰어내리는 아기 오리의 진짜 이유",
+   "facts": [
+    {
+     "fact": "원앙은 산간 계곡 물가의 나무 구멍에 둥지를 튼다. 스스로 구멍을 파지 못해 딱따구리가 쓰던 둥지나 자연적으로 생긴 빈 공간을 쓴다.",
+     "source_url": "https://vegannews.co.kr/news/article.html?no=408576"
+    },
+    {
+     "fact": "나무 높은 곳 둥지에서 깬 새끼들은 어미의 부름을 따라 밖으로 뛰어내려 물가로 간다.",
+     "source_url": "https://vegannews.co.kr/news/article.html?no=408576"
+    },
+    {
+     "fact": "국립생물자원관 교재에 따르면 알 품기와 새끼 돌보기는 암컷이 맡는다.",
+     "source_url": "https://vegannews.co.kr/news/article.html?no=408576"
+    }
+   ],
+   "careful": "둥지 높이·다치는지 같은 수치는 페이지에 없으니 지어내지 않는다. 이미 쓴 ducklings-wave-riding과 다른 장면(나무에서 뛰어내리기)으로 간다."
+  },
+  {
+   "line": "nt_story",
+   "title_idea": "He Fell Off a Cruise Ship at Night. Two Fishermen Found Him 9 Hours Later.",
+   "facts": [
+    {
+     "fact": "로열 캐리비안 크루즈 승무원이 남캘리포니아 앞바다 태평양에서 약 9시간을 버틴 뒤 낚시꾼 두 명에게 구조됐다.",
+     "source_url": "https://abcnews.com/US/fishermen-rescue-royal-caribbean-crew-member-overboard-off/story?id=137970512"
+    },
+    {
+     "fact": "이 승무원은 2026년 11월 6일 캘리포니아 뉴포트 앞바다에서 배 밖으로 떨어졌다.",
+     "source_url": "https://abcnews.com/US/fishermen-rescue-royal-caribbean-crew-member-overboard-off/story?id=137970512"
+    },
+    {
+     "fact": "구조한 낚시꾼은 카탈리나섬 근처에서 등을 대고 물에 떠 있던 그를 처음 봤다.",
+     "source_url": "https://abcnews.com/US/fishermen-rescue-royal-caribbean-crew-member-overboard-off/story?id=137970512"
+    },
+    {
+     "fact": "구조자는 그가 떨림을 멈추지 못하고 말도 하지 못했으며, 죽음 가까이에 있던 상태였다고 말했다.",
+     "source_url": "https://abcnews.com/US/fishermen-rescue-royal-caribbean-crew-member-overboard-off/story?id=137970512"
+    }
+   ],
+   "careful": "추락 원인(사고·음주 등)은 기사에 없으니 추측하지 않는다. 승무원은 이름 없이 마네킹으로만 만든다. 하루 전 기사라 '지금 어떻게 지내는지'는 단정하지 않는다."
+  },
+  {
+   "line": "nt_story",
+   "title_idea": "Lost 6 Days in the Bush With Only a Bag of Chips — Here's What Kept Him Alive",
+   "facts": [
+    {
+     "fact": "17세 소년이 호주 숲에서 엿새 동안 길을 잃었다가 살아서 발견됐다.",
+     "source_url": "https://www.aol.com/articles/teen-survived-six-days-lost-103245000.html"
+    },
+    {
+     "fact": "그는 11월 6일 멜버른 동쪽 약 180km 떨어진 Walhalla East 근처에서 친구와 캠핑하다 실종됐다.",
+     "source_url": "https://www.aol.com/articles/teen-survived-six-days-lost-103245000.html"
+    },
+    {
+     "fact": "수색에는 100명이 넘는 인력과 자원봉사자, 헬기·경찰견·잠수부가 동원됐다.",
+     "source_url": "https://www.aol.com/articles/teen-survived-six-days-lost-103245000.html"
+    },
+    {
+     "fact": "먹을 것은 가족용 치킨맛 감자칩 한 봉지뿐이었고, 처음 이틀에 나눠 먹었다.",
+     "source_url": "https://www.aol.com/articles/teen-survived-six-days-lost-103245000.html"
+    },
+    {
+     "fact": "11월 12일 경찰 헬기가 캠프장에서 약 2km 떨어진 곳에서 낚시 도구함을 발견한 것이 결정적 단서가 됐다.",
+     "source_url": "https://www.aol.com/articles/teen-survived-six-days-lost-103245000.html"
+    }
+   ],
+   "careful": "미성년자라 이름을 쓰지 않는다. 공포 연출 없이 '한자리에서 기다린 것'이라는 생존 요령 위주로 간다. 숲 생존 요령은 일반화해서 단정하지 않는다."
+  }
+ ],
+ "note": "한국 쪽은 '유행 쇼츠·릴스' 검색에 최근 7~30일 신호가 거의 안 잡혔다(패션 기사와 1년 넘은 결산뿐). 그래서 hot은 뉴스로 퍼진 보이저 1호·심해 단괴·수능 직후 알바 시즌 위주로 골랐다. 런웨이가 급한 insta_sci(5일)와 nt_story(9일)에 후보를 2개씩 넣었다. 검색 예산이 바닥나 '김장·삼재·슈퍼문 한국 시각' 확인은 못 했고, 정미년 hot은 근거가 약해서 연말 시즌 상시 수요라고 적었다."
+}

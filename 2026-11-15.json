@@ -1,0 +1,324 @@
+{
+ "date": "2026-11-15",
+ "hot": [
+  {
+   "topic": "보이저 1호가 11/18에 사람이 만든 물체로는 처음 지구에서 '1광일' 거리에 닿는다",
+   "market": "kr",
+   "where": "국내 과학·IT 기사(ZDNet·이코노미사이언스)와 일간지 칼럼(한국일보)이 연달아 다룸",
+   "evidence": [
+    {
+     "title": "\"50년 우주여행의 결실\"…보이저 1호, 지구서 1광일 거리 눈앞",
+     "url": "https://zdnet.co.kr/view/?no=20261110153028",
+     "date": "2026-11-10"
+    },
+    {
+     "title": "지구에서 보낸 신호, 하루 뒤 도착한다…보이저 1호 '인류 최초' 기록 눈앞",
+     "url": "https://www.e-science.co.kr/news/articleView.html?idxno=139194",
+     "date": "2026-11-12"
+    },
+    {
+     "title": "1광일(光日)에서 전해지는 메시지 [지평선]",
+     "url": "https://www.hankookilbo.com/news/article/A2026111209390001211",
+     "date": "2026-11-14"
+    }
+   ],
+   "why_now": "날짜가 정해진 사건(11/18, 한국시간 저녁)이고 그 전에 기사가 계속 나오는 중이다. 지난달 신호가 이틀 끊겼다가 돌아온 일까지 겹쳐 이야깃거리가 많다.",
+   "fit": [
+    "insta_sci"
+   ],
+   "idea": "'답장 받는 데 이틀 걸리는 기계' — 보이저 속을 열어서 꺼 둔 장치·예비 추진기·전력 문제를 20~35초에 보여 준다"
+  },
+  {
+   "topic": "Voyager 1 reaches one light-day from Earth on Nov 18 + NASA 'Shine Bright' Morse-code event",
+   "market": "us",
+   "where": "과학 매체(EarthSky·ScienceDaily)와 NASA 공식 별하늘 안내",
+   "evidence": [
+    {
+     "title": "Celebrate as Voyager 1 reaches 1 light-day from Earth! Here's how",
+     "url": "https://earthsky.org/space/voyager-1-1-light-day-from-earth-november-17-18-2026/",
+     "date": "2026-11-12"
+    },
+    {
+     "title": "NASA's Voyager 1 is about to reach a historic one-light-day milestone",
+     "url": "https://www.sciencedaily.com/releases/2026/11/261103003152.htm",
+     "date": "2026-11-03"
+    },
+    {
+     "title": "November's Night Sky Notes: Light-Day Away",
+     "url": "https://science.nasa.gov/solar-system/skywatching/night-sky-network/novembers-night-sky-notes-light-day-away/",
+     "date": "2026-10-31"
+    }
+   ],
+   "why_now": "11/18 이정표를 앞두고 NASA가 11/17 해 진 뒤 손전등으로 V-G-R 모스부호를 보내는 참여 행사를 열어 영어권에서도 화제가 될 시점이다",
+   "fit": [
+    "nt_story",
+    "insta_sci"
+   ],
+   "idea": "What if you texted Voyager 1 tonight? — 보내고 하루, 답장까지 또 하루를 얼굴 없는 3D로 따라가는 45~60초 what-if"
+  },
+  {
+   "topic": "사자자리 유성우(11/17 밤~18일 새벽 절정)와 11/24 슈퍼문, 11월 밤하늘 일정",
+   "market": "kr",
+   "where": "국내 기사(국제뉴스·비건뉴스·미디어펜). 천문연 천문현상표와 NASA 'What's Up'을 인용",
+   "evidence": [
+    {
+     "title": "사자자리 유성우 극대기 관측 시기 '이 시간'이 골든타임 이라고?",
+     "url": "https://www.gukjenews.com/news/articleView.html?idxno=3746252",
+     "date": "2026-11-09"
+    },
+    {
+     "title": "[비건뉴스] 사자자리 유성우 18일 극대…관측은 해 뜨기 전",
+     "url": "https://www.vegannews.co.kr/news/article.html?no=402465",
+     "date": "2026-11-10"
+    },
+    {
+     "title": "[김상문의 달빛愛] \"가을 끝자락, 슈퍼문 뜬다\"",
+     "url": "https://www.mediapen.com/news/view/1134976",
+     "date": "2026-11-05"
+    }
+   ],
+   "why_now": "이번 주 수요일 새벽(유성우)과 다음 주(슈퍼문)에 날짜가 정해진 하늘 일정이다. 다만 사자자리 유성우는 올해 시간당 약 15개로 예보돼 아주 큰 쇼는 아니다.",
+   "fit": [
+    "wb_table",
+    "insta_sci"
+   ],
+   "idea": "왕별이: '올해 가장 큰 보름달 뜨는 날 띠별 달맞이 덕담 표' / 인스타: 별똥별의 정체는 혜성이 남긴 먼지라는 걸 단면으로"
+  },
+  {
+   "topic": "11/19 수능 — 엿·찹쌀떡 선물 풍속과 '합격 떡' 유행 변화",
+   "market": "kr",
+   "where": "생활·문화 기사(세계일보 FOOD+)와 커뮤니티 글(머니투데이 기사 인용)",
+   "evidence": [
+    {
+     "title": "'철썩 붙어라' 수능날 엿 선물, 언제부터?…조선시대 과거시험장에도 등장",
+     "url": "https://www.segye.com/newsView/20261111504105",
+     "date": "2026-11-11"
+    },
+    {
+     "title": "찹쌀떡이 사라진 수능 떡집 크림모찌와 딸기설기가 대신 채운 놀라운이유",
+     "url": "https://supple.kr/community/culture/138198348",
+     "date": "2026-11-14"
+    }
+   ],
+   "why_now": "수능이 나흘 뒤(11/19 목)다. 55세 이상 시청자에게는 '손주 수능' 이야기라서 할머니·할아버지 쪽에서 볼 수 있다.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "'수능 보는 손주에게 띠별로 건네는 응원 한마디 표'(그날 일진 근거 · 합격 단정 없이 덕담만)"
+  },
+  {
+   "topic": "김장철 — 지역 김장축제 개막과 김장 사연의 인기",
+   "market": "kr",
+   "where": "지역 축제 기사, 그리고 레이더의 사연 쇼츠('김장 배추 100포기' 42.9배)",
+   "evidence": [
+    {
+     "title": "'RED하게 세상을 버무리다'… 맛과 멋, 열기 가득한 '2026 괴산김장축제' 개막",
+     "url": "https://www.segye.com/newsView/20261105514555",
+     "date": "2026-11-05"
+    }
+   ],
+   "why_now": "솔직히 해마다 11월이면 돌아오는 계절 주제다. 새 뉴스라기보다 지금 시청층의 생활 화제라서 넣었다.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "'11월 김장 날 잡기 좋은 띠' 띠 테마 표(일진 근거 · 날짜 몇 개만)"
+  },
+  {
+   "topic": "심해 바닥은 사람이 직접 본 곳이 0.001%도 안 된다 — 미지의 심해 생물 이야기",
+   "market": "kr",
+   "where": "국내 과학 기사(더페어 과학한컷). MBARI 영상·사진과 NOAA 수치 인용",
+   "evidence": [
+    {
+     "title": "[더페어 과학한컷] 우주보다 먼 심해 암흑 속으로…미지의 생명 찾는 '시간과의 레이스'",
+     "url": "https://www.thefairnews.co.kr/news/articleView.html?idxno=92156",
+     "date": "2026-11-09"
+    }
+   ],
+   "why_now": "심해는 원래 늘 인기 있는 주제다. 새로운 건 이 수치를 정리한 기사가 이번 주에 나왔다는 정도다.",
+   "fit": [
+    "insta_sci",
+    "insta_danger"
+   ],
+   "idea": "'달보다 덜 본 곳' — 심해 바닥 지도를 열어 사람이 직접 본 넓이를 점 하나로 보여 주기"
+  },
+  {
+   "topic": "인도 심해에서 수십 년 '대서양 종'으로 잘못 분류돼 온 브램블 상어가 새 종으로 확인됨",
+   "market": "us",
+   "where": "영어권 시사·과학 요약 매체(GKToday). 원 논문은 Records of the Zoological Survey of India",
+   "evidence": [
+    {
+     "title": "Scientists Identify Indian Bramble Shark as New Species",
+     "url": "https://www.gktoday.in/scientists-identify-indian-bramble-shark-as-new-species/",
+     "date": "2026-11-13"
+    }
+   ],
+   "why_now": "11/12 발표라 아주 새 소식이다. 다만 아직 퍼진 흔적은 이 매체 하나에서만 확인했다.",
+   "fit": [
+    "insta_worker"
+   ],
+   "idea": "'수십 년간 이름을 잘못 불린 심해 동료' — 블롭피시 직장 공감과 진짜 분류학 한 장"
+  },
+  {
+   "topic": "겨울 실화 생존기(남극 탐험, 1888 블리자드 등)를 찾는 계절 수요",
+   "market": "us",
+   "where": "영어권 도서·블로그 추천 글. 레이더에서는 MrBallen 'He Got STRANDED In Alaska!'가 4.4배",
+   "evidence": [
+    {
+     "title": "5 True Winter Survival Stories That Read Like Thrillers",
+     "url": "https://booksofbrilliance.com/2026/11/12/true-winter-survival-stories/",
+     "date": "2026-11-12"
+    }
+   ],
+   "why_now": "겨울로 들어서는 시기에 늘 찾는 주제라 새 유행은 아니다. 레이더의 고립·생존 실화 대박이 같은 쪽을 가리킨다.",
+   "fit": [
+    "nt_story"
+   ],
+   "idea": "얼굴 없는 3D로 '눈보라 속 몇 시간'을 따라가는 짧은 생존 실화(사건은 사실 확인 뒤 고름)"
+  }
+ ],
+ "candidates": [
+  {
+   "line": "insta_sci",
+   "title_idea": "보내고 하루, 답장까지 또 하루 — 보이저 1호 속을 열어 보면",
+   "facts": [
+    {
+     "fact": "NASA에 따르면 보이저 1호는 한국시간 11월 18일 오후 7시 16분 7초에 지구에서 약 259억km 떨어진 지점을 지날 예정이다.",
+     "source_url": "https://www.e-science.co.kr/news/articleView.html?idxno=139194"
+    },
+    {
+     "fact": "1광일은 빛이 24시간 동안 가는 거리다.",
+     "source_url": "https://www.e-science.co.kr/news/articleView.html?idxno=139194"
+    },
+    {
+     "fact": "1광일 거리에서는 가장 간단한 왕복 교신에도 48시간이 걸린다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261103003152.htm"
+    },
+    {
+     "fact": "보이저 1호는 성간 공간을 시속 약 61,155km로 날고 있다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261103003152.htm"
+    },
+    {
+     "fact": "올해 운영팀은 전력 소비를 줄이려고 기존 장치 3개를 끄고 저전력 대체 장치 3개를 켰다.",
+     "source_url": "https://zdnet.co.kr/view/?no=20261110153028"
+    },
+    {
+     "fact": "NASA는 지난달 18일과 19일 예정된 교신에서 보이저 1호 신호를 확인하지 못했고, 약 48시간 만인 20일에 다시 잡았다.",
+     "source_url": "https://www.e-science.co.kr/news/articleView.html?idxno=139194"
+    }
+   ],
+   "careful": "1광일에 닿아도 탐사선에는 아무 물리적 변화가 없다. '벽을 넘는다'처럼 연출하지 말 것. 259억km는 누적 비행거리가 아니라 지구에서 떨어진 거리다. 소재가 겹치니 11/18 전후에만 쓸 것."
+  },
+  {
+   "line": "nt_story",
+   "title_idea": "What If You Texted Voyager 1 Tonight?",
+   "facts": [
+    {
+     "fact": "1977년에 발사된 보이저 1호는 11월 18일 지구에서 1광일 거리에 닿는 첫 인공물이 된다.",
+     "source_url": "https://earthsky.org/space/voyager-1-1-light-day-from-earth-november-17-18-2026/"
+    },
+    {
+     "fact": "1광일은 약 161억 마일(259억km), 173.14AU다.",
+     "source_url": "https://earthsky.org/space/voyager-1-1-light-day-from-earth-november-17-18-2026/"
+    },
+    {
+     "fact": "기사 시점에 지구 망원경으로 보이저 1호를 본다면, 그 빛은 23시간 52분 30초 전에 탐사선을 떠난 빛이다.",
+     "source_url": "https://earthsky.org/space/voyager-1-1-light-day-from-earth-november-17-18-2026/"
+    },
+    {
+     "fact": "NASA는 11월 17일 해 진 뒤 손전등·휴대폰 불빛으로 하늘을 향해 V-G-R을 모스부호로 깜빡이는 'Shine Bright' 행사를 연다.",
+     "source_url": "https://earthsky.org/space/voyager-1-1-light-day-from-earth-november-17-18-2026/"
+    },
+    {
+     "fact": "1광일 거리에서는 가장 간단한 왕복 교신에도 48시간이 걸린다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261103003152.htm"
+    }
+   ],
+   "careful": "기존 편 'Voyager 1 vs Parker Solar Probe vs Light'와 꼴이 겹치지 않게 속도 비교가 아니라 '메시지 왕복' what-if로 만든다. 매일 트렌드 편(nt-trend)이 같은 소재를 쓰는지 먼저 확인한다."
+  },
+  {
+   "line": "insta_sci",
+   "title_idea": "사람이 직접 눈으로 본 심해 바닥, 0.001%도 안 된다",
+   "facts": [
+    {
+     "fact": "NOAA에 따르면 해저 지형을 고해상도로 파악한 비율은 28.7%뿐이다.",
+     "source_url": "https://www.thefairnews.co.kr/news/articleView.html?idxno=92156"
+    },
+    {
+     "fact": "수심 200m 아래 심해저 가운데 사람이 직접 눈으로 확인한 넓이는 전체의 0.001% 미만으로, 미국 로드아일랜드주 크기다.",
+     "source_url": "https://www.thefairnews.co.kr/news/articleView.html?idxno=92156"
+    },
+    {
+     "fact": "학계에 등록된 해양 생물은 약 25만 종인데, 과학계는 바다 생물의 최대 90%(약 70만~200만 종)가 아직 알려지지 않았다고 추정한다.",
+     "source_url": "https://www.thefairnews.co.kr/news/articleView.html?idxno=92156"
+    },
+    {
+     "fact": "육식성 해면 '하프 스펀지(Chondrocladia lyra)'는 3,000m 심해에서 벨크로 같은 끈적한 섬유로 지나가는 갑각류를 잡아 소화한다.",
+     "source_url": "https://www.thefairnews.co.kr/news/articleView.html?idxno=92156"
+    }
+   ],
+   "careful": "90%는 추정치라서 '추정'이라고 밝힌다. 배럴아이는 이미 다른 편(invisible-in-meeting-barreleye)에 썼으니 주인공으로 쓰지 않는다."
+  },
+  {
+   "line": "insta_worker",
+   "title_idea": "수십 년 동안 남의 이름으로 불린 심해 동료 — 인도 브램블 상어",
+   "facts": [
+    {
+     "fact": "2026년 11월 12일 인도 동물조사국(ZSI)과 중앙해양수산연구소(CMFRI) 연구진이 인도 브램블 상어(Echinorhinus roinee)를 별개의 심해 종으로 확인했다.",
+     "source_url": "https://www.gktoday.in/scientists-identify-indian-bramble-shark-as-new-species/"
+    },
+    {
+     "fact": "이 상어는 수십 년 동안 대서양 브램블 상어(Echinorhinus brucus)로 잘못 분류돼 왔다.",
+     "source_url": "https://www.gktoday.in/scientists-identify-indian-bramble-shark-as-new-species/"
+    },
+    {
+     "fact": "몸길이는 3m까지 자라고, 수심 약 350~450m의 대륙사면 바다에 산다.",
+     "source_url": "https://www.gktoday.in/scientists-identify-indian-bramble-shark-as-new-species/"
+    },
+    {
+     "fact": "가까운 종들보다 눈과 배지느러미가 크고, 주둥이에서 아가미까지가 더 길다.",
+     "source_url": "https://www.gktoday.in/scientists-identify-indian-bramble-shark-as-new-species/"
+    },
+    {
+     "fact": "표본은 심해 새우 트롤 어선이 실수로 함께 잡아 온 개체를 케랄라주 콜람의 어항에서 모은 것이다.",
+     "source_url": "https://www.gktoday.in/scientists-identify-indian-bramble-shark-as-new-species/"
+    }
+   ],
+   "careful": "출처가 한 곳(요약 매체)뿐이라 원 논문(Records of the Zoological Survey of India 126권)으로 학명과 숫자를 다시 확인한 뒤 편성한다. 실물 사진은 저작권을 확인하고, 없으면 일러스트로 대신한다. 외형(가시 등)은 출처에 없는 묘사이니 단정하지 않는다."
+  },
+  {
+   "line": "wb_table",
+   "title_idea": "수능 보는 손주에게 띠별로 건네는 응원 한마디 | 11월 19일 목요일 · 45~96년생 전부",
+   "facts": [
+    {
+     "fact": "올해 대학수학능력시험은 11월 19일(목)에 치러진다.",
+     "source_url": "https://www.segye.com/newsView/20261111504105"
+    },
+    {
+     "fact": "엿은 끈끈한 식감 때문에 원하는 학교에 '철썩 붙으라'는 뜻을 담아 수험생에게 선물한다.",
+     "source_url": "https://www.segye.com/newsView/20261111504105"
+    },
+    {
+     "fact": "조선시대 과거시험장에서도 엿을 팔았다는 기록이 있지만, 그때도 합격을 비는 뜻이 있었는지는 알 수 없다.",
+     "source_url": "https://www.segye.com/newsView/20261111504105"
+    }
+   ],
+   "careful": "합격·점수를 보장하는 말은 쓰지 않는다. '붙는 띠' 순위 대신 덕담·응원 표로 만들고 명리 근거는 그날 일진으로 한다. 수험생(10대) 공포나 압박이 드는 표현은 금지."
+  },
+  {
+   "line": "wb_table",
+   "title_idea": "올해 가장 큰 보름달 뜨는 11월 24일 · 띠별 달맞이 덕담 표",
+   "facts": [
+    {
+     "fact": "2026년 11월 24일 보름달은 지구와 가까워지는 시기와 겹치는 슈퍼문이라 평소보다 크고 밝게 보일 전망이다.",
+     "source_url": "https://www.mediapen.com/news/view/1134976"
+    },
+    {
+     "fact": "11월 24일 보름달은 2026년 중 가장 큰 보름달로 알려져 있다.",
+     "source_url": "https://www.mediapen.com/news/view/1134976"
+    }
+   ],
+   "careful": "소원이 이뤄진다고 단정하지 않는다. 가장 둥근 시각은 자료마다 달라서 표에는 날짜만 쓰고 시각은 빼거나 '무렵'으로 쓴다."
+  }
+ ],
+ "note": "오늘 가장 강한 흐름은 11/18 보이저 1호 '1광일'이다. 한국 기사와 영어권 기사가 함께 커지고 있어 인스타 sci(재고 11일로 가장 급함)와 Nine Tails 둘 다에 바로 쓸 수 있다. 왕별이 쪽은 수능(11/19)·슈퍼문(11/24)·김장철처럼 날짜가 있는 생활 화제가 쓸 만하다. 검색 도구 사용 한도에 걸려 영어 쪽은 계획한 7번 중 3번만 했고 사실 확인용 검색은 못 했다. 그래서 브램블 상어는 출처가 한 곳뿐이라 다시 확인해야 한다."
+}
