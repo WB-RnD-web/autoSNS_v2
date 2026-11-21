@@ -1,0 +1,54 @@
+{
+ "date": "2026-11-21",
+ "topic": "wisdom",
+ "theme": "wisdom:money_leak",
+ "privacy": "public",
+ "accent": "#B4533C",
+ "_min_total": 10.0,
+ "hook_title": "노후에 돈이 새는 습관",
+ "headline": "노후에 돈이 새는 습관 5가지 | 말년 지혜 #노후생활 #노후자금 #돈관리습관",
+ "thumbnail_hook": "an old cloth coin purse and a small notebook on warm hanji paper, a pair of reading glasses beside them, soft lamp light, no people, no text, no letters, no signage, no logos",
+ "thumbnail_style": "hanji",
+ "scenes": [
+  {
+   "type": "wisdom",
+   "pill": "50·60·70대 공감 · 말년 지혜",
+   "title": "노후에 돈이",
+   "title2": "새는 습관",
+   "tone": "dont",
+   "items": [
+    {
+     "big": "정에 끌려 서는 보증",
+     "small": "보증은 마음 대신 짐이 돼요"
+    },
+    {
+     "big": "모르는 전화 속 이체",
+     "small": "끊고 가족에게 먼저 물어요"
+    },
+    {
+     "big": "늦은 밤 홈쇼핑 주문",
+     "small": "하룻밤 자고 정해요"
+    },
+    {
+     "big": "체면 때문에 큰 부조",
+     "small": "마음만큼이면 충분해요"
+    },
+    {
+     "big": "'꼭 오른다'는 권유",
+     "small": "모르는 건 하지 않아요"
+    }
+   ],
+   "foot": "※ 어르신들 이야기를 모아 정리했어요 · 집집마다 사정은 다를 수 있어요",
+   "brand": "왕별이 · 말년 지혜",
+   "narration": "노후에 돈이 새는 습관, 다섯 가지예요. 몇 번이 제일 와닿으세요? 댓글로 번호를 남겨 주세요."
+  }
+ ],
+ "platforms": {
+  "youtube": {
+   "title": "노후에 돈이 새는 습관 5가지 | 말년 지혜 #노후생활 #노후자금 #돈관리습관 #shorts",
+   "description": "노후에 돈이 새는 습관, 다섯 가지를 한 장에 모았어요. 몇 번이 제일 와닿으세요? 댓글로 번호를 남겨 주세요 🙏\n\n1. 정에 끌려 서는 보증 — 정 때문에 선 보증이 노후 살림을 흔드는 일이 많아요. 마음은 다른 방법으로 전해요.\n2. 모르는 전화 속 이체 — 급하다며 돈을 보내라는 전화는 일단 끊고, 가족에게 먼저 확인해요.\n3. 늦은 밤 홈쇼핑 주문 — 밤에 본 물건은 아침에 다시 보면 꼭 필요하지 않은 때가 많아요.\n4. 체면 때문에 큰 부조 — 부조는 체면보다 형편에 맞게 해도 마음은 충분히 전해져요.\n5. '꼭 오른다'는 권유 — 잘 모르는 일에 돈을 맡기라는 권유는 가족과 먼저 상의해요.\n\n※ 왕별이가 어르신들 이야기를 모아 정리한 생활 지혜예요. 집집마다 사정은 다를 수 있어요.\n\n#노후생활 #노후자금 #돈관리습관 #말년지혜 #인생지혜 #시니어공감 #50대 #60대 #70대 #shorts"
+  }
+ },
+ "notes": "말년 지혜 표 · wisdom:money_leak · wisdom_card.py 가 만든 스토리보드(11/17~11/30 2주 시험 · 17:40)",
+ "publish_at": "2026-11-21T17:40+09:00"
+}
