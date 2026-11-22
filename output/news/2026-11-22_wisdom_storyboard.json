@@ -1,0 +1,54 @@
+{
+ "date": "2026-11-22",
+ "topic": "wisdom",
+ "theme": "wisdom:children_dont",
+ "privacy": "public",
+ "accent": "#B4533C",
+ "_min_total": 10.0,
+ "hook_title": "자식에게 아끼면 좋은 말",
+ "headline": "자식에게 아끼면 좋은 말 5가지 | 말년 지혜 #부모자식관계 #자식에게하지말아야할말 #부모의지혜",
+ "thumbnail_hook": "a quiet Korean kitchen table with a steaming bowl of soup and two spoons, soft morning light through a window, no people, no text, no letters, no signage, no logos",
+ "thumbnail_style": "hanji",
+ "scenes": [
+  {
+   "type": "wisdom",
+   "pill": "50·60·70대 공감 · 말년 지혜",
+   "title": "자식에게",
+   "title2": "아끼면 좋은 말",
+   "tone": "dont",
+   "items": [
+    {
+     "big": "\"언제 결혼하니\"",
+     "small": "때가 되면 먼저 말해요"
+    },
+    {
+     "big": "\"옆집 아이는…\"",
+     "small": "비교는 정을 깎아요"
+    },
+    {
+     "big": "\"너 때문에 참았다\"",
+     "small": "지난 희생은 짐이 돼요"
+    },
+    {
+     "big": "\"그러게 내가 뭐랬니\"",
+     "small": "지난 일은 덮어 줘요"
+    },
+    {
+     "big": "\"벌이는 얼마나 되니\"",
+     "small": "형편은 기다려 줘요"
+    }
+   ],
+   "foot": "※ 어르신들 이야기를 모아 정리했어요 · 집집마다 사정은 다를 수 있어요",
+   "brand": "왕별이 · 말년 지혜",
+   "narration": "자식에게 아끼면 좋은 말, 다섯 가지예요. 몇 번이 제일 와닿으세요? 댓글로 번호를 남겨 주세요."
+  }
+ ],
+ "platforms": {
+  "youtube": {
+   "title": "자식에게 아끼면 좋은 말 5가지 | 말년 지혜 #부모자식관계 #자식에게하지말아야할말 #부모의지혜 #shorts",
+   "description": "자식에게 아끼면 좋은 말, 다섯 가지를 한 장에 모았어요. 몇 번이 제일 와닿으세요? 댓글로 번호를 남겨 주세요 🙏\n\n1. 언제 결혼하니 — 결혼·자식 얘기는 묻지 않아도 자식이 먼저 꺼낼 때가 와요.\n2. 옆집 아이는… — 남의 집 자식과 견주는 말은 칭찬 열 마디를 지워 버려요.\n3. 너 때문에 참았다 — 부모의 희생 이야기는 고마움보다 무거운 짐으로 남기 쉬워요.\n4. 그러게 내가 뭐랬니 — 일이 틀어졌을 때는 따지기보다 다독여 주는 게 먼저예요.\n5. 벌이는 얼마나 되니 — 살림 형편은 자식이 먼저 말할 때까지 기다려 주면 편해해요.\n\n※ 왕별이가 어르신들 이야기를 모아 정리한 생활 지혜예요. 집집마다 사정은 다를 수 있어요.\n\n#부모자식관계 #자식에게하지말아야할말 #부모의지혜 #말년지혜 #인생지혜 #시니어공감 #50대 #60대 #70대 #shorts"
+  }
+ },
+ "notes": "말년 지혜 표 · wisdom:children_dont · wisdom_card.py 가 만든 스토리보드(11/17~11/30 2주 시험 · 17:40)",
+ "publish_at": "2026-11-22T17:40+09:00"
+}
