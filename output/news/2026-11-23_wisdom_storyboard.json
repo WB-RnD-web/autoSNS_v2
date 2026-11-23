@@ -1,0 +1,54 @@
+{
+ "date": "2026-11-23",
+ "topic": "wisdom",
+ "theme": "wisdom:inlaw_words",
+ "privacy": "public",
+ "accent": "#2E7D6B",
+ "_min_total": 10.0,
+ "hook_title": "며느리·사위가 편해하는 말",
+ "headline": "며느리·사위가 편해하는 말 5가지 | 말년 지혜 #며느리 #사위 #시댁처가",
+ "thumbnail_hook": "a neatly set low dining table in a hanok room with side dishes under soft light, warm family mood, no people, no text, no letters, no signage, no logos",
+ "thumbnail_style": "hanji",
+ "scenes": [
+  {
+   "type": "wisdom",
+   "pill": "50·60·70대 공감 · 말년 지혜",
+   "title": "며느리·사위가",
+   "title2": "편해하는 말",
+   "tone": "do",
+   "items": [
+    {
+     "big": "\"편하게 쉬다 가라\"",
+     "small": "손님 아닌 식구로 대해요"
+    },
+    {
+     "big": "\"너희 방식대로 해라\"",
+     "small": "살림은 믿고 맡겨요"
+    },
+    {
+     "big": "\"고생했다, 고맙다\"",
+     "small": "수고를 알아줘요"
+    },
+    {
+     "big": "\"연락은 편할 때 해라\"",
+     "small": "부담을 덜어 줘요"
+    },
+    {
+     "big": "\"우리 걱정은 마라\"",
+     "small": "짐을 지우지 않아요"
+    }
+   ],
+   "foot": "※ 어르신들 이야기를 모아 정리했어요 · 집집마다 사정은 다를 수 있어요",
+   "brand": "왕별이 · 말년 지혜",
+   "narration": "며느리·사위가 편해하는 말, 다섯 가지예요. 몇 번이 제일 와닿으세요? 댓글로 번호를 남겨 주세요."
+  }
+ ],
+ "platforms": {
+  "youtube": {
+   "title": "며느리·사위가 편해하는 말 5가지 | 말년 지혜 #며느리 #사위 #시댁처가 #shorts",
+   "description": "며느리·사위가 편해하는 말, 다섯 가지를 한 장에 모았어요. 몇 번이 제일 와닿으세요? 댓글로 번호를 남겨 주세요 🙏\n\n1. 편하게 쉬다 가라 — 와서 일부터 하게 하기보다 쉬다 가라는 말이 마음을 열어요.\n2. 너희 방식대로 해라 — 아이 키우는 법·살림 방식은 그 집에 맡겨 주면 다툼이 줄어요.\n3. 고생했다, 고맙다 — 명절이나 집안일 뒤 고맙다는 한마디가 오래 남아요.\n4. 연락은 편할 때 해라 — 연락을 재촉하지 않으면 오히려 편하게 먼저 연락해요.\n5. 우리 걱정은 마라 — 부모가 잘 지낸다는 말이 자식 부부에게는 가장 큰 선물이에요.\n\n※ 왕별이가 어르신들 이야기를 모아 정리한 생활 지혜예요. 집집마다 사정은 다를 수 있어요.\n\n#며느리 #사위 #시댁처가 #말년지혜 #인생지혜 #시니어공감 #50대 #60대 #70대 #shorts"
+  }
+ },
+ "notes": "말년 지혜 표 · wisdom:inlaw_words · wisdom_card.py 가 만든 스토리보드(11/17~11/30 2주 시험 · 17:40)",
+ "publish_at": "2026-11-23T17:40+09:00"
+}
