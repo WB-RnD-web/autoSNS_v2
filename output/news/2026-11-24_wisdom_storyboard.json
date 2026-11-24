@@ -1,0 +1,54 @@
+{
+ "date": "2026-11-24",
+ "topic": "wisdom",
+ "theme": "wisdom:home_laughter",
+ "privacy": "public",
+ "accent": "#2E7D6B",
+ "_min_total": 10.0,
+ "hook_title": "집안에 웃음이 많은 집의 습관",
+ "headline": "집안에 웃음이 많은 집의 습관 5가지 | 말년 지혜 #가족 #화목한가정 #집안분위기",
+ "thumbnail_hook": "a bright tidy Korean entrance hall with a small flower vase and warm light, calm cheerful home mood, no people, no text, no letters, no signage, no logos",
+ "thumbnail_style": "hanji",
+ "scenes": [
+  {
+   "type": "wisdom",
+   "pill": "50·60·70대 공감 · 말년 지혜",
+   "title": "집안에 웃음이",
+   "title2": "많은 집의 습관",
+   "tone": "do",
+   "items": [
+    {
+     "big": "밥은 함께 먹어요",
+     "small": "한 상이 정을 이어요"
+    },
+    {
+     "big": "TV보다 얘기해요",
+     "small": "오늘 있었던 일 나누기"
+    },
+    {
+     "big": "생일은 꼭 챙겨요",
+     "small": "작은 케이크도 기뻐요"
+    },
+    {
+     "big": "'고마워'를 붙여요",
+     "small": "말끝마다 버릇처럼"
+    },
+    {
+     "big": "현관을 환하게 둬요",
+     "small": "들어올 때 기분이 좋아요"
+    }
+   ],
+   "foot": "※ 어르신들 이야기를 모아 정리했어요 · 집집마다 사정은 다를 수 있어요",
+   "brand": "왕별이 · 말년 지혜",
+   "narration": "집안에 웃음이 많은 집의 습관, 다섯 가지예요. 몇 번이 제일 와닿으세요? 댓글로 번호를 남겨 주세요."
+  }
+ ],
+ "platforms": {
+  "youtube": {
+   "title": "집안에 웃음이 많은 집의 습관 5가지 | 말년 지혜 #가족 #화목한가정 #집안분위기 #shorts",
+   "description": "집안에 웃음이 많은 집의 습관, 다섯 가지를 한 장에 모았어요. 몇 번이 제일 와닿으세요? 댓글로 번호를 남겨 주세요 🙏\n\n1. 밥은 함께 먹어요 — 하루 한 끼라도 같이 먹으면 할 이야기가 저절로 생겨요.\n2. TV보다 얘기해요 — 저녁에 TV를 잠시 끄고 하루 이야기를 나누면 집이 환해져요.\n3. 생일은 꼭 챙겨요 — 크게 차리지 않아도 생일을 기억해 주는 마음이 웃음을 만들어요.\n4. '고마워'를 붙여요 — 물 한 잔 건네받을 때도 고맙다고 하면 집안 말투가 고와져요.\n5. 현관을 환하게 둬요 — 현관이 밝고 깔끔하면 집에 들어설 때마다 마음이 편해요.\n\n※ 왕별이가 어르신들 이야기를 모아 정리한 생활 지혜예요. 집집마다 사정은 다를 수 있어요.\n\n#가족 #화목한가정 #집안분위기 #말년지혜 #인생지혜 #시니어공감 #50대 #60대 #70대 #shorts"
+  }
+ },
+ "notes": "말년 지혜 표 · wisdom:home_laughter · wisdom_card.py 가 만든 스토리보드(11/17~11/30 2주 시험 · 17:40)",
+ "publish_at": "2026-11-24T17:40+09:00"
+}
