@@ -1,0 +1,54 @@
+{
+ "date": "2026-11-25",
+ "topic": "wisdom",
+ "theme": "wisdom:kimjang_words",
+ "privacy": "public",
+ "accent": "#2E7D6B",
+ "_min_total": 10.0,
+ "hook_title": "김장하는 날 웃음 나는 한마디",
+ "headline": "김장하는 날 웃음 나는 한마디 5가지 | 말년 지혜 #김장 #김장철 #가족모임",
+ "thumbnail_hook": "a big basket of salted napa cabbage and red pepper paste in a sunny Korean courtyard in late autumn, warm mood, no people, no text, no letters, no signage, no logos",
+ "thumbnail_style": "hanji",
+ "scenes": [
+  {
+   "type": "wisdom",
+   "pill": "50·60·70대 공감 · 말년 지혜",
+   "title": "김장하는 날",
+   "title2": "웃음 나는 한마디",
+   "tone": "do",
+   "items": [
+    {
+     "big": "\"같이 하니 금방이다\"",
+     "small": "힘든 일도 함께면 가벼워요"
+    },
+    {
+     "big": "\"올해 김치 맛있겠다\"",
+     "small": "수고에 기대를 얹어요"
+    },
+    {
+     "big": "\"허리 펴고 쉬었다 해요\"",
+     "small": "서로를 챙겨 줘요"
+    },
+    {
+     "big": "\"수육 삶아 놨다\"",
+     "small": "맛있는 쉼표 하나"
+    },
+    {
+     "big": "\"조금씩 싸 가거라\"",
+     "small": "나눔으로 마무리해요"
+    }
+   ],
+   "foot": "※ 어르신들 이야기를 모아 정리했어요 · 집집마다 사정은 다를 수 있어요",
+   "brand": "왕별이 · 말년 지혜",
+   "narration": "김장하는 날 웃음 나는 한마디, 다섯 가지예요. 몇 번이 제일 와닿으세요? 댓글로 번호를 남겨 주세요."
+  }
+ ],
+ "platforms": {
+  "youtube": {
+   "title": "김장하는 날 웃음 나는 한마디 5가지 | 말년 지혜 #김장 #김장철 #가족모임 #shorts",
+   "description": "김장하는 날 웃음 나는 한마디, 다섯 가지를 한 장에 모았어요. 몇 번이 제일 와닿으세요? 댓글로 번호를 남겨 주세요 🙏\n\n1. 같이 하니 금방이다 — 김장은 고된 일이지만 같이 한다는 말에 힘이 나요.\n2. 올해 김치 맛있겠다 — 맛있겠다는 말 한마디가 하루의 수고를 즐거움으로 바꿔요.\n3. 허리 펴고 쉬었다 해요 — 오래 앉아 하는 일이니 쉬어 가자는 말이 서로를 챙기는 말이에요.\n4. 수육 삶아 놨다 — 김장 날 수육 한 접시가 모두를 웃게 하는 쉼표가 돼요.\n5. 조금씩 싸 가거라 — 한 통씩 나눠 주며 끝내면 김장이 집안 잔치가 돼요.\n\n※ 왕별이가 어르신들 이야기를 모아 정리한 생활 지혜예요. 집집마다 사정은 다를 수 있어요.\n\n#김장 #김장철 #가족모임 #말년지혜 #인생지혜 #시니어공감 #50대 #60대 #70대 #shorts"
+  }
+ },
+ "notes": "말년 지혜 표 · wisdom:kimjang_words · wisdom_card.py 가 만든 스토리보드(11/17~11/30 2주 시험 · 17:40)",
+ "publish_at": "2026-11-25T17:40+09:00"
+}
