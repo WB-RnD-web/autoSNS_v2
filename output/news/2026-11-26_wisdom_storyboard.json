@@ -1,0 +1,54 @@
+{
+ "date": "2026-11-26",
+ "topic": "wisdom",
+ "theme": "wisdom:alone_time",
+ "privacy": "public",
+ "accent": "#2E7D6B",
+ "_min_total": 10.0,
+ "hook_title": "혼자 있는 시간이 즐거운 사람의 습관",
+ "headline": "혼자 있는 시간이 즐거운 사람의 습관 5가지 | 말년 지혜 #혼자의시간 #노후생활 #소소한행복",
+ "thumbnail_hook": "a sunny window seat in a Korean apartment with a potted plant, an open notebook and a cup of tea, peaceful mood, no people, no text, no letters, no signage, no logos",
+ "thumbnail_style": "hanji",
+ "scenes": [
+  {
+   "type": "wisdom",
+   "pill": "50·60·70대 공감 · 말년 지혜",
+   "title": "혼자 있는 시간이",
+   "title2": "즐거운 사람의 습관",
+   "tone": "do",
+   "items": [
+    {
+     "big": "아침 햇볕 쬐며 걸어요",
+     "small": "하루가 가볍게 열려요"
+    },
+    {
+     "big": "하루 한 사람 안부",
+     "small": "전화 한 통이 마음을 데워요"
+    },
+    {
+     "big": "좋아하는 노래 틀어요",
+     "small": "집 안에 생기가 돌아요"
+    },
+    {
+     "big": "화분 하나 가꿔요",
+     "small": "돌볼 것이 있으면 즐거워요"
+    },
+    {
+     "big": "일기 한 줄 써요",
+     "small": "하루가 차곡차곡 남아요"
+    }
+   ],
+   "foot": "※ 어르신들 이야기를 모아 정리했어요 · 집집마다 사정은 다를 수 있어요",
+   "brand": "왕별이 · 말년 지혜",
+   "narration": "혼자 있는 시간이 즐거운 사람의 습관, 다섯 가지예요. 몇 번이 제일 와닿으세요? 댓글로 번호를 남겨 주세요."
+  }
+ ],
+ "platforms": {
+  "youtube": {
+   "title": "혼자 있는 시간이 즐거운 사람의 습관 5가지 | 말년 지혜 #혼자의시간 #노후생활 #소소한행복 #shorts",
+   "description": "혼자 있는 시간이 즐거운 사람의 습관, 다섯 가지를 한 장에 모았어요. 몇 번이 제일 와닿으세요? 댓글로 번호를 남겨 주세요 🙏\n\n1. 아침 햇볕 쬐며 걸어요 — 아침에 햇볕을 쬐며 동네를 한 바퀴 돌면 하루가 가볍게 시작돼요.\n2. 하루 한 사람 안부 — 하루 한 사람에게 안부를 전하면 혼자여도 외롭지 않아요.\n3. 좋아하는 노래 틀어요 — 좋아하는 노래 한 곡이 조용한 집에 생기를 불어넣어요.\n4. 화분 하나 가꿔요 — 물을 주고 새잎을 기다리는 재미가 하루에 작은 기쁨이 돼요.\n5. 일기 한 줄 써요 — 한 줄만 적어도 지나고 보면 소중한 하루하루가 남아요.\n\n※ 왕별이가 어르신들 이야기를 모아 정리한 생활 지혜예요. 집집마다 사정은 다를 수 있어요.\n\n#혼자의시간 #노후생활 #소소한행복 #말년지혜 #인생지혜 #시니어공감 #50대 #60대 #70대 #shorts"
+  }
+ },
+ "notes": "말년 지혜 표 · wisdom:alone_time · wisdom_card.py 가 만든 스토리보드(11/17~11/30 2주 시험 · 17:40)",
+ "publish_at": "2026-11-26T17:40+09:00"
+}
