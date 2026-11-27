@@ -1,0 +1,54 @@
+{
+ "date": "2026-11-27",
+ "topic": "wisdom",
+ "theme": "wisdom:hurt_feelings",
+ "privacy": "public",
+ "accent": "#2E7D6B",
+ "_min_total": 10.0,
+ "hook_title": "서운할 때 마음 편해지는 생각",
+ "headline": "서운할 때 마음 편해지는 생각 5가지 | 말년 지혜 #마음공부 #서운함 #마음다스리기",
+ "thumbnail_hook": "a calm pond with fallen autumn leaves and a small wooden bench nearby, soft overcast light, peaceful mood, no people, no text, no letters, no signage, no logos",
+ "thumbnail_style": "hanji",
+ "scenes": [
+  {
+   "type": "wisdom",
+   "pill": "50·60·70대 공감 · 말년 지혜",
+   "title": "서운할 때",
+   "title2": "마음 편해지는 생각",
+   "tone": "do",
+   "items": [
+    {
+     "big": "\"사정이 있었겠지\"",
+     "small": "먼저 한 번 이해해 봐요"
+    },
+    {
+     "big": "\"하루 자고 생각하자\"",
+     "small": "밤 지나면 작아져요"
+    },
+    {
+     "big": "\"부드럽게 말해 보자\"",
+     "small": "말 안 하면 몰라요"
+    },
+    {
+     "big": "\"내 마음은 내가 챙기자\"",
+     "small": "좋아하는 일로 기분 전환"
+    },
+    {
+     "big": "\"좋았던 날도 많았지\"",
+     "small": "고마운 기억을 꺼내요"
+    }
+   ],
+   "foot": "※ 어르신들 이야기를 모아 정리했어요 · 집집마다 사정은 다를 수 있어요",
+   "brand": "왕별이 · 말년 지혜",
+   "narration": "서운할 때 마음 편해지는 생각, 다섯 가지예요. 몇 번이 제일 와닿으세요? 댓글로 번호를 남겨 주세요."
+  }
+ ],
+ "platforms": {
+  "youtube": {
+   "title": "서운할 때 마음 편해지는 생각 5가지 | 말년 지혜 #마음공부 #서운함 #마음다스리기 #shorts",
+   "description": "서운할 때 마음 편해지는 생각, 다섯 가지를 한 장에 모았어요. 몇 번이 제일 와닿으세요? 댓글로 번호를 남겨 주세요 🙏\n\n1. 사정이 있었겠지 — 서운한 일 뒤에는 내가 모르는 사정이 있을 때가 많아요.\n2. 하루 자고 생각하자 — 바로 말하기보다 하룻밤 지나 생각하면 서운함이 한결 작아져요.\n3. 부드럽게 말해 보자 — 꾹 참기보다 부드럽게 말하면 상대도 미처 몰랐다고 해요.\n4. 내 마음은 내가 챙기자 — 서운할 때 좋아하는 일을 하면 마음이 먼저 풀려요.\n5. 좋았던 날도 많았지 — 서운한 한 번보다 고마웠던 여러 날을 떠올리면 마음이 넓어져요.\n\n※ 왕별이가 어르신들 이야기를 모아 정리한 생활 지혜예요. 집집마다 사정은 다를 수 있어요.\n\n#마음공부 #서운함 #마음다스리기 #말년지혜 #인생지혜 #시니어공감 #50대 #60대 #70대 #shorts"
+  }
+ },
+ "notes": "말년 지혜 표 · wisdom:hurt_feelings · wisdom_card.py 가 만든 스토리보드(11/17~11/30 2주 시험 · 17:40)",
+ "publish_at": "2026-11-27T17:40+09:00"
+}
