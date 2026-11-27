@@ -1,0 +1,62 @@
+{
+ "date": "2026-11-19",
+ "concepts": [
+  {
+   "slug": "holiday-card-photo-take-47-golden-british-shorthair",
+   "track": "kool-kats.mp3",
+   "caption": "Holiday card photo: take 1 vs take 47",
+   "title": "Holiday Card Photo, Take 1 vs. Take 47 📸🐱",
+   "en_line": "Take 1 was perfect, and by take 47 the model had officially retired.",
+   "ko_line": "연말 카드 사진 찍기… 47번째 컷 상태 📸",
+   "tags": [
+    "cat",
+    "ai cat",
+    "cat meme",
+    "holiday card",
+    "christmas cat",
+    "funny cat",
+    "british shorthair",
+    "cute cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#연말",
+    "#크리스마스",
+    "#cat",
+    "#catmemes",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical composition, eye-level full-body shot of a chubby golden shaded British Shorthair cat with a round face, plush dense apricot-gold coat with darker golden tipping along the back, a cream-white chin and chest, small rounded ears and big round emerald-green eyes, wearing a small red velvet bow at its neck. The cat sits upright and perfectly posed, chest puffed and tail curled neatly around its front paws, on a cream cable-knit blanket draped over a low wooden bench. Behind it is a softly blurred decorated Christmas tree with warm golden fairy-light bokeh and red and gold ornaments. Cosy warm evening light, the whole cat clearly visible in the center of the frame.",
+     "motion": "From the very first frame the golden British Shorthair cat holds its proud portrait pose and gives a slow, elegant head tilt toward the camera, then a slow confident blink, its chest puffed and its tail tip curling neatly around its paws, mouth closed. The fairy lights on the tree behind it twinkle softly. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same chubby golden shaded British Shorthair cat with the same fur pattern, face and eye color. Show the punchline moment on the same cream knitted blanket in front of the same glowing Christmas tree: the cat now lies flat on its back, sprawled out and totally done posing, all four paws loosely up in the air, the red velvet bow slid sideways and resting over one ear, a loose strand of shiny gold tinsel draped across its fluffy cream belly, its fur a little ruffled, eyes half-closed with a flat unimpressed look, mouth closed. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the golden British Shorthair cat lies on its back and wiggles lazily from side to side on the blanket, batting gently at the gold tinsel on its belly with both front paws, while the red bow wobbles over its ear and it gives one slow, unimpressed blink, mouth closed. The fairy lights behind it keep twinkling. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 1,
+   "trend": {
+    "why_now": "Mid-November is when festive cat memes start (Cheezburger's Nov 16 roundup is all about getting into the holiday spirit early), and Thanksgiving-week meme roundups are full of holiday chaos and post-dinner couch naps. 'Posing for the holiday card' is a beat everyone with a pet knows from this season.",
+    "pattern": "Expectation vs. reality, 'take 1 vs take 47': a perfect, elegant pose in shot 1, then the same cat sprawled on its back with its bow slipping off in shot 2. The caption sets up the joke and the edit lands the punchline.",
+    "evidence": [
+     {
+      "title": "26 Fabulous Festive Cat Memes to Welcome the Holiday Season Early (November 16, 2026) - I Can Has Cheezburger?",
+      "url": "https://cheezburger.com/47350021/26-fabulous-festive-cat-memes-to-welcome-the-holiday-season-early-november-16-2026"
+     },
+     {
+      "title": "30 Thanksgiving Memes That Sum Up The Holiday",
+      "url": "https://garlicsoda.com/30-thanksgiving-memes-that-sum-up-the-holiday/"
+     }
+    ]
+   },
+   "id": "m261119h",
+   "format": "meme",
+   "engine": "14b",
+   "seed": 14847,
+   "tease": false
+  }
+ ]
+}

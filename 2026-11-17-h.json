@@ -1,0 +1,53 @@
+{
+ "date": "2026-11-17",
+ "concepts": [
+  {
+   "slug": "pinball-button-masher-burmilla",
+   "track": "run-amok.mp3",
+   "caption": "Pinball pro or button masher?",
+   "title": "Mashed Every Button. The Ball Went Right Down the Middle 🕹️🐱",
+   "en_line": "He hit every button he had, and the ball still rolled straight down the middle.",
+   "ko_line": "버튼 다 눌렀는데 공은 정중앙으로 쏙… 🕹️",
+   "tags": [
+    "cat",
+    "ai cat",
+    "pinball cat",
+    "arcade cat",
+    "funny cat",
+    "burmilla",
+    "cute cat",
+    "retro arcade"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#핀볼",
+    "#냥스타그램",
+    "#cat",
+    "#pinball",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical full-body shot of a Burmilla cat with a medium-short shimmering silver-white coat with soft dark silver tipping along the back, a black-rimmed pink nose, large bright green eyes outlined in black, sitting on a round red cushioned stool in front of a retro pinball machine in a cozy dim game room at night. Its two front paws rest on the shiny chrome front edge of the machine. Three-quarter side angle so the cat's face, whole body and the glowing glass playfield are clearly visible. The playfield is decorated only with plain colorful stars, swirls, round bumpers and two flippers, with a shiny silver ball under the glass. Glowing pink, blue and yellow lights, a warm cosy mood, the cat fully in frame, vertical composition",
+     "motion": "From the very first frame, the silver Burmilla cat taps its two front paws quickly one after the other on the chrome edge of the pinball machine. Its head bobs and its eyes follow the shiny silver ball zipping around under the glass, and its ears twitch with focus. Colorful pink, blue and yellow lights on the machine flash and blink. The cat stays seated on the stool, fully in frame, with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same silver Burmilla cat with the same fur pattern, face and eye color. Now the cat lies flat on its belly, stretched across the glass top of the same retro pinball machine. Its nose is close to the glass and its wide green eyes stare down at the empty gap between the two flippers, where the ball just disappeared. Its front paws are spread out on the glass. The machine lights are dimmed to a soft calm blue glow, and the cosy dim game room is behind it. The cat is fully in frame. Photorealistic, vertical composition.",
+     "motion": "From the very first frame, the silver Burmilla cat, lying on the glass, taps the glass twice with one front paw right above the gap between the flippers. Then it tilts its head and slowly lifts its gaze to the camera with a flat, unimpressed stare as its ears flatten a little. The soft blue machine lights blink slowly. The cat stays lying on the machine, fully in frame, with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 1,
+   "trend": {
+    "why_now": "My searches didn't find a current cat or arcade trend we could use. The only recent viral cat story was a sad news event, so I left it out. Instead this uses an evergreen 'cat plays an arcade game' idea. It fits cosy indoor winter nights, and pinball is a game we haven't used before.",
+    "pattern": "Opens mid-action with the cat frantically tapping as colorful lights flash. Then it cuts to the fail: the cat is sprawled on the glass, staring at where the ball went, and turns a deadpan look to the camera. The question in the caption is there to get viewers commenting.",
+    "evidence": []
+   },
+   "id": "m261117h",
+   "format": "game",
+   "engine": "14b",
+   "seed": 17651,
+   "tease": true
+  }
+ ]
+}

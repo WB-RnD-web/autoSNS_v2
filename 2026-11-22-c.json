@@ -1,0 +1,72 @@
+{
+ "date": "2026-11-22",
+ "concepts": [
+  {
+   "slug": "shell-game-night-market-savannah",
+   "track": "sneaky-snitch.mp3",
+   "caption": "Which cup has the treat?",
+   "title": "Night Market Shell Game: His Eyes Never Left the Treat 👀🐱",
+   "en_line": "Three cups, one treat, and a cat who refused to blink.",
+   "ko_line": "간식 든 컵 맞히기, 냥이는 한 번에 성공 👀",
+   "tags": [
+    "cat",
+    "ai cat",
+    "savannah cat",
+    "shell game",
+    "carnival game",
+    "night market",
+    "funny cat",
+    "cute cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#사바나캣",
+    "#야시장",
+    "#cat",
+    "#aicat",
+    "#funnycat"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical composition, eye-level full-body shot of a slender young Savannah cat with a short golden coat covered in bold solid black spots, very large tall ears, a black-ringed tail and bright amber eyes, sitting upright behind a wooden carnival game counter at a cozy evening night market booth. On the counter in front of the cat stand three identical upside-down plain red paper cups in a neat row. A red and white striped fabric awning above, warm glowing string lights and soft golden bokeh in the background. The cat is fully in frame and clearly visible.",
+     "motion": "From the very first frame the Savannah cat's head moves quickly left and right, its amber eyes darting between the three red cups and its big ears swiveling, then it leans forward and taps the top of the middle cup with one front paw and keeps the paw resting there, looking straight ahead. The cups stay in place. String lights twinkle softly in the background. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "slap"
+     ],
+     "beat": "the cat taps the top of the middle red cup with one front paw"
+    },
+    {
+     "edit": "Keep exactly the same slender young Savannah cat with the same fur pattern, face and eye color. Same carnival booth counter, striped awning and string lights: the middle red cup now lies tipped over on its side, revealing a small golden fish-shaped cat treat on the wooden counter, while the two other red cups stay upside down. The cat crouches proudly right behind the treat with both front paws resting on the counter on either side of it, ears up, eyes bright. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the Savannah cat wiggles its hips and does a small pounce in place, landing softly with both front paws on the counter on either side of the fish treat, then sits up tall with its chest out and slowly blinks with pride, tail swishing. The cups and the treat stay in place. String lights twinkle in the background. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "thud",
+      "bell"
+     ],
+     "beat": "the cat's front paws land on the counter on either side of the fish treat",
+     "hit": true,
+     "caption": "Called it. Middle cup."
+    }
+   ],
+   "cover_shot": 1,
+   "trend": {
+    "why_now": "AI pet clips built around a paw reaching toward the viewer (the 'Reaching Out Cat' template) are taking off this week, and animal content stays the most reliable Shorts category. A guess-along question as the hook gets people to replay and comment, which is what made our best Short ('Pinball pro or button masher?') work.",
+    "pattern": "guess-along hook question with an instant paw-reach action in the first second, then a win reveal with a proud pounce landing",
+    "evidence": [
+     {
+      "title": "Reaching Out Cat Trend: Make It With Your Pet (AI)",
+      "url": "https://www.makeviral.ai/templates/reaching-out-cat-ai"
+     },
+     {
+      "title": "YouTube Shorts Trends November 2026: What's Actually Going Viral Right Now",
+      "url": "https://www.anijam.ai/blog/youtube-shorts-trends/"
+     }
+    ]
+   },
+   "id": "m261122c",
+   "format": "game",
+   "engine": "14b",
+   "seed": 19457,
+   "tease": false
+  }
+ ]
+}

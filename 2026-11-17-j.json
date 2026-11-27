@@ -1,0 +1,62 @@
+{
+ "date": "2026-11-17",
+ "concepts": [
+  {
+   "slug": "bath-time-fluff-cloud-nebelung",
+   "track": "investigations.mp3",
+   "caption": "Me when someone says bath time",
+   "title": "Heard 'Bath Time'. Came Out Twice the Fluff 🛁🐱",
+   "en_line": "He gave the bubbles a long, suspicious look and came out of the bath as a soft grey cloud.",
+   "ko_line": "목욕하자는 말에 표정 굳더니 솜뭉치 돼서 나옴 🛁",
+   "tags": [
+    "cat",
+    "ai cat",
+    "cat meme",
+    "bath time",
+    "fluffy cat",
+    "nebelung",
+    "funny cat",
+    "cat bath"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#목욕",
+    "#냥스타그램",
+    "#cat",
+    "#catmemes",
+    "#aicat"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical full-body shot of an elegant Nebelung cat with a long silky shimmering silver-blue coat with silver-tipped fur, a fluffy plumed tail, a soft ruff around the neck, a wedge-shaped face, large pointed ears and bright almond-shaped green eyes. The cat sits upright on a thick fluffy white bath mat in a bright clean white-tiled bathroom, its whole body clearly visible, next to a small round white tub filled with foamy white bubbles. A few soap bubbles float in the air, soft warm morning light, plain white towels folded on a wooden stool, simple uncluttered setting, vertical composition",
+     "motion": "Right from the first frame the silver-blue Nebelung cat gives the bubble tub a slow suspicious side-eye: its head tilts away, its ears swivel back a little, its green eyes narrow, and its fluffy tail flicks once on the bath mat. It lifts one front paw and sets it down a tiny step back, then holds a doubtful stare at the bubbles with its mouth closed. Small soap bubbles drift slowly through the air. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same Nebelung cat with the same fur pattern, face and eye color. Show the next moment after the bath: the same cat sits on the same fluffy white bath mat in the same white-tiled bathroom, freshly blow-dried, so its long silver-blue coat is puffed out to twice its size like a soft round cloud, with an extra-fluffy ruff and a big puffy tail. A small cream-colored towel lies across its back, all four paws are visible on the mat, and it looks unimpressed with half-closed green eyes. A few soap bubbles float in the warm light. Photorealistic, vertical composition.",
+     "motion": "Right from the first frame the puffed-up silver-blue Nebelung cat gives a small head shake that makes its cloud of fluffy fur wobble softly, then blinks slowly with an unimpressed look, mouth closed, while its big puffy tail sways once across the bath mat. Small soap bubbles float slowly past in the warm light. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "A 'my pet when it's grooming time' AI pet meme is spreading this week (a cat version alone passed 500K plays around Nov 9), and festive cat-meme roundups this week are full of relatable pet reactions. We keep the relatable beat (a pet's reaction to grooming time) but drop the fighting and the people: just a cosy, suspicious stare that turns into a fluffy punchline.",
+    "pattern": "'Me when someone says…' meme: dramatic side-eye reaction first, then a cut to the punchline after it happens (after the bath he's twice the fluff)",
+    "evidence": [
+     {
+      "title": "AI Dog Video Trend 2026: My Dog When It's Grooming Time",
+      "url": "https://www.atlascloud.ai/blog/tips/ai-dog-video"
+     },
+     {
+      "title": "26 Fabulous Festive Cat Memes to Welcome the Holiday Season Early (November 16, 2026) - I Can Has Cheezburger?",
+      "url": "https://cheezburger.com/47350021/26-fabulous-festive-cat-memes-to-welcome-the-holiday-season-early-november-16-2026"
+     }
+    ]
+   },
+   "id": "m261117j",
+   "format": "meme",
+   "engine": "14b",
+   "seed": 20012,
+   "tease": false
+  }
+ ]
+}

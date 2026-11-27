@@ -1,0 +1,62 @@
+{
+ "date": "2026-11-19",
+ "concepts": [
+  {
+   "slug": "dance-practice-only-one-showed-up-kurilian-bobtail",
+   "track": "hep-cats.mp3",
+   "caption": "Dance practice: only she showed up",
+   "title": "Group Dance Practice. She Was the Only One Who Showed Up 💃🐱",
+   "en_line": "Everyone else skipped rehearsal, so she did the whole routine by herself.",
+   "ko_line": "단체 안무 연습… 나만 왔냥 💃",
+   "tags": [
+    "cat",
+    "ai cat",
+    "dancing cat",
+    "cat dance",
+    "dance practice",
+    "funny cat",
+    "cute cat",
+    "kurilian bobtail"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#춤추는고양이",
+    "#냥스타그램",
+    "#cat",
+    "#dancingcat",
+    "#aicat"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical full-body shot at eye level of a Kurilian Bobtail cat with a semi-long fluffy coat in brown mackerel tabby, a white chest, white muzzle and four white paws, a short fluffy pom-pom bobtail and bright green eyes. The cat stands upright on its hind legs in the middle of an empty dance rehearsal studio with its front paws raised at chest height. The studio has a light honey-colored wooden floor, a wooden ballet barre along a plain warm-beige wall, a row of empty folding chairs at the back and a large window with soft blue evening light and gently falling snow. Warm overhead studio lights. The whole cat is clearly visible with space around it, vertical composition",
+     "motion": "From the very first frame, the brown tabby Kurilian Bobtail cat bounces to the beat on its hind legs. It swings both front paws left and right in rhythm, bobs its head and makes small light hops in place on the wooden floor. Snow drifts down outside the window. The cat stays fully in frame with four normal legs and its mouth closed. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same brown mackerel tabby-and-white Kurilian Bobtail cat with the pom-pom bobtail with the same fur pattern, face and eye color. Keep the same empty dance studio with the same wooden floor, ballet barre, empty folding chairs and snowy evening window. The cat now strikes its big final pose: standing upright on its hind legs with both front paws raised high above its head in a proud V, chin lifted, chest out, eyes half-closed with confident joy and fluffy cheek fur slightly tousled. Photorealistic, vertical composition.",
+     "motion": "From the very first frame, the cat holds its paws-up V pose on its hind legs and gives a quick little head toss to the beat that makes its fluffy cheek fur bounce. Then it gently sways its raised paws side to side and blinks proudly. Snow keeps falling outside the window and the studio lights glow softly. The cat stays fully in frame with four normal legs and its mouth closed. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 1,
+   "trend": {
+    "why_now": "TikTok trends in mid-November 2026 are led by group dances like the Chipmunks Dance and Dame Hombro, with tutorials and group or family versions. AI dancing-cat memes of kittens dancing upright are also still popular. Ours flips the group-dance idea into a relatable solo version.",
+    "pattern": "relatable setup (everyone skipped group rehearsal) → a cat dancing upright from the first frame → a proud big final pose as the payoff",
+    "evidence": [
+     {
+      "title": "TikTok Trends: November 2026",
+      "url": "https://newengen.com/insights/tiktok-trends/"
+     },
+     {
+      "title": "AI Cat Dance: Make Your Cat Do the Viral Memes From 1 Photo",
+      "url": "https://www.atlascloud.ai/blog/tips/ai-cat-dance"
+     }
+    ]
+   },
+   "id": "m261119l",
+   "format": "dance",
+   "engine": "14b",
+   "seed": 75436,
+   "tease": true
+  }
+ ]
+}

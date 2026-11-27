@@ -1,0 +1,62 @@
+{
+ "date": "2026-11-16",
+ "concepts": [
+  {
+   "slug": "snow-dusted-gingersnap-kitten",
+   "track": "merry-go.mp3",
+   "caption": "Wait… that cookie has ears",
+   "title": "This Snow-Dusted Gingersnap Came Out Fluffy 🍪🐱",
+   "en_line": "The first batch of holiday cookies is out of the oven, and one of them is purring.",
+   "ko_line": "쿠키 굽다가 아기 고양이 나옴 🍪",
+   "tags": [
+    "cat",
+    "ai cat",
+    "kitten",
+    "gingersnap cookies",
+    "holiday baking",
+    "christmas cookies",
+    "cute kitten",
+    "cat transformation"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#아기고양이",
+    "#쿠키",
+    "#cat",
+    "#kitten",
+    "#holidaybaking"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic cozy close-up of a round black wire cooling rack on a warm honey-colored wooden kitchen counter lightly dusted with flour, holding nine round golden-brown gingersnap cookies with deep crackled tops, each one generously dusted with white powdered sugar like fresh snow. The cookie in the front center is slightly plumper and rounder than the others and has two tiny triangular cookie-textured ears on top, golden-brown and dusted with sugar. Behind the counter is a frosty window with big soft snowflakes falling outside, a warm amber kitchen light, a small sprig of fresh pine beside the rack, soft shallow depth of field, vertical composition",
+     "motion": "From the very first frame the two tiny sugar-dusted ears on the front center gingersnap twitch quickly, once and then again, and a faint puff of powdered sugar lifts off them and drifts down. The plump cookie gives one small soft wiggle while all the other cookies stay perfectly still. Big soft snowflakes fall steadily outside the window and the warm kitchen light glows. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same cooling rack, snow-dusted gingersnap cookies, floured wooden counter, pine sprig and snowy window with the same colors, light and layout. Turn only the plump front center cookie into a tiny round kitten curled up in exactly the same spot on the rack, the same size as the cookie: a fluffy golden-brown ginger tabby kitten whose fur has soft crackle-like pale cream stripes like the cookie top, white sugar-frosted fur tips like powdered sugar, a small pink nose, big round amber eyes just opening, and the same two tiny triangular ears. The kitten lifts its head sleepily from its curled-up loaf pose. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the tiny golden-brown ginger tabby kitten slowly blinks its big amber eyes open and gives a gentle little head shake, so a soft puff of powdered sugar drifts off its fur, then it tilts its head curiously toward the camera with its ears perking up. It stays curled in the same spot on the cooling rack among the other cookies, fully in frame with four normal legs tucked under its body. Snowflakes keep falling outside the window. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.6
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Mid-November is when holiday cookie baking starts: November cooking roundups are featuring snow-dusted gingersnaps, and the seasonal holiday cookie menus are back this week. That gives us a cosy, recognisable winter food that's different from today's persimmon morph.",
+    "pattern": "spot-the-odd-one hook (one cookie has ears) → it turns into a kitten whose fur looks like the food in the same spot → sleepy wake-up blink as the cute payoff",
+    "evidence": [
+     {
+      "title": "30 Recipes to Cook in November 2026. - Half Baked Harvest",
+      "url": "https://www.halfbakedharvest.com/30-recipes-to-cook-in-november-2026/"
+     },
+     {
+      "title": "15 Fast Food Holiday Menu Items To Try This Winter 2026 - Daily Meal",
+      "url": "https://www.thedailymeal.com/2315558/fast-food-holiday-menu-items-winter-2026/"
+     }
+    ]
+   },
+   "id": "m261116f",
+   "format": "morph",
+   "engine": "14b",
+   "seed": 77656,
+   "tease": true
+  }
+ ]
+}

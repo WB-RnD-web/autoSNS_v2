@@ -1,0 +1,53 @@
+{
+ "date": "2026-11-18",
+ "concepts": [
+  {
+   "slug": "glazed-donut-ring-kitten-wakes-up",
+   "track": "monkeys-spinning-monkeys.mp3",
+   "caption": "One of these donuts is breathing",
+   "title": "Bought Six Glazed Donuts. One of Them Has a Tail 🍩🐱",
+   "en_line": "Six warm glazed donuts on a frosty morning, and one of them just woke up from its nap.",
+   "ko_line": "도넛 하나가 꼬리를 살랑살랑 🍩",
+   "tags": [
+    "cat",
+    "ai cat",
+    "kitten",
+    "donut",
+    "glazed donut",
+    "cute cat",
+    "food morph",
+    "cozy morning"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#도넛",
+    "#아기고양이",
+    "#cat",
+    "#kitten",
+    "#aicat"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic cozy close-up from a slightly high angle, vertical composition, of a round wooden tray on a warm oak kitchen counter holding six freshly made honey-glazed ring donuts in two neat rows of three. Their shiny golden glaze catches soft morning light. A plain white ceramic mug of hot cocoa with gentle steam sits beside the tray, and behind it is a frosty kitchen window with a softly blurred snowy garden. The middle donut in the front row has two tiny soft triangular kitten ears poking up from its top edge, covered in fluffy warm golden honey-caramel fur with faint cream tabby stripes, plus a tiny matching fluffy tail tip curled along its side. Otherwise it looks just like the other glazed donuts. All six donuts are fully in frame and clearly visible, with soft shallow depth of field.",
+     "motion": "From the very first frame the two tiny golden kitten ears on the middle front donut twitch, then the tiny fluffy tail tip on its side flicks once and curls back. The donut keeps its round ring shape in the same spot, and the hidden kitten stays fully in frame with no body or legs showing yet. Steam rises steadily from the cocoa mug and light glints on the glaze. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same tiny honey-caramel kitten (the middle front-row donut with the two tiny ears and tail tip) with the same fur pattern, face and eye color. Keep the same wooden tray, the other five glazed donuts, the steaming white cocoa mug and the frosty window exactly as they are. That one donut is now a tiny fluffy kitten curled in a perfect round ring in the same spot, its tail wrapped around to its nose so it still has the donut's shape. Its short fluffy fur is warm golden honey-caramel with soft cream tabby rings, the same glossy golden color as the glazed donuts. It has a pale pink nose and big round amber eyes that are just opening sleepily, with its head lifted slightly from the ring and its mouth closed. The kitten is fully in frame and clearly visible. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the tiny honey-caramel kitten lifts its head from its curled donut ring, blinks its sleepy amber eyes twice and twitches its ears. Then it stretches one tiny front paw forward, gently taps the wooden tray and tilts its head toward the camera, mouth closed. It stays curled in the same spot among the other donuts, fully in frame with four normal legs. Steam keeps rising from the cocoa mug and the soft morning light glows on the frosty window. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.6
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Evergreen: warm glazed donuts on a frosty morning fit the cosy mid-November mood, and a cat curled into a ring is the classic 'cat donut' shape, so the change makes sense at a glance.",
+    "pattern": "spot-the-odd-one hook ('one of these is breathing'), then the reveal: the curled kitten wakes up in the donut's place",
+    "evidence": []
+   },
+   "id": "m261118e",
+   "format": "morph",
+   "engine": "14b",
+   "seed": 73477,
+   "tease": true
+  }
+ ]
+}

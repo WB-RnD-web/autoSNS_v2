@@ -1,0 +1,66 @@
+{
+ "date": "2026-11-16",
+ "concepts": [
+  {
+   "slug": "monday-brain-loading-american-curl",
+   "track": "funkorama.mp3",
+   "caption": "Monday brain: loading... loaded",
+   "title": "Monday 9 AM: His Brain Took a While to Load ⏳🐱",
+   "en_line": "Five seconds of buffering, then full Monday mode switched on.",
+   "ko_line": "월요병 로딩 중… 드디어 출근 모드 완료 😼",
+   "tags": [
+    "cat",
+    "ai cat",
+    "monday mood",
+    "monday meme",
+    "sleepy cat",
+    "work from home",
+    "funny cat",
+    "american curl"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#월요병",
+    "#월요일",
+    "#cat",
+    "#mondaymood",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic cream-and-white American Curl cat with distinctive curled-back ears, a semi-long silky coat with a warm cream head and back, a white chest, white muzzle and four white paws, round amber-gold eyes and a pink nose, sitting upright behind a small light oak home desk by a window, eyes heavy and half-closed, very sleepy expression, a big plain white ceramic mug with gentle steam rising beside it, a small stack of blank white paper and a warm desk lamp, grey rainy Monday morning light through the window, cat fully in frame and clearly visible, vertical composition",
+     "motion": "From the very first frame the sleepy cream-and-white American Curl cat's head is already nodding forward, its half-closed eyes drooping; it slowly dips its chin, then jerks its head back up with a quick double blink, then begins to droop again, mouth closed. Steam keeps curling up from the mug and soft rain streaks down the window. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same cream-and-white American Curl cat with the same fur pattern, face and eye color. Show the next moment at the same desk: the cat is now wide awake and alert, sitting tall and upright, curled-back ears perked forward, round amber-gold eyes wide open and bright, fur slightly fluffed with energy, one white front paw resting on top of the stack of blank white paper, the same steaming white mug and desk lamp beside it, the grey rainy window behind. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the wide-awake cream-and-white American Curl cat taps its white front paw quickly on the stack of blank paper in a steady rhythm, its head turning briskly to look left and then right with bright wide eyes and perked ears, mouth closed, sitting tall like it is ready for work. Steam rises from the mug and rain drifts down the window. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 1,
+   "trend": {
+    "why_now": "It's Monday, and two kinds of posts are popular right now: 'me at work' AI cat reels (a chubby wizard cat at an office desk, from October 2026, is being remade as a template) and the 'Grr Mondays' meme style. This Short puts that mood on a cosy, rainy work-from-home desk.",
+    "pattern": "relatable work meme in two beats: sleepy cat nodding off at the desk (hook in the first second), then the punchline: fully 'loaded', wide-eyed and tapping away; caption written as a 'loading... loaded' line",
+    "evidence": [
+     {
+      "title": "Wizard Cat Meme: Me at Work Keyboard Smash AI Video",
+      "url": "https://www.makeviral.ai/templates/wizard-cat-keyboard-smash-ai-trend"
+     },
+     {
+      "title": "Top Trending Memes on Social Media (November 2026)",
+      "url": "https://napoleoncat.com/blog/trending-memes/"
+     },
+     {
+      "title": "24 Funniest Feline Memes to Get You Warmed Up for the Week (November 9, 2026)",
+      "url": "https://cheezburger.com/47340293/24-funniest-feline-memes-to-get-you-warmed-up-for-the-week-november-9-2026"
+     }
+    ]
+   },
+   "id": "m261116k",
+   "format": "meme",
+   "engine": "14b",
+   "seed": 57987,
+   "tease": true
+  }
+ ]
+}

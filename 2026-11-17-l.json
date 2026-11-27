@@ -1,0 +1,54 @@
+{
+ "date": "2026-11-17",
+ "concepts": [
+  {
+   "slug": "bottle-toss-plan-b-singapura",
+   "track": "monkeys-spinning-monkeys.mp3",
+   "caption": "0 for 3 at bottle toss. Plan B:",
+   "title": "Missed All Three Throws. Plan B Worked Perfectly 🎪🐱",
+   "en_line": "Throwing was never his style, but walking right up to the bottles was.",
+   "ko_line": "공 던지기 3번 다 실패… 그래서 직접 가서 넘어뜨림 😼",
+   "tags": [
+    "cat",
+    "ai cat",
+    "funny cat",
+    "carnival game",
+    "bottle toss",
+    "singapura cat",
+    "winter fair",
+    "cat knocks things over"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#냥스타그램",
+    "#고양이게임",
+    "#cat",
+    "#aicat",
+    "#funnycat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical full-body shot of a small, slender Singapura cat with a short silky warm ivory coat finely ticked with sepia-brown, very large cupped ears, a rounded face with dark eyeliner-like rims and huge bright green-gold eyes, sitting upright on the wooden counter of a cosy red-and-white striped winter fair game booth. Right beside the cat stands a neat pyramid of six plain white vintage milk bottles, and a small worn cream softball rests under one of its front paws. Warm golden string lights glow along the booth roof, soft snowflakes drift in the blurred evening fair behind, the cat fully in frame and clearly visible, vertical composition",
+     "motion": "From the very first frame the Singapura cat narrows its big green-gold eyes at the bottle pyramid and pats the small softball under its paw again and again, its tail flicking quickly from side to side and its large ears swivelling forward in total focus, then it leans its head toward the bottles. Warm string lights twinkle and soft snowflakes drift down behind the booth. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same small slender Singapura cat with the same fur pattern, face and eye color. Change the moment: all six white milk bottles now lie tipped over on their sides across the wooden booth counter, and the cat sits upright right in the middle of them with its chest puffed out, one front paw resting on a fallen bottle, its eyes half-closed in a proud, satisfied look. Same red-and-white striped winter fair booth, warm golden string lights, soft snowflakes in the blurred evening background, the cat fully in frame. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the Singapura cat gives the fallen bottle under its paw a gentle push so it rolls a little across the counter, then lifts its chin proudly, looks straight at the camera and slowly blinks, its ears perking up and its tail curling happily. Warm string lights twinkle and soft snowflakes keep drifting behind the booth. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 1,
+   "trend": {
+    "why_now": "Winter fairs and holiday markets open in mid-November, so carnival game booths fit the season. The idea also uses an evergreen cat habit: knocking things over on purpose.",
+    "pattern": "fail-to-win twist: an intense, locked-in stare at the game, then a cheeky shortcut with a proud slow blink to camera; the title follows 'Failed X. Plan B worked'",
+    "evidence": []
+   },
+   "id": "m261117l",
+   "format": "game",
+   "engine": "14b",
+   "seed": 81621,
+   "tease": true
+  }
+ ]
+}

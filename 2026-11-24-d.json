@@ -1,0 +1,74 @@
+{
+ "date": "2026-11-24",
+ "concepts": [
+  {
+   "slug": "thanksgiving-game-night-lucky-six-korat",
+   "track": "monkeys-spinning-monkeys.mp3",
+   "caption": "Needs a 6 to win game night",
+   "title": "Needed a Six to Win Thanksgiving Game Night. He Rolled It 🎲🐱",
+   "en_line": "One roll left, one paw, zero doubt.",
+   "ko_line": "6 나와야 이기는 마지막 한 판, 고양이가 굴렸다 🎲",
+   "tags": [
+    "cat",
+    "ai cat",
+    "board game",
+    "game night",
+    "thanksgiving",
+    "dice",
+    "korat cat",
+    "funny cat",
+    "cute cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#보드게임",
+    "#추수감사절",
+    "#cat",
+    "#boardgame",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical composition, eye-level full-body shot of a sleek adult Korat cat with a short silver-tipped blue-grey coat, a heart-shaped face and big bright green eyes, crouched on a warm wooden dining table at a cozy Thanksgiving game night. The cat is fully in frame and clearly visible, one front paw raised just behind a big chunky wooden die with black dots that sits on a colorful board game with a winding path of plain red, yellow, green and blue squares and a few small wooden pawns. Small orange pumpkins and autumn leaves at the edge of the table, soft warm lamp light, gentle golden string-light bokeh in the background.",
+     "motion": "From the very first frame the silver-blue Korat cat swats the big wooden die with its raised front paw; the die tumbles a short way across the colorful board and the cat's head and ears follow it closely with wide green eyes, its tail tip flicking. The warm string lights twinkle softly in the background. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "slap"
+     ],
+     "beat": "the cat's paw hits the wooden die and it starts tumbling"
+    },
+    {
+     "edit": "Keep exactly the same sleek adult Korat cat with the same fur pattern, face and eye color. The wooden die has stopped on the colorful board showing six black dots on its top face, and the cat now sits tall and proud right behind it with its chest puffed out, ears up and green eyes wide, one front paw resting on top of the die, the wooden pawns and small pumpkins still around it on the same wooden table in the same warm lamp light and string-light bokeh. Photorealistic, vertical composition.",
+     "motion": "Right from the first frame the proud Korat cat lifts its front paw and pats it down firmly on top of the die showing six, then raises its chin and blinks slowly with satisfaction, tail swishing behind it. The string lights twinkle softly in the background. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5,
+     "sfx": [
+      "slap",
+      "bell"
+     ],
+     "beat": "the cat's paw lands on top of the die showing six",
+     "hit": true,
+     "caption": "Six. Never doubted it."
+    }
+   ],
+   "cover_shot": 1,
+   "trend": {
+    "why_now": "Thanksgiving is on Thursday (Nov 26), and family game-night traditions are popping up in holiday game videos on TikTok right now. Animal clips also stay one of the steadiest evergreen Shorts formats.",
+    "pattern": "high-stakes game moment: one roll left with a clear goal in the hook, an action swat from the first frame, then a proud win payoff",
+    "evidence": [
+     {
+      "title": "Thanksgiving Games | TikTok",
+      "url": "https://www.tiktok.com/discover/thanksgiving-games"
+     },
+     {
+      "title": "YouTube Shorts Trends November 2026: What's Actually Going Viral Right Now",
+      "url": "https://www.anijam.ai/blog/youtube-shorts-trends/"
+     }
+    ]
+   },
+   "id": "m261124d",
+   "format": "game",
+   "engine": "14b",
+   "seed": 52504,
+   "tease": false
+  }
+ ]
+}

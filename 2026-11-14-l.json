@@ -1,0 +1,67 @@
+{
+ "date": "2026-11-14",
+ "concepts": [
+  {
+   "slug": "toasted-marshmallow-kitten",
+   "track": "monkeys-spinning-monkeys.mp3",
+   "caption": "Wait… that marshmallow has ears",
+   "title": "My Hot Cocoa Came With a Purring Marshmallow ☕🐱",
+   "en_line": "The fluffiest marshmallow on the plate decided it was nap time, then time to wake up.",
+   "ko_line": "핫초코 옆 마시멜로가 기지개를 켰다 ☕",
+   "tags": [
+    "cat",
+    "ai cat",
+    "kitten",
+    "marshmallow kitten",
+    "hot cocoa",
+    "toasted marshmallow",
+    "cozy winter",
+    "cute cat",
+    "food turns into cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#마시멜로",
+    "#핫초코",
+    "#cat",
+    "#kitten",
+    "#aicat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic cozy close-up on a warm honey-colored wooden table beside a frosty window at dusk: a plain round cream ceramic plate holding seven big soft square marshmallows with golden-caramel toasted edges, and behind it a plain dark-blue mug of steaming hot cocoa with a swirl of cream on top. One fluffy toasted marshmallow at the front center of the plate has two tiny triangular cream-white kitten ears with soft golden-caramel tips poking out of its top, matching the toasted marshmallow color perfectly. Soft warm string-light bokeh in the window glass, gentle steam rising from the mug, soft golden indoor light, shallow depth of field, the whole plate fully in frame, vertical composition",
+     "motion": "Soft steam curls up from the hot cocoa mug and the warm string lights twinkle gently in the frosty window. On the front marshmallow, the two tiny cream-and-caramel kitten ears twitch once, then turn slightly toward the camera and settle again, while the marshmallow keeps its soft square shape. The hidden kitten stays fully in frame with four normal legs tucked out of sight, and nothing new appears. Photorealistic, warm cozy light, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same tiny cream-white marshmallow kitten with golden-caramel toasted tips with the same fur pattern, face and eye color, and keep the same plate, other marshmallows, hot cocoa mug, wooden table and frosty window exactly as they are. Turn only the front-center toasted marshmallow with the tiny ears into a tiny fluffy kitten in the same spot and the same size, curled up on the plate: its fur is soft cream-white like marshmallow with golden-caramel toasted shading on its ears, paws, cheeks and tail tip, it has a small pale pink nose and big round light-blue eyes that are half open and sleepy, its mouth gently closed. Photorealistic, vertical composition.",
+     "motion": "The tiny cream-and-caramel marshmallow kitten, curled on the plate, slowly lifts its head, blinks its sleepy light-blue eyes twice, stretches both front paws forward in a small gentle stretch, twitches its ears and tilts its head to look at the camera with its mouth closed. Steam keeps rising from the hot cocoa and the string lights twinkle softly behind. The kitten stays fully in frame on the plate with four normal legs. Photorealistic, warm cozy light, smooth natural motion, static camera.",
+     "xfade": 0.6
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Mid-November hot cocoa and marshmallow season is taking off: brands just dropped limited hot cocoa-and-marshmallow treats and holiday festival menus revealed this week are full of cocoa-marshmallow desserts, so the cosy cocoa mug is a timely visual for a global audience.",
+    "pattern": "spot-the-odd-one food morph: a calm cosy food close-up with one tiny ear hint as the hook, then a reveal where that piece becomes a sleepy kitten whose fur matches the food",
+    "evidence": [
+     {
+      "title": "Limited-Edition Winter Snacks: Bimbo Bakeries Rolls Out Hot Cocoa Muffins and Marshmallow…",
+      "url": "https://www.trendhunter.com/trends/limited-edition-winter-snacks"
+     },
+     {
+      "title": "Check Off Your List: Little Bites® and Entenmann's® Limited Time Treats Are Coming to Town",
+      "url": "https://www.prnewswire.com/news-releases/check-off-your-list-little-bites-and-entenmanns-limited-time-treats-are-coming-to-town-302935127.html"
+     },
+     {
+      "title": "The 2026 EPCOT Festival of the Holidays Menus Are HERE!",
+      "url": "https://www.disneyfoodblog.com/2026/11/12/the-2026-epcot-festival-of-the-holidays-menus-are-here/"
+     }
+    ]
+   },
+   "id": "m261114l",
+   "format": "morph",
+   "engine": "14b",
+   "seed": 41131
+  }
+ ]
+}

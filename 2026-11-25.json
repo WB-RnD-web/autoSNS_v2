@@ -1,0 +1,78 @@
+{
+ "date": "2026-11-25",
+ "concepts": [
+  {
+   "slug": "mini-pecan-pie-kitten-stretches",
+   "track": "fluffing-a-duck.mp3",
+   "caption": "The pecan pie just twitched",
+   "title": "Left the Mini Pecan Pies to Cool. One Started Stretching 🥧🐱",
+   "en_line": "Thanksgiving baking is going great, except one mini pecan pie turned out to be a sleepy kitten.",
+   "ko_line": "식히던 피칸파이 하나가 기지개를 켰어요 🥧",
+   "tags": [
+    "cat",
+    "ai cat",
+    "kitten",
+    "pecan pie",
+    "thanksgiving",
+    "cute cat",
+    "food morph",
+    "holiday baking"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#피칸파이",
+    "#추수감사절",
+    "#cat",
+    "#kitten",
+    "#aicat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic cozy close-up at eye level, vertical composition, of six mini pecan pies in golden fluted pastry shells on a round wire cooling rack, set on a rustic oak kitchen table. Each mini pie has a glossy amber caramel filling topped with shiny pecan halves. In the center pie, two tiny furry kitten ears in caramel-brown tabby fur with darker brown stripes and soft cream tips poke up from between the pecan halves, the only kitten hint in the scene. Thin wisps of warm steam rise from the pies, two cinnamon sticks and a few loose pecans lie beside the rack, warm golden kitchen light with a softly blurred background of a cozy window with fairy lights.",
+     "motion": "Right from the first frame, the two tiny caramel-brown kitten ears on the center mini pecan pie twitch, one flicks sideways and then both swivel forward, then twitch once more. Thin wisps of steam rise steadily from all the pies and the fairy lights in the background twinkle softly. The pies and table stay still, the ears stay in the same spot fully in frame. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "swish"
+     ],
+     "beat": "the two tiny kitten ears flick and twitch on the center pie"
+    },
+    {
+     "edit": "Keep exactly the same tiny caramel-brown tabby kitten hinted by the two furry ears on the center mini pecan pie, with the same fur pattern, face and eye color. The center mini pecan pie is now a tiny curled-up kitten sitting in the same golden fluted pastry shell in the same spot: its glossy fur looks like the pecan pie, caramel-amber with dark brown tabby stripes like pecan halves, a soft cream chest like the pastry, round amber-gold eyes half open as it wakes up, one tiny front paw resting on the pastry rim. The other five mini pecan pies, the wire rack, cinnamon sticks, rising steam and warm cozy kitchen light stay the same. Photorealistic, vertical composition.",
+     "motion": "Right from the first frame, the tiny caramel tabby kitten in the pastry shell lifts its head, blinks its amber-gold eyes slowly, then stretches one front paw forward over the pastry rim and gently taps it down while its ears twitch, with its mouth closed. Thin steam keeps rising from the other pies and the fairy lights twinkle in the background. The kitten stays fully in frame in the same pastry shell with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.6,
+     "sfx": [
+      "meow",
+      "slap"
+     ],
+     "beat": "the kitten lifts its head, blinks awake and taps its paw on the pastry rim",
+     "hit": true,
+     "caption": "Freshly baked kitten"
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Thanksgiving is tomorrow (Nov 26) and pecan pie is having a moment: a pecan pie trifle hack built from a store-bought pie is going viral, and holiday sales data shows pecan pie purchases climbing around Thanksgiving.",
+    "pattern": "cozy holiday baking close-up with one tiny 'something's off' hint (twitching ears), then the reveal: the pie is a sleepy kitten whose fur matches the food, waking up and stretching",
+    "evidence": [
+     {
+      "title": "This Genius Holiday Dessert Starts With a $6 Store-Bought Pie",
+      "url": "https://www.yahoo.com/lifestyle/articles/genius-holiday-dessert-starts-6-130000454.html"
+     },
+     {
+      "title": "The most popular Thanksgiving dessert in your state",
+      "url": "https://www.fox6now.com/news/most-popular-thanksgiving-dessert-your-state"
+     },
+     {
+      "title": "7 Viral Thanksgiving Recipes From TikTok Creators You Need to Make Immediately",
+      "url": "https://www.foodnetwork.com/thanksgiving/viral-thanksgiving-recipes-from-tiktok-influencers-2026"
+     }
+    ]
+   },
+   "id": "m261125",
+   "format": "morph",
+   "engine": "14b",
+   "seed": 73812,
+   "tease": false
+  }
+ ]
+}

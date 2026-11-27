@@ -1,0 +1,55 @@
+{
+ "date": "2026-11-19",
+ "concepts": [
+  {
+   "slug": "caramel-pudding-kitten-jiggles-awake",
+   "track": "merry-go.mp3",
+   "caption": "This pudding jiggles a little too much",
+   "title": "This Caramel Pudding Jiggled… Then It Opened Its Eyes 🍮🐱",
+   "en_line": "The wobbliest caramel pudding on the plate turned out to be a sleepy little kitten.",
+   "ko_line": "푸딩인 줄 알았는데 아기 냥이였어 🍮",
+   "tags": [
+    "cat",
+    "ai cat",
+    "kitten",
+    "caramel pudding",
+    "custard flan",
+    "cute kitten",
+    "food morph",
+    "cozy winter",
+    "cat morph"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#푸딩",
+    "#아기고양이",
+    "#cat",
+    "#kitten",
+    "#aicat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic cozy close-up from eye level, vertical composition, of six small round caramel custard puddings standing on a white ceramic serving plate on a cream linen tablecloth beside a frosty winter window, warm golden fairy lights glowing softly in the blurred background. Each pudding is smooth pale-cream custard with a glossy amber caramel top and caramel sauce dripping down the sides. The front center pudding is the only different one: two tiny soft kitten ears poke up from its caramel top, pale cream fur with warm caramel-brown tips, and a tiny cream tail tip with a caramel-brown end curls around its base on the plate. All six puddings fully in frame, soft warm window light, shallow depth of field.",
+     "motion": "From the very first frame the two tiny cream-and-caramel kitten ears on the front pudding twitch, and that one pudding gives a soft bouncy jiggle while the other puddings stay perfectly still. The tiny tail tip curls once around the base, then the ears twitch again and turn toward the camera. Fairy lights twinkle gently in the background and light frost glitters on the window. The hidden kitten stays fully in frame inside the pudding shape, with four normal legs tucked out of sight, and no new body parts appear. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same tiny kitten with pale cream fur and warm caramel-brown ear tips and tail tip from the front pudding, with the same fur pattern, face and eye color. The front center pudding is now this tiny round fluffy kitten in exactly the same spot on the white plate, curled in a soft pudding-like dome shape: plush pale-cream body fur, a glossy warm caramel-brown cap of fur on its head and ears like a caramel top, warm amber eyes half open as it wakes up, a small pink nose, four tiny paws tucked in front and the caramel-tipped tail curled around it. The other five caramel puddings, the linen tablecloth, frosty window and golden fairy lights stay the same. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the tiny cream-and-caramel kitten blinks its sleepy amber eyes open, tilts its head to one side, and lifts one tiny front paw to softly tap the plate, its round fluffy body giving a little pudding-like wobble, mouth closed. Its caramel-tipped tail sways slowly. Fairy lights twinkle and frost glitters on the window behind. The kitten stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.6
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "My searches didn't turn up a recent cat morph or food trend that fits today, so this uses a strong evergreen idea. Late November is cosy dessert-at-home season, and wobbly caramel pudding is a familiar treat around the world and a popular café dessert in Korea. Pudding hasn't been used on the channel yet, and the colours and shape are different from our recent bread, donut, brownie and pinecone morphs.",
+    "pattern": "hidden-in-plain-sight morph: a row of identical treats where one wobbles on its own, with the jiggle as the first-second hook, then it wakes up as a kitten whose fur looks like the food (caramel cap, custard body) in the same spot",
+    "evidence": []
+   },
+   "id": "m261119c",
+   "format": "morph",
+   "engine": "14b",
+   "seed": 36644,
+   "tease": true
+  }
+ ]
+}

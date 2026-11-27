@@ -1,0 +1,76 @@
+{
+ "date": "2026-11-22",
+ "concepts": [
+  {
+   "slug": "snowball-cookie-kitten-wakes-up",
+   "track": "merry-go.mp3",
+   "caption": "Find the one that's not a cookie",
+   "title": "Baked Snowball Cookies for the Snow Day. One Had Whiskers ❄️🐱",
+   "en_line": "Seven snowball cookies cooling by the window, and one of them is softer than the rest.",
+   "ko_line": "소설이라 스노우볼 쿠키 구웠는데 하나가 눈을 떴어요 ❄️",
+   "tags": [
+    "cat",
+    "ai cat",
+    "kitten",
+    "white kitten",
+    "snowball cookies",
+    "holiday baking",
+    "christmas cookies",
+    "cute cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#소설",
+    "#스노우볼쿠키",
+    "#cat",
+    "#kitten",
+    "#aicat"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic cozy close-up at eye level, vertical composition, of a round white ceramic plate on a rustic wooden table beside a frosty window, holding seven round snowball cookies thickly coated in soft white powdered sugar in a neat cluster. The front center cookie is slightly rounder and fluffier than the others, and two tiny fluffy pure-white kitten ears with pale pink insides poke up from its top, as if a tiny pure-white long-haired kitten with bright blue eyes and a small pink nose is curled up asleep as that cookie, its face tucked out of sight. Soft snowflakes fall outside the window, warm golden lamp light, a few loose sugar crumbs on the plate, shallow depth of field, the whole plate fully in frame.",
+     "motion": "From the very first frame the two tiny white kitten ears on the front center snowball cookie twitch and flick, then the cookie gives one tiny soft wiggle as if breathing, while a light dust of powdered sugar drifts off it. The other cookies stay still. Soft snowflakes keep falling outside the frosty window. The hidden kitten stays fully in frame as a round cookie, with its four normal legs tucked out of sight. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "swish"
+     ],
+     "beat": "the two tiny white ears on the front cookie twitch"
+    },
+    {
+     "edit": "Keep exactly the same tiny pure-white long-haired kitten with the same fur pattern, face and eye color. The front center snowball cookie with the two tiny white ears is now that tiny kitten, curled up in a round ball in the same spot on the plate and the same size as the cookies beside it, its fluffy white fur dusted with powdered sugar so it looks like a snowball cookie, its little face now visible with bright blue eyes half open and a small pink nose, front paws tucked under its chin. The other cookies, the white plate, the wooden table, the frosty window with falling snow and the warm golden lamp light stay the same. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the tiny pure-white kitten lifts its sugar-dusted head from its curled-up ball, opens its bright blue eyes wide and blinks, then stretches one tiny front paw forward and gently pats the snowball cookie next to it, and a soft puff of powdered sugar drifts up. It stays curled in the same spot on the plate with its mouth closed. Snowflakes keep falling outside the window. The kitten stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.6,
+     "sfx": [
+      "meow"
+     ],
+     "beat": "the kitten lifts its head and opens its big blue eyes",
+     "hit": true,
+     "caption": "Not a cookie. A kitten"
+    }
+   ],
+   "cover_shot": 1,
+   "trend": {
+    "why_now": "November 22 is Minor Snow (소설) in Korea, Thanksgiving week in the US, and holiday cookie season is starting. November 2026 trend reports say festive holiday baking is leading food content, and food hooks that hold back the reveal until the end are doing best right now.",
+    "pattern": "spot-the-odd-one hook (a plate of matching holiday cookies, one with tiny ears) with the answer held back, then the reveal: the sugar-dusted kitten opens its eyes and pats its cookie neighbour",
+    "evidence": [
+     {
+      "title": "Top 100 Food Trends in November: From Protein-Rich Meat Sticks to Birthday Cake Empanadas",
+      "url": "https://www.trendhunter.com/slideshow/november-2026-food"
+     },
+     {
+      "title": "Food and nutrition TikTok trends this week (November 2026): viral formats and hooks on TikTok and Instagram",
+      "url": "https://tryvolume.app/working/food-and-nutrition"
+     },
+     {
+      "title": "Friday Faves: Nov. 20, 2026 - foodiecrush",
+      "url": "https://foodiecrush.com/friday-faves-nov-20-2026"
+     }
+    ]
+   },
+   "id": "m261122",
+   "format": "morph",
+   "engine": "14b",
+   "seed": 11834,
+   "tease": false
+  }
+ ]
+}

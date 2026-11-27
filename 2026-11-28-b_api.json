@@ -1,0 +1,23 @@
+{
+ "date": "2026-11-28",
+ "slot": "b",
+ "format": "dance",
+ "model": "claude-opus-5-5",
+ "effort": "high",
+ "tokens": {
+  "input": 12,
+  "cache_write": 32259,
+  "cache_read": 86520,
+  "output": 7411,
+  "web_search": 6,
+  "web_fetch": 2
+ },
+ "ok": true,
+ "tries": 1,
+ "usd": 0.387,
+ "errors": [],
+ "history": [
+  []
+ ],
+ "slug": "small-business-saturday-shop-cat-bell-dance-chocolate-bicolor"
+}

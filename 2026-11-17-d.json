@@ -1,0 +1,66 @@
+{
+ "date": "2026-11-17",
+ "concepts": [
+  {
+   "slug": "mini-golf-one-cm-nudge-bombay",
+   "track": "sneaky-snitch.mp3",
+   "caption": "When the ball stops 1 cm from the hole",
+   "title": "Ball Stopped 1 cm From the Hole. He Fixed That ⛳🐱",
+   "en_line": "Rules say no paws, but nobody was watching the last hole.",
+   "ko_line": "1cm 남은 퍼팅… 앞발로 조용히 해결 ⛳",
+   "tags": [
+    "cat",
+    "ai cat",
+    "mini golf",
+    "funny cat",
+    "bombay cat",
+    "black cat",
+    "cat games",
+    "cute cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#미니골프",
+    "#냥스타그램",
+    "#cat",
+    "#aicat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical full-body shot of a sleek Bombay cat with a short glossy jet-black coat, a round face, small rounded ears and large bright copper-gold eyes, crouched low on bright green artificial turf of a cosy indoor mini golf course, chin close to the ground, eyes locked on a white golf ball that rests right on the edge of a small white golf hole, a short plain red flag on a thin pole standing in the hole, low natural wooden border rails around the green, warm golden string lights softly blurred in the background, the whole cat fully in frame and clearly visible, vertical composition",
+     "motion": "From the very first frame the sleek black Bombay cat stares at the golf ball on the edge of the hole and tilts its head left, then right, its tail swishing side to side behind it. It slowly lifts one front paw and hovers it just above the white ball, copper eyes wide and focused, ears pointed forward. The warm string lights twinkle softly in the background. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same sleek Bombay cat with the short glossy jet-black coat, small rounded ears and large bright copper-gold eyes, with the same fur pattern, face and eye color. Now the white golf ball has dropped down inside the small white golf hole, and the cat sits upright right beside the hole on the green turf with its chest puffed out, one front paw resting on the rim of the hole, mouth closed, eyes half-closed in a proud satisfied look, the short plain red flag still standing next to it, same cosy indoor mini golf green with wooden border rails and warm golden string lights behind. The whole cat fully in frame. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the black Bombay cat sits proudly beside the hole with one paw on the rim, gives a slow satisfied blink and a small confident nod, then lifts its chin and sways gently to the beat while its tail curls and swishes. Mouth stays closed. The warm string lights twinkle in the background. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 1,
+   "trend": {
+    "why_now": "AI black-cat clips with a smug 'I won' beat are still circulating as a meme, and this week's viral cat-post roundups are all about cats bending the house rules to get their way; a cat quietly 'fixing' an almost-made putt puts both together, and cats crashing mini golf games is a long-running favourite.",
+    "pattern": "near-miss tension (ball on the rim, cat locked in) cut to the smug win beat after a sneaky paw nudge; relatable 'so close' caption, short two-part title setup and punchline",
+    "evidence": [
+     {
+      "title": "Black Cat Clapping | Know Your Meme",
+      "url": "https://knowyourmeme.com/memes/black-cat-clapping"
+     },
+     {
+      "title": "Funniest Posts About Cats And Dogs This Week",
+      "url": "https://huffpost.com/entry/cats-dogs-funny-posts-tweets-2026-11-07-13_n_6af1e35ae4b0d2d11fa494a8"
+     },
+     {
+      "title": "Video: Cat Ruins Mini Golf",
+      "url": "https://time.com/3403707/cat-mini-golf-video/"
+     }
+    ]
+   },
+   "id": "m261117d",
+   "format": "game",
+   "engine": "14b",
+   "seed": 61556,
+   "tease": false
+  }
+ ]
+}

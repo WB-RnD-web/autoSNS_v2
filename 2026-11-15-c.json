@@ -1,0 +1,53 @@
+{
+ "date": "2026-11-15",
+ "concepts": [
+  {
+   "slug": "yarn-ball-kitten-wakes-up",
+   "track": "fluffing-a-duck.mp3",
+   "caption": "Wait… is that yarn ball breathing?",
+   "title": "The Softest Yarn in the Basket Is a Kitten 🧶🐱",
+   "en_line": "Every Sunday knitting basket needs one ball of yarn that purrs.",
+   "ko_line": "털실인 줄 알았는데 아기 고양이였어 🧶",
+   "tags": [
+    "cat",
+    "ai cat",
+    "kitten",
+    "yarn ball",
+    "knitting",
+    "cozy",
+    "cute kitten",
+    "morph",
+    "sunday"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#아기고양이",
+    "#뜨개질",
+    "#cat",
+    "#kitten",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic cozy close-up of a round natural wooden bowl resting on a soft oatmeal-colored chunky knitted throw on a sofa beside a window with soft snowfall at dusk, warm lamp light. The bowl holds six chunky balls of fluffy wool yarn in cream, sage green, mustard yellow, dusty pink, pale blue and one soft silver-gray. The silver-gray yarn ball sits in the center front of the bowl and has two tiny fluffy silver-gray kitten ears poking up from its top and a tiny fluffy silver-gray tail tip curling out from its side, all with the same fuzzy wool texture. The whole bowl is fully in frame and clearly visible, shallow depth of field, vertical composition",
+     "motion": "From the very first frame the silver-gray yarn ball with the tiny ears gently rises and falls as if it is breathing, the two tiny ears twitch, and the little tail tip flicks once and curls back. The other yarn balls stay still while soft snow drifts past the window behind. The bowl and all the yarn stay fully in frame; only the tiny ears and tail tip of the hidden kitten show, and no legs appear. Photorealistic, warm lamp light, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same tiny fluffy silver-gray kitten hidden in the gray yarn ball with the same fur pattern, face and eye color. Turn the silver-gray yarn ball with the tiny ears into a tiny fluffy silver-gray long-haired kitten curled into a round ball in exactly the same spot in the wooden bowl. Its soft fur looks like fuzzy wool yarn, with faint darker gray swirl stripes wrapping around its body like strands of yarn. It has big round copper eyes just opening, a tiny pink nose, its small paws tucked in and its fluffy tail curled around its body. Keep the wooden bowl, the other five yarn balls, the knitted throw, the snowy window and the warm lamp light the same. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the tiny silver-gray yarn kitten lifts its head out of its curled-up ball, slowly blinks its copper eyes, and tilts its head with its ears perked up. Then it stretches one tiny front paw out to gently tap the mustard yarn ball next to it. Its mouth stays closed. Soft snow drifts past the window behind. The kitten stays fully in frame in the bowl with four normal legs. Photorealistic, warm lamp light, smooth natural motion, static camera.",
+     "xfade": 0.6
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "My trend searches didn't turn up anything usable, so this is an evergreen idea: a cosy Sunday knitting basket in mid-November, when people are indoors, it's snowing outside and knitting is in season. It's an object morph, which keeps it clearly different from today's cinnamon roll Short and the recent food morphs.",
+    "pattern": "Spot the odd one: a still cosy scene where one yarn ball has tiny ears and is breathing, then a crossfade shows a kitten whose fur looks like the yarn waking up in the same spot. Questioning hook caption.",
+    "evidence": []
+   },
+   "id": "m261115c",
+   "format": "morph",
+   "engine": "14b",
+   "seed": 52193
+  }
+ ]
+}

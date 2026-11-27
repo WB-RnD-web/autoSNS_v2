@@ -1,0 +1,72 @@
+{
+ "date": "2026-11-17",
+ "concepts": [
+  {
+   "slug": "thanksgiving-dinner-roll-kitten-wakes-up",
+   "track": "fluffing-a-duck.mp3",
+   "caption": "Baked 12 rolls. Got 11 and a kitten",
+   "title": "Baked 12 Dinner Rolls for Thanksgiving. One Is Purring 🦃🐱",
+   "en_line": "The softest dinner roll in the skillet was napping the whole time.",
+   "ko_line": "추수감사절 모닝빵 구웠는데 하나가 눈을 떴어요 🍞",
+   "tags": [
+    "cat",
+    "ai cat",
+    "kitten",
+    "dinner rolls",
+    "thanksgiving",
+    "bread kitten",
+    "food morph",
+    "cute cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#모닝빵",
+    "#추수감사절",
+    "#cat",
+    "#kitten",
+    "#aicat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic cozy close-up of a round black cast-iron skillet filled with twelve freshly baked pull-apart dinner rolls, glossy golden-brown tops brushed with melted butter, soft pale cream sides, resting on a rustic dark oak farmhouse table beside a small dish of butter, a sprig of fresh thyme and a folded oatmeal linen napkin, warm late-afternoon autumn light from a nearby window, soft blurred amber background, gentle steam rising from the rolls. On the front-center roll, two tiny soft triangular kitten ears with golden-cream fur and pale pink insides peek up from the top of the bun, the only hint. The whole skillet fully in frame, vertical composition",
+     "motion": "From the very first frame, the two tiny golden-cream kitten ears on the front-center dinner roll twitch, one flicks sideways and then both perk up and swivel toward the camera. Soft steam keeps curling up from the warm rolls and the butter glistens in the window light. The rolls keep their shape, the tiny ears stay in place on the same roll fully in frame, and nothing else appears. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0
+    },
+    {
+     "edit": "Keep exactly the same tiny golden-cream kitten ears from shot 1 and the same skillet, rolls, table and light; the front-center dinner roll is now a tiny round kitten curled up in exactly the same spot, its fluffy fur looking like the bread: glossy golden-brown on its back and head with a soft buttery sheen, pale cream on its cheeks, chest and paws, faint warm-orange tabby stripes, tiny pink nose, big round amber eyes just opening sleepily, its four small paws tucked between the neighbouring rolls. Keep exactly the same kitten with the same fur pattern, face and eye color in every detail of this new pose. Photorealistic, vertical composition.",
+     "motion": "From the very first frame, the tiny golden-cream kitten slowly blinks its sleepy amber eyes open, lifts its round head from the roll beside it, tilts its head curiously at the camera and stretches both little front paws forward onto the next warm dinner roll with a gentle paw knead, mouth closed. Soft steam keeps rising from the other rolls. The kitten stays fully in frame in the same spot in the skillet with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.6
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Thanksgiving is on 26 November 2026, and home bakers are posting their 2026 menus right now, with homemade dinner rolls as a staple. AI pet videos are also getting attention this month.",
+    "pattern": "food-to-kitten morph: the 'count again' hook (12 rolls, one is wrong), a tiny ear twitch as the first-second clue, then a sleepy kitten wakes up in a warm, cosy reveal",
+    "evidence": [
+     {
+      "title": "Thanksgiving Menu 2026 | Alexandra Cooks",
+      "url": "https://alexandracooks.com/2026/11/06/thanksgiving-menu-2026/"
+     },
+     {
+      "title": "Our 2026 Thanksgiving Menu and Guide: An Easy Vintage Thanksgiving - Half Baked Harvest",
+      "url": "https://www.halfbakedharvest.com/our-2026-thanksgiving-menu/"
+     },
+     {
+      "title": "2026 Thanksgiving Menu Ideas: Easy Recipes & Sides - 31 Daily",
+      "url": "https://www.31daily.com/thanksgiving-menu-ideas/"
+     },
+     {
+      "title": "AI Pet Video: Build a Cat Story Series",
+      "url": "https://vibepaper.io/articles/ai-pet-video-cat-story-series"
+     }
+    ]
+   },
+   "id": "m261117e",
+   "format": "morph",
+   "engine": "14b",
+   "seed": 81356,
+   "tease": true
+  }
+ ]
+}

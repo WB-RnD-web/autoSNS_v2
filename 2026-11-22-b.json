@@ -1,0 +1,72 @@
+{
+ "date": "2026-11-22",
+ "concepts": [
+  {
+   "slug": "toast-pop-marching-paws-australian-mist",
+   "track": "hep-cats.mp3",
+   "caption": "Toaster's ticking. Paws marching.",
+   "title": "Waited for the Toast to Pop. Danced Until It Did 🍞🐱",
+   "en_line": "Sunday toast takes forever, so she turned the wait into a tiny marching parade.",
+   "ko_line": "토스트 기다리다 행진 시작한 고양이 🍞",
+   "tags": [
+    "cat",
+    "ai cat",
+    "dancing cat",
+    "cat dance",
+    "marching paws",
+    "toast",
+    "sunday morning",
+    "cute cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#토스트",
+    "#일요일아침",
+    "#cat",
+    "#catdance",
+    "#aicat"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical composition, eye-level full-body shot of an Australian Mist cat with a short soft coat in warm golden-beige covered in delicate darker brown misted spots, a pale cream chest, a round face and large bright green eyes, standing upright on its hind legs on a clean white marble kitchen counter right beside a plain brushed-steel two-slot toaster with two slices of bread in the slots and a thin wisp of steam rising, its front paws raised mid-march, ears perky, a sunny Sunday-morning kitchen with soft golden window light, a small potted herb and a plain white mug softly blurred in the background, the whole cat clearly visible with space around it",
+     "motion": "From the very first frame the Australian Mist cat stands on its hind legs on the counter and marches in place to the beat: its front paws pump up and down one after the other like tiny marching paws, its head bobs from side to side, its ears stay perky and its tail sways. A thin wisp of steam rises from the toaster and sunlight glows through the window. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "swish"
+     ],
+     "beat": "the cat's front paw swings up in its first marching step"
+    },
+    {
+     "edit": "Keep exactly the same Australian Mist cat with the same fur pattern, face and eye color. Same marble kitchen counter and brushed-steel toaster: now two golden-brown toast slices stand popped up out of the toaster slots with soft steam rising, and the cat stands tall on its hind legs beside it in a proud final dance pose, one front paw raised high in the air and the other front paw resting on its hip, chest out, happy squinting eyes, warm morning light. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the Australian Mist cat bounces once on its hind legs and snaps its raised front paw higher into a proud final pose, then holds it with a small hip sway and a slow happy blink. Soft steam curls up from the golden toast and the sunlight glows warmly. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5,
+     "sfx": [
+      "bell"
+     ],
+     "beat": "the cat snaps its front paw up high into the final pose next to the popped toast",
+     "hit": true,
+     "caption": "Pop! Final pose."
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Mid-to-late November 2026: TikTok's cat trends page is full of the 'little marching-paws' trend (tiny table taps, expressive faces), and the AI cat dance trend is still going strong this month. Sunday morning plus a home-appliance cue (like our kettle Short that did well) gives viewers something relatable to wait for.",
+    "pattern": "relatable waiting moment turned into a dance: steady marching paws to the beat, then the payoff (the toast pops) lands as a final victory pose; title pattern 'Waited for X. Did Y until it did'",
+    "evidence": [
+     {
+      "title": "Cat Trends | TikTok Discover",
+      "url": "https://www.tiktok.com/discover/cat-trends"
+     },
+     {
+      "title": "AI Cat Dance: Make Your Cat Do the Viral Memes From 1 Photo",
+      "url": "https://www.atlascloud.ai/blog/tips/ai-cat-dance"
+     }
+    ]
+   },
+   "id": "m261122b",
+   "format": "dance",
+   "engine": "14b",
+   "seed": 27674,
+   "tease": true
+  }
+ ]
+}

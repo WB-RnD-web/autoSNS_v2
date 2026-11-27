@@ -1,0 +1,65 @@
+{
+ "date": "2026-11-15",
+ "concepts": [
+  {
+   "slug": "sunday-night-rooftop-dance-silver-tabby",
+   "track": "hep-cats.mp3",
+   "caption": "Last dance before Monday hits",
+   "title": "Last Dance Before Monday: Rooftop Cat Won't Stop 🌃🐱",
+   "en_line": "Monday can wait until this song is over.",
+   "ko_line": "월요일 오기 전 마지막 한 곡만 더 🌃",
+   "tags": [
+    "cat",
+    "ai cat",
+    "dancing cat",
+    "cat dance",
+    "sunday night",
+    "monday mood",
+    "cute cat",
+    "funny cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#일요일밤",
+    "#월요병",
+    "#cat",
+    "#dancingcat",
+    "#aicat"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic silver classic tabby American Shorthair cat with a short dense silver coat, bold black swirl markings on its sides, a white chin and bright green eyes, standing upright on its hind legs in the middle of a small wooden rooftop terrace at night, both front paws raised at shoulder height like a dancer, happy confident expression, warm golden string lights hanging overhead, a few potted green plants at the sides, soft blurred city lights glowing in the distance under a deep blue night sky, the whole cat fully in frame from ears to toes, vertical composition",
+     "motion": "From the very first frame the silver tabby cat is already dancing on its hind legs to the beat, swaying its hips left and right in rhythm, bobbing its head and pumping both raised front paws up and down with each beat, tail swishing along. The warm string lights twinkle gently and the distant city lights shimmer. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same silver classic tabby American Shorthair cat with the same fur pattern, face and eye color. Same rooftop terrace at night with the warm golden string lights and blurred city lights. The cat now strikes a proud final dance pose on its hind legs: one front paw pointing straight up toward the night sky, the other front paw resting on its hip, chest out, eyes half closed with a satisfied look, the whole cat fully in frame. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the silver tabby cat holds its final pose on its hind legs, one paw pointing up to the sky, and bounces its hips to the beat, nodding its head in rhythm and giving one slow proud blink while its tail sways. The string lights twinkle and the city lights glow softly behind it. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 1,
+   "trend": {
+    "why_now": "Pet dance memes are the hottest AI-cat format in November 2026 (Under Arrest Dance rising, Pet Rock Dance at peak, Suave hip-shake kittens spreading), and Sunday night before Monday is a universally relatable moment tonight.",
+    "pattern": "pet-dance meme: cat already mid-groove in frame 1 with hip sways and paw pumps, then a confident final pose; relatable 'last fun before Monday' caption",
+    "evidence": [
+     {
+      "title": "TikTok Trends on November 13, 2026: AI Meme Chart",
+      "url": "https://viralremix.org/tiktok-trends/2026-11-13"
+     },
+     {
+      "title": "AI Cat Dance: Make Your Cat Do the Viral Memes From 1 Photo",
+      "url": "https://www.atlascloud.ai/blog/tips/ai-cat-dance"
+     },
+     {
+      "title": "Best ways to make the Suave Cat Dance video with your own cat (2026)",
+      "url": "https://dev.to/yining_lin_5ee8680314309e/best-ways-to-make-the-suave-cat-dance-video-with-your-own-cat-2026-10l8"
+     }
+    ]
+   },
+   "id": "m261115e",
+   "format": "dance",
+   "engine": "14b",
+   "seed": 94520
+  }
+ ]
+}

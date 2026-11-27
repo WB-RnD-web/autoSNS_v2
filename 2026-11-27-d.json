@@ -1,0 +1,77 @@
+{
+ "date": "2026-11-27",
+ "concepts": [
+  {
+   "slug": "peg-drop-gold-slot-cymric",
+   "track": "run-amok.mp3",
+   "caption": "Lucky drop or pure skill?",
+   "title": "One Disc, Forty Pegs, Zero Doubt: He Hit the Gold Slot 🎯🐱",
+   "en_line": "He let go of one disc, followed every bounce with his eyes, and acted like he knew all along.",
+   "ko_line": "한 번에 황금칸 골인한 냥이 🎯",
+   "tags": [
+    "cat",
+    "ai cat",
+    "cymric cat",
+    "peg drop game",
+    "carnival game",
+    "holiday fair",
+    "funny cat",
+    "cute cat",
+    "cat wins"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#게임하는고양이",
+    "#냥스타그램",
+    "#cat",
+    "#aicat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical composition, eye-level full-body shot of a round, fluffy adult Cymric cat with a long cream-and-white coat (white chest, white paws and white muzzle, soft cream back and ears), a short stubby tail and big round copper-orange eyes, sitting upright on a wooden carnival booth counter at a cosy winter holiday fair in the evening. Next to the cat stands an upright wooden peg board a little taller than the cat, with rows of small round white pegs and a row of plain painted slots along the bottom in red, blue and green, plus one shiny gold slot in the centre. The cat's front paw rests on a glossy red wooden disc at the top edge of the board. Warm string lights glow in soft focus behind, and a few snowflakes drift down. The cat is fully in frame and clearly visible.",
+     "motion": "Right from the first frame, the fluffy cream-and-white Cymric cat taps the red disc off the top of the peg board with one front paw. The disc bounces down from peg to peg, and the cat's head and copper eyes follow it all the way down, ears pointing forward, leaning in a little. Warm string lights twinkle behind and a few snowflakes drift down. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "slap"
+     ],
+     "beat": "the cat's paw taps the red disc off the top of the peg board"
+    },
+    {
+     "edit": "Keep exactly the same round, fluffy adult Cymric cat with the long cream-and-white coat, short stubby tail, same fur pattern, face and eye color. Show the win moment: the glossy red disc now rests inside the shiny gold centre slot at the bottom of the peg board. The cat crouches low on the wooden counter right in front of the gold slot, front paws just lifted, copper eyes wide and proud, ears forward. The string lights behind glow brighter and warmer, and snowflakes keep drifting down. Photorealistic, vertical composition.",
+     "motion": "Right from the first frame, the cream-and-white Cymric cat does a small pounce in place, and both front paws land on the counter in front of the gold slot with the red disc. Then it sits up tall and gives a slow, proud blink. The string lights twinkle brighter and snowflakes drift down. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "bell",
+      "slap"
+     ],
+     "beat": "both front paws land on the counter in front of the gold slot",
+     "hit": true,
+     "caption": "Gold slot. Obviously."
+    }
+   ],
+   "cover_shot": 1,
+   "trend": {
+    "why_now": "Today is Black Friday (Nov 27, 2026), when holiday fairs and festive games are everywhere. A browser game about petting realistic cats launched Nov 22 and went viral, so cat-plus-game content is getting a lot of attention this week.",
+    "pattern": "Skill or luck tension: a calm, focused cat sets things off and follows every bounce, then a satisfying win where the cat lands its pounce and acts like it was never in doubt (the hook that worked for our best game Short, the pinball one: 'Pinball pro or button masher?').",
+    "evidence": [
+     {
+      "title": "This relaxing cat-petting browser game is the perfect break from GTA 6's chaos - Dexerto",
+      "url": "https://www.dexerto.com/gaming/this-relaxing-cat-petting-browser-game-is-the-perfect-break-from-gta-6s-chaos-3430792/"
+     },
+     {
+      "title": "Pet-the-cat Lets You Stroke a Realistic Virtual Cat in Your Browser",
+      "url": "https://vgtimes.com/gaming-news/175442-pet-the-cat-lets-you-stroke-a-realistic-virtual-cat-in-your-browser.html"
+     },
+     {
+      "title": "Black Friday (shopping) - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Black_Friday_(shopping)"
+     }
+    ]
+   },
+   "id": "m261127d",
+   "format": "game",
+   "engine": "14b",
+   "seed": 37631,
+   "tease": true
+  }
+ ]
+}

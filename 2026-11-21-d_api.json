@@ -1,0 +1,26 @@
+{
+ "date": "2026-11-21",
+ "slot": "d",
+ "format": "game",
+ "model": "claude-opus-5-5",
+ "effort": "high",
+ "tokens": {
+  "input": 1984,
+  "cache_write": 25948,
+  "cache_read": 101182,
+  "output": 9884,
+  "web_search": 5,
+  "web_fetch": 3
+ },
+ "ok": true,
+ "tries": 2,
+ "usd": 0.406,
+ "errors": [],
+ "history": [
+  [
+   "m261121d 컷2: 컷 caption 은 1~24자(이모지 빼고)"
+  ],
+  []
+ ],
+ "slug": "prize-wheel-giant-fish-bicolor-manx"
+}

@@ -1,0 +1,78 @@
+{
+ "date": "2026-11-26",
+ "concepts": [
+  {
+   "slug": "thanksgiving-mashed-potato-kitten-wakes-up",
+   "track": "merry-go.mp3",
+   "caption": "Why do the mashed potatoes have ears?",
+   "title": "Thanksgiving Dinner Is Served. The Mashed Potatoes Are Purring 🥔🐱",
+   "en_line": "Thanksgiving mashed potatoes came out extra fluffy this year, and one scoop woke up.",
+   "ko_line": "추수감사절 매쉬드포테이토가 갑자기 눈을 떴다 🥔",
+   "tags": [
+    "cat",
+    "ai cat",
+    "kitten",
+    "thanksgiving",
+    "mashed potatoes",
+    "food turns into kitten",
+    "cute cat",
+    "cozy"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#추수감사절",
+    "#cat",
+    "#kitten",
+    "#thanksgiving",
+    "#aicat",
+    "#냥스타그램"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic cozy close-up at eye level, vertical composition, of a wide cream ceramic bowl on a rustic wooden Thanksgiving table, filled with one big round swirled mound of fluffy whipped mashed potatoes. A square pat of golden butter melts on top and a soft wisp of warm steam rises. Near the top of the mound, two tiny soft cream-white kitten ears covered in fine fluffy fur poke out, the same colour and texture as the mashed potatoes. Softly blurred background with warm candlelight, small orange and red autumn leaves and mini pumpkins on the table, golden evening glow. The whole bowl is fully in frame and clearly visible.",
+     "motion": "From the very first frame, the two tiny cream-white kitten ears on top of the mashed potato mound twitch quickly, then the mound gently rises and falls once as if breathing, and the ears twitch again. Soft wisps of warm steam drift up, the butter pat slowly melts, and the candlelight flickers softly in the background. The bowl stays fully in frame. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "swish"
+     ],
+     "beat": "the two tiny ears on the mashed potato mound twitch"
+    },
+    {
+     "edit": "Keep exactly the same tiny cream-white kitten from shot 1 with the same fur pattern, face and eye color. The big mound of mashed potatoes in the same cream ceramic bowl, in the same spot, is now a tiny fluffy kitten curled up in the bowl. It has soft cream-white fur with a swirly whipped texture like mashed potatoes, a small pale golden butter-yellow patch on top of its head, light amber eyes, a pink nose and four small normal legs with its paws tucked in front. It lifts its sleepy little face and looks forward. Same wooden Thanksgiving table, candlelight, autumn leaves and mini pumpkins, a faint wisp of warm steam. Photorealistic, vertical composition.",
+     "motion": "From the very first frame, the tiny cream-white kitten in the bowl lifts its head, opens its light amber eyes and blinks slowly, tilts its head to one side, then gently taps the rim of the bowl with one small front paw. The kitten stays fully in frame with four normal legs, mouth closed. A faint wisp of steam drifts up and the candlelight flickers softly behind it. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.6,
+     "sfx": [
+      "meow",
+      "slap"
+     ],
+     "beat": "the kitten lifts its head and opens its eyes",
+     "hit": true,
+     "caption": "Extra fluffy this year"
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Today is US Thanksgiving (Thursday, Nov 26, 2026). Mashed potatoes are one of the top Thanksgiving sides, and holiday food is everywhere in the feeds this week. Our morph series hasn't used mashed potatoes yet.",
+    "pattern": "Hidden-kitten morph. The hook is a question about something odd ('why does this food have ears?') with motion from the very first frame. Then the reveal: one cosy holiday dish wakes up as a kitten made of the same food. The title follows the 'Dinner Is Served. The X Is Purring' setup and twist.",
+    "evidence": [
+     {
+      "title": "What's New on the Table This Year: 2026 Thanksgiving Trends",
+      "url": "https://nashvillemoms.com/whats-new-on-the-table-this-year-thanksgiving-trends/"
+     },
+     {
+      "title": "The New Gobble: Trending Foods for Thanksgiving 2026",
+      "url": "https://falconflyer.net/6664/features/the-new-gobble-trending-foods-for-thanksgiving-2026/"
+     },
+     {
+      "title": "YouTube Shorts Trends November 2026: What's Actually Going Viral Right Now",
+      "url": "https://www.anijam.ai/blog/youtube-shorts-trends/"
+     }
+    ]
+   },
+   "id": "m261126",
+   "format": "morph",
+   "engine": "14b",
+   "seed": 96130,
+   "tease": false
+  }
+ ]
+}

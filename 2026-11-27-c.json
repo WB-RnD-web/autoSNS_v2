@@ -1,0 +1,78 @@
+{
+ "date": "2026-11-27",
+ "concepts": [
+  {
+   "slug": "christmas-songs-legal-now-odd-eyed-white-cat-dance",
+   "track": "funkorama.mp3",
+   "caption": "Christmas songs are legal now",
+   "title": "The Day After Thanksgiving: Christmas Songs Are Finally Legal 🎶🐱",
+   "en_line": "Thanksgiving is over, the record is spinning, and the holiday season officially has a dance floor.",
+   "ko_line": "추수감사절 끝! 이제 캐럴 틀어도 된다냥 🎄",
+   "tags": [
+    "cat",
+    "ai cat",
+    "dancing cat",
+    "cat dance",
+    "christmas music",
+    "day after thanksgiving",
+    "white cat",
+    "odd eyed cat",
+    "funny cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#댄스고양이",
+    "#캐럴",
+    "#cat",
+    "#dancingcat",
+    "#christmasmusic",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical composition, eye-level full-body shot of a fluffy adult pure-white longhaired cat with odd eyes, the left eye bright sapphire blue and the right eye warm golden amber, pink nose, plush ruff and a big feathery white tail, standing upright on its hind legs on a soft red-and-cream knitted rug in a cosy living room, its two front paws raised together in front of its chest as if about to clap. Beside the cat a vintage wooden record player on a low wooden table holds a plain glossy black vinyl record with a plain red center. Behind it stands a freshly set-up green Christmas tree glowing with warm white fairy lights and red and gold baubles, a gold star on top, soft warm evening lamp light, the whole cat clearly visible in the frame.",
+     "motion": "From the very first frame the fluffy odd-eyed white cat stands on its hind legs and bounces to the beat, swaying its hips side to side and clapping its two front paws together in front of its chest in rhythm, three quick claps, its feathery tail swinging along and its head bobbing. The vinyl record keeps spinning on the record player and the Christmas tree lights twinkle softly behind. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "slap"
+     ],
+     "beat": "the cat's two front paws clap together in front of its chest"
+    },
+    {
+     "edit": "Keep exactly the same fluffy adult pure-white longhaired cat with the same fur pattern, face and eye color, one sapphire blue eye and one golden amber eye. Same cosy living room, same red-and-cream knitted rug, same vintage wooden record player with the spinning black record and the same glowing Christmas tree. The cat now strikes a confident final dance pose: standing tall on its hind legs, chest puffed out, one front paw thrust straight up toward the gold star on the tree and the other front paw resting on its hip, tail curled up proudly, eyes half-closed with a smug happy look, the tree lights glowing a little brighter. Photorealistic, vertical composition.",
+     "motion": "Right from the first frame the odd-eyed white cat does one small hop in place on its hind legs, lands softly on the rug and snaps one front paw straight up toward the star while the other paw rests on its hip, then holds the pose proudly with a slow satisfied blink and a little tail flick. The record keeps spinning and the Christmas tree lights twinkle. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "whoosh",
+      "bell"
+     ],
+     "beat": "the cat lands from its hop and thrusts one front paw straight up toward the star",
+     "hit": true,
+     "caption": "Fa-la-la-la-PAWS"
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Today, 27 Nov 2026, is the day after Thanksgiving. It's the traditional point when 'Christmas music is officially allowed' and people start decorating, and this week's Black Friday chatter is huge. AI cat dance memes are also peaking in November 2026: upright-dancing kittens since late August and a cat that stands up, claps and salutes since late September.",
+    "pattern": "Relatable seasonal rule ('no carols until Thanksgiving is over') as the hook. Shot 1 opens mid-move: an upright cat clapping on the beat. Shot 2 ends on a big, proud final pose, using the stand-clap-salute pattern from the clapping-cat meme with our own cat, room and move.",
+    "evidence": [
+     {
+      "title": "AI Cat Dance: Make Your Cat Do the Viral Memes From 1 Photo",
+      "url": "https://www.atlascloud.ai/blog/tips/ai-cat-dance"
+     },
+     {
+      "title": "Day After Thanksgiving 2026 in the United States",
+      "url": "https://www.timeanddate.com/holidays/us/day-after-thanksgiving"
+     },
+     {
+      "title": "TikTok Moments This Week (Nov 2026)",
+      "url": "https://www.convosight.com/tools/moments/trends/tiktok"
+     }
+    ]
+   },
+   "id": "m261127c",
+   "format": "dance",
+   "engine": "14b",
+   "seed": 79610,
+   "tease": false
+  }
+ ]
+}

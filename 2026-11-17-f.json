@@ -1,0 +1,63 @@
+{
+ "date": "2026-11-17",
+ "concepts": [
+  {
+   "slug": "black-friday-just-looking-selkirk-rex-cart",
+   "track": "pixel-peeker-polka-faster.mp3",
+   "caption": "Black Friday: 'I'm just looking'",
+   "title": "Said He Was Just Looking. Then Black Friday Happened 🛒🐱",
+   "en_line": "He only went in to browse, and he came out with the whole toy aisle.",
+   "ko_line": "구경만 한다더니 장바구니 꽉 채운 냥이 🛒",
+   "tags": [
+    "cat",
+    "ai cat",
+    "black friday",
+    "cat meme",
+    "funny cat",
+    "shopping cat",
+    "selkirk rex",
+    "cute cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#블랙프라이데이",
+    "#냥스타그램",
+    "#cat",
+    "#blackfriday",
+    "#funnycat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical full-body shot of a fluffy red-and-white bicolor Selkirk Rex cat with a thick curly plush coat, a bright orange face with a white blaze down the nose, a white chest and four white paws, round copper-orange eyes, sitting upright on the polished wooden floor of a cozy pet shop aisle, looking up at low wooden shelves packed with colorful yarn balls, felt mice and plush fish toys, an empty small chrome wire shopping cart standing beside the cat, warm golden string lights along the shelves, soft festive evening glow, the cat fully in frame and clearly visible in the center, vertical composition",
+     "motion": "From the very first frame the fluffy red-and-white Selkirk Rex cat turns its head to scan the toy shelves, its ears perk up, it reaches out one white front paw and taps a yarn ball on the lowest shelf so it wobbles, then pulls the paw back and looks straight ahead with an innocent slow blink. The golden string lights twinkle softly. The cat stays seated and fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same fluffy red-and-white bicolor Selkirk Rex cat with the same fur pattern, face and eye color. The cat now sits proudly inside the same small chrome wire shopping cart in the same cozy pet shop aisle, the cart piled high around the cat with colorful yarn balls, plush fish toys, felt mice, feather wands and a small round fluffy cat bed, the cat sitting on top of the pile looking pleased, warm golden string lights glowing along the shelves, the cat and the whole cart fully in frame. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the fluffy red-and-white Selkirk Rex cat sits on top of its full shopping cart and sways its head side to side to the beat, pats a plush fish toy twice with one white front paw, then gives a slow satisfied blink. The golden string lights twinkle in the background. The cat stays fully in frame with four normal legs and the cart stays still. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Cat meme roundups this week are already in holiday mode, and Black Friday shopping comes after Thanksgiving next week. Almost everyone knows the 'I'm just looking' to full cart moment.",
+    "pattern": "claim vs reality meme: an innocent 'just browsing' opening, then the punchline cut to the same cat sitting on top of an overflowing cart",
+    "evidence": [
+     {
+      "title": "26 Fabulous Festive Cat Memes to Welcome the Holiday Season Early (November 16, 2026) - I Can Has Cheezburger?",
+      "url": "https://cheezburger.com/47350021/26-fabulous-festive-cat-memes-to-welcome-the-holiday-season-early-november-16-2026"
+     },
+     {
+      "title": "A Holiday Surprise of Merry Cat Memes and Tweets to Give Feline Fanatics the Gift of Giggles - I Can Has Cheezburger?",
+      "url": "https://cheezburger.com/47334917/a-holiday-surprise-of-merry-cat-memes-and-tweets-to-give-feline-fanatics-the-gift-of-giggles"
+     }
+    ]
+   },
+   "id": "m261117f",
+   "format": "meme",
+   "engine": "14b",
+   "seed": 29226,
+   "tease": false
+  }
+ ]
+}

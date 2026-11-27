@@ -1,0 +1,69 @@
+{
+ "date": "2026-11-23",
+ "concepts": [
+  {
+   "slug": "cold-floor-paw-test-blue-cream-longhair",
+   "track": "investigations.mp3",
+   "caption": "Me checking if it's still cold out",
+   "title": "Tested the Cold Floor With One Paw. Back to Bed 🥶🐱",
+   "en_line": "One paw touched the floor and the whole day got cancelled.",
+   "ko_line": "월요일 아침 바닥 온도 체크… 바로 이불 속으로 🥶",
+   "tags": [
+    "cat",
+    "ai cat",
+    "funny cat",
+    "cat meme",
+    "cold morning",
+    "winter",
+    "monday mood",
+    "cozy cat",
+    "fluffy cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#월요병",
+    "#겨울아침",
+    "#cat",
+    "#catsofinstagram",
+    "#funnycat",
+    "#catmeme"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical composition, eye-level full-body shot of a fluffy longhaired blue-cream cat with a soft mottled coat of misty blue-grey and pale cream patches, a round fluffy face, big round copper-orange eyes and a small pink nose, snuggled like a burrito in a thick chunky cream knitted blanket on the edge of a low cozy bed, its head and one fluffy front paw poking out, the paw stretched down just above a pale wooden floor. Cool blue early-morning light from a frosty window behind the bed, soft white pillows, simple calm bedroom, the cat fully in frame and clearly visible.",
+     "motion": "From the very first frame the fluffy blue-cream cat dips its stretched front paw down and touches the cold wooden floor, then instantly snaps the paw back up into the knitted blanket, its ears flatten a little and its copper eyes go wide in shock as it tucks the blanket tighter. Frost glitters softly on the window behind. The cat stays fully in frame with four normal legs, mouth closed. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "swish"
+     ],
+     "beat": "the paw touches the cold floor and snaps back into the blanket",
+     "hit": true
+    },
+    {
+     "edit": "Keep exactly the same fluffy longhaired blue-cream cat with the same fur pattern, face and eye color. Now the cat is wrapped completely in the same thick cream knitted blanket on the same bed, only its round fluffy face peeking out, resting its chin on a soft white pillow with sleepy half-closed copper eyes, big soft snowflakes falling outside the frosty window, cool morning light with a warm glow inside the blanket. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the blanket-wrapped blue-cream cat snuggles deeper and flops its head down sideways onto the soft white pillow, then gives one slow content blink as it settles in. Big soft snowflakes keep drifting past the window outside. The cat stays fully in frame with four normal legs tucked inside the blanket, mouth closed. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "thud"
+     ],
+     "beat": "the cat flops its head down onto the pillow",
+     "caption": "Nope. Hibernating."
+    }
+   ],
+   "cover_shot": 1,
+   "trend": {
+    "why_now": "Late November brings the first freezing Monday mornings across Korea and the northern hemisphere, and cosy winter and early-festive cat memes are making the rounds right now (Cheezburger's festive cat meme roundup from November 16, 2026).",
+    "pattern": "relatable 'toe test' meme: a careful test of the cold, an instant shocked retreat in the first second, then a punchline where the cat gives up and goes back to bed, written as a 'Me...' caption",
+    "evidence": [
+     {
+      "title": "26 Fabulous Festive Cat Memes to Welcome the Holiday Season Early (November 16, 2026) - I Can Has Cheezburger?",
+      "url": "https://cheezburger.com/47350021/26-fabulous-festive-cat-memes-to-welcome-the-holiday-season-early-november-16-2026"
+     }
+    ]
+   },
+   "id": "m261123c",
+   "format": "meme",
+   "engine": "14b",
+   "seed": 59061,
+   "tease": true
+  }
+ ]
+}

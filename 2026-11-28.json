@@ -1,0 +1,74 @@
+{
+ "date": "2026-11-28",
+ "concepts": [
+  {
+   "slug": "christmas-strawberry-shortcake-cream-kitten-wakes-up",
+   "track": "merry-go.mp3",
+   "caption": "One of these is not whipped cream",
+   "title": "Christmas Cake Season Is Here. One Cream Swirl Has Ears 🍓🐱",
+   "en_line": "Christmas came early to the cake, and one cream swirl turned out to be a kitten.",
+   "ko_line": "크리스마스 케이크 생크림 하나가 눈 떴다 🍓",
+   "tags": [
+    "cat",
+    "ai cat",
+    "kitten",
+    "christmas cake",
+    "strawberry shortcake",
+    "whipped cream",
+    "cute cat",
+    "food to kitten"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#크리스마스케이크",
+    "#딸기케이크",
+    "#cat",
+    "#kitten",
+    "#aicat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic cozy close-up at a slightly high angle, vertical composition, of a round white Christmas strawberry shortcake on a white ceramic cake stand on a light wooden table, the top decorated with a ring of eight glossy piped whipped cream rosettes each topped with a bright red fresh strawberry, and in the front center one plain fluffy whipped cream rosette with no strawberry that has two tiny soft cream-white kitten ears with pale pink insides peeking out of its top, warm golden fairy lights softly blurred in the background, snowy window glow, soft warm light, the whole cake fully in frame and clearly visible",
+     "motion": "From the very first frame the two tiny cream-white ears on the front whipped cream rosette twitch, flick once to the side and twitch again, and the rosette rises and falls very gently as if breathing. All the other rosettes and strawberries stay perfectly still. Warm fairy lights twinkle softly in the blurred background. The cake stays fully in frame. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "swish"
+     ],
+     "beat": "the tiny cream ears flick to the side"
+    },
+    {
+     "edit": "Keep exactly the same Christmas strawberry shortcake, cake stand, fairy lights and setting, and keep exactly the same tiny cream-white kitten ears from shot 1 with the same pale pink insides. The front center whipped cream rosette is now a tiny fluffy cream-white kitten curled up in the same spot on top of the cake, its soft fur swirled and piped like whipped cream, with a small pink nose, little white whiskers, round sky-blue eyes half open and sleepy, tiny paws tucked in front, sitting in the ring of strawberry-topped rosettes. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the tiny cream-white kitten on top of the cake lifts its head, blinks its sleepy sky-blue eyes wide open, stretches one tiny front paw forward and gently taps it on the strawberry next to it, then tilts its head and looks at the camera. Its mouth stays closed. The kitten stays fully in frame on top of the cake with four normal legs. Warm fairy lights twinkle in the blurred background. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.6,
+     "sfx": [
+      "meow",
+      "slap"
+     ],
+     "beat": "the kitten blinks its eyes wide open and taps the strawberry with its paw",
+     "hit": true,
+     "caption": "Extra fluffy topping"
+    }
+   ],
+   "cover_shot": 1,
+   "trend": {
+    "why_now": "Christmas cake season has just started in Korea, with hotel patisseries launching their 2026 Christmas cakes about a week ago (strawberry shortcake leads the lineups). The first Sunday of Advent is tomorrow, and food-turns-into-a-kitten clips are still a popular AI Short format.",
+    "pattern": "spot-the-kitten: a still, cosy food shot with one small hint (ears that twitch from the first frame), then the reveal where that one piece is a sleepy kitten whose fur looks like the food and wakes up",
+    "evidence": [
+     {
+      "title": "Christmas cake wars heat up - The Korea Herald",
+      "url": "https://www.koreaherald.com/article/10942858"
+     },
+     {
+      "title": "Food Turning into Cats Animation | TikTok",
+      "url": "https://www.tiktok.com/discover/food-turning-into-cats-animation"
+     }
+    ]
+   },
+   "id": "m261128",
+   "format": "morph",
+   "engine": "14b",
+   "seed": 85651,
+   "tease": false
+  }
+ ]
+}

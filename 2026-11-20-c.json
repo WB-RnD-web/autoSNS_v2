@@ -1,0 +1,68 @@
+{
+ "date": "2026-11-20",
+ "concepts": [
+  {
+   "slug": "christmas-tree-day-two-moved-in-snow-bengal",
+   "track": "investigations.mp3",
+   "caption": "Day 1 of putting the tree up early",
+   "title": "Put the Christmas Tree Up Early. By Day 2 He Moved In 🎄🐱",
+   "en_line": "The tree was for decorations, but he decided he was the best one.",
+   "ko_line": "트리 일찍 꺼냈더니 바로 입주민 생김 🎄",
+   "tags": [
+    "cat",
+    "ai cat",
+    "christmas tree",
+    "cat meme",
+    "christmas cat",
+    "bengal cat",
+    "funny cat",
+    "holiday season"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#크리스마스트리",
+    "#cat",
+    "#catmemes",
+    "#christmascat",
+    "#냥스타그램"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical composition, eye-level full-body shot of a snow lynx Bengal cat with a short, silky pale ivory coat covered in soft warm-grey marbled rosettes, a creamy white chest, a thick ringed tail with a dark tip and bright sky-blue eyes. The cat sits upright on a soft cream wool rug right beside a small freshly decorated Christmas tree with warm white fairy lights and shiny red and gold baubles, one red bauble hanging low at the cat's nose height. Cosy living room in the evening, warm golden lamp light, softly blurred background. The cat is fully in frame and clearly visible.",
+     "motion": "From the very first frame the snow lynx Bengal cat lifts one front paw and taps the low red bauble, which swings back and forth on its branch; the cat's head and blue eyes follow the swinging bauble, ears pointed forward with curiosity. The warm fairy lights twinkle softly on the tree. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "slap"
+     ],
+     "beat": "the cat's paw taps the red bauble and it starts to swing"
+    },
+    {
+     "edit": "Keep exactly the same snow lynx Bengal cat with the same fur pattern, face and eye color. Now the cat sits nestled inside the middle of the same small Christmas tree, its body resting on the green branches among the warm white fairy lights and red and gold baubles, its face, chest and both front paws poking out clearly between the branches and its ringed tail hanging down, with a proud, smug half-closed-eye expression. A shiny gold bauble hangs right in front of its paws, and two red baubles lie on the cream rug below. Same cosy living room, warm evening lamp light. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the snow lynx Bengal cat, sitting inside the Christmas tree, swats the gold bauble in front of it with one front paw so it swings, the branches around it sway gently, then the cat gives a slow proud blink straight ahead. The fairy lights keep twinkling. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "slap",
+      "meow"
+     ],
+     "beat": "the cat's paw swats the gold bauble and the branches sway",
+     "hit": true,
+     "caption": "Day 2: He moved in"
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Mid-to-late November is when people put their Christmas trees up early, and festive cat memes are already trending as the holiday season kicks off.",
+    "pattern": "relatable 'Day 1 vs Day 2' before-and-after: cat curiously taps one ornament, then the punchline is the cat proudly sitting inside the tree like it lives there",
+    "evidence": [
+     {
+      "title": "26 Fabulous Festive Cat Memes to Welcome the Holiday Season Early (November 16, 2026) - I Can Has Cheezburger?",
+      "url": "https://cheezburger.com/47350021/26-fabulous-festive-cat-memes-to-welcome-the-holiday-season-early-november-16-2026"
+     }
+    ]
+   },
+   "id": "m261120c",
+   "format": "meme",
+   "engine": "14b",
+   "seed": 95383,
+   "tease": false
+  }
+ ]
+}

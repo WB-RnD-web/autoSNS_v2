@@ -1,0 +1,67 @@
+{
+ "date": "2026-11-16",
+ "concepts": [
+  {
+   "slug": "cold-monday-every-layer-sphynx",
+   "track": "monkeys-spinning-monkeys.mp3",
+   "caption": "Me leaving the house on a cold Monday",
+   "title": "Monday Hit 0°C, So He Wore Every Layer He Owns 🧣🐱",
+   "en_line": "No fur, no problem: just wear every cozy layer at once.",
+   "ko_line": "영하권 월요일 출근룩 완성했다옹 🧣",
+   "tags": [
+    "cat",
+    "ai cat",
+    "sphynx cat",
+    "cold monday",
+    "winter outfit",
+    "funny cat",
+    "cat meme",
+    "cozy cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#스핑크스",
+    "#월요일",
+    "#cat",
+    "#sphynx",
+    "#catmemes",
+    "#겨울출근룩"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic hairless Sphynx cat with smooth warm peach-pink skin, soft grey patches on its back and tail, wrinkly forehead, very large upright ears and big bright green almond eyes, sitting upright on a soft beige doormat in a bright minimal entryway next to a tall frosted glass window, delicate white frost on the glass, a cold pale blue winter morning with a few snowflakes drifting outside, plain white walls and light wooden floor, the whole cat fully in frame and centered, vertical composition",
+     "motion": "From the very first frame the hairless Sphynx cat gives a small fast shiver, its big ears twitch, it lifts one front paw off the cold doormat and holds it up, then looks from the frosty window back toward the camera with wide unimpressed green eyes and slowly sets the paw down. Snowflakes drift past outside the frosted glass. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same hairless Sphynx cat with the same fur pattern, face and eye color: smooth peach-pink skin with soft grey patches, wrinkly forehead, very large ears and big bright green eyes. Now the same cat sits on the same beige doormat in the same entryway, bundled up for the cold: a chunky cream knitted sweater, a very long thick red knitted scarf wrapped around its neck many times so it looks round and puffy, and a small cream knitted beanie with a pom-pom sitting between its big ears, only its face, ears, paws and tail showing, looking proud and ready. The frosted window and snowy morning remain beside it. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the bundled-up Sphynx cat sways proudly side to side to the beat, its big ears wiggle and the pom-pom on its knitted beanie bobs, it blinks slowly with a satisfied look and gives one small happy paw tap on the doormat. The scarf ends sway gently and snowflakes drift outside the frosted window. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Mid-November brings the first sub-zero mornings in Korea and much of the northern hemisphere, and this week's cat-meme roundups are full of cozy, early-holiday-season and Monday-morning cat jokes.",
+    "pattern": "relatable 'Me vs. the weather' meme: shivering reality beat, then the over-the-top bundled-up punchline from the same cat (the hairless cat makes the joke instant)",
+    "evidence": [
+     {
+      "title": "26 Fabulous Festive Cat Memes to Welcome the Holiday Season Early (November 16, 2026) - I Can Has Cheezburger?",
+      "url": "https://cheezburger.com/47350021/26-fabulous-festive-cat-memes-to-welcome-the-holiday-season-early-november-16-2026"
+     },
+     {
+      "title": "A Meowgical Batch of Morning Cat Memes to Warm Up the Week - I Can Has Cheezburger?",
+      "url": "https://cheezburger.com/47311109/a-meowgical-batch-of-morning-cat-memes-to-warm-up-the-week"
+     },
+     {
+      "title": "A Gust of November Cat Memes For Mindful Misty Monday Mornings - I Can Has Cheezburger?",
+      "url": "https://cheezburger.com/47267333/a-gust-of-november-cat-memes-for-mindful-misty-monday-mornings"
+     }
+    ]
+   },
+   "id": "m261116c",
+   "format": "meme",
+   "engine": "14b",
+   "seed": 86488,
+   "tease": true
+  }
+ ]
+}

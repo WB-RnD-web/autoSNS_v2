@@ -1,0 +1,70 @@
+{
+ "date": "2026-11-24",
+ "concepts": [
+  {
+   "slug": "tiramisu-pick-me-up-kitten-wakes-up",
+   "track": "merry-go.mp3",
+   "caption": "Tiramisu means 'pick me up'...",
+   "title": "Tiramisu Means 'Pick Me Up.' One Square Took It Literally ☕🐱",
+   "en_line": "We cut the tiramisu into twelve squares, and one of them woke up and wanted to be held.",
+   "ko_line": "티라미수 뜻이 '나를 들어올려줘'래… 진심이었네 ☕",
+   "tags": [
+    "cat",
+    "ai cat",
+    "kitten",
+    "tiramisu",
+    "food turns into kitten",
+    "cute kitten",
+    "dessert",
+    "cozy winter"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#티라미수",
+    "#아기고양이",
+    "#cat",
+    "#kitten",
+    "#tiramisu",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic cozy close-up from a slightly high angle, vertical composition, of a rectangular white ceramic baking dish of homemade tiramisu cut into twelve neat squares on a dark walnut kitchen table. The cut edges show soft layers of coffee-soaked ladyfinger sponge and creamy white mascarpone, and the tops have a thick velvety dusting of cocoa powder. One square in the front center row has two tiny triangular kitten ears covered in cocoa dust poking up from its top, and a thin cocoa-brown tail tip curled along its side. A small white espresso cup sits beside the dish, and warm golden fairy lights glow softly in the blurred background on a winter evening. The whole dish is fully in frame and the eared square is clearly visible in the center.",
+     "motion": "From the very first frame the two tiny cocoa-dusted ears on the front center tiramisu square twitch and flick, and the little tail tip curls and uncurls once, shaking a light puff of cocoa dust into the air. The other squares stay still. The warm fairy lights twinkle softly in the background, and a thin wisp of steam rises from the espresso cup. The dish stays fully in frame. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "swish"
+     ],
+     "beat": "the tiny cocoa-dusted ears flick and a puff of cocoa dust rises"
+    },
+    {
+     "edit": "Keep exactly the same tiny tiramisu-square kitten from shot 1 with the same fur pattern, face and eye color. Keep the same white baking dish, the other tiramisu squares, the walnut table, the espresso cup and the warm fairy lights. The front center square with the ears is now a tiny curled-up kitten in exactly the same spot and the same size as the square. Its fur looks like tiramisu: a soft cocoa-brown dusted head and back, a creamy white mascarpone-coloured chest, belly and paws, and faint golden-tan ladyfinger-coloured stripes along its sides. It has two tiny cocoa-dusted ears, a thin cocoa-brown tail curled around its body, and big round amber-brown eyes half open as it wakes up. Its chin rests on the edge of the dish and its mouth is closed. The kitten is fully in frame and clearly visible. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the tiny tiramisu kitten lifts its head from the dish, blinks its amber-brown eyes slowly, and reaches one tiny front paw up toward the camera as if asking to be picked up, then gently taps the paw back down on the edge of the dish. A light puff of cocoa dust drifts off its ears. The kitten stays curled in its spot in the dish with its mouth closed, fully in frame, with four normal legs. The fairy lights twinkle softly behind it. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.6,
+     "sfx": [
+      "meow",
+      "slap"
+     ],
+     "beat": "the kitten reaches one tiny paw up toward the camera, then taps it back down on the dish",
+     "hit": true,
+     "caption": "He took it literally"
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Tiramisu is the flavour of the year: IFF ranked it the No. 1 flavour trend in North America for 2026, and bakeries everywhere carry their own version. It's a popular dessert to make ahead for the holidays, and its name literally means 'pick me up', which gives an instant wordplay hook.",
+    "pattern": "spot-the-kitten morph: a tray of real food with only a tiny hint (ears and a tail tip) on one piece, then that piece wakes up as a kitten made of the food. The punchline plays on the food's name ('pick me up' becomes the kitten reaching up to be held).",
+    "evidence": [
+     {
+      "title": "This Classic Italian Dessert Inspired A Big New Flavor Trend In 2026 - Chowhound",
+      "url": "https://www.chowhound.com/2298096/classic-italian-dessert-inspired-a-big-new-flavor-trend-in-2026/"
+     }
+    ]
+   },
+   "id": "m261124",
+   "format": "morph",
+   "engine": "14b",
+   "seed": 38549,
+   "tease": false
+  }
+ ]
+}

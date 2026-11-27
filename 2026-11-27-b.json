@@ -1,0 +1,82 @@
+{
+ "date": "2026-11-27",
+ "concepts": [
+  {
+   "slug": "too-full-then-pie-seal-point-ragdoll",
+   "track": "monkeys-spinning-monkeys.mp3",
+   "caption": "Me: never eating again",
+   "title": "Too Full to Move. Then Someone Said 'Pie' 🥧🐱",
+   "en_line": "He swore he was done eating forever, and forever lasted until the pie came out.",
+   "ko_line": "다신 안 먹는다더니… 파이는 못 참지 🥧",
+   "tags": [
+    "cat",
+    "ai cat",
+    "ragdoll cat",
+    "thanksgiving",
+    "food coma",
+    "funny cat",
+    "cat meme",
+    "pumpkin pie",
+    "leftovers"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#추수감사절",
+    "#랙돌",
+    "#cat",
+    "#foodcoma",
+    "#catmemes",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical composition, eye-level full-body shot of a chubby, round-bellied adult seal-point Ragdoll cat with a long, silky cream-colored body coat, a dark seal-brown face mask, dark brown ears and fluffy dark brown tail, white mitted front paws and bright sapphire-blue eyes. He sits slumped and heavy-lidded on a soft beige sofa cushion with a red-and-cream plaid blanket draped behind him, in a cozy living room with soft late-afternoon autumn light and a warm, blurred background of glowing lamps. Beside him on the cushion is a small wooden tray holding an empty white dessert plate with a few pastry crumbs. The whole cat is clearly visible and fully in frame.",
+     "motion": "Right from the first frame the chubby seal-point Ragdoll cat flops over sideways onto the soft sofa cushion, landing gently on his side with his round fluffy belly toward the camera, his white mitted paws relaxed. He lets out a slow, heavy blink and gives his belly one lazy little pat with a front paw, his tail swishing slowly once. Warm lamp light glows softly in the background. The cat stays fully in frame with four normal legs and his mouth closed. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "thud"
+     ],
+     "beat": "the cat flops onto his side on the sofa cushion"
+    },
+    {
+     "edit": "Keep exactly the same chubby seal-point Ragdoll cat with the same fur pattern, face and eye color. He now sits upright and alert on the same beige sofa cushion with the red-and-cream plaid blanket behind him, ears perked straight up and big wide sapphire-blue eyes. On the small wooden tray right in front of him there is now a white dessert plate holding one fresh slice of pumpkin pie topped with a swirl of whipped cream. He leans toward the pie with one white mitted front paw lifted just above the plate edge. Same cozy living room and warm late-afternoon light. Photorealistic, vertical composition.",
+     "motion": "Right from the first frame the seal-point Ragdoll cat leans forward with his ears perked and gently taps the edge of the pie plate with his lifted white front paw, then pulls the paw back, tilts his head and stares at the pumpkin pie slice with wide, delighted eyes and a quick happy blink, his fluffy tail swaying behind him. Warm lamp light glows softly in the background. The cat stays fully in frame with four normal legs and his mouth closed. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "slap",
+      "meow"
+     ],
+     "beat": "the cat's paw taps the edge of the pie plate",
+     "hit": true,
+     "caption": "...ok, one slice"
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "US Thanksgiving was yesterday (Nov 26, 2026), and today feeds are full of food-coma and leftovers memes, like the 'eat yourself into a food coma, then nap' jokes in this week's Thanksgiving meme roundups. A 'paws at you' reaching-paw meme has also been going around since late October.",
+    "pattern": "a 'never again' promise followed by an instant reversal: the cat flops over full, then pops upright and reaches a paw toward a slice of pie. The caption sets up the promise, the shot 2 punchline breaks it, and the paw tap is the hit",
+    "evidence": [
+     {
+      "title": "25+ Memes for Spending Thanksgiving in Your Hometown (November 25, 2026) - Memebase",
+      "url": "https://cheezburger.com/47476997/25-memes-for-spending-thanksgiving-in-your-hometown-november-25-2026"
+     },
+     {
+      "title": "31 Memes Pausing GTA VI to Eat Thanksgiving Dinner (November 26, 2026) - Memebase",
+      "url": "https://cheezburger.com/47488773/31-memes-pausing-gta-vi-to-eat-thanksgiving-dinner-november-26-2026"
+     },
+     {
+      "title": "40 Hilarious Thanksgiving Memes That You'll Gobble Up",
+      "url": "https://www.yahoo.com/lifestyle/articles/50-thanksgiving-memes-gobble-231701300.html"
+     },
+     {
+      "title": "Snow Leopard Paws at You Meme Delights Online Communities / X",
+      "url": "https://x.com/i/trending/2122122272005923098"
+     }
+    ]
+   },
+   "id": "m261127b",
+   "format": "meme",
+   "engine": "14b",
+   "seed": 74298,
+   "tease": false
+  }
+ ]
+}

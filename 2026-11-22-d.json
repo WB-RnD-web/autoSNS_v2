@@ -1,0 +1,70 @@
+{
+ "date": "2026-11-22",
+ "concepts": [
+  {
+   "slug": "door-opened-cold-gust-neva-masquerade",
+   "track": "monkeys-spinning-monkeys.mp3",
+   "caption": "Someone opened the door in November",
+   "title": "Finally Got Warm by the Fire. Then Someone Opened the Door 🥶🐱",
+   "en_line": "He spent forty minutes getting perfectly warm, and it took one second to lose it all.",
+   "ko_line": "불 앞에서 겨우 따뜻해졌는데 누가 문 열었냐옹 🥶",
+   "tags": [
+    "cat",
+    "ai cat",
+    "funny cat",
+    "cat meme",
+    "winter",
+    "cold weather",
+    "fireplace",
+    "cozy cat",
+    "relatable"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#겨울",
+    "#집사",
+    "#cat",
+    "#catmemes",
+    "#winter",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical composition, eye-level full-body shot of a fluffy semi-longhaired Neva Masquerade cat with a cream-white body, dark seal-brown points on its face mask, ears, paws and bushy tail, and bright sapphire blue eyes, sitting upright on a chunky cream knitted rug right in front of a glowing stone fireplace with a crackling orange fire, both front paws held out toward the warmth, eyes half closed in bliss, cozy dim living room with warm golden firelight on its fur, the whole cat clearly visible and fully in frame",
+     "motion": "From the very first frame the fluffy Neva Masquerade cat is already holding its front paws out toward the fire and gently kneading the air, then closes its eyes in one slow happy blink and sways its body slightly side to side with contentment, mouth closed. The fire flickers and crackles, warm light dances on its fur. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "meow"
+     ],
+     "beat": "the cat closes its eyes in a slow happy blink by the fire"
+    },
+    {
+     "edit": "Keep exactly the same fluffy semi-longhaired Neva Masquerade cat with the same fur pattern, face and eye color. Same cozy fireplace and knitted rug, but now a strong icy winter wind is blowing through the room from the left: swirling snowflakes fly across the scene, the cat's long fur is blown sideways and puffed up like a windswept cloud, its ears pushed back, eyes squinting, front paws planted firmly on the rug, the fire flames leaning to one side, cold blue daylight mixing with the warm firelight, the whole cat clearly visible and fully in frame. Photorealistic, vertical composition.",
+     "motion": "From the very first frame a strong cold gust is blowing snowflakes across the room; the cat's long fluffy fur ripples and streams sideways in the wind, it squints, braces its front paws on the rug and leans into the wind, whiskers fluttering, mouth closed. Snowflakes keep swirling past and the fire flames bend in the draft. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.3,
+     "sfx": [
+      "whoosh"
+     ],
+     "beat": "the cold gust hits and the cat's fur blows sideways",
+     "hit": true,
+     "caption": "CLOSE THE DOOR!!"
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Late-November cold snaps and the early start of holiday season cat memes (Cheezburger's Nov 16 festive roundup) make 'cozy indoors vs. winter air' a very relatable moment this week, especially on a lazy Sunday at home.",
+    "pattern": "two-beat relatable meme: peak coziness in the first second, then the instant punchline (icy draft, windswept fluff) with a shouted caption swap",
+    "evidence": [
+     {
+      "title": "26 Fabulous Festive Cat Memes to Welcome the Holiday Season Early (November 16, 2026) - I Can Has Cheezburger?",
+      "url": "https://cheezburger.com/47350021/26-fabulous-festive-cat-memes-to-welcome-the-holiday-season-early-november-16-2026"
+     }
+    ]
+   },
+   "id": "m261122d",
+   "format": "meme",
+   "engine": "14b",
+   "seed": 95816,
+   "tease": false
+  }
+ ]
+}

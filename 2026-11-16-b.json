@@ -1,0 +1,66 @@
+{
+ "date": "2026-11-16",
+ "concepts": [
+  {
+   "slug": "coin-pusher-jackpot-norwegian-forest",
+   "track": "sneaky-snitch.mp3",
+   "caption": "This coin has been hanging for an hour",
+   "title": "Coin Pusher Finally Pushed. He Was Ready 🪙🐱",
+   "en_line": "One more push and the whole golden edge was going to fall, and he knew it.",
+   "ko_line": "한 시간 버틴 동전, 드디어 떨어짐 🪙",
+   "tags": [
+    "cat",
+    "ai cat",
+    "coin pusher",
+    "arcade cat",
+    "funny cat",
+    "cute cat",
+    "norwegian forest cat",
+    "jackpot"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#오락실",
+    "#코인푸셔",
+    "#cat",
+    "#aicat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic close-up of a large fluffy Norwegian Forest Cat with a long shaggy brown mackerel tabby coat, bold black tiger stripes on the sides, a bright white chest bib and white front paws, a thick bushy striped tail, tufted ears and big round green eyes. The cat sits upright on a padded red arcade stool in front of a plain chrome-and-glass coin pusher cabinet, nose almost touching the glass, one white front paw resting on the glass. Behind the glass, a sliding shelf holds a huge stack of shiny plain gold tokens with no markings, many tokens hanging right over the edge. Warm golden bulbs glow around the cabinet, soft blurred colorful arcade lights in the dark background. The whole cat clearly visible and fully in frame, vertical composition",
+     "motion": "From the very first frame the fluffy brown tabby Norwegian Forest Cat taps the glass with its white front paw while its green eyes follow the sliding shelf moving forward and back. Its head bobs gently in time with the shelf, its ears twitch forward, its bushy tail swishes behind the stool, and the gold tokens at the edge wobble without falling. The golden bulbs blink softly around the cabinet. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same large fluffy Norwegian Forest Cat with the long shaggy brown mackerel tabby coat, white chest bib, white front paws, tufted ears and the same fur pattern, face and eye color. Show the win moment: the cat now sits proudly on top of a big shiny pile of plain gold tokens with no markings that spilled out into the wide metal tray at the bottom of the same chrome-and-glass coin pusher cabinet, both white front paws resting on the tokens, eyes wide and bright, mouth closed, chest puffed up. The cabinet bulbs glow brighter gold, soft blurred colorful arcade lights in the background. The whole cat clearly visible and fully in frame. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the fluffy brown tabby Norwegian Forest Cat pats the gold token pile with one white front paw, making a few tokens slide and clink down the pile, then lifts its chin proudly and slowly blinks its green eyes while its bushy tail sways happily. The cabinet bulbs flash in a cheerful pattern. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "AI cat accounts that reuse one simple, repeatable format are getting huge reach right now (one hit 47M views in 24 hours this week), and November Shorts roundups still list animal content as the most reliable evergreen niche. Coin pusher 'will it finally drop' arcade clips are an established satisfying genre. Our cat-and-arcade spin hasn't been done yet (we've already used the claw machine, hoops, air hockey, ring toss and whack-a-mole).",
+    "pattern": "suspense hook (coins hanging over the edge, cat glued to the glass) then a satisfying jackpot payoff with the cat sitting proudly on the winnings",
+    "evidence": [
+     {
+      "title": "AI Cat Account Gets 47M Views in 24 Hours",
+      "url": "https://www.socialgrowthengineers.com/ai-cat-account-gets-47m-views-in-24-hours"
+     },
+     {
+      "title": "YouTube Shorts Trends November 2026: What's Actually Going Viral Right Now",
+      "url": "https://www.anijam.ai/blog/youtube-shorts-trends/"
+     },
+     {
+      "title": "This NEW Coin Pusher Is Unlike Anything You've Seen! - YouTube",
+      "url": "https://www.youtube.com/watch?v=UDriYOnalmw"
+     }
+    ]
+   },
+   "id": "m261116b",
+   "format": "game",
+   "engine": "14b",
+   "seed": 54090,
+   "tease": true
+  }
+ ]
+}

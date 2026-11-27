@@ -1,0 +1,69 @@
+{
+ "date": "2026-11-21",
+ "concepts": [
+  {
+   "slug": "holiday-baking-flour-paw-black-american-shorthair",
+   "track": "run-amok.mp3",
+   "caption": "Holiday baking: how it started",
+   "title": "Holiday Baking Started Strong. Then He Touched the Flour 🍪🐱",
+   "en_line": "Day one of holiday baking, and the black cat is now mostly a white cat.",
+   "ko_line": "연말 홈베이킹 시작했는데 검은 고양이가 흰 고양이 됨 🍪",
+   "tags": [
+    "cat",
+    "ai cat",
+    "funny cat",
+    "black cat",
+    "holiday baking",
+    "flour cat",
+    "christmas cookies",
+    "cat meme"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#홈베이킹",
+    "#검은고양이",
+    "#cat",
+    "#funnycat",
+    "#holidaybaking",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical composition, eye-level full-body shot of a sleek solid jet-black American Shorthair cat with a short glossy coat, a round face and round bright amber-gold eyes, sitting upright on a rustic wooden kitchen table right beside a wide cream ceramic mixing bowl heaped with soft white flour, one front paw raised just above the flour, a wooden rolling pin and a few star-shaped metal cookie cutters on the table, a small sprig of pine, warm cozy kitchen light with soft golden bokeh of warm fairy lights in the background, the cat fully in frame and clearly visible",
+     "motion": "From the very first frame the black cat's raised front paw pats down into the bowl of flour and a soft puff of white flour rises around the paw; the cat pulls the paw back, looks at its white-dusted paw with wide amber eyes and does a quick curious head tilt. Fairy lights twinkle softly in the background. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "slap"
+     ],
+     "beat": "the paw pats down into the flour and a white puff rises",
+     "hit": true
+    },
+    {
+     "edit": "Keep exactly the same sleek solid jet-black American Shorthair cat with the same fur pattern, face and eye color. The cat now sits in the same spot on the rustic wooden kitchen table, its face, ears, whiskers, chest and both front paws thickly dusted with white flour so it looks half white, small white paw prints scattered across the wooden table, flour sprinkled around the mixing bowl, rolling pin and star cookie cutters, the cat looking straight at the camera with wide amber-gold eyes and a calm, proud expression. Same cozy kitchen, warm light and soft fairy-light bokeh. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the flour-covered cat gives a small head shake and a soft little cloud of white flour puffs off its ears and drifts down through the warm light; then it blinks slowly at the camera and sits up proudly with its chest out. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5,
+     "sfx": [
+      "swish"
+     ],
+     "beat": "the cat shakes its head and a little cloud of flour puffs off its ears",
+     "caption": "How it's going"
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Festive cat meme roundups are already welcoming the holiday season early (mid-November 2026), and late November is when holiday cookie baking starts. It's also Saturday (Caturday), a big day for cosy cat memes.",
+    "pattern": "'How it started vs. how it's going' meme: a neat setup, one small paw tap, then a messy punchline where a black cat turns half white",
+    "evidence": [
+     {
+      "title": "26 Fabulous Festive Cat Memes to Welcome the Holiday Season Early (November 16, 2026) - I Can Has Cheezburger?",
+      "url": "https://cheezburger.com/47350021/26-fabulous-festive-cat-memes-to-welcome-the-holiday-season-early-november-16-2026"
+     }
+    ]
+   },
+   "id": "m261121b",
+   "format": "meme",
+   "engine": "14b",
+   "seed": 75026,
+   "tease": true
+  }
+ ]
+}

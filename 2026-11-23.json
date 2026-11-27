@@ -1,0 +1,63 @@
+{
+ "date": "2026-11-23",
+ "concepts": [
+  {
+   "slug": "cream-puff-kitten-wakes-up",
+   "track": "fluffing-a-duck.mp3",
+   "caption": "Spot the kitten before it wakes",
+   "title": "Spot the Kitten Before It Wakes Up: Cream Puff Edition 👀🐱",
+   "en_line": "Nine cream puffs were cooling on the rack, and one of them was only pretending.",
+   "ko_line": "슈크림 식히는 중인데 하나가 기지개 켬 🥹",
+   "tags": [
+    "cat",
+    "ai cat",
+    "kitten",
+    "cream puff",
+    "holiday baking",
+    "cute kitten",
+    "food to kitten",
+    "cozy kitchen"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#아기고양이",
+    "#슈크림",
+    "#cat",
+    "#kitten",
+    "#aicat"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic cozy close-up at eye level, vertical composition, of a round wire cooling rack on a warm honey-colored wooden kitchen counter holding nine round golden-brown cream puffs with crackly crisp tops, lightly dusted with powdered sugar, soft warm afternoon window light, a gently blurred warm kitchen background with a small white ceramic bowl of whipped cream. The cream puff at the front center of the rack has two tiny fluffy cream-and-light-golden kitten ears with soft pink insides poking out of its top and a tiny fluffy golden tail tip with faint darker golden stripes curled along its side. All the cream puffs are fully in frame and clearly visible, soft wisps of steam rising from the warm pastries.",
+     "motion": "From the very first frame the two tiny kitten ears on the front center cream puff twitch quickly, then the little golden tail tip flicks once and curls back, and the whole puff gives a tiny wiggle. Soft wisps of steam rise from the warm cream puffs and a few specks of powdered sugar drift down. The hidden kitten stays fully in frame with four normal legs tucked out of sight inside the puff, nothing else changes. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "swish"
+     ],
+     "beat": "the two tiny ears on the front cream puff twitch"
+    },
+    {
+     "edit": "Keep exactly the same tiny fluffy cream-and-light-golden tabby kitten with the same fur pattern, face and eye color. The front center cream puff on the cooling rack is now a tiny round kitten curled up in exactly the same spot and at the same size, its fluffy fur looking just like a cream puff: golden-brown crackle-textured fur with faint darker golden stripes on its back and head, soft pale cream fur on its chest and tiny paws, lightly dusted with powdered sugar, two tiny ears with pink insides, a small pink nose, sleepy half-open amber eyes and its little golden tail tip curled around its body. The other eight cream puffs, the wire rack, the wooden counter, the bowl of whipped cream and the warm window light stay the same. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the tiny cream-puff kitten lifts its head, blinks its amber eyes fully awake, stretches one tiny front paw forward onto the wire rack and gives a small curious head tilt, with its mouth gently closed, while a soft puff of powdered sugar drifts off its fur. Steam keeps rising softly from the other cream puffs. The kitten stays fully in frame with four normal legs, sitting in the same spot on the rack. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.6,
+     "sfx": [
+      "meow"
+     ],
+     "beat": "the kitten opens its amber eyes and lifts its head",
+     "hit": true,
+     "caption": "Good morning, cream puff"
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Late November is the start of holiday baking season, and cosy bakes fresh from the oven feel right for the week. The searches showed no current cat or food trend that fit a morph today, so this is an evergreen idea.",
+    "pattern": "a 'spot the hidden one' challenge in the first second, with the ears already twitching, then the reveal: one pastry is a sleepy kitten whose fur looks like the food, waking up in the same spot",
+    "evidence": []
+   },
+   "id": "m261123",
+   "format": "morph",
+   "engine": "14b",
+   "seed": 89544,
+   "tease": false
+  }
+ ]
+}

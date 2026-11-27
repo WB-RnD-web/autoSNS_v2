@@ -1,0 +1,78 @@
+{
+ "date": "2026-11-26",
+ "concepts": [
+  {
+   "slug": "turkey-trot-arcade-racer-flame-point",
+   "track": "pixel-peeker-polka-faster.mp3",
+   "caption": "Skipped the Turkey Trot for this race",
+   "title": "Skipped the Turkey Trot. Won the Arcade Race Instead 🏁🐱",
+   "en_line": "Why run a Thanksgiving 5K when you can win the race sitting down?",
+   "ko_line": "땡스기빙 마라톤 대신 오락실 레이싱 1등 한 냥이 🏁",
+   "tags": [
+    "cat",
+    "ai cat",
+    "arcade cat",
+    "racing game",
+    "thanksgiving",
+    "turkey trot",
+    "flame point cat",
+    "funny cat",
+    "cute cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#오락실",
+    "#냥스타그램",
+    "#cat",
+    "#aicat",
+    "#thanksgiving",
+    "#funnycat"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical composition, eye-level full-body shot of a slender adult flame-point colorpoint shorthair cat with a smooth creamy-white body, soft orange-red ears, face mask, paws and ringed orange tail, and bright sapphire-blue eyes, sitting upright in the padded red bucket seat of a retro arcade racing cabinet with both front paws on a chunky round black steering wheel. The cabinet glows with red, blue and purple neon light strips, its display is a soft blurred glow of colourful light, and the dim cosy arcade behind is full of warm bokeh lights. The whole cat is clearly visible from ears to tail.",
+     "motion": "From the very first frame the flame-point cat steers hard, turning the steering wheel left then right with both front paws and leaning its whole body into each turn, ears pointed forward in focus, tail swishing. The neon light strips pulse and flicker around the cabinet. The cat stays seated and fully in frame with four normal legs, mouth closed. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "swish"
+     ],
+     "beat": "the cat yanks the steering wheel hard to one side and leans into the turn"
+    },
+    {
+     "edit": "Keep exactly the same slender flame-point colorpoint shorthair cat with the same fur pattern, face and eye color. Show the finish-line win: the cat now stands on the red racing seat with both front paws resting on top of the steering wheel, chest puffed out, eyes wide and proud. The cabinet's neon strips glow bright gold, a black-and-white checkered pattern lights up on the cabinet's side panel, and warm golden light washes over the cat in the same cosy arcade. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the flame-point cat slaps the top of the steering wheel with one front paw in triumph, then sits up tall with its chest puffed out and gives a slow proud blink. Golden lights flash and pulse around the cabinet. The cat stays fully in frame with four normal legs, mouth closed. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "slap",
+      "bell"
+     ],
+     "beat": "the paw slaps down on top of the steering wheel and the golden lights flash",
+     "hit": true,
+     "caption": "First place. Obviously."
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Today is US Thanksgiving (Nov 26, 2026). Thanksgiving cat memes and clips are everywhere this week, including a viral video where a cat in a turkey hat delivers a deadpan punchline. Turkey Trot races run this morning, so a cat skipping the race to win an arcade one is a timely joke that still makes sense to viewers who don't know the tradition.",
+    "pattern": "holiday expectation vs. the cat's own version: high-energy paw action with flashing arcade lights from the very first frame (like our ★ pinball Short), then a confident win beat with a dry punchline caption",
+    "evidence": [
+     {
+      "title": "Man Pretends To Ruin His Practice Thanksgiving Turkey, And His Black Cat Makes The Perfect Punchline",
+      "url": "https://trending.knowyourmeme.com/editorials/man-pretends-to-ruin-his-practice-thanksgiving-turkey-and-his-black-cat-makes-the-perfect-punchline"
+     },
+     {
+      "title": "25+ Memes Gearing Up for Thanksgiving (November 23, 2026)",
+      "url": "https://cheezburger.com/47457797/25-memes-gearing-up-for-thanksgiving-november-23-2026"
+     },
+     {
+      "title": "Thanksgiving cat memes for cat pawrents wanting to celebrate the Holidays with their furbabies",
+      "url": "https://cheezburger.com/47389701/thanksgiving-cat-memes-for-cat-pawrents-wanting-to-celebrate-the-holidays-with-their-furbabies"
+     }
+    ]
+   },
+   "id": "m261126b",
+   "format": "game",
+   "engine": "14b",
+   "seed": 19115,
+   "tease": false
+  }
+ ]
+}

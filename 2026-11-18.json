@@ -1,0 +1,66 @@
+{
+ "date": "2026-11-18",
+ "concepts": [
+  {
+   "slug": "too-cool-to-dance-tsundere-himalayan",
+   "track": "funkorama.mp3",
+   "caption": "Says she doesn't dance. Hmph.",
+   "title": "Too Cool to Dance… for Exactly Two Seconds 😤🐱",
+   "en_line": "She crossed her paws, turned away with a hmph, and lasted exactly two seconds before the funk won.",
+   "ko_line": "안 춘다더니 2초 만에 무너진 츤데레 냥이 😤",
+   "tags": [
+    "cat",
+    "ai cat",
+    "dancing cat",
+    "tsundere cat",
+    "cat dance",
+    "funny cat",
+    "himalayan cat",
+    "cute cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#츤데레",
+    "#cat",
+    "#catdance",
+    "#댄스챌린지",
+    "#aicat"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical full-body shot of a fluffy seal-point Himalayan cat with a long thick cream-white coat, dark seal-brown face mask, ears, paws and plume tail, a round flat face with chubby cheeks and deep sapphire-blue eyes, standing upright on its hind legs in the middle of a cozy living-room house party, front paws crossed over its fluffy chest, chin lifted and head turned slightly away with a proud pouty look, a small mirror ball hanging above casting pink and violet light dots, warm fairy lights and plush cushions softly blurred in the background, the cat fully in frame and sharply in focus",
+     "motion": "From the very first frame the seal-point Himalayan cat, standing on its hind legs with front paws crossed over its chest, stomps one hind paw twice to the beat, lifts its chin and turns its head to the side with half-closed eyes in a proud pouty hmph, while its fluffy tail flicks side to side and one ear twitches as it peeks back toward the music. Pink and violet mirror ball light dots drift across the room and the fairy lights twinkle. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same fluffy seal-point Himalayan cat with the same fur pattern, face and eye color. Same cozy living-room house party with the mirror ball and fairy lights: the cat has given in to the music and now stands upright on its hind legs facing the camera, both front paws raised high above its head, body leaning to one side mid-groove, fluffy tail swinging, bright happy wide eyes and mouth closed in a content little smile. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the seal-point Himalayan cat dances on its hind legs, swaying its hips side to side to the beat while pumping both raised front paws up and down, bobbing its head and doing small happy hops in place, fluffy tail swinging along. Pink and violet mirror ball light dots sweep across the room and the fairy lights twinkle. The cat stays fully in frame with four normal legs, mouth closed. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "The tsundere hmph stomp bit (cross your arms, chin up, stomp, then cave and dance) is spreading on TikTok this November, and one-photo AI versions with pets are taking off now.",
+    "pattern": "tsundere flip: proud crossed-paw hmph and foot stomp in shot 1, then she caves and goes full dance in shot 2; the caption sets up the denial, the beat breaks it",
+    "evidence": [
+     {
+      "title": "Tsundere Dance Trend: Do the Natsuki Stomp From 1 Photo",
+      "url": "https://www.atlascloud.ai/blog/tips/tsundere-dance-trend"
+     },
+     {
+      "title": "Tsundere Trend AI: Do the Natsuki Hmph Stomp From a Photo",
+      "url": "https://www.makeviral.ai/templates/natsuki-stomp-ai-trend"
+     },
+     {
+      "title": "Hmph Tsundere Compilation",
+      "url": "https://www.tiktok.com/discover/hmph-tsundere-compilation?lang=en"
+     }
+    ]
+   },
+   "id": "m261118",
+   "format": "dance",
+   "engine": "14b",
+   "seed": 90400,
+   "tease": false
+  }
+ ]
+}

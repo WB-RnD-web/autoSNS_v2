@@ -1,0 +1,74 @@
+{
+ "date": "2026-11-23",
+ "concepts": [
+  {
+   "slug": "snowy-lane-dip-point-dance-red-tabby-scottish-straight",
+   "track": "kool-kats.mp3",
+   "caption": "Snow fell. She dipped.",
+   "title": "Dip Low, Hop Twice, Point at the Snow ❄️🐱",
+   "en_line": "The snow started falling and she had a dance ready for it.",
+   "ko_line": "눈 오는 밤엔 딥 한 번 해줘야지 ❄️",
+   "tags": [
+    "cat",
+    "ai cat",
+    "dancing cat",
+    "cat dance",
+    "snow night",
+    "winter",
+    "dip dance",
+    "orange cat",
+    "cute cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#눈오는밤",
+    "#댄스챌린지",
+    "#cat",
+    "#catdance",
+    "#aicat"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical composition, eye-level full-body shot of a medium-sized plush red mackerel tabby Scottish Straight cat with upright ears, a round face, bright orange coat with darker red stripes, a white chest bib and four white paws, and round copper-amber eyes, standing upright on its hind legs with both front paws raised to shoulder height like a dancer, in the middle of a quiet snowy cobblestone lane at night, warm golden lanterns glowing along the old stone walls, soft big snowflakes falling, a thin fresh layer of white snow on the ground, the cat fully in frame and clearly lit in the centre",
+     "motion": "From the very first frame the red tabby cat is already dancing on its hind legs: she dips low on the beat with front paws raised, then does a small hop to the left and a small hop to the right, swaying her head with each hop, ears perked. Big soft snowflakes keep falling and the warm lanterns glow. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "swish"
+     ],
+     "beat": "the cat dips low on her hind legs and hops to the side"
+    },
+    {
+     "edit": "Keep exactly the same red mackerel tabby Scottish Straight cat with the same fur pattern, face and eye color. Same snowy cobblestone lane at night with the warm golden lanterns: the cat now stands tall on her hind legs in a proud final pose, one front paw pointing straight up at the falling snow and the other paw resting on her chest, chin raised, eyes bright, snowflakes swirling around her in the lantern light. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the red tabby cat is in a low dip, then rises quickly on her hind legs and shoots one front paw straight up to point at the falling snow, holds the proud pose with her chin raised and gives one slow blink. Snowflakes swirl and sparkle in the warm lantern light. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5,
+     "sfx": [
+      "whoosh",
+      "bell"
+     ],
+     "beat": "the cat's front paw shoots straight up to point at the falling snow",
+     "hit": true,
+     "caption": "Nailed the finish"
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "AI cat dance clips are one of the main cat formats online in November 2026. A snowy night-time kitten dance built around a dip, a hop and a point was posted on 15 November and is spreading as a template, and snow season is starting.",
+    "pattern": "Short, readable dance moves on the beat: dip low, hop side to side, then a big point pose to finish, all in a cosy snowy night scene. Our version is a solo red tabby on a lantern-lit lane, with no copied song, outfit or character.",
+    "evidence": [
+     {
+      "title": "AI Cat Dance: Make Your Cat Do the Viral Memes From 1 Photo",
+      "url": "https://www.atlascloud.ai/blog/tips/ai-cat-dance"
+     },
+     {
+      "title": "Dip On Em Dance AI: Do the Viral Duo Dance From 2 Photos",
+      "url": "https://www.makeviral.ai/templates/dip-on-em-dance-ai-trend"
+     }
+    ]
+   },
+   "id": "m261123d",
+   "format": "dance",
+   "engine": "14b",
+   "seed": 21483,
+   "tease": false
+  }
+ ]
+}

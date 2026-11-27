@@ -1,0 +1,52 @@
+{
+ "date": "2026-11-14",
+ "concepts": [
+  {
+   "slug": "whack-a-mole-four-paws-turkish-van",
+   "track": "pixel-peeker-polka-faster.mp3",
+   "caption": "Two paws? Too slow.",
+   "title": "Two Paws Were Too Slow, So He Used All Four 🐾🐱",
+   "en_line": "The moles had no chance once he brought all four paws to the game.",
+   "ko_line": "두 발로 안 되면 네 발로 두더지 잡기 🐾",
+   "tags": [
+    "cat",
+    "ai cat",
+    "whack a mole",
+    "arcade cat",
+    "turkish van cat",
+    "funny cat",
+    "cute cat",
+    "game cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#두더지게임",
+    "#오락실",
+    "#cat",
+    "#arcadecat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic Turkish Van cat with a semi-long soft chalk-white body coat, auburn-red patches on top of its head between the ears, a fluffy auburn-red tail with faint darker rings, a pink nose and bright amber eyes, crouching in focus on the front edge of a low tabletop whack-a-mole game with a plain glossy red-painted wooden cabinet and a flat board with nine round holes, three soft gray-brown plush mole toys with tiny pink noses poking up from three of the holes, one front paw lifted and ready, a cosy retro arcade behind with warm blurred neon glows and colourful round bulbs along the cabinet edge, the whole cat fully in frame and clearly visible, vertical composition",
+     "motion": "The Turkish Van cat crouches on the edge of the whack-a-mole board with its eyes locked on the nearest plush mole, wiggles its hips a little, then gently taps the plush mole on the head with one front paw, and the mole sinks a little into its hole. The other plush moles bob slightly up and down in their holes, and the round bulbs on the cabinet blink in a soft chasing pattern as the warm neon glows in the background. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same Turkish Van cat with the same fur pattern, face and eye color. Now the cat stands proudly in the middle of the same red whack-a-mole board with its legs spread wide, each of its four paws pressing down on a different soft gray-brown plush mole in four different holes, its chest puffed out, its auburn-red tail held high and its amber eyes half closed in a smug, victorious look. The same cosy retro arcade with warm blurred neon glows and colourful round bulbs along the cabinet edge, the whole cat fully in frame. Photorealistic, vertical composition.",
+     "motion": "The Turkish Van cat holds its proud four-paw pose on the whack-a-mole board and keeps each paw on its plush mole. It slowly tilts its head to one side, blinks slowly with a smug look, and gently sways its fluffy auburn-red tail to the beat. The round bulbs on the cabinet flash in a happy chasing pattern, and the warm neon lights behind it pulse softly. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Evergreen idea for a Saturday arcade outing. My searches found no current cat or arcade-game trend from the last 7-30 days that fit this format, so this uses the timeless 'cat outsmarts the game' joke.",
+    "pattern": "game setup and fail-to-win turn: shot 1 shows a focused hunter crouch and one slow paw tap, then shot 2 shows him using all four paws at once to win, with a smug victory pose for the payoff",
+    "evidence": []
+   },
+   "id": "m261114k",
+   "format": "game",
+   "engine": "14b",
+   "seed": 49430
+  }
+ ]
+}

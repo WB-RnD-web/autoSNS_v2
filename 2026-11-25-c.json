@@ -1,0 +1,78 @@
+{
+ "date": "2026-11-25",
+ "concepts": [
+  {
+   "slug": "tabletop-curling-one-push-bullseye-orange-bicolor",
+   "track": "pixel-peeker-polka-faster.mp3",
+   "caption": "Curling pro or one brain cell?",
+   "title": "Orange Cat Tried Tabletop Curling. One Push, Dead Center 🥌🐱",
+   "en_line": "One push and the stone stopped right where he wanted it, and he looked like he'd planned it all along.",
+   "ko_line": "주황 고양이 뇌세포 하나로 컬링 정중앙 성공 🥌",
+   "tags": [
+    "cat",
+    "ai cat",
+    "orange cat",
+    "tabletop curling",
+    "curling",
+    "funny cat",
+    "cute cat",
+    "cat games",
+    "winter"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#주황고양이",
+    "#컬링",
+    "#cat",
+    "#orangecat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical composition, eye-level full-body shot of a chunky shorthaired orange-and-white bicolor cat with a bright orange back, orange ears and orange tail, a pure white chest, white muzzle and four white paws, a pink nose and big round amber eyes. The cat crouches low on the near end of a long glossy honey-colored wooden tabletop curling table, both front paws resting on a small polished grey granite curling stone with a red handle. The table stretches away into the depth of the picture toward concentric blue, white and red circles painted at the far end. A cozy winter lodge game room behind it, with warm golden string lights and a window showing softly falling snow. The cat is fully in frame and clearly visible.",
+     "motion": "From the very first frame the orange-and-white cat is crouched low with its rear wiggling, ready to go, then pushes the curling stone forward with both front paws. The stone glides smoothly away down the shiny table toward the painted circles while the cat stays crouched in place, ears forward and eyes locked on the sliding stone. String lights twinkle softly and snow falls outside the window. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "whoosh"
+     ],
+     "beat": "both front paws shove the curling stone and it glides away down the table"
+    },
+    {
+     "edit": "Keep exactly the same chunky shorthaired orange-and-white bicolor cat with the same fur pattern, face and eye color. Move the cat to the far end of the same glossy wooden tabletop curling table: the cat now sits upright on the table right beside the concentric blue, white and red circles, and the small grey granite curling stone with the red handle rests exactly in the middle of the red center circle. The cat looks down at the stone with a calm, proud expression. Same cozy winter lodge game room with warm string lights and snow falling outside the window. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the orange-and-white cat looks down at the curling stone sitting in the center circle, lifts one white front paw and taps the top of the stone once, then raises its head and gives a slow proud blink, chest puffed out. The stone stays still in the center. String lights twinkle and snow drifts down outside the window. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.4,
+     "sfx": [
+      "slap",
+      "bell"
+     ],
+     "beat": "the white paw taps the curling stone resting in the center circle",
+     "hit": true,
+     "caption": "Dead center. Obviously."
+    }
+   ],
+   "cover_shot": 1,
+   "trend": {
+    "why_now": "With winter here and Thanksgiving week games, cosy game rooms are a seasonal mood. 'Orange cat with one brain cell' is still a popular cat-meme punchline. Our best game Short was the 'button masher' that won anyway, and this follows the same 'looks clueless, nails it' beat.",
+    "pattern": "skill-or-luck question hook → instant action (butt wiggle and shove) → smug win reveal with a paw tap",
+    "evidence": [
+     {
+      "title": "25 Funniest Cat Memes and Tweets for Feline Fanatics (November 2, 2026) - I Can Has Cheezburger?",
+      "url": "https://cheezburger.com/47270661/25-funniest-cat-memes-and-tweets-for-feline-fanatics-november-2-2026"
+     },
+     {
+      "title": "25 Funniest Feline Memes to Get You Warmed Up for the Week (November 17, 2026) - I Can Has Cheezburger?",
+      "url": "https://cheezburger.com/47415045/25-funniest-feline-memes-to-get-you-warmed-up-for-the-week-november-17-2026"
+     },
+     {
+      "title": "YouTube Shorts Trends November 2026: What's Actually Going Viral Right Now",
+      "url": "https://www.anijam.ai/blog/youtube-shorts-trends/"
+     }
+    ]
+   },
+   "id": "m261125c",
+   "format": "game",
+   "engine": "14b",
+   "seed": 96175,
+   "tease": false
+  }
+ ]
+}

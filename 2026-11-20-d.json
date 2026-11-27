@@ -1,0 +1,77 @@
+{
+ "date": "2026-11-20",
+ "concepts": [
+  {
+   "slug": "bubble-wrap-stomp-dance-cow-cat",
+   "track": "kool-kats.mp3",
+   "caption": "My package came. His dance floor did too",
+   "title": "My Package Came With Bubble Wrap. He Came With Moves 🫧🐱",
+   "en_line": "The package was for me, but the bubble wrap was clearly for him.",
+   "ko_line": "택배는 내 거, 뽁뽁이는 냥이 거 🫧",
+   "tags": [
+    "cat",
+    "ai cat",
+    "dancing cat",
+    "cat dance",
+    "bubble wrap",
+    "friday night",
+    "funny cat",
+    "cow cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#고양이댄스",
+    "#뽁뽁이",
+    "#불금",
+    "#cat",
+    "#catdance",
+    "#aicat"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical composition, eye-level full-body shot of a medium-sized short-coated cow-pattern domestic shorthair cat: mostly bright white fur with large irregular black patches on its back and hips, one fully black ear and one white ear, a black patch around its left eye, a small black spot on its pink nose, a long black tail, and bright green eyes. The cat stands upright on its hind legs in the middle of a big sheet of shiny clear bubble wrap spread over a warm wooden living room floor, both front paws raised at chest height mid-dance, one hind paw lifted mid-stomp, playful happy expression. Beside it sits an opened plain unprinted brown cardboard box. Cosy evening living room, soft warm lamp light, gentle golden bokeh of warm fairy lights in the background. The cat fully in frame and clearly visible.",
+     "motion": "From the very first frame the cow-pattern cat is already dancing upright on its hind legs on the bubble wrap: it stomps its hind paws left, right, left, right to the beat while pumping both front paws up and down, its head bobbing along and its black tail swaying. The bubble wrap crinkles and shines under its paws, the warm fairy lights twinkle softly in the background. The cat stays fully in frame with four normal legs, mouth closed. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "slap"
+     ],
+     "beat": "the cat's hind paw stomps down on the bubble wrap"
+    },
+    {
+     "edit": "Keep exactly the same cow-pattern domestic shorthair cat with the same fur pattern, face and eye color: mostly white with large black patches, one black ear, black patch around the left eye, small black spot on the pink nose, long black tail and bright green eyes. Same cosy living room, same sheet of shiny bubble wrap and the same opened plain brown cardboard box beside it. Now the cat strikes its final pose: standing tall on its hind legs on the bubble wrap, both front paws raised high above its head in a proud victory pose, chin up, eyes half closed with a smug, satisfied look, mouth closed. Soft warm lamp light and golden fairy-light bokeh. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the cow-pattern cat does one small hop in place on the bubble wrap and lands on its hind paws with both front paws thrown high in the air, then holds the victory pose and sways gently side to side to the beat with its chin up. The bubble wrap crinkles under the landing and the warm fairy lights twinkle in the background. The cat stays fully in frame with four normal legs, mouth closed. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "thud",
+      "bell"
+     ],
+     "beat": "the cat lands from its little hop with both front paws up high",
+     "hit": true,
+     "caption": "Every bubble: popped"
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "AI cat dance clips are a live November 2026 trend: dancing-kitten templates and the clapping-cat meme are both circulating, and mid-November TikTok is leaning cosy and festive. It's a Friday evening, and holiday-sale packages are piling up at home, so bubble wrap is easy to relate to.",
+    "pattern": "a real-looking cat stands up and dances to the beat right from the first second, pumping its paws, then ends on a big paws-in-the-air final pose; set on a relatable everyday object (fresh bubble wrap from a package) with a 'mine vs. his' caption",
+    "evidence": [
+     {
+      "title": "AI Cat Dance: Make Your Cat Do the Viral Memes From 1 Photo",
+      "url": "https://www.atlascloud.ai/blog/tips/ai-cat-dance"
+     },
+     {
+      "title": "Black Cat Clapping",
+      "url": "https://knowyourmeme.com/memes/black-cat-clapping"
+     },
+     {
+      "title": "TikTok Trends: November 2026",
+      "url": "https://newengen.com/insights/tiktok-trends/"
+     }
+    ]
+   },
+   "id": "m261120d",
+   "format": "dance",
+   "engine": "14b",
+   "seed": 53140,
+   "tease": false
+  }
+ ]
+}

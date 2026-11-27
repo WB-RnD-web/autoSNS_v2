@@ -1,0 +1,70 @@
+{
+ "date": "2026-11-28",
+ "concepts": [
+  {
+   "slug": "advent-calendar-all-drawers-early-red-bicolor-siberian",
+   "track": "sneaky-snitch.mp3",
+   "caption": "Advent calendar: one door a day",
+   "title": "Got the Advent Calendar Early. He Didn't Wait for December 🎄🐱",
+   "en_line": "The calendar said one little drawer a day, but he read it as one drawer per second.",
+   "ko_line": "12월 되기도 전에 어드벤트 캘린더 다 털림 🎄",
+   "tags": [
+    "cat",
+    "ai cat",
+    "advent calendar",
+    "christmas cat",
+    "funny cat",
+    "cat meme",
+    "holiday season",
+    "cute cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#어드벤트캘린더",
+    "#크리스마스",
+    "#cat",
+    "#catmeme",
+    "#냥스타그램",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical composition, eye-level full-body shot of a fluffy adult red-and-white bicolor Siberian cat with a thick orange coat on its back and head, a white chest, a white muzzle, four white paws and bright green eyes. It sits on a cozy wooden floor beside a small wooden advent calendar shaped like a little house with twenty-four tiny closed drawers with round brass knobs, decorated only with painted stars and snowflakes. One front paw rests on a drawer knob. Soft warm fairy-light bokeh and a blurred decorated Christmas tree in the background, cozy evening light, the cat fully in frame and clearly visible",
+     "motion": "From the very first frame the red-and-white Siberian cat hooks one front paw on a tiny drawer and slides it open, peeks inside, then glances left and right sneakily with its ears twitching. The fairy lights twinkle softly in the background. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "swish"
+     ],
+     "beat": "the paw slides the tiny drawer open"
+    },
+    {
+     "edit": "Keep exactly the same fluffy adult red-and-white bicolor Siberian cat with the same fur pattern, face and eye color. Now every one of the twenty-four tiny drawers of the same wooden advent calendar house is pulled open and empty, and the cat sits proudly in front of it with a small pile of little fish-shaped cat treats between its white front paws, looking satisfied with half-closed eyes. Same cozy wooden floor, warm fairy-light bokeh and blurred Christmas tree behind. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the red-and-white Siberian cat lifts its chin proudly, then taps the small pile of fish-shaped treats once with one white front paw and gives a slow satisfied blink. The fairy lights twinkle softly behind. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5,
+     "sfx": [
+      "slap",
+      "bell"
+     ],
+     "beat": "the white paw taps down on the pile of treats",
+     "hit": true,
+     "caption": "It's not even December"
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "The weekend after Thanksgiving is when homes go full Christmas, and festive cat memes are already trending this month. Advent calendars start on December 1, so 'opened it all early' is very relatable right now.",
+    "pattern": "relatable holiday-rule meme: the rule in the hook caption, a sneaky first move, then the punchline reveal of every drawer open and the cat looking proud",
+    "evidence": [
+     {
+      "title": "26 Fabulous Festive Cat Memes to Welcome the Holiday Season Early (November 16, 2026) - I Can Has Cheezburger?",
+      "url": "https://cheezburger.com/47350021/26-fabulous-festive-cat-memes-to-welcome-the-holiday-season-early-november-16-2026"
+     }
+    ]
+   },
+   "id": "m261128d",
+   "format": "meme",
+   "engine": "14b",
+   "seed": 26383,
+   "tease": true
+  }
+ ]
+}

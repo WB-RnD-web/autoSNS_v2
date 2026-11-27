@@ -1,0 +1,68 @@
+{
+ "date": "2026-11-17",
+ "concepts": [
+  {
+   "slug": "jjimjilbang-towel-hat-hip-wiggle-japanese-bobtail",
+   "track": "hep-cats.mp3",
+   "caption": "Towel hat on. Hips on.",
+   "title": "Towel Hat On, Hips On: Korean Spa Night Dance ♨️🐱",
+   "en_line": "Warm floor, towel hat, and a pom-pom tail that refuses to sit still.",
+   "ko_line": "찜질방 양머리 쓰고 골반 풀린 냥이 ♨️",
+   "tags": [
+    "cat",
+    "ai cat",
+    "dancing cat",
+    "cat dance",
+    "japanese bobtail",
+    "calico cat",
+    "korean spa",
+    "jjimjilbang",
+    "funny cat",
+    "cute cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#찜질방",
+    "#양머리",
+    "#cat",
+    "#catdance",
+    "#aicat"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical full-body shot of a slim calico Japanese Bobtail cat with a short silky white coat with bold bright orange and solid black patches, an orange patch over one ear and a black patch over the other, a short fluffy pom-pom bobtail, large golden-yellow eyes and a pink nose, standing upright on its hind legs with both front paws raised at shoulder height, wearing a small soft pastel-pink towel wrapped over the top of its head with two little rolled towel buns at the sides like the Korean sheep-head style. It stands in the middle of a cozy Korean jjimjilbang lounge on a warm golden-brown heated floor with woven straw mats, rounded honey-colored wooden walls and soft warm amber lighting, with a small wicker basket of brown boiled eggs and a neat stack of rolled pastel towels on the floor in the background and light steam in the warm air. The whole cat is clearly visible in the center of the frame, vertical composition",
+     "motion": "From the very first frame the calico Japanese Bobtail cat is already dancing on its hind legs: it sways its hips side to side to the beat with both front paws raised, bobs its head in rhythm with the pink towel hat staying on, and gives two little paw pumps in the air, blinking happily. Light steam drifts softly in the warm air behind it. The cat stays fully in frame in the same spot with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same calico Japanese Bobtail cat with the same fur pattern, face and eye color. Keep the same pastel-pink sheep-style towel hat and the same cozy Korean jjimjilbang lounge with the warm heated floor, straw mats, honey-colored wooden walls, basket of boiled eggs and rolled towels. Now the cat stands upright on its hind legs with its back turned to the camera, front paws raised, hips cocked to one side and its short fluffy pom-pom tail clearly visible, looking back at the camera over its shoulder with a proud, playful face. The whole cat is clearly in frame. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the calico Japanese Bobtail cat, standing on its hind legs with its back to the camera, wiggles its hips side to side to the beat so its little pom-pom tail bounces, keeps its front paws raised, and looks back over its shoulder at the camera with a slow confident blink. Light steam drifts in the warm air. The cat stays fully in frame in the same spot with four normal legs and does not turn around. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 1,
+   "trend": {
+    "why_now": "A viral AI clip posted 28 October shows three kittens dancing on a night beach with paws up and a turn-around hip shake (12.4M views by 6 November), and it spread as a 'Suave Cat Dance' template. Cold mid-November nights in Korea are also peak jjimjilbang season.",
+    "pattern": "paws-up hip sway to the beat, then turn around for a tail and hip wiggle, looking back over the shoulder; one cat in our own cosy Korean spa setting",
+    "evidence": [
+     {
+      "title": "Suave Cat Dance AI: Put Your Cats in the 3 Kittens Meme",
+      "url": "https://www.makeviral.ai/templates/suave-cat-dance-ai"
+     },
+     {
+      "title": "Best ways to make the Suave Cat Dance video with your own cat (2026) - DEV Community",
+      "url": "https://dev.to/yining_lin_5ee8680314309e/best-ways-to-make-the-suave-cat-dance-video-with-your-own-cat-2026-10l8"
+     },
+     {
+      "title": "AI Cat Dance: Make Your Cat Do the Viral Memes From 1 Photo",
+      "url": "https://www.atlascloud.ai/blog/tips/ai-cat-dance"
+     }
+    ]
+   },
+   "id": "m261117g",
+   "format": "dance",
+   "engine": "14b",
+   "seed": 91854,
+   "tease": false
+  }
+ ]
+}

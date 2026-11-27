@@ -1,0 +1,26 @@
+{
+ "date": "2026-11-20",
+ "slot": "a",
+ "format": "morph",
+ "model": "claude-opus-5-5",
+ "effort": "high",
+ "tokens": {
+  "input": 1708,
+  "cache_write": 21609,
+  "cache_read": 70681,
+  "output": 8322,
+  "web_search": 6,
+  "web_fetch": 2
+ },
+ "ok": true,
+ "tries": 2,
+ "usd": 0.355,
+ "errors": [],
+ "history": [
+  [
+   "m261120: 자막이 두 줄을 넘는다"
+  ],
+  []
+ ],
+ "slug": "butter-tteok-kitten-wakes-up"
+}

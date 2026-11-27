@@ -1,0 +1,63 @@
+{
+ "date": "2026-11-26",
+ "concepts": [
+  {
+   "slug": "leaf-pile-dance-floor-brown-tabby-maine-coon",
+   "track": "kool-kats.mp3",
+   "caption": "Leaves raked. Paws up.",
+   "title": "Raked One Big Leaf Pile. He Turned It Into a Dance Floor 🍂🐱",
+   "en_line": "Three hours of raking, five seconds of pure dance floor.",
+   "ko_line": "낙엽 다 쓸었더니 무대가 생겼다냥 🍂",
+   "tags": [
+    "cat",
+    "ai cat",
+    "dancing cat",
+    "maine coon",
+    "autumn leaves",
+    "leaf pile",
+    "funny cat",
+    "cute cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#낙엽",
+    "#춤추는고양이",
+    "#cat",
+    "#dancingcat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical composition, eye-level full-body shot of a fluffy adult brown classic tabby Maine Coon cat with bold dark swirl bullseye markings on its sides, a white chest and white front paws, lynx-tipped ears, a bushy ringed tail and bright green eyes, standing upright on its hind legs on short green grass in a small backyard right in front of a big round pile of raked orange, red and yellow autumn leaves, front paws raised at chest height mid-dance, a plain wooden rake leaning on a wooden fence behind, a bare-branched maple tree, soft golden late-afternoon light, a few leaves drifting in the air, the whole cat clearly visible in the center of the frame",
+     "motion": "From the very first frame the brown classic tabby Maine Coon is already dancing upright on its hind legs in front of the leaf pile: it sways its body left and right to the beat and pumps both front paws up and down in rhythm, its bushy tail swinging, then lifts both front paws high on the last beat with a proud head tilt. A few autumn leaves drift down in the golden light. The cat stays fully in frame with four normal legs, mouth closed. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "swish"
+     ],
+     "beat": "the cat lifts both front paws high on the last beat"
+    },
+    {
+     "edit": "Keep exactly the same fluffy brown classic tabby Maine Coon cat with the same fur pattern, face and eye color. Same backyard, same wooden fence, rake, maple tree and golden late-afternoon light: the cat now stands upright on its hind legs on top of the big leaf pile, sunk a little into the leaves, both front paws raised high in a victory pose, orange and yellow leaves bursting up into the air around it. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the cat bounces down once on top of the leaf pile with both front paws raised high, and a burst of orange and yellow leaves flies up around it and drifts back down; it holds the victory pose, tilts its head and blinks proudly as the leaves keep fluttering down. The cat stays fully in frame with four normal legs, mouth closed. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "thud",
+      "whoosh"
+     ],
+     "beat": "the cat bounces down on the leaf pile and the leaves burst up around it",
+     "hit": true,
+     "caption": "Pile? What pile?"
+    }
+   ],
+   "cover_shot": 1,
+   "trend": {
+    "why_now": "Today is Thanksgiving, and three of today's Shorts already use it. I used an evergreen late-November idea instead: the last autumn leaves are getting raked, so the backyard looks different from today's kitchens and arcades.",
+    "pattern": "The chore is done, so it's time to celebrate: a short rhythmic caption ('X done. Paws up.', like our well-performing 'Towel hat on. Hips on.'), a dance that starts right away, then the payoff where the pile becomes the stage with a hop and a burst of leaves",
+    "evidence": []
+   },
+   "id": "m261126d",
+   "format": "dance",
+   "engine": "14b",
+   "seed": 96622,
+   "tease": true
+  }
+ ]
+}

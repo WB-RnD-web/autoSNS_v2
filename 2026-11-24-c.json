@@ -1,0 +1,77 @@
+{
+ "date": "2026-11-24",
+ "concepts": [
+  {
+   "slug": "karaoke-room-tambourine-dance-mackerel-tabby-korean-shorthair",
+   "track": "funkorama.mp3",
+   "caption": "Lights down. Karaoke paws up.",
+   "title": "Year-End Party Went to Karaoke. He Brought the Tambourine Skills 🎶🐱",
+   "en_line": "The lights went down, the song kicked in, and he took charge of the tambourine.",
+   "ko_line": "송년회 2차는 노래방, 탬버린은 고등어냥 담당 🎶",
+   "tags": [
+    "cat",
+    "ai cat",
+    "dancing cat",
+    "karaoke",
+    "tambourine",
+    "year end party",
+    "tabby cat",
+    "funny cat",
+    "cute cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#노래방",
+    "#송년회",
+    "#cat",
+    "#dancingcat",
+    "#고등어냥",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical composition, eye-level full-body shot of a sleek Korean shorthair cat with a brown mackerel tabby coat with crisp dark stripes, a bright white chest, white muzzle and four white paws, and big amber-green eyes. The cat stands upright on its hind legs on the seat of a glossy dark red leather sofa in a cosy dark private karaoke room, both front paws raised at shoulder height in a cheerful dance pose, mouth closed, happy bright eyes. Purple and pink neon strip lights glow along the ceiling, a small mirror ball scatters sparkling dots of light across plain dark walls, and a low wooden table in front holds a plain round wooden tambourine with shiny silver jingles and a small bowl of tangerines. The whole cat is fully in frame and clearly visible, centered, warm party glow.",
+     "motion": "From the very first frame the tabby-and-white cat is already dancing on its hind legs on the sofa, swaying its body left and right to the beat while its two front paws bob up and down in rhythm, and it tilts its head to one side on a strong beat, eyes bright and mouth closed. Sparkling mirror-ball dots sweep across the walls and the purple and pink neon lights pulse softly. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "swish"
+     ],
+     "beat": "the cat tilts its head sharply to one side on the beat"
+    },
+    {
+     "edit": "Keep exactly the same sleek Korean shorthair cat with the brown mackerel tabby coat, white chest, white muzzle and four white paws, with the same fur pattern, face and eye color. Same dark private karaoke room with the red leather sofa, purple and pink neon lights and mirror ball. The cat now stands upright on its hind legs right beside the low wooden table, leaning toward the plain round wooden tambourine, one front paw raised high just above the tambourine ready to tap it and the other front paw held out to the side, mouth closed, confident focused eyes. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the cat's raised front paw comes down and taps the tambourine on the table, the silver jingles shimmer, then the cat taps it once more and lifts that paw high into a proud final pose while its body bobs to the beat. Mirror-ball sparkles sweep across the walls and the neon lights pulse. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "slap"
+     ],
+     "beat": "the cat's paw lands on the tambourine and the jingles shimmer",
+     "hit": true,
+     "caption": "Tambourine solo!"
+    }
+   ],
+   "cover_shot": 1,
+   "trend": {
+    "why_now": "Late November kicks off year-end party season (송년회 in Korea, with karaoke as the classic second stop) as the holidays start. Dance and trending-audio Shorts are still among the top formats in November 2026, and cat dance-trend Shorts keep getting posted.",
+    "pattern": "cosy specific-place dance with a two-beat caption (like our hit 'Towel hat on. Hips on.'): the cat is already grooving in the first frame under party lights, then the shot-2 payoff is a tambourine tap right on the beat, ending in a proud pose",
+    "evidence": [
+     {
+      "title": "YouTube Shorts Trends November 2026: What's Actually Going Viral Right Now",
+      "url": "https://www.anijam.ai/blog/youtube-shorts-trends/"
+     },
+     {
+      "title": "TikTok Trends: November 2026",
+      "url": "https://newengen.com/insights/tiktok-trends/"
+     },
+     {
+      "title": "These Cats Nailed The Dance Trend 😼🔥 #cat #wildlifeentertainment #funny - YouTube",
+      "url": "https://www.youtube.com/shorts/v0sU0bLuY4g"
+     }
+    ]
+   },
+   "id": "m261124c",
+   "format": "dance",
+   "engine": "14b",
+   "seed": 53647,
+   "tease": false
+  }
+ ]
+}

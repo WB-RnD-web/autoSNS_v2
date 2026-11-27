@@ -1,0 +1,53 @@
+{
+ "date": "2026-11-15",
+ "concepts": [
+  {
+   "slug": "cinnamon-roll-swirl-kitten",
+   "track": "merry-go.mp3",
+   "caption": "Wait… why does this roll have ears?",
+   "title": "Sunday Baking: One Cinnamon Roll Woke Up 🌀🐱",
+   "en_line": "Fresh from the oven, warm, swirly, and still a little sleepy.",
+   "ko_line": "일요일 아침 시나몬롤 하나가 깨어났어요 🌀",
+   "tags": [
+    "cat",
+    "ai cat",
+    "kitten",
+    "cinnamon roll",
+    "food turns into cat",
+    "cute kitten",
+    "sunday baking",
+    "cozy"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#시나몬롤",
+    "#아기고양이",
+    "#cat",
+    "#kitten",
+    "#aicat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic close-up of a rustic dark metal baking tray on a warm wooden kitchen counter, holding six freshly baked golden-brown cinnamon rolls with soft cinnamon swirls and a light glossy drizzle of white icing, gentle steam rising, soft warm morning window light, cozy blurred kitchen background with a folded linen cloth. On the center roll, two tiny soft triangular kitten ears with cinnamon-brown fur and cream-colored inner fur peek out from the top of the swirl, a subtle small hint. Vertical composition, the whole tray clearly visible.",
+     "motion": "From the very first frame, the two tiny cinnamon-brown kitten ears on the center roll twitch, turn left and right, then flick once more, while warm steam curls up from all the cinnamon rolls and the icing glistens softly in the morning light. The other rolls stay perfectly still. Everything stays fully in frame. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same tiny kitten ears with the same fur colour, and turn the center cinnamon roll into a tiny curled-up kitten in the same spot in the tray, the same size as the roll: a classic tabby kitten with warm cinnamon-brown and golden-cream fur in a round swirl pattern on its side that looks just like a cinnamon roll, a creamy white chest and paws like icing, a small pink nose and big round amber eyes. It is just waking up, head raised, eyes half open, front paws resting on the edge of the tray, mouth closed. The other five cinnamon rolls, the tray, steam, kitchen and morning light stay the same. Photorealistic, vertical composition.",
+     "motion": "From the very first frame, the tiny cinnamon-swirl tabby kitten blinks sleepily, slowly stretches both front paws forward over the edge of the tray, then tilts its head and looks around with big amber eyes, mouth closed, ears twitching. Soft steam keeps rising from the other cinnamon rolls. The kitten stays fully in frame in the same spot with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.6
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Evergreen pick: late-autumn Sunday mornings are baking season, and warm, cosy food that turns into a kitten loops well. The classic tabby swirl pattern really does look like a cinnamon roll.",
+    "pattern": "spot the hidden kitten: a cosy food tray with one tiny ear hint, then that piece becomes a sleepy kitten that wakes up and stretches in the same spot",
+    "evidence": []
+   },
+   "id": "m261115",
+   "format": "morph",
+   "engine": "14b",
+   "seed": 91890
+  }
+ ]
+}

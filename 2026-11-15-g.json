@@ -1,0 +1,66 @@
+{
+ "date": "2026-11-15",
+ "concepts": [
+  {
+   "slug": "roasted-sweet-potato-kitten",
+   "track": "monkeys-spinning-monkeys.mp3",
+   "caption": "Don't eat the small sweet potato",
+   "title": "The Smallest Roasted Sweet Potato Had Ears 🍠🐱",
+   "en_line": "We went to pick the warmest sweet potato, and the smallest one picked us instead.",
+   "ko_line": "군고구마 하나 골랐는데 귀가 달려있어 🍠",
+   "tags": [
+    "cat",
+    "ai cat",
+    "kitten",
+    "roasted sweet potato",
+    "sweet potato",
+    "cute cat",
+    "winter snack",
+    "food kitten",
+    "cozy"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#군고구마",
+    "#겨울간식",
+    "#cat",
+    "#kitten",
+    "#aicat"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic cozy close-up of a round wooden board lined with plain brown parchment paper on a low warm wooden table, holding five freshly roasted sweet potatoes with dusky reddish-brown, slightly caramelized skins, one large potato broken open to show steaming bright golden-orange flesh, soft wisps of steam rising, a cream knitted blanket draped at the edge of the table, a small wood-burning stove glowing amber in the softly blurred background, warm evening light. The smallest sweet potato sits at the front center of the board, and two tiny triangular kitten ears made of soft golden-orange fur with dusky reddish-brown tips poke up from its top, the only hint of a kitten, clearly visible, vertical composition",
+     "motion": "From the very first frame the two tiny golden-orange kitten ears on the smallest sweet potato twitch, then the little sweet potato gives a soft wobble from side to side and the ears perk up and turn toward the camera. Steam keeps rising from the open sweet potato and the stove glows softly behind. The kitten hint stays fully in frame on the board. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same tiny golden-orange kitten (the smallest roasted sweet potato with ears) with the same fur pattern, face and eye color. In the same spot at the front center of the wooden board, the smallest sweet potato is now a tiny curled-up kitten whose fur looks like a roasted sweet potato: a soft golden-orange face, chest and paws like the warm flesh, dusky reddish-brown patches across its back and tail like the caramelized skin, the same two tiny ears with reddish-brown tips, big round amber eyes just opening sleepily, four small paws tucked under, surrounded by the other roasted sweet potatoes, gentle steam and the softly glowing stove in the blurred background, warm evening light. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the tiny sweet-potato kitten lifts its head from its curled position, blinks its amber eyes slowly, then stretches one small front paw forward on the parchment and gives a little head tilt toward the camera with its mouth closed. Steam drifts up from the sweet potatoes beside it and the stove glows softly. The kitten stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.6
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Korea's winter street-snack season is starting now, with fresh mid-November guides to warm Seoul and Busan treats and people posting their first winter snack of the year. Roasted sweet potato is a classic of that season, and the warm, steamy look fits a cosy Sunday evening.",
+    "pattern": "find-the-odd-one-out morph: a cosy, steamy food close-up where one small piece has tiny ears (the caption dares you not to eat it), then the payoff when that piece wakes up as a sleepy kitten that looks like the food",
+    "evidence": [
+     {
+      "title": "Korean winter street food: Warm treats to find in Seoul and Busan, Lifestyle News - AsiaOne",
+      "url": "https://www.asiaone.com/lifestyle/winter-street-food-seoul-busan"
+     },
+     {
+      "title": "Korean Winter Street Food: 10 Snacks to Try (2026 Guide) - Look at Korea",
+      "url": "https://lookatkorea.com/korean-winter-street-food/"
+     },
+     {
+      "title": "Bungeoppang Season in Korea 2026: Why Everyone Is Hunting for Fish-Shaped Pastries, and How to Find One (붕세권 Guide)",
+      "url": "https://zuzukorea.travel/latest-trends/bungeoppang-season-korea-2026/"
+     }
+    ]
+   },
+   "id": "m261115g",
+   "format": "morph",
+   "engine": "14b",
+   "seed": 28138
+  }
+ ]
+}

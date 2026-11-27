@@ -1,0 +1,73 @@
+{
+ "date": "2026-11-23",
+ "concepts": [
+  {
+   "slug": "arcade-drum-full-combo-sokoke",
+   "track": "pixel-peeker-polka-faster.mp3",
+   "caption": "Drum pro or just slapping?",
+   "title": "Arcade Drum Game on Hard Mode. His Paws Never Missed a Beat 🥁🐱",
+   "en_line": "Hard mode, two paws, not a single missed beat.",
+   "ko_line": "북 게임 하드모드도 문제없다냥 🥁",
+   "tags": [
+    "cat",
+    "ai cat",
+    "arcade cat",
+    "drum game",
+    "rhythm game",
+    "funny cat",
+    "cute cat",
+    "cat playing drums"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#아케이드",
+    "#리듬게임",
+    "#cat",
+    "#aicat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical composition, eye-level full-body shot of a slim short-haired Sokoke-style cat with a warm tan coat covered in bold dark brown swirling marbled tabby patterns, a white chin, and big bright amber-green eyes. The cat sits upright on the wide padded ledge of a glossy red arcade drum cabinet, right behind one large round drum with a pale cream drumhead and a shiny red-and-white rim, with both front paws resting on the drumhead. The cat is focused, ears forward. Behind it is a softly blurred, cosy, dim game arcade full of colourful glowing neon lights in pink, blue and gold. The whole cat and the drum are fully in frame and clearly visible.",
+     "motion": "From the very first frame the marbled tabby cat drums fast on the big round drum, quickly tapping the cream drumhead with its left and right front paws one after the other, ears forward, eyes locked on the drum, its head bobbing to the rhythm. The colourful neon lights in the blurred arcade behind it pulse and twinkle. The cat stays seated and fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "slap"
+     ],
+     "beat": "the cat's front paws tap the drumhead in quick turns"
+    },
+    {
+     "edit": "Keep exactly the same slim short-haired Sokoke-style cat with the same fur pattern, face and eye color. It is the winning moment: the cat still sits on the padded ledge of the red arcade drum cabinet, now with both front paws raised high above the big round cream drumhead, ready for the final double hit, chest puffed out proudly. Shiny gold and silver confetti drifts down through the air around it, and the colourful neon arcade lights behind it glow brighter in warm gold. The whole cat and the drum are fully in frame. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the marbled tabby cat brings both raised front paws down together onto the drumhead in one big final hit, then stays seated and lifts its chin proudly, blinking slowly, while gold and silver confetti keeps drifting down and the neon lights flash gold behind it. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5,
+     "sfx": [
+      "punch",
+      "bell"
+     ],
+     "beat": "both front paws slam down on the drumhead together",
+     "hit": true,
+     "caption": "FULL COMBO"
+    }
+   ],
+   "cover_shot": 1,
+   "trend": {
+    "why_now": "Shorts featuring AI cats doing jobs or skills are trending, and a clapping-cat meme is spreading on Instagram right now. On our channel, the pinball Short, which showed frantic paw action from the very first second, did best (98% feed, 118% viewed).",
+    "pattern": "A 'pro or button masher?' question hook over nonstop paw action from the first frame, then one big final hit for the win (punch-in, ding, confetti).",
+    "evidence": [
+     {
+      "title": "How to Make AI Cat Videos in 2026: A 15-Second Cat Story",
+      "url": "https://www.atlascloud.ai/blog/tips/how-to-make-ai-cat-videos"
+     },
+     {
+      "title": "Trending Instagram memes this week - SocialBee",
+      "url": "https://socialbee.com/blog/trending-instagram-memes-this-week/"
+     }
+    ]
+   },
+   "id": "m261123b",
+   "format": "game",
+   "engine": "14b",
+   "seed": 61829,
+   "tease": false
+  }
+ ]
+}

@@ -1,0 +1,76 @@
+{
+ "date": "2026-11-28",
+ "concepts": [
+  {
+   "slug": "small-business-saturday-shop-cat-bell-dance-chocolate-bicolor",
+   "track": "hep-cats.mp3",
+   "caption": "Shop cat on Small Business Saturday",
+   "title": "Small Business Saturday: The Shop Cat Opened With a Dance 🛍️🐱",
+   "en_line": "Doors open, bell ready, paws up: the tiny shop is officially open for the day.",
+   "ko_line": "동네 가게 응원하는 날, 가게 냥이 오픈 댄스 출근 완료 🔔",
+   "tags": [
+    "cat",
+    "ai cat",
+    "dancing cat",
+    "shop cat",
+    "small business saturday",
+    "shop small",
+    "cute cat",
+    "cat dance"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#가게고양이",
+    "#cat",
+    "#shopsmall",
+    "#dancingcat",
+    "#냥스타그램",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical composition, eye-level full-body shot of a fluffy medium-longhaired adult chocolate-and-white bicolor cat with a white muzzle, white chest bib and white paws, a chocolate-brown mask over both eyes and ears, chocolate-brown back and tail, and bright copper eyes, standing upright on its hind legs on the warm wooden floor of a tiny cozy flower and plant shop, both front paws raised at chest height like it is dancing. Beside the cat sits a low wooden crate with a small shiny brass service bell on top. Behind it, wooden shelves with potted green plants, pine and eucalyptus wreaths, buckets of white roses and warm string lights glowing softly. Morning light through a glass shop door. The cat is fully in frame and clearly visible in the center.",
+     "motion": "From the very first frame the chocolate-and-white cat is already dancing on its hind legs, pumping both front paws up and down to the beat and swaying its shoulders left and right, ears perked and copper eyes bright. The warm string lights twinkle gently and the eucalyptus leaves sway slightly behind it. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "swish"
+     ],
+     "beat": "the cat pumps both front paws up on the beat"
+    },
+    {
+     "edit": "Keep exactly the same fluffy medium-longhaired adult chocolate-and-white bicolor cat with a white muzzle, white chest bib and white paws, a chocolate-brown mask over both eyes and ears, chocolate-brown back and tail, and bright copper eyes with the same fur pattern, face and eye color. Same tiny cozy flower and plant shop, same wooden crate with the small brass service bell. The cat now stands on its hind legs right beside the crate in a final pose: one white front paw resting on top of the brass bell and the other front paw raised high in the air, chest proud, eyes bright. Warm string lights and morning light. Photorealistic, vertical composition.",
+     "motion": "Right from the first frame the chocolate-and-white cat lifts its white paw and taps the small brass bell on the crate once, then throws both front paws up high in a proud final pose and gives a little head tilt. The string lights twinkle behind it. The cat stays fully in frame with four normal legs, mouth closed. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "bell"
+     ],
+     "beat": "the cat's paw taps the brass bell on the crate",
+     "hit": true,
+     "caption": "We're open!"
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Today, Saturday 28 November 2026, is Small Business Saturday (#ShopSmall), and AI cat dance clips where a cat springs onto its hind legs and pumps its paws to a beat are trending this month.",
+    "pattern": "seasonal hook in the caption, cat already paw-pumping on its hind legs from frame one, then a punchy payoff (bell ding + paws-up final pose)",
+    "evidence": [
+     {
+      "title": "Small Business Saturday - Small Business Administration",
+      "url": "https://www.sba.gov/about-sba/organization/observances/small-business-saturday/"
+     },
+     {
+      "title": "AI Cat Dance: Make Your Cat Do the Viral Memes From 1 Photo",
+      "url": "https://www.atlascloud.ai/blog/tips/ai-cat-dance"
+     },
+     {
+      "title": "Suave Cat Dance AI: Put Your Cats in the 3 Kittens Meme",
+      "url": "https://www.makeviral.ai/templates/suave-cat-dance-ai"
+     }
+    ]
+   },
+   "id": "m261128b",
+   "format": "dance",
+   "engine": "14b",
+   "seed": 66827,
+   "tease": false
+  }
+ ]
+}

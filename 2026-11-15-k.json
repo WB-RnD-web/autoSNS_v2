@@ -1,0 +1,67 @@
+{
+ "date": "2026-11-15",
+ "concepts": [
+  {
+   "slug": "salt-bread-kitten-wakes-up",
+   "track": "merry-go.mp3",
+   "caption": "Wait… this salt bread is breathing",
+   "title": "The Butteriest Salt Bread Roll Just Woke Up 🍞🐱",
+   "en_line": "Fresh from the oven, golden, buttery and very slightly purring.",
+   "ko_line": "갓 구운 소금빵인 줄 알았는데 냥이였다 🥐",
+   "tags": [
+    "cat",
+    "ai cat",
+    "kitten",
+    "salt bread",
+    "bakery",
+    "cute cat",
+    "cozy",
+    "food morph",
+    "korean bakery"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#소금빵",
+    "#겨울간식",
+    "#cat",
+    "#kitten",
+    "#aicat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic cozy close-up of a small round woven rattan bread basket lined with a soft cream linen cloth on a warm honey-colored wooden table beside a window with gentle morning sunlight. The basket holds six freshly baked Korean salt bread rolls: plump spiral-rolled buttery rolls with a glossy golden-brown top, a pale cream underside and a few sparkly white coarse salt flakes on top, with faint wisps of steam rising. The roll at the front center of the basket has two tiny soft pointed kitten ears on top, covered in short golden-brown fur that matches the crust exactly, with pale cream fur inside the ears. Shallow depth of field, soft blurred cozy kitchen background, all six rolls fully visible, vertical composition",
+     "motion": "From the very first frame, the two tiny golden-brown kitten ears on the front center salt bread roll twitch, and that roll gently rises and falls as if softly breathing. Then the ears flick once more and the roll does a tiny wiggle in place. The other rolls stay still while thin wisps of warm steam curl up from the basket and dust sparkles in the morning sunlight. The hidden kitten stays fully in frame in the same spot, with its four normal legs tucked out of sight beneath it. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same tiny salt bread kitten with the same fur pattern, face and eye color. Keep the same rattan basket, cream linen cloth, the other five salt bread rolls, wooden table and morning window light. The front center roll with the tiny ears is now a tiny curled-up kitten in exactly the same spot and the same round spiral shape: short glossy golden-brown fur on its back and head that looks just like the buttery crust, a pale cream belly and cream paws, a few sparkly white salt-flake-like flecks on its back, its tail curled around its body like the roll's spiral, and sleepy half-open warm amber eyes just waking up. Photorealistic, vertical composition.",
+     "motion": "From the very first frame, the tiny golden-brown salt bread kitten lifts its head from its curled spiral pose, blinks its sleepy amber eyes slowly, stretches both little cream front paws forward over the edge of the linen, then tilts its head and gives a gentle ear twitch, its mouth staying closed. Warm steam keeps curling up from the other rolls and soft sunlight glows on the table. The kitten stays fully in frame in the basket with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.6
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Cold weather has Korean winter snack sales booming, and salt bread (소금빵) is being added to winter snack menus this week; it is a cozy, highly recognizable bakery item for both Korean and global viewers. It's a new food for us, different from today's yarn, sweet potato and cinnamon roll morphs. Note: merry-go.mp3 was also used yesterday, but it is the only allowed track today that hasn't been used yet.",
+    "pattern": "'spot the odd one' food morph: a basket of identical warm rolls where one has tiny ears and is breathing from the first frame, then the reveal shows a sleepy kitten curled in the same spiral shape. The caption is a 'wait… this one is breathing' hook.",
+    "evidence": [
+     {
+      "title": "떡볶이에 소금빵까지…요거트월드, 겨울 간식 메뉴 확대 (중앙이코노미뉴스, 2026-11-11)",
+      "url": "https://www.joongangenews.com/news/articleView.html?idxno=562949"
+     },
+     {
+      "title": "찬 바람 불자 매출 '후끈'…편의점 겨울 간식 인기 (남도일보)",
+      "url": "https://www.namdonews.com/news/articleView.html?idxno=928335"
+     },
+     {
+      "title": "8m 크리스마스트리 보며 호박라떼 한잔…한정 메뉴 쏟아진다 (세계일보)",
+      "url": "https://www.segye.com/newsView/20261114502706"
+     }
+    ]
+   },
+   "id": "m261115k",
+   "format": "morph",
+   "engine": "14b",
+   "seed": 92774
+  }
+ ]
+}

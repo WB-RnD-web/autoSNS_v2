@@ -1,0 +1,75 @@
+{
+ "date": "2026-11-25",
+ "concepts": [
+  {
+   "slug": "cranberry-sauce-wobble-dance-york-chocolate",
+   "track": "hep-cats.mp3",
+   "caption": "Cranberry wobbled. So did he.",
+   "title": "Thanksgiving Eve: The Cranberry Sauce Wobbled, So Did He 🦃🐱",
+   "en_line": "The night before Thanksgiving, the cranberry sauce set the beat and he kept every wobble.",
+   "ko_line": "추수감사절 전날, 크랜베리 소스랑 같이 흔들흔들 🦃",
+   "tags": [
+    "cat",
+    "ai cat",
+    "dancing cat",
+    "cat dance",
+    "thanksgiving",
+    "cranberry sauce",
+    "funny cat",
+    "cute cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#고양이춤",
+    "#추수감사절",
+    "#cat",
+    "#catdance",
+    "#aicat"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical composition, eye-level full-body shot of a semi-longhaired York Chocolate cat with a solid rich chocolate-brown coat, a fluffy lighter-brown chest ruff, a plumed brown tail and bright golden-amber eyes, standing upright on its hind legs on a light oak kitchen table, front paws raised loosely at chest height, right next to a small round white plate holding a glossy ruby-red cylinder of jellied cranberry sauce with ridged sides. Cosy kitchen the night before Thanksgiving in soft focus behind: a roasting pan, a wooden bowl of small orange pumpkins, an autumn leaf garland and a warm golden pendant light. The cat is fully in frame and clearly visible.",
+     "motion": "From the very first frame the chocolate-brown cat is already bouncing its shoulders up and down to the beat on its hind legs, head bobbing, front paws loose at its chest, then it gives the edge of the white plate one light paw tap and the ruby-red cranberry sauce wobbles in rhythm while the cat keeps bouncing. Its mouth stays closed. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "slap"
+     ],
+     "beat": "the cat's paw taps the edge of the plate and the cranberry sauce wobbles"
+    },
+    {
+     "edit": "Keep exactly the same semi-longhaired York Chocolate cat with the solid chocolate-brown coat, fluffy chest ruff and plumed tail, with the same fur pattern, face and eye color. Same kitchen table, same white plate with the ruby-red jellied cranberry sauce beside it, same warm kitchen background. The cat now stands proudly on its hind legs in a final dance pose: both front paws raised high above its head, chest puffed out, tail curled up, golden-amber eyes bright and looking at the camera with a smug, happy expression, mouth closed. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the chocolate-brown cat sways its hips side to side on its hind legs with its front paws raised, then pumps both front paws up high together into a proud final pose and holds it with a slow blink, while the cranberry sauce beside it gives one last wobble. Its mouth stays closed. The cat stays fully in frame with four normal legs. Photorealistic, warm light, smooth natural motion, static camera.",
+     "sfx": [
+      "whoosh"
+     ],
+     "beat": "the cat pumps both front paws up high into the final pose",
+     "hit": true,
+     "caption": "Jiggle sync: perfect"
+    }
+   ],
+   "cover_shot": 1,
+   "trend": {
+    "why_now": "Today is Thanksgiving Eve (Thanksgiving is Thursday, November 26), when kitchens are full of holiday prep and jiggly cranberry sauce is a yearly meme. At the same time, shoulder-bounce freestyle dances, including ones by AI dancers, and AI cat dance clips are trending in November.",
+    "pattern": "The cat is dancing in the first frame and follows a funny thing in the scene that sets the beat (the wobbling cranberry sauce), then ends on a big final pose. The two-part caption (cue, then the cat's reaction) matches our best Shorts ('Kettle whistled. Beat dropped.', 'Towel hat on. Hips on.').",
+    "evidence": [
+     {
+      "title": "TikTok Trends: November 2026 (Dame Hombro shoulder-bounce freestyle, AI dancers included)",
+      "url": "https://newengen.com/insights/tiktok-trends/"
+     },
+     {
+      "title": "AI Cat Dance: Make Your Cat Do the Viral Memes From 1 Photo",
+      "url": "https://www.atlascloud.ai/blog/tips/ai-cat-dance"
+     },
+     {
+      "title": "Dancing Cat — TikTok Discover (updated 2026-11-23)",
+      "url": "https://www.tiktok.com/discover/dancing-cat?lang=en"
+     }
+    ]
+   },
+   "id": "m261125b",
+   "format": "dance",
+   "engine": "14b",
+   "seed": 82636,
+   "tease": true
+  }
+ ]
+}

@@ -1,0 +1,62 @@
+{
+ "date": "2026-11-19",
+ "concepts": [
+  {
+   "slug": "year-end-party-slowmo-entrance-laperm",
+   "track": "funkorama.mp3",
+   "caption": "Entered in slow-mo. Then the bass hit",
+   "title": "She Made a Slow-Mo Party Entrance. Then the Bass Kicked In 🎉🐱",
+   "en_line": "Every party needs one dramatic entrance, and she brought the curls.",
+   "ko_line": "송년회 입장은 슬로모션, 그다음은 풀파워 댄스 🎉",
+   "tags": [
+    "cat",
+    "ai cat",
+    "dancing cat",
+    "cat dance",
+    "party cat",
+    "laperm cat",
+    "slow motion entrance",
+    "funny cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#송년회",
+    "#고양이댄스",
+    "#cat",
+    "#aicat",
+    "#catdance"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical full-body shot of a LaPerm cat with a medium-length, soft, loose curly coat in warm red-and-cream classic tabby, a fluffy curly cream ruff on the chest, a plumed curly tail, a pink nose and big bright amber eyes, standing upright on its hind legs in the center of a cozy living room set up for a year-end house party, one front paw lifted mid-stride, chin up with a confident expression, soft haze in the air, warm golden fairy lights and gold and burgundy balloons glowing behind it, a few pieces of gold confetti floating, dramatic warm backlight outlining the curly fur, wooden floor, the whole cat clearly visible from ears to toes with space around it, vertical composition",
+     "motion": "From the very first frame the red-and-cream curly LaPerm cat struts in dramatic slow motion on its hind legs in the center of the frame, taking two confident steps in place with its chin up, front paws swinging gently, curly fur and ruff bouncing softly with each step, a slow cool blink at the camera. Gold confetti drifts down slowly, haze glows in the warm backlight, fairy lights twinkle. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same red-and-cream curly LaPerm cat with the same fur pattern, face and eye color. Same cozy year-end party living room, same spot, same fairy lights and gold and burgundy balloons. The bass just kicked in: the cat now stands upright on its hind legs in a big happy dance pose, one front paw pointing up to the ceiling and the other paw on its hip, hips tilted to one side, eyes bright, mouth closed in a pleased little smile, curly fur fluffed out, much more gold confetti falling around it, the whole cat clearly visible from ears to toes. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the red-and-cream curly LaPerm cat bounces to the beat on its hind legs in the same spot, pumping its raised front paw up and down in rhythm while its hips sway side to side, its curly ruff and plumed tail bouncing with every beat, ending in a proud head tilt toward the camera. Gold confetti showers down, fairy lights pulse warmly, haze glows. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.3
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Mid-November TikTok is cozy and festive as year-end party season starts, slow-motion cinematic entrances set to 'Pray For Me' are trending, and AI cat dance clips are still one of this month's biggest formats.",
+    "pattern": "a cool, serious slow-motion entrance, then the beat hits and she snaps into a full happy dance and a final pose",
+    "evidence": [
+     {
+      "title": "TikTok Trends: November 2026",
+      "url": "https://newengen.com/insights/tiktok-trends/"
+     },
+     {
+      "title": "AI Cat Dance: Make Your Cat Do the Viral Memes From 1 Photo",
+      "url": "https://www.atlascloud.ai/blog/tips/ai-cat-dance"
+     }
+    ]
+   },
+   "id": "m261119i",
+   "format": "dance",
+   "engine": "14b",
+   "seed": 27698,
+   "tease": false
+  }
+ ]
+}

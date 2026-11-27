@@ -1,0 +1,69 @@
+{
+ "date": "2026-11-27",
+ "concepts": [
+  {
+   "slug": "empanada-crimped-kitten-wakes-up",
+   "track": "fluffing-a-duck.mp3",
+   "caption": "Which empanada is breathing?",
+   "title": "Folded a Dozen Empanadas. One Folded Itself Into a Kitten 🥟🐱",
+   "en_line": "Fresh out of the oven with a crimped edge and a golden crust, and one of them is purring.",
+   "ko_line": "갓 구운 엠파나다 하나가 눈을 떴어요 🥟",
+   "tags": [
+    "cat",
+    "ai cat",
+    "kitten",
+    "empanada",
+    "baking",
+    "cute cat",
+    "food morph",
+    "cozy"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#엠파나다",
+    "#홈베이킹",
+    "#cat",
+    "#kitten",
+    "#aicat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic cozy close-up at a slightly high angle, vertical composition, of a dozen freshly baked golden half-moon empanadas with neatly crimped edges and shiny egg-washed crusts, arranged in rows on a black wire cooling rack on a rustic oak kitchen counter, a small linen towel and a little bowl of flour beside them, a frosty window with soft blue winter daylight behind, warm golden kitchen light, gentle steam rising from the pastries. The empanada in the front center has two tiny soft golden-cream kitten ears with faint toasted-brown stripes poking up from its top crust and a tiny fluffy golden tail tip curled along its crimped edge. All empanadas fully in frame and clearly visible.",
+     "motion": "From the very first frame the two tiny golden-cream ears on the front-center empanada twitch and flick, and the tiny tail tip curls once along the crimped edge, while warm steam keeps rising from all the empanadas. The other empanadas stay still on the cooling rack. Photorealistic, warm light, smooth natural motion, static camera.",
+     "sfx": [
+      "swish"
+     ],
+     "beat": "the two tiny ears on the front empanada flick"
+    },
+    {
+     "edit": "Keep exactly the same tiny golden-cream kitten with the same fur pattern, face and eye color. Keep the same cooling rack, oak counter, linen towel, frosty window, warm light and all the other empanadas unchanged. The front-center empanada that had the tiny ears is now a tiny curled-up kitten in the same spot and in the same half-moon shape: fluffy golden-cream fur with soft toasted-brown tabby stripes like baked crust, a wavy ridge of fur along its back like the crimped pastry edge, a pink nose, big round amber eyes just opening, four small paws tucked under its body and its fluffy tail wrapped around it. The kitten is fully in frame and clearly visible among the empanadas. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the tiny golden-cream kitten lifts its head from its curled half-moon pose, blinks its amber eyes sleepily, tilts its head to look around at the other empanadas, then stretches both front paws forward over the rack and gently sets them down, with its mouth closed. The kitten stays fully in frame with four normal legs, and warm steam keeps rising from the empanadas. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.6,
+     "sfx": [
+      "meow"
+     ],
+     "beat": "the kitten lifts its head and blinks its amber eyes open",
+     "hit": true,
+     "caption": "Fresh-baked kitten"
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "It's the day after Thanksgiving, which is a big home-baking and leftovers day. November 2026 food-trend roundups also feature playful pastry mashups like birthday cake empanadas, and the golden crimped half-moon shape makes a clear, readable morph.",
+    "pattern": "hidden-in-plain-sight morph: a tray of the same cosy bakes where one piece shows a small hint (ears, tail tip), the question hook makes viewers search for it, then that piece turns out to be a sleepy kitten whose fur matches the crust",
+    "evidence": [
+     {
+      "title": "Top 100 Food Trends in November: From Protein-Rich Meat Sticks to Birthday Cake Empanadas",
+      "url": "https://www.trendhunter.com/slideshow/november-2026-food"
+     }
+    ]
+   },
+   "id": "m261127",
+   "format": "morph",
+   "engine": "14b",
+   "seed": 76417,
+   "tease": false
+  }
+ ]
+}

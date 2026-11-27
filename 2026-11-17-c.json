@@ -1,0 +1,67 @@
+{
+ "date": "2026-11-17",
+ "concepts": [
+  {
+   "slug": "sunbeam-spot-dance-toyger",
+   "track": "funkorama.mp3",
+   "caption": "The sunbeam finally reached her spot",
+   "title": "The Sunbeam Finally Reached Her Spot. Dance Time ☀️🐱",
+   "en_line": "She waited all afternoon, and the sun finally landed on her favorite spot.",
+   "ko_line": "기다리던 햇살 자리 드디어 도착, 춤 안 출 수가 없지 ☀️",
+   "tags": [
+    "cat",
+    "ai cat",
+    "dancing cat",
+    "sunbeam",
+    "orange cat",
+    "toyger",
+    "cozy cat",
+    "funny cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#햇살냥이",
+    "#춤추는고양이",
+    "#cat",
+    "#dancingcat",
+    "#aicat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical full-body shot of a sleek, muscular Toyger cat with a short glossy bright orange coat with bold dark-brown vertical mackerel stripes, a white chin, white chest and white belly, a striped tail with a dark tip, small rounded ears and bright green eyes. The cat is standing upright on its hind legs with both front paws raised happily at chest height, right in the middle of a bright golden rectangle of low winter afternoon sunlight on a warm honey-colored wooden floor in a cozy living room. A tall window with sheer white curtains glows behind it, a leafy green potted plant stands in the corner, the rest of the room is in soft warm shade, and tiny dust motes sparkle in the sunbeam. The cat is fully in frame, centered and clearly visible, vertical composition",
+     "motion": "Right from the first frame the orange striped Toyger cat is already dancing on its hind legs in the golden sunbeam: it sways its hips side to side to the beat, bobs both raised front paws up and down in rhythm and tilts its head left and right with half-closed happy eyes and a closed mouth. Tiny dust motes float and sparkle in the sunbeam, and the sheer curtain moves gently. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same sleek orange Toyger cat with bold dark-brown vertical stripes, white chin, chest and belly, and bright green eyes, with the same fur pattern, face and eye color. Same cozy living room, same golden rectangle of sunlight on the honey-colored wooden floor, same window with sheer curtains and the same potted plant. Final pose: the cat now lies on its back fully stretched out in the middle of the sunbeam, white striped belly up to the sun, both front paws bent loosely above its chest, hind legs relaxed, eyes softly closed and mouth closed in a blissful content expression, its whole body glowing in the warm light. Photorealistic, vertical composition.",
+     "motion": "Right from the first frame the orange striped Toyger cat lies belly-up in the golden sunbeam and wiggles both front paws in the air to the beat, gently wiggles its back side to side on the warm floor, then flicks its tail tip and blinks slowly with pure contentment, mouth closed. Dust motes keep floating and sparkling in the sunlight. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 1,
+   "trend": {
+    "why_now": "Dancing AI cats on their hind legs are still a live trend in November 2026, with a late-August dancing-kitten wave and a late-September clapping-cat wave running at once. This week's most-shared cat joke was about a cat yelling because the sun moved and took her nap spot away, and low November sun makes sunbeam spots feel extra precious.",
+    "pattern": "A relatable cat-owner moment (the sunbeam finally reaches her favorite spot) used as the beat drop: the cat is already dancing upright in the very first frame, then the payoff is a blissful belly-up final pose in the same sunbeam.",
+    "evidence": [
+     {
+      "title": "AI Cat Dance: Make Your Cat Do the Viral Memes From 1 Photo",
+      "url": "https://www.atlascloud.ai/blog/tips/ai-cat-dance"
+     },
+     {
+      "title": "24 Of The Funniest Posts About Cats And Dogs This Week (Nov. 7-13)",
+      "url": "https://www.huffpost.com/entry/cats-dogs-funny-posts-tweets-2026-11-07-13_n_6af1e35ae4b0d2d11fa494a8"
+     },
+     {
+      "title": "TikTok Trends: November 2026",
+      "url": "https://newengen.com/insights/tiktok-trends/"
+     }
+    ]
+   },
+   "id": "m261117c",
+   "format": "dance",
+   "engine": "14b",
+   "seed": 28989,
+   "tease": true
+  }
+ ]
+}

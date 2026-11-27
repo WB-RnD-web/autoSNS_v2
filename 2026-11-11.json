@@ -1,0 +1,57 @@
+{
+ "date": "2026-11-11",
+ "concepts": [
+  {
+   "slug": "chocolate-stick-day-dance-cat",
+   "track": "kool-kats.mp3",
+   "caption": "It's 11.11 and he came to dance",
+   "title": "When It's 11.11 and the Chocolate Sticks Drop 🍫🐱",
+   "en_line": "Four little ones on the calendar means one thing: snack sticks and a dance break.",
+   "ko_line": "11월 11일엔 초코과자 들고 춤 한 판 🍫",
+   "tags": [
+    "cat",
+    "ai cat",
+    "dancing cat",
+    "cat dance",
+    "11.11",
+    "chocolate sticks",
+    "ginger cat",
+    "funny cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#11월11일",
+    "#고양이댄스",
+    "#cat",
+    "#dancingcat",
+    "#aicat"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic ginger tabby cat with bright orange mackerel stripes, a white chest and white front paws, and bright green eyes, standing upright on its hind legs in the middle of a cosy warm kitchen, front paws raised at chest height in a playful dance pose, head slightly tilted. Behind it a wooden counter with tall glass jars full of thin chocolate-dipped biscuit sticks, a garland of red and pink paper hearts and warm fairy lights along the wall. The cat is fully in frame, head to tail, on a light wooden floor, soft warm evening light, vertical composition",
+     "motion": "The ginger tabby cat stands on its hind legs and sways from side to side to the beat, its raised front paws moving gently left and right in time with the music, head bobbing and tail swishing behind it. The fairy lights twinkle softly in the background. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same ginger tabby cat with the same fur pattern, face and eye color. Same cosy kitchen with the jars of chocolate-dipped biscuit sticks, the paper heart garland and the warm fairy lights. The cat now strikes a proud final dance pose: standing upright on its hind legs, one front paw raised high holding a single thin chocolate-dipped biscuit stick like a tiny dance cane, the other front paw resting at its side, chin up, eyes half closed and pleased, mouth closed. The cat is fully in frame, head to tail. Photorealistic, vertical composition.",
+     "motion": "The ginger tabby cat holds its proud final pose on its hind legs, gently taps the little biscuit stick up and down in time with the beat, bobs its head twice and gives one slow, satisfied blink while its tail swishes. The fairy lights twinkle softly. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Today, 11 November (KST), is Korea's chocolate-stick snack day, when people swap thin chocolate-dipped biscuit sticks because 11.11 looks like four sticks. It's a big topic on Korean Instagram today, and around the world 11.11 is a day people notice anyway.",
+    "pattern": "holiday dance hype: the cat grooves in a setting decorated for the day, then lands a proud final pose with the day's signature snack held as a prop",
+    "evidence": [
+     {
+      "title": "Pepero Day in South Korea in 2026",
+      "url": "https://www.thereisadayforthat.com/holidays/south-korea/pepero-day"
+     }
+    ]
+   },
+   "id": "m261111",
+   "format": "dance",
+   "engine": "14b",
+   "seed": 33477
+  }
+ ]
+}

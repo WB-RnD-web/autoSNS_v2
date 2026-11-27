@@ -1,0 +1,65 @@
+{
+ "date": "2026-11-14",
+ "concepts": [
+  {
+   "slug": "block-tower-kungfu-russian-blue",
+   "track": "investigations.mp3",
+   "caption": "Kung fu focus at the block tower",
+   "title": "Kung Fu Focus at the Block Tower… It Did Not Go Well 🧱🐱",
+   "en_line": "He calculated every angle, then the tower had other plans.",
+   "ko_line": "집중력 만렙… 이었는데요 🧱",
+   "tags": [
+    "cat",
+    "ai cat",
+    "russian blue",
+    "block tower",
+    "kung fu cat",
+    "funny cat",
+    "cat fail",
+    "cute cat"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#냥스타그램",
+    "#러시안블루",
+    "#cat",
+    "#funnycat",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic sleek Russian Blue cat with a short dense plush silvery blue-gray coat with soft silver-tipped fur and no stripes, a gray nose, lavender-pink paw pads and bright emerald green eyes, sitting upright on a low light-oak coffee table beside a tall stacking tower of plain smooth unmarked light wooden blocks. The cat holds one front paw raised close to a block in a calm, serious kung fu master focus pose, eyes locked on the tower. Cozy living room at evening with warm lamp light and a softly blurred beige sofa behind. The cat is fully in frame and clearly visible, vertical composition",
+     "motion": "The Russian Blue cat stares at the wooden block tower with intense focus, narrows its eyes slightly, then slowly reaches its raised front paw forward and gently taps one block, then freezes in place with ears pointed forward while the tip of its tail swishes slowly. The tower stays standing and the warm lamp light glows softly. The cat stays fully in frame with four normal legs and its mouth closed. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same sleek Russian Blue cat with the short dense silvery blue-gray coat and bright emerald green eyes with the same fur pattern, face and eye color. Now the block tower has collapsed: the plain unmarked light wooden blocks lie scattered in a messy pile across the coffee table all around the cat, and one small wooden block rests flat on top of the cat's head between its ears. The cat sits still among the fallen blocks with wide innocent eyes looking straight at the camera, same cozy living room and warm lamp light. Photorealistic, vertical composition.",
+     "motion": "The Russian Blue cat sits among the scattered wooden blocks with one block balanced on its head, blinks slowly, tilts its head a little, glances down at the fallen blocks and then back at the camera with innocent eyes while its ears twitch. The block stays on its head and the warm lamp light glows softly. The cat stays fully in frame with four normal legs and its mouth closed. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Kung-fu pet poses were an early-November short-video trend, and AI cat clips that copy viral meme beats are taking off this month. This turns the 'serious master focus' pose into a cosy, low-stakes game moment.",
+    "pattern": "dead-serious focus, then the fail and an innocent stare at the camera; the title sets up the expectation and the second shot flips it",
+    "evidence": [
+     {
+      "title": "Babies and Cats Are Doing Kung Fu - YouTube",
+      "url": "https://www.youtube.com/shorts/rIT7fHilJCo"
+     },
+     {
+      "title": "AI Cat Dance: Make Your Cat Do the Viral Memes From 1 Photo",
+      "url": "https://www.atlascloud.ai/blog/tips/ai-cat-dance"
+     },
+     {
+      "title": "Wizard Cat Meme: Me at Work Keyboard Smash AI Video",
+      "url": "https://www.makeviral.ai/templates/wizard-cat-keyboard-smash-ai-trend"
+     }
+    ]
+   },
+   "id": "m261114g",
+   "format": "game",
+   "engine": "14b",
+   "seed": 55623
+  }
+ ]
+}

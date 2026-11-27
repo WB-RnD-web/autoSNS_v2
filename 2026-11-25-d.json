@@ -1,0 +1,64 @@
+{
+ "date": "2026-11-25",
+ "concepts": [
+  {
+   "slug": "guests-in-10-minutes-rug-lump-tortoiseshell",
+   "track": "sneaky-snitch.mp3",
+   "caption": "Guests arrive in 10 minutes",
+   "title": "Cleaned Before the Guests Came. Don't Look Under the Rug 🧹🐱",
+   "en_line": "He cleaned the whole living room in ten minutes, and the rug is hiding the rest.",
+   "ko_line": "손님 오기 10분 전 대청소 국룰 🧹",
+   "tags": [
+    "cat",
+    "ai cat",
+    "cat meme",
+    "funny cat",
+    "cleaning before guests",
+    "thanksgiving",
+    "tortoiseshell cat",
+    "relatable"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#손님맞이",
+    "#cat",
+    "#catmeme",
+    "#funnycats",
+    "#냥스타그램",
+    "#thanksgiving"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical composition, eye-level full-body shot of a fluffy medium-longhaired tortoiseshell cat with a mottled black and warm brown coat, a bright orange blaze running down the middle of its nose, and round golden eyes. The cat crouches low on a warm honey-colored wooden floor in a cozy living room, one front paw stretched out toward a small grey felt toy mouse near the front edge of a beige fabric sofa. A few more cat toys lie scattered across the floor around it: two crinkly silver balls, a red ribbon and a knitted toy fish. A large round cream woven rug lies flat beside the sofa, small orange pumpkins and a lit candle sit on a wooden side table, and soft warm evening lamp light fills the room. The cat is fully in frame and clearly visible.",
+     "motion": "Right from the first frame, the tortoiseshell cat swipes the grey toy mouse under the sofa with one quick front-paw sweep, then turns its head to the crinkly silver ball and pats it under the sofa too, its tail flicking in a hurry. The candle flame flickers gently on the side table. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "swish"
+     ],
+     "beat": "the paw swipes the toy mouse under the sofa"
+    },
+    {
+     "edit": "Keep exactly the same fluffy medium-longhaired tortoiseshell cat with the same fur pattern, face and eye color, with the same orange blaze down its nose. The living room floor is now spotless and empty with every toy gone, but the large round cream woven rug has one big rounded lump in its middle, and the cat sits proudly upright on top of the lump with its chest puffed out and a calm, satisfied face. Same beige sofa, small orange pumpkins and lit candle on the side table, warm evening lamp light. Photorealistic, vertical composition.",
+     "motion": "Right from the first frame, the tortoiseshell cat sitting on the rug lump firmly pats the lump twice with one front paw, the rug squishes down a little under its paw, then the cat sits up tall and gives a slow, proud blink. The candle flame flickers softly. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.5,
+     "sfx": [
+      "slap"
+     ],
+     "beat": "the paw pats down the lump in the rug",
+     "hit": true,
+     "caption": "Spotless. Don't ask."
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Today is Thanksgiving Eve (Nov 25, 2026), and lots of hosts are racing to tidy up before family arrives tomorrow. 'Guests arrive in 10 minutes' cleaning memes come back every holiday season.",
+    "pattern": "relatable before/after meme: a panicked speed-clean in the first second, then the punchline that the mess is just hidden under the rug",
+    "evidence": []
+   },
+   "id": "m261125d",
+   "format": "meme",
+   "engine": "14b",
+   "seed": 73962,
+   "tease": false
+  }
+ ]
+}

@@ -1,0 +1,65 @@
+{
+ "date": "2026-11-28",
+ "concepts": [
+  {
+   "slug": "arcade-ball-roll-ticket-flood-lilac-british-shorthair",
+   "track": "pixel-peeker-polka-faster.mp3",
+   "caption": "Last ball. Needs the top hole.",
+   "title": "Last Ball, Needed the Top Hole. Then the Tickets Wouldn't Stop 🎟️🐱",
+   "en_line": "One ball left, one tiny hole at the top, and one very confident paw.",
+   "ko_line": "마지막 공 하나로 티켓 폭탄 터뜨린 냥이 🎟️",
+   "tags": [
+    "cat",
+    "ai cat",
+    "arcade cat",
+    "funny cat",
+    "cute cat",
+    "arcade game",
+    "ticket jackpot",
+    "lilac british shorthair",
+    "cat shorts"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#오락실",
+    "#냥스타그램",
+    "#cat",
+    "#arcade",
+    "#catsofinstagram"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical composition, eye-level full-body shot of a plush adult lilac British Shorthair cat with a dense even pale pinkish-grey coat, no markings, round chubby cheeks, small rounded ears and big round copper-orange eyes, crouched at the low end of a classic wooden arcade ball-roll lane, one front paw resting on a small polished wooden ball, eyes locked up the lane. Behind the cat the smooth wooden ramp rises toward a round target of wooden rings with one small hole at the very top, framed by rows of warm glowing round bulb lights in red and gold. Cozy dim family arcade at night with soft colorful bokeh lights, the cat fully in frame and clearly visible.",
+     "motion": "From the very first frame the lilac British Shorthair cat swats the small wooden ball forward with one front paw and the ball rolls away up the wooden lane; the cat's head and wide copper eyes follow it upward, its ears perk forward and its tail tip twitches with focus. The bulb lights around the lane blink in a warm chasing pattern. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "swish"
+     ],
+     "beat": "the cat's paw swats the wooden ball up the lane"
+    },
+    {
+     "edit": "Keep exactly the same plush adult lilac British Shorthair cat with a dense even pale pinkish-grey coat, no markings, round chubby cheeks, small rounded ears and big round copper-orange eyes with the same fur pattern, face and eye color. Now the cat sits upright and proud on the same wooden arcade ball-roll lane, chest puffed out, surrounded by a big tumbling heap of long folded strips of plain blank orange paper prize tickets piled around its paws and spilling over the edge of the lane, every bulb light around the ring target glowing bright gold, cozy dim family arcade at night with colorful bokeh. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the lilac British Shorthair cat pats the heap of orange paper tickets with both front paws in a quick happy rhythm, the paper strips rustle and slide a little, then it lifts its chin proudly and slowly blinks. All the gold bulb lights around the lane flash on and off in celebration. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.4,
+     "sfx": [
+      "bell",
+      "slap"
+     ],
+     "beat": "the cat's front paws land on the heap of orange tickets as the gold lights flash",
+     "hit": true,
+     "caption": "Jackpot. Obviously."
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Thanksgiving long weekend is peak family-arcade time, and 'last-chance shot then jackpot ticket flood' arcade clips are an evergreen satisfying-win format; it also follows our own best game Short (pinball), which hooked with a clear stakes caption and a win payoff.",
+    "pattern": "stakes hook (last ball, tiny target) with the action already moving in frame one, then a hard cut to the over-the-top win: a proud cat in a heap of prize tickets under flashing lights",
+    "evidence": []
+   },
+   "id": "m261128c",
+   "format": "game",
+   "engine": "14b",
+   "seed": 73505,
+   "tease": false
+  }
+ ]
+}

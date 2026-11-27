@@ -1,0 +1,23 @@
+{
+ "date": "2026-11-27",
+ "slot": "c",
+ "format": "dance",
+ "model": "claude-opus-5-5",
+ "effort": "high",
+ "tokens": {
+  "input": 10,
+  "cache_write": 25141,
+  "cache_read": 61032,
+  "output": 6423,
+  "web_search": 6,
+  "web_fetch": 1
+ },
+ "ok": true,
+ "tries": 1,
+ "usd": 0.326,
+ "errors": [],
+ "history": [
+  []
+ ],
+ "slug": "christmas-songs-legal-now-odd-eyed-white-cat-dance"
+}

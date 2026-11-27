@@ -1,0 +1,53 @@
+{
+ "date": "2026-11-18",
+ "concepts": [
+  {
+   "slug": "pinecone-basket-kitten-wakes-up",
+   "track": "fluffing-a-duck.mp3",
+   "caption": "One pinecone is breathing",
+   "title": "Gathered Pinecones for Christmas. One of Them Has Ears 🌲🐱",
+   "en_line": "We brought home a basket of pinecones to decorate, and the fluffiest one just woke up.",
+   "ko_line": "크리스마스 장식하려고 주운 솔방울… 하나가 숨 쉬어요 🌲",
+   "tags": [
+    "cat",
+    "ai cat",
+    "kitten",
+    "pinecone",
+    "christmas decorating",
+    "cozy fireplace",
+    "cute kitten",
+    "morph"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#솔방울",
+    "#크리스마스준비",
+    "#cat",
+    "#kitten",
+    "#aicat"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic cozy close-up from a slightly high angle, vertical composition, of a round woven wicker basket filled with about ten natural brown pinecones, set on a chunky cream knitted wool blanket on a wooden floor beside a glowing stone fireplace with soft out-of-focus flames in the background. A few green pine sprigs and small red berries lie between the pinecones. The pinecone in the front center is slightly rounder and fluffier than the others, and two tiny triangular kitten ears covered in soft warm cinnamon-brown fur with darker brown tabby tips and pale cream inner fur poke out of its top. Warm golden firelight, soft shadows, the whole basket clearly visible in frame, shallow depth of field.",
+     "motion": "From the very first frame the two tiny cinnamon-brown kitten ears on the front pinecone twitch quickly, and that one pinecone gently rises and falls as if breathing slowly, while the other pinecones stay perfectly still. The fireplace flames flicker softly in the background and warm light dances on the basket. The basket and the ear-topped pinecone stay fully in frame and nothing new appears. Photorealistic, smooth natural motion, static camera."
+    },
+    {
+     "edit": "Keep exactly the same tiny pinecone kitten from shot 1 with the same fur pattern, face and eye color: the same wicker basket of pinecones, knitted blanket, fireplace and warm light, and the same two cinnamon-brown ears in the same spot. That front center pinecone is now a tiny fluffy kitten curled up in the basket in exactly the same place and size, its fur warm cinnamon-brown with layered darker brown tabby tufts arranged like pinecone scales, a pale cream chest and muzzle, a round face and big warm amber eyes just opening sleepily, two small front paws tucked in front of it, the other pinecones and pine sprigs still around it. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the tiny pinecone-colored kitten blinks its sleepy amber eyes open, lifts its head and slowly stretches both front paws forward over the edge of the pinecone pile, then tilts its head and looks up curiously with its ears twitching. Its mouth stays closed. The fireplace flames flicker softly in the background. The kitten stays fully in frame inside the basket with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.6
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "Mid-November is when people start gathering pinecones and greenery to decorate early for Christmas, and cosy fireplace scenes fit the cold weeks. This is an evergreen 'one of these is not like the others' morph, not a current trend.",
+    "pattern": "spot-the-odd-one hook (the caption makes viewers scan the basket), a tiny breathing hint, then a sleepy-kitten wake-up reveal as the payoff",
+    "evidence": []
+   },
+   "id": "m261118l",
+   "format": "morph",
+   "engine": "14b",
+   "seed": 48707,
+   "tease": true
+  }
+ ]
+}

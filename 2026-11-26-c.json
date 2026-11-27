@@ -1,0 +1,69 @@
+{
+ "date": "2026-11-26",
+ "concepts": [
+  {
+   "slug": "thanksgiving-leftovers-2am-fridge-blue-bicolor-british-shorthair",
+   "track": "investigations.mp3",
+   "caption": "Thanksgiving leftovers at 2 AM",
+   "title": "Thanksgiving Leftovers at 2 AM: Just Checking on the Turkey 🦃🐱",
+   "en_line": "Nobody saw him go to the kitchen, and nobody will ever prove it.",
+   "ko_line": "새벽 2시, 남은 칠면조 점검하러 온 냥이 🦃",
+   "tags": [
+    "cat",
+    "ai cat",
+    "thanksgiving",
+    "leftovers",
+    "midnight snack",
+    "funny cat",
+    "cat meme",
+    "british shorthair"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#추수감사절",
+    "#야식",
+    "#cat",
+    "#thanksgiving",
+    "#catsofinstagram",
+    "#냥스타그램"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical composition, eye-level full-body shot of a chubby blue-and-white bicolor British Shorthair cat with dense plush slate-grey fur on its back, head and ears, a bright white chest, white muzzle and four white paws, round copper-orange eyes and full round cheeks. The cat sits on a wooden kitchen floor in front of an open plain white refrigerator late at night, the warm glow from inside the fridge lighting its face and fur. The fridge shelves hold glass dishes of Thanksgiving leftovers: a plate of sliced roast turkey under clear wrap, a bowl of mashed potatoes, a dish of cranberry sauce and half a pumpkin pie. The rest of the kitchen is softly dark and cozy, the whole cat clearly visible and fully in frame.",
+     "motion": "From the very first frame the blue-and-white British Shorthair is already stretching its neck up toward the plate of sliced turkey, sniffing with its nose twitching and ears flicking, then quickly turns its head to glance over its shoulder toward the camera with wide copper eyes, and turns back to sniff the turkey again. The cool fridge light glows steadily and a faint mist drifts out of the open fridge. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "swish"
+     ],
+     "beat": "the cat snaps its head around to glance over its shoulder at the camera"
+    },
+    {
+     "edit": "Keep exactly the same chubby blue-and-white bicolor British Shorthair cat with the same fur pattern, face and eye color. Now the cat sits upright on a wooden kitchen counter late at night right beside a large roast turkey on a white platter under a loose crinkled foil tent, with one white front paw resting on the foil, looking straight at the viewer with big round innocent eyes. Warm soft under-cabinet light, the dark cozy kitchen behind. The whole cat is clearly visible. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the blue-and-white British Shorthair pats the foil over the roast turkey twice with one white front paw, then freezes with the paw still on the foil and stares straight at the camera with big round copper eyes, does one slow innocent blink and gives a tiny head tilt. The foil crinkles gently under its paw and the warm light glows steadily. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "xfade": 0.4,
+     "sfx": [
+      "slap"
+     ],
+     "beat": "the white paw pats down on the foil over the turkey",
+     "hit": true,
+     "caption": "I was just checking"
+    }
+   ],
+   "cover_shot": 1,
+   "trend": {
+    "why_now": "It's Thanksgiving Day (Nov 26, 2026), and sneaking back for leftovers late at night is the most relatable part of it. Mid-November cat meme roundups are full of festive kitchen jokes, like a cat who 'thinks this counts as not on the counter'.",
+    "pattern": "A relatable 'me at 2 AM' line: a sneaky glance over the shoulder in the fridge glow, then a busted, innocent punchline when the cat is caught with its paw on the turkey",
+    "evidence": [
+     {
+      "title": "26 Fabulous Festive Cat Memes to Welcome the Holiday Season Early (November 16, 2026) - I Can Has Cheezburger?",
+      "url": "https://cheezburger.com/47350021/26-fabulous-festive-cat-memes-to-welcome-the-holiday-season-early-november-16-2026"
+     }
+    ]
+   },
+   "id": "m261126c",
+   "format": "meme",
+   "engine": "14b",
+   "seed": 12123,
+   "tease": false
+  }
+ ]
+}

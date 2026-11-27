@@ -1,0 +1,80 @@
+{
+ "date": "2026-11-24",
+ "concepts": [
+  {
+   "slug": "pack-light-suitcase-sit-silver-tabby-american-bobtail",
+   "track": "run-amok.mp3",
+   "caption": "Me: I'll pack light this year",
+   "title": "Said He'd Pack Light for the Holidays. The Suitcase Disagreed 🧳🐱",
+   "en_line": "Five sweaters, three scarves and one very determined cat later, the suitcase is closing whether it likes it or not.",
+   "ko_line": "이번엔 짐 가볍게 싼다더니… 결국 캐리어 위에 올라앉음 🧳",
+   "tags": [
+    "cat",
+    "ai cat",
+    "funny cat",
+    "cat meme",
+    "packing",
+    "suitcase",
+    "holiday travel",
+    "thanksgiving"
+   ],
+   "hashtags": [
+    "#고양이",
+    "#짐싸기",
+    "#연말여행",
+    "#cat",
+    "#catmemes",
+    "#holidaytravel"
+   ],
+   "shots": [
+    {
+     "image": "Photorealistic vertical composition, eye-level full-body shot of a sturdy shorthaired American Bobtail cat with a silver-grey coat and bold black classic tabby swirl markings, a white muzzle and white chest, a short fluffy bobbed tail and bright green eyes, standing inside a large open light-grey hard-shell suitcase on a warm wooden bedroom floor, both front paws pressing down on a tall messy pile of folded chunky knit sweaters in red, mustard and cream that rises far above the suitcase rim, a striped wool scarf draped over the side, soft warm lamp light, plain cream wall and a cosy bed softly blurred behind, the cat and the whole suitcase fully in frame",
+     "motion": "From the very first frame the silver tabby American Bobtail is already pressing the tall sweater pile down with quick alternating front paws, left paw then right paw, the soft knit sweaters squish down a little and spring back up, the cat pats one more time firmly, then looks straight up at the camera with wide serious green eyes and a small head tilt. The striped scarf sways slightly on the suitcase edge. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "slap"
+     ],
+     "beat": "the cat's paw pats down firmly on the top of the sweater pile"
+    },
+    {
+     "edit": "Keep exactly the same sturdy shorthaired American Bobtail cat with silver-grey coat, bold black classic tabby swirl markings, white muzzle and chest, short fluffy bobbed tail and bright green eyes, with the same fur pattern, face and eye color. Now the light-grey hard-shell suitcase is closed and lying flat on the same wooden bedroom floor, bulging and overstuffed, with red and mustard knit sweater sleeves and the end of the striped wool scarf poking out along the edges of the lid, and the cat sits proudly right in the middle on top of the closed lid with its front paws together, chest puffed, looking at the camera, same warm lamp light and cosy bed behind. Photorealistic, vertical composition.",
+     "motion": "From the very first frame the silver tabby American Bobtail sits on top of the bulging suitcase and bounces its weight down onto the lid, the overstuffed lid squishes down a little and the sweater sleeves poking out of the edges puff outward, the cat settles firmly in place, blinks slowly with satisfaction and gives a small proud head tilt. The scarf end wiggles at the side of the suitcase. The cat stays fully in frame with four normal legs. Photorealistic, smooth natural motion, static camera.",
+     "sfx": [
+      "thud",
+      "meow"
+     ],
+     "beat": "the cat drops its weight onto the suitcase lid and the lid squishes down",
+     "hit": true,
+     "caption": "It will close. Somehow"
+    }
+   ],
+   "cover_shot": 2,
+   "trend": {
+    "why_now": "It's Thanksgiving week (Nov 26) and the start of holiday travel season. Meme roundups this week are full of 'holiday week' jokes, and holiday travel is in the news, so the overpacking struggle is very relatable right now worldwide, Korea included with year-end trips.",
+    "pattern": "promise vs reality meme: the caption makes the promise ('I'll pack light'), shot 1 shows the effort, shot 2 shows the relatable punchline of sitting on the overstuffed suitcase to force it shut",
+    "evidence": [
+     {
+      "title": "25+ Memes Gearing Up for Thanksgiving (November 23, 2026)",
+      "url": "https://cheezburger.com/47457797/25-memes-gearing-up-for-thanksgiving-november-23-2026"
+     },
+     {
+      "title": "The 52 Best Memes Taking Over The Internet This Thanksgiving Week",
+      "url": "https://brobible.com/culture/article/the-52-best-memes-taking-over-the-internet-this-thanksgiving-week/"
+     },
+     {
+      "title": "AAA predicts 2026 Thanksgiving travel to break three-year record-setting streak",
+      "url": "https://www.youtube.com/watch?v=bm-1xRUAFSw"
+     },
+     {
+      "title": "26 Fabulous Festive Cat Memes to Welcome the Holiday Season Early (November 16, 2026)",
+      "url": "https://cheezburger.com/47350021/26-fabulous-festive-cat-memes-to-welcome-the-holiday-season-early-november-16-2026"
+     }
+    ]
+   },
+   "id": "m261124b",
+   "format": "meme",
+   "engine": "14b",
+   "seed": 97191,
+   "tease": true
+  }
+ ]
+}
