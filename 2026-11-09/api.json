@@ -1,0 +1,20 @@
+{
+ "model": "claude-opus-5-5",
+ "effort": "high",
+ "tries": 2,
+ "ok": true,
+ "tokens": {
+  "input": 4329,
+  "cache_write": 76278,
+  "cache_read": 76278,
+  "output": 13391
+ },
+ "usd": 0.682,
+ "errors": [],
+ "history": [
+  [
+   "review: 어제 예측 채점(pulse.json pred_scored)에 대한 한두 문장 — 틀렸으면 왜"
+  ],
+  []
+ ]
+}

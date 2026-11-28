@@ -1,0 +1,21 @@
+{
+ "model": "claude-opus-5-5",
+ "effort": "high",
+ "tries": 2,
+ "ok": true,
+ "tokens": {
+  "input": 5001,
+  "cache_write": 72134,
+  "cache_read": 72134,
+  "output": 22397
+ },
+ "usd": 0.843,
+ "errors": [],
+ "history": [
+  [
+   "channels.wb.evidence: 1~4개, 각 5~220자",
+   "channels.wb.guess: 0~3개, 각 5~220자"
+  ],
+  []
+ ]
+}
