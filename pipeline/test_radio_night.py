@@ -194,6 +194,11 @@ try:
     ch = R.chapters(parts, vend)
     ck("목차: 00:00 으로 시작 · 빗소리로 끝", ch.startswith("00:00 안부 인사") and ch.rstrip().endswith("빗소리"))
     ck("빗소리 기본 30분", R.RAIN_MIN == 30.0 and N.RAIN_MIN == 30.0)
+    _req = open(os.path.join(HERE, "requirements.txt"), encoding="utf-8").read().lower()
+    _src = "".join(open(os.path.join(HERE, n), encoding="utf-8").read()
+                   for n in ("radio_night.py", "radio_night_render.py", "run_radio_night.py"))
+    ck("Actions 에 없는 모듈(numpy 등)을 쓰지 않는다 — requirements 에 있는 것만(11/28 시험 실행 실패)",
+       all(m not in _src or m in _req for m in ("import numpy", "import cv2", "import scipy")))
 
     if shutil.which(R.R.FFMPEG) or os.path.exists(R.R.FFMPEG):
         print("■ 짧은 가짜 목소리 렌더(ffmpeg)")
