@@ -1,0 +1,54 @@
+{
+ "date": "2026-11-28",
+ "topic": "wisdom",
+ "theme": "wisdom:mouth_wallet",
+ "privacy": "public",
+ "accent": "#2E7D6B",
+ "_min_total": 10.0,
+ "hook_title": "나이 들수록 입은 닫고 지갑은 열고",
+ "headline": "나이 들수록 지키면 좋은 습관 5가지 | 말년 지혜 #어른의품격 #인생명언 #말조심",
+ "thumbnail_hook": "an old pine tree on a quiet Korean hillside at sunset, soft golden light, dignified calm mood, no people, no text, no letters, no signage, no logos",
+ "thumbnail_style": "hanji",
+ "scenes": [
+  {
+   "type": "wisdom",
+   "pill": "50·60·70대 공감 · 말년 지혜",
+   "title": "나이 들수록",
+   "title2": "입은 닫고 지갑은 열고",
+   "tone": "do",
+   "items": [
+    {
+     "big": "잔소리는 한 번만",
+     "small": "두 번부턴 서운함이 돼요"
+    },
+    {
+     "big": "칭찬은 여러 번",
+     "small": "들을수록 힘이 나요"
+    },
+    {
+     "big": "밥값은 가끔 먼저",
+     "small": "넉넉한 사람으로 남아요"
+    },
+    {
+     "big": "옛날 얘기는 짧게",
+     "small": "듣는 사람도 즐겁게"
+    },
+    {
+     "big": "남의 흉은 못 들은 척",
+     "small": "말은 돌고 돌아요"
+    }
+   ],
+   "foot": "※ 어르신들 이야기를 모아 정리했어요 · 집집마다 사정은 다를 수 있어요",
+   "brand": "왕별이 · 말년 지혜",
+   "narration": "나이 들수록 지키면 좋은 습관, 다섯 가지예요. 몇 번이 제일 와닿으세요? 댓글로 번호를 남겨 주세요."
+  }
+ ],
+ "platforms": {
+  "youtube": {
+   "title": "나이 들수록 지키면 좋은 습관 5가지 | 말년 지혜 #어른의품격 #인생명언 #말조심 #shorts",
+   "description": "나이 들수록 지키면 좋은 습관, 다섯 가지를 한 장에 모았어요. 몇 번이 제일 와닿으세요? 댓글로 번호를 남겨 주세요 🙏\n\n1. 잔소리는 한 번만 — 같은 말을 두 번 하면 걱정이 잔소리로 들리기 시작해요.\n2. 칭찬은 여러 번 — 칭찬은 여러 번 들어도 질리지 않고 힘이 돼요.\n3. 밥값은 가끔 먼저 — 가끔 먼저 내는 밥값 한 번이 넉넉한 어른으로 기억되게 해요.\n4. 옛날 얘기는 짧게 — 지난 이야기는 짧고 재미있게 하면 다들 더 듣고 싶어 해요.\n5. 남의 흉은 못 들은 척 — 남의 흉에 맞장구치지 않으면 내 이야기도 함부로 돌지 않아요.\n\n※ 왕별이가 어르신들 이야기를 모아 정리한 생활 지혜예요. 집집마다 사정은 다를 수 있어요.\n\n#어른의품격 #인생명언 #말조심 #말년지혜 #인생지혜 #시니어공감 #50대 #60대 #70대 #shorts"
+  }
+ },
+ "notes": "말년 지혜 표 · wisdom:mouth_wallet · wisdom_card.py 가 만든 스토리보드(11/17~11/30 2주 시험 · 17:40)",
+ "publish_at": "2026-11-28T17:40+09:00"
+}
