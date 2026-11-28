@@ -40,6 +40,7 @@ on:
       - "Meow Remix 매일 쇼츠 — 기획(Claude API) → 그림·HD 영상(Spark) → 검수 → 유튜브 예약 공개"
       - "Meow Remix 인스타·쓰레드 — 고양이 쇼츠 모든 편을 릴스·쓰레드에(약 2시간 간격)"
       - "콘텐츠 채우기(API) — 목록이 바닥나기 전에 Claude API 가 다음 편 명세를 써서 refill/** push → refill-pr.yml 이 검사·PR"
+      - "왕별이 라디오 밤 편 — 대본(Claude API) → 검사 → 목소리 F2·피아노·빗소리 30분 → 20시 예약 공개"
     types: [completed]
 
 permissions:
