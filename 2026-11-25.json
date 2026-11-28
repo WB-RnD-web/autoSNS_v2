@@ -1,0 +1,294 @@
+{
+ "date": "2026-11-25",
+ "hot": [
+  {
+   "topic": "따뜻해진 바다 때문에 넓은띠큰바다뱀·파란선문어 같은 맹독 해양생물이 남해·동해까지 올라옴(KIOST 발표)",
+   "market": "kr",
+   "where": "종합 일간지 기사(경향신문 11/19)",
+   "evidence": [
+    {
+     "title": "바다뱀·파란선문어 ‘맹독 생물’ 북상…“관문 제주에 감시망 필요” - 경향신문",
+     "url": "https://www.khan.co.kr/article/202611192126015/",
+     "date": "2026-11-19"
+    }
+   ],
+   "why_now": "11/19 KIOST 발표가 나온 지 6일 된 국내 뉴스다. 우리 바다·우리 동네 이야기라 10~20대도 가깝게 느낀다.",
+   "fit": [
+    "insta_sci",
+    "insta_danger"
+   ],
+   "idea": "'남쪽 바다 생물이 왜 통영까지 왔나'를 수온 지도와 단면 그림으로 보여 준다. 진짜로 위험한 종이므로 귀여운 반전 대신 '보면 만지지 않기' 한 줄로 끝낸다."
+  },
+  {
+   "topic": "인스타 릴스에서 'AI로 반려동물이 사람처럼 춤추고 행동하는' 형식이 10월 인기 동영상 조회수 1위",
+   "market": "kr",
+   "where": "인스타 릴스(마케팅 매체 고구마팜 10월 인기 동영상 240개 분석)",
+   "evidence": [
+    {
+     "title": "떡 디저트, 수능 노래… 인기 릴스 240개로 읽는 트렌드 [2026년 10월 인급동 데이터]",
+     "url": "https://gogumafarm.kr/%eb%96%a1-%eb%94%94%ec%a0%80%ed%8a%b8-%ec%88%98%eb%8a%a5-%eb%85%b8%eb%9e%98-%ec%9d%b8%ea%b8%b0-%eb%a6%b4%ec%8a%a4-240%ea%b0%9c%eb%a1%9c-%ec%9d%bd%eb%8a%94-%ed%8a%b8%eb%a0%8c%eb%93%9c-2026/",
+     "date": "2026-11-18"
+    }
+   ],
+   "why_now": "11/18에 나온 분석에서 이 형식이 두 번 올라 합계 3,928만 회를 기록했고 조회수 1위도 이 형식이었다(10월 데이터).",
+   "fit": [
+    "insta_worker",
+    "insta_danger"
+   ],
+   "idea": "블롭피시 '심해 직장인'이 이미 '동물이 사람처럼 행동'하는 꼴이다. 남의 영상을 따라 하지 말고 동료 심해 생물의 '사람 같은 행동' 한 컷을 더 키운다."
+  },
+  {
+   "topic": "관상 영상 반짝 상승(트렌드 레이더 관상 1.21배·대박 비율 38%) — 대부분 실존 인물 관상",
+   "market": "kr",
+   "where": "유튜브(운세·역학 채널 쇼츠와 롱폼)",
+   "evidence": [
+    {
+     "title": "리트 만점자 이진우 진실은? 관상적 견해 2026.11.18 - YouTube",
+     "url": "https://www.youtube.com/watch?v=zLDHdBpJJsA",
+     "date": "2026-11-18"
+    }
+   ],
+   "why_now": "화제 인물이 나오면 관상 영상이 따라붙는 흐름이다. 레이더 표본이 8개로 적고, 인기는 인물 화제 덕이다.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "실존 인물 관상은 명예훼손 위험이 있어 하지 않는다. 관상은 명리 근거 밖이라 표 주제로는 보류하고, 레이더에서 유지 중인 '말년' 키워드를 띠 표 제목에 빌려 쓰는 정도만 한다."
+  },
+  {
+   "topic": "2027 정미년(붉은 양의 해) 신년운세 글이 꾸준히 올라옴 — 철 따라 오는 수요",
+   "market": "kr",
+   "where": "운세 사이트·블로그(검색 노출)",
+   "evidence": [
+    {
+     "title": "2027 정미년은 어떤 해일까? — 붉은 양의 해 미리보기",
+     "url": "https://sajuping.ai/blog/2027-jeongmi-preview",
+     "date": "2026-10-20"
+    },
+    {
+     "title": "2027년띠별운세 정미년 삼재와 세운 흐름 정리 - 사주클래스",
+     "url": "https://sajuclass.com/2027%EB%85%84%EB%9D%A0%EB%B3%84%EC%9A%B4%EC%84%B8/",
+     "date": ""
+    }
+   ],
+   "why_now": "솔직히 지난 30일 안에 새로 뜬 근거는 못 찾았다. 해마다 연말에 오는 상시·계절 수요이고, 확인한 글은 모두 30일이 넘었다.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "새 주제를 찾기보다 지금 하는 신년운세 시리즈와 롱폼 '정미년 깊이 보기' 편을 채우는 데 쓴다. 롱폼은 12일 뒤 바닥나니 이쪽이 먼저다."
+  },
+  {
+   "topic": "심해 발견 뉴스가 몰림 — 바위 한 덩이에 동물 245마리, '이상한 숲' 유리해면 군락, 5m 넘는 식스길 상어가 잠수정 창에 붙음",
+   "market": "us",
+   "where": "과학 뉴스(ScienceDaily·BBC Wildlife)와 일반 기사(Fox)",
+   "evidence": [
+    {
+     "title": "Hidden ecosystem: Scientists discover 245 animals living inside a single deep-sea rock",
+     "url": "https://www.sciencedaily.com/releases/2026/11/261114202133.htm",
+     "date": "2026-11-16"
+    },
+    {
+     "title": "Deep sea robot discovered bizarre ‘forest’ full of eerie animals 2,442 metres deep",
+     "url": "https://www.discoverwildlife.com/animal-facts/marine-animals/forest-of-weird",
+     "date": "2026-11-13"
+    },
+    {
+     "title": "Massive 17-foot shark comes face-to-face with scientists in incredible deep-sea footage",
+     "url": "https://www.foxnews.com/outkick-sports/massive-17-foot-shark-face-to-face-scientists-incredible-deep-sea-footage",
+     "date": "2026-11-22"
+    }
+   ],
+   "why_now": "11/13~11/22 열흘 사이에 영상과 발표가 연달아 나왔다.",
+   "fit": [
+    "insta_worker",
+    "insta_sci"
+   ],
+   "idea": "바위 속 작은 동물들을 '심해 원룸 쉐어하우스'로 보여 주는 블롭피시 편, 또는 바위 단면을 열어 보는 sci 편."
+  },
+  {
+   "topic": "194살 거북 조나단의 장수 비밀을 DNA에서 찾았다는 연구가 다시 퍼짐",
+   "market": "us",
+   "where": "과학 뉴스(ScienceDaily·Scientific American)",
+   "evidence": [
+    {
+     "title": "A 194-year-old tortoise has a remarkable anti-aging secret hidden in its DNA",
+     "url": "https://www.sciencedaily.com/releases/2026/11/261121221130.htm",
+     "date": "2026-11-22"
+    },
+    {
+     "title": "Scientists unlock the longevity secrets of 194-year-old Jonathan the giant tortoise",
+     "url": "https://www.scientificamerican.com/article/scientists-unlock-the-longevity-secrets-of-194-year-old-j",
+     "date": ""
+    }
+   ],
+   "why_now": "논문 첫 보도는 약 6주 전(10월 초)이다. 그런데 11/22 ScienceDaily가 다시 싣고 SciAm도 약 2주 전에 다루면서 계속 돌고 있다.",
+   "fit": [
+    "insta_sci"
+   ],
+   "idea": "거북 몸속 DNA를 열어 '고장 수리 담당 유전자'를 보여 주는 20~35초 sci 편."
+  },
+  {
+   "topic": "ESA 헤라 탐사선이 DART에 부딪힌 소행성 디모르포스의 첫 근접 사진을 오늘(11/25) 생중계",
+   "market": "us",
+   "where": "우주 기관 생중계(ESA TV·유튜브)·우주 정책 매체",
+   "evidence": [
+    {
+     "title": "HERA’S FIRST IMAGES OF ASTEROID DIMORPHOS (ESA), Nov 25, 2026",
+     "url": "https://spacepolicyonline.com/events/heras-first-images-of-asteroid-dimorphos-esa-nov-25-2026-145-230-pm-est/",
+     "date": "2026-11-21"
+    }
+   ],
+   "why_now": "첫 사진이 바로 오늘 공개된다. 공개 뒤 며칠은 '소행성 막기' 관련 이야기가 많이 돌 것이다.",
+   "fit": [
+    "nt_story",
+    "insta_sci"
+   ],
+   "idea": "What if an asteroid were heading for Earth? We already rammed one to test it — 45~75초 what-if."
+  },
+  {
+   "topic": "호주 숲에서 6일 동안 길을 잃었던 17세가 살아서 발견됨 — '한자리에서 기다리기' 생존법이 화제",
+   "market": "us",
+   "where": "영어권 기사(AOL 재게재)",
+   "evidence": [
+    {
+     "title": "Teen Who Survived Six Days Lost In The Australian Bush Shares The Simple Tactic That Saved His Life - AOL",
+     "url": "https://www.aol.com/articles/teen-survived-six-days-lost-103245000.html",
+     "date": "2026-11-13"
+    }
+   ],
+   "why_now": "11/12 구조, 11/13 보도로 12일 된 실화다. 결말이 좋은 생존담이라 영어권 13~30세 실화 쇼츠에 맞다.",
+   "fit": [
+    "nt_story"
+   ],
+   "idea": "얼굴 없는 3D 마네킹으로 '길을 잃으면 움직이지 마라' 실화를 60초에 담는다."
+  }
+ ],
+ "candidates": [
+  {
+   "line": "insta_worker",
+   "title_idea": "심해 쉐어하우스: 주먹만 한 돌 하나에 245명이 산다",
+   "facts": [
+    {
+     "fact": "연구팀이 태평양 클라리온-클리퍼턴 해역의 망간단괴 244개를 열어 보니 동물 4,139마리가 나왔고, 한 개에 평균 17마리가 살았다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261114202133.htm"
+    },
+    {
+     "fact": "가장 붐빈 단괴 한 개에는 245마리가 살고 있었다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261114202133.htm"
+    },
+    {
+     "fact": "망간단괴는 주먹만 한 크기이고 100만 년에 몇 밀리미터씩만 자라며, 수심 4,000~6,000미터에 있다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261114202133.htm"
+    },
+    {
+     "fact": "단괴의 틈은 1밀리미터보다 작은 동물이 살 만한 크기다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261114202133.htm"
+    }
+   ],
+   "careful": "제목의 245는 '돌 하나 최대치'다. 평균(17마리)과 헷갈리게 쓰지 않는다. 심해 채굴 찬반은 단정하지 않는다."
+  },
+  {
+   "line": "insta_sci",
+   "title_idea": "194살 거북 몸속을 열어 보면: DNA 고장 수리반",
+   "facts": [
+    {
+     "fact": "거북 조나단은 추정 나이 194살로, 지금 살아 있는 육지 동물 가운데 가장 오래 살았다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261121221130.htm"
+    },
+    {
+     "fact": "연구팀은 노화를 막는 일과 관련된 독특한 유전 변이 287개를 찾았다. 이 변이들은 DNA 손상 수리, 염증 억제, 인슐린 조절, 암 억제에 관여한다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261121221130.htm"
+    },
+    {
+     "fact": "에너지 생산과 DNA 수리를 맡은 유전자 조절 장치가 거의 두 세기 동안 매우 안정적으로 유지됐다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261121221130.htm"
+    }
+   ],
+   "careful": "나이는 '추정 194살'이라고 쓴다. 사람도 이렇게 하면 오래 산다는 식의 건강 단정은 하지 않는다."
+  },
+  {
+   "line": "insta_danger",
+   "title_idea": "까마귀가 위험한 진짜 이유: 사람보다 2배 빨리 판단함",
+   "facts": [
+    {
+     "fact": "독일 튀빙겐대 연구에서 까마귀는 움직이는 점들의 방향을 평균 235밀리초 만에 판단했다. 사람과 원숭이보다 두 배 빠른 속도다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261111005850.htm"
+    },
+    {
+     "fact": "실험에는 송장까마귀 두 마리가 참여했고, 신호가 뚜렷할 때 정확도는 거의 100%였다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261111005850.htm"
+    },
+    {
+     "fact": "이 연구는 학술지 사이언스에 실렸다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261111005850.htm"
+    }
+   ],
+   "careful": "실험한 까마귀는 2마리뿐이다. '모든 새가 사람보다 똑똑하다'로 넓히지 않는다."
+  },
+  {
+   "line": "insta_sci",
+   "title_idea": "얼굴이 완전히 삐뚤어진 고래 — 머리뼈 속을 열어 보면",
+   "facts": [
+    {
+     "fact": "페루에서 발견된 멸종 꼬마향고래 스카포코기아 우아차포는 630만~560만 년 전에 살았고 몸길이는 약 2.7미터였다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261118065528.htm"
+    },
+    {
+     "fact": "이 고래는 뼈로 된 콧구멍 두 개가 모두 머리뼈 왼쪽으로 몰려 있다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261118065528.htm"
+    },
+    {
+     "fact": "이빨고래의 머리뼈가 비대칭인 까닭은 소리를 내는 이마 속 지방 구조와 관련이 있다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261118065528.htm"
+    },
+    {
+     "fact": "연구자들은 처음에 화석 머리뼈가 죽은 뒤에 찌그러진 줄 알았다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261118065528.htm"
+    }
+   ],
+   "careful": "'포유류 가운데 가장 비대칭'은 연구자들이 '그럴 수 있다'고 본 것이다. 단정하지 않는다."
+  },
+  {
+   "line": "nt_story",
+   "title_idea": "What if an asteroid were coming? We already punched one — and today we see the bruise",
+   "facts": [
+    {
+     "fact": "NASA의 DART는 시속 1만 4,000마일로 소행성 디모르포스에 부딪혔고, 실제로 그 궤도를 바꿨다.",
+     "source_url": "https://spacepolicyonline.com/events/heras-first-images-of-asteroid-dimorphos-esa-nov-25-2026-145-230-pm-est/"
+    },
+    {
+     "fact": "디모르포스는 더 큰 소행성 디디모스 둘레를 돈다.",
+     "source_url": "https://spacepolicyonline.com/events/heras-first-images-of-asteroid-dimorphos-esa-nov-25-2026-145-230-pm-est/"
+    },
+    {
+     "fact": "ESA는 2026년 11월 25일 헤라 탐사선이 찍은 디모르포스의 첫 근접 사진을 ESA TV와 유튜브로 생중계한다.",
+     "source_url": "https://spacepolicyonline.com/events/heras-first-images-of-asteroid-dimorphos-esa-nov-25-2026-145-230-pm-est/"
+    }
+   ],
+   "careful": "사진 내용은 아직 모른다. 공개 뒤 다시 확인해서 넣는다. 지구 충돌 위험을 겁주는 쪽으로 쓰지 않는다."
+  },
+  {
+   "line": "nt_story",
+   "title_idea": "Lost 6 days in the Australian bush with one bag of chips — why staying put saved him",
+   "facts": [
+    {
+     "fact": "17세 소년이 11월 6일 멜버른에서 동쪽으로 약 180km 떨어진 월할라 이스트 근처에서 친구와 캠핑하다 실종됐다.",
+     "source_url": "https://www.aol.com/articles/teen-survived-six-days-lost-103245000.html"
+    },
+    {
+     "fact": "수색에는 인원 100명 이상과 헬리콥터·경찰견·잠수부가 투입됐다.",
+     "source_url": "https://www.aol.com/articles/teen-survived-six-days-lost-103245000.html"
+    },
+    {
+     "fact": "11월 12일 경찰 헬기가 캠프장에서 약 2km 떨어진 숲에서 낚시 도구 상자를 발견하면서 찾게 됐다.",
+     "source_url": "https://www.aol.com/articles/teen-survived-six-days-lost-103245000.html"
+    },
+    {
+     "fact": "먹을 것은 가족용 치킨맛 감자칩 한 봉지뿐이었고, 처음 이틀 동안 나눠 먹었다. 그 뒤로는 한자리에서 구조를 기다렸다.",
+     "source_url": "https://www.aol.com/articles/teen-survived-six-days-lost-103245000.html"
+    }
+   ],
+   "careful": "미성년자다. 실명·가족 이름·얼굴을 쓰지 않고 마네킹으로만 표현한다. 공포 연출과 기사에 없는 대사·장면은 만들지 않는다."
+  }
+ ],
+ "note": "한국 쪽 검색은 패션·운세 사이트에 많이 묻혀서, 30일 안에 새로 뜬 국내 근거는 맹독 생물 북상과 릴스 '동물 의인화' 형식 정도였다. 왕별이(wb_table) 소재는 확실한 새 사실이 없어 후보 0개다. 영어 쪽은 11월 중순 심해·동물 연구와 오늘 공개되는 헤라 소행성 사진이 풍부해서 바닥나는 insta_sci와 nt_story를 먼저 채울 후보로 골랐다. 검색 한도가 끝나 사실 확인은 이미 찾은 페이지를 fetch로 열어서 했다."
+}

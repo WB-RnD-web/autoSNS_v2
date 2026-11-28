@@ -1,0 +1,317 @@
+{
+ "date": "2026-11-20",
+ "hot": [
+  {
+   "topic": "2027 정미년 '붉은 양의 해' 상품이 11월 들어 잇달아 나옴(골프볼·기념메달·위스키 양띠판)",
+   "market": "kr",
+   "where": "경제·생활 기사(보도자료 기사가 11/2~11/19에 이어 나옴)",
+   "evidence": [
+    {
+     "title": "2027년생 아기 발도장 꾹…조니워커 양띠 한정판 출시",
+     "url": "https://hankyung.com/article/202611196332g",
+     "date": "2026-11-19"
+    },
+    {
+     "title": "볼빅, 2027년 신년 에디션 출시…골프볼에 '붉은 양' 담았다",
+     "url": "https://www.newspim.com/news/view/20261102000272",
+     "date": "2026-11-02"
+    },
+    {
+     "title": "풍산화동양행, '2027 양의 해' 기념메달·주화 선보여",
+     "url": "https://www.newscj.com/news/articleView.html?idxno=3447106",
+     "date": "2026-11-10"
+    }
+   ],
+   "why_now": "연말 선물 철을 앞두고 기업들이 '붉은 양의 해'를 내세운 한정판을 11월에 내고 있다. 그래서 정미년이라는 말이 운세 밖 기사에서도 자주 보인다. 신년운세 시리즈·롱폼 '정미년 깊이 보기'가 이어 탈 수 있는 바깥 흐름이다.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "'붉은 양의 해, 세 마리 양이 복을 연다(삼양개태)' 띠별 표 — 출생연도를 함께 적고, 어르신 말투로 덕담하는 꼴"
+  },
+  {
+   "topic": "2027 삼재띠(토끼·양·돼지띠 날삼재) 정리 글이 11월 중순에 다시 늘어남",
+   "market": "kr",
+   "where": "기사(시사매거진)·생활정보 블로그·무료 운세 사이트 안내글",
+   "evidence": [
+    {
+     "title": "운세서가, 2027년 삼재띠 토끼·양·돼지띠 '날삼재' 무료 확인… 정미년 신년운세 미리 보는 법",
+     "url": "https://www.sisamagazine.co.kr/article/1000000000723",
+     "date": "2026-11-12"
+    },
+    {
+     "title": "2027년 삼재띠 총정리｜돼지·토끼·양띠 출생연도·나이·날삼재·2028년 삼재",
+     "url": "https://www.make2t.kr/2026/11/2027-samjae-zodiac-birth-years.html",
+     "date": "2026-11-12"
+    },
+    {
+     "title": "2027 신년운세 무료보기 사이트 바로가기｜12띠별 운세·토정비결·삼재띠·생년월일 조회",
+     "url": "https://www.make2t.kr/2026/11/2027-free-new-year-fortune.html",
+     "date": "2026-11-02"
+    }
+   ],
+   "why_now": "신년운세를 찾아보는 철이 시작돼 삼재·토정비결 안내글이 11월에 새로 올라오고 있다. 다만 삼재는 해마다 이맘때 찾는 상시 주제라 '갑자기 뜬 유행'은 아니다.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "'2027년은 삼재가 끝나는 해' 토끼·양·돼지띠 출생연도·나이 표 — 겁주기 없이 '마무리·홀가분' 틀로"
+  },
+  {
+   "topic": "바다뱀·파란선문어 같은 맹독 해양생물이 수온 상승으로 남해·동해까지 올라옴(KIOST 분석)",
+   "market": "kr",
+   "where": "종합지 기사(경향신문 사회면)",
+   "evidence": [
+    {
+     "title": "바다뱀·파란선문어 '맹독 생물' 북상…\"관문 제주에 감시망 필요\"",
+     "url": "https://www.khan.co.kr/article/202611192126015/",
+     "date": "2026-11-19"
+    }
+   ],
+   "why_now": "어제(11/19) 나온 KIOST 분석 기사다. 위해 해양생물 종 수가 10년 사이 동해에서 5종→16종, 남해에서 10종→20종으로 늘었다는 숫자가 실렸다. 아직 기사 1건이라 크게 퍼졌는지는 확인하지 못했다.",
+   "fit": [
+    "insta_sci"
+   ],
+   "idea": "'우리 바다에 이게 왜 올라왔지?' — 지도 위에서 북상 경로를 보여 주는 과학 카드(진짜 위험한 생물이라 '귀여운 반전' 틀인 danger 줄기에는 맞지 않음)"
+  },
+  {
+   "topic": "심해 '다금속 단괴' 돌 하나 속에 동물 245개체 — 단괴 244개에서 4,139개체 확인",
+   "market": "us",
+   "where": "과학 뉴스(ScienceDaily) → 국내 과학 기사로 번역돼 퍼짐(미디어파인)",
+   "evidence": [
+    {
+     "title": "Hidden ecosystem: Scientists discover 245 animals living inside a single deep-sea rock",
+     "url": "https://www.sciencedaily.com/releases/2026/11/261114202133.htm",
+     "date": "2026-11-16"
+    },
+    {
+     "title": "심해 광물 단괴는 생물의 집…틈새에서 4139개체 확인",
+     "url": "https://www.mediafine.co.kr/news/articleView.html?idxno=95483",
+     "date": "2026-11-17"
+    }
+   ],
+   "why_now": "11/11 Scientific Reports에 실린 논문이다. 심해 채굴 논쟁과 엮여 영어·한국어 기사가 이번 주에 나왔다. '돌 속을 열어 본다'는 그림이 우리 '속이 보이는' 꼴과 바로 맞는다.",
+   "fit": [
+    "insta_worker",
+    "insta_sci"
+   ],
+   "idea": "심해 직장인 블롭피시의 '집 구하기' 편 — 주먹만 한 돌 하나에 245명이 사는 심해 셰어하우스"
+  },
+  {
+   "topic": "심해 바다돼지(sea pig) 피부 밑에서 유전체가 아주 작은 새 세균 발견(도쿄대)",
+   "market": "us",
+   "where": "과학 뉴스(ScienceDaily)",
+   "evidence": [
+    {
+     "title": "Something strange is living beneath the skin of deep-sea pigs",
+     "url": "https://www.sciencedaily.com/releases/2026/11/261118065512.htm",
+     "date": "2026-11-19"
+    }
+   ],
+   "why_now": "어제 올라온 연구 소식이다. 생김새가 귀여워 늘 인기 있는 바다돼지에 '피부 밑에 뭐가 산다'는 새 사실이 붙었다.",
+   "fit": [
+    "insta_sci"
+   ],
+   "idea": "바다돼지 몸 겉→피부 속→세균을 차례로 확대해 보여 주는 20초짜리 '속이 보이는 과학'"
+  },
+  {
+   "topic": "유클리드 우주망원경이 첫 혜성(C/2026 S1)을 발견 — 목성과 토성 궤도 사이",
+   "market": "us",
+   "where": "우주 뉴스(Space.com '오늘의 우주 사진')",
+   "evidence": [
+    {
+     "title": "Euclid space telescope discovers its 1st comet | Space photo of the day for Nov. 16, 2026",
+     "url": "https://www.space.com/astronomy/comets/euclid-discovers-its-1st-comet-space-photo-of-the-day-for-nov-16-2026",
+     "date": "2026-11-16"
+    }
+   ],
+   "why_now": "4일 전 공개된 사진 뉴스다. 원래 우주의 수수께끼를 보려고 만든 망원경이 '덤으로' 혜성을 찾았다는 반전이 있다. 다만 아직 크게 화제가 되지는 않았다.",
+   "fit": [
+    "insta_sci"
+   ],
+   "idea": "'여러 장에 남은 줄 하나' → 소프트웨어가 움직이는 물체를 찾아내 혜성이 되기까지를 단계로 보여 주는 우주 카드"
+  },
+  {
+   "topic": "실제 생존 구조 이야기가 이번 달 영어권 기사에 잇달아 나옴(호주 숲 6일 고립 10대·히말라야 폭설 29명·바다 9시간 표류)",
+   "market": "us",
+   "where": "영어권 기사(AOL/Bored Panda·Backpacker·ABC News)",
+   "evidence": [
+    {
+     "title": "Teen Who Survived Six Days Lost In The Australian Bush Shares The Simple Tactic That Saved His Life",
+     "url": "https://www.aol.com/articles/teen-survived-six-days-lost-103245000.html",
+     "date": "2026-11-14"
+    },
+    {
+     "title": "Buried By a Sudden Snowstorm in the Himalayas, 29 Hikers Faced a Fight to Survive",
+     "url": "https://www.backpacker.com/news-and-events/news/buried-under-6-feet-of-snow-in-the-himalayas-hikers-rescued/",
+     "date": "2026-11-17"
+    },
+    {
+     "title": "Fishermen rescue Royal Caribbean crew member who went overboard off California coast",
+     "url": "https://abcnews.com/US/fishermen-rescue-royal-caribbean-crew-member-overboard-off/story?id=137970512",
+     "date": "2026-11-09"
+    }
+   ],
+   "why_now": "최근 2주 안에 일어난 실제 구조 사건들이고, '무엇이 살렸나'라는 각도로 기사가 쓰였다. 생존 실화 자체는 늘 인기 있는 상시 주제다.",
+   "fit": [
+    "nt_story"
+   ],
+   "idea": "얼굴 없는 3D 마네킹으로 '살린 결정 하나'만 보여 주는 45~60초 실화(이름·얼굴은 빼고)"
+  }
+ ],
+ "candidates": [
+  {
+   "line": "insta_sci",
+   "title_idea": "귀여운 바다돼지 피부 밑을 열어 봤더니",
+   "facts": [
+    {
+     "fact": "바다돼지는 약 15cm까지 자라고, 다리처럼 커진 관족으로 바다 밑바닥을 걷는다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261118065512.htm"
+    },
+    {
+     "fact": "바다돼지는 사실 해삼의 한 종류다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261118065512.htm"
+    },
+    {
+     "fact": "도쿄대 연구진이 바다돼지 몸벽 안에서 새 세균을 찾았는데, 이 세균의 유전체는 DNA 염기 649,000개뿐이다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261118065512.htm"
+    },
+    {
+     "fact": "그 작은 유전체의 4분의 1이 넘는 부분이 세균 겉면 단백질을 만드는 데 쓰이고, 그중 일부는 아미노산이 5,000개가 넘는 '거대' 단백질이다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261118065512.htm"
+    },
+    {
+     "fact": "어린 킹크랩이 포식자를 피해 바다돼지를 은신처로 쓰는 모습이 관찰됐다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261118065512.htm"
+    },
+    {
+     "fact": "일부 심해에서는 해삼류가 큰 해저 동물 생물량의 90% 넘게 차지한다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261118065512.htm"
+    }
+   ],
+   "careful": "세균이 바다돼지에게 무엇을 주는지는 아직 모른다(페이지에 '수수께끼'라고 적혀 있다) — '공생해서 지켜 준다'처럼 단정하지 말 것. 바다돼지는 이미 쓴 소재 carpool-senior-sea-pig와 같은 동물이지만 각도(피부 속 세균)가 다르다. 겹침이 걱정되면 미뤄도 된다."
+  },
+  {
+   "line": "insta_worker",
+   "title_idea": "심해 직장인의 집 구하기 — 돌 하나에 245명 사는 셰어하우스",
+   "facts": [
+    {
+     "fact": "연구진이 태평양 클라리온-클리퍼턴 해역의 다금속 단괴 244개를 조사해 틈새에서 동물 4,139개체를 찾았다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261114202133.htm"
+    },
+    {
+     "fact": "단괴 하나에 평균 17개체가 살았고, 가장 붐빈 단괴 하나에는 245개체가 있었다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261114202133.htm"
+    },
+    {
+     "fact": "다금속 단괴는 대략 주먹만 한 검은 덩어리이고, 100만 년에 몇 mm밖에 자라지 않는다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261114202133.htm"
+    },
+    {
+     "fact": "단괴는 수심 4,000~6,000m 바닥에 있고, 그 틈새에는 1mm도 안 되는 생물들이 숨어 산다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261114202133.htm"
+    },
+    {
+     "fact": "단괴 안 생물 무리는 주변 진흙의 생물 무리와 구성이 달랐다.",
+     "source_url": "https://www.mediafine.co.kr/news/articleView.html?idxno=95483"
+    }
+   ],
+   "careful": "4,139개체에는 단세포 생물(유공충 등)도 들어 있다고 국내 기사에 적혀 있다 — '동물 4,139마리'보다 '생물 4,139개체'가 안전하다. 채굴 찬반(정책)은 다루지 말 것."
+  },
+  {
+   "line": "insta_sci",
+   "title_idea": "우주망원경 사진에 그어진 줄 하나의 정체",
+   "facts": [
+    {
+     "fact": "유클리드 우주망원경이 첫 혜성을 찾았고, 이름은 C/2026 S1(줄여서 '유클리드 혜성')이다.",
+     "source_url": "https://www.space.com/astronomy/comets/euclid-discovers-its-1st-comet-space-photo-of-the-day-for-nov-16-2026"
+    },
+    {
+     "fact": "이 혜성은 목성과 토성 궤도 사이를 돌고 있었고, 약 13억 km 떨어진 곳에서 발견됐다.",
+     "source_url": "https://www.space.com/astronomy/comets/euclid-discovers-its-1st-comet-space-photo-of-the-day-for-nov-16-2026"
+    },
+    {
+     "fact": "9월 16~24일에 찍은 관측 사진들에서 찾았다. 소프트웨어가 여러 장에 걸친 '줄'을 잡아냈고, 모두 5개 사진 묶음에서 확인됐다.",
+     "source_url": "https://www.space.com/astronomy/comets/euclid-discovers-its-1st-comet-space-photo-of-the-day-for-nov-16-2026"
+    },
+    {
+     "fact": "유클리드는 2023년에 쏘아 올린 유럽우주국(ESA) 망원경이고, NASA도 참여했다.",
+     "source_url": "https://www.space.com/astronomy/comets/euclid-discovers-its-1st-comet-space-photo-of-the-day-for-nov-16-2026"
+    }
+   ],
+   "careful": "혜성 크기·궤도 주기·지구 접근 같은 숫자는 페이지에 없다. 지어내지 말고, '지구에 온다' 같은 겁주기도 금지."
+  },
+  {
+   "line": "wb_table",
+   "title_idea": "2027년은 삼재가 끝나는 해 — 토끼·양·돼지띠 출생연도·나이 표",
+   "facts": [
+    {
+     "fact": "2027년 정미년의 삼재띠는 토끼띠·양띠·돼지띠이고, 세 띠 모두 삼재의 마지막 해인 날삼재에 해당한다.",
+     "source_url": "https://www.sisamagazine.co.kr/article/1000000000723"
+    },
+    {
+     "fact": "토끼띠·양띠·돼지띠는 2025년 을사년 들삼재, 2026년 병오년 눌삼재를 지나 2027년 날삼재로 마무리된다.",
+     "source_url": "https://www.sisamagazine.co.kr/article/1000000000723"
+    },
+    {
+     "fact": "명리학에서는 양력 1월 1일이 아니라 입춘(2027년 2월 4일 무렵)을 기준으로 해가 바뀐다고 보기도 한다.",
+     "source_url": "https://www.sisamagazine.co.kr/article/1000000000723"
+    },
+    {
+     "fact": "2028년부터는 호랑이띠·말띠·개띠의 삼재가 시작된다.",
+     "source_url": "https://www.make2t.kr/2026/11/2027-samjae-zodiac-birth-years.html"
+    }
+   ],
+   "careful": "겁주기 금지 — '조심하라'가 아니라 '3년 고비를 마무리하는 해'로 풀 것. 출생연도·나이 계산은 우리 표 코드로 다시 확인하고, 1~2월생은 입춘 기준이라는 안내를 넣을 것."
+  },
+  {
+   "line": "wb_table",
+   "title_idea": "붉은 양의 해, 세 마리 양이 복을 연다(삼양개태) — 2027 정미년 띠별 복 표",
+   "facts": [
+    {
+     "fact": "2027년 정미년은 '붉은 양의 해'로 불리며, 이를 기념한 한정판 상품이 11월에 국내에 나왔다.",
+     "source_url": "https://hankyung.com/article/202611196332g"
+    },
+    {
+     "fact": "'삼양개태(三羊開泰)'는 세 마리 양이 길한 기운을 불러온다는 뜻으로, 2027 양의 해 기념메달 디자인의 바탕이 됐다.",
+     "source_url": "https://www.newscj.com/news/articleView.html?idxno=3447106"
+    },
+    {
+     "fact": "볼빅은 2027년 정미년을 기념해 붉은 양을 소재로 한 골프볼과 파크골프볼 신년 에디션을 내놓았다.",
+     "source_url": "https://www.newspim.com/news/view/20261102000272"
+    }
+   ],
+   "careful": "삼양개태는 전통 길상어(좋은 뜻을 담은 말)이지 명리 계산이 아니다 — 띠별 풀이는 우리 명리 근거로 따로 쓰고, 그 둘을 섞어 단정하지 말 것. 상표·상품 광고처럼 보이지 않게 브랜드 이름은 넣지 말 것."
+  },
+  {
+   "line": "nt_story",
+   "title_idea": "6 Days Lost in the Bush With Only a Bag of Chips — The One Choice That Got Him Found",
+   "facts": [
+    {
+     "fact": "호주 빅토리아주 월할라 이스트(멜버른에서 동쪽으로 약 180km) 근처에서 캠핑하던 17세 소년이 11월 6일 길을 잃었다.",
+     "source_url": "https://www.aol.com/articles/teen-survived-six-days-lost-103245000.html"
+    },
+    {
+     "fact": "소년은 휴대폰·음식·물을 캠프에 두고 나와 길을 잃었고, 낚시 도구 상자·베개·수건만 들고 있었다.",
+     "source_url": "https://www.aol.com/articles/teen-survived-six-days-lost-103245000.html"
+    },
+    {
+     "fact": "먹을 것은 가족용 치킨맛 감자칩 한 봉지뿐이었고, 처음 이틀 동안 나눠 먹었으며, 물은 근처 개울에서 마셨다.",
+     "source_url": "https://www.aol.com/articles/teen-survived-six-days-lost-103245000.html"
+    },
+    {
+     "fact": "밤 기온이 약 3°C까지 떨어졌고, 소년은 반바지와 작업화 차림에 수건 두 장과 베개로 버텼다.",
+     "source_url": "https://www.aol.com/articles/teen-survived-six-days-lost-103245000.html"
+    },
+    {
+     "fact": "다리를 다친 뒤 개울 옆에 머물렀고, 11월 12일 경찰 헬기가 캠프에서 약 2km 떨어진 곳의 낚시 도구 상자를 보고 그를 찾아냈다.",
+     "source_url": "https://www.aol.com/articles/teen-survived-six-days-lost-103245000.html"
+    },
+    {
+     "fact": "수색에는 100명이 넘는 인력과 자원봉사자, 헬기, 경찰견, 잠수부가 동원됐다.",
+     "source_url": "https://www.aol.com/articles/teen-survived-six-days-lost-103245000.html"
+    }
+   ],
+   "careful": "주인공이 실존 미성년자다 — 이름·가족 이름은 빼고, 3D 마네킹은 실제 생김새를 닮게 만들지 말 것. 공포 연출 대신 생존 실화로만 다룰 것. '이렇게 하면 산다'는 생존 요령으로 단정하지 말고, 기사에 적힌 이 사람의 경우로만 말할 것. 출처가 Bored Panda를 옮겨 실은 글이라, 쓰기 전에 호주 경찰·현지 방송 원문을 한 번 더 확인하는 것이 좋다."
+  }
+ ],
+ "note": "한국 '요즘 유행 쇼츠·릴스' 검색은 패션 기사만 잡혀서 10~20대 짧은 영상 유행의 근거는 찾지 못했다. 대신 왕별이 쪽은 '붉은 양의 해'·삼재 글이 11월에 늘고 있고, 인스타 sci(재고 6일)와 nt_story(재고 10일)를 바로 채울 수 있는 이번 주 심해·우주·생존 소식(심해 단괴·바다돼지·유클리드 혜성·호주 생존 실화)을 확보했다. 트렌드 레이더의 '이름·성씨 떡상'은 웹 기사로는 근거를 찾지 못해 hot에 넣지 않았다. 검색 도구 한도에 걸려 사실 확인용 추가 fetch는 하지 못했다."
+}

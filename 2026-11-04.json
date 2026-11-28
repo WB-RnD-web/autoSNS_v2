@@ -1,0 +1,271 @@
+{
+ "date": "2026-11-04",
+ "hot": [
+  {
+   "topic": "보이저 1호가 11/18에 지구에서 '1광일' 거리에 닿는다 (49년 만, 사람이 만든 물체로는 처음)",
+   "market": "us",
+   "where": "과학 기사(NASA·ScienceDaily·EarthSky). 국내 기사는 7월에 한 번 크게 다뤘다",
+   "evidence": [
+    {
+     "title": "November's Night Sky Notes: Light-Day Away - NASA Science",
+     "url": "https://science.nasa.gov/solar-system/skywatching/night-sky-network/novembers-night-sky-notes-light-day-away/",
+     "date": "2026-11-01"
+    },
+    {
+     "title": "NASA's Voyager 1 is about to reach a historic one-light-day milestone",
+     "url": "https://www.sciencedaily.com/releases/2026/11/261103003152.htm",
+     "date": "2026-11-03"
+    },
+    {
+     "title": "49년 날아간 보이저 1호, 4개월 후 '1광일' 거리 도달 (서울경제)",
+     "url": "https://www.sedaily.com/article/20071633",
+     "date": "2026-07-25"
+    }
+   ],
+   "why_now": "그날이 2주 뒤(11/18)라 영어권 기사가 11/1~11/3에 새로 나왔다. 10/20에 교신이 48시간 끊겼다가 다시 이어진 일도 같이 다뤄진다. 국내 기사는 7월 것이라 당일에 다시 다뤄질 가능성이 높다",
+   "fit": [
+    "insta_sci",
+    "nt_story"
+   ],
+   "idea": "인스타: 보이저 몸속을 열어 보는 카드(꺼진 장비·예비 추진기·하루 걸리는 신호). Nine Tails: 'What if your message took a whole day to arrive?'"
+  },
+  {
+   "topic": "1960년 과학 논문이 '종말의 날'로 찍은 2026년 11월 13일 금요일이 다가온다",
+   "market": "us",
+   "where": "과학 기사(ScienceDaily). 영어권 what-if 소재",
+   "evidence": [
+    {
+     "title": "Scientists Predicted Doomsday for November 13, 2026. Should We Be Worried?",
+     "url": "https://www.sciencedaily.com/releases/2026/10/261016070639.htm",
+     "date": "2026-10-16"
+    }
+   ],
+   "why_now": "그날이 9일 뒤(11/13)다. 날짜가 정해진 일이라 당일 전후로 기사가 또 나올 가능성이 높다",
+   "fit": [
+    "nt_story"
+   ],
+   "idea": "45~75초 what-if 실화: 수학적으로 그럴듯했던 종말 예측이 왜 빗나갔는지 (겁주기 말고 '틀린 예측' 반전으로)"
+  },
+  {
+   "topic": "동남아 꼬마 뱀이 바퀴처럼 굴러서 도망간다. 기어갈 때보다 약 4배 빠르다",
+   "market": "us",
+   "where": "과학 기사(ScienceDaily · 영상 링크 있음)",
+   "evidence": [
+    {
+     "title": "These Tiny Snakes Roll Four Times Faster Than They Slither",
+     "url": "https://www.sciencedaily.com/releases/2026/10/261023023718.htm",
+     "date": "2026-10-24"
+    }
+   ],
+   "why_now": "10월 말에 나온 새 연구(11일 전)다. 굴러가는 영상이 있어 짧은 영상으로 퍼지기 좋다",
+   "fit": [
+    "insta_danger"
+   ],
+   "idea": "'뱀이 굴러온다?!' 무서운 제목 → 사실은 몸통은 돌고 머리는 반듯하게 앞을 보는 꼬마 뱀의 도망 기술"
+  },
+  {
+   "topic": "깡충거미도 자면서 REM과 비슷한 단계가 있다. 눈이 움직이고 다리가 움찔한다",
+   "market": "us",
+   "where": "과학 기사(ScienceDaily · 독일 본 대학 연구)",
+   "evidence": [
+    {
+     "title": "Do Spiders Dream? Scientists Just Found a Surprising Clue",
+     "url": "https://www.sciencedaily.com/releases/2026/10/261026225555.htm",
+     "date": "2026-10-27"
+    }
+   ],
+   "why_now": "8일 전에 나온 새 연구다. 'Do spiders dream?'이라는 제목이 잘 걸린다",
+   "fit": [
+    "insta_danger"
+   ],
+   "idea": "'밤에 거미가 떨고 있다면 위험한 진짜 이유' → 거미줄 아래 거꾸로 매달려 자면서 눈·다리가 움찔하는 단계에 있는 것"
+  },
+  {
+   "topic": "입동(11/7 토요일)과 김장철, 겨울 첫머리 생활 기사",
+   "market": "kr",
+   "where": "생활 기사(비건뉴스·위키트리)",
+   "evidence": [
+    {
+     "title": "[비건뉴스] 2026년 입동 11월 7일…겨울 절기 첫머리",
+     "url": "https://www.vegannews.co.kr/news/article.html?no=399250",
+     "date": "2026-11-03"
+    },
+    {
+     "title": "[요리꿀팁] 입동 식탁엔 '이것'부터 올려 보세요…팥죽은 동지에 더 가까웠네요",
+     "url": "https://www.wikitree.co.kr/articles/1168824",
+     "date": "2026-10-25"
+    }
+   ],
+   "why_now": "사흘 뒤가 입동이다. 매년 돌아오는 절기라 상시 주제지만, 지금 바로 기사가 나오고 있다",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "'입동 맞이 겨울 첫머리 집안 평안 띠 표'처럼 절기 날짜를 붙인 띠 테마 표 (어르신 말투)"
+  },
+  {
+   "topic": "11월 밤하늘: 사자자리 유성우(11/17~18), 올해 슈퍼문 중 하나인 11/24 보름달",
+   "market": "kr",
+   "where": "천문 블로그·안내 페이지",
+   "evidence": [
+    {
+     "title": "2026년 11월 슈퍼문: 11월 24~25일 해 질 녘 보름달 찍기 좋은 시간",
+     "url": "https://labs.quartz.best/ko-KR/blogs/golden-horizon/supermoon-november-2026-beaver-moon-moonrise",
+     "date": "2026-10-23"
+    }
+   ],
+   "why_now": "날짜가 정해진 천문 행사가 2~3주 안에 몰려 있다. 근거로 연 페이지는 블로그 하나뿐이라 열기는 아직 약하다",
+   "fit": [
+    "wb_table",
+    "insta_sci"
+   ],
+   "idea": "왕별이: '11월 보름달에 소원 빌기 좋은 띠' 표. 인스타: 슈퍼문이 커 보이는 이유(근지점)를 단면으로"
+  },
+  {
+   "topic": "심해 검은아귀가 대낮에 수면 가까이 나타난 영상을 국내 피드 매체가 다시 다룬다",
+   "market": "kr",
+   "where": "국내 피드형 기사(뷰어스 피드)",
+   "evidence": [
+    {
+     "title": "심해에 사는 검은아귀가 수면 가까이 나타났다…실제 촬영 영상에 담긴 모습",
+     "url": "https://feed.viewus.co.kr/ai/article/353921/",
+     "date": "2026-11-03"
+    },
+    {
+     "title": "바닷속에서 검은 물체를 발견한 연구진…가까이 다가가자 드러난 충격적인 정체",
+     "url": "https://feed.viewus.co.kr/ai/article/353931/",
+     "date": "2026-11-03"
+    }
+   ],
+   "why_now": "새로 생긴 일은 아니다. 2025년 1월에 찍힌 장면을 어제 다시 다룬 것이다. 국내 피드에서 심해어 소재가 계속 돈다는 신호 정도로만 본다",
+   "fit": [
+    "insta_worker"
+   ],
+   "idea": "아귀는 이미 썼다(boss-desk-light-anglerfish). 새 편으로 하지 말고 '무서운 얼굴인데 실제로는 손바닥만 하다'는 반전 꼴만 참고"
+  }
+ ],
+ "candidates": [
+  {
+   "line": "insta_sci",
+   "title_idea": "49년째 날아가는 보이저 1호 속을 열어 보면 — 11월 18일, 신호가 하루 걸린다",
+   "facts": [
+    {
+     "fact": "보이저 1호는 2026년 11월 18일에 지구에서 1광일 거리에 닿는다.",
+     "source_url": "https://science.nasa.gov/solar-system/skywatching/night-sky-network/novembers-night-sky-notes-light-day-away/"
+    },
+    {
+     "fact": "1광일은 약 161억 마일(259억 km), 173.14 AU다.",
+     "source_url": "https://earthsky.org/space/voyager-1-1-light-day-from-earth-november-17-18-2026/"
+    },
+    {
+     "fact": "1광일 거리에서는 가장 간단한 왕복 교신에도 48시간이 걸린다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261103003152.htm"
+    },
+    {
+     "fact": "10월 20일 보이저 1호는 48시간 끊겼던 교신을 다시 이었다. 추진기 한 세트가 멈춰 예비 추진기로 저절로 바뀐 것으로 확인됐다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261103003152.htm"
+    },
+    {
+     "fact": "NASA는 전력을 아끼려고 2026년 4월 LECP(저에너지 하전입자) 장비를 껐다.",
+     "source_url": "https://earthsky.org/space/voyager-1-1-light-day-from-earth-november-17-18-2026/"
+    },
+    {
+     "fact": "보이저 1호는 1977년에 지구에서 발사됐다.",
+     "source_url": "https://earthsky.org/space/voyager-1-1-light-day-from-earth-november-17-18-2026/"
+    }
+   ],
+   "careful": "11/18은 미국 시간 기준이라 한국 날짜·시각은 다를 수 있다. 1광일을 넘는다고 탐사선에 물리적 변화가 생기지는 않는다(기사에 적혀 있음). '고장 난다'·'곧 죽는다' 같은 단정은 하지 않는다"
+  },
+  {
+   "line": "nt_story",
+   "title_idea": "Scientists Picked Friday, November 13, 2026 as Doomsday — Here's What Went Wrong",
+   "facts": [
+    {
+     "fact": "1960년 과학지 Science에 'Doomsday: Friday, 13 November, A.D. 2026'이라는 제목의 논문이 실렸다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/10/261016070639.htm"
+    },
+    {
+     "fact": "이 논문은 그날 세계 인구가 무한대에 가까워진다고 예측했다. 쓴 사람은 하인츠 폰 푀르스터와 학생 두 명이다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/10/261016070639.htm"
+    },
+    {
+     "fact": "예측은 한동안 꽤 맞았지만, 1993년 무렵부터 실제 세계 인구가 예측보다 뒤처지기 시작했다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/10/261016070639.htm"
+    },
+    {
+     "fact": "오늘날 세계 출산율은 1960년의 절반보다 약간 적다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/10/261016070639.htm"
+    }
+   ],
+   "careful": "종말 공포로 몰지 말고 '그럴듯한 수학 모델도 사람이 바뀌면 빗나간다'는 반전으로 한다. 인구·출산 정책을 정치 진영 얘기로 끌고 가지 않는다. 11/13 전에 내야 의미가 있다"
+  },
+  {
+   "line": "insta_danger",
+   "title_idea": "뱀이 굴러서 쫓아온다? 위험한 진짜 이유",
+   "facts": [
+    {
+     "fact": "동남아에 사는 꼬마 갈대뱀(Pseudorabdion 속)은 땅 위를 굴러서 도망친다. 굴러갈 때는 평소 기어갈 때보다 약 4배 빠르다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/10/261023023718.htm"
+    },
+    {
+     "fact": "굴러가는 동안 몸 뒷부분은 빠르게 돌지만, 머리는 앞을 향한 채 거의 같은 높이로 반듯하게 유지된다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/10/261023023718.htm"
+    },
+    {
+     "fact": "연구진은 여러 각도에서 찍은 영상을 분석해 이 움직임을 밝혔다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/10/261023023718.htm"
+    }
+   ],
+   "careful": "굴러가는 건 쫓아오는 공격이 아니라 포식자를 피해 도망치는 행동이다. 모든 뱀이 그런다고 일반화하지 않는다"
+  },
+  {
+   "line": "insta_danger",
+   "title_idea": "밤에 거미가 부들부들 떤다면? 위험한 진짜 이유",
+   "facts": [
+    {
+     "fact": "독일 본 대학 연구진은 호주 깡충거미 Portia fimbriata에게서 REM과 비슷한 수면 단계를 찾았다. 이때 눈이 움직이고 근육이 움찔한다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/10/261026225555.htm"
+    },
+    {
+     "fact": "이 거미는 다 자라도 1유로 동전만 한 크기다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/10/261026225555.htm"
+    },
+    {
+     "fact": "연구 사진 속 거미는 스스로 친 거미줄 아래에 거꾸로 매달린 자세로 잔다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/10/261026225555.htm"
+    }
+   ],
+   "careful": "'거미가 꿈을 꾼다'고 단정하지 말고 'REM과 비슷한 단계'로 쓴다. 이미 쓴 peacock-spider-dance와 같은 거미라는 점만 겹치고 내용은 다르다"
+  },
+  {
+   "line": "wb_table",
+   "title_idea": "입동(11월 7일) 맞이 겨울 첫머리 집안 평안 띠 순위 | 45~96년생 전부",
+   "facts": [
+    {
+     "fact": "2026년 입동은 11월 7일 토요일이다. 우주항공청이 낸 '2026년 월력요항'에 날짜가 실려 있다.",
+     "source_url": "https://www.vegannews.co.kr/news/article.html?no=399250"
+    },
+    {
+     "fact": "입동은 24절기 가운데 겨울의 시작을 알리는 절기다.",
+     "source_url": "https://www.vegannews.co.kr/news/article.html?no=399250"
+    }
+   ],
+   "careful": "순위·풀이는 명리 근거(일진·오행)로만 쓰고 '반드시 좋아진다' 같은 단정은 하지 않는다. 팥죽은 동지 음식이니 입동 음식으로 소개하지 않는다"
+  },
+  {
+   "line": "wb_table",
+   "title_idea": "손주 수능(11월 19일) 앞두고 집안에 힘 보태는 띠 | 45~96년생 전부",
+   "facts": [
+    {
+     "fact": "2027학년도 수능은 2026년 11월 19일 목요일에 치른다.",
+     "source_url": "https://sgsg.hankyung.com/article/2026022790951"
+    },
+    {
+     "fact": "수능 성적은 12월 11일에 알려 줄 예정이다.",
+     "source_url": "https://sgsg.hankyung.com/article/2026022790951"
+    }
+   ],
+   "careful": "합격·점수를 보장하는 말은 쓰지 않는다. '응원·덕담' 꼴로만 한다. 근거 기사는 2월 것이라 날짜 사실의 출처로만 쓰고, '지금 뜬다'는 근거로는 쓰지 않는다(트렌드 레이더의 자식·가족 떡상 1.25가 참고)"
+  }
+ ],
+ "note": "검색 예산이 일찍 바닥나서 영어 쪽 viral true story·what-if는 몇 번밖에 못 찾았다. 그래서 날짜가 정해진 과학 일정(보이저 1광일 11/18, '종말의 날' 11/13)과 10월 말 새 동물 연구 위주로 골랐다. 한국 쪽은 릴스·쇼츠 유행 흐름이 검색에 잡히지 않았고, 절기(입동)·수능·천문 일정만 확인했다."
+}

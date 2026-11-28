@@ -1,0 +1,20 @@
+{
+ "date": "2026-11-15",
+ "model": "claude-opus-5-5",
+ "effort": "high",
+ "ok": true,
+ "tries": 1,
+ "tokens": {
+  "input": 32,
+  "cache_write": 51606,
+  "cache_read": 510673,
+  "output": 15709,
+  "web_search": 20,
+  "web_fetch": 0
+ },
+ "usd": 0.874,
+ "errors": [],
+ "history": [
+  []
+ ]
+}

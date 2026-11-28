@@ -1,0 +1,262 @@
+{
+ "date": "2026-11-01",
+ "hot": [
+  {
+   "topic": "11월 띠별 운세: 월초에 출생연도별 풀이 기사가 몰림(해마다 반복되는 수요)",
+   "market": "kr",
+   "where": "언론사 오늘의 운세 기사(한국경제·한국금융신문 등), 유튜브 운세 쇼츠",
+   "evidence": [
+    {
+     "title": "[오늘의 운세] 11월 1일 띠별 운세 (한국경제)",
+     "url": "https://www.hankyung.com/article/2026101993057",
+     "date": "2026-11-01"
+    },
+    {
+     "title": "[오늘의 운세] 11월 1일 日(음력 9월 22일) 띠별 운세 - 한국금융신문",
+     "url": "https://www.fntimes.com/html/view.php?ud=202611010052194116c1c16452b0_18",
+     "date": "2026-11-01"
+    }
+   ],
+   "why_now": "새로 뜬 유행은 아니고 해마다 반복되는 수요다. 11월이 시작되면서 월 운세 수요가 다시 올라왔고, 기사들도 49·61·73년생처럼 출생연도별로 풀어 쓴다.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "'11월 집안에 웃음꽃 피는 띠' 같은 월 테마 표를 출생연도(45~96년생)와 함께 실어, 월초 며칠 동안 집중해서 낸다."
+  },
+  {
+   "topic": "국정감사에서 '노인 건강 유튜브 상위 100건 중 24건이 의사를 사칭한 AI 영상'이라는 자료가 공개됨",
+   "market": "kr",
+   "where": "시니어 전문 매체 기사(국정감사 자료 인용)",
+   "evidence": [
+    {
+     "title": "[오늘의 시니어 트렌드 분석] 2026년 10월 21일(수) - 캐어유 뉴스",
+     "url": "https://www.careyounews.org/news/articleView.html?idxno=12025",
+     "date": "2026-10-21"
+    }
+   ],
+   "why_now": "10월 국정감사 자료로 시니어 유튜브의 신뢰 문제가 화제가 됐다. 55세 이상 시청자 사이에서 'AI가 만든 가짜 정보'에 대한 경계심이 커지는 중이다.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "새 소재라기보다 방어할 점이다. 표마다 명리 근거 한 줄을 달고, 건강 단정과 전문가 사칭 말투를 철저히 빼서 믿을 만한 채널로 보이게 한다."
+  },
+  {
+   "topic": "심해 산 하나에 장어 280만 마리(2.8 million)가 모여드는 장면",
+   "market": "us",
+   "where": "과학 뉴스(ScienceAlert 메인 노출)",
+   "evidence": [
+    {
+     "title": "2.8 Million Eels Have Gathered Around a Single Deep-Sea Mountain Off The Coast of Australia",
+     "url": "https://www.sciencealert.com/millions-of-mysterious-deep-sea-eels-caught-gathering-off-the-coast-of-tasmania",
+     "date": "2026-10-28"
+    }
+   ],
+   "why_now": "10/28에 보도된 따끈한 심해 뉴스다. 영상도 이미 있다(2007년 영상, 2025년 4월 견인 카메라 사진).",
+   "fit": [
+    "insta_worker",
+    "insta_sci"
+   ],
+   "idea": "블롭피시가 심해 연말 워크숍에 갔더니 동료 장어 280만 명이 와 있다는 직장 공감 장면 + 진짜 과학 한 장."
+  },
+  {
+   "topic": "아르헨티나 심해 협곡에서 2주 만에 신종 57종 발견('Patrick' 불가사리로 먼저 화제)",
+   "market": "us",
+   "where": "환경·과학 뉴스(Mongabay), SNS에서 불가사리 영상 확산",
+   "evidence": [
+    {
+     "title": "'Patrick' sea star went viral, but Argentine deep-sea canyon held 57 new species",
+     "url": "https://news.mongabay.com/2026/10/patrick-sea-star-went-viral-but-argentine-deep-sea-canyon-held-57-new-species/",
+     "date": "2026-10-13"
+    }
+   ],
+   "why_now": "탐사 중계에서 '패트릭 닮은 불가사리'가 먼저 퍼졌고, 10월 중순에 신종 정리 결과가 나왔다. 10~20대에게 익숙한 캐릭터 닮은꼴로 들어가기 좋다.",
+   "fit": [
+    "insta_worker",
+    "insta_sci"
+   ],
+   "idea": "'심해 신입사원 57명 입사' 설정. 정작 유명해진 패트릭은 신입(신종)이 아니었다는 반전."
+  },
+  {
+   "topic": "심해에서 건져 올린 광물 암석이 실험실에서 저절로 불붙음(USGS 경고)",
+   "market": "us",
+   "where": "과학 뉴스(ScienceAlert)",
+   "evidence": [
+    {
+     "title": "Scientists Collected Deep-Sea Rocks. They Spontaneously Caught Fire in The Lab.",
+     "url": "https://www.sciencealert.com/scientists-collected-deep-sea-rocks-they-spontaneously-caught-fire-in-the-lab",
+     "date": "2026-10-11"
+    }
+   ],
+   "why_now": "10/11 보도로 30일 안이다. 심해 채굴 논의와 맞물려 화제가 됐다.",
+   "fit": [
+    "insta_sci"
+   ],
+   "idea": "'심해 돌을 꺼냈더니 불이 났다'로 시작해 암석 단면 속 금속황화물을 열어 보여 준다(20~35초)."
+  },
+  {
+   "topic": "중국 동굴에서 '얼굴 없는 신화 속 존재' 이름을 받은 눈 없는 신종 달팽이 발견",
+   "market": "us",
+   "where": "과학 뉴스(ScienceDaily · Pensoft 보도자료)",
+   "evidence": [
+    {
+     "title": "Scientists discover ghostly, eyeless creature hidden in Chinese cave",
+     "url": "https://www.sciencedaily.com/releases/2026/10/261019093445.htm",
+     "date": "2026-10-20"
+    }
+   ],
+   "why_now": "10/20 발표된 신종이다. 제목은 무섭지만 정체는 작은 민물 달팽이라서 반전 구조가 자연스럽다.",
+   "fit": [
+    "insta_danger"
+   ],
+   "idea": "'얼굴 없는 괴물이 동굴에 산다' → 사실은 눈 없는 달팽이이고 산 어른은 3마리만 찾았다."
+  },
+  {
+   "topic": "이상한 동물 연구들: 굴러서 도망치는 작은 뱀, 여성이 다가갈 때 더 빨리 달아나는 도시 새",
+   "market": "us",
+   "where": "과학 뉴스(ScienceDaily Odd Creatures 목록)",
+   "evidence": [
+    {
+     "title": "Odd Creatures News -- ScienceDaily",
+     "url": "https://www.sciencedaily.com/news/strange_offbeat/odd_creatures/",
+     "date": ""
+    }
+   ],
+   "why_now": "목록 페이지가 약 1주 전에 갱신됐고 10월 하순 항목으로 보인다. 다만 개별 기사 날짜와 종 이름은 아직 확인하지 못했다.",
+   "fit": [
+    "insta_danger"
+   ],
+   "idea": "'뱀이 굴러온다' → 평소 기어가는 것보다 최대 4배 빠르게 굴러서 달아나는 작은 뱀(원 기사 확인 뒤에 쓴다)."
+  },
+  {
+   "topic": "24세 미국 해안경비대 구조대원이 한밤 태평양에서 16명을 직접 구조",
+   "market": "us",
+   "where": "AP 기사(여러 매체 전재)",
+   "evidence": [
+    {
+     "title": "24-year-old Coast Guard swimmer says he fought waves and darkness to rescue 16 people from ocean",
+     "url": "https://www.washingtontimes.com/news/2026/oct/23/coast-guard-swimmer-24-says-fought-waves-darkness-rescue-16-people/",
+     "date": "2026-10-23"
+    }
+   ],
+   "why_now": "10/23 AP 첫 인터뷰다. 영어권에서 '실화 생존·구조' 꼴로 소비되는 중이다.",
+   "fit": [
+    "nt_story"
+   ],
+   "idea": "얼굴 없는 3D로 헬기 탐조등만 따라 어둠 속 파도에 들어가는 60초 실화. 다만 사망·실종자가 있는 사건이라 재개를 검토할 때 신중해야 한다."
+  }
+ ],
+ "candidates": [
+  {
+   "line": "insta_worker",
+   "title_idea": "심해 연말 워크숍 갔더니… 동료 장어 2.8 million(280만) 마리 집합",
+   "facts": [
+    {
+     "fact": "호주 태즈메이니아 남쪽의 해산 Patience Seamount 주변에 장어 2.8 million(280만) 마리가 모였다고 보도됐다.",
+     "source_url": "https://www.sciencealert.com/millions-of-mysterious-deep-sea-eels-caught-gathering-off-the-coast-of-tasmania"
+    },
+    {
+     "fact": "이 장어는 바구니장어 종류(basketwork eel, Diastobranchus capensis)다.",
+     "source_url": "https://www.sciencealert.com/millions-of-mysterious-deep-sea-eels-caught-gathering-off-the-coast-of-tasmania"
+    },
+    {
+     "fact": "과학자들은 이 모임이 번식을 위한 것이라고 보고 있다.",
+     "source_url": "https://www.sciencealert.com/millions-of-mysterious-deep-sea-eels-caught-gathering-off-the-coast-of-tasmania"
+    },
+    {
+     "fact": "장어들이 해저에 흩어진 모습은 2025년 4월 견인식 심해 카메라로 촬영됐고, 대규모로 모인 영상은 2007년에 찍혔다.",
+     "source_url": "https://www.sciencealert.com/millions-of-mysterious-deep-sea-eels-caught-gathering-off-the-coast-of-tasmania"
+    }
+   ],
+   "careful": "번식 목적은 과학자들의 '추정'이므로 단정하지 않는다. 280만은 기사 숫자 그대로 쓴다(2.8 million)."
+  },
+  {
+   "line": "insta_worker",
+   "title_idea": "심해 신입사원 57명 입사… 그런데 제일 유명한 '패트릭'은 신입이 아니었다",
+   "facts": [
+    {
+     "fact": "아르헨티나 마르델플라타 협곡 표본에서 2주 만에 신종 57종과 새 속(genus) 5개가 확인됐다.",
+     "source_url": "https://news.mongabay.com/2026/10/patrick-sea-star-went-viral-but-argentine-deep-sea-canyon-held-57-new-species/"
+    },
+    {
+     "fact": "화제가 된 '패트릭' 불가사리는 신종이 아닌 것으로 밝혀졌다.",
+     "source_url": "https://news.mongabay.com/2026/10/patrick-sea-star-went-viral-but-argentine-deep-sea-canyon-held-57-new-species/"
+    },
+    {
+     "fact": "요각류 표본은 10%만 살펴봤는데, 살펴본 표본이 모두 신종이어서 신종 20종과 새 속 1개가 나왔다.",
+     "source_url": "https://news.mongabay.com/2026/10/patrick-sea-star-went-viral-but-argentine-deep-sea-canyon-held-57-new-species/"
+    },
+    {
+     "fact": "신종 중 하나는 'Loki'라는 별명의 해삼(Peniagone sp.)이다.",
+     "source_url": "https://news.mongabay.com/2026/10/patrick-sea-star-went-viral-but-argentine-deep-sea-canyon-held-57-new-species/"
+    }
+   ],
+   "careful": "이 종들은 '발견(discovered)' 단계이고 정식 기재(described)는 아직이다. '공식 신종 등록'이라고 쓰지 않는다. 캐릭터 '패트릭' 그림은 쓰지 말고 이름만 언급한다."
+  },
+  {
+   "line": "insta_sci",
+   "title_idea": "심해 돌을 꺼냈더니 저절로 불이 붙었다",
+   "facts": [
+    {
+     "fact": "미국지질조사국(USGS)은 일부 심해 광물이 바다 위로 올라오면 저절로 불이 붙을 수 있다고 경고했다.",
+     "source_url": "https://www.sciencealert.com/scientists-collected-deep-sea-rocks-they-spontaneously-caught-fire-in-the-lab"
+    },
+    {
+     "fact": "2022년에 심해저에서 채취한 금속황화물 암석 시료 2개가 실제로 저절로 불이 붙었다.",
+     "source_url": "https://www.sciencealert.com/scientists-collected-deep-sea-rocks-they-spontaneously-caught-fire-in-the-lab"
+    },
+    {
+     "fact": "국제해저기구(ISA)는 북대서양 중앙해령과 남서인도양 해령 두 곳에 황화물 광물 탐사 계약을 내줬다.",
+     "source_url": "https://www.sciencealert.com/scientists-collected-deep-sea-rocks-they-spontaneously-caught-fire-in-the-lab"
+    }
+   ],
+   "careful": "불이 붙는 화학 원리(산화·발열 등)는 확인한 페이지에 없다. 원리를 단면으로 그리기 전에 USGS 원문을 확인하고, 그 전에는 '왜'를 단정하지 않는다."
+  },
+  {
+   "line": "insta_danger",
+   "title_idea": "'얼굴 없는 괴물'이 동굴에 산다? 진짜 정체",
+   "facts": [
+    {
+     "fact": "중국 윈난성 위시시의 고지대 동굴에서 눈 없는 신종 민물 달팽이 Erhaia dijiang이 발견됐다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/10/261019093445.htm"
+    },
+    {
+     "fact": "이 달팽이 이름은 얼굴 없는 신화 속 존재에서 따왔다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/10/261019093445.htm"
+    },
+    {
+     "fact": "중국에서 이런 종류가 기록된 것은 처음이다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/10/261019093445.htm"
+    },
+    {
+     "fact": "연구진이 찾은 살아 있는 어른 개체는 3마리뿐이라서 이미 위험한 상태일 수 있다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/10/261019093445.htm"
+    }
+   ],
+   "careful": "크기·생김새의 세부 숫자는 확인하지 못했으니 지어내지 않는다. 신화 속 존재는 '얼굴 없는 신화 속 존재'로만 쓰고 무섭게 그리지 않는다(귀여운 반전 쪽으로)."
+  },
+  {
+   "line": "nt_story",
+   "title_idea": "He Followed One Searchlight Into a Black Ocean — and Pulled Out 16 People",
+   "facts": [
+    {
+     "fact": "24세 미국 해안경비대 구조대원 Josh Law는 밤에 헬기에서 내려가 멕시코 앞 태평양에 들어갔다.",
+     "source_url": "https://www.washingtontimes.com/news/2026/oct/23/coast-guard-swimmer-24-says-fought-waves-darkness-rescue-16-people/"
+    },
+    {
+     "fact": "파도 높이는 6~8피트(1.8~2.4미터)였고, 현장은 멕시코 바하 반도에서 약 140마일(225킬로미터) 떨어진 바다였다.",
+     "source_url": "https://www.washingtontimes.com/news/2026/oct/23/coast-guard-swimmer-24-says-fought-waves-darkness-rescue-16-people/"
+    },
+    {
+     "fact": "그는 헬기 소음과 어둠 때문에 아무것도 듣거나 보지 못한 채 탐조등만 따라갔고, 16명을 직접 구조했다.",
+     "source_url": "https://www.washingtontimes.com/news/2026/oct/23/coast-guard-swimmer-24-says-fought-waves-darkness-rescue-16-people/"
+    },
+    {
+     "fact": "11명은 끝내 찾지 못했고, 해안경비대는 일요일 늦게 수색을 끝냈다.",
+     "source_url": "https://www.washingtontimes.com/news/2026/oct/23/coast-guard-swimmer-24-says-fought-waves-darkness-rescue-16-people/"
+    }
+   ],
+   "careful": "사망·실종자가 있는 최근 실제 사건이다. 희생자를 자극적으로 다루지 않고, AP 인터뷰에 없는 대사나 장면은 지어내지 않는다. Nine Tails는 쉬는 중이므로 재개를 결정한 뒤에만 쓴다."
+  }
+ ],
+ "note": "한국 쪽 검색에서는 지금 새로 뜨는 쇼츠·릴스 유행이 거의 잡히지 않았다(대부분 30일이 넘은 글). 그래서 왕별이는 월초 11월 운세라는 반복 수요와 국정감사발 'AI 가짜 의사' 신뢰 이슈만 hot으로 잡았다. 2027 정미년 운세 글은 모두 41일 이상 지난 것이라 '지금 뜨는' 근거에서는 뺐다. 인스타용 소재는 영어권 과학 뉴스(심해 장어 280만 마리, 아르헨티나 신종 57종, 불붙는 심해 암석, 얼굴 없는 동굴 달팽이)가 풍부했다. 굴러서 도망치는 뱀은 원 기사를 확인하지 못해 후보에서 뺐다. 이번에는 도구 사용 한도에 걸려 개별 기사 원문(fetch)을 열지 못했다. 사실들은 모두 검색 결과에 함께 온 해당 페이지 본문에서 옮겼다."
+}

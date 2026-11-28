@@ -1,0 +1,306 @@
+{
+ "date": "2026-11-17",
+ "hot": [
+  {
+   "topic": "스페이스X 스타십 상단(본체)을 우주 비행 뒤 처음으로 '젓가락'으로 잡아 회수",
+   "market": "kr",
+   "where": "국내 포털 IT/과학 기사·경제 기사(벤징가 코리아 등)",
+   "evidence": [
+    {
+     "title": "스페이스X, 스타십 본체 우주 비행 후 첫 회수 성공…완전 재사용 로켓 한걸음",
+     "url": "https://m.news.nate.com/view/20261115n14429",
+     "date": "2026-11-15"
+    },
+    {
+     "title": "스페이스X, 사상 첫 우주선 본체 회수…완전재사용 로켓 예고",
+     "url": "https://www.koreatimes.com/article/11631547",
+     "date": "2026-11-15"
+    }
+   ],
+   "why_now": "11/13 발사·11/14(현지) 회수, 사상 처음이라 이번 주 기사가 몰림",
+   "fit": [
+    "insta_sci"
+   ],
+   "idea": "로봇 팔 두 개가 떨어지는 우주선을 젓가락처럼 잡는 순간을 단면으로 — '이게 왜 되나' 20초"
+  },
+  {
+   "topic": "'술 취한 라쿤' 1년 뒤 — 보호소가 굿즈로 29만 달러 넘게 벌었다는 후속 소식",
+   "market": "kr",
+   "where": "국내 화제 기사(인사이트), 원출처 워싱턴포스트",
+   "evidence": [
+    {
+     "title": "술병 14개 깨뜨리고 화장실서 '만취' 상태로 발견된 라쿤, 진상인 줄 알았는데 '복덩이' 된 사연",
+     "url": "https://insight.co.kr/news/582203",
+     "date": "2026-11-16"
+    }
+   ],
+   "why_now": "사건 1주년에 맞춘 WP 후속 보도(11/12)가 국내로 번역돼 다시 돎",
+   "fit": [
+    "nt_story"
+   ],
+   "idea": "얼굴 없는 3D 짧은 실화 — 밤의 가게, 깨진 병, 아침 화장실의 라쿤, 그리고 반전(보호소 살림 폈다)"
+  },
+  {
+   "topic": "인천 송도에 털 빠진(개선충 감염) 너구리 잇따라 출몰",
+   "market": "kr",
+   "where": "방송 기사(SBS)·지역 커뮤니티",
+   "evidence": [
+    {
+     "title": "\"절대 만지지 말라\"…온몸 털 빠진 동물에 송도 '발칵'",
+     "url": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008846244",
+     "date": "2026-11-15"
+    },
+    {
+     "title": "무심코 준 먹이가 부른 생태계 역습, 인천 송도 야생 너구리 출몰의 명과 암",
+     "url": "https://supple.kr/community/society/138213669",
+     "date": "2026-11-16"
+    }
+   ],
+   "why_now": "이번 주 학교 야외활동 자제 안내까지 나와 동네 화제",
+   "fit": [
+    "insta_danger"
+   ],
+   "idea": "'귀여운 반전' 꼴과는 결이 다름 — 쓴다면 '야생 너구리 만지면 안 되는 진짜 이유(진드기)'처럼 사실 전달만, 감염 동물 혐오 그림 금지"
+  },
+  {
+   "topic": "2027 수능(11/19) 임박 — AI 안경 반입 금지·졸업생 23년 만에 최다",
+   "market": "kr",
+   "where": "교육·사회 기사",
+   "evidence": [
+    {
+     "title": "2027 수능 D-3, 세무사 AI 커닝 파장· 졸업생 23년 만에 최다 응시",
+     "url": "https://www.insight.co.kr/news/582146",
+     "date": "2026-11-16"
+    },
+    {
+     "title": "AI 커닝·졸업생 최다·선택과목 마지막…2027 수능 핵심 변수 '셋'",
+     "url": "https://www.fnnews.com/news/202611160534455104",
+     "date": "2026-11-16"
+    }
+   ],
+   "why_now": "수능 주간(매년 11월 상시 화제) + 올해는 AI 안경 금지가 새 이야깃거리",
+   "fit": [
+    "insta_teardown",
+    "wb_table"
+   ],
+   "idea": "인스타: 'AI 안경 속엔 뭐가 들었길래 시험장 금지?' 단면(내부 사실은 따로 확인 뒤) · 왕별이: 손주 수능 응원 주제 띠 표(합격 단정 금지)"
+  },
+  {
+   "topic": "김장철 — 올해 배추 작황 좋아 남는 배추 활용·김장 관련 기사",
+   "market": "kr",
+   "where": "생활·건강 기사, 시니어 사연 쇼츠",
+   "evidence": [
+    {
+     "title": "[주방] 김장철 배추 작황 호조…남은 배추 활용 돕는 주방용품·가전 '주목'",
+     "url": "https://www.reviewtimes.co.kr/news/articleView.html?idxno=13417",
+     "date": "2026-11-17"
+    },
+    {
+     "title": "[문제열의 窓] 김장철, 풍미김치에 담긴 대한민국의 맛과 자부심",
+     "url": "https://www.jeonmae.co.kr/news/articleView.html?idxno=1310595",
+     "date": "2026-11-11"
+    }
+   ],
+   "why_now": "해마다 11월 중순 돌아오는 계절 화제(상시형) — 레이더에서도 '김장 배추' 사연 쇼츠가 39.7배",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "'김장 날 손이 척척 맞는 띠' 같은 띠 테마 표(어르신 말투, 등급·겁주기 없이)"
+  },
+  {
+   "topic": "사자자리 유성우 11/18 새벽 극대 — 올해는 달 방해 적고 목성·화성이 근처",
+   "market": "us",
+   "where": "천문 매체(EarthSky 등)",
+   "evidence": [
+    {
+     "title": "Leonid meteor shower: All you need to know in 2026",
+     "url": "https://earthsky.org/astronomy-essentials/everything-you-need-to-know-leonid-meteor-shower/",
+     "date": ""
+    }
+   ],
+   "why_now": "극대가 11/18(0시 UTC)로 바로 내일 — 매년 오는 유성우지만 이번 주가 제철",
+   "fit": [
+    "insta_sci"
+   ],
+   "idea": "'별똥별 하나의 정체는 작은 부스러기' 꼴의 속 보이는 과학(크기 숫자는 따로 출처 확인 필요)"
+  },
+  {
+   "topic": "'11월 17일 전 세계 정전' 루머 — 실제로는 미국 경보 시스템 시험",
+   "market": "us",
+   "where": "SNS 루머 → 팩트체크 기사(Snopes·AOL 등)",
+   "evidence": [
+    {
+     "title": "Global blackout on November 17 is a hoax, FEMA confirms an alert test",
+     "url": "https://pasqualepillitteri.it/en/news/33813/global-blackout-on-november-17-is-a-hoax-fema",
+     "date": "2026-11-15"
+    },
+    {
+     "title": "Is 90-day blackout happening Nov. 17 in Florida? FEMA to send test alert",
+     "url": "https://aol.com/articles/90-day-blackout-happening-nov-212139000.html",
+     "date": ""
+    }
+   ],
+   "why_now": "루머의 '그날'이 바로 오늘(11/17)이라 검색·공유가 몰림",
+   "fit": [
+    "nt_story"
+   ],
+   "idea": "루머를 퍼뜨리지 말고 what-if로 — 'What if the power really went out for 72 hours?' 생존 과학(사실 출처 따로 확인)"
+  },
+  {
+   "topic": "이번 주 동물·심해 과학 뉴스 — 까마귀 판단 속도 사람의 2배, 인도 심해 가시상어 별개 종 확인",
+   "market": "us",
+   "where": "과학 뉴스(ScienceDaily·ThePrint)",
+   "evidence": [
+    {
+     "title": "Crows can make decisions twice as fast as humans, scientists discover",
+     "url": "https://sciencedaily.com/releases/2026/11/261111005850.htm",
+     "date": "2026-11-12"
+    },
+    {
+     "title": "Meet India's newest deep-sea shark, a 10-foot giant scientists had misidentified for decades",
+     "url": "https://theprint.in/theprint-essential/meet-indias-newest-deep-sea-shark-a-10-foot-giant-scientists-had-misidentified-for-decades/3099736/",
+     "date": "2026-11-16"
+    }
+   ],
+   "why_now": "둘 다 최근 1주 안에 나온 연구·발표",
+   "fit": [
+    "insta_danger",
+    "insta_worker"
+   ],
+   "idea": "까마귀는 '위험한 진짜 이유', 가시상어는 '심해 직장인' 동료(수십 년 이름 잘못 불린 직원)"
+  }
+ ],
+ "candidates": [
+  {
+   "line": "insta_worker",
+   "title_idea": "수십 년째 내 이름 틀리게 부르는 회사 — 심해 가시상어의 하소연",
+   "facts": [
+    {
+     "fact": "인도 가시상어(Echinorhinus roinee)는 수십 년 동안 대서양 가시상어(Echinorhinus brucus)로 잘못 분류돼 왔다.",
+     "source_url": "https://theprint.in/theprint-essential/meet-indias-newest-deep-sea-shark-a-10-foot-giant-scientists-had-misidentified-for-decades/3099736/"
+    },
+    {
+     "fact": "이 상어는 대륙사면 수심 350~450m에 살고 몸길이가 3m까지 자란다.",
+     "source_url": "https://theprint.in/theprint-essential/meet-indias-newest-deep-sea-shark-a-10-foot-giant-scientists-had-misidentified-for-decades/3099736/"
+    },
+    {
+     "fact": "짙은 갈색~거의 검은 몸이 가시 같은 비늘(피부 치아, dermal denticles)로 덮여 있다.",
+     "source_url": "https://theprint.in/theprint-essential/meet-indias-newest-deep-sea-shark-a-10-foot-giant-scientists-had-misidentified-for-decades/3099736/"
+    },
+    {
+     "fact": "눈이 더 크고 배지느러미가 더 크며 주둥이와 아가미 사이가 더 길다는 차이를 찾았고, DNA 분석으로 별개 계통임이 확정됐다.",
+     "source_url": "https://theprint.in/theprint-essential/meet-indias-newest-deep-sea-shark-a-10-foot-giant-scientists-had-misidentified-for-decades/3099736/"
+    },
+    {
+     "fact": "표본은 케랄라주 콜람의 어항에서 심해 새우 트롤 어선에 우연히 잡혀 들어온 것이었다.",
+     "source_url": "https://theprint.in/theprint-essential/meet-indias-newest-deep-sea-shark-a-10-foot-giant-scientists-had-misidentified-for-decades/3099736/"
+    }
+   ],
+   "careful": "'처음 발견'이 아니라 '이미 잡히던 상어를 별개 종으로 새로 구분'한 것 — 제목에서 처음 발견한 것처럼 쓰지 않기"
+  },
+  {
+   "line": "insta_danger",
+   "title_idea": "까마귀를 얕보면 안 되는 진짜 이유",
+   "facts": [
+    {
+     "fact": "튀빙겐대 연구에서 까마귀는 움직이는 점들의 방향을 평균 235밀리초 만에 판단해 사람·원숭이보다 두 배 빨랐다.",
+     "source_url": "https://sciencedaily.com/releases/2026/11/261111005850.htm"
+    },
+    {
+     "fact": "실험에는 송장까마귀(carrion crow) 두 마리가 참여했고, 신호가 분명할 때 정확도는 거의 100%였다.",
+     "source_url": "https://sciencedaily.com/releases/2026/11/261111005850.htm"
+    },
+    {
+     "fact": "점이 나타난 지 70밀리초 만에 까마귀 뇌세포가 두 방향을 구분하는 활동을 보였다.",
+     "source_url": "https://sciencedaily.com/releases/2026/11/261111005850.htm"
+    },
+    {
+     "fact": "이 연구는 학술지 Science에 실렸다.",
+     "source_url": "https://sciencedaily.com/releases/2026/11/261111005850.htm"
+    }
+   ],
+   "careful": "까마귀 두 마리 실험이므로 '새가 사람보다 똑똑하다' 같은 일반화 금지"
+  },
+  {
+   "line": "insta_sci",
+   "title_idea": "떨어지는 우주선을 젓가락으로 잡는다고?",
+   "facts": [
+    {
+     "fact": "스페이스X가 우주 궤도를 비행한 스타십 상단부(2단 우주선)를 처음으로 회수했다.",
+     "source_url": "https://m.news.nate.com/view/20261115n14429"
+    },
+    {
+     "fact": "상단부는 발사 뒤 약 22시간 32분 만에 돌아왔고, 고도 약 265km에서 지구를 14바퀴 돌았다.",
+     "source_url": "https://m.news.nate.com/view/20261115n14429"
+    },
+    {
+     "fact": "재진입 뒤 엔진을 다시 켜 수직으로 내려왔고, 발사탑의 거대한 로봇 팔 두 개가 양쪽에서 붙잡았다('젓가락 회수').",
+     "source_url": "https://m.news.nate.com/view/20261115n14429"
+    },
+    {
+     "fact": "1단 추진체 슈퍼 헤비는 복귀 중 엔진 연소가 일찍 멈춰 멕시코만 상공에서 폭발해 동시 회수는 실패했다.",
+     "source_url": "https://m.news.nate.com/view/20261115n14429"
+    }
+   ],
+   "careful": "기업·인물 띄우기 금지, 1단 실패도 사실대로"
+  },
+  {
+   "line": "insta_sci",
+   "title_idea": "2년만 쓰려던 우주 망원경이 22년 버티고 떨어졌다",
+   "facts": [
+    {
+     "fact": "NASA의 스위프트 관측위성은 약 22년간 우주에서 일한 뒤 인도네시아 상공에서 대기권에 재진입했다.",
+     "source_url": "https://sciencedaily.com/releases/2026/11/261105224545.htm"
+    },
+    {
+     "fact": "스위프트는 원래 2년만 쓰도록 설계됐다.",
+     "source_url": "https://sciencedaily.com/releases/2026/11/261105224545.htm"
+    }
+   ],
+   "careful": "재진입 피해·잔해 낙하 여부는 페이지에서 확인 못 함 — 겁주는 표현 금지"
+  },
+  {
+   "line": "nt_story",
+   "title_idea": "The Raccoon Who Robbed a Liquor Store (and Saved a Shelter)",
+   "facts": [
+    {
+     "fact": "지난해 11월 버지니아주 애슐랜드의 주류 판매점에 라쿤이 몰래 들어가 술병 14개를 깨뜨리거나 내용물을 마셨다.",
+     "source_url": "https://insight.co.kr/news/582203"
+    },
+    {
+     "fact": "다음 날 아침 가게 관리자가 화장실 변기 옆에 쓰러진 라쿤을 발견했다.",
+     "source_url": "https://insight.co.kr/news/582203"
+    },
+    {
+     "fact": "라쿤은 외상이 없었고, 술이 깬 뒤 발견 장소에서 약 1.6km 떨어진 곳에 방사됐다.",
+     "source_url": "https://insight.co.kr/news/582203"
+    },
+    {
+     "fact": "하노버 카운티 동물보호소는 'Trashed Panda' 문구 굿즈로 1년간 29만 달러 이상을 벌었다(워싱턴포스트 보도).",
+     "source_url": "https://insight.co.kr/news/582203"
+    }
+   ],
+   "careful": "시청층 13~30세 — 음주를 멋지게 그리지 않기, 라쿤 무사·방사로 마무리. 영어 원문(WP) 숫자 재확인 권장"
+  },
+  {
+   "line": "nt_story",
+   "title_idea": "4 People Lived on 'Mars' for a Year Without Leaving Earth",
+   "facts": [
+    {
+     "fact": "NASA CHAPEA 실험의 자원자 네 명이 1년 넘게 모의 화성 생활을 마치고 2026년 10월 31일 밖으로 나왔다.",
+     "source_url": "https://sciencedaily.com/releases/2026/11/261109205406.htm"
+    },
+    {
+     "fact": "참가자들은 작물을 기르고 한정된 물자를 아끼며 모의 선외활동을 했다.",
+     "source_url": "https://sciencedaily.com/releases/2026/11/261109205406.htm"
+    },
+    {
+     "fact": "화성과의 통신 지연을 겪게 해 지상 관제의 즉각적인 도움 없이 스스로 문제를 풀어야 했다.",
+     "source_url": "https://sciencedaily.com/releases/2026/11/261109205406.htm"
+    }
+   ],
+   "careful": "실존 참가자 — 얼굴 없는 마네킹으로, 지어낸 대사·갈등 넣지 않기"
+  }
+ ],
+ "note": "한국 쪽 '유행 쇼츠·릴스' 검색은 패션·오래된 밈 정리글만 잡혀 쓸 만한 밈 근거를 못 찾았다(북극곰 'Remember November 2026' 밈은 근거 글이 9월 것이라 뺐다). 대신 이번 주 기사 화제는 스타십 회수·술 취한 라쿤 후속·송도 너구리·수능·김장이다. 명리 근거가 있는 사실은 못 찾아 wb_table 후보는 0개이고, 과학 후보는 재고가 바닥나 가는 insta_sci(9일)·nt_story(13일)를 먼저 채우도록 골랐다. 검색 한도를 다 써서 남은 사실 확인은 fetch로만 했다."
+}

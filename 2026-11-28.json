@@ -1,0 +1,281 @@
+{
+ "date": "2026-11-28",
+ "hot": [
+  {
+   "topic": "10월 인기 릴스에서 '반려동물 AI 콘텐츠'가 자주 보인 형식으로 꼽힘(유행 키워드는 떡 디저트·수능 노래)",
+   "market": "kr",
+   "where": "인스타 릴스(인급동 240개를 분석한 마케팅 매체 기사)",
+   "evidence": [
+    {
+     "title": "떡 디저트, 수능 노래… 인기 릴스 240개로 읽는 트렌드 [2026년 10월 인급동 데이터]",
+     "url": "https://gogumafarm.kr/%EB%96%A1-%EB%94%94%EC%A0%80%ED%8A%B8-%EC%88%98%EB%8A%A5-%EB%85%B8%EB%9E%98-%EC%9D%B8%EA%B8%B0-%EB%A6%B4%EC%8A%A4-240%EA%B0%9C%EB%A1%9C-%EC%9D%BD%EB%8A%94-%ED%8A%B8%EB%A0%8C%EB%93%9C-2026/",
+     "date": "2026-11-18"
+    }
+   ],
+   "why_now": "11/18에 나온 10월 인기 릴스 집계에서 동물을 AI로 만든 영상이 따로 한 갈래로 묶였다. 이 형식을 비튼 릴스도 185만 회 나왔다고 한다.",
+   "fit": [
+    "insta_danger",
+    "insta_worker"
+   ],
+   "idea": "3D 귀여운 동물 카드는 그대로 두고, 다른 AI 동물 영상과 달리 '진짜 사실 한 장'을 붙여 차이를 낸다"
+  },
+  {
+   "topic": "치이카와 열풍을 '힘든 현실을 버티는 귀여움'으로 풀어 보는 기사",
+   "market": "kr",
+   "where": "기사(진화심리학 칼럼, 모음 사이트 재게시)",
+   "evidence": [
+    {
+     "title": "치이카와 열풍, 진화심리학으로 읽는 현대적 귀여움의 수수께끼",
+     "url": "https://kr.headtopics.com/news/5282451060528521304556-90171968",
+     "date": "2026-11-26"
+    }
+   ],
+   "why_now": "이틀 전 기사. 귀여운 캐릭터가 고된 현실을 긍정적으로 넘기는 모습에 공감한다는 해석이라, 10~20대가 지친 캐릭터에 끌리는 흐름을 보여 준다.",
+   "fit": [
+    "insta_worker"
+   ],
+   "idea": "블롭피시 직장인도 '안 되는 날에도 출근은 하는' 버티는 귀여움 쪽으로 대사를 맞춘다(치이카와 그림·이름은 쓰지 않는다)"
+  },
+  {
+   "topic": "심해·바다 신종과 기묘한 생태계 발견이 잇따라 보도됨(심해 돌 속 동물 245마리, 괴물 닮은 바다거미, 2,442m 유리해면 숲)",
+   "market": "us",
+   "where": "과학 뉴스(ScienceDaily·BBC Wildlife)와 한국 기사",
+   "evidence": [
+    {
+     "title": "Hidden ecosystem: Scientists discover 245 animals living inside a single deep-sea rock",
+     "url": "https://www.sciencedaily.com/releases/2026/11/261114202133.htm",
+     "date": "2026-11-16"
+    },
+    {
+     "title": "Deep sea robot discovered bizarre 'forest' full of eerie animals 2,442 metres deep",
+     "url": "https://www.discoverwildlife.com/animal-facts/marine-animals/forest-of-weird",
+     "date": "2026-11-13"
+    },
+    {
+     "title": "스타워즈 괴물 닮은 신종 거미 발견",
+     "url": "https://feed.viewus.co.kr/ai/article/355335/",
+     "date": "2026-11-03"
+    }
+   ],
+   "why_now": "11월 들어 심해 생물 기사가 연달아 나왔다. 다만 유리해면 숲은 2017년 탐사 영상을 11/13에 다시 소개한 것이라 '새 발견'은 아니다.",
+   "fit": [
+    "insta_sci",
+    "insta_worker",
+    "insta_danger"
+   ],
+   "idea": "'주먹만 한 심해 돌 하나를 열어 보면' 단면 컷으로 sci 재고를 바로 채운다"
+  },
+  {
+   "topic": "중국 선저우 24호가 처음으로 외국인 우주비행사를 태우고 톈궁에 도킹 / 스페이스X '우주 데이터센터' 위성 100만 기 FCC 승인",
+   "market": "kr",
+   "where": "국내 기사(아시아경제·파이낸셜뉴스·네이트)",
+   "evidence": [
+    {
+     "title": "중국 톈궁에 첫 외국인 우주비행사…선저우 24호 도킹 성공",
+     "url": "https://view.asiae.co.kr/article/2026112518220552769",
+     "date": "2026-11-25"
+    },
+    {
+     "title": "스페이스X, AI 데이터센터 위성 100만기 우주 발사 FCC 승인받아",
+     "url": "https://www.fnnews.com/news/202611260823541179",
+     "date": "2026-11-26"
+    }
+   ],
+   "why_now": "이번 주(11/25~26)에 나온 우주 뉴스 두 건이 포털에 함께 떠 있다.",
+   "fit": [
+    "insta_sci"
+   ],
+   "idea": "'도킹 3시간 30분 동안 우주선 속에서 벌어지는 일'을 기계 속이 보이는 단면으로 보여 준다(나라 비교·홍보 해석은 빼고)"
+  },
+  {
+   "topic": "실종 노인이 아마존 밀림에서 11일을 버티고 구조된 실화 (호주 10대 6일 생존 구조도 같은 달)",
+   "market": "us",
+   "where": "해외 기사(Stuff·Al Jazeera 영상·Yahoo)",
+   "evidence": [
+    {
+     "title": "Man with Alzheimer's rescued after 11 days in Amazon rainforest",
+     "url": "https://www.stuff.co.nz/world-news/361063105/man-alzheimers-rescued-after-11-days-amazon-rainforest",
+     "date": "2026-11-24"
+    },
+    {
+     "title": "Elderly man with Alzheimer's rescued after 11 days in Amazon jungle",
+     "url": "https://www.aljazeera.com/video/newsfeed/2026/11/25/aje-onl-nf_man-with-alzheimers-rescued-after-11-",
+     "date": "2026-11-25"
+    },
+    {
+     "title": "Australian teen missing in bush for six days rescued alive",
+     "url": "https://www.yahoo.com/news/world/articles/australian-teen-missing-bush-six-024238172.html",
+     "date": "2026-11-12"
+    }
+   ],
+   "why_now": "11/20 구조, 11/24~25 보도로 아주 최근이다. '어떻게 살아남았나' 디테일(열매, 자연의 물, 야자잎 침대)이 기사마다 나온다.",
+   "fit": [
+    "nt_story"
+   ],
+   "idea": "얼굴 없는 3D 마네킹으로 '밀림에서 11일 버틴 3가지 방법'을 45~60초 생존 실화로 만든다"
+  },
+  {
+   "topic": "아마존 고함원숭이 신종 2종 기재('귀엽지만 이미 멸종 위기'라는 보도)",
+   "market": "us",
+   "where": "과학 기사(Live Science 제목, Mongabay 인용 국내 기사)",
+   "evidence": [
+    {
+     "title": "아마존 고함원숭이 신종 2종 기재…유전체 11종 분석 — FAM타임스",
+     "url": "https://www.famtimes.co.kr/news/articleView.html?idxno=704719",
+     "date": "2026-11-14"
+    },
+    {
+     "title": "News Archive (Live Science, 2026-11: Scientists discover two adorable species of howler monkey in the Amazon)",
+     "url": "https://www.livescience.com/news/archive/2026/11&gsessionid=EMRIK76PCBq7FuXP0Qt3HIsIez2r2dozQky3rzH08HauKoMDHLK5YA",
+     "date": "2026-11-13"
+    }
+   ],
+   "why_now": "11/4 논문, 11/11~14 보도. 해외 매체가 'adorable'을 제목에 걸었다.",
+   "fit": [
+    "insta_danger"
+   ],
+   "idea": "'고함'이라는 무서운 이름을 내걸고 '알고 보니 귀여운 신입 원숭이'로 뒤집는다(소리 크기 같은 수치는 따로 확인한 뒤에만 쓴다)"
+  },
+  {
+   "topic": "연말 띠별 운세·2027 정미년(붉은 양) 신년운세 수요",
+   "market": "kr",
+   "where": "신문 매일 띠별 운세 기사, 사주 사이트·블로그 2027 미리보기",
+   "evidence": [
+    {
+     "title": "[오늘의 운세] 11월 28일 土(음력 10월 20일) 띠별 운세 - 한국금융신문",
+     "url": "https://www.fntimes.com/html/view.php?ud=202611272304162023c1c16452b0_18",
+     "date": "2026-11-28"
+    },
+    {
+     "title": "[오늘의 운세] 2026년 11월 28일 토요일 띠별 운세… 양띠 '대길', 쥐띠·소띠 '주의'",
+     "url": "https://www.newsclaim.co.kr/news/articleView.html?idxno=3084619",
+     "date": "2026-11-28"
+    },
+    {
+     "title": "2027 정미년은 어떤 해일까? — 붉은 양의 해 미리보기",
+     "url": "https://sajuping.ai/blog/2027-jeongmi-preview",
+     "date": "2026-10-20"
+    }
+   ],
+   "why_now": "솔직히 늘 인기 있는 주제이고 연말이라 계절 수요가 붙은 것이다. 이번 주에 새로 뜬 화제는 아니다. 정미년 미리보기 글은 30일이 넘어 '지금 뜨는' 근거로는 약하다.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "신년운세 시리즈와 정미년 롱폼(E17~)을 계속 잇는다. 기사들이 쓰는 '대길·주의' 같은 등급 말투는 따라 하지 않는다"
+  }
+ ],
+ "candidates": [
+  {
+   "line": "insta_sci",
+   "title_idea": "주먹만 한 심해 돌을 쪼개 봤더니 245마리가 살고 있었다",
+   "facts": [
+    {
+     "fact": "태평양 클라리온-클리퍼턴 해역에서 망간단괴 244개를 조사한 결과 동물 4,139마리가 나왔다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261114202133.htm"
+    },
+    {
+     "fact": "단괴 하나에 평균 17마리가 살았고, 가장 붐빈 단괴 하나에는 245마리가 있었다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261114202133.htm"
+    },
+    {
+     "fact": "이 단괴는 주먹만 한 크기로 주로 철·망간 산화물로 되어 있고, 백만 년에 몇 밀리미터씩만 자라며 수심 4,000~6,000m에 있다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261114202133.htm"
+    },
+    {
+     "fact": "단괴 안의 틈은 1밀리미터보다 작은 동물이 살 수 있을 만큼 크며, 그 안의 군집은 주변 진흙의 생물과 달랐다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261114202133.htm"
+    }
+   ],
+   "careful": "심해 채굴 찬반을 단정하지 않는다. '멸종한다'가 아니라 '연구자들이 우려한다' 정도로만 쓴다."
+  },
+  {
+   "line": "insta_sci",
+   "title_idea": "우주선이 정거장에 붙기까지 3시간 30분, 그동안 속에서 벌어지는 일",
+   "facts": [
+    {
+     "fact": "선저우 24호는 25일 오전 8시18분(한국시간 9시18분) 주취안 위성발사센터에서 창정 2호F 로켓으로 발사됐다.",
+     "source_url": "https://view.asiae.co.kr/article/2026112518220552769"
+    },
+    {
+     "fact": "선저우 24호는 발사 약 10분 만에 로켓에서 분리돼 궤도에 들어갔다.",
+     "source_url": "https://view.asiae.co.kr/article/2026112518220552769"
+    },
+    {
+     "fact": "톈허 모듈 전방 도킹 포트에 연결되기까지 약 3시간30분이 걸렸다.",
+     "source_url": "https://view.asiae.co.kr/article/2026112518220552769"
+    },
+    {
+     "fact": "탑승자 3명 가운데 파키스탄 출신 탑재체 전문가가 있어, 외국인이 중국 우주정거장에 들어간 첫 사례가 됐다.",
+     "source_url": "https://view.asiae.co.kr/article/2026112518220552769"
+    }
+   ],
+   "careful": "국가 경쟁이나 정치 해석은 넣지 않는다. 도킹 과정의 기계 설명은 기사에 없으니 쓸 때 따로 출처를 확인한다."
+  },
+  {
+   "line": "insta_worker",
+   "title_idea": "전 직원이 같은 방향만 보고 앉는 회사: 수심 2,442m 유리해면 숲",
+   "facts": [
+    {
+     "fact": "탐사 로봇 Deep Discoverer가 수심 약 2,442m에서 거의 유리해면으로만 이뤄진 군집을 만났다.",
+     "source_url": "https://www.discoverwildlife.com/animal-facts/marine-animals/forest-of-weird"
+    },
+    {
+     "fact": "이 유리해면들은 모두 해류 방향을 향해 같은 쪽으로 서 있었다.",
+     "source_url": "https://www.discoverwildlife.com/animal-facts/marine-animals/forest-of-weird"
+    },
+    {
+     "fact": "유리해면은 물속 세균·플랑크톤 같은 작은 입자를 걸러 먹는다.",
+     "source_url": "https://www.discoverwildlife.com/animal-facts/marine-animals/forest-of-weird"
+    },
+    {
+     "fact": "이 군집은 2017년 존스턴 환초 주변 탐사에서 발견됐고, '이상한 것들의 숲(forest of the weird)'이라는 별명이 붙었다.",
+     "source_url": "https://www.discoverwildlife.com/animal-facts/marine-animals/forest-of-weird"
+    }
+   ],
+   "careful": "2017년 발견이므로 '이번에 새로 발견'이라고 쓰지 않는다."
+  },
+  {
+   "line": "insta_danger",
+   "title_idea": "스타워즈 괴물 닮은 바다거미가 위험한 진짜 이유",
+   "facts": [
+    {
+     "fact": "붉은 눈, 털이 수북한 다리, 세 갈래로 갈라진 입술을 가진 바다거미 신종이 보고됐다.",
+     "source_url": "https://feed.viewus.co.kr/ai/article/355335/"
+    },
+    {
+     "fact": "캐나다와 미국 사이 바다에서 바다거미 신종이 보고된 것은 100여년 만이다.",
+     "source_url": "https://feed.viewus.co.kr/ai/article/355335/"
+    },
+    {
+     "fact": "UBC 연구팀은 세일리시해의 바다거미를 조사해 신종 2종을 확인했다.",
+     "source_url": "https://feed.viewus.co.kr/ai/article/355335/"
+    },
+    {
+     "fact": "신종 칼리팔레네 필로수스페데스는 알을 품는 다리(부란각)를 자기 다리에 감고, 빗처럼 생긴 가시로 몸을 청소한다.",
+     "source_url": "https://feed.viewus.co.kr/ai/article/355335/"
+    }
+   ],
+   "careful": "바다거미는 거미가 아니라 바다 절지동물이라는 점을 틀리지 않게 쓴다. 크기 수치는 이 페이지에 없으니 지어내지 않는다."
+  },
+  {
+   "line": "nt_story",
+   "title_idea": "He Survived 11 Days Alone in the Amazon. Here's How.",
+   "facts": [
+    {
+     "fact": "74세 남성이 아마존 밀림에서 홀로 11일을 버틴 뒤 구조됐다.",
+     "source_url": "https://www.stuff.co.nz/world-news/361063105/man-alzheimers-rescued-after-11-days-amazon-rainforest"
+    },
+    {
+     "fact": "그는 11월 20일 브라질 마카파에서 약 10km 떨어진 울창한 숲에서 공원 관리원과 자원봉사자들에게 발견됐다.",
+     "source_url": "https://www.stuff.co.nz/world-news/361063105/man-alzheimers-rescued-after-11-days-amazon-rainforest"
+    },
+    {
+     "fact": "구조대에 따르면 그는 열매를 먹고, 자연에서 물을 마시고, 아사이 야자잎으로 침대 같은 자리를 만들어 밤을 보냈다.",
+     "source_url": "https://www.stuff.co.nz/world-news/361063105/man-alzheimers-rescued-after-11-days-amazon-rainforest"
+    }
+   ],
+   "careful": "실존 인물이고 질환이 있는 노인이다. 이름은 빼고, 질환을 웃음거리나 공포 소재로 쓰지 않는다. 기사에 없는 장면은 지어내지 않고, 건강 관련 단정도 하지 않는다."
+  }
+ ],
+ "note": "검색 도구 한도에 일찍 걸려 영어 쪽은 약 8번 검색에 그쳤고, 동지·직장인 밈 확인 검색은 못 했다. 한국 쪽에서는 심해·우주 뉴스와 귀여운 캐릭터 흐름이 분명했지만, 왕별이용 새 화제는 웹에서 찾지 못했다(운세는 상시·연말 계절 수요뿐이고, 레이더의 관상 떡상은 웹 근거를 못 찾았다). 바닥난 insta_sci는 망간단괴 편을 먼저 채우는 게 좋겠다."
+}

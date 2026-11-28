@@ -1,0 +1,279 @@
+{
+ "date": "2026-11-24",
+ "hot": [
+  {
+   "topic": "보이저 1호가 처음으로 지구에서 '1광일'(빛이 하루 가는 거리)만큼 떨어진 곳에 닿음",
+   "market": "us",
+   "where": "NASA 보도자료, 과학 매체(EarthSky), 한국 과학 기사",
+   "evidence": [
+    {
+     "title": "NASA’s Voyager 1 Makes History Reaching One Light-Day From Earth",
+     "url": "https://www.nasa.gov/news-release/nasas-voyager-1-makes-history-reaching-one-light-day-from-earth/",
+     "date": "2026-11-19"
+    },
+    {
+     "title": "Voyager 1 reaches 1 light-day from Earth!",
+     "url": "https://earthsky.org/space/voyager-1-1-light-day-from-earth-november-17-18-2026/",
+     "date": "2026-11-18"
+    },
+    {
+     "title": "유성우·화성·목성·슈퍼문…NASA가 꼽은 11월 밤하늘 관측 포인트",
+     "url": "https://www.e-science.co.kr/news/articleView.html?idxno=138813",
+     "date": "2026-11-04"
+    }
+   ],
+   "why_now": "11/18에 닿았고 NASA가 11/19에 발표함. 사람이 만든 물체로는 처음이고, 11/14부터 과학 데이터가 안 들어오는 문제도 같이 보도되고 있어 아직 소식이 이어지는 중.",
+   "fit": [
+    "insta_sci",
+    "nt_story"
+   ],
+   "idea": "'보이저에 문자를 보내면 답장은 이틀 뒤에 온다' — 빛이 달·해왕성·보이저까지 가는 시간을 한 장씩 보여 주는 거리 체감 카드, 또는 영어 what-if 쇼츠"
+  },
+  {
+   "topic": "안드로메다 은하에서 큰 별이 작은 별을 삼키는 '별 합체'(AT 2025abao)를 처음 확인함",
+   "market": "us",
+   "where": "해외 과학·IT 기사(Nature 논문, 제임스웹 망원경 자료)",
+   "evidence": [
+    {
+     "title": "Two Stars Merge in Andromeda as Astronomers Watch",
+     "url": "https://www.tovima.com/science/two-stars-merge-in-andromeda-as-astronomers-watch/",
+     "date": "2026-11-22"
+    },
+    {
+     "title": "Rare Star Merger Discovered Inside Andromeda Galaxy",
+     "url": "https://arynews.tv/astronomers-observe-rare-star-merger-inside-the-andromeda-galaxy",
+     "date": "2026-11-21"
+    },
+    {
+     "title": "A star swallowed another star in the Andromeda galaxy",
+     "url": "https://www.notebookcheck.net/A-star-swallowed-another-star-in-the-Andromeda-galaxy.1455602.0.html",
+     "date": "2026-11-21"
+    }
+   ],
+   "why_now": "Nature 논문이 11/18에 나왔고 11/21~22에 기사가 여러 곳에 퍼짐.",
+   "fit": [
+    "insta_sci"
+   ],
+   "idea": "'별이 별을 먹었다' — 작은 별이 큰 별 바깥층 속을 7년 동안 돌다 합쳐지는 과정을 단면으로 보여 주기"
+  },
+  {
+   "topic": "심해 망간 단괴(돌덩이)를 쪼개 보니 틈 속에 미세 동물이 살고 있었음 — 돌 하나에 최대 245마리",
+   "market": "kr",
+   "where": "한국 기사(FAM타임스, MARUM 보도자료와 Scientific Reports 논문 소개)",
+   "evidence": [
+    {
+     "title": "심해 단괴 하나에 245마리…진흙과는 다른 생태계",
+     "url": "https://www.famtimes.co.kr/news/articleView.html?idxno=705021",
+     "date": "2026-11-17"
+    }
+   ],
+   "why_now": "보도자료가 11/16에 나온 따끈한 심해 소식. 크게 퍼진 화제는 아니고 기사 한 곳에서 확인한 정도라 유행이라기보다 새 소재에 가까움.",
+   "fit": [
+    "insta_worker",
+    "insta_sci"
+   ],
+   "idea": "블롭피시가 '심해 원룸' 보러 감 — 돌멩이 하나에 동료 245명이 산다"
+  },
+  {
+   "topic": "실내에서 시민이 찍은 야생 생물 23,782건을 정리했더니 약 2,100종, 그중 곤충·거미가 90%",
+   "market": "kr",
+   "where": "한국 기사(FAM타임스, NC주립대 Ecology 데이터셋 소개)",
+   "evidence": [
+    {
+     "title": "집 안 생물 23,782건…곤충 60%·거미 30%, 1,100종은 1번뿐",
+     "url": "https://www.famtimes.co.kr/news/articleView.html?idxno=705350",
+     "date": "2026-11-22"
+    }
+   ],
+   "why_now": "보도자료가 11/20, 기사가 11/22. 기사 한 곳에서 확인한 새 연구라 크게 퍼진 유행은 아님.",
+   "fit": [
+    "insta_danger",
+    "insta_sci"
+   ],
+   "idea": "'우리 집에 야생동물 2,100종이 산다?' 같은 무서운 제목 → 알고 보면 대부분 무당벌레·거미 룸메이트"
+  },
+  {
+   "topic": "2027 정미년 '붉은 양의 해' 신년 한정판이 나오기 시작함(골프공·파크골프공 등)",
+   "market": "kr",
+   "where": "기업 신제품 기사(국민일보·캠페인 인사이트 등)",
+   "evidence": [
+    {
+     "title": "“붉은 양의 기운 받으세요”…볼빅, 2027년 정미년 에디션 골프볼 출시",
+     "url": "https://www.kmib.co.kr/article/20261102500177",
+     "date": "2026-11-02"
+    },
+    {
+     "title": "'붉은 양'에 담은 킵 워킹···정미년 기념 '조니워커 블루 양띠 에디션' 출시",
+     "url": "https://www.campaigninsight.co.kr/news/articleView.html?idxno=7344",
+     "date": "2026-11-19"
+    }
+   ],
+   "why_now": "11월 들어 기업들이 정미년 한정판을 내면서 '붉은 양'이라는 말이 기사에 자주 나옴. 신년운세 철이 시작됐다는 신호지만 운세 검색이 실제로 늘었는지는 확인하지 못함.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "'붉은 양의 해, 왜 붉은가' 띠 테마 표. 명리 근거는 우리 자료로 채우고, 주류 같은 상품 홍보는 넣지 않음"
+  },
+  {
+   "topic": "11/24 슈퍼문을 시작으로 12월·내년 1월까지 슈퍼문이 세 번 이어짐(NASA 전망)",
+   "market": "kr",
+   "where": "한국 과학 기사(NASA 11월 밤하늘 안내 소개)",
+   "evidence": [
+    {
+     "title": "유성우·화성·목성·슈퍼문…NASA가 꼽은 11월 밤하늘 관측 포인트",
+     "url": "https://www.e-science.co.kr/news/articleView.html?idxno=138813",
+     "date": "2026-11-04"
+    }
+   ],
+   "why_now": "오늘(11/24) 슈퍼문이고 12월·1월에 또 있어 다시 쓸 수 있는 달력 소재. 기사는 20일 전 것이고 퍼진 정도는 확인하지 못함.",
+   "fit": [
+    "insta_sci",
+    "wb_table"
+   ],
+   "idea": "인스타: '슈퍼문은 왜 더 크고 밝게 보일까'(달의 타원 궤도 단면). 왕별이: 12월 슈퍼문 날을 풀이표 날짜 소재로 쓰되 천문 사실과 운세를 섞어 단정하지 않기"
+  },
+  {
+   "topic": "인스타 릴스 10월 인기 소재: AI로 만든 반려동물 춤 영상이 조회수 1위, 떡 디저트 만드는 과정 영상",
+   "market": "kr",
+   "where": "인스타그램 릴스(고구마팜 '인급동' 10월 데이터 정리)",
+   "evidence": [
+    {
+     "title": "떡 디저트, 수능 노래… 인기 릴스 240개로 읽는 트렌드 [2026년 10월 인급동 데이터]",
+     "url": "https://gogumafarm.kr/%EB%96%A1-%EB%94%94%EC%A0%80%ED%8A%B8-%EC%88%98%EB%8A%A5-%EB%85%B8%EB%9E%98-%EC%9D%B8%EA%B8%B0-%EB%A6%B4%EC%8A%A4-240%EA%B0%9C%EB%A1%9C-%EC%9D%BD%EB%8A%94-%ED%8A%B8%EB%A0%8C%EB%93%9C-2026/",
+     "date": "2026-11-18"
+    }
+   ],
+   "why_now": "글은 11/18에 나왔지만 데이터는 10월 것이라 '지금 뜨는' 근거로는 약함. 10~20대 인스타에서 동물 영상이 계속 강하다는 참고용.",
+   "fit": [
+    "insta_danger"
+   ],
+   "idea": "AI 영상을 따라 하지 않고, 동물 행동의 진짜 사실로 '위험한 진짜 이유' 카드 만들기(사실 확인 뒤에)"
+  }
+ ],
+ "candidates": [
+  {
+   "line": "insta_sci",
+   "title_idea": "보이저 1호에 문자를 보내면 답장은 이틀 뒤에 온다",
+   "facts": [
+    {
+     "fact": "NASA에 따르면 보이저 1호는 2026년 11월 18일 지구에서 1광일 거리에 닿았고, 49년 넘게 쉬지 않고 날아온 결과다.",
+     "source_url": "https://www.nasa.gov/news-release/nasas-voyager-1-makes-history-reaching-one-light-day-from-earth/"
+    },
+    {
+     "fit": "",
+     "fact": "1광일은 빛이 24시간 동안 가는 거리로 약 259억 km(25.9 billion kilometers)다.",
+     "source_url": "https://www.nasa.gov/news-release/nasas-voyager-1-makes-history-reaching-one-light-day-from-earth/"
+    },
+    {
+     "fact": "지구를 지난 햇빛은 약 1.3초면 달에, 약 4시간이면 해왕성에 닿고, 보이저 1호까지는 20시간이 더 걸린다.",
+     "source_url": "https://www.nasa.gov/news-release/nasas-voyager-1-makes-history-reaching-one-light-day-from-earth/"
+    },
+    {
+     "fact": "지구에서 보낸 신호가 보이저 1호에 닿는 데 약 24시간, 답이 돌아오는 데 다시 24시간이 걸려 왕복 통신에 약 이틀이 걸린다.",
+     "source_url": "https://www.e-science.co.kr/news/articleView.html?idxno=138813"
+    },
+    {
+     "fact": "보이저 1호와 쌍둥이 탐사선 2호는 1977년에 발사됐고, 지구의 사진과 소리를 담은 금도금 구리 음반 '골든 레코드'를 싣고 있다.",
+     "source_url": "https://www.nasa.gov/news-release/nasas-voyager-1-makes-history-reaching-one-light-day-from-earth/"
+    }
+   ],
+   "careful": "11/14부터 과학·기술 데이터가 안 들어오고 반송파 신호만 오는 상태라 '아무 문제 없다'고 쓰면 안 됨. 공개 직전에 NASA 보이저 블로그에서 상태 다시 확인할 것."
+  },
+  {
+   "line": "nt_story",
+   "title_idea": "What if you texted Voyager 1 right now? (You'd wait 2 days for a reply)",
+   "facts": [
+    {
+     "fact": "보이저 1호는 2026년 11월 18일 지구에서 1광일 떨어진 곳에 닿은 첫 탐사선이 됐다.",
+     "source_url": "https://www.nasa.gov/news-release/nasas-voyager-1-makes-history-reaching-one-light-day-from-earth/"
+    },
+    {
+     "fact": "JPL 팀은 빛의 속도로 오는 보이저의 무선 신호를 24시간 뒤에야 받았다.",
+     "source_url": "https://www.nasa.gov/news-release/nasas-voyager-1-makes-history-reaching-one-light-day-from-earth/"
+    },
+    {
+     "fact": "보이저 1·2호는 드문 행성 정렬을 이용하려고 1977년에 발사됐고, 지금 성간 공간에 있는 탐사선은 인류가 만든 것 중 이 둘뿐이다.",
+     "source_url": "https://www.nasa.gov/news-release/nasas-voyager-1-makes-history-reaching-one-light-day-from-earth/"
+    }
+   ],
+   "careful": "얼굴 없는 3D what-if 꼴로 만들 것. 데이터가 끊긴 문제를 '보이저가 죽었다'처럼 부풀리지 말 것. 공개 전에 현재 상태 다시 확인."
+  },
+  {
+   "line": "insta_worker",
+   "title_idea": "블롭피시, 심해 원룸 보러 가다 — 돌멩이 하나에 동료 245명",
+   "facts": [
+    {
+     "fact": "독일 브레멘대 MARUM 연구진이 중앙 태평양 심해 다금속 단괴 244개를 쪼개 보니 미세 동물 4,139마리가 나왔고, 단괴 하나에서 가장 많이 나온 것은 245마리였다.",
+     "source_url": "https://www.famtimes.co.kr/news/articleView.html?idxno=705021"
+    },
+    {
+     "fact": "조사 해역은 클라리온-클리퍼턴 지대이고 수심은 약 4,000~6,000m다.",
+     "source_url": "https://www.famtimes.co.kr/news/articleView.html?idxno=705021"
+    },
+    {
+     "fact": "다금속 단괴는 철·망간 산화물로 된 주먹만 한 돌덩이로 수백만 년에 걸쳐 만들어진다.",
+     "source_url": "https://www.famtimes.co.kr/news/articleView.html?idxno=705021"
+    },
+    {
+     "fact": "단괴 속 동물 수는 주변 진흙보다 적어서 선충류는 약 10%, 요각류는 약 25% 수준이었지만, 최대 1,000km 떨어진 단괴끼리는 사는 동물 구성이 매우 비슷했다.",
+     "source_url": "https://www.famtimes.co.kr/news/articleView.html?idxno=705021"
+    }
+   ],
+   "careful": "기사도 보도자료 요약 기준이라고 밝힘. 심해 채굴 찬반은 단정하지 말고 진짜 과학 한 장에만 집중."
+  },
+  {
+   "line": "insta_sci",
+   "title_idea": "별이 별을 삼켰다 — 안드로메다에서 처음 본 '별 합체'",
+   "facts": [
+    {
+     "fact": "Nature에 실린 연구에 따르면 작은 별이 거대한 동반성의 바깥층 속을 7년 동안 돌다가 2025년 10월 폭발과 함께 합쳐졌다.",
+     "source_url": "https://www.tovima.com/science/two-stars-merge-in-andromeda-as-astronomers-watch/"
+    },
+    {
+     "fact": "제임스웹 우주망원경 자료로 늙고 부푼 초거성이 태양보다 조금 가벼운 별을 삼켰다는 것이 확인됐다.",
+     "source_url": "https://www.stsci.edu/contents/news-releases/2026/news-2026-132"
+    },
+    {
+     "fact": "안드로메다 은하는 우리 은하에서 약 253만 광년 떨어져 있고, 이 현상의 이름은 AT 2025abao이며 논문은 2026년 11월 18일 Nature에 실렸다.",
+     "source_url": "https://arynews.tv/astronomers-observe-rare-star-merger-inside-the-andromeda-galaxy"
+    }
+   ],
+   "careful": "STScI 페이지는 열기가 막혀서 검색 결과 요약으로만 확인함. 세부 숫자(질량 등)는 더 넣지 말고 '처음 확인' 표현은 기사 그대로만 쓸 것."
+  },
+  {
+   "line": "insta_danger",
+   "title_idea": "우리 집에 야생동물 2,100종이 산다? (진짜 이유: 대부분 무당벌레와 거미)",
+   "facts": [
+    {
+     "fact": "NC주립대 등 연구진이 미국·캐나다 실내에서 시민이 찍은 야생 생물 사진 23,782건을 정리했더니 약 2,100종이 나왔다.",
+     "source_url": "https://www.famtimes.co.kr/news/articleView.html?idxno=705350"
+    },
+    {
+     "fact": "기록의 60%가 곤충, 30%가 거미, 4%가 척추동물이었다.",
+     "source_url": "https://www.famtimes.co.kr/news/articleView.html?idxno=705350"
+    },
+    {
+     "fact": "가장 많이 찍힌 종은 아시아 무당벌레였고, 1,100종은 실내에서 딱 한 번만 관찰됐다.",
+     "source_url": "https://www.famtimes.co.kr/news/articleView.html?idxno=705350"
+    }
+   ],
+   "careful": "북미 실내 데이터라 '한국 우리 집'이라고 단정하지 말 것. 혐오감 주는 클로즈업은 피하고 귀여운 쪽으로."
+  },
+  {
+   "line": "insta_sci",
+   "title_idea": "슈퍼문은 왜 더 크고 밝아 보일까 — 달의 찌그러진 궤도 단면",
+   "facts": [
+    {
+     "fact": "달은 지구 둘레를 타원 궤도로 돌아서 지구와의 거리가 일정하지 않고, 가까울 때 뜬 보름달은 평소보다 조금 더 크고 밝게 보이는데 이것을 슈퍼문이라고 한다.",
+     "source_url": "https://www.e-science.co.kr/news/articleView.html?idxno=138813"
+    },
+    {
+     "fact": "NASA는 11월 24일 슈퍼문을 시작으로 12월과 내년 1월까지 세 번 연속 슈퍼문이 이어진다고 전망했다.",
+     "source_url": "https://www.e-science.co.kr/news/articleView.html?idxno=138813"
+    }
+   ],
+   "careful": "12월 슈퍼문의 정확한 날짜는 출처에 없으니 날짜를 넣으려면 따로 확인할 것. '훨씬 크다'는 과장 금지('조금 더')."
+  }
+ ],
+ "note": "세계 뉴스는 보이저 1호의 1광일 도달과 안드로메다 별 합체가 가장 확실했고, 바닥나 가는 insta_sci·nt_story를 채울 우주 소재로 바로 쓸 수 있다. 검색 한도에 걸려 영어 실화 검색은 1번만 했고, 거기서 나온 실종 미성년자 사연은 맞지 않아 뺐다. 트렌드 레이더에서 관상·이름이 오르는 흐름은 웹 근거를 따로 열어 보지 못해 hot에 넣지 않았다."
+}

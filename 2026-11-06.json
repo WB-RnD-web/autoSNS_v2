@@ -1,0 +1,278 @@
+{
+ "date": "2026-11-06",
+ "hot": [
+  {
+   "topic": "보이저 1호가 11월 18일 인류 탐사선 최초로 지구에서 '1광일' 거리에 닿는다",
+   "market": "kr",
+   "where": "국내 과학·경제 기사, NASA 11월 밤하늘 안내 기사, ScienceDaily 우주 면",
+   "evidence": [
+    {
+     "title": "보이저 1호, 18일 인류 첫 1광일 거리 도달 (재경일보)",
+     "url": "https://news.jkn.co.kr/post/1068416",
+     "date": "2026-11-05"
+    },
+    {
+     "title": "유성우·화성·목성·슈퍼문…NASA가 꼽은 11월 밤하늘 관측 포인트 (이코노미사이언스)",
+     "url": "https://www.e-science.co.kr/news/articleView.html?idxno=138813",
+     "date": "2026-11-05"
+    }
+   ],
+   "why_now": "도달 시각이 11/18 오후 7시 16분(KST)으로 정해져 있고 NASA가 카운트다운 시계를 공개했다. 이번 주 기사가 몰리고 있어 18일 전후로 한 번 더 뜰 것으로 보인다.",
+   "fit": [
+    "insta_sci",
+    "nt_story"
+   ],
+   "idea": "인스타 sci: 보이저 1호 속(플루토늄 전지, 해마다 줄어드는 전력, 답장까지 45시간) 단면을 18일 직전에 낸다. Nine Tails: 'What if you had to text Voyager 1?' what-if."
+  },
+  {
+   "topic": "구조에 실패한 NASA 스위프트 우주망원경(1.5t)이 11월 4일 대기권에 재진입",
+   "market": "kr",
+   "where": "국내 IT·종합 기사, KBS 유튜브 '잇슈 SNS'",
+   "evidence": [
+    {
+     "title": "NASA 스위프트 우주망원경, 오늘 지구로 추락한다 (ZDNet Korea)",
+     "url": "https://zdnet.co.kr/view/?no=20261104095657",
+     "date": "2026-11-04"
+    },
+    {
+     "title": "NASA 스위프트 망원경 지구 추락…잔해 바다 낙하 (재경일보)",
+     "url": "https://news.jkn.co.kr/post/1069031",
+     "date": "2026-11-05"
+    },
+    {
+     "title": "구조 실패한 1.5톤 짜리 우주망원경…오늘(4일) 중 지구로 추락 [잇슈 SNS] / KBS",
+     "url": "https://www.youtube.com/watch?v=iNvk3JHSpzk",
+     "date": "2026-11-04"
+    }
+   ],
+   "why_now": "11/3~4에 '추락' 기사가 몰렸다. 태양 활동이 세지면 위성이 떨어진다는 이유 자체가 과학 소재가 된다. 다만 사건 소식은 금방 식으니 일주일 안에 써야 한다.",
+   "fit": [
+    "insta_sci"
+   ],
+   "idea": "'태양이 세지면 위성이 떨어지는 진짜 이유'를 다룬다. 대기가 부풀어 오르는 단면과, 텅스텐 부품만 살아남는 재진입 단면을 보여 준다."
+  },
+  {
+   "topic": "입동(11/7 토) 앞뒤로 운세 기사들이 '입동'을 제목에 쓴다",
+   "market": "kr",
+   "where": "언론사 오늘의 운세·띠별 운세 기사",
+   "evidence": [
+    {
+     "title": "2026년 입동 11월 7일…겨울 절기 첫머리 (비건뉴스)",
+     "url": "https://www.vegannews.co.kr/news/article.html?no=399250",
+     "date": "2026-11-03"
+    },
+    {
+     "title": "[오늘의 운세] 2026년 11월 5일 (목) 띠별운세 '입동을 앞두고 채비하자' (데일리팝)",
+     "url": "http://www.dailypop.kr/news/articleView.html?idxno=103971",
+     "date": "2026-11-05"
+    }
+   ],
+   "why_now": "절기는 해마다 돌아오는 상시 소재다. 이번 주에는 날짜가 붙어 있어(11/7) 제목에 바로 쓸 수 있다. 레이더에서도 '11월 집안에 웃음꽃 피는 띠'(8.7배)처럼 달·절기를 단 띠 제목이 잘 나왔다.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "'입동부터 겨울 동안 집안에 온기 도는 띠 1~12위 | 11월 7일' 띠 테마 표. 겁주는 말 없이 덕담으로 푼다."
+  },
+  {
+   "topic": "11월 밤하늘 일정: 화성·목성 근접(15~16일), 사자자리 유성우(17~18일 새벽), 슈퍼문(24일)",
+   "market": "kr",
+   "where": "국내 과학 기사(NASA 'What's Up' 11월호 소개)",
+   "evidence": [
+    {
+     "title": "유성우·화성·목성·슈퍼문…NASA가 꼽은 11월 밤하늘 관측 포인트 (이코노미사이언스)",
+     "url": "https://www.e-science.co.kr/news/articleView.html?idxno=138813",
+     "date": "2026-11-05"
+    }
+   ],
+   "why_now": "날짜가 정해진 천문 이벤트가 이달 중순~하순에 몰려 있다. 유성우·슈퍼문 자체는 해마다 오는 상시 소재다.",
+   "fit": [
+    "insta_sci"
+   ],
+   "idea": "'별똥별은 사실 모래알 크기'처럼 크기를 비교하는 sci 카드를 17일 전에 낸다. 보이저 편과 같은 주에 붙여 우주 주간으로 묶는다."
+  },
+  {
+   "topic": "1960년 Science 논문이 예언한 '종말의 날' 2026년 11월 13일(금)이 다음 주다",
+   "market": "us",
+   "where": "영어권 과학·대중 매체 기사(PopSci, BroBible), 학술 행사(빈 복잡계과학 허브 '종말 컨퍼런스')",
+   "evidence": [
+    {
+     "title": "In 1960, scientists predicted the world would end on November 13, 2026 (Popular Science)",
+     "url": "https://www.popsci.com/science/world-end-overpopulation-doomsday-november-2026/",
+     "date": "2026-10-13"
+    },
+    {
+     "title": "Scientists Predicted The World Would End On November 13, 2026 (BroBible)",
+     "url": "https://brobible.com/culture/article/scientists-predicted-world-end-november-2026/",
+     "date": "2026-11-02"
+    },
+    {
+     "title": "13 November 2026 Doomsday Conference (CSH Vienna)",
+     "url": "https://csh.ac.at/events/doomsday-conference-on-the-sense-and-nonsense-of-end-of-the-world-predictions/",
+     "date": ""
+    }
+   ],
+   "why_now": "예언된 날짜가 바로 다음 주 금요일(13일의 금요일)이라 영어권 기사가 이어지고 있다. 13일 당일이 정점일 것이다.",
+   "fit": [
+    "nt_story"
+   ],
+   "idea": "얼굴 없는 3D 실화 'The scientists who calculated the end of the world, and why they were wrong'(60초). 겁주기가 아니라 '틀린 예측의 반전'으로 마무리한다."
+  },
+  {
+   "topic": "심해 신종 발견: 아르헨티나 마르델플라타 해저 협곡에서 2주 만에 57종, 뿔 달린 해삼 '로키'",
+   "market": "us",
+   "where": "영어권 과학·환경 기사(Mongabay, phys.org / MBARI)",
+   "evidence": [
+    {
+     "title": "'Patrick' sea star went viral, but Argentine deep-sea canyon held 57 new species (Mongabay)",
+     "url": "https://news.mongabay.com/2026/10/patrick-sea-star-went-viral-but-argentine-deep-sea-canyon-held-57-new-species/",
+     "date": "2026-10-13"
+    },
+    {
+     "title": "DNA and underwater footage reveal two new species of deep-sea siphonophores (phys.org)",
+     "url": "https://phys.org/news/2026-10-dna-underwater-footage-reveal-species.html",
+     "date": "2026-10-22"
+    }
+   ],
+   "why_now": "10월 중·하순(30일 안) 신종 보고가 이어졌다. 다만 큰 바이럴은 아니다. 심해 신종은 꾸준히 나오는 상시 소재라는 점도 같이 적어 둔다.",
+   "fit": [
+    "insta_worker",
+    "insta_sci"
+   ],
+   "idea": "심해 직장인: '신입 57명 한꺼번에 입사, 그중 뿔 달린 해삼 로키'로 공감 컷을 만들고, 과학 한 장은 신종이 '발견'에서 '기재'까지 가는 절차로 채운다."
+  },
+  {
+   "topic": "폴란드 동물원 26살 물범의 '낙엽 놀이' 영상에 'AI 아니냐'는 반응",
+   "market": "kr",
+   "where": "연합뉴스 유튜브(동물 화제 영상)",
+   "evidence": [
+    {
+     "title": "\"제발 AI 아니라고 해줘\"…26살 물범 '낙엽놀이' 영상에 반전이 / 연합뉴스",
+     "url": "https://www.youtube.com/watch?v=YzJw5r4f9F0",
+     "date": "2026-11-05"
+    }
+   ],
+   "why_now": "가을 낙엽철에 맞춘 귀여운 동물 영상이다. '진짜인지 AI인지' 의심하는 반응이 같이 붙었다. 단발성 화제다.",
+   "fit": [
+    "insta_danger"
+   ],
+   "idea": "'물범이 낙엽에 뒹구는 위험한 진짜 이유'처럼 무서운 제목을 달고 귀여운 진짜 사실(체온·털 관리 같은 일반 생태)로 푼다. 원본 영상은 쓰지 않는다."
+  }
+ ],
+ "candidates": [
+  {
+   "line": "insta_sci",
+   "title_idea": "보이저 1호 속을 열어 보면: 답장 받는 데만 45시간",
+   "facts": [
+    {
+     "fact": "NASA는 보이저 1호가 한국시간 11월 18일 오후 7시 16분에 지구로부터 1광일 거리에 이른다고 밝혔다.",
+     "source_url": "https://news.jkn.co.kr/post/1068416"
+    },
+    {
+     "fact": "1광일은 빛이 진공에서 24시간 동안 가는 거리로 약 259억206만㎞이다.",
+     "source_url": "https://news.jkn.co.kr/post/1068416"
+    },
+    {
+     "fact": "보이저 1호는 플루토늄-238을 연료로 쓰는 방사성동위원소 열전 발전기(RTG) 3기로 전력을 얻고, 발사 초기 470~475W였던 전력이 해마다 약 4W씩 줄고 있다.",
+     "source_url": "https://news.jkn.co.kr/post/1068416"
+    },
+    {
+     "fact": "보이저 1호와의 통신은 편도 22시간을 넘고, 명령을 보내 답신을 받기까지 최소 45시간이 걸린다.",
+     "source_url": "https://news.jkn.co.kr/post/1068416"
+    }
+   ],
+   "careful": "도달 시각은 NASA 예측값이니 '예정'으로 쓴다. 통신 유지는 '최대 2036년까지 계획'이지 확정이 아니다."
+  },
+  {
+   "line": "insta_sci",
+   "title_idea": "태양이 세지면 망원경이 떨어지는 진짜 이유",
+   "facts": [
+    {
+     "fact": "NASA 스위프트 우주망원경은 무게 1450kg으로 2004년에 발사됐다.",
+     "source_url": "https://zdnet.co.kr/view/?no=20261104095657"
+    },
+    {
+     "fact": "최근 태양 활동이 활발해지면서 지구 대기 상층부가 팽창했고, 이 때문에 망원경의 궤도가 점점 낮아졌다.",
+     "source_url": "https://zdnet.co.kr/view/?no=20261104095657"
+    },
+    {
+     "fact": "NASA는 지난 7월 민간 우주기업의 위성 '링크'로 스위프트의 궤도를 높이는 구조 임무를 시도했으나 실패했다.",
+     "source_url": "https://zdnet.co.kr/view/?no=20261104095657"
+    },
+    {
+     "fact": "망원경 대부분은 재진입 중 타 없어지지만, 납보다 밀도가 높은 텅스텐 부품과 거울 조각 일부는 지상까지 올 수 있다고 했다.",
+     "source_url": "https://zdnet.co.kr/view/?no=20261104095657"
+    }
+   ],
+   "careful": "기사는 추락 '예상'을 다룬 것이다. 실제 낙하 지점이나 피해는 단정하지 말고, '잔해가 사람을 다치게 한다' 식의 겁주기도 넣지 않는다."
+  },
+  {
+   "line": "insta_worker",
+   "title_idea": "심해 직장인: 2주 만에 신입 57명, 그중 뿔 달린 '로키'",
+   "facts": [
+    {
+     "fact": "과학자들이 아르헨티나 마르델플라타 해저 협곡 표본에서 단 2주 만에 해양 신종 57종과 새로운 속 5개를 찾아냈다.",
+     "source_url": "https://news.mongabay.com/2026/10/patrick-sea-star-went-viral-but-argentine-deep-sea-canyon-held-57-new-species/"
+    },
+    {
+     "fact": "이번에 찾은 심해 해삼 하나는 뿔처럼 솟은 돌기 때문에 북유럽 신화의 신 이름을 따 '로키'라는 별명이 붙었다.",
+     "source_url": "https://news.mongabay.com/2026/10/patrick-sea-star-went-viral-but-argentine-deep-sea-canyon-held-57-new-species/"
+    },
+    {
+     "fact": "요각류 표본은 10%만 살펴봤는데 살펴본 표본이 모두 신종이었고, 이것만으로 신종 20종과 새 속 1개가 나왔다.",
+     "source_url": "https://news.mongabay.com/2026/10/patrick-sea-star-went-viral-but-argentine-deep-sea-canyon-held-57-new-species/"
+    }
+   ],
+   "careful": "이 종들은 '발견'(전문가가 신종으로 판단해 등록) 단계이고 정식 '기재'는 아직이다. '신종 확정'으로 쓰지 않는다."
+  },
+  {
+   "line": "nt_story",
+   "title_idea": "The Scientists Who Calculated the End of the World (It's Next Friday)",
+   "facts": [
+    {
+     "fact": "일리노이 대학 물리학자 하인츠 폰 푀르스터와 동료 2명이 1960년 11월 4일 학술지 Science에 '종말의 날: 서기 2026년 11월 13일 금요일'이라는 논문을 냈다.",
+     "source_url": "https://brobible.com/culture/article/scientists-predicted-world-end-november-2026/"
+    },
+    {
+     "fact": "연구진은 약 2,000년에 걸친 세계 인구 추정치 24개를 분석해, 인구가 2026년 11월 13일에 무한대에 가까워진다고 계산했다.",
+     "source_url": "https://brobible.com/culture/article/scientists-predicted-world-end-november-2026/"
+    },
+    {
+     "fact": "오늘날 세계 국가의 약 55%, 세계 인구 3분의 2 이상이 사는 나라들의 출산율이 대체 수준보다 낮다.",
+     "source_url": "https://www.popsci.com/science/world-end-overpopulation-doomsday-november-2026/"
+    }
+   ],
+   "careful": "실제로 종말이 온다는 식의 겁주기나 공포 마케팅은 하지 않는다. 결말은 '모델이 틀린 이유(사람들의 행동이 바뀜)'로 맺는다. 실존 인물(고인)은 논문 사실만 쓰고 조롱하지 않는다."
+  },
+  {
+   "line": "nt_story",
+   "title_idea": "What If You Tried to Text Voyager 1? (45 Hours for a Reply)",
+   "facts": [
+    {
+     "fact": "1977년 9월 5일 발사된 보이저 1호는 태양 기준 시속 6만1000㎞로 날고 있으며, 발사 49년 2개월 11일 만에 1광일 거리에 닿는다.",
+     "source_url": "https://news.jkn.co.kr/post/1068416"
+    },
+    {
+     "fact": "보이저 1호와의 통신은 편도 22시간을 넘고, 명령을 보내 답신을 받기까지 최소 45시간이 걸린다.",
+     "source_url": "https://news.jkn.co.kr/post/1068416"
+    },
+    {
+     "fact": "보이저 2호는 다른 궤도를 거쳐 보이저 1호보다 약 9년 늦은 2035년 11월에 1광일 거리에 닿을 예정이다.",
+     "source_url": "https://news.jkn.co.kr/post/1068416"
+    }
+   ],
+   "careful": "인스타 sci 편과 같은 소재이니 시청자(언어권)가 달라도 공개 날짜를 띄운다. 도달 시각은 예측값이다."
+  },
+  {
+   "line": "wb_table",
+   "title_idea": "입동부터 겨울 내내 집안에 온기 도는 띠 1위~12위 | 11월 7일 · 45~96년생 전부",
+   "facts": [
+    {
+     "fact": "2026년 입동은 11월 7일 토요일이며, 우주항공청 '2026년 월력요항'에 24절기 날짜로 실려 있다.",
+     "source_url": "https://www.vegannews.co.kr/news/article.html?no=399250"
+    }
+   ],
+   "careful": "건강·금전을 단정하지 않는다(덕담·채비 말투). 등급·순위 겁주기 금지. 명리 풀이는 자체 근거로 쓰고 기사에 있는 것처럼 꾸미지 않는다."
+  }
+ ],
+ "note": "한국 쪽은 이번 주 우주 소식(보이저 1호 1광일 11/18, 스위프트 추락 11/4)과 입동(11/7)이 가장 쓰기 좋았고, 영어 쪽은 11/13 '종말 예언' 실화가 다음 주에 정점일 소재입니다. 검색 도구 한도가 일찍 차서 영어 viral true story·what-if 검색과 한국 쪽 종말 예언 확인은 못 했으니, 내일 보충이 필요합니다."
+}

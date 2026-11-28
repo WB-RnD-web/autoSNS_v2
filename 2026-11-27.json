@@ -1,0 +1,332 @@
+{
+ "date": "2026-11-27",
+ "hot": [
+  {
+   "topic": "2027 정미년 '붉은 양띠'가 언제부터인지(입춘 2/4 10:46과 설날 기준 차이) 정리한 글이 새로 올라오는 중",
+   "market": "kr",
+   "where": "기사·블로그형 정보글 검색 결과",
+   "evidence": [
+    {
+     "title": "2027년 띠 무슨띠? 정미년 붉은 양띠 입춘 기준·출생연도·삼재 총정리",
+     "url": "https://law.kimnyeosa.com/2027%EB%85%84-%EB%9D%A0/",
+     "date": "2026-11-20"
+    },
+    {
+     "title": "2027년은 무슨 띠? 정미년(丁未) 양띠 — 붉은 양의 해 · 어흥사주",
+     "url": "https://xn--vf4b15gb4ctvu.com/new-year-zodiac",
+     "date": "2026-10-23"
+    }
+   ],
+   "why_now": "연말이 되면서 새해 띠와 입춘 기준을 묻는 검색이 늘어나는 철이다. 해마다 이맘때 반복되는 철 수요라 새로 생긴 유행은 아니다.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "'2027년 1~2월에 태어나는 손주는 말띠일까 양띠일까' 입춘 기준·설날 기준을 나란히 놓은 표"
+  },
+  {
+   "topic": "2026 동지(12/22) 날짜·팥죽 풍습 정리 글",
+   "market": "kr",
+   "where": "정보 블로그·생활 매체",
+   "evidence": [
+    {
+     "title": "2026년 동지 날짜 12월 22일｜중동지 팥죽 먹는 이유·새알심 풍습",
+     "url": "https://www.make2t.kr/2026/11/2026-winter-solstice-dongji-red-bean-porridge.html",
+     "date": "2026-11-08"
+    },
+    {
+     "title": "동지 뜻과 2026 동지 시간, 2026 동지 날짜 12월 22일",
+     "url": "https://www.yugacrew.com/crewletter/dongji-meaning-time-2026",
+     "date": "2026-11-05"
+    }
+   ],
+   "why_now": "해마다 돌아오는 절기 주제다. 동지가 약 25일 남아 미리 정리하는 글이 올라오고 있을 뿐 급하게 뜨는 흐름은 아니다.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "동지 앞 주에 '동짓날 띠별로 챙길 것' 표 하나(풍습 소개 수준, 겁주기 없이)"
+  },
+  {
+   "topic": "미국 FCC가 스페이스X의 '우주 데이터센터' 위성 100만 기 계획을 승인",
+   "market": "kr",
+   "where": "국내 기사(네이트·글로벌이코노믹)",
+   "evidence": [
+    {
+     "title": "우주로 향하는 美데이터센터…FCC, 스페이스X 위성 100만기 승인",
+     "url": "https://m.news.nate.com/view/20261126n37929",
+     "date": "2026-11-26"
+    },
+    {
+     "title": "우주 데이터센터 띄우는 스페이스X, 100만 개 위성 허가 받아도 과제는 남았다",
+     "url": "https://www.g-enews.com/article/Global-Biz/2026/11/202611261750168723fda4f5ab74_1",
+     "date": "2026-11-26"
+    }
+   ],
+   "why_now": "11월 25일(현지) 승인 소식이 나왔고, 국내 기사는 하루 전인 11월 26일에 실렸다.",
+   "fit": [
+    "insta_sci"
+   ],
+   "idea": "'우주는 추운데 왜 컴퓨터 식히기가 더 어려울까' — 공기가 없어 열이 빠지지 않는 원리를 단면 그림으로"
+  },
+  {
+   "topic": "인스타 릴스 인급동 10월 분석: '반려동물 AI 콘텐츠' 형식과 떡 디저트가 자주 보임",
+   "market": "kr",
+   "where": "인스타 릴스(고구마팜 인급동 데이터 분석 글)",
+   "evidence": [
+    {
+     "title": "떡 디저트, 수능 노래… 인기 릴스 240개로 읽는 트렌드 [2026년 10월 인급동 데이터]",
+     "url": "https://gogumafarm.kr/%EB%96%A1-%EB%94%94%EC%A0%80%ED%8A%B8-%EC%88%98%EB%8A%A5-%EB%85%B8%EB%9E%98-%EC%9D%B8%EA%B8%B0-%EB%A6%B4%EC%8A%A4-240%EA%B0%9C%EB%A1%9C-%EC%9D%BD%EB%8A%94-%ED%8A%B8%EB%A0%8C%EB%93%9C-2026/",
+     "date": "2026-11-18"
+    }
+   ],
+   "why_now": "글은 11월 18일에 나왔지만 분석한 자료는 10월 릴스라서, 11월 말에도 그대로 이어지는지는 확인하지 못했다.",
+   "fit": [
+    "insta_danger"
+   ],
+   "idea": "동물 카드에서 '귀여운 동물 + 진짜 사실' 짝은 그대로 두고, AI로 꾸민 장면이 아니라 진짜 과학이라는 점을 앞에 내세운다"
+  },
+  {
+   "topic": "심해 성게의 목구멍(식도) 안에 사는 새 조개 발견",
+   "market": "us",
+   "where": "과학 기사(phys.org·BBC Wildlife·Yahoo)",
+   "evidence": [
+    {
+     "title": "Deep-sea clam discovered living inside the throat of a sea urchin",
+     "url": "https://phys.org/news/2026-11-deep-sea-clam-throat-urchin.html",
+     "date": "2026-11-24"
+    },
+    {
+     "title": "\"We were absolutely stunned.\" Scientists discover new marine species living inside the throat of a deep-sea animal",
+     "url": "https://www.discoverwildlife.com/animal-facts/marine-animals/vaticinaria-gulicola-australia",
+     "date": "2026-11-26"
+    }
+   ],
+   "why_now": "11월 24일 ZooKeys 논문 기사가 처음 나왔고, 11월 26일 BBC Wildlife를 비롯해 여러 곳이 이어서 다뤘다.",
+   "fit": [
+    "insta_worker",
+    "insta_danger"
+   ],
+   "idea": "심해 직장인: '내 자리는 선배 목구멍 안입니다' — 세상에서 제일 이상한 자리 배치 + 진짜 사실 한 장"
+  },
+  {
+   "topic": "심해 망간단괴 돌 하나 안에 동물 245마리가 살고 있었다",
+   "market": "us",
+   "where": "과학 기사(ScienceDaily·ZME Science·The Debrief·Substack)",
+   "evidence": [
+    {
+     "title": "Hidden ecosystem: Scientists discover 245 animals living inside a single deep-sea rock",
+     "url": "https://www.sciencedaily.com/releases/2026/11/261114202133.htm",
+     "date": ""
+    },
+    {
+     "title": "Scientists Found Tiny Ecosystems Inside the Deep-Sea Rocks We Want to Mine",
+     "url": "https://www.zmescience.com/science/news-science/scientists-found-tiny-ecosystems-inside-the-deep-sea-rocks-we-want-to-mine/",
+     "date": "2026-11-20"
+    },
+    {
+     "title": "Scientists Discover Thousands of Tiny Creatures Living Inside Deep-Sea Rocks Prized by Mining Companies",
+     "url": "https://thedebrief.org/scientists-discover-thousands-of-tiny-creatures-living-inside-deep-sea-rocks-prized-by-mining-companies/",
+     "date": "2026-11-18"
+    }
+   ],
+   "why_now": "11월 중순 Scientific Reports 논문이 나온 뒤 11월 18일 무렵부터 이번 주까지 기사가 계속 나오고 있다.",
+   "fit": [
+    "insta_worker",
+    "insta_sci"
+   ],
+   "idea": "'돌을 반으로 갈라 보면' — 빈틈 23%에 사는 작은 동물들을 단면으로 보여 준다(심해 직장인판은 '좁은 셰어 오피스')"
+  },
+  {
+   "topic": "심해 해삼 '바다돼지' 피부 밑에 사는 새 세균",
+   "market": "us",
+   "where": "과학 기사(phys.org·ScienceDaily·BBC Wildlife)",
+   "evidence": [
+    {
+     "title": "Sea pigs from the abyss host unusual bacteria",
+     "url": "https://phys.org/news/2026-11-sea-pigs-abyss-host-unusual.html",
+     "date": "2026-11-13"
+    },
+    {
+     "title": "Something strange is living beneath the skin of deep-sea pigs",
+     "url": "https://www.sciencedaily.com/releases/2026/11/261118065512.htm",
+     "date": ""
+    },
+    {
+     "title": "This translucent, bizarre tentacled creature lives in the deep sea. Scientists just found something unusual under its 'skin'",
+     "url": "https://www.discoverwildlife.com/animal-facts/marine-animals/sea-pigs-bacteria",
+     "date": "2026-11-24"
+    }
+   ],
+   "why_now": "도쿄대 연구가 11월 13일 처음 기사로 나왔고, 11월 24~26일 다른 매체들이 다시 다뤄 2주째 이야기가 이어지고 있다.",
+   "fit": [
+    "insta_worker"
+   ],
+   "idea": "바다돼지 동료의 '피부 밑 동거인' 편. 이미 쓴 carpool-senior-sea-pig와 겹치지 않게 다른 사실로 간다"
+  },
+  {
+   "topic": "실화 바탕 러시아 생존 영화 'The One'이 넷플릭스 비영어 영화 글로벌 톱10 5위",
+   "market": "us",
+   "where": "넷플릭스 순위·엔터 기사",
+   "evidence": [
+    {
+     "title": "4 Years Later, Russian True Story Survival Thriller Takes Over Netflix With 5.2 Million Views",
+     "url": "https://fandomwire.com/the-one-takes-over-netflix-5-2-million-minutes/",
+     "date": "2026-11-22"
+    }
+   ],
+   "why_now": "11월 5일 넷플릭스에 공개된 뒤 11월 9~15일 조회 520만 회로 비영어 영화 5위에 올랐다. 생존 실화에 대한 관심을 보여 주는 신호다.",
+   "fit": [
+    "nt_story"
+   ],
+   "idea": "영화를 따라 만들지 않는다. '추락에서 살아남는 물리' 같은 what-if 꼴을 참고만 한다. 실제 사건의 사실은 아직 확인하지 못했다"
+  }
+ ],
+ "candidates": [
+  {
+   "line": "insta_sci",
+   "title_idea": "우주는 영하인데, 왜 우주 컴퓨터는 식히기가 더 힘들까",
+   "facts": [
+    {
+     "fact": "미국 연방통신위원회(FCC)가 스페이스X의 우주 데이터센터용 위성 100만기 배치 계획을 승인했다.",
+     "source_url": "https://m.news.nate.com/view/20261126n37929"
+    },
+    {
+     "fact": "AP통신은 우주에는 열을 옮겨 줄 공기가 거의 없어 장비를 식히기 어렵다고 전했다.",
+     "source_url": "https://m.news.nate.com/view/20261126n37929"
+    },
+    {
+     "fact": "허가에 따라 스페이스X는 2033년 11월 25일까지 첫 위성을 궤도에 올려 가동해야 하고, 전체 100만기의 배치 시한은 2040년 11월 25일이다.",
+     "source_url": "https://m.news.nate.com/view/20261126n37929"
+    },
+    {
+     "fact": "임무를 마친 위성은 바다 상공에서 대기권에 재진입시켜 소각한다는 방침이다.",
+     "source_url": "https://m.news.nate.com/view/20261126n37929"
+    }
+   ],
+   "careful": "아직 허가 단계라 실제로 돌아간다고 말하지 않는다. 기업·주가 이야기는 빼고 열이 빠지는 원리에만 집중한다."
+  },
+  {
+   "line": "insta_sci",
+   "title_idea": "속이 다 보이는 심해 투명 통 '유리 살파' — 몸 안 그물로 밥 먹는 법",
+   "facts": [
+    {
+     "fact": "MBARI가 20여 년 전 몬터레이만 심해에서 처음 본 젤라틴 동물 '유리 살파(Vitreosalpa gemini)'를 새 종으로 자세히 기재했다.",
+     "source_url": "https://www.mbari.org/news/mbari-technology-reveals-remarkable-new-species-of-deep-sea-salp/"
+    },
+    {
+     "fact": "Vitreosalpa는 심해에서만 사는 것으로 알려진 첫 살파이며, 수심 280~2,200m에 산다.",
+     "source_url": "https://www.mbari.org/news/mbari-technology-reveals-remarkable-new-species-of-deep-sea-salp/"
+    },
+    {
+     "fact": "천천히 헤엄치고, 먹이 섭취율과 대사율이 얕은 바다에 사는 친척보다 훨씬 낮다.",
+     "source_url": "https://www.mbari.org/news/mbari-technology-reveals-remarkable-new-species-of-deep-sea-salp/"
+    },
+    {
+     "fact": "살파는 통 모양 몸속의 점액 그물로 물을 흘려보내 걸러 먹는다.",
+     "source_url": "https://www.mbari.org/news/mbari-technology-reveals-remarkable-new-species-of-deep-sea-salp/"
+    }
+   ],
+   "careful": "점액 그물로 걸러 먹는 방식은 살파 전체의 특징이다. 이 종만의 특징처럼 쓰지 않는다."
+  },
+  {
+   "line": "insta_worker",
+   "title_idea": "심해 직장인: 신입 자리가… 선배 목구멍 안?",
+   "facts": [
+    {
+     "fact": "심해 성게의 식도 안에 사는 새 조개 종이 발견됐다.",
+     "source_url": "https://phys.org/news/2026-11-deep-sea-clam-throat-urchin.html"
+    },
+    {
+     "fact": "새 조개 이름 Vaticinaria gulicola는 라틴어로 '목구멍'과 '거주자'라는 말에서 따왔다.",
+     "source_url": "https://www.discoverwildlife.com/animal-facts/marine-animals/vaticinaria-gulicola-australia"
+    },
+    {
+     "fact": "두 생물은 호주 남쪽 해안 앞 수심 약 4,000~5,000m에서 발견됐다.",
+     "source_url": "https://www.discoverwildlife.com/animal-facts/marine-animals/vaticinaria-gulicola-australia"
+    },
+    {
+     "fact": "처음에는 성게가 이 조개를 먹는 줄 알았지만, 뒤에 조개가 식도 안에 살고 있다는 것이 밝혀졌다.",
+     "source_url": "https://www.discoverwildlife.com/animal-facts/marine-animals/vaticinaria-gulicola-australia"
+    },
+    {
+     "fact": "숙주 성게는 온전한 모습으로 채집된 적이 없어서 어떻게 생겼는지조차 잘 모른다.",
+     "source_url": "https://www.discoverwildlife.com/animal-facts/marine-animals/vaticinaria-gulicola-australia"
+    }
+   ],
+   "careful": "서로 무엇을 주고받는지는 아직 모른다. '기생'이나 '해친다'고 단정하지 않는다."
+  },
+  {
+   "line": "insta_worker",
+   "title_idea": "심해 직장인: 우리 사무실 좁다고? 돌멩이 하나에 245명 근무",
+   "facts": [
+    {
+     "fact": "연구진이 망간단괴 244개를 조사해 생물 4,139마리를 찾았고, 평균은 단괴 하나에 17마리지만 한 개에는 245마리가 살았다.",
+     "source_url": "https://www.zmescience.com/science/news-science/scientists-found-tiny-ecosystems-inside-the-deep-sea-rocks-we-want-to-mine/"
+    },
+    {
+     "fact": "단단해 보이는 단괴도 부피의 약 23%가 빈 공간(구멍·틈)이었다.",
+     "source_url": "https://www.zmescience.com/science/news-science/scientists-found-tiny-ecosystems-inside-the-deep-sea-rocks-we-want-to-mine/"
+    },
+    {
+     "fact": "단괴 속 틈은 1mm보다 작은 동물이 살 만큼 넓었고, 선충·요각류·다모류·유공충이 나왔다.",
+     "source_url": "https://www.zmescience.com/science/news-science/scientists-found-tiny-ecosystems-inside-the-deep-sea-rocks-we-want-to-mine/"
+    },
+    {
+     "fact": "이 단괴는 수백만 년에 걸쳐 아주 천천히 자란다.",
+     "source_url": "https://thedebrief.org/scientists-discover-thousands-of-tiny-creatures-living-inside-deep-sea-rocks-prized-by-mining-companies/"
+    }
+   ],
+   "careful": "심해 채굴 찬반은 판단하지 않는다. 돌 속에 산다는 사실만 다룬다."
+  },
+  {
+   "line": "insta_worker",
+   "title_idea": "심해 직장인: 바다돼지 선배 피부 밑에 사는 '조용한 동거인'",
+   "facts": [
+    {
+     "fact": "도쿄대 연구진이 바다돼지(sea pig) 피부 밑에서 새 세균을 찾아 Candidatus Abyssoplasma scotoplanesicola라고 이름 붙였다.",
+     "source_url": "https://phys.org/news/2026-11-sea-pigs-abyss-host-unusual.html"
+    },
+    {
+     "fact": "바다돼지는 심해에 사는 작은 젤리 같은 생물로, 해삼의 한 종류다.",
+     "source_url": "https://phys.org/news/2026-11-sea-pigs-abyss-host-unusual.html"
+    },
+    {
+     "fact": "연구진은 심해 탐사에서 잡은 바다돼지 8마리의 여러 조직에서 DNA를 뽑아 조사했다.",
+     "source_url": "https://phys.org/news/2026-11-sea-pigs-abyss-host-unusual.html"
+    },
+    {
+     "fact": "이 세균은 스스로 대사하는 능력이 줄어 숙주에게 많이 기대는 것으로 보이며, 바다돼지가 얻는 이득은 아직 모른다.",
+     "source_url": "https://phys.org/news/2026-11-sea-pigs-abyss-host-unusual.html"
+    },
+    {
+     "fact": "어린 킹크랩이 포식자를 피해 바다돼지를 은신처로 쓰는 모습이 관찰됐다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261118065512.htm"
+    }
+   ],
+   "careful": "바다돼지 캐릭터는 이미 썼다(carpool-senior-sea-pig). 카풀이 아니라 피부 밑 세균 이야기로만 간다. 세균이 해롭다고 단정하지 않는다."
+  },
+  {
+   "line": "wb_table",
+   "title_idea": "2027년 1~2월에 태어나는 손주, 말띠일까 양띠일까 — 입춘·설날 기준 한눈에 보는 표",
+   "facts": [
+    {
+     "fact": "2027년은 천간 정(丁)과 지지 미(未)가 만난 정미년, 붉은 양띠의 해다.",
+     "source_url": "https://law.kimnyeosa.com/2027%EB%85%84-%EB%9D%A0/"
+    },
+    {
+     "fact": "한국천문연구원 발표 기준 2027년 입춘 시각은 2월 4일 목요일 오전 10시 46분이고, 명리학에서는 이때부터 정미년으로 본다.",
+     "source_url": "https://law.kimnyeosa.com/2027%EB%85%84-%EB%9D%A0/"
+    },
+    {
+     "fact": "2027년 1월 1일부터 2월 4일 오전 10시 46분 전에 태어나면 병오년(2026년) 말띠로 본다.",
+     "source_url": "https://law.kimnyeosa.com/2027%EB%85%84-%EB%9D%A0/"
+    },
+    {
+     "fact": "음력 설날 기준으로는 2027년 2월 7일(음력 1월 1일)부터 양띠이므로, 2월 4일 10시 46분~2월 6일생은 두 기준에서 띠가 다르다.",
+     "source_url": "https://law.kimnyeosa.com/2027%EB%85%84-%EB%9D%A0/"
+    }
+   ],
+   "careful": "입춘 기준과 설날 기준 둘 다 적고, 어느 쪽이 맞다고 단정하지 않는다. 입춘 시각은 천문연 원자료로 한 번 더 확인한다."
+  }
+ ],
+ "note": "한국 쪽 검색에서는 운세·쇼츠 유행이 거의 잡히지 않았고(관상이 뜬다는 신호는 레이더에만 있음), 심해 쪽에서 이번 주 기사(성게 목구멍 조개·돌 속 245마리·바다돼지 세균·유리 살파)가 몰려 바닥난 insta_sci와 worker를 채우기 좋다. 영어 쪽은 검색 3번 만에 도구 사용 한도에 걸려 Hera 탐사선(디모르포스 도착)과 'The One'의 실제 사건 사실은 확인하지 못해 후보에서 뺐고, nt_story 후보는 0개다."
+}

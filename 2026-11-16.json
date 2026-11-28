@@ -1,0 +1,286 @@
+{
+ "date": "2026-11-16",
+ "hot": [
+  {
+   "topic": "2027학년도 수능 D-3(11/19): 6년 만의 '수능 한파'와 AI 부정행위 소식으로 관심이 커짐",
+   "market": "kr",
+   "where": "종합 기사(날씨·교육 면), 포털 많이 본 뉴스",
+   "evidence": [
+    {
+     "title": "수능날 서울 영하 1도…6년 만에 '수능 한파' 온다",
+     "url": "https://www.fnnews.com/news/202611121635467854",
+     "date": "2026-11-12"
+    },
+    {
+     "title": "수능 나흘 앞두고 터졌다…학부모들 시험 연기해야 하나 분통",
+     "url": "https://www.hankyung.com/article/2026111573067",
+     "date": "2026-11-15"
+    },
+    {
+     "title": "다음 주 전국에 가을비…수능 당일 서울은 영하권 '수능 한파'",
+     "url": "https://www.mt.co.kr/society/2026/11/15/2026111513561053307",
+     "date": "2026-11-15"
+    }
+   ],
+   "why_now": "시험이 11/19(목)이다. 한파 예보와 AI 부정행위 논란이 이번 주말에 겹쳐 기사가 몰렸다. 55세 이상에게는 '손주 수능'이라는 집안 행사다.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "'수능 날 손주에게 건네면 좋은 띠별 덕담' 표. 합격 예언은 하지 않고 응원·마음가짐 말투로 쓴다."
+  },
+  {
+   "topic": "김장철: 배추값이 떨어져 김장 비용이 2020년대 들어 가장 낮을 전망",
+   "market": "kr",
+   "where": "경제·생활 기사, 시니어 사연 쇼츠(김장 배추 소재 39.7배 대박)",
+   "evidence": [
+    {
+     "title": "배추값 하락에 올해 김장비용 '뚝'…4인 가족 기준 28만8500원",
+     "url": "https://www.segye.com/newsView/20261116501842",
+     "date": "2026-11-16"
+    },
+    {
+     "title": "집에서 김장 안 해요…급락한 배추값",
+     "url": "https://www.hankyung.com/article/2026111574911",
+     "date": "2026-11-16"
+    }
+   ],
+   "why_now": "11월 중순은 해마다 김장철이라 상시 인기 주제다. 올해는 오늘(11/16) 나온 김장 비용 조사가 더해졌다. 트렌드 레이더에서도 김장 배추 사연이 39.7배였다.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "'이번 주 김장하기 편한 날 띠별 표'. 일진(명리) 근거로 쓰고 '길일' 단정은 피한다. 비용 숫자는 기사 그대로 한 줄 넣는다."
+  },
+  {
+   "topic": "스페이스X 스타십 15번째 비행: 궤도를 돈 상단 우주선을 처음으로 발사탑 '젓가락' 팔로 잡음",
+   "market": "kr",
+   "where": "국내 기사(네이트 등), 미국 우주 매체 라이브",
+   "evidence": [
+    {
+     "title": "지구 14바퀴 돈 로켓, 발사탑으로 돌아왔다",
+     "url": "https://m.news.nate.com/view/20261116n00833",
+     "date": "2026-11-16"
+    },
+    {
+     "title": "Space News - Latest Space and Astronomy News (Starship Flight 15 live updates)",
+     "url": "https://www.space.com/news",
+     "date": "2026-11-14"
+    }
+   ],
+   "why_now": "11/13 발사, 11/14 회수(현지 시간)라 오늘 국내 기사가 나왔다. 장면이 크고 뚜렷해서 10~20대 과학 릴스에 바로 쓸 수 있다.",
+   "fit": [
+    "insta_sci",
+    "nt_story"
+   ],
+   "idea": "sci: 시속 수천 km로 떨어지는 우주선을 '젓가락'이 어떻게 잡나. 방열판, 엔진 재점화, 로봇 팔 순서로 속을 열어 본다."
+  },
+  {
+   "topic": "사자자리 유성우 11/18 극대: 한국은 17일 밤~18일 새벽, 해 뜨기 전이 관측 적기",
+   "market": "kr",
+   "where": "천문 기사, 한국천문연구원 예보",
+   "evidence": [
+    {
+     "title": "[비건뉴스] 사자자리 유성우 18일 극대…관측은 해 뜨기 전",
+     "url": "https://www.vegannews.co.kr/news/article.html?no=402465",
+     "date": "2026-11-09"
+    },
+    {
+     "title": "사자자리 유성우 극대기 관측 시기 '이 시간'이 골든타임 이라고?",
+     "url": "https://www.gukjenews.com/news/articleView.html?idxno=3746252",
+     "date": "2026-11-10"
+    }
+   ],
+   "why_now": "이틀 뒤가 극대다. 해마다 오는 천문 현상이지만 날짜가 정해져 있어서 이번 주에만 쓸 수 있다.",
+   "fit": [
+    "insta_sci"
+   ],
+   "idea": "'유성 하나의 정체는 모래알만 한 혜성 부스러기'를 단면으로 보여 주는 20초 sci. 관측 시간 한 줄을 붙인다."
+  },
+  {
+   "topic": "동물 행동 연구 기사가 잇따라 나옴: 고양이는 보호자 앞에서 약 16배 더 울고, '외톨이' 재규어는 생각보다 사교적",
+   "market": "kr",
+   "where": "반려·동물 전문 매체 기사(해외 학술지 소개)",
+   "evidence": [
+    {
+     "title": "고양이는 보호자 앞에서 약 16배 더 운다…38마리 실험",
+     "url": "https://www.famtimes.co.kr/news/articleView.html?idxno=704714",
+     "date": "2026-11-13"
+    },
+    {
+     "title": "재규어는 외톨이? 판타나우 13년 관찰, 교류 10건 중 4건 친화",
+     "url": "https://www.famtimes.co.kr/news/articleView.html?idxno=704795",
+     "date": "2026-11-15"
+    }
+   ],
+   "why_now": "11월 둘째 주에 Animal Behaviour 논문 두 편이 해외 매체(Phys.org, Mongabay)를 거쳐 국내 기사로 나왔다.",
+   "fit": [
+    "insta_danger"
+   ],
+   "idea": "'고양이가 계속 우는 위험한 진짜 이유' → 들어 줄 사람이 옆에 있어서일 수 있다(귀여운 반전)."
+  },
+  {
+   "topic": "과학 뉴스: 까마귀는 사람보다 두 배 빠르게 판단하고, 깡충거미는 REM 비슷한 잠을 잠",
+   "market": "us",
+   "where": "ScienceDaily 등 과학 뉴스 사이트(Science 등 학술지 발표)",
+   "evidence": [
+    {
+     "title": "Crows Can Make Decisions Twice as Fast as Humans, Scientists Discover",
+     "url": "https://www.sciencedaily.com/releases/2026/11/261111005850.htm",
+     "date": "2026-11-12"
+    },
+    {
+     "title": "Do Spiders Dream? Scientists Just Found a Surprising Clue",
+     "url": "https://www.sciencedaily.com/releases/2026/10/261026225555.htm",
+     "date": "2026-10-27"
+    }
+   ],
+   "why_now": "둘 다 최근 30일 안에 나온 연구 발표다(11/12, 10/27). '무서운 동물인데 진짜는 귀엽다'는 반전이 우리 밤 카드 꼴에 맞는다.",
+   "fit": [
+    "insta_danger",
+    "insta_sci"
+   ],
+   "idea": "'까마귀랑 눈 마주치면 위험한 진짜 이유' → 0.2초 만에 이미 판단을 끝냈다."
+  },
+  {
+   "topic": "호주 숲에서 6일 동안 길을 잃은 17세가 '한자리에서 기다려' 살아 돌아옴",
+   "market": "us",
+   "where": "영어권 기사(AOL·Bored Panda), 7NEWS 유튜브, 댓글 반응",
+   "evidence": [
+    {
+     "title": "Teen Who Survived Six Days Lost In The Australian Bush Shares The Simple Tactic That Saved His Life",
+     "url": "https://www.aol.com/articles/teen-survived-six-days-lost-103245000.html",
+     "date": "2026-11-13"
+    }
+   ],
+   "why_now": "11/12에 구조됐고 11/13 기사 뒤 온라인 반응이 퍼졌다. 생존 실화 쇼츠의 기본 구조(실종 → 수색 → 단서 하나 → 구조)를 그대로 갖췄다.",
+   "fit": [
+    "nt_story"
+   ],
+   "idea": "45~60초 3D 마네킹 실화 'He did the one thing searchers beg you to do: stay put'. 이름과 얼굴은 쓰지 않는다."
+  }
+ ],
+ "candidates": [
+  {
+   "line": "insta_sci",
+   "title_idea": "지구 14바퀴 돈 우주선을 젓가락으로 잡았다 — 속을 열어 보면",
+   "facts": [
+    {
+     "fact": "스타십 상단부는 미국 텍사스주 스타베이스에서 발사된 뒤 약 22시간 32분 만에 발사장으로 돌아왔다.",
+     "source_url": "https://m.news.nate.com/view/20261116n00833"
+    },
+    {
+     "fact": "대기권에 재진입한 우주선은 엔진을 다시 점화해 수직으로 내려왔고, 발사탑의 거대한 로봇 팔 두 개가 양쪽에서 붙잡았다('젓가락 회수').",
+     "source_url": "https://m.news.nate.com/view/20261116n00833"
+    },
+    {
+     "fact": "상단부는 차세대 스타링크 위성 26기를 싣고 올라가 모두 내보냈고, 고도 약 265km에서 지구를 14바퀴 돈 뒤 돌아왔다.",
+     "source_url": "https://m.news.nate.com/view/20261116n00833"
+    },
+    {
+     "fact": "이번이 2023년 첫 시험 발사 이후 15번째 비행이고, 1단 슈퍼 헤비는 돌아오다가 멕시코만 상공에서 폭발했다.",
+     "source_url": "https://m.news.nate.com/view/20261116n00833"
+    }
+   ],
+   "careful": "'완전 재사용 성공'이라고 단정하지 않는다. 1단은 실패했고, 다시 정비해 발사하는 것은 아직 검증 전이다."
+  },
+  {
+   "line": "insta_danger",
+   "title_idea": "고양이가 자꾸 우는 위험한 진짜 이유",
+   "facts": [
+    {
+     "fact": "브라질 상파울루대 연구진이 고양이 38마리를 관찰했더니, 보호자가 같은 방에 있을 때 야옹할 가능성(오즈)이 혼자 있을 때의 약 16배였다.",
+     "source_url": "https://www.famtimes.co.kr/news/articleView.html?idxno=704714"
+    },
+    {
+     "fact": "연구진은 표본이 작아 이 결과가 의도적인 소통의 증거는 아니라고 밝혔다.",
+     "source_url": "https://www.famtimes.co.kr/news/articleView.html?idxno=704714"
+    },
+    {
+     "fact": "이 논문은 학술지 『애니멀 비헤이비어』(2026)에 실렸다.",
+     "source_url": "https://www.famtimes.co.kr/news/articleView.html?idxno=704714"
+    }
+   ],
+   "careful": "'고양이는 사람한테 말을 건다'고 단정하지 않는다. 표본이 작고 의도 여부는 모른다는 점을 함께 쓴다. used의 cat-is-liquid와는 다른 소재다."
+  },
+  {
+   "line": "insta_danger",
+   "title_idea": "까마귀와 눈이 마주치면 위험한 진짜 이유",
+   "facts": [
+    {
+     "fact": "튀빙겐대 연구에서 까마귀는 움직이는 점들의 방향을 평균 235밀리초 만에 판단해, 사람과 원숭이보다 두 배 빨랐다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261111005850.htm"
+    },
+    {
+     "fact": "신호가 뚜렷할 때 까마귀의 정답률은 거의 100%에 가까웠다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261111005850.htm"
+    },
+    {
+     "fact": "까마귀 뇌는 점이 나타난 지 70밀리초 만에 두 방향을 구분하기 시작했고, 이 연구는 학술지 Science에 실렸다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261111005850.htm"
+    }
+   ],
+   "careful": "실험한 까마귀가 두 마리(carrion crow)뿐이라 '모든 까마귀가 사람보다 똑똑하다'는 식으로 넓히지 않는다."
+  },
+  {
+   "line": "insta_danger",
+   "title_idea": "밤에 거미가 다리를 떠는 위험한 진짜 이유",
+   "facts": [
+    {
+     "fact": "본대학 연구진은 호주 깡충거미 Portia fimbriata에게 눈 움직임과 근육 경련이 나타나는 REM 비슷한 잠 단계가 있다는 것을 발견했다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/10/261026225555.htm"
+    },
+    {
+     "fact": "이 거미는 다 자라도 1유로 동전 크기 정도이고, 거미줄 아래에 거꾸로 매달린 채 잔다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/10/261026225555.htm"
+    },
+    {
+     "fact": "Portia 무리는 거미줄에 걸린 곤충의 떨림을 흉내 내서 다른 거미를 사냥한다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/10/261026225555.htm"
+    }
+   ],
+   "careful": "'거미가 꿈을 꾼다'고 단정하지 않는다. 'REM 비슷한 단계 → 꿈일지도 모른다'는 정도로만 쓴다."
+  },
+  {
+   "line": "nt_story",
+   "title_idea": "Lost 6 Days in the Bush — He Survived by Doing Nothing",
+   "facts": [
+    {
+     "fact": "17세 소년이 11월 6일 멜버른 동쪽 약 180km 월할라 근처에서 캠핑하다 길을 잘못 들어 실종됐고, 휴대전화·음식·물이 없었다.",
+     "source_url": "https://www.aol.com/articles/teen-survived-six-days-lost-103245000.html"
+    },
+    {
+     "fact": "수색에는 100명 넘는 인원과 헬기, 경찰견, 잠수부가 동원됐다.",
+     "source_url": "https://www.aol.com/articles/teen-survived-six-days-lost-103245000.html"
+    },
+    {
+     "fact": "11월 12일 경찰 헬기가 캠프장에서 약 2km 떨어진 숲에서 낚시 도구 상자를 발견했고, 근처 개울가 바위 위에 누워 있던 소년을 찾았다.",
+     "source_url": "https://www.aol.com/articles/teen-survived-six-days-lost-103245000.html"
+    },
+    {
+     "fact": "어머니는 아들이 한자리에 머물며 구조를 기다렸다고 말했고, 소년은 탈수로 혈압이 떨어져 멜버른의 병원으로 옮겨진 뒤 안정된 상태로 전해졌다.",
+     "source_url": "https://www.aol.com/articles/teen-survived-six-days-lost-103245000.html"
+    }
+   ],
+   "careful": "실존 미성년자다. 이름·얼굴·가족 실명은 쓰지 않고 마네킹으로 만든다. 기사에 없는 '버틴 방법'(먹은 것 등)은 지어내지 않는다. 공포가 아니라 생존 팁 쪽으로 간다."
+  },
+  {
+   "line": "wb_table",
+   "title_idea": "수능 한파 오는 날, 손주에게 건네면 좋은 띠별 응원 한마디 | 11월 19일",
+   "facts": [
+    {
+     "fact": "2027학년도 수능은 11월 19일에 치러지며, 이날 서울 아침 기온은 영하 1도까지 떨어질 전망이다.",
+     "source_url": "https://www.fnnews.com/news/202611121635467854"
+    },
+    {
+     "fact": "예보대로 19일 서울 아침이 영하로 내려가면 2020년 이후 6년 만의 영하권 수능 한파다.",
+     "source_url": "https://www.fnnews.com/news/202611121635467854"
+    },
+    {
+     "fact": "서울 낮 최고기온도 17일 12도에서 19일 5도로 내려갈 전망이다.",
+     "source_url": "https://www.fnnews.com/news/202611121635467854"
+    }
+   ],
+   "careful": "합격·점수를 보장하거나 예언하지 않는다(응원과 덕담만). 부정행위 사건의 실존 인물은 다루지 않는다. 날씨는 '전망'으로 쓴다."
+  }
+ ],
+ "note": "한국 쪽은 이번 주 수능(한파)과 김장이 55세 이상 시청자와 가장 잘 맞는다. 인스타 sci 재고가 바닥나고 있어서 스타십 젓가락 회수와 사자자리 유성우를 먼저 볼 만하다. 영어 쪽은 한꺼번에 돌린 검색이 사용 한도에 걸려 7번 중 4번만 했고, 남은 예산은 사실 확인용 fetch 4번에 썼다. 그래서 viral·what-if 흐름은 덜 훑었고, 주로 과학 뉴스와 호주 생존 실화 1건을 골랐다."
+}

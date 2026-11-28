@@ -1,0 +1,283 @@
+{
+ "date": "2026-11-26",
+ "hot": [
+  {
+   "topic": "따뜻한 바다에 사는 독 있는 생물(파란선문어·넓은띠큰바다뱀·쏠배감펭)이 우리 남해·동해 연안까지 올라왔다는 소식",
+   "market": "kr",
+   "where": "기사(경향신문·한국해양과학기술원 KIOST 발표)",
+   "evidence": [
+    {
+     "title": "바다뱀·파란선문어 ‘맹독 생물’ 북상…“관문 제주에 감시망 필요”",
+     "url": "https://www.khan.co.kr/article/202611192126015/",
+     "date": "2026-11-19"
+    }
+   ],
+   "why_now": "11/19에 나온 KIOST 발표 기사다. 수온이 오르면서 열대·아열대 생물이 지금까지보다 더 북쪽에서 발견되고 있고, 넓은띠큰바다뱀은 경남 통영 앞바다에서 확인됐다.",
+   "fit": [
+    "insta_danger",
+    "insta_sci"
+   ],
+   "idea": "'우리 바다에 독 문어가 왔다'로 시작해 생김새·사는 곳·무늬 같은 진짜 사실만 보여 준다. 겁주는 꼴은 피하고, 처음 보는 생물은 만지지 않는다는 말 한 줄로 끝낸다."
+  },
+  {
+   "topic": "인스타 릴스 상위권은 그날의 계기(빼빼로데이 같은 날)를 바로 쓴 게시물이 차지",
+   "market": "kr",
+   "where": "인스타 릴스(분석 리포트·주간 콘텐츠 정리)",
+   "evidence": [
+    {
+     "title": "카테고리별 지금 뜨는 릴스 Top 10 분석 (2026년 11월 8~11일)",
+     "url": "https://www.hypenow.io/contents/2026-11-08_2026-11-11/analysis-report",
+     "date": "2026-11-16"
+    },
+    {
+     "title": "💡 주간 콘텐츠 큐 제안 2026-W48 · Issue #67 · yunneom/daily_enter_kr",
+     "url": "https://github.com/yunneom/daily_enter_kr/issues/67",
+     "date": "2026-11-24"
+    }
+   ],
+   "why_now": "11/8~11 상위 릴스 80개 가운데 59개가 11월 11일 게시물이었다. 10월 인기 릴스 정리에서는 '반려동물 AI 콘텐츠'가 뜨는 형식으로 꼽혔다. 두 번째 링크는 개인 레포의 정리라 보조 근거로만 쓴다.",
+   "fit": [
+    "insta_danger",
+    "insta_worker"
+   ],
+   "idea": "밤 편(위험한 진짜 이유·심해 직장인)을 날짜에 맞춰 낸다. 예를 들어 첫눈 날, 동지(12/22), 연말 회식 철에 맞는 심해 생물을 미리 짝지어 둔다."
+  },
+  {
+   "topic": "올겨울 첫눈(울릉도 11/19)에 이어 곳곳에 눈, 겨울 들어가는 철",
+   "market": "kr",
+   "where": "기사",
+   "evidence": [
+    {
+     "title": "올겨울 첫눈, 내렸다...오늘(20일)도 곳곳서 눈",
+     "url": "https://www.insight.co.kr/news/582822",
+     "date": "2026-11-20"
+    }
+   ],
+   "why_now": "해마다 돌아오는 철 화제라 새 유행이라고 보긴 어렵다. 그래도 지금이 딱 그 철이고, 울릉도 첫눈은 평년(11/16)보다 사흘 늦었다.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "'첫눈 오는 주에 마음이 따뜻해지는 띠' 같은 철맞이 띠 테마 표. 표 내용은 일진·명리를 근거로 하고 날씨 이야기는 인사말로만 쓴다."
+  },
+  {
+   "topic": "다가오는 동지(2026-12-22 화) 날짜·시간·풍습 안내 글",
+   "market": "kr",
+   "where": "생활 정보 글·블로그",
+   "evidence": [
+    {
+     "title": "동지 뜻과 2026 동지 시간, 2026 동지 날짜 12월 22일과 동짓날 일출·일몰 시간·작은설 풍습",
+     "url": "https://www.yugacrew.com/crewletter/dongji-meaning-time-2026",
+     "date": ""
+    }
+   ],
+   "why_now": "명절·절기 정보는 해마다 그 날 앞뒤로 다시 찾는 상시 주제다. 지금 갑자기 뜬 근거는 없고, 약 4주 뒤 동지를 앞두고 미리 깔아 둘 소재다. 글 날짜는 확인하지 못했다.",
+   "fit": [
+    "wb_table"
+   ],
+   "idea": "'동지(작은설) 지나면 기운이 트이는 띠' 표를 12/22 앞뒤에 낸다. 신년운세 시리즈와 이어지는 다리 편으로 쓸 수 있다."
+  },
+  {
+   "topic": "유럽 Hera 탐사선이 NASA DART가 들이받은 소행성 디모르포스에 도착, 11/25 첫 근접 사진 공개",
+   "market": "us",
+   "where": "과학 기사·ESA 유튜브 생중계",
+   "evidence": [
+    {
+     "title": "Watch live: Europe unveils 1st close-up views of asteroid Dimorphos after NASA's DART impact",
+     "url": "https://www.space.com/space-exploration/asteroid-comet-missions/watch-live-europe-unveils-1st-close-up-views-of-asteroid-dimorphos-after-nasas-dart-impact",
+     "date": "2026-11-25"
+    }
+   ],
+   "why_now": "어제(11/25 미국 시간) 도착해 첫 사진을 공개했다. 2022년 '소행성을 일부러 들이받은' 실험의 현장 확인이라 앞으로 며칠은 사진과 후속 기사가 이어질 가능성이 높다.",
+   "fit": [
+    "nt_story",
+    "insta_sci"
+   ],
+   "idea": "Nine Tails 실화형: 'We punched an asteroid in 2022. This week a probe went back to the crime scene.' 3D로 충돌에서 궤도 변화, 탐사선 도착까지 45~60초로 보여 준다."
+  },
+  {
+   "topic": "심해 망간단괴(돌) 하나에서 동물 245마리가 나왔다는 연구",
+   "market": "us",
+   "where": "과학 뉴스(ScienceDaily·Scientific Reports 논문)",
+   "evidence": [
+    {
+     "title": "Hidden ecosystem: Scientists discover 245 animals living inside a single deep-sea rock",
+     "url": "https://www.sciencedaily.com/releases/2026/11/261114202133.htm",
+     "date": "2026-11-16"
+    }
+   ],
+   "why_now": "11/16 공개된 연구 보도다. 심해 채굴 논쟁과 이어져 있어 후속 기사가 나오기 쉽다.",
+   "fit": [
+    "insta_sci",
+    "insta_worker"
+   ],
+   "idea": "'주먹만 한 돌을 열어 보니 245마리' 속이 보이는 단면 애니. 심해 직장인 판으로는 '돌 하나 공유오피스'로 쓴다."
+  },
+  {
+   "topic": "마리아나 해구 수심 6,148m에서 화산쇄설류(폭발성 분화 흔적) 발견",
+   "market": "us",
+   "where": "과학 뉴스(phys.org·Frontiers 논문)",
+   "evidence": [
+    {
+     "title": "Robot submarine exploring world's deepest ocean trench finds unprecedented volcanic activity",
+     "url": "https://phys.org/news/2026-11-robot-submarine-exploring-world-deepest.html",
+     "date": "2026-11-23"
+    }
+   ],
+   "why_now": "11/23 보도다. 지금까지 기록된 것 가운데 가장 깊은 바닷속 폭발성 분화 증거라는 점이 화제다. 본문은 열리지 않아 검색 요약만 확인했다.",
+   "fit": [
+    "insta_sci"
+   ],
+   "idea": "'바다 6km 아래에서 화산이 터졌다면?' 수심 눈금을 따라 내려가며 로봇이 닿을 수 있는 한계(6,500m)와 발견 지점을 보여 준다."
+  },
+  {
+   "topic": "심해 유리해면 군락 'Forest of the Weird'(모두 한 방향을 보는 외계인 숲) 영상이 다시 퍼짐",
+   "market": "us",
+   "where": "야생동물 매체 기사(BBC Wildlife 계열)·NOAA 영상",
+   "evidence": [
+    {
+     "title": "Deep sea robot discovered bizarre ‘forest’ full of eerie animals 2,442 metres deep, astonishing scientists",
+     "url": "https://www.discoverwildlife.com/animal-facts/marine-animals/forest-of-weird",
+     "date": "2026-11-13"
+    }
+   ],
+   "why_now": "기사는 11/13에 나왔지만 발견은 2017년이다. 새 발견이 아니라 옛 영상이 다시 퍼지는 경우라 '지금 뜬다'는 근거는 약하다.",
+   "fit": [
+    "insta_danger"
+   ],
+   "idea": "'수심 2,442m 외계인 군단'이라는 무서운 제목으로 열고, 알고 보니 전부 해류 쪽으로 얼굴을 돌리고 간식(먹이)을 기다리는 해면이라는 귀여운 반전으로 닫는다."
+  }
+ ],
+ "candidates": [
+  {
+   "line": "insta_sci",
+   "title_idea": "주먹만 한 심해 돌을 쪼개 봤더니 — 245마리가 살고 있었다",
+   "facts": [
+    {
+     "fact": "망간단괴(polymetallic nodule)는 대부분 철·망간 산화물로 된 주먹만 한 검은 덩어리이고, 100만 년에 몇 mm밖에 자라지 않는다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261114202133.htm"
+    },
+    {
+     "fact": "망간단괴는 수심 4,000~6,000m 바닥에 있으며 수백만 년 동안 그 자리에 머무를 수 있다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261114202133.htm"
+    },
+    {
+     "fact": "연구진이 단괴 244개를 조사해 동물 4,139마리를 찾았고, 단괴 하나에 평균 17마리, 가장 많은 것에는 245마리가 살았다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261114202133.htm"
+    },
+    {
+     "fact": "단괴 속 틈은 1mm보다 작은 동물이 살 만큼 크다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261114202133.htm"
+    },
+    {
+     "fact": "단괴 속 동물 무리는 주변 진흙 바닥의 무리와 유전적으로 달랐고, 최대 1,000km 떨어진 곳끼리도 서로 비슷했다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261114202133.htm"
+    }
+   ],
+   "careful": "'245마리'는 가장 많았던 단괴 하나의 숫자다. 평균은 17마리이니 섞어 쓰지 않는다. 심해 채굴 찬반은 연구진의 우려로만 적고 단정하지 않는다."
+  },
+  {
+   "line": "insta_sci",
+   "title_idea": "바다 밑 6km에서 화산이 '폭발'했다 — 마리아나 해구에서 찾은 증거",
+   "facts": [
+    {
+     "fact": "마리아나 해구 수심 6,148m에서 화산쇄설류(pyroclastic flow) 흔적이 발견됐다.",
+     "source_url": "https://phys.org/news/2026-11-robot-submarine-exploring-world-deepest.html"
+    },
+    {
+     "fact": "가장 깊은 곳인 챌린저 해연은 해수면 아래 거의 11,000m다.",
+     "source_url": "https://phys.org/news/2026-11-robot-submarine-exploring-world-deepest.html"
+    },
+    {
+     "fact": "마리아나 해구는 5,200만 년 전 태평양판이 필리핀해판 아래로 미끄러져 들어가기 시작하면서 생겼다.",
+     "source_url": "https://phys.org/news/2026-11-robot-submarine-exploring-world-deepest.html"
+    },
+    {
+     "fact": "탐사 로봇 Jason/Medea는 6,500m보다 깊이 내려갈 수 없다.",
+     "source_url": "https://phys.org/news/2026-11-robot-submarine-exploring-world-deepest.html"
+    }
+   ],
+   "careful": "본문 fetch가 막혀 검색 요약에서만 확인한 사실이다. 편성 전에 본문을 한 번 더 열어 본다. '지금 분화 중'이 아니라 '분화의 흔적(암석)'이다."
+  },
+  {
+   "line": "insta_worker",
+   "title_idea": "심해 직장인: 돌 하나에 직원 245명, 우리 공유오피스 얘기",
+   "facts": [
+    {
+     "fact": "심해 망간단괴 하나에서 동물 245마리가 나온 적이 있다(단괴 244개 평균은 17마리).",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261114202133.htm"
+    },
+    {
+     "fact": "연구진은 단괴 속 틈이 진흙 바닥에서는 만나지 못하는 동물들의 작은 쉼터 역할을 한다고 설명했다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261114202133.htm"
+    },
+    {
+     "fact": "단괴 속에서 특히 자주 나온 생물로 단세포 생물 Thurammina sp. 1 이 소개됐다.",
+     "source_url": "https://www.sciencedaily.com/releases/2026/11/261114202133.htm"
+    }
+   ],
+   "careful": "insta_sci 망간단괴 편과 같은 출처다. 둘 중 하나만 쓰거나 날짜를 떨어뜨린다. 동료 생물은 1mm 아래 크기라는 점을 살린다."
+  },
+  {
+   "line": "insta_danger",
+   "title_idea": "수심 2,442m, 전원 한 방향을 노려보는 외계인 군단의 정체",
+   "facts": [
+    {
+     "fact": "태평양 존스턴 환초 주변 해산 수심 약 2,442m에서 유리해면이 숲처럼 모여 사는 곳이 발견돼 'Forest of the Weird'라는 별명이 붙었다.",
+     "source_url": "https://www.discoverwildlife.com/animal-facts/marine-animals/forest-of-weird"
+    },
+    {
+     "fact": "이 숲은 2017년 심해 로봇(Deep Discoverer) 탐사에서 발견됐다.",
+     "source_url": "https://www.discoverwildlife.com/animal-facts/marine-animals/forest-of-weird"
+    },
+    {
+     "fact": "해면들이 모두 같은 방향을 보는 건 해류 쪽을 향해야 떠내려오는 먹이를 걸러 먹기 좋기 때문이다.",
+     "source_url": "https://www.discoverwildlife.com/animal-facts/marine-animals/forest-of-weird"
+    },
+    {
+     "fact": "그중 한 해면은 영화 E.T.의 눈을 닮아 'E.T. 해면'(Advhena magnifica)이라는 별명이 붙었고, 2016년 마리아나 해구 근처 해산에서 채집된 적이 있다.",
+     "source_url": "https://www.discoverwildlife.com/animal-facts/marine-animals/forest-of-weird"
+    }
+   ],
+   "careful": "새 발견이 아니다(2017년 발견, 2026-11 재보도). '최근 발견'이라고 쓰지 않는다."
+  },
+  {
+   "line": "nt_story",
+   "title_idea": "We Punched an Asteroid. This Week, a Probe Went Back to Check.",
+   "facts": [
+    {
+     "fact": "NASA의 DART는 2022년 9월 26일 소행성 디모르포스에 일부러 충돌했다.",
+     "source_url": "https://www.space.com/space-exploration/asteroid-comet-missions/watch-live-europe-unveils-1st-close-up-views-of-asteroid-dimorphos-after-nasas-dart-impact"
+    },
+    {
+     "fact": "DART 충돌로 디모르포스의 공전 주기가 30분 남짓 짧아졌다.",
+     "source_url": "https://www.space.com/space-exploration/asteroid-comet-missions/watch-live-europe-unveils-1st-close-up-views-of-asteroid-dimorphos-after-nasas-dart-impact"
+    },
+    {
+     "fact": "유럽우주국(ESA)의 Hera는 2024년 10월 7일 SpaceX 팰컨 9로 발사돼 2년을 날아가 2026년 11월 25일 디디모스 쌍소행성에 도착하고 첫 근접 사진을 공개했다.",
+     "source_url": "https://www.space.com/space-exploration/asteroid-comet-missions/watch-live-europe-unveils-1st-close-up-views-of-asteroid-dimorphos-after-nasas-dart-impact"
+    },
+    {
+     "fact": "Hera는 몇 달 동안 머물며 큐브샛을 내보내 카메라·레이더로 두 소행성을 조사한다.",
+     "source_url": "https://www.space.com/space-exploration/asteroid-comet-missions/watch-live-europe-unveils-1st-close-up-views-of-asteroid-dimorphos-after-nasas-dart-impact"
+    }
+   ],
+   "careful": "공개된 근접 사진의 내용(크레이터 모양 등)은 확인하지 못했다. 장면은 '상상 재현'으로 표시하고 결과를 지어내지 않는다. 지구 충돌 공포는 과장하지 않는다."
+  },
+  {
+   "line": "wb_table",
+   "title_idea": "동지(12월 22일) 지나면 기운이 트이는 띠 순위 | 45~96년생 전부",
+   "facts": [
+    {
+     "fact": "2026년 동지는 12월 22일(화)이고 동지 시각은 오전 5시 50분이다.",
+     "source_url": "https://www.yugacrew.com/crewletter/dongji-meaning-time-2026"
+    },
+    {
+     "fact": "동짓날 서울 일출은 7시 43분, 일몰은 오후 5시 18분이다.",
+     "source_url": "https://www.yugacrew.com/crewletter/dongji-meaning-time-2026"
+    }
+   ],
+   "careful": "표 풀이 근거는 일진·명리로 따로 세운다. 이 페이지는 날짜·시각만 뒷받침한다. 올해가 애동지인지는 확인하지 못했으니 쓰지 않는다. 팥죽의 건강 효과도 단정하지 않는다."
+  }
+ ],
+ "note": "도구 사용 한도에 걸려 사실 확인 검색은 하지 못했다(한국 11번·영어 7번 검색 + fetch 4번 중 3번 성공, phys.org는 열리지 않음). 그래서 핫팩 뜯어보기(insta_teardown)는 출처가 없어 뺐다. 오늘 가장 쓸 만한 것은 심해(망간단괴 245마리, 마리아나 6,148m 분화 흔적)와 Hera 소행성 도착(11/25)으로, 바닥나 가는 insta_sci(오늘 마지막)와 nt_story(4일)를 바로 채울 수 있다. 왕별이 쪽은 레이더의 '관상 떡상'을 웹에서 확인하지 못했고, 동지·첫눈 같은 철 소재 말고는 새 흐름을 찾지 못했다."
+}
