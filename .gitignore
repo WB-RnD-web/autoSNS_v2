@@ -14,6 +14,9 @@ output/renders/
 /output/weekly_fortune_log.json
 /output/lf27_ledger.json
 /output/lf27_log.json
+/output/radio/
+/output/radio_ledger.json
+/output/radio_log.json
 /output/*.log
 *.mp4
 *.mov

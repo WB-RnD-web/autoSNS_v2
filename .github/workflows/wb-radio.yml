@@ -1,0 +1,146 @@
+name: 왕별이 라디오 밤 편 — 대본(Claude API) → 검사 → 목소리 F2·피아노·빗소리 30분 → 20시 예약 공개
+
+# 2026-11-28 사용자 "왕별이한테 몰빵 · 운전하면서·자기 전에·집에서 라디오 듣는 것처럼" → 견본(21분) →
+#   "F2로 하고 빗소리 30분으로 늘려서 PR 만들어줘".
+# 매일 17:07 KST 에 깬다 → 대본(tools/radio_api.py · API 크레딧) → 검사(pipeline/radio_night.py check — 못 넘으면 멈춤)
+#   → 렌더(pipeline/radio_night_render.py · 말 15~19분 + 빗소리 30분 ≈ 45~50분) → 그날 20:00 KST 예약 공개
+#   (렌더가 늦어 20시를 넘기면 바로 공개). 재생목록 '잠들기 전 복 받는 시간'.
+# 같은 날은 두 번 올리지 않는다 — ledger(radio-ledger- 캐시) + 유튜브 설명란 끝 줄 '왕별이 라디오 · 밤 편 <날짜>'.
+# 끄기: 레포 변수 RADIO_NIGHT=0. 모델: RADIO_MODEL(기본 claude-opus-5-5) · 빗소리 길이: RADIO_RAIN_MIN(기본 30).
+# ⚠️ 루프 가드: permissions read — 레포에 아무것도 커밋·push 하지 않는다(대본·영상은 아티팩트와 유튜브로만).
+on:
+  schedule:
+    - cron: "7 8 * * *"        # 17:07 KST 매일(정각을 피한다 — 예약 실행이 밀린다)
+  workflow_dispatch:
+    inputs:
+      no_upload:
+        description: "올리지 않고 대본·렌더만(영상은 아티팩트로)"
+        type: boolean
+        default: true
+      force_private:
+        description: "비공개로 올리기(예약 공개 없음)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: wb-radio
+  cancel-in-progress: false
+
+jobs:
+  night:
+    if: (vars.RADIO_NIGHT || '1') != '0'
+    runs-on: ubuntu-latest
+    # 실측(11/28 로컬): 목소리 ~190조각(Spark 한 건씩이면 15~25분) · 빗소리 30분 합성 20초 · 46분 영상 인코딩(10fps).
+    #   API 쓰기 1~4분 · 업로드 2~4분. Spark 가 밀리면 늘어난다.
+    timeout-minutes: 150
+    env:
+      TZ: Asia/Seoul
+      PYTHONUTF8: "1"
+      WBSPARK_BASE: ${{ vars.WBSPARK_BASE || 'https://wangbyul.com/wbSpark' }}
+      WBSPARK_TOKEN: ${{ secrets.WBSPARK_TOKEN }}
+      RADIO_MODEL: ${{ vars.RADIO_MODEL || 'claude-opus-5-5' }}
+      RADIO_VOICE: ${{ vars.RADIO_VOICE || 'F2' }}
+      RADIO_TEMPO: ${{ vars.RADIO_TEMPO || '0.9' }}
+      RADIO_RAIN_MIN: ${{ vars.RADIO_RAIN_MIN || '30' }}
+      RADIO_PUBLISH_HHMM: ${{ vars.RADIO_PUBLISH_HHMM || '20:00' }}
+      WEEKLY_TTS_WORKERS: "1"                     # ★공용 Spark — 목소리는 한 건씩
+      # 한국 시니어 대상 — 영어 제목·자막 번역은 붙이지 않는다
+      I18N_LOCALIZE: "0"
+      I18N_CAPTIONS: "0"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: pipeline/requirements.txt
+
+      - name: 시스템 의존성 설치
+        run: |
+          set -e
+          NEED=""
+          command -v ffmpeg >/dev/null 2>&1 || NEED="$NEED ffmpeg"
+          fc-list 2>/dev/null | grep -qi nanum || NEED="$NEED fonts-nanum"
+          if [ -n "$NEED" ]; then sudo apt-get update && sudo apt-get install -y $NEED; fi
+          python -m pip install -r pipeline/requirements.txt
+
+      - name: 밤 편 테스트(깨진 코드로는 올리지 않는다)
+        run: python3 pipeline/test_radio_night.py
+
+      - name: 대본 쓰기(Claude API) → 검사
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          set -euo pipefail
+          D=$(date +%F)
+          echo "D=$D" >> "$GITHUB_ENV"
+          python tools/radio_api.py write --out "output/radio/$D.json"
+
+      # ledger — ★다른 워크플로의 접두(ledger-·lf27-ledger- …)와 겹치면 안 된다
+      - name: ledger 복원(밤 편 전용)
+        uses: actions/cache/restore@v4
+        with:
+          path: output/radio_ledger.json
+          key: radio-ledger-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: radio-ledger-
+
+      - name: YouTube 자격증명(같은 채널 확장 스코프 토큰)
+        if: ${{ !inputs.no_upload }}
+        env:
+          YT_CLIENT_SECRET_JSON: ${{ secrets.YT_CLIENT_SECRET_JSON }}
+          YT_TOKEN_JSON_NOVEL: ${{ secrets.YT_TOKEN_JSON_NOVEL }}
+          YT_TOKEN_JSON: ${{ secrets.YT_TOKEN_JSON }}
+        run: |
+          mkdir -p pipeline/secrets
+          [ -n "$YT_CLIENT_SECRET_JSON" ] && printf '%s' "$YT_CLIENT_SECRET_JSON" > pipeline/secrets/client_secret.json
+          if [ -n "$YT_TOKEN_JSON_NOVEL" ]; then
+            printf '%s' "$YT_TOKEN_JSON_NOVEL" > pipeline/secrets/token_novel.json
+          elif [ -n "$YT_TOKEN_JSON" ]; then
+            printf '%s' "$YT_TOKEN_JSON" > pipeline/secrets/token_novel.json
+            echo "⚠️ YT_TOKEN_JSON_NOVEL 없음 — 업로드는 되지만 재생목록은 스킵될 수 있다"
+          else
+            echo "⚠️ 업로드 토큰 없음 — 렌더만 진행"
+          fi
+
+      - name: 렌더 → 업로드
+        run: |
+          EXTRA=""
+          if [ "${{ inputs.no_upload }}" = "true" ]; then EXTRA="--no-upload"; fi
+          if [ "${{ inputs.force_private }}" = "true" ]; then EXTRA="$EXTRA --force-private"; fi
+          cd pipeline
+          python run_radio_night.py "../output/radio/$D.json" \
+            --ledger-path ../output/radio_ledger.json --log ../output/radio_log.json $EXTRA
+
+      # 올라간 건 올라간 거다 — 잡이 실패해도 ledger 는 남긴다(재실행 때 두 번 올리지 않게)
+      - name: ledger 저장
+        if: always() && hashFiles('output/radio_ledger.json') != ''
+        uses: actions/cache/save@v4
+        with:
+          path: output/radio_ledger.json
+          key: radio-ledger-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: 대본·설명 보관(30일)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: radio-night-${{ env.D }}-${{ github.run_attempt }}
+          path: |
+            output/radio/*.json
+            output/renders/*_radio_night_meta.json
+            output/renders/*_radio_night_thumb.jpg
+            output/radio_log.json
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: 시험 영상(수동 · 올리지 않을 때만)
+        if: always() && inputs.no_upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: radio-night-video-${{ github.run_number }}
+          path: output/renders/*_radio_night.mp4
+          retention-days: 3
+          if-no-files-found: warn
