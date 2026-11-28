@@ -356,9 +356,10 @@ def prep_bg(src: str, out: str):
     im = ImageOps.fit(Image.open(src).convert("RGB"), (BW, BH), Image.Resampling.LANCZOS)
     im = im.filter(ImageFilter.GaussianBlur(1.2))
     im = ImageEnhance.Brightness(im).enhance(0.52)
-    import numpy as np
-    col = np.clip((np.arange(BH) / BH - 0.55) / 0.45, 0, 1) * 70
-    shade = Image.fromarray(np.repeat(col[:, None], BW, axis=1).astype("uint8"), "L")
+    # 세로 그러데이션(아래 45% 를 0→70 으로) — numpy 없이(Actions 에는 requirements 만 깔린다 · 11/28 시험 실행 실패)
+    col = Image.new("L", (1, BH))
+    col.putdata([int(min(1.0, max(0.0, (y / BH - 0.55) / 0.45)) * 70 + 0.5) for y in range(BH)])
+    shade = col.resize((BW, BH), Image.Resampling.NEAREST)
     im = Image.composite(Image.new("RGB", (BW, BH), (6, 6, 16)), im, shade)
     im.save(out, "JPEG", quality=92)
 
